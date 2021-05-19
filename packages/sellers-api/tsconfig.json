@@ -5,8 +5,9 @@
     "baseUrl": "./",
     "paths": {
       "@selling-partner-api-sdk/common": ["../common/lib"]
-    }
+    },
+    "lib":["DOM"]
   },
-  "include": ["lib/**/*"],
+  "include": ["lib/**/*", "test.ts"],
   "exclude": ["node_modules", "**/__tests__/*"],
 }

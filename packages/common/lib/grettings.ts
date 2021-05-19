@@ -1,5 +1,5 @@
-export const greetings = 'Hello world (from export)';
+export const greetings = 'Hello world (from export)'
 
-const d = 'Hello world (from default)';
+const d = 'Hello world (from default)'
 
-export default d;
+export default d

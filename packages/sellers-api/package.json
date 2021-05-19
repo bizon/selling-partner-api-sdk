@@ -12,5 +12,5 @@
     "@aws-sdk/client-sts": "^3.16.0",
     "@selling-partner-api-sdk/common": "^1.0.0",
     "axios": "^0.21.1"
-  },
+  }
 }

@@ -1,4 +1,4 @@
-import {Configuration, SellersApi} from './models/v1'
+import {Configuration, SellersApi} from './api-model'
 
 import {regions, createAxiosInstance, ClientConfiguration} from '@selling-partner-api-sdk/common'
 

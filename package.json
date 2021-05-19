@@ -6,7 +6,21 @@
   "repository": "git@github.com:bizon/selling-partner-api-sdk.git",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "license": "MIT",
+  "private": "true",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean",
+    "release": "lerna publish"
+  },
   "devDependencies": {
+    "@tsconfig/node14": "^1.0.0",
+    "lerna": "^4.0.0",
+    "typescript": "^4.2.4",
     "xo": "^0.39.1"
   }
 }

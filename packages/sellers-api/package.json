@@ -1,0 +1,14 @@
+{
+  "name": "@selling-partner-api-sdk/sellers-api",
+  "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
+  "description": "SDK library for sellers API",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@selling-partner-api-sdk/common": "^1.0.0"
+  }
+}

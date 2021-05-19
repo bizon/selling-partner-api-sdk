@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": "./",
+    "paths": {
+      "@selling-partner-api-sdk/common": ["../common/lib"]
+    }
+  },
+  "include": ["lib/**/*"],
+  "exclude": ["node_modules", "**/__tests__/*"],
+}

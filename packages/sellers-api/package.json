@@ -1,5 +1,5 @@
 {
-  "name": "@selling-partner-api-sdk/sellers-api",
+  "name": "@bizon-sp-api-sdk/sellers-api",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "SDK library for sellers API",
   "version": "1.0.0",
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-sts": "^3.16.0",
-    "@selling-partner-api-sdk/common": "^1.0.0",
+    "@bizon-sp-api-sdk/common": "^1.0.0",
     "axios": "^0.21.1"
   }
 }

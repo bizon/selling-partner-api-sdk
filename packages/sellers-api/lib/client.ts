@@ -1,6 +1,6 @@
 import {Configuration, SellersApi} from './api-model'
 
-import {regions, createAxiosInstance, ClientConfiguration} from '@selling-partner-api-sdk/common'
+import {regions, createAxiosInstance, ClientConfiguration} from '@bizon-sp-api-sdk/common'
 
 export class SellersApiClient extends SellersApi {
 	constructor(params: ClientConfiguration) {

@@ -1,6 +1,8 @@
 import axios from 'axios'
 import {aws4Interceptor} from 'aws4-axios'
 
+import pkg from '../../package.json'
+
 export interface ClientConfiguration {
 	awsCredentials: {
 		accessKeyId: string;
@@ -9,13 +11,14 @@ export interface ClientConfiguration {
 	};
 	region: string;
 	accessToken: string;
-	userAgent: string;
+	userAgent?: string;
 }
 
 export function createAxiosInstance({
 	accessToken,
 	awsCredentials,
-	userAgent,
+	/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions */
+	userAgent = `${pkg.name}/${pkg.version}`,
 	region
 }: ClientConfiguration) {
 	const instance = axios.create({

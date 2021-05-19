@@ -1,5 +1,5 @@
 {
-  "name": "@selling-partner-api-sdk/common",
+  "name": "@bizon-sp-api-sdk/common",
   "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",

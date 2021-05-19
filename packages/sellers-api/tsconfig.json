@@ -4,7 +4,7 @@
     "outDir": "dist",
     "baseUrl": "./",
     "paths": {
-      "@selling-partner-api-sdk/common": ["../common/lib"]
+      "@bizon-sp-api-sdk/common": ["../common/lib"]
     },
     "lib":["DOM"]
   },

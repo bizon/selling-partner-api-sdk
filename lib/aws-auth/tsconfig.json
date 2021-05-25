@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "./lib",
-    "baseUrl": "./",
+    "baseUrl": "./"
   },
   "include": ["lib/**/*", "test.ts"],
   "exclude": ["node_modules", "**/__tests__/*"],

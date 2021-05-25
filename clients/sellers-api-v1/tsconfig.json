@@ -4,7 +4,7 @@
     "outDir": "dist",
     "baseUrl": "./",
     "lib":["DOM"],
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
   },
   "include": ["lib/**/*"],
   "exclude": ["node_modules"],

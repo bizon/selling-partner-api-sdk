@@ -3,7 +3,8 @@
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "SDK library for sellers API",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "dist/client.js",
+  "types": "",
   "license": "MIT",
   "scripts": {
     "build": "tsc -b",

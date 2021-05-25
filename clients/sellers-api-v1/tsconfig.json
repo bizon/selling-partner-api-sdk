@@ -3,8 +3,9 @@
   "compilerOptions": {
     "outDir": "dist",
     "baseUrl": "./",
-    "lib":["DOM"]
+    "lib":["DOM"],
+    "resolveJsonModule": true
   },
-  "include": ["lib/**/*", "test.ts"],
-  "exclude": ["node_modules", "**/__tests__/*"],
+  "include": ["lib/**/*"],
+  "exclude": ["node_modules"],
 }

@@ -10,7 +10,8 @@
   "workspaces": {
     "packages": [
       "packages/*",
-      "lib/*"
+      "lib/*",
+      "clients/*"
     ]
   },
   "scripts": {

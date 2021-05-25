@@ -1,0 +1,16 @@
+{
+  "name": "@bizon-sp-api-sdk/aws-auth",
+  "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
+  "description": "SDK library for helping to auth with AWS",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sts": "^3.16.0",
+    "date-fns": "^2.21.3",
+    "got": "^11.8.2"
+  }
+}

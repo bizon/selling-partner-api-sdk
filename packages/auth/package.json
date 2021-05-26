@@ -19,9 +19,6 @@
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "registry": "https://registry.yarnpkg.com"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bizon/selling-partner-api-sdk.git"
@@ -45,5 +42,5 @@
     "rimraf": "^3.0.2",
     "ts-jest": "^27.0.0"
   },
-  "gitHead": "59dc3b00a92b95cfe8a48925f403f431f1224b35"
+  "gitHead": "6e7a8bd504c84d99604f7247d811605b02a92e20"
 }

@@ -14,9 +14,6 @@
       "clients/*"
     ]
   },
-  "publishConfig": {
-    "registry": "https://registry.yarnpkg.com"
-  },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna exec 'yarn build'",

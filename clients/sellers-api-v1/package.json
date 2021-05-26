@@ -23,5 +23,5 @@
     "rimraf": "^3.0.2",
     "ts-jest": "^26.5.6"
   },
-  "gitHead": "dec5c30e9d7477ac47a88d994aa864e319ddf5ce"
+  "gitHead": "59dc3b00a92b95cfe8a48925f403f431f1224b35"
 }

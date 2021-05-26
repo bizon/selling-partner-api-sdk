@@ -28,6 +28,8 @@
   },
   "xo": {
     "semicolon": false,
-    "ignore": ["**/dist/*"]
+    "ignore": [
+      "**/dist/*"
+    ]
   }
 }

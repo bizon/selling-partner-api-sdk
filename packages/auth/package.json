@@ -44,5 +44,6 @@
     "jest": "^27.0.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^27.0.0"
-  }
+  },
+  "gitHead": "dec5c30e9d7477ac47a88d994aa864e319ddf5ce"
 }

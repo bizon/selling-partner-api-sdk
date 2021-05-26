@@ -1,6 +1,6 @@
 {
   "name": "@sp-api-sdk/common",
-  "version": "0.0.7-alpha.0",
+  "version": "0.0.8-alpha.0",
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
@@ -8,12 +8,12 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^0.0.7-alpha.0",
+    "@sp-api-sdk/auth": "^0.0.8-alpha.0",
     "aws4-axios": "^2.3.1",
     "axios": "^0.21.1"
   },
   "devDependencies": {
     "rimraf": "^3.0.2"
   },
-  "gitHead": "6e7a8bd504c84d99604f7247d811605b02a92e20"
+  "gitHead": "64279d55f7b0fb86cf5bae5fd94b612ce6131567"
 }

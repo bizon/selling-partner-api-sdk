@@ -1,6 +1,6 @@
 {
   "name": "@sp-api-sdk/auth",
-  "version": "0.0.7-alpha.0",
+  "version": "0.0.8-alpha.0",
   "description": "Auth library for helping authentication with Selling Partner API",
   "keywords": [
     "bizon",
@@ -42,5 +42,5 @@
     "rimraf": "^3.0.2",
     "ts-jest": "^27.0.0"
   },
-  "gitHead": "6e7a8bd504c84d99604f7247d811605b02a92e20"
+  "gitHead": "64279d55f7b0fb86cf5bae5fd94b612ce6131567"
 }

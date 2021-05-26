@@ -1,6 +1,6 @@
 {
   "name": "@sp-api-sdk/auth",
-  "version": "0.0.9-alpha.0",
+  "version": "0.0.1-alpha.0",
   "description": "Auth library for helping authentication with Selling Partner API",
   "keywords": [
     "bizon",

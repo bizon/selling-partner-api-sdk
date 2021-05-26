@@ -1,5 +1,5 @@
 {
-  "name": "@bizon-sp-api-sdk/common",
+  "name": "@sp-api-sdk/common",
   "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
@@ -7,7 +7,7 @@
     "build": "tsc -b"
   },
   "dependencies": {
-    "@bizon-sp-api-sdk/auth": "^0.0.0",
+    "@sp-api-sdk/auth": "^0.0.0",
     "aws4-axios": "^2.3.1",
     "axios": "^0.21.1"
   }

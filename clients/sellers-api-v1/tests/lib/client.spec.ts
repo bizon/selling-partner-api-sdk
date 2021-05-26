@@ -1,4 +1,4 @@
-import {AccessToken, SecurityTokenService} from '@bizon-sp-api-sdk/aws-auth'
+import {AccessToken, SecurityTokenService} from '@sp-api-sdk/aws-auth'
 
 import {SellersApiClient} from '../../lib/client'
 import {SellersApiClientException} from '../../lib/errors/sellers-api-client-exception'

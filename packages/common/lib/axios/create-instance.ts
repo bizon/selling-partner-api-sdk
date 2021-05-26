@@ -1,12 +1,12 @@
 import axios from 'axios'
 import {aws4Interceptor} from 'aws4-axios'
 
-import SellingPartnerAuth from '@bizon-sp-api-sdk/auth'
+import SellingPartnerApiAuth from '@sp-api-sdk/auth'
 
 import pkg from '../../package.json'
 
 export interface ClientConfiguration {
-	auth: SellingPartnerAuth;
+	auth: SellingPartnerApiAuth;
 	region: string;
 	userAgent?: string;
 }

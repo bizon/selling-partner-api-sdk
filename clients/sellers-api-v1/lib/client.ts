@@ -1,6 +1,6 @@
 import {Configuration, SellersApi} from './api-model'
 
-import {endpoints, createAxiosInstance, ClientConfiguration} from '@bizon-sp-api-sdk/common'
+import {endpoints, createAxiosInstance, ClientConfiguration} from '@sp-api-sdk/common'
 
 import {SellersApiClientException} from './errors/sellers-api-client-exception'
 

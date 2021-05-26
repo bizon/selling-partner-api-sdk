@@ -18,7 +18,7 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna exec 'yarn build'",
     "clean": "lerna exec 'yarn clean'",
-    "release": "lerna publish"
+    "release": "lerna publish --no-private"
   },
   "devDependencies": {
     "@tsconfig/node14": "^1.0.0",

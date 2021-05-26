@@ -1,9 +1,37 @@
 {
-  "name": "@bizon/selling-partner-api-sdk",
-  "version": "1.0.0",
+  "name": "sp-api-sdk",
+  "version": "0.0.0",
   "description": "A modularized SDK library for Amazon Selling Partner API (fully typed in TypeScript)",
   "main": "index.ts",
   "repository": "git@github.com:bizon/selling-partner-api-sdk.git",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "lib/*",
+      "clients/*"
+    ]
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna exec 'yarn build'",
+    "clean": "lerna exec 'yarn clean'",
+    "release": "lerna publish"
+  },
+  "devDependencies": {
+    "@tsconfig/node14": "^1.0.0",
+    "lerna": "^4.0.0",
+    "typescript": "^4.2.4",
+    "xo": "^0.39.1"
+  },
+  "xo": {
+    "semicolon": false,
+    "ignore": [
+      "**/dist/*"
+    ]
+  }
 }

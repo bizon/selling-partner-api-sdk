@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": "./",
+    "lib":["DOM"],
+    "resolveJsonModule": true,
+  },
+  "include": ["lib/**/*"],
+  "exclude": ["node_modules"],
+}

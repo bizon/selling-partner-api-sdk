@@ -1,0 +1,30 @@
+{
+  "name": "@sp-api-sdk/sellers-api-v1",
+  "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
+  "description": "SDK library for sellers API",
+  "version": "0.0.8-alpha.0",
+  "main": "dist/client.js",
+  "types": "",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "rimraf dist",
+    "test": "NODE_ENV=test jest"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sts": "^3.16.0",
+    "@sp-api-sdk/auth": "^0.0.8-alpha.0",
+    "@sp-api-sdk/common": "^0.0.8-alpha.0",
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "jest": "^26.6.3",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.5.6"
+  },
+  "gitHead": "71a74101ddc00a1f3b0982789a8f70ac72c17853"
+}

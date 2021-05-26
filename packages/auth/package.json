@@ -27,6 +27,7 @@
     "url": "git+https://github.com/bizon/selling-partner-api-sdk.git"
   },
   "scripts": {
+    "build": "tsc -b",
     "test": "NODE_ENV=test jest"
   },
   "bugs": {

@@ -16,6 +16,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "build": "lerna exec yarn build",
     "clean": "lerna clean",
     "release": "lerna publish"
   },

@@ -1,9 +1,3 @@
-export enum AwsRegion {
-	'US-EAST-1' = 'us-east-1',
-	'US-WEST-2' = 'us-west-2',
-	'EU-WEST-1' = 'eu-west-1'
-}
-
 interface Endpoints {
 	production: Record<string, string>;
 	sandbox: Record<string, string>;

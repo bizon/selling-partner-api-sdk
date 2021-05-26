@@ -9,6 +9,9 @@
     "amazon",
     "auth"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "license": "MIT",
   "main": "dist/index.js",
@@ -42,5 +45,5 @@
     "rimraf": "^3.0.2",
     "ts-jest": "^27.0.0"
   },
-  "gitHead": "c13559039449c6e5d3895d8e501f61830a128dfd"
+  "gitHead": "71a74101ddc00a1f3b0982789a8f70ac72c17853"
 }

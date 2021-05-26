@@ -6,6 +6,9 @@
   "main": "dist/client.js",
   "types": "",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc -b",
     "clean": "rimraf dist",
@@ -23,5 +26,5 @@
     "rimraf": "^3.0.2",
     "ts-jest": "^26.5.6"
   },
-  "gitHead": "c13559039449c6e5d3895d8e501f61830a128dfd"
+  "gitHead": "71a74101ddc00a1f3b0982789a8f70ac72c17853"
 }

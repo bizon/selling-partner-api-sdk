@@ -1,4 +1,4 @@
-import {STSClient, AssumeRoleCommand, Credentials} from '@aws-sdk/client-sts'
+import {STSClient, STSClientConfig, AssumeRoleCommand, Credentials} from '@aws-sdk/client-sts'
 
 interface Role {
 	arn: string;
@@ -39,7 +39,7 @@ export class SecurityTokenService {
 	}
 
 	/**
-   * Get the STS credentials
+   * Get the AWS credentials from STS
    */
 	async getCredentials() {
 		if (
@@ -53,16 +53,21 @@ export class SecurityTokenService {
 	}
 
 	/**
-   * Fetch new STS credentials
+   * Fetch new AWS credentials from STS
    */
 	protected async fetchCredentials() {
-		const sts = new STSClient({
-			region: this.region,
+		const config: STSClientConfig = {
 			credentials: {
 				accessKeyId: this.accessKeyId,
 				secretAccessKey: this.secretAccessKey
 			}
-		})
+		}
+
+		if (this.region) {
+			config.region = this.region
+		}
+
+		const sts = new STSClient(config)
 
 		const {Credentials: credentials} = await sts.send(
 			new AssumeRoleCommand({

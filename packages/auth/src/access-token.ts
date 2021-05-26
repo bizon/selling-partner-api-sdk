@@ -24,7 +24,7 @@ export class AccessToken {
 
 	constructor(parameters: AccessTokenParameters) {
 		const clientId = parameters.clientId ?? process.env.AWS_CLIENT_ID
-		const clientSecret = parameters.clientId ?? process.env.AWS_CLIENT_SECRET
+		const clientSecret = parameters.clientSecret ?? process.env.AWS_CLIENT_SECRET
 
 		if (!clientId) {
 			throw new TypeError('clientId is required')

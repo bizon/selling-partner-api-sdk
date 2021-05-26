@@ -1,20 +1,18 @@
 import axios from 'axios'
 import {aws4Interceptor} from 'aws4-axios'
 
-import {AccessToken, SecurityTokenService} from '@bizon-sp-api-sdk/aws-auth'
+import SellingPartnerAuth from '@bizon-sp-api-sdk/auth'
 
 import pkg from '../../package.json'
 
 export interface ClientConfiguration {
-	sts: SecurityTokenService;
+	auth: SellingPartnerAuth;
 	region: string;
-	accessToken: AccessToken;
 	userAgent?: string;
 }
 
 export function createAxiosInstance({
-	accessToken,
-	sts,
+	auth,
 	/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions */
 	userAgent = `${pkg.name}/${pkg.version}`,
 	region
@@ -25,14 +23,20 @@ export function createAxiosInstance({
 		}
 	})
 
-	instance.interceptors.request.use(async config => {
-		config.headers['x-amz-access-token'] = await accessToken.get()
+	instance.interceptors.request.use(
+		async config => {
+			config.headers['x-amz-access-token'] = await auth.accessToken.get()
 
-		return config
-	})
+			return config
+		}
+	)
 
 	instance.interceptors.request.use(async config => {
-		const credentials = await sts.getCredentials()
+		const credentials = await auth.getCredentials()
+
+		if (!credentials) {
+			return config
+		}
 
 		return aws4Interceptor(
 			{
@@ -42,7 +46,7 @@ export function createAxiosInstance({
 			{
 				accessKeyId: credentials.AccessKeyId ?? '',
 				secretAccessKey: credentials.SecretAccessKey ?? '',
-				sessionToken: credentials.SessionToken ?? ''
+				sessionToken: credentials.SessionToken
 			}
 		)(config)
 	})

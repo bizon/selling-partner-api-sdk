@@ -4,11 +4,15 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "tsc -b"
+    "build": "tsc -b",
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "@sp-api-sdk/auth": "^0.0.0",
     "aws4-axios": "^2.3.1",
     "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2"
   }
 }

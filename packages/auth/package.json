@@ -28,7 +28,8 @@
   },
   "scripts": {
     "build": "tsc -b",
-    "test": "NODE_ENV=test jest"
+    "test": "NODE_ENV=test jest",
+    "clean": "rimraf dist"
   },
   "bugs": {
     "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
@@ -41,6 +42,7 @@
   },
   "devDependencies": {
     "jest": "^27.0.1",
+    "rimraf": "^3.0.2",
     "ts-jest": "^27.0.0"
   }
 }

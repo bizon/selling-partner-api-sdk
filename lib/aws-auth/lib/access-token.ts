@@ -16,16 +16,16 @@ interface AccessTokenData {
 
 export class AccessToken {
 	public readonly parameters: AccessTokenParameters
-	private data?: AccessTokenData
+	private value?: AccessTokenData // TODO: rename to value
 	private expirationDate?: Date
 
 	constructor(parameters: AccessTokenParameters) {
 		this.parameters = parameters
 	}
 
-	async get(lazy = true) {
-		if (!this.data || (lazy && this.expirationDate && Date.now() >= this.expirationDate.getTime())) {
-			this.data = await got.post(
+	async get() {
+		if (!this.value || (this.expirationDate && Date.now() >= this.expirationDate.getTime())) {
+			this.value = await got.post(
 				'https://api.amazon.com/auth/o2/token',
 				{
 					json: {
@@ -37,13 +37,13 @@ export class AccessToken {
 				}
 			).json()
 
-			if (!this.data) {
-				throw new Error('Unknown Error')
+			if (!this.value) {
+				throw new Error('Unknown Error') // TODO: create custom error
 			}
 
-			this.expirationDate = addSeconds(new Date(), this.data.expires_in)
+			this.expirationDate = addSeconds(new Date(), this.value.expires_in)
 		}
 
-		return this.data.access_token
+		return this.value.access_token
 	}
 }

@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/sellers-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "SDK library for sellers API",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "main": "dist/client.js",
   "types": "",
   "license": "MIT",

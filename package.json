@@ -1,6 +1,6 @@
 {
   "name": "sp-api-sdk",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A modularized SDK library for Amazon Selling Partner API (fully typed in TypeScript)",
   "main": "index.ts",
   "repository": "git@github.com:bizon/selling-partner-api-sdk.git",

@@ -1,4 +1,7 @@
 import {STSClient, STSClientConfig, AssumeRoleCommand, Credentials} from '@aws-sdk/client-sts'
+import {SecurityTokenServiceError} from './error'
+
+export * from './error'
 
 interface Role {
 	arn: string;
@@ -25,11 +28,11 @@ export class SecurityTokenService {
 		const secretAccessKey = parameters.secretAccessKey ?? process.env.AWS_SECRET_ACCESS_KEY
 
 		if (!accessKeyId) {
-			throw new TypeError('accessKeyId is required')
+			throw new SecurityTokenServiceError('accessKeyId is required')
 		}
 
 		if (!secretAccessKey) {
-			throw new TypeError('secretAccessKey is required')
+			throw new SecurityTokenServiceError('secretAccessKey is required')
 		}
 
 		this.accessKeyId = accessKeyId
@@ -77,7 +80,7 @@ export class SecurityTokenService {
 		)
 
 		if (!credentials) {
-			throw new Error('AWS credentials are invalid') // TODO: make customized Error class
+			throw new SecurityTokenServiceError('AWS credentials are invalid')
 		}
 
 		return credentials

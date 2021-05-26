@@ -1,5 +1,8 @@
 import got from 'got'
 import {addSeconds} from 'date-fns'
+import {AccessTokenError} from './error'
+
+export * from './error'
 
 export interface AccessTokenParameters {
 	refreshToken: string;
@@ -27,11 +30,11 @@ export class AccessToken {
 		const clientSecret = parameters.clientSecret ?? process.env.AWS_CLIENT_SECRET
 
 		if (!clientId) {
-			throw new TypeError('clientId is required')
+			throw new AccessTokenError('clientId is required')
 		}
 
 		if (!clientSecret) {
-			throw new TypeError('clientSecret is required')
+			throw new AccessTokenError('clientSecret is required')
 		}
 
 		this.clientId = clientId
@@ -54,7 +57,7 @@ export class AccessToken {
 			).json()
 
 			if (!this.value) {
-				throw new Error('Unknown Error') // TODO: create custom error
+				throw new AccessTokenError('Unknown Error')
 			}
 
 			this.expirationDate = addSeconds(new Date(), this.value.expires_in)

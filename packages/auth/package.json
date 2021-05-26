@@ -37,5 +37,9 @@
     "@aws-sdk/client-sts": "^3.17.0",
     "date-fns": "^2.21.3",
     "got": "^11.8.2"
+  },
+  "devDependencies": {
+    "jest": "^27.0.1",
+    "ts-jest": "^27.0.0"
   }
 }

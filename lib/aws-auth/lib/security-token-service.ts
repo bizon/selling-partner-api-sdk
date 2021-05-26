@@ -20,15 +20,12 @@ export class SecurityTokenService {
 
 	/**
    * Get the STS credentials
-   *
-   * @param lazy If lazy is `true`, when the credentials are expired, fetch another ones
    */
-	async getCredentials(lazy = true) {
+	async getCredentials() {
 		if (
 			!this._credentials ||
-      (lazy && this._credentials && this._credentials.Expiration && Date.now() >= this._credentials.Expiration.getTime())
+      (this._credentials?.Expiration && Date.now() >= this._credentials.Expiration.getTime())
 		) {
-			console.log('--> fetch credentials', this._credentials)
 			this._credentials = await this.fetchCredentials()
 		}
 

@@ -1,0 +1,42 @@
+{
+  "name": "@bizon-sp-api-sdk/auth",
+  "version": "0.0.0",
+  "description": "Auth library for helping authentication with Selling Partner API",
+  "keywords": [
+    "bizon",
+    "selling parnter api",
+    "spa",
+    "amazon",
+    "auth"
+  ],
+  "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
+  "license": "MIT",
+  "main": "dist/api-auth.js",
+  "module": "dist/api-auth.module.js",
+  "directories": {
+    "lib": "dist",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bizon/selling-partner-api-sdk.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
+  },
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk#readme",
+  "dependencies": {
+    "@aws-sdk/client-sts": "^3.17.0",
+    "date-fns": "^2.21.3",
+    "got": "^11.8.2"
+  }
+}

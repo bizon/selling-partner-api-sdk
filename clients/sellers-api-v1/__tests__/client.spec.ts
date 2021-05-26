@@ -1,15 +1,12 @@
-import {AccessToken, SecurityTokenService} from '@sp-api-sdk/aws-auth'
-
-import {SellersApiClient} from '../../lib/client'
-import {SellersApiClientException} from '../../lib/errors/sellers-api-client-exception'
+import {SellersApiClient} from '../lib/client'
+import {SellersApiClientException} from '../lib/errors/sellers-api-client-exception'
+import SellingPartnerApiAuth from '@sp-api-sdk/auth'
 
 describe('/lib/client', () => {
-	const accessToken = new AccessToken({
+	const auth = new SellingPartnerApiAuth({
 		clientId: 'FAKE_CLIENT_ID',
 		clientSecret: 'CLIENT_SECRET',
-		refreshToken: 'FAKE_REFRES_TOKEN'
-	})
-	const sts = new SecurityTokenService({
+		refreshToken: 'FAKE_REFRES_TOKEN',
 		secretAccessKey: 'FAKE_SECRET_ACCESS_KEY',
 		accessKeyId: 'FAKE_ACCESS_KEY_ID',
 		region: 'FAKE_REGION',
@@ -21,9 +18,8 @@ describe('/lib/client', () => {
 
 	it('should create a Client instance', () => {
 		const client = new SellersApiClient({
-			accessToken,
-			region: 'eu-west-1',
-			sts
+			auth,
+			region: 'eu-west-1'
 		})
 
 		expect(client).toBeInstanceOf(SellersApiClient)
@@ -34,9 +30,8 @@ describe('/lib/client', () => {
 
 		try {
 			void new SellersApiClient({
-				accessToken,
-				region: 'INVALID_REGION',
-				sts
+				auth,
+				region: 'INVALID_REGION'
 			})
 		} catch (error: unknown) {
 			expect(error).toBeInstanceOf(SellersApiClientException)

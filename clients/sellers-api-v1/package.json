@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-sts": "^3.16.0",
+    "@sp-api-sdk/auth": "^0.0.0",
     "@sp-api-sdk/common": "^1.0.0",
     "axios": "^0.21.1"
   },

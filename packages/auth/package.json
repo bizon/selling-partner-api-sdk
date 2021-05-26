@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
   },
-  "homepage": "https://github.com/bizon/selling-partner-api-sdk/packages/auth#readme",
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/packages/auth",
   "dependencies": {
     "@aws-sdk/client-sts": "^3.17.0",
     "date-fns": "^2.21.3",

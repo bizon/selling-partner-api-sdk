@@ -6,9 +6,7 @@
   "repository": "git@github.com:bizon/selling-partner-api-sdk.git",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
+  "private": true,
   "workspaces": {
     "packages": [
       "packages/*",

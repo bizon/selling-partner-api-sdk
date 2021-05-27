@@ -18,6 +18,7 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna exec 'yarn build' --parallel",
     "clean": "lerna exec 'yarn clean' --parallel",
+    "clean.all": "lerna exec 'yarn clean' --parallel && lerna clean",
     "release": "lerna publish --no-private"
   },
   "devDependencies": {

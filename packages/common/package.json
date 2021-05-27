@@ -1,6 +1,6 @@
 {
   "name": "@sp-api-sdk/common",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -13,7 +13,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^0.0.9",
+    "@sp-api-sdk/auth": "^0.0.10",
     "aws4-axios": "^2.3.1",
     "axios": "^0.21.1"
   },

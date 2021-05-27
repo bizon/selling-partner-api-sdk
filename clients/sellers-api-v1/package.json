@@ -3,14 +3,15 @@
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "SDK library for sellers API",
   "version": "0.0.9",
-  "main": "dist/client.js",
-  "types": "",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "build": "tsc -b",
+    "build": "rollup -c",
     "clean": "rimraf dist",
     "test": "NODE_ENV=test jest"
   },
@@ -24,6 +25,8 @@
     "@types/jest": "^26.0.23",
     "jest": "^26.6.3",
     "rimraf": "^3.0.2",
+    "rollup": "^2.50.1",
+    "rollup-plugin-typescript2": "^0.30.0",
     "ts-jest": "^26.5.6"
   },
   "gitHead": "39fae04cdbfb8f96cdf607837f16534f2de5fe55"

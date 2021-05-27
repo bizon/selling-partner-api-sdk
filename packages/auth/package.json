@@ -15,6 +15,8 @@
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "license": "MIT",
   "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
   "directories": {
     "lib": "dist",
     "test": "__tests__"
@@ -27,7 +29,7 @@
     "url": "git+https://github.com/bizon/selling-partner-api-sdk.git"
   },
   "scripts": {
-    "build": "tsc -b",
+    "build": "yarn rollup -c",
     "test": "NODE_ENV=test jest",
     "clean": "rimraf dist"
   },
@@ -43,6 +45,8 @@
   "devDependencies": {
     "jest": "^27.0.1",
     "rimraf": "^3.0.2",
+    "rollup": "^2.50.1",
+    "rollup-plugin-typescript2": "^0.30.0",
     "ts-jest": "^27.0.0"
   },
   "gitHead": "39fae04cdbfb8f96cdf607837f16534f2de5fe55"

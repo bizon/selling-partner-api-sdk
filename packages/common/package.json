@@ -1,13 +1,15 @@
 {
   "name": "@sp-api-sdk/common",
   "version": "0.0.9",
-  "main": "dist/index.js",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc -b",
+    "build": "rollup -c",
     "clean": "rimraf dist"
   },
   "dependencies": {
@@ -16,7 +18,10 @@
     "axios": "^0.21.1"
   },
   "devDependencies": {
-    "rimraf": "^3.0.2"
+    "@rollup/plugin-json": "^4.1.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.50.1",
+    "rollup-plugin-typescript2": "^0.30.0"
   },
   "gitHead": "39fae04cdbfb8f96cdf607837f16534f2de5fe55"
 }

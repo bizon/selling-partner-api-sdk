@@ -8,6 +8,13 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "directories": {
+    "lib": "dist",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf dist"
@@ -22,5 +29,13 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.50.1",
     "rollup-plugin-typescript2": "^0.30.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bizon/selling-partner-api-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
+  },
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/packages/auth"
 }

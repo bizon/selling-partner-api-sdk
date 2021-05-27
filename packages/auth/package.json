@@ -24,19 +24,11 @@
   "files": [
     "dist"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bizon/selling-partner-api-sdk.git"
-  },
   "scripts": {
     "build": "yarn rollup -c",
     "test": "NODE_ENV=test jest",
     "clean": "rimraf dist"
   },
-  "bugs": {
-    "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
-  },
-  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/packages/auth",
   "dependencies": {
     "@aws-sdk/client-sts": "^3.17.0",
     "date-fns": "^2.21.3",
@@ -48,5 +40,13 @@
     "rollup": "^2.50.1",
     "rollup-plugin-typescript2": "^0.30.0",
     "ts-jest": "^27.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bizon/selling-partner-api-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
+  },
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/packages/auth"
 }

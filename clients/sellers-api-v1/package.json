@@ -10,6 +10,13 @@
   "publishConfig": {
     "access": "public"
   },
+  "directories": {
+    "lib": "dist",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf dist",
@@ -22,11 +29,20 @@
     "axios": "^0.21.1"
   },
   "devDependencies": {
+    "@rollup/plugin-json": "^4.1.0",
     "@types/jest": "^26.0.23",
     "jest": "^26.6.3",
     "rimraf": "^3.0.2",
     "rollup": "^2.50.1",
     "rollup-plugin-typescript2": "^0.30.0",
     "ts-jest": "^26.5.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bizon/selling-partner-api-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
+  },
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/sellers-api-v1"
 }

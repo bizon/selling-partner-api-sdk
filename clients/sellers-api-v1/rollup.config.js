@@ -1,4 +1,5 @@
 import typescript from 'rollup-plugin-typescript2'
+import json from '@rollup/plugin-json'
 
 /* eslint-disable-next-line import/no-anonymous-default-export */
 export default [
@@ -9,7 +10,8 @@ export default [
 			file: 'dist/index.es.js', format: 'es'
 		},
 		plugins: [
-			typescript()
+			typescript(),
+			json()
 		]
 	},
 
@@ -21,7 +23,8 @@ export default [
 			format: 'cjs'
 		},
 		plugins: [
-			typescript()
+			typescript(),
+			json()
 		]
 	}
 ]

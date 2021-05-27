@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {aws4Interceptor} from 'aws4-axios'
 
-import SellingPartnerApiAuth from '@sp-api-sdk/auth'
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 
 import pkg from '../../package.json'
 

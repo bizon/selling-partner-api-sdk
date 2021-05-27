@@ -12,7 +12,7 @@ Package for simplifying authentication with Selling Partner API
 With [Security Token Service](https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html) :
 
 ``` javascript
-import SellingPartnerApiAuth from '@sp-api-sdk/auth'
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 
 const auth = new SellingPartnerApiAuth({
   clientId: '',
@@ -33,7 +33,7 @@ const { AccessKeyId, SecretAccessKey, SessionToken } = await auth.getCredentials
 With an AWS user :
 
 ``` javascript
-import SellingPartnerApiAuth from '@sp-api-sdk/auth'
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 
 const auth = new SellingPartnerApiAuth({
   clientId: '',

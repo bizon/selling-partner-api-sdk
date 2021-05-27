@@ -1,6 +1,6 @@
 import {SellersApiClient} from '../lib/client'
 import {SellersApiClientException} from '../lib/errors/sellers-api-client-exception'
-import SellingPartnerApiAuth from '@sp-api-sdk/auth'
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 
 describe('/lib/client', () => {
 	const auth = new SellingPartnerApiAuth({

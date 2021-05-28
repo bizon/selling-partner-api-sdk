@@ -4,9 +4,7 @@
   "version": "0.0.14",
   "command": {
     "publish": {
-      "noPrivate": true
-    },
-    "version": {
+      "noPrivate": true,
       "conventionalCommits": true
     }
   }

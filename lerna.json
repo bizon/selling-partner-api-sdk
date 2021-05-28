@@ -6,7 +6,7 @@
     "publish": {
       "noPrivate": true,
       "conventionalCommits": true,
-      "changelogPreset": true
+      "changelogPreset": "angular"
     }
   }
 }

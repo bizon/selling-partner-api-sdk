@@ -1,2 +1,2 @@
-export * from './lib/client'
-export * from './lib/errors'
+export * from './src/client'
+export * from './src/errors'

@@ -6,8 +6,8 @@
     "run": {
       "npmClient": "yarn"
     },
-    "version": {
-      "npmClientArgs": "--conventional-commits"
+    "publish": {
+      "conventionalCommits": true
     }
   }
 }

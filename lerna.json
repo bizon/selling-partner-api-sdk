@@ -3,11 +3,10 @@
   "useWorkspaces": true,
   "version": "0.0.13",
   "command": {
-    "run": {
-      "npmClient": "yarn"
-    },
     "publish": {
-      "noPrivate": true,
+      "noPrivate": true
+    },
+    "version": {
       "conventionalCommits": true
     }
   }

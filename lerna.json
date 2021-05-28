@@ -5,6 +5,9 @@
   "command": {
     "run": {
       "npmClient": "yarn"
+    },
+    "version": {
+      "npmClientArgs": "--conventional-commits"
     }
   }
 }

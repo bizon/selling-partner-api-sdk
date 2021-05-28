@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/sellers-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "SDK library for sellers API",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -24,8 +24,8 @@
   },
   "dependencies": {
     "@aws-sdk/client-sts": "^3.16.0",
-    "@sp-api-sdk/auth": "^0.1.0",
-    "@sp-api-sdk/common": "^0.1.0",
+    "@sp-api-sdk/auth": "^0.2.0",
+    "@sp-api-sdk/common": "^0.2.0",
     "axios": "^0.21.1"
   },
   "devDependencies": {

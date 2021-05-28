@@ -21,7 +21,7 @@
     "clean.all": "lerna run clean --parallel && lerna clean",
     "prerelease": "yarn build",
     "release": "lerna publish",
-    "test": "lerna run test --parallel" 
+    "test": "lerna run test --parallel"
   },
   "devDependencies": {
     "@tsconfig/node14": "^1.0.0",

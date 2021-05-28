@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/bizon/selling-partner-api-sdk/compare/v0.2.0...v0.2.1) (2021-05-28)
+
+
+### Bug Fixes
+
+* useless comment ([6b2fd2f](https://github.com/bizon/selling-partner-api-sdk/commit/6b2fd2f195c37e29231f021062909bf77cb62501))
+
+
+
+
+
 # [0.2.0](https://github.com/bizon/selling-partner-api-sdk/compare/v0.1.0...v0.2.0) (2021-05-28)
 
 

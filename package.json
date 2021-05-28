@@ -20,7 +20,7 @@
     "clean": "lerna run clean --parallel",
     "clean.all": "lerna run clean --parallel && lerna clean",
     "prerelease": "yarn build",
-    "release": "lerna version && lerna publish",
+    "release": "lerna publish",
     "test": "lerna run test --parallel" 
   },
   "devDependencies": {

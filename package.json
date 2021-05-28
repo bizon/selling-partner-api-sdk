@@ -16,23 +16,39 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "lerna run build --parallel",
-    "clean": "lerna run clean --parallel",
-    "clean.all": "lerna run clean --parallel && lerna clean",
+    "build": "lerna run build",
+    "clean": "lerna run clean",
+    "clean.all": "yarn clean && lerna clean",
     "prerelease": "yarn build",
     "release": "lerna publish",
-    "test": "lerna run test --parallel"
+    "test": "lerna run test",
+    "generate-clients": "ts-node --project tsconfig.scripts.json scripts/generate-clients.ts"
   },
   "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.3.3",
     "@tsconfig/node14": "^1.0.0",
+    "@types/jsonfile": "^6.0.0",
+    "@types/mustache": "^4.1.1",
+    "@types/rimraf": "^3.0.0",
+    "camelcase": "^6.2.0",
+    "chalk": "^4.1.1",
+    "jsonfile": "^6.1.0",
     "lerna": "^4.0.0",
+    "mustache": "^4.2.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.0.0",
     "typescript": "^4.2.4",
+    "winston": "^3.3.3",
     "xo": "^0.39.1"
   },
   "xo": {
     "semicolon": false,
     "ignore": [
       "**/dist/*"
-    ]
+    ],
+    "rules": {
+      "@typescript-eslint/no-unsafe-argument": "off",
+      "unicorn/no-array-reduce": "off"
+    }
   }
 }

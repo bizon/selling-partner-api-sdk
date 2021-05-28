@@ -3,3 +3,5 @@ packages/test
 packages/**/dist
 clients/**/dist
 **/*.log
+selling-partner-api-models/
+clients-test

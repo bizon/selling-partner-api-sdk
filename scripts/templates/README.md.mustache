@@ -1,0 +1,33 @@
+# `{{packageName}}`
+
+{{description}}
+
+## Installing
+
+* `yarn add @sp-api-sdk/{{packageName}}`
+* `npm install @sp-api-sdk/{{packageName}}`
+
+## Getting Started
+
+```javascript
+const auth = new SellingPartnerApiAuth({
+  clientId: '',
+  clientSecret: '',
+  refreshToken: '',
+  secretAccessKey: '',
+  accessKeyId: '',
+  region: '',
+  role: {
+    arn: '',
+  }
+})
+
+const client = new {{className}}({
+  auth,
+  region: 'eu-west-1'
+})
+```
+
+## API documentation
+
+See [here]({{&docUrl}})

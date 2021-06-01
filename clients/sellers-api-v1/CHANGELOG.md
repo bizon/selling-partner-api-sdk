@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/sellers-api-v1@0.0.16...@sp-api-sdk/sellers-api-v1@0.3.0) (2021-06-01)
+
+
+### Features
+
+* Add all selling-partner-api clients ([75315bc](https://github.com/bizon/selling-partner-api-sdk/commit/75315bc7681537a7803bf658e69b6bf7d4b6bbe2))
+
+
+
+## 0.2.2 (2021-05-28)
+
+
+
+## 0.2.1 (2021-05-28)
+
+
+
+# 0.2.0 (2021-05-28)
+
+
+
+# 0.1.0 (2021-05-28)
+
+
+
+
+
 ## [0.2.2](https://github.com/bizon/selling-partner-api-sdk/compare/v0.2.1...v0.2.2) (2021-05-28)
 
 **Note:** Version bump only for package @sp-api-sdk/sellers-api-v1

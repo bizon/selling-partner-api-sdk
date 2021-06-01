@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/vendor-direct-fulfillment-shipping-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor&#39;s shipping data.",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",

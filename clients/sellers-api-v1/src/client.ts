@@ -2,7 +2,7 @@ import {Configuration, SellersApi} from './api-model'
 
 import {endpoints, createAxiosInstance, ClientConfiguration} from '@sp-api-sdk/common'
 
-import {SellersApiClientException} from './errors/sellers-api-client-exception'
+import {SellersApiError} from './error'
 
 export class SellersApiClient extends SellersApi {
 	constructor(parameters: ClientConfiguration) {
@@ -12,7 +12,7 @@ export class SellersApiClient extends SellersApi {
 		const endpoint: string | undefined = endpoints.sandbox[parameters.region]
 
 		if (!endpoint) {
-			throw new SellersApiClientException(`Unknown region : ${parameters.region}`)
+			throw new SellersApiError(`Unknown region : ${parameters.region}`)
 		}
 
 		super(configuration, endpoint, axiosInstance)

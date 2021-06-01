@@ -1,0 +1,9 @@
+.gitignore
+.npmignore
+api.ts
+aplus-content-api
+base.ts
+common.ts
+configuration.ts
+git_push.sh
+index.ts

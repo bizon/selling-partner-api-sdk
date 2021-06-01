@@ -1,0 +1,46 @@
+{
+  "name": "@sp-api-sdk/notifications-api-v1",
+  "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
+  "description": "The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner&#39;s business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sts": "^3.16.0",
+    "@sp-api-sdk/auth": "^0.2.2",
+    "@sp-api-sdk/common": "^0.2.2",
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-json": "^4.1.0",
+    "@types/jest": "^26.0.23",
+    "jest": "^26.6.3",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.50.1",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-jest": "^26.5.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bizon/selling-partner-api-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
+  },
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/notifications-api-v1"
+}

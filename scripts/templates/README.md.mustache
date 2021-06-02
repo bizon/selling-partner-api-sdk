@@ -4,12 +4,22 @@
 
 ## Installing
 
-* `yarn add @sp-api-sdk/{{packageName}}`
-* `npm install @sp-api-sdk/{{packageName}}`
+```sh
+yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+```
+
+```sh
+npm install @sp-api-sdk/aplus-content-api-2020-11-01
+```
 
 ## Getting Started
 
 ```javascript
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+{{=<% %>=}}
+import {<%className%>} from '@sp-api-sdk/<%packageName%>'
+<%={{ }}=%>
+
 const auth = new SellingPartnerApiAuth({
   clientId: '',
   clientSecret: '',

@@ -4,12 +4,20 @@ The Selling Partner API for Tokens provides a secure way to access a customers&#
 
 ## Installing
 
-* `yarn add @sp-api-sdk/tokens-api-2021-03-01`
-* `npm install @sp-api-sdk/tokens-api-2021-03-01`
+```sh
+yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+```
+
+```sh
+npm install @sp-api-sdk/aplus-content-api-2020-11-01
+```
 
 ## Getting Started
 
 ```javascript
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+import {TokensApiClient} from '@sp-api-sdk/tokens-api-2021-03-01'
+
 const auth = new SellingPartnerApiAuth({
   clientId: '',
   clientSecret: '',

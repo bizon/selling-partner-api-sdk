@@ -4,12 +4,20 @@ The Selling Partner API for FBA Inventory lets you programmatically retrieve inf
 
 ## Installing
 
-* `yarn add @sp-api-sdk/fba-inventory-api-v1`
-* `npm install @sp-api-sdk/fba-inventory-api-v1`
+```sh
+yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+```
+
+```sh
+npm install @sp-api-sdk/aplus-content-api-2020-11-01
+```
 
 ## Getting Started
 
 ```javascript
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+import {FbaInventoryApiClient} from '@sp-api-sdk/fba-inventory-api-v1'
+
 const auth = new SellingPartnerApiAuth({
   clientId: '',
   clientSecret: '',

@@ -4,12 +4,20 @@ With the Messaging API you can build applications that send messages to buyers. 
 
 ## Installing
 
-* `yarn add @sp-api-sdk/messaging-api-v1`
-* `npm install @sp-api-sdk/messaging-api-v1`
+```sh
+yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+```
+
+```sh
+npm install @sp-api-sdk/aplus-content-api-2020-11-01
+```
 
 ## Getting Started
 
 ```javascript
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+import {MessagingApiClient} from '@sp-api-sdk/messaging-api-v1'
+
 const auth = new SellingPartnerApiAuth({
   clientId: '',
   clientSecret: '',

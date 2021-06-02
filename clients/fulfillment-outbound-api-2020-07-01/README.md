@@ -4,12 +4,20 @@ The Selling Partner API for Fulfillment Outbound lets you create applications th
 
 ## Installing
 
-* `yarn add @sp-api-sdk/fulfillment-outbound-api-2020-07-01`
-* `npm install @sp-api-sdk/fulfillment-outbound-api-2020-07-01`
+```sh
+yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+```
+
+```sh
+npm install @sp-api-sdk/aplus-content-api-2020-11-01
+```
 
 ## Getting Started
 
 ```javascript
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+import {FulfillmentOutboundApiClient} from '@sp-api-sdk/fulfillment-outbound-api-2020-07-01'
+
 const auth = new SellingPartnerApiAuth({
   clientId: '',
   clientSecret: '',

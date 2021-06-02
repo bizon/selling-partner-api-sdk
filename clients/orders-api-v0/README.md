@@ -4,12 +4,20 @@ The Selling Partner API for Orders helps you programmatically retrieve order inf
 
 ## Installing
 
-* `yarn add @sp-api-sdk/orders-api-v0`
-* `npm install @sp-api-sdk/orders-api-v0`
+```sh
+yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+```
+
+```sh
+npm install @sp-api-sdk/aplus-content-api-2020-11-01
+```
 
 ## Getting Started
 
 ```javascript
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+import {OrdersApiClient} from '@sp-api-sdk/orders-api-v0'
+
 const auth = new SellingPartnerApiAuth({
   clientId: '',
   clientSecret: '',

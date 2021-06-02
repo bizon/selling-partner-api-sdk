@@ -4,12 +4,20 @@ The Selling Partner API for Reports lets you retrieve and manage a variety of re
 
 ## Installing
 
-* `yarn add @sp-api-sdk/reports-api-2020-09-04`
-* `npm install @sp-api-sdk/reports-api-2020-09-04`
+```sh
+yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+```
+
+```sh
+npm install @sp-api-sdk/aplus-content-api-2020-11-01
+```
 
 ## Getting Started
 
 ```javascript
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+import {ReportsApiClient} from '@sp-api-sdk/reports-api-2020-09-04'
+
 const auth = new SellingPartnerApiAuth({
   clientId: '',
   clientSecret: '',

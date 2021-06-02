@@ -4,12 +4,20 @@ With the A+ Content API, you can build applications that help selling partners a
 
 ## Installing
 
-* `yarn add @sp-api-sdk/aplus-content-api-2020-11-01`
-* `npm install @sp-api-sdk/aplus-content-api-2020-11-01`
+```sh
+yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+```
+
+```sh
+npm install @sp-api-sdk/aplus-content-api-2020-11-01
+```
 
 ## Getting Started
 
 ```javascript
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+import {AplusContentApiClient} from '@sp-api-sdk/aplus-content-api-2020-11-01'
+
 const auth = new SellingPartnerApiAuth({
   clientId: '',
   clientSecret: '',

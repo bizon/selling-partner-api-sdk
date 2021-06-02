@@ -4,12 +4,20 @@ The Selling Partner API for Direct Fulfillment Transaction Status provides progr
 
 ## Installing
 
-* `yarn add @sp-api-sdk/vendor-direct-fulfillment-transactions-api-v1`
-* `npm install @sp-api-sdk/vendor-direct-fulfillment-transactions-api-v1`
+```sh
+yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+```
+
+```sh
+npm install @sp-api-sdk/aplus-content-api-2020-11-01
+```
 
 ## Getting Started
 
 ```javascript
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+import {VendorDirectFulfillmentTransactionsApiClient} from '@sp-api-sdk/vendor-direct-fulfillment-transactions-api-v1'
+
 const auth = new SellingPartnerApiAuth({
   clientId: '',
   clientSecret: '',

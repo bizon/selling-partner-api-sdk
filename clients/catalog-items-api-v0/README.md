@@ -4,12 +4,20 @@ The Selling Partner API for Catalog Items helps you programmatically retrieve it
 
 ## Installing
 
-* `yarn add @sp-api-sdk/catalog-items-api-v0`
-* `npm install @sp-api-sdk/catalog-items-api-v0`
+```sh
+yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+```
+
+```sh
+npm install @sp-api-sdk/aplus-content-api-2020-11-01
+```
 
 ## Getting Started
 
 ```javascript
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+import {CatalogItemsApiClient} from '@sp-api-sdk/catalog-items-api-v0'
+
 const auth = new SellingPartnerApiAuth({
   clientId: '',
   clientSecret: '',

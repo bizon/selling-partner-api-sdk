@@ -4,12 +4,20 @@ The Selling Partner API for Retail Procurement Orders provides programmatic acce
 
 ## Installing
 
-* `yarn add @sp-api-sdk/vendor-orders-api-v1`
-* `npm install @sp-api-sdk/vendor-orders-api-v1`
+```sh
+yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+```
+
+```sh
+npm install @sp-api-sdk/aplus-content-api-2020-11-01
+```
 
 ## Getting Started
 
 ```javascript
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+import {VendorOrdersApiClient} from '@sp-api-sdk/vendor-orders-api-v1'
+
 const auth = new SellingPartnerApiAuth({
   clientId: '',
   clientSecret: '',

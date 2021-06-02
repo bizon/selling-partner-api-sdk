@@ -4,12 +4,20 @@ The Selling Partner API for Catalog Items provides programmatic access to inform
 
 ## Installing
 
-* `yarn add @sp-api-sdk/catalog-items-api-2020-12-01`
-* `npm install @sp-api-sdk/catalog-items-api-2020-12-01`
+```sh
+yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+```
+
+```sh
+npm install @sp-api-sdk/aplus-content-api-2020-11-01
+```
 
 ## Getting Started
 
 ```javascript
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+import {CatalogItemsApiClient} from '@sp-api-sdk/catalog-items-api-2020-12-01'
+
 const auth = new SellingPartnerApiAuth({
   clientId: '',
   clientSecret: '',

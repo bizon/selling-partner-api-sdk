@@ -4,12 +4,20 @@ The Selling Partner API for Merchant Fulfillment helps you build applications th
 
 ## Installing
 
-* `yarn add @sp-api-sdk/merchant-fulfillment-api-v0`
-* `npm install @sp-api-sdk/merchant-fulfillment-api-v0`
+```sh
+yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+```
+
+```sh
+npm install @sp-api-sdk/aplus-content-api-2020-11-01
+```
 
 ## Getting Started
 
 ```javascript
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+import {MerchantFulfillmentApiClient} from '@sp-api-sdk/merchant-fulfillment-api-v0'
+
 const auth = new SellingPartnerApiAuth({
   clientId: '',
   clientSecret: '',

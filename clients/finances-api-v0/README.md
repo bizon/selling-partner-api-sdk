@@ -4,12 +4,20 @@ The Selling Partner API for Finances helps you obtain financial information rele
 
 ## Installing
 
-* `yarn add @sp-api-sdk/finances-api-v0`
-* `npm install @sp-api-sdk/finances-api-v0`
+```sh
+yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+```
+
+```sh
+npm install @sp-api-sdk/aplus-content-api-2020-11-01
+```
 
 ## Getting Started
 
 ```javascript
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+import {FinancesApiClient} from '@sp-api-sdk/finances-api-v0'
+
 const auth = new SellingPartnerApiAuth({
   clientId: '',
   clientSecret: '',

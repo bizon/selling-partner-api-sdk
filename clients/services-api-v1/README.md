@@ -4,12 +4,20 @@ With the Services API, you can build applications that help service providers ge
 
 ## Installing
 
-* `yarn add @sp-api-sdk/services-api-v1`
-* `npm install @sp-api-sdk/services-api-v1`
+```sh
+yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+```
+
+```sh
+npm install @sp-api-sdk/aplus-content-api-2020-11-01
+```
 
 ## Getting Started
 
 ```javascript
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+import {ServicesApiClient} from '@sp-api-sdk/services-api-v1'
+
 const auth = new SellingPartnerApiAuth({
   clientId: '',
   clientSecret: '',

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/sellers-api-v1@0.3.0...@sp-api-sdk/sellers-api-v1@0.4.0) (2021-06-02)
+
+
+### Features
+
+* Able to choose sandbox or production endpoints when using clients ([00cc611](https://github.com/bizon/selling-partner-api-sdk/commit/00cc611bcaa6153606c8d918ad6946947d6a50de))
+
+
+
+
+
 # [0.3.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/sellers-api-v1@0.0.16...@sp-api-sdk/sellers-api-v1@0.3.0) (2021-06-01)
 
 

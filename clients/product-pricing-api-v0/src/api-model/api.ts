@@ -1363,6 +1363,167 @@ export const ProductPricingApiFactory = function (configuration?: Configuration,
 };
 
 /**
+ * Request parameters for getCompetitivePricing operation in ProductPricingApi.
+ * @export
+ * @interface ProductPricingApiGetCompetitivePricingRequest
+ */
+export interface ProductPricingApiGetCompetitivePricingRequest {
+    /**
+     * A marketplace identifier. Specifies the marketplace for which prices are returned.
+     * @type {string}
+     * @memberof ProductPricingApiGetCompetitivePricing
+     */
+    readonly marketplaceId: string
+
+    /**
+     * Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku.
+     * @type {'Asin' | 'Sku'}
+     * @memberof ProductPricingApiGetCompetitivePricing
+     */
+    readonly itemType: 'Asin' | 'Sku'
+
+    /**
+     * A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace.
+     * @type {Array<string>}
+     * @memberof ProductPricingApiGetCompetitivePricing
+     */
+    readonly asins?: Array<string>
+
+    /**
+     * A list of up to twenty seller SKU values used to identify items in the given marketplace.
+     * @type {Array<string>}
+     * @memberof ProductPricingApiGetCompetitivePricing
+     */
+    readonly skus?: Array<string>
+
+    /**
+     * Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer.
+     * @type {'Consumer' | 'Business'}
+     * @memberof ProductPricingApiGetCompetitivePricing
+     */
+    readonly customerType?: 'Consumer' | 'Business'
+}
+
+/**
+ * Request parameters for getItemOffers operation in ProductPricingApi.
+ * @export
+ * @interface ProductPricingApiGetItemOffersRequest
+ */
+export interface ProductPricingApiGetItemOffersRequest {
+    /**
+     * A marketplace identifier. Specifies the marketplace for which prices are returned.
+     * @type {string}
+     * @memberof ProductPricingApiGetItemOffers
+     */
+    readonly marketplaceId: string
+
+    /**
+     * Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
+     * @type {'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'}
+     * @memberof ProductPricingApiGetItemOffers
+     */
+    readonly itemCondition: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'
+
+    /**
+     * The Amazon Standard Identification Number (ASIN) of the item.
+     * @type {string}
+     * @memberof ProductPricingApiGetItemOffers
+     */
+    readonly asin: string
+
+    /**
+     * Indicates whether to request Consumer or Business offers. Default is Consumer.
+     * @type {'Consumer' | 'Business'}
+     * @memberof ProductPricingApiGetItemOffers
+     */
+    readonly customerType?: 'Consumer' | 'Business'
+}
+
+/**
+ * Request parameters for getListingOffers operation in ProductPricingApi.
+ * @export
+ * @interface ProductPricingApiGetListingOffersRequest
+ */
+export interface ProductPricingApiGetListingOffersRequest {
+    /**
+     * A marketplace identifier. Specifies the marketplace for which prices are returned.
+     * @type {string}
+     * @memberof ProductPricingApiGetListingOffers
+     */
+    readonly marketplaceId: string
+
+    /**
+     * Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
+     * @type {'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'}
+     * @memberof ProductPricingApiGetListingOffers
+     */
+    readonly itemCondition: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'
+
+    /**
+     * Identifies an item in the given marketplace. SellerSKU is qualified by the seller\&#39;s SellerId, which is included with every operation that you submit.
+     * @type {string}
+     * @memberof ProductPricingApiGetListingOffers
+     */
+    readonly sellerSKU: string
+
+    /**
+     * Indicates whether to request Consumer or Business offers. Default is Consumer.
+     * @type {'Consumer' | 'Business'}
+     * @memberof ProductPricingApiGetListingOffers
+     */
+    readonly customerType?: 'Consumer' | 'Business'
+}
+
+/**
+ * Request parameters for getPricing operation in ProductPricingApi.
+ * @export
+ * @interface ProductPricingApiGetPricingRequest
+ */
+export interface ProductPricingApiGetPricingRequest {
+    /**
+     * A marketplace identifier. Specifies the marketplace for which prices are returned.
+     * @type {string}
+     * @memberof ProductPricingApiGetPricing
+     */
+    readonly marketplaceId: string
+
+    /**
+     * Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter.
+     * @type {'Asin' | 'Sku'}
+     * @memberof ProductPricingApiGetPricing
+     */
+    readonly itemType: 'Asin' | 'Sku'
+
+    /**
+     * A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace.
+     * @type {Array<string>}
+     * @memberof ProductPricingApiGetPricing
+     */
+    readonly asins?: Array<string>
+
+    /**
+     * A list of up to twenty seller SKU values used to identify items in the given marketplace.
+     * @type {Array<string>}
+     * @memberof ProductPricingApiGetPricing
+     */
+    readonly skus?: Array<string>
+
+    /**
+     * Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
+     * @type {'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'}
+     * @memberof ProductPricingApiGetPricing
+     */
+    readonly itemCondition?: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'
+
+    /**
+     * Indicates whether to request pricing information for the seller\&#39;s B2C or B2B offers. Default is B2C.
+     * @type {'B2C' | 'B2B'}
+     * @memberof ProductPricingApiGetPricing
+     */
+    readonly offerType?: 'B2C' | 'B2B'
+}
+
+/**
  * ProductPricingApi - object-oriented interface
  * @export
  * @class ProductPricingApi
@@ -1371,61 +1532,46 @@ export const ProductPricingApiFactory = function (configuration?: Configuration,
 export class ProductPricingApi extends BaseAPI {
     /**
      * Returns competitive pricing information for a seller\'s offer listings based on seller SKU or ASIN.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for which prices are returned.
-     * @param {'Asin' | 'Sku'} itemType Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku.
-     * @param {Array<string>} [asins] A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace.
-     * @param {Array<string>} [skus] A list of up to twenty seller SKU values used to identify items in the given marketplace.
-     * @param {'Consumer' | 'Business'} [customerType] Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer.
+     * @param {ProductPricingApiGetCompetitivePricingRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProductPricingApi
      */
-    public getCompetitivePricing(marketplaceId: string, itemType: 'Asin' | 'Sku', asins?: Array<string>, skus?: Array<string>, customerType?: 'Consumer' | 'Business', options?: any) {
-        return ProductPricingApiFp(this.configuration).getCompetitivePricing(marketplaceId, itemType, asins, skus, customerType, options).then((request) => request(this.axios, this.basePath));
+    public getCompetitivePricing(requestParameters: ProductPricingApiGetCompetitivePricingRequest, options?: any) {
+        return ProductPricingApiFp(this.configuration).getCompetitivePricing(requestParameters.marketplaceId, requestParameters.itemType, requestParameters.asins, requestParameters.skus, requestParameters.customerType, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns the lowest priced offers for a single item based on ASIN.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for which prices are returned.
-     * @param {'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'} itemCondition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
-     * @param {string} asin The Amazon Standard Identification Number (ASIN) of the item.
-     * @param {'Consumer' | 'Business'} [customerType] Indicates whether to request Consumer or Business offers. Default is Consumer.
+     * @param {ProductPricingApiGetItemOffersRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProductPricingApi
      */
-    public getItemOffers(marketplaceId: string, itemCondition: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', asin: string, customerType?: 'Consumer' | 'Business', options?: any) {
-        return ProductPricingApiFp(this.configuration).getItemOffers(marketplaceId, itemCondition, asin, customerType, options).then((request) => request(this.axios, this.basePath));
+    public getItemOffers(requestParameters: ProductPricingApiGetItemOffersRequest, options?: any) {
+        return ProductPricingApiFp(this.configuration).getItemOffers(requestParameters.marketplaceId, requestParameters.itemCondition, requestParameters.asin, requestParameters.customerType, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns the lowest priced offers for a single SKU listing.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for which prices are returned.
-     * @param {'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'} itemCondition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
-     * @param {string} sellerSKU Identifies an item in the given marketplace. SellerSKU is qualified by the seller\&#39;s SellerId, which is included with every operation that you submit.
-     * @param {'Consumer' | 'Business'} [customerType] Indicates whether to request Consumer or Business offers. Default is Consumer.
+     * @param {ProductPricingApiGetListingOffersRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProductPricingApi
      */
-    public getListingOffers(marketplaceId: string, itemCondition: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', sellerSKU: string, customerType?: 'Consumer' | 'Business', options?: any) {
-        return ProductPricingApiFp(this.configuration).getListingOffers(marketplaceId, itemCondition, sellerSKU, customerType, options).then((request) => request(this.axios, this.basePath));
+    public getListingOffers(requestParameters: ProductPricingApiGetListingOffersRequest, options?: any) {
+        return ProductPricingApiFp(this.configuration).getListingOffers(requestParameters.marketplaceId, requestParameters.itemCondition, requestParameters.sellerSKU, requestParameters.customerType, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns pricing information for a seller\'s offer listings based on seller SKU or ASIN.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for which prices are returned.
-     * @param {'Asin' | 'Sku'} itemType Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter.
-     * @param {Array<string>} [asins] A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace.
-     * @param {Array<string>} [skus] A list of up to twenty seller SKU values used to identify items in the given marketplace.
-     * @param {'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'} [itemCondition] Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
-     * @param {'B2C' | 'B2B'} [offerType] Indicates whether to request pricing information for the seller\&#39;s B2C or B2B offers. Default is B2C.
+     * @param {ProductPricingApiGetPricingRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProductPricingApi
      */
-    public getPricing(marketplaceId: string, itemType: 'Asin' | 'Sku', asins?: Array<string>, skus?: Array<string>, itemCondition?: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', offerType?: 'B2C' | 'B2B', options?: any) {
-        return ProductPricingApiFp(this.configuration).getPricing(marketplaceId, itemType, asins, skus, itemCondition, offerType, options).then((request) => request(this.axios, this.basePath));
+    public getPricing(requestParameters: ProductPricingApiGetPricingRequest, options?: any) {
+        return ProductPricingApiFp(this.configuration).getPricing(requestParameters.marketplaceId, requestParameters.itemType, requestParameters.asins, requestParameters.skus, requestParameters.itemCondition, requestParameters.offerType, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

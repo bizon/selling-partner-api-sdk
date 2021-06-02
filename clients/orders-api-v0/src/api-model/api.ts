@@ -1564,6 +1564,216 @@ export const OrdersV0ApiFactory = function (configuration?: Configuration, baseP
 };
 
 /**
+ * Request parameters for getOrder operation in OrdersV0Api.
+ * @export
+ * @interface OrdersV0ApiGetOrderRequest
+ */
+export interface OrdersV0ApiGetOrderRequest {
+    /**
+     * An Amazon-defined order identifier, in 3-7-7 format.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrder
+     */
+    readonly orderId: string
+}
+
+/**
+ * Request parameters for getOrderAddress operation in OrdersV0Api.
+ * @export
+ * @interface OrdersV0ApiGetOrderAddressRequest
+ */
+export interface OrdersV0ApiGetOrderAddressRequest {
+    /**
+     * An orderId is an Amazon-defined order identifier, in 3-7-7 format.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrderAddress
+     */
+    readonly orderId: string
+}
+
+/**
+ * Request parameters for getOrderBuyerInfo operation in OrdersV0Api.
+ * @export
+ * @interface OrdersV0ApiGetOrderBuyerInfoRequest
+ */
+export interface OrdersV0ApiGetOrderBuyerInfoRequest {
+    /**
+     * An orderId is an Amazon-defined order identifier, in 3-7-7 format.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrderBuyerInfo
+     */
+    readonly orderId: string
+}
+
+/**
+ * Request parameters for getOrderItems operation in OrdersV0Api.
+ * @export
+ * @interface OrdersV0ApiGetOrderItemsRequest
+ */
+export interface OrdersV0ApiGetOrderItemsRequest {
+    /**
+     * An Amazon-defined order identifier, in 3-7-7 format.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrderItems
+     */
+    readonly orderId: string
+
+    /**
+     * A string token returned in the response of your previous request.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrderItems
+     */
+    readonly nextToken?: string
+}
+
+/**
+ * Request parameters for getOrderItemsBuyerInfo operation in OrdersV0Api.
+ * @export
+ * @interface OrdersV0ApiGetOrderItemsBuyerInfoRequest
+ */
+export interface OrdersV0ApiGetOrderItemsBuyerInfoRequest {
+    /**
+     * An Amazon-defined order identifier, in 3-7-7 format.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrderItemsBuyerInfo
+     */
+    readonly orderId: string
+
+    /**
+     * A string token returned in the response of your previous request.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrderItemsBuyerInfo
+     */
+    readonly nextToken?: string
+}
+
+/**
+ * Request parameters for getOrders operation in OrdersV0Api.
+ * @export
+ * @interface OrdersV0ApiGetOrdersRequest
+ */
+export interface OrdersV0ApiGetOrdersRequest {
+    /**
+     * A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.
+     * @type {Array<string>}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly marketplaceIds: Array<string>
+
+    /**
+     * A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly createdAfter?: string
+
+    /**
+     * A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly createdBefore?: string
+
+    /**
+     * A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly lastUpdatedAfter?: string
+
+    /**
+     * A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly lastUpdatedBefore?: string
+
+    /**
+     * A list of OrderStatus values used to filter the results. Possible values: PendingAvailability (This status is available for pre-orders only. The order has been placed, payment has not been authorized, and the release date of the item is in the future.); Pending (The order has been placed but payment has not been authorized); Unshipped (Payment has been authorized and the order is ready for shipment, but no items in the order have been shipped); PartiallyShipped (One or more, but not all, items in the order have been shipped); Shipped (All items in the order have been shipped); InvoiceUnconfirmed (All items in the order have been shipped. The seller has not yet given confirmation to Amazon that the invoice has been shipped to the buyer.); Canceled (The order has been canceled); and Unfulfillable (The order cannot be fulfilled. This state applies only to Multi-Channel Fulfillment orders.).
+     * @type {Array<string>}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly orderStatuses?: Array<string>
+
+    /**
+     * A list that indicates how an order was fulfilled. Filters the results by fulfillment channel. Possible values: FBA (Fulfillment by Amazon); SellerFulfilled (Fulfilled by the seller).
+     * @type {Array<string>}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly fulfillmentChannels?: Array<string>
+
+    /**
+     * A list of payment method values. Used to select orders paid using the specified payment methods. Possible values: COD (Cash on delivery); CVS (Convenience store payment); Other (Any payment method other than COD or CVS).
+     * @type {Array<string>}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly paymentMethods?: Array<string>
+
+    /**
+     * The email address of a buyer. Used to select orders that contain the specified email address.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly buyerEmail?: string
+
+    /**
+     * An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If SellerOrderId is specified, then FulfillmentChannels, OrderStatuses, PaymentMethod, LastUpdatedAfter, LastUpdatedBefore, and BuyerEmail cannot be specified.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly sellerOrderId?: string
+
+    /**
+     * A number that indicates the maximum number of orders that can be returned per page. Value must be 1 - 100. Default 100.
+     * @type {number}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly maxResultsPerPage?: number
+
+    /**
+     * A list of EasyShipShipmentStatus values. Used to select Easy Ship orders with statuses that match the specified  values. If EasyShipShipmentStatus is specified, only Amazon Easy Ship orders are returned.Possible values: PendingPickUp (Amazon has not yet picked up the package from the seller). LabelCanceled (The seller canceled the pickup). PickedUp (Amazon has picked up the package from the seller). AtOriginFC (The packaged is at the origin fulfillment center). AtDestinationFC (The package is at the destination fulfillment center). OutForDelivery (The package is out for delivery). Damaged (The package was damaged by the carrier). Delivered (The package has been delivered to the buyer). RejectedByBuyer (The package has been rejected by the buyer). Undeliverable (The package cannot be delivered). ReturnedToSeller (The package was not delivered to the buyer and was returned to the seller). ReturningToSeller (The package was not delivered to the buyer and is being returned to the seller).
+     * @type {Array<string>}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly easyShipShipmentStatuses?: Array<string>
+
+    /**
+     * A string token returned in the response of your previous request.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly nextToken?: string
+
+    /**
+     * A list of AmazonOrderId values. An AmazonOrderId is an Amazon-defined order identifier, in 3-7-7 format.
+     * @type {Array<string>}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly amazonOrderIds?: Array<string>
+
+    /**
+     * Denotes the recommended sourceId where the order should be fulfilled from.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly actualFulfillmentSupplySourceId?: string
+
+    /**
+     * When true, this order is marked to be picked up from a store rather than delivered.
+     * @type {boolean}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly isISPU?: boolean
+
+    /**
+     * The store chain store identifier. Linked to a specific store in a store chain.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly storeChainStoreId?: string
+}
+
+/**
  * OrdersV0Api - object-oriented interface
  * @export
  * @class OrdersV0Api
@@ -1572,86 +1782,68 @@ export const OrdersV0ApiFactory = function (configuration?: Configuration, baseP
 export class OrdersV0Api extends BaseAPI {
     /**
      * Returns the order indicated by the specified order ID.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
+     * @param {OrdersV0ApiGetOrderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrder(orderId: string, options?: any) {
-        return OrdersV0ApiFp(this.configuration).getOrder(orderId, options).then((request) => request(this.axios, this.basePath));
+    public getOrder(requestParameters: OrdersV0ApiGetOrderRequest, options?: any) {
+        return OrdersV0ApiFp(this.configuration).getOrder(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns the shipping address for the order indicated by the specified order ID.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} orderId An orderId is an Amazon-defined order identifier, in 3-7-7 format.
+     * @param {OrdersV0ApiGetOrderAddressRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrderAddress(orderId: string, options?: any) {
-        return OrdersV0ApiFp(this.configuration).getOrderAddress(orderId, options).then((request) => request(this.axios, this.basePath));
+    public getOrderAddress(requestParameters: OrdersV0ApiGetOrderAddressRequest, options?: any) {
+        return OrdersV0ApiFp(this.configuration).getOrderAddress(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns buyer information for the order indicated by the specified order ID.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} orderId An orderId is an Amazon-defined order identifier, in 3-7-7 format.
+     * @param {OrdersV0ApiGetOrderBuyerInfoRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrderBuyerInfo(orderId: string, options?: any) {
-        return OrdersV0ApiFp(this.configuration).getOrderBuyerInfo(orderId, options).then((request) => request(this.axios, this.basePath));
+    public getOrderBuyerInfo(requestParameters: OrdersV0ApiGetOrderBuyerInfoRequest, options?: any) {
+        return OrdersV0ApiFp(this.configuration).getOrderBuyerInfo(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns detailed order item information for the order indicated by the specified order ID. If NextToken is provided, it\'s used to retrieve the next page of order items.  Note: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
-     * @param {string} [nextToken] A string token returned in the response of your previous request.
+     * @param {OrdersV0ApiGetOrderItemsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrderItems(orderId: string, nextToken?: string, options?: any) {
-        return OrdersV0ApiFp(this.configuration).getOrderItems(orderId, nextToken, options).then((request) => request(this.axios, this.basePath));
+    public getOrderItems(requestParameters: OrdersV0ApiGetOrderItemsRequest, options?: any) {
+        return OrdersV0ApiFp(this.configuration).getOrderItems(requestParameters.orderId, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns buyer information in the order items of the order indicated by the specified order ID.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
-     * @param {string} [nextToken] A string token returned in the response of your previous request.
+     * @param {OrdersV0ApiGetOrderItemsBuyerInfoRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrderItemsBuyerInfo(orderId: string, nextToken?: string, options?: any) {
-        return OrdersV0ApiFp(this.configuration).getOrderItemsBuyerInfo(orderId, nextToken, options).then((request) => request(this.axios, this.basePath));
+    public getOrderItemsBuyerInfo(requestParameters: OrdersV0ApiGetOrderItemsBuyerInfoRequest, options?: any) {
+        return OrdersV0ApiFp(this.configuration).getOrderItemsBuyerInfo(requestParameters.orderId, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns orders created or updated during the time frame indicated by the specified parameters. You can also apply a range of filtering criteria to narrow the list of orders returned. If NextToken is present, that will be used to retrieve the orders instead of other criteria.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {Array<string>} marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.
-     * @param {string} [createdAfter] A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format.
-     * @param {string} [createdBefore] A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
-     * @param {string} [lastUpdatedAfter] A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
-     * @param {string} [lastUpdatedBefore] A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
-     * @param {Array<string>} [orderStatuses] A list of OrderStatus values used to filter the results. Possible values: PendingAvailability (This status is available for pre-orders only. The order has been placed, payment has not been authorized, and the release date of the item is in the future.); Pending (The order has been placed but payment has not been authorized); Unshipped (Payment has been authorized and the order is ready for shipment, but no items in the order have been shipped); PartiallyShipped (One or more, but not all, items in the order have been shipped); Shipped (All items in the order have been shipped); InvoiceUnconfirmed (All items in the order have been shipped. The seller has not yet given confirmation to Amazon that the invoice has been shipped to the buyer.); Canceled (The order has been canceled); and Unfulfillable (The order cannot be fulfilled. This state applies only to Multi-Channel Fulfillment orders.).
-     * @param {Array<string>} [fulfillmentChannels] A list that indicates how an order was fulfilled. Filters the results by fulfillment channel. Possible values: FBA (Fulfillment by Amazon); SellerFulfilled (Fulfilled by the seller).
-     * @param {Array<string>} [paymentMethods] A list of payment method values. Used to select orders paid using the specified payment methods. Possible values: COD (Cash on delivery); CVS (Convenience store payment); Other (Any payment method other than COD or CVS).
-     * @param {string} [buyerEmail] The email address of a buyer. Used to select orders that contain the specified email address.
-     * @param {string} [sellerOrderId] An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If SellerOrderId is specified, then FulfillmentChannels, OrderStatuses, PaymentMethod, LastUpdatedAfter, LastUpdatedBefore, and BuyerEmail cannot be specified.
-     * @param {number} [maxResultsPerPage] A number that indicates the maximum number of orders that can be returned per page. Value must be 1 - 100. Default 100.
-     * @param {Array<string>} [easyShipShipmentStatuses] A list of EasyShipShipmentStatus values. Used to select Easy Ship orders with statuses that match the specified  values. If EasyShipShipmentStatus is specified, only Amazon Easy Ship orders are returned.Possible values: PendingPickUp (Amazon has not yet picked up the package from the seller). LabelCanceled (The seller canceled the pickup). PickedUp (Amazon has picked up the package from the seller). AtOriginFC (The packaged is at the origin fulfillment center). AtDestinationFC (The package is at the destination fulfillment center). OutForDelivery (The package is out for delivery). Damaged (The package was damaged by the carrier). Delivered (The package has been delivered to the buyer). RejectedByBuyer (The package has been rejected by the buyer). Undeliverable (The package cannot be delivered). ReturnedToSeller (The package was not delivered to the buyer and was returned to the seller). ReturningToSeller (The package was not delivered to the buyer and is being returned to the seller).
-     * @param {string} [nextToken] A string token returned in the response of your previous request.
-     * @param {Array<string>} [amazonOrderIds] A list of AmazonOrderId values. An AmazonOrderId is an Amazon-defined order identifier, in 3-7-7 format.
-     * @param {string} [actualFulfillmentSupplySourceId] Denotes the recommended sourceId where the order should be fulfilled from.
-     * @param {boolean} [isISPU] When true, this order is marked to be picked up from a store rather than delivered.
-     * @param {string} [storeChainStoreId] The store chain store identifier. Linked to a specific store in a store chain.
+     * @param {OrdersV0ApiGetOrdersRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrders(marketplaceIds: Array<string>, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, orderStatuses?: Array<string>, fulfillmentChannels?: Array<string>, paymentMethods?: Array<string>, buyerEmail?: string, sellerOrderId?: string, maxResultsPerPage?: number, easyShipShipmentStatuses?: Array<string>, nextToken?: string, amazonOrderIds?: Array<string>, actualFulfillmentSupplySourceId?: string, isISPU?: boolean, storeChainStoreId?: string, options?: any) {
-        return OrdersV0ApiFp(this.configuration).getOrders(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, options).then((request) => request(this.axios, this.basePath));
+    public getOrders(requestParameters: OrdersV0ApiGetOrdersRequest, options?: any) {
+        return OrdersV0ApiFp(this.configuration).getOrders(requestParameters.marketplaceIds, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.orderStatuses, requestParameters.fulfillmentChannels, requestParameters.paymentMethods, requestParameters.buyerEmail, requestParameters.sellerOrderId, requestParameters.maxResultsPerPage, requestParameters.easyShipShipmentStatuses, requestParameters.nextToken, requestParameters.amazonOrderIds, requestParameters.actualFulfillmentSupplySourceId, requestParameters.isISPU, requestParameters.storeChainStoreId, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -557,6 +557,34 @@ export const CatalogApiFactory = function (configuration?: Configuration, basePa
 };
 
 /**
+ * Request parameters for getCatalogItem operation in CatalogApi.
+ * @export
+ * @interface CatalogApiGetCatalogItemRequest
+ */
+export interface CatalogApiGetCatalogItemRequest {
+    /**
+     * The Amazon Standard Identification Number (ASIN) of the item.
+     * @type {string}
+     * @memberof CatalogApiGetCatalogItem
+     */
+    readonly asin: string
+
+    /**
+     * A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.
+     * @type {Array<string>}
+     * @memberof CatalogApiGetCatalogItem
+     */
+    readonly marketplaceIds: Array<string>
+
+    /**
+     * A comma-delimited list of data sets to include in the response.
+     * @type {Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>}
+     * @memberof CatalogApiGetCatalogItem
+     */
+    readonly includedData?: Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>
+}
+
+/**
  * CatalogApi - object-oriented interface
  * @export
  * @class CatalogApi
@@ -565,15 +593,13 @@ export const CatalogApiFactory = function (configuration?: Configuration, basePa
 export class CatalogApi extends BaseAPI {
     /**
      * Retrieves details for an item in the Amazon catalog.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 5 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} asin The Amazon Standard Identification Number (ASIN) of the item.
-     * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.
-     * @param {Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>} [includedData] A comma-delimited list of data sets to include in the response.
+     * @param {CatalogApiGetCatalogItemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CatalogApi
      */
-    public getCatalogItem(asin: string, marketplaceIds: Array<string>, includedData?: Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>, options?: any) {
-        return CatalogApiFp(this.configuration).getCatalogItem(asin, marketplaceIds, includedData, options).then((request) => request(this.axios, this.basePath));
+    public getCatalogItem(requestParameters: CatalogApiGetCatalogItemRequest, options?: any) {
+        return CatalogApiFp(this.configuration).getCatalogItem(requestParameters.asin, requestParameters.marketplaceIds, requestParameters.includedData, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

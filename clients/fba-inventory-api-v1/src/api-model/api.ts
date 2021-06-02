@@ -498,6 +498,62 @@ export const FbaInventoryApiFactory = function (configuration?: Configuration, b
 };
 
 /**
+ * Request parameters for getInventorySummaries operation in FbaInventoryApi.
+ * @export
+ * @interface FbaInventoryApiGetInventorySummariesRequest
+ */
+export interface FbaInventoryApiGetInventorySummariesRequest {
+    /**
+     * The granularity type for the inventory aggregation level.
+     * @type {'Marketplace'}
+     * @memberof FbaInventoryApiGetInventorySummaries
+     */
+    readonly granularityType: 'Marketplace'
+
+    /**
+     * The granularity ID for the inventory aggregation level.
+     * @type {string}
+     * @memberof FbaInventoryApiGetInventorySummaries
+     */
+    readonly granularityId: string
+
+    /**
+     * The marketplace ID for the marketplace for which to return inventory summaries.
+     * @type {Array<string>}
+     * @memberof FbaInventoryApiGetInventorySummaries
+     */
+    readonly marketplaceIds: Array<string>
+
+    /**
+     * true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value).
+     * @type {boolean}
+     * @memberof FbaInventoryApiGetInventorySummaries
+     */
+    readonly details?: boolean
+
+    /**
+     * A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected.
+     * @type {string}
+     * @memberof FbaInventoryApiGetInventorySummaries
+     */
+    readonly startDateTime?: string
+
+    /**
+     * A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs.
+     * @type {Array<string>}
+     * @memberof FbaInventoryApiGetInventorySummaries
+     */
+    readonly sellerSkus?: Array<string>
+
+    /**
+     * String token returned in the response of your previous request.
+     * @type {string}
+     * @memberof FbaInventoryApiGetInventorySummaries
+     */
+    readonly nextToken?: string
+}
+
+/**
  * FbaInventoryApi - object-oriented interface
  * @export
  * @class FbaInventoryApi
@@ -506,19 +562,13 @@ export const FbaInventoryApiFactory = function (configuration?: Configuration, b
 export class FbaInventoryApi extends BaseAPI {
     /**
      * Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the startDateTime and sellerSkus parameters:  - All inventory summaries with available details are returned when the startDateTime and sellerSkus parameters are omitted. - When startDateTime is provided, the operation returns inventory summaries that have had changes after the date and time specified. The sellerSkus parameter is ignored. - When the sellerSkus parameter is provided, the operation returns inventory summaries for only the specified sellerSkus.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 90 | 150 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {'Marketplace'} granularityType The granularity type for the inventory aggregation level.
-     * @param {string} granularityId The granularity ID for the inventory aggregation level.
-     * @param {Array<string>} marketplaceIds The marketplace ID for the marketplace for which to return inventory summaries.
-     * @param {boolean} [details] true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value).
-     * @param {string} [startDateTime] A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected.
-     * @param {Array<string>} [sellerSkus] A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs.
-     * @param {string} [nextToken] String token returned in the response of your previous request.
+     * @param {FbaInventoryApiGetInventorySummariesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FbaInventoryApi
      */
-    public getInventorySummaries(granularityType: 'Marketplace', granularityId: string, marketplaceIds: Array<string>, details?: boolean, startDateTime?: string, sellerSkus?: Array<string>, nextToken?: string, options?: any) {
-        return FbaInventoryApiFp(this.configuration).getInventorySummaries(granularityType, granularityId, marketplaceIds, details, startDateTime, sellerSkus, nextToken, options).then((request) => request(this.axios, this.basePath));
+    public getInventorySummaries(requestParameters: FbaInventoryApiGetInventorySummariesRequest, options?: any) {
+        return FbaInventoryApiFp(this.configuration).getInventorySummaries(requestParameters.granularityType, requestParameters.granularityId, requestParameters.marketplaceIds, requestParameters.details, requestParameters.startDateTime, requestParameters.sellerSkus, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

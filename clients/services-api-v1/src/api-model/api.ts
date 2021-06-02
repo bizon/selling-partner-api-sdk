@@ -1250,6 +1250,202 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
 };
 
 /**
+ * Request parameters for addAppointmentForServiceJobByServiceJobId operation in ServiceApi.
+ * @export
+ * @interface ServiceApiAddAppointmentForServiceJobByServiceJobIdRequest
+ */
+export interface ServiceApiAddAppointmentForServiceJobByServiceJobIdRequest {
+    /**
+     * An Amazon defined service job identifier.
+     * @type {string}
+     * @memberof ServiceApiAddAppointmentForServiceJobByServiceJobId
+     */
+    readonly serviceJobId: string
+
+    /**
+     * Add appointment operation input details.
+     * @type {AddAppointmentRequest}
+     * @memberof ServiceApiAddAppointmentForServiceJobByServiceJobId
+     */
+    readonly body: AddAppointmentRequest
+}
+
+/**
+ * Request parameters for cancelServiceJobByServiceJobId operation in ServiceApi.
+ * @export
+ * @interface ServiceApiCancelServiceJobByServiceJobIdRequest
+ */
+export interface ServiceApiCancelServiceJobByServiceJobIdRequest {
+    /**
+     * An Amazon defined service job identifier.
+     * @type {string}
+     * @memberof ServiceApiCancelServiceJobByServiceJobId
+     */
+    readonly serviceJobId: string
+
+    /**
+     * A cancel reason code that specifies the reason for cancelling a service job.
+     * @type {string}
+     * @memberof ServiceApiCancelServiceJobByServiceJobId
+     */
+    readonly cancellationReasonCode: string
+}
+
+/**
+ * Request parameters for completeServiceJobByServiceJobId operation in ServiceApi.
+ * @export
+ * @interface ServiceApiCompleteServiceJobByServiceJobIdRequest
+ */
+export interface ServiceApiCompleteServiceJobByServiceJobIdRequest {
+    /**
+     * An Amazon defined service job identifier.
+     * @type {string}
+     * @memberof ServiceApiCompleteServiceJobByServiceJobId
+     */
+    readonly serviceJobId: string
+}
+
+/**
+ * Request parameters for getServiceJobByServiceJobId operation in ServiceApi.
+ * @export
+ * @interface ServiceApiGetServiceJobByServiceJobIdRequest
+ */
+export interface ServiceApiGetServiceJobByServiceJobIdRequest {
+    /**
+     * A service job identifier.
+     * @type {string}
+     * @memberof ServiceApiGetServiceJobByServiceJobId
+     */
+    readonly serviceJobId: string
+}
+
+/**
+ * Request parameters for getServiceJobs operation in ServiceApi.
+ * @export
+ * @interface ServiceApiGetServiceJobsRequest
+ */
+export interface ServiceApiGetServiceJobsRequest {
+    /**
+     * Used to select jobs that were placed in the specified marketplaces. 
+     * @type {Array<string>}
+     * @memberof ServiceApiGetServiceJobs
+     */
+    readonly marketplaceIds: Array<string>
+
+    /**
+     * List of service order ids for the query you want to perform.Max values supported 20. 
+     * @type {Array<string>}
+     * @memberof ServiceApiGetServiceJobs
+     */
+    readonly serviceOrderIds?: Array<string>
+
+    /**
+     * A list of one or more job status by which to filter the list of jobs.
+     * @type {Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>}
+     * @memberof ServiceApiGetServiceJobs
+     */
+    readonly serviceJobStatus?: Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>
+
+    /**
+     * String returned in the response of your previous request.
+     * @type {string}
+     * @memberof ServiceApiGetServiceJobs
+     */
+    readonly pageToken?: string
+
+    /**
+     * A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. 
+     * @type {number}
+     * @memberof ServiceApiGetServiceJobs
+     */
+    readonly pageSize?: number
+
+    /**
+     * Sort fields on which you want to sort the output.
+     * @type {'JOB_DATE' | 'JOB_STATUS'}
+     * @memberof ServiceApiGetServiceJobs
+     */
+    readonly sortField?: 'JOB_DATE' | 'JOB_STATUS'
+
+    /**
+     * Sort order for the query you want to perform.
+     * @type {'ASC' | 'DESC'}
+     * @memberof ServiceApiGetServiceJobs
+     */
+    readonly sortOrder?: 'ASC' | 'DESC'
+
+    /**
+     * A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. 
+     * @type {string}
+     * @memberof ServiceApiGetServiceJobs
+     */
+    readonly createdAfter?: string
+
+    /**
+     * A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. 
+     * @type {string}
+     * @memberof ServiceApiGetServiceJobs
+     */
+    readonly createdBefore?: string
+
+    /**
+     * A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. 
+     * @type {string}
+     * @memberof ServiceApiGetServiceJobs
+     */
+    readonly lastUpdatedAfter?: string
+
+    /**
+     * A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. 
+     * @type {string}
+     * @memberof ServiceApiGetServiceJobs
+     */
+    readonly lastUpdatedBefore?: string
+
+    /**
+     * A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. 
+     * @type {string}
+     * @memberof ServiceApiGetServiceJobs
+     */
+    readonly scheduleStartDate?: string
+
+    /**
+     * A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. 
+     * @type {string}
+     * @memberof ServiceApiGetServiceJobs
+     */
+    readonly scheduleEndDate?: string
+}
+
+/**
+ * Request parameters for rescheduleAppointmentForServiceJobByServiceJobId operation in ServiceApi.
+ * @export
+ * @interface ServiceApiRescheduleAppointmentForServiceJobByServiceJobIdRequest
+ */
+export interface ServiceApiRescheduleAppointmentForServiceJobByServiceJobIdRequest {
+    /**
+     * An Amazon defined service job identifier.
+     * @type {string}
+     * @memberof ServiceApiRescheduleAppointmentForServiceJobByServiceJobId
+     */
+    readonly serviceJobId: string
+
+    /**
+     * An existing appointment identifier for the Service Job.
+     * @type {string}
+     * @memberof ServiceApiRescheduleAppointmentForServiceJobByServiceJobId
+     */
+    readonly appointmentId: string
+
+    /**
+     * Reschedule appointment operation input details.
+     * @type {RescheduleAppointmentRequest}
+     * @memberof ServiceApiRescheduleAppointmentForServiceJobByServiceJobId
+     */
+    readonly body: RescheduleAppointmentRequest
+}
+
+/**
  * ServiceApi - object-oriented interface
  * @export
  * @class ServiceApi
@@ -1258,84 +1454,68 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
 export class ServiceApi extends BaseAPI {
     /**
      * Adds an appointment to the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} serviceJobId An Amazon defined service job identifier.
-     * @param {AddAppointmentRequest} body Add appointment operation input details.
+     * @param {ServiceApiAddAppointmentForServiceJobByServiceJobIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public addAppointmentForServiceJobByServiceJobId(serviceJobId: string, body: AddAppointmentRequest, options?: any) {
-        return ServiceApiFp(this.configuration).addAppointmentForServiceJobByServiceJobId(serviceJobId, body, options).then((request) => request(this.axios, this.basePath));
+    public addAppointmentForServiceJobByServiceJobId(requestParameters: ServiceApiAddAppointmentForServiceJobByServiceJobIdRequest, options?: any) {
+        return ServiceApiFp(this.configuration).addAppointmentForServiceJobByServiceJobId(requestParameters.serviceJobId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Cancels the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} serviceJobId An Amazon defined service job identifier.
-     * @param {string} cancellationReasonCode A cancel reason code that specifies the reason for cancelling a service job.
+     * @param {ServiceApiCancelServiceJobByServiceJobIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public cancelServiceJobByServiceJobId(serviceJobId: string, cancellationReasonCode: string, options?: any) {
-        return ServiceApiFp(this.configuration).cancelServiceJobByServiceJobId(serviceJobId, cancellationReasonCode, options).then((request) => request(this.axios, this.basePath));
+    public cancelServiceJobByServiceJobId(requestParameters: ServiceApiCancelServiceJobByServiceJobIdRequest, options?: any) {
+        return ServiceApiFp(this.configuration).cancelServiceJobByServiceJobId(requestParameters.serviceJobId, requestParameters.cancellationReasonCode, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Completes the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} serviceJobId An Amazon defined service job identifier.
+     * @param {ServiceApiCompleteServiceJobByServiceJobIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public completeServiceJobByServiceJobId(serviceJobId: string, options?: any) {
-        return ServiceApiFp(this.configuration).completeServiceJobByServiceJobId(serviceJobId, options).then((request) => request(this.axios, this.basePath));
+    public completeServiceJobByServiceJobId(requestParameters: ServiceApiCompleteServiceJobByServiceJobIdRequest, options?: any) {
+        return ServiceApiFp(this.configuration).completeServiceJobByServiceJobId(requestParameters.serviceJobId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Gets service job details for the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 20 | 40 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} serviceJobId A service job identifier.
+     * @param {ServiceApiGetServiceJobByServiceJobIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public getServiceJobByServiceJobId(serviceJobId: string, options?: any) {
-        return ServiceApiFp(this.configuration).getServiceJobByServiceJobId(serviceJobId, options).then((request) => request(this.axios, this.basePath));
+    public getServiceJobByServiceJobId(requestParameters: ServiceApiGetServiceJobByServiceJobIdRequest, options?: any) {
+        return ServiceApiFp(this.configuration).getServiceJobByServiceJobId(requestParameters.serviceJobId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Gets service job details for the specified filter query.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 40 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {Array<string>} marketplaceIds Used to select jobs that were placed in the specified marketplaces. 
-     * @param {Array<string>} [serviceOrderIds] List of service order ids for the query you want to perform.Max values supported 20. 
-     * @param {Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>} [serviceJobStatus] A list of one or more job status by which to filter the list of jobs.
-     * @param {string} [pageToken] String returned in the response of your previous request.
-     * @param {number} [pageSize] A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. 
-     * @param {'JOB_DATE' | 'JOB_STATUS'} [sortField] Sort fields on which you want to sort the output.
-     * @param {'ASC' | 'DESC'} [sortOrder] Sort order for the query you want to perform.
-     * @param {string} [createdAfter] A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. 
-     * @param {string} [createdBefore] A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. 
-     * @param {string} [lastUpdatedAfter] A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. 
-     * @param {string} [lastUpdatedBefore] A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. 
-     * @param {string} [scheduleStartDate] A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. 
-     * @param {string} [scheduleEndDate] A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. 
+     * @param {ServiceApiGetServiceJobsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public getServiceJobs(marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>, pageToken?: string, pageSize?: number, sortField?: 'JOB_DATE' | 'JOB_STATUS', sortOrder?: 'ASC' | 'DESC', createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, options?: any) {
-        return ServiceApiFp(this.configuration).getServiceJobs(marketplaceIds, serviceOrderIds, serviceJobStatus, pageToken, pageSize, sortField, sortOrder, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, scheduleStartDate, scheduleEndDate, options).then((request) => request(this.axios, this.basePath));
+    public getServiceJobs(requestParameters: ServiceApiGetServiceJobsRequest, options?: any) {
+        return ServiceApiFp(this.configuration).getServiceJobs(requestParameters.marketplaceIds, requestParameters.serviceOrderIds, requestParameters.serviceJobStatus, requestParameters.pageToken, requestParameters.pageSize, requestParameters.sortField, requestParameters.sortOrder, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.scheduleStartDate, requestParameters.scheduleEndDate, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Reschedules an appointment for the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} serviceJobId An Amazon defined service job identifier.
-     * @param {string} appointmentId An existing appointment identifier for the Service Job.
-     * @param {RescheduleAppointmentRequest} body Reschedule appointment operation input details.
+     * @param {ServiceApiRescheduleAppointmentForServiceJobByServiceJobIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public rescheduleAppointmentForServiceJobByServiceJobId(serviceJobId: string, appointmentId: string, body: RescheduleAppointmentRequest, options?: any) {
-        return ServiceApiFp(this.configuration).rescheduleAppointmentForServiceJobByServiceJobId(serviceJobId, appointmentId, body, options).then((request) => request(this.axios, this.basePath));
+    public rescheduleAppointmentForServiceJobByServiceJobId(requestParameters: ServiceApiRescheduleAppointmentForServiceJobByServiceJobIdRequest, options?: any) {
+        return ServiceApiFp(this.configuration).rescheduleAppointmentForServiceJobByServiceJobId(requestParameters.serviceJobId, requestParameters.appointmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -198,6 +198,41 @@ export const UploadsApiFactory = function (configuration?: Configuration, basePa
 };
 
 /**
+ * Request parameters for createUploadDestinationForResource operation in UploadsApi.
+ * @export
+ * @interface UploadsApiCreateUploadDestinationForResourceRequest
+ */
+export interface UploadsApiCreateUploadDestinationForResourceRequest {
+    /**
+     * A list of marketplace identifiers. This specifies the marketplaces where the upload will be available. Only one marketplace can be specified.
+     * @type {Array<string>}
+     * @memberof UploadsApiCreateUploadDestinationForResource
+     */
+    readonly marketplaceIds: Array<string>
+
+    /**
+     * An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.
+     * @type {string}
+     * @memberof UploadsApiCreateUploadDestinationForResource
+     */
+    readonly contentMD5: string
+
+    /**
+     * The URL of the resource for the upload destination that you are creating. For example, to create an upload destination for a Buyer-Seller Messaging message, the {resource} would be /messaging and the path would be  /uploads/v1/uploadDestinations/messaging
+     * @type {string}
+     * @memberof UploadsApiCreateUploadDestinationForResource
+     */
+    readonly resource: string
+
+    /**
+     * The content type of the file to be uploaded.
+     * @type {string}
+     * @memberof UploadsApiCreateUploadDestinationForResource
+     */
+    readonly contentType?: string
+}
+
+/**
  * UploadsApi - object-oriented interface
  * @export
  * @class UploadsApi
@@ -206,16 +241,13 @@ export const UploadsApiFactory = function (configuration?: Configuration, basePa
 export class UploadsApi extends BaseAPI {
     /**
      * Creates an upload destination for a resource that you specify and returns the information required to upload to that destination.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | .1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {Array<string>} marketplaceIds A list of marketplace identifiers. This specifies the marketplaces where the upload will be available. Only one marketplace can be specified.
-     * @param {string} contentMD5 An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.
-     * @param {string} resource The URL of the resource for the upload destination that you are creating. For example, to create an upload destination for a Buyer-Seller Messaging message, the {resource} would be /messaging and the path would be  /uploads/v1/uploadDestinations/messaging
-     * @param {string} [contentType] The content type of the file to be uploaded.
+     * @param {UploadsApiCreateUploadDestinationForResourceRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof UploadsApi
      */
-    public createUploadDestinationForResource(marketplaceIds: Array<string>, contentMD5: string, resource: string, contentType?: string, options?: any) {
-        return UploadsApiFp(this.configuration).createUploadDestinationForResource(marketplaceIds, contentMD5, resource, contentType, options).then((request) => request(this.axios, this.basePath));
+    public createUploadDestinationForResource(requestParameters: UploadsApiCreateUploadDestinationForResourceRequest, options?: any) {
+        return UploadsApiFp(this.configuration).createUploadDestinationForResource(requestParameters.marketplaceIds, requestParameters.contentMD5, requestParameters.resource, requestParameters.contentType, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

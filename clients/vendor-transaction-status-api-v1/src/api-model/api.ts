@@ -197,6 +197,20 @@ export const VendorTransactionApiFactory = function (configuration?: Configurati
 };
 
 /**
+ * Request parameters for getTransaction operation in VendorTransactionApi.
+ * @export
+ * @interface VendorTransactionApiGetTransactionRequest
+ */
+export interface VendorTransactionApiGetTransactionRequest {
+    /**
+     * The GUID provided by Amazon in the \&#39;transactionId\&#39; field in response to the post request of a specific transaction.
+     * @type {string}
+     * @memberof VendorTransactionApiGetTransaction
+     */
+    readonly transactionId: string
+}
+
+/**
  * VendorTransactionApi - object-oriented interface
  * @export
  * @class VendorTransactionApi
@@ -205,13 +219,13 @@ export const VendorTransactionApiFactory = function (configuration?: Configurati
 export class VendorTransactionApi extends BaseAPI {
     /**
      * Returns the status of the transaction that you specify.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} transactionId The GUID provided by Amazon in the \&#39;transactionId\&#39; field in response to the post request of a specific transaction.
+     * @param {VendorTransactionApiGetTransactionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof VendorTransactionApi
      */
-    public getTransaction(transactionId: string, options?: any) {
-        return VendorTransactionApiFp(this.configuration).getTransaction(transactionId, options).then((request) => request(this.axios, this.basePath));
+    public getTransaction(requestParameters: VendorTransactionApiGetTransactionRequest, options?: any) {
+        return VendorTransactionApiFp(this.configuration).getTransaction(requestParameters.transactionId, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

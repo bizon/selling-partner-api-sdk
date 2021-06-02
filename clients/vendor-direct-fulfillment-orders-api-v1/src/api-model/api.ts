@@ -1048,6 +1048,97 @@ export const VendorOrdersApiFactory = function (configuration?: Configuration, b
 };
 
 /**
+ * Request parameters for getOrder operation in VendorOrdersApi.
+ * @export
+ * @interface VendorOrdersApiGetOrderRequest
+ */
+export interface VendorOrdersApiGetOrderRequest {
+    /**
+     * The order identifier for the purchase order that you want. Formatting Notes: alpha-numeric code.
+     * @type {string}
+     * @memberof VendorOrdersApiGetOrder
+     */
+    readonly purchaseOrderNumber: string
+}
+
+/**
+ * Request parameters for getOrders operation in VendorOrdersApi.
+ * @export
+ * @interface VendorOrdersApiGetOrdersRequest
+ */
+export interface VendorOrdersApiGetOrdersRequest {
+    /**
+     * Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @type {string}
+     * @memberof VendorOrdersApiGetOrders
+     */
+    readonly createdAfter: string
+
+    /**
+     * Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @type {string}
+     * @memberof VendorOrdersApiGetOrders
+     */
+    readonly createdBefore: string
+
+    /**
+     * The vendor warehouse identifier for the fulfillment warehouse. If not specified, the result will contain orders for all warehouses.
+     * @type {string}
+     * @memberof VendorOrdersApiGetOrders
+     */
+    readonly shipFromPartyId?: string
+
+    /**
+     * Returns only the purchase orders that match the specified status. If not specified, the result will contain orders that match any status.
+     * @type {'NEW' | 'SHIPPED' | 'ACCEPTED' | 'CANCELLED'}
+     * @memberof VendorOrdersApiGetOrders
+     */
+    readonly status?: 'NEW' | 'SHIPPED' | 'ACCEPTED' | 'CANCELLED'
+
+    /**
+     * The limit to the number of purchase orders returned.
+     * @type {number}
+     * @memberof VendorOrdersApiGetOrders
+     */
+    readonly limit?: number
+
+    /**
+     * Sort the list in ascending or descending order by order creation date.
+     * @type {'ASC' | 'DESC'}
+     * @memberof VendorOrdersApiGetOrders
+     */
+    readonly sortOrder?: 'ASC' | 'DESC'
+
+    /**
+     * Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
+     * @type {string}
+     * @memberof VendorOrdersApiGetOrders
+     */
+    readonly nextToken?: string
+
+    /**
+     * When true, returns the complete purchase order details. Otherwise, only purchase order numbers are returned.
+     * @type {boolean}
+     * @memberof VendorOrdersApiGetOrders
+     */
+    readonly includeDetails?: boolean
+}
+
+/**
+ * Request parameters for submitAcknowledgement operation in VendorOrdersApi.
+ * @export
+ * @interface VendorOrdersApiSubmitAcknowledgementRequest
+ */
+export interface VendorOrdersApiSubmitAcknowledgementRequest {
+    /**
+     * 
+     * @type {SubmitAcknowledgementRequest}
+     * @memberof VendorOrdersApiSubmitAcknowledgement
+     */
+    readonly body: SubmitAcknowledgementRequest
+}
+
+/**
  * VendorOrdersApi - object-oriented interface
  * @export
  * @class VendorOrdersApi
@@ -1056,42 +1147,35 @@ export const VendorOrdersApiFactory = function (configuration?: Configuration, b
 export class VendorOrdersApi extends BaseAPI {
     /**
      * Returns purchase order information for the purchaseOrderNumber that you specify.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} purchaseOrderNumber The order identifier for the purchase order that you want. Formatting Notes: alpha-numeric code.
+     * @param {VendorOrdersApiGetOrderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof VendorOrdersApi
      */
-    public getOrder(purchaseOrderNumber: string, options?: any) {
-        return VendorOrdersApiFp(this.configuration).getOrder(purchaseOrderNumber, options).then((request) => request(this.axios, this.basePath));
+    public getOrder(requestParameters: VendorOrdersApiGetOrderRequest, options?: any) {
+        return VendorOrdersApiFp(this.configuration).getOrder(requestParameters.purchaseOrderNumber, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns a list of purchase orders created during the time frame that you specify. You define the time frame using the createdAfter and createdBefore parameters. You must use both parameters. You can choose to get only the purchase order numbers by setting the includeDetails parameter to false. In that case, the operation returns a list of purchase order numbers. You can then call the getOrder operation to return the details of a specific order.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} createdAfter Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param {string} createdBefore Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param {string} [shipFromPartyId] The vendor warehouse identifier for the fulfillment warehouse. If not specified, the result will contain orders for all warehouses.
-     * @param {'NEW' | 'SHIPPED' | 'ACCEPTED' | 'CANCELLED'} [status] Returns only the purchase orders that match the specified status. If not specified, the result will contain orders that match any status.
-     * @param {number} [limit] The limit to the number of purchase orders returned.
-     * @param {'ASC' | 'DESC'} [sortOrder] Sort the list in ascending or descending order by order creation date.
-     * @param {string} [nextToken] Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
-     * @param {boolean} [includeDetails] When true, returns the complete purchase order details. Otherwise, only purchase order numbers are returned.
+     * @param {VendorOrdersApiGetOrdersRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof VendorOrdersApi
      */
-    public getOrders(createdAfter: string, createdBefore: string, shipFromPartyId?: string, status?: 'NEW' | 'SHIPPED' | 'ACCEPTED' | 'CANCELLED', limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, includeDetails?: boolean, options?: any) {
-        return VendorOrdersApiFp(this.configuration).getOrders(createdAfter, createdBefore, shipFromPartyId, status, limit, sortOrder, nextToken, includeDetails, options).then((request) => request(this.axios, this.basePath));
+    public getOrders(requestParameters: VendorOrdersApiGetOrdersRequest, options?: any) {
+        return VendorOrdersApiFp(this.configuration).getOrders(requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipFromPartyId, requestParameters.status, requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.includeDetails, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Submits acknowledgements for one or more purchase orders.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {SubmitAcknowledgementRequest} body 
+     * @param {VendorOrdersApiSubmitAcknowledgementRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof VendorOrdersApi
      */
-    public submitAcknowledgement(body: SubmitAcknowledgementRequest, options?: any) {
-        return VendorOrdersApiFp(this.configuration).submitAcknowledgement(body, options).then((request) => request(this.axios, this.basePath));
+    public submitAcknowledgement(requestParameters: VendorOrdersApiSubmitAcknowledgementRequest, options?: any) {
+        return VendorOrdersApiFp(this.configuration).submitAcknowledgement(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

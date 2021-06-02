@@ -2284,6 +2284,272 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
 };
 
 /**
+ * Request parameters for createContentDocument operation in AplusContentApi.
+ * @export
+ * @interface AplusContentApiCreateContentDocumentRequest
+ */
+export interface AplusContentApiCreateContentDocumentRequest {
+    /**
+     * The identifier for the marketplace where the A+ Content is published.
+     * @type {string}
+     * @memberof AplusContentApiCreateContentDocument
+     */
+    readonly marketplaceId: string
+
+    /**
+     * The content document request details.
+     * @type {PostContentDocumentRequest}
+     * @memberof AplusContentApiCreateContentDocument
+     */
+    readonly postContentDocumentRequest: PostContentDocumentRequest
+}
+
+/**
+ * Request parameters for getContentDocument operation in AplusContentApi.
+ * @export
+ * @interface AplusContentApiGetContentDocumentRequest
+ */
+export interface AplusContentApiGetContentDocumentRequest {
+    /**
+     * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+     * @type {string}
+     * @memberof AplusContentApiGetContentDocument
+     */
+    readonly contentReferenceKey: string
+
+    /**
+     * The identifier for the marketplace where the A+ Content is published.
+     * @type {string}
+     * @memberof AplusContentApiGetContentDocument
+     */
+    readonly marketplaceId: string
+
+    /**
+     * The set of A+ Content data types to include in the response.
+     * @type {Set<'CONTENTS' | 'METADATA'>}
+     * @memberof AplusContentApiGetContentDocument
+     */
+    readonly includedDataSet: Set<'CONTENTS' | 'METADATA'>
+}
+
+/**
+ * Request parameters for listContentDocumentAsinRelations operation in AplusContentApi.
+ * @export
+ * @interface AplusContentApiListContentDocumentAsinRelationsRequest
+ */
+export interface AplusContentApiListContentDocumentAsinRelationsRequest {
+    /**
+     * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+     * @type {string}
+     * @memberof AplusContentApiListContentDocumentAsinRelations
+     */
+    readonly contentReferenceKey: string
+
+    /**
+     * The identifier for the marketplace where the A+ Content is published.
+     * @type {string}
+     * @memberof AplusContentApiListContentDocumentAsinRelations
+     */
+    readonly marketplaceId: string
+
+    /**
+     * The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata.
+     * @type {Set<'METADATA'>}
+     * @memberof AplusContentApiListContentDocumentAsinRelations
+     */
+    readonly includedDataSet?: Set<'METADATA'>
+
+    /**
+     * The set of ASINs.
+     * @type {Set<string>}
+     * @memberof AplusContentApiListContentDocumentAsinRelations
+     */
+    readonly asinSet?: Set<string>
+
+    /**
+     * A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
+     * @type {string}
+     * @memberof AplusContentApiListContentDocumentAsinRelations
+     */
+    readonly pageToken?: string
+}
+
+/**
+ * Request parameters for postContentDocumentApprovalSubmission operation in AplusContentApi.
+ * @export
+ * @interface AplusContentApiPostContentDocumentApprovalSubmissionRequest
+ */
+export interface AplusContentApiPostContentDocumentApprovalSubmissionRequest {
+    /**
+     * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
+     * @type {string}
+     * @memberof AplusContentApiPostContentDocumentApprovalSubmission
+     */
+    readonly contentReferenceKey: string
+
+    /**
+     * The identifier for the marketplace where the A+ Content is published.
+     * @type {string}
+     * @memberof AplusContentApiPostContentDocumentApprovalSubmission
+     */
+    readonly marketplaceId: string
+}
+
+/**
+ * Request parameters for postContentDocumentAsinRelations operation in AplusContentApi.
+ * @export
+ * @interface AplusContentApiPostContentDocumentAsinRelationsRequest
+ */
+export interface AplusContentApiPostContentDocumentAsinRelationsRequest {
+    /**
+     * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
+     * @type {string}
+     * @memberof AplusContentApiPostContentDocumentAsinRelations
+     */
+    readonly contentReferenceKey: string
+
+    /**
+     * The identifier for the marketplace where the A+ Content is published.
+     * @type {string}
+     * @memberof AplusContentApiPostContentDocumentAsinRelations
+     */
+    readonly marketplaceId: string
+
+    /**
+     * The content document ASIN relations request details.
+     * @type {PostContentDocumentAsinRelationsRequest}
+     * @memberof AplusContentApiPostContentDocumentAsinRelations
+     */
+    readonly postContentDocumentAsinRelationsRequest: PostContentDocumentAsinRelationsRequest
+}
+
+/**
+ * Request parameters for postContentDocumentSuspendSubmission operation in AplusContentApi.
+ * @export
+ * @interface AplusContentApiPostContentDocumentSuspendSubmissionRequest
+ */
+export interface AplusContentApiPostContentDocumentSuspendSubmissionRequest {
+    /**
+     * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
+     * @type {string}
+     * @memberof AplusContentApiPostContentDocumentSuspendSubmission
+     */
+    readonly contentReferenceKey: string
+
+    /**
+     * The identifier for the marketplace where the A+ Content is published.
+     * @type {string}
+     * @memberof AplusContentApiPostContentDocumentSuspendSubmission
+     */
+    readonly marketplaceId: string
+}
+
+/**
+ * Request parameters for searchContentDocuments operation in AplusContentApi.
+ * @export
+ * @interface AplusContentApiSearchContentDocumentsRequest
+ */
+export interface AplusContentApiSearchContentDocumentsRequest {
+    /**
+     * The identifier for the marketplace where the A+ Content is published.
+     * @type {string}
+     * @memberof AplusContentApiSearchContentDocuments
+     */
+    readonly marketplaceId: string
+
+    /**
+     * A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
+     * @type {string}
+     * @memberof AplusContentApiSearchContentDocuments
+     */
+    readonly pageToken?: string
+}
+
+/**
+ * Request parameters for searchContentPublishRecords operation in AplusContentApi.
+ * @export
+ * @interface AplusContentApiSearchContentPublishRecordsRequest
+ */
+export interface AplusContentApiSearchContentPublishRecordsRequest {
+    /**
+     * The identifier for the marketplace where the A+ Content is published.
+     * @type {string}
+     * @memberof AplusContentApiSearchContentPublishRecords
+     */
+    readonly marketplaceId: string
+
+    /**
+     * The Amazon Standard Identification Number (ASIN).
+     * @type {string}
+     * @memberof AplusContentApiSearchContentPublishRecords
+     */
+    readonly asin: string
+
+    /**
+     * A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
+     * @type {string}
+     * @memberof AplusContentApiSearchContentPublishRecords
+     */
+    readonly pageToken?: string
+}
+
+/**
+ * Request parameters for updateContentDocument operation in AplusContentApi.
+ * @export
+ * @interface AplusContentApiUpdateContentDocumentRequest
+ */
+export interface AplusContentApiUpdateContentDocumentRequest {
+    /**
+     * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+     * @type {string}
+     * @memberof AplusContentApiUpdateContentDocument
+     */
+    readonly contentReferenceKey: string
+
+    /**
+     * The identifier for the marketplace where the A+ Content is published.
+     * @type {string}
+     * @memberof AplusContentApiUpdateContentDocument
+     */
+    readonly marketplaceId: string
+
+    /**
+     * The content document request details.
+     * @type {PostContentDocumentRequest}
+     * @memberof AplusContentApiUpdateContentDocument
+     */
+    readonly postContentDocumentRequest: PostContentDocumentRequest
+}
+
+/**
+ * Request parameters for validateContentDocumentAsinRelations operation in AplusContentApi.
+ * @export
+ * @interface AplusContentApiValidateContentDocumentAsinRelationsRequest
+ */
+export interface AplusContentApiValidateContentDocumentAsinRelationsRequest {
+    /**
+     * The identifier for the marketplace where the A+ Content is published.
+     * @type {string}
+     * @memberof AplusContentApiValidateContentDocumentAsinRelations
+     */
+    readonly marketplaceId: string
+
+    /**
+     * The content document request details.
+     * @type {PostContentDocumentRequest}
+     * @memberof AplusContentApiValidateContentDocumentAsinRelations
+     */
+    readonly postContentDocumentRequest: PostContentDocumentRequest
+
+    /**
+     * The set of ASINs.
+     * @type {Set<string>}
+     * @memberof AplusContentApiValidateContentDocumentAsinRelations
+     */
+    readonly asinSet?: Set<string>
+}
+
+/**
  * AplusContentApi - object-oriented interface
  * @export
  * @class AplusContentApi
@@ -2292,130 +2558,112 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
 export class AplusContentApi extends BaseAPI {
     /**
      * Creates a new A+ Content document.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-     * @param {PostContentDocumentRequest} postContentDocumentRequest The content document request details.
+     * @param {AplusContentApiCreateContentDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public createContentDocument(marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options?: any) {
-        return AplusContentApiFp(this.configuration).createContentDocument(marketplaceId, postContentDocumentRequest, options).then((request) => request(this.axios, this.basePath));
+    public createContentDocument(requestParameters: AplusContentApiCreateContentDocumentRequest, options?: any) {
+        return AplusContentApiFp(this.configuration).createContentDocument(requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns an A+ Content document, if available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-     * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-     * @param {Set<'CONTENTS' | 'METADATA'>} includedDataSet The set of A+ Content data types to include in the response.
+     * @param {AplusContentApiGetContentDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public getContentDocument(contentReferenceKey: string, marketplaceId: string, includedDataSet: Set<'CONTENTS' | 'METADATA'>, options?: any) {
-        return AplusContentApiFp(this.configuration).getContentDocument(contentReferenceKey, marketplaceId, includedDataSet, options).then((request) => request(this.axios, this.basePath));
+    public getContentDocument(requestParameters: AplusContentApiGetContentDocumentRequest, options?: any) {
+        return AplusContentApiFp(this.configuration).getContentDocument(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.includedDataSet, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns a list of ASINs related to the specified A+ Content document, if available. If you do not include the asinSet parameter, the operation returns all ASINs related to the content document.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-     * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-     * @param {Set<'METADATA'>} [includedDataSet] The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata.
-     * @param {Set<string>} [asinSet] The set of ASINs.
-     * @param {string} [pageToken] A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
+     * @param {AplusContentApiListContentDocumentAsinRelationsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public listContentDocumentAsinRelations(contentReferenceKey: string, marketplaceId: string, includedDataSet?: Set<'METADATA'>, asinSet?: Set<string>, pageToken?: string, options?: any) {
-        return AplusContentApiFp(this.configuration).listContentDocumentAsinRelations(contentReferenceKey, marketplaceId, includedDataSet, asinSet, pageToken, options).then((request) => request(this.axios, this.basePath));
+    public listContentDocumentAsinRelations(requestParameters: AplusContentApiListContentDocumentAsinRelationsRequest, options?: any) {
+        return AplusContentApiFp(this.configuration).listContentDocumentAsinRelations(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.includedDataSet, requestParameters.asinSet, requestParameters.pageToken, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Submits an A+ Content document for review, approval, and publishing.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-     * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
+     * @param {AplusContentApiPostContentDocumentApprovalSubmissionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public postContentDocumentApprovalSubmission(contentReferenceKey: string, marketplaceId: string, options?: any) {
-        return AplusContentApiFp(this.configuration).postContentDocumentApprovalSubmission(contentReferenceKey, marketplaceId, options).then((request) => request(this.axios, this.basePath));
+    public postContentDocumentApprovalSubmission(requestParameters: AplusContentApiPostContentDocumentApprovalSubmissionRequest, options?: any) {
+        return AplusContentApiFp(this.configuration).postContentDocumentApprovalSubmission(requestParameters.contentReferenceKey, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Replaces all ASINs related to the specified A+ Content document, if available. This may add or remove ASINs, depending on the current set of related ASINs. Removing an ASIN has the side effect of suspending the content document from that ASIN.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-     * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-     * @param {PostContentDocumentAsinRelationsRequest} postContentDocumentAsinRelationsRequest The content document ASIN relations request details.
+     * @param {AplusContentApiPostContentDocumentAsinRelationsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public postContentDocumentAsinRelations(contentReferenceKey: string, marketplaceId: string, postContentDocumentAsinRelationsRequest: PostContentDocumentAsinRelationsRequest, options?: any) {
-        return AplusContentApiFp(this.configuration).postContentDocumentAsinRelations(contentReferenceKey, marketplaceId, postContentDocumentAsinRelationsRequest, options).then((request) => request(this.axios, this.basePath));
+    public postContentDocumentAsinRelations(requestParameters: AplusContentApiPostContentDocumentAsinRelationsRequest, options?: any) {
+        return AplusContentApiFp(this.configuration).postContentDocumentAsinRelations(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.postContentDocumentAsinRelationsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Submits a request to suspend visible A+ Content. This neither deletes the content document nor the ASIN relations.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-     * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
+     * @param {AplusContentApiPostContentDocumentSuspendSubmissionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public postContentDocumentSuspendSubmission(contentReferenceKey: string, marketplaceId: string, options?: any) {
-        return AplusContentApiFp(this.configuration).postContentDocumentSuspendSubmission(contentReferenceKey, marketplaceId, options).then((request) => request(this.axios, this.basePath));
+    public postContentDocumentSuspendSubmission(requestParameters: AplusContentApiPostContentDocumentSuspendSubmissionRequest, options?: any) {
+        return AplusContentApiFp(this.configuration).postContentDocumentSuspendSubmission(requestParameters.contentReferenceKey, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns a list of all A+ Content documents assigned to a selling partner. This operation returns only the metadata of the A+ Content documents. Call the getContentDocument operation to get the actual contents of the A+ Content documents.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-     * @param {string} [pageToken] A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
+     * @param {AplusContentApiSearchContentDocumentsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public searchContentDocuments(marketplaceId: string, pageToken?: string, options?: any) {
-        return AplusContentApiFp(this.configuration).searchContentDocuments(marketplaceId, pageToken, options).then((request) => request(this.axios, this.basePath));
+    public searchContentDocuments(requestParameters: AplusContentApiSearchContentDocumentsRequest, options?: any) {
+        return AplusContentApiFp(this.configuration).searchContentDocuments(requestParameters.marketplaceId, requestParameters.pageToken, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Searches for A+ Content publishing records, if available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-     * @param {string} asin The Amazon Standard Identification Number (ASIN).
-     * @param {string} [pageToken] A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
+     * @param {AplusContentApiSearchContentPublishRecordsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public searchContentPublishRecords(marketplaceId: string, asin: string, pageToken?: string, options?: any) {
-        return AplusContentApiFp(this.configuration).searchContentPublishRecords(marketplaceId, asin, pageToken, options).then((request) => request(this.axios, this.basePath));
+    public searchContentPublishRecords(requestParameters: AplusContentApiSearchContentPublishRecordsRequest, options?: any) {
+        return AplusContentApiFp(this.configuration).searchContentPublishRecords(requestParameters.marketplaceId, requestParameters.asin, requestParameters.pageToken, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Updates an existing A+ Content document.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-     * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-     * @param {PostContentDocumentRequest} postContentDocumentRequest The content document request details.
+     * @param {AplusContentApiUpdateContentDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public updateContentDocument(contentReferenceKey: string, marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options?: any) {
-        return AplusContentApiFp(this.configuration).updateContentDocument(contentReferenceKey, marketplaceId, postContentDocumentRequest, options).then((request) => request(this.axios, this.basePath));
+    public updateContentDocument(requestParameters: AplusContentApiUpdateContentDocumentRequest, options?: any) {
+        return AplusContentApiFp(this.configuration).updateContentDocument(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Checks if the A+ Content document is valid for use on a set of ASINs.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-     * @param {PostContentDocumentRequest} postContentDocumentRequest The content document request details.
-     * @param {Set<string>} [asinSet] The set of ASINs.
+     * @param {AplusContentApiValidateContentDocumentAsinRelationsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public validateContentDocumentAsinRelations(marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, asinSet?: Set<string>, options?: any) {
-        return AplusContentApiFp(this.configuration).validateContentDocumentAsinRelations(marketplaceId, postContentDocumentRequest, asinSet, options).then((request) => request(this.axios, this.basePath));
+    public validateContentDocumentAsinRelations(requestParameters: AplusContentApiValidateContentDocumentAsinRelationsRequest, options?: any) {
+        return AplusContentApiFp(this.configuration).validateContentDocumentAsinRelations(requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, requestParameters.asinSet, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

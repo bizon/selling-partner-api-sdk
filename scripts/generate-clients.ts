@@ -27,7 +27,7 @@ async function generateClientVersion(clientName: string, filename: string) {
 
 	logger.info('generating ...', {packageName})
 
-	await exec(`yarn openapi-generator-cli generate --skip-validate-spec -g typescript-axios -i ${filePath} -o ${clientDirectoryPath}/src/api-model`)
+	await exec(`yarn openapi-generator-cli generate --additional-properties=supportsES6=true,useSingleRequestParameter=true --skip-validate-spec -g typescript-axios -i ${filePath} -o ${clientDirectoryPath}/src/api-model`)
 
 	if (!await fs.stat(`${clientDirectoryPath}/package.json`)) {
 		await fs.writeFile(`${clientDirectoryPath}/package.json`, await renderTemplate('scripts/templates/package.json.mustache', {description: doc.info.description, packageName}))

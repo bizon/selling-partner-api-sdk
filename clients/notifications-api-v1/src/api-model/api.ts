@@ -832,6 +832,125 @@ export const NotificationsApiFactory = function (configuration?: Configuration, 
 };
 
 /**
+ * Request parameters for createDestination operation in NotificationsApi.
+ * @export
+ * @interface NotificationsApiCreateDestinationRequest
+ */
+export interface NotificationsApiCreateDestinationRequest {
+    /**
+     * 
+     * @type {CreateDestinationRequest}
+     * @memberof NotificationsApiCreateDestination
+     */
+    readonly body: CreateDestinationRequest
+}
+
+/**
+ * Request parameters for createSubscription operation in NotificationsApi.
+ * @export
+ * @interface NotificationsApiCreateSubscriptionRequest
+ */
+export interface NotificationsApiCreateSubscriptionRequest {
+    /**
+     * The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
+     * @type {'ANY_OFFER_CHANGED' | 'FEED_PROCESSING_FINISHED' | 'FBA_OUTBOUND_SHIPMENT_STATUS' | 'FEE_PROMOTION' | 'FULFILLMENT_ORDER_STATUS' | 'REPORT_PROCESSING_FINISHED' | 'BRANDED_ITEM_CONTENT_CHANGE' | 'ITEM_PRODUCT_TYPE_CHANGE' | 'MFN_ORDER_STATUS_CHANGE' | 'B2B_ANY_OFFER_CHANGED'}
+     * @memberof NotificationsApiCreateSubscription
+     */
+    readonly notificationType: 'ANY_OFFER_CHANGED' | 'FEED_PROCESSING_FINISHED' | 'FBA_OUTBOUND_SHIPMENT_STATUS' | 'FEE_PROMOTION' | 'FULFILLMENT_ORDER_STATUS' | 'REPORT_PROCESSING_FINISHED' | 'BRANDED_ITEM_CONTENT_CHANGE' | 'ITEM_PRODUCT_TYPE_CHANGE' | 'MFN_ORDER_STATUS_CHANGE' | 'B2B_ANY_OFFER_CHANGED'
+
+    /**
+     * 
+     * @type {CreateSubscriptionRequest}
+     * @memberof NotificationsApiCreateSubscription
+     */
+    readonly body: CreateSubscriptionRequest
+}
+
+/**
+ * Request parameters for deleteDestination operation in NotificationsApi.
+ * @export
+ * @interface NotificationsApiDeleteDestinationRequest
+ */
+export interface NotificationsApiDeleteDestinationRequest {
+    /**
+     * The identifier for the destination that you want to delete.
+     * @type {string}
+     * @memberof NotificationsApiDeleteDestination
+     */
+    readonly destinationId: string
+}
+
+/**
+ * Request parameters for deleteSubscriptionById operation in NotificationsApi.
+ * @export
+ * @interface NotificationsApiDeleteSubscriptionByIdRequest
+ */
+export interface NotificationsApiDeleteSubscriptionByIdRequest {
+    /**
+     * The identifier for the subscription that you want to delete.
+     * @type {string}
+     * @memberof NotificationsApiDeleteSubscriptionById
+     */
+    readonly subscriptionId: string
+
+    /**
+     * The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
+     * @type {'ANY_OFFER_CHANGED' | 'FEED_PROCESSING_FINISHED' | 'FBA_OUTBOUND_SHIPMENT_STATUS' | 'FEE_PROMOTION' | 'FULFILLMENT_ORDER_STATUS' | 'REPORT_PROCESSING_FINISHED' | 'BRANDED_ITEM_CONTENT_CHANGE' | 'ITEM_PRODUCT_TYPE_CHANGE' | 'MFN_ORDER_STATUS_CHANGE' | 'B2B_ANY_OFFER_CHANGED'}
+     * @memberof NotificationsApiDeleteSubscriptionById
+     */
+    readonly notificationType: 'ANY_OFFER_CHANGED' | 'FEED_PROCESSING_FINISHED' | 'FBA_OUTBOUND_SHIPMENT_STATUS' | 'FEE_PROMOTION' | 'FULFILLMENT_ORDER_STATUS' | 'REPORT_PROCESSING_FINISHED' | 'BRANDED_ITEM_CONTENT_CHANGE' | 'ITEM_PRODUCT_TYPE_CHANGE' | 'MFN_ORDER_STATUS_CHANGE' | 'B2B_ANY_OFFER_CHANGED'
+}
+
+/**
+ * Request parameters for getDestination operation in NotificationsApi.
+ * @export
+ * @interface NotificationsApiGetDestinationRequest
+ */
+export interface NotificationsApiGetDestinationRequest {
+    /**
+     * The identifier generated when you created the destination.
+     * @type {string}
+     * @memberof NotificationsApiGetDestination
+     */
+    readonly destinationId: string
+}
+
+/**
+ * Request parameters for getSubscription operation in NotificationsApi.
+ * @export
+ * @interface NotificationsApiGetSubscriptionRequest
+ */
+export interface NotificationsApiGetSubscriptionRequest {
+    /**
+     * The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
+     * @type {'ANY_OFFER_CHANGED' | 'FEED_PROCESSING_FINISHED' | 'FBA_OUTBOUND_SHIPMENT_STATUS' | 'FEE_PROMOTION' | 'FULFILLMENT_ORDER_STATUS' | 'REPORT_PROCESSING_FINISHED' | 'BRANDED_ITEM_CONTENT_CHANGE' | 'ITEM_PRODUCT_TYPE_CHANGE' | 'MFN_ORDER_STATUS_CHANGE' | 'B2B_ANY_OFFER_CHANGED'}
+     * @memberof NotificationsApiGetSubscription
+     */
+    readonly notificationType: 'ANY_OFFER_CHANGED' | 'FEED_PROCESSING_FINISHED' | 'FBA_OUTBOUND_SHIPMENT_STATUS' | 'FEE_PROMOTION' | 'FULFILLMENT_ORDER_STATUS' | 'REPORT_PROCESSING_FINISHED' | 'BRANDED_ITEM_CONTENT_CHANGE' | 'ITEM_PRODUCT_TYPE_CHANGE' | 'MFN_ORDER_STATUS_CHANGE' | 'B2B_ANY_OFFER_CHANGED'
+}
+
+/**
+ * Request parameters for getSubscriptionById operation in NotificationsApi.
+ * @export
+ * @interface NotificationsApiGetSubscriptionByIdRequest
+ */
+export interface NotificationsApiGetSubscriptionByIdRequest {
+    /**
+     * The identifier for the subscription that you want to get.
+     * @type {string}
+     * @memberof NotificationsApiGetSubscriptionById
+     */
+    readonly subscriptionId: string
+
+    /**
+     * The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
+     * @type {'ANY_OFFER_CHANGED' | 'FEED_PROCESSING_FINISHED' | 'FBA_OUTBOUND_SHIPMENT_STATUS' | 'FEE_PROMOTION' | 'FULFILLMENT_ORDER_STATUS' | 'REPORT_PROCESSING_FINISHED' | 'BRANDED_ITEM_CONTENT_CHANGE' | 'ITEM_PRODUCT_TYPE_CHANGE' | 'MFN_ORDER_STATUS_CHANGE' | 'B2B_ANY_OFFER_CHANGED'}
+     * @memberof NotificationsApiGetSubscriptionById
+     */
+    readonly notificationType: 'ANY_OFFER_CHANGED' | 'FEED_PROCESSING_FINISHED' | 'FBA_OUTBOUND_SHIPMENT_STATUS' | 'FEE_PROMOTION' | 'FULFILLMENT_ORDER_STATUS' | 'REPORT_PROCESSING_FINISHED' | 'BRANDED_ITEM_CONTENT_CHANGE' | 'ITEM_PRODUCT_TYPE_CHANGE' | 'MFN_ORDER_STATUS_CHANGE' | 'B2B_ANY_OFFER_CHANGED'
+}
+
+/**
  * NotificationsApi - object-oriented interface
  * @export
  * @class NotificationsApi
@@ -840,59 +959,57 @@ export const NotificationsApiFactory = function (configuration?: Configuration, 
 export class NotificationsApi extends BaseAPI {
     /**
      * Creates a destination resource to receive notifications. The createDestination API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {CreateDestinationRequest} body 
+     * @param {NotificationsApiCreateDestinationRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public createDestination(body: CreateDestinationRequest, options?: any) {
-        return NotificationsApiFp(this.configuration).createDestination(body, options).then((request) => request(this.axios, this.basePath));
+    public createDestination(requestParameters: NotificationsApiCreateDestinationRequest, options?: any) {
+        return NotificationsApiFp(this.configuration).createDestination(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Creates a subscription for the specified notification type to be delivered to the specified destination. Before you can subscribe, you must first create the destination by calling the createDestination operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {'ANY_OFFER_CHANGED' | 'FEED_PROCESSING_FINISHED' | 'FBA_OUTBOUND_SHIPMENT_STATUS' | 'FEE_PROMOTION' | 'FULFILLMENT_ORDER_STATUS' | 'REPORT_PROCESSING_FINISHED' | 'BRANDED_ITEM_CONTENT_CHANGE' | 'ITEM_PRODUCT_TYPE_CHANGE' | 'MFN_ORDER_STATUS_CHANGE' | 'B2B_ANY_OFFER_CHANGED'} notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
-     * @param {CreateSubscriptionRequest} body 
+     * @param {NotificationsApiCreateSubscriptionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public createSubscription(notificationType: 'ANY_OFFER_CHANGED' | 'FEED_PROCESSING_FINISHED' | 'FBA_OUTBOUND_SHIPMENT_STATUS' | 'FEE_PROMOTION' | 'FULFILLMENT_ORDER_STATUS' | 'REPORT_PROCESSING_FINISHED' | 'BRANDED_ITEM_CONTENT_CHANGE' | 'ITEM_PRODUCT_TYPE_CHANGE' | 'MFN_ORDER_STATUS_CHANGE' | 'B2B_ANY_OFFER_CHANGED', body: CreateSubscriptionRequest, options?: any) {
-        return NotificationsApiFp(this.configuration).createSubscription(notificationType, body, options).then((request) => request(this.axios, this.basePath));
+    public createSubscription(requestParameters: NotificationsApiCreateSubscriptionRequest, options?: any) {
+        return NotificationsApiFp(this.configuration).createSubscription(requestParameters.notificationType, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Deletes the destination that you specify. The deleteDestination API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} destinationId The identifier for the destination that you want to delete.
+     * @param {NotificationsApiDeleteDestinationRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public deleteDestination(destinationId: string, options?: any) {
-        return NotificationsApiFp(this.configuration).deleteDestination(destinationId, options).then((request) => request(this.axios, this.basePath));
+    public deleteDestination(requestParameters: NotificationsApiDeleteDestinationRequest, options?: any) {
+        return NotificationsApiFp(this.configuration).deleteDestination(requestParameters.destinationId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The deleteSubscriptionById API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} subscriptionId The identifier for the subscription that you want to delete.
-     * @param {'ANY_OFFER_CHANGED' | 'FEED_PROCESSING_FINISHED' | 'FBA_OUTBOUND_SHIPMENT_STATUS' | 'FEE_PROMOTION' | 'FULFILLMENT_ORDER_STATUS' | 'REPORT_PROCESSING_FINISHED' | 'BRANDED_ITEM_CONTENT_CHANGE' | 'ITEM_PRODUCT_TYPE_CHANGE' | 'MFN_ORDER_STATUS_CHANGE' | 'B2B_ANY_OFFER_CHANGED'} notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
+     * @param {NotificationsApiDeleteSubscriptionByIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public deleteSubscriptionById(subscriptionId: string, notificationType: 'ANY_OFFER_CHANGED' | 'FEED_PROCESSING_FINISHED' | 'FBA_OUTBOUND_SHIPMENT_STATUS' | 'FEE_PROMOTION' | 'FULFILLMENT_ORDER_STATUS' | 'REPORT_PROCESSING_FINISHED' | 'BRANDED_ITEM_CONTENT_CHANGE' | 'ITEM_PRODUCT_TYPE_CHANGE' | 'MFN_ORDER_STATUS_CHANGE' | 'B2B_ANY_OFFER_CHANGED', options?: any) {
-        return NotificationsApiFp(this.configuration).deleteSubscriptionById(subscriptionId, notificationType, options).then((request) => request(this.axios, this.basePath));
+    public deleteSubscriptionById(requestParameters: NotificationsApiDeleteSubscriptionByIdRequest, options?: any) {
+        return NotificationsApiFp(this.configuration).deleteSubscriptionById(requestParameters.subscriptionId, requestParameters.notificationType, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns information about the destination that you specify. The getDestination API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} destinationId The identifier generated when you created the destination.
+     * @param {NotificationsApiGetDestinationRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public getDestination(destinationId: string, options?: any) {
-        return NotificationsApiFp(this.configuration).getDestination(destinationId, options).then((request) => request(this.axios, this.basePath));
+    public getDestination(requestParameters: NotificationsApiGetDestinationRequest, options?: any) {
+        return NotificationsApiFp(this.configuration).getDestination(requestParameters.destinationId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -907,25 +1024,24 @@ export class NotificationsApi extends BaseAPI {
 
     /**
      * Returns information about subscriptions of the specified notification type. You can use this API to get subscription information when you do not have a subscription identifier.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {'ANY_OFFER_CHANGED' | 'FEED_PROCESSING_FINISHED' | 'FBA_OUTBOUND_SHIPMENT_STATUS' | 'FEE_PROMOTION' | 'FULFILLMENT_ORDER_STATUS' | 'REPORT_PROCESSING_FINISHED' | 'BRANDED_ITEM_CONTENT_CHANGE' | 'ITEM_PRODUCT_TYPE_CHANGE' | 'MFN_ORDER_STATUS_CHANGE' | 'B2B_ANY_OFFER_CHANGED'} notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
+     * @param {NotificationsApiGetSubscriptionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public getSubscription(notificationType: 'ANY_OFFER_CHANGED' | 'FEED_PROCESSING_FINISHED' | 'FBA_OUTBOUND_SHIPMENT_STATUS' | 'FEE_PROMOTION' | 'FULFILLMENT_ORDER_STATUS' | 'REPORT_PROCESSING_FINISHED' | 'BRANDED_ITEM_CONTENT_CHANGE' | 'ITEM_PRODUCT_TYPE_CHANGE' | 'MFN_ORDER_STATUS_CHANGE' | 'B2B_ANY_OFFER_CHANGED', options?: any) {
-        return NotificationsApiFp(this.configuration).getSubscription(notificationType, options).then((request) => request(this.axios, this.basePath));
+    public getSubscription(requestParameters: NotificationsApiGetSubscriptionRequest, options?: any) {
+        return NotificationsApiFp(this.configuration).getSubscription(requestParameters.notificationType, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns information about a subscription for the specified notification type. The getSubscriptionById API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} subscriptionId The identifier for the subscription that you want to get.
-     * @param {'ANY_OFFER_CHANGED' | 'FEED_PROCESSING_FINISHED' | 'FBA_OUTBOUND_SHIPMENT_STATUS' | 'FEE_PROMOTION' | 'FULFILLMENT_ORDER_STATUS' | 'REPORT_PROCESSING_FINISHED' | 'BRANDED_ITEM_CONTENT_CHANGE' | 'ITEM_PRODUCT_TYPE_CHANGE' | 'MFN_ORDER_STATUS_CHANGE' | 'B2B_ANY_OFFER_CHANGED'} notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
+     * @param {NotificationsApiGetSubscriptionByIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public getSubscriptionById(subscriptionId: string, notificationType: 'ANY_OFFER_CHANGED' | 'FEED_PROCESSING_FINISHED' | 'FBA_OUTBOUND_SHIPMENT_STATUS' | 'FEE_PROMOTION' | 'FULFILLMENT_ORDER_STATUS' | 'REPORT_PROCESSING_FINISHED' | 'BRANDED_ITEM_CONTENT_CHANGE' | 'ITEM_PRODUCT_TYPE_CHANGE' | 'MFN_ORDER_STATUS_CHANGE' | 'B2B_ANY_OFFER_CHANGED', options?: any) {
-        return NotificationsApiFp(this.configuration).getSubscriptionById(subscriptionId, notificationType, options).then((request) => request(this.axios, this.basePath));
+    public getSubscriptionById(requestParameters: NotificationsApiGetSubscriptionByIdRequest, options?: any) {
+        return NotificationsApiFp(this.configuration).getSubscriptionById(requestParameters.subscriptionId, requestParameters.notificationType, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

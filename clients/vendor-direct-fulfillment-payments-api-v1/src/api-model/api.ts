@@ -633,6 +633,20 @@ export const VendorInvoiceApiFactory = function (configuration?: Configuration, 
 };
 
 /**
+ * Request parameters for submitInvoice operation in VendorInvoiceApi.
+ * @export
+ * @interface VendorInvoiceApiSubmitInvoiceRequest
+ */
+export interface VendorInvoiceApiSubmitInvoiceRequest {
+    /**
+     * 
+     * @type {SubmitInvoiceRequest}
+     * @memberof VendorInvoiceApiSubmitInvoice
+     */
+    readonly body: SubmitInvoiceRequest
+}
+
+/**
  * VendorInvoiceApi - object-oriented interface
  * @export
  * @class VendorInvoiceApi
@@ -641,13 +655,13 @@ export const VendorInvoiceApiFactory = function (configuration?: Configuration, 
 export class VendorInvoiceApi extends BaseAPI {
     /**
      * Submits one or more invoices for a vendor\'s direct fulfillment orders.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {SubmitInvoiceRequest} body 
+     * @param {VendorInvoiceApiSubmitInvoiceRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof VendorInvoiceApi
      */
-    public submitInvoice(body: SubmitInvoiceRequest, options?: any) {
-        return VendorInvoiceApiFp(this.configuration).submitInvoice(body, options).then((request) => request(this.axios, this.basePath));
+    public submitInvoice(requestParameters: VendorInvoiceApiSubmitInvoiceRequest, options?: any) {
+        return VendorInvoiceApiFp(this.configuration).submitInvoice(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

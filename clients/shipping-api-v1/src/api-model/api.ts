@@ -1662,6 +1662,139 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
 };
 
 /**
+ * Request parameters for cancelShipment operation in ShippingApi.
+ * @export
+ * @interface ShippingApiCancelShipmentRequest
+ */
+export interface ShippingApiCancelShipmentRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof ShippingApiCancelShipment
+     */
+    readonly shipmentId: string
+}
+
+/**
+ * Request parameters for createShipment operation in ShippingApi.
+ * @export
+ * @interface ShippingApiCreateShipmentRequest
+ */
+export interface ShippingApiCreateShipmentRequest {
+    /**
+     * 
+     * @type {CreateShipmentRequest}
+     * @memberof ShippingApiCreateShipment
+     */
+    readonly body: CreateShipmentRequest
+}
+
+/**
+ * Request parameters for getRates operation in ShippingApi.
+ * @export
+ * @interface ShippingApiGetRatesRequest
+ */
+export interface ShippingApiGetRatesRequest {
+    /**
+     * 
+     * @type {GetRatesRequest}
+     * @memberof ShippingApiGetRates
+     */
+    readonly body: GetRatesRequest
+}
+
+/**
+ * Request parameters for getShipment operation in ShippingApi.
+ * @export
+ * @interface ShippingApiGetShipmentRequest
+ */
+export interface ShippingApiGetShipmentRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof ShippingApiGetShipment
+     */
+    readonly shipmentId: string
+}
+
+/**
+ * Request parameters for getTrackingInformation operation in ShippingApi.
+ * @export
+ * @interface ShippingApiGetTrackingInformationRequest
+ */
+export interface ShippingApiGetTrackingInformationRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof ShippingApiGetTrackingInformation
+     */
+    readonly trackingId: string
+}
+
+/**
+ * Request parameters for purchaseLabels operation in ShippingApi.
+ * @export
+ * @interface ShippingApiPurchaseLabelsRequest
+ */
+export interface ShippingApiPurchaseLabelsRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof ShippingApiPurchaseLabels
+     */
+    readonly shipmentId: string
+
+    /**
+     * 
+     * @type {PurchaseLabelsRequest}
+     * @memberof ShippingApiPurchaseLabels
+     */
+    readonly body: PurchaseLabelsRequest
+}
+
+/**
+ * Request parameters for purchaseShipment operation in ShippingApi.
+ * @export
+ * @interface ShippingApiPurchaseShipmentRequest
+ */
+export interface ShippingApiPurchaseShipmentRequest {
+    /**
+     * 
+     * @type {PurchaseShipmentRequest}
+     * @memberof ShippingApiPurchaseShipment
+     */
+    readonly body: PurchaseShipmentRequest
+}
+
+/**
+ * Request parameters for retrieveShippingLabel operation in ShippingApi.
+ * @export
+ * @interface ShippingApiRetrieveShippingLabelRequest
+ */
+export interface ShippingApiRetrieveShippingLabelRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof ShippingApiRetrieveShippingLabel
+     */
+    readonly shipmentId: string
+
+    /**
+     * 
+     * @type {string}
+     * @memberof ShippingApiRetrieveShippingLabel
+     */
+    readonly trackingId: string
+
+    /**
+     * 
+     * @type {RetrieveShippingLabelRequest}
+     * @memberof ShippingApiRetrieveShippingLabel
+     */
+    readonly body: RetrieveShippingLabelRequest
+}
+
+/**
  * ShippingApi - object-oriented interface
  * @export
  * @class ShippingApi
@@ -1670,24 +1803,24 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
 export class ShippingApi extends BaseAPI {
     /**
      * Cancel a shipment by the given shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} shipmentId 
+     * @param {ShippingApiCancelShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public cancelShipment(shipmentId: string, options?: any) {
-        return ShippingApiFp(this.configuration).cancelShipment(shipmentId, options).then((request) => request(this.axios, this.basePath));
+    public cancelShipment(requestParameters: ShippingApiCancelShipmentRequest, options?: any) {
+        return ShippingApiFp(this.configuration).cancelShipment(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Create a new shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {CreateShipmentRequest} body 
+     * @param {ShippingApiCreateShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public createShipment(body: CreateShipmentRequest, options?: any) {
-        return ShippingApiFp(this.configuration).createShipment(body, options).then((request) => request(this.axios, this.basePath));
+    public createShipment(requestParameters: ShippingApiCreateShipmentRequest, options?: any) {
+        return ShippingApiFp(this.configuration).createShipment(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1702,71 +1835,68 @@ export class ShippingApi extends BaseAPI {
 
     /**
      * Get service rates.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {GetRatesRequest} body 
+     * @param {ShippingApiGetRatesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getRates(body: GetRatesRequest, options?: any) {
-        return ShippingApiFp(this.configuration).getRates(body, options).then((request) => request(this.axios, this.basePath));
+    public getRates(requestParameters: ShippingApiGetRatesRequest, options?: any) {
+        return ShippingApiFp(this.configuration).getRates(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Return the entire shipment object for the shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} shipmentId 
+     * @param {ShippingApiGetShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getShipment(shipmentId: string, options?: any) {
-        return ShippingApiFp(this.configuration).getShipment(shipmentId, options).then((request) => request(this.axios, this.basePath));
+    public getShipment(requestParameters: ShippingApiGetShipmentRequest, options?: any) {
+        return ShippingApiFp(this.configuration).getShipment(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Return the tracking information of a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} trackingId 
+     * @param {ShippingApiGetTrackingInformationRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getTrackingInformation(trackingId: string, options?: any) {
-        return ShippingApiFp(this.configuration).getTrackingInformation(trackingId, options).then((request) => request(this.axios, this.basePath));
+    public getTrackingInformation(requestParameters: ShippingApiGetTrackingInformationRequest, options?: any) {
+        return ShippingApiFp(this.configuration).getTrackingInformation(requestParameters.trackingId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Purchase shipping labels based on a given rate.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} shipmentId 
-     * @param {PurchaseLabelsRequest} body 
+     * @param {ShippingApiPurchaseLabelsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public purchaseLabels(shipmentId: string, body: PurchaseLabelsRequest, options?: any) {
-        return ShippingApiFp(this.configuration).purchaseLabels(shipmentId, body, options).then((request) => request(this.axios, this.basePath));
+    public purchaseLabels(requestParameters: ShippingApiPurchaseLabelsRequest, options?: any) {
+        return ShippingApiFp(this.configuration).purchaseLabels(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Purchase shipping labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {PurchaseShipmentRequest} body 
+     * @param {ShippingApiPurchaseShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public purchaseShipment(body: PurchaseShipmentRequest, options?: any) {
-        return ShippingApiFp(this.configuration).purchaseShipment(body, options).then((request) => request(this.axios, this.basePath));
+    public purchaseShipment(requestParameters: ShippingApiPurchaseShipmentRequest, options?: any) {
+        return ShippingApiFp(this.configuration).purchaseShipment(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Retrieve shipping label based on the shipment id and tracking id.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} shipmentId 
-     * @param {string} trackingId 
-     * @param {RetrieveShippingLabelRequest} body 
+     * @param {ShippingApiRetrieveShippingLabelRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public retrieveShippingLabel(shipmentId: string, trackingId: string, body: RetrieveShippingLabelRequest, options?: any) {
-        return ShippingApiFp(this.configuration).retrieveShippingLabel(shipmentId, trackingId, body, options).then((request) => request(this.axios, this.basePath));
+    public retrieveShippingLabel(requestParameters: ShippingApiRetrieveShippingLabelRequest, options?: any) {
+        return ShippingApiFp(this.configuration).retrieveShippingLabel(requestParameters.shipmentId, requestParameters.trackingId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

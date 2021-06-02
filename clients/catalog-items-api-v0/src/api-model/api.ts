@@ -1460,6 +1460,118 @@ export const CatalogApiFactory = function (configuration?: Configuration, basePa
 };
 
 /**
+ * Request parameters for getCatalogItem operation in CatalogApi.
+ * @export
+ * @interface CatalogApiGetCatalogItemRequest
+ */
+export interface CatalogApiGetCatalogItemRequest {
+    /**
+     * A marketplace identifier. Specifies the marketplace for the item.
+     * @type {string}
+     * @memberof CatalogApiGetCatalogItem
+     */
+    readonly marketplaceId: string
+
+    /**
+     * The Amazon Standard Identification Number (ASIN) of the item.
+     * @type {string}
+     * @memberof CatalogApiGetCatalogItem
+     */
+    readonly asin: string
+}
+
+/**
+ * Request parameters for listCatalogCategories operation in CatalogApi.
+ * @export
+ * @interface CatalogApiListCatalogCategoriesRequest
+ */
+export interface CatalogApiListCatalogCategoriesRequest {
+    /**
+     * A marketplace identifier. Specifies the marketplace for the item.
+     * @type {string}
+     * @memberof CatalogApiListCatalogCategories
+     */
+    readonly marketplaceId: string
+
+    /**
+     * The Amazon Standard Identification Number (ASIN) of the item.
+     * @type {string}
+     * @memberof CatalogApiListCatalogCategories
+     */
+    readonly aSIN?: string
+
+    /**
+     * Used to identify items in the given marketplace. SellerSKU is qualified by the seller\&#39;s SellerId, which is included with every operation that you submit.
+     * @type {string}
+     * @memberof CatalogApiListCatalogCategories
+     */
+    readonly sellerSKU?: string
+}
+
+/**
+ * Request parameters for listCatalogItems operation in CatalogApi.
+ * @export
+ * @interface CatalogApiListCatalogItemsRequest
+ */
+export interface CatalogApiListCatalogItemsRequest {
+    /**
+     * A marketplace identifier. Specifies the marketplace for which items are returned.
+     * @type {string}
+     * @memberof CatalogApiListCatalogItems
+     */
+    readonly marketplaceId: string
+
+    /**
+     * Keyword(s) to use to search for items in the catalog. Example: \&#39;harry potter books\&#39;.
+     * @type {string}
+     * @memberof CatalogApiListCatalogItems
+     */
+    readonly query?: string
+
+    /**
+     * An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items.
+     * @type {string}
+     * @memberof CatalogApiListCatalogItems
+     */
+    readonly queryContextId?: string
+
+    /**
+     * Used to identify an item in the given marketplace. SellerSKU is qualified by the seller\&#39;s SellerId, which is included with every operation that you submit.
+     * @type {string}
+     * @memberof CatalogApiListCatalogItems
+     */
+    readonly sellerSKU?: string
+
+    /**
+     * A 12-digit bar code used for retail packaging.
+     * @type {string}
+     * @memberof CatalogApiListCatalogItems
+     */
+    readonly uPC?: string
+
+    /**
+     * A European article number that uniquely identifies the catalog item, manufacturer, and its attributes.
+     * @type {string}
+     * @memberof CatalogApiListCatalogItems
+     */
+    readonly eAN?: string
+
+    /**
+     * The unique commercial book identifier used to identify books internationally.
+     * @type {string}
+     * @memberof CatalogApiListCatalogItems
+     */
+    readonly iSBN?: string
+
+    /**
+     * A Japanese article number that uniquely identifies the product, manufacturer, and its attributes.
+     * @type {string}
+     * @memberof CatalogApiListCatalogItems
+     */
+    readonly jAN?: string
+}
+
+/**
  * CatalogApi - object-oriented interface
  * @export
  * @class CatalogApi
@@ -1468,45 +1580,35 @@ export const CatalogApiFactory = function (configuration?: Configuration, basePa
 export class CatalogApi extends BaseAPI {
     /**
      * Returns a specified item and its attributes.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 2 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for the item.
-     * @param {string} asin The Amazon Standard Identification Number (ASIN) of the item.
+     * @param {CatalogApiGetCatalogItemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CatalogApi
      */
-    public getCatalogItem(marketplaceId: string, asin: string, options?: any) {
-        return CatalogApiFp(this.configuration).getCatalogItem(marketplaceId, asin, options).then((request) => request(this.axios, this.basePath));
+    public getCatalogItem(requestParameters: CatalogApiGetCatalogItemRequest, options?: any) {
+        return CatalogApiFp(this.configuration).getCatalogItem(requestParameters.marketplaceId, requestParameters.asin, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns the parent categories to which an item belongs, based on the specified ASIN or SellerSKU.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 1 | 40 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for the item.
-     * @param {string} [aSIN] The Amazon Standard Identification Number (ASIN) of the item.
-     * @param {string} [sellerSKU] Used to identify items in the given marketplace. SellerSKU is qualified by the seller\&#39;s SellerId, which is included with every operation that you submit.
+     * @param {CatalogApiListCatalogCategoriesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CatalogApi
      */
-    public listCatalogCategories(marketplaceId: string, aSIN?: string, sellerSKU?: string, options?: any) {
-        return CatalogApiFp(this.configuration).listCatalogCategories(marketplaceId, aSIN, sellerSKU, options).then((request) => request(this.axios, this.basePath));
+    public listCatalogCategories(requestParameters: CatalogApiListCatalogCategoriesRequest, options?: any) {
+        return CatalogApiFp(this.configuration).listCatalogCategories(requestParameters.marketplaceId, requestParameters.aSIN, requestParameters.sellerSKU, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns a list of items and their attributes, based on a search query or item identifiers that you specify. When based on a search query, provide the Query parameter and optionally, the QueryContextId parameter. When based on item identifiers, provide a single appropriate parameter based on the identifier type, and specify the associated item value. MarketplaceId is always required.  This operation returns a maximum of ten products and does not return non-buyable products.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 6 | 40 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for which items are returned.
-     * @param {string} [query] Keyword(s) to use to search for items in the catalog. Example: \&#39;harry potter books\&#39;.
-     * @param {string} [queryContextId] An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items.
-     * @param {string} [sellerSKU] Used to identify an item in the given marketplace. SellerSKU is qualified by the seller\&#39;s SellerId, which is included with every operation that you submit.
-     * @param {string} [uPC] A 12-digit bar code used for retail packaging.
-     * @param {string} [eAN] A European article number that uniquely identifies the catalog item, manufacturer, and its attributes.
-     * @param {string} [iSBN] The unique commercial book identifier used to identify books internationally.
-     * @param {string} [jAN] A Japanese article number that uniquely identifies the product, manufacturer, and its attributes.
+     * @param {CatalogApiListCatalogItemsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CatalogApi
      */
-    public listCatalogItems(marketplaceId: string, query?: string, queryContextId?: string, sellerSKU?: string, uPC?: string, eAN?: string, iSBN?: string, jAN?: string, options?: any) {
-        return CatalogApiFp(this.configuration).listCatalogItems(marketplaceId, query, queryContextId, sellerSKU, uPC, eAN, iSBN, jAN, options).then((request) => request(this.axios, this.basePath));
+    public listCatalogItems(requestParameters: CatalogApiListCatalogItemsRequest, options?: any) {
+        return CatalogApiFp(this.configuration).listCatalogItems(requestParameters.marketplaceId, requestParameters.query, requestParameters.queryContextId, requestParameters.sellerSKU, requestParameters.uPC, requestParameters.eAN, requestParameters.iSBN, requestParameters.jAN, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -402,6 +402,48 @@ export const SolicitationsApiFactory = function (configuration?: Configuration, 
 };
 
 /**
+ * Request parameters for createProductReviewAndSellerFeedbackSolicitation operation in SolicitationsApi.
+ * @export
+ * @interface SolicitationsApiCreateProductReviewAndSellerFeedbackSolicitationRequest
+ */
+export interface SolicitationsApiCreateProductReviewAndSellerFeedbackSolicitationRequest {
+    /**
+     * An Amazon order identifier. This specifies the order for which a solicitation is sent.
+     * @type {string}
+     * @memberof SolicitationsApiCreateProductReviewAndSellerFeedbackSolicitation
+     */
+    readonly amazonOrderId: string
+
+    /**
+     * A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
+     * @type {Array<string>}
+     * @memberof SolicitationsApiCreateProductReviewAndSellerFeedbackSolicitation
+     */
+    readonly marketplaceIds: Array<string>
+}
+
+/**
+ * Request parameters for getSolicitationActionsForOrder operation in SolicitationsApi.
+ * @export
+ * @interface SolicitationsApiGetSolicitationActionsForOrderRequest
+ */
+export interface SolicitationsApiGetSolicitationActionsForOrderRequest {
+    /**
+     * An Amazon order identifier. This specifies the order for which you want a list of available solicitation types.
+     * @type {string}
+     * @memberof SolicitationsApiGetSolicitationActionsForOrder
+     */
+    readonly amazonOrderId: string
+
+    /**
+     * A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
+     * @type {Array<string>}
+     * @memberof SolicitationsApiGetSolicitationActionsForOrder
+     */
+    readonly marketplaceIds: Array<string>
+}
+
+/**
  * SolicitationsApi - object-oriented interface
  * @export
  * @class SolicitationsApi
@@ -410,26 +452,24 @@ export const SolicitationsApiFactory = function (configuration?: Configuration, 
 export class SolicitationsApi extends BaseAPI {
     /**
      * Sends a solicitation to a buyer asking for seller feedback and a product review for the specified order. Send only one productReviewAndSellerFeedback or free form proactive message per order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} amazonOrderId An Amazon order identifier. This specifies the order for which a solicitation is sent.
-     * @param {Array<string>} marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
+     * @param {SolicitationsApiCreateProductReviewAndSellerFeedbackSolicitationRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SolicitationsApi
      */
-    public createProductReviewAndSellerFeedbackSolicitation(amazonOrderId: string, marketplaceIds: Array<string>, options?: any) {
-        return SolicitationsApiFp(this.configuration).createProductReviewAndSellerFeedbackSolicitation(amazonOrderId, marketplaceIds, options).then((request) => request(this.axios, this.basePath));
+    public createProductReviewAndSellerFeedbackSolicitation(requestParameters: SolicitationsApiCreateProductReviewAndSellerFeedbackSolicitationRequest, options?: any) {
+        return SolicitationsApiFp(this.configuration).createProductReviewAndSellerFeedbackSolicitation(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns a list of solicitation types that are available for an order that you specify. A solicitation type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a solicitation. Currently only the productReviewAndSellerFeedbackSolicitation solicitation type is available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} amazonOrderId An Amazon order identifier. This specifies the order for which you want a list of available solicitation types.
-     * @param {Array<string>} marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
+     * @param {SolicitationsApiGetSolicitationActionsForOrderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SolicitationsApi
      */
-    public getSolicitationActionsForOrder(amazonOrderId: string, marketplaceIds: Array<string>, options?: any) {
-        return SolicitationsApiFp(this.configuration).getSolicitationActionsForOrder(amazonOrderId, marketplaceIds, options).then((request) => request(this.axios, this.basePath));
+    public getSolicitationActionsForOrder(requestParameters: SolicitationsApiGetSolicitationActionsForOrderRequest, options?: any) {
+        return SolicitationsApiFp(this.configuration).getSolicitationActionsForOrder(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

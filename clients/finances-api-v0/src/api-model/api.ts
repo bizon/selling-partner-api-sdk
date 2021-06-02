@@ -2018,6 +2018,132 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
 };
 
 /**
+ * Request parameters for listFinancialEventGroups operation in DefaultApi.
+ * @export
+ * @interface DefaultApiListFinancialEventGroupsRequest
+ */
+export interface DefaultApiListFinancialEventGroupsRequest {
+    /**
+     * The maximum number of results to return per page.
+     * @type {number}
+     * @memberof DefaultApiListFinancialEventGroups
+     */
+    readonly maxResultsPerPage?: number
+
+    /**
+     * A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned.
+     * @type {string}
+     * @memberof DefaultApiListFinancialEventGroups
+     */
+    readonly financialEventGroupStartedBefore?: string
+
+    /**
+     * A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted.
+     * @type {string}
+     * @memberof DefaultApiListFinancialEventGroups
+     */
+    readonly financialEventGroupStartedAfter?: string
+
+    /**
+     * A string token returned in the response of your previous request.
+     * @type {string}
+     * @memberof DefaultApiListFinancialEventGroups
+     */
+    readonly nextToken?: string
+}
+
+/**
+ * Request parameters for listFinancialEvents operation in DefaultApi.
+ * @export
+ * @interface DefaultApiListFinancialEventsRequest
+ */
+export interface DefaultApiListFinancialEventsRequest {
+    /**
+     * The maximum number of results to return per page.
+     * @type {number}
+     * @memberof DefaultApiListFinancialEvents
+     */
+    readonly maxResultsPerPage?: number
+
+    /**
+     * A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format.
+     * @type {string}
+     * @memberof DefaultApiListFinancialEvents
+     */
+    readonly postedAfter?: string
+
+    /**
+     * A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes.
+     * @type {string}
+     * @memberof DefaultApiListFinancialEvents
+     */
+    readonly postedBefore?: string
+
+    /**
+     * A string token returned in the response of your previous request.
+     * @type {string}
+     * @memberof DefaultApiListFinancialEvents
+     */
+    readonly nextToken?: string
+}
+
+/**
+ * Request parameters for listFinancialEventsByGroupId operation in DefaultApi.
+ * @export
+ * @interface DefaultApiListFinancialEventsByGroupIdRequest
+ */
+export interface DefaultApiListFinancialEventsByGroupIdRequest {
+    /**
+     * The identifier of the financial event group to which the events belong.
+     * @type {string}
+     * @memberof DefaultApiListFinancialEventsByGroupId
+     */
+    readonly eventGroupId: string
+
+    /**
+     * The maximum number of results to return per page.
+     * @type {number}
+     * @memberof DefaultApiListFinancialEventsByGroupId
+     */
+    readonly maxResultsPerPage?: number
+
+    /**
+     * A string token returned in the response of your previous request.
+     * @type {string}
+     * @memberof DefaultApiListFinancialEventsByGroupId
+     */
+    readonly nextToken?: string
+}
+
+/**
+ * Request parameters for listFinancialEventsByOrderId operation in DefaultApi.
+ * @export
+ * @interface DefaultApiListFinancialEventsByOrderIdRequest
+ */
+export interface DefaultApiListFinancialEventsByOrderIdRequest {
+    /**
+     * An Amazon-defined order identifier, in 3-7-7 format.
+     * @type {string}
+     * @memberof DefaultApiListFinancialEventsByOrderId
+     */
+    readonly orderId: string
+
+    /**
+     * The maximum number of results to return per page.
+     * @type {number}
+     * @memberof DefaultApiListFinancialEventsByOrderId
+     */
+    readonly maxResultsPerPage?: number
+
+    /**
+     * A string token returned in the response of your previous request.
+     * @type {string}
+     * @memberof DefaultApiListFinancialEventsByOrderId
+     */
+    readonly nextToken?: string
+}
+
+/**
  * DefaultApi - object-oriented interface
  * @export
  * @class DefaultApi
@@ -2026,56 +2152,46 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
 export class DefaultApi extends BaseAPI {
     /**
      * Returns financial event groups for a given date range.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {number} [maxResultsPerPage] The maximum number of results to return per page.
-     * @param {string} [financialEventGroupStartedBefore] A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned.
-     * @param {string} [financialEventGroupStartedAfter] A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted.
-     * @param {string} [nextToken] A string token returned in the response of your previous request.
+     * @param {DefaultApiListFinancialEventGroupsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public listFinancialEventGroups(maxResultsPerPage?: number, financialEventGroupStartedBefore?: string, financialEventGroupStartedAfter?: string, nextToken?: string, options?: any) {
-        return DefaultApiFp(this.configuration).listFinancialEventGroups(maxResultsPerPage, financialEventGroupStartedBefore, financialEventGroupStartedAfter, nextToken, options).then((request) => request(this.axios, this.basePath));
+    public listFinancialEventGroups(requestParameters: DefaultApiListFinancialEventGroupsRequest = {}, options?: any) {
+        return DefaultApiFp(this.configuration).listFinancialEventGroups(requestParameters.maxResultsPerPage, requestParameters.financialEventGroupStartedBefore, requestParameters.financialEventGroupStartedAfter, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns financial events for the specified data range.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {number} [maxResultsPerPage] The maximum number of results to return per page.
-     * @param {string} [postedAfter] A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format.
-     * @param {string} [postedBefore] A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes.
-     * @param {string} [nextToken] A string token returned in the response of your previous request.
+     * @param {DefaultApiListFinancialEventsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public listFinancialEvents(maxResultsPerPage?: number, postedAfter?: string, postedBefore?: string, nextToken?: string, options?: any) {
-        return DefaultApiFp(this.configuration).listFinancialEvents(maxResultsPerPage, postedAfter, postedBefore, nextToken, options).then((request) => request(this.axios, this.basePath));
+    public listFinancialEvents(requestParameters: DefaultApiListFinancialEventsRequest = {}, options?: any) {
+        return DefaultApiFp(this.configuration).listFinancialEvents(requestParameters.maxResultsPerPage, requestParameters.postedAfter, requestParameters.postedBefore, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns all financial events for the specified financial event group.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} eventGroupId The identifier of the financial event group to which the events belong.
-     * @param {number} [maxResultsPerPage] The maximum number of results to return per page.
-     * @param {string} [nextToken] A string token returned in the response of your previous request.
+     * @param {DefaultApiListFinancialEventsByGroupIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public listFinancialEventsByGroupId(eventGroupId: string, maxResultsPerPage?: number, nextToken?: string, options?: any) {
-        return DefaultApiFp(this.configuration).listFinancialEventsByGroupId(eventGroupId, maxResultsPerPage, nextToken, options).then((request) => request(this.axios, this.basePath));
+    public listFinancialEventsByGroupId(requestParameters: DefaultApiListFinancialEventsByGroupIdRequest, options?: any) {
+        return DefaultApiFp(this.configuration).listFinancialEventsByGroupId(requestParameters.eventGroupId, requestParameters.maxResultsPerPage, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns all financial events for the specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
-     * @param {number} [maxResultsPerPage] The maximum number of results to return per page.
-     * @param {string} [nextToken] A string token returned in the response of your previous request.
+     * @param {DefaultApiListFinancialEventsByOrderIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public listFinancialEventsByOrderId(orderId: string, maxResultsPerPage?: number, nextToken?: string, options?: any) {
-        return DefaultApiFp(this.configuration).listFinancialEventsByOrderId(orderId, maxResultsPerPage, nextToken, options).then((request) => request(this.axios, this.basePath));
+    public listFinancialEventsByOrderId(requestParameters: DefaultApiListFinancialEventsByOrderIdRequest, options?: any) {
+        return DefaultApiFp(this.configuration).listFinancialEventsByOrderId(requestParameters.orderId, requestParameters.maxResultsPerPage, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

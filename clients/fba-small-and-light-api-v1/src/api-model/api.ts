@@ -596,6 +596,104 @@ export const SmallAndLightApiFactory = function (configuration?: Configuration, 
 };
 
 /**
+ * Request parameters for deleteSmallAndLightEnrollmentBySellerSKU operation in SmallAndLightApi.
+ * @export
+ * @interface SmallAndLightApiDeleteSmallAndLightEnrollmentBySellerSKURequest
+ */
+export interface SmallAndLightApiDeleteSmallAndLightEnrollmentBySellerSKURequest {
+    /**
+     * The seller SKU that identifies the item.
+     * @type {string}
+     * @memberof SmallAndLightApiDeleteSmallAndLightEnrollmentBySellerSKU
+     */
+    readonly sellerSKU: string
+
+    /**
+     * The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only.
+     * @type {Array<string>}
+     * @memberof SmallAndLightApiDeleteSmallAndLightEnrollmentBySellerSKU
+     */
+    readonly marketplaceIds: Array<string>
+}
+
+/**
+ * Request parameters for getSmallAndLightEligibilityBySellerSKU operation in SmallAndLightApi.
+ * @export
+ * @interface SmallAndLightApiGetSmallAndLightEligibilityBySellerSKURequest
+ */
+export interface SmallAndLightApiGetSmallAndLightEligibilityBySellerSKURequest {
+    /**
+     * The seller SKU that identifies the item.
+     * @type {string}
+     * @memberof SmallAndLightApiGetSmallAndLightEligibilityBySellerSKU
+     */
+    readonly sellerSKU: string
+
+    /**
+     * The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only.
+     * @type {Array<string>}
+     * @memberof SmallAndLightApiGetSmallAndLightEligibilityBySellerSKU
+     */
+    readonly marketplaceIds: Array<string>
+}
+
+/**
+ * Request parameters for getSmallAndLightEnrollmentBySellerSKU operation in SmallAndLightApi.
+ * @export
+ * @interface SmallAndLightApiGetSmallAndLightEnrollmentBySellerSKURequest
+ */
+export interface SmallAndLightApiGetSmallAndLightEnrollmentBySellerSKURequest {
+    /**
+     * The seller SKU that identifies the item.
+     * @type {string}
+     * @memberof SmallAndLightApiGetSmallAndLightEnrollmentBySellerSKU
+     */
+    readonly sellerSKU: string
+
+    /**
+     * The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only.
+     * @type {Array<string>}
+     * @memberof SmallAndLightApiGetSmallAndLightEnrollmentBySellerSKU
+     */
+    readonly marketplaceIds: Array<string>
+}
+
+/**
+ * Request parameters for getSmallAndLightFeePreview operation in SmallAndLightApi.
+ * @export
+ * @interface SmallAndLightApiGetSmallAndLightFeePreviewRequest
+ */
+export interface SmallAndLightApiGetSmallAndLightFeePreviewRequest {
+    /**
+     * 
+     * @type {SmallAndLightFeePreviewRequest}
+     * @memberof SmallAndLightApiGetSmallAndLightFeePreview
+     */
+    readonly body: SmallAndLightFeePreviewRequest
+}
+
+/**
+ * Request parameters for putSmallAndLightEnrollmentBySellerSKU operation in SmallAndLightApi.
+ * @export
+ * @interface SmallAndLightApiPutSmallAndLightEnrollmentBySellerSKURequest
+ */
+export interface SmallAndLightApiPutSmallAndLightEnrollmentBySellerSKURequest {
+    /**
+     * The seller SKU that identifies the item.
+     * @type {string}
+     * @memberof SmallAndLightApiPutSmallAndLightEnrollmentBySellerSKU
+     */
+    readonly sellerSKU: string
+
+    /**
+     * The marketplace in which to enroll the item. Note: Accepts a single marketplace only.
+     * @type {Array<string>}
+     * @memberof SmallAndLightApiPutSmallAndLightEnrollmentBySellerSKU
+     */
+    readonly marketplaceIds: Array<string>
+}
+
+/**
  * SmallAndLightApi - object-oriented interface
  * @export
  * @class SmallAndLightApi
@@ -604,61 +702,57 @@ export const SmallAndLightApiFactory = function (configuration?: Configuration, 
 export class SmallAndLightApi extends BaseAPI {
     /**
      * Removes the item indicated by the specified seller SKU from the Small and Light program in the specified marketplace. If the item is not eligible for disenrollment, the ineligibility reasons are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} sellerSKU The seller SKU that identifies the item.
-     * @param {Array<string>} marketplaceIds The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only.
+     * @param {SmallAndLightApiDeleteSmallAndLightEnrollmentBySellerSKURequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SmallAndLightApi
      */
-    public deleteSmallAndLightEnrollmentBySellerSKU(sellerSKU: string, marketplaceIds: Array<string>, options?: any) {
-        return SmallAndLightApiFp(this.configuration).deleteSmallAndLightEnrollmentBySellerSKU(sellerSKU, marketplaceIds, options).then((request) => request(this.axios, this.basePath));
+    public deleteSmallAndLightEnrollmentBySellerSKU(requestParameters: SmallAndLightApiDeleteSmallAndLightEnrollmentBySellerSKURequest, options?: any) {
+        return SmallAndLightApiFp(this.configuration).deleteSmallAndLightEnrollmentBySellerSKU(requestParameters.sellerSKU, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns the Small and Light program eligibility status of the item indicated by the specified seller SKU in the specified marketplace. If the item is not eligible, the ineligibility reasons are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} sellerSKU The seller SKU that identifies the item.
-     * @param {Array<string>} marketplaceIds The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only.
+     * @param {SmallAndLightApiGetSmallAndLightEligibilityBySellerSKURequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SmallAndLightApi
      */
-    public getSmallAndLightEligibilityBySellerSKU(sellerSKU: string, marketplaceIds: Array<string>, options?: any) {
-        return SmallAndLightApiFp(this.configuration).getSmallAndLightEligibilityBySellerSKU(sellerSKU, marketplaceIds, options).then((request) => request(this.axios, this.basePath));
+    public getSmallAndLightEligibilityBySellerSKU(requestParameters: SmallAndLightApiGetSmallAndLightEligibilityBySellerSKURequest, options?: any) {
+        return SmallAndLightApiFp(this.configuration).getSmallAndLightEligibilityBySellerSKU(requestParameters.sellerSKU, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns the Small and Light enrollment status for the item indicated by the specified seller SKU in the specified marketplace.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} sellerSKU The seller SKU that identifies the item.
-     * @param {Array<string>} marketplaceIds The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only.
+     * @param {SmallAndLightApiGetSmallAndLightEnrollmentBySellerSKURequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SmallAndLightApi
      */
-    public getSmallAndLightEnrollmentBySellerSKU(sellerSKU: string, marketplaceIds: Array<string>, options?: any) {
-        return SmallAndLightApiFp(this.configuration).getSmallAndLightEnrollmentBySellerSKU(sellerSKU, marketplaceIds, options).then((request) => request(this.axios, this.basePath));
+    public getSmallAndLightEnrollmentBySellerSKU(requestParameters: SmallAndLightApiGetSmallAndLightEnrollmentBySellerSKURequest, options?: any) {
+        return SmallAndLightApiFp(this.configuration).getSmallAndLightEnrollmentBySellerSKU(requestParameters.sellerSKU, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns the Small and Light fee estimates for the specified items. You must include a marketplaceId parameter to retrieve the proper fee estimates for items to be sold in that marketplace. The ordering of items in the response will mirror the order of the items in the request. Duplicate ASIN/price combinations are removed.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 3 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {SmallAndLightFeePreviewRequest} body 
+     * @param {SmallAndLightApiGetSmallAndLightFeePreviewRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SmallAndLightApi
      */
-    public getSmallAndLightFeePreview(body: SmallAndLightFeePreviewRequest, options?: any) {
-        return SmallAndLightApiFp(this.configuration).getSmallAndLightFeePreview(body, options).then((request) => request(this.axios, this.basePath));
+    public getSmallAndLightFeePreview(requestParameters: SmallAndLightApiGetSmallAndLightFeePreviewRequest, options?: any) {
+        return SmallAndLightApiFp(this.configuration).getSmallAndLightFeePreview(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Enrolls the item indicated by the specified seller SKU in the Small and Light program in the specified marketplace. If the item is not eligible, the ineligibility reasons are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} sellerSKU The seller SKU that identifies the item.
-     * @param {Array<string>} marketplaceIds The marketplace in which to enroll the item. Note: Accepts a single marketplace only.
+     * @param {SmallAndLightApiPutSmallAndLightEnrollmentBySellerSKURequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SmallAndLightApi
      */
-    public putSmallAndLightEnrollmentBySellerSKU(sellerSKU: string, marketplaceIds: Array<string>, options?: any) {
-        return SmallAndLightApiFp(this.configuration).putSmallAndLightEnrollmentBySellerSKU(sellerSKU, marketplaceIds, options).then((request) => request(this.axios, this.basePath));
+    public putSmallAndLightEnrollmentBySellerSKU(requestParameters: SmallAndLightApiPutSmallAndLightEnrollmentBySellerSKURequest, options?: any) {
+        return SmallAndLightApiFp(this.configuration).putSmallAndLightEnrollmentBySellerSKU(requestParameters.sellerSKU, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

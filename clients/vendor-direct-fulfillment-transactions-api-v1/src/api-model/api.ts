@@ -197,6 +197,20 @@ export const VendorTransactionApiFactory = function (configuration?: Configurati
 };
 
 /**
+ * Request parameters for getTransactionStatus operation in VendorTransactionApi.
+ * @export
+ * @interface VendorTransactionApiGetTransactionStatusRequest
+ */
+export interface VendorTransactionApiGetTransactionStatusRequest {
+    /**
+     * Previously returned in the response to the POST request of a specific transaction.
+     * @type {string}
+     * @memberof VendorTransactionApiGetTransactionStatus
+     */
+    readonly transactionId: string
+}
+
+/**
  * VendorTransactionApi - object-oriented interface
  * @export
  * @class VendorTransactionApi
@@ -205,13 +219,13 @@ export const VendorTransactionApiFactory = function (configuration?: Configurati
 export class VendorTransactionApi extends BaseAPI {
     /**
      * Returns the status of the transaction indicated by the specified transactionId.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} transactionId Previously returned in the response to the POST request of a specific transaction.
+     * @param {VendorTransactionApiGetTransactionStatusRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof VendorTransactionApi
      */
-    public getTransactionStatus(transactionId: string, options?: any) {
-        return VendorTransactionApiFp(this.configuration).getTransactionStatus(transactionId, options).then((request) => request(this.axios, this.basePath));
+    public getTransactionStatus(requestParameters: VendorTransactionApiGetTransactionStatusRequest, options?: any) {
+        return VendorTransactionApiFp(this.configuration).getTransactionStatus(requestParameters.transactionId, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -1422,6 +1422,216 @@ export const VendorOrdersApiFactory = function (configuration?: Configuration, b
 };
 
 /**
+ * Request parameters for getPurchaseOrder operation in VendorOrdersApi.
+ * @export
+ * @interface VendorOrdersApiGetPurchaseOrderRequest
+ */
+export interface VendorOrdersApiGetPurchaseOrderRequest {
+    /**
+     * The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code.
+     * @type {string}
+     * @memberof VendorOrdersApiGetPurchaseOrder
+     */
+    readonly purchaseOrderNumber: string
+}
+
+/**
+ * Request parameters for getPurchaseOrders operation in VendorOrdersApi.
+ * @export
+ * @interface VendorOrdersApiGetPurchaseOrdersRequest
+ */
+export interface VendorOrdersApiGetPurchaseOrdersRequest {
+    /**
+     * The limit to the number of records returned. Default value is 100 records.
+     * @type {number}
+     * @memberof VendorOrdersApiGetPurchaseOrders
+     */
+    readonly limit?: number
+
+    /**
+     * Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format.
+     * @type {string}
+     * @memberof VendorOrdersApiGetPurchaseOrders
+     */
+    readonly createdAfter?: string
+
+    /**
+     * Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format.
+     * @type {string}
+     * @memberof VendorOrdersApiGetPurchaseOrders
+     */
+    readonly createdBefore?: string
+
+    /**
+     * Sort in ascending or descending order by purchase order creation date.
+     * @type {'ASC' | 'DESC'}
+     * @memberof VendorOrdersApiGetPurchaseOrders
+     */
+    readonly sortOrder?: 'ASC' | 'DESC'
+
+    /**
+     * Used for pagination when there is more purchase orders than the specified result size limit. The token value is returned in the previous API call
+     * @type {string}
+     * @memberof VendorOrdersApiGetPurchaseOrders
+     */
+    readonly nextToken?: string
+
+    /**
+     * When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true.
+     * @type {boolean}
+     * @memberof VendorOrdersApiGetPurchaseOrders
+     */
+    readonly includeDetails?: boolean
+
+    /**
+     * Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @type {string}
+     * @memberof VendorOrdersApiGetPurchaseOrders
+     */
+    readonly changedAfter?: string
+
+    /**
+     * Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @type {string}
+     * @memberof VendorOrdersApiGetPurchaseOrders
+     */
+    readonly changedBefore?: string
+
+    /**
+     * Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero.
+     * @type {'Cancelled'}
+     * @memberof VendorOrdersApiGetPurchaseOrders
+     */
+    readonly poItemState?: 'Cancelled'
+
+    /**
+     * When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false.
+     * @type {boolean}
+     * @memberof VendorOrdersApiGetPurchaseOrders
+     */
+    readonly isPOChanged?: boolean
+
+    /**
+     * Filters purchase orders based on the purchase order state.
+     * @type {'New' | 'Acknowledged' | 'Closed'}
+     * @memberof VendorOrdersApiGetPurchaseOrders
+     */
+    readonly purchaseOrderState?: 'New' | 'Acknowledged' | 'Closed'
+
+    /**
+     * Filters purchase orders based on the specified ordering vendor code. This value should be same as \&#39;sellingParty.partyId\&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned.
+     * @type {string}
+     * @memberof VendorOrdersApiGetPurchaseOrders
+     */
+    readonly orderingVendorCode?: string
+}
+
+/**
+ * Request parameters for getPurchaseOrdersStatus operation in VendorOrdersApi.
+ * @export
+ * @interface VendorOrdersApiGetPurchaseOrdersStatusRequest
+ */
+export interface VendorOrdersApiGetPurchaseOrdersStatusRequest {
+    /**
+     * The limit to the number of records returned. Default value is 100 records.
+     * @type {number}
+     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
+     */
+    readonly limit?: number
+
+    /**
+     * Sort in ascending or descending order by purchase order creation date.
+     * @type {'ASC' | 'DESC'}
+     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
+     */
+    readonly sortOrder?: 'ASC' | 'DESC'
+
+    /**
+     * Used for pagination when there are more purchase orders than the specified result size limit.
+     * @type {string}
+     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
+     */
+    readonly nextToken?: string
+
+    /**
+     * Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @type {string}
+     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
+     */
+    readonly createdAfter?: string
+
+    /**
+     * Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @type {string}
+     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
+     */
+    readonly createdBefore?: string
+
+    /**
+     * Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @type {string}
+     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
+     */
+    readonly updatedAfter?: string
+
+    /**
+     * Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @type {string}
+     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
+     */
+    readonly updatedBefore?: string
+
+    /**
+     * Provides purchase order status for the specified purchase order number.
+     * @type {string}
+     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
+     */
+    readonly purchaseOrderNumber?: string
+
+    /**
+     * Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses.
+     * @type {'OPEN' | 'CLOSED'}
+     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
+     */
+    readonly purchaseOrderStatus?: 'OPEN' | 'CLOSED'
+
+    /**
+     * Filters purchase orders based on the specified purchase order item status. If not included in filter, purchase orders for all statuses are included.
+     * @type {'ACCEPTED' | 'PARTIALLY_ACCEPTED' | 'REJECTED' | 'UNCONFIRMED'}
+     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
+     */
+    readonly itemConfirmationStatus?: 'ACCEPTED' | 'PARTIALLY_ACCEPTED' | 'REJECTED' | 'UNCONFIRMED'
+
+    /**
+     * Filters purchase orders based on the specified ordering vendor code. This value should be same as \&#39;sellingParty.partyId\&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned.
+     * @type {string}
+     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
+     */
+    readonly orderingVendorCode?: string
+
+    /**
+     * Filters purchase orders for a specific buyer\&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as \&#39;shipToParty.partyId\&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer\&#39;s warehouses used for vendor group purchase orders.
+     * @type {string}
+     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
+     */
+    readonly shipToPartyId?: string
+}
+
+/**
+ * Request parameters for submitAcknowledgement operation in VendorOrdersApi.
+ * @export
+ * @interface VendorOrdersApiSubmitAcknowledgementRequest
+ */
+export interface VendorOrdersApiSubmitAcknowledgementRequest {
+    /**
+     * 
+     * @type {SubmitAcknowledgementRequest}
+     * @memberof VendorOrdersApiSubmitAcknowledgement
+     */
+    readonly body: SubmitAcknowledgementRequest
+}
+
+/**
  * VendorOrdersApi - object-oriented interface
  * @export
  * @class VendorOrdersApi
@@ -1430,68 +1640,46 @@ export const VendorOrdersApiFactory = function (configuration?: Configuration, b
 export class VendorOrdersApi extends BaseAPI {
     /**
      * Returns a purchase order based on the purchaseOrderNumber value that you specify.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} purchaseOrderNumber The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code.
+     * @param {VendorOrdersApiGetPurchaseOrderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof VendorOrdersApi
      */
-    public getPurchaseOrder(purchaseOrderNumber: string, options?: any) {
-        return VendorOrdersApiFp(this.configuration).getPurchaseOrder(purchaseOrderNumber, options).then((request) => request(this.axios, this.basePath));
+    public getPurchaseOrder(requestParameters: VendorOrdersApiGetPurchaseOrderRequest, options?: any) {
+        return VendorOrdersApiFp(this.configuration).getPurchaseOrder(requestParameters.purchaseOrderNumber, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns a list of purchase orders created or changed during the time frame that you specify. You define the time frame using the createdAfter, createdBefore, changedAfter and changedBefore parameters. The date range to search must not be more than 7 days. You can choose to get only the purchase order numbers by setting includeDetails to false. You can then use the getPurchaseOrder operation to receive details for a specific purchase order.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {number} [limit] The limit to the number of records returned. Default value is 100 records.
-     * @param {string} [createdAfter] Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param {string} [createdBefore] Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param {'ASC' | 'DESC'} [sortOrder] Sort in ascending or descending order by purchase order creation date.
-     * @param {string} [nextToken] Used for pagination when there is more purchase orders than the specified result size limit. The token value is returned in the previous API call
-     * @param {boolean} [includeDetails] When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true.
-     * @param {string} [changedAfter] Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param {string} [changedBefore] Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param {'Cancelled'} [poItemState] Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero.
-     * @param {boolean} [isPOChanged] When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false.
-     * @param {'New' | 'Acknowledged' | 'Closed'} [purchaseOrderState] Filters purchase orders based on the purchase order state.
-     * @param {string} [orderingVendorCode] Filters purchase orders based on the specified ordering vendor code. This value should be same as \&#39;sellingParty.partyId\&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned.
+     * @param {VendorOrdersApiGetPurchaseOrdersRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof VendorOrdersApi
      */
-    public getPurchaseOrders(limit?: number, createdAfter?: string, createdBefore?: string, sortOrder?: 'ASC' | 'DESC', nextToken?: string, includeDetails?: boolean, changedAfter?: string, changedBefore?: string, poItemState?: 'Cancelled', isPOChanged?: boolean, purchaseOrderState?: 'New' | 'Acknowledged' | 'Closed', orderingVendorCode?: string, options?: any) {
-        return VendorOrdersApiFp(this.configuration).getPurchaseOrders(limit, createdAfter, createdBefore, sortOrder, nextToken, includeDetails, changedAfter, changedBefore, poItemState, isPOChanged, purchaseOrderState, orderingVendorCode, options).then((request) => request(this.axios, this.basePath));
+    public getPurchaseOrders(requestParameters: VendorOrdersApiGetPurchaseOrdersRequest = {}, options?: any) {
+        return VendorOrdersApiFp(this.configuration).getPurchaseOrders(requestParameters.limit, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.includeDetails, requestParameters.changedAfter, requestParameters.changedBefore, requestParameters.poItemState, requestParameters.isPOChanged, requestParameters.purchaseOrderState, requestParameters.orderingVendorCode, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns purchase order statuses based on the filters that you specify. Date range to search must not be more than 7 days. You can return a list of purchase order statuses using the available filters, or a single purchase order status by providing the purchase order number.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {number} [limit] The limit to the number of records returned. Default value is 100 records.
-     * @param {'ASC' | 'DESC'} [sortOrder] Sort in ascending or descending order by purchase order creation date.
-     * @param {string} [nextToken] Used for pagination when there are more purchase orders than the specified result size limit.
-     * @param {string} [createdAfter] Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param {string} [createdBefore] Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param {string} [updatedAfter] Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param {string} [updatedBefore] Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param {string} [purchaseOrderNumber] Provides purchase order status for the specified purchase order number.
-     * @param {'OPEN' | 'CLOSED'} [purchaseOrderStatus] Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses.
-     * @param {'ACCEPTED' | 'PARTIALLY_ACCEPTED' | 'REJECTED' | 'UNCONFIRMED'} [itemConfirmationStatus] Filters purchase orders based on the specified purchase order item status. If not included in filter, purchase orders for all statuses are included.
-     * @param {string} [orderingVendorCode] Filters purchase orders based on the specified ordering vendor code. This value should be same as \&#39;sellingParty.partyId\&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned.
-     * @param {string} [shipToPartyId] Filters purchase orders for a specific buyer\&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as \&#39;shipToParty.partyId\&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer\&#39;s warehouses used for vendor group purchase orders.
+     * @param {VendorOrdersApiGetPurchaseOrdersStatusRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof VendorOrdersApi
      */
-    public getPurchaseOrdersStatus(limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, createdAfter?: string, createdBefore?: string, updatedAfter?: string, updatedBefore?: string, purchaseOrderNumber?: string, purchaseOrderStatus?: 'OPEN' | 'CLOSED', itemConfirmationStatus?: 'ACCEPTED' | 'PARTIALLY_ACCEPTED' | 'REJECTED' | 'UNCONFIRMED', orderingVendorCode?: string, shipToPartyId?: string, options?: any) {
-        return VendorOrdersApiFp(this.configuration).getPurchaseOrdersStatus(limit, sortOrder, nextToken, createdAfter, createdBefore, updatedAfter, updatedBefore, purchaseOrderNumber, purchaseOrderStatus, itemConfirmationStatus, orderingVendorCode, shipToPartyId, options).then((request) => request(this.axios, this.basePath));
+    public getPurchaseOrdersStatus(requestParameters: VendorOrdersApiGetPurchaseOrdersStatusRequest = {}, options?: any) {
+        return VendorOrdersApiFp(this.configuration).getPurchaseOrdersStatus(requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.updatedAfter, requestParameters.updatedBefore, requestParameters.purchaseOrderNumber, requestParameters.purchaseOrderStatus, requestParameters.itemConfirmationStatus, requestParameters.orderingVendorCode, requestParameters.shipToPartyId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Submits acknowledgements for one or more purchase orders.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {SubmitAcknowledgementRequest} body 
+     * @param {VendorOrdersApiSubmitAcknowledgementRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof VendorOrdersApi
      */
-    public submitAcknowledgement(body: SubmitAcknowledgementRequest, options?: any) {
-        return VendorOrdersApiFp(this.configuration).submitAcknowledgement(body, options).then((request) => request(this.axios, this.basePath));
+    public submitAcknowledgement(requestParameters: VendorOrdersApiSubmitAcknowledgementRequest, options?: any) {
+        return VendorOrdersApiFp(this.configuration).submitAcknowledgement(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

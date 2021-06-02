@@ -20,7 +20,7 @@
     "clean": "lerna run clean",
     "clean.all": "yarn clean && lerna clean",
     "prerelease": "yarn build",
-    "release": "lerna publish",
+    "release": "lerna publish -m 'chore(release): publish'",
     "test": "lerna run test",
     "generate-clients": "ts-node --project tsconfig.scripts.json scripts/generate-clients.ts"
   },

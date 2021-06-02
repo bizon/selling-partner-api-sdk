@@ -1121,6 +1121,20 @@ export const VendorShippingApiFactory = function (configuration?: Configuration,
 };
 
 /**
+ * Request parameters for submitShipmentConfirmations operation in VendorShippingApi.
+ * @export
+ * @interface VendorShippingApiSubmitShipmentConfirmationsRequest
+ */
+export interface VendorShippingApiSubmitShipmentConfirmationsRequest {
+    /**
+     * 
+     * @type {SubmitShipmentConfirmationsRequest}
+     * @memberof VendorShippingApiSubmitShipmentConfirmations
+     */
+    readonly body: SubmitShipmentConfirmationsRequest
+}
+
+/**
  * VendorShippingApi - object-oriented interface
  * @export
  * @class VendorShippingApi
@@ -1129,13 +1143,13 @@ export const VendorShippingApiFactory = function (configuration?: Configuration,
 export class VendorShippingApi extends BaseAPI {
     /**
      * Submits one or more shipment confirmations for vendor orders.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {SubmitShipmentConfirmationsRequest} body 
+     * @param {VendorShippingApiSubmitShipmentConfirmationsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof VendorShippingApi
      */
-    public submitShipmentConfirmations(body: SubmitShipmentConfirmationsRequest, options?: any) {
-        return VendorShippingApiFp(this.configuration).submitShipmentConfirmations(body, options).then((request) => request(this.axios, this.basePath));
+    public submitShipmentConfirmations(requestParameters: VendorShippingApiSubmitShipmentConfirmationsRequest, options?: any) {
+        return VendorShippingApiFp(this.configuration).submitShipmentConfirmations(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

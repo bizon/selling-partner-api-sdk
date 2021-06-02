@@ -1885,6 +1885,118 @@ export const MerchantFulfillmentApiFactory = function (configuration?: Configura
 };
 
 /**
+ * Request parameters for cancelShipment operation in MerchantFulfillmentApi.
+ * @export
+ * @interface MerchantFulfillmentApiCancelShipmentRequest
+ */
+export interface MerchantFulfillmentApiCancelShipmentRequest {
+    /**
+     * The Amazon-defined shipment identifier for the shipment to cancel.
+     * @type {string}
+     * @memberof MerchantFulfillmentApiCancelShipment
+     */
+    readonly shipmentId: string
+}
+
+/**
+ * Request parameters for cancelShipmentOld operation in MerchantFulfillmentApi.
+ * @export
+ * @interface MerchantFulfillmentApiCancelShipmentOldRequest
+ */
+export interface MerchantFulfillmentApiCancelShipmentOldRequest {
+    /**
+     * The Amazon-defined shipment identifier for the shipment to cancel.
+     * @type {string}
+     * @memberof MerchantFulfillmentApiCancelShipmentOld
+     */
+    readonly shipmentId: string
+}
+
+/**
+ * Request parameters for createShipment operation in MerchantFulfillmentApi.
+ * @export
+ * @interface MerchantFulfillmentApiCreateShipmentRequest
+ */
+export interface MerchantFulfillmentApiCreateShipmentRequest {
+    /**
+     * 
+     * @type {CreateShipmentRequest}
+     * @memberof MerchantFulfillmentApiCreateShipment
+     */
+    readonly body: CreateShipmentRequest
+}
+
+/**
+ * Request parameters for getAdditionalSellerInputs operation in MerchantFulfillmentApi.
+ * @export
+ * @interface MerchantFulfillmentApiGetAdditionalSellerInputsRequest
+ */
+export interface MerchantFulfillmentApiGetAdditionalSellerInputsRequest {
+    /**
+     * 
+     * @type {GetAdditionalSellerInputsRequest}
+     * @memberof MerchantFulfillmentApiGetAdditionalSellerInputs
+     */
+    readonly body: GetAdditionalSellerInputsRequest
+}
+
+/**
+ * Request parameters for getAdditionalSellerInputsOld operation in MerchantFulfillmentApi.
+ * @export
+ * @interface MerchantFulfillmentApiGetAdditionalSellerInputsOldRequest
+ */
+export interface MerchantFulfillmentApiGetAdditionalSellerInputsOldRequest {
+    /**
+     * 
+     * @type {GetAdditionalSellerInputsRequest}
+     * @memberof MerchantFulfillmentApiGetAdditionalSellerInputsOld
+     */
+    readonly body: GetAdditionalSellerInputsRequest
+}
+
+/**
+ * Request parameters for getEligibleShipmentServices operation in MerchantFulfillmentApi.
+ * @export
+ * @interface MerchantFulfillmentApiGetEligibleShipmentServicesRequest
+ */
+export interface MerchantFulfillmentApiGetEligibleShipmentServicesRequest {
+    /**
+     * 
+     * @type {GetEligibleShipmentServicesRequest}
+     * @memberof MerchantFulfillmentApiGetEligibleShipmentServices
+     */
+    readonly body: GetEligibleShipmentServicesRequest
+}
+
+/**
+ * Request parameters for getEligibleShipmentServicesOld operation in MerchantFulfillmentApi.
+ * @export
+ * @interface MerchantFulfillmentApiGetEligibleShipmentServicesOldRequest
+ */
+export interface MerchantFulfillmentApiGetEligibleShipmentServicesOldRequest {
+    /**
+     * 
+     * @type {GetEligibleShipmentServicesRequest}
+     * @memberof MerchantFulfillmentApiGetEligibleShipmentServicesOld
+     */
+    readonly body: GetEligibleShipmentServicesRequest
+}
+
+/**
+ * Request parameters for getShipment operation in MerchantFulfillmentApi.
+ * @export
+ * @interface MerchantFulfillmentApiGetShipmentRequest
+ */
+export interface MerchantFulfillmentApiGetShipmentRequest {
+    /**
+     * The Amazon-defined shipment identifier for the shipment.
+     * @type {string}
+     * @memberof MerchantFulfillmentApiGetShipment
+     */
+    readonly shipmentId: string
+}
+
+/**
  * MerchantFulfillmentApi - object-oriented interface
  * @export
  * @class MerchantFulfillmentApi
@@ -1893,90 +2005,90 @@ export const MerchantFulfillmentApiFactory = function (configuration?: Configura
 export class MerchantFulfillmentApi extends BaseAPI {
     /**
      * Cancel the shipment indicated by the specified shipment identifier.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} shipmentId The Amazon-defined shipment identifier for the shipment to cancel.
+     * @param {MerchantFulfillmentApiCancelShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public cancelShipment(shipmentId: string, options?: any) {
-        return MerchantFulfillmentApiFp(this.configuration).cancelShipment(shipmentId, options).then((request) => request(this.axios, this.basePath));
+    public cancelShipment(requestParameters: MerchantFulfillmentApiCancelShipmentRequest, options?: any) {
+        return MerchantFulfillmentApiFp(this.configuration).cancelShipment(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Cancel the shipment indicated by the specified shipment identifer.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} shipmentId The Amazon-defined shipment identifier for the shipment to cancel.
+     * @param {MerchantFulfillmentApiCancelShipmentOldRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public cancelShipmentOld(shipmentId: string, options?: any) {
-        return MerchantFulfillmentApiFp(this.configuration).cancelShipmentOld(shipmentId, options).then((request) => request(this.axios, this.basePath));
+    public cancelShipmentOld(requestParameters: MerchantFulfillmentApiCancelShipmentOldRequest, options?: any) {
+        return MerchantFulfillmentApiFp(this.configuration).cancelShipmentOld(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Create a shipment with the information provided.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {CreateShipmentRequest} body 
+     * @param {MerchantFulfillmentApiCreateShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public createShipment(body: CreateShipmentRequest, options?: any) {
-        return MerchantFulfillmentApiFp(this.configuration).createShipment(body, options).then((request) => request(this.axios, this.basePath));
+    public createShipment(requestParameters: MerchantFulfillmentApiCreateShipmentRequest, options?: any) {
+        return MerchantFulfillmentApiFp(this.configuration).createShipment(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Gets a list of additional seller inputs required for a ship method. This is generally used for international shipping.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {GetAdditionalSellerInputsRequest} body 
+     * @param {MerchantFulfillmentApiGetAdditionalSellerInputsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public getAdditionalSellerInputs(body: GetAdditionalSellerInputsRequest, options?: any) {
-        return MerchantFulfillmentApiFp(this.configuration).getAdditionalSellerInputs(body, options).then((request) => request(this.axios, this.basePath));
+    public getAdditionalSellerInputs(requestParameters: MerchantFulfillmentApiGetAdditionalSellerInputsRequest, options?: any) {
+        return MerchantFulfillmentApiFp(this.configuration).getAdditionalSellerInputs(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Get a list of additional seller inputs required for a ship method. This is generally used for international shipping.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {GetAdditionalSellerInputsRequest} body 
+     * @param {MerchantFulfillmentApiGetAdditionalSellerInputsOldRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public getAdditionalSellerInputsOld(body: GetAdditionalSellerInputsRequest, options?: any) {
-        return MerchantFulfillmentApiFp(this.configuration).getAdditionalSellerInputsOld(body, options).then((request) => request(this.axios, this.basePath));
+    public getAdditionalSellerInputsOld(requestParameters: MerchantFulfillmentApiGetAdditionalSellerInputsOldRequest, options?: any) {
+        return MerchantFulfillmentApiFp(this.configuration).getAdditionalSellerInputsOld(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns a list of shipping service offers that satisfy the specified shipment request details.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {GetEligibleShipmentServicesRequest} body 
+     * @param {MerchantFulfillmentApiGetEligibleShipmentServicesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public getEligibleShipmentServices(body: GetEligibleShipmentServicesRequest, options?: any) {
-        return MerchantFulfillmentApiFp(this.configuration).getEligibleShipmentServices(body, options).then((request) => request(this.axios, this.basePath));
+    public getEligibleShipmentServices(requestParameters: MerchantFulfillmentApiGetEligibleShipmentServicesRequest, options?: any) {
+        return MerchantFulfillmentApiFp(this.configuration).getEligibleShipmentServices(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns a list of shipping service offers that satisfy the specified shipment request details.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {GetEligibleShipmentServicesRequest} body 
+     * @param {MerchantFulfillmentApiGetEligibleShipmentServicesOldRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public getEligibleShipmentServicesOld(body: GetEligibleShipmentServicesRequest, options?: any) {
-        return MerchantFulfillmentApiFp(this.configuration).getEligibleShipmentServicesOld(body, options).then((request) => request(this.axios, this.basePath));
+    public getEligibleShipmentServicesOld(requestParameters: MerchantFulfillmentApiGetEligibleShipmentServicesOldRequest, options?: any) {
+        return MerchantFulfillmentApiFp(this.configuration).getEligibleShipmentServicesOld(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns the shipment information for an existing shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} shipmentId The Amazon-defined shipment identifier for the shipment.
+     * @param {MerchantFulfillmentApiGetShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public getShipment(shipmentId: string, options?: any) {
-        return MerchantFulfillmentApiFp(this.configuration).getShipment(shipmentId, options).then((request) => request(this.axios, this.basePath));
+    public getShipment(requestParameters: MerchantFulfillmentApiGetShipmentRequest, options?: any) {
+        return MerchantFulfillmentApiFp(this.configuration).getShipment(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

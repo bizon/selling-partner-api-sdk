@@ -258,6 +258,34 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
 };
 
 /**
+ * Request parameters for getItemEligibilityPreview operation in FbaInboundApi.
+ * @export
+ * @interface FbaInboundApiGetItemEligibilityPreviewRequest
+ */
+export interface FbaInboundApiGetItemEligibilityPreviewRequest {
+    /**
+     * The ASIN of the item for which you want an eligibility preview.
+     * @type {string}
+     * @memberof FbaInboundApiGetItemEligibilityPreview
+     */
+    readonly asin: string
+
+    /**
+     * The program that you want to check eligibility against.
+     * @type {'INBOUND' | 'COMMINGLING'}
+     * @memberof FbaInboundApiGetItemEligibilityPreview
+     */
+    readonly program: 'INBOUND' | 'COMMINGLING'
+
+    /**
+     * The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND.
+     * @type {Array<string>}
+     * @memberof FbaInboundApiGetItemEligibilityPreview
+     */
+    readonly marketplaceIds?: Array<string>
+}
+
+/**
  * FbaInboundApi - object-oriented interface
  * @export
  * @class FbaInboundApi
@@ -266,15 +294,13 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
 export class FbaInboundApi extends BaseAPI {
     /**
      * This operation gets an eligibility preview for an item that you specify. You can specify the type of eligibility preview that you want (INBOUND or COMMINGLING). For INBOUND previews, you can specify the marketplace in which you want to determine the item\'s eligibility.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} asin The ASIN of the item for which you want an eligibility preview.
-     * @param {'INBOUND' | 'COMMINGLING'} program The program that you want to check eligibility against.
-     * @param {Array<string>} [marketplaceIds] The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND.
+     * @param {FbaInboundApiGetItemEligibilityPreviewRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public getItemEligibilityPreview(asin: string, program: 'INBOUND' | 'COMMINGLING', marketplaceIds?: Array<string>, options?: any) {
-        return FbaInboundApiFp(this.configuration).getItemEligibilityPreview(asin, program, marketplaceIds, options).then((request) => request(this.axios, this.basePath));
+    public getItemEligibilityPreview(requestParameters: FbaInboundApiGetItemEligibilityPreviewRequest, options?: any) {
+        return FbaInboundApiFp(this.configuration).getItemEligibilityPreview(requestParameters.asin, requestParameters.program, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -1093,6 +1093,174 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
 };
 
 /**
+ * Request parameters for cancelReport operation in ReportsApi.
+ * @export
+ * @interface ReportsApiCancelReportRequest
+ */
+export interface ReportsApiCancelReportRequest {
+    /**
+     * The identifier for the report. This identifier is unique only in combination with a seller ID.
+     * @type {string}
+     * @memberof ReportsApiCancelReport
+     */
+    readonly reportId: string
+}
+
+/**
+ * Request parameters for cancelReportSchedule operation in ReportsApi.
+ * @export
+ * @interface ReportsApiCancelReportScheduleRequest
+ */
+export interface ReportsApiCancelReportScheduleRequest {
+    /**
+     * The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
+     * @type {string}
+     * @memberof ReportsApiCancelReportSchedule
+     */
+    readonly reportScheduleId: string
+}
+
+/**
+ * Request parameters for createReport operation in ReportsApi.
+ * @export
+ * @interface ReportsApiCreateReportRequest
+ */
+export interface ReportsApiCreateReportRequest {
+    /**
+     * 
+     * @type {CreateReportSpecification}
+     * @memberof ReportsApiCreateReport
+     */
+    readonly body: CreateReportSpecification
+}
+
+/**
+ * Request parameters for createReportSchedule operation in ReportsApi.
+ * @export
+ * @interface ReportsApiCreateReportScheduleRequest
+ */
+export interface ReportsApiCreateReportScheduleRequest {
+    /**
+     * 
+     * @type {CreateReportScheduleSpecification}
+     * @memberof ReportsApiCreateReportSchedule
+     */
+    readonly body: CreateReportScheduleSpecification
+}
+
+/**
+ * Request parameters for getReport operation in ReportsApi.
+ * @export
+ * @interface ReportsApiGetReportRequest
+ */
+export interface ReportsApiGetReportRequest {
+    /**
+     * The identifier for the report. This identifier is unique only in combination with a seller ID.
+     * @type {string}
+     * @memberof ReportsApiGetReport
+     */
+    readonly reportId: string
+}
+
+/**
+ * Request parameters for getReportDocument operation in ReportsApi.
+ * @export
+ * @interface ReportsApiGetReportDocumentRequest
+ */
+export interface ReportsApiGetReportDocumentRequest {
+    /**
+     * The identifier for the report document.
+     * @type {string}
+     * @memberof ReportsApiGetReportDocument
+     */
+    readonly reportDocumentId: string
+}
+
+/**
+ * Request parameters for getReportSchedule operation in ReportsApi.
+ * @export
+ * @interface ReportsApiGetReportScheduleRequest
+ */
+export interface ReportsApiGetReportScheduleRequest {
+    /**
+     * The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
+     * @type {string}
+     * @memberof ReportsApiGetReportSchedule
+     */
+    readonly reportScheduleId: string
+}
+
+/**
+ * Request parameters for getReportSchedules operation in ReportsApi.
+ * @export
+ * @interface ReportsApiGetReportSchedulesRequest
+ */
+export interface ReportsApiGetReportSchedulesRequest {
+    /**
+     * A list of report types used to filter report schedules.
+     * @type {Array<string>}
+     * @memberof ReportsApiGetReportSchedules
+     */
+    readonly reportTypes: Array<string>
+}
+
+/**
+ * Request parameters for getReports operation in ReportsApi.
+ * @export
+ * @interface ReportsApiGetReportsRequest
+ */
+export interface ReportsApiGetReportsRequest {
+    /**
+     * A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required.
+     * @type {Array<string>}
+     * @memberof ReportsApiGetReports
+     */
+    readonly reportTypes?: Array<string>
+
+    /**
+     * A list of processing statuses used to filter reports.
+     * @type {Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>}
+     * @memberof ReportsApiGetReports
+     */
+    readonly processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>
+
+    /**
+     * A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify.
+     * @type {Array<string>}
+     * @memberof ReportsApiGetReports
+     */
+    readonly marketplaceIds?: Array<string>
+
+    /**
+     * The maximum number of reports to return in a single call.
+     * @type {number}
+     * @memberof ReportsApiGetReports
+     */
+    readonly pageSize?: number
+
+    /**
+     * The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days.
+     * @type {string}
+     * @memberof ReportsApiGetReports
+     */
+    readonly createdSince?: string
+
+    /**
+     * The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now.
+     * @type {string}
+     * @memberof ReportsApiGetReports
+     */
+    readonly createdUntil?: string
+
+    /**
+     * A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.
+     * @type {string}
+     * @memberof ReportsApiGetReports
+     */
+    readonly nextToken?: string
+}
+
+/**
  * ReportsApi - object-oriented interface
  * @export
  * @class ReportsApi
@@ -1101,107 +1269,101 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
 export class ReportsApi extends BaseAPI {
     /**
      * Cancels the report that you specify. Only reports with processingStatus=IN_QUEUE can be cancelled. Cancelled reports are returned in subsequent calls to the getReport and getReports operations.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} reportId The identifier for the report. This identifier is unique only in combination with a seller ID.
+     * @param {ReportsApiCancelReportRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public cancelReport(reportId: string, options?: any) {
-        return ReportsApiFp(this.configuration).cancelReport(reportId, options).then((request) => request(this.axios, this.basePath));
+    public cancelReport(requestParameters: ReportsApiCancelReportRequest, options?: any) {
+        return ReportsApiFp(this.configuration).cancelReport(requestParameters.reportId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Cancels the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
+     * @param {ReportsApiCancelReportScheduleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public cancelReportSchedule(reportScheduleId: string, options?: any) {
-        return ReportsApiFp(this.configuration).cancelReportSchedule(reportScheduleId, options).then((request) => request(this.axios, this.basePath));
+    public cancelReportSchedule(requestParameters: ReportsApiCancelReportScheduleRequest, options?: any) {
+        return ReportsApiFp(this.configuration).cancelReportSchedule(requestParameters.reportScheduleId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Creates a report.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {CreateReportSpecification} body 
+     * @param {ReportsApiCreateReportRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public createReport(body: CreateReportSpecification, options?: any) {
-        return ReportsApiFp(this.configuration).createReport(body, options).then((request) => request(this.axios, this.basePath));
+    public createReport(requestParameters: ReportsApiCreateReportRequest, options?: any) {
+        return ReportsApiFp(this.configuration).createReport(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Creates a report schedule. If a report schedule with the same report type and marketplace IDs already exists, it will be cancelled and replaced with this one.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {CreateReportScheduleSpecification} body 
+     * @param {ReportsApiCreateReportScheduleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public createReportSchedule(body: CreateReportScheduleSpecification, options?: any) {
-        return ReportsApiFp(this.configuration).createReportSchedule(body, options).then((request) => request(this.axios, this.basePath));
+    public createReportSchedule(requestParameters: ReportsApiCreateReportScheduleRequest, options?: any) {
+        return ReportsApiFp(this.configuration).createReportSchedule(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns report details (including the reportDocumentId, if available) for the report that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2.0 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} reportId The identifier for the report. This identifier is unique only in combination with a seller ID.
+     * @param {ReportsApiGetReportRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public getReport(reportId: string, options?: any) {
-        return ReportsApiFp(this.configuration).getReport(reportId, options).then((request) => request(this.axios, this.basePath));
+    public getReport(requestParameters: ReportsApiGetReportRequest, options?: any) {
+        return ReportsApiFp(this.configuration).getReport(requestParameters.reportId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns the information required for retrieving a report document\'s contents. This includes a presigned URL for the report document as well as the information required to decrypt the document\'s contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} reportDocumentId The identifier for the report document.
+     * @param {ReportsApiGetReportDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public getReportDocument(reportDocumentId: string, options?: any) {
-        return ReportsApiFp(this.configuration).getReportDocument(reportDocumentId, options).then((request) => request(this.axios, this.basePath));
+    public getReportDocument(requestParameters: ReportsApiGetReportDocumentRequest, options?: any) {
+        return ReportsApiFp(this.configuration).getReportDocument(requestParameters.reportDocumentId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns report schedule details for the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
+     * @param {ReportsApiGetReportScheduleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public getReportSchedule(reportScheduleId: string, options?: any) {
-        return ReportsApiFp(this.configuration).getReportSchedule(reportScheduleId, options).then((request) => request(this.axios, this.basePath));
+    public getReportSchedule(requestParameters: ReportsApiGetReportScheduleRequest, options?: any) {
+        return ReportsApiFp(this.configuration).getReportSchedule(requestParameters.reportScheduleId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns report schedule details that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {Array<string>} reportTypes A list of report types used to filter report schedules.
+     * @param {ReportsApiGetReportSchedulesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public getReportSchedules(reportTypes: Array<string>, options?: any) {
-        return ReportsApiFp(this.configuration).getReportSchedules(reportTypes, options).then((request) => request(this.axios, this.basePath));
+    public getReportSchedules(requestParameters: ReportsApiGetReportSchedulesRequest, options?: any) {
+        return ReportsApiFp(this.configuration).getReportSchedules(requestParameters.reportTypes, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns report details for the reports that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {Array<string>} [reportTypes] A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required.
-     * @param {Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>} [processingStatuses] A list of processing statuses used to filter reports.
-     * @param {Array<string>} [marketplaceIds] A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify.
-     * @param {number} [pageSize] The maximum number of reports to return in a single call.
-     * @param {string} [createdSince] The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days.
-     * @param {string} [createdUntil] The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now.
-     * @param {string} [nextToken] A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.
+     * @param {ReportsApiGetReportsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public getReports(reportTypes?: Array<string>, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, marketplaceIds?: Array<string>, pageSize?: number, createdSince?: string, createdUntil?: string, nextToken?: string, options?: any) {
-        return ReportsApiFp(this.configuration).getReports(reportTypes, processingStatuses, marketplaceIds, pageSize, createdSince, createdUntil, nextToken, options).then((request) => request(this.axios, this.basePath));
+    public getReports(requestParameters: ReportsApiGetReportsRequest = {}, options?: any) {
+        return ReportsApiFp(this.configuration).getReports(requestParameters.reportTypes, requestParameters.processingStatuses, requestParameters.marketplaceIds, requestParameters.pageSize, requestParameters.createdSince, requestParameters.createdUntil, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

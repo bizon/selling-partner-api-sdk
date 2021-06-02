@@ -2963,6 +2963,244 @@ export const FbaOutboundApiFactory = function (configuration?: Configuration, ba
 };
 
 /**
+ * Request parameters for cancelFulfillmentOrder operation in FbaOutboundApi.
+ * @export
+ * @interface FbaOutboundApiCancelFulfillmentOrderRequest
+ */
+export interface FbaOutboundApiCancelFulfillmentOrderRequest {
+    /**
+     * The identifier assigned to the item by the seller when the fulfillment order was created.
+     * @type {string}
+     * @memberof FbaOutboundApiCancelFulfillmentOrder
+     */
+    readonly sellerFulfillmentOrderId: string
+}
+
+/**
+ * Request parameters for createFulfillmentOrder operation in FbaOutboundApi.
+ * @export
+ * @interface FbaOutboundApiCreateFulfillmentOrderRequest
+ */
+export interface FbaOutboundApiCreateFulfillmentOrderRequest {
+    /**
+     * 
+     * @type {CreateFulfillmentOrderRequest}
+     * @memberof FbaOutboundApiCreateFulfillmentOrder
+     */
+    readonly body: CreateFulfillmentOrderRequest
+}
+
+/**
+ * Request parameters for createFulfillmentReturn operation in FbaOutboundApi.
+ * @export
+ * @interface FbaOutboundApiCreateFulfillmentReturnRequest
+ */
+export interface FbaOutboundApiCreateFulfillmentReturnRequest {
+    /**
+     * An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer\&#39;s request to return items.
+     * @type {string}
+     * @memberof FbaOutboundApiCreateFulfillmentReturn
+     */
+    readonly sellerFulfillmentOrderId: string
+
+    /**
+     * 
+     * @type {CreateFulfillmentReturnRequest}
+     * @memberof FbaOutboundApiCreateFulfillmentReturn
+     */
+    readonly body: CreateFulfillmentReturnRequest
+}
+
+/**
+ * Request parameters for getFeatureInventory operation in FbaOutboundApi.
+ * @export
+ * @interface FbaOutboundApiGetFeatureInventoryRequest
+ */
+export interface FbaOutboundApiGetFeatureInventoryRequest {
+    /**
+     * The marketplace for which to return a list of the inventory that is eligible for the specified feature.
+     * @type {string}
+     * @memberof FbaOutboundApiGetFeatureInventory
+     */
+    readonly marketplaceId: string
+
+    /**
+     * The name of the feature for which to return a list of eligible inventory.
+     * @type {string}
+     * @memberof FbaOutboundApiGetFeatureInventory
+     */
+    readonly featureName: string
+
+    /**
+     * A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page.
+     * @type {string}
+     * @memberof FbaOutboundApiGetFeatureInventory
+     */
+    readonly nextToken?: string
+}
+
+/**
+ * Request parameters for getFeatureSKU operation in FbaOutboundApi.
+ * @export
+ * @interface FbaOutboundApiGetFeatureSKURequest
+ */
+export interface FbaOutboundApiGetFeatureSKURequest {
+    /**
+     * The marketplace for which to return the count.
+     * @type {string}
+     * @memberof FbaOutboundApiGetFeatureSKU
+     */
+    readonly marketplaceId: string
+
+    /**
+     * The name of the feature.
+     * @type {string}
+     * @memberof FbaOutboundApiGetFeatureSKU
+     */
+    readonly featureName: string
+
+    /**
+     * Used to identify an item in the given marketplace. SellerSKU is qualified by the seller\&#39;s SellerId, which is included with every operation that you submit.
+     * @type {string}
+     * @memberof FbaOutboundApiGetFeatureSKU
+     */
+    readonly sellerSku: string
+}
+
+/**
+ * Request parameters for getFeatures operation in FbaOutboundApi.
+ * @export
+ * @interface FbaOutboundApiGetFeaturesRequest
+ */
+export interface FbaOutboundApiGetFeaturesRequest {
+    /**
+     * The marketplace for which to return the list of features.
+     * @type {string}
+     * @memberof FbaOutboundApiGetFeatures
+     */
+    readonly marketplaceId: string
+}
+
+/**
+ * Request parameters for getFulfillmentOrder operation in FbaOutboundApi.
+ * @export
+ * @interface FbaOutboundApiGetFulfillmentOrderRequest
+ */
+export interface FbaOutboundApiGetFulfillmentOrderRequest {
+    /**
+     * The identifier assigned to the item by the seller when the fulfillment order was created.
+     * @type {string}
+     * @memberof FbaOutboundApiGetFulfillmentOrder
+     */
+    readonly sellerFulfillmentOrderId: string
+}
+
+/**
+ * Request parameters for getFulfillmentPreview operation in FbaOutboundApi.
+ * @export
+ * @interface FbaOutboundApiGetFulfillmentPreviewRequest
+ */
+export interface FbaOutboundApiGetFulfillmentPreviewRequest {
+    /**
+     * 
+     * @type {GetFulfillmentPreviewRequest}
+     * @memberof FbaOutboundApiGetFulfillmentPreview
+     */
+    readonly body: GetFulfillmentPreviewRequest
+}
+
+/**
+ * Request parameters for getPackageTrackingDetails operation in FbaOutboundApi.
+ * @export
+ * @interface FbaOutboundApiGetPackageTrackingDetailsRequest
+ */
+export interface FbaOutboundApiGetPackageTrackingDetailsRequest {
+    /**
+     * The unencrypted package identifier returned by the getFulfillmentOrder operation.
+     * @type {number}
+     * @memberof FbaOutboundApiGetPackageTrackingDetails
+     */
+    readonly packageNumber: number
+}
+
+/**
+ * Request parameters for listAllFulfillmentOrders operation in FbaOutboundApi.
+ * @export
+ * @interface FbaOutboundApiListAllFulfillmentOrdersRequest
+ */
+export interface FbaOutboundApiListAllFulfillmentOrdersRequest {
+    /**
+     * A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order.
+     * @type {string}
+     * @memberof FbaOutboundApiListAllFulfillmentOrders
+     */
+    readonly queryStartDate?: string
+
+    /**
+     * A string token returned in the response to your previous request.
+     * @type {string}
+     * @memberof FbaOutboundApiListAllFulfillmentOrders
+     */
+    readonly nextToken?: string
+}
+
+/**
+ * Request parameters for listReturnReasonCodes operation in FbaOutboundApi.
+ * @export
+ * @interface FbaOutboundApiListReturnReasonCodesRequest
+ */
+export interface FbaOutboundApiListReturnReasonCodesRequest {
+    /**
+     * The seller SKU for which return reason codes are required.
+     * @type {string}
+     * @memberof FbaOutboundApiListReturnReasonCodes
+     */
+    readonly sellerSku: string
+
+    /**
+     * The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into.
+     * @type {string}
+     * @memberof FbaOutboundApiListReturnReasonCodes
+     */
+    readonly language: string
+
+    /**
+     * The marketplace for which the seller wants return reason codes.
+     * @type {string}
+     * @memberof FbaOutboundApiListReturnReasonCodes
+     */
+    readonly marketplaceId?: string
+
+    /**
+     * The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes.
+     * @type {string}
+     * @memberof FbaOutboundApiListReturnReasonCodes
+     */
+    readonly sellerFulfillmentOrderId?: string
+}
+
+/**
+ * Request parameters for updateFulfillmentOrder operation in FbaOutboundApi.
+ * @export
+ * @interface FbaOutboundApiUpdateFulfillmentOrderRequest
+ */
+export interface FbaOutboundApiUpdateFulfillmentOrderRequest {
+    /**
+     * The identifier assigned to the item by the seller when the fulfillment order was created.
+     * @type {string}
+     * @memberof FbaOutboundApiUpdateFulfillmentOrder
+     */
+    readonly sellerFulfillmentOrderId: string
+
+    /**
+     * 
+     * @type {UpdateFulfillmentOrderRequest}
+     * @memberof FbaOutboundApiUpdateFulfillmentOrder
+     */
+    readonly body: UpdateFulfillmentOrderRequest
+}
+
+/**
  * FbaOutboundApi - object-oriented interface
  * @export
  * @class FbaOutboundApi
@@ -2971,144 +3209,134 @@ export const FbaOutboundApiFactory = function (configuration?: Configuration, ba
 export class FbaOutboundApi extends BaseAPI {
     /**
      * Requests that Amazon stop attempting to fulfill the fulfillment order indicated by the specified order identifier.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created.
+     * @param {FbaOutboundApiCancelFulfillmentOrderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public cancelFulfillmentOrder(sellerFulfillmentOrderId: string, options?: any) {
-        return FbaOutboundApiFp(this.configuration).cancelFulfillmentOrder(sellerFulfillmentOrderId, options).then((request) => request(this.axios, this.basePath));
+    public cancelFulfillmentOrder(requestParameters: FbaOutboundApiCancelFulfillmentOrderRequest, options?: any) {
+        return FbaOutboundApiFp(this.configuration).cancelFulfillmentOrder(requestParameters.sellerFulfillmentOrderId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Requests that Amazon ship items from the seller\'s inventory in Amazon\'s fulfillment network to a destination address.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {CreateFulfillmentOrderRequest} body 
+     * @param {FbaOutboundApiCreateFulfillmentOrderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public createFulfillmentOrder(body: CreateFulfillmentOrderRequest, options?: any) {
-        return FbaOutboundApiFp(this.configuration).createFulfillmentOrder(body, options).then((request) => request(this.axios, this.basePath));
+    public createFulfillmentOrder(requestParameters: FbaOutboundApiCreateFulfillmentOrderRequest, options?: any) {
+        return FbaOutboundApiFp(this.configuration).createFulfillmentOrder(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Creates a fulfillment return.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} sellerFulfillmentOrderId An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer\&#39;s request to return items.
-     * @param {CreateFulfillmentReturnRequest} body 
+     * @param {FbaOutboundApiCreateFulfillmentReturnRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public createFulfillmentReturn(sellerFulfillmentOrderId: string, body: CreateFulfillmentReturnRequest, options?: any) {
-        return FbaOutboundApiFp(this.configuration).createFulfillmentReturn(sellerFulfillmentOrderId, body, options).then((request) => request(this.axios, this.basePath));
+    public createFulfillmentReturn(requestParameters: FbaOutboundApiCreateFulfillmentReturnRequest, options?: any) {
+        return FbaOutboundApiFp(this.configuration).createFulfillmentReturn(requestParameters.sellerFulfillmentOrderId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns a list of inventory items that are eligible for the fulfillment feature you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} marketplaceId The marketplace for which to return a list of the inventory that is eligible for the specified feature.
-     * @param {string} featureName The name of the feature for which to return a list of eligible inventory.
-     * @param {string} [nextToken] A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page.
+     * @param {FbaOutboundApiGetFeatureInventoryRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public getFeatureInventory(marketplaceId: string, featureName: string, nextToken?: string, options?: any) {
-        return FbaOutboundApiFp(this.configuration).getFeatureInventory(marketplaceId, featureName, nextToken, options).then((request) => request(this.axios, this.basePath));
+    public getFeatureInventory(requestParameters: FbaOutboundApiGetFeatureInventoryRequest, options?: any) {
+        return FbaOutboundApiFp(this.configuration).getFeatureInventory(requestParameters.marketplaceId, requestParameters.featureName, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn\'t eligible, the response will contain an empty skuInfo object.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} marketplaceId The marketplace for which to return the count.
-     * @param {string} featureName The name of the feature.
-     * @param {string} sellerSku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller\&#39;s SellerId, which is included with every operation that you submit.
+     * @param {FbaOutboundApiGetFeatureSKURequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public getFeatureSKU(marketplaceId: string, featureName: string, sellerSku: string, options?: any) {
-        return FbaOutboundApiFp(this.configuration).getFeatureSKU(marketplaceId, featureName, sellerSku, options).then((request) => request(this.axios, this.basePath));
+    public getFeatureSKU(requestParameters: FbaOutboundApiGetFeatureSKURequest, options?: any) {
+        return FbaOutboundApiFp(this.configuration).getFeatureSKU(requestParameters.marketplaceId, requestParameters.featureName, requestParameters.sellerSku, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns a list of features available for Multi-Channel Fulfillment orders in the marketplace you specify, and whether the seller for which you made the call is enrolled for each feature.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} marketplaceId The marketplace for which to return the list of features.
+     * @param {FbaOutboundApiGetFeaturesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public getFeatures(marketplaceId: string, options?: any) {
-        return FbaOutboundApiFp(this.configuration).getFeatures(marketplaceId, options).then((request) => request(this.axios, this.basePath));
+    public getFeatures(requestParameters: FbaOutboundApiGetFeaturesRequest, options?: any) {
+        return FbaOutboundApiFp(this.configuration).getFeatures(requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns the fulfillment order indicated by the specified order identifier.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created.
+     * @param {FbaOutboundApiGetFulfillmentOrderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public getFulfillmentOrder(sellerFulfillmentOrderId: string, options?: any) {
-        return FbaOutboundApiFp(this.configuration).getFulfillmentOrder(sellerFulfillmentOrderId, options).then((request) => request(this.axios, this.basePath));
+    public getFulfillmentOrder(requestParameters: FbaOutboundApiGetFulfillmentOrderRequest, options?: any) {
+        return FbaOutboundApiFp(this.configuration).getFulfillmentOrder(requestParameters.sellerFulfillmentOrderId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns a list of fulfillment order previews based on shipping criteria that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {GetFulfillmentPreviewRequest} body 
+     * @param {FbaOutboundApiGetFulfillmentPreviewRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public getFulfillmentPreview(body: GetFulfillmentPreviewRequest, options?: any) {
-        return FbaOutboundApiFp(this.configuration).getFulfillmentPreview(body, options).then((request) => request(this.axios, this.basePath));
+    public getFulfillmentPreview(requestParameters: FbaOutboundApiGetFulfillmentPreviewRequest, options?: any) {
+        return FbaOutboundApiFp(this.configuration).getFulfillmentPreview(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns delivery tracking information for a package in an outbound shipment for a Multi-Channel Fulfillment order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {number} packageNumber The unencrypted package identifier returned by the getFulfillmentOrder operation.
+     * @param {FbaOutboundApiGetPackageTrackingDetailsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public getPackageTrackingDetails(packageNumber: number, options?: any) {
-        return FbaOutboundApiFp(this.configuration).getPackageTrackingDetails(packageNumber, options).then((request) => request(this.axios, this.basePath));
+    public getPackageTrackingDetails(requestParameters: FbaOutboundApiGetPackageTrackingDetailsRequest, options?: any) {
+        return FbaOutboundApiFp(this.configuration).getPackageTrackingDetails(requestParameters.packageNumber, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the next token parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} [queryStartDate] A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order.
-     * @param {string} [nextToken] A string token returned in the response to your previous request.
+     * @param {FbaOutboundApiListAllFulfillmentOrdersRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public listAllFulfillmentOrders(queryStartDate?: string, nextToken?: string, options?: any) {
-        return FbaOutboundApiFp(this.configuration).listAllFulfillmentOrders(queryStartDate, nextToken, options).then((request) => request(this.axios, this.basePath));
+    public listAllFulfillmentOrders(requestParameters: FbaOutboundApiListAllFulfillmentOrdersRequest = {}, options?: any) {
+        return FbaOutboundApiFp(this.configuration).listAllFulfillmentOrders(requestParameters.queryStartDate, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns a list of return reason codes for a seller SKU in a given marketplace.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} sellerSku The seller SKU for which return reason codes are required.
-     * @param {string} language The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into.
-     * @param {string} [marketplaceId] The marketplace for which the seller wants return reason codes.
-     * @param {string} [sellerFulfillmentOrderId] The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes.
+     * @param {FbaOutboundApiListReturnReasonCodesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public listReturnReasonCodes(sellerSku: string, language: string, marketplaceId?: string, sellerFulfillmentOrderId?: string, options?: any) {
-        return FbaOutboundApiFp(this.configuration).listReturnReasonCodes(sellerSku, language, marketplaceId, sellerFulfillmentOrderId, options).then((request) => request(this.axios, this.basePath));
+    public listReturnReasonCodes(requestParameters: FbaOutboundApiListReturnReasonCodesRequest, options?: any) {
+        return FbaOutboundApiFp(this.configuration).listReturnReasonCodes(requestParameters.sellerSku, requestParameters.language, requestParameters.marketplaceId, requestParameters.sellerFulfillmentOrderId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Updates and/or requests shipment for a fulfillment order with an order hold on it.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-     * @param {string} sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created.
-     * @param {UpdateFulfillmentOrderRequest} body 
+     * @param {FbaOutboundApiUpdateFulfillmentOrderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public updateFulfillmentOrder(sellerFulfillmentOrderId: string, body: UpdateFulfillmentOrderRequest, options?: any) {
-        return FbaOutboundApiFp(this.configuration).updateFulfillmentOrder(sellerFulfillmentOrderId, body, options).then((request) => request(this.axios, this.basePath));
+    public updateFulfillmentOrder(requestParameters: FbaOutboundApiUpdateFulfillmentOrderRequest, options?: any) {
+        return FbaOutboundApiFp(this.configuration).updateFulfillmentOrder(requestParameters.sellerFulfillmentOrderId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

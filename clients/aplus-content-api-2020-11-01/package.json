@@ -42,5 +42,15 @@
   "bugs": {
     "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
   },
-  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/aplus-content-api-2020-11-01"
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/aplus-content-api-2020-11-01",
+  "keywords": [
+    "bizon",
+    "amazon",
+    "aplus content api",
+    "spa sdk",
+    "sp api",
+    "mws",
+    "selling partner api",
+    "marketplace webservice"
+  ]
 }

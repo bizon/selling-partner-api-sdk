@@ -42,5 +42,15 @@
   "bugs": {
     "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
   },
-  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-direct-fulfillment-orders-api-v1"
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-direct-fulfillment-orders-api-v1",
+  "keywords": [
+    "bizon",
+    "amazon",
+    "vendor direct fulfillment orders api",
+    "spa sdk",
+    "sp api",
+    "mws",
+    "selling partner api",
+    "marketplace webservice"
+  ]
 }

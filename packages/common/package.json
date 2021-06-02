@@ -37,5 +37,14 @@
   "bugs": {
     "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
   },
-  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/packages/auth"
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/packages/auth",
+  "keywords": [
+    "bizon",
+    "amazon",
+    "spa sdk",
+    "sp api",
+    "mws",
+    "selling partner api",
+    "marketplace webservice"
+  ]
 }

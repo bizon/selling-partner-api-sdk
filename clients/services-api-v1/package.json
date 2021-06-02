@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/services-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "With the Services API, you can build applications that help service providers get and modify their service orders.",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",

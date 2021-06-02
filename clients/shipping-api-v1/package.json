@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/shipping-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "Provides programmatic access to Amazon Shipping APIs.",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",

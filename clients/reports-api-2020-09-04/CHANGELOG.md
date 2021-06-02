@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/reports-api-2020-09-04@0.2.1...@sp-api-sdk/reports-api-2020-09-04@1.0.0) (2021-06-02)
+
+
+* chore!: Set supportsES6 and useSingleRequestParameter options to true when generating clients ([ff6ad89](https://github.com/bizon/selling-partner-api-sdk/commit/ff6ad89b496dec81f0ce775a50f25615022fcfb2))
+
+
+### BREAKING CHANGES
+
+* All parameters of clients' methods have changed
+
+
+
+
+
 ## [0.2.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/reports-api-2020-09-04@0.2.0...@sp-api-sdk/reports-api-2020-09-04@0.2.1) (2021-06-02)
 
 **Note:** Version bump only for package @sp-api-sdk/reports-api-2020-09-04

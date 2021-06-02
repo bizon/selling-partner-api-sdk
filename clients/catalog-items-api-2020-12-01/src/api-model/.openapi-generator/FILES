@@ -2,7 +2,6 @@
 .npmignore
 api.ts
 base.ts
-catalog-api
 common.ts
 configuration.ts
 git_push.sh

@@ -27,11 +27,14 @@ async function generateClientVersion(clientName: string, filename: string) {
 
 	logger.info('generating ...', {packageName})
 
-	await exec(`yarn openapi-generator-cli generate --skip-validate-spec -g typescript-axios -c scripts/config.yml -i ${filePath} -o ${clientDirectoryPath}/src/api-model`)
+	await exec(`yarn openapi-generator-cli generate --skip-validate-spec -g typescript-axios -i ${filePath} -o ${clientDirectoryPath}/src/api-model`)
+
+	if (!await fs.stat(`${clientDirectoryPath}/package.json`)) {
+		await fs.writeFile(`${clientDirectoryPath}/package.json`, await renderTemplate('scripts/templates/package.json.mustache', {description: doc.info.description, packageName}))
+	}
 
 	await fs.writeFile(`${clientDirectoryPath}/tsconfig.json`, await renderTemplate('scripts/templates/tsconfig.json.mustache'))
 	await fs.writeFile(`${clientDirectoryPath}/index.ts`, await renderTemplate('scripts/templates/index.ts.mustache'))
-	await fs.writeFile(`${clientDirectoryPath}/package.json`, await renderTemplate('scripts/templates/package.json.mustache', {description: doc.info.description, packageName}))
 	await fs.writeFile(`${clientDirectoryPath}/rollup.config.js`, await renderTemplate('scripts/templates/rollup.config.js.mustache'))
 	await fs.writeFile(`${clientDirectoryPath}/src/error.ts`, await renderTemplate('scripts/templates/src/error.ts.mustache', {className: errorClassName}))
 	await fs.writeFile(`${clientDirectoryPath}/src/client.ts`, await renderTemplate('scripts/templates/src/client.ts.mustache', {clientClassName, className: camelCase(`${tag}Api`, {pascalCase: true}), errorClassName}))

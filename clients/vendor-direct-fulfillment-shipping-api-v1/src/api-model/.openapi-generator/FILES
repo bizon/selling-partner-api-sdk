@@ -4,8 +4,5 @@ api.ts
 base.ts
 common.ts
 configuration.ts
-customer-invoices-api
 git_push.sh
 index.ts
-vendor-shipping-api
-vendor-shipping-labels-api

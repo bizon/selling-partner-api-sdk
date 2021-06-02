@@ -4,6 +4,5 @@ api.ts
 base.ts
 common.ts
 configuration.ts
-default-api
 git_push.sh
 index.ts

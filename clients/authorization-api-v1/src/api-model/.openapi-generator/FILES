@@ -1,7 +1,6 @@
 .gitignore
 .npmignore
 api.ts
-authorization-api
 base.ts
 common.ts
 configuration.ts

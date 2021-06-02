@@ -1,6 +1,6 @@
 {
   "name": "@sp-api-sdk/common",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

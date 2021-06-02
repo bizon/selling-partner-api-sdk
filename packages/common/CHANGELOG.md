@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@0.0.16...@sp-api-sdk/common@0.2.3) (2021-06-02)
+
+
+### Bug Fixes
+
+* **common:** Add sandbox boolean in ClientConfiguration interface ([2a918a5](https://github.com/bizon/selling-partner-api-sdk/commit/2a918a59f59557313b42a4adee85a21325218db3))
+
+
+
+## 0.2.2 (2021-05-28)
+
+
+
+## 0.2.1 (2021-05-28)
+
+
+
+# 0.2.0 (2021-05-28)
+
+
+
+# 0.1.0 (2021-05-28)
+
+
+
+
+
 ## [0.2.2](https://github.com/bizon/selling-partner-api-sdk/compare/v0.2.1...v0.2.2) (2021-05-28)
 
 **Note:** Version bump only for package @sp-api-sdk/common

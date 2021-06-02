@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/vendor-shipments-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Retail Procurement Shipments provides programmatic access to retail shipping data for vendors.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -23,7 +23,7 @@
   "dependencies": {
     "@aws-sdk/client-sts": "^3.16.0",
     "@sp-api-sdk/auth": "^0.2.2",
-    "@sp-api-sdk/common": "^0.2.2",
+    "@sp-api-sdk/common": "^0.2.3",
     "axios": "^0.21.1"
   },
   "devDependencies": {

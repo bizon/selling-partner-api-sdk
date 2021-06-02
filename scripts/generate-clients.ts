@@ -40,6 +40,19 @@ async function generateClientVersion(clientName: string, filename: string) {
 	await fs.writeFile(`${clientDirectoryPath}/src/client.ts`, await renderTemplate('scripts/templates/src/client.ts.mustache', {clientClassName, className: camelCase(`${tag}Api`, {pascalCase: true}), errorClassName}))
 	await fs.writeFile(`${clientDirectoryPath}/README.md`, await renderTemplate('scripts/templates/README.md.mustache', {packageName, className: clientClassName, description: doc.info.description, docUrl: `https://github.com/amzn/selling-partner-api-docs/tree/main/references/${formatedClientName}/${filename.split('.')[0]}.md`}))
 
+	const generatedFiles = await fs.readdir(`${clientDirectoryPath}/src/api-model/`)
+	const filesToNotDelete = new Set(['api.ts', 'base.ts', 'common.ts', 'configuration.ts', 'index.ts'])
+
+	await Promise.all(
+		generatedFiles.map(file => {
+			if (filesToNotDelete.has(file)) {
+				return null
+			}
+
+			return rimrafPromise(`${clientDirectoryPath}/src/api-model/${file}`)
+		})
+	)
+
 	logger.info(`done in ${(Date.now() - startedAt) / 1000}s`, {packageName})
 }
 

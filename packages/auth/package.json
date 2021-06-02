@@ -1,6 +1,6 @@
 {
   "name": "@sp-api-sdk/auth",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Auth library for helping authentication with Selling Partner API",
   "publishConfig": {
     "access": "public"

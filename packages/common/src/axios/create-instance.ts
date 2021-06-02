@@ -9,6 +9,7 @@ export interface ClientConfiguration {
 	auth: SellingPartnerApiAuth;
 	region: string;
 	userAgent?: string;
+	sandbox?: boolean;
 }
 
 export function createAxiosInstance({

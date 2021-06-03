@@ -5,19 +5,19 @@ interface Endpoints {
 
 export const endpoints: Endpoints = {
 	production: {
-		'us-east-1':
+		na:
 			'https://sellingpartnerapi-na.amazon.com',
-		'eu-west-1':
+		eu:
 			'https://sellingpartnerapi-eu.amazon.com',
-		'us-west-2':
+		fe:
 			'https://sellingpartnerapi-fe.amazon.com'
 	},
 	sandbox: {
-		'us-east-1':
+		na:
 			'https://sandbox.sellingpartnerapi-na.amazon.com',
-		'eu-west-1':
+		eu:
 			'https://sandbox.sellingpartnerapi-eu.amazon.com',
-		'us-west-2':
+		fe:
 			'https://sandbox.sellingpartnerapi-fe.amazon.com'
 	}
 }

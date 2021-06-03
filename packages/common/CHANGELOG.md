@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@0.2.4...@sp-api-sdk/common@0.3.0) (2021-06-03)
+
+
+### Features
+
+* **common:** update keys for getting endpoints ([c68da4f](https://github.com/bizon/selling-partner-api-sdk/commit/c68da4f8a1bc4716e123abea7b4cc94347075b8b))
+
+
+
+
+
 ## [0.2.4](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@0.2.3...@sp-api-sdk/common@0.2.4) (2021-06-02)
 
 **Note:** Version bump only for package @sp-api-sdk/common

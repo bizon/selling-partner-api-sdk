@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/vendor-orders-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Retail Procurement Orders provides programmatic access to vendor orders data.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -23,7 +23,7 @@
   "dependencies": {
     "@aws-sdk/client-sts": "^3.16.0",
     "@sp-api-sdk/auth": "^0.3.0",
-    "@sp-api-sdk/common": "^0.2.4",
+    "@sp-api-sdk/common": "^0.3.0",
     "axios": "^0.21.1"
   },
   "devDependencies": {

@@ -22,6 +22,50 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from './base';
 
 /**
+ * Description of a brand that can be used to get more fine-grained search results.
+ * @export
+ * @interface BrandRefinement
+ */
+export interface BrandRefinement {
+    /**
+     * The estimated number of results that would still be returned if refinement key applied.
+     * @type {number}
+     * @memberof BrandRefinement
+     */
+    numberOfResults: number;
+    /**
+     * Brand name. For display and can be used as a search refinement.
+     * @type {string}
+     * @memberof BrandRefinement
+     */
+    brandName: string;
+}
+/**
+ * Description of a classification that can be used to get more fine-grained search results.
+ * @export
+ * @interface ClassificationRefinement
+ */
+export interface ClassificationRefinement {
+    /**
+     * The estimated number of results that would still be returned if refinement key applied.
+     * @type {number}
+     * @memberof ClassificationRefinement
+     */
+    numberOfResults: number;
+    /**
+     * Display name for the classification.
+     * @type {string}
+     * @memberof ClassificationRefinement
+     */
+    displayName: string;
+    /**
+     * Identifier for the classification that can be used for search refinement purposes.
+     * @type {string}
+     * @memberof ClassificationRefinement
+     */
+    classificationId: string;
+}
+/**
  * A list of error responses returned when a request is unsuccessful.
  * @export
  * @interface ErrorList
@@ -47,7 +91,7 @@ export interface Item {
      */
     asin: string;
     /**
-     * A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes are available only to brand owners.
+     * A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes are available only to brand owners and conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.
      * @type {object}
      * @memberof Item
      */
@@ -265,6 +309,37 @@ export interface ItemSalesRanksByMarketplace {
     ranks: Array<ItemSalesRank>;
 }
 /**
+ * Items in the Amazon catalog and search related metadata.
+ * @export
+ * @interface ItemSearchResults
+ */
+export interface ItemSearchResults {
+    /**
+     * The estimated total number of products matched by the search query (only results up to the page count limit will be returned per request regardless of the number found).  Note: The maximum number of items (ASINs) that can be returned and paged through is 1000.
+     * @type {number}
+     * @memberof ItemSearchResults
+     */
+    numberOfResults: number;
+    /**
+     * 
+     * @type {Pagination}
+     * @memberof ItemSearchResults
+     */
+    pagination: Pagination;
+    /**
+     * 
+     * @type {Refinements}
+     * @memberof ItemSearchResults
+     */
+    refinements: Refinements;
+    /**
+     * A list of items from the Amazon catalog.
+     * @type {Array<Item>}
+     * @memberof ItemSearchResults
+     */
+    items: Array<Item>;
+}
+/**
  * Summary details of an Amazon catalog item for the indicated Amazon marketplace.
  * @export
  * @interface ItemSummaryByMarketplace
@@ -458,6 +533,44 @@ export interface ModelError {
      */
     details?: string;
 }
+/**
+ * When a request produces a response that exceeds the pageSize, pagination occurs. This means the response is divided into individual pages. To retrieve the next page or the previous page, you must pass the nextToken value or the previousToken value as the pageToken parameter in the next request. When you receive the last page, there will be no nextToken key in the pagination object.
+ * @export
+ * @interface Pagination
+ */
+export interface Pagination {
+    /**
+     * A token that can be used to fetch the next page.
+     * @type {string}
+     * @memberof Pagination
+     */
+    nextToken?: string;
+    /**
+     * A token that can be used to fetch the previous page.
+     * @type {string}
+     * @memberof Pagination
+     */
+    previousToken?: string;
+}
+/**
+ * Search refinements.
+ * @export
+ * @interface Refinements
+ */
+export interface Refinements {
+    /**
+     * Brand search refinements.
+     * @type {Array<BrandRefinement>}
+     * @memberof Refinements
+     */
+    brands: Array<BrandRefinement>;
+    /**
+     * Classification search refinements.
+     * @type {Array<ClassificationRefinement>}
+     * @memberof Refinements
+     */
+    classifications: Array<ClassificationRefinement>;
+}
 
 /**
  * CatalogApi - axios parameter creator
@@ -469,11 +582,12 @@ export const CatalogApiAxiosParamCreator = function (configuration?: Configurati
          * Retrieves details for an item in the Amazon catalog.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 5 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {string} asin The Amazon Standard Identification Number (ASIN) of the item.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.
-         * @param {Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>} [includedData] A comma-delimited list of data sets to include in the response.
+         * @param {Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
+         * @param {string} [locale] Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCatalogItem: async (asin: string, marketplaceIds: Array<string>, includedData?: Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>, options: any = {}): Promise<RequestArgs> => {
+        getCatalogItem: async (asin: string, marketplaceIds: Array<string>, includedData?: Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>, locale?: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'asin' is not null or undefined
             assertParamExists('getCatalogItem', 'asin', asin)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -497,6 +611,88 @@ export const CatalogApiAxiosParamCreator = function (configuration?: Configurati
 
             if (includedData) {
                 localVarQueryParameter['includedData'] = includedData.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (locale !== undefined) {
+                localVarQueryParameter['locale'] = locale;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Search for and return a list of Amazon catalog items and associated information.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 1 | 5 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * @param {Array<string>} keywords A comma-delimited list of words or item identifiers to search the Amazon catalog for.
+         * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
+         * @param {Array<'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
+         * @param {Array<string>} [brandNames] A comma-delimited list of brand names to limit the search to.
+         * @param {Array<string>} [classificationIds] A comma-delimited list of classification identifiers to limit the search to.
+         * @param {number} [pageSize] Number of results to be returned per page.
+         * @param {string} [pageToken] A token to fetch a certain page when there are multiple pages worth of results.
+         * @param {string} [keywordsLocale] The language the keywords are provided in. Defaults to the primary locale of the marketplace.
+         * @param {string} [locale] Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        searchCatalogItems: async (keywords: Array<string>, marketplaceIds: Array<string>, includedData?: Array<'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>, brandNames?: Array<string>, classificationIds?: Array<string>, pageSize?: number, pageToken?: string, keywordsLocale?: string, locale?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'keywords' is not null or undefined
+            assertParamExists('searchCatalogItems', 'keywords', keywords)
+            // verify required parameter 'marketplaceIds' is not null or undefined
+            assertParamExists('searchCatalogItems', 'marketplaceIds', marketplaceIds)
+            const localVarPath = `/catalog/2020-12-01/items`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (keywords) {
+                localVarQueryParameter['keywords'] = keywords.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (marketplaceIds) {
+                localVarQueryParameter['marketplaceIds'] = marketplaceIds.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (includedData) {
+                localVarQueryParameter['includedData'] = includedData.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (brandNames) {
+                localVarQueryParameter['brandNames'] = brandNames.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (classificationIds) {
+                localVarQueryParameter['classificationIds'] = classificationIds.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (pageSize !== undefined) {
+                localVarQueryParameter['pageSize'] = pageSize;
+            }
+
+            if (pageToken !== undefined) {
+                localVarQueryParameter['pageToken'] = pageToken;
+            }
+
+            if (keywordsLocale !== undefined) {
+                localVarQueryParameter['keywordsLocale'] = keywordsLocale;
+            }
+
+            if (locale !== undefined) {
+                localVarQueryParameter['locale'] = locale;
             }
 
 
@@ -524,12 +720,31 @@ export const CatalogApiFp = function(configuration?: Configuration) {
          * Retrieves details for an item in the Amazon catalog.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 5 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {string} asin The Amazon Standard Identification Number (ASIN) of the item.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.
-         * @param {Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>} [includedData] A comma-delimited list of data sets to include in the response.
+         * @param {Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
+         * @param {string} [locale] Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCatalogItem(asin: string, marketplaceIds: Array<string>, includedData?: Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Item>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getCatalogItem(asin, marketplaceIds, includedData, options);
+        async getCatalogItem(asin: string, marketplaceIds: Array<string>, includedData?: Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>, locale?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Item>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getCatalogItem(asin, marketplaceIds, includedData, locale, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Search for and return a list of Amazon catalog items and associated information.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 1 | 5 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * @param {Array<string>} keywords A comma-delimited list of words or item identifiers to search the Amazon catalog for.
+         * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
+         * @param {Array<'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
+         * @param {Array<string>} [brandNames] A comma-delimited list of brand names to limit the search to.
+         * @param {Array<string>} [classificationIds] A comma-delimited list of classification identifiers to limit the search to.
+         * @param {number} [pageSize] Number of results to be returned per page.
+         * @param {string} [pageToken] A token to fetch a certain page when there are multiple pages worth of results.
+         * @param {string} [keywordsLocale] The language the keywords are provided in. Defaults to the primary locale of the marketplace.
+         * @param {string} [locale] Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async searchCatalogItems(keywords: Array<string>, marketplaceIds: Array<string>, includedData?: Array<'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>, brandNames?: Array<string>, classificationIds?: Array<string>, pageSize?: number, pageToken?: string, keywordsLocale?: string, locale?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ItemSearchResults>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.searchCatalogItems(keywords, marketplaceIds, includedData, brandNames, classificationIds, pageSize, pageToken, keywordsLocale, locale, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -546,12 +761,30 @@ export const CatalogApiFactory = function (configuration?: Configuration, basePa
          * Retrieves details for an item in the Amazon catalog.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 5 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {string} asin The Amazon Standard Identification Number (ASIN) of the item.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.
-         * @param {Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>} [includedData] A comma-delimited list of data sets to include in the response.
+         * @param {Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
+         * @param {string} [locale] Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCatalogItem(asin: string, marketplaceIds: Array<string>, includedData?: Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>, options?: any): AxiosPromise<Item> {
-            return localVarFp.getCatalogItem(asin, marketplaceIds, includedData, options).then((request) => request(axios, basePath));
+        getCatalogItem(asin: string, marketplaceIds: Array<string>, includedData?: Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>, locale?: string, options?: any): AxiosPromise<Item> {
+            return localVarFp.getCatalogItem(asin, marketplaceIds, includedData, locale, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Search for and return a list of Amazon catalog items and associated information.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 1 | 5 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * @param {Array<string>} keywords A comma-delimited list of words or item identifiers to search the Amazon catalog for.
+         * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
+         * @param {Array<'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
+         * @param {Array<string>} [brandNames] A comma-delimited list of brand names to limit the search to.
+         * @param {Array<string>} [classificationIds] A comma-delimited list of classification identifiers to limit the search to.
+         * @param {number} [pageSize] Number of results to be returned per page.
+         * @param {string} [pageToken] A token to fetch a certain page when there are multiple pages worth of results.
+         * @param {string} [keywordsLocale] The language the keywords are provided in. Defaults to the primary locale of the marketplace.
+         * @param {string} [locale] Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        searchCatalogItems(keywords: Array<string>, marketplaceIds: Array<string>, includedData?: Array<'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>, brandNames?: Array<string>, classificationIds?: Array<string>, pageSize?: number, pageToken?: string, keywordsLocale?: string, locale?: string, options?: any): AxiosPromise<ItemSearchResults> {
+            return localVarFp.searchCatalogItems(keywords, marketplaceIds, includedData, brandNames, classificationIds, pageSize, pageToken, keywordsLocale, locale, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -577,11 +810,88 @@ export interface CatalogApiGetCatalogItemRequest {
     readonly marketplaceIds: Array<string>
 
     /**
-     * A comma-delimited list of data sets to include in the response.
+     * A comma-delimited list of data sets to include in the response. Default: summaries.
      * @type {Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>}
      * @memberof CatalogApiGetCatalogItem
      */
     readonly includedData?: Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>
+
+    /**
+     * Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
+     * @type {string}
+     * @memberof CatalogApiGetCatalogItem
+     */
+    readonly locale?: string
+}
+
+/**
+ * Request parameters for searchCatalogItems operation in CatalogApi.
+ * @export
+ * @interface CatalogApiSearchCatalogItemsRequest
+ */
+export interface CatalogApiSearchCatalogItemsRequest {
+    /**
+     * A comma-delimited list of words or item identifiers to search the Amazon catalog for.
+     * @type {Array<string>}
+     * @memberof CatalogApiSearchCatalogItems
+     */
+    readonly keywords: Array<string>
+
+    /**
+     * A comma-delimited list of Amazon marketplace identifiers for the request.
+     * @type {Array<string>}
+     * @memberof CatalogApiSearchCatalogItems
+     */
+    readonly marketplaceIds: Array<string>
+
+    /**
+     * A comma-delimited list of data sets to include in the response. Default: summaries.
+     * @type {Array<'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>}
+     * @memberof CatalogApiSearchCatalogItems
+     */
+    readonly includedData?: Array<'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>
+
+    /**
+     * A comma-delimited list of brand names to limit the search to.
+     * @type {Array<string>}
+     * @memberof CatalogApiSearchCatalogItems
+     */
+    readonly brandNames?: Array<string>
+
+    /**
+     * A comma-delimited list of classification identifiers to limit the search to.
+     * @type {Array<string>}
+     * @memberof CatalogApiSearchCatalogItems
+     */
+    readonly classificationIds?: Array<string>
+
+    /**
+     * Number of results to be returned per page.
+     * @type {number}
+     * @memberof CatalogApiSearchCatalogItems
+     */
+    readonly pageSize?: number
+
+    /**
+     * A token to fetch a certain page when there are multiple pages worth of results.
+     * @type {string}
+     * @memberof CatalogApiSearchCatalogItems
+     */
+    readonly pageToken?: string
+
+    /**
+     * The language the keywords are provided in. Defaults to the primary locale of the marketplace.
+     * @type {string}
+     * @memberof CatalogApiSearchCatalogItems
+     */
+    readonly keywordsLocale?: string
+
+    /**
+     * Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
+     * @type {string}
+     * @memberof CatalogApiSearchCatalogItems
+     */
+    readonly locale?: string
 }
 
 /**
@@ -599,7 +909,18 @@ export class CatalogApi extends BaseAPI {
      * @memberof CatalogApi
      */
     public getCatalogItem(requestParameters: CatalogApiGetCatalogItemRequest, options?: any) {
-        return CatalogApiFp(this.configuration).getCatalogItem(requestParameters.asin, requestParameters.marketplaceIds, requestParameters.includedData, options).then((request) => request(this.axios, this.basePath));
+        return CatalogApiFp(this.configuration).getCatalogItem(requestParameters.asin, requestParameters.marketplaceIds, requestParameters.includedData, requestParameters.locale, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Search for and return a list of Amazon catalog items and associated information.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 1 | 5 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+     * @param {CatalogApiSearchCatalogItemsRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CatalogApi
+     */
+    public searchCatalogItems(requestParameters: CatalogApiSearchCatalogItemsRequest, options?: any) {
+        return CatalogApiFp(this.configuration).searchCatalogItems(requestParameters.keywords, requestParameters.marketplaceIds, requestParameters.includedData, requestParameters.brandNames, requestParameters.classificationIds, requestParameters.pageSize, requestParameters.pageToken, requestParameters.keywordsLocale, requestParameters.locale, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

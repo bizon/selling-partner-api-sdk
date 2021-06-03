@@ -32,7 +32,7 @@ const auth = new SellingPartnerApiAuth({
 
 const client = new FulfillmentOutboundApiClient({
   auth,
-  region: 'eu-west-1'
+  region: 'eu'
 })
 ```
 

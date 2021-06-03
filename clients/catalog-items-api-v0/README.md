@@ -32,7 +32,7 @@ const auth = new SellingPartnerApiAuth({
 
 const client = new CatalogItemsApiClient({
   auth,
-  region: 'eu-west-1'
+  region: 'eu'
 })
 ```
 

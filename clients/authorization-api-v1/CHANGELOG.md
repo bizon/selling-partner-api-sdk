@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/authorization-api-v1@1.0.3...@sp-api-sdk/authorization-api-v1@1.0.4) (2021-06-03)
+
+
+### Bug Fixes
+
+* use correct region in Getting Started section ([4b92f8b](https://github.com/bizon/selling-partner-api-sdk/commit/4b92f8b85a69b7aab18f3562a87aba0b40f5913c))
+
+
+
+
+
 ## [1.0.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/authorization-api-v1@1.0.2...@sp-api-sdk/authorization-api-v1@1.0.3) (2021-06-03)
 
 **Note:** Version bump only for package @sp-api-sdk/authorization-api-v1

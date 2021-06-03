@@ -32,7 +32,7 @@ const auth = new SellingPartnerApiAuth({
 
 const client = new TokensApiClient({
   auth,
-  region: 'eu'
+  region: 'eu-west-1'
 })
 ```
 

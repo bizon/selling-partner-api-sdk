@@ -75,7 +75,7 @@ export class SecurityTokenService {
 		const {Credentials: credentials} = await sts.send(
 			new AssumeRoleCommand({
 				RoleArn: this.role.arn,
-				RoleSessionName: this.role.sessionName
+				RoleSessionName: this.role.sessionName ?? 'sp-api-sdk'
 			})
 		)
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@0.3.0...@sp-api-sdk/auth@0.3.1) (2021-06-03)
+
+
+### Bug Fixes
+
+* **auth:** set default value for session name ([1f914b3](https://github.com/bizon/selling-partner-api-sdk/commit/1f914b368e80ca4251389a91574909dff410da73))
+
+
+
+
+
 # [0.3.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@0.0.16...@sp-api-sdk/auth@0.3.0) (2021-06-02)
 
 

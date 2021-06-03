@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/services-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "With the Services API, you can build applications that help service providers get and modify their service orders.",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -22,8 +22,8 @@
   },
   "dependencies": {
     "@aws-sdk/client-sts": "^3.16.0",
-    "@sp-api-sdk/auth": "^0.3.0",
-    "@sp-api-sdk/common": "^0.3.1",
+    "@sp-api-sdk/auth": "^0.3.1",
+    "@sp-api-sdk/common": "^0.3.2",
     "axios": "^0.21.1"
   },
   "devDependencies": {

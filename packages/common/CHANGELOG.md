@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@0.3.0...@sp-api-sdk/common@0.3.1) (2021-06-03)
+
+
+### Bug Fixes
+
+* use correct aws region when creating clients ([15468dc](https://github.com/bizon/selling-partner-api-sdk/commit/15468dc1fa7bf1a85bd69ebc2f3764ce7fc6a9b8))
+
+
+
+
+
 # [0.3.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@0.2.4...@sp-api-sdk/common@0.3.0) (2021-06-03)
 
 

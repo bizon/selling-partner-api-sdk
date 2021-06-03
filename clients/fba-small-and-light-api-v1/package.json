@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/fba-small-and-light-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for FBA Small and Light lets you help sellers manage their listings in the Small and Light program. The program reduces the cost of fulfilling orders for small and lightweight FBA inventory. You can enroll or remove items from the program and check item eligibility and enrollment status. You can also preview the estimated program fees charged to a seller for items sold while enrolled in the program.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -23,7 +23,7 @@
   "dependencies": {
     "@aws-sdk/client-sts": "^3.16.0",
     "@sp-api-sdk/auth": "^0.3.0",
-    "@sp-api-sdk/common": "^0.3.0",
+    "@sp-api-sdk/common": "^0.3.1",
     "axios": "^0.21.1"
   },
   "devDependencies": {

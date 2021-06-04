@@ -1,19 +1,19 @@
 import {Configuration, SolicitationsApi} from './api-model'
 
-import {endpoints, createAxiosInstance, ClientConfiguration} from '@sp-api-sdk/common'
+import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration} from '@sp-api-sdk/common'
 
 import {SolicitationsApiError} from './error'
 
 export class SolicitationsApiClient extends SolicitationsApi {
 	constructor(parameters: ClientConfiguration) {
-		const axiosInstance = createAxiosInstance(parameters)
+		const region = awsRegionByCode[parameters.region] ?? parameters.region
+		const axiosInstance = createAxiosInstance({...parameters, region})
 		const configuration = new Configuration()
 		const environment = parameters.sandbox ? 'sandbox' : 'production'
-
-		const endpoint: string | undefined = endpoints[environment][parameters.region]
+		const endpoint = endpoints[environment][region]
 
 		if (!endpoint) {
-			throw new SolicitationsApiError(`Unknown region : ${parameters.region}`)
+			throw new SolicitationsApiError(`Unknown region : ${region}`)
 		}
 
 		super(configuration, endpoint, axiosInstance)

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@0.3.2...@sp-api-sdk/common@0.4.0) (2021-06-04)
+
+
+### Features
+
+* **common:** add object for converting region code to aws region ([95694b2](https://github.com/bizon/selling-partner-api-sdk/commit/95694b205b79c71afacaf4c28dfbf9aeea35f586))
+
+
+
+
+
 ## [0.3.2](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@0.3.1...@sp-api-sdk/common@0.3.2) (2021-06-03)
 
 **Note:** Version bump only for package @sp-api-sdk/common

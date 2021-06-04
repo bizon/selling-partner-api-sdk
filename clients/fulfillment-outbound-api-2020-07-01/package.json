@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/fulfillment-outbound-api-2020-07-01",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Fulfillment Outbound lets you create applications that help a seller fulfill Multi-Channel Fulfillment orders using their inventory in Amazon&#39;s fulfillment network. You can get information on both potential and existing fulfillment orders.",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -23,7 +23,7 @@
   "dependencies": {
     "@aws-sdk/client-sts": "^3.16.0",
     "@sp-api-sdk/auth": "^0.3.1",
-    "@sp-api-sdk/common": "^0.3.2",
+    "@sp-api-sdk/common": "^0.4.0",
     "axios": "^0.21.1"
   },
   "devDependencies": {

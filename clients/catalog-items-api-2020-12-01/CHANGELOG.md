@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/catalog-items-api-2020-12-01@1.0.6...@sp-api-sdk/catalog-items-api-2020-12-01@1.1.0) (2021-06-04)
+
+
+### Features
+
+* clients accept code region like "eu" ([754a3ef](https://github.com/bizon/selling-partner-api-sdk/commit/754a3ef3e344a3df4d16fd64c365c2971b9f007a))
+
+
+
+
+
 ## [1.0.6](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/catalog-items-api-2020-12-01@1.0.5...@sp-api-sdk/catalog-items-api-2020-12-01@1.0.6) (2021-06-03)
 
 **Note:** Version bump only for package @sp-api-sdk/catalog-items-api-2020-12-01

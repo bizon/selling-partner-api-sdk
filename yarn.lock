@@ -2191,24 +2191,6 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@sp-api-sdk/auth@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@sp-api-sdk/auth/-/auth-0.2.2.tgz#8cf3084e420ef9e2e68241f15825b8a025c1d9da"
-  integrity sha512-GcHX69g9BBT/3i96eYBYy8lQ6bFYBnQvbPNRS8ZMfb+4TbgA4mFzsO09cyj3H9fMYGGGiInYKeQcgvclGdLikw==
-  dependencies:
-    "@aws-sdk/client-sts" "^3.17.0"
-    date-fns "^2.21.3"
-    got "^11.8.2"
-
-"@sp-api-sdk/common@^0.2.3":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@sp-api-sdk/common/-/common-0.2.4.tgz#98662a9129323352b102e80eeb5529a97e017228"
-  integrity sha512-E7QD+09b+N4e2AVfXP73u8rACLDDCq96XHRqKg0ZskBqbCcl5kG1yJP9O3RFCIMR+pqtLDeVtOx3wcT+9iNDcg==
-  dependencies:
-    "@sp-api-sdk/auth" "^0.3.0"
-    aws4-axios "^2.3.1"
-    axios "^0.21.1"
-
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@szmarczak/http-timer/-/http-timer-1.1.2.tgz#b1665e2c461a2cd92f4c1bbf50d5454de0d4b421"

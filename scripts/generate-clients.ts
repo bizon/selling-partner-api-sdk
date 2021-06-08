@@ -27,7 +27,7 @@ async function generateClientVersion(clientName: string, filename: string) {
 
 	logger.info('generating ...', {packageName})
 
-	await exec(`yarn openapi-generator-cli generate --additional-properties=supportsES6=true,useSingleRequestParameter=true --skip-validate-spec -g typescript-axios -i ${filePath} -o ${clientDirectoryPath}/src/api-model`)
+	await exec(`yarn openapi-generator-cli generate --additional-properties=supportsES6=true,useSingleRequestParameter=true,withSeparateModelsAndApi=true,modelPackage=models,apiPackage=api --skip-validate-spec -g typescript-axios -i ${filePath} -o ${clientDirectoryPath}/src/api-model`)
 
 	try {
 		await fs.access(`${clientDirectoryPath}/package.json`)
@@ -43,7 +43,7 @@ async function generateClientVersion(clientName: string, filename: string) {
 	await fs.writeFile(`${clientDirectoryPath}/README.md`, await renderTemplate('scripts/templates/README.md.mustache', {packageName, className: clientClassName, description: doc.info.description, docUrl: `https://github.com/amzn/selling-partner-api-docs/tree/main/references/${formatedClientName}/${filename.split('.')[0]}.md`}))
 
 	const generatedFiles = await fs.readdir(`${clientDirectoryPath}/src/api-model/`)
-	const filesToNotDelete = new Set(['api.ts', 'base.ts', 'common.ts', 'configuration.ts', 'index.ts'])
+	const filesToNotDelete = new Set(['api.ts', 'base.ts', 'common.ts', 'configuration.ts', 'index.ts', 'api', 'models'])
 
 	await Promise.all(
 		generatedFiles.map(file => {

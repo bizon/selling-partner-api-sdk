@@ -44,7 +44,8 @@
   "xo": {
     "semicolon": false,
     "ignore": [
-      "**/dist/*"
+      "**/dist/*",
+      "clients/**/api-models"
     ],
     "rules": {
       "@typescript-eslint/restrict-template-expressions": "off",

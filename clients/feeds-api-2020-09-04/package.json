@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/feeds-api-2020-09-04",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Feeds lets you upload data to Amazon on behalf of a selling partner.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",

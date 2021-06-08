@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/product-type-definitions-api-2020-09-01@1.1.0...@sp-api-sdk/product-type-definitions-api-2020-09-01@1.2.0) (2021-06-08)
+
+
+### Features
+
+* exports api's models ([ce861b1](https://github.com/bizon/selling-partner-api-sdk/commit/ce861b1eca84b257978a2755d8fbaa5a8b821ad2))
+
+
+
+
+
 # [1.1.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/product-type-definitions-api-2020-09-01@1.0.1...@sp-api-sdk/product-type-definitions-api-2020-09-01@1.1.0) (2021-06-04)
 
 

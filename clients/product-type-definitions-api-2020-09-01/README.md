@@ -32,9 +32,26 @@ const auth = new SellingPartnerApiAuth({
 
 const client = new ProductTypeDefinitionsApiClient({
   auth,
-  region: 'eu-west-1'
+  region: 'eu' // or 'eu-west-1'
 })
 ```
+
+## Handle Rate Limiting
+
+If you want to let the SDK retry after each 429 responses, instanciate the client like this:
+
+```javascript
+const client = new ProductTypeDefinitionsApiClient({
+  auth,
+  region: 'eu',
+  rateLimiting: {
+    retry: true,
+    onRetry: (retryInfo) => console.log(retryInfo) // Optional
+  }
+})
+```
+
+The SDK gets the rate limits for each routes from the API documentation
 
 ## API documentation
 

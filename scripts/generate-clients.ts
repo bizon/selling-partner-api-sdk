@@ -6,6 +6,7 @@ import * as childProcess from 'child_process'
 import rimraf from 'rimraf'
 import jsonfile from 'jsonfile'
 import camelCase from 'camelcase'
+import reduce from 'lodash/reduce'
 
 import {renderTemplate, logger} from './utils'
 
@@ -30,17 +31,50 @@ async function generateClientVersion(clientName: string, filename: string) {
 	await exec(`yarn openapi-generator-cli generate --additional-properties=supportsES6=true,useSingleRequestParameter=true,withSeparateModelsAndApi=true,modelPackage=models,apiPackage=api --skip-validate-spec -g typescript-axios -i ${filePath} -o ${clientDirectoryPath}/src/api-model`)
 
 	try {
+		await fs.access(`${clientDirectoryPath}/__test__`)
+	} catch {
+		await fs.mkdir(`${clientDirectoryPath}/__test__`)
+	}
+
+	try {
 		await fs.access(`${clientDirectoryPath}/package.json`)
 	} catch {
 		await fs.writeFile(`${clientDirectoryPath}/package.json`, await renderTemplate('scripts/templates/package.json.mustache', {description: doc.info.description, packageName}))
+	}
+
+	const rateLimits = reduce(doc.paths, (acc: any, value, key) => {
+		for (const method of Object.keys(value)) {
+			const {description} = value[method]
+			if (description) {
+				const result = description.match(/Rate \(requests per second\) \| Burst \|\n(?:\| -{4} )+\|\n(?:\|Default)?\| (?<rate>(?:\d*\.)?\d+) \| (?<burst>(?:\d*\.)?\d+) \|/)
+
+				if (result?.groups) {
+					acc.push({
+						rate: result.groups.rate,
+						burst: result.groups.burst,
+						urlRegex: `new RegExp('^${key.replace(/{.+}/g, '[^/]*')}$')`
+					})
+				} else {
+					logger.warn(`Warning: no rate limiting found for ${packageName}`, {packageName})
+				}
+			}
+		}
+
+		return acc
+	}, [])
+
+	if (rateLimits.length > 0) {
+		rateLimits[rateLimits.length - 1].last = true
 	}
 
 	await fs.writeFile(`${clientDirectoryPath}/tsconfig.json`, await renderTemplate('scripts/templates/tsconfig.json.mustache'))
 	await fs.writeFile(`${clientDirectoryPath}/index.ts`, await renderTemplate('scripts/templates/index.ts.mustache'))
 	await fs.writeFile(`${clientDirectoryPath}/rollup.config.js`, await renderTemplate('scripts/templates/rollup.config.js.mustache'))
 	await fs.writeFile(`${clientDirectoryPath}/src/error.ts`, await renderTemplate('scripts/templates/src/error.ts.mustache', {className: errorClassName}))
-	await fs.writeFile(`${clientDirectoryPath}/src/client.ts`, await renderTemplate('scripts/templates/src/client.ts.mustache', {clientClassName, className: camelCase(`${tag}Api`, {pascalCase: true}), errorClassName}))
+	await fs.writeFile(`${clientDirectoryPath}/src/client.ts`, await renderTemplate('scripts/templates/src/client.ts.mustache', {clientClassName, className: camelCase(`${tag}Api`, {pascalCase: true}), errorClassName, rateLimits}))
 	await fs.writeFile(`${clientDirectoryPath}/README.md`, await renderTemplate('scripts/templates/README.md.mustache', {packageName, className: clientClassName, description: doc.info.description, docUrl: `https://github.com/amzn/selling-partner-api-docs/tree/main/references/${formatedClientName}/${filename.split('.')[0]}.md`}))
+	await fs.writeFile(`${clientDirectoryPath}/__test__/client.spec.ts`, await renderTemplate('scripts/templates/__test__/client.spec.ts.mustache', {clientClassName}))
+	await fs.writeFile(`${clientDirectoryPath}/jest.config.js`, await renderTemplate('scripts/templates/jest.config.js.mustache'))
 
 	const generatedFiles = await fs.readdir(`${clientDirectoryPath}/src/api-model/`)
 	const filesToNotDelete = new Set(['api.ts', 'base.ts', 'common.ts', 'configuration.ts', 'index.ts', 'api', 'models'])
@@ -71,7 +105,7 @@ async function generateClientVersions(clientName: string) {
 	await rimrafPromise('selling-partner-api-models')
 	await exec('git clone git@github.com:amzn/selling-partner-api-models.git')
 	const {stdout} = await exec('ls selling-partner-api-models/models')
-	const clientNames: string[] = stdout.split('\n').filter(clientName => Boolean(clientName))// .slice(0, 2)
+	const clientNames: string[] = stdout.split('\n').filter(clientName => Boolean(clientName))
 
 	const promises = clientNames.map(async clientName => generateClientVersions(clientName))
 

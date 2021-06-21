@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/feeds-api-2020-09-04@1.2.0...@sp-api-sdk/feeds-api-2020-09-04@1.3.0) (2021-06-21)
+
+
+### Features
+
+* add rate limiting handle ([#3](https://github.com/bizon/selling-partner-api-sdk/issues/3)) ([24e0d0a](https://github.com/bizon/selling-partner-api-sdk/commit/24e0d0a7e7795b2ed72a7ed7163e52e469630f08))
+
+
+
+
+
 # [1.2.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/feeds-api-2020-09-04@1.1.0...@sp-api-sdk/feeds-api-2020-09-04@1.2.0) (2021-06-08)
 
 

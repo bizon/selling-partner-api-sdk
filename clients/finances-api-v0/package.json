@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/finances-api-v0",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Finances helps you obtain financial information relevant to a seller&#39;s business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -24,7 +24,7 @@
   "dependencies": {
     "@aws-sdk/client-sts": "^3.16.0",
     "@sp-api-sdk/auth": "^0.3.1",
-    "@sp-api-sdk/common": "^0.4.0",
+    "@sp-api-sdk/common": "^0.5.0",
     "axios": "^0.21.1"
   },
   "devDependencies": {

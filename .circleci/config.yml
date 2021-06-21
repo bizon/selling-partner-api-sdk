@@ -110,6 +110,18 @@ jobs:
           name: Run linter for packages
           command: yarn xo packages
           
+  build:
+    <<: *nodejs_container
+    steps:
+      - *attach_workspace
+
+      - restore-nodejs:
+          key: v1-selling-partner-api-sdk
+
+      - run:
+          name: Run build
+          command: yarn build -- --concurrency 2 --stream
+
 workflows:
   version: 2
 
@@ -126,5 +138,9 @@ workflows:
             - install
 
       - test:
+          requires:
+            - install
+      
+      - build:
           requires:
             - install

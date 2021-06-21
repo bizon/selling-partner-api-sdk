@@ -1,4 +1,4 @@
-/* eslint-comments/no-unused-disable, eslint-disable prefer-regex-literals, no-floating-decimal, prefer-regex-literals */
+/* eslint-disable prefer-regex-literals, no-floating-decimal, unicorn/no-zero-fractions */
 import {Configuration, ProductPricingApi} from './api-model'
 
 import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry} from '@sp-api-sdk/common'

@@ -2,6 +2,8 @@
   "extends": "@tsconfig/node14/tsconfig.json",
   "compilerOptions": {
     "module": "ESnext",
+    "lib": ["DOM"],
+    "resolveJsonModule": true,
     "moduleResolution": "Node",
     "strict": true,
     "declaration": true,

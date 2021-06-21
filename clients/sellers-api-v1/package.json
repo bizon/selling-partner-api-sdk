@@ -18,7 +18,8 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "test": "NODE_ENV='test' yarn jest"
   },
   "dependencies": {
     "@aws-sdk/client-sts": "^3.16.0",

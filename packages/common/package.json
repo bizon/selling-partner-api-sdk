@@ -17,12 +17,14 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "test": "NODE_ENV=test jest"
   },
   "dependencies": {
     "@sp-api-sdk/auth": "^0.3.1",
     "aws4-axios": "^2.3.1",
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "axios-retry": "^3.1.9"
   },
   "devDependencies": {
     "@rollup/plugin-json": "^4.1.0",

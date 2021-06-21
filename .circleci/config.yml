@@ -79,7 +79,7 @@ jobs:
       - *attach_workspace
 
       - install-nodejs:
-          key: v1-selling-partner-api-sdk-tmp
+          key: v1-selling-partner-api-sdk
 
   test:
     <<: *test_container
@@ -87,7 +87,7 @@ jobs:
       - *attach_workspace
 
       - restore-nodejs:
-          key: v1-selling-partner-api-sdk-tmp
+          key: v1-selling-partner-api-sdk
 
       - run:
           name: Run tests
@@ -104,7 +104,7 @@ jobs:
       - *attach_workspace
 
       - restore-nodejs:
-          key: v1-selling-partner-api-sdk-tmp
+          key: v1-selling-partner-api-sdk
 
       - run:
           name: Run linter for packages

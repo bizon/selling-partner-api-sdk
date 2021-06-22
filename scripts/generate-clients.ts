@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
 import fs from 'fs/promises'
+import os from 'os'
 import {promisify} from 'util'
 import * as childProcess from 'child_process'
+import Bluebird from 'bluebird'
 import rimraf from 'rimraf'
 import jsonfile from 'jsonfile'
 import camelCase from 'camelcase'
@@ -67,9 +69,10 @@ async function generateClientVersion(clientName: string, filename: string) {
 		rateLimits[rateLimits.length - 1].last = true
 	}
 
+	await fs.writeFile(`${clientDirectoryPath}/.npmignore`, await renderTemplate('scripts/templates/.npmignore.mustache'))
 	await fs.writeFile(`${clientDirectoryPath}/tsconfig.json`, await renderTemplate('scripts/templates/tsconfig.json.mustache'))
+	await fs.writeFile(`${clientDirectoryPath}/tsconfig.es.json`, await renderTemplate('scripts/templates/tsconfig.es.json.mustache'))
 	await fs.writeFile(`${clientDirectoryPath}/index.ts`, await renderTemplate('scripts/templates/index.ts.mustache'))
-	await fs.writeFile(`${clientDirectoryPath}/rollup.config.js`, await renderTemplate('scripts/templates/rollup.config.js.mustache'))
 	await fs.writeFile(`${clientDirectoryPath}/src/error.ts`, await renderTemplate('scripts/templates/src/error.ts.mustache', {className: errorClassName}))
 	await fs.writeFile(`${clientDirectoryPath}/src/client.ts`, await renderTemplate('scripts/templates/src/client.ts.mustache', {clientClassName, className: camelCase(`${tag}Api`, {pascalCase: true}), errorClassName, rateLimits}))
 	await fs.writeFile(`${clientDirectoryPath}/README.md`, await renderTemplate('scripts/templates/README.md.mustache', {packageName, className: clientClassName, description: doc.info.description, docUrl: `https://github.com/amzn/selling-partner-api-docs/tree/main/references/${formatedClientName}/${filename.split('.')[0]}.md`}))
@@ -107,9 +110,9 @@ async function generateClientVersions(clientName: string) {
 	const {stdout} = await exec('ls selling-partner-api-models/models')
 	const clientNames: string[] = stdout.split('\n').filter(clientName => Boolean(clientName))
 
-	const promises = clientNames.map(async clientName => generateClientVersions(clientName))
-
-	await Promise.all(promises)
+	await Bluebird.map(clientNames, async clientName => generateClientVersions(clientName), {
+		concurrency: os.cpus().length
+	})
 
 	await rimrafPromise('selling-partner-api-models')
 })()

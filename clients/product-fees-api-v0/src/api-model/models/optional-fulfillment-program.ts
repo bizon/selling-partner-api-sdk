@@ -15,7 +15,7 @@
 
 
 /**
- * An optional enrollment program for which to return the estimated fees when the offer is fulfilled by Amazon (IsAmazonFulfilled is set to true).
+ * An optional enrollment program to return the estimated fees when the offer is fulfilled by Amazon (IsAmazonFulfilled is set to true).
  * @export
  * @enum {string}
  */

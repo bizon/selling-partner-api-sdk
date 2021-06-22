@@ -1,11 +1,8 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "lib": ["DOM"],
-    "outDir": "dist",
-    "baseUrl": "./",
-    "resolveJsonModule": true
+    "declarationDir": "dist/types",
+    "outDir": "dist/cjs"
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/__tests__/*"],
+  "exclude": ["__test__", "dist/types"]
 }

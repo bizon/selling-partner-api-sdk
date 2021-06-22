@@ -1,13 +1,15 @@
 {
   "name": "@sp-api-sdk/common",
+  "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
+  "description": "Selling Parner API common library",
   "version": "0.5.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
   "directories": {
     "lib": "dist",
     "test": "__tests__"
@@ -16,7 +18,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:es": "tsc -p tsconfig.es.json",
+    "build": "yarn build:cjs && yarn build:es",
     "clean": "rimraf dist",
     "test": "NODE_ENV=test jest"
   },
@@ -27,10 +31,7 @@
     "axios-retry": "^3.1.9"
   },
   "devDependencies": {
-    "@rollup/plugin-json": "^4.1.0",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.50.1",
-    "rollup-plugin-typescript2": "^0.30.0"
+    "rimraf": "^3.0.2"
   },
   "repository": {
     "type": "git",

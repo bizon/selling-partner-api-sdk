@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/auth",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "Auth library for helping authentication with Selling Partner API",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

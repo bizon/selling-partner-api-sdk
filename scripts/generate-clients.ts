@@ -58,11 +58,17 @@ async function generateClientVersion(clientName: string, filename: string) {
         const result = description.match(/Rate \(requests per second\) \| Burst \|\n(?:\| -{4} )+\|\n(?:\|Default)?\| (?<rate>(?:\d*\.)?\d+) \| (?<burst>(?:\d*\.)?\d+) \|/)
 
         if (result?.groups) {
-          acc.push({
-            rate: result.groups.rate,
-            burst: result.groups.burst,
+          const value = {
+            rate: Number.parseFloat(result.groups.rate),
+            burst: Number.parseFloat(result.groups.burst),
             urlRegex: `new RegExp('^${key.replace(/{.+}/g, '[^/]*')}$')`
-          })
+          }
+
+          if (Number.isNaN(value.rate) || Number.isNaN(value.burst)) {
+            logger.warn(`Warning: invalid rate limits: ${result.groups.rate} / ${result.groups.burst}`, {packageName})
+          }
+
+          acc.push(value)
         } else {
           logger.warn(`Warning: no rate limiting found for ${packageName}`, {packageName})
         }

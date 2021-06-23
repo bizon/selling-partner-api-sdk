@@ -1,4 +1,4 @@
-/* eslint-disable prefer-regex-literals, no-floating-decimal, unicorn/no-zero-fractions */
+/* eslint-disable prefer-regex-literals */
 import {Configuration, VendorShippingApi} from './api-model'
 
 import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry} from '@sp-api-sdk/common'

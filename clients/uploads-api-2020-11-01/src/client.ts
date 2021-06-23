@@ -1,4 +1,4 @@
-/* eslint-disable prefer-regex-literals, no-floating-decimal, unicorn/no-zero-fractions */
+/* eslint-disable prefer-regex-literals */
 import {Configuration, UploadsApi} from './api-model'
 
 import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry} from '@sp-api-sdk/common'
@@ -8,7 +8,7 @@ import {UploadsApiError} from './error'
 export const RATE_LIMITS = [
   {
     urlRegex: new RegExp('^/uploads/2020-11-01/uploadDestinations/[^/]*$'),
-    rate: .1,
+    rate: 0.1,
     burst: 5
   }
 ]

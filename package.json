@@ -54,15 +54,15 @@
     "semicolon": false,
     "space": 2,
     "ignores": [
-      "clients/**/api-model/**"
+      "**/src/api-model/**"
     ],
     "rules": {
-      "@typescript-eslint/restrict-template-expressions": "off",
-      "@typescript-eslint/no-unsafe-argument": "off",
-      "unicorn/no-array-reduce": "off",
+      "@typescript-eslint/no-implicit-any-catch": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
+      "@typescript-eslint/no-unsafe-argument": "off",
+      "@typescript-eslint/restrict-template-expressions": "off",
       "eslint-comments/no-unused-disable": "off",
-      "@typescript-eslint/no-implicit-any-catch": "off"
+      "unicorn/no-array-reduce": "off"
     }
   }
 }

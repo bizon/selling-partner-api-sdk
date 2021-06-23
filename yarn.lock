@@ -80,7 +80,7 @@
     "@aws-sdk/util-utf8-node" "3.18.0"
     tslib "^2.0.0"
 
-"@aws-sdk/client-sts@^3.16.0", "@aws-sdk/client-sts@^3.17.0", "@aws-sdk/client-sts@^3.4.1":
+"@aws-sdk/client-sts@^3.17.0", "@aws-sdk/client-sts@^3.4.1":
   version "3.18.0"
   resolved "https://registry.yarnpkg.com/@aws-sdk/client-sts/-/client-sts-3.18.0.tgz#0add98614ed0233855b067c5e8b5905ae272808b"
   integrity sha512-xRaBx3A4Edd216ZSZP4360siOx7yGiPY2Ez/w4JbdcwFRjoen8cP9kTgbipgMhbwHVUvgNZpyDrCp0eRHL24bg==

@@ -1,4 +1,4 @@
-/* eslint-disable prefer-regex-literals, no-floating-decimal, unicorn/no-zero-fractions */
+/* eslint-disable prefer-regex-literals */
 import {Configuration, SellersApi} from './api-model'
 
 import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry} from '@sp-api-sdk/common'
@@ -8,7 +8,7 @@ import {SellersApiError} from './error'
 export const RATE_LIMITS = [
   {
     urlRegex: new RegExp('^/sellers/v1/marketplaceParticipations$'),
-    rate: .016,
+    rate: 0.016,
     burst: 15
   }
 ]

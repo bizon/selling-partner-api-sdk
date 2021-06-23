@@ -1,4 +1,4 @@
-/* eslint-disable prefer-regex-literals, no-floating-decimal, unicorn/no-zero-fractions */
+/* eslint-disable prefer-regex-literals */
 import {Configuration, ReportsApi} from './api-model'
 
 import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry} from '@sp-api-sdk/common'
@@ -23,7 +23,7 @@ export const RATE_LIMITS = [
   },
   {
     urlRegex: new RegExp('^/reports/2021-06-30/reports/[^/]*$'),
-    rate: 2.0,
+    rate: 2,
     burst: 15
   },
   {

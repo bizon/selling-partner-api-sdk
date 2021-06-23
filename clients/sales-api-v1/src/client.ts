@@ -1,4 +1,4 @@
-/* eslint-disable prefer-regex-literals, no-floating-decimal, unicorn/no-zero-fractions */
+/* eslint-disable prefer-regex-literals */
 import {Configuration, SalesApi} from './api-model'
 
 import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry} from '@sp-api-sdk/common'
@@ -8,7 +8,7 @@ import {SalesApiError} from './error'
 export const RATE_LIMITS = [
   {
     urlRegex: new RegExp('^/sales/v1/orderMetrics$'),
-    rate: .5,
+    rate: 0.5,
     burst: 15
   }
 ]

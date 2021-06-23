@@ -1,6 +1,6 @@
 export class TokensApiError extends Error {
-	constructor(message: string) {
-		super(message)
-		this.name = 'TokensApiError'
-	}
+  constructor(message: string) {
+    super(message)
+    this.name = 'TokensApiError'
+  }
 }

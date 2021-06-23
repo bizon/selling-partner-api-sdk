@@ -1,7 +1,7 @@
 export class AccessTokenError extends Error {
-	constructor(message: string) {
-		super(message)
+  constructor(message: string) {
+    super(message)
 
-		this.name = 'AccessTokenError'
-	}
+    this.name = 'AccessTokenError'
+  }
 }

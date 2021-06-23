@@ -8,7 +8,7 @@ import mustache from 'mustache'
  * @param view - The view to render the template with
  */
 export async function renderTemplate(templatePath: string, view: Record<string, any> = {}) {
-	const template = await fs.readFile(templatePath)
+  const template = await fs.readFile(templatePath)
 
-	return mustache.render(template.toString(), view)
+  return mustache.render(template.toString(), view)
 }

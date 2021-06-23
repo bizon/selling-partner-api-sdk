@@ -30,9 +30,6 @@
     "axios": "^0.21.1",
     "axios-retry": "^3.1.9"
   },
-  "devDependencies": {
-    "rimraf": "^3.0.2"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bizon/selling-partner-api-sdk.git"

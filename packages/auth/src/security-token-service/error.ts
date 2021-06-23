@@ -1,7 +1,7 @@
 export class SecurityTokenServiceError extends Error {
-	constructor(message: string) {
-		super(message)
+  constructor(message: string) {
+    super(message)
 
-		this.name = 'SecurityTokenServiceError'
-	}
+    this.name = 'SecurityTokenServiceError'
+  }
 }

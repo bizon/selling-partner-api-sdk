@@ -6,81 +6,81 @@ import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, on
 import {VendorDirectFulfillmentShippingApiError} from './error'
 
 export const RATE_LIMITS = [
-	{
-		urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shippingLabels$'),
-		rate: 10,
-		burst: 10
-	},
-	{
-		urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shippingLabels$'),
-		rate: 10,
-		burst: 10
-	},
-	{
-		urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shippingLabels/[^/]*$'),
-		rate: 10,
-		burst: 10
-	},
-	{
-		urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shipmentConfirmations$'),
-		rate: 10,
-		burst: 10
-	},
-	{
-		urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shipmentStatusUpdates$'),
-		rate: 10,
-		burst: 10
-	},
-	{
-		urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/customerInvoices$'),
-		rate: 10,
-		burst: 10
-	},
-	{
-		urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/customerInvoices/[^/]*$'),
-		rate: 10,
-		burst: 10
-	},
-	{
-		urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/packingSlips$'),
-		rate: 10,
-		burst: 10
-	},
-	{
-		urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/packingSlips/[^/]*$'),
-		rate: 10,
-		burst: 10
-	}
+  {
+    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shippingLabels$'),
+    rate: 10,
+    burst: 10
+  },
+  {
+    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shippingLabels$'),
+    rate: 10,
+    burst: 10
+  },
+  {
+    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shippingLabels/[^/]*$'),
+    rate: 10,
+    burst: 10
+  },
+  {
+    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shipmentConfirmations$'),
+    rate: 10,
+    burst: 10
+  },
+  {
+    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shipmentStatusUpdates$'),
+    rate: 10,
+    burst: 10
+  },
+  {
+    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/customerInvoices$'),
+    rate: 10,
+    burst: 10
+  },
+  {
+    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/customerInvoices/[^/]*$'),
+    rate: 10,
+    burst: 10
+  },
+  {
+    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/packingSlips$'),
+    rate: 10,
+    burst: 10
+  },
+  {
+    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/packingSlips/[^/]*$'),
+    rate: 10,
+    burst: 10
+  }
 ]
 
 export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits | onRetry'> {
-	rateLimiting?: {
-		retry: boolean;
-		onRetry?: onRetry;
-	};
+  rateLimiting?: {
+    retry: boolean;
+    onRetry?: onRetry;
+  };
 }
 
 export class VendorDirectFulfillmentShippingApiClient extends VendorShippingLabelsApi {
-	constructor(parameters: ClientParameters) {
-		const region = awsRegionByCode[parameters.region] ?? parameters.region
-		const {rateLimiting, ...clientParameters} = parameters
-		const axiosParameters: ClientConfiguration = {...clientParameters, region}
+  constructor(parameters: ClientParameters) {
+    const region = awsRegionByCode[parameters.region] ?? parameters.region
+    const {rateLimiting, ...clientParameters} = parameters
+    const axiosParameters: ClientConfiguration = {...clientParameters, region}
 
-		if (rateLimiting?.retry) {
-			axiosParameters.rateLimits = RATE_LIMITS
-			axiosParameters.onRetry = rateLimiting.onRetry
-		}
+    if (rateLimiting?.retry) {
+      axiosParameters.rateLimits = RATE_LIMITS
+      axiosParameters.onRetry = rateLimiting.onRetry
+    }
 
-		const axiosInstance = createAxiosInstance(axiosParameters)
-		const configuration = new Configuration()
-		const environment = parameters.sandbox ? 'sandbox' : 'production'
-		const endpoint = endpoints[environment][region]
+    const axiosInstance = createAxiosInstance(axiosParameters)
+    const configuration = new Configuration()
+    const environment = parameters.sandbox ? 'sandbox' : 'production'
+    const endpoint = endpoints[environment][region]
 
-		if (!endpoint) {
-			throw new VendorDirectFulfillmentShippingApiError(`Unknown region : ${region}`)
-		}
+    if (!endpoint) {
+      throw new VendorDirectFulfillmentShippingApiError(`Unknown region : ${region}`)
+    }
 
-		super(configuration, endpoint, axiosInstance)
-	}
+    super(configuration, endpoint, axiosInstance)
+  }
 }
 

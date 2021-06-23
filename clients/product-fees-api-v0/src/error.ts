@@ -1,6 +1,6 @@
 export class ProductFeesApiError extends Error {
-	constructor(message: string) {
-		super(message)
-		this.name = 'ProductFeesApiError'
-	}
+  constructor(message: string) {
+    super(message)
+    this.name = 'ProductFeesApiError'
+  }
 }

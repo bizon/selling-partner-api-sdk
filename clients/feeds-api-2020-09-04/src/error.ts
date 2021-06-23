@@ -1,6 +1,6 @@
 export class FeedsApiError extends Error {
-	constructor(message: string) {
-		super(message)
-		this.name = 'FeedsApiError'
-	}
+  constructor(message: string) {
+    super(message)
+    this.name = 'FeedsApiError'
+  }
 }

@@ -5,11 +5,11 @@ The Selling Partner API for Finances helps you obtain financial information rele
 ## Installing
 
 ```sh
-yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+yarn add @sp-api-sdk/finances-api-v0
 ```
 
 ```sh
-npm install @sp-api-sdk/aplus-content-api-2020-11-01
+npm install @sp-api-sdk/finances-api-v0
 ```
 
 ## Getting Started

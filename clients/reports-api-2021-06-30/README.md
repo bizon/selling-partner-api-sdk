@@ -5,11 +5,11 @@ The Selling Partner API for Reports lets you retrieve and manage a variety of re
 ## Installing
 
 ```sh
-yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+yarn add @sp-api-sdk/reports-api-2021-06-30
 ```
 
 ```sh
-npm install @sp-api-sdk/aplus-content-api-2020-11-01
+npm install @sp-api-sdk/reports-api-2021-06-30
 ```
 
 ## Getting Started

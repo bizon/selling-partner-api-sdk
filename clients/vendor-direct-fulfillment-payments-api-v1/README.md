@@ -5,11 +5,11 @@ The Selling Partner API for Direct Fulfillment Payments provides programmatic ac
 ## Installing
 
 ```sh
-yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+yarn add @sp-api-sdk/vendor-direct-fulfillment-payments-api-v1
 ```
 
 ```sh
-npm install @sp-api-sdk/aplus-content-api-2020-11-01
+npm install @sp-api-sdk/vendor-direct-fulfillment-payments-api-v1
 ```
 
 ## Getting Started

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/shipment-invoicing-api-v0@1.4.0...@sp-api-sdk/shipment-invoicing-api-v0@1.4.1) (2021-06-28)
+
+
+### Bug Fixes
+
+* **deps:** remove @aws-sdk/client-sts from clients deps ([#14](https://github.com/bizon/selling-partner-api-sdk/issues/14)) ([0e05680](https://github.com/bizon/selling-partner-api-sdk/commit/0e056808c6df8aef4059aafc57c8797f717cce49))
+
+
+
+
+
 # [1.4.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/shipment-invoicing-api-v0@1.2.0...@sp-api-sdk/shipment-invoicing-api-v0@1.4.0) (2021-06-22)
 
 

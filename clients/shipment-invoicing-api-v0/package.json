@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/shipment-invoicing-api-v0",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Shipment Invoicing helps you programmatically retrieve shipment invoice information in the Brazil marketplace for a selling partner’s Fulfillment by Amazon (FBA) orders.",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -24,8 +24,8 @@
     "test": "NODE_ENV='test' yarn jest"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^0.3.2",
-    "@sp-api-sdk/common": "^0.6.0",
+    "@sp-api-sdk/auth": "^0.3.3",
+    "@sp-api-sdk/common": "^0.6.1",
     "axios": "^0.21.1"
   },
   "repository": {

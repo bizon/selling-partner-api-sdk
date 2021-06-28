@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/uploads-api-2020-11-01@1.4.0...@sp-api-sdk/uploads-api-2020-11-01@1.5.0) (2021-06-28)
+
+
+### Bug Fixes
+
+* **deps:** remove @aws-sdk/client-sts from clients deps ([#14](https://github.com/bizon/selling-partner-api-sdk/issues/14)) ([0e05680](https://github.com/bizon/selling-partner-api-sdk/commit/0e056808c6df8aef4059aafc57c8797f717cce49))
+
+
+### Features
+
+* **uploads-api-2020-11-01:** update generated code ([#17](https://github.com/bizon/selling-partner-api-sdk/issues/17)) ([5c5dabf](https://github.com/bizon/selling-partner-api-sdk/commit/5c5dabf2ab54adc11e36acc82d180900c0e45ed2))
+
+
+
+
+
 # [1.4.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/uploads-api-2020-11-01@1.2.0...@sp-api-sdk/uploads-api-2020-11-01@1.4.0) (2021-06-22)
 
 

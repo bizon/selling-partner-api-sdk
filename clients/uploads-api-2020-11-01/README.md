@@ -1,6 +1,6 @@
 # `uploads-api-2020-11-01`
 
-The Selling Partner API for Uploads provides operations that support uploading files.
+The Uploads API lets you upload files that you can programmatically access using other Selling Partner APIs, such as the A+ Content API and the Messaging API.
 
 ## Installing
 

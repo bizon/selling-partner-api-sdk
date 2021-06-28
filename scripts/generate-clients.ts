@@ -48,7 +48,7 @@ async function generateClientVersion(clientName: string, filename: string) {
   try {
     await fs.access(`${clientDirectoryPath}/package.json`)
   } catch {
-    await fs.writeFile(`${clientDirectoryPath}/package.json`, await renderTemplate('scripts/templates/package.json.mustache', {description: doc.info.description, packageName}))
+    await fs.writeFile(`${clientDirectoryPath}/package.json`, await renderTemplate('scripts/templates/package.json.mustache', {description: doc.info.description, packageName, apiName: formatedClientName.replace('-', ' ')}))
   }
 
   const rateLimits = reduce(doc.paths, (acc: any, value, key) => {

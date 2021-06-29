@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-shipments-api-v1@1.4.2...@sp-api-sdk/vendor-shipments-api-v1@1.4.3) (2021-06-29)
+
+**Note:** Version bump only for package @sp-api-sdk/vendor-shipments-api-v1
+
+
+
+
+
 ## [1.4.2](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-shipments-api-v1@1.4.1...@sp-api-sdk/vendor-shipments-api-v1@1.4.2) (2021-06-29)
 
 **Note:** Version bump only for package @sp-api-sdk/vendor-shipments-api-v1

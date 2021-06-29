@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/product-type-definitions-api-2020-09-01",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Product Type Definitions provides programmatic access to attribute and data requirements for product types in the Amazon catalog. Use this API to return the JSON Schema for a product type that you can then use with other Selling Partner APIs, such as the Selling Partner API for Listings Items, the Selling Partner API for Catalog Items, and the Selling Partner API for Feeds (for JSON-based listing feeds).",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -24,8 +24,8 @@
     "test": "NODE_ENV='test' yarn jest"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^0.3.3",
-    "@sp-api-sdk/common": "^0.6.1",
+    "@sp-api-sdk/auth": "^0.3.4",
+    "@sp-api-sdk/common": "^0.6.2",
     "axios": "^0.21.1"
   },
   "repository": {

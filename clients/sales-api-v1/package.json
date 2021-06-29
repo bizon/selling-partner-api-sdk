@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/sales-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Sales provides APIs related to sales performance.",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -24,8 +24,8 @@
     "test": "NODE_ENV='test' yarn jest"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^0.3.3",
-    "@sp-api-sdk/common": "^0.6.1",
+    "@sp-api-sdk/auth": "^0.3.4",
+    "@sp-api-sdk/common": "^0.6.2",
     "axios": "^0.21.1"
   },
   "repository": {

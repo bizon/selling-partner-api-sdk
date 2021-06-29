@@ -36,7 +36,7 @@
     "bluebird": "^3.7.2",
     "camelcase": "^6.2.0",
     "chalk": "^4.1.1",
-    "jest": "^27.0.5",
+    "jest": "^27.0.6",
     "jest-junit": "^12.2.0",
     "jsonfile": "^6.1.0",
     "lerna": "^4.0.0",

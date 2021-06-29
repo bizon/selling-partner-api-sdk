@@ -61,7 +61,8 @@
       "@typescript-eslint/no-unsafe-argument": "off",
       "unicorn/no-array-reduce": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
-      "eslint-comments/no-unused-disable": "off"
+      "eslint-comments/no-unused-disable": "off",
+      "@typescript-eslint/no-implicit-any-catch": "off"
     }
   }
 }

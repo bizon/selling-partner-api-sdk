@@ -14,6 +14,37 @@ npm install @sp-api-sdk/{{packageName}}
 
 ## Getting Started
 
+{{#grantlessScope}}
+### With grantless API
+
+```javascript
+import {SellingPartnerApiAuth, AuthorizationScope} from '@sp-api-sdk/auth'
+{{=<% %>=}}
+import {<%className%>} from '@sp-api-sdk/<%packageName%>'
+<%={{ }}=%>
+
+const auth = new SellingPartnerApiAuth({
+  clientId: '',
+  clientSecret: '',
+  scopes: [AuthorizationScope.{{grantlessScope}}],
+  secretAccessKey: '',
+  accessKeyId: '',
+  region: '',
+  role: {
+    arn: '',
+  }
+})
+
+
+const client = new NotificationsApiClient({
+  auth,
+  region: 'eu' // or 'eu-west-1'
+})
+```
+
+### With access token
+
+{{/grantlessScope}}
 ```javascript
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 {{=<% %>=}}

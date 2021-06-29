@@ -14,6 +14,33 @@ npm install @sp-api-sdk/notifications-api-v1
 
 ## Getting Started
 
+### With grantless API
+
+```javascript
+import {SellingPartnerApiAuth, AuthorizationScope} from '@sp-api-sdk/auth'
+import {NotificationsApiClient} from '@sp-api-sdk/notifications-api-v1'
+
+const auth = new SellingPartnerApiAuth({
+  clientId: '',
+  clientSecret: '',
+  scopes: [AuthorizationScope.NOTIFICATIONS],
+  secretAccessKey: '',
+  accessKeyId: '',
+  region: '',
+  role: {
+    arn: '',
+  }
+})
+
+
+const client = new NotificationsApiClient({
+  auth,
+  region: 'eu' // or 'eu-west-1'
+})
+```
+
+### With access token
+
 ```javascript
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 import {NotificationsApiClient} from '@sp-api-sdk/notifications-api-v1'

@@ -1,5 +1,6 @@
-import {AccessToken} from './access-token'
+import {AccessToken, AuthorizationScope} from './access-token'
 import {SecurityTokenService} from './security-token-service'
+import {RequireExactlyOne} from 'type-fest'
 
 interface User {
   AccessKeyId: string;
@@ -8,7 +9,8 @@ interface User {
 export interface SellingPartnerAuthParameters {
   clientId?: string;
   clientSecret?: string;
-  refreshToken: string;
+  refreshToken?: string;
+  scopes?: AuthorizationScope[];
   accessKeyId?: string;
   secretAccessKey?: string;
   region?: string;
@@ -27,12 +29,22 @@ export class SellingPartnerApiAuth {
   public readonly sts?: SecurityTokenService
   public readonly user?: User
 
-  constructor(parameters: SellingPartnerAuthParameters) {
-    this.accessToken = new AccessToken({
-      clientId: parameters.clientId,
-      clientSecret: parameters.clientSecret,
-      refreshToken: parameters.refreshToken
-    })
+  constructor(parameters: RequireExactlyOne<SellingPartnerAuthParameters, 'refreshToken' | 'scopes'>) {
+    if (parameters.refreshToken) {
+      this.accessToken = new AccessToken({
+        clientId: parameters.clientId,
+        clientSecret: parameters.clientSecret,
+        refreshToken: parameters.refreshToken
+      })
+    } else if (parameters.scopes) {
+      this.accessToken = new AccessToken({
+        clientId: parameters.clientId,
+        clientSecret: parameters.clientSecret,
+        scopes: parameters.scopes
+      })
+    } else {
+      throw new TypeError('Either "refreshToken" or "scopes" must be specified')
+    }
 
     if (parameters.role) {
       this.sts = new SecurityTokenService({

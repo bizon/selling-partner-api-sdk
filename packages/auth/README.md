@@ -30,6 +30,30 @@ const accessToken = await auth.accessToken.get()
 const { AccessKeyId, SecretAccessKey, SessionToken } = await auth.getCredentials()
 ```
 
+With scopes (for grantless APIs):
+
+```javascript
+import {SellingPartnerApiAuth, AuthorizationScope} from '@sp-api-sdk/auth'
+import {AuthorizationApiClient} from '@sp-api-sdk/authorization-api-v1'
+
+const auth = new SellingPartnerApiAuth({
+  clientId: '',
+  clientSecret: '',
+  scopes: Object.values(AuthorizationScope), // Or choose the only ones you need
+  secretAccessKey: '',
+  accessKeyId: '',
+  region: '',
+  role: {
+    arn: '',
+  }
+})
+
+const client = new AuthorizationApiClient({
+  auth,
+  region: 'eu' // or 'eu-west-1'
+})
+```
+
 With an AWS user :
 
 ``` javascript

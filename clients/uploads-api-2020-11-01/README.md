@@ -5,11 +5,11 @@ The Uploads API lets you upload files that you can programmatically access using
 ## Installing
 
 ```sh
-yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+yarn add @sp-api-sdk/uploads-api-2020-11-01
 ```
 
 ```sh
-npm install @sp-api-sdk/aplus-content-api-2020-11-01
+npm install @sp-api-sdk/uploads-api-2020-11-01
 ```
 
 ## Getting Started

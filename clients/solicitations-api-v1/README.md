@@ -5,11 +5,11 @@ With the Solicitations API you can build applications that send non-critical sol
 ## Installing
 
 ```sh
-yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+yarn add @sp-api-sdk/solicitations-api-v1
 ```
 
 ```sh
-npm install @sp-api-sdk/aplus-content-api-2020-11-01
+npm install @sp-api-sdk/solicitations-api-v1
 ```
 
 ## Getting Started

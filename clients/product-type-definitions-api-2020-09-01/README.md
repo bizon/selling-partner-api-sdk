@@ -5,11 +5,11 @@ The Selling Partner API for Product Type Definitions provides programmatic acces
 ## Installing
 
 ```sh
-yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+yarn add @sp-api-sdk/product-type-definitions-api-2020-09-01
 ```
 
 ```sh
-npm install @sp-api-sdk/aplus-content-api-2020-11-01
+npm install @sp-api-sdk/product-type-definitions-api-2020-09-01
 ```
 
 ## Getting Started

@@ -5,11 +5,11 @@ The Selling Partner API for Feeds lets you upload data to Amazon on behalf of a 
 ## Installing
 
 ```sh
-yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+yarn add @sp-api-sdk/feeds-api-2020-09-04
 ```
 
 ```sh
-npm install @sp-api-sdk/aplus-content-api-2020-11-01
+npm install @sp-api-sdk/feeds-api-2020-09-04
 ```
 
 ## Getting Started

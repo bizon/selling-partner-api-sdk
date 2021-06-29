@@ -5,11 +5,11 @@ The Selling Partner API for Catalog Items provides programmatic access to inform
 ## Installing
 
 ```sh
-yarn add @sp-api-sdk/aplus-content-api-2020-11-01
+yarn add @sp-api-sdk/catalog-items-api-2020-12-01
 ```
 
 ```sh
-npm install @sp-api-sdk/aplus-content-api-2020-11-01
+npm install @sp-api-sdk/catalog-items-api-2020-12-01
 ```
 
 ## Getting Started

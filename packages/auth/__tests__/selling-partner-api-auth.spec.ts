@@ -1,4 +1,4 @@
-import {SellingPartnerApiAuth, AccessTokenError, SecurityTokenServiceError} from '../src'
+import {SellingPartnerApiAuth, SellingPartnerApiAuthError} from '../src'
 
 describe('src/selling-partner-api-auth', () => {
   it('should create a SellingPartnrApiAuth instance', () => {
@@ -14,90 +14,62 @@ describe('src/selling-partner-api-auth', () => {
   })
 
   it('should fail for missing clientId', () => {
-    expect.assertions(1)
-
-    try {
-      void new SellingPartnerApiAuth({
-        clientSecret: 'FAKE_CLIENT_SECRET',
-        accessKeyId: 'FAKE_ACCESS_KEY_ID',
-        secretAccessKey: 'FAKE_SECRET_ACCESS_KEY',
-        refreshToken: 'FAKE_REFRESH_TOKEN'
-      })
-    } catch (error: unknown) {
-      expect(error).toBeInstanceOf(AccessTokenError)
-    }
+    expect(() => new SellingPartnerApiAuth({
+      clientSecret: 'FAKE_CLIENT_SECRET',
+      accessKeyId: 'FAKE_ACCESS_KEY_ID',
+      secretAccessKey: 'FAKE_SECRET_ACCESS_KEY',
+      refreshToken: 'FAKE_REFRESH_TOKEN'
+    })).toThrow(SellingPartnerApiAuthError)
   })
 
   it('should fail for missing clientSecret', () => {
-    expect.assertions(1)
-
-    try {
-      void new SellingPartnerApiAuth({
-        clientId: 'FAKE_CLIENT_ID',
-        accessKeyId: 'FAKE_ACCESS_KEY_ID',
-        secretAccessKey: 'FAKE_SECRET_ACCESS_KEY',
-        refreshToken: 'FAKE_REFRESH_TOKEN'
-      })
-    } catch (error: unknown) {
-      expect(error).toBeInstanceOf(AccessTokenError)
-    }
+    expect(() => new SellingPartnerApiAuth({
+      clientId: 'FAKE_CLIENT_ID',
+      accessKeyId: 'FAKE_ACCESS_KEY_ID',
+      secretAccessKey: 'FAKE_SECRET_ACCESS_KEY',
+      refreshToken: 'FAKE_REFRESH_TOKEN'
+    })).toThrow(SellingPartnerApiAuthError)
   })
 
   it('should fail for missing accessKeyId', () => {
-    expect.assertions(1)
-
-    try {
-      void new SellingPartnerApiAuth({
-        clientId: 'FAKE_CLIENT_ID',
-        clientSecret: 'FAKE_CLIENT_SECRET',
-        secretAccessKey: 'FAKE_SECRET_ACCESS_KEY',
-        refreshToken: 'FAKE_REFRESH_TOKEN',
-        role: {
-          arn: 'FAKE_ARN'
-        }
-      })
-    } catch (error: unknown) {
-      expect(error).toBeInstanceOf(SecurityTokenServiceError)
-    }
+    expect(() => new SellingPartnerApiAuth({
+      clientId: 'FAKE_CLIENT_ID',
+      clientSecret: 'FAKE_CLIENT_SECRET',
+      secretAccessKey: 'FAKE_SECRET_ACCESS_KEY',
+      refreshToken: 'FAKE_REFRESH_TOKEN',
+      role: {
+        arn: 'FAKE_ARN'
+      }
+    })).toThrow(SellingPartnerApiAuthError)
   })
 
   it('should fail for missing secretAccessKey', () => {
-    expect.assertions(1)
-
-    try {
-      void new SellingPartnerApiAuth({
-        clientId: 'FAKE_CLIENT_ID',
-        clientSecret: 'FAKE_CLIENT_SECRET',
-        accessKeyId: 'FAKE_ACCESS_KEY_ID',
-        refreshToken: 'FAKE_REFRESH_TOKEN',
-        role: {
-          arn: 'FAKE_ARN'
-        }
-      })
-    } catch (error: unknown) {
-      expect(error).toBeInstanceOf(SecurityTokenServiceError)
-    }
+    expect(() => new SellingPartnerApiAuth({
+      clientId: 'FAKE_CLIENT_ID',
+      clientSecret: 'FAKE_CLIENT_SECRET',
+      accessKeyId: 'FAKE_ACCESS_KEY_ID',
+      refreshToken: 'FAKE_REFRESH_TOKEN',
+      role: {
+        arn: 'FAKE_ARN'
+      }
+    })).toThrow(SellingPartnerApiAuthError)
   })
 
-  it('should not fail for missing accessKeyId', () => {
-    expect.assertions(0)
-
-    void new SellingPartnerApiAuth({
+  it('should fail for missing accessKeyId', () => {
+    expect(() => new SellingPartnerApiAuth({
       clientId: 'FAKE_CLIENT_ID',
       clientSecret: 'FAKE_CLIENT_SECRET',
       secretAccessKey: 'FAKE_SECRET_ACCESS_KEY',
       refreshToken: 'FAKE_REFRESH_TOKEN'
-    })
+    })).toThrow(SellingPartnerApiAuthError)
   })
 
-  it('should not fail for missing secretAccessKey', () => {
-    expect.assertions(0)
-
-    void new SellingPartnerApiAuth({
+  it('should fail for missing secretAccessKey', () => {
+    expect(() => new SellingPartnerApiAuth({
       clientId: 'FAKE_CLIENT_ID',
       clientSecret: 'FAKE_CLIENT_SECRET',
       accessKeyId: 'FAKE_ACCESS_KEY_ID',
       refreshToken: 'FAKE_REFRESH_TOKEN'
-    })
+    })).toThrow(SellingPartnerApiAuthError)
   })
 })

@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/reports-api-2021-06-30",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -24,8 +24,8 @@
     "test": "NODE_ENV='test' yarn jest"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^0.3.4",
-    "@sp-api-sdk/common": "^0.6.2",
+    "@sp-api-sdk/auth": "^0.4.0",
+    "@sp-api-sdk/common": "^0.6.3",
     "axios": "^0.21.1"
   },
   "repository": {

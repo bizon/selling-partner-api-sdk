@@ -1,5 +1,5 @@
 node_modules
-packages/test
+packages/test-sdk
 packages/**/dist
 clients/**/dist
 **/*.log

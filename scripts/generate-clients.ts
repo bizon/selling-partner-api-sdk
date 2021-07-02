@@ -15,6 +15,8 @@ import {renderTemplate, logger} from './utils'
 const exec = promisify(childProcess.exec)
 const rimrafPromise = promisify(rimraf)
 
+const GRANTLESS_APIS = [{name: 'notifications-api', scope: 'NOTIFICATIONS'}, {name: 'authorization-api', scope: 'MIGRATION'}]
+
 async function generateClientVersion(clientName: string, filename: string) {
   const filePath = `selling-partner-api-models/models/${clientName}/${filename}`
   const doc: Record<string, any> = await jsonfile.readFile(filePath)
@@ -27,6 +29,7 @@ async function generateClientVersion(clientName: string, filename: string) {
   const paths = Object.values(doc.paths)
   const httpMethods = Object.values(paths[0] as any)
   const [tag = 'Default'] = ((httpMethods[0] as any).tags) ?? []
+  const grantlessInfo = GRANTLESS_APIS.find(({name}) => formatedClientName === name)
 
   logger.info('generating …', {packageName})
 
@@ -87,8 +90,18 @@ async function generateClientVersion(clientName: string, filename: string) {
   await fs.writeFile(`${clientDirectoryPath}/tsconfig.es.json`, await renderTemplate('scripts/templates/tsconfig.es.json.mustache'))
   await fs.writeFile(`${clientDirectoryPath}/index.ts`, await renderTemplate('scripts/templates/index.ts.mustache'))
   await fs.writeFile(`${clientDirectoryPath}/src/error.ts`, await renderTemplate('scripts/templates/src/error.ts.mustache', {className: errorClassName}))
-  await fs.writeFile(`${clientDirectoryPath}/src/client.ts`, await renderTemplate('scripts/templates/src/client.ts.mustache', {clientClassName, className: camelCase(`${tag}Api`, {pascalCase: true}), errorClassName, rateLimits}))
-  await fs.writeFile(`${clientDirectoryPath}/README.md`, await renderTemplate('scripts/templates/README.md.mustache', {packageName, className: clientClassName, description: doc.info.description, docUrl: `https://github.com/amzn/selling-partner-api-docs/tree/main/references/${formatedClientName}/${filename.split('.')[0]}.md`}))
+  await fs.writeFile(`${clientDirectoryPath}/src/client.ts`, await renderTemplate('scripts/templates/src/client.ts.mustache', {
+    clientClassName,
+    className: camelCase(`${tag}Api`, {pascalCase: true}),
+    errorClassName, rateLimits
+  }))
+  await fs.writeFile(`${clientDirectoryPath}/README.md`, await renderTemplate('scripts/templates/README.md.mustache', {
+    packageName,
+    className: clientClassName,
+    description: doc.info.description,
+    docUrl: `https://github.com/amzn/selling-partner-api-docs/tree/main/references/${formatedClientName}/${filename.split('.')[0]}.md`,
+    grantlessScope: grantlessInfo?.scope
+  }))
   await fs.writeFile(`${clientDirectoryPath}/__test__/client.spec.ts`, await renderTemplate('scripts/templates/__test__/client.spec.ts.mustache', {clientClassName}))
   await fs.writeFile(`${clientDirectoryPath}/jest.config.js`, await renderTemplate('scripts/templates/jest.config.js.mustache'))
 

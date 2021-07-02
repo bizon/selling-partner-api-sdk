@@ -1,7 +1,10 @@
 export class AccessTokenError extends Error {
-  constructor(message: string) {
+  readonly meta?: any
+
+  constructor(message: string, meta?: any) {
     super(message)
 
     this.name = 'AccessTokenError'
+    this.meta = meta
   }
 }

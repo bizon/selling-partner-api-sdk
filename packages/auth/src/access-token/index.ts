@@ -1,11 +1,18 @@
 import got from 'got'
 import {addSeconds} from 'date-fns'
 import {AccessTokenError} from './error'
+import {RequireExactlyOne} from 'type-fest'
 
 export * from './error'
 
+export enum AuthorizationScope {
+  NOTIFICATIONS = 'sellingpartnerapi::notifications',
+  MIGRATION = 'sellingpartnerapi::migration'
+}
+
 export interface AccessTokenParameters {
-  refreshToken: string;
+  refreshToken?: string;
+  scopes?: AuthorizationScope[];
   clientId?: string;
   clientSecret?: string;
 }
@@ -20,12 +27,13 @@ interface AccessTokenData {
 export class AccessToken {
   public readonly clientId: string
   public readonly clientSecret: string
-  public readonly refreshToken: string
+  public readonly refreshToken?: string
+  public readonly scopes?: AuthorizationScope[]
 
   private value?: AccessTokenData
   private expirationDate?: Date
 
-  constructor(parameters: AccessTokenParameters) {
+  constructor(parameters: RequireExactlyOne<AccessTokenParameters, 'refreshToken' | 'scopes'>) {
     const clientId = parameters.clientId ?? process.env.AWS_CLIENT_ID
     const clientSecret = parameters.clientSecret ?? process.env.AWS_CLIENT_SECRET
 
@@ -40,27 +48,46 @@ export class AccessToken {
     this.clientId = clientId
     this.clientSecret = clientSecret
     this.refreshToken = parameters.refreshToken
+    this.scopes = parameters.scopes
   }
 
   async get() {
     if (!this.value || (this.expirationDate && Date.now() >= this.expirationDate.getTime())) {
-      this.value = await got.post(
-        'https://api.amazon.com/auth/o2/token',
-        {
-          json: {
-            grant_type: 'refresh_token',
-            refresh_token: this.refreshToken,
-            client_id: this.clientId,
-            client_secret: this.clientSecret
-          }
-        }
-      ).json()
-
-      if (!this.value) {
-        throw new AccessTokenError('Unknown Error')
+      const body: Record<string, string> = {
+        client_id: this.clientId,
+        client_secret: this.clientSecret
       }
 
-      this.expirationDate = addSeconds(new Date(), this.value.expires_in)
+      if (this.refreshToken) {
+        body.grant_type = 'refresh_token'
+        body.refresh_token = this.refreshToken
+      }
+
+      if (this.scopes) {
+        body.grant_type = 'client_credentials'
+        body.scope = this.scopes.join(' ')
+      }
+
+      try {
+        this.value = await got.post(
+          'https://api.amazon.com/auth/o2/token',
+          {
+            json: body
+          }
+        ).json()
+
+        if (!this.value) {
+          throw new AccessTokenError('Unknown Error')
+        }
+
+        this.expirationDate = addSeconds(new Date(), this.value.expires_in)
+      } catch (error) {
+        const accessTokenError = error.response ?
+          new AccessTokenError(`HTTP Response code ${error.response.statusCode}`, JSON.parse(error.response.body)) :
+          new AccessTokenError('Unknown Error')
+
+        throw accessTokenError
+      }
     }
 
     return this.value.access_token

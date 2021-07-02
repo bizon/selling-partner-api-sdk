@@ -13,7 +13,7 @@ describe('src/selling-partner-api-auth', () => {
     expect(auth).toBeInstanceOf(SellingPartnerApiAuth)
   })
 
-  it('should failed for missing clientId', () => {
+  it('should fail for missing clientId', () => {
     expect.assertions(1)
 
     try {
@@ -28,7 +28,7 @@ describe('src/selling-partner-api-auth', () => {
     }
   })
 
-  it('should failed for missing clientSecret', () => {
+  it('should fail for missing clientSecret', () => {
     expect.assertions(1)
 
     try {
@@ -43,7 +43,7 @@ describe('src/selling-partner-api-auth', () => {
     }
   })
 
-  it('should failed for missing accessKeyId', () => {
+  it('should fail for missing accessKeyId', () => {
     expect.assertions(1)
 
     try {
@@ -61,7 +61,7 @@ describe('src/selling-partner-api-auth', () => {
     }
   })
 
-  it('should failed for missing secretAccessKey', () => {
+  it('should fail for missing secretAccessKey', () => {
     expect.assertions(1)
 
     try {
@@ -79,7 +79,7 @@ describe('src/selling-partner-api-auth', () => {
     }
   })
 
-  it('should not failed for missing accessKeyId', () => {
+  it('should not fail for missing accessKeyId', () => {
     expect.assertions(0)
 
     void new SellingPartnerApiAuth({
@@ -90,7 +90,7 @@ describe('src/selling-partner-api-auth', () => {
     })
   })
 
-  it('should failed for missing secretAccessKey', () => {
+  it('should not fail for missing secretAccessKey', () => {
     expect.assertions(0)
 
     void new SellingPartnerApiAuth({

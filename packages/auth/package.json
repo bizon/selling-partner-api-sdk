@@ -11,8 +11,7 @@
     "access": "public"
   },
   "directories": {
-    "lib": "dist",
-    "test": "__tests__"
+    "lib": "dist"
   },
   "files": [
     "dist"
@@ -27,7 +26,8 @@
   "dependencies": {
     "@aws-sdk/client-sts": "^3.19.0",
     "date-fns": "^2.21.3",
-    "got": "^11.8.2"
+    "got": "^11.8.2",
+    "type-fest": "^1.2.1"
   },
   "repository": {
     "type": "git",

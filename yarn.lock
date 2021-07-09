@@ -1965,10 +1965,10 @@
   dependencies:
     "@octokit/openapi-types" "^7.3.2"
 
-"@openapitools/openapi-generator-cli@^2.3.3":
-  version "2.3.5"
-  resolved "https://registry.yarnpkg.com/@openapitools/openapi-generator-cli/-/openapi-generator-cli-2.3.5.tgz#20f3974879ae22beb18a0f5a3685cabacf380cef"
-  integrity sha512-b9dX47j3+g08qM/EMg/Ftw2qBOpfhKB31xyPJ7+kBvGvcoNoMed3aPyojv1iWNfU1KlJvp6k9zJvViOND0ckGg==
+"@openapitools/openapi-generator-cli@^2.3.6":
+  version "2.3.6"
+  resolved "https://registry.yarnpkg.com/@openapitools/openapi-generator-cli/-/openapi-generator-cli-2.3.6.tgz#1ed9246f6f24547a41d7644add40693a0e23ff6f"
+  integrity sha512-saQtlfsY5Lol4nHWbTFc2l3cdFyNhOAXE/2WRE4jn6oMCigpemGKYOO7CVB2rmpL/tG+g9LqyUhD8B/gdiIxxQ==
   dependencies:
     "@nestjs/common" "7.6.18"
     "@nestjs/core" "7.6.18"
@@ -1983,7 +1983,7 @@
     inquirer "8.1.1"
     lodash "4.17.21"
     reflect-metadata "0.1.13"
-    rxjs "7.1.0"
+    rxjs "7.2.0"
     tslib "1.13.0"
 
 "@sindresorhus/is@^0.14.0":
@@ -8377,10 +8377,10 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-rxjs@7.1.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.1.0.tgz#94202d27b19305ef7b1a4f330277b2065df7039e"
-  integrity sha512-gCFO5iHIbRPwznl6hAYuwNFld8W4S2shtSJIqG27ReWXo9IWrCyEICxUA+6vJHwSR/OakoenC4QsDxq50tzYmw==
+rxjs@7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.2.0.tgz#5cd12409639e9514a71c9f5f9192b2c4ae94de31"
+  integrity sha512-aX8w9OpKrQmiPKfT1bqETtUr9JygIz6GZ+gql8v7CijClsP0laoFUdKzxFAoWuRdSlOdU2+crss+cMf+cqMTnw==
   dependencies:
     tslib "~2.1.0"
 

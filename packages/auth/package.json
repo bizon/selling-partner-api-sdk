@@ -27,7 +27,7 @@
     "@aws-sdk/client-sts": "^3.21.0",
     "date-fns": "^2.21.3",
     "got": "^11.8.2",
-    "type-fest": "^1.2.1"
+    "type-fest": "^1.2.2"
   },
   "repository": {
     "type": "git",

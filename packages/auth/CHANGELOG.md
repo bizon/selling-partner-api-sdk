@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@0.4.0...@sp-api-sdk/auth@1.6.0) (2021-07-16)
+
+
+* feat(auth)!: rename/add default values with env (#22) ([a034376](https://github.com/bizon/selling-partner-api-sdk/commit/a034376105613d51b10e880458dcb9333eabaf26)), closes [#22](https://github.com/bizon/selling-partner-api-sdk/issues/22)
+
+
+### BREAKING CHANGES
+
+* some names of env variables has changed
+
+
+
+
+
 # [0.4.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@0.3.4...@sp-api-sdk/auth@0.4.0) (2021-07-02)
 
 

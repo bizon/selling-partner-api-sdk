@@ -13,8 +13,8 @@ export enum AuthorizationScope {
 export interface AccessTokenParameters {
   refreshToken?: string;
   scopes?: AuthorizationScope[];
-  clientId?: string;
-  clientSecret?: string;
+  clientId: string;
+  clientSecret: string;
 }
 
 interface AccessTokenData {
@@ -34,19 +34,8 @@ export class AccessToken {
   private expirationDate?: Date
 
   constructor(parameters: RequireExactlyOne<AccessTokenParameters, 'refreshToken' | 'scopes'>) {
-    const clientId = parameters.clientId ?? process.env.AWS_CLIENT_ID
-    const clientSecret = parameters.clientSecret ?? process.env.AWS_CLIENT_SECRET
-
-    if (!clientId) {
-      throw new AccessTokenError('clientId is required')
-    }
-
-    if (!clientSecret) {
-      throw new AccessTokenError('clientSecret is required')
-    }
-
-    this.clientId = clientId
-    this.clientSecret = clientSecret
+    this.clientId = parameters.clientId
+    this.clientSecret = parameters.clientSecret
     this.refreshToken = parameters.refreshToken
     this.scopes = parameters.scopes
   }

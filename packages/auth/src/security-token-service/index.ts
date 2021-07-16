@@ -1,16 +1,17 @@
 import {STSClient, STSClientConfig, AssumeRoleCommand, Credentials} from '@aws-sdk/client-sts'
+
 import {SecurityTokenServiceError} from './error'
 
 export * from './error'
 
 interface Role {
   arn: string;
-  sessionName?: string;
+  sessionName: string;
 }
 
 export interface SecurityTokenServiceParameters {
-  accessKeyId?: string;
-  secretAccessKey?: string;
+  accessKeyId: string;
+  secretAccessKey: string;
   role: Role;
   region?: string;
 }
@@ -24,19 +25,8 @@ export class SecurityTokenService {
   private _credentials?: Credentials
 
   constructor(parameters: SecurityTokenServiceParameters) {
-    const accessKeyId = parameters.accessKeyId ?? process.env.AWS_ACCESS_KEY
-    const secretAccessKey = parameters.secretAccessKey ?? process.env.AWS_SECRET_ACCESS_KEY
-
-    if (!accessKeyId) {
-      throw new SecurityTokenServiceError('accessKeyId is required')
-    }
-
-    if (!secretAccessKey) {
-      throw new SecurityTokenServiceError('secretAccessKey is required')
-    }
-
-    this.accessKeyId = accessKeyId
-    this.secretAccessKey = secretAccessKey
+    this.accessKeyId = parameters.accessKeyId
+    this.secretAccessKey = parameters.secretAccessKey
     this.role = parameters.role
     this.region = parameters.region
   }
@@ -75,7 +65,7 @@ export class SecurityTokenService {
     const {Credentials: credentials} = await sts.send(
       new AssumeRoleCommand({
         RoleArn: this.role.arn,
-        RoleSessionName: this.role.sessionName ?? 'sp-api-sdk'
+        RoleSessionName: this.role.sessionName
       })
     )
 

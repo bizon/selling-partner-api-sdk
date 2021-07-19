@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/messaging-api-v1@1.6.0...@sp-api-sdk/messaging-api-v1@1.6.1) (2021-07-19)
+
+**Note:** Version bump only for package @sp-api-sdk/messaging-api-v1
+
+
+
+
+
 # [1.6.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/messaging-api-v1@1.4.4...@sp-api-sdk/messaging-api-v1@1.6.0) (2021-07-16)
 
 **Note:** Version bump only for package @sp-api-sdk/messaging-api-v1

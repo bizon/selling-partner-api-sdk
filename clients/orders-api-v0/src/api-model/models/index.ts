@@ -8,6 +8,7 @@ export * from './get-order-items-buyer-info-response';
 export * from './get-order-items-response';
 export * from './get-order-response';
 export * from './get-orders-response';
+export * from './marketplace-tax-info';
 export * from './model-error';
 export * from './money';
 export * from './order';

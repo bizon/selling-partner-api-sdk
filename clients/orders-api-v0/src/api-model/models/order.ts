@@ -15,6 +15,7 @@
 
 import { Address } from './address';
 import { FulfillmentInstruction } from './fulfillment-instruction';
+import { MarketplaceTaxInfo } from './marketplace-tax-info';
 import { Money } from './money';
 import { PaymentExecutionDetailItem } from './payment-execution-detail-item';
 
@@ -240,6 +241,18 @@ export interface Order {
      * @memberof Order
      */
     IsISPU?: boolean;
+    /**
+     * 
+     * @type {MarketplaceTaxInfo}
+     * @memberof Order
+     */
+    MarketplaceTaxInfo?: MarketplaceTaxInfo;
+    /**
+     * The seller’s friendly name registered in the marketplace.
+     * @type {string}
+     * @memberof Order
+     */
+    SellerDisplayName?: string;
 }
 
 /**

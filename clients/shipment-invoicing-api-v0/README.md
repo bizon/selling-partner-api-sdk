@@ -55,4 +55,4 @@ The SDK gets the rate limits for each routes from the API documentation
 
 ## API documentation
 
-See [here](https://github.com/amzn/selling-partner-api-docs/tree/main/references/shipment-invoicing-api/shipmentInvoiceV0.md)
+See [here](https://github.com/amzn/selling-partner-api-docs/tree/main/references/shipment-invoicing-api/shipmentInvoicingV0.md)

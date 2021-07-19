@@ -15,6 +15,7 @@
 
 import { Address } from './address';
 import { BuyerTaxInfo } from './buyer-tax-info';
+import { MarketplaceTaxInfo } from './marketplace-tax-info';
 import { ShipmentItem } from './shipment-item';
 
 /**
@@ -89,6 +90,18 @@ export interface ShipmentDetail {
      * @memberof ShipmentDetail
      */
     BuyerTaxInfo?: BuyerTaxInfo;
+    /**
+     * 
+     * @type {MarketplaceTaxInfo}
+     * @memberof ShipmentDetail
+     */
+    MarketplaceTaxInfo?: MarketplaceTaxInfo;
+    /**
+     * The seller’s friendly name registered in the marketplace.
+     * @type {string}
+     * @memberof ShipmentDetail
+     */
+    SellerDisplayName?: string;
     /**
      * A list of shipment items.
      * @type {Array<ShipmentItem>}

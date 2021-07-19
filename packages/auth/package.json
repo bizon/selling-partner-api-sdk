@@ -1,7 +1,7 @@
 {
   "name": "@sp-api-sdk/auth",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
-  "description": "Auth library for helping authentication with Selling Partner API",
+  "description": "Amazon Selling Partner API authentication helper class",
   "version": "1.6.1",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",

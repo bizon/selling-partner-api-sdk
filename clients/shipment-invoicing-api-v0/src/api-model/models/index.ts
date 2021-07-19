@@ -3,6 +3,7 @@ export * from './address-type-enum';
 export * from './buyer-tax-info';
 export * from './get-invoice-status-response';
 export * from './get-shipment-details-response';
+export * from './marketplace-tax-info';
 export * from './model-error';
 export * from './money';
 export * from './shipment-detail';

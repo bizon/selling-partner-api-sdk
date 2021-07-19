@@ -132,7 +132,7 @@ async function generateClientVersions(clientName: string) {
 
 (async () => {
   await rimrafPromise('selling-partner-api-models')
-  await exec('git clone git@github.com:amzn/selling-partner-api-models.git')
+  await exec('git clone https://github.com/amzn/selling-partner-api-models')
   const {stdout} = await exec('ls selling-partner-api-models/models')
   const clientNames: string[] = stdout.split('\n').filter(clientName => Boolean(clientName))
 

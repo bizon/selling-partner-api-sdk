@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
 
+import {Credentials} from '@aws-sdk/client-sts'
+import {RequireExactlyOne, SetOptional} from 'type-fest'
+
+import pkg from '../package.json'
+
 import {AccessToken, AuthorizationScope} from './access-token'
 import {SecurityTokenService} from './security-token-service'
-import {RequireExactlyOne, SetOptional} from 'type-fest'
-import {Credentials} from '@aws-sdk/client-sts'
-
 import {SellingPartnerApiAuthError} from './error'
-import pkg from '../package.json'
 
 export interface SellingPartnerAuthParameters {
   clientId?: string;
@@ -37,6 +38,7 @@ export class SellingPartnerApiAuth {
     const clientSecret = parameters.clientSecret || process.env.LWA_CLIENT_SECRET
     const accessKeyId = parameters.accessKeyId || process.env.AWS_ACCESS_KEY_ID
     const secretAccessKey = parameters.secretAccessKey || process.env.AWS_SECRET_ACCESS_KEY
+    const region = parameters.region || process.env.AWS_DEFAULT_REGION
     const arn = parameters.role?.arn || process.env.AWS_ROLE_ARN
     const sessionName = parameters.role?.sessionName || process.env.AWS_ROLE_SESSION_NAME || `${pkg.name}@${pkg.version}`
     let role = null
@@ -87,7 +89,7 @@ export class SellingPartnerApiAuth {
       this.sts = new SecurityTokenService({
         accessKeyId,
         secretAccessKey,
-        region: parameters.region,
+        region,
         role
       })
     }

@@ -40,10 +40,11 @@ const auth = new SellingPartnerApiAuth({
   refreshToken: 'Atzr|...',
   accessKeyId: '',
   secretAccessKey: '',
+  region: '', // You can provide an AWS region that will be used for the STS calls
   role: {
     arn: '',
     sessionName: 'SellingPartnerAPI' // Optional
-  },
+  }
 })
 
 const accessToken = await auth.accessToken.get()
@@ -56,14 +57,15 @@ const {AccessKeyId, SecretAccessKey, SessionToken} = await auth.getCredentials()
 
 These constructor options can be passed using environment variables:
 
-| Property Name    | Environement variable  |
-|------------------|------------------------|
-| clientId         | LWA_CLIENT_ID          |
-| clientSecret     | LWA_CLIENT_SECRET      |
-| accessKeyId      | AWS_ACCESS_KEY_ID      |
-| secretAccessKey  | AWS_SECRET_ACCESS_KEY  |
-| role.arn         | AWS_ROLE_ARN           |
-| role.sessionName | AWS_ROLE_SESSION_NAME  |
+| Property Name      | Environement variable  |
+|--------------------|------------------------|
+| `clientId`         | LWA_CLIENT_ID          |
+| `clientSecret`     | LWA_CLIENT_SECRET      |
+| `accessKeyId`      | AWS_ACCESS_KEY_ID      |
+| `secretAccessKey`  | AWS_SECRET_ACCESS_KEY  |
+| `region`           | AWS_DEFAULT_REGION     |
+| `role.arn`         | AWS_ROLE_ARN           |
+| `role.sessionName` | AWS_ROLE_SESSION_NAME  |
 
 
 ## Grantless APIs support
@@ -80,15 +82,11 @@ const auth = new SellingPartnerApiAuth({
   clientSecret: '',
   scopes: Object.values(AuthorizationScope), // Or choose the only ones you need
   accessKeyId: '',
-  secretAccessKey: '',
-  region: '',
-  role: { // Optionally set a role, if you’re authenticating with an IAM role
-    arn: ''
-  }
+  secretAccessKey: ''
 })
 
 const accessToken = await auth.accessToken.get()
-const {AccessKeyId, SecretAccessKey, SessionToken} = await auth.getCredentials()
+const credentials = await auth.getCredentials()
 ```
 
 ## Credentials caching

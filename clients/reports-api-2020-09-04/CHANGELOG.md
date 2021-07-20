@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.2](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/reports-api-2020-09-04@1.6.1...@sp-api-sdk/reports-api-2020-09-04@1.6.2) (2021-07-20)
+
+
+### Bug Fixes
+
+* rate limiting ([#47](https://github.com/bizon/selling-partner-api-sdk/issues/47)) ([03a26be](https://github.com/bizon/selling-partner-api-sdk/commit/03a26be41e7812f1d616927421541c67a774bf23))
+
+
+
+
+
 ## [1.6.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/reports-api-2020-09-04@1.6.0...@sp-api-sdk/reports-api-2020-09-04@1.6.1) (2021-07-19)
 
 **Note:** Version bump only for package @sp-api-sdk/reports-api-2020-09-04

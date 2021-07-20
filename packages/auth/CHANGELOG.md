@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@1.6.1...@sp-api-sdk/auth@1.7.0) (2021-07-20)
+
+
+### Features
+
+* **auth:** allow configuring AWS region using env variable ([#48](https://github.com/bizon/selling-partner-api-sdk/issues/48)) ([b518675](https://github.com/bizon/selling-partner-api-sdk/commit/b51867549e2dcf4cfab30322c38f57ed325d3669))
+
+
+
+
+
 ## [1.6.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@1.6.0...@sp-api-sdk/auth@1.6.1) (2021-07-19)
 
 **Note:** Version bump only for package @sp-api-sdk/auth

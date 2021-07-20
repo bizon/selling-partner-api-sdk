@@ -1,52 +1,61 @@
 /* eslint-disable prefer-regex-literals */
 import {Configuration, ReportsApi} from './api-model'
 
-import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry} from '@sp-api-sdk/common'
+import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
 import {ReportsApiError} from './error'
 
-export const RATE_LIMITS = [
+export const RATE_LIMITS: RateLimit[] = [
   {
+    method: 'get',
     urlRegex: new RegExp('^/reports/2021-06-30/reports$'),
     rate: 0.0222,
     burst: 10
   },
   {
+    method: 'post',
     urlRegex: new RegExp('^/reports/2021-06-30/reports$'),
     rate: 0.0167,
     burst: 15
   },
   {
+    method: 'delete',
     urlRegex: new RegExp('^/reports/2021-06-30/reports/[^/]*$'),
     rate: 0.0222,
     burst: 10
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/reports/2021-06-30/reports/[^/]*$'),
     rate: 2,
     burst: 15
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/reports/2021-06-30/schedules$'),
     rate: 0.0222,
     burst: 10
   },
   {
+    method: 'post',
     urlRegex: new RegExp('^/reports/2021-06-30/schedules$'),
     rate: 0.0222,
     burst: 10
   },
   {
+    method: 'delete',
     urlRegex: new RegExp('^/reports/2021-06-30/schedules/[^/]*$'),
     rate: 0.0222,
     burst: 10
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/reports/2021-06-30/schedules/[^/]*$'),
     rate: 0.0222,
     burst: 10
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/reports/2021-06-30/documents/[^/]*$'),
     rate: 0.0167,
     burst: 15

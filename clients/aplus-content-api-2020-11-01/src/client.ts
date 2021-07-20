@@ -1,57 +1,67 @@
 /* eslint-disable prefer-regex-literals */
 import {Configuration, AplusContentApi} from './api-model'
 
-import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry} from '@sp-api-sdk/common'
+import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
 import {AplusContentApiError} from './error'
 
-export const RATE_LIMITS = [
+export const RATE_LIMITS: RateLimit[] = [
   {
+    method: 'get',
     urlRegex: new RegExp('^/aplus/2020-11-01/contentDocuments$'),
     rate: 10,
     burst: 10
   },
   {
+    method: 'post',
     urlRegex: new RegExp('^/aplus/2020-11-01/contentDocuments$'),
     rate: 10,
     burst: 10
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/aplus/2020-11-01/contentDocuments/[^/]*$'),
     rate: 10,
     burst: 10
   },
   {
+    method: 'post',
     urlRegex: new RegExp('^/aplus/2020-11-01/contentDocuments/[^/]*$'),
     rate: 10,
     burst: 10
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/aplus/2020-11-01/contentDocuments/[^/]*/asins$'),
     rate: 10,
     burst: 10
   },
   {
+    method: 'post',
     urlRegex: new RegExp('^/aplus/2020-11-01/contentDocuments/[^/]*/asins$'),
     rate: 10,
     burst: 10
   },
   {
+    method: 'post',
     urlRegex: new RegExp('^/aplus/2020-11-01/contentAsinValidations$'),
     rate: 10,
     burst: 10
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/aplus/2020-11-01/contentPublishRecords$'),
     rate: 10,
     burst: 10
   },
   {
+    method: 'post',
     urlRegex: new RegExp('^/aplus/2020-11-01/contentDocuments/[^/]*/approvalSubmissions$'),
     rate: 10,
     burst: 10
   },
   {
+    method: 'post',
     urlRegex: new RegExp('^/aplus/2020-11-01/contentDocuments/[^/]*/suspendSubmissions$'),
     rate: 10,
     burst: 10

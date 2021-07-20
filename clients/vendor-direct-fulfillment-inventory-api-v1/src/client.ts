@@ -1,12 +1,13 @@
 /* eslint-disable prefer-regex-literals */
 import {Configuration, UpdateInventoryApi} from './api-model'
 
-import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry} from '@sp-api-sdk/common'
+import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
 import {VendorDirectFulfillmentInventoryApiError} from './error'
 
-export const RATE_LIMITS = [
+export const RATE_LIMITS: RateLimit[] = [
   {
+    method: 'post',
     urlRegex: new RegExp('^/vendor/directFulfillment/inventory/v1/warehouses/[^/]*/items$'),
     rate: 10,
     burst: 10

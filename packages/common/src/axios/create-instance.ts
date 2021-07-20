@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, {Method} from 'axios'
 import {aws4Interceptor} from 'aws4-axios'
 import axiosRetry from 'axios-retry'
 
@@ -10,6 +10,7 @@ export interface RateLimit {
   urlRegex: RegExp;
   rate: number;
   burst: number;
+  method: Method;
 }
 
 export interface OnRetryParameters {
@@ -47,7 +48,7 @@ export function createAxiosInstance({
       retryDelay: (retryCount, error) => {
         const amznRateLimit: string = error.response?.headers['x-amzn-ratelimit-limit']
         const url = new URL(error.config.url!)
-        const rateLimit = amznRateLimit ? Number.parseFloat(amznRateLimit) : rateLimits.find(rateLimit => rateLimit.urlRegex.exec(url.pathname))?.rate
+        const rateLimit = amznRateLimit ? Number.parseFloat(amznRateLimit) : rateLimits.find(rateLimit => rateLimit.method.toLowerCase() === error.config.method?.toLowerCase() && rateLimit.urlRegex.exec(url.pathname))?.rate
         const delay = rateLimit && !Number.isNaN(rateLimit) ? (1 / rateLimit * 1000) + 1500 : (60 * 1000)
 
         if (onRetry) {

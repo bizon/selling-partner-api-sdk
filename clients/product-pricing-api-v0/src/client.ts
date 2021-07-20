@@ -1,27 +1,31 @@
 /* eslint-disable prefer-regex-literals */
 import {Configuration, ProductPricingApi} from './api-model'
 
-import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry} from '@sp-api-sdk/common'
+import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
 import {ProductPricingApiError} from './error'
 
-export const RATE_LIMITS = [
+export const RATE_LIMITS: RateLimit[] = [
   {
+    method: 'get',
     urlRegex: new RegExp('^/products/pricing/v0/price$'),
     rate: 10,
     burst: 20
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/products/pricing/v0/competitivePrice$'),
     rate: 10,
     burst: 20
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/products/pricing/v0/listings/[^/]*/offers$'),
     rate: 5,
     burst: 10
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/products/pricing/v0/items/[^/]*/offers$'),
     rate: 5,
     burst: 10

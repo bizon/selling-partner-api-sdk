@@ -1,47 +1,55 @@
 /* eslint-disable prefer-regex-literals */
 import {Configuration, NotificationsApi} from './api-model'
 
-import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry} from '@sp-api-sdk/common'
+import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
 import {NotificationsApiError} from './error'
 
-export const RATE_LIMITS = [
+export const RATE_LIMITS: RateLimit[] = [
   {
+    method: 'get',
     urlRegex: new RegExp('^/notifications/v1/subscriptions/[^/]*$'),
     rate: 1,
     burst: 5
   },
   {
+    method: 'post',
     urlRegex: new RegExp('^/notifications/v1/subscriptions/[^/]*$'),
     rate: 1,
     burst: 5
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/notifications/v1/subscriptions/[^/]*$'),
     rate: 1,
     burst: 5
   },
   {
+    method: 'delete',
     urlRegex: new RegExp('^/notifications/v1/subscriptions/[^/]*$'),
     rate: 1,
     burst: 5
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/notifications/v1/destinations$'),
     rate: 1,
     burst: 5
   },
   {
+    method: 'post',
     urlRegex: new RegExp('^/notifications/v1/destinations$'),
     rate: 1,
     burst: 5
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/notifications/v1/destinations/[^/]*$'),
     rate: 1,
     burst: 5
   },
   {
+    method: 'delete',
     urlRegex: new RegExp('^/notifications/v1/destinations/[^/]*$'),
     rate: 1,
     burst: 5

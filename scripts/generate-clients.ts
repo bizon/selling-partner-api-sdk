@@ -62,6 +62,7 @@ async function generateClientVersion(clientName: string, filename: string) {
 
         if (result?.groups) {
           const value = {
+            method,
             rate: Number.parseFloat(result.groups.rate),
             burst: Number.parseFloat(result.groups.burst),
             urlRegex: `new RegExp('^${key.replace(/{.+}/g, '[^/]*')}$')`

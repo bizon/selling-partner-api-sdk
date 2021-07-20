@@ -1,15 +1,16 @@
 /* eslint-disable prefer-regex-literals */
 import {Configuration, {{className}}} from './api-model'
 
-import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry} from '@sp-api-sdk/common'
+import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
 {{=<% %>=}}
 import {<%errorClassName%>} from './error'
 <%={{ }}=%>
 
-export const RATE_LIMITS = [
+export const RATE_LIMITS: RateLimit[] = [
 {{#rateLimits}}
   {
+    method: '{{method}}',
     urlRegex: {{&urlRegex}},
     rate: {{rate}},
     burst: {{burst}}

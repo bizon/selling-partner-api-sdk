@@ -26,7 +26,7 @@ describe('src/axios/create-instance', () => {
       const instance = createAxiosInstance({
         auth,
         region: 'eu',
-        rateLimits: [{urlRegex: /^\/test$/, rate: 1, burst: 1}],
+        rateLimits: [{method: 'get', urlRegex: /^\/test$/, rate: 1, burst: 1}],
         onRetry
       })
 
@@ -52,7 +52,7 @@ describe('src/axios/create-instance', () => {
       const instance = createAxiosInstance({
         auth,
         region: 'eu',
-        rateLimits: [{urlRegex: /^\/test$/, rate: 0.5, burst: 1}],
+        rateLimits: [{method: 'GET', urlRegex: /^\/test$/, rate: 0.5, burst: 1}],
         onRetry
       })
 
@@ -77,7 +77,7 @@ describe('src/axios/create-instance', () => {
       const instance = createAxiosInstance({
         auth,
         region: 'eu',
-        rateLimits: [{urlRegex: /^\/test$/, rate: 0.5, burst: 1}],
+        rateLimits: [{method: 'get', urlRegex: /^\/test$/, rate: 0.5, burst: 1}],
         onRetry
       })
 

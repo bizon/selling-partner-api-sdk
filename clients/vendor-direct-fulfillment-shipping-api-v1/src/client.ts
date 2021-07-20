@@ -1,52 +1,61 @@
 /* eslint-disable prefer-regex-literals */
 import {Configuration, VendorShippingLabelsApi} from './api-model'
 
-import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry} from '@sp-api-sdk/common'
+import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
 import {VendorDirectFulfillmentShippingApiError} from './error'
 
-export const RATE_LIMITS = [
+export const RATE_LIMITS: RateLimit[] = [
   {
+    method: 'get',
     urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shippingLabels$'),
     rate: 10,
     burst: 10
   },
   {
+    method: 'post',
     urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shippingLabels$'),
     rate: 10,
     burst: 10
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shippingLabels/[^/]*$'),
     rate: 10,
     burst: 10
   },
   {
+    method: 'post',
     urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shipmentConfirmations$'),
     rate: 10,
     burst: 10
   },
   {
+    method: 'post',
     urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shipmentStatusUpdates$'),
     rate: 10,
     burst: 10
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/customerInvoices$'),
     rate: 10,
     burst: 10
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/customerInvoices/[^/]*$'),
     rate: 10,
     burst: 10
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/packingSlips$'),
     rate: 10,
     burst: 10
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/packingSlips/[^/]*$'),
     rate: 10,
     burst: 10

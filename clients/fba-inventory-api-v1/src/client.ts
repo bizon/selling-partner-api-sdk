@@ -1,12 +1,13 @@
 /* eslint-disable prefer-regex-literals */
 import {Configuration, FbaInventoryApi} from './api-model'
 
-import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry} from '@sp-api-sdk/common'
+import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
 import {FbaInventoryApiError} from './error'
 
-export const RATE_LIMITS = [
+export const RATE_LIMITS: RateLimit[] = [
   {
+    method: 'get',
     urlRegex: new RegExp('^/fba/inventory/v1/summaries$'),
     rate: 90,
     burst: 150

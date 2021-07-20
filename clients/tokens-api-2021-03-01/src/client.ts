@@ -1,12 +1,13 @@
 /* eslint-disable prefer-regex-literals */
 import {Configuration, TokensApi} from './api-model'
 
-import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry} from '@sp-api-sdk/common'
+import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
 import {TokensApiError} from './error'
 
-export const RATE_LIMITS = [
+export const RATE_LIMITS: RateLimit[] = [
   {
+    method: 'post',
     urlRegex: new RegExp('^/tokens/2021-03-01/restrictedDataToken$'),
     rate: 1,
     burst: 10

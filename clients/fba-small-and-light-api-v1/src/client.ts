@@ -1,32 +1,37 @@
 /* eslint-disable prefer-regex-literals */
 import {Configuration, SmallAndLightApi} from './api-model'
 
-import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry} from '@sp-api-sdk/common'
+import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
 import {FbaSmallAndLightApiError} from './error'
 
-export const RATE_LIMITS = [
+export const RATE_LIMITS: RateLimit[] = [
   {
+    method: 'get',
     urlRegex: new RegExp('^/fba/smallAndLight/v1/enrollments/[^/]*$'),
     rate: 2,
     burst: 10
   },
   {
+    method: 'put',
     urlRegex: new RegExp('^/fba/smallAndLight/v1/enrollments/[^/]*$'),
     rate: 2,
     burst: 5
   },
   {
+    method: 'delete',
     urlRegex: new RegExp('^/fba/smallAndLight/v1/enrollments/[^/]*$'),
     rate: 2,
     burst: 5
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/fba/smallAndLight/v1/eligibilities/[^/]*$'),
     rate: 2,
     burst: 10
   },
   {
+    method: 'post',
     urlRegex: new RegExp('^/fba/smallAndLight/v1/feePreviews$'),
     rate: 1,
     burst: 3

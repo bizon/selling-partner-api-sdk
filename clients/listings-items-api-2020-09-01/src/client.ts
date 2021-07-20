@@ -1,22 +1,25 @@
 /* eslint-disable prefer-regex-literals */
 import {Configuration, ListingsApi} from './api-model'
 
-import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry} from '@sp-api-sdk/common'
+import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
 import {ListingsItemsApiError} from './error'
 
-export const RATE_LIMITS = [
+export const RATE_LIMITS: RateLimit[] = [
   {
+    method: 'delete',
     urlRegex: new RegExp('^/listings/2020-09-01/items/[^/]*$'),
     rate: 5,
     burst: 10
   },
   {
+    method: 'patch',
     urlRegex: new RegExp('^/listings/2020-09-01/items/[^/]*$'),
     rate: 5,
     burst: 10
   },
   {
+    method: 'put',
     urlRegex: new RegExp('^/listings/2020-09-01/items/[^/]*$'),
     rate: 5,
     burst: 10

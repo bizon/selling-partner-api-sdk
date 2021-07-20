@@ -1,22 +1,25 @@
 /* eslint-disable prefer-regex-literals */
 import {Configuration, CatalogApi} from './api-model'
 
-import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry} from '@sp-api-sdk/common'
+import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
 import {CatalogItemsApiError} from './error'
 
-export const RATE_LIMITS = [
+export const RATE_LIMITS: RateLimit[] = [
   {
+    method: 'get',
     urlRegex: new RegExp('^/catalog/v0/items$'),
     rate: 6,
     burst: 40
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/catalog/v0/items/[^/]*$'),
     rate: 2,
     burst: 20
   },
   {
+    method: 'get',
     urlRegex: new RegExp('^/catalog/v0/categories$'),
     rate: 1,
     burst: 40

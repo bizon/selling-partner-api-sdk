@@ -107,9 +107,21 @@ jobs:
           key: v1-selling-partner-api-sdk
 
       - run:
-          name: Run linter for packages
-          command: yarn xo packages
-          
+          name: Run linter for all packages
+          command: yarn lerna run lint --concurrency 2
+
+  lint-scripts:
+    <<: *nodejs_container
+    steps:
+      - *attach_workspace
+
+      - restore-nodejs:
+          key: v1-selling-partner-api-sdk
+
+      - run:
+          name: Run linter for scripts
+          command: yarn xo scripts
+
   build:
     <<: *nodejs_container
     steps:
@@ -120,7 +132,7 @@ jobs:
 
       - run:
           name: Run build
-          command: yarn build -- --concurrency 2 --stream
+          command: yarn build --concurrency 2
 
 workflows:
   version: 2
@@ -132,15 +144,19 @@ workflows:
       - install:
           requires:
             - checkout
-      
+
       - lint-packages:
+          requires:
+            - install
+
+      - lint-scripts:
           requires:
             - install
 
       - test:
           requires:
             - install
-      
+
       - build:
           requires:
             - install

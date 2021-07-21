@@ -21,6 +21,7 @@
     "build:es": "tsc -p tsconfig.es.json",
     "build": "yarn build:cjs && yarn build:es",
     "clean": "rimraf dist",
+    "lint": "xo --cwd=../../ $PWD",
     "test": "NODE_ENV='test' yarn jest"
   },
   "dependencies": {

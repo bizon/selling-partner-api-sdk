@@ -1,7 +1,7 @@
 import got from 'got'
-import {addSeconds} from 'date-fns'
-import {AccessTokenError} from './error'
 import {RequireExactlyOne} from 'type-fest'
+
+import {AccessTokenError} from './error'
 
 export * from './error'
 
@@ -69,7 +69,8 @@ export class AccessToken {
           throw new AccessTokenError('Unknown Error')
         }
 
-        this.expirationDate = addSeconds(new Date(), this.value.expires_in)
+        this.expirationDate = new Date()
+        this.expirationDate.setSeconds(this.expirationDate.getSeconds() + this.value.expires_in)
       } catch (error) {
         const accessTokenError = error.response ?
           new AccessTokenError(`HTTP Response code ${error.response.statusCode}`, JSON.parse(error.response.body)) :

@@ -4,5 +4,5 @@
     "declarationDir": "dist/types",
     "outDir": "dist/cjs"
   },
-  "exclude": ["__test__", "dist/types"]
+  "include": ["./index.ts"]
 }

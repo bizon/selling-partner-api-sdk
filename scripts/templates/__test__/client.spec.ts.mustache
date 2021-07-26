@@ -15,7 +15,7 @@ jest.mock('@sp-api-sdk/auth', () => ({
 }))
 
 jest.mock('@sp-api-sdk/common', () => ({
-  ...jest.requireActual('@sp-api-sdk/common'),
+  ...jest.requireActual('@sp-api-sdk/common') as any,
   createAxiosInstance: jest.fn()
 }))
 

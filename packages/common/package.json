@@ -33,7 +33,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bizon/selling-partner-api-sdk.git"
+    "url": "https://github.com/bizon/selling-partner-api-sdk.git",
+    "directory": "packages/common"
   },
   "bugs": {
     "url": "https://github.com/bizon/selling-partner-api-sdk/issues"

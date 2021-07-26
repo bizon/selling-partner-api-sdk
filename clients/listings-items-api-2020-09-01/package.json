@@ -31,7 +31,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bizon/selling-partner-api-sdk.git"
+    "url": "https://github.com/bizon/selling-partner-api-sdk.git",
+    "directory": "clients/listings-items-api-2020-09-01"
   },
   "bugs": {
     "url": "https://github.com/bizon/selling-partner-api-sdk/issues"

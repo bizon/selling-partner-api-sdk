@@ -42,11 +42,7 @@ async function generateClientVersion(clientName: string, filename: string) {
       -o ${clientDirectoryPath}/src/api-model`
   )
 
-  try {
-    await fs.access(`${clientDirectoryPath}/__test__`)
-  } catch {
-    await fs.mkdir(`${clientDirectoryPath}/__test__`)
-  }
+  await fs.mkdir(`${clientDirectoryPath}/__test__`, {recursive: true})
 
   try {
     await fs.access(`${clientDirectoryPath}/package.json`)
@@ -123,9 +119,7 @@ async function generateClientVersion(clientName: string, filename: string) {
 }
 
 async function generateClientVersions(clientName: string) {
-  const {stdout} = await exec(`ls selling-partner-api-models/models/${clientName}`)
-  const filenames: string[] = stdout.split('\n').filter(version => Boolean(version))
-
+  const filenames = await fs.readdir(`selling-partner-api-models/models/${clientName}`)
   const promises = filenames.map(async filename => generateClientVersion(clientName, filename))
 
   return Promise.all(promises)
@@ -134,8 +128,7 @@ async function generateClientVersions(clientName: string) {
 (async () => {
   await rimrafPromise('selling-partner-api-models')
   await exec('git clone https://github.com/amzn/selling-partner-api-models')
-  const {stdout} = await exec('ls selling-partner-api-models/models')
-  const clientNames: string[] = stdout.split('\n').filter(clientName => Boolean(clientName))
+  const clientNames = await fs.readdir('selling-partner-api-models/models')
 
   await Bluebird.map(clientNames, async clientName => generateClientVersions(clientName), {
     concurrency: os.cpus().length

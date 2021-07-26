@@ -9,6 +9,7 @@ import rimraf from 'rimraf'
 import jsonfile from 'jsonfile'
 import camelCase from 'camelcase'
 import reduce from 'lodash/reduce'
+import {PackageJson} from 'type-fest'
 
 import {renderTemplate, logger} from './utils'
 
@@ -16,6 +17,15 @@ const exec = promisify(childProcess.exec)
 const rimrafPromise = promisify(rimraf)
 
 const GRANTLESS_APIS = [{name: 'notifications-api', scope: 'NOTIFICATIONS'}, {name: 'authorization-api', scope: 'MIGRATION'}]
+
+async function readPackageVersion(path: string) {
+  try {
+    const pkg: PackageJson = await import(`../${path}/package.json`)
+    return pkg.version
+  } catch {
+    return null
+  }
+}
 
 async function generateClientVersion(clientName: string, filename: string) {
   const filePath = `selling-partner-api-models/models/${clientName}/${filename}`
@@ -43,12 +53,17 @@ async function generateClientVersion(clientName: string, filename: string) {
   )
 
   await fs.mkdir(`${clientDirectoryPath}/__test__`, {recursive: true})
-
-  try {
-    await fs.access(`${clientDirectoryPath}/package.json`)
-  } catch {
-    await fs.writeFile(`${clientDirectoryPath}/package.json`, await renderTemplate('scripts/templates/package.json.mustache', {description: doc.info.description, packageName, apiName: formatedClientName.replace('-', ' ')}))
-  }
+  await fs.writeFile(`${clientDirectoryPath}/package.json`, await renderTemplate('scripts/templates/package.json.mustache', {
+    packageName,
+    description: doc.info.description,
+    version: await readPackageVersion(clientDirectoryPath) ?? '1.0.0-rc.1',
+    apiName: formatedClientName.replace(/-/g, ' '),
+    dependencies: {
+      auth: await readPackageVersion('packages/auth'),
+      common: await readPackageVersion('packages/common')
+      // TODO: retrieve other dependencies from existing clients, so we’re never out of date.
+    }
+  }))
 
   const rateLimits = reduce(doc.paths, (acc: any, value, key) => {
     for (const method of Object.keys(value)) {

@@ -31,7 +31,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bizon/selling-partner-api-sdk.git"
+    "url": "https://github.com/bizon/selling-partner-api-sdk.git",
+    "directory": "clients/vendor-direct-fulfillment-inventory-api-v1"
   },
   "bugs": {
     "url": "https://github.com/bizon/selling-partner-api-sdk/issues"

@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/tokens-api-2021-03-01",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Tokens provides a secure way to access a customers&#39;s PII (Personally Identifiable Information). You can call the Tokens API to get a Restricted Data Token (RDT) for one or more restricted resources that you specify. The RDT authorizes you to make subsequent requests to access these restricted resources.",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -25,8 +25,8 @@
     "test": "NODE_ENV='test' yarn jest"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^1.7.0",
-    "@sp-api-sdk/common": "^1.6.2",
+    "@sp-api-sdk/auth": "^1.7.1",
+    "@sp-api-sdk/common": "^1.6.3",
     "axios": "^0.21.1"
   },
   "repository": {

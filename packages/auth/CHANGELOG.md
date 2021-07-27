@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.2](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@1.7.1...@sp-api-sdk/auth@1.7.2) (2021-07-27)
+
+
+### Bug Fixes
+
+* **auth:** update the default value of session name for AWS role ([#59](https://github.com/bizon/selling-partner-api-sdk/issues/59)) ([3411905](https://github.com/bizon/selling-partner-api-sdk/commit/3411905eda7686b69b58f9d8225c52742ef45af1))
+
+
+
+
+
 ## [1.7.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@1.7.0...@sp-api-sdk/auth@1.7.1) (2021-07-26)
 
 **Note:** Version bump only for package @sp-api-sdk/auth

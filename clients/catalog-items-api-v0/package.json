@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/catalog-items-api-v0",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Catalog Items helps you programmatically retrieve item details for items in the catalog.",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -25,8 +25,8 @@
     "test": "NODE_ENV='test' yarn jest"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^1.7.1",
-    "@sp-api-sdk/common": "^1.6.3",
+    "@sp-api-sdk/auth": "^1.7.2",
+    "@sp-api-sdk/common": "^1.6.4",
     "axios": "^0.21.1"
   },
   "repository": {

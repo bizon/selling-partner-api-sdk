@@ -40,7 +40,7 @@ export class SellingPartnerApiAuth {
     const secretAccessKey = parameters.secretAccessKey || process.env.AWS_SECRET_ACCESS_KEY
     const region = parameters.region || process.env.AWS_DEFAULT_REGION
     const arn = parameters.role?.arn || process.env.AWS_ROLE_ARN
-    const sessionName = parameters.role?.sessionName || process.env.AWS_ROLE_SESSION_NAME || `${pkg.name}@${pkg.version}`
+    const sessionName = parameters.role?.sessionName || process.env.AWS_ROLE_SESSION_NAME || `${pkg.name.replace('/', '-')}@${pkg.version}`
     let role = null
 
     if (arn) {

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.6](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-direct-fulfillment-inventory-api-v1@1.6.5...@sp-api-sdk/vendor-direct-fulfillment-inventory-api-v1@1.6.6) (2021-07-30)
+
+
+### Bug Fixes
+
+* update package tags to trigger new release ([5c0865b](https://github.com/bizon/selling-partner-api-sdk/commit/5c0865b5b729d5ca0d42f5e77332af77bfd974af))
+
+
+
+
+
 ## [1.6.5](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-direct-fulfillment-inventory-api-v1@1.6.4...@sp-api-sdk/vendor-direct-fulfillment-inventory-api-v1@1.6.5) (2021-07-30)
 
 **Note:** Version bump only for package @sp-api-sdk/vendor-direct-fulfillment-inventory-api-v1

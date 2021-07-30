@@ -43,4 +43,4 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
         run: |
-          yarn lerna publish --yes --create-release github
+          yarn lerna publish --create-release github --no-verify-access --yes

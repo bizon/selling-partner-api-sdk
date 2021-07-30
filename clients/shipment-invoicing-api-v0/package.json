@@ -39,13 +39,13 @@
   },
   "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/shipment-invoicing-api-v0",
   "keywords": [
-    "bizon",
     "amazon",
-    "shipment invoicing api",
-    "spa sdk",
-    "sp api",
+    "bizon",
+    "marketplace web services",
     "mws",
     "selling partner api",
-    "marketplace webservice"
+    "sp api",
+    "sp sdk",
+    "shipment invoicing api"
   ]
 }

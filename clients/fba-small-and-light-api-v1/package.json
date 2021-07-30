@@ -39,13 +39,13 @@
   },
   "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/fba-small-and-light-api-v1",
   "keywords": [
-    "bizon",
     "amazon",
-    "fba small and light api",
-    "spa sdk",
-    "sp api",
+    "bizon",
+    "marketplace web services",
     "mws",
     "selling partner api",
-    "marketplace webservice"
+    "sp api",
+    "sp sdk",
+    "fba small and light api"
   ]
 }

@@ -39,13 +39,13 @@
   },
   "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/fba-inbound-eligibility-api-v1",
   "keywords": [
-    "bizon",
     "amazon",
-    "fba inbound eligibility api",
-    "spa sdk",
-    "sp api",
+    "bizon",
+    "marketplace web services",
     "mws",
     "selling partner api",
-    "marketplace webservice"
+    "sp api",
+    "sp sdk",
+    "fba inbound eligibility api"
   ]
 }

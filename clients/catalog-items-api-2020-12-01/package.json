@@ -39,13 +39,13 @@
   },
   "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/catalog-items-api-2020-12-01",
   "keywords": [
-    "bizon",
     "amazon",
-    "catalog items api",
-    "spa sdk",
-    "sp api",
+    "bizon",
+    "marketplace web services",
     "mws",
     "selling partner api",
-    "marketplace webservice"
+    "sp api",
+    "sp sdk",
+    "catalog items api"
   ]
 }

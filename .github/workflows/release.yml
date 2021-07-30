@@ -5,6 +5,8 @@ on:
     branches:
       - master
 
+concurrency: release
+
 jobs:
   release:
     name: Run lerna publish

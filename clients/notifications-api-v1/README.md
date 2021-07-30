@@ -1,6 +1,6 @@
 # `notifications-api-v1`
 
-The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner&#39;s business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.
+The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.
 
 ## Installing
 

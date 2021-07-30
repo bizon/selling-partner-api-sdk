@@ -1,6 +1,6 @@
 # `vendor-direct-fulfillment-transactions-api-v1`
 
-The Selling Partner API for Direct Fulfillment Transaction Status provides programmatic access to a direct fulfillment vendor&#39;s transaction status.
+The Selling Partner API for Direct Fulfillment Transaction Status provides programmatic access to a direct fulfillment vendor's transaction status.
 
 ## Installing
 

@@ -1,6 +1,6 @@
 # `vendor-direct-fulfillment-orders-api-v1`
 
-The Selling Partner API for Direct Fulfillment Orders provides programmatic access to a direct fulfillment vendor&#39;s order data.
+The Selling Partner API for Direct Fulfillment Orders provides programmatic access to a direct fulfillment vendor's order data.
 
 ## Installing
 

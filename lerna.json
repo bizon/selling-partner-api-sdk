@@ -5,7 +5,8 @@
   "command": {
     "publish": {
       "noPrivate": true,
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "message": "chore(release): publish"
     }
   }
 }

@@ -1,6 +1,6 @@
 # `fulfillment-inbound-api-v0`
 
-The Selling Partner API for Fulfillment Inbound lets you create applications that create and update inbound shipments of inventory to Amazon&#39;s fulfillment network.
+The Selling Partner API for Fulfillment Inbound lets you create applications that create and update inbound shipments of inventory to Amazon's fulfillment network.
 
 ## Installing
 

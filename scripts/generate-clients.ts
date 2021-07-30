@@ -10,6 +10,8 @@ import jsonfile from 'jsonfile'
 import camelCase from 'camelcase'
 import reduce from 'lodash/reduce'
 import {PackageJson} from 'type-fest'
+import remark from 'remark'
+import remarkStrip from 'strip-markdown'
 
 import {renderTemplate, logger} from './utils'
 
@@ -25,6 +27,18 @@ async function readPackageVersion(path: string) {
   } catch {
     return null
   }
+}
+
+const cleaner = remark().use(remarkStrip)
+
+async function cleanMarkdown(input: string, stripNewLines?: boolean) {
+  let result = (await cleaner.process(input)).toString()
+
+  if (stripNewLines) {
+    result = result.replace(/[\r\n]+/g, ' ')
+  }
+
+  return result.trim()
 }
 
 async function generateClientVersion(clientName: string, filename: string) {
@@ -55,7 +69,7 @@ async function generateClientVersion(clientName: string, filename: string) {
   await fs.mkdir(`${clientDirectoryPath}/__test__`, {recursive: true})
   await fs.writeFile(`${clientDirectoryPath}/package.json`, await renderTemplate('scripts/templates/package.json.mustache', {
     packageName,
-    description: doc.info.description,
+    description: await cleanMarkdown(doc.info.description, true),
     version: await readPackageVersion(clientDirectoryPath) ?? '1.0.0-rc.1',
     apiName: formatedClientName.replace(/-/g, ' '),
     dependencies: {

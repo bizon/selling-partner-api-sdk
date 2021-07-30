@@ -1,6 +1,6 @@
 # `vendor-direct-fulfillment-inventory-api-v1`
 
-The Selling Partner API for Direct Fulfillment Inventory Updates provides programmatic access to a direct fulfillment vendor&#39;s inventory updates.
+The Selling Partner API for Direct Fulfillment Inventory Updates provides programmatic access to a direct fulfillment vendor's inventory updates.
 
 ## Installing
 

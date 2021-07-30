@@ -1,6 +1,6 @@
 # `messaging-api-v1`
 
-With the Messaging API you can build applications that send messages to buyers. You can get a list of message types that are available for an order that you specify, then call an operation that sends a message to the buyer for that order. The Messaging API returns responses that are formed according to the &lt;a href&#x3D;https:&#x2F;&#x2F;tools.ietf.org&#x2F;html&#x2F;draft-kelly-json-hal-08&gt;JSON Hypertext Application Language&lt;&#x2F;a&gt; (HAL) standard.
+With the Messaging API you can build applications that send messages to buyers. You can get a list of message types that are available for an order that you specify, then call an operation that sends a message to the buyer for that order. The Messaging API returns responses that are formed according to the <a href=https://tools.ietf.org/html/draft-kelly-json-hal-08>JSON Hypertext Application Language</a> (HAL) standard.
 
 ## Installing
 

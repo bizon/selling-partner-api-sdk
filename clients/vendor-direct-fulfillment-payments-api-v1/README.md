@@ -1,6 +1,6 @@
 # `vendor-direct-fulfillment-payments-api-v1`
 
-The Selling Partner API for Direct Fulfillment Payments provides programmatic access to a direct fulfillment vendor&#39;s invoice data.
+The Selling Partner API for Direct Fulfillment Payments provides programmatic access to a direct fulfillment vendor's invoice data.
 
 ## Installing
 

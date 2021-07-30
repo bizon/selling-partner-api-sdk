@@ -1,0 +1,75 @@
+name: Tests
+
+on: [pull_request]
+
+jobs:
+  lint:
+    name: Run linter
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --non-interactive
+
+      - name: Run linter for lerna packages
+        run: yarn lerna run lint
+
+      - name: Run linter for scripts
+        run: yarn xo scripts
+
+  check-ts:
+    name: Run typescript checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --non-interactive
+
+      - name: Run typescript checks
+        run: yarn check:ts
+
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --non-interactive
+
+      - name: Run tests
+        run: yarn test --runInBand --ci --reporters=default --reporters=jest-junit
+        env:
+          JEST_JUNIT_OUTPUT_DIR: ./reports/tests/
+
+      - name: Upload jest junit test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: jest-test-results
+          path: reports/tests/junit.xml

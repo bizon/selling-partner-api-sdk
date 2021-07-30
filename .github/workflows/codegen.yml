@@ -1,4 +1,4 @@
-name: Run code generation
+name: Codegen
 
 on:
   workflow_dispatch:
@@ -7,15 +7,21 @@ on:
 
 jobs:
   update-models:
+    name: Run code generation
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
           node-version: 14
           cache: yarn
-      - run: yarn --frozen-lockfile --non-interactive
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --non-interactive
 
       - name: Generate clients from models
         run: yarn generate-clients
@@ -24,7 +30,7 @@ jobs:
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
 
-      - name: Create pull request
+      - name: Create or update pull request
         uses: peter-evans/create-pull-request@v3
         with:
           branch: codegen/update-models

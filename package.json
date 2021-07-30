@@ -15,12 +15,12 @@
     ]
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "clean": "lerna run clean",
     "clean.all": "yarn clean && lerna clean",
     "prerelease": "yarn build",
     "release": "lerna publish -m 'chore(release): publish'",
+    "check:ts": "tsc --noEmit",
     "test": "NODE_ENV=test yarn jest",
     "generate-clients": "ts-node --project tsconfig.scripts.json scripts/generate-clients.ts"
   },

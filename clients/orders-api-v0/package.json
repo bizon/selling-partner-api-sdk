@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/orders-api-v0",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.",
-  "version": "1.7.4",
+  "version": "1.7.5",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -25,8 +25,8 @@
     "test": "NODE_ENV='test' yarn jest"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^1.7.2",
-    "@sp-api-sdk/common": "^1.6.4",
+    "@sp-api-sdk/auth": "^1.7.3",
+    "@sp-api-sdk/common": "^1.6.5",
     "axios": "^0.21.1"
   },
   "repository": {

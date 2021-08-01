@@ -93,7 +93,8 @@
   <span class="hljs-attr">clientSecret</span>: <span class="hljs-string">&#x27;&#x27;</span>,
   <span class="hljs-attr">refreshToken</span>: <span class="hljs-string">&#x27;Atzr|...&#x27;</span>,
   <span class="hljs-attr">accessKeyId</span>: <span class="hljs-string">&#x27;&#x27;</span>,
-  <span class="hljs-attr">secretAccessKey</span>: <span class="hljs-string">&#x27;&#x27;</span>
+  <span class="hljs-attr">secretAccessKey</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">sessionToken</span>: <span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-comment">// If you’re authenticated using temporary credentials</span>
 })
 
 <span class="hljs-keyword">const</span> accessToken = <span class="hljs-keyword">await</span> auth.accessToken.get()
@@ -147,6 +148,10 @@
 							<tr>
 								<td><code>secretAccessKey</code></td>
 								<td>AWS_SECRET_ACCESS_KEY</td>
+							</tr>
+							<tr>
+								<td><code>sessionToken</code></td>
+								<td>AWS_SESSION_TOKEN</td>
 							</tr>
 							<tr>
 								<td><code>region</code></td>
@@ -381,7 +386,7 @@
 					<div class="tsd-signature tsd-kind-icon">protected<wbr>Env<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27;AWS_ACCESS_KEY_ID&#x27;,&#x27;AWS_SECRET_ACCESS_KEY&#x27;,&#x27;AWS_ROLE_ARN&#x27;,&#x27;AWS_ROLE_SESSION_NAME&#x27;,&#x27;LWA_CLIENT_SECRET&#x27;,&#x27;LWA_CLIENT_ID&#x27;]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5387aa4/packages/auth/jest.config.ts#L3">packages/auth/jest.config.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/58da7f9/packages/auth/jest.config.ts#L3">packages/auth/jest.config.ts:3</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -398,7 +403,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5387aa4/packages/auth/jest.config.ts#L12">packages/auth/jest.config.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/58da7f9/packages/auth/jest.config.ts#L12">packages/auth/jest.config.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Config.InitialOptions</span><span class="tsd-signature-symbol">&gt;</span></h4>

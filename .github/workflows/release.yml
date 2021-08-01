@@ -46,3 +46,40 @@ jobs:
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
         run: |
           yarn lerna publish --create-release github --no-verify-access --yes
+
+  docs:
+    name: Update and publish documentation
+    needs: release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --non-interactive
+
+      - name: Check that there are no unreleased changes
+        run: |
+          (! yarn -s lerna diff | grep -q ^)
+
+      - name: Build documentation
+        run: yarn typedoc
+
+      - name: Deploy documentation
+        uses: JamesIves/github-pages-deploy-action@4
+        with:
+          branch: docs
+          folder: docs
+          token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
+          commit-message: 'docs: update documentation'
+          git-config-name: ${{ secrets.BOT_NAME }}
+          git-config-email: ${{ secrets.BOT_EMAIL }}

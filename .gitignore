@@ -1,7 +1,10 @@
-node_modules
+**/*.log
+
+node_modules/
+docs/
+
 packages/test-sdk
 packages/**/dist
 clients/**/dist
-**/*.log
 selling-partner-api-models/
 clients-test

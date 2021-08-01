@@ -1,0 +1,2337 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@sp-api-sdk/feeds-api-2020-09-04 | Selling Partner API SDK for JavaScript</title>
+	<meta name="description" content="Documentation for Selling Partner API SDK for JavaScript">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">Selling Partner API SDK for JavaScript</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="_sp_api_sdk_feeds_api_2020_09_04.html">@sp-api-sdk/feeds-api-2020-09-04</a>
+				</li>
+			</ul>
+			<h1>Module @sp-api-sdk/feeds-api-2020-09-04</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<a href="#feeds-api-2020-09-04" id="feeds-api-2020-09-04" style="color: inherit; text-decoration: none;">
+						<h1><code>feeds-api-2020-09-04</code></h1>
+					</a>
+					<p>The Selling Partner API for Feeds lets you upload data to Amazon on behalf of a selling partner.</p>
+					<a href="#installing" id="installing" style="color: inherit; text-decoration: none;">
+						<h2>Installing</h2>
+					</a>
+					<pre><code class="language-sh">yarn add @sp-api-sdk/feeds-api-2020-09-04
+</code></pre>
+					<pre><code class="language-sh">npm install @sp-api-sdk/feeds-api-2020-09-04
+</code></pre>
+					<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+						<h2>Getting Started</h2>
+					</a>
+					<pre><code class="language-javascript"><span class="hljs-keyword">import</span> {SellingPartnerApiAuth} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@sp-api-sdk/auth&#x27;</span>
+<span class="hljs-keyword">import</span> {FeedsApiClient} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@sp-api-sdk/feeds-api-2020-09-04&#x27;</span>
+
+<span class="hljs-keyword">const</span> auth = <span class="hljs-keyword">new</span> SellingPartnerApiAuth({
+  <span class="hljs-attr">clientId</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">clientSecret</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">refreshToken</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">secretAccessKey</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">accessKeyId</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">region</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">role</span>: {
+    <span class="hljs-attr">arn</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  }
+})
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> FeedsApiClient({
+  auth,
+  <span class="hljs-attr">region</span>: <span class="hljs-string">&#x27;eu&#x27;</span> <span class="hljs-comment">// or &#x27;eu-west-1&#x27;</span>
+})
+</code></pre>
+					<a href="#handle-rate-limiting" id="handle-rate-limiting" style="color: inherit; text-decoration: none;">
+						<h2>Handle Rate Limiting</h2>
+					</a>
+					<p>If you want to let the SDK retry after each 429 responses, instanciate the client like this:</p>
+					<pre><code class="language-javascript"><span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> FeedsApiClient({
+  auth,
+  <span class="hljs-attr">region</span>: <span class="hljs-string">&#x27;eu&#x27;</span>,
+  <span class="hljs-attr">rateLimiting</span>: {
+    <span class="hljs-attr">retry</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">onRetry</span>: <span class="hljs-function">(<span class="hljs-params">retryInfo</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(retryInfo) <span class="hljs-comment">// Optional</span>
+  }
+})
+</code></pre>
+					<p>The SDK gets the rate limits for each routes from the API documentation</p>
+					<a href="#api-documentation" id="api-documentation" style="color: inherit; text-decoration: none;">
+						<h2>API documentation</h2>
+					</a>
+					<p>See <a href="https://github.com/amzn/selling-partner-api-docs/tree/main/references/feeds-api/feeds_2020-09-04.md">here</a></p>
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>References</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#cancelfeedresponse" class="tsd-kind-icon">Cancel<wbr>Feed<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#cancelfeedresponse-1" class="tsd-kind-icon">Cancel<wbr>Feed<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#cancelfeedresponse-2" class="tsd-kind-icon">Cancel<wbr>Feed<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#clientparameters" class="tsd-kind-icon">Client<wbr>Parameters</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#configuration" class="tsd-kind-icon">Configuration</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#configurationparameters" class="tsd-kind-icon">Configuration<wbr>Parameters</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeeddocumentresponse" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeeddocumentresponse-1" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeeddocumentresponse-2" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeeddocumentresult" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Result</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeeddocumentresult-1" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Result</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeeddocumentresult-2" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Result</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeeddocumentspecification" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Specification</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeeddocumentspecification-1" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Specification</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeeddocumentspecification-2" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Specification</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeedresponse" class="tsd-kind-icon">Create<wbr>Feed<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeedresponse-1" class="tsd-kind-icon">Create<wbr>Feed<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeedresponse-2" class="tsd-kind-icon">Create<wbr>Feed<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeedresult" class="tsd-kind-icon">Create<wbr>Feed<wbr>Result</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeedresult-1" class="tsd-kind-icon">Create<wbr>Feed<wbr>Result</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeedresult-2" class="tsd-kind-icon">Create<wbr>Feed<wbr>Result</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeedspecification" class="tsd-kind-icon">Create<wbr>Feed<wbr>Specification</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeedspecification-1" class="tsd-kind-icon">Create<wbr>Feed<wbr>Specification</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeedspecification-2" class="tsd-kind-icon">Create<wbr>Feed<wbr>Specification</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feed" class="tsd-kind-icon">Feed</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feed-1" class="tsd-kind-icon">Feed</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feed-2" class="tsd-kind-icon">Feed</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocument" class="tsd-kind-icon">Feed<wbr>Document</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocument-1" class="tsd-kind-icon">Feed<wbr>Document</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocument-2" class="tsd-kind-icon">Feed<wbr>Document</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocumentcompressionalgorithmenum" class="tsd-kind-icon">Feed<wbr>Document<wbr>Compression<wbr>Algorithm<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocumentcompressionalgorithmenum-1" class="tsd-kind-icon">Feed<wbr>Document<wbr>Compression<wbr>Algorithm<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocumentcompressionalgorithmenum-2" class="tsd-kind-icon">Feed<wbr>Document<wbr>Compression<wbr>Algorithm<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocumentencryptiondetails" class="tsd-kind-icon">Feed<wbr>Document<wbr>Encryption<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocumentencryptiondetails-1" class="tsd-kind-icon">Feed<wbr>Document<wbr>Encryption<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocumentencryptiondetails-2" class="tsd-kind-icon">Feed<wbr>Document<wbr>Encryption<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocumentencryptiondetailsstandardenum" class="tsd-kind-icon">Feed<wbr>Document<wbr>Encryption<wbr>Details<wbr>Standard<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocumentencryptiondetailsstandardenum-1" class="tsd-kind-icon">Feed<wbr>Document<wbr>Encryption<wbr>Details<wbr>Standard<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocumentencryptiondetailsstandardenum-2" class="tsd-kind-icon">Feed<wbr>Document<wbr>Encryption<wbr>Details<wbr>Standard<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedprocessingstatusenum" class="tsd-kind-icon">Feed<wbr>Processing<wbr>Status<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedprocessingstatusenum-1" class="tsd-kind-icon">Feed<wbr>Processing<wbr>Status<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedprocessingstatusenum-2" class="tsd-kind-icon">Feed<wbr>Processing<wbr>Status<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapi" class="tsd-kind-icon">Feeds<wbr>Api</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapi-1" class="tsd-kind-icon">Feeds<wbr>Api</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapiaxiosparamcreator" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapiaxiosparamcreator-1" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapicancelfeedrequest" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Cancel<wbr>Feed<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapicancelfeedrequest-1" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Cancel<wbr>Feed<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapiclient" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Client</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapicreatefeeddocumentrequest" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Create<wbr>Feed<wbr>Document<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapicreatefeeddocumentrequest-1" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Create<wbr>Feed<wbr>Document<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapicreatefeedrequest" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Create<wbr>Feed<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapicreatefeedrequest-1" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Create<wbr>Feed<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapierror" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Error</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapifactory" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Factory</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapifactory-1" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Factory</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapifp" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Fp</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapifp-1" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Fp</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapigetfeeddocumentrequest" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Get<wbr>Feed<wbr>Document<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapigetfeeddocumentrequest-1" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Get<wbr>Feed<wbr>Document<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapigetfeedrequest" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Get<wbr>Feed<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapigetfeedrequest-1" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Get<wbr>Feed<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapigetfeedsrequest" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Get<wbr>Feeds<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapigetfeedsrequest-1" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Get<wbr>Feeds<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#getfeeddocumentresponse" class="tsd-kind-icon">Get<wbr>Feed<wbr>Document<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#getfeeddocumentresponse-1" class="tsd-kind-icon">Get<wbr>Feed<wbr>Document<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#getfeeddocumentresponse-2" class="tsd-kind-icon">Get<wbr>Feed<wbr>Document<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#getfeedresponse" class="tsd-kind-icon">Get<wbr>Feed<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#getfeedresponse-1" class="tsd-kind-icon">Get<wbr>Feed<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#getfeedresponse-2" class="tsd-kind-icon">Get<wbr>Feed<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#getfeedsresponse" class="tsd-kind-icon">Get<wbr>Feeds<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#getfeedsresponse-1" class="tsd-kind-icon">Get<wbr>Feeds<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#getfeedsresponse-2" class="tsd-kind-icon">Get<wbr>Feeds<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#modelerror" class="tsd-kind-icon">Model<wbr>Error</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#modelerror-1" class="tsd-kind-icon">Model<wbr>Error</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#modelerror-2" class="tsd-kind-icon">Model<wbr>Error</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#rate_limits" class="tsd-kind-icon">RATE_<wbr>LIMITS</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_sp_api_sdk_feeds_api_2020_09_04.feeddocumentcompressionalgorithmenum-3.html" class="tsd-kind-icon">Feed<wbr>Document<wbr>Compression<wbr>Algorithm<wbr>Enum</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_sp_api_sdk_feeds_api_2020_09_04.feeddocumentencryptiondetailsstandardenum-3.html" class="tsd-kind-icon">Feed<wbr>Document<wbr>Encryption<wbr>Details<wbr>Standard<wbr>Enum</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_sp_api_sdk_feeds_api_2020_09_04.feedprocessingstatusenum-3.html" class="tsd-kind-icon">Feed<wbr>Processing<wbr>Status<wbr>Enum</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.baseapi.html" class="tsd-kind-icon">BaseAPI</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-kind-icon">Configuration</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.feedsapi-2.html" class="tsd-kind-icon">Feeds<wbr>Api</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.feedsapiclient-1.html" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Client</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.feedsapierror-1.html" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Error</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.requirederror.html" class="tsd-kind-icon">Required<wbr>Error</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.cancelfeedresponse-3.html" class="tsd-kind-icon">Cancel<wbr>Feed<wbr>Response</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.clientparameters-1.html" class="tsd-kind-icon">Client<wbr>Parameters</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.configurationparameters-1.html" class="tsd-kind-icon">Configuration<wbr>Parameters</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentresponse-3.html" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Response</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentresult-3.html" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Result</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentspecification-3.html" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Specification</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedresponse-3.html" class="tsd-kind-icon">Create<wbr>Feed<wbr>Response</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedresult-3.html" class="tsd-kind-icon">Create<wbr>Feed<wbr>Result</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedspecification-3.html" class="tsd-kind-icon">Create<wbr>Feed<wbr>Specification</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feed-3.html" class="tsd-kind-icon">Feed</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feeddocument-3.html" class="tsd-kind-icon">Feed<wbr>Document</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feeddocumentencryptiondetails-3.html" class="tsd-kind-icon">Feed<wbr>Document<wbr>Encryption<wbr>Details</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapicancelfeedrequest-2.html" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Cancel<wbr>Feed<wbr>Request</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapicreatefeeddocumentrequest-2.html" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Create<wbr>Feed<wbr>Document<wbr>Request</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapicreatefeedrequest-2.html" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Create<wbr>Feed<wbr>Request</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapigetfeeddocumentrequest-2.html" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Get<wbr>Feed<wbr>Document<wbr>Request</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapigetfeedrequest-2.html" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Get<wbr>Feed<wbr>Request</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapigetfeedsrequest-2.html" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Get<wbr>Feeds<wbr>Request</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeeddocumentresponse-3.html" class="tsd-kind-icon">Get<wbr>Feed<wbr>Document<wbr>Response</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeedresponse-3.html" class="tsd-kind-icon">Get<wbr>Feed<wbr>Response</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeedsresponse-3.html" class="tsd-kind-icon">Get<wbr>Feeds<wbr>Response</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.modelerror-3.html" class="tsd-kind-icon">Model<wbr>Error</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.requestargs.html" class="tsd-kind-icon">Request<wbr>Args</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#base_path" class="tsd-kind-icon">BASE_<wbr>PATH</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#dummy_base_url" class="tsd-kind-icon">DUMMY_<wbr>BASE_<wbr>URL</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#rate_limits-1" class="tsd-kind-icon">RATE_<wbr>LIMITS</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapiaxiosparamcreator-2" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapifactory-2" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Factory</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapifp-2" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Fp</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#assertparamexists" class="tsd-kind-icon">assert<wbr>Param<wbr>Exists</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#createrequestfunction" class="tsd-kind-icon">create<wbr>Request<wbr>Function</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#serializedataifneeded" class="tsd-kind-icon">serialize<wbr>Data<wbr>IfNeeded</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#setapikeytoobject" class="tsd-kind-icon">set<wbr>Api<wbr>Key<wbr>ToObject</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#setbasicauthtoobject" class="tsd-kind-icon">set<wbr>Basic<wbr>Auth<wbr>ToObject</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#setbearerauthtoobject" class="tsd-kind-icon">set<wbr>Bearer<wbr>Auth<wbr>ToObject</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#setoauthtoobject" class="tsd-kind-icon">setOAuth<wbr>ToObject</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#setsearchparams" class="tsd-kind-icon">set<wbr>Search<wbr>Params</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#topathstring" class="tsd-kind-icon">to<wbr>Path<wbr>String</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="_sp_api_sdk_feeds_api_2020_09_04.html#collection_formats" class="tsd-kind-icon">COLLECTION_<wbr>FORMATS</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>References</h2>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="cancelfeedresponse" class="tsd-anchor"></a>
+					<h3>Cancel<wbr>Feed<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.cancelfeedresponse-3.html">CancelFeedResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="cancelfeedresponse-1" class="tsd-anchor"></a>
+					<h3>Cancel<wbr>Feed<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.cancelfeedresponse-3.html">CancelFeedResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="cancelfeedresponse-2" class="tsd-anchor"></a>
+					<h3>Cancel<wbr>Feed<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.cancelfeedresponse-3.html">CancelFeedResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="clientparameters" class="tsd-anchor"></a>
+					<h3>Client<wbr>Parameters</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.clientparameters-1.html">ClientParameters</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="configuration" class="tsd-anchor"></a>
+					<h3>Configuration</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html">Configuration</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="configurationparameters" class="tsd-anchor"></a>
+					<h3>Configuration<wbr>Parameters</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.configurationparameters-1.html">ConfigurationParameters</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="createfeeddocumentresponse" class="tsd-anchor"></a>
+					<h3>Create<wbr>Feed<wbr>Document<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentresponse-3.html">CreateFeedDocumentResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="createfeeddocumentresponse-1" class="tsd-anchor"></a>
+					<h3>Create<wbr>Feed<wbr>Document<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentresponse-3.html">CreateFeedDocumentResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="createfeeddocumentresponse-2" class="tsd-anchor"></a>
+					<h3>Create<wbr>Feed<wbr>Document<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentresponse-3.html">CreateFeedDocumentResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="createfeeddocumentresult" class="tsd-anchor"></a>
+					<h3>Create<wbr>Feed<wbr>Document<wbr>Result</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentresult-3.html">CreateFeedDocumentResult</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="createfeeddocumentresult-1" class="tsd-anchor"></a>
+					<h3>Create<wbr>Feed<wbr>Document<wbr>Result</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentresult-3.html">CreateFeedDocumentResult</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="createfeeddocumentresult-2" class="tsd-anchor"></a>
+					<h3>Create<wbr>Feed<wbr>Document<wbr>Result</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentresult-3.html">CreateFeedDocumentResult</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="createfeeddocumentspecification" class="tsd-anchor"></a>
+					<h3>Create<wbr>Feed<wbr>Document<wbr>Specification</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentspecification-3.html">CreateFeedDocumentSpecification</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="createfeeddocumentspecification-1" class="tsd-anchor"></a>
+					<h3>Create<wbr>Feed<wbr>Document<wbr>Specification</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentspecification-3.html">CreateFeedDocumentSpecification</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="createfeeddocumentspecification-2" class="tsd-anchor"></a>
+					<h3>Create<wbr>Feed<wbr>Document<wbr>Specification</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentspecification-3.html">CreateFeedDocumentSpecification</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="createfeedresponse" class="tsd-anchor"></a>
+					<h3>Create<wbr>Feed<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedresponse-3.html">CreateFeedResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="createfeedresponse-1" class="tsd-anchor"></a>
+					<h3>Create<wbr>Feed<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedresponse-3.html">CreateFeedResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="createfeedresponse-2" class="tsd-anchor"></a>
+					<h3>Create<wbr>Feed<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedresponse-3.html">CreateFeedResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="createfeedresult" class="tsd-anchor"></a>
+					<h3>Create<wbr>Feed<wbr>Result</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedresult-3.html">CreateFeedResult</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="createfeedresult-1" class="tsd-anchor"></a>
+					<h3>Create<wbr>Feed<wbr>Result</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedresult-3.html">CreateFeedResult</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="createfeedresult-2" class="tsd-anchor"></a>
+					<h3>Create<wbr>Feed<wbr>Result</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedresult-3.html">CreateFeedResult</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="createfeedspecification" class="tsd-anchor"></a>
+					<h3>Create<wbr>Feed<wbr>Specification</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedspecification-3.html">CreateFeedSpecification</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="createfeedspecification-1" class="tsd-anchor"></a>
+					<h3>Create<wbr>Feed<wbr>Specification</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedspecification-3.html">CreateFeedSpecification</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="createfeedspecification-2" class="tsd-anchor"></a>
+					<h3>Create<wbr>Feed<wbr>Specification</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedspecification-3.html">CreateFeedSpecification</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feed" class="tsd-anchor"></a>
+					<h3>Feed</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feed-3.html">Feed</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feed-1" class="tsd-anchor"></a>
+					<h3>Feed</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feed-3.html">Feed</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feed-2" class="tsd-anchor"></a>
+					<h3>Feed</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feed-3.html">Feed</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feeddocument" class="tsd-anchor"></a>
+					<h3>Feed<wbr>Document</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feeddocument-3.html">FeedDocument</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feeddocument-1" class="tsd-anchor"></a>
+					<h3>Feed<wbr>Document</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feeddocument-3.html">FeedDocument</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feeddocument-2" class="tsd-anchor"></a>
+					<h3>Feed<wbr>Document</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feeddocument-3.html">FeedDocument</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feeddocumentcompressionalgorithmenum" class="tsd-anchor"></a>
+					<h3>Feed<wbr>Document<wbr>Compression<wbr>Algorithm<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_feeds_api_2020_09_04.feeddocumentcompressionalgorithmenum-3.html">FeedDocumentCompressionAlgorithmEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feeddocumentcompressionalgorithmenum-1" class="tsd-anchor"></a>
+					<h3>Feed<wbr>Document<wbr>Compression<wbr>Algorithm<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_feeds_api_2020_09_04.feeddocumentcompressionalgorithmenum-3.html">FeedDocumentCompressionAlgorithmEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feeddocumentcompressionalgorithmenum-2" class="tsd-anchor"></a>
+					<h3>Feed<wbr>Document<wbr>Compression<wbr>Algorithm<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_feeds_api_2020_09_04.feeddocumentcompressionalgorithmenum-3.html">FeedDocumentCompressionAlgorithmEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feeddocumentencryptiondetails" class="tsd-anchor"></a>
+					<h3>Feed<wbr>Document<wbr>Encryption<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feeddocumentencryptiondetails-3.html">FeedDocumentEncryptionDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feeddocumentencryptiondetails-1" class="tsd-anchor"></a>
+					<h3>Feed<wbr>Document<wbr>Encryption<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feeddocumentencryptiondetails-3.html">FeedDocumentEncryptionDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feeddocumentencryptiondetails-2" class="tsd-anchor"></a>
+					<h3>Feed<wbr>Document<wbr>Encryption<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feeddocumentencryptiondetails-3.html">FeedDocumentEncryptionDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feeddocumentencryptiondetailsstandardenum" class="tsd-anchor"></a>
+					<h3>Feed<wbr>Document<wbr>Encryption<wbr>Details<wbr>Standard<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_feeds_api_2020_09_04.feeddocumentencryptiondetailsstandardenum-3.html">FeedDocumentEncryptionDetailsStandardEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feeddocumentencryptiondetailsstandardenum-1" class="tsd-anchor"></a>
+					<h3>Feed<wbr>Document<wbr>Encryption<wbr>Details<wbr>Standard<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_feeds_api_2020_09_04.feeddocumentencryptiondetailsstandardenum-3.html">FeedDocumentEncryptionDetailsStandardEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feeddocumentencryptiondetailsstandardenum-2" class="tsd-anchor"></a>
+					<h3>Feed<wbr>Document<wbr>Encryption<wbr>Details<wbr>Standard<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_feeds_api_2020_09_04.feeddocumentencryptiondetailsstandardenum-3.html">FeedDocumentEncryptionDetailsStandardEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedprocessingstatusenum" class="tsd-anchor"></a>
+					<h3>Feed<wbr>Processing<wbr>Status<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_feeds_api_2020_09_04.feedprocessingstatusenum-3.html">FeedProcessingStatusEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedprocessingstatusenum-1" class="tsd-anchor"></a>
+					<h3>Feed<wbr>Processing<wbr>Status<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_feeds_api_2020_09_04.feedprocessingstatusenum-3.html">FeedProcessingStatusEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedprocessingstatusenum-2" class="tsd-anchor"></a>
+					<h3>Feed<wbr>Processing<wbr>Status<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_feeds_api_2020_09_04.feedprocessingstatusenum-3.html">FeedProcessingStatusEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapi" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.feedsapi-2.html">FeedsApi</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapi-1" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.feedsapi-2.html">FeedsApi</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapiaxiosparamcreator" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</h3>
+					Re-exports <a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapiaxiosparamcreator-2">FeedsApiAxiosParamCreator</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapiaxiosparamcreator-1" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</h3>
+					Re-exports <a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapiaxiosparamcreator-2">FeedsApiAxiosParamCreator</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapicancelfeedrequest" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Cancel<wbr>Feed<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapicancelfeedrequest-2.html">FeedsApiCancelFeedRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapicancelfeedrequest-1" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Cancel<wbr>Feed<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapicancelfeedrequest-2.html">FeedsApiCancelFeedRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapiclient" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Client</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.feedsapiclient-1.html">FeedsApiClient</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapicreatefeeddocumentrequest" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Create<wbr>Feed<wbr>Document<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapicreatefeeddocumentrequest-2.html">FeedsApiCreateFeedDocumentRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapicreatefeeddocumentrequest-1" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Create<wbr>Feed<wbr>Document<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapicreatefeeddocumentrequest-2.html">FeedsApiCreateFeedDocumentRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapicreatefeedrequest" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Create<wbr>Feed<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapicreatefeedrequest-2.html">FeedsApiCreateFeedRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapicreatefeedrequest-1" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Create<wbr>Feed<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapicreatefeedrequest-2.html">FeedsApiCreateFeedRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapierror" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Error</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.feedsapierror-1.html">FeedsApiError</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapifactory" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Factory</h3>
+					Re-exports <a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapifactory-2">FeedsApiFactory</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapifactory-1" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Factory</h3>
+					Re-exports <a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapifactory-2">FeedsApiFactory</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapifp" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Fp</h3>
+					Re-exports <a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapifp-2">FeedsApiFp</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapifp-1" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Fp</h3>
+					Re-exports <a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapifp-2">FeedsApiFp</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapigetfeeddocumentrequest" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Get<wbr>Feed<wbr>Document<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapigetfeeddocumentrequest-2.html">FeedsApiGetFeedDocumentRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapigetfeeddocumentrequest-1" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Get<wbr>Feed<wbr>Document<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapigetfeeddocumentrequest-2.html">FeedsApiGetFeedDocumentRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapigetfeedrequest" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Get<wbr>Feed<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapigetfeedrequest-2.html">FeedsApiGetFeedRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapigetfeedrequest-1" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Get<wbr>Feed<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapigetfeedrequest-2.html">FeedsApiGetFeedRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapigetfeedsrequest" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Get<wbr>Feeds<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapigetfeedsrequest-2.html">FeedsApiGetFeedsRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="feedsapigetfeedsrequest-1" class="tsd-anchor"></a>
+					<h3>Feeds<wbr>Api<wbr>Get<wbr>Feeds<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapigetfeedsrequest-2.html">FeedsApiGetFeedsRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="getfeeddocumentresponse" class="tsd-anchor"></a>
+					<h3>Get<wbr>Feed<wbr>Document<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeeddocumentresponse-3.html">GetFeedDocumentResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="getfeeddocumentresponse-1" class="tsd-anchor"></a>
+					<h3>Get<wbr>Feed<wbr>Document<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeeddocumentresponse-3.html">GetFeedDocumentResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="getfeeddocumentresponse-2" class="tsd-anchor"></a>
+					<h3>Get<wbr>Feed<wbr>Document<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeeddocumentresponse-3.html">GetFeedDocumentResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="getfeedresponse" class="tsd-anchor"></a>
+					<h3>Get<wbr>Feed<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeedresponse-3.html">GetFeedResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="getfeedresponse-1" class="tsd-anchor"></a>
+					<h3>Get<wbr>Feed<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeedresponse-3.html">GetFeedResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="getfeedresponse-2" class="tsd-anchor"></a>
+					<h3>Get<wbr>Feed<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeedresponse-3.html">GetFeedResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="getfeedsresponse" class="tsd-anchor"></a>
+					<h3>Get<wbr>Feeds<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeedsresponse-3.html">GetFeedsResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="getfeedsresponse-1" class="tsd-anchor"></a>
+					<h3>Get<wbr>Feeds<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeedsresponse-3.html">GetFeedsResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="getfeedsresponse-2" class="tsd-anchor"></a>
+					<h3>Get<wbr>Feeds<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeedsresponse-3.html">GetFeedsResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="modelerror" class="tsd-anchor"></a>
+					<h3>Model<wbr>Error</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.modelerror-3.html">ModelError</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="modelerror-1" class="tsd-anchor"></a>
+					<h3>Model<wbr>Error</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.modelerror-3.html">ModelError</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="modelerror-2" class="tsd-anchor"></a>
+					<h3>Model<wbr>Error</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.modelerror-3.html">ModelError</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="rate_limits" class="tsd-anchor"></a>
+					<h3>RATE_<wbr>LIMITS</h3>
+					Re-exports <a href="_sp_api_sdk_feeds_api_2020_09_04.html#rate_limits-1">RATE_LIMITS</a>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="base_path" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> BASE_<wbr>PATH</h3>
+					<div class="tsd-signature tsd-kind-icon">BASE_<wbr>PATH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://sellingpartnerapi-na.amazon.com&quot;.replace(/\/+$/, &quot;&quot;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/base.ts#L21">clients/feeds-api-2020-09-04/src/api-model/base.ts:21</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="dummy_base_url" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> DUMMY_<wbr>BASE_<wbr>URL</h3>
+					<div class="tsd-signature tsd-kind-icon">DUMMY_<wbr>BASE_<wbr>URL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"https://example.com"</span><span class="tsd-signature-symbol"> = &quot;https://example.com&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/common.ts#L24">clients/feeds-api-2020-09-04/src/api-model/common.ts:24</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>export</dt>
+							<dd></dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="rate_limits-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> RATE_<wbr>LIMITS</h3>
+					<div class="tsd-signature tsd-kind-icon">RATE_<wbr>LIMITS<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_sp_api_sdk_common.ratelimit-3.html" class="tsd-signature-type">RateLimit</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [{method: &#x27;get&#x27;,urlRegex: new RegExp(&#x27;^/feeds/2020-09-04/feeds$&#x27;),rate: 0.0222,burst: 10},{method: &#x27;post&#x27;,urlRegex: new RegExp(&#x27;^/feeds/2020-09-04/feeds$&#x27;),rate: 0.0083,burst: 15},{method: &#x27;get&#x27;,urlRegex: new RegExp(&#x27;^/feeds/2020-09-04/feeds/[^/]*$&#x27;),rate: 2,burst: 15},{method: &#x27;delete&#x27;,urlRegex: new RegExp(&#x27;^/feeds/2020-09-04/feeds/[^/]*$&#x27;),rate: 0.0222,burst: 10},{method: &#x27;post&#x27;,urlRegex: new RegExp(&#x27;^/feeds/2020-09-04/documents$&#x27;),rate: 0.0083,burst: 15},{method: &#x27;get&#x27;,urlRegex: new RegExp(&#x27;^/feeds/2020-09-04/documents/[^/]*$&#x27;),rate: 0.0222,burst: 10}]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/client.ts#L8">clients/feeds-api-2020-09-04/src/client.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="feedsapiaxiosparamcreator-2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Feeds<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Feeds<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator<span class="tsd-signature-symbol">(</span>configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>cancelFeed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>createFeed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>createFeedDocument<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getFeed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getFeedDocument<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getFeeds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L43">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:43</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>FeedsApi - axios parameter creator</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>cancelFeed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>createFeed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>createFeedDocument<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getFeed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getFeedDocument<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getFeeds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>cancel<wbr>Feed<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">cancel<wbr>Feed<span class="tsd-signature-symbol">(</span>feedId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L51">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:51</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Cancels the feed that you specify. Only feeds with processingStatus=IN_QUEUE can be cancelled. Cancelled feeds are returned in subsequent calls to the getFeed and getFeeds operations.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>feedId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<div class="lead">
+															<p>The identifier for the feed. This identifier is unique only in combination with a seller ID.</p>
+														</div>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = {}</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>create<wbr>Feed<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">create<wbr>Feed<span class="tsd-signature-symbol">(</span>body<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedspecification-3.html" class="tsd-signature-type">CreateFeedSpecification</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L84">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:84</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Creates a feed. Encrypt and upload the contents of the feed document before calling this operation.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>body: <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedspecification-3.html" class="tsd-signature-type">CreateFeedSpecification</a></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = {}</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>create<wbr>Feed<wbr>Document<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">create<wbr>Feed<wbr>Document<span class="tsd-signature-symbol">(</span>body<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentspecification-3.html" class="tsd-signature-type">CreateFeedDocumentSpecification</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L119">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:119</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Creates a feed document for the feed type that you specify. This operation returns encryption details for encrypting the contents of the document, as well as a presigned URL for uploading the encrypted feed document contents. It also returns a feedDocumentId value that you can pass in with a subsequent call to the createFeed operation.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>body: <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentspecification-3.html" class="tsd-signature-type">CreateFeedDocumentSpecification</a></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = {}</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>get<wbr>Feed<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">get<wbr>Feed<span class="tsd-signature-symbol">(</span>feedId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L154">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:154</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Returns feed details (including the resultDocumentId, if available) for the feed that you specify.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 2.0 | 15 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>feedId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<div class="lead">
+															<p>The identifier for the feed. This identifier is unique only in combination with a seller ID.</p>
+														</div>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = {}</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>get<wbr>Feed<wbr>Document<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">get<wbr>Feed<wbr>Document<span class="tsd-signature-symbol">(</span>feedDocumentId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L187">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:187</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Returns the information required for retrieving a feed document&#39;s contents. This includes a presigned URL for the feed document as well as the information required to decrypt the document&#39;s contents.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>feedDocumentId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<div class="lead">
+															<p>The identifier of the feed document.</p>
+														</div>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = {}</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>get<wbr>Feeds<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">get<wbr>Feeds<span class="tsd-signature-symbol">(</span>feedTypes<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, marketplaceIds<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, pageSize<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, processingStatuses<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"CANCELLED"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"DONE"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"FATAL"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"IN_PROGRESS"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"IN_QUEUE"</span><span class="tsd-signature-symbol">&gt;</span>, createdSince<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, createdUntil<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, nextToken<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L226">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:226</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Returns feed details for the feeds that match the filters that you specify.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> feedTypes: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> marketplaceIds: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> pageSize: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> processingStatuses: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"CANCELLED"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"DONE"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"FATAL"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"IN_PROGRESS"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"IN_QUEUE"</span><span class="tsd-signature-symbol">&gt;</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> createdSince: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> createdUntil: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> nextToken: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = {}</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="feedsapifactory-2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Feeds<wbr>Api<wbr>Factory</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Feeds<wbr>Api<wbr>Factory<span class="tsd-signature-symbol">(</span>configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-signature-type">Configuration</a>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>cancelFeed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>createFeed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>createFeedDocument<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getFeed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getFeedDocument<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getFeeds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L365">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:365</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>FeedsApi - factory interface</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> basePath: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> axios: <span class="tsd-signature-type">AxiosInstance</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>cancelFeed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>createFeed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>createFeedDocument<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getFeed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getFeedDocument<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getFeeds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>cancel<wbr>Feed<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">cancel<wbr>Feed<span class="tsd-signature-symbol">(</span>feedId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.cancelfeedresponse-3.html" class="tsd-signature-type">CancelFeedResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L374">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:374</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Cancels the feed that you specify. Only feeds with processingStatus=IN_QUEUE can be cancelled. Cancelled feeds are returned in subsequent calls to the getFeed and getFeeds operations.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>feedId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>The identifier for the feed. This identifier is unique only in combination with a seller ID.</p>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.cancelfeedresponse-3.html" class="tsd-signature-type">CancelFeedResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>create<wbr>Feed<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">create<wbr>Feed<span class="tsd-signature-symbol">(</span>body<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedspecification-3.html" class="tsd-signature-type">CreateFeedSpecification</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedresponse-3.html" class="tsd-signature-type">CreateFeedResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L383">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:383</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Creates a feed. Encrypt and upload the contents of the feed document before calling this operation.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>body: <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedspecification-3.html" class="tsd-signature-type">CreateFeedSpecification</a></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedresponse-3.html" class="tsd-signature-type">CreateFeedResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>create<wbr>Feed<wbr>Document<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">create<wbr>Feed<wbr>Document<span class="tsd-signature-symbol">(</span>body<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentspecification-3.html" class="tsd-signature-type">CreateFeedDocumentSpecification</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentresponse-3.html" class="tsd-signature-type">CreateFeedDocumentResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L392">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:392</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Creates a feed document for the feed type that you specify. This operation returns encryption details for encrypting the contents of the document, as well as a presigned URL for uploading the encrypted feed document contents. It also returns a feedDocumentId value that you can pass in with a subsequent call to the createFeed operation.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>body: <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentspecification-3.html" class="tsd-signature-type">CreateFeedDocumentSpecification</a></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentresponse-3.html" class="tsd-signature-type">CreateFeedDocumentResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>get<wbr>Feed<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">get<wbr>Feed<span class="tsd-signature-symbol">(</span>feedId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeedresponse-3.html" class="tsd-signature-type">GetFeedResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L401">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:401</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Returns feed details (including the resultDocumentId, if available) for the feed that you specify.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 2.0 | 15 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>feedId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>The identifier for the feed. This identifier is unique only in combination with a seller ID.</p>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeedresponse-3.html" class="tsd-signature-type">GetFeedResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>get<wbr>Feed<wbr>Document<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">get<wbr>Feed<wbr>Document<span class="tsd-signature-symbol">(</span>feedDocumentId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeeddocumentresponse-3.html" class="tsd-signature-type">GetFeedDocumentResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L410">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:410</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Returns the information required for retrieving a feed document&#39;s contents. This includes a presigned URL for the feed document as well as the information required to decrypt the document&#39;s contents.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>feedDocumentId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>The identifier of the feed document.</p>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeeddocumentresponse-3.html" class="tsd-signature-type">GetFeedDocumentResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>get<wbr>Feeds<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">get<wbr>Feeds<span class="tsd-signature-symbol">(</span>feedTypes<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, marketplaceIds<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, pageSize<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, processingStatuses<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"CANCELLED"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"DONE"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"FATAL"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"IN_PROGRESS"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"IN_QUEUE"</span><span class="tsd-signature-symbol">&gt;</span>, createdSince<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, createdUntil<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, nextToken<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeedsresponse-3.html" class="tsd-signature-type">GetFeedsResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L425">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:425</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Returns feed details for the feeds that match the filters that you specify.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> feedTypes: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> marketplaceIds: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> pageSize: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> processingStatuses: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"CANCELLED"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"DONE"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"FATAL"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"IN_PROGRESS"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"IN_QUEUE"</span><span class="tsd-signature-symbol">&gt;</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> createdSince: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> createdUntil: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> nextToken: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeedsresponse-3.html" class="tsd-signature-type">GetFeedsResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="feedsapifp-2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Feeds<wbr>Api<wbr>Fp</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Feeds<wbr>Api<wbr>Fp<span class="tsd-signature-symbol">(</span>configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>cancelFeed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>createFeed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>createFeedDocument<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getFeed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getFeedDocument<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getFeeds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L289">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:289</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>FeedsApi - functional programming interface</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>cancelFeed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>createFeed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>createFeedDocument<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getFeed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getFeedDocument<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getFeeds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>cancel<wbr>Feed<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">cancel<wbr>Feed<span class="tsd-signature-symbol">(</span>feedId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.cancelfeedresponse-3.html" class="tsd-signature-type">CancelFeedResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L298">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:298</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Cancels the feed that you specify. Only feeds with processingStatus=IN_QUEUE can be cancelled. Cancelled feeds are returned in subsequent calls to the getFeed and getFeeds operations.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>feedId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>The identifier for the feed. This identifier is unique only in combination with a seller ID.</p>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.cancelfeedresponse-3.html" class="tsd-signature-type">CancelFeedResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>create<wbr>Feed<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">create<wbr>Feed<span class="tsd-signature-symbol">(</span>body<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedspecification-3.html" class="tsd-signature-type">CreateFeedSpecification</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedresponse-3.html" class="tsd-signature-type">CreateFeedResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L308">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:308</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Creates a feed. Encrypt and upload the contents of the feed document before calling this operation.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>body: <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedspecification-3.html" class="tsd-signature-type">CreateFeedSpecification</a></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedresponse-3.html" class="tsd-signature-type">CreateFeedResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>create<wbr>Feed<wbr>Document<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">create<wbr>Feed<wbr>Document<span class="tsd-signature-symbol">(</span>body<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentspecification-3.html" class="tsd-signature-type">CreateFeedDocumentSpecification</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentresponse-3.html" class="tsd-signature-type">CreateFeedDocumentResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L318">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:318</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Creates a feed document for the feed type that you specify. This operation returns encryption details for encrypting the contents of the document, as well as a presigned URL for uploading the encrypted feed document contents. It also returns a feedDocumentId value that you can pass in with a subsequent call to the createFeed operation.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>body: <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentspecification-3.html" class="tsd-signature-type">CreateFeedDocumentSpecification</a></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentresponse-3.html" class="tsd-signature-type">CreateFeedDocumentResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>get<wbr>Feed<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">get<wbr>Feed<span class="tsd-signature-symbol">(</span>feedId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeedresponse-3.html" class="tsd-signature-type">GetFeedResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L328">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:328</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Returns feed details (including the resultDocumentId, if available) for the feed that you specify.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 2.0 | 15 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>feedId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>The identifier for the feed. This identifier is unique only in combination with a seller ID.</p>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeedresponse-3.html" class="tsd-signature-type">GetFeedResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>get<wbr>Feed<wbr>Document<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">get<wbr>Feed<wbr>Document<span class="tsd-signature-symbol">(</span>feedDocumentId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeeddocumentresponse-3.html" class="tsd-signature-type">GetFeedDocumentResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L338">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:338</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Returns the information required for retrieving a feed document&#39;s contents. This includes a presigned URL for the feed document as well as the information required to decrypt the document&#39;s contents.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>feedDocumentId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>The identifier of the feed document.</p>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeeddocumentresponse-3.html" class="tsd-signature-type">GetFeedDocumentResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>get<wbr>Feeds<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">get<wbr>Feeds<span class="tsd-signature-symbol">(</span>feedTypes<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, marketplaceIds<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, pageSize<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, processingStatuses<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"CANCELLED"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"DONE"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"FATAL"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"IN_PROGRESS"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"IN_QUEUE"</span><span class="tsd-signature-symbol">&gt;</span>, createdSince<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, createdUntil<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, nextToken<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeedsresponse-3.html" class="tsd-signature-type">GetFeedsResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts#L354">clients/feeds-api-2020-09-04/src/api-model/api/feeds-api.ts:354</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Returns feed details for the feeds that match the filters that you specify.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> feedTypes: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> marketplaceIds: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> pageSize: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> processingStatuses: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"CANCELLED"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"DONE"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"FATAL"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"IN_PROGRESS"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"IN_QUEUE"</span><span class="tsd-signature-symbol">&gt;</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> createdSince: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> createdUntil: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> nextToken: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeedsresponse-3.html" class="tsd-signature-type">GetFeedsResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="assertparamexists" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> assert<wbr>Param<wbr>Exists</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">assert<wbr>Param<wbr>Exists<span class="tsd-signature-symbol">(</span>functionName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, paramName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, paramValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/common.ts#L31">clients/feeds-api-2020-09-04/src/api-model/common.ts:31</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>{RequiredError}</p>
+									</dd>
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>functionName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>paramName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>paramValue: <span class="tsd-signature-type">unknown</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createrequestfunction" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> create<wbr>Request<wbr>Function</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Request<wbr>Function<span class="tsd-signature-symbol">(</span>axiosArgs<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.requestargs.html" class="tsd-signature-type">RequestArgs</a>, globalAxios<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosInstance</span>, BASE_PATH<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/common.ts#L133">clients/feeds-api-2020-09-04/src/api-model/common.ts:133</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>axiosArgs: <a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.requestargs.html" class="tsd-signature-type">RequestArgs</a></h5>
+								</li>
+								<li>
+									<h5>globalAxios: <span class="tsd-signature-type">AxiosInstance</span></h5>
+								</li>
+								<li>
+									<h5>BASE_PATH: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous function)</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="serializedataifneeded" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> serialize<wbr>Data<wbr>IfNeeded</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">serialize<wbr>Data<wbr>IfNeeded<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, requestOptions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/common.ts#L111">clients/feeds-api-2020-09-04/src/api-model/common.ts:111</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>requestOptions: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setapikeytoobject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Api<wbr>Key<wbr>ToObject</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Api<wbr>Key<wbr>ToObject<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, keyParamName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/common.ts#L41">clients/feeds-api-2020-09-04/src/api-model/common.ts:41</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>keyParamName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setbasicauthtoobject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Basic<wbr>Auth<wbr>ToObject</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Basic<wbr>Auth<wbr>ToObject<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/common.ts#L54">clients/feeds-api-2020-09-04/src/api-model/common.ts:54</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setbearerauthtoobject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Bearer<wbr>Auth<wbr>ToObject</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Bearer<wbr>Auth<wbr>ToObject<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/common.ts#L64">clients/feeds-api-2020-09-04/src/api-model/common.ts:64</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setoauthtoobject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> setOAuth<wbr>ToObject</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">setOAuth<wbr>ToObject<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, scopes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/common.ts#L77">clients/feeds-api-2020-09-04/src/api-model/common.ts:77</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>scopes: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setsearchparams" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Search<wbr>Params</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Search<wbr>Params<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">URL</span>, <span class="tsd-signature-symbol">...</span>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/common.ts#L90">clients/feeds-api-2020-09-04/src/api-model/common.ts:90</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>url: <span class="tsd-signature-type">URL</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>objects: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="topathstring" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> to<wbr>Path<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Path<wbr>String<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">URL</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/common.ts#L125">clients/feeds-api-2020-09-04/src/api-model/common.ts:125</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>url: <span class="tsd-signature-type">URL</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="collection_formats" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> COLLECTION_<wbr>FORMATS</h3>
+					<div class="tsd-signature tsd-kind-icon">COLLECTION_<wbr>FORMATS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/base.ts#L27">clients/feeds-api-2020-09-04/src/api-model/base.ts:27</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>export</dt>
+							<dd></dd>
+						</dl>
+					</div>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="collection_formats.csv" class="tsd-anchor"></a>
+						<h3>csv</h3>
+						<div class="tsd-signature tsd-kind-icon">csv<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;,&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/base.ts#L28">clients/feeds-api-2020-09-04/src/api-model/base.ts:28</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="collection_formats.pipes" class="tsd-anchor"></a>
+						<h3>pipes</h3>
+						<div class="tsd-signature tsd-kind-icon">pipes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;|&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/base.ts#L31">clients/feeds-api-2020-09-04/src/api-model/base.ts:31</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="collection_formats.ssv" class="tsd-anchor"></a>
+						<h3>ssv</h3>
+						<div class="tsd-signature tsd-kind-icon">ssv<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot; &quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/base.ts#L29">clients/feeds-api-2020-09-04/src/api-model/base.ts:29</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="collection_formats.tsv" class="tsd-anchor"></a>
+						<h3>tsv</h3>
+						<div class="tsd-signature tsd-kind-icon">tsv<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;	&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/feeds-api-2020-09-04/src/api-model/base.ts#L30">clients/feeds-api-2020-09-04/src/api-model/base.ts:30</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html">@sp-<wbr>api-<wbr>sdk/feeds-<wbr>api-<wbr>2020-<wbr>09-<wbr>04</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#cancelfeedresponse" class="tsd-kind-icon">Cancel<wbr>Feed<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#cancelfeedresponse-1" class="tsd-kind-icon">Cancel<wbr>Feed<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#cancelfeedresponse-2" class="tsd-kind-icon">Cancel<wbr>Feed<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#clientparameters" class="tsd-kind-icon">Client<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#configuration" class="tsd-kind-icon">Configuration</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#configurationparameters" class="tsd-kind-icon">Configuration<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeeddocumentresponse" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeeddocumentresponse-1" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeeddocumentresponse-2" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeeddocumentresult" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeeddocumentresult-1" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeeddocumentresult-2" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeeddocumentspecification" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Specification</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeeddocumentspecification-1" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Specification</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeeddocumentspecification-2" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Specification</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeedresponse" class="tsd-kind-icon">Create<wbr>Feed<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeedresponse-1" class="tsd-kind-icon">Create<wbr>Feed<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeedresponse-2" class="tsd-kind-icon">Create<wbr>Feed<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeedresult" class="tsd-kind-icon">Create<wbr>Feed<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeedresult-1" class="tsd-kind-icon">Create<wbr>Feed<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeedresult-2" class="tsd-kind-icon">Create<wbr>Feed<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeedspecification" class="tsd-kind-icon">Create<wbr>Feed<wbr>Specification</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeedspecification-1" class="tsd-kind-icon">Create<wbr>Feed<wbr>Specification</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createfeedspecification-2" class="tsd-kind-icon">Create<wbr>Feed<wbr>Specification</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feed" class="tsd-kind-icon">Feed</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feed-1" class="tsd-kind-icon">Feed</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feed-2" class="tsd-kind-icon">Feed</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocument" class="tsd-kind-icon">Feed<wbr>Document</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocument-1" class="tsd-kind-icon">Feed<wbr>Document</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocument-2" class="tsd-kind-icon">Feed<wbr>Document</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocumentcompressionalgorithmenum" class="tsd-kind-icon">Feed<wbr>Document<wbr>Compression<wbr>Algorithm<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocumentcompressionalgorithmenum-1" class="tsd-kind-icon">Feed<wbr>Document<wbr>Compression<wbr>Algorithm<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocumentcompressionalgorithmenum-2" class="tsd-kind-icon">Feed<wbr>Document<wbr>Compression<wbr>Algorithm<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocumentencryptiondetails" class="tsd-kind-icon">Feed<wbr>Document<wbr>Encryption<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocumentencryptiondetails-1" class="tsd-kind-icon">Feed<wbr>Document<wbr>Encryption<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocumentencryptiondetails-2" class="tsd-kind-icon">Feed<wbr>Document<wbr>Encryption<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocumentencryptiondetailsstandardenum" class="tsd-kind-icon">Feed<wbr>Document<wbr>Encryption<wbr>Details<wbr>Standard<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocumentencryptiondetailsstandardenum-1" class="tsd-kind-icon">Feed<wbr>Document<wbr>Encryption<wbr>Details<wbr>Standard<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feeddocumentencryptiondetailsstandardenum-2" class="tsd-kind-icon">Feed<wbr>Document<wbr>Encryption<wbr>Details<wbr>Standard<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedprocessingstatusenum" class="tsd-kind-icon">Feed<wbr>Processing<wbr>Status<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedprocessingstatusenum-1" class="tsd-kind-icon">Feed<wbr>Processing<wbr>Status<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedprocessingstatusenum-2" class="tsd-kind-icon">Feed<wbr>Processing<wbr>Status<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapi" class="tsd-kind-icon">Feeds<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapi-1" class="tsd-kind-icon">Feeds<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapiaxiosparamcreator" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapiaxiosparamcreator-1" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapicancelfeedrequest" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Cancel<wbr>Feed<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapicancelfeedrequest-1" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Cancel<wbr>Feed<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapiclient" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Client</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapicreatefeeddocumentrequest" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Create<wbr>Feed<wbr>Document<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapicreatefeeddocumentrequest-1" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Create<wbr>Feed<wbr>Document<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapicreatefeedrequest" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Create<wbr>Feed<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapicreatefeedrequest-1" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Create<wbr>Feed<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapierror" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapifactory" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapifactory-1" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapifp" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Fp</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapifp-1" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Fp</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapigetfeeddocumentrequest" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Get<wbr>Feed<wbr>Document<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapigetfeeddocumentrequest-1" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Get<wbr>Feed<wbr>Document<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapigetfeedrequest" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Get<wbr>Feed<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapigetfeedrequest-1" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Get<wbr>Feed<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapigetfeedsrequest" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Get<wbr>Feeds<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapigetfeedsrequest-1" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Get<wbr>Feeds<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#getfeeddocumentresponse" class="tsd-kind-icon">Get<wbr>Feed<wbr>Document<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#getfeeddocumentresponse-1" class="tsd-kind-icon">Get<wbr>Feed<wbr>Document<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#getfeeddocumentresponse-2" class="tsd-kind-icon">Get<wbr>Feed<wbr>Document<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#getfeedresponse" class="tsd-kind-icon">Get<wbr>Feed<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#getfeedresponse-1" class="tsd-kind-icon">Get<wbr>Feed<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#getfeedresponse-2" class="tsd-kind-icon">Get<wbr>Feed<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#getfeedsresponse" class="tsd-kind-icon">Get<wbr>Feeds<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#getfeedsresponse-1" class="tsd-kind-icon">Get<wbr>Feeds<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#getfeedsresponse-2" class="tsd-kind-icon">Get<wbr>Feeds<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#modelerror" class="tsd-kind-icon">Model<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#modelerror-1" class="tsd-kind-icon">Model<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#modelerror-2" class="tsd-kind-icon">Model<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#rate_limits" class="tsd-kind-icon">RATE_<wbr>LIMITS</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_sp_api_sdk_feeds_api_2020_09_04.feeddocumentcompressionalgorithmenum-3.html" class="tsd-kind-icon">Feed<wbr>Document<wbr>Compression<wbr>Algorithm<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_sp_api_sdk_feeds_api_2020_09_04.feeddocumentencryptiondetailsstandardenum-3.html" class="tsd-kind-icon">Feed<wbr>Document<wbr>Encryption<wbr>Details<wbr>Standard<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_sp_api_sdk_feeds_api_2020_09_04.feedprocessingstatusenum-3.html" class="tsd-kind-icon">Feed<wbr>Processing<wbr>Status<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.baseapi.html" class="tsd-kind-icon">BaseAPI</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.configuration-1.html" class="tsd-kind-icon">Configuration</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.feedsapi-2.html" class="tsd-kind-icon">Feeds<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.feedsapiclient-1.html" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Client</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.feedsapierror-1.html" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_feeds_api_2020_09_04.requirederror.html" class="tsd-kind-icon">Required<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.cancelfeedresponse-3.html" class="tsd-kind-icon">Cancel<wbr>Feed<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.clientparameters-1.html" class="tsd-kind-icon">Client<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.configurationparameters-1.html" class="tsd-kind-icon">Configuration<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentresponse-3.html" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentresult-3.html" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeeddocumentspecification-3.html" class="tsd-kind-icon">Create<wbr>Feed<wbr>Document<wbr>Specification</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedresponse-3.html" class="tsd-kind-icon">Create<wbr>Feed<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedresult-3.html" class="tsd-kind-icon">Create<wbr>Feed<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.createfeedspecification-3.html" class="tsd-kind-icon">Create<wbr>Feed<wbr>Specification</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feed-3.html" class="tsd-kind-icon">Feed</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feeddocument-3.html" class="tsd-kind-icon">Feed<wbr>Document</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feeddocumentencryptiondetails-3.html" class="tsd-kind-icon">Feed<wbr>Document<wbr>Encryption<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapicancelfeedrequest-2.html" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Cancel<wbr>Feed<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapicreatefeeddocumentrequest-2.html" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Create<wbr>Feed<wbr>Document<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapicreatefeedrequest-2.html" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Create<wbr>Feed<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapigetfeeddocumentrequest-2.html" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Get<wbr>Feed<wbr>Document<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapigetfeedrequest-2.html" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Get<wbr>Feed<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.feedsapigetfeedsrequest-2.html" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Get<wbr>Feeds<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeeddocumentresponse-3.html" class="tsd-kind-icon">Get<wbr>Feed<wbr>Document<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeedresponse-3.html" class="tsd-kind-icon">Get<wbr>Feed<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.getfeedsresponse-3.html" class="tsd-kind-icon">Get<wbr>Feeds<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.modelerror-3.html" class="tsd-kind-icon">Model<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_feeds_api_2020_09_04.requestargs.html" class="tsd-kind-icon">Request<wbr>Args</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#base_path" class="tsd-kind-icon">BASE_<wbr>PATH</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#dummy_base_url" class="tsd-kind-icon">DUMMY_<wbr>BASE_<wbr>URL</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#rate_limits-1" class="tsd-kind-icon">RATE_<wbr>LIMITS</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapiaxiosparamcreator-2" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapifactory-2" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#feedsapifp-2" class="tsd-kind-icon">Feeds<wbr>Api<wbr>Fp</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#assertparamexists" class="tsd-kind-icon">assert<wbr>Param<wbr>Exists</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#createrequestfunction" class="tsd-kind-icon">create<wbr>Request<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#serializedataifneeded" class="tsd-kind-icon">serialize<wbr>Data<wbr>IfNeeded</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#setapikeytoobject" class="tsd-kind-icon">set<wbr>Api<wbr>Key<wbr>ToObject</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#setbasicauthtoobject" class="tsd-kind-icon">set<wbr>Basic<wbr>Auth<wbr>ToObject</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#setbearerauthtoobject" class="tsd-kind-icon">set<wbr>Bearer<wbr>Auth<wbr>ToObject</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#setoauthtoobject" class="tsd-kind-icon">setOAuth<wbr>ToObject</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#setsearchparams" class="tsd-kind-icon">set<wbr>Search<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#topathstring" class="tsd-kind-icon">to<wbr>Path<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module">
+						<a href="_sp_api_sdk_feeds_api_2020_09_04.html#collection_formats" class="tsd-kind-icon">COLLECTION_<wbr>FORMATS</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

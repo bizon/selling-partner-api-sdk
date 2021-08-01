@@ -1,0 +1,1547 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@sp-api-sdk/fba-inventory-api-v1 | Selling Partner API SDK for JavaScript</title>
+	<meta name="description" content="Documentation for Selling Partner API SDK for JavaScript">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">Selling Partner API SDK for JavaScript</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="_sp_api_sdk_fba_inventory_api_v1.html">@sp-api-sdk/fba-inventory-api-v1</a>
+				</li>
+			</ul>
+			<h1>Module @sp-api-sdk/fba-inventory-api-v1</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<a href="#fba-inventory-api-v1" id="fba-inventory-api-v1" style="color: inherit; text-decoration: none;">
+						<h1><code>fba-inventory-api-v1</code></h1>
+					</a>
+					<p>The Selling Partner API for FBA Inventory lets you programmatically retrieve information about inventory in Amazon&#39;s fulfillment network.</p>
+					<a href="#installing" id="installing" style="color: inherit; text-decoration: none;">
+						<h2>Installing</h2>
+					</a>
+					<pre><code class="language-sh">yarn add @sp-api-sdk/fba-inventory-api-v1
+</code></pre>
+					<pre><code class="language-sh">npm install @sp-api-sdk/fba-inventory-api-v1
+</code></pre>
+					<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+						<h2>Getting Started</h2>
+					</a>
+					<pre><code class="language-javascript"><span class="hljs-keyword">import</span> {SellingPartnerApiAuth} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@sp-api-sdk/auth&#x27;</span>
+<span class="hljs-keyword">import</span> {FbaInventoryApiClient} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@sp-api-sdk/fba-inventory-api-v1&#x27;</span>
+
+<span class="hljs-keyword">const</span> auth = <span class="hljs-keyword">new</span> SellingPartnerApiAuth({
+  <span class="hljs-attr">clientId</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">clientSecret</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">refreshToken</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">secretAccessKey</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">accessKeyId</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">region</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">role</span>: {
+    <span class="hljs-attr">arn</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  }
+})
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> FbaInventoryApiClient({
+  auth,
+  <span class="hljs-attr">region</span>: <span class="hljs-string">&#x27;eu&#x27;</span> <span class="hljs-comment">// or &#x27;eu-west-1&#x27;</span>
+})
+</code></pre>
+					<a href="#handle-rate-limiting" id="handle-rate-limiting" style="color: inherit; text-decoration: none;">
+						<h2>Handle Rate Limiting</h2>
+					</a>
+					<p>If you want to let the SDK retry after each 429 responses, instanciate the client like this:</p>
+					<pre><code class="language-javascript"><span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> FbaInventoryApiClient({
+  auth,
+  <span class="hljs-attr">region</span>: <span class="hljs-string">&#x27;eu&#x27;</span>,
+  <span class="hljs-attr">rateLimiting</span>: {
+    <span class="hljs-attr">retry</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">onRetry</span>: <span class="hljs-function">(<span class="hljs-params">retryInfo</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(retryInfo) <span class="hljs-comment">// Optional</span>
+  }
+})
+</code></pre>
+					<p>The SDK gets the rate limits for each routes from the API documentation</p>
+					<a href="#api-documentation" id="api-documentation" style="color: inherit; text-decoration: none;">
+						<h2>API documentation</h2>
+					</a>
+					<p>See <a href="https://github.com/amzn/selling-partner-api-docs/tree/main/references/fba-inventory-api/fbaInventory.md">here</a></p>
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>References</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#clientparameters" class="tsd-kind-icon">Client<wbr>Parameters</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#configuration" class="tsd-kind-icon">Configuration</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#configurationparameters" class="tsd-kind-icon">Configuration<wbr>Parameters</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapi" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapi-1" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapiaxiosparamcreator" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapiaxiosparamcreator-1" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapiclient" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Client</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapierror" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Error</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapifactory" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Factory</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapifactory-1" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Factory</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapifp" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Fp</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapifp-1" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Fp</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapigetinventorysummariesrequest" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Get<wbr>Inventory<wbr>Summaries<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapigetinventorysummariesrequest-1" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Get<wbr>Inventory<wbr>Summaries<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#getinventorysummariesresponse" class="tsd-kind-icon">Get<wbr>Inventory<wbr>Summaries<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#getinventorysummariesresponse-1" class="tsd-kind-icon">Get<wbr>Inventory<wbr>Summaries<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#getinventorysummariesresponse-2" class="tsd-kind-icon">Get<wbr>Inventory<wbr>Summaries<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#getinventorysummariesresult" class="tsd-kind-icon">Get<wbr>Inventory<wbr>Summaries<wbr>Result</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#getinventorysummariesresult-1" class="tsd-kind-icon">Get<wbr>Inventory<wbr>Summaries<wbr>Result</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#getinventorysummariesresult-2" class="tsd-kind-icon">Get<wbr>Inventory<wbr>Summaries<wbr>Result</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#granularity" class="tsd-kind-icon">Granularity</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#granularity-1" class="tsd-kind-icon">Granularity</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#granularity-2" class="tsd-kind-icon">Granularity</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#inventorydetails" class="tsd-kind-icon">Inventory<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#inventorydetails-1" class="tsd-kind-icon">Inventory<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#inventorydetails-2" class="tsd-kind-icon">Inventory<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#inventorysummary" class="tsd-kind-icon">Inventory<wbr>Summary</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#inventorysummary-1" class="tsd-kind-icon">Inventory<wbr>Summary</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#inventorysummary-2" class="tsd-kind-icon">Inventory<wbr>Summary</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#modelerror" class="tsd-kind-icon">Model<wbr>Error</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#modelerror-1" class="tsd-kind-icon">Model<wbr>Error</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#modelerror-2" class="tsd-kind-icon">Model<wbr>Error</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#pagination" class="tsd-kind-icon">Pagination</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#pagination-1" class="tsd-kind-icon">Pagination</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#pagination-2" class="tsd-kind-icon">Pagination</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#rate_limits" class="tsd-kind-icon">RATE_<wbr>LIMITS</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#researchingquantity" class="tsd-kind-icon">Researching<wbr>Quantity</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#researchingquantity-1" class="tsd-kind-icon">Researching<wbr>Quantity</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#researchingquantity-2" class="tsd-kind-icon">Researching<wbr>Quantity</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#researchingquantityentry" class="tsd-kind-icon">Researching<wbr>Quantity<wbr>Entry</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#researchingquantityentry-1" class="tsd-kind-icon">Researching<wbr>Quantity<wbr>Entry</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#researchingquantityentry-2" class="tsd-kind-icon">Researching<wbr>Quantity<wbr>Entry</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#researchingquantityentrynameenum" class="tsd-kind-icon">Researching<wbr>Quantity<wbr>Entry<wbr>Name<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#researchingquantityentrynameenum-1" class="tsd-kind-icon">Researching<wbr>Quantity<wbr>Entry<wbr>Name<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#researchingquantityentrynameenum-2" class="tsd-kind-icon">Researching<wbr>Quantity<wbr>Entry<wbr>Name<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#reservedquantity" class="tsd-kind-icon">Reserved<wbr>Quantity</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#reservedquantity-1" class="tsd-kind-icon">Reserved<wbr>Quantity</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#reservedquantity-2" class="tsd-kind-icon">Reserved<wbr>Quantity</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#unfulfillablequantity" class="tsd-kind-icon">Unfulfillable<wbr>Quantity</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#unfulfillablequantity-1" class="tsd-kind-icon">Unfulfillable<wbr>Quantity</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#unfulfillablequantity-2" class="tsd-kind-icon">Unfulfillable<wbr>Quantity</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_sp_api_sdk_fba_inventory_api_v1.researchingquantityentrynameenum-3.html" class="tsd-kind-icon">Researching<wbr>Quantity<wbr>Entry<wbr>Name<wbr>Enum</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_fba_inventory_api_v1.baseapi.html" class="tsd-kind-icon">BaseAPI</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-kind-icon">Configuration</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_fba_inventory_api_v1.fbainventoryapi-2.html" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_fba_inventory_api_v1.fbainventoryapiclient-1.html" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Client</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_fba_inventory_api_v1.fbainventoryapierror-1.html" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Error</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_fba_inventory_api_v1.requirederror.html" class="tsd-kind-icon">Required<wbr>Error</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.clientparameters-1.html" class="tsd-kind-icon">Client<wbr>Parameters</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.configurationparameters-1.html" class="tsd-kind-icon">Configuration<wbr>Parameters</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.fbainventoryapigetinventorysummariesrequest-2.html" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Get<wbr>Inventory<wbr>Summaries<wbr>Request</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.getinventorysummariesresponse-3.html" class="tsd-kind-icon">Get<wbr>Inventory<wbr>Summaries<wbr>Response</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.getinventorysummariesresult-3.html" class="tsd-kind-icon">Get<wbr>Inventory<wbr>Summaries<wbr>Result</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.granularity-3.html" class="tsd-kind-icon">Granularity</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.inventorydetails-3.html" class="tsd-kind-icon">Inventory<wbr>Details</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.inventorysummary-3.html" class="tsd-kind-icon">Inventory<wbr>Summary</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.modelerror-3.html" class="tsd-kind-icon">Model<wbr>Error</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.pagination-3.html" class="tsd-kind-icon">Pagination</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.requestargs.html" class="tsd-kind-icon">Request<wbr>Args</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.researchingquantity-3.html" class="tsd-kind-icon">Researching<wbr>Quantity</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.researchingquantityentry-3.html" class="tsd-kind-icon">Researching<wbr>Quantity<wbr>Entry</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.reservedquantity-3.html" class="tsd-kind-icon">Reserved<wbr>Quantity</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.unfulfillablequantity-3.html" class="tsd-kind-icon">Unfulfillable<wbr>Quantity</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#base_path" class="tsd-kind-icon">BASE_<wbr>PATH</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#dummy_base_url" class="tsd-kind-icon">DUMMY_<wbr>BASE_<wbr>URL</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#rate_limits-1" class="tsd-kind-icon">RATE_<wbr>LIMITS</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapiaxiosparamcreator-2" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapifactory-2" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Factory</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapifp-2" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Fp</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#assertparamexists" class="tsd-kind-icon">assert<wbr>Param<wbr>Exists</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#createrequestfunction" class="tsd-kind-icon">create<wbr>Request<wbr>Function</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#serializedataifneeded" class="tsd-kind-icon">serialize<wbr>Data<wbr>IfNeeded</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#setapikeytoobject" class="tsd-kind-icon">set<wbr>Api<wbr>Key<wbr>ToObject</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#setbasicauthtoobject" class="tsd-kind-icon">set<wbr>Basic<wbr>Auth<wbr>ToObject</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#setbearerauthtoobject" class="tsd-kind-icon">set<wbr>Bearer<wbr>Auth<wbr>ToObject</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#setoauthtoobject" class="tsd-kind-icon">setOAuth<wbr>ToObject</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#setsearchparams" class="tsd-kind-icon">set<wbr>Search<wbr>Params</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#topathstring" class="tsd-kind-icon">to<wbr>Path<wbr>String</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="_sp_api_sdk_fba_inventory_api_v1.html#collection_formats" class="tsd-kind-icon">COLLECTION_<wbr>FORMATS</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>References</h2>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="clientparameters" class="tsd-anchor"></a>
+					<h3>Client<wbr>Parameters</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.clientparameters-1.html">ClientParameters</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="configuration" class="tsd-anchor"></a>
+					<h3>Configuration</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html">Configuration</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="configurationparameters" class="tsd-anchor"></a>
+					<h3>Configuration<wbr>Parameters</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.configurationparameters-1.html">ConfigurationParameters</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="fbainventoryapi" class="tsd-anchor"></a>
+					<h3>Fba<wbr>Inventory<wbr>Api</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_fba_inventory_api_v1.fbainventoryapi-2.html">FbaInventoryApi</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="fbainventoryapi-1" class="tsd-anchor"></a>
+					<h3>Fba<wbr>Inventory<wbr>Api</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_fba_inventory_api_v1.fbainventoryapi-2.html">FbaInventoryApi</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="fbainventoryapiaxiosparamcreator" class="tsd-anchor"></a>
+					<h3>Fba<wbr>Inventory<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</h3>
+					Re-exports <a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapiaxiosparamcreator-2">FbaInventoryApiAxiosParamCreator</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="fbainventoryapiaxiosparamcreator-1" class="tsd-anchor"></a>
+					<h3>Fba<wbr>Inventory<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</h3>
+					Re-exports <a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapiaxiosparamcreator-2">FbaInventoryApiAxiosParamCreator</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="fbainventoryapiclient" class="tsd-anchor"></a>
+					<h3>Fba<wbr>Inventory<wbr>Api<wbr>Client</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_fba_inventory_api_v1.fbainventoryapiclient-1.html">FbaInventoryApiClient</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="fbainventoryapierror" class="tsd-anchor"></a>
+					<h3>Fba<wbr>Inventory<wbr>Api<wbr>Error</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_fba_inventory_api_v1.fbainventoryapierror-1.html">FbaInventoryApiError</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="fbainventoryapifactory" class="tsd-anchor"></a>
+					<h3>Fba<wbr>Inventory<wbr>Api<wbr>Factory</h3>
+					Re-exports <a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapifactory-2">FbaInventoryApiFactory</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="fbainventoryapifactory-1" class="tsd-anchor"></a>
+					<h3>Fba<wbr>Inventory<wbr>Api<wbr>Factory</h3>
+					Re-exports <a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapifactory-2">FbaInventoryApiFactory</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="fbainventoryapifp" class="tsd-anchor"></a>
+					<h3>Fba<wbr>Inventory<wbr>Api<wbr>Fp</h3>
+					Re-exports <a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapifp-2">FbaInventoryApiFp</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="fbainventoryapifp-1" class="tsd-anchor"></a>
+					<h3>Fba<wbr>Inventory<wbr>Api<wbr>Fp</h3>
+					Re-exports <a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapifp-2">FbaInventoryApiFp</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="fbainventoryapigetinventorysummariesrequest" class="tsd-anchor"></a>
+					<h3>Fba<wbr>Inventory<wbr>Api<wbr>Get<wbr>Inventory<wbr>Summaries<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.fbainventoryapigetinventorysummariesrequest-2.html">FbaInventoryApiGetInventorySummariesRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="fbainventoryapigetinventorysummariesrequest-1" class="tsd-anchor"></a>
+					<h3>Fba<wbr>Inventory<wbr>Api<wbr>Get<wbr>Inventory<wbr>Summaries<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.fbainventoryapigetinventorysummariesrequest-2.html">FbaInventoryApiGetInventorySummariesRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="getinventorysummariesresponse" class="tsd-anchor"></a>
+					<h3>Get<wbr>Inventory<wbr>Summaries<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.getinventorysummariesresponse-3.html">GetInventorySummariesResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="getinventorysummariesresponse-1" class="tsd-anchor"></a>
+					<h3>Get<wbr>Inventory<wbr>Summaries<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.getinventorysummariesresponse-3.html">GetInventorySummariesResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="getinventorysummariesresponse-2" class="tsd-anchor"></a>
+					<h3>Get<wbr>Inventory<wbr>Summaries<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.getinventorysummariesresponse-3.html">GetInventorySummariesResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="getinventorysummariesresult" class="tsd-anchor"></a>
+					<h3>Get<wbr>Inventory<wbr>Summaries<wbr>Result</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.getinventorysummariesresult-3.html">GetInventorySummariesResult</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="getinventorysummariesresult-1" class="tsd-anchor"></a>
+					<h3>Get<wbr>Inventory<wbr>Summaries<wbr>Result</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.getinventorysummariesresult-3.html">GetInventorySummariesResult</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="getinventorysummariesresult-2" class="tsd-anchor"></a>
+					<h3>Get<wbr>Inventory<wbr>Summaries<wbr>Result</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.getinventorysummariesresult-3.html">GetInventorySummariesResult</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="granularity" class="tsd-anchor"></a>
+					<h3>Granularity</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.granularity-3.html">Granularity</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="granularity-1" class="tsd-anchor"></a>
+					<h3>Granularity</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.granularity-3.html">Granularity</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="granularity-2" class="tsd-anchor"></a>
+					<h3>Granularity</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.granularity-3.html">Granularity</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="inventorydetails" class="tsd-anchor"></a>
+					<h3>Inventory<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.inventorydetails-3.html">InventoryDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="inventorydetails-1" class="tsd-anchor"></a>
+					<h3>Inventory<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.inventorydetails-3.html">InventoryDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="inventorydetails-2" class="tsd-anchor"></a>
+					<h3>Inventory<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.inventorydetails-3.html">InventoryDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="inventorysummary" class="tsd-anchor"></a>
+					<h3>Inventory<wbr>Summary</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.inventorysummary-3.html">InventorySummary</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="inventorysummary-1" class="tsd-anchor"></a>
+					<h3>Inventory<wbr>Summary</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.inventorysummary-3.html">InventorySummary</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="inventorysummary-2" class="tsd-anchor"></a>
+					<h3>Inventory<wbr>Summary</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.inventorysummary-3.html">InventorySummary</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="modelerror" class="tsd-anchor"></a>
+					<h3>Model<wbr>Error</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.modelerror-3.html">ModelError</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="modelerror-1" class="tsd-anchor"></a>
+					<h3>Model<wbr>Error</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.modelerror-3.html">ModelError</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="modelerror-2" class="tsd-anchor"></a>
+					<h3>Model<wbr>Error</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.modelerror-3.html">ModelError</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="pagination" class="tsd-anchor"></a>
+					<h3>Pagination</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.pagination-3.html">Pagination</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="pagination-1" class="tsd-anchor"></a>
+					<h3>Pagination</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.pagination-3.html">Pagination</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="pagination-2" class="tsd-anchor"></a>
+					<h3>Pagination</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.pagination-3.html">Pagination</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="rate_limits" class="tsd-anchor"></a>
+					<h3>RATE_<wbr>LIMITS</h3>
+					Re-exports <a href="_sp_api_sdk_fba_inventory_api_v1.html#rate_limits-1">RATE_LIMITS</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="researchingquantity" class="tsd-anchor"></a>
+					<h3>Researching<wbr>Quantity</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.researchingquantity-3.html">ResearchingQuantity</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="researchingquantity-1" class="tsd-anchor"></a>
+					<h3>Researching<wbr>Quantity</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.researchingquantity-3.html">ResearchingQuantity</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="researchingquantity-2" class="tsd-anchor"></a>
+					<h3>Researching<wbr>Quantity</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.researchingquantity-3.html">ResearchingQuantity</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="researchingquantityentry" class="tsd-anchor"></a>
+					<h3>Researching<wbr>Quantity<wbr>Entry</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.researchingquantityentry-3.html">ResearchingQuantityEntry</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="researchingquantityentry-1" class="tsd-anchor"></a>
+					<h3>Researching<wbr>Quantity<wbr>Entry</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.researchingquantityentry-3.html">ResearchingQuantityEntry</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="researchingquantityentry-2" class="tsd-anchor"></a>
+					<h3>Researching<wbr>Quantity<wbr>Entry</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.researchingquantityentry-3.html">ResearchingQuantityEntry</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="researchingquantityentrynameenum" class="tsd-anchor"></a>
+					<h3>Researching<wbr>Quantity<wbr>Entry<wbr>Name<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_fba_inventory_api_v1.researchingquantityentrynameenum-3.html">ResearchingQuantityEntryNameEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="researchingquantityentrynameenum-1" class="tsd-anchor"></a>
+					<h3>Researching<wbr>Quantity<wbr>Entry<wbr>Name<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_fba_inventory_api_v1.researchingquantityentrynameenum-3.html">ResearchingQuantityEntryNameEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="researchingquantityentrynameenum-2" class="tsd-anchor"></a>
+					<h3>Researching<wbr>Quantity<wbr>Entry<wbr>Name<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_fba_inventory_api_v1.researchingquantityentrynameenum-3.html">ResearchingQuantityEntryNameEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="reservedquantity" class="tsd-anchor"></a>
+					<h3>Reserved<wbr>Quantity</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.reservedquantity-3.html">ReservedQuantity</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="reservedquantity-1" class="tsd-anchor"></a>
+					<h3>Reserved<wbr>Quantity</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.reservedquantity-3.html">ReservedQuantity</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="reservedquantity-2" class="tsd-anchor"></a>
+					<h3>Reserved<wbr>Quantity</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.reservedquantity-3.html">ReservedQuantity</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="unfulfillablequantity" class="tsd-anchor"></a>
+					<h3>Unfulfillable<wbr>Quantity</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.unfulfillablequantity-3.html">UnfulfillableQuantity</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="unfulfillablequantity-1" class="tsd-anchor"></a>
+					<h3>Unfulfillable<wbr>Quantity</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.unfulfillablequantity-3.html">UnfulfillableQuantity</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="unfulfillablequantity-2" class="tsd-anchor"></a>
+					<h3>Unfulfillable<wbr>Quantity</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.unfulfillablequantity-3.html">UnfulfillableQuantity</a>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="base_path" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> BASE_<wbr>PATH</h3>
+					<div class="tsd-signature tsd-kind-icon">BASE_<wbr>PATH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://sellingpartnerapi-na.amazon.com&quot;.replace(/\/+$/, &quot;&quot;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/base.ts#L21">clients/fba-inventory-api-v1/src/api-model/base.ts:21</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="dummy_base_url" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> DUMMY_<wbr>BASE_<wbr>URL</h3>
+					<div class="tsd-signature tsd-kind-icon">DUMMY_<wbr>BASE_<wbr>URL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"https://example.com"</span><span class="tsd-signature-symbol"> = &quot;https://example.com&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/common.ts#L24">clients/fba-inventory-api-v1/src/api-model/common.ts:24</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>export</dt>
+							<dd></dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="rate_limits-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> RATE_<wbr>LIMITS</h3>
+					<div class="tsd-signature tsd-kind-icon">RATE_<wbr>LIMITS<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_sp_api_sdk_common.ratelimit-3.html" class="tsd-signature-type">RateLimit</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [{method: &#x27;get&#x27;,urlRegex: new RegExp(&#x27;^/fba/inventory/v1/summaries$&#x27;),rate: 5,burst: 10}]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/client.ts#L8">clients/fba-inventory-api-v1/src/client.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="fbainventoryapiaxiosparamcreator-2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Fba<wbr>Inventory<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator<span class="tsd-signature-symbol">(</span>configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>getInventorySummaries<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/api/fba-inventory-api.ts#L29">clients/fba-inventory-api-v1/src/api-model/api/fba-inventory-api.ts:29</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>FbaInventoryApi - axios parameter creator</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>getInventorySummaries<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>get<wbr>Inventory<wbr>Summaries<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">get<wbr>Inventory<wbr>Summaries<span class="tsd-signature-symbol">(</span>granularityType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"Marketplace"</span>, granularityId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, marketplaceIds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, details<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span>, startDateTime<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, sellerSkus<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, nextToken<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/api/fba-inventory-api.ts#L43">clients/fba-inventory-api-v1/src/api-model/api/fba-inventory-api.ts:43</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the startDateTime and sellerSkus parameters:  - All inventory summaries with available details are returned when the startDateTime and sellerSkus parameters are omitted. - When startDateTime is provided, the operation returns inventory summaries that have had changes after the date and time specified. The sellerSkus parameter is ignored. - When the sellerSkus parameter is provided, the operation returns inventory summaries for only the specified sellerSkus.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>granularityType: <span class="tsd-signature-type">"Marketplace"</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<div class="lead">
+															<p>The granularity type for the inventory aggregation level.</p>
+														</div>
+													</div>
+												</li>
+												<li>
+													<h5>granularityId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<div class="lead">
+															<p>The granularity ID for the inventory aggregation level.</p>
+														</div>
+													</div>
+												</li>
+												<li>
+													<h5>marketplaceIds: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<div class="lead">
+															<p>The marketplace ID for the marketplace for which to return inventory summaries.</p>
+														</div>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> details: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> startDateTime: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> sellerSkus: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> nextToken: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = {}</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="fbainventoryapifactory-2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Fba<wbr>Inventory<wbr>Api<wbr>Factory</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Factory<span class="tsd-signature-symbol">(</span>configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>getInventorySummaries<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/api/fba-inventory-api.ts#L136">clients/fba-inventory-api-v1/src/api-model/api/fba-inventory-api.ts:136</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>FbaInventoryApi - factory interface</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> basePath: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> axios: <span class="tsd-signature-type">AxiosInstance</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>getInventorySummaries<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>get<wbr>Inventory<wbr>Summaries<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">get<wbr>Inventory<wbr>Summaries<span class="tsd-signature-symbol">(</span>granularityType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"Marketplace"</span>, granularityId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, marketplaceIds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, details<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span>, startDateTime<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, sellerSkus<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, nextToken<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.getinventorysummariesresponse-3.html" class="tsd-signature-type">GetInventorySummariesResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/api/fba-inventory-api.ts#L151">clients/fba-inventory-api-v1/src/api-model/api/fba-inventory-api.ts:151</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the startDateTime and sellerSkus parameters:  - All inventory summaries with available details are returned when the startDateTime and sellerSkus parameters are omitted. - When startDateTime is provided, the operation returns inventory summaries that have had changes after the date and time specified. The sellerSkus parameter is ignored. - When the sellerSkus parameter is provided, the operation returns inventory summaries for only the specified sellerSkus.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>granularityType: <span class="tsd-signature-type">"Marketplace"</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>The granularity type for the inventory aggregation level.</p>
+													</div>
+												</li>
+												<li>
+													<h5>granularityId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>The granularity ID for the inventory aggregation level.</p>
+													</div>
+												</li>
+												<li>
+													<h5>marketplaceIds: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>The marketplace ID for the marketplace for which to return inventory summaries.</p>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> details: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> startDateTime: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> sellerSkus: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> nextToken: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.getinventorysummariesresponse-3.html" class="tsd-signature-type">GetInventorySummariesResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="fbainventoryapifp-2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Fba<wbr>Inventory<wbr>Api<wbr>Fp</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Fp<span class="tsd-signature-symbol">(</span>configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>getInventorySummaries<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/api/fba-inventory-api.ts#L110">clients/fba-inventory-api-v1/src/api-model/api/fba-inventory-api.ts:110</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>FbaInventoryApi - functional programming interface</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>getInventorySummaries<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>get<wbr>Inventory<wbr>Summaries<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">get<wbr>Inventory<wbr>Summaries<span class="tsd-signature-symbol">(</span>granularityType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"Marketplace"</span>, granularityId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, marketplaceIds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, details<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span>, startDateTime<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, sellerSkus<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, nextToken<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.getinventorysummariesresponse-3.html" class="tsd-signature-type">GetInventorySummariesResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/api/fba-inventory-api.ts#L125">clients/fba-inventory-api-v1/src/api-model/api/fba-inventory-api.ts:125</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the startDateTime and sellerSkus parameters:  - All inventory summaries with available details are returned when the startDateTime and sellerSkus parameters are omitted. - When startDateTime is provided, the operation returns inventory summaries that have had changes after the date and time specified. The sellerSkus parameter is ignored. - When the sellerSkus parameter is provided, the operation returns inventory summaries for only the specified sellerSkus.  <strong>Usage Plan:</strong>  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>granularityType: <span class="tsd-signature-type">"Marketplace"</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>The granularity type for the inventory aggregation level.</p>
+													</div>
+												</li>
+												<li>
+													<h5>granularityId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>The granularity ID for the inventory aggregation level.</p>
+													</div>
+												</li>
+												<li>
+													<h5>marketplaceIds: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>The marketplace ID for the marketplace for which to return inventory summaries.</p>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> details: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> startDateTime: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> sellerSkus: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> nextToken: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.getinventorysummariesresponse-3.html" class="tsd-signature-type">GetInventorySummariesResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="assertparamexists" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> assert<wbr>Param<wbr>Exists</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">assert<wbr>Param<wbr>Exists<span class="tsd-signature-symbol">(</span>functionName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, paramName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, paramValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/common.ts#L31">clients/fba-inventory-api-v1/src/api-model/common.ts:31</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>{RequiredError}</p>
+									</dd>
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>functionName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>paramName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>paramValue: <span class="tsd-signature-type">unknown</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createrequestfunction" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> create<wbr>Request<wbr>Function</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Request<wbr>Function<span class="tsd-signature-symbol">(</span>axiosArgs<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.requestargs.html" class="tsd-signature-type">RequestArgs</a>, globalAxios<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosInstance</span>, BASE_PATH<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/common.ts#L133">clients/fba-inventory-api-v1/src/api-model/common.ts:133</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>axiosArgs: <a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.requestargs.html" class="tsd-signature-type">RequestArgs</a></h5>
+								</li>
+								<li>
+									<h5>globalAxios: <span class="tsd-signature-type">AxiosInstance</span></h5>
+								</li>
+								<li>
+									<h5>BASE_PATH: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous function)</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="serializedataifneeded" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> serialize<wbr>Data<wbr>IfNeeded</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">serialize<wbr>Data<wbr>IfNeeded<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, requestOptions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/common.ts#L111">clients/fba-inventory-api-v1/src/api-model/common.ts:111</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>requestOptions: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setapikeytoobject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Api<wbr>Key<wbr>ToObject</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Api<wbr>Key<wbr>ToObject<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, keyParamName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/common.ts#L41">clients/fba-inventory-api-v1/src/api-model/common.ts:41</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>keyParamName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setbasicauthtoobject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Basic<wbr>Auth<wbr>ToObject</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Basic<wbr>Auth<wbr>ToObject<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/common.ts#L54">clients/fba-inventory-api-v1/src/api-model/common.ts:54</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setbearerauthtoobject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Bearer<wbr>Auth<wbr>ToObject</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Bearer<wbr>Auth<wbr>ToObject<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/common.ts#L64">clients/fba-inventory-api-v1/src/api-model/common.ts:64</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setoauthtoobject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> setOAuth<wbr>ToObject</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">setOAuth<wbr>ToObject<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, scopes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/common.ts#L77">clients/fba-inventory-api-v1/src/api-model/common.ts:77</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>scopes: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setsearchparams" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Search<wbr>Params</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Search<wbr>Params<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">URL</span>, <span class="tsd-signature-symbol">...</span>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/common.ts#L90">clients/fba-inventory-api-v1/src/api-model/common.ts:90</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>url: <span class="tsd-signature-type">URL</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>objects: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="topathstring" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> to<wbr>Path<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Path<wbr>String<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">URL</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/common.ts#L125">clients/fba-inventory-api-v1/src/api-model/common.ts:125</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>url: <span class="tsd-signature-type">URL</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="collection_formats" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> COLLECTION_<wbr>FORMATS</h3>
+					<div class="tsd-signature tsd-kind-icon">COLLECTION_<wbr>FORMATS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/base.ts#L27">clients/fba-inventory-api-v1/src/api-model/base.ts:27</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>export</dt>
+							<dd></dd>
+						</dl>
+					</div>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="collection_formats.csv" class="tsd-anchor"></a>
+						<h3>csv</h3>
+						<div class="tsd-signature tsd-kind-icon">csv<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;,&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/base.ts#L28">clients/fba-inventory-api-v1/src/api-model/base.ts:28</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="collection_formats.pipes" class="tsd-anchor"></a>
+						<h3>pipes</h3>
+						<div class="tsd-signature tsd-kind-icon">pipes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;|&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/base.ts#L31">clients/fba-inventory-api-v1/src/api-model/base.ts:31</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="collection_formats.ssv" class="tsd-anchor"></a>
+						<h3>ssv</h3>
+						<div class="tsd-signature tsd-kind-icon">ssv<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot; &quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/base.ts#L29">clients/fba-inventory-api-v1/src/api-model/base.ts:29</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="collection_formats.tsv" class="tsd-anchor"></a>
+						<h3>tsv</h3>
+						<div class="tsd-signature tsd-kind-icon">tsv<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;	&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/fba-inventory-api-v1/src/api-model/base.ts#L30">clients/fba-inventory-api-v1/src/api-model/base.ts:30</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html">@sp-<wbr>api-<wbr>sdk/fba-<wbr>inventory-<wbr>api-<wbr>v1</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#clientparameters" class="tsd-kind-icon">Client<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#configuration" class="tsd-kind-icon">Configuration</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#configurationparameters" class="tsd-kind-icon">Configuration<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapi" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapi-1" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapiaxiosparamcreator" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapiaxiosparamcreator-1" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapiclient" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Client</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapierror" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapifactory" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapifactory-1" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapifp" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Fp</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapifp-1" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Fp</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapigetinventorysummariesrequest" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Get<wbr>Inventory<wbr>Summaries<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapigetinventorysummariesrequest-1" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Get<wbr>Inventory<wbr>Summaries<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#getinventorysummariesresponse" class="tsd-kind-icon">Get<wbr>Inventory<wbr>Summaries<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#getinventorysummariesresponse-1" class="tsd-kind-icon">Get<wbr>Inventory<wbr>Summaries<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#getinventorysummariesresponse-2" class="tsd-kind-icon">Get<wbr>Inventory<wbr>Summaries<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#getinventorysummariesresult" class="tsd-kind-icon">Get<wbr>Inventory<wbr>Summaries<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#getinventorysummariesresult-1" class="tsd-kind-icon">Get<wbr>Inventory<wbr>Summaries<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#getinventorysummariesresult-2" class="tsd-kind-icon">Get<wbr>Inventory<wbr>Summaries<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#granularity" class="tsd-kind-icon">Granularity</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#granularity-1" class="tsd-kind-icon">Granularity</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#granularity-2" class="tsd-kind-icon">Granularity</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#inventorydetails" class="tsd-kind-icon">Inventory<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#inventorydetails-1" class="tsd-kind-icon">Inventory<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#inventorydetails-2" class="tsd-kind-icon">Inventory<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#inventorysummary" class="tsd-kind-icon">Inventory<wbr>Summary</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#inventorysummary-1" class="tsd-kind-icon">Inventory<wbr>Summary</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#inventorysummary-2" class="tsd-kind-icon">Inventory<wbr>Summary</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#modelerror" class="tsd-kind-icon">Model<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#modelerror-1" class="tsd-kind-icon">Model<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#modelerror-2" class="tsd-kind-icon">Model<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#pagination" class="tsd-kind-icon">Pagination</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#pagination-1" class="tsd-kind-icon">Pagination</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#pagination-2" class="tsd-kind-icon">Pagination</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#rate_limits" class="tsd-kind-icon">RATE_<wbr>LIMITS</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#researchingquantity" class="tsd-kind-icon">Researching<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#researchingquantity-1" class="tsd-kind-icon">Researching<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#researchingquantity-2" class="tsd-kind-icon">Researching<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#researchingquantityentry" class="tsd-kind-icon">Researching<wbr>Quantity<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#researchingquantityentry-1" class="tsd-kind-icon">Researching<wbr>Quantity<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#researchingquantityentry-2" class="tsd-kind-icon">Researching<wbr>Quantity<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#researchingquantityentrynameenum" class="tsd-kind-icon">Researching<wbr>Quantity<wbr>Entry<wbr>Name<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#researchingquantityentrynameenum-1" class="tsd-kind-icon">Researching<wbr>Quantity<wbr>Entry<wbr>Name<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#researchingquantityentrynameenum-2" class="tsd-kind-icon">Researching<wbr>Quantity<wbr>Entry<wbr>Name<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#reservedquantity" class="tsd-kind-icon">Reserved<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#reservedquantity-1" class="tsd-kind-icon">Reserved<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#reservedquantity-2" class="tsd-kind-icon">Reserved<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#unfulfillablequantity" class="tsd-kind-icon">Unfulfillable<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#unfulfillablequantity-1" class="tsd-kind-icon">Unfulfillable<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#unfulfillablequantity-2" class="tsd-kind-icon">Unfulfillable<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_sp_api_sdk_fba_inventory_api_v1.researchingquantityentrynameenum-3.html" class="tsd-kind-icon">Researching<wbr>Quantity<wbr>Entry<wbr>Name<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_fba_inventory_api_v1.baseapi.html" class="tsd-kind-icon">BaseAPI</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_fba_inventory_api_v1.configuration-1.html" class="tsd-kind-icon">Configuration</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_fba_inventory_api_v1.fbainventoryapi-2.html" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_fba_inventory_api_v1.fbainventoryapiclient-1.html" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Client</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_fba_inventory_api_v1.fbainventoryapierror-1.html" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_fba_inventory_api_v1.requirederror.html" class="tsd-kind-icon">Required<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.clientparameters-1.html" class="tsd-kind-icon">Client<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.configurationparameters-1.html" class="tsd-kind-icon">Configuration<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.fbainventoryapigetinventorysummariesrequest-2.html" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Get<wbr>Inventory<wbr>Summaries<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.getinventorysummariesresponse-3.html" class="tsd-kind-icon">Get<wbr>Inventory<wbr>Summaries<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.getinventorysummariesresult-3.html" class="tsd-kind-icon">Get<wbr>Inventory<wbr>Summaries<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.granularity-3.html" class="tsd-kind-icon">Granularity</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.inventorydetails-3.html" class="tsd-kind-icon">Inventory<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.inventorysummary-3.html" class="tsd-kind-icon">Inventory<wbr>Summary</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.modelerror-3.html" class="tsd-kind-icon">Model<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.pagination-3.html" class="tsd-kind-icon">Pagination</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.requestargs.html" class="tsd-kind-icon">Request<wbr>Args</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.researchingquantity-3.html" class="tsd-kind-icon">Researching<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.researchingquantityentry-3.html" class="tsd-kind-icon">Researching<wbr>Quantity<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.reservedquantity-3.html" class="tsd-kind-icon">Reserved<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_fba_inventory_api_v1.unfulfillablequantity-3.html" class="tsd-kind-icon">Unfulfillable<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#base_path" class="tsd-kind-icon">BASE_<wbr>PATH</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#dummy_base_url" class="tsd-kind-icon">DUMMY_<wbr>BASE_<wbr>URL</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#rate_limits-1" class="tsd-kind-icon">RATE_<wbr>LIMITS</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapiaxiosparamcreator-2" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapifactory-2" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#fbainventoryapifp-2" class="tsd-kind-icon">Fba<wbr>Inventory<wbr>Api<wbr>Fp</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#assertparamexists" class="tsd-kind-icon">assert<wbr>Param<wbr>Exists</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#createrequestfunction" class="tsd-kind-icon">create<wbr>Request<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#serializedataifneeded" class="tsd-kind-icon">serialize<wbr>Data<wbr>IfNeeded</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#setapikeytoobject" class="tsd-kind-icon">set<wbr>Api<wbr>Key<wbr>ToObject</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#setbasicauthtoobject" class="tsd-kind-icon">set<wbr>Basic<wbr>Auth<wbr>ToObject</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#setbearerauthtoobject" class="tsd-kind-icon">set<wbr>Bearer<wbr>Auth<wbr>ToObject</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#setoauthtoobject" class="tsd-kind-icon">setOAuth<wbr>ToObject</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#setsearchparams" class="tsd-kind-icon">set<wbr>Search<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#topathstring" class="tsd-kind-icon">to<wbr>Path<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module">
+						<a href="_sp_api_sdk_fba_inventory_api_v1.html#collection_formats" class="tsd-kind-icon">COLLECTION_<wbr>FORMATS</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

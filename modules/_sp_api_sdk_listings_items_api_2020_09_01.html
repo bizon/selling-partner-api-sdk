@@ -1,0 +1,1904 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@sp-api-sdk/listings-items-api-2020-09-01 | Selling Partner API SDK for JavaScript</title>
+	<meta name="description" content="Documentation for Selling Partner API SDK for JavaScript">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">Selling Partner API SDK for JavaScript</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="_sp_api_sdk_listings_items_api_2020_09_01.html">@sp-api-sdk/listings-items-api-2020-09-01</a>
+				</li>
+			</ul>
+			<h1>Module @sp-api-sdk/listings-items-api-2020-09-01</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<a href="#listings-items-api-2020-09-01" id="listings-items-api-2020-09-01" style="color: inherit; text-decoration: none;">
+						<h1><code>listings-items-api-2020-09-01</code></h1>
+					</a>
+					<p>The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.</p>
+					<p>For more information, see the <a href="https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/listings-items-api-use-case-guide/listings-items-api-use-case-guide_2020-09-01.md">Listing Items API Use Case Guide</a>.</p>
+					<a href="#installing" id="installing" style="color: inherit; text-decoration: none;">
+						<h2>Installing</h2>
+					</a>
+					<pre><code class="language-sh">yarn add @sp-api-sdk/listings-items-api-2020-09-01
+</code></pre>
+					<pre><code class="language-sh">npm install @sp-api-sdk/listings-items-api-2020-09-01
+</code></pre>
+					<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+						<h2>Getting Started</h2>
+					</a>
+					<pre><code class="language-javascript"><span class="hljs-keyword">import</span> {SellingPartnerApiAuth} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@sp-api-sdk/auth&#x27;</span>
+<span class="hljs-keyword">import</span> {ListingsItemsApiClient} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@sp-api-sdk/listings-items-api-2020-09-01&#x27;</span>
+
+<span class="hljs-keyword">const</span> auth = <span class="hljs-keyword">new</span> SellingPartnerApiAuth({
+  <span class="hljs-attr">clientId</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">clientSecret</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">refreshToken</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">secretAccessKey</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">accessKeyId</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">region</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">role</span>: {
+    <span class="hljs-attr">arn</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  }
+})
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> ListingsItemsApiClient({
+  auth,
+  <span class="hljs-attr">region</span>: <span class="hljs-string">&#x27;eu&#x27;</span> <span class="hljs-comment">// or &#x27;eu-west-1&#x27;</span>
+})
+</code></pre>
+					<a href="#handle-rate-limiting" id="handle-rate-limiting" style="color: inherit; text-decoration: none;">
+						<h2>Handle Rate Limiting</h2>
+					</a>
+					<p>If you want to let the SDK retry after each 429 responses, instanciate the client like this:</p>
+					<pre><code class="language-javascript"><span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> ListingsItemsApiClient({
+  auth,
+  <span class="hljs-attr">region</span>: <span class="hljs-string">&#x27;eu&#x27;</span>,
+  <span class="hljs-attr">rateLimiting</span>: {
+    <span class="hljs-attr">retry</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">onRetry</span>: <span class="hljs-function">(<span class="hljs-params">retryInfo</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(retryInfo) <span class="hljs-comment">// Optional</span>
+  }
+})
+</code></pre>
+					<p>The SDK gets the rate limits for each routes from the API documentation</p>
+					<a href="#api-documentation" id="api-documentation" style="color: inherit; text-decoration: none;">
+						<h2>API documentation</h2>
+					</a>
+					<p>See <a href="https://github.com/amzn/selling-partner-api-docs/tree/main/references/listings-items-api/listingsItems_2020-09-01.md">here</a></p>
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>References</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#clientparameters" class="tsd-kind-icon">Client<wbr>Parameters</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#configuration" class="tsd-kind-icon">Configuration</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#configurationparameters" class="tsd-kind-icon">Configuration<wbr>Parameters</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#errorlist" class="tsd-kind-icon">Error<wbr>List</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#errorlist-1" class="tsd-kind-icon">Error<wbr>List</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#errorlist-2" class="tsd-kind-icon">Error<wbr>List</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#issue" class="tsd-kind-icon">Issue</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#issue-1" class="tsd-kind-icon">Issue</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#issue-2" class="tsd-kind-icon">Issue</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#issueseverityenum" class="tsd-kind-icon">Issue<wbr>Severity<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#issueseverityenum-1" class="tsd-kind-icon">Issue<wbr>Severity<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#issueseverityenum-2" class="tsd-kind-icon">Issue<wbr>Severity<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapi" class="tsd-kind-icon">Listings<wbr>Api</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapi-1" class="tsd-kind-icon">Listings<wbr>Api</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapiaxiosparamcreator" class="tsd-kind-icon">Listings<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapiaxiosparamcreator-1" class="tsd-kind-icon">Listings<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapideletelistingsitemrequest" class="tsd-kind-icon">Listings<wbr>Api<wbr>Delete<wbr>Listings<wbr>Item<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapideletelistingsitemrequest-1" class="tsd-kind-icon">Listings<wbr>Api<wbr>Delete<wbr>Listings<wbr>Item<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapifactory" class="tsd-kind-icon">Listings<wbr>Api<wbr>Factory</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapifactory-1" class="tsd-kind-icon">Listings<wbr>Api<wbr>Factory</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapifp" class="tsd-kind-icon">Listings<wbr>Api<wbr>Fp</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapifp-1" class="tsd-kind-icon">Listings<wbr>Api<wbr>Fp</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapipatchlistingsitemrequest" class="tsd-kind-icon">Listings<wbr>Api<wbr>Patch<wbr>Listings<wbr>Item<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapipatchlistingsitemrequest-1" class="tsd-kind-icon">Listings<wbr>Api<wbr>Patch<wbr>Listings<wbr>Item<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapiputlistingsitemrequest" class="tsd-kind-icon">Listings<wbr>Api<wbr>Put<wbr>Listings<wbr>Item<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapiputlistingsitemrequest-1" class="tsd-kind-icon">Listings<wbr>Api<wbr>Put<wbr>Listings<wbr>Item<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitempatchrequest" class="tsd-kind-icon">Listings<wbr>Item<wbr>Patch<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitempatchrequest-1" class="tsd-kind-icon">Listings<wbr>Item<wbr>Patch<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitempatchrequest-2" class="tsd-kind-icon">Listings<wbr>Item<wbr>Patch<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemputrequest" class="tsd-kind-icon">Listings<wbr>Item<wbr>Put<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemputrequest-1" class="tsd-kind-icon">Listings<wbr>Item<wbr>Put<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemputrequest-2" class="tsd-kind-icon">Listings<wbr>Item<wbr>Put<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemputrequestrequirementsenum" class="tsd-kind-icon">Listings<wbr>Item<wbr>Put<wbr>Request<wbr>Requirements<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemputrequestrequirementsenum-1" class="tsd-kind-icon">Listings<wbr>Item<wbr>Put<wbr>Request<wbr>Requirements<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemputrequestrequirementsenum-2" class="tsd-kind-icon">Listings<wbr>Item<wbr>Put<wbr>Request<wbr>Requirements<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemsubmissionresponse" class="tsd-kind-icon">Listings<wbr>Item<wbr>Submission<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemsubmissionresponse-1" class="tsd-kind-icon">Listings<wbr>Item<wbr>Submission<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemsubmissionresponse-2" class="tsd-kind-icon">Listings<wbr>Item<wbr>Submission<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemsubmissionresponsestatusenum" class="tsd-kind-icon">Listings<wbr>Item<wbr>Submission<wbr>Response<wbr>Status<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemsubmissionresponsestatusenum-1" class="tsd-kind-icon">Listings<wbr>Item<wbr>Submission<wbr>Response<wbr>Status<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemsubmissionresponsestatusenum-2" class="tsd-kind-icon">Listings<wbr>Item<wbr>Submission<wbr>Response<wbr>Status<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemsapiclient" class="tsd-kind-icon">Listings<wbr>Items<wbr>Api<wbr>Client</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemsapierror" class="tsd-kind-icon">Listings<wbr>Items<wbr>Api<wbr>Error</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#modelerror" class="tsd-kind-icon">Model<wbr>Error</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#modelerror-1" class="tsd-kind-icon">Model<wbr>Error</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#modelerror-2" class="tsd-kind-icon">Model<wbr>Error</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#patchoperation" class="tsd-kind-icon">Patch<wbr>Operation</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#patchoperation-1" class="tsd-kind-icon">Patch<wbr>Operation</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#patchoperation-2" class="tsd-kind-icon">Patch<wbr>Operation</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#patchoperationopenum" class="tsd-kind-icon">Patch<wbr>Operation<wbr>OpEnum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#patchoperationopenum-1" class="tsd-kind-icon">Patch<wbr>Operation<wbr>OpEnum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#patchoperationopenum-2" class="tsd-kind-icon">Patch<wbr>Operation<wbr>OpEnum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#rate_limits" class="tsd-kind-icon">RATE_<wbr>LIMITS</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.issueseverityenum-3.html" class="tsd-kind-icon">Issue<wbr>Severity<wbr>Enum</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemputrequestrequirementsenum-3.html" class="tsd-kind-icon">Listings<wbr>Item<wbr>Put<wbr>Request<wbr>Requirements<wbr>Enum</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponsestatusenum-3.html" class="tsd-kind-icon">Listings<wbr>Item<wbr>Submission<wbr>Response<wbr>Status<wbr>Enum</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.patchoperationopenum-3.html" class="tsd-kind-icon">Patch<wbr>Operation<wbr>OpEnum</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.baseapi.html" class="tsd-kind-icon">BaseAPI</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-kind-icon">Configuration</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.listingsapi-2.html" class="tsd-kind-icon">Listings<wbr>Api</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsapiclient-1.html" class="tsd-kind-icon">Listings<wbr>Items<wbr>Api<wbr>Client</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsapierror-1.html" class="tsd-kind-icon">Listings<wbr>Items<wbr>Api<wbr>Error</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.requirederror.html" class="tsd-kind-icon">Required<wbr>Error</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.clientparameters-1.html" class="tsd-kind-icon">Client<wbr>Parameters</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.configurationparameters-1.html" class="tsd-kind-icon">Configuration<wbr>Parameters</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.errorlist-3.html" class="tsd-kind-icon">Error<wbr>List</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.issue-3.html" class="tsd-kind-icon">Issue</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsapideletelistingsitemrequest-2.html" class="tsd-kind-icon">Listings<wbr>Api<wbr>Delete<wbr>Listings<wbr>Item<wbr>Request</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsapipatchlistingsitemrequest-2.html" class="tsd-kind-icon">Listings<wbr>Api<wbr>Patch<wbr>Listings<wbr>Item<wbr>Request</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsapiputlistingsitemrequest-2.html" class="tsd-kind-icon">Listings<wbr>Api<wbr>Put<wbr>Listings<wbr>Item<wbr>Request</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitempatchrequest-3.html" class="tsd-kind-icon">Listings<wbr>Item<wbr>Patch<wbr>Request</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemputrequest-3.html" class="tsd-kind-icon">Listings<wbr>Item<wbr>Put<wbr>Request</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponse-3.html" class="tsd-kind-icon">Listings<wbr>Item<wbr>Submission<wbr>Response</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.modelerror-3.html" class="tsd-kind-icon">Model<wbr>Error</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.patchoperation-3.html" class="tsd-kind-icon">Patch<wbr>Operation</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.requestargs.html" class="tsd-kind-icon">Request<wbr>Args</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#base_path" class="tsd-kind-icon">BASE_<wbr>PATH</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#dummy_base_url" class="tsd-kind-icon">DUMMY_<wbr>BASE_<wbr>URL</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#rate_limits-1" class="tsd-kind-icon">RATE_<wbr>LIMITS</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapiaxiosparamcreator-2" class="tsd-kind-icon">Listings<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapifactory-2" class="tsd-kind-icon">Listings<wbr>Api<wbr>Factory</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapifp-2" class="tsd-kind-icon">Listings<wbr>Api<wbr>Fp</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#assertparamexists" class="tsd-kind-icon">assert<wbr>Param<wbr>Exists</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#createrequestfunction" class="tsd-kind-icon">create<wbr>Request<wbr>Function</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#serializedataifneeded" class="tsd-kind-icon">serialize<wbr>Data<wbr>IfNeeded</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#setapikeytoobject" class="tsd-kind-icon">set<wbr>Api<wbr>Key<wbr>ToObject</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#setbasicauthtoobject" class="tsd-kind-icon">set<wbr>Basic<wbr>Auth<wbr>ToObject</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#setbearerauthtoobject" class="tsd-kind-icon">set<wbr>Bearer<wbr>Auth<wbr>ToObject</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#setoauthtoobject" class="tsd-kind-icon">setOAuth<wbr>ToObject</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#setsearchparams" class="tsd-kind-icon">set<wbr>Search<wbr>Params</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#topathstring" class="tsd-kind-icon">to<wbr>Path<wbr>String</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="_sp_api_sdk_listings_items_api_2020_09_01.html#collection_formats" class="tsd-kind-icon">COLLECTION_<wbr>FORMATS</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>References</h2>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="clientparameters" class="tsd-anchor"></a>
+					<h3>Client<wbr>Parameters</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.clientparameters-1.html">ClientParameters</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="configuration" class="tsd-anchor"></a>
+					<h3>Configuration</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html">Configuration</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="configurationparameters" class="tsd-anchor"></a>
+					<h3>Configuration<wbr>Parameters</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.configurationparameters-1.html">ConfigurationParameters</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="errorlist" class="tsd-anchor"></a>
+					<h3>Error<wbr>List</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.errorlist-3.html">ErrorList</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="errorlist-1" class="tsd-anchor"></a>
+					<h3>Error<wbr>List</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.errorlist-3.html">ErrorList</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="errorlist-2" class="tsd-anchor"></a>
+					<h3>Error<wbr>List</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.errorlist-3.html">ErrorList</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="issue" class="tsd-anchor"></a>
+					<h3>Issue</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.issue-3.html">Issue</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="issue-1" class="tsd-anchor"></a>
+					<h3>Issue</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.issue-3.html">Issue</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="issue-2" class="tsd-anchor"></a>
+					<h3>Issue</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.issue-3.html">Issue</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="issueseverityenum" class="tsd-anchor"></a>
+					<h3>Issue<wbr>Severity<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.issueseverityenum-3.html">IssueSeverityEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="issueseverityenum-1" class="tsd-anchor"></a>
+					<h3>Issue<wbr>Severity<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.issueseverityenum-3.html">IssueSeverityEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="issueseverityenum-2" class="tsd-anchor"></a>
+					<h3>Issue<wbr>Severity<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.issueseverityenum-3.html">IssueSeverityEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsapi" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Api</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.listingsapi-2.html">ListingsApi</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsapi-1" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Api</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.listingsapi-2.html">ListingsApi</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsapiaxiosparamcreator" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</h3>
+					Re-exports <a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapiaxiosparamcreator-2">ListingsApiAxiosParamCreator</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsapiaxiosparamcreator-1" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</h3>
+					Re-exports <a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapiaxiosparamcreator-2">ListingsApiAxiosParamCreator</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsapideletelistingsitemrequest" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Api<wbr>Delete<wbr>Listings<wbr>Item<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsapideletelistingsitemrequest-2.html">ListingsApiDeleteListingsItemRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsapideletelistingsitemrequest-1" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Api<wbr>Delete<wbr>Listings<wbr>Item<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsapideletelistingsitemrequest-2.html">ListingsApiDeleteListingsItemRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsapifactory" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Api<wbr>Factory</h3>
+					Re-exports <a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapifactory-2">ListingsApiFactory</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsapifactory-1" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Api<wbr>Factory</h3>
+					Re-exports <a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapifactory-2">ListingsApiFactory</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsapifp" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Api<wbr>Fp</h3>
+					Re-exports <a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapifp-2">ListingsApiFp</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsapifp-1" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Api<wbr>Fp</h3>
+					Re-exports <a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapifp-2">ListingsApiFp</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsapipatchlistingsitemrequest" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Api<wbr>Patch<wbr>Listings<wbr>Item<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsapipatchlistingsitemrequest-2.html">ListingsApiPatchListingsItemRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsapipatchlistingsitemrequest-1" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Api<wbr>Patch<wbr>Listings<wbr>Item<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsapipatchlistingsitemrequest-2.html">ListingsApiPatchListingsItemRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsapiputlistingsitemrequest" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Api<wbr>Put<wbr>Listings<wbr>Item<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsapiputlistingsitemrequest-2.html">ListingsApiPutListingsItemRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsapiputlistingsitemrequest-1" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Api<wbr>Put<wbr>Listings<wbr>Item<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsapiputlistingsitemrequest-2.html">ListingsApiPutListingsItemRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsitempatchrequest" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Item<wbr>Patch<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitempatchrequest-3.html">ListingsItemPatchRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsitempatchrequest-1" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Item<wbr>Patch<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitempatchrequest-3.html">ListingsItemPatchRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsitempatchrequest-2" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Item<wbr>Patch<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitempatchrequest-3.html">ListingsItemPatchRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsitemputrequest" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Item<wbr>Put<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemputrequest-3.html">ListingsItemPutRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsitemputrequest-1" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Item<wbr>Put<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemputrequest-3.html">ListingsItemPutRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsitemputrequest-2" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Item<wbr>Put<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemputrequest-3.html">ListingsItemPutRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsitemputrequestrequirementsenum" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Item<wbr>Put<wbr>Request<wbr>Requirements<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemputrequestrequirementsenum-3.html">ListingsItemPutRequestRequirementsEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsitemputrequestrequirementsenum-1" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Item<wbr>Put<wbr>Request<wbr>Requirements<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemputrequestrequirementsenum-3.html">ListingsItemPutRequestRequirementsEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsitemputrequestrequirementsenum-2" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Item<wbr>Put<wbr>Request<wbr>Requirements<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemputrequestrequirementsenum-3.html">ListingsItemPutRequestRequirementsEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsitemsubmissionresponse" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Item<wbr>Submission<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponse-3.html">ListingsItemSubmissionResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsitemsubmissionresponse-1" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Item<wbr>Submission<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponse-3.html">ListingsItemSubmissionResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsitemsubmissionresponse-2" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Item<wbr>Submission<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponse-3.html">ListingsItemSubmissionResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsitemsubmissionresponsestatusenum" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Item<wbr>Submission<wbr>Response<wbr>Status<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponsestatusenum-3.html">ListingsItemSubmissionResponseStatusEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsitemsubmissionresponsestatusenum-1" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Item<wbr>Submission<wbr>Response<wbr>Status<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponsestatusenum-3.html">ListingsItemSubmissionResponseStatusEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsitemsubmissionresponsestatusenum-2" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Item<wbr>Submission<wbr>Response<wbr>Status<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponsestatusenum-3.html">ListingsItemSubmissionResponseStatusEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsitemsapiclient" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Items<wbr>Api<wbr>Client</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsapiclient-1.html">ListingsItemsApiClient</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="listingsitemsapierror" class="tsd-anchor"></a>
+					<h3>Listings<wbr>Items<wbr>Api<wbr>Error</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsapierror-1.html">ListingsItemsApiError</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="modelerror" class="tsd-anchor"></a>
+					<h3>Model<wbr>Error</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.modelerror-3.html">ModelError</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="modelerror-1" class="tsd-anchor"></a>
+					<h3>Model<wbr>Error</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.modelerror-3.html">ModelError</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="modelerror-2" class="tsd-anchor"></a>
+					<h3>Model<wbr>Error</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.modelerror-3.html">ModelError</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="patchoperation" class="tsd-anchor"></a>
+					<h3>Patch<wbr>Operation</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.patchoperation-3.html">PatchOperation</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="patchoperation-1" class="tsd-anchor"></a>
+					<h3>Patch<wbr>Operation</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.patchoperation-3.html">PatchOperation</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="patchoperation-2" class="tsd-anchor"></a>
+					<h3>Patch<wbr>Operation</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.patchoperation-3.html">PatchOperation</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="patchoperationopenum" class="tsd-anchor"></a>
+					<h3>Patch<wbr>Operation<wbr>OpEnum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.patchoperationopenum-3.html">PatchOperationOpEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="patchoperationopenum-1" class="tsd-anchor"></a>
+					<h3>Patch<wbr>Operation<wbr>OpEnum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.patchoperationopenum-3.html">PatchOperationOpEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="patchoperationopenum-2" class="tsd-anchor"></a>
+					<h3>Patch<wbr>Operation<wbr>OpEnum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.patchoperationopenum-3.html">PatchOperationOpEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="rate_limits" class="tsd-anchor"></a>
+					<h3>RATE_<wbr>LIMITS</h3>
+					Re-exports <a href="_sp_api_sdk_listings_items_api_2020_09_01.html#rate_limits-1">RATE_LIMITS</a>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="base_path" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> BASE_<wbr>PATH</h3>
+					<div class="tsd-signature tsd-kind-icon">BASE_<wbr>PATH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://sellingpartnerapi-na.amazon.com&quot;.replace(/\/+$/, &quot;&quot;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/base.ts#L21">clients/listings-items-api-2020-09-01/src/api-model/base.ts:21</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="dummy_base_url" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> DUMMY_<wbr>BASE_<wbr>URL</h3>
+					<div class="tsd-signature tsd-kind-icon">DUMMY_<wbr>BASE_<wbr>URL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"https://example.com"</span><span class="tsd-signature-symbol"> = &quot;https://example.com&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/common.ts#L24">clients/listings-items-api-2020-09-01/src/api-model/common.ts:24</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>export</dt>
+							<dd></dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="rate_limits-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> RATE_<wbr>LIMITS</h3>
+					<div class="tsd-signature tsd-kind-icon">RATE_<wbr>LIMITS<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_sp_api_sdk_common.ratelimit-3.html" class="tsd-signature-type">RateLimit</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [{method: &#x27;delete&#x27;,urlRegex: new RegExp(&#x27;^/listings/2020-09-01/items/[^/]*$&#x27;),rate: 5,burst: 10},{method: &#x27;patch&#x27;,urlRegex: new RegExp(&#x27;^/listings/2020-09-01/items/[^/]*$&#x27;),rate: 5,burst: 10},{method: &#x27;put&#x27;,urlRegex: new RegExp(&#x27;^/listings/2020-09-01/items/[^/]*$&#x27;),rate: 5,burst: 10}]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/client.ts#L8">clients/listings-items-api-2020-09-01/src/client.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="listingsapiaxiosparamcreator-2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Listings<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Listings<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator<span class="tsd-signature-symbol">(</span>configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>deleteListingsItem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>patchListingsItem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>putListingsItem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts#L35">clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts:35</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>ListingsApi - axios parameter creator</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>deleteListingsItem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>patchListingsItem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>putListingsItem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>delete<wbr>Listings<wbr>Item<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">delete<wbr>Listings<wbr>Item<span class="tsd-signature-symbol">(</span>sellerId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, sku<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, marketplaceIds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, issueLocale<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts#L46">clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts:46</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Delete a listings item for a selling partner.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>sellerId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<div class="lead">
+															<p>A selling partner identifier, such as a merchant account or vendor code.</p>
+														</div>
+													</div>
+												</li>
+												<li>
+													<h5>sku: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<div class="lead">
+															<p>A selling partner provided identifier for an Amazon listing.</p>
+														</div>
+													</div>
+												</li>
+												<li>
+													<h5>marketplaceIds: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<div class="lead">
+															<p>A comma-delimited list of Amazon marketplace identifiers for the request.</p>
+														</div>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> issueLocale: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = {}</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>patch<wbr>Listings<wbr>Item<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">patch<wbr>Listings<wbr>Item<span class="tsd-signature-symbol">(</span>sellerId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, sku<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, marketplaceIds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, body<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitempatchrequest-3.html" class="tsd-signature-type">ListingsItemPatchRequest</a>, issueLocale<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts#L96">clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts:96</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>sellerId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<div class="lead">
+															<p>A selling partner identifier, such as a merchant account or vendor code.</p>
+														</div>
+													</div>
+												</li>
+												<li>
+													<h5>sku: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<div class="lead">
+															<p>A selling partner provided identifier for an Amazon listing.</p>
+														</div>
+													</div>
+												</li>
+												<li>
+													<h5>marketplaceIds: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<div class="lead">
+															<p>A comma-delimited list of Amazon marketplace identifiers for the request.</p>
+														</div>
+													</div>
+												</li>
+												<li>
+													<h5>body: <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitempatchrequest-3.html" class="tsd-signature-type">ListingsItemPatchRequest</a></h5>
+													<div class="tsd-comment tsd-typography">
+														<div class="lead">
+															<p>The request body schema for the patchListingsItem operation.</p>
+														</div>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> issueLocale: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = {}</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>put<wbr>Listings<wbr>Item<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">put<wbr>Listings<wbr>Item<span class="tsd-signature-symbol">(</span>sellerId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, sku<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, marketplaceIds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, body<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemputrequest-3.html" class="tsd-signature-type">ListingsItemPutRequest</a>, issueLocale<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts#L151">clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts:151</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Creates a new or fully-updates an existing listings item for a selling partner.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>sellerId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<div class="lead">
+															<p>A selling partner identifier, such as a merchant account or vendor code.</p>
+														</div>
+													</div>
+												</li>
+												<li>
+													<h5>sku: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<div class="lead">
+															<p>A selling partner provided identifier for an Amazon listing.</p>
+														</div>
+													</div>
+												</li>
+												<li>
+													<h5>marketplaceIds: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<div class="lead">
+															<p>A comma-delimited list of Amazon marketplace identifiers for the request.</p>
+														</div>
+													</div>
+												</li>
+												<li>
+													<h5>body: <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemputrequest-3.html" class="tsd-signature-type">ListingsItemPutRequest</a></h5>
+													<div class="tsd-comment tsd-typography">
+														<div class="lead">
+															<p>The request body schema for the putListingsItem operation.</p>
+														</div>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> issueLocale: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = {}</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="listingsapifactory-2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Listings<wbr>Api<wbr>Factory</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Listings<wbr>Api<wbr>Factory<span class="tsd-signature-symbol">(</span>configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-signature-type">Configuration</a>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>deleteListingsItem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>patchListingsItem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>putListingsItem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts#L254">clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts:254</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>ListingsApi - factory interface</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> basePath: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> axios: <span class="tsd-signature-type">AxiosInstance</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>deleteListingsItem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>patchListingsItem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>putListingsItem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>delete<wbr>Listings<wbr>Item<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">delete<wbr>Listings<wbr>Item<span class="tsd-signature-symbol">(</span>sellerId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, sku<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, marketplaceIds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, issueLocale<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponse-3.html" class="tsd-signature-type">ListingsItemSubmissionResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts#L266">clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts:266</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Delete a listings item for a selling partner.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>sellerId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>A selling partner identifier, such as a merchant account or vendor code.</p>
+													</div>
+												</li>
+												<li>
+													<h5>sku: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>A selling partner provided identifier for an Amazon listing.</p>
+													</div>
+												</li>
+												<li>
+													<h5>marketplaceIds: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>A comma-delimited list of Amazon marketplace identifiers for the request.</p>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> issueLocale: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponse-3.html" class="tsd-signature-type">ListingsItemSubmissionResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>patch<wbr>Listings<wbr>Item<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">patch<wbr>Listings<wbr>Item<span class="tsd-signature-symbol">(</span>sellerId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, sku<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, marketplaceIds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, body<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitempatchrequest-3.html" class="tsd-signature-type">ListingsItemPatchRequest</a>, issueLocale<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponse-3.html" class="tsd-signature-type">ListingsItemSubmissionResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts#L279">clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts:279</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>sellerId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>A selling partner identifier, such as a merchant account or vendor code.</p>
+													</div>
+												</li>
+												<li>
+													<h5>sku: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>A selling partner provided identifier for an Amazon listing.</p>
+													</div>
+												</li>
+												<li>
+													<h5>marketplaceIds: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>A comma-delimited list of Amazon marketplace identifiers for the request.</p>
+													</div>
+												</li>
+												<li>
+													<h5>body: <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitempatchrequest-3.html" class="tsd-signature-type">ListingsItemPatchRequest</a></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>The request body schema for the patchListingsItem operation.</p>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> issueLocale: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponse-3.html" class="tsd-signature-type">ListingsItemSubmissionResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>put<wbr>Listings<wbr>Item<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">put<wbr>Listings<wbr>Item<span class="tsd-signature-symbol">(</span>sellerId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, sku<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, marketplaceIds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, body<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemputrequest-3.html" class="tsd-signature-type">ListingsItemPutRequest</a>, issueLocale<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponse-3.html" class="tsd-signature-type">ListingsItemSubmissionResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts#L292">clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts:292</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Creates a new or fully-updates an existing listings item for a selling partner.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>sellerId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>A selling partner identifier, such as a merchant account or vendor code.</p>
+													</div>
+												</li>
+												<li>
+													<h5>sku: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>A selling partner provided identifier for an Amazon listing.</p>
+													</div>
+												</li>
+												<li>
+													<h5>marketplaceIds: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>A comma-delimited list of Amazon marketplace identifiers for the request.</p>
+													</div>
+												</li>
+												<li>
+													<h5>body: <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemputrequest-3.html" class="tsd-signature-type">ListingsItemPutRequest</a></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>The request body schema for the putListingsItem operation.</p>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> issueLocale: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponse-3.html" class="tsd-signature-type">ListingsItemSubmissionResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="listingsapifp-2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Listings<wbr>Api<wbr>Fp</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Listings<wbr>Api<wbr>Fp<span class="tsd-signature-symbol">(</span>configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>deleteListingsItem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>patchListingsItem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>putListingsItem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts#L203">clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts:203</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>ListingsApi - functional programming interface</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>deleteListingsItem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>patchListingsItem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>putListingsItem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>delete<wbr>Listings<wbr>Item<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">delete<wbr>Listings<wbr>Item<span class="tsd-signature-symbol">(</span>sellerId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, sku<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, marketplaceIds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, issueLocale<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponse-3.html" class="tsd-signature-type">ListingsItemSubmissionResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts#L215">clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts:215</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Delete a listings item for a selling partner.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>sellerId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>A selling partner identifier, such as a merchant account or vendor code.</p>
+													</div>
+												</li>
+												<li>
+													<h5>sku: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>A selling partner provided identifier for an Amazon listing.</p>
+													</div>
+												</li>
+												<li>
+													<h5>marketplaceIds: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>A comma-delimited list of Amazon marketplace identifiers for the request.</p>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> issueLocale: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponse-3.html" class="tsd-signature-type">ListingsItemSubmissionResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>patch<wbr>Listings<wbr>Item<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">patch<wbr>Listings<wbr>Item<span class="tsd-signature-symbol">(</span>sellerId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, sku<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, marketplaceIds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, body<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitempatchrequest-3.html" class="tsd-signature-type">ListingsItemPatchRequest</a>, issueLocale<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponse-3.html" class="tsd-signature-type">ListingsItemSubmissionResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts#L229">clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts:229</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>sellerId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>A selling partner identifier, such as a merchant account or vendor code.</p>
+													</div>
+												</li>
+												<li>
+													<h5>sku: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>A selling partner provided identifier for an Amazon listing.</p>
+													</div>
+												</li>
+												<li>
+													<h5>marketplaceIds: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>A comma-delimited list of Amazon marketplace identifiers for the request.</p>
+													</div>
+												</li>
+												<li>
+													<h5>body: <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitempatchrequest-3.html" class="tsd-signature-type">ListingsItemPatchRequest</a></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>The request body schema for the patchListingsItem operation.</p>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> issueLocale: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponse-3.html" class="tsd-signature-type">ListingsItemSubmissionResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>put<wbr>Listings<wbr>Item<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">put<wbr>Listings<wbr>Item<span class="tsd-signature-symbol">(</span>sellerId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, sku<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, marketplaceIds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, body<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemputrequest-3.html" class="tsd-signature-type">ListingsItemPutRequest</a>, issueLocale<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponse-3.html" class="tsd-signature-type">ListingsItemSubmissionResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts#L243">clients/listings-items-api-2020-09-01/src/api-model/api/listings-api.ts:243</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Creates a new or fully-updates an existing listings item for a selling partner.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>sellerId: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>A selling partner identifier, such as a merchant account or vendor code.</p>
+													</div>
+												</li>
+												<li>
+													<h5>sku: <span class="tsd-signature-type">string</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>A selling partner provided identifier for an Amazon listing.</p>
+													</div>
+												</li>
+												<li>
+													<h5>marketplaceIds: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>A comma-delimited list of Amazon marketplace identifiers for the request.</p>
+													</div>
+												</li>
+												<li>
+													<h5>body: <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemputrequest-3.html" class="tsd-signature-type">ListingsItemPutRequest</a></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>The request body schema for the putListingsItem operation.</p>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> issueLocale: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponse-3.html" class="tsd-signature-type">ListingsItemSubmissionResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="assertparamexists" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> assert<wbr>Param<wbr>Exists</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">assert<wbr>Param<wbr>Exists<span class="tsd-signature-symbol">(</span>functionName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, paramName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, paramValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/common.ts#L31">clients/listings-items-api-2020-09-01/src/api-model/common.ts:31</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>{RequiredError}</p>
+									</dd>
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>functionName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>paramName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>paramValue: <span class="tsd-signature-type">unknown</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createrequestfunction" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> create<wbr>Request<wbr>Function</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Request<wbr>Function<span class="tsd-signature-symbol">(</span>axiosArgs<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.requestargs.html" class="tsd-signature-type">RequestArgs</a>, globalAxios<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosInstance</span>, BASE_PATH<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/common.ts#L133">clients/listings-items-api-2020-09-01/src/api-model/common.ts:133</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>axiosArgs: <a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.requestargs.html" class="tsd-signature-type">RequestArgs</a></h5>
+								</li>
+								<li>
+									<h5>globalAxios: <span class="tsd-signature-type">AxiosInstance</span></h5>
+								</li>
+								<li>
+									<h5>BASE_PATH: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous function)</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="serializedataifneeded" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> serialize<wbr>Data<wbr>IfNeeded</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">serialize<wbr>Data<wbr>IfNeeded<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, requestOptions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/common.ts#L111">clients/listings-items-api-2020-09-01/src/api-model/common.ts:111</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>requestOptions: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setapikeytoobject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Api<wbr>Key<wbr>ToObject</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Api<wbr>Key<wbr>ToObject<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, keyParamName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/common.ts#L41">clients/listings-items-api-2020-09-01/src/api-model/common.ts:41</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>keyParamName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setbasicauthtoobject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Basic<wbr>Auth<wbr>ToObject</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Basic<wbr>Auth<wbr>ToObject<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/common.ts#L54">clients/listings-items-api-2020-09-01/src/api-model/common.ts:54</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setbearerauthtoobject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Bearer<wbr>Auth<wbr>ToObject</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Bearer<wbr>Auth<wbr>ToObject<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/common.ts#L64">clients/listings-items-api-2020-09-01/src/api-model/common.ts:64</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setoauthtoobject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> setOAuth<wbr>ToObject</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">setOAuth<wbr>ToObject<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, scopes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/common.ts#L77">clients/listings-items-api-2020-09-01/src/api-model/common.ts:77</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>scopes: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setsearchparams" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Search<wbr>Params</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Search<wbr>Params<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">URL</span>, <span class="tsd-signature-symbol">...</span>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/common.ts#L90">clients/listings-items-api-2020-09-01/src/api-model/common.ts:90</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>url: <span class="tsd-signature-type">URL</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>objects: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="topathstring" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> to<wbr>Path<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Path<wbr>String<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">URL</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/common.ts#L125">clients/listings-items-api-2020-09-01/src/api-model/common.ts:125</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>url: <span class="tsd-signature-type">URL</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="collection_formats" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> COLLECTION_<wbr>FORMATS</h3>
+					<div class="tsd-signature tsd-kind-icon">COLLECTION_<wbr>FORMATS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/base.ts#L27">clients/listings-items-api-2020-09-01/src/api-model/base.ts:27</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>export</dt>
+							<dd></dd>
+						</dl>
+					</div>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="collection_formats.csv" class="tsd-anchor"></a>
+						<h3>csv</h3>
+						<div class="tsd-signature tsd-kind-icon">csv<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;,&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/base.ts#L28">clients/listings-items-api-2020-09-01/src/api-model/base.ts:28</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="collection_formats.pipes" class="tsd-anchor"></a>
+						<h3>pipes</h3>
+						<div class="tsd-signature tsd-kind-icon">pipes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;|&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/base.ts#L31">clients/listings-items-api-2020-09-01/src/api-model/base.ts:31</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="collection_formats.ssv" class="tsd-anchor"></a>
+						<h3>ssv</h3>
+						<div class="tsd-signature tsd-kind-icon">ssv<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot; &quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/base.ts#L29">clients/listings-items-api-2020-09-01/src/api-model/base.ts:29</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="collection_formats.tsv" class="tsd-anchor"></a>
+						<h3>tsv</h3>
+						<div class="tsd-signature tsd-kind-icon">tsv<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;	&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/listings-items-api-2020-09-01/src/api-model/base.ts#L30">clients/listings-items-api-2020-09-01/src/api-model/base.ts:30</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html">@sp-<wbr>api-<wbr>sdk/listings-<wbr>items-<wbr>api-<wbr>2020-<wbr>09-<wbr>01</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#clientparameters" class="tsd-kind-icon">Client<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#configuration" class="tsd-kind-icon">Configuration</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#configurationparameters" class="tsd-kind-icon">Configuration<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#errorlist" class="tsd-kind-icon">Error<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#errorlist-1" class="tsd-kind-icon">Error<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#errorlist-2" class="tsd-kind-icon">Error<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#issue" class="tsd-kind-icon">Issue</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#issue-1" class="tsd-kind-icon">Issue</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#issue-2" class="tsd-kind-icon">Issue</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#issueseverityenum" class="tsd-kind-icon">Issue<wbr>Severity<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#issueseverityenum-1" class="tsd-kind-icon">Issue<wbr>Severity<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#issueseverityenum-2" class="tsd-kind-icon">Issue<wbr>Severity<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapi" class="tsd-kind-icon">Listings<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapi-1" class="tsd-kind-icon">Listings<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapiaxiosparamcreator" class="tsd-kind-icon">Listings<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapiaxiosparamcreator-1" class="tsd-kind-icon">Listings<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapideletelistingsitemrequest" class="tsd-kind-icon">Listings<wbr>Api<wbr>Delete<wbr>Listings<wbr>Item<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapideletelistingsitemrequest-1" class="tsd-kind-icon">Listings<wbr>Api<wbr>Delete<wbr>Listings<wbr>Item<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapifactory" class="tsd-kind-icon">Listings<wbr>Api<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapifactory-1" class="tsd-kind-icon">Listings<wbr>Api<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapifp" class="tsd-kind-icon">Listings<wbr>Api<wbr>Fp</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapifp-1" class="tsd-kind-icon">Listings<wbr>Api<wbr>Fp</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapipatchlistingsitemrequest" class="tsd-kind-icon">Listings<wbr>Api<wbr>Patch<wbr>Listings<wbr>Item<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapipatchlistingsitemrequest-1" class="tsd-kind-icon">Listings<wbr>Api<wbr>Patch<wbr>Listings<wbr>Item<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapiputlistingsitemrequest" class="tsd-kind-icon">Listings<wbr>Api<wbr>Put<wbr>Listings<wbr>Item<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapiputlistingsitemrequest-1" class="tsd-kind-icon">Listings<wbr>Api<wbr>Put<wbr>Listings<wbr>Item<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitempatchrequest" class="tsd-kind-icon">Listings<wbr>Item<wbr>Patch<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitempatchrequest-1" class="tsd-kind-icon">Listings<wbr>Item<wbr>Patch<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitempatchrequest-2" class="tsd-kind-icon">Listings<wbr>Item<wbr>Patch<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemputrequest" class="tsd-kind-icon">Listings<wbr>Item<wbr>Put<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemputrequest-1" class="tsd-kind-icon">Listings<wbr>Item<wbr>Put<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemputrequest-2" class="tsd-kind-icon">Listings<wbr>Item<wbr>Put<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemputrequestrequirementsenum" class="tsd-kind-icon">Listings<wbr>Item<wbr>Put<wbr>Request<wbr>Requirements<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemputrequestrequirementsenum-1" class="tsd-kind-icon">Listings<wbr>Item<wbr>Put<wbr>Request<wbr>Requirements<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemputrequestrequirementsenum-2" class="tsd-kind-icon">Listings<wbr>Item<wbr>Put<wbr>Request<wbr>Requirements<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemsubmissionresponse" class="tsd-kind-icon">Listings<wbr>Item<wbr>Submission<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemsubmissionresponse-1" class="tsd-kind-icon">Listings<wbr>Item<wbr>Submission<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemsubmissionresponse-2" class="tsd-kind-icon">Listings<wbr>Item<wbr>Submission<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemsubmissionresponsestatusenum" class="tsd-kind-icon">Listings<wbr>Item<wbr>Submission<wbr>Response<wbr>Status<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemsubmissionresponsestatusenum-1" class="tsd-kind-icon">Listings<wbr>Item<wbr>Submission<wbr>Response<wbr>Status<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemsubmissionresponsestatusenum-2" class="tsd-kind-icon">Listings<wbr>Item<wbr>Submission<wbr>Response<wbr>Status<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemsapiclient" class="tsd-kind-icon">Listings<wbr>Items<wbr>Api<wbr>Client</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsitemsapierror" class="tsd-kind-icon">Listings<wbr>Items<wbr>Api<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#modelerror" class="tsd-kind-icon">Model<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#modelerror-1" class="tsd-kind-icon">Model<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#modelerror-2" class="tsd-kind-icon">Model<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#patchoperation" class="tsd-kind-icon">Patch<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#patchoperation-1" class="tsd-kind-icon">Patch<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#patchoperation-2" class="tsd-kind-icon">Patch<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#patchoperationopenum" class="tsd-kind-icon">Patch<wbr>Operation<wbr>OpEnum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#patchoperationopenum-1" class="tsd-kind-icon">Patch<wbr>Operation<wbr>OpEnum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#patchoperationopenum-2" class="tsd-kind-icon">Patch<wbr>Operation<wbr>OpEnum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#rate_limits" class="tsd-kind-icon">RATE_<wbr>LIMITS</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.issueseverityenum-3.html" class="tsd-kind-icon">Issue<wbr>Severity<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemputrequestrequirementsenum-3.html" class="tsd-kind-icon">Listings<wbr>Item<wbr>Put<wbr>Request<wbr>Requirements<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponsestatusenum-3.html" class="tsd-kind-icon">Listings<wbr>Item<wbr>Submission<wbr>Response<wbr>Status<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_sp_api_sdk_listings_items_api_2020_09_01.patchoperationopenum-3.html" class="tsd-kind-icon">Patch<wbr>Operation<wbr>OpEnum</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.baseapi.html" class="tsd-kind-icon">BaseAPI</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.configuration-1.html" class="tsd-kind-icon">Configuration</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.listingsapi-2.html" class="tsd-kind-icon">Listings<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsapiclient-1.html" class="tsd-kind-icon">Listings<wbr>Items<wbr>Api<wbr>Client</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsapierror-1.html" class="tsd-kind-icon">Listings<wbr>Items<wbr>Api<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_listings_items_api_2020_09_01.requirederror.html" class="tsd-kind-icon">Required<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.clientparameters-1.html" class="tsd-kind-icon">Client<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.configurationparameters-1.html" class="tsd-kind-icon">Configuration<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.errorlist-3.html" class="tsd-kind-icon">Error<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.issue-3.html" class="tsd-kind-icon">Issue</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsapideletelistingsitemrequest-2.html" class="tsd-kind-icon">Listings<wbr>Api<wbr>Delete<wbr>Listings<wbr>Item<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsapipatchlistingsitemrequest-2.html" class="tsd-kind-icon">Listings<wbr>Api<wbr>Patch<wbr>Listings<wbr>Item<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsapiputlistingsitemrequest-2.html" class="tsd-kind-icon">Listings<wbr>Api<wbr>Put<wbr>Listings<wbr>Item<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitempatchrequest-3.html" class="tsd-kind-icon">Listings<wbr>Item<wbr>Patch<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemputrequest-3.html" class="tsd-kind-icon">Listings<wbr>Item<wbr>Put<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.listingsitemsubmissionresponse-3.html" class="tsd-kind-icon">Listings<wbr>Item<wbr>Submission<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.modelerror-3.html" class="tsd-kind-icon">Model<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.patchoperation-3.html" class="tsd-kind-icon">Patch<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_listings_items_api_2020_09_01.requestargs.html" class="tsd-kind-icon">Request<wbr>Args</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#base_path" class="tsd-kind-icon">BASE_<wbr>PATH</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#dummy_base_url" class="tsd-kind-icon">DUMMY_<wbr>BASE_<wbr>URL</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#rate_limits-1" class="tsd-kind-icon">RATE_<wbr>LIMITS</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapiaxiosparamcreator-2" class="tsd-kind-icon">Listings<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapifactory-2" class="tsd-kind-icon">Listings<wbr>Api<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#listingsapifp-2" class="tsd-kind-icon">Listings<wbr>Api<wbr>Fp</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#assertparamexists" class="tsd-kind-icon">assert<wbr>Param<wbr>Exists</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#createrequestfunction" class="tsd-kind-icon">create<wbr>Request<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#serializedataifneeded" class="tsd-kind-icon">serialize<wbr>Data<wbr>IfNeeded</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#setapikeytoobject" class="tsd-kind-icon">set<wbr>Api<wbr>Key<wbr>ToObject</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#setbasicauthtoobject" class="tsd-kind-icon">set<wbr>Basic<wbr>Auth<wbr>ToObject</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#setbearerauthtoobject" class="tsd-kind-icon">set<wbr>Bearer<wbr>Auth<wbr>ToObject</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#setoauthtoobject" class="tsd-kind-icon">setOAuth<wbr>ToObject</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#setsearchparams" class="tsd-kind-icon">set<wbr>Search<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#topathstring" class="tsd-kind-icon">to<wbr>Path<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module">
+						<a href="_sp_api_sdk_listings_items_api_2020_09_01.html#collection_formats" class="tsd-kind-icon">COLLECTION_<wbr>FORMATS</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

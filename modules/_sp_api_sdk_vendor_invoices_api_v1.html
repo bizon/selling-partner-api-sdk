@@ -1,0 +1,1863 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@sp-api-sdk/vendor-invoices-api-v1 | Selling Partner API SDK for JavaScript</title>
+	<meta name="description" content="Documentation for Selling Partner API SDK for JavaScript">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">Selling Partner API SDK for JavaScript</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="_sp_api_sdk_vendor_invoices_api_v1.html">@sp-api-sdk/vendor-invoices-api-v1</a>
+				</li>
+			</ul>
+			<h1>Module @sp-api-sdk/vendor-invoices-api-v1</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<a href="#vendor-invoices-api-v1" id="vendor-invoices-api-v1" style="color: inherit; text-decoration: none;">
+						<h1><code>vendor-invoices-api-v1</code></h1>
+					</a>
+					<p>The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.</p>
+					<a href="#installing" id="installing" style="color: inherit; text-decoration: none;">
+						<h2>Installing</h2>
+					</a>
+					<pre><code class="language-sh">yarn add @sp-api-sdk/vendor-invoices-api-v1
+</code></pre>
+					<pre><code class="language-sh">npm install @sp-api-sdk/vendor-invoices-api-v1
+</code></pre>
+					<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+						<h2>Getting Started</h2>
+					</a>
+					<pre><code class="language-javascript"><span class="hljs-keyword">import</span> {SellingPartnerApiAuth} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@sp-api-sdk/auth&#x27;</span>
+<span class="hljs-keyword">import</span> {VendorInvoicesApiClient} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@sp-api-sdk/vendor-invoices-api-v1&#x27;</span>
+
+<span class="hljs-keyword">const</span> auth = <span class="hljs-keyword">new</span> SellingPartnerApiAuth({
+  <span class="hljs-attr">clientId</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">clientSecret</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">refreshToken</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">secretAccessKey</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">accessKeyId</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">region</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">role</span>: {
+    <span class="hljs-attr">arn</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  }
+})
+
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> VendorInvoicesApiClient({
+  auth,
+  <span class="hljs-attr">region</span>: <span class="hljs-string">&#x27;eu&#x27;</span> <span class="hljs-comment">// or &#x27;eu-west-1&#x27;</span>
+})
+</code></pre>
+					<a href="#handle-rate-limiting" id="handle-rate-limiting" style="color: inherit; text-decoration: none;">
+						<h2>Handle Rate Limiting</h2>
+					</a>
+					<p>If you want to let the SDK retry after each 429 responses, instanciate the client like this:</p>
+					<pre><code class="language-javascript"><span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> VendorInvoicesApiClient({
+  auth,
+  <span class="hljs-attr">region</span>: <span class="hljs-string">&#x27;eu&#x27;</span>,
+  <span class="hljs-attr">rateLimiting</span>: {
+    <span class="hljs-attr">retry</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">onRetry</span>: <span class="hljs-function">(<span class="hljs-params">retryInfo</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(retryInfo) <span class="hljs-comment">// Optional</span>
+  }
+})
+</code></pre>
+					<p>The SDK gets the rate limits for each routes from the API documentation</p>
+					<a href="#api-documentation" id="api-documentation" style="color: inherit; text-decoration: none;">
+						<h2>API documentation</h2>
+					</a>
+					<p>See <a href="https://github.com/amzn/selling-partner-api-docs/tree/main/references/vendor-invoices-api/vendorInvoices.md">here</a></p>
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>References</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#additionaldetails" class="tsd-kind-icon">Additional<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#additionaldetails-1" class="tsd-kind-icon">Additional<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#additionaldetails-2" class="tsd-kind-icon">Additional<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#additionaldetailstypeenum" class="tsd-kind-icon">Additional<wbr>Details<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#additionaldetailstypeenum-1" class="tsd-kind-icon">Additional<wbr>Details<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#additionaldetailstypeenum-2" class="tsd-kind-icon">Additional<wbr>Details<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#address" class="tsd-kind-icon">Address</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#address-1" class="tsd-kind-icon">Address</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#address-2" class="tsd-kind-icon">Address</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#allowancedetails" class="tsd-kind-icon">Allowance<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#allowancedetails-1" class="tsd-kind-icon">Allowance<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#allowancedetails-2" class="tsd-kind-icon">Allowance<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#allowancedetailstypeenum" class="tsd-kind-icon">Allowance<wbr>Details<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#allowancedetailstypeenum-1" class="tsd-kind-icon">Allowance<wbr>Details<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#allowancedetailstypeenum-2" class="tsd-kind-icon">Allowance<wbr>Details<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#chargedetails" class="tsd-kind-icon">Charge<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#chargedetails-1" class="tsd-kind-icon">Charge<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#chargedetails-2" class="tsd-kind-icon">Charge<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#chargedetailstypeenum" class="tsd-kind-icon">Charge<wbr>Details<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#chargedetailstypeenum-1" class="tsd-kind-icon">Charge<wbr>Details<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#chargedetailstypeenum-2" class="tsd-kind-icon">Charge<wbr>Details<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#clientparameters" class="tsd-kind-icon">Client<wbr>Parameters</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#configuration" class="tsd-kind-icon">Configuration</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#configurationparameters" class="tsd-kind-icon">Configuration<wbr>Parameters</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#creditnotedetails" class="tsd-kind-icon">Credit<wbr>Note<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#creditnotedetails-1" class="tsd-kind-icon">Credit<wbr>Note<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#creditnotedetails-2" class="tsd-kind-icon">Credit<wbr>Note<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#invoice" class="tsd-kind-icon">Invoice</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#invoice-1" class="tsd-kind-icon">Invoice</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#invoice-2" class="tsd-kind-icon">Invoice</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#invoiceinvoicetypeenum" class="tsd-kind-icon">Invoice<wbr>Invoice<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#invoiceinvoicetypeenum-1" class="tsd-kind-icon">Invoice<wbr>Invoice<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#invoiceinvoicetypeenum-2" class="tsd-kind-icon">Invoice<wbr>Invoice<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#invoiceitem" class="tsd-kind-icon">Invoice<wbr>Item</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#invoiceitem-1" class="tsd-kind-icon">Invoice<wbr>Item</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#invoiceitem-2" class="tsd-kind-icon">Invoice<wbr>Item</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#itemquantity" class="tsd-kind-icon">Item<wbr>Quantity</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#itemquantity-1" class="tsd-kind-icon">Item<wbr>Quantity</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#itemquantity-2" class="tsd-kind-icon">Item<wbr>Quantity</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#itemquantityunitofmeasureenum" class="tsd-kind-icon">Item<wbr>Quantity<wbr>Unit<wbr>OfMeasure<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#itemquantityunitofmeasureenum-1" class="tsd-kind-icon">Item<wbr>Quantity<wbr>Unit<wbr>OfMeasure<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#itemquantityunitofmeasureenum-2" class="tsd-kind-icon">Item<wbr>Quantity<wbr>Unit<wbr>OfMeasure<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#modelerror" class="tsd-kind-icon">Model<wbr>Error</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#modelerror-1" class="tsd-kind-icon">Model<wbr>Error</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#modelerror-2" class="tsd-kind-icon">Model<wbr>Error</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#money" class="tsd-kind-icon">Money</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#money-1" class="tsd-kind-icon">Money</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#money-2" class="tsd-kind-icon">Money</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#partyidentification" class="tsd-kind-icon">Party<wbr>Identification</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#partyidentification-1" class="tsd-kind-icon">Party<wbr>Identification</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#partyidentification-2" class="tsd-kind-icon">Party<wbr>Identification</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#paymentterms" class="tsd-kind-icon">Payment<wbr>Terms</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#paymentterms-1" class="tsd-kind-icon">Payment<wbr>Terms</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#paymentterms-2" class="tsd-kind-icon">Payment<wbr>Terms</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#paymenttermstypeenum" class="tsd-kind-icon">Payment<wbr>Terms<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#paymenttermstypeenum-1" class="tsd-kind-icon">Payment<wbr>Terms<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#paymenttermstypeenum-2" class="tsd-kind-icon">Payment<wbr>Terms<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#rate_limits" class="tsd-kind-icon">RATE_<wbr>LIMITS</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#submitinvoicesrequest" class="tsd-kind-icon">Submit<wbr>Invoices<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#submitinvoicesrequest-1" class="tsd-kind-icon">Submit<wbr>Invoices<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#submitinvoicesrequest-2" class="tsd-kind-icon">Submit<wbr>Invoices<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#submitinvoicesresponse" class="tsd-kind-icon">Submit<wbr>Invoices<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#submitinvoicesresponse-1" class="tsd-kind-icon">Submit<wbr>Invoices<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#submitinvoicesresponse-2" class="tsd-kind-icon">Submit<wbr>Invoices<wbr>Response</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxdetails" class="tsd-kind-icon">Tax<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxdetails-1" class="tsd-kind-icon">Tax<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxdetails-2" class="tsd-kind-icon">Tax<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxdetailstaxtypeenum" class="tsd-kind-icon">Tax<wbr>Details<wbr>Tax<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxdetailstaxtypeenum-1" class="tsd-kind-icon">Tax<wbr>Details<wbr>Tax<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxdetailstaxtypeenum-2" class="tsd-kind-icon">Tax<wbr>Details<wbr>Tax<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxregistrationdetails" class="tsd-kind-icon">Tax<wbr>Registration<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxregistrationdetails-1" class="tsd-kind-icon">Tax<wbr>Registration<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxregistrationdetails-2" class="tsd-kind-icon">Tax<wbr>Registration<wbr>Details</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxregistrationdetailstaxregistrationtypeenum" class="tsd-kind-icon">Tax<wbr>Registration<wbr>Details<wbr>Tax<wbr>Registration<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxregistrationdetailstaxregistrationtypeenum-1" class="tsd-kind-icon">Tax<wbr>Registration<wbr>Details<wbr>Tax<wbr>Registration<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxregistrationdetailstaxregistrationtypeenum-2" class="tsd-kind-icon">Tax<wbr>Registration<wbr>Details<wbr>Tax<wbr>Registration<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#transactionid" class="tsd-kind-icon">Transaction<wbr>Id</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#transactionid-1" class="tsd-kind-icon">Transaction<wbr>Id</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#transactionid-2" class="tsd-kind-icon">Transaction<wbr>Id</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorinvoicesapiclient" class="tsd-kind-icon">Vendor<wbr>Invoices<wbr>Api<wbr>Client</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorinvoicesapierror" class="tsd-kind-icon">Vendor<wbr>Invoices<wbr>Api<wbr>Error</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapi" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapi-1" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapiaxiosparamcreator" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapiaxiosparamcreator-1" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapifactory" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Factory</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapifactory-1" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Factory</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapifp" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Fp</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapifp-1" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Fp</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapisubmitinvoicesrequest" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Submit<wbr>Invoices<wbr>Request</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapisubmitinvoicesrequest-1" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Submit<wbr>Invoices<wbr>Request</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.additionaldetailstypeenum-3.html" class="tsd-kind-icon">Additional<wbr>Details<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.allowancedetailstypeenum-3.html" class="tsd-kind-icon">Allowance<wbr>Details<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.chargedetailstypeenum-3.html" class="tsd-kind-icon">Charge<wbr>Details<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.invoiceinvoicetypeenum-3.html" class="tsd-kind-icon">Invoice<wbr>Invoice<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.itemquantityunitofmeasureenum-3.html" class="tsd-kind-icon">Item<wbr>Quantity<wbr>Unit<wbr>OfMeasure<wbr>Enum</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.paymenttermstypeenum-3.html" class="tsd-kind-icon">Payment<wbr>Terms<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.taxdetailstaxtypeenum-3.html" class="tsd-kind-icon">Tax<wbr>Details<wbr>Tax<wbr>Type<wbr>Enum</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.taxregistrationdetailstaxregistrationtypeenum-3.html" class="tsd-kind-icon">Tax<wbr>Registration<wbr>Details<wbr>Tax<wbr>Registration<wbr>Type<wbr>Enum</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.baseapi.html" class="tsd-kind-icon">BaseAPI</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-kind-icon">Configuration</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.requirederror.html" class="tsd-kind-icon">Required<wbr>Error</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.vendorinvoicesapiclient-1.html" class="tsd-kind-icon">Vendor<wbr>Invoices<wbr>Api<wbr>Client</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.vendorinvoicesapierror-1.html" class="tsd-kind-icon">Vendor<wbr>Invoices<wbr>Api<wbr>Error</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.vendorpaymentsapi-2.html" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.additionaldetails-3.html" class="tsd-kind-icon">Additional<wbr>Details</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.address-3.html" class="tsd-kind-icon">Address</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.allowancedetails-3.html" class="tsd-kind-icon">Allowance<wbr>Details</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.chargedetails-3.html" class="tsd-kind-icon">Charge<wbr>Details</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.clientparameters-1.html" class="tsd-kind-icon">Client<wbr>Parameters</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.configurationparameters-1.html" class="tsd-kind-icon">Configuration<wbr>Parameters</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.creditnotedetails-3.html" class="tsd-kind-icon">Credit<wbr>Note<wbr>Details</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.invoice-3.html" class="tsd-kind-icon">Invoice</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.invoiceitem-3.html" class="tsd-kind-icon">Invoice<wbr>Item</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.itemquantity-3.html" class="tsd-kind-icon">Item<wbr>Quantity</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.modelerror-3.html" class="tsd-kind-icon">Model<wbr>Error</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.money-3.html" class="tsd-kind-icon">Money</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.partyidentification-3.html" class="tsd-kind-icon">Party<wbr>Identification</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.paymentterms-3.html" class="tsd-kind-icon">Payment<wbr>Terms</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.requestargs.html" class="tsd-kind-icon">Request<wbr>Args</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesrequest-3.html" class="tsd-kind-icon">Submit<wbr>Invoices<wbr>Request</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesresponse-3.html" class="tsd-kind-icon">Submit<wbr>Invoices<wbr>Response</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.taxdetails-3.html" class="tsd-kind-icon">Tax<wbr>Details</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.taxregistrationdetails-3.html" class="tsd-kind-icon">Tax<wbr>Registration<wbr>Details</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.transactionid-3.html" class="tsd-kind-icon">Transaction<wbr>Id</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.vendorpaymentsapisubmitinvoicesrequest-2.html" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Submit<wbr>Invoices<wbr>Request</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#base_path" class="tsd-kind-icon">BASE_<wbr>PATH</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#dummy_base_url" class="tsd-kind-icon">DUMMY_<wbr>BASE_<wbr>URL</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#rate_limits-1" class="tsd-kind-icon">RATE_<wbr>LIMITS</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapiaxiosparamcreator-2" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapifactory-2" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Factory</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapifp-2" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Fp</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#assertparamexists" class="tsd-kind-icon">assert<wbr>Param<wbr>Exists</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#createrequestfunction" class="tsd-kind-icon">create<wbr>Request<wbr>Function</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#serializedataifneeded" class="tsd-kind-icon">serialize<wbr>Data<wbr>IfNeeded</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#setapikeytoobject" class="tsd-kind-icon">set<wbr>Api<wbr>Key<wbr>ToObject</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#setbasicauthtoobject" class="tsd-kind-icon">set<wbr>Basic<wbr>Auth<wbr>ToObject</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#setbearerauthtoobject" class="tsd-kind-icon">set<wbr>Bearer<wbr>Auth<wbr>ToObject</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#setoauthtoobject" class="tsd-kind-icon">setOAuth<wbr>ToObject</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#setsearchparams" class="tsd-kind-icon">set<wbr>Search<wbr>Params</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#topathstring" class="tsd-kind-icon">to<wbr>Path<wbr>String</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="_sp_api_sdk_vendor_invoices_api_v1.html#collection_formats" class="tsd-kind-icon">COLLECTION_<wbr>FORMATS</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>References</h2>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="additionaldetails" class="tsd-anchor"></a>
+					<h3>Additional<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.additionaldetails-3.html">AdditionalDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="additionaldetails-1" class="tsd-anchor"></a>
+					<h3>Additional<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.additionaldetails-3.html">AdditionalDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="additionaldetails-2" class="tsd-anchor"></a>
+					<h3>Additional<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.additionaldetails-3.html">AdditionalDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="additionaldetailstypeenum" class="tsd-anchor"></a>
+					<h3>Additional<wbr>Details<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.additionaldetailstypeenum-3.html">AdditionalDetailsTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="additionaldetailstypeenum-1" class="tsd-anchor"></a>
+					<h3>Additional<wbr>Details<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.additionaldetailstypeenum-3.html">AdditionalDetailsTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="additionaldetailstypeenum-2" class="tsd-anchor"></a>
+					<h3>Additional<wbr>Details<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.additionaldetailstypeenum-3.html">AdditionalDetailsTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="address" class="tsd-anchor"></a>
+					<h3>Address</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.address-3.html">Address</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="address-1" class="tsd-anchor"></a>
+					<h3>Address</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.address-3.html">Address</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="address-2" class="tsd-anchor"></a>
+					<h3>Address</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.address-3.html">Address</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="allowancedetails" class="tsd-anchor"></a>
+					<h3>Allowance<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.allowancedetails-3.html">AllowanceDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="allowancedetails-1" class="tsd-anchor"></a>
+					<h3>Allowance<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.allowancedetails-3.html">AllowanceDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="allowancedetails-2" class="tsd-anchor"></a>
+					<h3>Allowance<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.allowancedetails-3.html">AllowanceDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="allowancedetailstypeenum" class="tsd-anchor"></a>
+					<h3>Allowance<wbr>Details<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.allowancedetailstypeenum-3.html">AllowanceDetailsTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="allowancedetailstypeenum-1" class="tsd-anchor"></a>
+					<h3>Allowance<wbr>Details<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.allowancedetailstypeenum-3.html">AllowanceDetailsTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="allowancedetailstypeenum-2" class="tsd-anchor"></a>
+					<h3>Allowance<wbr>Details<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.allowancedetailstypeenum-3.html">AllowanceDetailsTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="chargedetails" class="tsd-anchor"></a>
+					<h3>Charge<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.chargedetails-3.html">ChargeDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="chargedetails-1" class="tsd-anchor"></a>
+					<h3>Charge<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.chargedetails-3.html">ChargeDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="chargedetails-2" class="tsd-anchor"></a>
+					<h3>Charge<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.chargedetails-3.html">ChargeDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="chargedetailstypeenum" class="tsd-anchor"></a>
+					<h3>Charge<wbr>Details<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.chargedetailstypeenum-3.html">ChargeDetailsTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="chargedetailstypeenum-1" class="tsd-anchor"></a>
+					<h3>Charge<wbr>Details<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.chargedetailstypeenum-3.html">ChargeDetailsTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="chargedetailstypeenum-2" class="tsd-anchor"></a>
+					<h3>Charge<wbr>Details<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.chargedetailstypeenum-3.html">ChargeDetailsTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="clientparameters" class="tsd-anchor"></a>
+					<h3>Client<wbr>Parameters</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.clientparameters-1.html">ClientParameters</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="configuration" class="tsd-anchor"></a>
+					<h3>Configuration</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html">Configuration</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="configurationparameters" class="tsd-anchor"></a>
+					<h3>Configuration<wbr>Parameters</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.configurationparameters-1.html">ConfigurationParameters</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="creditnotedetails" class="tsd-anchor"></a>
+					<h3>Credit<wbr>Note<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.creditnotedetails-3.html">CreditNoteDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="creditnotedetails-1" class="tsd-anchor"></a>
+					<h3>Credit<wbr>Note<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.creditnotedetails-3.html">CreditNoteDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="creditnotedetails-2" class="tsd-anchor"></a>
+					<h3>Credit<wbr>Note<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.creditnotedetails-3.html">CreditNoteDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="invoice" class="tsd-anchor"></a>
+					<h3>Invoice</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.invoice-3.html">Invoice</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="invoice-1" class="tsd-anchor"></a>
+					<h3>Invoice</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.invoice-3.html">Invoice</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="invoice-2" class="tsd-anchor"></a>
+					<h3>Invoice</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.invoice-3.html">Invoice</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="invoiceinvoicetypeenum" class="tsd-anchor"></a>
+					<h3>Invoice<wbr>Invoice<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.invoiceinvoicetypeenum-3.html">InvoiceInvoiceTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="invoiceinvoicetypeenum-1" class="tsd-anchor"></a>
+					<h3>Invoice<wbr>Invoice<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.invoiceinvoicetypeenum-3.html">InvoiceInvoiceTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="invoiceinvoicetypeenum-2" class="tsd-anchor"></a>
+					<h3>Invoice<wbr>Invoice<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.invoiceinvoicetypeenum-3.html">InvoiceInvoiceTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="invoiceitem" class="tsd-anchor"></a>
+					<h3>Invoice<wbr>Item</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.invoiceitem-3.html">InvoiceItem</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="invoiceitem-1" class="tsd-anchor"></a>
+					<h3>Invoice<wbr>Item</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.invoiceitem-3.html">InvoiceItem</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="invoiceitem-2" class="tsd-anchor"></a>
+					<h3>Invoice<wbr>Item</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.invoiceitem-3.html">InvoiceItem</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="itemquantity" class="tsd-anchor"></a>
+					<h3>Item<wbr>Quantity</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.itemquantity-3.html">ItemQuantity</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="itemquantity-1" class="tsd-anchor"></a>
+					<h3>Item<wbr>Quantity</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.itemquantity-3.html">ItemQuantity</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="itemquantity-2" class="tsd-anchor"></a>
+					<h3>Item<wbr>Quantity</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.itemquantity-3.html">ItemQuantity</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="itemquantityunitofmeasureenum" class="tsd-anchor"></a>
+					<h3>Item<wbr>Quantity<wbr>Unit<wbr>OfMeasure<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.itemquantityunitofmeasureenum-3.html">ItemQuantityUnitOfMeasureEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="itemquantityunitofmeasureenum-1" class="tsd-anchor"></a>
+					<h3>Item<wbr>Quantity<wbr>Unit<wbr>OfMeasure<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.itemquantityunitofmeasureenum-3.html">ItemQuantityUnitOfMeasureEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="itemquantityunitofmeasureenum-2" class="tsd-anchor"></a>
+					<h3>Item<wbr>Quantity<wbr>Unit<wbr>OfMeasure<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.itemquantityunitofmeasureenum-3.html">ItemQuantityUnitOfMeasureEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="modelerror" class="tsd-anchor"></a>
+					<h3>Model<wbr>Error</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.modelerror-3.html">ModelError</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="modelerror-1" class="tsd-anchor"></a>
+					<h3>Model<wbr>Error</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.modelerror-3.html">ModelError</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="modelerror-2" class="tsd-anchor"></a>
+					<h3>Model<wbr>Error</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.modelerror-3.html">ModelError</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="money" class="tsd-anchor"></a>
+					<h3>Money</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.money-3.html">Money</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="money-1" class="tsd-anchor"></a>
+					<h3>Money</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.money-3.html">Money</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="money-2" class="tsd-anchor"></a>
+					<h3>Money</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.money-3.html">Money</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="partyidentification" class="tsd-anchor"></a>
+					<h3>Party<wbr>Identification</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.partyidentification-3.html">PartyIdentification</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="partyidentification-1" class="tsd-anchor"></a>
+					<h3>Party<wbr>Identification</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.partyidentification-3.html">PartyIdentification</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="partyidentification-2" class="tsd-anchor"></a>
+					<h3>Party<wbr>Identification</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.partyidentification-3.html">PartyIdentification</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="paymentterms" class="tsd-anchor"></a>
+					<h3>Payment<wbr>Terms</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.paymentterms-3.html">PaymentTerms</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="paymentterms-1" class="tsd-anchor"></a>
+					<h3>Payment<wbr>Terms</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.paymentterms-3.html">PaymentTerms</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="paymentterms-2" class="tsd-anchor"></a>
+					<h3>Payment<wbr>Terms</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.paymentterms-3.html">PaymentTerms</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="paymenttermstypeenum" class="tsd-anchor"></a>
+					<h3>Payment<wbr>Terms<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.paymenttermstypeenum-3.html">PaymentTermsTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="paymenttermstypeenum-1" class="tsd-anchor"></a>
+					<h3>Payment<wbr>Terms<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.paymenttermstypeenum-3.html">PaymentTermsTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="paymenttermstypeenum-2" class="tsd-anchor"></a>
+					<h3>Payment<wbr>Terms<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.paymenttermstypeenum-3.html">PaymentTermsTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="rate_limits" class="tsd-anchor"></a>
+					<h3>RATE_<wbr>LIMITS</h3>
+					Re-exports <a href="_sp_api_sdk_vendor_invoices_api_v1.html#rate_limits-1">RATE_LIMITS</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="submitinvoicesrequest" class="tsd-anchor"></a>
+					<h3>Submit<wbr>Invoices<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesrequest-3.html">SubmitInvoicesRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="submitinvoicesrequest-1" class="tsd-anchor"></a>
+					<h3>Submit<wbr>Invoices<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesrequest-3.html">SubmitInvoicesRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="submitinvoicesrequest-2" class="tsd-anchor"></a>
+					<h3>Submit<wbr>Invoices<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesrequest-3.html">SubmitInvoicesRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="submitinvoicesresponse" class="tsd-anchor"></a>
+					<h3>Submit<wbr>Invoices<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesresponse-3.html">SubmitInvoicesResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="submitinvoicesresponse-1" class="tsd-anchor"></a>
+					<h3>Submit<wbr>Invoices<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesresponse-3.html">SubmitInvoicesResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="submitinvoicesresponse-2" class="tsd-anchor"></a>
+					<h3>Submit<wbr>Invoices<wbr>Response</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesresponse-3.html">SubmitInvoicesResponse</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="taxdetails" class="tsd-anchor"></a>
+					<h3>Tax<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.taxdetails-3.html">TaxDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="taxdetails-1" class="tsd-anchor"></a>
+					<h3>Tax<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.taxdetails-3.html">TaxDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="taxdetails-2" class="tsd-anchor"></a>
+					<h3>Tax<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.taxdetails-3.html">TaxDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="taxdetailstaxtypeenum" class="tsd-anchor"></a>
+					<h3>Tax<wbr>Details<wbr>Tax<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.taxdetailstaxtypeenum-3.html">TaxDetailsTaxTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="taxdetailstaxtypeenum-1" class="tsd-anchor"></a>
+					<h3>Tax<wbr>Details<wbr>Tax<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.taxdetailstaxtypeenum-3.html">TaxDetailsTaxTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="taxdetailstaxtypeenum-2" class="tsd-anchor"></a>
+					<h3>Tax<wbr>Details<wbr>Tax<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.taxdetailstaxtypeenum-3.html">TaxDetailsTaxTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="taxregistrationdetails" class="tsd-anchor"></a>
+					<h3>Tax<wbr>Registration<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.taxregistrationdetails-3.html">TaxRegistrationDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="taxregistrationdetails-1" class="tsd-anchor"></a>
+					<h3>Tax<wbr>Registration<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.taxregistrationdetails-3.html">TaxRegistrationDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="taxregistrationdetails-2" class="tsd-anchor"></a>
+					<h3>Tax<wbr>Registration<wbr>Details</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.taxregistrationdetails-3.html">TaxRegistrationDetails</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="taxregistrationdetailstaxregistrationtypeenum" class="tsd-anchor"></a>
+					<h3>Tax<wbr>Registration<wbr>Details<wbr>Tax<wbr>Registration<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.taxregistrationdetailstaxregistrationtypeenum-3.html">TaxRegistrationDetailsTaxRegistrationTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="taxregistrationdetailstaxregistrationtypeenum-1" class="tsd-anchor"></a>
+					<h3>Tax<wbr>Registration<wbr>Details<wbr>Tax<wbr>Registration<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.taxregistrationdetailstaxregistrationtypeenum-3.html">TaxRegistrationDetailsTaxRegistrationTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="taxregistrationdetailstaxregistrationtypeenum-2" class="tsd-anchor"></a>
+					<h3>Tax<wbr>Registration<wbr>Details<wbr>Tax<wbr>Registration<wbr>Type<wbr>Enum</h3>
+					Re-exports <a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.taxregistrationdetailstaxregistrationtypeenum-3.html">TaxRegistrationDetailsTaxRegistrationTypeEnum</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="transactionid" class="tsd-anchor"></a>
+					<h3>Transaction<wbr>Id</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.transactionid-3.html">TransactionId</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="transactionid-1" class="tsd-anchor"></a>
+					<h3>Transaction<wbr>Id</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.transactionid-3.html">TransactionId</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="transactionid-2" class="tsd-anchor"></a>
+					<h3>Transaction<wbr>Id</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.transactionid-3.html">TransactionId</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="vendorinvoicesapiclient" class="tsd-anchor"></a>
+					<h3>Vendor<wbr>Invoices<wbr>Api<wbr>Client</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.vendorinvoicesapiclient-1.html">VendorInvoicesApiClient</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="vendorinvoicesapierror" class="tsd-anchor"></a>
+					<h3>Vendor<wbr>Invoices<wbr>Api<wbr>Error</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.vendorinvoicesapierror-1.html">VendorInvoicesApiError</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="vendorpaymentsapi" class="tsd-anchor"></a>
+					<h3>Vendor<wbr>Payments<wbr>Api</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.vendorpaymentsapi-2.html">VendorPaymentsApi</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="vendorpaymentsapi-1" class="tsd-anchor"></a>
+					<h3>Vendor<wbr>Payments<wbr>Api</h3>
+					Re-exports <a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.vendorpaymentsapi-2.html">VendorPaymentsApi</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="vendorpaymentsapiaxiosparamcreator" class="tsd-anchor"></a>
+					<h3>Vendor<wbr>Payments<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</h3>
+					Re-exports <a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapiaxiosparamcreator-2">VendorPaymentsApiAxiosParamCreator</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="vendorpaymentsapiaxiosparamcreator-1" class="tsd-anchor"></a>
+					<h3>Vendor<wbr>Payments<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</h3>
+					Re-exports <a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapiaxiosparamcreator-2">VendorPaymentsApiAxiosParamCreator</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="vendorpaymentsapifactory" class="tsd-anchor"></a>
+					<h3>Vendor<wbr>Payments<wbr>Api<wbr>Factory</h3>
+					Re-exports <a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapifactory-2">VendorPaymentsApiFactory</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="vendorpaymentsapifactory-1" class="tsd-anchor"></a>
+					<h3>Vendor<wbr>Payments<wbr>Api<wbr>Factory</h3>
+					Re-exports <a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapifactory-2">VendorPaymentsApiFactory</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="vendorpaymentsapifp" class="tsd-anchor"></a>
+					<h3>Vendor<wbr>Payments<wbr>Api<wbr>Fp</h3>
+					Re-exports <a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapifp-2">VendorPaymentsApiFp</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="vendorpaymentsapifp-1" class="tsd-anchor"></a>
+					<h3>Vendor<wbr>Payments<wbr>Api<wbr>Fp</h3>
+					Re-exports <a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapifp-2">VendorPaymentsApiFp</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="vendorpaymentsapisubmitinvoicesrequest" class="tsd-anchor"></a>
+					<h3>Vendor<wbr>Payments<wbr>Api<wbr>Submit<wbr>Invoices<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.vendorpaymentsapisubmitinvoicesrequest-2.html">VendorPaymentsApiSubmitInvoicesRequest</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="vendorpaymentsapisubmitinvoicesrequest-1" class="tsd-anchor"></a>
+					<h3>Vendor<wbr>Payments<wbr>Api<wbr>Submit<wbr>Invoices<wbr>Request</h3>
+					Re-exports <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.vendorpaymentsapisubmitinvoicesrequest-2.html">VendorPaymentsApiSubmitInvoicesRequest</a>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="base_path" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> BASE_<wbr>PATH</h3>
+					<div class="tsd-signature tsd-kind-icon">BASE_<wbr>PATH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://sellingpartnerapi-na.amazon.com&quot;.replace(/\/+$/, &quot;&quot;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/base.ts#L21">clients/vendor-invoices-api-v1/src/api-model/base.ts:21</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="dummy_base_url" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> DUMMY_<wbr>BASE_<wbr>URL</h3>
+					<div class="tsd-signature tsd-kind-icon">DUMMY_<wbr>BASE_<wbr>URL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"https://example.com"</span><span class="tsd-signature-symbol"> = &quot;https://example.com&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/common.ts#L24">clients/vendor-invoices-api-v1/src/api-model/common.ts:24</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>export</dt>
+							<dd></dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="rate_limits-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> RATE_<wbr>LIMITS</h3>
+					<div class="tsd-signature tsd-kind-icon">RATE_<wbr>LIMITS<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_sp_api_sdk_common.ratelimit-3.html" class="tsd-signature-type">RateLimit</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [{method: &#x27;post&#x27;,urlRegex: new RegExp(&#x27;^/vendor/payments/v1/invoices$&#x27;),rate: 10,burst: 10}]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/client.ts#L8">clients/vendor-invoices-api-v1/src/client.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="vendorpaymentsapiaxiosparamcreator-2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Vendor<wbr>Payments<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator<span class="tsd-signature-symbol">(</span>configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>submitInvoices<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/api/vendor-payments-api.ts#L31">clients/vendor-invoices-api-v1/src/api-model/api/vendor-payments-api.ts:31</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>VendorPaymentsApi - axios parameter creator</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>submitInvoices<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>submit<wbr>Invoices<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">submit<wbr>Invoices<span class="tsd-signature-symbol">(</span>body<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesrequest-3.html" class="tsd-signature-type">SubmitInvoicesRequest</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/api/vendor-payments-api.ts#L39">clients/vendor-invoices-api-v1/src/api-model/api/vendor-payments-api.ts:39</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Submit new invoices to Amazon.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>body: <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesrequest-3.html" class="tsd-signature-type">SubmitInvoicesRequest</a></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = {}</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.requestargs.html" class="tsd-signature-type">RequestArgs</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="vendorpaymentsapifactory-2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Vendor<wbr>Payments<wbr>Api<wbr>Factory</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Factory<span class="tsd-signature-symbol">(</span>configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>submitInvoices<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/api/vendor-payments-api.ts#L95">clients/vendor-invoices-api-v1/src/api-model/api/vendor-payments-api.ts:95</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>VendorPaymentsApi - factory interface</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> basePath: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> axios: <span class="tsd-signature-type">AxiosInstance</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>submitInvoices<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>submit<wbr>Invoices<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">submit<wbr>Invoices<span class="tsd-signature-symbol">(</span>body<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesrequest-3.html" class="tsd-signature-type">SubmitInvoicesRequest</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesresponse-3.html" class="tsd-signature-type">SubmitInvoicesResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/api/vendor-payments-api.ts#L104">clients/vendor-invoices-api-v1/src/api-model/api/vendor-payments-api.ts:104</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Submit new invoices to Amazon.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>body: <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesrequest-3.html" class="tsd-signature-type">SubmitInvoicesRequest</a></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesresponse-3.html" class="tsd-signature-type">SubmitInvoicesResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="vendorpaymentsapifp-2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Vendor<wbr>Payments<wbr>Api<wbr>Fp</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Fp<span class="tsd-signature-symbol">(</span>configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>submitInvoices<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/api/vendor-payments-api.ts#L75">clients/vendor-invoices-api-v1/src/api-model/api/vendor-payments-api.ts:75</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>VendorPaymentsApi - functional programming interface</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>submitInvoices<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>submit<wbr>Invoices<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon">submit<wbr>Invoices<span class="tsd-signature-symbol">(</span>body<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesrequest-3.html" class="tsd-signature-type">SubmitInvoicesRequest</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesresponse-3.html" class="tsd-signature-type">SubmitInvoicesResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/api/vendor-payments-api.ts#L84">clients/vendor-invoices-api-v1/src/api-model/api/vendor-payments-api.ts:84</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Submit new invoices to Amazon.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+												</div>
+												<dl class="tsd-comment-tags">
+													<dt>throws</dt>
+													<dd><p>{RequiredError}</p>
+													</dd>
+												</dl>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>body: <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesrequest-3.html" class="tsd-signature-type">SubmitInvoicesRequest</a></h5>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">any</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>axios<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span>, basePath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesresponse-3.html" class="tsd-signature-type">SubmitInvoicesResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="assertparamexists" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> assert<wbr>Param<wbr>Exists</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">assert<wbr>Param<wbr>Exists<span class="tsd-signature-symbol">(</span>functionName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, paramName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, paramValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/common.ts#L31">clients/vendor-invoices-api-v1/src/api-model/common.ts:31</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>{RequiredError}</p>
+									</dd>
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>functionName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>paramName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>paramValue: <span class="tsd-signature-type">unknown</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createrequestfunction" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> create<wbr>Request<wbr>Function</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Request<wbr>Function<span class="tsd-signature-symbol">(</span>axiosArgs<span class="tsd-signature-symbol">: </span><a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.requestargs.html" class="tsd-signature-type">RequestArgs</a>, globalAxios<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosInstance</span>, BASE_PATH<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/common.ts#L133">clients/vendor-invoices-api-v1/src/api-model/common.ts:133</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>axiosArgs: <a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.requestargs.html" class="tsd-signature-type">RequestArgs</a></h5>
+								</li>
+								<li>
+									<h5>globalAxios: <span class="tsd-signature-type">AxiosInstance</span></h5>
+								</li>
+								<li>
+									<h5>BASE_PATH: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous function)</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="serializedataifneeded" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> serialize<wbr>Data<wbr>IfNeeded</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">serialize<wbr>Data<wbr>IfNeeded<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, requestOptions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/common.ts#L111">clients/vendor-invoices-api-v1/src/api-model/common.ts:111</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>requestOptions: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setapikeytoobject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Api<wbr>Key<wbr>ToObject</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Api<wbr>Key<wbr>ToObject<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, keyParamName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/common.ts#L41">clients/vendor-invoices-api-v1/src/api-model/common.ts:41</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>keyParamName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setbasicauthtoobject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Basic<wbr>Auth<wbr>ToObject</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Basic<wbr>Auth<wbr>ToObject<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/common.ts#L54">clients/vendor-invoices-api-v1/src/api-model/common.ts:54</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setbearerauthtoobject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Bearer<wbr>Auth<wbr>ToObject</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Bearer<wbr>Auth<wbr>ToObject<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/common.ts#L64">clients/vendor-invoices-api-v1/src/api-model/common.ts:64</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setoauthtoobject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> setOAuth<wbr>ToObject</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">setOAuth<wbr>ToObject<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, scopes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, configuration<span class="tsd-signature-symbol">?: </span><a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/common.ts#L77">clients/vendor-invoices-api-v1/src/api-model/common.ts:77</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>scopes: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> configuration: <a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-signature-type">Configuration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="setsearchparams" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Search<wbr>Params</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Search<wbr>Params<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">URL</span>, <span class="tsd-signature-symbol">...</span>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/common.ts#L90">clients/vendor-invoices-api-v1/src/api-model/common.ts:90</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>url: <span class="tsd-signature-type">URL</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>objects: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="topathstring" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> to<wbr>Path<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Path<wbr>String<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">URL</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/common.ts#L125">clients/vendor-invoices-api-v1/src/api-model/common.ts:125</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>url: <span class="tsd-signature-type">URL</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="collection_formats" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> COLLECTION_<wbr>FORMATS</h3>
+					<div class="tsd-signature tsd-kind-icon">COLLECTION_<wbr>FORMATS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/base.ts#L27">clients/vendor-invoices-api-v1/src/api-model/base.ts:27</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>export</dt>
+							<dd></dd>
+						</dl>
+					</div>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="collection_formats.csv" class="tsd-anchor"></a>
+						<h3>csv</h3>
+						<div class="tsd-signature tsd-kind-icon">csv<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;,&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/base.ts#L28">clients/vendor-invoices-api-v1/src/api-model/base.ts:28</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="collection_formats.pipes" class="tsd-anchor"></a>
+						<h3>pipes</h3>
+						<div class="tsd-signature tsd-kind-icon">pipes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;|&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/base.ts#L31">clients/vendor-invoices-api-v1/src/api-model/base.ts:31</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="collection_formats.ssv" class="tsd-anchor"></a>
+						<h3>ssv</h3>
+						<div class="tsd-signature tsd-kind-icon">ssv<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot; &quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/base.ts#L29">clients/vendor-invoices-api-v1/src/api-model/base.ts:29</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="collection_formats.tsv" class="tsd-anchor"></a>
+						<h3>tsv</h3>
+						<div class="tsd-signature tsd-kind-icon">tsv<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;	&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/5ecc2c2/clients/vendor-invoices-api-v1/src/api-model/base.ts#L30">clients/vendor-invoices-api-v1/src/api-model/base.ts:30</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html">@sp-<wbr>api-<wbr>sdk/vendor-<wbr>invoices-<wbr>api-<wbr>v1</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#additionaldetails" class="tsd-kind-icon">Additional<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#additionaldetails-1" class="tsd-kind-icon">Additional<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#additionaldetails-2" class="tsd-kind-icon">Additional<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#additionaldetailstypeenum" class="tsd-kind-icon">Additional<wbr>Details<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#additionaldetailstypeenum-1" class="tsd-kind-icon">Additional<wbr>Details<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#additionaldetailstypeenum-2" class="tsd-kind-icon">Additional<wbr>Details<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#address" class="tsd-kind-icon">Address</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#address-1" class="tsd-kind-icon">Address</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#address-2" class="tsd-kind-icon">Address</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#allowancedetails" class="tsd-kind-icon">Allowance<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#allowancedetails-1" class="tsd-kind-icon">Allowance<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#allowancedetails-2" class="tsd-kind-icon">Allowance<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#allowancedetailstypeenum" class="tsd-kind-icon">Allowance<wbr>Details<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#allowancedetailstypeenum-1" class="tsd-kind-icon">Allowance<wbr>Details<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#allowancedetailstypeenum-2" class="tsd-kind-icon">Allowance<wbr>Details<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#chargedetails" class="tsd-kind-icon">Charge<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#chargedetails-1" class="tsd-kind-icon">Charge<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#chargedetails-2" class="tsd-kind-icon">Charge<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#chargedetailstypeenum" class="tsd-kind-icon">Charge<wbr>Details<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#chargedetailstypeenum-1" class="tsd-kind-icon">Charge<wbr>Details<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#chargedetailstypeenum-2" class="tsd-kind-icon">Charge<wbr>Details<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#clientparameters" class="tsd-kind-icon">Client<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#configuration" class="tsd-kind-icon">Configuration</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#configurationparameters" class="tsd-kind-icon">Configuration<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#creditnotedetails" class="tsd-kind-icon">Credit<wbr>Note<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#creditnotedetails-1" class="tsd-kind-icon">Credit<wbr>Note<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#creditnotedetails-2" class="tsd-kind-icon">Credit<wbr>Note<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#invoice" class="tsd-kind-icon">Invoice</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#invoice-1" class="tsd-kind-icon">Invoice</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#invoice-2" class="tsd-kind-icon">Invoice</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#invoiceinvoicetypeenum" class="tsd-kind-icon">Invoice<wbr>Invoice<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#invoiceinvoicetypeenum-1" class="tsd-kind-icon">Invoice<wbr>Invoice<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#invoiceinvoicetypeenum-2" class="tsd-kind-icon">Invoice<wbr>Invoice<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#invoiceitem" class="tsd-kind-icon">Invoice<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#invoiceitem-1" class="tsd-kind-icon">Invoice<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#invoiceitem-2" class="tsd-kind-icon">Invoice<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#itemquantity" class="tsd-kind-icon">Item<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#itemquantity-1" class="tsd-kind-icon">Item<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#itemquantity-2" class="tsd-kind-icon">Item<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#itemquantityunitofmeasureenum" class="tsd-kind-icon">Item<wbr>Quantity<wbr>Unit<wbr>OfMeasure<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#itemquantityunitofmeasureenum-1" class="tsd-kind-icon">Item<wbr>Quantity<wbr>Unit<wbr>OfMeasure<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#itemquantityunitofmeasureenum-2" class="tsd-kind-icon">Item<wbr>Quantity<wbr>Unit<wbr>OfMeasure<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#modelerror" class="tsd-kind-icon">Model<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#modelerror-1" class="tsd-kind-icon">Model<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#modelerror-2" class="tsd-kind-icon">Model<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#money" class="tsd-kind-icon">Money</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#money-1" class="tsd-kind-icon">Money</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#money-2" class="tsd-kind-icon">Money</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#partyidentification" class="tsd-kind-icon">Party<wbr>Identification</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#partyidentification-1" class="tsd-kind-icon">Party<wbr>Identification</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#partyidentification-2" class="tsd-kind-icon">Party<wbr>Identification</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#paymentterms" class="tsd-kind-icon">Payment<wbr>Terms</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#paymentterms-1" class="tsd-kind-icon">Payment<wbr>Terms</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#paymentterms-2" class="tsd-kind-icon">Payment<wbr>Terms</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#paymenttermstypeenum" class="tsd-kind-icon">Payment<wbr>Terms<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#paymenttermstypeenum-1" class="tsd-kind-icon">Payment<wbr>Terms<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#paymenttermstypeenum-2" class="tsd-kind-icon">Payment<wbr>Terms<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#rate_limits" class="tsd-kind-icon">RATE_<wbr>LIMITS</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#submitinvoicesrequest" class="tsd-kind-icon">Submit<wbr>Invoices<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#submitinvoicesrequest-1" class="tsd-kind-icon">Submit<wbr>Invoices<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#submitinvoicesrequest-2" class="tsd-kind-icon">Submit<wbr>Invoices<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#submitinvoicesresponse" class="tsd-kind-icon">Submit<wbr>Invoices<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#submitinvoicesresponse-1" class="tsd-kind-icon">Submit<wbr>Invoices<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#submitinvoicesresponse-2" class="tsd-kind-icon">Submit<wbr>Invoices<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxdetails" class="tsd-kind-icon">Tax<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxdetails-1" class="tsd-kind-icon">Tax<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxdetails-2" class="tsd-kind-icon">Tax<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxdetailstaxtypeenum" class="tsd-kind-icon">Tax<wbr>Details<wbr>Tax<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxdetailstaxtypeenum-1" class="tsd-kind-icon">Tax<wbr>Details<wbr>Tax<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxdetailstaxtypeenum-2" class="tsd-kind-icon">Tax<wbr>Details<wbr>Tax<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxregistrationdetails" class="tsd-kind-icon">Tax<wbr>Registration<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxregistrationdetails-1" class="tsd-kind-icon">Tax<wbr>Registration<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxregistrationdetails-2" class="tsd-kind-icon">Tax<wbr>Registration<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxregistrationdetailstaxregistrationtypeenum" class="tsd-kind-icon">Tax<wbr>Registration<wbr>Details<wbr>Tax<wbr>Registration<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxregistrationdetailstaxregistrationtypeenum-1" class="tsd-kind-icon">Tax<wbr>Registration<wbr>Details<wbr>Tax<wbr>Registration<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#taxregistrationdetailstaxregistrationtypeenum-2" class="tsd-kind-icon">Tax<wbr>Registration<wbr>Details<wbr>Tax<wbr>Registration<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#transactionid" class="tsd-kind-icon">Transaction<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#transactionid-1" class="tsd-kind-icon">Transaction<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#transactionid-2" class="tsd-kind-icon">Transaction<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorinvoicesapiclient" class="tsd-kind-icon">Vendor<wbr>Invoices<wbr>Api<wbr>Client</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorinvoicesapierror" class="tsd-kind-icon">Vendor<wbr>Invoices<wbr>Api<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapi" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapi-1" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapiaxiosparamcreator" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapiaxiosparamcreator-1" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapifactory" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapifactory-1" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapifp" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Fp</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapifp-1" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Fp</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapisubmitinvoicesrequest" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Submit<wbr>Invoices<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapisubmitinvoicesrequest-1" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Submit<wbr>Invoices<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.additionaldetailstypeenum-3.html" class="tsd-kind-icon">Additional<wbr>Details<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.allowancedetailstypeenum-3.html" class="tsd-kind-icon">Allowance<wbr>Details<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.chargedetailstypeenum-3.html" class="tsd-kind-icon">Charge<wbr>Details<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.invoiceinvoicetypeenum-3.html" class="tsd-kind-icon">Invoice<wbr>Invoice<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.itemquantityunitofmeasureenum-3.html" class="tsd-kind-icon">Item<wbr>Quantity<wbr>Unit<wbr>OfMeasure<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.paymenttermstypeenum-3.html" class="tsd-kind-icon">Payment<wbr>Terms<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.taxdetailstaxtypeenum-3.html" class="tsd-kind-icon">Tax<wbr>Details<wbr>Tax<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_sp_api_sdk_vendor_invoices_api_v1.taxregistrationdetailstaxregistrationtypeenum-3.html" class="tsd-kind-icon">Tax<wbr>Registration<wbr>Details<wbr>Tax<wbr>Registration<wbr>Type<wbr>Enum</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.baseapi.html" class="tsd-kind-icon">BaseAPI</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.configuration-1.html" class="tsd-kind-icon">Configuration</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.requirederror.html" class="tsd-kind-icon">Required<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.vendorinvoicesapiclient-1.html" class="tsd-kind-icon">Vendor<wbr>Invoices<wbr>Api<wbr>Client</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.vendorinvoicesapierror-1.html" class="tsd-kind-icon">Vendor<wbr>Invoices<wbr>Api<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_sp_api_sdk_vendor_invoices_api_v1.vendorpaymentsapi-2.html" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.additionaldetails-3.html" class="tsd-kind-icon">Additional<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.address-3.html" class="tsd-kind-icon">Address</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.allowancedetails-3.html" class="tsd-kind-icon">Allowance<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.chargedetails-3.html" class="tsd-kind-icon">Charge<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.clientparameters-1.html" class="tsd-kind-icon">Client<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.configurationparameters-1.html" class="tsd-kind-icon">Configuration<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.creditnotedetails-3.html" class="tsd-kind-icon">Credit<wbr>Note<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.invoice-3.html" class="tsd-kind-icon">Invoice</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.invoiceitem-3.html" class="tsd-kind-icon">Invoice<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.itemquantity-3.html" class="tsd-kind-icon">Item<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.modelerror-3.html" class="tsd-kind-icon">Model<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.money-3.html" class="tsd-kind-icon">Money</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.partyidentification-3.html" class="tsd-kind-icon">Party<wbr>Identification</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.paymentterms-3.html" class="tsd-kind-icon">Payment<wbr>Terms</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.requestargs.html" class="tsd-kind-icon">Request<wbr>Args</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesrequest-3.html" class="tsd-kind-icon">Submit<wbr>Invoices<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.submitinvoicesresponse-3.html" class="tsd-kind-icon">Submit<wbr>Invoices<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.taxdetails-3.html" class="tsd-kind-icon">Tax<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.taxregistrationdetails-3.html" class="tsd-kind-icon">Tax<wbr>Registration<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.transactionid-3.html" class="tsd-kind-icon">Transaction<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_vendor_invoices_api_v1.vendorpaymentsapisubmitinvoicesrequest-2.html" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Submit<wbr>Invoices<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#base_path" class="tsd-kind-icon">BASE_<wbr>PATH</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#dummy_base_url" class="tsd-kind-icon">DUMMY_<wbr>BASE_<wbr>URL</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#rate_limits-1" class="tsd-kind-icon">RATE_<wbr>LIMITS</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapiaxiosparamcreator-2" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Axios<wbr>Param<wbr>Creator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapifactory-2" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#vendorpaymentsapifp-2" class="tsd-kind-icon">Vendor<wbr>Payments<wbr>Api<wbr>Fp</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#assertparamexists" class="tsd-kind-icon">assert<wbr>Param<wbr>Exists</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#createrequestfunction" class="tsd-kind-icon">create<wbr>Request<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#serializedataifneeded" class="tsd-kind-icon">serialize<wbr>Data<wbr>IfNeeded</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#setapikeytoobject" class="tsd-kind-icon">set<wbr>Api<wbr>Key<wbr>ToObject</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#setbasicauthtoobject" class="tsd-kind-icon">set<wbr>Basic<wbr>Auth<wbr>ToObject</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#setbearerauthtoobject" class="tsd-kind-icon">set<wbr>Bearer<wbr>Auth<wbr>ToObject</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#setoauthtoobject" class="tsd-kind-icon">setOAuth<wbr>ToObject</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#setsearchparams" class="tsd-kind-icon">set<wbr>Search<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#topathstring" class="tsd-kind-icon">to<wbr>Path<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-module">
+						<a href="_sp_api_sdk_vendor_invoices_api_v1.html#collection_formats" class="tsd-kind-icon">COLLECTION_<wbr>FORMATS</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

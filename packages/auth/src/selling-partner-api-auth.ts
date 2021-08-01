@@ -16,6 +16,7 @@ export interface SellingPartnerAuthParameters {
   scopes?: AuthorizationScope[];
   accessKeyId?: string;
   secretAccessKey?: string;
+  sessionToken?: string;
   region?: string;
   role?: {
     arn: string;
@@ -32,21 +33,25 @@ export class SellingPartnerApiAuth {
 
   private readonly _accessKeyId: string
   private readonly _secretAccessKey: string
+  private readonly _sessionToken?: string
 
   constructor(parameters: RequireExactlyOne<SellingPartnerAuthParameters, 'refreshToken' | 'scopes'>) {
     const clientId = parameters.clientId || process.env.LWA_CLIENT_ID
     const clientSecret = parameters.clientSecret || process.env.LWA_CLIENT_SECRET
     const accessKeyId = parameters.accessKeyId || process.env.AWS_ACCESS_KEY_ID
     const secretAccessKey = parameters.secretAccessKey || process.env.AWS_SECRET_ACCESS_KEY
+    const sessionToken = parameters.sessionToken || process.env.AWS_SESSION_TOKEN
     const region = parameters.region || process.env.AWS_DEFAULT_REGION
-    const arn = parameters.role?.arn || process.env.AWS_ROLE_ARN
-    const sessionName = parameters.role?.sessionName || process.env.AWS_ROLE_SESSION_NAME || `${pkg.name.replace('/', '-')}@${pkg.version}`
+
+    const roleArn = parameters.role?.arn || process.env.AWS_ROLE_ARN
+    const roleSessionName = parameters.role?.sessionName || process.env.AWS_ROLE_SESSION_NAME || `${pkg.name.replace('/', '-')}@${pkg.version}`
+
     let role = null
 
-    if (arn) {
+    if (roleArn) {
       role = {
-        arn,
-        sessionName
+        arn: roleArn,
+        sessionName: roleSessionName
       }
     }
 
@@ -68,6 +73,7 @@ export class SellingPartnerApiAuth {
 
     this._accessKeyId = accessKeyId
     this._secretAccessKey = secretAccessKey
+    this._sessionToken = sessionToken
 
     if (parameters.refreshToken) {
       this.accessToken = new AccessToken({
@@ -105,7 +111,8 @@ export class SellingPartnerApiAuth {
 
     return {
       AccessKeyId: this._accessKeyId,
-      SecretAccessKey: this._secretAccessKey
+      SecretAccessKey: this._secretAccessKey,
+      SessionToken: this._sessionToken
     }
   }
 }

@@ -12,6 +12,7 @@ interface Role {
 export interface SecurityTokenServiceParameters {
   accessKeyId: string;
   secretAccessKey: string;
+  sessionToken?: string;
   role: Role;
   region?: string;
 }
@@ -19,6 +20,7 @@ export interface SecurityTokenServiceParameters {
 export class SecurityTokenService {
   public readonly accessKeyId: string
   public readonly secretAccessKey: string
+  public readonly sessionToken?: string
   public readonly role: Role
   public readonly region?: string
 
@@ -27,6 +29,7 @@ export class SecurityTokenService {
   constructor(parameters: SecurityTokenServiceParameters) {
     this.accessKeyId = parameters.accessKeyId
     this.secretAccessKey = parameters.secretAccessKey
+    this.sessionToken = parameters.sessionToken
     this.role = parameters.role
     this.region = parameters.region
   }
@@ -52,7 +55,8 @@ export class SecurityTokenService {
     const config: STSClientConfig = {
       credentials: {
         accessKeyId: this.accessKeyId,
-        secretAccessKey: this.secretAccessKey
+        secretAccessKey: this.secretAccessKey,
+        sessionToken: this.sessionToken
       }
     }
 

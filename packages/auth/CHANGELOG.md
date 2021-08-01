@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@1.7.4...@sp-api-sdk/auth@1.8.0) (2021-08-01)
+
+
+### Features
+
+* **auth:** support auth using temporary IAM credentials ([#69](https://github.com/bizon/selling-partner-api-sdk/issues/69)) ([58da7f9](https://github.com/bizon/selling-partner-api-sdk/commit/58da7f9b7bfca8e273e7d786523d597e2e8d80d3))
+
+
+
+
+
 ## [1.7.4](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@1.7.3...@sp-api-sdk/auth@1.7.4) (2021-08-01)
 
 **Note:** Version bump only for package @sp-api-sdk/auth

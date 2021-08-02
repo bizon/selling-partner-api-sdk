@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.2](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@1.8.1...@sp-api-sdk/auth@1.8.2) (2021-08-02)
+
+
+### Bug Fixes
+
+* **auth:** make sts service private ([08c81e3](https://github.com/bizon/selling-partner-api-sdk/commit/08c81e38744baec1a3f4f194165ffa40b9d92e15))
+
+
+
+
+
 ## [1.8.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@1.8.0...@sp-api-sdk/auth@1.8.1) (2021-08-02)
 
 

@@ -95,6 +95,7 @@ export class SellingPartnerApiAuth {
       this.sts = new SecurityTokenService({
         accessKeyId,
         secretAccessKey,
+        sessionToken,
         region,
         role
       })

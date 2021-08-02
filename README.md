@@ -1,2 +1,19 @@
 # selling-partner-api-sdk
-A fully typed TypeScript SDK library for Amazon Selling Partner API
+
+A modularized SDK library for Amazon Selling Partner API (fully typed in TypeScript)
+
+## License
+
+MIT
+
+## Miscellaneous
+
+```
+    ╚⊙ ⊙╝
+  ╚═(███)═╝
+ ╚═(███)═╝
+╚═(███)═╝
+ ╚═(███)═╝
+  ╚═(███)═╝
+   ╚═(███)═╝
+```

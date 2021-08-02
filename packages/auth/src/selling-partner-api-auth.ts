@@ -29,8 +29,8 @@ export interface SellingPartnerAuthParameters {
  */
 export class SellingPartnerApiAuth {
   public readonly accessToken: AccessToken
-  public readonly sts?: SecurityTokenService
 
+  private readonly _sts?: SecurityTokenService
   private readonly _accessKeyId: string
   private readonly _secretAccessKey: string
   private readonly _sessionToken?: string
@@ -92,7 +92,7 @@ export class SellingPartnerApiAuth {
     }
 
     if (role) {
-      this.sts = new SecurityTokenService({
+      this._sts = new SecurityTokenService({
         accessKeyId,
         secretAccessKey,
         sessionToken,
@@ -106,8 +106,8 @@ export class SellingPartnerApiAuth {
 	 * Get AWS credentials from STS or user
 	 */
   async getCredentials(): Promise<SetOptional<Credentials, 'Expiration' | 'SessionToken'>> {
-    if (this.sts) {
-      return this.sts.getCredentials()
+    if (this._sts) {
+      return this._sts.getCredentials()
     }
 
     return {

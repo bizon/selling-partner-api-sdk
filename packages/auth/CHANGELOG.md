@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@1.8.0...@sp-api-sdk/auth@1.8.1) (2021-08-02)
+
+
+### Bug Fixes
+
+* **auth:** pass sessionToken to STS service when available ([#70](https://github.com/bizon/selling-partner-api-sdk/issues/70)) ([5b93bf6](https://github.com/bizon/selling-partner-api-sdk/commit/5b93bf64ff0001ae0ac4c3207f9bb6b54864be5c))
+
+
+
+
+
 # [1.8.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@1.7.4...@sp-api-sdk/auth@1.8.0) (2021-08-01)
 
 

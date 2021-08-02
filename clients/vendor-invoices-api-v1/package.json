@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/vendor-invoices-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.",
-  "version": "1.6.8",
+  "version": "1.6.9",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -25,8 +25,8 @@
     "test": "NODE_ENV='test' yarn jest"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^1.8.0",
-    "@sp-api-sdk/common": "^1.6.7",
+    "@sp-api-sdk/auth": "^1.8.1",
+    "@sp-api-sdk/common": "^1.6.8",
     "axios": "^0.21.1"
   },
   "repository": {

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SecurityTokenServiceParameters | Selling Partner API SDK for JavaScript</title>
+	<title>SecurityTokenServiceError | Selling Partner API SDK for JavaScript</title>
 	<meta name="description" content="Documentation for Selling Partner API SDK for JavaScript">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -59,10 +59,10 @@
 					<a href="../modules/_sp_api_sdk_auth.html">@sp-api-sdk/auth</a>
 				</li>
 				<li>
-					<a href="_sp_api_sdk_auth.securitytokenserviceparameters-2.html">SecurityTokenServiceParameters</a>
+					<a href="_sp_api_sdk_auth.securitytokenserviceerror-1.html">SecurityTokenServiceError</a>
 				</li>
 			</ul>
-			<h1>Interface SecurityTokenServiceParameters</h1>
+			<h1>Class SecurityTokenServiceError</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">SecurityTokenServiceParameters</span>
+						<a href="_sp_api_sdk_aplus_content_api_2020_11_01.requirederror.html#error" class="tsd-signature-type">Error</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">SecurityTokenServiceError</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -82,67 +87,91 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_sp_api_sdk_auth.securitytokenserviceerror-1.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_sp_api_sdk_auth.securitytokenserviceparameters-2.html#accesskeyid" class="tsd-kind-icon">access<wbr>Key<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_sp_api_sdk_auth.securitytokenserviceparameters-2.html#region" class="tsd-kind-icon">region</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_sp_api_sdk_auth.securitytokenserviceparameters-2.html#role" class="tsd-kind-icon">role</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_sp_api_sdk_auth.securitytokenserviceparameters-2.html#secretaccesskey" class="tsd-kind-icon">secret<wbr>Access<wbr>Key</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_sp_api_sdk_auth.securitytokenserviceparameters-2.html#sessiontoken" class="tsd-kind-icon">session<wbr>Token</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_sp_api_sdk_auth.securitytokenserviceerror-1.html#message" class="tsd-kind-icon">message</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_sp_api_sdk_auth.securitytokenserviceerror-1.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_sp_api_sdk_auth.securitytokenserviceerror-1.html#stack" class="tsd-kind-icon">stack</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_sp_api_sdk_auth.securitytokenserviceerror-1.html#error" class="tsd-kind-icon">Error</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Security<wbr>Token<wbr>Service<wbr>Error<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_sp_api_sdk_auth.securitytokenserviceerror-1.html" class="tsd-signature-type">SecurityTokenServiceError</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/08c81e3/packages/auth/src/security-token-service/error.ts#L1">packages/auth/src/security-token-service/error.ts:1</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>message: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_sp_api_sdk_auth.securitytokenserviceerror-1.html" class="tsd-signature-type">SecurityTokenServiceError</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="accesskeyid" class="tsd-anchor"></a>
-					<h3>access<wbr>Key<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">access<wbr>Key<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="message" class="tsd-anchor"></a>
+					<h3>message</h3>
+					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="_sp_api_sdk_aplus_content_api_2020_11_01.requirederror.html">RequiredError</a>.<a href="_sp_api_sdk_aplus_content_api_2020_11_01.requirederror.html#message">message</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/6252d6a/packages/auth/src/security-token-service/index.ts#L13">packages/auth/src/security-token-service/index.ts:13</a></li>
+							<li>Defined in node_modules/typescript/lib/lib.es5.d.ts:974</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="region" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> region</h3>
-					<div class="tsd-signature tsd-kind-icon">region<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="_sp_api_sdk_auth.accesstokenerror-3.html">AccessTokenError</a>.<a href="_sp_api_sdk_auth.accesstokenerror-3.html#name">name</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/6252d6a/packages/auth/src/security-token-service/index.ts#L17">packages/auth/src/security-token-service/index.ts:17</a></li>
+							<li>Defined in node_modules/typescript/lib/lib.es5.d.ts:973</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="role" class="tsd-anchor"></a>
-					<h3>role</h3>
-					<div class="tsd-signature tsd-kind-icon">role<span class="tsd-signature-symbol">:</span> <a href="_sp_api_sdk_auth.role.html" class="tsd-signature-type">Role</a></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="stack" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> stack</h3>
+					<div class="tsd-signature tsd-kind-icon">stack<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="_sp_api_sdk_aplus_content_api_2020_11_01.requirederror.html">RequiredError</a>.<a href="_sp_api_sdk_aplus_content_api_2020_11_01.requirederror.html#stack">stack</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/6252d6a/packages/auth/src/security-token-service/index.ts#L16">packages/auth/src/security-token-service/index.ts:16</a></li>
+							<li>Defined in node_modules/typescript/lib/lib.es5.d.ts:975</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="secretaccesskey" class="tsd-anchor"></a>
-					<h3>secret<wbr>Access<wbr>Key</h3>
-					<div class="tsd-signature tsd-kind-icon">secret<wbr>Access<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="error" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Error</h3>
+					<div class="tsd-signature tsd-kind-icon">Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ErrorConstructor</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/6252d6a/packages/auth/src/security-token-service/index.ts#L14">packages/auth/src/security-token-service/index.ts:14</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="sessiontoken" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> session<wbr>Token</h3>
-					<div class="tsd-signature tsd-kind-icon">session<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/6252d6a/packages/auth/src/security-token-service/index.ts#L15">packages/auth/src/security-token-service/index.ts:15</a></li>
+							<li>Defined in node_modules/typescript/lib/lib.es5.d.ts:984</li>
 						</ul>
 					</aside>
 				</section>
@@ -189,25 +218,7 @@
 						<a href="../modules/_sp_api_sdk_auth.html#authorizationscope-1" class="tsd-kind-icon">Authorization<wbr>Scope</a>
 					</li>
 					<li class=" tsd-kind-reference tsd-parent-kind-module">
-						<a href="../modules/_sp_api_sdk_auth.html#securitytokenservice" class="tsd-kind-icon">Security<wbr>Token<wbr>Service</a>
-					</li>
-					<li class=" tsd-kind-reference tsd-parent-kind-module">
-						<a href="../modules/_sp_api_sdk_auth.html#securitytokenservice-1" class="tsd-kind-icon">Security<wbr>Token<wbr>Service</a>
-					</li>
-					<li class=" tsd-kind-reference tsd-parent-kind-module">
 						<a href="../modules/_sp_api_sdk_auth.html#securitytokenserviceerror" class="tsd-kind-icon">Security<wbr>Token<wbr>Service<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-reference tsd-parent-kind-module">
-						<a href="../modules/_sp_api_sdk_auth.html#securitytokenserviceerror-1" class="tsd-kind-icon">Security<wbr>Token<wbr>Service<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-reference tsd-parent-kind-module">
-						<a href="../modules/_sp_api_sdk_auth.html#securitytokenserviceerror-2" class="tsd-kind-icon">Security<wbr>Token<wbr>Service<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-reference tsd-parent-kind-module">
-						<a href="../modules/_sp_api_sdk_auth.html#securitytokenserviceparameters" class="tsd-kind-icon">Security<wbr>Token<wbr>Service<wbr>Parameters</a>
-					</li>
-					<li class=" tsd-kind-reference tsd-parent-kind-module">
-						<a href="../modules/_sp_api_sdk_auth.html#securitytokenserviceparameters-1" class="tsd-kind-icon">Security<wbr>Token<wbr>Service<wbr>Parameters</a>
 					</li>
 					<li class=" tsd-kind-reference tsd-parent-kind-module">
 						<a href="../modules/_sp_api_sdk_auth.html#sellingpartnerapiauth" class="tsd-kind-icon">Selling<wbr>Partner<wbr>Api<wbr>Auth</a>
@@ -231,58 +242,58 @@
 						<a href="../enums/_sp_api_sdk_auth.authorizationscope-2.html" class="tsd-kind-icon">Authorization<wbr>Scope</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_sp_api_sdk_auth.accesstoken-2.html" class="tsd-kind-icon">Access<wbr>Token</a>
+						<a href="_sp_api_sdk_auth.accesstoken-2.html" class="tsd-kind-icon">Access<wbr>Token</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_sp_api_sdk_auth.accesstokenerror-3.html" class="tsd-kind-icon">Access<wbr>Token<wbr>Error</a>
+						<a href="_sp_api_sdk_auth.accesstokenerror-3.html" class="tsd-kind-icon">Access<wbr>Token<wbr>Error</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_sp_api_sdk_auth.securitytokenservice-2.html" class="tsd-kind-icon">Security<wbr>Token<wbr>Service</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_sp_api_sdk_auth.securitytokenserviceerror-3.html" class="tsd-kind-icon">Security<wbr>Token<wbr>Service<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_sp_api_sdk_auth.sellingpartnerapiauth-2.html" class="tsd-kind-icon">Selling<wbr>Partner<wbr>Api<wbr>Auth</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_sp_api_sdk_auth.sellingpartnerapiautherror-2.html" class="tsd-kind-icon">Selling<wbr>Partner<wbr>Api<wbr>Auth<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_sp_api_sdk_auth.accesstokendata.html" class="tsd-kind-icon">Access<wbr>Token<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_sp_api_sdk_auth.accesstokenparameters-2.html" class="tsd-kind-icon">Access<wbr>Token<wbr>Parameters</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_sp_api_sdk_auth.role.html" class="tsd-kind-icon">Role</a>
+						<a href="_sp_api_sdk_auth.securitytokenservice.html" class="tsd-kind-icon">Security<wbr>Token<wbr>Service</a>
 					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_sp_api_sdk_auth.securitytokenserviceparameters-2.html" class="tsd-kind-icon">Security<wbr>Token<wbr>Service<wbr>Parameters</a>
+					<li class="current tsd-kind-class tsd-parent-kind-module">
+						<a href="_sp_api_sdk_auth.securitytokenserviceerror-1.html" class="tsd-kind-icon">Security<wbr>Token<wbr>Service<wbr>Error</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_sp_api_sdk_auth.securitytokenserviceparameters-2.html#accesskeyid" class="tsd-kind-icon">access<wbr>Key<wbr>Id</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="_sp_api_sdk_auth.securitytokenserviceerror-1.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_sp_api_sdk_auth.securitytokenserviceparameters-2.html#region" class="tsd-kind-icon">region</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_sp_api_sdk_auth.securitytokenserviceerror-1.html#message" class="tsd-kind-icon">message</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_sp_api_sdk_auth.securitytokenserviceparameters-2.html#role" class="tsd-kind-icon">role</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_sp_api_sdk_auth.securitytokenserviceerror-1.html#name" class="tsd-kind-icon">name</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_sp_api_sdk_auth.securitytokenserviceparameters-2.html#secretaccesskey" class="tsd-kind-icon">secret<wbr>Access<wbr>Key</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_sp_api_sdk_auth.securitytokenserviceerror-1.html#stack" class="tsd-kind-icon">stack</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_sp_api_sdk_auth.securitytokenserviceparameters-2.html#sessiontoken" class="tsd-kind-icon">session<wbr>Token</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_sp_api_sdk_auth.securitytokenserviceerror-1.html#error" class="tsd-kind-icon">Error</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_sp_api_sdk_auth.sellingpartnerapiauth-2.html" class="tsd-kind-icon">Selling<wbr>Partner<wbr>Api<wbr>Auth</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_sp_api_sdk_auth.sellingpartnerapiautherror-2.html" class="tsd-kind-icon">Selling<wbr>Partner<wbr>Api<wbr>Auth<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/_sp_api_sdk_auth.accesstokendata.html" class="tsd-kind-icon">Access<wbr>Token<wbr>Data</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_sp_api_sdk_auth.sellingpartnerauthparameters-2.html" class="tsd-kind-icon">Selling<wbr>Partner<wbr>Auth<wbr>Parameters</a>
+						<a href="../interfaces/_sp_api_sdk_auth.accesstokenparameters-2.html" class="tsd-kind-icon">Access<wbr>Token<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/_sp_api_sdk_auth.role.html" class="tsd-kind-icon">Role</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_auth.securitytokenserviceparameters.html" class="tsd-kind-icon">Security<wbr>Token<wbr>Service<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_sp_api_sdk_auth.sellingpartnerauthparameters-2.html" class="tsd-kind-icon">Selling<wbr>Partner<wbr>Auth<wbr>Parameters</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
 						<a href="../modules/_sp_api_sdk_auth.html#protectedenv" class="tsd-kind-icon">protected<wbr>Env</a>
@@ -306,14 +317,20 @@
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
 			</ul>
 		</div>
 	</div>

@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Git checkout
         uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
@@ -34,11 +36,12 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           branch: codegen/update-models
-          delete-branch: true
+          token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
           title: 'feat(clients): update models as of ${{ steps.date.outputs.date }}'
           commit-message: 'feat(clients): update models as of ${{ steps.date.outputs.date }}'
           body: |
             This is an automated pull request that was generated due to changes detected in the [Amazon Selling Partner API models](https://github.com/amzn/selling-partner-api-models).
 
             The branch associated with this PR will be automatically updated if other changes occur.
+          delete-branch: true
           reviewers: My42,tusbar

@@ -1,5 +1,6 @@
 export * from './address';
 export * from './buyer-customized-info-detail';
+export * from './buyer-info';
 export * from './buyer-tax-info';
 export * from './fulfillment-instruction';
 export * from './get-order-address-response';
@@ -8,6 +9,7 @@ export * from './get-order-items-buyer-info-response';
 export * from './get-order-items-response';
 export * from './get-order-response';
 export * from './get-orders-response';
+export * from './item-buyer-info';
 export * from './marketplace-tax-info';
 export * from './model-error';
 export * from './money';

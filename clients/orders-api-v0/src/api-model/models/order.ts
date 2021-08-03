@@ -14,6 +14,7 @@
 
 
 import { Address } from './address';
+import { BuyerInfo } from './buyer-info';
 import { FulfillmentInstruction } from './fulfillment-instruction';
 import { MarketplaceTaxInfo } from './marketplace-tax-info';
 import { Money } from './money';
@@ -253,6 +254,18 @@ export interface Order {
      * @memberof Order
      */
     SellerDisplayName?: string;
+    /**
+     * 
+     * @type {Address}
+     * @memberof Order
+     */
+    ShippingAddress?: Address;
+    /**
+     * 
+     * @type {BuyerInfo}
+     * @memberof Order
+     */
+    BuyerInfo?: BuyerInfo;
 }
 
 /**

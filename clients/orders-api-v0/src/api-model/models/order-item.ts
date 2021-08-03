@@ -13,6 +13,7 @@
  */
 
 
+import { ItemBuyerInfo } from './item-buyer-info';
 import { Money } from './money';
 import { PointsGrantedDetail } from './points-granted-detail';
 import { ProductInfoDetail } from './product-info-detail';
@@ -216,6 +217,12 @@ export interface OrderItem {
      * @memberof OrderItem
      */
     DeemedResellerCategory?: OrderItemDeemedResellerCategoryEnum;
+    /**
+     * 
+     * @type {ItemBuyerInfo}
+     * @memberof OrderItem
+     */
+    BuyerInfo?: ItemBuyerInfo;
 }
 
 /**

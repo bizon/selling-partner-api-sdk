@@ -127,7 +127,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_sp_api_sdk_orders_api_v0.baseapi.html">BaseAPI</a>.<a href="_sp_api_sdk_orders_api_v0.baseapi.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/0ac2336/clients/orders-api-v0/src/client.ts#L54">clients/orders-api-v0/src/client.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/a56fe87/clients/orders-api-v0/src/client.ts#L54">clients/orders-api-v0/src/client.ts:54</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -150,7 +150,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_sp_api_sdk_orders_api_v0.baseapi.html">BaseAPI</a>.<a href="_sp_api_sdk_orders_api_v0.baseapi.html#axios">axios</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/0ac2336/clients/orders-api-v0/src/api-model/base.ts#L52">clients/orders-api-v0/src/api-model/base.ts:52</a></li>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/a56fe87/clients/orders-api-v0/src/api-model/base.ts#L52">clients/orders-api-v0/src/api-model/base.ts:52</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -161,7 +161,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_sp_api_sdk_orders_api_v0.baseapi.html">BaseAPI</a>.<a href="_sp_api_sdk_orders_api_v0.baseapi.html#basepath">basePath</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/0ac2336/clients/orders-api-v0/src/api-model/base.ts#L52">clients/orders-api-v0/src/api-model/base.ts:52</a></li>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/a56fe87/clients/orders-api-v0/src/api-model/base.ts#L52">clients/orders-api-v0/src/api-model/base.ts:52</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -172,7 +172,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_sp_api_sdk_orders_api_v0.baseapi.html">BaseAPI</a>.<a href="_sp_api_sdk_orders_api_v0.baseapi.html#configuration">configuration</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/0ac2336/clients/orders-api-v0/src/api-model/base.ts#L50">clients/orders-api-v0/src/api-model/base.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/a56fe87/clients/orders-api-v0/src/api-model/base.ts#L50">clients/orders-api-v0/src/api-model/base.ts:50</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -190,7 +190,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_sp_api_sdk_orders_api_v0.ordersv0api-2.html">OrdersV0Api</a>.<a href="_sp_api_sdk_orders_api_v0.ordersv0api-2.html#getorder">getOrder</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/0ac2336/clients/orders-api-v0/src/api-model/api/orders-v0-api.ts#L729">clients/orders-api-v0/src/api-model/api/orders-v0-api.ts:729</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/a56fe87/clients/orders-api-v0/src/api-model/api/orders-v0-api.ts#L729">clients/orders-api-v0/src/api-model/api/orders-v0-api.ts:729</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -233,12 +233,12 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_sp_api_sdk_orders_api_v0.ordersv0api-2.html">OrdersV0Api</a>.<a href="_sp_api_sdk_orders_api_v0.ordersv0api-2.html#getorderaddress">getOrderAddress</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/0ac2336/clients/orders-api-v0/src/api-model/api/orders-v0-api.ts#L740">clients/orders-api-v0/src/api-model/api/orders-v0-api.ts:740</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/a56fe87/clients/orders-api-v0/src/api-model/api/orders-v0-api.ts#L740">clients/orders-api-v0/src/api-model/api/orders-v0-api.ts:740</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns the shipping address for the order indicated by the specified order ID.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+									<p>Returns the shipping address for the specified order.  <strong>Important.</strong> We recommend using the getOrders operation to get shipping address information for an order, as the getOrderAddress operation is scheduled for deprecation on January 12, 2022. For more information, see the <a href="https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md">Tokens API Use Case Guide</a>.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>throws</dt>
@@ -276,12 +276,12 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_sp_api_sdk_orders_api_v0.ordersv0api-2.html">OrdersV0Api</a>.<a href="_sp_api_sdk_orders_api_v0.ordersv0api-2.html#getorderbuyerinfo">getOrderBuyerInfo</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/0ac2336/clients/orders-api-v0/src/api-model/api/orders-v0-api.ts#L751">clients/orders-api-v0/src/api-model/api/orders-v0-api.ts:751</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/a56fe87/clients/orders-api-v0/src/api-model/api/orders-v0-api.ts#L751">clients/orders-api-v0/src/api-model/api/orders-v0-api.ts:751</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns buyer information for the order indicated by the specified order ID.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+									<p>Returns buyer information for the specified order.  <strong>Important.</strong> We recommend using the getOrders operation to get buyer information for an order, as the getOrderBuyerInfo operation is scheduled for deprecation on January 12, 2022. For more information, see the <a href="https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md">Tokens API Use Case Guide</a>.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>throws</dt>
@@ -319,7 +319,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_sp_api_sdk_orders_api_v0.ordersv0api-2.html">OrdersV0Api</a>.<a href="_sp_api_sdk_orders_api_v0.ordersv0api-2.html#getorderitems">getOrderItems</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/0ac2336/clients/orders-api-v0/src/api-model/api/orders-v0-api.ts#L762">clients/orders-api-v0/src/api-model/api/orders-v0-api.ts:762</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/a56fe87/clients/orders-api-v0/src/api-model/api/orders-v0-api.ts#L762">clients/orders-api-v0/src/api-model/api/orders-v0-api.ts:762</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -362,12 +362,12 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_sp_api_sdk_orders_api_v0.ordersv0api-2.html">OrdersV0Api</a>.<a href="_sp_api_sdk_orders_api_v0.ordersv0api-2.html#getorderitemsbuyerinfo">getOrderItemsBuyerInfo</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/0ac2336/clients/orders-api-v0/src/api-model/api/orders-v0-api.ts#L773">clients/orders-api-v0/src/api-model/api/orders-v0-api.ts:773</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/a56fe87/clients/orders-api-v0/src/api-model/api/orders-v0-api.ts#L773">clients/orders-api-v0/src/api-model/api/orders-v0-api.ts:773</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns buyer information in the order items of the order indicated by the specified order ID.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+									<p>Returns buyer information for the order items in the specified order.  <strong>Important.</strong> We recommend using the getOrderItems operation to get buyer information for the order items in an order, as the getOrderItemsBuyerInfo operation is scheduled for deprecation on January 12, 2022. For more information, see the <a href="https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md">Tokens API Use Case Guide</a>.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>throws</dt>
@@ -405,7 +405,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_sp_api_sdk_orders_api_v0.ordersv0api-2.html">OrdersV0Api</a>.<a href="_sp_api_sdk_orders_api_v0.ordersv0api-2.html#getorders">getOrders</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/0ac2336/clients/orders-api-v0/src/api-model/api/orders-v0-api.ts#L784">clients/orders-api-v0/src/api-model/api/orders-v0-api.ts:784</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/a56fe87/clients/orders-api-v0/src/api-model/api/orders-v0-api.ts#L784">clients/orders-api-v0/src/api-model/api/orders-v0-api.ts:784</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">

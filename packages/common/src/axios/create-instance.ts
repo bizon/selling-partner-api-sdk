@@ -4,6 +4,8 @@ import axiosRetry from 'axios-retry'
 
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 
+import {SellingPartnerApiError} from '../selling-partner-api-error'
+
 import pkg from '../../package.json'
 
 export interface RateLimit {
@@ -87,6 +89,13 @@ export function createAxiosInstance({
       }
     )(config)
   })
+
+  instance.interceptors.response.use(
+    async response => response,
+    async error => {
+      throw new SellingPartnerApiError(error)
+    }
+  )
 
   return instance
 }

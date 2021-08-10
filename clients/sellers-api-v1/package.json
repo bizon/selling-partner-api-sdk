@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/sellers-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.",
-  "version": "1.6.10",
+  "version": "1.6.11",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -25,8 +25,8 @@
     "test": "NODE_ENV='test' yarn jest"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^1.8.2",
-    "@sp-api-sdk/common": "^1.6.9",
+    "@sp-api-sdk/auth": "^1.8.3",
+    "@sp-api-sdk/common": "^1.6.10",
     "axios": "^0.21.1"
   },
   "repository": {

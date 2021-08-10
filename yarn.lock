@@ -2677,10 +2677,10 @@ aws-sign2@~0.7.0:
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.7.0.tgz#b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8"
   integrity sha1-tG6JCTSpWR8tL2+G1+ap8bP+dqg=
 
-aws4-axios@^2.3.1:
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/aws4-axios/-/aws4-axios-2.3.4.tgz#ea9ef80680dc9aa43db15340e4ac6ccd4c511279"
-  integrity sha512-p6/geeDRXFDVl5U5TtcUz4sEV/ZidZub9hPmPn9MywnT++/56FS8cpyetFh1rT2M8m/1qZIsYS1NW8hN4Rz+lQ==
+aws4-axios@^2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/aws4-axios/-/aws4-axios-2.4.3.tgz#9e6cb118cd2fc56149af79b64f186b45773b5902"
+  integrity sha512-hDaUpKNXeObAjUanUOUZkxXICu3eRhu4gRA0JpJkA/QlS78cIIaYiBtOslIN9BpNxVk9RjsHQD7ffHioxaJIsQ==
   dependencies:
     "@aws-sdk/client-sts" "^3.4.1"
     "@types/aws4" "^1.5.1"

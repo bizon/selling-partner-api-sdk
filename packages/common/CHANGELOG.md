@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.6.11...@sp-api-sdk/common@1.7.0) (2021-08-13)
+
+
+### Features
+
+* **clients:** throw SellingPartnerApiError that exposes api client info ([#81](https://github.com/bizon/selling-partner-api-sdk/issues/81)) ([7e3cb79](https://github.com/bizon/selling-partner-api-sdk/commit/7e3cb797b47e1c270f2e2fdc8c096d30cb54b99d))
+
+
+
+
+
 ## [1.6.11](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.6.10...@sp-api-sdk/common@1.6.11) (2021-08-10)
 
 **Note:** Version bump only for package @sp-api-sdk/common

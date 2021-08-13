@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/authorization-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Authorization helps developers manage authorizations and check the specific permissions associated with a given authorization.",
-  "version": "1.6.12",
+  "version": "1.6.13",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -25,8 +25,8 @@
     "test": "NODE_ENV='test' yarn jest"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^1.8.3",
-    "@sp-api-sdk/common": "^1.6.11",
+    "@sp-api-sdk/auth": "^1.8.4",
+    "@sp-api-sdk/common": "^1.7.0",
     "axios": "^0.21.1"
   },
   "repository": {

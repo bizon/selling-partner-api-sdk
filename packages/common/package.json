@@ -48,5 +48,8 @@
     "mws",
     "selling partner api",
     "marketplace webservice"
-  ]
+  ],
+  "devDependencies": {
+    "nock": "^13.1.1"
+  }
 }

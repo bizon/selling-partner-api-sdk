@@ -1,8 +1,7 @@
 /* eslint-disable prefer-regex-literals */
-import {Configuration, FeesApi} from './api-model'
-
 import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
+import {Configuration, FeesApi} from './api-model'
 import {ProductFeesApiError} from './error'
 
 export const RATE_LIMITS: RateLimit[] = [
@@ -10,14 +9,14 @@ export const RATE_LIMITS: RateLimit[] = [
     method: 'post',
     urlRegex: new RegExp('^/products/fees/v0/listings/[^/]*/feesEstimate$'),
     rate: 10,
-    burst: 20
+    burst: 20,
   },
   {
     method: 'post',
     urlRegex: new RegExp('^/products/fees/v0/items/[^/]*/feesEstimate$'),
     rate: 10,
-    burst: 20
-  }
+    burst: 20,
+  },
 ]
 
 export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits | onRetry'> {

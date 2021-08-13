@@ -1,5 +1,5 @@
-import got from 'got'
-import {RequireExactlyOne} from 'type-fest'
+import got, {RequestError} from 'got'
+import type {RequireExactlyOne} from 'type-fest'
 
 import {AccessTokenError} from './error'
 
@@ -7,7 +7,7 @@ export * from './error'
 
 export enum AuthorizationScope {
   NOTIFICATIONS = 'sellingpartnerapi::notifications',
-  MIGRATION = 'sellingpartnerapi::migration'
+  MIGRATION = 'sellingpartnerapi::migration',
 }
 
 export interface AccessTokenParameters {
@@ -44,7 +44,7 @@ export class AccessToken {
     if (!this.value || (this.expirationDate && Date.now() >= this.expirationDate.getTime())) {
       const body: Record<string, string> = {
         client_id: this.clientId,
-        client_secret: this.clientSecret
+        client_secret: this.clientSecret,
       }
 
       if (this.refreshToken) {
@@ -61,8 +61,8 @@ export class AccessToken {
         this.value = await got.post(
           'https://api.amazon.com/auth/o2/token',
           {
-            json: body
-          }
+            json: body,
+          },
         ).json()
 
         if (!this.value) {
@@ -72,11 +72,11 @@ export class AccessToken {
         this.expirationDate = new Date()
         this.expirationDate.setSeconds(this.expirationDate.getSeconds() + this.value.expires_in)
       } catch (error) {
-        const accessTokenError = error.response ?
-          new AccessTokenError(`HTTP Response code ${error.response.statusCode}`, JSON.parse(error.response.body)) :
-          new AccessTokenError('Unknown Error')
+        if (error instanceof RequestError && error.response) {
+          throw new AccessTokenError(`HTTP Response code ${error.response.statusCode}`, JSON.parse(error.response.body as any))
+        }
 
-        throw accessTokenError
+        throw new AccessTokenError('Unknown Error')
       }
     }
 

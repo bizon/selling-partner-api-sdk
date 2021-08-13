@@ -1,8 +1,7 @@
 /* eslint-disable prefer-regex-literals */
-import {Configuration, FbaInventoryApi} from './api-model'
-
 import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
+import {Configuration, FbaInventoryApi} from './api-model'
 import {FbaInventoryApiError} from './error'
 
 export const RATE_LIMITS: RateLimit[] = [
@@ -10,8 +9,8 @@ export const RATE_LIMITS: RateLimit[] = [
     method: 'get',
     urlRegex: new RegExp('^/fba/inventory/v1/summaries$'),
     rate: 5,
-    burst: 10
-  }
+    burst: 10,
+  },
 ]
 
 export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits | onRetry'> {

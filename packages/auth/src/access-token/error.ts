@@ -5,6 +5,7 @@ export class AccessTokenError extends Error {
     super(message)
 
     this.name = 'AccessTokenError'
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     this.meta = meta
   }
 }

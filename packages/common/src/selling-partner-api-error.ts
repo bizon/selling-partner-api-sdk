@@ -1,5 +1,6 @@
-import {AxiosError, AxiosRequestConfig, AxiosResponse} from 'axios'
 import {URL} from 'url'
+
+import type {AxiosError, AxiosRequestConfig, AxiosResponse} from 'axios'
 
 export class SellingPartnerApiError<T = any> extends Error implements AxiosError {
   public config: AxiosRequestConfig
@@ -20,6 +21,7 @@ export class SellingPartnerApiError<T = any> extends Error implements AxiosError
 
     this.config = error.config
     this.code = error.code
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     this.request = error.request
     this.response = error.response
     this.isAxiosError = error.isAxiosError

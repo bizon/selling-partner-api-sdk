@@ -11,6 +11,6 @@ export async function renderTemplate(templatePath: string, view: Record<string, 
   const template = await fs.readFile(templatePath)
 
   return mustache.render(template.toString(), view, undefined, {
-    escape: string => string
+    escape: (input: string) => input,
   })
 }

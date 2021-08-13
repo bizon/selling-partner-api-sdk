@@ -1,4 +1,5 @@
-import {STSClient, STSClientConfig, AssumeRoleCommand, Credentials} from '@aws-sdk/client-sts'
+import {STSClient, AssumeRoleCommand} from '@aws-sdk/client-sts'
+import type {STSClientConfig, Credentials} from '@aws-sdk/client-sts'
 
 import {SecurityTokenServiceError} from './error'
 
@@ -39,8 +40,8 @@ export class SecurityTokenService {
    */
   async getCredentials() {
     if (
-      !this._credentials ||
-      (this._credentials?.Expiration && Date.now() >= this._credentials.Expiration.getTime())
+      !this._credentials
+      || (this._credentials?.Expiration && Date.now() >= this._credentials.Expiration.getTime())
     ) {
       this._credentials = await this.fetchCredentials()
     }
@@ -56,8 +57,8 @@ export class SecurityTokenService {
       credentials: {
         accessKeyId: this.accessKeyId,
         secretAccessKey: this.secretAccessKey,
-        sessionToken: this.sessionToken
-      }
+        sessionToken: this.sessionToken,
+      },
     }
 
     if (this.region) {
@@ -69,8 +70,8 @@ export class SecurityTokenService {
     const {Credentials: credentials} = await sts.send(
       new AssumeRoleCommand({
         RoleArn: this.role.arn,
-        RoleSessionName: this.role.sessionName
-      })
+        RoleSessionName: this.role.sessionName,
+      }),
     )
 
     if (!credentials) {

@@ -1,8 +1,7 @@
 /* eslint-disable prefer-regex-literals */
-import {Configuration, ShippingApi} from './api-model'
-
 import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
+import {Configuration, ShippingApi} from './api-model'
 import {ShippingApiError} from './error'
 
 export const RATE_LIMITS: RateLimit[] = [
@@ -10,56 +9,56 @@ export const RATE_LIMITS: RateLimit[] = [
     method: 'post',
     urlRegex: new RegExp('^/shipping/v1/shipments$'),
     rate: 5,
-    burst: 15
+    burst: 15,
   },
   {
     method: 'get',
     urlRegex: new RegExp('^/shipping/v1/shipments/[^/]*$'),
     rate: 5,
-    burst: 15
+    burst: 15,
   },
   {
     method: 'post',
     urlRegex: new RegExp('^/shipping/v1/shipments/[^/]*/cancel$'),
     rate: 5,
-    burst: 15
+    burst: 15,
   },
   {
     method: 'post',
     urlRegex: new RegExp('^/shipping/v1/shipments/[^/]*/purchaseLabels$'),
     rate: 5,
-    burst: 15
+    burst: 15,
   },
   {
     method: 'post',
     urlRegex: new RegExp('^/shipping/v1/shipments/[^/]*/label$'),
     rate: 5,
-    burst: 15
+    burst: 15,
   },
   {
     method: 'post',
     urlRegex: new RegExp('^/shipping/v1/purchaseShipment$'),
     rate: 5,
-    burst: 15
+    burst: 15,
   },
   {
     method: 'post',
     urlRegex: new RegExp('^/shipping/v1/rates$'),
     rate: 5,
-    burst: 15
+    burst: 15,
   },
   {
     method: 'get',
     urlRegex: new RegExp('^/shipping/v1/account$'),
     rate: 5,
-    burst: 15
+    burst: 15,
   },
   {
     method: 'get',
     urlRegex: new RegExp('^/shipping/v1/tracking/[^/]*$'),
     rate: 1,
-    burst: 1
-  }
+    burst: 1,
+  },
 ]
 
 export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits | onRetry'> {

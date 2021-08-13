@@ -1,13 +1,16 @@
 /* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
 
-import {Credentials} from '@aws-sdk/client-sts'
-import {RequireExactlyOne, SetOptional} from 'type-fest'
+import process from 'process'
+
+import type {Credentials} from '@aws-sdk/client-sts'
+import type {RequireExactlyOne, SetOptional} from 'type-fest'
 
 import pkg from '../package.json'
 
-import {AccessToken, AuthorizationScope} from './access-token'
+import {AccessToken} from './access-token'
 import {SecurityTokenService} from './security-token-service'
 import {SellingPartnerApiAuthError} from './error'
+import type {AuthorizationScope} from './access-token'
 
 export interface SellingPartnerAuthParameters {
   clientId?: string;
@@ -51,7 +54,7 @@ export class SellingPartnerApiAuth {
     if (roleArn) {
       role = {
         arn: roleArn,
-        sessionName: roleSessionName
+        sessionName: roleSessionName,
       }
     }
 
@@ -79,13 +82,13 @@ export class SellingPartnerApiAuth {
       this.accessToken = new AccessToken({
         clientId,
         clientSecret,
-        refreshToken: parameters.refreshToken
+        refreshToken: parameters.refreshToken,
       })
     } else if (parameters.scopes) {
       this.accessToken = new AccessToken({
         clientId,
         clientSecret,
-        scopes: parameters.scopes
+        scopes: parameters.scopes,
       })
     } else {
       throw new TypeError('Either "refreshToken" or "scopes" must be specified')
@@ -97,7 +100,7 @@ export class SellingPartnerApiAuth {
         secretAccessKey,
         sessionToken,
         region,
-        role
+        role,
       })
     }
   }
@@ -113,7 +116,7 @@ export class SellingPartnerApiAuth {
     return {
       AccessKeyId: this._accessKeyId,
       SecretAccessKey: this._secretAccessKey,
-      SessionToken: this._sessionToken
+      SessionToken: this._sessionToken,
     }
   }
 }

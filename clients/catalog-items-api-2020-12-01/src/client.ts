@@ -1,8 +1,7 @@
 /* eslint-disable prefer-regex-literals */
-import {Configuration, CatalogApi} from './api-model'
-
 import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
+import {Configuration, CatalogApi} from './api-model'
 import {CatalogItemsApiError} from './error'
 
 export const RATE_LIMITS: RateLimit[] = [
@@ -10,14 +9,14 @@ export const RATE_LIMITS: RateLimit[] = [
     method: 'get',
     urlRegex: new RegExp('^/catalog/2020-12-01/items$'),
     rate: 1,
-    burst: 5
+    burst: 5,
   },
   {
     method: 'get',
     urlRegex: new RegExp('^/catalog/2020-12-01/items/[^/]*$'),
     rate: 5,
-    burst: 5
-  }
+    burst: 5,
+  },
 ]
 
 export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits | onRetry'> {

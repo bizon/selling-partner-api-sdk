@@ -1,3 +1,5 @@
+import process from 'process'
+
 import type {Config} from '@jest/types'
 
 const protectedEnv = [
@@ -6,7 +8,7 @@ const protectedEnv = [
   'AWS_ROLE_ARN',
   'AWS_ROLE_SESSION_NAME',
   'LWA_CLIENT_SECRET',
-  'LWA_CLIENT_ID'
+  'LWA_CLIENT_ID',
 ]
 
 export default async function setup(): Promise<Config.InitialOptions> {
@@ -17,6 +19,6 @@ export default async function setup(): Promise<Config.InitialOptions> {
 
   return {
     preset: 'ts-jest',
-    testEnvironment: 'node'
+    testEnvironment: 'node',
   }
 }

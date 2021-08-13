@@ -1,8 +1,7 @@
 /* eslint-disable prefer-regex-literals */
-import {Configuration, FbaInboundApi} from './api-model'
-
 import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
+import {Configuration, FbaInboundApi} from './api-model'
 import {FbaInboundEligibilityApiError} from './error'
 
 export const RATE_LIMITS: RateLimit[] = [
@@ -10,8 +9,8 @@ export const RATE_LIMITS: RateLimit[] = [
     method: 'get',
     urlRegex: new RegExp('^/fba/inbound/v1/eligibility/itemPreview$'),
     rate: 1,
-    burst: 1
-  }
+    burst: 1,
+  },
 ]
 
 export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits | onRetry'> {

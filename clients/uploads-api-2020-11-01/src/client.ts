@@ -1,5 +1,6 @@
 /* eslint-disable prefer-regex-literals */
-import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
+import {endpoints, awsRegionByCode, createAxiosInstance, onRetry} from '@sp-api-sdk/common'
+import type {ClientConfiguration, RateLimit} from '@sp-api-sdk/common'
 
 import {Configuration, UploadsApi} from './api-model'
 import {UploadsApiError} from './error'

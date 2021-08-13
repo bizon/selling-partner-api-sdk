@@ -1,6 +1,6 @@
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
-import {createAxiosInstance} from '@sp-api-sdk/common'
 import * as SdkCommon from '@sp-api-sdk/common'
+import {createAxiosInstance} from '@sp-api-sdk/common'
 
 import {AplusContentApiClient, RATE_LIMITS} from '../src/client'
 

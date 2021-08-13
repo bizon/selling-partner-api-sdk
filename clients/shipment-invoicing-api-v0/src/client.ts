@@ -1,8 +1,7 @@
 /* eslint-disable prefer-regex-literals */
-import {Configuration, ShipmentInvoiceApi} from './api-model'
-
 import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
+import {Configuration, ShipmentInvoiceApi} from './api-model'
 import {ShipmentInvoicingApiError} from './error'
 
 export const RATE_LIMITS: RateLimit[] = [
@@ -10,20 +9,20 @@ export const RATE_LIMITS: RateLimit[] = [
     method: 'get',
     urlRegex: new RegExp('^/fba/outbound/brazil/v0/shipments/[^/]*$'),
     rate: 1.133,
-    burst: 25
+    burst: 25,
   },
   {
     method: 'post',
     urlRegex: new RegExp('^/fba/outbound/brazil/v0/shipments/[^/]*/invoice$'),
     rate: 1.133,
-    burst: 25
+    burst: 25,
   },
   {
     method: 'get',
     urlRegex: new RegExp('^/fba/outbound/brazil/v0/shipments/[^/]*/invoice/status$'),
     rate: 1.133,
-    burst: 25
-  }
+    burst: 25,
+  },
 ]
 
 export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits | onRetry'> {

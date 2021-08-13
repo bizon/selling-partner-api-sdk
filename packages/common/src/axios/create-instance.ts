@@ -31,24 +31,26 @@ export interface ClientConfiguration {
   onRetry?: onRetry;
 }
 
+type AxiosHeaders = Record<string, string | undefined>
+
 export function createAxiosInstance({
   auth,
   userAgent = `${pkg.name}/${pkg.version}`,
   region,
   rateLimits,
-  onRetry
+  onRetry,
 }: ClientConfiguration) {
   const instance = axios.create({
     headers: {
-      'user-agent': userAgent
-    }
+      'user-agent': userAgent,
+    },
   })
 
   if (rateLimits) {
     axiosRetry(instance, {
       retryCondition: error => error.response ? error.response.status === 429 : false,
       retryDelay: (retryCount, error) => {
-        const amznRateLimit: string = error.response?.headers['x-amzn-ratelimit-limit']
+        const amznRateLimit = (error.response?.headers as AxiosHeaders)['x-amzn-ratelimit-limit']
         const url = new URL(error.config.url!)
         const rateLimit = amznRateLimit ? Number.parseFloat(amznRateLimit) : rateLimits.find(rateLimit => rateLimit.method.toLowerCase() === error.config.method?.toLowerCase() && rateLimit.urlRegex.exec(url.pathname))?.rate
         const delay = rateLimit && !Number.isNaN(rateLimit) ? (1 / rateLimit * 1000) + 1500 : (60 * 1000)
@@ -58,16 +60,16 @@ export function createAxiosInstance({
         }
 
         return delay
-      }
+      },
     })
   }
 
   instance.interceptors.request.use(
     async config => {
-      config.headers['x-amz-access-token'] = await auth.accessToken.get()
+      (config.headers as AxiosHeaders)['x-amz-access-token'] = await auth.accessToken.get()
 
       return config
-    }
+    },
   )
 
   instance.interceptors.request.use(async config => {
@@ -80,13 +82,13 @@ export function createAxiosInstance({
     return aws4Interceptor(
       {
         region,
-        service: 'execute-api'
+        service: 'execute-api',
       },
       {
         accessKeyId: credentials.AccessKeyId ?? '',
         secretAccessKey: credentials.SecretAccessKey ?? '',
-        sessionToken: credentials.SessionToken
-      }
+        sessionToken: credentials.SessionToken,
+      },
     )(config)
   })
 
@@ -94,7 +96,7 @@ export function createAxiosInstance({
     async response => response,
     async error => {
       throw new SellingPartnerApiError(error)
-    }
+    },
   )
 
   return instance

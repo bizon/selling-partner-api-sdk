@@ -1,8 +1,7 @@
 /* eslint-disable prefer-regex-literals */
-import {Configuration, VendorShippingApi} from './api-model'
-
 import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
+import {Configuration, VendorShippingApi} from './api-model'
 import {VendorShipmentsApiError} from './error'
 
 export const RATE_LIMITS: RateLimit[] = [
@@ -10,8 +9,8 @@ export const RATE_LIMITS: RateLimit[] = [
     method: 'post',
     urlRegex: new RegExp('^/vendor/shipping/v1/shipmentConfirmations$'),
     rate: 10,
-    burst: 10
-  }
+    burst: 10,
+  },
 ]
 
 export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits | onRetry'> {

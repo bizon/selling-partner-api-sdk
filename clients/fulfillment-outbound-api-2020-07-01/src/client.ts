@@ -1,8 +1,7 @@
 /* eslint-disable prefer-regex-literals */
-import {Configuration, FbaOutboundApi} from './api-model'
-
 import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
+import {Configuration, FbaOutboundApi} from './api-model'
 import {FulfillmentOutboundApiError} from './error'
 
 export const RATE_LIMITS: RateLimit[] = [
@@ -10,74 +9,74 @@ export const RATE_LIMITS: RateLimit[] = [
     method: 'post',
     urlRegex: new RegExp('^/fba/outbound/2020-07-01/fulfillmentOrders/preview$'),
     rate: 2,
-    burst: 30
+    burst: 30,
   },
   {
     method: 'get',
     urlRegex: new RegExp('^/fba/outbound/2020-07-01/fulfillmentOrders$'),
     rate: 2,
-    burst: 30
+    burst: 30,
   },
   {
     method: 'post',
     urlRegex: new RegExp('^/fba/outbound/2020-07-01/fulfillmentOrders$'),
     rate: 2,
-    burst: 30
+    burst: 30,
   },
   {
     method: 'get',
     urlRegex: new RegExp('^/fba/outbound/2020-07-01/tracking$'),
     rate: 2,
-    burst: 30
+    burst: 30,
   },
   {
     method: 'get',
     urlRegex: new RegExp('^/fba/outbound/2020-07-01/returnReasonCodes$'),
     rate: 2,
-    burst: 30
+    burst: 30,
   },
   {
     method: 'put',
     urlRegex: new RegExp('^/fba/outbound/2020-07-01/fulfillmentOrders/[^/]*/return$'),
     rate: 2,
-    burst: 30
+    burst: 30,
   },
   {
     method: 'get',
     urlRegex: new RegExp('^/fba/outbound/2020-07-01/fulfillmentOrders/[^/]*$'),
     rate: 2,
-    burst: 30
+    burst: 30,
   },
   {
     method: 'put',
     urlRegex: new RegExp('^/fba/outbound/2020-07-01/fulfillmentOrders/[^/]*$'),
     rate: 2,
-    burst: 30
+    burst: 30,
   },
   {
     method: 'put',
     urlRegex: new RegExp('^/fba/outbound/2020-07-01/fulfillmentOrders/[^/]*/cancel$'),
     rate: 2,
-    burst: 30
+    burst: 30,
   },
   {
     method: 'get',
     urlRegex: new RegExp('^/fba/outbound/2020-07-01/features$'),
     rate: 2,
-    burst: 30
+    burst: 30,
   },
   {
     method: 'get',
     urlRegex: new RegExp('^/fba/outbound/2020-07-01/features/inventory/[^/]*$'),
     rate: 2,
-    burst: 30
+    burst: 30,
   },
   {
     method: 'get',
     urlRegex: new RegExp('^/fba/outbound/2020-07-01/features/inventory/[^/]*$'),
     rate: 2,
-    burst: 30
-  }
+    burst: 30,
+  },
 ]
 
 export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits | onRetry'> {

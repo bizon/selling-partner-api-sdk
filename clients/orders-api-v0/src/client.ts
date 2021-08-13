@@ -1,8 +1,7 @@
 /* eslint-disable prefer-regex-literals */
-import {Configuration, OrdersV0Api} from './api-model'
-
 import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
+import {Configuration, OrdersV0Api} from './api-model'
 import {OrdersApiError} from './error'
 
 export const RATE_LIMITS: RateLimit[] = [
@@ -10,38 +9,38 @@ export const RATE_LIMITS: RateLimit[] = [
     method: 'get',
     urlRegex: new RegExp('^/orders/v0/orders$'),
     rate: 0.0055,
-    burst: 20
+    burst: 20,
   },
   {
     method: 'get',
     urlRegex: new RegExp('^/orders/v0/orders/[^/]*$'),
     rate: 0.0055,
-    burst: 20
+    burst: 20,
   },
   {
     method: 'get',
     urlRegex: new RegExp('^/orders/v0/orders/[^/]*/buyerInfo$'),
     rate: 0.0055,
-    burst: 20
+    burst: 20,
   },
   {
     method: 'get',
     urlRegex: new RegExp('^/orders/v0/orders/[^/]*/address$'),
     rate: 0.0055,
-    burst: 20
+    burst: 20,
   },
   {
     method: 'get',
     urlRegex: new RegExp('^/orders/v0/orders/[^/]*/orderItems$'),
     rate: 0.0055,
-    burst: 20
+    burst: 20,
   },
   {
     method: 'get',
     urlRegex: new RegExp('^/orders/v0/orders/[^/]*/orderItems/buyerInfo$'),
     rate: 0.0055,
-    burst: 20
-  }
+    burst: 20,
+  },
 ]
 
 export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits | onRetry'> {

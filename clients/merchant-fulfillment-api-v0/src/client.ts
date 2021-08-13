@@ -1,8 +1,7 @@
 /* eslint-disable prefer-regex-literals */
-import {Configuration, MerchantFulfillmentApi} from './api-model'
-
 import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
 
+import {Configuration, MerchantFulfillmentApi} from './api-model'
 import {MerchantFulfillmentApiError} from './error'
 
 export const RATE_LIMITS: RateLimit[] = [
@@ -10,50 +9,50 @@ export const RATE_LIMITS: RateLimit[] = [
     method: 'post',
     urlRegex: new RegExp('^/mfn/v0/eligibleServices$'),
     rate: 1,
-    burst: 1
+    burst: 1,
   },
   {
     method: 'post',
     urlRegex: new RegExp('^/mfn/v0/eligibleShippingServices$'),
     rate: 1,
-    burst: 1
+    burst: 1,
   },
   {
     method: 'get',
     urlRegex: new RegExp('^/mfn/v0/shipments/[^/]*$'),
     rate: 1,
-    burst: 1
+    burst: 1,
   },
   {
     method: 'delete',
     urlRegex: new RegExp('^/mfn/v0/shipments/[^/]*$'),
     rate: 1,
-    burst: 1
+    burst: 1,
   },
   {
     method: 'put',
     urlRegex: new RegExp('^/mfn/v0/shipments/[^/]*/cancel$'),
     rate: 1,
-    burst: 1
+    burst: 1,
   },
   {
     method: 'post',
     urlRegex: new RegExp('^/mfn/v0/shipments$'),
     rate: 1,
-    burst: 1
+    burst: 1,
   },
   {
     method: 'post',
     urlRegex: new RegExp('^/mfn/v0/sellerInputs$'),
     rate: 1,
-    burst: 1
+    burst: 1,
   },
   {
     method: 'post',
     urlRegex: new RegExp('^/mfn/v0/additionalSellerInputs$'),
     rate: 1,
-    burst: 1
-  }
+    burst: 1,
+  },
 ]
 
 export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits | onRetry'> {

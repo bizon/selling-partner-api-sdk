@@ -1,4 +1,3 @@
-/* eslint-disable-next-line import/no-extraneous-dependencies */
 import nock from 'nock'
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 import {createAxiosInstance} from '../../src/axios'
@@ -7,10 +6,10 @@ import {SellingPartnerApiError} from '../../src/selling-partner-api-error'
 jest.mock('@sp-api-sdk/auth', () => ({
   SellingPartnerApiAuth: jest.fn(() => ({
     accessToken: {
-      get: jest.fn(() => 'FAKE_ACCESS_TOKEN')
+      get: jest.fn(() => 'FAKE_ACCESS_TOKEN'),
     },
-    getCredentials: jest.fn()
-  }))
+    getCredentials: jest.fn(),
+  })),
 }))
 
 describe('src/axios/create-instance', () => {
@@ -28,7 +27,7 @@ describe('src/axios/create-instance', () => {
         auth,
         region: 'eu',
         rateLimits: [{method: 'get', urlRegex: /^\/test$/, rate: 1, burst: 1}],
-        onRetry
+        onRetry,
       })
 
       const response = await instance.get('http://www.example.com/test')
@@ -36,6 +35,7 @@ describe('src/axios/create-instance', () => {
       expect(response.data).toBe('OK')
       expect(response.status).toBe(200)
       expect(onRetry).toBeCalledTimes(1)
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       expect(onRetry.mock.calls[0][0]).toStrictEqual({rateLimit: 1, delay: 2500})
     })
 
@@ -54,7 +54,7 @@ describe('src/axios/create-instance', () => {
         auth,
         region: 'eu',
         rateLimits: [{method: 'GET', urlRegex: /^\/test$/, rate: 0.5, burst: 1}],
-        onRetry
+        onRetry,
       })
 
       const response = await instance.get('http://www.example.com/test')
@@ -62,9 +62,11 @@ describe('src/axios/create-instance', () => {
       expect(response.data).toBe('OK')
       expect(response.status).toBe(200)
       expect(onRetry).toBeCalledTimes(2)
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       expect(onRetry.mock.calls[0][0]).toStrictEqual({rateLimit: 0.5, delay: 3500})
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       expect(onRetry.mock.calls[1][0]).toStrictEqual({rateLimit: 0.5, delay: 3500})
-    }, 30000)
+    }, 30_000)
 
     it('should take x-amzn-RateLimit-Limit if it exits', async () => {
       nock('http://www.example.com')
@@ -79,7 +81,7 @@ describe('src/axios/create-instance', () => {
         auth,
         region: 'eu',
         rateLimits: [{method: 'get', urlRegex: /^\/test$/, rate: 0.5, burst: 1}],
-        onRetry
+        onRetry,
       })
 
       const response = await instance.get('http://www.example.com/test')
@@ -87,6 +89,7 @@ describe('src/axios/create-instance', () => {
       expect(response.data).toBe('OK')
       expect(response.status).toBe(200)
       expect(onRetry).toBeCalledTimes(1)
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       expect(onRetry.mock.calls[0][0]).toStrictEqual({rateLimit: 1, delay: 2500})
     })
   })
@@ -100,7 +103,7 @@ describe('src/axios/create-instance', () => {
       const auth = new SellingPartnerApiAuth({refreshToken: ''})
       const instance = createAxiosInstance({
         auth,
-        region: 'eu'
+        region: 'eu',
       })
 
       await expect(instance.get('http://www.example.com/test')).rejects.toThrow(SellingPartnerApiError)
@@ -114,7 +117,7 @@ describe('src/axios/create-instance', () => {
       const auth = new SellingPartnerApiAuth({refreshToken: ''})
       const instance = createAxiosInstance({
         auth,
-        region: 'eu'
+        region: 'eu',
       })
 
       await expect(instance.get('http://www.example.com/apiName/apiVersion/path')).rejects.toThrow('apiName (apiVersion) error: Response code 429')
@@ -124,7 +127,7 @@ describe('src/axios/create-instance', () => {
       const auth = new SellingPartnerApiAuth({refreshToken: ''})
       const instance = createAxiosInstance({
         auth,
-        region: 'eu'
+        region: 'eu',
       })
 
       await expect(instance.get('http://www.test_fake_url.com/apiName/apiVersion/path')).rejects.toThrow('apiName (apiVersion) error: No response')

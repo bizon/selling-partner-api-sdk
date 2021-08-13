@@ -1,8 +1,8 @@
 /* eslint-disable prefer-regex-literals */
+import {endpoints, awsRegionByCode, createAxiosInstance, onRetry} from '@sp-api-sdk/common'
+import type {ClientConfiguration, RateLimit} from '@sp-api-sdk/common'
+
 import {Configuration, {{className}}} from './api-model'
-
-import {endpoints, awsRegionByCode, createAxiosInstance, ClientConfiguration, onRetry, RateLimit} from '@sp-api-sdk/common'
-
 {{=<% %>=}}
 import {<%errorClassName%>} from './error'
 <%={{ }}=%>
@@ -13,8 +13,8 @@ export const RATE_LIMITS: RateLimit[] = [
     method: '{{method}}',
     urlRegex: {{&urlRegex}},
     rate: {{rate}},
-    burst: {{burst}}
-  }{{^last}},{{/last}}
+    burst: {{burst}},
+  },
 {{/rateLimits}}
 ]
 

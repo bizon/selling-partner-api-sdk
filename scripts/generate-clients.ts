@@ -2,27 +2,41 @@
 
 import fs from 'fs/promises'
 import os from 'os'
+import process from 'process'
 import {promisify} from 'util'
 import * as childProcess from 'child_process'
+
 import Bluebird from 'bluebird'
 import rimraf from 'rimraf'
 import jsonfile from 'jsonfile'
 import camelCase from 'camelcase'
 import reduce from 'lodash/reduce'
-import {PackageJson} from 'type-fest'
 import remark from 'remark'
 import remarkStrip from 'strip-markdown'
+import type {PackageJson} from 'type-fest'
+import type {OpenAPIV3} from 'openapi-types'
 
 import {renderTemplate, logger} from './utils'
 
 const exec = promisify(childProcess.exec)
 const rimrafPromise = promisify(rimraf)
 
-const GRANTLESS_APIS = [{name: 'notifications-api', scope: 'NOTIFICATIONS'}, {name: 'authorization-api', scope: 'MIGRATION'}]
+const GRANTLESS_APIS = [
+  {name: 'notifications-api', scope: 'NOTIFICATIONS'},
+  {name: 'authorization-api', scope: 'MIGRATION'},
+]
+
+interface RateLimit {
+  method: string;
+  rate: number;
+  burst: number;
+  urlRegex: string;
+  last?: boolean;
+}
 
 async function readPackageVersion(path: string) {
   try {
-    const pkg: PackageJson = await import(`../${path}/package.json`)
+    const pkg = await import(`../${path}/package.json`) as PackageJson
     return pkg.version
   } catch {
     return null
@@ -43,16 +57,16 @@ async function cleanMarkdown(input: string, stripNewLines?: boolean) {
 
 async function generateClientVersion(clientName: string, filename: string) {
   const filePath = `selling-partner-api-models/models/${clientName}/${filename}`
-  const doc: Record<string, any> = await jsonfile.readFile(filePath)
+  const doc = await jsonfile.readFile(filePath) as OpenAPIV3.Document
   const formatedClientName = clientName.slice(0, -6)
-  const packageName = `${formatedClientName}-${doc.info.version as string}`
+  const packageName = `${formatedClientName}-${doc.info.version}`
   const clientDirectoryPath = `clients/${packageName}`
   const startedAt = Date.now()
   const clientClassName = camelCase(`${formatedClientName}Client`, {pascalCase: true})
   const errorClassName = camelCase(`${formatedClientName}Error`, {pascalCase: true})
   const paths = Object.values(doc.paths)
-  const httpMethods = Object.values(paths[0] as any)
-  const [tag = 'Default'] = ((httpMethods[0] as any).tags) ?? []
+  const httpMethods = Object.values(paths[0]!)
+  const [tag = 'Default'] = ((httpMethods[0] as OpenAPIV3.OperationObject).tags) ?? []
   const grantlessInfo = GRANTLESS_APIS.find(({name}) => formatedClientName === name)
 
   logger.info('generating …', {packageName})
@@ -63,34 +77,39 @@ async function generateClientVersion(clientName: string, filename: string) {
       --skip-validate-spec \
       -g typescript-axios \
       -i ${filePath} \
-      -o ${clientDirectoryPath}/src/api-model`
+      -o ${clientDirectoryPath}/src/api-model`,
   )
 
   await fs.mkdir(`${clientDirectoryPath}/__test__`, {recursive: true})
   await fs.writeFile(`${clientDirectoryPath}/package.json`, await renderTemplate('scripts/templates/package.json.mustache', {
     packageName,
-    description: await cleanMarkdown(doc.info.description, true),
+    description: await cleanMarkdown(doc.info.description ?? '', true),
     version: await readPackageVersion(clientDirectoryPath) ?? '1.0.0-rc.1',
     apiName: formatedClientName.replace(/-/g, ' '),
     dependencies: {
       auth: await readPackageVersion('packages/auth'),
-      common: await readPackageVersion('packages/common')
+      common: await readPackageVersion('packages/common'),
       // TODO: retrieve other dependencies from existing clients, so we’re never out of date.
-    }
+    },
   }))
 
-  const rateLimits = reduce(doc.paths, (acc: any, value, key) => {
-    for (const method of Object.keys(value)) {
-      const {description} = value[method]
+  const rateLimits = reduce(doc.paths, (acc: RateLimit[], value, key) => {
+    if (!value) {
+      return acc
+    }
+
+    for (const method of Object.keys(value) as OpenAPIV3.HttpMethods[]) {
+      const {description} = value[method] as OpenAPIV3.PathItemObject
+
       if (description) {
-        const result = description.match(/Rate \(requests per second\) \| Burst \|\n(?:\| -{4} )+\|\n(?:\|Default)?\| (?<rate>(?:\d*\.)?\d+) \| (?<burst>(?:\d*\.)?\d+) \|/)
+        const result = /Rate \(requests per second\) \| Burst \|\n(?:\| -{4} )+\|\n(?:\|Default)?\| (?<rate>(?:\d*\.)?\d+) \| (?<burst>(?:\d*\.)?\d+) \|/.exec(description)
 
         if (result?.groups) {
           const value = {
             method,
             rate: Number.parseFloat(result.groups.rate),
             burst: Number.parseFloat(result.groups.burst),
-            urlRegex: `new RegExp('^${key.replace(/{.+}/g, '[^/]*')}$')`
+            urlRegex: `new RegExp('^${key.replace(/{.+}/g, '[^/]*')}$')`,
           }
 
           if (Number.isNaN(value.rate) || Number.isNaN(value.burst)) {
@@ -119,14 +138,14 @@ async function generateClientVersion(clientName: string, filename: string) {
   await fs.writeFile(`${clientDirectoryPath}/src/client.ts`, await renderTemplate('scripts/templates/src/client.ts.mustache', {
     clientClassName,
     className: camelCase(`${tag}Api`, {pascalCase: true}),
-    errorClassName, rateLimits
+    errorClassName, rateLimits,
   }))
   await fs.writeFile(`${clientDirectoryPath}/README.md`, await renderTemplate('scripts/templates/README.md.mustache', {
     packageName,
     className: clientClassName,
     description: doc.info.description,
     docUrl: `https://github.com/amzn/selling-partner-api-docs/tree/main/references/${formatedClientName}/${filename.split('.')[0]}.md`,
-    grantlessScope: grantlessInfo?.scope
+    grantlessScope: grantlessInfo?.scope,
   }))
   await fs.writeFile(`${clientDirectoryPath}/__test__/client.spec.ts`, await renderTemplate('scripts/templates/__test__/client.spec.ts.mustache', {clientClassName}))
   await fs.writeFile(`${clientDirectoryPath}/jest.config.js`, await renderTemplate('scripts/templates/jest.config.js.mustache'))
@@ -141,7 +160,7 @@ async function generateClientVersion(clientName: string, filename: string) {
       }
 
       return rimrafPromise(`${clientDirectoryPath}/src/api-model/${file}`)
-    })
+    }),
   )
 
   logger.info(`done in ${(Date.now() - startedAt) / 1000}s`, {packageName})
@@ -160,7 +179,7 @@ async function generateClientVersions(clientName: string) {
   const clientNames = await fs.readdir('selling-partner-api-models/models')
 
   await Bluebird.map(clientNames, async clientName => generateClientVersions(clientName), {
-    concurrency: os.cpus().length
+    concurrency: os.cpus().length,
   })
 
   await rimrafPromise('selling-partner-api-models')

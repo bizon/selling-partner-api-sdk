@@ -80,7 +80,7 @@ export const RATE_LIMITS: RateLimit[] = [
   },
 ]
 
-export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits | onRetry'> {
+export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits' | 'onRetry'> {
   rateLimiting?: {
     retry: boolean;
     onRetry?: onRetry;

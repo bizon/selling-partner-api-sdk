@@ -66,7 +66,7 @@ export class AccessToken {
         ).json()
 
         if (!this.value) {
-          throw new AccessTokenError('Unknown Error')
+          throw new AccessTokenError('Receive invalid token', {token: this.value})
         }
 
         this.expirationDate = new Date()
@@ -76,7 +76,11 @@ export class AccessToken {
           throw new AccessTokenError(`HTTP Response code ${error.response.statusCode}`, JSON.parse(error.response.body as any))
         }
 
-        throw new AccessTokenError('Unknown Error')
+        if (error instanceof Error) {
+          throw new AccessTokenError(error.message)
+        }
+
+        throw new AccessTokenError(`Unknown error: ${error}`)
       }
     }
 

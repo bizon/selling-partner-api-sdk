@@ -27,7 +27,7 @@
   "dependencies": {
     "@aws-sdk/client-sts": "^3.27.0",
     "got": "^11.8.2",
-    "type-fest": "^2.0.0"
+    "type-fest": "^2.1.0"
   },
   "repository": {
     "type": "git",

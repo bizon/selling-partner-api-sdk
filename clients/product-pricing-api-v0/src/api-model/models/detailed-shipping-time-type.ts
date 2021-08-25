@@ -34,10 +34,10 @@ export interface DetailedShippingTimeType {
     maximumHours?: number;
     /**
      * The date when the item will be available for shipping. Only displayed for items that are not currently available for shipping.
-     * @type {number}
+     * @type {string}
      * @memberof DetailedShippingTimeType
      */
-    availableDate?: number;
+    availableDate?: string;
     /**
      * Indicates whether the item is available for shipping now, or on a known or an unknown date in the future. If known, the availableDate property indicates the date that the item will be available for shipping. Possible values: NOW, FUTURE_WITHOUT_DATE, FUTURE_WITH_DATE.
      * @type {string}

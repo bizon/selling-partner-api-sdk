@@ -17,6 +17,7 @@ import { DetailedShippingTimeType } from './detailed-shipping-time-type';
 import { MoneyType } from './money-type';
 import { OfferCustomerType } from './offer-customer-type';
 import { Points } from './points';
+import { PrimeInformationType } from './prime-information-type';
 import { QuantityDiscountPriceType } from './quantity-discount-price-type';
 import { SellerFeedbackType } from './seller-feedback-type';
 import { ShipsFromType } from './ships-from-type';
@@ -51,6 +52,18 @@ export interface OfferDetail {
      * @memberof OfferDetail
      */
     SubCondition: string;
+    /**
+     * The seller identifier for the offer.
+     * @type {string}
+     * @memberof OfferDetail
+     */
+    SellerId?: string;
+    /**
+     * Information about the condition of the item.
+     * @type {string}
+     * @memberof OfferDetail
+     */
+    ConditionNotes?: string;
     /**
      * 
      * @type {SellerFeedbackType}
@@ -99,6 +112,12 @@ export interface OfferDetail {
      * @memberof OfferDetail
      */
     IsFulfilledByAmazon: boolean;
+    /**
+     * 
+     * @type {PrimeInformationType}
+     * @memberof OfferDetail
+     */
+    PrimeInformation?: PrimeInformationType;
     /**
      * When true, the offer is currently in the Buy Box. There can be up to two Buy Box winners at any time per ASIN, one that is eligible for Prime and one that is not eligible for Prime.
      * @type {boolean}

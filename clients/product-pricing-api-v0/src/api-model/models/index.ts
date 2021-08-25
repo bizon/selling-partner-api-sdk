@@ -21,6 +21,7 @@ export * from './offer-type';
 export * from './points';
 export * from './price';
 export * from './price-type';
+export * from './prime-information-type';
 export * from './product';
 export * from './quantity-discount-price-type';
 export * from './quantity-discount-type';

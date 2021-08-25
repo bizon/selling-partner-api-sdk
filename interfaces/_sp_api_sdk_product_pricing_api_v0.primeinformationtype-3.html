@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ListContentDocumentAsinRelationsIncludedDataType | Selling Partner API SDK for JavaScript</title>
+	<title>PrimeInformationType | Selling Partner API SDK for JavaScript</title>
 	<meta name="description" content="Documentation for Selling Partner API SDK for JavaScript">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_sp_api_sdk_aplus_content_api_2020_11_01.html">@sp-api-sdk/aplus-content-api-2020-11-01</a>
+					<a href="../modules/_sp_api_sdk_product_pricing_api_v0.html">@sp-api-sdk/product-pricing-api-v0</a>
 				</li>
 				<li>
-					<a href="_sp_api_sdk_aplus_content_api_2020_11_01.listcontentdocumentasinrelationsincludeddatatype-3.html">ListContentDocumentAsinRelationsIncludedDataType</a>
+					<a href="_sp_api_sdk_product_pricing_api_v0.primeinformationtype-3.html">PrimeInformationType</a>
 				</li>
 			</ul>
-			<h1>Enumeration ListContentDocumentAsinRelationsIncludedDataType</h1>
+			<h1>Interface PrimeInformationType</h1>
 		</div>
 	</div>
 </header>
@@ -72,38 +72,80 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The type of data to include in the response, such as metadata about the related ASINs.</p>
+						<p>Amazon Prime information.</p>
 					</div>
 					<dl class="tsd-comment-tags">
 						<dt>export</dt>
 						<dd></dd>
+						<dt>interface</dt>
+						<dd><p>PrimeInformationType</p>
+						</dd>
 					</dl>
 				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">PrimeInformationType</span>
+					</li>
+				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Enumeration members</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_sp_api_sdk_aplus_content_api_2020_11_01.listcontentdocumentasinrelationsincludeddatatype-3.html#metadata" class="tsd-kind-icon">Metadata</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_sp_api_sdk_product_pricing_api_v0.primeinformationtype-3.html#isnationalprime" class="tsd-kind-icon">Is<wbr>National<wbr>Prime</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_sp_api_sdk_product_pricing_api_v0.primeinformationtype-3.html#isprime" class="tsd-kind-icon">Is<wbr>Prime</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Enumeration members</h2>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="metadata" class="tsd-anchor"></a>
-					<h3>Metadata</h3>
-					<div class="tsd-signature tsd-kind-icon">Metadata<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;METADATA&quot;</span></div>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="isnationalprime" class="tsd-anchor"></a>
+					<h3>Is<wbr>National<wbr>Prime</h3>
+					<div class="tsd-signature tsd-kind-icon">Is<wbr>National<wbr>Prime<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/1ce0a19/clients/aplus-content-api-2020-11-01/src/api-model/models/list-content-document-asin-relations-included-data-type.ts#L23">clients/aplus-content-api-2020-11-01/src/api-model/models/list-content-document-asin-relations-included-data-type.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/a3f590b/clients/product-pricing-api-v0/src/api-model/models/prime-information-type.ts#L34">clients/product-pricing-api-v0/src/api-model/models/prime-information-type.ts:34</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Indicates whether the offer is an Amazon Prime offer throughout the entire marketplace where it is listed.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>memberof</dt>
+							<dd><p>PrimeInformationType</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="isprime" class="tsd-anchor"></a>
+					<h3>Is<wbr>Prime</h3>
+					<div class="tsd-signature tsd-kind-icon">Is<wbr>Prime<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/a3f590b/clients/product-pricing-api-v0/src/api-model/models/prime-information-type.ts#L28">clients/product-pricing-api-v0/src/api-model/models/prime-information-type.ts:28</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Indicates whether the offer is an Amazon Prime offer.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>memberof</dt>
+							<dd><p>PrimeInformationType</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -114,7 +156,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/_sp_api_sdk_aplus_content_api_2020_11_01.html">@sp-<wbr>api-<wbr>sdk/aplus-<wbr>content-<wbr>api-<wbr>2020-<wbr>11-<wbr>01</a>
+						<a href="../modules/_sp_api_sdk_product_pricing_api_v0.html">@sp-<wbr>api-<wbr>sdk/product-<wbr>pricing-<wbr>api-<wbr>v0</a>
 					</li>
 				</ul>
 			</nav>
@@ -122,11 +164,14 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-enum tsd-parent-kind-module">
-						<a href="_sp_api_sdk_aplus_content_api_2020_11_01.listcontentdocumentasinrelationsincludeddatatype-3.html" class="tsd-kind-icon">List<wbr>Content<wbr>Document<wbr>Asin<wbr>Relations<wbr>Included<wbr>Data<wbr>Type</a>
+					<li class="current tsd-kind-interface tsd-parent-kind-module">
+						<a href="_sp_api_sdk_product_pricing_api_v0.primeinformationtype-3.html" class="tsd-kind-icon">Prime<wbr>Information<wbr>Type</a>
 						<ul>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="_sp_api_sdk_aplus_content_api_2020_11_01.listcontentdocumentasinrelationsincludeddatatype-3.html#metadata" class="tsd-kind-icon">Metadata</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_sp_api_sdk_product_pricing_api_v0.primeinformationtype-3.html#isnationalprime" class="tsd-kind-icon">Is<wbr>National<wbr>Prime</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_sp_api_sdk_product_pricing_api_v0.primeinformationtype-3.html#isprime" class="tsd-kind-icon">Is<wbr>Prime</a>
 							</li>
 						</ul>
 					</li>
@@ -148,14 +193,15 @@
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 			</ul>
 		</div>
 	</div>

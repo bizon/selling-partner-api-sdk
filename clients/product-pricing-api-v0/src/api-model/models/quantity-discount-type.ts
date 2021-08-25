@@ -20,7 +20,7 @@
  * @enum {string}
  */
 export enum QuantityDiscountType {
-    QuantityDiscount = 'QuantityDiscount'
+    QuantityDiscount = 'QUANTITY_DISCOUNT'
 }
 
 

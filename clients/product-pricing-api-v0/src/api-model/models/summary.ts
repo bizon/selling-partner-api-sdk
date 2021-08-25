@@ -17,6 +17,7 @@ import { BuyBoxPriceType } from './buy-box-price-type';
 import { LowestPriceType } from './lowest-price-type';
 import { MoneyType } from './money-type';
 import { OfferCountType } from './offer-count-type';
+import { SalesRankType } from './sales-rank-type';
 
 /**
  * Contains price information about the product, including the LowestPrices and BuyBoxPrices, the ListPrice, the SuggestedLowerPricePlusShipping, and NumberOfOffers and NumberOfBuyBoxEligibleOffers.
@@ -59,7 +60,19 @@ export interface Summary {
      * @type {MoneyType}
      * @memberof Summary
      */
+    CompetitivePriceThreshold?: MoneyType;
+    /**
+     * 
+     * @type {MoneyType}
+     * @memberof Summary
+     */
     SuggestedLowerPricePlusShipping?: MoneyType;
+    /**
+     * A list of sales rank information for the item, by category.
+     * @type {Array<SalesRankType>}
+     * @memberof Summary
+     */
+    SalesRankings?: Array<SalesRankType>;
     /**
      * 
      * @type {Array<OfferCountType>}

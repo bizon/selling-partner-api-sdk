@@ -13,7 +13,6 @@ export * from './item';
 export * from './item-quantity';
 export * from './label-data';
 export * from './model-error';
-export * from './package';
 export * from './packed-item';
 export * from './packing-slip';
 export * from './packing-slip-list';

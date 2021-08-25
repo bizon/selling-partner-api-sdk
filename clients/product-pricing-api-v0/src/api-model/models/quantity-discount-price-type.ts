@@ -39,7 +39,7 @@ export interface QuantityDiscountPriceType {
      * @type {MoneyType}
      * @memberof QuantityDiscountPriceType
      */
-    price: MoneyType;
+    listingPrice: MoneyType;
 }
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@1.8.4...@sp-api-sdk/auth@1.9.0) (2021-08-25)
+
+
+### Features
+
+* merge the 3 differents auth errors in one ([#95](https://github.com/bizon/selling-partner-api-sdk/issues/95)) ([aba01e3](https://github.com/bizon/selling-partner-api-sdk/commit/aba01e35cf453b165e1933622cff7ccadaa2a380))
+
+
+
+
+
 ## [1.8.4](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@1.8.3...@sp-api-sdk/auth@1.8.4) (2021-08-13)
 
 **Note:** Version bump only for package @sp-api-sdk/auth

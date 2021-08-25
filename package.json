@@ -40,7 +40,7 @@
     "lerna": "^4.0.0",
     "lodash": "^4.17.21",
     "mustache": "^4.2.0",
-    "openapi-types": "^9.1.0",
+    "openapi-types": "^9.2.0",
     "remark": "^13.0.0",
     "rimraf": "^3.0.2",
     "strip-markdown": "^4.1.0",

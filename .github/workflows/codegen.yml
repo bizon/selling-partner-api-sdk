@@ -23,7 +23,7 @@ jobs:
           cache: yarn
 
       - name: Install dependencies
-        run: yarn --frozen-lockfile --non-interactive
+        run: yarn --frozen-lockfile --non-interactive --prefer-offline
 
       - name: Generate clients from models
         run: yarn generate-clients

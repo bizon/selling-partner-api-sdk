@@ -20,6 +20,14 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile --non-interactive --prefer-offline
 
+      - name: Restore xo cache
+        uses: actions/cache@v2
+        with:
+          path: node_modules/.cache/xo-linter
+          key: ${{ runner.os }}-xo-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-xo-
+
       - name: Run linter for lerna packages
         run: yarn lerna run lint
 

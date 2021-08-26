@@ -14,7 +14,8 @@
     "lib": "dist"
   },
   "files": [
-    "dist"
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
   ],
   "scripts": {
     "build:cjs": "tsc -p tsconfig.json",

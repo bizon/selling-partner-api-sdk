@@ -15,7 +15,8 @@
     "test": "__tests__"
   },
   "files": [
-    "dist"
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
   ],
   "scripts": {
     "build:cjs": "tsc -p tsconfig.json",
@@ -29,7 +30,8 @@
     "@sp-api-sdk/auth": "^1.9.0",
     "aws4-axios": "^2.4.3",
     "axios": "^0.21.1",
-    "axios-retry": "^3.1.9"
+    "axios-retry": "^3.1.9",
+    "read-pkg-up": "^7.0.1"
   },
   "repository": {
     "type": "git",

@@ -130,7 +130,6 @@ async function generateClientVersion(clientName: string, filename: string) {
     rateLimits[rateLimits.length - 1].last = true
   }
 
-  await fs.writeFile(`${clientDirectoryPath}/.npmignore`, await renderTemplate('scripts/templates/.npmignore.mustache'))
   await fs.writeFile(`${clientDirectoryPath}/tsconfig.json`, await renderTemplate('scripts/templates/tsconfig.json.mustache'))
   await fs.writeFile(`${clientDirectoryPath}/tsconfig.es.json`, await renderTemplate('scripts/templates/tsconfig.es.json.mustache'))
   await fs.writeFile(`${clientDirectoryPath}/index.ts`, await renderTemplate('scripts/templates/index.ts.mustache'))

@@ -10,7 +10,6 @@
   "workspaces": {
     "packages": [
       "packages/*",
-      "lib/*",
       "clients/*"
     ]
   },
@@ -19,10 +18,11 @@
     "clean": "lerna run clean",
     "clean.all": "yarn clean && lerna clean",
     "check:ts": "tsc --noEmit",
-    "test": "NODE_ENV=test yarn jest",
+    "test": "jest",
     "generate-clients": "ts-node --project tsconfig.scripts.json scripts/generate-clients.ts"
   },
   "devDependencies": {
+    "@jest/types": "^27.0.6",
     "@openapitools/openapi-generator-cli": "^2.3.10",
     "@tsconfig/node14": "^1.0.0",
     "@types/bluebird": "^3.5.36",

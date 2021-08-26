@@ -19,7 +19,7 @@
     "clean.all": "yarn clean && lerna clean",
     "check:ts": "tsc --noEmit",
     "test": "jest",
-    "generate-clients": "ts-node --project tsconfig.scripts.json scripts/generate-clients.ts"
+    "generate-clients": "ts-node --project scripts/tsconfig.json scripts/generate-clients.ts"
   },
   "devDependencies": {
     "@jest/types": "^27.0.6",

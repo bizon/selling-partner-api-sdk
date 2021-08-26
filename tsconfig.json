@@ -13,6 +13,9 @@
       "DOM"
     ]
   },
+  "exclude": [
+    "jest.config.ts"
+  ],
   "typedocOptions": {
     "name": "Selling Partner API SDK for JavaScript",
     "out": "docs",

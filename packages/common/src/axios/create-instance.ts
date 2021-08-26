@@ -1,12 +1,14 @@
-import axios, {Method} from 'axios'
+import axios from 'axios'
 import {aws4Interceptor} from 'aws4-axios'
 import axiosRetry from 'axios-retry'
+import readPkg from 'read-pkg-up'
+import type {Method} from 'axios'
 
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 
 import {SellingPartnerApiError} from '../selling-partner-api-error'
 
-import pkg from '../../package.json'
+const {packageJson} = readPkg.sync()!
 
 export interface RateLimit {
   urlRegex: RegExp;
@@ -35,7 +37,7 @@ type AxiosHeaders = Record<string, string | undefined>
 
 export function createAxiosInstance({
   auth,
-  userAgent = `${pkg.name}/${pkg.version}`,
+  userAgent = `${packageJson.name}/${packageJson.version}`,
   region,
   rateLimits,
   onRetry,

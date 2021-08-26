@@ -29,7 +29,6 @@ describe('src/client', () => {
     })
 
     expect(createAxiosInstance).toBeCalledTimes(1)
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     expect((createAxiosInstance as jest.Mock).mock.calls[0][0]).toStrictEqual({
       auth,
       region: 'eu-west-1',
@@ -50,7 +49,6 @@ describe('src/client', () => {
     })
 
     expect(createAxiosInstance).toBeCalledTimes(1)
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     expect((createAxiosInstance as jest.Mock).mock.calls[0][0]).toStrictEqual({
       auth,
       region: 'eu-west-1',

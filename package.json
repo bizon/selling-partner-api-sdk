@@ -19,8 +19,8 @@
     "clean": "lerna run clean",
     "clean.all": "yarn clean && lerna clean",
     "check:ts": "tsc --noEmit",
-    "test": "NODE_ENV=test yarn jest",
-    "generate-clients": "ts-node --project tsconfig.scripts.json scripts/generate-clients.ts"
+    "test": "yarn jest",
+    "generate-clients": "ts-node --project scripts/tsconfig.json scripts/generate-clients.ts"
   },
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.3.10",
@@ -57,17 +57,18 @@
     "semicolon": false,
     "space": 2,
     "ignores": [
-      "**/src/api-model/**"
+      "clients/*/src/api-model/**/*.ts"
     ],
     "rules": {
       "@typescript-eslint/no-implicit-any-catch": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
       "@typescript-eslint/no-unsafe-argument": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
       "@typescript-eslint/restrict-template-expressions": "off",
       "eslint-comments/no-unused-disable": "off",
       "unicorn/no-array-reduce": "off",
-      "unicorn/prefer-node-protocol": "off",
-      "unicorn/prefer-module": "off"
+      "unicorn/prefer-module": "off",
+      "unicorn/prefer-node-protocol": "off"
     }
   }
 }

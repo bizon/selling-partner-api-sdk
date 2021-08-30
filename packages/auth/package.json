@@ -28,7 +28,7 @@
   "dependencies": {
     "@aws-sdk/client-sts": "^3.27.0",
     "got": "^11.8.2",
-    "read-pkg-up": "^7.0.1",
+    "read-pkg-up": "^8.0.0",
     "type-fest": "^2.1.0"
   },
   "repository": {

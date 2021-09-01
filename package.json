@@ -43,7 +43,7 @@
     "openapi-types": "^9.3.0",
     "remark": "^13.0.0",
     "rimraf": "^3.0.2",
-    "strip-markdown": "^4.1.0",
+    "strip-markdown": "^4.2.0",
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
     "type-fest": "^2.1.0",

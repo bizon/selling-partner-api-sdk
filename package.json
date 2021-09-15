@@ -22,7 +22,7 @@
     "generate-clients": "ts-node --project scripts/tsconfig.json scripts/generate-clients.ts"
   },
   "devDependencies": {
-    "@jest/types": "^27.0.6",
+    "@jest/types": "^27.1.1",
     "@openapitools/openapi-generator-cli": "^2.4.1",
     "@tsconfig/node14": "^1.0.0",
     "@types/bluebird": "^3.5.36",

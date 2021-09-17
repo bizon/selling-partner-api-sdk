@@ -23,6 +23,8 @@ import { LoanServicingEvent } from './loan-servicing-event';
 import { NetworkComminglingTransactionEvent } from './network-commingling-transaction-event';
 import { PayWithAmazonEvent } from './pay-with-amazon-event';
 import { ProductAdsPaymentEvent } from './product-ads-payment-event';
+import { RemovalShipmentAdjustmentEvent } from './removal-shipment-adjustment-event';
+import { RemovalShipmentEvent } from './removal-shipment-event';
 import { RentalTransactionEvent } from './rental-transaction-event';
 import { RetrochargeEvent } from './retrocharge-event';
 import { SAFETReimbursementEvent } from './safetreimbursement-event';
@@ -31,6 +33,8 @@ import { SellerReviewEnrollmentPaymentEvent } from './seller-review-enrollment-p
 import { ServiceFeeEvent } from './service-fee-event';
 import { ShipmentEvent } from './shipment-event';
 import { SolutionProviderCreditEvent } from './solution-provider-credit-event';
+import { TaxWithholdingEvent } from './tax-withholding-event';
+import { TrialShipmentEvent } from './trial-shipment-event';
 
 /**
  * Contains all information related to a financial event.
@@ -170,6 +174,36 @@ export interface FinancialEvents {
      * @memberof FinancialEvents
      */
     AffordabilityExpenseReversalEventList?: Array<AffordabilityExpenseEvent>;
+    /**
+     * A list of information about trial shipment financial events.
+     * @type {Array<TrialShipmentEvent>}
+     * @memberof FinancialEvents
+     */
+    TrialShipmentEventList?: Array<TrialShipmentEvent>;
+    /**
+     * A list of information about shipment settle financial events.
+     * @type {Array<ShipmentEvent>}
+     * @memberof FinancialEvents
+     */
+    ShipmentSettleEventList?: Array<ShipmentEvent>;
+    /**
+     * List of TaxWithholding events.
+     * @type {Array<TaxWithholdingEvent>}
+     * @memberof FinancialEvents
+     */
+    TaxWithholdingEventList?: Array<TaxWithholdingEvent>;
+    /**
+     * A list of removal shipment event information.
+     * @type {Array<RemovalShipmentEvent>}
+     * @memberof FinancialEvents
+     */
+    RemovalShipmentEventList?: Array<RemovalShipmentEvent>;
+    /**
+     * A comma-delimited list of Removal shipmentAdjustment details for FBA inventory.
+     * @type {Array<RemovalShipmentAdjustmentEvent>}
+     * @memberof FinancialEvents
+     */
+    RemovalShipmentAdjustmentEventList?: Array<RemovalShipmentAdjustmentEvent>;
 }
 
 

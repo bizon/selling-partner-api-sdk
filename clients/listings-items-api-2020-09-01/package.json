@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/listings-items-api-2020-09-01",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API. For more information, see the Listing Items API Use Case Guide.",
-  "version": "1.7.4",
+  "version": "1.7.5",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -26,8 +26,8 @@
     "test": "NODE_ENV='test' yarn jest"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^1.9.0",
-    "@sp-api-sdk/common": "^1.7.1",
+    "@sp-api-sdk/auth": "^1.9.1",
+    "@sp-api-sdk/common": "^1.7.2",
     "axios": "^0.21.1"
   },
   "repository": {

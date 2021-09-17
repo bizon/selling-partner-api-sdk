@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/solicitations-api-v1@1.6.15...@sp-api-sdk/solicitations-api-v1@1.7.0) (2021-09-17)
+
+
+### Features
+
+* **clients:** update models as of 2021-08-31 ([#112](https://github.com/bizon/selling-partner-api-sdk/issues/112)) ([7666f92](https://github.com/bizon/selling-partner-api-sdk/commit/7666f9263feddb6bc0b735c1fe058fb2d664071e))
+
+
+
+
+
 ## [1.6.15](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/solicitations-api-v1@1.6.14...@sp-api-sdk/solicitations-api-v1@1.6.15) (2021-08-25)
 
 

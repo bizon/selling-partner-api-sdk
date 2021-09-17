@@ -28,6 +28,12 @@ export interface RemovalShipmentEvent {
      */
     PostedDate?: string;
     /**
+     * The merchant removal orderId.
+     * @type {string}
+     * @memberof RemovalShipmentEvent
+     */
+    MerchantOrderId?: string;
+    /**
      * The identifier for the removal shipment order.
      * @type {string}
      * @memberof RemovalShipmentEvent

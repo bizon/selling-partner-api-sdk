@@ -29,12 +29,6 @@ import { ShipsFromType } from './ships-from-type';
  */
 export interface OfferDetail {
     /**
-     * The seller identifier for the offer.
-     * @type {string}
-     * @memberof OfferDetail
-     */
-    sellerId?: string;
-    /**
      * When true, this is the seller\'s offer.
      * @type {boolean}
      * @memberof OfferDetail

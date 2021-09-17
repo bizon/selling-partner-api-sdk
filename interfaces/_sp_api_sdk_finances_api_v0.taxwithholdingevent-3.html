@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TDSReimbursementEvent | Selling Partner API SDK for JavaScript</title>
+	<title>TaxWithholdingEvent | Selling Partner API SDK for JavaScript</title>
 	<meta name="description" content="Documentation for Selling Partner API SDK for JavaScript">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -59,10 +59,10 @@
 					<a href="../modules/_sp_api_sdk_finances_api_v0.html">@sp-api-sdk/finances-api-v0</a>
 				</li>
 				<li>
-					<a href="_sp_api_sdk_finances_api_v0.tdsreimbursementevent-3.html">TDSReimbursementEvent</a>
+					<a href="_sp_api_sdk_finances_api_v0.taxwithholdingevent-3.html">TaxWithholdingEvent</a>
 				</li>
 			</ul>
-			<h1>Interface TDSReimbursementEvent</h1>
+			<h1>Interface TaxWithholdingEvent</h1>
 		</div>
 	</div>
 </header>
@@ -72,13 +72,13 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>A tax deduction at source (TDS) claim reimbursement event on the seller&#39;s account.</p>
+						<p>A TaxWithholding event on seller&#39;s account.</p>
 					</div>
 					<dl class="tsd-comment-tags">
 						<dt>export</dt>
 						<dd></dd>
 						<dt>interface</dt>
-						<dd><p>TDSReimbursementEvent</p>
+						<dd><p>TaxWithholdingEvent</p>
 						</dd>
 					</dl>
 				</div>
@@ -87,7 +87,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">TDSReimbursementEvent</span>
+						<span class="target">TaxWithholdingEvent</span>
 					</li>
 				</ul>
 			</section>
@@ -98,9 +98,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_sp_api_sdk_finances_api_v0.tdsreimbursementevent-3.html#posteddate" class="tsd-kind-icon">Posted<wbr>Date</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_sp_api_sdk_finances_api_v0.tdsreimbursementevent-3.html#reimbursedamount" class="tsd-kind-icon">Reimbursed<wbr>Amount</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_sp_api_sdk_finances_api_v0.tdsreimbursementevent-3.html#tdsorderid" class="tsd-kind-icon">Tds<wbr>Order<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_sp_api_sdk_finances_api_v0.taxwithholdingevent-3.html#baseamount" class="tsd-kind-icon">Base<wbr>Amount</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_sp_api_sdk_finances_api_v0.taxwithholdingevent-3.html#posteddate" class="tsd-kind-icon">Posted<wbr>Date</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_sp_api_sdk_finances_api_v0.taxwithholdingevent-3.html#taxwithholdingperiod" class="tsd-kind-icon">Tax<wbr>Withholding<wbr>Period</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_sp_api_sdk_finances_api_v0.taxwithholdingevent-3.html#withheldamount" class="tsd-kind-icon">Withheld<wbr>Amount</a></li>
 							</ul>
 						</section>
 					</div>
@@ -109,55 +110,69 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="baseamount" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> Base<wbr>Amount</h3>
+					<div class="tsd-signature tsd-kind-icon">Base<wbr>Amount<span class="tsd-signature-symbol">:</span> <a href="_sp_api_sdk_finances_api_v0.currency-3.html" class="tsd-signature-type">Currency</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/9cd57db/clients/finances-api-v0/src/api-model/models/tax-withholding-event.ts#L36">clients/finances-api-v0/src/api-model/models/tax-withholding-event.ts:36</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>memberof</dt>
+							<dd><p>TaxWithholdingEvent</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="posteddate" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> Posted<wbr>Date</h3>
 					<div class="tsd-signature tsd-kind-icon">Posted<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/a3f590b/clients/finances-api-v0/src/api-model/models/tdsreimbursement-event.ts#L29">clients/finances-api-v0/src/api-model/models/tdsreimbursement-event.ts:29</a></li>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/9cd57db/clients/finances-api-v0/src/api-model/models/tax-withholding-event.ts#L30">clients/finances-api-v0/src/api-model/models/tax-withholding-event.ts:30</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<dl class="tsd-comment-tags">
 							<dt>memberof</dt>
-							<dd><p>TDSReimbursementEvent</p>
+							<dd><p>TaxWithholdingEvent</p>
 							</dd>
 						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="reimbursedamount" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> Reimbursed<wbr>Amount</h3>
-					<div class="tsd-signature tsd-kind-icon">Reimbursed<wbr>Amount<span class="tsd-signature-symbol">:</span> <a href="_sp_api_sdk_finances_api_v0.currency-3.html" class="tsd-signature-type">Currency</a></div>
+					<a name="taxwithholdingperiod" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> Tax<wbr>Withholding<wbr>Period</h3>
+					<div class="tsd-signature tsd-kind-icon">Tax<wbr>Withholding<wbr>Period<span class="tsd-signature-symbol">:</span> <a href="_sp_api_sdk_finances_api_v0.taxwithholdingevent-3.html#taxwithholdingperiod" class="tsd-signature-type">TaxWithholdingPeriod</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/a3f590b/clients/finances-api-v0/src/api-model/models/tdsreimbursement-event.ts#L41">clients/finances-api-v0/src/api-model/models/tdsreimbursement-event.ts:41</a></li>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/9cd57db/clients/finances-api-v0/src/api-model/models/tax-withholding-event.ts#L48">clients/finances-api-v0/src/api-model/models/tax-withholding-event.ts:48</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<dl class="tsd-comment-tags">
 							<dt>memberof</dt>
-							<dd><p>TDSReimbursementEvent</p>
+							<dd><p>TaxWithholdingEvent</p>
 							</dd>
 						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="tdsorderid" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> Tds<wbr>Order<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">Tds<wbr>Order<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<a name="withheldamount" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> Withheld<wbr>Amount</h3>
+					<div class="tsd-signature tsd-kind-icon">Withheld<wbr>Amount<span class="tsd-signature-symbol">:</span> <a href="_sp_api_sdk_finances_api_v0.currency-3.html" class="tsd-signature-type">Currency</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/a3f590b/clients/finances-api-v0/src/api-model/models/tdsreimbursement-event.ts#L35">clients/finances-api-v0/src/api-model/models/tdsreimbursement-event.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/9cd57db/clients/finances-api-v0/src/api-model/models/tax-withholding-event.ts#L42">clients/finances-api-v0/src/api-model/models/tax-withholding-event.ts:42</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>A tax deduction at source (TDS) claim identifier.</p>
-						</div>
 						<dl class="tsd-comment-tags">
 							<dt>memberof</dt>
-							<dd><p>TDSReimbursementEvent</p>
+							<dd><p>TaxWithholdingEvent</p>
 							</dd>
 						</dl>
 					</div>
@@ -180,16 +195,19 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_sp_api_sdk_finances_api_v0.tdsreimbursementevent-3.html" class="tsd-kind-icon">TDSReimbursement<wbr>Event</a>
+						<a href="_sp_api_sdk_finances_api_v0.taxwithholdingevent-3.html" class="tsd-kind-icon">Tax<wbr>Withholding<wbr>Event</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_sp_api_sdk_finances_api_v0.tdsreimbursementevent-3.html#posteddate" class="tsd-kind-icon">Posted<wbr>Date</a>
+								<a href="_sp_api_sdk_finances_api_v0.taxwithholdingevent-3.html#baseamount" class="tsd-kind-icon">Base<wbr>Amount</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_sp_api_sdk_finances_api_v0.tdsreimbursementevent-3.html#reimbursedamount" class="tsd-kind-icon">Reimbursed<wbr>Amount</a>
+								<a href="_sp_api_sdk_finances_api_v0.taxwithholdingevent-3.html#posteddate" class="tsd-kind-icon">Posted<wbr>Date</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_sp_api_sdk_finances_api_v0.tdsreimbursementevent-3.html#tdsorderid" class="tsd-kind-icon">Tds<wbr>Order<wbr>Id</a>
+								<a href="_sp_api_sdk_finances_api_v0.taxwithholdingevent-3.html#taxwithholdingperiod" class="tsd-kind-icon">Tax<wbr>Withholding<wbr>Period</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_sp_api_sdk_finances_api_v0.taxwithholdingevent-3.html#withheldamount" class="tsd-kind-icon">Withheld<wbr>Amount</a>
 							</li>
 						</ul>
 					</li>

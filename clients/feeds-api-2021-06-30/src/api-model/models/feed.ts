@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Detailed information about the feed.
  * @export
  * @interface Feed
  */

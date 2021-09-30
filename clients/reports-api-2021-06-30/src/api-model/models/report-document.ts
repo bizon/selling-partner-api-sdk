@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Information required for the report document.
  * @export
  * @interface ReportDocument
  */

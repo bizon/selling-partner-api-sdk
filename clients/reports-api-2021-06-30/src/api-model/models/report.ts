@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Detailed information about the report.
  * @export
  * @interface Report
  */

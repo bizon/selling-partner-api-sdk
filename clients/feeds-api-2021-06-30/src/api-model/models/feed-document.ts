@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Information required for the feed document.
  * @export
  * @interface FeedDocument
  */

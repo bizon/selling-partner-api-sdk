@@ -22,7 +22,7 @@ import { Feed } from './feed';
  */
 export interface GetFeedsResponse {
     /**
-     * 
+     * A list of feeds.
      * @type {Array<Feed>}
      * @memberof GetFeedsResponse
      */

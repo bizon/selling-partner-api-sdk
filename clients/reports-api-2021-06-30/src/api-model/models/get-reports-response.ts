@@ -22,7 +22,7 @@ import { Report } from './report';
  */
 export interface GetReportsResponse {
     /**
-     * 
+     * A list of reports.
      * @type {Array<Report>}
      * @memberof GetReportsResponse
      */

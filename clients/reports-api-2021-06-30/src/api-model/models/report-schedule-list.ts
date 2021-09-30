@@ -16,7 +16,7 @@
 import { ReportSchedule } from './report-schedule';
 
 /**
- * 
+ * A list of report schedules.
  * @export
  * @interface ReportScheduleList
  */

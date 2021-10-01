@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Information required to create the feed.
  * @export
  * @interface CreateFeedSpecification
  */

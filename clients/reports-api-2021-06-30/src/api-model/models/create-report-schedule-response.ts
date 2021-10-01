@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Response schema.
  * @export
  * @interface CreateReportScheduleResponse
  */

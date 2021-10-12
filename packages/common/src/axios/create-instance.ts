@@ -97,7 +97,7 @@ export function createAxiosInstance({
   instance.interceptors.response.use(
     async response => response,
     async error => {
-      throw new SellingPartnerApiError(error)
+      throw axios.isAxiosError(error) ? new SellingPartnerApiError(error) : error
     },
   )
 

@@ -45,7 +45,7 @@
     "rimraf": "^3.0.2",
     "strip-markdown": "^4.2.0",
     "ts-jest": "^27.0.5",
-    "ts-node": "^10.2.1",
+    "ts-node": "^10.3.0",
     "type-fest": "^2.3.4",
     "typedoc": "^0.19.2",
     "typedoc-plugin-lerna-packages": "^0.3.1",

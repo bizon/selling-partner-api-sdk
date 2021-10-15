@@ -123,7 +123,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_sp_api_sdk_product_fees_api_v0.baseapi.html">BaseAPI</a>.<a href="_sp_api_sdk_product_fees_api_v0.baseapi.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/9cd57db/clients/product-fees-api-v0/src/client.ts#L30">clients/product-fees-api-v0/src/client.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/dc50ede/clients/product-fees-api-v0/src/client.ts#L30">clients/product-fees-api-v0/src/client.ts:30</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -146,7 +146,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_sp_api_sdk_product_fees_api_v0.baseapi.html">BaseAPI</a>.<a href="_sp_api_sdk_product_fees_api_v0.baseapi.html#axios">axios</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/9cd57db/clients/product-fees-api-v0/src/api-model/base.ts#L52">clients/product-fees-api-v0/src/api-model/base.ts:52</a></li>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/dc50ede/clients/product-fees-api-v0/src/api-model/base.ts#L52">clients/product-fees-api-v0/src/api-model/base.ts:52</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -157,7 +157,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_sp_api_sdk_product_fees_api_v0.baseapi.html">BaseAPI</a>.<a href="_sp_api_sdk_product_fees_api_v0.baseapi.html#basepath">basePath</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/9cd57db/clients/product-fees-api-v0/src/api-model/base.ts#L52">clients/product-fees-api-v0/src/api-model/base.ts:52</a></li>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/dc50ede/clients/product-fees-api-v0/src/api-model/base.ts#L52">clients/product-fees-api-v0/src/api-model/base.ts:52</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -168,7 +168,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_sp_api_sdk_product_fees_api_v0.baseapi.html">BaseAPI</a>.<a href="_sp_api_sdk_product_fees_api_v0.baseapi.html#configuration">configuration</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/9cd57db/clients/product-fees-api-v0/src/api-model/base.ts#L50">clients/product-fees-api-v0/src/api-model/base.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/dc50ede/clients/product-fees-api-v0/src/api-model/base.ts#L50">clients/product-fees-api-v0/src/api-model/base.ts:50</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -186,12 +186,12 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_sp_api_sdk_product_fees_api_v0.feesapi-2.html">FeesApi</a>.<a href="_sp_api_sdk_product_fees_api_v0.feesapi-2.html#getmyfeesestimateforasin">getMyFeesEstimateForASIN</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/9cd57db/clients/product-fees-api-v0/src/api-model/api/fees-api.ts#L232">clients/product-fees-api-v0/src/api-model/api/fees-api.ts:232</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/dc50ede/clients/product-fees-api-v0/src/api-model/api/fees-api.ts#L232">clients/product-fees-api-v0/src/api-model/api/fees-api.ts:232</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns the estimated fees for the item indicated by the specified Asin in the marketplace specified in the request body.  You can call getMyFeesEstimateForASIN for an item on behalf of a seller before the seller sets the item&#39;s price. They can then take estimated fees into account. With each product fees request, you must include an original identifier. This identifier is included in the fees estimate so you can correlate a fees estimate with the original request.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+									<p>Returns the estimated fees for the item indicated by the specified Asin in the marketplace specified in the request body.  You can call getMyFeesEstimateForASIN for an item on behalf of a selling partner before the selling partner sets the item&#39;s price. They can then take estimated fees into account. With each product fees request, you must include an original identifier. This identifier is included in the fees estimate so you can correlate a fees estimate with the original request.  <strong>Note:</strong> This value is only an estimate, actual costs may vary. Search &quot;fees&quot; in <a href="https://sellercentral.amazon.com/">Seller Central</a> and consult the store-specific fee schedule for the most up-to-date information.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>throws</dt>
@@ -229,12 +229,12 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_sp_api_sdk_product_fees_api_v0.feesapi-2.html">FeesApi</a>.<a href="_sp_api_sdk_product_fees_api_v0.feesapi-2.html#getmyfeesestimateforsku">getMyFeesEstimateForSKU</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/9cd57db/clients/product-fees-api-v0/src/api-model/api/fees-api.ts#L243">clients/product-fees-api-v0/src/api-model/api/fees-api.ts:243</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/dc50ede/clients/product-fees-api-v0/src/api-model/api/fees-api.ts#L243">clients/product-fees-api-v0/src/api-model/api/fees-api.ts:243</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns the estimated fees for the item indicated by the specified seller SKU in the marketplace specified in the request body.  You can call getMyFeesEstimateForSKU for an item on behalf of a seller before the seller sets the item&#39;s price. They can then take estimated fees into account. With each fees estimate request, you must include an original identifier. This identifier is included in the fees estimate so you can correlate a fees estimate with the original request.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
+									<p>Returns the estimated fees for the item indicated by the specified seller SKU in the marketplace specified in the request body.  You can call getMyFeesEstimateForSKU for an item on behalf of a selling partner before the selling partner sets the item&#39;s price. They can then take estimated fees into account. With each fees estimate request, you must include an original identifier. This identifier is included in the fees estimate so you can correlate a fees estimate with the original request.  <strong>Note:</strong> This value is only an estimate, actual costs may vary. Search &quot;fees&quot; in <a href="https://sellercentral.amazon.com/">Seller Central</a> and consult the store-specific fee schedule for the most up-to-date information.  <strong>Usage Plans:</strong>  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see &quot;Usage Plans and Rate Limits&quot; in the Selling Partner API documentation.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>throws</dt>

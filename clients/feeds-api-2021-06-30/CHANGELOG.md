@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/feeds-api-2021-06-30@1.6.15...@sp-api-sdk/feeds-api-2021-06-30@1.7.0) (2021-10-15)
+
+
+### Features
+
+* **clients:** update models as of 2021-09-30 ([#139](https://github.com/bizon/selling-partner-api-sdk/issues/139)) ([4e56002](https://github.com/bizon/selling-partner-api-sdk/commit/4e560022b4b14393db1f061eb799e1a2844d69dd))
+
+
+
+
+
 ## [1.6.15](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/feeds-api-2021-06-30@1.6.14...@sp-api-sdk/feeds-api-2021-06-30@1.6.15) (2021-09-17)
 
 **Note:** Version bump only for package @sp-api-sdk/feeds-api-2021-06-30

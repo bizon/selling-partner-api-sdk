@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.7.2...@sp-api-sdk/common@1.7.3) (2021-10-15)
+
+
+### Bug Fixes
+
+* **common:** handle unexpected errors while requesting with axios ([#152](https://github.com/bizon/selling-partner-api-sdk/issues/152)) ([dc50ede](https://github.com/bizon/selling-partner-api-sdk/commit/dc50edebafa7f8799e1a0582f0eb8d5407bbc56d))
+
+
+
+
+
 ## [1.7.2](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.7.1...@sp-api-sdk/common@1.7.2) (2021-09-17)
 
 **Note:** Version bump only for package @sp-api-sdk/common

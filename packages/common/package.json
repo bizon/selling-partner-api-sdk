@@ -31,7 +31,7 @@
     "aws4-axios": "^2.4.3",
     "axios": "^0.21.1",
     "axios-retry": "^3.1.9",
-    "read-pkg-up": "^7.0.1"
+    "read-pkg-up": "^9.0.0"
   },
   "repository": {
     "type": "git",

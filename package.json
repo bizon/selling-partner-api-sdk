@@ -44,7 +44,7 @@
     "remark": "^13.0.0",
     "rimraf": "^3.0.2",
     "strip-markdown": "^4.2.0",
-    "ts-jest": "^27.0.5",
+    "ts-jest": "^27.0.7",
     "ts-node": "^10.3.0",
     "type-fest": "^2.5.1",
     "typedoc": "^0.19.2",

@@ -84,7 +84,7 @@ async function generateClientVersion(clientName: string, filename: string) {
   await fs.writeFile(`${clientDirectoryPath}/package.json`, await renderTemplate('scripts/templates/package.json.mustache', {
     packageName,
     description: await cleanMarkdown(doc.info.description ?? '', true),
-    version: await readPackageVersion(clientDirectoryPath) ?? '1.0.0-rc.1',
+    version: await readPackageVersion(clientDirectoryPath) ?? '1.0.0',
     apiName: formatedClientName.replace(/-/g, ' '),
     dependencies: {
       auth: await readPackageVersion('packages/auth'),

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/listings-restrictions-api-2021-08-01@1.0.0-rc.2...@sp-api-sdk/listings-restrictions-api-2021-08-01@1.1.0) (2021-10-21)
+
+
+### Features
+
+* **clients:** update initial version to be 1.0.0 ([b4f03b5](https://github.com/bizon/selling-partner-api-sdk/commit/b4f03b50595aea34fad279646bfee69ea39a5e34))
+
+
+
+
+
 # 1.0.0-rc.2 (2021-10-21)
 
 

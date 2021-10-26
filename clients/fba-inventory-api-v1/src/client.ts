@@ -9,8 +9,8 @@ export const RATE_LIMITS: RateLimit[] = [
   {
     method: 'get',
     urlRegex: new RegExp('^/fba/inventory/v1/summaries$'),
-    rate: 5,
-    burst: 10,
+    rate: 2,
+    burst: 2,
   },
 ]
 

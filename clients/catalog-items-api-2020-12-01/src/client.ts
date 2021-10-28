@@ -9,7 +9,7 @@ export const RATE_LIMITS: RateLimit[] = [
   {
     method: 'get',
     urlRegex: new RegExp('^/catalog/2020-12-01/items$'),
-    rate: 1,
+    rate: 5,
     burst: 5,
   },
   {

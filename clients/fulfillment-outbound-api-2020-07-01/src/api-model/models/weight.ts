@@ -40,7 +40,9 @@ export interface Weight {
     */
 export enum WeightUnitEnum {
     Kg = 'KG',
-    Lb = 'LB'
+    Kilograms = 'KILOGRAMS',
+    Lb = 'LB',
+    Pounds = 'POUNDS'
 }
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/fba-inventory-api-v1@1.8.7...@sp-api-sdk/fba-inventory-api-v1@1.9.0) (2021-11-15)
+
+
+### Features
+
+* **clients:** update models as of 2021-10-26 ([#171](https://github.com/bizon/selling-partner-api-sdk/issues/171)) ([155cace](https://github.com/bizon/selling-partner-api-sdk/commit/155cace87a3ec227de6b9d92ac38915004684b7e))
+
+
+
+
+
 ## [1.8.7](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/fba-inventory-api-v1@1.8.6...@sp-api-sdk/fba-inventory-api-v1@1.8.7) (2021-10-21)
 
 **Note:** Version bump only for package @sp-api-sdk/fba-inventory-api-v1

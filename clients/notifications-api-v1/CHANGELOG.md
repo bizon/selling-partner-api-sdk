@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/notifications-api-v1@1.8.0...@sp-api-sdk/notifications-api-v1@1.8.1) (2021-11-15)
+
+**Note:** Version bump only for package @sp-api-sdk/notifications-api-v1
+
+
+
+
+
 # [1.8.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/notifications-api-v1@1.7.16...@sp-api-sdk/notifications-api-v1@1.8.0) (2021-10-21)
 
 

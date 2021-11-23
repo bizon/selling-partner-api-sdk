@@ -16,6 +16,7 @@
 import { Money } from './money';
 import { OrderItemStatusAcknowledgementStatus } from './order-item-status-acknowledgement-status';
 import { OrderItemStatusOrderedQuantity } from './order-item-status-ordered-quantity';
+import { OrderItemStatusReceivingStatus } from './order-item-status-receiving-status';
 
 /**
  * 
@@ -65,6 +66,12 @@ export interface OrderItemStatus {
      * @memberof OrderItemStatus
      */
     acknowledgementStatus?: OrderItemStatusAcknowledgementStatus;
+    /**
+     * 
+     * @type {OrderItemStatusReceivingStatus}
+     * @memberof OrderItemStatus
+     */
+    receivingStatus?: OrderItemStatusReceivingStatus;
 }
 
 

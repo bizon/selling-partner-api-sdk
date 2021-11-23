@@ -52,7 +52,7 @@ export interface OrderAcknowledgementItem {
      * @type {Money}
      * @memberof OrderAcknowledgementItem
      */
-    netCost: Money;
+    netCost?: Money;
     /**
      * 
      * @type {Money}

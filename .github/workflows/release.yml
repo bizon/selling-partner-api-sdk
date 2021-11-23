@@ -72,7 +72,7 @@ jobs:
         run: yarn typedoc
 
       - name: Deploy documentation
-        uses: JamesIves/github-pages-deploy-action@4.1.5
+        uses: JamesIves/github-pages-deploy-action@4.1.6
         with:
           branch: docs
           folder: docs

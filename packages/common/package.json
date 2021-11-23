@@ -52,6 +52,6 @@
     "marketplace webservice"
   ],
   "devDependencies": {
-    "nock": "^13.2.0"
+    "nock": "^13.2.1"
   }
 }

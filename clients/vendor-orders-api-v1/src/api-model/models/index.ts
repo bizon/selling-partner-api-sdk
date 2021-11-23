@@ -16,6 +16,7 @@ export * from './order-item-acknowledgement';
 export * from './order-item-status';
 export * from './order-item-status-acknowledgement-status';
 export * from './order-item-status-ordered-quantity';
+export * from './order-item-status-receiving-status';
 export * from './order-list';
 export * from './order-list-status';
 export * from './order-status';

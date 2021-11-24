@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@sp-api-sdk/auth": "^1.9.4",
-    "aws4-axios": "^2.4.3",
+    "aws4-axios": "^2.4.6",
     "axios": "^0.24.0",
     "axios-retry": "^3.2.4",
     "read-pkg-up": "^7.0.1"

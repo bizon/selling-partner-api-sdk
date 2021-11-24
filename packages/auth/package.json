@@ -28,8 +28,7 @@
   "dependencies": {
     "@aws-sdk/client-sts": "^3.40.0",
     "got": "^11.8.2",
-    "read-pkg-up": "^7.0.1",
-    "type-fest": "^2.5.2"
+    "read-pkg-up": "^7.0.1"
   },
   "repository": {
     "type": "git",

@@ -4,7 +4,7 @@ import {createAxiosInstance} from '../../src/axios'
 import {SellingPartnerApiError} from '../../src/selling-partner-api-error'
 
 jest.mock('@sp-api-sdk/auth', () => ({
-  SellingPartnerApiAuth: jest.fn(() => ({
+  SellingPartnerApiAuth: jest.fn(() => ({ // eslint-disable-line @typescript-eslint/naming-convention
     accessToken: {
       get: jest.fn(() => 'FAKE_ACCESS_TOKEN'),
     },

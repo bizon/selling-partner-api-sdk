@@ -1,6 +1,6 @@
 /* eslint-disable prefer-regex-literals */
-import {endpoints, awsRegionByCode, createAxiosInstance, onRetry} from '@sp-api-sdk/common'
-import type {ClientConfiguration, RateLimit} from '@sp-api-sdk/common'
+import {endpoints, awsRegionByCode, createAxiosInstance} from '@sp-api-sdk/common'
+import type {ClientConfiguration, RateLimit, OnRetryHandler} from '@sp-api-sdk/common'
 
 import {Configuration, SellersApi} from './api-model'
 import {SellersApiError} from './error'
@@ -17,7 +17,7 @@ export const RATE_LIMITS: RateLimit[] = [
 export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits' | 'onRetry'> {
   rateLimiting?: {
     retry: boolean;
-    onRetry?: onRetry;
+    onRetry?: OnRetryHandler;
   };
 }
 

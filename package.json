@@ -51,7 +51,7 @@
     "typedoc-plugin-lerna-packages": "^0.3.1",
     "typescript": "^4.5.2",
     "winston": "^3.3.3",
-    "xo": "^0.44.0"
+    "xo": "^0.46.4"
   },
   "xo": {
     "semicolon": false,
@@ -60,14 +60,15 @@
       "**/src/api-model/**"
     ],
     "rules": {
+      "@typescript-eslint/naming-convention": "off",
       "@typescript-eslint/no-implicit-any-catch": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
       "@typescript-eslint/no-unsafe-argument": "off",
       "@typescript-eslint/restrict-template-expressions": "off",
       "eslint-comments/no-unused-disable": "off",
       "unicorn/no-array-reduce": "off",
-      "unicorn/prefer-node-protocol": "off",
-      "unicorn/prefer-module": "off"
+      "unicorn/prefer-module": "off",
+      "unicorn/prefer-node-protocol": "off"
     }
   }
 }

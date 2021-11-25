@@ -22,7 +22,7 @@ export interface OnRetryParameters {
   rateLimit?: number;
 }
 
-export type onRetry = (retryInfo: OnRetryParameters) => void
+export type OnRetryHandler = (retryInfo: OnRetryParameters) => void
 
 export interface ClientConfiguration {
   auth: SellingPartnerApiAuth;
@@ -30,7 +30,7 @@ export interface ClientConfiguration {
   userAgent?: string;
   sandbox?: boolean;
   rateLimits?: RateLimit[];
-  onRetry?: onRetry;
+  onRetry?: OnRetryHandler;
 }
 
 type AxiosHeaders = Record<string, string | undefined>

@@ -1,7 +1,9 @@
 **/*.log
+**/*.tsbuildinfo
 
 node_modules/
 docs/
+coverage/
 
 packages/test-sdk
 packages/**/dist

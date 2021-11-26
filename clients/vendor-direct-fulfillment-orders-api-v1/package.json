@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/vendor-direct-fulfillment-orders-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Direct Fulfillment Orders provides programmatic access to a direct fulfillment vendor's order data.",
-  "version": "1.6.20",
+  "version": "1.6.21",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -25,8 +25,8 @@
     "test": "NODE_ENV='test' yarn jest"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^1.9.4",
-    "@sp-api-sdk/common": "^1.7.6",
+    "@sp-api-sdk/auth": "^1.9.5",
+    "@sp-api-sdk/common": "^1.7.7",
     "axios": "^0.24.0"
   },
   "repository": {

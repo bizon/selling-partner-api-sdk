@@ -2,6 +2,12 @@
 
 With the Solicitations API you can build applications that send non-critical solicitations to buyers. You can get a list of solicitation types that are available for an order that you specify, then call an operation that sends a solicitation to the buyer for that order. Buyers cannot respond to solicitations sent by this API, and these solicitations do not appear in the Messaging section of Seller Central or in the recipient's Message Center. The Solicitations API returns responses that are formed according to the <a href=https://tools.ietf.org/html/draft-kelly-json-hal-08>JSON Hypertext Application Language</a> (HAL) standard.
 
+## Documentation
+
+Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/solicitations-api/solicitations.md).
+
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_solicitations_api_v1.html) for this API client.
+
 ## Installing
 
 ```sh
@@ -19,26 +25,25 @@ import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 import {SolicitationsApiClient} from '@sp-api-sdk/solicitations-api-v1'
 
 const auth = new SellingPartnerApiAuth({
-  clientId: '',
-  clientSecret: '',
-  refreshToken: '',
-  secretAccessKey: '',
+  clientId: process.env.LWA_CLIENT_ID,
+  clientSecret: process.env.LWA_CLIENT_SECRET,
+  refreshToken: 'Atzr|…',
   accessKeyId: '',
-  region: '',
+  secretAccessKey: '',
   role: {
-    arn: '',
-  }
+    arn: 'arn:aws:iam::…',
+  },
 })
 
 const client = new SolicitationsApiClient({
   auth,
-  region: 'eu' // or 'eu-west-1'
+  region: 'eu',
 })
 ```
 
-## Handle Rate Limiting
+## Rate Limiting
 
-If you want to let the SDK retry after each 429 responses, instanciate the client like this:
+In order to retry rate limited requests (HTTP 429), you can configure the API client as such:
 
 ```javascript
 const client = new SolicitationsApiClient({
@@ -46,13 +51,28 @@ const client = new SolicitationsApiClient({
   region: 'eu',
   rateLimiting: {
     retry: true,
-    onRetry: (retryInfo) => console.log(retryInfo) // Optional
-  }
+    // Optionally specify a callback that will be called on every retry.
+    onRetry: (retryInfo) => {
+      console.log(retryInfo)
+    },
+  },
 })
 ```
 
-The SDK gets the rate limits for each routes from the API documentation
+The rate limits used for each route are specified in the [API documentation]((https://github.com/amzn/selling-partner-api-docs/tree/main/references/solicitations-api/solicitations.md)).
 
-## API documentation
+## License
 
-See [here](https://github.com/amzn/selling-partner-api-docs/tree/main/references/solicitations-api/solicitations.md)
+MIT
+
+## Miscellaneous
+
+```
+    ╚⊙ ⊙╝
+  ╚═(███)═╝
+ ╚═(███)═╝
+╚═(███)═╝
+ ╚═(███)═╝
+  ╚═(███)═╝
+   ╚═(███)═╝
+```

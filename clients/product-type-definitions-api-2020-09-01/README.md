@@ -4,6 +4,12 @@ The Selling Partner API for Product Type Definitions provides programmatic acces
 
 For more information, see the [Product Type Definitions API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/product-type-definitions-api-use-case-guide/definitions-product-types-api-use-case-guide_2020-09-01.md).
 
+## Documentation
+
+Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/product-type-definitions-api/definitionsProductTypes_2020-09-01.md).
+
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_product_type_definitions_api_2020_09_01.html) for this API client.
+
 ## Installing
 
 ```sh
@@ -21,26 +27,25 @@ import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 import {ProductTypeDefinitionsApiClient} from '@sp-api-sdk/product-type-definitions-api-2020-09-01'
 
 const auth = new SellingPartnerApiAuth({
-  clientId: '',
-  clientSecret: '',
-  refreshToken: '',
-  secretAccessKey: '',
+  clientId: process.env.LWA_CLIENT_ID,
+  clientSecret: process.env.LWA_CLIENT_SECRET,
+  refreshToken: 'Atzr|…',
   accessKeyId: '',
-  region: '',
+  secretAccessKey: '',
   role: {
-    arn: '',
-  }
+    arn: 'arn:aws:iam::…',
+  },
 })
 
 const client = new ProductTypeDefinitionsApiClient({
   auth,
-  region: 'eu' // or 'eu-west-1'
+  region: 'eu',
 })
 ```
 
-## Handle Rate Limiting
+## Rate Limiting
 
-If you want to let the SDK retry after each 429 responses, instanciate the client like this:
+In order to retry rate limited requests (HTTP 429), you can configure the API client as such:
 
 ```javascript
 const client = new ProductTypeDefinitionsApiClient({
@@ -48,13 +53,28 @@ const client = new ProductTypeDefinitionsApiClient({
   region: 'eu',
   rateLimiting: {
     retry: true,
-    onRetry: (retryInfo) => console.log(retryInfo) // Optional
-  }
+    // Optionally specify a callback that will be called on every retry.
+    onRetry: (retryInfo) => {
+      console.log(retryInfo)
+    },
+  },
 })
 ```
 
-The SDK gets the rate limits for each routes from the API documentation
+The rate limits used for each route are specified in the [API documentation]((https://github.com/amzn/selling-partner-api-docs/tree/main/references/product-type-definitions-api/definitionsProductTypes_2020-09-01.md)).
 
-## API documentation
+## License
 
-See [here](https://github.com/amzn/selling-partner-api-docs/tree/main/references/product-type-definitions-api/definitionsProductTypes_2020-09-01.md)
+MIT
+
+## Miscellaneous
+
+```
+    ╚⊙ ⊙╝
+  ╚═(███)═╝
+ ╚═(███)═╝
+╚═(███)═╝
+ ╚═(███)═╝
+  ╚═(███)═╝
+   ╚═(███)═╝
+```

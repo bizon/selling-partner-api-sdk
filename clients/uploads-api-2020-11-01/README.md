@@ -2,6 +2,12 @@
 
 The Uploads API lets you upload files that you can programmatically access using other Selling Partner APIs, such as the A+ Content API and the Messaging API.
 
+## Documentation
+
+Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/uploads-api/uploads_2020-11-01.md).
+
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_uploads_api_2020_11_01.html) for this API client.
+
 ## Installing
 
 ```sh
@@ -19,26 +25,25 @@ import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 import {UploadsApiClient} from '@sp-api-sdk/uploads-api-2020-11-01'
 
 const auth = new SellingPartnerApiAuth({
-  clientId: '',
-  clientSecret: '',
-  refreshToken: '',
-  secretAccessKey: '',
+  clientId: process.env.LWA_CLIENT_ID,
+  clientSecret: process.env.LWA_CLIENT_SECRET,
+  refreshToken: 'Atzr|…',
   accessKeyId: '',
-  region: '',
+  secretAccessKey: '',
   role: {
-    arn: '',
-  }
+    arn: 'arn:aws:iam::…',
+  },
 })
 
 const client = new UploadsApiClient({
   auth,
-  region: 'eu' // or 'eu-west-1'
+  region: 'eu',
 })
 ```
 
-## Handle Rate Limiting
+## Rate Limiting
 
-If you want to let the SDK retry after each 429 responses, instanciate the client like this:
+In order to retry rate limited requests (HTTP 429), you can configure the API client as such:
 
 ```javascript
 const client = new UploadsApiClient({
@@ -46,13 +51,28 @@ const client = new UploadsApiClient({
   region: 'eu',
   rateLimiting: {
     retry: true,
-    onRetry: (retryInfo) => console.log(retryInfo) // Optional
-  }
+    // Optionally specify a callback that will be called on every retry.
+    onRetry: (retryInfo) => {
+      console.log(retryInfo)
+    },
+  },
 })
 ```
 
-The SDK gets the rate limits for each routes from the API documentation
+The rate limits used for each route are specified in the [API documentation]((https://github.com/amzn/selling-partner-api-docs/tree/main/references/uploads-api/uploads_2020-11-01.md)).
 
-## API documentation
+## License
 
-See [here](https://github.com/amzn/selling-partner-api-docs/tree/main/references/uploads-api/uploads_2020-11-01.md)
+MIT
+
+## Miscellaneous
+
+```
+    ╚⊙ ⊙╝
+  ╚═(███)═╝
+ ╚═(███)═╝
+╚═(███)═╝
+ ╚═(███)═╝
+  ╚═(███)═╝
+   ╚═(███)═╝
+```

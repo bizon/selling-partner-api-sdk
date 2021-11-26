@@ -73,6 +73,11 @@
 					</a>
 					<p>The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.</p>
 					<p>For more information, see the <a href="https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/listings-items-api-use-case-guide/listings-items-api-use-case-guide_2021-08-01.md">Listings Items API Use Case Guide</a>.</p>
+					<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+						<h2>Documentation</h2>
+					</a>
+					<p>Learn more about this Selling Partner API by visiting the <a href="https://github.com/amzn/selling-partner-api-docs/tree/main/references/listings-items-api/listingsItems_2021-08-01.md">official documentation</a>.</p>
+					<p>Also, see the <a href="https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_listings_items_api_2021_08_01.html">generated documentation</a> for this API client.</p>
 					<a href="#installing" id="installing" style="color: inherit; text-decoration: none;">
 						<h2>Installing</h2>
 					</a>
@@ -87,40 +92,53 @@
 <span class="hljs-keyword">import</span> {ListingsItemsApiClient} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@sp-api-sdk/listings-items-api-2021-08-01&#x27;</span>
 
 <span class="hljs-keyword">const</span> auth = <span class="hljs-keyword">new</span> SellingPartnerApiAuth({
-  <span class="hljs-attr">clientId</span>: <span class="hljs-string">&#x27;&#x27;</span>,
-  <span class="hljs-attr">clientSecret</span>: <span class="hljs-string">&#x27;&#x27;</span>,
-  <span class="hljs-attr">refreshToken</span>: <span class="hljs-string">&#x27;&#x27;</span>,
-  <span class="hljs-attr">secretAccessKey</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">clientId</span>: process.env.LWA_CLIENT_ID,
+  <span class="hljs-attr">clientSecret</span>: process.env.LWA_CLIENT_SECRET,
+  <span class="hljs-attr">refreshToken</span>: <span class="hljs-string">&#x27;Atzr|…&#x27;</span>,
   <span class="hljs-attr">accessKeyId</span>: <span class="hljs-string">&#x27;&#x27;</span>,
-  <span class="hljs-attr">region</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+  <span class="hljs-attr">secretAccessKey</span>: <span class="hljs-string">&#x27;&#x27;</span>,
   <span class="hljs-attr">role</span>: {
-    <span class="hljs-attr">arn</span>: <span class="hljs-string">&#x27;&#x27;</span>,
-  }
+    <span class="hljs-attr">arn</span>: <span class="hljs-string">&#x27;arn:aws:iam::…&#x27;</span>,
+  },
 })
 
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> ListingsItemsApiClient({
   auth,
-  <span class="hljs-attr">region</span>: <span class="hljs-string">&#x27;eu&#x27;</span> <span class="hljs-comment">// or &#x27;eu-west-1&#x27;</span>
+  <span class="hljs-attr">region</span>: <span class="hljs-string">&#x27;eu&#x27;</span>,
 })
 </code></pre>
-					<a href="#handle-rate-limiting" id="handle-rate-limiting" style="color: inherit; text-decoration: none;">
-						<h2>Handle Rate Limiting</h2>
+					<a href="#rate-limiting" id="rate-limiting" style="color: inherit; text-decoration: none;">
+						<h2>Rate Limiting</h2>
 					</a>
-					<p>If you want to let the SDK retry after each 429 responses, instanciate the client like this:</p>
+					<p>In order to retry rate limited requests (HTTP 429), you can configure the API client as such:</p>
 					<pre><code class="language-javascript"><span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> ListingsItemsApiClient({
   auth,
   <span class="hljs-attr">region</span>: <span class="hljs-string">&#x27;eu&#x27;</span>,
   <span class="hljs-attr">rateLimiting</span>: {
     <span class="hljs-attr">retry</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">onRetry</span>: <span class="hljs-function">(<span class="hljs-params">retryInfo</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(retryInfo) <span class="hljs-comment">// Optional</span>
-  }
+    <span class="hljs-comment">// Optionally specify a callback that will be called on every retry.</span>
+    <span class="hljs-attr">onRetry</span>: <span class="hljs-function">(<span class="hljs-params">retryInfo</span>) =&gt;</span> {
+      <span class="hljs-built_in">console</span>.log(retryInfo)
+    },
+  },
 })
 </code></pre>
-					<p>The SDK gets the rate limits for each routes from the API documentation</p>
-					<a href="#api-documentation" id="api-documentation" style="color: inherit; text-decoration: none;">
-						<h2>API documentation</h2>
+					<p>The rate limits used for each route are specified in the <a href="(https://github.com/amzn/selling-partner-api-docs/tree/main/references/listings-items-api/listingsItems_2021-08-01.md)">API documentation</a>.</p>
+					<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+						<h2>License</h2>
 					</a>
-					<p>See <a href="https://github.com/amzn/selling-partner-api-docs/tree/main/references/listings-items-api/listingsItems_2021-08-01.md">here</a></p>
+					<p>MIT</p>
+					<a href="#miscellaneous" id="miscellaneous" style="color: inherit; text-decoration: none;">
+						<h2>Miscellaneous</h2>
+					</a>
+					<pre><code>    ╚⊙ ⊙╝
+  ╚═<span class="hljs-comment">(███)</span>═╝
+ ╚═<span class="hljs-comment">(███)</span>═╝
+╚═<span class="hljs-comment">(███)</span>═╝
+ ╚═<span class="hljs-comment">(███)</span>═╝
+  ╚═<span class="hljs-comment">(███)</span>═╝
+   ╚═<span class="hljs-comment">(███)</span>═╝
+</code></pre>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -755,7 +773,7 @@
 					<div class="tsd-signature tsd-kind-icon">BASE_<wbr>PATH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://sellingpartnerapi-na.amazon.com&quot;.replace(/\/+$/, &quot;&quot;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/base.ts#L21">clients/listings-items-api-2021-08-01/src/api-model/base.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/base.ts#L21">clients/listings-items-api-2021-08-01/src/api-model/base.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -765,7 +783,7 @@
 					<div class="tsd-signature tsd-kind-icon">DUMMY_<wbr>BASE_<wbr>URL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"https://example.com"</span><span class="tsd-signature-symbol"> = &quot;https://example.com&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L24">clients/listings-items-api-2021-08-01/src/api-model/common.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L24">clients/listings-items-api-2021-08-01/src/api-model/common.ts:24</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -781,7 +799,7 @@
 					<div class="tsd-signature tsd-kind-icon">RATE_<wbr>LIMITS<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_sp_api_sdk_common.ratelimit-3.html" class="tsd-signature-type">RateLimit</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [{method: &#x27;delete&#x27;,urlRegex: new RegExp(&#x27;^/listings/2021-08-01/items/[^/]*$&#x27;),rate: 5,burst: 10,},{method: &#x27;get&#x27;,urlRegex: new RegExp(&#x27;^/listings/2021-08-01/items/[^/]*$&#x27;),rate: 5,burst: 10,},{method: &#x27;patch&#x27;,urlRegex: new RegExp(&#x27;^/listings/2021-08-01/items/[^/]*$&#x27;),rate: 5,burst: 10,},{method: &#x27;put&#x27;,urlRegex: new RegExp(&#x27;^/listings/2021-08-01/items/[^/]*$&#x27;),rate: 5,burst: 10,},]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/client.ts#L8">clients/listings-items-api-2021-08-01/src/client.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/client.ts#L8">clients/listings-items-api-2021-08-01/src/client.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -798,7 +816,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L37">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L37">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:37</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -827,7 +845,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L48">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:48</a></li>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L48">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:48</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -886,7 +904,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L98">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:98</a></li>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L98">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:98</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -948,7 +966,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L152">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:152</a></li>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L152">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:152</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -1015,7 +1033,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L207">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:207</a></li>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L207">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:207</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -1087,7 +1105,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L324">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:324</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L324">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:324</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1122,7 +1140,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L336">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:336</a></li>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L336">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:336</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -1175,7 +1193,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L349">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:349</a></li>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L349">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:349</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -1231,7 +1249,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L362">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:362</a></li>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L362">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:362</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -1290,7 +1308,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L375">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:375</a></li>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L375">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:375</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -1354,7 +1372,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L259">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:259</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L259">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:259</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1383,7 +1401,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L271">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:271</a></li>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L271">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:271</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -1436,7 +1454,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L285">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:285</a></li>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L285">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:285</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -1492,7 +1510,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L299">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:299</a></li>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L299">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:299</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -1551,7 +1569,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L313">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:313</a></li>
+													<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts#L313">clients/listings-items-api-2021-08-01/src/api-model/api/listings-api.ts:313</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -1615,7 +1633,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L31">clients/listings-items-api-2021-08-01/src/api-model/common.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L31">clients/listings-items-api-2021-08-01/src/api-model/common.ts:31</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1653,7 +1671,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L133">clients/listings-items-api-2021-08-01/src/api-model/common.ts:133</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L133">clients/listings-items-api-2021-08-01/src/api-model/common.ts:133</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1691,7 +1709,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L111">clients/listings-items-api-2021-08-01/src/api-model/common.ts:111</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L111">clients/listings-items-api-2021-08-01/src/api-model/common.ts:111</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1726,7 +1744,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L41">clients/listings-items-api-2021-08-01/src/api-model/common.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L41">clients/listings-items-api-2021-08-01/src/api-model/common.ts:41</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1761,7 +1779,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L54">clients/listings-items-api-2021-08-01/src/api-model/common.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L54">clients/listings-items-api-2021-08-01/src/api-model/common.ts:54</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1793,7 +1811,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L64">clients/listings-items-api-2021-08-01/src/api-model/common.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L64">clients/listings-items-api-2021-08-01/src/api-model/common.ts:64</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1825,7 +1843,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L77">clients/listings-items-api-2021-08-01/src/api-model/common.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L77">clients/listings-items-api-2021-08-01/src/api-model/common.ts:77</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1863,7 +1881,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L90">clients/listings-items-api-2021-08-01/src/api-model/common.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L90">clients/listings-items-api-2021-08-01/src/api-model/common.ts:90</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1895,7 +1913,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L125">clients/listings-items-api-2021-08-01/src/api-model/common.ts:125</a></li>
+									<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/common.ts#L125">clients/listings-items-api-2021-08-01/src/api-model/common.ts:125</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1923,7 +1941,7 @@
 					<div class="tsd-signature tsd-kind-icon">COLLECTION_<wbr>FORMATS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/base.ts#L27">clients/listings-items-api-2021-08-01/src/api-model/base.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/base.ts#L27">clients/listings-items-api-2021-08-01/src/api-model/base.ts:27</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -1938,7 +1956,7 @@
 						<div class="tsd-signature tsd-kind-icon">csv<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;,&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/base.ts#L28">clients/listings-items-api-2021-08-01/src/api-model/base.ts:28</a></li>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/base.ts#L28">clients/listings-items-api-2021-08-01/src/api-model/base.ts:28</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1948,7 +1966,7 @@
 						<div class="tsd-signature tsd-kind-icon">pipes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;|&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/base.ts#L31">clients/listings-items-api-2021-08-01/src/api-model/base.ts:31</a></li>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/base.ts#L31">clients/listings-items-api-2021-08-01/src/api-model/base.ts:31</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1958,7 +1976,7 @@
 						<div class="tsd-signature tsd-kind-icon">ssv<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot; &quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/base.ts#L29">clients/listings-items-api-2021-08-01/src/api-model/base.ts:29</a></li>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/base.ts#L29">clients/listings-items-api-2021-08-01/src/api-model/base.ts:29</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1968,7 +1986,7 @@
 						<div class="tsd-signature tsd-kind-icon">tsv<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;	&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/23509ea/clients/listings-items-api-2021-08-01/src/api-model/base.ts#L30">clients/listings-items-api-2021-08-01/src/api-model/base.ts:30</a></li>
+								<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/d9e9c17/clients/listings-items-api-2021-08-01/src/api-model/base.ts#L30">clients/listings-items-api-2021-08-01/src/api-model/base.ts:30</a></li>
 							</ul>
 						</aside>
 					</section>

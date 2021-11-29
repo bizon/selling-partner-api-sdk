@@ -21,8 +21,9 @@
     "test": "jest",
     "generate-clients": "ts-node --project scripts/tsconfig.json scripts/generate-clients.ts"
   },
+  "dependencies": {},
   "devDependencies": {
-    "@jest/types": "^27.2.5",
+    "@jest/types": "^27.4.0",
     "@openapitools/openapi-generator-cli": "^2.4.18",
     "@tsconfig/node14": "^1.0.0",
     "@types/bluebird": "^3.5.36",
@@ -34,7 +35,7 @@
     "bluebird": "^3.7.2",
     "camelcase": "^6.2.1",
     "chalk": "^4.1.2",
-    "jest": "^27.3.1",
+    "jest": "^27.4.0",
     "jest-junit": "^13.0.0",
     "jsonfile": "^6.1.0",
     "lerna": "^4.0.0",

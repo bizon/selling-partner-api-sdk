@@ -6,7 +6,7 @@ import type {Method} from 'axios'
 
 import type {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 
-import {SellingPartnerApiError} from '../selling-partner-api-error'
+import {SellingPartnerApiError} from '../errors'
 
 const {packageJson} = readPackageJson()!
 

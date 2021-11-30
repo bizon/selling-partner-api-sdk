@@ -2,7 +2,7 @@ import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 import * as SdkCommon from '@sp-api-sdk/common'
 import {createAxiosInstance} from '@sp-api-sdk/common'
 
-import {FinancesApiClient, RATE_LIMITS} from '../src/client'
+import {FinancesApiClient, clientRateLimits} from '../src/client'
 
 jest.mock('@sp-api-sdk/auth', () => ({
   SellingPartnerApiAuth: jest.fn(() => ({
@@ -54,7 +54,7 @@ describe('src/client', () => {
     expect((createAxiosInstance as jest.Mock).mock.calls[0][0]).toStrictEqual({
       auth,
       region: 'eu-west-1',
-      rateLimits: RATE_LIMITS,
+      rateLimits: clientRateLimits,
       onRetry,
     })
 

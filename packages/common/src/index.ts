@@ -1,3 +1,3 @@
-export * from './endpoints'
+export * from './regions'
 export * from './axios'
-export * from './selling-partner-api-error'
+export * from './errors'

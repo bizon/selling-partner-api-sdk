@@ -8,7 +8,6 @@ export class AccessTokenError extends SellingPartnerApiAuthError {
     super(message)
 
     this.code = 'ACCESS_TOKEN_ERROR'
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     this.meta = meta
   }
 

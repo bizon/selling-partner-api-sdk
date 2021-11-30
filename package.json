@@ -65,6 +65,7 @@
       "@typescript-eslint/no-implicit-any-catch": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
       "@typescript-eslint/no-unsafe-argument": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
       "@typescript-eslint/restrict-template-expressions": "off",
       "eslint-comments/no-unused-disable": "off",
       "unicorn/no-array-reduce": "off",

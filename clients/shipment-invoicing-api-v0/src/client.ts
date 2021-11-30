@@ -1,11 +1,11 @@
 /* eslint-disable prefer-regex-literals */
-import {endpoints, awsRegionByCode, createAxiosInstance} from '@sp-api-sdk/common'
-import type {ClientConfiguration, RateLimit, OnRetryHandler} from '@sp-api-sdk/common'
+import {sellingPartnerRegions, createAxiosInstance} from '@sp-api-sdk/common'
+import type {ClientConfiguration, SellingPartnerRegion, RateLimit, OnRetryHandler} from '@sp-api-sdk/common'
 
 import {Configuration, ShipmentInvoiceApi} from './api-model'
 import {ShipmentInvoicingApiError} from './error'
 
-export const RATE_LIMITS: RateLimit[] = [
+export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
     urlRegex: new RegExp('^/fba/outbound/brazil/v0/shipments/[^/]*$'),
@@ -27,6 +27,7 @@ export const RATE_LIMITS: RateLimit[] = [
 ]
 
 export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits' | 'onRetry'> {
+  region: SellingPartnerRegion;
   rateLimiting?: {
     retry: boolean;
     onRetry?: OnRetryHandler;
@@ -35,23 +36,26 @@ export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits'
 
 export class ShipmentInvoicingApiClient extends ShipmentInvoiceApi {
   constructor(parameters: ClientParameters) {
-    const region = awsRegionByCode[parameters.region] ?? parameters.region
+    const config = sellingPartnerRegions[parameters.region]
+    if (!config) {
+      throw new ShipmentInvoicingApiError(`Unknown region: ${parameters.region}`)
+    }
+
     const {rateLimiting, ...clientParameters} = parameters
-    const axiosParameters: ClientConfiguration = {...clientParameters, region}
+    const axiosParameters: ClientConfiguration = {
+      ...clientParameters,
+      region: config.awsRegion,
+    }
 
     if (rateLimiting?.retry) {
-      axiosParameters.rateLimits = RATE_LIMITS
+      axiosParameters.rateLimits = clientRateLimits
       axiosParameters.onRetry = rateLimiting.onRetry
     }
 
     const axiosInstance = createAxiosInstance(axiosParameters)
     const configuration = new Configuration()
     const environment = parameters.sandbox ? 'sandbox' : 'production'
-    const endpoint = endpoints[environment][region]
-
-    if (!endpoint) {
-      throw new ShipmentInvoicingApiError(`Unknown region : ${region}`)
-    }
+    const endpoint = config.endpoints[environment]
 
     super(configuration, endpoint, axiosInstance)
   }

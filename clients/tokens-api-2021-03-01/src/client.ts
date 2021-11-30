@@ -1,11 +1,11 @@
 /* eslint-disable prefer-regex-literals */
-import {endpoints, awsRegionByCode, createAxiosInstance} from '@sp-api-sdk/common'
-import type {ClientConfiguration, RateLimit, OnRetryHandler} from '@sp-api-sdk/common'
+import {sellingPartnerRegions, createAxiosInstance} from '@sp-api-sdk/common'
+import type {ClientConfiguration, SellingPartnerRegion, RateLimit, OnRetryHandler} from '@sp-api-sdk/common'
 
 import {Configuration, TokensApi} from './api-model'
 import {TokensApiError} from './error'
 
-export const RATE_LIMITS: RateLimit[] = [
+export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
     urlRegex: new RegExp('^/tokens/2021-03-01/restrictedDataToken$'),
@@ -15,6 +15,7 @@ export const RATE_LIMITS: RateLimit[] = [
 ]
 
 export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits' | 'onRetry'> {
+  region: SellingPartnerRegion;
   rateLimiting?: {
     retry: boolean;
     onRetry?: OnRetryHandler;
@@ -23,23 +24,26 @@ export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits'
 
 export class TokensApiClient extends TokensApi {
   constructor(parameters: ClientParameters) {
-    const region = awsRegionByCode[parameters.region] ?? parameters.region
+    const config = sellingPartnerRegions[parameters.region]
+    if (!config) {
+      throw new TokensApiError(`Unknown region: ${parameters.region}`)
+    }
+
     const {rateLimiting, ...clientParameters} = parameters
-    const axiosParameters: ClientConfiguration = {...clientParameters, region}
+    const axiosParameters: ClientConfiguration = {
+      ...clientParameters,
+      region: config.awsRegion,
+    }
 
     if (rateLimiting?.retry) {
-      axiosParameters.rateLimits = RATE_LIMITS
+      axiosParameters.rateLimits = clientRateLimits
       axiosParameters.onRetry = rateLimiting.onRetry
     }
 
     const axiosInstance = createAxiosInstance(axiosParameters)
     const configuration = new Configuration()
     const environment = parameters.sandbox ? 'sandbox' : 'production'
-    const endpoint = endpoints[environment][region]
-
-    if (!endpoint) {
-      throw new TokensApiError(`Unknown region : ${region}`)
-    }
+    const endpoint = config.endpoints[environment]
 
     super(configuration, endpoint, axiosInstance)
   }

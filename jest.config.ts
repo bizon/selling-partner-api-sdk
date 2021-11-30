@@ -6,8 +6,8 @@ const config: Config.InitialOptions = {
   clearMocks: true,
   collectCoverage: true,
   collectCoverageFrom: [
-    'clients/**/*.ts',
-    'packages/**/*.ts',
+    'clients/*/src/**/*.ts',
+    'packages/*/src/**/*.ts',
   ],
   coverageReporters: [
     'lcov',

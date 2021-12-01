@@ -56,10 +56,13 @@
     "xo": "^0.47.0"
   },
   "xo": {
+    "parserOptions": {
+      "project": "./tsconfig.xo.json"
+    },
     "semicolon": false,
     "space": 2,
     "ignores": [
-      "**/src/api-model/**"
+      "clients/*/src/api-model/**"
     ],
     "rules": {
       "@typescript-eslint/naming-convention": "off",

@@ -23,11 +23,8 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile --non-interactive --prefer-offline
 
-      - name: Run linter for lerna packages
-        run: yarn lerna run lint
-
-      - name: Run linter for scripts
-        run: yarn xo scripts
+      - name: Run linter
+        run: yarn xo
 
   check-ts:
     name: Run typescript checks

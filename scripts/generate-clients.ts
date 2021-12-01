@@ -46,7 +46,8 @@ async function readPackageVersion(path: string) {
 const cleaner = remark().use(remarkStrip)
 
 async function cleanMarkdown(input: string, stripNewLines?: boolean) {
-  let result = (await cleaner.process(input)).toString()
+  const vfile = await cleaner.process(input)
+  let result = vfile.toString()
 
   if (stripNewLines) {
     result = result.replace(/[\r\n]+/g, ' ')

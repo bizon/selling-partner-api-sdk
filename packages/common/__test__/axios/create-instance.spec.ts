@@ -4,7 +4,7 @@ import {createAxiosInstance} from '../../src/axios'
 import {SellingPartnerApiError} from '../../src/errors'
 
 jest.mock('@sp-api-sdk/auth', () => ({
-  SellingPartnerApiAuth: jest.fn(() => ({ // eslint-disable-line @typescript-eslint/naming-convention
+  SellingPartnerApiAuth: jest.fn(() => ({
     accessToken: {
       get: jest.fn(() => 'FAKE_ACCESS_TOKEN'),
     },
@@ -35,7 +35,6 @@ describe('src/axios/create-instance', () => {
       expect(response.data).toBe('OK')
       expect(response.status).toBe(200)
       expect(onRetry).toBeCalledTimes(1)
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       expect(onRetry.mock.calls[0][0]).toStrictEqual({rateLimit: 1, delay: 2500})
     })
 
@@ -62,9 +61,7 @@ describe('src/axios/create-instance', () => {
       expect(response.data).toBe('OK')
       expect(response.status).toBe(200)
       expect(onRetry).toBeCalledTimes(2)
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       expect(onRetry.mock.calls[0][0]).toStrictEqual({rateLimit: 0.5, delay: 3500})
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       expect(onRetry.mock.calls[1][0]).toStrictEqual({rateLimit: 0.5, delay: 3500})
     }, 30_000)
 
@@ -89,7 +86,6 @@ describe('src/axios/create-instance', () => {
       expect(response.data).toBe('OK')
       expect(response.status).toBe(200)
       expect(onRetry).toBeCalledTimes(1)
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       expect(onRetry.mock.calls[0][0]).toStrictEqual({rateLimit: 1, delay: 2500})
     })
   })

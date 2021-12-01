@@ -14,7 +14,7 @@ export const logger = winston.createLogger({
   format: winston.format.printf(info => {
     const value = (info.packageName as string)
       .split('')
-      .reduce((acc: number, string: string) => acc + string.charCodeAt(0), 0)
+      .reduce((acc: number, string: string) => acc + string.codePointAt(0)!, 0)
 
     const color = colors[value % colors.length]
 

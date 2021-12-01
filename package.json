@@ -69,6 +69,7 @@
       "@typescript-eslint/no-unsafe-assignment": "off",
       "@typescript-eslint/restrict-template-expressions": "off",
       "eslint-comments/no-unused-disable": "off",
+      "import/extensions": "off",
       "unicorn/no-array-reduce": "off",
       "unicorn/prefer-module": "off",
       "unicorn/prefer-node-protocol": "off"

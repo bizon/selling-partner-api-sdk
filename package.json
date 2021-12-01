@@ -47,7 +47,7 @@
     "strip-markdown": "^4.2.0",
     "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",
-    "type-fest": "^2.6.0",
+    "type-fest": "^2.7.0",
     "typedoc": "^0.19.2",
     "typedoc-plugin-lerna-packages": "^0.3.1",
     "typedoc-plugin-remove-references": "^0.0.5",

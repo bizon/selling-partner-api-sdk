@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/notifications-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more. For more information, see the Notifications Use Case Guide",
-  "version": "1.9.2",
+  "version": "1.9.3",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -25,8 +25,8 @@
     "test": "NODE_ENV='test' yarn jest"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^1.9.5",
-    "@sp-api-sdk/common": "^1.7.7",
+    "@sp-api-sdk/auth": "^1.9.6",
+    "@sp-api-sdk/common": "^1.7.8",
     "axios": "^0.24.0"
   },
   "repository": {

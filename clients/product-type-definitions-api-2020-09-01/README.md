@@ -4,6 +4,9 @@ The Selling Partner API for Product Type Definitions provides programmatic acces
 
 For more information, see the [Product Type Definitions API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/product-type-definitions-api-use-case-guide/definitions-product-types-api-use-case-guide_2020-09-01.md).
 
+[![npm version](https://badgen.net/npm/v/@sp-api-sdk/product-type-definitions-api-2020-09-01)](https://www.npmjs.com/package/@sp-api-sdk/product-type-definitions-api-2020-09-01)
+[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+
 ## Documentation
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/product-type-definitions-api/definitionsProductTypes_2020-09-01.md).

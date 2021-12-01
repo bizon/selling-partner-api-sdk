@@ -2,6 +2,9 @@
 
 The Selling Partner API for Catalog Items helps you programmatically retrieve item details for items in the catalog.
 
+[![npm version](https://badgen.net/npm/v/@sp-api-sdk/catalog-items-api-v0)](https://www.npmjs.com/package/@sp-api-sdk/catalog-items-api-v0)
+[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+
 ## Documentation
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/catalog-items-api/catalogItemsV0.md).

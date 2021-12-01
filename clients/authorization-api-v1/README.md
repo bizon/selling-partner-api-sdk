@@ -2,6 +2,9 @@
 
 The Selling Partner API for Authorization helps developers manage authorizations and check the specific permissions associated with a given authorization.
 
+[![npm version](https://badgen.net/npm/v/@sp-api-sdk/authorization-api-v1)](https://www.npmjs.com/package/@sp-api-sdk/authorization-api-v1)
+[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+
 ## Documentation
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/authorization-api/authorization.md).

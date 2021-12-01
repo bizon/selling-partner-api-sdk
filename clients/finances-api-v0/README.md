@@ -2,6 +2,9 @@
 
 The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
 
+[![npm version](https://badgen.net/npm/v/@sp-api-sdk/finances-api-v0)](https://www.npmjs.com/package/@sp-api-sdk/finances-api-v0)
+[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+
 ## Documentation
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/finances-api/financesV0.md).

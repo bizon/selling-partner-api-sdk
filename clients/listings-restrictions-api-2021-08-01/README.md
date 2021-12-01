@@ -4,6 +4,9 @@ The Selling Partner API for Listings Restrictions provides programmatic access t
 
 For more information, see the [Listings Restrictions API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/listings-restrictions-api-use-case-guide/listings-restrictions-api-use-case-guide_2021-08-01.md).
 
+[![npm version](https://badgen.net/npm/v/@sp-api-sdk/listings-restrictions-api-2021-08-01)](https://www.npmjs.com/package/@sp-api-sdk/listings-restrictions-api-2021-08-01)
+[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+
 ## Documentation
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/listings-restrictions-api/listingsRestrictions_2021-08-01.md).

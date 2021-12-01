@@ -2,6 +2,9 @@
 
 The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.
 
+[![npm version](https://badgen.net/npm/v/@sp-api-sdk/reports-api-2020-09-04)](https://www.npmjs.com/package/@sp-api-sdk/reports-api-2020-09-04)
+[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+
 ## Documentation
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/reports-api/reports_2020-09-04.md).

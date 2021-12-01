@@ -2,6 +2,9 @@
 
 The Selling Partner API for Retail Procurement Shipments provides programmatic access to retail shipping data for vendors.
 
+[![npm version](https://badgen.net/npm/v/@sp-api-sdk/vendor-shipments-api-v1)](https://www.npmjs.com/package/@sp-api-sdk/vendor-shipments-api-v1)
+[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+
 ## Documentation
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/vendor-shipments-api/vendorShipments.md).

@@ -2,6 +2,9 @@
 
 The Uploads API lets you upload files that you can programmatically access using other Selling Partner APIs, such as the A+ Content API and the Messaging API.
 
+[![npm version](https://badgen.net/npm/v/@sp-api-sdk/uploads-api-2020-11-01)](https://www.npmjs.com/package/@sp-api-sdk/uploads-api-2020-11-01)
+[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+
 ## Documentation
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/uploads-api/uploads_2020-11-01.md).

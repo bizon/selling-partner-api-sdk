@@ -2,6 +2,9 @@
 
 The Selling Partner API for Fulfillment Outbound lets you create applications that help a seller fulfill Multi-Channel Fulfillment orders using their inventory in Amazon's fulfillment network. You can get information on both potential and existing fulfillment orders.
 
+[![npm version](https://badgen.net/npm/v/@sp-api-sdk/fulfillment-outbound-api-2020-07-01)](https://www.npmjs.com/package/@sp-api-sdk/fulfillment-outbound-api-2020-07-01)
+[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+
 ## Documentation
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/fulfillment-outbound-api/fulfillmentOutbound_2020-07-01.md).

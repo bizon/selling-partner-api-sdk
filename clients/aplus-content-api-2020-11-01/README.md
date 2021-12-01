@@ -2,6 +2,9 @@
 
 With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
 
+[![npm version](https://badgen.net/npm/v/@sp-api-sdk/aplus-content-api-2020-11-01)](https://www.npmjs.com/package/@sp-api-sdk/aplus-content-api-2020-11-01)
+[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+
 ## Documentation
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/aplus-content-api/aplusContent_2020-11-01.md).

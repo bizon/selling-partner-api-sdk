@@ -4,6 +4,9 @@ The Selling Partner API for Notifications lets you subscribe to notifications th
 
 For more information, see the [Notifications Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md)
 
+[![npm version](https://badgen.net/npm/v/@sp-api-sdk/notifications-api-v1)](https://www.npmjs.com/package/@sp-api-sdk/notifications-api-v1)
+[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+
 ## Documentation
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/notifications-api/notifications.md).

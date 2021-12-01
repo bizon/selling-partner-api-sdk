@@ -4,6 +4,9 @@ The Selling Partner API for Catalog Items provides programmatic access to inform
 
 For more information, see the [Catalog Items API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/catalog-items-api-use-case-guide/catalog-items-api-use-case-guide_2020-12-01.md).
 
+[![npm version](https://badgen.net/npm/v/@sp-api-sdk/catalog-items-api-2020-12-01)](https://www.npmjs.com/package/@sp-api-sdk/catalog-items-api-2020-12-01)
+[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+
 ## Documentation
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/catalog-items-api/catalogItems_2020-12-01.md).

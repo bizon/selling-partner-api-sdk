@@ -2,6 +2,9 @@
 
 The Selling Partner API for Direct Fulfillment Transaction Status provides programmatic access to a direct fulfillment vendor's transaction status.
 
+[![npm version](https://badgen.net/npm/v/@sp-api-sdk/vendor-direct-fulfillment-transactions-api-v1)](https://www.npmjs.com/package/@sp-api-sdk/vendor-direct-fulfillment-transactions-api-v1)
+[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+
 ## Documentation
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/vendor-direct-fulfillment-transactions-api/vendorDirectFulfillmentTransactionsV1.md).

@@ -57,6 +57,9 @@ This repository contains an API client for each of the available Selling Partner
 - [vendor-shipments-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-shipments-api-v1)
 - [vendor-transaction-status-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-transaction-status-api-v1)
 
+The API clients are automatically generated from the Swagger/OpenAPI models from [the official models repository](https://github.com/amzn/selling-partner-api-models).
+[A code generation workflow](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/codegen.yml) runs twice a day and will create a PR on this repository whenever there are changes to the models.
+
 ## License
 
 MIT

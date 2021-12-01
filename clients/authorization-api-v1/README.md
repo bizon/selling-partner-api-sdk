@@ -38,7 +38,7 @@ const auth = new SellingPartnerApiAuth({
 })
 
 
-const client = new NotificationsApiClient({
+const client = new AuthorizationApiClient({
   auth,
   region: 'eu'
 })

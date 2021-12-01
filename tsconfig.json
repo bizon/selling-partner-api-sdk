@@ -21,13 +21,18 @@
     "mode": "modules",
     "readme": "README.md",
     "excludePrivate": true,
+    "excludeNotExported": true,
+    "excludeExternals": true,
     "exclude": [
-      "**/node_modules/**",
       "**/__test__/**",
-      "./scripts/**"
+      "**/jest.config.ts",
+      "clients/*/src/api-model/api/**",
+      "clients/*/src/api-model/*.ts",
+      "scripts/**"
     ],
     "plugin": [
       "typedoc-plugin-lerna-packages",
+      "typedoc-plugin-remove-references"
     ]
   }
 }

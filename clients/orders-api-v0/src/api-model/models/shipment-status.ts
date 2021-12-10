@@ -14,6 +14,16 @@
 
 
 
-export * from './api/orders-v0-api';
-export * from './api/shipment-api';
+/**
+ * the status of the shipment of the order to be updated
+ * @export
+ * @enum {string}
+ */
+export enum ShipmentStatus {
+    ReadyForPickup = 'ReadyForPickup',
+    PickedUp = 'PickedUp',
+    RefusedPickup = 'RefusedPickup'
+}
+
+
 

@@ -14,6 +14,18 @@
 
 
 
-export * from './api/orders-v0-api';
-export * from './api/shipment-api';
+/**
+ * The error response schema for the UpdateShipmentStatus operation.
+ * @export
+ * @interface UpdateShipmentStatusErrorResponse
+ */
+export interface UpdateShipmentStatusErrorResponse {
+    /**
+     * A list of error responses returned when a request is unsuccessful.
+     * @type {Array<Error>}
+     * @memberof UpdateShipmentStatusErrorResponse
+     */
+    errors?: Array<Error>;
+}
+
 

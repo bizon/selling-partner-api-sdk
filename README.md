@@ -60,6 +60,16 @@ This repository contains an API client for each of the available Selling Partner
 The API clients are automatically generated from the Swagger/OpenAPI models from [the official models repository](https://github.com/amzn/selling-partner-api-models).
 [A code generation workflow](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/codegen.yml) runs twice a day and will create a PR on this repository whenever there are changes to the models.
 
+## Code generation
+
+Some of the source Open API models are invalid (see the [issues](https://github.com/amzn/selling-partner-api-models/issues) and [PRs](https://github.com/amzn/selling-partner-api-models/pulls) on the Amazon repository), so this SDK defines some patches to account for those errors.
+
+Each patch files are [JSON Patches](http://jsonpatch.com/) operations (1 operation per file).
+
+### Active patches
+
+- [orders-api-model/ordersV0/1639142073-shipment-tag.patch.json](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/scripts/patches/orders-api-model/ordersV0/1639142073-shipment-tag.patch.json)
+
 ## License
 
 MIT

@@ -14,7 +14,9 @@
 
 
 import { Address } from './address';
+import { AutomatedShippingSettings } from './automated-shipping-settings';
 import { BuyerInfo } from './buyer-info';
+import { BuyerTaxInformation } from './buyer-tax-information';
 import { FulfillmentInstruction } from './fulfillment-instruction';
 import { MarketplaceTaxInfo } from './marketplace-tax-info';
 import { Money } from './money';
@@ -231,6 +233,18 @@ export interface Order {
      */
     DefaultShipFromLocationAddress?: Address;
     /**
+     * The buyer’s invoicing preference.
+     * @type {string}
+     * @memberof Order
+     */
+    BuyerInvoicePreference?: OrderBuyerInvoicePreferenceEnum;
+    /**
+     * 
+     * @type {BuyerTaxInformation}
+     * @memberof Order
+     */
+    BuyerTaxInformation?: BuyerTaxInformation;
+    /**
      * 
      * @type {FulfillmentInstruction}
      * @memberof Order
@@ -266,6 +280,12 @@ export interface Order {
      * @memberof Order
      */
     BuyerInfo?: BuyerInfo;
+    /**
+     * 
+     * @type {AutomatedShippingSettings}
+     * @memberof Order
+     */
+    AutomatedShippingSettings?: AutomatedShippingSettings;
 }
 
 /**
@@ -309,6 +329,14 @@ export enum OrderOrderTypeEnum {
     Preorder = 'Preorder',
     BackOrder = 'BackOrder',
     SourcingOnDemandOrder = 'SourcingOnDemandOrder'
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export enum OrderBuyerInvoicePreferenceEnum {
+    Individual = 'INDIVIDUAL',
+    Business = 'BUSINESS'
 }
 
 

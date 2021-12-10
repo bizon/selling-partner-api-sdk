@@ -121,6 +121,17 @@
 				</ul>
 				<p>The API clients are automatically generated from the Swagger/OpenAPI models from <a href="https://github.com/amzn/selling-partner-api-models">the official models repository</a>.
 				<a href="https://github.com/bizon/selling-partner-api-sdk/actions/workflows/codegen.yml">A code generation workflow</a> runs twice a day and will create a PR on this repository whenever there are changes to the models.</p>
+				<a href="#code-generation" id="code-generation" style="color: inherit; text-decoration: none;">
+					<h2>Code generation</h2>
+				</a>
+				<p>Some of the source Open API models are invalid (see the <a href="https://github.com/amzn/selling-partner-api-models/issues">issues</a> and <a href="https://github.com/amzn/selling-partner-api-models/pulls">PRs</a> on the Amazon repository), so this SDK defines some patches to account for those errors.</p>
+				<p>Each patch files are <a href="http://jsonpatch.com/">JSON Patches</a> operations (1 operation per file).</p>
+				<a href="#active-patches" id="active-patches" style="color: inherit; text-decoration: none;">
+					<h3>Active patches</h3>
+				</a>
+				<ul>
+					<li><a href="https://www.github.com/bizon/selling-partner-api-sdk/tree/master/scripts/patches/orders-api-model/ordersV0/1639142073-shipment-tag.patch.json">orders-api-model/ordersV0/1639142073-shipment-tag.patch.json</a></li>
+				</ul>
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
 					<h2>License</h2>
 				</a>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ListContentDocumentAsinRelationsIncludedDataType | Selling Partner API SDK for JavaScript</title>
+	<title>ShipmentStatus | Selling Partner API SDK for JavaScript</title>
 	<meta name="description" content="Documentation for Selling Partner API SDK for JavaScript">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,13 +52,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_sp_api_sdk_aplus_content_api_2020_11_01.html">@sp-api-sdk/aplus-content-api-2020-11-01</a>
+					<a href="../modules/_sp_api_sdk_orders_api_v0.html">@sp-api-sdk/orders-api-v0</a>
 				</li>
 				<li>
-					<a href="_sp_api_sdk_aplus_content_api_2020_11_01.listcontentdocumentasinrelationsincludeddatatype.html">ListContentDocumentAsinRelationsIncludedDataType</a>
+					<a href="_sp_api_sdk_orders_api_v0.shipmentstatus.html">ShipmentStatus</a>
 				</li>
 			</ul>
-			<h1>Enumeration ListContentDocumentAsinRelationsIncludedDataType</h1>
+			<h1>Enumeration ShipmentStatus</h1>
 		</div>
 	</div>
 </header>
@@ -68,7 +68,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The type of data to include in the response, such as metadata about the related ASINs.</p>
+						<p>the status of the shipment of the order to be updated</p>
 					</div>
 					<dl class="tsd-comment-tags">
 						<dt>export</dt>
@@ -83,7 +83,9 @@
 						<section class="tsd-index-section ">
 							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_sp_api_sdk_aplus_content_api_2020_11_01.listcontentdocumentasinrelationsincludeddatatype.html#metadata" class="tsd-kind-icon">Metadata</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_sp_api_sdk_orders_api_v0.shipmentstatus.html#pickedup" class="tsd-kind-icon">Picked<wbr>Up</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_sp_api_sdk_orders_api_v0.shipmentstatus.html#readyforpickup" class="tsd-kind-icon">Ready<wbr>For<wbr>Pickup</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_sp_api_sdk_orders_api_v0.shipmentstatus.html#refusedpickup" class="tsd-kind-icon">Refused<wbr>Pickup</a></li>
 							</ul>
 						</section>
 					</div>
@@ -92,12 +94,32 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Enumeration members</h2>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="metadata" class="tsd-anchor"></a>
-					<h3>Metadata</h3>
-					<div class="tsd-signature tsd-kind-icon">Metadata<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;METADATA&quot;</span></div>
+					<a name="pickedup" class="tsd-anchor"></a>
+					<h3>Picked<wbr>Up</h3>
+					<div class="tsd-signature tsd-kind-icon">Picked<wbr>Up<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;PickedUp&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/49e8278/clients/aplus-content-api-2020-11-01/src/api-model/models/list-content-document-asin-relations-included-data-type.ts#L23">clients/aplus-content-api-2020-11-01/src/api-model/models/list-content-document-asin-relations-included-data-type.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/516a30f/clients/orders-api-v0/src/api-model/models/shipment-status.ts#L24">clients/orders-api-v0/src/api-model/models/shipment-status.ts:24</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="readyforpickup" class="tsd-anchor"></a>
+					<h3>Ready<wbr>For<wbr>Pickup</h3>
+					<div class="tsd-signature tsd-kind-icon">Ready<wbr>For<wbr>Pickup<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;ReadyForPickup&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/516a30f/clients/orders-api-v0/src/api-model/models/shipment-status.ts#L23">clients/orders-api-v0/src/api-model/models/shipment-status.ts:23</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="refusedpickup" class="tsd-anchor"></a>
+					<h3>Refused<wbr>Pickup</h3>
+					<div class="tsd-signature tsd-kind-icon">Refused<wbr>Pickup<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;RefusedPickup&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/516a30f/clients/orders-api-v0/src/api-model/models/shipment-status.ts#L25">clients/orders-api-v0/src/api-model/models/shipment-status.ts:25</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -110,7 +132,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/_sp_api_sdk_aplus_content_api_2020_11_01.html">@sp-<wbr>api-<wbr>sdk/aplus-<wbr>content-<wbr>api-<wbr>2020-<wbr>11-<wbr>01</a>
+						<a href="../modules/_sp_api_sdk_orders_api_v0.html">@sp-<wbr>api-<wbr>sdk/orders-<wbr>api-<wbr>v0</a>
 					</li>
 				</ul>
 			</nav>
@@ -119,10 +141,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-enum tsd-parent-kind-module">
-						<a href="_sp_api_sdk_aplus_content_api_2020_11_01.listcontentdocumentasinrelationsincludeddatatype.html" class="tsd-kind-icon">List<wbr>Content<wbr>Document<wbr>Asin<wbr>Relations<wbr>Included<wbr>Data<wbr>Type</a>
+						<a href="_sp_api_sdk_orders_api_v0.shipmentstatus.html" class="tsd-kind-icon">Shipment<wbr>Status</a>
 						<ul>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="_sp_api_sdk_aplus_content_api_2020_11_01.listcontentdocumentasinrelationsincludeddatatype.html#metadata" class="tsd-kind-icon">Metadata</a>
+								<a href="_sp_api_sdk_orders_api_v0.shipmentstatus.html#pickedup" class="tsd-kind-icon">Picked<wbr>Up</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="_sp_api_sdk_orders_api_v0.shipmentstatus.html#readyforpickup" class="tsd-kind-icon">Ready<wbr>For<wbr>Pickup</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="_sp_api_sdk_orders_api_v0.shipmentstatus.html#refusedpickup" class="tsd-kind-icon">Refused<wbr>Pickup</a>
 							</li>
 						</ul>
 					</li>

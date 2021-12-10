@@ -80,8 +80,9 @@ async function generateClientVersion(clientName: string, filename: string) {
   const [tag = 'Default'] = ((httpMethods[0] as OpenAPIV3.OperationObject).tags) ?? []
   const grantlessInfo = GRANTLESS_APIS.find(({name}) => formatedClientName === name)
 
-  logger.info('generating …', {packageName})
+  logger.info('generating…', {packageName})
 
+  await rimrafPromise(`${clientDirectoryPath}/src/api-model`)
   await exec(
     `yarn openapi-generator-cli generate \
       --additional-properties=supportsES6=true,useSingleRequestParameter=true,withSeparateModelsAndApi=true,modelPackage=models,apiPackage=api \

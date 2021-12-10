@@ -32,6 +32,10 @@ import { GetOrderItemsResponse } from '../models';
 import { GetOrderResponse } from '../models';
 // @ts-ignore
 import { GetOrdersResponse } from '../models';
+// @ts-ignore
+import { UpdateShipmentStatusErrorResponse } from '../models';
+// @ts-ignore
+import { UpdateShipmentStatusRequest } from '../models';
 /**
  * OrdersV0Api - axios parameter creator
  * @export
@@ -329,6 +333,45 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * Update the shipment status.
+         * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
+         * @param {UpdateShipmentStatusRequest} payload Request to update the shipment status.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateShipmentStatus: async (orderId: string, payload: UpdateShipmentStatusRequest, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'orderId' is not null or undefined
+            assertParamExists('updateShipmentStatus', 'orderId', orderId)
+            // verify required parameter 'payload' is not null or undefined
+            assertParamExists('updateShipmentStatus', 'payload', payload)
+            const localVarPath = `/orders/v0/orders/{orderId}/shipment`
+                .replace(`{${"orderId"}}`, encodeURIComponent(String(orderId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(payload, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -417,6 +460,17 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrders(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
+        /**
+         * Update the shipment status.
+         * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
+         * @param {UpdateShipmentStatusRequest} payload Request to update the shipment status.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateShipmentStatus(orderId: string, payload: UpdateShipmentStatusRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateShipmentStatus(orderId, payload, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
     }
 };
 
@@ -498,6 +552,16 @@ export const OrdersV0ApiFactory = function (configuration?: Configuration, baseP
          */
         getOrders(marketplaceIds: Array<string>, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, orderStatuses?: Array<string>, fulfillmentChannels?: Array<string>, paymentMethods?: Array<string>, buyerEmail?: string, sellerOrderId?: string, maxResultsPerPage?: number, easyShipShipmentStatuses?: Array<string>, nextToken?: string, amazonOrderIds?: Array<string>, actualFulfillmentSupplySourceId?: string, isISPU?: boolean, storeChainStoreId?: string, options?: any): AxiosPromise<GetOrdersResponse> {
             return localVarFp.getOrders(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Update the shipment status.
+         * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
+         * @param {UpdateShipmentStatusRequest} payload Request to update the shipment status.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateShipmentStatus(orderId: string, payload: UpdateShipmentStatusRequest, options?: any): AxiosPromise<void> {
+            return localVarFp.updateShipmentStatus(orderId, payload, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -713,6 +777,27 @@ export interface OrdersV0ApiGetOrdersRequest {
 }
 
 /**
+ * Request parameters for updateShipmentStatus operation in OrdersV0Api.
+ * @export
+ * @interface OrdersV0ApiUpdateShipmentStatusRequest
+ */
+export interface OrdersV0ApiUpdateShipmentStatusRequest {
+    /**
+     * An Amazon-defined order identifier, in 3-7-7 format.
+     * @type {string}
+     * @memberof OrdersV0ApiUpdateShipmentStatus
+     */
+    readonly orderId: string
+
+    /**
+     * Request to update the shipment status.
+     * @type {UpdateShipmentStatusRequest}
+     * @memberof OrdersV0ApiUpdateShipmentStatus
+     */
+    readonly payload: UpdateShipmentStatusRequest
+}
+
+/**
  * OrdersV0Api - object-oriented interface
  * @export
  * @class OrdersV0Api
@@ -783,5 +868,16 @@ export class OrdersV0Api extends BaseAPI {
      */
     public getOrders(requestParameters: OrdersV0ApiGetOrdersRequest, options?: any) {
         return OrdersV0ApiFp(this.configuration).getOrders(requestParameters.marketplaceIds, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.orderStatuses, requestParameters.fulfillmentChannels, requestParameters.paymentMethods, requestParameters.buyerEmail, requestParameters.sellerOrderId, requestParameters.maxResultsPerPage, requestParameters.easyShipShipmentStatuses, requestParameters.nextToken, requestParameters.amazonOrderIds, requestParameters.actualFulfillmentSupplySourceId, requestParameters.isISPU, requestParameters.storeChainStoreId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Update the shipment status.
+     * @param {OrdersV0ApiUpdateShipmentStatusRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof OrdersV0Api
+     */
+    public updateShipmentStatus(requestParameters: OrdersV0ApiUpdateShipmentStatusRequest, options?: any) {
+        return OrdersV0ApiFp(this.configuration).updateShipmentStatus(requestParameters.orderId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
     }
 }

@@ -3,6 +3,7 @@
 import fs from 'fs/promises'
 import os from 'os'
 import process from 'process'
+import {parse as parsePath} from 'path'
 import {promisify} from 'util'
 import * as childProcess from 'child_process'
 
@@ -16,7 +17,7 @@ import remarkStrip from 'strip-markdown'
 import type {PackageJson} from 'type-fest'
 import type {OpenAPIV3} from 'openapi-types'
 
-import {renderTemplate, logger} from './utils'
+import {renderTemplate, logger, applyPatches} from './utils'
 
 const exec = promisify(childProcess.exec)
 const rimrafPromise = promisify(rimraf)
@@ -57,8 +58,17 @@ async function cleanMarkdown(input: string, stripNewLines?: boolean) {
 }
 
 async function generateClientVersion(clientName: string, filename: string) {
+  const parsedName = parsePath(filename)
+
   const filePath = `selling-partner-api-models/models/${clientName}/${filename}`
+  const patchPath = `scripts/patches/${clientName}/${parsedName.name}`
   const doc = await jsonfile.readFile(filePath) as OpenAPIV3.Document
+
+  const changed = await applyPatches(doc, patchPath)
+  if (changed) {
+    await jsonfile.writeFile(filePath, doc)
+  }
+
   const formatedClientName = clientName.slice(0, -6)
   const packageName = `${formatedClientName}-${doc.info.version}`
   const clientDirectoryPath = `clients/${packageName}`
@@ -147,7 +157,7 @@ async function generateClientVersion(clientName: string, filename: string) {
     packageName,
     className: clientClassName,
     description: doc.info.description,
-    docUrl: `https://github.com/amzn/selling-partner-api-docs/tree/main/references/${formatedClientName}/${filename.split('.')[0]}.md`,
+    docUrl: `https://github.com/amzn/selling-partner-api-docs/tree/main/references/${formatedClientName}/${parsedName.name}.md`,
     sdkClientDocUrl: `https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_${packageName.replace(/\W/g, '_')}.html`,
     grantlessScope: grantlessInfo?.scope,
   }))

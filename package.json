@@ -36,7 +36,7 @@
     "camelcase": "^6.2.1",
     "chalk": "^4.1.2",
     "fast-json-patch": "^3.1.0",
-    "jest": "^27.4.4",
+    "jest": "^27.4.5",
     "jest-junit": "^13.0.0",
     "jsonfile": "^6.1.0",
     "lerna": "^4.0.0",

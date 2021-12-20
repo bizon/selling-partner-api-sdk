@@ -8855,10 +8855,10 @@ typedoc-plugin-lerna-packages@^0.3.1:
   resolved "https://registry.yarnpkg.com/typedoc-plugin-lerna-packages/-/typedoc-plugin-lerna-packages-0.3.1.tgz#3e65068e6c6ef987fc4c4553416af3fb22c8a5e6"
   integrity sha512-azeP5DVv4Me+C32RoGbMAzXo7JeYmeEstMAx4mdtVGHLtrXjitlaf0pS562vogofwyIcyVnjL6BlZWvbPQ3hmw==
 
-typedoc-plugin-remove-references@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/typedoc-plugin-remove-references/-/typedoc-plugin-remove-references-0.0.5.tgz#08b129d2697e50208c807e06c3662fd2fc86a925"
-  integrity sha512-DSZ7kM/Y90CgZUKt8MiDsoi4fvrJyleHydj3ncGyqDqMdhuMes2E/4I6mSmXBrVdTjYhVH6BeoOFSbj2pQ821g==
+typedoc-plugin-remove-references@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/typedoc-plugin-remove-references/-/typedoc-plugin-remove-references-0.0.6.tgz#6568615e5857531a497676b5536bc1ff41117443"
+  integrity sha512-QoyHpopznnJbWW/9JT2NHSK+eTmyShkPYebwe5ZnO8aohPLc5okk4puWUDXnNh2Tn7cJU8U3t1tEMO6ghbwE8Q==
 
 typedoc@^0.19.2:
   version "0.19.2"

@@ -19,7 +19,9 @@ export const clientRateLimits: RateLimit[] = [
   },
   {
     method: 'post',
-    urlRegex: new RegExp('^/solicitations/v1/orders/[^/]*/solicitations/productReviewAndSellerFeedback$'),
+    urlRegex: new RegExp(
+      '^/solicitations/v1/orders/[^/]*/solicitations/productReviewAndSellerFeedback$',
+    ),
     rate: 1,
     burst: 5,
   },

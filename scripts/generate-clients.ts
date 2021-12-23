@@ -28,16 +28,16 @@ const GRANTLESS_APIS = [
 ]
 
 interface RateLimit {
-  method: string;
-  rate: number;
-  burst: number;
-  urlRegex: string;
-  last?: boolean;
+  method: string
+  rate: number
+  burst: number
+  urlRegex: string
+  last?: boolean
 }
 
 async function readPackageVersion(path: string) {
   try {
-    const pkg = await import(`../${path}/package.json`) as PackageJson
+    const pkg = (await import(`../${path}/package.json`)) as PackageJson
     return pkg.version
   } catch {
     return null
@@ -62,7 +62,7 @@ async function generateClientVersion(clientName: string, filename: string) {
 
   const filePath = `selling-partner-api-models/models/${clientName}/${filename}`
   const patchPath = `scripts/patches/${clientName}/${parsedName.name}`
-  const doc = await jsonfile.readFile(filePath) as OpenAPIV3.Document
+  const doc = (await jsonfile.readFile(filePath)) as OpenAPIV3.Document
 
   const changed = await applyPatches(doc, patchPath)
   if (changed) {
@@ -77,7 +77,7 @@ async function generateClientVersion(clientName: string, filename: string) {
   const errorClassName = camelCase(`${formatedClientName}Error`, {pascalCase: true})
   const paths = Object.values(doc.paths)
   const httpMethods = Object.values(paths[0]!)
-  const [tag = 'Default'] = ((httpMethods[0] as OpenAPIV3.OperationObject).tags) ?? []
+  const [tag = 'Default'] = (httpMethods[0] as OpenAPIV3.OperationObject).tags ?? []
   const grantlessInfo = GRANTLESS_APIS.find(({name}) => formatedClientName === name)
 
   logger.info('generating…', {packageName})
@@ -93,83 +93,131 @@ async function generateClientVersion(clientName: string, filename: string) {
   )
 
   await fs.mkdir(`${clientDirectoryPath}/__test__`, {recursive: true})
-  await fs.writeFile(`${clientDirectoryPath}/package.json`, await renderTemplate('scripts/templates/package.json.mustache', {
-    packageName,
-    description: await cleanMarkdown(doc.info.description ?? '', true),
-    version: await readPackageVersion(clientDirectoryPath) ?? '1.0.0',
-    apiName: formatedClientName.replace(/-/g, ' '),
-    dependencies: {
-      auth: await readPackageVersion('packages/auth'),
-      common: await readPackageVersion('packages/common'),
-      // TODO: retrieve other dependencies from existing clients, so we’re never out of date.
-    },
-  }))
+  await fs.writeFile(
+    `${clientDirectoryPath}/package.json`,
+    await renderTemplate('scripts/templates/package.json.mustache', {
+      packageName,
+      description: await cleanMarkdown(doc.info.description ?? '', true),
+      version: (await readPackageVersion(clientDirectoryPath)) ?? '1.0.0',
+      apiName: formatedClientName.replace(/-/g, ' '),
+      dependencies: {
+        auth: await readPackageVersion('packages/auth'),
+        common: await readPackageVersion('packages/common'),
+        // TODO: retrieve other dependencies from existing clients, so we’re never out of date.
+      },
+    }),
+  )
 
-  const rateLimits = reduce(doc.paths, (acc: RateLimit[], value, key) => {
-    if (!value) {
-      return acc
-    }
+  const rateLimits = reduce(
+    doc.paths,
+    (acc: RateLimit[], value, key) => {
+      if (!value) {
+        return acc
+      }
 
-    for (const method of Object.keys(value) as OpenAPIV3.HttpMethods[]) {
-      const {description} = value[method] as OpenAPIV3.PathItemObject
+      for (const method of Object.keys(value) as OpenAPIV3.HttpMethods[]) {
+        const {description} = value[method] as OpenAPIV3.PathItemObject
 
-      if (description) {
-        const result = /Rate \(requests per second\) \| Burst \|\n(?:\| -{4} )+\|\n(?:\|Default)?\| (?<rate>(?:\d*\.)?\d+) \| (?<burst>(?:\d*\.)?\d+) \|/.exec(description)
+        if (description) {
+          const result =
+            /Rate \(requests per second\) \| Burst \|\n(?:\| -{4} )+\|\n(?:\|Default)?\| (?<rate>(?:\d*\.)?\d+) \| (?<burst>(?:\d*\.)?\d+) \|/.exec(
+              description,
+            )
 
-        if (result?.groups) {
-          const value = {
-            method,
-            rate: Number.parseFloat(result.groups.rate),
-            burst: Number.parseFloat(result.groups.burst),
-            urlRegex: `new RegExp('^${key.replace(/{.+}/g, '[^/]*')}$')`,
+          if (result?.groups) {
+            const value = {
+              method,
+              rate: Number.parseFloat(result.groups.rate),
+              burst: Number.parseFloat(result.groups.burst),
+              urlRegex: `new RegExp('^${key.replace(/{.+}/g, '[^/]*')}$')`,
+            }
+
+            if (Number.isNaN(value.rate) || Number.isNaN(value.burst)) {
+              logger.warn(
+                `Warning: invalid rate limits: ${result.groups.rate} / ${result.groups.burst}`,
+                {packageName},
+              )
+            }
+
+            acc.push(value)
+          } else {
+            logger.warn(`Warning: no rate limiting found for ${packageName}`, {packageName})
           }
-
-          if (Number.isNaN(value.rate) || Number.isNaN(value.burst)) {
-            logger.warn(`Warning: invalid rate limits: ${result.groups.rate} / ${result.groups.burst}`, {packageName})
-          }
-
-          acc.push(value)
-        } else {
-          logger.warn(`Warning: no rate limiting found for ${packageName}`, {packageName})
         }
       }
-    }
 
-    return acc
-  }, [])
+      return acc
+    },
+    [],
+  )
 
   if (rateLimits.length > 0) {
     rateLimits[rateLimits.length - 1].last = true
   }
 
-  await fs.writeFile(`${clientDirectoryPath}/tsconfig.json`, await renderTemplate('scripts/templates/tsconfig.json.mustache'))
-  await fs.writeFile(`${clientDirectoryPath}/tsconfig.es.json`, await renderTemplate('scripts/templates/tsconfig.es.json.mustache'))
-  await fs.writeFile(`${clientDirectoryPath}/index.ts`, await renderTemplate('scripts/templates/index.ts.mustache'))
-  await fs.writeFile(`${clientDirectoryPath}/src/error.ts`, await renderTemplate('scripts/templates/src/error.ts.mustache', {
-    className: errorClassName,
-  }))
-  await fs.writeFile(`${clientDirectoryPath}/src/client.ts`, await renderTemplate('scripts/templates/src/client.ts.mustache', {
-    clientClassName,
-    className: camelCase(`${tag}Api`, {pascalCase: true}),
-    errorClassName,
-    rateLimits,
-  }))
-  await fs.writeFile(`${clientDirectoryPath}/README.md`, await renderTemplate('scripts/templates/README.md.mustache', {
-    packageName,
-    className: clientClassName,
-    description: doc.info.description,
-    docUrl: `https://github.com/amzn/selling-partner-api-docs/tree/main/references/${formatedClientName}/${parsedName.name}.md`,
-    sdkClientDocUrl: `https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_${packageName.replace(/\W/g, '_')}.html`,
-    grantlessScope: grantlessInfo?.scope,
-  }))
-  await fs.writeFile(`${clientDirectoryPath}/__test__/client.spec.ts`, await renderTemplate('scripts/templates/__test__/client.spec.ts.mustache', {clientClassName}))
-  await fs.writeFile(`${clientDirectoryPath}/jest.config.js`, await renderTemplate('scripts/templates/jest.config.js.mustache'))
+  await fs.writeFile(
+    `${clientDirectoryPath}/tsconfig.json`,
+    await renderTemplate('scripts/templates/tsconfig.json.mustache'),
+  )
+  await fs.writeFile(
+    `${clientDirectoryPath}/tsconfig.es.json`,
+    await renderTemplate('scripts/templates/tsconfig.es.json.mustache'),
+  )
+  await fs.writeFile(
+    `${clientDirectoryPath}/index.ts`,
+    await renderTemplate('scripts/templates/index.ts.mustache'),
+  )
+  await fs.writeFile(
+    `${clientDirectoryPath}/src/error.ts`,
+    await renderTemplate('scripts/templates/src/error.ts.mustache', {
+      className: errorClassName,
+    }),
+  )
+  await fs.writeFile(
+    `${clientDirectoryPath}/src/client.ts`,
+    await renderTemplate('scripts/templates/src/client.ts.mustache', {
+      clientClassName,
+      className: camelCase(`${tag}Api`, {pascalCase: true}),
+      errorClassName,
+      rateLimits,
+    }),
+  )
+  await fs.writeFile(
+    `${clientDirectoryPath}/README.md`,
+    await renderTemplate('scripts/templates/README.md.mustache', {
+      packageName,
+      className: clientClassName,
+      description: doc.info.description,
+      docUrl: `https://github.com/amzn/selling-partner-api-docs/tree/main/references/${formatedClientName}/${parsedName.name}.md`,
+      sdkClientDocUrl: `https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_${packageName.replace(
+        /\W/g,
+        '_',
+      )}.html`,
+      grantlessScope: grantlessInfo?.scope,
+    }),
+  )
+  await fs.writeFile(
+    `${clientDirectoryPath}/__test__/client.spec.ts`,
+    await renderTemplate('scripts/templates/__test__/client.spec.ts.mustache', {clientClassName}),
+  )
+  await fs.writeFile(
+    `${clientDirectoryPath}/jest.config.js`,
+    await renderTemplate('scripts/templates/jest.config.js.mustache'),
+  )
 
   const generatedFiles = await fs.readdir(`${clientDirectoryPath}/src/api-model/`)
-  const filesToNotDelete = new Set(['api.ts', 'base.ts', 'common.ts', 'configuration.ts', 'index.ts', 'api', 'models'])
+  const filesToNotDelete = new Set([
+    'api.ts',
+    'base.ts',
+    'common.ts',
+    'configuration.ts',
+    'index.ts',
+    'api',
+    'models',
+  ])
 
   await Promise.all(
-    generatedFiles.map(file => {
+    generatedFiles.map((file) => {
       if (filesToNotDelete.has(file)) {
         return null
       }
@@ -183,23 +231,22 @@ async function generateClientVersion(clientName: string, filename: string) {
 
 async function generateClientVersions(clientName: string) {
   const filenames = await fs.readdir(`selling-partner-api-models/models/${clientName}`)
-  const promises = filenames.map(async filename => generateClientVersion(clientName, filename))
+  const promises = filenames.map(async (filename) => generateClientVersion(clientName, filename))
 
   return Promise.all(promises)
 }
 
-(async () => {
+;(async () => {
   await rimrafPromise('selling-partner-api-models')
   await exec('git clone https://github.com/amzn/selling-partner-api-models')
   const clientNames = await fs.readdir('selling-partner-api-models/models')
 
-  await Bluebird.map(clientNames, async clientName => generateClientVersions(clientName), {
+  await Bluebird.map(clientNames, async (clientName) => generateClientVersions(clientName), {
     concurrency: os.cpus().length,
   })
 
   await rimrafPromise('selling-partner-api-models')
-})()
-  .catch(error => {
-    console.log(error)
-    process.exit(1)
-  })
+})().catch((error) => {
+  console.log(error)
+  process.exit(1)
+})

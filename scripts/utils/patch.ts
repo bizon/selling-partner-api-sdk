@@ -9,8 +9,8 @@ import type {Operation} from 'fast-json-patch'
 import {instanceOfNodeError} from './error'
 
 interface Patch {
-  operation: Operation;
-  filename: string;
+  operation: Operation
+  filename: string
 }
 
 async function getPatches(patchPath: string): Promise<Patch[]> {
@@ -18,7 +18,7 @@ async function getPatches(patchPath: string): Promise<Patch[]> {
     const files = await readdir(patchPath)
 
     return await Promise.all(
-      files.sort().map(async filename => ({
+      files.sort().map(async (filename) => ({
         operation: await jsonfile.readFile(joinPath(patchPath, filename)),
         filename,
       })),
@@ -35,7 +35,12 @@ async function getPatches(patchPath: string): Promise<Patch[]> {
 export async function applyPatches(document: OpenAPIV3.Document, patchesPath: string) {
   const patches = await getPatches(patchesPath)
 
-  applyPatch(document, patches.map(p => p.operation), true, true)
+  applyPatch(
+    document,
+    patches.map((p) => p.operation),
+    true,
+    true,
+  )
 
   return patches.length > 0
 }

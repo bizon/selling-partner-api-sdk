@@ -92,9 +92,7 @@ describe('src/axios/create-instance', () => {
 
   describe('Handling response with status != 2xx', () => {
     it('should throw a SellingPartnerApiError instance', async () => {
-      nock('http://www.example.com')
-        .get('/test')
-        .reply(400, 'rate limited')
+      nock('http://www.example.com').get('/test').reply(400, 'rate limited')
 
       const auth = new SellingPartnerApiAuth({refreshToken: ''})
       const instance = createAxiosInstance({
@@ -102,13 +100,13 @@ describe('src/axios/create-instance', () => {
         region: 'eu',
       })
 
-      await expect(instance.get('http://www.example.com/test')).rejects.toThrow(SellingPartnerApiError)
+      await expect(instance.get('http://www.example.com/test')).rejects.toThrow(
+        SellingPartnerApiError,
+      )
     })
 
     it('should have the good message when a response has been sent', async () => {
-      nock('http://www.example.com')
-        .get('/apiName/apiVersion/path')
-        .reply(429, 'rate limited')
+      nock('http://www.example.com').get('/apiName/apiVersion/path').reply(429, 'rate limited')
 
       const auth = new SellingPartnerApiAuth({refreshToken: ''})
       const instance = createAxiosInstance({
@@ -116,7 +114,9 @@ describe('src/axios/create-instance', () => {
         region: 'eu',
       })
 
-      await expect(instance.get('http://www.example.com/apiName/apiVersion/path')).rejects.toThrow('apiName (apiVersion) error: Response code 429')
+      await expect(instance.get('http://www.example.com/apiName/apiVersion/path')).rejects.toThrow(
+        'apiName (apiVersion) error: Response code 429',
+      )
     })
 
     it('should have the good message when a response hasn’t been sent', async () => {
@@ -126,7 +126,9 @@ describe('src/axios/create-instance', () => {
         region: 'eu',
       })
 
-      await expect(instance.get('http://www.test_fake_url.com/apiName/apiVersion/path')).rejects.toThrow('apiName (apiVersion) error: No response')
+      await expect(
+        instance.get('http://www.test_fake_url.com/apiName/apiVersion/path'),
+      ).rejects.toThrow('apiName (apiVersion) error: No response')
     })
   })
 })

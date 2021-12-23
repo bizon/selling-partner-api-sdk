@@ -11,17 +11,17 @@ export enum AuthorizationScope {
 }
 
 export interface AccessTokenParameters {
-  refreshToken?: string;
-  scopes?: AuthorizationScope[];
-  clientId: string;
-  clientSecret: string;
+  refreshToken?: string
+  scopes?: AuthorizationScope[]
+  clientId: string
+  clientSecret: string
 }
 
 interface AccessTokenData {
-  access_token: string;
-  refresh_token: string;
-  token_type: string;
-  expires_in: number;
+  access_token: string
+  refresh_token: string
+  token_type: string
+  expires_in: number
 }
 
 export class AccessToken {
@@ -58,12 +58,11 @@ export class AccessToken {
       }
 
       try {
-        this.value = await got.post(
-          'https://api.amazon.com/auth/o2/token',
-          {
+        this.value = await got
+          .post('https://api.amazon.com/auth/o2/token', {
             json: body,
-          },
-        ).json()
+          })
+          .json()
 
         if (!this.value) {
           throw new AccessTokenError('Receive invalid token', {token: this.value})
@@ -73,7 +72,10 @@ export class AccessToken {
         this.expirationDate.setSeconds(this.expirationDate.getSeconds() + this.value.expires_in)
       } catch (error) {
         if (error instanceof RequestError && error.response) {
-          throw new AccessTokenError(`HTTP Response code ${error.response.statusCode}`, JSON.parse(error.response.body as any))
+          throw new AccessTokenError(
+            `HTTP Response code ${error.response.statusCode}`,
+            JSON.parse(error.response.body as any),
+          )
         }
 
         if (error instanceof Error) {

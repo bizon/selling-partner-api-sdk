@@ -1,4 +1,3 @@
-
 import {SellingPartnerApiAuthError} from '../error'
 
 export class AccessTokenError extends SellingPartnerApiAuthError {

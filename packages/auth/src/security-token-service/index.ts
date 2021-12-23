@@ -6,16 +6,16 @@ import {SecurityTokenServiceError} from './error'
 export * from './error'
 
 interface Role {
-  arn: string;
-  sessionName: string;
+  arn: string
+  sessionName: string
 }
 
 export interface SecurityTokenServiceParameters {
-  accessKeyId: string;
-  secretAccessKey: string;
-  sessionToken?: string;
-  role: Role;
-  region?: string;
+  accessKeyId: string
+  secretAccessKey: string
+  sessionToken?: string
+  role: Role
+  region?: string
 }
 
 export class SecurityTokenService {
@@ -40,8 +40,8 @@ export class SecurityTokenService {
    */
   async getCredentials() {
     if (
-      !this._credentials
-      || (this._credentials?.Expiration && Date.now() >= this._credentials.Expiration.getTime())
+      !this._credentials ||
+      (this._credentials?.Expiration && Date.now() >= this._credentials.Expiration.getTime())
     ) {
       this._credentials = await this.fetchCredentials()
     }

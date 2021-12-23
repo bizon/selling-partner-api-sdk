@@ -14,18 +14,18 @@ import type {AuthorizationScope} from './access-token'
 const {packageJson} = readPackageJson()!
 
 export interface SellingPartnerAuthParameters {
-  clientId?: string;
-  clientSecret?: string;
-  refreshToken?: string;
-  scopes?: AuthorizationScope[];
-  accessKeyId?: string;
-  secretAccessKey?: string;
-  sessionToken?: string;
-  region?: string;
+  clientId?: string
+  clientSecret?: string
+  refreshToken?: string
+  scopes?: AuthorizationScope[]
+  accessKeyId?: string
+  secretAccessKey?: string
+  sessionToken?: string
+  region?: string
   role?: {
-    arn: string;
-    sessionName?: string;
-  };
+    arn: string
+    sessionName?: string
+  }
 }
 
 /**
@@ -39,7 +39,9 @@ export class SellingPartnerApiAuth {
   private readonly _secretAccessKey: string
   private readonly _sessionToken?: string
 
-  constructor(parameters: RequireExactlyOne<SellingPartnerAuthParameters, 'refreshToken' | 'scopes'>) {
+  constructor(
+    parameters: RequireExactlyOne<SellingPartnerAuthParameters, 'refreshToken' | 'scopes'>,
+  ) {
     const clientId = parameters.clientId || process.env.LWA_CLIENT_ID
     const clientSecret = parameters.clientSecret || process.env.LWA_CLIENT_SECRET
     const accessKeyId = parameters.accessKeyId || process.env.AWS_ACCESS_KEY_ID
@@ -48,7 +50,10 @@ export class SellingPartnerApiAuth {
     const region = parameters.region || process.env.AWS_DEFAULT_REGION
 
     const roleArn = parameters.role?.arn || process.env.AWS_ROLE_ARN
-    const roleSessionName = parameters.role?.sessionName || process.env.AWS_ROLE_SESSION_NAME || `${packageJson.name.replace('/', '-')}@${packageJson.version}`
+    const roleSessionName =
+      parameters.role?.sessionName ||
+      process.env.AWS_ROLE_SESSION_NAME ||
+      `${packageJson.name.replace('/', '-')}@${packageJson.version}`
 
     let role = null
 
@@ -107,8 +112,8 @@ export class SellingPartnerApiAuth {
   }
 
   /**
-	 * Get AWS credentials from STS or user
-	 */
+   * Get AWS credentials from STS or user
+   */
   async getCredentials(): Promise<SetOptional<Credentials, 'Expiration' | 'SessionToken'>> {
     if (this._sts) {
       return this._sts.getCredentials()

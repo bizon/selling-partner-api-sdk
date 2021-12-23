@@ -1,6 +1,11 @@
 /* eslint-disable prefer-regex-literals */
 import {sellingPartnerRegions, createAxiosInstance} from '@sp-api-sdk/common'
-import type {ClientConfiguration, SellingPartnerRegion, RateLimit, OnRetryHandler} from '@sp-api-sdk/common'
+import type {
+  ClientConfiguration,
+  SellingPartnerRegion,
+  RateLimit,
+  OnRetryHandler,
+} from '@sp-api-sdk/common'
 
 import {Configuration, SolicitationsApi} from './api-model'
 import {SolicitationsApiError} from './error'
@@ -21,11 +26,11 @@ export const clientRateLimits: RateLimit[] = [
 ]
 
 export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits' | 'onRetry'> {
-  region: SellingPartnerRegion;
+  region: SellingPartnerRegion
   rateLimiting?: {
-    retry: boolean;
-    onRetry?: OnRetryHandler;
-  };
+    retry: boolean
+    onRetry?: OnRetryHandler
+  }
 }
 
 export class SolicitationsApiClient extends SolicitationsApi {
@@ -54,4 +59,3 @@ export class SolicitationsApiClient extends SolicitationsApi {
     super(configuration, endpoint, axiosInstance)
   }
 }
-

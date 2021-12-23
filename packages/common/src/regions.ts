@@ -1,11 +1,11 @@
 export type SellingPartnerRegion = 'na' | 'eu' | 'fe'
 
 interface RegionConfiguration {
-  awsRegion: string;
+  awsRegion: string
   endpoints: {
-    production: string;
-    sandbox: string;
-  };
+    production: string
+    sandbox: string
+  }
 }
 
 export const sellingPartnerRegions: Record<SellingPartnerRegion, RegionConfiguration> = {

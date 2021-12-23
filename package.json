@@ -78,6 +78,10 @@
       "unicorn/no-array-reduce": "off",
       "unicorn/prefer-module": "off",
       "unicorn/prefer-node-protocol": "off"
-    }
+    },
+    "prettier": true
+  },
+  "prettier": {
+    "printWidth": 100
   }
 }

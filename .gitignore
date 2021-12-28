@@ -5,8 +5,12 @@ node_modules/
 docs/
 coverage/
 
-packages/test-sdk
-packages/**/dist
+clients/**/.turbo
 clients/**/dist
+packages/**/.turbo
+packages/**/dist
+
 selling-partner-api-models/
-clients-test
+
+packages/test-sdk
+clients-test/

@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/merchant-fulfillment-api-v0@1.7.5...@sp-api-sdk/merchant-fulfillment-api-v0@1.8.0) (2021-12-31)
+
+
+### Features
+
+* **clients:** update models as of 2021-12-31 ([#235](https://github.com/bizon/selling-partner-api-sdk/issues/235)) ([93f4913](https://github.com/bizon/selling-partner-api-sdk/commit/93f491390dd95572c2bddffe781563eb70a576d9))
+
+
+
 ## [1.7.5](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/merchant-fulfillment-api-v0@1.7.4...@sp-api-sdk/merchant-fulfillment-api-v0@1.7.5) (2021-12-01)
 
 **Note:** Version bump only for package @sp-api-sdk/merchant-fulfillment-api-v0

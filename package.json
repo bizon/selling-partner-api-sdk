@@ -16,7 +16,8 @@
     "clean": "turbo run clean",
     "check:ts": "tsc --noEmit",
     "test": "jest",
-    "generate-clients": "ts-node --project scripts/tsconfig.json scripts/generate-clients.ts"
+    "generate-clients": "ts-node --project scripts/tsconfig.json scripts/generate-clients.ts",
+    "postgenerate-clients": "xo --fix"
   },
   "dependencies": {},
   "devDependencies": {

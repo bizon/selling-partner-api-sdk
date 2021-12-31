@@ -28,9 +28,6 @@ jobs:
       - name: Generate clients from models
         run: yarn generate-clients
 
-      - name: Run prettier
-        run: yarn xo --fix
-
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"

@@ -62,7 +62,7 @@ const client = new FbaSmallAndLightApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation]((https://github.com/amzn/selling-partner-api-docs/tree/main/references/fba-small-and-light-api/fbaSmallandLight.md)).
+The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/fba-small-and-light-api/fbaSmallandLight.md).
 
 ## License
 

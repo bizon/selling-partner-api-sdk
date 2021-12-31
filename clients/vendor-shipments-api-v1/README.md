@@ -62,7 +62,7 @@ const client = new VendorShipmentsApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation]((https://github.com/amzn/selling-partner-api-docs/tree/main/references/vendor-shipments-api/vendorShipments.md)).
+The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/vendor-shipments-api/vendorShipments.md).
 
 ## License
 

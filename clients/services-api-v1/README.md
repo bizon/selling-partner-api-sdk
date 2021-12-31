@@ -62,7 +62,7 @@ const client = new ServicesApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation]((https://github.com/amzn/selling-partner-api-docs/tree/main/references/services-api/services.md)).
+The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/services-api/services.md).
 
 ## License
 

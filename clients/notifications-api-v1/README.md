@@ -90,7 +90,7 @@ const client = new NotificationsApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation]((https://github.com/amzn/selling-partner-api-docs/tree/main/references/notifications-api/notifications.md)).
+The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/notifications-api/notifications.md).
 
 ## License
 

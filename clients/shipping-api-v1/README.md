@@ -62,7 +62,7 @@ const client = new ShippingApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation]((https://github.com/amzn/selling-partner-api-docs/tree/main/references/shipping-api/shipping.md)).
+The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/shipping-api/shipping.md).
 
 ## License
 

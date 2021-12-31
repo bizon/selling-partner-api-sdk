@@ -62,7 +62,7 @@ const client = new VendorDirectFulfillmentOrdersApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation]((https://github.com/amzn/selling-partner-api-docs/tree/main/references/vendor-direct-fulfillment-orders-api/vendorDirectFulfillmentOrdersV1.md)).
+The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/vendor-direct-fulfillment-orders-api/vendorDirectFulfillmentOrdersV1.md).
 
 ## License
 

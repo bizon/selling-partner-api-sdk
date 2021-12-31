@@ -62,7 +62,7 @@ const client = new FeedsApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation]((https://github.com/amzn/selling-partner-api-docs/tree/main/references/feeds-api/feeds_2021-06-30.md)).
+The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/feeds-api/feeds_2021-06-30.md).
 
 ## License
 

@@ -64,7 +64,7 @@ const client = new ListingsRestrictionsApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation]((https://github.com/amzn/selling-partner-api-docs/tree/main/references/listings-restrictions-api/listingsRestrictions_2021-08-01.md)).
+The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/listings-restrictions-api/listingsRestrictions_2021-08-01.md).
 
 ## License
 

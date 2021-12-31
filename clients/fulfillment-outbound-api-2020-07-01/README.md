@@ -62,7 +62,7 @@ const client = new FulfillmentOutboundApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation]((https://github.com/amzn/selling-partner-api-docs/tree/main/references/fulfillment-outbound-api/fulfillmentOutbound_2020-07-01.md)).
+The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/fulfillment-outbound-api/fulfillmentOutbound_2020-07-01.md).
 
 ## License
 

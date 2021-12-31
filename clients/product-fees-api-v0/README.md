@@ -62,7 +62,7 @@ const client = new ProductFeesApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation]((https://github.com/amzn/selling-partner-api-docs/tree/main/references/product-fees-api/productFeesV0.md)).
+The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/product-fees-api/productFeesV0.md).
 
 ## License
 

@@ -62,7 +62,7 @@ const client = new ProductPricingApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation]((https://github.com/amzn/selling-partner-api-docs/tree/main/references/product-pricing-api/productPricingV0.md)).
+The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/product-pricing-api/productPricingV0.md).
 
 ## License
 

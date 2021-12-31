@@ -62,7 +62,7 @@ const client = new MerchantFulfillmentApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation]((https://github.com/amzn/selling-partner-api-docs/tree/main/references/merchant-fulfillment-api/merchantFulfillmentV0.md)).
+The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/merchant-fulfillment-api/merchantFulfillmentV0.md).
 
 ## License
 

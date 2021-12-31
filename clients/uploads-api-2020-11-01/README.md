@@ -62,7 +62,7 @@ const client = new UploadsApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation]((https://github.com/amzn/selling-partner-api-docs/tree/main/references/uploads-api/uploads_2020-11-01.md)).
+The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/uploads-api/uploads_2020-11-01.md).
 
 ## License
 

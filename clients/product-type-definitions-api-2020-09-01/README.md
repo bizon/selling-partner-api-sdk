@@ -64,7 +64,7 @@ const client = new ProductTypeDefinitionsApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation]((https://github.com/amzn/selling-partner-api-docs/tree/main/references/product-type-definitions-api/definitionsProductTypes_2020-09-01.md)).
+The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/product-type-definitions-api/definitionsProductTypes_2020-09-01.md).
 
 ## License
 

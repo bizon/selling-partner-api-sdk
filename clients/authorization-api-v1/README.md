@@ -88,7 +88,7 @@ const client = new AuthorizationApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation]((https://github.com/amzn/selling-partner-api-docs/tree/main/references/authorization-api/authorization.md)).
+The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/authorization-api/authorization.md).
 
 ## License
 

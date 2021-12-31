@@ -20,8 +20,8 @@ export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
     urlRegex: new RegExp('^/mfn/v0/eligibleShippingServices$'),
-    rate: 1,
-    burst: 1,
+    rate: 5,
+    burst: 10,
   },
   {
     method: 'get',

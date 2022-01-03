@@ -73,8 +73,14 @@ async function generateClientVersion(clientName: string, filename: string) {
   const packageName = `${formatedClientName}-${doc.info.version}`
   const clientDirectoryPath = `clients/${packageName}`
   const startedAt = Date.now()
-  const clientClassName = camelCase(`${formatedClientName}Client`, {pascalCase: true})
-  const errorClassName = camelCase(`${formatedClientName}Error`, {pascalCase: true})
+  const clientClassName = camelCase(`${formatedClientName}Client`, {
+    pascalCase: true,
+    locale: false,
+  })
+  const errorClassName = camelCase(`${formatedClientName}Error`, {
+    pascalCase: true,
+    locale: false,
+  })
   const paths = Object.values(doc.paths)
   const httpMethods = Object.values(paths[0]!)
   const [tag = 'Default'] = (httpMethods[0] as OpenAPIV3.OperationObject).tags ?? []
@@ -177,7 +183,7 @@ async function generateClientVersion(clientName: string, filename: string) {
     `${clientDirectoryPath}/src/client.ts`,
     await renderTemplate('scripts/templates/src/client.ts.mustache', {
       clientClassName,
-      className: camelCase(`${tag}Api`, {pascalCase: true}),
+      className: camelCase(`${tag}Api`, {pascalCase: true, locale: false}),
       errorClassName,
       rateLimits,
     }),

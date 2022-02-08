@@ -21,7 +21,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@jest/types": "^27.4.2",
+    "@jest/types": "^27.5.0",
     "@openapitools/openapi-generator-cli": "^2.4.26",
     "@tsconfig/node14": "^1.0.0",
     "@types/bluebird": "^3.5.36",

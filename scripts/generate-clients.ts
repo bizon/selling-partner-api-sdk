@@ -44,6 +44,11 @@ async function readPackageVersion(path: string) {
   }
 }
 
+async function getAxiosVersion() {
+  const pkg = (await import('../packages/common/package.json')) as PackageJson
+  return pkg.dependencies!.axios
+}
+
 const cleaner = remark().use(remarkStrip)
 
 async function cleanMarkdown(input: string, stripNewLines?: boolean) {
@@ -109,7 +114,7 @@ async function generateClientVersion(clientName: string, filename: string) {
       dependencies: {
         auth: await readPackageVersion('packages/auth'),
         common: await readPackageVersion('packages/common'),
-        // TODO: retrieve other dependencies from existing clients, so we’re never out of date.
+        axios: await getAxiosVersion(),
       },
     }),
   )

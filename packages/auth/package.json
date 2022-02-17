@@ -18,6 +18,7 @@
     "dist/**/*.d.ts"
   ],
   "scripts": {
+    "check:ts": "yarn tsc --noEmit",
     "build:cjs": "tsc -p tsconfig.json",
     "build:es": "tsc -p tsconfig.es.json",
     "build": "yarn build:cjs && yarn build:es",
@@ -28,6 +29,9 @@
     "@aws-sdk/client-sts": "^3.51.0",
     "got": "^11.8.3",
     "read-pkg-up": "^7.0.1"
+  },
+  "devDependencies": {
+    "type-fest": "^2.11.2"
   },
   "repository": {
     "type": "git",

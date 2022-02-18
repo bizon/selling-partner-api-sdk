@@ -66,7 +66,7 @@ async function generateClientVersion(clientName: string, filename: string) {
   const parsedName = parsePath(filename)
 
   const filePath = `selling-partner-api-models/models/${clientName}/${filename}`
-  const patchPath = `scripts/patches/${clientName}/${parsedName.name}`
+  const patchPath = `codegen/patches/${clientName}/${parsedName.name}`
   const doc = (await jsonfile.readFile(filePath)) as OpenAPIV3.Document
 
   const changed = await applyPatches(doc, patchPath)
@@ -106,7 +106,7 @@ async function generateClientVersion(clientName: string, filename: string) {
   await fs.mkdir(`${clientDirectoryPath}/__test__`, {recursive: true})
   await fs.writeFile(
     `${clientDirectoryPath}/package.json`,
-    await renderTemplate('scripts/templates/package.json.mustache', {
+    await renderTemplate('codegen/templates/package.json.mustache', {
       packageName,
       description: await cleanMarkdown(doc.info.description ?? '', true),
       version: (await readPackageVersion(clientDirectoryPath)) ?? '1.0.0',
@@ -168,25 +168,25 @@ async function generateClientVersion(clientName: string, filename: string) {
 
   await fs.writeFile(
     `${clientDirectoryPath}/tsconfig.json`,
-    await renderTemplate('scripts/templates/tsconfig.json.mustache'),
+    await renderTemplate('codegen/templates/tsconfig.json.mustache'),
   )
   await fs.writeFile(
     `${clientDirectoryPath}/tsconfig.es.json`,
-    await renderTemplate('scripts/templates/tsconfig.es.json.mustache'),
+    await renderTemplate('codegen/templates/tsconfig.es.json.mustache'),
   )
   await fs.writeFile(
     `${clientDirectoryPath}/index.ts`,
-    await renderTemplate('scripts/templates/index.ts.mustache'),
+    await renderTemplate('codegen/templates/index.ts.mustache'),
   )
   await fs.writeFile(
     `${clientDirectoryPath}/src/error.ts`,
-    await renderTemplate('scripts/templates/src/error.ts.mustache', {
+    await renderTemplate('codegen/templates/src/error.ts.mustache', {
       className: errorClassName,
     }),
   )
   await fs.writeFile(
     `${clientDirectoryPath}/src/client.ts`,
-    await renderTemplate('scripts/templates/src/client.ts.mustache', {
+    await renderTemplate('codegen/templates/src/client.ts.mustache', {
       clientClassName,
       className: camelCase(`${tag}Api`, {pascalCase: true, locale: false}),
       errorClassName,
@@ -195,7 +195,7 @@ async function generateClientVersion(clientName: string, filename: string) {
   )
   await fs.writeFile(
     `${clientDirectoryPath}/README.md`,
-    await renderTemplate('scripts/templates/README.md.mustache', {
+    await renderTemplate('codegen/templates/README.md.mustache', {
       packageName,
       className: clientClassName,
       description: doc.info.description,
@@ -209,11 +209,11 @@ async function generateClientVersion(clientName: string, filename: string) {
   )
   await fs.writeFile(
     `${clientDirectoryPath}/__test__/client.spec.ts`,
-    await renderTemplate('scripts/templates/__test__/client.spec.ts.mustache', {clientClassName}),
+    await renderTemplate('codegen/templates/__test__/client.spec.ts.mustache', {clientClassName}),
   )
   await fs.writeFile(
     `${clientDirectoryPath}/jest.config.js`,
-    await renderTemplate('scripts/templates/jest.config.js.mustache'),
+    await renderTemplate('codegen/templates/jest.config.js.mustache'),
   )
 
   const generatedFiles = await fs.readdir(`${clientDirectoryPath}/src/api-model/`)

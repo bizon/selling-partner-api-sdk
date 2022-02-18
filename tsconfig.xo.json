@@ -2,7 +2,7 @@
   "extends": "./tsconfig.json",
   "include": [
     "*.ts",
-    "scripts/**/*.ts",
+    "codegen/**/*.ts",
     "packages/**/*.ts",
     "clients/**/*.ts"
   ],

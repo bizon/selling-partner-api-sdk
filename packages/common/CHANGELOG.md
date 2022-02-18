@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.7.10](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.7.9...@sp-api-sdk/common@1.7.10) (2022-02-18)
+
+
+### Bug Fixes
+
+* **deps:** bump aws4-axios from 2.4.6 to 2.4.9 ([#274](https://github.com/bizon/selling-partner-api-sdk/issues/274)) ([3073e2c](https://github.com/bizon/selling-partner-api-sdk/commit/3073e2cb20c3d280dca1b64876140e8fe85f6abe))
+
+
+
 ### [1.7.9](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.7.8...@sp-api-sdk/common@1.7.9) (2021-12-31)
 
 **Note:** Version bump only for package @sp-api-sdk/common

@@ -51,7 +51,7 @@ export function createAxiosInstance({
   if (rateLimits) {
     axiosRetry(instance, {
       retryCondition: (error) => (error.response ? error.response.status === 429 : false),
-      retryDelay: (retryCount, error) => {
+      retryDelay(retryCount, error) {
         const amznRateLimit = (error.response?.headers as AxiosHeaders)['x-amzn-ratelimit-limit']
         const url = new URL(error.config.url!)
         const rateLimit = amznRateLimit
@@ -101,7 +101,7 @@ export function createAxiosInstance({
 
   instance.interceptors.response.use(
     async (response) => response,
-    async (error) => {
+    async (error: unknown) => {
       throw axios.isAxiosError(error) ? new SellingPartnerApiError(error) : error
     },
   )

@@ -1,0 +1,14 @@
+{
+  "pipeline": {
+    "clean": {
+      "cache": false,
+      "outputs": []
+    },
+    "check:ts": {},
+    "build": {
+      "dependsOn": [
+        "^build"
+      ]
+    }
+  }
+}

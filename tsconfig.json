@@ -24,8 +24,7 @@
       "**/__test__/**",
       "**/jest.config.ts",
       "clients/*/src/api-model/api/**",
-      "clients/*/src/api-model/*.ts",
-      "scripts/**"
+      "clients/*/src/api-model/*.ts"
     ],
     "plugin": [
       "typedoc-plugin-lerna-packages",

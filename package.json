@@ -7,7 +7,7 @@
   "license": "MIT",
   "workspaces": {
     "packages": [
-      "scripts",
+      "codegen",
       "packages/*",
       "clients/*"
     ]
@@ -17,7 +17,7 @@
     "clean": "turbo run clean",
     "check:ts": "turbo run check:ts",
     "test": "jest",
-    "generate-clients": "ts-node --project scripts/tsconfig.json scripts/generate-clients.ts",
+    "generate-clients": "ts-node --project codegen/tsconfig.json codegen/generate-clients.ts",
     "postgenerate-clients": "xo --fix"
   },
   "dependencies": {},

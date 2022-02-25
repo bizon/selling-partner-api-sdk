@@ -12,6 +12,8 @@
     "chalk": "^4.1.2",
     "fast-json-patch": "^3.1.1",
     "globby": "^11.1.0",
+    "got": "^11.8.3",
+    "json-schema-to-typescript": "^10.1.5",
     "jsonfile": "^6.1.0",
     "lodash": "^4.17.21",
     "mustache": "^4.2.0",

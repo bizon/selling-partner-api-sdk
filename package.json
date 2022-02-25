@@ -18,7 +18,9 @@
     "check:ts": "turbo run check:ts",
     "test": "jest",
     "generate-clients": "ts-node --project codegen/tsconfig.json codegen/generate-clients.ts",
-    "postgenerate-clients": "xo --fix clients"
+    "postgenerate-clients": "xo --fix clients",
+    "generate-notification-schemas": "ts-node --project codegen/tsconfig.json codegen/generate-notification-schemas.ts",
+    "postgenerate-notification-schemas": "xo --fix packages/notifications"
   },
   "dependencies": {},
   "devDependencies": {
@@ -63,6 +65,15 @@
       "unicorn/prefer-module": "off",
       "unicorn/prefer-node-protocol": "off"
     },
+    "overrides": [
+      {
+        "files": "packages/notifications/**",
+        "rules": {
+          "@typescript-eslint/no-empty-interface": "off",
+          "unicorn/prevent-abbreviations": "off"
+        }
+      }
+    ],
     "prettier": true
   },
   "prettier": {

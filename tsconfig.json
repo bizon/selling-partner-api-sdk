@@ -20,6 +20,10 @@
     "excludePrivate": true,
     "excludeNotExported": true,
     "excludeExternals": true,
+    "resolveJsonModule": true,
+    "lernaExclude": [
+      "@sp-api-sdk/generator"
+    ],
     "exclude": [
       "**/__test__/**",
       "**/jest.config.ts",

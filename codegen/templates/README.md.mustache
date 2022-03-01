@@ -1,24 +1,24 @@
-# `{{packageName}}`
+# `{{clientName}}`
 
 {{description}}
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/{{packageName}})](https://www.npmjs.com/package/@sp-api-sdk/{{packageName}})
+[![npm version](https://badgen.net/npm/v/@sp-api-sdk/{{clientName}})](https://www.npmjs.com/package/@sp-api-sdk/{{clientName}})
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 
-Learn more about this Selling Partner API by visiting the [official documentation]({{&docUrl}}).
+Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
 Also, see the [generated documentation]({{&sdkClientDocUrl}}) for this API client.
 
 ## Installing
 
 ```sh
-yarn add @sp-api-sdk/{{packageName}}
+yarn add @sp-api-sdk/{{clientName}}
 ```
 
 ```sh
-npm install @sp-api-sdk/{{packageName}}
+npm install @sp-api-sdk/{{clientName}}
 ```
 
 ## Getting Started
@@ -29,7 +29,7 @@ npm install @sp-api-sdk/{{packageName}}
 ```javascript
 import {SellingPartnerApiAuth, AuthorizationScope} from '@sp-api-sdk/auth'
 {{=<% %>=}}
-import {<%className%>} from '@sp-api-sdk/<%packageName%>'
+import {<%className%>} from '@sp-api-sdk/<%clientName%>'
 <%={{ }}=%>
 
 const auth = new SellingPartnerApiAuth({
@@ -56,7 +56,7 @@ const client = new {{className}}({
 ```javascript
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 {{=<% %>=}}
-import {<%className%>} from '@sp-api-sdk/<%packageName%>'
+import {<%className%>} from '@sp-api-sdk/<%clientName%>'
 <%={{ }}=%>
 
 const auth = new SellingPartnerApiAuth({
@@ -94,7 +94,7 @@ const client = new {{className}}({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation]({{&docUrl}}).
+The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon.com/sp-api/docs).
 
 ## License
 

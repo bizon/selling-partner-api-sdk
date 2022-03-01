@@ -227,13 +227,19 @@ export interface Order {
      */
     IsSoldByAB?: boolean;
     /**
+     * When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller.
+     * @type {boolean}
+     * @memberof Order
+     */
+    IsIBA?: boolean;
+    /**
      * 
      * @type {Address}
      * @memberof Order
      */
     DefaultShipFromLocationAddress?: Address;
     /**
-     * The buyer’s invoicing preference.
+     * The buyer\'s invoicing preference. Available only in the TR marketplace.
      * @type {string}
      * @memberof Order
      */

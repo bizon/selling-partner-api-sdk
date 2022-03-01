@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile --non-interactive --prefer-offline
 
+      - name: Download models from SP-API website
+        run: yarn download-models
+
       - name: Generate clients from models
         run: yarn generate-clients
 

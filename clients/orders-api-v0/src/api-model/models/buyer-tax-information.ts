@@ -15,7 +15,7 @@
 
 
 /**
- * Contains the business invoice tax information.
+ * Contains the business invoice tax information. Available only in the TR marketplace.
  * @export
  * @interface BuyerTaxInformation
  */

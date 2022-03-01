@@ -17,14 +17,14 @@ import remarkStrip from 'strip-markdown'
 import type {PackageJson} from 'type-fest'
 import type {OpenAPIV3} from 'openapi-types'
 
-import {renderTemplate, logger, applyPatches} from './utils'
+import {renderTemplate, logger} from './utils'
 
 const exec = promisify(childProcess.exec)
 const rimrafPromise = promisify(rimraf)
 
 const GRANTLESS_APIS = [
-  {name: 'notifications-api', scope: 'NOTIFICATIONS'},
-  {name: 'authorization-api', scope: 'MIGRATION'},
+  {name: 'notifications-api-v1', scope: 'NOTIFICATIONS'},
+  {name: 'authorization-api-v1', scope: 'MIGRATION'},
 ]
 
 interface RateLimit {
@@ -62,36 +62,30 @@ async function cleanMarkdown(input: string, stripNewLines?: boolean) {
   return result.trim()
 }
 
-async function generateClientVersion(clientName: string, filename: string) {
-  const parsedName = parsePath(filename)
+async function generateClientVersion(filename: string) {
+  const {name: clientName} = parsePath(filename)
 
-  const filePath = `selling-partner-api-models/models/${clientName}/${filename}`
-  const patchPath = `codegen/patches/${clientName}/${parsedName.name}`
+  const filePath = `codegen/models/${filename}`
   const doc = (await jsonfile.readFile(filePath)) as OpenAPIV3.Document
 
-  const changed = await applyPatches(doc, patchPath)
-  if (changed) {
-    await jsonfile.writeFile(filePath, doc)
-  }
-
-  const formatedClientName = clientName.slice(0, -6)
-  const packageName = `${formatedClientName}-${doc.info.version}`
-  const clientDirectoryPath = `clients/${packageName}`
+  const [formatedClientName] = clientName.split('-api-')
+  const clientDirectoryPath = `clients/${clientName}`
   const startedAt = Date.now()
-  const clientClassName = camelCase(`${formatedClientName}Client`, {
+  const clientClassName = camelCase(`${formatedClientName}ApiClient`, {
     pascalCase: true,
     locale: false,
   })
-  const errorClassName = camelCase(`${formatedClientName}Error`, {
+  const errorClassName = camelCase(`${formatedClientName}ApiError`, {
     pascalCase: true,
     locale: false,
   })
+
   const paths = Object.values(doc.paths)
   const httpMethods = Object.values(paths[0]!)
   const [tag = 'Default'] = (httpMethods[0] as OpenAPIV3.OperationObject).tags ?? []
-  const grantlessInfo = GRANTLESS_APIS.find(({name}) => formatedClientName === name)
+  const grantlessInfo = GRANTLESS_APIS.find(({name}) => clientName === name)
 
-  logger.info('generating…', {packageName})
+  logger.info('generating…', {clientName})
 
   await rimrafPromise(`${clientDirectoryPath}/src/api-model`)
   await exec(
@@ -107,7 +101,7 @@ async function generateClientVersion(clientName: string, filename: string) {
   await fs.writeFile(
     `${clientDirectoryPath}/package.json`,
     await renderTemplate('codegen/templates/package.json.mustache', {
-      packageName,
+      clientName,
       description: await cleanMarkdown(doc.info.description ?? '', true),
       version: (await readPackageVersion(clientDirectoryPath)) ?? '1.0.0',
       apiName: formatedClientName.replace(/-/g, ' '),
@@ -146,13 +140,13 @@ async function generateClientVersion(clientName: string, filename: string) {
             if (Number.isNaN(value.rate) || Number.isNaN(value.burst)) {
               logger.warn(
                 `Warning: invalid rate limits: ${result.groups.rate} / ${result.groups.burst}`,
-                {packageName},
+                {clientName},
               )
             }
 
             acc.push(value)
           } else {
-            logger.warn(`Warning: no rate limiting found for ${packageName}`, {packageName})
+            logger.warn(`Warning: no rate limiting found for ${clientName}`, {clientName})
           }
         }
       }
@@ -196,11 +190,10 @@ async function generateClientVersion(clientName: string, filename: string) {
   await fs.writeFile(
     `${clientDirectoryPath}/README.md`,
     await renderTemplate('codegen/templates/README.md.mustache', {
-      packageName,
+      clientName,
       className: clientClassName,
       description: doc.info.description,
-      docUrl: `https://github.com/amzn/selling-partner-api-docs/tree/main/references/${formatedClientName}/${parsedName.name}.md`,
-      sdkClientDocUrl: `https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_${packageName.replace(
+      sdkClientDocUrl: `https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_${clientName.replace(
         /\W/g,
         '_',
       )}.html`,
@@ -237,22 +230,13 @@ async function generateClientVersion(clientName: string, filename: string) {
     }),
   )
 
-  logger.info(`done in ${(Date.now() - startedAt) / 1000}s`, {packageName})
-}
-
-async function generateClientVersions(clientName: string) {
-  const filenames = await fs.readdir(`selling-partner-api-models/models/${clientName}`)
-  const promises = filenames.map(async (filename) => generateClientVersion(clientName, filename))
-
-  return Promise.all(promises)
+  logger.info(`done in ${(Date.now() - startedAt) / 1000}s`, {clientName})
 }
 
 ;(async () => {
-  await rimrafPromise('selling-partner-api-models')
-  await exec('git clone https://github.com/amzn/selling-partner-api-models')
-  const clientNames = await fs.readdir('selling-partner-api-models/models')
+  const clientNames = await fs.readdir('codegen/models')
 
-  await Bluebird.map(clientNames, async (clientName) => generateClientVersions(clientName), {
+  await Bluebird.map(clientNames, async (clientName) => generateClientVersion(clientName), {
     concurrency: os.cpus().length,
   })
 

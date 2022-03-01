@@ -17,6 +17,7 @@
     "clean": "turbo run clean",
     "check:ts": "turbo run check:ts",
     "test": "jest",
+    "download-models": "ts-node --project codegen/tsconfig.json codegen/download-models.ts",
     "generate-clients": "ts-node --project codegen/tsconfig.json codegen/generate-clients.ts",
     "postgenerate-clients": "xo --fix"
   },

@@ -14,6 +14,7 @@ import camelCase from 'camelcase'
 import reduce from 'lodash/reduce'
 import remark from 'remark'
 import remarkStrip from 'strip-markdown'
+import globby from 'globby'
 import type {PackageJson} from 'type-fest'
 import type {OpenAPIV3} from 'openapi-types'
 
@@ -241,10 +242,12 @@ async function generateClientVersion(clientName: string, filename: string) {
 }
 
 async function generateClientVersions(clientName: string) {
-  const filenames = await fs.readdir(`selling-partner-api-models/models/${clientName}`)
-  const promises = filenames.map(async (filename) => generateClientVersion(clientName, filename))
+  const filenames = await globby('*.json', {
+    onlyFiles: true,
+    cwd: `selling-partner-api-models/models/${clientName}`,
+  })
 
-  return Promise.all(promises)
+  await Promise.all(filenames.map(async (filename) => generateClientVersion(clientName, filename)))
 }
 
 ;(async () => {

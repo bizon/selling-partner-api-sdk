@@ -2,14 +2,14 @@
 
 The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.
 
-For more information, see the [Catalog Items API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/catalog-items-api-use-case-guide/catalog-items-api-use-case-guide_2020-12-01.md).
+For more information, see the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2020-12-01-use-case-guide).
 
 [![npm version](https://badgen.net/npm/v/@sp-api-sdk/catalog-items-api-2020-12-01)](https://www.npmjs.com/package/@sp-api-sdk/catalog-items-api-2020-12-01)
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 
-Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/catalog-items-api/catalogItems_2020-12-01.md).
+Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
 Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_catalog_items_api_2020_12_01.html) for this API client.
 
@@ -64,7 +64,7 @@ const client = new CatalogItemsApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/catalog-items-api/catalogItems_2020-12-01.md).
+The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon.com/sp-api/docs).
 
 ## License
 

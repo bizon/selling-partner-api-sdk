@@ -7,7 +7,7 @@ The Selling Partner API for FBA Small and Light lets you help sellers manage the
 
 ## Documentation
 
-Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/fba-small-and-light-api/fbaSmallandLight.md).
+Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
 Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_fba_small_and_light_api_v1.html) for this API client.
 
@@ -62,7 +62,7 @@ const client = new FbaSmallAndLightApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/fba-small-and-light-api/fbaSmallandLight.md).
+The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon.com/sp-api/docs).
 
 ## License
 

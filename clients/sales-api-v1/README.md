@@ -7,7 +7,7 @@ The Selling Partner API for Sales provides APIs related to sales performance.
 
 ## Documentation
 
-Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/sales-api/sales.md).
+Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
 Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_sales_api_v1.html) for this API client.
 
@@ -62,7 +62,7 @@ const client = new SalesApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/sales-api/sales.md).
+The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon.com/sp-api/docs).
 
 ## License
 

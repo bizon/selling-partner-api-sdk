@@ -7,7 +7,7 @@ The Selling Partner API for Direct Fulfillment Payments provides programmatic ac
 
 ## Documentation
 
-Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/vendor-direct-fulfillment-payments-api/vendorDirectFulfillmentPaymentsV1.md).
+Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
 Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_vendor_direct_fulfillment_payments_api_v1.html) for this API client.
 
@@ -62,7 +62,7 @@ const client = new VendorDirectFulfillmentPaymentsApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/vendor-direct-fulfillment-payments-api/vendorDirectFulfillmentPaymentsV1.md).
+The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon.com/sp-api/docs).
 
 ## License
 

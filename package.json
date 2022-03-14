@@ -18,7 +18,7 @@
     "check:ts": "turbo run check:ts",
     "test": "jest",
     "generate-clients": "ts-node --project codegen/tsconfig.json codegen/generate-clients.ts",
-    "postgenerate-clients": "xo --fix"
+    "postgenerate-clients": "xo --fix clients"
   },
   "dependencies": {},
   "devDependencies": {

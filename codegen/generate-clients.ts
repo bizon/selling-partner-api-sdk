@@ -24,8 +24,8 @@ const exec = promisify(childProcess.exec)
 const rimrafPromise = promisify(rimraf)
 
 const GRANTLESS_APIS = [
-  {name: 'notifications-api', scope: 'NOTIFICATIONS'},
-  {name: 'authorization-api', scope: 'MIGRATION'},
+  {name: 'notifications-api-v1', scope: 'NOTIFICATIONS'},
+  {name: 'authorization-api-v1', scope: 'MIGRATION'},
 ]
 
 interface RateLimit {
@@ -63,34 +63,44 @@ async function cleanMarkdown(input: string, stripNewLines?: boolean) {
   return result.trim()
 }
 
-async function generateClientVersion(clientName: string, filename: string) {
-  const parsedName = parsePath(filename)
+async function generateClientVersion(modelFilePath: string) {
+  const {dir: modelDirectory, name: modelName} = parsePath(modelFilePath)
 
-  const filePath = `selling-partner-api-models/models/${clientName}/${filename}`
-  const patchPath = `codegen/patches/${clientName}/${parsedName.name}`
-  const doc = (await jsonfile.readFile(filePath)) as OpenAPIV3.Document
+  const modelPath = `selling-partner-api-models/models/${modelFilePath}`
+  const patchesPath = `codegen/patches/${modelDirectory}/${modelName}`
 
-  const changed = await applyPatches(doc, patchPath)
-  if (changed) {
-    await jsonfile.writeFile(filePath, doc)
-  }
+  let model = await fs.readFile(modelPath, 'utf8')
 
-  const formatedClientName = clientName.slice(0, -6)
-  const packageName = `${formatedClientName}-${doc.info.version}`
-  const clientDirectoryPath = `clients/${packageName}`
+  // Replace `doc:` markdown URLs to link to the real documentation
+  model = model.replace(
+    /\[(?<label>[^\]]+)]\(doc:(?<url>[^)]+)\)/g,
+    '[$1](https://developer-docs.amazon.com/sp-api/docs/$2)',
+  )
+
+  const doc = JSON.parse(model) as OpenAPIV3.Document
+
+  await applyPatches(doc, patchesPath)
+  await jsonfile.writeFile(modelPath, doc)
+
   const startedAt = Date.now()
-  const clientClassName = camelCase(`${formatedClientName}Client`, {
+
+  const clientNameBase = modelDirectory.replace(/-model$/, '')
+  const packageName = `${clientNameBase}-${doc.info.version}`
+  const clientDirectoryPath = `clients/${packageName}`
+
+  const clientClassName = camelCase(`${clientNameBase}Client`, {
     pascalCase: true,
     locale: false,
   })
-  const errorClassName = camelCase(`${formatedClientName}Error`, {
+  const errorClassName = camelCase(`${clientNameBase}Error`, {
     pascalCase: true,
     locale: false,
   })
+
   const paths = Object.values(doc.paths)
   const httpMethods = Object.values(paths[0]!)
   const [tag = 'Default'] = (httpMethods[0] as OpenAPIV3.OperationObject).tags ?? []
-  const grantlessInfo = GRANTLESS_APIS.find(({name}) => formatedClientName === name)
+  const grantlessInfo = GRANTLESS_APIS.find(({name}) => packageName === name)
 
   logger.info('generating…', {packageName})
 
@@ -100,7 +110,7 @@ async function generateClientVersion(clientName: string, filename: string) {
       --additional-properties=supportsES6=true,useSingleRequestParameter=true,withSeparateModelsAndApi=true,modelPackage=models,apiPackage=api \
       --skip-validate-spec \
       -g typescript-axios \
-      -i ${filePath} \
+      -i ${modelPath} \
       -o ${clientDirectoryPath}/src/api-model`,
   )
 
@@ -111,7 +121,7 @@ async function generateClientVersion(clientName: string, filename: string) {
       packageName,
       description: await cleanMarkdown(doc.info.description ?? '', true),
       version: (await readPackageVersion(clientDirectoryPath)) ?? '1.0.0',
-      apiName: formatedClientName.replace(/-/g, ' '),
+      apiName: clientNameBase.replace(/-/g, ' '),
       dependencies: {
         auth: await readPackageVersion('packages/auth'),
         common: await readPackageVersion('packages/common'),
@@ -200,7 +210,6 @@ async function generateClientVersion(clientName: string, filename: string) {
       packageName,
       className: clientClassName,
       description: doc.info.description,
-      docUrl: `https://github.com/amzn/selling-partner-api-docs/tree/main/references/${formatedClientName}/${parsedName.name}.md`,
       sdkClientDocUrl: `https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_${packageName.replace(
         /\W/g,
         '_',
@@ -241,23 +250,22 @@ async function generateClientVersion(clientName: string, filename: string) {
   logger.info(`done in ${(Date.now() - startedAt) / 1000}s`, {packageName})
 }
 
-async function generateClientVersions(clientName: string) {
-  const filenames = await globby('*.json', {
-    onlyFiles: true,
-    cwd: `selling-partner-api-models/models/${clientName}`,
-  })
-
-  await Promise.all(filenames.map(async (filename) => generateClientVersion(clientName, filename)))
-}
-
 ;(async () => {
   await rimrafPromise('selling-partner-api-models')
   await exec('git clone https://github.com/amzn/selling-partner-api-models')
-  const clientNames = await fs.readdir('selling-partner-api-models/models')
 
-  await Bluebird.map(clientNames, async (clientName) => generateClientVersions(clientName), {
-    concurrency: os.cpus().length,
+  const modelFilePaths = await globby('*/*.json', {
+    onlyFiles: true,
+    cwd: 'selling-partner-api-models/models',
   })
+
+  await Bluebird.map(
+    modelFilePaths,
+    async (modelFilePath) => generateClientVersion(modelFilePath),
+    {
+      concurrency: os.cpus().length,
+    },
+  )
 
   await rimrafPromise('selling-partner-api-models')
 })().catch((error) => {

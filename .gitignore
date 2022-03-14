@@ -1,13 +1,12 @@
 **/*.log
 **/*.tsbuildinfo
 
+.turbo/
 node_modules/
 docs/
 coverage/
 
-clients/**/.turbo
 clients/**/dist
-packages/**/.turbo
 packages/**/dist
 
 selling-partner-api-models/

@@ -102,6 +102,7 @@ export enum ItemEligibilityPreviewIneligibilityReasonListEnum {
     FbaInb0100 = 'FBA_INB_0100',
     FbaInb0103 = 'FBA_INB_0103',
     FbaInb0104 = 'FBA_INB_0104',
+    FbaInb0197 = 'FBA_INB_0197',
     UnknownInbErrorCode = 'UNKNOWN_INB_ERROR_CODE'
 }
 

@@ -2,14 +2,14 @@
 
 The Selling Partner API for Tokens provides a secure way to access a customer's PII (Personally Identifiable Information). You can call the Tokens API to get a Restricted Data Token (RDT) for one or more restricted resources that you specify. The RDT authorizes subsequent calls to restricted operations that correspond to the restricted resources that you specified.
 
-For more information, see the [Tokens API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md).
+For more information, see the [Tokens API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/tokens-api-use-case-guide).
 
 [![npm version](https://badgen.net/npm/v/@sp-api-sdk/tokens-api-2021-03-01)](https://www.npmjs.com/package/@sp-api-sdk/tokens-api-2021-03-01)
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 
-Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/tokens-api/tokens_2021-03-01.md).
+Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
 Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_tokens_api_2021_03_01.html) for this API client.
 
@@ -64,7 +64,7 @@ const client = new TokensApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/tokens-api/tokens_2021-03-01.md).
+The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon.com/sp-api/docs).
 
 ## License
 

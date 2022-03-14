@@ -2,14 +2,14 @@
 
 The Selling Partner API for Listings Restrictions provides programmatic access to restrictions on Amazon catalog listings.
 
-For more information, see the [Listings Restrictions API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/listings-restrictions-api-use-case-guide/listings-restrictions-api-use-case-guide_2021-08-01.md).
+For more information, see the [Listings Restrictions API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-restrictions-api-v2021-08-01-use-case-guide).
 
 [![npm version](https://badgen.net/npm/v/@sp-api-sdk/listings-restrictions-api-2021-08-01)](https://www.npmjs.com/package/@sp-api-sdk/listings-restrictions-api-2021-08-01)
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 
-Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/listings-restrictions-api/listingsRestrictions_2021-08-01.md).
+Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
 Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_listings_restrictions_api_2021_08_01.html) for this API client.
 
@@ -64,7 +64,7 @@ const client = new ListingsRestrictionsApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/listings-restrictions-api/listingsRestrictions_2021-08-01.md).
+The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon.com/sp-api/docs).
 
 ## License
 

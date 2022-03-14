@@ -7,7 +7,7 @@ With the FBA Inbound Eligibility API, you can build applications that let seller
 
 ## Documentation
 
-Learn more about this Selling Partner API by visiting the [official documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/fba-inbound-eligibility-api/fbaInbound.md).
+Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
 Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_fba_inbound_eligibility_api_v1.html) for this API client.
 
@@ -62,7 +62,7 @@ const client = new FbaInboundEligibilityApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation](https://github.com/amzn/selling-partner-api-docs/tree/main/references/fba-inbound-eligibility-api/fbaInbound.md).
+The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon.com/sp-api/docs).
 
 ## License
 

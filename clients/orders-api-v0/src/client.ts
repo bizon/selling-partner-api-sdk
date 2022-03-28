@@ -47,6 +47,18 @@ export const clientRateLimits: RateLimit[] = [
     rate: 0.0055,
     burst: 20,
   },
+  {
+    method: 'get',
+    urlRegex: new RegExp('^/orders/v0/orders/[^/]*/regulatedInfo$'),
+    rate: 0.0055,
+    burst: 20,
+  },
+  {
+    method: 'patch',
+    urlRegex: new RegExp('^/orders/v0/orders/[^/]*/regulatedInfo$'),
+    rate: 0.0055,
+    burst: 20,
+  },
 ]
 
 export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits' | 'onRetry'> {

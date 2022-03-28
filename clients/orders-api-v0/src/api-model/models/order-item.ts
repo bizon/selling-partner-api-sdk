@@ -13,6 +13,7 @@
  */
 
 
+import { BuyerRequestedCancel } from './buyer-requested-cancel';
 import { ItemBuyerInfo } from './item-buyer-info';
 import { Money } from './money';
 import { PointsGrantedDetail } from './points-granted-detail';
@@ -223,6 +224,12 @@ export interface OrderItem {
      * @memberof OrderItem
      */
     BuyerInfo?: ItemBuyerInfo;
+    /**
+     * 
+     * @type {BuyerRequestedCancel}
+     * @memberof OrderItem
+     */
+    BuyerRequestedCancel?: BuyerRequestedCancel;
 }
 
 /**

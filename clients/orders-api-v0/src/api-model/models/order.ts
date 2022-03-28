@@ -292,6 +292,12 @@ export interface Order {
      * @memberof Order
      */
     AutomatedShippingSettings?: AutomatedShippingSettings;
+    /**
+     * Whether the order contains regulated items which may require additional approval steps before being fulfilled.
+     * @type {boolean}
+     * @memberof Order
+     */
+    HasRegulatedItems?: boolean;
 }
 
 /**

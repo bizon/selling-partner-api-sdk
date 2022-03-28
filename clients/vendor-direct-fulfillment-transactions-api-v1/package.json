@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/vendor-direct-fulfillment-transactions-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Direct Fulfillment Transaction Status provides programmatic access to a direct fulfillment vendor's transaction status.",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -26,8 +26,8 @@
     "test": "NODE_ENV='test' yarn jest"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^1.9.9",
-    "@sp-api-sdk/common": "^1.7.11",
+    "@sp-api-sdk/auth": "^1.9.10",
+    "@sp-api-sdk/common": "^1.7.12",
     "axios": "^0.26.1"
   },
   "repository": {

@@ -10,7 +10,7 @@
     "bluebird": "^3.7.2",
     "camelcase": "^6.3.0",
     "chalk": "^4.1.2",
-    "fast-json-patch": "^3.1.0",
+    "fast-json-patch": "^3.1.1",
     "globby": "^11.1.0",
     "jsonfile": "^6.1.0",
     "lodash": "^4.17.21",

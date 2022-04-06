@@ -31,7 +31,7 @@
     "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {
-    "type-fest": "^2.12.1"
+    "type-fest": "^2.12.2"
   },
   "repository": {
     "type": "git",

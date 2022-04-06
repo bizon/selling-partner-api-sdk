@@ -19,7 +19,7 @@
     "remark": "^13.0.0",
     "rimraf": "^3.0.2",
     "strip-markdown": "^4.2.0",
-    "type-fest": "^2.12.1",
+    "type-fest": "^2.12.2",
     "winston": "^3.6.0"
   },
   "devDependencies": {

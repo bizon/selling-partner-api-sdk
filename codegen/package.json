@@ -20,7 +20,7 @@
     "rimraf": "^3.0.2",
     "strip-markdown": "^4.2.0",
     "type-fest": "^2.12.2",
-    "winston": "^3.6.0"
+    "winston": "^3.7.2"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.36",

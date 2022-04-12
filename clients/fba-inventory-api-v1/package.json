@@ -1,7 +1,7 @@
 {
   "name": "@sp-api-sdk/fba-inventory-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
-  "description": "The Selling Partner API for FBA Inventory lets you programmatically retrieve information about inventory in Amazon's fulfillment network. This API is available in the North America region.",
+  "description": "The Selling Partner API for FBA Inventory lets you programmatically retrieve information about inventory in Amazon's fulfillment network.",
   "version": "1.10.1",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",

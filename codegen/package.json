@@ -1,6 +1,6 @@
 {
   "name": "@sp-api-sdk/generator",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "scripts": {
     "check:ts": "yarn tsc --noEmit"

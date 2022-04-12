@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/shipping-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "Provides programmatic access to Amazon Shipping APIs.",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -26,8 +26,8 @@
     "test": "NODE_ENV='test' yarn jest"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^1.9.10",
-    "@sp-api-sdk/common": "^1.7.12",
+    "@sp-api-sdk/auth": "^1.9.11",
+    "@sp-api-sdk/common": "^1.7.13",
     "axios": "^0.26.1"
   },
   "repository": {

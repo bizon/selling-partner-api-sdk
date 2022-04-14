@@ -1,0 +1,7 @@
+[
+  {
+    "op": "replace",
+    "path": "/paths/~1vendor~1directFulfillment~1sandbox~12021-10-28~1transactions~1{transactionId}/get/tags/0",
+    "value": "vendorDFSandbox"
+  }
+]

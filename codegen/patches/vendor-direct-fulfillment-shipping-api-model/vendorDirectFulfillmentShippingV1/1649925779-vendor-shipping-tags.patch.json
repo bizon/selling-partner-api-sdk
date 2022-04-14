@@ -1,0 +1,27 @@
+[
+  {
+    "op": "replace",
+    "path": "/paths/~1vendor~1directFulfillment~1shipping~1v1~1customerInvoices~1{purchaseOrderNumber}/get/tags/0",
+    "value": "vendorShipping"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1vendor~1directFulfillment~1shipping~1v1~1customerInvoices/get/tags/0",
+    "value": "vendorShipping"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1vendor~1directFulfillment~1shipping~1v1~1shippingLabels~1{purchaseOrderNumber}/get/tags/0",
+    "value": "vendorShipping"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1vendor~1directFulfillment~1shipping~1v1~1shippingLabels/post/tags/0",
+    "value": "vendorShipping"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1vendor~1directFulfillment~1shipping~1v1~1shippingLabels/get/tags/0",
+    "value": "vendorShipping"
+  }
+]

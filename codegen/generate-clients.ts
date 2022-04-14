@@ -199,7 +199,11 @@ async function generateClientVersion(modelFilePath: string) {
     `${clientDirectoryPath}/src/client.ts`,
     await renderTemplate('codegen/templates/src/client.ts.mustache', {
       clientClassName,
-      className: camelCase(`${tag}Api`, {pascalCase: true, locale: false}),
+      className: camelCase(`${tag}Api`, {
+        pascalCase: true,
+        locale: false,
+        preserveConsecutiveUppercase: true,
+      }),
       errorClassName,
       rateLimits,
     }),

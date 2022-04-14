@@ -19,6 +19,7 @@ This repository contains an API client for each of the available Selling Partner
 - [authorization-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/authorization-api-v1)
 - [catalog-items-api-2020-12-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/catalog-items-api-2020-12-01)
 - [catalog-items-api-v0](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/catalog-items-api-v0)
+- [easy-ship-2022-03-23](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/easy-ship-2022-03-23)
 - [fba-inbound-eligibility-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/fba-inbound-eligibility-api-v1)
 - [fba-inventory-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/fba-inventory-api-v1)
 - [fba-small-and-light-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/fba-small-and-light-api-v1)
@@ -48,9 +49,13 @@ This repository contains an API client for each of the available Selling Partner
 - [tokens-api-2021-03-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/tokens-api-2021-03-01)
 - [uploads-api-2020-11-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/uploads-api-2020-11-01)
 - [vendor-direct-fulfillment-inventory-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-direct-fulfillment-inventory-api-v1)
+- [vendor-direct-fulfillment-orders-api-2021-12-28](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-direct-fulfillment-orders-api-2021-12-28)
 - [vendor-direct-fulfillment-orders-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-direct-fulfillment-orders-api-v1)
 - [vendor-direct-fulfillment-payments-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-direct-fulfillment-payments-api-v1)
+- [vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28)
+- [vendor-direct-fulfillment-shipping-api-2021-12-28](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-direct-fulfillment-shipping-api-2021-12-28)
 - [vendor-direct-fulfillment-shipping-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-direct-fulfillment-shipping-api-v1)
+- [vendor-direct-fulfillment-transactions-api-2021-12-28](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-direct-fulfillment-transactions-api-2021-12-28)
 - [vendor-direct-fulfillment-transactions-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-direct-fulfillment-transactions-api-v1)
 - [vendor-invoices-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-invoices-api-v1)
 - [vendor-orders-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-orders-api-v1)
@@ -64,11 +69,11 @@ The API clients are automatically generated from the Swagger/OpenAPI models from
 
 Some of the source Open API models are invalid (see the [issues](https://github.com/amzn/selling-partner-api-models/issues) and [PRs](https://github.com/amzn/selling-partner-api-models/pulls) on the Amazon repository), so this SDK defines some patches to account for those errors.
 
-Each patch files are [JSON Patches](http://jsonpatch.com/) operations (1 operation per file).
+Each patch files are [JSON Patches](http://jsonpatch.com/) operations (1 logical change per file).
 
 ### Active patches
 
-- [orders-api-model/ordersV0/1639142073-shipment-tag.patch.json](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/scripts/patches/orders-api-model/ordersV0/1639142073-shipment-tag.patch.json)
+You can browse all the active patches in the [patches directory](https://github.com/bizon/selling-partner-api-sdk/tree/master/codegen/patches).
 
 ## License
 

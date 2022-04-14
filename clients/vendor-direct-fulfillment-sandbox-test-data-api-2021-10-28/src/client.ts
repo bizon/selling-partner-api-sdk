@@ -6,7 +6,7 @@ import type {
   OnRetryHandler,
 } from '@sp-api-sdk/common'
 
-import {Configuration, VendorDfSandboxApi} from './api-model'
+import {Configuration, VendorDFSandboxApi} from './api-model'
 import {VendorDirectFulfillmentSandboxTestDataApiError} from './error'
 
 export const clientRateLimits: RateLimit[] = []
@@ -19,7 +19,7 @@ export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits'
   }
 }
 
-export class VendorDirectFulfillmentSandboxTestDataApiClient extends VendorDfSandboxApi {
+export class VendorDirectFulfillmentSandboxTestDataApiClient extends VendorDFSandboxApi {
   constructor(parameters: ClientParameters) {
     const config = sellingPartnerRegions[parameters.region]
     if (!config) {

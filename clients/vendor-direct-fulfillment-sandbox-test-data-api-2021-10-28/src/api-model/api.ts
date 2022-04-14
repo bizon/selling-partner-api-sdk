@@ -15,5 +15,4 @@
 
 
 export * from './api/vendor-dfsandbox-api';
-export * from './api/vendor-dfsandboxtransactionstatus-api';
 

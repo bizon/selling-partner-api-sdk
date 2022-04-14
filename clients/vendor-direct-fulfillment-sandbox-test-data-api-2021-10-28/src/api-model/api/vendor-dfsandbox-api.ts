@@ -26,6 +26,8 @@ import { ErrorList } from '../models';
 import { GenerateOrderScenarioRequest } from '../models';
 // @ts-ignore
 import { TransactionReference } from '../models';
+// @ts-ignore
+import { TransactionStatus } from '../models';
 /**
  * VendorDFSandboxApi - axios parameter creator
  * @export
@@ -67,6 +69,39 @@ export const VendorDFSandboxApiAxiosParamCreator = function (configuration?: Con
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
+         * @param {string} transactionId The transaction identifier returned in the response to the generateOrderScenarios operation.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getOrderScenarios: async (transactionId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'transactionId' is not null or undefined
+            assertParamExists('getOrderScenarios', 'transactionId', transactionId)
+            const localVarPath = `/vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}`
+                .replace(`{${"transactionId"}}`, encodeURIComponent(String(transactionId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -85,6 +120,16 @@ export const VendorDFSandboxApiFp = function(configuration?: Configuration) {
          */
         async generateOrderScenarios(body: GenerateOrderScenarioRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionReference>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.generateOrderScenarios(body, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
+         * @param {string} transactionId The transaction identifier returned in the response to the generateOrderScenarios operation.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getOrderScenarios(transactionId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionStatus>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderScenarios(transactionId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -106,6 +151,15 @@ export const VendorDFSandboxApiFactory = function (configuration?: Configuration
         generateOrderScenarios(body: GenerateOrderScenarioRequest, options?: any): AxiosPromise<TransactionReference> {
             return localVarFp.generateOrderScenarios(body, options).then((request) => request(axios, basePath));
         },
+        /**
+         * Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
+         * @param {string} transactionId The transaction identifier returned in the response to the generateOrderScenarios operation.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getOrderScenarios(transactionId: string, options?: any): AxiosPromise<TransactionStatus> {
+            return localVarFp.getOrderScenarios(transactionId, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -124,6 +178,20 @@ export interface VendorDFSandboxApiGenerateOrderScenariosRequest {
 }
 
 /**
+ * Request parameters for getOrderScenarios operation in VendorDFSandboxApi.
+ * @export
+ * @interface VendorDFSandboxApiGetOrderScenariosRequest
+ */
+export interface VendorDFSandboxApiGetOrderScenariosRequest {
+    /**
+     * The transaction identifier returned in the response to the generateOrderScenarios operation.
+     * @type {string}
+     * @memberof VendorDFSandboxApiGetOrderScenarios
+     */
+    readonly transactionId: string
+}
+
+/**
  * VendorDFSandboxApi - object-oriented interface
  * @export
  * @class VendorDFSandboxApi
@@ -139,5 +207,16 @@ export class VendorDFSandboxApi extends BaseAPI {
      */
     public generateOrderScenarios(requestParameters: VendorDFSandboxApiGenerateOrderScenariosRequest, options?: any) {
         return VendorDFSandboxApiFp(this.configuration).generateOrderScenarios(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
+     * @param {VendorDFSandboxApiGetOrderScenariosRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof VendorDFSandboxApi
+     */
+    public getOrderScenarios(requestParameters: VendorDFSandboxApiGetOrderScenariosRequest, options?: any) {
+        return VendorDFSandboxApiFp(this.configuration).getOrderScenarios(requestParameters.transactionId, options).then((request) => request(this.axios, this.basePath));
     }
 }

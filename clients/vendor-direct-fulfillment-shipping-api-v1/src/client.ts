@@ -7,7 +7,7 @@ import type {
   OnRetryHandler,
 } from '@sp-api-sdk/common'
 
-import {Configuration, VendorShippingLabelsApi} from './api-model'
+import {Configuration, VendorShippingApi} from './api-model'
 import {VendorDirectFulfillmentShippingApiError} from './error'
 
 export const clientRateLimits: RateLimit[] = [
@@ -75,7 +75,7 @@ export interface ClientParameters extends Omit<ClientConfiguration, 'rateLimits'
   }
 }
 
-export class VendorDirectFulfillmentShippingApiClient extends VendorShippingLabelsApi {
+export class VendorDirectFulfillmentShippingApiClient extends VendorShippingApi {
   constructor(parameters: ClientParameters) {
     const config = sellingPartnerRegions[parameters.region]
     if (!config) {

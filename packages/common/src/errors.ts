@@ -1,58 +1,28 @@
 import {URL} from 'url'
 
-import type {AxiosError, AxiosRequestConfig, AxiosResponse} from 'axios'
+import {AxiosError} from 'axios'
 
-export class SellingPartnerApiError<T = any> extends Error implements AxiosError {
-  public config: AxiosRequestConfig
-  public code?: string
-  public request?: any
-  public response?: AxiosResponse<T>
-  public isAxiosError: boolean
+export class SellingPartnerApiError<T = unknown, D = any> extends AxiosError<T, D> {
+  public readonly innerMessage: string
+  public readonly apiName?: string
+  public readonly apiVersion?: string
 
-  public apiName?: string
-  public apiVersion?: string
+  constructor(error: AxiosError<T, D>) {
+    super('Unknown error', error.code, error.config, error.request, error.response)
 
-  private readonly axiosError: AxiosError
+    this.innerMessage = error.message
 
-  constructor(error: AxiosError) {
-    super()
+    if (error.config.url) {
+      const [apiName, apiVersion] = new URL(error.config.url).pathname.split('/').slice(1)
+      const apiPrefix = `${apiName} (${apiVersion})`
 
-    this.axiosError = error
-
-    this.config = error.config
-    this.code = error.code
-    this.request = error.request
-    this.response = error.response
-    this.isAxiosError = error.isAxiosError
-
-    const url = error.config.url ? new URL(error.config.url) : null
-
-    if (url) {
-      const [apiName, apiVersion] = url.pathname.split('/').slice(1)
       this.apiName = apiName
       this.apiVersion = apiVersion
-    }
-  }
-
-  get name() {
-    return this.constructor.name
-  }
-
-  get message() {
-    if (this.apiName && this.apiVersion) {
-      const apiPrefix = `${this.apiName} (${this.apiVersion})`
-
-      if (!this.response) {
-        return `${apiPrefix} error: No response`
-      }
-
-      return `${apiPrefix} error: Response code ${this.response.status}`
+      this.message = error.response
+        ? `${apiPrefix} error: Response code ${error.response.status}`
+        : `${apiPrefix} error: No response`
     }
 
-    return 'Unknown error'
-  }
-
-  toJSON() {
-    return this.axiosError.toJSON()
+    this.name = this.constructor.name
   }
 }

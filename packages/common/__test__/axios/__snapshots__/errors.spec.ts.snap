@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/axios/errors should extract the status code from the axios response 1`] = `
+Object {
+  "code": "Code",
+  "columnNumber": undefined,
+  "config": Object {
+    "url": "https://domain/api-name/api-version?param=foo",
+  },
+  "description": undefined,
+  "fileName": undefined,
+  "lineNumber": undefined,
+  "message": "api-name (api-version) error: Response code 404",
+  "name": "SellingPartnerApiError",
+  "number": undefined,
+  "stack": undefined,
+  "status": 404,
+}
+`;
+
+exports[`src/axios/errors should handle response-less errors 1`] = `
+Object {
+  "code": "Code",
+  "columnNumber": undefined,
+  "config": Object {
+    "url": "https://domain/api-name/api-version?param=foo",
+  },
+  "description": undefined,
+  "fileName": undefined,
+  "lineNumber": undefined,
+  "message": "api-name (api-version) error: No response",
+  "name": "SellingPartnerApiError",
+  "number": undefined,
+  "stack": undefined,
+  "status": null,
+}
+`;

@@ -42,7 +42,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
         run: |
-          yarn lerna publish from-package --create-release github --no-verify-access --yes
+          yarn lerna publish --create-release github --no-verify-access --yes
 
   docs:
     name: Update and publish documentation

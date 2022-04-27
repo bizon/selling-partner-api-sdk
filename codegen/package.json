@@ -6,7 +6,7 @@
     "check:ts": "yarn tsc --noEmit"
   },
   "dependencies": {
-    "@openapitools/openapi-generator-cli": "^2.4.26",
+    "@openapitools/openapi-generator-cli": "^2.5.1",
     "bluebird": "^3.7.2",
     "camelcase": "^6.3.0",
     "chalk": "^4.1.2",

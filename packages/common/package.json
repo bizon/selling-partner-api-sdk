@@ -30,8 +30,13 @@
     "@sp-api-sdk/auth": "^1.9.12",
     "aws4-axios": "^2.4.9",
     "axios": "^0.27.2",
+    "axios-logger": "^2.6.0",
     "axios-retry": "^3.2.4",
     "read-pkg-up": "^7.0.1"
+  },
+  "devDependencies": {
+    "nock": "^13.2.4",
+    "strip-ansi": "^6.0.1"
   },
   "repository": {
     "type": "git",
@@ -50,8 +55,5 @@
     "mws",
     "selling partner api",
     "marketplace webservice"
-  ],
-  "devDependencies": {
-    "nock": "^13.2.4"
-  }
+  ]
 }

@@ -64,6 +64,29 @@ const client = new VendorDirectFulfillmentSandboxTestDataApiClient({
 
 The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon.com/sp-api/docs).
 
+## Logging
+
+You can enable logging for both SP-API requests and responses by configuring the `logging.request` and `logging.response` properties.
+
+```javascript
+const client = new VendorDirectFulfillmentSandboxTestDataApiClient({
+  auth,
+  region: 'eu',
+  logging: {
+    request: {
+      logger: console.debug
+    },
+    response: {
+      logger: console.debug
+    }
+  },
+})
+```
+
+Specifying `true` will use the default options, specifying an object will allow you to override the default options.  
+This uses [axios-logger](https://github.com/hg-pyun/axios-logger) under the hood.
+
+
 ## License
 
 MIT

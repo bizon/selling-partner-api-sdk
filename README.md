@@ -65,6 +65,14 @@ This repository contains an API client for each of the available Selling Partner
 The API clients are automatically generated from the Swagger/OpenAPI models from [the official models repository](https://github.com/amzn/selling-partner-api-models).
 [A code generation workflow](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/codegen.yml) runs twice a day and will create a PR on this repository whenever there are changes to the models.
 
+## Features
+
+This SDK supports the following features:
+
+- Authenticating using IAM Roles, Users and STS sessions.
+- Retrying rate-limited requests by respecting the documented rate-limts and possibly provided headers.
+- Logging (non-auth) API requests or responses.
+
 ## Code generation
 
 Some of the source Open API models are invalid (see the [issues](https://github.com/amzn/selling-partner-api-models/issues) and [PRs](https://github.com/amzn/selling-partner-api-models/pulls) on the Amazon repository), so this SDK defines some patches to account for those errors.

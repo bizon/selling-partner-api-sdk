@@ -1,5 +1,7 @@
 import nock from 'nock'
+import stripAnsi from 'strip-ansi'
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+
 import {createAxiosInstance} from '../../src/axios'
 import {SellingPartnerApiError} from '../../src/errors'
 
@@ -90,6 +92,56 @@ describe('src/axios/create-instance', () => {
     })
   })
 
+  describe('Logging', () => {
+    it('should allow logging requests', async () => {
+      nock('http://www.example.com').get('/test?foo=bar').reply(200)
+      const requestLogger = jest.fn<string, any>()
+
+      const auth = new SellingPartnerApiAuth({refreshToken: ''})
+      const instance = createAxiosInstance({
+        auth,
+        region: 'eu',
+        logging: {
+          request: {
+            logger: requestLogger,
+          },
+        },
+      })
+
+      await instance.get('http://www.example.com/test?foo=bar')
+
+      expect(requestLogger).toHaveBeenCalledTimes(1)
+      expect(stripAnsi(requestLogger.mock.calls[0][0])).toBe(
+        '[sp-api-sdk/eu][Request] GET http://www.example.com/test?foo=bar',
+      )
+    })
+
+    it('should allow logging responses', async () => {
+      nock('http://www.example.com').get('/test').reply(200, undefined, {
+        'x-test-header': 'header',
+      })
+      const responseLogger = jest.fn<string, any>()
+
+      const auth = new SellingPartnerApiAuth({refreshToken: ''})
+      const instance = createAxiosInstance({
+        auth,
+        region: 'na',
+        logging: {
+          response: {
+            logger: responseLogger,
+          },
+        },
+      })
+
+      await instance.get('http://www.example.com/test')
+
+      expect(responseLogger).toHaveBeenCalledTimes(1)
+      expect(stripAnsi(responseLogger.mock.calls[0][0])).toBe(
+        '[sp-api-sdk/na][Response] GET http://www.example.com/test 200 {"x-test-header":"header"}',
+      )
+    })
+  })
+
   describe('Handling response with status != 2xx', () => {
     it('should throw a SellingPartnerApiError instance', async () => {
       nock('http://www.example.com').get('/test').reply(400, 'rate limited')
@@ -105,7 +157,7 @@ describe('src/axios/create-instance', () => {
       )
     })
 
-    it('should have the good message when a response has been sent', async () => {
+    it('should throw an error when the reponse has errored', async () => {
       nock('http://www.example.com').get('/apiName/apiVersion/path').reply(429, 'rate limited')
 
       const auth = new SellingPartnerApiAuth({refreshToken: ''})
@@ -119,7 +171,7 @@ describe('src/axios/create-instance', () => {
       )
     })
 
-    it('should have the good message when a response hasn’t been sent', async () => {
+    it('should throw when there wasn’t a response', async () => {
       const auth = new SellingPartnerApiAuth({refreshToken: ''})
       const instance = createAxiosInstance({
         auth,

@@ -39,7 +39,7 @@ describe('src/client', () => {
     expect(client).toBeInstanceOf(VendorTransactionStatusApiClient)
   })
 
-  it('should create a client instant which retry on 429', () => {
+  it('should create a client instance which retries on 429', () => {
     const auth = new SellingPartnerApiAuth({refreshToken: ''})
     const onRetry = () => ''
     const client = new VendorTransactionStatusApiClient({

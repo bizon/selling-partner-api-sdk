@@ -22,7 +22,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@jest/types": "^28.0.1",
+    "@jest/types": "^28.0.2",
     "@tsconfig/node14": "^1.0.0",
     "@types/jest": "^27.4.1",
     "conventional-changelog-conventionalcommits": "^4.6.3",

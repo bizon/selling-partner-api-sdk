@@ -1309,10 +1309,10 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
-"@jest/types@^28.0.0":
-  version "28.0.0"
-  resolved "https://registry.yarnpkg.com/@jest/types/-/types-28.0.0.tgz#1818a07d26b204c1c34a5b22474d0a32f4b02a8d"
-  integrity sha512-4rxVTiBbSjsl8V9sXkspfxW+t2Tdcmmc3fX7AU49gVrRpjXMjEDurSx/iruXnOSor4PTL0fwO61/2+n1XQ/RgA==
+"@jest/types@^28.0.1":
+  version "28.0.1"
+  resolved "https://registry.yarnpkg.com/@jest/types/-/types-28.0.1.tgz#4bf819b570efd6fc89d8fa45a7b2c13db58800c3"
+  integrity sha512-Z48DBfQDtTZZAImaa1m8O1SCP9gx355FhuA6xuS8e7V5gQbj4l2hk/+EELN4UU/O9i5gjQuc94N/gC61/Qxfxw==
   dependencies:
     "@jest/schemas" "^28.0.0"
     "@types/istanbul-lib-coverage" "^2.0.0"

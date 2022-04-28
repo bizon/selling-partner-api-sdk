@@ -15,24 +15,14 @@
   "typedocOptions": {
     "name": "Selling Partner API SDK for JavaScript",
     "out": "docs",
-    "mode": "modules",
     "readme": "README.md",
     "excludePrivate": true,
-    "excludeNotExported": true,
     "excludeExternals": true,
-    "resolveJsonModule": true,
-    "lernaExclude": [
-      "@sp-api-sdk/generator"
+    "entryPointStrategy": "packages",
+    "entryPoints": [
+      "packages/*",
+      "clients/*"
     ],
-    "exclude": [
-      "**/__test__/**",
-      "**/jest.config.ts",
-      "clients/*/src/api-model/api/**",
-      "clients/*/src/api-model/*.ts"
-    ],
-    "plugin": [
-      "typedoc-plugin-lerna-packages",
-      "typedoc-plugin-remove-references"
-    ]
+    "internalNamespace": "<internal>"
   }
 }

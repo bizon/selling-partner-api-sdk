@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`src/axios/errors should extract the status code from the axios response 1`] = `
+exports[`src/errors should extract the status code from the axios response 1`] = `
 Object {
   "code": "Code",
   "columnNumber": undefined,
@@ -18,7 +18,7 @@ Object {
 }
 `;
 
-exports[`src/axios/errors should handle response-less errors 1`] = `
+exports[`src/errors should handle response-less errors 1`] = `
 Object {
   "code": "Code",
   "columnNumber": undefined,

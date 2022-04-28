@@ -92,10 +92,6 @@ async function generateClientVersion(modelFilePath: string) {
     pascalCase: true,
     locale: false,
   })
-  const errorClassName = camelCase(`${clientNameBase}Error`, {
-    pascalCase: true,
-    locale: false,
-  })
 
   const paths = Object.values(doc.paths)
   const httpMethods = Object.values(paths[0]!)
@@ -190,12 +186,6 @@ async function generateClientVersion(modelFilePath: string) {
     await renderTemplate('codegen/templates/index.ts.mustache'),
   )
   await fs.writeFile(
-    `${clientDirectoryPath}/src/error.ts`,
-    await renderTemplate('codegen/templates/src/error.ts.mustache', {
-      className: errorClassName,
-    }),
-  )
-  await fs.writeFile(
     `${clientDirectoryPath}/src/client.ts`,
     await renderTemplate('codegen/templates/src/client.ts.mustache', {
       clientClassName,
@@ -204,7 +194,6 @@ async function generateClientVersion(modelFilePath: string) {
         locale: false,
         preserveConsecutiveUppercase: true,
       }),
-      errorClassName,
       rateLimits,
     }),
   )

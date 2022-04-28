@@ -6,7 +6,8 @@ import {sync as readPackageJson} from 'read-pkg-up'
 
 import type {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 
-import {SellingPartnerApiError} from '../errors'
+import {SellingPartnerApiError} from './errors'
+import {sellingPartnerRegions, type SellingPartnerRegion} from './regions'
 
 const {packageJson} = readPackageJson()!
 
@@ -25,42 +26,50 @@ export interface OnRetryParameters {
   rateLimit?: number
 }
 
-export type OnRetryHandler = (retryInfo: OnRetryParameters) => void
-
 export interface ClientConfiguration {
   auth: SellingPartnerApiAuth
-  region: string
+  region: SellingPartnerRegion
   userAgent?: string
   sandbox?: boolean
-  rateLimits?: RateLimit[]
-  onRetry?: OnRetryHandler
+  rateLimiting?: {
+    retry: boolean
+    onRetry?: (retryInfo: OnRetryParameters) => void
+  }
   logging?: {
     request?: RequestLogConfig | true
     response?: ResponseLogConfig | true
   }
 }
 
-type AxiosHeaders = Record<string, string | undefined>
+export function createAxiosInstance(
+  {
+    auth,
+    region,
+    userAgent = `${packageJson.name}/${packageJson.version}`,
+    sandbox = false,
+    rateLimiting,
+    logging,
+  }: ClientConfiguration,
+  rateLimits: RateLimit[],
+) {
+  const regionConfiguration = sellingPartnerRegions[region]
+  if (!regionConfiguration) {
+    throw new TypeError(`Unknown or unsupported region: ${region}`)
+  }
 
-export function createAxiosInstance({
-  auth,
-  userAgent = `${packageJson.name}/${packageJson.version}`,
-  region,
-  rateLimits,
-  onRetry,
-  logging,
-}: ClientConfiguration) {
   const instance = axios.create({
     headers: {
       'user-agent': userAgent,
     },
   })
 
-  if (rateLimits) {
+  const endpoint = regionConfiguration.endpoints[sandbox ? 'sandbox' : 'production']
+
+  if (rateLimiting?.retry) {
     axiosRetry(instance, {
       retryCondition: (error) => (error.response ? error.response.status === 429 : false),
       retryDelay(retryCount, error) {
-        const amznRateLimit = (error.response?.headers as AxiosHeaders)['x-amzn-ratelimit-limit']
+        const amznRateLimit = error.response?.headers['x-amzn-ratelimit-limit']
         const url = new URL(error.config.url!)
         const rateLimit = amznRateLimit
           ? Number.parseFloat(amznRateLimit)
@@ -72,8 +81,8 @@ export function createAxiosInstance({
         const delay =
           rateLimit && !Number.isNaN(rateLimit) ? (1 / rateLimit) * 1000 + 1500 : 60 * 1000
 
-        if (onRetry) {
-          onRetry({delay, rateLimit})
+        if (rateLimiting?.onRetry) {
+          rateLimiting.onRetry({delay, rateLimit})
         }
 
         return delay
@@ -82,7 +91,11 @@ export function createAxiosInstance({
   }
 
   instance.interceptors.request.use(async (config) => {
-    ;(config.headers as AxiosHeaders)['x-amz-access-token'] = await auth.accessToken.get()
+    if (!config.headers) {
+      config.headers = {}
+    }
+
+    config.headers['x-amz-access-token'] = await auth.accessToken.get()
 
     return config
   })
@@ -96,7 +109,7 @@ export function createAxiosInstance({
 
     return aws4Interceptor(
       {
-        region,
+        region: regionConfiguration.awsRegion,
         service: 'execute-api',
       },
       {
@@ -152,5 +165,5 @@ export function createAxiosInstance({
     )
   }
 
-  return instance
+  return {axios: instance, endpoint}
 }

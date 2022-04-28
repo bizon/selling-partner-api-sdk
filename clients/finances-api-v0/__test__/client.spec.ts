@@ -1,6 +1,5 @@
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
-import * as SdkCommon from '@sp-api-sdk/common'
-import {createAxiosInstance} from '@sp-api-sdk/common'
+import {createAxiosInstance, type ClientConfiguration} from '@sp-api-sdk/common'
 
 import {FinancesApiClient, clientRateLimits} from '../src/client'
 
@@ -14,47 +13,26 @@ jest.mock('@sp-api-sdk/auth', () => ({
 }))
 
 jest.mock('@sp-api-sdk/common', () => ({
-  ...jest.requireActual<typeof SdkCommon>('@sp-api-sdk/common'),
-  createAxiosInstance: jest.fn(),
+  ...jest.requireActual('@sp-api-sdk/common'),
+  createAxiosInstance: jest.fn(() => ({axios: undefined, enpoint: undefined})),
 }))
 
 describe('src/client', () => {
   it('should create a client instance', () => {
-    const auth = new SellingPartnerApiAuth({refreshToken: ''})
-    const client = new FinancesApiClient({
-      auth,
+    const configuration: ClientConfiguration = {
+      auth: new SellingPartnerApiAuth({refreshToken: ''}),
       region: 'eu',
       userAgent: 'USER_AGENT',
       sandbox: false,
-    })
+    }
+
+    const client = new FinancesApiClient(configuration)
 
     expect(createAxiosInstance).toBeCalledTimes(1)
-    expect((createAxiosInstance as jest.Mock).mock.calls[0][0]).toStrictEqual({
-      auth,
-      region: 'eu-west-1',
-      userAgent: 'USER_AGENT',
-      sandbox: false,
-    })
-
-    expect(client).toBeInstanceOf(FinancesApiClient)
-  })
-
-  it('should create a client instance which retries on 429', () => {
-    const auth = new SellingPartnerApiAuth({refreshToken: ''})
-    const onRetry = () => ''
-    const client = new FinancesApiClient({
-      auth,
-      region: 'eu',
-      rateLimiting: {retry: true, onRetry},
-    })
-
-    expect(createAxiosInstance).toBeCalledTimes(1)
-    expect((createAxiosInstance as jest.Mock).mock.calls[0][0]).toStrictEqual({
-      auth,
-      region: 'eu-west-1',
-      rateLimits: clientRateLimits,
-      onRetry,
-    })
+    expect((createAxiosInstance as jest.Mock).mock.calls[0]).toEqual([
+      configuration,
+      clientRateLimits,
+    ])
 
     expect(client).toBeInstanceOf(FinancesApiClient)
   })

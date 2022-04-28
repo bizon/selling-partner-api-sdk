@@ -5,7 +5,7 @@ const config: Config.InitialOptions = {
   testEnvironment: 'node',
   clearMocks: true,
   collectCoverage: true,
-  collectCoverageFrom: ['clients/*/src/**/*.ts', 'packages/*/src/**/*.ts'],
+  collectCoverageFrom: ['clients/*/src/*.ts', 'packages/*/src/**/*.ts'],
   coverageReporters: ['lcov', 'text-summary'],
 }
 

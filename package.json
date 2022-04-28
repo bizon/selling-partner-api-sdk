@@ -23,6 +23,7 @@
   "dependencies": {},
   "devDependencies": {
     "@jest/types": "^28.0.2",
+    "@knodes/typedoc-plugin-monorepo-readmes": "^0.22.4",
     "@lerna-lite/cli": "^1.0.5",
     "@tsconfig/node14": "^1.0.0",
     "@types/jest": "^27.4.1",
@@ -32,9 +33,8 @@
     "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",
     "turbo": "^1.2.5",
-    "typedoc": "^0.19.2",
-    "typedoc-plugin-lerna-packages": "^0.3.1",
-    "typedoc-plugin-remove-references": "^0.0.5",
+    "typedoc": "^0.22.15",
+    "typedoc-monorepo-link-types": "^0.0.2",
     "typescript": "^4.6.3",
     "xo": "^0.48.0"
   },

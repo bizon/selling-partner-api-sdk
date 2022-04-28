@@ -6,6 +6,7 @@
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
+  "typedocMain": "./index.ts",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

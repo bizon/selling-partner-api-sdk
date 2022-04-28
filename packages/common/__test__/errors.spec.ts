@@ -1,7 +1,7 @@
 import {AxiosError} from 'axios'
-import {SellingPartnerApiError} from '../../src/errors'
+import {SellingPartnerApiError} from '../src/errors'
 
-describe('src/axios/errors', () => {
+describe('src/errors', () => {
   const testError = new SellingPartnerApiError(new AxiosError('Original message', 'Code', {}))
 
   it('should expose the original axios error message', () => {

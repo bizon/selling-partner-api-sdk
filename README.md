@@ -20,6 +20,7 @@ Also, see the [generated documentation](https://bizon.github.io/selling-partner-
 
 This SDK supports the following features:
 
+- Installing only the API clients you need, versioned independently.
 - Passing client configuration through environment variables.
 - Authenticating using IAM Roles, Users and STS sessions.
 - Retrying rate-limited requests by respecting the documented rate-limts and possibly provided headers.

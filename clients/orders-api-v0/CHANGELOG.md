@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/orders-api-v0@1.11.2...@sp-api-sdk/orders-api-v0@1.12.0) (2022-04-28)
+
+### Features
+
+* add API request and response logging ([#358](https://github.com/bizon/selling-partner-api-sdk/issues/358)) ([a475daf](https://github.com/bizon/selling-partner-api-sdk/commit/a475daf869450ce0e5cb03b8ea31e7b5ebca9132))
+
 ### [1.11.2](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/orders-api-v0@1.11.1...@sp-api-sdk/orders-api-v0@1.11.2) (2022-04-27)
 
 ### Bug Fixes

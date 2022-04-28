@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-direct-fulfillment-transactions-api-2021-12-28@1.1.1...@sp-api-sdk/vendor-direct-fulfillment-transactions-api-2021-12-28@1.2.0) (2022-04-28)
+
+### Features
+
+* add API request and response logging ([#358](https://github.com/bizon/selling-partner-api-sdk/issues/358)) ([a475daf](https://github.com/bizon/selling-partner-api-sdk/commit/a475daf869450ce0e5cb03b8ea31e7b5ebca9132))
+
 ### [1.1.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-direct-fulfillment-transactions-api-2021-12-28@1.1.0...@sp-api-sdk/vendor-direct-fulfillment-transactions-api-2021-12-28@1.1.1) (2022-04-27)
 
 ### Bug Fixes

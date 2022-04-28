@@ -1,14 +1,17 @@
-import axios from 'axios'
+import axios, {type Method} from 'axios'
 import {aws4Interceptor} from 'aws4-axios'
 import axiosRetry from 'axios-retry'
+import {requestLogger, responseLogger} from 'axios-logger'
 import {sync as readPackageJson} from 'read-pkg-up'
-import type {Method} from 'axios'
 
 import type {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 
 import {SellingPartnerApiError} from '../errors'
 
 const {packageJson} = readPackageJson()!
+
+type RequestLogConfig = Exclude<Parameters<typeof requestLogger>[1], undefined>
+type ResponseLogConfig = Exclude<Parameters<typeof responseLogger>[1], undefined>
 
 export interface RateLimit {
   urlRegex: RegExp
@@ -31,6 +34,10 @@ export interface ClientConfiguration {
   sandbox?: boolean
   rateLimits?: RateLimit[]
   onRetry?: OnRetryHandler
+  logging?: {
+    request?: RequestLogConfig | true
+    response?: ResponseLogConfig | true
+  }
 }
 
 type AxiosHeaders = Record<string, string | undefined>
@@ -41,6 +48,7 @@ export function createAxiosInstance({
   region,
   rateLimits,
   onRetry,
+  logging,
 }: ClientConfiguration) {
   const instance = axios.create({
     headers: {
@@ -105,6 +113,44 @@ export function createAxiosInstance({
       throw axios.isAxiosError(error) ? new SellingPartnerApiError(error) : error
     },
   )
+
+  if (logging?.request) {
+    const requestLoggerOptions = logging.request === true ? undefined : logging.request
+
+    if (requestLoggerOptions?.headers) {
+      console.warn(
+        'WARNING: You have enabled logging of request headers, this can leak authentication information, you should disable in production.',
+      )
+    }
+
+    instance.interceptors.request.use((config) =>
+      requestLogger(config, {
+        prefixText: `sp-api-sdk/${region}`,
+        method: true,
+        url: true,
+        params: false,
+        data: true,
+        headers: false,
+        ...requestLoggerOptions,
+      }),
+    )
+  }
+
+  if (logging?.response) {
+    const responseLoggerOptions = logging.response === true ? undefined : logging.response
+
+    instance.interceptors.response.use((response) =>
+      responseLogger(response, {
+        prefixText: `sp-api-sdk/${region}`,
+        status: true,
+        statusText: false,
+        params: false,
+        data: false,
+        headers: true,
+        ...responseLoggerOptions,
+      }),
+    )
+  }
 
   return instance
 }

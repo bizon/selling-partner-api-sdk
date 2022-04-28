@@ -11,6 +11,11 @@ A modularized SDK library for Amazon Selling Partner API (fully typed in TypeScr
 [![Tests](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/tests.yml/badge.svg)](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/tests.yml)
 [![Release](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/release.yml/badge.svg)](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/release.yml)
 
+## Documentation
+
+To learn more about the Selling Partner API, visit the [official Amazon documentation](https://developer-docs.amazon.com/sp-api/docs).  
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/) for each API client.
+
 ## Clients
 
 This repository contains an API client for each of the available Selling Partner API version:

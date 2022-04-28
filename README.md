@@ -16,6 +16,15 @@ A modularized SDK library for Amazon Selling Partner API (fully typed in TypeScr
 To learn more about the Selling Partner API, visit the [official Amazon documentation](https://developer-docs.amazon.com/sp-api/docs).  
 Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/) for each API client.
 
+## Features
+
+This SDK supports the following features:
+
+- Passing client configuration through environment variables.
+- Authenticating using IAM Roles, Users and STS sessions.
+- Retrying rate-limited requests by respecting the documented rate-limts and possibly provided headers.
+- Logging (non-auth) API requests or responses.
+
 ## Clients
 
 This repository contains an API client for each of the available Selling Partner API version:
@@ -69,15 +78,6 @@ This repository contains an API client for each of the available Selling Partner
 
 The API clients are automatically generated from the Swagger/OpenAPI models from [the official models repository](https://github.com/amzn/selling-partner-api-models).
 [A code generation workflow](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/codegen.yml) runs twice a day and will create a PR on this repository whenever there are changes to the models.
-
-## Features
-
-This SDK supports the following features:
-
-- Passing client configuration through environment variables.
-- Authenticating using IAM Roles, Users and STS sessions.
-- Retrying rate-limited requests by respecting the documented rate-limts and possibly provided headers.
-- Logging (non-auth) API requests or responses.
 
 ## Code generation
 

@@ -139,6 +139,7 @@ export function createAxiosInstance(
     instance.interceptors.request.use((config) =>
       requestLogger(config, {
         prefixText: `sp-api-sdk/${region}`,
+        dateFormat: 'isoDateTime',
         method: true,
         url: true,
         params: false,
@@ -155,6 +156,7 @@ export function createAxiosInstance(
     instance.interceptors.response.use((response) =>
       responseLogger(response, {
         prefixText: `sp-api-sdk/${region}`,
+        dateFormat: 'isoDateTime',
         status: true,
         statusText: false,
         params: false,

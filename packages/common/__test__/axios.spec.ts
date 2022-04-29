@@ -127,6 +127,7 @@ describe('src/axios', () => {
           region: 'eu',
           logging: {
             request: {
+              dateFormat: false,
               logger: requestLogger,
             },
           },
@@ -154,6 +155,7 @@ describe('src/axios', () => {
           region: 'eu',
           logging: {
             response: {
+              dateFormat: false,
               logger: responseLogger,
             },
           },

@@ -1,7 +1,7 @@
-import axios, {type Method} from 'axios'
+import axios, {type AxiosError, type Method} from 'axios'
 import {aws4Interceptor} from 'aws4-axios'
 import axiosRetry from 'axios-retry'
-import {requestLogger, responseLogger} from 'axios-logger'
+import {requestLogger, responseLogger, errorLogger} from 'axios-logger'
 import {sync as readPackageJson} from 'read-pkg-up'
 
 import type {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
@@ -153,17 +153,28 @@ export function createAxiosInstance(
   if (logging?.response) {
     const responseLoggerOptions = logging.response === true ? undefined : logging.response
 
-    instance.interceptors.response.use((response) =>
-      responseLogger(response, {
-        prefixText: `sp-api-sdk/${region}`,
-        dateFormat: 'isoDateTime',
-        status: true,
-        statusText: false,
-        params: false,
-        data: false,
-        headers: true,
-        ...responseLoggerOptions,
-      }),
+    instance.interceptors.response.use(
+      (response) =>
+        responseLogger(response, {
+          prefixText: `sp-api-sdk/${region}`,
+          dateFormat: 'isoDateTime',
+          status: true,
+          statusText: false,
+          params: false,
+          data: false,
+          headers: true,
+          ...responseLoggerOptions,
+        }),
+
+      async (error: AxiosError) =>
+        errorLogger(error, {
+          prefixText: `sp-api-sdk/${region}`,
+          dateFormat: 'isoDateTime',
+          params: false,
+          data: false,
+          headers: true,
+          ...responseLoggerOptions,
+        }),
     )
   }
 

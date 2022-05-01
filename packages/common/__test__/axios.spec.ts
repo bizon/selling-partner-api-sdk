@@ -170,6 +170,36 @@ describe('src/axios', () => {
         '[sp-api-sdk/eu][Response] GET https://www.example.com/test 200 {"x-test-header":"header"}',
       )
     })
+
+    it('should allow logging response errors', async () => {
+      nock('https://www.example.com').get('/test/error').reply(404, 'Not found', {
+        'x-test-header': 'header',
+      })
+      const responseLogger = jest.fn<string, any>()
+
+      const {axios} = createAxiosInstance(
+        {
+          auth: new SellingPartnerApiAuth({refreshToken: ''}),
+          region: 'eu',
+          logging: {
+            response: {
+              dateFormat: false,
+              logger: responseLogger,
+            },
+          },
+        },
+        [],
+      )
+
+      await expect(axios.get('https://www.example.com/test/error')).rejects.toThrow(
+        'test (error) error: Response code 404',
+      )
+
+      expect(responseLogger).toHaveBeenCalledTimes(1)
+      expect(stripAnsi(responseLogger.mock.calls[0][0])).toBe(
+        '[sp-api-sdk/eu][Error] GET https://www.example.com/test/error 404 {"x-test-header":"header"}',
+      )
+    })
   })
 
   describe('Handling response with status != 2xx', () => {
@@ -210,7 +240,6 @@ describe('src/axios', () => {
         {
           auth: new SellingPartnerApiAuth({refreshToken: ''}),
           region: 'eu',
-          sandbox: true,
         },
         [],
       )

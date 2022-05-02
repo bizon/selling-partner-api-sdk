@@ -104,13 +104,15 @@ const client = new AuthorizationApiClient({
     },
     response: {
       logger: console.debug
-    }
+    },
+    error: true,
   },
 })
 ```
 
 Specifying `true` will use the default options, specifying an object will allow you to override the default options.  
-This uses [axios-logger](https://github.com/hg-pyun/axios-logger) under the hood.
+This uses [axios-logger](https://github.com/hg-pyun/axios-logger) under the hood.  
+By default, if enabled, the `request` and `response` loggers will use `console.info` and the `error` logger will use `console.error`.
 
 
 ## License

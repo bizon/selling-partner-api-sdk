@@ -24,7 +24,7 @@ This SDK supports the following features:
 - Passing client configuration through environment variables.
 - Authenticating using IAM Roles, Users and STS sessions.
 - Retrying rate-limited requests by respecting the documented rate-limts and possibly provided headers.
-- Logging (non-auth) API requests or responses.
+- Logging (non-auth) API requests, responses and errors.
 
 ## Clients
 

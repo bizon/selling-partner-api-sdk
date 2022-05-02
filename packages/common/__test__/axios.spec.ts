@@ -175,16 +175,16 @@ describe('src/axios', () => {
       nock('https://www.example.com').get('/test/error').reply(404, 'Not found', {
         'x-test-header': 'header',
       })
-      const responseLogger = jest.fn<string, any>()
+      const errorLogger = jest.fn<string, any>()
 
       const {axios} = createAxiosInstance(
         {
           auth: new SellingPartnerApiAuth({refreshToken: ''}),
           region: 'eu',
           logging: {
-            response: {
+            error: {
               dateFormat: false,
-              logger: responseLogger,
+              logger: errorLogger,
             },
           },
         },
@@ -195,10 +195,76 @@ describe('src/axios', () => {
         'test (error) error: Response code 404',
       )
 
-      expect(responseLogger).toHaveBeenCalledTimes(1)
-      expect(stripAnsi(responseLogger.mock.calls[0][0])).toBe(
+      expect(errorLogger).toHaveBeenCalledTimes(1)
+      expect(stripAnsi(errorLogger.mock.calls[0][0])).toBe(
         '[sp-api-sdk/eu][Error] GET https://www.example.com/test/error 404 {"x-test-header":"header"}',
       )
+    })
+
+    it('should allow logging a successful request with everything enabled', async () => {
+      nock('https://www.example.com').get('/test?foo=bar').reply(200)
+      const requestLogger = jest.fn<string, any>()
+      const responseLogger = jest.fn<string, any>()
+      const errorLogger = jest.fn<string, any>()
+
+      const {axios} = createAxiosInstance(
+        {
+          auth: new SellingPartnerApiAuth({refreshToken: ''}),
+          region: 'eu',
+          logging: {
+            request: {
+              logger: requestLogger,
+            },
+            response: {
+              logger: responseLogger,
+            },
+            error: {
+              logger: errorLogger,
+            },
+          },
+        },
+        [],
+      )
+
+      await axios.get('https://www.example.com/test?foo=bar')
+
+      expect(requestLogger).toHaveBeenCalledTimes(1)
+      expect(responseLogger).toHaveBeenCalledTimes(1)
+      expect(errorLogger).toHaveBeenCalledTimes(0)
+    })
+
+    it('should allow logging a failed request with everything enabled', async () => {
+      nock('https://www.example.com').get('/test/error?foo=bar').reply(404)
+      const requestLogger = jest.fn<string, any>()
+      const responseLogger = jest.fn<string, any>()
+      const errorLogger = jest.fn<string, any>()
+
+      const {axios} = createAxiosInstance(
+        {
+          auth: new SellingPartnerApiAuth({refreshToken: ''}),
+          region: 'eu',
+          logging: {
+            request: {
+              logger: requestLogger,
+            },
+            response: {
+              logger: responseLogger,
+            },
+            error: {
+              logger: errorLogger,
+            },
+          },
+        },
+        [],
+      )
+
+      await expect(axios.get('https://www.example.com/test/error?foo=bar')).rejects.toThrow(
+        'test (error) error: Response code 404',
+      )
+
+      expect(requestLogger).toHaveBeenCalledTimes(1)
+      expect(responseLogger).toHaveBeenCalledTimes(0)
+      expect(errorLogger).toHaveBeenCalledTimes(1)
     })
   })
 

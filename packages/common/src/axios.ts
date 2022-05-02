@@ -13,6 +13,7 @@ const {packageJson} = readPackageJson()!
 
 type RequestLogConfig = Exclude<Parameters<typeof requestLogger>[1], undefined>
 type ResponseLogConfig = Exclude<Parameters<typeof responseLogger>[1], undefined>
+type ErrorLogConfig = Exclude<Parameters<typeof errorLogger>[1], undefined>
 
 export interface RateLimit {
   urlRegex: RegExp
@@ -38,6 +39,7 @@ export interface ClientConfiguration {
   logging?: {
     request?: RequestLogConfig | true
     response?: ResponseLogConfig | true
+    error?: ErrorLogConfig | true
   }
 }
 
@@ -145,6 +147,7 @@ export function createAxiosInstance(
         params: false,
         data: true,
         headers: false,
+        logger: console.info,
         ...requestLoggerOptions,
       }),
     )
@@ -153,19 +156,26 @@ export function createAxiosInstance(
   if (logging?.response) {
     const responseLoggerOptions = logging.response === true ? undefined : logging.response
 
-    instance.interceptors.response.use(
-      (response) =>
-        responseLogger(response, {
-          prefixText: `sp-api-sdk/${region}`,
-          dateFormat: 'isoDateTime',
-          status: true,
-          statusText: false,
-          params: false,
-          data: false,
-          headers: true,
-          ...responseLoggerOptions,
-        }),
+    instance.interceptors.response.use((response) =>
+      responseLogger(response, {
+        prefixText: `sp-api-sdk/${region}`,
+        dateFormat: 'isoDateTime',
+        status: true,
+        statusText: false,
+        params: false,
+        data: false,
+        headers: true,
+        logger: console.info,
+        ...responseLoggerOptions,
+      }),
+    )
+  }
 
+  if (logging?.error) {
+    const errorLoggerOptions = logging.error === true ? undefined : logging.error
+
+    instance.interceptors.response.use(
+      (response) => response,
       async (error: AxiosError) =>
         errorLogger(error, {
           prefixText: `sp-api-sdk/${region}`,
@@ -173,7 +183,8 @@ export function createAxiosInstance(
           params: false,
           data: false,
           headers: true,
-          ...responseLoggerOptions,
+          logger: console.error,
+          ...errorLoggerOptions,
         }),
     )
   }

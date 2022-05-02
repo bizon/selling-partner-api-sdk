@@ -1331,18 +1331,18 @@
     "@types/yargs" "^17.0.8"
     chalk "^4.0.0"
 
-"@knodes/typedoc-plugin-monorepo-readmes@^0.22.4":
-  version "0.22.4"
-  resolved "https://registry.yarnpkg.com/@knodes/typedoc-plugin-monorepo-readmes/-/typedoc-plugin-monorepo-readmes-0.22.4.tgz#0315446760f0cf1be4fce4f890aeb7083320c1f2"
-  integrity sha512-3rCKfVCVQhgYBCYNpotmqWqiWmgtjCoNp+pfYcYUkRX2CHlN9DfyEhU+K0+pN5qi7+q05ruxVOeH49tNJ3QmTA==
+"@knodes/typedoc-plugin-monorepo-readmes@^0.22.5":
+  version "0.22.5"
+  resolved "https://registry.yarnpkg.com/@knodes/typedoc-plugin-monorepo-readmes/-/typedoc-plugin-monorepo-readmes-0.22.5.tgz#aae62c85ef5bd0040edf9939facafafce6c697af"
+  integrity sha512-SJcMSTbCXu3VUrmwaQvebQW0oyLLRqLQDQltRS0QR7RJ64NV0xYaCmFC4jFjAoAX6hXvlmdP9T0cLALNAYhV2Q==
   dependencies:
-    "@knodes/typedoc-pluginutils" "~0.22.4"
-    pkg-up "^3.1.0"
+    "@knodes/typedoc-pluginutils" "~0.22.5"
+    find-up "^4.1.0"
 
-"@knodes/typedoc-pluginutils@~0.22.4":
-  version "0.22.4"
-  resolved "https://registry.yarnpkg.com/@knodes/typedoc-pluginutils/-/typedoc-pluginutils-0.22.4.tgz#899b9ff54851056b963dd1f1ef3552b96e199253"
-  integrity sha512-qLkwf14IIoTXKnlNjZPnEz5IupFDfAaa+ggPjQE1ZaiElA0o4PGgq58z0dW8U8WVTVNvD4nSN7jFLqB599jt7Q==
+"@knodes/typedoc-pluginutils@~0.22.5":
+  version "0.22.5"
+  resolved "https://registry.yarnpkg.com/@knodes/typedoc-pluginutils/-/typedoc-pluginutils-0.22.5.tgz#e14532edb354090b0458efbd0e3c44065f04ba60"
+  integrity sha512-527UEx8EKL0hS69KiyS/M+lPECyyAsiBKM9aCoWrcq2wuVDvgpYdmPtWYaNvjcq+L4e29soAk3PsHNDTJhP3/w==
   dependencies:
     pkg-up "^3.1.0"
     semver "^7.3.5"

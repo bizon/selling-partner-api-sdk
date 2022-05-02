@@ -64,10 +64,6 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile --non-interactive --prefer-offline
 
-      - name: Check that there are no unreleased changes
-        run: |
-          (! yarn -s lerna diff | grep -q ^)
-
       - name: Build documentation
         run: yarn typedoc
         env:

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.10.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/merchant-fulfillment-api-v0@1.10.0...@sp-api-sdk/merchant-fulfillment-api-v0@1.10.1) (2022-05-02)
+
+### Bug Fixes
+
+* allow independent error logging configuration ([#365](https://github.com/bizon/selling-partner-api-sdk/issues/365)) ([c2602cd](https://github.com/bizon/selling-partner-api-sdk/commit/c2602cda750a2634de5e1a188bb8e12cfb4feb15))
+
 ## [1.10.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/merchant-fulfillment-api-v0@1.9.3...@sp-api-sdk/merchant-fulfillment-api-v0@1.10.0) (2022-04-28)
 
 ### Features

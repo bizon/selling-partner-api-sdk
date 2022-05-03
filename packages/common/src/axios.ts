@@ -177,15 +177,18 @@ export function createAxiosInstance(
     instance.interceptors.response.use(
       (response) => response,
       async (error: AxiosError) =>
-        errorLogger(error, {
-          prefixText: `sp-api-sdk/${region}`,
-          dateFormat: 'isoDateTime',
-          params: false,
-          data: false,
-          headers: true,
-          logger: console.error,
-          ...errorLoggerOptions,
-        }),
+        // TODO: remove this check when https://github.com/hg-pyun/axios-logger/pull/110 is merged
+        error.config
+          ? errorLogger(error, {
+              prefixText: `sp-api-sdk/${region}`,
+              dateFormat: 'isoDateTime',
+              params: false,
+              data: false,
+              headers: true,
+              logger: console.error,
+              ...errorLoggerOptions,
+            })
+          : error,
     )
   }
 

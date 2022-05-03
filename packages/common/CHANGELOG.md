@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.9.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.9.0...@sp-api-sdk/common@1.9.1) (2022-05-03)
+
+### Bug Fixes
+
+* **common:** ensure that error.config is defined in error logger ([#373](https://github.com/bizon/selling-partner-api-sdk/issues/373)) ([d0e831c](https://github.com/bizon/selling-partner-api-sdk/commit/d0e831cb8a062a0c72b6519834e812f259329538))
+
 ## [1.9.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.8.0...@sp-api-sdk/common@1.9.0) (2022-05-02)
 
 ### Features

@@ -27,7 +27,7 @@
     "test": "NODE_ENV='test' yarn jest"
   },
   "dependencies": {
-    "@aws-sdk/client-sts": "^3.82.0",
+    "@aws-sdk/client-sts": "^3.85.0",
     "got": "^11.8.3",
     "read-pkg-up": "^7.0.1"
   },

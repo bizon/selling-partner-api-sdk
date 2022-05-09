@@ -1,4 +1,4 @@
-import axios, {type AxiosError, type Method} from 'axios'
+import axios, {type Method} from 'axios'
 import {aws4Interceptor} from 'aws4-axios'
 import axiosRetry from 'axios-retry'
 import {requestLogger, responseLogger, errorLogger} from 'axios-logger'
@@ -176,19 +176,16 @@ export function createAxiosInstance(
 
     instance.interceptors.response.use(
       (response) => response,
-      async (error: AxiosError) =>
-        // TODO: remove this check when https://github.com/hg-pyun/axios-logger/pull/110 is merged
-        error.config
-          ? errorLogger(error, {
-              prefixText: `sp-api-sdk/${region}`,
-              dateFormat: 'isoDateTime',
-              params: false,
-              data: false,
-              headers: true,
-              logger: console.error,
-              ...errorLoggerOptions,
-            })
-          : error,
+      async (error) =>
+        errorLogger(error, {
+          prefixText: `sp-api-sdk/${region}`,
+          dateFormat: 'isoDateTime',
+          params: false,
+          data: false,
+          headers: true,
+          logger: console.error,
+          ...errorLoggerOptions,
+        }),
     )
   }
 

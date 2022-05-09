@@ -1840,11 +1840,6 @@
     "@types/node" "*"
     "@types/responselike" "*"
 
-"@types/dateformat@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@types/dateformat/-/dateformat-3.0.1.tgz#98d747a2e5e9a56070c6bf14e27bff56204e34cc"
-  integrity sha512-KlPPdikagvL6ELjWsljbyDIPzNCeliYkqRpI+zea99vBBbCIA5JNshZAwQKTON139c87y9qvTFVgkFd14rtS4g==
-
 "@types/eslint@^7.2.13":
   version "7.2.13"
   resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-7.2.13.tgz#e0ca7219ba5ded402062ad6f926d491ebb29dd53"
@@ -2368,12 +2363,11 @@ aws4@^1.8.0, aws4@^1.9.1:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
 
-axios-logger@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/axios-logger/-/axios-logger-2.6.0.tgz#8baa8164846481530b1f822bf760eaf004d33d98"
-  integrity sha512-ogDepYNCul91KWf+BV8tweB3gm4n2apA69L9aY5fUO2Pvck/gIK4Q+zs7avduyxaOn88ZzSWv0PeMZaxBt+YOw==
+axios-logger@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/axios-logger/-/axios-logger-2.6.1.tgz#2d251bc9902810e5ce4b9f0375a0e663b822379a"
+  integrity sha512-eWyd9n9YtjwD+NWh1gVeuGIoR9AsNsNO2Cr7JLw/6CiM3wvRwaU0fr7Rub6+lD9OwBMNFlzkBGBmiQZOOp/rOA==
   dependencies:
-    "@types/dateformat" "^3.0.1"
     chalk "^4.1.0"
     dateformat "^3.0.3"
 

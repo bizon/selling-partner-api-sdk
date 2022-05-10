@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.9.2](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.9.1...@sp-api-sdk/common@1.9.2) (2022-05-10)
+
+### Bug Fixes
+
+* **deps:** bump axios-logger from 2.6.0 to 2.6.1 ([#375](https://github.com/bizon/selling-partner-api-sdk/issues/375)) ([db839e5](https://github.com/bizon/selling-partner-api-sdk/commit/db839e54347378f0398ec09005c7ed1b9598bd89))
+
 ### [1.9.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.9.0...@sp-api-sdk/common@1.9.1) (2022-05-03)
 
 ### Bug Fixes

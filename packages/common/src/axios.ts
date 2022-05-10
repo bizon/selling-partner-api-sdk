@@ -180,6 +180,8 @@ export function createAxiosInstance(
         errorLogger(error, {
           prefixText: `sp-api-sdk/${region}`,
           dateFormat: 'isoDateTime',
+          status: true,
+          statusText: false,
           params: false,
           data: false,
           headers: true,

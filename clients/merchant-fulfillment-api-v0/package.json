@@ -24,7 +24,7 @@
     "build:es": "tsc -p tsconfig.es.json",
     "build": "yarn build:cjs && yarn build:es",
     "clean": "rimraf dist",
-    "test": "NODE_ENV='test' yarn jest"
+    "test": "jest"
   },
   "dependencies": {
     "@sp-api-sdk/auth": "^1.9.15",

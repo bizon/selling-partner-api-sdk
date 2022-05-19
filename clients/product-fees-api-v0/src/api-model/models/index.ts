@@ -1,5 +1,6 @@
 export * from './fee-detail';
 export * from './fees-estimate';
+export * from './fees-estimate-by-id-request';
 export * from './fees-estimate-error';
 export * from './fees-estimate-identifier';
 export * from './fees-estimate-request';
@@ -7,6 +8,8 @@ export * from './fees-estimate-result';
 export * from './get-my-fees-estimate-request';
 export * from './get-my-fees-estimate-response';
 export * from './get-my-fees-estimate-result';
+export * from './get-my-fees-estimates-error-list';
+export * from './id-type';
 export * from './included-fee-detail';
 export * from './model-error';
 export * from './money-type';

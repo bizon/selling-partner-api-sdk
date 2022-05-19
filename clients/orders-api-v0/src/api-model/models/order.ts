@@ -263,6 +263,12 @@ export interface Order {
      */
     IsISPU?: boolean;
     /**
+     * When true, this order is marked to be delivered to an Access Point. The access location is chosen by the customer. Access Points include Amazon Hub Lockers, Amazon Hub Counters, and pickup points operated by carriers.
+     * @type {boolean}
+     * @memberof Order
+     */
+    IsAccessPointOrder?: boolean;
+    /**
      * 
      * @type {MarketplaceTaxInfo}
      * @memberof Order

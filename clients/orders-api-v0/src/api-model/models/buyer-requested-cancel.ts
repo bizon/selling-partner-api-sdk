@@ -27,7 +27,7 @@ export interface BuyerRequestedCancel {
      */
     IsBuyerRequestedCancel?: boolean;
     /**
-     * Reason for buyer requesting cancel
+     * The reason that the buyer requested cancellation.
      * @type {string}
      * @memberof BuyerRequestedCancel
      */

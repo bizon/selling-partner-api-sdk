@@ -31,6 +31,20 @@ export const clientRateLimits: RateLimit[] = [
     rate: 5,
     burst: 10,
   },
+  {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/batches/products/pricing/v0/itemOffers$'),
+    rate: 0.5,
+    burst: 1,
+  },
+  {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/batches/products/pricing/v0/listingOffers$'),
+    rate: 0.5,
+    burst: 1,
+  },
 ]
 
 export class ProductPricingApiClient extends ProductPricingApi {

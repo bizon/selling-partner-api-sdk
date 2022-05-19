@@ -1,0 +1,53 @@
+{
+  "name": "@sp-api-sdk/catalog-items-api-2022-04-01",
+  "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
+  "description": "The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog. For more information, refer to the Catalog Items API Use Case Guide.",
+  "version": "1.0.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
+  "typedocMain": "./index.ts",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "scripts": {
+    "check:ts": "yarn tsc --noEmit",
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:es": "tsc -p tsconfig.es.json",
+    "build": "yarn build:cjs && yarn build:es",
+    "clean": "rimraf dist",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@sp-api-sdk/auth": "^1.9.16",
+    "@sp-api-sdk/common": "^1.9.2",
+    "axios": "^0.27.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bizon/selling-partner-api-sdk.git",
+    "directory": "clients/catalog-items-api-2022-04-01"
+  },
+  "bugs": {
+    "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
+  },
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/catalog-items-api-2022-04-01",
+  "keywords": [
+    "amazon",
+    "bizon",
+    "marketplace web services",
+    "mws",
+    "selling partner api",
+    "sp api",
+    "sp sdk",
+    "catalog items api"
+  ]
+}

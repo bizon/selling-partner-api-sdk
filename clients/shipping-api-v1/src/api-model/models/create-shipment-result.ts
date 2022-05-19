@@ -26,13 +26,12 @@ export interface CreateShipmentResult {
      * @type {string}
      * @memberof CreateShipmentResult
      */
-    shipmentId: string;
+    'shipmentId': string;
     /**
      * A list of all the available rates that can be used to send the shipment.
      * @type {Array<Rate>}
      * @memberof CreateShipmentResult
      */
-    eligibleRates: Array<Rate>;
+    'eligibleRates': Array<Rate>;
 }
-
 

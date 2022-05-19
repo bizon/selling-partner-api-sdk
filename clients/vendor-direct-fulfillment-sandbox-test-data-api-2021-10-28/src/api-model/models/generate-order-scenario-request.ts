@@ -26,7 +26,6 @@ export interface GenerateOrderScenarioRequest {
      * @type {Array<OrderScenarioRequest>}
      * @memberof GenerateOrderScenarioRequest
      */
-    orders?: Array<OrderScenarioRequest>;
+    'orders'?: Array<OrderScenarioRequest>;
 }
-
 

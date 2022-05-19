@@ -27,13 +27,12 @@ export interface GetCustomerInvoicesResponse {
      * @type {CustomerInvoiceList}
      * @memberof GetCustomerInvoicesResponse
      */
-    payload?: CustomerInvoiceList;
+    'payload'?: CustomerInvoiceList;
     /**
      * 
      * @type {ErrorList}
      * @memberof GetCustomerInvoicesResponse
      */
-    errors?: ErrorList;
+    'errors'?: ErrorList;
 }
-
 

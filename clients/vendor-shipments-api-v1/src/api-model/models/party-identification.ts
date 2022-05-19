@@ -27,19 +27,18 @@ export interface PartyIdentification {
      * @type {Address}
      * @memberof PartyIdentification
      */
-    address?: Address;
+    'address'?: Address;
     /**
      * Assigned identification for the party.
      * @type {string}
      * @memberof PartyIdentification
      */
-    partyId: string;
+    'partyId': string;
     /**
      * Tax registration details of the entity.
      * @type {Array<TaxRegistrationDetails>}
      * @memberof PartyIdentification
      */
-    taxRegistrationDetails?: Array<TaxRegistrationDetails>;
+    'taxRegistrationDetails'?: Array<TaxRegistrationDetails>;
 }
-
 

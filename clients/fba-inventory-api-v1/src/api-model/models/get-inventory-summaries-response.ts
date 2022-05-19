@@ -27,19 +27,18 @@ export interface GetInventorySummariesResponse {
      * @type {GetInventorySummariesResult}
      * @memberof GetInventorySummariesResponse
      */
-    payload?: GetInventorySummariesResult;
+    'payload'?: GetInventorySummariesResult;
     /**
      * 
      * @type {Pagination}
      * @memberof GetInventorySummariesResponse
      */
-    pagination?: Pagination;
+    'pagination'?: Pagination;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetInventorySummariesResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

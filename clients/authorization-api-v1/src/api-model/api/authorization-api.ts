@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -37,7 +37,7 @@ export const AuthorizationApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAuthorizationCode: async (sellingPartnerId: string, developerId: string, mwsAuthToken: string, options: any = {}): Promise<RequestArgs> => {
+        getAuthorizationCode: async (sellingPartnerId: string, developerId: string, mwsAuthToken: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellingPartnerId' is not null or undefined
             assertParamExists('getAuthorizationCode', 'sellingPartnerId', sellingPartnerId)
             // verify required parameter 'developerId' is not null or undefined
@@ -70,7 +70,7 @@ export const AuthorizationApiAxiosParamCreator = function (configuration?: Confi
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -98,7 +98,7 @@ export const AuthorizationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAuthorizationCode(sellingPartnerId: string, developerId: string, mwsAuthToken: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAuthorizationCodeResponse>> {
+        async getAuthorizationCode(sellingPartnerId: string, developerId: string, mwsAuthToken: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAuthorizationCodeResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAuthorizationCode(sellingPartnerId, developerId, mwsAuthToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -170,7 +170,7 @@ export class AuthorizationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AuthorizationApi
      */
-    public getAuthorizationCode(requestParameters: AuthorizationApiGetAuthorizationCodeRequest, options?: any) {
+    public getAuthorizationCode(requestParameters: AuthorizationApiGetAuthorizationCodeRequest, options?: AxiosRequestConfig) {
         return AuthorizationApiFp(this.configuration).getAuthorizationCode(requestParameters.sellingPartnerId, requestParameters.developerId, requestParameters.mwsAuthToken, options).then((request) => request(this.axios, this.basePath));
     }
 }

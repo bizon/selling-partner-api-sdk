@@ -26,7 +26,6 @@ export interface CreateInboundShipmentPlanResult {
      * @type {Array<InboundShipmentPlan>}
      * @memberof CreateInboundShipmentPlanResult
      */
-    InboundShipmentPlans?: Array<InboundShipmentPlan>;
+    'InboundShipmentPlans'?: Array<InboundShipmentPlan>;
 }
-
 

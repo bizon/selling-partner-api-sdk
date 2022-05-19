@@ -25,13 +25,12 @@ export interface PrimeInformationType {
      * @type {boolean}
      * @memberof PrimeInformationType
      */
-    IsPrime: boolean;
+    'IsPrime': boolean;
     /**
      * Indicates whether the offer is an Amazon Prime offer throughout the entire marketplace where it is listed.
      * @type {boolean}
      * @memberof PrimeInformationType
      */
-    IsNationalPrime: boolean;
+    'IsNationalPrime': boolean;
 }
-
 

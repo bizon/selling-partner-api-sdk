@@ -25,7 +25,6 @@ export interface PostContentDocumentAsinRelationsRequest {
      * @type {Set<string>}
      * @memberof PostContentDocumentAsinRelationsRequest
      */
-    asinSet: Set<string>;
+    'asinSet': Set<string>;
 }
-
 

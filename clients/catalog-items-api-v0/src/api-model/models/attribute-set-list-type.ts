@@ -31,577 +31,576 @@ export interface AttributeSetListType {
      * @type {Array<string>}
      * @memberof AttributeSetListType
      */
-    Actor?: Array<string>;
+    'Actor'?: Array<string>;
     /**
      * The artist attributes of the item.
      * @type {Array<string>}
      * @memberof AttributeSetListType
      */
-    Artist?: Array<string>;
+    'Artist'?: Array<string>;
     /**
      * The aspect ratio attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    AspectRatio?: string;
+    'AspectRatio'?: string;
     /**
      * The audience rating attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    AudienceRating?: string;
+    'AudienceRating'?: string;
     /**
      * The author attributes of the item.
      * @type {Array<string>}
      * @memberof AttributeSetListType
      */
-    Author?: Array<string>;
+    'Author'?: Array<string>;
     /**
      * The back finding attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    BackFinding?: string;
+    'BackFinding'?: string;
     /**
      * The band material type attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    BandMaterialType?: string;
+    'BandMaterialType'?: string;
     /**
      * The binding attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    Binding?: string;
+    'Binding'?: string;
     /**
      * The Bluray region attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    BlurayRegion?: string;
+    'BlurayRegion'?: string;
     /**
      * The brand attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    Brand?: string;
+    'Brand'?: string;
     /**
      * The CERO age rating attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    CeroAgeRating?: string;
+    'CeroAgeRating'?: string;
     /**
      * The chain type attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    ChainType?: string;
+    'ChainType'?: string;
     /**
      * The clasp type attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    ClaspType?: string;
+    'ClaspType'?: string;
     /**
      * The color attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    Color?: string;
+    'Color'?: string;
     /**
      * The CPU manufacturer attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    CpuManufacturer?: string;
+    'CpuManufacturer'?: string;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof AttributeSetListType
      */
-    CpuSpeed?: DecimalWithUnits;
+    'CpuSpeed'?: DecimalWithUnits;
     /**
      * The CPU type attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    CpuType?: string;
+    'CpuType'?: string;
     /**
      * The creator attributes of the item.
      * @type {Array<CreatorType>}
      * @memberof AttributeSetListType
      */
-    Creator?: Array<CreatorType>;
+    'Creator'?: Array<CreatorType>;
     /**
      * The department attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    Department?: string;
+    'Department'?: string;
     /**
      * The director attributes of the item.
      * @type {Array<string>}
      * @memberof AttributeSetListType
      */
-    Director?: Array<string>;
+    'Director'?: Array<string>;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof AttributeSetListType
      */
-    DisplaySize?: DecimalWithUnits;
+    'DisplaySize'?: DecimalWithUnits;
     /**
      * The edition attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    Edition?: string;
+    'Edition'?: string;
     /**
      * The episode sequence attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    EpisodeSequence?: string;
+    'EpisodeSequence'?: string;
     /**
      * The ESRB age rating attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    EsrbAgeRating?: string;
+    'EsrbAgeRating'?: string;
     /**
      * The feature attributes of the item
      * @type {Array<string>}
      * @memberof AttributeSetListType
      */
-    Feature?: Array<string>;
+    'Feature'?: Array<string>;
     /**
      * The flavor attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    Flavor?: string;
+    'Flavor'?: string;
     /**
      * The format attributes of the item.
      * @type {Array<string>}
      * @memberof AttributeSetListType
      */
-    Format?: Array<string>;
+    'Format'?: Array<string>;
     /**
      * The gem type attributes of the item.
      * @type {Array<string>}
      * @memberof AttributeSetListType
      */
-    GemType?: Array<string>;
+    'GemType'?: Array<string>;
     /**
      * The genre attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    Genre?: string;
+    'Genre'?: string;
     /**
      * The golf club flex attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    GolfClubFlex?: string;
+    'GolfClubFlex'?: string;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof AttributeSetListType
      */
-    GolfClubLoft?: DecimalWithUnits;
+    'GolfClubLoft'?: DecimalWithUnits;
     /**
      * The hand orientation attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    HandOrientation?: string;
+    'HandOrientation'?: string;
     /**
      * The hard disk interface attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    HardDiskInterface?: string;
+    'HardDiskInterface'?: string;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof AttributeSetListType
      */
-    HardDiskSize?: DecimalWithUnits;
+    'HardDiskSize'?: DecimalWithUnits;
     /**
      * The hardware platform attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    HardwarePlatform?: string;
+    'HardwarePlatform'?: string;
     /**
      * The hazardous material type attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    HazardousMaterialType?: string;
+    'HazardousMaterialType'?: string;
     /**
      * 
      * @type {DimensionType}
      * @memberof AttributeSetListType
      */
-    ItemDimensions?: DimensionType;
+    'ItemDimensions'?: DimensionType;
     /**
      * The adult product attribute of the item.
      * @type {boolean}
      * @memberof AttributeSetListType
      */
-    IsAdultProduct?: boolean;
+    'IsAdultProduct'?: boolean;
     /**
      * The autographed attribute of the item.
      * @type {boolean}
      * @memberof AttributeSetListType
      */
-    IsAutographed?: boolean;
+    'IsAutographed'?: boolean;
     /**
      * The is eligible for trade in attribute of the item.
      * @type {boolean}
      * @memberof AttributeSetListType
      */
-    IsEligibleForTradeIn?: boolean;
+    'IsEligibleForTradeIn'?: boolean;
     /**
      * The is memorabilia attribute of the item.
      * @type {boolean}
      * @memberof AttributeSetListType
      */
-    IsMemorabilia?: boolean;
+    'IsMemorabilia'?: boolean;
     /**
      * The issues per year attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    IssuesPerYear?: string;
+    'IssuesPerYear'?: string;
     /**
      * The item part number attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    ItemPartNumber?: string;
+    'ItemPartNumber'?: string;
     /**
      * The label attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    Label?: string;
+    'Label'?: string;
     /**
      * The languages attribute of the item.
      * @type {Array<LanguageType>}
      * @memberof AttributeSetListType
      */
-    Languages?: Array<LanguageType>;
+    'Languages'?: Array<LanguageType>;
     /**
      * The legal disclaimer attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    LegalDisclaimer?: string;
+    'LegalDisclaimer'?: string;
     /**
      * 
      * @type {Price}
      * @memberof AttributeSetListType
      */
-    ListPrice?: Price;
+    'ListPrice'?: Price;
     /**
      * The manufacturer attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    Manufacturer?: string;
+    'Manufacturer'?: string;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof AttributeSetListType
      */
-    ManufacturerMaximumAge?: DecimalWithUnits;
+    'ManufacturerMaximumAge'?: DecimalWithUnits;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof AttributeSetListType
      */
-    ManufacturerMinimumAge?: DecimalWithUnits;
+    'ManufacturerMinimumAge'?: DecimalWithUnits;
     /**
      * The manufacturer parts warranty description attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    ManufacturerPartsWarrantyDescription?: string;
+    'ManufacturerPartsWarrantyDescription'?: string;
     /**
      * The material type attributes of the item.
      * @type {Array<string>}
      * @memberof AttributeSetListType
      */
-    MaterialType?: Array<string>;
+    'MaterialType'?: Array<string>;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof AttributeSetListType
      */
-    MaximumResolution?: DecimalWithUnits;
+    'MaximumResolution'?: DecimalWithUnits;
     /**
      * The media type attributes of the item.
      * @type {Array<string>}
      * @memberof AttributeSetListType
      */
-    MediaType?: Array<string>;
+    'MediaType'?: Array<string>;
     /**
      * The metal stamp attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    MetalStamp?: string;
+    'MetalStamp'?: string;
     /**
      * The metal type attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    MetalType?: string;
+    'MetalType'?: string;
     /**
      * The model attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    Model?: string;
+    'Model'?: string;
     /**
      * The number of discs attribute of the item.
      * @type {number}
      * @memberof AttributeSetListType
      */
-    NumberOfDiscs?: number;
+    'NumberOfDiscs'?: number;
     /**
      * The number of issues attribute of the item.
      * @type {number}
      * @memberof AttributeSetListType
      */
-    NumberOfIssues?: number;
+    'NumberOfIssues'?: number;
     /**
      * The number of items attribute of the item.
      * @type {number}
      * @memberof AttributeSetListType
      */
-    NumberOfItems?: number;
+    'NumberOfItems'?: number;
     /**
      * The number of pages attribute of the item.
      * @type {number}
      * @memberof AttributeSetListType
      */
-    NumberOfPages?: number;
+    'NumberOfPages'?: number;
     /**
      * The number of tracks attribute of the item.
      * @type {number}
      * @memberof AttributeSetListType
      */
-    NumberOfTracks?: number;
+    'NumberOfTracks'?: number;
     /**
      * The operating system attributes of the item.
      * @type {Array<string>}
      * @memberof AttributeSetListType
      */
-    OperatingSystem?: Array<string>;
+    'OperatingSystem'?: Array<string>;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof AttributeSetListType
      */
-    OpticalZoom?: DecimalWithUnits;
+    'OpticalZoom'?: DecimalWithUnits;
     /**
      * 
      * @type {DimensionType}
      * @memberof AttributeSetListType
      */
-    PackageDimensions?: DimensionType;
+    'PackageDimensions'?: DimensionType;
     /**
      * The package quantity attribute of the item.
      * @type {number}
      * @memberof AttributeSetListType
      */
-    PackageQuantity?: number;
+    'PackageQuantity'?: number;
     /**
      * The part number attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    PartNumber?: string;
+    'PartNumber'?: string;
     /**
      * The PEGI rating attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    PegiRating?: string;
+    'PegiRating'?: string;
     /**
      * The platform attributes of the item.
      * @type {Array<string>}
      * @memberof AttributeSetListType
      */
-    Platform?: Array<string>;
+    'Platform'?: Array<string>;
     /**
      * The processor count attribute of the item.
      * @type {number}
      * @memberof AttributeSetListType
      */
-    ProcessorCount?: number;
+    'ProcessorCount'?: number;
     /**
      * The product group attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    ProductGroup?: string;
+    'ProductGroup'?: string;
     /**
      * The product type name attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    ProductTypeName?: string;
+    'ProductTypeName'?: string;
     /**
      * The product type subcategory attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    ProductTypeSubcategory?: string;
+    'ProductTypeSubcategory'?: string;
     /**
      * The publication date attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    PublicationDate?: string;
+    'PublicationDate'?: string;
     /**
      * The publisher attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    Publisher?: string;
+    'Publisher'?: string;
     /**
      * The region code attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    RegionCode?: string;
+    'RegionCode'?: string;
     /**
      * The release date attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    ReleaseDate?: string;
+    'ReleaseDate'?: string;
     /**
      * The ring size attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    RingSize?: string;
+    'RingSize'?: string;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof AttributeSetListType
      */
-    RunningTime?: DecimalWithUnits;
+    'RunningTime'?: DecimalWithUnits;
     /**
      * The shaft material attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    ShaftMaterial?: string;
+    'ShaftMaterial'?: string;
     /**
      * The scent attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    Scent?: string;
+    'Scent'?: string;
     /**
      * The season sequence attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    SeasonSequence?: string;
+    'SeasonSequence'?: string;
     /**
      * The Seikodo product code attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    SeikodoProductCode?: string;
+    'SeikodoProductCode'?: string;
     /**
      * The size attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    Size?: string;
+    'Size'?: string;
     /**
      * The size per pearl attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    SizePerPearl?: string;
+    'SizePerPearl'?: string;
     /**
      * 
      * @type {Image}
      * @memberof AttributeSetListType
      */
-    SmallImage?: Image;
+    'SmallImage'?: Image;
     /**
      * The studio attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    Studio?: string;
+    'Studio'?: string;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof AttributeSetListType
      */
-    SubscriptionLength?: DecimalWithUnits;
+    'SubscriptionLength'?: DecimalWithUnits;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof AttributeSetListType
      */
-    SystemMemorySize?: DecimalWithUnits;
+    'SystemMemorySize'?: DecimalWithUnits;
     /**
      * The system memory type attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    SystemMemoryType?: string;
+    'SystemMemoryType'?: string;
     /**
      * The theatrical release date attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    TheatricalReleaseDate?: string;
+    'TheatricalReleaseDate'?: string;
     /**
      * The title attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    Title?: string;
+    'Title'?: string;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof AttributeSetListType
      */
-    TotalDiamondWeight?: DecimalWithUnits;
+    'TotalDiamondWeight'?: DecimalWithUnits;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof AttributeSetListType
      */
-    TotalGemWeight?: DecimalWithUnits;
+    'TotalGemWeight'?: DecimalWithUnits;
     /**
      * The warranty attribute of the item.
      * @type {string}
      * @memberof AttributeSetListType
      */
-    Warranty?: string;
+    'Warranty'?: string;
     /**
      * 
      * @type {Price}
      * @memberof AttributeSetListType
      */
-    WeeeTaxValue?: Price;
+    'WeeeTaxValue'?: Price;
 }
-
 

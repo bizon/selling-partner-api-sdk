@@ -26,13 +26,12 @@ export interface GetMessagingActionsForOrderResponseLinks {
      * @type {LinkObject}
      * @memberof GetMessagingActionsForOrderResponseLinks
      */
-    self: LinkObject;
+    'self': LinkObject;
     /**
      * Eligible actions for the specified amazonOrderId.
      * @type {Array<LinkObject>}
      * @memberof GetMessagingActionsForOrderResponseLinks
      */
-    actions: Array<LinkObject>;
+    'actions': Array<LinkObject>;
 }
-
 

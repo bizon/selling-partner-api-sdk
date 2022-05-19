@@ -25,4 +25,3 @@ import { ListingOffersRequestParamsAllOf } from './listing-offers-request-params
 export type ListingOffersRequestParams = BatchOffersRequestParams & ListingOffersRequestParamsAllOf;
 
 
-

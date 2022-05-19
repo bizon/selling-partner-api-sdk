@@ -25,25 +25,24 @@ export interface Contact {
      * @type {string}
      * @memberof Contact
      */
-    Name: string;
+    'Name': string;
     /**
      * The phone number of the contact person.
      * @type {string}
      * @memberof Contact
      */
-    Phone: string;
+    'Phone': string;
     /**
      * The email address of the contact person.
      * @type {string}
      * @memberof Contact
      */
-    Email: string;
+    'Email': string;
     /**
      * The fax number of the contact person.
      * @type {string}
      * @memberof Contact
      */
-    Fax?: string;
+    'Fax'?: string;
 }
-
 

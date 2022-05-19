@@ -25,19 +25,18 @@ export interface ItemImage {
      * @type {string}
      * @memberof ItemImage
      */
-    link: string;
+    'link': string;
     /**
      * Height of the image in pixels.
      * @type {number}
      * @memberof ItemImage
      */
-    height: number;
+    'height': number;
     /**
      * Width of the image in pixels.
      * @type {number}
      * @memberof ItemImage
      */
-    width: number;
+    'width': number;
 }
-
 

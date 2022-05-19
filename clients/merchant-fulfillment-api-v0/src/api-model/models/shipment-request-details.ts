@@ -31,61 +31,60 @@ export interface ShipmentRequestDetails {
      * @type {string}
      * @memberof ShipmentRequestDetails
      */
-    AmazonOrderId: string;
+    'AmazonOrderId': string;
     /**
      * A seller-defined order identifier.
      * @type {string}
      * @memberof ShipmentRequestDetails
      */
-    SellerOrderId?: string;
+    'SellerOrderId'?: string;
     /**
      * The list of items to be included in a shipment.
      * @type {Array<Item>}
      * @memberof ShipmentRequestDetails
      */
-    ItemList: Array<Item>;
+    'ItemList': Array<Item>;
     /**
      * 
      * @type {Address}
      * @memberof ShipmentRequestDetails
      */
-    ShipFromAddress: Address;
+    'ShipFromAddress': Address;
     /**
      * 
      * @type {PackageDimensions}
      * @memberof ShipmentRequestDetails
      */
-    PackageDimensions: PackageDimensions;
+    'PackageDimensions': PackageDimensions;
     /**
      * 
      * @type {Weight}
      * @memberof ShipmentRequestDetails
      */
-    Weight: Weight;
+    'Weight': Weight;
     /**
      * 
      * @type {string}
      * @memberof ShipmentRequestDetails
      */
-    MustArriveByDate?: string;
+    'MustArriveByDate'?: string;
     /**
      * 
      * @type {string}
      * @memberof ShipmentRequestDetails
      */
-    ShipDate?: string;
+    'ShipDate'?: string;
     /**
      * 
      * @type {ShippingServiceOptions}
      * @memberof ShipmentRequestDetails
      */
-    ShippingServiceOptions: ShippingServiceOptions;
+    'ShippingServiceOptions': ShippingServiceOptions;
     /**
      * 
      * @type {LabelCustomization}
      * @memberof ShipmentRequestDetails
      */
-    LabelCustomization?: LabelCustomization;
+    'LabelCustomization'?: LabelCustomization;
 }
-
 

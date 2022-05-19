@@ -25,13 +25,12 @@ export interface NonPartneredLtlDataInput {
      * @type {string}
      * @memberof NonPartneredLtlDataInput
      */
-    CarrierName: string;
+    'CarrierName': string;
     /**
      * The PRO number (\"progressive number\" or \"progressive ID\") assigned to the shipment by the carrier.
      * @type {string}
      * @memberof NonPartneredLtlDataInput
      */
-    ProNumber: string;
+    'ProNumber': string;
 }
-
 

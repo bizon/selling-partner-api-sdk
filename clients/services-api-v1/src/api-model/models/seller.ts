@@ -25,7 +25,6 @@ export interface Seller {
      * @type {string}
      * @memberof Seller
      */
-    sellerId?: string;
+    'sellerId'?: string;
 }
-
 

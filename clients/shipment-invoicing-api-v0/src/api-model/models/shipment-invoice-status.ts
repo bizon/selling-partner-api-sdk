@@ -19,12 +19,15 @@
  * @export
  * @enum {string}
  */
-export enum ShipmentInvoiceStatus {
-    Processing = 'Processing',
-    Accepted = 'Accepted',
-    Errored = 'Errored',
-    NotFound = 'NotFound'
-}
+
+export const ShipmentInvoiceStatus = {
+    Processing: 'Processing',
+    Accepted: 'Accepted',
+    Errored: 'Errored',
+    NotFound: 'NotFound'
+} as const;
+
+export type ShipmentInvoiceStatus = typeof ShipmentInvoiceStatus[keyof typeof ShipmentInvoiceStatus];
 
 
 

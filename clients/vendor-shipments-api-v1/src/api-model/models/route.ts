@@ -26,7 +26,6 @@ export interface Route {
      * @type {Array<Stop>}
      * @memberof Route
      */
-    stops: Array<Stop>;
+    'stops': Array<Stop>;
 }
-
 

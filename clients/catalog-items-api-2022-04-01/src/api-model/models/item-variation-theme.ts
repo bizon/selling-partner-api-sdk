@@ -25,13 +25,12 @@ export interface ItemVariationTheme {
      * @type {Array<string>}
      * @memberof ItemVariationTheme
      */
-    attributes?: Array<string>;
+    'attributes'?: Array<string>;
     /**
      * Variation theme indicating the combination of Amazon item catalog attributes that define the variation family.
      * @type {string}
      * @memberof ItemVariationTheme
      */
-    theme?: string;
+    'theme'?: string;
 }
-
 

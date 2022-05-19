@@ -27,13 +27,12 @@ export interface DestinationResource {
      * @type {SqsResource}
      * @memberof DestinationResource
      */
-    sqs?: SqsResource;
+    'sqs'?: SqsResource;
     /**
      * 
      * @type {EventBridgeResource}
      * @memberof DestinationResource
      */
-    eventBridge?: EventBridgeResource;
+    'eventBridge'?: EventBridgeResource;
 }
-
 

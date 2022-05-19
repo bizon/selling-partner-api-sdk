@@ -19,13 +19,16 @@
  * @export
  * @enum {string}
  */
-export enum ReturnItemDisposition {
-    Sellable = 'Sellable',
-    Defective = 'Defective',
-    CustomerDamaged = 'CustomerDamaged',
-    CarrierDamaged = 'CarrierDamaged',
-    FulfillerDamaged = 'FulfillerDamaged'
-}
+
+export const ReturnItemDisposition = {
+    Sellable: 'Sellable',
+    Defective: 'Defective',
+    CustomerDamaged: 'CustomerDamaged',
+    CarrierDamaged: 'CarrierDamaged',
+    FulfillerDamaged: 'FulfillerDamaged'
+} as const;
+
+export type ReturnItemDisposition = typeof ReturnItemDisposition[keyof typeof ReturnItemDisposition];
 
 
 

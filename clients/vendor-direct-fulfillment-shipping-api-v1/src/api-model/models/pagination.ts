@@ -25,7 +25,6 @@ export interface Pagination {
      * @type {string}
      * @memberof Pagination
      */
-    nextToken?: string;
+    'nextToken'?: string;
 }
-
 

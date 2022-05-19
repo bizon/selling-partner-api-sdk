@@ -25,13 +25,12 @@ export interface BuyerRequestedCancel {
      * @type {boolean}
      * @memberof BuyerRequestedCancel
      */
-    IsBuyerRequestedCancel?: boolean;
+    'IsBuyerRequestedCancel'?: boolean;
     /**
      * The reason that the buyer requested cancellation.
      * @type {string}
      * @memberof BuyerRequestedCancel
      */
-    BuyerCancelReason?: string;
+    'BuyerCancelReason'?: string;
 }
-
 

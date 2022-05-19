@@ -27,25 +27,24 @@ export interface OrderRegulatedInfo {
      * @type {string}
      * @memberof OrderRegulatedInfo
      */
-    AmazonOrderId: string;
+    'AmazonOrderId': string;
     /**
      * 
      * @type {RegulatedInformation}
      * @memberof OrderRegulatedInfo
      */
-    RegulatedInformation: RegulatedInformation;
+    'RegulatedInformation': RegulatedInformation;
     /**
      * Whether the order requires attaching a dosage information label when shipped.
      * @type {boolean}
      * @memberof OrderRegulatedInfo
      */
-    RequiresDosageLabel: boolean;
+    'RequiresDosageLabel': boolean;
     /**
      * 
      * @type {RegulatedOrderVerificationStatus}
      * @memberof OrderRegulatedInfo
      */
-    RegulatedOrderVerificationStatus: RegulatedOrderVerificationStatus;
+    'RegulatedOrderVerificationStatus': RegulatedOrderVerificationStatus;
 }
-
 

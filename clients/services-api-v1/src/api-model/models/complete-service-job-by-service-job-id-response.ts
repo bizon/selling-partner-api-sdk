@@ -25,7 +25,6 @@ export interface CompleteServiceJobByServiceJobIdResponse {
      * @type {Array<Error>}
      * @memberof CompleteServiceJobByServiceJobIdResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

@@ -26,19 +26,18 @@ export interface TransportResult {
      * @type {TransportStatus}
      * @memberof TransportResult
      */
-    TransportStatus: TransportStatus;
+    'TransportStatus': TransportStatus;
     /**
      * An error code that identifies the type of error that occured.
      * @type {string}
      * @memberof TransportResult
      */
-    ErrorCode?: string;
+    'ErrorCode'?: string;
     /**
      * A message that describes the error condition.
      * @type {string}
      * @memberof TransportResult
      */
-    ErrorDescription?: string;
+    'ErrorDescription'?: string;
 }
-
 

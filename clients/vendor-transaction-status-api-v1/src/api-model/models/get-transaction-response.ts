@@ -26,13 +26,12 @@ export interface GetTransactionResponse {
      * @type {TransactionStatus}
      * @memberof GetTransactionResponse
      */
-    payload?: TransactionStatus;
+    'payload'?: TransactionStatus;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetTransactionResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum FulfillmentChannelType {
-    Amazon = 'Amazon',
-    Merchant = 'Merchant'
-}
+
+export const FulfillmentChannelType = {
+    Amazon: 'Amazon',
+    Merchant: 'Merchant'
+} as const;
+
+export type FulfillmentChannelType = typeof FulfillmentChannelType[keyof typeof FulfillmentChannelType];
 
 
 

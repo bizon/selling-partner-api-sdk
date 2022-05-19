@@ -26,25 +26,24 @@ export interface GetFulfillmentPreviewItem {
      * @type {string}
      * @memberof GetFulfillmentPreviewItem
      */
-    sellerSku: string;
+    'sellerSku': string;
     /**
      * The item quantity.
      * @type {number}
      * @memberof GetFulfillmentPreviewItem
      */
-    quantity: number;
+    'quantity': number;
     /**
      * 
      * @type {Money}
      * @memberof GetFulfillmentPreviewItem
      */
-    perUnitDeclaredValue?: Money;
+    'perUnitDeclaredValue'?: Money;
     /**
      * A fulfillment order item identifier that the seller creates to track items in the fulfillment preview.
      * @type {string}
      * @memberof GetFulfillmentPreviewItem
      */
-    sellerFulfillmentOrderItemId: string;
+    'sellerFulfillmentOrderItemId': string;
 }
-
 

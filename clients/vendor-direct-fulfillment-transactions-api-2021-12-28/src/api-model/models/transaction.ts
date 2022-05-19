@@ -26,30 +26,27 @@ export interface Transaction {
      * @type {string}
      * @memberof Transaction
      */
-    transactionId: string;
+    'transactionId': string;
     /**
      * Current processing status of the transaction.
      * @type {string}
      * @memberof Transaction
      */
-    status: TransactionStatusEnum;
+    'status': TransactionStatusEnum;
     /**
      * 
      * @type {ErrorList}
      * @memberof Transaction
      */
-    errors?: ErrorList;
+    'errors'?: ErrorList;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum TransactionStatusEnum {
-    Failure = 'Failure',
-    Processing = 'Processing',
-    Success = 'Success'
-}
+export const TransactionStatusEnum = {
+    Failure: 'Failure',
+    Processing: 'Processing',
+    Success: 'Success'
+} as const;
 
+export type TransactionStatusEnum = typeof TransactionStatusEnum[keyof typeof TransactionStatusEnum];
 
 

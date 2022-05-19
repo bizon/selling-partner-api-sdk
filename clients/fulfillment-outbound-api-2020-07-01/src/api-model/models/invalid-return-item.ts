@@ -26,19 +26,18 @@ export interface InvalidReturnItem {
      * @type {string}
      * @memberof InvalidReturnItem
      */
-    sellerReturnItemId: string;
+    'sellerReturnItemId': string;
     /**
      * The identifier assigned to the item by the seller when the fulfillment order was created.
      * @type {string}
      * @memberof InvalidReturnItem
      */
-    sellerFulfillmentOrderItemId: string;
+    'sellerFulfillmentOrderItemId': string;
     /**
      * 
      * @type {InvalidItemReason}
      * @memberof InvalidReturnItem
      */
-    invalidItemReason: InvalidItemReason;
+    'invalidItemReason': InvalidItemReason;
 }
-
 

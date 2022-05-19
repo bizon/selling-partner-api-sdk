@@ -25,29 +25,24 @@ export interface LabelSpecification {
      * @type {string}
      * @memberof LabelSpecification
      */
-    labelFormat: LabelSpecificationLabelFormatEnum;
+    'labelFormat': LabelSpecificationLabelFormatEnum;
     /**
      * The label stock size specification in length and height. Enum of 4x6 only for now.
      * @type {string}
      * @memberof LabelSpecification
      */
-    labelStockSize: LabelSpecificationLabelStockSizeEnum;
+    'labelStockSize': LabelSpecificationLabelStockSizeEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum LabelSpecificationLabelFormatEnum {
-    Png = 'PNG'
-}
-/**
-    * @export
-    * @enum {string}
-    */
-export enum LabelSpecificationLabelStockSizeEnum {
-    _4x6 = '4x6'
-}
+export const LabelSpecificationLabelFormatEnum = {
+    Png: 'PNG'
+} as const;
 
+export type LabelSpecificationLabelFormatEnum = typeof LabelSpecificationLabelFormatEnum[keyof typeof LabelSpecificationLabelFormatEnum];
+export const LabelSpecificationLabelStockSizeEnum = {
+    _4x6: '4x6'
+} as const;
+
+export type LabelSpecificationLabelStockSizeEnum = typeof LabelSpecificationLabelStockSizeEnum[keyof typeof LabelSpecificationLabelStockSizeEnum];
 
 

@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -52,7 +52,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createDestination: async (body: CreateDestinationRequest, options: any = {}): Promise<RequestArgs> => {
+        createDestination: async (body: CreateDestinationRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createDestination', 'body', body)
             const localVarPath = `/notifications/v1/destinations`;
@@ -71,7 +71,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -88,7 +88,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createSubscription: async (notificationType: string, body: CreateSubscriptionRequest, options: any = {}): Promise<RequestArgs> => {
+        createSubscription: async (notificationType: string, body: CreateSubscriptionRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'notificationType' is not null or undefined
             assertParamExists('createSubscription', 'notificationType', notificationType)
             // verify required parameter 'body' is not null or undefined
@@ -110,7 +110,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -126,7 +126,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteDestination: async (destinationId: string, options: any = {}): Promise<RequestArgs> => {
+        deleteDestination: async (destinationId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'destinationId' is not null or undefined
             assertParamExists('deleteDestination', 'destinationId', destinationId)
             const localVarPath = `/notifications/v1/destinations/{destinationId}`
@@ -144,7 +144,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -160,7 +160,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteSubscriptionById: async (subscriptionId: string, notificationType: string, options: any = {}): Promise<RequestArgs> => {
+        deleteSubscriptionById: async (subscriptionId: string, notificationType: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'subscriptionId' is not null or undefined
             assertParamExists('deleteSubscriptionById', 'subscriptionId', subscriptionId)
             // verify required parameter 'notificationType' is not null or undefined
@@ -181,7 +181,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -196,7 +196,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDestination: async (destinationId: string, options: any = {}): Promise<RequestArgs> => {
+        getDestination: async (destinationId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'destinationId' is not null or undefined
             assertParamExists('getDestination', 'destinationId', destinationId)
             const localVarPath = `/notifications/v1/destinations/{destinationId}`
@@ -214,7 +214,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -228,7 +228,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDestinations: async (options: any = {}): Promise<RequestArgs> => {
+        getDestinations: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/notifications/v1/destinations`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -243,7 +243,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -258,7 +258,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSubscription: async (notificationType: string, options: any = {}): Promise<RequestArgs> => {
+        getSubscription: async (notificationType: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'notificationType' is not null or undefined
             assertParamExists('getSubscription', 'notificationType', notificationType)
             const localVarPath = `/notifications/v1/subscriptions/{notificationType}`
@@ -276,7 +276,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -292,7 +292,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSubscriptionById: async (subscriptionId: string, notificationType: string, options: any = {}): Promise<RequestArgs> => {
+        getSubscriptionById: async (subscriptionId: string, notificationType: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'subscriptionId' is not null or undefined
             assertParamExists('getSubscriptionById', 'subscriptionId', subscriptionId)
             // verify required parameter 'notificationType' is not null or undefined
@@ -313,7 +313,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -338,7 +338,7 @@ export const NotificationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createDestination(body: CreateDestinationRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateDestinationResponse>> {
+        async createDestination(body: CreateDestinationRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateDestinationResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createDestination(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -349,7 +349,7 @@ export const NotificationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createSubscription(notificationType: string, body: CreateSubscriptionRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateSubscriptionResponse>> {
+        async createSubscription(notificationType: string, body: CreateSubscriptionRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateSubscriptionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createSubscription(notificationType, body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -359,7 +359,7 @@ export const NotificationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteDestination(destinationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeleteDestinationResponse>> {
+        async deleteDestination(destinationId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeleteDestinationResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteDestination(destinationId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -370,7 +370,7 @@ export const NotificationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteSubscriptionById(subscriptionId: string, notificationType: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeleteSubscriptionByIdResponse>> {
+        async deleteSubscriptionById(subscriptionId: string, notificationType: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeleteSubscriptionByIdResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteSubscriptionById(subscriptionId, notificationType, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -380,7 +380,7 @@ export const NotificationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getDestination(destinationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDestinationResponse>> {
+        async getDestination(destinationId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDestinationResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getDestination(destinationId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -389,7 +389,7 @@ export const NotificationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getDestinations(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDestinationsResponse>> {
+        async getDestinations(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDestinationsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getDestinations(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -399,7 +399,7 @@ export const NotificationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSubscription(notificationType: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSubscriptionResponse>> {
+        async getSubscription(notificationType: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSubscriptionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getSubscription(notificationType, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -410,7 +410,7 @@ export const NotificationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSubscriptionById(subscriptionId: string, notificationType: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSubscriptionByIdResponse>> {
+        async getSubscriptionById(subscriptionId: string, notificationType: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSubscriptionByIdResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getSubscriptionById(subscriptionId, notificationType, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -634,7 +634,7 @@ export class NotificationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public createDestination(requestParameters: NotificationsApiCreateDestinationRequest, options?: any) {
+    public createDestination(requestParameters: NotificationsApiCreateDestinationRequest, options?: AxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).createDestination(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -645,7 +645,7 @@ export class NotificationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public createSubscription(requestParameters: NotificationsApiCreateSubscriptionRequest, options?: any) {
+    public createSubscription(requestParameters: NotificationsApiCreateSubscriptionRequest, options?: AxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).createSubscription(requestParameters.notificationType, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -656,7 +656,7 @@ export class NotificationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public deleteDestination(requestParameters: NotificationsApiDeleteDestinationRequest, options?: any) {
+    public deleteDestination(requestParameters: NotificationsApiDeleteDestinationRequest, options?: AxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).deleteDestination(requestParameters.destinationId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -667,7 +667,7 @@ export class NotificationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public deleteSubscriptionById(requestParameters: NotificationsApiDeleteSubscriptionByIdRequest, options?: any) {
+    public deleteSubscriptionById(requestParameters: NotificationsApiDeleteSubscriptionByIdRequest, options?: AxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).deleteSubscriptionById(requestParameters.subscriptionId, requestParameters.notificationType, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -678,7 +678,7 @@ export class NotificationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public getDestination(requestParameters: NotificationsApiGetDestinationRequest, options?: any) {
+    public getDestination(requestParameters: NotificationsApiGetDestinationRequest, options?: AxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).getDestination(requestParameters.destinationId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -688,7 +688,7 @@ export class NotificationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public getDestinations(options?: any) {
+    public getDestinations(options?: AxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).getDestinations(options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -699,7 +699,7 @@ export class NotificationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public getSubscription(requestParameters: NotificationsApiGetSubscriptionRequest, options?: any) {
+    public getSubscription(requestParameters: NotificationsApiGetSubscriptionRequest, options?: AxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).getSubscription(requestParameters.notificationType, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -710,7 +710,7 @@ export class NotificationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public getSubscriptionById(requestParameters: NotificationsApiGetSubscriptionByIdRequest, options?: any) {
+    public getSubscriptionById(requestParameters: NotificationsApiGetSubscriptionByIdRequest, options?: AxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).getSubscriptionById(requestParameters.subscriptionId, requestParameters.notificationType, options).then((request) => request(this.axios, this.basePath));
     }
 }

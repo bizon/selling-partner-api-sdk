@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -33,7 +33,7 @@ export const SellersApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMarketplaceParticipations: async (options: any = {}): Promise<RequestArgs> => {
+        getMarketplaceParticipations: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/sellers/v1/marketplaceParticipations`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -48,7 +48,7 @@ export const SellersApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -72,7 +72,7 @@ export const SellersApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMarketplaceParticipations(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMarketplaceParticipationsResponse>> {
+        async getMarketplaceParticipations(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMarketplaceParticipationsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMarketplaceParticipations(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -110,7 +110,7 @@ export class SellersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SellersApi
      */
-    public getMarketplaceParticipations(options?: any) {
+    public getMarketplaceParticipations(options?: AxiosRequestConfig) {
         return SellersApiFp(this.configuration).getMarketplaceParticipations(options).then((request) => request(this.axios, this.basePath));
     }
 }

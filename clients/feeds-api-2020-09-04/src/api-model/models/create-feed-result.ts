@@ -25,7 +25,6 @@ export interface CreateFeedResult {
      * @type {string}
      * @memberof CreateFeedResult
      */
-    feedId: string;
+    'feedId': string;
 }
-
 

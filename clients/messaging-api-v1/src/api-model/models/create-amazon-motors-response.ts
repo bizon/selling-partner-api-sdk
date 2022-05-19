@@ -25,7 +25,6 @@ export interface CreateAmazonMotorsResponse {
      * @type {Array<Error>}
      * @memberof CreateAmazonMotorsResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

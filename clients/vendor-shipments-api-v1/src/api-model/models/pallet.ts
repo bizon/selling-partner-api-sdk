@@ -30,43 +30,42 @@ export interface Pallet {
      * @type {Array<ContainerIdentification>}
      * @memberof Pallet
      */
-    palletIdentifiers: Array<ContainerIdentification>;
+    'palletIdentifiers': Array<ContainerIdentification>;
     /**
      * Number of layers per pallet.
      * @type {number}
      * @memberof Pallet
      */
-    tier?: number;
+    'tier'?: number;
     /**
      * Number of cartons per layer on the pallet.
      * @type {number}
      * @memberof Pallet
      */
-    block?: number;
+    'block'?: number;
     /**
      * 
      * @type {Dimensions}
      * @memberof Pallet
      */
-    dimensions?: Dimensions;
+    'dimensions'?: Dimensions;
     /**
      * 
      * @type {Weight}
      * @memberof Pallet
      */
-    weight?: Weight;
+    'weight'?: Weight;
     /**
      * 
      * @type {CartonReferenceDetails}
      * @memberof Pallet
      */
-    cartonReferenceDetails?: CartonReferenceDetails;
+    'cartonReferenceDetails'?: CartonReferenceDetails;
     /**
      * A list of container item details.
      * @type {Array<ContainerItem>}
      * @memberof Pallet
      */
-    items?: Array<ContainerItem>;
+    'items'?: Array<ContainerItem>;
 }
-
 

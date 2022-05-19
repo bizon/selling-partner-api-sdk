@@ -27,13 +27,12 @@ export interface ContainerSpecification {
      * @type {Dimensions}
      * @memberof ContainerSpecification
      */
-    dimensions: Dimensions;
+    'dimensions': Dimensions;
     /**
      * 
      * @type {Weight}
      * @memberof ContainerSpecification
      */
-    weight: Weight;
+    'weight': Weight;
 }
-
 

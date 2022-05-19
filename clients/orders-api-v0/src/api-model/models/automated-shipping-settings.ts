@@ -25,19 +25,18 @@ export interface AutomatedShippingSettings {
      * @type {boolean}
      * @memberof AutomatedShippingSettings
      */
-    HasAutomatedShippingSettings?: boolean;
+    'HasAutomatedShippingSettings'?: boolean;
     /**
      * Auto-generated carrier for SSA orders.
      * @type {string}
      * @memberof AutomatedShippingSettings
      */
-    AutomatedCarrier?: string;
+    'AutomatedCarrier'?: string;
     /**
      * Auto-generated ship method for SSA orders.
      * @type {string}
      * @memberof AutomatedShippingSettings
      */
-    AutomatedShipMethod?: string;
+    'AutomatedShipMethod'?: string;
 }
-
 

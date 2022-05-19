@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum AggregationTimePeriod {
-    FiveMinutes = 'FiveMinutes',
-    TenMinutes = 'TenMinutes'
-}
+
+export const AggregationTimePeriod = {
+    FiveMinutes: 'FiveMinutes',
+    TenMinutes: 'TenMinutes'
+} as const;
+
+export type AggregationTimePeriod = typeof AggregationTimePeriod[keyof typeof AggregationTimePeriod];
 
 
 

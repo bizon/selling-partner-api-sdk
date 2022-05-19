@@ -25,7 +25,6 @@ export interface DeleteDestinationResponse {
      * @type {Array<Error>}
      * @memberof DeleteDestinationResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

@@ -27,31 +27,30 @@ export interface StandardFourImageTextModule {
      * @type {TextComponent}
      * @memberof StandardFourImageTextModule
      */
-    headline?: TextComponent;
+    'headline'?: TextComponent;
     /**
      * 
      * @type {StandardImageTextBlock}
      * @memberof StandardFourImageTextModule
      */
-    block1?: StandardImageTextBlock;
+    'block1'?: StandardImageTextBlock;
     /**
      * 
      * @type {StandardImageTextBlock}
      * @memberof StandardFourImageTextModule
      */
-    block2?: StandardImageTextBlock;
+    'block2'?: StandardImageTextBlock;
     /**
      * 
      * @type {StandardImageTextBlock}
      * @memberof StandardFourImageTextModule
      */
-    block3?: StandardImageTextBlock;
+    'block3'?: StandardImageTextBlock;
     /**
      * 
      * @type {StandardImageTextBlock}
      * @memberof StandardFourImageTextModule
      */
-    block4?: StandardImageTextBlock;
+    'block4'?: StandardImageTextBlock;
 }
-
 

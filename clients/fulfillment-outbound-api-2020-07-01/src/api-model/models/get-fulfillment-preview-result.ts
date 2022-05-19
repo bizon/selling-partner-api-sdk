@@ -26,7 +26,6 @@ export interface GetFulfillmentPreviewResult {
      * @type {Array<FulfillmentPreview>}
      * @memberof GetFulfillmentPreviewResult
      */
-    fulfillmentPreviews?: Array<FulfillmentPreview>;
+    'fulfillmentPreviews'?: Array<FulfillmentPreview>;
 }
-
 

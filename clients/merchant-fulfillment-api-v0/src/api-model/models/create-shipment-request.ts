@@ -29,37 +29,36 @@ export interface CreateShipmentRequest {
      * @type {ShipmentRequestDetails}
      * @memberof CreateShipmentRequest
      */
-    ShipmentRequestDetails: ShipmentRequestDetails;
+    'ShipmentRequestDetails': ShipmentRequestDetails;
     /**
      * An Amazon-defined shipping service identifier.
      * @type {string}
      * @memberof CreateShipmentRequest
      */
-    ShippingServiceId: string;
+    'ShippingServiceId': string;
     /**
      * Identifies a shipping service order made by a carrier.
      * @type {string}
      * @memberof CreateShipmentRequest
      */
-    ShippingServiceOfferId?: string;
+    'ShippingServiceOfferId'?: string;
     /**
      * 
      * @type {HazmatType}
      * @memberof CreateShipmentRequest
      */
-    HazmatType?: HazmatType;
+    'HazmatType'?: HazmatType;
     /**
      * 
      * @type {LabelFormatOptionRequest}
      * @memberof CreateShipmentRequest
      */
-    LabelFormatOption?: LabelFormatOptionRequest;
+    'LabelFormatOption'?: LabelFormatOptionRequest;
     /**
      * A list of additional seller input pairs required to purchase shipping.
      * @type {Array<AdditionalSellerInputs>}
      * @memberof CreateShipmentRequest
      */
-    ShipmentLevelSellerInputsList?: Array<AdditionalSellerInputs>;
+    'ShipmentLevelSellerInputsList'?: Array<AdditionalSellerInputs>;
 }
-
 

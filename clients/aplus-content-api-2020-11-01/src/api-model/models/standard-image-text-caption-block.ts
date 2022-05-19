@@ -27,13 +27,12 @@ export interface StandardImageTextCaptionBlock {
      * @type {StandardImageTextBlock}
      * @memberof StandardImageTextCaptionBlock
      */
-    block?: StandardImageTextBlock;
+    'block'?: StandardImageTextBlock;
     /**
      * 
      * @type {TextComponent}
      * @memberof StandardImageTextCaptionBlock
      */
-    caption?: TextComponent;
+    'caption'?: TextComponent;
 }
-
 

@@ -29,55 +29,54 @@ export interface BuyBoxPriceType {
      * @type {string}
      * @memberof BuyBoxPriceType
      */
-    condition: string;
+    'condition': string;
     /**
      * 
      * @type {OfferCustomerType}
      * @memberof BuyBoxPriceType
      */
-    offerType?: OfferCustomerType;
+    'offerType'?: OfferCustomerType;
     /**
      * Indicates at what quantity this price becomes active.
      * @type {number}
      * @memberof BuyBoxPriceType
      */
-    quantityTier?: number;
+    'quantityTier'?: number;
     /**
      * 
      * @type {QuantityDiscountType}
      * @memberof BuyBoxPriceType
      */
-    quantityDiscountType?: QuantityDiscountType;
+    'quantityDiscountType'?: QuantityDiscountType;
     /**
      * 
      * @type {MoneyType}
      * @memberof BuyBoxPriceType
      */
-    LandedPrice: MoneyType;
+    'LandedPrice': MoneyType;
     /**
      * 
      * @type {MoneyType}
      * @memberof BuyBoxPriceType
      */
-    ListingPrice: MoneyType;
+    'ListingPrice': MoneyType;
     /**
      * 
      * @type {MoneyType}
      * @memberof BuyBoxPriceType
      */
-    Shipping: MoneyType;
+    'Shipping': MoneyType;
     /**
      * 
      * @type {Points}
      * @memberof BuyBoxPriceType
      */
-    Points?: Points;
+    'Points'?: Points;
     /**
      * The seller identifier for the offer.
      * @type {string}
      * @memberof BuyBoxPriceType
      */
-    sellerId?: string;
+    'sellerId'?: string;
 }
-
 

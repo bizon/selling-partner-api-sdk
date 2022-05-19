@@ -26,7 +26,6 @@ export interface ListMatchingItemsResponse {
      * @type {Array<Item>}
      * @memberof ListMatchingItemsResponse
      */
-    Items?: Array<Item>;
+    'Items'?: Array<Item>;
 }
-
 

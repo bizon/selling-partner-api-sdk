@@ -26,13 +26,12 @@ export interface GetAuthorizationCodeResponse {
      * @type {AuthorizationCode}
      * @memberof GetAuthorizationCodeResponse
      */
-    payload?: AuthorizationCode;
+    'payload'?: AuthorizationCode;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetAuthorizationCodeResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

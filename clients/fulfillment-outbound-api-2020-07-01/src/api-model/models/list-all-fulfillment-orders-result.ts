@@ -26,13 +26,12 @@ export interface ListAllFulfillmentOrdersResult {
      * @type {string}
      * @memberof ListAllFulfillmentOrdersResult
      */
-    nextToken?: string;
+    'nextToken'?: string;
     /**
      * An array of fulfillment order information.
      * @type {Array<FulfillmentOrder>}
      * @memberof ListAllFulfillmentOrdersResult
      */
-    fulfillmentOrders?: Array<FulfillmentOrder>;
+    'fulfillmentOrders'?: Array<FulfillmentOrder>;
 }
-
 

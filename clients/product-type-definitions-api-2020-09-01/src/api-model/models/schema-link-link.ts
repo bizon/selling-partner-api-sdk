@@ -25,22 +25,19 @@ export interface SchemaLinkLink {
      * @type {string}
      * @memberof SchemaLinkLink
      */
-    resource: string;
+    'resource': string;
     /**
      * HTTP method for the link operation.
      * @type {string}
      * @memberof SchemaLinkLink
      */
-    verb: SchemaLinkLinkVerbEnum;
+    'verb': SchemaLinkLinkVerbEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum SchemaLinkLinkVerbEnum {
-    Get = 'GET'
-}
+export const SchemaLinkLinkVerbEnum = {
+    Get: 'GET'
+} as const;
 
+export type SchemaLinkLinkVerbEnum = typeof SchemaLinkLinkVerbEnum[keyof typeof SchemaLinkLinkVerbEnum];
 
 

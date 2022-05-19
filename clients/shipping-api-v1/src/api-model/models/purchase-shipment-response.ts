@@ -26,13 +26,12 @@ export interface PurchaseShipmentResponse {
      * @type {PurchaseShipmentResult}
      * @memberof PurchaseShipmentResponse
      */
-    payload?: PurchaseShipmentResult;
+    'payload'?: PurchaseShipmentResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof PurchaseShipmentResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

@@ -28,19 +28,18 @@ export interface CompetitivePricingType {
      * @type {Array<CompetitivePriceType>}
      * @memberof CompetitivePricingType
      */
-    CompetitivePrices: Array<CompetitivePriceType>;
+    'CompetitivePrices': Array<CompetitivePriceType>;
     /**
      * The number of active offer listings for the item that was submitted. The listing count is returned by condition, one for each listing condition value that is returned.
      * @type {Array<OfferListingCountType>}
      * @memberof CompetitivePricingType
      */
-    NumberOfOfferListings: Array<OfferListingCountType>;
+    'NumberOfOfferListings': Array<OfferListingCountType>;
     /**
      * 
      * @type {MoneyType}
      * @memberof CompetitivePricingType
      */
-    TradeInValue?: MoneyType;
+    'TradeInValue'?: MoneyType;
 }
-
 

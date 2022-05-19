@@ -26,61 +26,60 @@ export interface SolutionProviderCreditEvent {
      * @type {string}
      * @memberof SolutionProviderCreditEvent
      */
-    ProviderTransactionType?: string;
+    'ProviderTransactionType'?: string;
     /**
      * A seller-defined identifier for an order.
      * @type {string}
      * @memberof SolutionProviderCreditEvent
      */
-    SellerOrderId?: string;
+    'SellerOrderId'?: string;
     /**
      * The identifier of the marketplace where the order was placed.
      * @type {string}
      * @memberof SolutionProviderCreditEvent
      */
-    MarketplaceId?: string;
+    'MarketplaceId'?: string;
     /**
      * The two-letter country code of the country associated with the marketplace where the order was placed.
      * @type {string}
      * @memberof SolutionProviderCreditEvent
      */
-    MarketplaceCountryCode?: string;
+    'MarketplaceCountryCode'?: string;
     /**
      * The Amazon-defined identifier of the seller.
      * @type {string}
      * @memberof SolutionProviderCreditEvent
      */
-    SellerId?: string;
+    'SellerId'?: string;
     /**
      * The store name where the payment event occurred.
      * @type {string}
      * @memberof SolutionProviderCreditEvent
      */
-    SellerStoreName?: string;
+    'SellerStoreName'?: string;
     /**
      * The Amazon-defined identifier of the solution provider.
      * @type {string}
      * @memberof SolutionProviderCreditEvent
      */
-    ProviderId?: string;
+    'ProviderId'?: string;
     /**
      * The store name where the payment event occurred.
      * @type {string}
      * @memberof SolutionProviderCreditEvent
      */
-    ProviderStoreName?: string;
+    'ProviderStoreName'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof SolutionProviderCreditEvent
      */
-    TransactionAmount?: Currency;
+    'TransactionAmount'?: Currency;
     /**
      * 
      * @type {string}
      * @memberof SolutionProviderCreditEvent
      */
-    TransactionCreationDate?: string;
+    'TransactionCreationDate'?: string;
 }
-
 

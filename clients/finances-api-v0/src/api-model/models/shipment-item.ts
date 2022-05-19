@@ -30,79 +30,78 @@ export interface ShipmentItem {
      * @type {string}
      * @memberof ShipmentItem
      */
-    SellerSKU?: string;
+    'SellerSKU'?: string;
     /**
      * An Amazon-defined order item identifier.
      * @type {string}
      * @memberof ShipmentItem
      */
-    OrderItemId?: string;
+    'OrderItemId'?: string;
     /**
      * An Amazon-defined order adjustment identifier defined for refunds, guarantee claims, and chargeback events.
      * @type {string}
      * @memberof ShipmentItem
      */
-    OrderAdjustmentItemId?: string;
+    'OrderAdjustmentItemId'?: string;
     /**
      * The number of items shipped.
      * @type {number}
      * @memberof ShipmentItem
      */
-    QuantityShipped?: number;
+    'QuantityShipped'?: number;
     /**
      * A list of charge information on the seller\'s account.
      * @type {Array<ChargeComponent>}
      * @memberof ShipmentItem
      */
-    ItemChargeList?: Array<ChargeComponent>;
+    'ItemChargeList'?: Array<ChargeComponent>;
     /**
      * A list of charge information on the seller\'s account.
      * @type {Array<ChargeComponent>}
      * @memberof ShipmentItem
      */
-    ItemChargeAdjustmentList?: Array<ChargeComponent>;
+    'ItemChargeAdjustmentList'?: Array<ChargeComponent>;
     /**
      * A list of fee component information.
      * @type {Array<FeeComponent>}
      * @memberof ShipmentItem
      */
-    ItemFeeList?: Array<FeeComponent>;
+    'ItemFeeList'?: Array<FeeComponent>;
     /**
      * A list of fee component information.
      * @type {Array<FeeComponent>}
      * @memberof ShipmentItem
      */
-    ItemFeeAdjustmentList?: Array<FeeComponent>;
+    'ItemFeeAdjustmentList'?: Array<FeeComponent>;
     /**
      * A list of information about taxes withheld.
      * @type {Array<TaxWithheldComponent>}
      * @memberof ShipmentItem
      */
-    ItemTaxWithheldList?: Array<TaxWithheldComponent>;
+    'ItemTaxWithheldList'?: Array<TaxWithheldComponent>;
     /**
      * A list of promotions.
      * @type {Array<Promotion>}
      * @memberof ShipmentItem
      */
-    PromotionList?: Array<Promotion>;
+    'PromotionList'?: Array<Promotion>;
     /**
      * A list of promotions.
      * @type {Array<Promotion>}
      * @memberof ShipmentItem
      */
-    PromotionAdjustmentList?: Array<Promotion>;
+    'PromotionAdjustmentList'?: Array<Promotion>;
     /**
      * 
      * @type {Currency}
      * @memberof ShipmentItem
      */
-    CostOfPointsGranted?: Currency;
+    'CostOfPointsGranted'?: Currency;
     /**
      * 
      * @type {Currency}
      * @memberof ShipmentItem
      */
-    CostOfPointsReturned?: Currency;
+    'CostOfPointsReturned'?: Currency;
 }
-
 

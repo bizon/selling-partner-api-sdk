@@ -26,7 +26,6 @@ export interface StandardCompanyLogoModule {
      * @type {ImageComponent}
      * @memberof StandardCompanyLogoModule
      */
-    companyLogo: ImageComponent;
+    'companyLogo': ImageComponent;
 }
-
 

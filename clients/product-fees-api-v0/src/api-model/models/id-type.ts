@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum IdType {
-    Asin = 'ASIN',
-    SellerSku = 'SellerSKU'
-}
+
+export const IdType = {
+    Asin: 'ASIN',
+    SellerSku: 'SellerSKU'
+} as const;
+
+export type IdType = typeof IdType[keyof typeof IdType];
 
 
 

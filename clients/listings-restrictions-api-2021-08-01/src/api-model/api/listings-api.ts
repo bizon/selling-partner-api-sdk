@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -38,7 +38,7 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getListingsRestrictions: async (asin: string, sellerId: string, marketplaceIds: Array<string>, conditionType?: 'new_new' | 'new_open_box' | 'new_oem' | 'refurbished_refurbished' | 'used_like_new' | 'used_very_good' | 'used_good' | 'used_acceptable' | 'collectible_like_new' | 'collectible_very_good' | 'collectible_good' | 'collectible_acceptable' | 'club_club', reasonLocale?: string, options: any = {}): Promise<RequestArgs> => {
+        getListingsRestrictions: async (asin: string, sellerId: string, marketplaceIds: Array<string>, conditionType?: 'new_new' | 'new_open_box' | 'new_oem' | 'refurbished_refurbished' | 'used_like_new' | 'used_very_good' | 'used_good' | 'used_acceptable' | 'collectible_like_new' | 'collectible_very_good' | 'collectible_good' | 'collectible_acceptable' | 'club_club', reasonLocale?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'asin' is not null or undefined
             assertParamExists('getListingsRestrictions', 'asin', asin)
             // verify required parameter 'sellerId' is not null or undefined
@@ -79,7 +79,7 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -108,7 +108,7 @@ export const ListingsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getListingsRestrictions(asin: string, sellerId: string, marketplaceIds: Array<string>, conditionType?: 'new_new' | 'new_open_box' | 'new_oem' | 'refurbished_refurbished' | 'used_like_new' | 'used_very_good' | 'used_good' | 'used_acceptable' | 'collectible_like_new' | 'collectible_very_good' | 'collectible_good' | 'collectible_acceptable' | 'club_club', reasonLocale?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RestrictionList>> {
+        async getListingsRestrictions(asin: string, sellerId: string, marketplaceIds: Array<string>, conditionType?: 'new_new' | 'new_open_box' | 'new_oem' | 'refurbished_refurbished' | 'used_like_new' | 'used_very_good' | 'used_good' | 'used_acceptable' | 'collectible_like_new' | 'collectible_very_good' | 'collectible_good' | 'collectible_acceptable' | 'club_club', reasonLocale?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RestrictionList>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getListingsRestrictions(asin, sellerId, marketplaceIds, conditionType, reasonLocale, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -194,7 +194,7 @@ export class ListingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ListingsApi
      */
-    public getListingsRestrictions(requestParameters: ListingsApiGetListingsRestrictionsRequest, options?: any) {
+    public getListingsRestrictions(requestParameters: ListingsApiGetListingsRestrictionsRequest, options?: AxiosRequestConfig) {
         return ListingsApiFp(this.configuration).getListingsRestrictions(requestParameters.asin, requestParameters.sellerId, requestParameters.marketplaceIds, requestParameters.conditionType, requestParameters.reasonLocale, options).then((request) => request(this.axios, this.basePath));
     }
 }

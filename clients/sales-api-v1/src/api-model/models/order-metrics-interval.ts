@@ -26,37 +26,36 @@ export interface OrderMetricsInterval {
      * @type {string}
      * @memberof OrderMetricsInterval
      */
-    interval: string;
+    'interval': string;
     /**
      * The number of units in orders based on the specified filters.
      * @type {number}
      * @memberof OrderMetricsInterval
      */
-    unitCount: number;
+    'unitCount': number;
     /**
      * The number of order items based on the specified filters.
      * @type {number}
      * @memberof OrderMetricsInterval
      */
-    orderItemCount: number;
+    'orderItemCount': number;
     /**
      * The number of orders based on the specified filters.
      * @type {number}
      * @memberof OrderMetricsInterval
      */
-    orderCount: number;
+    'orderCount': number;
     /**
      * 
      * @type {Money}
      * @memberof OrderMetricsInterval
      */
-    averageUnitPrice: Money;
+    'averageUnitPrice': Money;
     /**
      * 
      * @type {Money}
      * @memberof OrderMetricsInterval
      */
-    totalSales: Money;
+    'totalSales': Money;
 }
-
 

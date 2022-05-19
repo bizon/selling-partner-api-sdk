@@ -26,13 +26,12 @@ export interface GetItemEligibilityPreviewResponse {
      * @type {ItemEligibilityPreview}
      * @memberof GetItemEligibilityPreviewResponse
      */
-    payload?: ItemEligibilityPreview;
+    'payload'?: ItemEligibilityPreview;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetItemEligibilityPreviewResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

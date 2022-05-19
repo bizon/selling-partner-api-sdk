@@ -26,19 +26,18 @@ export interface AcknowledgementStatusDetails {
      * @type {string}
      * @memberof AcknowledgementStatusDetails
      */
-    acknowledgementDate?: string;
+    'acknowledgementDate'?: string;
     /**
      * 
      * @type {ItemQuantity}
      * @memberof AcknowledgementStatusDetails
      */
-    acceptedQuantity?: ItemQuantity;
+    'acceptedQuantity'?: ItemQuantity;
     /**
      * 
      * @type {ItemQuantity}
      * @memberof AcknowledgementStatusDetails
      */
-    rejectedQuantity?: ItemQuantity;
+    'rejectedQuantity'?: ItemQuantity;
 }
-
 

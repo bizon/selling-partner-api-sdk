@@ -19,11 +19,14 @@
  * @export
  * @enum {string}
  */
-export enum ShipmentStatus {
-    ReadyForPickup = 'ReadyForPickup',
-    PickedUp = 'PickedUp',
-    RefusedPickup = 'RefusedPickup'
-}
+
+export const ShipmentStatus = {
+    ReadyForPickup: 'ReadyForPickup',
+    PickedUp: 'PickedUp',
+    RefusedPickup: 'RefusedPickup'
+} as const;
+
+export type ShipmentStatus = typeof ShipmentStatus[keyof typeof ShipmentStatus];
 
 
 

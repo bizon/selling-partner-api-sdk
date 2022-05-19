@@ -26,85 +26,84 @@ export interface FulfillmentOrderItem {
      * @type {string}
      * @memberof FulfillmentOrderItem
      */
-    sellerSku: string;
+    'sellerSku': string;
     /**
      * A fulfillment order item identifier submitted with a call to the createFulfillmentOrder operation.
      * @type {string}
      * @memberof FulfillmentOrderItem
      */
-    sellerFulfillmentOrderItemId: string;
+    'sellerFulfillmentOrderItemId': string;
     /**
      * The item quantity.
      * @type {number}
      * @memberof FulfillmentOrderItem
      */
-    quantity: number;
+    'quantity': number;
     /**
      * A message to the gift recipient, if applicable.
      * @type {string}
      * @memberof FulfillmentOrderItem
      */
-    giftMessage?: string;
+    'giftMessage'?: string;
     /**
      * Item-specific text that displays in recipient-facing materials such as the outbound shipment packing slip.
      * @type {string}
      * @memberof FulfillmentOrderItem
      */
-    displayableComment?: string;
+    'displayableComment'?: string;
     /**
      * Amazon\'s fulfillment network SKU of the item.
      * @type {string}
      * @memberof FulfillmentOrderItem
      */
-    fulfillmentNetworkSku?: string;
+    'fulfillmentNetworkSku'?: string;
     /**
      * Indicates whether the item is sellable or unsellable.
      * @type {string}
      * @memberof FulfillmentOrderItem
      */
-    orderItemDisposition?: string;
+    'orderItemDisposition'?: string;
     /**
      * The item quantity.
      * @type {number}
      * @memberof FulfillmentOrderItem
      */
-    cancelledQuantity: number;
+    'cancelledQuantity': number;
     /**
      * The item quantity.
      * @type {number}
      * @memberof FulfillmentOrderItem
      */
-    unfulfillableQuantity: number;
+    'unfulfillableQuantity': number;
     /**
      * 
      * @type {string}
      * @memberof FulfillmentOrderItem
      */
-    estimatedShipDate?: string;
+    'estimatedShipDate'?: string;
     /**
      * 
      * @type {string}
      * @memberof FulfillmentOrderItem
      */
-    estimatedArrivalDate?: string;
+    'estimatedArrivalDate'?: string;
     /**
      * 
      * @type {Money}
      * @memberof FulfillmentOrderItem
      */
-    perUnitPrice?: Money;
+    'perUnitPrice'?: Money;
     /**
      * 
      * @type {Money}
      * @memberof FulfillmentOrderItem
      */
-    perUnitTax?: Money;
+    'perUnitTax'?: Money;
     /**
      * 
      * @type {Money}
      * @memberof FulfillmentOrderItem
      */
-    perUnitDeclaredValue?: Money;
+    'perUnitDeclaredValue'?: Money;
 }
-
 

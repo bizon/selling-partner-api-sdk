@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -39,7 +39,7 @@ export const CatalogApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCatalogItem: async (marketplaceId: string, asin: string, options: any = {}): Promise<RequestArgs> => {
+        getCatalogItem: async (marketplaceId: string, asin: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getCatalogItem', 'marketplaceId', marketplaceId)
             // verify required parameter 'asin' is not null or undefined
@@ -63,7 +63,7 @@ export const CatalogApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -80,7 +80,7 @@ export const CatalogApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listCatalogCategories: async (marketplaceId: string, aSIN?: string, sellerSKU?: string, options: any = {}): Promise<RequestArgs> => {
+        listCatalogCategories: async (marketplaceId: string, aSIN?: string, sellerSKU?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('listCatalogCategories', 'marketplaceId', marketplaceId)
             const localVarPath = `/catalog/v0/categories`;
@@ -109,7 +109,7 @@ export const CatalogApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -131,7 +131,7 @@ export const CatalogApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listCatalogItems: async (marketplaceId: string, query?: string, queryContextId?: string, sellerSKU?: string, uPC?: string, eAN?: string, iSBN?: string, jAN?: string, options: any = {}): Promise<RequestArgs> => {
+        listCatalogItems: async (marketplaceId: string, query?: string, queryContextId?: string, sellerSKU?: string, uPC?: string, eAN?: string, iSBN?: string, jAN?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('listCatalogItems', 'marketplaceId', marketplaceId)
             const localVarPath = `/catalog/v0/items`;
@@ -180,7 +180,7 @@ export const CatalogApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -206,7 +206,7 @@ export const CatalogApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCatalogItem(marketplaceId: string, asin: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCatalogItemResponse>> {
+        async getCatalogItem(marketplaceId: string, asin: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCatalogItemResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCatalogItem(marketplaceId, asin, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -218,7 +218,7 @@ export const CatalogApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listCatalogCategories(marketplaceId: string, aSIN?: string, sellerSKU?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListCatalogCategoriesResponse>> {
+        async listCatalogCategories(marketplaceId: string, aSIN?: string, sellerSKU?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListCatalogCategoriesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listCatalogCategories(marketplaceId, aSIN, sellerSKU, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -235,7 +235,7 @@ export const CatalogApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listCatalogItems(marketplaceId: string, query?: string, queryContextId?: string, sellerSKU?: string, uPC?: string, eAN?: string, iSBN?: string, jAN?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListCatalogItemsResponse>> {
+        async listCatalogItems(marketplaceId: string, query?: string, queryContextId?: string, sellerSKU?: string, uPC?: string, eAN?: string, iSBN?: string, jAN?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListCatalogItemsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listCatalogItems(marketplaceId, query, queryContextId, sellerSKU, uPC, eAN, iSBN, jAN, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -415,7 +415,7 @@ export class CatalogApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CatalogApi
      */
-    public getCatalogItem(requestParameters: CatalogApiGetCatalogItemRequest, options?: any) {
+    public getCatalogItem(requestParameters: CatalogApiGetCatalogItemRequest, options?: AxiosRequestConfig) {
         return CatalogApiFp(this.configuration).getCatalogItem(requestParameters.marketplaceId, requestParameters.asin, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -426,7 +426,7 @@ export class CatalogApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CatalogApi
      */
-    public listCatalogCategories(requestParameters: CatalogApiListCatalogCategoriesRequest, options?: any) {
+    public listCatalogCategories(requestParameters: CatalogApiListCatalogCategoriesRequest, options?: AxiosRequestConfig) {
         return CatalogApiFp(this.configuration).listCatalogCategories(requestParameters.marketplaceId, requestParameters.aSIN, requestParameters.sellerSKU, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -437,7 +437,7 @@ export class CatalogApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CatalogApi
      */
-    public listCatalogItems(requestParameters: CatalogApiListCatalogItemsRequest, options?: any) {
+    public listCatalogItems(requestParameters: CatalogApiListCatalogItemsRequest, options?: AxiosRequestConfig) {
         return CatalogApiFp(this.configuration).listCatalogItems(requestParameters.marketplaceId, requestParameters.query, requestParameters.queryContextId, requestParameters.sellerSKU, requestParameters.uPC, requestParameters.eAN, requestParameters.iSBN, requestParameters.jAN, options).then((request) => request(this.axios, this.basePath));
     }
 }

@@ -26,25 +26,24 @@ export interface TimeSlot {
      * @type {string}
      * @memberof TimeSlot
      */
-    slotId: string;
+    'slotId': string;
     /**
      * A datetime value in ISO 8601 format.
      * @type {string}
      * @memberof TimeSlot
      */
-    startTime?: string;
+    'startTime'?: string;
     /**
      * A datetime value in ISO 8601 format.
      * @type {string}
      * @memberof TimeSlot
      */
-    endTime?: string;
+    'endTime'?: string;
     /**
      * 
      * @type {HandoverMethod}
      * @memberof TimeSlot
      */
-    handoverMethod?: HandoverMethod;
+    'handoverMethod'?: HandoverMethod;
 }
-
 

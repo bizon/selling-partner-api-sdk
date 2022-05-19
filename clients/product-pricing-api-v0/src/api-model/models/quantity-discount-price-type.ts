@@ -27,19 +27,18 @@ export interface QuantityDiscountPriceType {
      * @type {number}
      * @memberof QuantityDiscountPriceType
      */
-    quantityTier: number;
+    'quantityTier': number;
     /**
      * 
      * @type {QuantityDiscountType}
      * @memberof QuantityDiscountPriceType
      */
-    quantityDiscountType: QuantityDiscountType;
+    'quantityDiscountType': QuantityDiscountType;
     /**
      * 
      * @type {MoneyType}
      * @memberof QuantityDiscountPriceType
      */
-    listingPrice: MoneyType;
+    'listingPrice': MoneyType;
 }
-
 

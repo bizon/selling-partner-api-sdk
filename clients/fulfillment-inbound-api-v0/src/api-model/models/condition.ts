@@ -19,26 +19,29 @@
  * @export
  * @enum {string}
  */
-export enum Condition {
-    NewItem = 'NewItem',
-    NewWithWarranty = 'NewWithWarranty',
-    NewOem = 'NewOEM',
-    NewOpenBox = 'NewOpenBox',
-    UsedLikeNew = 'UsedLikeNew',
-    UsedVeryGood = 'UsedVeryGood',
-    UsedGood = 'UsedGood',
-    UsedAcceptable = 'UsedAcceptable',
-    UsedPoor = 'UsedPoor',
-    UsedRefurbished = 'UsedRefurbished',
-    CollectibleLikeNew = 'CollectibleLikeNew',
-    CollectibleVeryGood = 'CollectibleVeryGood',
-    CollectibleGood = 'CollectibleGood',
-    CollectibleAcceptable = 'CollectibleAcceptable',
-    CollectiblePoor = 'CollectiblePoor',
-    RefurbishedWithWarranty = 'RefurbishedWithWarranty',
-    Refurbished = 'Refurbished',
-    Club = 'Club'
-}
+
+export const Condition = {
+    NewItem: 'NewItem',
+    NewWithWarranty: 'NewWithWarranty',
+    NewOem: 'NewOEM',
+    NewOpenBox: 'NewOpenBox',
+    UsedLikeNew: 'UsedLikeNew',
+    UsedVeryGood: 'UsedVeryGood',
+    UsedGood: 'UsedGood',
+    UsedAcceptable: 'UsedAcceptable',
+    UsedPoor: 'UsedPoor',
+    UsedRefurbished: 'UsedRefurbished',
+    CollectibleLikeNew: 'CollectibleLikeNew',
+    CollectibleVeryGood: 'CollectibleVeryGood',
+    CollectibleGood: 'CollectibleGood',
+    CollectibleAcceptable: 'CollectibleAcceptable',
+    CollectiblePoor: 'CollectiblePoor',
+    RefurbishedWithWarranty: 'RefurbishedWithWarranty',
+    Refurbished: 'Refurbished',
+    Club: 'Club'
+} as const;
+
+export type Condition = typeof Condition[keyof typeof Condition];
 
 
 

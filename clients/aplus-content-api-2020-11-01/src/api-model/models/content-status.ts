@@ -19,12 +19,15 @@
  * @export
  * @enum {string}
  */
-export enum ContentStatus {
-    Approved = 'APPROVED',
-    Draft = 'DRAFT',
-    Rejected = 'REJECTED',
-    Submitted = 'SUBMITTED'
-}
+
+export const ContentStatus = {
+    Approved: 'APPROVED',
+    Draft: 'DRAFT',
+    Rejected: 'REJECTED',
+    Submitted: 'SUBMITTED'
+} as const;
+
+export type ContentStatus = typeof ContentStatus[keyof typeof ContentStatus];
 
 
 

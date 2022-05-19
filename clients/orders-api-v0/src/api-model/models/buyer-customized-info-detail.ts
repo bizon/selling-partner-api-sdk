@@ -25,7 +25,6 @@ export interface BuyerCustomizedInfoDetail {
      * @type {string}
      * @memberof BuyerCustomizedInfoDetail
      */
-    CustomizedURL?: string;
+    'CustomizedURL'?: string;
 }
-
 

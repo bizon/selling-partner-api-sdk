@@ -26,49 +26,48 @@ export interface SellerDealPaymentEvent {
      * @type {string}
      * @memberof SellerDealPaymentEvent
      */
-    postedDate?: string;
+    'postedDate'?: string;
     /**
      * The unique identifier of the deal.
      * @type {string}
      * @memberof SellerDealPaymentEvent
      */
-    dealId?: string;
+    'dealId'?: string;
     /**
      * The internal description of the deal.
      * @type {string}
      * @memberof SellerDealPaymentEvent
      */
-    dealDescription?: string;
+    'dealDescription'?: string;
     /**
      * The type of event: SellerDealComplete.
      * @type {string}
      * @memberof SellerDealPaymentEvent
      */
-    eventType?: string;
+    'eventType'?: string;
     /**
      * The type of fee: RunLightningDealFee.
      * @type {string}
      * @memberof SellerDealPaymentEvent
      */
-    feeType?: string;
+    'feeType'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof SellerDealPaymentEvent
      */
-    feeAmount?: Currency;
+    'feeAmount'?: Currency;
     /**
      * 
      * @type {Currency}
      * @memberof SellerDealPaymentEvent
      */
-    taxAmount?: Currency;
+    'taxAmount'?: Currency;
     /**
      * 
      * @type {Currency}
      * @memberof SellerDealPaymentEvent
      */
-    totalAmount?: Currency;
+    'totalAmount'?: Currency;
 }
-
 

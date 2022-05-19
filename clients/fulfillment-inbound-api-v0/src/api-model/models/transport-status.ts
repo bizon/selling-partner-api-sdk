@@ -19,19 +19,22 @@
  * @export
  * @enum {string}
  */
-export enum TransportStatus {
-    Working = 'WORKING',
-    Estimating = 'ESTIMATING',
-    Estimated = 'ESTIMATED',
-    ErrorOnEstimating = 'ERROR_ON_ESTIMATING',
-    Confirming = 'CONFIRMING',
-    Confirmed = 'CONFIRMED',
-    ErrorOnConfirming = 'ERROR_ON_CONFIRMING',
-    Voiding = 'VOIDING',
-    Voided = 'VOIDED',
-    ErrorInVoiding = 'ERROR_IN_VOIDING',
-    Error = 'ERROR'
-}
+
+export const TransportStatus = {
+    Working: 'WORKING',
+    Estimating: 'ESTIMATING',
+    Estimated: 'ESTIMATED',
+    ErrorOnEstimating: 'ERROR_ON_ESTIMATING',
+    Confirming: 'CONFIRMING',
+    Confirmed: 'CONFIRMED',
+    ErrorOnConfirming: 'ERROR_ON_CONFIRMING',
+    Voiding: 'VOIDING',
+    Voided: 'VOIDED',
+    ErrorInVoiding: 'ERROR_IN_VOIDING',
+    Error: 'ERROR'
+} as const;
+
+export type TransportStatus = typeof TransportStatus[keyof typeof TransportStatus];
 
 
 

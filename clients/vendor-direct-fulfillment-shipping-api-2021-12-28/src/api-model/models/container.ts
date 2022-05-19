@@ -28,83 +28,80 @@ export interface Container {
      * @type {string}
      * @memberof Container
      */
-    containerType: ContainerContainerTypeEnum;
+    'containerType': ContainerContainerTypeEnum;
     /**
      * The container identifier.
      * @type {string}
      * @memberof Container
      */
-    containerIdentifier: string;
+    'containerIdentifier': string;
     /**
      * The tracking number.
      * @type {string}
      * @memberof Container
      */
-    trackingNumber?: string;
+    'trackingNumber'?: string;
     /**
      * The manifest identifier.
      * @type {string}
      * @memberof Container
      */
-    manifestId?: string;
+    'manifestId'?: string;
     /**
      * The date of the manifest.
      * @type {string}
      * @memberof Container
      */
-    manifestDate?: string;
+    'manifestDate'?: string;
     /**
      * The shipment method.
      * @type {string}
      * @memberof Container
      */
-    shipMethod?: string;
+    'shipMethod'?: string;
     /**
      * SCAC code required for NA VOC vendors only.
      * @type {string}
      * @memberof Container
      */
-    scacCode?: string;
+    'scacCode'?: string;
     /**
      * Carrier required for EU VOC vendors only.
      * @type {string}
      * @memberof Container
      */
-    carrier?: string;
+    'carrier'?: string;
     /**
      * An integer that must be submitted for multi-box shipments only, where one item may come in separate packages.
      * @type {number}
      * @memberof Container
      */
-    containerSequenceNumber?: number;
+    'containerSequenceNumber'?: number;
     /**
      * 
      * @type {Dimensions}
      * @memberof Container
      */
-    dimensions?: Dimensions;
+    'dimensions'?: Dimensions;
     /**
      * 
      * @type {Weight}
      * @memberof Container
      */
-    weight?: Weight;
+    'weight'?: Weight;
     /**
      * A list of packed items.
      * @type {Array<PackedItem>}
      * @memberof Container
      */
-    packedItems: Array<PackedItem>;
+    'packedItems': Array<PackedItem>;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ContainerContainerTypeEnum {
-    Carton = 'Carton',
-    Pallet = 'Pallet'
-}
+export const ContainerContainerTypeEnum = {
+    Carton: 'Carton',
+    Pallet: 'Pallet'
+} as const;
 
+export type ContainerContainerTypeEnum = typeof ContainerContainerTypeEnum[keyof typeof ContainerContainerTypeEnum];
 
 

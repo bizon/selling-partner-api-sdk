@@ -26,13 +26,12 @@ export interface ResearchingQuantity {
      * @type {number}
      * @memberof ResearchingQuantity
      */
-    totalResearchingQuantity?: number;
+    'totalResearchingQuantity'?: number;
     /**
      * A list of quantity details for items currently being researched.
      * @type {Array<ResearchingQuantityEntry>}
      * @memberof ResearchingQuantity
      */
-    researchingQuantityBreakdown?: Array<ResearchingQuantityEntry>;
+    'researchingQuantityBreakdown'?: Array<ResearchingQuantityEntry>;
 }
-
 

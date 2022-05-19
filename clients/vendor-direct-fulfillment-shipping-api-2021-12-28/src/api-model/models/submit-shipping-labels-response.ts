@@ -27,13 +27,12 @@ export interface SubmitShippingLabelsResponse {
      * @type {TransactionReference}
      * @memberof SubmitShippingLabelsResponse
      */
-    payload?: TransactionReference;
+    'payload'?: TransactionReference;
     /**
      * 
      * @type {ErrorList}
      * @memberof SubmitShippingLabelsResponse
      */
-    errors?: ErrorList;
+    'errors'?: ErrorList;
 }
-
 

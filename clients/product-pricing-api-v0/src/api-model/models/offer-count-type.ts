@@ -26,19 +26,18 @@ export interface OfferCountType {
      * @type {string}
      * @memberof OfferCountType
      */
-    condition?: string;
+    'condition'?: string;
     /**
      * 
      * @type {FulfillmentChannelType}
      * @memberof OfferCountType
      */
-    fulfillmentChannel?: FulfillmentChannelType;
+    'fulfillmentChannel'?: FulfillmentChannelType;
     /**
      * The number of offers in a fulfillment channel that meet a specific condition.
      * @type {number}
      * @memberof OfferCountType
      */
-    OfferCount?: number;
+    'OfferCount'?: number;
 }
-
 

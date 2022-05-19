@@ -26,13 +26,12 @@ export interface GetSolicitationActionResponseLinks {
      * @type {LinkObject}
      * @memberof GetSolicitationActionResponseLinks
      */
-    self: LinkObject;
+    'self': LinkObject;
     /**
      * 
      * @type {LinkObject}
      * @memberof GetSolicitationActionResponseLinks
      */
-    schema: LinkObject;
+    'schema': LinkObject;
 }
-
 

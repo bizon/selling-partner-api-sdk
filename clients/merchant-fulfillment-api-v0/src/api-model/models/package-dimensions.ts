@@ -27,31 +27,30 @@ export interface PackageDimensions {
      * @type {number}
      * @memberof PackageDimensions
      */
-    Length?: number;
+    'Length'?: number;
     /**
      * 
      * @type {number}
      * @memberof PackageDimensions
      */
-    Width?: number;
+    'Width'?: number;
     /**
      * 
      * @type {number}
      * @memberof PackageDimensions
      */
-    Height?: number;
+    'Height'?: number;
     /**
      * 
      * @type {UnitOfLength}
      * @memberof PackageDimensions
      */
-    Unit?: UnitOfLength;
+    'Unit'?: UnitOfLength;
     /**
      * 
      * @type {PredefinedPackageDimensions}
      * @memberof PackageDimensions
      */
-    PredefinedPackageDimensions?: PredefinedPackageDimensions;
+    'PredefinedPackageDimensions'?: PredefinedPackageDimensions;
 }
-
 

@@ -26,13 +26,12 @@ export interface DirectPayment {
      * @type {string}
      * @memberof DirectPayment
      */
-    DirectPaymentType?: string;
+    'DirectPaymentType'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof DirectPayment
      */
-    DirectPaymentAmount?: Currency;
+    'DirectPaymentAmount'?: Currency;
 }
-
 

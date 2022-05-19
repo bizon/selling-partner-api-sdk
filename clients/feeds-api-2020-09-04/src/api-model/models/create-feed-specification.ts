@@ -25,25 +25,24 @@ export interface CreateFeedSpecification {
      * @type {string}
      * @memberof CreateFeedSpecification
      */
-    feedType: string;
+    'feedType': string;
     /**
      * A list of identifiers for marketplaces that you want the feed to be applied to.
      * @type {Array<string>}
      * @memberof CreateFeedSpecification
      */
-    marketplaceIds: Array<string>;
+    'marketplaceIds': Array<string>;
     /**
      * The document identifier returned by the createFeedDocument operation. Encrypt and upload the feed document contents before calling the createFeed operation.
      * @type {string}
      * @memberof CreateFeedSpecification
      */
-    inputFeedDocumentId: string;
+    'inputFeedDocumentId': string;
     /**
      * Additional options to control the feed. For feeds that use the feedOptions parameter, you can find the parameter values in the feed description in [feedType values](https://developer-docs.amazon.com/sp-api/docs/feed-type-values).
      * @type {{ [key: string]: string; }}
      * @memberof CreateFeedSpecification
      */
-    feedOptions?: { [key: string]: string; };
+    'feedOptions'?: { [key: string]: string; };
 }
-
 

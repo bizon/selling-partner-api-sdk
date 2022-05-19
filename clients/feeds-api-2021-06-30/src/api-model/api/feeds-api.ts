@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -48,7 +48,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelFeed: async (feedId: string, options: any = {}): Promise<RequestArgs> => {
+        cancelFeed: async (feedId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'feedId' is not null or undefined
             assertParamExists('cancelFeed', 'feedId', feedId)
             const localVarPath = `/feeds/2021-06-30/feeds/{feedId}`
@@ -66,7 +66,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -81,7 +81,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createFeed: async (body: CreateFeedSpecification, options: any = {}): Promise<RequestArgs> => {
+        createFeed: async (body: CreateFeedSpecification, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createFeed', 'body', body)
             const localVarPath = `/feeds/2021-06-30/feeds`;
@@ -100,7 +100,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -116,7 +116,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createFeedDocument: async (body: CreateFeedDocumentSpecification, options: any = {}): Promise<RequestArgs> => {
+        createFeedDocument: async (body: CreateFeedDocumentSpecification, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createFeedDocument', 'body', body)
             const localVarPath = `/feeds/2021-06-30/documents`;
@@ -135,7 +135,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -151,7 +151,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFeed: async (feedId: string, options: any = {}): Promise<RequestArgs> => {
+        getFeed: async (feedId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'feedId' is not null or undefined
             assertParamExists('getFeed', 'feedId', feedId)
             const localVarPath = `/feeds/2021-06-30/feeds/{feedId}`
@@ -169,7 +169,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -184,7 +184,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFeedDocument: async (feedDocumentId: string, options: any = {}): Promise<RequestArgs> => {
+        getFeedDocument: async (feedDocumentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'feedDocumentId' is not null or undefined
             assertParamExists('getFeedDocument', 'feedDocumentId', feedDocumentId)
             const localVarPath = `/feeds/2021-06-30/documents/{feedDocumentId}`
@@ -202,7 +202,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -223,7 +223,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFeeds: async (feedTypes?: Array<string>, marketplaceIds?: Array<string>, pageSize?: number, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, createdSince?: string, createdUntil?: string, nextToken?: string, options: any = {}): Promise<RequestArgs> => {
+        getFeeds: async (feedTypes?: Array<string>, marketplaceIds?: Array<string>, pageSize?: number, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, createdSince?: string, createdUntil?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/feeds/2021-06-30/feeds`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -270,7 +270,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -295,7 +295,7 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelFeed(feedId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async cancelFeed(feedId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelFeed(feedId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -305,7 +305,7 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createFeed(body: CreateFeedSpecification, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateFeedResponse>> {
+        async createFeed(body: CreateFeedSpecification, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateFeedResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createFeed(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -315,7 +315,7 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createFeedDocument(body: CreateFeedDocumentSpecification, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateFeedDocumentResponse>> {
+        async createFeedDocument(body: CreateFeedDocumentSpecification, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateFeedDocumentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createFeedDocument(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -325,7 +325,7 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getFeed(feedId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Feed>> {
+        async getFeed(feedId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Feed>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getFeed(feedId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -335,7 +335,7 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getFeedDocument(feedDocumentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FeedDocument>> {
+        async getFeedDocument(feedDocumentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FeedDocument>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getFeedDocument(feedDocumentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -351,7 +351,7 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getFeeds(feedTypes?: Array<string>, marketplaceIds?: Array<string>, pageSize?: number, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, createdSince?: string, createdUntil?: string, nextToken?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeedsResponse>> {
+        async getFeeds(feedTypes?: Array<string>, marketplaceIds?: Array<string>, pageSize?: number, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, createdSince?: string, createdUntil?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeedsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getFeeds(feedTypes, marketplaceIds, pageSize, processingStatuses, createdSince, createdUntil, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -568,7 +568,7 @@ export class FeedsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedsApi
      */
-    public cancelFeed(requestParameters: FeedsApiCancelFeedRequest, options?: any) {
+    public cancelFeed(requestParameters: FeedsApiCancelFeedRequest, options?: AxiosRequestConfig) {
         return FeedsApiFp(this.configuration).cancelFeed(requestParameters.feedId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -579,7 +579,7 @@ export class FeedsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedsApi
      */
-    public createFeed(requestParameters: FeedsApiCreateFeedRequest, options?: any) {
+    public createFeed(requestParameters: FeedsApiCreateFeedRequest, options?: AxiosRequestConfig) {
         return FeedsApiFp(this.configuration).createFeed(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -590,7 +590,7 @@ export class FeedsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedsApi
      */
-    public createFeedDocument(requestParameters: FeedsApiCreateFeedDocumentRequest, options?: any) {
+    public createFeedDocument(requestParameters: FeedsApiCreateFeedDocumentRequest, options?: AxiosRequestConfig) {
         return FeedsApiFp(this.configuration).createFeedDocument(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -601,7 +601,7 @@ export class FeedsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedsApi
      */
-    public getFeed(requestParameters: FeedsApiGetFeedRequest, options?: any) {
+    public getFeed(requestParameters: FeedsApiGetFeedRequest, options?: AxiosRequestConfig) {
         return FeedsApiFp(this.configuration).getFeed(requestParameters.feedId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -612,7 +612,7 @@ export class FeedsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedsApi
      */
-    public getFeedDocument(requestParameters: FeedsApiGetFeedDocumentRequest, options?: any) {
+    public getFeedDocument(requestParameters: FeedsApiGetFeedDocumentRequest, options?: AxiosRequestConfig) {
         return FeedsApiFp(this.configuration).getFeedDocument(requestParameters.feedDocumentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -623,7 +623,7 @@ export class FeedsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedsApi
      */
-    public getFeeds(requestParameters: FeedsApiGetFeedsRequest = {}, options?: any) {
+    public getFeeds(requestParameters: FeedsApiGetFeedsRequest = {}, options?: AxiosRequestConfig) {
         return FeedsApiFp(this.configuration).getFeeds(requestParameters.feedTypes, requestParameters.marketplaceIds, requestParameters.pageSize, requestParameters.processingStatuses, requestParameters.createdSince, requestParameters.createdUntil, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }

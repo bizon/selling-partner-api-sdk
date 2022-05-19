@@ -26,40 +26,37 @@ export interface Restriction {
      * @type {string}
      * @memberof Restriction
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * The condition that applies to the restriction.
      * @type {string}
      * @memberof Restriction
      */
-    conditionType?: RestrictionConditionTypeEnum;
+    'conditionType'?: RestrictionConditionTypeEnum;
     /**
      * A list of reasons for the restriction.
      * @type {Array<Reason>}
      * @memberof Restriction
      */
-    reasons?: Array<Reason>;
+    'reasons'?: Array<Reason>;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum RestrictionConditionTypeEnum {
-    NewNew = 'new_new',
-    NewOpenBox = 'new_open_box',
-    NewOem = 'new_oem',
-    RefurbishedRefurbished = 'refurbished_refurbished',
-    UsedLikeNew = 'used_like_new',
-    UsedVeryGood = 'used_very_good',
-    UsedGood = 'used_good',
-    UsedAcceptable = 'used_acceptable',
-    CollectibleLikeNew = 'collectible_like_new',
-    CollectibleVeryGood = 'collectible_very_good',
-    CollectibleGood = 'collectible_good',
-    CollectibleAcceptable = 'collectible_acceptable',
-    ClubClub = 'club_club'
-}
+export const RestrictionConditionTypeEnum = {
+    NewNew: 'new_new',
+    NewOpenBox: 'new_open_box',
+    NewOem: 'new_oem',
+    RefurbishedRefurbished: 'refurbished_refurbished',
+    UsedLikeNew: 'used_like_new',
+    UsedVeryGood: 'used_very_good',
+    UsedGood: 'used_good',
+    UsedAcceptable: 'used_acceptable',
+    CollectibleLikeNew: 'collectible_like_new',
+    CollectibleVeryGood: 'collectible_very_good',
+    CollectibleGood: 'collectible_good',
+    CollectibleAcceptable: 'collectible_acceptable',
+    ClubClub: 'club_club'
+} as const;
 
+export type RestrictionConditionTypeEnum = typeof RestrictionConditionTypeEnum[keyof typeof RestrictionConditionTypeEnum];
 
 

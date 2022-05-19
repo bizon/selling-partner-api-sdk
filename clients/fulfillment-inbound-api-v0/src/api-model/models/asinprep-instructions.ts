@@ -28,25 +28,24 @@ export interface ASINPrepInstructions {
      * @type {string}
      * @memberof ASINPrepInstructions
      */
-    ASIN?: string;
+    'ASIN'?: string;
     /**
      * 
      * @type {BarcodeInstruction}
      * @memberof ASINPrepInstructions
      */
-    BarcodeInstruction?: BarcodeInstruction;
+    'BarcodeInstruction'?: BarcodeInstruction;
     /**
      * 
      * @type {PrepGuidance}
      * @memberof ASINPrepInstructions
      */
-    PrepGuidance?: PrepGuidance;
+    'PrepGuidance'?: PrepGuidance;
     /**
      * A list of preparation instructions to help with item sourcing decisions.
      * @type {Array<PrepInstruction>}
      * @memberof ASINPrepInstructions
      */
-    PrepInstructionList?: Array<PrepInstruction>;
+    'PrepInstructionList'?: Array<PrepInstruction>;
 }
-
 

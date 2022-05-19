@@ -25,7 +25,6 @@ export interface BillOfLadingDownloadURL {
      * @type {string}
      * @memberof BillOfLadingDownloadURL
      */
-    DownloadURL?: string;
+    'DownloadURL'?: string;
 }
-
 

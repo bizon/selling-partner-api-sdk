@@ -27,13 +27,12 @@ export interface OrderItemStatusOrderedQuantity {
      * @type {ItemQuantity}
      * @memberof OrderItemStatusOrderedQuantity
      */
-    orderedQuantity?: ItemQuantity;
+    'orderedQuantity'?: ItemQuantity;
     /**
      * Details of item quantity ordered.
      * @type {Array<OrderedQuantityDetails>}
      * @memberof OrderItemStatusOrderedQuantity
      */
-    orderedQuantityDetails?: Array<OrderedQuantityDetails>;
+    'orderedQuantityDetails'?: Array<OrderedQuantityDetails>;
 }
-
 

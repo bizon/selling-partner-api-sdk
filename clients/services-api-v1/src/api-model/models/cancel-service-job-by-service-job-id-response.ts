@@ -25,7 +25,6 @@ export interface CancelServiceJobByServiceJobIdResponse {
      * @type {Array<Error>}
      * @memberof CancelServiceJobByServiceJobIdResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

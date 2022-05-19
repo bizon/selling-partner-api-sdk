@@ -26,7 +26,6 @@ export interface GetSolicitationActionsForOrderResponseEmbedded {
      * @type {Array<GetSolicitationActionResponse>}
      * @memberof GetSolicitationActionsForOrderResponseEmbedded
      */
-    actions: Array<GetSolicitationActionResponse>;
+    'actions': Array<GetSolicitationActionResponse>;
 }
-
 

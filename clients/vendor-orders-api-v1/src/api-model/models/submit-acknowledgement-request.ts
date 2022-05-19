@@ -26,7 +26,6 @@ export interface SubmitAcknowledgementRequest {
      * @type {Array<OrderAcknowledgement>}
      * @memberof SubmitAcknowledgementRequest
      */
-    acknowledgements?: Array<OrderAcknowledgement>;
+    'acknowledgements'?: Array<OrderAcknowledgement>;
 }
-
 

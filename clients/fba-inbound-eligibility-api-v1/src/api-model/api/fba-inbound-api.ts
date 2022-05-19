@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -36,7 +36,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getItemEligibilityPreview: async (asin: string, program: 'INBOUND' | 'COMMINGLING', marketplaceIds?: Array<string>, options: any = {}): Promise<RequestArgs> => {
+        getItemEligibilityPreview: async (asin: string, program: 'INBOUND' | 'COMMINGLING', marketplaceIds?: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'asin' is not null or undefined
             assertParamExists('getItemEligibilityPreview', 'asin', asin)
             // verify required parameter 'program' is not null or undefined
@@ -67,7 +67,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -94,7 +94,7 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getItemEligibilityPreview(asin: string, program: 'INBOUND' | 'COMMINGLING', marketplaceIds?: Array<string>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetItemEligibilityPreviewResponse>> {
+        async getItemEligibilityPreview(asin: string, program: 'INBOUND' | 'COMMINGLING', marketplaceIds?: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetItemEligibilityPreviewResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getItemEligibilityPreview(asin, program, marketplaceIds, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -164,7 +164,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public getItemEligibilityPreview(requestParameters: FbaInboundApiGetItemEligibilityPreviewRequest, options?: any) {
+    public getItemEligibilityPreview(requestParameters: FbaInboundApiGetItemEligibilityPreviewRequest, options?: AxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).getItemEligibilityPreview(requestParameters.asin, requestParameters.program, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 }

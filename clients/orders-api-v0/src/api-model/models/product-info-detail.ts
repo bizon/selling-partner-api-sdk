@@ -25,7 +25,6 @@ export interface ProductInfoDetail {
      * @type {number}
      * @memberof ProductInfoDetail
      */
-    NumberOfItems?: number;
+    'NumberOfItems'?: number;
 }
-
 

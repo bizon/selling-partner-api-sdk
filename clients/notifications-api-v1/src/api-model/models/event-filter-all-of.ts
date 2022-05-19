@@ -25,7 +25,6 @@ export interface EventFilterAllOf {
      * @type {string}
      * @memberof EventFilterAllOf
      */
-    eventFilterType: string;
+    'eventFilterType': string;
 }
-
 

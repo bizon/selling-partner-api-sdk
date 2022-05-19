@@ -26,13 +26,12 @@ export interface RetrieveShippingLabelResult {
      * @type {string}
      * @memberof RetrieveShippingLabelResult
      */
-    labelStream: string;
+    'labelStream': string;
     /**
      * 
      * @type {LabelSpecification}
      * @memberof RetrieveShippingLabelResult
      */
-    labelSpecification: LabelSpecification;
+    'labelSpecification': LabelSpecification;
 }
-
 

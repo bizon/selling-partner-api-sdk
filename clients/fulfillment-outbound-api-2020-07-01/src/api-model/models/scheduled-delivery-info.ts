@@ -26,13 +26,12 @@ export interface ScheduledDeliveryInfo {
      * @type {string}
      * @memberof ScheduledDeliveryInfo
      */
-    deliveryTimeZone: string;
+    'deliveryTimeZone': string;
     /**
      * An array of delivery windows.
      * @type {Array<DeliveryWindow>}
      * @memberof ScheduledDeliveryInfo
      */
-    deliveryWindows: Array<DeliveryWindow>;
+    'deliveryWindows': Array<DeliveryWindow>;
 }
-
 

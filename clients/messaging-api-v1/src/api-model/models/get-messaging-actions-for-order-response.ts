@@ -27,19 +27,18 @@ export interface GetMessagingActionsForOrderResponse {
      * @type {GetMessagingActionsForOrderResponseLinks}
      * @memberof GetMessagingActionsForOrderResponse
      */
-    _links?: GetMessagingActionsForOrderResponseLinks;
+    '_links'?: GetMessagingActionsForOrderResponseLinks;
     /**
      * 
      * @type {GetMessagingActionsForOrderResponseEmbedded}
      * @memberof GetMessagingActionsForOrderResponse
      */
-    _embedded?: GetMessagingActionsForOrderResponseEmbedded;
+    '_embedded'?: GetMessagingActionsForOrderResponseEmbedded;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetMessagingActionsForOrderResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

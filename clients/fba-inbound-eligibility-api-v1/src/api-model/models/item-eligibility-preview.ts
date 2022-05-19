@@ -25,86 +25,81 @@ export interface ItemEligibilityPreview {
      * @type {string}
      * @memberof ItemEligibilityPreview
      */
-    asin: string;
+    'asin': string;
     /**
      * The marketplace for which eligibility was determined.
      * @type {string}
      * @memberof ItemEligibilityPreview
      */
-    marketplaceId?: string;
+    'marketplaceId'?: string;
     /**
      * The program for which eligibility was determined.
      * @type {string}
      * @memberof ItemEligibilityPreview
      */
-    program: ItemEligibilityPreviewProgramEnum;
+    'program': ItemEligibilityPreviewProgramEnum;
     /**
      * Indicates if the item is eligible for the program.
      * @type {boolean}
      * @memberof ItemEligibilityPreview
      */
-    isEligibleForProgram: boolean;
+    'isEligibleForProgram': boolean;
     /**
      * Potential Ineligibility Reason Codes.
      * @type {Array<string>}
      * @memberof ItemEligibilityPreview
      */
-    ineligibilityReasonList?: Array<ItemEligibilityPreviewIneligibilityReasonListEnum>;
+    'ineligibilityReasonList'?: Array<ItemEligibilityPreviewIneligibilityReasonListEnum>;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ItemEligibilityPreviewProgramEnum {
-    Inbound = 'INBOUND',
-    Commingling = 'COMMINGLING'
-}
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ItemEligibilityPreviewIneligibilityReasonListEnum {
-    FbaInb0004 = 'FBA_INB_0004',
-    FbaInb0006 = 'FBA_INB_0006',
-    FbaInb0007 = 'FBA_INB_0007',
-    FbaInb0008 = 'FBA_INB_0008',
-    FbaInb0009 = 'FBA_INB_0009',
-    FbaInb0010 = 'FBA_INB_0010',
-    FbaInb0011 = 'FBA_INB_0011',
-    FbaInb0012 = 'FBA_INB_0012',
-    FbaInb0013 = 'FBA_INB_0013',
-    FbaInb0014 = 'FBA_INB_0014',
-    FbaInb0015 = 'FBA_INB_0015',
-    FbaInb0016 = 'FBA_INB_0016',
-    FbaInb0017 = 'FBA_INB_0017',
-    FbaInb0018 = 'FBA_INB_0018',
-    FbaInb0019 = 'FBA_INB_0019',
-    FbaInb0034 = 'FBA_INB_0034',
-    FbaInb0035 = 'FBA_INB_0035',
-    FbaInb0036 = 'FBA_INB_0036',
-    FbaInb0037 = 'FBA_INB_0037',
-    FbaInb0038 = 'FBA_INB_0038',
-    FbaInb0050 = 'FBA_INB_0050',
-    FbaInb0051 = 'FBA_INB_0051',
-    FbaInb0053 = 'FBA_INB_0053',
-    FbaInb0055 = 'FBA_INB_0055',
-    FbaInb0056 = 'FBA_INB_0056',
-    FbaInb0059 = 'FBA_INB_0059',
-    FbaInb0065 = 'FBA_INB_0065',
-    FbaInb0066 = 'FBA_INB_0066',
-    FbaInb0067 = 'FBA_INB_0067',
-    FbaInb0068 = 'FBA_INB_0068',
-    FbaInb0095 = 'FBA_INB_0095',
-    FbaInb0097 = 'FBA_INB_0097',
-    FbaInb0098 = 'FBA_INB_0098',
-    FbaInb0099 = 'FBA_INB_0099',
-    FbaInb0100 = 'FBA_INB_0100',
-    FbaInb0103 = 'FBA_INB_0103',
-    FbaInb0104 = 'FBA_INB_0104',
-    FbaInb0197 = 'FBA_INB_0197',
-    UnknownInbErrorCode = 'UNKNOWN_INB_ERROR_CODE'
-}
+export const ItemEligibilityPreviewProgramEnum = {
+    Inbound: 'INBOUND',
+    Commingling: 'COMMINGLING'
+} as const;
 
+export type ItemEligibilityPreviewProgramEnum = typeof ItemEligibilityPreviewProgramEnum[keyof typeof ItemEligibilityPreviewProgramEnum];
+export const ItemEligibilityPreviewIneligibilityReasonListEnum = {
+    FbaInb0004: 'FBA_INB_0004',
+    FbaInb0006: 'FBA_INB_0006',
+    FbaInb0007: 'FBA_INB_0007',
+    FbaInb0008: 'FBA_INB_0008',
+    FbaInb0009: 'FBA_INB_0009',
+    FbaInb0010: 'FBA_INB_0010',
+    FbaInb0011: 'FBA_INB_0011',
+    FbaInb0012: 'FBA_INB_0012',
+    FbaInb0013: 'FBA_INB_0013',
+    FbaInb0014: 'FBA_INB_0014',
+    FbaInb0015: 'FBA_INB_0015',
+    FbaInb0016: 'FBA_INB_0016',
+    FbaInb0017: 'FBA_INB_0017',
+    FbaInb0018: 'FBA_INB_0018',
+    FbaInb0019: 'FBA_INB_0019',
+    FbaInb0034: 'FBA_INB_0034',
+    FbaInb0035: 'FBA_INB_0035',
+    FbaInb0036: 'FBA_INB_0036',
+    FbaInb0037: 'FBA_INB_0037',
+    FbaInb0038: 'FBA_INB_0038',
+    FbaInb0050: 'FBA_INB_0050',
+    FbaInb0051: 'FBA_INB_0051',
+    FbaInb0053: 'FBA_INB_0053',
+    FbaInb0055: 'FBA_INB_0055',
+    FbaInb0056: 'FBA_INB_0056',
+    FbaInb0059: 'FBA_INB_0059',
+    FbaInb0065: 'FBA_INB_0065',
+    FbaInb0066: 'FBA_INB_0066',
+    FbaInb0067: 'FBA_INB_0067',
+    FbaInb0068: 'FBA_INB_0068',
+    FbaInb0095: 'FBA_INB_0095',
+    FbaInb0097: 'FBA_INB_0097',
+    FbaInb0098: 'FBA_INB_0098',
+    FbaInb0099: 'FBA_INB_0099',
+    FbaInb0100: 'FBA_INB_0100',
+    FbaInb0103: 'FBA_INB_0103',
+    FbaInb0104: 'FBA_INB_0104',
+    FbaInb0197: 'FBA_INB_0197',
+    UnknownInbErrorCode: 'UNKNOWN_INB_ERROR_CODE'
+} as const;
+
+export type ItemEligibilityPreviewIneligibilityReasonListEnum = typeof ItemEligibilityPreviewIneligibilityReasonListEnum[keyof typeof ItemEligibilityPreviewIneligibilityReasonListEnum];
 
 

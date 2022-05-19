@@ -26,7 +26,6 @@ export interface GetMessagingActionsForOrderResponseEmbedded {
      * @type {Array<GetMessagingActionResponse>}
      * @memberof GetMessagingActionsForOrderResponseEmbedded
      */
-    actions: Array<GetMessagingActionResponse>;
+    'actions': Array<GetMessagingActionResponse>;
 }
-
 

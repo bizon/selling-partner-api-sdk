@@ -29,37 +29,36 @@ export interface Carton {
      * @type {Array<ContainerIdentification>}
      * @memberof Carton
      */
-    cartonIdentifiers?: Array<ContainerIdentification>;
+    'cartonIdentifiers'?: Array<ContainerIdentification>;
     /**
      * Carton sequence number for the carton. The first carton will be 001, the second 002, and so on. This number is used as a reference to refer to this carton from the pallet level.
      * @type {string}
      * @memberof Carton
      */
-    cartonSequenceNumber: string;
+    'cartonSequenceNumber': string;
     /**
      * 
      * @type {Dimensions}
      * @memberof Carton
      */
-    dimensions?: Dimensions;
+    'dimensions'?: Dimensions;
     /**
      * 
      * @type {Weight}
      * @memberof Carton
      */
-    weight?: Weight;
+    'weight'?: Weight;
     /**
      * This is required to be provided for every carton in the small parcel shipments.
      * @type {string}
      * @memberof Carton
      */
-    trackingNumber?: string;
+    'trackingNumber'?: string;
     /**
      * A list of container item details.
      * @type {Array<ContainerItem>}
      * @memberof Carton
      */
-    items: Array<ContainerItem>;
+    'items': Array<ContainerItem>;
 }
-
 

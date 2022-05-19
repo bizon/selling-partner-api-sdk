@@ -29,49 +29,48 @@ export interface GetOffersResult {
      * @type {string}
      * @memberof GetOffersResult
      */
-    MarketplaceID: string;
+    'MarketplaceID': string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
      * @type {string}
      * @memberof GetOffersResult
      */
-    ASIN?: string;
+    'ASIN'?: string;
     /**
      * The stock keeping unit (SKU) of the item.
      * @type {string}
      * @memberof GetOffersResult
      */
-    SKU?: string;
+    'SKU'?: string;
     /**
      * 
      * @type {ConditionType}
      * @memberof GetOffersResult
      */
-    ItemCondition: ConditionType;
+    'ItemCondition': ConditionType;
     /**
      * The status of the operation.
      * @type {string}
      * @memberof GetOffersResult
      */
-    status: string;
+    'status': string;
     /**
      * 
      * @type {ItemIdentifier}
      * @memberof GetOffersResult
      */
-    Identifier: ItemIdentifier;
+    'Identifier': ItemIdentifier;
     /**
      * 
      * @type {Summary}
      * @memberof GetOffersResult
      */
-    Summary: Summary;
+    'Summary': Summary;
     /**
      * 
      * @type {Array<OfferDetail>}
      * @memberof GetOffersResult
      */
-    Offers: Array<OfferDetail>;
+    'Offers': Array<OfferDetail>;
 }
-
 

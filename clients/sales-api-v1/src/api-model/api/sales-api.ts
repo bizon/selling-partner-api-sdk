@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -42,7 +42,7 @@ export const SalesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderMetrics: async (marketplaceIds: Array<string>, interval: string, granularity: 'Hour' | 'Day' | 'Week' | 'Month' | 'Year' | 'Total', granularityTimeZone?: string, buyerType?: 'B2B' | 'B2C' | 'All', fulfillmentNetwork?: string, firstDayOfWeek?: 'Monday' | 'Sunday', asin?: string, sku?: string, options: any = {}): Promise<RequestArgs> => {
+        getOrderMetrics: async (marketplaceIds: Array<string>, interval: string, granularity: 'Hour' | 'Day' | 'Week' | 'Month' | 'Year' | 'Total', granularityTimeZone?: string, buyerType?: 'B2B' | 'B2C' | 'All', fulfillmentNetwork?: string, firstDayOfWeek?: 'Monday' | 'Sunday', asin?: string, sku?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('getOrderMetrics', 'marketplaceIds', marketplaceIds)
             // verify required parameter 'interval' is not null or undefined
@@ -99,7 +99,7 @@ export const SalesApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -132,7 +132,7 @@ export const SalesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrderMetrics(marketplaceIds: Array<string>, interval: string, granularity: 'Hour' | 'Day' | 'Week' | 'Month' | 'Year' | 'Total', granularityTimeZone?: string, buyerType?: 'B2B' | 'B2C' | 'All', fulfillmentNetwork?: string, firstDayOfWeek?: 'Monday' | 'Sunday', asin?: string, sku?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderMetricsResponse>> {
+        async getOrderMetrics(marketplaceIds: Array<string>, interval: string, granularity: 'Hour' | 'Day' | 'Week' | 'Month' | 'Year' | 'Total', granularityTimeZone?: string, buyerType?: 'B2B' | 'B2C' | 'All', fulfillmentNetwork?: string, firstDayOfWeek?: 'Monday' | 'Sunday', asin?: string, sku?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderMetricsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderMetrics(marketplaceIds, interval, granularity, granularityTimeZone, buyerType, fulfillmentNetwork, firstDayOfWeek, asin, sku, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -250,7 +250,7 @@ export class SalesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SalesApi
      */
-    public getOrderMetrics(requestParameters: SalesApiGetOrderMetricsRequest, options?: any) {
+    public getOrderMetrics(requestParameters: SalesApiGetOrderMetricsRequest, options?: AxiosRequestConfig) {
         return SalesApiFp(this.configuration).getOrderMetrics(requestParameters.marketplaceIds, requestParameters.interval, requestParameters.granularity, requestParameters.granularityTimeZone, requestParameters.buyerType, requestParameters.fulfillmentNetwork, requestParameters.firstDayOfWeek, requestParameters.asin, requestParameters.sku, options).then((request) => request(this.axios, this.basePath));
     }
 }

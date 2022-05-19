@@ -26,13 +26,12 @@ export interface TextComponent {
      * @type {string}
      * @memberof TextComponent
      */
-    value: string;
+    'value': string;
     /**
      * A set of content decorators.
      * @type {Set<Decorator>}
      * @memberof TextComponent
      */
-    decoratorSet?: Set<Decorator>;
+    'decoratorSet'?: Set<Decorator>;
 }
-
 

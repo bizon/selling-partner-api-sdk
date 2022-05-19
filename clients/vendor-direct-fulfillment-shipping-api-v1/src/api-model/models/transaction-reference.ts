@@ -25,7 +25,6 @@ export interface TransactionReference {
      * @type {string}
      * @memberof TransactionReference
      */
-    transactionId?: string;
+    'transactionId'?: string;
 }
-
 

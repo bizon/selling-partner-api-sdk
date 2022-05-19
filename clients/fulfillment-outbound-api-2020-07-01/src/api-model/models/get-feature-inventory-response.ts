@@ -26,13 +26,12 @@ export interface GetFeatureInventoryResponse {
      * @type {GetFeatureInventoryResult}
      * @memberof GetFeatureInventoryResponse
      */
-    payload?: GetFeatureInventoryResult;
+    'payload'?: GetFeatureInventoryResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetFeatureInventoryResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

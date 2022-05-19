@@ -27,37 +27,36 @@ export interface Item {
      * @type {string}
      * @memberof Item
      */
-    OrderItemId: string;
+    'OrderItemId': string;
     /**
      * The number of items.
      * @type {number}
      * @memberof Item
      */
-    Quantity: number;
+    'Quantity': number;
     /**
      * 
      * @type {Weight}
      * @memberof Item
      */
-    ItemWeight?: Weight;
+    'ItemWeight'?: Weight;
     /**
      * The description of the item.
      * @type {string}
      * @memberof Item
      */
-    ItemDescription?: string;
+    'ItemDescription'?: string;
     /**
      * A list of transparency codes.
      * @type {Array<string>}
      * @memberof Item
      */
-    TransparencyCodeList?: Array<string>;
+    'TransparencyCodeList'?: Array<string>;
     /**
      * A list of additional seller input pairs required to purchase shipping.
      * @type {Array<AdditionalSellerInputs>}
      * @memberof Item
      */
-    ItemLevelSellerInputsList?: Array<AdditionalSellerInputs>;
+    'ItemLevelSellerInputsList'?: Array<AdditionalSellerInputs>;
 }
-
 

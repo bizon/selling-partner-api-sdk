@@ -26,7 +26,6 @@ export interface GetListingOffersBatchResponse {
      * @type {Array<ListingOffersResponse>}
      * @memberof GetListingOffersBatchResponse
      */
-    responses?: Array<ListingOffersResponse>;
+    'responses'?: Array<ListingOffersResponse>;
 }
-
 

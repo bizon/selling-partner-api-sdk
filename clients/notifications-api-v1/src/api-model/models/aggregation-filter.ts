@@ -26,7 +26,6 @@ export interface AggregationFilter {
      * @type {AggregationSettings}
      * @memberof AggregationFilter
      */
-    aggregationSettings?: AggregationSettings;
+    'aggregationSettings'?: AggregationSettings;
 }
-
 

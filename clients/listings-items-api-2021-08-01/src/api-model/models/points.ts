@@ -25,7 +25,6 @@ export interface Points {
      * @type {number}
      * @memberof Points
      */
-    pointsNumber: number;
+    'pointsNumber': number;
 }
-
 

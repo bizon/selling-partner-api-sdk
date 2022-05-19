@@ -33,97 +33,96 @@ export interface FulfillmentOrder {
      * @type {string}
      * @memberof FulfillmentOrder
      */
-    sellerFulfillmentOrderId: string;
+    'sellerFulfillmentOrderId': string;
     /**
      * The identifier for the marketplace the fulfillment order is placed against.
      * @type {string}
      * @memberof FulfillmentOrder
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * A fulfillment order identifier submitted with the createFulfillmentOrder operation. Displays as the order identifier in recipient-facing materials such as the packing slip.
      * @type {string}
      * @memberof FulfillmentOrder
      */
-    displayableOrderId: string;
+    'displayableOrderId': string;
     /**
      * 
      * @type {string}
      * @memberof FulfillmentOrder
      */
-    displayableOrderDate: string;
+    'displayableOrderDate': string;
     /**
      * A text block submitted with the createFulfillmentOrder operation. Displays in recipient-facing materials such as the packing slip.
      * @type {string}
      * @memberof FulfillmentOrder
      */
-    displayableOrderComment: string;
+    'displayableOrderComment': string;
     /**
      * 
      * @type {ShippingSpeedCategory}
      * @memberof FulfillmentOrder
      */
-    shippingSpeedCategory: ShippingSpeedCategory;
+    'shippingSpeedCategory': ShippingSpeedCategory;
     /**
      * 
      * @type {DeliveryWindow}
      * @memberof FulfillmentOrder
      */
-    deliveryWindow?: DeliveryWindow;
+    'deliveryWindow'?: DeliveryWindow;
     /**
      * 
      * @type {Address}
      * @memberof FulfillmentOrder
      */
-    destinationAddress: Address;
+    'destinationAddress': Address;
     /**
      * 
      * @type {FulfillmentAction}
      * @memberof FulfillmentOrder
      */
-    fulfillmentAction?: FulfillmentAction;
+    'fulfillmentAction'?: FulfillmentAction;
     /**
      * 
      * @type {FulfillmentPolicy}
      * @memberof FulfillmentOrder
      */
-    fulfillmentPolicy?: FulfillmentPolicy;
+    'fulfillmentPolicy'?: FulfillmentPolicy;
     /**
      * 
      * @type {CODSettings}
      * @memberof FulfillmentOrder
      */
-    codSettings?: CODSettings;
+    'codSettings'?: CODSettings;
     /**
      * 
      * @type {string}
      * @memberof FulfillmentOrder
      */
-    receivedDate: string;
+    'receivedDate': string;
     /**
      * 
      * @type {FulfillmentOrderStatus}
      * @memberof FulfillmentOrder
      */
-    fulfillmentOrderStatus: FulfillmentOrderStatus;
+    'fulfillmentOrderStatus': FulfillmentOrderStatus;
     /**
      * 
      * @type {string}
      * @memberof FulfillmentOrder
      */
-    statusUpdatedDate: string;
+    'statusUpdatedDate': string;
     /**
      * A list of email addresses that the seller provides that are used by Amazon to send ship-complete notifications to recipients on behalf of the seller.
      * @type {Array<string>}
      * @memberof FulfillmentOrder
      */
-    notificationEmails?: Array<string>;
+    'notificationEmails'?: Array<string>;
     /**
      * A list of features and their fulfillment policies to apply to the order.
      * @type {Array<FeatureSettings>}
      * @memberof FulfillmentOrder
      */
-    featureConstraints?: Array<FeatureSettings>;
+    'featureConstraints'?: Array<FeatureSettings>;
 }
-
 

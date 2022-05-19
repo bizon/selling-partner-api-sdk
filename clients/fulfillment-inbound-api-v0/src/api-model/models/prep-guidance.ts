@@ -19,11 +19,14 @@
  * @export
  * @enum {string}
  */
-export enum PrepGuidance {
-    ConsultHelpDocuments = 'ConsultHelpDocuments',
-    NoAdditionalPrepRequired = 'NoAdditionalPrepRequired',
-    SeePrepInstructionsList = 'SeePrepInstructionsList'
-}
+
+export const PrepGuidance = {
+    ConsultHelpDocuments: 'ConsultHelpDocuments',
+    NoAdditionalPrepRequired: 'NoAdditionalPrepRequired',
+    SeePrepInstructionsList: 'SeePrepInstructionsList'
+} as const;
+
+export type PrepGuidance = typeof PrepGuidance[keyof typeof PrepGuidance];
 
 
 

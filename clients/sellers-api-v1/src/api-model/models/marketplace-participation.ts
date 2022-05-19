@@ -27,13 +27,12 @@ export interface MarketplaceParticipation {
      * @type {Marketplace}
      * @memberof MarketplaceParticipation
      */
-    marketplace: Marketplace;
+    'marketplace': Marketplace;
     /**
      * 
      * @type {Participation}
      * @memberof MarketplaceParticipation
      */
-    participation: Participation;
+    'participation': Participation;
 }
-
 

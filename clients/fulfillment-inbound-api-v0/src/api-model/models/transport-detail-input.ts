@@ -29,25 +29,24 @@ export interface TransportDetailInput {
      * @type {PartneredSmallParcelDataInput}
      * @memberof TransportDetailInput
      */
-    PartneredSmallParcelData?: PartneredSmallParcelDataInput;
+    'PartneredSmallParcelData'?: PartneredSmallParcelDataInput;
     /**
      * 
      * @type {NonPartneredSmallParcelDataInput}
      * @memberof TransportDetailInput
      */
-    NonPartneredSmallParcelData?: NonPartneredSmallParcelDataInput;
+    'NonPartneredSmallParcelData'?: NonPartneredSmallParcelDataInput;
     /**
      * 
      * @type {PartneredLtlDataInput}
      * @memberof TransportDetailInput
      */
-    PartneredLtlData?: PartneredLtlDataInput;
+    'PartneredLtlData'?: PartneredLtlDataInput;
     /**
      * 
      * @type {NonPartneredLtlDataInput}
      * @memberof TransportDetailInput
      */
-    NonPartneredLtlData?: NonPartneredLtlDataInput;
+    'NonPartneredLtlData'?: NonPartneredLtlDataInput;
 }
-
 

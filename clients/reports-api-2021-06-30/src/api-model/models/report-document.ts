@@ -25,28 +25,25 @@ export interface ReportDocument {
      * @type {string}
      * @memberof ReportDocument
      */
-    reportDocumentId: string;
+    'reportDocumentId': string;
     /**
      * A presigned URL for the report document. This URL expires after 5 minutes.
      * @type {string}
      * @memberof ReportDocument
      */
-    url: string;
+    'url': string;
     /**
      * If present, the report document contents have been compressed with the provided algorithm.
      * @type {string}
      * @memberof ReportDocument
      */
-    compressionAlgorithm?: ReportDocumentCompressionAlgorithmEnum;
+    'compressionAlgorithm'?: ReportDocumentCompressionAlgorithmEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ReportDocumentCompressionAlgorithmEnum {
-    Gzip = 'GZIP'
-}
+export const ReportDocumentCompressionAlgorithmEnum = {
+    Gzip: 'GZIP'
+} as const;
 
+export type ReportDocumentCompressionAlgorithmEnum = typeof ReportDocumentCompressionAlgorithmEnum[keyof typeof ReportDocumentCompressionAlgorithmEnum];
 
 

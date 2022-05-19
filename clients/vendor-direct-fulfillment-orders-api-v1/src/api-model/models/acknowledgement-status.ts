@@ -25,13 +25,12 @@ export interface AcknowledgementStatus {
      * @type {string}
      * @memberof AcknowledgementStatus
      */
-    code?: string;
+    'code'?: string;
     /**
      * Reason for the acknowledgement code.
      * @type {string}
      * @memberof AcknowledgementStatus
      */
-    description?: string;
+    'description'?: string;
 }
-
 

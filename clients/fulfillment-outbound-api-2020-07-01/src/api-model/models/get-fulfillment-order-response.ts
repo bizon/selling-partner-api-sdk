@@ -26,13 +26,12 @@ export interface GetFulfillmentOrderResponse {
      * @type {GetFulfillmentOrderResult}
      * @memberof GetFulfillmentOrderResponse
      */
-    payload?: GetFulfillmentOrderResult;
+    'payload'?: GetFulfillmentOrderResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetFulfillmentOrderResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

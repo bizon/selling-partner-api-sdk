@@ -26,31 +26,30 @@ export interface BuyerInfo {
      * @type {string}
      * @memberof BuyerInfo
      */
-    BuyerEmail?: string;
+    'BuyerEmail'?: string;
     /**
      * The name of the buyer.
      * @type {string}
      * @memberof BuyerInfo
      */
-    BuyerName?: string;
+    'BuyerName'?: string;
     /**
      * The county of the buyer.
      * @type {string}
      * @memberof BuyerInfo
      */
-    BuyerCounty?: string;
+    'BuyerCounty'?: string;
     /**
      * 
      * @type {BuyerTaxInfo}
      * @memberof BuyerInfo
      */
-    BuyerTaxInfo?: BuyerTaxInfo;
+    'BuyerTaxInfo'?: BuyerTaxInfo;
     /**
      * The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout.
      * @type {string}
      * @memberof BuyerInfo
      */
-    PurchaseOrderNumber?: string;
+    'PurchaseOrderNumber'?: string;
 }
-
 

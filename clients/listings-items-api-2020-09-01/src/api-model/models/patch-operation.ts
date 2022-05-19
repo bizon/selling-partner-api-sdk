@@ -25,30 +25,27 @@ export interface PatchOperation {
      * @type {string}
      * @memberof PatchOperation
      */
-    op: PatchOperationOpEnum;
+    'op': PatchOperationOpEnum;
     /**
      * JSON Pointer path of the element to patch. See <https://tools.ietf.org/html/rfc6902>.
      * @type {string}
      * @memberof PatchOperation
      */
-    path: string;
+    'path': string;
     /**
      * JSON value to add, replace, or delete.
      * @type {Array<object>}
      * @memberof PatchOperation
      */
-    value?: Array<object>;
+    'value'?: Array<object>;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum PatchOperationOpEnum {
-    Add = 'add',
-    Replace = 'replace',
-    Delete = 'delete'
-}
+export const PatchOperationOpEnum = {
+    Add: 'add',
+    Replace: 'replace',
+    Delete: 'delete'
+} as const;
 
+export type PatchOperationOpEnum = typeof PatchOperationOpEnum[keyof typeof PatchOperationOpEnum];
 
 

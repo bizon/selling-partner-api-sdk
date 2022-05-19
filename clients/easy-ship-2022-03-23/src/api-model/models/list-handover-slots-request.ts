@@ -27,25 +27,24 @@ export interface ListHandoverSlotsRequest {
      * @type {string}
      * @memberof ListHandoverSlotsRequest
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
      * @type {string}
      * @memberof ListHandoverSlotsRequest
      */
-    amazonOrderId: string;
+    'amazonOrderId': string;
     /**
      * 
      * @type {Dimensions}
      * @memberof ListHandoverSlotsRequest
      */
-    packageDimensions: Dimensions;
+    'packageDimensions': Dimensions;
     /**
      * 
      * @type {Weight}
      * @memberof ListHandoverSlotsRequest
      */
-    packageWeight: Weight;
+    'packageWeight': Weight;
 }
-
 

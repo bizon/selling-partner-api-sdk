@@ -19,20 +19,23 @@
  * @export
  * @enum {string}
  */
-export enum PackageStatus {
-    ReadyForPickup = 'ReadyForPickup',
-    PickedUp = 'PickedUp',
-    AtOriginFc = 'AtOriginFC',
-    AtDestinationFc = 'AtDestinationFC',
-    Delivered = 'Delivered',
-    Rejected = 'Rejected',
-    Undeliverable = 'Undeliverable',
-    ReturnedToSeller = 'ReturnedToSeller',
-    LostInTransit = 'LostInTransit',
-    LabelCanceled = 'LabelCanceled',
-    DamagedInTransit = 'DamagedInTransit',
-    OutForDelivery = 'OutForDelivery'
-}
+
+export const PackageStatus = {
+    ReadyForPickup: 'ReadyForPickup',
+    PickedUp: 'PickedUp',
+    AtOriginFc: 'AtOriginFC',
+    AtDestinationFc: 'AtDestinationFC',
+    Delivered: 'Delivered',
+    Rejected: 'Rejected',
+    Undeliverable: 'Undeliverable',
+    ReturnedToSeller: 'ReturnedToSeller',
+    LostInTransit: 'LostInTransit',
+    LabelCanceled: 'LabelCanceled',
+    DamagedInTransit: 'DamagedInTransit',
+    OutForDelivery: 'OutForDelivery'
+} as const;
+
+export type PackageStatus = typeof PackageStatus[keyof typeof PackageStatus];
 
 
 

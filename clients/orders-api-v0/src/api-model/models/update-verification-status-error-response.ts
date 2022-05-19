@@ -25,7 +25,6 @@ export interface UpdateVerificationStatusErrorResponse {
      * @type {Array<Error>}
      * @memberof UpdateVerificationStatusErrorResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

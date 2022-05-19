@@ -25,7 +25,6 @@ export interface FulfillmentInstruction {
      * @type {string}
      * @memberof FulfillmentInstruction
      */
-    FulfillmentSupplySourceId?: string;
+    'FulfillmentSupplySourceId'?: string;
 }
-
 

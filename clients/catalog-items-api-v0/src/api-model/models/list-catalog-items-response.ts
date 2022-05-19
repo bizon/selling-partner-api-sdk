@@ -26,13 +26,12 @@ export interface ListCatalogItemsResponse {
      * @type {ListMatchingItemsResponse}
      * @memberof ListCatalogItemsResponse
      */
-    payload?: ListMatchingItemsResponse;
+    'payload'?: ListMatchingItemsResponse;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof ListCatalogItemsResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

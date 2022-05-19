@@ -25,7 +25,6 @@ export interface CreateWarrantyResponse {
      * @type {Array<Error>}
      * @memberof CreateWarrantyResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

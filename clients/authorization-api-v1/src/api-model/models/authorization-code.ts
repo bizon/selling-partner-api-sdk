@@ -25,7 +25,6 @@ export interface AuthorizationCode {
      * @type {string}
      * @memberof AuthorizationCode
      */
-    authorizationCode?: string;
+    'authorizationCode'?: string;
 }
-
 

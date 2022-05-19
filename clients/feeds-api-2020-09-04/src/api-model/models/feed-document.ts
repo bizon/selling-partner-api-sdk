@@ -26,34 +26,31 @@ export interface FeedDocument {
      * @type {string}
      * @memberof FeedDocument
      */
-    feedDocumentId: string;
+    'feedDocumentId': string;
     /**
      * A presigned URL for the feed document. This URL expires after 5 minutes.
      * @type {string}
      * @memberof FeedDocument
      */
-    url: string;
+    'url': string;
     /**
      * 
      * @type {FeedDocumentEncryptionDetails}
      * @memberof FeedDocument
      */
-    encryptionDetails: FeedDocumentEncryptionDetails;
+    'encryptionDetails': FeedDocumentEncryptionDetails;
     /**
      * If present, the feed document contents are compressed using the indicated algorithm.
      * @type {string}
      * @memberof FeedDocument
      */
-    compressionAlgorithm?: FeedDocumentCompressionAlgorithmEnum;
+    'compressionAlgorithm'?: FeedDocumentCompressionAlgorithmEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum FeedDocumentCompressionAlgorithmEnum {
-    Gzip = 'GZIP'
-}
+export const FeedDocumentCompressionAlgorithmEnum = {
+    Gzip: 'GZIP'
+} as const;
 
+export type FeedDocumentCompressionAlgorithmEnum = typeof FeedDocumentCompressionAlgorithmEnum[keyof typeof FeedDocumentCompressionAlgorithmEnum];
 
 

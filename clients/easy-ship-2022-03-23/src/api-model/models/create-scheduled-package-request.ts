@@ -26,19 +26,18 @@ export interface CreateScheduledPackageRequest {
      * @type {string}
      * @memberof CreateScheduledPackageRequest
      */
-    amazonOrderId: string;
+    'amazonOrderId': string;
     /**
      * A string of up to 255 characters.
      * @type {string}
      * @memberof CreateScheduledPackageRequest
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * 
      * @type {PackageDetails}
      * @memberof CreateScheduledPackageRequest
      */
-    packageDetails: PackageDetails;
+    'packageDetails': PackageDetails;
 }
-
 

@@ -26,13 +26,12 @@ export interface GetMarketplaceParticipationsResponse {
      * @type {Array<MarketplaceParticipation>}
      * @memberof GetMarketplaceParticipationsResponse
      */
-    payload?: Array<MarketplaceParticipation>;
+    'payload'?: Array<MarketplaceParticipation>;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetMarketplaceParticipationsResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

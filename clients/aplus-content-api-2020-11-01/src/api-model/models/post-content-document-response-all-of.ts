@@ -25,7 +25,6 @@ export interface PostContentDocumentResponseAllOf {
      * @type {string}
      * @memberof PostContentDocumentResponseAllOf
      */
-    contentReferenceKey: string;
+    'contentReferenceKey': string;
 }
-
 

@@ -25,67 +25,64 @@ export interface ItemVendorDetailsByMarketplace {
      * @type {string}
      * @memberof ItemVendorDetailsByMarketplace
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * Brand code associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemVendorDetailsByMarketplace
      */
-    brandCode?: string;
+    'brandCode'?: string;
     /**
      * Product category associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemVendorDetailsByMarketplace
      */
-    categoryCode?: string;
+    'categoryCode'?: string;
     /**
      * Manufacturer code associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemVendorDetailsByMarketplace
      */
-    manufacturerCode?: string;
+    'manufacturerCode'?: string;
     /**
      * Parent vendor code of the manufacturer code.
      * @type {string}
      * @memberof ItemVendorDetailsByMarketplace
      */
-    manufacturerCodeParent?: string;
+    'manufacturerCodeParent'?: string;
     /**
      * Product group associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemVendorDetailsByMarketplace
      */
-    productGroup?: string;
+    'productGroup'?: string;
     /**
      * Replenishment category associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemVendorDetailsByMarketplace
      */
-    replenishmentCategory?: ItemVendorDetailsByMarketplaceReplenishmentCategoryEnum;
+    'replenishmentCategory'?: ItemVendorDetailsByMarketplaceReplenishmentCategoryEnum;
     /**
      * Product subcategory associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemVendorDetailsByMarketplace
      */
-    subcategoryCode?: string;
+    'subcategoryCode'?: string;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ItemVendorDetailsByMarketplaceReplenishmentCategoryEnum {
-    Allocated = 'ALLOCATED',
-    BasicReplenishment = 'BASIC_REPLENISHMENT',
-    InSeason = 'IN_SEASON',
-    LimitedReplenishment = 'LIMITED_REPLENISHMENT',
-    ManufacturerOutOfStock = 'MANUFACTURER_OUT_OF_STOCK',
-    NewProduct = 'NEW_PRODUCT',
-    NonReplenishable = 'NON_REPLENISHABLE',
-    NonStockupable = 'NON_STOCKUPABLE',
-    Obsolete = 'OBSOLETE',
-    PlannedReplenishment = 'PLANNED_REPLENISHMENT'
-}
+export const ItemVendorDetailsByMarketplaceReplenishmentCategoryEnum = {
+    Allocated: 'ALLOCATED',
+    BasicReplenishment: 'BASIC_REPLENISHMENT',
+    InSeason: 'IN_SEASON',
+    LimitedReplenishment: 'LIMITED_REPLENISHMENT',
+    ManufacturerOutOfStock: 'MANUFACTURER_OUT_OF_STOCK',
+    NewProduct: 'NEW_PRODUCT',
+    NonReplenishable: 'NON_REPLENISHABLE',
+    NonStockupable: 'NON_STOCKUPABLE',
+    Obsolete: 'OBSOLETE',
+    PlannedReplenishment: 'PLANNED_REPLENISHMENT'
+} as const;
 
+export type ItemVendorDetailsByMarketplaceReplenishmentCategoryEnum = typeof ItemVendorDetailsByMarketplaceReplenishmentCategoryEnum[keyof typeof ItemVendorDetailsByMarketplaceReplenishmentCategoryEnum];
 
 

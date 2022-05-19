@@ -25,23 +25,20 @@ export interface Duration {
      * @type {string}
      * @memberof Duration
      */
-    durationUnit: DurationDurationUnitEnum;
+    'durationUnit': DurationDurationUnitEnum;
     /**
      * Value for the duration in terms of the durationUnit.
      * @type {number}
      * @memberof Duration
      */
-    durationValue: number;
+    'durationValue': number;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum DurationDurationUnitEnum {
-    Days = 'Days',
-    Months = 'Months'
-}
+export const DurationDurationUnitEnum = {
+    Days: 'Days',
+    Months: 'Months'
+} as const;
 
+export type DurationDurationUnitEnum = typeof DurationDurationUnitEnum[keyof typeof DurationDurationUnitEnum];
 
 

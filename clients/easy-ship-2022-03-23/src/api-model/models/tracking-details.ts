@@ -25,7 +25,6 @@ export interface TrackingDetails {
      * @type {string}
      * @memberof TrackingDetails
      */
-    trackingId?: string;
+    'trackingId'?: string;
 }
-
 

@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -54,7 +54,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelReport: async (reportId: string, options: any = {}): Promise<RequestArgs> => {
+        cancelReport: async (reportId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'reportId' is not null or undefined
             assertParamExists('cancelReport', 'reportId', reportId)
             const localVarPath = `/reports/2020-09-04/reports/{reportId}`
@@ -72,7 +72,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -87,7 +87,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelReportSchedule: async (reportScheduleId: string, options: any = {}): Promise<RequestArgs> => {
+        cancelReportSchedule: async (reportScheduleId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'reportScheduleId' is not null or undefined
             assertParamExists('cancelReportSchedule', 'reportScheduleId', reportScheduleId)
             const localVarPath = `/reports/2020-09-04/schedules/{reportScheduleId}`
@@ -105,7 +105,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -120,7 +120,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createReport: async (body: CreateReportSpecification, options: any = {}): Promise<RequestArgs> => {
+        createReport: async (body: CreateReportSpecification, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createReport', 'body', body)
             const localVarPath = `/reports/2020-09-04/reports`;
@@ -139,7 +139,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -155,7 +155,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createReportSchedule: async (body: CreateReportScheduleSpecification, options: any = {}): Promise<RequestArgs> => {
+        createReportSchedule: async (body: CreateReportScheduleSpecification, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createReportSchedule', 'body', body)
             const localVarPath = `/reports/2020-09-04/schedules`;
@@ -174,7 +174,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -190,7 +190,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReport: async (reportId: string, options: any = {}): Promise<RequestArgs> => {
+        getReport: async (reportId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'reportId' is not null or undefined
             assertParamExists('getReport', 'reportId', reportId)
             const localVarPath = `/reports/2020-09-04/reports/{reportId}`
@@ -208,7 +208,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -223,7 +223,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReportDocument: async (reportDocumentId: string, options: any = {}): Promise<RequestArgs> => {
+        getReportDocument: async (reportDocumentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'reportDocumentId' is not null or undefined
             assertParamExists('getReportDocument', 'reportDocumentId', reportDocumentId)
             const localVarPath = `/reports/2020-09-04/documents/{reportDocumentId}`
@@ -241,7 +241,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -256,7 +256,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReportSchedule: async (reportScheduleId: string, options: any = {}): Promise<RequestArgs> => {
+        getReportSchedule: async (reportScheduleId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'reportScheduleId' is not null or undefined
             assertParamExists('getReportSchedule', 'reportScheduleId', reportScheduleId)
             const localVarPath = `/reports/2020-09-04/schedules/{reportScheduleId}`
@@ -274,7 +274,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -289,7 +289,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReportSchedules: async (reportTypes: Array<string>, options: any = {}): Promise<RequestArgs> => {
+        getReportSchedules: async (reportTypes: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'reportTypes' is not null or undefined
             assertParamExists('getReportSchedules', 'reportTypes', reportTypes)
             const localVarPath = `/reports/2020-09-04/schedules`;
@@ -310,7 +310,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -331,7 +331,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReports: async (reportTypes?: Array<string>, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, marketplaceIds?: Array<string>, pageSize?: number, createdSince?: string, createdUntil?: string, nextToken?: string, options: any = {}): Promise<RequestArgs> => {
+        getReports: async (reportTypes?: Array<string>, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, marketplaceIds?: Array<string>, pageSize?: number, createdSince?: string, createdUntil?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/reports/2020-09-04/reports`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -378,7 +378,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -403,7 +403,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelReport(reportId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelReportResponse>> {
+        async cancelReport(reportId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelReportResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelReport(reportId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -413,7 +413,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelReportSchedule(reportScheduleId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelReportScheduleResponse>> {
+        async cancelReportSchedule(reportScheduleId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelReportScheduleResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelReportSchedule(reportScheduleId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -423,7 +423,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createReport(body: CreateReportSpecification, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateReportResponse>> {
+        async createReport(body: CreateReportSpecification, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateReportResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createReport(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -433,7 +433,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createReportSchedule(body: CreateReportScheduleSpecification, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateReportScheduleResponse>> {
+        async createReportSchedule(body: CreateReportScheduleSpecification, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateReportScheduleResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createReportSchedule(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -443,7 +443,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getReport(reportId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetReportResponse>> {
+        async getReport(reportId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetReportResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getReport(reportId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -453,7 +453,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getReportDocument(reportDocumentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetReportDocumentResponse>> {
+        async getReportDocument(reportDocumentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetReportDocumentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getReportDocument(reportDocumentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -463,7 +463,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getReportSchedule(reportScheduleId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetReportScheduleResponse>> {
+        async getReportSchedule(reportScheduleId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetReportScheduleResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getReportSchedule(reportScheduleId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -473,7 +473,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getReportSchedules(reportTypes: Array<string>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetReportSchedulesResponse>> {
+        async getReportSchedules(reportTypes: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetReportSchedulesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getReportSchedules(reportTypes, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -489,7 +489,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getReports(reportTypes?: Array<string>, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, marketplaceIds?: Array<string>, pageSize?: number, createdSince?: string, createdUntil?: string, nextToken?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetReportsResponse>> {
+        async getReports(reportTypes?: Array<string>, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, marketplaceIds?: Array<string>, pageSize?: number, createdSince?: string, createdUntil?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetReportsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getReports(reportTypes, processingStatuses, marketplaceIds, pageSize, createdSince, createdUntil, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -775,7 +775,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public cancelReport(requestParameters: ReportsApiCancelReportRequest, options?: any) {
+    public cancelReport(requestParameters: ReportsApiCancelReportRequest, options?: AxiosRequestConfig) {
         return ReportsApiFp(this.configuration).cancelReport(requestParameters.reportId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -786,7 +786,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public cancelReportSchedule(requestParameters: ReportsApiCancelReportScheduleRequest, options?: any) {
+    public cancelReportSchedule(requestParameters: ReportsApiCancelReportScheduleRequest, options?: AxiosRequestConfig) {
         return ReportsApiFp(this.configuration).cancelReportSchedule(requestParameters.reportScheduleId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -797,7 +797,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public createReport(requestParameters: ReportsApiCreateReportRequest, options?: any) {
+    public createReport(requestParameters: ReportsApiCreateReportRequest, options?: AxiosRequestConfig) {
         return ReportsApiFp(this.configuration).createReport(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -808,7 +808,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public createReportSchedule(requestParameters: ReportsApiCreateReportScheduleRequest, options?: any) {
+    public createReportSchedule(requestParameters: ReportsApiCreateReportScheduleRequest, options?: AxiosRequestConfig) {
         return ReportsApiFp(this.configuration).createReportSchedule(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -819,7 +819,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public getReport(requestParameters: ReportsApiGetReportRequest, options?: any) {
+    public getReport(requestParameters: ReportsApiGetReportRequest, options?: AxiosRequestConfig) {
         return ReportsApiFp(this.configuration).getReport(requestParameters.reportId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -830,7 +830,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public getReportDocument(requestParameters: ReportsApiGetReportDocumentRequest, options?: any) {
+    public getReportDocument(requestParameters: ReportsApiGetReportDocumentRequest, options?: AxiosRequestConfig) {
         return ReportsApiFp(this.configuration).getReportDocument(requestParameters.reportDocumentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -841,7 +841,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public getReportSchedule(requestParameters: ReportsApiGetReportScheduleRequest, options?: any) {
+    public getReportSchedule(requestParameters: ReportsApiGetReportScheduleRequest, options?: AxiosRequestConfig) {
         return ReportsApiFp(this.configuration).getReportSchedule(requestParameters.reportScheduleId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -852,7 +852,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public getReportSchedules(requestParameters: ReportsApiGetReportSchedulesRequest, options?: any) {
+    public getReportSchedules(requestParameters: ReportsApiGetReportSchedulesRequest, options?: AxiosRequestConfig) {
         return ReportsApiFp(this.configuration).getReportSchedules(requestParameters.reportTypes, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -863,7 +863,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public getReports(requestParameters: ReportsApiGetReportsRequest = {}, options?: any) {
+    public getReports(requestParameters: ReportsApiGetReportsRequest = {}, options?: AxiosRequestConfig) {
         return ReportsApiFp(this.configuration).getReports(requestParameters.reportTypes, requestParameters.processingStatuses, requestParameters.marketplaceIds, requestParameters.pageSize, requestParameters.createdSince, requestParameters.createdUntil, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }

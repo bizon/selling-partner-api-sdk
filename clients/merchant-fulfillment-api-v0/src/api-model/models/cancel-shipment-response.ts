@@ -26,13 +26,12 @@ export interface CancelShipmentResponse {
      * @type {Shipment}
      * @memberof CancelShipmentResponse
      */
-    payload?: Shipment;
+    'payload'?: Shipment;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof CancelShipmentResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

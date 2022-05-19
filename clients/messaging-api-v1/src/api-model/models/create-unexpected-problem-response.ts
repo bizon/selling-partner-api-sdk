@@ -25,7 +25,6 @@ export interface CreateUnexpectedProblemResponse {
      * @type {Array<Error>}
      * @memberof CreateUnexpectedProblemResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

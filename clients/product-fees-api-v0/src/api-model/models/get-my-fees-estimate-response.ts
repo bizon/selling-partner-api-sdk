@@ -26,13 +26,12 @@ export interface GetMyFeesEstimateResponse {
      * @type {GetMyFeesEstimateResult}
      * @memberof GetMyFeesEstimateResponse
      */
-    payload?: GetMyFeesEstimateResult;
+    'payload'?: GetMyFeesEstimateResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetMyFeesEstimateResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

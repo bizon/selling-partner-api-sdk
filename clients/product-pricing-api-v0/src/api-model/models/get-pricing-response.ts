@@ -26,13 +26,12 @@ export interface GetPricingResponse {
      * @type {Array<Price>}
      * @memberof GetPricingResponse
      */
-    payload?: Array<Price>;
+    'payload'?: Array<Price>;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetPricingResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

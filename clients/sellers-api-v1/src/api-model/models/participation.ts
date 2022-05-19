@@ -25,13 +25,12 @@ export interface Participation {
      * @type {boolean}
      * @memberof Participation
      */
-    isParticipating: boolean;
+    'isParticipating': boolean;
     /**
      * Specifies if the seller has suspended listings. True if the seller Listing Status is set to Inactive, otherwise False.
      * @type {boolean}
      * @memberof Participation
      */
-    hasSuspendedListings: boolean;
+    'hasSuspendedListings': boolean;
 }
-
 

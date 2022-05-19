@@ -25,25 +25,24 @@ export interface Buyer {
      * @type {string}
      * @memberof Buyer
      */
-    buyerId?: string;
+    'buyerId'?: string;
     /**
      * The name of the buyer.
      * @type {string}
      * @memberof Buyer
      */
-    name?: string;
+    'name'?: string;
     /**
      * The phone number of the buyer.
      * @type {string}
      * @memberof Buyer
      */
-    phone?: string;
+    'phone'?: string;
     /**
      * When true, the service is for an Amazon Prime buyer.
      * @type {boolean}
      * @memberof Buyer
      */
-    isPrimeMember?: boolean;
+    'isPrimeMember'?: boolean;
 }
-
 

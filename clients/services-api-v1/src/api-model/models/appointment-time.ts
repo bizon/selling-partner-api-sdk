@@ -25,13 +25,12 @@ export interface AppointmentTime {
      * @type {string}
      * @memberof AppointmentTime
      */
-    startTime: string;
+    'startTime': string;
     /**
      * The duration of the appointment window, in minutes.
      * @type {number}
      * @memberof AppointmentTime
      */
-    durationInMinutes: number;
+    'durationInMinutes': number;
 }
-
 

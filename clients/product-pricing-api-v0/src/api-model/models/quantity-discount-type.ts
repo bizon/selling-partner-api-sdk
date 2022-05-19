@@ -19,9 +19,12 @@
  * @export
  * @enum {string}
  */
-export enum QuantityDiscountType {
-    QuantityDiscount = 'QUANTITY_DISCOUNT'
-}
+
+export const QuantityDiscountType = {
+    QuantityDiscount: 'QUANTITY_DISCOUNT'
+} as const;
+
+export type QuantityDiscountType = typeof QuantityDiscountType[keyof typeof QuantityDiscountType];
 
 
 

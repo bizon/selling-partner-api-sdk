@@ -27,19 +27,18 @@ export interface InboundShipmentRequest {
      * @type {InboundShipmentHeader}
      * @memberof InboundShipmentRequest
      */
-    InboundShipmentHeader: InboundShipmentHeader;
+    'InboundShipmentHeader': InboundShipmentHeader;
     /**
      * A list of inbound shipment item information.
      * @type {Array<InboundShipmentItem>}
      * @memberof InboundShipmentRequest
      */
-    InboundShipmentItems: Array<InboundShipmentItem>;
+    'InboundShipmentItems': Array<InboundShipmentItem>;
     /**
      * A marketplace identifier. Specifies the marketplace where the product would be stored.
      * @type {string}
      * @memberof InboundShipmentRequest
      */
-    MarketplaceId: string;
+    'MarketplaceId': string;
 }
-
 

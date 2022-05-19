@@ -26,7 +26,6 @@ export interface StandardMultipleImageTextModule {
      * @type {Array<StandardImageTextCaptionBlock>}
      * @memberof StandardMultipleImageTextModule
      */
-    blocks?: Array<StandardImageTextCaptionBlock>;
+    'blocks'?: Array<StandardImageTextCaptionBlock>;
 }
-
 

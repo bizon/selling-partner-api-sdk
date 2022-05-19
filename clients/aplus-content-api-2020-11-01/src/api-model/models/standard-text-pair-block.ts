@@ -26,13 +26,12 @@ export interface StandardTextPairBlock {
      * @type {TextComponent}
      * @memberof StandardTextPairBlock
      */
-    label?: TextComponent;
+    'label'?: TextComponent;
     /**
      * 
      * @type {TextComponent}
      * @memberof StandardTextPairBlock
      */
-    description?: TextComponent;
+    'description'?: TextComponent;
 }
-
 

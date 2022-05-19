@@ -26,13 +26,12 @@ export interface GetFeedsResponse {
      * @type {Array<Feed>}
      * @memberof GetFeedsResponse
      */
-    feeds: Array<Feed>;
+    'feeds': Array<Feed>;
     /**
      * Returned when the number of results exceeds pageSize. To get the next page of results, call the getFeeds operation with this token as the only parameter.
      * @type {string}
      * @memberof GetFeedsResponse
      */
-    nextToken?: string;
+    'nextToken'?: string;
 }
-
 

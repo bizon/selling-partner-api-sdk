@@ -26,13 +26,12 @@ export interface GetSubscriptionResponse {
      * @type {Subscription}
      * @memberof GetSubscriptionResponse
      */
-    payload?: Subscription;
+    'payload'?: Subscription;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetSubscriptionResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

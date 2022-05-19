@@ -29,37 +29,36 @@ export interface Product {
      * @type {IdentifierType}
      * @memberof Product
      */
-    Identifiers: IdentifierType;
+    'Identifiers': IdentifierType;
     /**
      * A list of product attributes if they are applicable to the product that is returned.
      * @type {Array<object>}
      * @memberof Product
      */
-    AttributeSets?: Array<object>;
+    'AttributeSets'?: Array<object>;
     /**
      * A list that contains product variation information, if applicable.
      * @type {Array<object>}
      * @memberof Product
      */
-    Relationships?: Array<object>;
+    'Relationships'?: Array<object>;
     /**
      * 
      * @type {CompetitivePricingType}
      * @memberof Product
      */
-    CompetitivePricing?: CompetitivePricingType;
+    'CompetitivePricing'?: CompetitivePricingType;
     /**
      * A list of sales rank information for the item, by category.
      * @type {Array<SalesRankType>}
      * @memberof Product
      */
-    SalesRankings?: Array<SalesRankType>;
+    'SalesRankings'?: Array<SalesRankType>;
     /**
      * A list of offers.
      * @type {Array<OfferType>}
      * @memberof Product
      */
-    Offers?: Array<OfferType>;
+    'Offers'?: Array<OfferType>;
 }
-
 

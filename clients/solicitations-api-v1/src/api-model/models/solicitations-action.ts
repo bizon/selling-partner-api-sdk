@@ -25,7 +25,6 @@ export interface SolicitationsAction {
      * @type {string}
      * @memberof SolicitationsAction
      */
-    name: string;
+    'name': string;
 }
-
 

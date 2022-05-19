@@ -26,7 +26,6 @@ export interface TaxItemDetails {
      * @type {Array<TaxDetails>}
      * @memberof TaxItemDetails
      */
-    taxLineItem?: Array<TaxDetails>;
+    'taxLineItem'?: Array<TaxDetails>;
 }
-
 

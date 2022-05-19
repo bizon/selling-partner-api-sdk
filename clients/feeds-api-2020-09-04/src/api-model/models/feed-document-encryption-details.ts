@@ -25,28 +25,25 @@ export interface FeedDocumentEncryptionDetails {
      * @type {string}
      * @memberof FeedDocumentEncryptionDetails
      */
-    standard: FeedDocumentEncryptionDetailsStandardEnum;
+    'standard': FeedDocumentEncryptionDetailsStandardEnum;
     /**
      * The vector to encrypt or decrypt the document contents using Cipher Block Chaining (CBC).
      * @type {string}
      * @memberof FeedDocumentEncryptionDetails
      */
-    initializationVector: string;
+    'initializationVector': string;
     /**
      * The encryption key used to encrypt or decrypt the document contents.
      * @type {string}
      * @memberof FeedDocumentEncryptionDetails
      */
-    key: string;
+    'key': string;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum FeedDocumentEncryptionDetailsStandardEnum {
-    Aes = 'AES'
-}
+export const FeedDocumentEncryptionDetailsStandardEnum = {
+    Aes: 'AES'
+} as const;
 
+export type FeedDocumentEncryptionDetailsStandardEnum = typeof FeedDocumentEncryptionDetailsStandardEnum[keyof typeof FeedDocumentEncryptionDetailsStandardEnum];
 
 

@@ -25,13 +25,12 @@ export interface ShipsFromType {
      * @type {string}
      * @memberof ShipsFromType
      */
-    State?: string;
+    'State'?: string;
     /**
      * The country from where the item is shipped.
      * @type {string}
      * @memberof ShipsFromType
      */
-    Country?: string;
+    'Country'?: string;
 }
-
 

@@ -26,43 +26,42 @@ export interface ServiceFeeEvent {
      * @type {string}
      * @memberof ServiceFeeEvent
      */
-    AmazonOrderId?: string;
+    'AmazonOrderId'?: string;
     /**
      * A short description of the service fee reason.
      * @type {string}
      * @memberof ServiceFeeEvent
      */
-    FeeReason?: string;
+    'FeeReason'?: string;
     /**
      * A list of fee component information.
      * @type {Array<FeeComponent>}
      * @memberof ServiceFeeEvent
      */
-    FeeList?: Array<FeeComponent>;
+    'FeeList'?: Array<FeeComponent>;
     /**
      * The seller SKU of the item. The seller SKU is qualified by the seller\'s seller ID, which is included with every call to the Selling Partner API.
      * @type {string}
      * @memberof ServiceFeeEvent
      */
-    SellerSKU?: string;
+    'SellerSKU'?: string;
     /**
      * A unique identifier assigned by Amazon to products stored in and fulfilled from an Amazon fulfillment center.
      * @type {string}
      * @memberof ServiceFeeEvent
      */
-    FnSKU?: string;
+    'FnSKU'?: string;
     /**
      * A short description of the service fee event.
      * @type {string}
      * @memberof ServiceFeeEvent
      */
-    FeeDescription?: string;
+    'FeeDescription'?: string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
      * @type {string}
      * @memberof ServiceFeeEvent
      */
-    ASIN?: string;
+    'ASIN'?: string;
 }
-
 

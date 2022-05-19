@@ -30,61 +30,60 @@ export interface OrderItem {
      * @type {string}
      * @memberof OrderItem
      */
-    itemSequenceNumber: string;
+    'itemSequenceNumber': string;
     /**
      * Buyer\'s standard identification number (ASIN) of an item.
      * @type {string}
      * @memberof OrderItem
      */
-    buyerProductIdentifier?: string;
+    'buyerProductIdentifier'?: string;
     /**
      * The vendor selected product identification of the item.
      * @type {string}
      * @memberof OrderItem
      */
-    vendorProductIdentifier?: string;
+    'vendorProductIdentifier'?: string;
     /**
      * Title for the item.
      * @type {string}
      * @memberof OrderItem
      */
-    title?: string;
+    'title'?: string;
     /**
      * 
      * @type {ItemQuantity}
      * @memberof OrderItem
      */
-    orderedQuantity: ItemQuantity;
+    'orderedQuantity': ItemQuantity;
     /**
      * 
      * @type {ScheduledDeliveryShipment}
      * @memberof OrderItem
      */
-    scheduledDeliveryShipment?: ScheduledDeliveryShipment;
+    'scheduledDeliveryShipment'?: ScheduledDeliveryShipment;
     /**
      * 
      * @type {GiftDetails}
      * @memberof OrderItem
      */
-    giftDetails?: GiftDetails;
+    'giftDetails'?: GiftDetails;
     /**
      * 
      * @type {Money}
      * @memberof OrderItem
      */
-    netPrice: Money;
+    'netPrice': Money;
     /**
      * 
      * @type {OrderItemTaxDetails}
      * @memberof OrderItem
      */
-    taxDetails?: OrderItemTaxDetails;
+    'taxDetails'?: OrderItemTaxDetails;
     /**
      * 
      * @type {Money}
      * @memberof OrderItem
      */
-    totalPrice?: Money;
+    'totalPrice'?: Money;
 }
-
 

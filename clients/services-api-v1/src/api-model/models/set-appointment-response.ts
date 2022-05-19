@@ -26,19 +26,18 @@ export interface SetAppointmentResponse {
      * @type {string}
      * @memberof SetAppointmentResponse
      */
-    appointmentId?: string;
+    'appointmentId'?: string;
     /**
      * A list of warnings returned in the sucessful execution response of an API request.
      * @type {Array<Warning>}
      * @memberof SetAppointmentResponse
      */
-    warnings?: Array<Warning>;
+    'warnings'?: Array<Warning>;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof SetAppointmentResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

@@ -25,7 +25,6 @@ export interface LabelDownloadURL {
      * @type {string}
      * @memberof LabelDownloadURL
      */
-    DownloadURL?: string;
+    'DownloadURL'?: string;
 }
-
 

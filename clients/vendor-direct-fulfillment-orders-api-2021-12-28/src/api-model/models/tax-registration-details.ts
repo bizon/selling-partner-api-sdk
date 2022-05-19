@@ -26,35 +26,32 @@ export interface TaxRegistrationDetails {
      * @type {string}
      * @memberof TaxRegistrationDetails
      */
-    taxRegistrationType?: TaxRegistrationDetailsTaxRegistrationTypeEnum;
+    'taxRegistrationType'?: TaxRegistrationDetailsTaxRegistrationTypeEnum;
     /**
      * Tax registration number for the party. For example, VAT ID.
      * @type {string}
      * @memberof TaxRegistrationDetails
      */
-    taxRegistrationNumber: string;
+    'taxRegistrationNumber': string;
     /**
      * 
      * @type {Address}
      * @memberof TaxRegistrationDetails
      */
-    taxRegistrationAddress?: Address;
+    'taxRegistrationAddress'?: Address;
     /**
      * Tax registration message that can be used for additional tax related details.
      * @type {string}
      * @memberof TaxRegistrationDetails
      */
-    taxRegistrationMessages?: string;
+    'taxRegistrationMessages'?: string;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum TaxRegistrationDetailsTaxRegistrationTypeEnum {
-    Vat = 'VAT',
-    Gst = 'GST'
-}
+export const TaxRegistrationDetailsTaxRegistrationTypeEnum = {
+    Vat: 'VAT',
+    Gst: 'GST'
+} as const;
 
+export type TaxRegistrationDetailsTaxRegistrationTypeEnum = typeof TaxRegistrationDetailsTaxRegistrationTypeEnum[keyof typeof TaxRegistrationDetailsTaxRegistrationTypeEnum];
 
 

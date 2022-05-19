@@ -26,13 +26,12 @@ export interface LabelCustomization {
      * @type {string}
      * @memberof LabelCustomization
      */
-    CustomTextForLabel?: string;
+    'CustomTextForLabel'?: string;
     /**
      * 
      * @type {StandardIdForLabel}
      * @memberof LabelCustomization
      */
-    StandardIdForLabel?: StandardIdForLabel;
+    'StandardIdForLabel'?: StandardIdForLabel;
 }
-
 

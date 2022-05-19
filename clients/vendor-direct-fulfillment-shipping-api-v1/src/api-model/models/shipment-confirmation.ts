@@ -29,37 +29,36 @@ export interface ShipmentConfirmation {
      * @type {string}
      * @memberof ShipmentConfirmation
      */
-    purchaseOrderNumber: string;
+    'purchaseOrderNumber': string;
     /**
      * 
      * @type {ShipmentDetails}
      * @memberof ShipmentConfirmation
      */
-    shipmentDetails: ShipmentDetails;
+    'shipmentDetails': ShipmentDetails;
     /**
      * 
      * @type {PartyIdentification}
      * @memberof ShipmentConfirmation
      */
-    sellingParty: PartyIdentification;
+    'sellingParty': PartyIdentification;
     /**
      * 
      * @type {PartyIdentification}
      * @memberof ShipmentConfirmation
      */
-    shipFromParty: PartyIdentification;
+    'shipFromParty': PartyIdentification;
     /**
      * Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.
      * @type {Array<Item>}
      * @memberof ShipmentConfirmation
      */
-    items: Array<Item>;
+    'items': Array<Item>;
     /**
      * Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.
      * @type {Array<Container>}
      * @memberof ShipmentConfirmation
      */
-    containers?: Array<Container>;
+    'containers'?: Array<Container>;
 }
-
 

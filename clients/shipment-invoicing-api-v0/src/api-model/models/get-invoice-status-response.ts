@@ -26,13 +26,12 @@ export interface GetInvoiceStatusResponse {
      * @type {ShipmentInvoiceStatusResponse}
      * @memberof GetInvoiceStatusResponse
      */
-    payload?: ShipmentInvoiceStatusResponse;
+    'payload'?: ShipmentInvoiceStatusResponse;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetInvoiceStatusResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

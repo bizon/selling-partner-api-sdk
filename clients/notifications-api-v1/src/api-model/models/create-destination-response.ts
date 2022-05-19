@@ -26,13 +26,12 @@ export interface CreateDestinationResponse {
      * @type {Destination}
      * @memberof CreateDestinationResponse
      */
-    payload?: Destination;
+    'payload'?: Destination;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof CreateDestinationResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

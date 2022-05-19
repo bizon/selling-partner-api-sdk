@@ -25,13 +25,12 @@ export interface CartonReferenceDetails {
      * @type {number}
      * @memberof CartonReferenceDetails
      */
-    cartonCount?: number;
+    'cartonCount'?: number;
     /**
      * Array of reference numbers for the carton that are part of this pallet/shipment. Please provide the cartonSequenceNumber from the \'cartons\' segment to refer to that carton\'s details here.
      * @type {Array<string>}
      * @memberof CartonReferenceDetails
      */
-    cartonReferenceNumbers: Array<string>;
+    'cartonReferenceNumbers': Array<string>;
 }
-
 

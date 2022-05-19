@@ -25,25 +25,24 @@ export interface FulfillmentShipmentPackage {
      * @type {number}
      * @memberof FulfillmentShipmentPackage
      */
-    packageNumber: number;
+    'packageNumber': number;
     /**
      * Identifies the carrier who will deliver the shipment to the recipient.
      * @type {string}
      * @memberof FulfillmentShipmentPackage
      */
-    carrierCode: string;
+    'carrierCode': string;
     /**
      * The tracking number, if provided, can be used to obtain tracking and delivery information.
      * @type {string}
      * @memberof FulfillmentShipmentPackage
      */
-    trackingNumber?: string;
+    'trackingNumber'?: string;
     /**
      * 
      * @type {string}
      * @memberof FulfillmentShipmentPackage
      */
-    estimatedArrivalDate?: string;
+    'estimatedArrivalDate'?: string;
 }
-
 

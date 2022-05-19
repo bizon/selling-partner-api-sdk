@@ -26,25 +26,24 @@ export interface TransportHeader {
      * @type {string}
      * @memberof TransportHeader
      */
-    SellerId: string;
+    'SellerId': string;
     /**
      * A shipment identifier originally returned by the createInboundShipmentPlan operation.
      * @type {string}
      * @memberof TransportHeader
      */
-    ShipmentId: string;
+    'ShipmentId': string;
     /**
      * Indicates whether a putTransportDetails request is for a partnered carrier.  Possible values:  * true – Request is for an Amazon-partnered carrier.  * false – Request is for a non-Amazon-partnered carrier.
      * @type {boolean}
      * @memberof TransportHeader
      */
-    IsPartnered: boolean;
+    'IsPartnered': boolean;
     /**
      * 
      * @type {ShipmentType}
      * @memberof TransportHeader
      */
-    ShipmentType: ShipmentType;
+    'ShipmentType': ShipmentType;
 }
-
 

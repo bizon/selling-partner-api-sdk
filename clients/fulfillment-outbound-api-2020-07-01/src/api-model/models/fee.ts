@@ -26,25 +26,22 @@ export interface Fee {
      * @type {string}
      * @memberof Fee
      */
-    name: FeeNameEnum;
+    'name': FeeNameEnum;
     /**
      * 
      * @type {Money}
      * @memberof Fee
      */
-    amount: Money;
+    'amount': Money;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum FeeNameEnum {
-    FbaPerUnitFulfillmentFee = 'FBAPerUnitFulfillmentFee',
-    FbaPerOrderFulfillmentFee = 'FBAPerOrderFulfillmentFee',
-    FbaTransportationFee = 'FBATransportationFee',
-    FbaFulfillmentCodFee = 'FBAFulfillmentCODFee'
-}
+export const FeeNameEnum = {
+    FbaPerUnitFulfillmentFee: 'FBAPerUnitFulfillmentFee',
+    FbaPerOrderFulfillmentFee: 'FBAPerOrderFulfillmentFee',
+    FbaTransportationFee: 'FBATransportationFee',
+    FbaFulfillmentCodFee: 'FBAFulfillmentCODFee'
+} as const;
 
+export type FeeNameEnum = typeof FeeNameEnum[keyof typeof FeeNameEnum];
 
 

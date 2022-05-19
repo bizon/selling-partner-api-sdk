@@ -25,7 +25,6 @@ export interface MarketplaceFilter {
      * @type {Array<string>}
      * @memberof MarketplaceFilter
      */
-    marketplaceIds?: Array<string>;
+    'marketplaceIds'?: Array<string>;
 }
-
 

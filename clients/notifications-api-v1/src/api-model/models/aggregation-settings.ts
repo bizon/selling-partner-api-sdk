@@ -26,7 +26,6 @@ export interface AggregationSettings {
      * @type {AggregationTimePeriod}
      * @memberof AggregationSettings
      */
-    aggregationTimePeriod: AggregationTimePeriod;
+    'aggregationTimePeriod': AggregationTimePeriod;
 }
-
 

@@ -26,7 +26,6 @@ export interface SmallAndLightFeePreviews {
      * @type {Array<FeePreview>}
      * @memberof SmallAndLightFeePreviews
      */
-    data?: Array<FeePreview>;
+    'data'?: Array<FeePreview>;
 }
-
 

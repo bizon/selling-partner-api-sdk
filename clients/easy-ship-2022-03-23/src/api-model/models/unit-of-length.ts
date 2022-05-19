@@ -19,9 +19,12 @@
  * @export
  * @enum {string}
  */
-export enum UnitOfLength {
-    Cm = 'Cm'
-}
+
+export const UnitOfLength = {
+    Cm: 'Cm'
+} as const;
+
+export type UnitOfLength = typeof UnitOfLength[keyof typeof UnitOfLength];
 
 
 

@@ -26,37 +26,36 @@ export interface RemovalShipmentAdjustmentEvent {
      * @type {string}
      * @memberof RemovalShipmentAdjustmentEvent
      */
-    PostedDate?: string;
+    'PostedDate'?: string;
     /**
      * The unique identifier for the adjustment event.
      * @type {string}
      * @memberof RemovalShipmentAdjustmentEvent
      */
-    AdjustmentEventId?: string;
+    'AdjustmentEventId'?: string;
     /**
      * The merchant removal orderId.
      * @type {string}
      * @memberof RemovalShipmentAdjustmentEvent
      */
-    MerchantOrderId?: string;
+    'MerchantOrderId'?: string;
     /**
      * The orderId for shipping inventory.
      * @type {string}
      * @memberof RemovalShipmentAdjustmentEvent
      */
-    OrderId?: string;
+    'OrderId'?: string;
     /**
      * The type of removal order.  Possible values:  * WHOLESALE_LIQUIDATION.
      * @type {string}
      * @memberof RemovalShipmentAdjustmentEvent
      */
-    TransactionType?: string;
+    'TransactionType'?: string;
     /**
      * A comma-delimited list of Removal shipmentItemAdjustment details for FBA inventory.
      * @type {Array<RemovalShipmentItemAdjustment>}
      * @memberof RemovalShipmentAdjustmentEvent
      */
-    RemovalShipmentItemAdjustmentList?: Array<RemovalShipmentItemAdjustment>;
+    'RemovalShipmentItemAdjustmentList'?: Array<RemovalShipmentItemAdjustment>;
 }
-
 

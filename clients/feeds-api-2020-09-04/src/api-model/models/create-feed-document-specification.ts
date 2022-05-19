@@ -25,7 +25,6 @@ export interface CreateFeedDocumentSpecification {
      * @type {string}
      * @memberof CreateFeedDocumentSpecification
      */
-    contentType: string;
+    'contentType': string;
 }
-
 

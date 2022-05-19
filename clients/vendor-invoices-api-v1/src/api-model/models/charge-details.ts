@@ -27,44 +27,41 @@ export interface ChargeDetails {
      * @type {string}
      * @memberof ChargeDetails
      */
-    type: ChargeDetailsTypeEnum;
+    'type': ChargeDetailsTypeEnum;
     /**
      * Description of the charge.
      * @type {string}
      * @memberof ChargeDetails
      */
-    description?: string;
+    'description'?: string;
     /**
      * 
      * @type {Money}
      * @memberof ChargeDetails
      */
-    chargeAmount: Money;
+    'chargeAmount': Money;
     /**
      * Tax amount details applied on this charge.
      * @type {Array<TaxDetails>}
      * @memberof ChargeDetails
      */
-    taxDetails?: Array<TaxDetails>;
+    'taxDetails'?: Array<TaxDetails>;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ChargeDetailsTypeEnum {
-    Freight = 'Freight',
-    Packing = 'Packing',
-    Duty = 'Duty',
-    Service = 'Service',
-    SmallOrder = 'SmallOrder',
-    InsurancePlacementCost = 'InsurancePlacementCost',
-    InsuranceFee = 'InsuranceFee',
-    SpecialHandlingService = 'SpecialHandlingService',
-    CollectionAndRecyclingService = 'CollectionAndRecyclingService',
-    EnvironmentalProtectionService = 'EnvironmentalProtectionService',
-    TaxCollectedAtSource = 'TaxCollectedAtSource'
-}
+export const ChargeDetailsTypeEnum = {
+    Freight: 'Freight',
+    Packing: 'Packing',
+    Duty: 'Duty',
+    Service: 'Service',
+    SmallOrder: 'SmallOrder',
+    InsurancePlacementCost: 'InsurancePlacementCost',
+    InsuranceFee: 'InsuranceFee',
+    SpecialHandlingService: 'SpecialHandlingService',
+    CollectionAndRecyclingService: 'CollectionAndRecyclingService',
+    EnvironmentalProtectionService: 'EnvironmentalProtectionService',
+    TaxCollectedAtSource: 'TaxCollectedAtSource'
+} as const;
 
+export type ChargeDetailsTypeEnum = typeof ChargeDetailsTypeEnum[keyof typeof ChargeDetailsTypeEnum];
 
 

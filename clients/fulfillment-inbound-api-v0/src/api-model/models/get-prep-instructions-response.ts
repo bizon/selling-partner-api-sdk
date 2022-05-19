@@ -26,13 +26,12 @@ export interface GetPrepInstructionsResponse {
      * @type {GetPrepInstructionsResult}
      * @memberof GetPrepInstructionsResponse
      */
-    payload?: GetPrepInstructionsResult;
+    'payload'?: GetPrepInstructionsResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetPrepInstructionsResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

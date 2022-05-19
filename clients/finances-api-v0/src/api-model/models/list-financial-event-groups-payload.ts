@@ -26,13 +26,12 @@ export interface ListFinancialEventGroupsPayload {
      * @type {string}
      * @memberof ListFinancialEventGroupsPayload
      */
-    NextToken?: string;
+    'NextToken'?: string;
     /**
      * A list of financial event group information.
      * @type {Array<FinancialEventGroup>}
      * @memberof ListFinancialEventGroupsPayload
      */
-    FinancialEventGroupList?: Array<FinancialEventGroup>;
+    'FinancialEventGroupList'?: Array<FinancialEventGroup>;
 }
-
 

@@ -25,7 +25,6 @@ export interface AplusPaginatedResponseAllOf {
      * @type {string}
      * @memberof AplusPaginatedResponseAllOf
      */
-    nextPageToken?: string;
+    'nextPageToken'?: string;
 }
-
 

@@ -25,13 +25,12 @@ export interface OfferListingCountType {
      * @type {number}
      * @memberof OfferListingCountType
      */
-    Count: number;
+    'Count': number;
     /**
      * The condition of the item.
      * @type {string}
      * @memberof OfferListingCountType
      */
-    condition: string;
+    'condition': string;
 }
-
 

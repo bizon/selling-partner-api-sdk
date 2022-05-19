@@ -26,7 +26,6 @@ export interface StandardProductDescriptionModule {
      * @type {ParagraphComponent}
      * @memberof StandardProductDescriptionModule
      */
-    body: ParagraphComponent;
+    'body': ParagraphComponent;
 }
-
 

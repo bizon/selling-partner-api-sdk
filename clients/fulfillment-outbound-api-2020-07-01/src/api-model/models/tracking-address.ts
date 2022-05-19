@@ -25,19 +25,18 @@ export interface TrackingAddress {
      * @type {string}
      * @memberof TrackingAddress
      */
-    city: string;
+    'city': string;
     /**
      * The state.
      * @type {string}
      * @memberof TrackingAddress
      */
-    state: string;
+    'state': string;
     /**
      * The country.
      * @type {string}
      * @memberof TrackingAddress
      */
-    country: string;
+    'country': string;
 }
-
 

@@ -26,19 +26,18 @@ export interface FileContents {
      * @type {string}
      * @memberof FileContents
      */
-    Contents: string;
+    'Contents': string;
     /**
      * 
      * @type {FileType}
      * @memberof FileContents
      */
-    FileType: FileType;
+    'FileType': FileType;
     /**
      * An MD5 hash to validate the PDF document data, in the form of a Base64-encoded string.
      * @type {string}
      * @memberof FileContents
      */
-    Checksum: string;
+    'Checksum': string;
 }
-
 

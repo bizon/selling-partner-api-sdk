@@ -27,25 +27,24 @@ export interface TrackingInformation {
      * @type {string}
      * @memberof TrackingInformation
      */
-    trackingId: string;
+    'trackingId': string;
     /**
      * 
      * @type {TrackingSummary}
      * @memberof TrackingInformation
      */
-    summary: TrackingSummary;
+    'summary': TrackingSummary;
     /**
      * The promised delivery date and time of a shipment.
      * @type {string}
      * @memberof TrackingInformation
      */
-    promisedDeliveryDate: string;
+    'promisedDeliveryDate': string;
     /**
      * A list of events of a shipment.
      * @type {Array<Event>}
      * @memberof TrackingInformation
      */
-    eventHistory: Array<Event>;
+    'eventHistory': Array<Event>;
 }
-
 

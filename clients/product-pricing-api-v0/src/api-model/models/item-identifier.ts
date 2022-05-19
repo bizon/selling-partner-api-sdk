@@ -26,25 +26,24 @@ export interface ItemIdentifier {
      * @type {string}
      * @memberof ItemIdentifier
      */
-    MarketplaceId: string;
+    'MarketplaceId': string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
      * @type {string}
      * @memberof ItemIdentifier
      */
-    ASIN?: string;
+    'ASIN'?: string;
     /**
      * The seller stock keeping unit (SKU) of the item.
      * @type {string}
      * @memberof ItemIdentifier
      */
-    SellerSKU?: string;
+    'SellerSKU'?: string;
     /**
      * 
      * @type {ConditionType}
      * @memberof ItemIdentifier
      */
-    ItemCondition: ConditionType;
+    'ItemCondition': ConditionType;
 }
-
 

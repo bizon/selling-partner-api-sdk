@@ -29,49 +29,48 @@ export interface StandardSingleImageSpecsDetailModule {
      * @type {TextComponent}
      * @memberof StandardSingleImageSpecsDetailModule
      */
-    headline?: TextComponent;
+    'headline'?: TextComponent;
     /**
      * 
      * @type {ImageComponent}
      * @memberof StandardSingleImageSpecsDetailModule
      */
-    image?: ImageComponent;
+    'image'?: ImageComponent;
     /**
      * 
      * @type {TextComponent}
      * @memberof StandardSingleImageSpecsDetailModule
      */
-    descriptionHeadline?: TextComponent;
+    'descriptionHeadline'?: TextComponent;
     /**
      * 
      * @type {StandardTextBlock}
      * @memberof StandardSingleImageSpecsDetailModule
      */
-    descriptionBlock1?: StandardTextBlock;
+    'descriptionBlock1'?: StandardTextBlock;
     /**
      * 
      * @type {StandardTextBlock}
      * @memberof StandardSingleImageSpecsDetailModule
      */
-    descriptionBlock2?: StandardTextBlock;
+    'descriptionBlock2'?: StandardTextBlock;
     /**
      * 
      * @type {TextComponent}
      * @memberof StandardSingleImageSpecsDetailModule
      */
-    specificationHeadline?: TextComponent;
+    'specificationHeadline'?: TextComponent;
     /**
      * 
      * @type {StandardHeaderTextListBlock}
      * @memberof StandardSingleImageSpecsDetailModule
      */
-    specificationListBlock?: StandardHeaderTextListBlock;
+    'specificationListBlock'?: StandardHeaderTextListBlock;
     /**
      * 
      * @type {StandardTextBlock}
      * @memberof StandardSingleImageSpecsDetailModule
      */
-    specificationTextBlock?: StandardTextBlock;
+    'specificationTextBlock'?: StandardTextBlock;
 }
-
 

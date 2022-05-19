@@ -31,91 +31,90 @@ export interface PartneredLtlDataOutput {
      * @type {Contact}
      * @memberof PartneredLtlDataOutput
      */
-    Contact: Contact;
+    'Contact': Contact;
     /**
      * 
      * @type {number}
      * @memberof PartneredLtlDataOutput
      */
-    BoxCount: number;
+    'BoxCount': number;
     /**
      * 
      * @type {SellerFreightClass}
      * @memberof PartneredLtlDataOutput
      */
-    SellerFreightClass?: SellerFreightClass;
+    'SellerFreightClass'?: SellerFreightClass;
     /**
      * 
      * @type {string}
      * @memberof PartneredLtlDataOutput
      */
-    FreightReadyDate: string;
+    'FreightReadyDate': string;
     /**
      * A list of pallet information.
      * @type {Array<Pallet>}
      * @memberof PartneredLtlDataOutput
      */
-    PalletList: Array<Pallet>;
+    'PalletList': Array<Pallet>;
     /**
      * 
      * @type {Weight}
      * @memberof PartneredLtlDataOutput
      */
-    TotalWeight: Weight;
+    'TotalWeight': Weight;
     /**
      * 
      * @type {Amount}
      * @memberof PartneredLtlDataOutput
      */
-    SellerDeclaredValue?: Amount;
+    'SellerDeclaredValue'?: Amount;
     /**
      * 
      * @type {Amount}
      * @memberof PartneredLtlDataOutput
      */
-    AmazonCalculatedValue?: Amount;
+    'AmazonCalculatedValue'?: Amount;
     /**
      * 
      * @type {string}
      * @memberof PartneredLtlDataOutput
      */
-    PreviewPickupDate: string;
+    'PreviewPickupDate': string;
     /**
      * 
      * @type {string}
      * @memberof PartneredLtlDataOutput
      */
-    PreviewDeliveryDate: string;
+    'PreviewDeliveryDate': string;
     /**
      * 
      * @type {SellerFreightClass}
      * @memberof PartneredLtlDataOutput
      */
-    PreviewFreightClass: SellerFreightClass;
+    'PreviewFreightClass': SellerFreightClass;
     /**
      * A unique identifier created by Amazon that identifies this Amazon-partnered, Less Than Truckload/Full Truckload (LTL/FTL) shipment.
      * @type {string}
      * @memberof PartneredLtlDataOutput
      */
-    AmazonReferenceId: string;
+    'AmazonReferenceId': string;
     /**
      * Indicates whether the bill of lading for the shipment is available.
      * @type {boolean}
      * @memberof PartneredLtlDataOutput
      */
-    IsBillOfLadingAvailable: boolean;
+    'IsBillOfLadingAvailable': boolean;
     /**
      * 
      * @type {PartneredEstimate}
      * @memberof PartneredLtlDataOutput
      */
-    PartneredEstimate?: PartneredEstimate;
+    'PartneredEstimate'?: PartneredEstimate;
     /**
      * The carrier for the inbound shipment.
      * @type {string}
      * @memberof PartneredLtlDataOutput
      */
-    CarrierName: string;
+    'CarrierName': string;
 }
-
 

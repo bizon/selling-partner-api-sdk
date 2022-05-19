@@ -26,25 +26,24 @@ export interface PackedItem {
      * @type {number}
      * @memberof PackedItem
      */
-    itemSequenceNumber: number;
+    'itemSequenceNumber': number;
     /**
      * Buyer\'s Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.
      * @type {string}
      * @memberof PackedItem
      */
-    buyerProductIdentifier?: string;
+    'buyerProductIdentifier'?: string;
     /**
      * The vendor selected product identification of the item. Should be the same as was sent in the Purchase Order, like SKU Number.
      * @type {string}
      * @memberof PackedItem
      */
-    vendorProductIdentifier?: string;
+    'vendorProductIdentifier'?: string;
     /**
      * 
      * @type {ItemQuantity}
      * @memberof PackedItem
      */
-    packedQuantity: ItemQuantity;
+    'packedQuantity': ItemQuantity;
 }
-
 

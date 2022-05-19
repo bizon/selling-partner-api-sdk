@@ -26,25 +26,24 @@ export interface Item {
      * @type {number}
      * @memberof Item
      */
-    itemSequenceNumber: number;
+    'itemSequenceNumber': number;
     /**
      * Buyer\'s Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.
      * @type {string}
      * @memberof Item
      */
-    buyerProductIdentifier?: string;
+    'buyerProductIdentifier'?: string;
     /**
      * The vendor selected product identification of the item. Should be the same as was sent in the purchase order, like SKU Number.
      * @type {string}
      * @memberof Item
      */
-    vendorProductIdentifier?: string;
+    'vendorProductIdentifier'?: string;
     /**
      * 
      * @type {ItemQuantity}
      * @memberof Item
      */
-    shippedQuantity: ItemQuantity;
+    'shippedQuantity': ItemQuantity;
 }
-
 

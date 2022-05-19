@@ -27,43 +27,42 @@ export interface OrderItem {
      * @type {string}
      * @memberof OrderItem
      */
-    itemSequenceNumber: string;
+    'itemSequenceNumber': string;
     /**
      * Amazon Standard Identification Number (ASIN) of an item.
      * @type {string}
      * @memberof OrderItem
      */
-    amazonProductIdentifier?: string;
+    'amazonProductIdentifier'?: string;
     /**
      * The vendor selected product identification of the item.
      * @type {string}
      * @memberof OrderItem
      */
-    vendorProductIdentifier?: string;
+    'vendorProductIdentifier'?: string;
     /**
      * 
      * @type {ItemQuantity}
      * @memberof OrderItem
      */
-    orderedQuantity: ItemQuantity;
+    'orderedQuantity': ItemQuantity;
     /**
      * When true, we will accept backorder confirmations for this item.
      * @type {boolean}
      * @memberof OrderItem
      */
-    isBackOrderAllowed: boolean;
+    'isBackOrderAllowed': boolean;
     /**
      * 
      * @type {Money}
      * @memberof OrderItem
      */
-    netCost?: Money;
+    'netCost'?: Money;
     /**
      * 
      * @type {Money}
      * @memberof OrderItem
      */
-    listPrice?: Money;
+    'listPrice'?: Money;
 }
-
 

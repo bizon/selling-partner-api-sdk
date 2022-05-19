@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum CurrencyCode {
-    Usd = 'USD',
-    Gbp = 'GBP'
-}
+
+export const CurrencyCode = {
+    Usd: 'USD',
+    Gbp: 'GBP'
+} as const;
+
+export type CurrencyCode = typeof CurrencyCode[keyof typeof CurrencyCode];
 
 
 

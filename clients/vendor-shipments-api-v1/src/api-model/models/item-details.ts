@@ -27,43 +27,40 @@ export interface ItemDetails {
      * @type {string}
      * @memberof ItemDetails
      */
-    purchaseOrderNumber?: string;
+    'purchaseOrderNumber'?: string;
     /**
      * The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items.
      * @type {string}
      * @memberof ItemDetails
      */
-    lotNumber?: string;
+    'lotNumber'?: string;
     /**
      * 
      * @type {Expiry}
      * @memberof ItemDetails
      */
-    expiry?: Expiry;
+    'expiry'?: Expiry;
     /**
      * 
      * @type {Money}
      * @memberof ItemDetails
      */
-    maximumRetailPrice?: Money;
+    'maximumRetailPrice'?: Money;
     /**
      * Identification of the instructions on how specified item/carton/pallet should be handled.
      * @type {string}
      * @memberof ItemDetails
      */
-    handlingCode?: ItemDetailsHandlingCodeEnum;
+    'handlingCode'?: ItemDetailsHandlingCodeEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ItemDetailsHandlingCodeEnum {
-    Oversized = 'Oversized',
-    Fragile = 'Fragile',
-    Food = 'Food',
-    HandleWithCare = 'HandleWithCare'
-}
+export const ItemDetailsHandlingCodeEnum = {
+    Oversized: 'Oversized',
+    Fragile: 'Fragile',
+    Food: 'Food',
+    HandleWithCare: 'HandleWithCare'
+} as const;
 
+export type ItemDetailsHandlingCodeEnum = typeof ItemDetailsHandlingCodeEnum[keyof typeof ItemDetailsHandlingCodeEnum];
 
 

@@ -25,13 +25,12 @@ export interface IntegerWithUnits {
      * @type {number}
      * @memberof IntegerWithUnits
      */
-    value: number;
+    'value': number;
     /**
      * The unit of measurement.
      * @type {string}
      * @memberof IntegerWithUnits
      */
-    units: string;
+    'units': string;
 }
-
 

@@ -25,35 +25,32 @@ export interface RegulatedInformationField {
      * @type {string}
      * @memberof RegulatedInformationField
      */
-    FieldId: string;
+    'FieldId': string;
     /**
      * The human-readable name for the field.
      * @type {string}
      * @memberof RegulatedInformationField
      */
-    FieldLabel: string;
+    'FieldLabel': string;
     /**
      * The type of field the field.
      * @type {string}
      * @memberof RegulatedInformationField
      */
-    FieldType: RegulatedInformationFieldFieldTypeEnum;
+    'FieldType': RegulatedInformationFieldFieldTypeEnum;
     /**
      * The content of the field as collected in regulatory form. Note that FileAttachment type fields will contain an URL to download the attachment here.
      * @type {string}
      * @memberof RegulatedInformationField
      */
-    FieldValue: string;
+    'FieldValue': string;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum RegulatedInformationFieldFieldTypeEnum {
-    Text = 'Text',
-    FileAttachment = 'FileAttachment'
-}
+export const RegulatedInformationFieldFieldTypeEnum = {
+    Text: 'Text',
+    FileAttachment: 'FileAttachment'
+} as const;
 
+export type RegulatedInformationFieldFieldTypeEnum = typeof RegulatedInformationFieldFieldTypeEnum[keyof typeof RegulatedInformationFieldFieldTypeEnum];
 
 

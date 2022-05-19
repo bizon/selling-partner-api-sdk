@@ -26,13 +26,12 @@ export interface LabelFormatOption {
      * @type {boolean}
      * @memberof LabelFormatOption
      */
-    IncludePackingSlipWithLabel?: boolean;
+    'IncludePackingSlipWithLabel'?: boolean;
     /**
      * 
      * @type {LabelFormat}
      * @memberof LabelFormatOption
      */
-    LabelFormat?: LabelFormat;
+    'LabelFormat'?: LabelFormat;
 }
-
 

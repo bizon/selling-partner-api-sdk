@@ -26,7 +26,6 @@ export interface StandardTextListBlock {
      * @type {Array<TextItem>}
      * @memberof StandardTextListBlock
      */
-    textList: Array<TextItem>;
+    'textList': Array<TextItem>;
 }
-
 

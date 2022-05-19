@@ -25,13 +25,12 @@ export interface Money {
      * @type {string}
      * @memberof Money
      */
-    currencyCode: string;
+    'currencyCode': string;
     /**
      * A decimal number with no loss of precision. Useful when precision loss is unnaceptable, as with currencies. Follows RFC7159 for number representation.
      * @type {string}
      * @memberof Money
      */
-    amount: string;
+    'amount': string;
 }
-
 

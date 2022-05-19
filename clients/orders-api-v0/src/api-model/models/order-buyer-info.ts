@@ -26,37 +26,36 @@ export interface OrderBuyerInfo {
      * @type {string}
      * @memberof OrderBuyerInfo
      */
-    AmazonOrderId: string;
+    'AmazonOrderId': string;
     /**
      * The anonymized email address of the buyer.
      * @type {string}
      * @memberof OrderBuyerInfo
      */
-    BuyerEmail?: string;
+    'BuyerEmail'?: string;
     /**
      * The name of the buyer.
      * @type {string}
      * @memberof OrderBuyerInfo
      */
-    BuyerName?: string;
+    'BuyerName'?: string;
     /**
      * The county of the buyer.
      * @type {string}
      * @memberof OrderBuyerInfo
      */
-    BuyerCounty?: string;
+    'BuyerCounty'?: string;
     /**
      * 
      * @type {BuyerTaxInfo}
      * @memberof OrderBuyerInfo
      */
-    BuyerTaxInfo?: BuyerTaxInfo;
+    'BuyerTaxInfo'?: BuyerTaxInfo;
     /**
      * The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout.
      * @type {string}
      * @memberof OrderBuyerInfo
      */
-    PurchaseOrderNumber?: string;
+    'PurchaseOrderNumber'?: string;
 }
-
 

@@ -25,36 +25,33 @@ export interface TransportationDetails {
      * @type {string}
      * @memberof TransportationDetails
      */
-    carrierScac?: string;
+    'carrierScac'?: string;
     /**
      * The field also known as PRO number is a unique number assigned by the carrier. It is used to identify and track the shipment that goes out for delivery. This field is mandatory for UA, CA, MX shipment confirmations.
      * @type {string}
      * @memberof TransportationDetails
      */
-    carrierShipmentReferenceNumber?: string;
+    'carrierShipmentReferenceNumber'?: string;
     /**
      * The mode of transportation for this shipment.
      * @type {string}
      * @memberof TransportationDetails
      */
-    transportationMode?: TransportationDetailsTransportationModeEnum;
+    'transportationMode'?: TransportationDetailsTransportationModeEnum;
     /**
      * Bill Of Lading (BOL) number is the unique number assigned by the vendor. The BOL present in the Shipment Confirmation message ideally matches the paper BOL provided with the shipment, but that is no must. Instead of BOL, an alternative reference number (like Delivery Note Number) for the shipment can also be sent in this field.
      * @type {string}
      * @memberof TransportationDetails
      */
-    billOfLadingNumber?: string;
+    'billOfLadingNumber'?: string;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum TransportationDetailsTransportationModeEnum {
-    Road = 'Road',
-    Air = 'Air',
-    Ocean = 'Ocean'
-}
+export const TransportationDetailsTransportationModeEnum = {
+    Road: 'Road',
+    Air: 'Air',
+    Ocean: 'Ocean'
+} as const;
 
+export type TransportationDetailsTransportationModeEnum = typeof TransportationDetailsTransportationModeEnum[keyof typeof TransportationDetailsTransportationModeEnum];
 
 

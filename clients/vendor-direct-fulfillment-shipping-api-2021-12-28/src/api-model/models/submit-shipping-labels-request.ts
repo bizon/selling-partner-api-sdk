@@ -26,7 +26,6 @@ export interface SubmitShippingLabelsRequest {
      * @type {Array<ShippingLabelRequest>}
      * @memberof SubmitShippingLabelsRequest
      */
-    shippingLabelRequests?: Array<ShippingLabelRequest>;
+    'shippingLabelRequests'?: Array<ShippingLabelRequest>;
 }
-
 

@@ -26,7 +26,6 @@ export interface SubmitInventoryUpdateRequest {
      * @type {InventoryUpdate}
      * @memberof SubmitInventoryUpdateRequest
      */
-    inventory?: InventoryUpdate;
+    'inventory'?: InventoryUpdate;
 }
-
 

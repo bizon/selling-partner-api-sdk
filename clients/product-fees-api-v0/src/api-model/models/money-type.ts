@@ -25,13 +25,12 @@ export interface MoneyType {
      * @type {string}
      * @memberof MoneyType
      */
-    CurrencyCode?: string;
+    'CurrencyCode'?: string;
     /**
      * The monetary value.
      * @type {number}
      * @memberof MoneyType
      */
-    Amount?: number;
+    'Amount'?: number;
 }
-
 

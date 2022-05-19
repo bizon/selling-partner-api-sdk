@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum FulfillmentReturnItemStatus {
-    New = 'New',
-    Processed = 'Processed'
-}
+
+export const FulfillmentReturnItemStatus = {
+    New: 'New',
+    Processed: 'Processed'
+} as const;
+
+export type FulfillmentReturnItemStatus = typeof FulfillmentReturnItemStatus[keyof typeof FulfillmentReturnItemStatus];
 
 
 

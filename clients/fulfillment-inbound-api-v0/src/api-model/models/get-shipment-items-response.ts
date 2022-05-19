@@ -26,13 +26,12 @@ export interface GetShipmentItemsResponse {
      * @type {GetShipmentItemsResult}
      * @memberof GetShipmentItemsResponse
      */
-    payload?: GetShipmentItemsResult;
+    'payload'?: GetShipmentItemsResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetShipmentItemsResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

@@ -19,23 +19,26 @@
  * @export
  * @enum {string}
  */
-export enum ContentModuleType {
-    CompanyLogo = 'STANDARD_COMPANY_LOGO',
-    ComparisonTable = 'STANDARD_COMPARISON_TABLE',
-    FourImageText = 'STANDARD_FOUR_IMAGE_TEXT',
-    FourImageTextQuadrant = 'STANDARD_FOUR_IMAGE_TEXT_QUADRANT',
-    HeaderImageText = 'STANDARD_HEADER_IMAGE_TEXT',
-    ImageSidebar = 'STANDARD_IMAGE_SIDEBAR',
-    ImageTextOverlay = 'STANDARD_IMAGE_TEXT_OVERLAY',
-    MultipleImageText = 'STANDARD_MULTIPLE_IMAGE_TEXT',
-    ProductDescription = 'STANDARD_PRODUCT_DESCRIPTION',
-    SingleImageHighlights = 'STANDARD_SINGLE_IMAGE_HIGHLIGHTS',
-    SingleImageSpecsDetail = 'STANDARD_SINGLE_IMAGE_SPECS_DETAIL',
-    SingleSideImage = 'STANDARD_SINGLE_SIDE_IMAGE',
-    TechSpecs = 'STANDARD_TECH_SPECS',
-    Text = 'STANDARD_TEXT',
-    ThreeImageText = 'STANDARD_THREE_IMAGE_TEXT'
-}
+
+export const ContentModuleType = {
+    CompanyLogo: 'STANDARD_COMPANY_LOGO',
+    ComparisonTable: 'STANDARD_COMPARISON_TABLE',
+    FourImageText: 'STANDARD_FOUR_IMAGE_TEXT',
+    FourImageTextQuadrant: 'STANDARD_FOUR_IMAGE_TEXT_QUADRANT',
+    HeaderImageText: 'STANDARD_HEADER_IMAGE_TEXT',
+    ImageSidebar: 'STANDARD_IMAGE_SIDEBAR',
+    ImageTextOverlay: 'STANDARD_IMAGE_TEXT_OVERLAY',
+    MultipleImageText: 'STANDARD_MULTIPLE_IMAGE_TEXT',
+    ProductDescription: 'STANDARD_PRODUCT_DESCRIPTION',
+    SingleImageHighlights: 'STANDARD_SINGLE_IMAGE_HIGHLIGHTS',
+    SingleImageSpecsDetail: 'STANDARD_SINGLE_IMAGE_SPECS_DETAIL',
+    SingleSideImage: 'STANDARD_SINGLE_SIDE_IMAGE',
+    TechSpecs: 'STANDARD_TECH_SPECS',
+    Text: 'STANDARD_TEXT',
+    ThreeImageText: 'STANDARD_THREE_IMAGE_TEXT'
+} as const;
+
+export type ContentModuleType = typeof ContentModuleType[keyof typeof ContentModuleType];
 
 
 

@@ -25,13 +25,12 @@ export interface RejectionReason {
      * @type {string}
      * @memberof RejectionReason
      */
-    RejectionReasonId: string;
+    'RejectionReasonId': string;
     /**
      * The human-readable description of this rejection reason.
      * @type {string}
      * @memberof RejectionReason
      */
-    RejectionReasonDescription: string;
+    'RejectionReasonDescription': string;
 }
-
 

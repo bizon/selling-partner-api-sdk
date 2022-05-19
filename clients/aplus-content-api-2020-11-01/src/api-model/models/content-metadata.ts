@@ -27,31 +27,30 @@ export interface ContentMetadata {
      * @type {string}
      * @memberof ContentMetadata
      */
-    name: string;
+    'name': string;
     /**
      * The identifier for the marketplace where the A+ Content is published.
      * @type {string}
      * @memberof ContentMetadata
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * 
      * @type {ContentStatus}
      * @memberof ContentMetadata
      */
-    status: ContentStatus;
+    'status': ContentStatus;
     /**
      * The set of content badges.
      * @type {Set<ContentBadge>}
      * @memberof ContentMetadata
      */
-    badgeSet: Set<ContentBadge>;
+    'badgeSet': Set<ContentBadge>;
     /**
      * The approximate age of the A+ Content document and metadata.
      * @type {string}
      * @memberof ContentMetadata
      */
-    updateTime: string;
+    'updateTime': string;
 }
-
 

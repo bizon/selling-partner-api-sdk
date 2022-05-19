@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -39,7 +39,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listFinancialEventGroups: async (maxResultsPerPage?: number, financialEventGroupStartedBefore?: string, financialEventGroupStartedAfter?: string, nextToken?: string, options: any = {}): Promise<RequestArgs> => {
+        listFinancialEventGroups: async (maxResultsPerPage?: number, financialEventGroupStartedBefore?: string, financialEventGroupStartedAfter?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/finances/v0/financialEventGroups`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -74,7 +74,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -92,7 +92,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listFinancialEvents: async (maxResultsPerPage?: number, postedAfter?: string, postedBefore?: string, nextToken?: string, options: any = {}): Promise<RequestArgs> => {
+        listFinancialEvents: async (maxResultsPerPage?: number, postedAfter?: string, postedBefore?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/finances/v0/financialEvents`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -127,7 +127,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -144,7 +144,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listFinancialEventsByGroupId: async (eventGroupId: string, maxResultsPerPage?: number, nextToken?: string, options: any = {}): Promise<RequestArgs> => {
+        listFinancialEventsByGroupId: async (eventGroupId: string, maxResultsPerPage?: number, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'eventGroupId' is not null or undefined
             assertParamExists('listFinancialEventsByGroupId', 'eventGroupId', eventGroupId)
             const localVarPath = `/finances/v0/financialEventGroups/{eventGroupId}/financialEvents`
@@ -170,7 +170,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -187,7 +187,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listFinancialEventsByOrderId: async (orderId: string, maxResultsPerPage?: number, nextToken?: string, options: any = {}): Promise<RequestArgs> => {
+        listFinancialEventsByOrderId: async (orderId: string, maxResultsPerPage?: number, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('listFinancialEventsByOrderId', 'orderId', orderId)
             const localVarPath = `/finances/v0/orders/{orderId}/financialEvents`
@@ -213,7 +213,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -241,7 +241,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listFinancialEventGroups(maxResultsPerPage?: number, financialEventGroupStartedBefore?: string, financialEventGroupStartedAfter?: string, nextToken?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancialEventGroupsResponse>> {
+        async listFinancialEventGroups(maxResultsPerPage?: number, financialEventGroupStartedBefore?: string, financialEventGroupStartedAfter?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancialEventGroupsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listFinancialEventGroups(maxResultsPerPage, financialEventGroupStartedBefore, financialEventGroupStartedAfter, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -254,7 +254,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listFinancialEvents(maxResultsPerPage?: number, postedAfter?: string, postedBefore?: string, nextToken?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancialEventsResponse>> {
+        async listFinancialEvents(maxResultsPerPage?: number, postedAfter?: string, postedBefore?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancialEventsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listFinancialEvents(maxResultsPerPage, postedAfter, postedBefore, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -266,7 +266,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listFinancialEventsByGroupId(eventGroupId: string, maxResultsPerPage?: number, nextToken?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancialEventsResponse>> {
+        async listFinancialEventsByGroupId(eventGroupId: string, maxResultsPerPage?: number, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancialEventsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listFinancialEventsByGroupId(eventGroupId, maxResultsPerPage, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -278,7 +278,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listFinancialEventsByOrderId(orderId: string, maxResultsPerPage?: number, nextToken?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancialEventsResponse>> {
+        async listFinancialEventsByOrderId(orderId: string, maxResultsPerPage?: number, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancialEventsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listFinancialEventsByOrderId(orderId, maxResultsPerPage, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -481,7 +481,7 @@ export class DefaultApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public listFinancialEventGroups(requestParameters: DefaultApiListFinancialEventGroupsRequest = {}, options?: any) {
+    public listFinancialEventGroups(requestParameters: DefaultApiListFinancialEventGroupsRequest = {}, options?: AxiosRequestConfig) {
         return DefaultApiFp(this.configuration).listFinancialEventGroups(requestParameters.maxResultsPerPage, requestParameters.financialEventGroupStartedBefore, requestParameters.financialEventGroupStartedAfter, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -492,7 +492,7 @@ export class DefaultApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public listFinancialEvents(requestParameters: DefaultApiListFinancialEventsRequest = {}, options?: any) {
+    public listFinancialEvents(requestParameters: DefaultApiListFinancialEventsRequest = {}, options?: AxiosRequestConfig) {
         return DefaultApiFp(this.configuration).listFinancialEvents(requestParameters.maxResultsPerPage, requestParameters.postedAfter, requestParameters.postedBefore, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -503,7 +503,7 @@ export class DefaultApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public listFinancialEventsByGroupId(requestParameters: DefaultApiListFinancialEventsByGroupIdRequest, options?: any) {
+    public listFinancialEventsByGroupId(requestParameters: DefaultApiListFinancialEventsByGroupIdRequest, options?: AxiosRequestConfig) {
         return DefaultApiFp(this.configuration).listFinancialEventsByGroupId(requestParameters.eventGroupId, requestParameters.maxResultsPerPage, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -514,7 +514,7 @@ export class DefaultApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public listFinancialEventsByOrderId(requestParameters: DefaultApiListFinancialEventsByOrderIdRequest, options?: any) {
+    public listFinancialEventsByOrderId(requestParameters: DefaultApiListFinancialEventsByOrderIdRequest, options?: AxiosRequestConfig) {
         return DefaultApiFp(this.configuration).listFinancialEventsByOrderId(requestParameters.orderId, requestParameters.maxResultsPerPage, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }

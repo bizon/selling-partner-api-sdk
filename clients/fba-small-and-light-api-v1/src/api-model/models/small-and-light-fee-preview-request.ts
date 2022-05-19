@@ -26,13 +26,12 @@ export interface SmallAndLightFeePreviewRequest {
      * @type {string}
      * @memberof SmallAndLightFeePreviewRequest
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * A list of items for which to retrieve fee estimates (limit: 25).
      * @type {Array<Item>}
      * @memberof SmallAndLightFeePreviewRequest
      */
-    items: Array<Item>;
+    'items': Array<Item>;
 }
-
 

@@ -19,11 +19,14 @@
  * @export
  * @enum {string}
  */
-export enum IntendedBoxContentsSource {
-    None = 'NONE',
-    Feed = 'FEED',
-    _2DBarcode = '2D_BARCODE'
-}
+
+export const IntendedBoxContentsSource = {
+    None: 'NONE',
+    Feed: 'FEED',
+    _2DBarcode: '2D_BARCODE'
+} as const;
+
+export type IntendedBoxContentsSource = typeof IntendedBoxContentsSource[keyof typeof IntendedBoxContentsSource];
 
 
 

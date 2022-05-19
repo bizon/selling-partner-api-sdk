@@ -25,7 +25,6 @@ export interface ListingOffersRequestParamsAllOf {
      * @type {string}
      * @memberof ListingOffersRequestParamsAllOf
      */
-    SellerSKU: string;
+    'SellerSKU': string;
 }
-
 

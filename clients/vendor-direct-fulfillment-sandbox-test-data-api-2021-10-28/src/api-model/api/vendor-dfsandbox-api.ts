@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -40,7 +40,7 @@ export const VendorDFSandboxApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generateOrderScenarios: async (body: GenerateOrderScenarioRequest, options: any = {}): Promise<RequestArgs> => {
+        generateOrderScenarios: async (body: GenerateOrderScenarioRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('generateOrderScenarios', 'body', body)
             const localVarPath = `/vendor/directFulfillment/sandbox/2021-10-28/orders`;
@@ -59,7 +59,7 @@ export const VendorDFSandboxApiAxiosParamCreator = function (configuration?: Con
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -75,7 +75,7 @@ export const VendorDFSandboxApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderScenarios: async (transactionId: string, options: any = {}): Promise<RequestArgs> => {
+        getOrderScenarios: async (transactionId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'transactionId' is not null or undefined
             assertParamExists('getOrderScenarios', 'transactionId', transactionId)
             const localVarPath = `/vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}`
@@ -93,7 +93,7 @@ export const VendorDFSandboxApiAxiosParamCreator = function (configuration?: Con
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -118,7 +118,7 @@ export const VendorDFSandboxApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async generateOrderScenarios(body: GenerateOrderScenarioRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionReference>> {
+        async generateOrderScenarios(body: GenerateOrderScenarioRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionReference>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.generateOrderScenarios(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -128,7 +128,7 @@ export const VendorDFSandboxApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrderScenarios(transactionId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionStatus>> {
+        async getOrderScenarios(transactionId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionStatus>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderScenarios(transactionId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -205,7 +205,7 @@ export class VendorDFSandboxApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorDFSandboxApi
      */
-    public generateOrderScenarios(requestParameters: VendorDFSandboxApiGenerateOrderScenariosRequest, options?: any) {
+    public generateOrderScenarios(requestParameters: VendorDFSandboxApiGenerateOrderScenariosRequest, options?: AxiosRequestConfig) {
         return VendorDFSandboxApiFp(this.configuration).generateOrderScenarios(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -216,7 +216,7 @@ export class VendorDFSandboxApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorDFSandboxApi
      */
-    public getOrderScenarios(requestParameters: VendorDFSandboxApiGetOrderScenariosRequest, options?: any) {
+    public getOrderScenarios(requestParameters: VendorDFSandboxApiGetOrderScenariosRequest, options?: AxiosRequestConfig) {
         return VendorDFSandboxApiFp(this.configuration).getOrderScenarios(requestParameters.transactionId, options).then((request) => request(this.axios, this.basePath));
     }
 }

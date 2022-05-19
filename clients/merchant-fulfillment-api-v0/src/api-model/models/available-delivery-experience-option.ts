@@ -27,13 +27,12 @@ export interface AvailableDeliveryExperienceOption {
      * @type {DeliveryExperienceOption}
      * @memberof AvailableDeliveryExperienceOption
      */
-    DeliveryExperienceOption: DeliveryExperienceOption;
+    'DeliveryExperienceOption': DeliveryExperienceOption;
     /**
      * 
      * @type {CurrencyAmount}
      * @memberof AvailableDeliveryExperienceOption
      */
-    Charge: CurrencyAmount;
+    'Charge': CurrencyAmount;
 }
-
 

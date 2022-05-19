@@ -26,31 +26,30 @@ export interface GetFeatureSkuResult {
      * @type {string}
      * @memberof GetFeatureSkuResult
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * The name of the feature.
      * @type {string}
      * @memberof GetFeatureSkuResult
      */
-    featureName: string;
+    'featureName': string;
     /**
      * When true, the seller SKU is eligible for the requested feature.
      * @type {boolean}
      * @memberof GetFeatureSkuResult
      */
-    isEligible: boolean;
+    'isEligible': boolean;
     /**
      * A list of one or more reasons that the seller SKU is ineligibile for the feature.  Possible values: * MERCHANT_NOT_ENROLLED - The merchant isn\'t enrolled for the feature. * SKU_NOT_ELIGIBLE - The SKU doesn\'t reside in a warehouse that supports the feature. * INVALID_SKU - There is an issue with the SKU provided.
      * @type {Array<string>}
      * @memberof GetFeatureSkuResult
      */
-    ineligibleReasons?: Array<string>;
+    'ineligibleReasons'?: Array<string>;
     /**
      * 
      * @type {FeatureSku}
      * @memberof GetFeatureSkuResult
      */
-    skuInfo?: FeatureSku;
+    'skuInfo'?: FeatureSku;
 }
-
 

@@ -26,13 +26,12 @@ export interface ContentMetadataRecord {
      * @type {string}
      * @memberof ContentMetadataRecord
      */
-    contentReferenceKey: string;
+    'contentReferenceKey': string;
     /**
      * 
      * @type {ContentMetadata}
      * @memberof ContentMetadataRecord
      */
-    contentMetadata: ContentMetadata;
+    'contentMetadata': ContentMetadata;
 }
-
 

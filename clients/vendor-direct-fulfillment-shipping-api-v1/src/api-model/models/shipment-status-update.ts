@@ -27,25 +27,24 @@ export interface ShipmentStatusUpdate {
      * @type {string}
      * @memberof ShipmentStatusUpdate
      */
-    purchaseOrderNumber: string;
+    'purchaseOrderNumber': string;
     /**
      * 
      * @type {PartyIdentification}
      * @memberof ShipmentStatusUpdate
      */
-    sellingParty: PartyIdentification;
+    'sellingParty': PartyIdentification;
     /**
      * 
      * @type {PartyIdentification}
      * @memberof ShipmentStatusUpdate
      */
-    shipFromParty: PartyIdentification;
+    'shipFromParty': PartyIdentification;
     /**
      * 
      * @type {StatusUpdateDetails}
      * @memberof ShipmentStatusUpdate
      */
-    statusUpdateDetails: StatusUpdateDetails;
+    'statusUpdateDetails': StatusUpdateDetails;
 }
-
 

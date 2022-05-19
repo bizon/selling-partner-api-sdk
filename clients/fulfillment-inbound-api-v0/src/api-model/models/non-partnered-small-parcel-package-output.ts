@@ -26,19 +26,18 @@ export interface NonPartneredSmallParcelPackageOutput {
      * @type {string}
      * @memberof NonPartneredSmallParcelPackageOutput
      */
-    CarrierName: string;
+    'CarrierName': string;
     /**
      * The tracking number of the package, provided by the carrier.
      * @type {string}
      * @memberof NonPartneredSmallParcelPackageOutput
      */
-    TrackingId: string;
+    'TrackingId': string;
     /**
      * 
      * @type {PackageStatus}
      * @memberof NonPartneredSmallParcelPackageOutput
      */
-    PackageStatus: PackageStatus;
+    'PackageStatus': PackageStatus;
 }
-
 

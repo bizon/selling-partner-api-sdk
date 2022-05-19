@@ -25,19 +25,18 @@ export interface SubmitInvoiceRequest {
      * @type {string}
      * @memberof SubmitInvoiceRequest
      */
-    InvoiceContent: string;
+    'InvoiceContent': string;
     /**
      * An Amazon marketplace identifier.
      * @type {string}
      * @memberof SubmitInvoiceRequest
      */
-    MarketplaceId?: string;
+    'MarketplaceId'?: string;
     /**
      * MD5 sum for validating the invoice data. For more information about calculating this value, see [Working with Content-MD5 Checksums](https://docs.developer.amazonservices.com/en_US/dev_guide/DG_MD5.html).
      * @type {string}
      * @memberof SubmitInvoiceRequest
      */
-    ContentMD5Value: string;
+    'ContentMD5Value': string;
 }
-
 

@@ -27,41 +27,38 @@ export interface ShippingLabel {
      * @type {string}
      * @memberof ShippingLabel
      */
-    purchaseOrderNumber: string;
+    'purchaseOrderNumber': string;
     /**
      * 
      * @type {PartyIdentification}
      * @memberof ShippingLabel
      */
-    sellingParty: PartyIdentification;
+    'sellingParty': PartyIdentification;
     /**
      * 
      * @type {PartyIdentification}
      * @memberof ShippingLabel
      */
-    shipFromParty: PartyIdentification;
+    'shipFromParty': PartyIdentification;
     /**
      * Format of the label.
      * @type {string}
      * @memberof ShippingLabel
      */
-    labelFormat: ShippingLabelLabelFormatEnum;
+    'labelFormat': ShippingLabelLabelFormatEnum;
     /**
      * Provides the details of the packages in this shipment.
      * @type {Array<LabelData>}
      * @memberof ShippingLabel
      */
-    labelData: Array<LabelData>;
+    'labelData': Array<LabelData>;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ShippingLabelLabelFormatEnum {
-    Png = 'PNG',
-    Zpl = 'ZPL'
-}
+export const ShippingLabelLabelFormatEnum = {
+    Png: 'PNG',
+    Zpl: 'ZPL'
+} as const;
 
+export type ShippingLabelLabelFormatEnum = typeof ShippingLabelLabelFormatEnum[keyof typeof ShippingLabelLabelFormatEnum];
 
 

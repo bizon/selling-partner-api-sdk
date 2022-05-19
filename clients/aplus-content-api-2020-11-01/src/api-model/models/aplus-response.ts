@@ -25,7 +25,6 @@ export interface AplusResponse {
      * @type {Set<Error>}
      * @memberof AplusResponse
      */
-    warnings?: Set<Error>;
+    'warnings'?: Set<Error>;
 }
-
 

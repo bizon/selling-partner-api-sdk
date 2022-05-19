@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -37,7 +37,7 @@ export const SolicitationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createProductReviewAndSellerFeedbackSolicitation: async (amazonOrderId: string, marketplaceIds: Array<string>, options: any = {}): Promise<RequestArgs> => {
+        createProductReviewAndSellerFeedbackSolicitation: async (amazonOrderId: string, marketplaceIds: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'amazonOrderId' is not null or undefined
             assertParamExists('createProductReviewAndSellerFeedbackSolicitation', 'amazonOrderId', amazonOrderId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -61,7 +61,7 @@ export const SolicitationsApiAxiosParamCreator = function (configuration?: Confi
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -77,7 +77,7 @@ export const SolicitationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSolicitationActionsForOrder: async (amazonOrderId: string, marketplaceIds: Array<string>, options: any = {}): Promise<RequestArgs> => {
+        getSolicitationActionsForOrder: async (amazonOrderId: string, marketplaceIds: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'amazonOrderId' is not null or undefined
             assertParamExists('getSolicitationActionsForOrder', 'amazonOrderId', amazonOrderId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -101,7 +101,7 @@ export const SolicitationsApiAxiosParamCreator = function (configuration?: Confi
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -127,7 +127,7 @@ export const SolicitationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createProductReviewAndSellerFeedbackSolicitation(amazonOrderId: string, marketplaceIds: Array<string>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateProductReviewAndSellerFeedbackSolicitationResponse>> {
+        async createProductReviewAndSellerFeedbackSolicitation(amazonOrderId: string, marketplaceIds: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateProductReviewAndSellerFeedbackSolicitationResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createProductReviewAndSellerFeedbackSolicitation(amazonOrderId, marketplaceIds, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -138,7 +138,7 @@ export const SolicitationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSolicitationActionsForOrder(amazonOrderId: string, marketplaceIds: Array<string>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSolicitationActionsForOrderResponse>> {
+        async getSolicitationActionsForOrder(amazonOrderId: string, marketplaceIds: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSolicitationActionsForOrderResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getSolicitationActionsForOrder(amazonOrderId, marketplaceIds, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -231,7 +231,7 @@ export class SolicitationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SolicitationsApi
      */
-    public createProductReviewAndSellerFeedbackSolicitation(requestParameters: SolicitationsApiCreateProductReviewAndSellerFeedbackSolicitationRequest, options?: any) {
+    public createProductReviewAndSellerFeedbackSolicitation(requestParameters: SolicitationsApiCreateProductReviewAndSellerFeedbackSolicitationRequest, options?: AxiosRequestConfig) {
         return SolicitationsApiFp(this.configuration).createProductReviewAndSellerFeedbackSolicitation(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -242,7 +242,7 @@ export class SolicitationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SolicitationsApi
      */
-    public getSolicitationActionsForOrder(requestParameters: SolicitationsApiGetSolicitationActionsForOrderRequest, options?: any) {
+    public getSolicitationActionsForOrder(requestParameters: SolicitationsApiGetSolicitationActionsForOrderRequest, options?: AxiosRequestConfig) {
         return SolicitationsApiFp(this.configuration).getSolicitationActionsForOrder(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 }

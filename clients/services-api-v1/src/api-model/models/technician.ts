@@ -25,13 +25,12 @@ export interface Technician {
      * @type {string}
      * @memberof Technician
      */
-    technicianId?: string;
+    'technicianId'?: string;
     /**
      * The name of the technician.
      * @type {string}
      * @memberof Technician
      */
-    name?: string;
+    'name'?: string;
 }
-
 

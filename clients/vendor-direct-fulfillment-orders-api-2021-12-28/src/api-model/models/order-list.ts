@@ -27,13 +27,12 @@ export interface OrderList {
      * @type {Pagination}
      * @memberof OrderList
      */
-    pagination?: Pagination;
+    'pagination'?: Pagination;
     /**
      * 
      * @type {Array<Order>}
      * @memberof OrderList
      */
-    orders?: Array<Order>;
+    'orders'?: Array<Order>;
 }
-
 

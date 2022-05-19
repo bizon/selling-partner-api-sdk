@@ -28,31 +28,30 @@ export interface DebtRecoveryEvent {
      * @type {string}
      * @memberof DebtRecoveryEvent
      */
-    DebtRecoveryType?: string;
+    'DebtRecoveryType'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof DebtRecoveryEvent
      */
-    RecoveryAmount?: Currency;
+    'RecoveryAmount'?: Currency;
     /**
      * 
      * @type {Currency}
      * @memberof DebtRecoveryEvent
      */
-    OverPaymentCredit?: Currency;
+    'OverPaymentCredit'?: Currency;
     /**
      * A list of debt recovery item information.
      * @type {Array<DebtRecoveryItem>}
      * @memberof DebtRecoveryEvent
      */
-    DebtRecoveryItemList?: Array<DebtRecoveryItem>;
+    'DebtRecoveryItemList'?: Array<DebtRecoveryItem>;
     /**
      * A list of payment instruments.
      * @type {Array<ChargeInstrument>}
      * @memberof DebtRecoveryEvent
      */
-    ChargeInstrumentList?: Array<ChargeInstrument>;
+    'ChargeInstrumentList'?: Array<ChargeInstrument>;
 }
-
 

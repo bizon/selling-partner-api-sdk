@@ -27,13 +27,12 @@ export interface GetAdditionalSellerInputsResult {
      * @type {Array<AdditionalInputs>}
      * @memberof GetAdditionalSellerInputsResult
      */
-    ShipmentLevelFields?: Array<AdditionalInputs>;
+    'ShipmentLevelFields'?: Array<AdditionalInputs>;
     /**
      * A list of item level fields.
      * @type {Array<ItemLevelFields>}
      * @memberof GetAdditionalSellerInputsResult
      */
-    ItemLevelFieldsList?: Array<ItemLevelFields>;
+    'ItemLevelFieldsList'?: Array<ItemLevelFields>;
 }
-
 

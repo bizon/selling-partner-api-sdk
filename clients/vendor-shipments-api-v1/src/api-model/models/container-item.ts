@@ -27,19 +27,18 @@ export interface ContainerItem {
      * @type {string}
      * @memberof ContainerItem
      */
-    itemReference: string;
+    'itemReference': string;
     /**
      * 
      * @type {ItemQuantity}
      * @memberof ContainerItem
      */
-    shippedQuantity: ItemQuantity;
+    'shippedQuantity': ItemQuantity;
     /**
      * 
      * @type {ItemDetails}
      * @memberof ContainerItem
      */
-    itemDetails?: ItemDetails;
+    'itemDetails'?: ItemDetails;
 }
-
 

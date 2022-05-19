@@ -26,13 +26,12 @@ export interface CreateRestrictedDataTokenRequest {
      * @type {string}
      * @memberof CreateRestrictedDataTokenRequest
      */
-    targetApplication?: string;
+    'targetApplication'?: string;
     /**
      * A list of restricted resources. Maximum: 50
      * @type {Array<RestrictedResource>}
      * @memberof CreateRestrictedDataTokenRequest
      */
-    restrictedResources: Array<RestrictedResource>;
+    'restrictedResources': Array<RestrictedResource>;
 }
-
 

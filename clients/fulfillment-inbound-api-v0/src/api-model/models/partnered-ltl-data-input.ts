@@ -30,43 +30,42 @@ export interface PartneredLtlDataInput {
      * @type {Contact}
      * @memberof PartneredLtlDataInput
      */
-    Contact?: Contact;
+    'Contact'?: Contact;
     /**
      * 
      * @type {number}
      * @memberof PartneredLtlDataInput
      */
-    BoxCount?: number;
+    'BoxCount'?: number;
     /**
      * 
      * @type {SellerFreightClass}
      * @memberof PartneredLtlDataInput
      */
-    SellerFreightClass?: SellerFreightClass;
+    'SellerFreightClass'?: SellerFreightClass;
     /**
      * 
      * @type {string}
      * @memberof PartneredLtlDataInput
      */
-    FreightReadyDate?: string;
+    'FreightReadyDate'?: string;
     /**
      * A list of pallet information.
      * @type {Array<Pallet>}
      * @memberof PartneredLtlDataInput
      */
-    PalletList?: Array<Pallet>;
+    'PalletList'?: Array<Pallet>;
     /**
      * 
      * @type {Weight}
      * @memberof PartneredLtlDataInput
      */
-    TotalWeight?: Weight;
+    'TotalWeight'?: Weight;
     /**
      * 
      * @type {Amount}
      * @memberof PartneredLtlDataInput
      */
-    SellerDeclaredValue?: Amount;
+    'SellerDeclaredValue'?: Amount;
 }
-
 

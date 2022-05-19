@@ -41,97 +41,96 @@ export interface ContentModule {
      * @type {ContentModuleType}
      * @memberof ContentModule
      */
-    contentModuleType: ContentModuleType;
+    'contentModuleType': ContentModuleType;
     /**
      * 
      * @type {StandardCompanyLogoModule}
      * @memberof ContentModule
      */
-    standardCompanyLogo?: StandardCompanyLogoModule;
+    'standardCompanyLogo'?: StandardCompanyLogoModule;
     /**
      * 
      * @type {StandardComparisonTableModule}
      * @memberof ContentModule
      */
-    standardComparisonTable?: StandardComparisonTableModule;
+    'standardComparisonTable'?: StandardComparisonTableModule;
     /**
      * 
      * @type {StandardFourImageTextModule}
      * @memberof ContentModule
      */
-    standardFourImageText?: StandardFourImageTextModule;
+    'standardFourImageText'?: StandardFourImageTextModule;
     /**
      * 
      * @type {StandardFourImageTextQuadrantModule}
      * @memberof ContentModule
      */
-    standardFourImageTextQuadrant?: StandardFourImageTextQuadrantModule;
+    'standardFourImageTextQuadrant'?: StandardFourImageTextQuadrantModule;
     /**
      * 
      * @type {StandardHeaderImageTextModule}
      * @memberof ContentModule
      */
-    standardHeaderImageText?: StandardHeaderImageTextModule;
+    'standardHeaderImageText'?: StandardHeaderImageTextModule;
     /**
      * 
      * @type {StandardImageSidebarModule}
      * @memberof ContentModule
      */
-    standardImageSidebar?: StandardImageSidebarModule;
+    'standardImageSidebar'?: StandardImageSidebarModule;
     /**
      * 
      * @type {StandardImageTextOverlayModule}
      * @memberof ContentModule
      */
-    standardImageTextOverlay?: StandardImageTextOverlayModule;
+    'standardImageTextOverlay'?: StandardImageTextOverlayModule;
     /**
      * 
      * @type {StandardMultipleImageTextModule}
      * @memberof ContentModule
      */
-    standardMultipleImageText?: StandardMultipleImageTextModule;
+    'standardMultipleImageText'?: StandardMultipleImageTextModule;
     /**
      * 
      * @type {StandardProductDescriptionModule}
      * @memberof ContentModule
      */
-    standardProductDescription?: StandardProductDescriptionModule;
+    'standardProductDescription'?: StandardProductDescriptionModule;
     /**
      * 
      * @type {StandardSingleImageHighlightsModule}
      * @memberof ContentModule
      */
-    standardSingleImageHighlights?: StandardSingleImageHighlightsModule;
+    'standardSingleImageHighlights'?: StandardSingleImageHighlightsModule;
     /**
      * 
      * @type {StandardSingleImageSpecsDetailModule}
      * @memberof ContentModule
      */
-    standardSingleImageSpecsDetail?: StandardSingleImageSpecsDetailModule;
+    'standardSingleImageSpecsDetail'?: StandardSingleImageSpecsDetailModule;
     /**
      * 
      * @type {StandardSingleSideImageModule}
      * @memberof ContentModule
      */
-    standardSingleSideImage?: StandardSingleSideImageModule;
+    'standardSingleSideImage'?: StandardSingleSideImageModule;
     /**
      * 
      * @type {StandardTechSpecsModule}
      * @memberof ContentModule
      */
-    standardTechSpecs?: StandardTechSpecsModule;
+    'standardTechSpecs'?: StandardTechSpecsModule;
     /**
      * 
      * @type {StandardTextModule}
      * @memberof ContentModule
      */
-    standardText?: StandardTextModule;
+    'standardText'?: StandardTextModule;
     /**
      * 
      * @type {StandardThreeImageTextModule}
      * @memberof ContentModule
      */
-    standardThreeImageText?: StandardThreeImageTextModule;
+    'standardThreeImageText'?: StandardThreeImageTextModule;
 }
-
 

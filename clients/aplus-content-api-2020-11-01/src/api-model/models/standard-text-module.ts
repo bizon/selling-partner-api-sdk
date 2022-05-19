@@ -27,13 +27,12 @@ export interface StandardTextModule {
      * @type {TextComponent}
      * @memberof StandardTextModule
      */
-    headline?: TextComponent;
+    'headline'?: TextComponent;
     /**
      * 
      * @type {ParagraphComponent}
      * @memberof StandardTextModule
      */
-    body: ParagraphComponent;
+    'body': ParagraphComponent;
 }
-
 

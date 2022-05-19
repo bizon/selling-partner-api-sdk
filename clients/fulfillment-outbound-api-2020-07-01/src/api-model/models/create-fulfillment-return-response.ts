@@ -26,13 +26,12 @@ export interface CreateFulfillmentReturnResponse {
      * @type {CreateFulfillmentReturnResult}
      * @memberof CreateFulfillmentReturnResponse
      */
-    payload?: CreateFulfillmentReturnResult;
+    'payload'?: CreateFulfillmentReturnResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof CreateFulfillmentReturnResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

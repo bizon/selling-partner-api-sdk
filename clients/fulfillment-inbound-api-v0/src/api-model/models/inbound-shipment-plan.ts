@@ -29,37 +29,36 @@ export interface InboundShipmentPlan {
      * @type {string}
      * @memberof InboundShipmentPlan
      */
-    ShipmentId: string;
+    'ShipmentId': string;
     /**
      * An Amazon fulfillment center identifier created by Amazon.
      * @type {string}
      * @memberof InboundShipmentPlan
      */
-    DestinationFulfillmentCenterId: string;
+    'DestinationFulfillmentCenterId': string;
     /**
      * 
      * @type {Address}
      * @memberof InboundShipmentPlan
      */
-    ShipToAddress: Address;
+    'ShipToAddress': Address;
     /**
      * 
      * @type {LabelPrepType}
      * @memberof InboundShipmentPlan
      */
-    LabelPrepType: LabelPrepType;
+    'LabelPrepType': LabelPrepType;
     /**
      * A list of inbound shipment plan item information.
      * @type {Array<InboundShipmentPlanItem>}
      * @memberof InboundShipmentPlan
      */
-    Items: Array<InboundShipmentPlanItem>;
+    'Items': Array<InboundShipmentPlanItem>;
     /**
      * 
      * @type {BoxContentsFeeDetails}
      * @memberof InboundShipmentPlan
      */
-    EstimatedBoxContentsFee?: BoxContentsFeeDetails;
+    'EstimatedBoxContentsFee'?: BoxContentsFeeDetails;
 }
-
 

@@ -26,30 +26,27 @@ export interface Reason {
      * @type {string}
      * @memberof Reason
      */
-    message: string;
+    'message': string;
     /**
      * A code indicating why the listing is restricted.
      * @type {string}
      * @memberof Reason
      */
-    reasonCode?: ReasonReasonCodeEnum;
+    'reasonCode'?: ReasonReasonCodeEnum;
     /**
      * A list of path forward links that may allow Selling Partners to remove the restriction.
      * @type {Array<Link>}
      * @memberof Reason
      */
-    links?: Array<Link>;
+    'links'?: Array<Link>;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ReasonReasonCodeEnum {
-    ApprovalRequired = 'APPROVAL_REQUIRED',
-    AsinNotFound = 'ASIN_NOT_FOUND',
-    NotEligible = 'NOT_ELIGIBLE'
-}
+export const ReasonReasonCodeEnum = {
+    ApprovalRequired: 'APPROVAL_REQUIRED',
+    AsinNotFound: 'ASIN_NOT_FOUND',
+    NotEligible: 'NOT_ELIGIBLE'
+} as const;
 
+export type ReasonReasonCodeEnum = typeof ReasonReasonCodeEnum[keyof typeof ReasonReasonCodeEnum];
 
 

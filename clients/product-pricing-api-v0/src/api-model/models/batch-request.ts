@@ -26,19 +26,18 @@ export interface BatchRequest {
      * @type {string}
      * @memberof BatchRequest
      */
-    uri: string;
+    'uri': string;
     /**
      * 
      * @type {HttpMethod}
      * @memberof BatchRequest
      */
-    method: HttpMethod;
+    'method': HttpMethod;
     /**
      * A mapping of additional HTTP headers to send/receive for the individual batch request.
      * @type {{ [key: string]: string; }}
      * @memberof BatchRequest
      */
-    headers?: { [key: string]: string; };
+    'headers'?: { [key: string]: string; };
 }
-
 

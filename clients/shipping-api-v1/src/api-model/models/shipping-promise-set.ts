@@ -26,13 +26,12 @@ export interface ShippingPromiseSet {
      * @type {TimeRange}
      * @memberof ShippingPromiseSet
      */
-    deliveryWindow?: TimeRange;
+    'deliveryWindow'?: TimeRange;
     /**
      * 
      * @type {TimeRange}
      * @memberof ShippingPromiseSet
      */
-    receiveWindow?: TimeRange;
+    'receiveWindow'?: TimeRange;
 }
-
 

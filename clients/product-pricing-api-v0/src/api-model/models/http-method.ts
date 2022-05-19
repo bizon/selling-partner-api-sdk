@@ -19,13 +19,16 @@
  * @export
  * @enum {string}
  */
-export enum HttpMethod {
-    Get = 'GET',
-    Put = 'PUT',
-    Patch = 'PATCH',
-    Delete = 'DELETE',
-    Post = 'POST'
-}
+
+export const HttpMethod = {
+    Get: 'GET',
+    Put: 'PUT',
+    Patch: 'PATCH',
+    Delete: 'DELETE',
+    Post: 'POST'
+} as const;
+
+export type HttpMethod = typeof HttpMethod[keyof typeof HttpMethod];
 
 
 

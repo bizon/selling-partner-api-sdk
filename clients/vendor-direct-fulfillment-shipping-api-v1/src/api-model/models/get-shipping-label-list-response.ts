@@ -26,13 +26,12 @@ export interface GetShippingLabelListResponse {
      * @type {ShippingLabelList}
      * @memberof GetShippingLabelListResponse
      */
-    payload?: ShippingLabelList;
+    'payload'?: ShippingLabelList;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetShippingLabelListResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

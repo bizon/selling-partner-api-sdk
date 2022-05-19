@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum FulfillmentAction {
-    Ship = 'Ship',
-    Hold = 'Hold'
-}
+
+export const FulfillmentAction = {
+    Ship: 'Ship',
+    Hold: 'Hold'
+} as const;
+
+export type FulfillmentAction = typeof FulfillmentAction[keyof typeof FulfillmentAction];
 
 
 

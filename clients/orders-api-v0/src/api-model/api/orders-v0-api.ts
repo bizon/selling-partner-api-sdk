@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -54,7 +54,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrder: async (orderId: string, options: any = {}): Promise<RequestArgs> => {
+        getOrder: async (orderId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('getOrder', 'orderId', orderId)
             const localVarPath = `/orders/v0/orders/{orderId}`
@@ -72,7 +72,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -87,7 +87,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderAddress: async (orderId: string, options: any = {}): Promise<RequestArgs> => {
+        getOrderAddress: async (orderId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('getOrderAddress', 'orderId', orderId)
             const localVarPath = `/orders/v0/orders/{orderId}/address`
@@ -105,7 +105,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -120,7 +120,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderBuyerInfo: async (orderId: string, options: any = {}): Promise<RequestArgs> => {
+        getOrderBuyerInfo: async (orderId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('getOrderBuyerInfo', 'orderId', orderId)
             const localVarPath = `/orders/v0/orders/{orderId}/buyerInfo`
@@ -138,7 +138,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -154,7 +154,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderItems: async (orderId: string, nextToken?: string, options: any = {}): Promise<RequestArgs> => {
+        getOrderItems: async (orderId: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('getOrderItems', 'orderId', orderId)
             const localVarPath = `/orders/v0/orders/{orderId}/orderItems`
@@ -176,7 +176,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -192,7 +192,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderItemsBuyerInfo: async (orderId: string, nextToken?: string, options: any = {}): Promise<RequestArgs> => {
+        getOrderItemsBuyerInfo: async (orderId: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('getOrderItemsBuyerInfo', 'orderId', orderId)
             const localVarPath = `/orders/v0/orders/{orderId}/orderItems/buyerInfo`
@@ -214,7 +214,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -229,7 +229,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderRegulatedInfo: async (orderId: string, options: any = {}): Promise<RequestArgs> => {
+        getOrderRegulatedInfo: async (orderId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('getOrderRegulatedInfo', 'orderId', orderId)
             const localVarPath = `/orders/v0/orders/{orderId}/regulatedInfo`
@@ -247,7 +247,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -278,7 +278,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrders: async (marketplaceIds: Array<string>, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, orderStatuses?: Array<string>, fulfillmentChannels?: Array<string>, paymentMethods?: Array<string>, buyerEmail?: string, sellerOrderId?: string, maxResultsPerPage?: number, easyShipShipmentStatuses?: Array<string>, nextToken?: string, amazonOrderIds?: Array<string>, actualFulfillmentSupplySourceId?: string, isISPU?: boolean, storeChainStoreId?: string, options: any = {}): Promise<RequestArgs> => {
+        getOrders: async (marketplaceIds: Array<string>, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, orderStatuses?: Array<string>, fulfillmentChannels?: Array<string>, paymentMethods?: Array<string>, buyerEmail?: string, sellerOrderId?: string, maxResultsPerPage?: number, easyShipShipmentStatuses?: Array<string>, nextToken?: string, amazonOrderIds?: Array<string>, actualFulfillmentSupplySourceId?: string, isISPU?: boolean, storeChainStoreId?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('getOrders', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/orders/v0/orders`;
@@ -363,7 +363,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -379,7 +379,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateShipmentStatus: async (orderId: string, payload: UpdateShipmentStatusRequest, options: any = {}): Promise<RequestArgs> => {
+        updateShipmentStatus: async (orderId: string, payload: UpdateShipmentStatusRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('updateShipmentStatus', 'orderId', orderId)
             // verify required parameter 'payload' is not null or undefined
@@ -401,7 +401,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(payload, localVarRequestOptions, configuration)
@@ -418,7 +418,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateVerificationStatus: async (orderId: string, payload: UpdateVerificationStatusRequest, options: any = {}): Promise<RequestArgs> => {
+        updateVerificationStatus: async (orderId: string, payload: UpdateVerificationStatusRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('updateVerificationStatus', 'orderId', orderId)
             // verify required parameter 'payload' is not null or undefined
@@ -440,7 +440,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(payload, localVarRequestOptions, configuration)
@@ -466,7 +466,7 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrder(orderId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderResponse>> {
+        async getOrder(orderId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrder(orderId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -476,7 +476,7 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrderAddress(orderId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderAddressResponse>> {
+        async getOrderAddress(orderId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderAddressResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderAddress(orderId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -486,7 +486,7 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrderBuyerInfo(orderId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderBuyerInfoResponse>> {
+        async getOrderBuyerInfo(orderId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderBuyerInfoResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderBuyerInfo(orderId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -497,7 +497,7 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrderItems(orderId: string, nextToken?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderItemsResponse>> {
+        async getOrderItems(orderId: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderItemsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderItems(orderId, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -508,7 +508,7 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrderItemsBuyerInfo(orderId: string, nextToken?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderItemsBuyerInfoResponse>> {
+        async getOrderItemsBuyerInfo(orderId: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderItemsBuyerInfoResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderItemsBuyerInfo(orderId, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -518,7 +518,7 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrderRegulatedInfo(orderId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderRegulatedInfoResponse>> {
+        async getOrderRegulatedInfo(orderId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderRegulatedInfoResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderRegulatedInfo(orderId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -544,7 +544,7 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrders(marketplaceIds: Array<string>, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, orderStatuses?: Array<string>, fulfillmentChannels?: Array<string>, paymentMethods?: Array<string>, buyerEmail?: string, sellerOrderId?: string, maxResultsPerPage?: number, easyShipShipmentStatuses?: Array<string>, nextToken?: string, amazonOrderIds?: Array<string>, actualFulfillmentSupplySourceId?: string, isISPU?: boolean, storeChainStoreId?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrdersResponse>> {
+        async getOrders(marketplaceIds: Array<string>, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, orderStatuses?: Array<string>, fulfillmentChannels?: Array<string>, paymentMethods?: Array<string>, buyerEmail?: string, sellerOrderId?: string, maxResultsPerPage?: number, easyShipShipmentStatuses?: Array<string>, nextToken?: string, amazonOrderIds?: Array<string>, actualFulfillmentSupplySourceId?: string, isISPU?: boolean, storeChainStoreId?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrdersResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrders(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -555,7 +555,7 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateShipmentStatus(orderId: string, payload: UpdateShipmentStatusRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async updateShipmentStatus(orderId: string, payload: UpdateShipmentStatusRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateShipmentStatus(orderId, payload, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -566,7 +566,7 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateVerificationStatus(orderId: string, payload: UpdateVerificationStatusRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async updateVerificationStatus(orderId: string, payload: UpdateVerificationStatusRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateVerificationStatus(orderId, payload, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -964,7 +964,7 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrder(requestParameters: OrdersV0ApiGetOrderRequest, options?: any) {
+    public getOrder(requestParameters: OrdersV0ApiGetOrderRequest, options?: AxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).getOrder(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -975,7 +975,7 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrderAddress(requestParameters: OrdersV0ApiGetOrderAddressRequest, options?: any) {
+    public getOrderAddress(requestParameters: OrdersV0ApiGetOrderAddressRequest, options?: AxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).getOrderAddress(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -986,7 +986,7 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrderBuyerInfo(requestParameters: OrdersV0ApiGetOrderBuyerInfoRequest, options?: any) {
+    public getOrderBuyerInfo(requestParameters: OrdersV0ApiGetOrderBuyerInfoRequest, options?: AxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).getOrderBuyerInfo(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -997,7 +997,7 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrderItems(requestParameters: OrdersV0ApiGetOrderItemsRequest, options?: any) {
+    public getOrderItems(requestParameters: OrdersV0ApiGetOrderItemsRequest, options?: AxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).getOrderItems(requestParameters.orderId, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1008,7 +1008,7 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrderItemsBuyerInfo(requestParameters: OrdersV0ApiGetOrderItemsBuyerInfoRequest, options?: any) {
+    public getOrderItemsBuyerInfo(requestParameters: OrdersV0ApiGetOrderItemsBuyerInfoRequest, options?: AxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).getOrderItemsBuyerInfo(requestParameters.orderId, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1019,7 +1019,7 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrderRegulatedInfo(requestParameters: OrdersV0ApiGetOrderRegulatedInfoRequest, options?: any) {
+    public getOrderRegulatedInfo(requestParameters: OrdersV0ApiGetOrderRegulatedInfoRequest, options?: AxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).getOrderRegulatedInfo(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1030,7 +1030,7 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrders(requestParameters: OrdersV0ApiGetOrdersRequest, options?: any) {
+    public getOrders(requestParameters: OrdersV0ApiGetOrdersRequest, options?: AxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).getOrders(requestParameters.marketplaceIds, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.orderStatuses, requestParameters.fulfillmentChannels, requestParameters.paymentMethods, requestParameters.buyerEmail, requestParameters.sellerOrderId, requestParameters.maxResultsPerPage, requestParameters.easyShipShipmentStatuses, requestParameters.nextToken, requestParameters.amazonOrderIds, requestParameters.actualFulfillmentSupplySourceId, requestParameters.isISPU, requestParameters.storeChainStoreId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1041,7 +1041,7 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public updateShipmentStatus(requestParameters: OrdersV0ApiUpdateShipmentStatusRequest, options?: any) {
+    public updateShipmentStatus(requestParameters: OrdersV0ApiUpdateShipmentStatusRequest, options?: AxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).updateShipmentStatus(requestParameters.orderId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1052,7 +1052,7 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public updateVerificationStatus(requestParameters: OrdersV0ApiUpdateVerificationStatusRequest, options?: any) {
+    public updateVerificationStatus(requestParameters: OrdersV0ApiUpdateVerificationStatusRequest, options?: AxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).updateVerificationStatus(requestParameters.orderId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
     }
 }

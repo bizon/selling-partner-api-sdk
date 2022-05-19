@@ -26,7 +26,6 @@ export interface SubmitShipmentStatusUpdatesRequest {
      * @type {Array<ShipmentStatusUpdate>}
      * @memberof SubmitShipmentStatusUpdatesRequest
      */
-    shipmentStatusUpdates?: Array<ShipmentStatusUpdate>;
+    'shipmentStatusUpdates'?: Array<ShipmentStatusUpdate>;
 }
-
 

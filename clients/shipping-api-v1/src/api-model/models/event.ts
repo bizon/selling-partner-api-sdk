@@ -26,19 +26,18 @@ export interface Event {
      * @type {string}
      * @memberof Event
      */
-    eventCode: string;
+    'eventCode': string;
     /**
      * The date and time of an event for a shipment.
      * @type {string}
      * @memberof Event
      */
-    eventTime: string;
+    'eventTime': string;
     /**
      * 
      * @type {Location}
      * @memberof Event
      */
-    location?: Location;
+    'location'?: Location;
 }
-
 

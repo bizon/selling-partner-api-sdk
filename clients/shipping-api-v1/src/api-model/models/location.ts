@@ -25,25 +25,24 @@ export interface Location {
      * @type {string}
      * @memberof Location
      */
-    stateOrRegion?: string;
+    'stateOrRegion'?: string;
     /**
      * The city where the person, business or institution is located.
      * @type {string}
      * @memberof Location
      */
-    city?: string;
+    'city'?: string;
     /**
      * The two digit country code. In ISO 3166-1 alpha-2 format.
      * @type {string}
      * @memberof Location
      */
-    countryCode?: string;
+    'countryCode'?: string;
     /**
      * The postal code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
      * @type {string}
      * @memberof Location
      */
-    postalCode?: string;
+    'postalCode'?: string;
 }
-
 

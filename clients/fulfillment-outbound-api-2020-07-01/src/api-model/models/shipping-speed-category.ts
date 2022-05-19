@@ -19,12 +19,15 @@
  * @export
  * @enum {string}
  */
-export enum ShippingSpeedCategory {
-    Standard = 'Standard',
-    Expedited = 'Expedited',
-    Priority = 'Priority',
-    ScheduledDelivery = 'ScheduledDelivery'
-}
+
+export const ShippingSpeedCategory = {
+    Standard: 'Standard',
+    Expedited: 'Expedited',
+    Priority: 'Priority',
+    ScheduledDelivery: 'ScheduledDelivery'
+} as const;
+
+export type ShippingSpeedCategory = typeof ShippingSpeedCategory[keyof typeof ShippingSpeedCategory];
 
 
 

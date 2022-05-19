@@ -25,13 +25,12 @@ export interface GetOffersHttpStatusLine {
      * @type {number}
      * @memberof GetOffersHttpStatusLine
      */
-    statusCode?: number;
+    'statusCode'?: number;
     /**
      * The HTTP response Reason-Phase.
      * @type {string}
      * @memberof GetOffersHttpStatusLine
      */
-    reasonPhrase?: string;
+    'reasonPhrase'?: string;
 }
-
 

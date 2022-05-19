@@ -19,13 +19,16 @@
  * @export
  * @enum {string}
  */
-export enum ContentBadge {
-    Bulk = 'BULK',
-    Generated = 'GENERATED',
-    Launchpad = 'LAUNCHPAD',
-    Premium = 'PREMIUM',
-    Standard = 'STANDARD'
-}
+
+export const ContentBadge = {
+    Bulk: 'BULK',
+    Generated: 'GENERATED',
+    Launchpad: 'LAUNCHPAD',
+    Premium: 'PREMIUM',
+    Standard: 'STANDARD'
+} as const;
+
+export type ContentBadge = typeof ContentBadge[keyof typeof ContentBadge];
 
 
 

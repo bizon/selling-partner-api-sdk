@@ -28,19 +28,18 @@ export interface CreateFulfillmentReturnResult {
      * @type {Array<ReturnItem>}
      * @memberof CreateFulfillmentReturnResult
      */
-    returnItems?: Array<ReturnItem>;
+    'returnItems'?: Array<ReturnItem>;
     /**
      * An array of invalid return item information.
      * @type {Array<InvalidReturnItem>}
      * @memberof CreateFulfillmentReturnResult
      */
-    invalidReturnItems?: Array<InvalidReturnItem>;
+    'invalidReturnItems'?: Array<InvalidReturnItem>;
     /**
      * An array of return authorization information.
      * @type {Array<ReturnAuthorization>}
      * @memberof CreateFulfillmentReturnResult
      */
-    returnAuthorizations?: Array<ReturnAuthorization>;
+    'returnAuthorizations'?: Array<ReturnAuthorization>;
 }
-
 

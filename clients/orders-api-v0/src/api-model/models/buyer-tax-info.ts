@@ -26,19 +26,18 @@ export interface BuyerTaxInfo {
      * @type {string}
      * @memberof BuyerTaxInfo
      */
-    CompanyLegalName?: string;
+    'CompanyLegalName'?: string;
     /**
      * The country or region imposing the tax.
      * @type {string}
      * @memberof BuyerTaxInfo
      */
-    TaxingRegion?: string;
+    'TaxingRegion'?: string;
     /**
      * A list of tax classifications that apply to the order.
      * @type {Array<TaxClassification>}
      * @memberof BuyerTaxInfo
      */
-    TaxClassifications?: Array<TaxClassification>;
+    'TaxClassifications'?: Array<TaxClassification>;
 }
-
 

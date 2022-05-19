@@ -26,7 +26,6 @@ export interface ListReturnReasonCodesResult {
      * @type {Array<ReasonCodeDetails>}
      * @memberof ListReturnReasonCodesResult
      */
-    reasonCodeDetails?: Array<ReasonCodeDetails>;
+    'reasonCodeDetails'?: Array<ReasonCodeDetails>;
 }
-
 

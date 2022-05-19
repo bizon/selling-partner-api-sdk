@@ -27,25 +27,24 @@ export interface CreateShipmentRequest {
      * @type {string}
      * @memberof CreateShipmentRequest
      */
-    clientReferenceId: string;
+    'clientReferenceId': string;
     /**
      * 
      * @type {Address}
      * @memberof CreateShipmentRequest
      */
-    shipTo: Address;
+    'shipTo': Address;
     /**
      * 
      * @type {Address}
      * @memberof CreateShipmentRequest
      */
-    shipFrom: Address;
+    'shipFrom': Address;
     /**
      * A list of container.
      * @type {Array<Container>}
      * @memberof CreateShipmentRequest
      */
-    containers: Array<Container>;
+    'containers': Array<Container>;
 }
-
 

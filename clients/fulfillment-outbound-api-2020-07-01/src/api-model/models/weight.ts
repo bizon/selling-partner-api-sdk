@@ -25,25 +25,22 @@ export interface Weight {
      * @type {string}
      * @memberof Weight
      */
-    unit: WeightUnitEnum;
+    'unit': WeightUnitEnum;
     /**
      * The weight value.
      * @type {string}
      * @memberof Weight
      */
-    value: string;
+    'value': string;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum WeightUnitEnum {
-    Kg = 'KG',
-    Kilograms = 'KILOGRAMS',
-    Lb = 'LB',
-    Pounds = 'POUNDS'
-}
+export const WeightUnitEnum = {
+    Kg: 'KG',
+    Kilograms: 'KILOGRAMS',
+    Lb: 'LB',
+    Pounds: 'POUNDS'
+} as const;
 
+export type WeightUnitEnum = typeof WeightUnitEnum[keyof typeof WeightUnitEnum];
 
 

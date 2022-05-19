@@ -25,13 +25,12 @@ export interface AppointmentTimeInput {
      * @type {string}
      * @memberof AppointmentTimeInput
      */
-    startTime: string;
+    'startTime': string;
     /**
      * The duration of an appointment in minutes.
      * @type {number}
      * @memberof AppointmentTimeInput
      */
-    durationInMinutes?: number;
+    'durationInMinutes'?: number;
 }
-
 

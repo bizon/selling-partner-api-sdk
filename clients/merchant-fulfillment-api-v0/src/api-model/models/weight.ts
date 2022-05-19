@@ -26,13 +26,12 @@ export interface Weight {
      * @type {number}
      * @memberof Weight
      */
-    Value: number;
+    'Value': number;
     /**
      * 
      * @type {UnitOfWeight}
      * @memberof Weight
      */
-    Unit: UnitOfWeight;
+    'Unit': UnitOfWeight;
 }
-
 

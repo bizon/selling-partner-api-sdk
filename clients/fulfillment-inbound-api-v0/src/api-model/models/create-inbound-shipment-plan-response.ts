@@ -26,13 +26,12 @@ export interface CreateInboundShipmentPlanResponse {
      * @type {CreateInboundShipmentPlanResult}
      * @memberof CreateInboundShipmentPlanResponse
      */
-    payload?: CreateInboundShipmentPlanResult;
+    'payload'?: CreateInboundShipmentPlanResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof CreateInboundShipmentPlanResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

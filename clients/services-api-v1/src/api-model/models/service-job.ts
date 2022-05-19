@@ -33,94 +33,91 @@ export interface ServiceJob {
      * @type {string}
      * @memberof ServiceJob
      */
-    createTime?: string;
+    'createTime'?: string;
     /**
      * Amazon identifier for the service job.
      * @type {string}
      * @memberof ServiceJob
      */
-    serviceJobId?: string;
+    'serviceJobId'?: string;
     /**
      * The status of the service job.
      * @type {string}
      * @memberof ServiceJob
      */
-    serviceJobStatus?: ServiceJobServiceJobStatusEnum;
+    'serviceJobStatus'?: ServiceJobServiceJobStatusEnum;
     /**
      * 
      * @type {ScopeOfWork}
      * @memberof ServiceJob
      */
-    scopeOfWork?: ScopeOfWork;
+    'scopeOfWork'?: ScopeOfWork;
     /**
      * 
      * @type {Seller}
      * @memberof ServiceJob
      */
-    seller?: Seller;
+    'seller'?: Seller;
     /**
      * 
      * @type {ServiceJobProvider}
      * @memberof ServiceJob
      */
-    serviceJobProvider?: ServiceJobProvider;
+    'serviceJobProvider'?: ServiceJobProvider;
     /**
      * A list of appointment windows preferred by the buyer. Included only if the buyer selected appointment windows when creating the order.
      * @type {Array<AppointmentTime>}
      * @memberof ServiceJob
      */
-    preferredAppointmentTimes?: Array<AppointmentTime>;
+    'preferredAppointmentTimes'?: Array<AppointmentTime>;
     /**
      * A list of appointments.
      * @type {Array<Appointment>}
      * @memberof ServiceJob
      */
-    appointments?: Array<Appointment>;
+    'appointments'?: Array<Appointment>;
     /**
      * The Amazon-defined identifier for an order placed by the buyer, in 3-7-7 format.
      * @type {string}
      * @memberof ServiceJob
      */
-    serviceOrderId?: string;
+    'serviceOrderId'?: string;
     /**
      * The marketplace identifier.
      * @type {string}
      * @memberof ServiceJob
      */
-    marketplaceId?: string;
+    'marketplaceId'?: string;
     /**
      * 
      * @type {Buyer}
      * @memberof ServiceJob
      */
-    buyer?: Buyer;
+    'buyer'?: Buyer;
     /**
      * A list of items associated with the service job.
      * @type {Array<AssociatedItem>}
      * @memberof ServiceJob
      */
-    associatedItems?: Array<AssociatedItem>;
+    'associatedItems'?: Array<AssociatedItem>;
     /**
      * 
      * @type {ServiceLocation}
      * @memberof ServiceJob
      */
-    serviceLocation?: ServiceLocation;
+    'serviceLocation'?: ServiceLocation;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ServiceJobServiceJobStatusEnum {
-    NotServiced = 'NOT_SERVICED',
-    Cancelled = 'CANCELLED',
-    Completed = 'COMPLETED',
-    PendingSchedule = 'PENDING_SCHEDULE',
-    NotFulfillable = 'NOT_FULFILLABLE',
-    Hold = 'HOLD',
-    PaymentDeclined = 'PAYMENT_DECLINED'
-}
+export const ServiceJobServiceJobStatusEnum = {
+    NotServiced: 'NOT_SERVICED',
+    Cancelled: 'CANCELLED',
+    Completed: 'COMPLETED',
+    PendingSchedule: 'PENDING_SCHEDULE',
+    NotFulfillable: 'NOT_FULFILLABLE',
+    Hold: 'HOLD',
+    PaymentDeclined: 'PAYMENT_DECLINED'
+} as const;
 
+export type ServiceJobServiceJobStatusEnum = typeof ServiceJobServiceJobStatusEnum[keyof typeof ServiceJobServiceJobStatusEnum];
 
 

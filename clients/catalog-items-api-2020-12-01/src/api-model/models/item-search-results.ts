@@ -28,25 +28,24 @@ export interface ItemSearchResults {
      * @type {number}
      * @memberof ItemSearchResults
      */
-    numberOfResults: number;
+    'numberOfResults': number;
     /**
      * 
      * @type {Pagination}
      * @memberof ItemSearchResults
      */
-    pagination: Pagination;
+    'pagination': Pagination;
     /**
      * 
      * @type {Refinements}
      * @memberof ItemSearchResults
      */
-    refinements: Refinements;
+    'refinements': Refinements;
     /**
      * A list of items from the Amazon catalog.
      * @type {Array<Item>}
      * @memberof ItemSearchResults
      */
-    items: Array<Item>;
+    'items': Array<Item>;
 }
-
 

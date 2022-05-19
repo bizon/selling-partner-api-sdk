@@ -25,7 +25,6 @@ export interface CreateConfirmServiceDetailsResponse {
      * @type {Array<Error>}
      * @memberof CreateConfirmServiceDetailsResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

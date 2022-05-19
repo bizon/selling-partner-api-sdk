@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -60,7 +60,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelShipment: async (shipmentId: string, options: any = {}): Promise<RequestArgs> => {
+        cancelShipment: async (shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('cancelShipment', 'shipmentId', shipmentId)
             const localVarPath = `/shipping/v1/shipments/{shipmentId}/cancel`
@@ -78,7 +78,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -93,7 +93,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createShipment: async (body: CreateShipmentRequest, options: any = {}): Promise<RequestArgs> => {
+        createShipment: async (body: CreateShipmentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createShipment', 'body', body)
             const localVarPath = `/shipping/v1/shipments`;
@@ -112,7 +112,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -127,7 +127,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAccount: async (options: any = {}): Promise<RequestArgs> => {
+        getAccount: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/shipping/v1/account`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -142,7 +142,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -157,7 +157,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRates: async (body: GetRatesRequest, options: any = {}): Promise<RequestArgs> => {
+        getRates: async (body: GetRatesRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getRates', 'body', body)
             const localVarPath = `/shipping/v1/rates`;
@@ -176,7 +176,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -192,7 +192,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipment: async (shipmentId: string, options: any = {}): Promise<RequestArgs> => {
+        getShipment: async (shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getShipment', 'shipmentId', shipmentId)
             const localVarPath = `/shipping/v1/shipments/{shipmentId}`
@@ -210,7 +210,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -225,7 +225,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTrackingInformation: async (trackingId: string, options: any = {}): Promise<RequestArgs> => {
+        getTrackingInformation: async (trackingId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'trackingId' is not null or undefined
             assertParamExists('getTrackingInformation', 'trackingId', trackingId)
             const localVarPath = `/shipping/v1/tracking/{trackingId}`
@@ -243,7 +243,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -259,7 +259,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        purchaseLabels: async (shipmentId: string, body: PurchaseLabelsRequest, options: any = {}): Promise<RequestArgs> => {
+        purchaseLabels: async (shipmentId: string, body: PurchaseLabelsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('purchaseLabels', 'shipmentId', shipmentId)
             // verify required parameter 'body' is not null or undefined
@@ -281,7 +281,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -297,7 +297,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        purchaseShipment: async (body: PurchaseShipmentRequest, options: any = {}): Promise<RequestArgs> => {
+        purchaseShipment: async (body: PurchaseShipmentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('purchaseShipment', 'body', body)
             const localVarPath = `/shipping/v1/purchaseShipment`;
@@ -316,7 +316,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -334,7 +334,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        retrieveShippingLabel: async (shipmentId: string, trackingId: string, body: RetrieveShippingLabelRequest, options: any = {}): Promise<RequestArgs> => {
+        retrieveShippingLabel: async (shipmentId: string, trackingId: string, body: RetrieveShippingLabelRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('retrieveShippingLabel', 'shipmentId', shipmentId)
             // verify required parameter 'trackingId' is not null or undefined
@@ -359,7 +359,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -385,7 +385,7 @@ export const ShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelShipment(shipmentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelShipmentResponse>> {
+        async cancelShipment(shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelShipment(shipmentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -395,7 +395,7 @@ export const ShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createShipment(body: CreateShipmentRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateShipmentResponse>> {
+        async createShipment(body: CreateShipmentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createShipment(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -404,7 +404,7 @@ export const ShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAccount(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAccountResponse>> {
+        async getAccount(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAccountResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAccount(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -414,7 +414,7 @@ export const ShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getRates(body: GetRatesRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetRatesResponse>> {
+        async getRates(body: GetRatesRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetRatesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getRates(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -424,7 +424,7 @@ export const ShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShipment(shipmentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentResponse>> {
+        async getShipment(shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShipment(shipmentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -434,7 +434,7 @@ export const ShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTrackingInformation(trackingId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetTrackingInformationResponse>> {
+        async getTrackingInformation(trackingId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetTrackingInformationResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getTrackingInformation(trackingId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -445,7 +445,7 @@ export const ShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async purchaseLabels(shipmentId: string, body: PurchaseLabelsRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PurchaseLabelsResponse>> {
+        async purchaseLabels(shipmentId: string, body: PurchaseLabelsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PurchaseLabelsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.purchaseLabels(shipmentId, body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -455,7 +455,7 @@ export const ShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async purchaseShipment(body: PurchaseShipmentRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PurchaseShipmentResponse>> {
+        async purchaseShipment(body: PurchaseShipmentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PurchaseShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.purchaseShipment(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -467,7 +467,7 @@ export const ShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async retrieveShippingLabel(shipmentId: string, trackingId: string, body: RetrieveShippingLabelRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RetrieveShippingLabelResponse>> {
+        async retrieveShippingLabel(shipmentId: string, trackingId: string, body: RetrieveShippingLabelRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RetrieveShippingLabelResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.retrieveShippingLabel(shipmentId, trackingId, body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -714,7 +714,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public cancelShipment(requestParameters: ShippingApiCancelShipmentRequest, options?: any) {
+    public cancelShipment(requestParameters: ShippingApiCancelShipmentRequest, options?: AxiosRequestConfig) {
         return ShippingApiFp(this.configuration).cancelShipment(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -725,7 +725,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public createShipment(requestParameters: ShippingApiCreateShipmentRequest, options?: any) {
+    public createShipment(requestParameters: ShippingApiCreateShipmentRequest, options?: AxiosRequestConfig) {
         return ShippingApiFp(this.configuration).createShipment(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -735,7 +735,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getAccount(options?: any) {
+    public getAccount(options?: AxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getAccount(options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -746,7 +746,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getRates(requestParameters: ShippingApiGetRatesRequest, options?: any) {
+    public getRates(requestParameters: ShippingApiGetRatesRequest, options?: AxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getRates(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -757,7 +757,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getShipment(requestParameters: ShippingApiGetShipmentRequest, options?: any) {
+    public getShipment(requestParameters: ShippingApiGetShipmentRequest, options?: AxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getShipment(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -768,7 +768,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getTrackingInformation(requestParameters: ShippingApiGetTrackingInformationRequest, options?: any) {
+    public getTrackingInformation(requestParameters: ShippingApiGetTrackingInformationRequest, options?: AxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getTrackingInformation(requestParameters.trackingId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -779,7 +779,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public purchaseLabels(requestParameters: ShippingApiPurchaseLabelsRequest, options?: any) {
+    public purchaseLabels(requestParameters: ShippingApiPurchaseLabelsRequest, options?: AxiosRequestConfig) {
         return ShippingApiFp(this.configuration).purchaseLabels(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -790,7 +790,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public purchaseShipment(requestParameters: ShippingApiPurchaseShipmentRequest, options?: any) {
+    public purchaseShipment(requestParameters: ShippingApiPurchaseShipmentRequest, options?: AxiosRequestConfig) {
         return ShippingApiFp(this.configuration).purchaseShipment(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -801,7 +801,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public retrieveShippingLabel(requestParameters: ShippingApiRetrieveShippingLabelRequest, options?: any) {
+    public retrieveShippingLabel(requestParameters: ShippingApiRetrieveShippingLabelRequest, options?: AxiosRequestConfig) {
         return ShippingApiFp(this.configuration).retrieveShippingLabel(requestParameters.shipmentId, requestParameters.trackingId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }

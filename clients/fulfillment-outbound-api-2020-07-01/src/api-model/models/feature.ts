@@ -25,19 +25,18 @@ export interface Feature {
      * @type {string}
      * @memberof Feature
      */
-    featureName: string;
+    'featureName': string;
     /**
      * The feature description.
      * @type {string}
      * @memberof Feature
      */
-    featureDescription: string;
+    'featureDescription': string;
     /**
      * When true, indicates that the seller is eligible to use the feature.
      * @type {boolean}
      * @memberof Feature
      */
-    sellerEligible?: boolean;
+    'sellerEligible'?: boolean;
 }
-
 

@@ -26,13 +26,12 @@ export interface ItemSalesRanksByMarketplace {
      * @type {string}
      * @memberof ItemSalesRanksByMarketplace
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * Sales ranks of an Amazon catalog item for an Amazon marketplace.
      * @type {Array<ItemSalesRank>}
      * @memberof ItemSalesRanksByMarketplace
      */
-    ranks: Array<ItemSalesRank>;
+    'ranks': Array<ItemSalesRank>;
 }
-
 

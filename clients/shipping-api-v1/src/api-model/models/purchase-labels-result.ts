@@ -27,25 +27,24 @@ export interface PurchaseLabelsResult {
      * @type {string}
      * @memberof PurchaseLabelsResult
      */
-    shipmentId: string;
+    'shipmentId': string;
     /**
      * Client reference id.
      * @type {string}
      * @memberof PurchaseLabelsResult
      */
-    clientReferenceId?: string;
+    'clientReferenceId'?: string;
     /**
      * 
      * @type {AcceptedRate}
      * @memberof PurchaseLabelsResult
      */
-    acceptedRate: AcceptedRate;
+    'acceptedRate': AcceptedRate;
     /**
      * A list of label results
      * @type {Array<LabelResult>}
      * @memberof PurchaseLabelsResult
      */
-    labelResults: Array<LabelResult>;
+    'labelResults': Array<LabelResult>;
 }
-
 

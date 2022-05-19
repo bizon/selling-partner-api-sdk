@@ -26,13 +26,12 @@ export interface ItemLevelFields {
      * @type {string}
      * @memberof ItemLevelFields
      */
-    Asin: string;
+    'Asin': string;
     /**
      * A list of additional inputs.
      * @type {Array<AdditionalInputs>}
      * @memberof ItemLevelFields
      */
-    AdditionalInputs: Array<AdditionalInputs>;
+    'AdditionalInputs': Array<AdditionalInputs>;
 }
-
 

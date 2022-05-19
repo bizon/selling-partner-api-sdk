@@ -26,13 +26,12 @@ export interface ItemImagesByMarketplace {
      * @type {string}
      * @memberof ItemImagesByMarketplace
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * Images for an item in the Amazon catalog for the indicated Amazon marketplace.
      * @type {Array<ItemImage>}
      * @memberof ItemImagesByMarketplace
      */
-    images: Array<ItemImage>;
+    'images': Array<ItemImage>;
 }
-
 

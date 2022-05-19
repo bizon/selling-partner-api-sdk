@@ -26,73 +26,72 @@ export interface Address {
      * @type {string}
      * @memberof Address
      */
-    Name?: string;
+    'Name'?: string;
     /**
      * The street address.
      * @type {string}
      * @memberof Address
      */
-    AddressLine1?: string;
+    'AddressLine1'?: string;
     /**
      * Additional street address information, if required.
      * @type {string}
      * @memberof Address
      */
-    AddressLine2?: string;
+    'AddressLine2'?: string;
     /**
      * Additional street address information, if required.
      * @type {string}
      * @memberof Address
      */
-    AddressLine3?: string;
+    'AddressLine3'?: string;
     /**
      * The city.
      * @type {string}
      * @memberof Address
      */
-    City?: string;
+    'City'?: string;
     /**
      * The county.
      * @type {string}
      * @memberof Address
      */
-    County?: string;
+    'County'?: string;
     /**
      * The district.
      * @type {string}
      * @memberof Address
      */
-    District?: string;
+    'District'?: string;
     /**
      * The state or region.
      * @type {string}
      * @memberof Address
      */
-    StateOrRegion?: string;
+    'StateOrRegion'?: string;
     /**
      * The postal code.
      * @type {string}
      * @memberof Address
      */
-    PostalCode?: string;
+    'PostalCode'?: string;
     /**
      * The country code.
      * @type {string}
      * @memberof Address
      */
-    CountryCode?: string;
+    'CountryCode'?: string;
     /**
      * The phone number.
      * @type {string}
      * @memberof Address
      */
-    Phone?: string;
+    'Phone'?: string;
     /**
      * 
      * @type {AddressTypeEnum}
      * @memberof Address
      */
-    AddressType?: AddressTypeEnum;
+    'AddressType'?: AddressTypeEnum;
 }
-
 

@@ -25,7 +25,6 @@ export interface LabelFormatOptionRequest {
      * @type {boolean}
      * @memberof LabelFormatOptionRequest
      */
-    IncludePackingSlipWithLabel?: boolean;
+    'IncludePackingSlipWithLabel'?: boolean;
 }
-
 

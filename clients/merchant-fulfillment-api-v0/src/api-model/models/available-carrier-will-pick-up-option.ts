@@ -27,13 +27,12 @@ export interface AvailableCarrierWillPickUpOption {
      * @type {CarrierWillPickUpOption}
      * @memberof AvailableCarrierWillPickUpOption
      */
-    CarrierWillPickUpOption: CarrierWillPickUpOption;
+    'CarrierWillPickUpOption': CarrierWillPickUpOption;
     /**
      * 
      * @type {CurrencyAmount}
      * @memberof AvailableCarrierWillPickUpOption
      */
-    Charge: CurrencyAmount;
+    'Charge': CurrencyAmount;
 }
-
 

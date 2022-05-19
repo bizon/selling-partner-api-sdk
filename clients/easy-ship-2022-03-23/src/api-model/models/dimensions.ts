@@ -26,31 +26,30 @@ export interface Dimensions {
      * @type {number}
      * @memberof Dimensions
      */
-    length?: number;
+    'length'?: number;
     /**
      * The numerical value of the specified dimension.
      * @type {number}
      * @memberof Dimensions
      */
-    width?: number;
+    'width'?: number;
     /**
      * The numerical value of the specified dimension.
      * @type {number}
      * @memberof Dimensions
      */
-    height?: number;
+    'height'?: number;
     /**
      * 
      * @type {UnitOfLength}
      * @memberof Dimensions
      */
-    unit?: UnitOfLength;
+    'unit'?: UnitOfLength;
     /**
      * A string of up to 255 characters.
      * @type {string}
      * @memberof Dimensions
      */
-    identifier?: string;
+    'identifier'?: string;
 }
-
 

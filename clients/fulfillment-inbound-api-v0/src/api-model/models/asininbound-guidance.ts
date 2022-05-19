@@ -27,19 +27,18 @@ export interface ASINInboundGuidance {
      * @type {string}
      * @memberof ASINInboundGuidance
      */
-    ASIN: string;
+    'ASIN': string;
     /**
      * 
      * @type {InboundGuidance}
      * @memberof ASINInboundGuidance
      */
-    InboundGuidance: InboundGuidance;
+    'InboundGuidance': InboundGuidance;
     /**
      * A list of inbound guidance reason information.
      * @type {Array<GuidanceReason>}
      * @memberof ASINInboundGuidance
      */
-    GuidanceReasonList?: Array<GuidanceReason>;
+    'GuidanceReasonList'?: Array<GuidanceReason>;
 }
-
 

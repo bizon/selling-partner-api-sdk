@@ -26,13 +26,12 @@ export interface ListFinancialEventsResponse {
      * @type {ListFinancialEventsPayload}
      * @memberof ListFinancialEventsResponse
      */
-    payload?: ListFinancialEventsPayload;
+    'payload'?: ListFinancialEventsPayload;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof ListFinancialEventsResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

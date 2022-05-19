@@ -26,55 +26,52 @@ export interface AssociatedItem {
      * @type {string}
      * @memberof AssociatedItem
      */
-    asin?: string;
+    'asin'?: string;
     /**
      * The title of the item.
      * @type {string}
      * @memberof AssociatedItem
      */
-    title?: string;
+    'title'?: string;
     /**
      * The total number of items included in the order.
      * @type {number}
      * @memberof AssociatedItem
      */
-    quantity?: number;
+    'quantity'?: number;
     /**
      * The Amazon-defined identifier for an order placed by the buyer, in 3-7-7 format.
      * @type {string}
      * @memberof AssociatedItem
      */
-    orderId?: string;
+    'orderId'?: string;
     /**
      * The status of the item.
      * @type {string}
      * @memberof AssociatedItem
      */
-    itemStatus?: AssociatedItemItemStatusEnum;
+    'itemStatus'?: AssociatedItemItemStatusEnum;
     /**
      * The brand name of the item.
      * @type {string}
      * @memberof AssociatedItem
      */
-    brandName?: string;
+    'brandName'?: string;
     /**
      * 
      * @type {ItemDelivery}
      * @memberof AssociatedItem
      */
-    itemDelivery?: ItemDelivery;
+    'itemDelivery'?: ItemDelivery;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum AssociatedItemItemStatusEnum {
-    Active = 'ACTIVE',
-    Cancelled = 'CANCELLED',
-    Shipped = 'SHIPPED',
-    Delivered = 'DELIVERED'
-}
+export const AssociatedItemItemStatusEnum = {
+    Active: 'ACTIVE',
+    Cancelled: 'CANCELLED',
+    Shipped: 'SHIPPED',
+    Delivered: 'DELIVERED'
+} as const;
 
+export type AssociatedItemItemStatusEnum = typeof AssociatedItemItemStatusEnum[keyof typeof AssociatedItemItemStatusEnum];
 
 

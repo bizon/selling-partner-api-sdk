@@ -28,37 +28,36 @@ export interface SellerReviewEnrollmentPaymentEvent {
      * @type {string}
      * @memberof SellerReviewEnrollmentPaymentEvent
      */
-    PostedDate?: string;
+    'PostedDate'?: string;
     /**
      * An enrollment identifier.
      * @type {string}
      * @memberof SellerReviewEnrollmentPaymentEvent
      */
-    EnrollmentId?: string;
+    'EnrollmentId'?: string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item that was enrolled in the Early Reviewer Program.
      * @type {string}
      * @memberof SellerReviewEnrollmentPaymentEvent
      */
-    ParentASIN?: string;
+    'ParentASIN'?: string;
     /**
      * 
      * @type {FeeComponent}
      * @memberof SellerReviewEnrollmentPaymentEvent
      */
-    FeeComponent?: FeeComponent;
+    'FeeComponent'?: FeeComponent;
     /**
      * 
      * @type {ChargeComponent}
      * @memberof SellerReviewEnrollmentPaymentEvent
      */
-    ChargeComponent?: ChargeComponent;
+    'ChargeComponent'?: ChargeComponent;
     /**
      * 
      * @type {Currency}
      * @memberof SellerReviewEnrollmentPaymentEvent
      */
-    TotalAmount?: Currency;
+    'TotalAmount'?: Currency;
 }
-
 

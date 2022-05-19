@@ -26,19 +26,18 @@ export interface GetFeedsResponse {
      * @type {Array<Feed>}
      * @memberof GetFeedsResponse
      */
-    payload?: Array<Feed>;
+    'payload'?: Array<Feed>;
     /**
      * Returned when the number of results exceeds pageSize. To get the next page of results, call the getFeeds operation with this token as the only parameter.
      * @type {string}
      * @memberof GetFeedsResponse
      */
-    nextToken?: string;
+    'nextToken'?: string;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetFeedsResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

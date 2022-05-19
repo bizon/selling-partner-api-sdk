@@ -25,7 +25,6 @@ export interface ItemOffersRequestParamsAllOf {
      * @type {string}
      * @memberof ItemOffersRequestParamsAllOf
      */
-    Asin?: string;
+    'Asin'?: string;
 }
-
 

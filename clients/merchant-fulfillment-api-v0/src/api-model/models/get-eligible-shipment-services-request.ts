@@ -27,13 +27,12 @@ export interface GetEligibleShipmentServicesRequest {
      * @type {ShipmentRequestDetails}
      * @memberof GetEligibleShipmentServicesRequest
      */
-    ShipmentRequestDetails: ShipmentRequestDetails;
+    'ShipmentRequestDetails': ShipmentRequestDetails;
     /**
      * 
      * @type {ShippingOfferingFilter}
      * @memberof GetEligibleShipmentServicesRequest
      */
-    ShippingOfferingFilter?: ShippingOfferingFilter;
+    'ShippingOfferingFilter'?: ShippingOfferingFilter;
 }
-
 

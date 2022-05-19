@@ -26,19 +26,18 @@ export interface ItemDimensionsByMarketplace {
      * @type {string}
      * @memberof ItemDimensionsByMarketplace
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * 
      * @type {ItemDimensions}
      * @memberof ItemDimensionsByMarketplace
      */
-    item?: ItemDimensions;
+    'item'?: ItemDimensions;
     /**
      * 
      * @type {ItemDimensions}
      * @memberof ItemDimensionsByMarketplace
      */
-    _package?: ItemDimensions;
+    'package'?: ItemDimensions;
 }
-
 

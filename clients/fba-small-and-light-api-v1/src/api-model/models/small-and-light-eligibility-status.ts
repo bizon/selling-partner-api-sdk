@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum SmallAndLightEligibilityStatus {
-    Eligible = 'ELIGIBLE',
-    NotEligible = 'NOT_ELIGIBLE'
-}
+
+export const SmallAndLightEligibilityStatus = {
+    Eligible: 'ELIGIBLE',
+    NotEligible: 'NOT_ELIGIBLE'
+} as const;
+
+export type SmallAndLightEligibilityStatus = typeof SmallAndLightEligibilityStatus[keyof typeof SmallAndLightEligibilityStatus];
 
 
 

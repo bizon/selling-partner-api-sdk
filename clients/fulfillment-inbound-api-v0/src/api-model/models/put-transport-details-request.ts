@@ -27,19 +27,18 @@ export interface PutTransportDetailsRequest {
      * @type {boolean}
      * @memberof PutTransportDetailsRequest
      */
-    IsPartnered: boolean;
+    'IsPartnered': boolean;
     /**
      * 
      * @type {ShipmentType}
      * @memberof PutTransportDetailsRequest
      */
-    ShipmentType: ShipmentType;
+    'ShipmentType': ShipmentType;
     /**
      * 
      * @type {TransportDetailInput}
      * @memberof PutTransportDetailsRequest
      */
-    TransportDetails: TransportDetailInput;
+    'TransportDetails': TransportDetailInput;
 }
-
 

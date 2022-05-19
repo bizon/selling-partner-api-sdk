@@ -26,13 +26,12 @@ export interface CreateConfirmCustomizationDetailsRequest {
      * @type {string}
      * @memberof CreateConfirmCustomizationDetailsRequest
      */
-    text?: string;
+    'text'?: string;
     /**
      * Attachments to include in the message to the buyer.
      * @type {Array<Attachment>}
      * @memberof CreateConfirmCustomizationDetailsRequest
      */
-    attachments?: Array<Attachment>;
+    'attachments'?: Array<Attachment>;
 }
-
 

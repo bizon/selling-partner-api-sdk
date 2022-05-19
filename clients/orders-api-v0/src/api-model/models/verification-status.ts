@@ -19,13 +19,16 @@
  * @export
  * @enum {string}
  */
-export enum VerificationStatus {
-    Pending = 'Pending',
-    Approved = 'Approved',
-    Rejected = 'Rejected',
-    Expired = 'Expired',
-    Cancelled = 'Cancelled'
-}
+
+export const VerificationStatus = {
+    Pending: 'Pending',
+    Approved: 'Approved',
+    Rejected: 'Rejected',
+    Expired: 'Expired',
+    Cancelled: 'Cancelled'
+} as const;
+
+export type VerificationStatus = typeof VerificationStatus[keyof typeof VerificationStatus];
 
 
 

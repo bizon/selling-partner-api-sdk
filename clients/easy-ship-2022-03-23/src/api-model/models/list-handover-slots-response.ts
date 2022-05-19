@@ -26,13 +26,12 @@ export interface ListHandoverSlotsResponse {
      * @type {string}
      * @memberof ListHandoverSlotsResponse
      */
-    amazonOrderId: string;
+    'amazonOrderId': string;
     /**
      * A list of time slots.
      * @type {Array<TimeSlot>}
      * @memberof ListHandoverSlotsResponse
      */
-    timeSlots: Array<TimeSlot>;
+    'timeSlots': Array<TimeSlot>;
 }
-
 

@@ -26,35 +26,32 @@ export interface ListingsItemSubmissionResponse {
      * @type {string}
      * @memberof ListingsItemSubmissionResponse
      */
-    sku: string;
+    'sku': string;
     /**
      * The status of the listings item submission.
      * @type {string}
      * @memberof ListingsItemSubmissionResponse
      */
-    status: ListingsItemSubmissionResponseStatusEnum;
+    'status': ListingsItemSubmissionResponseStatusEnum;
     /**
      * The unique identifier of the listings item submission.
      * @type {string}
      * @memberof ListingsItemSubmissionResponse
      */
-    submissionId: string;
+    'submissionId': string;
     /**
      * Listings item issues related to the listings item submission.
      * @type {Array<Issue>}
      * @memberof ListingsItemSubmissionResponse
      */
-    issues?: Array<Issue>;
+    'issues'?: Array<Issue>;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ListingsItemSubmissionResponseStatusEnum {
-    Accepted = 'ACCEPTED',
-    Invalid = 'INVALID'
-}
+export const ListingsItemSubmissionResponseStatusEnum = {
+    Accepted: 'ACCEPTED',
+    Invalid: 'INVALID'
+} as const;
 
+export type ListingsItemSubmissionResponseStatusEnum = typeof ListingsItemSubmissionResponseStatusEnum[keyof typeof ListingsItemSubmissionResponseStatusEnum];
 
 

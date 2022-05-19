@@ -19,13 +19,16 @@
  * @export
  * @enum {string}
  */
-export enum ItemCondition {
-    New = 'New',
-    Used = 'Used',
-    Collectible = 'Collectible',
-    Refurbished = 'Refurbished',
-    Club = 'Club'
-}
+
+export const ItemCondition = {
+    New: 'New',
+    Used: 'Used',
+    Collectible: 'Collectible',
+    Refurbished: 'Refurbished',
+    Club: 'Club'
+} as const;
+
+export type ItemCondition = typeof ItemCondition[keyof typeof ItemCondition];
 
 
 

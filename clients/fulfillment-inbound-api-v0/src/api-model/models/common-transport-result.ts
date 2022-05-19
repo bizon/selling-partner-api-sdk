@@ -26,7 +26,6 @@ export interface CommonTransportResult {
      * @type {TransportResult}
      * @memberof CommonTransportResult
      */
-    TransportResult?: TransportResult;
+    'TransportResult'?: TransportResult;
 }
-
 

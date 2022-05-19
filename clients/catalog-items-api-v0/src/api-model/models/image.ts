@@ -26,19 +26,18 @@ export interface Image {
      * @type {string}
      * @memberof Image
      */
-    URL?: string;
+    'URL'?: string;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof Image
      */
-    Height?: DecimalWithUnits;
+    'Height'?: DecimalWithUnits;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof Image
      */
-    Width?: DecimalWithUnits;
+    'Width'?: DecimalWithUnits;
 }
-
 

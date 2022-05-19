@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum CustomerType {
-    Consumer = 'Consumer',
-    Business = 'Business'
-}
+
+export const CustomerType = {
+    Consumer: 'Consumer',
+    Business: 'Business'
+} as const;
+
+export type CustomerType = typeof CustomerType[keyof typeof CustomerType];
 
 
 

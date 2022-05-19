@@ -25,7 +25,6 @@ export interface MessagingAction {
      * @type {string}
      * @memberof MessagingAction
      */
-    name: string;
+    'name': string;
 }
-
 

@@ -32,55 +32,54 @@ export interface Item {
      * @type {string}
      * @memberof Item
      */
-    asin: string;
+    'asin': string;
     /**
      * A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes are available only to brand owners and conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.
      * @type {object}
      * @memberof Item
      */
-    attributes?: object;
+    'attributes'?: object;
     /**
      * Identifiers associated with the item in the Amazon catalog, such as UPC and EAN identifiers.
      * @type {Array<ItemIdentifiersByMarketplace>}
      * @memberof Item
      */
-    identifiers?: Array<ItemIdentifiersByMarketplace>;
+    'identifiers'?: Array<ItemIdentifiersByMarketplace>;
     /**
      * Images for an item in the Amazon catalog. All image variants are provided to brand owners. Otherwise, a thumbnail of the \"MAIN\" image variant is provided.
      * @type {Array<ItemImagesByMarketplace>}
      * @memberof Item
      */
-    images?: Array<ItemImagesByMarketplace>;
+    'images'?: Array<ItemImagesByMarketplace>;
     /**
      * Product types associated with the Amazon catalog item.
      * @type {Array<ItemProductTypeByMarketplace>}
      * @memberof Item
      */
-    productTypes?: Array<ItemProductTypeByMarketplace>;
+    'productTypes'?: Array<ItemProductTypeByMarketplace>;
     /**
      * Sales ranks of an Amazon catalog item.
      * @type {Array<ItemSalesRanksByMarketplace>}
      * @memberof Item
      */
-    salesRanks?: Array<ItemSalesRanksByMarketplace>;
+    'salesRanks'?: Array<ItemSalesRanksByMarketplace>;
     /**
      * Summary details of an Amazon catalog item.
      * @type {Array<ItemSummaryByMarketplace>}
      * @memberof Item
      */
-    summaries?: Array<ItemSummaryByMarketplace>;
+    'summaries'?: Array<ItemSummaryByMarketplace>;
     /**
      * Variation details by marketplace for an Amazon catalog item (variation relationships).
      * @type {Array<ItemVariationsByMarketplace>}
      * @memberof Item
      */
-    variations?: Array<ItemVariationsByMarketplace>;
+    'variations'?: Array<ItemVariationsByMarketplace>;
     /**
      * Vendor details associated with an Amazon catalog item. Vendor details are available to vendors only.
      * @type {Array<ItemVendorDetailsByMarketplace>}
      * @memberof Item
      */
-    vendorDetails?: Array<ItemVendorDetailsByMarketplace>;
+    'vendorDetails'?: Array<ItemVendorDetailsByMarketplace>;
 }
-
 

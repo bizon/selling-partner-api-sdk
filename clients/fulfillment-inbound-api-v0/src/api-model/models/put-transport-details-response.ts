@@ -26,13 +26,12 @@ export interface PutTransportDetailsResponse {
      * @type {CommonTransportResult}
      * @memberof PutTransportDetailsResponse
      */
-    payload?: CommonTransportResult;
+    'payload'?: CommonTransportResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof PutTransportDetailsResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

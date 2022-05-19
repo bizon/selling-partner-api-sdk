@@ -26,25 +26,24 @@ export interface Decorator {
      * @type {DecoratorType}
      * @memberof Decorator
      */
-    type?: DecoratorType;
+    'type'?: DecoratorType;
     /**
      * The starting character of this decorator within the content string. Use zero for the first character.
      * @type {number}
      * @memberof Decorator
      */
-    offset?: number;
+    'offset'?: number;
     /**
      * The number of content characters to alter with this decorator. Decorators such as line breaks can have zero length and fit between characters.
      * @type {number}
      * @memberof Decorator
      */
-    length?: number;
+    'length'?: number;
     /**
      * The relative intensity or variation of this decorator. Decorators such as bullet-points, for example, can have multiple indentation depths.
      * @type {number}
      * @memberof Decorator
      */
-    depth?: number;
+    'depth'?: number;
 }
-
 

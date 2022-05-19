@@ -26,7 +26,6 @@ export interface TestCaseData {
      * @type {Array<Scenario>}
      * @memberof TestCaseData
      */
-    scenarios?: Array<Scenario>;
+    'scenarios'?: Array<Scenario>;
 }
-
 

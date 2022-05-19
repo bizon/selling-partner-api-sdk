@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -42,7 +42,7 @@ export const VendorShippingLabelsApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShippingLabel: async (purchaseOrderNumber: string, options: any = {}): Promise<RequestArgs> => {
+        getShippingLabel: async (purchaseOrderNumber: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'purchaseOrderNumber' is not null or undefined
             assertParamExists('getShippingLabel', 'purchaseOrderNumber', purchaseOrderNumber)
             const localVarPath = `/vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}`
@@ -60,7 +60,7 @@ export const VendorShippingLabelsApiAxiosParamCreator = function (configuration?
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -80,7 +80,7 @@ export const VendorShippingLabelsApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShippingLabels: async (createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options: any = {}): Promise<RequestArgs> => {
+        getShippingLabels: async (createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'createdAfter' is not null or undefined
             assertParamExists('getShippingLabels', 'createdAfter', createdAfter)
             // verify required parameter 'createdBefore' is not null or undefined
@@ -127,7 +127,7 @@ export const VendorShippingLabelsApiAxiosParamCreator = function (configuration?
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -142,7 +142,7 @@ export const VendorShippingLabelsApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitShippingLabelRequest: async (body: SubmitShippingLabelsRequest, options: any = {}): Promise<RequestArgs> => {
+        submitShippingLabelRequest: async (body: SubmitShippingLabelsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('submitShippingLabelRequest', 'body', body)
             const localVarPath = `/vendor/directFulfillment/shipping/2021-12-28/shippingLabels`;
@@ -161,7 +161,7 @@ export const VendorShippingLabelsApiAxiosParamCreator = function (configuration?
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -187,7 +187,7 @@ export const VendorShippingLabelsApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShippingLabel(purchaseOrderNumber: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ShippingLabel>> {
+        async getShippingLabel(purchaseOrderNumber: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ShippingLabel>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShippingLabel(purchaseOrderNumber, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -202,7 +202,7 @@ export const VendorShippingLabelsApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShippingLabels(createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ShippingLabelList>> {
+        async getShippingLabels(createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ShippingLabelList>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShippingLabels(createdAfter, createdBefore, shipFromPartyId, limit, sortOrder, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -212,7 +212,7 @@ export const VendorShippingLabelsApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async submitShippingLabelRequest(body: SubmitShippingLabelsRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionReference>> {
+        async submitShippingLabelRequest(body: SubmitShippingLabelsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionReference>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.submitShippingLabelRequest(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -352,7 +352,7 @@ export class VendorShippingLabelsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorShippingLabelsApi
      */
-    public getShippingLabel(requestParameters: VendorShippingLabelsApiGetShippingLabelRequest, options?: any) {
+    public getShippingLabel(requestParameters: VendorShippingLabelsApiGetShippingLabelRequest, options?: AxiosRequestConfig) {
         return VendorShippingLabelsApiFp(this.configuration).getShippingLabel(requestParameters.purchaseOrderNumber, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -363,7 +363,7 @@ export class VendorShippingLabelsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorShippingLabelsApi
      */
-    public getShippingLabels(requestParameters: VendorShippingLabelsApiGetShippingLabelsRequest, options?: any) {
+    public getShippingLabels(requestParameters: VendorShippingLabelsApiGetShippingLabelsRequest, options?: AxiosRequestConfig) {
         return VendorShippingLabelsApiFp(this.configuration).getShippingLabels(requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipFromPartyId, requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -374,7 +374,7 @@ export class VendorShippingLabelsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorShippingLabelsApi
      */
-    public submitShippingLabelRequest(requestParameters: VendorShippingLabelsApiSubmitShippingLabelRequestRequest, options?: any) {
+    public submitShippingLabelRequest(requestParameters: VendorShippingLabelsApiSubmitShippingLabelRequestRequest, options?: AxiosRequestConfig) {
         return VendorShippingLabelsApiFp(this.configuration).submitShippingLabelRequest(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }

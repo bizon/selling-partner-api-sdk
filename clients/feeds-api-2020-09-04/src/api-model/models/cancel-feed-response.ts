@@ -25,7 +25,6 @@ export interface CancelFeedResponse {
      * @type {Array<Error>}
      * @memberof CancelFeedResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

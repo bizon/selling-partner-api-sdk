@@ -33,61 +33,60 @@ export interface Item {
      * @type {string}
      * @memberof Item
      */
-    asin: string;
+    'asin': string;
     /**
      * A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.
      * @type {object}
      * @memberof Item
      */
-    attributes?: object;
+    'attributes'?: object;
     /**
      * 
      * @type {ItemDimensionsByMarketplace}
      * @memberof Item
      */
-    dimensions?: ItemDimensionsByMarketplace;
+    'dimensions'?: ItemDimensionsByMarketplace;
     /**
      * Identifiers associated with the item in the Amazon catalog, such as UPC and EAN identifiers.
      * @type {Array<ItemIdentifiersByMarketplace>}
      * @memberof Item
      */
-    identifiers?: Array<ItemIdentifiersByMarketplace>;
+    'identifiers'?: Array<ItemIdentifiersByMarketplace>;
     /**
      * Images for an item in the Amazon catalog.
      * @type {Array<ItemImagesByMarketplace>}
      * @memberof Item
      */
-    images?: Array<ItemImagesByMarketplace>;
+    'images'?: Array<ItemImagesByMarketplace>;
     /**
      * Product types associated with the Amazon catalog item.
      * @type {Array<ItemProductTypeByMarketplace>}
      * @memberof Item
      */
-    productTypes?: Array<ItemProductTypeByMarketplace>;
+    'productTypes'?: Array<ItemProductTypeByMarketplace>;
     /**
      * Relationships by marketplace for an Amazon catalog item (for example, variations).
      * @type {Array<ItemRelationshipsByMarketplace>}
      * @memberof Item
      */
-    relationships?: Array<ItemRelationshipsByMarketplace>;
+    'relationships'?: Array<ItemRelationshipsByMarketplace>;
     /**
      * Sales ranks of an Amazon catalog item.
      * @type {Array<ItemSalesRanksByMarketplace>}
      * @memberof Item
      */
-    salesRanks?: Array<ItemSalesRanksByMarketplace>;
+    'salesRanks'?: Array<ItemSalesRanksByMarketplace>;
     /**
      * Summary details of an Amazon catalog item.
      * @type {Array<ItemSummaryByMarketplace>}
      * @memberof Item
      */
-    summaries?: Array<ItemSummaryByMarketplace>;
+    'summaries'?: Array<ItemSummaryByMarketplace>;
     /**
      * Vendor details associated with an Amazon catalog item. Vendor details are available to vendors only.
      * @type {Array<ItemVendorDetailsByMarketplace>}
      * @memberof Item
      */
-    vendorDetails?: Array<ItemVendorDetailsByMarketplace>;
+    'vendorDetails'?: Array<ItemVendorDetailsByMarketplace>;
 }
-
 

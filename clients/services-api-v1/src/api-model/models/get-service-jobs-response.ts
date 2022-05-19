@@ -26,13 +26,12 @@ export interface GetServiceJobsResponse {
      * @type {JobListing}
      * @memberof GetServiceJobsResponse
      */
-    payload?: JobListing;
+    'payload'?: JobListing;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetServiceJobsResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

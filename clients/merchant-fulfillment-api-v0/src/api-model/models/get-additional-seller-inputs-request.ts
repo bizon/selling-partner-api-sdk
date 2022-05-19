@@ -26,19 +26,18 @@ export interface GetAdditionalSellerInputsRequest {
      * @type {string}
      * @memberof GetAdditionalSellerInputsRequest
      */
-    ShippingServiceId: string;
+    'ShippingServiceId': string;
     /**
      * 
      * @type {Address}
      * @memberof GetAdditionalSellerInputsRequest
      */
-    ShipFromAddress: Address;
+    'ShipFromAddress': Address;
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
      * @type {string}
      * @memberof GetAdditionalSellerInputsRequest
      */
-    OrderId: string;
+    'OrderId': string;
 }
-
 

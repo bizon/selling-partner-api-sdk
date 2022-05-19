@@ -25,25 +25,24 @@ export interface ReservedQuantity {
      * @type {number}
      * @memberof ReservedQuantity
      */
-    totalReservedQuantity?: number;
+    'totalReservedQuantity'?: number;
     /**
      * The number of units reserved for customer orders.
      * @type {number}
      * @memberof ReservedQuantity
      */
-    pendingCustomerOrderQuantity?: number;
+    'pendingCustomerOrderQuantity'?: number;
     /**
      * The number of units being transferred from one fulfillment center to another.
      * @type {number}
      * @memberof ReservedQuantity
      */
-    pendingTransshipmentQuantity?: number;
+    'pendingTransshipmentQuantity'?: number;
     /**
      * The number of units that have been sidelined at the fulfillment center for additional processing.
      * @type {number}
      * @memberof ReservedQuantity
      */
-    fcProcessingQuantity?: number;
+    'fcProcessingQuantity'?: number;
 }
-
 

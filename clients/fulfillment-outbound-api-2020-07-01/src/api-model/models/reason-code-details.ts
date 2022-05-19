@@ -25,19 +25,18 @@ export interface ReasonCodeDetails {
      * @type {string}
      * @memberof ReasonCodeDetails
      */
-    returnReasonCode: string;
+    'returnReasonCode': string;
     /**
      * A human readable description of the return reason code.
      * @type {string}
      * @memberof ReasonCodeDetails
      */
-    description: string;
+    'description': string;
     /**
      * A translation of the description. The translation is in the language specified in the Language request parameter.
      * @type {string}
      * @memberof ReasonCodeDetails
      */
-    translatedDescription?: string;
+    'translatedDescription'?: string;
 }
-
 

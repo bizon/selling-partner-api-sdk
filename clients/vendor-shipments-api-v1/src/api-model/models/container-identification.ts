@@ -25,26 +25,23 @@ export interface ContainerIdentification {
      * @type {string}
      * @memberof ContainerIdentification
      */
-    containerIdentificationType: ContainerIdentificationContainerIdentificationTypeEnum;
+    'containerIdentificationType': ContainerIdentificationContainerIdentificationTypeEnum;
     /**
      * Container identification number that adheres to the definition of the container identification type.
      * @type {string}
      * @memberof ContainerIdentification
      */
-    containerIdentificationNumber: string;
+    'containerIdentificationNumber': string;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ContainerIdentificationContainerIdentificationTypeEnum {
-    Sscc = 'SSCC',
-    Amzncc = 'AMZNCC',
-    Gtin = 'GTIN',
-    Bps = 'BPS',
-    Cid = 'CID'
-}
+export const ContainerIdentificationContainerIdentificationTypeEnum = {
+    Sscc: 'SSCC',
+    Amzncc: 'AMZNCC',
+    Gtin: 'GTIN',
+    Bps: 'BPS',
+    Cid: 'CID'
+} as const;
 
+export type ContainerIdentificationContainerIdentificationTypeEnum = typeof ContainerIdentificationContainerIdentificationTypeEnum[keyof typeof ContainerIdentificationContainerIdentificationTypeEnum];
 
 

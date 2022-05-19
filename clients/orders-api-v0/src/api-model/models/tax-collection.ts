@@ -25,29 +25,24 @@ export interface TaxCollection {
      * @type {string}
      * @memberof TaxCollection
      */
-    Model?: TaxCollectionModelEnum;
+    'Model'?: TaxCollectionModelEnum;
     /**
      * The party responsible for withholding the taxes and remitting them to the taxing authority.
      * @type {string}
      * @memberof TaxCollection
      */
-    ResponsibleParty?: TaxCollectionResponsiblePartyEnum;
+    'ResponsibleParty'?: TaxCollectionResponsiblePartyEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum TaxCollectionModelEnum {
-    MarketplaceFacilitator = 'MarketplaceFacilitator'
-}
-/**
-    * @export
-    * @enum {string}
-    */
-export enum TaxCollectionResponsiblePartyEnum {
-    AmazonServicesInc = 'Amazon Services, Inc.'
-}
+export const TaxCollectionModelEnum = {
+    MarketplaceFacilitator: 'MarketplaceFacilitator'
+} as const;
 
+export type TaxCollectionModelEnum = typeof TaxCollectionModelEnum[keyof typeof TaxCollectionModelEnum];
+export const TaxCollectionResponsiblePartyEnum = {
+    AmazonServicesInc: 'Amazon Services, Inc.'
+} as const;
+
+export type TaxCollectionResponsiblePartyEnum = typeof TaxCollectionResponsiblePartyEnum[keyof typeof TaxCollectionResponsiblePartyEnum];
 
 

@@ -26,13 +26,12 @@ export interface GetOffersResponse {
      * @type {GetOffersResult}
      * @memberof GetOffersResponse
      */
-    payload?: GetOffersResult;
+    'payload'?: GetOffersResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetOffersResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

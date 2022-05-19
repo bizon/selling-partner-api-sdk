@@ -26,7 +26,6 @@ export interface GetRatesResult {
      * @type {Array<ServiceRate>}
      * @memberof GetRatesResult
      */
-    serviceRates: Array<ServiceRate>;
+    'serviceRates': Array<ServiceRate>;
 }
-
 

@@ -27,37 +27,34 @@ export interface OrderItemStatusAcknowledgementStatus {
      * @type {string}
      * @memberof OrderItemStatusAcknowledgementStatus
      */
-    confirmationStatus?: OrderItemStatusAcknowledgementStatusConfirmationStatusEnum;
+    'confirmationStatus'?: OrderItemStatusAcknowledgementStatusConfirmationStatusEnum;
     /**
      * 
      * @type {ItemQuantity}
      * @memberof OrderItemStatusAcknowledgementStatus
      */
-    acceptedQuantity?: ItemQuantity;
+    'acceptedQuantity'?: ItemQuantity;
     /**
      * 
      * @type {ItemQuantity}
      * @memberof OrderItemStatusAcknowledgementStatus
      */
-    rejectedQuantity?: ItemQuantity;
+    'rejectedQuantity'?: ItemQuantity;
     /**
      * Details of item quantity confirmed.
      * @type {Array<AcknowledgementStatusDetails>}
      * @memberof OrderItemStatusAcknowledgementStatus
      */
-    acknowledgementStatusDetails?: Array<AcknowledgementStatusDetails>;
+    'acknowledgementStatusDetails'?: Array<AcknowledgementStatusDetails>;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum OrderItemStatusAcknowledgementStatusConfirmationStatusEnum {
-    Accepted = 'ACCEPTED',
-    PartiallyAccepted = 'PARTIALLY_ACCEPTED',
-    Rejected = 'REJECTED',
-    Unconfirmed = 'UNCONFIRMED'
-}
+export const OrderItemStatusAcknowledgementStatusConfirmationStatusEnum = {
+    Accepted: 'ACCEPTED',
+    PartiallyAccepted: 'PARTIALLY_ACCEPTED',
+    Rejected: 'REJECTED',
+    Unconfirmed: 'UNCONFIRMED'
+} as const;
 
+export type OrderItemStatusAcknowledgementStatusConfirmationStatusEnum = typeof OrderItemStatusAcknowledgementStatusConfirmationStatusEnum[keyof typeof OrderItemStatusAcknowledgementStatusConfirmationStatusEnum];
 
 

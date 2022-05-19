@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -37,7 +37,7 @@ export const UpdateInventoryApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitInventoryUpdate: async (warehouseId: string, body: SubmitInventoryUpdateRequest, options: any = {}): Promise<RequestArgs> => {
+        submitInventoryUpdate: async (warehouseId: string, body: SubmitInventoryUpdateRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'warehouseId' is not null or undefined
             assertParamExists('submitInventoryUpdate', 'warehouseId', warehouseId)
             // verify required parameter 'body' is not null or undefined
@@ -59,7 +59,7 @@ export const UpdateInventoryApiAxiosParamCreator = function (configuration?: Con
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -86,7 +86,7 @@ export const UpdateInventoryApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async submitInventoryUpdate(warehouseId: string, body: SubmitInventoryUpdateRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitInventoryUpdateResponse>> {
+        async submitInventoryUpdate(warehouseId: string, body: SubmitInventoryUpdateRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitInventoryUpdateResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.submitInventoryUpdate(warehouseId, body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -148,7 +148,7 @@ export class UpdateInventoryApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof UpdateInventoryApi
      */
-    public submitInventoryUpdate(requestParameters: UpdateInventoryApiSubmitInventoryUpdateRequest, options?: any) {
+    public submitInventoryUpdate(requestParameters: UpdateInventoryApiSubmitInventoryUpdateRequest, options?: AxiosRequestConfig) {
         return UpdateInventoryApiFp(this.configuration).submitInventoryUpdate(requestParameters.warehouseId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }

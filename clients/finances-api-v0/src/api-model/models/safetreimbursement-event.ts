@@ -27,31 +27,30 @@ export interface SAFETReimbursementEvent {
      * @type {string}
      * @memberof SAFETReimbursementEvent
      */
-    PostedDate?: string;
+    'PostedDate'?: string;
     /**
      * A SAFE-T claim identifier.
      * @type {string}
      * @memberof SAFETReimbursementEvent
      */
-    SAFETClaimId?: string;
+    'SAFETClaimId'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof SAFETReimbursementEvent
      */
-    ReimbursedAmount?: Currency;
+    'ReimbursedAmount'?: Currency;
     /**
      * Indicates why the seller was reimbursed.
      * @type {string}
      * @memberof SAFETReimbursementEvent
      */
-    ReasonCode?: string;
+    'ReasonCode'?: string;
     /**
      * A list of SAFETReimbursementItems.
      * @type {Array<SAFETReimbursementItem>}
      * @memberof SAFETReimbursementEvent
      */
-    SAFETReimbursementItemList?: Array<SAFETReimbursementItem>;
+    'SAFETReimbursementItemList'?: Array<SAFETReimbursementItem>;
 }
-
 

@@ -24,4 +24,3 @@ import { SearchContentPublishRecordsResponseAllOf } from './search-content-publi
 export type SearchContentPublishRecordsResponse = AplusPaginatedResponse & SearchContentPublishRecordsResponseAllOf;
 
 
-

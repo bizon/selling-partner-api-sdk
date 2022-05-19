@@ -29,25 +29,24 @@ export interface GetEligibleShipmentServicesResult {
      * @type {Array<ShippingService>}
      * @memberof GetEligibleShipmentServicesResult
      */
-    ShippingServiceList: Array<ShippingService>;
+    'ShippingServiceList': Array<ShippingService>;
     /**
      * List of services that were for some reason unavailable for this request
      * @type {Array<RejectedShippingService>}
      * @memberof GetEligibleShipmentServicesResult
      */
-    RejectedShippingServiceList?: Array<RejectedShippingService>;
+    'RejectedShippingServiceList'?: Array<RejectedShippingService>;
     /**
      * A list of temporarily unavailable carriers.
      * @type {Array<TemporarilyUnavailableCarrier>}
      * @memberof GetEligibleShipmentServicesResult
      */
-    TemporarilyUnavailableCarrierList?: Array<TemporarilyUnavailableCarrier>;
+    'TemporarilyUnavailableCarrierList'?: Array<TemporarilyUnavailableCarrier>;
     /**
      * List of carriers whose terms and conditions were not accepted by the seller.
      * @type {Array<TermsAndConditionsNotAcceptedCarrier>}
      * @memberof GetEligibleShipmentServicesResult
      */
-    TermsAndConditionsNotAcceptedCarrierList?: Array<TermsAndConditionsNotAcceptedCarrier>;
+    'TermsAndConditionsNotAcceptedCarrierList'?: Array<TermsAndConditionsNotAcceptedCarrier>;
 }
-
 

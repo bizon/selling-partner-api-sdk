@@ -26,37 +26,36 @@ export interface FulfillmentPreviewShipment {
      * @type {string}
      * @memberof FulfillmentPreviewShipment
      */
-    earliestShipDate?: string;
+    'earliestShipDate'?: string;
     /**
      * 
      * @type {string}
      * @memberof FulfillmentPreviewShipment
      */
-    latestShipDate?: string;
+    'latestShipDate'?: string;
     /**
      * 
      * @type {string}
      * @memberof FulfillmentPreviewShipment
      */
-    earliestArrivalDate?: string;
+    'earliestArrivalDate'?: string;
     /**
      * 
      * @type {string}
      * @memberof FulfillmentPreviewShipment
      */
-    latestArrivalDate?: string;
+    'latestArrivalDate'?: string;
     /**
      * Provides additional insight into the shipment timeline when exact delivery dates are not able to be precomputed.
      * @type {Array<string>}
      * @memberof FulfillmentPreviewShipment
      */
-    shippingNotes?: Array<string>;
+    'shippingNotes'?: Array<string>;
     /**
      * An array of fulfillment preview item information.
      * @type {Array<FulfillmentPreviewItem>}
      * @memberof FulfillmentPreviewShipment
      */
-    fulfillmentPreviewItems: Array<FulfillmentPreviewItem>;
+    'fulfillmentPreviewItems': Array<FulfillmentPreviewItem>;
 }
-
 

@@ -19,14 +19,17 @@
  * @export
  * @enum {string}
  */
-export enum PrepInstruction {
-    Polybagging = 'Polybagging',
-    BubbleWrapping = 'BubbleWrapping',
-    Taping = 'Taping',
-    BlackShrinkWrapping = 'BlackShrinkWrapping',
-    Labeling = 'Labeling',
-    HangGarment = 'HangGarment'
-}
+
+export const PrepInstruction = {
+    Polybagging: 'Polybagging',
+    BubbleWrapping: 'BubbleWrapping',
+    Taping: 'Taping',
+    BlackShrinkWrapping: 'BlackShrinkWrapping',
+    Labeling: 'Labeling',
+    HangGarment: 'HangGarment'
+} as const;
+
+export type PrepInstruction = typeof PrepInstruction[keyof typeof PrepInstruction];
 
 
 

@@ -25,13 +25,12 @@ export interface SellerFeedbackType {
      * @type {number}
      * @memberof SellerFeedbackType
      */
-    SellerPositiveFeedbackRating?: number;
+    'SellerPositiveFeedbackRating'?: number;
     /**
      * The number of ratings received about the seller.
      * @type {number}
      * @memberof SellerFeedbackType
      */
-    FeedbackCount: number;
+    'FeedbackCount': number;
 }
-
 

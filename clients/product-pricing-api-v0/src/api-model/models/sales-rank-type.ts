@@ -25,13 +25,12 @@ export interface SalesRankType {
      * @type {string}
      * @memberof SalesRankType
      */
-    ProductCategoryId: string;
+    'ProductCategoryId': string;
     /**
      * The sales rank of the item within the item category.
      * @type {number}
      * @memberof SalesRankType
      */
-    Rank: number;
+    'Rank': number;
 }
-
 

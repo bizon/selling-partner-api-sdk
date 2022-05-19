@@ -26,7 +26,6 @@ export interface GetMyFeesEstimateResult {
      * @type {FeesEstimateResult}
      * @memberof GetMyFeesEstimateResult
      */
-    FeesEstimateResult?: FeesEstimateResult;
+    'FeesEstimateResult'?: FeesEstimateResult;
 }
-
 

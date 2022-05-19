@@ -25,37 +25,36 @@ export interface Marketplace {
      * @type {string}
      * @memberof Marketplace
      */
-    id: string;
+    'id': string;
     /**
      * Marketplace name.
      * @type {string}
      * @memberof Marketplace
      */
-    name: string;
+    'name': string;
     /**
      * The ISO 3166-1 alpha-2 format country code of the marketplace.
      * @type {string}
      * @memberof Marketplace
      */
-    countryCode: string;
+    'countryCode': string;
     /**
      * The ISO 4217 format currency code of the marketplace.
      * @type {string}
      * @memberof Marketplace
      */
-    defaultCurrencyCode: string;
+    'defaultCurrencyCode': string;
     /**
      * The ISO 639-1 format language code of the marketplace.
      * @type {string}
      * @memberof Marketplace
      */
-    defaultLanguageCode: string;
+    'defaultLanguageCode': string;
     /**
      * The domain name of the marketplace.
      * @type {string}
      * @memberof Marketplace
      */
-    domainName: string;
+    'domainName': string;
 }
-
 

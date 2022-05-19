@@ -26,7 +26,6 @@ export interface RegulatedInformation {
      * @type {Array<RegulatedInformationField>}
      * @memberof RegulatedInformation
      */
-    Fields: Array<RegulatedInformationField>;
+    'Fields': Array<RegulatedInformationField>;
 }
-
 

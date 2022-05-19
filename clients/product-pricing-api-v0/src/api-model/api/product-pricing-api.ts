@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -50,7 +50,7 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCompetitivePricing: async (marketplaceId: string, itemType: 'Asin' | 'Sku', asins?: Array<string>, skus?: Array<string>, customerType?: 'Consumer' | 'Business', options: any = {}): Promise<RequestArgs> => {
+        getCompetitivePricing: async (marketplaceId: string, itemType: 'Asin' | 'Sku', asins?: Array<string>, skus?: Array<string>, customerType?: 'Consumer' | 'Business', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getCompetitivePricing', 'marketplaceId', marketplaceId)
             // verify required parameter 'itemType' is not null or undefined
@@ -89,7 +89,7 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -107,7 +107,7 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getItemOffers: async (marketplaceId: string, itemCondition: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', asin: string, customerType?: 'Consumer' | 'Business', options: any = {}): Promise<RequestArgs> => {
+        getItemOffers: async (marketplaceId: string, itemCondition: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', asin: string, customerType?: 'Consumer' | 'Business', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getItemOffers', 'marketplaceId', marketplaceId)
             // verify required parameter 'itemCondition' is not null or undefined
@@ -141,7 +141,7 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -156,7 +156,7 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getItemOffersBatch: async (getItemOffersBatchRequestBody: GetItemOffersBatchRequest, options: any = {}): Promise<RequestArgs> => {
+        getItemOffersBatch: async (getItemOffersBatchRequestBody: GetItemOffersBatchRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'getItemOffersBatchRequestBody' is not null or undefined
             assertParamExists('getItemOffersBatch', 'getItemOffersBatchRequestBody', getItemOffersBatchRequestBody)
             const localVarPath = `/batches/products/pricing/v0/itemOffers`;
@@ -175,7 +175,7 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(getItemOffersBatchRequestBody, localVarRequestOptions, configuration)
@@ -194,7 +194,7 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getListingOffers: async (marketplaceId: string, itemCondition: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', sellerSKU: string, customerType?: 'Consumer' | 'Business', options: any = {}): Promise<RequestArgs> => {
+        getListingOffers: async (marketplaceId: string, itemCondition: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', sellerSKU: string, customerType?: 'Consumer' | 'Business', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getListingOffers', 'marketplaceId', marketplaceId)
             // verify required parameter 'itemCondition' is not null or undefined
@@ -228,7 +228,7 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -243,7 +243,7 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getListingOffersBatch: async (getListingOffersBatchRequestBody: GetListingOffersBatchRequest, options: any = {}): Promise<RequestArgs> => {
+        getListingOffersBatch: async (getListingOffersBatchRequestBody: GetListingOffersBatchRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'getListingOffersBatchRequestBody' is not null or undefined
             assertParamExists('getListingOffersBatch', 'getListingOffersBatchRequestBody', getListingOffersBatchRequestBody)
             const localVarPath = `/batches/products/pricing/v0/listingOffers`;
@@ -262,7 +262,7 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(getListingOffersBatchRequestBody, localVarRequestOptions, configuration)
@@ -283,7 +283,7 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPricing: async (marketplaceId: string, itemType: 'Asin' | 'Sku', asins?: Array<string>, skus?: Array<string>, itemCondition?: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', offerType?: 'B2C' | 'B2B', options: any = {}): Promise<RequestArgs> => {
+        getPricing: async (marketplaceId: string, itemType: 'Asin' | 'Sku', asins?: Array<string>, skus?: Array<string>, itemCondition?: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', offerType?: 'B2C' | 'B2B', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getPricing', 'marketplaceId', marketplaceId)
             // verify required parameter 'itemType' is not null or undefined
@@ -326,7 +326,7 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -355,7 +355,7 @@ export const ProductPricingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCompetitivePricing(marketplaceId: string, itemType: 'Asin' | 'Sku', asins?: Array<string>, skus?: Array<string>, customerType?: 'Consumer' | 'Business', options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPricingResponse>> {
+        async getCompetitivePricing(marketplaceId: string, itemType: 'Asin' | 'Sku', asins?: Array<string>, skus?: Array<string>, customerType?: 'Consumer' | 'Business', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPricingResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCompetitivePricing(marketplaceId, itemType, asins, skus, customerType, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -368,7 +368,7 @@ export const ProductPricingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getItemOffers(marketplaceId: string, itemCondition: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', asin: string, customerType?: 'Consumer' | 'Business', options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOffersResponse>> {
+        async getItemOffers(marketplaceId: string, itemCondition: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', asin: string, customerType?: 'Consumer' | 'Business', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOffersResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getItemOffers(marketplaceId, itemCondition, asin, customerType, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -378,7 +378,7 @@ export const ProductPricingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getItemOffersBatch(getItemOffersBatchRequestBody: GetItemOffersBatchRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetItemOffersBatchResponse>> {
+        async getItemOffersBatch(getItemOffersBatchRequestBody: GetItemOffersBatchRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetItemOffersBatchResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getItemOffersBatch(getItemOffersBatchRequestBody, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -391,7 +391,7 @@ export const ProductPricingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getListingOffers(marketplaceId: string, itemCondition: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', sellerSKU: string, customerType?: 'Consumer' | 'Business', options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOffersResponse>> {
+        async getListingOffers(marketplaceId: string, itemCondition: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', sellerSKU: string, customerType?: 'Consumer' | 'Business', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOffersResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getListingOffers(marketplaceId, itemCondition, sellerSKU, customerType, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -401,7 +401,7 @@ export const ProductPricingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getListingOffersBatch(getListingOffersBatchRequestBody: GetListingOffersBatchRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetListingOffersBatchResponse>> {
+        async getListingOffersBatch(getListingOffersBatchRequestBody: GetListingOffersBatchRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetListingOffersBatchResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getListingOffersBatch(getListingOffersBatchRequestBody, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -416,7 +416,7 @@ export const ProductPricingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getPricing(marketplaceId: string, itemType: 'Asin' | 'Sku', asins?: Array<string>, skus?: Array<string>, itemCondition?: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', offerType?: 'B2C' | 'B2B', options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPricingResponse>> {
+        async getPricing(marketplaceId: string, itemType: 'Asin' | 'Sku', asins?: Array<string>, skus?: Array<string>, itemCondition?: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', offerType?: 'B2C' | 'B2B', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPricingResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getPricing(marketplaceId, itemType, asins, skus, itemCondition, offerType, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -705,7 +705,7 @@ export class ProductPricingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ProductPricingApi
      */
-    public getCompetitivePricing(requestParameters: ProductPricingApiGetCompetitivePricingRequest, options?: any) {
+    public getCompetitivePricing(requestParameters: ProductPricingApiGetCompetitivePricingRequest, options?: AxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getCompetitivePricing(requestParameters.marketplaceId, requestParameters.itemType, requestParameters.asins, requestParameters.skus, requestParameters.customerType, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -716,7 +716,7 @@ export class ProductPricingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ProductPricingApi
      */
-    public getItemOffers(requestParameters: ProductPricingApiGetItemOffersRequest, options?: any) {
+    public getItemOffers(requestParameters: ProductPricingApiGetItemOffersRequest, options?: AxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getItemOffers(requestParameters.marketplaceId, requestParameters.itemCondition, requestParameters.asin, requestParameters.customerType, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -727,7 +727,7 @@ export class ProductPricingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ProductPricingApi
      */
-    public getItemOffersBatch(requestParameters: ProductPricingApiGetItemOffersBatchRequest, options?: any) {
+    public getItemOffersBatch(requestParameters: ProductPricingApiGetItemOffersBatchRequest, options?: AxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getItemOffersBatch(requestParameters.getItemOffersBatchRequestBody, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -738,7 +738,7 @@ export class ProductPricingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ProductPricingApi
      */
-    public getListingOffers(requestParameters: ProductPricingApiGetListingOffersRequest, options?: any) {
+    public getListingOffers(requestParameters: ProductPricingApiGetListingOffersRequest, options?: AxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getListingOffers(requestParameters.marketplaceId, requestParameters.itemCondition, requestParameters.sellerSKU, requestParameters.customerType, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -749,7 +749,7 @@ export class ProductPricingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ProductPricingApi
      */
-    public getListingOffersBatch(requestParameters: ProductPricingApiGetListingOffersBatchRequest, options?: any) {
+    public getListingOffersBatch(requestParameters: ProductPricingApiGetListingOffersBatchRequest, options?: AxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getListingOffersBatch(requestParameters.getListingOffersBatchRequestBody, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -760,7 +760,7 @@ export class ProductPricingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ProductPricingApi
      */
-    public getPricing(requestParameters: ProductPricingApiGetPricingRequest, options?: any) {
+    public getPricing(requestParameters: ProductPricingApiGetPricingRequest, options?: AxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getPricing(requestParameters.marketplaceId, requestParameters.itemType, requestParameters.asins, requestParameters.skus, requestParameters.itemCondition, requestParameters.offerType, options).then((request) => request(this.axios, this.basePath));
     }
 }

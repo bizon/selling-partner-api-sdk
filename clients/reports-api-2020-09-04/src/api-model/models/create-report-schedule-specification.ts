@@ -25,57 +25,54 @@ export interface CreateReportScheduleSpecification {
      * @type {string}
      * @memberof CreateReportScheduleSpecification
      */
-    reportType: string;
+    'reportType': string;
     /**
      * A list of marketplace identifiers for the report schedule.
      * @type {Array<string>}
      * @memberof CreateReportScheduleSpecification
      */
-    marketplaceIds: Array<string>;
+    'marketplaceIds': Array<string>;
     /**
      * Additional information passed to reports. This varies by report type.
      * @type {{ [key: string]: string; }}
      * @memberof CreateReportScheduleSpecification
      */
-    reportOptions?: { [key: string]: string; };
+    'reportOptions'?: { [key: string]: string; };
     /**
      * One of a set of predefined ISO 8601 periods that specifies how often a report should be created.
      * @type {string}
      * @memberof CreateReportScheduleSpecification
      */
-    period: CreateReportScheduleSpecificationPeriodEnum;
+    'period': CreateReportScheduleSpecificationPeriodEnum;
     /**
      * The date and time when the schedule will create its next report, in ISO 8601 date time format.
      * @type {string}
      * @memberof CreateReportScheduleSpecification
      */
-    nextReportCreationTime?: string;
+    'nextReportCreationTime'?: string;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum CreateReportScheduleSpecificationPeriodEnum {
-    Pt5M = 'PT5M',
-    Pt15M = 'PT15M',
-    Pt30M = 'PT30M',
-    Pt1H = 'PT1H',
-    Pt2H = 'PT2H',
-    Pt4H = 'PT4H',
-    Pt8H = 'PT8H',
-    Pt12H = 'PT12H',
-    P1D = 'P1D',
-    P2D = 'P2D',
-    P3D = 'P3D',
-    Pt84H = 'PT84H',
-    P7D = 'P7D',
-    P14D = 'P14D',
-    P15D = 'P15D',
-    P18D = 'P18D',
-    P30D = 'P30D',
-    P1M = 'P1M'
-}
+export const CreateReportScheduleSpecificationPeriodEnum = {
+    Pt5M: 'PT5M',
+    Pt15M: 'PT15M',
+    Pt30M: 'PT30M',
+    Pt1H: 'PT1H',
+    Pt2H: 'PT2H',
+    Pt4H: 'PT4H',
+    Pt8H: 'PT8H',
+    Pt12H: 'PT12H',
+    P1D: 'P1D',
+    P2D: 'P2D',
+    P3D: 'P3D',
+    Pt84H: 'PT84H',
+    P7D: 'P7D',
+    P14D: 'P14D',
+    P15D: 'P15D',
+    P18D: 'P18D',
+    P30D: 'P30D',
+    P1M: 'P1M'
+} as const;
 
+export type CreateReportScheduleSpecificationPeriodEnum = typeof CreateReportScheduleSpecificationPeriodEnum[keyof typeof CreateReportScheduleSpecificationPeriodEnum];
 
 

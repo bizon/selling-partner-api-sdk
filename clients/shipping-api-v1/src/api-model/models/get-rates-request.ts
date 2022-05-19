@@ -28,31 +28,30 @@ export interface GetRatesRequest {
      * @type {Address}
      * @memberof GetRatesRequest
      */
-    shipTo: Address;
+    'shipTo': Address;
     /**
      * 
      * @type {Address}
      * @memberof GetRatesRequest
      */
-    shipFrom: Address;
+    'shipFrom': Address;
     /**
      * A list of service types that can be used to send the shipment.
      * @type {Array<ServiceType>}
      * @memberof GetRatesRequest
      */
-    serviceTypes: Array<ServiceType>;
+    'serviceTypes': Array<ServiceType>;
     /**
      * The start date and time. This defaults to the current date and time.
      * @type {string}
      * @memberof GetRatesRequest
      */
-    shipDate?: string;
+    'shipDate'?: string;
     /**
      * A list of container specifications.
      * @type {Array<ContainerSpecification>}
      * @memberof GetRatesRequest
      */
-    containerSpecifications: Array<ContainerSpecification>;
+    'containerSpecifications': Array<ContainerSpecification>;
 }
-
 

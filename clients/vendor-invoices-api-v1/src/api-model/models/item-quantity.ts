@@ -25,29 +25,26 @@ export interface ItemQuantity {
      * @type {number}
      * @memberof ItemQuantity
      */
-    amount: number;
+    'amount': number;
     /**
      * Unit of measure for the quantity.
      * @type {string}
      * @memberof ItemQuantity
      */
-    unitOfMeasure: ItemQuantityUnitOfMeasureEnum;
+    'unitOfMeasure': ItemQuantityUnitOfMeasureEnum;
     /**
      * The case size, if the unit of measure value is Cases.
      * @type {number}
      * @memberof ItemQuantity
      */
-    unitSize?: number;
+    'unitSize'?: number;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ItemQuantityUnitOfMeasureEnum {
-    Cases = 'Cases',
-    Eaches = 'Eaches'
-}
+export const ItemQuantityUnitOfMeasureEnum = {
+    Cases: 'Cases',
+    Eaches: 'Eaches'
+} as const;
 
+export type ItemQuantityUnitOfMeasureEnum = typeof ItemQuantityUnitOfMeasureEnum[keyof typeof ItemQuantityUnitOfMeasureEnum];
 
 

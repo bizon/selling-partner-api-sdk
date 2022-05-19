@@ -27,13 +27,12 @@ export interface Refinements {
      * @type {Array<BrandRefinement>}
      * @memberof Refinements
      */
-    brands: Array<BrandRefinement>;
+    'brands': Array<BrandRefinement>;
     /**
      * Classification search refinements.
      * @type {Array<ClassificationRefinement>}
      * @memberof Refinements
      */
-    classifications: Array<ClassificationRefinement>;
+    'classifications': Array<ClassificationRefinement>;
 }
-
 

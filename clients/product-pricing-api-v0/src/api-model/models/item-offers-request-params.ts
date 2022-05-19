@@ -25,4 +25,3 @@ import { ItemOffersRequestParamsAllOf } from './item-offers-request-params-all-o
 export type ItemOffersRequestParams = BatchOffersRequestParams & ItemOffersRequestParamsAllOf;
 
 
-

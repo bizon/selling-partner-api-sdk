@@ -19,11 +19,14 @@
  * @export
  * @enum {string}
  */
-export enum FulfillmentPolicy {
-    FillOrKill = 'FillOrKill',
-    FillAll = 'FillAll',
-    FillAllAvailable = 'FillAllAvailable'
-}
+
+export const FulfillmentPolicy = {
+    FillOrKill: 'FillOrKill',
+    FillAll: 'FillAll',
+    FillAllAvailable: 'FillAllAvailable'
+} as const;
+
+export type FulfillmentPolicy = typeof FulfillmentPolicy[keyof typeof FulfillmentPolicy];
 
 
 

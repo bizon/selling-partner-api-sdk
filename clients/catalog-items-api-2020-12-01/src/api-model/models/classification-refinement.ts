@@ -25,19 +25,18 @@ export interface ClassificationRefinement {
      * @type {number}
      * @memberof ClassificationRefinement
      */
-    numberOfResults: number;
+    'numberOfResults': number;
     /**
      * Display name for the classification.
      * @type {string}
      * @memberof ClassificationRefinement
      */
-    displayName: string;
+    'displayName': string;
     /**
      * Identifier for the classification that can be used for search refinement purposes.
      * @type {string}
      * @memberof ClassificationRefinement
      */
-    classificationId: string;
+    'classificationId': string;
 }
-
 

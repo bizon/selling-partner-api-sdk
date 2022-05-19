@@ -25,7 +25,6 @@ export interface GetAttributesResponseBuyer {
      * @type {string}
      * @memberof GetAttributesResponseBuyer
      */
-    locale?: string;
+    'locale'?: string;
 }
-
 

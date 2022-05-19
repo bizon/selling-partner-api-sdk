@@ -25,7 +25,6 @@ export interface Party {
      * @type {string}
      * @memberof Party
      */
-    accountId?: string;
+    'accountId'?: string;
 }
-
 

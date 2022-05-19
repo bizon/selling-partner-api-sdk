@@ -26,13 +26,12 @@ export interface ItemDelivery {
      * @type {string}
      * @memberof ItemDelivery
      */
-    estimatedDeliveryDate?: string;
+    'estimatedDeliveryDate'?: string;
     /**
      * 
      * @type {ItemDeliveryPromise}
      * @memberof ItemDelivery
      */
-    itemDeliveryPromise?: ItemDeliveryPromise;
+    'itemDeliveryPromise'?: ItemDeliveryPromise;
 }
-
 

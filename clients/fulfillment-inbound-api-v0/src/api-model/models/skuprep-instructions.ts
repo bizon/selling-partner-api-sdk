@@ -29,37 +29,36 @@ export interface SKUPrepInstructions {
      * @type {string}
      * @memberof SKUPrepInstructions
      */
-    SellerSKU?: string;
+    'SellerSKU'?: string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
      * @type {string}
      * @memberof SKUPrepInstructions
      */
-    ASIN?: string;
+    'ASIN'?: string;
     /**
      * 
      * @type {BarcodeInstruction}
      * @memberof SKUPrepInstructions
      */
-    BarcodeInstruction?: BarcodeInstruction;
+    'BarcodeInstruction'?: BarcodeInstruction;
     /**
      * 
      * @type {PrepGuidance}
      * @memberof SKUPrepInstructions
      */
-    PrepGuidance?: PrepGuidance;
+    'PrepGuidance'?: PrepGuidance;
     /**
      * A list of preparation instructions to help with item sourcing decisions.
      * @type {Array<PrepInstruction>}
      * @memberof SKUPrepInstructions
      */
-    PrepInstructionList?: Array<PrepInstruction>;
+    'PrepInstructionList'?: Array<PrepInstruction>;
     /**
      * A list of preparation instructions and fees for Amazon to prep goods for shipment.
      * @type {Array<AmazonPrepFeesDetails>}
      * @memberof SKUPrepInstructions
      */
-    AmazonPrepFeesDetailsList?: Array<AmazonPrepFeesDetails>;
+    'AmazonPrepFeesDetailsList'?: Array<AmazonPrepFeesDetails>;
 }
-
 

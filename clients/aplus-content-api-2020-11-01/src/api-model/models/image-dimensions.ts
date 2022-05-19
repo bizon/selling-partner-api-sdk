@@ -26,13 +26,12 @@ export interface ImageDimensions {
      * @type {IntegerWithUnits}
      * @memberof ImageDimensions
      */
-    width: IntegerWithUnits;
+    'width': IntegerWithUnits;
     /**
      * 
      * @type {IntegerWithUnits}
      * @memberof ImageDimensions
      */
-    height: IntegerWithUnits;
+    'height': IntegerWithUnits;
 }
-
 

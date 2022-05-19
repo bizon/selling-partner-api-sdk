@@ -25,67 +25,66 @@ export interface Address {
      * @type {string}
      * @memberof Address
      */
-    Name: string;
+    'Name': string;
     /**
      * The street address information.
      * @type {string}
      * @memberof Address
      */
-    AddressLine1: string;
+    'AddressLine1': string;
     /**
      * Additional street address information.
      * @type {string}
      * @memberof Address
      */
-    AddressLine2?: string;
+    'AddressLine2'?: string;
     /**
      * Additional street address information.
      * @type {string}
      * @memberof Address
      */
-    AddressLine3?: string;
+    'AddressLine3'?: string;
     /**
      * The district or county.
      * @type {string}
      * @memberof Address
      */
-    DistrictOrCounty?: string;
+    'DistrictOrCounty'?: string;
     /**
      * The email address.
      * @type {string}
      * @memberof Address
      */
-    Email: string;
+    'Email': string;
     /**
      * The city.
      * @type {string}
      * @memberof Address
      */
-    City: string;
+    'City': string;
     /**
      * The state or province code. **Note.** Required in the Canada, US, and UK marketplaces. Also required for shipments originating from China.
      * @type {string}
      * @memberof Address
      */
-    StateOrProvinceCode?: string;
+    'StateOrProvinceCode'?: string;
     /**
      * The zip code or postal code.
      * @type {string}
      * @memberof Address
      */
-    PostalCode: string;
+    'PostalCode': string;
     /**
      * The country code. A two-character country code, in ISO 3166-1 alpha-2 format.
      * @type {string}
      * @memberof Address
      */
-    CountryCode: string;
+    'CountryCode': string;
     /**
      * The phone number.
      * @type {string}
      * @memberof Address
      */
-    Phone: string;
+    'Phone': string;
 }
-
 

@@ -25,13 +25,12 @@ export interface ScheduledPackageId {
      * @type {string}
      * @memberof ScheduledPackageId
      */
-    amazonOrderId: string;
+    'amazonOrderId': string;
     /**
      * An Amazon-defined identifier for the scheduled package.
      * @type {string}
      * @memberof ScheduledPackageId
      */
-    packageId?: string;
+    'packageId'?: string;
 }
-
 

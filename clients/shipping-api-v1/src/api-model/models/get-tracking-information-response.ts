@@ -26,13 +26,12 @@ export interface GetTrackingInformationResponse {
      * @type {TrackingInformation}
      * @memberof GetTrackingInformationResponse
      */
-    payload?: TrackingInformation;
+    'payload'?: TrackingInformation;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetTrackingInformationResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

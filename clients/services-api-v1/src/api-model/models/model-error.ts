@@ -25,35 +25,32 @@ export interface ModelError {
      * @type {string}
      * @memberof ModelError
      */
-    code: string;
+    'code': string;
     /**
      * A message that describes the error condition in a human-readable form.
      * @type {string}
      * @memberof ModelError
      */
-    message: string;
+    'message': string;
     /**
      * Additional details that can help the caller understand or fix the issue.
      * @type {string}
      * @memberof ModelError
      */
-    details?: string;
+    'details'?: string;
     /**
      * The type of error.
      * @type {string}
      * @memberof ModelError
      */
-    errorLevel?: ModelErrorErrorLevelEnum;
+    'errorLevel'?: ModelErrorErrorLevelEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ModelErrorErrorLevelEnum {
-    Error = 'ERROR',
-    Warning = 'WARNING'
-}
+export const ModelErrorErrorLevelEnum = {
+    Error: 'ERROR',
+    Warning: 'WARNING'
+} as const;
 
+export type ModelErrorErrorLevelEnum = typeof ModelErrorErrorLevelEnum[keyof typeof ModelErrorErrorLevelEnum];
 
 

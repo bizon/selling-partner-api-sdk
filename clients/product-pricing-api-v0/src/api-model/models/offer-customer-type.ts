@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum OfferCustomerType {
-    B2C = 'B2C',
-    B2B = 'B2B'
-}
+
+export const OfferCustomerType = {
+    B2C: 'B2C',
+    B2B: 'B2B'
+} as const;
+
+export type OfferCustomerType = typeof OfferCustomerType[keyof typeof OfferCustomerType];
 
 
 

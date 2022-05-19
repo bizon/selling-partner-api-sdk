@@ -26,19 +26,18 @@ export interface PartneredEstimate {
      * @type {Amount}
      * @memberof PartneredEstimate
      */
-    Amount: Amount;
+    'Amount': Amount;
     /**
      * 
      * @type {string}
      * @memberof PartneredEstimate
      */
-    ConfirmDeadline?: string;
+    'ConfirmDeadline'?: string;
     /**
      * 
      * @type {string}
      * @memberof PartneredEstimate
      */
-    VoidDeadline?: string;
+    'VoidDeadline'?: string;
 }
-
 

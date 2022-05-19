@@ -27,13 +27,12 @@ export interface StandardHeaderTextListBlock {
      * @type {TextComponent}
      * @memberof StandardHeaderTextListBlock
      */
-    headline?: TextComponent;
+    'headline'?: TextComponent;
     /**
      * 
      * @type {StandardTextListBlock}
      * @memberof StandardHeaderTextListBlock
      */
-    block?: StandardTextListBlock;
+    'block'?: StandardTextListBlock;
 }
-
 

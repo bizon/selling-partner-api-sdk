@@ -26,7 +26,6 @@ export interface GetMyFeesEstimateRequest {
      * @type {FeesEstimateRequest}
      * @memberof GetMyFeesEstimateRequest
      */
-    FeesEstimateRequest?: FeesEstimateRequest;
+    'FeesEstimateRequest'?: FeesEstimateRequest;
 }
-
 

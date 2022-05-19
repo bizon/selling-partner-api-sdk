@@ -27,31 +27,30 @@ export interface FeePreview {
      * @type {string}
      * @memberof FeePreview
      */
-    asin?: string;
+    'asin'?: string;
     /**
      * 
      * @type {MoneyType}
      * @memberof FeePreview
      */
-    price?: MoneyType;
+    'price'?: MoneyType;
     /**
      * A list of the Small and Light fees for the item.
      * @type {Array<FeeLineItem>}
      * @memberof FeePreview
      */
-    feeBreakdown?: Array<FeeLineItem>;
+    'feeBreakdown'?: Array<FeeLineItem>;
     /**
      * 
      * @type {MoneyType}
      * @memberof FeePreview
      */
-    totalFees?: MoneyType;
+    'totalFees'?: MoneyType;
     /**
      * One or more unexpected errors occurred during the getSmallAndLightFeePreview operation.
      * @type {Array<Error>}
      * @memberof FeePreview
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

@@ -27,13 +27,12 @@ export interface StandardComparisonTableModule {
      * @type {Array<StandardComparisonProductBlock>}
      * @memberof StandardComparisonTableModule
      */
-    productColumns?: Array<StandardComparisonProductBlock>;
+    'productColumns'?: Array<StandardComparisonProductBlock>;
     /**
      * 
      * @type {Array<PlainTextItem>}
      * @memberof StandardComparisonTableModule
      */
-    metricRowLabels?: Array<PlainTextItem>;
+    'metricRowLabels'?: Array<PlainTextItem>;
 }
-
 

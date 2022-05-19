@@ -25,7 +25,6 @@ export interface TransactionId {
      * @type {string}
      * @memberof TransactionId
      */
-    transactionId?: string;
+    'transactionId'?: string;
 }
-
 

@@ -29,25 +29,24 @@ export interface GetInboundGuidanceResult {
      * @type {Array<SKUInboundGuidance>}
      * @memberof GetInboundGuidanceResult
      */
-    SKUInboundGuidanceList?: Array<SKUInboundGuidance>;
+    'SKUInboundGuidanceList'?: Array<SKUInboundGuidance>;
     /**
      * A list of invalid SKU values and the reason they are invalid.
      * @type {Array<InvalidSKU>}
      * @memberof GetInboundGuidanceResult
      */
-    InvalidSKUList?: Array<InvalidSKU>;
+    'InvalidSKUList'?: Array<InvalidSKU>;
     /**
      * A list of ASINs and their associated inbound guidance.
      * @type {Array<ASINInboundGuidance>}
      * @memberof GetInboundGuidanceResult
      */
-    ASINInboundGuidanceList?: Array<ASINInboundGuidance>;
+    'ASINInboundGuidanceList'?: Array<ASINInboundGuidance>;
     /**
      * A list of invalid ASIN values and the reasons they are invalid.
      * @type {Array<InvalidASIN>}
      * @memberof GetInboundGuidanceResult
      */
-    InvalidASINList?: Array<InvalidASIN>;
+    'InvalidASINList'?: Array<InvalidASIN>;
 }
-
 

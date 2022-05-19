@@ -26,13 +26,12 @@ export interface Order {
      * @type {string}
      * @memberof Order
      */
-    purchaseOrderNumber: string;
+    'purchaseOrderNumber': string;
     /**
      * 
      * @type {OrderDetails}
      * @memberof Order
      */
-    orderDetails?: OrderDetails;
+    'orderDetails'?: OrderDetails;
 }
-
 

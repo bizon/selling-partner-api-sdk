@@ -26,40 +26,37 @@ export interface TaxDetails {
      * @type {string}
      * @memberof TaxDetails
      */
-    taxRate?: string;
+    'taxRate'?: string;
     /**
      * 
      * @type {Money}
      * @memberof TaxDetails
      */
-    taxAmount: Money;
+    'taxAmount': Money;
     /**
      * 
      * @type {Money}
      * @memberof TaxDetails
      */
-    taxableAmount?: Money;
+    'taxableAmount'?: Money;
     /**
      * Tax type.
      * @type {string}
      * @memberof TaxDetails
      */
-    type?: TaxDetailsTypeEnum;
+    'type'?: TaxDetailsTypeEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum TaxDetailsTypeEnum {
-    Consumption = 'CONSUMPTION',
-    Gst = 'GST',
-    MwSt = 'MwSt.',
-    Pst = 'PST',
-    Total = 'TOTAL',
-    Tva = 'TVA',
-    Vat = 'VAT'
-}
+export const TaxDetailsTypeEnum = {
+    Consumption: 'CONSUMPTION',
+    Gst: 'GST',
+    MwSt: 'MwSt.',
+    Pst: 'PST',
+    Total: 'TOTAL',
+    Tva: 'TVA',
+    Vat: 'VAT'
+} as const;
 
+export type TaxDetailsTypeEnum = typeof TaxDetailsTypeEnum[keyof typeof TaxDetailsTypeEnum];
 
 

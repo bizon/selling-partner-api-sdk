@@ -27,13 +27,12 @@ export interface AmazonPrepFeesDetails {
      * @type {PrepInstruction}
      * @memberof AmazonPrepFeesDetails
      */
-    PrepInstruction?: PrepInstruction;
+    'PrepInstruction'?: PrepInstruction;
     /**
      * 
      * @type {Amount}
      * @memberof AmazonPrepFeesDetails
      */
-    FeePerUnit?: Amount;
+    'FeePerUnit'?: Amount;
 }
-
 

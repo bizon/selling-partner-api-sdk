@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -43,7 +43,7 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, options: any = {}): Promise<RequestArgs> => {
+        deleteListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerId' is not null or undefined
             assertParamExists('deleteListingsItem', 'sellerId', sellerId)
             // verify required parameter 'sku' is not null or undefined
@@ -74,7 +74,7 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -93,7 +93,7 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        patchListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPatchRequest, issueLocale?: string, options: any = {}): Promise<RequestArgs> => {
+        patchListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPatchRequest, issueLocale?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerId' is not null or undefined
             assertParamExists('patchListingsItem', 'sellerId', sellerId)
             // verify required parameter 'sku' is not null or undefined
@@ -128,7 +128,7 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -148,7 +148,7 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        putListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPutRequest, issueLocale?: string, options: any = {}): Promise<RequestArgs> => {
+        putListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPutRequest, issueLocale?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerId' is not null or undefined
             assertParamExists('putListingsItem', 'sellerId', sellerId)
             // verify required parameter 'sku' is not null or undefined
@@ -183,7 +183,7 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -212,7 +212,7 @@ export const ListingsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
+        async deleteListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteListingsItem(sellerId, sku, marketplaceIds, issueLocale, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -226,7 +226,7 @@ export const ListingsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async patchListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPatchRequest, issueLocale?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
+        async patchListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPatchRequest, issueLocale?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.patchListingsItem(sellerId, sku, marketplaceIds, body, issueLocale, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -240,7 +240,7 @@ export const ListingsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async putListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPutRequest, issueLocale?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
+        async putListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPutRequest, issueLocale?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.putListingsItem(sellerId, sku, marketplaceIds, body, issueLocale, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -428,7 +428,7 @@ export class ListingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ListingsApi
      */
-    public deleteListingsItem(requestParameters: ListingsApiDeleteListingsItemRequest, options?: any) {
+    public deleteListingsItem(requestParameters: ListingsApiDeleteListingsItemRequest, options?: AxiosRequestConfig) {
         return ListingsApiFp(this.configuration).deleteListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -439,7 +439,7 @@ export class ListingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ListingsApi
      */
-    public patchListingsItem(requestParameters: ListingsApiPatchListingsItemRequest, options?: any) {
+    public patchListingsItem(requestParameters: ListingsApiPatchListingsItemRequest, options?: AxiosRequestConfig) {
         return ListingsApiFp(this.configuration).patchListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -450,7 +450,7 @@ export class ListingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ListingsApi
      */
-    public putListingsItem(requestParameters: ListingsApiPutListingsItemRequest, options?: any) {
+    public putListingsItem(requestParameters: ListingsApiPutListingsItemRequest, options?: AxiosRequestConfig) {
         return ListingsApiFp(this.configuration).putListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
     }
 }

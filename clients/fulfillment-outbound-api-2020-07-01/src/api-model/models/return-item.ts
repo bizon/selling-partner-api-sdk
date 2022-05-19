@@ -27,67 +27,66 @@ export interface ReturnItem {
      * @type {string}
      * @memberof ReturnItem
      */
-    sellerReturnItemId: string;
+    'sellerReturnItemId': string;
     /**
      * The identifier assigned to the item by the seller when the fulfillment order was created.
      * @type {string}
      * @memberof ReturnItem
      */
-    sellerFulfillmentOrderItemId: string;
+    'sellerFulfillmentOrderItemId': string;
     /**
      * The identifier for the shipment that is associated with the return item.
      * @type {string}
      * @memberof ReturnItem
      */
-    amazonShipmentId: string;
+    'amazonShipmentId': string;
     /**
      * The return reason code assigned to the return item by the seller.
      * @type {string}
      * @memberof ReturnItem
      */
-    sellerReturnReasonCode: string;
+    'sellerReturnReasonCode': string;
     /**
      * An optional comment about the return item.
      * @type {string}
      * @memberof ReturnItem
      */
-    returnComment?: string;
+    'returnComment'?: string;
     /**
      * The return reason code that the Amazon fulfillment center assigned to the return item.
      * @type {string}
      * @memberof ReturnItem
      */
-    amazonReturnReasonCode?: string;
+    'amazonReturnReasonCode'?: string;
     /**
      * 
      * @type {FulfillmentReturnItemStatus}
      * @memberof ReturnItem
      */
-    status: FulfillmentReturnItemStatus;
+    'status': FulfillmentReturnItemStatus;
     /**
      * 
      * @type {string}
      * @memberof ReturnItem
      */
-    statusChangedDate: string;
+    'statusChangedDate': string;
     /**
      * Identifies the return authorization used to return this item. See ReturnAuthorization.
      * @type {string}
      * @memberof ReturnItem
      */
-    returnAuthorizationId?: string;
+    'returnAuthorizationId'?: string;
     /**
      * 
      * @type {ReturnItemDisposition}
      * @memberof ReturnItem
      */
-    returnReceivedCondition?: ReturnItemDisposition;
+    'returnReceivedCondition'?: ReturnItemDisposition;
     /**
      * The identifier for the Amazon fulfillment center that processed the return item.
      * @type {string}
      * @memberof ReturnItem
      */
-    fulfillmentCenterId?: string;
+    'fulfillmentCenterId'?: string;
 }
-
 

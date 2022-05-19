@@ -26,25 +26,24 @@ export interface StandardFourImageTextQuadrantModule {
      * @type {StandardImageTextBlock}
      * @memberof StandardFourImageTextQuadrantModule
      */
-    block1: StandardImageTextBlock;
+    'block1': StandardImageTextBlock;
     /**
      * 
      * @type {StandardImageTextBlock}
      * @memberof StandardFourImageTextQuadrantModule
      */
-    block2: StandardImageTextBlock;
+    'block2': StandardImageTextBlock;
     /**
      * 
      * @type {StandardImageTextBlock}
      * @memberof StandardFourImageTextQuadrantModule
      */
-    block3: StandardImageTextBlock;
+    'block3': StandardImageTextBlock;
     /**
      * 
      * @type {StandardImageTextBlock}
      * @memberof StandardFourImageTextQuadrantModule
      */
-    block4: StandardImageTextBlock;
+    'block4': StandardImageTextBlock;
 }
-
 

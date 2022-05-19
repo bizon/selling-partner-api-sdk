@@ -30,61 +30,60 @@ export interface InboundShipmentInfo {
      * @type {string}
      * @memberof InboundShipmentInfo
      */
-    ShipmentId?: string;
+    'ShipmentId'?: string;
     /**
      * The name for the inbound shipment.
      * @type {string}
      * @memberof InboundShipmentInfo
      */
-    ShipmentName?: string;
+    'ShipmentName'?: string;
     /**
      * 
      * @type {Address}
      * @memberof InboundShipmentInfo
      */
-    ShipFromAddress: Address;
+    'ShipFromAddress': Address;
     /**
      * An Amazon fulfillment center identifier created by Amazon.
      * @type {string}
      * @memberof InboundShipmentInfo
      */
-    DestinationFulfillmentCenterId?: string;
+    'DestinationFulfillmentCenterId'?: string;
     /**
      * 
      * @type {ShipmentStatus}
      * @memberof InboundShipmentInfo
      */
-    ShipmentStatus?: ShipmentStatus;
+    'ShipmentStatus'?: ShipmentStatus;
     /**
      * 
      * @type {LabelPrepType}
      * @memberof InboundShipmentInfo
      */
-    LabelPrepType?: LabelPrepType;
+    'LabelPrepType'?: LabelPrepType;
     /**
      * Indicates whether or not an inbound shipment contains case-packed boxes. When AreCasesRequired = true for an inbound shipment, all items in the inbound shipment must be case packed.
      * @type {boolean}
      * @memberof InboundShipmentInfo
      */
-    AreCasesRequired: boolean;
+    'AreCasesRequired': boolean;
     /**
      * 
      * @type {string}
      * @memberof InboundShipmentInfo
      */
-    ConfirmedNeedByDate?: string;
+    'ConfirmedNeedByDate'?: string;
     /**
      * 
      * @type {BoxContentsSource}
      * @memberof InboundShipmentInfo
      */
-    BoxContentsSource?: BoxContentsSource;
+    'BoxContentsSource'?: BoxContentsSource;
     /**
      * 
      * @type {BoxContentsFeeDetails}
      * @memberof InboundShipmentInfo
      */
-    EstimatedBoxContentsFee?: BoxContentsFeeDetails;
+    'EstimatedBoxContentsFee'?: BoxContentsFeeDetails;
 }
-
 

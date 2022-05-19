@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum HandoverMethod {
-    Pickup = 'Pickup',
-    Dropoff = 'Dropoff'
-}
+
+export const HandoverMethod = {
+    Pickup: 'Pickup',
+    Dropoff: 'Dropoff'
+} as const;
+
+export type HandoverMethod = typeof HandoverMethod[keyof typeof HandoverMethod];
 
 
 

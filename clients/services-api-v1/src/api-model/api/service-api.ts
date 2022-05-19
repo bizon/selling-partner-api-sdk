@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -47,7 +47,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        addAppointmentForServiceJobByServiceJobId: async (serviceJobId: string, body: AddAppointmentRequest, options: any = {}): Promise<RequestArgs> => {
+        addAppointmentForServiceJobByServiceJobId: async (serviceJobId: string, body: AddAppointmentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'serviceJobId' is not null or undefined
             assertParamExists('addAppointmentForServiceJobByServiceJobId', 'serviceJobId', serviceJobId)
             // verify required parameter 'body' is not null or undefined
@@ -69,7 +69,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -86,7 +86,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelServiceJobByServiceJobId: async (serviceJobId: string, cancellationReasonCode: string, options: any = {}): Promise<RequestArgs> => {
+        cancelServiceJobByServiceJobId: async (serviceJobId: string, cancellationReasonCode: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'serviceJobId' is not null or undefined
             assertParamExists('cancelServiceJobByServiceJobId', 'serviceJobId', serviceJobId)
             // verify required parameter 'cancellationReasonCode' is not null or undefined
@@ -110,7 +110,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -125,7 +125,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        completeServiceJobByServiceJobId: async (serviceJobId: string, options: any = {}): Promise<RequestArgs> => {
+        completeServiceJobByServiceJobId: async (serviceJobId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'serviceJobId' is not null or undefined
             assertParamExists('completeServiceJobByServiceJobId', 'serviceJobId', serviceJobId)
             const localVarPath = `/service/v1/serviceJobs/{serviceJobId}/completions`
@@ -143,7 +143,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -158,7 +158,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getServiceJobByServiceJobId: async (serviceJobId: string, options: any = {}): Promise<RequestArgs> => {
+        getServiceJobByServiceJobId: async (serviceJobId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'serviceJobId' is not null or undefined
             assertParamExists('getServiceJobByServiceJobId', 'serviceJobId', serviceJobId)
             const localVarPath = `/service/v1/serviceJobs/{serviceJobId}`
@@ -176,7 +176,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -203,7 +203,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getServiceJobs: async (marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>, pageToken?: string, pageSize?: number, sortField?: 'JOB_DATE' | 'JOB_STATUS', sortOrder?: 'ASC' | 'DESC', createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, options: any = {}): Promise<RequestArgs> => {
+        getServiceJobs: async (marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>, pageToken?: string, pageSize?: number, sortField?: 'JOB_DATE' | 'JOB_STATUS', sortOrder?: 'ASC' | 'DESC', createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('getServiceJobs', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/service/v1/serviceJobs`;
@@ -272,7 +272,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -289,7 +289,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        rescheduleAppointmentForServiceJobByServiceJobId: async (serviceJobId: string, appointmentId: string, body: RescheduleAppointmentRequest, options: any = {}): Promise<RequestArgs> => {
+        rescheduleAppointmentForServiceJobByServiceJobId: async (serviceJobId: string, appointmentId: string, body: RescheduleAppointmentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'serviceJobId' is not null or undefined
             assertParamExists('rescheduleAppointmentForServiceJobByServiceJobId', 'serviceJobId', serviceJobId)
             // verify required parameter 'appointmentId' is not null or undefined
@@ -314,7 +314,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -341,7 +341,7 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async addAppointmentForServiceJobByServiceJobId(serviceJobId: string, body: AddAppointmentRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetAppointmentResponse>> {
+        async addAppointmentForServiceJobByServiceJobId(serviceJobId: string, body: AddAppointmentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetAppointmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.addAppointmentForServiceJobByServiceJobId(serviceJobId, body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -352,7 +352,7 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelServiceJobByServiceJobId(serviceJobId: string, cancellationReasonCode: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelServiceJobByServiceJobIdResponse>> {
+        async cancelServiceJobByServiceJobId(serviceJobId: string, cancellationReasonCode: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelServiceJobByServiceJobIdResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelServiceJobByServiceJobId(serviceJobId, cancellationReasonCode, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -362,7 +362,7 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async completeServiceJobByServiceJobId(serviceJobId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CompleteServiceJobByServiceJobIdResponse>> {
+        async completeServiceJobByServiceJobId(serviceJobId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CompleteServiceJobByServiceJobIdResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.completeServiceJobByServiceJobId(serviceJobId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -372,7 +372,7 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getServiceJobByServiceJobId(serviceJobId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetServiceJobByServiceJobIdResponse>> {
+        async getServiceJobByServiceJobId(serviceJobId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetServiceJobByServiceJobIdResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getServiceJobByServiceJobId(serviceJobId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -394,7 +394,7 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getServiceJobs(marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>, pageToken?: string, pageSize?: number, sortField?: 'JOB_DATE' | 'JOB_STATUS', sortOrder?: 'ASC' | 'DESC', createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetServiceJobsResponse>> {
+        async getServiceJobs(marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>, pageToken?: string, pageSize?: number, sortField?: 'JOB_DATE' | 'JOB_STATUS', sortOrder?: 'ASC' | 'DESC', createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetServiceJobsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getServiceJobs(marketplaceIds, serviceOrderIds, serviceJobStatus, pageToken, pageSize, sortField, sortOrder, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, scheduleStartDate, scheduleEndDate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -406,7 +406,7 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async rescheduleAppointmentForServiceJobByServiceJobId(serviceJobId: string, appointmentId: string, body: RescheduleAppointmentRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetAppointmentResponse>> {
+        async rescheduleAppointmentForServiceJobByServiceJobId(serviceJobId: string, appointmentId: string, body: RescheduleAppointmentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetAppointmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.rescheduleAppointmentForServiceJobByServiceJobId(serviceJobId, appointmentId, body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -703,7 +703,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public addAppointmentForServiceJobByServiceJobId(requestParameters: ServiceApiAddAppointmentForServiceJobByServiceJobIdRequest, options?: any) {
+    public addAppointmentForServiceJobByServiceJobId(requestParameters: ServiceApiAddAppointmentForServiceJobByServiceJobIdRequest, options?: AxiosRequestConfig) {
         return ServiceApiFp(this.configuration).addAppointmentForServiceJobByServiceJobId(requestParameters.serviceJobId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -714,7 +714,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public cancelServiceJobByServiceJobId(requestParameters: ServiceApiCancelServiceJobByServiceJobIdRequest, options?: any) {
+    public cancelServiceJobByServiceJobId(requestParameters: ServiceApiCancelServiceJobByServiceJobIdRequest, options?: AxiosRequestConfig) {
         return ServiceApiFp(this.configuration).cancelServiceJobByServiceJobId(requestParameters.serviceJobId, requestParameters.cancellationReasonCode, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -725,7 +725,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public completeServiceJobByServiceJobId(requestParameters: ServiceApiCompleteServiceJobByServiceJobIdRequest, options?: any) {
+    public completeServiceJobByServiceJobId(requestParameters: ServiceApiCompleteServiceJobByServiceJobIdRequest, options?: AxiosRequestConfig) {
         return ServiceApiFp(this.configuration).completeServiceJobByServiceJobId(requestParameters.serviceJobId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -736,7 +736,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public getServiceJobByServiceJobId(requestParameters: ServiceApiGetServiceJobByServiceJobIdRequest, options?: any) {
+    public getServiceJobByServiceJobId(requestParameters: ServiceApiGetServiceJobByServiceJobIdRequest, options?: AxiosRequestConfig) {
         return ServiceApiFp(this.configuration).getServiceJobByServiceJobId(requestParameters.serviceJobId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -747,7 +747,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public getServiceJobs(requestParameters: ServiceApiGetServiceJobsRequest, options?: any) {
+    public getServiceJobs(requestParameters: ServiceApiGetServiceJobsRequest, options?: AxiosRequestConfig) {
         return ServiceApiFp(this.configuration).getServiceJobs(requestParameters.marketplaceIds, requestParameters.serviceOrderIds, requestParameters.serviceJobStatus, requestParameters.pageToken, requestParameters.pageSize, requestParameters.sortField, requestParameters.sortOrder, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.scheduleStartDate, requestParameters.scheduleEndDate, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -758,7 +758,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public rescheduleAppointmentForServiceJobByServiceJobId(requestParameters: ServiceApiRescheduleAppointmentForServiceJobByServiceJobIdRequest, options?: any) {
+    public rescheduleAppointmentForServiceJobByServiceJobId(requestParameters: ServiceApiRescheduleAppointmentForServiceJobByServiceJobIdRequest, options?: AxiosRequestConfig) {
         return ServiceApiFp(this.configuration).rescheduleAppointmentForServiceJobByServiceJobId(requestParameters.serviceJobId, requestParameters.appointmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }

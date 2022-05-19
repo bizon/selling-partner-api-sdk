@@ -26,7 +26,6 @@ export interface ListingOffersResponseAllOf {
      * @type {ListingOffersRequestParams}
      * @memberof ListingOffersResponseAllOf
      */
-    request?: ListingOffersRequestParams;
+    'request'?: ListingOffersRequestParams;
 }
-
 

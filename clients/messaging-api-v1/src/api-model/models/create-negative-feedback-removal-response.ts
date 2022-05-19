@@ -25,7 +25,6 @@ export interface CreateNegativeFeedbackRemovalResponse {
      * @type {Array<Error>}
      * @memberof CreateNegativeFeedbackRemovalResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

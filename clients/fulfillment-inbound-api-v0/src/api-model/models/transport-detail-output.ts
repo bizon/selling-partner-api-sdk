@@ -29,25 +29,24 @@ export interface TransportDetailOutput {
      * @type {PartneredSmallParcelDataOutput}
      * @memberof TransportDetailOutput
      */
-    PartneredSmallParcelData?: PartneredSmallParcelDataOutput;
+    'PartneredSmallParcelData'?: PartneredSmallParcelDataOutput;
     /**
      * 
      * @type {NonPartneredSmallParcelDataOutput}
      * @memberof TransportDetailOutput
      */
-    NonPartneredSmallParcelData?: NonPartneredSmallParcelDataOutput;
+    'NonPartneredSmallParcelData'?: NonPartneredSmallParcelDataOutput;
     /**
      * 
      * @type {PartneredLtlDataOutput}
      * @memberof TransportDetailOutput
      */
-    PartneredLtlData?: PartneredLtlDataOutput;
+    'PartneredLtlData'?: PartneredLtlDataOutput;
     /**
      * 
      * @type {NonPartneredLtlDataOutput}
      * @memberof TransportDetailOutput
      */
-    NonPartneredLtlData?: NonPartneredLtlDataOutput;
+    'NonPartneredLtlData'?: NonPartneredLtlDataOutput;
 }
-
 

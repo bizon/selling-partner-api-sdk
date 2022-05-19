@@ -27,25 +27,24 @@ export interface AdjustmentEvent {
      * @type {string}
      * @memberof AdjustmentEvent
      */
-    AdjustmentType?: string;
+    'AdjustmentType'?: string;
     /**
      * 
      * @type {string}
      * @memberof AdjustmentEvent
      */
-    PostedDate?: string;
+    'PostedDate'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof AdjustmentEvent
      */
-    AdjustmentAmount?: Currency;
+    'AdjustmentAmount'?: Currency;
     /**
      * A list of information about items in an adjustment to the seller\'s account.
      * @type {Array<AdjustmentItem>}
      * @memberof AdjustmentEvent
      */
-    AdjustmentItemList?: Array<AdjustmentItem>;
+    'AdjustmentItemList'?: Array<AdjustmentItem>;
 }
-
 

@@ -26,7 +26,6 @@ export interface GetItemOffersBatchRequest {
      * @type {Array<ItemOffersRequest>}
      * @memberof GetItemOffersBatchRequest
      */
-    requests?: Array<ItemOffersRequest>;
+    'requests'?: Array<ItemOffersRequest>;
 }
-
 

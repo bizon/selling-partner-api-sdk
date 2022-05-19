@@ -25,37 +25,34 @@ export interface Dimensions {
      * @type {string}
      * @memberof Dimensions
      */
-    length: string;
+    'length': string;
     /**
      * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. <br>**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
      * @type {string}
      * @memberof Dimensions
      */
-    width: string;
+    'width': string;
     /**
      * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. <br>**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
      * @type {string}
      * @memberof Dimensions
      */
-    height: string;
+    'height': string;
     /**
      * The unit of measure for dimensions.
      * @type {string}
      * @memberof Dimensions
      */
-    unitOfMeasure: DimensionsUnitOfMeasureEnum;
+    'unitOfMeasure': DimensionsUnitOfMeasureEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum DimensionsUnitOfMeasureEnum {
-    In = 'In',
-    Ft = 'Ft',
-    Meter = 'Meter',
-    Yard = 'Yard'
-}
+export const DimensionsUnitOfMeasureEnum = {
+    In: 'In',
+    Ft: 'Ft',
+    Meter: 'Meter',
+    Yard: 'Yard'
+} as const;
 
+export type DimensionsUnitOfMeasureEnum = typeof DimensionsUnitOfMeasureEnum[keyof typeof DimensionsUnitOfMeasureEnum];
 
 

@@ -25,7 +25,6 @@ export interface CreateDigitalAccessKeyResponse {
      * @type {Array<Error>}
      * @memberof CreateDigitalAccessKeyResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

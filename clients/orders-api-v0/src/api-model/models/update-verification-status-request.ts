@@ -26,7 +26,6 @@ export interface UpdateVerificationStatusRequest {
      * @type {UpdateVerificationStatusRequestBody}
      * @memberof UpdateVerificationStatusRequest
      */
-    regulatedOrderVerificationStatus: UpdateVerificationStatusRequestBody;
+    'regulatedOrderVerificationStatus': UpdateVerificationStatusRequestBody;
 }
-
 

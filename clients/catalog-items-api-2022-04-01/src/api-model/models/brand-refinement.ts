@@ -25,13 +25,12 @@ export interface BrandRefinement {
      * @type {number}
      * @memberof BrandRefinement
      */
-    numberOfResults: number;
+    'numberOfResults': number;
     /**
      * Brand name. For display and can be used as a search refinement.
      * @type {string}
      * @memberof BrandRefinement
      */
-    brandName: string;
+    'brandName': string;
 }
-
 

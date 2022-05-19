@@ -25,19 +25,18 @@ export interface ScheduledDeliveryShipment {
      * @type {string}
      * @memberof ScheduledDeliveryShipment
      */
-    scheduledDeliveryServiceType?: string;
+    'scheduledDeliveryServiceType'?: string;
     /**
      * Earliest nominated delivery date for the scheduled delivery.
      * @type {string}
      * @memberof ScheduledDeliveryShipment
      */
-    earliestNominatedDeliveryDate?: string;
+    'earliestNominatedDeliveryDate'?: string;
     /**
      * Latest nominated delivery date for the scheduled delivery.
      * @type {string}
      * @memberof ScheduledDeliveryShipment
      */
-    latestNominatedDeliveryDate?: string;
+    'latestNominatedDeliveryDate'?: string;
 }
-
 

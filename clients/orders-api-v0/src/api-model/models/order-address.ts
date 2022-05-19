@@ -26,13 +26,12 @@ export interface OrderAddress {
      * @type {string}
      * @memberof OrderAddress
      */
-    AmazonOrderId: string;
+    'AmazonOrderId': string;
     /**
      * 
      * @type {Address}
      * @memberof OrderAddress
      */
-    ShippingAddress?: Address;
+    'ShippingAddress'?: Address;
 }
-
 

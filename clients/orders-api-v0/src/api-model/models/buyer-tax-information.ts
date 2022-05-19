@@ -25,25 +25,24 @@ export interface BuyerTaxInformation {
      * @type {string}
      * @memberof BuyerTaxInformation
      */
-    BuyerLegalCompanyName?: string;
+    'BuyerLegalCompanyName'?: string;
     /**
      * Business buyer\'s address.
      * @type {string}
      * @memberof BuyerTaxInformation
      */
-    BuyerBusinessAddress?: string;
+    'BuyerBusinessAddress'?: string;
     /**
      * Business buyer\'s tax registration ID.
      * @type {string}
      * @memberof BuyerTaxInformation
      */
-    BuyerTaxRegistrationId?: string;
+    'BuyerTaxRegistrationId'?: string;
     /**
      * Business buyer\'s tax office.
      * @type {string}
      * @memberof BuyerTaxInformation
      */
-    BuyerTaxOffice?: string;
+    'BuyerTaxOffice'?: string;
 }
-
 

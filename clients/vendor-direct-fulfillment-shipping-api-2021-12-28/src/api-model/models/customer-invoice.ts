@@ -25,13 +25,12 @@ export interface CustomerInvoice {
      * @type {string}
      * @memberof CustomerInvoice
      */
-    purchaseOrderNumber: string;
+    'purchaseOrderNumber': string;
     /**
      * The Base64encoded customer invoice.
      * @type {string}
      * @memberof CustomerInvoice
      */
-    content: string;
+    'content': string;
 }
-
 

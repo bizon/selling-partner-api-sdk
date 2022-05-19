@@ -25,13 +25,12 @@ export interface CreateRestrictedDataTokenResponse {
      * @type {string}
      * @memberof CreateRestrictedDataTokenResponse
      */
-    restrictedDataToken?: string;
+    'restrictedDataToken'?: string;
     /**
      * The lifetime of the Restricted Data Token, in seconds.
      * @type {number}
      * @memberof CreateRestrictedDataTokenResponse
      */
-    expiresIn?: number;
+    'expiresIn'?: number;
 }
-
 

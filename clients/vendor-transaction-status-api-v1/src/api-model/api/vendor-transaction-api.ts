@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -34,7 +34,7 @@ export const VendorTransactionApiAxiosParamCreator = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransaction: async (transactionId: string, options: any = {}): Promise<RequestArgs> => {
+        getTransaction: async (transactionId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'transactionId' is not null or undefined
             assertParamExists('getTransaction', 'transactionId', transactionId)
             const localVarPath = `/vendor/transactions/v1/transactions/{transactionId}`
@@ -52,7 +52,7 @@ export const VendorTransactionApiAxiosParamCreator = function (configuration?: C
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -77,7 +77,7 @@ export const VendorTransactionApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTransaction(transactionId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetTransactionResponse>> {
+        async getTransaction(transactionId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetTransactionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getTransaction(transactionId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -131,7 +131,7 @@ export class VendorTransactionApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorTransactionApi
      */
-    public getTransaction(requestParameters: VendorTransactionApiGetTransactionRequest, options?: any) {
+    public getTransaction(requestParameters: VendorTransactionApiGetTransactionRequest, options?: AxiosRequestConfig) {
         return VendorTransactionApiFp(this.configuration).getTransaction(requestParameters.transactionId, options).then((request) => request(this.axios, this.basePath));
     }
 }

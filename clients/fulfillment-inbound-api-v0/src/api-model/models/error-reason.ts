@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum ErrorReason {
-    DoesNotExist = 'DoesNotExist',
-    InvalidAsin = 'InvalidASIN'
-}
+
+export const ErrorReason = {
+    DoesNotExist: 'DoesNotExist',
+    InvalidAsin: 'InvalidASIN'
+} as const;
+
+export type ErrorReason = typeof ErrorReason[keyof typeof ErrorReason];
 
 
 

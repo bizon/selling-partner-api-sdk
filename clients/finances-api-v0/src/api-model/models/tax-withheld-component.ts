@@ -26,13 +26,12 @@ export interface TaxWithheldComponent {
      * @type {string}
      * @memberof TaxWithheldComponent
      */
-    TaxCollectionModel?: string;
+    'TaxCollectionModel'?: string;
     /**
      * A list of charge information on the seller\'s account.
      * @type {Array<ChargeComponent>}
      * @memberof TaxWithheldComponent
      */
-    TaxesWithheld?: Array<ChargeComponent>;
+    'TaxesWithheld'?: Array<ChargeComponent>;
 }
-
 

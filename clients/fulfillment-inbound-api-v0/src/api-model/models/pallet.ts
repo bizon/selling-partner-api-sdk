@@ -27,19 +27,18 @@ export interface Pallet {
      * @type {Dimensions}
      * @memberof Pallet
      */
-    Dimensions: Dimensions;
+    'Dimensions': Dimensions;
     /**
      * 
      * @type {Weight}
      * @memberof Pallet
      */
-    Weight?: Weight;
+    'Weight'?: Weight;
     /**
      * Indicates whether pallets will be stacked when carrier arrives for pick-up.
      * @type {boolean}
      * @memberof Pallet
      */
-    IsStacked: boolean;
+    'IsStacked': boolean;
 }
-
 

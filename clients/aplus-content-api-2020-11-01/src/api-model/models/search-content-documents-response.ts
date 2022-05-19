@@ -24,4 +24,3 @@ import { SearchContentDocumentsResponseAllOf } from './search-content-documents-
 export type SearchContentDocumentsResponse = AplusPaginatedResponse & SearchContentDocumentsResponseAllOf;
 
 
-

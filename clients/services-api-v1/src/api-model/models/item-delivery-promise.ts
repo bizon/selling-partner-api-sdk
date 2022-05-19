@@ -25,13 +25,12 @@ export interface ItemDeliveryPromise {
      * @type {string}
      * @memberof ItemDeliveryPromise
      */
-    startTime?: string;
+    'startTime'?: string;
     /**
      * The date and time of the end of the promised delivery window, in ISO 8601 format.
      * @type {string}
      * @memberof ItemDeliveryPromise
      */
-    endTime?: string;
+    'endTime'?: string;
 }
-
 

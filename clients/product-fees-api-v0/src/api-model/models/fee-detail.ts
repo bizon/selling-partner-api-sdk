@@ -27,37 +27,36 @@ export interface FeeDetail {
      * @type {string}
      * @memberof FeeDetail
      */
-    FeeType: string;
+    'FeeType': string;
     /**
      * 
      * @type {MoneyType}
      * @memberof FeeDetail
      */
-    FeeAmount: MoneyType;
+    'FeeAmount': MoneyType;
     /**
      * 
      * @type {MoneyType}
      * @memberof FeeDetail
      */
-    FeePromotion?: MoneyType;
+    'FeePromotion'?: MoneyType;
     /**
      * 
      * @type {MoneyType}
      * @memberof FeeDetail
      */
-    TaxAmount?: MoneyType;
+    'TaxAmount'?: MoneyType;
     /**
      * 
      * @type {MoneyType}
      * @memberof FeeDetail
      */
-    FinalFee: MoneyType;
+    'FinalFee': MoneyType;
     /**
      * A list of other fees that contribute to a given fee.
      * @type {Array<IncludedFeeDetail>}
      * @memberof FeeDetail
      */
-    IncludedFeeDetailList?: Array<IncludedFeeDetail>;
+    'IncludedFeeDetailList'?: Array<IncludedFeeDetail>;
 }
-
 

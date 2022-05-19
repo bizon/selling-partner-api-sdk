@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -40,7 +40,7 @@ export const FbaInventoryApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getInventorySummaries: async (granularityType: 'Marketplace', granularityId: string, marketplaceIds: Array<string>, details?: boolean, startDateTime?: string, sellerSkus?: Array<string>, nextToken?: string, options: any = {}): Promise<RequestArgs> => {
+        getInventorySummaries: async (granularityType: 'Marketplace', granularityId: string, marketplaceIds: Array<string>, details?: boolean, startDateTime?: string, sellerSkus?: Array<string>, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'granularityType' is not null or undefined
             assertParamExists('getInventorySummaries', 'granularityType', granularityType)
             // verify required parameter 'granularityId' is not null or undefined
@@ -91,7 +91,7 @@ export const FbaInventoryApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -122,7 +122,7 @@ export const FbaInventoryApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getInventorySummaries(granularityType: 'Marketplace', granularityId: string, marketplaceIds: Array<string>, details?: boolean, startDateTime?: string, sellerSkus?: Array<string>, nextToken?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInventorySummariesResponse>> {
+        async getInventorySummaries(granularityType: 'Marketplace', granularityId: string, marketplaceIds: Array<string>, details?: boolean, startDateTime?: string, sellerSkus?: Array<string>, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInventorySummariesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getInventorySummaries(granularityType, granularityId, marketplaceIds, details, startDateTime, sellerSkus, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -224,7 +224,7 @@ export class FbaInventoryApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInventoryApi
      */
-    public getInventorySummaries(requestParameters: FbaInventoryApiGetInventorySummariesRequest, options?: any) {
+    public getInventorySummaries(requestParameters: FbaInventoryApiGetInventorySummariesRequest, options?: AxiosRequestConfig) {
         return FbaInventoryApiFp(this.configuration).getInventorySummaries(requestParameters.granularityType, requestParameters.granularityId, requestParameters.marketplaceIds, requestParameters.details, requestParameters.startDateTime, requestParameters.sellerSkus, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }

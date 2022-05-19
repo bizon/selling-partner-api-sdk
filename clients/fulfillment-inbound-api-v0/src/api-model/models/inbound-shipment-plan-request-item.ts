@@ -27,37 +27,36 @@ export interface InboundShipmentPlanRequestItem {
      * @type {string}
      * @memberof InboundShipmentPlanRequestItem
      */
-    SellerSKU: string;
+    'SellerSKU': string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
      * @type {string}
      * @memberof InboundShipmentPlanRequestItem
      */
-    ASIN: string;
+    'ASIN': string;
     /**
      * 
      * @type {Condition}
      * @memberof InboundShipmentPlanRequestItem
      */
-    Condition: Condition;
+    'Condition': Condition;
     /**
      * The item quantity.
      * @type {number}
      * @memberof InboundShipmentPlanRequestItem
      */
-    Quantity: number;
+    'Quantity': number;
     /**
      * The item quantity.
      * @type {number}
      * @memberof InboundShipmentPlanRequestItem
      */
-    QuantityInCase?: number;
+    'QuantityInCase'?: number;
     /**
      * A list of preparation instructions and who is responsible for that preparation.
      * @type {Array<PrepDetails>}
      * @memberof InboundShipmentPlanRequestItem
      */
-    PrepDetailsList?: Array<PrepDetails>;
+    'PrepDetailsList'?: Array<PrepDetails>;
 }
-
 

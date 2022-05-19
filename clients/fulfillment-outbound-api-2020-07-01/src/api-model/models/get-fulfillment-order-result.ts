@@ -30,31 +30,30 @@ export interface GetFulfillmentOrderResult {
      * @type {FulfillmentOrder}
      * @memberof GetFulfillmentOrderResult
      */
-    fulfillmentOrder: FulfillmentOrder;
+    'fulfillmentOrder': FulfillmentOrder;
     /**
      * An array of fulfillment order item information.
      * @type {Array<FulfillmentOrderItem>}
      * @memberof GetFulfillmentOrderResult
      */
-    fulfillmentOrderItems: Array<FulfillmentOrderItem>;
+    'fulfillmentOrderItems': Array<FulfillmentOrderItem>;
     /**
      * An array of fulfillment shipment information.
      * @type {Array<FulfillmentShipment>}
      * @memberof GetFulfillmentOrderResult
      */
-    fulfillmentShipments?: Array<FulfillmentShipment>;
+    'fulfillmentShipments'?: Array<FulfillmentShipment>;
     /**
      * An array of items that Amazon accepted for return. Returns empty if no items were accepted for return.
      * @type {Array<ReturnItem>}
      * @memberof GetFulfillmentOrderResult
      */
-    returnItems: Array<ReturnItem>;
+    'returnItems': Array<ReturnItem>;
     /**
      * An array of return authorization information.
      * @type {Array<ReturnAuthorization>}
      * @memberof GetFulfillmentOrderResult
      */
-    returnAuthorizations: Array<ReturnAuthorization>;
+    'returnAuthorizations': Array<ReturnAuthorization>;
 }
-
 

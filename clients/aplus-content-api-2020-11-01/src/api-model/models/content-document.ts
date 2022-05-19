@@ -27,31 +27,30 @@ export interface ContentDocument {
      * @type {string}
      * @memberof ContentDocument
      */
-    name: string;
+    'name': string;
     /**
      * 
      * @type {ContentType}
      * @memberof ContentDocument
      */
-    contentType: ContentType;
+    'contentType': ContentType;
     /**
      * The A+ Content document subtype. This represents a special-purpose type of an A+ Content document. Not every A+ Content document type will have a subtype, and subtypes may change at any time.
      * @type {string}
      * @memberof ContentDocument
      */
-    contentSubType?: string;
+    'contentSubType'?: string;
     /**
      * The IETF language tag. This only supports the primary language subtag with one secondary language subtag. The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary subtags. **Pattern:** ^[a-z]{2,}-[A-Z0-9]{2,}$
      * @type {string}
      * @memberof ContentDocument
      */
-    locale: string;
+    'locale': string;
     /**
      * A list of A+ Content modules.
      * @type {Array<ContentModule>}
      * @memberof ContentDocument
      */
-    contentModuleList: Array<ContentModule>;
+    'contentModuleList': Array<ContentModule>;
 }
-
 

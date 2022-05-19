@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum AddressTypeEnum {
-    Residential = 'Residential',
-    Commercial = 'Commercial'
-}
+
+export const AddressTypeEnum = {
+    Residential: 'Residential',
+    Commercial: 'Commercial'
+} as const;
+
+export type AddressTypeEnum = typeof AddressTypeEnum[keyof typeof AddressTypeEnum];
 
 
 

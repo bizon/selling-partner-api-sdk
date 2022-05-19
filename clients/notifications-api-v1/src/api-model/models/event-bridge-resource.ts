@@ -25,19 +25,18 @@ export interface EventBridgeResource {
      * @type {string}
      * @memberof EventBridgeResource
      */
-    name: string;
+    'name': string;
     /**
      * The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, see https://docs.aws.amazon.com/general/latest/gr/ev.html.
      * @type {string}
      * @memberof EventBridgeResource
      */
-    region: string;
+    'region': string;
     /**
      * The identifier for the AWS account that is responsible for charges related to receiving notifications.
      * @type {string}
      * @memberof EventBridgeResource
      */
-    accountId: string;
+    'accountId': string;
 }
-
 

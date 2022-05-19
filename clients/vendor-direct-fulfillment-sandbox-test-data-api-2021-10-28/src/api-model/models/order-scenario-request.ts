@@ -26,13 +26,12 @@ export interface OrderScenarioRequest {
      * @type {PartyIdentification}
      * @memberof OrderScenarioRequest
      */
-    sellingParty: PartyIdentification;
+    'sellingParty': PartyIdentification;
     /**
      * 
      * @type {PartyIdentification}
      * @memberof OrderScenarioRequest
      */
-    shipFromParty: PartyIdentification;
+    'shipFromParty': PartyIdentification;
 }
-
 

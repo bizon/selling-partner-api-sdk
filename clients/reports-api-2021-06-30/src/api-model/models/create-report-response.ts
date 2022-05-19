@@ -25,7 +25,6 @@ export interface CreateReportResponse {
      * @type {string}
      * @memberof CreateReportResponse
      */
-    reportId: string;
+    'reportId': string;
 }
-
 

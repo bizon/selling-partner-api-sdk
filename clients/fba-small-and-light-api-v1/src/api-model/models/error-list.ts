@@ -25,7 +25,6 @@ export interface ErrorList {
      * @type {Array<Error>}
      * @memberof ErrorList
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

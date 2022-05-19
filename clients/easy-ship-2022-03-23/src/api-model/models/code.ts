@@ -19,19 +19,22 @@
  * @export
  * @enum {string}
  */
-export enum Code {
-    InvalidInput = 'InvalidInput',
-    InvalidTimeSlotId = 'InvalidTimeSlotId',
-    ScheduledPackageAlreadyExists = 'ScheduledPackageAlreadyExists',
-    ScheduleWindowExpired = 'ScheduleWindowExpired',
-    RetryableAfterGettingNewSlots = 'RetryableAfterGettingNewSlots',
-    TimeSlotNotAvailable = 'TimeSlotNotAvailable',
-    ResourceNotFound = 'ResourceNotFound',
-    InvalidOrderState = 'InvalidOrderState',
-    RegionNotSupported = 'RegionNotSupported',
-    OrderNotEligibleForRescheduling = 'OrderNotEligibleForRescheduling',
-    InternalServerError = 'InternalServerError'
-}
+
+export const Code = {
+    InvalidInput: 'InvalidInput',
+    InvalidTimeSlotId: 'InvalidTimeSlotId',
+    ScheduledPackageAlreadyExists: 'ScheduledPackageAlreadyExists',
+    ScheduleWindowExpired: 'ScheduleWindowExpired',
+    RetryableAfterGettingNewSlots: 'RetryableAfterGettingNewSlots',
+    TimeSlotNotAvailable: 'TimeSlotNotAvailable',
+    ResourceNotFound: 'ResourceNotFound',
+    InvalidOrderState: 'InvalidOrderState',
+    RegionNotSupported: 'RegionNotSupported',
+    OrderNotEligibleForRescheduling: 'OrderNotEligibleForRescheduling',
+    InternalServerError: 'InternalServerError'
+} as const;
+
+export type Code = typeof Code[keyof typeof Code];
 
 
 

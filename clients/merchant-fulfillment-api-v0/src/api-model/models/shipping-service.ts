@@ -30,79 +30,78 @@ export interface ShippingService {
      * @type {string}
      * @memberof ShippingService
      */
-    ShippingServiceName: string;
+    'ShippingServiceName': string;
     /**
      * The name of the carrier.
      * @type {string}
      * @memberof ShippingService
      */
-    CarrierName: string;
+    'CarrierName': string;
     /**
      * An Amazon-defined shipping service identifier.
      * @type {string}
      * @memberof ShippingService
      */
-    ShippingServiceId: string;
+    'ShippingServiceId': string;
     /**
      * An Amazon-defined shipping service offer identifier.
      * @type {string}
      * @memberof ShippingService
      */
-    ShippingServiceOfferId: string;
+    'ShippingServiceOfferId': string;
     /**
      * 
      * @type {string}
      * @memberof ShippingService
      */
-    ShipDate: string;
+    'ShipDate': string;
     /**
      * 
      * @type {string}
      * @memberof ShippingService
      */
-    EarliestEstimatedDeliveryDate?: string;
+    'EarliestEstimatedDeliveryDate'?: string;
     /**
      * 
      * @type {string}
      * @memberof ShippingService
      */
-    LatestEstimatedDeliveryDate?: string;
+    'LatestEstimatedDeliveryDate'?: string;
     /**
      * 
      * @type {CurrencyAmount}
      * @memberof ShippingService
      */
-    Rate: CurrencyAmount;
+    'Rate': CurrencyAmount;
     /**
      * 
      * @type {ShippingServiceOptions}
      * @memberof ShippingService
      */
-    ShippingServiceOptions: ShippingServiceOptions;
+    'ShippingServiceOptions': ShippingServiceOptions;
     /**
      * 
      * @type {AvailableShippingServiceOptions}
      * @memberof ShippingService
      */
-    AvailableShippingServiceOptions?: AvailableShippingServiceOptions;
+    'AvailableShippingServiceOptions'?: AvailableShippingServiceOptions;
     /**
      * List of label formats.
      * @type {Array<LabelFormat>}
      * @memberof ShippingService
      */
-    AvailableLabelFormats?: Array<LabelFormat>;
+    'AvailableLabelFormats'?: Array<LabelFormat>;
     /**
      * The available label formats.
      * @type {Array<LabelFormatOption>}
      * @memberof ShippingService
      */
-    AvailableFormatOptionsForLabel?: Array<LabelFormatOption>;
+    'AvailableFormatOptionsForLabel'?: Array<LabelFormatOption>;
     /**
      * When true, additional seller inputs are required.
      * @type {boolean}
      * @memberof ShippingService
      */
-    RequiresAdditionalSellerInputs: boolean;
+    'RequiresAdditionalSellerInputs': boolean;
 }
-
 

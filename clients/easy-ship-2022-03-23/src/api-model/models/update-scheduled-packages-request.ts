@@ -26,13 +26,12 @@ export interface UpdateScheduledPackagesRequest {
      * @type {string}
      * @memberof UpdateScheduledPackagesRequest
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * A list of package update details.
      * @type {Array<UpdatePackageDetails>}
      * @memberof UpdateScheduledPackagesRequest
      */
-    updatePackageDetailsList: Array<UpdatePackageDetails>;
+    'updatePackageDetailsList': Array<UpdatePackageDetails>;
 }
-
 

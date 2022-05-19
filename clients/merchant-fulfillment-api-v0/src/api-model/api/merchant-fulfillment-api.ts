@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -48,7 +48,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelShipment: async (shipmentId: string, options: any = {}): Promise<RequestArgs> => {
+        cancelShipment: async (shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('cancelShipment', 'shipmentId', shipmentId)
             const localVarPath = `/mfn/v0/shipments/{shipmentId}`
@@ -66,7 +66,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -81,7 +81,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelShipmentOld: async (shipmentId: string, options: any = {}): Promise<RequestArgs> => {
+        cancelShipmentOld: async (shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('cancelShipmentOld', 'shipmentId', shipmentId)
             const localVarPath = `/mfn/v0/shipments/{shipmentId}/cancel`
@@ -99,7 +99,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -114,7 +114,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createShipment: async (body: CreateShipmentRequest, options: any = {}): Promise<RequestArgs> => {
+        createShipment: async (body: CreateShipmentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createShipment', 'body', body)
             const localVarPath = `/mfn/v0/shipments`;
@@ -133,7 +133,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -149,7 +149,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAdditionalSellerInputs: async (body: GetAdditionalSellerInputsRequest, options: any = {}): Promise<RequestArgs> => {
+        getAdditionalSellerInputs: async (body: GetAdditionalSellerInputsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getAdditionalSellerInputs', 'body', body)
             const localVarPath = `/mfn/v0/additionalSellerInputs`;
@@ -168,7 +168,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -184,7 +184,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAdditionalSellerInputsOld: async (body: GetAdditionalSellerInputsRequest, options: any = {}): Promise<RequestArgs> => {
+        getAdditionalSellerInputsOld: async (body: GetAdditionalSellerInputsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getAdditionalSellerInputsOld', 'body', body)
             const localVarPath = `/mfn/v0/sellerInputs`;
@@ -203,7 +203,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -219,7 +219,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEligibleShipmentServices: async (body: GetEligibleShipmentServicesRequest, options: any = {}): Promise<RequestArgs> => {
+        getEligibleShipmentServices: async (body: GetEligibleShipmentServicesRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getEligibleShipmentServices', 'body', body)
             const localVarPath = `/mfn/v0/eligibleShippingServices`;
@@ -238,7 +238,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -254,7 +254,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEligibleShipmentServicesOld: async (body: GetEligibleShipmentServicesRequest, options: any = {}): Promise<RequestArgs> => {
+        getEligibleShipmentServicesOld: async (body: GetEligibleShipmentServicesRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getEligibleShipmentServicesOld', 'body', body)
             const localVarPath = `/mfn/v0/eligibleServices`;
@@ -273,7 +273,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -289,7 +289,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipment: async (shipmentId: string, options: any = {}): Promise<RequestArgs> => {
+        getShipment: async (shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getShipment', 'shipmentId', shipmentId)
             const localVarPath = `/mfn/v0/shipments/{shipmentId}`
@@ -307,7 +307,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -332,7 +332,7 @@ export const MerchantFulfillmentApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelShipment(shipmentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelShipmentResponse>> {
+        async cancelShipment(shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelShipment(shipmentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -342,7 +342,7 @@ export const MerchantFulfillmentApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelShipmentOld(shipmentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelShipmentResponse>> {
+        async cancelShipmentOld(shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelShipmentOld(shipmentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -352,7 +352,7 @@ export const MerchantFulfillmentApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createShipment(body: CreateShipmentRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateShipmentResponse>> {
+        async createShipment(body: CreateShipmentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createShipment(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -362,7 +362,7 @@ export const MerchantFulfillmentApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAdditionalSellerInputs(body: GetAdditionalSellerInputsRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAdditionalSellerInputsResponse>> {
+        async getAdditionalSellerInputs(body: GetAdditionalSellerInputsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAdditionalSellerInputsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAdditionalSellerInputs(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -372,7 +372,7 @@ export const MerchantFulfillmentApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAdditionalSellerInputsOld(body: GetAdditionalSellerInputsRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAdditionalSellerInputsResponse>> {
+        async getAdditionalSellerInputsOld(body: GetAdditionalSellerInputsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAdditionalSellerInputsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAdditionalSellerInputsOld(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -382,7 +382,7 @@ export const MerchantFulfillmentApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getEligibleShipmentServices(body: GetEligibleShipmentServicesRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetEligibleShipmentServicesResponse>> {
+        async getEligibleShipmentServices(body: GetEligibleShipmentServicesRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetEligibleShipmentServicesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getEligibleShipmentServices(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -392,7 +392,7 @@ export const MerchantFulfillmentApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getEligibleShipmentServicesOld(body: GetEligibleShipmentServicesRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetEligibleShipmentServicesResponse>> {
+        async getEligibleShipmentServicesOld(body: GetEligibleShipmentServicesRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetEligibleShipmentServicesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getEligibleShipmentServicesOld(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -402,7 +402,7 @@ export const MerchantFulfillmentApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShipment(shipmentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentResponse>> {
+        async getShipment(shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShipment(shipmentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -617,7 +617,7 @@ export class MerchantFulfillmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public cancelShipment(requestParameters: MerchantFulfillmentApiCancelShipmentRequest, options?: any) {
+    public cancelShipment(requestParameters: MerchantFulfillmentApiCancelShipmentRequest, options?: AxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).cancelShipment(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -628,7 +628,7 @@ export class MerchantFulfillmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public cancelShipmentOld(requestParameters: MerchantFulfillmentApiCancelShipmentOldRequest, options?: any) {
+    public cancelShipmentOld(requestParameters: MerchantFulfillmentApiCancelShipmentOldRequest, options?: AxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).cancelShipmentOld(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -639,7 +639,7 @@ export class MerchantFulfillmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public createShipment(requestParameters: MerchantFulfillmentApiCreateShipmentRequest, options?: any) {
+    public createShipment(requestParameters: MerchantFulfillmentApiCreateShipmentRequest, options?: AxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).createShipment(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -650,7 +650,7 @@ export class MerchantFulfillmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public getAdditionalSellerInputs(requestParameters: MerchantFulfillmentApiGetAdditionalSellerInputsRequest, options?: any) {
+    public getAdditionalSellerInputs(requestParameters: MerchantFulfillmentApiGetAdditionalSellerInputsRequest, options?: AxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).getAdditionalSellerInputs(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -661,7 +661,7 @@ export class MerchantFulfillmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public getAdditionalSellerInputsOld(requestParameters: MerchantFulfillmentApiGetAdditionalSellerInputsOldRequest, options?: any) {
+    public getAdditionalSellerInputsOld(requestParameters: MerchantFulfillmentApiGetAdditionalSellerInputsOldRequest, options?: AxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).getAdditionalSellerInputsOld(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -672,7 +672,7 @@ export class MerchantFulfillmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public getEligibleShipmentServices(requestParameters: MerchantFulfillmentApiGetEligibleShipmentServicesRequest, options?: any) {
+    public getEligibleShipmentServices(requestParameters: MerchantFulfillmentApiGetEligibleShipmentServicesRequest, options?: AxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).getEligibleShipmentServices(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -683,7 +683,7 @@ export class MerchantFulfillmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public getEligibleShipmentServicesOld(requestParameters: MerchantFulfillmentApiGetEligibleShipmentServicesOldRequest, options?: any) {
+    public getEligibleShipmentServicesOld(requestParameters: MerchantFulfillmentApiGetEligibleShipmentServicesOldRequest, options?: AxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).getEligibleShipmentServicesOld(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -694,7 +694,7 @@ export class MerchantFulfillmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public getShipment(requestParameters: MerchantFulfillmentApiGetShipmentRequest, options?: any) {
+    public getShipment(requestParameters: MerchantFulfillmentApiGetShipmentRequest, options?: AxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).getShipment(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 }

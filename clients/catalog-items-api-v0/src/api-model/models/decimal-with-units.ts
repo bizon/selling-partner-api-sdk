@@ -25,13 +25,12 @@ export interface DecimalWithUnits {
      * @type {number}
      * @memberof DecimalWithUnits
      */
-    value?: number;
+    'value'?: number;
     /**
      * The unit of the decimal value.
      * @type {string}
      * @memberof DecimalWithUnits
      */
-    Units?: string;
+    'Units'?: string;
 }
-
 

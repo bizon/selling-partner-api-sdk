@@ -27,13 +27,12 @@ export interface IdentifierType {
      * @type {ASINIdentifier}
      * @memberof IdentifierType
      */
-    MarketplaceASIN: ASINIdentifier;
+    'MarketplaceASIN': ASINIdentifier;
     /**
      * 
      * @type {SellerSKUIdentifier}
      * @memberof IdentifierType
      */
-    SKUIdentifier?: SellerSKUIdentifier;
+    'SKUIdentifier'?: SellerSKUIdentifier;
 }
-
 

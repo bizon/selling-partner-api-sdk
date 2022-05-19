@@ -26,13 +26,12 @@ export interface InboundShipmentResponse {
      * @type {InboundShipmentResult}
      * @memberof InboundShipmentResponse
      */
-    payload?: InboundShipmentResult;
+    'payload'?: InboundShipmentResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof InboundShipmentResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

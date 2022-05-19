@@ -26,24 +26,21 @@ export interface ServiceLocation {
      * @type {string}
      * @memberof ServiceLocation
      */
-    serviceLocationType?: ServiceLocationServiceLocationTypeEnum;
+    'serviceLocationType'?: ServiceLocationServiceLocationTypeEnum;
     /**
      * 
      * @type {Address}
      * @memberof ServiceLocation
      */
-    address?: Address;
+    'address'?: Address;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ServiceLocationServiceLocationTypeEnum {
-    InHome = 'IN_HOME',
-    InStore = 'IN_STORE',
-    Online = 'ONLINE'
-}
+export const ServiceLocationServiceLocationTypeEnum = {
+    InHome: 'IN_HOME',
+    InStore: 'IN_STORE',
+    Online: 'ONLINE'
+} as const;
 
+export type ServiceLocationServiceLocationTypeEnum = typeof ServiceLocationServiceLocationTypeEnum[keyof typeof ServiceLocationServiceLocationTypeEnum];
 
 

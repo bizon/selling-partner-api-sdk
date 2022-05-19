@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum UnitOfWeight {
-    Grams = 'Grams',
-    G = 'G'
-}
+
+export const UnitOfWeight = {
+    Grams: 'Grams',
+    G: 'G'
+} as const;
+
+export type UnitOfWeight = typeof UnitOfWeight[keyof typeof UnitOfWeight];
 
 
 

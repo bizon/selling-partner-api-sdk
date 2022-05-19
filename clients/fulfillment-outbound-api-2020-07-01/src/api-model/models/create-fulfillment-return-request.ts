@@ -26,7 +26,6 @@ export interface CreateFulfillmentReturnRequest {
      * @type {Array<CreateReturnItem>}
      * @memberof CreateFulfillmentReturnRequest
      */
-    items: Array<CreateReturnItem>;
+    'items': Array<CreateReturnItem>;
 }
-
 

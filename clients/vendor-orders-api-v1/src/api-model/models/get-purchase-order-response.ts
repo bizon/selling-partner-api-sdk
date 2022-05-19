@@ -26,13 +26,12 @@ export interface GetPurchaseOrderResponse {
      * @type {Order}
      * @memberof GetPurchaseOrderResponse
      */
-    payload?: Order;
+    'payload'?: Order;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetPurchaseOrderResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

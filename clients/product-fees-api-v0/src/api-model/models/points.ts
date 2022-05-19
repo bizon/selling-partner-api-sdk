@@ -26,13 +26,12 @@ export interface Points {
      * @type {number}
      * @memberof Points
      */
-    PointsNumber?: number;
+    'PointsNumber'?: number;
     /**
      * 
      * @type {MoneyType}
      * @memberof Points
      */
-    PointsMonetaryValue?: MoneyType;
+    'PointsMonetaryValue'?: MoneyType;
 }
-
 

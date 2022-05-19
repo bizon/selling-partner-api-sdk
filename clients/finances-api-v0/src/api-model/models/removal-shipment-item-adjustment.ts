@@ -26,43 +26,42 @@ export interface RemovalShipmentItemAdjustment {
      * @type {string}
      * @memberof RemovalShipmentItemAdjustment
      */
-    RemovalShipmentItemId?: string;
+    'RemovalShipmentItemId'?: string;
     /**
      * The tax collection model applied to the item.  Possible values:  * MarketplaceFacilitator - Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.  * Standard - Tax is paid to the seller and not remitted to the taxing authority by Amazon.
      * @type {string}
      * @memberof RemovalShipmentItemAdjustment
      */
-    TaxCollectionModel?: string;
+    'TaxCollectionModel'?: string;
     /**
      * The Amazon fulfillment network SKU for the item.
      * @type {string}
      * @memberof RemovalShipmentItemAdjustment
      */
-    FulfillmentNetworkSKU?: string;
+    'FulfillmentNetworkSKU'?: string;
     /**
      * Adjusted quantity of removal shipmentItemAdjustment items.
      * @type {number}
      * @memberof RemovalShipmentItemAdjustment
      */
-    AdjustedQuantity?: number;
+    'AdjustedQuantity'?: number;
     /**
      * 
      * @type {Currency}
      * @memberof RemovalShipmentItemAdjustment
      */
-    RevenueAdjustment?: Currency;
+    'RevenueAdjustment'?: Currency;
     /**
      * 
      * @type {Currency}
      * @memberof RemovalShipmentItemAdjustment
      */
-    TaxAmountAdjustment?: Currency;
+    'TaxAmountAdjustment'?: Currency;
     /**
      * 
      * @type {Currency}
      * @memberof RemovalShipmentItemAdjustment
      */
-    TaxWithheldAdjustment?: Currency;
+    'TaxWithheldAdjustment'?: Currency;
 }
-
 

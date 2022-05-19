@@ -29,37 +29,36 @@ export interface Rate {
      * @type {string}
      * @memberof Rate
      */
-    rateId?: string;
+    'rateId'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof Rate
      */
-    totalCharge?: Currency;
+    'totalCharge'?: Currency;
     /**
      * 
      * @type {Weight}
      * @memberof Rate
      */
-    billedWeight?: Weight;
+    'billedWeight'?: Weight;
     /**
      * The time after which the offering will expire.
      * @type {string}
      * @memberof Rate
      */
-    expirationTime?: string;
+    'expirationTime'?: string;
     /**
      * 
      * @type {ServiceType}
      * @memberof Rate
      */
-    serviceType?: ServiceType;
+    'serviceType'?: ServiceType;
     /**
      * 
      * @type {ShippingPromiseSet}
      * @memberof Rate
      */
-    promise?: ShippingPromiseSet;
+    'promise'?: ShippingPromiseSet;
 }
-
 

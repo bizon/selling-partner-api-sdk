@@ -26,7 +26,6 @@ export interface SubmitShipmentConfirmationsRequest {
      * @type {Array<ShipmentConfirmation>}
      * @memberof SubmitShipmentConfirmationsRequest
      */
-    shipmentConfirmations?: Array<ShipmentConfirmation>;
+    'shipmentConfirmations'?: Array<ShipmentConfirmation>;
 }
-
 

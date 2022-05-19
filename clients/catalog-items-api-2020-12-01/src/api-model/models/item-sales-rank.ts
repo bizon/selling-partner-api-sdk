@@ -25,19 +25,18 @@ export interface ItemSalesRank {
      * @type {string}
      * @memberof ItemSalesRank
      */
-    title: string;
+    'title': string;
     /**
      * Corresponding Amazon retail website link, or URL, for the sales rank.
      * @type {string}
      * @memberof ItemSalesRank
      */
-    link?: string;
+    'link'?: string;
     /**
      * Sales rank value.
      * @type {number}
      * @memberof ItemSalesRank
      */
-    rank: number;
+    'rank': number;
 }
-
 

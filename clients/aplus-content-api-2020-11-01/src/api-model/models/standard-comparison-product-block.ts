@@ -27,37 +27,36 @@ export interface StandardComparisonProductBlock {
      * @type {number}
      * @memberof StandardComparisonProductBlock
      */
-    position: number;
+    'position': number;
     /**
      * 
      * @type {ImageComponent}
      * @memberof StandardComparisonProductBlock
      */
-    image?: ImageComponent;
+    'image'?: ImageComponent;
     /**
      * The comparison product title.
      * @type {string}
      * @memberof StandardComparisonProductBlock
      */
-    title?: string;
+    'title'?: string;
     /**
      * The Amazon Standard Identification Number (ASIN).
      * @type {string}
      * @memberof StandardComparisonProductBlock
      */
-    asin?: string;
+    'asin'?: string;
     /**
      * Determines whether this block of content is visually highlighted.
      * @type {boolean}
      * @memberof StandardComparisonProductBlock
      */
-    highlight?: boolean;
+    'highlight'?: boolean;
     /**
      * Comparison metrics for the product.
      * @type {Array<PlainTextItem>}
      * @memberof StandardComparisonProductBlock
      */
-    metrics?: Array<PlainTextItem>;
+    'metrics'?: Array<PlainTextItem>;
 }
-
 

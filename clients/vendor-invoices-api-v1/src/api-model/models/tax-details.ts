@@ -26,47 +26,44 @@ export interface TaxDetails {
      * @type {string}
      * @memberof TaxDetails
      */
-    taxType: TaxDetailsTaxTypeEnum;
+    'taxType': TaxDetailsTaxTypeEnum;
     /**
      * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. <br>**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
      * @type {string}
      * @memberof TaxDetails
      */
-    taxRate?: string;
+    'taxRate'?: string;
     /**
      * 
      * @type {Money}
      * @memberof TaxDetails
      */
-    taxAmount: Money;
+    'taxAmount': Money;
     /**
      * 
      * @type {Money}
      * @memberof TaxDetails
      */
-    taxableAmount?: Money;
+    'taxableAmount'?: Money;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum TaxDetailsTaxTypeEnum {
-    Cgst = 'CGST',
-    Sgst = 'SGST',
-    Cess = 'CESS',
-    Utgst = 'UTGST',
-    Igst = 'IGST',
-    MwSt = 'MwSt.',
-    Pst = 'PST',
-    Tva = 'TVA',
-    Vat = 'VAT',
-    Gst = 'GST',
-    St = 'ST',
-    Consumption = 'Consumption',
-    MutuallyDefined = 'MutuallyDefined',
-    DomesticVat = 'DomesticVAT'
-}
+export const TaxDetailsTaxTypeEnum = {
+    Cgst: 'CGST',
+    Sgst: 'SGST',
+    Cess: 'CESS',
+    Utgst: 'UTGST',
+    Igst: 'IGST',
+    MwSt: 'MwSt.',
+    Pst: 'PST',
+    Tva: 'TVA',
+    Vat: 'VAT',
+    Gst: 'GST',
+    St: 'ST',
+    Consumption: 'Consumption',
+    MutuallyDefined: 'MutuallyDefined',
+    DomesticVat: 'DomesticVAT'
+} as const;
 
+export type TaxDetailsTaxTypeEnum = typeof TaxDetailsTaxTypeEnum[keyof typeof TaxDetailsTaxTypeEnum];
 
 

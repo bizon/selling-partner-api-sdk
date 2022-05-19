@@ -25,13 +25,12 @@ export interface LinkObject {
      * @type {string}
      * @memberof LinkObject
      */
-    href: string;
+    'href': string;
     /**
      * An identifier for this object.
      * @type {string}
      * @memberof LinkObject
      */
-    name?: string;
+    'name'?: string;
 }
-
 

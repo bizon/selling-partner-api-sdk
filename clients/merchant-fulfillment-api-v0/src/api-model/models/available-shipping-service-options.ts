@@ -27,13 +27,12 @@ export interface AvailableShippingServiceOptions {
      * @type {Array<AvailableCarrierWillPickUpOption>}
      * @memberof AvailableShippingServiceOptions
      */
-    AvailableCarrierWillPickUpOptions: Array<AvailableCarrierWillPickUpOption>;
+    'AvailableCarrierWillPickUpOptions': Array<AvailableCarrierWillPickUpOption>;
     /**
      * List of available delivery experience options.
      * @type {Array<AvailableDeliveryExperienceOption>}
      * @memberof AvailableShippingServiceOptions
      */
-    AvailableDeliveryExperienceOptions: Array<AvailableDeliveryExperienceOption>;
+    'AvailableDeliveryExperienceOptions': Array<AvailableDeliveryExperienceOption>;
 }
-
 

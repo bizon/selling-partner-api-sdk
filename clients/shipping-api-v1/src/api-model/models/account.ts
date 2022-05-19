@@ -25,7 +25,6 @@ export interface Account {
      * @type {string}
      * @memberof Account
      */
-    accountId: string;
+    'accountId': string;
 }
-
 

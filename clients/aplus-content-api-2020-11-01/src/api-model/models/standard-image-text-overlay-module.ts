@@ -27,13 +27,12 @@ export interface StandardImageTextOverlayModule {
      * @type {ColorType}
      * @memberof StandardImageTextOverlayModule
      */
-    overlayColorType: ColorType;
+    'overlayColorType': ColorType;
     /**
      * 
      * @type {StandardImageTextBlock}
      * @memberof StandardImageTextOverlayModule
      */
-    block?: StandardImageTextBlock;
+    'block'?: StandardImageTextBlock;
 }
-
 

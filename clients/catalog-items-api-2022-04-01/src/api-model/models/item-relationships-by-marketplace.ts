@@ -26,13 +26,12 @@ export interface ItemRelationshipsByMarketplace {
      * @type {string}
      * @memberof ItemRelationshipsByMarketplace
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * Relationships for the item.
      * @type {Array<ItemRelationship>}
      * @memberof ItemRelationshipsByMarketplace
      */
-    relationships: Array<ItemRelationship>;
+    'relationships': Array<ItemRelationship>;
 }
-
 

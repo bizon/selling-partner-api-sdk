@@ -28,25 +28,24 @@ export interface FeesEstimateResult {
      * @type {string}
      * @memberof FeesEstimateResult
      */
-    Status?: string;
+    'Status'?: string;
     /**
      * 
      * @type {FeesEstimateIdentifier}
      * @memberof FeesEstimateResult
      */
-    FeesEstimateIdentifier?: FeesEstimateIdentifier;
+    'FeesEstimateIdentifier'?: FeesEstimateIdentifier;
     /**
      * 
      * @type {FeesEstimate}
      * @memberof FeesEstimateResult
      */
-    FeesEstimate?: FeesEstimate;
+    'FeesEstimate'?: FeesEstimate;
     /**
      * 
      * @type {FeesEstimateError}
      * @memberof FeesEstimateResult
      */
-    Error?: FeesEstimateError;
+    'Error'?: FeesEstimateError;
 }
-
 

@@ -27,25 +27,24 @@ export interface StandardThreeImageTextModule {
      * @type {TextComponent}
      * @memberof StandardThreeImageTextModule
      */
-    headline?: TextComponent;
+    'headline'?: TextComponent;
     /**
      * 
      * @type {StandardImageTextBlock}
      * @memberof StandardThreeImageTextModule
      */
-    block1?: StandardImageTextBlock;
+    'block1'?: StandardImageTextBlock;
     /**
      * 
      * @type {StandardImageTextBlock}
      * @memberof StandardThreeImageTextModule
      */
-    block2?: StandardImageTextBlock;
+    'block2'?: StandardImageTextBlock;
     /**
      * 
      * @type {StandardImageTextBlock}
      * @memberof StandardThreeImageTextModule
      */
-    block3?: StandardImageTextBlock;
+    'block3'?: StandardImageTextBlock;
 }
-
 

@@ -29,37 +29,36 @@ export interface StandardSingleImageHighlightsModule {
      * @type {ImageComponent}
      * @memberof StandardSingleImageHighlightsModule
      */
-    image?: ImageComponent;
+    'image'?: ImageComponent;
     /**
      * 
      * @type {TextComponent}
      * @memberof StandardSingleImageHighlightsModule
      */
-    headline?: TextComponent;
+    'headline'?: TextComponent;
     /**
      * 
      * @type {StandardTextBlock}
      * @memberof StandardSingleImageHighlightsModule
      */
-    textBlock1?: StandardTextBlock;
+    'textBlock1'?: StandardTextBlock;
     /**
      * 
      * @type {StandardTextBlock}
      * @memberof StandardSingleImageHighlightsModule
      */
-    textBlock2?: StandardTextBlock;
+    'textBlock2'?: StandardTextBlock;
     /**
      * 
      * @type {StandardTextBlock}
      * @memberof StandardSingleImageHighlightsModule
      */
-    textBlock3?: StandardTextBlock;
+    'textBlock3'?: StandardTextBlock;
     /**
      * 
      * @type {StandardHeaderTextListBlock}
      * @memberof StandardSingleImageHighlightsModule
      */
-    bulletedListBlock?: StandardHeaderTextListBlock;
+    'bulletedListBlock'?: StandardHeaderTextListBlock;
 }
-
 

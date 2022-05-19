@@ -25,29 +25,26 @@ export interface ItemVariationsByMarketplace {
      * @type {string}
      * @memberof ItemVariationsByMarketplace
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * Identifiers (ASINs) of the related items.
      * @type {Array<string>}
      * @memberof ItemVariationsByMarketplace
      */
-    asins: Array<string>;
+    'asins': Array<string>;
     /**
      * Type of variation relationship of the Amazon catalog item in the request to the related item(s): \"PARENT\" or \"CHILD\".
      * @type {string}
      * @memberof ItemVariationsByMarketplace
      */
-    variationType: ItemVariationsByMarketplaceVariationTypeEnum;
+    'variationType': ItemVariationsByMarketplaceVariationTypeEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ItemVariationsByMarketplaceVariationTypeEnum {
-    Parent = 'PARENT',
-    Child = 'CHILD'
-}
+export const ItemVariationsByMarketplaceVariationTypeEnum = {
+    Parent: 'PARENT',
+    Child: 'CHILD'
+} as const;
 
+export type ItemVariationsByMarketplaceVariationTypeEnum = typeof ItemVariationsByMarketplaceVariationTypeEnum[keyof typeof ItemVariationsByMarketplaceVariationTypeEnum];
 
 

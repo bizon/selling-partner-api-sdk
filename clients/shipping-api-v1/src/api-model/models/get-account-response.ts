@@ -26,13 +26,12 @@ export interface GetAccountResponse {
      * @type {Account}
      * @memberof GetAccountResponse
      */
-    payload?: Account;
+    'payload'?: Account;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetAccountResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

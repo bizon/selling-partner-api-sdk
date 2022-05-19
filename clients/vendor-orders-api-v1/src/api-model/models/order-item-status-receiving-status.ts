@@ -26,30 +26,27 @@ export interface OrderItemStatusReceivingStatus {
      * @type {string}
      * @memberof OrderItemStatusReceivingStatus
      */
-    receiveStatus?: OrderItemStatusReceivingStatusReceiveStatusEnum;
+    'receiveStatus'?: OrderItemStatusReceivingStatusReceiveStatusEnum;
     /**
      * 
      * @type {ItemQuantity}
      * @memberof OrderItemStatusReceivingStatus
      */
-    receivedQuantity?: ItemQuantity;
+    'receivedQuantity'?: ItemQuantity;
     /**
      * The date when the most recent item was received at the buyer\'s warehouse. Must be in ISO-8601 date/time format.
      * @type {string}
      * @memberof OrderItemStatusReceivingStatus
      */
-    lastReceiveDate?: string;
+    'lastReceiveDate'?: string;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum OrderItemStatusReceivingStatusReceiveStatusEnum {
-    NotReceived = 'NOT_RECEIVED',
-    PartiallyReceived = 'PARTIALLY_RECEIVED',
-    Received = 'RECEIVED'
-}
+export const OrderItemStatusReceivingStatusReceiveStatusEnum = {
+    NotReceived: 'NOT_RECEIVED',
+    PartiallyReceived: 'PARTIALLY_RECEIVED',
+    Received: 'RECEIVED'
+} as const;
 
+export type OrderItemStatusReceivingStatusReceiveStatusEnum = typeof OrderItemStatusReceivingStatusReceiveStatusEnum[keyof typeof OrderItemStatusReceivingStatusReceiveStatusEnum];
 
 

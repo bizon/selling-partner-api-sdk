@@ -26,49 +26,48 @@ export interface InventorySummary {
      * @type {string}
      * @memberof InventorySummary
      */
-    asin?: string;
+    'asin'?: string;
     /**
      * Amazon\'s fulfillment network SKU identifier.
      * @type {string}
      * @memberof InventorySummary
      */
-    fnSku?: string;
+    'fnSku'?: string;
     /**
      * The seller SKU of the item.
      * @type {string}
      * @memberof InventorySummary
      */
-    sellerSku?: string;
+    'sellerSku'?: string;
     /**
      * The condition of the item as described by the seller (for example, New Item).
      * @type {string}
      * @memberof InventorySummary
      */
-    condition?: string;
+    'condition'?: string;
     /**
      * 
      * @type {InventoryDetails}
      * @memberof InventorySummary
      */
-    inventoryDetails?: InventoryDetails;
+    'inventoryDetails'?: InventoryDetails;
     /**
      * The date and time that any quantity was last updated.
      * @type {string}
      * @memberof InventorySummary
      */
-    lastUpdatedTime?: string;
+    'lastUpdatedTime'?: string;
     /**
      * The localized language product title of the item within the specific marketplace.
      * @type {string}
      * @memberof InventorySummary
      */
-    productName?: string;
+    'productName'?: string;
     /**
      * The total number of units in an inbound shipment or in Amazon fulfillment centers.
      * @type {number}
      * @memberof InventorySummary
      */
-    totalQuantity?: number;
+    'totalQuantity'?: number;
 }
-
 

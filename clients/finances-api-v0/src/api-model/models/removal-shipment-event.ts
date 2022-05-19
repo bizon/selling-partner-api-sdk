@@ -26,31 +26,30 @@ export interface RemovalShipmentEvent {
      * @type {string}
      * @memberof RemovalShipmentEvent
      */
-    PostedDate?: string;
+    'PostedDate'?: string;
     /**
      * The merchant removal orderId.
      * @type {string}
      * @memberof RemovalShipmentEvent
      */
-    MerchantOrderId?: string;
+    'MerchantOrderId'?: string;
     /**
      * The identifier for the removal shipment order.
      * @type {string}
      * @memberof RemovalShipmentEvent
      */
-    OrderId?: string;
+    'OrderId'?: string;
     /**
      * The type of removal order.  Possible values:  * WHOLESALE_LIQUIDATION
      * @type {string}
      * @memberof RemovalShipmentEvent
      */
-    TransactionType?: string;
+    'TransactionType'?: string;
     /**
      * A list of information about removal shipment items.
      * @type {Array<RemovalShipmentItem>}
      * @memberof RemovalShipmentEvent
      */
-    RemovalShipmentItemList?: Array<RemovalShipmentItem>;
+    'RemovalShipmentItemList'?: Array<RemovalShipmentItem>;
 }
-
 

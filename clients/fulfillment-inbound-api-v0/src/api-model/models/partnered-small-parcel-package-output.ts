@@ -28,31 +28,30 @@ export interface PartneredSmallParcelPackageOutput {
      * @type {Dimensions}
      * @memberof PartneredSmallParcelPackageOutput
      */
-    Dimensions: Dimensions;
+    'Dimensions': Dimensions;
     /**
      * 
      * @type {Weight}
      * @memberof PartneredSmallParcelPackageOutput
      */
-    Weight: Weight;
+    'Weight': Weight;
     /**
      * The carrier specified with a previous call to putTransportDetails.
      * @type {string}
      * @memberof PartneredSmallParcelPackageOutput
      */
-    CarrierName: string;
+    'CarrierName': string;
     /**
      * The tracking number of the package, provided by the carrier.
      * @type {string}
      * @memberof PartneredSmallParcelPackageOutput
      */
-    TrackingId: string;
+    'TrackingId': string;
     /**
      * 
      * @type {PackageStatus}
      * @memberof PartneredSmallParcelPackageOutput
      */
-    PackageStatus: PackageStatus;
+    'PackageStatus': PackageStatus;
 }
-
 

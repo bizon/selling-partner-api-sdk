@@ -25,13 +25,12 @@ export interface TimeRange {
      * @type {string}
      * @memberof TimeRange
      */
-    start?: string;
+    'start'?: string;
     /**
      * The end date and time. This must come after the value of start. This defaults to the next business day from the start.
      * @type {string}
      * @memberof TimeRange
      */
-    end?: string;
+    'end'?: string;
 }
-
 

@@ -25,13 +25,12 @@ export interface ItemProductTypeByMarketplace {
      * @type {string}
      * @memberof ItemProductTypeByMarketplace
      */
-    marketplaceId?: string;
+    'marketplaceId'?: string;
     /**
      * Name of the product type associated with the Amazon catalog item.
      * @type {string}
      * @memberof ItemProductTypeByMarketplace
      */
-    productType?: string;
+    'productType'?: string;
 }
-
 

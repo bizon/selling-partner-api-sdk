@@ -26,25 +26,24 @@ export interface JobListing {
      * @type {number}
      * @memberof JobListing
      */
-    totalResultSize?: number;
+    'totalResultSize'?: number;
     /**
      * A generated string used to pass information to your next request.If nextPageToken is returned, pass the value of nextPageToken to the pageToken to get next results.
      * @type {string}
      * @memberof JobListing
      */
-    nextPageToken?: string;
+    'nextPageToken'?: string;
     /**
      * A generated string used to pass information to your next request.If previousPageToken is returned, pass the value of previousPageToken to the pageToken to get previous page results.
      * @type {string}
      * @memberof JobListing
      */
-    previousPageToken?: string;
+    'previousPageToken'?: string;
     /**
      * List of job details for the given input.
      * @type {Array<ServiceJob>}
      * @memberof JobListing
      */
-    jobs?: Array<ServiceJob>;
+    'jobs'?: Array<ServiceJob>;
 }
-
 

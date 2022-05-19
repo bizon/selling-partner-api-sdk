@@ -25,7 +25,6 @@ export interface ServiceJobProvider {
      * @type {string}
      * @memberof ServiceJobProvider
      */
-    serviceJobProviderId?: string;
+    'serviceJobProviderId'?: string;
 }
-
 

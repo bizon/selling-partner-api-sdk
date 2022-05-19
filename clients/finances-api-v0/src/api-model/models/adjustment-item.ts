@@ -26,43 +26,42 @@ export interface AdjustmentItem {
      * @type {string}
      * @memberof AdjustmentItem
      */
-    Quantity?: string;
+    'Quantity'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof AdjustmentItem
      */
-    PerUnitAmount?: Currency;
+    'PerUnitAmount'?: Currency;
     /**
      * 
      * @type {Currency}
      * @memberof AdjustmentItem
      */
-    TotalAmount?: Currency;
+    'TotalAmount'?: Currency;
     /**
      * The seller SKU of the item. The seller SKU is qualified by the seller\'s seller ID, which is included with every call to the Selling Partner API.
      * @type {string}
      * @memberof AdjustmentItem
      */
-    SellerSKU?: string;
+    'SellerSKU'?: string;
     /**
      * A unique identifier assigned to products stored in and fulfilled from a fulfillment center.
      * @type {string}
      * @memberof AdjustmentItem
      */
-    FnSKU?: string;
+    'FnSKU'?: string;
     /**
      * A short description of the item.
      * @type {string}
      * @memberof AdjustmentItem
      */
-    ProductDescription?: string;
+    'ProductDescription'?: string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
      * @type {string}
      * @memberof AdjustmentItem
      */
-    ASIN?: string;
+    'ASIN'?: string;
 }
-
 

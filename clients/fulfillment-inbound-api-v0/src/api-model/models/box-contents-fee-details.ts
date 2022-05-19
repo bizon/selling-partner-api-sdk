@@ -26,19 +26,18 @@ export interface BoxContentsFeeDetails {
      * @type {number}
      * @memberof BoxContentsFeeDetails
      */
-    TotalUnits?: number;
+    'TotalUnits'?: number;
     /**
      * 
      * @type {Amount}
      * @memberof BoxContentsFeeDetails
      */
-    FeePerUnit?: Amount;
+    'FeePerUnit'?: Amount;
     /**
      * 
      * @type {Amount}
      * @memberof BoxContentsFeeDetails
      */
-    TotalFee?: Amount;
+    'TotalFee'?: Amount;
 }
-
 

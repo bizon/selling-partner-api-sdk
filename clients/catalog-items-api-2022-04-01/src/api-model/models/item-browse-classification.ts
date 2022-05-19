@@ -25,13 +25,12 @@ export interface ItemBrowseClassification {
      * @type {string}
      * @memberof ItemBrowseClassification
      */
-    displayName: string;
+    'displayName': string;
     /**
      * Identifier of the classification (browse node identifier).
      * @type {string}
      * @memberof ItemBrowseClassification
      */
-    classificationId: string;
+    'classificationId': string;
 }
-
 

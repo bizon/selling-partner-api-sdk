@@ -27,19 +27,18 @@ export interface BatchOffersRequestParams {
      * @type {string}
      * @memberof BatchOffersRequestParams
      */
-    MarketplaceId: string;
+    'MarketplaceId': string;
     /**
      * 
      * @type {ItemCondition}
      * @memberof BatchOffersRequestParams
      */
-    ItemCondition: ItemCondition;
+    'ItemCondition': ItemCondition;
     /**
      * 
      * @type {CustomerType}
      * @memberof BatchOffersRequestParams
      */
-    CustomerType?: CustomerType;
+    'CustomerType'?: CustomerType;
 }
-
 

@@ -26,7 +26,6 @@ export interface TransactionStatus {
      * @type {Transaction}
      * @memberof TransactionStatus
      */
-    transactionStatus?: Transaction;
+    'transactionStatus'?: Transaction;
 }
-
 

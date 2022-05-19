@@ -25,55 +25,54 @@ export interface ItemSummaryByMarketplace {
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * Name of the brand associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    brandName?: string;
+    'brandName'?: string;
     /**
      * Identifier of the browse node associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    browseNode?: string;
+    'browseNode'?: string;
     /**
      * Name of the color associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    colorName?: string;
+    'colorName'?: string;
     /**
      * Name, or title, associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    itemName?: string;
+    'itemName'?: string;
     /**
      * Name of the manufacturer associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    manufacturer?: string;
+    'manufacturer'?: string;
     /**
      * Model number associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    modelNumber?: string;
+    'modelNumber'?: string;
     /**
      * Name of the size associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    sizeName?: string;
+    'sizeName'?: string;
     /**
      * Name of the style associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    styleName?: string;
+    'styleName'?: string;
 }
-
 

@@ -19,9 +19,12 @@
  * @export
  * @enum {string}
  */
-export enum StandardIdForLabel {
-    AmazonOrderId = 'AmazonOrderId'
-}
+
+export const StandardIdForLabel = {
+    AmazonOrderId: 'AmazonOrderId'
+} as const;
+
+export type StandardIdForLabel = typeof StandardIdForLabel[keyof typeof StandardIdForLabel];
 
 
 

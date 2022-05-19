@@ -26,13 +26,12 @@ export interface NonPartneredSmallParcelDataInput {
      * @type {string}
      * @memberof NonPartneredSmallParcelDataInput
      */
-    CarrierName: string;
+    'CarrierName': string;
     /**
      * A list of package tracking information.
      * @type {Array<NonPartneredSmallParcelPackageInput>}
      * @memberof NonPartneredSmallParcelDataInput
      */
-    PackageList: Array<NonPartneredSmallParcelPackageInput>;
+    'PackageList': Array<NonPartneredSmallParcelPackageInput>;
 }
-
 

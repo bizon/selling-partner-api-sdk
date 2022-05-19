@@ -26,13 +26,12 @@ export interface SubmitInventoryUpdateResponse {
      * @type {TransactionReference}
      * @memberof SubmitInventoryUpdateResponse
      */
-    payload?: TransactionReference;
+    'payload'?: TransactionReference;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof SubmitInventoryUpdateResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

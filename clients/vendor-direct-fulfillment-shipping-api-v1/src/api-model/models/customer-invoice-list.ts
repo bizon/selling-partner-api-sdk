@@ -27,13 +27,12 @@ export interface CustomerInvoiceList {
      * @type {Pagination}
      * @memberof CustomerInvoiceList
      */
-    pagination?: Pagination;
+    'pagination'?: Pagination;
     /**
      * 
      * @type {Array<CustomerInvoice>}
      * @memberof CustomerInvoiceList
      */
-    customerInvoices?: Array<CustomerInvoice>;
+    'customerInvoices'?: Array<CustomerInvoice>;
 }
-
 

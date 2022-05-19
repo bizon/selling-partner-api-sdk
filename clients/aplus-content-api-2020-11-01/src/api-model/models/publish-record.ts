@@ -26,37 +26,36 @@ export interface PublishRecord {
      * @type {string}
      * @memberof PublishRecord
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * The IETF language tag. This only supports the primary language subtag with one secondary language subtag. The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary subtags. **Pattern:** ^[a-z]{2,}-[A-Z0-9]{2,}$
      * @type {string}
      * @memberof PublishRecord
      */
-    locale: string;
+    'locale': string;
     /**
      * The Amazon Standard Identification Number (ASIN).
      * @type {string}
      * @memberof PublishRecord
      */
-    asin: string;
+    'asin': string;
     /**
      * 
      * @type {ContentType}
      * @memberof PublishRecord
      */
-    contentType: ContentType;
+    'contentType': ContentType;
     /**
      * The A+ Content document subtype. This represents a special-purpose type of an A+ Content document. Not every A+ Content document type will have a subtype, and subtypes may change at any time.
      * @type {string}
      * @memberof PublishRecord
      */
-    contentSubType?: string;
+    'contentSubType'?: string;
     /**
      * A unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
      * @type {string}
      * @memberof PublishRecord
      */
-    contentReferenceKey: string;
+    'contentReferenceKey': string;
 }
-
 

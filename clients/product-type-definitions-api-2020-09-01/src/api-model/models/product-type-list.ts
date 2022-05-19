@@ -26,7 +26,6 @@ export interface ProductTypeList {
      * @type {Array<ProductType>}
      * @memberof ProductTypeList
      */
-    productTypes: Array<ProductType>;
+    'productTypes': Array<ProductType>;
 }
-
 

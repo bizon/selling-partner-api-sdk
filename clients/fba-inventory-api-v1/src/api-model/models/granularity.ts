@@ -25,13 +25,12 @@ export interface Granularity {
      * @type {string}
      * @memberof Granularity
      */
-    granularityType?: string;
+    'granularityType'?: string;
     /**
      * The granularity ID for the specified granularity type. When granularityType is Marketplace, specify the marketplaceId.
      * @type {string}
      * @memberof Granularity
      */
-    granularityId?: string;
+    'granularityId'?: string;
 }
-
 

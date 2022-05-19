@@ -28,25 +28,24 @@ export interface GetMessagingActionResponse {
      * @type {GetMessagingActionResponseLinks}
      * @memberof GetMessagingActionResponse
      */
-    _links?: GetMessagingActionResponseLinks;
+    '_links'?: GetMessagingActionResponseLinks;
     /**
      * 
      * @type {GetMessagingActionResponseEmbedded}
      * @memberof GetMessagingActionResponse
      */
-    _embedded?: GetMessagingActionResponseEmbedded;
+    '_embedded'?: GetMessagingActionResponseEmbedded;
     /**
      * 
      * @type {MessagingAction}
      * @memberof GetMessagingActionResponse
      */
-    payload?: MessagingAction;
+    'payload'?: MessagingAction;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetMessagingActionResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

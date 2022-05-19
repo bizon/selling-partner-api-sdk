@@ -26,7 +26,6 @@ export interface ListContentDocumentAsinRelationsResponseAllOf {
      * @type {Set<AsinMetadata>}
      * @memberof ListContentDocumentAsinRelationsResponseAllOf
      */
-    asinMetadataSet: Set<AsinMetadata>;
+    'asinMetadataSet': Set<AsinMetadata>;
 }
-
 

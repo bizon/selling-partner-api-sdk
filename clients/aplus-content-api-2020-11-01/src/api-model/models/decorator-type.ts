@@ -19,16 +19,19 @@
  * @export
  * @enum {string}
  */
-export enum DecoratorType {
-    ListItem = 'LIST_ITEM',
-    ListOrdered = 'LIST_ORDERED',
-    ListUnordered = 'LIST_UNORDERED',
-    StyleBold = 'STYLE_BOLD',
-    StyleItalic = 'STYLE_ITALIC',
-    StyleLinebreak = 'STYLE_LINEBREAK',
-    StyleParagraph = 'STYLE_PARAGRAPH',
-    StyleUnderline = 'STYLE_UNDERLINE'
-}
+
+export const DecoratorType = {
+    ListItem: 'LIST_ITEM',
+    ListOrdered: 'LIST_ORDERED',
+    ListUnordered: 'LIST_UNORDERED',
+    StyleBold: 'STYLE_BOLD',
+    StyleItalic: 'STYLE_ITALIC',
+    StyleLinebreak: 'STYLE_LINEBREAK',
+    StyleParagraph: 'STYLE_PARAGRAPH',
+    StyleUnderline: 'STYLE_UNDERLINE'
+} as const;
+
+export type DecoratorType = typeof DecoratorType[keyof typeof DecoratorType];
 
 
 

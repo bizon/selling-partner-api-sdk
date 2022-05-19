@@ -25,30 +25,27 @@ export interface AdditionalDetails {
      * @type {string}
      * @memberof AdditionalDetails
      */
-    type: AdditionalDetailsTypeEnum;
+    'type': AdditionalDetailsTypeEnum;
     /**
      * The detail of the additional information provided by the selling party.
      * @type {string}
      * @memberof AdditionalDetails
      */
-    detail: string;
+    'detail': string;
     /**
      * The language code of the additional information detail.
      * @type {string}
      * @memberof AdditionalDetails
      */
-    languageCode?: string;
+    'languageCode'?: string;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum AdditionalDetailsTypeEnum {
-    Sur = 'SUR',
-    Ocr = 'OCR',
-    CartonCount = 'CartonCount'
-}
+export const AdditionalDetailsTypeEnum = {
+    Sur: 'SUR',
+    Ocr: 'OCR',
+    CartonCount: 'CartonCount'
+} as const;
 
+export type AdditionalDetailsTypeEnum = typeof AdditionalDetailsTypeEnum[keyof typeof AdditionalDetailsTypeEnum];
 
 

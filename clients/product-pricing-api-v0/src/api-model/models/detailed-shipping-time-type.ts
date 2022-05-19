@@ -25,36 +25,33 @@ export interface DetailedShippingTimeType {
      * @type {number}
      * @memberof DetailedShippingTimeType
      */
-    minimumHours?: number;
+    'minimumHours'?: number;
     /**
      * The maximum time, in hours, that the item will likely be shipped after the order has been placed.
      * @type {number}
      * @memberof DetailedShippingTimeType
      */
-    maximumHours?: number;
+    'maximumHours'?: number;
     /**
      * The date when the item will be available for shipping. Only displayed for items that are not currently available for shipping.
      * @type {string}
      * @memberof DetailedShippingTimeType
      */
-    availableDate?: string;
+    'availableDate'?: string;
     /**
      * Indicates whether the item is available for shipping now, or on a known or an unknown date in the future. If known, the availableDate property indicates the date that the item will be available for shipping. Possible values: NOW, FUTURE_WITHOUT_DATE, FUTURE_WITH_DATE.
      * @type {string}
      * @memberof DetailedShippingTimeType
      */
-    availabilityType?: DetailedShippingTimeTypeAvailabilityTypeEnum;
+    'availabilityType'?: DetailedShippingTimeTypeAvailabilityTypeEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum DetailedShippingTimeTypeAvailabilityTypeEnum {
-    Now = 'NOW',
-    FutureWithoutDate = 'FUTURE_WITHOUT_DATE',
-    FutureWithDate = 'FUTURE_WITH_DATE'
-}
+export const DetailedShippingTimeTypeAvailabilityTypeEnum = {
+    Now: 'NOW',
+    FutureWithoutDate: 'FUTURE_WITHOUT_DATE',
+    FutureWithDate: 'FUTURE_WITH_DATE'
+} as const;
 
+export type DetailedShippingTimeTypeAvailabilityTypeEnum = typeof DetailedShippingTimeTypeAvailabilityTypeEnum[keyof typeof DetailedShippingTimeTypeAvailabilityTypeEnum];
 
 

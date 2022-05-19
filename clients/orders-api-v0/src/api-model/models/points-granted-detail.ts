@@ -26,13 +26,12 @@ export interface PointsGrantedDetail {
      * @type {number}
      * @memberof PointsGrantedDetail
      */
-    PointsNumber?: number;
+    'PointsNumber'?: number;
     /**
      * 
      * @type {Money}
      * @memberof PointsGrantedDetail
      */
-    PointsMonetaryValue?: Money;
+    'PointsMonetaryValue'?: Money;
 }
-
 

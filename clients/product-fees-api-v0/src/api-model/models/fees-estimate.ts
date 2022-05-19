@@ -27,19 +27,18 @@ export interface FeesEstimate {
      * @type {string}
      * @memberof FeesEstimate
      */
-    TimeOfFeesEstimation: string;
+    'TimeOfFeesEstimation': string;
     /**
      * 
      * @type {MoneyType}
      * @memberof FeesEstimate
      */
-    TotalFeesEstimate?: MoneyType;
+    'TotalFeesEstimate'?: MoneyType;
     /**
      * A list of other fees that contribute to a given fee.
      * @type {Array<FeeDetail>}
      * @memberof FeesEstimate
      */
-    FeeDetailList?: Array<FeeDetail>;
+    'FeeDetailList'?: Array<FeeDetail>;
 }
-
 

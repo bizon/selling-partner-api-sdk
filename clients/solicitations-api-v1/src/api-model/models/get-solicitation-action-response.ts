@@ -28,25 +28,24 @@ export interface GetSolicitationActionResponse {
      * @type {GetSolicitationActionResponseLinks}
      * @memberof GetSolicitationActionResponse
      */
-    _links?: GetSolicitationActionResponseLinks;
+    '_links'?: GetSolicitationActionResponseLinks;
     /**
      * 
      * @type {GetSolicitationActionResponseEmbedded}
      * @memberof GetSolicitationActionResponse
      */
-    _embedded?: GetSolicitationActionResponseEmbedded;
+    '_embedded'?: GetSolicitationActionResponseEmbedded;
     /**
      * 
      * @type {SolicitationsAction}
      * @memberof GetSolicitationActionResponse
      */
-    payload?: SolicitationsAction;
+    'payload'?: SolicitationsAction;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetSolicitationActionResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

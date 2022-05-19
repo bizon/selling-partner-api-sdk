@@ -25,30 +25,27 @@ export interface ListingsItemPutRequest {
      * @type {string}
      * @memberof ListingsItemPutRequest
      */
-    productType: string;
+    'productType': string;
     /**
      * The name of the requirements set for the provided data.
      * @type {string}
      * @memberof ListingsItemPutRequest
      */
-    requirements?: ListingsItemPutRequestRequirementsEnum;
+    'requirements'?: ListingsItemPutRequestRequirementsEnum;
     /**
      * JSON object containing structured listings item attribute data keyed by attribute name.
      * @type {object}
      * @memberof ListingsItemPutRequest
      */
-    attributes: object;
+    'attributes': object;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ListingsItemPutRequestRequirementsEnum {
-    Listing = 'LISTING',
-    ListingProductOnly = 'LISTING_PRODUCT_ONLY',
-    ListingOfferOnly = 'LISTING_OFFER_ONLY'
-}
+export const ListingsItemPutRequestRequirementsEnum = {
+    Listing: 'LISTING',
+    ListingProductOnly: 'LISTING_PRODUCT_ONLY',
+    ListingOfferOnly: 'LISTING_OFFER_ONLY'
+} as const;
 
+export type ListingsItemPutRequestRequirementsEnum = typeof ListingsItemPutRequestRequirementsEnum[keyof typeof ListingsItemPutRequestRequirementsEnum];
 
 

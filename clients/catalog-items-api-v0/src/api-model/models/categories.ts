@@ -25,19 +25,18 @@ export interface Categories {
      * @type {string}
      * @memberof Categories
      */
-    ProductCategoryId?: string;
+    'ProductCategoryId'?: string;
     /**
      * The name of the product category (or browse node).
      * @type {string}
      * @memberof Categories
      */
-    ProductCategoryName?: string;
+    'ProductCategoryName'?: string;
     /**
      * The parent product category.
      * @type {object}
      * @memberof Categories
      */
-    parent?: object;
+    'parent'?: object;
 }
-
 

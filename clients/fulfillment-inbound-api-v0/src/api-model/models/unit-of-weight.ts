@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum UnitOfWeight {
-    Pounds = 'pounds',
-    Kilograms = 'kilograms'
-}
+
+export const UnitOfWeight = {
+    Pounds: 'pounds',
+    Kilograms: 'kilograms'
+} as const;
+
+export type UnitOfWeight = typeof UnitOfWeight[keyof typeof UnitOfWeight];
 
 
 

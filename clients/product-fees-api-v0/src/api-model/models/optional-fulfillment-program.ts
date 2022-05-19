@@ -19,11 +19,14 @@
  * @export
  * @enum {string}
  */
-export enum OptionalFulfillmentProgram {
-    Core = 'FBA_CORE',
-    Snl = 'FBA_SNL',
-    Efn = 'FBA_EFN'
-}
+
+export const OptionalFulfillmentProgram = {
+    Core: 'FBA_CORE',
+    Snl: 'FBA_SNL',
+    Efn: 'FBA_EFN'
+} as const;
+
+export type OptionalFulfillmentProgram = typeof OptionalFulfillmentProgram[keyof typeof OptionalFulfillmentProgram];
 
 
 

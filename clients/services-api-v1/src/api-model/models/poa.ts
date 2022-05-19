@@ -27,43 +27,40 @@ export interface Poa {
      * @type {AppointmentTime}
      * @memberof Poa
      */
-    appointmentTime?: AppointmentTime;
+    'appointmentTime'?: AppointmentTime;
     /**
      * A list of technicians.
      * @type {Array<Technician>}
      * @memberof Poa
      */
-    technicians?: Array<Technician>;
+    'technicians'?: Array<Technician>;
     /**
      * The identifier of the technician who uploaded the POA.
      * @type {string}
      * @memberof Poa
      */
-    uploadingTechnician?: string;
+    'uploadingTechnician'?: string;
     /**
      * The date and time when the POA was uploaded, in ISO 8601 format.
      * @type {string}
      * @memberof Poa
      */
-    uploadTime?: string;
+    'uploadTime'?: string;
     /**
      * The type of POA uploaded.
      * @type {string}
      * @memberof Poa
      */
-    poaType?: PoaPoaTypeEnum;
+    'poaType'?: PoaPoaTypeEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum PoaPoaTypeEnum {
-    NoSignatureDummyPos = 'NO_SIGNATURE_DUMMY_POS',
-    CustomerSignature = 'CUSTOMER_SIGNATURE',
-    DummyReceipt = 'DUMMY_RECEIPT',
-    PoaReceipt = 'POA_RECEIPT'
-}
+export const PoaPoaTypeEnum = {
+    NoSignatureDummyPos: 'NO_SIGNATURE_DUMMY_POS',
+    CustomerSignature: 'CUSTOMER_SIGNATURE',
+    DummyReceipt: 'DUMMY_RECEIPT',
+    PoaReceipt: 'POA_RECEIPT'
+} as const;
 
+export type PoaPoaTypeEnum = typeof PoaPoaTypeEnum[keyof typeof PoaPoaTypeEnum];
 
 

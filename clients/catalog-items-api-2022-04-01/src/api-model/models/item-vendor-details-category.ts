@@ -25,13 +25,12 @@ export interface ItemVendorDetailsCategory {
      * @type {string}
      * @memberof ItemVendorDetailsCategory
      */
-    displayName?: string;
+    'displayName'?: string;
     /**
      * Value (code) of the product category or subcategory.
      * @type {string}
      * @memberof ItemVendorDetailsCategory
      */
-    value?: string;
+    'value'?: string;
 }
-
 

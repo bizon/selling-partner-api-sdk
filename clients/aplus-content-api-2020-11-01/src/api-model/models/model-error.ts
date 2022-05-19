@@ -25,19 +25,18 @@ export interface ModelError {
      * @type {string}
      * @memberof ModelError
      */
-    code: string;
+    'code': string;
     /**
      * A human readable description of the error condition.
      * @type {string}
      * @memberof ModelError
      */
-    message: string;
+    'message': string;
     /**
      * Additional information, if available, to clarify the error condition.
      * @type {string}
      * @memberof ModelError
      */
-    details?: string;
+    'details'?: string;
 }
-
 

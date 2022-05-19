@@ -26,25 +26,24 @@ export interface GetFeatureInventoryResult {
      * @type {string}
      * @memberof GetFeatureInventoryResult
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * The name of the feature.
      * @type {string}
      * @memberof GetFeatureInventoryResult
      */
-    featureName: string;
+    'featureName': string;
     /**
      * When present and not empty, pass this string token in the next request to return the next response page.
      * @type {string}
      * @memberof GetFeatureInventoryResult
      */
-    nextToken?: string;
+    'nextToken'?: string;
     /**
      * An array of SKUs eligible for this feature and the quantity available.
      * @type {Array<FeatureSku>}
      * @memberof GetFeatureInventoryResult
      */
-    featureSkus?: Array<FeatureSku>;
+    'featureSkus'?: Array<FeatureSku>;
 }
-
 

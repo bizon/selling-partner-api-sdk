@@ -26,13 +26,12 @@ export interface InvalidASIN {
      * @type {string}
      * @memberof InvalidASIN
      */
-    ASIN?: string;
+    'ASIN'?: string;
     /**
      * 
      * @type {ErrorReason}
      * @memberof InvalidASIN
      */
-    ErrorReason?: ErrorReason;
+    'ErrorReason'?: ErrorReason;
 }
-
 

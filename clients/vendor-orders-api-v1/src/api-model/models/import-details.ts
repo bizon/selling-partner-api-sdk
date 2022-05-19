@@ -25,62 +25,57 @@ export interface ImportDetails {
      * @type {string}
      * @memberof ImportDetails
      */
-    methodOfPayment?: ImportDetailsMethodOfPaymentEnum;
+    'methodOfPayment'?: ImportDetailsMethodOfPaymentEnum;
     /**
      * Incoterms (International Commercial Terms) are used to divide transaction costs and responsibilities between buyer and seller and reflect state-of-the-art transportation practices. This is for import purchase orders only. 
      * @type {string}
      * @memberof ImportDetails
      */
-    internationalCommercialTerms?: ImportDetailsInternationalCommercialTermsEnum;
+    'internationalCommercialTerms'?: ImportDetailsInternationalCommercialTermsEnum;
     /**
      * The port where goods on an import purchase order must be delivered by the vendor. This should only be specified when the internationalCommercialTerms is FOB.
      * @type {string}
      * @memberof ImportDetails
      */
-    portOfDelivery?: string;
+    'portOfDelivery'?: string;
     /**
      * Types and numbers of container(s) for import purchase orders. Can be a comma-separated list if the shipment has multiple containers. HC signifies a high-capacity container. Free-text field, limited to 64 characters. The format will be a comma-delimited list containing values of the type: $NUMBER_OF_CONTAINERS_OF_THIS_TYPE-$CONTAINER_TYPE. The list of values for the container type is: 40\'(40-foot container), 40\'HC (40-foot high-capacity container), 45\', 45\'HC, 30\', 30\'HC, 20\', 20\'HC.
      * @type {string}
      * @memberof ImportDetails
      */
-    importContainers?: string;
+    'importContainers'?: string;
     /**
      * Special instructions regarding the shipment. This field is for import purchase orders.
      * @type {string}
      * @memberof ImportDetails
      */
-    shippingInstructions?: string;
+    'shippingInstructions'?: string;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ImportDetailsMethodOfPaymentEnum {
-    PaidByBuyer = 'PaidByBuyer',
-    CollectOnDelivery = 'CollectOnDelivery',
-    DefinedByBuyerAndSeller = 'DefinedByBuyerAndSeller',
-    FobPortOfCall = 'FOBPortOfCall',
-    PrepaidBySeller = 'PrepaidBySeller',
-    PaidBySeller = 'PaidBySeller'
-}
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ImportDetailsInternationalCommercialTermsEnum {
-    ExWorks = 'ExWorks',
-    FreeCarrier = 'FreeCarrier',
-    FreeOnBoard = 'FreeOnBoard',
-    FreeAlongSideShip = 'FreeAlongSideShip',
-    CarriagePaidTo = 'CarriagePaidTo',
-    CostAndFreight = 'CostAndFreight',
-    CarriageAndInsurancePaidTo = 'CarriageAndInsurancePaidTo',
-    CostInsuranceAndFreight = 'CostInsuranceAndFreight',
-    DeliveredAtTerminal = 'DeliveredAtTerminal',
-    DeliveredAtPlace = 'DeliveredAtPlace',
-    DeliverDutyPaid = 'DeliverDutyPaid'
-}
+export const ImportDetailsMethodOfPaymentEnum = {
+    PaidByBuyer: 'PaidByBuyer',
+    CollectOnDelivery: 'CollectOnDelivery',
+    DefinedByBuyerAndSeller: 'DefinedByBuyerAndSeller',
+    FobPortOfCall: 'FOBPortOfCall',
+    PrepaidBySeller: 'PrepaidBySeller',
+    PaidBySeller: 'PaidBySeller'
+} as const;
 
+export type ImportDetailsMethodOfPaymentEnum = typeof ImportDetailsMethodOfPaymentEnum[keyof typeof ImportDetailsMethodOfPaymentEnum];
+export const ImportDetailsInternationalCommercialTermsEnum = {
+    ExWorks: 'ExWorks',
+    FreeCarrier: 'FreeCarrier',
+    FreeOnBoard: 'FreeOnBoard',
+    FreeAlongSideShip: 'FreeAlongSideShip',
+    CarriagePaidTo: 'CarriagePaidTo',
+    CostAndFreight: 'CostAndFreight',
+    CarriageAndInsurancePaidTo: 'CarriageAndInsurancePaidTo',
+    CostInsuranceAndFreight: 'CostInsuranceAndFreight',
+    DeliveredAtTerminal: 'DeliveredAtTerminal',
+    DeliveredAtPlace: 'DeliveredAtPlace',
+    DeliverDutyPaid: 'DeliverDutyPaid'
+} as const;
+
+export type ImportDetailsInternationalCommercialTermsEnum = typeof ImportDetailsInternationalCommercialTermsEnum[keyof typeof ImportDetailsInternationalCommercialTermsEnum];
 
 

@@ -26,7 +26,6 @@ export interface GetContentDocumentResponseAllOf {
      * @type {ContentRecord}
      * @memberof GetContentDocumentResponseAllOf
      */
-    contentRecord: ContentRecord;
+    'contentRecord': ContentRecord;
 }
-
 

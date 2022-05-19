@@ -25,7 +25,6 @@ export interface CreateConfirmDeliveryDetailsResponse {
      * @type {Array<Error>}
      * @memberof CreateConfirmDeliveryDetailsResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

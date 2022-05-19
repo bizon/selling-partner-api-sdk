@@ -27,19 +27,18 @@ export interface PackageDetails {
      * @type {Array<Item>}
      * @memberof PackageDetails
      */
-    packageItems?: Array<Item>;
+    'packageItems'?: Array<Item>;
     /**
      * 
      * @type {TimeSlot}
      * @memberof PackageDetails
      */
-    packageTimeSlot: TimeSlot;
+    'packageTimeSlot': TimeSlot;
     /**
      * Optional seller-created identifier that is printed on the shipping label to help the seller identify the package.
      * @type {string}
      * @memberof PackageDetails
      */
-    packageIdentifier?: string;
+    'packageIdentifier'?: string;
 }
-
 

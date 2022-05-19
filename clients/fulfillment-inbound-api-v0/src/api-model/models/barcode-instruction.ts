@@ -19,11 +19,14 @@
  * @export
  * @enum {string}
  */
-export enum BarcodeInstruction {
-    RequiresFnskuLabel = 'RequiresFNSKULabel',
-    CanUseOriginalBarcode = 'CanUseOriginalBarcode',
-    MustProvideSellerSku = 'MustProvideSellerSKU'
-}
+
+export const BarcodeInstruction = {
+    RequiresFnskuLabel: 'RequiresFNSKULabel',
+    CanUseOriginalBarcode: 'CanUseOriginalBarcode',
+    MustProvideSellerSku: 'MustProvideSellerSKU'
+} as const;
+
+export type BarcodeInstruction = typeof BarcodeInstruction[keyof typeof BarcodeInstruction];
 
 
 

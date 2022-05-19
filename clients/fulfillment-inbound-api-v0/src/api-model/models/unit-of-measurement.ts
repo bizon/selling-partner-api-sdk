@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum UnitOfMeasurement {
-    Inches = 'inches',
-    Centimeters = 'centimeters'
-}
+
+export const UnitOfMeasurement = {
+    Inches: 'inches',
+    Centimeters: 'centimeters'
+} as const;
+
+export type UnitOfMeasurement = typeof UnitOfMeasurement[keyof typeof UnitOfMeasurement];
 
 
 

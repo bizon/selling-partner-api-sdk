@@ -26,37 +26,36 @@ export interface AsinMetadata {
      * @type {string}
      * @memberof AsinMetadata
      */
-    asin: string;
+    'asin': string;
     /**
      * The set of ASIN badges.
      * @type {Set<AsinBadge>}
      * @memberof AsinMetadata
      */
-    badgeSet?: Set<AsinBadge>;
+    'badgeSet'?: Set<AsinBadge>;
     /**
      * The Amazon Standard Identification Number (ASIN).
      * @type {string}
      * @memberof AsinMetadata
      */
-    parent?: string;
+    'parent'?: string;
     /**
      * The title for the ASIN in the Amazon catalog.
      * @type {string}
      * @memberof AsinMetadata
      */
-    title?: string;
+    'title'?: string;
     /**
      * The default image for the ASIN in the Amazon catalog.
      * @type {string}
      * @memberof AsinMetadata
      */
-    imageUrl?: string;
+    'imageUrl'?: string;
     /**
      * A set of content reference keys.
      * @type {Set<string>}
      * @memberof AsinMetadata
      */
-    contentReferenceKeySet?: Set<string>;
+    'contentReferenceKeySet'?: Set<string>;
 }
-
 

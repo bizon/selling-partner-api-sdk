@@ -29,55 +29,54 @@ export interface OfferType {
      * @type {OfferCustomerType}
      * @memberof OfferType
      */
-    offerType?: OfferCustomerType;
+    'offerType'?: OfferCustomerType;
     /**
      * 
      * @type {PriceType}
      * @memberof OfferType
      */
-    BuyingPrice: PriceType;
+    'BuyingPrice': PriceType;
     /**
      * 
      * @type {MoneyType}
      * @memberof OfferType
      */
-    RegularPrice: MoneyType;
+    'RegularPrice': MoneyType;
     /**
      * 
      * @type {MoneyType}
      * @memberof OfferType
      */
-    businessPrice?: MoneyType;
+    'businessPrice'?: MoneyType;
     /**
      * 
      * @type {Array<QuantityDiscountPriceType>}
      * @memberof OfferType
      */
-    quantityDiscountPrices?: Array<QuantityDiscountPriceType>;
+    'quantityDiscountPrices'?: Array<QuantityDiscountPriceType>;
     /**
      * The fulfillment channel for the offer listing. Possible values:  * Amazon - Fulfilled by Amazon. * Merchant - Fulfilled by the seller.
      * @type {string}
      * @memberof OfferType
      */
-    FulfillmentChannel: string;
+    'FulfillmentChannel': string;
     /**
      * The item condition for the offer listing. Possible values: New, Used, Collectible, Refurbished, or Club.
      * @type {string}
      * @memberof OfferType
      */
-    ItemCondition: string;
+    'ItemCondition': string;
     /**
      * The item subcondition for the offer listing. Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
      * @type {string}
      * @memberof OfferType
      */
-    ItemSubCondition: string;
+    'ItemSubCondition': string;
     /**
      * The seller stock keeping unit (SKU) of the item.
      * @type {string}
      * @memberof OfferType
      */
-    SellerSKU: string;
+    'SellerSKU': string;
 }
-
 

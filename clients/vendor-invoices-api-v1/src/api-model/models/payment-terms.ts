@@ -25,39 +25,36 @@ export interface PaymentTerms {
      * @type {string}
      * @memberof PaymentTerms
      */
-    type?: PaymentTermsTypeEnum;
+    'type'?: PaymentTermsTypeEnum;
     /**
      * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. <br>**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
      * @type {string}
      * @memberof PaymentTerms
      */
-    discountPercent?: string;
+    'discountPercent'?: string;
     /**
      * The number of calendar days from the Base date (Invoice date) until the discount is no longer valid.
      * @type {number}
      * @memberof PaymentTerms
      */
-    discountDueDays?: number;
+    'discountDueDays'?: number;
     /**
      * The number of calendar days from the base date (invoice date) until the total amount on the invoice is due.
      * @type {number}
      * @memberof PaymentTerms
      */
-    netDueDays?: number;
+    'netDueDays'?: number;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum PaymentTermsTypeEnum {
-    Basic = 'Basic',
-    EndOfMonth = 'EndOfMonth',
-    FixedDate = 'FixedDate',
-    Proximo = 'Proximo',
-    PaymentDueUponReceiptOfInvoice = 'PaymentDueUponReceiptOfInvoice',
-    LetterofCredit = 'LetterofCredit'
-}
+export const PaymentTermsTypeEnum = {
+    Basic: 'Basic',
+    EndOfMonth: 'EndOfMonth',
+    FixedDate: 'FixedDate',
+    Proximo: 'Proximo',
+    PaymentDueUponReceiptOfInvoice: 'PaymentDueUponReceiptOfInvoice',
+    LetterofCredit: 'LetterofCredit'
+} as const;
 
+export type PaymentTermsTypeEnum = typeof PaymentTermsTypeEnum[keyof typeof PaymentTermsTypeEnum];
 
 

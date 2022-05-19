@@ -26,19 +26,18 @@ export interface LabelDimensions {
      * @type {number}
      * @memberof LabelDimensions
      */
-    Length: number;
+    'Length': number;
     /**
      * A label dimension.
      * @type {number}
      * @memberof LabelDimensions
      */
-    Width: number;
+    'Width': number;
     /**
      * 
      * @type {UnitOfLength}
      * @memberof LabelDimensions
      */
-    Unit: UnitOfLength;
+    'Unit': UnitOfLength;
 }
-
 

@@ -26,31 +26,30 @@ export interface CODSettings {
      * @type {boolean}
      * @memberof CODSettings
      */
-    isCodRequired: boolean;
+    'isCodRequired': boolean;
     /**
      * 
      * @type {Money}
      * @memberof CODSettings
      */
-    codCharge?: Money;
+    'codCharge'?: Money;
     /**
      * 
      * @type {Money}
      * @memberof CODSettings
      */
-    codChargeTax?: Money;
+    'codChargeTax'?: Money;
     /**
      * 
      * @type {Money}
      * @memberof CODSettings
      */
-    shippingCharge?: Money;
+    'shippingCharge'?: Money;
     /**
      * 
      * @type {Money}
      * @memberof CODSettings
      */
-    shippingChargeTax?: Money;
+    'shippingChargeTax'?: Money;
 }
-
 

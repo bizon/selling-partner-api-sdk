@@ -26,7 +26,6 @@ export interface RestrictionList {
      * @type {Array<Restriction>}
      * @memberof RestrictionList
      */
-    restrictions: Array<Restriction>;
+    'restrictions': Array<Restriction>;
 }
-
 

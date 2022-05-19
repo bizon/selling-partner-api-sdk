@@ -26,7 +26,6 @@ export interface SearchContentDocumentsResponseAllOf {
      * @type {Array<ContentMetadataRecord>}
      * @memberof SearchContentDocumentsResponseAllOf
      */
-    contentMetadataRecords: Array<ContentMetadataRecord>;
+    'contentMetadataRecords': Array<ContentMetadataRecord>;
 }
-
 

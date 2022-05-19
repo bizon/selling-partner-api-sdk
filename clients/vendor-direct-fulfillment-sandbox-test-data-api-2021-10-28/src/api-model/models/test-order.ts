@@ -25,7 +25,6 @@ export interface TestOrder {
      * @type {string}
      * @memberof TestOrder
      */
-    orderId: string;
+    'orderId': string;
 }
-
 

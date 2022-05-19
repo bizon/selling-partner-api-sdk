@@ -26,7 +26,6 @@ export interface SearchContentPublishRecordsResponseAllOf {
      * @type {Array<PublishRecord>}
      * @memberof SearchContentPublishRecordsResponseAllOf
      */
-    publishRecordList: Array<PublishRecord>;
+    'publishRecordList': Array<PublishRecord>;
 }
-
 

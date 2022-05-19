@@ -26,13 +26,12 @@ export interface GetTransportDetailsResponse {
      * @type {GetTransportDetailsResult}
      * @memberof GetTransportDetailsResponse
      */
-    payload?: GetTransportDetailsResult;
+    'payload'?: GetTransportDetailsResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetTransportDetailsResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

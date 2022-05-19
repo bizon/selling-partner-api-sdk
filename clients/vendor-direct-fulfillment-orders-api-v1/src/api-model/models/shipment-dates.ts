@@ -25,13 +25,12 @@ export interface ShipmentDates {
      * @type {string}
      * @memberof ShipmentDates
      */
-    requiredShipDate: string;
+    'requiredShipDate': string;
     /**
      * Delivery date promised to the Amazon customer.
      * @type {string}
      * @memberof ShipmentDates
      */
-    promisedDeliveryDate?: string;
+    'promisedDeliveryDate'?: string;
 }
-
 

@@ -26,19 +26,18 @@ export interface OrderItemsBuyerInfoList {
      * @type {Array<OrderItemBuyerInfo>}
      * @memberof OrderItemsBuyerInfoList
      */
-    OrderItems: Array<OrderItemBuyerInfo>;
+    'OrderItems': Array<OrderItemBuyerInfo>;
     /**
      * When present and not empty, pass this string token in the next request to return the next response page.
      * @type {string}
      * @memberof OrderItemsBuyerInfoList
      */
-    NextToken?: string;
+    'NextToken'?: string;
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
      * @type {string}
      * @memberof OrderItemsBuyerInfoList
      */
-    AmazonOrderId: string;
+    'AmazonOrderId': string;
 }
-
 

@@ -27,31 +27,30 @@ export interface ItemBuyerInfo {
      * @type {BuyerCustomizedInfoDetail}
      * @memberof ItemBuyerInfo
      */
-    BuyerCustomizedInfo?: BuyerCustomizedInfoDetail;
+    'BuyerCustomizedInfo'?: BuyerCustomizedInfoDetail;
     /**
      * 
      * @type {Money}
      * @memberof ItemBuyerInfo
      */
-    GiftWrapPrice?: Money;
+    'GiftWrapPrice'?: Money;
     /**
      * 
      * @type {Money}
      * @memberof ItemBuyerInfo
      */
-    GiftWrapTax?: Money;
+    'GiftWrapTax'?: Money;
     /**
      * A gift message provided by the buyer.
      * @type {string}
      * @memberof ItemBuyerInfo
      */
-    GiftMessageText?: string;
+    'GiftMessageText'?: string;
     /**
      * The gift wrap level specified by the buyer.
      * @type {string}
      * @memberof ItemBuyerInfo
      */
-    GiftWrapLevel?: string;
+    'GiftWrapLevel'?: string;
 }
-
 

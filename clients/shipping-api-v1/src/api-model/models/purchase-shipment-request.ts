@@ -29,43 +29,42 @@ export interface PurchaseShipmentRequest {
      * @type {string}
      * @memberof PurchaseShipmentRequest
      */
-    clientReferenceId: string;
+    'clientReferenceId': string;
     /**
      * 
      * @type {Address}
      * @memberof PurchaseShipmentRequest
      */
-    shipTo: Address;
+    'shipTo': Address;
     /**
      * 
      * @type {Address}
      * @memberof PurchaseShipmentRequest
      */
-    shipFrom: Address;
+    'shipFrom': Address;
     /**
      * The start date and time. This defaults to the current date and time.
      * @type {string}
      * @memberof PurchaseShipmentRequest
      */
-    shipDate?: string;
+    'shipDate'?: string;
     /**
      * 
      * @type {ServiceType}
      * @memberof PurchaseShipmentRequest
      */
-    serviceType: ServiceType;
+    'serviceType': ServiceType;
     /**
      * A list of container.
      * @type {Array<Container>}
      * @memberof PurchaseShipmentRequest
      */
-    containers: Array<Container>;
+    'containers': Array<Container>;
     /**
      * 
      * @type {LabelSpecification}
      * @memberof PurchaseShipmentRequest
      */
-    labelSpecification: LabelSpecification;
+    'labelSpecification': LabelSpecification;
 }
-
 

@@ -26,13 +26,12 @@ export interface GetBillOfLadingResponse {
      * @type {BillOfLadingDownloadURL}
      * @memberof GetBillOfLadingResponse
      */
-    payload?: BillOfLadingDownloadURL;
+    'payload'?: BillOfLadingDownloadURL;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetBillOfLadingResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

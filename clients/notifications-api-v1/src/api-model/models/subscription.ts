@@ -26,25 +26,24 @@ export interface Subscription {
      * @type {string}
      * @memberof Subscription
      */
-    subscriptionId: string;
+    'subscriptionId': string;
     /**
      * The version of the payload object to be used in the notification.
      * @type {string}
      * @memberof Subscription
      */
-    payloadVersion: string;
+    'payloadVersion': string;
     /**
      * The identifier for the destination where notifications will be delivered.
      * @type {string}
      * @memberof Subscription
      */
-    destinationId: string;
+    'destinationId': string;
     /**
      * 
      * @type {ProcessingDirective}
      * @memberof Subscription
      */
-    processingDirective?: ProcessingDirective;
+    'processingDirective'?: ProcessingDirective;
 }
-
 

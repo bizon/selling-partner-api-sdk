@@ -25,43 +25,42 @@ export interface UnfulfillableQuantity {
      * @type {number}
      * @memberof UnfulfillableQuantity
      */
-    totalUnfulfillableQuantity?: number;
+    'totalUnfulfillableQuantity'?: number;
     /**
      * The number of units in customer damaged disposition.
      * @type {number}
      * @memberof UnfulfillableQuantity
      */
-    customerDamagedQuantity?: number;
+    'customerDamagedQuantity'?: number;
     /**
      * The number of units in warehouse damaged disposition.
      * @type {number}
      * @memberof UnfulfillableQuantity
      */
-    warehouseDamagedQuantity?: number;
+    'warehouseDamagedQuantity'?: number;
     /**
      * The number of units in distributor damaged disposition.
      * @type {number}
      * @memberof UnfulfillableQuantity
      */
-    distributorDamagedQuantity?: number;
+    'distributorDamagedQuantity'?: number;
     /**
      * The number of units in carrier damaged disposition.
      * @type {number}
      * @memberof UnfulfillableQuantity
      */
-    carrierDamagedQuantity?: number;
+    'carrierDamagedQuantity'?: number;
     /**
      * The number of units in defective disposition.
      * @type {number}
      * @memberof UnfulfillableQuantity
      */
-    defectiveQuantity?: number;
+    'defectiveQuantity'?: number;
     /**
      * The number of units in expired disposition.
      * @type {number}
      * @memberof UnfulfillableQuantity
      */
-    expiredQuantity?: number;
+    'expiredQuantity'?: number;
 }
-
 

@@ -25,25 +25,24 @@ export interface FeesEstimateError {
      * @type {string}
      * @memberof FeesEstimateError
      */
-    Type: string;
+    'Type': string;
     /**
      * An error code that identifies the type of error that occurred.
      * @type {string}
      * @memberof FeesEstimateError
      */
-    Code: string;
+    'Code': string;
     /**
      * A message that describes the error condition.
      * @type {string}
      * @memberof FeesEstimateError
      */
-    Message: string;
+    'Message': string;
     /**
      * Additional information that can help the caller understand or fix the issue.
      * @type {Array<object>}
      * @memberof FeesEstimateError
      */
-    Detail: Array<object>;
+    'Detail': Array<object>;
 }
-
 

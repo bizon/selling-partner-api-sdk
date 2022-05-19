@@ -47,163 +47,162 @@ export interface FinancialEvents {
      * @type {Array<ShipmentEvent>}
      * @memberof FinancialEvents
      */
-    ShipmentEventList?: Array<ShipmentEvent>;
+    'ShipmentEventList'?: Array<ShipmentEvent>;
     /**
      * A list of shipment event information.
      * @type {Array<ShipmentEvent>}
      * @memberof FinancialEvents
      */
-    RefundEventList?: Array<ShipmentEvent>;
+    'RefundEventList'?: Array<ShipmentEvent>;
     /**
      * A list of shipment event information.
      * @type {Array<ShipmentEvent>}
      * @memberof FinancialEvents
      */
-    GuaranteeClaimEventList?: Array<ShipmentEvent>;
+    'GuaranteeClaimEventList'?: Array<ShipmentEvent>;
     /**
      * A list of shipment event information.
      * @type {Array<ShipmentEvent>}
      * @memberof FinancialEvents
      */
-    ChargebackEventList?: Array<ShipmentEvent>;
+    'ChargebackEventList'?: Array<ShipmentEvent>;
     /**
      * A list of events related to the seller\'s Pay with Amazon account.
      * @type {Array<PayWithAmazonEvent>}
      * @memberof FinancialEvents
      */
-    PayWithAmazonEventList?: Array<PayWithAmazonEvent>;
+    'PayWithAmazonEventList'?: Array<PayWithAmazonEvent>;
     /**
      * A list of information about solution provider credits.
      * @type {Array<SolutionProviderCreditEvent>}
      * @memberof FinancialEvents
      */
-    ServiceProviderCreditEventList?: Array<SolutionProviderCreditEvent>;
+    'ServiceProviderCreditEventList'?: Array<SolutionProviderCreditEvent>;
     /**
      * A list of information about Retrocharge or RetrochargeReversal events.
      * @type {Array<RetrochargeEvent>}
      * @memberof FinancialEvents
      */
-    RetrochargeEventList?: Array<RetrochargeEvent>;
+    'RetrochargeEventList'?: Array<RetrochargeEvent>;
     /**
      * A list of rental transaction event information.
      * @type {Array<RentalTransactionEvent>}
      * @memberof FinancialEvents
      */
-    RentalTransactionEventList?: Array<RentalTransactionEvent>;
+    'RentalTransactionEventList'?: Array<RentalTransactionEvent>;
     /**
      * A list of sponsored products payment events.
      * @type {Array<ProductAdsPaymentEvent>}
      * @memberof FinancialEvents
      */
-    ProductAdsPaymentEventList?: Array<ProductAdsPaymentEvent>;
+    'ProductAdsPaymentEventList'?: Array<ProductAdsPaymentEvent>;
     /**
      * A list of information about service fee events.
      * @type {Array<ServiceFeeEvent>}
      * @memberof FinancialEvents
      */
-    ServiceFeeEventList?: Array<ServiceFeeEvent>;
+    'ServiceFeeEventList'?: Array<ServiceFeeEvent>;
     /**
      * A list of payment events for deal-related fees.
      * @type {Array<SellerDealPaymentEvent>}
      * @memberof FinancialEvents
      */
-    SellerDealPaymentEventList?: Array<SellerDealPaymentEvent>;
+    'SellerDealPaymentEventList'?: Array<SellerDealPaymentEvent>;
     /**
      * A list of debt recovery event information.
      * @type {Array<DebtRecoveryEvent>}
      * @memberof FinancialEvents
      */
-    DebtRecoveryEventList?: Array<DebtRecoveryEvent>;
+    'DebtRecoveryEventList'?: Array<DebtRecoveryEvent>;
     /**
      * A list of loan servicing events.
      * @type {Array<LoanServicingEvent>}
      * @memberof FinancialEvents
      */
-    LoanServicingEventList?: Array<LoanServicingEvent>;
+    'LoanServicingEventList'?: Array<LoanServicingEvent>;
     /**
      * A list of adjustment event information for the seller\'s account.
      * @type {Array<AdjustmentEvent>}
      * @memberof FinancialEvents
      */
-    AdjustmentEventList?: Array<AdjustmentEvent>;
+    'AdjustmentEventList'?: Array<AdjustmentEvent>;
     /**
      * A list of SAFETReimbursementEvents.
      * @type {Array<SAFETReimbursementEvent>}
      * @memberof FinancialEvents
      */
-    SAFETReimbursementEventList?: Array<SAFETReimbursementEvent>;
+    'SAFETReimbursementEventList'?: Array<SAFETReimbursementEvent>;
     /**
      * A list of information about fee events for the Early Reviewer Program.
      * @type {Array<SellerReviewEnrollmentPaymentEvent>}
      * @memberof FinancialEvents
      */
-    SellerReviewEnrollmentPaymentEventList?: Array<SellerReviewEnrollmentPaymentEvent>;
+    'SellerReviewEnrollmentPaymentEventList'?: Array<SellerReviewEnrollmentPaymentEvent>;
     /**
      * A list of FBA inventory liquidation payment events.
      * @type {Array<FBALiquidationEvent>}
      * @memberof FinancialEvents
      */
-    FBALiquidationEventList?: Array<FBALiquidationEvent>;
+    'FBALiquidationEventList'?: Array<FBALiquidationEvent>;
     /**
      * A list of coupon payment event information.
      * @type {Array<CouponPaymentEvent>}
      * @memberof FinancialEvents
      */
-    CouponPaymentEventList?: Array<CouponPaymentEvent>;
+    'CouponPaymentEventList'?: Array<CouponPaymentEvent>;
     /**
      * A list of fee events related to Amazon Imaging services.
      * @type {Array<ImagingServicesFeeEvent>}
      * @memberof FinancialEvents
      */
-    ImagingServicesFeeEventList?: Array<ImagingServicesFeeEvent>;
+    'ImagingServicesFeeEventList'?: Array<ImagingServicesFeeEvent>;
     /**
      * A list of network commingling transaction events.
      * @type {Array<NetworkComminglingTransactionEvent>}
      * @memberof FinancialEvents
      */
-    NetworkComminglingTransactionEventList?: Array<NetworkComminglingTransactionEvent>;
+    'NetworkComminglingTransactionEventList'?: Array<NetworkComminglingTransactionEvent>;
     /**
      * A list of expense information related to an affordability promotion.
      * @type {Array<AffordabilityExpenseEvent>}
      * @memberof FinancialEvents
      */
-    AffordabilityExpenseEventList?: Array<AffordabilityExpenseEvent>;
+    'AffordabilityExpenseEventList'?: Array<AffordabilityExpenseEvent>;
     /**
      * A list of expense information related to an affordability promotion.
      * @type {Array<AffordabilityExpenseEvent>}
      * @memberof FinancialEvents
      */
-    AffordabilityExpenseReversalEventList?: Array<AffordabilityExpenseEvent>;
+    'AffordabilityExpenseReversalEventList'?: Array<AffordabilityExpenseEvent>;
     /**
      * A list of information about trial shipment financial events.
      * @type {Array<TrialShipmentEvent>}
      * @memberof FinancialEvents
      */
-    TrialShipmentEventList?: Array<TrialShipmentEvent>;
+    'TrialShipmentEventList'?: Array<TrialShipmentEvent>;
     /**
      * A list of information about shipment settle financial events.
      * @type {Array<ShipmentEvent>}
      * @memberof FinancialEvents
      */
-    ShipmentSettleEventList?: Array<ShipmentEvent>;
+    'ShipmentSettleEventList'?: Array<ShipmentEvent>;
     /**
      * List of TaxWithholding events.
      * @type {Array<TaxWithholdingEvent>}
      * @memberof FinancialEvents
      */
-    TaxWithholdingEventList?: Array<TaxWithholdingEvent>;
+    'TaxWithholdingEventList'?: Array<TaxWithholdingEvent>;
     /**
      * A list of removal shipment event information.
      * @type {Array<RemovalShipmentEvent>}
      * @memberof FinancialEvents
      */
-    RemovalShipmentEventList?: Array<RemovalShipmentEvent>;
+    'RemovalShipmentEventList'?: Array<RemovalShipmentEvent>;
     /**
      * A comma-delimited list of Removal shipmentAdjustment details for FBA inventory.
      * @type {Array<RemovalShipmentAdjustmentEvent>}
      * @memberof FinancialEvents
      */
-    RemovalShipmentAdjustmentEventList?: Array<RemovalShipmentAdjustmentEvent>;
+    'RemovalShipmentAdjustmentEventList'?: Array<RemovalShipmentAdjustmentEvent>;
 }
-
 

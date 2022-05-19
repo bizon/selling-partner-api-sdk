@@ -26,13 +26,12 @@ export interface GetFeatureSkuResponse {
      * @type {GetFeatureSkuResult}
      * @memberof GetFeatureSkuResponse
      */
-    payload?: GetFeatureSkuResult;
+    'payload'?: GetFeatureSkuResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetFeatureSkuResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

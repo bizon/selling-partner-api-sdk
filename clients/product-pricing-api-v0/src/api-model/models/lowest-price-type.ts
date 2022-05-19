@@ -29,55 +29,54 @@ export interface LowestPriceType {
      * @type {string}
      * @memberof LowestPriceType
      */
-    condition: string;
+    'condition': string;
     /**
      * Indicates whether the item is fulfilled by Amazon or by the seller.
      * @type {string}
      * @memberof LowestPriceType
      */
-    fulfillmentChannel: string;
+    'fulfillmentChannel': string;
     /**
      * 
      * @type {OfferCustomerType}
      * @memberof LowestPriceType
      */
-    offerType?: OfferCustomerType;
+    'offerType'?: OfferCustomerType;
     /**
      * Indicates at what quantity this price becomes active.
      * @type {number}
      * @memberof LowestPriceType
      */
-    quantityTier?: number;
+    'quantityTier'?: number;
     /**
      * 
      * @type {QuantityDiscountType}
      * @memberof LowestPriceType
      */
-    quantityDiscountType?: QuantityDiscountType;
+    'quantityDiscountType'?: QuantityDiscountType;
     /**
      * 
      * @type {MoneyType}
      * @memberof LowestPriceType
      */
-    LandedPrice: MoneyType;
+    'LandedPrice': MoneyType;
     /**
      * 
      * @type {MoneyType}
      * @memberof LowestPriceType
      */
-    ListingPrice: MoneyType;
+    'ListingPrice': MoneyType;
     /**
      * 
      * @type {MoneyType}
      * @memberof LowestPriceType
      */
-    Shipping: MoneyType;
+    'Shipping': MoneyType;
     /**
      * 
      * @type {Points}
      * @memberof LowestPriceType
      */
-    Points?: Points;
+    'Points'?: Points;
 }
-
 

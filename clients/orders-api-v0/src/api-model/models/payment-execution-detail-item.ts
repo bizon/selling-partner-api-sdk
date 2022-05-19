@@ -26,13 +26,12 @@ export interface PaymentExecutionDetailItem {
      * @type {Money}
      * @memberof PaymentExecutionDetailItem
      */
-    Payment: Money;
+    'Payment': Money;
     /**
      * A sub-payment method for a COD order.  Possible values:  * COD - Cash On Delivery.  * GC - Gift Card.  * PointsAccount - Amazon Points.
      * @type {string}
      * @memberof PaymentExecutionDetailItem
      */
-    PaymentMethod: string;
+    'PaymentMethod': string;
 }
-
 

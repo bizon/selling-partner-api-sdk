@@ -26,13 +26,12 @@ export interface GetLabelsResponse {
      * @type {LabelDownloadURL}
      * @memberof GetLabelsResponse
      */
-    payload?: LabelDownloadURL;
+    'payload'?: LabelDownloadURL;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetLabelsResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

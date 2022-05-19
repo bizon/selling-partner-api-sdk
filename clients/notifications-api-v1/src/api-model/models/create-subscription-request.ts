@@ -26,19 +26,18 @@ export interface CreateSubscriptionRequest {
      * @type {string}
      * @memberof CreateSubscriptionRequest
      */
-    payloadVersion?: string;
+    'payloadVersion'?: string;
     /**
      * The identifier for the destination where notifications will be delivered.
      * @type {string}
      * @memberof CreateSubscriptionRequest
      */
-    destinationId?: string;
+    'destinationId'?: string;
     /**
      * 
      * @type {ProcessingDirective}
      * @memberof CreateSubscriptionRequest
      */
-    processingDirective?: ProcessingDirective;
+    'processingDirective'?: ProcessingDirective;
 }
-
 

@@ -25,19 +25,18 @@ export interface PropertyGroup {
      * @type {string}
      * @memberof PropertyGroup
      */
-    title?: string;
+    'title'?: string;
     /**
      * The description of the property group.
      * @type {string}
      * @memberof PropertyGroup
      */
-    description?: string;
+    'description'?: string;
     /**
      * The names of the schema properties for the property group.
      * @type {Array<string>}
      * @memberof PropertyGroup
      */
-    propertyNames?: Array<string>;
+    'propertyNames'?: Array<string>;
 }
-
 

@@ -25,7 +25,6 @@ export interface UpdateShipmentStatusErrorResponse {
      * @type {Array<Error>}
      * @memberof UpdateShipmentStatusErrorResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

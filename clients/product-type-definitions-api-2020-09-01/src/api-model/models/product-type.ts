@@ -25,13 +25,12 @@ export interface ProductType {
      * @type {string}
      * @memberof ProductType
      */
-    name: string;
+    'name': string;
     /**
      * The Amazon marketplace identifiers for which the product type definition is available.
      * @type {Array<string>}
      * @memberof ProductType
      */
-    marketplaceIds: Array<string>;
+    'marketplaceIds': Array<string>;
 }
-
 

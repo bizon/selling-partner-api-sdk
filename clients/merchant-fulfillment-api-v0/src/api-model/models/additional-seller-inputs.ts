@@ -26,13 +26,12 @@ export interface AdditionalSellerInputs {
      * @type {string}
      * @memberof AdditionalSellerInputs
      */
-    AdditionalInputFieldName: string;
+    'AdditionalInputFieldName': string;
     /**
      * 
      * @type {AdditionalSellerInput}
      * @memberof AdditionalSellerInputs
      */
-    AdditionalSellerInput: AdditionalSellerInput;
+    'AdditionalSellerInput': AdditionalSellerInput;
 }
-
 

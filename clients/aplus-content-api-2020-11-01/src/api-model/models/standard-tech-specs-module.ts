@@ -27,19 +27,18 @@ export interface StandardTechSpecsModule {
      * @type {TextComponent}
      * @memberof StandardTechSpecsModule
      */
-    headline?: TextComponent;
+    'headline'?: TextComponent;
     /**
      * The specification list.
      * @type {Array<StandardTextPairBlock>}
      * @memberof StandardTechSpecsModule
      */
-    specificationList: Array<StandardTextPairBlock>;
+    'specificationList': Array<StandardTextPairBlock>;
     /**
      * The number of tables to present. Features are evenly divided between the tables.
      * @type {number}
      * @memberof StandardTechSpecsModule
      */
-    tableCount?: number;
+    'tableCount'?: number;
 }
-
 

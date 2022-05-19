@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum GuidanceReason {
-    SlowMovingAsin = 'SlowMovingASIN',
-    NoApplicableGuidance = 'NoApplicableGuidance'
-}
+
+export const GuidanceReason = {
+    SlowMovingAsin: 'SlowMovingASIN',
+    NoApplicableGuidance: 'NoApplicableGuidance'
+} as const;
+
+export type GuidanceReason = typeof GuidanceReason[keyof typeof GuidanceReason];
 
 
 

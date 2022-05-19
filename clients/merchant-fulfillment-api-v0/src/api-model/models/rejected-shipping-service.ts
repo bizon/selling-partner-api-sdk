@@ -25,31 +25,30 @@ export interface RejectedShippingService {
      * @type {string}
      * @memberof RejectedShippingService
      */
-    CarrierName: string;
+    'CarrierName': string;
     /**
      * The rejected shipping service localized name. e.g. FedEx Standard Overnight
      * @type {string}
      * @memberof RejectedShippingService
      */
-    ShippingServiceName: string;
+    'ShippingServiceName': string;
     /**
      * An Amazon-defined shipping service identifier.
      * @type {string}
      * @memberof RejectedShippingService
      */
-    ShippingServiceId: string;
+    'ShippingServiceId': string;
     /**
      * A reason code meant to be consumed programatically. e.g. CARRIER_CANNOT_SHIP_TO_POBOX
      * @type {string}
      * @memberof RejectedShippingService
      */
-    RejectionReasonCode: string;
+    'RejectionReasonCode': string;
     /**
      * A localized human readable description of the rejected reason.
      * @type {string}
      * @memberof RejectedShippingService
      */
-    RejectionReasonMessage?: string;
+    'RejectionReasonMessage'?: string;
 }
-
 

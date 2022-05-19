@@ -26,13 +26,12 @@ export interface Length {
      * @type {number}
      * @memberof Length
      */
-    value?: number;
+    'value'?: number;
     /**
      * 
      * @type {UnitOfLength}
      * @memberof Length
      */
-    unit?: UnitOfLength;
+    'unit'?: UnitOfLength;
 }
-
 

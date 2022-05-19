@@ -26,13 +26,12 @@ export interface GetPackingSlipListResponse {
      * @type {PackingSlipList}
      * @memberof GetPackingSlipListResponse
      */
-    payload?: PackingSlipList;
+    'payload'?: PackingSlipList;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetPackingSlipListResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum PrepOwner {
-    Amazon = 'AMAZON',
-    Seller = 'SELLER'
-}
+
+export const PrepOwner = {
+    Amazon: 'AMAZON',
+    Seller: 'SELLER'
+} as const;
+
+export type PrepOwner = typeof PrepOwner[keyof typeof PrepOwner];
 
 
 

@@ -26,7 +26,6 @@ export interface ItemOffersResponseAllOf {
      * @type {ItemOffersRequestParams}
      * @memberof ItemOffersResponseAllOf
      */
-    request: ItemOffersRequestParams;
+    'request': ItemOffersRequestParams;
 }
-
 

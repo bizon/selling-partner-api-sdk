@@ -27,25 +27,24 @@ export interface PriceType {
      * @type {MoneyType}
      * @memberof PriceType
      */
-    LandedPrice?: MoneyType;
+    'LandedPrice'?: MoneyType;
     /**
      * 
      * @type {MoneyType}
      * @memberof PriceType
      */
-    ListingPrice: MoneyType;
+    'ListingPrice': MoneyType;
     /**
      * 
      * @type {MoneyType}
      * @memberof PriceType
      */
-    Shipping?: MoneyType;
+    'Shipping'?: MoneyType;
     /**
      * 
      * @type {Points}
      * @memberof PriceType
      */
-    Points?: Points;
+    'Points'?: Points;
 }
-
 

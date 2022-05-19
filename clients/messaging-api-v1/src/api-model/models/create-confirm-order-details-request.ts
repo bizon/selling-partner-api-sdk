@@ -25,7 +25,6 @@ export interface CreateConfirmOrderDetailsRequest {
      * @type {string}
      * @memberof CreateConfirmOrderDetailsRequest
      */
-    text?: string;
+    'text'?: string;
 }
-
 

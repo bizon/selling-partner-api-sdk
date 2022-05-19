@@ -26,19 +26,18 @@ export interface ChargeInstrument {
      * @type {string}
      * @memberof ChargeInstrument
      */
-    Description?: string;
+    'Description'?: string;
     /**
      * The account tail (trailing digits) of the charge instrument.
      * @type {string}
      * @memberof ChargeInstrument
      */
-    Tail?: string;
+    'Tail'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof ChargeInstrument
      */
-    Amount?: Currency;
+    'Amount'?: Currency;
 }
-
 

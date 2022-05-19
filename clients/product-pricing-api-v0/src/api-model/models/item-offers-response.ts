@@ -27,4 +27,3 @@ import { ItemOffersResponseAllOf } from './item-offers-response-all-of';
 export type ItemOffersResponse = BatchOffersResponse & ItemOffersResponseAllOf;
 
 
-

@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -43,7 +43,7 @@ export const SmallAndLightApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteSmallAndLightEnrollmentBySellerSKU: async (sellerSKU: string, marketplaceIds: Array<string>, options: any = {}): Promise<RequestArgs> => {
+        deleteSmallAndLightEnrollmentBySellerSKU: async (sellerSKU: string, marketplaceIds: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerSKU' is not null or undefined
             assertParamExists('deleteSmallAndLightEnrollmentBySellerSKU', 'sellerSKU', sellerSKU)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -67,7 +67,7 @@ export const SmallAndLightApiAxiosParamCreator = function (configuration?: Confi
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -83,7 +83,7 @@ export const SmallAndLightApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSmallAndLightEligibilityBySellerSKU: async (sellerSKU: string, marketplaceIds: Array<string>, options: any = {}): Promise<RequestArgs> => {
+        getSmallAndLightEligibilityBySellerSKU: async (sellerSKU: string, marketplaceIds: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerSKU' is not null or undefined
             assertParamExists('getSmallAndLightEligibilityBySellerSKU', 'sellerSKU', sellerSKU)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -107,7 +107,7 @@ export const SmallAndLightApiAxiosParamCreator = function (configuration?: Confi
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -123,7 +123,7 @@ export const SmallAndLightApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSmallAndLightEnrollmentBySellerSKU: async (sellerSKU: string, marketplaceIds: Array<string>, options: any = {}): Promise<RequestArgs> => {
+        getSmallAndLightEnrollmentBySellerSKU: async (sellerSKU: string, marketplaceIds: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerSKU' is not null or undefined
             assertParamExists('getSmallAndLightEnrollmentBySellerSKU', 'sellerSKU', sellerSKU)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -147,7 +147,7 @@ export const SmallAndLightApiAxiosParamCreator = function (configuration?: Confi
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -162,7 +162,7 @@ export const SmallAndLightApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSmallAndLightFeePreview: async (body: SmallAndLightFeePreviewRequest, options: any = {}): Promise<RequestArgs> => {
+        getSmallAndLightFeePreview: async (body: SmallAndLightFeePreviewRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getSmallAndLightFeePreview', 'body', body)
             const localVarPath = `/fba/smallAndLight/v1/feePreviews`;
@@ -181,7 +181,7 @@ export const SmallAndLightApiAxiosParamCreator = function (configuration?: Confi
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -198,7 +198,7 @@ export const SmallAndLightApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        putSmallAndLightEnrollmentBySellerSKU: async (sellerSKU: string, marketplaceIds: Array<string>, options: any = {}): Promise<RequestArgs> => {
+        putSmallAndLightEnrollmentBySellerSKU: async (sellerSKU: string, marketplaceIds: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerSKU' is not null or undefined
             assertParamExists('putSmallAndLightEnrollmentBySellerSKU', 'sellerSKU', sellerSKU)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -222,7 +222,7 @@ export const SmallAndLightApiAxiosParamCreator = function (configuration?: Confi
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -248,7 +248,7 @@ export const SmallAndLightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteSmallAndLightEnrollmentBySellerSKU(sellerSKU: string, marketplaceIds: Array<string>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteSmallAndLightEnrollmentBySellerSKU(sellerSKU: string, marketplaceIds: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteSmallAndLightEnrollmentBySellerSKU(sellerSKU, marketplaceIds, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -259,7 +259,7 @@ export const SmallAndLightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSmallAndLightEligibilityBySellerSKU(sellerSKU: string, marketplaceIds: Array<string>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SmallAndLightEligibility>> {
+        async getSmallAndLightEligibilityBySellerSKU(sellerSKU: string, marketplaceIds: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SmallAndLightEligibility>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getSmallAndLightEligibilityBySellerSKU(sellerSKU, marketplaceIds, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -270,7 +270,7 @@ export const SmallAndLightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSmallAndLightEnrollmentBySellerSKU(sellerSKU: string, marketplaceIds: Array<string>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SmallAndLightEnrollment>> {
+        async getSmallAndLightEnrollmentBySellerSKU(sellerSKU: string, marketplaceIds: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SmallAndLightEnrollment>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getSmallAndLightEnrollmentBySellerSKU(sellerSKU, marketplaceIds, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -280,7 +280,7 @@ export const SmallAndLightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSmallAndLightFeePreview(body: SmallAndLightFeePreviewRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SmallAndLightFeePreviews>> {
+        async getSmallAndLightFeePreview(body: SmallAndLightFeePreviewRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SmallAndLightFeePreviews>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getSmallAndLightFeePreview(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -291,7 +291,7 @@ export const SmallAndLightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async putSmallAndLightEnrollmentBySellerSKU(sellerSKU: string, marketplaceIds: Array<string>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SmallAndLightEnrollment>> {
+        async putSmallAndLightEnrollmentBySellerSKU(sellerSKU: string, marketplaceIds: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SmallAndLightEnrollment>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.putSmallAndLightEnrollmentBySellerSKU(sellerSKU, marketplaceIds, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -469,7 +469,7 @@ export class SmallAndLightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SmallAndLightApi
      */
-    public deleteSmallAndLightEnrollmentBySellerSKU(requestParameters: SmallAndLightApiDeleteSmallAndLightEnrollmentBySellerSKURequest, options?: any) {
+    public deleteSmallAndLightEnrollmentBySellerSKU(requestParameters: SmallAndLightApiDeleteSmallAndLightEnrollmentBySellerSKURequest, options?: AxiosRequestConfig) {
         return SmallAndLightApiFp(this.configuration).deleteSmallAndLightEnrollmentBySellerSKU(requestParameters.sellerSKU, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -480,7 +480,7 @@ export class SmallAndLightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SmallAndLightApi
      */
-    public getSmallAndLightEligibilityBySellerSKU(requestParameters: SmallAndLightApiGetSmallAndLightEligibilityBySellerSKURequest, options?: any) {
+    public getSmallAndLightEligibilityBySellerSKU(requestParameters: SmallAndLightApiGetSmallAndLightEligibilityBySellerSKURequest, options?: AxiosRequestConfig) {
         return SmallAndLightApiFp(this.configuration).getSmallAndLightEligibilityBySellerSKU(requestParameters.sellerSKU, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -491,7 +491,7 @@ export class SmallAndLightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SmallAndLightApi
      */
-    public getSmallAndLightEnrollmentBySellerSKU(requestParameters: SmallAndLightApiGetSmallAndLightEnrollmentBySellerSKURequest, options?: any) {
+    public getSmallAndLightEnrollmentBySellerSKU(requestParameters: SmallAndLightApiGetSmallAndLightEnrollmentBySellerSKURequest, options?: AxiosRequestConfig) {
         return SmallAndLightApiFp(this.configuration).getSmallAndLightEnrollmentBySellerSKU(requestParameters.sellerSKU, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -502,7 +502,7 @@ export class SmallAndLightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SmallAndLightApi
      */
-    public getSmallAndLightFeePreview(requestParameters: SmallAndLightApiGetSmallAndLightFeePreviewRequest, options?: any) {
+    public getSmallAndLightFeePreview(requestParameters: SmallAndLightApiGetSmallAndLightFeePreviewRequest, options?: AxiosRequestConfig) {
         return SmallAndLightApiFp(this.configuration).getSmallAndLightFeePreview(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -513,7 +513,7 @@ export class SmallAndLightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SmallAndLightApi
      */
-    public putSmallAndLightEnrollmentBySellerSKU(requestParameters: SmallAndLightApiPutSmallAndLightEnrollmentBySellerSKURequest, options?: any) {
+    public putSmallAndLightEnrollmentBySellerSKU(requestParameters: SmallAndLightApiPutSmallAndLightEnrollmentBySellerSKURequest, options?: AxiosRequestConfig) {
         return SmallAndLightApiFp(this.configuration).putSmallAndLightEnrollmentBySellerSKU(requestParameters.sellerSKU, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 }

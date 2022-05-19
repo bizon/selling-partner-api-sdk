@@ -28,19 +28,18 @@ export interface StandardImageTextBlock {
      * @type {ImageComponent}
      * @memberof StandardImageTextBlock
      */
-    image?: ImageComponent;
+    'image'?: ImageComponent;
     /**
      * 
      * @type {TextComponent}
      * @memberof StandardImageTextBlock
      */
-    headline?: TextComponent;
+    'headline'?: TextComponent;
     /**
      * 
      * @type {ParagraphComponent}
      * @memberof StandardImageTextBlock
      */
-    body?: ParagraphComponent;
+    'body'?: ParagraphComponent;
 }
-
 

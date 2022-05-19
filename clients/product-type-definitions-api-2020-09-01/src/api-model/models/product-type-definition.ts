@@ -28,74 +28,69 @@ export interface ProductTypeDefinition {
      * @type {SchemaLink}
      * @memberof ProductTypeDefinition
      */
-    metaSchema?: SchemaLink;
+    'metaSchema'?: SchemaLink;
     /**
      * 
      * @type {SchemaLink}
      * @memberof ProductTypeDefinition
      */
-    schema: SchemaLink;
+    'schema': SchemaLink;
     /**
      * Name of the requirements set represented in this product type definition.
      * @type {string}
      * @memberof ProductTypeDefinition
      */
-    requirements: ProductTypeDefinitionRequirementsEnum;
+    'requirements': ProductTypeDefinitionRequirementsEnum;
     /**
      * Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all of the required attributes being present (such as for partial updates).
      * @type {string}
      * @memberof ProductTypeDefinition
      */
-    requirementsEnforced: ProductTypeDefinitionRequirementsEnforcedEnum;
+    'requirementsEnforced': ProductTypeDefinitionRequirementsEnforcedEnum;
     /**
      * Mapping of property group names to property groups. Property groups represent logical groupings of schema properties that can be used for display or informational purposes.
      * @type {{ [key: string]: PropertyGroup; }}
      * @memberof ProductTypeDefinition
      */
-    propertyGroups: { [key: string]: PropertyGroup; };
+    'propertyGroups': { [key: string]: PropertyGroup; };
     /**
      * Locale of the display elements contained in the product type definition.
      * @type {string}
      * @memberof ProductTypeDefinition
      */
-    locale: string;
+    'locale': string;
     /**
      * Amazon marketplace identifiers for which the product type definition is applicable.
      * @type {Array<string>}
      * @memberof ProductTypeDefinition
      */
-    marketplaceIds: Array<string>;
+    'marketplaceIds': Array<string>;
     /**
      * The name of the Amazon product type that this product type definition applies to.
      * @type {string}
      * @memberof ProductTypeDefinition
      */
-    productType: string;
+    'productType': string;
     /**
      * 
      * @type {ProductTypeVersion}
      * @memberof ProductTypeDefinition
      */
-    productTypeVersion: ProductTypeVersion;
+    'productTypeVersion': ProductTypeVersion;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ProductTypeDefinitionRequirementsEnum {
-    Listing = 'LISTING',
-    ListingProductOnly = 'LISTING_PRODUCT_ONLY',
-    ListingOfferOnly = 'LISTING_OFFER_ONLY'
-}
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ProductTypeDefinitionRequirementsEnforcedEnum {
-    Enforced = 'ENFORCED',
-    NotEnforced = 'NOT_ENFORCED'
-}
+export const ProductTypeDefinitionRequirementsEnum = {
+    Listing: 'LISTING',
+    ListingProductOnly: 'LISTING_PRODUCT_ONLY',
+    ListingOfferOnly: 'LISTING_OFFER_ONLY'
+} as const;
 
+export type ProductTypeDefinitionRequirementsEnum = typeof ProductTypeDefinitionRequirementsEnum[keyof typeof ProductTypeDefinitionRequirementsEnum];
+export const ProductTypeDefinitionRequirementsEnforcedEnum = {
+    Enforced: 'ENFORCED',
+    NotEnforced: 'NOT_ENFORCED'
+} as const;
+
+export type ProductTypeDefinitionRequirementsEnforcedEnum = typeof ProductTypeDefinitionRequirementsEnforcedEnum[keyof typeof ProductTypeDefinitionRequirementsEnforcedEnum];
 
 

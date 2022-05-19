@@ -25,7 +25,6 @@ export interface CreateReportScheduleResponse {
      * @type {string}
      * @memberof CreateReportScheduleResponse
      */
-    reportScheduleId: string;
+    'reportScheduleId': string;
 }
-
 

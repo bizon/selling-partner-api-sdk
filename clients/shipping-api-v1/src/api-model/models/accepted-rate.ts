@@ -29,25 +29,24 @@ export interface AcceptedRate {
      * @type {Currency}
      * @memberof AcceptedRate
      */
-    totalCharge?: Currency;
+    'totalCharge'?: Currency;
     /**
      * 
      * @type {Weight}
      * @memberof AcceptedRate
      */
-    billedWeight?: Weight;
+    'billedWeight'?: Weight;
     /**
      * 
      * @type {ServiceType}
      * @memberof AcceptedRate
      */
-    serviceType?: ServiceType;
+    'serviceType'?: ServiceType;
     /**
      * 
      * @type {ShippingPromiseSet}
      * @memberof AcceptedRate
      */
-    promise?: ShippingPromiseSet;
+    'promise'?: ShippingPromiseSet;
 }
-
 

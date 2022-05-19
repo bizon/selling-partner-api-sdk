@@ -28,49 +28,48 @@ export interface FeesEstimateIdentifier {
      * @type {string}
      * @memberof FeesEstimateIdentifier
      */
-    MarketplaceId?: string;
+    'MarketplaceId'?: string;
     /**
      * The seller identifier.
      * @type {string}
      * @memberof FeesEstimateIdentifier
      */
-    SellerId?: string;
+    'SellerId'?: string;
     /**
      * 
      * @type {IdType}
      * @memberof FeesEstimateIdentifier
      */
-    IdType?: IdType;
+    'IdType'?: IdType;
     /**
      * The item identifier.
      * @type {string}
      * @memberof FeesEstimateIdentifier
      */
-    IdValue?: string;
+    'IdValue'?: string;
     /**
      * When true, the offer is fulfilled by Amazon.
      * @type {boolean}
      * @memberof FeesEstimateIdentifier
      */
-    IsAmazonFulfilled?: boolean;
+    'IsAmazonFulfilled'?: boolean;
     /**
      * 
      * @type {PriceToEstimateFees}
      * @memberof FeesEstimateIdentifier
      */
-    PriceToEstimateFees?: PriceToEstimateFees;
+    'PriceToEstimateFees'?: PriceToEstimateFees;
     /**
      * A unique identifier provided by the caller to track this request.
      * @type {string}
      * @memberof FeesEstimateIdentifier
      */
-    SellerInputIdentifier?: string;
+    'SellerInputIdentifier'?: string;
     /**
      * 
      * @type {OptionalFulfillmentProgram}
      * @memberof FeesEstimateIdentifier
      */
-    OptionalFulfillmentProgram?: OptionalFulfillmentProgram;
+    'OptionalFulfillmentProgram'?: OptionalFulfillmentProgram;
 }
-
 

@@ -26,13 +26,12 @@ export interface Scenario {
      * @type {string}
      * @memberof Scenario
      */
-    scenarioId: string;
+    'scenarioId': string;
     /**
      * A list of orders that can be used by the caller to test each life cycle or scenario.
      * @type {Array<TestOrder>}
      * @memberof Scenario
      */
-    orders: Array<TestOrder>;
+    'orders': Array<TestOrder>;
 }
-
 

@@ -26,19 +26,18 @@ export interface SAFETReimbursementItem {
      * @type {Array<ChargeComponent>}
      * @memberof SAFETReimbursementItem
      */
-    itemChargeList?: Array<ChargeComponent>;
+    'itemChargeList'?: Array<ChargeComponent>;
     /**
      * The description of the item as shown on the product detail page on the retail website.
      * @type {string}
      * @memberof SAFETReimbursementItem
      */
-    productDescription?: string;
+    'productDescription'?: string;
     /**
      * The number of units of the item being reimbursed.
      * @type {string}
      * @memberof SAFETReimbursementItem
      */
-    quantity?: string;
+    'quantity'?: string;
 }
-
 

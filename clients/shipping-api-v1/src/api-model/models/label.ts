@@ -26,13 +26,12 @@ export interface Label {
      * @type {string}
      * @memberof Label
      */
-    labelStream?: string;
+    'labelStream'?: string;
     /**
      * 
      * @type {LabelSpecification}
      * @memberof Label
      */
-    labelSpecification?: LabelSpecification;
+    'labelSpecification'?: LabelSpecification;
 }
-
 

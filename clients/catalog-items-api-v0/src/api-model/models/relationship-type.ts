@@ -28,139 +28,138 @@ export interface RelationshipType {
      * @type {IdentifierType}
      * @memberof RelationshipType
      */
-    Identifiers?: IdentifierType;
+    'Identifiers'?: IdentifierType;
     /**
      * The color variation of the item.
      * @type {string}
      * @memberof RelationshipType
      */
-    Color?: string;
+    'Color'?: string;
     /**
      * The edition variation of the item.
      * @type {string}
      * @memberof RelationshipType
      */
-    Edition?: string;
+    'Edition'?: string;
     /**
      * The flavor variation of the item.
      * @type {string}
      * @memberof RelationshipType
      */
-    Flavor?: string;
+    'Flavor'?: string;
     /**
      * The gem type variations of the item.
      * @type {Array<string>}
      * @memberof RelationshipType
      */
-    GemType?: Array<string>;
+    'GemType'?: Array<string>;
     /**
      * The golf club flex variation of an item.
      * @type {string}
      * @memberof RelationshipType
      */
-    GolfClubFlex?: string;
+    'GolfClubFlex'?: string;
     /**
      * The hand orientation variation of an item.
      * @type {string}
      * @memberof RelationshipType
      */
-    HandOrientation?: string;
+    'HandOrientation'?: string;
     /**
      * The hardware platform variation of an item.
      * @type {string}
      * @memberof RelationshipType
      */
-    HardwarePlatform?: string;
+    'HardwarePlatform'?: string;
     /**
      * The material type variations of an item.
      * @type {Array<string>}
      * @memberof RelationshipType
      */
-    MaterialType?: Array<string>;
+    'MaterialType'?: Array<string>;
     /**
      * The metal type variation of an item.
      * @type {string}
      * @memberof RelationshipType
      */
-    MetalType?: string;
+    'MetalType'?: string;
     /**
      * The model variation of an item.
      * @type {string}
      * @memberof RelationshipType
      */
-    Model?: string;
+    'Model'?: string;
     /**
      * The operating system variations of an item.
      * @type {Array<string>}
      * @memberof RelationshipType
      */
-    OperatingSystem?: Array<string>;
+    'OperatingSystem'?: Array<string>;
     /**
      * The product type subcategory variation of an item.
      * @type {string}
      * @memberof RelationshipType
      */
-    ProductTypeSubcategory?: string;
+    'ProductTypeSubcategory'?: string;
     /**
      * The ring size variation of an item.
      * @type {string}
      * @memberof RelationshipType
      */
-    RingSize?: string;
+    'RingSize'?: string;
     /**
      * The shaft material variation of an item.
      * @type {string}
      * @memberof RelationshipType
      */
-    ShaftMaterial?: string;
+    'ShaftMaterial'?: string;
     /**
      * The scent variation of an item.
      * @type {string}
      * @memberof RelationshipType
      */
-    Scent?: string;
+    'Scent'?: string;
     /**
      * The size variation of an item.
      * @type {string}
      * @memberof RelationshipType
      */
-    Size?: string;
+    'Size'?: string;
     /**
      * The size per pearl variation of an item.
      * @type {string}
      * @memberof RelationshipType
      */
-    SizePerPearl?: string;
+    'SizePerPearl'?: string;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof RelationshipType
      */
-    GolfClubLoft?: DecimalWithUnits;
+    'GolfClubLoft'?: DecimalWithUnits;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof RelationshipType
      */
-    TotalDiamondWeight?: DecimalWithUnits;
+    'TotalDiamondWeight'?: DecimalWithUnits;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof RelationshipType
      */
-    TotalGemWeight?: DecimalWithUnits;
+    'TotalGemWeight'?: DecimalWithUnits;
     /**
      * The package quantity variation of an item.
      * @type {number}
      * @memberof RelationshipType
      */
-    PackageQuantity?: number;
+    'PackageQuantity'?: number;
     /**
      * 
      * @type {DimensionType}
      * @memberof RelationshipType
      */
-    ItemDimensions?: DimensionType;
+    'ItemDimensions'?: DimensionType;
 }
-
 

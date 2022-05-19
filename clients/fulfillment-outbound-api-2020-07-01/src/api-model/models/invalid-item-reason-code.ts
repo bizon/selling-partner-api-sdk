@@ -19,12 +19,15 @@
  * @export
  * @enum {string}
  */
-export enum InvalidItemReasonCode {
-    InvalidValues = 'InvalidValues',
-    DuplicateRequest = 'DuplicateRequest',
-    NoCompletedShipItems = 'NoCompletedShipItems',
-    NoReturnableQuantity = 'NoReturnableQuantity'
-}
+
+export const InvalidItemReasonCode = {
+    InvalidValues: 'InvalidValues',
+    DuplicateRequest: 'DuplicateRequest',
+    NoCompletedShipItems: 'NoCompletedShipItems',
+    NoReturnableQuantity: 'NoReturnableQuantity'
+} as const;
+
+export type InvalidItemReasonCode = typeof InvalidItemReasonCode[keyof typeof InvalidItemReasonCode];
 
 
 

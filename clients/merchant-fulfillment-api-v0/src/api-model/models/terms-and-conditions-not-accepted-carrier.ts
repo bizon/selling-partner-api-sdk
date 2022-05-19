@@ -25,7 +25,6 @@ export interface TermsAndConditionsNotAcceptedCarrier {
      * @type {string}
      * @memberof TermsAndConditionsNotAcceptedCarrier
      */
-    CarrierName: string;
+    'CarrierName': string;
 }
-
 

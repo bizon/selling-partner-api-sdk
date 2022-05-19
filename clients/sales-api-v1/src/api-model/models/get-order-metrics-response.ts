@@ -26,13 +26,12 @@ export interface GetOrderMetricsResponse {
      * @type {Array<OrderMetricsInterval>}
      * @memberof GetOrderMetricsResponse
      */
-    payload?: Array<OrderMetricsInterval>;
+    'payload'?: Array<OrderMetricsInterval>;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetOrderMetricsResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

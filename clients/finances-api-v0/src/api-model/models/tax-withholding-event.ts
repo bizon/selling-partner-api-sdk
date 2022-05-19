@@ -27,25 +27,24 @@ export interface TaxWithholdingEvent {
      * @type {string}
      * @memberof TaxWithholdingEvent
      */
-    PostedDate?: string;
+    'PostedDate'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof TaxWithholdingEvent
      */
-    BaseAmount?: Currency;
+    'BaseAmount'?: Currency;
     /**
      * 
      * @type {Currency}
      * @memberof TaxWithholdingEvent
      */
-    WithheldAmount?: Currency;
+    'WithheldAmount'?: Currency;
     /**
      * 
      * @type {TaxWithholdingPeriod}
      * @memberof TaxWithholdingEvent
      */
-    TaxWithholdingPeriod?: TaxWithholdingPeriod;
+    'TaxWithholdingPeriod'?: TaxWithholdingPeriod;
 }
-
 

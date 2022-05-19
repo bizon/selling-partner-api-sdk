@@ -29,55 +29,54 @@ export interface AdditionalSellerInput {
      * @type {string}
      * @memberof AdditionalSellerInput
      */
-    DataType?: string;
+    'DataType'?: string;
     /**
      * The value when the data type is string.
      * @type {string}
      * @memberof AdditionalSellerInput
      */
-    ValueAsString?: string;
+    'ValueAsString'?: string;
     /**
      * The value when the data type is boolean.
      * @type {boolean}
      * @memberof AdditionalSellerInput
      */
-    ValueAsBoolean?: boolean;
+    'ValueAsBoolean'?: boolean;
     /**
      * The value when the data type is integer.
      * @type {number}
      * @memberof AdditionalSellerInput
      */
-    ValueAsInteger?: number;
+    'ValueAsInteger'?: number;
     /**
      * 
      * @type {string}
      * @memberof AdditionalSellerInput
      */
-    ValueAsTimestamp?: string;
+    'ValueAsTimestamp'?: string;
     /**
      * 
      * @type {Address}
      * @memberof AdditionalSellerInput
      */
-    ValueAsAddress?: Address;
+    'ValueAsAddress'?: Address;
     /**
      * 
      * @type {Weight}
      * @memberof AdditionalSellerInput
      */
-    ValueAsWeight?: Weight;
+    'ValueAsWeight'?: Weight;
     /**
      * 
      * @type {Length}
      * @memberof AdditionalSellerInput
      */
-    ValueAsDimension?: Length;
+    'ValueAsDimension'?: Length;
     /**
      * 
      * @type {CurrencyAmount}
      * @memberof AdditionalSellerInput
      */
-    ValueAsCurrency?: CurrencyAmount;
+    'ValueAsCurrency'?: CurrencyAmount;
 }
-
 

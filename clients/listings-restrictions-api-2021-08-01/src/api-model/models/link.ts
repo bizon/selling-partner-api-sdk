@@ -25,34 +25,31 @@ export interface Link {
      * @type {string}
      * @memberof Link
      */
-    resource: string;
+    'resource': string;
     /**
      * The HTTP verb used to interact with the related resource.
      * @type {string}
      * @memberof Link
      */
-    verb: LinkVerbEnum;
+    'verb': LinkVerbEnum;
     /**
      * The title of the related resource.
      * @type {string}
      * @memberof Link
      */
-    title?: string;
+    'title'?: string;
     /**
      * The media type of the related resource.
      * @type {string}
      * @memberof Link
      */
-    type?: string;
+    'type'?: string;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum LinkVerbEnum {
-    Get = 'GET'
-}
+export const LinkVerbEnum = {
+    Get: 'GET'
+} as const;
 
+export type LinkVerbEnum = typeof LinkVerbEnum[keyof typeof LinkVerbEnum];
 
 

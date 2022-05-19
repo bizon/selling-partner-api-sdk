@@ -27,13 +27,12 @@ export interface ImageCropSpecification {
      * @type {ImageDimensions}
      * @memberof ImageCropSpecification
      */
-    size: ImageDimensions;
+    'size': ImageDimensions;
     /**
      * 
      * @type {ImageOffsets}
      * @memberof ImageCropSpecification
      */
-    offset?: ImageOffsets;
+    'offset'?: ImageOffsets;
 }
-
 

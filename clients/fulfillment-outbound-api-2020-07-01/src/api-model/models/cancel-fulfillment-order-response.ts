@@ -25,7 +25,6 @@ export interface CancelFulfillmentOrderResponse {
      * @type {Array<Error>}
      * @memberof CancelFulfillmentOrderResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

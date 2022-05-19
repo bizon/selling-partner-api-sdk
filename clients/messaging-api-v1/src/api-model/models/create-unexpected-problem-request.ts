@@ -25,7 +25,6 @@ export interface CreateUnexpectedProblemRequest {
      * @type {string}
      * @memberof CreateUnexpectedProblemRequest
      */
-    text?: string;
+    'text'?: string;
 }
-
 

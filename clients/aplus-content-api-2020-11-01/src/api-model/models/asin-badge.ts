@@ -19,12 +19,15 @@
  * @export
  * @enum {string}
  */
-export enum AsinBadge {
-    BrandNotEligible = 'BRAND_NOT_ELIGIBLE',
-    CatalogNotFound = 'CATALOG_NOT_FOUND',
-    ContentNotPublished = 'CONTENT_NOT_PUBLISHED',
-    ContentPublished = 'CONTENT_PUBLISHED'
-}
+
+export const AsinBadge = {
+    BrandNotEligible: 'BRAND_NOT_ELIGIBLE',
+    CatalogNotFound: 'CATALOG_NOT_FOUND',
+    ContentNotPublished: 'CONTENT_NOT_PUBLISHED',
+    ContentPublished: 'CONTENT_PUBLISHED'
+} as const;
+
+export type AsinBadge = typeof AsinBadge[keyof typeof AsinBadge];
 
 
 

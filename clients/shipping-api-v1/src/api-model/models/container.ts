@@ -29,46 +29,43 @@ export interface Container {
      * @type {string}
      * @memberof Container
      */
-    containerType?: ContainerContainerTypeEnum;
+    'containerType'?: ContainerContainerTypeEnum;
     /**
      * An identifier for the container. This must be unique within all the containers in the same shipment.
      * @type {string}
      * @memberof Container
      */
-    containerReferenceId: string;
+    'containerReferenceId': string;
     /**
      * 
      * @type {Currency}
      * @memberof Container
      */
-    value: Currency;
+    'value': Currency;
     /**
      * 
      * @type {Dimensions}
      * @memberof Container
      */
-    dimensions: Dimensions;
+    'dimensions': Dimensions;
     /**
      * A list of the items in the container.
      * @type {Array<ContainerItem>}
      * @memberof Container
      */
-    items: Array<ContainerItem>;
+    'items': Array<ContainerItem>;
     /**
      * 
      * @type {Weight}
      * @memberof Container
      */
-    weight: Weight;
+    'weight': Weight;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ContainerContainerTypeEnum {
-    Package = 'PACKAGE'
-}
+export const ContainerContainerTypeEnum = {
+    Package: 'PACKAGE'
+} as const;
 
+export type ContainerContainerTypeEnum = typeof ContainerContainerTypeEnum[keyof typeof ContainerContainerTypeEnum];
 
 

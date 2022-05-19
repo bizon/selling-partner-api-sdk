@@ -28,43 +28,42 @@ export interface InventoryDetails {
      * @type {number}
      * @memberof InventoryDetails
      */
-    fulfillableQuantity?: number;
+    'fulfillableQuantity'?: number;
     /**
      * The number of units in an inbound shipment for which you have notified Amazon.
      * @type {number}
      * @memberof InventoryDetails
      */
-    inboundWorkingQuantity?: number;
+    'inboundWorkingQuantity'?: number;
     /**
      * The number of units in an inbound shipment that you have notified Amazon about and have provided a tracking number.
      * @type {number}
      * @memberof InventoryDetails
      */
-    inboundShippedQuantity?: number;
+    'inboundShippedQuantity'?: number;
     /**
      * The number of units that have not yet been received at an Amazon fulfillment center for processing, but are part of an inbound shipment with some units that have already been received and processed.
      * @type {number}
      * @memberof InventoryDetails
      */
-    inboundReceivingQuantity?: number;
+    'inboundReceivingQuantity'?: number;
     /**
      * 
      * @type {ReservedQuantity}
      * @memberof InventoryDetails
      */
-    reservedQuantity?: ReservedQuantity;
+    'reservedQuantity'?: ReservedQuantity;
     /**
      * 
      * @type {ResearchingQuantity}
      * @memberof InventoryDetails
      */
-    researchingQuantity?: ResearchingQuantity;
+    'researchingQuantity'?: ResearchingQuantity;
     /**
      * 
      * @type {UnfulfillableQuantity}
      * @memberof InventoryDetails
      */
-    unfulfillableQuantity?: UnfulfillableQuantity;
+    'unfulfillableQuantity'?: UnfulfillableQuantity;
 }
-
 

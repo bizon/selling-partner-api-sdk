@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum SmallAndLightEnrollmentStatus {
-    Enrolled = 'ENROLLED',
-    NotEnrolled = 'NOT_ENROLLED'
-}
+
+export const SmallAndLightEnrollmentStatus = {
+    Enrolled: 'ENROLLED',
+    NotEnrolled: 'NOT_ENROLLED'
+} as const;
+
+export type SmallAndLightEnrollmentStatus = typeof SmallAndLightEnrollmentStatus[keyof typeof SmallAndLightEnrollmentStatus];
 
 
 

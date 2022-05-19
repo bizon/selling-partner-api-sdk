@@ -26,13 +26,12 @@ export interface PurchaseLabelsResponse {
      * @type {PurchaseLabelsResult}
      * @memberof PurchaseLabelsResponse
      */
-    payload?: PurchaseLabelsResult;
+    'payload'?: PurchaseLabelsResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof PurchaseLabelsResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

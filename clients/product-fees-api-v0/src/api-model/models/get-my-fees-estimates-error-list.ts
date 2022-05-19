@@ -25,7 +25,6 @@ export interface GetMyFeesEstimatesErrorList {
      * @type {Array<Error>}
      * @memberof GetMyFeesEstimatesErrorList
      */
-    errors: Array<Error>;
+    'errors': Array<Error>;
 }
-
 

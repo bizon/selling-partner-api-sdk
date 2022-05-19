@@ -25,7 +25,6 @@ export interface CreateLegalDisclosureResponse {
      * @type {Array<Error>}
      * @memberof CreateLegalDisclosureResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

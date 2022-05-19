@@ -25,13 +25,12 @@ export interface Item {
      * @type {string}
      * @memberof Item
      */
-    orderItemId?: string;
+    'orderItemId'?: string;
     /**
      * A list of serial numbers for the items associated with the `OrderItemId` value.
      * @type {Array<string>}
      * @memberof Item
      */
-    orderItemSerialNumbers?: Array<string>;
+    'orderItemSerialNumbers'?: Array<string>;
 }
-
 

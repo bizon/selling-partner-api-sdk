@@ -29,43 +29,42 @@ export interface Shipment {
      * @type {string}
      * @memberof Shipment
      */
-    shipmentId: string;
+    'shipmentId': string;
     /**
      * Client reference id.
      * @type {string}
      * @memberof Shipment
      */
-    clientReferenceId: string;
+    'clientReferenceId': string;
     /**
      * 
      * @type {Address}
      * @memberof Shipment
      */
-    shipFrom: Address;
+    'shipFrom': Address;
     /**
      * 
      * @type {Address}
      * @memberof Shipment
      */
-    shipTo: Address;
+    'shipTo': Address;
     /**
      * 
      * @type {AcceptedRate}
      * @memberof Shipment
      */
-    acceptedRate?: AcceptedRate;
+    'acceptedRate'?: AcceptedRate;
     /**
      * 
      * @type {Party}
      * @memberof Shipment
      */
-    shipper?: Party;
+    'shipper'?: Party;
     /**
      * A list of container.
      * @type {Array<Container>}
      * @memberof Shipment
      */
-    containers: Array<Container>;
+    'containers': Array<Container>;
 }
-
 

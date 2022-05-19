@@ -26,13 +26,12 @@ export interface Item {
      * @type {string}
      * @memberof Item
      */
-    asin: string;
+    'asin': string;
     /**
      * 
      * @type {MoneyType}
      * @memberof Item
      */
-    price: MoneyType;
+    'price': MoneyType;
 }
-
 

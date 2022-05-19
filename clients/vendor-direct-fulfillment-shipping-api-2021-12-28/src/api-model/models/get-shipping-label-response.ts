@@ -27,13 +27,12 @@ export interface GetShippingLabelResponse {
      * @type {ShippingLabel}
      * @memberof GetShippingLabelResponse
      */
-    payload?: ShippingLabel;
+    'payload'?: ShippingLabel;
     /**
      * 
      * @type {ErrorList}
      * @memberof GetShippingLabelResponse
      */
-    errors?: ErrorList;
+    'errors'?: ErrorList;
 }
-
 

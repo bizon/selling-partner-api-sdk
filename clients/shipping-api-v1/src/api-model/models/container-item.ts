@@ -27,25 +27,24 @@ export interface ContainerItem {
      * @type {number}
      * @memberof ContainerItem
      */
-    quantity: number;
+    'quantity': number;
     /**
      * 
      * @type {Currency}
      * @memberof ContainerItem
      */
-    unitPrice: Currency;
+    'unitPrice': Currency;
     /**
      * 
      * @type {Weight}
      * @memberof ContainerItem
      */
-    unitWeight: Weight;
+    'unitWeight': Weight;
     /**
      * A descriptive title of the item.
      * @type {string}
      * @memberof ContainerItem
      */
-    title: string;
+    'title': string;
 }
-
 

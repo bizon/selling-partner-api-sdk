@@ -26,49 +26,48 @@ export interface NetworkComminglingTransactionEvent {
      * @type {string}
      * @memberof NetworkComminglingTransactionEvent
      */
-    TransactionType?: string;
+    'TransactionType'?: string;
     /**
      * 
      * @type {string}
      * @memberof NetworkComminglingTransactionEvent
      */
-    PostedDate?: string;
+    'PostedDate'?: string;
     /**
      * The identifier for the network item swap.
      * @type {string}
      * @memberof NetworkComminglingTransactionEvent
      */
-    NetCoTransactionID?: string;
+    'NetCoTransactionID'?: string;
     /**
      * The reason for the network item swap.
      * @type {string}
      * @memberof NetworkComminglingTransactionEvent
      */
-    SwapReason?: string;
+    'SwapReason'?: string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the swapped item.
      * @type {string}
      * @memberof NetworkComminglingTransactionEvent
      */
-    ASIN?: string;
+    'ASIN'?: string;
     /**
      * The marketplace in which the event took place.
      * @type {string}
      * @memberof NetworkComminglingTransactionEvent
      */
-    MarketplaceId?: string;
+    'MarketplaceId'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof NetworkComminglingTransactionEvent
      */
-    TaxExclusiveAmount?: Currency;
+    'TaxExclusiveAmount'?: Currency;
     /**
      * 
      * @type {Currency}
      * @memberof NetworkComminglingTransactionEvent
      */
-    TaxAmount?: Currency;
+    'TaxAmount'?: Currency;
 }
-
 

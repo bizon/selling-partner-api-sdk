@@ -26,19 +26,18 @@ export interface Promotion {
      * @type {string}
      * @memberof Promotion
      */
-    PromotionType?: string;
+    'PromotionType'?: string;
     /**
      * The seller-specified identifier for the promotion.
      * @type {string}
      * @memberof Promotion
      */
-    PromotionId?: string;
+    'PromotionId'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof Promotion
      */
-    PromotionAmount?: Currency;
+    'PromotionAmount'?: Currency;
 }
-
 

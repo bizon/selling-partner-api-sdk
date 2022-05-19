@@ -26,13 +26,12 @@ export interface PartneredSmallParcelDataInput {
      * @type {Array<PartneredSmallParcelPackageInput>}
      * @memberof PartneredSmallParcelDataInput
      */
-    PackageList?: Array<PartneredSmallParcelPackageInput>;
+    'PackageList'?: Array<PartneredSmallParcelPackageInput>;
     /**
      * The Amazon-partnered carrier to use for the inbound shipment.
      * @type {string}
      * @memberof PartneredSmallParcelDataInput
      */
-    CarrierName?: string;
+    'CarrierName'?: string;
 }
-
 

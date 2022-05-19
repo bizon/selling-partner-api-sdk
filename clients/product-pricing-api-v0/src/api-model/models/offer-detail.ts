@@ -33,97 +33,96 @@ export interface OfferDetail {
      * @type {boolean}
      * @memberof OfferDetail
      */
-    MyOffer?: boolean;
+    'MyOffer'?: boolean;
     /**
      * 
      * @type {OfferCustomerType}
      * @memberof OfferDetail
      */
-    offerType?: OfferCustomerType;
+    'offerType'?: OfferCustomerType;
     /**
      * The subcondition of the item. Subcondition values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
      * @type {string}
      * @memberof OfferDetail
      */
-    SubCondition: string;
+    'SubCondition': string;
     /**
      * The seller identifier for the offer.
      * @type {string}
      * @memberof OfferDetail
      */
-    SellerId?: string;
+    'SellerId'?: string;
     /**
      * Information about the condition of the item.
      * @type {string}
      * @memberof OfferDetail
      */
-    ConditionNotes?: string;
+    'ConditionNotes'?: string;
     /**
      * 
      * @type {SellerFeedbackType}
      * @memberof OfferDetail
      */
-    SellerFeedbackRating?: SellerFeedbackType;
+    'SellerFeedbackRating'?: SellerFeedbackType;
     /**
      * 
      * @type {DetailedShippingTimeType}
      * @memberof OfferDetail
      */
-    ShippingTime: DetailedShippingTimeType;
+    'ShippingTime': DetailedShippingTimeType;
     /**
      * 
      * @type {MoneyType}
      * @memberof OfferDetail
      */
-    ListingPrice: MoneyType;
+    'ListingPrice': MoneyType;
     /**
      * 
      * @type {Array<QuantityDiscountPriceType>}
      * @memberof OfferDetail
      */
-    quantityDiscountPrices?: Array<QuantityDiscountPriceType>;
+    'quantityDiscountPrices'?: Array<QuantityDiscountPriceType>;
     /**
      * 
      * @type {Points}
      * @memberof OfferDetail
      */
-    Points?: Points;
+    'Points'?: Points;
     /**
      * 
      * @type {MoneyType}
      * @memberof OfferDetail
      */
-    Shipping: MoneyType;
+    'Shipping': MoneyType;
     /**
      * 
      * @type {ShipsFromType}
      * @memberof OfferDetail
      */
-    ShipsFrom?: ShipsFromType;
+    'ShipsFrom'?: ShipsFromType;
     /**
      * When true, the offer is fulfilled by Amazon.
      * @type {boolean}
      * @memberof OfferDetail
      */
-    IsFulfilledByAmazon: boolean;
+    'IsFulfilledByAmazon': boolean;
     /**
      * 
      * @type {PrimeInformationType}
      * @memberof OfferDetail
      */
-    PrimeInformation?: PrimeInformationType;
+    'PrimeInformation'?: PrimeInformationType;
     /**
      * When true, the offer is currently in the Buy Box. There can be up to two Buy Box winners at any time per ASIN, one that is eligible for Prime and one that is not eligible for Prime.
      * @type {boolean}
      * @memberof OfferDetail
      */
-    IsBuyBoxWinner?: boolean;
+    'IsBuyBoxWinner'?: boolean;
     /**
      * When true, the seller of the item is eligible to win the Buy Box.
      * @type {boolean}
      * @memberof OfferDetail
      */
-    IsFeaturedMerchant?: boolean;
+    'IsFeaturedMerchant'?: boolean;
 }
-
 

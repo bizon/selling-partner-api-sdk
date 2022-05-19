@@ -27,13 +27,12 @@ export interface StandardSingleSideImageModule {
      * @type {PositionType}
      * @memberof StandardSingleSideImageModule
      */
-    imagePositionType: PositionType;
+    'imagePositionType': PositionType;
     /**
      * 
      * @type {StandardImageTextBlock}
      * @memberof StandardSingleSideImageModule
      */
-    block?: StandardImageTextBlock;
+    'block'?: StandardImageTextBlock;
 }
-
 

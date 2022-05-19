@@ -26,4 +26,3 @@ import { ItemCondition } from './item-condition';
 export type ListingOffersRequest = BatchOffersRequestParams & BatchRequest;
 
 
-

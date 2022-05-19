@@ -25,19 +25,18 @@ export interface LanguageType {
      * @type {string}
      * @memberof LanguageType
      */
-    Name?: string;
+    'Name'?: string;
     /**
      * The type attribute of the item.
      * @type {string}
      * @memberof LanguageType
      */
-    Type?: string;
+    'Type'?: string;
     /**
      * The audio format attribute of the item.
      * @type {string}
      * @memberof LanguageType
      */
-    AudioFormat?: string;
+    'AudioFormat'?: string;
 }
-
 

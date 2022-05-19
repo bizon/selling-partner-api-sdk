@@ -26,7 +26,6 @@ export interface CreateAmazonMotorsRequest {
      * @type {Array<Attachment>}
      * @memberof CreateAmazonMotorsRequest
      */
-    attachments?: Array<Attachment>;
+    'attachments'?: Array<Attachment>;
 }
-
 

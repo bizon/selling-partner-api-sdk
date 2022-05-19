@@ -26,67 +26,66 @@ export interface ShipmentItem {
      * @type {string}
      * @memberof ShipmentItem
      */
-    ASIN?: string;
+    'ASIN'?: string;
     /**
      * The seller SKU of the item.
      * @type {string}
      * @memberof ShipmentItem
      */
-    SellerSKU?: string;
+    'SellerSKU'?: string;
     /**
      * The Amazon-defined identifier for the order item.
      * @type {string}
      * @memberof ShipmentItem
      */
-    OrderItemId?: string;
+    'OrderItemId'?: string;
     /**
      * The name of the item.
      * @type {string}
      * @memberof ShipmentItem
      */
-    Title?: string;
+    'Title'?: string;
     /**
      * The number of items ordered.
      * @type {number}
      * @memberof ShipmentItem
      */
-    QuantityOrdered?: number;
+    'QuantityOrdered'?: number;
     /**
      * 
      * @type {Money}
      * @memberof ShipmentItem
      */
-    ItemPrice?: Money;
+    'ItemPrice'?: Money;
     /**
      * 
      * @type {Money}
      * @memberof ShipmentItem
      */
-    ShippingPrice?: Money;
+    'ShippingPrice'?: Money;
     /**
      * 
      * @type {Money}
      * @memberof ShipmentItem
      */
-    GiftWrapPrice?: Money;
+    'GiftWrapPrice'?: Money;
     /**
      * 
      * @type {Money}
      * @memberof ShipmentItem
      */
-    ShippingDiscount?: Money;
+    'ShippingDiscount'?: Money;
     /**
      * 
      * @type {Money}
      * @memberof ShipmentItem
      */
-    PromotionDiscount?: Money;
+    'PromotionDiscount'?: Money;
     /**
      * The list of serial numbers.
      * @type {Array<string>}
      * @memberof ShipmentItem
      */
-    SerialNumbers?: Array<string>;
+    'SerialNumbers'?: Array<string>;
 }
-
 

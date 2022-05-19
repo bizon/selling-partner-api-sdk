@@ -27,13 +27,12 @@ export interface StandardHeaderImageTextModule {
      * @type {TextComponent}
      * @memberof StandardHeaderImageTextModule
      */
-    headline?: TextComponent;
+    'headline'?: TextComponent;
     /**
      * 
      * @type {StandardImageTextBlock}
      * @memberof StandardHeaderImageTextModule
      */
-    block?: StandardImageTextBlock;
+    'block'?: StandardImageTextBlock;
 }
-
 

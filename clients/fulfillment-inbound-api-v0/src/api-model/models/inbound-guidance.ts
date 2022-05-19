@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum InboundGuidance {
-    InboundNotRecommended = 'InboundNotRecommended',
-    InboundOk = 'InboundOK'
-}
+
+export const InboundGuidance = {
+    InboundNotRecommended: 'InboundNotRecommended',
+    InboundOk: 'InboundOK'
+} as const;
+
+export type InboundGuidance = typeof InboundGuidance[keyof typeof InboundGuidance];
 
 
 

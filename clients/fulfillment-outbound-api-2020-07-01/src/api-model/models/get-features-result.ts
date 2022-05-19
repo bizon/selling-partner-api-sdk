@@ -26,7 +26,6 @@ export interface GetFeaturesResult {
      * @type {Array<Feature>}
      * @memberof GetFeaturesResult
      */
-    features: Array<Feature>;
+    'features': Array<Feature>;
 }
-
 

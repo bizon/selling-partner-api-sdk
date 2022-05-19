@@ -26,13 +26,12 @@ export interface TextItem {
      * @type {number}
      * @memberof TextItem
      */
-    position: number;
+    'position': number;
     /**
      * 
      * @type {TextComponent}
      * @memberof TextItem
      */
-    text: TextComponent;
+    'text': TextComponent;
 }
-
 

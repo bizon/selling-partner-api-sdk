@@ -26,13 +26,12 @@ export interface ListReturnReasonCodesResponse {
      * @type {ListReturnReasonCodesResult}
      * @memberof ListReturnReasonCodesResponse
      */
-    payload?: ListReturnReasonCodesResult;
+    'payload'?: ListReturnReasonCodesResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof ListReturnReasonCodesResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

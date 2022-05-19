@@ -26,19 +26,18 @@ export interface OrderedQuantityDetails {
      * @type {string}
      * @memberof OrderedQuantityDetails
      */
-    updatedDate?: string;
+    'updatedDate'?: string;
     /**
      * 
      * @type {ItemQuantity}
      * @memberof OrderedQuantityDetails
      */
-    orderedQuantity?: ItemQuantity;
+    'orderedQuantity'?: ItemQuantity;
     /**
      * 
      * @type {ItemQuantity}
      * @memberof OrderedQuantityDetails
      */
-    cancelledQuantity?: ItemQuantity;
+    'cancelledQuantity'?: ItemQuantity;
 }
-
 

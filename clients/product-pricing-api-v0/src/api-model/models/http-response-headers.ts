@@ -27,13 +27,12 @@ export interface HttpResponseHeaders {
      * @type {string}
      * @memberof HttpResponseHeaders
      */
-    Date?: string;
+    'Date'?: string;
     /**
      * Unique request reference ID.
      * @type {string}
      * @memberof HttpResponseHeaders
      */
-    x_amzn_RequestId?: string;
+    'x-amzn-RequestId'?: string;
 }
-
 

@@ -25,13 +25,12 @@ export interface EventBridgeResourceSpecification {
      * @type {string}
      * @memberof EventBridgeResourceSpecification
      */
-    region: string;
+    'region': string;
     /**
      * The identifier for the AWS account that is responsible for charges related to receiving notifications.
      * @type {string}
      * @memberof EventBridgeResourceSpecification
      */
-    accountId: string;
+    'accountId': string;
 }
-
 

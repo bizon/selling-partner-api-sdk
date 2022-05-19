@@ -25,13 +25,12 @@ export interface Attachment {
      * @type {string}
      * @memberof Attachment
      */
-    uploadDestinationId: string;
+    'uploadDestinationId': string;
     /**
      * The name of the file, including the extension. This is the file name that will appear in the message. This does not need to match the file name of the file that you uploaded.
      * @type {string}
      * @memberof Attachment
      */
-    fileName: string;
+    'fileName': string;
 }
-
 

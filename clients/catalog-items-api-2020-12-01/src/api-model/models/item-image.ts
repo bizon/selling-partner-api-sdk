@@ -25,43 +25,40 @@ export interface ItemImage {
      * @type {string}
      * @memberof ItemImage
      */
-    variant: ItemImageVariantEnum;
+    'variant': ItemImageVariantEnum;
     /**
      * Link, or URL, for the image.
      * @type {string}
      * @memberof ItemImage
      */
-    link: string;
+    'link': string;
     /**
      * Height of the image in pixels.
      * @type {number}
      * @memberof ItemImage
      */
-    height: number;
+    'height': number;
     /**
      * Width of the image in pixels.
      * @type {number}
      * @memberof ItemImage
      */
-    width: number;
+    'width': number;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ItemImageVariantEnum {
-    Main = 'MAIN',
-    Pt01 = 'PT01',
-    Pt02 = 'PT02',
-    Pt03 = 'PT03',
-    Pt04 = 'PT04',
-    Pt05 = 'PT05',
-    Pt06 = 'PT06',
-    Pt07 = 'PT07',
-    Pt08 = 'PT08',
-    Swch = 'SWCH'
-}
+export const ItemImageVariantEnum = {
+    Main: 'MAIN',
+    Pt01: 'PT01',
+    Pt02: 'PT02',
+    Pt03: 'PT03',
+    Pt04: 'PT04',
+    Pt05: 'PT05',
+    Pt06: 'PT06',
+    Pt07: 'PT07',
+    Pt08: 'PT08',
+    Swch: 'SWCH'
+} as const;
 
+export type ItemImageVariantEnum = typeof ItemImageVariantEnum[keyof typeof ItemImageVariantEnum];
 
 

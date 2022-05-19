@@ -26,13 +26,12 @@ export interface InvalidItemReason {
      * @type {InvalidItemReasonCode}
      * @memberof InvalidItemReason
      */
-    invalidItemReasonCode: InvalidItemReasonCode;
+    'invalidItemReasonCode': InvalidItemReasonCode;
     /**
      * A human readable description of the invalid item reason code.
      * @type {string}
      * @memberof InvalidItemReason
      */
-    description: string;
+    'description': string;
 }
-
 

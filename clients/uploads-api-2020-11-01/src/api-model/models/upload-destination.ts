@@ -25,19 +25,18 @@ export interface UploadDestination {
      * @type {string}
      * @memberof UploadDestination
      */
-    uploadDestinationId?: string;
+    'uploadDestinationId'?: string;
     /**
      * The URL for the upload destination.
      * @type {string}
      * @memberof UploadDestination
      */
-    url?: string;
+    'url'?: string;
     /**
      * The headers to include in the upload request.
      * @type {object}
      * @memberof UploadDestination
      */
-    headers?: object;
+    'headers'?: object;
 }
-
 

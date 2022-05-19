@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum ContentType {
-    Ebc = 'EBC',
-    Emc = 'EMC'
-}
+
+export const ContentType = {
+    Ebc: 'EBC',
+    Emc: 'EMC'
+} as const;
+
+export type ContentType = typeof ContentType[keyof typeof ContentType];
 
 
 

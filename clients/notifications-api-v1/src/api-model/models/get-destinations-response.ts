@@ -26,13 +26,12 @@ export interface GetDestinationsResponse {
      * @type {Array<Destination>}
      * @memberof GetDestinationsResponse
      */
-    payload?: Array<Destination>;
+    'payload'?: Array<Destination>;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetDestinationsResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

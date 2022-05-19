@@ -25,7 +25,6 @@ export interface TrackingSummary {
      * @type {string}
      * @memberof TrackingSummary
      */
-    status?: string;
+    'status'?: string;
 }
-
 

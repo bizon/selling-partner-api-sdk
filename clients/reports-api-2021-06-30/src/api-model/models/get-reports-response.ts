@@ -26,13 +26,12 @@ export interface GetReportsResponse {
      * @type {Array<Report>}
      * @memberof GetReportsResponse
      */
-    reports: Array<Report>;
+    'reports': Array<Report>;
     /**
      * Returned when the number of results exceeds pageSize. To get the next page of results, call getReports with this token as the only parameter.
      * @type {string}
      * @memberof GetReportsResponse
      */
-    nextToken?: string;
+    'nextToken'?: string;
 }
-
 

@@ -27,39 +27,36 @@ export interface AllowanceDetails {
      * @type {string}
      * @memberof AllowanceDetails
      */
-    type: AllowanceDetailsTypeEnum;
+    'type': AllowanceDetailsTypeEnum;
     /**
      * Description of the allowance.
      * @type {string}
      * @memberof AllowanceDetails
      */
-    description?: string;
+    'description'?: string;
     /**
      * 
      * @type {Money}
      * @memberof AllowanceDetails
      */
-    allowanceAmount: Money;
+    'allowanceAmount': Money;
     /**
      * Tax amount details applied on this allowance.
      * @type {Array<TaxDetails>}
      * @memberof AllowanceDetails
      */
-    taxDetails?: Array<TaxDetails>;
+    'taxDetails'?: Array<TaxDetails>;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum AllowanceDetailsTypeEnum {
-    Discount = 'Discount',
-    DiscountIncentive = 'DiscountIncentive',
-    Defective = 'Defective',
-    Promotional = 'Promotional',
-    UnsaleableMerchandise = 'UnsaleableMerchandise',
-    Special = 'Special'
-}
+export const AllowanceDetailsTypeEnum = {
+    Discount: 'Discount',
+    DiscountIncentive: 'DiscountIncentive',
+    Defective: 'Defective',
+    Promotional: 'Promotional',
+    UnsaleableMerchandise: 'UnsaleableMerchandise',
+    Special: 'Special'
+} as const;
 
+export type AllowanceDetailsTypeEnum = typeof AllowanceDetailsTypeEnum[keyof typeof AllowanceDetailsTypeEnum];
 
 

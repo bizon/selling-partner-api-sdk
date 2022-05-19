@@ -26,19 +26,18 @@ export interface LabelResult {
      * @type {string}
      * @memberof LabelResult
      */
-    containerReferenceId?: string;
+    'containerReferenceId'?: string;
     /**
      * The tracking identifier assigned to the container.
      * @type {string}
      * @memberof LabelResult
      */
-    trackingId?: string;
+    'trackingId'?: string;
     /**
      * 
      * @type {Label}
      * @memberof LabelResult
      */
-    label?: Label;
+    'label'?: Label;
 }
-
 

@@ -26,19 +26,18 @@ export interface SmallAndLightEligibility {
      * @type {string}
      * @memberof SmallAndLightEligibility
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * Identifies an item in the given marketplace. SellerSKU is qualified by the seller\'s SellerId, which is included with every operation that you submit.
      * @type {string}
      * @memberof SmallAndLightEligibility
      */
-    sellerSKU: string;
+    'sellerSKU': string;
     /**
      * 
      * @type {SmallAndLightEligibilityStatus}
      * @memberof SmallAndLightEligibility
      */
-    status: SmallAndLightEligibilityStatus;
+    'status': SmallAndLightEligibilityStatus;
 }
-
 

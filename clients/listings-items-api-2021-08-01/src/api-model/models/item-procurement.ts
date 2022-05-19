@@ -26,7 +26,6 @@ export interface ItemProcurement {
      * @type {Money}
      * @memberof ItemProcurement
      */
-    costPrice: Money;
+    'costPrice': Money;
 }
-
 

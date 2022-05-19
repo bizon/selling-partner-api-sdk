@@ -19,11 +19,14 @@
  * @export
  * @enum {string}
  */
-export enum ServiceType {
-    Ground = 'Amazon Shipping Ground',
-    Standard = 'Amazon Shipping Standard',
-    Premium = 'Amazon Shipping Premium'
-}
+
+export const ServiceType = {
+    Ground: 'Amazon Shipping Ground',
+    Standard: 'Amazon Shipping Standard',
+    Premium: 'Amazon Shipping Premium'
+} as const;
+
+export type ServiceType = typeof ServiceType[keyof typeof ServiceType];
 
 
 

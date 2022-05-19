@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum PositionType {
-    Left = 'LEFT',
-    Right = 'RIGHT'
-}
+
+export const PositionType = {
+    Left: 'LEFT',
+    Right: 'RIGHT'
+} as const;
+
+export type PositionType = typeof PositionType[keyof typeof PositionType];
 
 
 

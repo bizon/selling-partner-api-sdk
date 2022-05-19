@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum HazmatType {
-    None = 'None',
-    LqHazmat = 'LQHazmat'
-}
+
+export const HazmatType = {
+    None: 'None',
+    LqHazmat: 'LQHazmat'
+} as const;
+
+export type HazmatType = typeof HazmatType[keyof typeof HazmatType];
 
 
 

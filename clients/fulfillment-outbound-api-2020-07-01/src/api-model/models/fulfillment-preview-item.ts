@@ -26,41 +26,38 @@ export interface FulfillmentPreviewItem {
      * @type {string}
      * @memberof FulfillmentPreviewItem
      */
-    sellerSku: string;
+    'sellerSku': string;
     /**
      * The item quantity.
      * @type {number}
      * @memberof FulfillmentPreviewItem
      */
-    quantity: number;
+    'quantity': number;
     /**
      * A fulfillment order item identifier that the seller created with a call to the createFulfillmentOrder operation.
      * @type {string}
      * @memberof FulfillmentPreviewItem
      */
-    sellerFulfillmentOrderItemId: string;
+    'sellerFulfillmentOrderItemId': string;
     /**
      * 
      * @type {Weight}
      * @memberof FulfillmentPreviewItem
      */
-    estimatedShippingWeight?: Weight;
+    'estimatedShippingWeight'?: Weight;
     /**
      * The method used to calculate the estimated shipping weight.
      * @type {string}
      * @memberof FulfillmentPreviewItem
      */
-    shippingWeightCalculationMethod?: FulfillmentPreviewItemShippingWeightCalculationMethodEnum;
+    'shippingWeightCalculationMethod'?: FulfillmentPreviewItemShippingWeightCalculationMethodEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum FulfillmentPreviewItemShippingWeightCalculationMethodEnum {
-    Package = 'Package',
-    Dimensional = 'Dimensional'
-}
+export const FulfillmentPreviewItemShippingWeightCalculationMethodEnum = {
+    Package: 'Package',
+    Dimensional: 'Dimensional'
+} as const;
 
+export type FulfillmentPreviewItemShippingWeightCalculationMethodEnum = typeof FulfillmentPreviewItemShippingWeightCalculationMethodEnum[keyof typeof FulfillmentPreviewItemShippingWeightCalculationMethodEnum];
 
 

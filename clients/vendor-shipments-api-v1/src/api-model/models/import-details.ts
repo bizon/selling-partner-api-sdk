@@ -27,51 +27,48 @@ export interface ImportDetails {
      * @type {string}
      * @memberof ImportDetails
      */
-    methodOfPayment?: ImportDetailsMethodOfPaymentEnum;
+    'methodOfPayment'?: ImportDetailsMethodOfPaymentEnum;
     /**
      * The container\'s seal number.
      * @type {string}
      * @memberof ImportDetails
      */
-    sealNumber?: string;
+    'sealNumber'?: string;
     /**
      * 
      * @type {Route}
      * @memberof ImportDetails
      */
-    route?: Route;
+    'route'?: Route;
     /**
      * Types and numbers of container(s) for import purchase orders. Can be a comma-separated list if shipment has multiple containers.
      * @type {string}
      * @memberof ImportDetails
      */
-    importContainers?: string;
+    'importContainers'?: string;
     /**
      * 
      * @type {Weight}
      * @memberof ImportDetails
      */
-    billableWeight?: Weight;
+    'billableWeight'?: Weight;
     /**
      * Date on which the shipment is expected to be shipped. This value should not be in the past and not more than 60 days out in the future.
      * @type {string}
      * @memberof ImportDetails
      */
-    estimatedShipByDate?: string;
+    'estimatedShipByDate'?: string;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ImportDetailsMethodOfPaymentEnum {
-    PaidByBuyer = 'PaidByBuyer',
-    CollectOnDelivery = 'CollectOnDelivery',
-    DefinedByBuyerAndSeller = 'DefinedByBuyerAndSeller',
-    FobPortOfCall = 'FOBPortOfCall',
-    PrepaidBySeller = 'PrepaidBySeller',
-    PaidBySeller = 'PaidBySeller'
-}
+export const ImportDetailsMethodOfPaymentEnum = {
+    PaidByBuyer: 'PaidByBuyer',
+    CollectOnDelivery: 'CollectOnDelivery',
+    DefinedByBuyerAndSeller: 'DefinedByBuyerAndSeller',
+    FobPortOfCall: 'FOBPortOfCall',
+    PrepaidBySeller: 'PrepaidBySeller',
+    PaidBySeller: 'PaidBySeller'
+} as const;
 
+export type ImportDetailsMethodOfPaymentEnum = typeof ImportDetailsMethodOfPaymentEnum[keyof typeof ImportDetailsMethodOfPaymentEnum];
 
 

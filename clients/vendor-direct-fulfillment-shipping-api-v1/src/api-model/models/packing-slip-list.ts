@@ -27,13 +27,12 @@ export interface PackingSlipList {
      * @type {Pagination}
      * @memberof PackingSlipList
      */
-    pagination?: Pagination;
+    'pagination'?: Pagination;
     /**
      * 
      * @type {Array<PackingSlip>}
      * @memberof PackingSlipList
      */
-    packingSlips?: Array<PackingSlip>;
+    'packingSlips'?: Array<PackingSlip>;
 }
-
 

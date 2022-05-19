@@ -30,61 +30,60 @@ export interface Summary {
      * @type {number}
      * @memberof Summary
      */
-    TotalOfferCount: number;
+    'TotalOfferCount': number;
     /**
      * 
      * @type {Array<OfferCountType>}
      * @memberof Summary
      */
-    NumberOfOffers?: Array<OfferCountType>;
+    'NumberOfOffers'?: Array<OfferCountType>;
     /**
      * 
      * @type {Array<LowestPriceType>}
      * @memberof Summary
      */
-    LowestPrices?: Array<LowestPriceType>;
+    'LowestPrices'?: Array<LowestPriceType>;
     /**
      * 
      * @type {Array<BuyBoxPriceType>}
      * @memberof Summary
      */
-    BuyBoxPrices?: Array<BuyBoxPriceType>;
+    'BuyBoxPrices'?: Array<BuyBoxPriceType>;
     /**
      * 
      * @type {MoneyType}
      * @memberof Summary
      */
-    ListPrice?: MoneyType;
+    'ListPrice'?: MoneyType;
     /**
      * 
      * @type {MoneyType}
      * @memberof Summary
      */
-    CompetitivePriceThreshold?: MoneyType;
+    'CompetitivePriceThreshold'?: MoneyType;
     /**
      * 
      * @type {MoneyType}
      * @memberof Summary
      */
-    SuggestedLowerPricePlusShipping?: MoneyType;
+    'SuggestedLowerPricePlusShipping'?: MoneyType;
     /**
      * A list of sales rank information for the item, by category.
      * @type {Array<SalesRankType>}
      * @memberof Summary
      */
-    SalesRankings?: Array<SalesRankType>;
+    'SalesRankings'?: Array<SalesRankType>;
     /**
      * 
      * @type {Array<OfferCountType>}
      * @memberof Summary
      */
-    BuyBoxEligibleOffers?: Array<OfferCountType>;
+    'BuyBoxEligibleOffers'?: Array<OfferCountType>;
     /**
      * When the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing.
      * @type {string}
      * @memberof Summary
      */
-    OffersAvailableTime?: string;
+    'OffersAvailableTime'?: string;
 }
-
 

@@ -27,4 +27,3 @@ import { ListingOffersResponseAllOf } from './listing-offers-response-all-of';
 export type ListingOffersResponse = BatchOffersResponse & ListingOffersResponseAllOf;
 
 
-

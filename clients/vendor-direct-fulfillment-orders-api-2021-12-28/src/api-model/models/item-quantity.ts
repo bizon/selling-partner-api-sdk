@@ -25,22 +25,19 @@ export interface ItemQuantity {
      * @type {number}
      * @memberof ItemQuantity
      */
-    amount?: number;
+    'amount'?: number;
     /**
      * Unit of measure for the acknowledged quantity.
      * @type {string}
      * @memberof ItemQuantity
      */
-    unitOfMeasure?: ItemQuantityUnitOfMeasureEnum;
+    'unitOfMeasure'?: ItemQuantityUnitOfMeasureEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ItemQuantityUnitOfMeasureEnum {
-    Each = 'Each'
-}
+export const ItemQuantityUnitOfMeasureEnum = {
+    Each: 'Each'
+} as const;
 
+export type ItemQuantityUnitOfMeasureEnum = typeof ItemQuantityUnitOfMeasureEnum[keyof typeof ItemQuantityUnitOfMeasureEnum];
 
 

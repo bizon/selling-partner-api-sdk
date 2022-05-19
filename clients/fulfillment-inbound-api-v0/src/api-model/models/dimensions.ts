@@ -26,25 +26,24 @@ export interface Dimensions {
      * @type {number}
      * @memberof Dimensions
      */
-    Length: number;
+    'Length': number;
     /**
      * 
      * @type {number}
      * @memberof Dimensions
      */
-    Width: number;
+    'Width': number;
     /**
      * 
      * @type {number}
      * @memberof Dimensions
      */
-    Height: number;
+    'Height': number;
     /**
      * 
      * @type {UnitOfMeasurement}
      * @memberof Dimensions
      */
-    Unit: UnitOfMeasurement;
+    'Unit': UnitOfMeasurement;
 }
-
 

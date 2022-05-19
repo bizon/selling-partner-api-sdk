@@ -25,36 +25,33 @@ export interface Issue {
      * @type {string}
      * @memberof Issue
      */
-    code: string;
+    'code': string;
     /**
      * A message that describes the issue.
      * @type {string}
      * @memberof Issue
      */
-    message: string;
+    'message': string;
     /**
      * The severity of the issue.
      * @type {string}
      * @memberof Issue
      */
-    severity: IssueSeverityEnum;
+    'severity': IssueSeverityEnum;
     /**
      * Names of the attributes associated with the issue, if applicable.
      * @type {Array<string>}
      * @memberof Issue
      */
-    attributeNames?: Array<string>;
+    'attributeNames'?: Array<string>;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum IssueSeverityEnum {
-    Error = 'ERROR',
-    Warning = 'WARNING',
-    Info = 'INFO'
-}
+export const IssueSeverityEnum = {
+    Error: 'ERROR',
+    Warning: 'WARNING',
+    Info: 'INFO'
+} as const;
 
+export type IssueSeverityEnum = typeof IssueSeverityEnum[keyof typeof IssueSeverityEnum];
 
 

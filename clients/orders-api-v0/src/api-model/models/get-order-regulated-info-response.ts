@@ -26,13 +26,12 @@ export interface GetOrderRegulatedInfoResponse {
      * @type {OrderRegulatedInfo}
      * @memberof GetOrderRegulatedInfoResponse
      */
-    payload?: OrderRegulatedInfo;
+    'payload'?: OrderRegulatedInfo;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetOrderRegulatedInfoResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

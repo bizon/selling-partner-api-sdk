@@ -27,31 +27,30 @@ export interface Item {
      * @type {string}
      * @memberof Item
      */
-    itemSequenceNumber: string;
+    'itemSequenceNumber': string;
     /**
      * Amazon Standard Identification Number (ASIN) of an item.
      * @type {string}
      * @memberof Item
      */
-    amazonProductIdentifier?: string;
+    'amazonProductIdentifier'?: string;
     /**
      * The vendor selected product identification of the item. Should be the same as was sent in the purchase order.
      * @type {string}
      * @memberof Item
      */
-    vendorProductIdentifier?: string;
+    'vendorProductIdentifier'?: string;
     /**
      * 
      * @type {ItemQuantity}
      * @memberof Item
      */
-    shippedQuantity: ItemQuantity;
+    'shippedQuantity': ItemQuantity;
     /**
      * 
      * @type {ItemDetails}
      * @memberof Item
      */
-    itemDetails?: ItemDetails;
+    'itemDetails'?: ItemDetails;
 }
-
 

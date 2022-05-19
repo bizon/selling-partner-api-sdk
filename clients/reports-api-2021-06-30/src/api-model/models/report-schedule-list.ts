@@ -26,7 +26,6 @@ export interface ReportScheduleList {
      * @type {Array<ReportSchedule>}
      * @memberof ReportScheduleList
      */
-    reportSchedules: Array<ReportSchedule>;
+    'reportSchedules': Array<ReportSchedule>;
 }
-
 

@@ -25,7 +25,6 @@ export interface PartyIdentification {
      * @type {string}
      * @memberof PartyIdentification
      */
-    partyId: string;
+    'partyId': string;
 }
-
 

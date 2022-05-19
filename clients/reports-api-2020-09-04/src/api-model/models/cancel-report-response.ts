@@ -25,7 +25,6 @@ export interface CancelReportResponse {
      * @type {Array<Error>}
      * @memberof CancelReportResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

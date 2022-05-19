@@ -29,31 +29,30 @@ export interface Label {
      * @type {string}
      * @memberof Label
      */
-    CustomTextForLabel?: string;
+    'CustomTextForLabel'?: string;
     /**
      * 
      * @type {LabelDimensions}
      * @memberof Label
      */
-    Dimensions: LabelDimensions;
+    'Dimensions': LabelDimensions;
     /**
      * 
      * @type {FileContents}
      * @memberof Label
      */
-    FileContents: FileContents;
+    'FileContents': FileContents;
     /**
      * 
      * @type {LabelFormat}
      * @memberof Label
      */
-    LabelFormat?: LabelFormat;
+    'LabelFormat'?: LabelFormat;
     /**
      * 
      * @type {StandardIdForLabel}
      * @memberof Label
      */
-    StandardIdForLabel?: StandardIdForLabel;
+    'StandardIdForLabel'?: StandardIdForLabel;
 }
-
 

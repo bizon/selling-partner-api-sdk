@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -44,7 +44,7 @@ export const DefinitionsApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDefinitionsProductType: async (productType: string, marketplaceIds: Array<string>, sellerId?: string, productTypeVersion?: string, requirements?: 'LISTING' | 'LISTING_PRODUCT_ONLY' | 'LISTING_OFFER_ONLY', requirementsEnforced?: 'ENFORCED' | 'NOT_ENFORCED', locale?: 'DEFAULT' | 'ar' | 'ar_AE' | 'de' | 'de_DE' | 'en' | 'en_AE' | 'en_AU' | 'en_CA' | 'en_GB' | 'en_IN' | 'en_SG' | 'en_US' | 'es' | 'es_ES' | 'es_MX' | 'es_US' | 'fr' | 'fr_CA' | 'fr_FR' | 'it' | 'it_IT' | 'ja' | 'ja_JP' | 'nl' | 'nl_NL' | 'pl' | 'pl_PL' | 'pt' | 'pt_BR' | 'pt_PT' | 'sv' | 'sv_SE' | 'tr' | 'tr_TR' | 'zh' | 'zh_CN' | 'zh_TW', options: any = {}): Promise<RequestArgs> => {
+        getDefinitionsProductType: async (productType: string, marketplaceIds: Array<string>, sellerId?: string, productTypeVersion?: string, requirements?: 'LISTING' | 'LISTING_PRODUCT_ONLY' | 'LISTING_OFFER_ONLY', requirementsEnforced?: 'ENFORCED' | 'NOT_ENFORCED', locale?: 'DEFAULT' | 'ar' | 'ar_AE' | 'de' | 'de_DE' | 'en' | 'en_AE' | 'en_AU' | 'en_CA' | 'en_GB' | 'en_IN' | 'en_SG' | 'en_US' | 'es' | 'es_ES' | 'es_MX' | 'es_US' | 'fr' | 'fr_CA' | 'fr_FR' | 'it' | 'it_IT' | 'ja' | 'ja_JP' | 'nl' | 'nl_NL' | 'pl' | 'pl_PL' | 'pt' | 'pt_BR' | 'pt_PT' | 'sv' | 'sv_SE' | 'tr' | 'tr_TR' | 'zh' | 'zh_CN' | 'zh_TW', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'productType' is not null or undefined
             assertParamExists('getDefinitionsProductType', 'productType', productType)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -88,7 +88,7 @@ export const DefinitionsApiAxiosParamCreator = function (configuration?: Configu
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -104,7 +104,7 @@ export const DefinitionsApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchDefinitionsProductTypes: async (marketplaceIds: Array<string>, keywords?: Array<string>, options: any = {}): Promise<RequestArgs> => {
+        searchDefinitionsProductTypes: async (marketplaceIds: Array<string>, keywords?: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('searchDefinitionsProductTypes', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/definitions/2020-09-01/productTypes`;
@@ -129,7 +129,7 @@ export const DefinitionsApiAxiosParamCreator = function (configuration?: Configu
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -160,7 +160,7 @@ export const DefinitionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getDefinitionsProductType(productType: string, marketplaceIds: Array<string>, sellerId?: string, productTypeVersion?: string, requirements?: 'LISTING' | 'LISTING_PRODUCT_ONLY' | 'LISTING_OFFER_ONLY', requirementsEnforced?: 'ENFORCED' | 'NOT_ENFORCED', locale?: 'DEFAULT' | 'ar' | 'ar_AE' | 'de' | 'de_DE' | 'en' | 'en_AE' | 'en_AU' | 'en_CA' | 'en_GB' | 'en_IN' | 'en_SG' | 'en_US' | 'es' | 'es_ES' | 'es_MX' | 'es_US' | 'fr' | 'fr_CA' | 'fr_FR' | 'it' | 'it_IT' | 'ja' | 'ja_JP' | 'nl' | 'nl_NL' | 'pl' | 'pl_PL' | 'pt' | 'pt_BR' | 'pt_PT' | 'sv' | 'sv_SE' | 'tr' | 'tr_TR' | 'zh' | 'zh_CN' | 'zh_TW', options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductTypeDefinition>> {
+        async getDefinitionsProductType(productType: string, marketplaceIds: Array<string>, sellerId?: string, productTypeVersion?: string, requirements?: 'LISTING' | 'LISTING_PRODUCT_ONLY' | 'LISTING_OFFER_ONLY', requirementsEnforced?: 'ENFORCED' | 'NOT_ENFORCED', locale?: 'DEFAULT' | 'ar' | 'ar_AE' | 'de' | 'de_DE' | 'en' | 'en_AE' | 'en_AU' | 'en_CA' | 'en_GB' | 'en_IN' | 'en_SG' | 'en_US' | 'es' | 'es_ES' | 'es_MX' | 'es_US' | 'fr' | 'fr_CA' | 'fr_FR' | 'it' | 'it_IT' | 'ja' | 'ja_JP' | 'nl' | 'nl_NL' | 'pl' | 'pl_PL' | 'pt' | 'pt_BR' | 'pt_PT' | 'sv' | 'sv_SE' | 'tr' | 'tr_TR' | 'zh' | 'zh_CN' | 'zh_TW', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductTypeDefinition>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getDefinitionsProductType(productType, marketplaceIds, sellerId, productTypeVersion, requirements, requirementsEnforced, locale, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -171,7 +171,7 @@ export const DefinitionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async searchDefinitionsProductTypes(marketplaceIds: Array<string>, keywords?: Array<string>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductTypeList>> {
+        async searchDefinitionsProductTypes(marketplaceIds: Array<string>, keywords?: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductTypeList>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.searchDefinitionsProductTypes(marketplaceIds, keywords, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -304,7 +304,7 @@ export class DefinitionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DefinitionsApi
      */
-    public getDefinitionsProductType(requestParameters: DefinitionsApiGetDefinitionsProductTypeRequest, options?: any) {
+    public getDefinitionsProductType(requestParameters: DefinitionsApiGetDefinitionsProductTypeRequest, options?: AxiosRequestConfig) {
         return DefinitionsApiFp(this.configuration).getDefinitionsProductType(requestParameters.productType, requestParameters.marketplaceIds, requestParameters.sellerId, requestParameters.productTypeVersion, requestParameters.requirements, requestParameters.requirementsEnforced, requestParameters.locale, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -315,7 +315,7 @@ export class DefinitionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DefinitionsApi
      */
-    public searchDefinitionsProductTypes(requestParameters: DefinitionsApiSearchDefinitionsProductTypesRequest, options?: any) {
+    public searchDefinitionsProductTypes(requestParameters: DefinitionsApiSearchDefinitionsProductTypesRequest, options?: AxiosRequestConfig) {
         return DefinitionsApiFp(this.configuration).searchDefinitionsProductTypes(requestParameters.marketplaceIds, requestParameters.keywords, options).then((request) => request(this.axios, this.basePath));
     }
 }

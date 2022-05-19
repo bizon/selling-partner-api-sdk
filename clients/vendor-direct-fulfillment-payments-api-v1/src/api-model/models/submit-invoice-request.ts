@@ -26,7 +26,6 @@ export interface SubmitInvoiceRequest {
      * @type {Array<InvoiceDetail>}
      * @memberof SubmitInvoiceRequest
      */
-    invoices?: Array<InvoiceDetail>;
+    'invoices'?: Array<InvoiceDetail>;
 }
-
 

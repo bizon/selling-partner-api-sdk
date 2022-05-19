@@ -27,13 +27,12 @@ export interface PartneredSmallParcelPackageInput {
      * @type {Dimensions}
      * @memberof PartneredSmallParcelPackageInput
      */
-    Dimensions: Dimensions;
+    'Dimensions': Dimensions;
     /**
      * 
      * @type {Weight}
      * @memberof PartneredSmallParcelPackageInput
      */
-    Weight: Weight;
+    'Weight': Weight;
 }
-
 

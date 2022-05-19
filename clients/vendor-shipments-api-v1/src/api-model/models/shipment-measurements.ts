@@ -27,25 +27,24 @@ export interface ShipmentMeasurements {
      * @type {Weight}
      * @memberof ShipmentMeasurements
      */
-    grossShipmentWeight?: Weight;
+    'grossShipmentWeight'?: Weight;
     /**
      * 
      * @type {Volume}
      * @memberof ShipmentMeasurements
      */
-    shipmentVolume?: Volume;
+    'shipmentVolume'?: Volume;
     /**
      * Number of cartons present in the shipment. Provide the cartonCount only for unpalletized shipments.
      * @type {number}
      * @memberof ShipmentMeasurements
      */
-    cartonCount?: number;
+    'cartonCount'?: number;
     /**
      * Number of pallets present in the shipment. Provide the palletCount only for palletized shipments.
      * @type {number}
      * @memberof ShipmentMeasurements
      */
-    palletCount?: number;
+    'palletCount'?: number;
 }
-
 

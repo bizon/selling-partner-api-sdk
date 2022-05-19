@@ -25,25 +25,24 @@ export interface ItemDisplayGroupSalesRank {
      * @type {string}
      * @memberof ItemDisplayGroupSalesRank
      */
-    websiteDisplayGroup: string;
+    'websiteDisplayGroup': string;
     /**
      * Title, or name, of the sales rank.
      * @type {string}
      * @memberof ItemDisplayGroupSalesRank
      */
-    title: string;
+    'title': string;
     /**
      * Corresponding Amazon retail website link, or URL, for the sales rank.
      * @type {string}
      * @memberof ItemDisplayGroupSalesRank
      */
-    link?: string;
+    'link'?: string;
     /**
      * Sales rank value.
      * @type {number}
      * @memberof ItemDisplayGroupSalesRank
      */
-    rank: number;
+    'rank': number;
 }
-
 

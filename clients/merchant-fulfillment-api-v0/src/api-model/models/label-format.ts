@@ -19,13 +19,16 @@
  * @export
  * @enum {string}
  */
-export enum LabelFormat {
-    Pdf = 'PDF',
-    Png = 'PNG',
-    Zpl203 = 'ZPL203',
-    Zpl300 = 'ZPL300',
-    ShippingServiceDefault = 'ShippingServiceDefault'
-}
+
+export const LabelFormat = {
+    Pdf: 'PDF',
+    Png: 'PNG',
+    Zpl203: 'ZPL203',
+    Zpl300: 'ZPL300',
+    ShippingServiceDefault: 'ShippingServiceDefault'
+} as const;
+
+export type LabelFormat = typeof LabelFormat[keyof typeof LabelFormat];
 
 
 

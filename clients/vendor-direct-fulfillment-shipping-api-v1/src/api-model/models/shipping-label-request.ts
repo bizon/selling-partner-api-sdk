@@ -27,25 +27,24 @@ export interface ShippingLabelRequest {
      * @type {string}
      * @memberof ShippingLabelRequest
      */
-    purchaseOrderNumber: string;
+    'purchaseOrderNumber': string;
     /**
      * 
      * @type {PartyIdentification}
      * @memberof ShippingLabelRequest
      */
-    sellingParty: PartyIdentification;
+    'sellingParty': PartyIdentification;
     /**
      * 
      * @type {PartyIdentification}
      * @memberof ShippingLabelRequest
      */
-    shipFromParty: PartyIdentification;
+    'shipFromParty': PartyIdentification;
     /**
      * A list of the packages in this shipment.
      * @type {Array<Container>}
      * @memberof ShippingLabelRequest
      */
-    containers?: Array<Container>;
+    'containers'?: Array<Container>;
 }
-
 

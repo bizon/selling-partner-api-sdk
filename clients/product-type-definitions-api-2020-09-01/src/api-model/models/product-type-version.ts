@@ -25,19 +25,18 @@ export interface ProductTypeVersion {
      * @type {string}
      * @memberof ProductTypeVersion
      */
-    version: string;
+    'version': string;
     /**
      * When true, the version indicated by the version identifier is the latest available for the Amazon product type.
      * @type {boolean}
      * @memberof ProductTypeVersion
      */
-    latest: boolean;
+    'latest': boolean;
     /**
      * When true, the version indicated by the version identifier is the prerelease (release candidate) for the Amazon product type.
      * @type {boolean}
      * @memberof ProductTypeVersion
      */
-    releaseCandidate?: boolean;
+    'releaseCandidate'?: boolean;
 }
-
 

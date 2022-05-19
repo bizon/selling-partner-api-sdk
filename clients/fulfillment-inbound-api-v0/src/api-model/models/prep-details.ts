@@ -27,13 +27,12 @@ export interface PrepDetails {
      * @type {PrepInstruction}
      * @memberof PrepDetails
      */
-    PrepInstruction: PrepInstruction;
+    'PrepInstruction': PrepInstruction;
     /**
      * 
      * @type {PrepOwner}
      * @memberof PrepDetails
      */
-    PrepOwner: PrepOwner;
+    'PrepOwner': PrepOwner;
 }
-
 

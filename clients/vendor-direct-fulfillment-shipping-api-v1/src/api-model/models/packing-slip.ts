@@ -25,28 +25,25 @@ export interface PackingSlip {
      * @type {string}
      * @memberof PackingSlip
      */
-    purchaseOrderNumber: string;
+    'purchaseOrderNumber': string;
     /**
      * A Base64encoded string of the packing slip PDF.
      * @type {string}
      * @memberof PackingSlip
      */
-    content: string;
+    'content': string;
     /**
      * The format of the file such as PDF, JPEG etc.
      * @type {string}
      * @memberof PackingSlip
      */
-    contentType?: PackingSlipContentTypeEnum;
+    'contentType'?: PackingSlipContentTypeEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum PackingSlipContentTypeEnum {
-    ApplicationPdf = 'application/pdf'
-}
+export const PackingSlipContentTypeEnum = {
+    ApplicationPdf: 'application/pdf'
+} as const;
 
+export type PackingSlipContentTypeEnum = typeof PackingSlipContentTypeEnum[keyof typeof PackingSlipContentTypeEnum];
 
 

@@ -27,19 +27,18 @@ export interface PartyIdentification {
      * @type {string}
      * @memberof PartyIdentification
      */
-    partyId: string;
+    'partyId': string;
     /**
      * 
      * @type {Address}
      * @memberof PartyIdentification
      */
-    address?: Address;
+    'address'?: Address;
     /**
      * 
      * @type {TaxRegistrationDetails}
      * @memberof PartyIdentification
      */
-    taxInfo?: TaxRegistrationDetails;
+    'taxInfo'?: TaxRegistrationDetails;
 }
-
 

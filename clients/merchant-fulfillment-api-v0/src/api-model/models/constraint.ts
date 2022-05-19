@@ -25,13 +25,12 @@ export interface Constraint {
      * @type {string}
      * @memberof Constraint
      */
-    ValidationRegEx?: string;
+    'ValidationRegEx'?: string;
     /**
      * A validation string.
      * @type {string}
      * @memberof Constraint
      */
-    ValidationString: string;
+    'ValidationString': string;
 }
-
 

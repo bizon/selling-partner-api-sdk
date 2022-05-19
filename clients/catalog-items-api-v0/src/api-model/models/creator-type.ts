@@ -25,13 +25,12 @@ export interface CreatorType {
      * @type {string}
      * @memberof CreatorType
      */
-    value?: string;
+    'value'?: string;
     /**
      * The role of the value.
      * @type {string}
      * @memberof CreatorType
      */
-    Role?: string;
+    'Role'?: string;
 }
-
 

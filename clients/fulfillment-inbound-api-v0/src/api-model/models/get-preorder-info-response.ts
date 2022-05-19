@@ -26,13 +26,12 @@ export interface GetPreorderInfoResponse {
      * @type {GetPreorderInfoResult}
      * @memberof GetPreorderInfoResponse
      */
-    payload?: GetPreorderInfoResult;
+    'payload'?: GetPreorderInfoResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetPreorderInfoResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

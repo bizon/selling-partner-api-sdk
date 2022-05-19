@@ -26,13 +26,12 @@ export interface CreateReportScheduleResponse {
      * @type {CreateReportScheduleResult}
      * @memberof CreateReportScheduleResponse
      */
-    payload?: CreateReportScheduleResult;
+    'payload'?: CreateReportScheduleResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof CreateReportScheduleResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

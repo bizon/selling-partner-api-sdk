@@ -26,7 +26,6 @@ export interface AddAppointmentRequest {
      * @type {AppointmentTimeInput}
      * @memberof AddAppointmentRequest
      */
-    appointmentTime: AppointmentTimeInput;
+    'appointmentTime': AppointmentTimeInput;
 }
-
 

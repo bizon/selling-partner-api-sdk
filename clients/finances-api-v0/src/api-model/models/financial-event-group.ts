@@ -26,67 +26,66 @@ export interface FinancialEventGroup {
      * @type {string}
      * @memberof FinancialEventGroup
      */
-    FinancialEventGroupId?: string;
+    'FinancialEventGroupId'?: string;
     /**
      * The processing status of the financial event group indicates whether the balance of the financial event group is settled.  Possible values:  * Open  * Closed
      * @type {string}
      * @memberof FinancialEventGroup
      */
-    ProcessingStatus?: string;
+    'ProcessingStatus'?: string;
     /**
      * The status of the fund transfer.
      * @type {string}
      * @memberof FinancialEventGroup
      */
-    FundTransferStatus?: string;
+    'FundTransferStatus'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof FinancialEventGroup
      */
-    OriginalTotal?: Currency;
+    'OriginalTotal'?: Currency;
     /**
      * 
      * @type {Currency}
      * @memberof FinancialEventGroup
      */
-    ConvertedTotal?: Currency;
+    'ConvertedTotal'?: Currency;
     /**
      * 
      * @type {string}
      * @memberof FinancialEventGroup
      */
-    FundTransferDate?: string;
+    'FundTransferDate'?: string;
     /**
      * The trace identifier used by sellers to look up transactions externally.
      * @type {string}
      * @memberof FinancialEventGroup
      */
-    TraceId?: string;
+    'TraceId'?: string;
     /**
      * The account tail of the payment instrument.
      * @type {string}
      * @memberof FinancialEventGroup
      */
-    AccountTail?: string;
+    'AccountTail'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof FinancialEventGroup
      */
-    BeginningBalance?: Currency;
+    'BeginningBalance'?: Currency;
     /**
      * 
      * @type {string}
      * @memberof FinancialEventGroup
      */
-    FinancialEventGroupStart?: string;
+    'FinancialEventGroupStart'?: string;
     /**
      * 
      * @type {string}
      * @memberof FinancialEventGroup
      */
-    FinancialEventGroupEnd?: string;
+    'FinancialEventGroupEnd'?: string;
 }
-
 

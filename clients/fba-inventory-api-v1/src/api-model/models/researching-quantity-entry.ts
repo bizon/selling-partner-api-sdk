@@ -25,24 +25,21 @@ export interface ResearchingQuantityEntry {
      * @type {string}
      * @memberof ResearchingQuantityEntry
      */
-    name: ResearchingQuantityEntryNameEnum;
+    'name': ResearchingQuantityEntryNameEnum;
     /**
      * The number of units.
      * @type {number}
      * @memberof ResearchingQuantityEntry
      */
-    quantity: number;
+    'quantity': number;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ResearchingQuantityEntryNameEnum {
-    ResearchingQuantityInShortTerm = 'researchingQuantityInShortTerm',
-    ResearchingQuantityInMidTerm = 'researchingQuantityInMidTerm',
-    ResearchingQuantityInLongTerm = 'researchingQuantityInLongTerm'
-}
+export const ResearchingQuantityEntryNameEnum = {
+    ResearchingQuantityInShortTerm: 'researchingQuantityInShortTerm',
+    ResearchingQuantityInMidTerm: 'researchingQuantityInMidTerm',
+    ResearchingQuantityInLongTerm: 'researchingQuantityInLongTerm'
+} as const;
 
+export type ResearchingQuantityEntryNameEnum = typeof ResearchingQuantityEntryNameEnum[keyof typeof ResearchingQuantityEntryNameEnum];
 
 

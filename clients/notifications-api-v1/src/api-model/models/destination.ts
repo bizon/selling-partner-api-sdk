@@ -26,19 +26,18 @@ export interface Destination {
      * @type {string}
      * @memberof Destination
      */
-    name: string;
+    'name': string;
     /**
      * The destination identifier generated when you created the destination.
      * @type {string}
      * @memberof Destination
      */
-    destinationId: string;
+    'destinationId': string;
     /**
      * 
      * @type {DestinationResource}
      * @memberof Destination
      */
-    resource: DestinationResource;
+    'resource': DestinationResource;
 }
-
 

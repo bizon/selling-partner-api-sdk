@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -43,7 +43,7 @@ export const FeesApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyFeesEstimateForASIN: async (asin: string, body: GetMyFeesEstimateRequest, options: any = {}): Promise<RequestArgs> => {
+        getMyFeesEstimateForASIN: async (asin: string, body: GetMyFeesEstimateRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'asin' is not null or undefined
             assertParamExists('getMyFeesEstimateForASIN', 'asin', asin)
             // verify required parameter 'body' is not null or undefined
@@ -65,7 +65,7 @@ export const FeesApiAxiosParamCreator = function (configuration?: Configuration)
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -82,7 +82,7 @@ export const FeesApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyFeesEstimateForSKU: async (sellerSKU: string, body: GetMyFeesEstimateRequest, options: any = {}): Promise<RequestArgs> => {
+        getMyFeesEstimateForSKU: async (sellerSKU: string, body: GetMyFeesEstimateRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerSKU' is not null or undefined
             assertParamExists('getMyFeesEstimateForSKU', 'sellerSKU', sellerSKU)
             // verify required parameter 'body' is not null or undefined
@@ -104,7 +104,7 @@ export const FeesApiAxiosParamCreator = function (configuration?: Configuration)
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -120,7 +120,7 @@ export const FeesApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyFeesEstimates: async (body: Array<FeesEstimateByIdRequest>, options: any = {}): Promise<RequestArgs> => {
+        getMyFeesEstimates: async (body: Array<FeesEstimateByIdRequest>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getMyFeesEstimates', 'body', body)
             const localVarPath = `/products/fees/v0/feesEstimate`;
@@ -139,7 +139,7 @@ export const FeesApiAxiosParamCreator = function (configuration?: Configuration)
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -166,7 +166,7 @@ export const FeesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMyFeesEstimateForASIN(asin: string, body: GetMyFeesEstimateRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyFeesEstimateResponse>> {
+        async getMyFeesEstimateForASIN(asin: string, body: GetMyFeesEstimateRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyFeesEstimateResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMyFeesEstimateForASIN(asin, body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -177,7 +177,7 @@ export const FeesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMyFeesEstimateForSKU(sellerSKU: string, body: GetMyFeesEstimateRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyFeesEstimateResponse>> {
+        async getMyFeesEstimateForSKU(sellerSKU: string, body: GetMyFeesEstimateRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyFeesEstimateResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMyFeesEstimateForSKU(sellerSKU, body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -187,7 +187,7 @@ export const FeesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMyFeesEstimates(body: Array<FeesEstimateByIdRequest>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<FeesEstimateResult>>> {
+        async getMyFeesEstimates(body: Array<FeesEstimateByIdRequest>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<FeesEstimateResult>>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMyFeesEstimates(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -303,7 +303,7 @@ export class FeesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeesApi
      */
-    public getMyFeesEstimateForASIN(requestParameters: FeesApiGetMyFeesEstimateForASINRequest, options?: any) {
+    public getMyFeesEstimateForASIN(requestParameters: FeesApiGetMyFeesEstimateForASINRequest, options?: AxiosRequestConfig) {
         return FeesApiFp(this.configuration).getMyFeesEstimateForASIN(requestParameters.asin, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -314,7 +314,7 @@ export class FeesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeesApi
      */
-    public getMyFeesEstimateForSKU(requestParameters: FeesApiGetMyFeesEstimateForSKURequest, options?: any) {
+    public getMyFeesEstimateForSKU(requestParameters: FeesApiGetMyFeesEstimateForSKURequest, options?: AxiosRequestConfig) {
         return FeesApiFp(this.configuration).getMyFeesEstimateForSKU(requestParameters.sellerSKU, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -325,7 +325,7 @@ export class FeesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeesApi
      */
-    public getMyFeesEstimates(requestParameters: FeesApiGetMyFeesEstimatesRequest, options?: any) {
+    public getMyFeesEstimates(requestParameters: FeesApiGetMyFeesEstimatesRequest, options?: AxiosRequestConfig) {
         return FeesApiFp(this.configuration).getMyFeesEstimates(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }

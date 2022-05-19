@@ -26,7 +26,6 @@ export interface MarketplaceTaxInfo {
      * @type {Array<TaxClassification>}
      * @memberof MarketplaceTaxInfo
      */
-    TaxClassifications?: Array<TaxClassification>;
+    'TaxClassifications'?: Array<TaxClassification>;
 }
-
 

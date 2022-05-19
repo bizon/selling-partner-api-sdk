@@ -27,13 +27,12 @@ export interface ShippingLabelList {
      * @type {Pagination}
      * @memberof ShippingLabelList
      */
-    pagination?: Pagination;
+    'pagination'?: Pagination;
     /**
      * 
      * @type {Array<ShippingLabel>}
      * @memberof ShippingLabelList
      */
-    shippingLabels?: Array<ShippingLabel>;
+    'shippingLabels'?: Array<ShippingLabel>;
 }
-
 

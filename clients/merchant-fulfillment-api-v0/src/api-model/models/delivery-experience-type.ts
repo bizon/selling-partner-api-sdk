@@ -19,12 +19,15 @@
  * @export
  * @enum {string}
  */
-export enum DeliveryExperienceType {
-    DeliveryConfirmationWithAdultSignature = 'DeliveryConfirmationWithAdultSignature',
-    DeliveryConfirmationWithSignature = 'DeliveryConfirmationWithSignature',
-    DeliveryConfirmationWithoutSignature = 'DeliveryConfirmationWithoutSignature',
-    NoTracking = 'NoTracking'
-}
+
+export const DeliveryExperienceType = {
+    DeliveryConfirmationWithAdultSignature: 'DeliveryConfirmationWithAdultSignature',
+    DeliveryConfirmationWithSignature: 'DeliveryConfirmationWithSignature',
+    DeliveryConfirmationWithoutSignature: 'DeliveryConfirmationWithoutSignature',
+    NoTracking: 'NoTracking'
+} as const;
+
+export type DeliveryExperienceType = typeof DeliveryExperienceType[keyof typeof DeliveryExperienceType];
 
 
 

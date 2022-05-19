@@ -27,25 +27,24 @@ export interface OrderAcknowledgement {
      * @type {string}
      * @memberof OrderAcknowledgement
      */
-    purchaseOrderNumber: string;
+    'purchaseOrderNumber': string;
     /**
      * 
      * @type {PartyIdentification}
      * @memberof OrderAcknowledgement
      */
-    sellingParty: PartyIdentification;
+    'sellingParty': PartyIdentification;
     /**
      * The date and time when the purchase order is acknowledged, in ISO-8601 date/time format.
      * @type {string}
      * @memberof OrderAcknowledgement
      */
-    acknowledgementDate: string;
+    'acknowledgementDate': string;
     /**
      * A list of the items being acknowledged with associated details.
      * @type {Array<OrderAcknowledgementItem>}
      * @memberof OrderAcknowledgement
      */
-    items: Array<OrderAcknowledgementItem>;
+    'items': Array<OrderAcknowledgementItem>;
 }
-
 

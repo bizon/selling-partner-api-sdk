@@ -29,43 +29,42 @@ export interface InboundShipmentHeader {
      * @type {string}
      * @memberof InboundShipmentHeader
      */
-    ShipmentName: string;
+    'ShipmentName': string;
     /**
      * 
      * @type {Address}
      * @memberof InboundShipmentHeader
      */
-    ShipFromAddress: Address;
+    'ShipFromAddress': Address;
     /**
      * The identifier for the fulfillment center to which the shipment will be shipped. Get this value from the InboundShipmentPlan object in the response returned by the createInboundShipmentPlan operation.
      * @type {string}
      * @memberof InboundShipmentHeader
      */
-    DestinationFulfillmentCenterId: string;
+    'DestinationFulfillmentCenterId': string;
     /**
      * Indicates whether or not an inbound shipment contains case-packed boxes. Note: A shipment must contain either all case-packed boxes or all individually packed boxes.  Possible values:  true - All boxes in the shipment must be case packed.  false - All boxes in the shipment must be individually packed.  Note: If AreCasesRequired = true for an inbound shipment, then the value of QuantityInCase must be greater than zero for every item in the shipment. Otherwise the service returns an error.
      * @type {boolean}
      * @memberof InboundShipmentHeader
      */
-    AreCasesRequired?: boolean;
+    'AreCasesRequired'?: boolean;
     /**
      * 
      * @type {ShipmentStatus}
      * @memberof InboundShipmentHeader
      */
-    ShipmentStatus: ShipmentStatus;
+    'ShipmentStatus': ShipmentStatus;
     /**
      * 
      * @type {LabelPrepPreference}
      * @memberof InboundShipmentHeader
      */
-    LabelPrepPreference: LabelPrepPreference;
+    'LabelPrepPreference': LabelPrepPreference;
     /**
      * 
      * @type {IntendedBoxContentsSource}
      * @memberof InboundShipmentHeader
      */
-    IntendedBoxContentsSource?: IntendedBoxContentsSource;
+    'IntendedBoxContentsSource'?: IntendedBoxContentsSource;
 }
-
 

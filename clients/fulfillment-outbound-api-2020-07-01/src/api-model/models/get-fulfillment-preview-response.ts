@@ -26,13 +26,12 @@ export interface GetFulfillmentPreviewResponse {
      * @type {GetFulfillmentPreviewResult}
      * @memberof GetFulfillmentPreviewResponse
      */
-    payload?: GetFulfillmentPreviewResult;
+    'payload'?: GetFulfillmentPreviewResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetFulfillmentPreviewResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

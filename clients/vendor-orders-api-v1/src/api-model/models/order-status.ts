@@ -27,53 +27,50 @@ export interface OrderStatus {
      * @type {string}
      * @memberof OrderStatus
      */
-    purchaseOrderNumber: string;
+    'purchaseOrderNumber': string;
     /**
      * The status of the buyer\'s purchase order for this order.
      * @type {string}
      * @memberof OrderStatus
      */
-    purchaseOrderStatus: OrderStatusPurchaseOrderStatusEnum;
+    'purchaseOrderStatus': OrderStatusPurchaseOrderStatusEnum;
     /**
      * The date the purchase order was placed. Must be in ISO-8601 date/time format.
      * @type {string}
      * @memberof OrderStatus
      */
-    purchaseOrderDate: string;
+    'purchaseOrderDate': string;
     /**
      * The date when the purchase order was last updated. Must be in ISO-8601 date/time format.
      * @type {string}
      * @memberof OrderStatus
      */
-    lastUpdatedDate?: string;
+    'lastUpdatedDate'?: string;
     /**
      * 
      * @type {PartyIdentification}
      * @memberof OrderStatus
      */
-    sellingParty: PartyIdentification;
+    'sellingParty': PartyIdentification;
     /**
      * 
      * @type {PartyIdentification}
      * @memberof OrderStatus
      */
-    shipToParty: PartyIdentification;
+    'shipToParty': PartyIdentification;
     /**
      * Detailed description of items order status.
      * @type {Array<OrderItemStatus>}
      * @memberof OrderStatus
      */
-    itemStatus: Array<OrderItemStatus>;
+    'itemStatus': Array<OrderItemStatus>;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum OrderStatusPurchaseOrderStatusEnum {
-    Open = 'OPEN',
-    Closed = 'CLOSED'
-}
+export const OrderStatusPurchaseOrderStatusEnum = {
+    Open: 'OPEN',
+    Closed: 'CLOSED'
+} as const;
 
+export type OrderStatusPurchaseOrderStatusEnum = typeof OrderStatusPurchaseOrderStatusEnum[keyof typeof OrderStatusPurchaseOrderStatusEnum];
 
 

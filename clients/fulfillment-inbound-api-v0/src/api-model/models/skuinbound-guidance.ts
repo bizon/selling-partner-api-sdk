@@ -27,25 +27,24 @@ export interface SKUInboundGuidance {
      * @type {string}
      * @memberof SKUInboundGuidance
      */
-    SellerSKU: string;
+    'SellerSKU': string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
      * @type {string}
      * @memberof SKUInboundGuidance
      */
-    ASIN: string;
+    'ASIN': string;
     /**
      * 
      * @type {InboundGuidance}
      * @memberof SKUInboundGuidance
      */
-    InboundGuidance: InboundGuidance;
+    'InboundGuidance': InboundGuidance;
     /**
      * A list of inbound guidance reason information.
      * @type {Array<GuidanceReason>}
      * @memberof SKUInboundGuidance
      */
-    GuidanceReasonList?: Array<GuidanceReason>;
+    'GuidanceReasonList'?: Array<GuidanceReason>;
 }
-
 

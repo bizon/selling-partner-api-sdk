@@ -25,67 +25,66 @@ export interface Address {
      * @type {string}
      * @memberof Address
      */
-    name: string;
+    'name': string;
     /**
      * The first line of the address.
      * @type {string}
      * @memberof Address
      */
-    addressLine1: string;
+    'addressLine1': string;
     /**
      * Additional address information, if required.
      * @type {string}
      * @memberof Address
      */
-    addressLine2?: string;
+    'addressLine2'?: string;
     /**
      * Additional address information, if required.
      * @type {string}
      * @memberof Address
      */
-    addressLine3?: string;
+    'addressLine3'?: string;
     /**
      * The city.
      * @type {string}
      * @memberof Address
      */
-    city?: string;
+    'city'?: string;
     /**
      * The county.
      * @type {string}
      * @memberof Address
      */
-    county?: string;
+    'county'?: string;
     /**
      * The district.
      * @type {string}
      * @memberof Address
      */
-    district?: string;
+    'district'?: string;
     /**
      * The state or region.
      * @type {string}
      * @memberof Address
      */
-    stateOrRegion?: string;
+    'stateOrRegion'?: string;
     /**
      * The postal code. This can contain letters, digits, spaces, and/or punctuation.
      * @type {string}
      * @memberof Address
      */
-    postalCode?: string;
+    'postalCode'?: string;
     /**
      * The two digit country code, in ISO 3166-1 alpha-2 format.
      * @type {string}
      * @memberof Address
      */
-    countryCode?: string;
+    'countryCode'?: string;
     /**
      * The phone number.
      * @type {string}
      * @memberof Address
      */
-    phone?: string;
+    'phone'?: string;
 }
-
 

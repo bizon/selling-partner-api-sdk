@@ -25,31 +25,30 @@ export interface CreateReportSpecification {
      * @type {{ [key: string]: string; }}
      * @memberof CreateReportSpecification
      */
-    reportOptions?: { [key: string]: string; };
+    'reportOptions'?: { [key: string]: string; };
     /**
      * The report type.
      * @type {string}
      * @memberof CreateReportSpecification
      */
-    reportType: string;
+    'reportType': string;
     /**
      * The start of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
      * @type {string}
      * @memberof CreateReportSpecification
      */
-    dataStartTime?: string;
+    'dataStartTime'?: string;
     /**
      * The end of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
      * @type {string}
      * @memberof CreateReportSpecification
      */
-    dataEndTime?: string;
+    'dataEndTime'?: string;
     /**
      * A list of marketplace identifiers. The report document\'s contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise.
      * @type {Array<string>}
      * @memberof CreateReportSpecification
      */
-    marketplaceIds: Array<string>;
+    'marketplaceIds': Array<string>;
 }
-
 

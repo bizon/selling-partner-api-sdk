@@ -25,31 +25,30 @@ export interface CreateReturnItem {
      * @type {string}
      * @memberof CreateReturnItem
      */
-    sellerReturnItemId: string;
+    'sellerReturnItemId': string;
     /**
      * The identifier assigned to the item by the seller when the fulfillment order was created.
      * @type {string}
      * @memberof CreateReturnItem
      */
-    sellerFulfillmentOrderItemId: string;
+    'sellerFulfillmentOrderItemId': string;
     /**
      * The identifier for the shipment that is associated with the return item.
      * @type {string}
      * @memberof CreateReturnItem
      */
-    amazonShipmentId: string;
+    'amazonShipmentId': string;
     /**
      * The return reason code assigned to the return item by the seller.
      * @type {string}
      * @memberof CreateReturnItem
      */
-    returnReasonCode: string;
+    'returnReasonCode': string;
     /**
      * An optional comment about the return item.
      * @type {string}
      * @memberof CreateReturnItem
      */
-    returnComment?: string;
+    'returnComment'?: string;
 }
-
 

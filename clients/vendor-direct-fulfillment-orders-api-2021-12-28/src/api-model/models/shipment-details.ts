@@ -26,43 +26,42 @@ export interface ShipmentDetails {
      * @type {boolean}
      * @memberof ShipmentDetails
      */
-    isPriorityShipment: boolean;
+    'isPriorityShipment': boolean;
     /**
      * When true, this order is part of a scheduled delivery program.
      * @type {boolean}
      * @memberof ShipmentDetails
      */
-    isScheduledDeliveryShipment?: boolean;
+    'isScheduledDeliveryShipment'?: boolean;
     /**
      * When true, a packing slip is required to be sent to the customer.
      * @type {boolean}
      * @memberof ShipmentDetails
      */
-    isPslipRequired: boolean;
+    'isPslipRequired': boolean;
     /**
      * When true, the order contain a gift. Include the gift message and gift wrap information.
      * @type {boolean}
      * @memberof ShipmentDetails
      */
-    isGift?: boolean;
+    'isGift'?: boolean;
     /**
      * Ship method to be used for shipping the order. Amazon defines ship method codes indicating the shipping carrier and shipment service level. To see the full list of ship methods in use, including both the code and the friendly name, search the \'Help\' section on Vendor Central for \'ship methods\'.
      * @type {string}
      * @memberof ShipmentDetails
      */
-    shipMethod: string;
+    'shipMethod': string;
     /**
      * 
      * @type {ShipmentDates}
      * @memberof ShipmentDetails
      */
-    shipmentDates: ShipmentDates;
+    'shipmentDates': ShipmentDates;
     /**
      * Message to customer for order status.
      * @type {string}
      * @memberof ShipmentDetails
      */
-    messageToCustomer: string;
+    'messageToCustomer': string;
 }
-
 

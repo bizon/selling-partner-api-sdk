@@ -26,90 +26,85 @@ export interface ItemSummaryByMarketplace {
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * Amazon Standard Identification Number (ASIN) of the listings item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    asin: string;
+    'asin': string;
     /**
      * The Amazon product type of the listings item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    productType: string;
+    'productType': string;
     /**
      * Identifies the condition of the listings item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    conditionType?: ItemSummaryByMarketplaceConditionTypeEnum;
+    'conditionType'?: ItemSummaryByMarketplaceConditionTypeEnum;
     /**
      * Statuses that apply to the listings item.
      * @type {Array<string>}
      * @memberof ItemSummaryByMarketplace
      */
-    status: Array<ItemSummaryByMarketplaceStatusEnum>;
+    'status': Array<ItemSummaryByMarketplaceStatusEnum>;
     /**
      * Fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    fnSku?: string;
+    'fnSku'?: string;
     /**
      * Name, or title, associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    itemName: string;
+    'itemName': string;
     /**
      * Date the listings item was created, in ISO 8601 format.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    createdDate: string;
+    'createdDate': string;
     /**
      * Date the listings item was last updated, in ISO 8601 format.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    lastUpdatedDate: string;
+    'lastUpdatedDate': string;
     /**
      * 
      * @type {ItemImage}
      * @memberof ItemSummaryByMarketplace
      */
-    mainImage?: ItemImage;
+    'mainImage'?: ItemImage;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ItemSummaryByMarketplaceConditionTypeEnum {
-    NewNew = 'new_new',
-    NewOpenBox = 'new_open_box',
-    NewOem = 'new_oem',
-    RefurbishedRefurbished = 'refurbished_refurbished',
-    UsedLikeNew = 'used_like_new',
-    UsedVeryGood = 'used_very_good',
-    UsedGood = 'used_good',
-    UsedAcceptable = 'used_acceptable',
-    CollectibleLikeNew = 'collectible_like_new',
-    CollectibleVeryGood = 'collectible_very_good',
-    CollectibleGood = 'collectible_good',
-    CollectibleAcceptable = 'collectible_acceptable',
-    ClubClub = 'club_club'
-}
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ItemSummaryByMarketplaceStatusEnum {
-    Buyable = 'BUYABLE',
-    Discoverable = 'DISCOVERABLE'
-}
+export const ItemSummaryByMarketplaceConditionTypeEnum = {
+    NewNew: 'new_new',
+    NewOpenBox: 'new_open_box',
+    NewOem: 'new_oem',
+    RefurbishedRefurbished: 'refurbished_refurbished',
+    UsedLikeNew: 'used_like_new',
+    UsedVeryGood: 'used_very_good',
+    UsedGood: 'used_good',
+    UsedAcceptable: 'used_acceptable',
+    CollectibleLikeNew: 'collectible_like_new',
+    CollectibleVeryGood: 'collectible_very_good',
+    CollectibleGood: 'collectible_good',
+    CollectibleAcceptable: 'collectible_acceptable',
+    ClubClub: 'club_club'
+} as const;
 
+export type ItemSummaryByMarketplaceConditionTypeEnum = typeof ItemSummaryByMarketplaceConditionTypeEnum[keyof typeof ItemSummaryByMarketplaceConditionTypeEnum];
+export const ItemSummaryByMarketplaceStatusEnum = {
+    Buyable: 'BUYABLE',
+    Discoverable: 'DISCOVERABLE'
+} as const;
+
+export type ItemSummaryByMarketplaceStatusEnum = typeof ItemSummaryByMarketplaceStatusEnum[keyof typeof ItemSummaryByMarketplaceStatusEnum];
 
 

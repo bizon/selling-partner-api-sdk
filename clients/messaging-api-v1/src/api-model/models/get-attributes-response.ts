@@ -26,13 +26,12 @@ export interface GetAttributesResponse {
      * @type {GetAttributesResponseBuyer}
      * @memberof GetAttributesResponse
      */
-    buyer?: GetAttributesResponseBuyer;
+    'buyer'?: GetAttributesResponseBuyer;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetAttributesResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

@@ -26,13 +26,12 @@ export interface SubmitShipmentConfirmationsResponse {
      * @type {TransactionReference}
      * @memberof SubmitShipmentConfirmationsResponse
      */
-    payload?: TransactionReference;
+    'payload'?: TransactionReference;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof SubmitShipmentConfirmationsResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

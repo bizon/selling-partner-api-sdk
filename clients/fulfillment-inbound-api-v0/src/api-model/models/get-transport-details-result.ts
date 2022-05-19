@@ -26,7 +26,6 @@ export interface GetTransportDetailsResult {
      * @type {TransportContent}
      * @memberof GetTransportDetailsResult
      */
-    TransportContent?: TransportContent;
+    'TransportContent'?: TransportContent;
 }
-
 

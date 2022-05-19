@@ -26,7 +26,6 @@ export interface GetSolicitationActionResponseEmbedded {
      * @type {GetSchemaResponse}
      * @memberof GetSolicitationActionResponseEmbedded
      */
-    schema?: GetSchemaResponse;
+    'schema'?: GetSchemaResponse;
 }
-
 

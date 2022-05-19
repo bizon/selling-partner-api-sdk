@@ -33,91 +33,90 @@ export interface CreateFulfillmentOrderRequest {
      * @type {string}
      * @memberof CreateFulfillmentOrderRequest
      */
-    marketplaceId?: string;
+    'marketplaceId'?: string;
     /**
      * A fulfillment order identifier that the seller creates to track their fulfillment order. The SellerFulfillmentOrderId must be unique for each fulfillment order that a seller creates. If the seller\'s system already creates unique order identifiers, then these might be good values for them to use.
      * @type {string}
      * @memberof CreateFulfillmentOrderRequest
      */
-    sellerFulfillmentOrderId: string;
+    'sellerFulfillmentOrderId': string;
     /**
      * A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of DisplayableOrderId should match the order identifier that the seller provides to the recipient. The seller can use the SellerFulfillmentOrderId for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.  The value must be an alpha-numeric or ISO 8859-1 compliant string from one to 40 characters in length. Cannot contain two spaces in a row. Leading and trailing white space is removed.
      * @type {string}
      * @memberof CreateFulfillmentOrderRequest
      */
-    displayableOrderId: string;
+    'displayableOrderId': string;
     /**
      * 
      * @type {string}
      * @memberof CreateFulfillmentOrderRequest
      */
-    displayableOrderDate: string;
+    'displayableOrderDate': string;
     /**
      * Order-specific text that appears in recipient-facing materials such as the outbound shipment packing slip.
      * @type {string}
      * @memberof CreateFulfillmentOrderRequest
      */
-    displayableOrderComment: string;
+    'displayableOrderComment': string;
     /**
      * 
      * @type {ShippingSpeedCategory}
      * @memberof CreateFulfillmentOrderRequest
      */
-    shippingSpeedCategory: ShippingSpeedCategory;
+    'shippingSpeedCategory': ShippingSpeedCategory;
     /**
      * 
      * @type {DeliveryWindow}
      * @memberof CreateFulfillmentOrderRequest
      */
-    deliveryWindow?: DeliveryWindow;
+    'deliveryWindow'?: DeliveryWindow;
     /**
      * 
      * @type {Address}
      * @memberof CreateFulfillmentOrderRequest
      */
-    destinationAddress: Address;
+    'destinationAddress': Address;
     /**
      * 
      * @type {FulfillmentAction}
      * @memberof CreateFulfillmentOrderRequest
      */
-    fulfillmentAction?: FulfillmentAction;
+    'fulfillmentAction'?: FulfillmentAction;
     /**
      * 
      * @type {FulfillmentPolicy}
      * @memberof CreateFulfillmentOrderRequest
      */
-    fulfillmentPolicy?: FulfillmentPolicy;
+    'fulfillmentPolicy'?: FulfillmentPolicy;
     /**
      * 
      * @type {CODSettings}
      * @memberof CreateFulfillmentOrderRequest
      */
-    codSettings?: CODSettings;
+    'codSettings'?: CODSettings;
     /**
      * The two-character country code for the country from which the fulfillment order ships. Must be in ISO 3166-1 alpha-2 format.
      * @type {string}
      * @memberof CreateFulfillmentOrderRequest
      */
-    shipFromCountryCode?: string;
+    'shipFromCountryCode'?: string;
     /**
      * A list of email addresses that the seller provides that are used by Amazon to send ship-complete notifications to recipients on behalf of the seller.
      * @type {Array<string>}
      * @memberof CreateFulfillmentOrderRequest
      */
-    notificationEmails?: Array<string>;
+    'notificationEmails'?: Array<string>;
     /**
      * A list of features and their fulfillment policies to apply to the order.
      * @type {Array<FeatureSettings>}
      * @memberof CreateFulfillmentOrderRequest
      */
-    featureConstraints?: Array<FeatureSettings>;
+    'featureConstraints'?: Array<FeatureSettings>;
     /**
      * An array of item information for creating a fulfillment order.
      * @type {Array<CreateFulfillmentOrderItem>}
      * @memberof CreateFulfillmentOrderRequest
      */
-    items: Array<CreateFulfillmentOrderItem>;
+    'items': Array<CreateFulfillmentOrderItem>;
 }
-
 

@@ -26,13 +26,12 @@ export interface Amount {
      * @type {CurrencyCode}
      * @memberof Amount
      */
-    CurrencyCode: CurrencyCode;
+    'CurrencyCode': CurrencyCode;
     /**
      * 
      * @type {number}
      * @memberof Amount
      */
-    Value: number;
+    'Value': number;
 }
-
 

@@ -26,4 +26,3 @@ import { MarketplaceFilter } from './marketplace-filter';
 export type EventFilter = AggregationFilter & EventFilterAllOf & MarketplaceFilter;
 
 
-

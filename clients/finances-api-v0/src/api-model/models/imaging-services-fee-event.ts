@@ -26,25 +26,24 @@ export interface ImagingServicesFeeEvent {
      * @type {string}
      * @memberof ImagingServicesFeeEvent
      */
-    ImagingRequestBillingItemID?: string;
+    'ImagingRequestBillingItemID'?: string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item for which the imaging service was requested.
      * @type {string}
      * @memberof ImagingServicesFeeEvent
      */
-    ASIN?: string;
+    'ASIN'?: string;
     /**
      * 
      * @type {string}
      * @memberof ImagingServicesFeeEvent
      */
-    PostedDate?: string;
+    'PostedDate'?: string;
     /**
      * A list of fee component information.
      * @type {Array<FeeComponent>}
      * @memberof ImagingServicesFeeEvent
      */
-    FeeList?: Array<FeeComponent>;
+    'FeeList'?: Array<FeeComponent>;
 }
-
 

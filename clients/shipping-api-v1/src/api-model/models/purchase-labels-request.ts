@@ -26,13 +26,12 @@ export interface PurchaseLabelsRequest {
      * @type {string}
      * @memberof PurchaseLabelsRequest
      */
-    rateId: string;
+    'rateId': string;
     /**
      * 
      * @type {LabelSpecification}
      * @memberof PurchaseLabelsRequest
      */
-    labelSpecification: LabelSpecification;
+    'labelSpecification': LabelSpecification;
 }
-
 

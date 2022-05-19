@@ -19,11 +19,14 @@
  * @export
  * @enum {string}
  */
-export enum CarrierWillPickUpOption {
-    CarrierWillPickUp = 'CarrierWillPickUp',
-    ShipperWillDropOff = 'ShipperWillDropOff',
-    NoPreference = 'NoPreference'
-}
+
+export const CarrierWillPickUpOption = {
+    CarrierWillPickUp: 'CarrierWillPickUp',
+    ShipperWillDropOff: 'ShipperWillDropOff',
+    NoPreference: 'NoPreference'
+} as const;
+
+export type CarrierWillPickUpOption = typeof CarrierWillPickUpOption[keyof typeof CarrierWillPickUpOption];
 
 
 

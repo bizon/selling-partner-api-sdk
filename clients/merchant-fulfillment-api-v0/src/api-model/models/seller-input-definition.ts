@@ -28,43 +28,42 @@ export interface SellerInputDefinition {
      * @type {boolean}
      * @memberof SellerInputDefinition
      */
-    IsRequired: boolean;
+    'IsRequired': boolean;
     /**
      * The data type of the additional input field.
      * @type {string}
      * @memberof SellerInputDefinition
      */
-    DataType: string;
+    'DataType': string;
     /**
      * List of constraints.
      * @type {Array<Constraint>}
      * @memberof SellerInputDefinition
      */
-    Constraints: Array<Constraint>;
+    'Constraints': Array<Constraint>;
     /**
      * The display text for the additional input field.
      * @type {string}
      * @memberof SellerInputDefinition
      */
-    InputDisplayText: string;
+    'InputDisplayText': string;
     /**
      * 
      * @type {InputTargetType}
      * @memberof SellerInputDefinition
      */
-    InputTarget?: InputTargetType;
+    'InputTarget'?: InputTargetType;
     /**
      * 
      * @type {AdditionalSellerInput}
      * @memberof SellerInputDefinition
      */
-    StoredValue: AdditionalSellerInput;
+    'StoredValue': AdditionalSellerInput;
     /**
      * The set of fixed values in an additional seller input.
      * @type {Array<string>}
      * @memberof SellerInputDefinition
      */
-    RestrictedSetValues?: Array<string>;
+    'RestrictedSetValues'?: Array<string>;
 }
-
 

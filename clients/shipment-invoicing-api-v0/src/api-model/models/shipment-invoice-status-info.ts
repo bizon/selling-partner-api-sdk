@@ -26,13 +26,12 @@ export interface ShipmentInvoiceStatusInfo {
      * @type {string}
      * @memberof ShipmentInvoiceStatusInfo
      */
-    AmazonShipmentId?: string;
+    'AmazonShipmentId'?: string;
     /**
      * 
      * @type {ShipmentInvoiceStatus}
      * @memberof ShipmentInvoiceStatusInfo
      */
-    InvoiceStatus?: ShipmentInvoiceStatus;
+    'InvoiceStatus'?: ShipmentInvoiceStatus;
 }
-
 

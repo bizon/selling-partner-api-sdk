@@ -26,13 +26,12 @@ export interface GetRatesResponse {
      * @type {GetRatesResult}
      * @memberof GetRatesResponse
      */
-    payload?: GetRatesResult;
+    'payload'?: GetRatesResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetRatesResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

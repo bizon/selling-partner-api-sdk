@@ -19,18 +19,21 @@
  * @export
  * @enum {string}
  */
-export enum ShipmentStatus {
-    Working = 'WORKING',
-    Shipped = 'SHIPPED',
-    Receiving = 'RECEIVING',
-    Cancelled = 'CANCELLED',
-    Deleted = 'DELETED',
-    Closed = 'CLOSED',
-    Error = 'ERROR',
-    InTransit = 'IN_TRANSIT',
-    Delivered = 'DELIVERED',
-    CheckedIn = 'CHECKED_IN'
-}
+
+export const ShipmentStatus = {
+    Working: 'WORKING',
+    Shipped: 'SHIPPED',
+    Receiving: 'RECEIVING',
+    Cancelled: 'CANCELLED',
+    Deleted: 'DELETED',
+    Closed: 'CLOSED',
+    Error: 'ERROR',
+    InTransit: 'IN_TRANSIT',
+    Delivered: 'DELIVERED',
+    CheckedIn: 'CHECKED_IN'
+} as const;
+
+export type ShipmentStatus = typeof ShipmentStatus[keyof typeof ShipmentStatus];
 
 
 

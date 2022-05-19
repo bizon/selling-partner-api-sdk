@@ -27,43 +27,42 @@ export interface RetrochargeEvent {
      * @type {string}
      * @memberof RetrochargeEvent
      */
-    RetrochargeEventType?: string;
+    'RetrochargeEventType'?: string;
     /**
      * An Amazon-defined identifier for an order.
      * @type {string}
      * @memberof RetrochargeEvent
      */
-    AmazonOrderId?: string;
+    'AmazonOrderId'?: string;
     /**
      * 
      * @type {string}
      * @memberof RetrochargeEvent
      */
-    PostedDate?: string;
+    'PostedDate'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof RetrochargeEvent
      */
-    BaseTax?: Currency;
+    'BaseTax'?: Currency;
     /**
      * 
      * @type {Currency}
      * @memberof RetrochargeEvent
      */
-    ShippingTax?: Currency;
+    'ShippingTax'?: Currency;
     /**
      * The name of the marketplace where the retrocharge event occurred.
      * @type {string}
      * @memberof RetrochargeEvent
      */
-    MarketplaceName?: string;
+    'MarketplaceName'?: string;
     /**
      * A list of information about taxes withheld.
      * @type {Array<TaxWithheldComponent>}
      * @memberof RetrochargeEvent
      */
-    RetrochargeTaxWithheldList?: Array<TaxWithheldComponent>;
+    'RetrochargeTaxWithheldList'?: Array<TaxWithheldComponent>;
 }
-
 

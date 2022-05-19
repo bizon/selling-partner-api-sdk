@@ -25,19 +25,18 @@ export interface ModelError {
      * @type {string}
      * @memberof ModelError
      */
-    code: string;
+    'code': string;
     /**
      * A message that describes the error condition.
      * @type {string}
      * @memberof ModelError
      */
-    message: string;
+    'message': string;
     /**
      * Additional details that can help the caller understand or fix the issue.
      * @type {string}
      * @memberof ModelError
      */
-    details?: string;
+    'details'?: string;
 }
-
 

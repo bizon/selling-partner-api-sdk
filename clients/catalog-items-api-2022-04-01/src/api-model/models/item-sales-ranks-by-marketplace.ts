@@ -27,19 +27,18 @@ export interface ItemSalesRanksByMarketplace {
      * @type {string}
      * @memberof ItemSalesRanksByMarketplace
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * Sales ranks of an Amazon catalog item for an Amazon marketplace by classification.
      * @type {Array<ItemClassificationSalesRank>}
      * @memberof ItemSalesRanksByMarketplace
      */
-    classificationRanks?: Array<ItemClassificationSalesRank>;
+    'classificationRanks'?: Array<ItemClassificationSalesRank>;
     /**
      * Sales ranks of an Amazon catalog item for an Amazon marketplace by website display group.
      * @type {Array<ItemDisplayGroupSalesRank>}
      * @memberof ItemSalesRanksByMarketplace
      */
-    displayGroupRanks?: Array<ItemDisplayGroupSalesRank>;
+    'displayGroupRanks'?: Array<ItemDisplayGroupSalesRank>;
 }
-
 

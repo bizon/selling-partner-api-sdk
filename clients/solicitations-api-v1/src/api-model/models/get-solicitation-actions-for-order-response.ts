@@ -27,19 +27,18 @@ export interface GetSolicitationActionsForOrderResponse {
      * @type {GetSolicitationActionsForOrderResponseLinks}
      * @memberof GetSolicitationActionsForOrderResponse
      */
-    _links?: GetSolicitationActionsForOrderResponseLinks;
+    '_links'?: GetSolicitationActionsForOrderResponseLinks;
     /**
      * 
      * @type {GetSolicitationActionsForOrderResponseEmbedded}
      * @memberof GetSolicitationActionsForOrderResponse
      */
-    _embedded?: GetSolicitationActionsForOrderResponseEmbedded;
+    '_embedded'?: GetSolicitationActionsForOrderResponseEmbedded;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetSolicitationActionsForOrderResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

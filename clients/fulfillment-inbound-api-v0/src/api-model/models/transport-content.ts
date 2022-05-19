@@ -28,19 +28,18 @@ export interface TransportContent {
      * @type {TransportHeader}
      * @memberof TransportContent
      */
-    TransportHeader: TransportHeader;
+    'TransportHeader': TransportHeader;
     /**
      * 
      * @type {TransportDetailOutput}
      * @memberof TransportContent
      */
-    TransportDetails: TransportDetailOutput;
+    'TransportDetails': TransportDetailOutput;
     /**
      * 
      * @type {TransportResult}
      * @memberof TransportContent
      */
-    TransportResult: TransportResult;
+    'TransportResult': TransportResult;
 }
-
 

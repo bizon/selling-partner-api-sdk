@@ -25,28 +25,25 @@ export interface ReportDocumentEncryptionDetails {
      * @type {string}
      * @memberof ReportDocumentEncryptionDetails
      */
-    standard: ReportDocumentEncryptionDetailsStandardEnum;
+    'standard': ReportDocumentEncryptionDetailsStandardEnum;
     /**
      * The vector to decrypt the document contents using Cipher Block Chaining (CBC).
      * @type {string}
      * @memberof ReportDocumentEncryptionDetails
      */
-    initializationVector: string;
+    'initializationVector': string;
     /**
      * The encryption key used to decrypt the document contents.
      * @type {string}
      * @memberof ReportDocumentEncryptionDetails
      */
-    key: string;
+    'key': string;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ReportDocumentEncryptionDetailsStandardEnum {
-    Aes = 'AES'
-}
+export const ReportDocumentEncryptionDetailsStandardEnum = {
+    Aes: 'AES'
+} as const;
 
+export type ReportDocumentEncryptionDetailsStandardEnum = typeof ReportDocumentEncryptionDetailsStandardEnum[keyof typeof ReportDocumentEncryptionDetailsStandardEnum];
 
 

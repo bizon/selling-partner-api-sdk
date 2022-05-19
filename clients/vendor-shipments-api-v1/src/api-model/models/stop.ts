@@ -26,36 +26,33 @@ export interface Stop {
      * @type {string}
      * @memberof Stop
      */
-    functionCode: StopFunctionCodeEnum;
+    'functionCode': StopFunctionCodeEnum;
     /**
      * 
      * @type {Location}
      * @memberof Stop
      */
-    locationIdentification?: Location;
+    'locationIdentification'?: Location;
     /**
      * Date and time of the arrival of the cargo.
      * @type {string}
      * @memberof Stop
      */
-    arrivalTime?: string;
+    'arrivalTime'?: string;
     /**
      * Date and time of the departure of the cargo.
      * @type {string}
      * @memberof Stop
      */
-    departureTime?: string;
+    'departureTime'?: string;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum StopFunctionCodeEnum {
-    PortOfDischarge = 'PortOfDischarge',
-    FreightPayableAt = 'FreightPayableAt',
-    PortOfLoading = 'PortOfLoading'
-}
+export const StopFunctionCodeEnum = {
+    PortOfDischarge: 'PortOfDischarge',
+    FreightPayableAt: 'FreightPayableAt',
+    PortOfLoading: 'PortOfLoading'
+} as const;
 
+export type StopFunctionCodeEnum = typeof StopFunctionCodeEnum[keyof typeof StopFunctionCodeEnum];
 
 

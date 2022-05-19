@@ -25,7 +25,6 @@ export interface InboundShipmentResult {
      * @type {string}
      * @memberof InboundShipmentResult
      */
-    ShipmentId: string;
+    'ShipmentId': string;
 }
-
 

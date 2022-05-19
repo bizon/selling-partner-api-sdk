@@ -26,13 +26,12 @@ export interface ConfirmPreorderResponse {
      * @type {ConfirmPreorderResult}
      * @memberof ConfirmPreorderResponse
      */
-    payload?: ConfirmPreorderResult;
+    'payload'?: ConfirmPreorderResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof ConfirmPreorderResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

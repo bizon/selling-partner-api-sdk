@@ -26,37 +26,36 @@ export interface ProductAdsPaymentEvent {
      * @type {string}
      * @memberof ProductAdsPaymentEvent
      */
-    postedDate?: string;
+    'postedDate'?: string;
     /**
      * Indicates if the transaction is for a charge or a refund.  Possible values:  * charge - Charge  * refund - Refund
      * @type {string}
      * @memberof ProductAdsPaymentEvent
      */
-    transactionType?: string;
+    'transactionType'?: string;
     /**
      * Identifier for the invoice that the transaction appears in.
      * @type {string}
      * @memberof ProductAdsPaymentEvent
      */
-    invoiceId?: string;
+    'invoiceId'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof ProductAdsPaymentEvent
      */
-    baseValue?: Currency;
+    'baseValue'?: Currency;
     /**
      * 
      * @type {Currency}
      * @memberof ProductAdsPaymentEvent
      */
-    taxValue?: Currency;
+    'taxValue'?: Currency;
     /**
      * 
      * @type {Currency}
      * @memberof ProductAdsPaymentEvent
      */
-    transactionValue?: Currency;
+    'transactionValue'?: Currency;
 }
-
 

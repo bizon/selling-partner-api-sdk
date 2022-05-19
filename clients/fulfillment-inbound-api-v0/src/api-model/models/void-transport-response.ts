@@ -26,13 +26,12 @@ export interface VoidTransportResponse {
      * @type {CommonTransportResult}
      * @memberof VoidTransportResponse
      */
-    payload?: CommonTransportResult;
+    'payload'?: CommonTransportResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof VoidTransportResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

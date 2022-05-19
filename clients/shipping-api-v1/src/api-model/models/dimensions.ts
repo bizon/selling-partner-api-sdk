@@ -25,35 +25,32 @@ export interface Dimensions {
      * @type {number}
      * @memberof Dimensions
      */
-    length: number;
+    'length': number;
     /**
      * The width of the container.
      * @type {number}
      * @memberof Dimensions
      */
-    width: number;
+    'width': number;
     /**
      * The height of the container.
      * @type {number}
      * @memberof Dimensions
      */
-    height: number;
+    'height': number;
     /**
      * The unit of these measurements.
      * @type {string}
      * @memberof Dimensions
      */
-    unit: DimensionsUnitEnum;
+    'unit': DimensionsUnitEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum DimensionsUnitEnum {
-    In = 'IN',
-    Cm = 'CM'
-}
+export const DimensionsUnitEnum = {
+    In: 'IN',
+    Cm: 'CM'
+} as const;
 
+export type DimensionsUnitEnum = typeof DimensionsUnitEnum[keyof typeof DimensionsUnitEnum];
 
 

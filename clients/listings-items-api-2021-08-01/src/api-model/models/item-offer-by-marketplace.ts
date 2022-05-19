@@ -27,35 +27,32 @@ export interface ItemOfferByMarketplace {
      * @type {string}
      * @memberof ItemOfferByMarketplace
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * Type of offer for the listings item.
      * @type {string}
      * @memberof ItemOfferByMarketplace
      */
-    offerType: ItemOfferByMarketplaceOfferTypeEnum;
+    'offerType': ItemOfferByMarketplaceOfferTypeEnum;
     /**
      * 
      * @type {Money}
      * @memberof ItemOfferByMarketplace
      */
-    price: Money;
+    'price': Money;
     /**
      * 
      * @type {Points}
      * @memberof ItemOfferByMarketplace
      */
-    points?: Points;
+    'points'?: Points;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ItemOfferByMarketplaceOfferTypeEnum {
-    B2C = 'B2C',
-    B2B = 'B2B'
-}
+export const ItemOfferByMarketplaceOfferTypeEnum = {
+    B2C: 'B2C',
+    B2B: 'B2B'
+} as const;
 
+export type ItemOfferByMarketplaceOfferTypeEnum = typeof ItemOfferByMarketplaceOfferTypeEnum[keyof typeof ItemOfferByMarketplaceOfferTypeEnum];
 
 

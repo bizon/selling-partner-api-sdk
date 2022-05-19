@@ -29,43 +29,42 @@ export interface GetFulfillmentPreviewRequest {
      * @type {string}
      * @memberof GetFulfillmentPreviewRequest
      */
-    marketplaceId?: string;
+    'marketplaceId'?: string;
     /**
      * 
      * @type {Address}
      * @memberof GetFulfillmentPreviewRequest
      */
-    address: Address;
+    'address': Address;
     /**
      * An array of fulfillment preview item information.
      * @type {Array<GetFulfillmentPreviewItem>}
      * @memberof GetFulfillmentPreviewRequest
      */
-    items: Array<GetFulfillmentPreviewItem>;
+    'items': Array<GetFulfillmentPreviewItem>;
     /**
      * 
      * @type {Array<ShippingSpeedCategory>}
      * @memberof GetFulfillmentPreviewRequest
      */
-    shippingSpeedCategories?: Array<ShippingSpeedCategory>;
+    'shippingSpeedCategories'?: Array<ShippingSpeedCategory>;
     /**
      * Specifies whether to return fulfillment order previews that are for COD (Cash On Delivery).  Possible values:  * true - Returns all fulfillment order previews (both for COD and not for COD). * false - Returns only fulfillment order previews that are not for COD.
      * @type {boolean}
      * @memberof GetFulfillmentPreviewRequest
      */
-    includeCODFulfillmentPreview?: boolean;
+    'includeCODFulfillmentPreview'?: boolean;
     /**
      * Specifies whether to return the ScheduledDeliveryInfo response object, which contains the available delivery windows for a Scheduled Delivery. The ScheduledDeliveryInfo response object can only be returned for fulfillment order previews with ShippingSpeedCategories = ScheduledDelivery.
      * @type {boolean}
      * @memberof GetFulfillmentPreviewRequest
      */
-    includeDeliveryWindows?: boolean;
+    'includeDeliveryWindows'?: boolean;
     /**
      * A list of features and their fulfillment policies to apply to the order.
      * @type {Array<FeatureSettings>}
      * @memberof GetFulfillmentPreviewRequest
      */
-    featureConstraints?: Array<FeatureSettings>;
+    'featureConstraints'?: Array<FeatureSettings>;
 }
-
 

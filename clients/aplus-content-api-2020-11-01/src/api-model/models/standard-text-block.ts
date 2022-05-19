@@ -27,13 +27,12 @@ export interface StandardTextBlock {
      * @type {TextComponent}
      * @memberof StandardTextBlock
      */
-    headline?: TextComponent;
+    'headline'?: TextComponent;
     /**
      * 
      * @type {ParagraphComponent}
      * @memberof StandardTextBlock
      */
-    body?: ParagraphComponent;
+    'body'?: ParagraphComponent;
 }
-
 

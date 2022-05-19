@@ -26,13 +26,12 @@ export interface GetCatalogItemResponse {
      * @type {Item}
      * @memberof GetCatalogItemResponse
      */
-    payload?: Item;
+    'payload'?: Item;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetCatalogItemResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

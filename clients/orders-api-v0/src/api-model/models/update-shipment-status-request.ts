@@ -26,19 +26,18 @@ export interface UpdateShipmentStatusRequest {
      * @type {string}
      * @memberof UpdateShipmentStatusRequest
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * 
      * @type {ShipmentStatus}
      * @memberof UpdateShipmentStatusRequest
      */
-    shipmentStatus: ShipmentStatus;
+    'shipmentStatus': ShipmentStatus;
     /**
      * the list of order items and quantities when the seller wants to partially update the shipment status of the order
      * @type {Array<object>}
      * @memberof UpdateShipmentStatusRequest
      */
-    orderItems?: Array<object>;
+    'orderItems'?: Array<object>;
 }
-
 

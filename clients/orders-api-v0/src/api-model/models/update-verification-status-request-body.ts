@@ -26,19 +26,18 @@ export interface UpdateVerificationStatusRequestBody {
      * @type {VerificationStatus}
      * @memberof UpdateVerificationStatusRequestBody
      */
-    status: VerificationStatus;
+    'status': VerificationStatus;
     /**
      * The identifier for the order\'s regulated information reviewer.
      * @type {string}
      * @memberof UpdateVerificationStatusRequestBody
      */
-    externalReviewerId: string;
+    'externalReviewerId': string;
     /**
      * The unique identifier for the rejection reason used for rejecting the order\'s regulated information. Only required if the new status is rejected.
      * @type {string}
      * @memberof UpdateVerificationStatusRequestBody
      */
-    rejectionReasonId?: string;
+    'rejectionReasonId'?: string;
 }
-
 

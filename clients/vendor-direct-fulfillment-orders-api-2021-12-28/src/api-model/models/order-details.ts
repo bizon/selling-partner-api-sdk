@@ -30,73 +30,70 @@ export interface OrderDetails {
      * @type {string}
      * @memberof OrderDetails
      */
-    customerOrderNumber: string;
+    'customerOrderNumber': string;
     /**
      * The date the order was placed. This  field is expected to be in ISO-8601 date/time format, for example:2018-07-16T23:00:00Z/ 2018-07-16T23:00:00-05:00 /2018-07-16T23:00:00-08:00. If no time zone is specified, UTC should be assumed.
      * @type {string}
      * @memberof OrderDetails
      */
-    orderDate: string;
+    'orderDate': string;
     /**
      * Current status of the order.
      * @type {string}
      * @memberof OrderDetails
      */
-    orderStatus?: OrderDetailsOrderStatusEnum;
+    'orderStatus'?: OrderDetailsOrderStatusEnum;
     /**
      * 
      * @type {ShipmentDetails}
      * @memberof OrderDetails
      */
-    shipmentDetails: ShipmentDetails;
+    'shipmentDetails': ShipmentDetails;
     /**
      * 
      * @type {TaxItemDetails}
      * @memberof OrderDetails
      */
-    taxTotal?: TaxItemDetails;
+    'taxTotal'?: TaxItemDetails;
     /**
      * 
      * @type {PartyIdentification}
      * @memberof OrderDetails
      */
-    sellingParty: PartyIdentification;
+    'sellingParty': PartyIdentification;
     /**
      * 
      * @type {PartyIdentification}
      * @memberof OrderDetails
      */
-    shipFromParty: PartyIdentification;
+    'shipFromParty': PartyIdentification;
     /**
      * 
      * @type {Address}
      * @memberof OrderDetails
      */
-    shipToParty: Address;
+    'shipToParty': Address;
     /**
      * 
      * @type {PartyIdentification}
      * @memberof OrderDetails
      */
-    billToParty: PartyIdentification;
+    'billToParty': PartyIdentification;
     /**
      * A list of items in this purchase order.
      * @type {Array<OrderItem>}
      * @memberof OrderDetails
      */
-    items: Array<OrderItem>;
+    'items': Array<OrderItem>;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum OrderDetailsOrderStatusEnum {
-    New = 'NEW',
-    Shipped = 'SHIPPED',
-    Accepted = 'ACCEPTED',
-    Cancelled = 'CANCELLED'
-}
+export const OrderDetailsOrderStatusEnum = {
+    New: 'NEW',
+    Shipped: 'SHIPPED',
+    Accepted: 'ACCEPTED',
+    Cancelled: 'CANCELLED'
+} as const;
 
+export type OrderDetailsOrderStatusEnum = typeof OrderDetailsOrderStatusEnum[keyof typeof OrderDetailsOrderStatusEnum];
 
 

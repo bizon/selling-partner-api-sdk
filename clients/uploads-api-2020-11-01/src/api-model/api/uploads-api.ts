@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -37,7 +37,7 @@ export const UploadsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createUploadDestinationForResource: async (marketplaceIds: Array<string>, contentMD5: string, resource: string, contentType?: string, options: any = {}): Promise<RequestArgs> => {
+        createUploadDestinationForResource: async (marketplaceIds: Array<string>, contentMD5: string, resource: string, contentType?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('createUploadDestinationForResource', 'marketplaceIds', marketplaceIds)
             // verify required parameter 'contentMD5' is not null or undefined
@@ -71,7 +71,7 @@ export const UploadsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -99,7 +99,7 @@ export const UploadsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createUploadDestinationForResource(marketplaceIds: Array<string>, contentMD5: string, resource: string, contentType?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateUploadDestinationResponse>> {
+        async createUploadDestinationForResource(marketplaceIds: Array<string>, contentMD5: string, resource: string, contentType?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateUploadDestinationResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createUploadDestinationForResource(marketplaceIds, contentMD5, resource, contentType, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -177,7 +177,7 @@ export class UploadsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof UploadsApi
      */
-    public createUploadDestinationForResource(requestParameters: UploadsApiCreateUploadDestinationForResourceRequest, options?: any) {
+    public createUploadDestinationForResource(requestParameters: UploadsApiCreateUploadDestinationForResourceRequest, options?: AxiosRequestConfig) {
         return UploadsApiFp(this.configuration).createUploadDestinationForResource(requestParameters.marketplaceIds, requestParameters.contentMD5, requestParameters.resource, requestParameters.contentType, options).then((request) => request(this.axios, this.basePath));
     }
 }

@@ -26,13 +26,12 @@ export interface LoanServicingEvent {
      * @type {Currency}
      * @memberof LoanServicingEvent
      */
-    LoanAmount?: Currency;
+    'LoanAmount'?: Currency;
     /**
      * The type of event.  Possible values:  * LoanAdvance  * LoanPayment  * LoanRefund
      * @type {string}
      * @memberof LoanServicingEvent
      */
-    SourceBusinessEventType?: string;
+    'SourceBusinessEventType'?: string;
 }
-
 

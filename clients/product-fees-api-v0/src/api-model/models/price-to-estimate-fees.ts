@@ -27,19 +27,18 @@ export interface PriceToEstimateFees {
      * @type {MoneyType}
      * @memberof PriceToEstimateFees
      */
-    ListingPrice: MoneyType;
+    'ListingPrice': MoneyType;
     /**
      * 
      * @type {MoneyType}
      * @memberof PriceToEstimateFees
      */
-    Shipping?: MoneyType;
+    'Shipping'?: MoneyType;
     /**
      * 
      * @type {Points}
      * @memberof PriceToEstimateFees
      */
-    Points?: Points;
+    'Points'?: Points;
 }
-
 

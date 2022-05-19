@@ -31,73 +31,72 @@ export interface UpdateFulfillmentOrderRequest {
      * @type {string}
      * @memberof UpdateFulfillmentOrderRequest
      */
-    marketplaceId?: string;
+    'marketplaceId'?: string;
     /**
      * A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of DisplayableOrderId should match the order identifier that the seller provides to the recipient. The seller can use the SellerFulfillmentOrderId for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.
      * @type {string}
      * @memberof UpdateFulfillmentOrderRequest
      */
-    displayableOrderId?: string;
+    'displayableOrderId'?: string;
     /**
      * 
      * @type {string}
      * @memberof UpdateFulfillmentOrderRequest
      */
-    displayableOrderDate?: string;
+    'displayableOrderDate'?: string;
     /**
      * Order-specific text that appears in recipient-facing materials such as the outbound shipment packing slip.
      * @type {string}
      * @memberof UpdateFulfillmentOrderRequest
      */
-    displayableOrderComment?: string;
+    'displayableOrderComment'?: string;
     /**
      * 
      * @type {ShippingSpeedCategory}
      * @memberof UpdateFulfillmentOrderRequest
      */
-    shippingSpeedCategory?: ShippingSpeedCategory;
+    'shippingSpeedCategory'?: ShippingSpeedCategory;
     /**
      * 
      * @type {Address}
      * @memberof UpdateFulfillmentOrderRequest
      */
-    destinationAddress?: Address;
+    'destinationAddress'?: Address;
     /**
      * 
      * @type {FulfillmentAction}
      * @memberof UpdateFulfillmentOrderRequest
      */
-    fulfillmentAction?: FulfillmentAction;
+    'fulfillmentAction'?: FulfillmentAction;
     /**
      * 
      * @type {FulfillmentPolicy}
      * @memberof UpdateFulfillmentOrderRequest
      */
-    fulfillmentPolicy?: FulfillmentPolicy;
+    'fulfillmentPolicy'?: FulfillmentPolicy;
     /**
      * The two-character country code for the country from which the fulfillment order ships. Must be in ISO 3166-1 alpha-2 format.
      * @type {string}
      * @memberof UpdateFulfillmentOrderRequest
      */
-    shipFromCountryCode?: string;
+    'shipFromCountryCode'?: string;
     /**
      * A list of email addresses that the seller provides that are used by Amazon to send ship-complete notifications to recipients on behalf of the seller.
      * @type {Array<string>}
      * @memberof UpdateFulfillmentOrderRequest
      */
-    notificationEmails?: Array<string>;
+    'notificationEmails'?: Array<string>;
     /**
      * A list of features and their fulfillment policies to apply to the order.
      * @type {Array<FeatureSettings>}
      * @memberof UpdateFulfillmentOrderRequest
      */
-    featureConstraints?: Array<FeatureSettings>;
+    'featureConstraints'?: Array<FeatureSettings>;
     /**
      * An array of fulfillment order item information for updating a fulfillment order.
      * @type {Array<UpdateFulfillmentOrderItem>}
      * @memberof UpdateFulfillmentOrderRequest
      */
-    items?: Array<UpdateFulfillmentOrderItem>;
+    'items'?: Array<UpdateFulfillmentOrderItem>;
 }
-
 

@@ -29,61 +29,60 @@ export interface InvoiceItem {
      * @type {string}
      * @memberof InvoiceItem
      */
-    itemSequenceNumber: string;
+    'itemSequenceNumber': string;
     /**
      * Buyer\'s standard identification number (ASIN) of an item.
      * @type {string}
      * @memberof InvoiceItem
      */
-    buyerProductIdentifier?: string;
+    'buyerProductIdentifier'?: string;
     /**
      * The vendor selected product identification of the item.
      * @type {string}
      * @memberof InvoiceItem
      */
-    vendorProductIdentifier?: string;
+    'vendorProductIdentifier'?: string;
     /**
      * 
      * @type {ItemQuantity}
      * @memberof InvoiceItem
      */
-    invoicedQuantity: ItemQuantity;
+    'invoicedQuantity': ItemQuantity;
     /**
      * 
      * @type {Money}
      * @memberof InvoiceItem
      */
-    netCost: Money;
+    'netCost': Money;
     /**
      * The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
      * @type {string}
      * @memberof InvoiceItem
      */
-    purchaseOrderNumber: string;
+    'purchaseOrderNumber': string;
     /**
      * The vendor\'s order number for this order.
      * @type {string}
      * @memberof InvoiceItem
      */
-    vendorOrderNumber?: string;
+    'vendorOrderNumber'?: string;
     /**
      * HSN tax code. The HSN number cannot contain alphabets.
      * @type {string}
      * @memberof InvoiceItem
      */
-    hsnCode?: string;
+    'hsnCode'?: string;
     /**
      * Individual tax details per line item.
      * @type {Array<TaxDetail>}
      * @memberof InvoiceItem
      */
-    taxDetails?: Array<TaxDetail>;
+    'taxDetails'?: Array<TaxDetail>;
     /**
      * Individual charge details per line item.
      * @type {Array<ChargeDetails>}
      * @memberof InvoiceItem
      */
-    chargeDetails?: Array<ChargeDetails>;
+    'chargeDetails'?: Array<ChargeDetails>;
 }
-
 

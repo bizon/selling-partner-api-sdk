@@ -26,35 +26,32 @@ export interface ItemRelationship {
      * @type {Array<string>}
      * @memberof ItemRelationship
      */
-    childAsins?: Array<string>;
+    'childAsins'?: Array<string>;
     /**
      * Identifiers (ASINs) of the related items that are parents of this item.
      * @type {Array<string>}
      * @memberof ItemRelationship
      */
-    parentAsins?: Array<string>;
+    'parentAsins'?: Array<string>;
     /**
      * 
      * @type {ItemVariationTheme}
      * @memberof ItemRelationship
      */
-    variationTheme?: ItemVariationTheme;
+    'variationTheme'?: ItemVariationTheme;
     /**
      * Type of relationship.
      * @type {string}
      * @memberof ItemRelationship
      */
-    type: ItemRelationshipTypeEnum;
+    'type': ItemRelationshipTypeEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ItemRelationshipTypeEnum {
-    Variation = 'VARIATION',
-    PackageHierarchy = 'PACKAGE_HIERARCHY'
-}
+export const ItemRelationshipTypeEnum = {
+    Variation: 'VARIATION',
+    PackageHierarchy: 'PACKAGE_HIERARCHY'
+} as const;
 
+export type ItemRelationshipTypeEnum = typeof ItemRelationshipTypeEnum[keyof typeof ItemRelationshipTypeEnum];
 
 

@@ -26,19 +26,18 @@ export interface MarketplaceTaxInfo {
      * @type {string}
      * @memberof MarketplaceTaxInfo
      */
-    CompanyLegalName?: string;
+    'CompanyLegalName'?: string;
     /**
      * The country or region imposing the tax.
      * @type {string}
      * @memberof MarketplaceTaxInfo
      */
-    TaxingRegion?: string;
+    'TaxingRegion'?: string;
     /**
      * The list of tax classifications.
      * @type {Array<TaxClassification>}
      * @memberof MarketplaceTaxInfo
      */
-    TaxClassifications?: Array<TaxClassification>;
+    'TaxClassifications'?: Array<TaxClassification>;
 }
-
 

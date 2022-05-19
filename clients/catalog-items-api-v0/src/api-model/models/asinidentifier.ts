@@ -25,13 +25,12 @@ export interface ASINIdentifier {
      * @type {string}
      * @memberof ASINIdentifier
      */
-    MarketplaceId: string;
+    'MarketplaceId': string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
      * @type {string}
      * @memberof ASINIdentifier
      */
-    ASIN: string;
+    'ASIN': string;
 }
-
 

@@ -19,10 +19,13 @@
  * @export
  * @enum {string}
  */
-export enum ShipmentType {
-    Sp = 'SP',
-    Ltl = 'LTL'
-}
+
+export const ShipmentType = {
+    Sp: 'SP',
+    Ltl: 'LTL'
+} as const;
+
+export type ShipmentType = typeof ShipmentType[keyof typeof ShipmentType];
 
 
 

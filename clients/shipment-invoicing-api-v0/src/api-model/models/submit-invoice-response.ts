@@ -25,7 +25,6 @@ export interface SubmitInvoiceResponse {
      * @type {Array<Error>}
      * @memberof SubmitInvoiceResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

@@ -19,26 +19,29 @@
  * @export
  * @enum {string}
  */
-export enum CurrentStatus {
-    InTransit = 'IN_TRANSIT',
-    Delivered = 'DELIVERED',
-    Returning = 'RETURNING',
-    Returned = 'RETURNED',
-    Undeliverable = 'UNDELIVERABLE',
-    Delayed = 'DELAYED',
-    AvailableForPickup = 'AVAILABLE_FOR_PICKUP',
-    CustomerAction = 'CUSTOMER_ACTION',
-    Unknown = 'UNKNOWN',
-    OutForDelivery = 'OUT_FOR_DELIVERY',
-    DeliveryAttempted = 'DELIVERY_ATTEMPTED',
-    PickupSuccessful = 'PICKUP_SUCCESSFUL',
-    PickupCancelled = 'PICKUP_CANCELLED',
-    PickupAttempted = 'PICKUP_ATTEMPTED',
-    PickupScheduled = 'PICKUP_SCHEDULED',
-    ReturnRequestAccepted = 'RETURN_REQUEST_ACCEPTED',
-    RefundIssued = 'REFUND_ISSUED',
-    ReturnReceivedInFc = 'RETURN_RECEIVED_IN_FC'
-}
+
+export const CurrentStatus = {
+    InTransit: 'IN_TRANSIT',
+    Delivered: 'DELIVERED',
+    Returning: 'RETURNING',
+    Returned: 'RETURNED',
+    Undeliverable: 'UNDELIVERABLE',
+    Delayed: 'DELAYED',
+    AvailableForPickup: 'AVAILABLE_FOR_PICKUP',
+    CustomerAction: 'CUSTOMER_ACTION',
+    Unknown: 'UNKNOWN',
+    OutForDelivery: 'OUT_FOR_DELIVERY',
+    DeliveryAttempted: 'DELIVERY_ATTEMPTED',
+    PickupSuccessful: 'PICKUP_SUCCESSFUL',
+    PickupCancelled: 'PICKUP_CANCELLED',
+    PickupAttempted: 'PICKUP_ATTEMPTED',
+    PickupScheduled: 'PICKUP_SCHEDULED',
+    ReturnRequestAccepted: 'RETURN_REQUEST_ACCEPTED',
+    RefundIssued: 'REFUND_ISSUED',
+    ReturnReceivedInFc: 'RETURN_RECEIVED_IN_FC'
+} as const;
+
+export type CurrentStatus = typeof CurrentStatus[keyof typeof CurrentStatus];
 
 
 

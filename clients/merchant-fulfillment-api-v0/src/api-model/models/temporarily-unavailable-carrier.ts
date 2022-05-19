@@ -25,7 +25,6 @@ export interface TemporarilyUnavailableCarrier {
      * @type {string}
      * @memberof TemporarilyUnavailableCarrier
      */
-    CarrierName: string;
+    'CarrierName': string;
 }
-
 

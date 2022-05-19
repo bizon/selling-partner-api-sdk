@@ -27,25 +27,24 @@ export interface ShippingOfferingFilter {
      * @type {boolean}
      * @memberof ShippingOfferingFilter
      */
-    IncludePackingSlipWithLabel?: boolean;
+    'IncludePackingSlipWithLabel'?: boolean;
     /**
      * When true, include complex shipping options.
      * @type {boolean}
      * @memberof ShippingOfferingFilter
      */
-    IncludeComplexShippingOptions?: boolean;
+    'IncludeComplexShippingOptions'?: boolean;
     /**
      * 
      * @type {CarrierWillPickUpOption}
      * @memberof ShippingOfferingFilter
      */
-    CarrierWillPickUp?: CarrierWillPickUpOption;
+    'CarrierWillPickUp'?: CarrierWillPickUpOption;
     /**
      * 
      * @type {DeliveryExperienceOption}
      * @memberof ShippingOfferingFilter
      */
-    DeliveryExperience?: DeliveryExperienceOption;
+    'DeliveryExperience'?: DeliveryExperienceOption;
 }
-
 

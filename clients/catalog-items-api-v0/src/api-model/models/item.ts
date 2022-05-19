@@ -29,25 +29,24 @@ export interface Item {
      * @type {IdentifierType}
      * @memberof Item
      */
-    Identifiers: IdentifierType;
+    'Identifiers': IdentifierType;
     /**
      * A list of attributes for the item.
      * @type {Array<AttributeSetListType>}
      * @memberof Item
      */
-    AttributeSets?: Array<AttributeSetListType>;
+    'AttributeSets'?: Array<AttributeSetListType>;
     /**
      * A list of variation relationship information, if applicable for the item.
      * @type {Array<RelationshipType>}
      * @memberof Item
      */
-    Relationships?: Array<RelationshipType>;
+    'Relationships'?: Array<RelationshipType>;
     /**
      * A list of sales rank information for the item by category.
      * @type {Array<SalesRankType>}
      * @memberof Item
      */
-    SalesRankings?: Array<SalesRankType>;
+    'SalesRankings'?: Array<SalesRankType>;
 }
-
 

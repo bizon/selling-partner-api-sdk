@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -46,7 +46,7 @@ export const EasyShipApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createScheduledPackage: async (createScheduledPackageRequest: CreateScheduledPackageRequest, options: any = {}): Promise<RequestArgs> => {
+        createScheduledPackage: async (createScheduledPackageRequest: CreateScheduledPackageRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'createScheduledPackageRequest' is not null or undefined
             assertParamExists('createScheduledPackage', 'createScheduledPackageRequest', createScheduledPackageRequest)
             const localVarPath = `/easyShip/2022-03-23/package`;
@@ -65,7 +65,7 @@ export const EasyShipApiAxiosParamCreator = function (configuration?: Configurat
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(createScheduledPackageRequest, localVarRequestOptions, configuration)
@@ -82,7 +82,7 @@ export const EasyShipApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getScheduledPackage: async (amazonOrderId: string, marketplaceId: string, options: any = {}): Promise<RequestArgs> => {
+        getScheduledPackage: async (amazonOrderId: string, marketplaceId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'amazonOrderId' is not null or undefined
             assertParamExists('getScheduledPackage', 'amazonOrderId', amazonOrderId)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -109,7 +109,7 @@ export const EasyShipApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -124,7 +124,7 @@ export const EasyShipApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listHandoverSlots: async (listHandoverSlotsRequest?: ListHandoverSlotsRequest, options: any = {}): Promise<RequestArgs> => {
+        listHandoverSlots: async (listHandoverSlotsRequest?: ListHandoverSlotsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/easyShip/2022-03-23/timeSlot`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -141,7 +141,7 @@ export const EasyShipApiAxiosParamCreator = function (configuration?: Configurat
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(listHandoverSlotsRequest, localVarRequestOptions, configuration)
@@ -157,7 +157,7 @@ export const EasyShipApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateScheduledPackages: async (updateScheduledPackagesRequest?: UpdateScheduledPackagesRequest, options: any = {}): Promise<RequestArgs> => {
+        updateScheduledPackages: async (updateScheduledPackagesRequest?: UpdateScheduledPackagesRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/easyShip/2022-03-23/package`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -174,7 +174,7 @@ export const EasyShipApiAxiosParamCreator = function (configuration?: Configurat
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(updateScheduledPackagesRequest, localVarRequestOptions, configuration)
@@ -200,7 +200,7 @@ export const EasyShipApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createScheduledPackage(createScheduledPackageRequest: CreateScheduledPackageRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Package>> {
+        async createScheduledPackage(createScheduledPackageRequest: CreateScheduledPackageRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Package>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createScheduledPackage(createScheduledPackageRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -211,7 +211,7 @@ export const EasyShipApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getScheduledPackage(amazonOrderId: string, marketplaceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Package>> {
+        async getScheduledPackage(amazonOrderId: string, marketplaceId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Package>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getScheduledPackage(amazonOrderId, marketplaceId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -221,7 +221,7 @@ export const EasyShipApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listHandoverSlots(listHandoverSlotsRequest?: ListHandoverSlotsRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListHandoverSlotsResponse>> {
+        async listHandoverSlots(listHandoverSlotsRequest?: ListHandoverSlotsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListHandoverSlotsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listHandoverSlots(listHandoverSlotsRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -231,7 +231,7 @@ export const EasyShipApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateScheduledPackages(updateScheduledPackagesRequest?: UpdateScheduledPackagesRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Packages>> {
+        async updateScheduledPackages(updateScheduledPackagesRequest?: UpdateScheduledPackagesRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Packages>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateScheduledPackages(updateScheduledPackagesRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -362,7 +362,7 @@ export class EasyShipApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EasyShipApi
      */
-    public createScheduledPackage(requestParameters: EasyShipApiCreateScheduledPackageRequest, options?: any) {
+    public createScheduledPackage(requestParameters: EasyShipApiCreateScheduledPackageRequest, options?: AxiosRequestConfig) {
         return EasyShipApiFp(this.configuration).createScheduledPackage(requestParameters.createScheduledPackageRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -373,7 +373,7 @@ export class EasyShipApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EasyShipApi
      */
-    public getScheduledPackage(requestParameters: EasyShipApiGetScheduledPackageRequest, options?: any) {
+    public getScheduledPackage(requestParameters: EasyShipApiGetScheduledPackageRequest, options?: AxiosRequestConfig) {
         return EasyShipApiFp(this.configuration).getScheduledPackage(requestParameters.amazonOrderId, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -384,7 +384,7 @@ export class EasyShipApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EasyShipApi
      */
-    public listHandoverSlots(requestParameters: EasyShipApiListHandoverSlotsRequest = {}, options?: any) {
+    public listHandoverSlots(requestParameters: EasyShipApiListHandoverSlotsRequest = {}, options?: AxiosRequestConfig) {
         return EasyShipApiFp(this.configuration).listHandoverSlots(requestParameters.listHandoverSlotsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -395,7 +395,7 @@ export class EasyShipApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EasyShipApi
      */
-    public updateScheduledPackages(requestParameters: EasyShipApiUpdateScheduledPackagesRequest = {}, options?: any) {
+    public updateScheduledPackages(requestParameters: EasyShipApiUpdateScheduledPackagesRequest = {}, options?: AxiosRequestConfig) {
         return EasyShipApiFp(this.configuration).updateScheduledPackages(requestParameters.updateScheduledPackagesRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }

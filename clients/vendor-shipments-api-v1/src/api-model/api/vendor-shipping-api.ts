@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -36,7 +36,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitShipmentConfirmations: async (body: SubmitShipmentConfirmationsRequest, options: any = {}): Promise<RequestArgs> => {
+        submitShipmentConfirmations: async (body: SubmitShipmentConfirmationsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('submitShipmentConfirmations', 'body', body)
             const localVarPath = `/vendor/shipping/v1/shipmentConfirmations`;
@@ -55,7 +55,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -81,7 +81,7 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async submitShipmentConfirmations(body: SubmitShipmentConfirmationsRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitShipmentConfirmationsResponse>> {
+        async submitShipmentConfirmations(body: SubmitShipmentConfirmationsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitShipmentConfirmationsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.submitShipmentConfirmations(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -135,7 +135,7 @@ export class VendorShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorShippingApi
      */
-    public submitShipmentConfirmations(requestParameters: VendorShippingApiSubmitShipmentConfirmationsRequest, options?: any) {
+    public submitShipmentConfirmations(requestParameters: VendorShippingApiSubmitShipmentConfirmationsRequest, options?: AxiosRequestConfig) {
         return VendorShippingApiFp(this.configuration).submitShipmentConfirmations(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }

@@ -27,19 +27,18 @@ export interface PurchaseShipmentResult {
      * @type {string}
      * @memberof PurchaseShipmentResult
      */
-    shipmentId: string;
+    'shipmentId': string;
     /**
      * 
      * @type {ServiceRate}
      * @memberof PurchaseShipmentResult
      */
-    serviceRate: ServiceRate;
+    'serviceRate': ServiceRate;
     /**
      * A list of label results
      * @type {Array<LabelResult>}
      * @memberof PurchaseShipmentResult
      */
-    labelResults: Array<LabelResult>;
+    'labelResults': Array<LabelResult>;
 }
-
 

@@ -26,7 +26,6 @@ export interface GetSchemaResponseLinks {
      * @type {LinkObject}
      * @memberof GetSchemaResponseLinks
      */
-    self: LinkObject;
+    'self': LinkObject;
 }
-
 

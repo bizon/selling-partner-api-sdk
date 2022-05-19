@@ -27,19 +27,18 @@ export interface FeesEstimateByIdRequest {
      * @type {FeesEstimateRequest}
      * @memberof FeesEstimateByIdRequest
      */
-    FeesEstimateRequest?: FeesEstimateRequest;
+    'FeesEstimateRequest'?: FeesEstimateRequest;
     /**
      * 
      * @type {IdType}
      * @memberof FeesEstimateByIdRequest
      */
-    IdType: IdType;
+    'IdType': IdType;
     /**
      * The item identifier.
      * @type {string}
      * @memberof FeesEstimateByIdRequest
      */
-    IdValue: string;
+    'IdValue': string;
 }
-
 

@@ -27,13 +27,12 @@ export interface SubmitAcknowledgementResponse {
      * @type {TransactionId}
      * @memberof SubmitAcknowledgementResponse
      */
-    payload?: TransactionId;
+    'payload'?: TransactionId;
     /**
      * 
      * @type {ErrorList}
      * @memberof SubmitAcknowledgementResponse
      */
-    errors?: ErrorList;
+    'errors'?: ErrorList;
 }
-
 

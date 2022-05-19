@@ -25,13 +25,12 @@ export interface TaxWithholdingPeriod {
      * @type {string}
      * @memberof TaxWithholdingPeriod
      */
-    StartDate?: string;
+    'StartDate'?: string;
     /**
      * 
      * @type {string}
      * @memberof TaxWithholdingPeriod
      */
-    EndDate?: string;
+    'EndDate'?: string;
 }
-
 

@@ -26,91 +26,88 @@ export interface ItemSummaryByMarketplace {
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * Name of the brand associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    brand?: string;
+    'brand'?: string;
     /**
      * 
      * @type {ItemBrowseClassification}
      * @memberof ItemSummaryByMarketplace
      */
-    browseClassification?: ItemBrowseClassification;
+    'browseClassification'?: ItemBrowseClassification;
     /**
      * Name of the color associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    color?: string;
+    'color'?: string;
     /**
      * Classification type associated with the Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    itemClassification?: ItemSummaryByMarketplaceItemClassificationEnum;
+    'itemClassification'?: ItemSummaryByMarketplaceItemClassificationEnum;
     /**
      * Name, or title, associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    itemName?: string;
+    'itemName'?: string;
     /**
      * Name of the manufacturer associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    manufacturer?: string;
+    'manufacturer'?: string;
     /**
      * Model number associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    modelNumber?: string;
+    'modelNumber'?: string;
     /**
      * Quantity of an Amazon catalog item in one package.
      * @type {number}
      * @memberof ItemSummaryByMarketplace
      */
-    packageQuantity?: number;
+    'packageQuantity'?: number;
     /**
      * Part number associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    partNumber?: string;
+    'partNumber'?: string;
     /**
      * Name of the size associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    size?: string;
+    'size'?: string;
     /**
      * Name of the style associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    style?: string;
+    'style'?: string;
     /**
      * Name of the website display group associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
-    websiteDisplayGroup?: string;
+    'websiteDisplayGroup'?: string;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ItemSummaryByMarketplaceItemClassificationEnum {
-    BaseProduct = 'BASE_PRODUCT',
-    Other = 'OTHER',
-    ProductBundle = 'PRODUCT_BUNDLE',
-    VariationParent = 'VARIATION_PARENT'
-}
+export const ItemSummaryByMarketplaceItemClassificationEnum = {
+    BaseProduct: 'BASE_PRODUCT',
+    Other: 'OTHER',
+    ProductBundle: 'PRODUCT_BUNDLE',
+    VariationParent: 'VARIATION_PARENT'
+} as const;
 
+export type ItemSummaryByMarketplaceItemClassificationEnum = typeof ItemSummaryByMarketplaceItemClassificationEnum[keyof typeof ItemSummaryByMarketplaceItemClassificationEnum];
 
 

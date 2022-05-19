@@ -25,7 +25,6 @@ export interface SqsResource {
      * @type {string}
      * @memberof SqsResource
      */
-    arn: string;
+    'arn': string;
 }
-
 

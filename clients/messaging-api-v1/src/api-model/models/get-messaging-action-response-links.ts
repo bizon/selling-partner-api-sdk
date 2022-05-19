@@ -26,13 +26,12 @@ export interface GetMessagingActionResponseLinks {
      * @type {LinkObject}
      * @memberof GetMessagingActionResponseLinks
      */
-    self: LinkObject;
+    'self': LinkObject;
     /**
      * 
      * @type {LinkObject}
      * @memberof GetMessagingActionResponseLinks
      */
-    schema: LinkObject;
+    'schema': LinkObject;
 }
-
 

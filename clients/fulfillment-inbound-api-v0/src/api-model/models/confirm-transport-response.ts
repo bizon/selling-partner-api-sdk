@@ -26,13 +26,12 @@ export interface ConfirmTransportResponse {
      * @type {CommonTransportResult}
      * @memberof ConfirmTransportResponse
      */
-    payload?: CommonTransportResult;
+    'payload'?: CommonTransportResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof ConfirmTransportResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

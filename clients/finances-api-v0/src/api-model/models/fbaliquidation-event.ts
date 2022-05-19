@@ -26,25 +26,24 @@ export interface FBALiquidationEvent {
      * @type {string}
      * @memberof FBALiquidationEvent
      */
-    PostedDate?: string;
+    'PostedDate'?: string;
     /**
      * The identifier for the original removal order.
      * @type {string}
      * @memberof FBALiquidationEvent
      */
-    OriginalRemovalOrderId?: string;
+    'OriginalRemovalOrderId'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof FBALiquidationEvent
      */
-    LiquidationProceedsAmount?: Currency;
+    'LiquidationProceedsAmount'?: Currency;
     /**
      * 
      * @type {Currency}
      * @memberof FBALiquidationEvent
      */
-    LiquidationFeeAmount?: Currency;
+    'LiquidationFeeAmount'?: Currency;
 }
-
 

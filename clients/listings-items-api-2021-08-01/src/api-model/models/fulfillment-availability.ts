@@ -25,13 +25,12 @@ export interface FulfillmentAvailability {
      * @type {string}
      * @memberof FulfillmentAvailability
      */
-    fulfillmentChannelCode: string;
+    'fulfillmentChannelCode': string;
     /**
      * The quantity of the item you are making available for sale.
      * @type {number}
      * @memberof FulfillmentAvailability
      */
-    quantity?: number;
+    'quantity'?: number;
 }
-
 

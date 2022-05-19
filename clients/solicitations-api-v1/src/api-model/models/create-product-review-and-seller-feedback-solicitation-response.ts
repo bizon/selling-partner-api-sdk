@@ -25,7 +25,6 @@ export interface CreateProductReviewAndSellerFeedbackSolicitationResponse {
      * @type {Array<Error>}
      * @memberof CreateProductReviewAndSellerFeedbackSolicitationResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

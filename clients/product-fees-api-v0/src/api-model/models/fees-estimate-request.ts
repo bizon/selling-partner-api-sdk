@@ -27,31 +27,30 @@ export interface FeesEstimateRequest {
      * @type {string}
      * @memberof FeesEstimateRequest
      */
-    MarketplaceId: string;
+    'MarketplaceId': string;
     /**
      * When true, the offer is fulfilled by Amazon.
      * @type {boolean}
      * @memberof FeesEstimateRequest
      */
-    IsAmazonFulfilled?: boolean;
+    'IsAmazonFulfilled'?: boolean;
     /**
      * 
      * @type {PriceToEstimateFees}
      * @memberof FeesEstimateRequest
      */
-    PriceToEstimateFees: PriceToEstimateFees;
+    'PriceToEstimateFees': PriceToEstimateFees;
     /**
      * A unique identifier provided by the caller to track this request.
      * @type {string}
      * @memberof FeesEstimateRequest
      */
-    Identifier: string;
+    'Identifier': string;
     /**
      * 
      * @type {OptionalFulfillmentProgram}
      * @memberof FeesEstimateRequest
      */
-    OptionalFulfillmentProgram?: OptionalFulfillmentProgram;
+    'OptionalFulfillmentProgram'?: OptionalFulfillmentProgram;
 }
-
 

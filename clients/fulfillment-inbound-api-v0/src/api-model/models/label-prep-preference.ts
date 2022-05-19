@@ -19,11 +19,14 @@
  * @export
  * @enum {string}
  */
-export enum LabelPrepPreference {
-    SellerLabel = 'SELLER_LABEL',
-    AmazonLabelOnly = 'AMAZON_LABEL_ONLY',
-    AmazonLabelPreferred = 'AMAZON_LABEL_PREFERRED'
-}
+
+export const LabelPrepPreference = {
+    SellerLabel: 'SELLER_LABEL',
+    AmazonLabelOnly: 'AMAZON_LABEL_ONLY',
+    AmazonLabelPreferred: 'AMAZON_LABEL_PREFERRED'
+} as const;
+
+export type LabelPrepPreference = typeof LabelPrepPreference[keyof typeof LabelPrepPreference];
 
 
 

@@ -25,13 +25,12 @@ export interface ItemQuantity {
      * @type {number}
      * @memberof ItemQuantity
      */
-    amount: number;
+    'amount': number;
     /**
      * Unit of measure for the available quantity.
      * @type {string}
      * @memberof ItemQuantity
      */
-    unitOfMeasure: string;
+    'unitOfMeasure': string;
 }
-
 

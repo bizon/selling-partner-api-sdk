@@ -28,43 +28,42 @@ export interface OrderAcknowledgementItem {
      * @type {string}
      * @memberof OrderAcknowledgementItem
      */
-    purchaseOrderNumber: string;
+    'purchaseOrderNumber': string;
     /**
      * The vendor\'s order number for this order.
      * @type {string}
      * @memberof OrderAcknowledgementItem
      */
-    vendorOrderNumber: string;
+    'vendorOrderNumber': string;
     /**
      * The date and time when the order is acknowledged, in ISO-8601 date/time format. For example: 2018-07-16T23:00:00Z / 2018-07-16T23:00:00-05:00 / 2018-07-16T23:00:00-08:00.
      * @type {string}
      * @memberof OrderAcknowledgementItem
      */
-    acknowledgementDate: string;
+    'acknowledgementDate': string;
     /**
      * 
      * @type {AcknowledgementStatus}
      * @memberof OrderAcknowledgementItem
      */
-    acknowledgementStatus: AcknowledgementStatus;
+    'acknowledgementStatus': AcknowledgementStatus;
     /**
      * 
      * @type {PartyIdentification}
      * @memberof OrderAcknowledgementItem
      */
-    sellingParty: PartyIdentification;
+    'sellingParty': PartyIdentification;
     /**
      * 
      * @type {PartyIdentification}
      * @memberof OrderAcknowledgementItem
      */
-    shipFromParty: PartyIdentification;
+    'shipFromParty': PartyIdentification;
     /**
      * Item details including acknowledged quantity.
      * @type {Array<OrderItemAcknowledgement>}
      * @memberof OrderAcknowledgementItem
      */
-    itemAcknowledgements: Array<OrderItemAcknowledgement>;
+    'itemAcknowledgements': Array<OrderItemAcknowledgement>;
 }
-
 

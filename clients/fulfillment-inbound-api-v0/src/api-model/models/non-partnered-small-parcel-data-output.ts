@@ -26,7 +26,6 @@ export interface NonPartneredSmallParcelDataOutput {
      * @type {Array<NonPartneredSmallParcelPackageOutput>}
      * @memberof NonPartneredSmallParcelDataOutput
      */
-    PackageList: Array<NonPartneredSmallParcelPackageOutput>;
+    'PackageList': Array<NonPartneredSmallParcelPackageOutput>;
 }
-
 

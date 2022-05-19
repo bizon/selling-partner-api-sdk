@@ -26,7 +26,6 @@ export interface RetrieveShippingLabelRequest {
      * @type {LabelSpecification}
      * @memberof RetrieveShippingLabelRequest
      */
-    labelSpecification: LabelSpecification;
+    'labelSpecification': LabelSpecification;
 }
-
 

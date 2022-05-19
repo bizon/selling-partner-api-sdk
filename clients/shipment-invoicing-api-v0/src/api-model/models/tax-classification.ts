@@ -25,13 +25,12 @@ export interface TaxClassification {
      * @type {string}
      * @memberof TaxClassification
      */
-    Name?: string;
+    'Name'?: string;
     /**
      * The entity\'s tax identifier.
      * @type {string}
      * @memberof TaxClassification
      */
-    Value?: string;
+    'Value'?: string;
 }
-
 

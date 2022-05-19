@@ -26,51 +26,46 @@ export interface OrderItemAcknowledgement {
      * @type {string}
      * @memberof OrderItemAcknowledgement
      */
-    acknowledgementCode: OrderItemAcknowledgementAcknowledgementCodeEnum;
+    'acknowledgementCode': OrderItemAcknowledgementAcknowledgementCodeEnum;
     /**
      * 
      * @type {ItemQuantity}
      * @memberof OrderItemAcknowledgement
      */
-    acknowledgedQuantity: ItemQuantity;
+    'acknowledgedQuantity': ItemQuantity;
     /**
      * Estimated ship date per line item. Must be in ISO-8601 date/time format.
      * @type {string}
      * @memberof OrderItemAcknowledgement
      */
-    scheduledShipDate?: string;
+    'scheduledShipDate'?: string;
     /**
      * Estimated delivery date per line item. Must be in ISO-8601 date/time format.
      * @type {string}
      * @memberof OrderItemAcknowledgement
      */
-    scheduledDeliveryDate?: string;
+    'scheduledDeliveryDate'?: string;
     /**
      * Indicates the reason for rejection.
      * @type {string}
      * @memberof OrderItemAcknowledgement
      */
-    rejectionReason?: OrderItemAcknowledgementRejectionReasonEnum;
+    'rejectionReason'?: OrderItemAcknowledgementRejectionReasonEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum OrderItemAcknowledgementAcknowledgementCodeEnum {
-    Accepted = 'Accepted',
-    Backordered = 'Backordered',
-    Rejected = 'Rejected'
-}
-/**
-    * @export
-    * @enum {string}
-    */
-export enum OrderItemAcknowledgementRejectionReasonEnum {
-    TemporarilyUnavailable = 'TemporarilyUnavailable',
-    InvalidProductIdentifier = 'InvalidProductIdentifier',
-    ObsoleteProduct = 'ObsoleteProduct'
-}
+export const OrderItemAcknowledgementAcknowledgementCodeEnum = {
+    Accepted: 'Accepted',
+    Backordered: 'Backordered',
+    Rejected: 'Rejected'
+} as const;
 
+export type OrderItemAcknowledgementAcknowledgementCodeEnum = typeof OrderItemAcknowledgementAcknowledgementCodeEnum[keyof typeof OrderItemAcknowledgementAcknowledgementCodeEnum];
+export const OrderItemAcknowledgementRejectionReasonEnum = {
+    TemporarilyUnavailable: 'TemporarilyUnavailable',
+    InvalidProductIdentifier: 'InvalidProductIdentifier',
+    ObsoleteProduct: 'ObsoleteProduct'
+} as const;
+
+export type OrderItemAcknowledgementRejectionReasonEnum = typeof OrderItemAcknowledgementRejectionReasonEnum[keyof typeof OrderItemAcknowledgementRejectionReasonEnum];
 
 

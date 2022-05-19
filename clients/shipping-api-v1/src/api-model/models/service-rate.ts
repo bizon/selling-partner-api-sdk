@@ -29,25 +29,24 @@ export interface ServiceRate {
      * @type {Currency}
      * @memberof ServiceRate
      */
-    totalCharge: Currency;
+    'totalCharge': Currency;
     /**
      * 
      * @type {Weight}
      * @memberof ServiceRate
      */
-    billableWeight: Weight;
+    'billableWeight': Weight;
     /**
      * 
      * @type {ServiceType}
      * @memberof ServiceRate
      */
-    serviceType: ServiceType;
+    'serviceType': ServiceType;
     /**
      * 
      * @type {ShippingPromiseSet}
      * @memberof ServiceRate
      */
-    promise: ShippingPromiseSet;
+    'promise': ShippingPromiseSet;
 }
-
 

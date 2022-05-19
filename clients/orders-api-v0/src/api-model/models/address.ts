@@ -25,89 +25,86 @@ export interface Address {
      * @type {string}
      * @memberof Address
      */
-    Name: string;
+    'Name': string;
     /**
      * The street address.
      * @type {string}
      * @memberof Address
      */
-    AddressLine1?: string;
+    'AddressLine1'?: string;
     /**
      * Additional street address information, if required.
      * @type {string}
      * @memberof Address
      */
-    AddressLine2?: string;
+    'AddressLine2'?: string;
     /**
      * Additional street address information, if required.
      * @type {string}
      * @memberof Address
      */
-    AddressLine3?: string;
+    'AddressLine3'?: string;
     /**
      * The city 
      * @type {string}
      * @memberof Address
      */
-    City?: string;
+    'City'?: string;
     /**
      * The county.
      * @type {string}
      * @memberof Address
      */
-    County?: string;
+    'County'?: string;
     /**
      * The district.
      * @type {string}
      * @memberof Address
      */
-    District?: string;
+    'District'?: string;
     /**
      * The state or region.
      * @type {string}
      * @memberof Address
      */
-    StateOrRegion?: string;
+    'StateOrRegion'?: string;
     /**
      * The municipality.
      * @type {string}
      * @memberof Address
      */
-    Municipality?: string;
+    'Municipality'?: string;
     /**
      * The postal code.
      * @type {string}
      * @memberof Address
      */
-    PostalCode?: string;
+    'PostalCode'?: string;
     /**
      * The country code. A two-character country code, in ISO 3166-1 alpha-2 format.
      * @type {string}
      * @memberof Address
      */
-    CountryCode?: string;
+    'CountryCode'?: string;
     /**
      * The phone number. Not returned for Fulfillment by Amazon (FBA) orders.
      * @type {string}
      * @memberof Address
      */
-    Phone?: string;
+    'Phone'?: string;
     /**
      * The address type of the shipping address.
      * @type {string}
      * @memberof Address
      */
-    AddressType?: AddressAddressTypeEnum;
+    'AddressType'?: AddressAddressTypeEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum AddressAddressTypeEnum {
-    Residential = 'Residential',
-    Commercial = 'Commercial'
-}
+export const AddressAddressTypeEnum = {
+    Residential: 'Residential',
+    Commercial: 'Commercial'
+} as const;
 
+export type AddressAddressTypeEnum = typeof AddressAddressTypeEnum[keyof typeof AddressAddressTypeEnum];
 
 

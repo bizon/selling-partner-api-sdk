@@ -25,13 +25,12 @@ export interface GiftDetails {
      * @type {string}
      * @memberof GiftDetails
      */
-    giftMessage?: string;
+    'giftMessage'?: string;
     /**
      * Gift wrap identifier for the gift wrapping, if any.
      * @type {string}
      * @memberof GiftDetails
      */
-    giftWrapId?: string;
+    'giftWrapId'?: string;
 }
-
 

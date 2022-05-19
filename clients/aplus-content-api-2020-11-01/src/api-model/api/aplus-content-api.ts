@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -57,7 +57,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createContentDocument: async (marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options: any = {}): Promise<RequestArgs> => {
+        createContentDocument: async (marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('createContentDocument', 'marketplaceId', marketplaceId)
             // verify required parameter 'postContentDocumentRequest' is not null or undefined
@@ -82,7 +82,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(postContentDocumentRequest, localVarRequestOptions, configuration)
@@ -100,7 +100,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getContentDocument: async (contentReferenceKey: string, marketplaceId: string, includedDataSet: Set<'CONTENTS' | 'METADATA'>, options: any = {}): Promise<RequestArgs> => {
+        getContentDocument: async (contentReferenceKey: string, marketplaceId: string, includedDataSet: Set<'CONTENTS' | 'METADATA'>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'contentReferenceKey' is not null or undefined
             assertParamExists('getContentDocument', 'contentReferenceKey', contentReferenceKey)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -130,7 +130,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -149,7 +149,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listContentDocumentAsinRelations: async (contentReferenceKey: string, marketplaceId: string, includedDataSet?: Set<'METADATA'>, asinSet?: Set<string>, pageToken?: string, options: any = {}): Promise<RequestArgs> => {
+        listContentDocumentAsinRelations: async (contentReferenceKey: string, marketplaceId: string, includedDataSet?: Set<'METADATA'>, asinSet?: Set<string>, pageToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'contentReferenceKey' is not null or undefined
             assertParamExists('listContentDocumentAsinRelations', 'contentReferenceKey', contentReferenceKey)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -185,7 +185,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -201,7 +201,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postContentDocumentApprovalSubmission: async (contentReferenceKey: string, marketplaceId: string, options: any = {}): Promise<RequestArgs> => {
+        postContentDocumentApprovalSubmission: async (contentReferenceKey: string, marketplaceId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'contentReferenceKey' is not null or undefined
             assertParamExists('postContentDocumentApprovalSubmission', 'contentReferenceKey', contentReferenceKey)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -225,7 +225,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -242,7 +242,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postContentDocumentAsinRelations: async (contentReferenceKey: string, marketplaceId: string, postContentDocumentAsinRelationsRequest: PostContentDocumentAsinRelationsRequest, options: any = {}): Promise<RequestArgs> => {
+        postContentDocumentAsinRelations: async (contentReferenceKey: string, marketplaceId: string, postContentDocumentAsinRelationsRequest: PostContentDocumentAsinRelationsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'contentReferenceKey' is not null or undefined
             assertParamExists('postContentDocumentAsinRelations', 'contentReferenceKey', contentReferenceKey)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -270,7 +270,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(postContentDocumentAsinRelationsRequest, localVarRequestOptions, configuration)
@@ -287,7 +287,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postContentDocumentSuspendSubmission: async (contentReferenceKey: string, marketplaceId: string, options: any = {}): Promise<RequestArgs> => {
+        postContentDocumentSuspendSubmission: async (contentReferenceKey: string, marketplaceId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'contentReferenceKey' is not null or undefined
             assertParamExists('postContentDocumentSuspendSubmission', 'contentReferenceKey', contentReferenceKey)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -311,7 +311,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -327,7 +327,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchContentDocuments: async (marketplaceId: string, pageToken?: string, options: any = {}): Promise<RequestArgs> => {
+        searchContentDocuments: async (marketplaceId: string, pageToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('searchContentDocuments', 'marketplaceId', marketplaceId)
             const localVarPath = `/aplus/2020-11-01/contentDocuments`;
@@ -352,7 +352,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -369,7 +369,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchContentPublishRecords: async (marketplaceId: string, asin: string, pageToken?: string, options: any = {}): Promise<RequestArgs> => {
+        searchContentPublishRecords: async (marketplaceId: string, asin: string, pageToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('searchContentPublishRecords', 'marketplaceId', marketplaceId)
             // verify required parameter 'asin' is not null or undefined
@@ -400,7 +400,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -417,7 +417,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateContentDocument: async (contentReferenceKey: string, marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options: any = {}): Promise<RequestArgs> => {
+        updateContentDocument: async (contentReferenceKey: string, marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'contentReferenceKey' is not null or undefined
             assertParamExists('updateContentDocument', 'contentReferenceKey', contentReferenceKey)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -445,7 +445,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(postContentDocumentRequest, localVarRequestOptions, configuration)
@@ -463,7 +463,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        validateContentDocumentAsinRelations: async (marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, asinSet?: Set<string>, options: any = {}): Promise<RequestArgs> => {
+        validateContentDocumentAsinRelations: async (marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, asinSet?: Set<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('validateContentDocumentAsinRelations', 'marketplaceId', marketplaceId)
             // verify required parameter 'postContentDocumentRequest' is not null or undefined
@@ -492,7 +492,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(postContentDocumentRequest, localVarRequestOptions, configuration)
@@ -519,7 +519,7 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createContentDocument(marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentResponse>> {
+        async createContentDocument(marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createContentDocument(marketplaceId, postContentDocumentRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -531,7 +531,7 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getContentDocument(contentReferenceKey: string, marketplaceId: string, includedDataSet: Set<'CONTENTS' | 'METADATA'>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetContentDocumentResponse>> {
+        async getContentDocument(contentReferenceKey: string, marketplaceId: string, includedDataSet: Set<'CONTENTS' | 'METADATA'>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetContentDocumentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getContentDocument(contentReferenceKey, marketplaceId, includedDataSet, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -545,7 +545,7 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listContentDocumentAsinRelations(contentReferenceKey: string, marketplaceId: string, includedDataSet?: Set<'METADATA'>, asinSet?: Set<string>, pageToken?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListContentDocumentAsinRelationsResponse>> {
+        async listContentDocumentAsinRelations(contentReferenceKey: string, marketplaceId: string, includedDataSet?: Set<'METADATA'>, asinSet?: Set<string>, pageToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListContentDocumentAsinRelationsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listContentDocumentAsinRelations(contentReferenceKey, marketplaceId, includedDataSet, asinSet, pageToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -556,7 +556,7 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async postContentDocumentApprovalSubmission(contentReferenceKey: string, marketplaceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentApprovalSubmissionResponse>> {
+        async postContentDocumentApprovalSubmission(contentReferenceKey: string, marketplaceId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentApprovalSubmissionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.postContentDocumentApprovalSubmission(contentReferenceKey, marketplaceId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -568,7 +568,7 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async postContentDocumentAsinRelations(contentReferenceKey: string, marketplaceId: string, postContentDocumentAsinRelationsRequest: PostContentDocumentAsinRelationsRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentAsinRelationsResponse>> {
+        async postContentDocumentAsinRelations(contentReferenceKey: string, marketplaceId: string, postContentDocumentAsinRelationsRequest: PostContentDocumentAsinRelationsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentAsinRelationsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.postContentDocumentAsinRelations(contentReferenceKey, marketplaceId, postContentDocumentAsinRelationsRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -579,7 +579,7 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async postContentDocumentSuspendSubmission(contentReferenceKey: string, marketplaceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentSuspendSubmissionResponse>> {
+        async postContentDocumentSuspendSubmission(contentReferenceKey: string, marketplaceId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentSuspendSubmissionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.postContentDocumentSuspendSubmission(contentReferenceKey, marketplaceId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -590,7 +590,7 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async searchContentDocuments(marketplaceId: string, pageToken?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchContentDocumentsResponse>> {
+        async searchContentDocuments(marketplaceId: string, pageToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchContentDocumentsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.searchContentDocuments(marketplaceId, pageToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -602,7 +602,7 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async searchContentPublishRecords(marketplaceId: string, asin: string, pageToken?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchContentPublishRecordsResponse>> {
+        async searchContentPublishRecords(marketplaceId: string, asin: string, pageToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchContentPublishRecordsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.searchContentPublishRecords(marketplaceId, asin, pageToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -614,7 +614,7 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateContentDocument(contentReferenceKey: string, marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentResponse>> {
+        async updateContentDocument(contentReferenceKey: string, marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateContentDocument(contentReferenceKey, marketplaceId, postContentDocumentRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -626,7 +626,7 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async validateContentDocumentAsinRelations(marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, asinSet?: Set<string>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ValidateContentDocumentAsinRelationsResponse>> {
+        async validateContentDocumentAsinRelations(marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, asinSet?: Set<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ValidateContentDocumentAsinRelationsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.validateContentDocumentAsinRelations(marketplaceId, postContentDocumentRequest, asinSet, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1031,7 +1031,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public createContentDocument(requestParameters: AplusContentApiCreateContentDocumentRequest, options?: any) {
+    public createContentDocument(requestParameters: AplusContentApiCreateContentDocumentRequest, options?: AxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).createContentDocument(requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1042,7 +1042,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public getContentDocument(requestParameters: AplusContentApiGetContentDocumentRequest, options?: any) {
+    public getContentDocument(requestParameters: AplusContentApiGetContentDocumentRequest, options?: AxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).getContentDocument(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.includedDataSet, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1053,7 +1053,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public listContentDocumentAsinRelations(requestParameters: AplusContentApiListContentDocumentAsinRelationsRequest, options?: any) {
+    public listContentDocumentAsinRelations(requestParameters: AplusContentApiListContentDocumentAsinRelationsRequest, options?: AxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).listContentDocumentAsinRelations(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.includedDataSet, requestParameters.asinSet, requestParameters.pageToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1064,7 +1064,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public postContentDocumentApprovalSubmission(requestParameters: AplusContentApiPostContentDocumentApprovalSubmissionRequest, options?: any) {
+    public postContentDocumentApprovalSubmission(requestParameters: AplusContentApiPostContentDocumentApprovalSubmissionRequest, options?: AxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).postContentDocumentApprovalSubmission(requestParameters.contentReferenceKey, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1075,7 +1075,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public postContentDocumentAsinRelations(requestParameters: AplusContentApiPostContentDocumentAsinRelationsRequest, options?: any) {
+    public postContentDocumentAsinRelations(requestParameters: AplusContentApiPostContentDocumentAsinRelationsRequest, options?: AxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).postContentDocumentAsinRelations(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.postContentDocumentAsinRelationsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1086,7 +1086,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public postContentDocumentSuspendSubmission(requestParameters: AplusContentApiPostContentDocumentSuspendSubmissionRequest, options?: any) {
+    public postContentDocumentSuspendSubmission(requestParameters: AplusContentApiPostContentDocumentSuspendSubmissionRequest, options?: AxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).postContentDocumentSuspendSubmission(requestParameters.contentReferenceKey, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1097,7 +1097,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public searchContentDocuments(requestParameters: AplusContentApiSearchContentDocumentsRequest, options?: any) {
+    public searchContentDocuments(requestParameters: AplusContentApiSearchContentDocumentsRequest, options?: AxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).searchContentDocuments(requestParameters.marketplaceId, requestParameters.pageToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1108,7 +1108,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public searchContentPublishRecords(requestParameters: AplusContentApiSearchContentPublishRecordsRequest, options?: any) {
+    public searchContentPublishRecords(requestParameters: AplusContentApiSearchContentPublishRecordsRequest, options?: AxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).searchContentPublishRecords(requestParameters.marketplaceId, requestParameters.asin, requestParameters.pageToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1119,7 +1119,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public updateContentDocument(requestParameters: AplusContentApiUpdateContentDocumentRequest, options?: any) {
+    public updateContentDocument(requestParameters: AplusContentApiUpdateContentDocumentRequest, options?: AxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).updateContentDocument(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1130,7 +1130,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public validateContentDocumentAsinRelations(requestParameters: AplusContentApiValidateContentDocumentAsinRelationsRequest, options?: any) {
+    public validateContentDocumentAsinRelations(requestParameters: AplusContentApiValidateContentDocumentAsinRelationsRequest, options?: AxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).validateContentDocumentAsinRelations(requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, requestParameters.asinSet, options).then((request) => request(this.axios, this.basePath));
     }
 }

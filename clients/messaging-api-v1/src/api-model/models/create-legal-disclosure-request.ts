@@ -26,7 +26,6 @@ export interface CreateLegalDisclosureRequest {
      * @type {Array<Attachment>}
      * @memberof CreateLegalDisclosureRequest
      */
-    attachments?: Array<Attachment>;
+    'attachments'?: Array<Attachment>;
 }
-
 

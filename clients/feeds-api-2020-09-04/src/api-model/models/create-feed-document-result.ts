@@ -26,19 +26,18 @@ export interface CreateFeedDocumentResult {
      * @type {string}
      * @memberof CreateFeedDocumentResult
      */
-    feedDocumentId: string;
+    'feedDocumentId': string;
     /**
      * The presigned URL for uploading the feed contents. This URL expires after 5 minutes.
      * @type {string}
      * @memberof CreateFeedDocumentResult
      */
-    url: string;
+    'url': string;
     /**
      * 
      * @type {FeedDocumentEncryptionDetails}
      * @memberof CreateFeedDocumentResult
      */
-    encryptionDetails: FeedDocumentEncryptionDetails;
+    'encryptionDetails': FeedDocumentEncryptionDetails;
 }
-
 

@@ -25,13 +25,12 @@ export interface ItemIdentifier {
      * @type {string}
      * @memberof ItemIdentifier
      */
-    identifierType: string;
+    'identifierType': string;
     /**
      * Identifier.
      * @type {string}
      * @memberof ItemIdentifier
      */
-    identifier: string;
+    'identifier': string;
 }
-
 

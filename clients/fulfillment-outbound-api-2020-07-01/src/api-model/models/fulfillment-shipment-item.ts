@@ -25,31 +25,30 @@ export interface FulfillmentShipmentItem {
      * @type {string}
      * @memberof FulfillmentShipmentItem
      */
-    sellerSku: string;
+    'sellerSku': string;
     /**
      * The fulfillment order item identifier that the seller created and submitted with a call to the createFulfillmentOrder operation.
      * @type {string}
      * @memberof FulfillmentShipmentItem
      */
-    sellerFulfillmentOrderItemId: string;
+    'sellerFulfillmentOrderItemId': string;
     /**
      * The item quantity.
      * @type {number}
      * @memberof FulfillmentShipmentItem
      */
-    quantity: number;
+    'quantity': number;
     /**
      * An identifier for the package that contains the item quantity.
      * @type {number}
      * @memberof FulfillmentShipmentItem
      */
-    packageNumber?: number;
+    'packageNumber'?: number;
     /**
      * The serial number of the shipped item.
      * @type {string}
      * @memberof FulfillmentShipmentItem
      */
-    serialNumber?: string;
+    'serialNumber'?: string;
 }
-
 

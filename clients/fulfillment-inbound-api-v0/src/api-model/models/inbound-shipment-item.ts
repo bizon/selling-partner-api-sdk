@@ -26,49 +26,48 @@ export interface InboundShipmentItem {
      * @type {string}
      * @memberof InboundShipmentItem
      */
-    ShipmentId?: string;
+    'ShipmentId'?: string;
     /**
      * The seller SKU of the item.
      * @type {string}
      * @memberof InboundShipmentItem
      */
-    SellerSKU: string;
+    'SellerSKU': string;
     /**
      * Amazon\'s fulfillment network SKU of the item.
      * @type {string}
      * @memberof InboundShipmentItem
      */
-    FulfillmentNetworkSKU?: string;
+    'FulfillmentNetworkSKU'?: string;
     /**
      * The item quantity.
      * @type {number}
      * @memberof InboundShipmentItem
      */
-    QuantityShipped: number;
+    'QuantityShipped': number;
     /**
      * The item quantity.
      * @type {number}
      * @memberof InboundShipmentItem
      */
-    QuantityReceived?: number;
+    'QuantityReceived'?: number;
     /**
      * The item quantity.
      * @type {number}
      * @memberof InboundShipmentItem
      */
-    QuantityInCase?: number;
+    'QuantityInCase'?: number;
     /**
      * 
      * @type {string}
      * @memberof InboundShipmentItem
      */
-    ReleaseDate?: string;
+    'ReleaseDate'?: string;
     /**
      * A list of preparation instructions and who is responsible for that preparation.
      * @type {Array<PrepDetails>}
      * @memberof InboundShipmentItem
      */
-    PrepDetailsList?: Array<PrepDetails>;
+    'PrepDetailsList'?: Array<PrepDetails>;
 }
-
 

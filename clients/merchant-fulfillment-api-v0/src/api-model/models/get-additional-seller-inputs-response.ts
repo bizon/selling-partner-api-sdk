@@ -26,13 +26,12 @@ export interface GetAdditionalSellerInputsResponse {
      * @type {GetAdditionalSellerInputsResult}
      * @memberof GetAdditionalSellerInputsResponse
      */
-    payload?: GetAdditionalSellerInputsResult;
+    'payload'?: GetAdditionalSellerInputsResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetAdditionalSellerInputsResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

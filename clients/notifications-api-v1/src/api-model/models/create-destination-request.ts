@@ -26,13 +26,12 @@ export interface CreateDestinationRequest {
      * @type {DestinationResourceSpecification}
      * @memberof CreateDestinationRequest
      */
-    resourceSpecification: DestinationResourceSpecification;
+    'resourceSpecification': DestinationResourceSpecification;
     /**
      * A developer-defined name to help identify this destination.
      * @type {string}
      * @memberof CreateDestinationRequest
      */
-    name: string;
+    'name': string;
 }
-
 

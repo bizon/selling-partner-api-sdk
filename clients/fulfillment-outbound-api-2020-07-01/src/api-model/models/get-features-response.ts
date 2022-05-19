@@ -26,13 +26,12 @@ export interface GetFeaturesResponse {
      * @type {GetFeaturesResult}
      * @memberof GetFeaturesResponse
      */
-    payload?: GetFeaturesResult;
+    'payload'?: GetFeaturesResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetFeaturesResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

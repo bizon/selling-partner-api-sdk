@@ -26,13 +26,12 @@ export interface RescheduleAppointmentRequest {
      * @type {AppointmentTimeInput}
      * @memberof RescheduleAppointmentRequest
      */
-    appointmentTime: AppointmentTimeInput;
+    'appointmentTime': AppointmentTimeInput;
     /**
      * Appointment reschedule reason code.
      * @type {string}
      * @memberof RescheduleAppointmentRequest
      */
-    rescheduleReasonCode: string;
+    'rescheduleReasonCode': string;
 }
-
 

@@ -26,13 +26,12 @@ export interface ImageOffsets {
      * @type {IntegerWithUnits}
      * @memberof ImageOffsets
      */
-    x: IntegerWithUnits;
+    'x': IntegerWithUnits;
     /**
      * 
      * @type {IntegerWithUnits}
      * @memberof ImageOffsets
      */
-    y: IntegerWithUnits;
+    'y': IntegerWithUnits;
 }
-
 

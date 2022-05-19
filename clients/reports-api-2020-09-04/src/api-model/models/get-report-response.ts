@@ -26,13 +26,12 @@ export interface GetReportResponse {
      * @type {Report}
      * @memberof GetReportResponse
      */
-    payload?: Report;
+    'payload'?: Report;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetReportResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

@@ -26,7 +26,6 @@ export interface ParagraphComponent {
      * @type {Array<TextComponent>}
      * @memberof ParagraphComponent
      */
-    textList: Array<TextComponent>;
+    'textList': Array<TextComponent>;
 }
-
 

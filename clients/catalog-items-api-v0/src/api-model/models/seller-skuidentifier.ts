@@ -25,19 +25,18 @@ export interface SellerSKUIdentifier {
      * @type {string}
      * @memberof SellerSKUIdentifier
      */
-    MarketplaceId: string;
+    'MarketplaceId': string;
     /**
      * The seller identifier submitted for the operation.
      * @type {string}
      * @memberof SellerSKUIdentifier
      */
-    SellerId: string;
+    'SellerId': string;
     /**
      * The seller stock keeping unit (SKU) of the item.
      * @type {string}
      * @memberof SellerSKUIdentifier
      */
-    SellerSKU: string;
+    'SellerSKU': string;
 }
-
 

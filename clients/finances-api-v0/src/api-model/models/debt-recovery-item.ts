@@ -26,25 +26,24 @@ export interface DebtRecoveryItem {
      * @type {Currency}
      * @memberof DebtRecoveryItem
      */
-    RecoveryAmount?: Currency;
+    'RecoveryAmount'?: Currency;
     /**
      * 
      * @type {Currency}
      * @memberof DebtRecoveryItem
      */
-    OriginalAmount?: Currency;
+    'OriginalAmount'?: Currency;
     /**
      * 
      * @type {string}
      * @memberof DebtRecoveryItem
      */
-    GroupBeginDate?: string;
+    'GroupBeginDate'?: string;
     /**
      * 
      * @type {string}
      * @memberof DebtRecoveryItem
      */
-    GroupEndDate?: string;
+    'GroupEndDate'?: string;
 }
-
 

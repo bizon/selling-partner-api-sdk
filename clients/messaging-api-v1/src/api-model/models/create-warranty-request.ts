@@ -26,19 +26,18 @@ export interface CreateWarrantyRequest {
      * @type {Array<Attachment>}
      * @memberof CreateWarrantyRequest
      */
-    attachments?: Array<Attachment>;
+    'attachments'?: Array<Attachment>;
     /**
      * The start date of the warranty coverage to include in the message to the buyer.
      * @type {string}
      * @memberof CreateWarrantyRequest
      */
-    coverageStartDate?: string;
+    'coverageStartDate'?: string;
     /**
      * The end date of the warranty coverage to include in the message to the buyer.
      * @type {string}
      * @memberof CreateWarrantyRequest
      */
-    coverageEndDate?: string;
+    'coverageEndDate'?: string;
 }
-
 

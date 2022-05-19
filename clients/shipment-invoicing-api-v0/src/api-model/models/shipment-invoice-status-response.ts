@@ -26,7 +26,6 @@ export interface ShipmentInvoiceStatusResponse {
      * @type {ShipmentInvoiceStatusInfo}
      * @memberof ShipmentInvoiceStatusResponse
      */
-    Shipments?: ShipmentInvoiceStatusInfo;
+    'Shipments'?: ShipmentInvoiceStatusInfo;
 }
-
 

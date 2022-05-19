@@ -26,25 +26,24 @@ export interface InboundShipmentPlanItem {
      * @type {string}
      * @memberof InboundShipmentPlanItem
      */
-    SellerSKU: string;
+    'SellerSKU': string;
     /**
      * Amazon\'s fulfillment network SKU of the item.
      * @type {string}
      * @memberof InboundShipmentPlanItem
      */
-    FulfillmentNetworkSKU: string;
+    'FulfillmentNetworkSKU': string;
     /**
      * The item quantity.
      * @type {number}
      * @memberof InboundShipmentPlanItem
      */
-    Quantity: number;
+    'Quantity': number;
     /**
      * A list of preparation instructions and who is responsible for that preparation.
      * @type {Array<PrepDetails>}
      * @memberof InboundShipmentPlanItem
      */
-    PrepDetailsList?: Array<PrepDetails>;
+    'PrepDetailsList'?: Array<PrepDetails>;
 }
-
 

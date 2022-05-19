@@ -26,25 +26,24 @@ export interface OrderItemAcknowledgement {
      * @type {string}
      * @memberof OrderItemAcknowledgement
      */
-    itemSequenceNumber: string;
+    'itemSequenceNumber': string;
     /**
      * Buyer\'s standard identification number (ASIN) of an item.
      * @type {string}
      * @memberof OrderItemAcknowledgement
      */
-    buyerProductIdentifier?: string;
+    'buyerProductIdentifier'?: string;
     /**
      * The vendor selected product identification of the item. Should be the same as was provided in the purchase order.
      * @type {string}
      * @memberof OrderItemAcknowledgement
      */
-    vendorProductIdentifier?: string;
+    'vendorProductIdentifier'?: string;
     /**
      * 
      * @type {ItemQuantity}
      * @memberof OrderItemAcknowledgement
      */
-    acknowledgedQuantity: ItemQuantity;
+    'acknowledgedQuantity': ItemQuantity;
 }
-
 

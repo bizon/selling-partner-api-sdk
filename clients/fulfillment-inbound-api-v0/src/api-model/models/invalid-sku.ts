@@ -26,13 +26,12 @@ export interface InvalidSKU {
      * @type {string}
      * @memberof InvalidSKU
      */
-    SellerSKU?: string;
+    'SellerSKU'?: string;
     /**
      * 
      * @type {ErrorReason}
      * @memberof InvalidSKU
      */
-    ErrorReason?: ErrorReason;
+    'ErrorReason'?: ErrorReason;
 }
-
 

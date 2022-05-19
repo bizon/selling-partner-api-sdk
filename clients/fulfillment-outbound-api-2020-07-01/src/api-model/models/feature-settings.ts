@@ -25,23 +25,20 @@ export interface FeatureSettings {
      * @type {string}
      * @memberof FeatureSettings
      */
-    featureName?: string;
+    'featureName'?: string;
     /**
      * Specifies the policy to use when fulfilling an order.
      * @type {string}
      * @memberof FeatureSettings
      */
-    featureFulfillmentPolicy?: FeatureSettingsFeatureFulfillmentPolicyEnum;
+    'featureFulfillmentPolicy'?: FeatureSettingsFeatureFulfillmentPolicyEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum FeatureSettingsFeatureFulfillmentPolicyEnum {
-    Required = 'Required',
-    NotRequired = 'NotRequired'
-}
+export const FeatureSettingsFeatureFulfillmentPolicyEnum = {
+    Required: 'Required',
+    NotRequired: 'NotRequired'
+} as const;
 
+export type FeatureSettingsFeatureFulfillmentPolicyEnum = typeof FeatureSettingsFeatureFulfillmentPolicyEnum[keyof typeof FeatureSettingsFeatureFulfillmentPolicyEnum];
 
 

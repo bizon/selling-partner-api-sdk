@@ -30,43 +30,42 @@ export interface Item {
      * @type {string}
      * @memberof Item
      */
-    sku: string;
+    'sku': string;
     /**
      * Summary details of a listings item.
      * @type {Array<ItemSummaryByMarketplace>}
      * @memberof Item
      */
-    summaries?: Array<ItemSummaryByMarketplace>;
+    'summaries'?: Array<ItemSummaryByMarketplace>;
     /**
      * JSON object containing structured listings item attribute data keyed by attribute name.
      * @type {object}
      * @memberof Item
      */
-    attributes?: object;
+    'attributes'?: object;
     /**
      * Issues associated with the listings item.
      * @type {Array<Issue>}
      * @memberof Item
      */
-    issues?: Array<Issue>;
+    'issues'?: Array<Issue>;
     /**
      * Offer details for the listings item.
      * @type {Array<ItemOfferByMarketplace>}
      * @memberof Item
      */
-    offers?: Array<ItemOfferByMarketplace>;
+    'offers'?: Array<ItemOfferByMarketplace>;
     /**
      * Fulfillment availability for the listings item.
      * @type {Array<FulfillmentAvailability>}
      * @memberof Item
      */
-    fulfillmentAvailability?: Array<FulfillmentAvailability>;
+    'fulfillmentAvailability'?: Array<FulfillmentAvailability>;
     /**
      * 
      * @type {ItemProcurement}
      * @memberof Item
      */
-    procurement?: ItemProcurement;
+    'procurement'?: ItemProcurement;
 }
-
 

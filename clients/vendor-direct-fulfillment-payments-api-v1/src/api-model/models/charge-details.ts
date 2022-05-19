@@ -27,34 +27,31 @@ export interface ChargeDetails {
      * @type {string}
      * @memberof ChargeDetails
      */
-    type: ChargeDetailsTypeEnum;
+    'type': ChargeDetailsTypeEnum;
     /**
      * 
      * @type {Money}
      * @memberof ChargeDetails
      */
-    chargeAmount: Money;
+    'chargeAmount': Money;
     /**
      * Individual tax details per line item.
      * @type {Array<TaxDetail>}
      * @memberof ChargeDetails
      */
-    taxDetails?: Array<TaxDetail>;
+    'taxDetails'?: Array<TaxDetail>;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ChargeDetailsTypeEnum {
-    Giftwrap = 'GIFTWRAP',
-    Fulfillment = 'FULFILLMENT',
-    Marketinginsert = 'MARKETINGINSERT',
-    Packaging = 'PACKAGING',
-    Loading = 'LOADING',
-    Freightout = 'FREIGHTOUT',
-    TaxCollectedAtSource = 'TAX_COLLECTED_AT_SOURCE'
-}
+export const ChargeDetailsTypeEnum = {
+    Giftwrap: 'GIFTWRAP',
+    Fulfillment: 'FULFILLMENT',
+    Marketinginsert: 'MARKETINGINSERT',
+    Packaging: 'PACKAGING',
+    Loading: 'LOADING',
+    Freightout: 'FREIGHTOUT',
+    TaxCollectedAtSource: 'TAX_COLLECTED_AT_SOURCE'
+} as const;
 
+export type ChargeDetailsTypeEnum = typeof ChargeDetailsTypeEnum[keyof typeof ChargeDetailsTypeEnum];
 
 

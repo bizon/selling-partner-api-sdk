@@ -22,4 +22,3 @@ import { AplusResponse } from './aplus-response';
 export type PostContentDocumentApprovalSubmissionResponse = AplusResponse;
 
 
-

@@ -26,25 +26,24 @@ export interface ItemDimensions {
      * @type {ItemDimension}
      * @memberof ItemDimensions
      */
-    height?: ItemDimension;
+    'height'?: ItemDimension;
     /**
      * 
      * @type {ItemDimension}
      * @memberof ItemDimensions
      */
-    length?: ItemDimension;
+    'length'?: ItemDimension;
     /**
      * 
      * @type {ItemDimension}
      * @memberof ItemDimensions
      */
-    weight?: ItemDimension;
+    'weight'?: ItemDimension;
     /**
      * 
      * @type {ItemDimension}
      * @memberof ItemDimensions
      */
-    width?: ItemDimension;
+    'width'?: ItemDimension;
 }
-
 

@@ -28,48 +28,45 @@ export interface Appointment {
      * @type {string}
      * @memberof Appointment
      */
-    appointmentId?: string;
+    'appointmentId'?: string;
     /**
      * The status of the appointment.
      * @type {string}
      * @memberof Appointment
      */
-    appointmentStatus?: AppointmentAppointmentStatusEnum;
+    'appointmentStatus'?: AppointmentAppointmentStatusEnum;
     /**
      * 
      * @type {AppointmentTime}
      * @memberof Appointment
      */
-    appointmentTime?: AppointmentTime;
+    'appointmentTime'?: AppointmentTime;
     /**
      * A list of technicians assigned to the service job.
      * @type {Array<Technician>}
      * @memberof Appointment
      */
-    assignedTechnicians?: Array<Technician>;
+    'assignedTechnicians'?: Array<Technician>;
     /**
      * The appointment identifier.
      * @type {string}
      * @memberof Appointment
      */
-    rescheduledAppointmentId?: string;
+    'rescheduledAppointmentId'?: string;
     /**
      * 
      * @type {Poa}
      * @memberof Appointment
      */
-    poa?: Poa;
+    'poa'?: Poa;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum AppointmentAppointmentStatusEnum {
-    Active = 'ACTIVE',
-    Cancelled = 'CANCELLED',
-    Completed = 'COMPLETED'
-}
+export const AppointmentAppointmentStatusEnum = {
+    Active: 'ACTIVE',
+    Cancelled: 'CANCELLED',
+    Completed: 'COMPLETED'
+} as const;
 
+export type AppointmentAppointmentStatusEnum = typeof AppointmentAppointmentStatusEnum[keyof typeof AppointmentAppointmentStatusEnum];
 
 

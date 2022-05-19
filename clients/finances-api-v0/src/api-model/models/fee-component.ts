@@ -26,13 +26,12 @@ export interface FeeComponent {
      * @type {string}
      * @memberof FeeComponent
      */
-    FeeType?: string;
+    'FeeType'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof FeeComponent
      */
-    FeeAmount?: Currency;
+    'FeeAmount'?: Currency;
 }
-
 

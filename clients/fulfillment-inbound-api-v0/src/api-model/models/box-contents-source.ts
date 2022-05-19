@@ -19,12 +19,15 @@
  * @export
  * @enum {string}
  */
-export enum BoxContentsSource {
-    None = 'NONE',
-    Feed = 'FEED',
-    _2DBarcode = '2D_BARCODE',
-    Interactive = 'INTERACTIVE'
-}
+
+export const BoxContentsSource = {
+    None: 'NONE',
+    Feed: 'FEED',
+    _2DBarcode: '2D_BARCODE',
+    Interactive: 'INTERACTIVE'
+} as const;
+
+export type BoxContentsSource = typeof BoxContentsSource[keyof typeof BoxContentsSource];
 
 
 

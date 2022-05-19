@@ -26,25 +26,24 @@ export interface DimensionType {
      * @type {DecimalWithUnits}
      * @memberof DimensionType
      */
-    Height?: DecimalWithUnits;
+    'Height'?: DecimalWithUnits;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof DimensionType
      */
-    Length?: DecimalWithUnits;
+    'Length'?: DecimalWithUnits;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof DimensionType
      */
-    Width?: DecimalWithUnits;
+    'Width'?: DecimalWithUnits;
     /**
      * 
      * @type {DecimalWithUnits}
      * @memberof DimensionType
      */
-    Weight?: DecimalWithUnits;
+    'Weight'?: DecimalWithUnits;
 }
-
 

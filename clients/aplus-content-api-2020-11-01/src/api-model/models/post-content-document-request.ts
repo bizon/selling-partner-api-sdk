@@ -26,7 +26,6 @@ export interface PostContentDocumentRequest {
      * @type {ContentDocument}
      * @memberof PostContentDocumentRequest
      */
-    contentDocument: ContentDocument;
+    'contentDocument': ContentDocument;
 }
-
 

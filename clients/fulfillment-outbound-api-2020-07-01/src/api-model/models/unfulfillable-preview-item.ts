@@ -25,25 +25,24 @@ export interface UnfulfillablePreviewItem {
      * @type {string}
      * @memberof UnfulfillablePreviewItem
      */
-    sellerSku: string;
+    'sellerSku': string;
     /**
      * The item quantity.
      * @type {number}
      * @memberof UnfulfillablePreviewItem
      */
-    quantity: number;
+    'quantity': number;
     /**
      * A fulfillment order item identifier created with a call to the getFulfillmentPreview operation.
      * @type {string}
      * @memberof UnfulfillablePreviewItem
      */
-    sellerFulfillmentOrderItemId: string;
+    'sellerFulfillmentOrderItemId': string;
     /**
      * 
      * @type {Array<string>}
      * @memberof UnfulfillablePreviewItem
      */
-    itemUnfulfillableReasons?: Array<string>;
+    'itemUnfulfillableReasons'?: Array<string>;
 }
-
 

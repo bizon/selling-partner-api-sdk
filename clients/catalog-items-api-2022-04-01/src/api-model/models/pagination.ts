@@ -25,13 +25,12 @@ export interface Pagination {
      * @type {string}
      * @memberof Pagination
      */
-    nextToken?: string;
+    'nextToken'?: string;
     /**
      * A token that can be used to fetch the previous page.
      * @type {string}
      * @memberof Pagination
      */
-    previousToken?: string;
+    'previousToken'?: string;
 }
-
 

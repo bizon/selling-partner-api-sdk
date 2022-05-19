@@ -25,19 +25,18 @@ export interface Location {
      * @type {string}
      * @memberof Location
      */
-    type?: string;
+    'type'?: string;
     /**
      * Location code.
      * @type {string}
      * @memberof Location
      */
-    locationCode?: string;
+    'locationCode'?: string;
     /**
      * The two digit country code. In ISO 3166-1 alpha-2 format.
      * @type {string}
      * @memberof Location
      */
-    countryCode?: string;
+    'countryCode'?: string;
 }
-
 

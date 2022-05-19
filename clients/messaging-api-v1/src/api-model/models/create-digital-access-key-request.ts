@@ -26,13 +26,12 @@ export interface CreateDigitalAccessKeyRequest {
      * @type {string}
      * @memberof CreateDigitalAccessKeyRequest
      */
-    text?: string;
+    'text'?: string;
     /**
      * Attachments to include in the message to the buyer.
      * @type {Array<Attachment>}
      * @memberof CreateDigitalAccessKeyRequest
      */
-    attachments?: Array<Attachment>;
+    'attachments'?: Array<Attachment>;
 }
-
 

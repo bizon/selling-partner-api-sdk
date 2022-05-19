@@ -26,19 +26,18 @@ export interface ImageComponent {
      * @type {string}
      * @memberof ImageComponent
      */
-    uploadDestinationId: string;
+    'uploadDestinationId': string;
     /**
      * 
      * @type {ImageCropSpecification}
      * @memberof ImageComponent
      */
-    imageCropSpecification: ImageCropSpecification;
+    'imageCropSpecification': ImageCropSpecification;
     /**
      * The alternative text for the image.
      * @type {string}
      * @memberof ImageComponent
      */
-    altText: string;
+    'altText': string;
 }
-
 

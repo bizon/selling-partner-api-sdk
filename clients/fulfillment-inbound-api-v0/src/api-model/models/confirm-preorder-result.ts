@@ -25,13 +25,12 @@ export interface ConfirmPreorderResult {
      * @type {string}
      * @memberof ConfirmPreorderResult
      */
-    ConfirmedNeedByDate?: string;
+    'ConfirmedNeedByDate'?: string;
     /**
      * 
      * @type {string}
      * @memberof ConfirmPreorderResult
      */
-    ConfirmedFulfillableDate?: string;
+    'ConfirmedFulfillableDate'?: string;
 }
-
 

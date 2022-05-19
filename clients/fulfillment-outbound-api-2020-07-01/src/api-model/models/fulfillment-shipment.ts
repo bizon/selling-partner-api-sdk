@@ -27,61 +27,58 @@ export interface FulfillmentShipment {
      * @type {string}
      * @memberof FulfillmentShipment
      */
-    amazonShipmentId: string;
+    'amazonShipmentId': string;
     /**
      * An identifier for the fulfillment center that the shipment will be sent from.
      * @type {string}
      * @memberof FulfillmentShipment
      */
-    fulfillmentCenterId: string;
+    'fulfillmentCenterId': string;
     /**
      * The current status of the shipment.
      * @type {string}
      * @memberof FulfillmentShipment
      */
-    fulfillmentShipmentStatus: FulfillmentShipmentFulfillmentShipmentStatusEnum;
+    'fulfillmentShipmentStatus': FulfillmentShipmentFulfillmentShipmentStatusEnum;
     /**
      * 
      * @type {string}
      * @memberof FulfillmentShipment
      */
-    shippingDate?: string;
+    'shippingDate'?: string;
     /**
      * 
      * @type {string}
      * @memberof FulfillmentShipment
      */
-    estimatedArrivalDate?: string;
+    'estimatedArrivalDate'?: string;
     /**
      * Provides additional insight into shipment timeline. Primairly used to communicate that actual delivery dates aren\'t available.
      * @type {Array<string>}
      * @memberof FulfillmentShipment
      */
-    shippingNotes?: Array<string>;
+    'shippingNotes'?: Array<string>;
     /**
      * An array of fulfillment shipment item information.
      * @type {Array<FulfillmentShipmentItem>}
      * @memberof FulfillmentShipment
      */
-    fulfillmentShipmentItem: Array<FulfillmentShipmentItem>;
+    'fulfillmentShipmentItem': Array<FulfillmentShipmentItem>;
     /**
      * An array of fulfillment shipment package information.
      * @type {Array<FulfillmentShipmentPackage>}
      * @memberof FulfillmentShipment
      */
-    fulfillmentShipmentPackage?: Array<FulfillmentShipmentPackage>;
+    'fulfillmentShipmentPackage'?: Array<FulfillmentShipmentPackage>;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum FulfillmentShipmentFulfillmentShipmentStatusEnum {
-    Pending = 'PENDING',
-    Shipped = 'SHIPPED',
-    CancelledByFulfiller = 'CANCELLED_BY_FULFILLER',
-    CancelledBySeller = 'CANCELLED_BY_SELLER'
-}
+export const FulfillmentShipmentFulfillmentShipmentStatusEnum = {
+    Pending: 'PENDING',
+    Shipped: 'SHIPPED',
+    CancelledByFulfiller: 'CANCELLED_BY_FULFILLER',
+    CancelledBySeller: 'CANCELLED_BY_SELLER'
+} as const;
 
+export type FulfillmentShipmentFulfillmentShipmentStatusEnum = typeof FulfillmentShipmentFulfillmentShipmentStatusEnum[keyof typeof FulfillmentShipmentFulfillmentShipmentStatusEnum];
 
 

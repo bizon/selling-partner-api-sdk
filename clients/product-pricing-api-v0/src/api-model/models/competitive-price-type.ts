@@ -28,55 +28,54 @@ export interface CompetitivePriceType {
      * @type {string}
      * @memberof CompetitivePriceType
      */
-    CompetitivePriceId: string;
+    'CompetitivePriceId': string;
     /**
      * 
      * @type {PriceType}
      * @memberof CompetitivePriceType
      */
-    Price: PriceType;
+    'Price': PriceType;
     /**
      * Indicates the condition of the item whose pricing information is returned. Possible values are: New, Used, Collectible, Refurbished, or Club.
      * @type {string}
      * @memberof CompetitivePriceType
      */
-    condition?: string;
+    'condition'?: string;
     /**
      * Indicates the subcondition of the item whose pricing information is returned. Possible values are: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
      * @type {string}
      * @memberof CompetitivePriceType
      */
-    subcondition?: string;
+    'subcondition'?: string;
     /**
      * 
      * @type {OfferCustomerType}
      * @memberof CompetitivePriceType
      */
-    offerType?: OfferCustomerType;
+    'offerType'?: OfferCustomerType;
     /**
      * Indicates at what quantity this price becomes active.
      * @type {number}
      * @memberof CompetitivePriceType
      */
-    quantityTier?: number;
+    'quantityTier'?: number;
     /**
      * 
      * @type {QuantityDiscountType}
      * @memberof CompetitivePriceType
      */
-    quantityDiscountType?: QuantityDiscountType;
+    'quantityDiscountType'?: QuantityDiscountType;
     /**
      * The seller identifier for the offer.
      * @type {string}
      * @memberof CompetitivePriceType
      */
-    sellerId?: string;
+    'sellerId'?: string;
     /**
      *  Indicates whether or not the pricing information is for an offer listing that belongs to the requester. The requester is the seller associated with the SellerId that was submitted with the request. Possible values are: true and false.
      * @type {boolean}
      * @memberof CompetitivePriceType
      */
-    belongsToRequester?: boolean;
+    'belongsToRequester'?: boolean;
 }
-
 

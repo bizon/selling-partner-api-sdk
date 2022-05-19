@@ -26,13 +26,12 @@ export interface GetShipmentsResult {
      * @type {Array<InboundShipmentInfo>}
      * @memberof GetShipmentsResult
      */
-    ShipmentData?: Array<InboundShipmentInfo>;
+    'ShipmentData'?: Array<InboundShipmentInfo>;
     /**
      * When present and not empty, pass this string token in the next request to return the next response page.
      * @type {string}
      * @memberof GetShipmentsResult
      */
-    NextToken?: string;
+    'NextToken'?: string;
 }
-
 

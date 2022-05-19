@@ -19,17 +19,20 @@
  * @export
  * @enum {string}
  */
-export enum FulfillmentOrderStatus {
-    New = 'New',
-    Received = 'Received',
-    Planning = 'Planning',
-    Processing = 'Processing',
-    Cancelled = 'Cancelled',
-    Complete = 'Complete',
-    CompletePartialled = 'CompletePartialled',
-    Unfulfillable = 'Unfulfillable',
-    Invalid = 'Invalid'
-}
+
+export const FulfillmentOrderStatus = {
+    New: 'New',
+    Received: 'Received',
+    Planning: 'Planning',
+    Processing: 'Processing',
+    Cancelled: 'Cancelled',
+    Complete: 'Complete',
+    CompletePartialled: 'CompletePartialled',
+    Unfulfillable: 'Unfulfillable',
+    Invalid: 'Invalid'
+} as const;
+
+export type FulfillmentOrderStatus = typeof FulfillmentOrderStatus[keyof typeof FulfillmentOrderStatus];
 
 
 

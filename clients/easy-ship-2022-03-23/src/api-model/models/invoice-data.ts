@@ -25,13 +25,12 @@ export interface InvoiceData {
      * @type {string}
      * @memberof InvoiceData
      */
-    invoiceNumber: string;
+    'invoiceNumber': string;
     /**
      * A datetime value in ISO 8601 format.
      * @type {string}
      * @memberof InvoiceData
      */
-    invoiceDate?: string;
+    'invoiceDate'?: string;
 }
-
 

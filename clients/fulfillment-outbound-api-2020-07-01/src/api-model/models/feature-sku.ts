@@ -25,31 +25,30 @@ export interface FeatureSku {
      * @type {string}
      * @memberof FeatureSku
      */
-    sellerSku?: string;
+    'sellerSku'?: string;
     /**
      * The unique SKU used by Amazon\'s fulfillment network.
      * @type {string}
      * @memberof FeatureSku
      */
-    fnSku?: string;
+    'fnSku'?: string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
      * @type {string}
      * @memberof FeatureSku
      */
-    asin?: string;
+    'asin'?: string;
     /**
      * The number of SKUs available for this service.
      * @type {number}
      * @memberof FeatureSku
      */
-    skuCount?: number;
+    'skuCount'?: number;
     /**
      * Other seller SKUs that are shared across the same inventory.
      * @type {Array<string>}
      * @memberof FeatureSku
      */
-    overlappingSkus?: Array<string>;
+    'overlappingSkus'?: Array<string>;
 }
-
 

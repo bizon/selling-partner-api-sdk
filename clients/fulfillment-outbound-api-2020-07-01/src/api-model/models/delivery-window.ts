@@ -25,13 +25,12 @@ export interface DeliveryWindow {
      * @type {string}
      * @memberof DeliveryWindow
      */
-    startDate: string;
+    'startDate': string;
     /**
      * 
      * @type {string}
      * @memberof DeliveryWindow
      */
-    endDate: string;
+    'endDate': string;
 }
-
 

@@ -26,25 +26,22 @@ export interface FeeLineItem {
      * @type {string}
      * @memberof FeeLineItem
      */
-    feeType: FeeLineItemFeeTypeEnum;
+    'feeType': FeeLineItemFeeTypeEnum;
     /**
      * 
      * @type {MoneyType}
      * @memberof FeeLineItem
      */
-    feeCharge: MoneyType;
+    'feeCharge': MoneyType;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum FeeLineItemFeeTypeEnum {
-    FbaWeightBasedFee = 'FBAWeightBasedFee',
-    FbaPerOrderFulfillmentFee = 'FBAPerOrderFulfillmentFee',
-    FbaPerUnitFulfillmentFee = 'FBAPerUnitFulfillmentFee',
-    Commission = 'Commission'
-}
+export const FeeLineItemFeeTypeEnum = {
+    FbaWeightBasedFee: 'FBAWeightBasedFee',
+    FbaPerOrderFulfillmentFee: 'FBAPerOrderFulfillmentFee',
+    FbaPerUnitFulfillmentFee: 'FBAPerUnitFulfillmentFee',
+    Commission: 'Commission'
+} as const;
 
+export type FeeLineItemFeeTypeEnum = typeof FeeLineItemFeeTypeEnum[keyof typeof FeeLineItemFeeTypeEnum];
 
 

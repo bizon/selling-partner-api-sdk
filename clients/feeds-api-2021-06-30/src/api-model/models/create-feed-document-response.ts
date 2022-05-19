@@ -25,13 +25,12 @@ export interface CreateFeedDocumentResponse {
      * @type {string}
      * @memberof CreateFeedDocumentResponse
      */
-    feedDocumentId: string;
+    'feedDocumentId': string;
     /**
      * The presigned URL for uploading the feed contents. This URL expires after 5 minutes.
      * @type {string}
      * @memberof CreateFeedDocumentResponse
      */
-    url: string;
+    'url': string;
 }
-
 

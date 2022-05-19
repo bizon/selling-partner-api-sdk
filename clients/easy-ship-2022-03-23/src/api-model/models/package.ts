@@ -33,55 +33,54 @@ export interface Package {
      * @type {ScheduledPackageId}
      * @memberof Package
      */
-    scheduledPackageId: ScheduledPackageId;
+    'scheduledPackageId': ScheduledPackageId;
     /**
      * 
      * @type {Dimensions}
      * @memberof Package
      */
-    packageDimensions: Dimensions;
+    'packageDimensions': Dimensions;
     /**
      * 
      * @type {Weight}
      * @memberof Package
      */
-    packageWeight: Weight;
+    'packageWeight': Weight;
     /**
      * A list of items contained in the package.
      * @type {Array<Item>}
      * @memberof Package
      */
-    packageItems?: Array<Item>;
+    'packageItems'?: Array<Item>;
     /**
      * 
      * @type {TimeSlot}
      * @memberof Package
      */
-    packageTimeSlot: TimeSlot;
+    'packageTimeSlot': TimeSlot;
     /**
      * Optional seller-created identifier that is printed on the shipping label to help the seller identify the package.
      * @type {string}
      * @memberof Package
      */
-    packageIdentifier?: string;
+    'packageIdentifier'?: string;
     /**
      * 
      * @type {InvoiceData}
      * @memberof Package
      */
-    invoice?: InvoiceData;
+    'invoice'?: InvoiceData;
     /**
      * 
      * @type {PackageStatus}
      * @memberof Package
      */
-    packageStatus?: PackageStatus;
+    'packageStatus'?: PackageStatus;
     /**
      * 
      * @type {TrackingDetails}
      * @memberof Package
      */
-    trackingDetails?: TrackingDetails;
+    'trackingDetails'?: TrackingDetails;
 }
-
 

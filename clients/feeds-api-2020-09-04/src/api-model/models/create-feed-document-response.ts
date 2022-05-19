@@ -26,13 +26,12 @@ export interface CreateFeedDocumentResponse {
      * @type {CreateFeedDocumentResult}
      * @memberof CreateFeedDocumentResponse
      */
-    payload?: CreateFeedDocumentResult;
+    'payload'?: CreateFeedDocumentResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof CreateFeedDocumentResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

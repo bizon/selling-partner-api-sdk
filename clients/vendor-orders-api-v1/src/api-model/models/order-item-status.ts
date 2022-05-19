@@ -29,49 +29,48 @@ export interface OrderItemStatus {
      * @type {string}
      * @memberof OrderItemStatus
      */
-    itemSequenceNumber: string;
+    'itemSequenceNumber': string;
     /**
      * Buyer\'s Standard Identification Number (ASIN) of an item.
      * @type {string}
      * @memberof OrderItemStatus
      */
-    buyerProductIdentifier?: string;
+    'buyerProductIdentifier'?: string;
     /**
      * The vendor selected product identification of the item.
      * @type {string}
      * @memberof OrderItemStatus
      */
-    vendorProductIdentifier?: string;
+    'vendorProductIdentifier'?: string;
     /**
      * 
      * @type {Money}
      * @memberof OrderItemStatus
      */
-    netCost?: Money;
+    'netCost'?: Money;
     /**
      * 
      * @type {Money}
      * @memberof OrderItemStatus
      */
-    listPrice?: Money;
+    'listPrice'?: Money;
     /**
      * 
      * @type {OrderItemStatusOrderedQuantity}
      * @memberof OrderItemStatus
      */
-    orderedQuantity?: OrderItemStatusOrderedQuantity;
+    'orderedQuantity'?: OrderItemStatusOrderedQuantity;
     /**
      * 
      * @type {OrderItemStatusAcknowledgementStatus}
      * @memberof OrderItemStatus
      */
-    acknowledgementStatus?: OrderItemStatusAcknowledgementStatus;
+    'acknowledgementStatus'?: OrderItemStatusAcknowledgementStatus;
     /**
      * 
      * @type {OrderItemStatusReceivingStatus}
      * @memberof OrderItemStatus
      */
-    receivingStatus?: OrderItemStatusReceivingStatus;
+    'receivingStatus'?: OrderItemStatusReceivingStatus;
 }
-
 

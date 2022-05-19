@@ -27,13 +27,12 @@ export interface GetInventorySummariesResult {
      * @type {Granularity}
      * @memberof GetInventorySummariesResult
      */
-    granularity: Granularity;
+    'granularity': Granularity;
     /**
      * A list of inventory summaries.
      * @type {Array<InventorySummary>}
      * @memberof GetInventorySummariesResult
      */
-    inventorySummaries: Array<InventorySummary>;
+    'inventorySummaries': Array<InventorySummary>;
 }
-
 

@@ -25,7 +25,6 @@ export interface NonPartneredSmallParcelPackageInput {
      * @type {string}
      * @memberof NonPartneredSmallParcelPackageInput
      */
-    TrackingId: string;
+    'TrackingId': string;
 }
-
 

@@ -26,31 +26,30 @@ export interface IncludedFeeDetail {
      * @type {string}
      * @memberof IncludedFeeDetail
      */
-    FeeType: string;
+    'FeeType': string;
     /**
      * 
      * @type {MoneyType}
      * @memberof IncludedFeeDetail
      */
-    FeeAmount: MoneyType;
+    'FeeAmount': MoneyType;
     /**
      * 
      * @type {MoneyType}
      * @memberof IncludedFeeDetail
      */
-    FeePromotion?: MoneyType;
+    'FeePromotion'?: MoneyType;
     /**
      * 
      * @type {MoneyType}
      * @memberof IncludedFeeDetail
      */
-    TaxAmount?: MoneyType;
+    'TaxAmount'?: MoneyType;
     /**
      * 
      * @type {MoneyType}
      * @memberof IncludedFeeDetail
      */
-    FinalFee: MoneyType;
+    'FinalFee': MoneyType;
 }
-
 

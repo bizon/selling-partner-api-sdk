@@ -27,19 +27,18 @@ export interface ContentRecord {
      * @type {string}
      * @memberof ContentRecord
      */
-    contentReferenceKey: string;
+    'contentReferenceKey': string;
     /**
      * 
      * @type {ContentMetadata}
      * @memberof ContentRecord
      */
-    contentMetadata?: ContentMetadata;
+    'contentMetadata'?: ContentMetadata;
     /**
      * 
      * @type {ContentDocument}
      * @memberof ContentRecord
      */
-    contentDocument?: ContentDocument;
+    'contentDocument'?: ContentDocument;
 }
-
 

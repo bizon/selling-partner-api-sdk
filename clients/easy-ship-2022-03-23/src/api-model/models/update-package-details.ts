@@ -27,13 +27,12 @@ export interface UpdatePackageDetails {
      * @type {ScheduledPackageId}
      * @memberof UpdatePackageDetails
      */
-    scheduledPackageId: ScheduledPackageId;
+    'scheduledPackageId': ScheduledPackageId;
     /**
      * 
      * @type {TimeSlot}
      * @memberof UpdatePackageDetails
      */
-    packageTimeSlot: TimeSlot;
+    'packageTimeSlot': TimeSlot;
 }
-
 

@@ -26,13 +26,12 @@ export interface ItemIdentifiersByMarketplace {
      * @type {string}
      * @memberof ItemIdentifiersByMarketplace
      */
-    marketplaceId: string;
+    'marketplaceId': string;
     /**
      * Identifiers associated with the item in the Amazon catalog for the indicated Amazon marketplace.
      * @type {Array<ItemIdentifier>}
      * @memberof ItemIdentifiersByMarketplace
      */
-    identifiers: Array<ItemIdentifier>;
+    'identifiers': Array<ItemIdentifier>;
 }
-
 

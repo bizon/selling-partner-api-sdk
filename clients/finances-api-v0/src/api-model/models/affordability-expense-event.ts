@@ -26,55 +26,54 @@ export interface AffordabilityExpenseEvent {
      * @type {string}
      * @memberof AffordabilityExpenseEvent
      */
-    AmazonOrderId?: string;
+    'AmazonOrderId'?: string;
     /**
      * 
      * @type {string}
      * @memberof AffordabilityExpenseEvent
      */
-    PostedDate?: string;
+    'PostedDate'?: string;
     /**
      * An encrypted, Amazon-defined marketplace identifier.
      * @type {string}
      * @memberof AffordabilityExpenseEvent
      */
-    MarketplaceId?: string;
+    'MarketplaceId'?: string;
     /**
      * Indicates the type of transaction.   Possible values:  * Charge - For an affordability promotion expense.  * Refund - For an affordability promotion expense reversal.
      * @type {string}
      * @memberof AffordabilityExpenseEvent
      */
-    TransactionType?: string;
+    'TransactionType'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof AffordabilityExpenseEvent
      */
-    BaseExpense?: Currency;
+    'BaseExpense'?: Currency;
     /**
      * 
      * @type {Currency}
      * @memberof AffordabilityExpenseEvent
      */
-    TaxTypeCGST: Currency;
+    'TaxTypeCGST': Currency;
     /**
      * 
      * @type {Currency}
      * @memberof AffordabilityExpenseEvent
      */
-    TaxTypeSGST: Currency;
+    'TaxTypeSGST': Currency;
     /**
      * 
      * @type {Currency}
      * @memberof AffordabilityExpenseEvent
      */
-    TaxTypeIGST: Currency;
+    'TaxTypeIGST': Currency;
     /**
      * 
      * @type {Currency}
      * @memberof AffordabilityExpenseEvent
      */
-    TotalExpense?: Currency;
+    'TotalExpense'?: Currency;
 }
-
 

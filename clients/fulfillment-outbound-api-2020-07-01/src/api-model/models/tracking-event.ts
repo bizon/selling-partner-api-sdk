@@ -27,25 +27,24 @@ export interface TrackingEvent {
      * @type {string}
      * @memberof TrackingEvent
      */
-    eventDate: string;
+    'eventDate': string;
     /**
      * 
      * @type {TrackingAddress}
      * @memberof TrackingEvent
      */
-    eventAddress: TrackingAddress;
+    'eventAddress': TrackingAddress;
     /**
      * 
      * @type {EventCode}
      * @memberof TrackingEvent
      */
-    eventCode: EventCode;
+    'eventCode': EventCode;
     /**
      * A description for the corresponding event code.
      * @type {string}
      * @memberof TrackingEvent
      */
-    eventDescription: string;
+    'eventDescription': string;
 }
-
 

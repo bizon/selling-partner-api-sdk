@@ -25,19 +25,18 @@ export interface Warning {
      * @type {string}
      * @memberof Warning
      */
-    code: string;
+    'code': string;
     /**
      * A message that describes the warning condition in a human-readable form.
      * @type {string}
      * @memberof Warning
      */
-    message: string;
+    'message': string;
     /**
      * Additional details that can help the caller understand or address the warning.
      * @type {string}
      * @memberof Warning
      */
-    details?: string;
+    'details'?: string;
 }
-
 

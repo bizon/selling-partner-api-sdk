@@ -25,13 +25,12 @@ export interface ItemDimension {
      * @type {string}
      * @memberof ItemDimension
      */
-    unit?: string;
+    'unit'?: string;
     /**
      * Numeric dimension value.
      * @type {number}
      * @memberof ItemDimension
      */
-    value?: number;
+    'value'?: number;
 }
-
 

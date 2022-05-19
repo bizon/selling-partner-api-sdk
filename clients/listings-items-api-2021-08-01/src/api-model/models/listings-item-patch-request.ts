@@ -26,13 +26,12 @@ export interface ListingsItemPatchRequest {
      * @type {string}
      * @memberof ListingsItemPatchRequest
      */
-    productType: string;
+    'productType': string;
     /**
      * One or more JSON Patch operations to perform on the listings item.
      * @type {Array<PatchOperation>}
      * @memberof ListingsItemPatchRequest
      */
-    patches: Array<PatchOperation>;
+    'patches': Array<PatchOperation>;
 }
-
 

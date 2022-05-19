@@ -25,7 +25,6 @@ export interface DeleteSubscriptionByIdResponse {
      * @type {Array<Error>}
      * @memberof DeleteSubscriptionByIdResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

@@ -27,13 +27,12 @@ export interface PartneredSmallParcelDataOutput {
      * @type {Array<PartneredSmallParcelPackageOutput>}
      * @memberof PartneredSmallParcelDataOutput
      */
-    PackageList: Array<PartneredSmallParcelPackageOutput>;
+    'PackageList': Array<PartneredSmallParcelPackageOutput>;
     /**
      * 
      * @type {PartneredEstimate}
      * @memberof PartneredSmallParcelDataOutput
      */
-    PartneredEstimate?: PartneredEstimate;
+    'PartneredEstimate'?: PartneredEstimate;
 }
-
 

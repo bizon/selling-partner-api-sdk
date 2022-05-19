@@ -26,19 +26,18 @@ export interface Expiry {
      * @type {string}
      * @memberof Expiry
      */
-    manufacturerDate?: string;
+    'manufacturerDate'?: string;
     /**
      * The date that determines the limit of consumption or use of a product. Its meaning is determined based on the trade item context.
      * @type {string}
      * @memberof Expiry
      */
-    expiryDate?: string;
+    'expiryDate'?: string;
     /**
      * 
      * @type {Duration}
      * @memberof Expiry
      */
-    expiryAfterDuration?: Duration;
+    'expiryAfterDuration'?: Duration;
 }
-
 

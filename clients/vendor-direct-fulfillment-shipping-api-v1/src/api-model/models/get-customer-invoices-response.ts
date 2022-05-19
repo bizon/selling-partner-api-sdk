@@ -26,13 +26,12 @@ export interface GetCustomerInvoicesResponse {
      * @type {CustomerInvoiceList}
      * @memberof GetCustomerInvoicesResponse
      */
-    payload?: CustomerInvoiceList;
+    'payload'?: CustomerInvoiceList;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetCustomerInvoicesResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

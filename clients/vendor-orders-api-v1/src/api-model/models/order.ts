@@ -26,30 +26,27 @@ export interface Order {
      * @type {string}
      * @memberof Order
      */
-    purchaseOrderNumber: string;
+    'purchaseOrderNumber': string;
     /**
      * This field will contain the current state of the purchase order.
      * @type {string}
      * @memberof Order
      */
-    purchaseOrderState: OrderPurchaseOrderStateEnum;
+    'purchaseOrderState': OrderPurchaseOrderStateEnum;
     /**
      * 
      * @type {OrderDetails}
      * @memberof Order
      */
-    orderDetails?: OrderDetails;
+    'orderDetails'?: OrderDetails;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum OrderPurchaseOrderStateEnum {
-    New = 'New',
-    Acknowledged = 'Acknowledged',
-    Closed = 'Closed'
-}
+export const OrderPurchaseOrderStateEnum = {
+    New: 'New',
+    Acknowledged: 'Acknowledged',
+    Closed: 'Closed'
+} as const;
 
+export type OrderPurchaseOrderStateEnum = typeof OrderPurchaseOrderStateEnum[keyof typeof OrderPurchaseOrderStateEnum];
 
 

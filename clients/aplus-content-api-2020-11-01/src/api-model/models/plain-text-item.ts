@@ -25,13 +25,12 @@ export interface PlainTextItem {
      * @type {number}
      * @memberof PlainTextItem
      */
-    position: number;
+    'position': number;
     /**
      * The actual plain text.
      * @type {string}
      * @memberof PlainTextItem
      */
-    value: string;
+    'value': string;
 }
-
 

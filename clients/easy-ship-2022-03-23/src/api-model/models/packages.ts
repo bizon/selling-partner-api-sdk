@@ -26,7 +26,6 @@ export interface Packages {
      * @type {Array<Package>}
      * @memberof Packages
      */
-    packages: Array<Package>;
+    'packages': Array<Package>;
 }
-
 

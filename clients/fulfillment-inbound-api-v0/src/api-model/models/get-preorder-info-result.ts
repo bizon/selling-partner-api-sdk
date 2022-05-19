@@ -25,25 +25,24 @@ export interface GetPreorderInfoResult {
      * @type {boolean}
      * @memberof GetPreorderInfoResult
      */
-    ShipmentContainsPreorderableItems?: boolean;
+    'ShipmentContainsPreorderableItems'?: boolean;
     /**
      * Indicates whether this shipment has been confirmed for pre-order.
      * @type {boolean}
      * @memberof GetPreorderInfoResult
      */
-    ShipmentConfirmedForPreorder?: boolean;
+    'ShipmentConfirmedForPreorder'?: boolean;
     /**
      * 
      * @type {string}
      * @memberof GetPreorderInfoResult
      */
-    NeedByDate?: string;
+    'NeedByDate'?: string;
     /**
      * 
      * @type {string}
      * @memberof GetPreorderInfoResult
      */
-    ConfirmedFulfillableDate?: string;
+    'ConfirmedFulfillableDate'?: string;
 }
-
 

@@ -26,25 +26,24 @@ export interface OrdersList {
      * @type {Array<Order>}
      * @memberof OrdersList
      */
-    Orders: Array<Order>;
+    'Orders': Array<Order>;
     /**
      * When present and not empty, pass this string token in the next request to return the next response page.
      * @type {string}
      * @memberof OrdersList
      */
-    NextToken?: string;
+    'NextToken'?: string;
     /**
      * A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. All dates must be in ISO 8601 format.
      * @type {string}
      * @memberof OrdersList
      */
-    LastUpdatedBefore?: string;
+    'LastUpdatedBefore'?: string;
     /**
      * A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
      * @type {string}
      * @memberof OrdersList
      */
-    CreatedBefore?: string;
+    'CreatedBefore'?: string;
 }
-
 

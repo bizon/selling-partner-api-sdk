@@ -28,19 +28,18 @@ export interface BatchOffersResponse {
      * @type {HttpResponseHeaders}
      * @memberof BatchOffersResponse
      */
-    headers?: HttpResponseHeaders;
+    'headers'?: HttpResponseHeaders;
     /**
      * 
      * @type {GetOffersHttpStatusLine}
      * @memberof BatchOffersResponse
      */
-    status?: GetOffersHttpStatusLine;
+    'status'?: GetOffersHttpStatusLine;
     /**
      * 
      * @type {GetOffersResponse}
      * @memberof BatchOffersResponse
      */
-    body: GetOffersResponse;
+    'body': GetOffersResponse;
 }
-
 

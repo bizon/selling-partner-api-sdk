@@ -26,13 +26,12 @@ export interface GetFeedDocumentResponse {
      * @type {FeedDocument}
      * @memberof GetFeedDocumentResponse
      */
-    payload?: FeedDocument;
+    'payload'?: FeedDocument;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof GetFeedDocumentResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

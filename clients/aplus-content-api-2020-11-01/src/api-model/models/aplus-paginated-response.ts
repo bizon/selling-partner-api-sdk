@@ -24,4 +24,3 @@ import { AplusResponse } from './aplus-response';
 export type AplusPaginatedResponse = AplusPaginatedResponseAllOf & AplusResponse;
 
 
-

@@ -26,13 +26,12 @@ export interface ListAllFulfillmentOrdersResponse {
      * @type {ListAllFulfillmentOrdersResult}
      * @memberof ListAllFulfillmentOrdersResponse
      */
-    payload?: ListAllFulfillmentOrdersResult;
+    'payload'?: ListAllFulfillmentOrdersResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof ListAllFulfillmentOrdersResponse
      */
-    errors?: Array<Error>;
+    'errors'?: Array<Error>;
 }
-
 

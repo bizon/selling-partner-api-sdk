@@ -27,37 +27,36 @@ export interface RegulatedOrderVerificationStatus {
      * @type {VerificationStatus}
      * @memberof RegulatedOrderVerificationStatus
      */
-    Status: VerificationStatus;
+    'Status': VerificationStatus;
     /**
      * Whether the regulated information provided in the order requires a review by the merchant.
      * @type {boolean}
      * @memberof RegulatedOrderVerificationStatus
      */
-    RequiresMerchantAction: boolean;
+    'RequiresMerchantAction': boolean;
     /**
      * A list of valid rejection reasons that may be used to reject the order\'s regulated information.
      * @type {Array<RejectionReason>}
      * @memberof RegulatedOrderVerificationStatus
      */
-    ValidRejectionReasons: Array<RejectionReason>;
+    'ValidRejectionReasons': Array<RejectionReason>;
     /**
      * 
      * @type {RejectionReason}
      * @memberof RegulatedOrderVerificationStatus
      */
-    RejectionReason?: RejectionReason;
+    'RejectionReason'?: RejectionReason;
     /**
      * The date the order was reviewed. In ISO 8601 date time format.
      * @type {string}
      * @memberof RegulatedOrderVerificationStatus
      */
-    ReviewDate?: string;
+    'ReviewDate'?: string;
     /**
      * The identifier for the order\'s regulated information reviewer.
      * @type {string}
      * @memberof RegulatedOrderVerificationStatus
      */
-    ExternalReviewerId?: string;
+    'ExternalReviewerId'?: string;
 }
-
 

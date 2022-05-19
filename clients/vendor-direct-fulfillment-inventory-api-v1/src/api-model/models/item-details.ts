@@ -26,25 +26,24 @@ export interface ItemDetails {
      * @type {string}
      * @memberof ItemDetails
      */
-    buyerProductIdentifier?: string;
+    'buyerProductIdentifier'?: string;
     /**
      * The vendor selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
      * @type {string}
      * @memberof ItemDetails
      */
-    vendorProductIdentifier?: string;
+    'vendorProductIdentifier'?: string;
     /**
      * 
      * @type {ItemQuantity}
      * @memberof ItemDetails
      */
-    availableQuantity: ItemQuantity;
+    'availableQuantity': ItemQuantity;
     /**
      * When true, the item is permanently unavailable.
      * @type {boolean}
      * @memberof ItemDetails
      */
-    isObsolete?: boolean;
+    'isObsolete'?: boolean;
 }
-
 

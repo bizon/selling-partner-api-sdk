@@ -26,13 +26,12 @@ export interface ChargeComponent {
      * @type {string}
      * @memberof ChargeComponent
      */
-    ChargeType?: string;
+    'ChargeType'?: string;
     /**
      * 
      * @type {Currency}
      * @memberof ChargeComponent
      */
-    ChargeAmount?: Currency;
+    'ChargeAmount'?: Currency;
 }
-
 

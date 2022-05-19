@@ -26,7 +26,6 @@ export interface ProcessingDirective {
      * @type {EventFilter}
      * @memberof ProcessingDirective
      */
-    eventFilter?: EventFilter;
+    'eventFilter'?: EventFilter;
 }
-
 

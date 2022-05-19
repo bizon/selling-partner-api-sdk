@@ -30,37 +30,36 @@ export interface StandardImageSidebarModule {
      * @type {TextComponent}
      * @memberof StandardImageSidebarModule
      */
-    headline?: TextComponent;
+    'headline'?: TextComponent;
     /**
      * 
      * @type {StandardImageCaptionBlock}
      * @memberof StandardImageSidebarModule
      */
-    imageCaptionBlock?: StandardImageCaptionBlock;
+    'imageCaptionBlock'?: StandardImageCaptionBlock;
     /**
      * 
      * @type {StandardTextBlock}
      * @memberof StandardImageSidebarModule
      */
-    descriptionTextBlock?: StandardTextBlock;
+    'descriptionTextBlock'?: StandardTextBlock;
     /**
      * 
      * @type {StandardTextListBlock}
      * @memberof StandardImageSidebarModule
      */
-    descriptionListBlock?: StandardTextListBlock;
+    'descriptionListBlock'?: StandardTextListBlock;
     /**
      * 
      * @type {StandardImageTextBlock}
      * @memberof StandardImageSidebarModule
      */
-    sidebarImageTextBlock?: StandardImageTextBlock;
+    'sidebarImageTextBlock'?: StandardImageTextBlock;
     /**
      * 
      * @type {StandardTextListBlock}
      * @memberof StandardImageSidebarModule
      */
-    sidebarListBlock?: StandardTextListBlock;
+    'sidebarListBlock'?: StandardTextListBlock;
 }
-
 

@@ -33,6 +33,7 @@ This repository contains an API client for each of the available Selling Partner
 - [aplus-content-api-2020-11-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/aplus-content-api-2020-11-01)
 - [authorization-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/authorization-api-v1)
 - [catalog-items-api-2020-12-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/catalog-items-api-2020-12-01)
+- [catalog-items-api-2022-04-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/catalog-items-api-2022-04-01)
 - [catalog-items-api-v0](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/catalog-items-api-v0)
 - [easy-ship-2022-03-23](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/easy-ship-2022-03-23)
 - [fba-inbound-eligibility-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/fba-inbound-eligibility-api-v1)

@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/vendor-shipments-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Retail Procurement Shipments provides programmatic access to retail shipping data for vendors.",
-  "version": "1.8.4",
+  "version": "1.8.5",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

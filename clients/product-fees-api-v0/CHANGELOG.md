@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.9.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/product-fees-api-v0@1.9.0...@sp-api-sdk/product-fees-api-v0@1.9.1) (2022-05-19)
+
+### Bug Fixes
+
+* **clients:** upgrade openapi-generator version ([#391](https://github.com/bizon/selling-partner-api-sdk/issues/391)) ([197dc46](https://github.com/bizon/selling-partner-api-sdk/commit/197dc466e267d953907e9488a038c6424d78bb23))
+
 ## [1.9.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/product-fees-api-v0@1.8.3...@sp-api-sdk/product-fees-api-v0@1.9.0) (2022-05-19)
 
 ### Features

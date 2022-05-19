@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.10.5](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-direct-fulfillment-shipping-api-v1@1.10.4...@sp-api-sdk/vendor-direct-fulfillment-shipping-api-v1@1.10.5) (2022-05-19)
+
+### Bug Fixes
+
+* **clients:** upgrade openapi-generator version ([#391](https://github.com/bizon/selling-partner-api-sdk/issues/391)) ([197dc46](https://github.com/bizon/selling-partner-api-sdk/commit/197dc466e267d953907e9488a038c6424d78bb23))
+
 ### [1.10.4](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-direct-fulfillment-shipping-api-v1@1.10.3...@sp-api-sdk/vendor-direct-fulfillment-shipping-api-v1@1.10.4) (2022-05-19)
 
 **Note:** Version bump only for package @sp-api-sdk/vendor-direct-fulfillment-shipping-api-v1

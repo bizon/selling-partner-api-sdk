@@ -41,3 +41,4 @@ export * from './update-shipment-status-request';
 export * from './update-verification-status-error-response';
 export * from './update-verification-status-request';
 export * from './update-verification-status-request-body';
+export * from './verification-status';

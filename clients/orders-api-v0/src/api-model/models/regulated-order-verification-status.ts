@@ -14,6 +14,7 @@
 
 
 import { RejectionReason } from './rejection-reason';
+import { VerificationStatus } from './verification-status';
 
 /**
  * The verification status of the order along with associated approval or rejection metadata.
@@ -22,11 +23,11 @@ import { RejectionReason } from './rejection-reason';
  */
 export interface RegulatedOrderVerificationStatus {
     /**
-     * The verification status of the order.
-     * @type {string}
+     * 
+     * @type {VerificationStatus}
      * @memberof RegulatedOrderVerificationStatus
      */
-    Status: RegulatedOrderVerificationStatusStatusEnum;
+    Status: VerificationStatus;
     /**
      * Whether the regulated information provided in the order requires a review by the merchant.
      * @type {boolean}
@@ -58,18 +59,5 @@ export interface RegulatedOrderVerificationStatus {
      */
     ExternalReviewerId?: string;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum RegulatedOrderVerificationStatusStatusEnum {
-    Pending = 'Pending',
-    Approved = 'Approved',
-    Rejected = 'Rejected',
-    Expired = 'Expired',
-    Cancelled = 'Cancelled'
-}
-
 
 

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Notifications
- * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner\'s business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, see the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide)
+ * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner\'s business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, see the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
  *
  * The version of the OpenAPI document: v1
  * 
@@ -13,6 +13,7 @@
  */
 
 
+import { ProcessingDirective } from './processing-directive';
 
 /**
  * The request schema for the createSubscription operation.
@@ -32,6 +33,12 @@ export interface CreateSubscriptionRequest {
      * @memberof CreateSubscriptionRequest
      */
     destinationId?: string;
+    /**
+     * 
+     * @type {ProcessingDirective}
+     * @memberof CreateSubscriptionRequest
+     */
+    processingDirective?: ProcessingDirective;
 }
 
 

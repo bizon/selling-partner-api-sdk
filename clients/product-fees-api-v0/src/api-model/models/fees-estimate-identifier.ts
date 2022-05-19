@@ -13,6 +13,7 @@
  */
 
 
+import { IdType } from './id-type';
 import { OptionalFulfillmentProgram } from './optional-fulfillment-program';
 import { PriceToEstimateFees } from './price-to-estimate-fees';
 
@@ -35,11 +36,11 @@ export interface FeesEstimateIdentifier {
      */
     SellerId?: string;
     /**
-     * The type of item identifier specified.
-     * @type {string}
+     * 
+     * @type {IdType}
      * @memberof FeesEstimateIdentifier
      */
-    IdType?: string;
+    IdType?: IdType;
     /**
      * The item identifier.
      * @type {string}

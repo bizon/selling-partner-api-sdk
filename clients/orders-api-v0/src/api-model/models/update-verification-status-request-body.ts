@@ -13,6 +13,7 @@
  */
 
 
+import { VerificationStatus } from './verification-status';
 
 /**
  * The updated values of the VerificationStatus field.
@@ -21,11 +22,11 @@
  */
 export interface UpdateVerificationStatusRequestBody {
     /**
-     * The new verification status of the order.
-     * @type {string}
+     * 
+     * @type {VerificationStatus}
      * @memberof UpdateVerificationStatusRequestBody
      */
-    status: UpdateVerificationStatusRequestBodyStatusEnum;
+    status: VerificationStatus;
     /**
      * The identifier for the order\'s regulated information reviewer.
      * @type {string}
@@ -39,15 +40,5 @@ export interface UpdateVerificationStatusRequestBody {
      */
     rejectionReasonId?: string;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum UpdateVerificationStatusRequestBodyStatusEnum {
-    Approved = 'Approved',
-    Rejected = 'Rejected'
-}
-
 
 

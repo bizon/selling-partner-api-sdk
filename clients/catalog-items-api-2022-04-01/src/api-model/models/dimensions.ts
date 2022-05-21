@@ -13,24 +13,37 @@
  */
 
 
+import { Dimension } from './dimension';
 
 /**
- * Individual dimension value of an Amazon catalog item or item package.
+ * Dimensions of an Amazon catalog item or item in its packaging.
  * @export
- * @interface ItemDimension
+ * @interface Dimensions
  */
-export interface ItemDimension {
+export interface Dimensions {
     /**
-     * Measurement unit of the dimension value.
-     * @type {string}
-     * @memberof ItemDimension
+     * 
+     * @type {Dimension}
+     * @memberof Dimensions
      */
-    'unit'?: string;
+    'height'?: Dimension;
     /**
-     * Numeric dimension value.
-     * @type {number}
-     * @memberof ItemDimension
+     * 
+     * @type {Dimension}
+     * @memberof Dimensions
      */
-    'value'?: number;
+    'length'?: Dimension;
+    /**
+     * 
+     * @type {Dimension}
+     * @memberof Dimensions
+     */
+    'weight'?: Dimension;
+    /**
+     * 
+     * @type {Dimension}
+     * @memberof Dimensions
+     */
+    'width'?: Dimension;
 }
 

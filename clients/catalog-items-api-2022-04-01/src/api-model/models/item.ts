@@ -41,11 +41,11 @@ export interface Item {
      */
     'attributes'?: object;
     /**
-     * 
-     * @type {ItemDimensionsByMarketplace}
+     * Array of dimensions associated with the item in the Amazon catalog by Amazon marketplace.
+     * @type {Array<ItemDimensionsByMarketplace>}
      * @memberof Item
      */
-    'dimensions'?: ItemDimensionsByMarketplace;
+    'dimensions'?: Array<ItemDimensionsByMarketplace>;
     /**
      * Identifiers associated with the item in the Amazon catalog, such as UPC and EAN identifiers.
      * @type {Array<ItemIdentifiersByMarketplace>}

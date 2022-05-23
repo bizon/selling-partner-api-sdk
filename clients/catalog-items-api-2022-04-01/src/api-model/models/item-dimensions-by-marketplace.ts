@@ -13,7 +13,7 @@
  */
 
 
-import { ItemDimensions } from './item-dimensions';
+import { Dimensions } from './dimensions';
 
 /**
  * Dimensions associated with the item in the Amazon catalog for the indicated Amazon marketplace.
@@ -29,15 +29,15 @@ export interface ItemDimensionsByMarketplace {
     'marketplaceId': string;
     /**
      * 
-     * @type {ItemDimensions}
+     * @type {Dimensions}
      * @memberof ItemDimensionsByMarketplace
      */
-    'item'?: ItemDimensions;
+    'item'?: Dimensions;
     /**
      * 
-     * @type {ItemDimensions}
+     * @type {Dimensions}
      * @memberof ItemDimensionsByMarketplace
      */
-    'package'?: ItemDimensions;
+    'package'?: Dimensions;
 }
 

@@ -8,7 +8,6 @@ import {promisify} from 'util'
 import * as childProcess from 'child_process'
 
 import Bluebird from 'bluebird'
-import rimraf from 'rimraf'
 import jsonfile from 'jsonfile'
 import camelCase from 'camelcase'
 import reduce from 'lodash/reduce'
@@ -21,7 +20,6 @@ import type {OpenAPIV3} from 'openapi-types'
 import {renderTemplate, logger, applyPatches} from './utils'
 
 const exec = promisify(childProcess.exec)
-const rimrafPromise = promisify(rimraf)
 
 const GRANTLESS_APIS = [
   {name: 'notifications-api-v1', scope: 'NOTIFICATIONS'},
@@ -100,7 +98,7 @@ async function generateClientVersion(modelFilePath: string) {
 
   logger.info('generating…', {packageName})
 
-  await rimrafPromise(`${clientDirectoryPath}/src/api-model`)
+  await fs.rm(`${clientDirectoryPath}/src/api-model`, {recursive: true})
   await exec(
     `yarn openapi-generator-cli generate \
       --additional-properties=supportsES6=true,useSingleRequestParameter=true,withSeparateModelsAndApi=true,modelPackage=models,apiPackage=api \
@@ -220,7 +218,7 @@ async function generateClientVersion(modelFilePath: string) {
   )
 
   const generatedFiles = await fs.readdir(`${clientDirectoryPath}/src/api-model/`)
-  const filesToNotDelete = new Set([
+  const filesToKeep = new Set([
     'api.ts',
     'base.ts',
     'common.ts',
@@ -231,12 +229,10 @@ async function generateClientVersion(modelFilePath: string) {
   ])
 
   await Promise.all(
-    generatedFiles.map((file) => {
-      if (filesToNotDelete.has(file)) {
-        return null
+    generatedFiles.map(async (file) => {
+      if (!filesToKeep.has(file)) {
+        await fs.rm(`${clientDirectoryPath}/src/api-model/${file}`, {recursive: true})
       }
-
-      return rimrafPromise(`${clientDirectoryPath}/src/api-model/${file}`)
     }),
   )
 
@@ -244,7 +240,7 @@ async function generateClientVersion(modelFilePath: string) {
 }
 
 ;(async () => {
-  await rimrafPromise('selling-partner-api-models')
+  await fs.rm('selling-partner-api-models', {recursive: true, force: true})
   await exec('git clone https://github.com/amzn/selling-partner-api-models')
 
   const modelFilePaths = await globby('*/*.json', {
@@ -260,7 +256,7 @@ async function generateClientVersion(modelFilePath: string) {
     },
   )
 
-  await rimrafPromise('selling-partner-api-models')
+  await fs.rm('selling-partner-api-models', {recursive: true})
 })().catch((error) => {
   console.log(error)
   process.exit(1)

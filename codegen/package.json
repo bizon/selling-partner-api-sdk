@@ -8,7 +8,7 @@
   "dependencies": {
     "@openapitools/openapi-generator-cli": "^2.5.1",
     "bluebird": "^3.7.2",
-    "camelcase": "^6.3.0",
+    "camelcase": "^7.0.0",
     "chalk": "^4.1.2",
     "fast-json-patch": "^3.1.1",
     "globby": "^11.1.0",

@@ -13,6 +13,7 @@
  */
 
 
+import { OrderItemsInner } from './order-items-inner';
 import { ShipmentStatus } from './shipment-status';
 
 /**
@@ -35,9 +36,9 @@ export interface UpdateShipmentStatusRequest {
     'shipmentStatus': ShipmentStatus;
     /**
      * the list of order items and quantities when the seller wants to partially update the shipment status of the order
-     * @type {Array<object>}
+     * @type {Array<OrderItemsInner>}
      * @memberof UpdateShipmentStatusRequest
      */
-    'orderItems'?: Array<object>;
+    'orderItems'?: Array<OrderItemsInner>;
 }
 

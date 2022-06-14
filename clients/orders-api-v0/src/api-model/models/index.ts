@@ -23,6 +23,7 @@ export * from './order-buyer-info';
 export * from './order-item';
 export * from './order-item-buyer-info';
 export * from './order-items-buyer-info-list';
+export * from './order-items-inner';
 export * from './order-items-list';
 export * from './order-regulated-info';
 export * from './orders-list';

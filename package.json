@@ -23,7 +23,7 @@
   "dependencies": {},
   "devDependencies": {
     "@jest/types": "^28.1.0",
-    "@knodes/typedoc-plugin-monorepo-readmes": "^0.22.5",
+    "@knodes/typedoc-plugin-monorepo-readmes": "^0.22.6",
     "@lerna-lite/cli": "^1.5.1",
     "@tsconfig/node14": "^1.0.2",
     "@types/jest": "^28.1.3",

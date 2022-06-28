@@ -17,6 +17,13 @@ export const clientRateLimits: RateLimit[] = [
     rate: 10,
     burst: 20,
   },
+  {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/products/fees/v0/feesEstimate$'),
+    rate: 1,
+    burst: 1,
+  },
 ]
 
 export class ProductFeesApiClient extends FeesApi {

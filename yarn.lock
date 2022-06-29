@@ -2400,10 +2400,10 @@ axios-logger@^2.6.1:
     chalk "^4.1.0"
     dateformat "^3.0.3"
 
-axios-retry@^3.2.5:
-  version "3.2.5"
-  resolved "https://registry.yarnpkg.com/axios-retry/-/axios-retry-3.2.5.tgz#64952992837c7d9a12eec156a2694a7945f60895"
-  integrity sha512-a8umkKbfIkTiYJQLx3v3TzKM85TGKB8ZQYz4zwykt2fpO64TsRlUhjaPaAb3fqMWCXFm2YhWcd8V5FHDKO9bSA==
+axios-retry@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/axios-retry/-/axios-retry-3.3.0.tgz#959603ef12e94fb8ed816314232c7da94389698d"
+  integrity sha512-lKAk/qIkpYxscEooNPB6Yip3aPNcNJ+cAiU1eiTo9vCh+gYPX482K4lfYubPXwbVvmNM4cakAsfN171nmSHkdg==
   dependencies:
     "@babel/runtime" "^7.15.4"
     is-retry-allowed "^2.2.0"

@@ -1407,19 +1407,19 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@knodes/typedoc-plugin-monorepo-readmes@^0.22.6":
-  version "0.22.6"
-  resolved "https://registry.yarnpkg.com/@knodes/typedoc-plugin-monorepo-readmes/-/typedoc-plugin-monorepo-readmes-0.22.6.tgz#61bd85d5465614ff78d636c131ed6c45115a6137"
-  integrity sha512-mGvvMr5WSK/8UnhLYcIw6hZAgE5B7HYFe6epiTpP1IEJvNuyt7rgLk4nNS0OLQjJtaES+JvsAw/7y2nSWIp1Ig==
+"@knodes/typedoc-plugin-monorepo-readmes@^0.22.7":
+  version "0.22.7"
+  resolved "https://registry.yarnpkg.com/@knodes/typedoc-plugin-monorepo-readmes/-/typedoc-plugin-monorepo-readmes-0.22.7.tgz#5b05ee2ffc2fb37e3bb6930170914cad7aafda0b"
+  integrity sha512-y0zecY9siA7bMrypiHScBQd3aLmNV+6Spyn8laqknStyZs+LSVbFdKJ3VvurkMIC9FpHwtcfth0stHk9zrxUQA==
   dependencies:
-    "@knodes/typedoc-pluginutils" "~0.22.6"
+    "@knodes/typedoc-pluginutils" "~0.22.7"
     find-up "^4.1.0"
     lodash "^4.17.21"
 
-"@knodes/typedoc-pluginutils@~0.22.6":
-  version "0.22.6"
-  resolved "https://registry.yarnpkg.com/@knodes/typedoc-pluginutils/-/typedoc-pluginutils-0.22.6.tgz#1412f467ed45c11636a3bf7ab026ee9fbfe3f147"
-  integrity sha512-Da74Kp2dxhYGmhlzvFaO3fe5hiYugZ8NzZbipVD3N1wa2gv0RoY4DduhEcgg2ettoTkaQU2Asjw+Y4kJYXjXCg==
+"@knodes/typedoc-pluginutils@~0.22.7":
+  version "0.22.7"
+  resolved "https://registry.yarnpkg.com/@knodes/typedoc-pluginutils/-/typedoc-pluginutils-0.22.7.tgz#a158d46f09909a95d7d71b97008ddc90ec5aa777"
+  integrity sha512-VAxpQNfyghintegU9Ky3vJLKQBSFXRP3rs6JclHpJloGKKAAGV6WweCDrFvFzZ4a08LkXSpqIMLmmuFjKLELOg==
   dependencies:
     lodash "^4.17.21"
     pkg-up "^3.1.0"

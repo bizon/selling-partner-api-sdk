@@ -16,7 +16,7 @@
 import { BuyerTaxInfo } from './buyer-tax-info';
 
 /**
- * Buyer information
+ * Buyer information.
  * @export
  * @interface BuyerInfo
  */

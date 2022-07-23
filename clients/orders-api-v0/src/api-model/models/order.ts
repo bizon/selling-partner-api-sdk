@@ -47,7 +47,7 @@ export interface Order {
      */
     'PurchaseDate': string;
     /**
-     * The date when the order was last updated.  Note: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.
+     * The date when the order was last updated.  __Note__: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.
      * @type {string}
      * @memberof Order
      */
@@ -149,13 +149,13 @@ export interface Order {
      */
     'OrderType'?: OrderOrderTypeEnum;
     /**
-     * The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  Note: EarliestShipDate might not be returned for orders placed before February 1, 2013.
+     * The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.
      * @type {string}
      * @memberof Order
      */
     'EarliestShipDate'?: string;
     /**
-     * The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  Note: LatestShipDate might not be returned for orders placed before February 1, 2013.
+     * The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.
      * @type {string}
      * @memberof Order
      */

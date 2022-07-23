@@ -35,7 +35,7 @@ export interface OrderRegulatedInfo {
      */
     'RegulatedInformation': RegulatedInformation;
     /**
-     * Whether the order requires attaching a dosage information label when shipped.
+     * When true, the order requires attaching a dosage information label when shipped.
      * @type {boolean}
      * @memberof OrderRegulatedInfo
      */

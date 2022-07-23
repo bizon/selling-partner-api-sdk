@@ -15,7 +15,7 @@
 
 
 /**
- * the status of the shipment of the order to be updated
+ * The shipment status to apply.
  * @export
  * @enum {string}
  */

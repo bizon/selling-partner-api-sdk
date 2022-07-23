@@ -29,7 +29,7 @@ export interface RegulatedOrderVerificationStatus {
      */
     'Status': VerificationStatus;
     /**
-     * Whether the regulated information provided in the order requires a review by the merchant.
+     * When true, the regulated information provided in the order requires a review by the merchant.
      * @type {boolean}
      * @memberof RegulatedOrderVerificationStatus
      */

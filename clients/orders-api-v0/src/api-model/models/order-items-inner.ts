@@ -21,13 +21,13 @@
  */
 export interface OrderItemsInner {
     /**
-     * the unique identifier for the order item
+     * The unique identifier of the order item.
      * @type {string}
      * @memberof OrderItemsInner
      */
     'orderItemId'?: string;
     /**
-     * the quantity of items that needs an update of the shipment status
+     * The quantity for which to update the shipment status.
      * @type {number}
      * @memberof OrderItemsInner
      */

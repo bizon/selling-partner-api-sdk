@@ -98,7 +98,7 @@ async function generateClientVersion(modelFilePath: string) {
 
   logger.info('generating…', {packageName})
 
-  await fs.rm(`${clientDirectoryPath}/src/api-model`, {recursive: true})
+  await fs.rm(`${clientDirectoryPath}/src/api-model`, {recursive: true, force: true})
   await exec(
     `yarn openapi-generator-cli generate \
       --additional-properties=supportsES6=true,useSingleRequestParameter=true,withSeparateModelsAndApi=true,modelPackage=models,apiPackage=api \

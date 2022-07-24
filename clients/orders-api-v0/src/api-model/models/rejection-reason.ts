@@ -27,7 +27,7 @@ export interface RejectionReason {
      */
     'RejectionReasonId': string;
     /**
-     * The human-readable description of this rejection reason.
+     * The description of this rejection reason.
      * @type {string}
      * @memberof RejectionReason
      */

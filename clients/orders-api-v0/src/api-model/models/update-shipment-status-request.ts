@@ -17,13 +17,13 @@ import { OrderItemsInner } from './order-items-inner';
 import { ShipmentStatus } from './shipment-status';
 
 /**
- * Request to update the status of shipment of an order.
+ * The request body for the updateShipmentStatus operation.
  * @export
  * @interface UpdateShipmentStatusRequest
  */
 export interface UpdateShipmentStatusRequest {
     /**
-     * the unobfuscated marketplace ID
+     * The unobfuscated marketplace identifier.
      * @type {string}
      * @memberof UpdateShipmentStatusRequest
      */
@@ -35,7 +35,7 @@ export interface UpdateShipmentStatusRequest {
      */
     'shipmentStatus': ShipmentStatus;
     /**
-     * the list of order items and quantities when the seller wants to partially update the shipment status of the order
+     * For partial shipment status updates, the list of order items and quantities to be updated.
      * @type {Array<OrderItemsInner>}
      * @memberof UpdateShipmentStatusRequest
      */

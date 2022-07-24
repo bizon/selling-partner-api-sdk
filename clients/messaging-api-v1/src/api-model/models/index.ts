@@ -28,6 +28,8 @@ export * from './get-messaging-actions-for-order-response-embedded';
 export * from './get-messaging-actions-for-order-response-links';
 export * from './get-schema-response';
 export * from './get-schema-response-links';
+export * from './invoice-request';
+export * from './invoice-response';
 export * from './link-object';
 export * from './messaging-action';
 export * from './model-error';

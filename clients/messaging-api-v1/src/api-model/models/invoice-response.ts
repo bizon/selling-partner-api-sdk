@@ -13,30 +13,17 @@
  */
 
 
-import { GetSchemaResponseLinks } from './get-schema-response-links';
 
 /**
- * 
+ * The response schema for the sendInvoice operation.
  * @export
- * @interface GetSchemaResponse
+ * @interface InvoiceResponse
  */
-export interface GetSchemaResponse {
-    /**
-     * 
-     * @type {GetSchemaResponseLinks}
-     * @memberof GetSchemaResponse
-     */
-    '_links'?: GetSchemaResponseLinks;
-    /**
-     * A JSON schema document describing the expected payload of the action. This object can be validated against <a href=http://json-schema.org/draft-04/schema>http://json-schema.org/draft-04/schema</a>.
-     * @type {{ [key: string]: object; }}
-     * @memberof GetSchemaResponse
-     */
-    'payload'?: { [key: string]: object; };
+export interface InvoiceResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
      * @type {Array<Error>}
-     * @memberof GetSchemaResponse
+     * @memberof InvoiceResponse
      */
     'errors'?: Array<Error>;
 }

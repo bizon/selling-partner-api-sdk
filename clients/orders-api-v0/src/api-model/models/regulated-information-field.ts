@@ -27,19 +27,19 @@ export interface RegulatedInformationField {
      */
     'FieldId': string;
     /**
-     * The human-readable name for the field.
+     * The name for the field.
      * @type {string}
      * @memberof RegulatedInformationField
      */
     'FieldLabel': string;
     /**
-     * The type of field the field.
+     * The type of field.
      * @type {string}
      * @memberof RegulatedInformationField
      */
     'FieldType': RegulatedInformationFieldFieldTypeEnum;
     /**
-     * The content of the field as collected in regulatory form. Note that FileAttachment type fields will contain an URL to download the attachment here.
+     * The content of the field as collected in regulatory form. Note that FileAttachment type fields will contain a URL to download the attachment here.
      * @type {string}
      * @memberof RegulatedInformationField
      */

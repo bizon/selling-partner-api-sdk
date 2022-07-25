@@ -5,6 +5,9 @@
   "scripts": {
     "check:ts": "yarn tsc --noEmit"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "@openapitools/openapi-generator-cli": "^2.5.1",
     "bluebird": "^3.7.2",

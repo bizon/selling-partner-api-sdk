@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/uploads-api-2020-11-01@1.8.6...@sp-api-sdk/uploads-api-2020-11-01@1.9.0) (2022-07-25)
+
+### Features
+
+* **clients:** update models as of 2022-07-23 ([#460](https://github.com/bizon/selling-partner-api-sdk/issues/460)) ([e1857ae](https://github.com/bizon/selling-partner-api-sdk/commit/e1857ae97b4b2c4a747a5cd56f973083180df465))
+
 ## [1.8.6](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/uploads-api-2020-11-01@1.8.5...@sp-api-sdk/uploads-api-2020-11-01@1.8.6) (2022-06-14)
 
 **Note:** Version bump only for package @sp-api-sdk/uploads-api-2020-11-01

@@ -6,7 +6,6 @@
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
-  "typedocMain": "./index.ts",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -49,5 +48,8 @@
     "sp api",
     "sp sdk",
     "sales api"
-  ]
+  ],
+  "typedoc": {
+    "entryPoint": "./index.ts"
+  }
 }

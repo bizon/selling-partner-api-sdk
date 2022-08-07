@@ -12,13 +12,24 @@ const colors = [
 
 export const logger = winston.createLogger({
   format: winston.format.printf((info) => {
-    const value = (info.packageName as string)
-      .split('')
-      .reduce((acc: number, string: string) => acc + string.codePointAt(0)!, 0)
+    const moduleName: string = info.packageName ?? info.notificationName ?? ''
+
+    const value = [...moduleName].reduce(
+      (acc: number, string: string) => acc + string.codePointAt(0)!,
+      0,
+    )
 
     const color = colors[value % colors.length]
 
-    return `${color(`@sp-api-sdk/${info.packageName}`)}: ${info.message}`
+    if (info.packageName) {
+      return `${color(`@sp-api-sdk/${moduleName}`)}: ${info.message}`
+    }
+
+    if (info.notificationName) {
+      return `${color(`@sp-api-sdk/notifications: ${moduleName}`)}: ${info.message}`
+    }
+
+    return `${color('@sp-api-sdk')}: ${info.message}`
   }),
   transports: [new winston.transports.Console()],
 })

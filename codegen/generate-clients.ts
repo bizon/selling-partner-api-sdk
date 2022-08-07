@@ -1,8 +1,5 @@
-#!/usr/bin/env node
-
 import fs from 'fs/promises'
 import os from 'os'
-import process from 'process'
 import {parse as parsePath} from 'path'
 import {promisify} from 'util'
 import * as childProcess from 'child_process'
@@ -239,10 +236,7 @@ async function generateClientVersion(modelFilePath: string) {
   logger.info(`done in ${(Date.now() - startedAt) / 1000}s`, {packageName})
 }
 
-;(async () => {
-  await fs.rm('selling-partner-api-models', {recursive: true, force: true})
-  await exec('git clone https://github.com/amzn/selling-partner-api-models')
-
+export async function generateClients() {
   const modelFilePaths = await globby('*/*.json', {
     onlyFiles: true,
     cwd: 'selling-partner-api-models/models',
@@ -255,9 +249,4 @@ async function generateClientVersion(modelFilePath: string) {
       concurrency: os.cpus().length,
     },
   )
-
-  await fs.rm('selling-partner-api-models', {recursive: true})
-})().catch((error) => {
-  console.log(error)
-  process.exit(1)
-})
+}

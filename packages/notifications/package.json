@@ -1,0 +1,46 @@
+{
+  "name": "@sp-api-sdk/notifications",
+  "author": "Bertrand Marron <bertrand@bizon.solutions>",
+  "description": "Selling Parner API Notifications types",
+  "version": "1.0.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
+  "typedocMain": "./src/index.ts",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "scripts": {
+    "check:ts": "yarn tsc --noEmit",
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:es": "tsc -p tsconfig.es.json",
+    "build": "yarn build:cjs && yarn build:es",
+    "clean": "rimraf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bizon/selling-partner-api-sdk.git",
+    "directory": "packages/notifications"
+  },
+  "bugs": {
+    "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
+  },
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/packages/notifications",
+  "keywords": [
+    "bizon",
+    "amazon",
+    "spa sdk",
+    "sp api",
+    "mws",
+    "selling partner api",
+    "marketplace webservice"
+  ]
+}

@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/vendor-direct-fulfillment-payments-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Direct Fulfillment Payments provides programmatic access to a direct fulfillment vendor's invoice data.",
-  "version": "1.8.7",
+  "version": "1.8.8",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -26,8 +26,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^1.9.19",
-    "@sp-api-sdk/common": "^1.9.5",
+    "@sp-api-sdk/auth": "^1.9.20",
+    "@sp-api-sdk/common": "^1.9.6",
     "axios": "^0.27.2"
   },
   "repository": {

@@ -6,11 +6,7 @@
     "downlevelIteration": true,
     "importHelpers": true,
     "noEmitHelpers": true,
-    "incremental": true,
-    "lib": [
-      "ES2020",
-      "DOM"
-    ]
+    "incremental": true
   },
   "typedocOptions": {
     "name": "Selling Partner API SDK for JavaScript",

@@ -13,19 +13,22 @@
  */
 
 
-import { UpdateVerificationStatusRequestBody } from './update-verification-status-request-body';
 
 /**
- * The request body for the updateVerificationStatus operation.
+ * The status of the electronic invoice.
  * @export
- * @interface UpdateVerificationStatusRequest
+ * @enum {string}
  */
-export interface UpdateVerificationStatusRequest {
-    /**
-     * 
-     * @type {UpdateVerificationStatusRequestBody}
-     * @memberof UpdateVerificationStatusRequest
-     */
-    'regulatedOrderVerificationStatus': UpdateVerificationStatusRequestBody;
-}
+
+export const ElectronicInvoiceStatus = {
+    NotRequired: 'NotRequired',
+    NotFound: 'NotFound',
+    Processing: 'Processing',
+    Errored: 'Errored',
+    Accepted: 'Accepted'
+} as const;
+
+export type ElectronicInvoiceStatus = typeof ElectronicInvoiceStatus[keyof typeof ElectronicInvoiceStatus];
+
+
 

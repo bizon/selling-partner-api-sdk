@@ -17,6 +17,8 @@ import { Address } from './address';
 import { AutomatedShippingSettings } from './automated-shipping-settings';
 import { BuyerInfo } from './buyer-info';
 import { BuyerTaxInformation } from './buyer-tax-information';
+import { EasyShipShipmentStatus } from './easy-ship-shipment-status';
+import { ElectronicInvoiceStatus } from './electronic-invoice-status';
 import { FulfillmentInstruction } from './fulfillment-instruction';
 import { MarketplaceTaxInfo } from './marketplace-tax-info';
 import { Money } from './money';
@@ -131,11 +133,11 @@ export interface Order {
      */
     'ShipmentServiceLevelCategory'?: string;
     /**
-     * The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.  Possible values: PendingPickUp, LabelCanceled, PickedUp, OutForDelivery, Damaged, Delivered, RejectedByBuyer, Undeliverable, ReturnedToSeller, ReturningToSeller.
-     * @type {string}
+     * 
+     * @type {EasyShipShipmentStatus}
      * @memberof Order
      */
-    'EasyShipShipmentStatus'?: string;
+    'EasyShipShipmentStatus'?: EasyShipShipmentStatus;
     /**
      * Custom ship label for Checkout by Amazon (CBA).
      * @type {string}
@@ -304,6 +306,12 @@ export interface Order {
      * @memberof Order
      */
     'HasRegulatedItems'?: boolean;
+    /**
+     * 
+     * @type {ElectronicInvoiceStatus}
+     * @memberof Order
+     */
+    'ElectronicInvoiceStatus'?: ElectronicInvoiceStatus;
 }
 
 export const OrderOrderStatusEnum = {

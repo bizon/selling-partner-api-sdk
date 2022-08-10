@@ -5,6 +5,8 @@ export * from './buyer-info';
 export * from './buyer-requested-cancel';
 export * from './buyer-tax-info';
 export * from './buyer-tax-information';
+export * from './easy-ship-shipment-status';
+export * from './electronic-invoice-status';
 export * from './fulfillment-instruction';
 export * from './get-order-address-response';
 export * from './get-order-buyer-info-response';

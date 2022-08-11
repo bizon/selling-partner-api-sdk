@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Services
- * With the Services API, you can build applications that help service providers get and modify their service orders.
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -28,7 +28,7 @@ export interface RescheduleAppointmentRequest {
      */
     'appointmentTime': AppointmentTimeInput;
     /**
-     * Appointment reschedule reason code.
+     * The appointment reschedule reason code.
      * @type {string}
      * @memberof RescheduleAppointmentRequest
      */

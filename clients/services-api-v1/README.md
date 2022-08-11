@@ -1,6 +1,6 @@
 # `services-api-v1`
 
-With the Services API, you can build applications that help service providers get and modify their service orders.
+With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
 
 [![npm version](https://badgen.net/npm/v/@sp-api-sdk/services-api-v1)](https://www.npmjs.com/package/@sp-api-sdk/services-api-v1)
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)

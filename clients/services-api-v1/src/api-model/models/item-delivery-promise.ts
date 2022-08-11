@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Services
- * With the Services API, you can build applications that help service providers get and modify their service orders.
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -21,13 +21,13 @@
  */
 export interface ItemDeliveryPromise {
     /**
-     * The date and time of the start of the promised delivery window, in ISO 8601 format.
+     * The date and time of the start of the promised delivery window in ISO 8601 format.
      * @type {string}
      * @memberof ItemDeliveryPromise
      */
     'startTime'?: string;
     /**
-     * The date and time of the end of the promised delivery window, in ISO 8601 format.
+     * The date and time of the end of the promised delivery window in ISO 8601 format.
      * @type {string}
      * @memberof ItemDeliveryPromise
      */

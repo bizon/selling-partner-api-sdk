@@ -45,6 +45,83 @@ export const clientRateLimits: RateLimit[] = [
     rate: 5,
     burst: 20,
   },
+  {
+    method: 'put',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/service/v1/serviceJobs/[^/]*/resources$'),
+    rate: 1,
+    burst: 2,
+  },
+  {
+    method: 'put',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/service/v1/serviceJobs/[^/]*/fulfillment$'),
+    rate: 5,
+    burst: 20,
+  },
+  {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/service/v1/serviceResources/[^/]*/capacity/range$'),
+    rate: 5,
+    burst: 20,
+  },
+  {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/service/v1/serviceResources/[^/]*/capacity/fixed$'),
+    rate: 5,
+    burst: 20,
+  },
+  {
+    method: 'put',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/service/v1/serviceResources/[^/]*/schedules$'),
+    rate: 5,
+    burst: 20,
+  },
+  {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/service/v1/reservation$'),
+    rate: 5,
+    burst: 20,
+  },
+  {
+    method: 'put',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/service/v1/reservation/[^/]*$'),
+    rate: 5,
+    burst: 20,
+  },
+  {
+    method: 'delete',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/service/v1/reservation/[^/]*$'),
+    rate: 5,
+    burst: 20,
+  },
+  {
+    method: 'get',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/service/v1/serviceJobs/[^/]*/appointmentSlots$'),
+    rate: 5,
+    burst: 20,
+  },
+  {
+    method: 'get',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/service/v1/appointmentSlots$'),
+    rate: 20,
+    burst: 40,
+  },
+  {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/service/v1/documents$'),
+    rate: 5,
+    burst: 20,
+  },
 ]
 
 export class ServicesApiClient extends ServiceApi {

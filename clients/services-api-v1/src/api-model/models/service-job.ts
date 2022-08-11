@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Services
- * With the Services API, you can build applications that help service providers get and modify their service orders.
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -29,7 +29,7 @@ import { ServiceLocation } from './service-location';
  */
 export interface ServiceJob {
     /**
-     * The date and time of the creation of the job, in ISO 8601 format.
+     * The date and time of the creation of the job in ISO 8601 format.
      * @type {string}
      * @memberof ServiceJob
      */
@@ -88,6 +88,12 @@ export interface ServiceJob {
      * @memberof ServiceJob
      */
     'marketplaceId'?: string;
+    /**
+     * The Amazon-defined identifier for the region scope.
+     * @type {string}
+     * @memberof ServiceJob
+     */
+    'storeId'?: string;
     /**
      * 
      * @type {Buyer}

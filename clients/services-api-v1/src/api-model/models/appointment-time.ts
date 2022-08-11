@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Services
- * With the Services API, you can build applications that help service providers get and modify their service orders.
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -21,7 +21,7 @@
  */
 export interface AppointmentTime {
     /**
-     * The date and time of the start of the appointment window, in ISO 8601 format.
+     * The date and time of the start of the appointment window in ISO 8601 format.
      * @type {string}
      * @memberof AppointmentTime
      */

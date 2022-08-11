@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Services
- * With the Services API, you can build applications that help service providers get and modify their service orders.
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -16,7 +16,7 @@
 import { ServiceJob } from './service-job';
 
 /**
- * The payload for the GetJobs operation.
+ * The payload for the `getServiceJobs` operation.
  * @export
  * @interface JobListing
  */
@@ -28,13 +28,13 @@ export interface JobListing {
      */
     'totalResultSize'?: number;
     /**
-     * A generated string used to pass information to your next request.If nextPageToken is returned, pass the value of nextPageToken to the pageToken to get next results.
+     * A generated string used to pass information to your next request. If `nextPageToken` is returned, pass the value of `nextPageToken` to the `pageToken` to get next results.
      * @type {string}
      * @memberof JobListing
      */
     'nextPageToken'?: string;
     /**
-     * A generated string used to pass information to your next request.If previousPageToken is returned, pass the value of previousPageToken to the pageToken to get previous page results.
+     * A generated string used to pass information to your next request. If `previousPageToken` is returned, pass the value of `previousPageToken` to the `pageToken` to get previous page results.
      * @type {string}
      * @memberof JobListing
      */

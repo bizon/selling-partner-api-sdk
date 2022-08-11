@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Services
- * With the Services API, you can build applications that help service providers get and modify their service orders.
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -23,17 +23,55 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { AddAppointmentRequest } from '../models';
 // @ts-ignore
+import { AssignAppointmentResourcesRequest } from '../models';
+// @ts-ignore
+import { AssignAppointmentResourcesResponse } from '../models';
+// @ts-ignore
+import { CancelReservationResponse } from '../models';
+// @ts-ignore
 import { CancelServiceJobByServiceJobIdResponse } from '../models';
 // @ts-ignore
 import { CompleteServiceJobByServiceJobIdResponse } from '../models';
+// @ts-ignore
+import { CreateReservationRequest } from '../models';
+// @ts-ignore
+import { CreateReservationResponse } from '../models';
+// @ts-ignore
+import { CreateServiceDocumentUploadDestination } from '../models';
+// @ts-ignore
+import { FixedSlotCapacity } from '../models';
+// @ts-ignore
+import { FixedSlotCapacityErrors } from '../models';
+// @ts-ignore
+import { FixedSlotCapacityQuery } from '../models';
+// @ts-ignore
+import { GetAppointmentSlotsResponse } from '../models';
 // @ts-ignore
 import { GetServiceJobByServiceJobIdResponse } from '../models';
 // @ts-ignore
 import { GetServiceJobsResponse } from '../models';
 // @ts-ignore
+import { RangeSlotCapacity } from '../models';
+// @ts-ignore
+import { RangeSlotCapacityErrors } from '../models';
+// @ts-ignore
+import { RangeSlotCapacityQuery } from '../models';
+// @ts-ignore
 import { RescheduleAppointmentRequest } from '../models';
 // @ts-ignore
+import { ServiceUploadDocument } from '../models';
+// @ts-ignore
+import { SetAppointmentFulfillmentDataRequest } from '../models';
+// @ts-ignore
 import { SetAppointmentResponse } from '../models';
+// @ts-ignore
+import { UpdateReservationRequest } from '../models';
+// @ts-ignore
+import { UpdateReservationResponse } from '../models';
+// @ts-ignore
+import { UpdateScheduleRequest } from '../models';
+// @ts-ignore
+import { UpdateScheduleResponse } from '../models';
 /**
  * ServiceApi - axios parameter creator
  * @export
@@ -41,7 +79,7 @@ import { SetAppointmentResponse } from '../models';
 export const ServiceApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Adds an appointment to the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Adds an appointment to the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} serviceJobId An Amazon defined service job identifier.
          * @param {AddAppointmentRequest} body Add appointment operation input details.
          * @param {*} [options] Override http request option.
@@ -80,7 +118,90 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * Cancels the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Assigns new resource(s) or overwrite/update the existing one(s) to a service job appointment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API.
+         * @param {string} appointmentId An Amazon-defined identifier of active service job appointment.
+         * @param {AssignAppointmentResourcesRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        assignAppointmentResources: async (serviceJobId: string, appointmentId: string, body: AssignAppointmentResourcesRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'serviceJobId' is not null or undefined
+            assertParamExists('assignAppointmentResources', 'serviceJobId', serviceJobId)
+            // verify required parameter 'appointmentId' is not null or undefined
+            assertParamExists('assignAppointmentResources', 'appointmentId', appointmentId)
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('assignAppointmentResources', 'body', body)
+            const localVarPath = `/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources`
+                .replace(`{${"serviceJobId"}}`, encodeURIComponent(String(serviceJobId)))
+                .replace(`{${"appointmentId"}}`, encodeURIComponent(String(appointmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Cancel a reservation.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} reservationId Reservation Identifier
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        cancelReservation: async (reservationId: string, marketplaceIds: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'reservationId' is not null or undefined
+            assertParamExists('cancelReservation', 'reservationId', reservationId)
+            // verify required parameter 'marketplaceIds' is not null or undefined
+            assertParamExists('cancelReservation', 'marketplaceIds', marketplaceIds)
+            const localVarPath = `/service/v1/reservation/{reservationId}`
+                .replace(`{${"reservationId"}}`, encodeURIComponent(String(reservationId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (marketplaceIds) {
+                localVarQueryParameter['marketplaceIds'] = marketplaceIds.join(COLLECTION_FORMATS.csv);
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Cancels the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} serviceJobId An Amazon defined service job identifier.
          * @param {string} cancellationReasonCode A cancel reason code that specifies the reason for cancelling a service job.
          * @param {*} [options] Override http request option.
@@ -120,7 +241,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * Completes the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Completes the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} serviceJobId An Amazon defined service job identifier.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -153,7 +274,296 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * Gets service job details for the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 20 | 40 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Create a reservation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {CreateReservationRequest} body Reservation details
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createReservation: async (marketplaceIds: Array<string>, body: CreateReservationRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'marketplaceIds' is not null or undefined
+            assertParamExists('createReservation', 'marketplaceIds', marketplaceIds)
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('createReservation', 'body', body)
+            const localVarPath = `/service/v1/reservation`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (marketplaceIds) {
+                localVarQueryParameter['marketplaceIds'] = marketplaceIds.join(COLLECTION_FORMATS.csv);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Creates an upload destination.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {ServiceUploadDocument} body Upload document operation input details.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createServiceDocumentUploadDestination: async (body: ServiceUploadDocument, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('createServiceDocumentUploadDestination', 'body', body)
+            const localVarPath = `/service/v1/documents`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Gets appointment slots as per the service context specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 20 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} asin ASIN associated with the service.
+         * @param {string} storeId Store identifier defining the region scope to retrive appointment slots.
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace for which appointment slots are queried
+         * @param {string} [startTime] A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration.
+         * @param {string} [endTime] A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAppointmentSlots: async (asin: string, storeId: string, marketplaceIds: Array<string>, startTime?: string, endTime?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'asin' is not null or undefined
+            assertParamExists('getAppointmentSlots', 'asin', asin)
+            // verify required parameter 'storeId' is not null or undefined
+            assertParamExists('getAppointmentSlots', 'storeId', storeId)
+            // verify required parameter 'marketplaceIds' is not null or undefined
+            assertParamExists('getAppointmentSlots', 'marketplaceIds', marketplaceIds)
+            const localVarPath = `/service/v1/appointmentSlots`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (asin !== undefined) {
+                localVarQueryParameter['asin'] = asin;
+            }
+
+            if (storeId !== undefined) {
+                localVarQueryParameter['storeId'] = storeId;
+            }
+
+            if (marketplaceIds) {
+                localVarQueryParameter['marketplaceIds'] = marketplaceIds.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (startTime !== undefined) {
+                localVarQueryParameter['startTime'] = startTime;
+            }
+
+            if (endTime !== undefined) {
+                localVarQueryParameter['endTime'] = endTime;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Gets appointment slots for the service associated with the service job id specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} serviceJobId A service job identifier to retrive appointment slots for associated service.
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {string} [startTime] A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration.
+         * @param {string} [endTime] A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAppointmmentSlotsByJobId: async (serviceJobId: string, marketplaceIds: Array<string>, startTime?: string, endTime?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'serviceJobId' is not null or undefined
+            assertParamExists('getAppointmmentSlotsByJobId', 'serviceJobId', serviceJobId)
+            // verify required parameter 'marketplaceIds' is not null or undefined
+            assertParamExists('getAppointmmentSlotsByJobId', 'marketplaceIds', marketplaceIds)
+            const localVarPath = `/service/v1/serviceJobs/{serviceJobId}/appointmentSlots`
+                .replace(`{${"serviceJobId"}}`, encodeURIComponent(String(serviceJobId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (marketplaceIds) {
+                localVarQueryParameter['marketplaceIds'] = marketplaceIds.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (startTime !== undefined) {
+                localVarQueryParameter['startTime'] = startTime;
+            }
+
+            if (endTime !== undefined) {
+                localVarQueryParameter['endTime'] = endTime;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Provides capacity in fixed-size slots.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} resourceId Resource Identifier.
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {FixedSlotCapacityQuery} body Request body.
+         * @param {string} [nextPageToken] Next page token returned in the response of your previous request.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFixedSlotCapacity: async (resourceId: string, marketplaceIds: Array<string>, body: FixedSlotCapacityQuery, nextPageToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'resourceId' is not null or undefined
+            assertParamExists('getFixedSlotCapacity', 'resourceId', resourceId)
+            // verify required parameter 'marketplaceIds' is not null or undefined
+            assertParamExists('getFixedSlotCapacity', 'marketplaceIds', marketplaceIds)
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('getFixedSlotCapacity', 'body', body)
+            const localVarPath = `/service/v1/serviceResources/{resourceId}/capacity/fixed`
+                .replace(`{${"resourceId"}}`, encodeURIComponent(String(resourceId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (marketplaceIds) {
+                localVarQueryParameter['marketplaceIds'] = marketplaceIds.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (nextPageToken !== undefined) {
+                localVarQueryParameter['nextPageToken'] = nextPageToken;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Provides capacity slots in a format similar to availability records.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} resourceId Resource Identifier.
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {RangeSlotCapacityQuery} body Request body.
+         * @param {string} [nextPageToken] Next page token returned in the response of your previous request.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getRangeSlotCapacity: async (resourceId: string, marketplaceIds: Array<string>, body: RangeSlotCapacityQuery, nextPageToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'resourceId' is not null or undefined
+            assertParamExists('getRangeSlotCapacity', 'resourceId', resourceId)
+            // verify required parameter 'marketplaceIds' is not null or undefined
+            assertParamExists('getRangeSlotCapacity', 'marketplaceIds', marketplaceIds)
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('getRangeSlotCapacity', 'body', body)
+            const localVarPath = `/service/v1/serviceResources/{resourceId}/capacity/range`
+                .replace(`{${"resourceId"}}`, encodeURIComponent(String(resourceId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (marketplaceIds) {
+                localVarQueryParameter['marketplaceIds'] = marketplaceIds.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (nextPageToken !== undefined) {
+                localVarQueryParameter['nextPageToken'] = nextPageToken;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Gets details of service job indicated by the provided `serviceJobID`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 20 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} serviceJobId A service job identifier.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -186,24 +596,27 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * Gets service job details for the specified filter query.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 40 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {Array<string>} marketplaceIds Used to select jobs that were placed in the specified marketplaces. 
-         * @param {Array<string>} [serviceOrderIds] List of service order ids for the query you want to perform.Max values supported 20. 
+         * Gets service job details for the specified filter query.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {Array<string>} marketplaceIds Used to select jobs that were placed in the specified marketplaces.
+         * @param {Array<string>} [serviceOrderIds] List of service order ids for the query you want to perform.Max values supported 20.
          * @param {Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>} [serviceJobStatus] A list of one or more job status by which to filter the list of jobs.
          * @param {string} [pageToken] String returned in the response of your previous request.
-         * @param {number} [pageSize] A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. 
+         * @param {number} [pageSize] A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20.
          * @param {'JOB_DATE' | 'JOB_STATUS'} [sortField] Sort fields on which you want to sort the output.
          * @param {'ASC' | 'DESC'} [sortOrder] Sort order for the query you want to perform.
-         * @param {string} [createdAfter] A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. 
-         * @param {string} [createdBefore] A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. 
-         * @param {string} [lastUpdatedAfter] A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. 
-         * @param {string} [lastUpdatedBefore] A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. 
-         * @param {string} [scheduleStartDate] A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. 
-         * @param {string} [scheduleEndDate] A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. 
+         * @param {string} [createdAfter] A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
+         * @param {string} [createdBefore] A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format.
+         * @param {string} [lastUpdatedAfter] A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if &#x60;createdAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
+         * @param {string} [lastUpdatedBefore] A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format.
+         * @param {string} [scheduleStartDate] A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date.
+         * @param {string} [scheduleEndDate] A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date.
+         * @param {Array<string>} [asins] List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20.
+         * @param {Array<string>} [requiredSkills] A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20.
+         * @param {Array<string>} [storeIds] List of Amazon-defined identifiers for the region scope. Max values supported is 50.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getServiceJobs: async (marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>, pageToken?: string, pageSize?: number, sortField?: 'JOB_DATE' | 'JOB_STATUS', sortOrder?: 'ASC' | 'DESC', createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getServiceJobs: async (marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>, pageToken?: string, pageSize?: number, sortField?: 'JOB_DATE' | 'JOB_STATUS', sortOrder?: 'ASC' | 'DESC', createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, asins?: Array<string>, requiredSkills?: Array<string>, storeIds?: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('getServiceJobs', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/service/v1/serviceJobs`;
@@ -270,6 +683,18 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
                 localVarQueryParameter['marketplaceIds'] = marketplaceIds.join(COLLECTION_FORMATS.csv);
             }
 
+            if (asins) {
+                localVarQueryParameter['asins'] = asins.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (requiredSkills) {
+                localVarQueryParameter['requiredSkills'] = requiredSkills.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (storeIds) {
+                localVarQueryParameter['storeIds'] = storeIds.join(COLLECTION_FORMATS.csv);
+            }
+
 
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -282,7 +707,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * Reschedules an appointment for the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Reschedules an appointment for the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} serviceJobId An Amazon defined service job identifier.
          * @param {string} appointmentId An existing appointment identifier for the Service Job.
          * @param {RescheduleAppointmentRequest} body Reschedule appointment operation input details.
@@ -324,6 +749,141 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * Updates the appointment fulfillment data related to a given `jobID` and `appointmentID`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API.
+         * @param {string} appointmentId An Amazon-defined identifier of active service job appointment.
+         * @param {SetAppointmentFulfillmentDataRequest} body Appointment fulfillment data collection details.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        setAppointmentFulfillmentData: async (serviceJobId: string, appointmentId: string, body: SetAppointmentFulfillmentDataRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'serviceJobId' is not null or undefined
+            assertParamExists('setAppointmentFulfillmentData', 'serviceJobId', serviceJobId)
+            // verify required parameter 'appointmentId' is not null or undefined
+            assertParamExists('setAppointmentFulfillmentData', 'appointmentId', appointmentId)
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('setAppointmentFulfillmentData', 'body', body)
+            const localVarPath = `/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment`
+                .replace(`{${"serviceJobId"}}`, encodeURIComponent(String(serviceJobId)))
+                .replace(`{${"appointmentId"}}`, encodeURIComponent(String(appointmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Update a reservation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} reservationId Reservation Identifier
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {UpdateReservationRequest} body Reservation details
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateReservation: async (reservationId: string, marketplaceIds: Array<string>, body: UpdateReservationRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'reservationId' is not null or undefined
+            assertParamExists('updateReservation', 'reservationId', reservationId)
+            // verify required parameter 'marketplaceIds' is not null or undefined
+            assertParamExists('updateReservation', 'marketplaceIds', marketplaceIds)
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('updateReservation', 'body', body)
+            const localVarPath = `/service/v1/reservation/{reservationId}`
+                .replace(`{${"reservationId"}}`, encodeURIComponent(String(reservationId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (marketplaceIds) {
+                localVarQueryParameter['marketplaceIds'] = marketplaceIds.join(COLLECTION_FORMATS.csv);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Update the schedule of the given resource.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} resourceId Resource (store) Identifier
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {UpdateScheduleRequest} body Schedule details
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateSchedule: async (resourceId: string, marketplaceIds: Array<string>, body: UpdateScheduleRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'resourceId' is not null or undefined
+            assertParamExists('updateSchedule', 'resourceId', resourceId)
+            // verify required parameter 'marketplaceIds' is not null or undefined
+            assertParamExists('updateSchedule', 'marketplaceIds', marketplaceIds)
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('updateSchedule', 'body', body)
+            const localVarPath = `/service/v1/serviceResources/{resourceId}/schedules`
+                .replace(`{${"resourceId"}}`, encodeURIComponent(String(resourceId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (marketplaceIds) {
+                localVarQueryParameter['marketplaceIds'] = marketplaceIds.join(COLLECTION_FORMATS.csv);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -335,7 +895,7 @@ export const ServiceApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ServiceApiAxiosParamCreator(configuration)
     return {
         /**
-         * Adds an appointment to the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Adds an appointment to the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} serviceJobId An Amazon defined service job identifier.
          * @param {AddAppointmentRequest} body Add appointment operation input details.
          * @param {*} [options] Override http request option.
@@ -346,7 +906,30 @@ export const ServiceApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Cancels the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Assigns new resource(s) or overwrite/update the existing one(s) to a service job appointment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API.
+         * @param {string} appointmentId An Amazon-defined identifier of active service job appointment.
+         * @param {AssignAppointmentResourcesRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async assignAppointmentResources(serviceJobId: string, appointmentId: string, body: AssignAppointmentResourcesRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AssignAppointmentResourcesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.assignAppointmentResources(serviceJobId, appointmentId, body, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Cancel a reservation.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} reservationId Reservation Identifier
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async cancelReservation(reservationId: string, marketplaceIds: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelReservationResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.cancelReservation(reservationId, marketplaceIds, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Cancels the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} serviceJobId An Amazon defined service job identifier.
          * @param {string} cancellationReasonCode A cancel reason code that specifies the reason for cancelling a service job.
          * @param {*} [options] Override http request option.
@@ -357,7 +940,7 @@ export const ServiceApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Completes the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Completes the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} serviceJobId An Amazon defined service job identifier.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -367,7 +950,81 @@ export const ServiceApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Gets service job details for the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 20 | 40 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Create a reservation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {CreateReservationRequest} body Reservation details
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createReservation(marketplaceIds: Array<string>, body: CreateReservationRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateReservationResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createReservation(marketplaceIds, body, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Creates an upload destination.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {ServiceUploadDocument} body Upload document operation input details.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createServiceDocumentUploadDestination(body: ServiceUploadDocument, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateServiceDocumentUploadDestination>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createServiceDocumentUploadDestination(body, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Gets appointment slots as per the service context specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 20 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} asin ASIN associated with the service.
+         * @param {string} storeId Store identifier defining the region scope to retrive appointment slots.
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace for which appointment slots are queried
+         * @param {string} [startTime] A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration.
+         * @param {string} [endTime] A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getAppointmentSlots(asin: string, storeId: string, marketplaceIds: Array<string>, startTime?: string, endTime?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAppointmentSlotsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAppointmentSlots(asin, storeId, marketplaceIds, startTime, endTime, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Gets appointment slots for the service associated with the service job id specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} serviceJobId A service job identifier to retrive appointment slots for associated service.
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {string} [startTime] A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration.
+         * @param {string} [endTime] A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getAppointmmentSlotsByJobId(serviceJobId: string, marketplaceIds: Array<string>, startTime?: string, endTime?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAppointmentSlotsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAppointmmentSlotsByJobId(serviceJobId, marketplaceIds, startTime, endTime, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Provides capacity in fixed-size slots.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} resourceId Resource Identifier.
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {FixedSlotCapacityQuery} body Request body.
+         * @param {string} [nextPageToken] Next page token returned in the response of your previous request.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getFixedSlotCapacity(resourceId: string, marketplaceIds: Array<string>, body: FixedSlotCapacityQuery, nextPageToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FixedSlotCapacity>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getFixedSlotCapacity(resourceId, marketplaceIds, body, nextPageToken, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Provides capacity slots in a format similar to availability records.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} resourceId Resource Identifier.
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {RangeSlotCapacityQuery} body Request body.
+         * @param {string} [nextPageToken] Next page token returned in the response of your previous request.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getRangeSlotCapacity(resourceId: string, marketplaceIds: Array<string>, body: RangeSlotCapacityQuery, nextPageToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RangeSlotCapacity>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getRangeSlotCapacity(resourceId, marketplaceIds, body, nextPageToken, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Gets details of service job indicated by the provided `serviceJobID`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 20 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} serviceJobId A service job identifier.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -377,29 +1034,32 @@ export const ServiceApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Gets service job details for the specified filter query.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 40 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {Array<string>} marketplaceIds Used to select jobs that were placed in the specified marketplaces. 
-         * @param {Array<string>} [serviceOrderIds] List of service order ids for the query you want to perform.Max values supported 20. 
+         * Gets service job details for the specified filter query.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {Array<string>} marketplaceIds Used to select jobs that were placed in the specified marketplaces.
+         * @param {Array<string>} [serviceOrderIds] List of service order ids for the query you want to perform.Max values supported 20.
          * @param {Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>} [serviceJobStatus] A list of one or more job status by which to filter the list of jobs.
          * @param {string} [pageToken] String returned in the response of your previous request.
-         * @param {number} [pageSize] A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. 
+         * @param {number} [pageSize] A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20.
          * @param {'JOB_DATE' | 'JOB_STATUS'} [sortField] Sort fields on which you want to sort the output.
          * @param {'ASC' | 'DESC'} [sortOrder] Sort order for the query you want to perform.
-         * @param {string} [createdAfter] A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. 
-         * @param {string} [createdBefore] A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. 
-         * @param {string} [lastUpdatedAfter] A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. 
-         * @param {string} [lastUpdatedBefore] A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. 
-         * @param {string} [scheduleStartDate] A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. 
-         * @param {string} [scheduleEndDate] A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. 
+         * @param {string} [createdAfter] A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
+         * @param {string} [createdBefore] A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format.
+         * @param {string} [lastUpdatedAfter] A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if &#x60;createdAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
+         * @param {string} [lastUpdatedBefore] A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format.
+         * @param {string} [scheduleStartDate] A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date.
+         * @param {string} [scheduleEndDate] A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date.
+         * @param {Array<string>} [asins] List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20.
+         * @param {Array<string>} [requiredSkills] A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20.
+         * @param {Array<string>} [storeIds] List of Amazon-defined identifiers for the region scope. Max values supported is 50.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getServiceJobs(marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>, pageToken?: string, pageSize?: number, sortField?: 'JOB_DATE' | 'JOB_STATUS', sortOrder?: 'ASC' | 'DESC', createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetServiceJobsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getServiceJobs(marketplaceIds, serviceOrderIds, serviceJobStatus, pageToken, pageSize, sortField, sortOrder, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, scheduleStartDate, scheduleEndDate, options);
+        async getServiceJobs(marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>, pageToken?: string, pageSize?: number, sortField?: 'JOB_DATE' | 'JOB_STATUS', sortOrder?: 'ASC' | 'DESC', createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, asins?: Array<string>, requiredSkills?: Array<string>, storeIds?: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetServiceJobsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getServiceJobs(marketplaceIds, serviceOrderIds, serviceJobStatus, pageToken, pageSize, sortField, sortOrder, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, scheduleStartDate, scheduleEndDate, asins, requiredSkills, storeIds, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Reschedules an appointment for the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Reschedules an appointment for the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} serviceJobId An Amazon defined service job identifier.
          * @param {string} appointmentId An existing appointment identifier for the Service Job.
          * @param {RescheduleAppointmentRequest} body Reschedule appointment operation input details.
@@ -408,6 +1068,42 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          */
         async rescheduleAppointmentForServiceJobByServiceJobId(serviceJobId: string, appointmentId: string, body: RescheduleAppointmentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetAppointmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.rescheduleAppointmentForServiceJobByServiceJobId(serviceJobId, appointmentId, body, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Updates the appointment fulfillment data related to a given `jobID` and `appointmentID`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API.
+         * @param {string} appointmentId An Amazon-defined identifier of active service job appointment.
+         * @param {SetAppointmentFulfillmentDataRequest} body Appointment fulfillment data collection details.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async setAppointmentFulfillmentData(serviceJobId: string, appointmentId: string, body: SetAppointmentFulfillmentDataRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.setAppointmentFulfillmentData(serviceJobId, appointmentId, body, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Update a reservation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} reservationId Reservation Identifier
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {UpdateReservationRequest} body Reservation details
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateReservation(reservationId: string, marketplaceIds: Array<string>, body: UpdateReservationRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UpdateReservationResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateReservation(reservationId, marketplaceIds, body, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Update the schedule of the given resource.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} resourceId Resource (store) Identifier
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {UpdateScheduleRequest} body Schedule details
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateSchedule(resourceId: string, marketplaceIds: Array<string>, body: UpdateScheduleRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UpdateScheduleResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateSchedule(resourceId, marketplaceIds, body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -421,7 +1117,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
     const localVarFp = ServiceApiFp(configuration)
     return {
         /**
-         * Adds an appointment to the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Adds an appointment to the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} serviceJobId An Amazon defined service job identifier.
          * @param {AddAppointmentRequest} body Add appointment operation input details.
          * @param {*} [options] Override http request option.
@@ -431,7 +1127,28 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.addAppointmentForServiceJobByServiceJobId(serviceJobId, body, options).then((request) => request(axios, basePath));
         },
         /**
-         * Cancels the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Assigns new resource(s) or overwrite/update the existing one(s) to a service job appointment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API.
+         * @param {string} appointmentId An Amazon-defined identifier of active service job appointment.
+         * @param {AssignAppointmentResourcesRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        assignAppointmentResources(serviceJobId: string, appointmentId: string, body: AssignAppointmentResourcesRequest, options?: any): AxiosPromise<AssignAppointmentResourcesResponse> {
+            return localVarFp.assignAppointmentResources(serviceJobId, appointmentId, body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Cancel a reservation.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} reservationId Reservation Identifier
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        cancelReservation(reservationId: string, marketplaceIds: Array<string>, options?: any): AxiosPromise<CancelReservationResponse> {
+            return localVarFp.cancelReservation(reservationId, marketplaceIds, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Cancels the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} serviceJobId An Amazon defined service job identifier.
          * @param {string} cancellationReasonCode A cancel reason code that specifies the reason for cancelling a service job.
          * @param {*} [options] Override http request option.
@@ -441,7 +1158,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.cancelServiceJobByServiceJobId(serviceJobId, cancellationReasonCode, options).then((request) => request(axios, basePath));
         },
         /**
-         * Completes the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Completes the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} serviceJobId An Amazon defined service job identifier.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -450,7 +1167,75 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.completeServiceJobByServiceJobId(serviceJobId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Gets service job details for the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 20 | 40 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Create a reservation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {CreateReservationRequest} body Reservation details
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createReservation(marketplaceIds: Array<string>, body: CreateReservationRequest, options?: any): AxiosPromise<CreateReservationResponse> {
+            return localVarFp.createReservation(marketplaceIds, body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Creates an upload destination.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {ServiceUploadDocument} body Upload document operation input details.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createServiceDocumentUploadDestination(body: ServiceUploadDocument, options?: any): AxiosPromise<CreateServiceDocumentUploadDestination> {
+            return localVarFp.createServiceDocumentUploadDestination(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Gets appointment slots as per the service context specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 20 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} asin ASIN associated with the service.
+         * @param {string} storeId Store identifier defining the region scope to retrive appointment slots.
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace for which appointment slots are queried
+         * @param {string} [startTime] A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration.
+         * @param {string} [endTime] A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAppointmentSlots(asin: string, storeId: string, marketplaceIds: Array<string>, startTime?: string, endTime?: string, options?: any): AxiosPromise<GetAppointmentSlotsResponse> {
+            return localVarFp.getAppointmentSlots(asin, storeId, marketplaceIds, startTime, endTime, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Gets appointment slots for the service associated with the service job id specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} serviceJobId A service job identifier to retrive appointment slots for associated service.
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {string} [startTime] A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration.
+         * @param {string} [endTime] A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAppointmmentSlotsByJobId(serviceJobId: string, marketplaceIds: Array<string>, startTime?: string, endTime?: string, options?: any): AxiosPromise<GetAppointmentSlotsResponse> {
+            return localVarFp.getAppointmmentSlotsByJobId(serviceJobId, marketplaceIds, startTime, endTime, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Provides capacity in fixed-size slots.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} resourceId Resource Identifier.
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {FixedSlotCapacityQuery} body Request body.
+         * @param {string} [nextPageToken] Next page token returned in the response of your previous request.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFixedSlotCapacity(resourceId: string, marketplaceIds: Array<string>, body: FixedSlotCapacityQuery, nextPageToken?: string, options?: any): AxiosPromise<FixedSlotCapacity> {
+            return localVarFp.getFixedSlotCapacity(resourceId, marketplaceIds, body, nextPageToken, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Provides capacity slots in a format similar to availability records.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} resourceId Resource Identifier.
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {RangeSlotCapacityQuery} body Request body.
+         * @param {string} [nextPageToken] Next page token returned in the response of your previous request.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getRangeSlotCapacity(resourceId: string, marketplaceIds: Array<string>, body: RangeSlotCapacityQuery, nextPageToken?: string, options?: any): AxiosPromise<RangeSlotCapacity> {
+            return localVarFp.getRangeSlotCapacity(resourceId, marketplaceIds, body, nextPageToken, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Gets details of service job indicated by the provided `serviceJobID`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 20 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} serviceJobId A service job identifier.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -459,28 +1244,31 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.getServiceJobByServiceJobId(serviceJobId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Gets service job details for the specified filter query.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 40 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {Array<string>} marketplaceIds Used to select jobs that were placed in the specified marketplaces. 
-         * @param {Array<string>} [serviceOrderIds] List of service order ids for the query you want to perform.Max values supported 20. 
+         * Gets service job details for the specified filter query.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {Array<string>} marketplaceIds Used to select jobs that were placed in the specified marketplaces.
+         * @param {Array<string>} [serviceOrderIds] List of service order ids for the query you want to perform.Max values supported 20.
          * @param {Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>} [serviceJobStatus] A list of one or more job status by which to filter the list of jobs.
          * @param {string} [pageToken] String returned in the response of your previous request.
-         * @param {number} [pageSize] A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. 
+         * @param {number} [pageSize] A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20.
          * @param {'JOB_DATE' | 'JOB_STATUS'} [sortField] Sort fields on which you want to sort the output.
          * @param {'ASC' | 'DESC'} [sortOrder] Sort order for the query you want to perform.
-         * @param {string} [createdAfter] A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. 
-         * @param {string} [createdBefore] A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. 
-         * @param {string} [lastUpdatedAfter] A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. 
-         * @param {string} [lastUpdatedBefore] A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. 
-         * @param {string} [scheduleStartDate] A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. 
-         * @param {string} [scheduleEndDate] A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. 
+         * @param {string} [createdAfter] A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
+         * @param {string} [createdBefore] A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format.
+         * @param {string} [lastUpdatedAfter] A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if &#x60;createdAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
+         * @param {string} [lastUpdatedBefore] A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format.
+         * @param {string} [scheduleStartDate] A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date.
+         * @param {string} [scheduleEndDate] A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date.
+         * @param {Array<string>} [asins] List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20.
+         * @param {Array<string>} [requiredSkills] A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20.
+         * @param {Array<string>} [storeIds] List of Amazon-defined identifiers for the region scope. Max values supported is 50.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getServiceJobs(marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>, pageToken?: string, pageSize?: number, sortField?: 'JOB_DATE' | 'JOB_STATUS', sortOrder?: 'ASC' | 'DESC', createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, options?: any): AxiosPromise<GetServiceJobsResponse> {
-            return localVarFp.getServiceJobs(marketplaceIds, serviceOrderIds, serviceJobStatus, pageToken, pageSize, sortField, sortOrder, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, scheduleStartDate, scheduleEndDate, options).then((request) => request(axios, basePath));
+        getServiceJobs(marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>, pageToken?: string, pageSize?: number, sortField?: 'JOB_DATE' | 'JOB_STATUS', sortOrder?: 'ASC' | 'DESC', createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, asins?: Array<string>, requiredSkills?: Array<string>, storeIds?: Array<string>, options?: any): AxiosPromise<GetServiceJobsResponse> {
+            return localVarFp.getServiceJobs(marketplaceIds, serviceOrderIds, serviceJobStatus, pageToken, pageSize, sortField, sortOrder, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, scheduleStartDate, scheduleEndDate, asins, requiredSkills, storeIds, options).then((request) => request(axios, basePath));
         },
         /**
-         * Reschedules an appointment for the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Reschedules an appointment for the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} serviceJobId An Amazon defined service job identifier.
          * @param {string} appointmentId An existing appointment identifier for the Service Job.
          * @param {RescheduleAppointmentRequest} body Reschedule appointment operation input details.
@@ -489,6 +1277,39 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
          */
         rescheduleAppointmentForServiceJobByServiceJobId(serviceJobId: string, appointmentId: string, body: RescheduleAppointmentRequest, options?: any): AxiosPromise<SetAppointmentResponse> {
             return localVarFp.rescheduleAppointmentForServiceJobByServiceJobId(serviceJobId, appointmentId, body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Updates the appointment fulfillment data related to a given `jobID` and `appointmentID`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API.
+         * @param {string} appointmentId An Amazon-defined identifier of active service job appointment.
+         * @param {SetAppointmentFulfillmentDataRequest} body Appointment fulfillment data collection details.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        setAppointmentFulfillmentData(serviceJobId: string, appointmentId: string, body: SetAppointmentFulfillmentDataRequest, options?: any): AxiosPromise<string> {
+            return localVarFp.setAppointmentFulfillmentData(serviceJobId, appointmentId, body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Update a reservation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} reservationId Reservation Identifier
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {UpdateReservationRequest} body Reservation details
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateReservation(reservationId: string, marketplaceIds: Array<string>, body: UpdateReservationRequest, options?: any): AxiosPromise<UpdateReservationResponse> {
+            return localVarFp.updateReservation(reservationId, marketplaceIds, body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Update the schedule of the given resource.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} resourceId Resource (store) Identifier
+         * @param {Array<string>} marketplaceIds An identifier for the marketplace in which the resource operates.
+         * @param {UpdateScheduleRequest} body Schedule details
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateSchedule(resourceId: string, marketplaceIds: Array<string>, body: UpdateScheduleRequest, options?: any): AxiosPromise<UpdateScheduleResponse> {
+            return localVarFp.updateSchedule(resourceId, marketplaceIds, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -512,6 +1333,55 @@ export interface ServiceApiAddAppointmentForServiceJobByServiceJobIdRequest {
      * @memberof ServiceApiAddAppointmentForServiceJobByServiceJobId
      */
     readonly body: AddAppointmentRequest
+}
+
+/**
+ * Request parameters for assignAppointmentResources operation in ServiceApi.
+ * @export
+ * @interface ServiceApiAssignAppointmentResourcesRequest
+ */
+export interface ServiceApiAssignAppointmentResourcesRequest {
+    /**
+     * An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API.
+     * @type {string}
+     * @memberof ServiceApiAssignAppointmentResources
+     */
+    readonly serviceJobId: string
+
+    /**
+     * An Amazon-defined identifier of active service job appointment.
+     * @type {string}
+     * @memberof ServiceApiAssignAppointmentResources
+     */
+    readonly appointmentId: string
+
+    /**
+     * 
+     * @type {AssignAppointmentResourcesRequest}
+     * @memberof ServiceApiAssignAppointmentResources
+     */
+    readonly body: AssignAppointmentResourcesRequest
+}
+
+/**
+ * Request parameters for cancelReservation operation in ServiceApi.
+ * @export
+ * @interface ServiceApiCancelReservationRequest
+ */
+export interface ServiceApiCancelReservationRequest {
+    /**
+     * Reservation Identifier
+     * @type {string}
+     * @memberof ServiceApiCancelReservation
+     */
+    readonly reservationId: string
+
+    /**
+     * An identifier for the marketplace in which the resource operates.
+     * @type {Array<string>}
+     * @memberof ServiceApiCancelReservation
+     */
+    readonly marketplaceIds: Array<string>
 }
 
 /**
@@ -550,6 +1420,188 @@ export interface ServiceApiCompleteServiceJobByServiceJobIdRequest {
 }
 
 /**
+ * Request parameters for createReservation operation in ServiceApi.
+ * @export
+ * @interface ServiceApiCreateReservationRequest
+ */
+export interface ServiceApiCreateReservationRequest {
+    /**
+     * An identifier for the marketplace in which the resource operates.
+     * @type {Array<string>}
+     * @memberof ServiceApiCreateReservation
+     */
+    readonly marketplaceIds: Array<string>
+
+    /**
+     * Reservation details
+     * @type {CreateReservationRequest}
+     * @memberof ServiceApiCreateReservation
+     */
+    readonly body: CreateReservationRequest
+}
+
+/**
+ * Request parameters for createServiceDocumentUploadDestination operation in ServiceApi.
+ * @export
+ * @interface ServiceApiCreateServiceDocumentUploadDestinationRequest
+ */
+export interface ServiceApiCreateServiceDocumentUploadDestinationRequest {
+    /**
+     * Upload document operation input details.
+     * @type {ServiceUploadDocument}
+     * @memberof ServiceApiCreateServiceDocumentUploadDestination
+     */
+    readonly body: ServiceUploadDocument
+}
+
+/**
+ * Request parameters for getAppointmentSlots operation in ServiceApi.
+ * @export
+ * @interface ServiceApiGetAppointmentSlotsRequest
+ */
+export interface ServiceApiGetAppointmentSlotsRequest {
+    /**
+     * ASIN associated with the service.
+     * @type {string}
+     * @memberof ServiceApiGetAppointmentSlots
+     */
+    readonly asin: string
+
+    /**
+     * Store identifier defining the region scope to retrive appointment slots.
+     * @type {string}
+     * @memberof ServiceApiGetAppointmentSlots
+     */
+    readonly storeId: string
+
+    /**
+     * An identifier for the marketplace for which appointment slots are queried
+     * @type {Array<string>}
+     * @memberof ServiceApiGetAppointmentSlots
+     */
+    readonly marketplaceIds: Array<string>
+
+    /**
+     * A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration.
+     * @type {string}
+     * @memberof ServiceApiGetAppointmentSlots
+     */
+    readonly startTime?: string
+
+    /**
+     * A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days.
+     * @type {string}
+     * @memberof ServiceApiGetAppointmentSlots
+     */
+    readonly endTime?: string
+}
+
+/**
+ * Request parameters for getAppointmmentSlotsByJobId operation in ServiceApi.
+ * @export
+ * @interface ServiceApiGetAppointmmentSlotsByJobIdRequest
+ */
+export interface ServiceApiGetAppointmmentSlotsByJobIdRequest {
+    /**
+     * A service job identifier to retrive appointment slots for associated service.
+     * @type {string}
+     * @memberof ServiceApiGetAppointmmentSlotsByJobId
+     */
+    readonly serviceJobId: string
+
+    /**
+     * An identifier for the marketplace in which the resource operates.
+     * @type {Array<string>}
+     * @memberof ServiceApiGetAppointmmentSlotsByJobId
+     */
+    readonly marketplaceIds: Array<string>
+
+    /**
+     * A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration.
+     * @type {string}
+     * @memberof ServiceApiGetAppointmmentSlotsByJobId
+     */
+    readonly startTime?: string
+
+    /**
+     * A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days.
+     * @type {string}
+     * @memberof ServiceApiGetAppointmmentSlotsByJobId
+     */
+    readonly endTime?: string
+}
+
+/**
+ * Request parameters for getFixedSlotCapacity operation in ServiceApi.
+ * @export
+ * @interface ServiceApiGetFixedSlotCapacityRequest
+ */
+export interface ServiceApiGetFixedSlotCapacityRequest {
+    /**
+     * Resource Identifier.
+     * @type {string}
+     * @memberof ServiceApiGetFixedSlotCapacity
+     */
+    readonly resourceId: string
+
+    /**
+     * An identifier for the marketplace in which the resource operates.
+     * @type {Array<string>}
+     * @memberof ServiceApiGetFixedSlotCapacity
+     */
+    readonly marketplaceIds: Array<string>
+
+    /**
+     * Request body.
+     * @type {FixedSlotCapacityQuery}
+     * @memberof ServiceApiGetFixedSlotCapacity
+     */
+    readonly body: FixedSlotCapacityQuery
+
+    /**
+     * Next page token returned in the response of your previous request.
+     * @type {string}
+     * @memberof ServiceApiGetFixedSlotCapacity
+     */
+    readonly nextPageToken?: string
+}
+
+/**
+ * Request parameters for getRangeSlotCapacity operation in ServiceApi.
+ * @export
+ * @interface ServiceApiGetRangeSlotCapacityRequest
+ */
+export interface ServiceApiGetRangeSlotCapacityRequest {
+    /**
+     * Resource Identifier.
+     * @type {string}
+     * @memberof ServiceApiGetRangeSlotCapacity
+     */
+    readonly resourceId: string
+
+    /**
+     * An identifier for the marketplace in which the resource operates.
+     * @type {Array<string>}
+     * @memberof ServiceApiGetRangeSlotCapacity
+     */
+    readonly marketplaceIds: Array<string>
+
+    /**
+     * Request body.
+     * @type {RangeSlotCapacityQuery}
+     * @memberof ServiceApiGetRangeSlotCapacity
+     */
+    readonly body: RangeSlotCapacityQuery
+
+    /**
+     * Next page token returned in the response of your previous request.
+     * @type {string}
+     * @memberof ServiceApiGetRangeSlotCapacity
+     */
+    readonly nextPageToken?: string
+}
+
+/**
  * Request parameters for getServiceJobByServiceJobId operation in ServiceApi.
  * @export
  * @interface ServiceApiGetServiceJobByServiceJobIdRequest
@@ -570,14 +1622,14 @@ export interface ServiceApiGetServiceJobByServiceJobIdRequest {
  */
 export interface ServiceApiGetServiceJobsRequest {
     /**
-     * Used to select jobs that were placed in the specified marketplaces. 
+     * Used to select jobs that were placed in the specified marketplaces.
      * @type {Array<string>}
      * @memberof ServiceApiGetServiceJobs
      */
     readonly marketplaceIds: Array<string>
 
     /**
-     * List of service order ids for the query you want to perform.Max values supported 20. 
+     * List of service order ids for the query you want to perform.Max values supported 20.
      * @type {Array<string>}
      * @memberof ServiceApiGetServiceJobs
      */
@@ -598,7 +1650,7 @@ export interface ServiceApiGetServiceJobsRequest {
     readonly pageToken?: string
 
     /**
-     * A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. 
+     * A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20.
      * @type {number}
      * @memberof ServiceApiGetServiceJobs
      */
@@ -619,46 +1671,67 @@ export interface ServiceApiGetServiceJobsRequest {
     readonly sortOrder?: 'ASC' | 'DESC'
 
     /**
-     * A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. 
+     * A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
      * @type {string}
      * @memberof ServiceApiGetServiceJobs
      */
     readonly createdAfter?: string
 
     /**
-     * A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. 
+     * A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format.
      * @type {string}
      * @memberof ServiceApiGetServiceJobs
      */
     readonly createdBefore?: string
 
     /**
-     * A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. 
+     * A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if &#x60;createdAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
      * @type {string}
      * @memberof ServiceApiGetServiceJobs
      */
     readonly lastUpdatedAfter?: string
 
     /**
-     * A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. 
+     * A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format.
      * @type {string}
      * @memberof ServiceApiGetServiceJobs
      */
     readonly lastUpdatedBefore?: string
 
     /**
-     * A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. 
+     * A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date.
      * @type {string}
      * @memberof ServiceApiGetServiceJobs
      */
     readonly scheduleStartDate?: string
 
     /**
-     * A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. 
+     * A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date.
      * @type {string}
      * @memberof ServiceApiGetServiceJobs
      */
     readonly scheduleEndDate?: string
+
+    /**
+     * List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20.
+     * @type {Array<string>}
+     * @memberof ServiceApiGetServiceJobs
+     */
+    readonly asins?: Array<string>
+
+    /**
+     * A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20.
+     * @type {Array<string>}
+     * @memberof ServiceApiGetServiceJobs
+     */
+    readonly requiredSkills?: Array<string>
+
+    /**
+     * List of Amazon-defined identifiers for the region scope. Max values supported is 50.
+     * @type {Array<string>}
+     * @memberof ServiceApiGetServiceJobs
+     */
+    readonly storeIds?: Array<string>
 }
 
 /**
@@ -690,6 +1763,90 @@ export interface ServiceApiRescheduleAppointmentForServiceJobByServiceJobIdReque
 }
 
 /**
+ * Request parameters for setAppointmentFulfillmentData operation in ServiceApi.
+ * @export
+ * @interface ServiceApiSetAppointmentFulfillmentDataRequest
+ */
+export interface ServiceApiSetAppointmentFulfillmentDataRequest {
+    /**
+     * An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API.
+     * @type {string}
+     * @memberof ServiceApiSetAppointmentFulfillmentData
+     */
+    readonly serviceJobId: string
+
+    /**
+     * An Amazon-defined identifier of active service job appointment.
+     * @type {string}
+     * @memberof ServiceApiSetAppointmentFulfillmentData
+     */
+    readonly appointmentId: string
+
+    /**
+     * Appointment fulfillment data collection details.
+     * @type {SetAppointmentFulfillmentDataRequest}
+     * @memberof ServiceApiSetAppointmentFulfillmentData
+     */
+    readonly body: SetAppointmentFulfillmentDataRequest
+}
+
+/**
+ * Request parameters for updateReservation operation in ServiceApi.
+ * @export
+ * @interface ServiceApiUpdateReservationRequest
+ */
+export interface ServiceApiUpdateReservationRequest {
+    /**
+     * Reservation Identifier
+     * @type {string}
+     * @memberof ServiceApiUpdateReservation
+     */
+    readonly reservationId: string
+
+    /**
+     * An identifier for the marketplace in which the resource operates.
+     * @type {Array<string>}
+     * @memberof ServiceApiUpdateReservation
+     */
+    readonly marketplaceIds: Array<string>
+
+    /**
+     * Reservation details
+     * @type {UpdateReservationRequest}
+     * @memberof ServiceApiUpdateReservation
+     */
+    readonly body: UpdateReservationRequest
+}
+
+/**
+ * Request parameters for updateSchedule operation in ServiceApi.
+ * @export
+ * @interface ServiceApiUpdateScheduleRequest
+ */
+export interface ServiceApiUpdateScheduleRequest {
+    /**
+     * Resource (store) Identifier
+     * @type {string}
+     * @memberof ServiceApiUpdateSchedule
+     */
+    readonly resourceId: string
+
+    /**
+     * An identifier for the marketplace in which the resource operates.
+     * @type {Array<string>}
+     * @memberof ServiceApiUpdateSchedule
+     */
+    readonly marketplaceIds: Array<string>
+
+    /**
+     * Schedule details
+     * @type {UpdateScheduleRequest}
+     * @memberof ServiceApiUpdateSchedule
+     */
+    readonly body: UpdateScheduleRequest
+}
+
+/**
  * ServiceApi - object-oriented interface
  * @export
  * @class ServiceApi
@@ -697,7 +1854,7 @@ export interface ServiceApiRescheduleAppointmentForServiceJobByServiceJobIdReque
  */
 export class ServiceApi extends BaseAPI {
     /**
-     * Adds an appointment to the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+     * Adds an appointment to the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {ServiceApiAddAppointmentForServiceJobByServiceJobIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -708,7 +1865,29 @@ export class ServiceApi extends BaseAPI {
     }
 
     /**
-     * Cancels the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+     * Assigns new resource(s) or overwrite/update the existing one(s) to a service job appointment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {ServiceApiAssignAppointmentResourcesRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ServiceApi
+     */
+    public assignAppointmentResources(requestParameters: ServiceApiAssignAppointmentResourcesRequest, options?: AxiosRequestConfig) {
+        return ServiceApiFp(this.configuration).assignAppointmentResources(requestParameters.serviceJobId, requestParameters.appointmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Cancel a reservation.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {ServiceApiCancelReservationRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ServiceApi
+     */
+    public cancelReservation(requestParameters: ServiceApiCancelReservationRequest, options?: AxiosRequestConfig) {
+        return ServiceApiFp(this.configuration).cancelReservation(requestParameters.reservationId, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Cancels the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {ServiceApiCancelServiceJobByServiceJobIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -719,7 +1898,7 @@ export class ServiceApi extends BaseAPI {
     }
 
     /**
-     * Completes the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+     * Completes the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {ServiceApiCompleteServiceJobByServiceJobIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -730,7 +1909,73 @@ export class ServiceApi extends BaseAPI {
     }
 
     /**
-     * Gets service job details for the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 20 | 40 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+     * Create a reservation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {ServiceApiCreateReservationRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ServiceApi
+     */
+    public createReservation(requestParameters: ServiceApiCreateReservationRequest, options?: AxiosRequestConfig) {
+        return ServiceApiFp(this.configuration).createReservation(requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Creates an upload destination.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {ServiceApiCreateServiceDocumentUploadDestinationRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ServiceApi
+     */
+    public createServiceDocumentUploadDestination(requestParameters: ServiceApiCreateServiceDocumentUploadDestinationRequest, options?: AxiosRequestConfig) {
+        return ServiceApiFp(this.configuration).createServiceDocumentUploadDestination(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Gets appointment slots as per the service context specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 20 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {ServiceApiGetAppointmentSlotsRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ServiceApi
+     */
+    public getAppointmentSlots(requestParameters: ServiceApiGetAppointmentSlotsRequest, options?: AxiosRequestConfig) {
+        return ServiceApiFp(this.configuration).getAppointmentSlots(requestParameters.asin, requestParameters.storeId, requestParameters.marketplaceIds, requestParameters.startTime, requestParameters.endTime, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Gets appointment slots for the service associated with the service job id specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {ServiceApiGetAppointmmentSlotsByJobIdRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ServiceApi
+     */
+    public getAppointmmentSlotsByJobId(requestParameters: ServiceApiGetAppointmmentSlotsByJobIdRequest, options?: AxiosRequestConfig) {
+        return ServiceApiFp(this.configuration).getAppointmmentSlotsByJobId(requestParameters.serviceJobId, requestParameters.marketplaceIds, requestParameters.startTime, requestParameters.endTime, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Provides capacity in fixed-size slots.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {ServiceApiGetFixedSlotCapacityRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ServiceApi
+     */
+    public getFixedSlotCapacity(requestParameters: ServiceApiGetFixedSlotCapacityRequest, options?: AxiosRequestConfig) {
+        return ServiceApiFp(this.configuration).getFixedSlotCapacity(requestParameters.resourceId, requestParameters.marketplaceIds, requestParameters.body, requestParameters.nextPageToken, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Provides capacity slots in a format similar to availability records.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {ServiceApiGetRangeSlotCapacityRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ServiceApi
+     */
+    public getRangeSlotCapacity(requestParameters: ServiceApiGetRangeSlotCapacityRequest, options?: AxiosRequestConfig) {
+        return ServiceApiFp(this.configuration).getRangeSlotCapacity(requestParameters.resourceId, requestParameters.marketplaceIds, requestParameters.body, requestParameters.nextPageToken, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Gets details of service job indicated by the provided `serviceJobID`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 20 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {ServiceApiGetServiceJobByServiceJobIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -741,18 +1986,18 @@ export class ServiceApi extends BaseAPI {
     }
 
     /**
-     * Gets service job details for the specified filter query.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 40 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+     * Gets service job details for the specified filter query.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {ServiceApiGetServiceJobsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
     public getServiceJobs(requestParameters: ServiceApiGetServiceJobsRequest, options?: AxiosRequestConfig) {
-        return ServiceApiFp(this.configuration).getServiceJobs(requestParameters.marketplaceIds, requestParameters.serviceOrderIds, requestParameters.serviceJobStatus, requestParameters.pageToken, requestParameters.pageSize, requestParameters.sortField, requestParameters.sortOrder, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.scheduleStartDate, requestParameters.scheduleEndDate, options).then((request) => request(this.axios, this.basePath));
+        return ServiceApiFp(this.configuration).getServiceJobs(requestParameters.marketplaceIds, requestParameters.serviceOrderIds, requestParameters.serviceJobStatus, requestParameters.pageToken, requestParameters.pageSize, requestParameters.sortField, requestParameters.sortOrder, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.scheduleStartDate, requestParameters.scheduleEndDate, requestParameters.asins, requestParameters.requiredSkills, requestParameters.storeIds, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * Reschedules an appointment for the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+     * Reschedules an appointment for the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {ServiceApiRescheduleAppointmentForServiceJobByServiceJobIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -760,5 +2005,38 @@ export class ServiceApi extends BaseAPI {
      */
     public rescheduleAppointmentForServiceJobByServiceJobId(requestParameters: ServiceApiRescheduleAppointmentForServiceJobByServiceJobIdRequest, options?: AxiosRequestConfig) {
         return ServiceApiFp(this.configuration).rescheduleAppointmentForServiceJobByServiceJobId(requestParameters.serviceJobId, requestParameters.appointmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Updates the appointment fulfillment data related to a given `jobID` and `appointmentID`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {ServiceApiSetAppointmentFulfillmentDataRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ServiceApi
+     */
+    public setAppointmentFulfillmentData(requestParameters: ServiceApiSetAppointmentFulfillmentDataRequest, options?: AxiosRequestConfig) {
+        return ServiceApiFp(this.configuration).setAppointmentFulfillmentData(requestParameters.serviceJobId, requestParameters.appointmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Update a reservation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {ServiceApiUpdateReservationRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ServiceApi
+     */
+    public updateReservation(requestParameters: ServiceApiUpdateReservationRequest, options?: AxiosRequestConfig) {
+        return ServiceApiFp(this.configuration).updateReservation(requestParameters.reservationId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Update the schedule of the given resource.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {ServiceApiUpdateScheduleRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ServiceApi
+     */
+    public updateSchedule(requestParameters: ServiceApiUpdateScheduleRequest, options?: AxiosRequestConfig) {
+        return ServiceApiFp(this.configuration).updateSchedule(requestParameters.resourceId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }

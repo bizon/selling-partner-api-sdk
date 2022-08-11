@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/services-api-v1@1.8.9...@sp-api-sdk/services-api-v1@1.9.0) (2022-08-11)
+
+### Features
+
+* **clients:** update models as of 2022-08-11 ([#486](https://github.com/bizon/selling-partner-api-sdk/issues/486)) ([adf8204](https://github.com/bizon/selling-partner-api-sdk/commit/adf820406016fd9bdecacb9ed839a9fde95f1c9d))
+
 ## [1.8.9](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/services-api-v1@1.8.8...@sp-api-sdk/services-api-v1@1.8.9) (2022-08-10)
 
 **Note:** Version bump only for package @sp-api-sdk/services-api-v1

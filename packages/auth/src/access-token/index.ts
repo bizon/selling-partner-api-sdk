@@ -70,7 +70,7 @@ export class AccessToken {
 
         this.expirationDate = new Date()
         this.expirationDate.setSeconds(this.expirationDate.getSeconds() + this.value.expires_in)
-      } catch (error) {
+      } catch (error: unknown) {
         if (error instanceof RequestError && error.response) {
           throw new AccessTokenError(
             `HTTP Response code ${error.response.statusCode}`,

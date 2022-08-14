@@ -1,20 +1,20 @@
+import * as childProcess from 'child_process'
 import fs from 'fs/promises'
 import os from 'os'
 import {parse as parsePath} from 'path'
 import {promisify} from 'util'
-import * as childProcess from 'child_process'
 
 import Bluebird from 'bluebird'
-import jsonfile from 'jsonfile'
 import camelCase from 'camelcase'
+import globby from 'globby'
+import jsonfile from 'jsonfile'
 import reduce from 'lodash/reduce'
+import type {OpenAPIV3} from 'openapi-types'
 import remark from 'remark'
 import remarkStrip from 'strip-markdown'
-import globby from 'globby'
 import type {PackageJson} from 'type-fest'
-import type {OpenAPIV3} from 'openapi-types'
 
-import {renderTemplate, logger, applyPatches} from './utils'
+import {applyPatches, logger, renderTemplate} from './utils'
 
 const exec = promisify(childProcess.exec)
 

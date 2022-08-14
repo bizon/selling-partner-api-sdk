@@ -1,7 +1,7 @@
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
-import {createAxiosInstance, type ClientConfiguration} from '@sp-api-sdk/common'
+import {type ClientConfiguration, createAxiosInstance} from '@sp-api-sdk/common'
 
-import {VendorTransactionStatusApiClient, clientRateLimits} from '../src/client'
+import {clientRateLimits, VendorTransactionStatusApiClient} from '../src/client'
 
 jest.mock('@sp-api-sdk/auth', () => ({
   SellingPartnerApiAuth: jest.fn(() => ({

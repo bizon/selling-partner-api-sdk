@@ -1,5 +1,5 @@
-import {STSClient, AssumeRoleCommand} from '@aws-sdk/client-sts'
-import type {STSClientConfig, Credentials} from '@aws-sdk/client-sts'
+import {AssumeRoleCommand, STSClient} from '@aws-sdk/client-sts'
+import type {Credentials, STSClientConfig} from '@aws-sdk/client-sts'
 
 import {SecurityTokenServiceError} from './error'
 

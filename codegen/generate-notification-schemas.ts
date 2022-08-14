@@ -1,11 +1,11 @@
-import {parse as parsePath} from 'path'
-import os from 'os'
 import fs from 'fs/promises'
+import os from 'os'
+import {parse as parsePath} from 'path'
 
+import Bluebird from 'bluebird'
+import globby from 'globby'
 import {compile, type JSONSchema} from 'json-schema-to-typescript'
 import {kebabCase} from 'lodash'
-import globby from 'globby'
-import Bluebird from 'bluebird'
 
 import {logger} from './utils'
 

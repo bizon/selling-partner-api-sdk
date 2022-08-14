@@ -1,13 +1,13 @@
-import axios, {type Method} from 'axios'
 import {aws4Interceptor} from 'aws4-axios'
+import axios, {type Method} from 'axios'
+import {errorLogger, requestLogger, responseLogger} from 'axios-logger'
 import axiosRetry from 'axios-retry'
-import {requestLogger, responseLogger, errorLogger} from 'axios-logger'
 import {sync as readPackageJson} from 'read-pkg-up'
 
 import type {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 
 import {SellingPartnerApiError} from './errors'
-import {sellingPartnerRegions, type SellingPartnerRegion} from './regions'
+import {type SellingPartnerRegion, sellingPartnerRegions} from './regions'
 
 const {packageJson} = readPackageJson()!
 

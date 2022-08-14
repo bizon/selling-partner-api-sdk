@@ -29,7 +29,7 @@ export type TheAmazonOrderIdSchema = string
 /**
  * The purchase date of the order in Epoch time.
  */
-export type ThePurchaseDateSchema = number | undefined
+export type ThePurchaseDateSchema = number | null
 /**
  * The current order status. The possible values include UpComing, Pending, Unshipped, PartiallyShipped, PendingAvailability, Canceled, InvoiceUnconfirmed, Shipped, and Unfulfillable.
  */
@@ -37,11 +37,11 @@ export type TheOrderStatusSchema = string
 /**
  * The destination postal code.
  */
-export type TheDestinationPostalCodeSchema = string | undefined
+export type TheDestinationPostalCodeSchema = string | null
 /**
  * The unique identifier of the supply source.
  */
-export type TheSupplySourceIdSchema = string | undefined
+export type TheSupplySourceIdSchema = string | null
 /**
  * The Amazon-defined order item identifier.
  */

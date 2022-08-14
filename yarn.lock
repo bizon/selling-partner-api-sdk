@@ -3610,6 +3610,11 @@ eslint-config-prettier@^8.5.0:
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.5.0.tgz#5a81680ec934beca02c7b1a61cf8ca34b66feab1"
   integrity sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==
 
+eslint-config-xo-bizon@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-xo-bizon/-/eslint-config-xo-bizon-1.0.0.tgz#a3682f3d7278fe0d5be08525a230a3fbfb6ed4db"
+  integrity sha512-mqrAm5MM48psuHIHGAXt3BfFzP3GkU7NKmfZMTgnySUB3FtYFk5hBGDWE3x3EYl9O+lkfIUarKtLj0w7jspvrQ==
+
 eslint-config-xo-typescript@^0.51.1:
   version "0.51.1"
   resolved "https://registry.yarnpkg.com/eslint-config-xo-typescript/-/eslint-config-xo-typescript-0.51.1.tgz#0f9166edffb06cbb1dabddf84d295c843e43cd1f"

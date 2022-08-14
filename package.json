@@ -29,6 +29,7 @@
     "@types/jest": "^28.1.6",
     "@types/node": "^16.11.47",
     "conventional-changelog-conventionalcommits": "^5.0.0",
+    "eslint-config-xo-bizon": "^1.0.0",
     "jest": "^28.1.3",
     "jest-junit": "^14.0.0",
     "rimraf": "^3.0.2",
@@ -41,6 +42,10 @@
     "xo": "^0.51.0"
   },
   "xo": {
+    "extends": "xo-bizon",
+    "settings": {
+      "import/internal-regex": "^@sp-api-sdk/"
+    },
     "parserOptions": {
       "project": "./tsconfig.xo.json"
     },
@@ -49,26 +54,10 @@
     "ignores": [
       "clients/*/src/api-model/**"
     ],
-    "rules": {
-      "@typescript-eslint/naming-convention": "off",
-      "@typescript-eslint/no-implicit-any-catch": "off",
-      "@typescript-eslint/no-non-null-assertion": "off",
-      "@typescript-eslint/no-unsafe-argument": "off",
-      "@typescript-eslint/no-unsafe-assignment": "off",
-      "@typescript-eslint/no-unsafe-call": "off",
-      "@typescript-eslint/no-unsafe-return": "off",
-      "@typescript-eslint/restrict-template-expressions": "off",
-      "eslint-comments/no-unused-disable": "off",
-      "import/extensions": "off",
-      "unicorn/no-array-reduce": "off",
-      "unicorn/prefer-module": "off",
-      "unicorn/prefer-node-protocol": "off"
-    },
     "overrides": [
       {
         "files": "packages/notifications/**",
         "rules": {
-          "@typescript-eslint/no-empty-interface": "off",
           "unicorn/prevent-abbreviations": "off"
         }
       }

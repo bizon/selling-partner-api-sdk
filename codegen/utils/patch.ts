@@ -1,10 +1,10 @@
-import {join as joinPath} from 'path'
 import {readdir} from 'fs/promises'
+import {join as joinPath} from 'path'
 
 import {applyPatch} from 'fast-json-patch'
+import type {Operation} from 'fast-json-patch'
 import jsonfile from 'jsonfile'
 import type {OpenAPIV3} from 'openapi-types'
-import type {Operation} from 'fast-json-patch'
 
 import {instanceOfNodeError} from './error'
 
@@ -23,7 +23,7 @@ async function getPatches(patchPath: string): Promise<Patch[]> {
         filename,
       })),
     )
-  } catch (error) {
+  } catch (error: unknown) {
     if (instanceOfNodeError(error, Error) && error.code === 'ENOENT') {
       return []
     }

@@ -1,5 +1,6 @@
 import nock from 'nock'
 import stripAnsi from 'strip-ansi'
+
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 
 import {createAxiosInstance} from '../src/axios'

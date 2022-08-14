@@ -1,4 +1,4 @@
-import {createAxiosInstance, type ClientConfiguration, type RateLimit} from '@sp-api-sdk/common'
+import {type ClientConfiguration, createAxiosInstance, type RateLimit} from '@sp-api-sdk/common'
 
 import {Configuration, DefaultApi} from './api-model'
 

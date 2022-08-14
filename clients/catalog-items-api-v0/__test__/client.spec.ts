@@ -1,5 +1,5 @@
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
-import {createAxiosInstance, type ClientConfiguration} from '@sp-api-sdk/common'
+import {type ClientConfiguration, createAxiosInstance} from '@sp-api-sdk/common'
 
 import {CatalogItemsApiClient, clientRateLimits} from '../src/client'
 

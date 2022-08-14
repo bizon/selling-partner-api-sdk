@@ -1,4 +1,5 @@
 import {AxiosError} from 'axios'
+
 import {SellingPartnerApiError} from '../src/errors'
 
 describe('src/errors', () => {

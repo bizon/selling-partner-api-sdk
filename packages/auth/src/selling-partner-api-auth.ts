@@ -6,8 +6,7 @@ import type {Credentials} from '@aws-sdk/client-sts'
 import {sync as readPackageJson} from 'read-pkg-up'
 import type {RequireExactlyOne, SetOptional} from 'type-fest'
 
-import {AccessToken} from './access-token'
-import type {AuthorizationScope} from './access-token'
+import {AccessToken, type AuthorizationScope} from './access-token'
 import {SellingPartnerApiAuthError} from './error'
 import {SecurityTokenService} from './security-token-service'
 

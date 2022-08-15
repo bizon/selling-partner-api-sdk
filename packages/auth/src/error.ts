@@ -2,6 +2,7 @@ type SellingPartnerApiAuthErrorCode =
   | 'ACCESS_TOKEN_ERROR'
   | 'SECURITY_TOKEN_SERVICE_ERROR'
   | 'SELLING_PARTNER_API_AUTH_ERROR'
+
 export class SellingPartnerApiAuthError extends Error {
   public code: SellingPartnerApiAuthErrorCode
 

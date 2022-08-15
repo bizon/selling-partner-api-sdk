@@ -1,5 +1,4 @@
-import {AssumeRoleCommand, STSClient} from '@aws-sdk/client-sts'
-import type {Credentials, STSClientConfig} from '@aws-sdk/client-sts'
+import {type Credentials, STS, type STSClientConfig} from '@aws-sdk/client-sts'
 
 import {SecurityTokenServiceError} from './error'
 
@@ -65,14 +64,11 @@ export class SecurityTokenService {
       config.region = this.region
     }
 
-    const sts = new STSClient(config)
-
-    const {Credentials: credentials} = await sts.send(
-      new AssumeRoleCommand({
-        RoleArn: this.role.arn,
-        RoleSessionName: this.role.sessionName,
-      }),
-    )
+    const sts = new STS(config)
+    const {Credentials: credentials} = await sts.assumeRole({
+      RoleArn: this.role.arn,
+      RoleSessionName: this.role.sessionName,
+    })
 
     if (!credentials) {
       throw new SecurityTokenServiceError('AWS credentials are invalid')

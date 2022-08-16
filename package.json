@@ -17,8 +17,7 @@
     "clean": "turbo run clean",
     "check:ts": "turbo run check:ts",
     "test": "jest",
-    "codegen": "ts-node --project codegen/tsconfig.json codegen/generate.ts",
-    "postcodegen": "xo --fix clients packages/notifications"
+    "codegen": "ts-node --project codegen/tsconfig.json codegen/generate.ts"
   },
   "dependencies": {},
   "devDependencies": {

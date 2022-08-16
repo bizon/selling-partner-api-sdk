@@ -25,8 +25,8 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile --non-interactive --prefer-offline
 
-      - name: Generate clients and schemas from models
-        run: yarn codegen
+      - name: Generate clients from models
+        run: yarn codegen clients
 
       - name: Get current date
         id: date
@@ -66,8 +66,8 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile --non-interactive --prefer-offline
 
-      - name: Generate clients and schemas from models
-        run: yarn codegen
+      - name: Generate notification schemas from models
+        run: yarn codegen notifications
 
       - name: Get current date
         id: date

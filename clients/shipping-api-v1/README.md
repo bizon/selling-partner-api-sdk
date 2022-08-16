@@ -2,6 +2,8 @@
 
 Provides programmatic access to Amazon Shipping APIs.
 
+ **Note:** If you are new to the Amazon Shipping API, refer to the latest version of <a href="https://developer-docs.amazon.com/amazon-shipping/docs/shipping-api-v2-reference">Amazon Shipping API (v2)</a> on the <a href="https://developer-docs.amazon.com/amazon-shipping/">Amazon Shipping Developer Documentation</a> site.
+
 [![npm version](https://badgen.net/npm/v/@sp-api-sdk/shipping-api-v1)](https://www.npmjs.com/package/@sp-api-sdk/shipping-api-v1)
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
 

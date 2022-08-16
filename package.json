@@ -25,7 +25,7 @@
     "@knodes/typedoc-plugin-monorepo-readmes": "^0.23.1",
     "@lerna-lite/cli": "^1.10.0",
     "@tsconfig/node16": "^1.0.3",
-    "@types/jest": "^28.1.6",
+    "@types/jest": "^28.1.7",
     "@types/node": "^16.11.49",
     "conventional-changelog-conventionalcommits": "^5.0.0",
     "eslint-config-xo-bizon": "^1.0.1",

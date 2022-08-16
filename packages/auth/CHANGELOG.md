@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.22](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@1.9.21...@sp-api-sdk/auth@1.9.22) (2022-08-16)
+
+### Bug Fixes
+
+* **auth:** update AWS STS client usage ([#488](https://github.com/bizon/selling-partner-api-sdk/issues/488)) ([6069646](https://github.com/bizon/selling-partner-api-sdk/commit/6069646fb5b34e82b02fda060fc846db5a3e86d3))
+
 ## [1.9.21](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@1.9.20...@sp-api-sdk/auth@1.9.21) (2022-08-10)
 
 **Note:** Version bump only for package @sp-api-sdk/auth

@@ -15,16 +15,17 @@
 
 
 /**
- * The unit of measurement used to measure the length.
+ * The file format in which the shipping label will be created.
  * @export
  * @enum {string}
  */
 
-export const UnitOfLength = {
-    Cm: 'Cm'
+export const LabelFormat = {
+    Pdf: 'PDF',
+    Zpl: 'ZPL'
 } as const;
 
-export type UnitOfLength = typeof UnitOfLength[keyof typeof UnitOfLength];
+export type LabelFormat = typeof LabelFormat[keyof typeof LabelFormat];
 
 
 

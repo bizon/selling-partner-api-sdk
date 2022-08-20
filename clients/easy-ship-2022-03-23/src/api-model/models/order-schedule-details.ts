@@ -13,18 +13,25 @@
  */
 
 
+import { PackageDetails } from './package-details';
 
 /**
- * The unit of measurement used to measure the length.
+ * This object allows users to specify an order to be scheduled. Only the amazonOrderId is required. 
  * @export
- * @enum {string}
+ * @interface OrderScheduleDetails
  */
-
-export const UnitOfLength = {
-    Cm: 'Cm'
-} as const;
-
-export type UnitOfLength = typeof UnitOfLength[keyof typeof UnitOfLength];
-
-
+export interface OrderScheduleDetails {
+    /**
+     * An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
+     * @type {string}
+     * @memberof OrderScheduleDetails
+     */
+    'amazonOrderId': string;
+    /**
+     * 
+     * @type {PackageDetails}
+     * @memberof OrderScheduleDetails
+     */
+    'packageDetails'?: PackageDetails;
+}
 

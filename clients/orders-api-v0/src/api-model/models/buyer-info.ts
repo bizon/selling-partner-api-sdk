@@ -28,7 +28,7 @@ export interface BuyerInfo {
      */
     'BuyerEmail'?: string;
     /**
-     * The name of the buyer.
+     * The buyer name or the recipient name.
      * @type {string}
      * @memberof BuyerInfo
      */

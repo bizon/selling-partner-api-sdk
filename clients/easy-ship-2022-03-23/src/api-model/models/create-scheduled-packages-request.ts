@@ -13,18 +13,32 @@
  */
 
 
+import { LabelFormat } from './label-format';
+import { OrderScheduleDetails } from './order-schedule-details';
 
 /**
- * The unit of measurement used to measure the length.
+ * The request body for the POST /easyShip/2022-03-23/packages/bulk API.
  * @export
- * @enum {string}
+ * @interface CreateScheduledPackagesRequest
  */
-
-export const UnitOfLength = {
-    Cm: 'Cm'
-} as const;
-
-export type UnitOfLength = typeof UnitOfLength[keyof typeof UnitOfLength];
-
-
+export interface CreateScheduledPackagesRequest {
+    /**
+     * A string of up to 255 characters.
+     * @type {string}
+     * @memberof CreateScheduledPackagesRequest
+     */
+    'marketplaceId': string;
+    /**
+     * An array allowing users to specify orders to be scheduled.
+     * @type {Array<OrderScheduleDetails>}
+     * @memberof CreateScheduledPackagesRequest
+     */
+    'orderScheduleDetailsList': Array<OrderScheduleDetails>;
+    /**
+     * 
+     * @type {LabelFormat}
+     * @memberof CreateScheduledPackagesRequest
+     */
+    'labelFormat': LabelFormat;
+}
 

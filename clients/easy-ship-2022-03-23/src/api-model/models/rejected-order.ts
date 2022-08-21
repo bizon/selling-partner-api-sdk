@@ -15,16 +15,22 @@
 
 
 /**
- * The unit of measurement used to measure the length.
+ * A order which we couldn\'t schedule on your behalf. It contains its id, and information on the error.
  * @export
- * @enum {string}
+ * @interface RejectedOrder
  */
-
-export const UnitOfLength = {
-    Cm: 'Cm'
-} as const;
-
-export type UnitOfLength = typeof UnitOfLength[keyof typeof UnitOfLength];
-
-
+export interface RejectedOrder {
+    /**
+     * An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
+     * @type {string}
+     * @memberof RejectedOrder
+     */
+    'amazonOrderId': string;
+    /**
+     * 
+     * @type {Error}
+     * @memberof RejectedOrder
+     */
+    'error'?: Error;
+}
 

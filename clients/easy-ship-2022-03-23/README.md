@@ -10,7 +10,7 @@ Your Easy Ship applications can:
 
 * Print labels, invoices, and warranties.
 
-See the [Marketplace Support Table](https://developer-docs.amazon.com/sp-api/docs/easy-ship-api-v2022-03-23-use-case-guide) for the differences in Easy Ship operations by marketplace.
+See the [Marketplace Support Table](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support-table) for the differences in Easy Ship operations by marketplace.
 
 [![npm version](https://badgen.net/npm/v/@sp-api-sdk/easy-ship-2022-03-23)](https://www.npmjs.com/package/@sp-api-sdk/easy-ship-2022-03-23)
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)

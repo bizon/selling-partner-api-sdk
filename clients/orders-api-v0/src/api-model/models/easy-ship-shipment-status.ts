@@ -15,7 +15,7 @@
 
 
 /**
- * The status of the Amazon Easy-Ship order. This property is included only for Amazon Easy-Ship orders.
+ * The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.
  * @export
  * @enum {string}
  */

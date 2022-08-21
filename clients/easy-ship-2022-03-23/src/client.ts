@@ -31,6 +31,13 @@ export const clientRateLimits: RateLimit[] = [
     rate: 1,
     burst: 5,
   },
+  {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/easyShip/2022-03-23/packages/bulk$'),
+    rate: 1,
+    burst: 5,
+  },
 ]
 
 export class EasyShipClient extends EasyShipApi {

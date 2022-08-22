@@ -26,7 +26,7 @@
     "@lerna-lite/cli": "^1.10.0",
     "@tsconfig/node16": "^1.0.3",
     "@types/jest": "^28.1.7",
-    "@types/node": "^16.11.49",
+    "@types/node": "^16.11.53",
     "conventional-changelog-conventionalcommits": "^5.0.0",
     "eslint-config-xo-bizon": "^1.0.1",
     "jest": "^28.1.3",

@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.9](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.9.8...@sp-api-sdk/common@1.9.9) (2022-08-25)
+
+### Bug Fixes
+
+* **common:** let URL.search’s setter percent-encode spaces ([e549c9d](https://github.com/bizon/selling-partner-api-sdk/commit/e549c9d3dfeb1fd6f0a4b9be0c6c4289eb452cf0))
+* **common:** replace + encoded spaces to %20 ([#505](https://github.com/bizon/selling-partner-api-sdk/issues/505)) ([c0ef537](https://github.com/bizon/selling-partner-api-sdk/commit/c0ef5379f67c914887c9d26ecf5ebb4b108dc13e))
+
 ## [1.9.8](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.9.7...@sp-api-sdk/common@1.9.8) (2022-08-16)
 
 **Note:** Version bump only for package @sp-api-sdk/common

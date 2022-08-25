@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/vendor-transaction-status-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Retail Procurement Transaction Status provides programmatic access to status information on specific asynchronous POST transactions for vendors.",
-  "version": "1.8.10",
+  "version": "1.8.11",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -26,8 +26,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^1.9.22",
-    "@sp-api-sdk/common": "^1.9.8",
+    "@sp-api-sdk/auth": "^1.9.23",
+    "@sp-api-sdk/common": "^1.9.9",
     "axios": "^0.27.2"
   },
   "repository": {

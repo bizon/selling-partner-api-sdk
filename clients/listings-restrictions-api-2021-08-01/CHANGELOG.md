@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.11](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/listings-restrictions-api-2021-08-01@1.3.10...@sp-api-sdk/listings-restrictions-api-2021-08-01@1.3.11) (2022-08-25)
+
+**Note:** Version bump only for package @sp-api-sdk/listings-restrictions-api-2021-08-01
+
 ## [1.3.10](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/listings-restrictions-api-2021-08-01@1.3.9...@sp-api-sdk/listings-restrictions-api-2021-08-01@1.3.10) (2022-08-16)
 
 **Note:** Version bump only for package @sp-api-sdk/listings-restrictions-api-2021-08-01

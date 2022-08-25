@@ -95,7 +95,7 @@ export function createAxiosInstance(
   // Replace + encoded spaces to %20
   instance.interceptors.request.use(async (config) => {
     const url = new URL(config.url!)
-    url.search = url.search.replace(/\+/g, '%20')
+    url.search = url.search.replace(/\+/g, ' ')
     config.url = url.toString()
 
     return config

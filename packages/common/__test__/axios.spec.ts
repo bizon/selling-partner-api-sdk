@@ -28,26 +28,6 @@ describe('src/axios', () => {
     }).toThrow('Unknown or unsupported region: foo')
   })
 
-  describe('Space encoding in search params', () => {
-    it('should transform space characters encoded as + to %20', async () => {
-      nock('https://www.example.com').get('/test?param=foo%20bar').reply(200, 'OK')
-
-      const {axios} = createAxiosInstance(
-        {
-          auth: new SellingPartnerApiAuth({refreshToken: ''}),
-          region: 'eu',
-        },
-        [],
-      )
-
-      const response = await axios.get('https://www.example.com/test?param=foo+bar')
-
-      expect(response.config.url).toBe('https://www.example.com/test?param=foo%20bar')
-      expect(response.status).toBe(200)
-      expect(response.data).toBe('OK')
-    })
-  })
-
   describe('Rate Limiting', () => {
     it('should retry one time', async () => {
       nock('https://www.example.com')

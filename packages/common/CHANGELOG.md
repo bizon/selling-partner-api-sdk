@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.10](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.9.9...@sp-api-sdk/common@1.9.10) (2022-08-26)
+
+### Reverts
+
+* **common:** replace + encoded spaces to %20 ([3f8bc66](https://github.com/bizon/selling-partner-api-sdk/commit/3f8bc66d46f39db4de7807be90d4d3cc3f9d6648))
+
 ## [1.9.9](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.9.8...@sp-api-sdk/common@1.9.9) (2022-08-25)
 
 ### Bug Fixes

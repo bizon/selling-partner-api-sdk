@@ -6,23 +6,9 @@ export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
     // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/catalog/v0/items$'),
-    rate: 6,
-    burst: 40,
-  },
-  {
-    method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/catalog/v0/items/[^/]*$'),
-    rate: 2,
-    burst: 20,
-  },
-  {
-    method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/catalog/v0/categories$'),
     rate: 1,
-    burst: 40,
+    burst: 2,
   },
 ]
 

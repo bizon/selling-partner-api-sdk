@@ -7,21 +7,21 @@ export const clientRateLimits: RateLimit[] = [
     method: 'post',
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/products/fees/v0/listings/[^/]*/feesEstimate$'),
-    rate: 10,
-    burst: 20,
+    rate: 1,
+    burst: 2,
   },
   {
     method: 'post',
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/products/fees/v0/items/[^/]*/feesEstimate$'),
-    rate: 10,
-    burst: 20,
+    rate: 1,
+    burst: 2,
   },
   {
     method: 'post',
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/products/fees/v0/feesEstimate$'),
-    rate: 1,
+    rate: 0.5,
     burst: 1,
   },
 ]

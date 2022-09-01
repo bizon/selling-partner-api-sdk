@@ -94,11 +94,17 @@ export interface ItemSummaryByMarketplace {
      */
     'style'?: string;
     /**
-     * Name of the website display group associated with an Amazon catalog item.
+     * Identifier of the website display group associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
     'websiteDisplayGroup'?: string;
+    /**
+     * Display name of the website display group associated with an Amazon catalog item.
+     * @type {string}
+     * @memberof ItemSummaryByMarketplace
+     */
+    'websiteDisplayGroupName'?: string;
 }
 
 export const ItemSummaryByMarketplaceItemClassificationEnum = {

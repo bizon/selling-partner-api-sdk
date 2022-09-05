@@ -17,7 +17,7 @@ async function runCommand(command: string) {
   return exec(command)
 }
 
-const generators: Set<Generator> = new Set((process.argv[2]?.split(',') as Generator[]) ?? [])
+const generators = new Set<Generator>((process.argv[2]?.split(',') as Generator[]) ?? [])
 if (generators.size === 0) {
   generators.add('clients')
   generators.add('notifications')

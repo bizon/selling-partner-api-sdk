@@ -210,8 +210,8 @@ async function generateClientVersion(modelFilePath: string) {
     await renderTemplate('codegen/templates/__test__/client.spec.ts.mustache', {clientClassName}),
   )
   await fs.writeFile(
-    `${clientDirectoryPath}/jest.config.js`,
-    await renderTemplate('codegen/templates/jest.config.js.mustache'),
+    `${clientDirectoryPath}/jest.config.ts`,
+    await renderTemplate('codegen/templates/jest.config.ts.mustache'),
   )
 
   const generatedFiles = await fs.readdir(`${clientDirectoryPath}/src/api-model/`)

@@ -1,7 +1,7 @@
 import nock from 'nock'
 
 import {AuthorizationScope, SellingPartnerApiAuthError} from '../src'
-import {AccessToken} from '../src/access-token'
+import {AccessTokenFactory} from '../src/access-token'
 
 describe('src/access-token', () => {
   it('should throw a SellingPartnerApiAuthError if the access-token query errors', async () => {
@@ -17,7 +17,7 @@ describe('src/access-token', () => {
         someMessage: 'this is an error',
       })
 
-    const factory = new AccessToken({
+    const factory = new AccessTokenFactory({
       clientId: 'CLIENT_ID',
       clientSecret: 'CLIENT_SECRET',
       refreshToken: 'REFRESH_TOKEN',
@@ -49,7 +49,7 @@ describe('src/access-token', () => {
       })
       .replyWithError('unknown error')
 
-    const factory = new AccessToken({
+    const factory = new AccessTokenFactory({
       clientId: 'CLIENT_ID',
       clientSecret: 'CLIENT_SECRET',
       scopes: [AuthorizationScope.MIGRATION],
@@ -67,7 +67,7 @@ describe('src/access-token', () => {
     expect(authError!.message).toBe('access-token error: No response')
   })
 
-  const sharedFactory = new AccessToken({
+  const sharedFactory = new AccessTokenFactory({
     clientId: 'CLIENT_ID',
     clientSecret: 'CLIENT_SECRET',
     refreshToken: 'REFRESH_TOKEN',

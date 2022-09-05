@@ -13,7 +13,7 @@ export interface AccessTokenParameters {
   clientSecret: string
 }
 
-export class AccessToken {
+export class AccessTokenFactory {
   public readonly clientId: string
   public readonly clientSecret: string
   public readonly refreshToken?: string

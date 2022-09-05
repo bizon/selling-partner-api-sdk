@@ -3,7 +3,7 @@ import process from 'process'
 import type {Credentials} from '@aws-sdk/client-sts'
 import type {RequireExactlyOne, SetOptional} from 'type-fest'
 
-import {AccessToken} from './access-token'
+import {AccessTokenFactory} from './access-token'
 import {SecurityTokenService} from './sts'
 import type {AuthorizationScope} from './types/scope'
 import {packageJson} from './utils/package'
@@ -27,7 +27,7 @@ export interface SellingPartnerAuthParameters {
  * Class for simplify auth with Selling Partner API
  */
 export class SellingPartnerApiAuth {
-  public readonly accessToken: AccessToken
+  public readonly accessToken: AccessTokenFactory
 
   private readonly _sts?: SecurityTokenService
   private readonly _accessKeyId: string
@@ -80,13 +80,13 @@ export class SellingPartnerApiAuth {
     this._sessionToken = sessionToken
 
     if (parameters.refreshToken) {
-      this.accessToken = new AccessToken({
+      this.accessToken = new AccessTokenFactory({
         clientId,
         clientSecret,
         refreshToken: parameters.refreshToken,
       })
     } else if (parameters.scopes) {
-      this.accessToken = new AccessToken({
+      this.accessToken = new AccessTokenFactory({
         clientId,
         clientSecret,
         scopes: parameters.scopes,

@@ -9,7 +9,7 @@
     "node": "16.x"
   },
   "dependencies": {
-    "@openapitools/openapi-generator-cli": "^2.5.1",
+    "@openapitools/openapi-generator-cli": "^2.5.2",
     "bluebird": "^3.7.2",
     "camelcase": "^6.3.0",
     "chalk": "^4.1.2",

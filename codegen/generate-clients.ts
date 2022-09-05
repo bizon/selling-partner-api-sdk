@@ -114,7 +114,6 @@ async function generateClientVersion(modelFilePath: string) {
       version: (await readPackageVersion(clientDirectoryPath)) ?? '1.0.0',
       apiName: clientNameBase.replace(/-/g, ' '),
       dependencies: {
-        auth: await readPackageVersion('packages/auth'),
         common: await readPackageVersion('packages/common'),
         axios: await getAxiosVersion(),
       },

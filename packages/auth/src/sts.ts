@@ -1,9 +1,5 @@
 import {type Credentials, STS, type STSClientConfig} from '@aws-sdk/client-sts'
 
-import {SecurityTokenServiceError} from './error'
-
-export * from './error'
-
 interface Role {
   arn: string
   sessionName: string
@@ -71,7 +67,7 @@ export class SecurityTokenService {
     })
 
     if (!credentials) {
-      throw new SecurityTokenServiceError('AWS credentials are invalid')
+      throw new Error('Provided AWS credentials were invalid: could not sts:AssumeRole')
     }
 
     return credentials

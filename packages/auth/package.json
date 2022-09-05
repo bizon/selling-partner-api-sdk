@@ -27,10 +27,11 @@
   },
   "dependencies": {
     "@aws-sdk/client-sts": "^3.163.0",
-    "got": "^11.8.5",
+    "axios": "^0.27.2",
     "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {
+    "nock": "^13.2.9",
     "type-fest": "^2.19.0"
   },
   "repository": {

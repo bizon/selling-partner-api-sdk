@@ -1,21 +1,18 @@
-type SellingPartnerApiAuthErrorCode =
-  | 'ACCESS_TOKEN_ERROR'
-  | 'SECURITY_TOKEN_SERVICE_ERROR'
-  | 'SELLING_PARTNER_API_AUTH_ERROR'
+import {AxiosError} from 'axios'
 
-export class SellingPartnerApiAuthError extends Error {
-  public code: SellingPartnerApiAuthErrorCode
+import type {AccessTokenData, AccessTokenQuery} from './types/access-token'
 
-  constructor(
-    message: string,
-    code: SellingPartnerApiAuthErrorCode = 'SELLING_PARTNER_API_AUTH_ERROR',
-  ) {
-    super(message)
+export class SellingPartnerApiAuthError extends AxiosError<AccessTokenData, AccessTokenQuery> {
+  public readonly innerMessage: string
 
-    this.code = code
-  }
+  constructor(error: AxiosError<AccessTokenData, AccessTokenQuery>) {
+    const message = error.response
+      ? `access-token error: Response code ${error.response.status}`
+      : `access-token error: No response`
 
-  get name() {
-    return this.constructor.name
+    super(message, error.code, error.config, error.request, error.response)
+
+    this.innerMessage = error.message
+    this.name = this.constructor.name
   }
 }

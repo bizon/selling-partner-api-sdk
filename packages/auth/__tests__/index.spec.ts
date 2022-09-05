@@ -1,7 +1,7 @@
 import {SellingPartnerApiAuth, SellingPartnerApiAuthError} from '../src'
 
-describe('src/selling-partner-api-auth', () => {
-  it('should create a SellingPartnrApiAuth instance', () => {
+describe('src/index', () => {
+  it('should create a SellingPartnerApiAuth instance', () => {
     const auth = new SellingPartnerApiAuth({
       clientId: 'FAKE_CLIENT_ID',
       clientSecret: 'FAKE_CLIENT_SECRET',
@@ -22,7 +22,7 @@ describe('src/selling-partner-api-auth', () => {
           secretAccessKey: 'FAKE_SECRET_ACCESS_KEY',
           refreshToken: 'FAKE_REFRESH_TOKEN',
         }),
-    ).toThrow(SellingPartnerApiAuthError)
+    ).toThrow('Missing required `clientId` configuration value')
   })
 
   it('should fail for missing clientSecret', () => {
@@ -34,7 +34,7 @@ describe('src/selling-partner-api-auth', () => {
           secretAccessKey: 'FAKE_SECRET_ACCESS_KEY',
           refreshToken: 'FAKE_REFRESH_TOKEN',
         }),
-    ).toThrow(SellingPartnerApiAuthError)
+    ).toThrow('Missing required `clientSecret` configuration value')
   })
 
   it('should fail for missing accessKeyId', () => {
@@ -49,7 +49,7 @@ describe('src/selling-partner-api-auth', () => {
             arn: 'FAKE_ARN',
           },
         }),
-    ).toThrow(SellingPartnerApiAuthError)
+    ).toThrow('Missing required `accessKeyId` configuration value')
   })
 
   it('should fail for missing secretAccessKey', () => {
@@ -64,30 +64,21 @@ describe('src/selling-partner-api-auth', () => {
             arn: 'FAKE_ARN',
           },
         }),
-    ).toThrow(SellingPartnerApiAuthError)
+    ).toThrow('Missing required `secretAccessKey` configuration value')
   })
 
-  it('should fail for missing accessKeyId', () => {
-    expect(
-      () =>
-        new SellingPartnerApiAuth({
-          clientId: 'FAKE_CLIENT_ID',
-          clientSecret: 'FAKE_CLIENT_SECRET',
-          secretAccessKey: 'FAKE_SECRET_ACCESS_KEY',
-          refreshToken: 'FAKE_REFRESH_TOKEN',
-        }),
-    ).toThrow(SellingPartnerApiAuthError)
-  })
-
-  it('should fail for missing secretAccessKey', () => {
+  it('should fail if neither refreshToken or scopes is specified', () => {
     expect(
       () =>
         new SellingPartnerApiAuth({
           clientId: 'FAKE_CLIENT_ID',
           clientSecret: 'FAKE_CLIENT_SECRET',
           accessKeyId: 'FAKE_ACCESS_KEY_ID',
-          refreshToken: 'FAKE_REFRESH_TOKEN',
-        }),
-    ).toThrow(SellingPartnerApiAuthError)
+          secretAccessKey: 'FAKE_SECRET_ACCESS_KEY',
+          role: {
+            arn: 'FAKE_ARN',
+          },
+        } as any),
+    ).toThrow('Either `refreshToken` or `scopes` must be specified')
   })
 })

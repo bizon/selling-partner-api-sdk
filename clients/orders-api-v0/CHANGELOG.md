@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.18.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/orders-api-v0@1.17.3...@sp-api-sdk/orders-api-v0@1.18.0) (2022-09-06)
+
+### Features
+
+* **auth:** rewrite auth error management ([#524](https://github.com/bizon/selling-partner-api-sdk/issues/524)) ([1569826](https://github.com/bizon/selling-partner-api-sdk/commit/1569826a0f934614f9a229f65e5cfa909cf4c2b2))
+
 ## [1.17.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/orders-api-v0@1.17.2...@sp-api-sdk/orders-api-v0@1.17.3) (2022-09-01)
 
 **Note:** Version bump only for package @sp-api-sdk/orders-api-v0

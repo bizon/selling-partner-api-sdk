@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-direct-fulfillment-shipping-api-2021-12-28@1.2.13...@sp-api-sdk/vendor-direct-fulfillment-shipping-api-2021-12-28@1.3.0) (2022-09-06)
+
+### Features
+
+* **auth:** rewrite auth error management ([#524](https://github.com/bizon/selling-partner-api-sdk/issues/524)) ([1569826](https://github.com/bizon/selling-partner-api-sdk/commit/1569826a0f934614f9a229f65e5cfa909cf4c2b2))
+
 ## [1.2.13](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-direct-fulfillment-shipping-api-2021-12-28@1.2.12...@sp-api-sdk/vendor-direct-fulfillment-shipping-api-2021-12-28@1.2.13) (2022-09-01)
 
 **Note:** Version bump only for package @sp-api-sdk/vendor-direct-fulfillment-shipping-api-2021-12-28

@@ -1,12 +1,13 @@
 import nock from 'nock'
 import stripAnsi from 'strip-ansi'
 
-import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+import {SellingPartnerApiAuth, SellingPartnerApiAuthError} from '@sp-api-sdk/auth'
 
 import {createAxiosInstance} from '../src/axios'
 import {SellingPartnerApiError} from '../src/errors'
 
 jest.mock('@sp-api-sdk/auth', () => ({
+  SellingPartnerApiAuthError: jest.requireActual('@sp-api-sdk/auth').SellingPartnerApiAuthError,
   SellingPartnerApiAuth: jest.fn(() => ({
     accessToken: {
       get: jest.fn(() => 'FAKE_ACCESS_TOKEN'),

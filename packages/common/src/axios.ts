@@ -4,7 +4,7 @@ import {errorLogger, requestLogger, responseLogger} from 'axios-logger'
 import axiosRetry from 'axios-retry'
 import {sync as readPackageJson} from 'read-pkg-up'
 
-import type {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+import {type SellingPartnerApiAuth, SellingPartnerApiAuthError} from '@sp-api-sdk/auth'
 
 import {SellingPartnerApiError} from './errors'
 import {type SellingPartnerRegion, sellingPartnerRegions} from './regions'
@@ -127,7 +127,11 @@ export function createAxiosInstance(
   instance.interceptors.response.use(
     async (response) => response,
     async (error: unknown) => {
-      throw axios.isAxiosError(error) ? new SellingPartnerApiError(error) : error
+      if (axios.isAxiosError(error) && !(error instanceof SellingPartnerApiAuthError)) {
+        throw new SellingPartnerApiError(error)
+      }
+
+      throw error
     },
   )
 

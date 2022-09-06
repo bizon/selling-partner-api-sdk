@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/easy-ship-2022-03-23@1.4.0...@sp-api-sdk/easy-ship-2022-03-23@1.4.1) (2022-09-06)
+
+**Note:** Version bump only for package @sp-api-sdk/easy-ship-2022-03-23
+
 ## [1.4.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/easy-ship-2022-03-23@1.3.3...@sp-api-sdk/easy-ship-2022-03-23@1.4.0) (2022-09-06)
 
 ### Features

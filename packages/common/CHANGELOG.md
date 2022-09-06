@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.13](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.9.12...@sp-api-sdk/common@1.9.13) (2022-09-06)
+
+### Bug Fixes
+
+* **common:** stop wrapping auth errors ([#525](https://github.com/bizon/selling-partner-api-sdk/issues/525)) ([1063ec8](https://github.com/bizon/selling-partner-api-sdk/commit/1063ec8471970e0bfa802968b478fed78b8dfdba))
+
 ## [1.9.12](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.9.11...@sp-api-sdk/common@1.9.12) (2022-09-06)
 
 **Note:** Version bump only for package @sp-api-sdk/common

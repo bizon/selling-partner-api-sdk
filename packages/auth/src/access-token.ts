@@ -46,10 +46,7 @@ export class AccessTokenFactory {
       }
 
       try {
-        const {data} = await axios.post<AccessTokenData>(
-          'https://api.amazon.com/auth/o2/token',
-          body,
-        )
+        const {data} = await axios.post<AccessTokenData>('/o2/token', body)
 
         const expiration = new Date()
         expiration.setSeconds(expiration.getSeconds() + data.expires_in)

@@ -1,5 +1,5 @@
 import {aws4Interceptor} from 'aws4-axios'
-import axios, {type Method} from 'axios'
+import axios, {type AxiosError, type Method} from 'axios'
 import {errorLogger, requestLogger, responseLogger} from 'axios-logger'
 import axiosRetry from 'axios-retry'
 import {sync as readPackageJson} from 'read-pkg-up'
@@ -25,6 +25,8 @@ export interface RateLimit {
 export interface OnRetryParameters {
   delay: number
   rateLimit?: number
+  retryCount: number
+  error: AxiosError
 }
 
 export interface ClientConfiguration {
@@ -69,22 +71,25 @@ export function createAxiosInstance(
 
   if (rateLimiting?.retry) {
     axiosRetry(instance, {
-      retryCondition: (error) => (error.response ? error.response.status === 429 : false),
+      retryCondition: (error) => error.response?.status === 429,
       retryDelay(retryCount, error) {
-        const amznRateLimit = error.response?.headers['x-amzn-ratelimit-limit']
         const url = new URL(error.config.url!)
-        const rateLimit = amznRateLimit
-          ? Number.parseFloat(amznRateLimit)
-          : rateLimits.find(
-              (rateLimit) =>
-                rateLimit.method.toLowerCase() === error.config.method?.toLowerCase() &&
-                rateLimit.urlRegex.exec(url.pathname),
-            )?.rate
-        const delay =
-          rateLimit && !Number.isNaN(rateLimit) ? (1 / rateLimit) * 1000 + 1500 : 60 * 1000
+        const method = error.config.method?.toLowerCase()
+        const amznRateLimit = Number.parseFloat(
+          error.response?.headers['x-amzn-ratelimit-limit'] ?? '',
+        )
 
-        if (rateLimiting?.onRetry) {
-          rateLimiting.onRetry({delay, rateLimit})
+        const rateLimit = Number.isNaN(amznRateLimit)
+          ? rateLimits.find(
+              (rateLimit) =>
+                rateLimit.method.toLowerCase() === method && rateLimit.urlRegex.exec(url.pathname),
+            )?.rate
+          : amznRateLimit
+
+        const delay = rateLimit ? (1 / rateLimit) * 1000 + 1500 : 60 * 1000
+
+        if (rateLimiting.onRetry) {
+          rateLimiting.onRetry({delay, rateLimit, retryCount, error})
         }
 
         return delay

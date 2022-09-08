@@ -1,3 +1,4 @@
+import {AxiosError} from 'axios'
 import nock from 'nock'
 import stripAnsi from 'strip-ansi'
 
@@ -55,7 +56,12 @@ describe('src/axios', () => {
       expect(response.data).toBe('OK')
       expect(response.status).toBe(200)
       expect(onRetry).toBeCalledTimes(1)
-      expect(onRetry.mock.calls[0][0]).toStrictEqual({rateLimit: 1, delay: 2500})
+      expect(onRetry.mock.calls[0][0]).toStrictEqual({
+        rateLimit: 1,
+        delay: 2500,
+        retryCount: 1,
+        error: expect.any(AxiosError),
+      })
     })
 
     it('should retry two times', async () => {
@@ -85,8 +91,18 @@ describe('src/axios', () => {
       expect(response.data).toBe('OK')
       expect(response.status).toBe(200)
       expect(onRetry).toBeCalledTimes(2)
-      expect(onRetry.mock.calls[0][0]).toStrictEqual({rateLimit: 0.5, delay: 3500})
-      expect(onRetry.mock.calls[1][0]).toStrictEqual({rateLimit: 0.5, delay: 3500})
+      expect(onRetry.mock.calls[0][0]).toStrictEqual({
+        rateLimit: 0.5,
+        delay: 3500,
+        retryCount: 1,
+        error: expect.any(AxiosError),
+      })
+      expect(onRetry.mock.calls[1][0]).toStrictEqual({
+        rateLimit: 0.5,
+        delay: 3500,
+        retryCount: 2,
+        error: expect.any(AxiosError),
+      })
     }, 30_000)
 
     it('should take x-amzn-RateLimit-Limit if it exits', async () => {
@@ -114,7 +130,12 @@ describe('src/axios', () => {
       expect(response.data).toBe('OK')
       expect(response.status).toBe(200)
       expect(onRetry).toBeCalledTimes(1)
-      expect(onRetry.mock.calls[0][0]).toStrictEqual({rateLimit: 1, delay: 2500})
+      expect(onRetry.mock.calls[0][0]).toStrictEqual({
+        rateLimit: 1,
+        delay: 2500,
+        retryCount: 1,
+        error: expect.any(AxiosError),
+      })
     })
   })
 

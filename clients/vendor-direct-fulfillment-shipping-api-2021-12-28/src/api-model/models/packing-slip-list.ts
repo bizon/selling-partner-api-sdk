@@ -13,26 +13,26 @@
  */
 
 
-import { ErrorList } from './error-list';
-import { ShippingLabelList } from './shipping-label-list';
+import { PackingSlip } from './packing-slip';
+import { Pagination } from './pagination';
 
 /**
- * The response schema for the getShippingLabels operation.
+ * A list of packing slips.
  * @export
- * @interface GetShippingLabelListResponse
+ * @interface PackingSlipList
  */
-export interface GetShippingLabelListResponse {
+export interface PackingSlipList {
     /**
      * 
-     * @type {ShippingLabelList}
-     * @memberof GetShippingLabelListResponse
+     * @type {Pagination}
+     * @memberof PackingSlipList
      */
-    'payload'?: ShippingLabelList;
+    'pagination'?: Pagination;
     /**
      * 
-     * @type {ErrorList}
-     * @memberof GetShippingLabelListResponse
+     * @type {Array<PackingSlip>}
+     * @memberof PackingSlipList
      */
-    'errors'?: ErrorList;
+    'packingSlips'?: Array<PackingSlip>;
 }
 

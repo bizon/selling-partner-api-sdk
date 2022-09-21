@@ -14,5 +14,7 @@
 
 
 
+export * from './api/customer-invoices-api';
+export * from './api/vendor-shipping-api';
 export * from './api/vendor-shipping-labels-api';
 

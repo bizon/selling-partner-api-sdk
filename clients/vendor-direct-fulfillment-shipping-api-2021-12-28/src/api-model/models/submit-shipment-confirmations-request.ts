@@ -13,26 +13,19 @@
  */
 
 
-import { ErrorList } from './error-list';
-import { TransactionReference } from './transaction-reference';
+import { ShipmentConfirmation } from './shipment-confirmation';
 
 /**
- * The response schema for the submitShippingLabelRequest operation.
+ * 
  * @export
- * @interface SubmitShippingLabelsResponse
+ * @interface SubmitShipmentConfirmationsRequest
  */
-export interface SubmitShippingLabelsResponse {
+export interface SubmitShipmentConfirmationsRequest {
     /**
      * 
-     * @type {TransactionReference}
-     * @memberof SubmitShippingLabelsResponse
+     * @type {Array<ShipmentConfirmation>}
+     * @memberof SubmitShipmentConfirmationsRequest
      */
-    'payload'?: TransactionReference;
-    /**
-     * 
-     * @type {ErrorList}
-     * @memberof SubmitShippingLabelsResponse
-     */
-    'errors'?: ErrorList;
+    'shipmentConfirmations'?: Array<ShipmentConfirmation>;
 }
 

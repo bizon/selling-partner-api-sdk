@@ -54,7 +54,7 @@ export interface Container {
      */
     'manifestDate'?: string;
     /**
-     * The shipment method.
+     * The shipment method. This property is required when calling the submitShipmentConfirmations operation, and optional otherwise.
      * @type {string}
      * @memberof Container
      */

@@ -14,5 +14,5 @@
 
 
 
-export * from './api/vendor-shipping-labels-api';
+export * from './api/vendor-shipping-api';
 

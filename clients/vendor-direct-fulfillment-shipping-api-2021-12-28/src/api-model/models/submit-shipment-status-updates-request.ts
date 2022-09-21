@@ -13,26 +13,19 @@
  */
 
 
-import { CustomerInvoice } from './customer-invoice';
-import { ErrorList } from './error-list';
+import { ShipmentStatusUpdate } from './shipment-status-update';
 
 /**
- * The response schema for the getCustomerInvoice operation.
+ * 
  * @export
- * @interface GetCustomerInvoiceResponse
+ * @interface SubmitShipmentStatusUpdatesRequest
  */
-export interface GetCustomerInvoiceResponse {
+export interface SubmitShipmentStatusUpdatesRequest {
     /**
      * 
-     * @type {CustomerInvoice}
-     * @memberof GetCustomerInvoiceResponse
+     * @type {Array<ShipmentStatusUpdate>}
+     * @memberof SubmitShipmentStatusUpdatesRequest
      */
-    'payload'?: CustomerInvoice;
-    /**
-     * 
-     * @type {ErrorList}
-     * @memberof GetCustomerInvoiceResponse
-     */
-    'errors'?: ErrorList;
+    'shipmentStatusUpdates'?: Array<ShipmentStatusUpdate>;
 }
 

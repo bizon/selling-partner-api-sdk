@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.14](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.9.13...@sp-api-sdk/common@1.9.14) (2022-09-21)
+
+### Bug Fixes
+
+* **common:** add more info to onRetry handler ([#526](https://github.com/bizon/selling-partner-api-sdk/issues/526)) ([1325b6b](https://github.com/bizon/selling-partner-api-sdk/commit/1325b6bb81fd20e13f69300bf275ed6cbbd94d37))
+
 ## [1.9.13](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.9.12...@sp-api-sdk/common@1.9.13) (2022-09-06)
 
 ### Bug Fixes

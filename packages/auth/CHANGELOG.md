@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@1.10.0...@sp-api-sdk/auth@1.10.1) (2022-09-21)
+
+### Bug Fixes
+
+* **auth:** use baseUrl on axios instance ([1070ffb](https://github.com/bizon/selling-partner-api-sdk/commit/1070ffb78861d20334115fdb3b08e9841391affc))
+
 ## [1.10.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@1.9.24...@sp-api-sdk/auth@1.10.0) (2022-09-06)
 
 ### Features

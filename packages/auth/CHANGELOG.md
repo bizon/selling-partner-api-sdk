@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.2](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@1.10.1...@sp-api-sdk/auth@1.10.2) (2022-09-25)
+
+### Bug Fixes
+
+* add fallback for read-pkg-up ([#546](https://github.com/bizon/selling-partner-api-sdk/issues/546)) ([f4c543a](https://github.com/bizon/selling-partner-api-sdk/commit/f4c543ab86350ea92f1915e202fb580a6d67f537)), closes [#545](https://github.com/bizon/selling-partner-api-sdk/issues/545)
+
 ## [1.10.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@1.10.0...@sp-api-sdk/auth@1.10.1) (2022-09-21)
 
 ### Bug Fixes

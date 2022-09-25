@@ -2,14 +2,12 @@ import {aws4Interceptor} from 'aws4-axios'
 import axios, {type AxiosError, type Method} from 'axios'
 import {errorLogger, requestLogger, responseLogger} from 'axios-logger'
 import axiosRetry from 'axios-retry'
-import {sync as readPackageJson} from 'read-pkg-up'
 
 import {type SellingPartnerApiAuth, SellingPartnerApiAuthError} from '@sp-api-sdk/auth'
 
 import {SellingPartnerApiError} from './errors'
 import {type SellingPartnerRegion, sellingPartnerRegions} from './regions'
-
-const {packageJson} = readPackageJson()!
+import {packageJson} from './utils/package'
 
 type RequestLogConfig = Exclude<Parameters<typeof requestLogger>[1], undefined>
 type ResponseLogConfig = Exclude<Parameters<typeof responseLogger>[1], undefined>

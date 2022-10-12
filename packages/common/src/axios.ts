@@ -71,8 +71,8 @@ export function createAxiosInstance(
     axiosRetry(instance, {
       retryCondition: (error) => error.response?.status === 429,
       retryDelay(retryCount, error) {
-        const url = new URL(error.config.url!)
-        const method = error.config.method?.toLowerCase()
+        const url = new URL(error.config!.url!)
+        const method = error.config!.method?.toLowerCase()
         const amznRateLimit = Number.parseFloat(
           error.response?.headers['x-amzn-ratelimit-limit'] ?? '',
         )

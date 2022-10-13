@@ -69,10 +69,64 @@
 </code></pre>
 </div><hr/><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/9c0dc3a/clients/vendor-transaction-status-api-v1/README.md#L1">clients/vendor-transaction-status-api-v1/README.md:1</a></li>
-<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/9c0dc3a/clients/vendor-transaction-status-api-v1/index.ts#L1">clients/vendor-transaction-status-api-v1/index.ts:1</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/8c58dd0/clients/vendor-transaction-status-api-v1/README.md#L1">clients/vendor-transaction-status-api-v1/README.md:1</a></li>
+<li>Defined in <a href="https://github.com/bizon/selling-partner-api-sdk/blob/8c58dd0/clients/vendor-transaction-status-api-v1/index.ts#L1">clients/vendor-transaction-status-api-v1/index.ts:1</a></li></ul></aside>
 <section class="tsd-panel-group">
-<section class="tsd-panel tsd-typography"></section></section>
+<section class="tsd-panel tsd-typography">
+<a href="#vendor-transaction-status-api-v1" id="vendor-transaction-status-api-v1" style="color: inherit; text-decoration: none;">
+  <h1><code>vendor-transaction-status-api-v1</code></h1>
+</a>
+<p>The Selling Partner API for Retail Procurement Transaction Status provides programmatic access to status information on specific asynchronous POST transactions for vendors.</p>
+<p><a href="https://www.npmjs.com/package/@sp-api-sdk/vendor-transaction-status-api-v1"><img src="https://badgen.net/npm/v/@sp-api-sdk/vendor-transaction-status-api-v1" alt="npm version"></a>
+<a href="https://github.com/xojs/xo"><img src="https://badgen.net/badge/code%20style/XO/cyan" alt="XO code style"></a></p>
+
+<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+  <h2>Documentation</h2>
+</a>
+<p>Learn more about this Selling Partner API by visiting the <a href="https://developer-docs.amazon.com/sp-api/docs">official documentation</a>.</p>
+<p>Also, see the <a href="https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_vendor_transaction_status_api_v1.html">generated documentation</a> for this API client.</p>
+
+<a href="#installing" id="installing" style="color: inherit; text-decoration: none;">
+  <h2>Installing</h2>
+</a>
+<pre><code class="language-sh"><span class="hl-0">yarn add @sp-api-sdk/vendor-transaction-status-api-v1</span>
+</code></pre>
+<pre><code class="language-sh"><span class="hl-0">npm install @sp-api-sdk/vendor-transaction-status-api-v1</span>
+</code></pre>
+
+<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+  <h2>Getting Started</h2>
+</a>
+<pre><code class="language-javascript"><span class="hl-1">import</span><span class="hl-0"> {</span><span class="hl-2">SellingPartnerApiAuth</span><span class="hl-0">} </span><span class="hl-1">from</span><span class="hl-0"> </span><span class="hl-3">&#39;@sp-api-sdk/auth&#39;</span><br/><span class="hl-1">import</span><span class="hl-0"> {</span><span class="hl-2">VendorTransactionStatusApiClient</span><span class="hl-0">} </span><span class="hl-1">from</span><span class="hl-0"> </span><span class="hl-3">&#39;@sp-api-sdk/vendor-transaction-status-api-v1&#39;</span><br/><br/><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">auth</span><span class="hl-0"> = </span><span class="hl-4">new</span><span class="hl-0"> </span><span class="hl-6">SellingPartnerApiAuth</span><span class="hl-0">({</span><br/><span class="hl-0">  </span><span class="hl-2">clientId:</span><span class="hl-0"> </span><span class="hl-2">process</span><span class="hl-0">.</span><span class="hl-2">env</span><span class="hl-0">.</span><span class="hl-5">LWA_CLIENT_ID</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-2">clientSecret:</span><span class="hl-0"> </span><span class="hl-2">process</span><span class="hl-0">.</span><span class="hl-2">env</span><span class="hl-0">.</span><span class="hl-5">LWA_CLIENT_SECRET</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-2">refreshToken:</span><span class="hl-0"> </span><span class="hl-3">&#39;Atzr|…&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-2">accessKeyId:</span><span class="hl-0"> </span><span class="hl-3">&#39;&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-2">secretAccessKey:</span><span class="hl-0"> </span><span class="hl-3">&#39;&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-2">role:</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-2">arn:</span><span class="hl-0"> </span><span class="hl-3">&#39;arn:aws:iam::…&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  },</span><br/><span class="hl-0">})</span><br/><br/><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">client</span><span class="hl-0"> = </span><span class="hl-4">new</span><span class="hl-0"> </span><span class="hl-6">VendorTransactionStatusApiClient</span><span class="hl-0">({</span><br/><span class="hl-0">  </span><span class="hl-2">auth</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-2">region:</span><span class="hl-0"> </span><span class="hl-3">&#39;eu&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">})</span>
+</code></pre>
+
+<a href="#rate-limiting" id="rate-limiting" style="color: inherit; text-decoration: none;">
+  <h2>Rate Limiting</h2>
+</a>
+<p>In order to retry rate limited requests (HTTP 429), you can configure the API client as such:</p>
+<pre><code class="language-javascript"><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">client</span><span class="hl-0"> = </span><span class="hl-4">new</span><span class="hl-0"> </span><span class="hl-6">VendorTransactionStatusApiClient</span><span class="hl-0">({</span><br/><span class="hl-0">  </span><span class="hl-2">auth</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-2">region:</span><span class="hl-0"> </span><span class="hl-3">&#39;eu&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-2">rateLimiting:</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-2">retry:</span><span class="hl-0"> </span><span class="hl-4">true</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-7">// Optionally specify a callback that will be called on every retry.</span><br/><span class="hl-0">    </span><span class="hl-6">onRetry</span><span class="hl-2">:</span><span class="hl-0"> (</span><span class="hl-2">retryInfo</span><span class="hl-0">) </span><span class="hl-4">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">      </span><span class="hl-2">console</span><span class="hl-0">.</span><span class="hl-6">log</span><span class="hl-0">(</span><span class="hl-2">retryInfo</span><span class="hl-0">)</span><br/><span class="hl-0">    },</span><br/><span class="hl-0">  },</span><br/><span class="hl-0">})</span>
+</code></pre>
+<p>The rate limits used for each route are specified in the <a href="https://developer-docs.amazon.com/sp-api/docs">API documentation</a>.</p>
+
+<a href="#logging" id="logging" style="color: inherit; text-decoration: none;">
+  <h2>Logging</h2>
+</a>
+<p>You can enable logging for both SP-API requests and responses by configuring the <code>logging.request</code> and <code>logging.response</code> properties.</p>
+<pre><code class="language-javascript"><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">client</span><span class="hl-0"> = </span><span class="hl-4">new</span><span class="hl-0"> </span><span class="hl-6">VendorTransactionStatusApiClient</span><span class="hl-0">({</span><br/><span class="hl-0">  </span><span class="hl-2">auth</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-2">region:</span><span class="hl-0"> </span><span class="hl-3">&#39;eu&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-2">logging:</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-2">request:</span><span class="hl-0"> {</span><br/><span class="hl-0">      </span><span class="hl-2">logger:</span><span class="hl-0"> </span><span class="hl-2">console</span><span class="hl-0">.</span><span class="hl-2">debug</span><br/><span class="hl-0">    },</span><br/><span class="hl-0">    </span><span class="hl-2">response:</span><span class="hl-0"> {</span><br/><span class="hl-0">      </span><span class="hl-2">logger:</span><span class="hl-0"> </span><span class="hl-2">console</span><span class="hl-0">.</span><span class="hl-2">debug</span><br/><span class="hl-0">    },</span><br/><span class="hl-0">    </span><span class="hl-2">error:</span><span class="hl-0"> </span><span class="hl-4">true</span><span class="hl-0">,</span><br/><span class="hl-0">  },</span><br/><span class="hl-0">})</span>
+</code></pre>
+<p>Specifying <code>true</code> will use the default options, specifying an object will allow you to override the default options.<br>This uses <a href="https://github.com/hg-pyun/axios-logger">axios-logger</a> under the hood.<br>By default, if enabled, the <code>request</code> and <code>response</code> loggers will use <code>console.info</code> and the <code>error</code> logger will use <code>console.error</code>.</p>
+
+<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+  <h2>License</h2>
+</a>
+<p>MIT</p>
+
+<a href="#miscellaneous" id="miscellaneous" style="color: inherit; text-decoration: none;">
+  <h2>Miscellaneous</h2>
+</a>
+<pre><code><span class="hl-0">    ╚⊙ ⊙╝</span><br/><span class="hl-0">  ╚═(███)═╝</span><br/><span class="hl-0"> ╚═(███)═╝</span><br/><span class="hl-0">╚═(███)═╝</span><br/><span class="hl-0"> ╚═(███)═╝</span><br/><span class="hl-0">  ╚═(███)═╝</span><br/><span class="hl-0">   ╚═(███)═╝</span>
+</code></pre>
+</section></section>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <h3 class="tsd-index-heading uppercase">Index</h3>

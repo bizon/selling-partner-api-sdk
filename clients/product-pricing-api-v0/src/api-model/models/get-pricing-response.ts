@@ -16,7 +16,7 @@
 import { Price } from './price';
 
 /**
- * The response schema for the getPricing and getCompetitivePricing operations.
+ * The response schema for the `getPricing` and `getCompetitivePricing` operations.
  * @export
  * @interface GetPricingResponse
  */

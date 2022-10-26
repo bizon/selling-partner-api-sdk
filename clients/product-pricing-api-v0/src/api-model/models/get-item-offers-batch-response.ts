@@ -16,13 +16,13 @@
 import { ItemOffersResponse } from './item-offers-response';
 
 /**
- * The response associated with the getItemOffersBatch API call.
+ * The response associated with the `getItemOffersBatch` API call.
  * @export
  * @interface GetItemOffersBatchResponse
  */
 export interface GetItemOffersBatchResponse {
     /**
-     * A list of getItemOffers batched responses.
+     * A list of `getItemOffers` batched responses.
      * @type {Array<ItemOffersResponse>}
      * @memberof GetItemOffersBatchResponse
      */

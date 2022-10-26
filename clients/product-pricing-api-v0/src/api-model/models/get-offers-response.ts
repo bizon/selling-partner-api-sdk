@@ -16,7 +16,7 @@
 import { GetOffersResult } from './get-offers-result';
 
 /**
- * The response schema for the getListingOffers and getItemOffers operations.
+ * The response schema for the `getListingOffers` and `getItemOffers` operations.
  * @export
  * @interface GetOffersResponse
  */

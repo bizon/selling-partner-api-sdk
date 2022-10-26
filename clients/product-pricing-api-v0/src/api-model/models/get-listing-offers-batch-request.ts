@@ -16,13 +16,13 @@
 import { ListingOffersRequest } from './listing-offers-request';
 
 /**
- * The request associated with the getListingOffersBatch API call.
+ * The request associated with the `getListingOffersBatch` API call.
  * @export
  * @interface GetListingOffersBatchRequest
  */
 export interface GetListingOffersBatchRequest {
     /**
-     * A list of getItemOffers batched requests to run.
+     * A list of `getListingOffers` batched requests to run.
      * @type {Array<ListingOffersRequest>}
      * @memberof GetListingOffersBatchRequest
      */

@@ -13,11 +13,23 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { BatchOffersResponse } from './batch-offers-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import { GetOffersHttpStatusLine } from './get-offers-http-status-line';
+// May contain unused imports in some cases
+// @ts-ignore
 import { GetOffersResponse } from './get-offers-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import { HttpResponseHeaders } from './http-response-headers';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ListingOffersRequestParams } from './listing-offers-request-params';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ListingOffersResponseAllOf } from './listing-offers-response-all-of';
 
 /**

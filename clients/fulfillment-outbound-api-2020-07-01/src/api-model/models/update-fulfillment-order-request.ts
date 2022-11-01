@@ -13,11 +13,23 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Address } from './address';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FeatureSettings } from './feature-settings';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FulfillmentAction } from './fulfillment-action';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FulfillmentPolicy } from './fulfillment-policy';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ShippingSpeedCategory } from './shipping-speed-category';
+// May contain unused imports in some cases
+// @ts-ignore
 import { UpdateFulfillmentOrderItem } from './update-fulfillment-order-item';
 
 /**

@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ScheduledPackageId } from './scheduled-package-id';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TimeSlot } from './time-slot';
 
 /**

@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Money } from './money';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TaxDetail } from './tax-detail';
 
 /**

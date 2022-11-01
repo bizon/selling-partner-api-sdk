@@ -13,9 +13,17 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Container } from './container';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Item } from './item';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PartyIdentification } from './party-identification';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ShipmentDetails } from './shipment-details';
 
 /**

@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { FulfillmentShipmentItem } from './fulfillment-shipment-item';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FulfillmentShipmentPackage } from './fulfillment-shipment-package';
 
 /**

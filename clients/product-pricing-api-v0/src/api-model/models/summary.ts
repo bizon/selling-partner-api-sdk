@@ -13,10 +13,20 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { BuyBoxPriceType } from './buy-box-price-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { LowestPriceType } from './lowest-price-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { MoneyType } from './money-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { OfferCountType } from './offer-count-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { SalesRankType } from './sales-rank-type';
 
 /**

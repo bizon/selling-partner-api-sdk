@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AggregationTimePeriod } from './aggregation-time-period';
 
 /**

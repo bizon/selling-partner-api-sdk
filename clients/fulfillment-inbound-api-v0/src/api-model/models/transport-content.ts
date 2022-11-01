@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { TransportDetailOutput } from './transport-detail-output';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TransportHeader } from './transport-header';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TransportResult } from './transport-result';
 
 /**

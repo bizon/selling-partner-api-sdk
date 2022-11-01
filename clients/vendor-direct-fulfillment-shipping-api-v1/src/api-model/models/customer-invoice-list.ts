@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { CustomerInvoice } from './customer-invoice';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Pagination } from './pagination';
 
 /**

@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Dimensions } from './dimensions';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PackedItem } from './packed-item';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Weight } from './weight';
 
 /**

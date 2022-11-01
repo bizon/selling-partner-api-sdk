@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ColorType } from './color-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { StandardImageTextBlock } from './standard-image-text-block';
 
 /**

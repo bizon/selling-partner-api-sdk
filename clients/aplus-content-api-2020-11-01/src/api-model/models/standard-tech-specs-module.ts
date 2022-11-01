@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { StandardTextPairBlock } from './standard-text-pair-block';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TextComponent } from './text-component';
 
 /**

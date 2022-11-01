@@ -13,9 +13,17 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ConditionType } from './condition-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemIdentifier } from './item-identifier';
+// May contain unused imports in some cases
+// @ts-ignore
 import { OfferDetail } from './offer-detail';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Summary } from './summary';
 
 /**

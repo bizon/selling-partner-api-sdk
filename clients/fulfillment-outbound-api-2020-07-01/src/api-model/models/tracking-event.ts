@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { EventCode } from './event-code';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TrackingAddress } from './tracking-address';
 
 /**

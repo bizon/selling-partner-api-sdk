@@ -13,12 +13,26 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Carton } from './carton';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ImportDetails } from './import-details';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Item } from './item';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Pallet } from './pallet';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PartyIdentification } from './party-identification';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ShipmentMeasurements } from './shipment-measurements';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TransportationDetails } from './transportation-details';
 
 /**

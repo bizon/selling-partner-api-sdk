@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { BarcodeInstruction } from './barcode-instruction';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PrepGuidance } from './prep-guidance';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PrepInstruction } from './prep-instruction';
 
 /**

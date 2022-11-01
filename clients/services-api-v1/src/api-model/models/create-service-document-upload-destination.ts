@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ServiceDocumentUploadDestination } from './service-document-upload-destination';
 
 /**

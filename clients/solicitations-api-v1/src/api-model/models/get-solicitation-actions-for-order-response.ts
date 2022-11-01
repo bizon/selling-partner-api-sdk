@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { GetSolicitationActionsForOrderResponseEmbedded } from './get-solicitation-actions-for-order-response-embedded';
+// May contain unused imports in some cases
+// @ts-ignore
 import { GetSolicitationActionsForOrderResponseLinks } from './get-solicitation-actions-for-order-response-links';
 
 /**

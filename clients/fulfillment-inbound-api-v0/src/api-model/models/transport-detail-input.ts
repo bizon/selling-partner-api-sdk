@@ -13,9 +13,17 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { NonPartneredLtlDataInput } from './non-partnered-ltl-data-input';
+// May contain unused imports in some cases
+// @ts-ignore
 import { NonPartneredSmallParcelDataInput } from './non-partnered-small-parcel-data-input';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PartneredLtlDataInput } from './partnered-ltl-data-input';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PartneredSmallParcelDataInput } from './partnered-small-parcel-data-input';
 
 /**

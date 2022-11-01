@@ -13,10 +13,20 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Address } from './address';
+// May contain unused imports in some cases
+// @ts-ignore
 import { BoxContentsFeeDetails } from './box-contents-fee-details';
+// May contain unused imports in some cases
+// @ts-ignore
 import { BoxContentsSource } from './box-contents-source';
+// May contain unused imports in some cases
+// @ts-ignore
 import { LabelPrepType } from './label-prep-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ShipmentStatus } from './shipment-status';
 
 /**

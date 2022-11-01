@@ -13,9 +13,17 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AggregationFilter } from './aggregation-filter';
+// May contain unused imports in some cases
+// @ts-ignore
 import { AggregationSettings } from './aggregation-settings';
+// May contain unused imports in some cases
+// @ts-ignore
 import { EventFilterAllOf } from './event-filter-all-of';
+// May contain unused imports in some cases
+// @ts-ignore
 import { MarketplaceFilter } from './marketplace-filter';
 
 /**

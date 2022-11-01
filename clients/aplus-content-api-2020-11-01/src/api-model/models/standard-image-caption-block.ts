@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ImageComponent } from './image-component';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TextComponent } from './text-component';
 
 /**

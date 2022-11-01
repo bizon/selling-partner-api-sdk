@@ -13,13 +13,29 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemDimensionsByMarketplace } from './item-dimensions-by-marketplace';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemIdentifiersByMarketplace } from './item-identifiers-by-marketplace';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemImagesByMarketplace } from './item-images-by-marketplace';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemProductTypeByMarketplace } from './item-product-type-by-marketplace';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemRelationshipsByMarketplace } from './item-relationships-by-marketplace';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemSalesRanksByMarketplace } from './item-sales-ranks-by-marketplace';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemSummaryByMarketplace } from './item-summary-by-marketplace';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemVendorDetailsByMarketplace } from './item-vendor-details-by-marketplace';
 
 /**

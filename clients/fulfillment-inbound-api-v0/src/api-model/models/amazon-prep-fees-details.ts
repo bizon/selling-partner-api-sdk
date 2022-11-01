@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Amount } from './amount';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PrepInstruction } from './prep-instruction';
 
 /**

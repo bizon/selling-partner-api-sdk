@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemQuantity } from './item-quantity';
+// May contain unused imports in some cases
+// @ts-ignore
 import { OrderedQuantityDetails } from './ordered-quantity-details';
 
 /**

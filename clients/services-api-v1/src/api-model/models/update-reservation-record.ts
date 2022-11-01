@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Reservation } from './reservation';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Warning } from './warning';
 
 /**

@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { StandardImageTextCaptionBlock } from './standard-image-text-caption-block';
 
 /**

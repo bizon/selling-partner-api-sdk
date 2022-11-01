@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AdditionalInputs } from './additional-inputs';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemLevelFields } from './item-level-fields';
 
 /**

@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { InboundShipmentHeader } from './inbound-shipment-header';
+// May contain unused imports in some cases
+// @ts-ignore
 import { InboundShipmentItem } from './inbound-shipment-item';
 
 /**

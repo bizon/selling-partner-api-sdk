@@ -13,9 +13,17 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Address } from './address';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FeatureSettings } from './feature-settings';
+// May contain unused imports in some cases
+// @ts-ignore
 import { GetFulfillmentPreviewItem } from './get-fulfillment-preview-item';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ShippingSpeedCategory } from './shipping-speed-category';
 
 /**

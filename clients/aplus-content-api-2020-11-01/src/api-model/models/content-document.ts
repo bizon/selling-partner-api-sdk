@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ContentModule } from './content-module';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ContentType } from './content-type';
 
 /**

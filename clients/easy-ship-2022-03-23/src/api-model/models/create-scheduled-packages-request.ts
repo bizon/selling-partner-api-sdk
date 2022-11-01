@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { LabelFormat } from './label-format';
+// May contain unused imports in some cases
+// @ts-ignore
 import { OrderScheduleDetails } from './order-schedule-details';
 
 /**

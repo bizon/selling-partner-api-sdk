@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AplusResponse } from './aplus-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PostContentDocumentResponseAllOf } from './post-content-document-response-all-of';
 
 /**

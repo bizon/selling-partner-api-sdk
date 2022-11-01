@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AplusPaginatedResponse } from './aplus-paginated-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PublishRecord } from './publish-record';
+// May contain unused imports in some cases
+// @ts-ignore
 import { SearchContentPublishRecordsResponseAllOf } from './search-content-publish-records-response-all-of';
 
 /**

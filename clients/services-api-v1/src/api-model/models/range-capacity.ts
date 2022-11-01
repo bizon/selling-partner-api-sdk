@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { CapacityType } from './capacity-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RangeSlot } from './range-slot';
 
 /**

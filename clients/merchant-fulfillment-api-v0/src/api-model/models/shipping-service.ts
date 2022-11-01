@@ -13,10 +13,20 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AvailableShippingServiceOptions } from './available-shipping-service-options';
+// May contain unused imports in some cases
+// @ts-ignore
 import { CurrencyAmount } from './currency-amount';
+// May contain unused imports in some cases
+// @ts-ignore
 import { LabelFormat } from './label-format';
+// May contain unused imports in some cases
+// @ts-ignore
 import { LabelFormatOption } from './label-format-option';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ShippingServiceOptions } from './shipping-service-options';
 
 /**

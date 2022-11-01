@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { FeesEstimate } from './fees-estimate';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FeesEstimateError } from './fees-estimate-error';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FeesEstimateIdentifier } from './fees-estimate-identifier';
 
 /**

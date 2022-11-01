@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ASINIdentifier } from './asinidentifier';
+// May contain unused imports in some cases
+// @ts-ignore
 import { SellerSKUIdentifier } from './seller-skuidentifier';
 
 /**

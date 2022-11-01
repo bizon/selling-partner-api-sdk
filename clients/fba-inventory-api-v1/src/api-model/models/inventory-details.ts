@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ResearchingQuantity } from './researching-quantity';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ReservedQuantity } from './reserved-quantity';
+// May contain unused imports in some cases
+// @ts-ignore
 import { UnfulfillableQuantity } from './unfulfillable-quantity';
 
 /**

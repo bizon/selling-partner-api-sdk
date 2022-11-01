@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemDetails } from './item-details';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PartyIdentification } from './party-identification';
 
 /**

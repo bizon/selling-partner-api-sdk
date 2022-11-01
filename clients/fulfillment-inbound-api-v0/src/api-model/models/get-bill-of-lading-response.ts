@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { BillOfLadingDownloadURL } from './bill-of-lading-download-url';
 
 /**

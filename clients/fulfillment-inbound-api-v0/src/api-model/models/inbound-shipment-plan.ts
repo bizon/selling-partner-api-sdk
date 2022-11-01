@@ -13,9 +13,17 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Address } from './address';
+// May contain unused imports in some cases
+// @ts-ignore
 import { BoxContentsFeeDetails } from './box-contents-fee-details';
+// May contain unused imports in some cases
+// @ts-ignore
 import { InboundShipmentPlanItem } from './inbound-shipment-plan-item';
+// May contain unused imports in some cases
+// @ts-ignore
 import { LabelPrepType } from './label-prep-type';
 
 /**

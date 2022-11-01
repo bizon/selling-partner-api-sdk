@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Item } from './item';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TimeSlot } from './time-slot';
 
 /**

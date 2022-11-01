@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { RejectionReason } from './rejection-reason';
+// May contain unused imports in some cases
+// @ts-ignore
 import { VerificationStatus } from './verification-status';
 
 /**

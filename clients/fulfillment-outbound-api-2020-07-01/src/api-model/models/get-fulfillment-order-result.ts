@@ -13,10 +13,20 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { FulfillmentOrder } from './fulfillment-order';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FulfillmentOrderItem } from './fulfillment-order-item';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FulfillmentShipment } from './fulfillment-shipment';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ReturnAuthorization } from './return-authorization';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ReturnItem } from './return-item';
 
 /**

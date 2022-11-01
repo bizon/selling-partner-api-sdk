@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AplusPaginatedResponse } from './aplus-paginated-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import { AsinMetadata } from './asin-metadata';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ListContentDocumentAsinRelationsResponseAllOf } from './list-content-document-asin-relations-response-all-of';
 
 /**

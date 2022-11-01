@@ -13,10 +13,20 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { BatchOffersRequestParams } from './batch-offers-request-params';
+// May contain unused imports in some cases
+// @ts-ignore
 import { BatchRequest } from './batch-request';
+// May contain unused imports in some cases
+// @ts-ignore
 import { CustomerType } from './customer-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { HttpMethod } from './http-method';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemCondition } from './item-condition';
 
 /**

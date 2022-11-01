@@ -13,9 +13,17 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { CarrierWillPickUpOption } from './carrier-will-pick-up-option';
+// May contain unused imports in some cases
+// @ts-ignore
 import { CurrencyAmount } from './currency-amount';
+// May contain unused imports in some cases
+// @ts-ignore
 import { DeliveryExperienceType } from './delivery-experience-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { LabelFormat } from './label-format';
 
 /**

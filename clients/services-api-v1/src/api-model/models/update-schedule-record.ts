@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AvailabilityRecord } from './availability-record';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Warning } from './warning';
 
 /**

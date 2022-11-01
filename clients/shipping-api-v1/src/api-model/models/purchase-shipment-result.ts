@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { LabelResult } from './label-result';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ServiceRate } from './service-rate';
 
 /**

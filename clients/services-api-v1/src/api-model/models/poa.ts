@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AppointmentTime } from './appointment-time';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Technician } from './technician';
 
 /**

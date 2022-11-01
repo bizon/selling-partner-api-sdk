@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Currency } from './currency';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TaxWithheldComponent } from './tax-withheld-component';
 
 /**

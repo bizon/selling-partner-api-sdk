@@ -13,9 +13,17 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ChargeComponent } from './charge-component';
+// May contain unused imports in some cases
+// @ts-ignore
 import { DirectPayment } from './direct-payment';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FeeComponent } from './fee-component';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ShipmentItem } from './shipment-item';
 
 /**

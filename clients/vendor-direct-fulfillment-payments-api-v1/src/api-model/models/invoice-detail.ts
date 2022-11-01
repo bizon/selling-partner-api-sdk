@@ -13,11 +13,23 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AdditionalDetails } from './additional-details';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ChargeDetails } from './charge-details';
+// May contain unused imports in some cases
+// @ts-ignore
 import { InvoiceItem } from './invoice-item';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Money } from './money';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PartyIdentification } from './party-identification';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TaxDetail } from './tax-detail';
 
 /**

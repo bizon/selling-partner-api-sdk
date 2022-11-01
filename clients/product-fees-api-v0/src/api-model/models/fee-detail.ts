@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { IncludedFeeDetail } from './included-fee-detail';
+// May contain unused imports in some cases
+// @ts-ignore
 import { MoneyType } from './money-type';
 
 /**

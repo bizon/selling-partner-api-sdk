@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AcknowledgementStatusDetails } from './acknowledgement-status-details';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemQuantity } from './item-quantity';
 
 /**

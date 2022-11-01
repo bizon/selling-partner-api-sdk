@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AvailableCarrierWillPickUpOption } from './available-carrier-will-pick-up-option';
+// May contain unused imports in some cases
+// @ts-ignore
 import { AvailableDeliveryExperienceOption } from './available-delivery-experience-option';
 
 /**

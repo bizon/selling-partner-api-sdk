@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Address } from './address';
+// May contain unused imports in some cases
+// @ts-ignore
 import { InboundShipmentPlanRequestItem } from './inbound-shipment-plan-request-item';
+// May contain unused imports in some cases
+// @ts-ignore
 import { LabelPrepPreference } from './label-prep-preference';
 
 /**

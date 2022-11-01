@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ImportDetails } from './import-details';
+// May contain unused imports in some cases
+// @ts-ignore
 import { OrderItem } from './order-item';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PartyIdentification } from './party-identification';
 
 /**

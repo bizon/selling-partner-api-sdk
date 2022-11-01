@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { OrderAcknowledgementItem } from './order-acknowledgement-item';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PartyIdentification } from './party-identification';
 
 /**

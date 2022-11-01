@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { GetFulfillmentPreviewResult } from './get-fulfillment-preview-result';
 
 /**

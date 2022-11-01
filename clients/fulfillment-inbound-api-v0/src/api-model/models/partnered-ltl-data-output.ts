@@ -13,11 +13,23 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Amount } from './amount';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Contact } from './contact';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Pallet } from './pallet';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PartneredEstimate } from './partnered-estimate';
+// May contain unused imports in some cases
+// @ts-ignore
 import { SellerFreightClass } from './seller-freight-class';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Weight } from './weight';
 
 /**

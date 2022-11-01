@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AdditionalSellerInput } from './additional-seller-input';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Constraint } from './constraint';
+// May contain unused imports in some cases
+// @ts-ignore
 import { InputTargetType } from './input-target-type';
 
 /**

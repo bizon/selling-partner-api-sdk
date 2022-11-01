@@ -13,10 +13,20 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { FulfillmentAvailability } from './fulfillment-availability';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Issue } from './issue';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemOfferByMarketplace } from './item-offer-by-marketplace';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemProcurement } from './item-procurement';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemSummaryByMarketplace } from './item-summary-by-marketplace';
 
 /**

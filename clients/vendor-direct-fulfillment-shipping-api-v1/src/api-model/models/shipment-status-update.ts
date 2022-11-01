@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { PartyIdentification } from './party-identification';
+// May contain unused imports in some cases
+// @ts-ignore
 import { StatusUpdateDetails } from './status-update-details';
 
 /**

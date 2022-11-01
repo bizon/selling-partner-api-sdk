@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { GetMessagingActionResponseEmbedded } from './get-messaging-action-response-embedded';
+// May contain unused imports in some cases
+// @ts-ignore
 import { GetMessagingActionResponseLinks } from './get-messaging-action-response-links';
+// May contain unused imports in some cases
+// @ts-ignore
 import { MessagingAction } from './messaging-action';
 
 /**

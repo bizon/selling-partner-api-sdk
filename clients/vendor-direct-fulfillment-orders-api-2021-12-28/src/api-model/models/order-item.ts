@@ -13,10 +13,20 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { GiftDetails } from './gift-details';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemQuantity } from './item-quantity';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Money } from './money';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ScheduledDeliveryShipment } from './scheduled-delivery-shipment';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TaxItemDetails } from './tax-item-details';
 
 /**

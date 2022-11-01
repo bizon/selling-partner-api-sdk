@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { GuidanceReason } from './guidance-reason';
+// May contain unused imports in some cases
+// @ts-ignore
 import { InboundGuidance } from './inbound-guidance';
 
 /**

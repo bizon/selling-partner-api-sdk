@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { FeeLineItem } from './fee-line-item';
+// May contain unused imports in some cases
+// @ts-ignore
 import { MoneyType } from './money-type';
 
 /**

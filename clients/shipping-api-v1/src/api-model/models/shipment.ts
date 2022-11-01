@@ -13,9 +13,17 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AcceptedRate } from './accepted-rate';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Address } from './address';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Container } from './container';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Party } from './party';
 
 /**

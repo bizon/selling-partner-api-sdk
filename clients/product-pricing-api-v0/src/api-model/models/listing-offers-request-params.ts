@@ -13,9 +13,17 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { BatchOffersRequestParams } from './batch-offers-request-params';
+// May contain unused imports in some cases
+// @ts-ignore
 import { CustomerType } from './customer-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemCondition } from './item-condition';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ListingOffersRequestParamsAllOf } from './listing-offers-request-params-all-of';
 
 /**

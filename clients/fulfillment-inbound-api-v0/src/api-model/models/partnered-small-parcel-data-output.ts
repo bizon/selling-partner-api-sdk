@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { PartneredEstimate } from './partnered-estimate';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PartneredSmallParcelPackageOutput } from './partnered-small-parcel-package-output';
 
 /**

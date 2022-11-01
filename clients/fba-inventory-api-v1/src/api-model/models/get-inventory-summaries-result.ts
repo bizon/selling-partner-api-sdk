@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Granularity } from './granularity';
+// May contain unused imports in some cases
+// @ts-ignore
 import { InventorySummary } from './inventory-summary';
 
 /**

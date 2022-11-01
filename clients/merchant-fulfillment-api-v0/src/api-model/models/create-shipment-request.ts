@@ -13,9 +13,17 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AdditionalSellerInputs } from './additional-seller-inputs';
+// May contain unused imports in some cases
+// @ts-ignore
 import { HazmatType } from './hazmat-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { LabelFormatOptionRequest } from './label-format-option-request';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ShipmentRequestDetails } from './shipment-request-details';
 
 /**

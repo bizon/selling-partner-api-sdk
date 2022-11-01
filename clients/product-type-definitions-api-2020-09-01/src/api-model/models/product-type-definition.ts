@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ProductTypeVersion } from './product-type-version';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PropertyGroup } from './property-group';
+// May contain unused imports in some cases
+// @ts-ignore
 import { SchemaLink } from './schema-link';
 
 /**

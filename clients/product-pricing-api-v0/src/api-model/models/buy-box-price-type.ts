@@ -13,9 +13,17 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { MoneyType } from './money-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { OfferCustomerType } from './offer-customer-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Points } from './points';
+// May contain unused imports in some cases
+// @ts-ignore
 import { QuantityDiscountType } from './quantity-discount-type';
 
 /**

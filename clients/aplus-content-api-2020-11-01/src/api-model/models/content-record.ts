@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ContentDocument } from './content-document';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ContentMetadata } from './content-metadata';
 
 /**

@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { IdType } from './id-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { OptionalFulfillmentProgram } from './optional-fulfillment-program';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PriceToEstimateFees } from './price-to-estimate-fees';
 
 /**

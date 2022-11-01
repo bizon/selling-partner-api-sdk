@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { DecimalWithUnits } from './decimal-with-units';
+// May contain unused imports in some cases
+// @ts-ignore
 import { DimensionType } from './dimension-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { IdentifierType } from './identifier-type';
 
 /**

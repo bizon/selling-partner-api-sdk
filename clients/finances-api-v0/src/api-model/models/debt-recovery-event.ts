@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ChargeInstrument } from './charge-instrument';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Currency } from './currency';
+// May contain unused imports in some cases
+// @ts-ignore
 import { DebtRecoveryItem } from './debt-recovery-item';
 
 /**

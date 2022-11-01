@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Condition } from './condition';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PrepDetails } from './prep-details';
 
 /**

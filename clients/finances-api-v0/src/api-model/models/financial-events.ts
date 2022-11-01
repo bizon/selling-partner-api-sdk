@@ -13,27 +13,71 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AdjustmentEvent } from './adjustment-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { AffordabilityExpenseEvent } from './affordability-expense-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { CouponPaymentEvent } from './coupon-payment-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { DebtRecoveryEvent } from './debt-recovery-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FBALiquidationEvent } from './fbaliquidation-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ImagingServicesFeeEvent } from './imaging-services-fee-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { LoanServicingEvent } from './loan-servicing-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { NetworkComminglingTransactionEvent } from './network-commingling-transaction-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PayWithAmazonEvent } from './pay-with-amazon-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ProductAdsPaymentEvent } from './product-ads-payment-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RemovalShipmentAdjustmentEvent } from './removal-shipment-adjustment-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RemovalShipmentEvent } from './removal-shipment-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RentalTransactionEvent } from './rental-transaction-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RetrochargeEvent } from './retrocharge-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { SAFETReimbursementEvent } from './safetreimbursement-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { SellerDealPaymentEvent } from './seller-deal-payment-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { SellerReviewEnrollmentPaymentEvent } from './seller-review-enrollment-payment-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ServiceFeeEvent } from './service-fee-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ShipmentEvent } from './shipment-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { SolutionProviderCreditEvent } from './solution-provider-credit-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TaxWithholdingEvent } from './tax-withholding-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TrialShipmentEvent } from './trial-shipment-event';
 
 /**

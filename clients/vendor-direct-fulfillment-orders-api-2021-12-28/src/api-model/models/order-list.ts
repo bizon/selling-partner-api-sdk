@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Order } from './order';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Pagination } from './pagination';
 
 /**

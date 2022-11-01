@@ -13,11 +13,23 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { BuyerRequestedCancel } from './buyer-requested-cancel';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemBuyerInfo } from './item-buyer-info';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Money } from './money';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PointsGrantedDetail } from './points-granted-detail';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ProductInfoDetail } from './product-info-detail';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TaxCollection } from './tax-collection';
 
 /**

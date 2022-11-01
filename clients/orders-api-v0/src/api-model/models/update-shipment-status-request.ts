@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { OrderItemsInner } from './order-items-inner';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ShipmentStatus } from './shipment-status';
 
 /**

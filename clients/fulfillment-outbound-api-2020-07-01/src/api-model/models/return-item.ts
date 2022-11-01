@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { FulfillmentReturnItemStatus } from './fulfillment-return-item-status';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ReturnItemDisposition } from './return-item-disposition';
 
 /**

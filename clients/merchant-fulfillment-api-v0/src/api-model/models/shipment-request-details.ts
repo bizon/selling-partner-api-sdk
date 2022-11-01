@@ -13,11 +13,23 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Address } from './address';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Item } from './item';
+// May contain unused imports in some cases
+// @ts-ignore
 import { LabelCustomization } from './label-customization';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PackageDimensions } from './package-dimensions';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ShippingServiceOptions } from './shipping-service-options';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Weight } from './weight';
 
 /**

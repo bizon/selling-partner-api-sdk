@@ -13,13 +13,29 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Appointment } from './appointment';
+// May contain unused imports in some cases
+// @ts-ignore
 import { AppointmentTime } from './appointment-time';
+// May contain unused imports in some cases
+// @ts-ignore
 import { AssociatedItem } from './associated-item';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Buyer } from './buyer';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ScopeOfWork } from './scope-of-work';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Seller } from './seller';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ServiceJobProvider } from './service-job-provider';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ServiceLocation } from './service-location';
 
 /**

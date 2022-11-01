@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ChargeComponent } from './charge-component';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FeeComponent } from './fee-component';
 
 /**

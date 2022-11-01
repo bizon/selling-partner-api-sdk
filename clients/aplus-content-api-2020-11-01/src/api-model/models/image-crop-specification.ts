@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ImageDimensions } from './image-dimensions';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ImageOffsets } from './image-offsets';
 
 /**

@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AdditionalSellerInputs } from './additional-seller-inputs';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Weight } from './weight';
 
 /**

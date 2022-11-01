@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemClassificationSalesRank } from './item-classification-sales-rank';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemDisplayGroupSalesRank } from './item-display-group-sales-rank';
 
 /**

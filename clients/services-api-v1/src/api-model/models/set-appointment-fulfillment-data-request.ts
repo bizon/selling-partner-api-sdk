@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AppointmentResource } from './appointment-resource';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FulfillmentDocument } from './fulfillment-document';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FulfillmentTime } from './fulfillment-time';
 
 /**

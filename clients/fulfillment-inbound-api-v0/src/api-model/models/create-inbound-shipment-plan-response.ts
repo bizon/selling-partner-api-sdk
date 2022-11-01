@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { CreateInboundShipmentPlanResult } from './create-inbound-shipment-plan-result';
 
 /**

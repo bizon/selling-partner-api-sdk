@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Item } from './item';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Pagination } from './pagination';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Refinements } from './refinements';
 
 /**

@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { PartneredSmallParcelPackageInput } from './partnered-small-parcel-package-input';
 
 /**

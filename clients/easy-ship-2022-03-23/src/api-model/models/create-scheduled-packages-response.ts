@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Package } from './package';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RejectedOrder } from './rejected-order';
 
 /**

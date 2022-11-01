@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { GetSolicitationActionResponseEmbedded } from './get-solicitation-action-response-embedded';
+// May contain unused imports in some cases
+// @ts-ignore
 import { GetSolicitationActionResponseLinks } from './get-solicitation-action-response-links';
+// May contain unused imports in some cases
+// @ts-ignore
 import { SolicitationsAction } from './solicitations-action';
 
 /**

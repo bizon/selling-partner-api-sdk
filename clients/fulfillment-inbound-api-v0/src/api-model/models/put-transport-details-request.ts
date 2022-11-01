@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ShipmentType } from './shipment-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TransportDetailInput } from './transport-detail-input';
 
 /**

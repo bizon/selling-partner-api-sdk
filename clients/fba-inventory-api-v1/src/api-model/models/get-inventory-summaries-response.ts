@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { GetInventorySummariesResult } from './get-inventory-summaries-result';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Pagination } from './pagination';
 
 /**

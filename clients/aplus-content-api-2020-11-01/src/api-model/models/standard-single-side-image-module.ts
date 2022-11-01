@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { PositionType } from './position-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { StandardImageTextBlock } from './standard-image-text-block';
 
 /**

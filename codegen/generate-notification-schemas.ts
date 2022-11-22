@@ -44,10 +44,10 @@ async function generateSchema(schemaFilePaths: string): Promise<NotificationFile
       },
     )
 
-    const fileName = `${kebabCase(notificationName)}.ts`
+    const fileName = kebabCase(notificationName)
 
     await fs.writeFile(
-      `packages/notifications/src/${fileName}`,
+      `packages/notifications/src/${fileName}.ts`,
       model.replace(/\[k: string]: unknown\n/g, ''),
     )
 

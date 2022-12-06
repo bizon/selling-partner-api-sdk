@@ -26,7 +26,16 @@ export const PrepInstruction = {
     Taping: 'Taping',
     BlackShrinkWrapping: 'BlackShrinkWrapping',
     Labeling: 'Labeling',
-    HangGarment: 'HangGarment'
+    HangGarment: 'HangGarment',
+    SetCreation: 'SetCreation',
+    Boxing: 'Boxing',
+    RemoveFromHanger: 'RemoveFromHanger',
+    Debundle: 'Debundle',
+    SuffocationStickering: 'SuffocationStickering',
+    CapSealing: 'CapSealing',
+    SetStickering: 'SetStickering',
+    BlankStickering: 'BlankStickering',
+    NoPrep: 'NoPrep'
 } as const;
 
 export type PrepInstruction = typeof PrepInstruction[keyof typeof PrepInstruction];

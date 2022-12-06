@@ -3,9 +3,16 @@
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "Selling Parner API Notifications types",
   "version": "1.2.0",
-  "main": "dist/cjs/index.js",
-  "module": "dist/es/index.js",
-  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/es/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/es/index.js",
+  "types": "./dist/types/index.d.ts",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

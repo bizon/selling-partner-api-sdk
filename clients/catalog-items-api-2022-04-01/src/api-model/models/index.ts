@@ -6,6 +6,8 @@ export * from './error-list';
 export * from './item';
 export * from './item-browse-classification';
 export * from './item-classification-sales-rank';
+export * from './item-contributor';
+export * from './item-contributor-role';
 export * from './item-dimensions-by-marketplace';
 export * from './item-display-group-sales-rank';
 export * from './item-identifier';

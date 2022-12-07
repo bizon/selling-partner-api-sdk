@@ -16,6 +16,9 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import { ItemBrowseClassification } from './item-browse-classification';
+// May contain unused imports in some cases
+// @ts-ignore
+import { ItemContributor } from './item-contributor';
 
 /**
  * Summary details of an Amazon catalog item for the indicated Amazon marketplace.
@@ -29,6 +32,18 @@ export interface ItemSummaryByMarketplace {
      * @memberof ItemSummaryByMarketplace
      */
     'marketplaceId': string;
+    /**
+     * Identifies an Amazon catalog item is intended for an adult audience or is sexual in nature.
+     * @type {boolean}
+     * @memberof ItemSummaryByMarketplace
+     */
+    'adultProduct'?: boolean;
+    /**
+     * Identifies an Amazon catalog item is autographed by a player or celebrity.
+     * @type {boolean}
+     * @memberof ItemSummaryByMarketplace
+     */
+    'autographed'?: boolean;
     /**
      * Name of the brand associated with an Amazon catalog item.
      * @type {string}
@@ -48,6 +63,12 @@ export interface ItemSummaryByMarketplace {
      */
     'color'?: string;
     /**
+     * Individual contributors to the creation of an item, such as the authors or actors.
+     * @type {Array<ItemContributor>}
+     * @memberof ItemSummaryByMarketplace
+     */
+    'contributors'?: Array<ItemContributor>;
+    /**
      * Classification type associated with the Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
@@ -65,6 +86,12 @@ export interface ItemSummaryByMarketplace {
      * @memberof ItemSummaryByMarketplace
      */
     'manufacturer'?: string;
+    /**
+     * Identifies an Amazon catalog item is memorabilia valued for its connection with historical events, culture, or entertainment.
+     * @type {boolean}
+     * @memberof ItemSummaryByMarketplace
+     */
+    'memorabilia'?: boolean;
     /**
      * Model number associated with an Amazon catalog item.
      * @type {string}
@@ -84,6 +111,12 @@ export interface ItemSummaryByMarketplace {
      */
     'partNumber'?: string;
     /**
+     * First date on which an Amazon catalog item is shippable to customers.
+     * @type {string}
+     * @memberof ItemSummaryByMarketplace
+     */
+    'releaseDate'?: string;
+    /**
      * Name of the size associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
@@ -95,6 +128,12 @@ export interface ItemSummaryByMarketplace {
      * @memberof ItemSummaryByMarketplace
      */
     'style'?: string;
+    /**
+     * Identifies an Amazon catalog item is eligible for trade-in.
+     * @type {boolean}
+     * @memberof ItemSummaryByMarketplace
+     */
+    'tradeInEligible'?: boolean;
     /**
      * Identifier of the website display group associated with an Amazon catalog item.
      * @type {string}

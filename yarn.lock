@@ -8398,10 +8398,10 @@ typedoc-monorepo-link-types@^0.0.4:
   resolved "https://registry.yarnpkg.com/typedoc-monorepo-link-types/-/typedoc-monorepo-link-types-0.0.4.tgz#d2875e5802a928738493f7d7e80265d547ef1970"
   integrity sha512-fAxmfoJSp6cvT+I9/pN9pS2R8EoKUHaKU095E6H7FwN4tZUXPri5CZkxi9JLRlM5SV+pQwIlYnx9b+hnVP0nHA==
 
-typedoc@^0.23.21:
-  version "0.23.21"
-  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.23.21.tgz#2a6b0e155f91ffa9689086706ad7e3e4bc11d241"
-  integrity sha512-VNE9Jv7BgclvyH9moi2mluneSviD43dCE9pY8RWkO88/DrEgJZk9KpUk7WO468c9WWs/+aG6dOnoH7ccjnErhg==
+typedoc@^0.23.22:
+  version "0.23.22"
+  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.23.22.tgz#e25281ca816cd92ecfdaf3ec336d27e7bebb69ac"
+  integrity sha512-5sJkjK60xp8A7YpcYniu3+Wf0QcgojEnhzHuCN+CkdpQkKRhOspon/9+sGTkGI8kjVkZs3KHrhltpQyVhRMVfw==
   dependencies:
     lunr "^2.3.9"
     marked "^4.0.19"

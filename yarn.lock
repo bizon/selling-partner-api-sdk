@@ -2666,10 +2666,10 @@ aws4@^1.9.1:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
 
-axios-logger@^2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/axios-logger/-/axios-logger-2.6.1.tgz#2d251bc9902810e5ce4b9f0375a0e663b822379a"
-  integrity sha512-eWyd9n9YtjwD+NWh1gVeuGIoR9AsNsNO2Cr7JLw/6CiM3wvRwaU0fr7Rub6+lD9OwBMNFlzkBGBmiQZOOp/rOA==
+axios-logger@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/axios-logger/-/axios-logger-2.6.2.tgz#dacdce78f7dbd175712be555a57e67666033d09e"
+  integrity sha512-31ZKZfCUCJVLG1COvoz9t9SpCbNf/69L9Wkd8cEHT+VcjunK02LkGgHgyq77qKCWmFBBraQxARXKXQnnldrFGQ==
   dependencies:
     chalk "^4.1.0"
     dateformat "^3.0.3"

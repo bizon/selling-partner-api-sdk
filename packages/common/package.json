@@ -30,7 +30,7 @@
     "@sp-api-sdk/auth": "^1.10.5",
     "aws4-axios": "^2.4.9",
     "axios": "^0.27.2",
-    "axios-logger": "^2.6.1",
+    "axios-logger": "^2.6.2",
     "axios-retry": "^3.3.1",
     "read-pkg-up": "^7.0.1"
   },

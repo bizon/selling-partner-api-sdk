@@ -15,10 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { AdhocDisbursementEvent } from './adhoc-disbursement-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { AdjustmentEvent } from './adjustment-event';
 // May contain unused imports in some cases
 // @ts-ignore
 import { AffordabilityExpenseEvent } from './affordability-expense-event';
+// May contain unused imports in some cases
+// @ts-ignore
+import { CapacityReservationBillingEvent } from './capacity-reservation-billing-event';
+// May contain unused imports in some cases
+// @ts-ignore
+import { ChargeRefundEvent } from './charge-refund-event';
 // May contain unused imports in some cases
 // @ts-ignore
 import { CouponPaymentEvent } from './coupon-payment-event';
@@ -28,6 +37,9 @@ import { DebtRecoveryEvent } from './debt-recovery-event';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FBALiquidationEvent } from './fbaliquidation-event';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FailedAdhocDisbursementEventList } from './failed-adhoc-disbursement-event-list';
 // May contain unused imports in some cases
 // @ts-ignore
 import { ImagingServicesFeeEvent } from './imaging-services-fee-event';
@@ -75,10 +87,16 @@ import { ShipmentEvent } from './shipment-event';
 import { SolutionProviderCreditEvent } from './solution-provider-credit-event';
 // May contain unused imports in some cases
 // @ts-ignore
+import { TDSReimbursementEvent } from './tdsreimbursement-event';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TaxWithholdingEvent } from './tax-withholding-event';
 // May contain unused imports in some cases
 // @ts-ignore
 import { TrialShipmentEvent } from './trial-shipment-event';
+// May contain unused imports in some cases
+// @ts-ignore
+import { ValueAddedServiceChargeEventList } from './value-added-service-charge-event-list';
 
 /**
  * Contains all information related to a financial event.
@@ -92,6 +110,12 @@ export interface FinancialEvents {
      * @memberof FinancialEvents
      */
     'ShipmentEventList'?: Array<ShipmentEvent>;
+    /**
+     * A list of `ShipmentEvent` items.
+     * @type {Array<ShipmentEvent>}
+     * @memberof FinancialEvents
+     */
+    'ShipmentSettleEventList'?: Array<ShipmentEvent>;
     /**
      * A list of shipment event information.
      * @type {Array<ShipmentEvent>}
@@ -219,24 +243,6 @@ export interface FinancialEvents {
      */
     'AffordabilityExpenseReversalEventList'?: Array<AffordabilityExpenseEvent>;
     /**
-     * A list of information about trial shipment financial events.
-     * @type {Array<TrialShipmentEvent>}
-     * @memberof FinancialEvents
-     */
-    'TrialShipmentEventList'?: Array<TrialShipmentEvent>;
-    /**
-     * A list of information about shipment settle financial events.
-     * @type {Array<ShipmentEvent>}
-     * @memberof FinancialEvents
-     */
-    'ShipmentSettleEventList'?: Array<ShipmentEvent>;
-    /**
-     * List of TaxWithholding events.
-     * @type {Array<TaxWithholdingEvent>}
-     * @memberof FinancialEvents
-     */
-    'TaxWithholdingEventList'?: Array<TaxWithholdingEvent>;
-    /**
      * A list of removal shipment event information.
      * @type {Array<RemovalShipmentEvent>}
      * @memberof FinancialEvents
@@ -248,5 +254,53 @@ export interface FinancialEvents {
      * @memberof FinancialEvents
      */
     'RemovalShipmentAdjustmentEventList'?: Array<RemovalShipmentAdjustmentEvent>;
+    /**
+     * A list of information about trial shipment financial events.
+     * @type {Array<TrialShipmentEvent>}
+     * @memberof FinancialEvents
+     */
+    'TrialShipmentEventList'?: Array<TrialShipmentEvent>;
+    /**
+     * A list of `TDSReimbursementEvent` items.
+     * @type {Array<TDSReimbursementEvent>}
+     * @memberof FinancialEvents
+     */
+    'TDSReimbursementEventList'?: Array<TDSReimbursementEvent>;
+    /**
+     * A list of `AdhocDisbursement` events.
+     * @type {Array<AdhocDisbursementEvent>}
+     * @memberof FinancialEvents
+     */
+    'AdhocDisbursementEventList'?: Array<AdhocDisbursementEvent>;
+    /**
+     * A list of `TaxWithholding` events.
+     * @type {Array<TaxWithholdingEvent>}
+     * @memberof FinancialEvents
+     */
+    'TaxWithholdingEventList'?: Array<TaxWithholdingEvent>;
+    /**
+     * A list of charge refund events.
+     * @type {Array<ChargeRefundEvent>}
+     * @memberof FinancialEvents
+     */
+    'ChargeRefundEventList'?: Array<ChargeRefundEvent>;
+    /**
+     * 
+     * @type {FailedAdhocDisbursementEventList}
+     * @memberof FinancialEvents
+     */
+    'FailedAdhocDisbursementEventList'?: FailedAdhocDisbursementEventList;
+    /**
+     * 
+     * @type {ValueAddedServiceChargeEventList}
+     * @memberof FinancialEvents
+     */
+    'ValueAddedServiceChargeEventList'?: ValueAddedServiceChargeEventList;
+    /**
+     * A list of `CapacityReservationBillingEvent` events.
+     * @type {Array<CapacityReservationBillingEvent>}
+     * @memberof FinancialEvents
+     */
+    'CapacityReservationBillingEventList'?: Array<CapacityReservationBillingEvent>;
 }
 

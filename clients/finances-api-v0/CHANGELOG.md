@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/finances-api-v0@1.10.6...@sp-api-sdk/finances-api-v0@1.11.0) (2022-12-31)
+
+### Features
+
+* **clients:** update models as of 2022-12-30 ([#648](https://github.com/bizon/selling-partner-api-sdk/issues/648)) ([0d2baf3](https://github.com/bizon/selling-partner-api-sdk/commit/0d2baf37b8a038ae9d0e9c180df0abb1f97809af))
+
 ## [1.10.6](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/finances-api-v0@1.10.5...@sp-api-sdk/finances-api-v0@1.10.6) (2022-12-07)
 
 **Note:** Version bump only for package @sp-api-sdk/finances-api-v0

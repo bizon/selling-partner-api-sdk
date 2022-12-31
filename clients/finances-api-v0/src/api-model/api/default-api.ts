@@ -32,7 +32,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
     return {
         /**
          * Returns financial event groups for a given date range.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {number} [maxResultsPerPage] The maximum number of results to return per page.
+         * @param {number} [maxResultsPerPage] The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
          * @param {string} [financialEventGroupStartedBefore] A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned.
          * @param {string} [financialEventGroupStartedAfter] A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted.
          * @param {string} [nextToken] A string token returned in the response of your previous request.
@@ -85,7 +85,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
         },
         /**
          * Returns financial events for the specified data range.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {number} [maxResultsPerPage] The maximum number of results to return per page.
+         * @param {number} [maxResultsPerPage] The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
          * @param {string} [postedAfter] A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format.
          * @param {string} [postedBefore] A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes.
          * @param {string} [nextToken] A string token returned in the response of your previous request.
@@ -139,12 +139,14 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * Returns all financial events for the specified financial event group.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {string} eventGroupId The identifier of the financial event group to which the events belong.
-         * @param {number} [maxResultsPerPage] The maximum number of results to return per page.
+         * @param {number} [maxResultsPerPage] The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
+         * @param {string} [postedAfter] A date used for selecting financial events posted after (or at) a specified time. The date-time **must** be more than two minutes before the time of the request, in ISO 8601 date time format.
+         * @param {string} [postedBefore] A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than &#x60;PostedAfter&#x60; and no later than two minutes before the request was submitted, in ISO 8601 date time format. If &#x60;PostedAfter&#x60; and &#x60;PostedBefore&#x60; are more than 180 days apart, no financial events are returned. You must specify the &#x60;PostedAfter&#x60; parameter if you specify the &#x60;PostedBefore&#x60; parameter. Default: Now minus two minutes.
          * @param {string} [nextToken] A string token returned in the response of your previous request.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listFinancialEventsByGroupId: async (eventGroupId: string, maxResultsPerPage?: number, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listFinancialEventsByGroupId: async (eventGroupId: string, maxResultsPerPage?: number, postedAfter?: string, postedBefore?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'eventGroupId' is not null or undefined
             assertParamExists('listFinancialEventsByGroupId', 'eventGroupId', eventGroupId)
             const localVarPath = `/finances/v0/financialEventGroups/{eventGroupId}/financialEvents`
@@ -162,6 +164,18 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
             if (maxResultsPerPage !== undefined) {
                 localVarQueryParameter['MaxResultsPerPage'] = maxResultsPerPage;
+            }
+
+            if (postedAfter !== undefined) {
+                localVarQueryParameter['PostedAfter'] = (postedAfter as any instanceof Date) ?
+                    (postedAfter as any).toISOString() :
+                    postedAfter;
+            }
+
+            if (postedBefore !== undefined) {
+                localVarQueryParameter['PostedBefore'] = (postedBefore as any instanceof Date) ?
+                    (postedBefore as any).toISOString() :
+                    postedBefore;
             }
 
             if (nextToken !== undefined) {
@@ -182,7 +196,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * Returns all financial events for the specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
-         * @param {number} [maxResultsPerPage] The maximum number of results to return per page.
+         * @param {number} [maxResultsPerPage] The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
          * @param {string} [nextToken] A string token returned in the response of your previous request.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -234,7 +248,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
     return {
         /**
          * Returns financial event groups for a given date range.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {number} [maxResultsPerPage] The maximum number of results to return per page.
+         * @param {number} [maxResultsPerPage] The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
          * @param {string} [financialEventGroupStartedBefore] A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned.
          * @param {string} [financialEventGroupStartedAfter] A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted.
          * @param {string} [nextToken] A string token returned in the response of your previous request.
@@ -247,7 +261,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
         },
         /**
          * Returns financial events for the specified data range.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {number} [maxResultsPerPage] The maximum number of results to return per page.
+         * @param {number} [maxResultsPerPage] The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
          * @param {string} [postedAfter] A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format.
          * @param {string} [postedBefore] A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes.
          * @param {string} [nextToken] A string token returned in the response of your previous request.
@@ -261,19 +275,21 @@ export const DefaultApiFp = function(configuration?: Configuration) {
         /**
          * Returns all financial events for the specified financial event group.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {string} eventGroupId The identifier of the financial event group to which the events belong.
-         * @param {number} [maxResultsPerPage] The maximum number of results to return per page.
+         * @param {number} [maxResultsPerPage] The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
+         * @param {string} [postedAfter] A date used for selecting financial events posted after (or at) a specified time. The date-time **must** be more than two minutes before the time of the request, in ISO 8601 date time format.
+         * @param {string} [postedBefore] A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than &#x60;PostedAfter&#x60; and no later than two minutes before the request was submitted, in ISO 8601 date time format. If &#x60;PostedAfter&#x60; and &#x60;PostedBefore&#x60; are more than 180 days apart, no financial events are returned. You must specify the &#x60;PostedAfter&#x60; parameter if you specify the &#x60;PostedBefore&#x60; parameter. Default: Now minus two minutes.
          * @param {string} [nextToken] A string token returned in the response of your previous request.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listFinancialEventsByGroupId(eventGroupId: string, maxResultsPerPage?: number, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancialEventsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listFinancialEventsByGroupId(eventGroupId, maxResultsPerPage, nextToken, options);
+        async listFinancialEventsByGroupId(eventGroupId: string, maxResultsPerPage?: number, postedAfter?: string, postedBefore?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancialEventsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listFinancialEventsByGroupId(eventGroupId, maxResultsPerPage, postedAfter, postedBefore, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * Returns all financial events for the specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
-         * @param {number} [maxResultsPerPage] The maximum number of results to return per page.
+         * @param {number} [maxResultsPerPage] The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
          * @param {string} [nextToken] A string token returned in the response of your previous request.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -294,7 +310,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
     return {
         /**
          * Returns financial event groups for a given date range.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {number} [maxResultsPerPage] The maximum number of results to return per page.
+         * @param {number} [maxResultsPerPage] The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
          * @param {string} [financialEventGroupStartedBefore] A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned.
          * @param {string} [financialEventGroupStartedAfter] A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted.
          * @param {string} [nextToken] A string token returned in the response of your previous request.
@@ -306,7 +322,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
         },
         /**
          * Returns financial events for the specified data range.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {number} [maxResultsPerPage] The maximum number of results to return per page.
+         * @param {number} [maxResultsPerPage] The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
          * @param {string} [postedAfter] A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format.
          * @param {string} [postedBefore] A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes.
          * @param {string} [nextToken] A string token returned in the response of your previous request.
@@ -319,18 +335,20 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
         /**
          * Returns all financial events for the specified financial event group.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {string} eventGroupId The identifier of the financial event group to which the events belong.
-         * @param {number} [maxResultsPerPage] The maximum number of results to return per page.
+         * @param {number} [maxResultsPerPage] The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
+         * @param {string} [postedAfter] A date used for selecting financial events posted after (or at) a specified time. The date-time **must** be more than two minutes before the time of the request, in ISO 8601 date time format.
+         * @param {string} [postedBefore] A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than &#x60;PostedAfter&#x60; and no later than two minutes before the request was submitted, in ISO 8601 date time format. If &#x60;PostedAfter&#x60; and &#x60;PostedBefore&#x60; are more than 180 days apart, no financial events are returned. You must specify the &#x60;PostedAfter&#x60; parameter if you specify the &#x60;PostedBefore&#x60; parameter. Default: Now minus two minutes.
          * @param {string} [nextToken] A string token returned in the response of your previous request.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listFinancialEventsByGroupId(eventGroupId: string, maxResultsPerPage?: number, nextToken?: string, options?: any): AxiosPromise<ListFinancialEventsResponse> {
-            return localVarFp.listFinancialEventsByGroupId(eventGroupId, maxResultsPerPage, nextToken, options).then((request) => request(axios, basePath));
+        listFinancialEventsByGroupId(eventGroupId: string, maxResultsPerPage?: number, postedAfter?: string, postedBefore?: string, nextToken?: string, options?: any): AxiosPromise<ListFinancialEventsResponse> {
+            return localVarFp.listFinancialEventsByGroupId(eventGroupId, maxResultsPerPage, postedAfter, postedBefore, nextToken, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns all financial events for the specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
-         * @param {number} [maxResultsPerPage] The maximum number of results to return per page.
+         * @param {number} [maxResultsPerPage] The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
          * @param {string} [nextToken] A string token returned in the response of your previous request.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -348,7 +366,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
  */
 export interface DefaultApiListFinancialEventGroupsRequest {
     /**
-     * The maximum number of results to return per page.
+     * The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
      * @type {number}
      * @memberof DefaultApiListFinancialEventGroups
      */
@@ -383,7 +401,7 @@ export interface DefaultApiListFinancialEventGroupsRequest {
  */
 export interface DefaultApiListFinancialEventsRequest {
     /**
-     * The maximum number of results to return per page.
+     * The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
      * @type {number}
      * @memberof DefaultApiListFinancialEvents
      */
@@ -425,11 +443,25 @@ export interface DefaultApiListFinancialEventsByGroupIdRequest {
     readonly eventGroupId: string
 
     /**
-     * The maximum number of results to return per page.
+     * The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
      * @type {number}
      * @memberof DefaultApiListFinancialEventsByGroupId
      */
     readonly maxResultsPerPage?: number
+
+    /**
+     * A date used for selecting financial events posted after (or at) a specified time. The date-time **must** be more than two minutes before the time of the request, in ISO 8601 date time format.
+     * @type {string}
+     * @memberof DefaultApiListFinancialEventsByGroupId
+     */
+    readonly postedAfter?: string
+
+    /**
+     * A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than &#x60;PostedAfter&#x60; and no later than two minutes before the request was submitted, in ISO 8601 date time format. If &#x60;PostedAfter&#x60; and &#x60;PostedBefore&#x60; are more than 180 days apart, no financial events are returned. You must specify the &#x60;PostedAfter&#x60; parameter if you specify the &#x60;PostedBefore&#x60; parameter. Default: Now minus two minutes.
+     * @type {string}
+     * @memberof DefaultApiListFinancialEventsByGroupId
+     */
+    readonly postedBefore?: string
 
     /**
      * A string token returned in the response of your previous request.
@@ -453,7 +485,7 @@ export interface DefaultApiListFinancialEventsByOrderIdRequest {
     readonly orderId: string
 
     /**
-     * The maximum number of results to return per page.
+     * The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
      * @type {number}
      * @memberof DefaultApiListFinancialEventsByOrderId
      */
@@ -504,7 +536,7 @@ export class DefaultApi extends BaseAPI {
      * @memberof DefaultApi
      */
     public listFinancialEventsByGroupId(requestParameters: DefaultApiListFinancialEventsByGroupIdRequest, options?: AxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).listFinancialEventsByGroupId(requestParameters.eventGroupId, requestParameters.maxResultsPerPage, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
+        return DefaultApiFp(this.configuration).listFinancialEventsByGroupId(requestParameters.eventGroupId, requestParameters.maxResultsPerPage, requestParameters.postedAfter, requestParameters.postedBefore, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

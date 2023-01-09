@@ -3,11 +3,11 @@ name: Codegen
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0,12 * * *'
+    - cron: "0 0,12 * * *"
 
 jobs:
   update-models:
-    name: 'Codegen: update models'
+    name: "Codegen: update models"
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: yarn
 
       - name: Install dependencies
@@ -38,8 +38,8 @@ jobs:
           add-paths: clients
           branch: codegen/update-models
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
-          title: 'feat(clients): update models as of ${{ steps.date.outputs.date }}'
-          commit-message: 'feat(clients): update models as of ${{ steps.date.outputs.date }}'
+          title: "feat(clients): update models as of ${{ steps.date.outputs.date }}"
+          commit-message: "feat(clients): update models as of ${{ steps.date.outputs.date }}"
           body: |
             This is an automated pull request that was generated due to changes detected in the [Amazon Selling Partner API models](https://github.com/amzn/selling-partner-api-models).
 
@@ -48,7 +48,7 @@ jobs:
           reviewers: tusbar
 
   update-notification-schemas:
-    name: 'Codegen: update notification schemas'
+    name: "Codegen: update notification schemas"
     runs-on: ubuntu-latest
 
     steps:
@@ -60,7 +60,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: yarn
 
       - name: Install dependencies
@@ -79,8 +79,8 @@ jobs:
           add-paths: packages/notifications
           branch: codegen/update-notifications
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
-          title: 'feat(notifications): update notification schemas as of ${{ steps.date.outputs.date }}'
-          commit-message: 'feat(notifications): update notification schemas as of ${{ steps.date.outputs.date }}'
+          title: "feat(notifications): update notification schemas as of ${{ steps.date.outputs.date }}"
+          commit-message: "feat(notifications): update notification schemas as of ${{ steps.date.outputs.date }}"
           body: |
             This is an automated pull request that was generated due to changes detected in the [Amazon Selling Partner API models](https://github.com/amzn/selling-partner-api-models).
 

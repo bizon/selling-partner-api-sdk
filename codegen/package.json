@@ -6,7 +6,7 @@
     "check:ts": "yarn tsc --noEmit"
   },
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   },
   "dependencies": {
     "@openapitools/openapi-generator-cli": "^2.5.2",

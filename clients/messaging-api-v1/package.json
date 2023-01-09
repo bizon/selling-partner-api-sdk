@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/messaging-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "With the Messaging API you can build applications that send messages to buyers. You can get a list of message types that are available for an order that you specify, then call an operation that sends a message to the buyer for that order. The Messaging API returns responses that are formed according to the JSON Hypertext Application Language (HAL) standard.",
-  "version": "1.10.7",
+  "version": "1.10.8",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -26,7 +26,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@sp-api-sdk/common": "^1.9.19",
+    "@sp-api-sdk/common": "^1.9.20",
     "axios": "^0.27.2"
   },
   "repository": {

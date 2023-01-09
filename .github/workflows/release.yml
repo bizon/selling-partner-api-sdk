@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: yarn
           registry-url: https://registry.npmjs.org
 
@@ -58,7 +58,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: yarn
 
       - name: Install dependencies
@@ -75,6 +75,6 @@ jobs:
           branch: docs
           folder: docs
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
-          commit-message: 'docs: update documentation'
+          commit-message: "docs: update documentation"
           git-config-name: ${{ secrets.BOT_NAME }}
           git-config-email: ${{ secrets.BOT_EMAIL }}

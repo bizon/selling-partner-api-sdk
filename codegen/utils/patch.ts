@@ -35,12 +35,12 @@ async function getPatches(patchPath: string): Promise<Patch[]> {
 export async function applyPatches(document: OpenAPIV3.Document, patchesPath: string) {
   const patches = await getPatches(patchesPath)
 
-  applyPatch(
-    document,
-    patches.flatMap((p) => p.operations),
-    true,
-    true,
-  )
-
-  return patches.length > 0
+  if (patches.length > 0) {
+    applyPatch(
+      document,
+      patches.flatMap((p) => p.operations),
+      true,
+      true,
+    )
+  }
 }

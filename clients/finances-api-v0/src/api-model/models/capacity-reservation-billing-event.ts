@@ -24,7 +24,7 @@ import { Currency } from './currency';
  */
 export interface CapacityReservationBillingEvent {
     /**
-     * Indicates the type of transaction.  Example: \"FBA Inventory Fee\"
+     * Indicates the type of transaction. For example, FBA Inventory Fee
      * @type {string}
      * @memberof CapacityReservationBillingEvent
      */

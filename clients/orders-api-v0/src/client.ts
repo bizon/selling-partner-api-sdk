@@ -66,6 +66,27 @@ export const clientRateLimits: RateLimit[] = [
     rate: 0.5,
     burst: 30,
   },
+  {
+    method: 'get',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/orders/v0/orders/[^/]*/approvals$'),
+    rate: 0.5,
+    burst: 30,
+  },
+  {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/orders/v0/orders/[^/]*/approvals$'),
+    rate: 5,
+    burst: 15,
+  },
+  {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/orders/v0/orders/[^/]*/shipmentConfirmation$'),
+    rate: 2,
+    burst: 10,
+  },
 ]
 
 export class OrdersApiClient extends OrdersV0Api {

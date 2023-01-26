@@ -14,6 +14,22 @@
 
 
 
-export * from './api/approvals-api';
-export * from './api/orders-v0-api';
+/**
+ * Defines the possible status of an order item approval.
+ * @export
+ * @enum {string}
+ */
+
+export const ItemApprovalStatus = {
+    PendingSellingPartnerApproval: 'PENDING_SELLING_PARTNER_APPROVAL',
+    ProcessingSellingPartnerApproval: 'PROCESSING_SELLING_PARTNER_APPROVAL',
+    PendingAmazonApproval: 'PENDING_AMAZON_APPROVAL',
+    Approved: 'APPROVED',
+    ApprovedWithChanges: 'APPROVED_WITH_CHANGES',
+    Declined: 'DECLINED'
+} as const;
+
+export type ItemApprovalStatus = typeof ItemApprovalStatus[keyof typeof ItemApprovalStatus];
+
+
 

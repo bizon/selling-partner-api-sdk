@@ -36,6 +36,12 @@ import { ElectronicInvoiceStatus } from './electronic-invoice-status';
 import { FulfillmentInstruction } from './fulfillment-instruction';
 // May contain unused imports in some cases
 // @ts-ignore
+import { ItemApprovalStatus } from './item-approval-status';
+// May contain unused imports in some cases
+// @ts-ignore
+import { ItemApprovalType } from './item-approval-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { MarketplaceTaxInfo } from './marketplace-tax-info';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -332,6 +338,18 @@ export interface Order {
      * @memberof Order
      */
     'ElectronicInvoiceStatus'?: ElectronicInvoiceStatus;
+    /**
+     * Set of approval types which applies to at least one order item in the order.
+     * @type {Array<ItemApprovalType>}
+     * @memberof Order
+     */
+    'ItemApprovalTypes'?: Array<ItemApprovalType>;
+    /**
+     * Subset of all ItemApprovalStatus that are set in at least one of the order items subject to approvals.
+     * @type {Array<ItemApprovalStatus>}
+     * @memberof Order
+     */
+    'ItemApprovalStatus'?: Array<ItemApprovalStatus>;
 }
 
 export const OrderOrderStatusEnum = {

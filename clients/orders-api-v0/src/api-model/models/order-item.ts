@@ -18,6 +18,9 @@
 import { BuyerRequestedCancel } from './buyer-requested-cancel';
 // May contain unused imports in some cases
 // @ts-ignore
+import { ItemApprovalContext } from './item-approval-context';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ItemBuyerInfo } from './item-buyer-info';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -242,6 +245,18 @@ export interface OrderItem {
      * @memberof OrderItem
      */
     'BuyerRequestedCancel'?: BuyerRequestedCancel;
+    /**
+     * 
+     * @type {ItemApprovalContext}
+     * @memberof OrderItem
+     */
+    'ItemApprovalContext'?: ItemApprovalContext;
+    /**
+     * A list of serial numbers for electronic products that are shipped to customers. Returned for FBA orders only.
+     * @type {Array<string>}
+     * @memberof OrderItem
+     */
+    'SerialNumbers'?: Array<string>;
 }
 
 export const OrderItemDeemedResellerCategoryEnum = {

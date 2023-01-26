@@ -14,6 +14,17 @@
 
 
 
-export * from './api/approvals-api';
-export * from './api/orders-v0-api';
+/**
+ * The error response schema for an shipment confirmation.
+ * @export
+ * @interface ConfirmShipmentErrorResponse
+ */
+export interface ConfirmShipmentErrorResponse {
+    /**
+     * A list of error responses returned when a request is unsuccessful.
+     * @type {Array<Error>}
+     * @memberof ConfirmShipmentErrorResponse
+     */
+    'errors'?: Array<Error>;
+}
 

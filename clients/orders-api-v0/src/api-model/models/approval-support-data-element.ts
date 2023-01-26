@@ -14,6 +14,23 @@
 
 
 
-export * from './api/approvals-api';
-export * from './api/orders-v0-api';
+/**
+ * <Name, Value> tuple to define item approval support data elements.
+ * @export
+ * @interface ApprovalSupportDataElement
+ */
+export interface ApprovalSupportDataElement {
+    /**
+     * Name of the approval support element. Allowed names are defined in specific approval types schemas.
+     * @type {string}
+     * @memberof ApprovalSupportDataElement
+     */
+    'Name': string;
+    /**
+     * String value of the approval support element.
+     * @type {string}
+     * @memberof ApprovalSupportDataElement
+     */
+    'Value': string;
+}
 

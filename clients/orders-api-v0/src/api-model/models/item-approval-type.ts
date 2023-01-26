@@ -14,6 +14,17 @@
 
 
 
-export * from './api/approvals-api';
-export * from './api/orders-v0-api';
+/**
+ * Defines the approval process types available for order items.
+ * @export
+ * @enum {string}
+ */
+
+export const ItemApprovalType = {
+    LeonardiApproval: 'LEONARDI_APPROVAL'
+} as const;
+
+export type ItemApprovalType = typeof ItemApprovalType[keyof typeof ItemApprovalType];
+
+
 

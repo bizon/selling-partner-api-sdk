@@ -14,6 +14,17 @@
 
 
 
-export * from './api/approvals-api';
-export * from './api/orders-v0-api';
+/**
+ * The error response schema for the updateOrderItemsApprovals operation.
+ * @export
+ * @interface UpdateItemsApprovalsErrorResponse
+ */
+export interface UpdateItemsApprovalsErrorResponse {
+    /**
+     * A list of error responses returned when a request is unsuccessful.
+     * @type {Array<Error>}
+     * @memberof UpdateItemsApprovalsErrorResponse
+     */
+    'errors'?: Array<Error>;
+}
 

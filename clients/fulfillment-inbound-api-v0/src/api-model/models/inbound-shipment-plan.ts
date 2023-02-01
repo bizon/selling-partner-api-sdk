@@ -70,3 +70,5 @@ export interface InboundShipmentPlan {
     'EstimatedBoxContentsFee'?: BoxContentsFeeDetails;
 }
 
+
+

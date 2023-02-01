@@ -79,3 +79,5 @@ export interface PartneredLtlDataInput {
     'SellerDeclaredValue'?: Amount;
 }
 
+
+

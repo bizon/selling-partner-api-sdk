@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -505,90 +506,84 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
     return {
         /**
          * Cancels the report that you specify. Only reports with processingStatus=IN_QUEUE can be cancelled. Cancelled reports are returned in subsequent calls to the getReport and getReports operations.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} reportId The identifier for the report. This identifier is unique only in combination with a seller ID.
+         * @param {ReportsApiCancelReportRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelReport(reportId: string, options?: any): AxiosPromise<CancelReportResponse> {
-            return localVarFp.cancelReport(reportId, options).then((request) => request(axios, basePath));
+        cancelReport(requestParameters: ReportsApiCancelReportRequest, options?: AxiosRequestConfig): AxiosPromise<CancelReportResponse> {
+            return localVarFp.cancelReport(requestParameters.reportId, options).then((request) => request(axios, basePath));
         },
         /**
          * Cancels the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
+         * @param {ReportsApiCancelReportScheduleRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelReportSchedule(reportScheduleId: string, options?: any): AxiosPromise<CancelReportScheduleResponse> {
-            return localVarFp.cancelReportSchedule(reportScheduleId, options).then((request) => request(axios, basePath));
+        cancelReportSchedule(requestParameters: ReportsApiCancelReportScheduleRequest, options?: AxiosRequestConfig): AxiosPromise<CancelReportScheduleResponse> {
+            return localVarFp.cancelReportSchedule(requestParameters.reportScheduleId, options).then((request) => request(axios, basePath));
         },
         /**
          * Creates a report.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {CreateReportSpecification} body 
+         * @param {ReportsApiCreateReportRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createReport(body: CreateReportSpecification, options?: any): AxiosPromise<CreateReportResponse> {
-            return localVarFp.createReport(body, options).then((request) => request(axios, basePath));
+        createReport(requestParameters: ReportsApiCreateReportRequest, options?: AxiosRequestConfig): AxiosPromise<CreateReportResponse> {
+            return localVarFp.createReport(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Creates a report schedule. If a report schedule with the same report type and marketplace IDs already exists, it will be cancelled and replaced with this one.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {CreateReportScheduleSpecification} body 
+         * @param {ReportsApiCreateReportScheduleRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createReportSchedule(body: CreateReportScheduleSpecification, options?: any): AxiosPromise<CreateReportScheduleResponse> {
-            return localVarFp.createReportSchedule(body, options).then((request) => request(axios, basePath));
+        createReportSchedule(requestParameters: ReportsApiCreateReportScheduleRequest, options?: AxiosRequestConfig): AxiosPromise<CreateReportScheduleResponse> {
+            return localVarFp.createReportSchedule(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns report details (including the reportDocumentId, if available) for the report that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2.0 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} reportId The identifier for the report. This identifier is unique only in combination with a seller ID.
+         * @param {ReportsApiGetReportRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReport(reportId: string, options?: any): AxiosPromise<GetReportResponse> {
-            return localVarFp.getReport(reportId, options).then((request) => request(axios, basePath));
+        getReport(requestParameters: ReportsApiGetReportRequest, options?: AxiosRequestConfig): AxiosPromise<GetReportResponse> {
+            return localVarFp.getReport(requestParameters.reportId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns the information required for retrieving a report document\'s contents. This includes a presigned URL for the report document as well as the information required to decrypt the document\'s contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} reportDocumentId The identifier for the report document.
+         * @param {ReportsApiGetReportDocumentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReportDocument(reportDocumentId: string, options?: any): AxiosPromise<GetReportDocumentResponse> {
-            return localVarFp.getReportDocument(reportDocumentId, options).then((request) => request(axios, basePath));
+        getReportDocument(requestParameters: ReportsApiGetReportDocumentRequest, options?: AxiosRequestConfig): AxiosPromise<GetReportDocumentResponse> {
+            return localVarFp.getReportDocument(requestParameters.reportDocumentId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns report schedule details for the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
+         * @param {ReportsApiGetReportScheduleRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReportSchedule(reportScheduleId: string, options?: any): AxiosPromise<GetReportScheduleResponse> {
-            return localVarFp.getReportSchedule(reportScheduleId, options).then((request) => request(axios, basePath));
+        getReportSchedule(requestParameters: ReportsApiGetReportScheduleRequest, options?: AxiosRequestConfig): AxiosPromise<GetReportScheduleResponse> {
+            return localVarFp.getReportSchedule(requestParameters.reportScheduleId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns report schedule details that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {Array<string>} reportTypes A list of report types used to filter report schedules.
+         * @param {ReportsApiGetReportSchedulesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReportSchedules(reportTypes: Array<string>, options?: any): AxiosPromise<GetReportSchedulesResponse> {
-            return localVarFp.getReportSchedules(reportTypes, options).then((request) => request(axios, basePath));
+        getReportSchedules(requestParameters: ReportsApiGetReportSchedulesRequest, options?: AxiosRequestConfig): AxiosPromise<GetReportSchedulesResponse> {
+            return localVarFp.getReportSchedules(requestParameters.reportTypes, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns report details for the reports that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {Array<string>} [reportTypes] A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required.
-         * @param {Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>} [processingStatuses] A list of processing statuses used to filter reports.
-         * @param {Array<string>} [marketplaceIds] A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify.
-         * @param {number} [pageSize] The maximum number of reports to return in a single call.
-         * @param {string} [createdSince] The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days.
-         * @param {string} [createdUntil] The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now.
-         * @param {string} [nextToken] A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.
+         * @param {ReportsApiGetReportsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReports(reportTypes?: Array<string>, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, marketplaceIds?: Array<string>, pageSize?: number, createdSince?: string, createdUntil?: string, nextToken?: string, options?: any): AxiosPromise<GetReportsResponse> {
-            return localVarFp.getReports(reportTypes, processingStatuses, marketplaceIds, pageSize, createdSince, createdUntil, nextToken, options).then((request) => request(axios, basePath));
+        getReports(requestParameters: ReportsApiGetReportsRequest = {}, options?: AxiosRequestConfig): AxiosPromise<GetReportsResponse> {
+            return localVarFp.getReports(requestParameters.reportTypes, requestParameters.processingStatuses, requestParameters.marketplaceIds, requestParameters.pageSize, requestParameters.createdSince, requestParameters.createdUntil, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
     };
 };

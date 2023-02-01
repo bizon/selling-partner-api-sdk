@@ -97,3 +97,5 @@ export interface InboundShipmentInfo {
     'EstimatedBoxContentsFee'?: BoxContentsFeeDetails;
 }
 
+
+

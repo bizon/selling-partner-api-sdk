@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -93,12 +94,12 @@ export const VendorTransactionApiFactory = function (configuration?: Configurati
     return {
         /**
          * Returns the status of the transaction that you specify.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} transactionId The GUID provided by Amazon in the \&#39;transactionId\&#39; field in response to the post request of a specific transaction.
+         * @param {VendorTransactionApiGetTransactionRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransaction(transactionId: string, options?: any): AxiosPromise<GetTransactionResponse> {
-            return localVarFp.getTransaction(transactionId, options).then((request) => request(axios, basePath));
+        getTransaction(requestParameters: VendorTransactionApiGetTransactionRequest, options?: AxiosRequestConfig): AxiosPromise<GetTransactionResponse> {
+            return localVarFp.getTransaction(requestParameters.transactionId, options).then((request) => request(axios, basePath));
         },
     };
 };

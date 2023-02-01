@@ -58,3 +58,5 @@ export interface ServiceRate {
     'promise': ShippingPromiseSet;
 }
 
+
+

@@ -40,3 +40,5 @@ export interface RangeCapacity {
     'slots'?: Array<RangeSlot>;
 }
 
+
+

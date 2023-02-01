@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -827,143 +828,120 @@ export const MessagingApiFactory = function (configuration?: Configuration, base
     return {
         /**
          * Sends a message asking a buyer to provide or verify customization details such as name spelling, images, initials, etc.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-         * @param {CreateConfirmCustomizationDetailsRequest} body 
+         * @param {MessagingApiConfirmCustomizationDetailsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        confirmCustomizationDetails(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmCustomizationDetailsRequest, options?: any): AxiosPromise<CreateConfirmCustomizationDetailsResponse> {
-            return localVarFp.confirmCustomizationDetails(amazonOrderId, marketplaceIds, body, options).then((request) => request(axios, basePath));
+        confirmCustomizationDetails(requestParameters: MessagingApiConfirmCustomizationDetailsRequest, options?: AxiosRequestConfig): AxiosPromise<CreateConfirmCustomizationDetailsResponse> {
+            return localVarFp.confirmCustomizationDetails(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Sends a message to a buyer to provide details about an Amazon Motors order. This message can only be sent by Amazon Motors sellers.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-         * @param {CreateAmazonMotorsRequest} body 
+         * @param {MessagingApiCreateAmazonMotorsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createAmazonMotors(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateAmazonMotorsRequest, options?: any): AxiosPromise<CreateAmazonMotorsResponse> {
-            return localVarFp.createAmazonMotors(amazonOrderId, marketplaceIds, body, options).then((request) => request(axios, basePath));
+        createAmazonMotors(requestParameters: MessagingApiCreateAmazonMotorsRequest, options?: AxiosRequestConfig): AxiosPromise<CreateAmazonMotorsResponse> {
+            return localVarFp.createAmazonMotors(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Sends a message to a buyer to arrange a delivery or to confirm contact information for making a delivery.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-         * @param {CreateConfirmDeliveryDetailsRequest} body 
+         * @param {MessagingApiCreateConfirmDeliveryDetailsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createConfirmDeliveryDetails(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmDeliveryDetailsRequest, options?: any): AxiosPromise<CreateConfirmDeliveryDetailsResponse> {
-            return localVarFp.createConfirmDeliveryDetails(amazonOrderId, marketplaceIds, body, options).then((request) => request(axios, basePath));
+        createConfirmDeliveryDetails(requestParameters: MessagingApiCreateConfirmDeliveryDetailsRequest, options?: AxiosRequestConfig): AxiosPromise<CreateConfirmDeliveryDetailsResponse> {
+            return localVarFp.createConfirmDeliveryDetails(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Sends a message to ask a buyer an order-related question prior to shipping their order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-         * @param {CreateConfirmOrderDetailsRequest} body 
+         * @param {MessagingApiCreateConfirmOrderDetailsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createConfirmOrderDetails(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmOrderDetailsRequest, options?: any): AxiosPromise<CreateConfirmOrderDetailsResponse> {
-            return localVarFp.createConfirmOrderDetails(amazonOrderId, marketplaceIds, body, options).then((request) => request(axios, basePath));
+        createConfirmOrderDetails(requestParameters: MessagingApiCreateConfirmOrderDetailsRequest, options?: AxiosRequestConfig): AxiosPromise<CreateConfirmOrderDetailsResponse> {
+            return localVarFp.createConfirmOrderDetails(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Sends a message to contact a Home Service customer to arrange a service call or to gather information prior to a service call.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-         * @param {CreateConfirmServiceDetailsRequest} body 
+         * @param {MessagingApiCreateConfirmServiceDetailsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createConfirmServiceDetails(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmServiceDetailsRequest, options?: any): AxiosPromise<CreateConfirmServiceDetailsResponse> {
-            return localVarFp.createConfirmServiceDetails(amazonOrderId, marketplaceIds, body, options).then((request) => request(axios, basePath));
+        createConfirmServiceDetails(requestParameters: MessagingApiCreateConfirmServiceDetailsRequest, options?: AxiosRequestConfig): AxiosPromise<CreateConfirmServiceDetailsResponse> {
+            return localVarFp.createConfirmServiceDetails(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Sends a message to a buyer to share a digital access key needed to utilize digital content in their order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-         * @param {CreateDigitalAccessKeyRequest} body 
+         * @param {MessagingApiCreateDigitalAccessKeyRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createDigitalAccessKey(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateDigitalAccessKeyRequest, options?: any): AxiosPromise<CreateDigitalAccessKeyResponse> {
-            return localVarFp.createDigitalAccessKey(amazonOrderId, marketplaceIds, body, options).then((request) => request(axios, basePath));
+        createDigitalAccessKey(requestParameters: MessagingApiCreateDigitalAccessKeyRequest, options?: AxiosRequestConfig): AxiosPromise<CreateDigitalAccessKeyResponse> {
+            return localVarFp.createDigitalAccessKey(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Sends a critical message that contains documents that a seller is legally obligated to provide to the buyer. This message should only be used to deliver documents that are required by law.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-         * @param {CreateLegalDisclosureRequest} body 
+         * @param {MessagingApiCreateLegalDisclosureRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createLegalDisclosure(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateLegalDisclosureRequest, options?: any): AxiosPromise<CreateLegalDisclosureResponse> {
-            return localVarFp.createLegalDisclosure(amazonOrderId, marketplaceIds, body, options).then((request) => request(axios, basePath));
+        createLegalDisclosure(requestParameters: MessagingApiCreateLegalDisclosureRequest, options?: AxiosRequestConfig): AxiosPromise<CreateLegalDisclosureResponse> {
+            return localVarFp.createLegalDisclosure(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Sends a non-critical message that asks a buyer to remove their negative feedback. This message should only be sent after the seller has resolved the buyer\'s problem.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
+         * @param {MessagingApiCreateNegativeFeedbackRemovalRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createNegativeFeedbackRemoval(amazonOrderId: string, marketplaceIds: Array<string>, options?: any): AxiosPromise<CreateNegativeFeedbackRemovalResponse> {
-            return localVarFp.createNegativeFeedbackRemoval(amazonOrderId, marketplaceIds, options).then((request) => request(axios, basePath));
+        createNegativeFeedbackRemoval(requestParameters: MessagingApiCreateNegativeFeedbackRemovalRequest, options?: AxiosRequestConfig): AxiosPromise<CreateNegativeFeedbackRemovalResponse> {
+            return localVarFp.createNegativeFeedbackRemoval(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(axios, basePath));
         },
         /**
          * Sends a critical message to a buyer that an unexpected problem was encountered affecting the completion of the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-         * @param {CreateUnexpectedProblemRequest} body 
+         * @param {MessagingApiCreateUnexpectedProblemRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createUnexpectedProblem(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateUnexpectedProblemRequest, options?: any): AxiosPromise<CreateUnexpectedProblemResponse> {
-            return localVarFp.createUnexpectedProblem(amazonOrderId, marketplaceIds, body, options).then((request) => request(axios, basePath));
+        createUnexpectedProblem(requestParameters: MessagingApiCreateUnexpectedProblemRequest, options?: AxiosRequestConfig): AxiosPromise<CreateUnexpectedProblemResponse> {
+            return localVarFp.createUnexpectedProblem(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Sends a message to a buyer to provide details about warranty information on a purchase in their order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-         * @param {CreateWarrantyRequest} body 
+         * @param {MessagingApiCreateWarrantyRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createWarranty(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateWarrantyRequest, options?: any): AxiosPromise<CreateWarrantyResponse> {
-            return localVarFp.createWarranty(amazonOrderId, marketplaceIds, body, options).then((request) => request(axios, basePath));
+        createWarranty(requestParameters: MessagingApiCreateWarrantyRequest, options?: AxiosRequestConfig): AxiosPromise<CreateWarrantyResponse> {
+            return localVarFp.createWarranty(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a response containing attributes related to an order. This includes buyer preferences.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |
-         * @param {string} amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
+         * @param {MessagingApiGetAttributesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAttributes(amazonOrderId: string, marketplaceIds: Array<string>, options?: any): AxiosPromise<GetAttributesResponse> {
-            return localVarFp.getAttributes(amazonOrderId, marketplaceIds, options).then((request) => request(axios, basePath));
+        getAttributes(requestParameters: MessagingApiGetAttributesRequest, options?: AxiosRequestConfig): AxiosPromise<GetAttributesResponse> {
+            return localVarFp.getAttributes(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a list of message types that are available for an order that you specify. A message type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a message.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} amazonOrderId An Amazon order identifier. This specifies the order for which you want a list of available message types.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
+         * @param {MessagingApiGetMessagingActionsForOrderRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMessagingActionsForOrder(amazonOrderId: string, marketplaceIds: Array<string>, options?: any): AxiosPromise<GetMessagingActionsForOrderResponse> {
-            return localVarFp.getMessagingActionsForOrder(amazonOrderId, marketplaceIds, options).then((request) => request(axios, basePath));
+        getMessagingActionsForOrder(requestParameters: MessagingApiGetMessagingActionsForOrderRequest, options?: AxiosRequestConfig): AxiosPromise<GetMessagingActionsForOrderResponse> {
+            return localVarFp.getMessagingActionsForOrder(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(axios, basePath));
         },
         /**
          * Sends a message providing the buyer an invoice
-         * @param {string} amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-         * @param {InvoiceRequest} body 
+         * @param {MessagingApiSendInvoiceRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        sendInvoice(amazonOrderId: string, marketplaceIds: Array<string>, body: InvoiceRequest, options?: any): AxiosPromise<InvoiceResponse> {
-            return localVarFp.sendInvoice(amazonOrderId, marketplaceIds, body, options).then((request) => request(axios, basePath));
+        sendInvoice(requestParameters: MessagingApiSendInvoiceRequest, options?: AxiosRequestConfig): AxiosPromise<InvoiceResponse> {
+            return localVarFp.sendInvoice(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
 };

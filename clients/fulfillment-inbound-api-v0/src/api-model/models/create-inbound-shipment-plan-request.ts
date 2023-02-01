@@ -61,3 +61,5 @@ export interface CreateInboundShipmentPlanRequest {
     'InboundShipmentPlanRequestItems': Array<InboundShipmentPlanRequestItem>;
 }
 
+
+

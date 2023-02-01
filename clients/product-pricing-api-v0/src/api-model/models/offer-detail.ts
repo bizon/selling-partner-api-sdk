@@ -142,3 +142,5 @@ export interface OfferDetail {
     'IsFeaturedMerchant'?: boolean;
 }
 
+
+

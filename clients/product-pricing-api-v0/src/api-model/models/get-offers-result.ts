@@ -82,3 +82,5 @@ export interface GetOffersResult {
     'Offers': Array<OfferDetail>;
 }
 
+
+

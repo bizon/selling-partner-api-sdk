@@ -70,3 +70,5 @@ export interface SKUPrepInstructions {
     'AmazonPrepFeesDetailsList'?: Array<AmazonPrepFeesDetails>;
 }
 
+
+

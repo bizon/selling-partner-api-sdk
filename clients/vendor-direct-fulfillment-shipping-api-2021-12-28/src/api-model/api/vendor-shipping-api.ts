@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -632,109 +633,93 @@ export const VendorShippingApiFactory = function (configuration?: Configuration,
     return {
         /**
          * Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} purchaseOrderNumber The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order.
-         * @param {CreateShippingLabelsRequest} body 
+         * @param {VendorShippingApiCreateShippingLabelsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createShippingLabels(purchaseOrderNumber: string, body: CreateShippingLabelsRequest, options?: any): AxiosPromise<ShippingLabel> {
-            return localVarFp.createShippingLabels(purchaseOrderNumber, body, options).then((request) => request(axios, basePath));
+        createShippingLabels(requestParameters: VendorShippingApiCreateShippingLabelsRequest, options?: AxiosRequestConfig): AxiosPromise<ShippingLabel> {
+            return localVarFp.createShippingLabels(requestParameters.purchaseOrderNumber, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a customer invoice based on the purchaseOrderNumber that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} purchaseOrderNumber Purchase order number of the shipment for which to return the invoice.
+         * @param {VendorShippingApiGetCustomerInvoiceRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCustomerInvoice(purchaseOrderNumber: string, options?: any): AxiosPromise<CustomerInvoice> {
-            return localVarFp.getCustomerInvoice(purchaseOrderNumber, options).then((request) => request(axios, basePath));
+        getCustomerInvoice(requestParameters: VendorShippingApiGetCustomerInvoiceRequest, options?: AxiosRequestConfig): AxiosPromise<CustomerInvoice> {
+            return localVarFp.getCustomerInvoice(requestParameters.purchaseOrderNumber, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a list of customer invoices created during a time frame that you specify. You define the time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must be no more than 7 days.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} createdAfter Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {string} createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {string} [shipFromPartyId] The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
-         * @param {number} [limit] The limit to the number of records returned
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort ASC or DESC by order creation date.
-         * @param {string} [nextToken] Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
+         * @param {VendorShippingApiGetCustomerInvoicesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCustomerInvoices(createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options?: any): AxiosPromise<CustomerInvoiceList> {
-            return localVarFp.getCustomerInvoices(createdAfter, createdBefore, shipFromPartyId, limit, sortOrder, nextToken, options).then((request) => request(axios, basePath));
+        getCustomerInvoices(requestParameters: VendorShippingApiGetCustomerInvoicesRequest, options?: AxiosRequestConfig): AxiosPromise<CustomerInvoiceList> {
+            return localVarFp.getCustomerInvoices(requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipFromPartyId, requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a packing slip based on the purchaseOrderNumber that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} purchaseOrderNumber The purchaseOrderNumber for the packing slip you want.
+         * @param {VendorShippingApiGetPackingSlipRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPackingSlip(purchaseOrderNumber: string, options?: any): AxiosPromise<PackingSlip> {
-            return localVarFp.getPackingSlip(purchaseOrderNumber, options).then((request) => request(axios, basePath));
+        getPackingSlip(requestParameters: VendorShippingApiGetPackingSlipRequest, options?: AxiosRequestConfig): AxiosPromise<PackingSlip> {
+            return localVarFp.getPackingSlip(requestParameters.purchaseOrderNumber, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a list of packing slips for the purchase orders that match the criteria specified. Date range to search must not be more than 7 days.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} createdAfter Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {string} createdBefore Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {string} [shipFromPartyId] The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses.
-         * @param {number} [limit] The limit to the number of records returned
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort ASC or DESC by packing slip creation date.
-         * @param {string} [nextToken] Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call.
+         * @param {VendorShippingApiGetPackingSlipsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPackingSlips(createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options?: any): AxiosPromise<PackingSlipList> {
-            return localVarFp.getPackingSlips(createdAfter, createdBefore, shipFromPartyId, limit, sortOrder, nextToken, options).then((request) => request(axios, basePath));
+        getPackingSlips(requestParameters: VendorShippingApiGetPackingSlipsRequest, options?: AxiosRequestConfig): AxiosPromise<PackingSlipList> {
+            return localVarFp.getPackingSlips(requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipFromPartyId, requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a shipping label for the purchaseOrderNumber that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} purchaseOrderNumber The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order.
+         * @param {VendorShippingApiGetShippingLabelRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShippingLabel(purchaseOrderNumber: string, options?: any): AxiosPromise<ShippingLabel> {
-            return localVarFp.getShippingLabel(purchaseOrderNumber, options).then((request) => request(axios, basePath));
+        getShippingLabel(requestParameters: VendorShippingApiGetShippingLabelRequest, options?: AxiosRequestConfig): AxiosPromise<ShippingLabel> {
+            return localVarFp.getShippingLabel(requestParameters.purchaseOrderNumber, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a list of shipping labels created during the time frame that you specify. You define that time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must not be more than 7 days.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} createdAfter Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {string} createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {string} [shipFromPartyId] The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
-         * @param {number} [limit] The limit to the number of records returned.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort ASC or DESC by order creation date.
-         * @param {string} [nextToken] Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call.
+         * @param {VendorShippingApiGetShippingLabelsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShippingLabels(createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options?: any): AxiosPromise<ShippingLabelList> {
-            return localVarFp.getShippingLabels(createdAfter, createdBefore, shipFromPartyId, limit, sortOrder, nextToken, options).then((request) => request(axios, basePath));
+        getShippingLabels(requestParameters: VendorShippingApiGetShippingLabelsRequest, options?: AxiosRequestConfig): AxiosPromise<ShippingLabelList> {
+            return localVarFp.getShippingLabels(requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipFromPartyId, requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
          * Submits one or more shipment confirmations for vendor orders.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {SubmitShipmentConfirmationsRequest} body 
+         * @param {VendorShippingApiSubmitShipmentConfirmationsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitShipmentConfirmations(body: SubmitShipmentConfirmationsRequest, options?: any): AxiosPromise<TransactionReference> {
-            return localVarFp.submitShipmentConfirmations(body, options).then((request) => request(axios, basePath));
+        submitShipmentConfirmations(requestParameters: VendorShippingApiSubmitShipmentConfirmationsRequest, options?: AxiosRequestConfig): AxiosPromise<TransactionReference> {
+            return localVarFp.submitShipmentConfirmations(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * This operation is only to be used by Vendor-Own-Carrier (VOC) vendors. Calling this API submits a shipment status update for the package that a vendor has shipped. It will provide the Amazon customer visibility on their order, when the package is outside of Amazon Network visibility.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {SubmitShipmentStatusUpdatesRequest} body 
+         * @param {VendorShippingApiSubmitShipmentStatusUpdatesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitShipmentStatusUpdates(body: SubmitShipmentStatusUpdatesRequest, options?: any): AxiosPromise<TransactionReference> {
-            return localVarFp.submitShipmentStatusUpdates(body, options).then((request) => request(axios, basePath));
+        submitShipmentStatusUpdates(requestParameters: VendorShippingApiSubmitShipmentStatusUpdatesRequest, options?: AxiosRequestConfig): AxiosPromise<TransactionReference> {
+            return localVarFp.submitShipmentStatusUpdates(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Creates a shipping label for a purchase order and returns a transactionId for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {SubmitShippingLabelsRequest} body 
+         * @param {VendorShippingApiSubmitShippingLabelRequestRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitShippingLabelRequest(body: SubmitShippingLabelsRequest, options?: any): AxiosPromise<TransactionReference> {
-            return localVarFp.submitShippingLabelRequest(body, options).then((request) => request(axios, basePath));
+        submitShippingLabelRequest(requestParameters: VendorShippingApiSubmitShippingLabelRequestRequest, options?: AxiosRequestConfig): AxiosPromise<TransactionReference> {
+            return localVarFp.submitShippingLabelRequest(requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
 };

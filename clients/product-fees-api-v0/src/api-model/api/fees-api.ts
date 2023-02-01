@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -203,32 +204,30 @@ export const FeesApiFactory = function (configuration?: Configuration, basePath?
     return {
         /**
          * Returns the estimated fees for the item indicated by the specified ASIN in the marketplace specified in the request body.  You can call `getMyFeesEstimateForASIN` for an item on behalf of a selling partner before the selling partner sets the item\'s price. The selling partner can then take estimated fees into account. Each fees request must include an original identifier. This identifier is included in the fees estimate so you can correlate a fees estimate with the original request.  **Note:** This identifier value is only an estimate, actual costs may vary. Search \"fees\" in [Seller Central](https://sellercentral.amazon.com/) and consult the store-specific fee schedule for the most up-to-date information.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} asin The Amazon Standard Identification Number (ASIN) of the item.
-         * @param {GetMyFeesEstimateRequest} body 
+         * @param {FeesApiGetMyFeesEstimateForASINRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyFeesEstimateForASIN(asin: string, body: GetMyFeesEstimateRequest, options?: any): AxiosPromise<GetMyFeesEstimateResponse> {
-            return localVarFp.getMyFeesEstimateForASIN(asin, body, options).then((request) => request(axios, basePath));
+        getMyFeesEstimateForASIN(requestParameters: FeesApiGetMyFeesEstimateForASINRequest, options?: AxiosRequestConfig): AxiosPromise<GetMyFeesEstimateResponse> {
+            return localVarFp.getMyFeesEstimateForASIN(requestParameters.asin, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns the estimated fees for the item indicated by the specified seller SKU in the marketplace specified in the request body.  You can call `getMyFeesEstimateForSKU` for an item on behalf of a selling partner before the selling partner sets the item\'s price. The selling partner can then take any estimated fees into account. Each fees estimate request must include an original identifier. This identifier is included in the fees estimate so that you can correlate a fees estimate with the original request.  **Note:** The identifier value is only an estimate, actual costs may vary. Search \"fees\" in [Seller Central](https://sellercentral.amazon.com/) and consult the store-specific fee schedule for the most up-to-date information.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} sellerSKU Used to identify an item in the given marketplace. SellerSKU is qualified by the seller\&#39;s SellerId, which is included with every operation that you submit.
-         * @param {GetMyFeesEstimateRequest} body 
+         * @param {FeesApiGetMyFeesEstimateForSKURequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyFeesEstimateForSKU(sellerSKU: string, body: GetMyFeesEstimateRequest, options?: any): AxiosPromise<GetMyFeesEstimateResponse> {
-            return localVarFp.getMyFeesEstimateForSKU(sellerSKU, body, options).then((request) => request(axios, basePath));
+        getMyFeesEstimateForSKU(requestParameters: FeesApiGetMyFeesEstimateForSKURequest, options?: AxiosRequestConfig): AxiosPromise<GetMyFeesEstimateResponse> {
+            return localVarFp.getMyFeesEstimateForSKU(requestParameters.sellerSKU, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns the estimated fees for a list of products.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {Array<FeesEstimateByIdRequest>} body 
+         * @param {FeesApiGetMyFeesEstimatesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyFeesEstimates(body: Array<FeesEstimateByIdRequest>, options?: any): AxiosPromise<Array<FeesEstimateResult>> {
-            return localVarFp.getMyFeesEstimates(body, options).then((request) => request(axios, basePath));
+        getMyFeesEstimates(requestParameters: FeesApiGetMyFeesEstimatesRequest, options?: AxiosRequestConfig): AxiosPromise<Array<FeesEstimateResult>> {
+            return localVarFp.getMyFeesEstimates(requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
 };

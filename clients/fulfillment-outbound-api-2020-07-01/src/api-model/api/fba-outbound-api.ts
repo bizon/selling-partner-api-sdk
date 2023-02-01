@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -679,121 +680,111 @@ export const FbaOutboundApiFactory = function (configuration?: Configuration, ba
     return {
         /**
          * Requests that Amazon stop attempting to fulfill the fulfillment order indicated by the specified order identifier.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created.
+         * @param {FbaOutboundApiCancelFulfillmentOrderRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelFulfillmentOrder(sellerFulfillmentOrderId: string, options?: any): AxiosPromise<CancelFulfillmentOrderResponse> {
-            return localVarFp.cancelFulfillmentOrder(sellerFulfillmentOrderId, options).then((request) => request(axios, basePath));
+        cancelFulfillmentOrder(requestParameters: FbaOutboundApiCancelFulfillmentOrderRequest, options?: AxiosRequestConfig): AxiosPromise<CancelFulfillmentOrderResponse> {
+            return localVarFp.cancelFulfillmentOrder(requestParameters.sellerFulfillmentOrderId, options).then((request) => request(axios, basePath));
         },
         /**
          * Requests that Amazon ship items from the seller\'s inventory in Amazon\'s fulfillment network to a destination address.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {CreateFulfillmentOrderRequest} body 
+         * @param {FbaOutboundApiCreateFulfillmentOrderRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createFulfillmentOrder(body: CreateFulfillmentOrderRequest, options?: any): AxiosPromise<CreateFulfillmentOrderResponse> {
-            return localVarFp.createFulfillmentOrder(body, options).then((request) => request(axios, basePath));
+        createFulfillmentOrder(requestParameters: FbaOutboundApiCreateFulfillmentOrderRequest, options?: AxiosRequestConfig): AxiosPromise<CreateFulfillmentOrderResponse> {
+            return localVarFp.createFulfillmentOrder(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Creates a fulfillment return.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} sellerFulfillmentOrderId An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer\&#39;s request to return items.
-         * @param {CreateFulfillmentReturnRequest} body 
+         * @param {FbaOutboundApiCreateFulfillmentReturnRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createFulfillmentReturn(sellerFulfillmentOrderId: string, body: CreateFulfillmentReturnRequest, options?: any): AxiosPromise<CreateFulfillmentReturnResponse> {
-            return localVarFp.createFulfillmentReturn(sellerFulfillmentOrderId, body, options).then((request) => request(axios, basePath));
+        createFulfillmentReturn(requestParameters: FbaOutboundApiCreateFulfillmentReturnRequest, options?: AxiosRequestConfig): AxiosPromise<CreateFulfillmentReturnResponse> {
+            return localVarFp.createFulfillmentReturn(requestParameters.sellerFulfillmentOrderId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a list of inventory items that are eligible for the fulfillment feature you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} marketplaceId The marketplace for which to return a list of the inventory that is eligible for the specified feature.
-         * @param {string} featureName The name of the feature for which to return a list of eligible inventory.
-         * @param {string} [nextToken] A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page.
+         * @param {FbaOutboundApiGetFeatureInventoryRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFeatureInventory(marketplaceId: string, featureName: string, nextToken?: string, options?: any): AxiosPromise<GetFeatureInventoryResponse> {
-            return localVarFp.getFeatureInventory(marketplaceId, featureName, nextToken, options).then((request) => request(axios, basePath));
+        getFeatureInventory(requestParameters: FbaOutboundApiGetFeatureInventoryRequest, options?: AxiosRequestConfig): AxiosPromise<GetFeatureInventoryResponse> {
+            return localVarFp.getFeatureInventory(requestParameters.marketplaceId, requestParameters.featureName, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn\'t eligible, the response will contain an empty skuInfo object.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} marketplaceId The marketplace for which to return the count.
-         * @param {string} featureName The name of the feature.
-         * @param {string} sellerSku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller\&#39;s SellerId, which is included with every operation that you submit.
+         * @param {FbaOutboundApiGetFeatureSKURequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFeatureSKU(marketplaceId: string, featureName: string, sellerSku: string, options?: any): AxiosPromise<GetFeatureSkuResponse> {
-            return localVarFp.getFeatureSKU(marketplaceId, featureName, sellerSku, options).then((request) => request(axios, basePath));
+        getFeatureSKU(requestParameters: FbaOutboundApiGetFeatureSKURequest, options?: AxiosRequestConfig): AxiosPromise<GetFeatureSkuResponse> {
+            return localVarFp.getFeatureSKU(requestParameters.marketplaceId, requestParameters.featureName, requestParameters.sellerSku, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a list of features available for Multi-Channel Fulfillment orders in the marketplace you specify, and whether the seller for which you made the call is enrolled for each feature.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} marketplaceId The marketplace for which to return the list of features.
+         * @param {FbaOutboundApiGetFeaturesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFeatures(marketplaceId: string, options?: any): AxiosPromise<GetFeaturesResponse> {
-            return localVarFp.getFeatures(marketplaceId, options).then((request) => request(axios, basePath));
+        getFeatures(requestParameters: FbaOutboundApiGetFeaturesRequest, options?: AxiosRequestConfig): AxiosPromise<GetFeaturesResponse> {
+            return localVarFp.getFeatures(requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns the fulfillment order indicated by the specified order identifier.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created.
+         * @param {FbaOutboundApiGetFulfillmentOrderRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFulfillmentOrder(sellerFulfillmentOrderId: string, options?: any): AxiosPromise<GetFulfillmentOrderResponse> {
-            return localVarFp.getFulfillmentOrder(sellerFulfillmentOrderId, options).then((request) => request(axios, basePath));
+        getFulfillmentOrder(requestParameters: FbaOutboundApiGetFulfillmentOrderRequest, options?: AxiosRequestConfig): AxiosPromise<GetFulfillmentOrderResponse> {
+            return localVarFp.getFulfillmentOrder(requestParameters.sellerFulfillmentOrderId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a list of fulfillment order previews based on shipping criteria that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {GetFulfillmentPreviewRequest} body 
+         * @param {FbaOutboundApiGetFulfillmentPreviewRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFulfillmentPreview(body: GetFulfillmentPreviewRequest, options?: any): AxiosPromise<GetFulfillmentPreviewResponse> {
-            return localVarFp.getFulfillmentPreview(body, options).then((request) => request(axios, basePath));
+        getFulfillmentPreview(requestParameters: FbaOutboundApiGetFulfillmentPreviewRequest, options?: AxiosRequestConfig): AxiosPromise<GetFulfillmentPreviewResponse> {
+            return localVarFp.getFulfillmentPreview(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns delivery tracking information for a package in an outbound shipment for a Multi-Channel Fulfillment order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {number} packageNumber The unencrypted package identifier returned by the getFulfillmentOrder operation.
+         * @param {FbaOutboundApiGetPackageTrackingDetailsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPackageTrackingDetails(packageNumber: number, options?: any): AxiosPromise<GetPackageTrackingDetailsResponse> {
-            return localVarFp.getPackageTrackingDetails(packageNumber, options).then((request) => request(axios, basePath));
+        getPackageTrackingDetails(requestParameters: FbaOutboundApiGetPackageTrackingDetailsRequest, options?: AxiosRequestConfig): AxiosPromise<GetPackageTrackingDetailsResponse> {
+            return localVarFp.getPackageTrackingDetails(requestParameters.packageNumber, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the next token parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} [queryStartDate] A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order.
-         * @param {string} [nextToken] A string token returned in the response to your previous request.
+         * @param {FbaOutboundApiListAllFulfillmentOrdersRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listAllFulfillmentOrders(queryStartDate?: string, nextToken?: string, options?: any): AxiosPromise<ListAllFulfillmentOrdersResponse> {
-            return localVarFp.listAllFulfillmentOrders(queryStartDate, nextToken, options).then((request) => request(axios, basePath));
+        listAllFulfillmentOrders(requestParameters: FbaOutboundApiListAllFulfillmentOrdersRequest = {}, options?: AxiosRequestConfig): AxiosPromise<ListAllFulfillmentOrdersResponse> {
+            return localVarFp.listAllFulfillmentOrders(requestParameters.queryStartDate, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a list of return reason codes for a seller SKU in a given marketplace.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} sellerSku The seller SKU for which return reason codes are required.
-         * @param {string} language The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into.
-         * @param {string} [marketplaceId] The marketplace for which the seller wants return reason codes.
-         * @param {string} [sellerFulfillmentOrderId] The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes.
+         * @param {FbaOutboundApiListReturnReasonCodesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listReturnReasonCodes(sellerSku: string, language: string, marketplaceId?: string, sellerFulfillmentOrderId?: string, options?: any): AxiosPromise<ListReturnReasonCodesResponse> {
-            return localVarFp.listReturnReasonCodes(sellerSku, language, marketplaceId, sellerFulfillmentOrderId, options).then((request) => request(axios, basePath));
+        listReturnReasonCodes(requestParameters: FbaOutboundApiListReturnReasonCodesRequest, options?: AxiosRequestConfig): AxiosPromise<ListReturnReasonCodesResponse> {
+            return localVarFp.listReturnReasonCodes(requestParameters.sellerSku, requestParameters.language, requestParameters.marketplaceId, requestParameters.sellerFulfillmentOrderId, options).then((request) => request(axios, basePath));
         },
         /**
          * Updates and/or requests shipment for a fulfillment order with an order hold on it.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created.
-         * @param {UpdateFulfillmentOrderRequest} body 
+         * @param {FbaOutboundApiUpdateFulfillmentOrderRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateFulfillmentOrder(sellerFulfillmentOrderId: string, body: UpdateFulfillmentOrderRequest, options?: any): AxiosPromise<UpdateFulfillmentOrderResponse> {
-            return localVarFp.updateFulfillmentOrder(sellerFulfillmentOrderId, body, options).then((request) => request(axios, basePath));
+        updateFulfillmentOrder(requestParameters: FbaOutboundApiUpdateFulfillmentOrderRequest, options?: AxiosRequestConfig): AxiosPromise<UpdateFulfillmentOrderResponse> {
+            return localVarFp.updateFulfillmentOrder(requestParameters.sellerFulfillmentOrderId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
 };

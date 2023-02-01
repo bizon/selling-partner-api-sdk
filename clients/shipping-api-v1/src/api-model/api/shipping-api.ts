@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -483,86 +484,83 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
     return {
         /**
          * Cancel a shipment by the given shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} shipmentId 
+         * @param {ShippingApiCancelShipmentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelShipment(shipmentId: string, options?: any): AxiosPromise<CancelShipmentResponse> {
-            return localVarFp.cancelShipment(shipmentId, options).then((request) => request(axios, basePath));
+        cancelShipment(requestParameters: ShippingApiCancelShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<CancelShipmentResponse> {
+            return localVarFp.cancelShipment(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
          * Create a new shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {CreateShipmentRequest} body 
+         * @param {ShippingApiCreateShipmentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createShipment(body: CreateShipmentRequest, options?: any): AxiosPromise<CreateShipmentResponse> {
-            return localVarFp.createShipment(body, options).then((request) => request(axios, basePath));
+        createShipment(requestParameters: ShippingApiCreateShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<CreateShipmentResponse> {
+            return localVarFp.createShipment(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Verify if the current account is valid.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAccount(options?: any): AxiosPromise<GetAccountResponse> {
+        getAccount(options?: AxiosRequestConfig): AxiosPromise<GetAccountResponse> {
             return localVarFp.getAccount(options).then((request) => request(axios, basePath));
         },
         /**
          * Get service rates.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {GetRatesRequest} body 
+         * @param {ShippingApiGetRatesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRates(body: GetRatesRequest, options?: any): AxiosPromise<GetRatesResponse> {
-            return localVarFp.getRates(body, options).then((request) => request(axios, basePath));
+        getRates(requestParameters: ShippingApiGetRatesRequest, options?: AxiosRequestConfig): AxiosPromise<GetRatesResponse> {
+            return localVarFp.getRates(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Return the entire shipment object for the shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} shipmentId 
+         * @param {ShippingApiGetShipmentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipment(shipmentId: string, options?: any): AxiosPromise<GetShipmentResponse> {
-            return localVarFp.getShipment(shipmentId, options).then((request) => request(axios, basePath));
+        getShipment(requestParameters: ShippingApiGetShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<GetShipmentResponse> {
+            return localVarFp.getShipment(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
          * Return the tracking information of a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} trackingId 
+         * @param {ShippingApiGetTrackingInformationRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTrackingInformation(trackingId: string, options?: any): AxiosPromise<GetTrackingInformationResponse> {
-            return localVarFp.getTrackingInformation(trackingId, options).then((request) => request(axios, basePath));
+        getTrackingInformation(requestParameters: ShippingApiGetTrackingInformationRequest, options?: AxiosRequestConfig): AxiosPromise<GetTrackingInformationResponse> {
+            return localVarFp.getTrackingInformation(requestParameters.trackingId, options).then((request) => request(axios, basePath));
         },
         /**
          * Purchase shipping labels based on a given rate.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} shipmentId 
-         * @param {PurchaseLabelsRequest} body 
+         * @param {ShippingApiPurchaseLabelsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        purchaseLabels(shipmentId: string, body: PurchaseLabelsRequest, options?: any): AxiosPromise<PurchaseLabelsResponse> {
-            return localVarFp.purchaseLabels(shipmentId, body, options).then((request) => request(axios, basePath));
+        purchaseLabels(requestParameters: ShippingApiPurchaseLabelsRequest, options?: AxiosRequestConfig): AxiosPromise<PurchaseLabelsResponse> {
+            return localVarFp.purchaseLabels(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Purchase shipping labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {PurchaseShipmentRequest} body 
+         * @param {ShippingApiPurchaseShipmentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        purchaseShipment(body: PurchaseShipmentRequest, options?: any): AxiosPromise<PurchaseShipmentResponse> {
-            return localVarFp.purchaseShipment(body, options).then((request) => request(axios, basePath));
+        purchaseShipment(requestParameters: ShippingApiPurchaseShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<PurchaseShipmentResponse> {
+            return localVarFp.purchaseShipment(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Retrieve shipping label based on the shipment id and tracking id.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} shipmentId 
-         * @param {string} trackingId 
-         * @param {RetrieveShippingLabelRequest} body 
+         * @param {ShippingApiRetrieveShippingLabelRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        retrieveShippingLabel(shipmentId: string, trackingId: string, body: RetrieveShippingLabelRequest, options?: any): AxiosPromise<RetrieveShippingLabelResponse> {
-            return localVarFp.retrieveShippingLabel(shipmentId, trackingId, body, options).then((request) => request(axios, basePath));
+        retrieveShippingLabel(requestParameters: ShippingApiRetrieveShippingLabelRequest, options?: AxiosRequestConfig): AxiosPromise<RetrieveShippingLabelResponse> {
+            return localVarFp.retrieveShippingLabel(requestParameters.shipmentId, requestParameters.trackingId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
 };

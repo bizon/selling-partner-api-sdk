@@ -58,3 +58,5 @@ export interface AcceptedRate {
     'promise'?: ShippingPromiseSet;
 }
 
+
+

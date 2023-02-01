@@ -31,3 +31,5 @@ export interface AggregationSettings {
     'aggregationTimePeriod': AggregationTimePeriod;
 }
 
+
+

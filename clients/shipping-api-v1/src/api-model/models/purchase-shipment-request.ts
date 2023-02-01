@@ -76,3 +76,5 @@ export interface PurchaseShipmentRequest {
     'labelSpecification': LabelSpecification;
 }
 
+
+

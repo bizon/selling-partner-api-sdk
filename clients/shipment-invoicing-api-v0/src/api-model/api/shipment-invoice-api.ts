@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -192,31 +193,30 @@ export const ShipmentInvoiceApiFactory = function (configuration?: Configuration
     return {
         /**
          * Returns the invoice status for the shipment you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} shipmentId The shipment identifier for the shipment.
+         * @param {ShipmentInvoiceApiGetInvoiceStatusRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getInvoiceStatus(shipmentId: string, options?: any): AxiosPromise<GetInvoiceStatusResponse> {
-            return localVarFp.getInvoiceStatus(shipmentId, options).then((request) => request(axios, basePath));
+        getInvoiceStatus(requestParameters: ShipmentInvoiceApiGetInvoiceStatusRequest, options?: AxiosRequestConfig): AxiosPromise<GetInvoiceStatusResponse> {
+            return localVarFp.getInvoiceStatus(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns the shipment details required to issue an invoice for the specified shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} shipmentId The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
+         * @param {ShipmentInvoiceApiGetShipmentDetailsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipmentDetails(shipmentId: string, options?: any): AxiosPromise<GetShipmentDetailsResponse> {
-            return localVarFp.getShipmentDetails(shipmentId, options).then((request) => request(axios, basePath));
+        getShipmentDetails(requestParameters: ShipmentInvoiceApiGetShipmentDetailsRequest, options?: AxiosRequestConfig): AxiosPromise<GetShipmentDetailsResponse> {
+            return localVarFp.getShipmentDetails(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
          * Submits a shipment invoice document for a given shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} shipmentId The identifier for the shipment.
-         * @param {SubmitInvoiceRequest} body 
+         * @param {ShipmentInvoiceApiSubmitInvoiceRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitInvoice(shipmentId: string, body: SubmitInvoiceRequest, options?: any): AxiosPromise<SubmitInvoiceResponse> {
-            return localVarFp.submitInvoice(shipmentId, body, options).then((request) => request(axios, basePath));
+        submitInvoice(requestParameters: ShipmentInvoiceApiSubmitInvoiceRequest, options?: AxiosRequestConfig): AxiosPromise<SubmitInvoiceResponse> {
+            return localVarFp.submitInvoice(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
 };

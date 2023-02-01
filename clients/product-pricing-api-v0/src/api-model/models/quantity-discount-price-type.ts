@@ -46,3 +46,5 @@ export interface QuantityDiscountPriceType {
     'listingPrice': MoneyType;
 }
 
+
+

@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -187,28 +188,21 @@ export const DefinitionsApiFactory = function (configuration?: Configuration, ba
     return {
         /**
          * Retrieve an Amazon product type definition.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} productType The Amazon product type name.
-         * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. Note: This parameter is limited to one marketplaceId at this time.
-         * @param {string} [sellerId] A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner.
-         * @param {string} [productTypeVersion] The version of the Amazon product type to retrieve. Defaults to \&quot;LATEST\&quot;,. Prerelease versions of product type definitions may be retrieved with \&quot;RELEASE_CANDIDATE\&quot;. If no prerelease version is currently available, the \&quot;LATEST\&quot; live version will be provided.
-         * @param {'LISTING' | 'LISTING_PRODUCT_ONLY' | 'LISTING_OFFER_ONLY'} [requirements] The name of the requirements set to retrieve requirements for.
-         * @param {'ENFORCED' | 'NOT_ENFORCED'} [requirementsEnforced] Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates).
-         * @param {'DEFAULT' | 'ar' | 'ar_AE' | 'de' | 'de_DE' | 'en' | 'en_AE' | 'en_AU' | 'en_CA' | 'en_GB' | 'en_IN' | 'en_SG' | 'en_US' | 'es' | 'es_ES' | 'es_MX' | 'es_US' | 'fr' | 'fr_CA' | 'fr_FR' | 'it' | 'it_IT' | 'ja' | 'ja_JP' | 'nl' | 'nl_NL' | 'pl' | 'pl_PL' | 'pt' | 'pt_BR' | 'pt_PT' | 'sv' | 'sv_SE' | 'tr' | 'tr_TR' | 'zh' | 'zh_CN' | 'zh_TW'} [locale] Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request.
+         * @param {DefinitionsApiGetDefinitionsProductTypeRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDefinitionsProductType(productType: string, marketplaceIds: Array<string>, sellerId?: string, productTypeVersion?: string, requirements?: 'LISTING' | 'LISTING_PRODUCT_ONLY' | 'LISTING_OFFER_ONLY', requirementsEnforced?: 'ENFORCED' | 'NOT_ENFORCED', locale?: 'DEFAULT' | 'ar' | 'ar_AE' | 'de' | 'de_DE' | 'en' | 'en_AE' | 'en_AU' | 'en_CA' | 'en_GB' | 'en_IN' | 'en_SG' | 'en_US' | 'es' | 'es_ES' | 'es_MX' | 'es_US' | 'fr' | 'fr_CA' | 'fr_FR' | 'it' | 'it_IT' | 'ja' | 'ja_JP' | 'nl' | 'nl_NL' | 'pl' | 'pl_PL' | 'pt' | 'pt_BR' | 'pt_PT' | 'sv' | 'sv_SE' | 'tr' | 'tr_TR' | 'zh' | 'zh_CN' | 'zh_TW', options?: any): AxiosPromise<ProductTypeDefinition> {
-            return localVarFp.getDefinitionsProductType(productType, marketplaceIds, sellerId, productTypeVersion, requirements, requirementsEnforced, locale, options).then((request) => request(axios, basePath));
+        getDefinitionsProductType(requestParameters: DefinitionsApiGetDefinitionsProductTypeRequest, options?: AxiosRequestConfig): AxiosPromise<ProductTypeDefinition> {
+            return localVarFp.getDefinitionsProductType(requestParameters.productType, requestParameters.marketplaceIds, requestParameters.sellerId, requestParameters.productTypeVersion, requestParameters.requirements, requestParameters.requirementsEnforced, requestParameters.locale, options).then((request) => request(axios, basePath));
         },
         /**
          * Search for and return a list of Amazon product types that have definitions available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
-         * @param {Array<string>} [keywords] A comma-delimited list of keywords to search product types by.
+         * @param {DefinitionsApiSearchDefinitionsProductTypesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchDefinitionsProductTypes(marketplaceIds: Array<string>, keywords?: Array<string>, options?: any): AxiosPromise<ProductTypeList> {
-            return localVarFp.searchDefinitionsProductTypes(marketplaceIds, keywords, options).then((request) => request(axios, basePath));
+        searchDefinitionsProductTypes(requestParameters: DefinitionsApiSearchDefinitionsProductTypesRequest, options?: AxiosRequestConfig): AxiosPromise<ProductTypeList> {
+            return localVarFp.searchDefinitionsProductTypes(requestParameters.marketplaceIds, requestParameters.keywords, options).then((request) => request(axios, basePath));
         },
     };
 };

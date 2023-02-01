@@ -61,3 +61,5 @@ export interface PartneredSmallParcelPackageOutput {
     'PackageStatus': PackageStatus;
 }
 
+
+

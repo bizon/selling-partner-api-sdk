@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -418,75 +419,75 @@ export const MerchantFulfillmentApiFactory = function (configuration?: Configura
     return {
         /**
          * Cancel the shipment indicated by the specified shipment identifier.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} shipmentId The Amazon-defined shipment identifier for the shipment to cancel.
+         * @param {MerchantFulfillmentApiCancelShipmentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelShipment(shipmentId: string, options?: any): AxiosPromise<CancelShipmentResponse> {
-            return localVarFp.cancelShipment(shipmentId, options).then((request) => request(axios, basePath));
+        cancelShipment(requestParameters: MerchantFulfillmentApiCancelShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<CancelShipmentResponse> {
+            return localVarFp.cancelShipment(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
          * Cancel the shipment indicated by the specified shipment identifer.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} shipmentId The Amazon-defined shipment identifier for the shipment to cancel.
+         * @param {MerchantFulfillmentApiCancelShipmentOldRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelShipmentOld(shipmentId: string, options?: any): AxiosPromise<CancelShipmentResponse> {
-            return localVarFp.cancelShipmentOld(shipmentId, options).then((request) => request(axios, basePath));
+        cancelShipmentOld(requestParameters: MerchantFulfillmentApiCancelShipmentOldRequest, options?: AxiosRequestConfig): AxiosPromise<CancelShipmentResponse> {
+            return localVarFp.cancelShipmentOld(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
          * Create a shipment with the information provided.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {CreateShipmentRequest} body 
+         * @param {MerchantFulfillmentApiCreateShipmentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createShipment(body: CreateShipmentRequest, options?: any): AxiosPromise<CreateShipmentResponse> {
-            return localVarFp.createShipment(body, options).then((request) => request(axios, basePath));
+        createShipment(requestParameters: MerchantFulfillmentApiCreateShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<CreateShipmentResponse> {
+            return localVarFp.createShipment(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Gets a list of additional seller inputs required for a ship method. This is generally used for international shipping.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {GetAdditionalSellerInputsRequest} body 
+         * @param {MerchantFulfillmentApiGetAdditionalSellerInputsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAdditionalSellerInputs(body: GetAdditionalSellerInputsRequest, options?: any): AxiosPromise<GetAdditionalSellerInputsResponse> {
-            return localVarFp.getAdditionalSellerInputs(body, options).then((request) => request(axios, basePath));
+        getAdditionalSellerInputs(requestParameters: MerchantFulfillmentApiGetAdditionalSellerInputsRequest, options?: AxiosRequestConfig): AxiosPromise<GetAdditionalSellerInputsResponse> {
+            return localVarFp.getAdditionalSellerInputs(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Get a list of additional seller inputs required for a ship method. This is generally used for international shipping.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {GetAdditionalSellerInputsRequest} body 
+         * @param {MerchantFulfillmentApiGetAdditionalSellerInputsOldRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAdditionalSellerInputsOld(body: GetAdditionalSellerInputsRequest, options?: any): AxiosPromise<GetAdditionalSellerInputsResponse> {
-            return localVarFp.getAdditionalSellerInputsOld(body, options).then((request) => request(axios, basePath));
+        getAdditionalSellerInputsOld(requestParameters: MerchantFulfillmentApiGetAdditionalSellerInputsOldRequest, options?: AxiosRequestConfig): AxiosPromise<GetAdditionalSellerInputsResponse> {
+            return localVarFp.getAdditionalSellerInputsOld(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a list of shipping service offers that satisfy the specified shipment request details.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {GetEligibleShipmentServicesRequest} body 
+         * @param {MerchantFulfillmentApiGetEligibleShipmentServicesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEligibleShipmentServices(body: GetEligibleShipmentServicesRequest, options?: any): AxiosPromise<GetEligibleShipmentServicesResponse> {
-            return localVarFp.getEligibleShipmentServices(body, options).then((request) => request(axios, basePath));
+        getEligibleShipmentServices(requestParameters: MerchantFulfillmentApiGetEligibleShipmentServicesRequest, options?: AxiosRequestConfig): AxiosPromise<GetEligibleShipmentServicesResponse> {
+            return localVarFp.getEligibleShipmentServices(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a list of shipping service offers that satisfy the specified shipment request details.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {GetEligibleShipmentServicesRequest} body 
+         * @param {MerchantFulfillmentApiGetEligibleShipmentServicesOldRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEligibleShipmentServicesOld(body: GetEligibleShipmentServicesRequest, options?: any): AxiosPromise<GetEligibleShipmentServicesResponse> {
-            return localVarFp.getEligibleShipmentServicesOld(body, options).then((request) => request(axios, basePath));
+        getEligibleShipmentServicesOld(requestParameters: MerchantFulfillmentApiGetEligibleShipmentServicesOldRequest, options?: AxiosRequestConfig): AxiosPromise<GetEligibleShipmentServicesResponse> {
+            return localVarFp.getEligibleShipmentServicesOld(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns the shipment information for an existing shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} shipmentId The Amazon-defined shipment identifier for the shipment.
+         * @param {MerchantFulfillmentApiGetShipmentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipment(shipmentId: string, options?: any): AxiosPromise<GetShipmentResponse> {
-            return localVarFp.getShipment(shipmentId, options).then((request) => request(axios, basePath));
+        getShipment(requestParameters: MerchantFulfillmentApiGetShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<GetShipmentResponse> {
+            return localVarFp.getShipment(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
     };
 };

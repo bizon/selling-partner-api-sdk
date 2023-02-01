@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -97,12 +98,12 @@ export const VendorInvoiceApiFactory = function (configuration?: Configuration, 
     return {
         /**
          * Submits one or more invoices for a vendor\'s direct fulfillment orders.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {SubmitInvoiceRequest} body 
+         * @param {VendorInvoiceApiSubmitInvoiceRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitInvoice(body: SubmitInvoiceRequest, options?: any): AxiosPromise<SubmitInvoiceResponse> {
-            return localVarFp.submitInvoice(body, options).then((request) => request(axios, basePath));
+        submitInvoice(requestParameters: VendorInvoiceApiSubmitInvoiceRequest, options?: AxiosRequestConfig): AxiosPromise<SubmitInvoiceResponse> {
+            return localVarFp.submitInvoice(requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
 };

@@ -43,3 +43,5 @@ export interface UpdateVerificationStatusRequestBody {
     'rejectionReasonId'?: string;
 }
 
+
+

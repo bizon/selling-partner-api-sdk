@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -426,77 +427,74 @@ export const NotificationsApiFactory = function (configuration?: Configuration, 
     return {
         /**
          * Creates a destination resource to receive notifications. The createDestination API is grantless. For more information, see [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {CreateDestinationRequest} body 
+         * @param {NotificationsApiCreateDestinationRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createDestination(body: CreateDestinationRequest, options?: any): AxiosPromise<CreateDestinationResponse> {
-            return localVarFp.createDestination(body, options).then((request) => request(axios, basePath));
+        createDestination(requestParameters: NotificationsApiCreateDestinationRequest, options?: AxiosRequestConfig): AxiosPromise<CreateDestinationResponse> {
+            return localVarFp.createDestination(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Creates a subscription for the specified notification type to be delivered to the specified destination. Before you can subscribe, you must first create the destination by calling the createDestination operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
-         * @param {CreateSubscriptionRequest} body 
+         * @param {NotificationsApiCreateSubscriptionRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createSubscription(notificationType: string, body: CreateSubscriptionRequest, options?: any): AxiosPromise<CreateSubscriptionResponse> {
-            return localVarFp.createSubscription(notificationType, body, options).then((request) => request(axios, basePath));
+        createSubscription(requestParameters: NotificationsApiCreateSubscriptionRequest, options?: AxiosRequestConfig): AxiosPromise<CreateSubscriptionResponse> {
+            return localVarFp.createSubscription(requestParameters.notificationType, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Deletes the destination that you specify. The deleteDestination API is grantless. For more information, see [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} destinationId The identifier for the destination that you want to delete.
+         * @param {NotificationsApiDeleteDestinationRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteDestination(destinationId: string, options?: any): AxiosPromise<DeleteDestinationResponse> {
-            return localVarFp.deleteDestination(destinationId, options).then((request) => request(axios, basePath));
+        deleteDestination(requestParameters: NotificationsApiDeleteDestinationRequest, options?: AxiosRequestConfig): AxiosPromise<DeleteDestinationResponse> {
+            return localVarFp.deleteDestination(requestParameters.destinationId, options).then((request) => request(axios, basePath));
         },
         /**
          * Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The deleteSubscriptionById API is grantless. For more information, see [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} subscriptionId The identifier for the subscription that you want to delete.
-         * @param {string} notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
+         * @param {NotificationsApiDeleteSubscriptionByIdRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteSubscriptionById(subscriptionId: string, notificationType: string, options?: any): AxiosPromise<DeleteSubscriptionByIdResponse> {
-            return localVarFp.deleteSubscriptionById(subscriptionId, notificationType, options).then((request) => request(axios, basePath));
+        deleteSubscriptionById(requestParameters: NotificationsApiDeleteSubscriptionByIdRequest, options?: AxiosRequestConfig): AxiosPromise<DeleteSubscriptionByIdResponse> {
+            return localVarFp.deleteSubscriptionById(requestParameters.subscriptionId, requestParameters.notificationType, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns information about the destination that you specify. The getDestination API is grantless. For more information, see [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} destinationId The identifier generated when you created the destination.
+         * @param {NotificationsApiGetDestinationRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDestination(destinationId: string, options?: any): AxiosPromise<GetDestinationResponse> {
-            return localVarFp.getDestination(destinationId, options).then((request) => request(axios, basePath));
+        getDestination(requestParameters: NotificationsApiGetDestinationRequest, options?: AxiosRequestConfig): AxiosPromise<GetDestinationResponse> {
+            return localVarFp.getDestination(requestParameters.destinationId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns information about all destinations. The getDestinations API is grantless. For more information, see [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDestinations(options?: any): AxiosPromise<GetDestinationsResponse> {
+        getDestinations(options?: AxiosRequestConfig): AxiosPromise<GetDestinationsResponse> {
             return localVarFp.getDestinations(options).then((request) => request(axios, basePath));
         },
         /**
          * Returns information about subscriptions of the specified notification type. You can use this API to get subscription information when you do not have a subscription identifier.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
+         * @param {NotificationsApiGetSubscriptionRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSubscription(notificationType: string, options?: any): AxiosPromise<GetSubscriptionResponse> {
-            return localVarFp.getSubscription(notificationType, options).then((request) => request(axios, basePath));
+        getSubscription(requestParameters: NotificationsApiGetSubscriptionRequest, options?: AxiosRequestConfig): AxiosPromise<GetSubscriptionResponse> {
+            return localVarFp.getSubscription(requestParameters.notificationType, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns information about a subscription for the specified notification type. The getSubscriptionById API is grantless. For more information, see [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} subscriptionId The identifier for the subscription that you want to get.
-         * @param {string} notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
+         * @param {NotificationsApiGetSubscriptionByIdRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSubscriptionById(subscriptionId: string, notificationType: string, options?: any): AxiosPromise<GetSubscriptionByIdResponse> {
-            return localVarFp.getSubscriptionById(subscriptionId, notificationType, options).then((request) => request(axios, basePath));
+        getSubscriptionById(requestParameters: NotificationsApiGetSubscriptionByIdRequest, options?: AxiosRequestConfig): AxiosPromise<GetSubscriptionByIdResponse> {
+            return localVarFp.getSubscriptionById(requestParameters.subscriptionId, requestParameters.notificationType, options).then((request) => request(axios, basePath));
         },
     };
 };

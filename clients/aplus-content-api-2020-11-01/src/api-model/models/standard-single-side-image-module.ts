@@ -40,3 +40,5 @@ export interface StandardSingleSideImageModule {
     'block'?: StandardImageTextBlock;
 }
 
+
+

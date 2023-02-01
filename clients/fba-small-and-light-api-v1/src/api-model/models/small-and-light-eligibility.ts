@@ -43,3 +43,5 @@ export interface SmallAndLightEligibility {
     'status': SmallAndLightEligibilityStatus;
 }
 
+
+

@@ -49,3 +49,5 @@ export interface ItemIdentifier {
     'ItemCondition': ConditionType;
 }
 
+
+

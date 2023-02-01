@@ -55,3 +55,5 @@ export interface OfferIdentifier {
     'fulfillmentType'?: FulfillmentType;
 }
 
+
+

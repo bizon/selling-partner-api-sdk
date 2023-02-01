@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -154,23 +155,21 @@ export const SolicitationsApiFactory = function (configuration?: Configuration, 
     return {
         /**
          * Sends a solicitation to a buyer asking for seller feedback and a product review for the specified order. Send only one productReviewAndSellerFeedback or free form proactive message per order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} amazonOrderId An Amazon order identifier. This specifies the order for which a solicitation is sent.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
+         * @param {SolicitationsApiCreateProductReviewAndSellerFeedbackSolicitationRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createProductReviewAndSellerFeedbackSolicitation(amazonOrderId: string, marketplaceIds: Array<string>, options?: any): AxiosPromise<CreateProductReviewAndSellerFeedbackSolicitationResponse> {
-            return localVarFp.createProductReviewAndSellerFeedbackSolicitation(amazonOrderId, marketplaceIds, options).then((request) => request(axios, basePath));
+        createProductReviewAndSellerFeedbackSolicitation(requestParameters: SolicitationsApiCreateProductReviewAndSellerFeedbackSolicitationRequest, options?: AxiosRequestConfig): AxiosPromise<CreateProductReviewAndSellerFeedbackSolicitationResponse> {
+            return localVarFp.createProductReviewAndSellerFeedbackSolicitation(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a list of solicitation types that are available for an order that you specify. A solicitation type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a solicitation. Currently only the productReviewAndSellerFeedbackSolicitation solicitation type is available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} amazonOrderId An Amazon order identifier. This specifies the order for which you want a list of available solicitation types.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
+         * @param {SolicitationsApiGetSolicitationActionsForOrderRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSolicitationActionsForOrder(amazonOrderId: string, marketplaceIds: Array<string>, options?: any): AxiosPromise<GetSolicitationActionsForOrderResponse> {
-            return localVarFp.getSolicitationActionsForOrder(amazonOrderId, marketplaceIds, options).then((request) => request(axios, basePath));
+        getSolicitationActionsForOrder(requestParameters: SolicitationsApiGetSolicitationActionsForOrderRequest, options?: AxiosRequestConfig): AxiosPromise<GetSolicitationActionsForOrderResponse> {
+            return localVarFp.getSolicitationActionsForOrder(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(axios, basePath));
         },
     };
 };

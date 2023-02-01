@@ -64,3 +64,5 @@ export interface InboundShipmentPlanRequestItem {
     'PrepDetailsList'?: Array<PrepDetails>;
 }
 
+
+

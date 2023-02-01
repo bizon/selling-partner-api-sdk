@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -213,32 +214,21 @@ export const CatalogApiFactory = function (configuration?: Configuration, basePa
     return {
         /**
          * Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} asin The Amazon Standard Identification Number (ASIN) of the item.
-         * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.
-         * @param {Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
-         * @param {string} [locale] Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
+         * @param {CatalogApiGetCatalogItemRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCatalogItem(asin: string, marketplaceIds: Array<string>, includedData?: Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>, locale?: string, options?: any): AxiosPromise<Item> {
-            return localVarFp.getCatalogItem(asin, marketplaceIds, includedData, locale, options).then((request) => request(axios, basePath));
+        getCatalogItem(requestParameters: CatalogApiGetCatalogItemRequest, options?: AxiosRequestConfig): AxiosPromise<Item> {
+            return localVarFp.getCatalogItem(requestParameters.asin, requestParameters.marketplaceIds, requestParameters.includedData, requestParameters.locale, options).then((request) => request(axios, basePath));
         },
         /**
          * Search for and return a list of Amazon catalog items and associated information.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {Array<string>} keywords A comma-delimited list of words or item identifiers to search the Amazon catalog for.
-         * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
-         * @param {Array<'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
-         * @param {Array<string>} [brandNames] A comma-delimited list of brand names to limit the search to.
-         * @param {Array<string>} [classificationIds] A comma-delimited list of classification identifiers to limit the search to.
-         * @param {number} [pageSize] Number of results to be returned per page.
-         * @param {string} [pageToken] A token to fetch a certain page when there are multiple pages worth of results.
-         * @param {string} [keywordsLocale] The language the keywords are provided in. Defaults to the primary locale of the marketplace.
-         * @param {string} [locale] Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
+         * @param {CatalogApiSearchCatalogItemsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchCatalogItems(keywords: Array<string>, marketplaceIds: Array<string>, includedData?: Array<'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>, brandNames?: Array<string>, classificationIds?: Array<string>, pageSize?: number, pageToken?: string, keywordsLocale?: string, locale?: string, options?: any): AxiosPromise<ItemSearchResults> {
-            return localVarFp.searchCatalogItems(keywords, marketplaceIds, includedData, brandNames, classificationIds, pageSize, pageToken, keywordsLocale, locale, options).then((request) => request(axios, basePath));
+        searchCatalogItems(requestParameters: CatalogApiSearchCatalogItemsRequest, options?: AxiosRequestConfig): AxiosPromise<ItemSearchResults> {
+            return localVarFp.searchCatalogItems(requestParameters.keywords, requestParameters.marketplaceIds, requestParameters.includedData, requestParameters.brandNames, requestParameters.classificationIds, requestParameters.pageSize, requestParameters.pageToken, requestParameters.keywordsLocale, requestParameters.locale, options).then((request) => request(axios, basePath));
         },
     };
 };

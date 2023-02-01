@@ -46,3 +46,5 @@ export interface ASINInboundGuidance {
     'GuidanceReasonList'?: Array<GuidanceReason>;
 }
 
+
+

@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -144,21 +145,21 @@ export const VendorDFSandboxApiFactory = function (configuration?: Configuration
     return {
         /**
          * Submits a request to generate test order data for Vendor Direct Fulfillment API entities.
-         * @param {GenerateOrderScenarioRequest} body 
+         * @param {VendorDFSandboxApiGenerateOrderScenariosRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generateOrderScenarios(body: GenerateOrderScenarioRequest, options?: any): AxiosPromise<TransactionReference> {
-            return localVarFp.generateOrderScenarios(body, options).then((request) => request(axios, basePath));
+        generateOrderScenarios(requestParameters: VendorDFSandboxApiGenerateOrderScenariosRequest, options?: AxiosRequestConfig): AxiosPromise<TransactionReference> {
+            return localVarFp.generateOrderScenarios(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
-         * @param {string} transactionId The transaction identifier returned in the response to the generateOrderScenarios operation.
+         * @param {VendorDFSandboxApiGetOrderScenariosRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderScenarios(transactionId: string, options?: any): AxiosPromise<TransactionStatus> {
-            return localVarFp.getOrderScenarios(transactionId, options).then((request) => request(axios, basePath));
+        getOrderScenarios(requestParameters: VendorDFSandboxApiGetOrderScenariosRequest, options?: AxiosRequestConfig): AxiosPromise<TransactionStatus> {
+            return localVarFp.getOrderScenarios(requestParameters.transactionId, options).then((request) => request(axios, basePath));
         },
     };
 };

@@ -43,3 +43,5 @@ export interface OfferCountType {
     'OfferCount'?: number;
 }
 
+
+

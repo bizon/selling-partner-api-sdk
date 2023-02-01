@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -124,16 +125,12 @@ export const ListingsApiFactory = function (configuration?: Configuration, baseP
     return {
         /**
          * Returns listing restrictions for an item in the Amazon Catalog.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} asin The Amazon Standard Identification Number (ASIN) of the item.
-         * @param {string} sellerId A selling partner identifier, such as a merchant account.
-         * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
-         * @param {'new_new' | 'new_open_box' | 'new_oem' | 'refurbished_refurbished' | 'used_like_new' | 'used_very_good' | 'used_good' | 'used_acceptable' | 'collectible_like_new' | 'collectible_very_good' | 'collectible_good' | 'collectible_acceptable' | 'club_club'} [conditionType] The condition used to filter restrictions.
-         * @param {string} [reasonLocale] A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale.
+         * @param {ListingsApiGetListingsRestrictionsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getListingsRestrictions(asin: string, sellerId: string, marketplaceIds: Array<string>, conditionType?: 'new_new' | 'new_open_box' | 'new_oem' | 'refurbished_refurbished' | 'used_like_new' | 'used_very_good' | 'used_good' | 'used_acceptable' | 'collectible_like_new' | 'collectible_very_good' | 'collectible_good' | 'collectible_acceptable' | 'club_club', reasonLocale?: string, options?: any): AxiosPromise<RestrictionList> {
-            return localVarFp.getListingsRestrictions(asin, sellerId, marketplaceIds, conditionType, reasonLocale, options).then((request) => request(axios, basePath));
+        getListingsRestrictions(requestParameters: ListingsApiGetListingsRestrictionsRequest, options?: AxiosRequestConfig): AxiosPromise<RestrictionList> {
+            return localVarFp.getListingsRestrictions(requestParameters.asin, requestParameters.sellerId, requestParameters.marketplaceIds, requestParameters.conditionType, requestParameters.reasonLocale, options).then((request) => request(axios, basePath));
         },
     };
 };

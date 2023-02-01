@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -99,12 +100,12 @@ export const TokensApiFactory = function (configuration?: Configuration, basePat
     return {
         /**
          * Returns a Restricted Data Token (RDT) for one or more restricted resources that you specify. A restricted resource is the HTTP method and path from a restricted operation that returns Personally Identifiable Information (PII), plus a dataElements value that indicates the type of PII requested. See the Tokens API Use Case Guide for a list of restricted operations. Use the RDT returned here as the access token in subsequent calls to the corresponding restricted operations.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 1 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {CreateRestrictedDataTokenRequest} body The restricted data token request details.
+         * @param {TokensApiCreateRestrictedDataTokenRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createRestrictedDataToken(body: CreateRestrictedDataTokenRequest, options?: any): AxiosPromise<CreateRestrictedDataTokenResponse> {
-            return localVarFp.createRestrictedDataToken(body, options).then((request) => request(axios, basePath));
+        createRestrictedDataToken(requestParameters: TokensApiCreateRestrictedDataTokenRequest, options?: AxiosRequestConfig): AxiosPromise<CreateRestrictedDataTokenResponse> {
+            return localVarFp.createRestrictedDataToken(requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
 };

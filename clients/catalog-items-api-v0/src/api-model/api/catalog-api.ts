@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -251,40 +252,30 @@ export const CatalogApiFactory = function (configuration?: Configuration, basePa
     return {
         /**
          * Effective September 30, 2022, the `getCatalogItem` operation will no longer be available in the Selling Partner API for Catalog Items v0. This operation is available in the latest version of the [Selling Partner API for Catalog Items v2022-04-01](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2022-04-01-reference). Integrations that rely on this operation should migrate to the latest version to avoid service disruption.  _Note:_ The [`listCatalogCategories`](#get-catalogv0categories) operation is not being deprecated and you can continue to make calls to it.
-         * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for the item.
-         * @param {string} asin The Amazon Standard Identification Number (ASIN) of the item.
+         * @param {CatalogApiGetCatalogItemRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCatalogItem(marketplaceId: string, asin: string, options?: any): AxiosPromise<GetCatalogItemResponse> {
-            return localVarFp.getCatalogItem(marketplaceId, asin, options).then((request) => request(axios, basePath));
+        getCatalogItem(requestParameters: CatalogApiGetCatalogItemRequest, options?: AxiosRequestConfig): AxiosPromise<GetCatalogItemResponse> {
+            return localVarFp.getCatalogItem(requestParameters.marketplaceId, requestParameters.asin, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns the parent categories to which an item belongs, based on the specified ASIN or SellerSKU.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for the item.
-         * @param {string} [aSIN] The Amazon Standard Identification Number (ASIN) of the item.
-         * @param {string} [sellerSKU] Used to identify items in the given marketplace. SellerSKU is qualified by the seller\&#39;s SellerId, which is included with every operation that you submit.
+         * @param {CatalogApiListCatalogCategoriesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listCatalogCategories(marketplaceId: string, aSIN?: string, sellerSKU?: string, options?: any): AxiosPromise<ListCatalogCategoriesResponse> {
-            return localVarFp.listCatalogCategories(marketplaceId, aSIN, sellerSKU, options).then((request) => request(axios, basePath));
+        listCatalogCategories(requestParameters: CatalogApiListCatalogCategoriesRequest, options?: AxiosRequestConfig): AxiosPromise<ListCatalogCategoriesResponse> {
+            return localVarFp.listCatalogCategories(requestParameters.marketplaceId, requestParameters.aSIN, requestParameters.sellerSKU, options).then((request) => request(axios, basePath));
         },
         /**
          * Effective September 30, 2022, the `listCatalogItems` operation will no longer be available in the Selling Partner API for Catalog Items v0. As an alternative, `searchCatalogItems` is available in the latest version of the [Selling Partner API for Catalog Items v2022-04-01](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2022-04-01-reference). Integrations that rely on the `listCatalogItems` operation should migrate to the `searchCatalogItems`operation to avoid service disruption.  _Note:_ The [`listCatalogCategories`](#get-catalogv0categories) operation is not being deprecated and you can continue to make calls to it.
-         * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for which items are returned.
-         * @param {string} [query] Keyword(s) to use to search for items in the catalog. Example: \&#39;harry potter books\&#39;.
-         * @param {string} [queryContextId] An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items.
-         * @param {string} [sellerSKU] Used to identify an item in the given marketplace. SellerSKU is qualified by the seller\&#39;s SellerId, which is included with every operation that you submit.
-         * @param {string} [uPC] A 12-digit bar code used for retail packaging.
-         * @param {string} [eAN] A European article number that uniquely identifies the catalog item, manufacturer, and its attributes.
-         * @param {string} [iSBN] The unique commercial book identifier used to identify books internationally.
-         * @param {string} [jAN] A Japanese article number that uniquely identifies the product, manufacturer, and its attributes.
+         * @param {CatalogApiListCatalogItemsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listCatalogItems(marketplaceId: string, query?: string, queryContextId?: string, sellerSKU?: string, uPC?: string, eAN?: string, iSBN?: string, jAN?: string, options?: any): AxiosPromise<ListCatalogItemsResponse> {
-            return localVarFp.listCatalogItems(marketplaceId, query, queryContextId, sellerSKU, uPC, eAN, iSBN, jAN, options).then((request) => request(axios, basePath));
+        listCatalogItems(requestParameters: CatalogApiListCatalogItemsRequest, options?: AxiosRequestConfig): AxiosPromise<ListCatalogItemsResponse> {
+            return localVarFp.listCatalogItems(requestParameters.marketplaceId, requestParameters.query, requestParameters.queryContextId, requestParameters.sellerSKU, requestParameters.uPC, requestParameters.eAN, requestParameters.iSBN, requestParameters.jAN, options).then((request) => request(axios, basePath));
         },
     };
 };

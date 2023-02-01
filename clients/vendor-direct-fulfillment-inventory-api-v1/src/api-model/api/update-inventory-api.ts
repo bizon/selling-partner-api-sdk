@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -102,13 +103,12 @@ export const UpdateInventoryApiFactory = function (configuration?: Configuration
     return {
         /**
          * Submits inventory updates for the specified warehouse for either a partial or full feed of inventory items.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} warehouseId Identifier for the warehouse for which to update inventory.
-         * @param {SubmitInventoryUpdateRequest} body 
+         * @param {UpdateInventoryApiSubmitInventoryUpdateRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitInventoryUpdate(warehouseId: string, body: SubmitInventoryUpdateRequest, options?: any): AxiosPromise<SubmitInventoryUpdateResponse> {
-            return localVarFp.submitInventoryUpdate(warehouseId, body, options).then((request) => request(axios, basePath));
+        submitInventoryUpdate(requestParameters: UpdateInventoryApiSubmitInventoryUpdateRequest, options?: AxiosRequestConfig): AxiosPromise<SubmitInventoryUpdateResponse> {
+            return localVarFp.submitInventoryUpdate(requestParameters.warehouseId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
 };

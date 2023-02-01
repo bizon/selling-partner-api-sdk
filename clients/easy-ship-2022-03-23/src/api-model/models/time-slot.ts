@@ -49,3 +49,5 @@ export interface TimeSlot {
     'handoverMethod'?: HandoverMethod;
 }
 
+
+

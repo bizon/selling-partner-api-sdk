@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -642,111 +643,93 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
     return {
         /**
          * Creates a new A+ Content document.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-         * @param {PostContentDocumentRequest} postContentDocumentRequest The content document request details.
+         * @param {AplusContentApiCreateContentDocumentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createContentDocument(marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options?: any): AxiosPromise<PostContentDocumentResponse> {
-            return localVarFp.createContentDocument(marketplaceId, postContentDocumentRequest, options).then((request) => request(axios, basePath));
+        createContentDocument(requestParameters: AplusContentApiCreateContentDocumentRequest, options?: AxiosRequestConfig): AxiosPromise<PostContentDocumentResponse> {
+            return localVarFp.createContentDocument(requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns an A+ Content document, if available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-         * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-         * @param {Set<'CONTENTS' | 'METADATA'>} includedDataSet The set of A+ Content data types to include in the response.
+         * @param {AplusContentApiGetContentDocumentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getContentDocument(contentReferenceKey: string, marketplaceId: string, includedDataSet: Set<'CONTENTS' | 'METADATA'>, options?: any): AxiosPromise<GetContentDocumentResponse> {
-            return localVarFp.getContentDocument(contentReferenceKey, marketplaceId, includedDataSet, options).then((request) => request(axios, basePath));
+        getContentDocument(requestParameters: AplusContentApiGetContentDocumentRequest, options?: AxiosRequestConfig): AxiosPromise<GetContentDocumentResponse> {
+            return localVarFp.getContentDocument(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.includedDataSet, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a list of ASINs related to the specified A+ Content document, if available. If you do not include the asinSet parameter, the operation returns all ASINs related to the content document.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-         * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-         * @param {Set<'METADATA'>} [includedDataSet] The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata.
-         * @param {Set<string>} [asinSet] The set of ASINs.
-         * @param {string} [pageToken] A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
+         * @param {AplusContentApiListContentDocumentAsinRelationsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listContentDocumentAsinRelations(contentReferenceKey: string, marketplaceId: string, includedDataSet?: Set<'METADATA'>, asinSet?: Set<string>, pageToken?: string, options?: any): AxiosPromise<ListContentDocumentAsinRelationsResponse> {
-            return localVarFp.listContentDocumentAsinRelations(contentReferenceKey, marketplaceId, includedDataSet, asinSet, pageToken, options).then((request) => request(axios, basePath));
+        listContentDocumentAsinRelations(requestParameters: AplusContentApiListContentDocumentAsinRelationsRequest, options?: AxiosRequestConfig): AxiosPromise<ListContentDocumentAsinRelationsResponse> {
+            return localVarFp.listContentDocumentAsinRelations(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.includedDataSet, requestParameters.asinSet, requestParameters.pageToken, options).then((request) => request(axios, basePath));
         },
         /**
          * Submits an A+ Content document for review, approval, and publishing.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-         * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
+         * @param {AplusContentApiPostContentDocumentApprovalSubmissionRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postContentDocumentApprovalSubmission(contentReferenceKey: string, marketplaceId: string, options?: any): AxiosPromise<PostContentDocumentApprovalSubmissionResponse> {
-            return localVarFp.postContentDocumentApprovalSubmission(contentReferenceKey, marketplaceId, options).then((request) => request(axios, basePath));
+        postContentDocumentApprovalSubmission(requestParameters: AplusContentApiPostContentDocumentApprovalSubmissionRequest, options?: AxiosRequestConfig): AxiosPromise<PostContentDocumentApprovalSubmissionResponse> {
+            return localVarFp.postContentDocumentApprovalSubmission(requestParameters.contentReferenceKey, requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
          * Replaces all ASINs related to the specified A+ Content document, if available. This may add or remove ASINs, depending on the current set of related ASINs. Removing an ASIN has the side effect of suspending the content document from that ASIN.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-         * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-         * @param {PostContentDocumentAsinRelationsRequest} postContentDocumentAsinRelationsRequest The content document ASIN relations request details.
+         * @param {AplusContentApiPostContentDocumentAsinRelationsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postContentDocumentAsinRelations(contentReferenceKey: string, marketplaceId: string, postContentDocumentAsinRelationsRequest: PostContentDocumentAsinRelationsRequest, options?: any): AxiosPromise<PostContentDocumentAsinRelationsResponse> {
-            return localVarFp.postContentDocumentAsinRelations(contentReferenceKey, marketplaceId, postContentDocumentAsinRelationsRequest, options).then((request) => request(axios, basePath));
+        postContentDocumentAsinRelations(requestParameters: AplusContentApiPostContentDocumentAsinRelationsRequest, options?: AxiosRequestConfig): AxiosPromise<PostContentDocumentAsinRelationsResponse> {
+            return localVarFp.postContentDocumentAsinRelations(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.postContentDocumentAsinRelationsRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * Submits a request to suspend visible A+ Content. This neither deletes the content document nor the ASIN relations.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-         * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
+         * @param {AplusContentApiPostContentDocumentSuspendSubmissionRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postContentDocumentSuspendSubmission(contentReferenceKey: string, marketplaceId: string, options?: any): AxiosPromise<PostContentDocumentSuspendSubmissionResponse> {
-            return localVarFp.postContentDocumentSuspendSubmission(contentReferenceKey, marketplaceId, options).then((request) => request(axios, basePath));
+        postContentDocumentSuspendSubmission(requestParameters: AplusContentApiPostContentDocumentSuspendSubmissionRequest, options?: AxiosRequestConfig): AxiosPromise<PostContentDocumentSuspendSubmissionResponse> {
+            return localVarFp.postContentDocumentSuspendSubmission(requestParameters.contentReferenceKey, requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a list of all A+ Content documents assigned to a selling partner. This operation returns only the metadata of the A+ Content documents. Call the getContentDocument operation to get the actual contents of the A+ Content documents.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-         * @param {string} [pageToken] A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
+         * @param {AplusContentApiSearchContentDocumentsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchContentDocuments(marketplaceId: string, pageToken?: string, options?: any): AxiosPromise<SearchContentDocumentsResponse> {
-            return localVarFp.searchContentDocuments(marketplaceId, pageToken, options).then((request) => request(axios, basePath));
+        searchContentDocuments(requestParameters: AplusContentApiSearchContentDocumentsRequest, options?: AxiosRequestConfig): AxiosPromise<SearchContentDocumentsResponse> {
+            return localVarFp.searchContentDocuments(requestParameters.marketplaceId, requestParameters.pageToken, options).then((request) => request(axios, basePath));
         },
         /**
          * Searches for A+ Content publishing records, if available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-         * @param {string} asin The Amazon Standard Identification Number (ASIN).
-         * @param {string} [pageToken] A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
+         * @param {AplusContentApiSearchContentPublishRecordsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchContentPublishRecords(marketplaceId: string, asin: string, pageToken?: string, options?: any): AxiosPromise<SearchContentPublishRecordsResponse> {
-            return localVarFp.searchContentPublishRecords(marketplaceId, asin, pageToken, options).then((request) => request(axios, basePath));
+        searchContentPublishRecords(requestParameters: AplusContentApiSearchContentPublishRecordsRequest, options?: AxiosRequestConfig): AxiosPromise<SearchContentPublishRecordsResponse> {
+            return localVarFp.searchContentPublishRecords(requestParameters.marketplaceId, requestParameters.asin, requestParameters.pageToken, options).then((request) => request(axios, basePath));
         },
         /**
          * Updates an existing A+ Content document.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-         * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-         * @param {PostContentDocumentRequest} postContentDocumentRequest The content document request details.
+         * @param {AplusContentApiUpdateContentDocumentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateContentDocument(contentReferenceKey: string, marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options?: any): AxiosPromise<PostContentDocumentResponse> {
-            return localVarFp.updateContentDocument(contentReferenceKey, marketplaceId, postContentDocumentRequest, options).then((request) => request(axios, basePath));
+        updateContentDocument(requestParameters: AplusContentApiUpdateContentDocumentRequest, options?: AxiosRequestConfig): AxiosPromise<PostContentDocumentResponse> {
+            return localVarFp.updateContentDocument(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * Checks if the A+ Content document is valid for use on a set of ASINs.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-         * @param {PostContentDocumentRequest} postContentDocumentRequest The content document request details.
-         * @param {Set<string>} [asinSet] The set of ASINs.
+         * @param {AplusContentApiValidateContentDocumentAsinRelationsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        validateContentDocumentAsinRelations(marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, asinSet?: Set<string>, options?: any): AxiosPromise<ValidateContentDocumentAsinRelationsResponse> {
-            return localVarFp.validateContentDocumentAsinRelations(marketplaceId, postContentDocumentRequest, asinSet, options).then((request) => request(axios, basePath));
+        validateContentDocumentAsinRelations(requestParameters: AplusContentApiValidateContentDocumentAsinRelationsRequest, options?: AxiosRequestConfig): AxiosPromise<ValidateContentDocumentAsinRelationsResponse> {
+            return localVarFp.validateContentDocumentAsinRelations(requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, requestParameters.asinSet, options).then((request) => request(axios, basePath));
         },
     };
 };

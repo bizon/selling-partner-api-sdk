@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -240,37 +241,30 @@ export const VendorOrdersApiFactory = function (configuration?: Configuration, b
     return {
         /**
          * Returns purchase order information for the purchaseOrderNumber that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} purchaseOrderNumber The order identifier for the purchase order that you want. Formatting Notes: alpha-numeric code.
+         * @param {VendorOrdersApiGetOrderRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrder(purchaseOrderNumber: string, options?: any): AxiosPromise<Order> {
-            return localVarFp.getOrder(purchaseOrderNumber, options).then((request) => request(axios, basePath));
+        getOrder(requestParameters: VendorOrdersApiGetOrderRequest, options?: AxiosRequestConfig): AxiosPromise<Order> {
+            return localVarFp.getOrder(requestParameters.purchaseOrderNumber, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a list of purchase orders created during the time frame that you specify. You define the time frame using the createdAfter and createdBefore parameters. You must use both parameters. You can choose to get only the purchase order numbers by setting the includeDetails parameter to false. In that case, the operation returns a list of purchase order numbers. You can then call the getOrder operation to return the details of a specific order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} createdAfter Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {string} createdBefore Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {string} [shipFromPartyId] The vendor warehouse identifier for the fulfillment warehouse. If not specified, the result will contain orders for all warehouses.
-         * @param {'NEW' | 'SHIPPED' | 'ACCEPTED' | 'CANCELLED'} [status] Returns only the purchase orders that match the specified status. If not specified, the result will contain orders that match any status.
-         * @param {number} [limit] The limit to the number of purchase orders returned.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort the list in ascending or descending order by order creation date.
-         * @param {string} [nextToken] Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
-         * @param {boolean} [includeDetails] When true, returns the complete purchase order details. Otherwise, only purchase order numbers are returned.
+         * @param {VendorOrdersApiGetOrdersRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrders(createdAfter: string, createdBefore: string, shipFromPartyId?: string, status?: 'NEW' | 'SHIPPED' | 'ACCEPTED' | 'CANCELLED', limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, includeDetails?: boolean, options?: any): AxiosPromise<OrderList> {
-            return localVarFp.getOrders(createdAfter, createdBefore, shipFromPartyId, status, limit, sortOrder, nextToken, includeDetails, options).then((request) => request(axios, basePath));
+        getOrders(requestParameters: VendorOrdersApiGetOrdersRequest, options?: AxiosRequestConfig): AxiosPromise<OrderList> {
+            return localVarFp.getOrders(requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipFromPartyId, requestParameters.status, requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.includeDetails, options).then((request) => request(axios, basePath));
         },
         /**
          * Submits acknowledgements for one or more purchase orders.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {SubmitAcknowledgementRequest} body 
+         * @param {VendorOrdersApiSubmitAcknowledgementRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitAcknowledgement(body: SubmitAcknowledgementRequest, options?: any): AxiosPromise<TransactionId> {
-            return localVarFp.submitAcknowledgement(body, options).then((request) => request(axios, basePath));
+        submitAcknowledgement(requestParameters: VendorOrdersApiSubmitAcknowledgementRequest, options?: AxiosRequestConfig): AxiosPromise<TransactionId> {
+            return localVarFp.submitAcknowledgement(requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
 };

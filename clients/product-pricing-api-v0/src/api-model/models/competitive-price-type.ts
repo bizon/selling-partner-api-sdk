@@ -85,3 +85,5 @@ export interface CompetitivePriceType {
     'belongsToRequester'?: boolean;
 }
 
+
+

@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -115,15 +116,12 @@ export const UploadsApiFactory = function (configuration?: Configuration, basePa
     return {
         /**
          * Creates an upload destination, returning the information required to upload a file to the destination and to programmatically access the file.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | .1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {Array<string>} marketplaceIds A list of marketplace identifiers. This specifies the marketplaces where the upload will be available. Only one marketplace can be specified.
-         * @param {string} contentMD5 An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.
-         * @param {string} resource The resource for the upload destination that you are creating. For example, if you are creating an upload destination for the createLegalDisclosure operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you are creating an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/v1/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.
-         * @param {string} [contentType] The content type of the file to be uploaded.
+         * @param {UploadsApiCreateUploadDestinationForResourceRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createUploadDestinationForResource(marketplaceIds: Array<string>, contentMD5: string, resource: string, contentType?: string, options?: any): AxiosPromise<CreateUploadDestinationResponse> {
-            return localVarFp.createUploadDestinationForResource(marketplaceIds, contentMD5, resource, contentType, options).then((request) => request(axios, basePath));
+        createUploadDestinationForResource(requestParameters: UploadsApiCreateUploadDestinationForResourceRequest, options?: AxiosRequestConfig): AxiosPromise<CreateUploadDestinationResponse> {
+            return localVarFp.createUploadDestinationForResource(requestParameters.marketplaceIds, requestParameters.contentMD5, requestParameters.resource, requestParameters.contentType, options).then((request) => request(axios, basePath));
         },
     };
 };

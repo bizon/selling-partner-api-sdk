@@ -13,8 +13,9 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
-import { Configuration } from '../configuration';
+import type { Configuration } from '../configuration';
+import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
@@ -110,14 +111,12 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
     return {
         /**
          * This operation gets an eligibility preview for an item that you specify. You can specify the type of eligibility preview that you want (INBOUND or COMMINGLING). For INBOUND previews, you can specify the marketplace in which you want to determine the item\'s eligibility.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} asin The ASIN of the item for which you want an eligibility preview.
-         * @param {'INBOUND' | 'COMMINGLING'} program The program that you want to check eligibility against.
-         * @param {Array<string>} [marketplaceIds] The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND.
+         * @param {FbaInboundApiGetItemEligibilityPreviewRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getItemEligibilityPreview(asin: string, program: 'INBOUND' | 'COMMINGLING', marketplaceIds?: Array<string>, options?: any): AxiosPromise<GetItemEligibilityPreviewResponse> {
-            return localVarFp.getItemEligibilityPreview(asin, program, marketplaceIds, options).then((request) => request(axios, basePath));
+        getItemEligibilityPreview(requestParameters: FbaInboundApiGetItemEligibilityPreviewRequest, options?: AxiosRequestConfig): AxiosPromise<GetItemEligibilityPreviewResponse> {
+            return localVarFp.getItemEligibilityPreview(requestParameters.asin, requestParameters.program, requestParameters.marketplaceIds, options).then((request) => request(axios, basePath));
         },
     };
 };

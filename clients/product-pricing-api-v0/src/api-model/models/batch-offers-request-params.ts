@@ -46,3 +46,5 @@ export interface BatchOffersRequestParams {
     'CustomerType'?: CustomerType;
 }
 
+
+

@@ -49,3 +49,5 @@ export interface FeaturedOffer {
     'price'?: Price;
 }
 
+
+

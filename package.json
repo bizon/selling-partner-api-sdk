@@ -22,7 +22,7 @@
   "dependencies": {},
   "devDependencies": {
     "@jest/types": "^29.4.1",
-    "@lerna-lite/cli": "^1.14.2",
+    "@lerna-lite/cli": "^1.15.0",
     "@tsconfig/node18": "^1.0.1",
     "@types/jest": "^29.4.0",
     "@types/node": "^18.11.18",

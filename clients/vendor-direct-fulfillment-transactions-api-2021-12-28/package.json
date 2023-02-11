@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@sp-api-sdk/common": "^1.9.22",
-    "axios": "^0.27.2"
+    "axios": "^1.3.2"
   },
   "repository": {
     "type": "git",

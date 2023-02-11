@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.10](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-direct-fulfillment-orders-api-v1@1.9.9...@sp-api-sdk/vendor-direct-fulfillment-orders-api-v1@1.9.10) (2023-02-11)
+
+### Bug Fixes
+
+* update openapi-generator to 6.3.0 ([#688](https://github.com/bizon/selling-partner-api-sdk/issues/688)) ([18bcd49](https://github.com/bizon/selling-partner-api-sdk/commit/18bcd493bd977b8b6b7e98358420f08574fef0ac))
+
 ## [1.9.9](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-direct-fulfillment-orders-api-v1@1.9.8...@sp-api-sdk/vendor-direct-fulfillment-orders-api-v1@1.9.9) (2023-01-26)
 
 **Note:** Version bump only for package @sp-api-sdk/vendor-direct-fulfillment-orders-api-v1

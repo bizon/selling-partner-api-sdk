@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.4](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/catalog-items-api-2022-04-01@1.5.3...@sp-api-sdk/catalog-items-api-2022-04-01@1.5.4) (2023-02-11)
+
+### Bug Fixes
+
+* **clients:** update models as of 2023-02-08 ([#702](https://github.com/bizon/selling-partner-api-sdk/issues/702)) ([a9f929f](https://github.com/bizon/selling-partner-api-sdk/commit/a9f929fb82e4b474c283a5c66b85cdae63544554))
+* update openapi-generator to 6.3.0 ([#688](https://github.com/bizon/selling-partner-api-sdk/issues/688)) ([18bcd49](https://github.com/bizon/selling-partner-api-sdk/commit/18bcd493bd977b8b6b7e98358420f08574fef0ac))
+
 ## [1.5.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/catalog-items-api-2022-04-01@1.5.2...@sp-api-sdk/catalog-items-api-2022-04-01@1.5.3) (2023-01-26)
 
 **Note:** Version bump only for package @sp-api-sdk/catalog-items-api-2022-04-01

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/orders-api-v0@1.19.0...@sp-api-sdk/orders-api-v0@2.0.0) (2023-02-11)
+
+### ⚠ BREAKING CHANGES
+
+* **clients:** remove confirmShipment method
+
+Co-authored-by: tusbar <tusbar@users.noreply.github.com>
+
+### Features
+
+* **clients:** update models as of 2023-02-11 ([#705](https://github.com/bizon/selling-partner-api-sdk/issues/705)) ([f93cda5](https://github.com/bizon/selling-partner-api-sdk/commit/f93cda50ac5eed4bf5491a78684c1f97591cb4bd))
+
+### Bug Fixes
+
+* update openapi-generator to 6.3.0 ([#688](https://github.com/bizon/selling-partner-api-sdk/issues/688)) ([18bcd49](https://github.com/bizon/selling-partner-api-sdk/commit/18bcd493bd977b8b6b7e98358420f08574fef0ac))
+
 ## [1.19.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/orders-api-v0@1.18.8...@sp-api-sdk/orders-api-v0@1.19.0) (2023-01-26)
 
 ### Features

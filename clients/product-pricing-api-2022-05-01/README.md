@@ -35,6 +35,7 @@ const auth = new SellingPartnerApiAuth({
   refreshToken: 'Atzr|…',
   accessKeyId: '',
   secretAccessKey: '',
+  region: 'eu-west-1',
   role: {
     arn: 'arn:aws:iam::…',
   },

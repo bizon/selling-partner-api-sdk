@@ -7,8 +7,8 @@ export const clientRateLimits: RateLimit[] = [
     method: 'post',
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/uploads/2020-11-01/uploadDestinations/[^/]*$'),
-    rate: 0.1,
-    burst: 5,
+    rate: 10,
+    burst: 10,
   },
 ]
 

@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.11](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/product-fees-api-v0@1.12.10...@sp-api-sdk/product-fees-api-v0@1.12.11) (2023-02-22)
+
+**Note:** Version bump only for package @sp-api-sdk/product-fees-api-v0
+
 ## [1.12.10](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/product-fees-api-v0@1.12.9...@sp-api-sdk/product-fees-api-v0@1.12.10) (2023-02-11)
 
 ### Bug Fixes

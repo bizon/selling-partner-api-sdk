@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/messaging-api-v1@1.10.10...@sp-api-sdk/messaging-api-v1@1.11.0) (2023-02-22)
+
+### Features
+
+* **clients:** update models as of 2023-02-21 ([#718](https://github.com/bizon/selling-partner-api-sdk/issues/718)) ([5ca8806](https://github.com/bizon/selling-partner-api-sdk/commit/5ca8806f60d88339b371ac40c09d526c231c72b8))
+
 ## [1.10.10](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/messaging-api-v1@1.10.9...@sp-api-sdk/messaging-api-v1@1.10.10) (2023-02-11)
 
 ### Bug Fixes

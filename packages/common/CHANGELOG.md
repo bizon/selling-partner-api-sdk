@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.9.22...@sp-api-sdk/common@1.10.0) (2023-02-22)
+
+### Features
+
+* allow passing restricted data tokens ([#711](https://github.com/bizon/selling-partner-api-sdk/issues/711)) ([7af7122](https://github.com/bizon/selling-partner-api-sdk/commit/7af7122b7bdabd3912e2d0460d7ca5db46cfc813))
+
 ## [1.9.22](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@1.9.21...@sp-api-sdk/common@1.9.22) (2023-02-11)
 
 **Note:** Version bump only for package @sp-api-sdk/common

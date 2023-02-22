@@ -21,8 +21,8 @@ export const clientRateLimits: RateLimit[] = [
     method: 'delete',
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/feeds/2021-06-30/feeds/[^/]*$'),
-    rate: 0.0222,
-    burst: 10,
+    rate: 2,
+    burst: 15,
   },
   {
     method: 'get',
@@ -35,7 +35,7 @@ export const clientRateLimits: RateLimit[] = [
     method: 'post',
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/feeds/2021-06-30/documents$'),
-    rate: 0.0083,
+    rate: 0.5,
     burst: 15,
   },
   {

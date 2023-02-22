@@ -29,6 +29,7 @@ export interface OnRetryParameters {
 
 export interface ClientConfiguration {
   auth: SellingPartnerApiAuth
+  restrictedDataToken?: string
   region: SellingPartnerRegion
   userAgent?: string
   sandbox?: boolean
@@ -46,6 +47,7 @@ export interface ClientConfiguration {
 export function createAxiosInstance(
   {
     auth,
+    restrictedDataToken,
     region,
     userAgent = `${packageJson.name}/${packageJson.version}`,
     sandbox = false,
@@ -101,7 +103,7 @@ export function createAxiosInstance(
       config.headers = {}
     }
 
-    config.headers['x-amz-access-token'] = await auth.accessToken.get()
+    config.headers['x-amz-access-token'] = restrictedDataToken ?? (await auth.accessToken.get())
 
     return config
   })

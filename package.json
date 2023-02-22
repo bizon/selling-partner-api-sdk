@@ -28,7 +28,7 @@
     "@types/node": "^18.11.18",
     "conventional-changelog-conventionalcommits": "^5.0.0",
     "eslint-config-xo-bizon": "^1.1.2",
-    "jest": "^29.4.2",
+    "jest": "^29.4.3",
     "rimraf": "^4.1.2",
     "ts-jest": "^29.0.5",
     "ts-node": "^10.9.1",

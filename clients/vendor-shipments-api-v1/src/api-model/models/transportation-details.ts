@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { CarrierDetails } from './carrier-details';
 
 /**
  * 
@@ -21,23 +24,41 @@
  */
 export interface TransportationDetails {
     /**
-     * Code that identifies the carrier for the shipment. The Standard Carrier Alpha Code (SCAC) is a unique two to four letter code used to identify a carrier. Carrier SCAC codes are assigned and maintained by the NMFTA (National Motor Freight Association). This field is mandatory for US, CA, MX shipment confirmations.
+     * The type of shipment.
      * @type {string}
      * @memberof TransportationDetails
      */
-    'carrierScac'?: string;
-    /**
-     * The field also known as PRO number is a unique number assigned by the carrier. It is used to identify and track the shipment that goes out for delivery. This field is mandatory for UA, CA, MX shipment confirmations.
-     * @type {string}
-     * @memberof TransportationDetails
-     */
-    'carrierShipmentReferenceNumber'?: string;
+    'shipMode'?: TransportationDetailsShipModeEnum;
     /**
      * The mode of transportation for this shipment.
      * @type {string}
      * @memberof TransportationDetails
      */
     'transportationMode'?: TransportationDetailsTransportationModeEnum;
+    /**
+     * Date when shipment is performed by the Vendor to Buyer
+     * @type {string}
+     * @memberof TransportationDetails
+     */
+    'shippedDate'?: string;
+    /**
+     * Estimated Date on which shipment will be delivered from Vendor to Buyer
+     * @type {string}
+     * @memberof TransportationDetails
+     */
+    'estimatedDeliveryDate'?: string;
+    /**
+     * Date on which shipment will be delivered from Vendor to Buyer
+     * @type {string}
+     * @memberof TransportationDetails
+     */
+    'shipmentDeliveryDate'?: string;
+    /**
+     * 
+     * @type {CarrierDetails}
+     * @memberof TransportationDetails
+     */
+    'carrierDetails'?: CarrierDetails;
     /**
      * Bill Of Lading (BOL) number is the unique number assigned by the vendor. The BOL present in the Shipment Confirmation message ideally matches the paper BOL provided with the shipment, but that is no must. Instead of BOL, an alternative reference number (like Delivery Note Number) for the shipment can also be sent in this field.
      * @type {string}
@@ -46,6 +67,13 @@ export interface TransportationDetails {
     'billOfLadingNumber'?: string;
 }
 
+export const TransportationDetailsShipModeEnum = {
+    TruckLoad: 'TruckLoad',
+    LessThanTruckLoad: 'LessThanTruckLoad',
+    SmallParcel: 'SmallParcel'
+} as const;
+
+export type TransportationDetailsShipModeEnum = typeof TransportationDetailsShipModeEnum[keyof typeof TransportationDetailsShipModeEnum];
 export const TransportationDetailsTransportationModeEnum = {
     Road: 'Road',
     Air: 'Air',

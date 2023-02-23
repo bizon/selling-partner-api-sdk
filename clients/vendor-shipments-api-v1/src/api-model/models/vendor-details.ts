@@ -13,18 +13,27 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { PartyIdentification } from './party-identification';
 
 /**
- * 
+ * Vendor Details as part of Label response.
  * @export
- * @interface TransactionReference
+ * @interface VendorDetails
  */
-export interface TransactionReference {
+export interface VendorDetails {
     /**
-     * GUID assigned by Buyer to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction.
-     * @type {string}
-     * @memberof TransactionReference
+     * 
+     * @type {PartyIdentification}
+     * @memberof VendorDetails
      */
-    'transactionId'?: string;
+    'sellingParty'?: PartyIdentification;
+    /**
+     * Unique vendor shipment id which is not used in last 365 days
+     * @type {string}
+     * @memberof VendorDetails
+     */
+    'vendorShipmentId'?: string;
 }
 

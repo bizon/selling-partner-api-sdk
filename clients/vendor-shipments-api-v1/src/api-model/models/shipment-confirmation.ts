@@ -84,13 +84,13 @@ export interface ShipmentConfirmation {
      */
     'shipmentConfirmationDate': string;
     /**
-     * The date and time of the departure of the shipment from the vendor\'s location. Vendors are requested to send ASNs within 30 minutes of departure from their warehouse/distribution center or at least 6 hours prior to the appointment time at the Amazon destination warehouse, whichever is sooner. Shipped date mentioned in the shipment confirmation should not be in the future.
+     * The date and time of the departure of the shipment from the vendor\'s location. Vendors are requested to send ASNs within 30 minutes of departure from their warehouse/distribution center or at least 6 hours prior to the appointment time at the buyer destination warehouse, whichever is sooner. Shipped date mentioned in the shipment confirmation should not be in the future.
      * @type {string}
      * @memberof ShipmentConfirmation
      */
     'shippedDate'?: string;
     /**
-     * The date and time on which the shipment is expected to reach buyer\'s warehouse. It needs to be an estimate based on the average transit time between ship from location and the destination. The exact appointment time will be provided by the buyer and is potentially not known when creating the shipment confirmation.
+     * The date and time on which the shipment is estimated to reach buyer\'s warehouse. It needs to be an estimate based on the average transit time between ship from location and the destination. The exact appointment time will be provided by the buyer and is potentially not known when creating the shipment confirmation.
      * @type {string}
      * @memberof ShipmentConfirmation
      */

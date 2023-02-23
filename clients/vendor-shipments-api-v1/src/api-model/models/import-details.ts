@@ -62,6 +62,12 @@ export interface ImportDetails {
      * @memberof ImportDetails
      */
     'estimatedShipByDate'?: string;
+    /**
+     * Identification of the instructions on how specified item/carton/pallet should be handled.
+     * @type {string}
+     * @memberof ImportDetails
+     */
+    'handlingInstructions'?: ImportDetailsHandlingInstructionsEnum;
 }
 
 export const ImportDetailsMethodOfPaymentEnum = {
@@ -74,5 +80,13 @@ export const ImportDetailsMethodOfPaymentEnum = {
 } as const;
 
 export type ImportDetailsMethodOfPaymentEnum = typeof ImportDetailsMethodOfPaymentEnum[keyof typeof ImportDetailsMethodOfPaymentEnum];
+export const ImportDetailsHandlingInstructionsEnum = {
+    Oversized: 'Oversized',
+    Fragile: 'Fragile',
+    Food: 'Food',
+    HandleWithCare: 'HandleWithCare'
+} as const;
+
+export type ImportDetailsHandlingInstructionsEnum = typeof ImportDetailsHandlingInstructionsEnum[keyof typeof ImportDetailsHandlingInstructionsEnum];
 
 

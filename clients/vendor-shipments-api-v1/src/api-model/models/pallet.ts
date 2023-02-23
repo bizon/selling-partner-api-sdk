@@ -42,13 +42,13 @@ export interface Pallet {
      */
     'palletIdentifiers': Array<ContainerIdentification>;
     /**
-     * Number of layers per pallet.
+     * Number of layers per pallet. Only applicable to container type Pallet.
      * @type {number}
      * @memberof Pallet
      */
     'tier'?: number;
     /**
-     * Number of cartons per layer on the pallet.
+     * Number of cartons per layer on the pallet. Only applicable to container type Pallet.
      * @type {number}
      * @memberof Pallet
      */

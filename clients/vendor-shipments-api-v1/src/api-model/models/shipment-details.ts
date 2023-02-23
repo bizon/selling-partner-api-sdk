@@ -13,18 +13,30 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { Pagination } from './pagination';
+// May contain unused imports in some cases
+// @ts-ignore
+import { Shipment } from './shipment';
 
 /**
  * 
  * @export
- * @interface TransactionReference
+ * @interface ShipmentDetails
  */
-export interface TransactionReference {
+export interface ShipmentDetails {
     /**
-     * GUID assigned by Buyer to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction.
-     * @type {string}
-     * @memberof TransactionReference
+     * 
+     * @type {Pagination}
+     * @memberof ShipmentDetails
      */
-    'transactionId'?: string;
+    'pagination'?: Pagination;
+    /**
+     * 
+     * @type {Array<Shipment>}
+     * @memberof ShipmentDetails
+     */
+    'shipments'?: Array<Shipment>;
 }
 

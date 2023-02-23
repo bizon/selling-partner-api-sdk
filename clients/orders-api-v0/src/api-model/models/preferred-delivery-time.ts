@@ -15,40 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import { BusinessHours } from './business-hours';
 // May contain unused imports in some cases
 // @ts-ignore
-import { DeliveryPreferences } from './delivery-preferences';
+import { ExceptionDates } from './exception-dates';
 
 /**
- * The shipping address for the order.
+ * The time window when the delivery is preferred.
  * @export
- * @interface OrderAddress
+ * @interface PreferredDeliveryTime
  */
-export interface OrderAddress {
+export interface PreferredDeliveryTime {
     /**
-     * An Amazon-defined order identifier, in 3-7-7 format.
-     * @type {string}
-     * @memberof OrderAddress
+     * Business hours when the business is open for deliveries.
+     * @type {Array<BusinessHours>}
+     * @memberof PreferredDeliveryTime
      */
-    'AmazonOrderId': string;
+    'BusinessHours'?: Array<BusinessHours>;
     /**
-     * Company name of the destination address.
-     * @type {string}
-     * @memberof OrderAddress
+     * Dates when the business is closed in the next 30 days.
+     * @type {Array<ExceptionDates>}
+     * @memberof PreferredDeliveryTime
      */
-    'BuyerCompanyName'?: string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof OrderAddress
-     */
-    'ShippingAddress'?: Address;
-    /**
-     * 
-     * @type {DeliveryPreferences}
-     * @memberof OrderAddress
-     */
-    'DeliveryPreferences'?: DeliveryPreferences;
+    'ExceptionDates'?: Array<ExceptionDates>;
 }
 

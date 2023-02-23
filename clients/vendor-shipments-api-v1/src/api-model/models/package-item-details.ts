@@ -16,55 +16,30 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import { Expiry } from './expiry';
-// May contain unused imports in some cases
-// @ts-ignore
-import { Money } from './money';
 
 /**
  * Item details for be provided for every item in shipment at either the item or carton or pallet level, whichever is appropriate.
  * @export
- * @interface ItemDetails
+ * @interface PackageItemDetails
  */
-export interface ItemDetails {
+export interface PackageItemDetails {
     /**
      * The purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code.
      * @type {string}
-     * @memberof ItemDetails
+     * @memberof PackageItemDetails
      */
     'purchaseOrderNumber'?: string;
     /**
      * The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items.
      * @type {string}
-     * @memberof ItemDetails
+     * @memberof PackageItemDetails
      */
     'lotNumber'?: string;
     /**
      * 
      * @type {Expiry}
-     * @memberof ItemDetails
+     * @memberof PackageItemDetails
      */
     'expiry'?: Expiry;
-    /**
-     * 
-     * @type {Money}
-     * @memberof ItemDetails
-     */
-    'maximumRetailPrice'?: Money;
-    /**
-     * Identification of the instructions on how specified item/carton/pallet should be handled.
-     * @type {string}
-     * @memberof ItemDetails
-     */
-    'handlingCode'?: ItemDetailsHandlingCodeEnum;
 }
-
-export const ItemDetailsHandlingCodeEnum = {
-    Oversized: 'Oversized',
-    Fragile: 'Fragile',
-    Food: 'Food',
-    HandleWithCare: 'HandleWithCare'
-} as const;
-
-export type ItemDetailsHandlingCodeEnum = typeof ItemDetailsHandlingCodeEnum[keyof typeof ItemDetailsHandlingCodeEnum];
-
 

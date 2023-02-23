@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { BuyerCustomizedInfoDetail } from './buyer-customized-info-detail';
+// May contain unused imports in some cases
+// @ts-ignore
 import { GiftDetails } from './gift-details';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -95,5 +98,11 @@ export interface OrderItem {
      * @memberof OrderItem
      */
     'totalPrice'?: Money;
+    /**
+     * 
+     * @type {BuyerCustomizedInfoDetail}
+     * @memberof OrderItem
+     */
+    'buyerCustomizedInfo'?: BuyerCustomizedInfoDetail;
 }
 

@@ -15,7 +15,7 @@
 
 
 /**
- * The weight.
+ * The weight of the shipment.
  * @export
  * @interface Weight
  */

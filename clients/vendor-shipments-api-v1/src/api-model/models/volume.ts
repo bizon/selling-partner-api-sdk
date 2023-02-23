@@ -15,7 +15,7 @@
 
 
 /**
- * The volume of the container.
+ * The volume of the shipment.
  * @export
  * @interface Volume
  */

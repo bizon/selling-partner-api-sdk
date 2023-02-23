@@ -17,14 +17,14 @@
 /**
  * 
  * @export
- * @interface TransactionReference
+ * @interface Pagination
  */
-export interface TransactionReference {
+export interface Pagination {
     /**
-     * GUID assigned by Buyer to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction.
+     * A generated string used to pass information to your next request. If NextToken is returned, pass the value of NextToken to the next request. If NextToken is not returned, there are no more order items to return.
      * @type {string}
-     * @memberof TransactionReference
+     * @memberof Pagination
      */
-    'transactionId'?: string;
+    'nextToken'?: string;
 }
 

@@ -17,14 +17,14 @@
 /**
  * 
  * @export
- * @interface TransactionReference
+ * @interface ContainerSequenceNumbers
  */
-export interface TransactionReference {
+export interface ContainerSequenceNumbers {
     /**
-     * GUID assigned by Buyer to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction.
+     * A list of containers shipped
      * @type {string}
-     * @memberof TransactionReference
+     * @memberof ContainerSequenceNumbers
      */
-    'transactionId'?: string;
+    'containerSequenceNumber'?: string;
 }
 

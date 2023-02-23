@@ -39,7 +39,7 @@ export interface ShipmentMeasurements {
      */
     'shipmentVolume'?: Volume;
     /**
-     * Number of cartons present in the shipment. Provide the cartonCount only for unpalletized shipments.
+     * Number of cartons present in the shipment. Provide the cartonCount only for non-palletized shipments.
      * @type {number}
      * @memberof ShipmentMeasurements
      */

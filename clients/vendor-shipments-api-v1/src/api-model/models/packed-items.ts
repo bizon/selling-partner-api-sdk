@@ -15,46 +15,46 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemDetails } from './item-details';
+import { ItemQuantity } from './item-quantity';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemQuantity } from './item-quantity';
+import { PackageItemDetails } from './package-item-details';
 
 /**
  * Details of the item being shipped.
  * @export
- * @interface Item
+ * @interface PackedItems
  */
-export interface Item {
+export interface PackedItems {
     /**
      * Item sequence number for the item. The first item will be 001, the second 002, and so on. This number is used as a reference to refer to this item from the carton or pallet level.
      * @type {string}
-     * @memberof Item
+     * @memberof PackedItems
      */
-    'itemSequenceNumber': string;
+    'itemSequenceNumber'?: string;
     /**
      * Buyer Standard Identification Number (ASIN) of an item.
      * @type {string}
-     * @memberof Item
+     * @memberof PackedItems
      */
-    'amazonProductIdentifier'?: string;
+    'buyerProductIdentifier'?: string;
     /**
      * The vendor selected product identification of the item. Should be the same as was sent in the purchase order.
      * @type {string}
-     * @memberof Item
+     * @memberof PackedItems
      */
     'vendorProductIdentifier'?: string;
     /**
      * 
      * @type {ItemQuantity}
-     * @memberof Item
+     * @memberof PackedItems
      */
-    'shippedQuantity': ItemQuantity;
+    'packedQuantity'?: ItemQuantity;
     /**
      * 
-     * @type {ItemDetails}
-     * @memberof Item
+     * @type {PackageItemDetails}
+     * @memberof PackedItems
      */
-    'itemDetails'?: ItemDetails;
+    'itemDetails'?: PackageItemDetails;
 }
 

@@ -13,18 +13,21 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { Shipment } from './shipment';
 
 /**
- * 
+ * The request schema for the SubmitTransportRequestConfirmations operation.
  * @export
- * @interface TransactionReference
+ * @interface SubmitShipments
  */
-export interface TransactionReference {
+export interface SubmitShipments {
     /**
-     * GUID assigned by Buyer to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction.
-     * @type {string}
-     * @memberof TransactionReference
+     * 
+     * @type {Array<Shipment>}
+     * @memberof SubmitShipments
      */
-    'transactionId'?: string;
+    'shipments'?: Array<Shipment>;
 }
 

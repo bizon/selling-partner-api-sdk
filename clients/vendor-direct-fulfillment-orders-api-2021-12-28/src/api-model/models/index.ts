@@ -1,5 +1,6 @@
 export * from './acknowledgement-status';
 export * from './address';
+export * from './buyer-customized-info-detail';
 export * from './error-list';
 export * from './gift-details';
 export * from './item-quantity';

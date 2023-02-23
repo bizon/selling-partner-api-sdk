@@ -13,18 +13,21 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { Money } from './money';
 
 /**
- * 
+ * Item details for be provided for every item in shipment at either the item or carton or pallet level, whichever is appropriate.
  * @export
- * @interface TransactionReference
+ * @interface PurchaseOrderItemDetails
  */
-export interface TransactionReference {
+export interface PurchaseOrderItemDetails {
     /**
-     * GUID assigned by Buyer to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction.
-     * @type {string}
-     * @memberof TransactionReference
+     * 
+     * @type {Money}
+     * @memberof PurchaseOrderItemDetails
      */
-    'transactionId'?: string;
+    'maximumRetailPrice'?: Money;
 }
 

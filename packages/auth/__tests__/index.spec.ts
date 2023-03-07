@@ -1,4 +1,4 @@
-import {SellingPartnerApiAuth, SellingPartnerApiAuthError} from '../src'
+import {SellingPartnerApiAuth} from '../src'
 
 describe('src/index', () => {
   it('should create a SellingPartnerApiAuth instance', () => {

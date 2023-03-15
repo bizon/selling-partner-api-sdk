@@ -99,7 +99,7 @@ export interface InvoiceDetail {
      */
     'taxTotals'?: Array<TaxDetail>;
     /**
-     * Additional details provided by the selling party, for tax related or other purposes.
+     * Additional details provided by the selling party, for tax-related or other purposes.
      * @type {Array<AdditionalDetails>}
      * @memberof InvoiceDetail
      */

@@ -21,7 +21,7 @@
  */
 export interface PackingSlip {
     /**
-     * Purchase order number of the shipment that the packing slip is for.
+     * Purchase order number of the shipment that corresponds to the packing slip.
      * @type {string}
      * @memberof PackingSlip
      */

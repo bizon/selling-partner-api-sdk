@@ -75,7 +75,7 @@ export interface InvoiceItem {
      */
     'vendorOrderNumber'?: string;
     /**
-     * HSN tax code. The HSN number cannot contain alphabets.
+     * Harmonized System of Nomenclature (HSN) tax code. The HSN number cannot contain alphabets.
      * @type {string}
      * @memberof InvoiceItem
      */

@@ -26,7 +26,7 @@
   "devDependencies": {
     "@types/bluebird": "^3.5.38",
     "@types/jsonfile": "^6.1.1",
-    "@types/lodash": "^4.14.191",
+    "@types/lodash": "^4.14.192",
     "@types/mustache": "^4.2.2",
     "openapi-types": "^12.1.0",
     "type-fest": "^3.6.1"

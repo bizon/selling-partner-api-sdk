@@ -57,6 +57,8 @@ export * from './return-item';
 export * from './return-item-disposition';
 export * from './scheduled-delivery-info';
 export * from './shipping-speed-category';
+export * from './submit-fulfillment-order-status-update-request';
+export * from './submit-fulfillment-order-status-update-response';
 export * from './tracking-address';
 export * from './tracking-event';
 export * from './unfulfillable-preview-item';

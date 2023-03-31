@@ -33,7 +33,7 @@ import { ShippingSpeedCategory } from './shipping-speed-category';
 import { UpdateFulfillmentOrderItem } from './update-fulfillment-order-item';
 
 /**
- * 
+ * The request body schema for the updateFulfillmentOrder operation.
  * @export
  * @interface UpdateFulfillmentOrderRequest
  */

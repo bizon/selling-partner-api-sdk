@@ -63,7 +63,7 @@ export interface PackageTrackingDetails {
      */
     'carrierPhoneNumber'?: string;
     /**
-     * The URL of the carrier’s website.
+     * The URL of the carrier\'s website.
      * @type {string}
      * @memberof PackageTrackingDetails
      */

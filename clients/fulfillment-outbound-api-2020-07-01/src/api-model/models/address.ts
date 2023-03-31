@@ -49,7 +49,7 @@ export interface Address {
      * @type {string}
      * @memberof Address
      */
-    'city'?: string;
+    'city': string;
     /**
      * The district or county where the person, business, or institution is located.
      * @type {string}
@@ -67,7 +67,7 @@ export interface Address {
      * @type {string}
      * @memberof Address
      */
-    'postalCode'?: string;
+    'postalCode': string;
     /**
      * The two digit country code. In ISO 3166-1 alpha-2 format.
      * @type {string}

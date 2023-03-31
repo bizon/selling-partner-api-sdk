@@ -57,13 +57,13 @@ export interface GetFulfillmentPreviewRequest {
      */
     'shippingSpeedCategories'?: Array<ShippingSpeedCategory>;
     /**
-     * Specifies whether to return fulfillment order previews that are for COD (Cash On Delivery).  Possible values:  * true - Returns all fulfillment order previews (both for COD and not for COD). * false - Returns only fulfillment order previews that are not for COD.
+     * When true, returns all fulfillment order previews both for COD and not for COD. Otherwise, returns only fulfillment order previews that are not for COD.
      * @type {boolean}
      * @memberof GetFulfillmentPreviewRequest
      */
     'includeCODFulfillmentPreview'?: boolean;
     /**
-     * Specifies whether to return the ScheduledDeliveryInfo response object, which contains the available delivery windows for a Scheduled Delivery. The ScheduledDeliveryInfo response object can only be returned for fulfillment order previews with ShippingSpeedCategories = ScheduledDelivery.
+     * When true, returns the ScheduledDeliveryInfo response object, which contains the available delivery windows for a Scheduled Delivery. The ScheduledDeliveryInfo response object can only be returned for fulfillment order previews with ShippingSpeedCategories = ScheduledDelivery.
      * @type {boolean}
      * @memberof GetFulfillmentPreviewRequest
      */

@@ -27,7 +27,7 @@ export interface CreateReportSpecification {
      */
     'reportOptions'?: { [key: string]: string; };
     /**
-     * The report type.
+     * The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
      * @type {string}
      * @memberof CreateReportSpecification
      */

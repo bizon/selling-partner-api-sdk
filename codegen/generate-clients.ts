@@ -88,9 +88,10 @@ async function generateClientVersion(modelFilePath: string) {
     locale: false,
   })
 
-  const paths = Object.values(doc.paths)
-  const httpMethods = Object.values(paths[0]!)
-  const [tag = 'Default'] = (httpMethods[0] as OpenAPIV3.OperationObject).tags ?? []
+  const operations = Object.values(doc.paths)
+    .flatMap((path) => Object.values(path ?? {}))
+    .filter((operation): operation is OpenAPIV3.OperationObject => typeof operation !== 'string')
+  const [firstTag = 'Default'] = operations.flatMap((operation) => operation.tags ?? [])
   const grantlessInfo = GRANTLESS_APIS.find(({name}) => packageName === name)
 
   logger.info('generating…', {packageName})
@@ -183,7 +184,7 @@ async function generateClientVersion(modelFilePath: string) {
     `${clientDirectoryPath}/src/client.ts`,
     await renderTemplate('codegen/templates/src/client.ts.mustache', {
       clientClassName,
-      className: camelCase(`${tag}Api`, {
+      className: camelCase(`${firstTag}Api`, {
         pascalCase: true,
         locale: false,
         preserveConsecutiveUppercase: true,

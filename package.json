@@ -35,7 +35,7 @@
     "turbo": "^1.8.8",
     "typedoc": "^0.23.28",
     "typedoc-monorepo-link-types": "^0.0.4",
-    "typescript": "^5.0.2",
+    "typescript": "^5.0.3",
     "xo": "^0.53.1"
   },
   "xo": {

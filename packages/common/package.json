@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/common",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "Selling Parner API common library",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -27,7 +27,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@sp-api-sdk/auth": "^1.10.10",
+    "@sp-api-sdk/auth": "^1.10.11",
     "aws4-axios": "^2.4.9",
     "axios": "^0.27.2",
     "axios-logger": "^2.6.2",

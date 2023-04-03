@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/product-pricing-api-v0",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer information for Amazon Marketplace products.",
-  "version": "1.13.11",
+  "version": "1.13.12",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -26,7 +26,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@sp-api-sdk/common": "^1.10.0",
+    "@sp-api-sdk/common": "^1.10.1",
     "axios": "^0.27.2"
   },
   "repository": {

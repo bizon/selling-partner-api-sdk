@@ -18,7 +18,7 @@
 import { DeliveryWindow } from './delivery-window';
 
 /**
- * Delivery information for a scheduled delivery.
+ * Delivery information for a scheduled delivery. This is only available in the JP marketplace.
  * @export
  * @interface ScheduledDeliveryInfo
  */

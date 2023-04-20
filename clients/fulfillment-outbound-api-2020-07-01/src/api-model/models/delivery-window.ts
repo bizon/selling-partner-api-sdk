@@ -15,7 +15,7 @@
 
 
 /**
- * The time range within which a Scheduled Delivery fulfillment order should be delivered.
+ * The time range within which a Scheduled Delivery fulfillment order should be delivered. This is only available in the JP marketplace.
  * @export
  * @interface DeliveryWindow
  */

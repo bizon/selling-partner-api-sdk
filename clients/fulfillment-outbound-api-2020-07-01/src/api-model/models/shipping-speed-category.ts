@@ -15,7 +15,7 @@
 
 
 /**
- * The shipping method used for the fulfillment order.
+ * The shipping method used for the fulfillment order. When this value is ScheduledDelivery, choose Ship for the fulfillmentAction. Hold is not a valid fulfillmentAction value when the shippingSpeedCategory value is ScheduledDelivery.
  * @export
  * @enum {string}
  */

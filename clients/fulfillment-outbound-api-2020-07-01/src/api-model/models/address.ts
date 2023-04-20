@@ -45,11 +45,11 @@ export interface Address {
      */
     'addressLine3'?: string;
     /**
-     * The city where the person, business, or institution is located.
+     * The city where the person, business, or institution is located. This property is required in all countries except Japan. It should not be used in Japan.
      * @type {string}
      * @memberof Address
      */
-    'city': string;
+    'city'?: string;
     /**
      * The district or county where the person, business, or institution is located.
      * @type {string}

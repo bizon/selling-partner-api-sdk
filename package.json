@@ -24,7 +24,7 @@
     "@jest/types": "^29.5.0",
     "@lerna-lite/cli": "^1.17.0",
     "@tsconfig/node18": "^1.0.1",
-    "@types/jest": "^29.5.0",
+    "@types/jest": "^29.5.1",
     "@types/node": "^18.11.18",
     "conventional-changelog-conventionalcommits": "^5.0.0",
     "eslint-config-xo-bizon": "^1.2.0",

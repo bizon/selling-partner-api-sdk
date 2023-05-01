@@ -37,7 +37,7 @@
     "typedoc": "^0.23.28",
     "typedoc-monorepo-link-types": "^0.0.4",
     "typescript": "^5.0.4",
-    "xo": "^0.54.1"
+    "xo": "^0.54.2"
   },
   "xo": {
     "extends": "xo-bizon",

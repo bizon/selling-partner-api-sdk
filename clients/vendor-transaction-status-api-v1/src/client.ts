@@ -8,7 +8,7 @@ export const clientRateLimits: RateLimit[] = [
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/vendor/transactions/v1/transactions/[^/]*$'),
     rate: 10,
-    burst: 10,
+    burst: 20,
   },
 ]
 

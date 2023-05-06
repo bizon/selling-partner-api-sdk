@@ -1,9 +1,13 @@
-import {AxiosError} from 'axios'
+import {AxiosError, AxiosHeaders} from 'axios'
 
 import {SellingPartnerApiError} from '../src/errors'
 
 describe('src/errors', () => {
-  const testError = new SellingPartnerApiError(new AxiosError('Original message', 'Code', {}))
+  const testError = new SellingPartnerApiError(
+    new AxiosError('Original message', 'Code', {
+      headers: new AxiosHeaders(),
+    }),
+  )
 
   it('should expose the original axios error message', () => {
     expect(testError.innerMessage).toBe('Original message')
@@ -25,6 +29,7 @@ describe('src/errors', () => {
     const error = new SellingPartnerApiError(
       new AxiosError('Message', 'Code', {
         url: 'https://domain/api-name/api-version?param=foo',
+        headers: new AxiosHeaders(),
       }),
     )
 
@@ -35,6 +40,7 @@ describe('src/errors', () => {
   it('should extract the status code from the axios response', () => {
     const config = {
       url: 'https://domain/api-name/api-version?param=foo',
+      headers: new AxiosHeaders(),
     }
 
     const error = new SellingPartnerApiError(
@@ -54,7 +60,9 @@ describe('src/errors', () => {
     )
 
     expect(error.message).toBe('api-name (api-version) error: Response code 404')
-    expect(error.toJSON()).toMatchSnapshot()
+    expect(error.toJSON()).toMatchSnapshot({
+      stack: expect.any(String),
+    })
   })
 
   it('should handle response-less errors', () => {
@@ -64,12 +72,15 @@ describe('src/errors', () => {
         'Code',
         {
           url: 'https://domain/api-name/api-version?param=foo',
+          headers: new AxiosHeaders(),
         },
         {},
       ),
     )
 
     expect(error.message).toBe('api-name (api-version) error: No response')
-    expect(error.toJSON()).toMatchSnapshot()
+    expect(error.toJSON()).toMatchSnapshot({
+      stack: expect.any(String),
+    })
   })
 })

@@ -12,8 +12,8 @@ export class SellingPartnerApiError<T = unknown, D = any> extends AxiosError<T, 
 
     this.innerMessage = error.message
 
-    if (error.config.url) {
-      const [apiName, apiVersion] = new URL(error.config.url).pathname.split('/').slice(1)
+    if (error.config!.url) {
+      const [apiName, apiVersion] = new URL(error.config!.url).pathname.split('/').slice(1)
       const apiPrefix = `${apiName} (${apiVersion})`
 
       this.apiName = apiName

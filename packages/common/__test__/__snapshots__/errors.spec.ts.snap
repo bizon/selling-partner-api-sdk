@@ -5,6 +5,7 @@ exports[`src/errors should extract the status code from the axios response 1`] =
   "code": "Code",
   "columnNumber": undefined,
   "config": {
+    "headers": {},
     "url": "https://domain/api-name/api-version?param=foo",
   },
   "description": undefined,
@@ -13,7 +14,7 @@ exports[`src/errors should extract the status code from the axios response 1`] =
   "message": "api-name (api-version) error: Response code 404",
   "name": "SellingPartnerApiError",
   "number": undefined,
-  "stack": undefined,
+  "stack": Any<String>,
   "status": 404,
 }
 `;
@@ -23,6 +24,7 @@ exports[`src/errors should handle response-less errors 1`] = `
   "code": "Code",
   "columnNumber": undefined,
   "config": {
+    "headers": {},
     "url": "https://domain/api-name/api-version?param=foo",
   },
   "description": undefined,
@@ -31,7 +33,7 @@ exports[`src/errors should handle response-less errors 1`] = `
   "message": "api-name (api-version) error: No response",
   "name": "SellingPartnerApiError",
   "number": undefined,
-  "stack": undefined,
+  "stack": Any<String>,
   "status": null,
 }
 `;

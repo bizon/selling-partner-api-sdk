@@ -1,5 +1,5 @@
 import {aws4Interceptor} from 'aws4-axios'
-import axios, {type AxiosError, type Method} from 'axios'
+import axios, {type AxiosError, isAxiosError, type Method} from 'axios'
 import {errorLogger, requestLogger, responseLogger} from 'axios-logger'
 import axiosRetry from 'axios-retry'
 
@@ -73,8 +73,8 @@ export function createAxiosInstance(
     axiosRetry(instance, {
       retryCondition: (error) => error.response?.status === 429,
       retryDelay(retryCount, error) {
-        const url = new URL(error.config.url!)
-        const method = error.config.method?.toLowerCase()
+        const url = new URL(error.config!.url!)
+        const method = error.config!.method?.toLowerCase()
         const amznRateLimit = Number.parseFloat(
           error.response?.headers['x-amzn-ratelimit-limit'] ?? '',
         )
@@ -99,10 +99,6 @@ export function createAxiosInstance(
 
   // Set x-amz-access-token to each request
   instance.interceptors.request.use(async (config) => {
-    if (!config.headers) {
-      config.headers = {}
-    }
-
     config.headers['x-amz-access-token'] = restrictedDataToken ?? (await auth.accessToken.get())
 
     return config
@@ -116,23 +112,24 @@ export function createAxiosInstance(
       return config
     }
 
-    return aws4Interceptor(
-      {
+    return aws4Interceptor({
+      instance,
+      options: {
         region: regionConfiguration.awsRegion,
         service: 'execute-api',
       },
-      {
+      credentials: {
         accessKeyId: credentials.AccessKeyId ?? '',
         secretAccessKey: credentials.SecretAccessKey ?? '',
         sessionToken: credentials.SessionToken,
       },
-    )(config)
+    })(config)
   })
 
   instance.interceptors.response.use(
     async (response) => response,
     async (error: unknown) => {
-      if (axios.isAxiosError(error) && !(error instanceof SellingPartnerApiAuthError)) {
+      if (isAxiosError(error) && !(error instanceof SellingPartnerApiAuthError)) {
         throw new SellingPartnerApiError(error)
       }
 
@@ -149,8 +146,8 @@ export function createAxiosInstance(
       )
     }
 
-    instance.interceptors.request.use((config) =>
-      requestLogger(config, {
+    instance.interceptors.request.use((config) => {
+      const logger = requestLogger(config, {
         prefixText: `sp-api-sdk/${region}`,
         dateFormat: 'isoDateTime',
         method: true,
@@ -160,8 +157,13 @@ export function createAxiosInstance(
         headers: false,
         logger: console.info,
         ...requestLoggerOptions,
-      }),
-    )
+      })
+
+      return {
+        ...logger,
+        headers: config.headers,
+      }
+    })
   }
 
   if (logging?.response) {

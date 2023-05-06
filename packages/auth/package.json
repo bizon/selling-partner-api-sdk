@@ -26,7 +26,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@aws-sdk/client-sts": "^3.321.1",
+    "@aws-sdk/client-sts": "^3.328.0",
     "axios": "^0.27.2",
     "read-pkg-up": "^7.0.1"
   },

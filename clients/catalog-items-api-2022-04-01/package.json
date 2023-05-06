@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/catalog-items-api-2022-04-01",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog. For more information, refer to the Catalog Items API Use Case Guide.",
-  "version": "1.5.7",
+  "version": "1.6.0",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -26,7 +26,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@sp-api-sdk/common": "^1.10.2",
+    "@sp-api-sdk/common": "^1.11.0",
     "axios": "^1.4.0"
   },
   "repository": {

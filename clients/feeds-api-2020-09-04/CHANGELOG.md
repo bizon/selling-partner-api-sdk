@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/feeds-api-2020-09-04@1.10.13...@sp-api-sdk/feeds-api-2020-09-04@1.11.0) (2023-05-06)
+
+### Features
+
+* **clients:** update models as of 2023-04-27 ([#789](https://github.com/bizon/selling-partner-api-sdk/issues/789)) ([e75c0b5](https://github.com/bizon/selling-partner-api-sdk/commit/e75c0b5be3c1fa93577890a0e2e973207ee4632d))
+* **deps:** bump axios from 0.27.2 to 1.4.0 ([#792](https://github.com/bizon/selling-partner-api-sdk/issues/792)) ([4611c91](https://github.com/bizon/selling-partner-api-sdk/commit/4611c91bc0ad05f77bee17feeb99fa231c60e7ed))
+
 ## [1.10.13](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/feeds-api-2020-09-04@1.10.12...@sp-api-sdk/feeds-api-2020-09-04@1.10.13) (2023-04-24)
 
 **Note:** Version bump only for package @sp-api-sdk/feeds-api-2020-09-04

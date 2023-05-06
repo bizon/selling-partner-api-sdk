@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-transaction-status-api-v1@1.9.13...@sp-api-sdk/vendor-transaction-status-api-v1@1.10.0) (2023-05-06)
+
+### Features
+
+* **clients:** update models as of 2023-05-04 ([#795](https://github.com/bizon/selling-partner-api-sdk/issues/795)) ([369ac92](https://github.com/bizon/selling-partner-api-sdk/commit/369ac921209b373d527bbefb4d6267347f63dbbf))
+* **deps:** bump axios from 0.27.2 to 1.4.0 ([#792](https://github.com/bizon/selling-partner-api-sdk/issues/792)) ([4611c91](https://github.com/bizon/selling-partner-api-sdk/commit/4611c91bc0ad05f77bee17feeb99fa231c60e7ed))
+
 ## [1.9.13](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-transaction-status-api-v1@1.9.12...@sp-api-sdk/vendor-transaction-status-api-v1@1.9.13) (2023-04-24)
 
 **Note:** Version bump only for package @sp-api-sdk/vendor-transaction-status-api-v1

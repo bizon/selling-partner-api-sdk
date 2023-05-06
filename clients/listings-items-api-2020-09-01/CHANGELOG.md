@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/listings-items-api-2020-09-01@1.11.1...@sp-api-sdk/listings-items-api-2020-09-01@1.12.0) (2023-05-06)
+
+### Features
+
+* **deps:** bump axios from 0.27.2 to 1.4.0 ([#792](https://github.com/bizon/selling-partner-api-sdk/issues/792)) ([4611c91](https://github.com/bizon/selling-partner-api-sdk/commit/4611c91bc0ad05f77bee17feeb99fa231c60e7ed))
+
 ## [1.11.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/listings-items-api-2020-09-01@1.11.0...@sp-api-sdk/listings-items-api-2020-09-01@1.11.1) (2023-04-24)
 
 **Note:** Version bump only for package @sp-api-sdk/listings-items-api-2020-09-01

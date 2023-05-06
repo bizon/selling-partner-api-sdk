@@ -2125,11 +2125,6 @@
     "@tufjs/canonical-json" "1.0.0"
     minimatch "^7.4.6"
 
-"@types/aws4@^1.5.1":
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/@types/aws4/-/aws4-1.5.2.tgz#34e35b4405a619b9205be3e7678963bc7c8a47db"
-  integrity sha512-r8+XOv0BKw3Br0oU6w9cfu21PaQq/5ZeXvMOivNQYJLc9WcPCpEFDaQu72QNEQjYv5Otu48VhjjnbtwrSmk/rg==
-
 "@types/babel__core@^7.1.14":
   version "7.1.14"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.14.tgz#faaeefc4185ec71c389f4501ee5ec84b170cc402"
@@ -2670,19 +2665,18 @@ available-typed-arrays@^1.0.5:
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
 
-aws4-axios@^2.4.9:
-  version "2.4.9"
-  resolved "https://registry.yarnpkg.com/aws4-axios/-/aws4-axios-2.4.9.tgz#8008a9ba201918db04babb7944ffb76572da0598"
-  integrity sha512-egAUTk8oLdsb5OGa+BI30PBa4lZh3tOO0q2YL99Gq8lyY8s08bt81jF8ekOuY+ZP98bfB5wHJhKStVhvRRjT7Q==
+aws4-axios@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/aws4-axios/-/aws4-axios-3.1.1.tgz#68addd0b31ac29bbc67d36313dc6775561972a1a"
+  integrity sha512-l0mp6Zuwei9B6YMyuksCpFMK3A4/FMxXQ9Busw5lritDYRtcy74odgwMo/xiDzS8bJ4aEDm/Etl7stsW0DUmFA==
   dependencies:
     "@aws-sdk/client-sts" "^3.4.1"
-    "@types/aws4" "^1.5.1"
-    aws4 "^1.9.1"
+    aws4 "^1.12.0"
 
-aws4@^1.9.1:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
-  integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
+aws4@^1.12.0:
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.12.0.tgz#ce1c9d143389679e253b314241ea9aa5cec980d3"
+  integrity sha512-NmWvPnx0F1SfrQbYwOi7OeaNGokp9XhzNioJ/CSBs8Qa4vxug81mhJEAVZwxXuBmYB5KDRfMq/F3RR0BIU7sWg==
 
 axios-logger@^2.6.2:
   version "2.6.2"

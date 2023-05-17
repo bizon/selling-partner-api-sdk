@@ -27,7 +27,7 @@ export interface TaxRegistrationDetails {
      */
     'taxRegistrationType': TaxRegistrationDetailsTaxRegistrationTypeEnum;
     /**
-     * The tax registration number for the entity. For example, VAT ID.
+     * The tax registration number for the entity. For example, VAT ID, Consumption Tax ID.
      * @type {string}
      * @memberof TaxRegistrationDetails
      */

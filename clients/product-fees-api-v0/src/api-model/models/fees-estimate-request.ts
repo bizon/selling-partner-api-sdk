@@ -21,7 +21,7 @@ import { OptionalFulfillmentProgram } from './optional-fulfillment-program';
 import { PriceToEstimateFees } from './price-to-estimate-fees';
 
 /**
- * 
+ * A product, marketplace, and proposed price used to request estimated fees.
  * @export
  * @interface FeesEstimateRequest
  */

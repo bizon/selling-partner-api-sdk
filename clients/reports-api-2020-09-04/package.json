@@ -18,16 +18,19 @@
     "dist/**/*.d.ts"
   ],
   "scripts": {
-    "check:ts": "yarn tsc --noEmit",
+    "check:ts": "tsc --noEmit",
     "build:cjs": "tsc -p tsconfig.json",
     "build:es": "tsc -p tsconfig.es.json",
-    "build": "yarn build:cjs && yarn build:es",
+    "build": "pnpm build:cjs && pnpm build:es",
     "clean": "rimraf dist",
     "test": "jest"
   },
   "dependencies": {
-    "@sp-api-sdk/common": "^1.11.0",
+    "@sp-api-sdk/common": "workspace:*",
     "axios": "^1.4.0"
+  },
+  "devDependencies": {
+    "@sp-api-sdk/auth": "workspace:*"
   },
   "repository": {
     "type": "git",

@@ -14,10 +14,6 @@ Also, see the [generated documentation](https://bizon.github.io/selling-partner-
 ## Installing
 
 ```sh
-yarn add @sp-api-sdk/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28
-```
-
-```sh
 npm install @sp-api-sdk/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28
 ```
 

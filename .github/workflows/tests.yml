@@ -15,17 +15,21 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v3
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: "latest"
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: yarn
+          cache: pnpm
 
       - name: Install dependencies
-        run: yarn --frozen-lockfile --non-interactive --prefer-offline
+        run: pnpm install --frozen-lockfile
 
       - name: Run linter
-        run: yarn xo
+        run: pnpm xo
 
   check-ts:
     name: Run typescript checks
@@ -35,17 +39,21 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v3
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: "latest"
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: yarn
+          cache: pnpm
 
       - name: Install dependencies
-        run: yarn --frozen-lockfile --non-interactive --prefer-offline
+        run: pnpm install --frozen-lockfile
 
       - name: Run typescript checks
-        run: yarn check:ts
+        run: pnpm check:ts
 
   test:
     name: Run tests
@@ -55,17 +63,21 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v3
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: "latest"
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: yarn
+          cache: pnpm
 
       - name: Install dependencies
-        run: yarn --frozen-lockfile --non-interactive --prefer-offline
+        run: pnpm install --frozen-lockfile
 
       - name: Run tests
-        run: yarn test --runInBand --ci --reporters=default --reporters=github-actions
+        run: pnpm test -- --runInBand --ci --reporters=default --reporters=github-actions
 
       - name: Upload code coverage to codecov
         uses: codecov/codecov-action@v3

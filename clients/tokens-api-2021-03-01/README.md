@@ -16,10 +16,6 @@ Also, see the [generated documentation](https://bizon.github.io/selling-partner-
 ## Installing
 
 ```sh
-yarn add @sp-api-sdk/tokens-api-2021-03-01
-```
-
-```sh
 npm install @sp-api-sdk/tokens-api-2021-03-01
 ```
 

@@ -16,17 +16,21 @@ jobs:
         with:
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: "latest"
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: yarn
+          cache: pnpm
 
       - name: Install dependencies
-        run: yarn --frozen-lockfile --non-interactive --prefer-offline
+        run: pnpm install --frozen-lockfile
 
       - name: Generate clients from models
-        run: yarn codegen clients
+        run: pnpm codegen clients
 
       - name: Get current date
         id: date
@@ -57,17 +61,21 @@ jobs:
         with:
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: "latest"
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: yarn
+          cache: pnpm
 
       - name: Install dependencies
-        run: yarn --frozen-lockfile --non-interactive --prefer-offline
+        run: pnpm install --frozen-lockfile
 
       - name: Generate notification schemas from models
-        run: yarn codegen notifications
+        run: pnpm codegen notifications
 
       - name: Get current date
         id: date

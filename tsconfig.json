@@ -4,8 +4,6 @@
     "alwaysStrict": true,
     "declaration": true,
     "downlevelIteration": true,
-    "importHelpers": true,
-    "noEmitHelpers": true,
     "incremental": true
   },
   "typedocOptions": {
@@ -15,10 +13,7 @@
     "excludePrivate": true,
     "excludeExternals": true,
     "entryPointStrategy": "packages",
-    "entryPoints": [
-      "packages/*",
-      "clients/*"
-    ],
+    "entryPoints": ["packages/*", "clients/*"],
     "internalNamespace": "<internal>"
   }
 }

@@ -16,10 +16,6 @@ Also, see the [generated documentation](https://bizon.github.io/selling-partner-
 ## Installing
 
 ```sh
-yarn add @sp-api-sdk/shipping-api-v1
-```
-
-```sh
 npm install @sp-api-sdk/shipping-api-v1
 ```
 

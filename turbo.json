@@ -6,9 +6,7 @@
     },
     "check:ts": {},
     "build": {
-      "dependsOn": [
-        "^build"
-      ]
+      "outputs": ["dist/**"]
     }
   }
 }

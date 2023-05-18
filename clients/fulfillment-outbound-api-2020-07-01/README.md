@@ -14,10 +14,6 @@ Also, see the [generated documentation](https://bizon.github.io/selling-partner-
 ## Installing
 
 ```sh
-yarn add @sp-api-sdk/fulfillment-outbound-api-2020-07-01
-```
-
-```sh
 npm install @sp-api-sdk/fulfillment-outbound-api-2020-07-01
 ```
 

@@ -16,18 +16,21 @@ jobs:
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
           fetch-depth: 0
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: "latest"
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: yarn
-          registry-url: https://registry.npmjs.org
+          cache: pnpm
 
       - name: Install dependencies
-        run: yarn --frozen-lockfile --non-interactive --prefer-offline
+        run: pnpm install --frozen-lockfile
 
       - name: Build TS output
-        run: yarn build
+        run: pnpm build
 
       - name: Make sure repository is clean
         run: git diff --exit-code
@@ -42,7 +45,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
         run: |
-          yarn lerna publish --create-release github --skip-bump-only-release --no-verify-access --yes
+          pnpm lerna publish --create-release github --skip-bump-only-release --no-verify-access --sync-workspace-lock --yes
 
   docs:
     name: Update and publish documentation
@@ -55,17 +58,21 @@ jobs:
         with:
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: "latest"
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: yarn
+          cache: pnpm
 
       - name: Install dependencies
-        run: yarn --frozen-lockfile --non-interactive --prefer-offline
+        run: pnpm install --frozen-lockfile
 
       - name: Build documentation
-        run: yarn typedoc
+        run: pnpm typedoc
         env:
           NODE_OPTIONS: --max_old_space_size=6144
 

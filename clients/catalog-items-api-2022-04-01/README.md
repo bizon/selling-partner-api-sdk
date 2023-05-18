@@ -16,10 +16,6 @@ Also, see the [generated documentation](https://bizon.github.io/selling-partner-
 ## Installing
 
 ```sh
-yarn add @sp-api-sdk/catalog-items-api-2022-04-01
-```
-
-```sh
 npm install @sp-api-sdk/catalog-items-api-2022-04-01
 ```
 

@@ -98,7 +98,7 @@ async function generateClientVersion(modelFilePath: string) {
 
   await fs.rm(`${clientDirectoryPath}/src/api-model`, {recursive: true, force: true})
   await exec(
-    `yarn openapi-generator-cli generate \
+    `codegen/node_modules/.bin/openapi-generator-cli generate \
       --additional-properties=supportsES6=true,useSingleRequestParameter=true,withSeparateModelsAndApi=true,modelPackage=models,apiPackage=api \
       --skip-validate-spec \
       -g typescript-axios \
@@ -115,7 +115,6 @@ async function generateClientVersion(modelFilePath: string) {
       version: (await readPackageVersion(clientDirectoryPath)) ?? '1.0.0',
       apiName: clientNameBase.replace(/-/g, ' '),
       dependencies: {
-        common: await readPackageVersion('packages/common'),
         axios: await getAxiosVersion(),
       },
     }),

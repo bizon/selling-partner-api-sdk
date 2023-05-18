@@ -16,10 +16,6 @@ Also, see the [generated documentation](https://bizon.github.io/selling-partner-
 ## Installing
 
 ```sh
-yarn add @sp-api-sdk/listings-restrictions-api-2021-08-01
-```
-
-```sh
 npm install @sp-api-sdk/listings-restrictions-api-2021-08-01
 ```
 

@@ -18,10 +18,10 @@
     "dist/**/*.d.ts"
   ],
   "scripts": {
-    "check:ts": "yarn tsc --noEmit",
+    "check:ts": "tsc --noEmit",
     "build:cjs": "tsc -p tsconfig.json",
     "build:es": "tsc -p tsconfig.es.json",
-    "build": "yarn build:cjs && yarn build:es",
+    "build": "pnpm build:cjs && pnpm build:es",
     "clean": "rimraf dist"
   },
   "repository": {

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Orders
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API only supports orders that are less than two years old. Orders more than two years old will not show in the API response.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -34,12 +34,6 @@ import { ElectronicInvoiceStatus } from './electronic-invoice-status';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FulfillmentInstruction } from './fulfillment-instruction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { ItemApprovalStatus } from './item-approval-status';
-// May contain unused imports in some cases
-// @ts-ignore
-import { ItemApprovalType } from './item-approval-type';
 // May contain unused imports in some cases
 // @ts-ignore
 import { MarketplaceTaxInfo } from './marketplace-tax-info';
@@ -338,18 +332,6 @@ export interface Order {
      * @memberof Order
      */
     'ElectronicInvoiceStatus'?: ElectronicInvoiceStatus;
-    /**
-     * Set of approval types which applies to at least one order item in the order.
-     * @type {Array<ItemApprovalType>}
-     * @memberof Order
-     */
-    'ItemApprovalTypes'?: Array<ItemApprovalType>;
-    /**
-     * Subset of all ItemApprovalStatus that are set in at least one of the order items subject to approvals.
-     * @type {Array<ItemApprovalStatus>}
-     * @memberof Order
-     */
-    'ItemApprovalStatus'?: Array<ItemApprovalStatus>;
 }
 
 export const OrderOrderStatusEnum = {

@@ -2665,10 +2665,10 @@ available-typed-arrays@^1.0.5:
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
 
-aws4-axios@^3.1.10:
-  version "3.1.10"
-  resolved "https://registry.yarnpkg.com/aws4-axios/-/aws4-axios-3.1.10.tgz#bdb0999358cdf724c323f379e8eaaeb8b14ea351"
-  integrity sha512-mibuTx2c7+pERHZUuRzkekFTHQnb0IpXLfSWbEdPkggpe4Eztyuj/jFYpVY3niTAErUnE6f/r9YfDKntPWDLuw==
+aws4-axios@^3.1.13:
+  version "3.1.13"
+  resolved "https://registry.yarnpkg.com/aws4-axios/-/aws4-axios-3.1.13.tgz#f326a5e76f135c13ef696fd2faa0e06c111e2bb1"
+  integrity sha512-bXBITXSg+DwH7LNrvrjmAEvfouCyr8OW58HCcU6pUMWgwmqiGx5/YVCDlRvvyR0Nh/r9ikHgrKXRCcfy7qFYEg==
   dependencies:
     "@aws-sdk/client-sts" "^3.4.1"
     aws4 "^1.12.0"

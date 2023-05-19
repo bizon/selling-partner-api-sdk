@@ -1,6 +1,6 @@
 # `@sp-api-sdk/auth`
 
-Amazon Selling Partner API authentication helper class
+Amazon Selling Partner API authentication package
 
 ## Installing
 

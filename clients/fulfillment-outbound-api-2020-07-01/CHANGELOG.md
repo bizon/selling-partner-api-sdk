@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.13.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/fulfillment-outbound-api-2020-07-01@1.13.0...@sp-api-sdk/fulfillment-outbound-api-2020-07-01@1.13.1) (2023-05-19)
+
+**Note:** Version bump only for package @sp-api-sdk/fulfillment-outbound-api-2020-07-01
+
 ## [1.13.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/fulfillment-outbound-api-2020-07-01@1.12.0...@sp-api-sdk/fulfillment-outbound-api-2020-07-01@1.13.0) (2023-05-06)
 
 ### Features

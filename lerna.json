@@ -4,11 +4,16 @@
   "version": "independent",
   "command": {
     "publish": {
-      "noPrivate": true,
+      "cleanupTempFiles": true,
+      "removePackageFields": ["devDependencies", "scripts"]
+    },
+    "version": {
       "conventionalCommits": true,
-      "message": "chore(release): publish [skip ci]",
-      "changelogPreset": "conventionalcommits"
+      "createRelease": "github",
+      "syncWorkspaceLock": true,
+      "message": "chore(release): publish [skip ci]"
     }
   },
+  "changelogPreset": "conventional-changelog-conventionalcommits",
   "packages": ["codegen", "packages/*", "clients/*"]
 }

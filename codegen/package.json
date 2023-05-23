@@ -29,6 +29,6 @@
     "@types/lodash": "^4.14.194",
     "@types/mustache": "^4.2.2",
     "openapi-types": "^12.1.0",
-    "type-fest": "^3.10.0"
+    "type-fest": "^3.11.0"
   }
 }

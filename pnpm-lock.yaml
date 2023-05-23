@@ -738,8 +738,8 @@ importers:
         specifier: ^12.1.0
         version: 12.1.0
       type-fest:
-        specifier: ^3.10.0
-        version: 3.10.0(typescript@5.0.4)
+        specifier: ^3.11.0
+        version: 3.11.0
 
   packages/auth:
     dependencies:
@@ -757,8 +757,8 @@ importers:
         specifier: ^13.3.1
         version: 13.3.1
       type-fest:
-        specifier: ^3.10.0
-        version: 3.10.0(typescript@5.0.4)
+        specifier: ^3.11.0
+        version: 3.11.0
 
   packages/common:
     dependencies:
@@ -7270,7 +7270,7 @@ packages:
     resolution: {integrity: sha512-+y4mDxU4rvXXu5UDSGCGNiesFmwCHuefGMoPCO1WYucNYj7DsLqrFaa2fXVI0H+NNiPTwwzKwspn9yTZqUGqng==}
     dev: true
 
-  /meow@11.0.0(typescript@5.0.4):
+  /meow@11.0.0:
     resolution: {integrity: sha512-Cl0yeeIrko6d94KpUo1M+0X1sB14ikoaqlIGuTH1fW4I+E3+YljL54/hb/BWmVfrV9tTV9zU04+xjw08Fh2WkA==}
     engines: {node: '>=14.16'}
     dependencies:
@@ -7284,10 +7284,8 @@ packages:
       read-pkg-up: 9.1.0
       redent: 4.0.0
       trim-newlines: 4.1.1
-      type-fest: 3.10.0(typescript@5.0.4)
+      type-fest: 3.11.0
       yargs-parser: 21.1.1
-    transitivePeerDependencies:
-      - typescript
     dev: true
 
   /meow@8.1.2:
@@ -9408,13 +9406,9 @@ packages:
     engines: {node: '>=12.20'}
     dev: true
 
-  /type-fest@3.10.0(typescript@5.0.4):
-    resolution: {integrity: sha512-hmAPf1datm+gt3c2mvu0sJyhFy6lTkIGf0GzyaZWxRLnabQfPUqg6tF95RPg6sLxKI7nFLGdFxBcf2/7+GXI+A==}
+  /type-fest@3.11.0:
+    resolution: {integrity: sha512-JaPw5U9ixP0XcpUbQoVSbxSDcK/K4nww20C3kjm9yE6cDRRhptU28AH60VWf9ltXmCrIfIbtt9J+2OUk2Uqiaw==}
     engines: {node: '>=14.16'}
-    peerDependencies:
-      typescript: '>=4.7.0'
-    dependencies:
-      typescript: 5.0.4
     dev: true
 
   /type@1.2.0:
@@ -9910,7 +9904,7 @@ packages:
       imurmurhash: 0.1.4
       json-stable-stringify-without-jsonify: 1.0.1
       lodash-es: 4.17.21
-      meow: 11.0.0(typescript@5.0.4)
+      meow: 11.0.0
       micromatch: 4.0.5
       open-editor: 4.0.0
       prettier: 2.8.8

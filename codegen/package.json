@@ -28,7 +28,7 @@
     "@types/jsonfile": "^6.1.1",
     "@types/lodash": "^4.14.194",
     "@types/mustache": "^4.2.2",
-    "openapi-types": "^12.1.0",
+    "openapi-types": "^12.1.1",
     "type-fest": "^3.11.0"
   }
 }

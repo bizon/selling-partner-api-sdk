@@ -770,8 +770,8 @@ importers:
         specifier: workspace:*
         version: link:../auth
       aws4-axios:
-        specifier: ^3.2.1
-        version: 3.2.1(axios@1.4.0)
+        specifier: ^3.2.7
+        version: 3.2.7(axios@1.4.0)
       axios:
         specifier: ^1.4.0
         version: 1.4.0
@@ -3564,8 +3564,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /aws4-axios@3.2.1(axios@1.4.0):
-    resolution: {integrity: sha512-sk2Hc/10FJrz5NLrHopKIrpV7+/QYGMdBdkuUQJMQa6w3AqzrxuN7xksN8UZDts06/8nqjVpKdB4+gTaB6pLEQ==}
+  /aws4-axios@3.2.7(axios@1.4.0):
+    resolution: {integrity: sha512-iyExXCURmnc74Jd6rrFA+vNzxIBlWbp84Tykgzb7hw7BwcD3qIeQ/iLKgDPDCoGRHwBz9k+kqyjdCzBiV4tKKw==}
     engines: {node: '>=16'}
     peerDependencies:
       axios: '>=1.0.0'

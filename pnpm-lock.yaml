@@ -1,9 +1,5 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 importers:
 
   .:
@@ -770,8 +766,8 @@ importers:
         specifier: workspace:*
         version: link:../auth
       aws4-axios:
-        specifier: ^3.2.7
-        version: 3.2.7(axios@1.4.0)
+        specifier: ^3.2.21
+        version: 3.2.21(axios@1.4.0)
       axios:
         specifier: ^1.4.0
         version: 1.4.0
@@ -3592,8 +3588,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /aws4-axios@3.2.7(axios@1.4.0):
-    resolution: {integrity: sha512-iyExXCURmnc74Jd6rrFA+vNzxIBlWbp84Tykgzb7hw7BwcD3qIeQ/iLKgDPDCoGRHwBz9k+kqyjdCzBiV4tKKw==}
+  /aws4-axios@3.2.21(axios@1.4.0):
+    resolution: {integrity: sha512-KtrMxuzUHkNRJ5s155X6AG+L4msnQjO9SXHrenKHkSwNyPghUk6u3jfqs+xWR3e6BjJ4yzHeY4i1gLab1V+M6Q==}
     engines: {node: '>=16'}
     peerDependencies:
       axios: '>=1.0.0'
@@ -10107,3 +10103,7 @@ packages:
   /zwitch@1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
     dev: false
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false

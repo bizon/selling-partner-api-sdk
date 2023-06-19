@@ -738,8 +738,8 @@ importers:
         specifier: ^12.1.3
         version: 12.1.3
       type-fest:
-        specifier: ^3.11.1
-        version: 3.11.1
+        specifier: ^3.12.0
+        version: 3.12.0
 
   packages/auth:
     dependencies:
@@ -757,8 +757,8 @@ importers:
         specifier: ^13.3.1
         version: 13.3.1
       type-fest:
-        specifier: ^3.11.1
-        version: 3.11.1
+        specifier: ^3.12.0
+        version: 3.12.0
 
   packages/common:
     dependencies:
@@ -7375,7 +7375,7 @@ packages:
       read-pkg-up: 9.1.0
       redent: 4.0.0
       trim-newlines: 4.1.1
-      type-fest: 3.11.1
+      type-fest: 3.12.0
       yargs-parser: 21.1.1
     dev: true
 
@@ -9521,8 +9521,8 @@ packages:
     engines: {node: '>=12.20'}
     dev: true
 
-  /type-fest@3.11.1:
-    resolution: {integrity: sha512-aCuRNRERRVh33lgQaJRlUxZqzfhzwTrsE98Mc3o3VXqmiaQdHacgUtJ0esp+7MvZ92qhtzKPeusaX6vIEcoreA==}
+  /type-fest@3.12.0:
+    resolution: {integrity: sha512-qj9wWsnFvVEMUDbESiilKeXeHL7FwwiFcogfhfyjmvT968RXSvnl23f1JOClTHYItsi7o501C/7qVllscUP3oA==}
     engines: {node: '>=14.16'}
     dev: true
 

@@ -47,6 +47,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * Effective June 27, 2023, the `cancelFeed` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
          * @param {string} feedId The identifier for the feed. This identifier is unique only in combination with a seller ID.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         cancelFeed: async (feedId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -80,6 +81,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * Effective June 27, 2023, the `createFeed` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
          * @param {CreateFeedSpecification} body 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         createFeed: async (body: CreateFeedSpecification, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -115,6 +117,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * Effective June 27, 2023, the `createFeedDocument` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
          * @param {CreateFeedDocumentSpecification} body 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         createFeedDocument: async (body: CreateFeedDocumentSpecification, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -150,6 +153,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * Effective June 27, 2023, the `getFeed` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
          * @param {string} feedId The identifier for the feed. This identifier is unique only in combination with a seller ID.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getFeed: async (feedId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -183,6 +187,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * Effective June 27, 2023, the `getFeedDocument` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
          * @param {string} feedDocumentId The identifier of the feed document.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getFeedDocument: async (feedDocumentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -222,6 +227,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {string} [createdUntil] The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now.
          * @param {string} [nextToken] A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getFeeds: async (feedTypes?: Array<string>, marketplaceIds?: Array<string>, pageSize?: number, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, createdSince?: string, createdUntil?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -294,6 +300,7 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * Effective June 27, 2023, the `cancelFeed` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
          * @param {string} feedId The identifier for the feed. This identifier is unique only in combination with a seller ID.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async cancelFeed(feedId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelFeedResponse>> {
@@ -304,6 +311,7 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * Effective June 27, 2023, the `createFeed` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
          * @param {CreateFeedSpecification} body 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async createFeed(body: CreateFeedSpecification, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateFeedResponse>> {
@@ -314,6 +322,7 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * Effective June 27, 2023, the `createFeedDocument` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
          * @param {CreateFeedDocumentSpecification} body 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async createFeedDocument(body: CreateFeedDocumentSpecification, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateFeedDocumentResponse>> {
@@ -324,6 +333,7 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * Effective June 27, 2023, the `getFeed` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
          * @param {string} feedId The identifier for the feed. This identifier is unique only in combination with a seller ID.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async getFeed(feedId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeedResponse>> {
@@ -334,6 +344,7 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * Effective June 27, 2023, the `getFeedDocument` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
          * @param {string} feedDocumentId The identifier of the feed document.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async getFeedDocument(feedDocumentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeedDocumentResponse>> {
@@ -350,6 +361,7 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * @param {string} [createdUntil] The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now.
          * @param {string} [nextToken] A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async getFeeds(feedTypes?: Array<string>, marketplaceIds?: Array<string>, pageSize?: number, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, createdSince?: string, createdUntil?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeedsResponse>> {
@@ -370,6 +382,7 @@ export const FeedsApiFactory = function (configuration?: Configuration, basePath
          * Effective June 27, 2023, the `cancelFeed` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
          * @param {FeedsApiCancelFeedRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         cancelFeed(requestParameters: FeedsApiCancelFeedRequest, options?: AxiosRequestConfig): AxiosPromise<CancelFeedResponse> {
@@ -379,6 +392,7 @@ export const FeedsApiFactory = function (configuration?: Configuration, basePath
          * Effective June 27, 2023, the `createFeed` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
          * @param {FeedsApiCreateFeedRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         createFeed(requestParameters: FeedsApiCreateFeedRequest, options?: AxiosRequestConfig): AxiosPromise<CreateFeedResponse> {
@@ -388,6 +402,7 @@ export const FeedsApiFactory = function (configuration?: Configuration, basePath
          * Effective June 27, 2023, the `createFeedDocument` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
          * @param {FeedsApiCreateFeedDocumentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         createFeedDocument(requestParameters: FeedsApiCreateFeedDocumentRequest, options?: AxiosRequestConfig): AxiosPromise<CreateFeedDocumentResponse> {
@@ -397,6 +412,7 @@ export const FeedsApiFactory = function (configuration?: Configuration, basePath
          * Effective June 27, 2023, the `getFeed` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
          * @param {FeedsApiGetFeedRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getFeed(requestParameters: FeedsApiGetFeedRequest, options?: AxiosRequestConfig): AxiosPromise<GetFeedResponse> {
@@ -406,6 +422,7 @@ export const FeedsApiFactory = function (configuration?: Configuration, basePath
          * Effective June 27, 2023, the `getFeedDocument` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
          * @param {FeedsApiGetFeedDocumentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getFeedDocument(requestParameters: FeedsApiGetFeedDocumentRequest, options?: AxiosRequestConfig): AxiosPromise<GetFeedDocumentResponse> {
@@ -415,6 +432,7 @@ export const FeedsApiFactory = function (configuration?: Configuration, basePath
          * Effective June 27, 2023, the `getFeeds` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
          * @param {FeedsApiGetFeedsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getFeeds(requestParameters: FeedsApiGetFeedsRequest = {}, options?: AxiosRequestConfig): AxiosPromise<GetFeedsResponse> {
@@ -560,6 +578,7 @@ export class FeedsApi extends BaseAPI {
      * Effective June 27, 2023, the `cancelFeed` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
      * @param {FeedsApiCancelFeedRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof FeedsApi
      */
@@ -571,6 +590,7 @@ export class FeedsApi extends BaseAPI {
      * Effective June 27, 2023, the `createFeed` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
      * @param {FeedsApiCreateFeedRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof FeedsApi
      */
@@ -582,6 +602,7 @@ export class FeedsApi extends BaseAPI {
      * Effective June 27, 2023, the `createFeedDocument` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
      * @param {FeedsApiCreateFeedDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof FeedsApi
      */
@@ -593,6 +614,7 @@ export class FeedsApi extends BaseAPI {
      * Effective June 27, 2023, the `getFeed` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
      * @param {FeedsApiGetFeedRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof FeedsApi
      */
@@ -604,6 +626,7 @@ export class FeedsApi extends BaseAPI {
      * Effective June 27, 2023, the `getFeedDocument` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
      * @param {FeedsApiGetFeedDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof FeedsApi
      */
@@ -615,6 +638,7 @@ export class FeedsApi extends BaseAPI {
      * Effective June 27, 2023, the `getFeeds` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
      * @param {FeedsApiGetFeedsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof FeedsApi
      */

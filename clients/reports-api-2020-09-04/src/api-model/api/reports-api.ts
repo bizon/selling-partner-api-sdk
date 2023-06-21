@@ -53,6 +53,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * Effective **June 27, 2023**, the `cancelReport` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {string} reportId The identifier for the report. This identifier is unique only in combination with a seller ID.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         cancelReport: async (reportId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -86,6 +87,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * Effective **June 27, 2023**, the `cancelReportSchedule` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {string} reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         cancelReportSchedule: async (reportScheduleId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -119,6 +121,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * Effective **June 27, 2023**, the `createReport` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {CreateReportSpecification} body 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         createReport: async (body: CreateReportSpecification, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -154,6 +157,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * Effective **June 27, 2023**, the `createReportSchedule` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {CreateReportScheduleSpecification} body 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         createReportSchedule: async (body: CreateReportScheduleSpecification, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -189,6 +193,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * Effective **June 27, 2023**, the `getReport` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {string} reportId The identifier for the report. This identifier is unique only in combination with a seller ID.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getReport: async (reportId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -222,6 +227,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * Effective **June 27, 2023**, the `getReportDocument` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {string} reportDocumentId The identifier for the report document.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getReportDocument: async (reportDocumentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -255,6 +261,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * Effective **June 27, 2023**, the `getReportSchedule` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {string} reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getReportSchedule: async (reportScheduleId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -288,6 +295,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * Effective **June 27, 2023**, the `getReportSchedules` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {Array<string>} reportTypes A list of report types used to filter report schedules.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getReportSchedules: async (reportTypes: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -330,6 +338,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {string} [createdUntil] The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now.
          * @param {string} [nextToken] A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getReports: async (reportTypes?: Array<string>, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, marketplaceIds?: Array<string>, pageSize?: number, createdSince?: string, createdUntil?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -402,6 +411,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * Effective **June 27, 2023**, the `cancelReport` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {string} reportId The identifier for the report. This identifier is unique only in combination with a seller ID.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async cancelReport(reportId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelReportResponse>> {
@@ -412,6 +422,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * Effective **June 27, 2023**, the `cancelReportSchedule` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {string} reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async cancelReportSchedule(reportScheduleId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelReportScheduleResponse>> {
@@ -422,6 +433,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * Effective **June 27, 2023**, the `createReport` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {CreateReportSpecification} body 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async createReport(body: CreateReportSpecification, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateReportResponse>> {
@@ -432,6 +444,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * Effective **June 27, 2023**, the `createReportSchedule` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {CreateReportScheduleSpecification} body 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async createReportSchedule(body: CreateReportScheduleSpecification, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateReportScheduleResponse>> {
@@ -442,6 +455,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * Effective **June 27, 2023**, the `getReport` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {string} reportId The identifier for the report. This identifier is unique only in combination with a seller ID.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async getReport(reportId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetReportResponse>> {
@@ -452,6 +466,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * Effective **June 27, 2023**, the `getReportDocument` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {string} reportDocumentId The identifier for the report document.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async getReportDocument(reportDocumentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetReportDocumentResponse>> {
@@ -462,6 +477,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * Effective **June 27, 2023**, the `getReportSchedule` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {string} reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async getReportSchedule(reportScheduleId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetReportScheduleResponse>> {
@@ -472,6 +488,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * Effective **June 27, 2023**, the `getReportSchedules` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {Array<string>} reportTypes A list of report types used to filter report schedules.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async getReportSchedules(reportTypes: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetReportSchedulesResponse>> {
@@ -488,6 +505,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {string} [createdUntil] The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now.
          * @param {string} [nextToken] A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async getReports(reportTypes?: Array<string>, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, marketplaceIds?: Array<string>, pageSize?: number, createdSince?: string, createdUntil?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetReportsResponse>> {
@@ -508,6 +526,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * Effective **June 27, 2023**, the `cancelReport` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {ReportsApiCancelReportRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         cancelReport(requestParameters: ReportsApiCancelReportRequest, options?: AxiosRequestConfig): AxiosPromise<CancelReportResponse> {
@@ -517,6 +536,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * Effective **June 27, 2023**, the `cancelReportSchedule` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {ReportsApiCancelReportScheduleRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         cancelReportSchedule(requestParameters: ReportsApiCancelReportScheduleRequest, options?: AxiosRequestConfig): AxiosPromise<CancelReportScheduleResponse> {
@@ -526,6 +546,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * Effective **June 27, 2023**, the `createReport` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {ReportsApiCreateReportRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         createReport(requestParameters: ReportsApiCreateReportRequest, options?: AxiosRequestConfig): AxiosPromise<CreateReportResponse> {
@@ -535,6 +556,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * Effective **June 27, 2023**, the `createReportSchedule` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {ReportsApiCreateReportScheduleRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         createReportSchedule(requestParameters: ReportsApiCreateReportScheduleRequest, options?: AxiosRequestConfig): AxiosPromise<CreateReportScheduleResponse> {
@@ -544,6 +566,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * Effective **June 27, 2023**, the `getReport` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {ReportsApiGetReportRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getReport(requestParameters: ReportsApiGetReportRequest, options?: AxiosRequestConfig): AxiosPromise<GetReportResponse> {
@@ -553,6 +576,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * Effective **June 27, 2023**, the `getReportDocument` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {ReportsApiGetReportDocumentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getReportDocument(requestParameters: ReportsApiGetReportDocumentRequest, options?: AxiosRequestConfig): AxiosPromise<GetReportDocumentResponse> {
@@ -562,6 +586,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * Effective **June 27, 2023**, the `getReportSchedule` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {ReportsApiGetReportScheduleRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getReportSchedule(requestParameters: ReportsApiGetReportScheduleRequest, options?: AxiosRequestConfig): AxiosPromise<GetReportScheduleResponse> {
@@ -571,6 +596,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * Effective **June 27, 2023**, the `getReportSchedules` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {ReportsApiGetReportSchedulesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getReportSchedules(requestParameters: ReportsApiGetReportSchedulesRequest, options?: AxiosRequestConfig): AxiosPromise<GetReportSchedulesResponse> {
@@ -580,6 +606,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * Effective **June 27, 2023**, the `getReports` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
          * @param {ReportsApiGetReportsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getReports(requestParameters: ReportsApiGetReportsRequest = {}, options?: AxiosRequestConfig): AxiosPromise<GetReportsResponse> {
@@ -767,6 +794,7 @@ export class ReportsApi extends BaseAPI {
      * Effective **June 27, 2023**, the `cancelReport` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
      * @param {ReportsApiCancelReportRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
@@ -778,6 +806,7 @@ export class ReportsApi extends BaseAPI {
      * Effective **June 27, 2023**, the `cancelReportSchedule` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
      * @param {ReportsApiCancelReportScheduleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
@@ -789,6 +818,7 @@ export class ReportsApi extends BaseAPI {
      * Effective **June 27, 2023**, the `createReport` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
      * @param {ReportsApiCreateReportRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
@@ -800,6 +830,7 @@ export class ReportsApi extends BaseAPI {
      * Effective **June 27, 2023**, the `createReportSchedule` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
      * @param {ReportsApiCreateReportScheduleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
@@ -811,6 +842,7 @@ export class ReportsApi extends BaseAPI {
      * Effective **June 27, 2023**, the `getReport` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
      * @param {ReportsApiGetReportRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
@@ -822,6 +854,7 @@ export class ReportsApi extends BaseAPI {
      * Effective **June 27, 2023**, the `getReportDocument` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
      * @param {ReportsApiGetReportDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
@@ -833,6 +866,7 @@ export class ReportsApi extends BaseAPI {
      * Effective **June 27, 2023**, the `getReportSchedule` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
      * @param {ReportsApiGetReportScheduleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
@@ -844,6 +878,7 @@ export class ReportsApi extends BaseAPI {
      * Effective **June 27, 2023**, the `getReportSchedules` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
      * @param {ReportsApiGetReportSchedulesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
@@ -855,6 +890,7 @@ export class ReportsApi extends BaseAPI {
      * Effective **June 27, 2023**, the `getReports` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
      * @param {ReportsApiGetReportsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof ReportsApi
      */

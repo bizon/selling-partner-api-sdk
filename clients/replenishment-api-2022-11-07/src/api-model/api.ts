@@ -15,5 +15,4 @@
 
 
 export * from './api/offers-api';
-export * from './api/sellingpartners-api';
 

@@ -24,6 +24,10 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { ErrorList } from '../models';
 // @ts-ignore
+import { GetSellingPartnerMetricsRequest } from '../models';
+// @ts-ignore
+import { GetSellingPartnerMetricsResponse } from '../models';
+// @ts-ignore
 import { ListOfferMetricsRequest } from '../models';
 // @ts-ignore
 import { ListOfferMetricsResponse } from '../models';
@@ -37,6 +41,39 @@ import { ListOffersResponse } from '../models';
  */
 export const OffersApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * Returns aggregated replenishment program metrics for a selling partner.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {GetSellingPartnerMetricsRequest} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getSellingPartnerMetrics: async (body?: GetSellingPartnerMetricsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/replenishment/2022-11-07/sellingPartners/metrics/search`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * Returns aggregated replenishment program metrics for a selling partner\'s offers.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {ListOfferMetricsRequest} [body] The request body for the &#x60;listOfferMetrics&#x60; operation.
@@ -114,6 +151,16 @@ export const OffersApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = OffersApiAxiosParamCreator(configuration)
     return {
         /**
+         * Returns aggregated replenishment program metrics for a selling partner.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {GetSellingPartnerMetricsRequest} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getSellingPartnerMetrics(body?: GetSellingPartnerMetricsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSellingPartnerMetricsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getSellingPartnerMetrics(body, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * Returns aggregated replenishment program metrics for a selling partner\'s offers.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {ListOfferMetricsRequest} [body] The request body for the &#x60;listOfferMetrics&#x60; operation.
          * @param {*} [options] Override http request option.
@@ -144,6 +191,15 @@ export const OffersApiFactory = function (configuration?: Configuration, basePat
     const localVarFp = OffersApiFp(configuration)
     return {
         /**
+         * Returns aggregated replenishment program metrics for a selling partner.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {OffersApiGetSellingPartnerMetricsRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getSellingPartnerMetrics(requestParameters: OffersApiGetSellingPartnerMetricsRequest = {}, options?: AxiosRequestConfig): AxiosPromise<GetSellingPartnerMetricsResponse> {
+            return localVarFp.getSellingPartnerMetrics(requestParameters.body, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Returns aggregated replenishment program metrics for a selling partner\'s offers.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {OffersApiListOfferMetricsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
@@ -163,6 +219,20 @@ export const OffersApiFactory = function (configuration?: Configuration, basePat
         },
     };
 };
+
+/**
+ * Request parameters for getSellingPartnerMetrics operation in OffersApi.
+ * @export
+ * @interface OffersApiGetSellingPartnerMetricsRequest
+ */
+export interface OffersApiGetSellingPartnerMetricsRequest {
+    /**
+     * 
+     * @type {GetSellingPartnerMetricsRequest}
+     * @memberof OffersApiGetSellingPartnerMetrics
+     */
+    readonly body?: GetSellingPartnerMetricsRequest
+}
 
 /**
  * Request parameters for listOfferMetrics operation in OffersApi.
@@ -199,6 +269,17 @@ export interface OffersApiListOffersRequest {
  * @extends {BaseAPI}
  */
 export class OffersApi extends BaseAPI {
+    /**
+     * Returns aggregated replenishment program metrics for a selling partner.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {OffersApiGetSellingPartnerMetricsRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof OffersApi
+     */
+    public getSellingPartnerMetrics(requestParameters: OffersApiGetSellingPartnerMetricsRequest = {}, options?: AxiosRequestConfig) {
+        return OffersApiFp(this.configuration).getSellingPartnerMetrics(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * Returns aggregated replenishment program metrics for a selling partner\'s offers.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {OffersApiListOfferMetricsRequest} requestParameters Request parameters.

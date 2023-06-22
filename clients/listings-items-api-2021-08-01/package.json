@@ -50,8 +50,5 @@
     "sp api",
     "sp sdk",
     "listings items api"
-  ],
-  "typedoc": {
-    "entryPoint": "./index.ts"
-  }
+  ]
 }

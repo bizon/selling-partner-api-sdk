@@ -50,8 +50,5 @@
     "sp api",
     "sp sdk",
     "sellers api"
-  ],
-  "typedoc": {
-    "entryPoint": "./index.ts"
-  }
+  ]
 }

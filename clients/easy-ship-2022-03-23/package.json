@@ -50,8 +50,5 @@
     "sp api",
     "sp sdk",
     "easy ship"
-  ],
-  "typedoc": {
-    "entryPoint": "./index.ts"
-  }
+  ]
 }

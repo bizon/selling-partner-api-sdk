@@ -50,8 +50,5 @@
     "sp api",
     "sp sdk",
     "aplus content api"
-  ],
-  "typedoc": {
-    "entryPoint": "./index.ts"
-  }
+  ]
 }

@@ -50,8 +50,5 @@
     "sp api",
     "sp sdk",
     "merchant fulfillment api"
-  ],
-  "typedoc": {
-    "entryPoint": "./index.ts"
-  }
+  ]
 }

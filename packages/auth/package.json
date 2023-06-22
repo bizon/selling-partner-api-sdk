@@ -52,8 +52,5 @@
     "mws",
     "selling partner api",
     "marketplace webservice"
-  ],
-  "typedoc": {
-    "entryPoint": "./index.ts"
-  }
+  ]
 }

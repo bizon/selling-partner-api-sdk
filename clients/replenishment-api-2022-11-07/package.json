@@ -50,8 +50,5 @@
     "sp api",
     "sp sdk",
     "replenishment api"
-  ],
-  "typedoc": {
-    "entryPoint": "./index.ts"
-  }
+  ]
 }

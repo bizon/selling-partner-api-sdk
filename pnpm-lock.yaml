@@ -381,6 +381,19 @@ importers:
         specifier: workspace:*
         version: link:../../packages/auth
 
+  clients/replenishment-api-2022-11-07:
+    dependencies:
+      '@sp-api-sdk/common':
+        specifier: workspace:*
+        version: link:../../packages/common
+      axios:
+        specifier: ^1.4.0
+        version: 1.4.0
+    devDependencies:
+      '@sp-api-sdk/auth':
+        specifier: workspace:*
+        version: link:../../packages/auth
+
   clients/reports-api-2020-09-04:
     dependencies:
       '@sp-api-sdk/common':

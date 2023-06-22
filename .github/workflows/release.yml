@@ -40,9 +40,13 @@ jobs:
           git config --global user.email "${{ secrets.BOT_EMAIL }}"
           git config --global user.name  "${{ secrets.BOT_NAME }}"
 
-      - name: Publish packages
+      - name: Set publish config
+        run: pnpm config set '//registry.npmjs.org/:_authToken' "${NODE_AUTH_TOKEN}"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish packages
+        env:
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
         run: |
           pnpm lerna publish --skip-bump-only-release --yes

@@ -44,11 +44,11 @@ importers:
         specifier: ^1.10.4
         version: 1.10.4
       typedoc:
-        specifier: ^0.23.28
-        version: 0.23.28(typescript@5.1.3)
-      typedoc-monorepo-link-types:
-        specifier: ^0.0.4
-        version: 0.0.4(typedoc@0.23.28)
+        specifier: ^0.24.8
+        version: 0.24.8(typescript@5.1.3)
+      typedoc-plugin-missing-exports:
+        specifier: ^2.0.0
+        version: 2.0.0(typedoc@0.24.8)
       typescript:
         specifier: ^5.1.3
         version: 5.1.3
@@ -7495,13 +7495,6 @@ packages:
       brace-expansion: 2.0.1
     dev: true
 
-  /minimatch@7.4.6:
-    resolution: {integrity: sha512-sBz8G/YjVniEz6lKPNpKxXwazJe4c19fEfV2GDMX6AjFz+MX9uDWIZW8XreVhkFW3fkIdTv/gxWr/Kks5FFAVw==}
-    engines: {node: '>=10'}
-    dependencies:
-      brace-expansion: 2.0.1
-    dev: true
-
   /minimatch@9.0.1:
     resolution: {integrity: sha512-0jWhJpD/MdhPXwPuiRkCbfYfSKp2qnn2eOc279qI7f+osl/l+prKSrvhg157zSYvx/1nmgn2NqdT6k2Z7zSH9w==}
     engines: {node: '>=16 || 14 >=14.17'}
@@ -9576,24 +9569,24 @@ packages:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
     dev: true
 
-  /typedoc-monorepo-link-types@0.0.4(typedoc@0.23.28):
-    resolution: {integrity: sha512-fAxmfoJSp6cvT+I9/pN9pS2R8EoKUHaKU095E6H7FwN4tZUXPri5CZkxi9JLRlM5SV+pQwIlYnx9b+hnVP0nHA==}
+  /typedoc-plugin-missing-exports@2.0.0(typedoc@0.24.8):
+    resolution: {integrity: sha512-t0QlKCm27/8DaheJkLo/gInSNjzBXgSciGhoLpL6sLyXZibm7SuwJtHvg4qXI2IjJfFBgW9mJvvszpoxMyB0TA==}
     peerDependencies:
-      typedoc: 0.23.x
+      typedoc: 0.24.x
     dependencies:
-      typedoc: 0.23.28(typescript@5.1.3)
+      typedoc: 0.24.8(typescript@5.1.3)
     dev: true
 
-  /typedoc@0.23.28(typescript@5.1.3):
-    resolution: {integrity: sha512-9x1+hZWTHEQcGoP7qFmlo4unUoVJLB0H/8vfO/7wqTnZxg4kPuji9y3uRzEu0ZKez63OJAUmiGhUrtukC6Uj3w==}
+  /typedoc@0.24.8(typescript@5.1.3):
+    resolution: {integrity: sha512-ahJ6Cpcvxwaxfu4KtjA8qZNqS43wYt6JL27wYiIgl1vd38WW/KWX11YuAeZhuz9v+ttrutSsgK+XO1CjL1kA3w==}
     engines: {node: '>= 14.14'}
     hasBin: true
     peerDependencies:
-      typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x
+      typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x
     dependencies:
       lunr: 2.3.9
       marked: 4.3.0
-      minimatch: 7.4.6
+      minimatch: 9.0.1
       shiki: 0.14.2
       typescript: 5.1.3
     dev: true

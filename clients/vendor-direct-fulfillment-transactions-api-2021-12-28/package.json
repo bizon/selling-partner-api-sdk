@@ -50,8 +50,5 @@
     "sp api",
     "sp sdk",
     "vendor direct fulfillment transactions api"
-  ],
-  "typedoc": {
-    "entryPoint": "./index.ts"
-  }
+  ]
 }

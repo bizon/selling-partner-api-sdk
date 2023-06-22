@@ -50,8 +50,5 @@
     "sp api",
     "sp sdk",
     "vendor direct fulfillment sandbox test data api"
-  ],
-  "typedoc": {
-    "entryPoint": "./index.ts"
-  }
+  ]
 }

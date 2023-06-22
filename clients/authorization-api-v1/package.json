@@ -50,8 +50,5 @@
     "sp api",
     "sp sdk",
     "authorization api"
-  ],
-  "typedoc": {
-    "entryPoint": "./index.ts"
-  }
+  ]
 }

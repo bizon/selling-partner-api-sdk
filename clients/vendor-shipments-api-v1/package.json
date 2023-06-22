@@ -50,8 +50,5 @@
     "sp api",
     "sp sdk",
     "vendor shipments api"
-  ],
-  "typedoc": {
-    "entryPoint": "./index.ts"
-  }
+  ]
 }

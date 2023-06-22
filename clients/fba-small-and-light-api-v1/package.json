@@ -50,8 +50,5 @@
     "sp api",
     "sp sdk",
     "fba small and light api"
-  ],
-  "typedoc": {
-    "entryPoint": "./index.ts"
-  }
+  ]
 }

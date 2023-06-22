@@ -50,8 +50,5 @@
     "sp api",
     "sp sdk",
     "fulfillment outbound api"
-  ],
-  "typedoc": {
-    "entryPoint": "./index.ts"
-  }
+  ]
 }

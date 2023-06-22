@@ -9,10 +9,10 @@ import camelCase from 'camelcase'
 import globby from 'globby'
 import jsonfile from 'jsonfile'
 import reduce from 'lodash/reduce'
-import type {OpenAPIV3} from 'openapi-types'
+import {type OpenAPIV3} from 'openapi-types'
 import remark from 'remark'
 import remarkStrip from 'strip-markdown'
-import type {PackageJson} from 'type-fest'
+import {type PackageJson} from 'type-fest'
 
 import {applyPatches, logger, renderTemplate} from './utils'
 
@@ -174,6 +174,10 @@ async function generateClientVersion(modelFilePath: string) {
   await fs.writeFile(
     `${clientDirectoryPath}/tsconfig.es.json`,
     await renderTemplate('codegen/templates/tsconfig.es.json.mustache'),
+  )
+  await fs.writeFile(
+    `${clientDirectoryPath}/typedoc.json`,
+    await renderTemplate('codegen/templates/typedoc.json.mustache'),
   )
   await fs.writeFile(
     `${clientDirectoryPath}/index.ts`,

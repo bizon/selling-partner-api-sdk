@@ -20,6 +20,8 @@ export * from './get-subscription-by-id-response';
 export * from './get-subscription-response';
 export * from './marketplace-filter';
 export * from './model-error';
+export * from './order-change-type-enum';
+export * from './order-change-type-filter';
 export * from './processing-directive';
 export * from './sqs-resource';
 export * from './subscription';

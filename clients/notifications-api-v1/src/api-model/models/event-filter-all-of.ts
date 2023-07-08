@@ -25,6 +25,14 @@ export interface EventFilterAllOf {
      * @type {string}
      * @memberof EventFilterAllOf
      */
-    'eventFilterType': string;
+    'eventFilterType': EventFilterAllOfEventFilterTypeEnum;
 }
+
+export const EventFilterAllOfEventFilterTypeEnum = {
+    AnyOfferChanged: 'ANY_OFFER_CHANGED',
+    OrderChange: 'ORDER_CHANGE'
+} as const;
+
+export type EventFilterAllOfEventFilterTypeEnum = typeof EventFilterAllOfEventFilterTypeEnum[keyof typeof EventFilterAllOfEventFilterTypeEnum];
+
 

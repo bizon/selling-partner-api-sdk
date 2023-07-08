@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EventFilter } from './event-filter';
+import { OrderChangeTypeEnum } from './order-change-type-enum';
 
 /**
- * Additional information passed to the subscription to control the processing of notifications. For example, you can use an `eventFilter` to customize your subscription to send notifications for only the specified marketplaceId\'s, or select the aggregation time period at which to send notifications (e.g. limit to one notification every five minutes for high frequency notifications). The specific features available vary depending on the notificationType.  This feature is currently only supported by the `ANY_OFFER_CHANGED` and `ORDER_CHANGE` notificationTypes.
+ * Use this event filter to customize your subscription to send notifications for only the specified orderChangeType.
  * @export
- * @interface ProcessingDirective
+ * @interface OrderChangeTypeFilter
  */
-export interface ProcessingDirective {
+export interface OrderChangeTypeFilter {
     /**
-     * 
-     * @type {EventFilter}
-     * @memberof ProcessingDirective
+     * A list of order change types to subscribe to (e.g. BuyerRequestedChange). To receive notifications of all change types, do not provide this list.
+     * @type {Array<OrderChangeTypeEnum>}
+     * @memberof OrderChangeTypeFilter
      */
-    'eventFilter'?: EventFilter;
+    'orderChangeTypes'?: Array<OrderChangeTypeEnum>;
 }
 

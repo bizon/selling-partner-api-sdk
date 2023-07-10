@@ -25,12 +25,18 @@ import { EventFilterAllOf } from './event-filter-all-of';
 // May contain unused imports in some cases
 // @ts-ignore
 import { MarketplaceFilter } from './marketplace-filter';
+// May contain unused imports in some cases
+// @ts-ignore
+import { OrderChangeTypeEnum } from './order-change-type-enum';
+// May contain unused imports in some cases
+// @ts-ignore
+import { OrderChangeTypeFilter } from './order-change-type-filter';
 
 /**
  * @type EventFilter
  * A notificationType specific filter. This object contains all of the currently available filters and properties that you can use to define a notificationType specific filter.
  * @export
  */
-export type EventFilter = AggregationFilter & EventFilterAllOf & MarketplaceFilter;
+export type EventFilter = AggregationFilter & EventFilterAllOf & MarketplaceFilter & OrderChangeTypeFilter;
 
 

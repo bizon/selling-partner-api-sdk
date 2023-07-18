@@ -30,7 +30,7 @@
     "typedoc": "^0.24.8",
     "typedoc-plugin-missing-exports": "^2.0.0",
     "typescript": "^5.1.6",
-    "xo": "^0.54.2"
+    "xo": "^0.55.0"
   },
   "xo": {
     "extends": "xo-bizon",

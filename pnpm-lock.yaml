@@ -755,8 +755,8 @@ importers:
         specifier: ^12.1.3
         version: 12.1.3
       type-fest:
-        specifier: ^3.13.0
-        version: 3.13.0
+        specifier: ^4.0.0
+        version: 4.0.0
 
   packages/auth:
     dependencies:
@@ -774,8 +774,8 @@ importers:
         specifier: ^13.3.2
         version: 13.3.2
       type-fest:
-        specifier: ^3.13.0
-        version: 3.13.0
+        specifier: ^4.0.0
+        version: 4.0.0
 
   packages/common:
     dependencies:
@@ -9571,6 +9571,11 @@ packages:
   /type-fest@3.13.0:
     resolution: {integrity: sha512-Gur3yQGM9qiLNs0KPP7LPgeRbio2QTt4xXouobMCarR0/wyW3F+F/+OWwshg3NG0Adon7uQfSZBpB46NfhoF1A==}
     engines: {node: '>=14.16'}
+    dev: true
+
+  /type-fest@4.0.0:
+    resolution: {integrity: sha512-d/oYtUnPM9zar2fqqGLYPzgcY0qUlYK0evgNVti93xpzfjGkMgZHu9Lvgrkn0rqGXTgsFRxFamzjGoD9Uo+dgw==}
+    engines: {node: '>=16'}
     dev: true
 
   /type@1.2.0:

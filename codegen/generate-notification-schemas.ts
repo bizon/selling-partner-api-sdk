@@ -48,7 +48,7 @@ async function generateSchema(schemaFilePaths: string): Promise<NotificationFile
 
     await fs.writeFile(
       `packages/notifications/src/${fileName}.ts`,
-      model.replace(/\[k: string]: unknown\n/g, ''),
+      model.replaceAll('[k: string]: unknown\n', ''),
     )
 
     logger.info(`done in ${Date.now() - startedAt}ms`, {notificationName})

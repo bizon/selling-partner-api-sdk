@@ -52,7 +52,7 @@ async function cleanMarkdown(input: string, stripNewLines?: boolean) {
   let result = vfile.toString()
 
   if (stripNewLines) {
-    result = result.replace(/[\r\n]+/g, ' ')
+    result = result.replaceAll(/[\r\n]+/g, ' ')
   }
 
   return result.trim()
@@ -67,7 +67,7 @@ async function generateClientVersion(modelFilePath: string) {
   let model = await fs.readFile(modelPath, 'utf8')
 
   // Replace `doc:` markdown URLs to link to the real documentation
-  model = model.replace(
+  model = model.replaceAll(
     /\[(?<label>[^\]]+)]\(doc:(?<url>[^)]+)\)/g,
     '[$1](https://developer-docs.amazon.com/sp-api/docs/$2)',
   )
@@ -113,7 +113,7 @@ async function generateClientVersion(modelFilePath: string) {
       packageName,
       description: await cleanMarkdown(doc.info.description ?? '', true),
       version: (await readPackageVersion(clientDirectoryPath)) ?? '1.0.0',
-      apiName: clientNameBase.replace(/-/g, ' '),
+      apiName: clientNameBase.replaceAll('-', ' '),
       dependencies: {
         axios: await getAxiosVersion(),
       },
@@ -141,7 +141,7 @@ async function generateClientVersion(modelFilePath: string) {
               method,
               rate: Number.parseFloat(result.groups.rate),
               burst: Number.parseFloat(result.groups.burst),
-              urlRegex: `new RegExp('^${key.replace(/{.+}/g, '[^/]*')}$')`,
+              urlRegex: `new RegExp('^${key.replaceAll(/{.+}/g, '[^/]*')}$')`,
             }
 
             if (Number.isNaN(value.rate) || Number.isNaN(value.burst)) {
@@ -164,7 +164,7 @@ async function generateClientVersion(modelFilePath: string) {
   )
 
   if (rateLimits.length > 0) {
-    rateLimits[rateLimits.length - 1].last = true
+    rateLimits.at(-1)!.last = true
   }
 
   await fs.writeFile(
@@ -201,7 +201,7 @@ async function generateClientVersion(modelFilePath: string) {
       packageName,
       className: clientClassName,
       description: doc.info.description,
-      sdkClientDocUrl: `https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_${packageName.replace(
+      sdkClientDocUrl: `https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_${packageName.replaceAll(
         /\W/g,
         '_',
       )}.html`,

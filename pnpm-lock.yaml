@@ -700,8 +700,8 @@ importers:
   codegen:
     dependencies:
       '@openapitools/openapi-generator-cli':
-        specifier: ^2.6.0
-        version: 2.6.0
+        specifier: ^2.7.0
+        version: 2.7.0
       bluebird:
         specifier: ^3.7.2
         version: 3.7.2
@@ -2126,10 +2126,10 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /@nestjs/axios@0.0.8(@nestjs/common@9.3.11)(reflect-metadata@0.1.13)(rxjs@7.8.0):
-    resolution: {integrity: sha512-oJyfR9/h9tVk776il0829xyj3b2e81yTu6HjPraxynwNtMNGqZBHHmAQL24yMB3tVbBM0RvG3eUXH8+pRCGwlg==}
+  /@nestjs/axios@0.1.0(@nestjs/common@9.3.11)(reflect-metadata@0.1.13)(rxjs@7.8.0):
+    resolution: {integrity: sha512-b2TT2X6BFbnNoeteiaxCIiHaFcSbVW+S5yygYqiIq5i6H77yIU3IVuLdpQkHq8/EqOWFwMopLN8jdkUT71Am9w==}
     peerDependencies:
-      '@nestjs/common': ^7.0.0 || ^8.0.0
+      '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0
       reflect-metadata: ^0.1.12
       rxjs: ^6.0.0 || ^7.0.0
     dependencies:
@@ -2530,13 +2530,13 @@ packages:
       '@octokit/openapi-types': 18.0.0
     dev: true
 
-  /@openapitools/openapi-generator-cli@2.6.0:
-    resolution: {integrity: sha512-M/aOpR7G+Y1nMf+ofuar8pGszajgfhs1aSPSijkcr2tHTxKAI3sA3YYcOGbszxaNRKFyvOcDq+KP9pcJvKoCHg==}
+  /@openapitools/openapi-generator-cli@2.7.0:
+    resolution: {integrity: sha512-ieEpHTA/KsDz7ANw03lLPYyjdedDEXYEyYoGBRWdduqXWSX65CJtttjqa8ZaB1mNmIjMtchUHwAYQmTLVQ8HYg==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@nestjs/axios': 0.0.8(@nestjs/common@9.3.11)(reflect-metadata@0.1.13)(rxjs@7.8.0)
+      '@nestjs/axios': 0.1.0(@nestjs/common@9.3.11)(reflect-metadata@0.1.13)(rxjs@7.8.0)
       '@nestjs/common': 9.3.11(reflect-metadata@0.1.13)(rxjs@7.8.0)
       '@nestjs/core': 9.3.11(@nestjs/common@9.3.11)(reflect-metadata@0.1.13)(rxjs@7.8.0)
       '@nuxtjs/opencollective': 0.3.2
@@ -9199,7 +9199,7 @@ packages:
     engines: {node: ^14.18.0 || >=16.0.0}
     dependencies:
       '@pkgr/utils': 2.4.2
-      tslib: 2.5.1
+      tslib: 2.6.0
     dev: true
 
   /tapable@0.1.10:
@@ -9479,6 +9479,7 @@ packages:
 
   /tslib@2.5.1:
     resolution: {integrity: sha512-KaI6gPil5m9vF7DKaoXxx1ia9fxS4qG5YveErRRVknPDXXriu5M8h48YRjB6h5ZUOKuAKlSJYb0GaDe8I39fRw==}
+    dev: false
 
   /tslib@2.6.0:
     resolution: {integrity: sha512-7At1WUettjcSRHXCyYtTselblcHl9PJFFVKiCAy/bY97+BPZXSQ2wbq0P9s8tK2G7dFQfNnlJnPAiArVBVBsfA==}

@@ -41,7 +41,7 @@ async function readPackageVersion(path: string) {
 }
 
 async function getAxiosVersion() {
-  const pkg = (await import('../packages/common/package.json')) as PackageJson
+  const pkg = (await import('../packages/common/package.json')) as unknown as PackageJson
   return pkg.dependencies!.axios
 }
 

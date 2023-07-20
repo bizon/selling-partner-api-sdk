@@ -1,7 +1,7 @@
 {
   "extends": "@tsconfig/node18/tsconfig.json",
   "compilerOptions": {
-    "alwaysStrict": true,
+    "moduleResolution": "node",
     "declaration": true,
     "downlevelIteration": true,
     "incremental": true

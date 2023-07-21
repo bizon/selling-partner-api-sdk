@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/replenishment-api-2022-11-07@1.1.0...@sp-api-sdk/replenishment-api-2022-11-07@1.1.1) (2023-07-21)
+
+**Note:** Version bump only for package @sp-api-sdk/replenishment-api-2022-11-07
+
 ## 1.1.0 (2023-06-22)
 
 ### Features

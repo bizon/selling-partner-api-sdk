@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/generator@0.8.0...@sp-api-sdk/generator@0.9.0) (2023-07-21)
+
+### ⚠ BREAKING CHANGES
+
+* codegen package is now ESM.
+
+### Features
+
+* rewrite codgen as ESM ([#899](https://github.com/bizon/selling-partner-api-sdk/issues/899)) ([03fe76b](https://github.com/bizon/selling-partner-api-sdk/commit/03fe76b499fb08b58a9471c955c0b94f7f8ca187))
+
+### Bug Fixes
+
+* **codegen:** update node18 tsconfig ([#898](https://github.com/bizon/selling-partner-api-sdk/issues/898)) ([f738b2b](https://github.com/bizon/selling-partner-api-sdk/commit/f738b2b02183807e303aaa5a69deaace9ef6728b))
+
 ## [0.8.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/generator@0.7.2...@sp-api-sdk/generator@0.8.0) (2023-06-22)
 
 ### Features

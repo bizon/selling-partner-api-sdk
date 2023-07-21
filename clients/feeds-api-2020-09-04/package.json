@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/feeds-api-2020-09-04",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "Effective June 27, 2023, the Selling Partner API for Feeds v2020-09-04 will no longer be available and all calls to it will fail. Integrations that rely on the Feeds API must migrate to Feeds v2021-06-30 to avoid service disruption.",
-  "version": "1.12.0",
+  "version": "1.12.1",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-direct-fulfillment-orders-api-2021-12-28@1.5.2...@sp-api-sdk/vendor-direct-fulfillment-orders-api-2021-12-28@1.5.3) (2023-07-21)
+
+**Note:** Version bump only for package @sp-api-sdk/vendor-direct-fulfillment-orders-api-2021-12-28
+
 ## [1.5.2](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-direct-fulfillment-orders-api-2021-12-28@1.5.1...@sp-api-sdk/vendor-direct-fulfillment-orders-api-2021-12-28@1.5.2) (2023-06-22)
 
 **Note:** Version bump only for package @sp-api-sdk/vendor-direct-fulfillment-orders-api-2021-12-28

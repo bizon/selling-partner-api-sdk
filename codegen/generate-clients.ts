@@ -1,20 +1,22 @@
-import * as childProcess from 'child_process'
-import fs from 'fs/promises'
-import os from 'os'
-import {parse as parsePath} from 'path'
-import {promisify} from 'util'
+import * as childProcess from 'node:child_process'
+import fs from 'node:fs/promises'
+import os from 'node:os'
+import {parse as parsePath} from 'node:path'
+import {promisify} from 'node:util'
 
 import Bluebird from 'bluebird'
 import camelCase from 'camelcase'
-import globby from 'globby'
+import {globby} from 'globby'
 import jsonfile from 'jsonfile'
-import reduce from 'lodash/reduce'
+import _ from 'lodash'
 import {type OpenAPIV3} from 'openapi-types'
-import remark from 'remark'
+import {remark} from 'remark'
 import remarkStrip from 'strip-markdown'
 import {type PackageJson} from 'type-fest'
 
-import {applyPatches, logger, renderTemplate} from './utils'
+import {logger} from './utils/logger.js'
+import {applyPatches} from './utils/patch.js'
+import {renderTemplate} from './utils/render-template.js'
 
 const exec = promisify(childProcess.exec)
 
@@ -33,15 +35,20 @@ interface RateLimit {
 
 async function readPackageVersion(path: string) {
   try {
-    const pkg = (await import(`../${path}/package.json`)) as PackageJson
-    return pkg.version
+    const {default: pkg} = await import(`../${path}/package.json`, {
+      assert: {type: 'json'},
+    })
+    return (pkg as PackageJson).version
   } catch {
     return null
   }
 }
 
 async function getAxiosVersion() {
-  const pkg = (await import('../packages/common/package.json')) as unknown as PackageJson
+  const {default: pkg} = await import('../packages/common/package.json', {
+    assert: {type: 'json'},
+  })
+
   return pkg.dependencies!.axios
 }
 
@@ -111,7 +118,7 @@ async function generateClientVersion(modelFilePath: string) {
     `${clientDirectoryPath}/package.json`,
     await renderTemplate('codegen/templates/package.json.mustache', {
       packageName,
-      description: await cleanMarkdown(doc.info.description ?? '', true),
+      description: JSON.stringify(await cleanMarkdown(doc.info.description ?? '', true)),
       version: (await readPackageVersion(clientDirectoryPath)) ?? '1.0.0',
       apiName: clientNameBase.replaceAll('-', ' '),
       dependencies: {
@@ -120,7 +127,7 @@ async function generateClientVersion(modelFilePath: string) {
     }),
   )
 
-  const rateLimits = reduce(
+  const rateLimits = _.reduce(
     doc.paths,
     (acc: RateLimit[], value, key) => {
       if (!value) {

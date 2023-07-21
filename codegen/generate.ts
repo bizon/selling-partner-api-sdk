@@ -1,12 +1,12 @@
 #!/usr/bin/env ts-node
 
-import * as childProcess from 'child_process'
-import fs from 'fs/promises'
-import process from 'process'
-import {promisify} from 'util'
+import * as childProcess from 'node:child_process'
+import fs from 'node:fs/promises'
+import process from 'node:process'
+import {promisify} from 'node:util'
 
-import {generateClients} from './generate-clients'
-import {generateNotificationSchemas} from './generate-notification-schemas'
+import {generateClients} from './generate-clients.js'
+import {generateNotificationSchemas} from './generate-notification-schemas.js'
 
 type Generator = 'clients' | 'notifications'
 

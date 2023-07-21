@@ -1,13 +1,13 @@
-import fs from 'fs/promises'
-import os from 'os'
-import {parse as parsePath} from 'path'
+import fs from 'node:fs/promises'
+import os from 'node:os'
+import {parse as parsePath} from 'node:path'
 
 import Bluebird from 'bluebird'
-import globby from 'globby'
+import {globby} from 'globby'
 import {compile, type JSONSchema} from 'json-schema-to-typescript'
-import {kebabCase} from 'lodash'
+import _ from 'lodash'
 
-import {logger} from './utils'
+import {logger} from './utils/logger.js'
 
 interface NotificationFile {
   notificationName: string
@@ -44,7 +44,7 @@ async function generateSchema(schemaFilePaths: string): Promise<NotificationFile
       },
     )
 
-    const fileName = kebabCase(notificationName)
+    const fileName = _.kebabCase(notificationName)
 
     await fs.writeFile(
       `packages/notifications/src/${fileName}.ts`,

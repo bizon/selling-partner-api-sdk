@@ -1,8 +1,10 @@
 {
   "extends": "@tsconfig/node18/tsconfig.json",
   "compilerOptions": {
-    "resolveJsonModule": true,
-    "moduleResolution": "node"
+    "resolveJsonModule": true
+  },
+  "ts-node": {
+    "esm": true
   },
   "include": ["**/*.ts"]
 }

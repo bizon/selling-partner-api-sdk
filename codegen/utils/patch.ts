@@ -1,11 +1,11 @@
-import {readdir} from 'fs/promises'
-import {join as joinPath} from 'path'
+import {readdir} from 'node:fs/promises'
+import {join as joinPath} from 'node:path'
 
-import {applyPatch, type Operation} from 'fast-json-patch'
+import fjp, {type Operation} from 'fast-json-patch'
 import jsonfile from 'jsonfile'
 import {type OpenAPIV3} from 'openapi-types'
 
-import {instanceOfNodeError} from './error'
+import {instanceOfNodeError} from './error.js'
 
 interface Patch {
   operations: Operation[]
@@ -35,7 +35,7 @@ export async function applyPatches(document: OpenAPIV3.Document, patchesPath: st
   const patches = await getPatches(patchesPath)
 
   if (patches.length > 0) {
-    applyPatch(
+    fjp.applyPatch(
       document,
       patches.flatMap((p) => p.operations),
       true,

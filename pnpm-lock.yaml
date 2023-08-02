@@ -792,8 +792,8 @@ importers:
         specifier: ^2.6.2
         version: 2.6.2
       axios-retry:
-        specifier: ^3.5.1
-        version: 3.5.1
+        specifier: ^3.6.0
+        version: 3.6.0
       read-pkg-up:
         specifier: ^7.0.1
         version: 7.0.1
@@ -3703,8 +3703,8 @@ packages:
       dateformat: 3.0.3
     dev: false
 
-  /axios-retry@3.5.1:
-    resolution: {integrity: sha512-mQRJ4IyAUnYig14BQ4MnnNHHuH1cNH7NW4JxEUD6mNJwK6pwOY66wKLCwZ6Y0o3POpfStalqRC+J4+Hnn6Om7w==}
+  /axios-retry@3.6.0:
+    resolution: {integrity: sha512-jtH4qWTKZ2a17dH6tjq52Y1ssNV0lKge6/Z9Lw67s9Wt01nGTg4hg7/LJBGYfDci44NTANJQlCPHPOT/TSFm9w==}
     dependencies:
       '@babel/runtime': 7.21.5
       is-retry-allowed: 2.2.0

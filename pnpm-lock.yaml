@@ -30,8 +30,8 @@ importers:
         specifier: ^6.1.0
         version: 6.1.0
       eslint-config-xo-bizon:
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^2.0.0
+        version: 2.0.0
       jest:
         specifier: ^29.6.2
         version: 29.6.2(@types/node@18.17.2)(ts-node@10.9.1)
@@ -4880,9 +4880,9 @@ packages:
       eslint: 8.45.0
     dev: true
 
-  /eslint-config-xo-bizon@1.2.0:
-    resolution: {integrity: sha512-32cxabrcwDpT3N5doIh2/njJbc6iX037v848h60lmpU1rfPVkSiXwFCvWyThNl7kx2dqQ9CW9XVOYhs64HcpQg==}
-    engines: {node: '>=14'}
+  /eslint-config-xo-bizon@2.0.0:
+    resolution: {integrity: sha512-aYoqM6cVqyq7oWKjZjHmJPGT6UdepymOxdYRhDOzGJ5VvfTwN5l16XdnZbM98oGg2AAWto5z2vvuacHQVOTIaQ==}
+    engines: {node: '>=16'}
     dev: true
 
   /eslint-config-xo-typescript@1.0.0(@typescript-eslint/eslint-plugin@6.1.0)(@typescript-eslint/parser@6.1.0)(eslint@8.45.0)(typescript@5.1.6):
@@ -7020,7 +7020,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 18.17.1
+      '@types/node': 18.17.2
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true

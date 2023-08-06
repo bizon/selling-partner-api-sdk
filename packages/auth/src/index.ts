@@ -1,4 +1,4 @@
-import process from 'process'
+import process from 'node:process'
 
 import type {Credentials} from '@aws-sdk/client-sts'
 import type {RequireExactlyOne, SetOptional} from 'type-fest'

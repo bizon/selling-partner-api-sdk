@@ -147,7 +147,7 @@ export interface Order {
      */
     'MarketplaceId'?: string;
     /**
-     * The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard.
+     * The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, Priority, SameDay, SecondDay, Scheduled, Standard.
      * @type {string}
      * @memberof Order
      */

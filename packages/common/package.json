@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@sp-api-sdk/auth": "workspace:*",
-    "aws4-axios": "^3.2.24",
+    "aws4-axios": "^3.3.0",
     "axios": "^1.4.0",
     "axios-logger": "^2.7.0",
     "axios-retry": "^3.6.0",

@@ -35,7 +35,7 @@ export const clientRateLimits: RateLimit[] = [
     method: 'post',
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/batches/products/pricing/v0/itemOffers$'),
-    rate: 0.5,
+    rate: 0.1,
     burst: 1,
   },
   {

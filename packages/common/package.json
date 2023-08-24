@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/common",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "Selling Parner API common library",
-  "version": "1.11.4",
+  "version": "1.11.5",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

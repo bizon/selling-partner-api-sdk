@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/vendor-orders-api-v1",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Retail Procurement Orders provides programmatic access to vendor orders data.",
-  "version": "1.11.3",
+  "version": "1.11.4",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

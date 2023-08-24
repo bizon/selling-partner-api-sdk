@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.15.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/product-pricing-api-v0@1.14.3...@sp-api-sdk/product-pricing-api-v0@1.15.0) (2023-08-24)
+
+### Features
+
+* **clients:** update models as of 2023-08-22 ([#935](https://github.com/bizon/selling-partner-api-sdk/issues/935)) ([1199369](https://github.com/bizon/selling-partner-api-sdk/commit/1199369e55fede33dc0208f0a8f146ab27554448))
+
 ## [1.14.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/product-pricing-api-v0@1.14.2...@sp-api-sdk/product-pricing-api-v0@1.14.3) (2023-07-21)
 
 **Note:** Version bump only for package @sp-api-sdk/product-pricing-api-v0

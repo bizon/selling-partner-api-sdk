@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/fulfillment-inbound-api-v0",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Fulfillment Inbound lets you create applications that create and update inbound shipments of inventory to Amazon's fulfillment network.",
-  "version": "1.11.3",
+  "version": "1.11.4",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

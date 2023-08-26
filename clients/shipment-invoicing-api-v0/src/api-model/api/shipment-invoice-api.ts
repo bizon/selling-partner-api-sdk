@@ -310,3 +310,4 @@ export class ShipmentInvoiceApi extends BaseAPI {
         return ShipmentInvoiceApiFp(this.configuration).submitInvoice(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

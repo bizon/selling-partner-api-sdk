@@ -97,11 +97,11 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * Returns an A+ Content document, if available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
          * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-         * @param {Set<'CONTENTS' | 'METADATA'>} includedDataSet The set of A+ Content data types to include in the response.
+         * @param {Set<GetContentDocumentIncludedDataSetEnum>} includedDataSet The set of A+ Content data types to include in the response.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getContentDocument: async (contentReferenceKey: string, marketplaceId: string, includedDataSet: Set<'CONTENTS' | 'METADATA'>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getContentDocument: async (contentReferenceKey: string, marketplaceId: string, includedDataSet: Set<GetContentDocumentIncludedDataSetEnum>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'contentReferenceKey' is not null or undefined
             assertParamExists('getContentDocument', 'contentReferenceKey', contentReferenceKey)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -144,13 +144,13 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * Returns a list of ASINs related to the specified A+ Content document, if available. If you do not include the asinSet parameter, the operation returns all ASINs related to the content document.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
          * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-         * @param {Set<'METADATA'>} [includedDataSet] The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata.
+         * @param {Set<ListContentDocumentAsinRelationsIncludedDataSetEnum>} [includedDataSet] The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata.
          * @param {Set<string>} [asinSet] The set of ASINs.
          * @param {string} [pageToken] A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listContentDocumentAsinRelations: async (contentReferenceKey: string, marketplaceId: string, includedDataSet?: Set<'METADATA'>, asinSet?: Set<string>, pageToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listContentDocumentAsinRelations: async (contentReferenceKey: string, marketplaceId: string, includedDataSet?: Set<ListContentDocumentAsinRelationsIncludedDataSetEnum>, asinSet?: Set<string>, pageToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'contentReferenceKey' is not null or undefined
             assertParamExists('listContentDocumentAsinRelations', 'contentReferenceKey', contentReferenceKey)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -528,11 +528,11 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * Returns an A+ Content document, if available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
          * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-         * @param {Set<'CONTENTS' | 'METADATA'>} includedDataSet The set of A+ Content data types to include in the response.
+         * @param {Set<GetContentDocumentIncludedDataSetEnum>} includedDataSet The set of A+ Content data types to include in the response.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getContentDocument(contentReferenceKey: string, marketplaceId: string, includedDataSet: Set<'CONTENTS' | 'METADATA'>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetContentDocumentResponse>> {
+        async getContentDocument(contentReferenceKey: string, marketplaceId: string, includedDataSet: Set<GetContentDocumentIncludedDataSetEnum>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetContentDocumentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getContentDocument(contentReferenceKey, marketplaceId, includedDataSet, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -540,13 +540,13 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * Returns a list of ASINs related to the specified A+ Content document, if available. If you do not include the asinSet parameter, the operation returns all ASINs related to the content document.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
          * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-         * @param {Set<'METADATA'>} [includedDataSet] The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata.
+         * @param {Set<ListContentDocumentAsinRelationsIncludedDataSetEnum>} [includedDataSet] The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata.
          * @param {Set<string>} [asinSet] The set of ASINs.
          * @param {string} [pageToken] A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listContentDocumentAsinRelations(contentReferenceKey: string, marketplaceId: string, includedDataSet?: Set<'METADATA'>, asinSet?: Set<string>, pageToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListContentDocumentAsinRelationsResponse>> {
+        async listContentDocumentAsinRelations(contentReferenceKey: string, marketplaceId: string, includedDataSet?: Set<ListContentDocumentAsinRelationsIncludedDataSetEnum>, asinSet?: Set<string>, pageToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListContentDocumentAsinRelationsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listContentDocumentAsinRelations(contentReferenceKey, marketplaceId, includedDataSet, asinSet, pageToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -780,7 +780,7 @@ export interface AplusContentApiGetContentDocumentRequest {
      * @type {Set<'CONTENTS' | 'METADATA'>}
      * @memberof AplusContentApiGetContentDocument
      */
-    readonly includedDataSet: Set<'CONTENTS' | 'METADATA'>
+    readonly includedDataSet: Set<GetContentDocumentIncludedDataSetEnum>
 }
 
 /**
@@ -808,7 +808,7 @@ export interface AplusContentApiListContentDocumentAsinRelationsRequest {
      * @type {Set<'METADATA'>}
      * @memberof AplusContentApiListContentDocumentAsinRelations
      */
-    readonly includedDataSet?: Set<'METADATA'>
+    readonly includedDataSet?: Set<ListContentDocumentAsinRelationsIncludedDataSetEnum>
 
     /**
      * The set of ASINs.
@@ -1117,3 +1117,19 @@ export class AplusContentApi extends BaseAPI {
         return AplusContentApiFp(this.configuration).validateContentDocumentAsinRelations(requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, requestParameters.asinSet, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetContentDocumentIncludedDataSetEnum = {
+    Contents: 'CONTENTS',
+    Metadata: 'METADATA'
+} as const;
+export type GetContentDocumentIncludedDataSetEnum = typeof GetContentDocumentIncludedDataSetEnum[keyof typeof GetContentDocumentIncludedDataSetEnum];
+/**
+ * @export
+ */
+export const ListContentDocumentAsinRelationsIncludedDataSetEnum = {
+    Metadata: 'METADATA'
+} as const;
+export type ListContentDocumentAsinRelationsIncludedDataSetEnum = typeof ListContentDocumentAsinRelationsIncludedDataSetEnum[keyof typeof ListContentDocumentAsinRelationsIncludedDataSetEnum];

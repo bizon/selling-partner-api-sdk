@@ -115,3 +115,4 @@ export class SellersApi extends BaseAPI {
         return SellersApiFp(this.configuration).getMarketplaceParticipations(options).then((request) => request(this.axios, this.basePath));
     }
 }
+

@@ -92,11 +92,11 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} sku A selling partner provided identifier for an Amazon listing.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
          * @param {string} [issueLocale] A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale.
-         * @param {Array<'summaries' | 'attributes' | 'issues' | 'offers' | 'fulfillmentAvailability' | 'procurement'>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
+         * @param {Array<GetListingsItemIncludedDataEnum>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, includedData?: Array<'summaries' | 'attributes' | 'issues' | 'offers' | 'fulfillmentAvailability' | 'procurement'>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, includedData?: Array<GetListingsItemIncludedDataEnum>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerId' is not null or undefined
             assertParamExists('getListingsItem', 'sellerId', sellerId)
             // verify required parameter 'sku' is not null or undefined
@@ -279,11 +279,11 @@ export const ListingsApiFp = function(configuration?: Configuration) {
          * @param {string} sku A selling partner provided identifier for an Amazon listing.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
          * @param {string} [issueLocale] A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale.
-         * @param {Array<'summaries' | 'attributes' | 'issues' | 'offers' | 'fulfillmentAvailability' | 'procurement'>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
+         * @param {Array<GetListingsItemIncludedDataEnum>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, includedData?: Array<'summaries' | 'attributes' | 'issues' | 'offers' | 'fulfillmentAvailability' | 'procurement'>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Item>> {
+        async getListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, includedData?: Array<GetListingsItemIncludedDataEnum>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Item>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getListingsItem(sellerId, sku, marketplaceIds, issueLocale, includedData, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -438,7 +438,7 @@ export interface ListingsApiGetListingsItemRequest {
      * @type {Array<'summaries' | 'attributes' | 'issues' | 'offers' | 'fulfillmentAvailability' | 'procurement'>}
      * @memberof ListingsApiGetListingsItem
      */
-    readonly includedData?: Array<'summaries' | 'attributes' | 'issues' | 'offers' | 'fulfillmentAvailability' | 'procurement'>
+    readonly includedData?: Array<GetListingsItemIncludedDataEnum>
 }
 
 /**
@@ -576,3 +576,16 @@ export class ListingsApi extends BaseAPI {
         return ListingsApiFp(this.configuration).putListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetListingsItemIncludedDataEnum = {
+    Summaries: 'summaries',
+    Attributes: 'attributes',
+    Issues: 'issues',
+    Offers: 'offers',
+    FulfillmentAvailability: 'fulfillmentAvailability',
+    Procurement: 'procurement'
+} as const;
+export type GetListingsItemIncludedDataEnum = typeof GetListingsItemIncludedDataEnum[keyof typeof GetListingsItemIncludedDataEnum];

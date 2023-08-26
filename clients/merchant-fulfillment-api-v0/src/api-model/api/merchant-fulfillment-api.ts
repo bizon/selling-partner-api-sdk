@@ -699,3 +699,4 @@ export class MerchantFulfillmentApi extends BaseAPI {
         return MerchantFulfillmentApiFp(this.configuration).getShipment(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

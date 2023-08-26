@@ -40,7 +40,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
         /**
          * Returns the Details about Shipment, Carrier Details,  status of the shipment, container details and other details related to shipment based on the filter parameters value that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {number} [limit] The limit to the number of records returned. Default value is 50 records.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort in ascending or descending order by purchase order creation date.
+         * @param {GetShipmentDetailsSortOrderEnum} [sortOrder] Sort in ascending or descending order by purchase order creation date.
          * @param {string} [nextToken] Used for pagination when there are more shipments than the specified result size limit.
          * @param {string} [createdAfter] Get Shipment Details that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [createdBefore] Get Shipment Details that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
@@ -66,7 +66,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipmentDetails: async (limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, createdAfter?: string, createdBefore?: string, shipmentConfirmedBefore?: string, shipmentConfirmedAfter?: string, packageLabelCreatedBefore?: string, packageLabelCreatedAfter?: string, shippedBefore?: string, shippedAfter?: string, estimatedDeliveryBefore?: string, estimatedDeliveryAfter?: string, shipmentDeliveryBefore?: string, shipmentDeliveryAfter?: string, requestedPickUpBefore?: string, requestedPickUpAfter?: string, scheduledPickUpBefore?: string, scheduledPickUpAfter?: string, currentShipmentStatus?: string, vendorShipmentIdentifier?: string, buyerReferenceNumber?: string, buyerWarehouseCode?: string, sellerWarehouseCode?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getShipmentDetails: async (limit?: number, sortOrder?: GetShipmentDetailsSortOrderEnum, nextToken?: string, createdAfter?: string, createdBefore?: string, shipmentConfirmedBefore?: string, shipmentConfirmedAfter?: string, packageLabelCreatedBefore?: string, packageLabelCreatedAfter?: string, shippedBefore?: string, shippedAfter?: string, estimatedDeliveryBefore?: string, estimatedDeliveryAfter?: string, shipmentDeliveryBefore?: string, shipmentDeliveryAfter?: string, requestedPickUpBefore?: string, requestedPickUpAfter?: string, scheduledPickUpBefore?: string, scheduledPickUpAfter?: string, currentShipmentStatus?: string, vendorShipmentIdentifier?: string, buyerReferenceNumber?: string, buyerWarehouseCode?: string, sellerWarehouseCode?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/vendor/shipping/v1/shipments`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -221,7 +221,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
         /**
          * Returns transport Labels based on the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {number} [limit] The limit to the number of records returned. Default value is 50 records.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort in ascending or descending order by transport label creation date.
+         * @param {GetShipmentLabelsSortOrderEnum} [sortOrder] Sort in ascending or descending order by transport label creation date.
          * @param {string} [nextToken] Used for pagination when there are more transport label than the specified result size limit.
          * @param {string} [labelCreatedAfter] transport Labels that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [labelcreatedBefore] transport Labels that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
@@ -231,7 +231,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipmentLabels: async (limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, labelCreatedAfter?: string, labelcreatedBefore?: string, buyerReferenceNumber?: string, vendorShipmentIdentifier?: string, sellerWarehouseCode?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getShipmentLabels: async (limit?: number, sortOrder?: GetShipmentLabelsSortOrderEnum, nextToken?: string, labelCreatedAfter?: string, labelcreatedBefore?: string, buyerReferenceNumber?: string, vendorShipmentIdentifier?: string, sellerWarehouseCode?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/vendor/shipping/v1/transportLabels`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -374,7 +374,7 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
         /**
          * Returns the Details about Shipment, Carrier Details,  status of the shipment, container details and other details related to shipment based on the filter parameters value that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {number} [limit] The limit to the number of records returned. Default value is 50 records.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort in ascending or descending order by purchase order creation date.
+         * @param {GetShipmentDetailsSortOrderEnum} [sortOrder] Sort in ascending or descending order by purchase order creation date.
          * @param {string} [nextToken] Used for pagination when there are more shipments than the specified result size limit.
          * @param {string} [createdAfter] Get Shipment Details that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [createdBefore] Get Shipment Details that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
@@ -400,14 +400,14 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShipmentDetails(limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, createdAfter?: string, createdBefore?: string, shipmentConfirmedBefore?: string, shipmentConfirmedAfter?: string, packageLabelCreatedBefore?: string, packageLabelCreatedAfter?: string, shippedBefore?: string, shippedAfter?: string, estimatedDeliveryBefore?: string, estimatedDeliveryAfter?: string, shipmentDeliveryBefore?: string, shipmentDeliveryAfter?: string, requestedPickUpBefore?: string, requestedPickUpAfter?: string, scheduledPickUpBefore?: string, scheduledPickUpAfter?: string, currentShipmentStatus?: string, vendorShipmentIdentifier?: string, buyerReferenceNumber?: string, buyerWarehouseCode?: string, sellerWarehouseCode?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentDetailsResponse>> {
+        async getShipmentDetails(limit?: number, sortOrder?: GetShipmentDetailsSortOrderEnum, nextToken?: string, createdAfter?: string, createdBefore?: string, shipmentConfirmedBefore?: string, shipmentConfirmedAfter?: string, packageLabelCreatedBefore?: string, packageLabelCreatedAfter?: string, shippedBefore?: string, shippedAfter?: string, estimatedDeliveryBefore?: string, estimatedDeliveryAfter?: string, shipmentDeliveryBefore?: string, shipmentDeliveryAfter?: string, requestedPickUpBefore?: string, requestedPickUpAfter?: string, scheduledPickUpBefore?: string, scheduledPickUpAfter?: string, currentShipmentStatus?: string, vendorShipmentIdentifier?: string, buyerReferenceNumber?: string, buyerWarehouseCode?: string, sellerWarehouseCode?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentDetailsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShipmentDetails(limit, sortOrder, nextToken, createdAfter, createdBefore, shipmentConfirmedBefore, shipmentConfirmedAfter, packageLabelCreatedBefore, packageLabelCreatedAfter, shippedBefore, shippedAfter, estimatedDeliveryBefore, estimatedDeliveryAfter, shipmentDeliveryBefore, shipmentDeliveryAfter, requestedPickUpBefore, requestedPickUpAfter, scheduledPickUpBefore, scheduledPickUpAfter, currentShipmentStatus, vendorShipmentIdentifier, buyerReferenceNumber, buyerWarehouseCode, sellerWarehouseCode, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * Returns transport Labels based on the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {number} [limit] The limit to the number of records returned. Default value is 50 records.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort in ascending or descending order by transport label creation date.
+         * @param {GetShipmentLabelsSortOrderEnum} [sortOrder] Sort in ascending or descending order by transport label creation date.
          * @param {string} [nextToken] Used for pagination when there are more transport label than the specified result size limit.
          * @param {string} [labelCreatedAfter] transport Labels that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [labelcreatedBefore] transport Labels that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
@@ -417,7 +417,7 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShipmentLabels(limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, labelCreatedAfter?: string, labelcreatedBefore?: string, buyerReferenceNumber?: string, vendorShipmentIdentifier?: string, sellerWarehouseCode?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentLabels>> {
+        async getShipmentLabels(limit?: number, sortOrder?: GetShipmentLabelsSortOrderEnum, nextToken?: string, labelCreatedAfter?: string, labelcreatedBefore?: string, buyerReferenceNumber?: string, vendorShipmentIdentifier?: string, sellerWarehouseCode?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentLabels>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShipmentLabels(limit, sortOrder, nextToken, labelCreatedAfter, labelcreatedBefore, buyerReferenceNumber, vendorShipmentIdentifier, sellerWarehouseCode, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -508,7 +508,7 @@ export interface VendorShippingApiGetShipmentDetailsRequest {
      * @type {'ASC' | 'DESC'}
      * @memberof VendorShippingApiGetShipmentDetails
      */
-    readonly sortOrder?: 'ASC' | 'DESC'
+    readonly sortOrder?: GetShipmentDetailsSortOrderEnum
 
     /**
      * Used for pagination when there are more shipments than the specified result size limit.
@@ -683,7 +683,7 @@ export interface VendorShippingApiGetShipmentLabelsRequest {
      * @type {'ASC' | 'DESC'}
      * @memberof VendorShippingApiGetShipmentLabels
      */
-    readonly sortOrder?: 'ASC' | 'DESC'
+    readonly sortOrder?: GetShipmentLabelsSortOrderEnum
 
     /**
      * Used for pagination when there are more transport label than the specified result size limit.
@@ -807,3 +807,20 @@ export class VendorShippingApi extends BaseAPI {
         return VendorShippingApiFp(this.configuration).submitShipments(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetShipmentDetailsSortOrderEnum = {
+    Asc: 'ASC',
+    Desc: 'DESC'
+} as const;
+export type GetShipmentDetailsSortOrderEnum = typeof GetShipmentDetailsSortOrderEnum[keyof typeof GetShipmentDetailsSortOrderEnum];
+/**
+ * @export
+ */
+export const GetShipmentLabelsSortOrderEnum = {
+    Asc: 'ASC',
+    Desc: 'DESC'
+} as const;
+export type GetShipmentLabelsSortOrderEnum = typeof GetShipmentLabelsSortOrderEnum[keyof typeof GetShipmentLabelsSortOrderEnum];

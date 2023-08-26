@@ -222,7 +222,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {Array<string>} [feedTypes] A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required.
          * @param {Array<string>} [marketplaceIds] A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify.
          * @param {number} [pageSize] The maximum number of feeds to return in a single call.
-         * @param {Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>} [processingStatuses] A list of processing statuses used to filter feeds.
+         * @param {Array<GetFeedsProcessingStatusesEnum>} [processingStatuses] A list of processing statuses used to filter feeds.
          * @param {string} [createdSince] The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days.
          * @param {string} [createdUntil] The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now.
          * @param {string} [nextToken] A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.
@@ -230,7 +230,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * @deprecated
          * @throws {RequiredError}
          */
-        getFeeds: async (feedTypes?: Array<string>, marketplaceIds?: Array<string>, pageSize?: number, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, createdSince?: string, createdUntil?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getFeeds: async (feedTypes?: Array<string>, marketplaceIds?: Array<string>, pageSize?: number, processingStatuses?: Array<GetFeedsProcessingStatusesEnum>, createdSince?: string, createdUntil?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/feeds/2020-09-04/feeds`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -356,7 +356,7 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * @param {Array<string>} [feedTypes] A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required.
          * @param {Array<string>} [marketplaceIds] A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify.
          * @param {number} [pageSize] The maximum number of feeds to return in a single call.
-         * @param {Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>} [processingStatuses] A list of processing statuses used to filter feeds.
+         * @param {Array<GetFeedsProcessingStatusesEnum>} [processingStatuses] A list of processing statuses used to filter feeds.
          * @param {string} [createdSince] The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days.
          * @param {string} [createdUntil] The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now.
          * @param {string} [nextToken] A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.
@@ -364,7 +364,7 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async getFeeds(feedTypes?: Array<string>, marketplaceIds?: Array<string>, pageSize?: number, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, createdSince?: string, createdUntil?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeedsResponse>> {
+        async getFeeds(feedTypes?: Array<string>, marketplaceIds?: Array<string>, pageSize?: number, processingStatuses?: Array<GetFeedsProcessingStatusesEnum>, createdSince?: string, createdUntil?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeedsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getFeeds(feedTypes, marketplaceIds, pageSize, processingStatuses, createdSince, createdUntil, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -543,7 +543,7 @@ export interface FeedsApiGetFeedsRequest {
      * @type {Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>}
      * @memberof FeedsApiGetFeeds
      */
-    readonly processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>
+    readonly processingStatuses?: Array<GetFeedsProcessingStatusesEnum>
 
     /**
      * The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days.
@@ -646,3 +646,15 @@ export class FeedsApi extends BaseAPI {
         return FeedsApiFp(this.configuration).getFeeds(requestParameters.feedTypes, requestParameters.marketplaceIds, requestParameters.pageSize, requestParameters.processingStatuses, requestParameters.createdSince, requestParameters.createdUntil, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetFeedsProcessingStatusesEnum = {
+    Cancelled: 'CANCELLED',
+    Done: 'DONE',
+    Fatal: 'FATAL',
+    InProgress: 'IN_PROGRESS',
+    InQueue: 'IN_QUEUE'
+} as const;
+export type GetFeedsProcessingStatusesEnum = typeof GetFeedsProcessingStatusesEnum[keyof typeof GetFeedsProcessingStatusesEnum];

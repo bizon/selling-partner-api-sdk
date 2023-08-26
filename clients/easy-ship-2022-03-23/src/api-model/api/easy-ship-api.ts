@@ -482,3 +482,4 @@ export class EasyShipApi extends BaseAPI {
         return EasyShipApiFp(this.configuration).updateScheduledPackages(requestParameters.updateScheduledPackagesRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

@@ -1439,3 +1439,4 @@ export class MessagingApi extends BaseAPI {
         return MessagingApiFp(this.configuration).sendInvoice(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

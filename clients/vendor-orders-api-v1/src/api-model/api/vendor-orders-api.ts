@@ -75,19 +75,19 @@ export const VendorOrdersApiAxiosParamCreator = function (configuration?: Config
          * @param {number} [limit] The limit to the number of records returned. Default value is 100 records.
          * @param {string} [createdAfter] Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [createdBefore] Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort in ascending or descending order by purchase order creation date.
+         * @param {GetPurchaseOrdersSortOrderEnum} [sortOrder] Sort in ascending or descending order by purchase order creation date.
          * @param {string} [nextToken] Used for pagination when there is more purchase orders than the specified result size limit. The token value is returned in the previous API call
          * @param {boolean} [includeDetails] When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true.
          * @param {string} [changedAfter] Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [changedBefore] Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {'Cancelled'} [poItemState] Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero.
+         * @param {GetPurchaseOrdersPoItemStateEnum} [poItemState] Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero.
          * @param {boolean} [isPOChanged] When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false.
-         * @param {'New' | 'Acknowledged' | 'Closed'} [purchaseOrderState] Filters purchase orders based on the purchase order state.
+         * @param {GetPurchaseOrdersPurchaseOrderStateEnum} [purchaseOrderState] Filters purchase orders based on the purchase order state.
          * @param {string} [orderingVendorCode] Filters purchase orders based on the specified ordering vendor code. This value should be same as \&#39;sellingParty.partyId\&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPurchaseOrders: async (limit?: number, createdAfter?: string, createdBefore?: string, sortOrder?: 'ASC' | 'DESC', nextToken?: string, includeDetails?: boolean, changedAfter?: string, changedBefore?: string, poItemState?: 'Cancelled', isPOChanged?: boolean, purchaseOrderState?: 'New' | 'Acknowledged' | 'Closed', orderingVendorCode?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getPurchaseOrders: async (limit?: number, createdAfter?: string, createdBefore?: string, sortOrder?: GetPurchaseOrdersSortOrderEnum, nextToken?: string, includeDetails?: boolean, changedAfter?: string, changedBefore?: string, poItemState?: GetPurchaseOrdersPoItemStateEnum, isPOChanged?: boolean, purchaseOrderState?: GetPurchaseOrdersPurchaseOrderStateEnum, orderingVendorCode?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/vendor/orders/v1/purchaseOrders`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -170,22 +170,22 @@ export const VendorOrdersApiAxiosParamCreator = function (configuration?: Config
         /**
          * Returns purchase order statuses based on the filters that you specify. Date range to search must not be more than 7 days. You can return a list of purchase order statuses using the available filters, or a single purchase order status by providing the purchase order number.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {number} [limit] The limit to the number of records returned. Default value is 100 records.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort in ascending or descending order by purchase order creation date.
+         * @param {GetPurchaseOrdersStatusSortOrderEnum} [sortOrder] Sort in ascending or descending order by purchase order creation date.
          * @param {string} [nextToken] Used for pagination when there are more purchase orders than the specified result size limit.
          * @param {string} [createdAfter] Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [createdBefore] Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [updatedAfter] Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [updatedBefore] Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [purchaseOrderNumber] Provides purchase order status for the specified purchase order number.
-         * @param {'OPEN' | 'CLOSED'} [purchaseOrderStatus] Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses.
-         * @param {'ACCEPTED' | 'PARTIALLY_ACCEPTED' | 'REJECTED' | 'UNCONFIRMED'} [itemConfirmationStatus] Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included.
-         * @param {'NOT_RECEIVED' | 'PARTIALLY_RECEIVED' | 'RECEIVED'} [itemReceiveStatus] Filters purchase orders based on the purchase order\&#39;s item receive status. If the item receive status is not included in the filter, purchase orders for all receive statuses are included.
+         * @param {GetPurchaseOrdersStatusPurchaseOrderStatusEnum} [purchaseOrderStatus] Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses.
+         * @param {GetPurchaseOrdersStatusItemConfirmationStatusEnum} [itemConfirmationStatus] Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included.
+         * @param {GetPurchaseOrdersStatusItemReceiveStatusEnum} [itemReceiveStatus] Filters purchase orders based on the purchase order\&#39;s item receive status. If the item receive status is not included in the filter, purchase orders for all receive statuses are included.
          * @param {string} [orderingVendorCode] Filters purchase orders based on the specified ordering vendor code. This value should be same as \&#39;sellingParty.partyId\&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned.
          * @param {string} [shipToPartyId] Filters purchase orders for a specific buyer\&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as \&#39;shipToParty.partyId\&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer\&#39;s warehouses used for vendor group purchase orders.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPurchaseOrdersStatus: async (limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, createdAfter?: string, createdBefore?: string, updatedAfter?: string, updatedBefore?: string, purchaseOrderNumber?: string, purchaseOrderStatus?: 'OPEN' | 'CLOSED', itemConfirmationStatus?: 'ACCEPTED' | 'PARTIALLY_ACCEPTED' | 'REJECTED' | 'UNCONFIRMED', itemReceiveStatus?: 'NOT_RECEIVED' | 'PARTIALLY_RECEIVED' | 'RECEIVED', orderingVendorCode?: string, shipToPartyId?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getPurchaseOrdersStatus: async (limit?: number, sortOrder?: GetPurchaseOrdersStatusSortOrderEnum, nextToken?: string, createdAfter?: string, createdBefore?: string, updatedAfter?: string, updatedBefore?: string, purchaseOrderNumber?: string, purchaseOrderStatus?: GetPurchaseOrdersStatusPurchaseOrderStatusEnum, itemConfirmationStatus?: GetPurchaseOrdersStatusItemConfirmationStatusEnum, itemReceiveStatus?: GetPurchaseOrdersStatusItemReceiveStatusEnum, orderingVendorCode?: string, shipToPartyId?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/vendor/orders/v1/purchaseOrdersStatus`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -329,41 +329,41 @@ export const VendorOrdersApiFp = function(configuration?: Configuration) {
          * @param {number} [limit] The limit to the number of records returned. Default value is 100 records.
          * @param {string} [createdAfter] Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [createdBefore] Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort in ascending or descending order by purchase order creation date.
+         * @param {GetPurchaseOrdersSortOrderEnum} [sortOrder] Sort in ascending or descending order by purchase order creation date.
          * @param {string} [nextToken] Used for pagination when there is more purchase orders than the specified result size limit. The token value is returned in the previous API call
          * @param {boolean} [includeDetails] When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true.
          * @param {string} [changedAfter] Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [changedBefore] Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {'Cancelled'} [poItemState] Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero.
+         * @param {GetPurchaseOrdersPoItemStateEnum} [poItemState] Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero.
          * @param {boolean} [isPOChanged] When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false.
-         * @param {'New' | 'Acknowledged' | 'Closed'} [purchaseOrderState] Filters purchase orders based on the purchase order state.
+         * @param {GetPurchaseOrdersPurchaseOrderStateEnum} [purchaseOrderState] Filters purchase orders based on the purchase order state.
          * @param {string} [orderingVendorCode] Filters purchase orders based on the specified ordering vendor code. This value should be same as \&#39;sellingParty.partyId\&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getPurchaseOrders(limit?: number, createdAfter?: string, createdBefore?: string, sortOrder?: 'ASC' | 'DESC', nextToken?: string, includeDetails?: boolean, changedAfter?: string, changedBefore?: string, poItemState?: 'Cancelled', isPOChanged?: boolean, purchaseOrderState?: 'New' | 'Acknowledged' | 'Closed', orderingVendorCode?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPurchaseOrdersResponse>> {
+        async getPurchaseOrders(limit?: number, createdAfter?: string, createdBefore?: string, sortOrder?: GetPurchaseOrdersSortOrderEnum, nextToken?: string, includeDetails?: boolean, changedAfter?: string, changedBefore?: string, poItemState?: GetPurchaseOrdersPoItemStateEnum, isPOChanged?: boolean, purchaseOrderState?: GetPurchaseOrdersPurchaseOrderStateEnum, orderingVendorCode?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPurchaseOrdersResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getPurchaseOrders(limit, createdAfter, createdBefore, sortOrder, nextToken, includeDetails, changedAfter, changedBefore, poItemState, isPOChanged, purchaseOrderState, orderingVendorCode, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * Returns purchase order statuses based on the filters that you specify. Date range to search must not be more than 7 days. You can return a list of purchase order statuses using the available filters, or a single purchase order status by providing the purchase order number.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {number} [limit] The limit to the number of records returned. Default value is 100 records.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort in ascending or descending order by purchase order creation date.
+         * @param {GetPurchaseOrdersStatusSortOrderEnum} [sortOrder] Sort in ascending or descending order by purchase order creation date.
          * @param {string} [nextToken] Used for pagination when there are more purchase orders than the specified result size limit.
          * @param {string} [createdAfter] Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [createdBefore] Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [updatedAfter] Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [updatedBefore] Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [purchaseOrderNumber] Provides purchase order status for the specified purchase order number.
-         * @param {'OPEN' | 'CLOSED'} [purchaseOrderStatus] Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses.
-         * @param {'ACCEPTED' | 'PARTIALLY_ACCEPTED' | 'REJECTED' | 'UNCONFIRMED'} [itemConfirmationStatus] Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included.
-         * @param {'NOT_RECEIVED' | 'PARTIALLY_RECEIVED' | 'RECEIVED'} [itemReceiveStatus] Filters purchase orders based on the purchase order\&#39;s item receive status. If the item receive status is not included in the filter, purchase orders for all receive statuses are included.
+         * @param {GetPurchaseOrdersStatusPurchaseOrderStatusEnum} [purchaseOrderStatus] Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses.
+         * @param {GetPurchaseOrdersStatusItemConfirmationStatusEnum} [itemConfirmationStatus] Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included.
+         * @param {GetPurchaseOrdersStatusItemReceiveStatusEnum} [itemReceiveStatus] Filters purchase orders based on the purchase order\&#39;s item receive status. If the item receive status is not included in the filter, purchase orders for all receive statuses are included.
          * @param {string} [orderingVendorCode] Filters purchase orders based on the specified ordering vendor code. This value should be same as \&#39;sellingParty.partyId\&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned.
          * @param {string} [shipToPartyId] Filters purchase orders for a specific buyer\&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as \&#39;shipToParty.partyId\&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer\&#39;s warehouses used for vendor group purchase orders.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getPurchaseOrdersStatus(limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, createdAfter?: string, createdBefore?: string, updatedAfter?: string, updatedBefore?: string, purchaseOrderNumber?: string, purchaseOrderStatus?: 'OPEN' | 'CLOSED', itemConfirmationStatus?: 'ACCEPTED' | 'PARTIALLY_ACCEPTED' | 'REJECTED' | 'UNCONFIRMED', itemReceiveStatus?: 'NOT_RECEIVED' | 'PARTIALLY_RECEIVED' | 'RECEIVED', orderingVendorCode?: string, shipToPartyId?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPurchaseOrdersStatusResponse>> {
+        async getPurchaseOrdersStatus(limit?: number, sortOrder?: GetPurchaseOrdersStatusSortOrderEnum, nextToken?: string, createdAfter?: string, createdBefore?: string, updatedAfter?: string, updatedBefore?: string, purchaseOrderNumber?: string, purchaseOrderStatus?: GetPurchaseOrdersStatusPurchaseOrderStatusEnum, itemConfirmationStatus?: GetPurchaseOrdersStatusItemConfirmationStatusEnum, itemReceiveStatus?: GetPurchaseOrdersStatusItemReceiveStatusEnum, orderingVendorCode?: string, shipToPartyId?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPurchaseOrdersStatusResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getPurchaseOrdersStatus(limit, sortOrder, nextToken, createdAfter, createdBefore, updatedAfter, updatedBefore, purchaseOrderNumber, purchaseOrderStatus, itemConfirmationStatus, itemReceiveStatus, orderingVendorCode, shipToPartyId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -472,7 +472,7 @@ export interface VendorOrdersApiGetPurchaseOrdersRequest {
      * @type {'ASC' | 'DESC'}
      * @memberof VendorOrdersApiGetPurchaseOrders
      */
-    readonly sortOrder?: 'ASC' | 'DESC'
+    readonly sortOrder?: GetPurchaseOrdersSortOrderEnum
 
     /**
      * Used for pagination when there is more purchase orders than the specified result size limit. The token value is returned in the previous API call
@@ -507,7 +507,7 @@ export interface VendorOrdersApiGetPurchaseOrdersRequest {
      * @type {'Cancelled'}
      * @memberof VendorOrdersApiGetPurchaseOrders
      */
-    readonly poItemState?: 'Cancelled'
+    readonly poItemState?: GetPurchaseOrdersPoItemStateEnum
 
     /**
      * When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false.
@@ -521,7 +521,7 @@ export interface VendorOrdersApiGetPurchaseOrdersRequest {
      * @type {'New' | 'Acknowledged' | 'Closed'}
      * @memberof VendorOrdersApiGetPurchaseOrders
      */
-    readonly purchaseOrderState?: 'New' | 'Acknowledged' | 'Closed'
+    readonly purchaseOrderState?: GetPurchaseOrdersPurchaseOrderStateEnum
 
     /**
      * Filters purchase orders based on the specified ordering vendor code. This value should be same as \&#39;sellingParty.partyId\&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned.
@@ -549,7 +549,7 @@ export interface VendorOrdersApiGetPurchaseOrdersStatusRequest {
      * @type {'ASC' | 'DESC'}
      * @memberof VendorOrdersApiGetPurchaseOrdersStatus
      */
-    readonly sortOrder?: 'ASC' | 'DESC'
+    readonly sortOrder?: GetPurchaseOrdersStatusSortOrderEnum
 
     /**
      * Used for pagination when there are more purchase orders than the specified result size limit.
@@ -598,21 +598,21 @@ export interface VendorOrdersApiGetPurchaseOrdersStatusRequest {
      * @type {'OPEN' | 'CLOSED'}
      * @memberof VendorOrdersApiGetPurchaseOrdersStatus
      */
-    readonly purchaseOrderStatus?: 'OPEN' | 'CLOSED'
+    readonly purchaseOrderStatus?: GetPurchaseOrdersStatusPurchaseOrderStatusEnum
 
     /**
      * Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included.
      * @type {'ACCEPTED' | 'PARTIALLY_ACCEPTED' | 'REJECTED' | 'UNCONFIRMED'}
      * @memberof VendorOrdersApiGetPurchaseOrdersStatus
      */
-    readonly itemConfirmationStatus?: 'ACCEPTED' | 'PARTIALLY_ACCEPTED' | 'REJECTED' | 'UNCONFIRMED'
+    readonly itemConfirmationStatus?: GetPurchaseOrdersStatusItemConfirmationStatusEnum
 
     /**
      * Filters purchase orders based on the purchase order\&#39;s item receive status. If the item receive status is not included in the filter, purchase orders for all receive statuses are included.
      * @type {'NOT_RECEIVED' | 'PARTIALLY_RECEIVED' | 'RECEIVED'}
      * @memberof VendorOrdersApiGetPurchaseOrdersStatus
      */
-    readonly itemReceiveStatus?: 'NOT_RECEIVED' | 'PARTIALLY_RECEIVED' | 'RECEIVED'
+    readonly itemReceiveStatus?: GetPurchaseOrdersStatusItemReceiveStatusEnum
 
     /**
      * Filters purchase orders based on the specified ordering vendor code. This value should be same as \&#39;sellingParty.partyId\&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned.
@@ -694,3 +694,63 @@ export class VendorOrdersApi extends BaseAPI {
         return VendorOrdersApiFp(this.configuration).submitAcknowledgement(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetPurchaseOrdersSortOrderEnum = {
+    Asc: 'ASC',
+    Desc: 'DESC'
+} as const;
+export type GetPurchaseOrdersSortOrderEnum = typeof GetPurchaseOrdersSortOrderEnum[keyof typeof GetPurchaseOrdersSortOrderEnum];
+/**
+ * @export
+ */
+export const GetPurchaseOrdersPoItemStateEnum = {
+    Cancelled: 'Cancelled'
+} as const;
+export type GetPurchaseOrdersPoItemStateEnum = typeof GetPurchaseOrdersPoItemStateEnum[keyof typeof GetPurchaseOrdersPoItemStateEnum];
+/**
+ * @export
+ */
+export const GetPurchaseOrdersPurchaseOrderStateEnum = {
+    New: 'New',
+    Acknowledged: 'Acknowledged',
+    Closed: 'Closed'
+} as const;
+export type GetPurchaseOrdersPurchaseOrderStateEnum = typeof GetPurchaseOrdersPurchaseOrderStateEnum[keyof typeof GetPurchaseOrdersPurchaseOrderStateEnum];
+/**
+ * @export
+ */
+export const GetPurchaseOrdersStatusSortOrderEnum = {
+    Asc: 'ASC',
+    Desc: 'DESC'
+} as const;
+export type GetPurchaseOrdersStatusSortOrderEnum = typeof GetPurchaseOrdersStatusSortOrderEnum[keyof typeof GetPurchaseOrdersStatusSortOrderEnum];
+/**
+ * @export
+ */
+export const GetPurchaseOrdersStatusPurchaseOrderStatusEnum = {
+    Open: 'OPEN',
+    Closed: 'CLOSED'
+} as const;
+export type GetPurchaseOrdersStatusPurchaseOrderStatusEnum = typeof GetPurchaseOrdersStatusPurchaseOrderStatusEnum[keyof typeof GetPurchaseOrdersStatusPurchaseOrderStatusEnum];
+/**
+ * @export
+ */
+export const GetPurchaseOrdersStatusItemConfirmationStatusEnum = {
+    Accepted: 'ACCEPTED',
+    PartiallyAccepted: 'PARTIALLY_ACCEPTED',
+    Rejected: 'REJECTED',
+    Unconfirmed: 'UNCONFIRMED'
+} as const;
+export type GetPurchaseOrdersStatusItemConfirmationStatusEnum = typeof GetPurchaseOrdersStatusItemConfirmationStatusEnum[keyof typeof GetPurchaseOrdersStatusItemConfirmationStatusEnum];
+/**
+ * @export
+ */
+export const GetPurchaseOrdersStatusItemReceiveStatusEnum = {
+    NotReceived: 'NOT_RECEIVED',
+    PartiallyReceived: 'PARTIALLY_RECEIVED',
+    Received: 'RECEIVED'
+} as const;
+export type GetPurchaseOrdersStatusItemReceiveStatusEnum = typeof GetPurchaseOrdersStatusItemReceiveStatusEnum[keyof typeof GetPurchaseOrdersStatusItemReceiveStatusEnum];

@@ -712,3 +712,4 @@ export class NotificationsApi extends BaseAPI {
         return NotificationsApiFp(this.configuration).getSubscriptionById(requestParameters.subscriptionId, requestParameters.notificationType, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

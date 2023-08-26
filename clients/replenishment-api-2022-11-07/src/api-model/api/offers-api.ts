@@ -302,3 +302,4 @@ export class OffersApi extends BaseAPI {
         return OffersApiFp(this.configuration).listOffers(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

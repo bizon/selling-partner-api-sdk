@@ -432,3 +432,4 @@ export class CatalogApi extends BaseAPI {
         return CatalogApiFp(this.configuration).listCatalogItems(requestParameters.marketplaceId, requestParameters.query, requestParameters.queryContextId, requestParameters.sellerSKU, requestParameters.uPC, requestParameters.eAN, requestParameters.iSBN, requestParameters.jAN, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

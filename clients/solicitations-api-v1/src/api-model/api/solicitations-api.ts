@@ -245,3 +245,4 @@ export class SolicitationsApi extends BaseAPI {
         return SolicitationsApiFp(this.configuration).getSolicitationActionsForOrder(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

@@ -34,12 +34,12 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} asin The Amazon Standard Identification Number (ASIN) of the item.
          * @param {string} sellerId A selling partner identifier, such as a merchant account.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
-         * @param {'new_new' | 'new_open_box' | 'new_oem' | 'refurbished_refurbished' | 'used_like_new' | 'used_very_good' | 'used_good' | 'used_acceptable' | 'collectible_like_new' | 'collectible_very_good' | 'collectible_good' | 'collectible_acceptable' | 'club_club'} [conditionType] The condition used to filter restrictions.
+         * @param {GetListingsRestrictionsConditionTypeEnum} [conditionType] The condition used to filter restrictions.
          * @param {string} [reasonLocale] A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getListingsRestrictions: async (asin: string, sellerId: string, marketplaceIds: Array<string>, conditionType?: 'new_new' | 'new_open_box' | 'new_oem' | 'refurbished_refurbished' | 'used_like_new' | 'used_very_good' | 'used_good' | 'used_acceptable' | 'collectible_like_new' | 'collectible_very_good' | 'collectible_good' | 'collectible_acceptable' | 'club_club', reasonLocale?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getListingsRestrictions: async (asin: string, sellerId: string, marketplaceIds: Array<string>, conditionType?: GetListingsRestrictionsConditionTypeEnum, reasonLocale?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'asin' is not null or undefined
             assertParamExists('getListingsRestrictions', 'asin', asin)
             // verify required parameter 'sellerId' is not null or undefined
@@ -104,12 +104,12 @@ export const ListingsApiFp = function(configuration?: Configuration) {
          * @param {string} asin The Amazon Standard Identification Number (ASIN) of the item.
          * @param {string} sellerId A selling partner identifier, such as a merchant account.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
-         * @param {'new_new' | 'new_open_box' | 'new_oem' | 'refurbished_refurbished' | 'used_like_new' | 'used_very_good' | 'used_good' | 'used_acceptable' | 'collectible_like_new' | 'collectible_very_good' | 'collectible_good' | 'collectible_acceptable' | 'club_club'} [conditionType] The condition used to filter restrictions.
+         * @param {GetListingsRestrictionsConditionTypeEnum} [conditionType] The condition used to filter restrictions.
          * @param {string} [reasonLocale] A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getListingsRestrictions(asin: string, sellerId: string, marketplaceIds: Array<string>, conditionType?: 'new_new' | 'new_open_box' | 'new_oem' | 'refurbished_refurbished' | 'used_like_new' | 'used_very_good' | 'used_good' | 'used_acceptable' | 'collectible_like_new' | 'collectible_very_good' | 'collectible_good' | 'collectible_acceptable' | 'club_club', reasonLocale?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RestrictionList>> {
+        async getListingsRestrictions(asin: string, sellerId: string, marketplaceIds: Array<string>, conditionType?: GetListingsRestrictionsConditionTypeEnum, reasonLocale?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RestrictionList>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getListingsRestrictions(asin, sellerId, marketplaceIds, conditionType, reasonLocale, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -167,7 +167,7 @@ export interface ListingsApiGetListingsRestrictionsRequest {
      * @type {'new_new' | 'new_open_box' | 'new_oem' | 'refurbished_refurbished' | 'used_like_new' | 'used_very_good' | 'used_good' | 'used_acceptable' | 'collectible_like_new' | 'collectible_very_good' | 'collectible_good' | 'collectible_acceptable' | 'club_club'}
      * @memberof ListingsApiGetListingsRestrictions
      */
-    readonly conditionType?: 'new_new' | 'new_open_box' | 'new_oem' | 'refurbished_refurbished' | 'used_like_new' | 'used_very_good' | 'used_good' | 'used_acceptable' | 'collectible_like_new' | 'collectible_very_good' | 'collectible_good' | 'collectible_acceptable' | 'club_club'
+    readonly conditionType?: GetListingsRestrictionsConditionTypeEnum
 
     /**
      * A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale.
@@ -195,3 +195,23 @@ export class ListingsApi extends BaseAPI {
         return ListingsApiFp(this.configuration).getListingsRestrictions(requestParameters.asin, requestParameters.sellerId, requestParameters.marketplaceIds, requestParameters.conditionType, requestParameters.reasonLocale, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetListingsRestrictionsConditionTypeEnum = {
+    NewNew: 'new_new',
+    NewOpenBox: 'new_open_box',
+    NewOem: 'new_oem',
+    RefurbishedRefurbished: 'refurbished_refurbished',
+    UsedLikeNew: 'used_like_new',
+    UsedVeryGood: 'used_very_good',
+    UsedGood: 'used_good',
+    UsedAcceptable: 'used_acceptable',
+    CollectibleLikeNew: 'collectible_like_new',
+    CollectibleVeryGood: 'collectible_very_good',
+    CollectibleGood: 'collectible_good',
+    CollectibleAcceptable: 'collectible_acceptable',
+    ClubClub: 'club_club'
+} as const;
+export type GetListingsRestrictionsConditionTypeEnum = typeof GetListingsRestrictionsConditionTypeEnum[keyof typeof GetListingsRestrictionsConditionTypeEnum];

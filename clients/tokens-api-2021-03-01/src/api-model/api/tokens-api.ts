@@ -142,3 +142,4 @@ export class TokensApi extends BaseAPI {
         return TokensApiFp(this.configuration).createRestrictedDataToken(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

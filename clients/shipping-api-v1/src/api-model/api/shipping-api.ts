@@ -803,3 +803,4 @@ export class ShippingApi extends BaseAPI {
         return ShippingApiFp(this.configuration).retrieveShippingLabel(requestParameters.shipmentId, requestParameters.trackingId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

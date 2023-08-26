@@ -140,3 +140,4 @@ export class VendorPaymentsApi extends BaseAPI {
         return VendorPaymentsApiFp(this.configuration).submitInvoices(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

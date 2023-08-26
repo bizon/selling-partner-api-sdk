@@ -93,7 +93,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
 
             if (needByDate !== undefined) {
                 localVarQueryParameter['NeedByDate'] = (needByDate as any instanceof Date) ?
-                    (needByDate as any).toISOString().substr(0,10) :
+                    (needByDate as any).toISOString().substring(0,10) :
                     needByDate;
             }
 
@@ -334,8 +334,8 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
         /**
          * Returns package/pallet labels for faster and more accurate shipment processing at the Amazon fulfillment center.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation.
-         * @param {'PackageLabel_Letter_2' | 'PackageLabel_Letter_4' | 'PackageLabel_Letter_6' | 'PackageLabel_Letter_6_CarrierLeft' | 'PackageLabel_A4_2' | 'PackageLabel_A4_4' | 'PackageLabel_Plain_Paper' | 'PackageLabel_Plain_Paper_CarrierBottom' | 'PackageLabel_Thermal' | 'PackageLabel_Thermal_Unified' | 'PackageLabel_Thermal_NonPCP' | 'PackageLabel_Thermal_No_Carrier_Rotation'} pageType The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error.
-         * @param {'BARCODE_2D' | 'UNIQUE' | 'PALLET'} labelType The type of labels requested. 
+         * @param {GetLabelsPageTypeEnum} pageType The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error.
+         * @param {GetLabelsLabelTypeEnum} labelType The type of labels requested. 
          * @param {number} [numberOfPackages] The number of packages in the shipment.
          * @param {Array<string>} [packageLabelsToPrint] A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code.
          * @param {number} [numberOfPallets] The number of pallets in the shipment. This returns four identical labels for each pallet.
@@ -344,7 +344,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getLabels: async (shipmentId: string, pageType: 'PackageLabel_Letter_2' | 'PackageLabel_Letter_4' | 'PackageLabel_Letter_6' | 'PackageLabel_Letter_6_CarrierLeft' | 'PackageLabel_A4_2' | 'PackageLabel_A4_4' | 'PackageLabel_Plain_Paper' | 'PackageLabel_Plain_Paper_CarrierBottom' | 'PackageLabel_Thermal' | 'PackageLabel_Thermal_Unified' | 'PackageLabel_Thermal_NonPCP' | 'PackageLabel_Thermal_No_Carrier_Rotation', labelType: 'BARCODE_2D' | 'UNIQUE' | 'PALLET', numberOfPackages?: number, packageLabelsToPrint?: Array<string>, numberOfPallets?: number, pageSize?: number, pageStartIndex?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getLabels: async (shipmentId: string, pageType: GetLabelsPageTypeEnum, labelType: GetLabelsLabelTypeEnum, numberOfPackages?: number, packageLabelsToPrint?: Array<string>, numberOfPallets?: number, pageSize?: number, pageStartIndex?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getLabels', 'shipmentId', shipmentId)
             // verify required parameter 'pageType' is not null or undefined
@@ -491,7 +491,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
         },
         /**
          * Returns a list of items in a specified inbound shipment, or a list of items that were updated within a specified time frame.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {'DATE_RANGE' | 'NEXT_TOKEN'} queryType Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request.
+         * @param {GetShipmentItemsQueryTypeEnum} queryType Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request.
          * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored.
          * @param {string} [lastUpdatedAfter] A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller.
          * @param {string} [lastUpdatedBefore] A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller.
@@ -499,7 +499,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipmentItems: async (queryType: 'DATE_RANGE' | 'NEXT_TOKEN', marketplaceId: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getShipmentItems: async (queryType: GetShipmentItemsQueryTypeEnum, marketplaceId: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'queryType' is not null or undefined
             assertParamExists('getShipmentItems', 'queryType', queryType)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -593,9 +593,9 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
         },
         /**
          * Returns a list of inbound shipments based on criteria that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {'SHIPMENT' | 'DATE_RANGE' | 'NEXT_TOKEN'} queryType Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request.
+         * @param {GetShipmentsQueryTypeEnum} queryType Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request.
          * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored.
-         * @param {Array<'WORKING' | 'READY_TO_SHIP' | 'SHIPPED' | 'RECEIVING' | 'CANCELLED' | 'DELETED' | 'CLOSED' | 'ERROR' | 'IN_TRANSIT' | 'DELIVERED' | 'CHECKED_IN'>} [shipmentStatusList] A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify.
+         * @param {Array<GetShipmentsShipmentStatusListEnum>} [shipmentStatusList] A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify.
          * @param {Array<string>} [shipmentIdList] A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned.
          * @param {string} [lastUpdatedAfter] A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller.
          * @param {string} [lastUpdatedBefore] A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller.
@@ -603,7 +603,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipments: async (queryType: 'SHIPMENT' | 'DATE_RANGE' | 'NEXT_TOKEN', marketplaceId: string, shipmentStatusList?: Array<'WORKING' | 'READY_TO_SHIP' | 'SHIPPED' | 'RECEIVING' | 'CANCELLED' | 'DELETED' | 'CLOSED' | 'ERROR' | 'IN_TRANSIT' | 'DELIVERED' | 'CHECKED_IN'>, shipmentIdList?: Array<string>, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getShipments: async (queryType: GetShipmentsQueryTypeEnum, marketplaceId: string, shipmentStatusList?: Array<GetShipmentsShipmentStatusListEnum>, shipmentIdList?: Array<string>, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'queryType' is not null or undefined
             assertParamExists('getShipments', 'queryType', queryType)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -895,8 +895,8 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
         /**
          * Returns package/pallet labels for faster and more accurate shipment processing at the Amazon fulfillment center.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation.
-         * @param {'PackageLabel_Letter_2' | 'PackageLabel_Letter_4' | 'PackageLabel_Letter_6' | 'PackageLabel_Letter_6_CarrierLeft' | 'PackageLabel_A4_2' | 'PackageLabel_A4_4' | 'PackageLabel_Plain_Paper' | 'PackageLabel_Plain_Paper_CarrierBottom' | 'PackageLabel_Thermal' | 'PackageLabel_Thermal_Unified' | 'PackageLabel_Thermal_NonPCP' | 'PackageLabel_Thermal_No_Carrier_Rotation'} pageType The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error.
-         * @param {'BARCODE_2D' | 'UNIQUE' | 'PALLET'} labelType The type of labels requested. 
+         * @param {GetLabelsPageTypeEnum} pageType The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error.
+         * @param {GetLabelsLabelTypeEnum} labelType The type of labels requested. 
          * @param {number} [numberOfPackages] The number of packages in the shipment.
          * @param {Array<string>} [packageLabelsToPrint] A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code.
          * @param {number} [numberOfPallets] The number of pallets in the shipment. This returns four identical labels for each pallet.
@@ -905,7 +905,7 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getLabels(shipmentId: string, pageType: 'PackageLabel_Letter_2' | 'PackageLabel_Letter_4' | 'PackageLabel_Letter_6' | 'PackageLabel_Letter_6_CarrierLeft' | 'PackageLabel_A4_2' | 'PackageLabel_A4_4' | 'PackageLabel_Plain_Paper' | 'PackageLabel_Plain_Paper_CarrierBottom' | 'PackageLabel_Thermal' | 'PackageLabel_Thermal_Unified' | 'PackageLabel_Thermal_NonPCP' | 'PackageLabel_Thermal_No_Carrier_Rotation', labelType: 'BARCODE_2D' | 'UNIQUE' | 'PALLET', numberOfPackages?: number, packageLabelsToPrint?: Array<string>, numberOfPallets?: number, pageSize?: number, pageStartIndex?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetLabelsResponse>> {
+        async getLabels(shipmentId: string, pageType: GetLabelsPageTypeEnum, labelType: GetLabelsLabelTypeEnum, numberOfPackages?: number, packageLabelsToPrint?: Array<string>, numberOfPallets?: number, pageSize?: number, pageStartIndex?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetLabelsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getLabels(shipmentId, pageType, labelType, numberOfPackages, packageLabelsToPrint, numberOfPallets, pageSize, pageStartIndex, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -934,7 +934,7 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
         },
         /**
          * Returns a list of items in a specified inbound shipment, or a list of items that were updated within a specified time frame.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {'DATE_RANGE' | 'NEXT_TOKEN'} queryType Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request.
+         * @param {GetShipmentItemsQueryTypeEnum} queryType Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request.
          * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored.
          * @param {string} [lastUpdatedAfter] A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller.
          * @param {string} [lastUpdatedBefore] A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller.
@@ -942,7 +942,7 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShipmentItems(queryType: 'DATE_RANGE' | 'NEXT_TOKEN', marketplaceId: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentItemsResponse>> {
+        async getShipmentItems(queryType: GetShipmentItemsQueryTypeEnum, marketplaceId: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentItemsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShipmentItems(queryType, marketplaceId, lastUpdatedAfter, lastUpdatedBefore, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -959,9 +959,9 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
         },
         /**
          * Returns a list of inbound shipments based on criteria that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {'SHIPMENT' | 'DATE_RANGE' | 'NEXT_TOKEN'} queryType Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request.
+         * @param {GetShipmentsQueryTypeEnum} queryType Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request.
          * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored.
-         * @param {Array<'WORKING' | 'READY_TO_SHIP' | 'SHIPPED' | 'RECEIVING' | 'CANCELLED' | 'DELETED' | 'CLOSED' | 'ERROR' | 'IN_TRANSIT' | 'DELIVERED' | 'CHECKED_IN'>} [shipmentStatusList] A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify.
+         * @param {Array<GetShipmentsShipmentStatusListEnum>} [shipmentStatusList] A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify.
          * @param {Array<string>} [shipmentIdList] A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned.
          * @param {string} [lastUpdatedAfter] A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller.
          * @param {string} [lastUpdatedBefore] A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller.
@@ -969,7 +969,7 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShipments(queryType: 'SHIPMENT' | 'DATE_RANGE' | 'NEXT_TOKEN', marketplaceId: string, shipmentStatusList?: Array<'WORKING' | 'READY_TO_SHIP' | 'SHIPPED' | 'RECEIVING' | 'CANCELLED' | 'DELETED' | 'CLOSED' | 'ERROR' | 'IN_TRANSIT' | 'DELIVERED' | 'CHECKED_IN'>, shipmentIdList?: Array<string>, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentsResponse>> {
+        async getShipments(queryType: GetShipmentsQueryTypeEnum, marketplaceId: string, shipmentStatusList?: Array<GetShipmentsShipmentStatusListEnum>, shipmentIdList?: Array<string>, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShipments(queryType, marketplaceId, shipmentStatusList, shipmentIdList, lastUpdatedAfter, lastUpdatedBefore, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1332,14 +1332,14 @@ export interface FbaInboundApiGetLabelsRequest {
      * @type {'PackageLabel_Letter_2' | 'PackageLabel_Letter_4' | 'PackageLabel_Letter_6' | 'PackageLabel_Letter_6_CarrierLeft' | 'PackageLabel_A4_2' | 'PackageLabel_A4_4' | 'PackageLabel_Plain_Paper' | 'PackageLabel_Plain_Paper_CarrierBottom' | 'PackageLabel_Thermal' | 'PackageLabel_Thermal_Unified' | 'PackageLabel_Thermal_NonPCP' | 'PackageLabel_Thermal_No_Carrier_Rotation'}
      * @memberof FbaInboundApiGetLabels
      */
-    readonly pageType: 'PackageLabel_Letter_2' | 'PackageLabel_Letter_4' | 'PackageLabel_Letter_6' | 'PackageLabel_Letter_6_CarrierLeft' | 'PackageLabel_A4_2' | 'PackageLabel_A4_4' | 'PackageLabel_Plain_Paper' | 'PackageLabel_Plain_Paper_CarrierBottom' | 'PackageLabel_Thermal' | 'PackageLabel_Thermal_Unified' | 'PackageLabel_Thermal_NonPCP' | 'PackageLabel_Thermal_No_Carrier_Rotation'
+    readonly pageType: GetLabelsPageTypeEnum
 
     /**
      * The type of labels requested. 
      * @type {'BARCODE_2D' | 'UNIQUE' | 'PALLET'}
      * @memberof FbaInboundApiGetLabels
      */
-    readonly labelType: 'BARCODE_2D' | 'UNIQUE' | 'PALLET'
+    readonly labelType: GetLabelsLabelTypeEnum
 
     /**
      * The number of packages in the shipment.
@@ -1437,7 +1437,7 @@ export interface FbaInboundApiGetShipmentItemsRequest {
      * @type {'DATE_RANGE' | 'NEXT_TOKEN'}
      * @memberof FbaInboundApiGetShipmentItems
      */
-    readonly queryType: 'DATE_RANGE' | 'NEXT_TOKEN'
+    readonly queryType: GetShipmentItemsQueryTypeEnum
 
     /**
      * A marketplace identifier. Specifies the marketplace where the product would be stored.
@@ -1500,7 +1500,7 @@ export interface FbaInboundApiGetShipmentsRequest {
      * @type {'SHIPMENT' | 'DATE_RANGE' | 'NEXT_TOKEN'}
      * @memberof FbaInboundApiGetShipments
      */
-    readonly queryType: 'SHIPMENT' | 'DATE_RANGE' | 'NEXT_TOKEN'
+    readonly queryType: GetShipmentsQueryTypeEnum
 
     /**
      * A marketplace identifier. Specifies the marketplace where the product would be stored.
@@ -1514,7 +1514,7 @@ export interface FbaInboundApiGetShipmentsRequest {
      * @type {Array<'WORKING' | 'READY_TO_SHIP' | 'SHIPPED' | 'RECEIVING' | 'CANCELLED' | 'DELETED' | 'CLOSED' | 'ERROR' | 'IN_TRANSIT' | 'DELIVERED' | 'CHECKED_IN'>}
      * @memberof FbaInboundApiGetShipments
      */
-    readonly shipmentStatusList?: Array<'WORKING' | 'READY_TO_SHIP' | 'SHIPPED' | 'RECEIVING' | 'CANCELLED' | 'DELETED' | 'CLOSED' | 'ERROR' | 'IN_TRANSIT' | 'DELIVERED' | 'CHECKED_IN'>
+    readonly shipmentStatusList?: Array<GetShipmentsShipmentStatusListEnum>
 
     /**
      * A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned.
@@ -1809,3 +1809,65 @@ export class FbaInboundApi extends BaseAPI {
         return FbaInboundApiFp(this.configuration).voidTransport(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetLabelsPageTypeEnum = {
+    Letter2: 'PackageLabel_Letter_2',
+    Letter4: 'PackageLabel_Letter_4',
+    Letter6: 'PackageLabel_Letter_6',
+    Letter6CarrierLeft: 'PackageLabel_Letter_6_CarrierLeft',
+    A42: 'PackageLabel_A4_2',
+    A44: 'PackageLabel_A4_4',
+    PlainPaper: 'PackageLabel_Plain_Paper',
+    PlainPaperCarrierBottom: 'PackageLabel_Plain_Paper_CarrierBottom',
+    Thermal: 'PackageLabel_Thermal',
+    ThermalUnified: 'PackageLabel_Thermal_Unified',
+    ThermalNonPcp: 'PackageLabel_Thermal_NonPCP',
+    ThermalNoCarrierRotation: 'PackageLabel_Thermal_No_Carrier_Rotation'
+} as const;
+export type GetLabelsPageTypeEnum = typeof GetLabelsPageTypeEnum[keyof typeof GetLabelsPageTypeEnum];
+/**
+ * @export
+ */
+export const GetLabelsLabelTypeEnum = {
+    Barcode2D: 'BARCODE_2D',
+    Unique: 'UNIQUE',
+    Pallet: 'PALLET'
+} as const;
+export type GetLabelsLabelTypeEnum = typeof GetLabelsLabelTypeEnum[keyof typeof GetLabelsLabelTypeEnum];
+/**
+ * @export
+ */
+export const GetShipmentItemsQueryTypeEnum = {
+    DateRange: 'DATE_RANGE',
+    NextToken: 'NEXT_TOKEN'
+} as const;
+export type GetShipmentItemsQueryTypeEnum = typeof GetShipmentItemsQueryTypeEnum[keyof typeof GetShipmentItemsQueryTypeEnum];
+/**
+ * @export
+ */
+export const GetShipmentsQueryTypeEnum = {
+    Shipment: 'SHIPMENT',
+    DateRange: 'DATE_RANGE',
+    NextToken: 'NEXT_TOKEN'
+} as const;
+export type GetShipmentsQueryTypeEnum = typeof GetShipmentsQueryTypeEnum[keyof typeof GetShipmentsQueryTypeEnum];
+/**
+ * @export
+ */
+export const GetShipmentsShipmentStatusListEnum = {
+    Working: 'WORKING',
+    ReadyToShip: 'READY_TO_SHIP',
+    Shipped: 'SHIPPED',
+    Receiving: 'RECEIVING',
+    Cancelled: 'CANCELLED',
+    Deleted: 'DELETED',
+    Closed: 'CLOSED',
+    Error: 'ERROR',
+    InTransit: 'IN_TRANSIT',
+    Delivered: 'DELIVERED',
+    CheckedIn: 'CHECKED_IN'
+} as const;
+export type GetShipmentsShipmentStatusListEnum = typeof GetShipmentsShipmentStatusListEnum[keyof typeof GetShipmentsShipmentStatusListEnum];

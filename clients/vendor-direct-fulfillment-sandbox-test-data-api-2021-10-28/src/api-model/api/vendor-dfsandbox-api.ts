@@ -221,3 +221,4 @@ export class VendorDFSandboxApi extends BaseAPI {
         return VendorDFSandboxApiFp(this.configuration).getOrderScenarios(requestParameters.transactionId, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

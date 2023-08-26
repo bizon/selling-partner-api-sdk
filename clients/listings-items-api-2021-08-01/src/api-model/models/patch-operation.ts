@@ -34,10 +34,10 @@ export interface PatchOperation {
     'path': string;
     /**
      * JSON value to add, replace, or delete.
-     * @type {Array<object>}
+     * @type {Array<{ [key: string]: any; }>}
      * @memberof PatchOperation
      */
-    'value'?: Array<object>;
+    'value'?: Array<{ [key: string]: any; }>;
 }
 
 export const PatchOperationOpEnum = {

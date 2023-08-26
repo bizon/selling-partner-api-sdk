@@ -179,3 +179,4 @@ export class UploadsApi extends BaseAPI {
         return UploadsApiFp(this.configuration).createUploadDestinationForResource(requestParameters.marketplaceIds, requestParameters.contentMD5, requestParameters.resource, requestParameters.contentType, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

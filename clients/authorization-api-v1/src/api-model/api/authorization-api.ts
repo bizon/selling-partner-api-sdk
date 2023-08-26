@@ -173,3 +173,4 @@ export class AuthorizationApi extends BaseAPI {
         return AuthorizationApiFp(this.configuration).getAuthorizationCode(requestParameters.sellingPartnerId, requestParameters.developerId, requestParameters.mwsAuthToken, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

@@ -49,10 +49,10 @@ export interface Item {
     'summaries'?: Array<ItemSummaryByMarketplace>;
     /**
      * JSON object containing structured listings item attribute data keyed by attribute name.
-     * @type {object}
+     * @type {{ [key: string]: any; }}
      * @memberof Item
      */
-    'attributes'?: object;
+    'attributes'?: { [key: string]: any; };
     /**
      * Issues associated with the listings item.
      * @type {Array<Issue>}

@@ -136,3 +136,4 @@ export class VendorTransactionApi extends BaseAPI {
         return VendorTransactionApiFp(this.configuration).getTransaction(requestParameters.transactionId, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

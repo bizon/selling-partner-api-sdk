@@ -52,10 +52,10 @@ export interface Item {
     'asin': string;
     /**
      * A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.
-     * @type {object}
+     * @type {{ [key: string]: any; }}
      * @memberof Item
      */
-    'attributes'?: object;
+    'attributes'?: { [key: string]: any; };
     /**
      * Array of dimensions associated with the item in the Amazon catalog by Amazon marketplace.
      * @type {Array<ItemDimensionsByMarketplace>}

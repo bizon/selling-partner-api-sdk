@@ -600,11 +600,11 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * Gets service job details for the specified filter query.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {Array<string>} marketplaceIds Used to select jobs that were placed in the specified marketplaces.
          * @param {Array<string>} [serviceOrderIds] List of service order ids for the query you want to perform.Max values supported 20.
-         * @param {Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>} [serviceJobStatus] A list of one or more job status by which to filter the list of jobs.
+         * @param {Array<GetServiceJobsServiceJobStatusEnum>} [serviceJobStatus] A list of one or more job status by which to filter the list of jobs.
          * @param {string} [pageToken] String returned in the response of your previous request.
          * @param {number} [pageSize] A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20.
-         * @param {'JOB_DATE' | 'JOB_STATUS'} [sortField] Sort fields on which you want to sort the output.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort order for the query you want to perform.
+         * @param {GetServiceJobsSortFieldEnum} [sortField] Sort fields on which you want to sort the output.
+         * @param {GetServiceJobsSortOrderEnum} [sortOrder] Sort order for the query you want to perform.
          * @param {string} [createdAfter] A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
          * @param {string} [createdBefore] A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format.
          * @param {string} [lastUpdatedAfter] A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if &#x60;createdAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
@@ -617,7 +617,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getServiceJobs: async (marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>, pageToken?: string, pageSize?: number, sortField?: 'JOB_DATE' | 'JOB_STATUS', sortOrder?: 'ASC' | 'DESC', createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, asins?: Array<string>, requiredSkills?: Array<string>, storeIds?: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getServiceJobs: async (marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<GetServiceJobsServiceJobStatusEnum>, pageToken?: string, pageSize?: number, sortField?: GetServiceJobsSortFieldEnum, sortOrder?: GetServiceJobsSortOrderEnum, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, asins?: Array<string>, requiredSkills?: Array<string>, storeIds?: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('getServiceJobs', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/service/v1/serviceJobs`;
@@ -1038,11 +1038,11 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * Gets service job details for the specified filter query.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {Array<string>} marketplaceIds Used to select jobs that were placed in the specified marketplaces.
          * @param {Array<string>} [serviceOrderIds] List of service order ids for the query you want to perform.Max values supported 20.
-         * @param {Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>} [serviceJobStatus] A list of one or more job status by which to filter the list of jobs.
+         * @param {Array<GetServiceJobsServiceJobStatusEnum>} [serviceJobStatus] A list of one or more job status by which to filter the list of jobs.
          * @param {string} [pageToken] String returned in the response of your previous request.
          * @param {number} [pageSize] A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20.
-         * @param {'JOB_DATE' | 'JOB_STATUS'} [sortField] Sort fields on which you want to sort the output.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort order for the query you want to perform.
+         * @param {GetServiceJobsSortFieldEnum} [sortField] Sort fields on which you want to sort the output.
+         * @param {GetServiceJobsSortOrderEnum} [sortOrder] Sort order for the query you want to perform.
          * @param {string} [createdAfter] A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
          * @param {string} [createdBefore] A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format.
          * @param {string} [lastUpdatedAfter] A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if &#x60;createdAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
@@ -1055,7 +1055,7 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getServiceJobs(marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>, pageToken?: string, pageSize?: number, sortField?: 'JOB_DATE' | 'JOB_STATUS', sortOrder?: 'ASC' | 'DESC', createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, asins?: Array<string>, requiredSkills?: Array<string>, storeIds?: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetServiceJobsResponse>> {
+        async getServiceJobs(marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<GetServiceJobsServiceJobStatusEnum>, pageToken?: string, pageSize?: number, sortField?: GetServiceJobsSortFieldEnum, sortOrder?: GetServiceJobsSortOrderEnum, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, asins?: Array<string>, requiredSkills?: Array<string>, storeIds?: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetServiceJobsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getServiceJobs(marketplaceIds, serviceOrderIds, serviceJobStatus, pageToken, pageSize, sortField, sortOrder, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, scheduleStartDate, scheduleEndDate, asins, requiredSkills, storeIds, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1599,7 +1599,7 @@ export interface ServiceApiGetServiceJobsRequest {
      * @type {Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>}
      * @memberof ServiceApiGetServiceJobs
      */
-    readonly serviceJobStatus?: Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>
+    readonly serviceJobStatus?: Array<GetServiceJobsServiceJobStatusEnum>
 
     /**
      * String returned in the response of your previous request.
@@ -1620,14 +1620,14 @@ export interface ServiceApiGetServiceJobsRequest {
      * @type {'JOB_DATE' | 'JOB_STATUS'}
      * @memberof ServiceApiGetServiceJobs
      */
-    readonly sortField?: 'JOB_DATE' | 'JOB_STATUS'
+    readonly sortField?: GetServiceJobsSortFieldEnum
 
     /**
      * Sort order for the query you want to perform.
      * @type {'ASC' | 'DESC'}
      * @memberof ServiceApiGetServiceJobs
      */
-    readonly sortOrder?: 'ASC' | 'DESC'
+    readonly sortOrder?: GetServiceJobsSortOrderEnum
 
     /**
      * A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
@@ -1999,3 +1999,33 @@ export class ServiceApi extends BaseAPI {
         return ServiceApiFp(this.configuration).updateSchedule(requestParameters.resourceId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetServiceJobsServiceJobStatusEnum = {
+    NotServiced: 'NOT_SERVICED',
+    Cancelled: 'CANCELLED',
+    Completed: 'COMPLETED',
+    PendingSchedule: 'PENDING_SCHEDULE',
+    NotFulfillable: 'NOT_FULFILLABLE',
+    Hold: 'HOLD',
+    PaymentDeclined: 'PAYMENT_DECLINED'
+} as const;
+export type GetServiceJobsServiceJobStatusEnum = typeof GetServiceJobsServiceJobStatusEnum[keyof typeof GetServiceJobsServiceJobStatusEnum];
+/**
+ * @export
+ */
+export const GetServiceJobsSortFieldEnum = {
+    Date: 'JOB_DATE',
+    Status: 'JOB_STATUS'
+} as const;
+export type GetServiceJobsSortFieldEnum = typeof GetServiceJobsSortFieldEnum[keyof typeof GetServiceJobsSortFieldEnum];
+/**
+ * @export
+ */
+export const GetServiceJobsSortOrderEnum = {
+    Asc: 'ASC',
+    Desc: 'DESC'
+} as const;
+export type GetServiceJobsSortOrderEnum = typeof GetServiceJobsSortOrderEnum[keyof typeof GetServiceJobsSortOrderEnum];

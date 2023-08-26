@@ -328,3 +328,4 @@ export class FeesApi extends BaseAPI {
         return FeesApiFp(this.configuration).getMyFeesEstimates(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

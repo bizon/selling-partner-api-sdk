@@ -73,15 +73,15 @@ export const VendorOrdersApiAxiosParamCreator = function (configuration?: Config
          * @param {string} createdAfter Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} createdBefore Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [shipFromPartyId] The vendor warehouse identifier for the fulfillment warehouse. If not specified, the result will contain orders for all warehouses.
-         * @param {'NEW' | 'SHIPPED' | 'ACCEPTED' | 'CANCELLED'} [status] Returns only the purchase orders that match the specified status. If not specified, the result will contain orders that match any status.
+         * @param {GetOrdersStatusEnum} [status] Returns only the purchase orders that match the specified status. If not specified, the result will contain orders that match any status.
          * @param {number} [limit] The limit to the number of purchase orders returned.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort the list in ascending or descending order by order creation date.
+         * @param {GetOrdersSortOrderEnum} [sortOrder] Sort the list in ascending or descending order by order creation date.
          * @param {string} [nextToken] Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
          * @param {boolean} [includeDetails] When true, returns the complete purchase order details. Otherwise, only purchase order numbers are returned.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrders: async (createdAfter: string, createdBefore: string, shipFromPartyId?: string, status?: 'NEW' | 'SHIPPED' | 'ACCEPTED' | 'CANCELLED', limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, includeDetails?: boolean, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getOrders: async (createdAfter: string, createdBefore: string, shipFromPartyId?: string, status?: GetOrdersStatusEnum, limit?: number, sortOrder?: GetOrdersSortOrderEnum, nextToken?: string, includeDetails?: boolean, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'createdAfter' is not null or undefined
             assertParamExists('getOrders', 'createdAfter', createdAfter)
             // verify required parameter 'createdBefore' is not null or undefined
@@ -205,15 +205,15 @@ export const VendorOrdersApiFp = function(configuration?: Configuration) {
          * @param {string} createdAfter Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} createdBefore Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [shipFromPartyId] The vendor warehouse identifier for the fulfillment warehouse. If not specified, the result will contain orders for all warehouses.
-         * @param {'NEW' | 'SHIPPED' | 'ACCEPTED' | 'CANCELLED'} [status] Returns only the purchase orders that match the specified status. If not specified, the result will contain orders that match any status.
+         * @param {GetOrdersStatusEnum} [status] Returns only the purchase orders that match the specified status. If not specified, the result will contain orders that match any status.
          * @param {number} [limit] The limit to the number of purchase orders returned.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort the list in ascending or descending order by order creation date.
+         * @param {GetOrdersSortOrderEnum} [sortOrder] Sort the list in ascending or descending order by order creation date.
          * @param {string} [nextToken] Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
          * @param {boolean} [includeDetails] When true, returns the complete purchase order details. Otherwise, only purchase order numbers are returned.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrders(createdAfter: string, createdBefore: string, shipFromPartyId?: string, status?: 'NEW' | 'SHIPPED' | 'ACCEPTED' | 'CANCELLED', limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, includeDetails?: boolean, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrdersResponse>> {
+        async getOrders(createdAfter: string, createdBefore: string, shipFromPartyId?: string, status?: GetOrdersStatusEnum, limit?: number, sortOrder?: GetOrdersSortOrderEnum, nextToken?: string, includeDetails?: boolean, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrdersResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrders(createdAfter, createdBefore, shipFromPartyId, status, limit, sortOrder, nextToken, includeDetails, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -313,7 +313,7 @@ export interface VendorOrdersApiGetOrdersRequest {
      * @type {'NEW' | 'SHIPPED' | 'ACCEPTED' | 'CANCELLED'}
      * @memberof VendorOrdersApiGetOrders
      */
-    readonly status?: 'NEW' | 'SHIPPED' | 'ACCEPTED' | 'CANCELLED'
+    readonly status?: GetOrdersStatusEnum
 
     /**
      * The limit to the number of purchase orders returned.
@@ -327,7 +327,7 @@ export interface VendorOrdersApiGetOrdersRequest {
      * @type {'ASC' | 'DESC'}
      * @memberof VendorOrdersApiGetOrders
      */
-    readonly sortOrder?: 'ASC' | 'DESC'
+    readonly sortOrder?: GetOrdersSortOrderEnum
 
     /**
      * Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
@@ -398,3 +398,22 @@ export class VendorOrdersApi extends BaseAPI {
         return VendorOrdersApiFp(this.configuration).submitAcknowledgement(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetOrdersStatusEnum = {
+    New: 'NEW',
+    Shipped: 'SHIPPED',
+    Accepted: 'ACCEPTED',
+    Cancelled: 'CANCELLED'
+} as const;
+export type GetOrdersStatusEnum = typeof GetOrdersStatusEnum[keyof typeof GetOrdersStatusEnum];
+/**
+ * @export
+ */
+export const GetOrdersSortOrderEnum = {
+    Asc: 'ASC',
+    Desc: 'DESC'
+} as const;
+export type GetOrdersSortOrderEnum = typeof GetOrdersSortOrderEnum[keyof typeof GetOrdersSortOrderEnum];

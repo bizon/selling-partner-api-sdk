@@ -129,12 +129,12 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {string} createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [shipFromPartyId] The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
          * @param {number} [limit] The limit to the number of records returned
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort ASC or DESC by order creation date.
+         * @param {GetCustomerInvoicesSortOrderEnum} [sortOrder] Sort ASC or DESC by order creation date.
          * @param {string} [nextToken] Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCustomerInvoices: async (createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getCustomerInvoices: async (createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: GetCustomerInvoicesSortOrderEnum, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'createdAfter' is not null or undefined
             assertParamExists('getCustomerInvoices', 'createdAfter', createdAfter)
             // verify required parameter 'createdBefore' is not null or undefined
@@ -229,12 +229,12 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {string} createdBefore Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [shipFromPartyId] The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses.
          * @param {number} [limit] The limit to the number of records returned
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort ASC or DESC by packing slip creation date.
+         * @param {GetPackingSlipsSortOrderEnum} [sortOrder] Sort ASC or DESC by packing slip creation date.
          * @param {string} [nextToken] Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPackingSlips: async (createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getPackingSlips: async (createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: GetPackingSlipsSortOrderEnum, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'createdAfter' is not null or undefined
             assertParamExists('getPackingSlips', 'createdAfter', createdAfter)
             // verify required parameter 'createdBefore' is not null or undefined
@@ -329,12 +329,12 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {string} createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [shipFromPartyId] The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
          * @param {number} [limit] The limit to the number of records returned.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort ASC or DESC by order creation date.
+         * @param {GetShippingLabelsSortOrderEnum} [sortOrder] Sort ASC or DESC by order creation date.
          * @param {string} [nextToken] Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShippingLabels: async (createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getShippingLabels: async (createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: GetShippingLabelsSortOrderEnum, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'createdAfter' is not null or undefined
             assertParamExists('getShippingLabels', 'createdAfter', createdAfter)
             // verify required parameter 'createdBefore' is not null or undefined
@@ -532,12 +532,12 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {string} createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [shipFromPartyId] The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
          * @param {number} [limit] The limit to the number of records returned
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort ASC or DESC by order creation date.
+         * @param {GetCustomerInvoicesSortOrderEnum} [sortOrder] Sort ASC or DESC by order creation date.
          * @param {string} [nextToken] Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCustomerInvoices(createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CustomerInvoiceList>> {
+        async getCustomerInvoices(createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: GetCustomerInvoicesSortOrderEnum, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CustomerInvoiceList>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCustomerInvoices(createdAfter, createdBefore, shipFromPartyId, limit, sortOrder, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -557,12 +557,12 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {string} createdBefore Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [shipFromPartyId] The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses.
          * @param {number} [limit] The limit to the number of records returned
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort ASC or DESC by packing slip creation date.
+         * @param {GetPackingSlipsSortOrderEnum} [sortOrder] Sort ASC or DESC by packing slip creation date.
          * @param {string} [nextToken] Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getPackingSlips(createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PackingSlipList>> {
+        async getPackingSlips(createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: GetPackingSlipsSortOrderEnum, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PackingSlipList>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getPackingSlips(createdAfter, createdBefore, shipFromPartyId, limit, sortOrder, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -582,12 +582,12 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {string} createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [shipFromPartyId] The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
          * @param {number} [limit] The limit to the number of records returned.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort ASC or DESC by order creation date.
+         * @param {GetShippingLabelsSortOrderEnum} [sortOrder] Sort ASC or DESC by order creation date.
          * @param {string} [nextToken] Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShippingLabels(createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ShippingLabelList>> {
+        async getShippingLabels(createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: GetShippingLabelsSortOrderEnum, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ShippingLabelList>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShippingLabels(createdAfter, createdBefore, shipFromPartyId, limit, sortOrder, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -798,7 +798,7 @@ export interface VendorShippingApiGetCustomerInvoicesRequest {
      * @type {'ASC' | 'DESC'}
      * @memberof VendorShippingApiGetCustomerInvoices
      */
-    readonly sortOrder?: 'ASC' | 'DESC'
+    readonly sortOrder?: GetCustomerInvoicesSortOrderEnum
 
     /**
      * Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
@@ -861,7 +861,7 @@ export interface VendorShippingApiGetPackingSlipsRequest {
      * @type {'ASC' | 'DESC'}
      * @memberof VendorShippingApiGetPackingSlips
      */
-    readonly sortOrder?: 'ASC' | 'DESC'
+    readonly sortOrder?: GetPackingSlipsSortOrderEnum
 
     /**
      * Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call.
@@ -924,7 +924,7 @@ export interface VendorShippingApiGetShippingLabelsRequest {
      * @type {'ASC' | 'DESC'}
      * @memberof VendorShippingApiGetShippingLabels
      */
-    readonly sortOrder?: 'ASC' | 'DESC'
+    readonly sortOrder?: GetShippingLabelsSortOrderEnum
 
     /**
      * Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call.
@@ -1093,3 +1093,28 @@ export class VendorShippingApi extends BaseAPI {
         return VendorShippingApiFp(this.configuration).submitShippingLabelRequest(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetCustomerInvoicesSortOrderEnum = {
+    Asc: 'ASC',
+    Desc: 'DESC'
+} as const;
+export type GetCustomerInvoicesSortOrderEnum = typeof GetCustomerInvoicesSortOrderEnum[keyof typeof GetCustomerInvoicesSortOrderEnum];
+/**
+ * @export
+ */
+export const GetPackingSlipsSortOrderEnum = {
+    Asc: 'ASC',
+    Desc: 'DESC'
+} as const;
+export type GetPackingSlipsSortOrderEnum = typeof GetPackingSlipsSortOrderEnum[keyof typeof GetPackingSlipsSortOrderEnum];
+/**
+ * @export
+ */
+export const GetShippingLabelsSortOrderEnum = {
+    Asc: 'ASC',
+    Desc: 'DESC'
+} as const;
+export type GetShippingLabelsSortOrderEnum = typeof GetShippingLabelsSortOrderEnum[keyof typeof GetShippingLabelsSortOrderEnum];

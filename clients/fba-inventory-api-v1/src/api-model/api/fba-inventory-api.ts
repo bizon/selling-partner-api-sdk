@@ -31,7 +31,7 @@ export const FbaInventoryApiAxiosParamCreator = function (configuration?: Config
     return {
         /**
          * Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the `startDateTime`, `sellerSkus` and `sellerSku` parameters:  - All inventory summaries with available details are returned when the `startDateTime`, `sellerSkus` and `sellerSku` parameters are omitted. - When `startDateTime` is provided, the operation returns inventory summaries that have had changes after the date and time specified. The `sellerSkus` and `sellerSku` parameters are ignored. **Important:** To avoid errors, use both `startDateTime` and `nextToken` to get the next page of inventory summaries that have changed after the date and time specified. - When the `sellerSkus` parameter is provided, the operation returns inventory summaries for only the specified `sellerSkus`. The `sellerSku` parameter is ignored. - When the `sellerSku` parameter is provided, the operation returns inventory summaries for only the specified `sellerSku`.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {'Marketplace'} granularityType The granularity type for the inventory aggregation level.
+         * @param {GetInventorySummariesGranularityTypeEnum} granularityType The granularity type for the inventory aggregation level.
          * @param {string} granularityId The granularity ID for the inventory aggregation level.
          * @param {Array<string>} marketplaceIds The marketplace ID for the marketplace for which to return inventory summaries.
          * @param {boolean} [details] true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value).
@@ -42,7 +42,7 @@ export const FbaInventoryApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getInventorySummaries: async (granularityType: 'Marketplace', granularityId: string, marketplaceIds: Array<string>, details?: boolean, startDateTime?: string, sellerSkus?: Array<string>, sellerSku?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getInventorySummaries: async (granularityType: GetInventorySummariesGranularityTypeEnum, granularityId: string, marketplaceIds: Array<string>, details?: boolean, startDateTime?: string, sellerSkus?: Array<string>, sellerSku?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'granularityType' is not null or undefined
             assertParamExists('getInventorySummaries', 'granularityType', granularityType)
             // verify required parameter 'granularityId' is not null or undefined
@@ -118,7 +118,7 @@ export const FbaInventoryApiFp = function(configuration?: Configuration) {
     return {
         /**
          * Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the `startDateTime`, `sellerSkus` and `sellerSku` parameters:  - All inventory summaries with available details are returned when the `startDateTime`, `sellerSkus` and `sellerSku` parameters are omitted. - When `startDateTime` is provided, the operation returns inventory summaries that have had changes after the date and time specified. The `sellerSkus` and `sellerSku` parameters are ignored. **Important:** To avoid errors, use both `startDateTime` and `nextToken` to get the next page of inventory summaries that have changed after the date and time specified. - When the `sellerSkus` parameter is provided, the operation returns inventory summaries for only the specified `sellerSkus`. The `sellerSku` parameter is ignored. - When the `sellerSku` parameter is provided, the operation returns inventory summaries for only the specified `sellerSku`.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {'Marketplace'} granularityType The granularity type for the inventory aggregation level.
+         * @param {GetInventorySummariesGranularityTypeEnum} granularityType The granularity type for the inventory aggregation level.
          * @param {string} granularityId The granularity ID for the inventory aggregation level.
          * @param {Array<string>} marketplaceIds The marketplace ID for the marketplace for which to return inventory summaries.
          * @param {boolean} [details] true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value).
@@ -129,7 +129,7 @@ export const FbaInventoryApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getInventorySummaries(granularityType: 'Marketplace', granularityId: string, marketplaceIds: Array<string>, details?: boolean, startDateTime?: string, sellerSkus?: Array<string>, sellerSku?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInventorySummariesResponse>> {
+        async getInventorySummaries(granularityType: GetInventorySummariesGranularityTypeEnum, granularityId: string, marketplaceIds: Array<string>, details?: boolean, startDateTime?: string, sellerSkus?: Array<string>, sellerSku?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInventorySummariesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getInventorySummaries(granularityType, granularityId, marketplaceIds, details, startDateTime, sellerSkus, sellerSku, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -166,7 +166,7 @@ export interface FbaInventoryApiGetInventorySummariesRequest {
      * @type {'Marketplace'}
      * @memberof FbaInventoryApiGetInventorySummaries
      */
-    readonly granularityType: 'Marketplace'
+    readonly granularityType: GetInventorySummariesGranularityTypeEnum
 
     /**
      * The granularity ID for the inventory aggregation level.
@@ -236,3 +236,11 @@ export class FbaInventoryApi extends BaseAPI {
         return FbaInventoryApiFp(this.configuration).getInventorySummaries(requestParameters.granularityType, requestParameters.granularityId, requestParameters.marketplaceIds, requestParameters.details, requestParameters.startDateTime, requestParameters.sellerSkus, requestParameters.sellerSku, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetInventorySummariesGranularityTypeEnum = {
+    Marketplace: 'Marketplace'
+} as const;
+export type GetInventorySummariesGranularityTypeEnum = typeof GetInventorySummariesGranularityTypeEnum[keyof typeof GetInventorySummariesGranularityTypeEnum];

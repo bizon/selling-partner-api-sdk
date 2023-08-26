@@ -539,3 +539,4 @@ export class DefaultApi extends BaseAPI {
         return DefaultApiFp(this.configuration).listFinancialEventsByOrderId(requestParameters.orderId, requestParameters.maxResultsPerPage, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

@@ -1145,3 +1145,4 @@ export class OrdersV0Api extends BaseAPI {
         return OrdersV0ApiFp(this.configuration).updateVerificationStatus(requestParameters.orderId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

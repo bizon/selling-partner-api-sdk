@@ -514,3 +514,4 @@ export class SmallAndLightApi extends BaseAPI {
         return SmallAndLightApiFp(this.configuration).putSmallAndLightEnrollmentBySellerSKU(requestParameters.sellerSKU, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

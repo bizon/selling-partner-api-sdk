@@ -105,8 +105,9 @@ async function generateClientVersion(modelFilePath: string) {
 
   await fs.rm(`${clientDirectoryPath}/src/api-model`, {recursive: true, force: true})
   await exec(
-    `codegen/node_modules/.bin/openapi-generator-cli generate \
-      --additional-properties=supportsES6=true,useSingleRequestParameter=true,withSeparateModelsAndApi=true,modelPackage=models,apiPackage=api \
+    `pnpm openapi-generator-cli generate \
+      --additional-properties supportsES6=true,useSingleRequestParameter=true,withSeparateModelsAndApi=true,modelPackage=models,apiPackage=api \
+      --inline-schema-options REFACTOR_ALLOF_INLINE_SCHEMAS=true \
       --skip-validate-spec \
       -g typescript-axios \
       -i ${modelPath} \

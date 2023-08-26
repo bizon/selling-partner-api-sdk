@@ -1261,3 +1261,4 @@ export class FbaOutboundApi extends BaseAPI {
         return FbaOutboundApiFp(this.configuration).updateFulfillmentOrder(requestParameters.sellerFulfillmentOrderId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

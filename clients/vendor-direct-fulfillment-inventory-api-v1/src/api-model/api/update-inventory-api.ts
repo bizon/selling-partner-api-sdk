@@ -152,3 +152,4 @@ export class UpdateInventoryApi extends BaseAPI {
         return UpdateInventoryApiFp(this.configuration).submitInventoryUpdate(requestParameters.warehouseId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

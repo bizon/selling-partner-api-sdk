@@ -142,3 +142,4 @@ export class ProductPricingApi extends BaseAPI {
         return ProductPricingApiFp(this.configuration).getFeaturedOfferExpectedPriceBatch(requestParameters.getFeaturedOfferExpectedPriceBatchRequestBody, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

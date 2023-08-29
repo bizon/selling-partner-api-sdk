@@ -31,7 +31,7 @@
     "aws4-axios": "^3.3.0",
     "axios": "^1.5.0",
     "axios-logger": "^2.7.0",
-    "axios-retry": "^3.6.0",
+    "axios-retry": "^3.7.0",
     "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {

@@ -718,8 +718,8 @@ importers:
         specifier: ^13.2.2
         version: 13.2.2
       json-schema-to-typescript:
-        specifier: ^13.0.2
-        version: 13.0.2
+        specifier: ^13.1.1
+        version: 13.1.1
       jsonfile:
         specifier: ^6.1.0
         version: 6.1.0
@@ -3076,10 +3076,6 @@ packages:
       expect: 29.6.3
       pretty-format: 29.6.3
     dev: true
-
-  /@types/json-schema@7.0.11:
-    resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
-    dev: false
 
   /@types/json-schema@7.0.12:
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
@@ -7087,13 +7083,13 @@ packages:
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dev: true
 
-  /json-schema-to-typescript@13.0.2:
-    resolution: {integrity: sha512-TCaEVW4aI2FmMQe7f98mvr3/oiVmXEC1xZjkTZ9L/BSoTXFlC7p64mD5AD2d8XWycNBQZUnHwXL5iVXt1HWwNQ==}
+  /json-schema-to-typescript@13.1.1:
+    resolution: {integrity: sha512-F3CYhtA7F3yPbb8vF7sFchk/2dnr1/yTKf8RcvoNpjnh67ZS/ZMH1ElLt5KHAtf2/bymiejLQQszszPWEeTdSw==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
       '@bcherny/json-schema-ref-parser': 10.0.5-fork
-      '@types/json-schema': 7.0.11
+      '@types/json-schema': 7.0.12
       '@types/lodash': 4.14.197
       '@types/prettier': 2.7.2
       cli-color: 2.0.3

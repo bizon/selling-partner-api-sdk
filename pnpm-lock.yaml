@@ -18,8 +18,8 @@ importers:
         specifier: ^2.5.0
         version: 2.5.0
       '@tsconfig/node18':
-        specifier: ^18.2.1
-        version: 18.2.1
+        specifier: ^18.2.2
+        version: 18.2.2
       '@types/jest':
         specifier: ^29.5.4
         version: 29.5.4
@@ -3088,8 +3088,8 @@ packages:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
     dev: true
 
-  /@tsconfig/node18@18.2.1:
-    resolution: {integrity: sha512-RDDZFuofwkcKpl8Vpj5wFbY+H53xOtqK7ckEL1sXsbPwvKwDdjQf3LkHbtt9sxIHn9nWIEwkmCwBRZ6z5TKU2A==}
+  /@tsconfig/node18@18.2.2:
+    resolution: {integrity: sha512-d6McJeGsuoRlwWZmVIeE8CUA27lu6jLjvv1JzqmpsytOYYbVi1tHZEnwCNVOXnj4pyLvneZlFlpXUK+X9wBWyw==}
     dev: true
 
   /@tufjs/canonical-json@1.0.0:
@@ -7205,7 +7205,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 18.17.14
+      '@types/node': 18.17.15
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true

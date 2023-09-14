@@ -17,7 +17,7 @@
     "@jest/types": "^29.6.3",
     "@lerna-lite/cli": "^2.5.1",
     "@lerna-lite/publish": "^2.5.0",
-    "@tsconfig/node18": "^18.2.1",
+    "@tsconfig/node18": "^18.2.2",
     "@types/jest": "^29.5.4",
     "@types/node": "^18.17.15",
     "conventional-changelog-conventionalcommits": "^7.0.2",

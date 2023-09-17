@@ -25,7 +25,7 @@
     "winston": "^3.10.0"
   },
   "devDependencies": {
-    "@types/bluebird": "^3.5.38",
+    "@types/bluebird": "^3.5.39",
     "@types/jsonfile": "^6.1.2",
     "@types/lodash": "^4.14.198",
     "@types/mustache": "^4.2.2",

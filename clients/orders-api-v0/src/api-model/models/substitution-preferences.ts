@@ -15,31 +15,34 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { OpenInterval } from './open-interval';
+import { SubstitutionOption } from './substitution-option';
 
 /**
- * Dates when the business is closed or open with a different time window.
+ * 
  * @export
- * @interface ExceptionDates
+ * @interface SubstitutionPreferences
  */
-export interface ExceptionDates {
+export interface SubstitutionPreferences {
     /**
-     * Date when the business is closed, in ISO-8601 date format.
+     * The type of substitution that these preferences represent.
      * @type {string}
-     * @memberof ExceptionDates
+     * @memberof SubstitutionPreferences
      */
-    'ExceptionDate'?: string;
+    'SubstitutionType': SubstitutionPreferencesSubstitutionTypeEnum;
     /**
-     * Boolean indicating if the business is closed or open on that date.
-     * @type {boolean}
-     * @memberof ExceptionDates
+     * A collection of substitution options.
+     * @type {Array<SubstitutionOption>}
+     * @memberof SubstitutionPreferences
      */
-    'IsOpen'?: boolean;
-    /**
-     * Time window during the day when the business is open.
-     * @type {Array<OpenInterval>}
-     * @memberof ExceptionDates
-     */
-    'OpenIntervals'?: Array<OpenInterval>;
+    'SubstitutionOptions'?: Array<SubstitutionOption>;
 }
+
+export const SubstitutionPreferencesSubstitutionTypeEnum = {
+    CustomerPreference: 'CUSTOMER_PREFERENCE',
+    AmazonRecommended: 'AMAZON_RECOMMENDED',
+    DoNotSubstitute: 'DO_NOT_SUBSTITUTE'
+} as const;
+
+export type SubstitutionPreferencesSubstitutionTypeEnum = typeof SubstitutionPreferencesSubstitutionTypeEnum[keyof typeof SubstitutionPreferencesSubstitutionTypeEnum];
+
 

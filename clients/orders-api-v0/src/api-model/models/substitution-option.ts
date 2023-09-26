@@ -13,24 +13,45 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { Measurement } from './measurement';
 
 /**
- * The tax classification for the order.
+ * 
  * @export
- * @interface TaxClassification
+ * @interface SubstitutionOption
  */
-export interface TaxClassification {
+export interface SubstitutionOption {
     /**
-     * The type of tax.
+     * The Amazon Standard Identification Number (ASIN) of the item.
      * @type {string}
-     * @memberof TaxClassification
+     * @memberof SubstitutionOption
      */
-    'Name'?: string;
+    'ASIN'?: string;
     /**
-     * The buyer\'s tax identifier.
-     * @type {string}
-     * @memberof TaxClassification
+     * The number of items to be picked for this substitution option. 
+     * @type {number}
+     * @memberof SubstitutionOption
      */
-    'Value'?: string;
+    'QuantityOrdered'?: number;
+    /**
+     * The seller stock keeping unit (SKU) of the item.
+     * @type {string}
+     * @memberof SubstitutionOption
+     */
+    'SellerSKU'?: string;
+    /**
+     * The title of the item.
+     * @type {string}
+     * @memberof SubstitutionOption
+     */
+    'Title'?: string;
+    /**
+     * 
+     * @type {Measurement}
+     * @memberof SubstitutionOption
+     */
+    'Measurement'?: Measurement;
 }
 

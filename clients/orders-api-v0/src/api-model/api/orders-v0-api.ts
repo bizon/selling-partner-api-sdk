@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Orders
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -320,10 +320,14 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} [actualFulfillmentSupplySourceId] Denotes the recommended sourceId where the order should be fulfilled from.
          * @param {boolean} [isISPU] When true, this order is marked to be picked up from a store rather than delivered.
          * @param {string} [storeChainStoreId] The store chain store identifier. Linked to a specific store in a store chain.
+         * @param {string} [earliestDeliveryDateBefore] A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
+         * @param {string} [earliestDeliveryDateAfter] A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
+         * @param {string} [latestDeliveryDateBefore] A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
+         * @param {string} [latestDeliveryDateAfter] A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrders: async (marketplaceIds: Array<string>, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, orderStatuses?: Array<string>, fulfillmentChannels?: Array<string>, paymentMethods?: Array<string>, buyerEmail?: string, sellerOrderId?: string, maxResultsPerPage?: number, easyShipShipmentStatuses?: Array<string>, electronicInvoiceStatuses?: Array<string>, nextToken?: string, amazonOrderIds?: Array<string>, actualFulfillmentSupplySourceId?: string, isISPU?: boolean, storeChainStoreId?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getOrders: async (marketplaceIds: Array<string>, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, orderStatuses?: Array<string>, fulfillmentChannels?: Array<string>, paymentMethods?: Array<string>, buyerEmail?: string, sellerOrderId?: string, maxResultsPerPage?: number, easyShipShipmentStatuses?: Array<string>, electronicInvoiceStatuses?: Array<string>, nextToken?: string, amazonOrderIds?: Array<string>, actualFulfillmentSupplySourceId?: string, isISPU?: boolean, storeChainStoreId?: string, earliestDeliveryDateBefore?: string, earliestDeliveryDateAfter?: string, latestDeliveryDateBefore?: string, latestDeliveryDateAfter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('getOrders', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/orders/v0/orders`;
@@ -408,6 +412,22 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
 
             if (storeChainStoreId !== undefined) {
                 localVarQueryParameter['StoreChainStoreId'] = storeChainStoreId;
+            }
+
+            if (earliestDeliveryDateBefore !== undefined) {
+                localVarQueryParameter['EarliestDeliveryDateBefore'] = earliestDeliveryDateBefore;
+            }
+
+            if (earliestDeliveryDateAfter !== undefined) {
+                localVarQueryParameter['EarliestDeliveryDateAfter'] = earliestDeliveryDateAfter;
+            }
+
+            if (latestDeliveryDateBefore !== undefined) {
+                localVarQueryParameter['LatestDeliveryDateBefore'] = latestDeliveryDateBefore;
+            }
+
+            if (latestDeliveryDateAfter !== undefined) {
+                localVarQueryParameter['LatestDeliveryDateAfter'] = latestDeliveryDateAfter;
             }
 
 
@@ -602,11 +622,15 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {string} [actualFulfillmentSupplySourceId] Denotes the recommended sourceId where the order should be fulfilled from.
          * @param {boolean} [isISPU] When true, this order is marked to be picked up from a store rather than delivered.
          * @param {string} [storeChainStoreId] The store chain store identifier. Linked to a specific store in a store chain.
+         * @param {string} [earliestDeliveryDateBefore] A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
+         * @param {string} [earliestDeliveryDateAfter] A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
+         * @param {string} [latestDeliveryDateBefore] A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
+         * @param {string} [latestDeliveryDateAfter] A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrders(marketplaceIds: Array<string>, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, orderStatuses?: Array<string>, fulfillmentChannels?: Array<string>, paymentMethods?: Array<string>, buyerEmail?: string, sellerOrderId?: string, maxResultsPerPage?: number, easyShipShipmentStatuses?: Array<string>, electronicInvoiceStatuses?: Array<string>, nextToken?: string, amazonOrderIds?: Array<string>, actualFulfillmentSupplySourceId?: string, isISPU?: boolean, storeChainStoreId?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrdersResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getOrders(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, electronicInvoiceStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, options);
+        async getOrders(marketplaceIds: Array<string>, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, orderStatuses?: Array<string>, fulfillmentChannels?: Array<string>, paymentMethods?: Array<string>, buyerEmail?: string, sellerOrderId?: string, maxResultsPerPage?: number, easyShipShipmentStatuses?: Array<string>, electronicInvoiceStatuses?: Array<string>, nextToken?: string, amazonOrderIds?: Array<string>, actualFulfillmentSupplySourceId?: string, isISPU?: boolean, storeChainStoreId?: string, earliestDeliveryDateBefore?: string, earliestDeliveryDateAfter?: string, latestDeliveryDateBefore?: string, latestDeliveryDateAfter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrdersResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getOrders(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, electronicInvoiceStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, earliestDeliveryDateBefore, earliestDeliveryDateAfter, latestDeliveryDateBefore, latestDeliveryDateAfter, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -711,7 +735,7 @@ export const OrdersV0ApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         getOrders(requestParameters: OrdersV0ApiGetOrdersRequest, options?: AxiosRequestConfig): AxiosPromise<GetOrdersResponse> {
-            return localVarFp.getOrders(requestParameters.marketplaceIds, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.orderStatuses, requestParameters.fulfillmentChannels, requestParameters.paymentMethods, requestParameters.buyerEmail, requestParameters.sellerOrderId, requestParameters.maxResultsPerPage, requestParameters.easyShipShipmentStatuses, requestParameters.electronicInvoiceStatuses, requestParameters.nextToken, requestParameters.amazonOrderIds, requestParameters.actualFulfillmentSupplySourceId, requestParameters.isISPU, requestParameters.storeChainStoreId, options).then((request) => request(axios, basePath));
+            return localVarFp.getOrders(requestParameters.marketplaceIds, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.orderStatuses, requestParameters.fulfillmentChannels, requestParameters.paymentMethods, requestParameters.buyerEmail, requestParameters.sellerOrderId, requestParameters.maxResultsPerPage, requestParameters.easyShipShipmentStatuses, requestParameters.electronicInvoiceStatuses, requestParameters.nextToken, requestParameters.amazonOrderIds, requestParameters.actualFulfillmentSupplySourceId, requestParameters.isISPU, requestParameters.storeChainStoreId, requestParameters.earliestDeliveryDateBefore, requestParameters.earliestDeliveryDateAfter, requestParameters.latestDeliveryDateBefore, requestParameters.latestDeliveryDateAfter, options).then((request) => request(axios, basePath));
         },
         /**
          * Update the shipment status for an order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -984,6 +1008,34 @@ export interface OrdersV0ApiGetOrdersRequest {
      * @memberof OrdersV0ApiGetOrders
      */
     readonly storeChainStoreId?: string
+
+    /**
+     * A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly earliestDeliveryDateBefore?: string
+
+    /**
+     * A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly earliestDeliveryDateAfter?: string
+
+    /**
+     * A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly latestDeliveryDateBefore?: string
+
+    /**
+     * A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
+     * @type {string}
+     * @memberof OrdersV0ApiGetOrders
+     */
+    readonly latestDeliveryDateAfter?: string
 }
 
 /**
@@ -1120,7 +1172,7 @@ export class OrdersV0Api extends BaseAPI {
      * @memberof OrdersV0Api
      */
     public getOrders(requestParameters: OrdersV0ApiGetOrdersRequest, options?: AxiosRequestConfig) {
-        return OrdersV0ApiFp(this.configuration).getOrders(requestParameters.marketplaceIds, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.orderStatuses, requestParameters.fulfillmentChannels, requestParameters.paymentMethods, requestParameters.buyerEmail, requestParameters.sellerOrderId, requestParameters.maxResultsPerPage, requestParameters.easyShipShipmentStatuses, requestParameters.electronicInvoiceStatuses, requestParameters.nextToken, requestParameters.amazonOrderIds, requestParameters.actualFulfillmentSupplySourceId, requestParameters.isISPU, requestParameters.storeChainStoreId, options).then((request) => request(this.axios, this.basePath));
+        return OrdersV0ApiFp(this.configuration).getOrders(requestParameters.marketplaceIds, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.orderStatuses, requestParameters.fulfillmentChannels, requestParameters.paymentMethods, requestParameters.buyerEmail, requestParameters.sellerOrderId, requestParameters.maxResultsPerPage, requestParameters.easyShipShipmentStatuses, requestParameters.electronicInvoiceStatuses, requestParameters.nextToken, requestParameters.amazonOrderIds, requestParameters.actualFulfillmentSupplySourceId, requestParameters.isISPU, requestParameters.storeChainStoreId, requestParameters.earliestDeliveryDateBefore, requestParameters.earliestDeliveryDateAfter, requestParameters.latestDeliveryDateBefore, requestParameters.latestDeliveryDateAfter, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

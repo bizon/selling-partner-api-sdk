@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/orders-api-v0@2.3.3...@sp-api-sdk/orders-api-v0@2.4.0) (2023-09-27)
+
+### Features
+
+* **clients:** update models as of 2023-09-26 ([#978](https://github.com/bizon/selling-partner-api-sdk/issues/978)) ([b31d2be](https://github.com/bizon/selling-partner-api-sdk/commit/b31d2be61344aaeae2bacbbf30fce14f0e868f3b))
+
 ## [2.3.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/orders-api-v0@2.3.2...@sp-api-sdk/orders-api-v0@2.3.3) (2023-08-24)
 
 **Note:** Version bump only for package @sp-api-sdk/orders-api-v0

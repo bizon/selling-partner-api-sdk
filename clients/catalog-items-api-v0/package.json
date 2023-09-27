@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/catalog-items-api-v0",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Catalog Items helps you programmatically retrieve item details for items in the catalog.",
-  "version": "1.13.4",
+  "version": "1.13.5",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/easy-ship-2022-03-23",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Easy Ship helps you build applications that help sellers manage and ship Amazon Easy Ship orders. Your Easy Ship applications can: Get available time slots for packages to be scheduled for delivery. Schedule, reschedule, and cancel Easy Ship orders. Print labels, invoices, and warranties. See the Marketplace Support Table for the differences in Easy Ship operations by marketplace.",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

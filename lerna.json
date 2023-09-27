@@ -14,6 +14,5 @@
       "message": "chore(release): publish [skip ci]"
     }
   },
-  "changelogPreset": "conventional-changelog-conventionalcommits",
   "packages": ["codegen", "packages/*", "clients/*"]
 }

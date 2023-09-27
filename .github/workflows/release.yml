@@ -49,7 +49,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
         run: |
-          pnpm lerna publish --skip-bump-only-release --yes
+          pnpm lerna publish from-package --skip-bump-only-release --yes
 
   docs:
     name: Update and publish documentation

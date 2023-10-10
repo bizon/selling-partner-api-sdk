@@ -22,7 +22,7 @@
     "mustache": "^4.2.0",
     "remark": "^14.0.3",
     "strip-markdown": "^5.0.1",
-    "winston": "^3.10.0"
+    "winston": "^3.11.0"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.39",

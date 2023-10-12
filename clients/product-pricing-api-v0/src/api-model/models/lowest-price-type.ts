@@ -67,7 +67,7 @@ export interface LowestPriceType {
      * @type {MoneyType}
      * @memberof LowestPriceType
      */
-    'LandedPrice': MoneyType;
+    'LandedPrice'?: MoneyType;
     /**
      * 
      * @type {MoneyType}
@@ -79,7 +79,7 @@ export interface LowestPriceType {
      * @type {MoneyType}
      * @memberof LowestPriceType
      */
-    'Shipping': MoneyType;
+    'Shipping'?: MoneyType;
     /**
      * 
      * @type {Points}

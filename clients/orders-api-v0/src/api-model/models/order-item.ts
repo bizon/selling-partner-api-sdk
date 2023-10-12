@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { AssociatedItem } from './associated-item';
+// May contain unused imports in some cases
+// @ts-ignore
 import { BuyerRequestedCancel } from './buyer-requested-cancel';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -62,6 +65,12 @@ export interface OrderItem {
      * @memberof OrderItem
      */
     'OrderItemId': string;
+    /**
+     * A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires.
+     * @type {Array<AssociatedItem>}
+     * @memberof OrderItem
+     */
+    'AssociatedItems'?: Array<AssociatedItem>;
     /**
      * The name of the item.
      * @type {string}

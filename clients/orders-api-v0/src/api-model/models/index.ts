@@ -1,4 +1,6 @@
 export * from './address';
+export * from './associated-item';
+export * from './association-type';
 export * from './automated-shipping-settings';
 export * from './business-hours';
 export * from './buyer-customized-info-detail';

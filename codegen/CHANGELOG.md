@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/generator@0.9.2...@sp-api-sdk/generator@0.10.0) (2023-10-14)
+
+### Features
+
+* **auth:** stop signing requests using AWS4 ([#997](https://github.com/bizon/selling-partner-api-sdk/issues/997)) ([cda0f19](https://github.com/bizon/selling-partner-api-sdk/commit/cda0f190959b6e5b124446696f3efdcc7cfbadfe))
+
+### BREAKING CHANGES
+
+* **auth:** this stops requiring IAM request signing.
+
 ## [0.9.2](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/generator@0.9.1...@sp-api-sdk/generator@0.9.2) (2023-09-27)
 
 **Note:** Version bump only for package @sp-api-sdk/generator

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-direct-fulfillment-payments-api-v1@1.11.2...@sp-api-sdk/vendor-direct-fulfillment-payments-api-v1@2.0.0) (2023-10-14)
+
+### Features
+
+* **auth:** stop signing requests using AWS4 ([#997](https://github.com/bizon/selling-partner-api-sdk/issues/997)) ([cda0f19](https://github.com/bizon/selling-partner-api-sdk/commit/cda0f190959b6e5b124446696f3efdcc7cfbadfe))
+
+### BREAKING CHANGES
+
+* **auth:** this stops requiring IAM request signing.
+
 ## [1.11.2](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-direct-fulfillment-payments-api-v1@1.11.1...@sp-api-sdk/vendor-direct-fulfillment-payments-api-v1@1.11.2) (2023-09-27)
 
 **Note:** Version bump only for package @sp-api-sdk/vendor-direct-fulfillment-payments-api-v1

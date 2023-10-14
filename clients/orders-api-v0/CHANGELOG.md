@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/orders-api-v0@2.4.0...@sp-api-sdk/orders-api-v0@3.0.0) (2023-10-14)
+
+### Features
+
+* **auth:** stop signing requests using AWS4 ([#997](https://github.com/bizon/selling-partner-api-sdk/issues/997)) ([cda0f19](https://github.com/bizon/selling-partner-api-sdk/commit/cda0f190959b6e5b124446696f3efdcc7cfbadfe))
+* **clients:** update models as of 2023-10-12 ([#994](https://github.com/bizon/selling-partner-api-sdk/issues/994)) ([8047781](https://github.com/bizon/selling-partner-api-sdk/commit/8047781962a5481cb77613977c8340448278dbfe))
+
+### BREAKING CHANGES
+
+* **auth:** this stops requiring IAM request signing.
+
 # [2.4.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/orders-api-v0@2.3.3...@sp-api-sdk/orders-api-v0@2.4.0) (2023-09-27)
 
 ### Features

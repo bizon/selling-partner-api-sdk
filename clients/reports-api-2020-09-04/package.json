@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/reports-api-2020-09-04",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "Effective June 27, 2023, the Selling Partner API for Reports v2020-09-04 will no longer be available and all calls to it will fail. Integrations that rely on the Reports API must migrate to Reports v2021-06-30 to avoid service disruption.",
-  "version": "1.11.3",
+  "version": "2.0.0",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

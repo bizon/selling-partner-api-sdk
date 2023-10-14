@@ -53,7 +53,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish packages
-        if: ${{ github.event.inputs.from-package == false }}
+        if: ${{ github.event.inputs.from-package != true }}
         env:
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
         run: |

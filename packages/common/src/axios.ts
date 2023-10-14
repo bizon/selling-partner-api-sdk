@@ -1,4 +1,3 @@
-import {aws4Interceptor} from 'aws4-axios'
 import axios, {type AxiosError, isAxiosError, type Method} from 'axios'
 import {errorLogger, requestLogger, responseLogger} from 'axios-logger'
 import axiosRetry from 'axios-retry'
@@ -99,31 +98,9 @@ export function createAxiosInstance(
 
   // Set x-amz-access-token to each request
   instance.interceptors.request.use(async (config) => {
-    config.headers['x-amz-access-token'] = restrictedDataToken ?? (await auth.accessToken.get())
+    config.headers['x-amz-access-token'] = restrictedDataToken ?? (await auth.getAccessToken())
 
     return config
-  })
-
-  // Sign each request (should be the last interceptor)
-  instance.interceptors.request.use(async (config) => {
-    const credentials = await auth.getCredentials()
-
-    if (!credentials) {
-      return config
-    }
-
-    return aws4Interceptor({
-      instance,
-      options: {
-        region: regionConfiguration.awsRegion,
-        service: 'execute-api',
-      },
-      credentials: {
-        accessKeyId: credentials.AccessKeyId ?? '',
-        secretAccessKey: credentials.SecretAccessKey ?? '',
-        sessionToken: credentials.SessionToken,
-      },
-    })(config)
   })
 
   instance.interceptors.response.use(

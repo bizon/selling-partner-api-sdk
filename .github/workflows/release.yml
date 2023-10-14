@@ -1,6 +1,13 @@
 name: Release
 
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+    inputs:
+      from-package:
+        description: "From package deployment"
+        required: false
+        type: boolean
+        default: false
 
 concurrency: release
 
@@ -46,10 +53,18 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish packages
+        if: ${{ github.event.inputs.from-package == false }}
         env:
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
         run: |
           pnpm lerna publish --skip-bump-only-release --yes
+
+      - name: Publish packages from package
+        if: ${{ github.event.inputs.from-package == true }}
+        env:
+          GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
+        run: |
+          pnpm lerna publish from-package --skip-bump-only-release --yes
 
   docs:
     name: Update and publish documentation

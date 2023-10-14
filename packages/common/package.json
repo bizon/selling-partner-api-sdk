@@ -34,7 +34,7 @@
     "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {
-    "nock": "^13.3.3",
+    "nock": "^13.3.4",
     "strip-ansi": "^6.0.1"
   },
   "repository": {

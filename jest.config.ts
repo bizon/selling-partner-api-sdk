@@ -1,13 +1,9 @@
 import process from 'node:process'
 
-import type {Config} from '@jest/types'
+import {type Config} from '@jest/types'
 
 export default async function setup(): Promise<Config.InitialOptions> {
   // Delete sensitive environment variables
-  delete process.env.AWS_ACCESS_KEY_ID
-  delete process.env.AWS_SECRET_ACCESS_KEY
-  delete process.env.AWS_ROLE_ARN
-  delete process.env.AWS_ROLE_SESSION_NAME
   delete process.env.LWA_CLIENT_SECRET
   delete process.env.LWA_CLIENT_ID
 

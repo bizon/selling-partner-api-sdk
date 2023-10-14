@@ -31,12 +31,6 @@ const auth = new SellingPartnerApiAuth({
   clientId: process.env.LWA_CLIENT_ID,
   clientSecret: process.env.LWA_CLIENT_SECRET,
   scopes: [AuthorizationScope.NOTIFICATIONS],
-  accessKeyId: '',
-  secretAccessKey: '',
-  region: 'eu-west-1',
-  role: {
-    arn: 'arn:aws:iam::…',
-  }
 })
 
 
@@ -56,12 +50,6 @@ const auth = new SellingPartnerApiAuth({
   clientId: process.env.LWA_CLIENT_ID,
   clientSecret: process.env.LWA_CLIENT_SECRET,
   refreshToken: 'Atzr|…',
-  accessKeyId: '',
-  secretAccessKey: '',
-  region: 'eu-west-1',
-  role: {
-    arn: 'arn:aws:iam::…',
-  },
 })
 
 const client = new NotificationsApiClient({

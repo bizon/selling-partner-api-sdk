@@ -1,63 +1,38 @@
 import process from 'node:process'
 
-import type {Credentials} from '@aws-sdk/client-sts'
-import type {RequireExactlyOne, SetOptional} from 'type-fest'
+import {AxiosError} from 'axios'
+import {type RequireExactlyOne} from 'type-fest'
 
-import {AccessTokenFactory} from './access-token'
-import {SecurityTokenService} from './sts'
-import type {AuthorizationScope} from './types/scope'
-import {packageJson} from './utils/package'
+import {SellingPartnerApiAuthError} from './error'
+import {type AccessTokenData, type AccessTokenQuery} from './types/access-token'
+import {type AuthorizationScope} from './types/scope'
+import {axios} from './utils/axios'
 
 export interface SellingPartnerAuthParameters {
   clientId?: string
   clientSecret?: string
   refreshToken?: string
   scopes?: AuthorizationScope[]
-  accessKeyId?: string
-  secretAccessKey?: string
-  sessionToken?: string
-  region?: string
-  role?: {
-    arn: string
-    sessionName?: string
-  }
 }
 
 /**
  * Class for simplify auth with Selling Partner API
  */
 export class SellingPartnerApiAuth {
-  public readonly accessToken: AccessTokenFactory
+  private readonly clientId: string
+  private readonly clientSecret: string
+  private readonly refreshToken?: string
+  private readonly scopes?: AuthorizationScope[]
 
-  private readonly _sts?: SecurityTokenService
-  private readonly _accessKeyId: string
-  private readonly _secretAccessKey: string
-  private readonly _sessionToken?: string
+  private accessToken?: string
+  private accessTokenExpiration?: Date
 
   constructor(
     parameters: RequireExactlyOne<SellingPartnerAuthParameters, 'refreshToken' | 'scopes'>,
   ) {
     const clientId = parameters.clientId ?? process.env.LWA_CLIENT_ID
     const clientSecret = parameters.clientSecret ?? process.env.LWA_CLIENT_SECRET
-    const accessKeyId = parameters.accessKeyId ?? process.env.AWS_ACCESS_KEY_ID
-    const secretAccessKey = parameters.secretAccessKey ?? process.env.AWS_SECRET_ACCESS_KEY
-    const sessionToken = parameters.sessionToken ?? process.env.AWS_SESSION_TOKEN
-    const region = parameters.region ?? process.env.AWS_DEFAULT_REGION
-
-    const roleArn = parameters.role?.arn ?? process.env.AWS_ROLE_ARN
-    const roleSessionName =
-      parameters.role?.sessionName ??
-      process.env.AWS_ROLE_SESSION_NAME ??
-      `sp-api-sdk-auth@${packageJson.version}`
-
-    let role = null
-
-    if (roleArn) {
-      role = {
-        arn: roleArn,
-        sessionName: roleSessionName,
-      }
-    }
+    const refreshToken = parameters.refreshToken ?? process.env.LWA_REFRESH_TOKEN
 
     if (!clientId) {
       throw new Error('Missing required `clientId` configuration value')
@@ -67,58 +42,58 @@ export class SellingPartnerApiAuth {
       throw new Error('Missing required `clientSecret` configuration value')
     }
 
-    if (!accessKeyId) {
-      throw new Error('Missing required `accessKeyId` configuration value')
-    }
-
-    if (!secretAccessKey) {
-      throw new Error('Missing required `secretAccessKey` configuration value')
-    }
-
-    this._accessKeyId = accessKeyId
-    this._secretAccessKey = secretAccessKey
-    this._sessionToken = sessionToken
-
-    if (parameters.refreshToken) {
-      this.accessToken = new AccessTokenFactory({
-        clientId,
-        clientSecret,
-        refreshToken: parameters.refreshToken,
-      })
-    } else if (parameters.scopes) {
-      this.accessToken = new AccessTokenFactory({
-        clientId,
-        clientSecret,
-        scopes: parameters.scopes,
-      })
-    } else {
+    if (!refreshToken && !parameters.scopes) {
       throw new TypeError('Either `refreshToken` or `scopes` must be specified')
     }
 
-    if (role) {
-      this._sts = new SecurityTokenService({
-        accessKeyId,
-        secretAccessKey,
-        sessionToken,
-        region,
-        role,
-      })
-    }
+    this.clientId = clientId
+    this.clientSecret = clientSecret
+
+    this.refreshToken = refreshToken
+    this.scopes = parameters.scopes
   }
 
   /**
-   * Get AWS credentials from STS or user
+   * Get access token
    */
-  async getCredentials(): Promise<SetOptional<Credentials, 'Expiration' | 'SessionToken'>> {
-    if (this._sts) {
-      return this._sts.getCredentials()
+  async getAccessToken() {
+    if (
+      !this.accessToken ||
+      (this.accessTokenExpiration && Date.now() >= this.accessTokenExpiration.getTime())
+    ) {
+      const body: AccessTokenQuery = {
+        client_id: this.clientId,
+        client_secret: this.clientSecret,
+        ...(this.refreshToken
+          ? {
+              grant_type: 'refresh_token',
+              refresh_token: this.refreshToken,
+            }
+          : {
+              grant_type: 'client_credentials',
+              scope: this.scopes!.join(' '),
+            }),
+      }
+
+      try {
+        const expiration = new Date()
+
+        const {data} = await axios.post<AccessTokenData>('/o2/token', body)
+
+        expiration.setSeconds(expiration.getSeconds() + data.expires_in)
+
+        this.accessToken = data.access_token
+        this.accessTokenExpiration = expiration
+      } catch (error: unknown) {
+        if (error instanceof AxiosError) {
+          throw new SellingPartnerApiAuthError(error)
+        }
+
+        throw error
+      }
     }
 
-    return {
-      AccessKeyId: this._accessKeyId,
-      SecretAccessKey: this._secretAccessKey,
-      SessionToken: this._sessionToken,
-    }
+    return this.accessToken
   }
 }
 

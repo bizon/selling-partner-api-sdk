@@ -1,84 +1,140 @@
-import {SellingPartnerApiAuth} from '../src'
+import nock from 'nock'
+
+import {AuthorizationScope, SellingPartnerApiAuth, SellingPartnerApiAuthError} from '../src'
 
 describe('src/index', () => {
-  it('should create a SellingPartnerApiAuth instance', () => {
-    const auth = new SellingPartnerApiAuth({
-      clientId: 'FAKE_CLIENT_ID',
-      clientSecret: 'FAKE_CLIENT_SECRET',
-      accessKeyId: 'FAKE_ACCESS_KEY_ID',
-      secretAccessKey: 'FAKE_SECRET_ACCESS_KEY',
-      refreshToken: 'FAKE_REFRESH_TOKEN',
+  describe('constructor', () => {
+    it('should fail for missing clientId', () => {
+      expect(
+        () =>
+          new SellingPartnerApiAuth({
+            clientSecret: 'FAKE_CLIENT_SECRET',
+            refreshToken: 'FAKE_REFRESH_TOKEN',
+          }),
+      ).toThrow('Missing required `clientId` configuration value')
     })
 
-    expect(auth).toBeInstanceOf(SellingPartnerApiAuth)
+    it('should fail for missing clientSecret', () => {
+      expect(
+        () =>
+          new SellingPartnerApiAuth({
+            clientId: 'FAKE_CLIENT_ID',
+            refreshToken: 'FAKE_REFRESH_TOKEN',
+          }),
+      ).toThrow('Missing required `clientSecret` configuration value')
+    })
+
+    it('should fail if neither refreshToken or scopes is specified', () => {
+      expect(
+        () =>
+          new SellingPartnerApiAuth({
+            clientId: 'FAKE_CLIENT_ID',
+            clientSecret: 'FAKE_CLIENT_SECRET',
+          } as any),
+      ).toThrow('Either `refreshToken` or `scopes` must be specified')
+    })
+
+    it('should create a SellingPartnerApiAuth instance', () => {
+      const auth = new SellingPartnerApiAuth({
+        clientId: 'FAKE_CLIENT_ID',
+        clientSecret: 'FAKE_CLIENT_SECRET',
+        refreshToken: 'FAKE_REFRESH_TOKEN',
+      })
+
+      expect(auth).toBeInstanceOf(SellingPartnerApiAuth)
+    })
   })
 
-  it('should fail for missing clientId', () => {
-    expect(
-      () =>
-        new SellingPartnerApiAuth({
-          clientSecret: 'FAKE_CLIENT_SECRET',
-          accessKeyId: 'FAKE_ACCESS_KEY_ID',
-          secretAccessKey: 'FAKE_SECRET_ACCESS_KEY',
-          refreshToken: 'FAKE_REFRESH_TOKEN',
-        }),
-    ).toThrow('Missing required `clientId` configuration value')
-  })
+  describe('getAccessToken', () => {
+    it('should throw a SellingPartnerApiAuthError if the access-token query errors', async () => {
+      nock('https://api.amazon.com')
+        .post('/auth/o2/token', {
+          client_id: 'CLIENT_ID',
+          client_secret: 'CLIENT_SECRET',
+          grant_type: 'refresh_token',
+          refresh_token: 'REFRESH_TOKEN',
+        })
+        .reply(402, {
+          fail: true,
+          someMessage: 'this is an error',
+        })
 
-  it('should fail for missing clientSecret', () => {
-    expect(
-      () =>
-        new SellingPartnerApiAuth({
-          clientId: 'FAKE_CLIENT_ID',
-          accessKeyId: 'FAKE_ACCESS_KEY_ID',
-          secretAccessKey: 'FAKE_SECRET_ACCESS_KEY',
-          refreshToken: 'FAKE_REFRESH_TOKEN',
-        }),
-    ).toThrow('Missing required `clientSecret` configuration value')
-  })
+      const auth = new SellingPartnerApiAuth({
+        clientId: 'CLIENT_ID',
+        clientSecret: 'CLIENT_SECRET',
+        refreshToken: 'REFRESH_TOKEN',
+      })
 
-  it('should fail for missing accessKeyId', () => {
-    expect(
-      () =>
-        new SellingPartnerApiAuth({
-          clientId: 'FAKE_CLIENT_ID',
-          clientSecret: 'FAKE_CLIENT_SECRET',
-          secretAccessKey: 'FAKE_SECRET_ACCESS_KEY',
-          refreshToken: 'FAKE_REFRESH_TOKEN',
-          role: {
-            arn: 'FAKE_ARN',
-          },
-        }),
-    ).toThrow('Missing required `accessKeyId` configuration value')
-  })
+      let authError: SellingPartnerApiAuthError
+      try {
+        await auth.getAccessToken()
+      } catch (error: unknown) {
+        if (error instanceof SellingPartnerApiAuthError) {
+          authError = error
+        }
+      }
 
-  it('should fail for missing secretAccessKey', () => {
-    expect(
-      () =>
-        new SellingPartnerApiAuth({
-          clientId: 'FAKE_CLIENT_ID',
-          clientSecret: 'FAKE_CLIENT_SECRET',
-          accessKeyId: 'FAKE_ACCESS_KEY_ID',
-          refreshToken: 'FAKE_REFRESH_TOKEN',
-          role: {
-            arn: 'FAKE_ARN',
-          },
-        }),
-    ).toThrow('Missing required `secretAccessKey` configuration value')
-  })
+      expect(authError!.message).toBe('access-token error: Response code 402')
+      expect(authError!.response!.data).toEqual({
+        fail: true,
+        someMessage: 'this is an error',
+      })
+    })
 
-  it('should fail if neither refreshToken or scopes is specified', () => {
-    expect(
-      () =>
-        new SellingPartnerApiAuth({
-          clientId: 'FAKE_CLIENT_ID',
-          clientSecret: 'FAKE_CLIENT_SECRET',
-          accessKeyId: 'FAKE_ACCESS_KEY_ID',
-          secretAccessKey: 'FAKE_SECRET_ACCESS_KEY',
-          role: {
-            arn: 'FAKE_ARN',
-          },
-        } as any),
-    ).toThrow('Either `refreshToken` or `scopes` must be specified')
+    it('should throw a SellingPartnerApiAuthError if the access-token query doesn’t respond', async () => {
+      nock('https://api.amazon.com')
+        .post('/auth/o2/token', {
+          client_id: 'CLIENT_ID',
+          client_secret: 'CLIENT_SECRET',
+          grant_type: 'client_credentials',
+          scope: AuthorizationScope.MIGRATION,
+        })
+        .replyWithError('unknown error')
+
+      const auth = new SellingPartnerApiAuth({
+        clientId: 'CLIENT_ID',
+        clientSecret: 'CLIENT_SECRET',
+        scopes: [AuthorizationScope.MIGRATION],
+      })
+
+      let authError: SellingPartnerApiAuthError
+      try {
+        await auth.getAccessToken()
+      } catch (error: unknown) {
+        if (error instanceof SellingPartnerApiAuthError) {
+          authError = error
+        }
+      }
+
+      expect(authError!.message).toBe('access-token error: No response')
+    })
+
+    const sharedAuth = new SellingPartnerApiAuth({
+      clientId: 'CLIENT_ID',
+      clientSecret: 'CLIENT_SECRET',
+      refreshToken: 'REFRESH_TOKEN',
+    })
+
+    it('should return an access token', async () => {
+      nock('https://api.amazon.com')
+        .post('/auth/o2/token', {
+          client_id: 'CLIENT_ID',
+          client_secret: 'CLIENT_SECRET',
+          grant_type: 'refresh_token',
+          refresh_token: 'REFRESH_TOKEN',
+        })
+        .reply(200, {
+          access_token: 'ACCESS_TOKEN',
+          refresh_token: 'REFRESH_TOKEN',
+          token_type: 'access_token',
+          expires_in: 3600,
+        })
+
+      await expect(sharedAuth.getAccessToken()).resolves.toEqual('ACCESS_TOKEN')
+    })
+
+    it('should return a cached access token', async () => {
+      await expect(sharedAuth.getAccessToken()).resolves.toEqual('ACCESS_TOKEN')
+    })
   })
 })

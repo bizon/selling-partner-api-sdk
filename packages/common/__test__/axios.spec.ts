@@ -10,10 +10,7 @@ import {SellingPartnerApiError} from '../src/errors'
 jest.mock('@sp-api-sdk/auth', () => ({
   SellingPartnerApiAuthError: jest.requireActual('@sp-api-sdk/auth').SellingPartnerApiAuthError,
   SellingPartnerApiAuth: jest.fn(() => ({
-    accessToken: {
-      get: jest.fn(() => 'FAKE_ACCESS_TOKEN'),
-    },
-    getCredentials: jest.fn(),
+    getAccessToken: jest.fn(async () => 'FAKE_ACCESS_TOKEN'),
   })),
 }))
 

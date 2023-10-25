@@ -1,6 +1,8 @@
 # `replenishment-api-2022-11-07`
 
-The Selling Partner API for Replenishment (Replenishment API) provides programmatic access to replenishment program metrics and offers. These programs provide recurring delivery (automatic or manual) of any replenishable item at a frequency chosen by the customer.
+The Selling Partner API for Replenishment (Replenishment API) provides programmatic access to replenishment program metrics and offers. These programs provide recurring delivery of any replenishable item at a frequency chosen by the customer.
+
+The Replenishment API is available worldwide wherever Amazon Subscribe & Save is available or is supported. The API is available to vendors and FBA selling partners.
 
 [![npm version](https://badgen.net/npm/v/@sp-api-sdk/replenishment-api-2022-11-07)](https://www.npmjs.com/package/@sp-api-sdk/replenishment-api-2022-11-07)
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)

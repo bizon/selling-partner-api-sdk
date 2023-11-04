@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/shipping-api-v1@2.0.0...@sp-api-sdk/shipping-api-v1@2.0.1) (2023-11-04)
+
+**Note:** Version bump only for package @sp-api-sdk/shipping-api-v1
+
 # [2.0.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/shipping-api-v1@1.11.5...@sp-api-sdk/shipping-api-v1@2.0.0) (2023-10-14)
 
 ### Features

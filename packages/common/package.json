@@ -31,7 +31,7 @@
     "axios": "^1.6.0",
     "axios-logger": "^2.7.0",
     "axios-retry": "^3.8.1",
-    "read-pkg-up": "^7.0.1"
+    "read-pkg-up": "^11.0.0"
   },
   "devDependencies": {
     "nock": "^13.3.8",

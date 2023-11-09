@@ -753,8 +753,8 @@ importers:
         version: 3.11.0
     devDependencies:
       '@types/bluebird':
-        specifier: ^3.5.41
-        version: 3.5.41
+        specifier: ^3.5.42
+        version: 3.5.42
       '@types/jsonfile':
         specifier: ^6.1.4
         version: 6.1.4
@@ -2380,8 +2380,8 @@ packages:
       '@babel/types': 7.21.5
     dev: true
 
-  /@types/bluebird@3.5.41:
-    resolution: {integrity: sha512-/OT2UoYPu2fqGNS85UYUx0Ke8Zd/vM0/Au0JqLInTprkRO0NexYe7qAUkDsjhsO3BKHI14wX/UhN5SUaoFVDUQ==}
+  /@types/bluebird@3.5.42:
+    resolution: {integrity: sha512-Jhy+MWRlro6UjVi578V/4ZGNfeCOcNCp0YaFNIUGFKlImowqwb1O/22wDVk3FDGMLqxdpOV3qQHD5fPEH4hK6A==}
     dev: true
 
   /@types/debug@4.1.8:

@@ -759,8 +759,8 @@ importers:
         specifier: ^6.1.4
         version: 6.1.4
       '@types/lodash':
-        specifier: ^4.14.200
-        version: 4.14.200
+        specifier: ^4.14.201
+        version: 4.14.201
       '@types/mustache':
         specifier: ^4.2.5
         version: 4.2.5
@@ -2472,8 +2472,8 @@ packages:
       '@types/node': 18.18.8
     dev: true
 
-  /@types/lodash@4.14.200:
-    resolution: {integrity: sha512-YI/M/4HRImtNf3pJgbF+W6FrXovqj+T+/HpENLTooK9PnkacBsDpeP3IpHab40CClUfhNmdM2WTNP2sa2dni5Q==}
+  /@types/lodash@4.14.201:
+    resolution: {integrity: sha512-y9euML0cim1JrykNxADLfaG0FgD1g/yTHwUs/Jg9ZIU7WKj2/4IW9Lbb1WZbvck78W/lfGXFfe+u2EGfIJXdLQ==}
 
   /@types/mdast@4.0.0:
     resolution: {integrity: sha512-YLeG8CujC9adtj/kuDzq1N4tCDYKoZ5l/bnjq8d74+t/3q/tHquJOJKUQXJrLCflOHpKjXgcI/a929gpmLOEng==}
@@ -6532,7 +6532,7 @@ packages:
     dependencies:
       '@bcherny/json-schema-ref-parser': 10.0.5-fork
       '@types/json-schema': 7.0.12
-      '@types/lodash': 4.14.200
+      '@types/lodash': 4.14.201
       '@types/prettier': 2.7.2
       cli-color: 2.0.3
       get-stdin: 8.0.0

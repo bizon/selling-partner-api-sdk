@@ -25,6 +25,8 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 import { ListFinancialEventGroupsResponse } from '../models';
 // @ts-ignore
 import { ListFinancialEventsResponse } from '../models';
+// @ts-ignore
+import { ListTransactionsResponse } from '../models';
 /**
  * DefaultApi - axios parameter creator
  * @export
@@ -85,7 +87,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events. *note in ListFinancialEvents that deferred events don’t show up in responses until in they are released.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {number} [maxResultsPerPage] The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
          * @param {string} [postedAfter] A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format.
          * @param {string} [postedBefore] A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes.
@@ -237,6 +239,63 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * Returns transactions for the given parameters. It may take up to 48 hours for transactions to appear in your transaction events.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} postedAfter A date used for selecting transactions posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format.
+         * @param {string} marketplaceId A string token used to select Marketplace ID.
+         * @param {string} [postedBefore] A date used for selecting transactions posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no transactions are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes.
+         * @param {string} [nextToken] A string token returned in the response of your previous request.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listTransactions: async (postedAfter: string, marketplaceId: string, postedBefore?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'postedAfter' is not null or undefined
+            assertParamExists('listTransactions', 'postedAfter', postedAfter)
+            // verify required parameter 'marketplaceId' is not null or undefined
+            assertParamExists('listTransactions', 'marketplaceId', marketplaceId)
+            const localVarPath = `/finances/v0/transactions`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (postedAfter !== undefined) {
+                localVarQueryParameter['PostedAfter'] = (postedAfter as any instanceof Date) ?
+                    (postedAfter as any).toISOString() :
+                    postedAfter;
+            }
+
+            if (postedBefore !== undefined) {
+                localVarQueryParameter['PostedBefore'] = (postedBefore as any instanceof Date) ?
+                    (postedBefore as any).toISOString() :
+                    postedBefore;
+            }
+
+            if (marketplaceId !== undefined) {
+                localVarQueryParameter['MarketplaceId'] = marketplaceId;
+            }
+
+            if (nextToken !== undefined) {
+                localVarQueryParameter['NextToken'] = nextToken;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -261,7 +320,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events. *note in ListFinancialEvents that deferred events don’t show up in responses until in they are released.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {number} [maxResultsPerPage] The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
          * @param {string} [postedAfter] A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format.
          * @param {string} [postedBefore] A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes.
@@ -299,6 +358,19 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listFinancialEventsByOrderId(orderId, maxResultsPerPage, nextToken, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
+        /**
+         * Returns transactions for the given parameters. It may take up to 48 hours for transactions to appear in your transaction events.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} postedAfter A date used for selecting transactions posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format.
+         * @param {string} marketplaceId A string token used to select Marketplace ID.
+         * @param {string} [postedBefore] A date used for selecting transactions posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no transactions are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes.
+         * @param {string} [nextToken] A string token returned in the response of your previous request.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listTransactions(postedAfter: string, marketplaceId: string, postedBefore?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListTransactionsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listTransactions(postedAfter, marketplaceId, postedBefore, nextToken, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
     }
 };
 
@@ -319,7 +391,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.listFinancialEventGroups(requestParameters.maxResultsPerPage, requestParameters.financialEventGroupStartedBefore, requestParameters.financialEventGroupStartedAfter, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
-         * Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events. *note in ListFinancialEvents that deferred events don’t show up in responses until in they are released.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {DefaultApiListFinancialEventsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -344,6 +416,15 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          */
         listFinancialEventsByOrderId(requestParameters: DefaultApiListFinancialEventsByOrderIdRequest, options?: AxiosRequestConfig): AxiosPromise<ListFinancialEventsResponse> {
             return localVarFp.listFinancialEventsByOrderId(requestParameters.orderId, requestParameters.maxResultsPerPage, requestParameters.nextToken, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Returns transactions for the given parameters. It may take up to 48 hours for transactions to appear in your transaction events.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {DefaultApiListTransactionsRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listTransactions(requestParameters: DefaultApiListTransactionsRequest, options?: AxiosRequestConfig): AxiosPromise<ListTransactionsResponse> {
+            return localVarFp.listTransactions(requestParameters.postedAfter, requestParameters.marketplaceId, requestParameters.postedBefore, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -489,6 +570,41 @@ export interface DefaultApiListFinancialEventsByOrderIdRequest {
 }
 
 /**
+ * Request parameters for listTransactions operation in DefaultApi.
+ * @export
+ * @interface DefaultApiListTransactionsRequest
+ */
+export interface DefaultApiListTransactionsRequest {
+    /**
+     * A date used for selecting transactions posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format.
+     * @type {string}
+     * @memberof DefaultApiListTransactions
+     */
+    readonly postedAfter: string
+
+    /**
+     * A string token used to select Marketplace ID.
+     * @type {string}
+     * @memberof DefaultApiListTransactions
+     */
+    readonly marketplaceId: string
+
+    /**
+     * A date used for selecting transactions posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no transactions are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes.
+     * @type {string}
+     * @memberof DefaultApiListTransactions
+     */
+    readonly postedBefore?: string
+
+    /**
+     * A string token returned in the response of your previous request.
+     * @type {string}
+     * @memberof DefaultApiListTransactions
+     */
+    readonly nextToken?: string
+}
+
+/**
  * DefaultApi - object-oriented interface
  * @export
  * @class DefaultApi
@@ -507,7 +623,7 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
-     * Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events. *note in ListFinancialEvents that deferred events don’t show up in responses until in they are released.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {DefaultApiListFinancialEventsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -537,5 +653,16 @@ export class DefaultApi extends BaseAPI {
      */
     public listFinancialEventsByOrderId(requestParameters: DefaultApiListFinancialEventsByOrderIdRequest, options?: AxiosRequestConfig) {
         return DefaultApiFp(this.configuration).listFinancialEventsByOrderId(requestParameters.orderId, requestParameters.maxResultsPerPage, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Returns transactions for the given parameters. It may take up to 48 hours for transactions to appear in your transaction events.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {DefaultApiListTransactionsRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public listTransactions(requestParameters: DefaultApiListTransactionsRequest, options?: AxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).listTransactions(requestParameters.postedAfter, requestParameters.marketplaceId, requestParameters.postedBefore, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }

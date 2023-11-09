@@ -20,31 +20,31 @@ import { Currency } from './currency';
 /**
  * An event related to a value added service charge.
  * @export
- * @interface ValueAddedServiceChargeEventList
+ * @interface ValueAddedServiceChargeEvent
  */
-export interface ValueAddedServiceChargeEventList {
+export interface ValueAddedServiceChargeEvent {
     /**
      * Indicates the type of transaction.  Example: \'Other Support Service fees\'
      * @type {string}
-     * @memberof ValueAddedServiceChargeEventList
+     * @memberof ValueAddedServiceChargeEvent
      */
     'TransactionType'?: string;
     /**
      * 
      * @type {string}
-     * @memberof ValueAddedServiceChargeEventList
+     * @memberof ValueAddedServiceChargeEvent
      */
     'PostedDate'?: string;
     /**
      * A short description of the service charge event.
      * @type {string}
-     * @memberof ValueAddedServiceChargeEventList
+     * @memberof ValueAddedServiceChargeEvent
      */
     'Description'?: string;
     /**
      * 
      * @type {Currency}
-     * @memberof ValueAddedServiceChargeEventList
+     * @memberof ValueAddedServiceChargeEvent
      */
     'TransactionAmount'?: Currency;
 }

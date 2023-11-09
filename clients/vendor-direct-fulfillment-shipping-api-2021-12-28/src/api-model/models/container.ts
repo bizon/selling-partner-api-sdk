@@ -94,7 +94,7 @@ export interface Container {
      * @type {Weight}
      * @memberof Container
      */
-    'weight'?: Weight;
+    'weight': Weight;
     /**
      * A list of packed items.
      * @type {Array<PackedItem>}

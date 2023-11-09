@@ -39,7 +39,7 @@ import { DebtRecoveryEvent } from './debt-recovery-event';
 import { FBALiquidationEvent } from './fbaliquidation-event';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FailedAdhocDisbursementEventList } from './failed-adhoc-disbursement-event-list';
+import { FailedAdhocDisbursementEvent } from './failed-adhoc-disbursement-event';
 // May contain unused imports in some cases
 // @ts-ignore
 import { ImagingServicesFeeEvent } from './imaging-services-fee-event';
@@ -96,7 +96,7 @@ import { TaxWithholdingEvent } from './tax-withholding-event';
 import { TrialShipmentEvent } from './trial-shipment-event';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ValueAddedServiceChargeEventList } from './value-added-service-charge-event-list';
+import { ValueAddedServiceChargeEvent } from './value-added-service-charge-event';
 
 /**
  * Contains all information related to a financial event.
@@ -285,17 +285,17 @@ export interface FinancialEvents {
      */
     'ChargeRefundEventList'?: Array<ChargeRefundEvent>;
     /**
-     * 
-     * @type {FailedAdhocDisbursementEventList}
+     * A list of FailedAdhocDisbursementEvents.
+     * @type {Array<FailedAdhocDisbursementEvent>}
      * @memberof FinancialEvents
      */
-    'FailedAdhocDisbursementEventList'?: FailedAdhocDisbursementEventList;
+    'FailedAdhocDisbursementEventList'?: Array<FailedAdhocDisbursementEvent>;
     /**
-     * 
-     * @type {ValueAddedServiceChargeEventList}
+     * A list of ValueAddedServiceCharge events.
+     * @type {Array<ValueAddedServiceChargeEvent>}
      * @memberof FinancialEvents
      */
-    'ValueAddedServiceChargeEventList'?: ValueAddedServiceChargeEventList;
+    'ValueAddedServiceChargeEventList'?: Array<ValueAddedServiceChargeEvent>;
     /**
      * A list of `CapacityReservationBillingEvent` events.
      * @type {Array<CapacityReservationBillingEvent>}

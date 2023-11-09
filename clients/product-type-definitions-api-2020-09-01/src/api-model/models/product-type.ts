@@ -27,6 +27,12 @@ export interface ProductType {
      */
     'name': string;
     /**
+     * The human-readable and localized description of the Amazon product type.
+     * @type {string}
+     * @memberof ProductType
+     */
+    'displayName': string;
+    /**
      * The Amazon marketplace identifiers for which the product type definition is available.
      * @type {Array<string>}
      * @memberof ProductType

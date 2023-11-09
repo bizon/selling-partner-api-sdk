@@ -78,6 +78,12 @@ export interface ProductTypeDefinition {
      */
     'productType': string;
     /**
+     * Human-readable and localized description of the Amazon product type.
+     * @type {string}
+     * @memberof ProductTypeDefinition
+     */
+    'displayName': string;
+    /**
      * 
      * @type {ProductTypeVersion}
      * @memberof ProductTypeDefinition

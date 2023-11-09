@@ -20,49 +20,49 @@ import { Currency } from './currency';
 /**
  * Failed ad hoc disbursement event list.
  * @export
- * @interface FailedAdhocDisbursementEventList
+ * @interface FailedAdhocDisbursementEvent
  */
-export interface FailedAdhocDisbursementEventList {
+export interface FailedAdhocDisbursementEvent {
     /**
      * The type of fund transfer.   Example \"Refund\"
      * @type {string}
-     * @memberof FailedAdhocDisbursementEventList
+     * @memberof FailedAdhocDisbursementEvent
      */
     'FundsTransfersType'?: string;
     /**
      * The transfer identifier.
      * @type {string}
-     * @memberof FailedAdhocDisbursementEventList
+     * @memberof FailedAdhocDisbursementEvent
      */
     'TransferId'?: string;
     /**
      * The disbursement identifier.
      * @type {string}
-     * @memberof FailedAdhocDisbursementEventList
+     * @memberof FailedAdhocDisbursementEvent
      */
     'DisbursementId'?: string;
     /**
      * The type of payment for disbursement.   Example `CREDIT_CARD`
      * @type {string}
-     * @memberof FailedAdhocDisbursementEventList
+     * @memberof FailedAdhocDisbursementEvent
      */
     'PaymentDisbursementType'?: string;
     /**
      * The status of the failed `AdhocDisbursement`.   Example `HARD_DECLINED`
      * @type {string}
-     * @memberof FailedAdhocDisbursementEventList
+     * @memberof FailedAdhocDisbursementEvent
      */
     'Status'?: string;
     /**
      * 
      * @type {Currency}
-     * @memberof FailedAdhocDisbursementEventList
+     * @memberof FailedAdhocDisbursementEvent
      */
     'TransferAmount'?: Currency;
     /**
      * 
      * @type {string}
-     * @memberof FailedAdhocDisbursementEventList
+     * @memberof FailedAdhocDisbursementEvent
      */
     'PostedDate'?: string;
 }

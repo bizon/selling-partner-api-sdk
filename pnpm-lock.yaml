@@ -502,6 +502,19 @@ importers:
         specifier: workspace:*
         version: link:../../packages/auth
 
+  clients/supply-sources-api-2020-07-01:
+    dependencies:
+      '@sp-api-sdk/common':
+        specifier: workspace:*
+        version: link:../../packages/common
+      axios:
+        specifier: ^1.6.0
+        version: 1.6.0
+    devDependencies:
+      '@sp-api-sdk/auth':
+        specifier: workspace:*
+        version: link:../../packages/auth
+
   clients/tokens-api-2021-03-01:
     dependencies:
       '@sp-api-sdk/common':

@@ -1,0 +1,54 @@
+{
+  "name": "@sp-api-sdk/supply-sources-api-2020-07-01",
+  "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
+  "description": "Manage configurations and capabilities of seller supply sources.",
+  "version": "1.0.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "scripts": {
+    "check:ts": "tsc --noEmit",
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:es": "tsc -p tsconfig.es.json",
+    "build": "pnpm build:cjs && pnpm build:es",
+    "clean": "rimraf dist",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@sp-api-sdk/common": "workspace:*",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@sp-api-sdk/auth": "workspace:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bizon/selling-partner-api-sdk.git",
+    "directory": "clients/supply-sources-api-2020-07-01"
+  },
+  "bugs": {
+    "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
+  },
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/supply-sources-api-2020-07-01",
+  "keywords": [
+    "amazon",
+    "bizon",
+    "marketplace web services",
+    "mws",
+    "selling partner api",
+    "sp api",
+    "sp sdk",
+    "supply sources api"
+  ]
+}

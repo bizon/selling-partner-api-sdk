@@ -2,7 +2,7 @@
 
 The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer pricing information for Amazon Marketplace products.
 
-For more information, see the [Product Pricing v2022-05-01 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).
+For more information, refer to the [Product Pricing v2022-05-01 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).
 
 [![npm version](https://badgen.net/npm/v/@sp-api-sdk/product-pricing-api-2022-05-01)](https://www.npmjs.com/package/@sp-api-sdk/product-pricing-api-2022-05-01)
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)

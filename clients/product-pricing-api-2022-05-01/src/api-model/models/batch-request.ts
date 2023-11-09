@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Pricing
- * The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer pricing information for Amazon Marketplace products.  For more information, see the [Product Pricing v2022-05-01 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).
+ * The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer pricing information for Amazon Marketplace products.  For more information, refer to the [Product Pricing v2022-05-01 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2022-05-01
  * 
@@ -24,7 +24,7 @@ import { HttpMethod } from './http-method';
  */
 export interface BatchRequest {
     /**
-     * The URI associated with an individual request within a batch. For FeaturedOfferExpectedPrice, this should be \'/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice\'.
+     * The URI associated with an individual request within a batch. For `FeaturedOfferExpectedPrice`, this should be `/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice`.
      * @type {string}
      * @memberof BatchRequest
      */

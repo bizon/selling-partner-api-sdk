@@ -15,7 +15,7 @@
 
 
 /**
- * The weight. This object is required when using the [`submitShipmentConfirmations`](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-2021-12-28-reference#submitshipmentconfirmations) operation.
+ * The weight.
  * @export
  * @interface Weight
  */

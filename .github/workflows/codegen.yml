@@ -33,7 +33,7 @@ jobs:
         run: pnpm codegen clients
 
       - name: Regenerate lockfile
-        run: pnpm install
+        run: pnpm install --lockfile-only
 
       - name: Get current date
         id: date

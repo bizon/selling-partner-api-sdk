@@ -30,7 +30,7 @@
     "@sp-api-sdk/auth": "workspace:*",
     "axios": "^1.6.1",
     "axios-logger": "^2.7.0",
-    "axios-retry": "^3.8.1",
+    "axios-retry": "^3.9.0",
     "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {

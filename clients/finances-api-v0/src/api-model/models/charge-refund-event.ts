@@ -42,7 +42,7 @@ export interface ChargeRefundEvent {
      */
     'ReasonCodeDescription'?: string;
     /**
-     * A list of ChargeRefund Transactions
+     * A list of `ChargeRefund` transactions.
      * @type {Array<ChargeRefundTransaction>}
      * @memberof ChargeRefundEvent
      */

@@ -285,13 +285,13 @@ export interface FinancialEvents {
      */
     'ChargeRefundEventList'?: Array<ChargeRefundEvent>;
     /**
-     * A list of FailedAdhocDisbursementEvents.
+     * A list of `FailedAdhocDisbursementEvent`s.
      * @type {Array<FailedAdhocDisbursementEvent>}
      * @memberof FinancialEvents
      */
     'FailedAdhocDisbursementEventList'?: Array<FailedAdhocDisbursementEvent>;
     /**
-     * A list of ValueAddedServiceCharge events.
+     * A list of `ValueAddedServiceCharge` events.
      * @type {Array<ValueAddedServiceChargeEvent>}
      * @memberof FinancialEvents
      */

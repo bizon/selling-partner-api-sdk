@@ -1,5 +1,6 @@
 export type {AnyOfferChangedNotification} from './any-offer-changed-notification'
 export type {BrandedItemContentChangeNotification} from './branded-item-content-change-notification'
+export type {DataKioskQueryProcessingFinishedNotification} from './data-kiosk-query-processing-finished-notification'
 export type {DetailPageTrafficEventNotification} from './detail-page-traffic-event-notification'
 export type {FBAInventoryAvailabilityChangeNotification} from './fba-inventory-availability-change-notification'
 export type {FBAOutboundShipmentStatusNotification} from './fba-outbound-shipment-status-notification'

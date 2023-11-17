@@ -125,6 +125,19 @@ importers:
         specifier: workspace:*
         version: link:../../packages/auth
 
+  clients/data-kiosk-api-2023-11-15:
+    dependencies:
+      '@sp-api-sdk/common':
+        specifier: workspace:*
+        version: link:../../packages/common
+      axios:
+        specifier: ^1.6.1
+        version: 1.6.1
+    devDependencies:
+      '@sp-api-sdk/auth':
+        specifier: workspace:*
+        version: link:../../packages/auth
+
   clients/easy-ship-2022-03-23:
     dependencies:
       '@sp-api-sdk/common':

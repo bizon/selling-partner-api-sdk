@@ -66,8 +66,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -79,8 +79,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -92,8 +92,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -105,8 +105,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -118,8 +118,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -131,8 +131,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -144,8 +144,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -157,8 +157,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -170,8 +170,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -183,8 +183,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -196,8 +196,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -209,8 +209,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -222,8 +222,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -235,8 +235,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -248,8 +248,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -261,8 +261,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -274,8 +274,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -287,8 +287,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -300,8 +300,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -313,8 +313,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -326,8 +326,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -339,8 +339,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -352,8 +352,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -365,8 +365,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -378,8 +378,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -391,8 +391,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -404,8 +404,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -417,8 +417,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -430,8 +430,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -443,8 +443,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -456,8 +456,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -469,8 +469,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -482,8 +482,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -495,8 +495,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -508,8 +508,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -521,8 +521,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -534,8 +534,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -547,8 +547,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -560,8 +560,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -573,8 +573,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -586,8 +586,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -599,8 +599,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -612,8 +612,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -625,8 +625,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -638,8 +638,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -651,8 +651,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -664,8 +664,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -677,8 +677,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -690,8 +690,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -703,8 +703,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -716,8 +716,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -787,8 +787,8 @@ importers:
   packages/auth:
     dependencies:
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
       read-pkg-up:
         specifier: ^7.0.1
         version: 7.0.1
@@ -806,8 +806,8 @@ importers:
         specifier: workspace:*
         version: link:../auth
       axios:
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.2
+        version: 1.6.2
       axios-logger:
         specifier: ^2.7.0
         version: 2.7.0
@@ -3103,8 +3103,8 @@ packages:
       - debug
     dev: false
 
-  /axios@1.6.1:
-    resolution: {integrity: sha512-vfBmhDpKafglh0EldBEbVuoe7DyAavGSLWhuSm5ZSEKQnHhBf0xAAwybbNH1IkrJNGnS/VG4I5yxig1pCEXE4g==}
+  /axios@1.6.2:
+    resolution: {integrity: sha512-7i24Ri4pmDRfJTR7LDBhsOTtcm+9kjX5WiY1X3wIisx6G9So3pfMkEiU7emUBe46oceVImccTEM3k6C5dbVW8A==}
     dependencies:
       follow-redirects: 1.15.2
       form-data: 4.0.0

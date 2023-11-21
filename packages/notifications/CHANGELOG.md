@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/notifications@2.0.0...@sp-api-sdk/notifications@2.1.0) (2023-11-21)
+
+### Features
+
+* **notifications:** update notification schemas as of 2023-11-17 ([#1037](https://github.com/bizon/selling-partner-api-sdk/issues/1037)) ([026d256](https://github.com/bizon/selling-partner-api-sdk/commit/026d256527918b9f908e9384d48bb0ec208f11e2))
+
 # [2.0.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/notifications@1.3.0...@sp-api-sdk/notifications@2.0.0) (2023-10-14)
 
 ### Features

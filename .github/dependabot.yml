@@ -11,3 +11,7 @@ updates:
     versioning-strategy: increase
     schedule:
       interval: weekly
+    groups:
+      lerna-lite:
+        patterns:
+          - "@lerna-lite/*"

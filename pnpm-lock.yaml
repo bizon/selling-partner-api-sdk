@@ -772,8 +772,8 @@ importers:
         specifier: ^6.1.4
         version: 6.1.4
       '@types/lodash':
-        specifier: ^4.14.201
-        version: 4.14.201
+        specifier: ^4.14.202
+        version: 4.14.202
       '@types/mustache':
         specifier: ^4.2.5
         version: 4.2.5
@@ -2461,8 +2461,8 @@ packages:
       '@types/node': 18.18.10
     dev: true
 
-  /@types/lodash@4.14.201:
-    resolution: {integrity: sha512-y9euML0cim1JrykNxADLfaG0FgD1g/yTHwUs/Jg9ZIU7WKj2/4IW9Lbb1WZbvck78W/lfGXFfe+u2EGfIJXdLQ==}
+  /@types/lodash@4.14.202:
+    resolution: {integrity: sha512-OvlIYQK9tNneDlS0VN54LLd5uiPCBOp7gS5Z0f1mjoJYBrtStzgmJBxONW3U6OZqdtNzZPmn9BS/7WI7BFFcFQ==}
 
   /@types/mdast@4.0.0:
     resolution: {integrity: sha512-YLeG8CujC9adtj/kuDzq1N4tCDYKoZ5l/bnjq8d74+t/3q/tHquJOJKUQXJrLCflOHpKjXgcI/a929gpmLOEng==}
@@ -6324,7 +6324,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 18.18.10
+      '@types/node': 18.18.11
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true
@@ -6418,7 +6418,7 @@ packages:
     dependencies:
       '@bcherny/json-schema-ref-parser': 10.0.5-fork
       '@types/json-schema': 7.0.12
-      '@types/lodash': 4.14.201
+      '@types/lodash': 4.14.202
       '@types/prettier': 2.7.2
       cli-color: 2.0.3
       get-stdin: 8.0.0

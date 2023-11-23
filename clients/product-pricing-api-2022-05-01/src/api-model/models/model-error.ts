@@ -33,7 +33,7 @@ export interface ModelError {
      */
     'message': string;
     /**
-     * Additional information that can help the caller understand or fix the issue.
+     * Additional details that can help the caller understand or fix the issue.
      * @type {string}
      * @memberof ModelError
      */

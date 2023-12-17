@@ -809,8 +809,8 @@ importers:
         specifier: ^1.6.2
         version: 1.6.2
       axios-logger:
-        specifier: ^2.7.0
-        version: 2.7.0
+        specifier: ^2.7.1
+        version: 2.7.1
       axios-retry:
         specifier: ^4.0.0
         version: 4.0.0(axios@1.6.2)
@@ -2990,8 +2990,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /axios-logger@2.7.0:
-    resolution: {integrity: sha512-KtcOtObecsvZD7hKg8ucBaCgM1I4w36tn34vFJCBqe1c5qel+NSJSC2cqo8deFTIBbmmvpM8Xm2sA09+gj9Zxw==}
+  /axios-logger@2.7.1:
+    resolution: {integrity: sha512-slzf27jZuGwOoOeh3R7iV8PVMFsqkvYR39ohm5W3qg7+IM8MsMP4XV2V0Tl4PWKjPNB5UGZlzNZAeJoCn5GLDA==}
     dependencies:
       chalk: 4.1.2
       dateformat: 3.0.3

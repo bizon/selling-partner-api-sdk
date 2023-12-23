@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/supply-sources-api-2020-07-01",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "Manage configurations and capabilities of seller supply sources.",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

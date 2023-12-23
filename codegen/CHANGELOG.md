@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.4](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/generator@0.10.3...@sp-api-sdk/generator@0.10.4) (2023-12-23)
+
+### Bug Fixes
+
+* **codegen:** use tsx to run codegen scripts ([#1074](https://github.com/bizon/selling-partner-api-sdk/issues/1074)) ([f2fea44](https://github.com/bizon/selling-partner-api-sdk/commit/f2fea444550469b8d8f9ad73d3e4ad6f585ee8a1))
+
 ## [0.10.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/generator@0.10.2...@sp-api-sdk/generator@0.10.3) (2023-11-21)
 
 **Note:** Version bump only for package @sp-api-sdk/generator

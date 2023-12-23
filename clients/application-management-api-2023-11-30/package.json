@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/application-management-api-2023-11-30",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Application Management lets you programmatically update the client secret on registered applications.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

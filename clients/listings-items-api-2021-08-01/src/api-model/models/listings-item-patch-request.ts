@@ -18,7 +18,7 @@
 import { PatchOperation } from './patch-operation';
 
 /**
- * The request body schema for the patchListingsItem operation.
+ * The request body schema for the `patchListingsItem` operation.
  * @export
  * @interface ListingsItemPatchRequest
  */

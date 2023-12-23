@@ -15,13 +15,13 @@
 
 
 /**
- * The currency type and the amount.
+ * The currency type and amount.
  * @export
  * @interface Money
  */
 export interface Money {
     /**
-     * Three-digit currency code. In ISO 4217 format.
+     * Three-digit currency code in ISO 4217 format.
      * @type {string}
      * @memberof Money
      */

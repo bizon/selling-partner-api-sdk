@@ -15,13 +15,13 @@
 
 
 /**
- * Fulfillment availability details for the listings item.
+ * The fulfillment availability details for the listings item.
  * @export
  * @interface FulfillmentAvailability
  */
 export interface FulfillmentAvailability {
     /**
-     * Designates which fulfillment network will be used.
+     * The code of the fulfillment network that will be used.
      * @type {string}
      * @memberof FulfillmentAvailability
      */

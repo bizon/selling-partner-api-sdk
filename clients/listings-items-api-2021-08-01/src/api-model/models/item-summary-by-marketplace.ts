@@ -54,25 +54,25 @@ export interface ItemSummaryByMarketplace {
      */
     'status': Array<ItemSummaryByMarketplaceStatusEnum>;
     /**
-     * Fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item.
+     * The fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
     'fnSku'?: string;
     /**
-     * Name, or title, associated with an Amazon catalog item.
+     * The name or title associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
     'itemName': string;
     /**
-     * Date the listings item was created, in ISO 8601 format.
+     * The date the listings item was created in ISO 8601 format.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */
     'createdDate': string;
     /**
-     * Date the listings item was last updated, in ISO 8601 format.
+     * The date the listings item was last updated in ISO 8601 format.
      * @type {string}
      * @memberof ItemSummaryByMarketplace
      */

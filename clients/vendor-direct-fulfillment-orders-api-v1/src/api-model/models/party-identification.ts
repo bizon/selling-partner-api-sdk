@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Selling Partner API for Direct Fulfillment Orders
- * The Selling Partner API for Direct Fulfillment Orders provides programmatic access to a direct fulfillment vendor\'s order data.
+ * Selling Partner API for Direct Fulfillment Inventory Updates
+ * The Selling Partner API for Direct Fulfillment Inventory Updates provides programmatic access to a direct fulfillment vendor\'s inventory updates.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -13,12 +13,6 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import { Address } from './address';
-// May contain unused imports in some cases
-// @ts-ignore
-import { TaxRegistrationDetails } from './tax-registration-details';
 
 /**
  * 
@@ -27,22 +21,10 @@ import { TaxRegistrationDetails } from './tax-registration-details';
  */
 export interface PartyIdentification {
     /**
-     * Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details.
+     * Assigned identification for the party.
      * @type {string}
      * @memberof PartyIdentification
      */
     'partyId': string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof PartyIdentification
-     */
-    'address'?: Address;
-    /**
-     * 
-     * @type {TaxRegistrationDetails}
-     * @memberof PartyIdentification
-     */
-    'taxInfo'?: TaxRegistrationDetails;
 }
 

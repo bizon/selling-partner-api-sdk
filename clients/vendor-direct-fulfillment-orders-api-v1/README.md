@@ -1,6 +1,6 @@
 # `vendor-direct-fulfillment-orders-api-v1`
 
-The Selling Partner API for Direct Fulfillment Orders provides programmatic access to a direct fulfillment vendor's order data.
+The Selling Partner API for Direct Fulfillment Inventory Updates provides programmatic access to a direct fulfillment vendor's inventory updates.
 
 [![npm version](https://badgen.net/npm/v/@sp-api-sdk/vendor-direct-fulfillment-orders-api-v1)](https://www.npmjs.com/package/@sp-api-sdk/vendor-direct-fulfillment-orders-api-v1)
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)

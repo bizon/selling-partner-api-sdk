@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Selling Partner API for Direct Fulfillment Orders
- * The Selling Partner API for Direct Fulfillment Orders provides programmatic access to a direct fulfillment vendor\'s order data.
+ * Selling Partner API for Direct Fulfillment Inventory Updates
+ * The Selling Partner API for Direct Fulfillment Inventory Updates provides programmatic access to a direct fulfillment vendor\'s inventory updates.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -15,29 +15,22 @@
 
 
 /**
- * Details of quantity ordered.
+ * Details of item quantity.
  * @export
  * @interface ItemQuantity
  */
 export interface ItemQuantity {
     /**
-     * Acknowledged quantity. This value should not be zero.
+     * Quantity of units available for a specific item.
      * @type {number}
      * @memberof ItemQuantity
      */
     'amount'?: number;
     /**
-     * Unit of measure for the acknowledged quantity.
+     * Unit of measure for the available quantity.
      * @type {string}
      * @memberof ItemQuantity
      */
-    'unitOfMeasure'?: ItemQuantityUnitOfMeasureEnum;
+    'unitOfMeasure': string;
 }
-
-export const ItemQuantityUnitOfMeasureEnum = {
-    Each: 'Each'
-} as const;
-
-export type ItemQuantityUnitOfMeasureEnum = typeof ItemQuantityUnitOfMeasureEnum[keyof typeof ItemQuantityUnitOfMeasureEnum];
-
 

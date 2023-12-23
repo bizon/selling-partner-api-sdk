@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { IssueEnforcements } from './issue-enforcements';
 
 /**
  * An issue with a listings item.
@@ -39,11 +42,23 @@ export interface Issue {
      */
     'severity': IssueSeverityEnum;
     /**
-     * Names of the attributes associated with the issue, if applicable.
+     * The names of the attributes associated with the issue, if applicable.
      * @type {Array<string>}
      * @memberof Issue
      */
     'attributeNames'?: Array<string>;
+    /**
+     * List of issue categories.   Possible vales:   * `INVALID_ATTRIBUTE` - Indicating an invalid attribute in the listing.   * `MISSING_ATTRIBUTE` - Highlighting a missing attribute in the listing.   * `INVALID_IMAGE` - Signifying an invalid image in the listing.   * `MISSING_IMAGE` - Noting the absence of an image in the listing.   * `INVALID_PRICE` - Pertaining to issues with the listing`s price-related attributes.   * `MISSING_PRICE` - Pointing out the absence of a price attribute in the listing.   * `DUPLICATE` - Identifying listings with potential duplicate problems, such as this ASIN potentially being a duplicate of another ASIN.   * `QUALIFICATION_REQUIRED` - Indicating that the listing requires qualification-related approval.
+     * @type {Array<string>}
+     * @memberof Issue
+     */
+    'categories': Array<string>;
+    /**
+     * 
+     * @type {IssueEnforcements}
+     * @memberof Issue
+     */
+    'enforcements'?: IssueEnforcements;
 }
 
 export const IssueSeverityEnum = {

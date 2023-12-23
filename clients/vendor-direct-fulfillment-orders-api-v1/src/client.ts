@@ -1,32 +1,18 @@
 import {type ClientConfiguration, createAxiosInstance, type RateLimit} from '@sp-api-sdk/common'
 
-import {Configuration, VendorOrdersApi} from './api-model'
+import {Configuration, UpdateInventoryApi} from './api-model'
 
 export const clientRateLimits: RateLimit[] = [
   {
-    method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/directFulfillment/orders/v1/purchaseOrders$'),
-    rate: 10,
-    burst: 10,
-  },
-  {
-    method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/directFulfillment/orders/v1/purchaseOrders/[^/]*$'),
-    rate: 10,
-    burst: 10,
-  },
-  {
     method: 'post',
     // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/directFulfillment/orders/v1/acknowledgements$'),
+    urlRegex: new RegExp('^/vendor/directFulfillment/inventory/v1/warehouses/[^/]*/items$'),
     rate: 10,
     burst: 10,
   },
 ]
 
-export class VendorDirectFulfillmentOrdersApiClient extends VendorOrdersApi {
+export class VendorDirectFulfillmentOrdersApiClient extends UpdateInventoryApi {
   constructor(configuration: ClientConfiguration) {
     const {axios, endpoint} = createAxiosInstance(configuration, clientRateLimits)
 

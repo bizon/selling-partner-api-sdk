@@ -16,9 +16,6 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import { ProductType } from './product-type';
-// May contain unused imports in some cases
-// @ts-ignore
-import { ProductTypeVersion } from './product-type-version';
 
 /**
  * A list of Amazon product types with definitions available.
@@ -33,10 +30,10 @@ export interface ProductTypeList {
      */
     'productTypes': Array<ProductType>;
     /**
-     * 
-     * @type {ProductTypeVersion}
+     * Amazon product type version identifier.
+     * @type {string}
      * @memberof ProductTypeList
      */
-    'productTypeVersion': ProductTypeVersion;
+    'productTypeVersion': string;
 }
 

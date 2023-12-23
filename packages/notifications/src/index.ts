@@ -11,6 +11,7 @@ export type {ItemInventoryEventChangeNotification} from './item-inventory-event-
 export type {ItemProductTypeChangeNotification} from './item-product-type-change-notification'
 export type {ItemSalesEventChangeNotification} from './item-sales-event-change-notification'
 export type {ListingsItemIssuesChangeNotification} from './listings-item-issues-change-notification'
+export type {ListingsItemIssuesChangeNotification_20231213} from './listings-item-issues-change-notification-2023-12-13'
 export type {ListingsItemMfnQuantityChange} from './listings-item-mfn-quantity-change'
 export type {ListingsItemStatusChangeNotification} from './listings-item-status-change-notification'
 export type {MfnOrderStatusChangeNotification} from './mfn-order-status-change-notification'

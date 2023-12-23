@@ -15,8 +15,9 @@ interface NotificationFile {
 }
 
 async function generateSchema(schemaFilePaths: string): Promise<NotificationFile | undefined> {
-  const {name: notificationName} = parsePath(schemaFilePaths)
+  const {name: parsedName} = parsePath(schemaFilePaths)
   const startedAt = Date.now()
+  const notificationName = parsedName.replaceAll('-', '')
 
   logger.info('generating…', {notificationName})
 
@@ -44,7 +45,7 @@ async function generateSchema(schemaFilePaths: string): Promise<NotificationFile
       },
     )
 
-    const fileName = _.kebabCase(notificationName)
+    const fileName = _.kebabCase(parsedName)
 
     await fs.writeFile(
       `packages/notifications/src/${fileName}.ts`,

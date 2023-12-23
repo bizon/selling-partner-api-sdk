@@ -33,6 +33,7 @@ This SDK supports the following features:
 This repository contains an API client for each of the available Selling Partner API version:
 
 - [aplus-content-api-2020-11-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/aplus-content-api-2020-11-01)
+- [application-management-api-2023-11-30](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/application-management-api-2023-11-30)
 - [authorization-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/authorization-api-v1)
 - [catalog-items-api-2020-12-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/catalog-items-api-2020-12-01)
 - [catalog-items-api-2022-04-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/catalog-items-api-2022-04-01)
@@ -66,6 +67,7 @@ This repository contains an API client for each of the available Selling Partner
 - [services-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/services-api-v1)
 - [shipment-invoicing-api-v0](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/shipment-invoicing-api-v0)
 - [shipping-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/shipping-api-v1)
+- [shipping-api-v2](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/shipping-api-v2)
 - [solicitations-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/solicitations-api-v1)
 - [supply-sources-api-2020-07-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/supply-sources-api-2020-07-01)
 - [tokens-api-2021-03-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/tokens-api-2021-03-01)

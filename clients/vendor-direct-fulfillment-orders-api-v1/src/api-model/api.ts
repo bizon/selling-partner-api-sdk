@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Selling Partner API for Direct Fulfillment Orders
- * The Selling Partner API for Direct Fulfillment Orders provides programmatic access to a direct fulfillment vendor\'s order data.
+ * Selling Partner API for Direct Fulfillment Inventory Updates
+ * The Selling Partner API for Direct Fulfillment Inventory Updates provides programmatic access to a direct fulfillment vendor\'s inventory updates.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -14,5 +14,5 @@
 
 
 
-export * from './api/vendor-orders-api';
+export * from './api/update-inventory-api';
 

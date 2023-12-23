@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Notifications
- * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner\'s business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, see the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
+ * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner\'s business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, refer to the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
  *
  * The version of the OpenAPI document: v1
  * 
@@ -15,7 +15,7 @@
 
 
 /**
- * Represents an Amazon EventBridge destination.
+ * The Amazon EventBridge destination.
  * @export
  * @interface EventBridgeResource
  */
@@ -27,7 +27,7 @@ export interface EventBridgeResource {
      */
     'name': string;
     /**
-     * The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, see https://docs.aws.amazon.com/general/latest/gr/ev.html.
+     * The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, refer to [Amazon EventBridge endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ev.html).
      * @type {string}
      * @memberof EventBridgeResource
      */

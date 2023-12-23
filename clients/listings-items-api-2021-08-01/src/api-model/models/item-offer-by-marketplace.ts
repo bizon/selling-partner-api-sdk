@@ -27,7 +27,7 @@ import { Points } from './points';
  */
 export interface ItemOfferByMarketplace {
     /**
-     * Amazon marketplace identifier.
+     * The Amazon marketplace identifier.
      * @type {string}
      * @memberof ItemOfferByMarketplace
      */

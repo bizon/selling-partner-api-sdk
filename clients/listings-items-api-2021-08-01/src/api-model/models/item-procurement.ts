@@ -18,7 +18,7 @@
 import { Money } from './money';
 
 /**
- * Vendor procurement information for the listings item.
+ * The vendor procurement information for the listings item.
  * @export
  * @interface ItemProcurement
  */

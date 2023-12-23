@@ -48,13 +48,13 @@ export interface Item {
      */
     'summaries'?: Array<ItemSummaryByMarketplace>;
     /**
-     * JSON object containing structured listings item attribute data keyed by attribute name.
+     * A JSON object containing structured listings item attribute data keyed by attribute name.
      * @type {object}
      * @memberof Item
      */
     'attributes'?: object;
     /**
-     * Issues associated with the listings item.
+     * The issues associated with the listings item.
      * @type {Array<Issue>}
      * @memberof Item
      */
@@ -66,13 +66,13 @@ export interface Item {
      */
     'offers'?: Array<ItemOfferByMarketplace>;
     /**
-     * Fulfillment availability for the listings item.
+     * The fulfillment availability for the listings item.
      * @type {Array<FulfillmentAvailability>}
      * @memberof Item
      */
     'fulfillmentAvailability'?: Array<FulfillmentAvailability>;
     /**
-     * Vendor procurement information for the listings item.
+     * The vendor procurement information for the listings item.
      * @type {Array<ItemProcurement>}
      * @memberof Item
      */

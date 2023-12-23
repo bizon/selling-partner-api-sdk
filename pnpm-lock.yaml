@@ -76,6 +76,19 @@ importers:
         specifier: workspace:*
         version: link:../../packages/auth
 
+  clients/application-management-api-2023-11-30:
+    dependencies:
+      '@sp-api-sdk/common':
+        specifier: workspace:*
+        version: link:../../packages/common
+      axios:
+        specifier: ^1.6.2
+        version: 1.6.2
+    devDependencies:
+      '@sp-api-sdk/auth':
+        specifier: workspace:*
+        version: link:../../packages/auth
+
   clients/authorization-api-v1:
     dependencies:
       '@sp-api-sdk/common':
@@ -493,6 +506,19 @@ importers:
         version: link:../../packages/auth
 
   clients/shipping-api-v1:
+    dependencies:
+      '@sp-api-sdk/common':
+        specifier: workspace:*
+        version: link:../../packages/common
+      axios:
+        specifier: ^1.6.2
+        version: 1.6.2
+    devDependencies:
+      '@sp-api-sdk/auth':
+        specifier: workspace:*
+        version: link:../../packages/auth
+
+  clients/shipping-api-v2:
     dependencies:
       '@sp-api-sdk/common':
         specifier: workspace:*

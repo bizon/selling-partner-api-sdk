@@ -1,0 +1,54 @@
+{
+  "name": "@sp-api-sdk/shipping-api-v2",
+  "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
+  "description": "The Amazon Shipping API is designed to support outbound shipping use cases both for orders originating on Amazon-owned marketplaces as well as external channels/marketplaces. With these APIs, you can request shipping rates, create shipments, cancel shipments, and track shipments.",
+  "version": "1.0.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "scripts": {
+    "check:ts": "tsc --noEmit",
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:es": "tsc -p tsconfig.es.json",
+    "build": "pnpm build:cjs && pnpm build:es",
+    "clean": "rimraf dist",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@sp-api-sdk/common": "workspace:*",
+    "axios": "^1.6.2"
+  },
+  "devDependencies": {
+    "@sp-api-sdk/auth": "workspace:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bizon/selling-partner-api-sdk.git",
+    "directory": "clients/shipping-api-v2"
+  },
+  "bugs": {
+    "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
+  },
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/shipping-api-v2",
+  "keywords": [
+    "amazon",
+    "bizon",
+    "marketplace web services",
+    "mws",
+    "selling partner api",
+    "sp api",
+    "sp sdk",
+    "shipping api"
+  ]
+}

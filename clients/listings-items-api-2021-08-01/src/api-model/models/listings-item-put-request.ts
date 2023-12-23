@@ -15,7 +15,7 @@
 
 
 /**
- * The request body schema for the putListingsItem operation.
+ * The request body schema for the `putListingsItem` operation.
  * @export
  * @interface ListingsItemPutRequest
  */
@@ -33,7 +33,7 @@ export interface ListingsItemPutRequest {
      */
     'requirements'?: ListingsItemPutRequestRequirementsEnum;
     /**
-     * JSON object containing structured listings item attribute data keyed by attribute name.
+     * A JSON object containing structured listings item attribute data keyed by attribute name.
      * @type {object}
      * @memberof ListingsItemPutRequest
      */

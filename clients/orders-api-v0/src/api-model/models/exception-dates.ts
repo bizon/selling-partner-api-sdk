@@ -24,7 +24,7 @@ import { OpenInterval } from './open-interval';
  */
 export interface ExceptionDates {
     /**
-     * Date when the business is closed, in ISO-8601 date format.
+     * Date when the business is closed, in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date format.
      * @type {string}
      * @memberof ExceptionDates
      */

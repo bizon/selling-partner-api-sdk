@@ -823,8 +823,8 @@ importers:
         version: 7.0.1
     devDependencies:
       nock:
-        specifier: ^13.5.0
-        version: 13.5.0
+        specifier: ^13.5.1
+        version: 13.5.1
       type-fest:
         specifier: ^4.10.0
         version: 4.10.0
@@ -848,8 +848,8 @@ importers:
         version: 7.0.1
     devDependencies:
       nock:
-        specifier: ^13.5.0
-        version: 13.5.0
+        specifier: ^13.5.1
+        version: 13.5.1
       strip-ansi:
         specifier: ^6.0.1
         version: 6.0.1
@@ -6472,7 +6472,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 18.19.8
+      '@types/node': 18.19.10
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true
@@ -7315,8 +7315,8 @@ packages:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
     dev: false
 
-  /nock@13.5.0:
-    resolution: {integrity: sha512-9hc1eCS2HtOz+sE9W7JQw/tXJktg0zoPSu48s/pYe73e25JW9ywiowbqnUSd7iZPeVawLcVpPZeZS312fwSY+g==}
+  /nock@13.5.1:
+    resolution: {integrity: sha512-+s7b73fzj5KnxbKH4Oaqz07tQ8degcMilU4rrmnKvI//b0JMBU4wEXFQ8zqr+3+L4eWSfU3H/UoIVGUV0tue1Q==}
     engines: {node: '>= 10.13'}
     dependencies:
       debug: 4.3.4

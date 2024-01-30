@@ -15,7 +15,7 @@
 
 
 /**
- * The status of the electronic invoice.
+ * The status of the electronic invoice. Only available for Easy Ship orders and orders in the BR marketplace.
  * @export
  * @enum {string}
  */

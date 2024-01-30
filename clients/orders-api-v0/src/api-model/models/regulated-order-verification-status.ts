@@ -51,7 +51,7 @@ export interface RegulatedOrderVerificationStatus {
      */
     'RejectionReason'?: RejectionReason;
     /**
-     * The date the order was reviewed. In ISO 8601 date time format.
+     * The date the order was reviewed. In <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format.
      * @type {string}
      * @memberof RegulatedOrderVerificationStatus
      */

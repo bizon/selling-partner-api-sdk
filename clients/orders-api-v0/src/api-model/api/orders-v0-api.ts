@@ -303,10 +303,10 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * Returns orders created or updated during the time frame indicated by the specified parameters. You can also apply a range of filtering criteria to narrow the list of orders returned. If NextToken is present, that will be used to retrieve the orders instead of other criteria.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {Array<string>} marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of marketplaceId values.
-         * @param {string} [createdAfter] A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format.
-         * @param {string} [createdBefore] A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
-         * @param {string} [lastUpdatedAfter] A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
-         * @param {string} [lastUpdatedBefore] A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
+         * @param {string} [createdAfter] A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [createdBefore] A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [lastUpdatedAfter] A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [lastUpdatedBefore] A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
          * @param {Array<string>} [orderStatuses] A list of &#x60;OrderStatus&#x60; values used to filter the results.  **Possible values:** - &#x60;PendingAvailability&#x60; (This status is available for pre-orders only. The order has been placed, payment has not been authorized, and the release date of the item is in the future.) - &#x60;Pending&#x60; (The order has been placed but payment has not been authorized.) - &#x60;Unshipped&#x60; (Payment has been authorized and the order is ready for shipment, but no items in the order have been shipped.) - &#x60;PartiallyShipped&#x60; (One or more, but not all, items in the order have been shipped.) - &#x60;Shipped&#x60; (All items in the order have been shipped.) - &#x60;InvoiceUnconfirmed&#x60; (All items in the order have been shipped. The seller has not yet given confirmation to Amazon that the invoice has been shipped to the buyer.) - &#x60;Canceled&#x60; (The order has been canceled.) - &#x60;Unfulfillable&#x60; (The order cannot be fulfilled. This state applies only to Multi-Channel Fulfillment orders.)
          * @param {Array<string>} [fulfillmentChannels] A list that indicates how an order was fulfilled. Filters the results by fulfillment channel. Possible values: AFN (Fulfillment by Amazon); MFN (Fulfilled by the seller).
          * @param {Array<string>} [paymentMethods] A list of payment method values. Used to select orders paid using the specified payment methods. Possible values: COD (Cash on delivery); CVS (Convenience store payment); Other (Any payment method other than COD or CVS).
@@ -320,10 +320,10 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} [actualFulfillmentSupplySourceId] Denotes the recommended sourceId where the order should be fulfilled from.
          * @param {boolean} [isISPU] When true, this order is marked to be picked up from a store rather than delivered.
          * @param {string} [storeChainStoreId] The store chain store identifier. Linked to a specific store in a store chain.
-         * @param {string} [earliestDeliveryDateBefore] A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
-         * @param {string} [earliestDeliveryDateAfter] A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
-         * @param {string} [latestDeliveryDateBefore] A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
-         * @param {string} [latestDeliveryDateAfter] A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
+         * @param {string} [earliestDeliveryDateBefore] A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [earliestDeliveryDateAfter] A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [latestDeliveryDateBefore] A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [latestDeliveryDateAfter] A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -605,10 +605,10 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
         /**
          * Returns orders created or updated during the time frame indicated by the specified parameters. You can also apply a range of filtering criteria to narrow the list of orders returned. If NextToken is present, that will be used to retrieve the orders instead of other criteria.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {Array<string>} marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of marketplaceId values.
-         * @param {string} [createdAfter] A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format.
-         * @param {string} [createdBefore] A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
-         * @param {string} [lastUpdatedAfter] A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
-         * @param {string} [lastUpdatedBefore] A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
+         * @param {string} [createdAfter] A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [createdBefore] A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [lastUpdatedAfter] A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [lastUpdatedBefore] A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
          * @param {Array<string>} [orderStatuses] A list of &#x60;OrderStatus&#x60; values used to filter the results.  **Possible values:** - &#x60;PendingAvailability&#x60; (This status is available for pre-orders only. The order has been placed, payment has not been authorized, and the release date of the item is in the future.) - &#x60;Pending&#x60; (The order has been placed but payment has not been authorized.) - &#x60;Unshipped&#x60; (Payment has been authorized and the order is ready for shipment, but no items in the order have been shipped.) - &#x60;PartiallyShipped&#x60; (One or more, but not all, items in the order have been shipped.) - &#x60;Shipped&#x60; (All items in the order have been shipped.) - &#x60;InvoiceUnconfirmed&#x60; (All items in the order have been shipped. The seller has not yet given confirmation to Amazon that the invoice has been shipped to the buyer.) - &#x60;Canceled&#x60; (The order has been canceled.) - &#x60;Unfulfillable&#x60; (The order cannot be fulfilled. This state applies only to Multi-Channel Fulfillment orders.)
          * @param {Array<string>} [fulfillmentChannels] A list that indicates how an order was fulfilled. Filters the results by fulfillment channel. Possible values: AFN (Fulfillment by Amazon); MFN (Fulfilled by the seller).
          * @param {Array<string>} [paymentMethods] A list of payment method values. Used to select orders paid using the specified payment methods. Possible values: COD (Cash on delivery); CVS (Convenience store payment); Other (Any payment method other than COD or CVS).
@@ -622,10 +622,10 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {string} [actualFulfillmentSupplySourceId] Denotes the recommended sourceId where the order should be fulfilled from.
          * @param {boolean} [isISPU] When true, this order is marked to be picked up from a store rather than delivered.
          * @param {string} [storeChainStoreId] The store chain store identifier. Linked to a specific store in a store chain.
-         * @param {string} [earliestDeliveryDateBefore] A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
-         * @param {string} [earliestDeliveryDateAfter] A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
-         * @param {string} [latestDeliveryDateBefore] A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
-         * @param {string} [latestDeliveryDateAfter] A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
+         * @param {string} [earliestDeliveryDateBefore] A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [earliestDeliveryDateAfter] A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [latestDeliveryDateBefore] A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [latestDeliveryDateAfter] A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -891,28 +891,28 @@ export interface OrdersV0ApiGetOrdersRequest {
     readonly marketplaceIds: Array<string>
 
     /**
-     * A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format.
+     * A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof OrdersV0ApiGetOrders
      */
     readonly createdAfter?: string
 
     /**
-     * A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
+     * A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof OrdersV0ApiGetOrders
      */
     readonly createdBefore?: string
 
     /**
-     * A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
+     * A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof OrdersV0ApiGetOrders
      */
     readonly lastUpdatedAfter?: string
 
     /**
-     * A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
+     * A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof OrdersV0ApiGetOrders
      */
@@ -1010,28 +1010,28 @@ export interface OrdersV0ApiGetOrdersRequest {
     readonly storeChainStoreId?: string
 
     /**
-     * A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
+     * A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof OrdersV0ApiGetOrders
      */
     readonly earliestDeliveryDateBefore?: string
 
     /**
-     * A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
+     * A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof OrdersV0ApiGetOrders
      */
     readonly earliestDeliveryDateAfter?: string
 
     /**
-     * A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
+     * A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof OrdersV0ApiGetOrders
      */
     readonly latestDeliveryDateBefore?: string
 
     /**
-     * A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
+     * A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof OrdersV0ApiGetOrders
      */

@@ -192,13 +192,13 @@ export interface OrderItem {
      */
     'ConditionSubtypeId'?: string;
     /**
-     * The start date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.
+     * The start date of the scheduled delivery window in the time zone of the order destination. In <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format.
      * @type {string}
      * @memberof OrderItem
      */
     'ScheduledDeliveryStartDate'?: string;
     /**
-     * The end date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.
+     * The end date of the scheduled delivery window in the time zone of the order destination. In <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format.
      * @type {string}
      * @memberof OrderItem
      */

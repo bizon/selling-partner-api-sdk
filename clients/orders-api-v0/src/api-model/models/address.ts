@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { AddressExtendedFields } from './address-extended-fields';
 
 /**
  * The shipping address for the order.
@@ -92,6 +95,12 @@ export interface Address {
      * @memberof Address
      */
     'Phone'?: string;
+    /**
+     * 
+     * @type {AddressExtendedFields}
+     * @memberof Address
+     */
+    'ExtendedFields'?: AddressExtendedFields;
     /**
      * The address type of the shipping address.
      * @type {string}

@@ -1,6 +1,8 @@
 # `fba-small-and-light-api-v1`
 
-The Selling Partner API for FBA Small and Light lets you help sellers manage their listings in the Small and Light program. The program reduces the cost of fulfilling orders for small and lightweight FBA inventory. You can enroll or remove items from the program and check item eligibility and enrollment status. You can also preview the estimated program fees charged to a seller for items sold while enrolled in the program.
+The Selling Partner API for FBA Small and Light lets you help sellers manage their listings in the Small and Light program. The program reduces the cost of fulfilling orders for small and lightweight FBA inventory. You can enroll or remove items from the program and check item eligibility and enrollment status. You can also preview the estimated program fees charged to a seller for items sold while enrolled in the program. 
+
+**Note:** The FBA Small and Light program sunset in the US and EU regions on **September 26, 2023**. The program will be deprecated in the JP region on **March 31, 2024** and sunset on **April 1, 2024**. APIs announcing deprecation will no longer be supported after their deprecation date. Calls to deprecated APIs will fail beginning on their sunset date. For more information, refer to [FBA Small and Light program deprecation](https://developer-docs.amazon.com/sp-api/changelog/fba-small-and-light-program-deprecation).
 
 [![npm version](https://badgen.net/npm/v/@sp-api-sdk/fba-small-and-light-api-v1)](https://www.npmjs.com/package/@sp-api-sdk/fba-small-and-light-api-v1)
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)

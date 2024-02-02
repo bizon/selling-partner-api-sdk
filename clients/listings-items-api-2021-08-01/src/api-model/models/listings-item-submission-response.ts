@@ -16,6 +16,9 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import { Issue } from './issue';
+// May contain unused imports in some cases
+// @ts-ignore
+import { ItemIdentifiersByMarketplace } from './item-identifiers-by-marketplace';
 
 /**
  * Response containing the results of a submission to the Selling Partner API for Listings Items.
@@ -47,11 +50,18 @@ export interface ListingsItemSubmissionResponse {
      * @memberof ListingsItemSubmissionResponse
      */
     'issues'?: Array<Issue>;
+    /**
+     * Identity attributes associated with the item in the Amazon catalog, such as the ASIN.
+     * @type {Array<ItemIdentifiersByMarketplace>}
+     * @memberof ListingsItemSubmissionResponse
+     */
+    'identifiers'?: Array<ItemIdentifiersByMarketplace>;
 }
 
 export const ListingsItemSubmissionResponseStatusEnum = {
     Accepted: 'ACCEPTED',
-    Invalid: 'INVALID'
+    Invalid: 'INVALID',
+    Valid: 'VALID'
 } as const;
 
 export type ListingsItemSubmissionResponseStatusEnum = typeof ListingsItemSubmissionResponseStatusEnum[keyof typeof ListingsItemSubmissionResponseStatusEnum];

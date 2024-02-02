@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for FBA Small And Light
- * The Selling Partner API for FBA Small and Light lets you help sellers manage their listings in the Small and Light program. The program reduces the cost of fulfilling orders for small and lightweight FBA inventory. You can enroll or remove items from the program and check item eligibility and enrollment status. You can also preview the estimated program fees charged to a seller for items sold while enrolled in the program.
+ * The Selling Partner API for FBA Small and Light lets you help sellers manage their listings in the Small and Light program. The program reduces the cost of fulfilling orders for small and lightweight FBA inventory. You can enroll or remove items from the program and check item eligibility and enrollment status. You can also preview the estimated program fees charged to a seller for items sold while enrolled in the program.   **Note:** The FBA Small and Light program sunset in the US and EU regions on **September 26, 2023**. The program will be deprecated in the JP region on **March 31, 2024** and sunset on **April 1, 2024**. APIs announcing deprecation will no longer be supported after their deprecation date. Calls to deprecated APIs will fail beginning on their sunset date. For more information, refer to [FBA Small and Light program deprecation](https://developer-docs.amazon.com/sp-api/changelog/fba-small-and-light-program-deprecation).
  *
  * The version of the OpenAPI document: v1
  * 
@@ -42,6 +42,7 @@ export const SmallAndLightApiAxiosParamCreator = function (configuration?: Confi
          * @param {string} sellerSKU The seller SKU that identifies the item.
          * @param {Array<string>} marketplaceIds The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         deleteSmallAndLightEnrollmentBySellerSKU: async (sellerSKU: string, marketplaceIds: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -82,6 +83,7 @@ export const SmallAndLightApiAxiosParamCreator = function (configuration?: Confi
          * @param {string} sellerSKU The seller SKU that identifies the item.
          * @param {Array<string>} marketplaceIds The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getSmallAndLightEligibilityBySellerSKU: async (sellerSKU: string, marketplaceIds: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -122,6 +124,7 @@ export const SmallAndLightApiAxiosParamCreator = function (configuration?: Confi
          * @param {string} sellerSKU The seller SKU that identifies the item.
          * @param {Array<string>} marketplaceIds The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getSmallAndLightEnrollmentBySellerSKU: async (sellerSKU: string, marketplaceIds: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -161,6 +164,7 @@ export const SmallAndLightApiAxiosParamCreator = function (configuration?: Confi
          * Returns the Small and Light fee estimates for the specified items. You must include a marketplaceId parameter to retrieve the proper fee estimates for items to be sold in that marketplace. The ordering of items in the response will mirror the order of the items in the request. Duplicate ASIN/price combinations are removed.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 3 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {SmallAndLightFeePreviewRequest} body 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getSmallAndLightFeePreview: async (body: SmallAndLightFeePreviewRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -197,6 +201,7 @@ export const SmallAndLightApiAxiosParamCreator = function (configuration?: Confi
          * @param {string} sellerSKU The seller SKU that identifies the item.
          * @param {Array<string>} marketplaceIds The marketplace in which to enroll the item. Note: Accepts a single marketplace only.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         putSmallAndLightEnrollmentBySellerSKU: async (sellerSKU: string, marketplaceIds: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -247,6 +252,7 @@ export const SmallAndLightApiFp = function(configuration?: Configuration) {
          * @param {string} sellerSKU The seller SKU that identifies the item.
          * @param {Array<string>} marketplaceIds The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async deleteSmallAndLightEnrollmentBySellerSKU(sellerSKU: string, marketplaceIds: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
@@ -258,6 +264,7 @@ export const SmallAndLightApiFp = function(configuration?: Configuration) {
          * @param {string} sellerSKU The seller SKU that identifies the item.
          * @param {Array<string>} marketplaceIds The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async getSmallAndLightEligibilityBySellerSKU(sellerSKU: string, marketplaceIds: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SmallAndLightEligibility>> {
@@ -269,6 +276,7 @@ export const SmallAndLightApiFp = function(configuration?: Configuration) {
          * @param {string} sellerSKU The seller SKU that identifies the item.
          * @param {Array<string>} marketplaceIds The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async getSmallAndLightEnrollmentBySellerSKU(sellerSKU: string, marketplaceIds: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SmallAndLightEnrollment>> {
@@ -279,6 +287,7 @@ export const SmallAndLightApiFp = function(configuration?: Configuration) {
          * Returns the Small and Light fee estimates for the specified items. You must include a marketplaceId parameter to retrieve the proper fee estimates for items to be sold in that marketplace. The ordering of items in the response will mirror the order of the items in the request. Duplicate ASIN/price combinations are removed.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 3 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {SmallAndLightFeePreviewRequest} body 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async getSmallAndLightFeePreview(body: SmallAndLightFeePreviewRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SmallAndLightFeePreviews>> {
@@ -290,6 +299,7 @@ export const SmallAndLightApiFp = function(configuration?: Configuration) {
          * @param {string} sellerSKU The seller SKU that identifies the item.
          * @param {Array<string>} marketplaceIds The marketplace in which to enroll the item. Note: Accepts a single marketplace only.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async putSmallAndLightEnrollmentBySellerSKU(sellerSKU: string, marketplaceIds: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SmallAndLightEnrollment>> {
@@ -310,6 +320,7 @@ export const SmallAndLightApiFactory = function (configuration?: Configuration, 
          * Removes the item indicated by the specified seller SKU from the Small and Light program in the specified marketplace. If the item is not eligible for disenrollment, the ineligibility reasons are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {SmallAndLightApiDeleteSmallAndLightEnrollmentBySellerSKURequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         deleteSmallAndLightEnrollmentBySellerSKU(requestParameters: SmallAndLightApiDeleteSmallAndLightEnrollmentBySellerSKURequest, options?: AxiosRequestConfig): AxiosPromise<void> {
@@ -319,6 +330,7 @@ export const SmallAndLightApiFactory = function (configuration?: Configuration, 
          * Returns the Small and Light program eligibility status of the item indicated by the specified seller SKU in the specified marketplace. If the item is not eligible, the ineligibility reasons are returned. **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {SmallAndLightApiGetSmallAndLightEligibilityBySellerSKURequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getSmallAndLightEligibilityBySellerSKU(requestParameters: SmallAndLightApiGetSmallAndLightEligibilityBySellerSKURequest, options?: AxiosRequestConfig): AxiosPromise<SmallAndLightEligibility> {
@@ -328,6 +340,7 @@ export const SmallAndLightApiFactory = function (configuration?: Configuration, 
          * Returns the Small and Light enrollment status for the item indicated by the specified seller SKU in the specified marketplace.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {SmallAndLightApiGetSmallAndLightEnrollmentBySellerSKURequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getSmallAndLightEnrollmentBySellerSKU(requestParameters: SmallAndLightApiGetSmallAndLightEnrollmentBySellerSKURequest, options?: AxiosRequestConfig): AxiosPromise<SmallAndLightEnrollment> {
@@ -337,6 +350,7 @@ export const SmallAndLightApiFactory = function (configuration?: Configuration, 
          * Returns the Small and Light fee estimates for the specified items. You must include a marketplaceId parameter to retrieve the proper fee estimates for items to be sold in that marketplace. The ordering of items in the response will mirror the order of the items in the request. Duplicate ASIN/price combinations are removed.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 3 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {SmallAndLightApiGetSmallAndLightFeePreviewRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getSmallAndLightFeePreview(requestParameters: SmallAndLightApiGetSmallAndLightFeePreviewRequest, options?: AxiosRequestConfig): AxiosPromise<SmallAndLightFeePreviews> {
@@ -346,6 +360,7 @@ export const SmallAndLightApiFactory = function (configuration?: Configuration, 
          * Enrolls the item indicated by the specified seller SKU in the Small and Light program in the specified marketplace. If the item is not eligible, the ineligibility reasons are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {SmallAndLightApiPutSmallAndLightEnrollmentBySellerSKURequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         putSmallAndLightEnrollmentBySellerSKU(requestParameters: SmallAndLightApiPutSmallAndLightEnrollmentBySellerSKURequest, options?: AxiosRequestConfig): AxiosPromise<SmallAndLightEnrollment> {
@@ -463,6 +478,7 @@ export class SmallAndLightApi extends BaseAPI {
      * Removes the item indicated by the specified seller SKU from the Small and Light program in the specified marketplace. If the item is not eligible for disenrollment, the ineligibility reasons are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {SmallAndLightApiDeleteSmallAndLightEnrollmentBySellerSKURequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof SmallAndLightApi
      */
@@ -474,6 +490,7 @@ export class SmallAndLightApi extends BaseAPI {
      * Returns the Small and Light program eligibility status of the item indicated by the specified seller SKU in the specified marketplace. If the item is not eligible, the ineligibility reasons are returned. **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {SmallAndLightApiGetSmallAndLightEligibilityBySellerSKURequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof SmallAndLightApi
      */
@@ -485,6 +502,7 @@ export class SmallAndLightApi extends BaseAPI {
      * Returns the Small and Light enrollment status for the item indicated by the specified seller SKU in the specified marketplace.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {SmallAndLightApiGetSmallAndLightEnrollmentBySellerSKURequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof SmallAndLightApi
      */
@@ -496,6 +514,7 @@ export class SmallAndLightApi extends BaseAPI {
      * Returns the Small and Light fee estimates for the specified items. You must include a marketplaceId parameter to retrieve the proper fee estimates for items to be sold in that marketplace. The ordering of items in the response will mirror the order of the items in the request. Duplicate ASIN/price combinations are removed.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 3 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {SmallAndLightApiGetSmallAndLightFeePreviewRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof SmallAndLightApi
      */
@@ -507,6 +526,7 @@ export class SmallAndLightApi extends BaseAPI {
      * Enrolls the item indicated by the specified seller SKU in the Small and Light program in the specified marketplace. If the item is not eligible, the ineligibility reasons are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {SmallAndLightApiPutSmallAndLightEnrollmentBySellerSKURequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof SmallAndLightApi
      */

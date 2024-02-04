@@ -291,6 +291,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {Array<string>} [sellerSKUList] A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon\&#39;s fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. 
          * @param {Array<string>} [aSINList] A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon\&#39;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getInboundGuidance: async (marketplaceId: string, sellerSKUList?: Array<string>, aSINList?: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -886,6 +887,7 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {Array<string>} [sellerSKUList] A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon\&#39;s fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. 
          * @param {Array<string>} [aSINList] A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon\&#39;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async getInboundGuidance(marketplaceId: string, sellerSKUList?: Array<string>, aSINList?: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInboundGuidanceResponse>> {
@@ -1083,6 +1085,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * Returns information that lets a seller know if Amazon recommends sending an item to a given marketplace. In some cases, Amazon provides guidance for why a given SellerSKU or ASIN is not recommended for shipment to Amazon\'s fulfillment network. Sellers may still ship items that are not recommended, at their discretion.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {FbaInboundApiGetInboundGuidanceRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         getInboundGuidance(requestParameters: FbaInboundApiGetInboundGuidanceRequest, options?: AxiosRequestConfig): AxiosPromise<GetInboundGuidanceResponse> {
@@ -1692,6 +1695,7 @@ export class FbaInboundApi extends BaseAPI {
      * Returns information that lets a seller know if Amazon recommends sending an item to a given marketplace. In some cases, Amazon provides guidance for why a given SellerSKU or ASIN is not recommended for shipment to Amazon\'s fulfillment network. Sellers may still ship items that are not recommended, at their discretion.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {FbaInboundApiGetInboundGuidanceRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */

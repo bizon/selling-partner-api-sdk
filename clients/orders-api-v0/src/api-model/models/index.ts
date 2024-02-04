@@ -1,4 +1,5 @@
 export * from './address';
+export * from './address-extended-fields';
 export * from './associated-item';
 export * from './association-type';
 export * from './automated-shipping-settings';

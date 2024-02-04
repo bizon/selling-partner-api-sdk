@@ -5,6 +5,7 @@ export * from './issue-enforcement-action';
 export * from './issue-enforcements';
 export * from './issue-exemption';
 export * from './item';
+export * from './item-identifiers-by-marketplace';
 export * from './item-image';
 export * from './item-offer-by-marketplace';
 export * from './item-procurement';

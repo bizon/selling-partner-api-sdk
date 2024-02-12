@@ -23,7 +23,7 @@ jobs:
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v3
         with:
           version: "latest"
 
@@ -77,7 +77,7 @@ jobs:
         with:
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
 
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v3
         with:
           version: "latest"
 

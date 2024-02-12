@@ -21,7 +21,7 @@
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.17",
     "conventional-changelog-conventionalcommits": "^7.0.2",
-    "eslint-config-xo-bizon": "^2.0.0",
+    "eslint-config-xo-bizon": "^3.0.1",
     "jest": "^29.7.0",
     "rimraf": "^5.0.5",
     "ts-jest": "^29.1.2",
@@ -31,7 +31,7 @@
     "typedoc": "^0.25.8",
     "typedoc-plugin-missing-exports": "^2.2.0",
     "typescript": "^5.3.3",
-    "xo": "^0.56.0"
+    "xo": "^0.57.0"
   },
   "xo": {
     "extends": "xo-bizon",

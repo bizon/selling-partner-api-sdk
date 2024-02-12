@@ -35,21 +35,21 @@ interface RateLimit {
 
 async function readPackageVersion(path: string) {
   try {
-    const {default: pkg} = await import(`../${path}/package.json`, {
+    const {default: packageJson} = await import(`../${path}/package.json`, {
       assert: {type: 'json'},
     })
-    return (pkg as PackageJson).version
+    return (packageJson as PackageJson).version
   } catch {
     return null
   }
 }
 
 async function getAxiosVersion() {
-  const {default: pkg} = await import('../packages/common/package.json', {
+  const {default: packageJson} = await import('../packages/common/package.json', {
     assert: {type: 'json'},
   })
 
-  return pkg.dependencies!.axios
+  return packageJson.dependencies!.axios
 }
 
 const cleaner = remark().use(remarkStrip)
@@ -79,15 +79,15 @@ async function generateClientVersion(modelFilePath: string) {
     '[$1](https://developer-docs.amazon.com/sp-api/docs/$2)',
   )
 
-  const doc = JSON.parse(model) as OpenAPIV3.Document
+  const document = JSON.parse(model) as OpenAPIV3.Document
 
-  await applyPatches(doc, patchesPath)
-  await jsonfile.writeFile(modelPath, doc)
+  await applyPatches(document, patchesPath)
+  await jsonfile.writeFile(modelPath, document)
 
   const startedAt = Date.now()
 
   const clientNameBase = modelDirectory.replace(/-model$/, '')
-  const packageName = `${clientNameBase}-${doc.info.version}`
+  const packageName = `${clientNameBase}-${document.info.version}`
   const clientDirectoryPath = `clients/${packageName}`
 
   const clientClassName = camelCase(`${clientNameBase}Client`, {
@@ -95,7 +95,7 @@ async function generateClientVersion(modelFilePath: string) {
     locale: false,
   })
 
-  const operations = Object.values(doc.paths)
+  const operations = Object.values(document.paths)
     .flatMap((path) => Object.values(path ?? {}))
     .filter((operation): operation is OpenAPIV3.OperationObject => typeof operation !== 'string')
   const [firstTag = 'Default'] = operations.flatMap((operation) => operation.tags ?? [])
@@ -118,7 +118,7 @@ async function generateClientVersion(modelFilePath: string) {
     `${clientDirectoryPath}/package.json`,
     await renderTemplate('codegen/templates/package.json.mustache', {
       packageName,
-      description: JSON.stringify(await cleanMarkdown(doc.info.description ?? '', true)),
+      description: JSON.stringify(await cleanMarkdown(document.info.description ?? '', true)),
       version: (await readPackageVersion(clientDirectoryPath)) ?? '1.0.0',
       apiName: clientNameBase.replaceAll('-', ' '),
       dependencies: {
@@ -128,10 +128,10 @@ async function generateClientVersion(modelFilePath: string) {
   )
 
   const rateLimits = _.reduce(
-    doc.paths,
-    (acc: RateLimit[], value, key) => {
+    document.paths,
+    (accumulator: RateLimit[], value, key) => {
       if (!value) {
-        return acc
+        return accumulator
       }
 
       for (const method of Object.keys(value) as OpenAPIV3.HttpMethods[]) {
@@ -158,14 +158,14 @@ async function generateClientVersion(modelFilePath: string) {
               )
             }
 
-            acc.push(value)
+            accumulator.push(value)
           } else {
             logger.warn(`Warning: no rate limiting found for ${packageName}`, {packageName})
           }
         }
       }
 
-      return acc
+      return accumulator
     },
     [],
   )
@@ -207,7 +207,7 @@ async function generateClientVersion(modelFilePath: string) {
     await renderTemplate('codegen/templates/README.md.mustache', {
       packageName,
       className: clientClassName,
-      description: doc.info.description,
+      description: document.info.description,
       sdkClientDocUrl: `https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_${packageName.replaceAll(
         /\W/g,
         '_',

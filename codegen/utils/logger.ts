@@ -15,7 +15,7 @@ export const logger = winston.createLogger({
     const moduleName: string = info.packageName ?? info.notificationName ?? ''
 
     const value = [...moduleName].reduce(
-      (acc: number, string: string) => acc + string.codePointAt(0)!,
+      (accumulator: number, string: string) => accumulator + string.codePointAt(0)!,
       0,
     )
 

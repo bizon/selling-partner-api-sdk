@@ -15,34 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import { Order } from './order';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TaxRegistrationDetails } from './tax-registration-details';
+import { Pagination } from './pagination';
 
 /**
  * 
  * @export
- * @interface PartyIdentification
+ * @interface OrderList
  */
-export interface PartyIdentification {
-    /**
-     * Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details.
-     * @type {string}
-     * @memberof PartyIdentification
-     */
-    'partyId': string;
+export interface OrderList {
     /**
      * 
-     * @type {Address}
-     * @memberof PartyIdentification
+     * @type {Pagination}
+     * @memberof OrderList
      */
-    'address'?: Address;
+    'pagination'?: Pagination;
     /**
      * 
-     * @type {TaxRegistrationDetails}
-     * @memberof PartyIdentification
+     * @type {Array<Order>}
+     * @memberof OrderList
      */
-    'taxInfo'?: TaxRegistrationDetails;
+    'orders'?: Array<Order>;
 }
 

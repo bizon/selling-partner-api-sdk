@@ -15,28 +15,22 @@
 
 
 /**
- * Error response returned when the request is unsuccessful.
+ * Status of acknowledgement.
  * @export
- * @interface ModelError
+ * @interface AcknowledgementStatus
  */
-export interface ModelError {
+export interface AcknowledgementStatus {
     /**
-     * An error code that identifies the type of error that occurred.
+     * Acknowledgement code is a unique two digit value which indicates the status of the acknowledgement. For a list of acknowledgement codes that Amazon supports, see the Vendor Direct Fulfillment APIs Use Case Guide.
      * @type {string}
-     * @memberof ModelError
+     * @memberof AcknowledgementStatus
      */
-    'code': string;
+    'code'?: string;
     /**
-     * A message that describes the error condition.
+     * Reason for the acknowledgement code.
      * @type {string}
-     * @memberof ModelError
+     * @memberof AcknowledgementStatus
      */
-    'message': string;
-    /**
-     * Additional details that can help the caller understand or fix the issue.
-     * @type {string}
-     * @memberof ModelError
-     */
-    'details'?: string;
+    'description'?: string;
 }
 

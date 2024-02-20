@@ -15,28 +15,28 @@
 
 
 /**
- * Error response returned when the request is unsuccessful.
+ * Dates for the scheduled delivery shipments.
  * @export
- * @interface ModelError
+ * @interface ScheduledDeliveryShipment
  */
-export interface ModelError {
+export interface ScheduledDeliveryShipment {
     /**
-     * An error code that identifies the type of error that occurred.
+     * Scheduled delivery service type.
      * @type {string}
-     * @memberof ModelError
+     * @memberof ScheduledDeliveryShipment
      */
-    'code': string;
+    'scheduledDeliveryServiceType'?: string;
     /**
-     * A message that describes the error condition.
+     * Earliest nominated delivery date for the scheduled delivery.
      * @type {string}
-     * @memberof ModelError
+     * @memberof ScheduledDeliveryShipment
      */
-    'message': string;
+    'earliestNominatedDeliveryDate'?: string;
     /**
-     * Additional details that can help the caller understand or fix the issue.
+     * Latest nominated delivery date for the scheduled delivery.
      * @type {string}
-     * @memberof ModelError
+     * @memberof ScheduledDeliveryShipment
      */
-    'details'?: string;
+    'latestNominatedDeliveryDate'?: string;
 }
 

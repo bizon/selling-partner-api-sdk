@@ -15,28 +15,22 @@
 
 
 /**
- * Error response returned when the request is unsuccessful.
+ * An amount of money, including units in the form of currency.
  * @export
- * @interface ModelError
+ * @interface Money
  */
-export interface ModelError {
+export interface Money {
     /**
-     * An error code that identifies the type of error that occurred.
+     * Three digit currency code in ISO 4217 format. String of length 3.
      * @type {string}
-     * @memberof ModelError
+     * @memberof Money
      */
-    'code': string;
+    'currencyCode'?: string;
     /**
-     * A message that describes the error condition.
+     * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.
      * @type {string}
-     * @memberof ModelError
+     * @memberof Money
      */
-    'message': string;
-    /**
-     * Additional details that can help the caller understand or fix the issue.
-     * @type {string}
-     * @memberof ModelError
-     */
-    'details'?: string;
+    'amount'?: string;
 }
 

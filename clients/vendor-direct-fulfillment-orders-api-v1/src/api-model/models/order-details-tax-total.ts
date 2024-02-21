@@ -13,6 +13,21 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { TaxDetails } from './tax-details';
 
-export * from './api/vendor-orders-api';
+/**
+ * 
+ * @export
+ * @interface OrderDetailsTaxTotal
+ */
+export interface OrderDetailsTaxTotal {
+    /**
+     * A list of tax line items.
+     * @type {Array<TaxDetails>}
+     * @memberof OrderDetailsTaxTotal
+     */
+    'taxLineItem'?: Array<TaxDetails>;
+}
 

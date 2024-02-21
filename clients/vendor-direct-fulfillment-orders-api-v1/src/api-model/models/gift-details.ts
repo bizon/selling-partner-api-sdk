@@ -14,5 +14,23 @@
 
 
 
-export * from './api/vendor-orders-api';
+/**
+ * Gift details for the item.
+ * @export
+ * @interface GiftDetails
+ */
+export interface GiftDetails {
+    /**
+     * Gift message to be printed in shipment.
+     * @type {string}
+     * @memberof GiftDetails
+     */
+    'giftMessage'?: string;
+    /**
+     * Gift wrap identifier for the gift wrapping, if any.
+     * @type {string}
+     * @memberof GiftDetails
+     */
+    'giftWrapId'?: string;
+}
 

@@ -30,8 +30,8 @@ importers:
         specifier: ^7.0.2
         version: 7.0.2
       eslint-config-xo-bizon:
-        specifier: ^3.0.1
-        version: 3.0.1
+        specifier: ^3.0.2
+        version: 3.0.2
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@20.11.17)(ts-node@10.9.2)
@@ -4501,8 +4501,8 @@ packages:
       eslint: 8.56.0
     dev: true
 
-  /eslint-config-xo-bizon@3.0.1:
-    resolution: {integrity: sha512-B9RcZDhxlSMBF+shcCuT80qbNgpounAMmBTWHULaKgOpp/jPGCDo6FH5/cC1MLDHipoNKaqEjWMI+feZVieFEA==}
+  /eslint-config-xo-bizon@3.0.2:
+    resolution: {integrity: sha512-PUJ86VVQq7MSDdzE+LMNypndiPiIBE1oMldFbuf8xANanpI+zDocWi1cAgmUKTSyPkcE1hp2ilCPotWgfqayBg==}
     engines: {node: '>=18'}
     dev: true
 

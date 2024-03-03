@@ -28,7 +28,7 @@
     "ts-node": "^10.9.2",
     "tsx": "^4.7.1",
     "turbo": "^1.12.4",
-    "typedoc": "^0.25.8",
+    "typedoc": "^0.25.9",
     "typedoc-plugin-missing-exports": "^2.2.0",
     "typescript": "^5.3.3",
     "xo": "^0.57.0"

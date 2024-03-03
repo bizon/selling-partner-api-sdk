@@ -823,8 +823,8 @@ importers:
         version: 7.0.1
     devDependencies:
       nock:
-        specifier: ^13.5.3
-        version: 13.5.3
+        specifier: ^13.5.4
+        version: 13.5.4
       type-fest:
         specifier: ^4.10.3
         version: 4.10.3
@@ -848,8 +848,8 @@ importers:
         version: 7.0.1
     devDependencies:
       nock:
-        specifier: ^13.5.3
-        version: 13.5.3
+        specifier: ^13.5.4
+        version: 13.5.4
       strip-ansi:
         specifier: ^6.0.1
         version: 6.0.1
@@ -7316,8 +7316,8 @@ packages:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
     dev: false
 
-  /nock@13.5.3:
-    resolution: {integrity: sha512-2NlGmHIK2rTeyy7UaY1ZNg0YZfEJMxghXgZi0b4DBsUyoDNTTxZeCSG1nmirAWF44RkkoV8NnegLVQijgVapNQ==}
+  /nock@13.5.4:
+    resolution: {integrity: sha512-yAyTfdeNJGGBFxWdzSKCBYxs5FxLbCg5X5Q4ets974hcQzG1+qCxvIyOo4j2Ry6MUlhWVMX4OoYDefAIIwupjw==}
     engines: {node: '>= 10.13'}
     dependencies:
       debug: 4.3.4

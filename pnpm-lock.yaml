@@ -755,8 +755,8 @@ importers:
   codegen:
     dependencies:
       '@openapitools/openapi-generator-cli':
-        specifier: ^2.9.0
-        version: 2.9.0
+        specifier: ^2.11.0
+        version: 2.11.0
       bluebird:
         specifier: ^3.7.2
         version: 3.7.2
@@ -2469,8 +2469,8 @@ packages:
       '@octokit/openapi-types': 20.0.0
     dev: true
 
-  /@openapitools/openapi-generator-cli@2.9.0:
-    resolution: {integrity: sha512-KQpftKeiMoH5aEI/amOVLFGkGeT3DyA7Atj7v7l8xT3O9xnIUpoDmMg0WBTEh+NHxEwEAITQNDzr+JLjkXVaKw==}
+  /@openapitools/openapi-generator-cli@2.11.0:
+    resolution: {integrity: sha512-oqTNvFARvhztEgMHoOvdwx148MM89/Ersa8KZTZxMVtLXCynIDyTqWnZqvCsBUZDc2Bl+N8pT6XWbLkz3JVh0w==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     requiresBuild: true

@@ -1,55 +1,60 @@
 /**
- * An explanation about the purpose of this instance.
+ * The version of the notification.
  */
 export type PropertiesNotificationVersion = string
 /**
- * An explanation about the purpose of this instance.
+ * The type of the notification.
  */
 export type PropertiesNotificationType = string
 /**
- * An explanation about the purpose of this instance.
+ * The version of the payload.
  */
 export type PropertiesPayloadVersion = string
 /**
- * An explanation about the purpose of this instance.
+ * The timestamp of the event, formatted as ISO 8601 date-time.
  */
 export type PropertiesEventTime = string
 /**
- * An explanation about the purpose of this instance.
+ * The merchant customer identifier of the selling partner account on whose behalf the feed was submitted. This field will be null when the feed was submitted on behalf of a vendor group identifier.
  */
 export type PropertiesPayloadPropertiesFeedProcessingFinishedNotificationPropertiesSellerId = string
 /**
- * An explanation about the purpose of this instance.
+ * The merchant customer identifier or vendor group identifier of the selling partner account on whose behalf the feed was submitted.
+ */
+export type PropertiesPayloadPropertiesFeedProcessingFinishedNotificationPropertiesAccountId =
+  string
+/**
+ * The feed identifier.
  */
 export type PropertiesPayloadPropertiesFeedProcessingFinishedNotificationPropertiesFeedId = string
 /**
- * An explanation about the purpose of this instance.
+ * The feed type.
  */
 export type PropertiesPayloadPropertiesFeedProcessingFinishedNotificationPropertiesFeedType = string
 /**
- * An explanation about the purpose of this instance.
+ * The processing status of the feed.
  */
 export type PropertiesPayloadPropertiesFeedProcessingFinishedNotificationPropertiesProcessingStatus =
   'CANCELLED' | 'DONE' | 'FATAL'
 /**
- * An explanation about the purpose of this instance.
+ * The feed document identifier. This identifier is unique only in combination with a seller ID.
  */
 export type PropertiesPayloadPropertiesFeedProcessingFinishedNotificationPropertiesResultFeedDocumentId =
   string
 /**
- * An explanation about the purpose of this instance.
+ * The application identifier.
  */
 export type PropertiesNotificationMetadataPropertiesApplicationId = string
 /**
- * An explanation about the purpose of this instance.
+ * The subscription identifier.
  */
 export type PropertiesNotificationMetadataPropertiesSubscriptionId = string
 /**
- * An explanation about the purpose of this instance.
+ * The timestamp of when the notification was published, formatted as ISO 8601 date-time.
  */
 export type PropertiesNotificationMetadataPropertiesPublishTime = string
 /**
- * An explanation about the purpose of this instance.
+ * The notification identifier.
  */
 export type PropertiesNotificationMetadataPropertiesNotificationId = string
 
@@ -65,7 +70,7 @@ export interface FeedProcessingFinishedNotification {
   notificationMetadata: PropertiesNotificationMetadata
 }
 /**
- * An explanation about the purpose of this instance.
+ * The details of this notification.
  */
 export interface PropertiesPayload {
   feedProcessingFinishedNotification: PropertiesPayloadPropertiesFeedProcessingFinishedNotification
@@ -74,14 +79,15 @@ export interface PropertiesPayload {
  * An explanation about the purpose of this instance.
  */
 export interface PropertiesPayloadPropertiesFeedProcessingFinishedNotification {
-  sellerId: PropertiesPayloadPropertiesFeedProcessingFinishedNotificationPropertiesSellerId
+  sellerId?: PropertiesPayloadPropertiesFeedProcessingFinishedNotificationPropertiesSellerId
+  accountId: PropertiesPayloadPropertiesFeedProcessingFinishedNotificationPropertiesAccountId
   feedId: PropertiesPayloadPropertiesFeedProcessingFinishedNotificationPropertiesFeedId
   feedType: PropertiesPayloadPropertiesFeedProcessingFinishedNotificationPropertiesFeedType
   processingStatus: PropertiesPayloadPropertiesFeedProcessingFinishedNotificationPropertiesProcessingStatus
   resultFeedDocumentId?: PropertiesPayloadPropertiesFeedProcessingFinishedNotificationPropertiesResultFeedDocumentId
 }
 /**
- * An explanation about the purpose of this instance.
+ * The metadata of the notification.
  */
 export interface PropertiesNotificationMetadata {
   applicationId: PropertiesNotificationMetadataPropertiesApplicationId

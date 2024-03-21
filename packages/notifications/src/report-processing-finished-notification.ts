@@ -1,58 +1,63 @@
 /**
- * An explanation about the purpose of this instance.
+ * The version of the notification.
  */
 export type PropertiesNotificationVersion = string
 /**
- * An explanation about the purpose of this instance.
+ * The type of the notification.
  */
 export type PropertiesNotificationType = string
 /**
- * An explanation about the purpose of this instance.
+ * The version of the payload.
  */
 export type PropertiesPayloadVersion = string
 /**
- * An explanation about the purpose of this instance.
+ * The timestamp of the event, formatted as ISO 8601 date-time.
  */
 export type PropertiesEventTime = string
 /**
- * An explanation about the purpose of this instance.
+ * The merchant customer identifier of the selling partner account on whose behalf the report was submitted. This field will be null when the report was submitted on behalf of a vendor group identifier.
  */
 export type PropertiesPayloadPropertiesReportProcessingFinishedNotificationPropertiesSellerId =
   string
 /**
- * An explanation about the purpose of this instance.
+ * The merchant customer identifier or vendor group identifier of the selling partner account on whose behalf the report was submitted.
+ */
+export type PropertiesPayloadPropertiesReportProcessingFinishedNotificationPropertiesAccountId =
+  string
+/**
+ * The report identifier.
  */
 export type PropertiesPayloadPropertiesReportProcessingFinishedNotificationPropertiesReportId =
   string
 /**
- * An explanation about the purpose of this instance.
+ * The report type.
  */
 export type PropertiesPayloadPropertiesReportProcessingFinishedNotificationPropertiesReportType =
   string
 /**
- * An explanation about the purpose of this instance.
+ * The processing status of the report.
  */
 export type PropertiesPayloadPropertiesReportProcessingFinishedNotificationPropertiesProcessingStatus =
   'CANCELLED' | 'DONE' | 'FATAL'
 /**
- * An explanation about the purpose of this instance.
+ * The report document identifier. This identifier is unique only in combination with a seller ID.
  */
 export type PropertiesPayloadPropertiesReportProcessingFinishedNotificationPropertiesReportDocumentId =
   string
 /**
- * An explanation about the purpose of this instance.
+ * The application identifier.
  */
 export type PropertiesNotificationMetadataPropertiesApplicationId = string
 /**
- * An explanation about the purpose of this instance.
+ * The subscription identifier.
  */
 export type PropertiesNotificationMetadataPropertiesSubscriptionId = string
 /**
- * An explanation about the purpose of this instance.
+ * The timestamp of when the notification was published, formatted as ISO 8601 date-time.
  */
 export type PropertiesNotificationMetadataPropertiesPublishTime = string
 /**
- * An explanation about the purpose of this instance.
+ * The notification identifier.
  */
 export type PropertiesNotificationMetadataPropertiesNotificationId = string
 
@@ -68,7 +73,7 @@ export interface ReportProcessingFinishedNotification {
   notificationMetadata: PropertiesNotificationMetadata
 }
 /**
- * An explanation about the purpose of this instance.
+ * The details of this notification.
  */
 export interface PropertiesPayload {
   reportProcessingFinishedNotification: PropertiesPayloadPropertiesReportProcessingFinishedNotification
@@ -77,14 +82,15 @@ export interface PropertiesPayload {
  * An explanation about the purpose of this instance.
  */
 export interface PropertiesPayloadPropertiesReportProcessingFinishedNotification {
-  sellerId: PropertiesPayloadPropertiesReportProcessingFinishedNotificationPropertiesSellerId
+  sellerId?: PropertiesPayloadPropertiesReportProcessingFinishedNotificationPropertiesSellerId
+  accountId: PropertiesPayloadPropertiesReportProcessingFinishedNotificationPropertiesAccountId
   reportId: PropertiesPayloadPropertiesReportProcessingFinishedNotificationPropertiesReportId
   reportType: PropertiesPayloadPropertiesReportProcessingFinishedNotificationPropertiesReportType
   processingStatus: PropertiesPayloadPropertiesReportProcessingFinishedNotificationPropertiesProcessingStatus
   reportDocumentId?: PropertiesPayloadPropertiesReportProcessingFinishedNotificationPropertiesReportDocumentId
 }
 /**
- * An explanation about the purpose of this instance.
+ * The metadata of the notification.
  */
 export interface PropertiesNotificationMetadata {
   applicationId: PropertiesNotificationMetadataPropertiesApplicationId

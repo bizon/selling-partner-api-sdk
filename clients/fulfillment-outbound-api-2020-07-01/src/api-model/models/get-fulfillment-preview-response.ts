@@ -18,7 +18,7 @@
 import { GetFulfillmentPreviewResult } from './get-fulfillment-preview-result';
 
 /**
- * The response schema for the getFulfillmentPreview operation.
+ * The response schema for the `getFulfillmentPreview` operation.
  * @export
  * @interface GetFulfillmentPreviewResponse
  */

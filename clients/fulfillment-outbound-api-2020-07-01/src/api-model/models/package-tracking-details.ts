@@ -93,7 +93,7 @@ export interface PackageTrackingDetails {
      */
     'currentStatus'?: CurrentStatus;
     /**
-     * Description corresponding to the CurrentStatus value.
+     * Description corresponding to the `CurrentStatus` value.
      * @type {string}
      * @memberof PackageTrackingDetails
      */

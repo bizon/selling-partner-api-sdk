@@ -18,7 +18,7 @@
 import { ListAllFulfillmentOrdersResult } from './list-all-fulfillment-orders-result';
 
 /**
- * The response schema for the listAllFulfillmentOrders operation.
+ * The response schema for the `listAllFulfillmentOrders` operation.
  * @export
  * @interface ListAllFulfillmentOrdersResponse
  */

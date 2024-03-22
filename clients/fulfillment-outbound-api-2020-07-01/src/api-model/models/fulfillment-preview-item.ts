@@ -36,7 +36,7 @@ export interface FulfillmentPreviewItem {
      */
     'quantity': number;
     /**
-     * A fulfillment order item identifier that the seller created with a call to the createFulfillmentOrder operation.
+     * A fulfillment order item identifier that the seller created with a call to the `createFulfillmentOrder` operation.
      * @type {string}
      * @memberof FulfillmentPreviewItem
      */

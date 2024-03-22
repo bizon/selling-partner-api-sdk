@@ -39,7 +39,7 @@ import { TransportShipmentMeasurements } from './transport-shipment-measurements
 import { TransportationDetails } from './transportation-details';
 
 /**
- * 
+ * A list of one or more shipments with respective details.
  * @export
  * @interface Shipment
  */

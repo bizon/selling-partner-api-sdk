@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Carton reference details.
  * @export
  * @interface CartonReferenceDetails
  */

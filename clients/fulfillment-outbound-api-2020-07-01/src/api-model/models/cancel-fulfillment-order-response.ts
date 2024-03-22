@@ -15,7 +15,7 @@
 
 
 /**
- * The response schema for the cancelFulfillmentOrder operation.
+ * The response schema for the `cancelFulfillmentOrder` operation.
  * @export
  * @interface CancelFulfillmentOrderResponse
  */

@@ -21,7 +21,7 @@ import { Route } from './route';
 import { Weight } from './weight';
 
 /**
- * 
+ * Provide these fields only if this shipment is a direct import.
  * @export
  * @interface ImportDetails
  */

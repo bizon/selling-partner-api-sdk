@@ -30,7 +30,7 @@ export interface FulfillmentOrderItem {
      */
     'sellerSku': string;
     /**
-     * A fulfillment order item identifier submitted with a call to the createFulfillmentOrder operation.
+     * A fulfillment order item identifier submitted with a call to the `createFulfillmentOrder` operation.
      * @type {string}
      * @memberof FulfillmentOrderItem
      */

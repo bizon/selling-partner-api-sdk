@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Indicates the carrier details and their contact informations
  * @export
  * @interface CarrierDetails
  */

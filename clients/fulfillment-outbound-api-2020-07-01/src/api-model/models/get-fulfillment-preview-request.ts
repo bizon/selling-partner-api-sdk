@@ -27,7 +27,7 @@ import { GetFulfillmentPreviewItem } from './get-fulfillment-preview-item';
 import { ShippingSpeedCategory } from './shipping-speed-category';
 
 /**
- * The request body schema for the getFulfillmentPreview operation.
+ * The request body schema for the `getFulfillmentPreview` operation.
  * @export
  * @interface GetFulfillmentPreviewRequest
  */
@@ -63,7 +63,7 @@ export interface GetFulfillmentPreviewRequest {
      */
     'includeCODFulfillmentPreview'?: boolean;
     /**
-     * When true, returns the ScheduledDeliveryInfo response object, which contains the available delivery windows for a Scheduled Delivery. The ScheduledDeliveryInfo response object can only be returned for fulfillment order previews with ShippingSpeedCategories = ScheduledDelivery.
+     * When true, returns the `ScheduledDeliveryInfo` response object, which contains the available delivery windows for a Scheduled Delivery. The `ScheduledDeliveryInfo` response object can only be returned for fulfillment order previews with `ShippingSpeedCategories` = `ScheduledDelivery`.
      * @type {boolean}
      * @memberof GetFulfillmentPreviewRequest
      */

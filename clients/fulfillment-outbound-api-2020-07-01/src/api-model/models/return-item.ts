@@ -75,7 +75,7 @@ export interface ReturnItem {
      */
     'statusChangedDate': string;
     /**
-     * Identifies the return authorization used to return this item. See ReturnAuthorization.
+     * Identifies the return authorization used to return this item. Refer to `ReturnAuthorization`.
      * @type {string}
      * @memberof ReturnItem
      */

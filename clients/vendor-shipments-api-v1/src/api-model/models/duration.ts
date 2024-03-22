@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Duration after manufacturing date during which the product is valid for consumption.
  * @export
  * @interface Duration
  */

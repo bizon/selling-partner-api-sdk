@@ -18,7 +18,7 @@
 import { FulfillmentOrderStatus } from './fulfillment-order-status';
 
 /**
- * The request body schema for the submitFulfillmentOrderStatusUpdate operation.
+ * The request body schema for the `submitFulfillmentOrderStatusUpdate` operation.
  * @export
  * @interface SubmitFulfillmentOrderStatusUpdateRequest
  */

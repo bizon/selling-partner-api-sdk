@@ -18,7 +18,7 @@
 import { ListReturnReasonCodesResult } from './list-return-reason-codes-result';
 
 /**
- * The response schema for the listReturnReasonCodes operation.
+ * The response schema for the `listReturnReasonCodes` operation.
  * @export
  * @interface ListReturnReasonCodesResponse
  */

@@ -51,6 +51,7 @@ export * from './list-return-reason-codes-result';
 export * from './model-error';
 export * from './money';
 export * from './package-tracking-details';
+export * from './payment-information';
 export * from './reason-code-details';
 export * from './return-authorization';
 export * from './return-item';

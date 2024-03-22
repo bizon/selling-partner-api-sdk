@@ -24,7 +24,7 @@ import { Stop } from './stop';
  */
 export interface Route {
     /**
-     * 
+     * The port or location involved in transporting the cargo, as specified in transportation contracts or operational plans.
      * @type {Array<Stop>}
      * @memberof Route
      */

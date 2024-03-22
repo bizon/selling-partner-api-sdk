@@ -18,7 +18,7 @@
 import { Feature } from './feature';
 
 /**
- * The payload for the getFeatures operation.
+ * The payload for the `getFeatures` operation.
  * @export
  * @interface GetFeaturesResult
  */

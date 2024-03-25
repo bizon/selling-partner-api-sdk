@@ -26,7 +26,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "axios": "^1.6.7",
+    "axios": "^1.6.8",
     "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {

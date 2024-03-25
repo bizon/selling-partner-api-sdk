@@ -15,7 +15,7 @@
 
 
 /**
- * The response schema for the SubmitFulfillmentOrderStatusUpdate operation.
+ * The response schema for the `SubmitFulfillmentOrderStatusUpdate` operation.
  * @export
  * @interface SubmitFulfillmentOrderStatusUpdateResponse
  */

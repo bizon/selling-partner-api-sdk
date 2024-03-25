@@ -24,8 +24,6 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { GetShipmentDetailsResponse } from '../models';
 // @ts-ignore
-import { GetShipmentLabels } from '../models';
-// @ts-ignore
 import { SubmitShipmentConfirmationsRequest } from '../models';
 // @ts-ignore
 import { SubmitShipmentConfirmationsResponse } from '../models';
@@ -42,22 +40,22 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {number} [limit] The limit to the number of records returned. Default value is 50 records.
          * @param {'ASC' | 'DESC'} [sortOrder] Sort in ascending or descending order by purchase order creation date.
          * @param {string} [nextToken] Used for pagination when there are more shipments than the specified result size limit.
-         * @param {string} [createdAfter] Get Shipment Details that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {string} [createdBefore] Get Shipment Details that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {string} [shipmentConfirmedBefore] Get Shipment Details by passing Shipment confirmed create Date Before. Must be in ISO-8601 date/time format.
-         * @param {string} [shipmentConfirmedAfter] Get Shipment Details by passing Shipment confirmed create Date After. Must be in ISO-8601 date/time format.
-         * @param {string} [packageLabelCreatedBefore] Get Shipment Details by passing Package label create Date by buyer. Must be in ISO-8601 date/time format.
-         * @param {string} [packageLabelCreatedAfter] Get Shipment Details by passing Package label create Date After by buyer. Must be in ISO-8601 date/time format.
-         * @param {string} [shippedBefore] Get Shipment Details by passing Shipped Date Before. Must be in ISO-8601 date/time format.
-         * @param {string} [shippedAfter] Get Shipment Details by passing Shipped Date After. Must be in ISO-8601 date/time format.
-         * @param {string} [estimatedDeliveryBefore] Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format.
-         * @param {string} [estimatedDeliveryAfter] Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format.
-         * @param {string} [shipmentDeliveryBefore] Get Shipment Details by passing Shipment Delivery Date Before. Must be in ISO-8601 date/time format.
-         * @param {string} [shipmentDeliveryAfter] Get Shipment Details by passing Shipment Delivery Date After. Must be in ISO-8601 date/time format.
-         * @param {string} [requestedPickUpBefore] Get Shipment Details by passing Before Requested pickup date. Must be in ISO-8601 date/time format.
-         * @param {string} [requestedPickUpAfter] Get Shipment Details by passing After Requested pickup date. Must be in ISO-8601 date/time format.
-         * @param {string} [scheduledPickUpBefore] Get Shipment Details by passing Before scheduled pickup date. Must be in ISO-8601 date/time format.
-         * @param {string} [scheduledPickUpAfter] Get Shipment Details by passing After Scheduled pickup date. Must be in ISO-8601 date/time format.
+         * @param {string} [createdAfter] Get Shipment Details that became available after this timestamp will be included in the result. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [createdBefore] Get Shipment Details that became available before this timestamp will be included in the result. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [shipmentConfirmedBefore] Get Shipment Details by passing Shipment confirmed create Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [shipmentConfirmedAfter] Get Shipment Details by passing Shipment confirmed create Date After. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [packageLabelCreatedBefore] Get Shipment Details by passing Package label create Date by buyer. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [packageLabelCreatedAfter] Get Shipment Details by passing Package label create Date After by buyer. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [shippedBefore] Get Shipment Details by passing Shipped Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [shippedAfter] Get Shipment Details by passing Shipped Date After. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [estimatedDeliveryBefore] Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [estimatedDeliveryAfter] Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [shipmentDeliveryBefore] Get Shipment Details by passing Shipment Delivery Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [shipmentDeliveryAfter] Get Shipment Details by passing Shipment Delivery Date After. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [requestedPickUpBefore] Get Shipment Details by passing Before Requested pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [requestedPickUpAfter] Get Shipment Details by passing After Requested pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [scheduledPickUpBefore] Get Shipment Details by passing Before scheduled pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [scheduledPickUpAfter] Get Shipment Details by passing After Scheduled pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
          * @param {string} [currentShipmentStatus] Get Shipment Details by passing Current shipment status.
          * @param {string} [vendorShipmentIdentifier] Get Shipment Details by passing Vendor Shipment ID
          * @param {string} [buyerReferenceNumber] Get Shipment Details by passing buyer Reference ID
@@ -219,81 +217,8 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
             };
         },
         /**
-         * Returns transport Labels based on the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {number} [limit] The limit to the number of records returned. Default value is 50 records.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort in ascending or descending order by transport label creation date.
-         * @param {string} [nextToken] Used for pagination when there are more transport label than the specified result size limit.
-         * @param {string} [labelCreatedAfter] transport Labels that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {string} [labelcreatedBefore] transport Labels that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {string} [buyerReferenceNumber] Get transport labels by passing Buyer Reference Number to retreive the corresponding transport label.
-         * @param {string} [vendorShipmentIdentifier] Get transport labels by passing Vendor Shipment ID to retreive the corresponding transport label.
-         * @param {string} [sellerWarehouseCode] Get Shipping labels based Vendor Warehouse code. This value should be same as \&#39;shipFromParty.partyId\&#39; in the Shipment.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getShipmentLabels: async (limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, labelCreatedAfter?: string, labelcreatedBefore?: string, buyerReferenceNumber?: string, vendorShipmentIdentifier?: string, sellerWarehouseCode?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/vendor/shipping/v1/transportLabels`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-            if (sortOrder !== undefined) {
-                localVarQueryParameter['sortOrder'] = sortOrder;
-            }
-
-            if (nextToken !== undefined) {
-                localVarQueryParameter['nextToken'] = nextToken;
-            }
-
-            if (labelCreatedAfter !== undefined) {
-                localVarQueryParameter['labelCreatedAfter'] = (labelCreatedAfter as any instanceof Date) ?
-                    (labelCreatedAfter as any).toISOString() :
-                    labelCreatedAfter;
-            }
-
-            if (labelcreatedBefore !== undefined) {
-                localVarQueryParameter['labelcreatedBefore'] = (labelcreatedBefore as any instanceof Date) ?
-                    (labelcreatedBefore as any).toISOString() :
-                    labelcreatedBefore;
-            }
-
-            if (buyerReferenceNumber !== undefined) {
-                localVarQueryParameter['buyerReferenceNumber'] = buyerReferenceNumber;
-            }
-
-            if (vendorShipmentIdentifier !== undefined) {
-                localVarQueryParameter['vendorShipmentIdentifier'] = vendorShipmentIdentifier;
-            }
-
-            if (sellerWarehouseCode !== undefined) {
-                localVarQueryParameter['sellerWarehouseCode'] = sellerWarehouseCode;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
          * Submits one or more shipment confirmations for vendor orders.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {SubmitShipmentConfirmationsRequest} body 
+         * @param {SubmitShipmentConfirmationsRequest} body A request to submit shipment confirmation.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -328,7 +253,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
         },
         /**
          * Submits one or more shipment request for vendor Orders.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {SubmitShipments} body 
+         * @param {SubmitShipments} body A request to submit shipment request.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -376,22 +301,22 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {number} [limit] The limit to the number of records returned. Default value is 50 records.
          * @param {'ASC' | 'DESC'} [sortOrder] Sort in ascending or descending order by purchase order creation date.
          * @param {string} [nextToken] Used for pagination when there are more shipments than the specified result size limit.
-         * @param {string} [createdAfter] Get Shipment Details that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {string} [createdBefore] Get Shipment Details that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {string} [shipmentConfirmedBefore] Get Shipment Details by passing Shipment confirmed create Date Before. Must be in ISO-8601 date/time format.
-         * @param {string} [shipmentConfirmedAfter] Get Shipment Details by passing Shipment confirmed create Date After. Must be in ISO-8601 date/time format.
-         * @param {string} [packageLabelCreatedBefore] Get Shipment Details by passing Package label create Date by buyer. Must be in ISO-8601 date/time format.
-         * @param {string} [packageLabelCreatedAfter] Get Shipment Details by passing Package label create Date After by buyer. Must be in ISO-8601 date/time format.
-         * @param {string} [shippedBefore] Get Shipment Details by passing Shipped Date Before. Must be in ISO-8601 date/time format.
-         * @param {string} [shippedAfter] Get Shipment Details by passing Shipped Date After. Must be in ISO-8601 date/time format.
-         * @param {string} [estimatedDeliveryBefore] Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format.
-         * @param {string} [estimatedDeliveryAfter] Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format.
-         * @param {string} [shipmentDeliveryBefore] Get Shipment Details by passing Shipment Delivery Date Before. Must be in ISO-8601 date/time format.
-         * @param {string} [shipmentDeliveryAfter] Get Shipment Details by passing Shipment Delivery Date After. Must be in ISO-8601 date/time format.
-         * @param {string} [requestedPickUpBefore] Get Shipment Details by passing Before Requested pickup date. Must be in ISO-8601 date/time format.
-         * @param {string} [requestedPickUpAfter] Get Shipment Details by passing After Requested pickup date. Must be in ISO-8601 date/time format.
-         * @param {string} [scheduledPickUpBefore] Get Shipment Details by passing Before scheduled pickup date. Must be in ISO-8601 date/time format.
-         * @param {string} [scheduledPickUpAfter] Get Shipment Details by passing After Scheduled pickup date. Must be in ISO-8601 date/time format.
+         * @param {string} [createdAfter] Get Shipment Details that became available after this timestamp will be included in the result. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [createdBefore] Get Shipment Details that became available before this timestamp will be included in the result. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [shipmentConfirmedBefore] Get Shipment Details by passing Shipment confirmed create Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [shipmentConfirmedAfter] Get Shipment Details by passing Shipment confirmed create Date After. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [packageLabelCreatedBefore] Get Shipment Details by passing Package label create Date by buyer. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [packageLabelCreatedAfter] Get Shipment Details by passing Package label create Date After by buyer. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [shippedBefore] Get Shipment Details by passing Shipped Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [shippedAfter] Get Shipment Details by passing Shipped Date After. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [estimatedDeliveryBefore] Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [estimatedDeliveryAfter] Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [shipmentDeliveryBefore] Get Shipment Details by passing Shipment Delivery Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [shipmentDeliveryAfter] Get Shipment Details by passing Shipment Delivery Date After. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [requestedPickUpBefore] Get Shipment Details by passing Before Requested pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [requestedPickUpAfter] Get Shipment Details by passing After Requested pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [scheduledPickUpBefore] Get Shipment Details by passing Before scheduled pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
+         * @param {string} [scheduledPickUpAfter] Get Shipment Details by passing After Scheduled pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
          * @param {string} [currentShipmentStatus] Get Shipment Details by passing Current shipment status.
          * @param {string} [vendorShipmentIdentifier] Get Shipment Details by passing Vendor Shipment ID
          * @param {string} [buyerReferenceNumber] Get Shipment Details by passing buyer Reference ID
@@ -405,25 +330,8 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Returns transport Labels based on the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {number} [limit] The limit to the number of records returned. Default value is 50 records.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort in ascending or descending order by transport label creation date.
-         * @param {string} [nextToken] Used for pagination when there are more transport label than the specified result size limit.
-         * @param {string} [labelCreatedAfter] transport Labels that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {string} [labelcreatedBefore] transport Labels that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-         * @param {string} [buyerReferenceNumber] Get transport labels by passing Buyer Reference Number to retreive the corresponding transport label.
-         * @param {string} [vendorShipmentIdentifier] Get transport labels by passing Vendor Shipment ID to retreive the corresponding transport label.
-         * @param {string} [sellerWarehouseCode] Get Shipping labels based Vendor Warehouse code. This value should be same as \&#39;shipFromParty.partyId\&#39; in the Shipment.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async getShipmentLabels(limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, labelCreatedAfter?: string, labelcreatedBefore?: string, buyerReferenceNumber?: string, vendorShipmentIdentifier?: string, sellerWarehouseCode?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentLabels>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getShipmentLabels(limit, sortOrder, nextToken, labelCreatedAfter, labelcreatedBefore, buyerReferenceNumber, vendorShipmentIdentifier, sellerWarehouseCode, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
          * Submits one or more shipment confirmations for vendor orders.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {SubmitShipmentConfirmationsRequest} body 
+         * @param {SubmitShipmentConfirmationsRequest} body A request to submit shipment confirmation.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -433,7 +341,7 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
         },
         /**
          * Submits one or more shipment request for vendor Orders.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {SubmitShipments} body 
+         * @param {SubmitShipments} body A request to submit shipment request.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -459,15 +367,6 @@ export const VendorShippingApiFactory = function (configuration?: Configuration,
          */
         getShipmentDetails(requestParameters: VendorShippingApiGetShipmentDetailsRequest = {}, options?: AxiosRequestConfig): AxiosPromise<GetShipmentDetailsResponse> {
             return localVarFp.getShipmentDetails(requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipmentConfirmedBefore, requestParameters.shipmentConfirmedAfter, requestParameters.packageLabelCreatedBefore, requestParameters.packageLabelCreatedAfter, requestParameters.shippedBefore, requestParameters.shippedAfter, requestParameters.estimatedDeliveryBefore, requestParameters.estimatedDeliveryAfter, requestParameters.shipmentDeliveryBefore, requestParameters.shipmentDeliveryAfter, requestParameters.requestedPickUpBefore, requestParameters.requestedPickUpAfter, requestParameters.scheduledPickUpBefore, requestParameters.scheduledPickUpAfter, requestParameters.currentShipmentStatus, requestParameters.vendorShipmentIdentifier, requestParameters.buyerReferenceNumber, requestParameters.buyerWarehouseCode, requestParameters.sellerWarehouseCode, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Returns transport Labels based on the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {VendorShippingApiGetShipmentLabelsRequest} requestParameters Request parameters.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getShipmentLabels(requestParameters: VendorShippingApiGetShipmentLabelsRequest = {}, options?: AxiosRequestConfig): AxiosPromise<GetShipmentLabels> {
-            return localVarFp.getShipmentLabels(requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.labelCreatedAfter, requestParameters.labelcreatedBefore, requestParameters.buyerReferenceNumber, requestParameters.vendorShipmentIdentifier, requestParameters.sellerWarehouseCode, options).then((request) => request(axios, basePath));
         },
         /**
          * Submits one or more shipment confirmations for vendor orders.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -518,112 +417,112 @@ export interface VendorShippingApiGetShipmentDetailsRequest {
     readonly nextToken?: string
 
     /**
-     * Get Shipment Details that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * Get Shipment Details that became available after this timestamp will be included in the result. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly createdAfter?: string
 
     /**
-     * Get Shipment Details that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * Get Shipment Details that became available before this timestamp will be included in the result. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly createdBefore?: string
 
     /**
-     * Get Shipment Details by passing Shipment confirmed create Date Before. Must be in ISO-8601 date/time format.
+     * Get Shipment Details by passing Shipment confirmed create Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly shipmentConfirmedBefore?: string
 
     /**
-     * Get Shipment Details by passing Shipment confirmed create Date After. Must be in ISO-8601 date/time format.
+     * Get Shipment Details by passing Shipment confirmed create Date After. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly shipmentConfirmedAfter?: string
 
     /**
-     * Get Shipment Details by passing Package label create Date by buyer. Must be in ISO-8601 date/time format.
+     * Get Shipment Details by passing Package label create Date by buyer. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly packageLabelCreatedBefore?: string
 
     /**
-     * Get Shipment Details by passing Package label create Date After by buyer. Must be in ISO-8601 date/time format.
+     * Get Shipment Details by passing Package label create Date After by buyer. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly packageLabelCreatedAfter?: string
 
     /**
-     * Get Shipment Details by passing Shipped Date Before. Must be in ISO-8601 date/time format.
+     * Get Shipment Details by passing Shipped Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly shippedBefore?: string
 
     /**
-     * Get Shipment Details by passing Shipped Date After. Must be in ISO-8601 date/time format.
+     * Get Shipment Details by passing Shipped Date After. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly shippedAfter?: string
 
     /**
-     * Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format.
+     * Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly estimatedDeliveryBefore?: string
 
     /**
-     * Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format.
+     * Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly estimatedDeliveryAfter?: string
 
     /**
-     * Get Shipment Details by passing Shipment Delivery Date Before. Must be in ISO-8601 date/time format.
+     * Get Shipment Details by passing Shipment Delivery Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly shipmentDeliveryBefore?: string
 
     /**
-     * Get Shipment Details by passing Shipment Delivery Date After. Must be in ISO-8601 date/time format.
+     * Get Shipment Details by passing Shipment Delivery Date After. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly shipmentDeliveryAfter?: string
 
     /**
-     * Get Shipment Details by passing Before Requested pickup date. Must be in ISO-8601 date/time format.
+     * Get Shipment Details by passing Before Requested pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly requestedPickUpBefore?: string
 
     /**
-     * Get Shipment Details by passing After Requested pickup date. Must be in ISO-8601 date/time format.
+     * Get Shipment Details by passing After Requested pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly requestedPickUpAfter?: string
 
     /**
-     * Get Shipment Details by passing Before scheduled pickup date. Must be in ISO-8601 date/time format.
+     * Get Shipment Details by passing Before scheduled pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly scheduledPickUpBefore?: string
 
     /**
-     * Get Shipment Details by passing After Scheduled pickup date. Must be in ISO-8601 date/time format.
+     * Get Shipment Details by passing After Scheduled pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
      * @memberof VendorShippingApiGetShipmentDetails
      */
@@ -666,76 +565,13 @@ export interface VendorShippingApiGetShipmentDetailsRequest {
 }
 
 /**
- * Request parameters for getShipmentLabels operation in VendorShippingApi.
- * @export
- * @interface VendorShippingApiGetShipmentLabelsRequest
- */
-export interface VendorShippingApiGetShipmentLabelsRequest {
-    /**
-     * The limit to the number of records returned. Default value is 50 records.
-     * @type {number}
-     * @memberof VendorShippingApiGetShipmentLabels
-     */
-    readonly limit?: number
-
-    /**
-     * Sort in ascending or descending order by transport label creation date.
-     * @type {'ASC' | 'DESC'}
-     * @memberof VendorShippingApiGetShipmentLabels
-     */
-    readonly sortOrder?: 'ASC' | 'DESC'
-
-    /**
-     * Used for pagination when there are more transport label than the specified result size limit.
-     * @type {string}
-     * @memberof VendorShippingApiGetShipmentLabels
-     */
-    readonly nextToken?: string
-
-    /**
-     * transport Labels that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof VendorShippingApiGetShipmentLabels
-     */
-    readonly labelCreatedAfter?: string
-
-    /**
-     * transport Labels that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof VendorShippingApiGetShipmentLabels
-     */
-    readonly labelcreatedBefore?: string
-
-    /**
-     * Get transport labels by passing Buyer Reference Number to retreive the corresponding transport label.
-     * @type {string}
-     * @memberof VendorShippingApiGetShipmentLabels
-     */
-    readonly buyerReferenceNumber?: string
-
-    /**
-     * Get transport labels by passing Vendor Shipment ID to retreive the corresponding transport label.
-     * @type {string}
-     * @memberof VendorShippingApiGetShipmentLabels
-     */
-    readonly vendorShipmentIdentifier?: string
-
-    /**
-     * Get Shipping labels based Vendor Warehouse code. This value should be same as \&#39;shipFromParty.partyId\&#39; in the Shipment.
-     * @type {string}
-     * @memberof VendorShippingApiGetShipmentLabels
-     */
-    readonly sellerWarehouseCode?: string
-}
-
-/**
  * Request parameters for submitShipmentConfirmations operation in VendorShippingApi.
  * @export
  * @interface VendorShippingApiSubmitShipmentConfirmationsRequest
  */
 export interface VendorShippingApiSubmitShipmentConfirmationsRequest {
     /**
-     * 
+     * A request to submit shipment confirmation.
      * @type {SubmitShipmentConfirmationsRequest}
      * @memberof VendorShippingApiSubmitShipmentConfirmations
      */
@@ -749,7 +585,7 @@ export interface VendorShippingApiSubmitShipmentConfirmationsRequest {
  */
 export interface VendorShippingApiSubmitShipmentsRequest {
     /**
-     * 
+     * A request to submit shipment request.
      * @type {SubmitShipments}
      * @memberof VendorShippingApiSubmitShipments
      */
@@ -772,17 +608,6 @@ export class VendorShippingApi extends BaseAPI {
      */
     public getShipmentDetails(requestParameters: VendorShippingApiGetShipmentDetailsRequest = {}, options?: AxiosRequestConfig) {
         return VendorShippingApiFp(this.configuration).getShipmentDetails(requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipmentConfirmedBefore, requestParameters.shipmentConfirmedAfter, requestParameters.packageLabelCreatedBefore, requestParameters.packageLabelCreatedAfter, requestParameters.shippedBefore, requestParameters.shippedAfter, requestParameters.estimatedDeliveryBefore, requestParameters.estimatedDeliveryAfter, requestParameters.shipmentDeliveryBefore, requestParameters.shipmentDeliveryAfter, requestParameters.requestedPickUpBefore, requestParameters.requestedPickUpAfter, requestParameters.scheduledPickUpBefore, requestParameters.scheduledPickUpAfter, requestParameters.currentShipmentStatus, requestParameters.vendorShipmentIdentifier, requestParameters.buyerReferenceNumber, requestParameters.buyerWarehouseCode, requestParameters.sellerWarehouseCode, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Returns transport Labels based on the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @param {VendorShippingApiGetShipmentLabelsRequest} requestParameters Request parameters.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof VendorShippingApi
-     */
-    public getShipmentLabels(requestParameters: VendorShippingApiGetShipmentLabelsRequest = {}, options?: AxiosRequestConfig) {
-        return VendorShippingApiFp(this.configuration).getShipmentLabels(requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.labelCreatedAfter, requestParameters.labelcreatedBefore, requestParameters.buyerReferenceNumber, requestParameters.vendorShipmentIdentifier, requestParameters.sellerWarehouseCode, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

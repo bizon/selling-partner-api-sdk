@@ -13,27 +13,30 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import { GetFeaturesResult } from './get-features-result';
 
 /**
- * The response schema for the `getFeatures` operation.
+ * The attributes related to the payment made from customer to seller for this order.
  * @export
- * @interface GetFeaturesResponse
+ * @interface PaymentInformation
  */
-export interface GetFeaturesResponse {
+export interface PaymentInformation {
+    /**
+     * The transaction identifier of this payment.
+     * @type {string}
+     * @memberof PaymentInformation
+     */
+    'paymentTransactionId': string;
+    /**
+     * The transaction mode of this payment.
+     * @type {string}
+     * @memberof PaymentInformation
+     */
+    'paymentMode': string;
     /**
      * 
-     * @type {GetFeaturesResult}
-     * @memberof GetFeaturesResponse
+     * @type {string}
+     * @memberof PaymentInformation
      */
-    'payload'?: GetFeaturesResult;
-    /**
-     * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetFeaturesResponse
-     */
-    'errors'?: Array<Error>;
+    'paymentDate': string;
 }
 

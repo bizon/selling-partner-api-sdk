@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * A list of carton identifiers.
  * @export
  * @interface ContainerIdentification
  */

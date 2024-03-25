@@ -21,7 +21,7 @@ import { Pagination } from './pagination';
 import { Shipment } from './shipment';
 
 /**
- * 
+ * The request schema for the GetShipmentDetails operation.
  * @export
  * @interface ShipmentDetails
  */
@@ -33,7 +33,7 @@ export interface ShipmentDetails {
      */
     'pagination'?: Pagination;
     /**
-     * 
+     * A list of one or more shipments with underlying details.
      * @type {Array<Shipment>}
      * @memberof ShipmentDetails
      */

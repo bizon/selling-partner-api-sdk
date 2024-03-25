@@ -18,7 +18,7 @@
 import { GetFulfillmentOrderResult } from './get-fulfillment-order-result';
 
 /**
- * The response schema for the getFulfillmentOrder operation.
+ * The response schema for the `getFulfillmentOrder` operation.
  * @export
  * @interface GetFulfillmentOrderResponse
  */

@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Container sequence numbers that are involved in this shipment.
  * @export
  * @interface ContainerSequenceNumbers
  */

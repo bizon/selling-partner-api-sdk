@@ -24,7 +24,7 @@ import { ShipmentConfirmation } from './shipment-confirmation';
  */
 export interface SubmitShipmentConfirmationsRequest {
     /**
-     * 
+     * A list of one or more shipment confirmations.
      * @type {Array<ShipmentConfirmation>}
      * @memberof SubmitShipmentConfirmationsRequest
      */

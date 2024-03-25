@@ -15,7 +15,7 @@
 
 
 /**
- * The FulfillmentPolicy value specified when you submitted the createFulfillmentOrder operation.
+ * The `FulfillmentPolicy` value specified when you submitted the `createFulfillmentOrder` operation.
  * @export
  * @enum {string}
  */

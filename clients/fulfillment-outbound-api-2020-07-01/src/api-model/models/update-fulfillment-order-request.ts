@@ -33,7 +33,7 @@ import { ShippingSpeedCategory } from './shipping-speed-category';
 import { UpdateFulfillmentOrderItem } from './update-fulfillment-order-item';
 
 /**
- * The request body schema for the updateFulfillmentOrder operation.
+ * The request body schema for the `updateFulfillmentOrder` operation.
  * @export
  * @interface UpdateFulfillmentOrderRequest
  */
@@ -45,7 +45,7 @@ export interface UpdateFulfillmentOrderRequest {
      */
     'marketplaceId'?: string;
     /**
-     * A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of DisplayableOrderId should match the order identifier that the seller provides to the recipient. The seller can use the SellerFulfillmentOrderId for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.
+     * A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of `DisplayableOrderId` should match the order identifier that the seller provides to the recipient. The seller can use the `SellerFulfillmentOrderId` for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.
      * @type {string}
      * @memberof UpdateFulfillmentOrderRequest
      */

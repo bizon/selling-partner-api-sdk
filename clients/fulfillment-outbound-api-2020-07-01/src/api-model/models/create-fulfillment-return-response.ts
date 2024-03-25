@@ -18,7 +18,7 @@
 import { CreateFulfillmentReturnResult } from './create-fulfillment-return-result';
 
 /**
- * The response schema for the createFulfillmentReturn operation.
+ * The response schema for the `createFulfillmentReturn` operation.
  * @export
  * @interface CreateFulfillmentReturnResponse
  */

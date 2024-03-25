@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * The response payload for the SubmitShipmentConfirmations operation.
  * @export
  * @interface TransactionReference
  */

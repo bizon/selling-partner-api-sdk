@@ -18,7 +18,7 @@
 import { Duration } from './duration';
 
 /**
- * 
+ * Expiry refers to the collection of dates required  for certain items. These could be either expiryDate or mfgDate and expiryAfterDuration. These are mandatory for perishable items.
  * @export
  * @interface Expiry
  */

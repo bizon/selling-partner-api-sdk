@@ -18,7 +18,7 @@
 import { PackageTrackingDetails } from './package-tracking-details';
 
 /**
- * The response schema for the getPackageTrackingDetails operation.
+ * The response schema for the `getPackageTrackingDetails` operation.
  * @export
  * @interface GetPackageTrackingDetailsResponse
  */

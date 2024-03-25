@@ -30,7 +30,7 @@ export interface UpdateFulfillmentOrderItem {
      */
     'sellerSku'?: string;
     /**
-     * Identifies the fulfillment order item to update. Created with a previous call to the createFulfillmentOrder operation.
+     * Identifies the fulfillment order item to update. Created with a previous call to the `createFulfillmentOrder` operation.
      * @type {string}
      * @memberof UpdateFulfillmentOrderItem
      */

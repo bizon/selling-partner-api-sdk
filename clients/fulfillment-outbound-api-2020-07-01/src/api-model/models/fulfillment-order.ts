@@ -45,7 +45,7 @@ import { ShippingSpeedCategory } from './shipping-speed-category';
  */
 export interface FulfillmentOrder {
     /**
-     * The fulfillment order identifier submitted with the createFulfillmentOrder operation.
+     * The fulfillment order identifier submitted with the `createFulfillmentOrder` operation.
      * @type {string}
      * @memberof FulfillmentOrder
      */
@@ -57,7 +57,7 @@ export interface FulfillmentOrder {
      */
     'marketplaceId': string;
     /**
-     * A fulfillment order identifier submitted with the createFulfillmentOrder operation. Displays as the order identifier in recipient-facing materials such as the packing slip.
+     * A fulfillment order identifier submitted with the `createFulfillmentOrder` operation. Displays as the order identifier in recipient-facing materials such as the packing slip.
      * @type {string}
      * @memberof FulfillmentOrder
      */
@@ -69,7 +69,7 @@ export interface FulfillmentOrder {
      */
     'displayableOrderDate': string;
     /**
-     * A text block submitted with the createFulfillmentOrder operation. Displays in recipient-facing materials such as the packing slip.
+     * A text block submitted with the `createFulfillmentOrder` operation. Displays in recipient-facing materials such as the packing slip.
      * @type {string}
      * @memberof FulfillmentOrder
      */

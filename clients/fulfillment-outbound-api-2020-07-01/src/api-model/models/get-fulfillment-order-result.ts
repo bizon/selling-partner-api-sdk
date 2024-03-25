@@ -24,6 +24,9 @@ import { FulfillmentOrderItem } from './fulfillment-order-item';
 import { FulfillmentShipment } from './fulfillment-shipment';
 // May contain unused imports in some cases
 // @ts-ignore
+import { PaymentInformation } from './payment-information';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ReturnAuthorization } from './return-authorization';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -65,5 +68,11 @@ export interface GetFulfillmentOrderResult {
      * @memberof GetFulfillmentOrderResult
      */
     'returnAuthorizations': Array<ReturnAuthorization>;
+    /**
+     * An array of various payment attributes related to this fulfillment order.
+     * @type {Array<PaymentInformation>}
+     * @memberof GetFulfillmentOrderResult
+     */
+    'paymentInformation'?: Array<PaymentInformation>;
 }
 

@@ -18,7 +18,7 @@
 import { GetFeatureSkuResult } from './get-feature-sku-result';
 
 /**
- * The response schema for the getFeatureSKU operation.
+ * The response schema for the `getFeatureSKU` operation.
  * @export
  * @interface GetFeatureSkuResponse
  */

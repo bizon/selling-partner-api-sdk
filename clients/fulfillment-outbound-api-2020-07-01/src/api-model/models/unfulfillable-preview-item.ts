@@ -33,7 +33,7 @@ export interface UnfulfillablePreviewItem {
      */
     'quantity': number;
     /**
-     * A fulfillment order item identifier created with a call to the getFulfillmentPreview operation.
+     * A fulfillment order item identifier created with a call to the `getFulfillmentPreview` operation.
      * @type {string}
      * @memberof UnfulfillablePreviewItem
      */

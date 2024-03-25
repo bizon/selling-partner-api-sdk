@@ -15,7 +15,7 @@
 
 
 /**
- * The response schema for the createFulfillmentOrder operation.
+ * The response schema for the `createFulfillmentOrder` operation.
  * @export
  * @interface CreateFulfillmentOrderResponse
  */

@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/data-kiosk-api-2023-11-15",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Data Kiosk lets you submit GraphQL queries from a variety of schemas to help selling partners manage their businesses.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

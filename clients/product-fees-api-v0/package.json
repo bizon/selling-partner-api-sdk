@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/product-fees-api-v0",
   "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
   "description": "The Selling Partner API for Product Fees lets you programmatically retrieve estimated fees for a product. You can then account for those fees in your pricing.",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

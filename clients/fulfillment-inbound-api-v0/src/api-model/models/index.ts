@@ -21,7 +21,6 @@ export * from './dimensions';
 export * from './error-reason';
 export * from './estimate-transport-response';
 export * from './get-bill-of-lading-response';
-export * from './get-inbound-guidance-response';
 export * from './get-inbound-guidance-result';
 export * from './get-labels-response';
 export * from './get-preorder-info-response';

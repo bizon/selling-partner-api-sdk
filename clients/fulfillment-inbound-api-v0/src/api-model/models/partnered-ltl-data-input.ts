@@ -42,7 +42,7 @@ export interface PartneredLtlDataInput {
      */
     'Contact'?: Contact;
     /**
-     * 
+     * Contains an unsigned integer
      * @type {number}
      * @memberof PartneredLtlDataInput
      */
@@ -54,7 +54,7 @@ export interface PartneredLtlDataInput {
      */
     'SellerFreightClass'?: SellerFreightClass;
     /**
-     * 
+     * Type containing date in string format
      * @type {string}
      * @memberof PartneredLtlDataInput
      */

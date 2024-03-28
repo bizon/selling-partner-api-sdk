@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Specific details to identify a place.
  * @export
  * @interface Address
  */

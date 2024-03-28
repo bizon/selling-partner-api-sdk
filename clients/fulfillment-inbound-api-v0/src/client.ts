@@ -4,13 +4,6 @@ import {Configuration, FbaInboundApi} from './api-model'
 
 export const clientRateLimits: RateLimit[] = [
   {
-    method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/inbound/v0/itemsGuidance$'),
-    rate: 2,
-    burst: 30,
-  },
-  {
     method: 'post',
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/fba/inbound/v0/plans$'),

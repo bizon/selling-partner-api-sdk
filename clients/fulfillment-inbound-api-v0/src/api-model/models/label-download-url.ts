@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Download URL for a label
  * @export
  * @interface LabelDownloadURL
  */

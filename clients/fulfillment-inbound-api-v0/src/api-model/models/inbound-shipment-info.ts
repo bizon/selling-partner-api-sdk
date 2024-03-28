@@ -78,7 +78,7 @@ export interface InboundShipmentInfo {
      */
     'AreCasesRequired': boolean;
     /**
-     * 
+     * Type containing date in string format
      * @type {string}
      * @memberof InboundShipmentInfo
      */

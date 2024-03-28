@@ -18,7 +18,7 @@
 import { ErrorReason } from './error-reason';
 
 /**
- * 
+ * Contains details about an invalid ASIN
  * @export
  * @interface InvalidASIN
  */

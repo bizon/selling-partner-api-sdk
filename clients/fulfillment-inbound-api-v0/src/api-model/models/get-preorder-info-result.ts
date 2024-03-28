@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Result for the get preorder info operation
  * @export
  * @interface GetPreorderInfoResult
  */
@@ -33,13 +33,13 @@ export interface GetPreorderInfoResult {
      */
     'ShipmentConfirmedForPreorder'?: boolean;
     /**
-     * 
+     * Type containing date in string format
      * @type {string}
      * @memberof GetPreorderInfoResult
      */
     'NeedByDate'?: string;
     /**
-     * 
+     * Type containing date in string format
      * @type {string}
      * @memberof GetPreorderInfoResult
      */

@@ -18,7 +18,7 @@
 import { TransportContent } from './transport-content';
 
 /**
- * 
+ * Result for the get transport details operation
  * @export
  * @interface GetTransportDetailsResult
  */

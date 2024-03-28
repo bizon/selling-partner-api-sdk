@@ -15,19 +15,19 @@
 
 
 /**
- * 
+ * Result for confirm preorder operation
  * @export
  * @interface ConfirmPreorderResult
  */
 export interface ConfirmPreorderResult {
     /**
-     * 
+     * Type containing date in string format
      * @type {string}
      * @memberof ConfirmPreorderResult
      */
     'ConfirmedNeedByDate'?: string;
     /**
-     * 
+     * Type containing date in string format
      * @type {string}
      * @memberof ConfirmPreorderResult
      */

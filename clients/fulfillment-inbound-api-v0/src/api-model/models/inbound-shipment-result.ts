@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Result of an inbound shipment operation
  * @export
  * @interface InboundShipmentResult
  */

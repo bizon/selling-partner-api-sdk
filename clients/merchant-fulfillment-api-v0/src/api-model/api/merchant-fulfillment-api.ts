@@ -77,40 +77,6 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
             };
         },
         /**
-         * Cancel the shipment indicated by the specified shipment identifer.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} shipmentId The Amazon-defined shipment identifier for the shipment to cancel.
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        cancelShipmentOld: async (shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'shipmentId' is not null or undefined
-            assertParamExists('cancelShipmentOld', 'shipmentId', shipmentId)
-            const localVarPath = `/mfn/v0/shipments/{shipmentId}/cancel`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
          * Create a shipment with the information provided.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {CreateShipmentRequest} body 
          * @param {*} [options] Override http request option.
@@ -181,42 +147,6 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
             };
         },
         /**
-         * Get a list of additional seller inputs required for a ship method. This is generally used for international shipping.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {GetAdditionalSellerInputsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        getAdditionalSellerInputsOld: async (body: GetAdditionalSellerInputsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('getAdditionalSellerInputsOld', 'body', body)
-            const localVarPath = `/mfn/v0/sellerInputs`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
          * Returns a list of shipping service offers that satisfy the specified shipment request details.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {GetEligibleShipmentServicesRequest} body 
          * @param {*} [options] Override http request option.
@@ -226,42 +156,6 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getEligibleShipmentServices', 'body', body)
             const localVarPath = `/mfn/v0/eligibleShippingServices`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Returns a list of shipping service offers that satisfy the specified shipment request details.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {GetEligibleShipmentServicesRequest} body 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        getEligibleShipmentServicesOld: async (body: GetEligibleShipmentServicesRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('getEligibleShipmentServicesOld', 'body', body)
-            const localVarPath = `/mfn/v0/eligibleServices`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -341,17 +235,6 @@ export const MerchantFulfillmentApiFp = function(configuration?: Configuration) 
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Cancel the shipment indicated by the specified shipment identifer.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} shipmentId The Amazon-defined shipment identifier for the shipment to cancel.
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async cancelShipmentOld(shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelShipmentResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.cancelShipmentOld(shipmentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
          * Create a shipment with the information provided.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {CreateShipmentRequest} body 
          * @param {*} [options] Override http request option.
@@ -372,17 +255,6 @@ export const MerchantFulfillmentApiFp = function(configuration?: Configuration) 
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Get a list of additional seller inputs required for a ship method. This is generally used for international shipping.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {GetAdditionalSellerInputsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async getAdditionalSellerInputsOld(body: GetAdditionalSellerInputsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAdditionalSellerInputsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getAdditionalSellerInputsOld(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
          * Returns a list of shipping service offers that satisfy the specified shipment request details.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {GetEligibleShipmentServicesRequest} body 
          * @param {*} [options] Override http request option.
@@ -390,17 +262,6 @@ export const MerchantFulfillmentApiFp = function(configuration?: Configuration) 
          */
         async getEligibleShipmentServices(body: GetEligibleShipmentServicesRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetEligibleShipmentServicesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getEligibleShipmentServices(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * Returns a list of shipping service offers that satisfy the specified shipment request details.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {GetEligibleShipmentServicesRequest} body 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async getEligibleShipmentServicesOld(body: GetEligibleShipmentServicesRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetEligibleShipmentServicesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getEligibleShipmentServicesOld(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -433,16 +294,6 @@ export const MerchantFulfillmentApiFactory = function (configuration?: Configura
             return localVarFp.cancelShipment(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Cancel the shipment indicated by the specified shipment identifer.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {MerchantFulfillmentApiCancelShipmentOldRequest} requestParameters Request parameters.
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        cancelShipmentOld(requestParameters: MerchantFulfillmentApiCancelShipmentOldRequest, options?: AxiosRequestConfig): AxiosPromise<CancelShipmentResponse> {
-            return localVarFp.cancelShipmentOld(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
-        },
-        /**
          * Create a shipment with the information provided.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {MerchantFulfillmentApiCreateShipmentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
@@ -461,16 +312,6 @@ export const MerchantFulfillmentApiFactory = function (configuration?: Configura
             return localVarFp.getAdditionalSellerInputs(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
-         * Get a list of additional seller inputs required for a ship method. This is generally used for international shipping.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {MerchantFulfillmentApiGetAdditionalSellerInputsOldRequest} requestParameters Request parameters.
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        getAdditionalSellerInputsOld(requestParameters: MerchantFulfillmentApiGetAdditionalSellerInputsOldRequest, options?: AxiosRequestConfig): AxiosPromise<GetAdditionalSellerInputsResponse> {
-            return localVarFp.getAdditionalSellerInputsOld(requestParameters.body, options).then((request) => request(axios, basePath));
-        },
-        /**
          * Returns a list of shipping service offers that satisfy the specified shipment request details.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {MerchantFulfillmentApiGetEligibleShipmentServicesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
@@ -478,16 +319,6 @@ export const MerchantFulfillmentApiFactory = function (configuration?: Configura
          */
         getEligibleShipmentServices(requestParameters: MerchantFulfillmentApiGetEligibleShipmentServicesRequest, options?: AxiosRequestConfig): AxiosPromise<GetEligibleShipmentServicesResponse> {
             return localVarFp.getEligibleShipmentServices(requestParameters.body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Returns a list of shipping service offers that satisfy the specified shipment request details.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {MerchantFulfillmentApiGetEligibleShipmentServicesOldRequest} requestParameters Request parameters.
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        getEligibleShipmentServicesOld(requestParameters: MerchantFulfillmentApiGetEligibleShipmentServicesOldRequest, options?: AxiosRequestConfig): AxiosPromise<GetEligibleShipmentServicesResponse> {
-            return localVarFp.getEligibleShipmentServicesOld(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns the shipment information for an existing shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -511,20 +342,6 @@ export interface MerchantFulfillmentApiCancelShipmentRequest {
      * The Amazon-defined shipment identifier for the shipment to cancel.
      * @type {string}
      * @memberof MerchantFulfillmentApiCancelShipment
-     */
-    readonly shipmentId: string
-}
-
-/**
- * Request parameters for cancelShipmentOld operation in MerchantFulfillmentApi.
- * @export
- * @interface MerchantFulfillmentApiCancelShipmentOldRequest
- */
-export interface MerchantFulfillmentApiCancelShipmentOldRequest {
-    /**
-     * The Amazon-defined shipment identifier for the shipment to cancel.
-     * @type {string}
-     * @memberof MerchantFulfillmentApiCancelShipmentOld
      */
     readonly shipmentId: string
 }
@@ -558,20 +375,6 @@ export interface MerchantFulfillmentApiGetAdditionalSellerInputsRequest {
 }
 
 /**
- * Request parameters for getAdditionalSellerInputsOld operation in MerchantFulfillmentApi.
- * @export
- * @interface MerchantFulfillmentApiGetAdditionalSellerInputsOldRequest
- */
-export interface MerchantFulfillmentApiGetAdditionalSellerInputsOldRequest {
-    /**
-     * 
-     * @type {GetAdditionalSellerInputsRequest}
-     * @memberof MerchantFulfillmentApiGetAdditionalSellerInputsOld
-     */
-    readonly body: GetAdditionalSellerInputsRequest
-}
-
-/**
  * Request parameters for getEligibleShipmentServices operation in MerchantFulfillmentApi.
  * @export
  * @interface MerchantFulfillmentApiGetEligibleShipmentServicesRequest
@@ -581,20 +384,6 @@ export interface MerchantFulfillmentApiGetEligibleShipmentServicesRequest {
      * 
      * @type {GetEligibleShipmentServicesRequest}
      * @memberof MerchantFulfillmentApiGetEligibleShipmentServices
-     */
-    readonly body: GetEligibleShipmentServicesRequest
-}
-
-/**
- * Request parameters for getEligibleShipmentServicesOld operation in MerchantFulfillmentApi.
- * @export
- * @interface MerchantFulfillmentApiGetEligibleShipmentServicesOldRequest
- */
-export interface MerchantFulfillmentApiGetEligibleShipmentServicesOldRequest {
-    /**
-     * 
-     * @type {GetEligibleShipmentServicesRequest}
-     * @memberof MerchantFulfillmentApiGetEligibleShipmentServicesOld
      */
     readonly body: GetEligibleShipmentServicesRequest
 }
@@ -632,18 +421,6 @@ export class MerchantFulfillmentApi extends BaseAPI {
     }
 
     /**
-     * Cancel the shipment indicated by the specified shipment identifer.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @param {MerchantFulfillmentApiCancelShipmentOldRequest} requestParameters Request parameters.
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     * @memberof MerchantFulfillmentApi
-     */
-    public cancelShipmentOld(requestParameters: MerchantFulfillmentApiCancelShipmentOldRequest, options?: AxiosRequestConfig) {
-        return MerchantFulfillmentApiFp(this.configuration).cancelShipmentOld(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
      * Create a shipment with the information provided.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {MerchantFulfillmentApiCreateShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
@@ -666,18 +443,6 @@ export class MerchantFulfillmentApi extends BaseAPI {
     }
 
     /**
-     * Get a list of additional seller inputs required for a ship method. This is generally used for international shipping.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @param {MerchantFulfillmentApiGetAdditionalSellerInputsOldRequest} requestParameters Request parameters.
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     * @memberof MerchantFulfillmentApi
-     */
-    public getAdditionalSellerInputsOld(requestParameters: MerchantFulfillmentApiGetAdditionalSellerInputsOldRequest, options?: AxiosRequestConfig) {
-        return MerchantFulfillmentApiFp(this.configuration).getAdditionalSellerInputsOld(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
      * Returns a list of shipping service offers that satisfy the specified shipment request details.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {MerchantFulfillmentApiGetEligibleShipmentServicesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
@@ -686,18 +451,6 @@ export class MerchantFulfillmentApi extends BaseAPI {
      */
     public getEligibleShipmentServices(requestParameters: MerchantFulfillmentApiGetEligibleShipmentServicesRequest, options?: AxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).getEligibleShipmentServices(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Returns a list of shipping service offers that satisfy the specified shipment request details.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @param {MerchantFulfillmentApiGetEligibleShipmentServicesOldRequest} requestParameters Request parameters.
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     * @memberof MerchantFulfillmentApi
-     */
-    public getEligibleShipmentServicesOld(requestParameters: MerchantFulfillmentApiGetEligibleShipmentServicesOldRequest, options?: AxiosRequestConfig) {
-        return MerchantFulfillmentApiFp(this.configuration).getEligibleShipmentServicesOld(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

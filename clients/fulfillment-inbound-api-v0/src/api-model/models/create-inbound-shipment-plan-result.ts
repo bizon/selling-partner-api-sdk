@@ -18,7 +18,7 @@
 import { InboundShipmentPlan } from './inbound-shipment-plan';
 
 /**
- * 
+ * Result for the create inbound shipment operation
  * @export
  * @interface CreateInboundShipmentPlanResult
  */

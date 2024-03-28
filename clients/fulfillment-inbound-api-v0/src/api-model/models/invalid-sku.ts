@@ -18,7 +18,7 @@
 import { ErrorReason } from './error-reason';
 
 /**
- * 
+ * Contains detail about an invalid SKU
  * @export
  * @interface InvalidSKU
  */

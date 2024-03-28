@@ -24,7 +24,7 @@ import { UnitOfWeight } from './unit-of-weight';
  */
 export interface Weight {
     /**
-     * 
+     * Number format that supports decimal.
      * @type {number}
      * @memberof Weight
      */

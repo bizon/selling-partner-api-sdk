@@ -45,7 +45,7 @@ export interface PartneredLtlDataOutput {
      */
     'Contact': Contact;
     /**
-     * 
+     * Contains an unsigned integer
      * @type {number}
      * @memberof PartneredLtlDataOutput
      */
@@ -57,7 +57,7 @@ export interface PartneredLtlDataOutput {
      */
     'SellerFreightClass'?: SellerFreightClass;
     /**
-     * 
+     * Type containing date in string format
      * @type {string}
      * @memberof PartneredLtlDataOutput
      */
@@ -87,13 +87,13 @@ export interface PartneredLtlDataOutput {
      */
     'AmazonCalculatedValue'?: Amount;
     /**
-     * 
+     * Type containing date in string format
      * @type {string}
      * @memberof PartneredLtlDataOutput
      */
     'PreviewPickupDate': string;
     /**
-     * 
+     * Type containing date in string format
      * @type {string}
      * @memberof PartneredLtlDataOutput
      */

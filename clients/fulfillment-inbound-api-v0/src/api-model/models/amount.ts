@@ -30,7 +30,7 @@ export interface Amount {
      */
     'CurrencyCode': CurrencyCode;
     /**
-     * 
+     * Number format that supports decimal.
      * @type {number}
      * @memberof Amount
      */

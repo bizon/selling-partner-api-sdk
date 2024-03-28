@@ -60,7 +60,7 @@ export interface InboundShipmentItem {
      */
     'QuantityInCase'?: number;
     /**
-     * 
+     * Type containing date in string format
      * @type {string}
      * @memberof InboundShipmentItem
      */

@@ -54,7 +54,7 @@ export interface CreateInboundShipmentPlanRequest {
      */
     'ShipToCountrySubdivisionCode'?: string;
     /**
-     * 
+     * List of inbound shipment plan requests
      * @type {Array<InboundShipmentPlanRequestItem>}
      * @memberof CreateInboundShipmentPlanRequest
      */

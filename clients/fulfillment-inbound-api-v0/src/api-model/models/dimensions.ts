@@ -24,19 +24,19 @@ import { UnitOfMeasurement } from './unit-of-measurement';
  */
 export interface Dimensions {
     /**
-     * 
+     * Number format that supports decimal.
      * @type {number}
      * @memberof Dimensions
      */
     'Length': number;
     /**
-     * 
+     * Number format that supports decimal.
      * @type {number}
      * @memberof Dimensions
      */
     'Width': number;
     /**
-     * 
+     * Number format that supports decimal.
      * @type {number}
      * @memberof Dimensions
      */

@@ -18,7 +18,7 @@
 import { InboundShipmentItem } from './inbound-shipment-item';
 
 /**
- * 
+ * Result for the get shipment items operation
  * @export
  * @interface GetShipmentItemsResult
  */

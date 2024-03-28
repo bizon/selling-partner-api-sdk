@@ -27,7 +27,7 @@ import { InvalidSKU } from './invalid-sku';
 import { SKUPrepInstructions } from './skuprep-instructions';
 
 /**
- * 
+ * Result for the get prep instructions operation
  * @export
  * @interface GetPrepInstructionsResult
  */

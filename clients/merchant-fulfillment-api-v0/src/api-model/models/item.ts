@@ -18,6 +18,12 @@
 import { AdditionalSellerInputs } from './additional-seller-inputs';
 // May contain unused imports in some cases
 // @ts-ignore
+import { DangerousGoodsDetails } from './dangerous-goods-details';
+// May contain unused imports in some cases
+// @ts-ignore
+import { LiquidVolume } from './liquid-volume';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Weight } from './weight';
 
 /**
@@ -62,5 +68,23 @@ export interface Item {
      * @memberof Item
      */
     'ItemLevelSellerInputsList'?: Array<AdditionalSellerInputs>;
+    /**
+     * 
+     * @type {LiquidVolume}
+     * @memberof Item
+     */
+    'LiquidVolume'?: LiquidVolume;
+    /**
+     * When true, the item qualifies as hazardous materials (hazmat). Defaults to false.
+     * @type {boolean}
+     * @memberof Item
+     */
+    'IsHazmat'?: boolean;
+    /**
+     * 
+     * @type {DangerousGoodsDetails}
+     * @memberof Item
+     */
+    'DangerousGoodsDetails'?: DangerousGoodsDetails;
 }
 

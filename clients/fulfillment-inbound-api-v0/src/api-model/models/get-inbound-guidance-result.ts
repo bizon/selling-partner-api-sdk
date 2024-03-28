@@ -27,7 +27,7 @@ import { InvalidSKU } from './invalid-sku';
 import { SKUInboundGuidance } from './skuinbound-guidance';
 
 /**
- * 
+ * Result for the get inbound guidance operation
  * @export
  * @interface GetInboundGuidanceResult
  */

@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Download URL for the bill of lading.
  * @export
  * @interface BillOfLadingDownloadURL
  */

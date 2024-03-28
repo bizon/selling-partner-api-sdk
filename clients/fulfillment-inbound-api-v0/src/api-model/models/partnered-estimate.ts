@@ -30,13 +30,13 @@ export interface PartneredEstimate {
      */
     'Amount': Amount;
     /**
-     * 
+     * Timestamp in ISO 8601 format.
      * @type {string}
      * @memberof PartneredEstimate
      */
     'ConfirmDeadline'?: string;
     /**
-     * 
+     * Timestamp in ISO 8601 format.
      * @type {string}
      * @memberof PartneredEstimate
      */

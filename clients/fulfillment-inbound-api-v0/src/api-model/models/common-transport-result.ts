@@ -18,7 +18,7 @@
 import { TransportResult } from './transport-result';
 
 /**
- * 
+ * Common container for transport result
  * @export
  * @interface CommonTransportResult
  */

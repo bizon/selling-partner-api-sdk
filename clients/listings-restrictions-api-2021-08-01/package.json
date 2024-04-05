@@ -1,6 +1,6 @@
 {
   "name": "@sp-api-sdk/listings-restrictions-api-2021-08-01",
-  "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
+  "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Listings Restrictions provides programmatic access to restrictions on Amazon catalog listings. For more information, see the Listings Restrictions API Use Case Guide.",
   "version": "2.0.6",
   "main": "dist/cjs/index.js",

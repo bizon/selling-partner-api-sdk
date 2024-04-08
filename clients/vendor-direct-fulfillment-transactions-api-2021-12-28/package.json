@@ -1,6 +1,6 @@
 {
   "name": "@sp-api-sdk/vendor-direct-fulfillment-transactions-api-2021-12-28",
-  "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
+  "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Direct Fulfillment Transaction Status provides programmatic access to a direct fulfillment vendor's transaction status.",
   "version": "2.0.6",
   "main": "dist/cjs/index.js",

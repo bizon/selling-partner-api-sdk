@@ -1,6 +1,6 @@
 {
   "name": "@sp-api-sdk/replenishment-api-2022-11-07",
-  "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
+  "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Replenishment (Replenishment API) provides programmatic access to replenishment program metrics and offers. These programs provide recurring delivery of any replenishable item at a frequency chosen by the customer. The Replenishment API is available worldwide wherever Amazon Subscribe & Save is available or is supported. The API is available to vendors and FBA selling partners.",
   "version": "2.0.6",
   "main": "dist/cjs/index.js",

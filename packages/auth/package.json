@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "nock": "^13.5.4",
-    "type-fest": "^4.14.0"
+    "type-fest": "^4.15.0"
   },
   "repository": {
     "type": "git",

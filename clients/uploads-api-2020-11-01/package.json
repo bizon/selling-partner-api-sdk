@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/uploads-api-2020-11-01",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Uploads API lets you upload files that you can programmatically access using other Selling Partner APIs, such as the A+ Content API and the Messaging API.",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

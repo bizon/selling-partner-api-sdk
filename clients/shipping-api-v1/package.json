@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/shipping-api-v1",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "Provides programmatic access to Amazon Shipping APIs. Note: If you are new to the Amazon Shipping API, refer to the latest version of Amazon Shipping API (v2) on the Amazon Shipping Developer Documentation site.",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

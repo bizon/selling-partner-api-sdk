@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Information required to create the report schedule.
  * @export
  * @interface CreateReportScheduleSpecification
  */
@@ -39,13 +39,13 @@ export interface CreateReportScheduleSpecification {
      */
     'reportOptions'?: { [key: string]: string; };
     /**
-     * One of a set of predefined ISO 8601 periods that specifies how often a report should be created.
+     * One of a set of predefined <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> periods that specifies how often a report should be created.
      * @type {string}
      * @memberof CreateReportScheduleSpecification
      */
     'period': CreateReportScheduleSpecificationPeriodEnum;
     /**
-     * The date and time when the schedule will create its next report, in ISO 8601 date time format.
+     * The date and time when the schedule will create its next report, in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format.
      * @type {string}
      * @memberof CreateReportScheduleSpecification
      */

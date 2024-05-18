@@ -15,25 +15,21 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { OrdersList } from './orders-list';
+import { ConstraintType } from './constraint-type';
 
 /**
- * The response schema for the `getOrders` operation.
+ * Delivery constraints applicable to this order.
  * @export
- * @interface GetOrdersResponse
+ * @interface ShippingConstraints
  */
-export interface GetOrdersResponse {
+export interface ShippingConstraints {
     /**
      * 
-     * @type {OrdersList}
-     * @memberof GetOrdersResponse
+     * @type {ConstraintType}
+     * @memberof ShippingConstraints
      */
-    'payload'?: OrdersList;
-    /**
-     * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetOrdersResponse
-     */
-    'errors'?: Array<Error>;
+    'PalletDelivery'?: ConstraintType;
 }
+
+
 

@@ -13,27 +13,18 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import { OrdersList } from './orders-list';
 
 /**
- * The response schema for the `getOrders` operation.
+ * Details the importance of the constraint present on the item
  * @export
- * @interface GetOrdersResponse
+ * @enum {string}
  */
-export interface GetOrdersResponse {
-    /**
-     * 
-     * @type {OrdersList}
-     * @memberof GetOrdersResponse
-     */
-    'payload'?: OrdersList;
-    /**
-     * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetOrdersResponse
-     */
-    'errors'?: Array<Error>;
-}
+
+export const ConstraintType = {
+    Mandatory: 'MANDATORY'
+} as const;
+
+export type ConstraintType = typeof ConstraintType[keyof typeof ConstraintType];
+
+
 

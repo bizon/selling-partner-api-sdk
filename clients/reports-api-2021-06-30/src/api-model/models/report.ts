@@ -69,19 +69,19 @@ export interface Report {
      */
     'processingStatus': ReportProcessingStatusEnum;
     /**
-     * The date and time when the report processing started, in ISO 8601 date time format.
+     * The date and time when the report processing started, in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format.
      * @type {string}
      * @memberof Report
      */
     'processingStartTime'?: string;
     /**
-     * The date and time when the report processing completed, in ISO 8601 date time format.
+     * The date and time when the report processing completed, in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format.
      * @type {string}
      * @memberof Report
      */
     'processingEndTime'?: string;
     /**
-     * The identifier for the report document. Pass this into the getReportDocument operation to get the information you will need to retrieve the report document\'s contents.
+     * The identifier for the report document. Pass this into the `getReportDocument` operation to get the information you will need to retrieve the report document\'s contents.
      * @type {string}
      * @memberof Report
      */

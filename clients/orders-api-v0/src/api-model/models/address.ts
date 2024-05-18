@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Orders
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  **Note:** The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -30,6 +30,12 @@ export interface Address {
      */
     'Name': string;
     /**
+     * The company name of the recipient.  **Note**: This attribute is only available for shipping address.
+     * @type {string}
+     * @memberof Address
+     */
+    'CompanyName'?: string;
+    /**
      * The street address.
      * @type {string}
      * @memberof Address
@@ -48,7 +54,7 @@ export interface Address {
      */
     'AddressLine3'?: string;
     /**
-     * The city 
+     * The city.
      * @type {string}
      * @memberof Address
      */
@@ -90,7 +96,7 @@ export interface Address {
      */
     'CountryCode'?: string;
     /**
-     * The phone number. Not returned for Fulfillment by Amazon (FBA) orders.
+     * The phone number of the buyer.  **Note**:  1. This attribute is only available for shipping address. 2. The buyer `Phone` number is suppressed in some cases, including but not limited to  a. `Phone` is suppressed for all Fulfillment by Amazon (FBA) orders. b. `Phone` is suppressed for the shipped MFN(Fulfilled by the seller) order when current date is past Latest Delivery Date.
      * @type {string}
      * @memberof Address
      */

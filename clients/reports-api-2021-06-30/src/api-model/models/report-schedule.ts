@@ -45,13 +45,13 @@ export interface ReportSchedule {
      */
     'reportOptions'?: { [key: string]: string; };
     /**
-     * An ISO 8601 period value that indicates how often a report should be created.
+     * An <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> period value that indicates how often a report should be created.
      * @type {string}
      * @memberof ReportSchedule
      */
     'period': string;
     /**
-     * The date and time when the schedule will create its next report, in ISO 8601 date time format.
+     * The date and time when the schedule will create its next report, in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format.
      * @type {string}
      * @memberof ReportSchedule
      */

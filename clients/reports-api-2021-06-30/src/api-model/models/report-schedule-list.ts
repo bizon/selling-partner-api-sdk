@@ -24,7 +24,7 @@ import { ReportSchedule } from './report-schedule';
  */
 export interface ReportScheduleList {
     /**
-     * 
+     * Detailed information about a report schedule.
      * @type {Array<ReportSchedule>}
      * @memberof ReportScheduleList
      */

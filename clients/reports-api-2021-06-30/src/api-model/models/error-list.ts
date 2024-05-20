@@ -21,7 +21,7 @@
  */
 export interface ErrorList {
     /**
-     * 
+     * Error response returned when the request is unsuccessful.
      * @type {Array<Error>}
      * @memberof ErrorList
      */

@@ -24,7 +24,7 @@ import { Package } from './package';
  */
 export interface Packages {
     /**
-     * 
+     * A list of packages.
      * @type {Array<Package>}
      * @memberof Packages
      */

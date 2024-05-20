@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Orders
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  **Note:** The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -69,7 +69,7 @@ export interface Order {
      */
     'PurchaseDate': string;
     /**
-     * The date when the order was last updated.  __Note__: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.
+     * The date when the order was last updated.  **Note**: `LastUpdateDate` is returned with an incorrect date for orders that were last updated before 2009-04-01.
      * @type {string}
      * @memberof Order
      */
@@ -129,7 +129,7 @@ export interface Order {
      */
     'PaymentExecutionDetail'?: Array<PaymentExecutionDetailItem>;
     /**
-     * The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information.
+     * The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the `PaymentExecutionDetailItem` object, we recommend using the `PaymentMethodDetails` property to get payment method information.
      * @type {string}
      * @memberof Order
      */
@@ -147,7 +147,7 @@ export interface Order {
      */
     'MarketplaceId'?: string;
     /**
-     * The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, Priority, SameDay, SecondDay, Scheduled, Standard.
+     * The shipment service level category of the order.  **Possible values**: `Expedited`, `FreeEconomy`, `NextDay`, `Priority`, `SameDay`, `SecondDay`, `Scheduled`, `Standard`.
      * @type {string}
      * @memberof Order
      */
@@ -171,13 +171,13 @@ export interface Order {
      */
     'OrderType'?: OrderOrderTypeEnum;
     /**
-     * The start of the time period within which you have committed to ship the order. In <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.
+     * The start of the time period within which you have committed to ship the order. In <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.  **Note**: `EarliestShipDate` might not be returned for orders placed before February 1, 2013.
      * @type {string}
      * @memberof Order
      */
     'EarliestShipDate'?: string;
     /**
-     * The end of the time period within which you have committed to ship the order. In <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.
+     * The end of the time period within which you have committed to ship the order. In <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.  **Note**: `LatestShipDate` might not be returned for orders placed before February 1, 2013.
      * @type {string}
      * @memberof Order
      */
@@ -189,7 +189,7 @@ export interface Order {
      */
     'EarliestDeliveryDate'?: string;
     /**
-     * The end of the time period within which you have committed to fulfill the order. In <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status.
+     * The end of the time period within which you have committed to fulfill the order. In <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders that do not have a `PendingAvailability`, Pending, or Canceled status.
      * @type {string}
      * @memberof Order
      */
@@ -219,7 +219,7 @@ export interface Order {
      */
     'IsGlobalExpressEnabled'?: boolean;
     /**
-     * The order ID value for the order that is being replaced. Returned only if IsReplacementOrder = true.
+     * The order ID value for the order that is being replaced. Returned only if `IsReplacementOrder` = true.
      * @type {string}
      * @memberof Order
      */
@@ -237,7 +237,7 @@ export interface Order {
      */
     'PromiseResponseDueDate'?: string;
     /**
-     * When true, the estimated ship date is set for the order. Returned only for Sourcing on Demand orders.
+     * When true, the estimated ship date is specified for the order. Returned only for Sourcing on Demand orders.
      * @type {boolean}
      * @memberof Order
      */
@@ -261,7 +261,7 @@ export interface Order {
      */
     'DefaultShipFromLocationAddress'?: Address;
     /**
-     * The buyer\'s invoicing preference. Available only in the TR marketplace.
+     * The buyer\'s invoicing preference. Sellers can use this data to issue electronic invoices for orders in Turkey.  **Note**: This attribute is only available in the Turkey marketplace.
      * @type {string}
      * @memberof Order
      */
@@ -297,7 +297,7 @@ export interface Order {
      */
     'MarketplaceTaxInfo'?: MarketplaceTaxInfo;
     /**
-     * The seller’s friendly name registered in the marketplace.
+     * The seller’s friendly name registered in the marketplace where the sale took place. Sellers can use this data to issue electronic invoices for orders in Brazil.  **Note**: This attribute is only available in the Brazil marketplace for the orders with `Pending` or `Unshipped` status.
      * @type {string}
      * @memberof Order
      */

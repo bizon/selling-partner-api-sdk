@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Orders
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  **Note:** The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -34,6 +34,9 @@ import { PointsGrantedDetail } from './points-granted-detail';
 // May contain unused imports in some cases
 // @ts-ignore
 import { ProductInfoDetail } from './product-info-detail';
+// May contain unused imports in some cases
+// @ts-ignore
+import { ShippingConstraints } from './shipping-constraints';
 // May contain unused imports in some cases
 // @ts-ignore
 import { SubstitutionPreferences } from './substitution-preferences';
@@ -168,11 +171,11 @@ export interface OrderItem {
      */
     'CODFeeDiscount'?: Money;
     /**
-     * When true, the item is a gift.
-     * @type {boolean}
+     * Indicates whether the item is a gift.  **Possible values**: `true`, `false`.
+     * @type {string}
      * @memberof OrderItem
      */
-    'IsGift'?: boolean;
+    'IsGift'?: string;
     /**
      * The condition of the item as described by the seller.
      * @type {string}
@@ -180,13 +183,13 @@ export interface OrderItem {
      */
     'ConditionNote'?: string;
     /**
-     * The condition of the item.  Possible values: New, Used, Collectible, Refurbished, Preorder, Club.
+     * The condition of the item.  **Possible values**: `New`, `Used`, `Collectible`, `Refurbished`, `Preorder`, `Club`.
      * @type {string}
      * @memberof OrderItem
      */
     'ConditionId'?: string;
     /**
-     * The subcondition of the item.  Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, Any, Other.
+     * The subcondition of the item.  **Possible values**: `New`, `Mint`, `Very Good`, `Good`, `Acceptable`, `Poor`, `Club`, `OEM`, `Warranty`, `Refurbished Warranty`, `Refurbished`, `Open Box`, `Any`, `Other`.
      * @type {string}
      * @memberof OrderItem
      */
@@ -204,7 +207,7 @@ export interface OrderItem {
      */
     'ScheduledDeliveryEndDate'?: string;
     /**
-     * Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, see the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).   Possible values: BusinessPrice - A special price that is available only for Amazon Business orders.
+     * Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, refer to [Amazon Business](https://business.amazon.com).   **Possible values**: `BusinessPrice` - A special price that is available only for Amazon Business orders.
      * @type {string}
      * @memberof OrderItem
      */
@@ -275,6 +278,12 @@ export interface OrderItem {
      * @memberof OrderItem
      */
     'Measurement'?: Measurement;
+    /**
+     * 
+     * @type {ShippingConstraints}
+     * @memberof OrderItem
+     */
+    'ShippingConstraints'?: ShippingConstraints;
 }
 
 export const OrderItemDeemedResellerCategoryEnum = {

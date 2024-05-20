@@ -18,7 +18,7 @@
 import { Report } from './report';
 
 /**
- * The response for the getReports operation.
+ * The response for the `getReports` operation.
  * @export
  * @interface GetReportsResponse
  */
@@ -30,7 +30,7 @@ export interface GetReportsResponse {
      */
     'reports': Array<Report>;
     /**
-     * Returned when the number of results exceeds pageSize. To get the next page of results, call getReports with this token as the only parameter.
+     * Returned when the number of results exceeds `pageSize`. To get the next page of results, call `getReports` with this token as the only parameter.
      * @type {string}
      * @memberof GetReportsResponse
      */

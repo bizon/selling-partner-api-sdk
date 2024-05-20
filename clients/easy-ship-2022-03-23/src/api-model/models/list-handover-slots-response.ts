@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TimeSlot } from './time-slot';
+import type { TimeSlot } from './time-slot';
 
 /**
  * The response schema for the `listHandoverSlots` operation.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TestCaseData } from './test-case-data';
+import type { TestCaseData } from './test-case-data';
 
 /**
  * The transaction details including the status. If the transaction was successful, also includes the requested test order data.

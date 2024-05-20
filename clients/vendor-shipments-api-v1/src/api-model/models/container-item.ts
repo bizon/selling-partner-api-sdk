@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemDetails } from './item-details';
+import type { ItemDetails } from './item-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemQuantity } from './item-quantity';
+import type { ItemQuantity } from './item-quantity';
 
 /**
  * Carton/Pallet level details for the item.

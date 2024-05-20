@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TrackingInformation } from './tracking-information';
+import type { TrackingInformation } from './tracking-information';
 
 /**
  * The response schema for the getTrackingInformation operation.

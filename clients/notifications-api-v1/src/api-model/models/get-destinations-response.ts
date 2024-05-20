@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Destination } from './destination';
+import type { Destination } from './destination';
 
 /**
  * The response schema for the `getDestinations` operation.

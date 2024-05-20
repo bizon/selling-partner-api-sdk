@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemQuantity } from './item-quantity';
+import type { ItemQuantity } from './item-quantity';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PackageItemDetails } from './package-item-details';
+import type { PackageItemDetails } from './package-item-details';
 
 /**
  * Details of the item being shipped.

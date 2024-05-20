@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { OperationalConfiguration } from './operational-configuration';
+import type { OperationalConfiguration } from './operational-configuration';
 
 /**
  * The delivery channel of a supply source.

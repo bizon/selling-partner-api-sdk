@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ComplianceDetail } from './compliance-detail';
+import type { ComplianceDetail } from './compliance-detail';
 
 /**
  * `listItemComplianceDetails` response.

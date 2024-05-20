@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CarrierAccountAttribute } from './carrier-account-attribute';
+import type { CarrierAccountAttribute } from './carrier-account-attribute';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ClientReferenceDetail } from './client-reference-detail';
+import type { ClientReferenceDetail } from './client-reference-detail';
 
 /**
  * The request schema for verify and add the merchant\'s account with a certain carrier.

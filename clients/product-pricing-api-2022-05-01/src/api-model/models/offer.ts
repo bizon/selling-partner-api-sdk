@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Condition } from './condition';
+import type { Condition } from './condition';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentType } from './fulfillment-type';
+import type { FulfillmentType } from './fulfillment-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MoneyType } from './money-type';
+import type { MoneyType } from './money-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Points } from './points';
+import type { Points } from './points';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShippingOption } from './shipping-option';
+import type { ShippingOption } from './shipping-option';
 
 /**
  * The offer data of a product.

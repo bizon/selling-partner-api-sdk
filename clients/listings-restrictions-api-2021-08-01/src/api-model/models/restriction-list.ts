@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Restriction } from './restriction';
+import type { Restriction } from './restriction';
 
 /**
  * A list of restrictions for the specified Amazon catalog item.

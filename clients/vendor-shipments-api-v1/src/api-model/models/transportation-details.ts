@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CarrierDetails } from './carrier-details';
+import type { CarrierDetails } from './carrier-details';
 
 /**
  * Transportation details for this shipment.

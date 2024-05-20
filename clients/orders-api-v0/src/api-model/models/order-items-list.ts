@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { OrderItem } from './order-item';
+import type { OrderItem } from './order-item';
 
 /**
  * The order items list along with the order ID.

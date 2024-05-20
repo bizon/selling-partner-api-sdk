@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CarrierWillPickUpOption } from './carrier-will-pick-up-option';
+import type { CarrierWillPickUpOption } from './carrier-will-pick-up-option';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CurrencyAmount } from './currency-amount';
+import type { CurrencyAmount } from './currency-amount';
 // May contain unused imports in some cases
 // @ts-ignore
-import { DeliveryExperienceType } from './delivery-experience-type';
+import type { DeliveryExperienceType } from './delivery-experience-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { LabelFormat } from './label-format';
+import type { LabelFormat } from './label-format';
 
 /**
  * Extra services provided by a carrier.

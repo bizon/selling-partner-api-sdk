@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { NonPartneredLtlDataInput } from './non-partnered-ltl-data-input';
+import type { NonPartneredLtlDataInput } from './non-partnered-ltl-data-input';
 // May contain unused imports in some cases
 // @ts-ignore
-import { NonPartneredSmallParcelDataInput } from './non-partnered-small-parcel-data-input';
+import type { NonPartneredSmallParcelDataInput } from './non-partnered-small-parcel-data-input';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PartneredLtlDataInput } from './partnered-ltl-data-input';
+import type { PartneredLtlDataInput } from './partnered-ltl-data-input';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PartneredSmallParcelDataInput } from './partnered-small-parcel-data-input';
+import type { PartneredSmallParcelDataInput } from './partnered-small-parcel-data-input';
 
 /**
  * Information required to create an Amazon-partnered carrier shipping estimate, or to alert the Amazon fulfillment center to the arrival of an inbound shipment by a non-Amazon-partnered carrier.

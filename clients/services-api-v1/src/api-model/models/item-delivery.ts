@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemDeliveryPromise } from './item-delivery-promise';
+import type { ItemDeliveryPromise } from './item-delivery-promise';
 
 /**
  * Delivery information for the item.

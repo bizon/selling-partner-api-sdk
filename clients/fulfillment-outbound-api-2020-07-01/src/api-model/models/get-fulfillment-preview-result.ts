@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentPreview } from './fulfillment-preview';
+import type { FulfillmentPreview } from './fulfillment-preview';
 
 /**
  * A list of fulfillment order previews, including estimated shipping weights, estimated shipping fees, and estimated ship dates and arrival dates.

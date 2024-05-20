@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { BuyerTaxInfo } from './buyer-tax-info';
+import type { BuyerTaxInfo } from './buyer-tax-info';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MarketplaceTaxInfo } from './marketplace-tax-info';
+import type { MarketplaceTaxInfo } from './marketplace-tax-info';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipmentItem } from './shipment-item';
+import type { ShipmentItem } from './shipment-item';
 
 /**
  * The information required by a selling partner to issue a shipment invoice.

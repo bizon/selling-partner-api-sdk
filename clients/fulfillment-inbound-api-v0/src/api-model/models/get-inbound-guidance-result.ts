@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ASINInboundGuidance } from './asininbound-guidance';
+import type { ASINInboundGuidance } from './asininbound-guidance';
 // May contain unused imports in some cases
 // @ts-ignore
-import { InvalidASIN } from './invalid-asin';
+import type { InvalidASIN } from './invalid-asin';
 // May contain unused imports in some cases
 // @ts-ignore
-import { InvalidSKU } from './invalid-sku';
+import type { InvalidSKU } from './invalid-sku';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SKUInboundGuidance } from './skuinbound-guidance';
+import type { SKUInboundGuidance } from './skuinbound-guidance';
 
 /**
  * Result for the get inbound guidance operation

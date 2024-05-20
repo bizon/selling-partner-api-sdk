@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ParkingConfiguration } from './parking-configuration';
+import type { ParkingConfiguration } from './parking-configuration';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ParkingCostType } from './parking-cost-type';
+import type { ParkingCostType } from './parking-cost-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ParkingSpotIdentificationType } from './parking-spot-identification-type';
+import type { ParkingSpotIdentificationType } from './parking-spot-identification-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ParkingWithAddressConfigurationAllOf } from './parking-with-address-configuration-all-of';
+import type { ParkingWithAddressConfigurationAllOf } from './parking-with-address-configuration-all-of';
 
 /**
  * @type ParkingWithAddressConfiguration

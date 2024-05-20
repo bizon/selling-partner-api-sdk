@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FinancialEventGroup } from './financial-event-group';
+import type { FinancialEventGroup } from './financial-event-group';
 
 /**
  * The payload for the listFinancialEventGroups operation.

@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Amount } from './amount';
+import type { Amount } from './amount';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Contact } from './contact';
+import type { Contact } from './contact';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Pallet } from './pallet';
+import type { Pallet } from './pallet';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SellerFreightClass } from './seller-freight-class';
+import type { SellerFreightClass } from './seller-freight-class';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Weight } from './weight';
+import type { Weight } from './weight';
 
 /**
  * Information that is required by an Amazon-partnered carrier to ship a Less Than Truckload/Full Truckload (LTL/FTL) inbound shipment.

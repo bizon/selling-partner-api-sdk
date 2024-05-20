@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Currency } from './currency';
+import type { Currency } from './currency';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TaxWithholdingPeriod } from './tax-withholding-period';
+import type { TaxWithholdingPeriod } from './tax-withholding-period';
 
 /**
  * A TaxWithholding event on seller\'s account.

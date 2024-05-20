@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { LabelResult } from './label-result';
+import type { LabelResult } from './label-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ServiceRate } from './service-rate';
+import type { ServiceRate } from './service-rate';
 
 /**
  * The payload schema for the purchaseShipment operation.

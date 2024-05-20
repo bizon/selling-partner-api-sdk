@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BusinessHours } from './business-hours';
+import type { BusinessHours } from './business-hours';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ExceptionDates } from './exception-dates';
+import type { ExceptionDates } from './exception-dates';
 
 /**
  * The time window when the delivery is preferred.

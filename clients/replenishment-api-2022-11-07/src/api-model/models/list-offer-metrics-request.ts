@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ListOfferMetricsRequestFilters } from './list-offer-metrics-request-filters';
+import type { ListOfferMetricsRequestFilters } from './list-offer-metrics-request-filters';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ListOfferMetricsRequestPagination } from './list-offer-metrics-request-pagination';
+import type { ListOfferMetricsRequestPagination } from './list-offer-metrics-request-pagination';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ListOfferMetricsRequestSort } from './list-offer-metrics-request-sort';
+import type { ListOfferMetricsRequestSort } from './list-offer-metrics-request-sort';
 
 /**
  * The request body for the `listOfferMetrics` operation.

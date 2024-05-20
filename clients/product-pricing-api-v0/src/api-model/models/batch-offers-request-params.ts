@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomerType } from './customer-type';
+import type { CustomerType } from './customer-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemCondition } from './item-condition';
+import type { ItemCondition } from './item-condition';
 
 /**
  * 

@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FileContents } from './file-contents';
+import type { FileContents } from './file-contents';
 // May contain unused imports in some cases
 // @ts-ignore
-import { LabelDimensions } from './label-dimensions';
+import type { LabelDimensions } from './label-dimensions';
 // May contain unused imports in some cases
 // @ts-ignore
-import { LabelFormat } from './label-format';
+import type { LabelFormat } from './label-format';
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardIdForLabel } from './standard-id-for-label';
+import type { StandardIdForLabel } from './standard-id-for-label';
 
 /**
  * Data for creating a shipping label and dimensions for printing the label.

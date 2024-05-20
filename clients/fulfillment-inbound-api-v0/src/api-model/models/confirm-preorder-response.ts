@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ConfirmPreorderResult } from './confirm-preorder-result';
+import type { ConfirmPreorderResult } from './confirm-preorder-result';
 
 /**
  * The response schema for the confirmPreorder operation.

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AplusPaginatedResponseAllOf } from './aplus-paginated-response-all-of';
+import type { AplusPaginatedResponseAllOf } from './aplus-paginated-response-all-of';
 // May contain unused imports in some cases
 // @ts-ignore
-import { AplusResponse } from './aplus-response';
+import type { AplusResponse } from './aplus-response';
 
 /**
  * @type AplusPaginatedResponse

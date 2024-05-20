@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { GetMessagingActionResponseEmbedded } from './get-messaging-action-response-embedded';
+import type { GetMessagingActionResponseEmbedded } from './get-messaging-action-response-embedded';
 // May contain unused imports in some cases
 // @ts-ignore
-import { GetMessagingActionResponseLinks } from './get-messaging-action-response-links';
+import type { GetMessagingActionResponseLinks } from './get-messaging-action-response-links';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MessagingAction } from './messaging-action';
+import type { MessagingAction } from './messaging-action';
 
 /**
  * Describes a messaging action that can be taken for an order. Provides a JSON Hypertext Application Language (HAL) link to the JSON schema document that describes the expected input.

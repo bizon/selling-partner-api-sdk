@@ -14,37 +14,37 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { GetCustomerInvoiceResponse } from '../models';
+import type { GetCustomerInvoiceResponse } from '../models';
 // @ts-ignore
-import { GetCustomerInvoicesResponse } from '../models';
+import type { GetCustomerInvoicesResponse } from '../models';
 // @ts-ignore
-import { GetPackingSlipListResponse } from '../models';
+import type { GetPackingSlipListResponse } from '../models';
 // @ts-ignore
-import { GetPackingSlipResponse } from '../models';
+import type { GetPackingSlipResponse } from '../models';
 // @ts-ignore
-import { GetShippingLabelListResponse } from '../models';
+import type { GetShippingLabelListResponse } from '../models';
 // @ts-ignore
-import { GetShippingLabelResponse } from '../models';
+import type { GetShippingLabelResponse } from '../models';
 // @ts-ignore
-import { SubmitShipmentConfirmationsRequest } from '../models';
+import type { SubmitShipmentConfirmationsRequest } from '../models';
 // @ts-ignore
-import { SubmitShipmentConfirmationsResponse } from '../models';
+import type { SubmitShipmentConfirmationsResponse } from '../models';
 // @ts-ignore
-import { SubmitShipmentStatusUpdatesRequest } from '../models';
+import type { SubmitShipmentStatusUpdatesRequest } from '../models';
 // @ts-ignore
-import { SubmitShipmentStatusUpdatesResponse } from '../models';
+import type { SubmitShipmentStatusUpdatesResponse } from '../models';
 // @ts-ignore
-import { SubmitShippingLabelsRequest } from '../models';
+import type { SubmitShippingLabelsRequest } from '../models';
 // @ts-ignore
-import { SubmitShippingLabelsResponse } from '../models';
+import type { SubmitShippingLabelsResponse } from '../models';
 /**
  * VendorShippingApi - axios parameter creator
  * @export
@@ -57,7 +57,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCustomerInvoice: async (purchaseOrderNumber: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getCustomerInvoice: async (purchaseOrderNumber: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'purchaseOrderNumber' is not null or undefined
             assertParamExists('getCustomerInvoice', 'purchaseOrderNumber', purchaseOrderNumber)
             const localVarPath = `/vendor/directFulfillment/shipping/v1/customerInvoices/{purchaseOrderNumber}`
@@ -90,12 +90,12 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {string} createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [shipFromPartyId] The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
          * @param {number} [limit] The limit to the number of records returned
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort ASC or DESC by order creation date.
+         * @param {GetCustomerInvoicesSortOrderEnum} [sortOrder] Sort ASC or DESC by order creation date.
          * @param {string} [nextToken] Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCustomerInvoices: async (createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getCustomerInvoices: async (createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: GetCustomerInvoicesSortOrderEnum, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'createdAfter' is not null or undefined
             assertParamExists('getCustomerInvoices', 'createdAfter', createdAfter)
             // verify required parameter 'createdBefore' is not null or undefined
@@ -157,7 +157,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPackingSlip: async (purchaseOrderNumber: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getPackingSlip: async (purchaseOrderNumber: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'purchaseOrderNumber' is not null or undefined
             assertParamExists('getPackingSlip', 'purchaseOrderNumber', purchaseOrderNumber)
             const localVarPath = `/vendor/directFulfillment/shipping/v1/packingSlips/{purchaseOrderNumber}`
@@ -190,12 +190,12 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {string} createdBefore Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [shipFromPartyId] The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses.
          * @param {number} [limit] The limit to the number of records returned
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort ASC or DESC by packing slip creation date.
+         * @param {GetPackingSlipsSortOrderEnum} [sortOrder] Sort ASC or DESC by packing slip creation date.
          * @param {string} [nextToken] Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPackingSlips: async (createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getPackingSlips: async (createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: GetPackingSlipsSortOrderEnum, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'createdAfter' is not null or undefined
             assertParamExists('getPackingSlips', 'createdAfter', createdAfter)
             // verify required parameter 'createdBefore' is not null or undefined
@@ -257,7 +257,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShippingLabel: async (purchaseOrderNumber: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getShippingLabel: async (purchaseOrderNumber: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'purchaseOrderNumber' is not null or undefined
             assertParamExists('getShippingLabel', 'purchaseOrderNumber', purchaseOrderNumber)
             const localVarPath = `/vendor/directFulfillment/shipping/v1/shippingLabels/{purchaseOrderNumber}`
@@ -290,12 +290,12 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {string} createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [shipFromPartyId] The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
          * @param {number} [limit] The limit to the number of records returned.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort ASC or DESC by order creation date.
+         * @param {GetShippingLabelsSortOrderEnum} [sortOrder] Sort ASC or DESC by order creation date.
          * @param {string} [nextToken] Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShippingLabels: async (createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getShippingLabels: async (createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: GetShippingLabelsSortOrderEnum, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'createdAfter' is not null or undefined
             assertParamExists('getShippingLabels', 'createdAfter', createdAfter)
             // verify required parameter 'createdBefore' is not null or undefined
@@ -357,7 +357,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitShipmentConfirmations: async (body: SubmitShipmentConfirmationsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        submitShipmentConfirmations: async (body: SubmitShipmentConfirmationsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('submitShipmentConfirmations', 'body', body)
             const localVarPath = `/vendor/directFulfillment/shipping/v1/shipmentConfirmations`;
@@ -392,7 +392,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitShipmentStatusUpdates: async (body: SubmitShipmentStatusUpdatesRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        submitShipmentStatusUpdates: async (body: SubmitShipmentStatusUpdatesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('submitShipmentStatusUpdates', 'body', body)
             const localVarPath = `/vendor/directFulfillment/shipping/v1/shipmentStatusUpdates`;
@@ -427,7 +427,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitShippingLabelRequest: async (body: SubmitShippingLabelsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        submitShippingLabelRequest: async (body: SubmitShippingLabelsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('submitShippingLabelRequest', 'body', body)
             const localVarPath = `/vendor/directFulfillment/shipping/v1/shippingLabels`;
@@ -472,9 +472,11 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCustomerInvoice(purchaseOrderNumber: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCustomerInvoiceResponse>> {
+        async getCustomerInvoice(purchaseOrderNumber: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCustomerInvoiceResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCustomerInvoice(purchaseOrderNumber, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['VendorShippingApi.getCustomerInvoice']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a list of customer invoices created during a time frame that you specify. You define the  time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must be no more than 7 days.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -482,14 +484,16 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {string} createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [shipFromPartyId] The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
          * @param {number} [limit] The limit to the number of records returned
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort ASC or DESC by order creation date.
+         * @param {GetCustomerInvoicesSortOrderEnum} [sortOrder] Sort ASC or DESC by order creation date.
          * @param {string} [nextToken] Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCustomerInvoices(createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCustomerInvoicesResponse>> {
+        async getCustomerInvoices(createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: GetCustomerInvoicesSortOrderEnum, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCustomerInvoicesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCustomerInvoices(createdAfter, createdBefore, shipFromPartyId, limit, sortOrder, nextToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['VendorShippingApi.getCustomerInvoices']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a packing slip based on the purchaseOrderNumber that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -497,9 +501,11 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getPackingSlip(purchaseOrderNumber: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPackingSlipResponse>> {
+        async getPackingSlip(purchaseOrderNumber: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPackingSlipResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getPackingSlip(purchaseOrderNumber, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['VendorShippingApi.getPackingSlip']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a list of packing slips for the purchase orders that match the criteria specified. Date range to search must not be more than 7 days.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -507,14 +513,16 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {string} createdBefore Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [shipFromPartyId] The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses.
          * @param {number} [limit] The limit to the number of records returned
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort ASC or DESC by packing slip creation date.
+         * @param {GetPackingSlipsSortOrderEnum} [sortOrder] Sort ASC or DESC by packing slip creation date.
          * @param {string} [nextToken] Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getPackingSlips(createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPackingSlipListResponse>> {
+        async getPackingSlips(createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: GetPackingSlipsSortOrderEnum, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPackingSlipListResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getPackingSlips(createdAfter, createdBefore, shipFromPartyId, limit, sortOrder, nextToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['VendorShippingApi.getPackingSlips']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a shipping label for the purchaseOrderNumber that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -522,9 +530,11 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShippingLabel(purchaseOrderNumber: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShippingLabelResponse>> {
+        async getShippingLabel(purchaseOrderNumber: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShippingLabelResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShippingLabel(purchaseOrderNumber, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['VendorShippingApi.getShippingLabel']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a list of shipping labels created during the time frame that you specify. You define that time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must not be more than 7 days.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -532,14 +542,16 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {string} createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
          * @param {string} [shipFromPartyId] The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
          * @param {number} [limit] The limit to the number of records returned.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort ASC or DESC by order creation date.
+         * @param {GetShippingLabelsSortOrderEnum} [sortOrder] Sort ASC or DESC by order creation date.
          * @param {string} [nextToken] Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShippingLabels(createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShippingLabelListResponse>> {
+        async getShippingLabels(createdAfter: string, createdBefore: string, shipFromPartyId?: string, limit?: number, sortOrder?: GetShippingLabelsSortOrderEnum, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShippingLabelListResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShippingLabels(createdAfter, createdBefore, shipFromPartyId, limit, sortOrder, nextToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['VendorShippingApi.getShippingLabels']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Submits one or more shipment confirmations for vendor orders.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -547,9 +559,11 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async submitShipmentConfirmations(body: SubmitShipmentConfirmationsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitShipmentConfirmationsResponse>> {
+        async submitShipmentConfirmations(body: SubmitShipmentConfirmationsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitShipmentConfirmationsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.submitShipmentConfirmations(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['VendorShippingApi.submitShipmentConfirmations']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * This API call is only to be used by Vendor-Own-Carrier (VOC) vendors. Calling this API will submit a shipment status update for the package that a vendor has shipped. It will provide the Amazon customer visibility on their order, when the package is outside of Amazon Network visibility.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -557,9 +571,11 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async submitShipmentStatusUpdates(body: SubmitShipmentStatusUpdatesRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitShipmentStatusUpdatesResponse>> {
+        async submitShipmentStatusUpdates(body: SubmitShipmentStatusUpdatesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitShipmentStatusUpdatesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.submitShipmentStatusUpdates(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['VendorShippingApi.submitShipmentStatusUpdates']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Creates a shipping label for a purchase order and returns a transactionId for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -567,9 +583,11 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async submitShippingLabelRequest(body: SubmitShippingLabelsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitShippingLabelsResponse>> {
+        async submitShippingLabelRequest(body: SubmitShippingLabelsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitShippingLabelsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.submitShippingLabelRequest(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['VendorShippingApi.submitShippingLabelRequest']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -587,7 +605,7 @@ export const VendorShippingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCustomerInvoice(requestParameters: VendorShippingApiGetCustomerInvoiceRequest, options?: AxiosRequestConfig): AxiosPromise<GetCustomerInvoiceResponse> {
+        getCustomerInvoice(requestParameters: VendorShippingApiGetCustomerInvoiceRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetCustomerInvoiceResponse> {
             return localVarFp.getCustomerInvoice(requestParameters.purchaseOrderNumber, options).then((request) => request(axios, basePath));
         },
         /**
@@ -596,7 +614,7 @@ export const VendorShippingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCustomerInvoices(requestParameters: VendorShippingApiGetCustomerInvoicesRequest, options?: AxiosRequestConfig): AxiosPromise<GetCustomerInvoicesResponse> {
+        getCustomerInvoices(requestParameters: VendorShippingApiGetCustomerInvoicesRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetCustomerInvoicesResponse> {
             return localVarFp.getCustomerInvoices(requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipFromPartyId, requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -605,7 +623,7 @@ export const VendorShippingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPackingSlip(requestParameters: VendorShippingApiGetPackingSlipRequest, options?: AxiosRequestConfig): AxiosPromise<GetPackingSlipResponse> {
+        getPackingSlip(requestParameters: VendorShippingApiGetPackingSlipRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetPackingSlipResponse> {
             return localVarFp.getPackingSlip(requestParameters.purchaseOrderNumber, options).then((request) => request(axios, basePath));
         },
         /**
@@ -614,7 +632,7 @@ export const VendorShippingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPackingSlips(requestParameters: VendorShippingApiGetPackingSlipsRequest, options?: AxiosRequestConfig): AxiosPromise<GetPackingSlipListResponse> {
+        getPackingSlips(requestParameters: VendorShippingApiGetPackingSlipsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetPackingSlipListResponse> {
             return localVarFp.getPackingSlips(requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipFromPartyId, requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -623,7 +641,7 @@ export const VendorShippingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShippingLabel(requestParameters: VendorShippingApiGetShippingLabelRequest, options?: AxiosRequestConfig): AxiosPromise<GetShippingLabelResponse> {
+        getShippingLabel(requestParameters: VendorShippingApiGetShippingLabelRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetShippingLabelResponse> {
             return localVarFp.getShippingLabel(requestParameters.purchaseOrderNumber, options).then((request) => request(axios, basePath));
         },
         /**
@@ -632,7 +650,7 @@ export const VendorShippingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShippingLabels(requestParameters: VendorShippingApiGetShippingLabelsRequest, options?: AxiosRequestConfig): AxiosPromise<GetShippingLabelListResponse> {
+        getShippingLabels(requestParameters: VendorShippingApiGetShippingLabelsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetShippingLabelListResponse> {
             return localVarFp.getShippingLabels(requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipFromPartyId, requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -641,7 +659,7 @@ export const VendorShippingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitShipmentConfirmations(requestParameters: VendorShippingApiSubmitShipmentConfirmationsRequest, options?: AxiosRequestConfig): AxiosPromise<SubmitShipmentConfirmationsResponse> {
+        submitShipmentConfirmations(requestParameters: VendorShippingApiSubmitShipmentConfirmationsRequest, options?: RawAxiosRequestConfig): AxiosPromise<SubmitShipmentConfirmationsResponse> {
             return localVarFp.submitShipmentConfirmations(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -650,7 +668,7 @@ export const VendorShippingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitShipmentStatusUpdates(requestParameters: VendorShippingApiSubmitShipmentStatusUpdatesRequest, options?: AxiosRequestConfig): AxiosPromise<SubmitShipmentStatusUpdatesResponse> {
+        submitShipmentStatusUpdates(requestParameters: VendorShippingApiSubmitShipmentStatusUpdatesRequest, options?: RawAxiosRequestConfig): AxiosPromise<SubmitShipmentStatusUpdatesResponse> {
             return localVarFp.submitShipmentStatusUpdates(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -659,7 +677,7 @@ export const VendorShippingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitShippingLabelRequest(requestParameters: VendorShippingApiSubmitShippingLabelRequestRequest, options?: AxiosRequestConfig): AxiosPromise<SubmitShippingLabelsResponse> {
+        submitShippingLabelRequest(requestParameters: VendorShippingApiSubmitShippingLabelRequestRequest, options?: RawAxiosRequestConfig): AxiosPromise<SubmitShippingLabelsResponse> {
             return localVarFp.submitShippingLabelRequest(requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
@@ -718,7 +736,7 @@ export interface VendorShippingApiGetCustomerInvoicesRequest {
      * @type {'ASC' | 'DESC'}
      * @memberof VendorShippingApiGetCustomerInvoices
      */
-    readonly sortOrder?: 'ASC' | 'DESC'
+    readonly sortOrder?: GetCustomerInvoicesSortOrderEnum
 
     /**
      * Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
@@ -781,7 +799,7 @@ export interface VendorShippingApiGetPackingSlipsRequest {
      * @type {'ASC' | 'DESC'}
      * @memberof VendorShippingApiGetPackingSlips
      */
-    readonly sortOrder?: 'ASC' | 'DESC'
+    readonly sortOrder?: GetPackingSlipsSortOrderEnum
 
     /**
      * Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call.
@@ -844,7 +862,7 @@ export interface VendorShippingApiGetShippingLabelsRequest {
      * @type {'ASC' | 'DESC'}
      * @memberof VendorShippingApiGetShippingLabels
      */
-    readonly sortOrder?: 'ASC' | 'DESC'
+    readonly sortOrder?: GetShippingLabelsSortOrderEnum
 
     /**
      * Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call.
@@ -910,7 +928,7 @@ export class VendorShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorShippingApi
      */
-    public getCustomerInvoice(requestParameters: VendorShippingApiGetCustomerInvoiceRequest, options?: AxiosRequestConfig) {
+    public getCustomerInvoice(requestParameters: VendorShippingApiGetCustomerInvoiceRequest, options?: RawAxiosRequestConfig) {
         return VendorShippingApiFp(this.configuration).getCustomerInvoice(requestParameters.purchaseOrderNumber, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -921,7 +939,7 @@ export class VendorShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorShippingApi
      */
-    public getCustomerInvoices(requestParameters: VendorShippingApiGetCustomerInvoicesRequest, options?: AxiosRequestConfig) {
+    public getCustomerInvoices(requestParameters: VendorShippingApiGetCustomerInvoicesRequest, options?: RawAxiosRequestConfig) {
         return VendorShippingApiFp(this.configuration).getCustomerInvoices(requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipFromPartyId, requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -932,7 +950,7 @@ export class VendorShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorShippingApi
      */
-    public getPackingSlip(requestParameters: VendorShippingApiGetPackingSlipRequest, options?: AxiosRequestConfig) {
+    public getPackingSlip(requestParameters: VendorShippingApiGetPackingSlipRequest, options?: RawAxiosRequestConfig) {
         return VendorShippingApiFp(this.configuration).getPackingSlip(requestParameters.purchaseOrderNumber, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -943,7 +961,7 @@ export class VendorShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorShippingApi
      */
-    public getPackingSlips(requestParameters: VendorShippingApiGetPackingSlipsRequest, options?: AxiosRequestConfig) {
+    public getPackingSlips(requestParameters: VendorShippingApiGetPackingSlipsRequest, options?: RawAxiosRequestConfig) {
         return VendorShippingApiFp(this.configuration).getPackingSlips(requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipFromPartyId, requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -954,7 +972,7 @@ export class VendorShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorShippingApi
      */
-    public getShippingLabel(requestParameters: VendorShippingApiGetShippingLabelRequest, options?: AxiosRequestConfig) {
+    public getShippingLabel(requestParameters: VendorShippingApiGetShippingLabelRequest, options?: RawAxiosRequestConfig) {
         return VendorShippingApiFp(this.configuration).getShippingLabel(requestParameters.purchaseOrderNumber, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -965,7 +983,7 @@ export class VendorShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorShippingApi
      */
-    public getShippingLabels(requestParameters: VendorShippingApiGetShippingLabelsRequest, options?: AxiosRequestConfig) {
+    public getShippingLabels(requestParameters: VendorShippingApiGetShippingLabelsRequest, options?: RawAxiosRequestConfig) {
         return VendorShippingApiFp(this.configuration).getShippingLabels(requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipFromPartyId, requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -976,7 +994,7 @@ export class VendorShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorShippingApi
      */
-    public submitShipmentConfirmations(requestParameters: VendorShippingApiSubmitShipmentConfirmationsRequest, options?: AxiosRequestConfig) {
+    public submitShipmentConfirmations(requestParameters: VendorShippingApiSubmitShipmentConfirmationsRequest, options?: RawAxiosRequestConfig) {
         return VendorShippingApiFp(this.configuration).submitShipmentConfirmations(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -987,7 +1005,7 @@ export class VendorShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorShippingApi
      */
-    public submitShipmentStatusUpdates(requestParameters: VendorShippingApiSubmitShipmentStatusUpdatesRequest, options?: AxiosRequestConfig) {
+    public submitShipmentStatusUpdates(requestParameters: VendorShippingApiSubmitShipmentStatusUpdatesRequest, options?: RawAxiosRequestConfig) {
         return VendorShippingApiFp(this.configuration).submitShipmentStatusUpdates(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -998,7 +1016,32 @@ export class VendorShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorShippingApi
      */
-    public submitShippingLabelRequest(requestParameters: VendorShippingApiSubmitShippingLabelRequestRequest, options?: AxiosRequestConfig) {
+    public submitShippingLabelRequest(requestParameters: VendorShippingApiSubmitShippingLabelRequestRequest, options?: RawAxiosRequestConfig) {
         return VendorShippingApiFp(this.configuration).submitShippingLabelRequest(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetCustomerInvoicesSortOrderEnum = {
+    Asc: 'ASC',
+    Desc: 'DESC'
+} as const;
+export type GetCustomerInvoicesSortOrderEnum = typeof GetCustomerInvoicesSortOrderEnum[keyof typeof GetCustomerInvoicesSortOrderEnum];
+/**
+ * @export
+ */
+export const GetPackingSlipsSortOrderEnum = {
+    Asc: 'ASC',
+    Desc: 'DESC'
+} as const;
+export type GetPackingSlipsSortOrderEnum = typeof GetPackingSlipsSortOrderEnum[keyof typeof GetPackingSlipsSortOrderEnum];
+/**
+ * @export
+ */
+export const GetShippingLabelsSortOrderEnum = {
+    Asc: 'ASC',
+    Desc: 'DESC'
+} as const;
+export type GetShippingLabelsSortOrderEnum = typeof GetShippingLabelsSortOrderEnum[keyof typeof GetShippingLabelsSortOrderEnum];

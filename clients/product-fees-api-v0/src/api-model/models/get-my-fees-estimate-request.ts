@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeesEstimateRequest } from './fees-estimate-request';
+import type { FeesEstimateRequest } from './fees-estimate-request';
 
 /**
  * Request schema.

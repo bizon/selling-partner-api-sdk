@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PackageDetail } from './package-detail';
+import type { PackageDetail } from './package-detail';
 
 /**
  * The request schema for an shipment confirmation.

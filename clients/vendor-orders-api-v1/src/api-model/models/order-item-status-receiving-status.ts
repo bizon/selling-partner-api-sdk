@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemQuantity } from './item-quantity';
+import type { ItemQuantity } from './item-quantity';
 
 /**
  * Item receive status at the buyer\'s warehouse.

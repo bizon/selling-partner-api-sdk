@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemImage } from './item-image';
+import type { ItemImage } from './item-image';
 
 /**
  * Images for an item in the Amazon catalog for the indicated Amazon marketplace.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShippingLabelRequest } from './shipping-label-request';
+import type { ShippingLabelRequest } from './shipping-label-request';
 
 /**
  * 

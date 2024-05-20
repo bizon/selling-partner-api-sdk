@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContentMetadataRecord } from './content-metadata-record';
+import type { ContentMetadataRecord } from './content-metadata-record';
 
 /**
  * 

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TimeInterval } from './time-interval';
+import type { TimeInterval } from './time-interval';
 
 /**
  * An object which contains metric data for a selling partner.

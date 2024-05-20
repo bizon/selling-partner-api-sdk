@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Attachment } from './attachment';
+import type { Attachment } from './attachment';
 
 /**
  * The request schema for the createAmazonMotors operation.

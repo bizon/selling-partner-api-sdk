@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AplusResponse } from './aplus-response';
+import type { AplusResponse } from './aplus-response';
 
 /**
  * @type PostContentDocumentSuspendSubmissionResponse

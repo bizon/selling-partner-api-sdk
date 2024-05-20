@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Container } from './container';
+import type { Container } from './container';
 
 /**
  * The request schema for the createShipment operation.

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeaturedOfferExpectedPriceRequestParams } from './featured-offer-expected-price-request-params';
+import type { FeaturedOfferExpectedPriceRequestParams } from './featured-offer-expected-price-request-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeaturedOfferExpectedPriceResponseBody } from './featured-offer-expected-price-response-body';
+import type { FeaturedOfferExpectedPriceResponseBody } from './featured-offer-expected-price-response-body';
 
 /**
  * 

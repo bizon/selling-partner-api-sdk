@@ -14,65 +14,65 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { AddAppointmentRequest } from '../models';
+import type { AddAppointmentRequest } from '../models';
 // @ts-ignore
-import { AssignAppointmentResourcesRequest } from '../models';
+import type { AssignAppointmentResourcesRequest } from '../models';
 // @ts-ignore
-import { AssignAppointmentResourcesResponse } from '../models';
+import type { AssignAppointmentResourcesResponse } from '../models';
 // @ts-ignore
-import { CancelReservationResponse } from '../models';
+import type { CancelReservationResponse } from '../models';
 // @ts-ignore
-import { CancelServiceJobByServiceJobIdResponse } from '../models';
+import type { CancelServiceJobByServiceJobIdResponse } from '../models';
 // @ts-ignore
-import { CompleteServiceJobByServiceJobIdResponse } from '../models';
+import type { CompleteServiceJobByServiceJobIdResponse } from '../models';
 // @ts-ignore
-import { CreateReservationRequest } from '../models';
+import type { CreateReservationRequest } from '../models';
 // @ts-ignore
-import { CreateReservationResponse } from '../models';
+import type { CreateReservationResponse } from '../models';
 // @ts-ignore
-import { CreateServiceDocumentUploadDestination } from '../models';
+import type { CreateServiceDocumentUploadDestination } from '../models';
 // @ts-ignore
-import { FixedSlotCapacity } from '../models';
+import type { FixedSlotCapacity } from '../models';
 // @ts-ignore
-import { FixedSlotCapacityErrors } from '../models';
+import type { FixedSlotCapacityErrors } from '../models';
 // @ts-ignore
-import { FixedSlotCapacityQuery } from '../models';
+import type { FixedSlotCapacityQuery } from '../models';
 // @ts-ignore
-import { GetAppointmentSlotsResponse } from '../models';
+import type { GetAppointmentSlotsResponse } from '../models';
 // @ts-ignore
-import { GetServiceJobByServiceJobIdResponse } from '../models';
+import type { GetServiceJobByServiceJobIdResponse } from '../models';
 // @ts-ignore
-import { GetServiceJobsResponse } from '../models';
+import type { GetServiceJobsResponse } from '../models';
 // @ts-ignore
-import { RangeSlotCapacity } from '../models';
+import type { RangeSlotCapacity } from '../models';
 // @ts-ignore
-import { RangeSlotCapacityErrors } from '../models';
+import type { RangeSlotCapacityErrors } from '../models';
 // @ts-ignore
-import { RangeSlotCapacityQuery } from '../models';
+import type { RangeSlotCapacityQuery } from '../models';
 // @ts-ignore
-import { RescheduleAppointmentRequest } from '../models';
+import type { RescheduleAppointmentRequest } from '../models';
 // @ts-ignore
-import { ServiceUploadDocument } from '../models';
+import type { ServiceUploadDocument } from '../models';
 // @ts-ignore
-import { SetAppointmentFulfillmentDataRequest } from '../models';
+import type { SetAppointmentFulfillmentDataRequest } from '../models';
 // @ts-ignore
-import { SetAppointmentResponse } from '../models';
+import type { SetAppointmentResponse } from '../models';
 // @ts-ignore
-import { UpdateReservationRequest } from '../models';
+import type { UpdateReservationRequest } from '../models';
 // @ts-ignore
-import { UpdateReservationResponse } from '../models';
+import type { UpdateReservationResponse } from '../models';
 // @ts-ignore
-import { UpdateScheduleRequest } from '../models';
+import type { UpdateScheduleRequest } from '../models';
 // @ts-ignore
-import { UpdateScheduleResponse } from '../models';
+import type { UpdateScheduleResponse } from '../models';
 /**
  * ServiceApi - axios parameter creator
  * @export
@@ -86,7 +86,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        addAppointmentForServiceJobByServiceJobId: async (serviceJobId: string, body: AddAppointmentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        addAppointmentForServiceJobByServiceJobId: async (serviceJobId: string, body: AddAppointmentRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'serviceJobId' is not null or undefined
             assertParamExists('addAppointmentForServiceJobByServiceJobId', 'serviceJobId', serviceJobId)
             // verify required parameter 'body' is not null or undefined
@@ -126,7 +126,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        assignAppointmentResources: async (serviceJobId: string, appointmentId: string, body: AssignAppointmentResourcesRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        assignAppointmentResources: async (serviceJobId: string, appointmentId: string, body: AssignAppointmentResourcesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'serviceJobId' is not null or undefined
             assertParamExists('assignAppointmentResources', 'serviceJobId', serviceJobId)
             // verify required parameter 'appointmentId' is not null or undefined
@@ -168,7 +168,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelReservation: async (reservationId: string, marketplaceIds: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        cancelReservation: async (reservationId: string, marketplaceIds: Array<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'reservationId' is not null or undefined
             assertParamExists('cancelReservation', 'reservationId', reservationId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -208,7 +208,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelServiceJobByServiceJobId: async (serviceJobId: string, cancellationReasonCode: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        cancelServiceJobByServiceJobId: async (serviceJobId: string, cancellationReasonCode: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'serviceJobId' is not null or undefined
             assertParamExists('cancelServiceJobByServiceJobId', 'serviceJobId', serviceJobId)
             // verify required parameter 'cancellationReasonCode' is not null or undefined
@@ -247,7 +247,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        completeServiceJobByServiceJobId: async (serviceJobId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        completeServiceJobByServiceJobId: async (serviceJobId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'serviceJobId' is not null or undefined
             assertParamExists('completeServiceJobByServiceJobId', 'serviceJobId', serviceJobId)
             const localVarPath = `/service/v1/serviceJobs/{serviceJobId}/completions`
@@ -281,7 +281,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createReservation: async (marketplaceIds: Array<string>, body: CreateReservationRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createReservation: async (marketplaceIds: Array<string>, body: CreateReservationRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('createReservation', 'marketplaceIds', marketplaceIds)
             // verify required parameter 'body' is not null or undefined
@@ -322,7 +322,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createServiceDocumentUploadDestination: async (body: ServiceUploadDocument, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createServiceDocumentUploadDestination: async (body: ServiceUploadDocument, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createServiceDocumentUploadDestination', 'body', body)
             const localVarPath = `/service/v1/documents`;
@@ -361,7 +361,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAppointmentSlots: async (asin: string, storeId: string, marketplaceIds: Array<string>, startTime?: string, endTime?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAppointmentSlots: async (asin: string, storeId: string, marketplaceIds: Array<string>, startTime?: string, endTime?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'asin' is not null or undefined
             assertParamExists('getAppointmentSlots', 'asin', asin)
             // verify required parameter 'storeId' is not null or undefined
@@ -420,7 +420,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAppointmmentSlotsByJobId: async (serviceJobId: string, marketplaceIds: Array<string>, startTime?: string, endTime?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAppointmmentSlotsByJobId: async (serviceJobId: string, marketplaceIds: Array<string>, startTime?: string, endTime?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'serviceJobId' is not null or undefined
             assertParamExists('getAppointmmentSlotsByJobId', 'serviceJobId', serviceJobId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -470,7 +470,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFixedSlotCapacity: async (resourceId: string, marketplaceIds: Array<string>, body: FixedSlotCapacityQuery, nextPageToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getFixedSlotCapacity: async (resourceId: string, marketplaceIds: Array<string>, body: FixedSlotCapacityQuery, nextPageToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'resourceId' is not null or undefined
             assertParamExists('getFixedSlotCapacity', 'resourceId', resourceId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -521,7 +521,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRangeSlotCapacity: async (resourceId: string, marketplaceIds: Array<string>, body: RangeSlotCapacityQuery, nextPageToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getRangeSlotCapacity: async (resourceId: string, marketplaceIds: Array<string>, body: RangeSlotCapacityQuery, nextPageToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'resourceId' is not null or undefined
             assertParamExists('getRangeSlotCapacity', 'resourceId', resourceId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -569,7 +569,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getServiceJobByServiceJobId: async (serviceJobId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getServiceJobByServiceJobId: async (serviceJobId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'serviceJobId' is not null or undefined
             assertParamExists('getServiceJobByServiceJobId', 'serviceJobId', serviceJobId)
             const localVarPath = `/service/v1/serviceJobs/{serviceJobId}`
@@ -600,11 +600,11 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * Gets service job details for the specified filter query.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {Array<string>} marketplaceIds Used to select jobs that were placed in the specified marketplaces.
          * @param {Array<string>} [serviceOrderIds] List of service order ids for the query you want to perform.Max values supported 20.
-         * @param {Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>} [serviceJobStatus] A list of one or more job status by which to filter the list of jobs.
+         * @param {Array<GetServiceJobsServiceJobStatusEnum>} [serviceJobStatus] A list of one or more job status by which to filter the list of jobs.
          * @param {string} [pageToken] String returned in the response of your previous request.
          * @param {number} [pageSize] A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20.
-         * @param {'JOB_DATE' | 'JOB_STATUS'} [sortField] Sort fields on which you want to sort the output.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort order for the query you want to perform.
+         * @param {GetServiceJobsSortFieldEnum} [sortField] Sort fields on which you want to sort the output.
+         * @param {GetServiceJobsSortOrderEnum} [sortOrder] Sort order for the query you want to perform.
          * @param {string} [createdAfter] A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
          * @param {string} [createdBefore] A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format.
          * @param {string} [lastUpdatedAfter] A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if &#x60;createdAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
@@ -617,7 +617,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getServiceJobs: async (marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>, pageToken?: string, pageSize?: number, sortField?: 'JOB_DATE' | 'JOB_STATUS', sortOrder?: 'ASC' | 'DESC', createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, asins?: Array<string>, requiredSkills?: Array<string>, storeIds?: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getServiceJobs: async (marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<GetServiceJobsServiceJobStatusEnum>, pageToken?: string, pageSize?: number, sortField?: GetServiceJobsSortFieldEnum, sortOrder?: GetServiceJobsSortOrderEnum, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, asins?: Array<string>, requiredSkills?: Array<string>, storeIds?: Array<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('getServiceJobs', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/service/v1/serviceJobs`;
@@ -715,7 +715,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        rescheduleAppointmentForServiceJobByServiceJobId: async (serviceJobId: string, appointmentId: string, body: RescheduleAppointmentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        rescheduleAppointmentForServiceJobByServiceJobId: async (serviceJobId: string, appointmentId: string, body: RescheduleAppointmentRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'serviceJobId' is not null or undefined
             assertParamExists('rescheduleAppointmentForServiceJobByServiceJobId', 'serviceJobId', serviceJobId)
             // verify required parameter 'appointmentId' is not null or undefined
@@ -758,7 +758,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        setAppointmentFulfillmentData: async (serviceJobId: string, appointmentId: string, body: SetAppointmentFulfillmentDataRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        setAppointmentFulfillmentData: async (serviceJobId: string, appointmentId: string, body: SetAppointmentFulfillmentDataRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'serviceJobId' is not null or undefined
             assertParamExists('setAppointmentFulfillmentData', 'serviceJobId', serviceJobId)
             // verify required parameter 'appointmentId' is not null or undefined
@@ -801,7 +801,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateReservation: async (reservationId: string, marketplaceIds: Array<string>, body: UpdateReservationRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateReservation: async (reservationId: string, marketplaceIds: Array<string>, body: UpdateReservationRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'reservationId' is not null or undefined
             assertParamExists('updateReservation', 'reservationId', reservationId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -847,7 +847,7 @@ export const ServiceApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateSchedule: async (resourceId: string, marketplaceIds: Array<string>, body: UpdateScheduleRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateSchedule: async (resourceId: string, marketplaceIds: Array<string>, body: UpdateScheduleRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'resourceId' is not null or undefined
             assertParamExists('updateSchedule', 'resourceId', resourceId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -902,9 +902,11 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async addAppointmentForServiceJobByServiceJobId(serviceJobId: string, body: AddAppointmentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetAppointmentResponse>> {
+        async addAppointmentForServiceJobByServiceJobId(serviceJobId: string, body: AddAppointmentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetAppointmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.addAppointmentForServiceJobByServiceJobId(serviceJobId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ServiceApi.addAppointmentForServiceJobByServiceJobId']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Assigns new resource(s) or overwrite/update the existing one(s) to a service job appointment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -914,9 +916,11 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async assignAppointmentResources(serviceJobId: string, appointmentId: string, body: AssignAppointmentResourcesRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AssignAppointmentResourcesResponse>> {
+        async assignAppointmentResources(serviceJobId: string, appointmentId: string, body: AssignAppointmentResourcesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AssignAppointmentResourcesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.assignAppointmentResources(serviceJobId, appointmentId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ServiceApi.assignAppointmentResources']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Cancel a reservation.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -925,9 +929,11 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelReservation(reservationId: string, marketplaceIds: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelReservationResponse>> {
+        async cancelReservation(reservationId: string, marketplaceIds: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelReservationResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelReservation(reservationId, marketplaceIds, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ServiceApi.cancelReservation']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Cancels the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -936,9 +942,11 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelServiceJobByServiceJobId(serviceJobId: string, cancellationReasonCode: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelServiceJobByServiceJobIdResponse>> {
+        async cancelServiceJobByServiceJobId(serviceJobId: string, cancellationReasonCode: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelServiceJobByServiceJobIdResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelServiceJobByServiceJobId(serviceJobId, cancellationReasonCode, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ServiceApi.cancelServiceJobByServiceJobId']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Completes the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -946,9 +954,11 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async completeServiceJobByServiceJobId(serviceJobId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CompleteServiceJobByServiceJobIdResponse>> {
+        async completeServiceJobByServiceJobId(serviceJobId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CompleteServiceJobByServiceJobIdResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.completeServiceJobByServiceJobId(serviceJobId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ServiceApi.completeServiceJobByServiceJobId']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Create a reservation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -957,9 +967,11 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createReservation(marketplaceIds: Array<string>, body: CreateReservationRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateReservationResponse>> {
+        async createReservation(marketplaceIds: Array<string>, body: CreateReservationRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateReservationResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createReservation(marketplaceIds, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ServiceApi.createReservation']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Creates an upload destination.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -967,9 +979,11 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createServiceDocumentUploadDestination(body: ServiceUploadDocument, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateServiceDocumentUploadDestination>> {
+        async createServiceDocumentUploadDestination(body: ServiceUploadDocument, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateServiceDocumentUploadDestination>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createServiceDocumentUploadDestination(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ServiceApi.createServiceDocumentUploadDestination']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Gets appointment slots as per the service context specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 20 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -981,9 +995,11 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAppointmentSlots(asin: string, storeId: string, marketplaceIds: Array<string>, startTime?: string, endTime?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAppointmentSlotsResponse>> {
+        async getAppointmentSlots(asin: string, storeId: string, marketplaceIds: Array<string>, startTime?: string, endTime?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAppointmentSlotsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAppointmentSlots(asin, storeId, marketplaceIds, startTime, endTime, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ServiceApi.getAppointmentSlots']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Gets appointment slots for the service associated with the service job id specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -994,9 +1010,11 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAppointmmentSlotsByJobId(serviceJobId: string, marketplaceIds: Array<string>, startTime?: string, endTime?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAppointmentSlotsResponse>> {
+        async getAppointmmentSlotsByJobId(serviceJobId: string, marketplaceIds: Array<string>, startTime?: string, endTime?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAppointmentSlotsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAppointmmentSlotsByJobId(serviceJobId, marketplaceIds, startTime, endTime, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ServiceApi.getAppointmmentSlotsByJobId']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Provides capacity in fixed-size slots.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1007,9 +1025,11 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getFixedSlotCapacity(resourceId: string, marketplaceIds: Array<string>, body: FixedSlotCapacityQuery, nextPageToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FixedSlotCapacity>> {
+        async getFixedSlotCapacity(resourceId: string, marketplaceIds: Array<string>, body: FixedSlotCapacityQuery, nextPageToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FixedSlotCapacity>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getFixedSlotCapacity(resourceId, marketplaceIds, body, nextPageToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ServiceApi.getFixedSlotCapacity']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Provides capacity slots in a format similar to availability records.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1020,9 +1040,11 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getRangeSlotCapacity(resourceId: string, marketplaceIds: Array<string>, body: RangeSlotCapacityQuery, nextPageToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RangeSlotCapacity>> {
+        async getRangeSlotCapacity(resourceId: string, marketplaceIds: Array<string>, body: RangeSlotCapacityQuery, nextPageToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RangeSlotCapacity>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getRangeSlotCapacity(resourceId, marketplaceIds, body, nextPageToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ServiceApi.getRangeSlotCapacity']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Gets details of service job indicated by the provided `serviceJobID`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 20 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1030,19 +1052,21 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getServiceJobByServiceJobId(serviceJobId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetServiceJobByServiceJobIdResponse>> {
+        async getServiceJobByServiceJobId(serviceJobId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetServiceJobByServiceJobIdResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getServiceJobByServiceJobId(serviceJobId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ServiceApi.getServiceJobByServiceJobId']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Gets service job details for the specified filter query.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {Array<string>} marketplaceIds Used to select jobs that were placed in the specified marketplaces.
          * @param {Array<string>} [serviceOrderIds] List of service order ids for the query you want to perform.Max values supported 20.
-         * @param {Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>} [serviceJobStatus] A list of one or more job status by which to filter the list of jobs.
+         * @param {Array<GetServiceJobsServiceJobStatusEnum>} [serviceJobStatus] A list of one or more job status by which to filter the list of jobs.
          * @param {string} [pageToken] String returned in the response of your previous request.
          * @param {number} [pageSize] A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20.
-         * @param {'JOB_DATE' | 'JOB_STATUS'} [sortField] Sort fields on which you want to sort the output.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort order for the query you want to perform.
+         * @param {GetServiceJobsSortFieldEnum} [sortField] Sort fields on which you want to sort the output.
+         * @param {GetServiceJobsSortOrderEnum} [sortOrder] Sort order for the query you want to perform.
          * @param {string} [createdAfter] A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
          * @param {string} [createdBefore] A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format.
          * @param {string} [lastUpdatedAfter] A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if &#x60;createdAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
@@ -1055,9 +1079,11 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getServiceJobs(marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>, pageToken?: string, pageSize?: number, sortField?: 'JOB_DATE' | 'JOB_STATUS', sortOrder?: 'ASC' | 'DESC', createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, asins?: Array<string>, requiredSkills?: Array<string>, storeIds?: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetServiceJobsResponse>> {
+        async getServiceJobs(marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<GetServiceJobsServiceJobStatusEnum>, pageToken?: string, pageSize?: number, sortField?: GetServiceJobsSortFieldEnum, sortOrder?: GetServiceJobsSortOrderEnum, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, asins?: Array<string>, requiredSkills?: Array<string>, storeIds?: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetServiceJobsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getServiceJobs(marketplaceIds, serviceOrderIds, serviceJobStatus, pageToken, pageSize, sortField, sortOrder, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, scheduleStartDate, scheduleEndDate, asins, requiredSkills, storeIds, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ServiceApi.getServiceJobs']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Reschedules an appointment for the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1067,9 +1093,11 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async rescheduleAppointmentForServiceJobByServiceJobId(serviceJobId: string, appointmentId: string, body: RescheduleAppointmentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetAppointmentResponse>> {
+        async rescheduleAppointmentForServiceJobByServiceJobId(serviceJobId: string, appointmentId: string, body: RescheduleAppointmentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetAppointmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.rescheduleAppointmentForServiceJobByServiceJobId(serviceJobId, appointmentId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ServiceApi.rescheduleAppointmentForServiceJobByServiceJobId']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Updates the appointment fulfillment data related to a given `jobID` and `appointmentID`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1079,9 +1107,11 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async setAppointmentFulfillmentData(serviceJobId: string, appointmentId: string, body: SetAppointmentFulfillmentDataRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+        async setAppointmentFulfillmentData(serviceJobId: string, appointmentId: string, body: SetAppointmentFulfillmentDataRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.setAppointmentFulfillmentData(serviceJobId, appointmentId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ServiceApi.setAppointmentFulfillmentData']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Update a reservation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1091,9 +1121,11 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateReservation(reservationId: string, marketplaceIds: Array<string>, body: UpdateReservationRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UpdateReservationResponse>> {
+        async updateReservation(reservationId: string, marketplaceIds: Array<string>, body: UpdateReservationRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UpdateReservationResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateReservation(reservationId, marketplaceIds, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ServiceApi.updateReservation']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Update the schedule of the given resource.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1103,9 +1135,11 @@ export const ServiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateSchedule(resourceId: string, marketplaceIds: Array<string>, body: UpdateScheduleRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UpdateScheduleResponse>> {
+        async updateSchedule(resourceId: string, marketplaceIds: Array<string>, body: UpdateScheduleRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UpdateScheduleResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateSchedule(resourceId, marketplaceIds, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ServiceApi.updateSchedule']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -1123,7 +1157,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        addAppointmentForServiceJobByServiceJobId(requestParameters: ServiceApiAddAppointmentForServiceJobByServiceJobIdRequest, options?: AxiosRequestConfig): AxiosPromise<SetAppointmentResponse> {
+        addAppointmentForServiceJobByServiceJobId(requestParameters: ServiceApiAddAppointmentForServiceJobByServiceJobIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<SetAppointmentResponse> {
             return localVarFp.addAppointmentForServiceJobByServiceJobId(requestParameters.serviceJobId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1132,7 +1166,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        assignAppointmentResources(requestParameters: ServiceApiAssignAppointmentResourcesRequest, options?: AxiosRequestConfig): AxiosPromise<AssignAppointmentResourcesResponse> {
+        assignAppointmentResources(requestParameters: ServiceApiAssignAppointmentResourcesRequest, options?: RawAxiosRequestConfig): AxiosPromise<AssignAppointmentResourcesResponse> {
             return localVarFp.assignAppointmentResources(requestParameters.serviceJobId, requestParameters.appointmentId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1141,7 +1175,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelReservation(requestParameters: ServiceApiCancelReservationRequest, options?: AxiosRequestConfig): AxiosPromise<CancelReservationResponse> {
+        cancelReservation(requestParameters: ServiceApiCancelReservationRequest, options?: RawAxiosRequestConfig): AxiosPromise<CancelReservationResponse> {
             return localVarFp.cancelReservation(requestParameters.reservationId, requestParameters.marketplaceIds, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1150,7 +1184,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelServiceJobByServiceJobId(requestParameters: ServiceApiCancelServiceJobByServiceJobIdRequest, options?: AxiosRequestConfig): AxiosPromise<CancelServiceJobByServiceJobIdResponse> {
+        cancelServiceJobByServiceJobId(requestParameters: ServiceApiCancelServiceJobByServiceJobIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<CancelServiceJobByServiceJobIdResponse> {
             return localVarFp.cancelServiceJobByServiceJobId(requestParameters.serviceJobId, requestParameters.cancellationReasonCode, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1159,7 +1193,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        completeServiceJobByServiceJobId(requestParameters: ServiceApiCompleteServiceJobByServiceJobIdRequest, options?: AxiosRequestConfig): AxiosPromise<CompleteServiceJobByServiceJobIdResponse> {
+        completeServiceJobByServiceJobId(requestParameters: ServiceApiCompleteServiceJobByServiceJobIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<CompleteServiceJobByServiceJobIdResponse> {
             return localVarFp.completeServiceJobByServiceJobId(requestParameters.serviceJobId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1168,7 +1202,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createReservation(requestParameters: ServiceApiCreateReservationRequest, options?: AxiosRequestConfig): AxiosPromise<CreateReservationResponse> {
+        createReservation(requestParameters: ServiceApiCreateReservationRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateReservationResponse> {
             return localVarFp.createReservation(requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1177,7 +1211,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createServiceDocumentUploadDestination(requestParameters: ServiceApiCreateServiceDocumentUploadDestinationRequest, options?: AxiosRequestConfig): AxiosPromise<CreateServiceDocumentUploadDestination> {
+        createServiceDocumentUploadDestination(requestParameters: ServiceApiCreateServiceDocumentUploadDestinationRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateServiceDocumentUploadDestination> {
             return localVarFp.createServiceDocumentUploadDestination(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1186,7 +1220,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAppointmentSlots(requestParameters: ServiceApiGetAppointmentSlotsRequest, options?: AxiosRequestConfig): AxiosPromise<GetAppointmentSlotsResponse> {
+        getAppointmentSlots(requestParameters: ServiceApiGetAppointmentSlotsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetAppointmentSlotsResponse> {
             return localVarFp.getAppointmentSlots(requestParameters.asin, requestParameters.storeId, requestParameters.marketplaceIds, requestParameters.startTime, requestParameters.endTime, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1195,7 +1229,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAppointmmentSlotsByJobId(requestParameters: ServiceApiGetAppointmmentSlotsByJobIdRequest, options?: AxiosRequestConfig): AxiosPromise<GetAppointmentSlotsResponse> {
+        getAppointmmentSlotsByJobId(requestParameters: ServiceApiGetAppointmmentSlotsByJobIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetAppointmentSlotsResponse> {
             return localVarFp.getAppointmmentSlotsByJobId(requestParameters.serviceJobId, requestParameters.marketplaceIds, requestParameters.startTime, requestParameters.endTime, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1204,7 +1238,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFixedSlotCapacity(requestParameters: ServiceApiGetFixedSlotCapacityRequest, options?: AxiosRequestConfig): AxiosPromise<FixedSlotCapacity> {
+        getFixedSlotCapacity(requestParameters: ServiceApiGetFixedSlotCapacityRequest, options?: RawAxiosRequestConfig): AxiosPromise<FixedSlotCapacity> {
             return localVarFp.getFixedSlotCapacity(requestParameters.resourceId, requestParameters.marketplaceIds, requestParameters.body, requestParameters.nextPageToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1213,7 +1247,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRangeSlotCapacity(requestParameters: ServiceApiGetRangeSlotCapacityRequest, options?: AxiosRequestConfig): AxiosPromise<RangeSlotCapacity> {
+        getRangeSlotCapacity(requestParameters: ServiceApiGetRangeSlotCapacityRequest, options?: RawAxiosRequestConfig): AxiosPromise<RangeSlotCapacity> {
             return localVarFp.getRangeSlotCapacity(requestParameters.resourceId, requestParameters.marketplaceIds, requestParameters.body, requestParameters.nextPageToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1222,7 +1256,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getServiceJobByServiceJobId(requestParameters: ServiceApiGetServiceJobByServiceJobIdRequest, options?: AxiosRequestConfig): AxiosPromise<GetServiceJobByServiceJobIdResponse> {
+        getServiceJobByServiceJobId(requestParameters: ServiceApiGetServiceJobByServiceJobIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetServiceJobByServiceJobIdResponse> {
             return localVarFp.getServiceJobByServiceJobId(requestParameters.serviceJobId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1231,7 +1265,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getServiceJobs(requestParameters: ServiceApiGetServiceJobsRequest, options?: AxiosRequestConfig): AxiosPromise<GetServiceJobsResponse> {
+        getServiceJobs(requestParameters: ServiceApiGetServiceJobsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetServiceJobsResponse> {
             return localVarFp.getServiceJobs(requestParameters.marketplaceIds, requestParameters.serviceOrderIds, requestParameters.serviceJobStatus, requestParameters.pageToken, requestParameters.pageSize, requestParameters.sortField, requestParameters.sortOrder, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.scheduleStartDate, requestParameters.scheduleEndDate, requestParameters.asins, requestParameters.requiredSkills, requestParameters.storeIds, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1240,7 +1274,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        rescheduleAppointmentForServiceJobByServiceJobId(requestParameters: ServiceApiRescheduleAppointmentForServiceJobByServiceJobIdRequest, options?: AxiosRequestConfig): AxiosPromise<SetAppointmentResponse> {
+        rescheduleAppointmentForServiceJobByServiceJobId(requestParameters: ServiceApiRescheduleAppointmentForServiceJobByServiceJobIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<SetAppointmentResponse> {
             return localVarFp.rescheduleAppointmentForServiceJobByServiceJobId(requestParameters.serviceJobId, requestParameters.appointmentId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1249,7 +1283,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        setAppointmentFulfillmentData(requestParameters: ServiceApiSetAppointmentFulfillmentDataRequest, options?: AxiosRequestConfig): AxiosPromise<string> {
+        setAppointmentFulfillmentData(requestParameters: ServiceApiSetAppointmentFulfillmentDataRequest, options?: RawAxiosRequestConfig): AxiosPromise<string> {
             return localVarFp.setAppointmentFulfillmentData(requestParameters.serviceJobId, requestParameters.appointmentId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1258,7 +1292,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateReservation(requestParameters: ServiceApiUpdateReservationRequest, options?: AxiosRequestConfig): AxiosPromise<UpdateReservationResponse> {
+        updateReservation(requestParameters: ServiceApiUpdateReservationRequest, options?: RawAxiosRequestConfig): AxiosPromise<UpdateReservationResponse> {
             return localVarFp.updateReservation(requestParameters.reservationId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1267,7 +1301,7 @@ export const ServiceApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateSchedule(requestParameters: ServiceApiUpdateScheduleRequest, options?: AxiosRequestConfig): AxiosPromise<UpdateScheduleResponse> {
+        updateSchedule(requestParameters: ServiceApiUpdateScheduleRequest, options?: RawAxiosRequestConfig): AxiosPromise<UpdateScheduleResponse> {
             return localVarFp.updateSchedule(requestParameters.resourceId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
@@ -1599,7 +1633,7 @@ export interface ServiceApiGetServiceJobsRequest {
      * @type {Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>}
      * @memberof ServiceApiGetServiceJobs
      */
-    readonly serviceJobStatus?: Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>
+    readonly serviceJobStatus?: Array<GetServiceJobsServiceJobStatusEnum>
 
     /**
      * String returned in the response of your previous request.
@@ -1620,14 +1654,14 @@ export interface ServiceApiGetServiceJobsRequest {
      * @type {'JOB_DATE' | 'JOB_STATUS'}
      * @memberof ServiceApiGetServiceJobs
      */
-    readonly sortField?: 'JOB_DATE' | 'JOB_STATUS'
+    readonly sortField?: GetServiceJobsSortFieldEnum
 
     /**
      * Sort order for the query you want to perform.
      * @type {'ASC' | 'DESC'}
      * @memberof ServiceApiGetServiceJobs
      */
-    readonly sortOrder?: 'ASC' | 'DESC'
+    readonly sortOrder?: GetServiceJobsSortOrderEnum
 
     /**
      * A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
@@ -1819,7 +1853,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public addAppointmentForServiceJobByServiceJobId(requestParameters: ServiceApiAddAppointmentForServiceJobByServiceJobIdRequest, options?: AxiosRequestConfig) {
+    public addAppointmentForServiceJobByServiceJobId(requestParameters: ServiceApiAddAppointmentForServiceJobByServiceJobIdRequest, options?: RawAxiosRequestConfig) {
         return ServiceApiFp(this.configuration).addAppointmentForServiceJobByServiceJobId(requestParameters.serviceJobId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1830,7 +1864,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public assignAppointmentResources(requestParameters: ServiceApiAssignAppointmentResourcesRequest, options?: AxiosRequestConfig) {
+    public assignAppointmentResources(requestParameters: ServiceApiAssignAppointmentResourcesRequest, options?: RawAxiosRequestConfig) {
         return ServiceApiFp(this.configuration).assignAppointmentResources(requestParameters.serviceJobId, requestParameters.appointmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1841,7 +1875,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public cancelReservation(requestParameters: ServiceApiCancelReservationRequest, options?: AxiosRequestConfig) {
+    public cancelReservation(requestParameters: ServiceApiCancelReservationRequest, options?: RawAxiosRequestConfig) {
         return ServiceApiFp(this.configuration).cancelReservation(requestParameters.reservationId, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1852,7 +1886,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public cancelServiceJobByServiceJobId(requestParameters: ServiceApiCancelServiceJobByServiceJobIdRequest, options?: AxiosRequestConfig) {
+    public cancelServiceJobByServiceJobId(requestParameters: ServiceApiCancelServiceJobByServiceJobIdRequest, options?: RawAxiosRequestConfig) {
         return ServiceApiFp(this.configuration).cancelServiceJobByServiceJobId(requestParameters.serviceJobId, requestParameters.cancellationReasonCode, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1863,7 +1897,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public completeServiceJobByServiceJobId(requestParameters: ServiceApiCompleteServiceJobByServiceJobIdRequest, options?: AxiosRequestConfig) {
+    public completeServiceJobByServiceJobId(requestParameters: ServiceApiCompleteServiceJobByServiceJobIdRequest, options?: RawAxiosRequestConfig) {
         return ServiceApiFp(this.configuration).completeServiceJobByServiceJobId(requestParameters.serviceJobId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1874,7 +1908,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public createReservation(requestParameters: ServiceApiCreateReservationRequest, options?: AxiosRequestConfig) {
+    public createReservation(requestParameters: ServiceApiCreateReservationRequest, options?: RawAxiosRequestConfig) {
         return ServiceApiFp(this.configuration).createReservation(requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1885,7 +1919,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public createServiceDocumentUploadDestination(requestParameters: ServiceApiCreateServiceDocumentUploadDestinationRequest, options?: AxiosRequestConfig) {
+    public createServiceDocumentUploadDestination(requestParameters: ServiceApiCreateServiceDocumentUploadDestinationRequest, options?: RawAxiosRequestConfig) {
         return ServiceApiFp(this.configuration).createServiceDocumentUploadDestination(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1896,7 +1930,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public getAppointmentSlots(requestParameters: ServiceApiGetAppointmentSlotsRequest, options?: AxiosRequestConfig) {
+    public getAppointmentSlots(requestParameters: ServiceApiGetAppointmentSlotsRequest, options?: RawAxiosRequestConfig) {
         return ServiceApiFp(this.configuration).getAppointmentSlots(requestParameters.asin, requestParameters.storeId, requestParameters.marketplaceIds, requestParameters.startTime, requestParameters.endTime, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1907,7 +1941,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public getAppointmmentSlotsByJobId(requestParameters: ServiceApiGetAppointmmentSlotsByJobIdRequest, options?: AxiosRequestConfig) {
+    public getAppointmmentSlotsByJobId(requestParameters: ServiceApiGetAppointmmentSlotsByJobIdRequest, options?: RawAxiosRequestConfig) {
         return ServiceApiFp(this.configuration).getAppointmmentSlotsByJobId(requestParameters.serviceJobId, requestParameters.marketplaceIds, requestParameters.startTime, requestParameters.endTime, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1918,7 +1952,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public getFixedSlotCapacity(requestParameters: ServiceApiGetFixedSlotCapacityRequest, options?: AxiosRequestConfig) {
+    public getFixedSlotCapacity(requestParameters: ServiceApiGetFixedSlotCapacityRequest, options?: RawAxiosRequestConfig) {
         return ServiceApiFp(this.configuration).getFixedSlotCapacity(requestParameters.resourceId, requestParameters.marketplaceIds, requestParameters.body, requestParameters.nextPageToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1929,7 +1963,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public getRangeSlotCapacity(requestParameters: ServiceApiGetRangeSlotCapacityRequest, options?: AxiosRequestConfig) {
+    public getRangeSlotCapacity(requestParameters: ServiceApiGetRangeSlotCapacityRequest, options?: RawAxiosRequestConfig) {
         return ServiceApiFp(this.configuration).getRangeSlotCapacity(requestParameters.resourceId, requestParameters.marketplaceIds, requestParameters.body, requestParameters.nextPageToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1940,7 +1974,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public getServiceJobByServiceJobId(requestParameters: ServiceApiGetServiceJobByServiceJobIdRequest, options?: AxiosRequestConfig) {
+    public getServiceJobByServiceJobId(requestParameters: ServiceApiGetServiceJobByServiceJobIdRequest, options?: RawAxiosRequestConfig) {
         return ServiceApiFp(this.configuration).getServiceJobByServiceJobId(requestParameters.serviceJobId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1951,7 +1985,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public getServiceJobs(requestParameters: ServiceApiGetServiceJobsRequest, options?: AxiosRequestConfig) {
+    public getServiceJobs(requestParameters: ServiceApiGetServiceJobsRequest, options?: RawAxiosRequestConfig) {
         return ServiceApiFp(this.configuration).getServiceJobs(requestParameters.marketplaceIds, requestParameters.serviceOrderIds, requestParameters.serviceJobStatus, requestParameters.pageToken, requestParameters.pageSize, requestParameters.sortField, requestParameters.sortOrder, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.scheduleStartDate, requestParameters.scheduleEndDate, requestParameters.asins, requestParameters.requiredSkills, requestParameters.storeIds, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1962,7 +1996,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public rescheduleAppointmentForServiceJobByServiceJobId(requestParameters: ServiceApiRescheduleAppointmentForServiceJobByServiceJobIdRequest, options?: AxiosRequestConfig) {
+    public rescheduleAppointmentForServiceJobByServiceJobId(requestParameters: ServiceApiRescheduleAppointmentForServiceJobByServiceJobIdRequest, options?: RawAxiosRequestConfig) {
         return ServiceApiFp(this.configuration).rescheduleAppointmentForServiceJobByServiceJobId(requestParameters.serviceJobId, requestParameters.appointmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1973,7 +2007,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public setAppointmentFulfillmentData(requestParameters: ServiceApiSetAppointmentFulfillmentDataRequest, options?: AxiosRequestConfig) {
+    public setAppointmentFulfillmentData(requestParameters: ServiceApiSetAppointmentFulfillmentDataRequest, options?: RawAxiosRequestConfig) {
         return ServiceApiFp(this.configuration).setAppointmentFulfillmentData(requestParameters.serviceJobId, requestParameters.appointmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1984,7 +2018,7 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public updateReservation(requestParameters: ServiceApiUpdateReservationRequest, options?: AxiosRequestConfig) {
+    public updateReservation(requestParameters: ServiceApiUpdateReservationRequest, options?: RawAxiosRequestConfig) {
         return ServiceApiFp(this.configuration).updateReservation(requestParameters.reservationId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1995,7 +2029,37 @@ export class ServiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceApi
      */
-    public updateSchedule(requestParameters: ServiceApiUpdateScheduleRequest, options?: AxiosRequestConfig) {
+    public updateSchedule(requestParameters: ServiceApiUpdateScheduleRequest, options?: RawAxiosRequestConfig) {
         return ServiceApiFp(this.configuration).updateSchedule(requestParameters.resourceId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetServiceJobsServiceJobStatusEnum = {
+    NotServiced: 'NOT_SERVICED',
+    Cancelled: 'CANCELLED',
+    Completed: 'COMPLETED',
+    PendingSchedule: 'PENDING_SCHEDULE',
+    NotFulfillable: 'NOT_FULFILLABLE',
+    Hold: 'HOLD',
+    PaymentDeclined: 'PAYMENT_DECLINED'
+} as const;
+export type GetServiceJobsServiceJobStatusEnum = typeof GetServiceJobsServiceJobStatusEnum[keyof typeof GetServiceJobsServiceJobStatusEnum];
+/**
+ * @export
+ */
+export const GetServiceJobsSortFieldEnum = {
+    Date: 'JOB_DATE',
+    Status: 'JOB_STATUS'
+} as const;
+export type GetServiceJobsSortFieldEnum = typeof GetServiceJobsSortFieldEnum[keyof typeof GetServiceJobsSortFieldEnum];
+/**
+ * @export
+ */
+export const GetServiceJobsSortOrderEnum = {
+    Asc: 'ASC',
+    Desc: 'DESC'
+} as const;
+export type GetServiceJobsSortOrderEnum = typeof GetServiceJobsSortOrderEnum[keyof typeof GetServiceJobsSortOrderEnum];

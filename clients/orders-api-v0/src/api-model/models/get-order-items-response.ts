@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { OrderItemsList } from './order-items-list';
+import type { OrderItemsList } from './order-items-list';
 
 /**
  * The response schema for the `getOrderItems` operation.

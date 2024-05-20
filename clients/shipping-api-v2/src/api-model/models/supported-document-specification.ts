@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DocumentFormat } from './document-format';
+import type { DocumentFormat } from './document-format';
 // May contain unused imports in some cases
 // @ts-ignore
-import { DocumentSize } from './document-size';
+import type { DocumentSize } from './document-size';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PrintOption } from './print-option';
+import type { PrintOption } from './print-option';
 
 /**
  * Document specification that is supported for a service offering.

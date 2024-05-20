@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ReportSchedule } from './report-schedule';
+import type { ReportSchedule } from './report-schedule';
 
 /**
  * A list of report schedules.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ActiveAccount } from './active-account';
+import type { ActiveAccount } from './active-account';
 
 /**
  * The Response  for the GetCarrierAccountsResponse operation.

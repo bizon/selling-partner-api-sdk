@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DocumentFormat } from './document-format';
+import type { DocumentFormat } from './document-format';
 // May contain unused imports in some cases
 // @ts-ignore
-import { DocumentSize } from './document-size';
+import type { DocumentSize } from './document-size';
 // May contain unused imports in some cases
 // @ts-ignore
-import { DocumentType } from './document-type';
+import type { DocumentType } from './document-type';
 
 /**
  * The document specifications requested. For calls to the purchaseShipment operation, the shipment purchase fails if the specified document specifications are not among those returned in the response to the getRates operation.

@@ -15,28 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CODSettings } from './codsettings';
+import type { CODSettings } from './codsettings';
 // May contain unused imports in some cases
 // @ts-ignore
-import { DeliveryWindow } from './delivery-window';
+import type { DeliveryWindow } from './delivery-window';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeatureSettings } from './feature-settings';
+import type { FeatureSettings } from './feature-settings';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentAction } from './fulfillment-action';
+import type { FulfillmentAction } from './fulfillment-action';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentOrderStatus } from './fulfillment-order-status';
+import type { FulfillmentOrderStatus } from './fulfillment-order-status';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentPolicy } from './fulfillment-policy';
+import type { FulfillmentPolicy } from './fulfillment-policy';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShippingSpeedCategory } from './shipping-speed-category';
+import type { ShippingSpeedCategory } from './shipping-speed-category';
 
 /**
  * General information about a fulfillment order, including its status.

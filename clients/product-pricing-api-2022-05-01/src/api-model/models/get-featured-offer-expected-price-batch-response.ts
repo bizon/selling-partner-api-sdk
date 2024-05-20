@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeaturedOfferExpectedPriceResponse } from './featured-offer-expected-price-response';
+import type { FeaturedOfferExpectedPriceResponse } from './featured-offer-expected-price-response';
 
 /**
  * The response schema for the `getFeaturedOfferExpectedPriceBatch` operation.

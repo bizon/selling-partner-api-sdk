@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ClientReferenceDetail } from './client-reference-detail';
+import type { ClientReferenceDetail } from './client-reference-detail';
 // May contain unused imports in some cases
 // @ts-ignore
-import { DateRange } from './date-range';
+import type { DateRange } from './date-range';
 
 /**
  * The request schema to get query collections form history API .

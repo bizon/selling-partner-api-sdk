@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PatchOperation } from './patch-operation';
+import type { PatchOperation } from './patch-operation';
 
 /**
  * The request body schema for the patchListingsItem operation.

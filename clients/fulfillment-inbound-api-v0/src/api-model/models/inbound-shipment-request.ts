@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { InboundShipmentHeader } from './inbound-shipment-header';
+import type { InboundShipmentHeader } from './inbound-shipment-header';
 // May contain unused imports in some cases
 // @ts-ignore
-import { InboundShipmentItem } from './inbound-shipment-item';
+import type { InboundShipmentItem } from './inbound-shipment-item';
 
 /**
  * The request schema for an inbound shipment.

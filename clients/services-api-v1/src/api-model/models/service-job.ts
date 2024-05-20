@@ -15,28 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Appointment } from './appointment';
+import type { Appointment } from './appointment';
 // May contain unused imports in some cases
 // @ts-ignore
-import { AppointmentTime } from './appointment-time';
+import type { AppointmentTime } from './appointment-time';
 // May contain unused imports in some cases
 // @ts-ignore
-import { AssociatedItem } from './associated-item';
+import type { AssociatedItem } from './associated-item';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Buyer } from './buyer';
+import type { Buyer } from './buyer';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ScopeOfWork } from './scope-of-work';
+import type { ScopeOfWork } from './scope-of-work';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Seller } from './seller';
+import type { Seller } from './seller';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ServiceJobProvider } from './service-job-provider';
+import type { ServiceJobProvider } from './service-job-provider';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ServiceLocation } from './service-location';
+import type { ServiceLocation } from './service-location';
 
 /**
  * The job details of a service.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeaturedOfferExpectedPriceRequest } from './featured-offer-expected-price-request';
+import type { FeaturedOfferExpectedPriceRequest } from './featured-offer-expected-price-request';
 
 /**
  * The request body for the `getFeaturedOfferExpectedPriceBatch` operation.

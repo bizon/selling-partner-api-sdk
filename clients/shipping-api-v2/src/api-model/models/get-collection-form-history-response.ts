@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CollectionFormsHistoryRecord } from './collection-forms-history-record';
+import type { CollectionFormsHistoryRecord } from './collection-forms-history-record';
 
 /**
  * The Response  for the GetCollectionFormHistoryResponse operation.

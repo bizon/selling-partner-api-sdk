@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TransportDetailOutput } from './transport-detail-output';
+import type { TransportDetailOutput } from './transport-detail-output';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TransportHeader } from './transport-header';
+import type { TransportHeader } from './transport-header';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TransportResult } from './transport-result';
+import type { TransportResult } from './transport-result';
 
 /**
  * Inbound shipment information, including carrier details, shipment status, and the workflow status for a request for shipment with an Amazon-partnered carrier.

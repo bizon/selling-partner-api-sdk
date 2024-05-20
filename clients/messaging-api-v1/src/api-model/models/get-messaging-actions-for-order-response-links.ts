@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { LinkObject } from './link-object';
+import type { LinkObject } from './link-object';
 
 /**
  * 

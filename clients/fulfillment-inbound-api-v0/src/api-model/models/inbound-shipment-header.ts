@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { IntendedBoxContentsSource } from './intended-box-contents-source';
+import type { IntendedBoxContentsSource } from './intended-box-contents-source';
 // May contain unused imports in some cases
 // @ts-ignore
-import { LabelPrepPreference } from './label-prep-preference';
+import type { LabelPrepPreference } from './label-prep-preference';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipmentStatus } from './shipment-status';
+import type { ShipmentStatus } from './shipment-status';
 
 /**
  * Inbound shipment information used to create and update inbound shipments.

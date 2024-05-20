@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { IssueEnforcements } from './issue-enforcements';
+import type { IssueEnforcements } from './issue-enforcements';
 
 /**
  * An issue with a listings item.

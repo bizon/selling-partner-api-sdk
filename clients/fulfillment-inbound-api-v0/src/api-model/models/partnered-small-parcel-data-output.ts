@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PartneredEstimate } from './partnered-estimate';
+import type { PartneredEstimate } from './partnered-estimate';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PartneredSmallParcelPackageOutput } from './partnered-small-parcel-package-output';
+import type { PartneredSmallParcelPackageOutput } from './partnered-small-parcel-package-output';
 
 /**
  * Information returned by Amazon about a Small Parcel shipment by an Amazon-partnered carrier.

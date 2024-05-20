@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Feature } from './feature';
+import type { Feature } from './feature';
 
 /**
  * The payload for the `getFeatures` operation.

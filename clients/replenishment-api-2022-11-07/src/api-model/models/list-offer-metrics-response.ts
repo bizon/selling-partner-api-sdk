@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ListOfferMetricsResponseOffer } from './list-offer-metrics-response-offer';
+import type { ListOfferMetricsResponseOffer } from './list-offer-metrics-response-offer';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PaginationResponse } from './pagination-response';
+import type { PaginationResponse } from './pagination-response';
 
 /**
  * The response schema for the `listOfferMetrics` operation.

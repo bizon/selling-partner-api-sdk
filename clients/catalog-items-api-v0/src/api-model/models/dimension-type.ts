@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DecimalWithUnits } from './decimal-with-units';
+import type { DecimalWithUnits } from './decimal-with-units';
 
 /**
  * The dimension type attribute of an item.

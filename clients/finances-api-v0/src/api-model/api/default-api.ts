@@ -14,17 +14,17 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { ListFinancialEventGroupsResponse } from '../models';
+import type { ListFinancialEventGroupsResponse } from '../models';
 // @ts-ignore
-import { ListFinancialEventsResponse } from '../models';
+import type { ListFinancialEventsResponse } from '../models';
 /**
  * DefaultApi - axios parameter creator
  * @export
@@ -40,7 +40,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listFinancialEventGroups: async (maxResultsPerPage?: number, financialEventGroupStartedBefore?: string, financialEventGroupStartedAfter?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listFinancialEventGroups: async (maxResultsPerPage?: number, financialEventGroupStartedBefore?: string, financialEventGroupStartedAfter?: string, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/finances/v0/financialEventGroups`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -93,7 +93,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listFinancialEvents: async (maxResultsPerPage?: number, postedAfter?: string, postedBefore?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listFinancialEvents: async (maxResultsPerPage?: number, postedAfter?: string, postedBefore?: string, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/finances/v0/financialEvents`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -147,7 +147,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listFinancialEventsByGroupId: async (eventGroupId: string, maxResultsPerPage?: number, postedAfter?: string, postedBefore?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listFinancialEventsByGroupId: async (eventGroupId: string, maxResultsPerPage?: number, postedAfter?: string, postedBefore?: string, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'eventGroupId' is not null or undefined
             assertParamExists('listFinancialEventsByGroupId', 'eventGroupId', eventGroupId)
             const localVarPath = `/finances/v0/financialEventGroups/{eventGroupId}/financialEvents`
@@ -202,7 +202,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listFinancialEventsByOrderId: async (orderId: string, maxResultsPerPage?: number, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listFinancialEventsByOrderId: async (orderId: string, maxResultsPerPage?: number, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('listFinancialEventsByOrderId', 'orderId', orderId)
             const localVarPath = `/finances/v0/orders/{orderId}/financialEvents`
@@ -256,9 +256,11 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listFinancialEventGroups(maxResultsPerPage?: number, financialEventGroupStartedBefore?: string, financialEventGroupStartedAfter?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancialEventGroupsResponse>> {
+        async listFinancialEventGroups(maxResultsPerPage?: number, financialEventGroupStartedBefore?: string, financialEventGroupStartedAfter?: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancialEventGroupsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listFinancialEventGroups(maxResultsPerPage, financialEventGroupStartedBefore, financialEventGroupStartedAfter, nextToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listFinancialEventGroups']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events. **Note:** in `ListFinancialEvents`, deferred events don\'t show up in responses until in they are released.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -269,9 +271,11 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listFinancialEvents(maxResultsPerPage?: number, postedAfter?: string, postedBefore?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancialEventsResponse>> {
+        async listFinancialEvents(maxResultsPerPage?: number, postedAfter?: string, postedBefore?: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancialEventsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listFinancialEvents(maxResultsPerPage, postedAfter, postedBefore, nextToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listFinancialEvents']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns all financial events for the specified financial event group. It may take up to 48 hours for orders to appear in your financial events.  **Note:** This operation will only retrieve group\'s data for the past two years. If a request is submitted for data spanning more than two years, an empty response is returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -283,9 +287,11 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listFinancialEventsByGroupId(eventGroupId: string, maxResultsPerPage?: number, postedAfter?: string, postedBefore?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancialEventsResponse>> {
+        async listFinancialEventsByGroupId(eventGroupId: string, maxResultsPerPage?: number, postedAfter?: string, postedBefore?: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancialEventsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listFinancialEventsByGroupId(eventGroupId, maxResultsPerPage, postedAfter, postedBefore, nextToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listFinancialEventsByGroupId']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns all financial events for the specified order. It may take up to 48 hours for orders to appear in your financial events.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -295,9 +301,11 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listFinancialEventsByOrderId(orderId: string, maxResultsPerPage?: number, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancialEventsResponse>> {
+        async listFinancialEventsByOrderId(orderId: string, maxResultsPerPage?: number, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListFinancialEventsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listFinancialEventsByOrderId(orderId, maxResultsPerPage, nextToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listFinancialEventsByOrderId']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -315,7 +323,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listFinancialEventGroups(requestParameters: DefaultApiListFinancialEventGroupsRequest = {}, options?: AxiosRequestConfig): AxiosPromise<ListFinancialEventGroupsResponse> {
+        listFinancialEventGroups(requestParameters: DefaultApiListFinancialEventGroupsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ListFinancialEventGroupsResponse> {
             return localVarFp.listFinancialEventGroups(requestParameters.maxResultsPerPage, requestParameters.financialEventGroupStartedBefore, requestParameters.financialEventGroupStartedAfter, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -324,7 +332,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listFinancialEvents(requestParameters: DefaultApiListFinancialEventsRequest = {}, options?: AxiosRequestConfig): AxiosPromise<ListFinancialEventsResponse> {
+        listFinancialEvents(requestParameters: DefaultApiListFinancialEventsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ListFinancialEventsResponse> {
             return localVarFp.listFinancialEvents(requestParameters.maxResultsPerPage, requestParameters.postedAfter, requestParameters.postedBefore, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -333,7 +341,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listFinancialEventsByGroupId(requestParameters: DefaultApiListFinancialEventsByGroupIdRequest, options?: AxiosRequestConfig): AxiosPromise<ListFinancialEventsResponse> {
+        listFinancialEventsByGroupId(requestParameters: DefaultApiListFinancialEventsByGroupIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListFinancialEventsResponse> {
             return localVarFp.listFinancialEventsByGroupId(requestParameters.eventGroupId, requestParameters.maxResultsPerPage, requestParameters.postedAfter, requestParameters.postedBefore, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -342,7 +350,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listFinancialEventsByOrderId(requestParameters: DefaultApiListFinancialEventsByOrderIdRequest, options?: AxiosRequestConfig): AxiosPromise<ListFinancialEventsResponse> {
+        listFinancialEventsByOrderId(requestParameters: DefaultApiListFinancialEventsByOrderIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListFinancialEventsResponse> {
             return localVarFp.listFinancialEventsByOrderId(requestParameters.orderId, requestParameters.maxResultsPerPage, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
     };
@@ -502,7 +510,7 @@ export class DefaultApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public listFinancialEventGroups(requestParameters: DefaultApiListFinancialEventGroupsRequest = {}, options?: AxiosRequestConfig) {
+    public listFinancialEventGroups(requestParameters: DefaultApiListFinancialEventGroupsRequest = {}, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).listFinancialEventGroups(requestParameters.maxResultsPerPage, requestParameters.financialEventGroupStartedBefore, requestParameters.financialEventGroupStartedAfter, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -513,7 +521,7 @@ export class DefaultApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public listFinancialEvents(requestParameters: DefaultApiListFinancialEventsRequest = {}, options?: AxiosRequestConfig) {
+    public listFinancialEvents(requestParameters: DefaultApiListFinancialEventsRequest = {}, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).listFinancialEvents(requestParameters.maxResultsPerPage, requestParameters.postedAfter, requestParameters.postedBefore, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -524,7 +532,7 @@ export class DefaultApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public listFinancialEventsByGroupId(requestParameters: DefaultApiListFinancialEventsByGroupIdRequest, options?: AxiosRequestConfig) {
+    public listFinancialEventsByGroupId(requestParameters: DefaultApiListFinancialEventsByGroupIdRequest, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).listFinancialEventsByGroupId(requestParameters.eventGroupId, requestParameters.maxResultsPerPage, requestParameters.postedAfter, requestParameters.postedBefore, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -535,7 +543,8 @@ export class DefaultApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public listFinancialEventsByOrderId(requestParameters: DefaultApiListFinancialEventsByOrderIdRequest, options?: AxiosRequestConfig) {
+    public listFinancialEventsByOrderId(requestParameters: DefaultApiListFinancialEventsByOrderIdRequest, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).listFinancialEventsByOrderId(requestParameters.orderId, requestParameters.maxResultsPerPage, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

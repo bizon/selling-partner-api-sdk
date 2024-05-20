@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ServiceDocumentUploadDestination } from './service-document-upload-destination';
+import type { ServiceDocumentUploadDestination } from './service-document-upload-destination';
 
 /**
  * The response schema for the `createServiceDocumentUploadDestination` operation.

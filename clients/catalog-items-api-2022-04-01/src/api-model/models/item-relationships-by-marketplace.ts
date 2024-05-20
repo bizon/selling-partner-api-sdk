@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemRelationship } from './item-relationship';
+import type { ItemRelationship } from './item-relationship';
 
 /**
  * Relationship details for the Amazon catalog item for the indicated Amazon marketplace.

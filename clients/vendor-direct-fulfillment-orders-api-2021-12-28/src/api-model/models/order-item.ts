@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BuyerCustomizedInfoDetail } from './buyer-customized-info-detail';
+import type { BuyerCustomizedInfoDetail } from './buyer-customized-info-detail';
 // May contain unused imports in some cases
 // @ts-ignore
-import { GiftDetails } from './gift-details';
+import type { GiftDetails } from './gift-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemQuantity } from './item-quantity';
+import type { ItemQuantity } from './item-quantity';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Money } from './money';
+import type { Money } from './money';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ScheduledDeliveryShipment } from './scheduled-delivery-shipment';
+import type { ScheduledDeliveryShipment } from './scheduled-delivery-shipment';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TaxItemDetails } from './tax-item-details';
+import type { TaxItemDetails } from './tax-item-details';
 
 /**
  * 

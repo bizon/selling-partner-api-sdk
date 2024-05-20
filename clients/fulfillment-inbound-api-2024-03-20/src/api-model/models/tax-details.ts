@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Currency } from './currency';
+import type { Currency } from './currency';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TaxRate } from './tax-rate';
+import type { TaxRate } from './tax-rate';
 
 /**
  * Information used to determine the tax compliance.

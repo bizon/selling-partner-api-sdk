@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AsinMetadata } from './asin-metadata';
+import type { AsinMetadata } from './asin-metadata';
 
 /**
  * 

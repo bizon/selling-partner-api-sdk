@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ProductTypeVersion } from './product-type-version';
+import type { ProductTypeVersion } from './product-type-version';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PropertyGroup } from './property-group';
+import type { PropertyGroup } from './property-group';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SchemaLink } from './schema-link';
+import type { SchemaLink } from './schema-link';
 
 /**
  * A product type definition represents the attributes and data requirements for a product type in the Amazon catalog. Product type definitions are used interchangeably between the Selling Partner API for Listings Items, Selling Partner API for Catalog Items, and JSON-based listings feeds in the Selling Partner API for Feeds.

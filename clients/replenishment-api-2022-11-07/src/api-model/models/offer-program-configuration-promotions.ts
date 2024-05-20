@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { OfferProgramConfigurationPromotionsDiscountFunding } from './offer-program-configuration-promotions-discount-funding';
+import type { OfferProgramConfigurationPromotionsDiscountFunding } from './offer-program-configuration-promotions-discount-funding';
 
 /**
  * An object which represents all promotions applied to an offer.

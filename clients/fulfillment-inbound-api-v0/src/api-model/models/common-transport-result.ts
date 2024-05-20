@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TransportResult } from './transport-result';
+import type { TransportResult } from './transport-result';
 
 /**
  * Common container for transport result

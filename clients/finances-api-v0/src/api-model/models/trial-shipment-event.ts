@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeeComponent } from './fee-component';
+import type { FeeComponent } from './fee-component';
 
 /**
  * An event related to a trial shipment.

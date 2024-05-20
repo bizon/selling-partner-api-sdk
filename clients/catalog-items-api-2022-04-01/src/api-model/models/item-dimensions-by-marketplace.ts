@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Dimensions } from './dimensions';
+import type { Dimensions } from './dimensions';
 
 /**
  * Dimensions associated with the item in the Amazon catalog for the indicated Amazon marketplace.

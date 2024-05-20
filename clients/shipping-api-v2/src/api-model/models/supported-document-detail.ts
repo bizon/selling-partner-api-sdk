@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DocumentType } from './document-type';
+import type { DocumentType } from './document-type';
 
 /**
  * The supported document types for a service offering.

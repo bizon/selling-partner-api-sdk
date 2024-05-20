@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Decorator } from './decorator';
+import type { Decorator } from './decorator';
 
 /**
  * Rich text content.

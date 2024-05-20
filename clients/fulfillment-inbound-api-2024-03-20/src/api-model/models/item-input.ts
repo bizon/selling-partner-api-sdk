@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { LabelOwner } from './label-owner';
+import type { LabelOwner } from './label-owner';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PrepOwner } from './prep-owner';
+import type { PrepOwner } from './prep-owner';
 
 /**
  * Defines an item\'s input parameters.

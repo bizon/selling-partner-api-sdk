@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContainerSpecification } from './container-specification';
+import type { ContainerSpecification } from './container-specification';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ServiceType } from './service-type';
+import type { ServiceType } from './service-type';
 
 /**
  * The payload schema for the getRates operation.

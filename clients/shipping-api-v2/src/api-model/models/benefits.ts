@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ExcludedBenefit } from './excluded-benefit';
+import type { ExcludedBenefit } from './excluded-benefit';
 
 /**
  * Representing the included/excluded benefits that we offer for each ShippingOffering/Rate. Benefits being services provided by Amazon when sellers purchase shipping through Amazon.

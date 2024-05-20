@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AddressExtendedFields } from './address-extended-fields';
+import type { AddressExtendedFields } from './address-extended-fields';
 
 /**
  * The shipping address for the order.

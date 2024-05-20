@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomerInvoice } from './customer-invoice';
+import type { CustomerInvoice } from './customer-invoice';
 
 /**
  * The response schema for the getCustomerInvoice operation.

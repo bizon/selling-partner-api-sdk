@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DeliveryWindow } from './delivery-window';
+import type { DeliveryWindow } from './delivery-window';
 
 /**
  * Delivery information for a scheduled delivery. This is only available in the JP marketplace.

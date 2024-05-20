@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AutoEnrollmentPreference } from './auto-enrollment-preference';
+import type { AutoEnrollmentPreference } from './auto-enrollment-preference';
 
 /**
  * An object which contains the preferences applied to the offer.

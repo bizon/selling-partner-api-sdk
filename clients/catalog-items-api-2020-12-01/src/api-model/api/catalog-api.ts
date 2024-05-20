@@ -14,19 +14,19 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { ErrorList } from '../models';
+import type { ErrorList } from '../models';
 // @ts-ignore
-import { Item } from '../models';
+import type { Item } from '../models';
 // @ts-ignore
-import { ItemSearchResults } from '../models';
+import type { ItemSearchResults } from '../models';
 /**
  * CatalogApi - axios parameter creator
  * @export
@@ -37,12 +37,12 @@ export const CatalogApiAxiosParamCreator = function (configuration?: Configurati
          * Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} asin The Amazon Standard Identification Number (ASIN) of the item.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.
-         * @param {Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
+         * @param {Array<GetCatalogItemIncludedDataEnum>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
          * @param {string} [locale] Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCatalogItem: async (asin: string, marketplaceIds: Array<string>, includedData?: Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>, locale?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getCatalogItem: async (asin: string, marketplaceIds: Array<string>, includedData?: Array<GetCatalogItemIncludedDataEnum>, locale?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'asin' is not null or undefined
             assertParamExists('getCatalogItem', 'asin', asin)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -87,7 +87,7 @@ export const CatalogApiAxiosParamCreator = function (configuration?: Configurati
          * Search for and return a list of Amazon catalog items and associated information.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {Array<string>} keywords A comma-delimited list of words or item identifiers to search the Amazon catalog for.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
-         * @param {Array<'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
+         * @param {Array<SearchCatalogItemsIncludedDataEnum>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
          * @param {Array<string>} [brandNames] A comma-delimited list of brand names to limit the search to.
          * @param {Array<string>} [classificationIds] A comma-delimited list of classification identifiers to limit the search to.
          * @param {number} [pageSize] Number of results to be returned per page.
@@ -97,7 +97,7 @@ export const CatalogApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchCatalogItems: async (keywords: Array<string>, marketplaceIds: Array<string>, includedData?: Array<'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>, brandNames?: Array<string>, classificationIds?: Array<string>, pageSize?: number, pageToken?: string, keywordsLocale?: string, locale?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        searchCatalogItems: async (keywords: Array<string>, marketplaceIds: Array<string>, includedData?: Array<SearchCatalogItemsIncludedDataEnum>, brandNames?: Array<string>, classificationIds?: Array<string>, pageSize?: number, pageToken?: string, keywordsLocale?: string, locale?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'keywords' is not null or undefined
             assertParamExists('searchCatalogItems', 'keywords', keywords)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -175,20 +175,22 @@ export const CatalogApiFp = function(configuration?: Configuration) {
          * Retrieves details for an item in the Amazon catalog.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} asin The Amazon Standard Identification Number (ASIN) of the item.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.
-         * @param {Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
+         * @param {Array<GetCatalogItemIncludedDataEnum>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
          * @param {string} [locale] Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCatalogItem(asin: string, marketplaceIds: Array<string>, includedData?: Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>, locale?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Item>> {
+        async getCatalogItem(asin: string, marketplaceIds: Array<string>, includedData?: Array<GetCatalogItemIncludedDataEnum>, locale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Item>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCatalogItem(asin, marketplaceIds, includedData, locale, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['CatalogApi.getCatalogItem']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Search for and return a list of Amazon catalog items and associated information.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {Array<string>} keywords A comma-delimited list of words or item identifiers to search the Amazon catalog for.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
-         * @param {Array<'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
+         * @param {Array<SearchCatalogItemsIncludedDataEnum>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
          * @param {Array<string>} [brandNames] A comma-delimited list of brand names to limit the search to.
          * @param {Array<string>} [classificationIds] A comma-delimited list of classification identifiers to limit the search to.
          * @param {number} [pageSize] Number of results to be returned per page.
@@ -198,9 +200,11 @@ export const CatalogApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async searchCatalogItems(keywords: Array<string>, marketplaceIds: Array<string>, includedData?: Array<'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>, brandNames?: Array<string>, classificationIds?: Array<string>, pageSize?: number, pageToken?: string, keywordsLocale?: string, locale?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ItemSearchResults>> {
+        async searchCatalogItems(keywords: Array<string>, marketplaceIds: Array<string>, includedData?: Array<SearchCatalogItemsIncludedDataEnum>, brandNames?: Array<string>, classificationIds?: Array<string>, pageSize?: number, pageToken?: string, keywordsLocale?: string, locale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ItemSearchResults>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.searchCatalogItems(keywords, marketplaceIds, includedData, brandNames, classificationIds, pageSize, pageToken, keywordsLocale, locale, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['CatalogApi.searchCatalogItems']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -218,7 +222,7 @@ export const CatalogApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCatalogItem(requestParameters: CatalogApiGetCatalogItemRequest, options?: AxiosRequestConfig): AxiosPromise<Item> {
+        getCatalogItem(requestParameters: CatalogApiGetCatalogItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<Item> {
             return localVarFp.getCatalogItem(requestParameters.asin, requestParameters.marketplaceIds, requestParameters.includedData, requestParameters.locale, options).then((request) => request(axios, basePath));
         },
         /**
@@ -227,7 +231,7 @@ export const CatalogApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchCatalogItems(requestParameters: CatalogApiSearchCatalogItemsRequest, options?: AxiosRequestConfig): AxiosPromise<ItemSearchResults> {
+        searchCatalogItems(requestParameters: CatalogApiSearchCatalogItemsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ItemSearchResults> {
             return localVarFp.searchCatalogItems(requestParameters.keywords, requestParameters.marketplaceIds, requestParameters.includedData, requestParameters.brandNames, requestParameters.classificationIds, requestParameters.pageSize, requestParameters.pageToken, requestParameters.keywordsLocale, requestParameters.locale, options).then((request) => request(axios, basePath));
         },
     };
@@ -258,7 +262,7 @@ export interface CatalogApiGetCatalogItemRequest {
      * @type {Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>}
      * @memberof CatalogApiGetCatalogItem
      */
-    readonly includedData?: Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>
+    readonly includedData?: Array<GetCatalogItemIncludedDataEnum>
 
     /**
      * Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
@@ -293,7 +297,7 @@ export interface CatalogApiSearchCatalogItemsRequest {
      * @type {Array<'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>}
      * @memberof CatalogApiSearchCatalogItems
      */
-    readonly includedData?: Array<'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>
+    readonly includedData?: Array<SearchCatalogItemsIncludedDataEnum>
 
     /**
      * A comma-delimited list of brand names to limit the search to.
@@ -352,7 +356,7 @@ export class CatalogApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CatalogApi
      */
-    public getCatalogItem(requestParameters: CatalogApiGetCatalogItemRequest, options?: AxiosRequestConfig) {
+    public getCatalogItem(requestParameters: CatalogApiGetCatalogItemRequest, options?: RawAxiosRequestConfig) {
         return CatalogApiFp(this.configuration).getCatalogItem(requestParameters.asin, requestParameters.marketplaceIds, requestParameters.includedData, requestParameters.locale, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -363,7 +367,35 @@ export class CatalogApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CatalogApi
      */
-    public searchCatalogItems(requestParameters: CatalogApiSearchCatalogItemsRequest, options?: AxiosRequestConfig) {
+    public searchCatalogItems(requestParameters: CatalogApiSearchCatalogItemsRequest, options?: RawAxiosRequestConfig) {
         return CatalogApiFp(this.configuration).searchCatalogItems(requestParameters.keywords, requestParameters.marketplaceIds, requestParameters.includedData, requestParameters.brandNames, requestParameters.classificationIds, requestParameters.pageSize, requestParameters.pageToken, requestParameters.keywordsLocale, requestParameters.locale, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetCatalogItemIncludedDataEnum = {
+    Attributes: 'attributes',
+    Identifiers: 'identifiers',
+    Images: 'images',
+    ProductTypes: 'productTypes',
+    SalesRanks: 'salesRanks',
+    Summaries: 'summaries',
+    Variations: 'variations',
+    VendorDetails: 'vendorDetails'
+} as const;
+export type GetCatalogItemIncludedDataEnum = typeof GetCatalogItemIncludedDataEnum[keyof typeof GetCatalogItemIncludedDataEnum];
+/**
+ * @export
+ */
+export const SearchCatalogItemsIncludedDataEnum = {
+    Identifiers: 'identifiers',
+    Images: 'images',
+    ProductTypes: 'productTypes',
+    SalesRanks: 'salesRanks',
+    Summaries: 'summaries',
+    Variations: 'variations',
+    VendorDetails: 'vendorDetails'
+} as const;
+export type SearchCatalogItemsIncludedDataEnum = typeof SearchCatalogItemsIncludedDataEnum[keyof typeof SearchCatalogItemsIncludedDataEnum];

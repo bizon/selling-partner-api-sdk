@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ListingOffersRequestParams } from './listing-offers-request-params';
+import type { ListingOffersRequestParams } from './listing-offers-request-params';
 
 /**
  * 

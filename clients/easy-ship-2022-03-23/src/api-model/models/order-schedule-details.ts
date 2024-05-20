@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PackageDetails } from './package-details';
+import type { PackageDetails } from './package-details';
 
 /**
  * This object allows users to specify an order to be scheduled. Only the amazonOrderId is required. 

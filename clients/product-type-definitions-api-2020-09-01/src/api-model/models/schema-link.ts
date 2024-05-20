@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { SchemaLinkLink } from './schema-link-link';
+import type { SchemaLinkLink } from './schema-link-link';
 
 /**
  * 

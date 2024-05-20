@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ChannelDetails } from './channel-details';
+import type { ChannelDetails } from './channel-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Package } from './package';
+import type { Package } from './package';
 // May contain unused imports in some cases
 // @ts-ignore
-import { RequestedDocumentSpecification } from './requested-document-specification';
+import type { RequestedDocumentSpecification } from './requested-document-specification';
 
 /**
  * The request schema for the directPurchaseShipment operation. When the channel type is Amazon, the shipTo address is not required and will be ignored.

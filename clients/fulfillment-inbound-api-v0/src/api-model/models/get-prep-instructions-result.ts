@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ASINPrepInstructions } from './asinprep-instructions';
+import type { ASINPrepInstructions } from './asinprep-instructions';
 // May contain unused imports in some cases
 // @ts-ignore
-import { InvalidASIN } from './invalid-asin';
+import type { InvalidASIN } from './invalid-asin';
 // May contain unused imports in some cases
 // @ts-ignore
-import { InvalidSKU } from './invalid-sku';
+import type { InvalidSKU } from './invalid-sku';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SKUPrepInstructions } from './skuprep-instructions';
+import type { SKUPrepInstructions } from './skuprep-instructions';
 
 /**
  * Result for the get prep instructions operation

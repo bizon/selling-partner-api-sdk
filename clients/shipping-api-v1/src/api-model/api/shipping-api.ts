@@ -14,41 +14,41 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CancelShipmentResponse } from '../models';
+import type { CancelShipmentResponse } from '../models';
 // @ts-ignore
-import { CreateShipmentRequest } from '../models';
+import type { CreateShipmentRequest } from '../models';
 // @ts-ignore
-import { CreateShipmentResponse } from '../models';
+import type { CreateShipmentResponse } from '../models';
 // @ts-ignore
-import { GetAccountResponse } from '../models';
+import type { GetAccountResponse } from '../models';
 // @ts-ignore
-import { GetRatesRequest } from '../models';
+import type { GetRatesRequest } from '../models';
 // @ts-ignore
-import { GetRatesResponse } from '../models';
+import type { GetRatesResponse } from '../models';
 // @ts-ignore
-import { GetShipmentResponse } from '../models';
+import type { GetShipmentResponse } from '../models';
 // @ts-ignore
-import { GetTrackingInformationResponse } from '../models';
+import type { GetTrackingInformationResponse } from '../models';
 // @ts-ignore
-import { PurchaseLabelsRequest } from '../models';
+import type { PurchaseLabelsRequest } from '../models';
 // @ts-ignore
-import { PurchaseLabelsResponse } from '../models';
+import type { PurchaseLabelsResponse } from '../models';
 // @ts-ignore
-import { PurchaseShipmentRequest } from '../models';
+import type { PurchaseShipmentRequest } from '../models';
 // @ts-ignore
-import { PurchaseShipmentResponse } from '../models';
+import type { PurchaseShipmentResponse } from '../models';
 // @ts-ignore
-import { RetrieveShippingLabelRequest } from '../models';
+import type { RetrieveShippingLabelRequest } from '../models';
 // @ts-ignore
-import { RetrieveShippingLabelResponse } from '../models';
+import type { RetrieveShippingLabelResponse } from '../models';
 /**
  * ShippingApi - axios parameter creator
  * @export
@@ -61,7 +61,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelShipment: async (shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        cancelShipment: async (shipmentId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('cancelShipment', 'shipmentId', shipmentId)
             const localVarPath = `/shipping/v1/shipments/{shipmentId}/cancel`
@@ -94,7 +94,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createShipment: async (body: CreateShipmentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createShipment: async (body: CreateShipmentRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createShipment', 'body', body)
             const localVarPath = `/shipping/v1/shipments`;
@@ -128,7 +128,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAccount: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAccount: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/shipping/v1/account`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -158,7 +158,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRates: async (body: GetRatesRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getRates: async (body: GetRatesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getRates', 'body', body)
             const localVarPath = `/shipping/v1/rates`;
@@ -193,7 +193,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipment: async (shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getShipment: async (shipmentId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getShipment', 'shipmentId', shipmentId)
             const localVarPath = `/shipping/v1/shipments/{shipmentId}`
@@ -226,7 +226,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTrackingInformation: async (trackingId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getTrackingInformation: async (trackingId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'trackingId' is not null or undefined
             assertParamExists('getTrackingInformation', 'trackingId', trackingId)
             const localVarPath = `/shipping/v1/tracking/{trackingId}`
@@ -260,7 +260,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        purchaseLabels: async (shipmentId: string, body: PurchaseLabelsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        purchaseLabels: async (shipmentId: string, body: PurchaseLabelsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('purchaseLabels', 'shipmentId', shipmentId)
             // verify required parameter 'body' is not null or undefined
@@ -298,7 +298,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        purchaseShipment: async (body: PurchaseShipmentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        purchaseShipment: async (body: PurchaseShipmentRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('purchaseShipment', 'body', body)
             const localVarPath = `/shipping/v1/purchaseShipment`;
@@ -335,7 +335,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        retrieveShippingLabel: async (shipmentId: string, trackingId: string, body: RetrieveShippingLabelRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        retrieveShippingLabel: async (shipmentId: string, trackingId: string, body: RetrieveShippingLabelRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('retrieveShippingLabel', 'shipmentId', shipmentId)
             // verify required parameter 'trackingId' is not null or undefined
@@ -386,9 +386,11 @@ export const ShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelShipment(shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelShipmentResponse>> {
+        async cancelShipment(shipmentId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelShipment(shipmentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.cancelShipment']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Create a new shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -396,18 +398,22 @@ export const ShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createShipment(body: CreateShipmentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateShipmentResponse>> {
+        async createShipment(body: CreateShipmentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createShipment(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.createShipment']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Verify if the current account is valid.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAccount(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAccountResponse>> {
+        async getAccount(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAccountResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAccount(options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.getAccount']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get service rates.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -415,9 +421,11 @@ export const ShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getRates(body: GetRatesRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetRatesResponse>> {
+        async getRates(body: GetRatesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetRatesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getRates(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.getRates']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Return the entire shipment object for the shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -425,9 +433,11 @@ export const ShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShipment(shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentResponse>> {
+        async getShipment(shipmentId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShipment(shipmentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.getShipment']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Return the tracking information of a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -435,9 +445,11 @@ export const ShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTrackingInformation(trackingId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetTrackingInformationResponse>> {
+        async getTrackingInformation(trackingId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetTrackingInformationResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getTrackingInformation(trackingId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.getTrackingInformation']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Purchase shipping labels based on a given rate.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -446,9 +458,11 @@ export const ShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async purchaseLabels(shipmentId: string, body: PurchaseLabelsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PurchaseLabelsResponse>> {
+        async purchaseLabels(shipmentId: string, body: PurchaseLabelsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PurchaseLabelsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.purchaseLabels(shipmentId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.purchaseLabels']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Purchase shipping labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -456,9 +470,11 @@ export const ShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async purchaseShipment(body: PurchaseShipmentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PurchaseShipmentResponse>> {
+        async purchaseShipment(body: PurchaseShipmentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PurchaseShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.purchaseShipment(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.purchaseShipment']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Retrieve shipping label based on the shipment id and tracking id.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -468,9 +484,11 @@ export const ShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async retrieveShippingLabel(shipmentId: string, trackingId: string, body: RetrieveShippingLabelRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RetrieveShippingLabelResponse>> {
+        async retrieveShippingLabel(shipmentId: string, trackingId: string, body: RetrieveShippingLabelRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RetrieveShippingLabelResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.retrieveShippingLabel(shipmentId, trackingId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.retrieveShippingLabel']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -488,7 +506,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelShipment(requestParameters: ShippingApiCancelShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<CancelShipmentResponse> {
+        cancelShipment(requestParameters: ShippingApiCancelShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<CancelShipmentResponse> {
             return localVarFp.cancelShipment(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -497,7 +515,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createShipment(requestParameters: ShippingApiCreateShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<CreateShipmentResponse> {
+        createShipment(requestParameters: ShippingApiCreateShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateShipmentResponse> {
             return localVarFp.createShipment(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -505,7 +523,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAccount(options?: AxiosRequestConfig): AxiosPromise<GetAccountResponse> {
+        getAccount(options?: RawAxiosRequestConfig): AxiosPromise<GetAccountResponse> {
             return localVarFp.getAccount(options).then((request) => request(axios, basePath));
         },
         /**
@@ -514,7 +532,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRates(requestParameters: ShippingApiGetRatesRequest, options?: AxiosRequestConfig): AxiosPromise<GetRatesResponse> {
+        getRates(requestParameters: ShippingApiGetRatesRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetRatesResponse> {
             return localVarFp.getRates(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -523,7 +541,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipment(requestParameters: ShippingApiGetShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<GetShipmentResponse> {
+        getShipment(requestParameters: ShippingApiGetShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetShipmentResponse> {
             return localVarFp.getShipment(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -532,7 +550,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTrackingInformation(requestParameters: ShippingApiGetTrackingInformationRequest, options?: AxiosRequestConfig): AxiosPromise<GetTrackingInformationResponse> {
+        getTrackingInformation(requestParameters: ShippingApiGetTrackingInformationRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetTrackingInformationResponse> {
             return localVarFp.getTrackingInformation(requestParameters.trackingId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -541,7 +559,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        purchaseLabels(requestParameters: ShippingApiPurchaseLabelsRequest, options?: AxiosRequestConfig): AxiosPromise<PurchaseLabelsResponse> {
+        purchaseLabels(requestParameters: ShippingApiPurchaseLabelsRequest, options?: RawAxiosRequestConfig): AxiosPromise<PurchaseLabelsResponse> {
             return localVarFp.purchaseLabels(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -550,7 +568,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        purchaseShipment(requestParameters: ShippingApiPurchaseShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<PurchaseShipmentResponse> {
+        purchaseShipment(requestParameters: ShippingApiPurchaseShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<PurchaseShipmentResponse> {
             return localVarFp.purchaseShipment(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -559,7 +577,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        retrieveShippingLabel(requestParameters: ShippingApiRetrieveShippingLabelRequest, options?: AxiosRequestConfig): AxiosPromise<RetrieveShippingLabelResponse> {
+        retrieveShippingLabel(requestParameters: ShippingApiRetrieveShippingLabelRequest, options?: RawAxiosRequestConfig): AxiosPromise<RetrieveShippingLabelResponse> {
             return localVarFp.retrieveShippingLabel(requestParameters.shipmentId, requestParameters.trackingId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
@@ -712,7 +730,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public cancelShipment(requestParameters: ShippingApiCancelShipmentRequest, options?: AxiosRequestConfig) {
+    public cancelShipment(requestParameters: ShippingApiCancelShipmentRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).cancelShipment(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -723,7 +741,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public createShipment(requestParameters: ShippingApiCreateShipmentRequest, options?: AxiosRequestConfig) {
+    public createShipment(requestParameters: ShippingApiCreateShipmentRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).createShipment(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -733,7 +751,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getAccount(options?: AxiosRequestConfig) {
+    public getAccount(options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getAccount(options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -744,7 +762,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getRates(requestParameters: ShippingApiGetRatesRequest, options?: AxiosRequestConfig) {
+    public getRates(requestParameters: ShippingApiGetRatesRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getRates(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -755,7 +773,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getShipment(requestParameters: ShippingApiGetShipmentRequest, options?: AxiosRequestConfig) {
+    public getShipment(requestParameters: ShippingApiGetShipmentRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getShipment(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -766,7 +784,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getTrackingInformation(requestParameters: ShippingApiGetTrackingInformationRequest, options?: AxiosRequestConfig) {
+    public getTrackingInformation(requestParameters: ShippingApiGetTrackingInformationRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getTrackingInformation(requestParameters.trackingId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -777,7 +795,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public purchaseLabels(requestParameters: ShippingApiPurchaseLabelsRequest, options?: AxiosRequestConfig) {
+    public purchaseLabels(requestParameters: ShippingApiPurchaseLabelsRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).purchaseLabels(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -788,7 +806,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public purchaseShipment(requestParameters: ShippingApiPurchaseShipmentRequest, options?: AxiosRequestConfig) {
+    public purchaseShipment(requestParameters: ShippingApiPurchaseShipmentRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).purchaseShipment(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -799,7 +817,8 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public retrieveShippingLabel(requestParameters: ShippingApiRetrieveShippingLabelRequest, options?: AxiosRequestConfig) {
+    public retrieveShippingLabel(requestParameters: ShippingApiRetrieveShippingLabelRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).retrieveShippingLabel(requestParameters.shipmentId, requestParameters.trackingId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

@@ -14,31 +14,31 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CreateScheduledPackageRequest } from '../models';
+import type { CreateScheduledPackageRequest } from '../models';
 // @ts-ignore
-import { CreateScheduledPackagesRequest } from '../models';
+import type { CreateScheduledPackagesRequest } from '../models';
 // @ts-ignore
-import { CreateScheduledPackagesResponse } from '../models';
+import type { CreateScheduledPackagesResponse } from '../models';
 // @ts-ignore
-import { ErrorList } from '../models';
+import type { ErrorList } from '../models';
 // @ts-ignore
-import { ListHandoverSlotsRequest } from '../models';
+import type { ListHandoverSlotsRequest } from '../models';
 // @ts-ignore
-import { ListHandoverSlotsResponse } from '../models';
+import type { ListHandoverSlotsResponse } from '../models';
 // @ts-ignore
-import { Package } from '../models';
+import type { Package } from '../models';
 // @ts-ignore
-import { Packages } from '../models';
+import type { Packages } from '../models';
 // @ts-ignore
-import { UpdateScheduledPackagesRequest } from '../models';
+import type { UpdateScheduledPackagesRequest } from '../models';
 /**
  * EasyShipApi - axios parameter creator
  * @export
@@ -51,7 +51,7 @@ export const EasyShipApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createScheduledPackage: async (createScheduledPackageRequest: CreateScheduledPackageRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createScheduledPackage: async (createScheduledPackageRequest: CreateScheduledPackageRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'createScheduledPackageRequest' is not null or undefined
             assertParamExists('createScheduledPackage', 'createScheduledPackageRequest', createScheduledPackageRequest)
             const localVarPath = `/easyShip/2022-03-23/package`;
@@ -86,7 +86,7 @@ export const EasyShipApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createScheduledPackageBulk: async (createScheduledPackagesRequest: CreateScheduledPackagesRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createScheduledPackageBulk: async (createScheduledPackagesRequest: CreateScheduledPackagesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'createScheduledPackagesRequest' is not null or undefined
             assertParamExists('createScheduledPackageBulk', 'createScheduledPackagesRequest', createScheduledPackagesRequest)
             const localVarPath = `/easyShip/2022-03-23/packages/bulk`;
@@ -122,7 +122,7 @@ export const EasyShipApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getScheduledPackage: async (amazonOrderId: string, marketplaceId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getScheduledPackage: async (amazonOrderId: string, marketplaceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'amazonOrderId' is not null or undefined
             assertParamExists('getScheduledPackage', 'amazonOrderId', amazonOrderId)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -164,7 +164,7 @@ export const EasyShipApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listHandoverSlots: async (listHandoverSlotsRequest?: ListHandoverSlotsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listHandoverSlots: async (listHandoverSlotsRequest?: ListHandoverSlotsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/easyShip/2022-03-23/timeSlot`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -197,7 +197,7 @@ export const EasyShipApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateScheduledPackages: async (updateScheduledPackagesRequest?: UpdateScheduledPackagesRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateScheduledPackages: async (updateScheduledPackagesRequest?: UpdateScheduledPackagesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/easyShip/2022-03-23/package`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -240,9 +240,11 @@ export const EasyShipApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createScheduledPackage(createScheduledPackageRequest: CreateScheduledPackageRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Package>> {
+        async createScheduledPackage(createScheduledPackageRequest: CreateScheduledPackageRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Package>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createScheduledPackage(createScheduledPackageRequest, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['EasyShipApi.createScheduledPackage']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * This operation automatically schedules a time slot for all the `amazonOrderId`s given as input, generating the associated shipping labels, along with other compliance documents according to the marketplace (refer to the [marketplace document support table](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support-table)).  Developers calling this operation may optionally assign a `packageDetails` object, allowing them to input a preferred time slot for each order in ther request. In this case, Amazon will try to schedule the respective packages using their optional settings. On the other hand, *i.e.*, if the time slot is not provided, Amazon will then pick the earliest time slot possible.   Regarding the shipping label\'s file format, external developers are able to choose between PDF or ZPL, and Amazon will create the label accordingly.  This operation returns an array composed of the scheduled packages, and a short-lived URL pointing to a zip file containing the generated shipping labels and the other documents enabled for your marketplace. If at least an order couldn\'t be scheduled, then Amazon adds the `rejectedOrders` list into the response, which contains an entry for each order we couldn\'t process. Each entry is composed of an error message describing the reason of the failure, so that sellers can take action.  The table below displays the supported request and burst maximum rates:  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -250,9 +252,11 @@ export const EasyShipApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createScheduledPackageBulk(createScheduledPackagesRequest: CreateScheduledPackagesRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateScheduledPackagesResponse>> {
+        async createScheduledPackageBulk(createScheduledPackagesRequest: CreateScheduledPackagesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateScheduledPackagesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createScheduledPackageBulk(createScheduledPackagesRequest, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['EasyShipApi.createScheduledPackageBulk']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns information about a package, including dimensions, weight, time slot information for handover, invoice and item information, and status.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -261,9 +265,11 @@ export const EasyShipApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getScheduledPackage(amazonOrderId: string, marketplaceId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Package>> {
+        async getScheduledPackage(amazonOrderId: string, marketplaceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Package>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getScheduledPackage(amazonOrderId, marketplaceId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['EasyShipApi.getScheduledPackage']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns time slots available for Easy Ship orders to be scheduled based on the package weight and dimensions that the seller specifies.  This operation is available for scheduled and unscheduled orders based on marketplace support. See **Get Time Slots** in the [Marketplace Support Table](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support-table).  This operation can return time slots that have either pickup or drop-off handover methods - see **Supported Handover Methods** in the [Marketplace Support Table](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support-table).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -271,9 +277,11 @@ export const EasyShipApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listHandoverSlots(listHandoverSlotsRequest?: ListHandoverSlotsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListHandoverSlotsResponse>> {
+        async listHandoverSlots(listHandoverSlotsRequest?: ListHandoverSlotsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListHandoverSlotsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listHandoverSlots(listHandoverSlotsRequest, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['EasyShipApi.listHandoverSlots']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Updates the time slot for handing over the package indicated by the specified `scheduledPackageId`. You can get the new `slotId` value for the time slot by calling the `listHandoverSlots` operation before making another `patch` call.  See the **Update Package** column in the [Marketplace Support Table](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support-table) to see which marketplaces this operation is supported in.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -281,9 +289,11 @@ export const EasyShipApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateScheduledPackages(updateScheduledPackagesRequest?: UpdateScheduledPackagesRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Packages>> {
+        async updateScheduledPackages(updateScheduledPackagesRequest?: UpdateScheduledPackagesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Packages>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateScheduledPackages(updateScheduledPackagesRequest, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['EasyShipApi.updateScheduledPackages']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -301,7 +311,7 @@ export const EasyShipApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createScheduledPackage(requestParameters: EasyShipApiCreateScheduledPackageRequest, options?: AxiosRequestConfig): AxiosPromise<Package> {
+        createScheduledPackage(requestParameters: EasyShipApiCreateScheduledPackageRequest, options?: RawAxiosRequestConfig): AxiosPromise<Package> {
             return localVarFp.createScheduledPackage(requestParameters.createScheduledPackageRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -310,7 +320,7 @@ export const EasyShipApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createScheduledPackageBulk(requestParameters: EasyShipApiCreateScheduledPackageBulkRequest, options?: AxiosRequestConfig): AxiosPromise<CreateScheduledPackagesResponse> {
+        createScheduledPackageBulk(requestParameters: EasyShipApiCreateScheduledPackageBulkRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateScheduledPackagesResponse> {
             return localVarFp.createScheduledPackageBulk(requestParameters.createScheduledPackagesRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -319,7 +329,7 @@ export const EasyShipApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getScheduledPackage(requestParameters: EasyShipApiGetScheduledPackageRequest, options?: AxiosRequestConfig): AxiosPromise<Package> {
+        getScheduledPackage(requestParameters: EasyShipApiGetScheduledPackageRequest, options?: RawAxiosRequestConfig): AxiosPromise<Package> {
             return localVarFp.getScheduledPackage(requestParameters.amazonOrderId, requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -328,7 +338,7 @@ export const EasyShipApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listHandoverSlots(requestParameters: EasyShipApiListHandoverSlotsRequest = {}, options?: AxiosRequestConfig): AxiosPromise<ListHandoverSlotsResponse> {
+        listHandoverSlots(requestParameters: EasyShipApiListHandoverSlotsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ListHandoverSlotsResponse> {
             return localVarFp.listHandoverSlots(requestParameters.listHandoverSlotsRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -337,7 +347,7 @@ export const EasyShipApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateScheduledPackages(requestParameters: EasyShipApiUpdateScheduledPackagesRequest = {}, options?: AxiosRequestConfig): AxiosPromise<Packages> {
+        updateScheduledPackages(requestParameters: EasyShipApiUpdateScheduledPackagesRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Packages> {
             return localVarFp.updateScheduledPackages(requestParameters.updateScheduledPackagesRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -434,7 +444,7 @@ export class EasyShipApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EasyShipApi
      */
-    public createScheduledPackage(requestParameters: EasyShipApiCreateScheduledPackageRequest, options?: AxiosRequestConfig) {
+    public createScheduledPackage(requestParameters: EasyShipApiCreateScheduledPackageRequest, options?: RawAxiosRequestConfig) {
         return EasyShipApiFp(this.configuration).createScheduledPackage(requestParameters.createScheduledPackageRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -445,7 +455,7 @@ export class EasyShipApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EasyShipApi
      */
-    public createScheduledPackageBulk(requestParameters: EasyShipApiCreateScheduledPackageBulkRequest, options?: AxiosRequestConfig) {
+    public createScheduledPackageBulk(requestParameters: EasyShipApiCreateScheduledPackageBulkRequest, options?: RawAxiosRequestConfig) {
         return EasyShipApiFp(this.configuration).createScheduledPackageBulk(requestParameters.createScheduledPackagesRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -456,7 +466,7 @@ export class EasyShipApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EasyShipApi
      */
-    public getScheduledPackage(requestParameters: EasyShipApiGetScheduledPackageRequest, options?: AxiosRequestConfig) {
+    public getScheduledPackage(requestParameters: EasyShipApiGetScheduledPackageRequest, options?: RawAxiosRequestConfig) {
         return EasyShipApiFp(this.configuration).getScheduledPackage(requestParameters.amazonOrderId, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -467,7 +477,7 @@ export class EasyShipApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EasyShipApi
      */
-    public listHandoverSlots(requestParameters: EasyShipApiListHandoverSlotsRequest = {}, options?: AxiosRequestConfig) {
+    public listHandoverSlots(requestParameters: EasyShipApiListHandoverSlotsRequest = {}, options?: RawAxiosRequestConfig) {
         return EasyShipApiFp(this.configuration).listHandoverSlots(requestParameters.listHandoverSlotsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -478,7 +488,8 @@ export class EasyShipApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EasyShipApi
      */
-    public updateScheduledPackages(requestParameters: EasyShipApiUpdateScheduledPackagesRequest = {}, options?: AxiosRequestConfig) {
+    public updateScheduledPackages(requestParameters: EasyShipApiUpdateScheduledPackagesRequest = {}, options?: RawAxiosRequestConfig) {
         return EasyShipApiFp(this.configuration).updateScheduledPackages(requestParameters.updateScheduledPackagesRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

@@ -14,33 +14,33 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CreateReportResponse } from '../models';
+import type { CreateReportResponse } from '../models';
 // @ts-ignore
-import { CreateReportScheduleResponse } from '../models';
+import type { CreateReportScheduleResponse } from '../models';
 // @ts-ignore
-import { CreateReportScheduleSpecification } from '../models';
+import type { CreateReportScheduleSpecification } from '../models';
 // @ts-ignore
-import { CreateReportSpecification } from '../models';
+import type { CreateReportSpecification } from '../models';
 // @ts-ignore
-import { ErrorList } from '../models';
+import type { ErrorList } from '../models';
 // @ts-ignore
-import { GetReportsResponse } from '../models';
+import type { GetReportsResponse } from '../models';
 // @ts-ignore
-import { Report } from '../models';
+import type { Report } from '../models';
 // @ts-ignore
-import { ReportDocument } from '../models';
+import type { ReportDocument } from '../models';
 // @ts-ignore
-import { ReportSchedule } from '../models';
+import type { ReportSchedule } from '../models';
 // @ts-ignore
-import { ReportScheduleList } from '../models';
+import type { ReportScheduleList } from '../models';
 /**
  * ReportsApi - axios parameter creator
  * @export
@@ -53,7 +53,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelReport: async (reportId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        cancelReport: async (reportId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'reportId' is not null or undefined
             assertParamExists('cancelReport', 'reportId', reportId)
             const localVarPath = `/reports/2021-06-30/reports/{reportId}`
@@ -86,7 +86,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelReportSchedule: async (reportScheduleId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        cancelReportSchedule: async (reportScheduleId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'reportScheduleId' is not null or undefined
             assertParamExists('cancelReportSchedule', 'reportScheduleId', reportScheduleId)
             const localVarPath = `/reports/2021-06-30/schedules/{reportScheduleId}`
@@ -119,7 +119,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createReport: async (body: CreateReportSpecification, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createReport: async (body: CreateReportSpecification, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createReport', 'body', body)
             const localVarPath = `/reports/2021-06-30/reports`;
@@ -154,7 +154,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createReportSchedule: async (body: CreateReportScheduleSpecification, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createReportSchedule: async (body: CreateReportScheduleSpecification, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createReportSchedule', 'body', body)
             const localVarPath = `/reports/2021-06-30/schedules`;
@@ -189,7 +189,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReport: async (reportId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getReport: async (reportId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'reportId' is not null or undefined
             assertParamExists('getReport', 'reportId', reportId)
             const localVarPath = `/reports/2021-06-30/reports/{reportId}`
@@ -222,7 +222,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReportDocument: async (reportDocumentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getReportDocument: async (reportDocumentId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'reportDocumentId' is not null or undefined
             assertParamExists('getReportDocument', 'reportDocumentId', reportDocumentId)
             const localVarPath = `/reports/2021-06-30/documents/{reportDocumentId}`
@@ -255,7 +255,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReportSchedule: async (reportScheduleId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getReportSchedule: async (reportScheduleId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'reportScheduleId' is not null or undefined
             assertParamExists('getReportSchedule', 'reportScheduleId', reportScheduleId)
             const localVarPath = `/reports/2021-06-30/schedules/{reportScheduleId}`
@@ -288,7 +288,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReportSchedules: async (reportTypes: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getReportSchedules: async (reportTypes: Array<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'reportTypes' is not null or undefined
             assertParamExists('getReportSchedules', 'reportTypes', reportTypes)
             const localVarPath = `/reports/2021-06-30/schedules`;
@@ -321,7 +321,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * Returns report details for the reports that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {Array<string>} [reportTypes] A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required.
-         * @param {Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>} [processingStatuses] A list of processing statuses used to filter reports.
+         * @param {Array<GetReportsProcessingStatusesEnum>} [processingStatuses] A list of processing statuses used to filter reports.
          * @param {Array<string>} [marketplaceIds] A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify.
          * @param {number} [pageSize] The maximum number of reports to return in a single call.
          * @param {string} [createdSince] The earliest report creation date and time for reports to include in the response, in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days.
@@ -330,7 +330,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReports: async (reportTypes?: Array<string>, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, marketplaceIds?: Array<string>, pageSize?: number, createdSince?: string, createdUntil?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getReports: async (reportTypes?: Array<string>, processingStatuses?: Array<GetReportsProcessingStatusesEnum>, marketplaceIds?: Array<string>, pageSize?: number, createdSince?: string, createdUntil?: string, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/reports/2021-06-30/reports`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -402,9 +402,11 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelReport(reportId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async cancelReport(reportId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelReport(reportId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ReportsApi.cancelReport']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Cancels the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -412,9 +414,11 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelReportSchedule(reportScheduleId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async cancelReportSchedule(reportScheduleId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelReportSchedule(reportScheduleId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ReportsApi.cancelReportSchedule']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Creates a report.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -422,9 +426,11 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createReport(body: CreateReportSpecification, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateReportResponse>> {
+        async createReport(body: CreateReportSpecification, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateReportResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createReport(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ReportsApi.createReport']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Creates a report schedule. If a report schedule with the same report type and marketplace IDs already exists, it will be cancelled and replaced with this one.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -432,9 +438,11 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createReportSchedule(body: CreateReportScheduleSpecification, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateReportScheduleResponse>> {
+        async createReportSchedule(body: CreateReportScheduleSpecification, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateReportScheduleResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createReportSchedule(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ReportsApi.createReportSchedule']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns report details (including the `reportDocumentId`, if available) for the report that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -442,9 +450,11 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getReport(reportId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Report>> {
+        async getReport(reportId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Report>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getReport(reportId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ReportsApi.getReport']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the information required for retrieving a report document\'s contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -452,9 +462,11 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getReportDocument(reportDocumentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReportDocument>> {
+        async getReportDocument(reportDocumentId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReportDocument>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getReportDocument(reportDocumentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ReportsApi.getReportDocument']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns report schedule details for the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -462,9 +474,11 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getReportSchedule(reportScheduleId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReportSchedule>> {
+        async getReportSchedule(reportScheduleId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReportSchedule>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getReportSchedule(reportScheduleId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ReportsApi.getReportSchedule']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns report schedule details that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -472,14 +486,16 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getReportSchedules(reportTypes: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReportScheduleList>> {
+        async getReportSchedules(reportTypes: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReportScheduleList>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getReportSchedules(reportTypes, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ReportsApi.getReportSchedules']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns report details for the reports that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {Array<string>} [reportTypes] A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required.
-         * @param {Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>} [processingStatuses] A list of processing statuses used to filter reports.
+         * @param {Array<GetReportsProcessingStatusesEnum>} [processingStatuses] A list of processing statuses used to filter reports.
          * @param {Array<string>} [marketplaceIds] A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify.
          * @param {number} [pageSize] The maximum number of reports to return in a single call.
          * @param {string} [createdSince] The earliest report creation date and time for reports to include in the response, in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days.
@@ -488,9 +504,11 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getReports(reportTypes?: Array<string>, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, marketplaceIds?: Array<string>, pageSize?: number, createdSince?: string, createdUntil?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetReportsResponse>> {
+        async getReports(reportTypes?: Array<string>, processingStatuses?: Array<GetReportsProcessingStatusesEnum>, marketplaceIds?: Array<string>, pageSize?: number, createdSince?: string, createdUntil?: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetReportsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getReports(reportTypes, processingStatuses, marketplaceIds, pageSize, createdSince, createdUntil, nextToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ReportsApi.getReports']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -508,7 +526,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelReport(requestParameters: ReportsApiCancelReportRequest, options?: AxiosRequestConfig): AxiosPromise<void> {
+        cancelReport(requestParameters: ReportsApiCancelReportRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.cancelReport(requestParameters.reportId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -517,7 +535,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelReportSchedule(requestParameters: ReportsApiCancelReportScheduleRequest, options?: AxiosRequestConfig): AxiosPromise<void> {
+        cancelReportSchedule(requestParameters: ReportsApiCancelReportScheduleRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.cancelReportSchedule(requestParameters.reportScheduleId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -526,7 +544,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createReport(requestParameters: ReportsApiCreateReportRequest, options?: AxiosRequestConfig): AxiosPromise<CreateReportResponse> {
+        createReport(requestParameters: ReportsApiCreateReportRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateReportResponse> {
             return localVarFp.createReport(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -535,7 +553,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createReportSchedule(requestParameters: ReportsApiCreateReportScheduleRequest, options?: AxiosRequestConfig): AxiosPromise<CreateReportScheduleResponse> {
+        createReportSchedule(requestParameters: ReportsApiCreateReportScheduleRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateReportScheduleResponse> {
             return localVarFp.createReportSchedule(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -544,7 +562,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReport(requestParameters: ReportsApiGetReportRequest, options?: AxiosRequestConfig): AxiosPromise<Report> {
+        getReport(requestParameters: ReportsApiGetReportRequest, options?: RawAxiosRequestConfig): AxiosPromise<Report> {
             return localVarFp.getReport(requestParameters.reportId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -553,7 +571,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReportDocument(requestParameters: ReportsApiGetReportDocumentRequest, options?: AxiosRequestConfig): AxiosPromise<ReportDocument> {
+        getReportDocument(requestParameters: ReportsApiGetReportDocumentRequest, options?: RawAxiosRequestConfig): AxiosPromise<ReportDocument> {
             return localVarFp.getReportDocument(requestParameters.reportDocumentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -562,7 +580,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReportSchedule(requestParameters: ReportsApiGetReportScheduleRequest, options?: AxiosRequestConfig): AxiosPromise<ReportSchedule> {
+        getReportSchedule(requestParameters: ReportsApiGetReportScheduleRequest, options?: RawAxiosRequestConfig): AxiosPromise<ReportSchedule> {
             return localVarFp.getReportSchedule(requestParameters.reportScheduleId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -571,7 +589,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReportSchedules(requestParameters: ReportsApiGetReportSchedulesRequest, options?: AxiosRequestConfig): AxiosPromise<ReportScheduleList> {
+        getReportSchedules(requestParameters: ReportsApiGetReportSchedulesRequest, options?: RawAxiosRequestConfig): AxiosPromise<ReportScheduleList> {
             return localVarFp.getReportSchedules(requestParameters.reportTypes, options).then((request) => request(axios, basePath));
         },
         /**
@@ -580,7 +598,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReports(requestParameters: ReportsApiGetReportsRequest = {}, options?: AxiosRequestConfig): AxiosPromise<GetReportsResponse> {
+        getReports(requestParameters: ReportsApiGetReportsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<GetReportsResponse> {
             return localVarFp.getReports(requestParameters.reportTypes, requestParameters.processingStatuses, requestParameters.marketplaceIds, requestParameters.pageSize, requestParameters.createdSince, requestParameters.createdUntil, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
     };
@@ -716,7 +734,7 @@ export interface ReportsApiGetReportsRequest {
      * @type {Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>}
      * @memberof ReportsApiGetReports
      */
-    readonly processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>
+    readonly processingStatuses?: Array<GetReportsProcessingStatusesEnum>
 
     /**
      * A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify.
@@ -768,7 +786,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public cancelReport(requestParameters: ReportsApiCancelReportRequest, options?: AxiosRequestConfig) {
+    public cancelReport(requestParameters: ReportsApiCancelReportRequest, options?: RawAxiosRequestConfig) {
         return ReportsApiFp(this.configuration).cancelReport(requestParameters.reportId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -779,7 +797,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public cancelReportSchedule(requestParameters: ReportsApiCancelReportScheduleRequest, options?: AxiosRequestConfig) {
+    public cancelReportSchedule(requestParameters: ReportsApiCancelReportScheduleRequest, options?: RawAxiosRequestConfig) {
         return ReportsApiFp(this.configuration).cancelReportSchedule(requestParameters.reportScheduleId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -790,7 +808,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public createReport(requestParameters: ReportsApiCreateReportRequest, options?: AxiosRequestConfig) {
+    public createReport(requestParameters: ReportsApiCreateReportRequest, options?: RawAxiosRequestConfig) {
         return ReportsApiFp(this.configuration).createReport(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -801,7 +819,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public createReportSchedule(requestParameters: ReportsApiCreateReportScheduleRequest, options?: AxiosRequestConfig) {
+    public createReportSchedule(requestParameters: ReportsApiCreateReportScheduleRequest, options?: RawAxiosRequestConfig) {
         return ReportsApiFp(this.configuration).createReportSchedule(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -812,7 +830,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public getReport(requestParameters: ReportsApiGetReportRequest, options?: AxiosRequestConfig) {
+    public getReport(requestParameters: ReportsApiGetReportRequest, options?: RawAxiosRequestConfig) {
         return ReportsApiFp(this.configuration).getReport(requestParameters.reportId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -823,7 +841,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public getReportDocument(requestParameters: ReportsApiGetReportDocumentRequest, options?: AxiosRequestConfig) {
+    public getReportDocument(requestParameters: ReportsApiGetReportDocumentRequest, options?: RawAxiosRequestConfig) {
         return ReportsApiFp(this.configuration).getReportDocument(requestParameters.reportDocumentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -834,7 +852,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public getReportSchedule(requestParameters: ReportsApiGetReportScheduleRequest, options?: AxiosRequestConfig) {
+    public getReportSchedule(requestParameters: ReportsApiGetReportScheduleRequest, options?: RawAxiosRequestConfig) {
         return ReportsApiFp(this.configuration).getReportSchedule(requestParameters.reportScheduleId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -845,7 +863,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public getReportSchedules(requestParameters: ReportsApiGetReportSchedulesRequest, options?: AxiosRequestConfig) {
+    public getReportSchedules(requestParameters: ReportsApiGetReportSchedulesRequest, options?: RawAxiosRequestConfig) {
         return ReportsApiFp(this.configuration).getReportSchedules(requestParameters.reportTypes, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -856,7 +874,19 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ReportsApi
      */
-    public getReports(requestParameters: ReportsApiGetReportsRequest = {}, options?: AxiosRequestConfig) {
+    public getReports(requestParameters: ReportsApiGetReportsRequest = {}, options?: RawAxiosRequestConfig) {
         return ReportsApiFp(this.configuration).getReports(requestParameters.reportTypes, requestParameters.processingStatuses, requestParameters.marketplaceIds, requestParameters.pageSize, requestParameters.createdSince, requestParameters.createdUntil, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetReportsProcessingStatusesEnum = {
+    Cancelled: 'CANCELLED',
+    Done: 'DONE',
+    Fatal: 'FATAL',
+    InProgress: 'IN_PROGRESS',
+    InQueue: 'IN_QUEUE'
+} as const;
+export type GetReportsProcessingStatusesEnum = typeof GetReportsProcessingStatusesEnum[keyof typeof GetReportsProcessingStatusesEnum];

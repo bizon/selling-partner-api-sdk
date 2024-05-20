@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeaturedOffer } from './featured-offer';
+import type { FeaturedOffer } from './featured-offer';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeaturedOfferExpectedPrice } from './featured-offer-expected-price';
+import type { FeaturedOfferExpectedPrice } from './featured-offer-expected-price';
 
 /**
  * The featured offer expected price result data for the requested offer.

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Marketplace } from './marketplace';
+import type { Marketplace } from './marketplace';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Participation } from './participation';
+import type { Participation } from './participation';
 
 /**
  * 

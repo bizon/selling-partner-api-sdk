@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { LinkableCarrier } from './linkable-carrier';
+import type { LinkableCarrier } from './linkable-carrier';
 
 /**
  * The Response  for the GetCarrierAccountFormInputsResponse operation.

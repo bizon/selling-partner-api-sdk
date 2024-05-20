@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeatureSettings } from './feature-settings';
+import type { FeatureSettings } from './feature-settings';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentAction } from './fulfillment-action';
+import type { FulfillmentAction } from './fulfillment-action';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentPolicy } from './fulfillment-policy';
+import type { FulfillmentPolicy } from './fulfillment-policy';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShippingSpeedCategory } from './shipping-speed-category';
+import type { ShippingSpeedCategory } from './shipping-speed-category';
 // May contain unused imports in some cases
 // @ts-ignore
-import { UpdateFulfillmentOrderItem } from './update-fulfillment-order-item';
+import type { UpdateFulfillmentOrderItem } from './update-fulfillment-order-item';
 
 /**
  * The request body schema for the `updateFulfillmentOrder` operation.

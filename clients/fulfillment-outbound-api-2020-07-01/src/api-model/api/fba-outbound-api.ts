@@ -14,49 +14,49 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CancelFulfillmentOrderResponse } from '../models';
+import type { CancelFulfillmentOrderResponse } from '../models';
 // @ts-ignore
-import { CreateFulfillmentOrderRequest } from '../models';
+import type { CreateFulfillmentOrderRequest } from '../models';
 // @ts-ignore
-import { CreateFulfillmentOrderResponse } from '../models';
+import type { CreateFulfillmentOrderResponse } from '../models';
 // @ts-ignore
-import { CreateFulfillmentReturnRequest } from '../models';
+import type { CreateFulfillmentReturnRequest } from '../models';
 // @ts-ignore
-import { CreateFulfillmentReturnResponse } from '../models';
+import type { CreateFulfillmentReturnResponse } from '../models';
 // @ts-ignore
-import { GetFeatureInventoryResponse } from '../models';
+import type { GetFeatureInventoryResponse } from '../models';
 // @ts-ignore
-import { GetFeatureSkuResponse } from '../models';
+import type { GetFeatureSkuResponse } from '../models';
 // @ts-ignore
-import { GetFeaturesResponse } from '../models';
+import type { GetFeaturesResponse } from '../models';
 // @ts-ignore
-import { GetFulfillmentOrderResponse } from '../models';
+import type { GetFulfillmentOrderResponse } from '../models';
 // @ts-ignore
-import { GetFulfillmentPreviewRequest } from '../models';
+import type { GetFulfillmentPreviewRequest } from '../models';
 // @ts-ignore
-import { GetFulfillmentPreviewResponse } from '../models';
+import type { GetFulfillmentPreviewResponse } from '../models';
 // @ts-ignore
-import { GetPackageTrackingDetailsResponse } from '../models';
+import type { GetPackageTrackingDetailsResponse } from '../models';
 // @ts-ignore
-import { ListAllFulfillmentOrdersResponse } from '../models';
+import type { ListAllFulfillmentOrdersResponse } from '../models';
 // @ts-ignore
-import { ListReturnReasonCodesResponse } from '../models';
+import type { ListReturnReasonCodesResponse } from '../models';
 // @ts-ignore
-import { SubmitFulfillmentOrderStatusUpdateRequest } from '../models';
+import type { SubmitFulfillmentOrderStatusUpdateRequest } from '../models';
 // @ts-ignore
-import { SubmitFulfillmentOrderStatusUpdateResponse } from '../models';
+import type { SubmitFulfillmentOrderStatusUpdateResponse } from '../models';
 // @ts-ignore
-import { UpdateFulfillmentOrderRequest } from '../models';
+import type { UpdateFulfillmentOrderRequest } from '../models';
 // @ts-ignore
-import { UpdateFulfillmentOrderResponse } from '../models';
+import type { UpdateFulfillmentOrderResponse } from '../models';
 /**
  * FbaOutboundApi - axios parameter creator
  * @export
@@ -69,7 +69,7 @@ export const FbaOutboundApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelFulfillmentOrder: async (sellerFulfillmentOrderId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        cancelFulfillmentOrder: async (sellerFulfillmentOrderId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerFulfillmentOrderId' is not null or undefined
             assertParamExists('cancelFulfillmentOrder', 'sellerFulfillmentOrderId', sellerFulfillmentOrderId)
             const localVarPath = `/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}/cancel`
@@ -102,7 +102,7 @@ export const FbaOutboundApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createFulfillmentOrder: async (body: CreateFulfillmentOrderRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createFulfillmentOrder: async (body: CreateFulfillmentOrderRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createFulfillmentOrder', 'body', body)
             const localVarPath = `/fba/outbound/2020-07-01/fulfillmentOrders`;
@@ -138,7 +138,7 @@ export const FbaOutboundApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createFulfillmentReturn: async (sellerFulfillmentOrderId: string, body: CreateFulfillmentReturnRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createFulfillmentReturn: async (sellerFulfillmentOrderId: string, body: CreateFulfillmentReturnRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerFulfillmentOrderId' is not null or undefined
             assertParamExists('createFulfillmentReturn', 'sellerFulfillmentOrderId', sellerFulfillmentOrderId)
             // verify required parameter 'body' is not null or undefined
@@ -178,7 +178,7 @@ export const FbaOutboundApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFeatureInventory: async (marketplaceId: string, featureName: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getFeatureInventory: async (marketplaceId: string, featureName: string, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getFeatureInventory', 'marketplaceId', marketplaceId)
             // verify required parameter 'featureName' is not null or undefined
@@ -223,7 +223,7 @@ export const FbaOutboundApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFeatureSKU: async (marketplaceId: string, featureName: string, sellerSku: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getFeatureSKU: async (marketplaceId: string, featureName: string, sellerSku: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getFeatureSKU', 'marketplaceId', marketplaceId)
             // verify required parameter 'featureName' is not null or undefined
@@ -265,7 +265,7 @@ export const FbaOutboundApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFeatures: async (marketplaceId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getFeatures: async (marketplaceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getFeatures', 'marketplaceId', marketplaceId)
             const localVarPath = `/fba/outbound/2020-07-01/features`;
@@ -301,7 +301,7 @@ export const FbaOutboundApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFulfillmentOrder: async (sellerFulfillmentOrderId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getFulfillmentOrder: async (sellerFulfillmentOrderId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerFulfillmentOrderId' is not null or undefined
             assertParamExists('getFulfillmentOrder', 'sellerFulfillmentOrderId', sellerFulfillmentOrderId)
             const localVarPath = `/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}`
@@ -334,7 +334,7 @@ export const FbaOutboundApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFulfillmentPreview: async (body: GetFulfillmentPreviewRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getFulfillmentPreview: async (body: GetFulfillmentPreviewRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getFulfillmentPreview', 'body', body)
             const localVarPath = `/fba/outbound/2020-07-01/fulfillmentOrders/preview`;
@@ -369,7 +369,7 @@ export const FbaOutboundApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPackageTrackingDetails: async (packageNumber: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getPackageTrackingDetails: async (packageNumber: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'packageNumber' is not null or undefined
             assertParamExists('getPackageTrackingDetails', 'packageNumber', packageNumber)
             const localVarPath = `/fba/outbound/2020-07-01/tracking`;
@@ -406,7 +406,7 @@ export const FbaOutboundApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listAllFulfillmentOrders: async (queryStartDate?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listAllFulfillmentOrders: async (queryStartDate?: string, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/fba/outbound/2020-07-01/fulfillmentOrders`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -449,7 +449,7 @@ export const FbaOutboundApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listReturnReasonCodes: async (sellerSku: string, marketplaceId?: string, sellerFulfillmentOrderId?: string, language?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listReturnReasonCodes: async (sellerSku: string, marketplaceId?: string, sellerFulfillmentOrderId?: string, language?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerSku' is not null or undefined
             assertParamExists('listReturnReasonCodes', 'sellerSku', sellerSku)
             const localVarPath = `/fba/outbound/2020-07-01/returnReasonCodes`;
@@ -498,7 +498,7 @@ export const FbaOutboundApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitFulfillmentOrderStatusUpdate: async (sellerFulfillmentOrderId: string, body: SubmitFulfillmentOrderStatusUpdateRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        submitFulfillmentOrderStatusUpdate: async (sellerFulfillmentOrderId: string, body: SubmitFulfillmentOrderStatusUpdateRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerFulfillmentOrderId' is not null or undefined
             assertParamExists('submitFulfillmentOrderStatusUpdate', 'sellerFulfillmentOrderId', sellerFulfillmentOrderId)
             // verify required parameter 'body' is not null or undefined
@@ -537,7 +537,7 @@ export const FbaOutboundApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateFulfillmentOrder: async (sellerFulfillmentOrderId: string, body: UpdateFulfillmentOrderRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateFulfillmentOrder: async (sellerFulfillmentOrderId: string, body: UpdateFulfillmentOrderRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerFulfillmentOrderId' is not null or undefined
             assertParamExists('updateFulfillmentOrder', 'sellerFulfillmentOrderId', sellerFulfillmentOrderId)
             // verify required parameter 'body' is not null or undefined
@@ -585,9 +585,11 @@ export const FbaOutboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelFulfillmentOrder(sellerFulfillmentOrderId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelFulfillmentOrderResponse>> {
+        async cancelFulfillmentOrder(sellerFulfillmentOrderId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelFulfillmentOrderResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelFulfillmentOrder(sellerFulfillmentOrderId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaOutboundApi.cancelFulfillmentOrder']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Requests that Amazon ship items from the seller\'s inventory in Amazon\'s fulfillment network to a destination address.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
@@ -595,9 +597,11 @@ export const FbaOutboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createFulfillmentOrder(body: CreateFulfillmentOrderRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateFulfillmentOrderResponse>> {
+        async createFulfillmentOrder(body: CreateFulfillmentOrderRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateFulfillmentOrderResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createFulfillmentOrder(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaOutboundApi.createFulfillmentOrder']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Creates a fulfillment return.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -606,9 +610,11 @@ export const FbaOutboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createFulfillmentReturn(sellerFulfillmentOrderId: string, body: CreateFulfillmentReturnRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateFulfillmentReturnResponse>> {
+        async createFulfillmentReturn(sellerFulfillmentOrderId: string, body: CreateFulfillmentReturnRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateFulfillmentReturnResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createFulfillmentReturn(sellerFulfillmentOrderId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaOutboundApi.createFulfillmentReturn']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a list of inventory items that are eligible for the fulfillment feature you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)..
@@ -618,9 +624,11 @@ export const FbaOutboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getFeatureInventory(marketplaceId: string, featureName: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeatureInventoryResponse>> {
+        async getFeatureInventory(marketplaceId: string, featureName: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeatureInventoryResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getFeatureInventory(marketplaceId, featureName, nextToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaOutboundApi.getFeatureInventory']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn\'t eligible, the response will contain an empty skuInfo object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -630,9 +638,11 @@ export const FbaOutboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getFeatureSKU(marketplaceId: string, featureName: string, sellerSku: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeatureSkuResponse>> {
+        async getFeatureSKU(marketplaceId: string, featureName: string, sellerSku: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeatureSkuResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getFeatureSKU(marketplaceId, featureName, sellerSku, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaOutboundApi.getFeatureSKU']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a list of features available for Multi-Channel Fulfillment orders in the marketplace you specify, and whether the seller for which you made the call is enrolled for each feature.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -640,9 +650,11 @@ export const FbaOutboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getFeatures(marketplaceId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeaturesResponse>> {
+        async getFeatures(marketplaceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeaturesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getFeatures(marketplaceId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaOutboundApi.getFeatures']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the fulfillment order indicated by the specified order identifier.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -650,9 +662,11 @@ export const FbaOutboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getFulfillmentOrder(sellerFulfillmentOrderId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFulfillmentOrderResponse>> {
+        async getFulfillmentOrder(sellerFulfillmentOrderId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFulfillmentOrderResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getFulfillmentOrder(sellerFulfillmentOrderId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaOutboundApi.getFulfillmentOrder']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a list of fulfillment order previews based on shipping criteria that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -660,9 +674,11 @@ export const FbaOutboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getFulfillmentPreview(body: GetFulfillmentPreviewRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFulfillmentPreviewResponse>> {
+        async getFulfillmentPreview(body: GetFulfillmentPreviewRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFulfillmentPreviewResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getFulfillmentPreview(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaOutboundApi.getFulfillmentPreview']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns delivery tracking information for a package in an outbound shipment for a Multi-Channel Fulfillment order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -670,9 +686,11 @@ export const FbaOutboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getPackageTrackingDetails(packageNumber: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPackageTrackingDetailsResponse>> {
+        async getPackageTrackingDetails(packageNumber: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPackageTrackingDetailsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getPackageTrackingDetails(packageNumber, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaOutboundApi.getPackageTrackingDetails']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the next token parameter.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
@@ -681,9 +699,11 @@ export const FbaOutboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listAllFulfillmentOrders(queryStartDate?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListAllFulfillmentOrdersResponse>> {
+        async listAllFulfillmentOrders(queryStartDate?: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListAllFulfillmentOrdersResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listAllFulfillmentOrders(queryStartDate, nextToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaOutboundApi.listAllFulfillmentOrders']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a list of return reason codes for a seller SKU in a given marketplace. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -694,9 +714,11 @@ export const FbaOutboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listReturnReasonCodes(sellerSku: string, marketplaceId?: string, sellerFulfillmentOrderId?: string, language?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListReturnReasonCodesResponse>> {
+        async listReturnReasonCodes(sellerSku: string, marketplaceId?: string, sellerFulfillmentOrderId?: string, language?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListReturnReasonCodesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listReturnReasonCodes(sellerSku, marketplaceId, sellerFulfillmentOrderId, language, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaOutboundApi.listReturnReasonCodes']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Requests that Amazon update the status of an order in the sandbox testing environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Fulfillment Outbound Dynamic Sandbox Guide](https://developer-docs.amazon.com/sp-api/docs/fulfillment-outbound-dynamic-sandbox-guide) and [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
@@ -705,9 +727,11 @@ export const FbaOutboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async submitFulfillmentOrderStatusUpdate(sellerFulfillmentOrderId: string, body: SubmitFulfillmentOrderStatusUpdateRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitFulfillmentOrderStatusUpdateResponse>> {
+        async submitFulfillmentOrderStatusUpdate(sellerFulfillmentOrderId: string, body: SubmitFulfillmentOrderStatusUpdateRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitFulfillmentOrderStatusUpdateResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.submitFulfillmentOrderStatusUpdate(sellerFulfillmentOrderId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaOutboundApi.submitFulfillmentOrderStatusUpdate']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Updates and/or requests shipment for a fulfillment order with an order hold on it.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -716,9 +740,11 @@ export const FbaOutboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateFulfillmentOrder(sellerFulfillmentOrderId: string, body: UpdateFulfillmentOrderRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UpdateFulfillmentOrderResponse>> {
+        async updateFulfillmentOrder(sellerFulfillmentOrderId: string, body: UpdateFulfillmentOrderRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UpdateFulfillmentOrderResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateFulfillmentOrder(sellerFulfillmentOrderId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaOutboundApi.updateFulfillmentOrder']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -736,7 +762,7 @@ export const FbaOutboundApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelFulfillmentOrder(requestParameters: FbaOutboundApiCancelFulfillmentOrderRequest, options?: AxiosRequestConfig): AxiosPromise<CancelFulfillmentOrderResponse> {
+        cancelFulfillmentOrder(requestParameters: FbaOutboundApiCancelFulfillmentOrderRequest, options?: RawAxiosRequestConfig): AxiosPromise<CancelFulfillmentOrderResponse> {
             return localVarFp.cancelFulfillmentOrder(requestParameters.sellerFulfillmentOrderId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -745,7 +771,7 @@ export const FbaOutboundApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createFulfillmentOrder(requestParameters: FbaOutboundApiCreateFulfillmentOrderRequest, options?: AxiosRequestConfig): AxiosPromise<CreateFulfillmentOrderResponse> {
+        createFulfillmentOrder(requestParameters: FbaOutboundApiCreateFulfillmentOrderRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateFulfillmentOrderResponse> {
             return localVarFp.createFulfillmentOrder(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -754,7 +780,7 @@ export const FbaOutboundApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createFulfillmentReturn(requestParameters: FbaOutboundApiCreateFulfillmentReturnRequest, options?: AxiosRequestConfig): AxiosPromise<CreateFulfillmentReturnResponse> {
+        createFulfillmentReturn(requestParameters: FbaOutboundApiCreateFulfillmentReturnRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateFulfillmentReturnResponse> {
             return localVarFp.createFulfillmentReturn(requestParameters.sellerFulfillmentOrderId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -763,7 +789,7 @@ export const FbaOutboundApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFeatureInventory(requestParameters: FbaOutboundApiGetFeatureInventoryRequest, options?: AxiosRequestConfig): AxiosPromise<GetFeatureInventoryResponse> {
+        getFeatureInventory(requestParameters: FbaOutboundApiGetFeatureInventoryRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetFeatureInventoryResponse> {
             return localVarFp.getFeatureInventory(requestParameters.marketplaceId, requestParameters.featureName, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -772,7 +798,7 @@ export const FbaOutboundApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFeatureSKU(requestParameters: FbaOutboundApiGetFeatureSKURequest, options?: AxiosRequestConfig): AxiosPromise<GetFeatureSkuResponse> {
+        getFeatureSKU(requestParameters: FbaOutboundApiGetFeatureSKURequest, options?: RawAxiosRequestConfig): AxiosPromise<GetFeatureSkuResponse> {
             return localVarFp.getFeatureSKU(requestParameters.marketplaceId, requestParameters.featureName, requestParameters.sellerSku, options).then((request) => request(axios, basePath));
         },
         /**
@@ -781,7 +807,7 @@ export const FbaOutboundApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFeatures(requestParameters: FbaOutboundApiGetFeaturesRequest, options?: AxiosRequestConfig): AxiosPromise<GetFeaturesResponse> {
+        getFeatures(requestParameters: FbaOutboundApiGetFeaturesRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetFeaturesResponse> {
             return localVarFp.getFeatures(requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -790,7 +816,7 @@ export const FbaOutboundApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFulfillmentOrder(requestParameters: FbaOutboundApiGetFulfillmentOrderRequest, options?: AxiosRequestConfig): AxiosPromise<GetFulfillmentOrderResponse> {
+        getFulfillmentOrder(requestParameters: FbaOutboundApiGetFulfillmentOrderRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetFulfillmentOrderResponse> {
             return localVarFp.getFulfillmentOrder(requestParameters.sellerFulfillmentOrderId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -799,7 +825,7 @@ export const FbaOutboundApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFulfillmentPreview(requestParameters: FbaOutboundApiGetFulfillmentPreviewRequest, options?: AxiosRequestConfig): AxiosPromise<GetFulfillmentPreviewResponse> {
+        getFulfillmentPreview(requestParameters: FbaOutboundApiGetFulfillmentPreviewRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetFulfillmentPreviewResponse> {
             return localVarFp.getFulfillmentPreview(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -808,7 +834,7 @@ export const FbaOutboundApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPackageTrackingDetails(requestParameters: FbaOutboundApiGetPackageTrackingDetailsRequest, options?: AxiosRequestConfig): AxiosPromise<GetPackageTrackingDetailsResponse> {
+        getPackageTrackingDetails(requestParameters: FbaOutboundApiGetPackageTrackingDetailsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetPackageTrackingDetailsResponse> {
             return localVarFp.getPackageTrackingDetails(requestParameters.packageNumber, options).then((request) => request(axios, basePath));
         },
         /**
@@ -817,7 +843,7 @@ export const FbaOutboundApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listAllFulfillmentOrders(requestParameters: FbaOutboundApiListAllFulfillmentOrdersRequest = {}, options?: AxiosRequestConfig): AxiosPromise<ListAllFulfillmentOrdersResponse> {
+        listAllFulfillmentOrders(requestParameters: FbaOutboundApiListAllFulfillmentOrdersRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ListAllFulfillmentOrdersResponse> {
             return localVarFp.listAllFulfillmentOrders(requestParameters.queryStartDate, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -826,7 +852,7 @@ export const FbaOutboundApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listReturnReasonCodes(requestParameters: FbaOutboundApiListReturnReasonCodesRequest, options?: AxiosRequestConfig): AxiosPromise<ListReturnReasonCodesResponse> {
+        listReturnReasonCodes(requestParameters: FbaOutboundApiListReturnReasonCodesRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListReturnReasonCodesResponse> {
             return localVarFp.listReturnReasonCodes(requestParameters.sellerSku, requestParameters.marketplaceId, requestParameters.sellerFulfillmentOrderId, requestParameters.language, options).then((request) => request(axios, basePath));
         },
         /**
@@ -835,7 +861,7 @@ export const FbaOutboundApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitFulfillmentOrderStatusUpdate(requestParameters: FbaOutboundApiSubmitFulfillmentOrderStatusUpdateRequest, options?: AxiosRequestConfig): AxiosPromise<SubmitFulfillmentOrderStatusUpdateResponse> {
+        submitFulfillmentOrderStatusUpdate(requestParameters: FbaOutboundApiSubmitFulfillmentOrderStatusUpdateRequest, options?: RawAxiosRequestConfig): AxiosPromise<SubmitFulfillmentOrderStatusUpdateResponse> {
             return localVarFp.submitFulfillmentOrderStatusUpdate(requestParameters.sellerFulfillmentOrderId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -844,7 +870,7 @@ export const FbaOutboundApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateFulfillmentOrder(requestParameters: FbaOutboundApiUpdateFulfillmentOrderRequest, options?: AxiosRequestConfig): AxiosPromise<UpdateFulfillmentOrderResponse> {
+        updateFulfillmentOrder(requestParameters: FbaOutboundApiUpdateFulfillmentOrderRequest, options?: RawAxiosRequestConfig): AxiosPromise<UpdateFulfillmentOrderResponse> {
             return localVarFp.updateFulfillmentOrder(requestParameters.sellerFulfillmentOrderId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
@@ -1123,7 +1149,7 @@ export class FbaOutboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public cancelFulfillmentOrder(requestParameters: FbaOutboundApiCancelFulfillmentOrderRequest, options?: AxiosRequestConfig) {
+    public cancelFulfillmentOrder(requestParameters: FbaOutboundApiCancelFulfillmentOrderRequest, options?: RawAxiosRequestConfig) {
         return FbaOutboundApiFp(this.configuration).cancelFulfillmentOrder(requestParameters.sellerFulfillmentOrderId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1134,7 +1160,7 @@ export class FbaOutboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public createFulfillmentOrder(requestParameters: FbaOutboundApiCreateFulfillmentOrderRequest, options?: AxiosRequestConfig) {
+    public createFulfillmentOrder(requestParameters: FbaOutboundApiCreateFulfillmentOrderRequest, options?: RawAxiosRequestConfig) {
         return FbaOutboundApiFp(this.configuration).createFulfillmentOrder(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1145,7 +1171,7 @@ export class FbaOutboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public createFulfillmentReturn(requestParameters: FbaOutboundApiCreateFulfillmentReturnRequest, options?: AxiosRequestConfig) {
+    public createFulfillmentReturn(requestParameters: FbaOutboundApiCreateFulfillmentReturnRequest, options?: RawAxiosRequestConfig) {
         return FbaOutboundApiFp(this.configuration).createFulfillmentReturn(requestParameters.sellerFulfillmentOrderId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1156,7 +1182,7 @@ export class FbaOutboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public getFeatureInventory(requestParameters: FbaOutboundApiGetFeatureInventoryRequest, options?: AxiosRequestConfig) {
+    public getFeatureInventory(requestParameters: FbaOutboundApiGetFeatureInventoryRequest, options?: RawAxiosRequestConfig) {
         return FbaOutboundApiFp(this.configuration).getFeatureInventory(requestParameters.marketplaceId, requestParameters.featureName, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1167,7 +1193,7 @@ export class FbaOutboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public getFeatureSKU(requestParameters: FbaOutboundApiGetFeatureSKURequest, options?: AxiosRequestConfig) {
+    public getFeatureSKU(requestParameters: FbaOutboundApiGetFeatureSKURequest, options?: RawAxiosRequestConfig) {
         return FbaOutboundApiFp(this.configuration).getFeatureSKU(requestParameters.marketplaceId, requestParameters.featureName, requestParameters.sellerSku, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1178,7 +1204,7 @@ export class FbaOutboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public getFeatures(requestParameters: FbaOutboundApiGetFeaturesRequest, options?: AxiosRequestConfig) {
+    public getFeatures(requestParameters: FbaOutboundApiGetFeaturesRequest, options?: RawAxiosRequestConfig) {
         return FbaOutboundApiFp(this.configuration).getFeatures(requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1189,7 +1215,7 @@ export class FbaOutboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public getFulfillmentOrder(requestParameters: FbaOutboundApiGetFulfillmentOrderRequest, options?: AxiosRequestConfig) {
+    public getFulfillmentOrder(requestParameters: FbaOutboundApiGetFulfillmentOrderRequest, options?: RawAxiosRequestConfig) {
         return FbaOutboundApiFp(this.configuration).getFulfillmentOrder(requestParameters.sellerFulfillmentOrderId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1200,7 +1226,7 @@ export class FbaOutboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public getFulfillmentPreview(requestParameters: FbaOutboundApiGetFulfillmentPreviewRequest, options?: AxiosRequestConfig) {
+    public getFulfillmentPreview(requestParameters: FbaOutboundApiGetFulfillmentPreviewRequest, options?: RawAxiosRequestConfig) {
         return FbaOutboundApiFp(this.configuration).getFulfillmentPreview(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1211,7 +1237,7 @@ export class FbaOutboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public getPackageTrackingDetails(requestParameters: FbaOutboundApiGetPackageTrackingDetailsRequest, options?: AxiosRequestConfig) {
+    public getPackageTrackingDetails(requestParameters: FbaOutboundApiGetPackageTrackingDetailsRequest, options?: RawAxiosRequestConfig) {
         return FbaOutboundApiFp(this.configuration).getPackageTrackingDetails(requestParameters.packageNumber, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1222,7 +1248,7 @@ export class FbaOutboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public listAllFulfillmentOrders(requestParameters: FbaOutboundApiListAllFulfillmentOrdersRequest = {}, options?: AxiosRequestConfig) {
+    public listAllFulfillmentOrders(requestParameters: FbaOutboundApiListAllFulfillmentOrdersRequest = {}, options?: RawAxiosRequestConfig) {
         return FbaOutboundApiFp(this.configuration).listAllFulfillmentOrders(requestParameters.queryStartDate, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1233,7 +1259,7 @@ export class FbaOutboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public listReturnReasonCodes(requestParameters: FbaOutboundApiListReturnReasonCodesRequest, options?: AxiosRequestConfig) {
+    public listReturnReasonCodes(requestParameters: FbaOutboundApiListReturnReasonCodesRequest, options?: RawAxiosRequestConfig) {
         return FbaOutboundApiFp(this.configuration).listReturnReasonCodes(requestParameters.sellerSku, requestParameters.marketplaceId, requestParameters.sellerFulfillmentOrderId, requestParameters.language, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1244,7 +1270,7 @@ export class FbaOutboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public submitFulfillmentOrderStatusUpdate(requestParameters: FbaOutboundApiSubmitFulfillmentOrderStatusUpdateRequest, options?: AxiosRequestConfig) {
+    public submitFulfillmentOrderStatusUpdate(requestParameters: FbaOutboundApiSubmitFulfillmentOrderStatusUpdateRequest, options?: RawAxiosRequestConfig) {
         return FbaOutboundApiFp(this.configuration).submitFulfillmentOrderStatusUpdate(requestParameters.sellerFulfillmentOrderId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1255,7 +1281,8 @@ export class FbaOutboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaOutboundApi
      */
-    public updateFulfillmentOrder(requestParameters: FbaOutboundApiUpdateFulfillmentOrderRequest, options?: AxiosRequestConfig) {
+    public updateFulfillmentOrder(requestParameters: FbaOutboundApiUpdateFulfillmentOrderRequest, options?: RawAxiosRequestConfig) {
         return FbaOutboundApiFp(this.configuration).updateFulfillmentOrder(requestParameters.sellerFulfillmentOrderId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

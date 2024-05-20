@@ -14,21 +14,21 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { GetShipmentDetailsResponse } from '../models';
+import type { GetShipmentDetailsResponse } from '../models';
 // @ts-ignore
-import { SubmitShipmentConfirmationsRequest } from '../models';
+import type { SubmitShipmentConfirmationsRequest } from '../models';
 // @ts-ignore
-import { SubmitShipmentConfirmationsResponse } from '../models';
+import type { SubmitShipmentConfirmationsResponse } from '../models';
 // @ts-ignore
-import { SubmitShipments } from '../models';
+import type { SubmitShipments } from '../models';
 /**
  * VendorShippingApi - axios parameter creator
  * @export
@@ -38,7 +38,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
         /**
          * Returns the Details about Shipment, Carrier Details,  status of the shipment, container details and other details related to shipment based on the filter parameters value that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {number} [limit] The limit to the number of records returned. Default value is 50 records.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort in ascending or descending order by purchase order creation date.
+         * @param {GetShipmentDetailsSortOrderEnum} [sortOrder] Sort in ascending or descending order by purchase order creation date.
          * @param {string} [nextToken] Used for pagination when there are more shipments than the specified result size limit.
          * @param {string} [createdAfter] Get Shipment Details that became available after this timestamp will be included in the result. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
          * @param {string} [createdBefore] Get Shipment Details that became available before this timestamp will be included in the result. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
@@ -64,7 +64,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipmentDetails: async (limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, createdAfter?: string, createdBefore?: string, shipmentConfirmedBefore?: string, shipmentConfirmedAfter?: string, packageLabelCreatedBefore?: string, packageLabelCreatedAfter?: string, shippedBefore?: string, shippedAfter?: string, estimatedDeliveryBefore?: string, estimatedDeliveryAfter?: string, shipmentDeliveryBefore?: string, shipmentDeliveryAfter?: string, requestedPickUpBefore?: string, requestedPickUpAfter?: string, scheduledPickUpBefore?: string, scheduledPickUpAfter?: string, currentShipmentStatus?: string, vendorShipmentIdentifier?: string, buyerReferenceNumber?: string, buyerWarehouseCode?: string, sellerWarehouseCode?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getShipmentDetails: async (limit?: number, sortOrder?: GetShipmentDetailsSortOrderEnum, nextToken?: string, createdAfter?: string, createdBefore?: string, shipmentConfirmedBefore?: string, shipmentConfirmedAfter?: string, packageLabelCreatedBefore?: string, packageLabelCreatedAfter?: string, shippedBefore?: string, shippedAfter?: string, estimatedDeliveryBefore?: string, estimatedDeliveryAfter?: string, shipmentDeliveryBefore?: string, shipmentDeliveryAfter?: string, requestedPickUpBefore?: string, requestedPickUpAfter?: string, scheduledPickUpBefore?: string, scheduledPickUpAfter?: string, currentShipmentStatus?: string, vendorShipmentIdentifier?: string, buyerReferenceNumber?: string, buyerWarehouseCode?: string, sellerWarehouseCode?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/vendor/shipping/v1/shipments`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -222,7 +222,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitShipmentConfirmations: async (body: SubmitShipmentConfirmationsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        submitShipmentConfirmations: async (body: SubmitShipmentConfirmationsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('submitShipmentConfirmations', 'body', body)
             const localVarPath = `/vendor/shipping/v1/shipmentConfirmations`;
@@ -257,7 +257,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitShipments: async (body: SubmitShipments, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        submitShipments: async (body: SubmitShipments, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('submitShipments', 'body', body)
             const localVarPath = `/vendor/shipping/v1/shipments`;
@@ -299,7 +299,7 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
         /**
          * Returns the Details about Shipment, Carrier Details,  status of the shipment, container details and other details related to shipment based on the filter parameters value that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {number} [limit] The limit to the number of records returned. Default value is 50 records.
-         * @param {'ASC' | 'DESC'} [sortOrder] Sort in ascending or descending order by purchase order creation date.
+         * @param {GetShipmentDetailsSortOrderEnum} [sortOrder] Sort in ascending or descending order by purchase order creation date.
          * @param {string} [nextToken] Used for pagination when there are more shipments than the specified result size limit.
          * @param {string} [createdAfter] Get Shipment Details that became available after this timestamp will be included in the result. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
          * @param {string} [createdBefore] Get Shipment Details that became available before this timestamp will be included in the result. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
@@ -325,9 +325,11 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShipmentDetails(limit?: number, sortOrder?: 'ASC' | 'DESC', nextToken?: string, createdAfter?: string, createdBefore?: string, shipmentConfirmedBefore?: string, shipmentConfirmedAfter?: string, packageLabelCreatedBefore?: string, packageLabelCreatedAfter?: string, shippedBefore?: string, shippedAfter?: string, estimatedDeliveryBefore?: string, estimatedDeliveryAfter?: string, shipmentDeliveryBefore?: string, shipmentDeliveryAfter?: string, requestedPickUpBefore?: string, requestedPickUpAfter?: string, scheduledPickUpBefore?: string, scheduledPickUpAfter?: string, currentShipmentStatus?: string, vendorShipmentIdentifier?: string, buyerReferenceNumber?: string, buyerWarehouseCode?: string, sellerWarehouseCode?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentDetailsResponse>> {
+        async getShipmentDetails(limit?: number, sortOrder?: GetShipmentDetailsSortOrderEnum, nextToken?: string, createdAfter?: string, createdBefore?: string, shipmentConfirmedBefore?: string, shipmentConfirmedAfter?: string, packageLabelCreatedBefore?: string, packageLabelCreatedAfter?: string, shippedBefore?: string, shippedAfter?: string, estimatedDeliveryBefore?: string, estimatedDeliveryAfter?: string, shipmentDeliveryBefore?: string, shipmentDeliveryAfter?: string, requestedPickUpBefore?: string, requestedPickUpAfter?: string, scheduledPickUpBefore?: string, scheduledPickUpAfter?: string, currentShipmentStatus?: string, vendorShipmentIdentifier?: string, buyerReferenceNumber?: string, buyerWarehouseCode?: string, sellerWarehouseCode?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentDetailsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShipmentDetails(limit, sortOrder, nextToken, createdAfter, createdBefore, shipmentConfirmedBefore, shipmentConfirmedAfter, packageLabelCreatedBefore, packageLabelCreatedAfter, shippedBefore, shippedAfter, estimatedDeliveryBefore, estimatedDeliveryAfter, shipmentDeliveryBefore, shipmentDeliveryAfter, requestedPickUpBefore, requestedPickUpAfter, scheduledPickUpBefore, scheduledPickUpAfter, currentShipmentStatus, vendorShipmentIdentifier, buyerReferenceNumber, buyerWarehouseCode, sellerWarehouseCode, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['VendorShippingApi.getShipmentDetails']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Submits one or more shipment confirmations for vendor orders.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -335,9 +337,11 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async submitShipmentConfirmations(body: SubmitShipmentConfirmationsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitShipmentConfirmationsResponse>> {
+        async submitShipmentConfirmations(body: SubmitShipmentConfirmationsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitShipmentConfirmationsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.submitShipmentConfirmations(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['VendorShippingApi.submitShipmentConfirmations']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Submits one or more shipment request for vendor Orders.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -345,9 +349,11 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async submitShipments(body: SubmitShipments, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitShipmentConfirmationsResponse>> {
+        async submitShipments(body: SubmitShipments, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitShipmentConfirmationsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.submitShipments(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['VendorShippingApi.submitShipments']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -365,7 +371,7 @@ export const VendorShippingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipmentDetails(requestParameters: VendorShippingApiGetShipmentDetailsRequest = {}, options?: AxiosRequestConfig): AxiosPromise<GetShipmentDetailsResponse> {
+        getShipmentDetails(requestParameters: VendorShippingApiGetShipmentDetailsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<GetShipmentDetailsResponse> {
             return localVarFp.getShipmentDetails(requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipmentConfirmedBefore, requestParameters.shipmentConfirmedAfter, requestParameters.packageLabelCreatedBefore, requestParameters.packageLabelCreatedAfter, requestParameters.shippedBefore, requestParameters.shippedAfter, requestParameters.estimatedDeliveryBefore, requestParameters.estimatedDeliveryAfter, requestParameters.shipmentDeliveryBefore, requestParameters.shipmentDeliveryAfter, requestParameters.requestedPickUpBefore, requestParameters.requestedPickUpAfter, requestParameters.scheduledPickUpBefore, requestParameters.scheduledPickUpAfter, requestParameters.currentShipmentStatus, requestParameters.vendorShipmentIdentifier, requestParameters.buyerReferenceNumber, requestParameters.buyerWarehouseCode, requestParameters.sellerWarehouseCode, options).then((request) => request(axios, basePath));
         },
         /**
@@ -374,7 +380,7 @@ export const VendorShippingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitShipmentConfirmations(requestParameters: VendorShippingApiSubmitShipmentConfirmationsRequest, options?: AxiosRequestConfig): AxiosPromise<SubmitShipmentConfirmationsResponse> {
+        submitShipmentConfirmations(requestParameters: VendorShippingApiSubmitShipmentConfirmationsRequest, options?: RawAxiosRequestConfig): AxiosPromise<SubmitShipmentConfirmationsResponse> {
             return localVarFp.submitShipmentConfirmations(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -383,7 +389,7 @@ export const VendorShippingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitShipments(requestParameters: VendorShippingApiSubmitShipmentsRequest, options?: AxiosRequestConfig): AxiosPromise<SubmitShipmentConfirmationsResponse> {
+        submitShipments(requestParameters: VendorShippingApiSubmitShipmentsRequest, options?: RawAxiosRequestConfig): AxiosPromise<SubmitShipmentConfirmationsResponse> {
             return localVarFp.submitShipments(requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
@@ -407,7 +413,7 @@ export interface VendorShippingApiGetShipmentDetailsRequest {
      * @type {'ASC' | 'DESC'}
      * @memberof VendorShippingApiGetShipmentDetails
      */
-    readonly sortOrder?: 'ASC' | 'DESC'
+    readonly sortOrder?: GetShipmentDetailsSortOrderEnum
 
     /**
      * Used for pagination when there are more shipments than the specified result size limit.
@@ -606,7 +612,7 @@ export class VendorShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorShippingApi
      */
-    public getShipmentDetails(requestParameters: VendorShippingApiGetShipmentDetailsRequest = {}, options?: AxiosRequestConfig) {
+    public getShipmentDetails(requestParameters: VendorShippingApiGetShipmentDetailsRequest = {}, options?: RawAxiosRequestConfig) {
         return VendorShippingApiFp(this.configuration).getShipmentDetails(requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipmentConfirmedBefore, requestParameters.shipmentConfirmedAfter, requestParameters.packageLabelCreatedBefore, requestParameters.packageLabelCreatedAfter, requestParameters.shippedBefore, requestParameters.shippedAfter, requestParameters.estimatedDeliveryBefore, requestParameters.estimatedDeliveryAfter, requestParameters.shipmentDeliveryBefore, requestParameters.shipmentDeliveryAfter, requestParameters.requestedPickUpBefore, requestParameters.requestedPickUpAfter, requestParameters.scheduledPickUpBefore, requestParameters.scheduledPickUpAfter, requestParameters.currentShipmentStatus, requestParameters.vendorShipmentIdentifier, requestParameters.buyerReferenceNumber, requestParameters.buyerWarehouseCode, requestParameters.sellerWarehouseCode, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -617,7 +623,7 @@ export class VendorShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorShippingApi
      */
-    public submitShipmentConfirmations(requestParameters: VendorShippingApiSubmitShipmentConfirmationsRequest, options?: AxiosRequestConfig) {
+    public submitShipmentConfirmations(requestParameters: VendorShippingApiSubmitShipmentConfirmationsRequest, options?: RawAxiosRequestConfig) {
         return VendorShippingApiFp(this.configuration).submitShipmentConfirmations(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -628,7 +634,16 @@ export class VendorShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorShippingApi
      */
-    public submitShipments(requestParameters: VendorShippingApiSubmitShipmentsRequest, options?: AxiosRequestConfig) {
+    public submitShipments(requestParameters: VendorShippingApiSubmitShipmentsRequest, options?: RawAxiosRequestConfig) {
         return VendorShippingApiFp(this.configuration).submitShipments(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetShipmentDetailsSortOrderEnum = {
+    Asc: 'ASC',
+    Desc: 'DESC'
+} as const;
+export type GetShipmentDetailsSortOrderEnum = typeof GetShipmentDetailsSortOrderEnum[keyof typeof GetShipmentDetailsSortOrderEnum];

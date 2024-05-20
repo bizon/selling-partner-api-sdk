@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemContributorRole } from './item-contributor-role';
+import type { ItemContributorRole } from './item-contributor-role';
 
 /**
  * Individual contributor to the creation of an item, such as an author or actor.

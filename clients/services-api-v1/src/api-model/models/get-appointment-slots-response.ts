@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AppointmentSlotReport } from './appointment-slot-report';
+import type { AppointmentSlotReport } from './appointment-slot-report';
 
 /**
  * The response of fetching appointment slots based on service context.

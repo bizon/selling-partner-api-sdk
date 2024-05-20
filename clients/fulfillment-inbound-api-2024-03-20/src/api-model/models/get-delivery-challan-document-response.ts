@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DocumentDownload } from './document-download';
+import type { DocumentDownload } from './document-download';
 
 /**
  * The `getDeliveryChallanDocumentResponse` response.

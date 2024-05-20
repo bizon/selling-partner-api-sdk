@@ -14,17 +14,17 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { SubmitInvoicesRequest } from '../models';
+import type { SubmitInvoicesRequest } from '../models';
 // @ts-ignore
-import { SubmitInvoicesResponse } from '../models';
+import type { SubmitInvoicesResponse } from '../models';
 /**
  * VendorPaymentsApi - axios parameter creator
  * @export
@@ -37,7 +37,7 @@ export const VendorPaymentsApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitInvoices: async (body: SubmitInvoicesRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        submitInvoices: async (body: SubmitInvoicesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('submitInvoices', 'body', body)
             const localVarPath = `/vendor/payments/v1/invoices`;
@@ -82,9 +82,11 @@ export const VendorPaymentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async submitInvoices(body: SubmitInvoicesRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitInvoicesResponse>> {
+        async submitInvoices(body: SubmitInvoicesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitInvoicesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.submitInvoices(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['VendorPaymentsApi.submitInvoices']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -102,7 +104,7 @@ export const VendorPaymentsApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitInvoices(requestParameters: VendorPaymentsApiSubmitInvoicesRequest, options?: AxiosRequestConfig): AxiosPromise<SubmitInvoicesResponse> {
+        submitInvoices(requestParameters: VendorPaymentsApiSubmitInvoicesRequest, options?: RawAxiosRequestConfig): AxiosPromise<SubmitInvoicesResponse> {
             return localVarFp.submitInvoices(requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
@@ -136,7 +138,8 @@ export class VendorPaymentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorPaymentsApi
      */
-    public submitInvoices(requestParameters: VendorPaymentsApiSubmitInvoicesRequest, options?: AxiosRequestConfig) {
+    public submitInvoices(requestParameters: VendorPaymentsApiSubmitInvoicesRequest, options?: RawAxiosRequestConfig) {
         return VendorPaymentsApiFp(this.configuration).submitInvoices(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

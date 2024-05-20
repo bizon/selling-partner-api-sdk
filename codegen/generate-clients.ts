@@ -104,10 +104,13 @@ async function generateClientVersion(modelFilePath: string) {
   logger.info('generating…', {packageName})
 
   await fs.rm(`${clientDirectoryPath}/src/api-model`, {recursive: true, force: true})
+
+  // TODO: disable REFRACTOR_ALLOF_INLINE_SCHEMAS when https://github.com/OpenAPITools/openapi-generator/issues/16150 is fixed.
   await exec(
     `codegen/node_modules/.bin/openapi-generator-cli generate \
       --additional-properties=supportsES6=true,useSingleRequestParameter=true,withSeparateModelsAndApi=true,modelPackage=models,apiPackage=api \
       --skip-validate-spec \
+      --inline-schema-options REFACTOR_ALLOF_INLINE_SCHEMAS=true \
       -g typescript-axios \
       -i ${modelPath} \
       -o ${clientDirectoryPath}/src/api-model`,

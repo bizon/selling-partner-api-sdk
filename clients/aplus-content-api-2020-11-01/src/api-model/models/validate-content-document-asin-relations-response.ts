@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AplusResponse } from './aplus-response';
+import type { AplusResponse } from './aplus-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ErrorList } from './error-list';
+import type { ErrorList } from './error-list';
 
 /**
  * @type ValidateContentDocumentAsinRelationsResponse

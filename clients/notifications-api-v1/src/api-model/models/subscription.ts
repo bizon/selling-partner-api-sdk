@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ProcessingDirective } from './processing-directive';
+import type { ProcessingDirective } from './processing-directive';
 
 /**
  * Information about the subscription.

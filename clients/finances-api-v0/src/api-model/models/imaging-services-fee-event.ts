@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeeComponent } from './fee-component';
+import type { FeeComponent } from './fee-component';
 
 /**
  * A fee event related to Amazon Imaging services.

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardTextListBlock } from './standard-text-list-block';
+import type { StandardTextListBlock } from './standard-text-list-block';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TextComponent } from './text-component';
+import type { TextComponent } from './text-component';
 
 /**
  * The A+ standard fixed-length list of text, with a related headline.

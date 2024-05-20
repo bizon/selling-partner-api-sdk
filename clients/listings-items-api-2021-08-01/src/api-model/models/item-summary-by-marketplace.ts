@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemImage } from './item-image';
+import type { ItemImage } from './item-image';
 
 /**
  * Summary details of a listings item for an Amazon marketplace.

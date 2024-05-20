@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PackingSlip } from './packing-slip';
+import type { PackingSlip } from './packing-slip';
 
 /**
  * 

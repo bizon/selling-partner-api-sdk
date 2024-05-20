@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { SubstitutionOption } from './substitution-option';
+import type { SubstitutionOption } from './substitution-option';
 
 /**
  * Substitution preferences for an order item.

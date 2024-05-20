@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeedDocument } from './feed-document';
+import type { FeedDocument } from './feed-document';
 
 /**
  * Response schema.

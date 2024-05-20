@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentType } from './fulfillment-type';
+import type { FulfillmentType } from './fulfillment-type';
 
 /**
  * Identifies an offer from a particular seller on an ASIN.

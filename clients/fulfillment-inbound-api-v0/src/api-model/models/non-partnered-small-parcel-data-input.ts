@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { NonPartneredSmallParcelPackageInput } from './non-partnered-small-parcel-package-input';
+import type { NonPartneredSmallParcelPackageInput } from './non-partnered-small-parcel-package-input';
 
 /**
  * Information that you provide to Amazon about a Small Parcel shipment shipped by a carrier that has not partnered with Amazon.

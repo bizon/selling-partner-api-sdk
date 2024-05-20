@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipmentDetail } from './shipment-detail';
+import type { ShipmentDetail } from './shipment-detail';
 
 /**
  * The response schema for the getShipmentDetails operation.

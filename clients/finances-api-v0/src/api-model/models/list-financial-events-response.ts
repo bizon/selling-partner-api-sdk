@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ListFinancialEventsPayload } from './list-financial-events-payload';
+import type { ListFinancialEventsPayload } from './list-financial-events-payload';
 
 /**
  * The response schema for the listFinancialEvents operation.

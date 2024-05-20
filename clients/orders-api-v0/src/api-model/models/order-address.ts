@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { DeliveryPreferences } from './delivery-preferences';
+import type { DeliveryPreferences } from './delivery-preferences';
 
 /**
  * The shipping address for the order.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PublishRecord } from './publish-record';
+import type { PublishRecord } from './publish-record';
 
 /**
  * 

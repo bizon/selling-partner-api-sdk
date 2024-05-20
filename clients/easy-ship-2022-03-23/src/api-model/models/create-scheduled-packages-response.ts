@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Package } from './package';
+import type { Package } from './package';
 // May contain unused imports in some cases
 // @ts-ignore
-import { RejectedOrder } from './rejected-order';
+import type { RejectedOrder } from './rejected-order';
 
 /**
  * The response schema for the bulk scheduling API. It returns by the bulk scheduling API containing an array of the scheduled packtages, an optional list of orders we couldn\'t schedule with the reason, and a pre-signed URL for a ZIP file containing the associated shipping labels plus the documents enabled for your marketplace.

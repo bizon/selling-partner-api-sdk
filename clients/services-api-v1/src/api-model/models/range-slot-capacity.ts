@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { RangeCapacity } from './range-capacity';
+import type { RangeCapacity } from './range-capacity';
 
 /**
  * Response schema for the `getRangeSlotCapacity` operation.

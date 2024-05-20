@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AdditionalDetails } from './additional-details';
+import type { AdditionalDetails } from './additional-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ChargeDetails } from './charge-details';
+import type { ChargeDetails } from './charge-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { InvoiceItem } from './invoice-item';
+import type { InvoiceItem } from './invoice-item';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Money } from './money';
+import type { Money } from './money';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PartyIdentification } from './party-identification';
+import type { PartyIdentification } from './party-identification';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TaxDetail } from './tax-detail';
+import type { TaxDetail } from './tax-detail';
 
 /**
  * 

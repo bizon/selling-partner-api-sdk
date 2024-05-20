@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { OptionalFulfillmentProgram } from './optional-fulfillment-program';
+import type { OptionalFulfillmentProgram } from './optional-fulfillment-program';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PriceToEstimateFees } from './price-to-estimate-fees';
+import type { PriceToEstimateFees } from './price-to-estimate-fees';
 
 /**
  * A product, marketplace, and proposed price used to request estimated fees.

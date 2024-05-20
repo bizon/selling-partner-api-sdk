@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ThroughputCap } from './throughput-cap';
+import type { ThroughputCap } from './throughput-cap';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ThroughputUnit } from './throughput-unit';
+import type { ThroughputUnit } from './throughput-unit';
 
 /**
  * The throughput configuration.

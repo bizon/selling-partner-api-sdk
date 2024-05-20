@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ReportDocument } from './report-document';
+import type { ReportDocument } from './report-document';
 
 /**
  * Response schema.

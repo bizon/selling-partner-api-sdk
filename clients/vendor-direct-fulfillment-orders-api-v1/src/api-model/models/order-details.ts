@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OrderDetailsTaxTotal } from './order-details-tax-total';
+import type { OrderDetailsTaxTotal } from './order-details-tax-total';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OrderItem } from './order-item';
+import type { OrderItem } from './order-item';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PartyIdentification } from './party-identification';
+import type { PartyIdentification } from './party-identification';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipmentDetails } from './shipment-details';
+import type { ShipmentDetails } from './shipment-details';
 
 /**
  * Details of an order.

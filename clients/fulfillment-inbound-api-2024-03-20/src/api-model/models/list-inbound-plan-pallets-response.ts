@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Pagination } from './pagination';
+import type { Pagination } from './pagination';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Pallet } from './pallet';
+import type { Pallet } from './pallet';
 
 /**
  * `listInboundPlanPallets` response.

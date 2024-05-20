@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { GetMessagingActionResponse } from './get-messaging-action-response';
+import type { GetMessagingActionResponse } from './get-messaging-action-response';
 
 /**
  * 

@@ -15,25 +15,25 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemIdentifiersByMarketplace } from './item-identifiers-by-marketplace';
+import type { ItemIdentifiersByMarketplace } from './item-identifiers-by-marketplace';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemImagesByMarketplace } from './item-images-by-marketplace';
+import type { ItemImagesByMarketplace } from './item-images-by-marketplace';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemProductTypeByMarketplace } from './item-product-type-by-marketplace';
+import type { ItemProductTypeByMarketplace } from './item-product-type-by-marketplace';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemSalesRanksByMarketplace } from './item-sales-ranks-by-marketplace';
+import type { ItemSalesRanksByMarketplace } from './item-sales-ranks-by-marketplace';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemSummaryByMarketplace } from './item-summary-by-marketplace';
+import type { ItemSummaryByMarketplace } from './item-summary-by-marketplace';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemVariationsByMarketplace } from './item-variations-by-marketplace';
+import type { ItemVariationsByMarketplace } from './item-variations-by-marketplace';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemVendorDetailsByMarketplace } from './item-vendor-details-by-marketplace';
+import type { ItemVendorDetailsByMarketplace } from './item-vendor-details-by-marketplace';
 
 /**
  * An item in the Amazon catalog.
@@ -49,10 +49,10 @@ export interface Item {
     'asin': string;
     /**
      * A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes are available only to brand owners and conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.
-     * @type {object}
+     * @type {{ [key: string]: any; }}
      * @memberof Item
      */
-    'attributes'?: object;
+    'attributes'?: { [key: string]: any; };
     /**
      * Identifiers associated with the item in the Amazon catalog, such as UPC and EAN identifiers.
      * @type {Array<ItemIdentifiersByMarketplace>}

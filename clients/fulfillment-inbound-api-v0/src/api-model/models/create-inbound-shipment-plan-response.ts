@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CreateInboundShipmentPlanResult } from './create-inbound-shipment-plan-result';
+import type { CreateInboundShipmentPlanResult } from './create-inbound-shipment-plan-result';
 
 /**
  * The response schema for the createInboundShipmentPlan operation.

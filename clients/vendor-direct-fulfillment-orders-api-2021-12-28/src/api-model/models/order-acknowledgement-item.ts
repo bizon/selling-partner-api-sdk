@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AcknowledgementStatus } from './acknowledgement-status';
+import type { AcknowledgementStatus } from './acknowledgement-status';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OrderItemAcknowledgement } from './order-item-acknowledgement';
+import type { OrderItemAcknowledgement } from './order-item-acknowledgement';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PartyIdentification } from './party-identification';
+import type { PartyIdentification } from './party-identification';
 
 /**
  * Details of an individual order being acknowledged.

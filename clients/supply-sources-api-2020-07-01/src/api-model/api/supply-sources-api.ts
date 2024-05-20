@@ -14,27 +14,27 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CreateSupplySourceRequest } from '../models';
+import type { CreateSupplySourceRequest } from '../models';
 // @ts-ignore
-import { CreateSupplySourceResponse } from '../models';
+import type { CreateSupplySourceResponse } from '../models';
 // @ts-ignore
-import { ErrorList } from '../models';
+import type { ErrorList } from '../models';
 // @ts-ignore
-import { GetSupplySourcesResponse } from '../models';
+import type { GetSupplySourcesResponse } from '../models';
 // @ts-ignore
-import { SupplySource } from '../models';
+import type { SupplySource } from '../models';
 // @ts-ignore
-import { UpdateSupplySourceRequest } from '../models';
+import type { UpdateSupplySourceRequest } from '../models';
 // @ts-ignore
-import { UpdateSupplySourceStatusRequest } from '../models';
+import type { UpdateSupplySourceStatusRequest } from '../models';
 /**
  * SupplySourcesApi - axios parameter creator
  * @export
@@ -47,7 +47,7 @@ export const SupplySourcesApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        archiveSupplySource: async (supplySourceId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        archiveSupplySource: async (supplySourceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'supplySourceId' is not null or undefined
             assertParamExists('archiveSupplySource', 'supplySourceId', supplySourceId)
             const localVarPath = `/supplySources/2020-07-01/supplySources/{supplySourceId}`
@@ -80,7 +80,7 @@ export const SupplySourcesApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createSupplySource: async (payload: CreateSupplySourceRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createSupplySource: async (payload: CreateSupplySourceRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'payload' is not null or undefined
             assertParamExists('createSupplySource', 'payload', payload)
             const localVarPath = `/supplySources/2020-07-01/supplySources`;
@@ -115,7 +115,7 @@ export const SupplySourcesApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSupplySource: async (supplySourceId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getSupplySource: async (supplySourceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'supplySourceId' is not null or undefined
             assertParamExists('getSupplySource', 'supplySourceId', supplySourceId)
             const localVarPath = `/supplySources/2020-07-01/supplySources/{supplySourceId}`
@@ -149,7 +149,7 @@ export const SupplySourcesApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSupplySources: async (nextPageToken?: string, pageSize?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getSupplySources: async (nextPageToken?: string, pageSize?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/supplySources/2020-07-01/supplySources`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -188,7 +188,7 @@ export const SupplySourcesApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateSupplySource: async (supplySourceId: string, payload?: UpdateSupplySourceRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateSupplySource: async (supplySourceId: string, payload?: UpdateSupplySourceRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'supplySourceId' is not null or undefined
             assertParamExists('updateSupplySource', 'supplySourceId', supplySourceId)
             const localVarPath = `/supplySources/2020-07-01/supplySources/{supplySourceId}`
@@ -225,7 +225,7 @@ export const SupplySourcesApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateSupplySourceStatus: async (supplySourceId: string, payload?: UpdateSupplySourceStatusRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateSupplySourceStatus: async (supplySourceId: string, payload?: UpdateSupplySourceStatusRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'supplySourceId' is not null or undefined
             assertParamExists('updateSupplySourceStatus', 'supplySourceId', supplySourceId)
             const localVarPath = `/supplySources/2020-07-01/supplySources/{supplySourceId}/status`
@@ -271,9 +271,11 @@ export const SupplySourcesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async archiveSupplySource(supplySourceId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ErrorList>> {
+        async archiveSupplySource(supplySourceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ErrorList>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.archiveSupplySource(supplySourceId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['SupplySourcesApi.archiveSupplySource']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Create a new supply source.
@@ -281,9 +283,11 @@ export const SupplySourcesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createSupplySource(payload: CreateSupplySourceRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateSupplySourceResponse>> {
+        async createSupplySource(payload: CreateSupplySourceRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateSupplySourceResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createSupplySource(payload, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['SupplySourcesApi.createSupplySource']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Retrieve a supply source.
@@ -291,9 +295,11 @@ export const SupplySourcesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSupplySource(supplySourceId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SupplySource>> {
+        async getSupplySource(supplySourceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SupplySource>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getSupplySource(supplySourceId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['SupplySourcesApi.getSupplySource']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The path to retrieve paginated supply sources.
@@ -302,9 +308,11 @@ export const SupplySourcesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSupplySources(nextPageToken?: string, pageSize?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSupplySourcesResponse>> {
+        async getSupplySources(nextPageToken?: string, pageSize?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSupplySourcesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getSupplySources(nextPageToken, pageSize, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['SupplySourcesApi.getSupplySources']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Update the configuration and capabilities of a supply source.
@@ -313,9 +321,11 @@ export const SupplySourcesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateSupplySource(supplySourceId: string, payload?: UpdateSupplySourceRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ErrorList>> {
+        async updateSupplySource(supplySourceId: string, payload?: UpdateSupplySourceRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ErrorList>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateSupplySource(supplySourceId, payload, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['SupplySourcesApi.updateSupplySource']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Update the status of a supply source.
@@ -324,9 +334,11 @@ export const SupplySourcesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateSupplySourceStatus(supplySourceId: string, payload?: UpdateSupplySourceStatusRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ErrorList>> {
+        async updateSupplySourceStatus(supplySourceId: string, payload?: UpdateSupplySourceStatusRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ErrorList>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateSupplySourceStatus(supplySourceId, payload, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['SupplySourcesApi.updateSupplySourceStatus']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -344,7 +356,7 @@ export const SupplySourcesApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        archiveSupplySource(requestParameters: SupplySourcesApiArchiveSupplySourceRequest, options?: AxiosRequestConfig): AxiosPromise<ErrorList> {
+        archiveSupplySource(requestParameters: SupplySourcesApiArchiveSupplySourceRequest, options?: RawAxiosRequestConfig): AxiosPromise<ErrorList> {
             return localVarFp.archiveSupplySource(requestParameters.supplySourceId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -353,7 +365,7 @@ export const SupplySourcesApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createSupplySource(requestParameters: SupplySourcesApiCreateSupplySourceRequest, options?: AxiosRequestConfig): AxiosPromise<CreateSupplySourceResponse> {
+        createSupplySource(requestParameters: SupplySourcesApiCreateSupplySourceRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateSupplySourceResponse> {
             return localVarFp.createSupplySource(requestParameters.payload, options).then((request) => request(axios, basePath));
         },
         /**
@@ -362,7 +374,7 @@ export const SupplySourcesApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSupplySource(requestParameters: SupplySourcesApiGetSupplySourceRequest, options?: AxiosRequestConfig): AxiosPromise<SupplySource> {
+        getSupplySource(requestParameters: SupplySourcesApiGetSupplySourceRequest, options?: RawAxiosRequestConfig): AxiosPromise<SupplySource> {
             return localVarFp.getSupplySource(requestParameters.supplySourceId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -371,7 +383,7 @@ export const SupplySourcesApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSupplySources(requestParameters: SupplySourcesApiGetSupplySourcesRequest = {}, options?: AxiosRequestConfig): AxiosPromise<GetSupplySourcesResponse> {
+        getSupplySources(requestParameters: SupplySourcesApiGetSupplySourcesRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<GetSupplySourcesResponse> {
             return localVarFp.getSupplySources(requestParameters.nextPageToken, requestParameters.pageSize, options).then((request) => request(axios, basePath));
         },
         /**
@@ -380,7 +392,7 @@ export const SupplySourcesApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateSupplySource(requestParameters: SupplySourcesApiUpdateSupplySourceRequest, options?: AxiosRequestConfig): AxiosPromise<ErrorList> {
+        updateSupplySource(requestParameters: SupplySourcesApiUpdateSupplySourceRequest, options?: RawAxiosRequestConfig): AxiosPromise<ErrorList> {
             return localVarFp.updateSupplySource(requestParameters.supplySourceId, requestParameters.payload, options).then((request) => request(axios, basePath));
         },
         /**
@@ -389,7 +401,7 @@ export const SupplySourcesApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateSupplySourceStatus(requestParameters: SupplySourcesApiUpdateSupplySourceStatusRequest, options?: AxiosRequestConfig): AxiosPromise<ErrorList> {
+        updateSupplySourceStatus(requestParameters: SupplySourcesApiUpdateSupplySourceStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<ErrorList> {
             return localVarFp.updateSupplySourceStatus(requestParameters.supplySourceId, requestParameters.payload, options).then((request) => request(axios, basePath));
         },
     };
@@ -514,7 +526,7 @@ export class SupplySourcesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SupplySourcesApi
      */
-    public archiveSupplySource(requestParameters: SupplySourcesApiArchiveSupplySourceRequest, options?: AxiosRequestConfig) {
+    public archiveSupplySource(requestParameters: SupplySourcesApiArchiveSupplySourceRequest, options?: RawAxiosRequestConfig) {
         return SupplySourcesApiFp(this.configuration).archiveSupplySource(requestParameters.supplySourceId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -525,7 +537,7 @@ export class SupplySourcesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SupplySourcesApi
      */
-    public createSupplySource(requestParameters: SupplySourcesApiCreateSupplySourceRequest, options?: AxiosRequestConfig) {
+    public createSupplySource(requestParameters: SupplySourcesApiCreateSupplySourceRequest, options?: RawAxiosRequestConfig) {
         return SupplySourcesApiFp(this.configuration).createSupplySource(requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -536,7 +548,7 @@ export class SupplySourcesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SupplySourcesApi
      */
-    public getSupplySource(requestParameters: SupplySourcesApiGetSupplySourceRequest, options?: AxiosRequestConfig) {
+    public getSupplySource(requestParameters: SupplySourcesApiGetSupplySourceRequest, options?: RawAxiosRequestConfig) {
         return SupplySourcesApiFp(this.configuration).getSupplySource(requestParameters.supplySourceId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -547,7 +559,7 @@ export class SupplySourcesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SupplySourcesApi
      */
-    public getSupplySources(requestParameters: SupplySourcesApiGetSupplySourcesRequest = {}, options?: AxiosRequestConfig) {
+    public getSupplySources(requestParameters: SupplySourcesApiGetSupplySourcesRequest = {}, options?: RawAxiosRequestConfig) {
         return SupplySourcesApiFp(this.configuration).getSupplySources(requestParameters.nextPageToken, requestParameters.pageSize, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -558,7 +570,7 @@ export class SupplySourcesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SupplySourcesApi
      */
-    public updateSupplySource(requestParameters: SupplySourcesApiUpdateSupplySourceRequest, options?: AxiosRequestConfig) {
+    public updateSupplySource(requestParameters: SupplySourcesApiUpdateSupplySourceRequest, options?: RawAxiosRequestConfig) {
         return SupplySourcesApiFp(this.configuration).updateSupplySource(requestParameters.supplySourceId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -569,7 +581,8 @@ export class SupplySourcesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SupplySourcesApi
      */
-    public updateSupplySourceStatus(requestParameters: SupplySourcesApiUpdateSupplySourceStatusRequest, options?: AxiosRequestConfig) {
+    public updateSupplySourceStatus(requestParameters: SupplySourcesApiUpdateSupplySourceStatusRequest, options?: RawAxiosRequestConfig) {
         return SupplySourcesApiFp(this.configuration).updateSupplySourceStatus(requestParameters.supplySourceId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

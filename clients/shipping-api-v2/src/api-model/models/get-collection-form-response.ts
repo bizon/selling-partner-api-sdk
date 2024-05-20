@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CollectionsFormDocument } from './collections-form-document';
+import type { CollectionsFormDocument } from './collections-form-document';
 
 /**
  * The Response  for the GetCollectionFormResponse operation.

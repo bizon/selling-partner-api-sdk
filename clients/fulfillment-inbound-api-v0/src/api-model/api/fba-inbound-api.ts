@@ -14,47 +14,47 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { ConfirmPreorderResponse } from '../models';
+import type { ConfirmPreorderResponse } from '../models';
 // @ts-ignore
-import { ConfirmTransportResponse } from '../models';
+import type { ConfirmTransportResponse } from '../models';
 // @ts-ignore
-import { CreateInboundShipmentPlanRequest } from '../models';
+import type { CreateInboundShipmentPlanRequest } from '../models';
 // @ts-ignore
-import { CreateInboundShipmentPlanResponse } from '../models';
+import type { CreateInboundShipmentPlanResponse } from '../models';
 // @ts-ignore
-import { EstimateTransportResponse } from '../models';
+import type { EstimateTransportResponse } from '../models';
 // @ts-ignore
-import { GetBillOfLadingResponse } from '../models';
+import type { GetBillOfLadingResponse } from '../models';
 // @ts-ignore
-import { GetLabelsResponse } from '../models';
+import type { GetLabelsResponse } from '../models';
 // @ts-ignore
-import { GetPreorderInfoResponse } from '../models';
+import type { GetPreorderInfoResponse } from '../models';
 // @ts-ignore
-import { GetPrepInstructionsResponse } from '../models';
+import type { GetPrepInstructionsResponse } from '../models';
 // @ts-ignore
-import { GetShipmentItemsResponse } from '../models';
+import type { GetShipmentItemsResponse } from '../models';
 // @ts-ignore
-import { GetShipmentsResponse } from '../models';
+import type { GetShipmentsResponse } from '../models';
 // @ts-ignore
-import { GetTransportDetailsResponse } from '../models';
+import type { GetTransportDetailsResponse } from '../models';
 // @ts-ignore
-import { InboundShipmentRequest } from '../models';
+import type { InboundShipmentRequest } from '../models';
 // @ts-ignore
-import { InboundShipmentResponse } from '../models';
+import type { InboundShipmentResponse } from '../models';
 // @ts-ignore
-import { PutTransportDetailsRequest } from '../models';
+import type { PutTransportDetailsRequest } from '../models';
 // @ts-ignore
-import { PutTransportDetailsResponse } from '../models';
+import type { PutTransportDetailsResponse } from '../models';
 // @ts-ignore
-import { VoidTransportResponse } from '../models';
+import type { VoidTransportResponse } from '../models';
 /**
  * FbaInboundApi - axios parameter creator
  * @export
@@ -70,7 +70,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @deprecated
          * @throws {RequiredError}
          */
-        confirmPreorder: async (shipmentId: string, needByDate: string, marketplaceId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        confirmPreorder: async (shipmentId: string, needByDate: string, marketplaceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('confirmPreorder', 'shipmentId', shipmentId)
             // verify required parameter 'needByDate' is not null or undefined
@@ -92,7 +92,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
 
             if (needByDate !== undefined) {
                 localVarQueryParameter['NeedByDate'] = (needByDate as any instanceof Date) ?
-                    (needByDate as any).toISOString().substr(0,10) :
+                    (needByDate as any).toISOString().substring(0,10) :
                     needByDate;
             }
 
@@ -118,7 +118,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @deprecated
          * @throws {RequiredError}
          */
-        confirmTransport: async (shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        confirmTransport: async (shipmentId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('confirmTransport', 'shipmentId', shipmentId)
             const localVarPath = `/fba/inbound/v0/shipments/{shipmentId}/transport/confirm`
@@ -153,7 +153,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @deprecated
          * @throws {RequiredError}
          */
-        createInboundShipment: async (shipmentId: string, body: InboundShipmentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createInboundShipment: async (shipmentId: string, body: InboundShipmentRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('createInboundShipment', 'shipmentId', shipmentId)
             // verify required parameter 'body' is not null or undefined
@@ -192,7 +192,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @deprecated
          * @throws {RequiredError}
          */
-        createInboundShipmentPlan: async (body: CreateInboundShipmentPlanRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createInboundShipmentPlan: async (body: CreateInboundShipmentPlanRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createInboundShipmentPlan', 'body', body)
             const localVarPath = `/fba/inbound/v0/plans`;
@@ -228,7 +228,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @deprecated
          * @throws {RequiredError}
          */
-        estimateTransport: async (shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        estimateTransport: async (shipmentId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('estimateTransport', 'shipmentId', shipmentId)
             const localVarPath = `/fba/inbound/v0/shipments/{shipmentId}/transport/estimate`
@@ -261,7 +261,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBillOfLading: async (shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getBillOfLading: async (shipmentId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getBillOfLading', 'shipmentId', shipmentId)
             const localVarPath = `/fba/inbound/v0/shipments/{shipmentId}/billOfLading`
@@ -291,8 +291,8 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
         /**
          * Returns package/pallet labels for faster and more accurate shipment processing at the Amazon fulfillment center.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation.
-         * @param {'PackageLabel_Letter_2' | 'PackageLabel_Letter_4' | 'PackageLabel_Letter_6' | 'PackageLabel_Letter_6_CarrierLeft' | 'PackageLabel_A4_2' | 'PackageLabel_A4_4' | 'PackageLabel_Plain_Paper' | 'PackageLabel_Plain_Paper_CarrierBottom' | 'PackageLabel_Thermal' | 'PackageLabel_Thermal_Unified' | 'PackageLabel_Thermal_NonPCP' | 'PackageLabel_Thermal_No_Carrier_Rotation'} pageType The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error.
-         * @param {'BARCODE_2D' | 'UNIQUE' | 'PALLET'} labelType The type of labels requested. 
+         * @param {GetLabelsPageTypeEnum} pageType The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error.
+         * @param {GetLabelsLabelTypeEnum} labelType The type of labels requested. 
          * @param {number} [numberOfPackages] The number of packages in the shipment.
          * @param {Array<string>} [packageLabelsToPrint] A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code.
          * @param {number} [numberOfPallets] The number of pallets in the shipment. This returns four identical labels for each pallet.
@@ -301,7 +301,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getLabels: async (shipmentId: string, pageType: 'PackageLabel_Letter_2' | 'PackageLabel_Letter_4' | 'PackageLabel_Letter_6' | 'PackageLabel_Letter_6_CarrierLeft' | 'PackageLabel_A4_2' | 'PackageLabel_A4_4' | 'PackageLabel_Plain_Paper' | 'PackageLabel_Plain_Paper_CarrierBottom' | 'PackageLabel_Thermal' | 'PackageLabel_Thermal_Unified' | 'PackageLabel_Thermal_NonPCP' | 'PackageLabel_Thermal_No_Carrier_Rotation', labelType: 'BARCODE_2D' | 'UNIQUE' | 'PALLET', numberOfPackages?: number, packageLabelsToPrint?: Array<string>, numberOfPallets?: number, pageSize?: number, pageStartIndex?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getLabels: async (shipmentId: string, pageType: GetLabelsPageTypeEnum, labelType: GetLabelsLabelTypeEnum, numberOfPackages?: number, packageLabelsToPrint?: Array<string>, numberOfPallets?: number, pageSize?: number, pageStartIndex?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getLabels', 'shipmentId', shipmentId)
             // verify required parameter 'pageType' is not null or undefined
@@ -368,7 +368,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @deprecated
          * @throws {RequiredError}
          */
-        getPreorderInfo: async (shipmentId: string, marketplaceId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getPreorderInfo: async (shipmentId: string, marketplaceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getPreorderInfo', 'shipmentId', shipmentId)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -409,7 +409,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPrepInstructions: async (shipToCountryCode: string, sellerSKUList?: Array<string>, aSINList?: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getPrepInstructions: async (shipToCountryCode: string, sellerSKUList?: Array<string>, aSINList?: Array<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipToCountryCode' is not null or undefined
             assertParamExists('getPrepInstructions', 'shipToCountryCode', shipToCountryCode)
             const localVarPath = `/fba/inbound/v0/prepInstructions`;
@@ -449,7 +449,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
         },
         /**
          * Returns a list of items in a specified inbound shipment, or a list of items that were updated within a specified time frame.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {'DATE_RANGE' | 'NEXT_TOKEN'} queryType Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request.
+         * @param {GetShipmentItemsQueryTypeEnum} queryType Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request.
          * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored.
          * @param {string} [lastUpdatedAfter] A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller.
          * @param {string} [lastUpdatedBefore] A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller.
@@ -458,7 +458,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @deprecated
          * @throws {RequiredError}
          */
-        getShipmentItems: async (queryType: 'DATE_RANGE' | 'NEXT_TOKEN', marketplaceId: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getShipmentItems: async (queryType: GetShipmentItemsQueryTypeEnum, marketplaceId: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'queryType' is not null or undefined
             assertParamExists('getShipmentItems', 'queryType', queryType)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -518,7 +518,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @deprecated
          * @throws {RequiredError}
          */
-        getShipmentItemsByShipmentId: async (shipmentId: string, marketplaceId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getShipmentItemsByShipmentId: async (shipmentId: string, marketplaceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getShipmentItemsByShipmentId', 'shipmentId', shipmentId)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -553,9 +553,9 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
         },
         /**
          * Returns a list of inbound shipments based on criteria that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {'SHIPMENT' | 'DATE_RANGE' | 'NEXT_TOKEN'} queryType Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request.
+         * @param {GetShipmentsQueryTypeEnum} queryType Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request.
          * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored.
-         * @param {Array<'WORKING' | 'READY_TO_SHIP' | 'SHIPPED' | 'RECEIVING' | 'CANCELLED' | 'DELETED' | 'CLOSED' | 'ERROR' | 'IN_TRANSIT' | 'DELIVERED' | 'CHECKED_IN'>} [shipmentStatusList] A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify.
+         * @param {Array<GetShipmentsShipmentStatusListEnum>} [shipmentStatusList] A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify.
          * @param {Array<string>} [shipmentIdList] A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned.
          * @param {string} [lastUpdatedAfter] A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller.
          * @param {string} [lastUpdatedBefore] A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller.
@@ -564,7 +564,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @deprecated
          * @throws {RequiredError}
          */
-        getShipments: async (queryType: 'SHIPMENT' | 'DATE_RANGE' | 'NEXT_TOKEN', marketplaceId: string, shipmentStatusList?: Array<'WORKING' | 'READY_TO_SHIP' | 'SHIPPED' | 'RECEIVING' | 'CANCELLED' | 'DELETED' | 'CLOSED' | 'ERROR' | 'IN_TRANSIT' | 'DELIVERED' | 'CHECKED_IN'>, shipmentIdList?: Array<string>, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getShipments: async (queryType: GetShipmentsQueryTypeEnum, marketplaceId: string, shipmentStatusList?: Array<GetShipmentsShipmentStatusListEnum>, shipmentIdList?: Array<string>, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'queryType' is not null or undefined
             assertParamExists('getShipments', 'queryType', queryType)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -631,7 +631,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @deprecated
          * @throws {RequiredError}
          */
-        getTransportDetails: async (shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getTransportDetails: async (shipmentId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getTransportDetails', 'shipmentId', shipmentId)
             const localVarPath = `/fba/inbound/v0/shipments/{shipmentId}/transport`
@@ -666,7 +666,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @deprecated
          * @throws {RequiredError}
          */
-        putTransportDetails: async (shipmentId: string, body: PutTransportDetailsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        putTransportDetails: async (shipmentId: string, body: PutTransportDetailsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('putTransportDetails', 'shipmentId', shipmentId)
             // verify required parameter 'body' is not null or undefined
@@ -706,7 +706,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @deprecated
          * @throws {RequiredError}
          */
-        updateInboundShipment: async (shipmentId: string, body: InboundShipmentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateInboundShipment: async (shipmentId: string, body: InboundShipmentRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('updateInboundShipment', 'shipmentId', shipmentId)
             // verify required parameter 'body' is not null or undefined
@@ -745,7 +745,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @deprecated
          * @throws {RequiredError}
          */
-        voidTransport: async (shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        voidTransport: async (shipmentId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('voidTransport', 'shipmentId', shipmentId)
             const localVarPath = `/fba/inbound/v0/shipments/{shipmentId}/transport/void`
@@ -791,9 +791,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async confirmPreorder(shipmentId: string, needByDate: string, marketplaceId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConfirmPreorderResponse>> {
+        async confirmPreorder(shipmentId: string, needByDate: string, marketplaceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConfirmPreorderResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.confirmPreorder(shipmentId, needByDate, marketplaceId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.confirmPreorder']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Confirms that the seller accepts the Amazon-partnered shipping estimate, agrees to allow Amazon to charge their account for the shipping cost, and requests that the Amazon-partnered carrier ship the inbound shipment.  Prior to calling the confirmTransport operation, you should call the getTransportDetails operation to get the Amazon-partnered shipping estimate.  Important: After confirming the transportation request, if the seller decides that they do not want the Amazon-partnered carrier to ship the inbound shipment, you can call the voidTransport operation to cancel the transportation request. Note that for a Small Parcel shipment, the seller has 24 hours after confirming a transportation request to void the transportation request. For a Less Than Truckload/Full Truckload (LTL/FTL) shipment, the seller has one hour after confirming a transportation request to void it. After the grace period has expired the seller\'s account will be charged for the shipping cost.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -802,9 +804,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async confirmTransport(shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConfirmTransportResponse>> {
+        async confirmTransport(shipmentId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConfirmTransportResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.confirmTransport(shipmentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.confirmTransport']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a new inbound shipment based on the specified shipmentId that was returned by the createInboundShipmentPlan operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -814,9 +818,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async createInboundShipment(shipmentId: string, body: InboundShipmentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InboundShipmentResponse>> {
+        async createInboundShipment(shipmentId: string, body: InboundShipmentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InboundShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createInboundShipment(shipmentId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.createInboundShipment']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns one or more inbound shipment plans, which provide the information you need to create one or more inbound shipments for a set of items that you specify. Multiple inbound shipment plans might be required so that items can be optimally placed in Amazon\'s fulfillment network—for example, positioning inventory closer to the customer. Alternatively, two inbound shipment plans might be created with the same Amazon fulfillment center destination if the two shipment plans require different processing—for example, items that require labels must be shipped separately from stickerless, commingled inventory.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -825,9 +831,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async createInboundShipmentPlan(body: CreateInboundShipmentPlanRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateInboundShipmentPlanResponse>> {
+        async createInboundShipmentPlan(body: CreateInboundShipmentPlanRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateInboundShipmentPlanResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createInboundShipmentPlan(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.createInboundShipmentPlan']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Initiates the process of estimating the shipping cost for an inbound shipment by an Amazon-partnered carrier.  Prior to calling the estimateTransport operation, you must call the putTransportDetails operation to provide Amazon with the transportation information for the inbound shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -836,9 +844,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async estimateTransport(shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EstimateTransportResponse>> {
+        async estimateTransport(shipmentId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EstimateTransportResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.estimateTransport(shipmentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.estimateTransport']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a bill of lading for a Less Than Truckload/Full Truckload (LTL/FTL) shipment. The getBillOfLading operation returns PDF document data for printing a bill of lading for an Amazon-partnered Less Than Truckload/Full Truckload (LTL/FTL) inbound shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -846,15 +856,17 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getBillOfLading(shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetBillOfLadingResponse>> {
+        async getBillOfLading(shipmentId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetBillOfLadingResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getBillOfLading(shipmentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.getBillOfLading']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns package/pallet labels for faster and more accurate shipment processing at the Amazon fulfillment center.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation.
-         * @param {'PackageLabel_Letter_2' | 'PackageLabel_Letter_4' | 'PackageLabel_Letter_6' | 'PackageLabel_Letter_6_CarrierLeft' | 'PackageLabel_A4_2' | 'PackageLabel_A4_4' | 'PackageLabel_Plain_Paper' | 'PackageLabel_Plain_Paper_CarrierBottom' | 'PackageLabel_Thermal' | 'PackageLabel_Thermal_Unified' | 'PackageLabel_Thermal_NonPCP' | 'PackageLabel_Thermal_No_Carrier_Rotation'} pageType The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error.
-         * @param {'BARCODE_2D' | 'UNIQUE' | 'PALLET'} labelType The type of labels requested. 
+         * @param {GetLabelsPageTypeEnum} pageType The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error.
+         * @param {GetLabelsLabelTypeEnum} labelType The type of labels requested. 
          * @param {number} [numberOfPackages] The number of packages in the shipment.
          * @param {Array<string>} [packageLabelsToPrint] A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code.
          * @param {number} [numberOfPallets] The number of pallets in the shipment. This returns four identical labels for each pallet.
@@ -863,9 +875,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getLabels(shipmentId: string, pageType: 'PackageLabel_Letter_2' | 'PackageLabel_Letter_4' | 'PackageLabel_Letter_6' | 'PackageLabel_Letter_6_CarrierLeft' | 'PackageLabel_A4_2' | 'PackageLabel_A4_4' | 'PackageLabel_Plain_Paper' | 'PackageLabel_Plain_Paper_CarrierBottom' | 'PackageLabel_Thermal' | 'PackageLabel_Thermal_Unified' | 'PackageLabel_Thermal_NonPCP' | 'PackageLabel_Thermal_No_Carrier_Rotation', labelType: 'BARCODE_2D' | 'UNIQUE' | 'PALLET', numberOfPackages?: number, packageLabelsToPrint?: Array<string>, numberOfPallets?: number, pageSize?: number, pageStartIndex?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetLabelsResponse>> {
+        async getLabels(shipmentId: string, pageType: GetLabelsPageTypeEnum, labelType: GetLabelsLabelTypeEnum, numberOfPackages?: number, packageLabelsToPrint?: Array<string>, numberOfPallets?: number, pageSize?: number, pageStartIndex?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetLabelsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getLabels(shipmentId, pageType, labelType, numberOfPackages, packageLabelsToPrint, numberOfPallets, pageSize, pageStartIndex, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.getLabels']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns pre-order information, including dates, that a seller needs before confirming a shipment for pre-order.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -875,9 +889,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async getPreorderInfo(shipmentId: string, marketplaceId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPreorderInfoResponse>> {
+        async getPreorderInfo(shipmentId: string, marketplaceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPreorderInfoResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getPreorderInfo(shipmentId, marketplaceId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.getPreorderInfo']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns labeling requirements and item preparation instructions to help prepare items for shipment to Amazon\'s fulfillment network.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -887,13 +903,15 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getPrepInstructions(shipToCountryCode: string, sellerSKUList?: Array<string>, aSINList?: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPrepInstructionsResponse>> {
+        async getPrepInstructions(shipToCountryCode: string, sellerSKUList?: Array<string>, aSINList?: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPrepInstructionsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getPrepInstructions(shipToCountryCode, sellerSKUList, aSINList, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.getPrepInstructions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a list of items in a specified inbound shipment, or a list of items that were updated within a specified time frame.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {'DATE_RANGE' | 'NEXT_TOKEN'} queryType Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request.
+         * @param {GetShipmentItemsQueryTypeEnum} queryType Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request.
          * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored.
          * @param {string} [lastUpdatedAfter] A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller.
          * @param {string} [lastUpdatedBefore] A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller.
@@ -902,9 +920,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async getShipmentItems(queryType: 'DATE_RANGE' | 'NEXT_TOKEN', marketplaceId: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentItemsResponse>> {
+        async getShipmentItems(queryType: GetShipmentItemsQueryTypeEnum, marketplaceId: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentItemsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShipmentItems(queryType, marketplaceId, lastUpdatedAfter, lastUpdatedBefore, nextToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.getShipmentItems']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a list of items in a specified inbound shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -914,15 +934,17 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async getShipmentItemsByShipmentId(shipmentId: string, marketplaceId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentItemsResponse>> {
+        async getShipmentItemsByShipmentId(shipmentId: string, marketplaceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentItemsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShipmentItemsByShipmentId(shipmentId, marketplaceId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.getShipmentItemsByShipmentId']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a list of inbound shipments based on criteria that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {'SHIPMENT' | 'DATE_RANGE' | 'NEXT_TOKEN'} queryType Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request.
+         * @param {GetShipmentsQueryTypeEnum} queryType Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request.
          * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored.
-         * @param {Array<'WORKING' | 'READY_TO_SHIP' | 'SHIPPED' | 'RECEIVING' | 'CANCELLED' | 'DELETED' | 'CLOSED' | 'ERROR' | 'IN_TRANSIT' | 'DELIVERED' | 'CHECKED_IN'>} [shipmentStatusList] A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify.
+         * @param {Array<GetShipmentsShipmentStatusListEnum>} [shipmentStatusList] A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify.
          * @param {Array<string>} [shipmentIdList] A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned.
          * @param {string} [lastUpdatedAfter] A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller.
          * @param {string} [lastUpdatedBefore] A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller.
@@ -931,9 +953,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async getShipments(queryType: 'SHIPMENT' | 'DATE_RANGE' | 'NEXT_TOKEN', marketplaceId: string, shipmentStatusList?: Array<'WORKING' | 'READY_TO_SHIP' | 'SHIPPED' | 'RECEIVING' | 'CANCELLED' | 'DELETED' | 'CLOSED' | 'ERROR' | 'IN_TRANSIT' | 'DELIVERED' | 'CHECKED_IN'>, shipmentIdList?: Array<string>, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentsResponse>> {
+        async getShipments(queryType: GetShipmentsQueryTypeEnum, marketplaceId: string, shipmentStatusList?: Array<GetShipmentsShipmentStatusListEnum>, shipmentIdList?: Array<string>, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShipments(queryType, marketplaceId, shipmentStatusList, shipmentIdList, lastUpdatedAfter, lastUpdatedBefore, nextToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.getShipments']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns current transportation information about an inbound shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -942,9 +966,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async getTransportDetails(shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetTransportDetailsResponse>> {
+        async getTransportDetails(shipmentId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetTransportDetailsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getTransportDetails(shipmentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.getTransportDetails']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Sends transportation information to Amazon about an inbound shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -954,9 +980,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async putTransportDetails(shipmentId: string, body: PutTransportDetailsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PutTransportDetailsResponse>> {
+        async putTransportDetails(shipmentId: string, body: PutTransportDetailsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PutTransportDetailsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.putTransportDetails(shipmentId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.putTransportDetails']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Updates or removes items from the inbound shipment identified by the specified shipment identifier. Adding new items is not supported.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -966,9 +994,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async updateInboundShipment(shipmentId: string, body: InboundShipmentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InboundShipmentResponse>> {
+        async updateInboundShipment(shipmentId: string, body: InboundShipmentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InboundShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateInboundShipment(shipmentId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.updateInboundShipment']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Cancels a previously-confirmed request to ship an inbound shipment using an Amazon-partnered carrier.  To be successful, you must call this operation before the VoidDeadline date that is returned by the getTransportDetails operation.  Important: The VoidDeadline date is 24 hours after you confirm a Small Parcel shipment transportation request or one hour after you confirm a Less Than Truckload/Full Truckload (LTL/FTL) shipment transportation request. After the void deadline passes, your account will be charged for the shipping cost.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -977,9 +1007,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async voidTransport(shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VoidTransportResponse>> {
+        async voidTransport(shipmentId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VoidTransportResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.voidTransport(shipmentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.voidTransport']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -998,7 +1030,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @deprecated
          * @throws {RequiredError}
          */
-        confirmPreorder(requestParameters: FbaInboundApiConfirmPreorderRequest, options?: AxiosRequestConfig): AxiosPromise<ConfirmPreorderResponse> {
+        confirmPreorder(requestParameters: FbaInboundApiConfirmPreorderRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConfirmPreorderResponse> {
             return localVarFp.confirmPreorder(requestParameters.shipmentId, requestParameters.needByDate, requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1008,7 +1040,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @deprecated
          * @throws {RequiredError}
          */
-        confirmTransport(requestParameters: FbaInboundApiConfirmTransportRequest, options?: AxiosRequestConfig): AxiosPromise<ConfirmTransportResponse> {
+        confirmTransport(requestParameters: FbaInboundApiConfirmTransportRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConfirmTransportResponse> {
             return localVarFp.confirmTransport(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1018,7 +1050,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @deprecated
          * @throws {RequiredError}
          */
-        createInboundShipment(requestParameters: FbaInboundApiCreateInboundShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<InboundShipmentResponse> {
+        createInboundShipment(requestParameters: FbaInboundApiCreateInboundShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<InboundShipmentResponse> {
             return localVarFp.createInboundShipment(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1028,7 +1060,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @deprecated
          * @throws {RequiredError}
          */
-        createInboundShipmentPlan(requestParameters: FbaInboundApiCreateInboundShipmentPlanRequest, options?: AxiosRequestConfig): AxiosPromise<CreateInboundShipmentPlanResponse> {
+        createInboundShipmentPlan(requestParameters: FbaInboundApiCreateInboundShipmentPlanRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateInboundShipmentPlanResponse> {
             return localVarFp.createInboundShipmentPlan(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1038,7 +1070,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @deprecated
          * @throws {RequiredError}
          */
-        estimateTransport(requestParameters: FbaInboundApiEstimateTransportRequest, options?: AxiosRequestConfig): AxiosPromise<EstimateTransportResponse> {
+        estimateTransport(requestParameters: FbaInboundApiEstimateTransportRequest, options?: RawAxiosRequestConfig): AxiosPromise<EstimateTransportResponse> {
             return localVarFp.estimateTransport(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1047,7 +1079,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBillOfLading(requestParameters: FbaInboundApiGetBillOfLadingRequest, options?: AxiosRequestConfig): AxiosPromise<GetBillOfLadingResponse> {
+        getBillOfLading(requestParameters: FbaInboundApiGetBillOfLadingRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetBillOfLadingResponse> {
             return localVarFp.getBillOfLading(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1056,7 +1088,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getLabels(requestParameters: FbaInboundApiGetLabelsRequest, options?: AxiosRequestConfig): AxiosPromise<GetLabelsResponse> {
+        getLabels(requestParameters: FbaInboundApiGetLabelsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetLabelsResponse> {
             return localVarFp.getLabels(requestParameters.shipmentId, requestParameters.pageType, requestParameters.labelType, requestParameters.numberOfPackages, requestParameters.packageLabelsToPrint, requestParameters.numberOfPallets, requestParameters.pageSize, requestParameters.pageStartIndex, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1066,7 +1098,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @deprecated
          * @throws {RequiredError}
          */
-        getPreorderInfo(requestParameters: FbaInboundApiGetPreorderInfoRequest, options?: AxiosRequestConfig): AxiosPromise<GetPreorderInfoResponse> {
+        getPreorderInfo(requestParameters: FbaInboundApiGetPreorderInfoRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetPreorderInfoResponse> {
             return localVarFp.getPreorderInfo(requestParameters.shipmentId, requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1075,7 +1107,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPrepInstructions(requestParameters: FbaInboundApiGetPrepInstructionsRequest, options?: AxiosRequestConfig): AxiosPromise<GetPrepInstructionsResponse> {
+        getPrepInstructions(requestParameters: FbaInboundApiGetPrepInstructionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetPrepInstructionsResponse> {
             return localVarFp.getPrepInstructions(requestParameters.shipToCountryCode, requestParameters.sellerSKUList, requestParameters.aSINList, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1085,7 +1117,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @deprecated
          * @throws {RequiredError}
          */
-        getShipmentItems(requestParameters: FbaInboundApiGetShipmentItemsRequest, options?: AxiosRequestConfig): AxiosPromise<GetShipmentItemsResponse> {
+        getShipmentItems(requestParameters: FbaInboundApiGetShipmentItemsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetShipmentItemsResponse> {
             return localVarFp.getShipmentItems(requestParameters.queryType, requestParameters.marketplaceId, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1095,7 +1127,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @deprecated
          * @throws {RequiredError}
          */
-        getShipmentItemsByShipmentId(requestParameters: FbaInboundApiGetShipmentItemsByShipmentIdRequest, options?: AxiosRequestConfig): AxiosPromise<GetShipmentItemsResponse> {
+        getShipmentItemsByShipmentId(requestParameters: FbaInboundApiGetShipmentItemsByShipmentIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetShipmentItemsResponse> {
             return localVarFp.getShipmentItemsByShipmentId(requestParameters.shipmentId, requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1105,7 +1137,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @deprecated
          * @throws {RequiredError}
          */
-        getShipments(requestParameters: FbaInboundApiGetShipmentsRequest, options?: AxiosRequestConfig): AxiosPromise<GetShipmentsResponse> {
+        getShipments(requestParameters: FbaInboundApiGetShipmentsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetShipmentsResponse> {
             return localVarFp.getShipments(requestParameters.queryType, requestParameters.marketplaceId, requestParameters.shipmentStatusList, requestParameters.shipmentIdList, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1115,7 +1147,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @deprecated
          * @throws {RequiredError}
          */
-        getTransportDetails(requestParameters: FbaInboundApiGetTransportDetailsRequest, options?: AxiosRequestConfig): AxiosPromise<GetTransportDetailsResponse> {
+        getTransportDetails(requestParameters: FbaInboundApiGetTransportDetailsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetTransportDetailsResponse> {
             return localVarFp.getTransportDetails(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1125,7 +1157,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @deprecated
          * @throws {RequiredError}
          */
-        putTransportDetails(requestParameters: FbaInboundApiPutTransportDetailsRequest, options?: AxiosRequestConfig): AxiosPromise<PutTransportDetailsResponse> {
+        putTransportDetails(requestParameters: FbaInboundApiPutTransportDetailsRequest, options?: RawAxiosRequestConfig): AxiosPromise<PutTransportDetailsResponse> {
             return localVarFp.putTransportDetails(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1135,7 +1167,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @deprecated
          * @throws {RequiredError}
          */
-        updateInboundShipment(requestParameters: FbaInboundApiUpdateInboundShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<InboundShipmentResponse> {
+        updateInboundShipment(requestParameters: FbaInboundApiUpdateInboundShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<InboundShipmentResponse> {
             return localVarFp.updateInboundShipment(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1145,7 +1177,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @deprecated
          * @throws {RequiredError}
          */
-        voidTransport(requestParameters: FbaInboundApiVoidTransportRequest, options?: AxiosRequestConfig): AxiosPromise<VoidTransportResponse> {
+        voidTransport(requestParameters: FbaInboundApiVoidTransportRequest, options?: RawAxiosRequestConfig): AxiosPromise<VoidTransportResponse> {
             return localVarFp.voidTransport(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
     };
@@ -1274,14 +1306,14 @@ export interface FbaInboundApiGetLabelsRequest {
      * @type {'PackageLabel_Letter_2' | 'PackageLabel_Letter_4' | 'PackageLabel_Letter_6' | 'PackageLabel_Letter_6_CarrierLeft' | 'PackageLabel_A4_2' | 'PackageLabel_A4_4' | 'PackageLabel_Plain_Paper' | 'PackageLabel_Plain_Paper_CarrierBottom' | 'PackageLabel_Thermal' | 'PackageLabel_Thermal_Unified' | 'PackageLabel_Thermal_NonPCP' | 'PackageLabel_Thermal_No_Carrier_Rotation'}
      * @memberof FbaInboundApiGetLabels
      */
-    readonly pageType: 'PackageLabel_Letter_2' | 'PackageLabel_Letter_4' | 'PackageLabel_Letter_6' | 'PackageLabel_Letter_6_CarrierLeft' | 'PackageLabel_A4_2' | 'PackageLabel_A4_4' | 'PackageLabel_Plain_Paper' | 'PackageLabel_Plain_Paper_CarrierBottom' | 'PackageLabel_Thermal' | 'PackageLabel_Thermal_Unified' | 'PackageLabel_Thermal_NonPCP' | 'PackageLabel_Thermal_No_Carrier_Rotation'
+    readonly pageType: GetLabelsPageTypeEnum
 
     /**
      * The type of labels requested. 
      * @type {'BARCODE_2D' | 'UNIQUE' | 'PALLET'}
      * @memberof FbaInboundApiGetLabels
      */
-    readonly labelType: 'BARCODE_2D' | 'UNIQUE' | 'PALLET'
+    readonly labelType: GetLabelsLabelTypeEnum
 
     /**
      * The number of packages in the shipment.
@@ -1379,7 +1411,7 @@ export interface FbaInboundApiGetShipmentItemsRequest {
      * @type {'DATE_RANGE' | 'NEXT_TOKEN'}
      * @memberof FbaInboundApiGetShipmentItems
      */
-    readonly queryType: 'DATE_RANGE' | 'NEXT_TOKEN'
+    readonly queryType: GetShipmentItemsQueryTypeEnum
 
     /**
      * A marketplace identifier. Specifies the marketplace where the product would be stored.
@@ -1442,7 +1474,7 @@ export interface FbaInboundApiGetShipmentsRequest {
      * @type {'SHIPMENT' | 'DATE_RANGE' | 'NEXT_TOKEN'}
      * @memberof FbaInboundApiGetShipments
      */
-    readonly queryType: 'SHIPMENT' | 'DATE_RANGE' | 'NEXT_TOKEN'
+    readonly queryType: GetShipmentsQueryTypeEnum
 
     /**
      * A marketplace identifier. Specifies the marketplace where the product would be stored.
@@ -1456,7 +1488,7 @@ export interface FbaInboundApiGetShipmentsRequest {
      * @type {Array<'WORKING' | 'READY_TO_SHIP' | 'SHIPPED' | 'RECEIVING' | 'CANCELLED' | 'DELETED' | 'CLOSED' | 'ERROR' | 'IN_TRANSIT' | 'DELIVERED' | 'CHECKED_IN'>}
      * @memberof FbaInboundApiGetShipments
      */
-    readonly shipmentStatusList?: Array<'WORKING' | 'READY_TO_SHIP' | 'SHIPPED' | 'RECEIVING' | 'CANCELLED' | 'DELETED' | 'CLOSED' | 'ERROR' | 'IN_TRANSIT' | 'DELIVERED' | 'CHECKED_IN'>
+    readonly shipmentStatusList?: Array<GetShipmentsShipmentStatusListEnum>
 
     /**
      * A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned.
@@ -1572,7 +1604,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public confirmPreorder(requestParameters: FbaInboundApiConfirmPreorderRequest, options?: AxiosRequestConfig) {
+    public confirmPreorder(requestParameters: FbaInboundApiConfirmPreorderRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).confirmPreorder(requestParameters.shipmentId, requestParameters.needByDate, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1584,7 +1616,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public confirmTransport(requestParameters: FbaInboundApiConfirmTransportRequest, options?: AxiosRequestConfig) {
+    public confirmTransport(requestParameters: FbaInboundApiConfirmTransportRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).confirmTransport(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1596,7 +1628,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public createInboundShipment(requestParameters: FbaInboundApiCreateInboundShipmentRequest, options?: AxiosRequestConfig) {
+    public createInboundShipment(requestParameters: FbaInboundApiCreateInboundShipmentRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).createInboundShipment(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1608,7 +1640,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public createInboundShipmentPlan(requestParameters: FbaInboundApiCreateInboundShipmentPlanRequest, options?: AxiosRequestConfig) {
+    public createInboundShipmentPlan(requestParameters: FbaInboundApiCreateInboundShipmentPlanRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).createInboundShipmentPlan(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1620,7 +1652,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public estimateTransport(requestParameters: FbaInboundApiEstimateTransportRequest, options?: AxiosRequestConfig) {
+    public estimateTransport(requestParameters: FbaInboundApiEstimateTransportRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).estimateTransport(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1631,7 +1663,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public getBillOfLading(requestParameters: FbaInboundApiGetBillOfLadingRequest, options?: AxiosRequestConfig) {
+    public getBillOfLading(requestParameters: FbaInboundApiGetBillOfLadingRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).getBillOfLading(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1642,7 +1674,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public getLabels(requestParameters: FbaInboundApiGetLabelsRequest, options?: AxiosRequestConfig) {
+    public getLabels(requestParameters: FbaInboundApiGetLabelsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).getLabels(requestParameters.shipmentId, requestParameters.pageType, requestParameters.labelType, requestParameters.numberOfPackages, requestParameters.packageLabelsToPrint, requestParameters.numberOfPallets, requestParameters.pageSize, requestParameters.pageStartIndex, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1654,7 +1686,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public getPreorderInfo(requestParameters: FbaInboundApiGetPreorderInfoRequest, options?: AxiosRequestConfig) {
+    public getPreorderInfo(requestParameters: FbaInboundApiGetPreorderInfoRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).getPreorderInfo(requestParameters.shipmentId, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1665,7 +1697,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public getPrepInstructions(requestParameters: FbaInboundApiGetPrepInstructionsRequest, options?: AxiosRequestConfig) {
+    public getPrepInstructions(requestParameters: FbaInboundApiGetPrepInstructionsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).getPrepInstructions(requestParameters.shipToCountryCode, requestParameters.sellerSKUList, requestParameters.aSINList, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1677,7 +1709,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public getShipmentItems(requestParameters: FbaInboundApiGetShipmentItemsRequest, options?: AxiosRequestConfig) {
+    public getShipmentItems(requestParameters: FbaInboundApiGetShipmentItemsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).getShipmentItems(requestParameters.queryType, requestParameters.marketplaceId, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1689,7 +1721,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public getShipmentItemsByShipmentId(requestParameters: FbaInboundApiGetShipmentItemsByShipmentIdRequest, options?: AxiosRequestConfig) {
+    public getShipmentItemsByShipmentId(requestParameters: FbaInboundApiGetShipmentItemsByShipmentIdRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).getShipmentItemsByShipmentId(requestParameters.shipmentId, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1701,7 +1733,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public getShipments(requestParameters: FbaInboundApiGetShipmentsRequest, options?: AxiosRequestConfig) {
+    public getShipments(requestParameters: FbaInboundApiGetShipmentsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).getShipments(requestParameters.queryType, requestParameters.marketplaceId, requestParameters.shipmentStatusList, requestParameters.shipmentIdList, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1713,7 +1745,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public getTransportDetails(requestParameters: FbaInboundApiGetTransportDetailsRequest, options?: AxiosRequestConfig) {
+    public getTransportDetails(requestParameters: FbaInboundApiGetTransportDetailsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).getTransportDetails(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1725,7 +1757,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public putTransportDetails(requestParameters: FbaInboundApiPutTransportDetailsRequest, options?: AxiosRequestConfig) {
+    public putTransportDetails(requestParameters: FbaInboundApiPutTransportDetailsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).putTransportDetails(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1737,7 +1769,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public updateInboundShipment(requestParameters: FbaInboundApiUpdateInboundShipmentRequest, options?: AxiosRequestConfig) {
+    public updateInboundShipment(requestParameters: FbaInboundApiUpdateInboundShipmentRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).updateInboundShipment(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1749,7 +1781,69 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public voidTransport(requestParameters: FbaInboundApiVoidTransportRequest, options?: AxiosRequestConfig) {
+    public voidTransport(requestParameters: FbaInboundApiVoidTransportRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).voidTransport(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetLabelsPageTypeEnum = {
+    Letter2: 'PackageLabel_Letter_2',
+    Letter4: 'PackageLabel_Letter_4',
+    Letter6: 'PackageLabel_Letter_6',
+    Letter6CarrierLeft: 'PackageLabel_Letter_6_CarrierLeft',
+    A42: 'PackageLabel_A4_2',
+    A44: 'PackageLabel_A4_4',
+    PlainPaper: 'PackageLabel_Plain_Paper',
+    PlainPaperCarrierBottom: 'PackageLabel_Plain_Paper_CarrierBottom',
+    Thermal: 'PackageLabel_Thermal',
+    ThermalUnified: 'PackageLabel_Thermal_Unified',
+    ThermalNonPcp: 'PackageLabel_Thermal_NonPCP',
+    ThermalNoCarrierRotation: 'PackageLabel_Thermal_No_Carrier_Rotation'
+} as const;
+export type GetLabelsPageTypeEnum = typeof GetLabelsPageTypeEnum[keyof typeof GetLabelsPageTypeEnum];
+/**
+ * @export
+ */
+export const GetLabelsLabelTypeEnum = {
+    Barcode2D: 'BARCODE_2D',
+    Unique: 'UNIQUE',
+    Pallet: 'PALLET'
+} as const;
+export type GetLabelsLabelTypeEnum = typeof GetLabelsLabelTypeEnum[keyof typeof GetLabelsLabelTypeEnum];
+/**
+ * @export
+ */
+export const GetShipmentItemsQueryTypeEnum = {
+    DateRange: 'DATE_RANGE',
+    NextToken: 'NEXT_TOKEN'
+} as const;
+export type GetShipmentItemsQueryTypeEnum = typeof GetShipmentItemsQueryTypeEnum[keyof typeof GetShipmentItemsQueryTypeEnum];
+/**
+ * @export
+ */
+export const GetShipmentsQueryTypeEnum = {
+    Shipment: 'SHIPMENT',
+    DateRange: 'DATE_RANGE',
+    NextToken: 'NEXT_TOKEN'
+} as const;
+export type GetShipmentsQueryTypeEnum = typeof GetShipmentsQueryTypeEnum[keyof typeof GetShipmentsQueryTypeEnum];
+/**
+ * @export
+ */
+export const GetShipmentsShipmentStatusListEnum = {
+    Working: 'WORKING',
+    ReadyToShip: 'READY_TO_SHIP',
+    Shipped: 'SHIPPED',
+    Receiving: 'RECEIVING',
+    Cancelled: 'CANCELLED',
+    Deleted: 'DELETED',
+    Closed: 'CLOSED',
+    Error: 'ERROR',
+    InTransit: 'IN_TRANSIT',
+    Delivered: 'DELIVERED',
+    CheckedIn: 'CHECKED_IN'
+} as const;
+export type GetShipmentsShipmentStatusListEnum = typeof GetShipmentsShipmentStatusListEnum[keyof typeof GetShipmentsShipmentStatusListEnum];

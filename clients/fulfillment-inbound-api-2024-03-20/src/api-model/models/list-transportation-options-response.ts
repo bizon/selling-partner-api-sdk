@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Pagination } from './pagination';
+import type { Pagination } from './pagination';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TransportationOption } from './transportation-option';
+import type { TransportationOption } from './transportation-option';
 
 /**
  * `listTransportationOptions` response.

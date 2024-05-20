@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AvailabilityRecord } from './availability-record';
+import type { AvailabilityRecord } from './availability-record';
 
 /**
  * Request schema for the `updateSchedule` operation.

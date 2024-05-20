@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TransactionId } from './transaction-id';
+import type { TransactionId } from './transaction-id';
 
 /**
  * The response schema for the submitAcknowledgement operation.

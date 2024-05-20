@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { GetFeatureSkuResult } from './get-feature-sku-result';
+import type { GetFeatureSkuResult } from './get-feature-sku-result';
 
 /**
  * The response schema for the `getFeatureSKU` operation.

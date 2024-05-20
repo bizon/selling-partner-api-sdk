@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AppointmentResource } from './appointment-resource';
+import type { AppointmentResource } from './appointment-resource';
 
 /**
  * Request schema for the `assignAppointmentResources` operation.

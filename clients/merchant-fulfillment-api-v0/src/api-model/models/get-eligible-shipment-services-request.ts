@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipmentRequestDetails } from './shipment-request-details';
+import type { ShipmentRequestDetails } from './shipment-request-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShippingOfferingFilter } from './shipping-offering-filter';
+import type { ShippingOfferingFilter } from './shipping-offering-filter';
 
 /**
  * Request schema.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactDetailsPrimary } from './contact-details-primary';
+import type { ContactDetailsPrimary } from './contact-details-primary';
 
 /**
  * The contact details

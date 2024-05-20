@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BuyerCustomizedInfoDetail } from './buyer-customized-info-detail';
+import type { BuyerCustomizedInfoDetail } from './buyer-customized-info-detail';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Money } from './money';
+import type { Money } from './money';
 
 /**
  * A single item\'s buyer information.

@@ -14,25 +14,25 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CreateQueryResponse } from '../models';
+import type { CreateQueryResponse } from '../models';
 // @ts-ignore
-import { CreateQuerySpecification } from '../models';
+import type { CreateQuerySpecification } from '../models';
 // @ts-ignore
-import { ErrorList } from '../models';
+import type { ErrorList } from '../models';
 // @ts-ignore
-import { GetDocumentResponse } from '../models';
+import type { GetDocumentResponse } from '../models';
 // @ts-ignore
-import { GetQueriesResponse } from '../models';
+import type { GetQueriesResponse } from '../models';
 // @ts-ignore
-import { Query } from '../models';
+import type { Query } from '../models';
 /**
  * QueriesApi - axios parameter creator
  * @export
@@ -45,7 +45,7 @@ export const QueriesApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelQuery: async (queryId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        cancelQuery: async (queryId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'queryId' is not null or undefined
             assertParamExists('cancelQuery', 'queryId', queryId)
             const localVarPath = `/dataKiosk/2023-11-15/queries/{queryId}`
@@ -78,7 +78,7 @@ export const QueriesApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createQuery: async (body: CreateQuerySpecification, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createQuery: async (body: CreateQuerySpecification, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createQuery', 'body', body)
             const localVarPath = `/dataKiosk/2023-11-15/queries`;
@@ -113,7 +113,7 @@ export const QueriesApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDocument: async (documentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getDocument: async (documentId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'documentId' is not null or undefined
             assertParamExists('getDocument', 'documentId', documentId)
             const localVarPath = `/dataKiosk/2023-11-15/documents/{documentId}`
@@ -142,7 +142,7 @@ export const QueriesApiAxiosParamCreator = function (configuration?: Configurati
         },
         /**
          * Returns details for the Data Kiosk queries that match the specified filters. See the `createQuery` operation for details about query retention.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>} [processingStatuses] A list of processing statuses used to filter queries.
+         * @param {Array<GetQueriesProcessingStatusesEnum>} [processingStatuses] A list of processing statuses used to filter queries.
          * @param {number} [pageSize] The maximum number of queries to return in a single call.
          * @param {string} [createdSince] The earliest query creation date and time for queries to include in the response, in ISO 8601 date time format. The default is 90 days ago.
          * @param {string} [createdUntil] The latest query creation date and time for queries to include in the response, in ISO 8601 date time format. The default is the time of the &#x60;getQueries&#x60; request.
@@ -150,7 +150,7 @@ export const QueriesApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getQueries: async (processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, pageSize?: number, createdSince?: string, createdUntil?: string, paginationToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getQueries: async (processingStatuses?: Array<GetQueriesProcessingStatusesEnum>, pageSize?: number, createdSince?: string, createdUntil?: string, paginationToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/dataKiosk/2023-11-15/queries`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -204,7 +204,7 @@ export const QueriesApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getQuery: async (queryId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getQuery: async (queryId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'queryId' is not null or undefined
             assertParamExists('getQuery', 'queryId', queryId)
             const localVarPath = `/dataKiosk/2023-11-15/queries/{queryId}`
@@ -247,9 +247,11 @@ export const QueriesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelQuery(queryId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async cancelQuery(queryId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelQuery(queryId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['QueriesApi.cancelQuery']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Creates a Data Kiosk query request.  **Note:** The retention of a query varies based on the fields requested. Each field within a schema is annotated with a `@resultRetention` directive that defines how long a query containing that field will be retained. When a query contains multiple fields with different retentions, the shortest (minimum) retention is applied. The retention of a query\'s resulting documents always matches the retention of the query.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -257,9 +259,11 @@ export const QueriesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createQuery(body: CreateQuerySpecification, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateQueryResponse>> {
+        async createQuery(body: CreateQuerySpecification, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateQueryResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createQuery(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['QueriesApi.createQuery']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the information required for retrieving a Data Kiosk document\'s contents. See the `createQuery` operation for details about document retention.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -267,13 +271,15 @@ export const QueriesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getDocument(documentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDocumentResponse>> {
+        async getDocument(documentId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDocumentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getDocument(documentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['QueriesApi.getDocument']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns details for the Data Kiosk queries that match the specified filters. See the `createQuery` operation for details about query retention.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>} [processingStatuses] A list of processing statuses used to filter queries.
+         * @param {Array<GetQueriesProcessingStatusesEnum>} [processingStatuses] A list of processing statuses used to filter queries.
          * @param {number} [pageSize] The maximum number of queries to return in a single call.
          * @param {string} [createdSince] The earliest query creation date and time for queries to include in the response, in ISO 8601 date time format. The default is 90 days ago.
          * @param {string} [createdUntil] The latest query creation date and time for queries to include in the response, in ISO 8601 date time format. The default is the time of the &#x60;getQueries&#x60; request.
@@ -281,9 +287,11 @@ export const QueriesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getQueries(processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, pageSize?: number, createdSince?: string, createdUntil?: string, paginationToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetQueriesResponse>> {
+        async getQueries(processingStatuses?: Array<GetQueriesProcessingStatusesEnum>, pageSize?: number, createdSince?: string, createdUntil?: string, paginationToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetQueriesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getQueries(processingStatuses, pageSize, createdSince, createdUntil, paginationToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['QueriesApi.getQueries']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns query details for the query specified by the `queryId` parameter. See the `createQuery` operation for details about query retention.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2.0 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -291,9 +299,11 @@ export const QueriesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getQuery(queryId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Query>> {
+        async getQuery(queryId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Query>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getQuery(queryId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['QueriesApi.getQuery']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -311,7 +321,7 @@ export const QueriesApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelQuery(requestParameters: QueriesApiCancelQueryRequest, options?: AxiosRequestConfig): AxiosPromise<void> {
+        cancelQuery(requestParameters: QueriesApiCancelQueryRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.cancelQuery(requestParameters.queryId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -320,7 +330,7 @@ export const QueriesApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createQuery(requestParameters: QueriesApiCreateQueryRequest, options?: AxiosRequestConfig): AxiosPromise<CreateQueryResponse> {
+        createQuery(requestParameters: QueriesApiCreateQueryRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateQueryResponse> {
             return localVarFp.createQuery(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -329,7 +339,7 @@ export const QueriesApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDocument(requestParameters: QueriesApiGetDocumentRequest, options?: AxiosRequestConfig): AxiosPromise<GetDocumentResponse> {
+        getDocument(requestParameters: QueriesApiGetDocumentRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetDocumentResponse> {
             return localVarFp.getDocument(requestParameters.documentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -338,7 +348,7 @@ export const QueriesApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getQueries(requestParameters: QueriesApiGetQueriesRequest = {}, options?: AxiosRequestConfig): AxiosPromise<GetQueriesResponse> {
+        getQueries(requestParameters: QueriesApiGetQueriesRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<GetQueriesResponse> {
             return localVarFp.getQueries(requestParameters.processingStatuses, requestParameters.pageSize, requestParameters.createdSince, requestParameters.createdUntil, requestParameters.paginationToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -347,7 +357,7 @@ export const QueriesApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getQuery(requestParameters: QueriesApiGetQueryRequest, options?: AxiosRequestConfig): AxiosPromise<Query> {
+        getQuery(requestParameters: QueriesApiGetQueryRequest, options?: RawAxiosRequestConfig): AxiosPromise<Query> {
             return localVarFp.getQuery(requestParameters.queryId, options).then((request) => request(axios, basePath));
         },
     };
@@ -406,7 +416,7 @@ export interface QueriesApiGetQueriesRequest {
      * @type {Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>}
      * @memberof QueriesApiGetQueries
      */
-    readonly processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>
+    readonly processingStatuses?: Array<GetQueriesProcessingStatusesEnum>
 
     /**
      * The maximum number of queries to return in a single call.
@@ -465,7 +475,7 @@ export class QueriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QueriesApi
      */
-    public cancelQuery(requestParameters: QueriesApiCancelQueryRequest, options?: AxiosRequestConfig) {
+    public cancelQuery(requestParameters: QueriesApiCancelQueryRequest, options?: RawAxiosRequestConfig) {
         return QueriesApiFp(this.configuration).cancelQuery(requestParameters.queryId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -476,7 +486,7 @@ export class QueriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QueriesApi
      */
-    public createQuery(requestParameters: QueriesApiCreateQueryRequest, options?: AxiosRequestConfig) {
+    public createQuery(requestParameters: QueriesApiCreateQueryRequest, options?: RawAxiosRequestConfig) {
         return QueriesApiFp(this.configuration).createQuery(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -487,7 +497,7 @@ export class QueriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QueriesApi
      */
-    public getDocument(requestParameters: QueriesApiGetDocumentRequest, options?: AxiosRequestConfig) {
+    public getDocument(requestParameters: QueriesApiGetDocumentRequest, options?: RawAxiosRequestConfig) {
         return QueriesApiFp(this.configuration).getDocument(requestParameters.documentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -498,7 +508,7 @@ export class QueriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QueriesApi
      */
-    public getQueries(requestParameters: QueriesApiGetQueriesRequest = {}, options?: AxiosRequestConfig) {
+    public getQueries(requestParameters: QueriesApiGetQueriesRequest = {}, options?: RawAxiosRequestConfig) {
         return QueriesApiFp(this.configuration).getQueries(requestParameters.processingStatuses, requestParameters.pageSize, requestParameters.createdSince, requestParameters.createdUntil, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -509,7 +519,19 @@ export class QueriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QueriesApi
      */
-    public getQuery(requestParameters: QueriesApiGetQueryRequest, options?: AxiosRequestConfig) {
+    public getQuery(requestParameters: QueriesApiGetQueryRequest, options?: RawAxiosRequestConfig) {
         return QueriesApiFp(this.configuration).getQuery(requestParameters.queryId, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetQueriesProcessingStatusesEnum = {
+    Cancelled: 'CANCELLED',
+    Done: 'DONE',
+    Fatal: 'FATAL',
+    InProgress: 'IN_PROGRESS',
+    InQueue: 'IN_QUEUE'
+} as const;
+export type GetQueriesProcessingStatusesEnum = typeof GetQueriesProcessingStatusesEnum[keyof typeof GetQueriesProcessingStatusesEnum];

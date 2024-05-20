@@ -14,39 +14,39 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { ConfirmShipmentErrorResponse } from '../models';
+import type { ConfirmShipmentErrorResponse } from '../models';
 // @ts-ignore
-import { ConfirmShipmentRequest } from '../models';
+import type { ConfirmShipmentRequest } from '../models';
 // @ts-ignore
-import { GetOrderAddressResponse } from '../models';
+import type { GetOrderAddressResponse } from '../models';
 // @ts-ignore
-import { GetOrderBuyerInfoResponse } from '../models';
+import type { GetOrderBuyerInfoResponse } from '../models';
 // @ts-ignore
-import { GetOrderItemsBuyerInfoResponse } from '../models';
+import type { GetOrderItemsBuyerInfoResponse } from '../models';
 // @ts-ignore
-import { GetOrderItemsResponse } from '../models';
+import type { GetOrderItemsResponse } from '../models';
 // @ts-ignore
-import { GetOrderRegulatedInfoResponse } from '../models';
+import type { GetOrderRegulatedInfoResponse } from '../models';
 // @ts-ignore
-import { GetOrderResponse } from '../models';
+import type { GetOrderResponse } from '../models';
 // @ts-ignore
-import { GetOrdersResponse } from '../models';
+import type { GetOrdersResponse } from '../models';
 // @ts-ignore
-import { UpdateShipmentStatusErrorResponse } from '../models';
+import type { UpdateShipmentStatusErrorResponse } from '../models';
 // @ts-ignore
-import { UpdateShipmentStatusRequest } from '../models';
+import type { UpdateShipmentStatusRequest } from '../models';
 // @ts-ignore
-import { UpdateVerificationStatusErrorResponse } from '../models';
+import type { UpdateVerificationStatusErrorResponse } from '../models';
 // @ts-ignore
-import { UpdateVerificationStatusRequest } from '../models';
+import type { UpdateVerificationStatusRequest } from '../models';
 /**
  * OrdersV0Api - axios parameter creator
  * @export
@@ -60,7 +60,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        confirmShipment: async (orderId: string, payload: ConfirmShipmentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        confirmShipment: async (orderId: string, payload: ConfirmShipmentRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('confirmShipment', 'orderId', orderId)
             // verify required parameter 'payload' is not null or undefined
@@ -98,7 +98,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrder: async (orderId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getOrder: async (orderId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('getOrder', 'orderId', orderId)
             const localVarPath = `/orders/v0/orders/{orderId}`
@@ -131,7 +131,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderAddress: async (orderId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getOrderAddress: async (orderId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('getOrderAddress', 'orderId', orderId)
             const localVarPath = `/orders/v0/orders/{orderId}/address`
@@ -164,7 +164,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderBuyerInfo: async (orderId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getOrderBuyerInfo: async (orderId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('getOrderBuyerInfo', 'orderId', orderId)
             const localVarPath = `/orders/v0/orders/{orderId}/buyerInfo`
@@ -198,7 +198,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderItems: async (orderId: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getOrderItems: async (orderId: string, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('getOrderItems', 'orderId', orderId)
             const localVarPath = `/orders/v0/orders/{orderId}/orderItems`
@@ -236,7 +236,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderItemsBuyerInfo: async (orderId: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getOrderItemsBuyerInfo: async (orderId: string, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('getOrderItemsBuyerInfo', 'orderId', orderId)
             const localVarPath = `/orders/v0/orders/{orderId}/orderItems/buyerInfo`
@@ -273,7 +273,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderRegulatedInfo: async (orderId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getOrderRegulatedInfo: async (orderId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('getOrderRegulatedInfo', 'orderId', orderId)
             const localVarPath = `/orders/v0/orders/{orderId}/regulatedInfo`
@@ -327,7 +327,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrders: async (marketplaceIds: Array<string>, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, orderStatuses?: Array<string>, fulfillmentChannels?: Array<string>, paymentMethods?: Array<string>, buyerEmail?: string, sellerOrderId?: string, maxResultsPerPage?: number, easyShipShipmentStatuses?: Array<string>, electronicInvoiceStatuses?: Array<string>, nextToken?: string, amazonOrderIds?: Array<string>, actualFulfillmentSupplySourceId?: string, isISPU?: boolean, storeChainStoreId?: string, earliestDeliveryDateBefore?: string, earliestDeliveryDateAfter?: string, latestDeliveryDateBefore?: string, latestDeliveryDateAfter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getOrders: async (marketplaceIds: Array<string>, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, orderStatuses?: Array<string>, fulfillmentChannels?: Array<string>, paymentMethods?: Array<string>, buyerEmail?: string, sellerOrderId?: string, maxResultsPerPage?: number, easyShipShipmentStatuses?: Array<string>, electronicInvoiceStatuses?: Array<string>, nextToken?: string, amazonOrderIds?: Array<string>, actualFulfillmentSupplySourceId?: string, isISPU?: boolean, storeChainStoreId?: string, earliestDeliveryDateBefore?: string, earliestDeliveryDateAfter?: string, latestDeliveryDateBefore?: string, latestDeliveryDateAfter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('getOrders', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/orders/v0/orders`;
@@ -448,7 +448,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateShipmentStatus: async (orderId: string, payload: UpdateShipmentStatusRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateShipmentStatus: async (orderId: string, payload: UpdateShipmentStatusRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('updateShipmentStatus', 'orderId', orderId)
             // verify required parameter 'payload' is not null or undefined
@@ -487,7 +487,7 @@ export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateVerificationStatus: async (orderId: string, payload: UpdateVerificationStatusRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateVerificationStatus: async (orderId: string, payload: UpdateVerificationStatusRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('updateVerificationStatus', 'orderId', orderId)
             // verify required parameter 'payload' is not null or undefined
@@ -536,9 +536,11 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async confirmShipment(orderId: string, payload: ConfirmShipmentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async confirmShipment(orderId: string, payload: ConfirmShipmentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.confirmShipment(orderId, payload, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.confirmShipment']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -546,9 +548,11 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrder(orderId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderResponse>> {
+        async getOrder(orderId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrder(orderId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.getOrder']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -556,9 +560,11 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrderAddress(orderId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderAddressResponse>> {
+        async getOrderAddress(orderId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderAddressResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderAddress(orderId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.getOrderAddress']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -566,9 +572,11 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrderBuyerInfo(orderId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderBuyerInfoResponse>> {
+        async getOrderBuyerInfo(orderId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderBuyerInfoResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderBuyerInfo(orderId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.getOrderBuyerInfo']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns detailed order item information for the order that you specify. If `NextToken` is provided, it\'s used to retrieve the next page of order items.  **Note**: When an order is in the Pending state (the order has been placed but payment has not been authorized), the `getOrderItems` operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the `Unshipped`, `Partially Shipped`, or `Shipped` state, the `getOrderItems` operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -577,9 +585,11 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrderItems(orderId: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderItemsResponse>> {
+        async getOrderItems(orderId: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderItemsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderItems(orderId, nextToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.getOrderItems']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -588,9 +598,11 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrderItemsBuyerInfo(orderId: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderItemsBuyerInfoResponse>> {
+        async getOrderItemsBuyerInfo(orderId: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderItemsBuyerInfoResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderItemsBuyerInfo(orderId, nextToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.getOrderItemsBuyerInfo']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -598,9 +610,11 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrderRegulatedInfo(orderId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderRegulatedInfoResponse>> {
+        async getOrderRegulatedInfo(orderId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderRegulatedInfoResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderRegulatedInfo(orderId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.getOrderRegulatedInfo']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns orders created or updated during the time frame indicated by the specified parameters. You can also apply a range of filtering criteria to narrow the list of orders returned. If NextToken is present, that will be used to retrieve the orders instead of other criteria.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -629,9 +643,11 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrders(marketplaceIds: Array<string>, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, orderStatuses?: Array<string>, fulfillmentChannels?: Array<string>, paymentMethods?: Array<string>, buyerEmail?: string, sellerOrderId?: string, maxResultsPerPage?: number, easyShipShipmentStatuses?: Array<string>, electronicInvoiceStatuses?: Array<string>, nextToken?: string, amazonOrderIds?: Array<string>, actualFulfillmentSupplySourceId?: string, isISPU?: boolean, storeChainStoreId?: string, earliestDeliveryDateBefore?: string, earliestDeliveryDateAfter?: string, latestDeliveryDateBefore?: string, latestDeliveryDateAfter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrdersResponse>> {
+        async getOrders(marketplaceIds: Array<string>, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, orderStatuses?: Array<string>, fulfillmentChannels?: Array<string>, paymentMethods?: Array<string>, buyerEmail?: string, sellerOrderId?: string, maxResultsPerPage?: number, easyShipShipmentStatuses?: Array<string>, electronicInvoiceStatuses?: Array<string>, nextToken?: string, amazonOrderIds?: Array<string>, actualFulfillmentSupplySourceId?: string, isISPU?: boolean, storeChainStoreId?: string, earliestDeliveryDateBefore?: string, earliestDeliveryDateAfter?: string, latestDeliveryDateBefore?: string, latestDeliveryDateAfter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrdersResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrders(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, electronicInvoiceStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, earliestDeliveryDateBefore, earliestDeliveryDateAfter, latestDeliveryDateBefore, latestDeliveryDateAfter, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.getOrders']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Update the shipment status for an order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -640,9 +656,11 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateShipmentStatus(orderId: string, payload: UpdateShipmentStatusRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async updateShipmentStatus(orderId: string, payload: UpdateShipmentStatusRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateShipmentStatus(orderId, payload, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.updateShipmentStatus']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -651,9 +669,11 @@ export const OrdersV0ApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateVerificationStatus(orderId: string, payload: UpdateVerificationStatusRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async updateVerificationStatus(orderId: string, payload: UpdateVerificationStatusRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateVerificationStatus(orderId, payload, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.updateVerificationStatus']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -671,7 +691,7 @@ export const OrdersV0ApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        confirmShipment(requestParameters: OrdersV0ApiConfirmShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<void> {
+        confirmShipment(requestParameters: OrdersV0ApiConfirmShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.confirmShipment(requestParameters.orderId, requestParameters.payload, options).then((request) => request(axios, basePath));
         },
         /**
@@ -680,7 +700,7 @@ export const OrdersV0ApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrder(requestParameters: OrdersV0ApiGetOrderRequest, options?: AxiosRequestConfig): AxiosPromise<GetOrderResponse> {
+        getOrder(requestParameters: OrdersV0ApiGetOrderRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderResponse> {
             return localVarFp.getOrder(requestParameters.orderId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -689,7 +709,7 @@ export const OrdersV0ApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderAddress(requestParameters: OrdersV0ApiGetOrderAddressRequest, options?: AxiosRequestConfig): AxiosPromise<GetOrderAddressResponse> {
+        getOrderAddress(requestParameters: OrdersV0ApiGetOrderAddressRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderAddressResponse> {
             return localVarFp.getOrderAddress(requestParameters.orderId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -698,7 +718,7 @@ export const OrdersV0ApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderBuyerInfo(requestParameters: OrdersV0ApiGetOrderBuyerInfoRequest, options?: AxiosRequestConfig): AxiosPromise<GetOrderBuyerInfoResponse> {
+        getOrderBuyerInfo(requestParameters: OrdersV0ApiGetOrderBuyerInfoRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderBuyerInfoResponse> {
             return localVarFp.getOrderBuyerInfo(requestParameters.orderId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -707,7 +727,7 @@ export const OrdersV0ApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderItems(requestParameters: OrdersV0ApiGetOrderItemsRequest, options?: AxiosRequestConfig): AxiosPromise<GetOrderItemsResponse> {
+        getOrderItems(requestParameters: OrdersV0ApiGetOrderItemsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderItemsResponse> {
             return localVarFp.getOrderItems(requestParameters.orderId, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -716,7 +736,7 @@ export const OrdersV0ApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderItemsBuyerInfo(requestParameters: OrdersV0ApiGetOrderItemsBuyerInfoRequest, options?: AxiosRequestConfig): AxiosPromise<GetOrderItemsBuyerInfoResponse> {
+        getOrderItemsBuyerInfo(requestParameters: OrdersV0ApiGetOrderItemsBuyerInfoRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderItemsBuyerInfoResponse> {
             return localVarFp.getOrderItemsBuyerInfo(requestParameters.orderId, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -725,7 +745,7 @@ export const OrdersV0ApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderRegulatedInfo(requestParameters: OrdersV0ApiGetOrderRegulatedInfoRequest, options?: AxiosRequestConfig): AxiosPromise<GetOrderRegulatedInfoResponse> {
+        getOrderRegulatedInfo(requestParameters: OrdersV0ApiGetOrderRegulatedInfoRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderRegulatedInfoResponse> {
             return localVarFp.getOrderRegulatedInfo(requestParameters.orderId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -734,7 +754,7 @@ export const OrdersV0ApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrders(requestParameters: OrdersV0ApiGetOrdersRequest, options?: AxiosRequestConfig): AxiosPromise<GetOrdersResponse> {
+        getOrders(requestParameters: OrdersV0ApiGetOrdersRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrdersResponse> {
             return localVarFp.getOrders(requestParameters.marketplaceIds, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.orderStatuses, requestParameters.fulfillmentChannels, requestParameters.paymentMethods, requestParameters.buyerEmail, requestParameters.sellerOrderId, requestParameters.maxResultsPerPage, requestParameters.easyShipShipmentStatuses, requestParameters.electronicInvoiceStatuses, requestParameters.nextToken, requestParameters.amazonOrderIds, requestParameters.actualFulfillmentSupplySourceId, requestParameters.isISPU, requestParameters.storeChainStoreId, requestParameters.earliestDeliveryDateBefore, requestParameters.earliestDeliveryDateAfter, requestParameters.latestDeliveryDateBefore, requestParameters.latestDeliveryDateAfter, options).then((request) => request(axios, basePath));
         },
         /**
@@ -743,7 +763,7 @@ export const OrdersV0ApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateShipmentStatus(requestParameters: OrdersV0ApiUpdateShipmentStatusRequest, options?: AxiosRequestConfig): AxiosPromise<void> {
+        updateShipmentStatus(requestParameters: OrdersV0ApiUpdateShipmentStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.updateShipmentStatus(requestParameters.orderId, requestParameters.payload, options).then((request) => request(axios, basePath));
         },
         /**
@@ -752,7 +772,7 @@ export const OrdersV0ApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateVerificationStatus(requestParameters: OrdersV0ApiUpdateVerificationStatusRequest, options?: AxiosRequestConfig): AxiosPromise<void> {
+        updateVerificationStatus(requestParameters: OrdersV0ApiUpdateVerificationStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.updateVerificationStatus(requestParameters.orderId, requestParameters.payload, options).then((request) => request(axios, basePath));
         },
     };
@@ -1094,7 +1114,7 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public confirmShipment(requestParameters: OrdersV0ApiConfirmShipmentRequest, options?: AxiosRequestConfig) {
+    public confirmShipment(requestParameters: OrdersV0ApiConfirmShipmentRequest, options?: RawAxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).confirmShipment(requestParameters.orderId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1105,7 +1125,7 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrder(requestParameters: OrdersV0ApiGetOrderRequest, options?: AxiosRequestConfig) {
+    public getOrder(requestParameters: OrdersV0ApiGetOrderRequest, options?: RawAxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).getOrder(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1116,7 +1136,7 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrderAddress(requestParameters: OrdersV0ApiGetOrderAddressRequest, options?: AxiosRequestConfig) {
+    public getOrderAddress(requestParameters: OrdersV0ApiGetOrderAddressRequest, options?: RawAxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).getOrderAddress(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1127,7 +1147,7 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrderBuyerInfo(requestParameters: OrdersV0ApiGetOrderBuyerInfoRequest, options?: AxiosRequestConfig) {
+    public getOrderBuyerInfo(requestParameters: OrdersV0ApiGetOrderBuyerInfoRequest, options?: RawAxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).getOrderBuyerInfo(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1138,7 +1158,7 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrderItems(requestParameters: OrdersV0ApiGetOrderItemsRequest, options?: AxiosRequestConfig) {
+    public getOrderItems(requestParameters: OrdersV0ApiGetOrderItemsRequest, options?: RawAxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).getOrderItems(requestParameters.orderId, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1149,7 +1169,7 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrderItemsBuyerInfo(requestParameters: OrdersV0ApiGetOrderItemsBuyerInfoRequest, options?: AxiosRequestConfig) {
+    public getOrderItemsBuyerInfo(requestParameters: OrdersV0ApiGetOrderItemsBuyerInfoRequest, options?: RawAxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).getOrderItemsBuyerInfo(requestParameters.orderId, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1160,7 +1180,7 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrderRegulatedInfo(requestParameters: OrdersV0ApiGetOrderRegulatedInfoRequest, options?: AxiosRequestConfig) {
+    public getOrderRegulatedInfo(requestParameters: OrdersV0ApiGetOrderRegulatedInfoRequest, options?: RawAxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).getOrderRegulatedInfo(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1171,7 +1191,7 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public getOrders(requestParameters: OrdersV0ApiGetOrdersRequest, options?: AxiosRequestConfig) {
+    public getOrders(requestParameters: OrdersV0ApiGetOrdersRequest, options?: RawAxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).getOrders(requestParameters.marketplaceIds, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.orderStatuses, requestParameters.fulfillmentChannels, requestParameters.paymentMethods, requestParameters.buyerEmail, requestParameters.sellerOrderId, requestParameters.maxResultsPerPage, requestParameters.easyShipShipmentStatuses, requestParameters.electronicInvoiceStatuses, requestParameters.nextToken, requestParameters.amazonOrderIds, requestParameters.actualFulfillmentSupplySourceId, requestParameters.isISPU, requestParameters.storeChainStoreId, requestParameters.earliestDeliveryDateBefore, requestParameters.earliestDeliveryDateAfter, requestParameters.latestDeliveryDateBefore, requestParameters.latestDeliveryDateAfter, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1182,7 +1202,7 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public updateShipmentStatus(requestParameters: OrdersV0ApiUpdateShipmentStatusRequest, options?: AxiosRequestConfig) {
+    public updateShipmentStatus(requestParameters: OrdersV0ApiUpdateShipmentStatusRequest, options?: RawAxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).updateShipmentStatus(requestParameters.orderId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1193,7 +1213,8 @@ export class OrdersV0Api extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrdersV0Api
      */
-    public updateVerificationStatus(requestParameters: OrdersV0ApiUpdateVerificationStatusRequest, options?: AxiosRequestConfig) {
+    public updateVerificationStatus(requestParameters: OrdersV0ApiUpdateVerificationStatusRequest, options?: RawAxiosRequestConfig) {
         return OrdersV0ApiFp(this.configuration).updateVerificationStatus(requestParameters.orderId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

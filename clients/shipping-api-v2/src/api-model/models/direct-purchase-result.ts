@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PackageDocumentDetail } from './package-document-detail';
+import type { PackageDocumentDetail } from './package-document-detail';
 
 /**
  * The payload for the directPurchaseShipment operation.

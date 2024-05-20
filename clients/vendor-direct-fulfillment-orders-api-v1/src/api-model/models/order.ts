@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { OrderDetails } from './order-details';
+import type { OrderDetails } from './order-details';
 
 /**
  * 

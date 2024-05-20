@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemSalesRank } from './item-sales-rank';
+import type { ItemSalesRank } from './item-sales-rank';
 
 /**
  * Sales ranks of an Amazon catalog item for the indicated Amazon marketplace.

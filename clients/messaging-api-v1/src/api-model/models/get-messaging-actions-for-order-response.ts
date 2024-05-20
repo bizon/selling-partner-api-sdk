@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { GetMessagingActionsForOrderResponseEmbedded } from './get-messaging-actions-for-order-response-embedded';
+import type { GetMessagingActionsForOrderResponseEmbedded } from './get-messaging-actions-for-order-response-embedded';
 // May contain unused imports in some cases
 // @ts-ignore
-import { GetMessagingActionsForOrderResponseLinks } from './get-messaging-actions-for-order-response-links';
+import type { GetMessagingActionsForOrderResponseLinks } from './get-messaging-actions-for-order-response-links';
 
 /**
  * The response schema for the getMessagingActionsForOrder operation.

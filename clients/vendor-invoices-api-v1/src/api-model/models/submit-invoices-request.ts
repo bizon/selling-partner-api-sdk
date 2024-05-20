@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Invoice } from './invoice';
+import type { Invoice } from './invoice';
 
 /**
  * The request schema for the submitInvoices operation.

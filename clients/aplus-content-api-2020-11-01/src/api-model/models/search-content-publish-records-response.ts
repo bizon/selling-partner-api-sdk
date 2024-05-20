@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AplusPaginatedResponse } from './aplus-paginated-response';
+import type { AplusPaginatedResponse } from './aplus-paginated-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PublishRecord } from './publish-record';
+import type { PublishRecord } from './publish-record';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SearchContentPublishRecordsResponseAllOf } from './search-content-publish-records-response-all-of';
+import type { SearchContentPublishRecordsResponseAllOf } from './search-content-publish-records-response-all-of';
 
 /**
  * @type SearchContentPublishRecordsResponse

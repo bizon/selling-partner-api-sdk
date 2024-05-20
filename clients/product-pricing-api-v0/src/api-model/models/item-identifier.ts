@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ConditionType } from './condition-type';
+import type { ConditionType } from './condition-type';
 
 /**
  * Information that identifies an item.

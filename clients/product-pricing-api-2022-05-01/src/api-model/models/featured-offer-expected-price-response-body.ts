@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeaturedOfferExpectedPriceResult } from './featured-offer-expected-price-result';
+import type { FeaturedOfferExpectedPriceResult } from './featured-offer-expected-price-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OfferIdentifier } from './offer-identifier';
+import type { OfferIdentifier } from './offer-identifier';
 
 /**
  * The featured offer expected price response data for a requested SKU.

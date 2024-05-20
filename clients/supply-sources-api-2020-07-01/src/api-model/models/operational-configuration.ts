@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactDetails } from './contact-details';
+import type { ContactDetails } from './contact-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Duration } from './duration';
+import type { Duration } from './duration';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OperatingHoursByDay } from './operating-hours-by-day';
+import type { OperatingHoursByDay } from './operating-hours-by-day';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ThroughputConfig } from './throughput-config';
+import type { ThroughputConfig } from './throughput-config';
 
 /**
  * The operational configuration of `supplySources`.

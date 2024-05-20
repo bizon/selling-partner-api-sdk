@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TestOrder } from './test-order';
+import type { TestOrder } from './test-order';
 
 /**
  * A scenario test case response returned when the request is successful.

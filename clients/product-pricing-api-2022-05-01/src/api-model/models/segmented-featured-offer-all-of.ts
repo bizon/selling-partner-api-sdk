@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeaturedOfferSegment } from './featured-offer-segment';
+import type { FeaturedOfferSegment } from './featured-offer-segment';
 
 /**
  * The list of segment information in which the offer is featured.

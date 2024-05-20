@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AggregationSettings } from './aggregation-settings';
+import type { AggregationSettings } from './aggregation-settings';
 
 /**
  * A filter used to select the aggregation time period at which to send notifications (for example: limit to one notification every five minutes for high frequency notifications).

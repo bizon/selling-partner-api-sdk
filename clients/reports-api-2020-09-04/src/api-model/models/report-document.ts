@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ReportDocumentEncryptionDetails } from './report-document-encryption-details';
+import type { ReportDocumentEncryptionDetails } from './report-document-encryption-details';
 
 /**
  * 

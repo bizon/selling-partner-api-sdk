@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ConstraintType } from './constraint-type';
+import type { ConstraintType } from './constraint-type';
 
 /**
  * Delivery constraints applicable to this order.

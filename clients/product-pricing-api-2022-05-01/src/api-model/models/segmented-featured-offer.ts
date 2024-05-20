@@ -15,28 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Condition } from './condition';
+import type { Condition } from './condition';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeaturedOfferSegment } from './featured-offer-segment';
+import type { FeaturedOfferSegment } from './featured-offer-segment';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentType } from './fulfillment-type';
+import type { FulfillmentType } from './fulfillment-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MoneyType } from './money-type';
+import type { MoneyType } from './money-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Offer } from './offer';
+import type { Offer } from './offer';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Points } from './points';
+import type { Points } from './points';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SegmentedFeaturedOfferAllOf } from './segmented-featured-offer-all-of';
+import type { SegmentedFeaturedOfferAllOf } from './segmented-featured-offer-all-of';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShippingOption } from './shipping-option';
+import type { ShippingOption } from './shipping-option';
 
 /**
  * @type SegmentedFeaturedOffer

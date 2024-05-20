@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { LabelFormat } from './label-format';
+import type { LabelFormat } from './label-format';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OrderScheduleDetails } from './order-schedule-details';
+import type { OrderScheduleDetails } from './order-schedule-details';
 
 /**
  * The request body for the POST /easyShip/2022-03-23/packages/bulk API.

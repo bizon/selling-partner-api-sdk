@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TransportContent } from './transport-content';
+import type { TransportContent } from './transport-content';
 
 /**
  * Result for the get transport details operation

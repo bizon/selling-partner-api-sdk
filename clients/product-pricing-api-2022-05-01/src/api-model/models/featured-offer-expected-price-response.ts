@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BatchResponse } from './batch-response';
+import type { BatchResponse } from './batch-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeaturedOfferExpectedPriceRequestParams } from './featured-offer-expected-price-request-params';
+import type { FeaturedOfferExpectedPriceRequestParams } from './featured-offer-expected-price-request-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeaturedOfferExpectedPriceResponseAllOf } from './featured-offer-expected-price-response-all-of';
+import type { FeaturedOfferExpectedPriceResponseAllOf } from './featured-offer-expected-price-response-all-of';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeaturedOfferExpectedPriceResponseBody } from './featured-offer-expected-price-response-body';
+import type { FeaturedOfferExpectedPriceResponseBody } from './featured-offer-expected-price-response-body';
 // May contain unused imports in some cases
 // @ts-ignore
-import { HttpStatusLine } from './http-status-line';
+import type { HttpStatusLine } from './http-status-line';
 
 /**
  * @type FeaturedOfferExpectedPriceResponse

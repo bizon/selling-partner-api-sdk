@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipmentType } from './shipment-type';
+import type { ShipmentType } from './shipment-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TransportDetailInput } from './transport-detail-input';
+import type { TransportDetailInput } from './transport-detail-input';
 
 /**
  * The request schema for a putTransportDetails operation.

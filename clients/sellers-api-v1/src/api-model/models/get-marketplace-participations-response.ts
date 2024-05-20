@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MarketplaceParticipation } from './marketplace-participation';
+import type { MarketplaceParticipation } from './marketplace-participation';
 
 /**
  * The response schema for the getMarketplaceParticipations operation.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Shipment } from './shipment';
+import type { Shipment } from './shipment';
 
 /**
  * Response schema.

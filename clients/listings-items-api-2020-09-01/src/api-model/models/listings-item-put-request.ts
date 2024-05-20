@@ -34,10 +34,10 @@ export interface ListingsItemPutRequest {
     'requirements'?: ListingsItemPutRequestRequirementsEnum;
     /**
      * JSON object containing structured listings item attribute data keyed by attribute name.
-     * @type {object}
+     * @type {{ [key: string]: any; }}
      * @memberof ListingsItemPutRequest
      */
-    'attributes': object;
+    'attributes': { [key: string]: any; };
 }
 
 export const ListingsItemPutRequestRequirementsEnum = {

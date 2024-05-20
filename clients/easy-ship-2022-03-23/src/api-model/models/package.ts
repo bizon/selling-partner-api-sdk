@@ -15,28 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Dimensions } from './dimensions';
+import type { Dimensions } from './dimensions';
 // May contain unused imports in some cases
 // @ts-ignore
-import { InvoiceData } from './invoice-data';
+import type { InvoiceData } from './invoice-data';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Item } from './item';
+import type { Item } from './item';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PackageStatus } from './package-status';
+import type { PackageStatus } from './package-status';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ScheduledPackageId } from './scheduled-package-id';
+import type { ScheduledPackageId } from './scheduled-package-id';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TimeSlot } from './time-slot';
+import type { TimeSlot } from './time-slot';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TrackingDetails } from './tracking-details';
+import type { TrackingDetails } from './tracking-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Weight } from './weight';
+import type { Weight } from './weight';
 
 /**
  * This object contains all the details of the scheduled Easy Ship package.

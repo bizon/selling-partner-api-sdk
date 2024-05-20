@@ -14,15 +14,15 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { GetTransactionResponse } from '../models';
+import type { GetTransactionResponse } from '../models';
 /**
  * VendorTransactionApi - axios parameter creator
  * @export
@@ -35,7 +35,7 @@ export const VendorTransactionApiAxiosParamCreator = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransaction: async (transactionId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getTransaction: async (transactionId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'transactionId' is not null or undefined
             assertParamExists('getTransaction', 'transactionId', transactionId)
             const localVarPath = `/vendor/transactions/v1/transactions/{transactionId}`
@@ -78,9 +78,11 @@ export const VendorTransactionApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTransaction(transactionId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetTransactionResponse>> {
+        async getTransaction(transactionId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetTransactionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getTransaction(transactionId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['VendorTransactionApi.getTransaction']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -98,7 +100,7 @@ export const VendorTransactionApiFactory = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransaction(requestParameters: VendorTransactionApiGetTransactionRequest, options?: AxiosRequestConfig): AxiosPromise<GetTransactionResponse> {
+        getTransaction(requestParameters: VendorTransactionApiGetTransactionRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetTransactionResponse> {
             return localVarFp.getTransaction(requestParameters.transactionId, options).then((request) => request(axios, basePath));
         },
     };
@@ -132,7 +134,8 @@ export class VendorTransactionApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorTransactionApi
      */
-    public getTransaction(requestParameters: VendorTransactionApiGetTransactionRequest, options?: AxiosRequestConfig) {
+    public getTransaction(requestParameters: VendorTransactionApiGetTransactionRequest, options?: RawAxiosRequestConfig) {
         return VendorTransactionApiFp(this.configuration).getTransaction(requestParameters.transactionId, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

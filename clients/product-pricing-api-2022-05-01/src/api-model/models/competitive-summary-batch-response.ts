@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CompetitiveSummaryResponse } from './competitive-summary-response';
+import type { CompetitiveSummaryResponse } from './competitive-summary-response';
 
 /**
  * The response schema of the `competitiveSummaryBatch` operation.

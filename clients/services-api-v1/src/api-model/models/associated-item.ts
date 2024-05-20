@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemDelivery } from './item-delivery';
+import type { ItemDelivery } from './item-delivery';
 
 /**
  * Information about an item associated with the service job.

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CompetitiveSummaryResponseBody } from './competitive-summary-response-body';
+import type { CompetitiveSummaryResponseBody } from './competitive-summary-response-body';
 // May contain unused imports in some cases
 // @ts-ignore
-import { HttpStatusLine } from './http-status-line';
+import type { HttpStatusLine } from './http-status-line';
 
 /**
  * The response for the individual `competitiveSummary` request in the batch operation.

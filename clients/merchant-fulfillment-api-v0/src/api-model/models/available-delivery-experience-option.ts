@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CurrencyAmount } from './currency-amount';
+import type { CurrencyAmount } from './currency-amount';
 // May contain unused imports in some cases
 // @ts-ignore
-import { DeliveryExperienceOption } from './delivery-experience-option';
+import type { DeliveryExperienceOption } from './delivery-experience-option';
 
 /**
  * The available delivery confirmation options, and the fee charged, if any.

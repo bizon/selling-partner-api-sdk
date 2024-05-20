@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PrepDetails } from './prep-details';
+import type { PrepDetails } from './prep-details';
 
 /**
  * Item information used to create an inbound shipment. Returned by the createInboundShipmentPlan operation.

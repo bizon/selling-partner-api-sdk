@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactInformation } from './contact-information';
+import type { ContactInformation } from './contact-information';
 
 /**
  * A light-weight inbound plan.

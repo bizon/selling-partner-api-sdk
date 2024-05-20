@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { UpdateReservationRecord } from './update-reservation-record';
+import type { UpdateReservationRecord } from './update-reservation-record';
 
 /**
  * Response schema for the `updateReservation` operation.

@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Item } from './item';
+import type { Item } from './item';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Pagination } from './pagination';
+import type { Pagination } from './pagination';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Refinements } from './refinements';
+import type { Refinements } from './refinements';
 
 /**
  * Items in the Amazon catalog and search related metadata.

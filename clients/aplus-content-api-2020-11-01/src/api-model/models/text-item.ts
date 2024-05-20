@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TextComponent } from './text-component';
+import type { TextComponent } from './text-component';
 
 /**
  * Rich positional text, usually presented as a collection of bullet points.

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardImageTextBlock } from './standard-image-text-block';
+import type { StandardImageTextBlock } from './standard-image-text-block';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TextComponent } from './text-component';
+import type { TextComponent } from './text-component';
 
 /**
  * Standard headline text, an image, and body text.

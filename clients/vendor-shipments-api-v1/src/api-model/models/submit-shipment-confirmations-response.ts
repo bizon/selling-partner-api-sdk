@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TransactionReference } from './transaction-reference';
+import type { TransactionReference } from './transaction-reference';
 
 /**
  * The response schema for the SubmitShipmentConfirmations operation.

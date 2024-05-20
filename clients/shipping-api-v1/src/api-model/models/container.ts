@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContainerItem } from './container-item';
+import type { ContainerItem } from './container-item';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Currency } from './currency';
+import type { Currency } from './currency';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Dimensions } from './dimensions';
+import type { Dimensions } from './dimensions';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Weight } from './weight';
+import type { Weight } from './weight';
 
 /**
  * Container in the shipment.

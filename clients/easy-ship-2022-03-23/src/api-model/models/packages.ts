@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Package } from './package';
+import type { Package } from './package';
 
 /**
  * A list of packages.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { RetrieveShippingLabelResult } from './retrieve-shipping-label-result';
+import type { RetrieveShippingLabelResult } from './retrieve-shipping-label-result';
 
 /**
  * The response schema for the retrieveShippingLabel operation.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CreateReportResult } from './create-report-result';
+import type { CreateReportResult } from './create-report-result';
 
 /**
  * The response for the createReport operation.

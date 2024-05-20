@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { HttpStatusLine } from './http-status-line';
+import type { HttpStatusLine } from './http-status-line';
 
 /**
  * The common properties for responses to individual requests within a batch.

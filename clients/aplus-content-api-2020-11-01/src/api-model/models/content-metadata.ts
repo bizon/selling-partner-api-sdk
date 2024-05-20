@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContentBadge } from './content-badge';
+import type { ContentBadge } from './content-badge';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContentStatus } from './content-status';
+import type { ContentStatus } from './content-status';
 
 /**
  * The metadata of an A+ Content document.

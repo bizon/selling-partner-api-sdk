@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { VerificationStatus } from './verification-status';
+import type { VerificationStatus } from './verification-status';
 
 /**
  * The updated values of the `VerificationStatus` field.

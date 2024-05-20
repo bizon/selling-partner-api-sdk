@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { OneClickShipmentResult } from './one-click-shipment-result';
+import type { OneClickShipmentResult } from './one-click-shipment-result';
 
 /**
  * The response schema for the OneClickShipment operation.

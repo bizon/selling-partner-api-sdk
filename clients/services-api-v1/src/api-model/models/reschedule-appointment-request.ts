@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AppointmentTimeInput } from './appointment-time-input';
+import type { AppointmentTimeInput } from './appointment-time-input';
 
 /**
  * Input for rescheduled appointment operation.

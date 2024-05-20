@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AdditionalInputs } from './additional-inputs';
+import type { AdditionalInputs } from './additional-inputs';
 
 /**
  * 

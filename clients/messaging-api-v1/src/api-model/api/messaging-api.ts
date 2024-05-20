@@ -14,59 +14,59 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CreateAmazonMotorsRequest } from '../models';
+import type { CreateAmazonMotorsRequest } from '../models';
 // @ts-ignore
-import { CreateAmazonMotorsResponse } from '../models';
+import type { CreateAmazonMotorsResponse } from '../models';
 // @ts-ignore
-import { CreateConfirmCustomizationDetailsRequest } from '../models';
+import type { CreateConfirmCustomizationDetailsRequest } from '../models';
 // @ts-ignore
-import { CreateConfirmCustomizationDetailsResponse } from '../models';
+import type { CreateConfirmCustomizationDetailsResponse } from '../models';
 // @ts-ignore
-import { CreateConfirmDeliveryDetailsRequest } from '../models';
+import type { CreateConfirmDeliveryDetailsRequest } from '../models';
 // @ts-ignore
-import { CreateConfirmDeliveryDetailsResponse } from '../models';
+import type { CreateConfirmDeliveryDetailsResponse } from '../models';
 // @ts-ignore
-import { CreateConfirmOrderDetailsRequest } from '../models';
+import type { CreateConfirmOrderDetailsRequest } from '../models';
 // @ts-ignore
-import { CreateConfirmOrderDetailsResponse } from '../models';
+import type { CreateConfirmOrderDetailsResponse } from '../models';
 // @ts-ignore
-import { CreateConfirmServiceDetailsRequest } from '../models';
+import type { CreateConfirmServiceDetailsRequest } from '../models';
 // @ts-ignore
-import { CreateConfirmServiceDetailsResponse } from '../models';
+import type { CreateConfirmServiceDetailsResponse } from '../models';
 // @ts-ignore
-import { CreateDigitalAccessKeyRequest } from '../models';
+import type { CreateDigitalAccessKeyRequest } from '../models';
 // @ts-ignore
-import { CreateDigitalAccessKeyResponse } from '../models';
+import type { CreateDigitalAccessKeyResponse } from '../models';
 // @ts-ignore
-import { CreateLegalDisclosureRequest } from '../models';
+import type { CreateLegalDisclosureRequest } from '../models';
 // @ts-ignore
-import { CreateLegalDisclosureResponse } from '../models';
+import type { CreateLegalDisclosureResponse } from '../models';
 // @ts-ignore
-import { CreateNegativeFeedbackRemovalResponse } from '../models';
+import type { CreateNegativeFeedbackRemovalResponse } from '../models';
 // @ts-ignore
-import { CreateUnexpectedProblemRequest } from '../models';
+import type { CreateUnexpectedProblemRequest } from '../models';
 // @ts-ignore
-import { CreateUnexpectedProblemResponse } from '../models';
+import type { CreateUnexpectedProblemResponse } from '../models';
 // @ts-ignore
-import { CreateWarrantyRequest } from '../models';
+import type { CreateWarrantyRequest } from '../models';
 // @ts-ignore
-import { CreateWarrantyResponse } from '../models';
+import type { CreateWarrantyResponse } from '../models';
 // @ts-ignore
-import { GetAttributesResponse } from '../models';
+import type { GetAttributesResponse } from '../models';
 // @ts-ignore
-import { GetMessagingActionsForOrderResponse } from '../models';
+import type { GetMessagingActionsForOrderResponse } from '../models';
 // @ts-ignore
-import { InvoiceRequest } from '../models';
+import type { InvoiceRequest } from '../models';
 // @ts-ignore
-import { InvoiceResponse } from '../models';
+import type { InvoiceResponse } from '../models';
 /**
  * MessagingApi - axios parameter creator
  * @export
@@ -81,7 +81,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        confirmCustomizationDetails: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmCustomizationDetailsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        confirmCustomizationDetails: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmCustomizationDetailsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'amazonOrderId' is not null or undefined
             assertParamExists('confirmCustomizationDetails', 'amazonOrderId', amazonOrderId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -127,7 +127,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createAmazonMotors: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateAmazonMotorsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createAmazonMotors: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateAmazonMotorsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'amazonOrderId' is not null or undefined
             assertParamExists('createAmazonMotors', 'amazonOrderId', amazonOrderId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -173,7 +173,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createConfirmDeliveryDetails: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmDeliveryDetailsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createConfirmDeliveryDetails: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmDeliveryDetailsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'amazonOrderId' is not null or undefined
             assertParamExists('createConfirmDeliveryDetails', 'amazonOrderId', amazonOrderId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -219,7 +219,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createConfirmOrderDetails: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmOrderDetailsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createConfirmOrderDetails: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmOrderDetailsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'amazonOrderId' is not null or undefined
             assertParamExists('createConfirmOrderDetails', 'amazonOrderId', amazonOrderId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -265,7 +265,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createConfirmServiceDetails: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmServiceDetailsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createConfirmServiceDetails: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmServiceDetailsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'amazonOrderId' is not null or undefined
             assertParamExists('createConfirmServiceDetails', 'amazonOrderId', amazonOrderId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -311,7 +311,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createDigitalAccessKey: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateDigitalAccessKeyRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createDigitalAccessKey: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateDigitalAccessKeyRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'amazonOrderId' is not null or undefined
             assertParamExists('createDigitalAccessKey', 'amazonOrderId', amazonOrderId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -357,7 +357,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createLegalDisclosure: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateLegalDisclosureRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createLegalDisclosure: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateLegalDisclosureRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'amazonOrderId' is not null or undefined
             assertParamExists('createLegalDisclosure', 'amazonOrderId', amazonOrderId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -402,7 +402,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createNegativeFeedbackRemoval: async (amazonOrderId: string, marketplaceIds: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createNegativeFeedbackRemoval: async (amazonOrderId: string, marketplaceIds: Array<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'amazonOrderId' is not null or undefined
             assertParamExists('createNegativeFeedbackRemoval', 'amazonOrderId', amazonOrderId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -443,7 +443,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createUnexpectedProblem: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateUnexpectedProblemRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createUnexpectedProblem: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateUnexpectedProblemRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'amazonOrderId' is not null or undefined
             assertParamExists('createUnexpectedProblem', 'amazonOrderId', amazonOrderId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -489,7 +489,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createWarranty: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateWarrantyRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createWarranty: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateWarrantyRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'amazonOrderId' is not null or undefined
             assertParamExists('createWarranty', 'amazonOrderId', amazonOrderId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -534,7 +534,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAttributes: async (amazonOrderId: string, marketplaceIds: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAttributes: async (amazonOrderId: string, marketplaceIds: Array<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'amazonOrderId' is not null or undefined
             assertParamExists('getAttributes', 'amazonOrderId', amazonOrderId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -574,7 +574,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMessagingActionsForOrder: async (amazonOrderId: string, marketplaceIds: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getMessagingActionsForOrder: async (amazonOrderId: string, marketplaceIds: Array<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'amazonOrderId' is not null or undefined
             assertParamExists('getMessagingActionsForOrder', 'amazonOrderId', amazonOrderId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -615,7 +615,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        sendInvoice: async (amazonOrderId: string, marketplaceIds: Array<string>, body: InvoiceRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        sendInvoice: async (amazonOrderId: string, marketplaceIds: Array<string>, body: InvoiceRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'amazonOrderId' is not null or undefined
             assertParamExists('sendInvoice', 'amazonOrderId', amazonOrderId)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -671,9 +671,11 @@ export const MessagingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async confirmCustomizationDetails(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmCustomizationDetailsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateConfirmCustomizationDetailsResponse>> {
+        async confirmCustomizationDetails(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmCustomizationDetailsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateConfirmCustomizationDetailsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.confirmCustomizationDetails(amazonOrderId, marketplaceIds, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MessagingApi.confirmCustomizationDetails']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Sends a message to a buyer to provide details about an Amazon Motors order. This message can only be sent by Amazon Motors sellers.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -683,9 +685,11 @@ export const MessagingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createAmazonMotors(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateAmazonMotorsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateAmazonMotorsResponse>> {
+        async createAmazonMotors(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateAmazonMotorsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateAmazonMotorsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createAmazonMotors(amazonOrderId, marketplaceIds, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MessagingApi.createAmazonMotors']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Sends a message to a buyer to arrange a delivery or to confirm contact information for making a delivery.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -695,9 +699,11 @@ export const MessagingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createConfirmDeliveryDetails(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmDeliveryDetailsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateConfirmDeliveryDetailsResponse>> {
+        async createConfirmDeliveryDetails(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmDeliveryDetailsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateConfirmDeliveryDetailsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createConfirmDeliveryDetails(amazonOrderId, marketplaceIds, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MessagingApi.createConfirmDeliveryDetails']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Sends a message to ask a buyer an order-related question prior to shipping their order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -707,9 +713,11 @@ export const MessagingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createConfirmOrderDetails(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmOrderDetailsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateConfirmOrderDetailsResponse>> {
+        async createConfirmOrderDetails(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmOrderDetailsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateConfirmOrderDetailsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createConfirmOrderDetails(amazonOrderId, marketplaceIds, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MessagingApi.createConfirmOrderDetails']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Sends a message to contact a Home Service customer to arrange a service call or to gather information prior to a service call.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -719,9 +727,11 @@ export const MessagingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createConfirmServiceDetails(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmServiceDetailsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateConfirmServiceDetailsResponse>> {
+        async createConfirmServiceDetails(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateConfirmServiceDetailsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateConfirmServiceDetailsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createConfirmServiceDetails(amazonOrderId, marketplaceIds, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MessagingApi.createConfirmServiceDetails']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Sends a message to a buyer to share a digital access key needed to utilize digital content in their order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -731,9 +741,11 @@ export const MessagingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createDigitalAccessKey(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateDigitalAccessKeyRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateDigitalAccessKeyResponse>> {
+        async createDigitalAccessKey(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateDigitalAccessKeyRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateDigitalAccessKeyResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createDigitalAccessKey(amazonOrderId, marketplaceIds, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MessagingApi.createDigitalAccessKey']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Sends a critical message that contains documents that a seller is legally obligated to provide to the buyer. This message should only be used to deliver documents that are required by law.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -743,9 +755,11 @@ export const MessagingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createLegalDisclosure(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateLegalDisclosureRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateLegalDisclosureResponse>> {
+        async createLegalDisclosure(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateLegalDisclosureRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateLegalDisclosureResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createLegalDisclosure(amazonOrderId, marketplaceIds, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MessagingApi.createLegalDisclosure']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Sends a non-critical message that asks a buyer to remove their negative feedback. This message should only be sent after the seller has resolved the buyer\'s problem.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -754,9 +768,11 @@ export const MessagingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createNegativeFeedbackRemoval(amazonOrderId: string, marketplaceIds: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateNegativeFeedbackRemovalResponse>> {
+        async createNegativeFeedbackRemoval(amazonOrderId: string, marketplaceIds: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateNegativeFeedbackRemovalResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createNegativeFeedbackRemoval(amazonOrderId, marketplaceIds, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MessagingApi.createNegativeFeedbackRemoval']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Sends a critical message to a buyer that an unexpected problem was encountered affecting the completion of the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -766,9 +782,11 @@ export const MessagingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createUnexpectedProblem(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateUnexpectedProblemRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateUnexpectedProblemResponse>> {
+        async createUnexpectedProblem(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateUnexpectedProblemRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateUnexpectedProblemResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createUnexpectedProblem(amazonOrderId, marketplaceIds, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MessagingApi.createUnexpectedProblem']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Sends a message to a buyer to provide details about warranty information on a purchase in their order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -778,9 +796,11 @@ export const MessagingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createWarranty(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateWarrantyRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateWarrantyResponse>> {
+        async createWarranty(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateWarrantyRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateWarrantyResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createWarranty(amazonOrderId, marketplaceIds, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MessagingApi.createWarranty']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a response containing attributes related to an order. This includes buyer preferences.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |
@@ -789,9 +809,11 @@ export const MessagingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAttributes(amazonOrderId: string, marketplaceIds: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAttributesResponse>> {
+        async getAttributes(amazonOrderId: string, marketplaceIds: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAttributesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAttributes(amazonOrderId, marketplaceIds, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MessagingApi.getAttributes']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a list of message types that are available for an order that you specify. A message type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a message.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -800,9 +822,11 @@ export const MessagingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMessagingActionsForOrder(amazonOrderId: string, marketplaceIds: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMessagingActionsForOrderResponse>> {
+        async getMessagingActionsForOrder(amazonOrderId: string, marketplaceIds: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMessagingActionsForOrderResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMessagingActionsForOrder(amazonOrderId, marketplaceIds, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MessagingApi.getMessagingActionsForOrder']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Sends a message providing the buyer an invoice
@@ -812,9 +836,11 @@ export const MessagingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async sendInvoice(amazonOrderId: string, marketplaceIds: Array<string>, body: InvoiceRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InvoiceResponse>> {
+        async sendInvoice(amazonOrderId: string, marketplaceIds: Array<string>, body: InvoiceRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InvoiceResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.sendInvoice(amazonOrderId, marketplaceIds, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MessagingApi.sendInvoice']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -832,7 +858,7 @@ export const MessagingApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        confirmCustomizationDetails(requestParameters: MessagingApiConfirmCustomizationDetailsRequest, options?: AxiosRequestConfig): AxiosPromise<CreateConfirmCustomizationDetailsResponse> {
+        confirmCustomizationDetails(requestParameters: MessagingApiConfirmCustomizationDetailsRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateConfirmCustomizationDetailsResponse> {
             return localVarFp.confirmCustomizationDetails(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -841,7 +867,7 @@ export const MessagingApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createAmazonMotors(requestParameters: MessagingApiCreateAmazonMotorsRequest, options?: AxiosRequestConfig): AxiosPromise<CreateAmazonMotorsResponse> {
+        createAmazonMotors(requestParameters: MessagingApiCreateAmazonMotorsRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateAmazonMotorsResponse> {
             return localVarFp.createAmazonMotors(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -850,7 +876,7 @@ export const MessagingApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createConfirmDeliveryDetails(requestParameters: MessagingApiCreateConfirmDeliveryDetailsRequest, options?: AxiosRequestConfig): AxiosPromise<CreateConfirmDeliveryDetailsResponse> {
+        createConfirmDeliveryDetails(requestParameters: MessagingApiCreateConfirmDeliveryDetailsRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateConfirmDeliveryDetailsResponse> {
             return localVarFp.createConfirmDeliveryDetails(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -859,7 +885,7 @@ export const MessagingApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createConfirmOrderDetails(requestParameters: MessagingApiCreateConfirmOrderDetailsRequest, options?: AxiosRequestConfig): AxiosPromise<CreateConfirmOrderDetailsResponse> {
+        createConfirmOrderDetails(requestParameters: MessagingApiCreateConfirmOrderDetailsRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateConfirmOrderDetailsResponse> {
             return localVarFp.createConfirmOrderDetails(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -868,7 +894,7 @@ export const MessagingApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createConfirmServiceDetails(requestParameters: MessagingApiCreateConfirmServiceDetailsRequest, options?: AxiosRequestConfig): AxiosPromise<CreateConfirmServiceDetailsResponse> {
+        createConfirmServiceDetails(requestParameters: MessagingApiCreateConfirmServiceDetailsRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateConfirmServiceDetailsResponse> {
             return localVarFp.createConfirmServiceDetails(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -877,7 +903,7 @@ export const MessagingApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createDigitalAccessKey(requestParameters: MessagingApiCreateDigitalAccessKeyRequest, options?: AxiosRequestConfig): AxiosPromise<CreateDigitalAccessKeyResponse> {
+        createDigitalAccessKey(requestParameters: MessagingApiCreateDigitalAccessKeyRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateDigitalAccessKeyResponse> {
             return localVarFp.createDigitalAccessKey(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -886,7 +912,7 @@ export const MessagingApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createLegalDisclosure(requestParameters: MessagingApiCreateLegalDisclosureRequest, options?: AxiosRequestConfig): AxiosPromise<CreateLegalDisclosureResponse> {
+        createLegalDisclosure(requestParameters: MessagingApiCreateLegalDisclosureRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateLegalDisclosureResponse> {
             return localVarFp.createLegalDisclosure(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -895,7 +921,7 @@ export const MessagingApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createNegativeFeedbackRemoval(requestParameters: MessagingApiCreateNegativeFeedbackRemovalRequest, options?: AxiosRequestConfig): AxiosPromise<CreateNegativeFeedbackRemovalResponse> {
+        createNegativeFeedbackRemoval(requestParameters: MessagingApiCreateNegativeFeedbackRemovalRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateNegativeFeedbackRemovalResponse> {
             return localVarFp.createNegativeFeedbackRemoval(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(axios, basePath));
         },
         /**
@@ -904,7 +930,7 @@ export const MessagingApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createUnexpectedProblem(requestParameters: MessagingApiCreateUnexpectedProblemRequest, options?: AxiosRequestConfig): AxiosPromise<CreateUnexpectedProblemResponse> {
+        createUnexpectedProblem(requestParameters: MessagingApiCreateUnexpectedProblemRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateUnexpectedProblemResponse> {
             return localVarFp.createUnexpectedProblem(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -913,7 +939,7 @@ export const MessagingApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createWarranty(requestParameters: MessagingApiCreateWarrantyRequest, options?: AxiosRequestConfig): AxiosPromise<CreateWarrantyResponse> {
+        createWarranty(requestParameters: MessagingApiCreateWarrantyRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateWarrantyResponse> {
             return localVarFp.createWarranty(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -922,7 +948,7 @@ export const MessagingApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAttributes(requestParameters: MessagingApiGetAttributesRequest, options?: AxiosRequestConfig): AxiosPromise<GetAttributesResponse> {
+        getAttributes(requestParameters: MessagingApiGetAttributesRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetAttributesResponse> {
             return localVarFp.getAttributes(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(axios, basePath));
         },
         /**
@@ -931,7 +957,7 @@ export const MessagingApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMessagingActionsForOrder(requestParameters: MessagingApiGetMessagingActionsForOrderRequest, options?: AxiosRequestConfig): AxiosPromise<GetMessagingActionsForOrderResponse> {
+        getMessagingActionsForOrder(requestParameters: MessagingApiGetMessagingActionsForOrderRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetMessagingActionsForOrderResponse> {
             return localVarFp.getMessagingActionsForOrder(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(axios, basePath));
         },
         /**
@@ -940,7 +966,7 @@ export const MessagingApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        sendInvoice(requestParameters: MessagingApiSendInvoiceRequest, options?: AxiosRequestConfig): AxiosPromise<InvoiceResponse> {
+        sendInvoice(requestParameters: MessagingApiSendInvoiceRequest, options?: RawAxiosRequestConfig): AxiosPromise<InvoiceResponse> {
             return localVarFp.sendInvoice(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
@@ -1303,7 +1329,7 @@ export class MessagingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MessagingApi
      */
-    public confirmCustomizationDetails(requestParameters: MessagingApiConfirmCustomizationDetailsRequest, options?: AxiosRequestConfig) {
+    public confirmCustomizationDetails(requestParameters: MessagingApiConfirmCustomizationDetailsRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).confirmCustomizationDetails(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1314,7 +1340,7 @@ export class MessagingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MessagingApi
      */
-    public createAmazonMotors(requestParameters: MessagingApiCreateAmazonMotorsRequest, options?: AxiosRequestConfig) {
+    public createAmazonMotors(requestParameters: MessagingApiCreateAmazonMotorsRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).createAmazonMotors(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1325,7 +1351,7 @@ export class MessagingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MessagingApi
      */
-    public createConfirmDeliveryDetails(requestParameters: MessagingApiCreateConfirmDeliveryDetailsRequest, options?: AxiosRequestConfig) {
+    public createConfirmDeliveryDetails(requestParameters: MessagingApiCreateConfirmDeliveryDetailsRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).createConfirmDeliveryDetails(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1336,7 +1362,7 @@ export class MessagingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MessagingApi
      */
-    public createConfirmOrderDetails(requestParameters: MessagingApiCreateConfirmOrderDetailsRequest, options?: AxiosRequestConfig) {
+    public createConfirmOrderDetails(requestParameters: MessagingApiCreateConfirmOrderDetailsRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).createConfirmOrderDetails(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1347,7 +1373,7 @@ export class MessagingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MessagingApi
      */
-    public createConfirmServiceDetails(requestParameters: MessagingApiCreateConfirmServiceDetailsRequest, options?: AxiosRequestConfig) {
+    public createConfirmServiceDetails(requestParameters: MessagingApiCreateConfirmServiceDetailsRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).createConfirmServiceDetails(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1358,7 +1384,7 @@ export class MessagingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MessagingApi
      */
-    public createDigitalAccessKey(requestParameters: MessagingApiCreateDigitalAccessKeyRequest, options?: AxiosRequestConfig) {
+    public createDigitalAccessKey(requestParameters: MessagingApiCreateDigitalAccessKeyRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).createDigitalAccessKey(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1369,7 +1395,7 @@ export class MessagingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MessagingApi
      */
-    public createLegalDisclosure(requestParameters: MessagingApiCreateLegalDisclosureRequest, options?: AxiosRequestConfig) {
+    public createLegalDisclosure(requestParameters: MessagingApiCreateLegalDisclosureRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).createLegalDisclosure(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1380,7 +1406,7 @@ export class MessagingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MessagingApi
      */
-    public createNegativeFeedbackRemoval(requestParameters: MessagingApiCreateNegativeFeedbackRemovalRequest, options?: AxiosRequestConfig) {
+    public createNegativeFeedbackRemoval(requestParameters: MessagingApiCreateNegativeFeedbackRemovalRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).createNegativeFeedbackRemoval(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1391,7 +1417,7 @@ export class MessagingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MessagingApi
      */
-    public createUnexpectedProblem(requestParameters: MessagingApiCreateUnexpectedProblemRequest, options?: AxiosRequestConfig) {
+    public createUnexpectedProblem(requestParameters: MessagingApiCreateUnexpectedProblemRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).createUnexpectedProblem(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1402,7 +1428,7 @@ export class MessagingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MessagingApi
      */
-    public createWarranty(requestParameters: MessagingApiCreateWarrantyRequest, options?: AxiosRequestConfig) {
+    public createWarranty(requestParameters: MessagingApiCreateWarrantyRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).createWarranty(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1413,7 +1439,7 @@ export class MessagingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MessagingApi
      */
-    public getAttributes(requestParameters: MessagingApiGetAttributesRequest, options?: AxiosRequestConfig) {
+    public getAttributes(requestParameters: MessagingApiGetAttributesRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).getAttributes(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1424,7 +1450,7 @@ export class MessagingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MessagingApi
      */
-    public getMessagingActionsForOrder(requestParameters: MessagingApiGetMessagingActionsForOrderRequest, options?: AxiosRequestConfig) {
+    public getMessagingActionsForOrder(requestParameters: MessagingApiGetMessagingActionsForOrderRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).getMessagingActionsForOrder(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1435,7 +1461,8 @@ export class MessagingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MessagingApi
      */
-    public sendInvoice(requestParameters: MessagingApiSendInvoiceRequest, options?: AxiosRequestConfig) {
+    public sendInvoice(requestParameters: MessagingApiSendInvoiceRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).sendInvoice(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

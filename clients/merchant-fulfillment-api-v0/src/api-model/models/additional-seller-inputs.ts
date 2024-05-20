@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AdditionalSellerInput } from './additional-seller-input';
+import type { AdditionalSellerInput } from './additional-seller-input';
 
 /**
  * An additional set of seller inputs required to purchase shipping.

@@ -15,25 +15,25 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeatureSettings } from './feature-settings';
+import type { FeatureSettings } from './feature-settings';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Fee } from './fee';
+import type { Fee } from './fee';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentPreviewShipment } from './fulfillment-preview-shipment';
+import type { FulfillmentPreviewShipment } from './fulfillment-preview-shipment';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ScheduledDeliveryInfo } from './scheduled-delivery-info';
+import type { ScheduledDeliveryInfo } from './scheduled-delivery-info';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShippingSpeedCategory } from './shipping-speed-category';
+import type { ShippingSpeedCategory } from './shipping-speed-category';
 // May contain unused imports in some cases
 // @ts-ignore
-import { UnfulfillablePreviewItem } from './unfulfillable-preview-item';
+import type { UnfulfillablePreviewItem } from './unfulfillable-preview-item';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Weight } from './weight';
+import type { Weight } from './weight';
 
 /**
  * Information about a fulfillment order preview, including delivery and fee information based on shipping method.

@@ -15,34 +15,34 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { AutomatedShippingSettings } from './automated-shipping-settings';
+import type { AutomatedShippingSettings } from './automated-shipping-settings';
 // May contain unused imports in some cases
 // @ts-ignore
-import { BuyerInfo } from './buyer-info';
+import type { BuyerInfo } from './buyer-info';
 // May contain unused imports in some cases
 // @ts-ignore
-import { BuyerTaxInformation } from './buyer-tax-information';
+import type { BuyerTaxInformation } from './buyer-tax-information';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EasyShipShipmentStatus } from './easy-ship-shipment-status';
+import type { EasyShipShipmentStatus } from './easy-ship-shipment-status';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ElectronicInvoiceStatus } from './electronic-invoice-status';
+import type { ElectronicInvoiceStatus } from './electronic-invoice-status';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentInstruction } from './fulfillment-instruction';
+import type { FulfillmentInstruction } from './fulfillment-instruction';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MarketplaceTaxInfo } from './marketplace-tax-info';
+import type { MarketplaceTaxInfo } from './marketplace-tax-info';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Money } from './money';
+import type { Money } from './money';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PaymentExecutionDetailItem } from './payment-execution-detail-item';
+import type { PaymentExecutionDetailItem } from './payment-execution-detail-item';
 
 /**
  * Order information.

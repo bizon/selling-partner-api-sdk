@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Money } from './money';
+import type { Money } from './money';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TaxDetail } from './tax-detail';
+import type { TaxDetail } from './tax-detail';
 
 /**
  * Monetary and tax details of the charge.

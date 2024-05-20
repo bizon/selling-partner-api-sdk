@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CreateFulfillmentReturnResult } from './create-fulfillment-return-result';
+import type { CreateFulfillmentReturnResult } from './create-fulfillment-return-result';
 
 /**
  * The response schema for the `createFulfillmentReturn` operation.

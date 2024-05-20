@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { OrderMetricsInterval } from './order-metrics-interval';
+import type { OrderMetricsInterval } from './order-metrics-interval';
 
 /**
  * The response schema for the getOrderMetrics operation.

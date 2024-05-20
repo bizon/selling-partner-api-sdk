@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Container } from './container';
+import type { Container } from './container';
 // May contain unused imports in some cases
 // @ts-ignore
-import { LabelSpecification } from './label-specification';
+import type { LabelSpecification } from './label-specification';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ServiceType } from './service-type';
+import type { ServiceType } from './service-type';
 
 /**
  * The payload schema for the purchaseShipment operation.

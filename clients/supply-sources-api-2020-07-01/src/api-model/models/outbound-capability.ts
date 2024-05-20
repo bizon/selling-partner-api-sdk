@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DeliveryChannel } from './delivery-channel';
+import type { DeliveryChannel } from './delivery-channel';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OperationalConfiguration } from './operational-configuration';
+import type { OperationalConfiguration } from './operational-configuration';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PickupChannel } from './pickup-channel';
+import type { PickupChannel } from './pickup-channel';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ReturnLocation } from './return-location';
+import type { ReturnLocation } from './return-location';
 
 /**
  * The outbound capability of a supply source.

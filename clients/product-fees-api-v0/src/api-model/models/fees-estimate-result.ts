@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeesEstimate } from './fees-estimate';
+import type { FeesEstimate } from './fees-estimate';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeesEstimateError } from './fees-estimate-error';
+import type { FeesEstimateError } from './fees-estimate-error';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeesEstimateIdentifier } from './fees-estimate-identifier';
+import type { FeesEstimateIdentifier } from './fees-estimate-identifier';
 
 /**
  * An item identifier and the estimated fees for the item.

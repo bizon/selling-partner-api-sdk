@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemQuantity } from './item-quantity';
+import type { ItemQuantity } from './item-quantity';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Money } from './money';
+import type { Money } from './money';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OrderItemAcknowledgement } from './order-item-acknowledgement';
+import type { OrderItemAcknowledgement } from './order-item-acknowledgement';
 
 /**
  * Details of the item being acknowledged.

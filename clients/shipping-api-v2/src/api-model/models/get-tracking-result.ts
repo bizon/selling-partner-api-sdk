@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Event } from './event';
+import type { Event } from './event';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TrackingSummary } from './tracking-summary';
+import type { TrackingSummary } from './tracking-summary';
 
 /**
  * The payload for the getTracking operation.

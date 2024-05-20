@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { InboundShipmentResult } from './inbound-shipment-result';
+import type { InboundShipmentResult } from './inbound-shipment-result';
 
 /**
  * The response schema for this operation.

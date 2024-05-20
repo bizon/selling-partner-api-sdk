@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { InventoryDetails } from './inventory-details';
+import type { InventoryDetails } from './inventory-details';
 
 /**
  * Inventory summary for a specific item.

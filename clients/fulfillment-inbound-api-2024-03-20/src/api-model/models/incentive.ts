@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Currency } from './currency';
+import type { Currency } from './currency';
 
 /**
  * Contains details about cost related modifications to the placement cost.

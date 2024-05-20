@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CarrierWillPickUpOption } from './carrier-will-pick-up-option';
+import type { CarrierWillPickUpOption } from './carrier-will-pick-up-option';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CurrencyAmount } from './currency-amount';
+import type { CurrencyAmount } from './currency-amount';
 
 /**
  * Indicates whether the carrier will pick up the package, and what fee is charged, if any.

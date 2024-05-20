@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Recurrence } from './recurrence';
+import type { Recurrence } from './recurrence';
 
 /**
  * `AvailabilityRecord` to represent the capacity of a resource over a time range.

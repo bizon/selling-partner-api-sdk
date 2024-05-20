@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { GenerationStatus } from './generation-status';
+import type { GenerationStatus } from './generation-status';
 
 /**
  * Active Account Details

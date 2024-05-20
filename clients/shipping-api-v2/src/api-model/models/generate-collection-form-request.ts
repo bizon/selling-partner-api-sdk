@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ClientReferenceDetail } from './client-reference-detail';
+import type { ClientReferenceDetail } from './client-reference-detail';
 
 /**
  * The request schema Call to generate the collection form.

@@ -14,37 +14,37 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { ErrorList } from '../models';
+import type { ErrorList } from '../models';
 // @ts-ignore
-import { GetContentDocumentResponse } from '../models';
+import type { GetContentDocumentResponse } from '../models';
 // @ts-ignore
-import { ListContentDocumentAsinRelationsResponse } from '../models';
+import type { ListContentDocumentAsinRelationsResponse } from '../models';
 // @ts-ignore
-import { PostContentDocumentApprovalSubmissionResponse } from '../models';
+import type { PostContentDocumentApprovalSubmissionResponse } from '../models';
 // @ts-ignore
-import { PostContentDocumentAsinRelationsRequest } from '../models';
+import type { PostContentDocumentAsinRelationsRequest } from '../models';
 // @ts-ignore
-import { PostContentDocumentAsinRelationsResponse } from '../models';
+import type { PostContentDocumentAsinRelationsResponse } from '../models';
 // @ts-ignore
-import { PostContentDocumentRequest } from '../models';
+import type { PostContentDocumentRequest } from '../models';
 // @ts-ignore
-import { PostContentDocumentResponse } from '../models';
+import type { PostContentDocumentResponse } from '../models';
 // @ts-ignore
-import { PostContentDocumentSuspendSubmissionResponse } from '../models';
+import type { PostContentDocumentSuspendSubmissionResponse } from '../models';
 // @ts-ignore
-import { SearchContentDocumentsResponse } from '../models';
+import type { SearchContentDocumentsResponse } from '../models';
 // @ts-ignore
-import { SearchContentPublishRecordsResponse } from '../models';
+import type { SearchContentPublishRecordsResponse } from '../models';
 // @ts-ignore
-import { ValidateContentDocumentAsinRelationsResponse } from '../models';
+import type { ValidateContentDocumentAsinRelationsResponse } from '../models';
 /**
  * AplusContentApi - axios parameter creator
  * @export
@@ -58,7 +58,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createContentDocument: async (marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createContentDocument: async (marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('createContentDocument', 'marketplaceId', marketplaceId)
             // verify required parameter 'postContentDocumentRequest' is not null or undefined
@@ -97,11 +97,11 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * Returns an A+ Content document, if available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
          * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-         * @param {Set<'CONTENTS' | 'METADATA'>} includedDataSet The set of A+ Content data types to include in the response.
+         * @param {Set<GetContentDocumentIncludedDataSetEnum>} includedDataSet The set of A+ Content data types to include in the response.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getContentDocument: async (contentReferenceKey: string, marketplaceId: string, includedDataSet: Set<'CONTENTS' | 'METADATA'>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getContentDocument: async (contentReferenceKey: string, marketplaceId: string, includedDataSet: Set<GetContentDocumentIncludedDataSetEnum>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'contentReferenceKey' is not null or undefined
             assertParamExists('getContentDocument', 'contentReferenceKey', contentReferenceKey)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -144,13 +144,13 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * Returns a list of ASINs related to the specified A+ Content document, if available. If you do not include the asinSet parameter, the operation returns all ASINs related to the content document.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
          * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-         * @param {Set<'METADATA'>} [includedDataSet] The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata.
+         * @param {Set<ListContentDocumentAsinRelationsIncludedDataSetEnum>} [includedDataSet] The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata.
          * @param {Set<string>} [asinSet] The set of ASINs.
          * @param {string} [pageToken] A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listContentDocumentAsinRelations: async (contentReferenceKey: string, marketplaceId: string, includedDataSet?: Set<'METADATA'>, asinSet?: Set<string>, pageToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listContentDocumentAsinRelations: async (contentReferenceKey: string, marketplaceId: string, includedDataSet?: Set<ListContentDocumentAsinRelationsIncludedDataSetEnum>, asinSet?: Set<string>, pageToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'contentReferenceKey' is not null or undefined
             assertParamExists('listContentDocumentAsinRelations', 'contentReferenceKey', contentReferenceKey)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -202,7 +202,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postContentDocumentApprovalSubmission: async (contentReferenceKey: string, marketplaceId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        postContentDocumentApprovalSubmission: async (contentReferenceKey: string, marketplaceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'contentReferenceKey' is not null or undefined
             assertParamExists('postContentDocumentApprovalSubmission', 'contentReferenceKey', contentReferenceKey)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -243,7 +243,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postContentDocumentAsinRelations: async (contentReferenceKey: string, marketplaceId: string, postContentDocumentAsinRelationsRequest: PostContentDocumentAsinRelationsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        postContentDocumentAsinRelations: async (contentReferenceKey: string, marketplaceId: string, postContentDocumentAsinRelationsRequest: PostContentDocumentAsinRelationsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'contentReferenceKey' is not null or undefined
             assertParamExists('postContentDocumentAsinRelations', 'contentReferenceKey', contentReferenceKey)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -288,7 +288,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postContentDocumentSuspendSubmission: async (contentReferenceKey: string, marketplaceId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        postContentDocumentSuspendSubmission: async (contentReferenceKey: string, marketplaceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'contentReferenceKey' is not null or undefined
             assertParamExists('postContentDocumentSuspendSubmission', 'contentReferenceKey', contentReferenceKey)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -328,7 +328,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchContentDocuments: async (marketplaceId: string, pageToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        searchContentDocuments: async (marketplaceId: string, pageToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('searchContentDocuments', 'marketplaceId', marketplaceId)
             const localVarPath = `/aplus/2020-11-01/contentDocuments`;
@@ -370,7 +370,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchContentPublishRecords: async (marketplaceId: string, asin: string, pageToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        searchContentPublishRecords: async (marketplaceId: string, asin: string, pageToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('searchContentPublishRecords', 'marketplaceId', marketplaceId)
             // verify required parameter 'asin' is not null or undefined
@@ -418,7 +418,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateContentDocument: async (contentReferenceKey: string, marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateContentDocument: async (contentReferenceKey: string, marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'contentReferenceKey' is not null or undefined
             assertParamExists('updateContentDocument', 'contentReferenceKey', contentReferenceKey)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -464,7 +464,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        validateContentDocumentAsinRelations: async (marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, asinSet?: Set<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        validateContentDocumentAsinRelations: async (marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, asinSet?: Set<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('validateContentDocumentAsinRelations', 'marketplaceId', marketplaceId)
             // verify required parameter 'postContentDocumentRequest' is not null or undefined
@@ -520,35 +520,41 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createContentDocument(marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentResponse>> {
+        async createContentDocument(marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createContentDocument(marketplaceId, postContentDocumentRequest, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AplusContentApi.createContentDocument']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns an A+ Content document, if available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
          * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-         * @param {Set<'CONTENTS' | 'METADATA'>} includedDataSet The set of A+ Content data types to include in the response.
+         * @param {Set<GetContentDocumentIncludedDataSetEnum>} includedDataSet The set of A+ Content data types to include in the response.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getContentDocument(contentReferenceKey: string, marketplaceId: string, includedDataSet: Set<'CONTENTS' | 'METADATA'>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetContentDocumentResponse>> {
+        async getContentDocument(contentReferenceKey: string, marketplaceId: string, includedDataSet: Set<GetContentDocumentIncludedDataSetEnum>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetContentDocumentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getContentDocument(contentReferenceKey, marketplaceId, includedDataSet, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AplusContentApi.getContentDocument']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a list of ASINs related to the specified A+ Content document, if available. If you do not include the asinSet parameter, the operation returns all ASINs related to the content document.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
          * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
          * @param {string} marketplaceId The identifier for the marketplace where the A+ Content is published.
-         * @param {Set<'METADATA'>} [includedDataSet] The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata.
+         * @param {Set<ListContentDocumentAsinRelationsIncludedDataSetEnum>} [includedDataSet] The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata.
          * @param {Set<string>} [asinSet] The set of ASINs.
          * @param {string} [pageToken] A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listContentDocumentAsinRelations(contentReferenceKey: string, marketplaceId: string, includedDataSet?: Set<'METADATA'>, asinSet?: Set<string>, pageToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListContentDocumentAsinRelationsResponse>> {
+        async listContentDocumentAsinRelations(contentReferenceKey: string, marketplaceId: string, includedDataSet?: Set<ListContentDocumentAsinRelationsIncludedDataSetEnum>, asinSet?: Set<string>, pageToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListContentDocumentAsinRelationsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listContentDocumentAsinRelations(contentReferenceKey, marketplaceId, includedDataSet, asinSet, pageToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AplusContentApi.listContentDocumentAsinRelations']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Submits an A+ Content document for review, approval, and publishing.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -557,9 +563,11 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async postContentDocumentApprovalSubmission(contentReferenceKey: string, marketplaceId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentApprovalSubmissionResponse>> {
+        async postContentDocumentApprovalSubmission(contentReferenceKey: string, marketplaceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentApprovalSubmissionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.postContentDocumentApprovalSubmission(contentReferenceKey, marketplaceId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AplusContentApi.postContentDocumentApprovalSubmission']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Replaces all ASINs related to the specified A+ Content document, if available. This may add or remove ASINs, depending on the current set of related ASINs. Removing an ASIN has the side effect of suspending the content document from that ASIN.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -569,9 +577,11 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async postContentDocumentAsinRelations(contentReferenceKey: string, marketplaceId: string, postContentDocumentAsinRelationsRequest: PostContentDocumentAsinRelationsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentAsinRelationsResponse>> {
+        async postContentDocumentAsinRelations(contentReferenceKey: string, marketplaceId: string, postContentDocumentAsinRelationsRequest: PostContentDocumentAsinRelationsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentAsinRelationsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.postContentDocumentAsinRelations(contentReferenceKey, marketplaceId, postContentDocumentAsinRelationsRequest, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AplusContentApi.postContentDocumentAsinRelations']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Submits a request to suspend visible A+ Content. This neither deletes the content document nor the ASIN relations.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -580,9 +590,11 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async postContentDocumentSuspendSubmission(contentReferenceKey: string, marketplaceId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentSuspendSubmissionResponse>> {
+        async postContentDocumentSuspendSubmission(contentReferenceKey: string, marketplaceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentSuspendSubmissionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.postContentDocumentSuspendSubmission(contentReferenceKey, marketplaceId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AplusContentApi.postContentDocumentSuspendSubmission']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a list of all A+ Content documents assigned to a selling partner. This operation returns only the metadata of the A+ Content documents. Call the getContentDocument operation to get the actual contents of the A+ Content documents.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -591,9 +603,11 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async searchContentDocuments(marketplaceId: string, pageToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchContentDocumentsResponse>> {
+        async searchContentDocuments(marketplaceId: string, pageToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchContentDocumentsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.searchContentDocuments(marketplaceId, pageToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AplusContentApi.searchContentDocuments']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Searches for A+ Content publishing records, if available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -603,9 +617,11 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async searchContentPublishRecords(marketplaceId: string, asin: string, pageToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchContentPublishRecordsResponse>> {
+        async searchContentPublishRecords(marketplaceId: string, asin: string, pageToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchContentPublishRecordsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.searchContentPublishRecords(marketplaceId, asin, pageToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AplusContentApi.searchContentPublishRecords']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Updates an existing A+ Content document.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -615,9 +631,11 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateContentDocument(contentReferenceKey: string, marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentResponse>> {
+        async updateContentDocument(contentReferenceKey: string, marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostContentDocumentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateContentDocument(contentReferenceKey, marketplaceId, postContentDocumentRequest, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AplusContentApi.updateContentDocument']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Checks if the A+ Content document is valid for use on a set of ASINs.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -627,9 +645,11 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async validateContentDocumentAsinRelations(marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, asinSet?: Set<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ValidateContentDocumentAsinRelationsResponse>> {
+        async validateContentDocumentAsinRelations(marketplaceId: string, postContentDocumentRequest: PostContentDocumentRequest, asinSet?: Set<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ValidateContentDocumentAsinRelationsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.validateContentDocumentAsinRelations(marketplaceId, postContentDocumentRequest, asinSet, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AplusContentApi.validateContentDocumentAsinRelations']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -647,7 +667,7 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createContentDocument(requestParameters: AplusContentApiCreateContentDocumentRequest, options?: AxiosRequestConfig): AxiosPromise<PostContentDocumentResponse> {
+        createContentDocument(requestParameters: AplusContentApiCreateContentDocumentRequest, options?: RawAxiosRequestConfig): AxiosPromise<PostContentDocumentResponse> {
             return localVarFp.createContentDocument(requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -656,7 +676,7 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getContentDocument(requestParameters: AplusContentApiGetContentDocumentRequest, options?: AxiosRequestConfig): AxiosPromise<GetContentDocumentResponse> {
+        getContentDocument(requestParameters: AplusContentApiGetContentDocumentRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetContentDocumentResponse> {
             return localVarFp.getContentDocument(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.includedDataSet, options).then((request) => request(axios, basePath));
         },
         /**
@@ -665,7 +685,7 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listContentDocumentAsinRelations(requestParameters: AplusContentApiListContentDocumentAsinRelationsRequest, options?: AxiosRequestConfig): AxiosPromise<ListContentDocumentAsinRelationsResponse> {
+        listContentDocumentAsinRelations(requestParameters: AplusContentApiListContentDocumentAsinRelationsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListContentDocumentAsinRelationsResponse> {
             return localVarFp.listContentDocumentAsinRelations(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.includedDataSet, requestParameters.asinSet, requestParameters.pageToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -674,7 +694,7 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postContentDocumentApprovalSubmission(requestParameters: AplusContentApiPostContentDocumentApprovalSubmissionRequest, options?: AxiosRequestConfig): AxiosPromise<PostContentDocumentApprovalSubmissionResponse> {
+        postContentDocumentApprovalSubmission(requestParameters: AplusContentApiPostContentDocumentApprovalSubmissionRequest, options?: RawAxiosRequestConfig): AxiosPromise<PostContentDocumentApprovalSubmissionResponse> {
             return localVarFp.postContentDocumentApprovalSubmission(requestParameters.contentReferenceKey, requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -683,7 +703,7 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postContentDocumentAsinRelations(requestParameters: AplusContentApiPostContentDocumentAsinRelationsRequest, options?: AxiosRequestConfig): AxiosPromise<PostContentDocumentAsinRelationsResponse> {
+        postContentDocumentAsinRelations(requestParameters: AplusContentApiPostContentDocumentAsinRelationsRequest, options?: RawAxiosRequestConfig): AxiosPromise<PostContentDocumentAsinRelationsResponse> {
             return localVarFp.postContentDocumentAsinRelations(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.postContentDocumentAsinRelationsRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -692,7 +712,7 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postContentDocumentSuspendSubmission(requestParameters: AplusContentApiPostContentDocumentSuspendSubmissionRequest, options?: AxiosRequestConfig): AxiosPromise<PostContentDocumentSuspendSubmissionResponse> {
+        postContentDocumentSuspendSubmission(requestParameters: AplusContentApiPostContentDocumentSuspendSubmissionRequest, options?: RawAxiosRequestConfig): AxiosPromise<PostContentDocumentSuspendSubmissionResponse> {
             return localVarFp.postContentDocumentSuspendSubmission(requestParameters.contentReferenceKey, requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -701,7 +721,7 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchContentDocuments(requestParameters: AplusContentApiSearchContentDocumentsRequest, options?: AxiosRequestConfig): AxiosPromise<SearchContentDocumentsResponse> {
+        searchContentDocuments(requestParameters: AplusContentApiSearchContentDocumentsRequest, options?: RawAxiosRequestConfig): AxiosPromise<SearchContentDocumentsResponse> {
             return localVarFp.searchContentDocuments(requestParameters.marketplaceId, requestParameters.pageToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -710,7 +730,7 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchContentPublishRecords(requestParameters: AplusContentApiSearchContentPublishRecordsRequest, options?: AxiosRequestConfig): AxiosPromise<SearchContentPublishRecordsResponse> {
+        searchContentPublishRecords(requestParameters: AplusContentApiSearchContentPublishRecordsRequest, options?: RawAxiosRequestConfig): AxiosPromise<SearchContentPublishRecordsResponse> {
             return localVarFp.searchContentPublishRecords(requestParameters.marketplaceId, requestParameters.asin, requestParameters.pageToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -719,7 +739,7 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateContentDocument(requestParameters: AplusContentApiUpdateContentDocumentRequest, options?: AxiosRequestConfig): AxiosPromise<PostContentDocumentResponse> {
+        updateContentDocument(requestParameters: AplusContentApiUpdateContentDocumentRequest, options?: RawAxiosRequestConfig): AxiosPromise<PostContentDocumentResponse> {
             return localVarFp.updateContentDocument(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -728,7 +748,7 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        validateContentDocumentAsinRelations(requestParameters: AplusContentApiValidateContentDocumentAsinRelationsRequest, options?: AxiosRequestConfig): AxiosPromise<ValidateContentDocumentAsinRelationsResponse> {
+        validateContentDocumentAsinRelations(requestParameters: AplusContentApiValidateContentDocumentAsinRelationsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ValidateContentDocumentAsinRelationsResponse> {
             return localVarFp.validateContentDocumentAsinRelations(requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, requestParameters.asinSet, options).then((request) => request(axios, basePath));
         },
     };
@@ -780,7 +800,7 @@ export interface AplusContentApiGetContentDocumentRequest {
      * @type {Set<'CONTENTS' | 'METADATA'>}
      * @memberof AplusContentApiGetContentDocument
      */
-    readonly includedDataSet: Set<'CONTENTS' | 'METADATA'>
+    readonly includedDataSet: Set<GetContentDocumentIncludedDataSetEnum>
 }
 
 /**
@@ -808,7 +828,7 @@ export interface AplusContentApiListContentDocumentAsinRelationsRequest {
      * @type {Set<'METADATA'>}
      * @memberof AplusContentApiListContentDocumentAsinRelations
      */
-    readonly includedDataSet?: Set<'METADATA'>
+    readonly includedDataSet?: Set<ListContentDocumentAsinRelationsIncludedDataSetEnum>
 
     /**
      * The set of ASINs.
@@ -1014,7 +1034,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public createContentDocument(requestParameters: AplusContentApiCreateContentDocumentRequest, options?: AxiosRequestConfig) {
+    public createContentDocument(requestParameters: AplusContentApiCreateContentDocumentRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).createContentDocument(requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1025,7 +1045,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public getContentDocument(requestParameters: AplusContentApiGetContentDocumentRequest, options?: AxiosRequestConfig) {
+    public getContentDocument(requestParameters: AplusContentApiGetContentDocumentRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).getContentDocument(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.includedDataSet, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1036,7 +1056,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public listContentDocumentAsinRelations(requestParameters: AplusContentApiListContentDocumentAsinRelationsRequest, options?: AxiosRequestConfig) {
+    public listContentDocumentAsinRelations(requestParameters: AplusContentApiListContentDocumentAsinRelationsRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).listContentDocumentAsinRelations(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.includedDataSet, requestParameters.asinSet, requestParameters.pageToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1047,7 +1067,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public postContentDocumentApprovalSubmission(requestParameters: AplusContentApiPostContentDocumentApprovalSubmissionRequest, options?: AxiosRequestConfig) {
+    public postContentDocumentApprovalSubmission(requestParameters: AplusContentApiPostContentDocumentApprovalSubmissionRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).postContentDocumentApprovalSubmission(requestParameters.contentReferenceKey, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1058,7 +1078,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public postContentDocumentAsinRelations(requestParameters: AplusContentApiPostContentDocumentAsinRelationsRequest, options?: AxiosRequestConfig) {
+    public postContentDocumentAsinRelations(requestParameters: AplusContentApiPostContentDocumentAsinRelationsRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).postContentDocumentAsinRelations(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.postContentDocumentAsinRelationsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1069,7 +1089,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public postContentDocumentSuspendSubmission(requestParameters: AplusContentApiPostContentDocumentSuspendSubmissionRequest, options?: AxiosRequestConfig) {
+    public postContentDocumentSuspendSubmission(requestParameters: AplusContentApiPostContentDocumentSuspendSubmissionRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).postContentDocumentSuspendSubmission(requestParameters.contentReferenceKey, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1080,7 +1100,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public searchContentDocuments(requestParameters: AplusContentApiSearchContentDocumentsRequest, options?: AxiosRequestConfig) {
+    public searchContentDocuments(requestParameters: AplusContentApiSearchContentDocumentsRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).searchContentDocuments(requestParameters.marketplaceId, requestParameters.pageToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1091,7 +1111,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public searchContentPublishRecords(requestParameters: AplusContentApiSearchContentPublishRecordsRequest, options?: AxiosRequestConfig) {
+    public searchContentPublishRecords(requestParameters: AplusContentApiSearchContentPublishRecordsRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).searchContentPublishRecords(requestParameters.marketplaceId, requestParameters.asin, requestParameters.pageToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1102,7 +1122,7 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public updateContentDocument(requestParameters: AplusContentApiUpdateContentDocumentRequest, options?: AxiosRequestConfig) {
+    public updateContentDocument(requestParameters: AplusContentApiUpdateContentDocumentRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).updateContentDocument(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1113,7 +1133,23 @@ export class AplusContentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AplusContentApi
      */
-    public validateContentDocumentAsinRelations(requestParameters: AplusContentApiValidateContentDocumentAsinRelationsRequest, options?: AxiosRequestConfig) {
+    public validateContentDocumentAsinRelations(requestParameters: AplusContentApiValidateContentDocumentAsinRelationsRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).validateContentDocumentAsinRelations(requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, requestParameters.asinSet, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetContentDocumentIncludedDataSetEnum = {
+    Contents: 'CONTENTS',
+    Metadata: 'METADATA'
+} as const;
+export type GetContentDocumentIncludedDataSetEnum = typeof GetContentDocumentIncludedDataSetEnum[keyof typeof GetContentDocumentIncludedDataSetEnum];
+/**
+ * @export
+ */
+export const ListContentDocumentAsinRelationsIncludedDataSetEnum = {
+    Metadata: 'METADATA'
+} as const;
+export type ListContentDocumentAsinRelationsIncludedDataSetEnum = typeof ListContentDocumentAsinRelationsIncludedDataSetEnum[keyof typeof ListContentDocumentAsinRelationsIncludedDataSetEnum];

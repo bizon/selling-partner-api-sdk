@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ImageComponent } from './image-component';
+import type { ImageComponent } from './image-component';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PlainTextItem } from './plain-text-item';
+import type { PlainTextItem } from './plain-text-item';
 
 /**
  * The A+ Content standard comparison product block.

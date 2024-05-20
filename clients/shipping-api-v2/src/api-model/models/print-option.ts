@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { SupportedDocumentDetail } from './supported-document-detail';
+import type { SupportedDocumentDetail } from './supported-document-detail';
 
 /**
  * The format options available for a label.

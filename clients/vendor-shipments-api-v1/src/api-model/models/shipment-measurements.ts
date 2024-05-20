@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Volume } from './volume';
+import type { Volume } from './volume';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Weight } from './weight';
+import type { Weight } from './weight';
 
 /**
  * Shipment measurement details.

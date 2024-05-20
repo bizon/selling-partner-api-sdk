@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { NonPartneredLtlDataOutput } from './non-partnered-ltl-data-output';
+import type { NonPartneredLtlDataOutput } from './non-partnered-ltl-data-output';
 // May contain unused imports in some cases
 // @ts-ignore
-import { NonPartneredSmallParcelDataOutput } from './non-partnered-small-parcel-data-output';
+import type { NonPartneredSmallParcelDataOutput } from './non-partnered-small-parcel-data-output';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PartneredLtlDataOutput } from './partnered-ltl-data-output';
+import type { PartneredLtlDataOutput } from './partnered-ltl-data-output';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PartneredSmallParcelDataOutput } from './partnered-small-parcel-data-output';
+import type { PartneredSmallParcelDataOutput } from './partnered-small-parcel-data-output';
 
 /**
  * Inbound shipment information, including carrier details and shipment status.

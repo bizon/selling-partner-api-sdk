@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CarrierWillPickUpOption } from './carrier-will-pick-up-option';
+import type { CarrierWillPickUpOption } from './carrier-will-pick-up-option';
 // May contain unused imports in some cases
 // @ts-ignore
-import { DeliveryExperienceOption } from './delivery-experience-option';
+import type { DeliveryExperienceOption } from './delivery-experience-option';
 
 /**
  * Filter for use when requesting eligible shipping services.

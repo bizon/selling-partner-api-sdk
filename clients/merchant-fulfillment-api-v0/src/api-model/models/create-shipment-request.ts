@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AdditionalSellerInputs } from './additional-seller-inputs';
+import type { AdditionalSellerInputs } from './additional-seller-inputs';
 // May contain unused imports in some cases
 // @ts-ignore
-import { HazmatType } from './hazmat-type';
+import type { HazmatType } from './hazmat-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { LabelFormatOptionRequest } from './label-format-option-request';
+import type { LabelFormatOptionRequest } from './label-format-option-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipmentRequestDetails } from './shipment-request-details';
+import type { ShipmentRequestDetails } from './shipment-request-details';
 
 /**
  * Request schema.

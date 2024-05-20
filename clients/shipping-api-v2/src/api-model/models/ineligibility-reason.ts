@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { IneligibilityReasonCode } from './ineligibility-reason-code';
+import type { IneligibilityReasonCode } from './ineligibility-reason-code';
 
 /**
  * The reason why a shipping service offering is ineligible.

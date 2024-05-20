@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactInformation } from './contact-information';
+import type { ContactInformation } from './contact-information';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PalletInformation } from './pallet-information';
+import type { PalletInformation } from './pallet-information';
 // May contain unused imports in some cases
 // @ts-ignore
-import { WindowInput } from './window-input';
+import type { WindowInput } from './window-input';
 
 /**
  * Details needed to generate the transportation options.

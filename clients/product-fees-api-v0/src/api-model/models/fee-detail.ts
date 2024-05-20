@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { IncludedFeeDetail } from './included-fee-detail';
+import type { IncludedFeeDetail } from './included-fee-detail';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MoneyType } from './money-type';
+import type { MoneyType } from './money-type';
 
 /**
  * The type of fee, fee amount, and other details.

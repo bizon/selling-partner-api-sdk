@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentOrderStatus } from './fulfillment-order-status';
+import type { FulfillmentOrderStatus } from './fulfillment-order-status';
 
 /**
  * The request body schema for the `submitFulfillmentOrderStatusUpdate` operation.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AppointmentSlot } from './appointment-slot';
+import type { AppointmentSlot } from './appointment-slot';
 
 /**
  * Availability information as per the service context queried.

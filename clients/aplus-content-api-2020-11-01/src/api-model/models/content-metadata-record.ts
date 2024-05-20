@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContentMetadata } from './content-metadata';
+import type { ContentMetadata } from './content-metadata';
 
 /**
  * The metadata for an A+ Content document, with additional information for content management.

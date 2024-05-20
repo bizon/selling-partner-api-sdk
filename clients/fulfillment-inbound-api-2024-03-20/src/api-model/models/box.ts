@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Dimensions } from './dimensions';
+import type { Dimensions } from './dimensions';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Item } from './item';
+import type { Item } from './item';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Region } from './region';
+import type { Region } from './region';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Weight } from './weight';
+import type { Weight } from './weight';
 
 /**
  * Contains information about a box that is used in the inbound plan. The box may contain an item and metadata about the box itself.

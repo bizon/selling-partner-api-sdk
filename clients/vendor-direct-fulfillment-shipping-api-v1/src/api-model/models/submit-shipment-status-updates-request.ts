@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipmentStatusUpdate } from './shipment-status-update';
+import type { ShipmentStatusUpdate } from './shipment-status-update';
 
 /**
  * 

@@ -14,21 +14,21 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { GetInvoiceStatusResponse } from '../models';
+import type { GetInvoiceStatusResponse } from '../models';
 // @ts-ignore
-import { GetShipmentDetailsResponse } from '../models';
+import type { GetShipmentDetailsResponse } from '../models';
 // @ts-ignore
-import { SubmitInvoiceRequest } from '../models';
+import type { SubmitInvoiceRequest } from '../models';
 // @ts-ignore
-import { SubmitInvoiceResponse } from '../models';
+import type { SubmitInvoiceResponse } from '../models';
 /**
  * ShipmentInvoiceApi - axios parameter creator
  * @export
@@ -41,7 +41,7 @@ export const ShipmentInvoiceApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getInvoiceStatus: async (shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getInvoiceStatus: async (shipmentId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getInvoiceStatus', 'shipmentId', shipmentId)
             const localVarPath = `/fba/outbound/brazil/v0/shipments/{shipmentId}/invoice/status`
@@ -74,7 +74,7 @@ export const ShipmentInvoiceApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipmentDetails: async (shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getShipmentDetails: async (shipmentId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getShipmentDetails', 'shipmentId', shipmentId)
             const localVarPath = `/fba/outbound/brazil/v0/shipments/{shipmentId}`
@@ -108,7 +108,7 @@ export const ShipmentInvoiceApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitInvoice: async (shipmentId: string, body: SubmitInvoiceRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        submitInvoice: async (shipmentId: string, body: SubmitInvoiceRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('submitInvoice', 'shipmentId', shipmentId)
             // verify required parameter 'body' is not null or undefined
@@ -156,9 +156,11 @@ export const ShipmentInvoiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getInvoiceStatus(shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInvoiceStatusResponse>> {
+        async getInvoiceStatus(shipmentId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInvoiceStatusResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getInvoiceStatus(shipmentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShipmentInvoiceApi.getInvoiceStatus']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the shipment details required to issue an invoice for the specified shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -166,9 +168,11 @@ export const ShipmentInvoiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShipmentDetails(shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentDetailsResponse>> {
+        async getShipmentDetails(shipmentId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentDetailsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShipmentDetails(shipmentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShipmentInvoiceApi.getShipmentDetails']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Submits a shipment invoice document for a given shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -177,9 +181,11 @@ export const ShipmentInvoiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async submitInvoice(shipmentId: string, body: SubmitInvoiceRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitInvoiceResponse>> {
+        async submitInvoice(shipmentId: string, body: SubmitInvoiceRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitInvoiceResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.submitInvoice(shipmentId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShipmentInvoiceApi.submitInvoice']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -197,7 +203,7 @@ export const ShipmentInvoiceApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getInvoiceStatus(requestParameters: ShipmentInvoiceApiGetInvoiceStatusRequest, options?: AxiosRequestConfig): AxiosPromise<GetInvoiceStatusResponse> {
+        getInvoiceStatus(requestParameters: ShipmentInvoiceApiGetInvoiceStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetInvoiceStatusResponse> {
             return localVarFp.getInvoiceStatus(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -206,7 +212,7 @@ export const ShipmentInvoiceApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipmentDetails(requestParameters: ShipmentInvoiceApiGetShipmentDetailsRequest, options?: AxiosRequestConfig): AxiosPromise<GetShipmentDetailsResponse> {
+        getShipmentDetails(requestParameters: ShipmentInvoiceApiGetShipmentDetailsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetShipmentDetailsResponse> {
             return localVarFp.getShipmentDetails(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -215,7 +221,7 @@ export const ShipmentInvoiceApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitInvoice(requestParameters: ShipmentInvoiceApiSubmitInvoiceRequest, options?: AxiosRequestConfig): AxiosPromise<SubmitInvoiceResponse> {
+        submitInvoice(requestParameters: ShipmentInvoiceApiSubmitInvoiceRequest, options?: RawAxiosRequestConfig): AxiosPromise<SubmitInvoiceResponse> {
             return localVarFp.submitInvoice(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
@@ -284,7 +290,7 @@ export class ShipmentInvoiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShipmentInvoiceApi
      */
-    public getInvoiceStatus(requestParameters: ShipmentInvoiceApiGetInvoiceStatusRequest, options?: AxiosRequestConfig) {
+    public getInvoiceStatus(requestParameters: ShipmentInvoiceApiGetInvoiceStatusRequest, options?: RawAxiosRequestConfig) {
         return ShipmentInvoiceApiFp(this.configuration).getInvoiceStatus(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -295,7 +301,7 @@ export class ShipmentInvoiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShipmentInvoiceApi
      */
-    public getShipmentDetails(requestParameters: ShipmentInvoiceApiGetShipmentDetailsRequest, options?: AxiosRequestConfig) {
+    public getShipmentDetails(requestParameters: ShipmentInvoiceApiGetShipmentDetailsRequest, options?: RawAxiosRequestConfig) {
         return ShipmentInvoiceApiFp(this.configuration).getShipmentDetails(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -306,7 +312,8 @@ export class ShipmentInvoiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShipmentInvoiceApi
      */
-    public submitInvoice(requestParameters: ShipmentInvoiceApiSubmitInvoiceRequest, options?: AxiosRequestConfig) {
+    public submitInvoice(requestParameters: ShipmentInvoiceApiSubmitInvoiceRequest, options?: RawAxiosRequestConfig) {
         return ShipmentInvoiceApiFp(this.configuration).submitInvoice(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

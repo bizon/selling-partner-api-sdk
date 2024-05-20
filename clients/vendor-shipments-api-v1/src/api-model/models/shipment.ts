@@ -15,28 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CollectFreightPickupDetails } from './collect-freight-pickup-details';
+import type { CollectFreightPickupDetails } from './collect-freight-pickup-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Containers } from './containers';
+import type { Containers } from './containers';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ImportDetails } from './import-details';
+import type { ImportDetails } from './import-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PartyIdentification } from './party-identification';
+import type { PartyIdentification } from './party-identification';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PurchaseOrders } from './purchase-orders';
+import type { PurchaseOrders } from './purchase-orders';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipmentStatusDetails } from './shipment-status-details';
+import type { ShipmentStatusDetails } from './shipment-status-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TransportShipmentMeasurements } from './transport-shipment-measurements';
+import type { TransportShipmentMeasurements } from './transport-shipment-measurements';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TransportationDetails } from './transportation-details';
+import type { TransportationDetails } from './transportation-details';
 
 /**
  * A list of one or more shipments with respective details.

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { LabelOwner } from './label-owner';
+import type { LabelOwner } from './label-owner';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PrepOwner } from './prep-owner';
+import type { PrepOwner } from './prep-owner';
 
 /**
  * Specifies contents in a box. Each `BoxContent` minimally contains a mapping of an MSKU to the prep owner, label owner and its quantity in the box. It also contains the MSKU expiration date and manufacturing lot code if applicable.

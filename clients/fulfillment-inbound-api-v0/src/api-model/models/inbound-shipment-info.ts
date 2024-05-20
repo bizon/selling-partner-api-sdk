@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { BoxContentsFeeDetails } from './box-contents-fee-details';
+import type { BoxContentsFeeDetails } from './box-contents-fee-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { BoxContentsSource } from './box-contents-source';
+import type { BoxContentsSource } from './box-contents-source';
 // May contain unused imports in some cases
 // @ts-ignore
-import { LabelPrepType } from './label-prep-type';
+import type { LabelPrepType } from './label-prep-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipmentStatus } from './shipment-status';
+import type { ShipmentStatus } from './shipment-status';
 
 /**
  * Information about the seller\'s inbound shipments. Returned by the listInboundShipments operation.

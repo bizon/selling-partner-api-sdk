@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PackingSlip } from './packing-slip';
+import type { PackingSlip } from './packing-slip';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Pagination } from './pagination';
+import type { Pagination } from './pagination';
 
 /**
  * A list of packing slips.

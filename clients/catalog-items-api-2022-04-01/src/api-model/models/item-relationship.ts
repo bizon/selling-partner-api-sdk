@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemVariationTheme } from './item-variation-theme';
+import type { ItemVariationTheme } from './item-variation-theme';
 
 /**
  * Relationship details for an Amazon catalog item.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { HttpMethod } from './http-method';
+import type { HttpMethod } from './http-method';
 
 /**
  * The common properties for individual requests within a batch.

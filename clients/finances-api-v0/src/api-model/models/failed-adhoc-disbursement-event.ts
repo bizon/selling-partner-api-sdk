@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Currency } from './currency';
+import type { Currency } from './currency';
 
 /**
  * Failed ad hoc disbursement event list.

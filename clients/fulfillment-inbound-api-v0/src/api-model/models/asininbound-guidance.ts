@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { GuidanceReason } from './guidance-reason';
+import type { GuidanceReason } from './guidance-reason';
 // May contain unused imports in some cases
 // @ts-ignore
-import { InboundGuidance } from './inbound-guidance';
+import type { InboundGuidance } from './inbound-guidance';
 
 /**
  * Reasons why a given ASIN is not recommended for shipment to Amazon\'s fulfillment network.

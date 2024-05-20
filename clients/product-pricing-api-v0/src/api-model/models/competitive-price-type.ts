@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { OfferCustomerType } from './offer-customer-type';
+import type { OfferCustomerType } from './offer-customer-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PriceType } from './price-type';
+import type { PriceType } from './price-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { QuantityDiscountType } from './quantity-discount-type';
+import type { QuantityDiscountType } from './quantity-discount-type';
 
 /**
  * 

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { InventoryUpdate } from './inventory-update';
+import type { InventoryUpdate } from './inventory-update';
 
 /**
  * The request body for the submitInventoryUpdate operation.

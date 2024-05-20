@@ -14,95 +14,95 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CancelInboundPlanResponse } from '../models';
+import type { CancelInboundPlanResponse } from '../models';
 // @ts-ignore
-import { CancelSelfShipAppointmentRequest } from '../models';
+import type { CancelSelfShipAppointmentRequest } from '../models';
 // @ts-ignore
-import { CancelSelfShipAppointmentResponse } from '../models';
+import type { CancelSelfShipAppointmentResponse } from '../models';
 // @ts-ignore
-import { ConfirmPackingOptionResponse } from '../models';
+import type { ConfirmPackingOptionResponse } from '../models';
 // @ts-ignore
-import { ConfirmPlacementOptionResponse } from '../models';
+import type { ConfirmPlacementOptionResponse } from '../models';
 // @ts-ignore
-import { ConfirmTransportationOptionsRequest } from '../models';
+import type { ConfirmTransportationOptionsRequest } from '../models';
 // @ts-ignore
-import { ConfirmTransportationOptionsResponse } from '../models';
+import type { ConfirmTransportationOptionsResponse } from '../models';
 // @ts-ignore
-import { CreateInboundPlanRequest } from '../models';
+import type { CreateInboundPlanRequest } from '../models';
 // @ts-ignore
-import { CreateInboundPlanResponse } from '../models';
+import type { CreateInboundPlanResponse } from '../models';
 // @ts-ignore
-import { ErrorList } from '../models';
+import type { ErrorList } from '../models';
 // @ts-ignore
-import { GeneratePackingOptionsResponse } from '../models';
+import type { GeneratePackingOptionsResponse } from '../models';
 // @ts-ignore
-import { GeneratePlacementOptionsRequest } from '../models';
+import type { GeneratePlacementOptionsRequest } from '../models';
 // @ts-ignore
-import { GeneratePlacementOptionsResponse } from '../models';
+import type { GeneratePlacementOptionsResponse } from '../models';
 // @ts-ignore
-import { GenerateSelfShipAppointmentSlotsRequest } from '../models';
+import type { GenerateSelfShipAppointmentSlotsRequest } from '../models';
 // @ts-ignore
-import { GenerateSelfShipAppointmentSlotsResponse } from '../models';
+import type { GenerateSelfShipAppointmentSlotsResponse } from '../models';
 // @ts-ignore
-import { GenerateTransportationOptionsRequest } from '../models';
+import type { GenerateTransportationOptionsRequest } from '../models';
 // @ts-ignore
-import { GenerateTransportationOptionsResponse } from '../models';
+import type { GenerateTransportationOptionsResponse } from '../models';
 // @ts-ignore
-import { GetDeliveryChallanDocumentResponse } from '../models';
+import type { GetDeliveryChallanDocumentResponse } from '../models';
 // @ts-ignore
-import { GetSelfShipAppointmentSlotsResponse } from '../models';
+import type { GetSelfShipAppointmentSlotsResponse } from '../models';
 // @ts-ignore
-import { InboundOperationStatus } from '../models';
+import type { InboundOperationStatus } from '../models';
 // @ts-ignore
-import { InboundPlan } from '../models';
+import type { InboundPlan } from '../models';
 // @ts-ignore
-import { ListInboundPlanBoxesResponse } from '../models';
+import type { ListInboundPlanBoxesResponse } from '../models';
 // @ts-ignore
-import { ListInboundPlanItemsResponse } from '../models';
+import type { ListInboundPlanItemsResponse } from '../models';
 // @ts-ignore
-import { ListInboundPlanPalletsResponse } from '../models';
+import type { ListInboundPlanPalletsResponse } from '../models';
 // @ts-ignore
-import { ListInboundPlansResponse } from '../models';
+import type { ListInboundPlansResponse } from '../models';
 // @ts-ignore
-import { ListItemComplianceDetailsResponse } from '../models';
+import type { ListItemComplianceDetailsResponse } from '../models';
 // @ts-ignore
-import { ListPackingGroupItemsResponse } from '../models';
+import type { ListPackingGroupItemsResponse } from '../models';
 // @ts-ignore
-import { ListPackingOptionsResponse } from '../models';
+import type { ListPackingOptionsResponse } from '../models';
 // @ts-ignore
-import { ListPlacementOptionsResponse } from '../models';
+import type { ListPlacementOptionsResponse } from '../models';
 // @ts-ignore
-import { ListTransportationOptionsResponse } from '../models';
+import type { ListTransportationOptionsResponse } from '../models';
 // @ts-ignore
-import { ScheduleSelfShipAppointmentRequest } from '../models';
+import type { ScheduleSelfShipAppointmentRequest } from '../models';
 // @ts-ignore
-import { ScheduleSelfShipAppointmentResponse } from '../models';
+import type { ScheduleSelfShipAppointmentResponse } from '../models';
 // @ts-ignore
-import { SetPackingInformationRequest } from '../models';
+import type { SetPackingInformationRequest } from '../models';
 // @ts-ignore
-import { SetPackingInformationResponse } from '../models';
+import type { SetPackingInformationResponse } from '../models';
 // @ts-ignore
-import { Shipment } from '../models';
+import type { Shipment } from '../models';
 // @ts-ignore
-import { UpdateItemComplianceDetailsRequest } from '../models';
+import type { UpdateItemComplianceDetailsRequest } from '../models';
 // @ts-ignore
-import { UpdateItemComplianceDetailsResponse } from '../models';
+import type { UpdateItemComplianceDetailsResponse } from '../models';
 // @ts-ignore
-import { UpdateShipmentDeliveryWindowRequest } from '../models';
+import type { UpdateShipmentDeliveryWindowRequest } from '../models';
 // @ts-ignore
-import { UpdateShipmentDeliveryWindowResponse } from '../models';
+import type { UpdateShipmentDeliveryWindowResponse } from '../models';
 // @ts-ignore
-import { UpdateShipmentTrackingDetailsRequest } from '../models';
+import type { UpdateShipmentTrackingDetailsRequest } from '../models';
 // @ts-ignore
-import { UpdateShipmentTrackingDetailsResponse } from '../models';
+import type { UpdateShipmentTrackingDetailsResponse } from '../models';
 /**
  * FbaInboundApi - axios parameter creator
  * @export
@@ -115,7 +115,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelInboundPlan: async (inboundPlanId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        cancelInboundPlan: async (inboundPlanId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('cancelInboundPlan', 'inboundPlanId', inboundPlanId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/cancellation`
@@ -151,7 +151,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelSelfShipAppointment: async (inboundPlanId: string, shipmentId: string, slotId: string, body: CancelSelfShipAppointmentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        cancelSelfShipAppointment: async (inboundPlanId: string, shipmentId: string, slotId: string, body: CancelSelfShipAppointmentRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('cancelSelfShipAppointment', 'inboundPlanId', inboundPlanId)
             // verify required parameter 'shipmentId' is not null or undefined
@@ -196,7 +196,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        confirmPackingOption: async (inboundPlanId: string, packingOptionId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        confirmPackingOption: async (inboundPlanId: string, packingOptionId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('confirmPackingOption', 'inboundPlanId', inboundPlanId)
             // verify required parameter 'packingOptionId' is not null or undefined
@@ -233,7 +233,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        confirmPlacementOption: async (inboundPlanId: string, placementOptionId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        confirmPlacementOption: async (inboundPlanId: string, placementOptionId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('confirmPlacementOption', 'inboundPlanId', inboundPlanId)
             // verify required parameter 'placementOptionId' is not null or undefined
@@ -270,7 +270,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        confirmTransportationOptions: async (inboundPlanId: string, body: ConfirmTransportationOptionsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        confirmTransportationOptions: async (inboundPlanId: string, body: ConfirmTransportationOptionsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('confirmTransportationOptions', 'inboundPlanId', inboundPlanId)
             // verify required parameter 'body' is not null or undefined
@@ -308,7 +308,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createInboundPlan: async (body: CreateInboundPlanRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createInboundPlan: async (body: CreateInboundPlanRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createInboundPlan', 'body', body)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans`;
@@ -343,7 +343,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generatePackingOptions: async (inboundPlanId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        generatePackingOptions: async (inboundPlanId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('generatePackingOptions', 'inboundPlanId', inboundPlanId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/packingOptions`
@@ -377,7 +377,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generatePlacementOptions: async (inboundPlanId: string, body: GeneratePlacementOptionsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        generatePlacementOptions: async (inboundPlanId: string, body: GeneratePlacementOptionsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('generatePlacementOptions', 'inboundPlanId', inboundPlanId)
             // verify required parameter 'body' is not null or undefined
@@ -417,7 +417,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generateSelfShipAppointmentSlots: async (inboundPlanId: string, shipmentId: string, body: GenerateSelfShipAppointmentSlotsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        generateSelfShipAppointmentSlots: async (inboundPlanId: string, shipmentId: string, body: GenerateSelfShipAppointmentSlotsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('generateSelfShipAppointmentSlots', 'inboundPlanId', inboundPlanId)
             // verify required parameter 'shipmentId' is not null or undefined
@@ -459,7 +459,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generateTransportationOptions: async (inboundPlanId: string, body: GenerateTransportationOptionsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        generateTransportationOptions: async (inboundPlanId: string, body: GenerateTransportationOptionsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('generateTransportationOptions', 'inboundPlanId', inboundPlanId)
             // verify required parameter 'body' is not null or undefined
@@ -498,7 +498,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDeliveryChallanDocument: async (inboundPlanId: string, shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getDeliveryChallanDocument: async (inboundPlanId: string, shipmentId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('getDeliveryChallanDocument', 'inboundPlanId', inboundPlanId)
             // verify required parameter 'shipmentId' is not null or undefined
@@ -534,7 +534,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getInboundOperationStatus: async (operationId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getInboundOperationStatus: async (operationId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'operationId' is not null or undefined
             assertParamExists('getInboundOperationStatus', 'operationId', operationId)
             const localVarPath = `/inbound/fba/2024-03-20/operations/{operationId}`
@@ -567,7 +567,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getInboundPlan: async (inboundPlanId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getInboundPlan: async (inboundPlanId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('getInboundPlan', 'inboundPlanId', inboundPlanId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}`
@@ -603,7 +603,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSelfShipAppointmentSlots: async (inboundPlanId: string, shipmentId: string, pageSize?: number, paginationToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getSelfShipAppointmentSlots: async (inboundPlanId: string, shipmentId: string, pageSize?: number, paginationToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('getSelfShipAppointmentSlots', 'inboundPlanId', inboundPlanId)
             // verify required parameter 'shipmentId' is not null or undefined
@@ -648,7 +648,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipment: async (inboundPlanId: string, shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getShipment: async (inboundPlanId: string, shipmentId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('getShipment', 'inboundPlanId', inboundPlanId)
             // verify required parameter 'shipmentId' is not null or undefined
@@ -686,7 +686,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listInboundPlanBoxes: async (inboundPlanId: string, pageSize?: number, paginationToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listInboundPlanBoxes: async (inboundPlanId: string, pageSize?: number, paginationToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('listInboundPlanBoxes', 'inboundPlanId', inboundPlanId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/boxes`
@@ -729,7 +729,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listInboundPlanItems: async (inboundPlanId: string, pageSize?: number, paginationToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listInboundPlanItems: async (inboundPlanId: string, pageSize?: number, paginationToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('listInboundPlanItems', 'inboundPlanId', inboundPlanId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/items`
@@ -772,7 +772,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listInboundPlanPallets: async (inboundPlanId: string, pageSize?: number, paginationToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listInboundPlanPallets: async (inboundPlanId: string, pageSize?: number, paginationToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('listInboundPlanPallets', 'inboundPlanId', inboundPlanId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/pallets`
@@ -811,13 +811,13 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * Provides a list of inbound plans with minimal information.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {number} [pageSize] The number of inbound plans to return in the response matching the given query.
          * @param {string} [paginationToken] A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-         * @param {'ACTIVE' | 'VOIDED' | 'SHIPPED'} [status] The status of an inbound plan.
-         * @param {'LAST_UPDATED_TIME' | 'CREATION_TIME'} [sortBy] Sort by field.
-         * @param {'ASC' | 'DESC'} [sortOrder] The sort order.
+         * @param {ListInboundPlansStatusEnum} [status] The status of an inbound plan.
+         * @param {ListInboundPlansSortByEnum} [sortBy] Sort by field.
+         * @param {ListInboundPlansSortOrderEnum} [sortOrder] The sort order.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listInboundPlans: async (pageSize?: number, paginationToken?: string, status?: 'ACTIVE' | 'VOIDED' | 'SHIPPED', sortBy?: 'LAST_UPDATED_TIME' | 'CREATION_TIME', sortOrder?: 'ASC' | 'DESC', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listInboundPlans: async (pageSize?: number, paginationToken?: string, status?: ListInboundPlansStatusEnum, sortBy?: ListInboundPlansSortByEnum, sortOrder?: ListInboundPlansSortOrderEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -868,7 +868,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listItemComplianceDetails: async (mskus: Array<string>, marketplaceId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listItemComplianceDetails: async (mskus: Array<string>, marketplaceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'mskus' is not null or undefined
             assertParamExists('listItemComplianceDetails', 'mskus', mskus)
             // verify required parameter 'marketplaceId' is not null or undefined
@@ -914,7 +914,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listPackingGroupItems: async (inboundPlanId: string, packingOptionId: string, packingGroupId: string, pageSize?: number, paginationToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listPackingGroupItems: async (inboundPlanId: string, packingOptionId: string, packingGroupId: string, pageSize?: number, paginationToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('listPackingGroupItems', 'inboundPlanId', inboundPlanId)
             // verify required parameter 'packingOptionId' is not null or undefined
@@ -963,7 +963,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listPackingOptions: async (inboundPlanId: string, pageSize?: number, paginationToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listPackingOptions: async (inboundPlanId: string, pageSize?: number, paginationToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('listPackingOptions', 'inboundPlanId', inboundPlanId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/packingOptions`
@@ -1006,7 +1006,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listPlacementOptions: async (inboundPlanId: string, pageSize?: number, paginationToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listPlacementOptions: async (inboundPlanId: string, pageSize?: number, paginationToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('listPlacementOptions', 'inboundPlanId', inboundPlanId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/placementOptions`
@@ -1051,7 +1051,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTransportationOptions: async (inboundPlanId: string, pageSize?: number, paginationToken?: string, placementOptionId?: string, shipmentId?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listTransportationOptions: async (inboundPlanId: string, pageSize?: number, paginationToken?: string, placementOptionId?: string, shipmentId?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('listTransportationOptions', 'inboundPlanId', inboundPlanId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/transportationOptions`
@@ -1103,7 +1103,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        scheduleSelfShipAppointment: async (inboundPlanId: string, shipmentId: string, slotId: string, body: ScheduleSelfShipAppointmentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        scheduleSelfShipAppointment: async (inboundPlanId: string, shipmentId: string, slotId: string, body: ScheduleSelfShipAppointmentRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('scheduleSelfShipAppointment', 'inboundPlanId', inboundPlanId)
             // verify required parameter 'shipmentId' is not null or undefined
@@ -1148,7 +1148,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        setPackingInformation: async (inboundPlanId: string, body: SetPackingInformationRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        setPackingInformation: async (inboundPlanId: string, body: SetPackingInformationRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('setPackingInformation', 'inboundPlanId', inboundPlanId)
             // verify required parameter 'body' is not null or undefined
@@ -1187,7 +1187,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateItemComplianceDetails: async (marketplaceId: string, body: UpdateItemComplianceDetailsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateItemComplianceDetails: async (marketplaceId: string, body: UpdateItemComplianceDetailsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('updateItemComplianceDetails', 'marketplaceId', marketplaceId)
             // verify required parameter 'body' is not null or undefined
@@ -1230,7 +1230,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateShipmentDeliveryWindow: async (inboundPlanId: string, shipmentId: string, body: UpdateShipmentDeliveryWindowRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateShipmentDeliveryWindow: async (inboundPlanId: string, shipmentId: string, body: UpdateShipmentDeliveryWindowRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('updateShipmentDeliveryWindow', 'inboundPlanId', inboundPlanId)
             // verify required parameter 'shipmentId' is not null or undefined
@@ -1273,7 +1273,7 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateShipmentTrackingDetails: async (inboundPlanId: string, shipmentId: string, body: UpdateShipmentTrackingDetailsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateShipmentTrackingDetails: async (inboundPlanId: string, shipmentId: string, body: UpdateShipmentTrackingDetailsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('updateShipmentTrackingDetails', 'inboundPlanId', inboundPlanId)
             // verify required parameter 'shipmentId' is not null or undefined
@@ -1324,9 +1324,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelInboundPlan(inboundPlanId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelInboundPlanResponse>> {
+        async cancelInboundPlan(inboundPlanId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelInboundPlanResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelInboundPlan(inboundPlanId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.cancelInboundPlan']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Cancels a self-ship appointment slot against a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1337,9 +1339,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelSelfShipAppointment(inboundPlanId: string, shipmentId: string, slotId: string, body: CancelSelfShipAppointmentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelSelfShipAppointmentResponse>> {
+        async cancelSelfShipAppointment(inboundPlanId: string, shipmentId: string, slotId: string, body: CancelSelfShipAppointmentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelSelfShipAppointmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelSelfShipAppointment(inboundPlanId, shipmentId, slotId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.cancelSelfShipAppointment']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Confirms the packing option for an inbound plan.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.05 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1348,9 +1352,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async confirmPackingOption(inboundPlanId: string, packingOptionId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConfirmPackingOptionResponse>> {
+        async confirmPackingOption(inboundPlanId: string, packingOptionId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConfirmPackingOptionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.confirmPackingOption(inboundPlanId, packingOptionId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.confirmPackingOption']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Confirms the placement option for an inbound plan. Once confirmed, it cannot be changed for the Inbound Plan.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.05 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1359,9 +1365,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async confirmPlacementOption(inboundPlanId: string, placementOptionId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConfirmPlacementOptionResponse>> {
+        async confirmPlacementOption(inboundPlanId: string, placementOptionId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConfirmPlacementOptionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.confirmPlacementOption(inboundPlanId, placementOptionId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.confirmPlacementOption']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Confirms all the transportation options for an inbound plan. A placement option must be confirmed prior to use of this API. Once confirmed, new transportation options can not be generated or confirmed for the Inbound Plan.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.05 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1370,9 +1378,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async confirmTransportationOptions(inboundPlanId: string, body: ConfirmTransportationOptionsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConfirmTransportationOptionsResponse>> {
+        async confirmTransportationOptions(inboundPlanId: string, body: ConfirmTransportationOptionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConfirmTransportationOptionsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.confirmTransportationOptions(inboundPlanId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.confirmTransportationOptions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Creates an inbound plan. An inbound plan contains all the necessary information to send shipments into Amazon\'s fufillment network.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.05 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1380,9 +1390,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createInboundPlan(body: CreateInboundPlanRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateInboundPlanResponse>> {
+        async createInboundPlan(body: CreateInboundPlanRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateInboundPlanResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createInboundPlan(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.createInboundPlan']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Generates available packing options for the inbound plan.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.05 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1390,9 +1402,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async generatePackingOptions(inboundPlanId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GeneratePackingOptionsResponse>> {
+        async generatePackingOptions(inboundPlanId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GeneratePackingOptionsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.generatePackingOptions(inboundPlanId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.generatePackingOptions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Generates placement options for the inbound plan.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.05 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1401,9 +1415,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async generatePlacementOptions(inboundPlanId: string, body: GeneratePlacementOptionsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GeneratePlacementOptionsResponse>> {
+        async generatePlacementOptions(inboundPlanId: string, body: GeneratePlacementOptionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GeneratePlacementOptionsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.generatePlacementOptions(inboundPlanId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.generatePlacementOptions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Initiates the process of generating the appointment slots list.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1413,9 +1429,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async generateSelfShipAppointmentSlots(inboundPlanId: string, shipmentId: string, body: GenerateSelfShipAppointmentSlotsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GenerateSelfShipAppointmentSlotsResponse>> {
+        async generateSelfShipAppointmentSlots(inboundPlanId: string, shipmentId: string, body: GenerateSelfShipAppointmentSlotsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GenerateSelfShipAppointmentSlotsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.generateSelfShipAppointmentSlots(inboundPlanId, shipmentId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.generateSelfShipAppointmentSlots']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Generates available transportation options for a given placement option.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.05 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1424,9 +1442,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async generateTransportationOptions(inboundPlanId: string, body: GenerateTransportationOptionsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GenerateTransportationOptionsResponse>> {
+        async generateTransportationOptions(inboundPlanId: string, body: GenerateTransportationOptionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GenerateTransportationOptionsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.generateTransportationOptions(inboundPlanId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.generateTransportationOptions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Provide delivery challan document for PCP transportation in IN marketplace.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1435,9 +1455,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getDeliveryChallanDocument(inboundPlanId: string, shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDeliveryChallanDocumentResponse>> {
+        async getDeliveryChallanDocument(inboundPlanId: string, shipmentId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDeliveryChallanDocumentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getDeliveryChallanDocument(inboundPlanId, shipmentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.getDeliveryChallanDocument']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Gets the status of the processing of an asynchronous API call.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1445,9 +1467,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getInboundOperationStatus(operationId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InboundOperationStatus>> {
+        async getInboundOperationStatus(operationId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InboundOperationStatus>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getInboundOperationStatus(operationId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.getInboundOperationStatus']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Fetches the top level information about an inbound plan.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1455,9 +1479,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getInboundPlan(inboundPlanId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InboundPlan>> {
+        async getInboundPlan(inboundPlanId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InboundPlan>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getInboundPlan(inboundPlanId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.getInboundPlan']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Retrieves a list of available self-ship appointment slots used to drop off a shipment at a warehouse.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1468,9 +1494,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSelfShipAppointmentSlots(inboundPlanId: string, shipmentId: string, pageSize?: number, paginationToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSelfShipAppointmentSlotsResponse>> {
+        async getSelfShipAppointmentSlots(inboundPlanId: string, shipmentId: string, pageSize?: number, paginationToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSelfShipAppointmentSlotsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getSelfShipAppointmentSlots(inboundPlanId, shipmentId, pageSize, paginationToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.getSelfShipAppointmentSlots']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Provides the full details for a specific shipment within an inbound plan. The `transportationOptionId` inside `acceptedTransportationSelection` can be used to retrieve the transportation details for the shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1479,9 +1507,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShipment(inboundPlanId: string, shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Shipment>> {
+        async getShipment(inboundPlanId: string, shipmentId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Shipment>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShipment(inboundPlanId, shipmentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.getShipment']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Provides a paginated list of box packages in an inbound plan.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1491,9 +1521,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listInboundPlanBoxes(inboundPlanId: string, pageSize?: number, paginationToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListInboundPlanBoxesResponse>> {
+        async listInboundPlanBoxes(inboundPlanId: string, pageSize?: number, paginationToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListInboundPlanBoxesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listInboundPlanBoxes(inboundPlanId, pageSize, paginationToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.listInboundPlanBoxes']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Provides a paginated list of item packages in an inbound plan.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1503,9 +1535,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listInboundPlanItems(inboundPlanId: string, pageSize?: number, paginationToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListInboundPlanItemsResponse>> {
+        async listInboundPlanItems(inboundPlanId: string, pageSize?: number, paginationToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListInboundPlanItemsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listInboundPlanItems(inboundPlanId, pageSize, paginationToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.listInboundPlanItems']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Provides a paginated list of pallet packages in an inbound plan. An inbound plan will have pallets when the related details are provided after generating Less-Than-Truckload (LTL) carrier shipments.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1515,23 +1549,27 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listInboundPlanPallets(inboundPlanId: string, pageSize?: number, paginationToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListInboundPlanPalletsResponse>> {
+        async listInboundPlanPallets(inboundPlanId: string, pageSize?: number, paginationToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListInboundPlanPalletsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listInboundPlanPallets(inboundPlanId, pageSize, paginationToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.listInboundPlanPallets']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Provides a list of inbound plans with minimal information.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {number} [pageSize] The number of inbound plans to return in the response matching the given query.
          * @param {string} [paginationToken] A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-         * @param {'ACTIVE' | 'VOIDED' | 'SHIPPED'} [status] The status of an inbound plan.
-         * @param {'LAST_UPDATED_TIME' | 'CREATION_TIME'} [sortBy] Sort by field.
-         * @param {'ASC' | 'DESC'} [sortOrder] The sort order.
+         * @param {ListInboundPlansStatusEnum} [status] The status of an inbound plan.
+         * @param {ListInboundPlansSortByEnum} [sortBy] Sort by field.
+         * @param {ListInboundPlansSortOrderEnum} [sortOrder] The sort order.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listInboundPlans(pageSize?: number, paginationToken?: string, status?: 'ACTIVE' | 'VOIDED' | 'SHIPPED', sortBy?: 'LAST_UPDATED_TIME' | 'CREATION_TIME', sortOrder?: 'ASC' | 'DESC', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListInboundPlansResponse>> {
+        async listInboundPlans(pageSize?: number, paginationToken?: string, status?: ListInboundPlansStatusEnum, sortBy?: ListInboundPlansSortByEnum, sortOrder?: ListInboundPlansSortOrderEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListInboundPlansResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listInboundPlans(pageSize, paginationToken, status, sortBy, sortOrder, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.listInboundPlans']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * List the inbound compliance details for MSKUs in a given marketplace.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1540,9 +1578,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listItemComplianceDetails(mskus: Array<string>, marketplaceId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListItemComplianceDetailsResponse>> {
+        async listItemComplianceDetails(mskus: Array<string>, marketplaceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListItemComplianceDetailsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listItemComplianceDetails(mskus, marketplaceId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.listItemComplianceDetails']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Retrieves a list of all items in a packing options\'s packing group. Packing options must first be generated by the corresponding endpoint before packing group items can be listed.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1554,9 +1594,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listPackingGroupItems(inboundPlanId: string, packingOptionId: string, packingGroupId: string, pageSize?: number, paginationToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListPackingGroupItemsResponse>> {
+        async listPackingGroupItems(inboundPlanId: string, packingOptionId: string, packingGroupId: string, pageSize?: number, paginationToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListPackingGroupItemsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listPackingGroupItems(inboundPlanId, packingOptionId, packingGroupId, pageSize, paginationToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.listPackingGroupItems']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Retrieves a list of all packing options for an inbound plan. Packing options must first be generated by the corresponding endpoint before becoming available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1566,9 +1608,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listPackingOptions(inboundPlanId: string, pageSize?: number, paginationToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListPackingOptionsResponse>> {
+        async listPackingOptions(inboundPlanId: string, pageSize?: number, paginationToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListPackingOptionsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listPackingOptions(inboundPlanId, pageSize, paginationToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.listPackingOptions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Provides a list of all placement options for an inbound plan. Placement options must first be generated by the corresponding endpoint before becoming available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1578,9 +1622,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listPlacementOptions(inboundPlanId: string, pageSize?: number, paginationToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListPlacementOptionsResponse>> {
+        async listPlacementOptions(inboundPlanId: string, pageSize?: number, paginationToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListPlacementOptionsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listPlacementOptions(inboundPlanId, pageSize, paginationToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.listPlacementOptions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Retrieves all transportation options for a shipment. Transportation options must first be generated by the corresponding endpoint before becoming available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1592,9 +1638,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTransportationOptions(inboundPlanId: string, pageSize?: number, paginationToken?: string, placementOptionId?: string, shipmentId?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListTransportationOptionsResponse>> {
+        async listTransportationOptions(inboundPlanId: string, pageSize?: number, paginationToken?: string, placementOptionId?: string, shipmentId?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListTransportationOptionsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTransportationOptions(inboundPlanId, pageSize, paginationToken, placementOptionId, shipmentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.listTransportationOptions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Confirms or reschedules a self-ship appointment slot against a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1605,9 +1653,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async scheduleSelfShipAppointment(inboundPlanId: string, shipmentId: string, slotId: string, body: ScheduleSelfShipAppointmentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ScheduleSelfShipAppointmentResponse>> {
+        async scheduleSelfShipAppointment(inboundPlanId: string, shipmentId: string, slotId: string, body: ScheduleSelfShipAppointmentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ScheduleSelfShipAppointmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.scheduleSelfShipAppointment(inboundPlanId, shipmentId, slotId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.scheduleSelfShipAppointment']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Sets packing information for an inbound plan. This should be called after an inbound plan is created to populate     the box level information required for planning and transportation estimates.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.05 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1616,9 +1666,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async setPackingInformation(inboundPlanId: string, body: SetPackingInformationRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetPackingInformationResponse>> {
+        async setPackingInformation(inboundPlanId: string, body: SetPackingInformationRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SetPackingInformationResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.setPackingInformation(inboundPlanId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.setPackingInformation']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Update compliance details for list of MSKUs. The details provided here are only used for the IN marketplace compliance validation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1627,9 +1679,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateItemComplianceDetails(marketplaceId: string, body: UpdateItemComplianceDetailsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UpdateItemComplianceDetailsResponse>> {
+        async updateItemComplianceDetails(marketplaceId: string, body: UpdateItemComplianceDetailsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UpdateItemComplianceDetailsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateItemComplianceDetails(marketplaceId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.updateItemComplianceDetails']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Update the time window that a shipment will be delivered to the warehouse. The window is used to provide the expected time that a non-Amazon partnered carrier will arrive at the warehouse.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1639,9 +1693,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateShipmentDeliveryWindow(inboundPlanId: string, shipmentId: string, body: UpdateShipmentDeliveryWindowRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UpdateShipmentDeliveryWindowResponse>> {
+        async updateShipmentDeliveryWindow(inboundPlanId: string, shipmentId: string, body: UpdateShipmentDeliveryWindowRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UpdateShipmentDeliveryWindowResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateShipmentDeliveryWindow(inboundPlanId, shipmentId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.updateShipmentDeliveryWindow']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Updates a shipment\'s tracking details.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1651,9 +1707,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateShipmentTrackingDetails(inboundPlanId: string, shipmentId: string, body: UpdateShipmentTrackingDetailsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UpdateShipmentTrackingDetailsResponse>> {
+        async updateShipmentTrackingDetails(inboundPlanId: string, shipmentId: string, body: UpdateShipmentTrackingDetailsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UpdateShipmentTrackingDetailsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateShipmentTrackingDetails(inboundPlanId, shipmentId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.updateShipmentTrackingDetails']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -1671,7 +1729,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelInboundPlan(requestParameters: FbaInboundApiCancelInboundPlanRequest, options?: AxiosRequestConfig): AxiosPromise<CancelInboundPlanResponse> {
+        cancelInboundPlan(requestParameters: FbaInboundApiCancelInboundPlanRequest, options?: RawAxiosRequestConfig): AxiosPromise<CancelInboundPlanResponse> {
             return localVarFp.cancelInboundPlan(requestParameters.inboundPlanId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1680,7 +1738,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelSelfShipAppointment(requestParameters: FbaInboundApiCancelSelfShipAppointmentRequest, options?: AxiosRequestConfig): AxiosPromise<CancelSelfShipAppointmentResponse> {
+        cancelSelfShipAppointment(requestParameters: FbaInboundApiCancelSelfShipAppointmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<CancelSelfShipAppointmentResponse> {
             return localVarFp.cancelSelfShipAppointment(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.slotId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1689,7 +1747,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        confirmPackingOption(requestParameters: FbaInboundApiConfirmPackingOptionRequest, options?: AxiosRequestConfig): AxiosPromise<ConfirmPackingOptionResponse> {
+        confirmPackingOption(requestParameters: FbaInboundApiConfirmPackingOptionRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConfirmPackingOptionResponse> {
             return localVarFp.confirmPackingOption(requestParameters.inboundPlanId, requestParameters.packingOptionId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1698,7 +1756,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        confirmPlacementOption(requestParameters: FbaInboundApiConfirmPlacementOptionRequest, options?: AxiosRequestConfig): AxiosPromise<ConfirmPlacementOptionResponse> {
+        confirmPlacementOption(requestParameters: FbaInboundApiConfirmPlacementOptionRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConfirmPlacementOptionResponse> {
             return localVarFp.confirmPlacementOption(requestParameters.inboundPlanId, requestParameters.placementOptionId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1707,7 +1765,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        confirmTransportationOptions(requestParameters: FbaInboundApiConfirmTransportationOptionsRequest, options?: AxiosRequestConfig): AxiosPromise<ConfirmTransportationOptionsResponse> {
+        confirmTransportationOptions(requestParameters: FbaInboundApiConfirmTransportationOptionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConfirmTransportationOptionsResponse> {
             return localVarFp.confirmTransportationOptions(requestParameters.inboundPlanId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1716,7 +1774,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createInboundPlan(requestParameters: FbaInboundApiCreateInboundPlanRequest, options?: AxiosRequestConfig): AxiosPromise<CreateInboundPlanResponse> {
+        createInboundPlan(requestParameters: FbaInboundApiCreateInboundPlanRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateInboundPlanResponse> {
             return localVarFp.createInboundPlan(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1725,7 +1783,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generatePackingOptions(requestParameters: FbaInboundApiGeneratePackingOptionsRequest, options?: AxiosRequestConfig): AxiosPromise<GeneratePackingOptionsResponse> {
+        generatePackingOptions(requestParameters: FbaInboundApiGeneratePackingOptionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GeneratePackingOptionsResponse> {
             return localVarFp.generatePackingOptions(requestParameters.inboundPlanId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1734,7 +1792,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generatePlacementOptions(requestParameters: FbaInboundApiGeneratePlacementOptionsRequest, options?: AxiosRequestConfig): AxiosPromise<GeneratePlacementOptionsResponse> {
+        generatePlacementOptions(requestParameters: FbaInboundApiGeneratePlacementOptionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GeneratePlacementOptionsResponse> {
             return localVarFp.generatePlacementOptions(requestParameters.inboundPlanId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1743,7 +1801,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generateSelfShipAppointmentSlots(requestParameters: FbaInboundApiGenerateSelfShipAppointmentSlotsRequest, options?: AxiosRequestConfig): AxiosPromise<GenerateSelfShipAppointmentSlotsResponse> {
+        generateSelfShipAppointmentSlots(requestParameters: FbaInboundApiGenerateSelfShipAppointmentSlotsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GenerateSelfShipAppointmentSlotsResponse> {
             return localVarFp.generateSelfShipAppointmentSlots(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1752,7 +1810,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generateTransportationOptions(requestParameters: FbaInboundApiGenerateTransportationOptionsRequest, options?: AxiosRequestConfig): AxiosPromise<GenerateTransportationOptionsResponse> {
+        generateTransportationOptions(requestParameters: FbaInboundApiGenerateTransportationOptionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GenerateTransportationOptionsResponse> {
             return localVarFp.generateTransportationOptions(requestParameters.inboundPlanId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1761,7 +1819,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDeliveryChallanDocument(requestParameters: FbaInboundApiGetDeliveryChallanDocumentRequest, options?: AxiosRequestConfig): AxiosPromise<GetDeliveryChallanDocumentResponse> {
+        getDeliveryChallanDocument(requestParameters: FbaInboundApiGetDeliveryChallanDocumentRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetDeliveryChallanDocumentResponse> {
             return localVarFp.getDeliveryChallanDocument(requestParameters.inboundPlanId, requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1770,7 +1828,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getInboundOperationStatus(requestParameters: FbaInboundApiGetInboundOperationStatusRequest, options?: AxiosRequestConfig): AxiosPromise<InboundOperationStatus> {
+        getInboundOperationStatus(requestParameters: FbaInboundApiGetInboundOperationStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<InboundOperationStatus> {
             return localVarFp.getInboundOperationStatus(requestParameters.operationId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1779,7 +1837,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getInboundPlan(requestParameters: FbaInboundApiGetInboundPlanRequest, options?: AxiosRequestConfig): AxiosPromise<InboundPlan> {
+        getInboundPlan(requestParameters: FbaInboundApiGetInboundPlanRequest, options?: RawAxiosRequestConfig): AxiosPromise<InboundPlan> {
             return localVarFp.getInboundPlan(requestParameters.inboundPlanId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1788,7 +1846,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSelfShipAppointmentSlots(requestParameters: FbaInboundApiGetSelfShipAppointmentSlotsRequest, options?: AxiosRequestConfig): AxiosPromise<GetSelfShipAppointmentSlotsResponse> {
+        getSelfShipAppointmentSlots(requestParameters: FbaInboundApiGetSelfShipAppointmentSlotsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetSelfShipAppointmentSlotsResponse> {
             return localVarFp.getSelfShipAppointmentSlots(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1797,7 +1855,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipment(requestParameters: FbaInboundApiGetShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<Shipment> {
+        getShipment(requestParameters: FbaInboundApiGetShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<Shipment> {
             return localVarFp.getShipment(requestParameters.inboundPlanId, requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1806,7 +1864,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listInboundPlanBoxes(requestParameters: FbaInboundApiListInboundPlanBoxesRequest, options?: AxiosRequestConfig): AxiosPromise<ListInboundPlanBoxesResponse> {
+        listInboundPlanBoxes(requestParameters: FbaInboundApiListInboundPlanBoxesRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListInboundPlanBoxesResponse> {
             return localVarFp.listInboundPlanBoxes(requestParameters.inboundPlanId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1815,7 +1873,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listInboundPlanItems(requestParameters: FbaInboundApiListInboundPlanItemsRequest, options?: AxiosRequestConfig): AxiosPromise<ListInboundPlanItemsResponse> {
+        listInboundPlanItems(requestParameters: FbaInboundApiListInboundPlanItemsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListInboundPlanItemsResponse> {
             return localVarFp.listInboundPlanItems(requestParameters.inboundPlanId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1824,7 +1882,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listInboundPlanPallets(requestParameters: FbaInboundApiListInboundPlanPalletsRequest, options?: AxiosRequestConfig): AxiosPromise<ListInboundPlanPalletsResponse> {
+        listInboundPlanPallets(requestParameters: FbaInboundApiListInboundPlanPalletsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListInboundPlanPalletsResponse> {
             return localVarFp.listInboundPlanPallets(requestParameters.inboundPlanId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1833,7 +1891,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listInboundPlans(requestParameters: FbaInboundApiListInboundPlansRequest = {}, options?: AxiosRequestConfig): AxiosPromise<ListInboundPlansResponse> {
+        listInboundPlans(requestParameters: FbaInboundApiListInboundPlansRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ListInboundPlansResponse> {
             return localVarFp.listInboundPlans(requestParameters.pageSize, requestParameters.paginationToken, requestParameters.status, requestParameters.sortBy, requestParameters.sortOrder, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1842,7 +1900,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listItemComplianceDetails(requestParameters: FbaInboundApiListItemComplianceDetailsRequest, options?: AxiosRequestConfig): AxiosPromise<ListItemComplianceDetailsResponse> {
+        listItemComplianceDetails(requestParameters: FbaInboundApiListItemComplianceDetailsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListItemComplianceDetailsResponse> {
             return localVarFp.listItemComplianceDetails(requestParameters.mskus, requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1851,7 +1909,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listPackingGroupItems(requestParameters: FbaInboundApiListPackingGroupItemsRequest, options?: AxiosRequestConfig): AxiosPromise<ListPackingGroupItemsResponse> {
+        listPackingGroupItems(requestParameters: FbaInboundApiListPackingGroupItemsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListPackingGroupItemsResponse> {
             return localVarFp.listPackingGroupItems(requestParameters.inboundPlanId, requestParameters.packingOptionId, requestParameters.packingGroupId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1860,7 +1918,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listPackingOptions(requestParameters: FbaInboundApiListPackingOptionsRequest, options?: AxiosRequestConfig): AxiosPromise<ListPackingOptionsResponse> {
+        listPackingOptions(requestParameters: FbaInboundApiListPackingOptionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListPackingOptionsResponse> {
             return localVarFp.listPackingOptions(requestParameters.inboundPlanId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1869,7 +1927,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listPlacementOptions(requestParameters: FbaInboundApiListPlacementOptionsRequest, options?: AxiosRequestConfig): AxiosPromise<ListPlacementOptionsResponse> {
+        listPlacementOptions(requestParameters: FbaInboundApiListPlacementOptionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListPlacementOptionsResponse> {
             return localVarFp.listPlacementOptions(requestParameters.inboundPlanId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1878,7 +1936,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTransportationOptions(requestParameters: FbaInboundApiListTransportationOptionsRequest, options?: AxiosRequestConfig): AxiosPromise<ListTransportationOptionsResponse> {
+        listTransportationOptions(requestParameters: FbaInboundApiListTransportationOptionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListTransportationOptionsResponse> {
             return localVarFp.listTransportationOptions(requestParameters.inboundPlanId, requestParameters.pageSize, requestParameters.paginationToken, requestParameters.placementOptionId, requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1887,7 +1945,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        scheduleSelfShipAppointment(requestParameters: FbaInboundApiScheduleSelfShipAppointmentRequest, options?: AxiosRequestConfig): AxiosPromise<ScheduleSelfShipAppointmentResponse> {
+        scheduleSelfShipAppointment(requestParameters: FbaInboundApiScheduleSelfShipAppointmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<ScheduleSelfShipAppointmentResponse> {
             return localVarFp.scheduleSelfShipAppointment(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.slotId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1896,7 +1954,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        setPackingInformation(requestParameters: FbaInboundApiSetPackingInformationRequest, options?: AxiosRequestConfig): AxiosPromise<SetPackingInformationResponse> {
+        setPackingInformation(requestParameters: FbaInboundApiSetPackingInformationRequest, options?: RawAxiosRequestConfig): AxiosPromise<SetPackingInformationResponse> {
             return localVarFp.setPackingInformation(requestParameters.inboundPlanId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1905,7 +1963,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateItemComplianceDetails(requestParameters: FbaInboundApiUpdateItemComplianceDetailsRequest, options?: AxiosRequestConfig): AxiosPromise<UpdateItemComplianceDetailsResponse> {
+        updateItemComplianceDetails(requestParameters: FbaInboundApiUpdateItemComplianceDetailsRequest, options?: RawAxiosRequestConfig): AxiosPromise<UpdateItemComplianceDetailsResponse> {
             return localVarFp.updateItemComplianceDetails(requestParameters.marketplaceId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1914,7 +1972,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateShipmentDeliveryWindow(requestParameters: FbaInboundApiUpdateShipmentDeliveryWindowRequest, options?: AxiosRequestConfig): AxiosPromise<UpdateShipmentDeliveryWindowResponse> {
+        updateShipmentDeliveryWindow(requestParameters: FbaInboundApiUpdateShipmentDeliveryWindowRequest, options?: RawAxiosRequestConfig): AxiosPromise<UpdateShipmentDeliveryWindowResponse> {
             return localVarFp.updateShipmentDeliveryWindow(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1923,7 +1981,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateShipmentTrackingDetails(requestParameters: FbaInboundApiUpdateShipmentTrackingDetailsRequest, options?: AxiosRequestConfig): AxiosPromise<UpdateShipmentTrackingDetailsResponse> {
+        updateShipmentTrackingDetails(requestParameters: FbaInboundApiUpdateShipmentTrackingDetailsRequest, options?: RawAxiosRequestConfig): AxiosPromise<UpdateShipmentTrackingDetailsResponse> {
             return localVarFp.updateShipmentTrackingDetails(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
@@ -2353,21 +2411,21 @@ export interface FbaInboundApiListInboundPlansRequest {
      * @type {'ACTIVE' | 'VOIDED' | 'SHIPPED'}
      * @memberof FbaInboundApiListInboundPlans
      */
-    readonly status?: 'ACTIVE' | 'VOIDED' | 'SHIPPED'
+    readonly status?: ListInboundPlansStatusEnum
 
     /**
      * Sort by field.
      * @type {'LAST_UPDATED_TIME' | 'CREATION_TIME'}
      * @memberof FbaInboundApiListInboundPlans
      */
-    readonly sortBy?: 'LAST_UPDATED_TIME' | 'CREATION_TIME'
+    readonly sortBy?: ListInboundPlansSortByEnum
 
     /**
      * The sort order.
      * @type {'ASC' | 'DESC'}
      * @memberof FbaInboundApiListInboundPlans
      */
-    readonly sortOrder?: 'ASC' | 'DESC'
+    readonly sortOrder?: ListInboundPlansSortOrderEnum
 }
 
 /**
@@ -2678,7 +2736,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public cancelInboundPlan(requestParameters: FbaInboundApiCancelInboundPlanRequest, options?: AxiosRequestConfig) {
+    public cancelInboundPlan(requestParameters: FbaInboundApiCancelInboundPlanRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).cancelInboundPlan(requestParameters.inboundPlanId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2689,7 +2747,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public cancelSelfShipAppointment(requestParameters: FbaInboundApiCancelSelfShipAppointmentRequest, options?: AxiosRequestConfig) {
+    public cancelSelfShipAppointment(requestParameters: FbaInboundApiCancelSelfShipAppointmentRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).cancelSelfShipAppointment(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.slotId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2700,7 +2758,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public confirmPackingOption(requestParameters: FbaInboundApiConfirmPackingOptionRequest, options?: AxiosRequestConfig) {
+    public confirmPackingOption(requestParameters: FbaInboundApiConfirmPackingOptionRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).confirmPackingOption(requestParameters.inboundPlanId, requestParameters.packingOptionId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2711,7 +2769,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public confirmPlacementOption(requestParameters: FbaInboundApiConfirmPlacementOptionRequest, options?: AxiosRequestConfig) {
+    public confirmPlacementOption(requestParameters: FbaInboundApiConfirmPlacementOptionRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).confirmPlacementOption(requestParameters.inboundPlanId, requestParameters.placementOptionId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2722,7 +2780,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public confirmTransportationOptions(requestParameters: FbaInboundApiConfirmTransportationOptionsRequest, options?: AxiosRequestConfig) {
+    public confirmTransportationOptions(requestParameters: FbaInboundApiConfirmTransportationOptionsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).confirmTransportationOptions(requestParameters.inboundPlanId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2733,7 +2791,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public createInboundPlan(requestParameters: FbaInboundApiCreateInboundPlanRequest, options?: AxiosRequestConfig) {
+    public createInboundPlan(requestParameters: FbaInboundApiCreateInboundPlanRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).createInboundPlan(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2744,7 +2802,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public generatePackingOptions(requestParameters: FbaInboundApiGeneratePackingOptionsRequest, options?: AxiosRequestConfig) {
+    public generatePackingOptions(requestParameters: FbaInboundApiGeneratePackingOptionsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).generatePackingOptions(requestParameters.inboundPlanId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2755,7 +2813,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public generatePlacementOptions(requestParameters: FbaInboundApiGeneratePlacementOptionsRequest, options?: AxiosRequestConfig) {
+    public generatePlacementOptions(requestParameters: FbaInboundApiGeneratePlacementOptionsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).generatePlacementOptions(requestParameters.inboundPlanId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2766,7 +2824,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public generateSelfShipAppointmentSlots(requestParameters: FbaInboundApiGenerateSelfShipAppointmentSlotsRequest, options?: AxiosRequestConfig) {
+    public generateSelfShipAppointmentSlots(requestParameters: FbaInboundApiGenerateSelfShipAppointmentSlotsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).generateSelfShipAppointmentSlots(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2777,7 +2835,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public generateTransportationOptions(requestParameters: FbaInboundApiGenerateTransportationOptionsRequest, options?: AxiosRequestConfig) {
+    public generateTransportationOptions(requestParameters: FbaInboundApiGenerateTransportationOptionsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).generateTransportationOptions(requestParameters.inboundPlanId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2788,7 +2846,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public getDeliveryChallanDocument(requestParameters: FbaInboundApiGetDeliveryChallanDocumentRequest, options?: AxiosRequestConfig) {
+    public getDeliveryChallanDocument(requestParameters: FbaInboundApiGetDeliveryChallanDocumentRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).getDeliveryChallanDocument(requestParameters.inboundPlanId, requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2799,7 +2857,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public getInboundOperationStatus(requestParameters: FbaInboundApiGetInboundOperationStatusRequest, options?: AxiosRequestConfig) {
+    public getInboundOperationStatus(requestParameters: FbaInboundApiGetInboundOperationStatusRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).getInboundOperationStatus(requestParameters.operationId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2810,7 +2868,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public getInboundPlan(requestParameters: FbaInboundApiGetInboundPlanRequest, options?: AxiosRequestConfig) {
+    public getInboundPlan(requestParameters: FbaInboundApiGetInboundPlanRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).getInboundPlan(requestParameters.inboundPlanId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2821,7 +2879,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public getSelfShipAppointmentSlots(requestParameters: FbaInboundApiGetSelfShipAppointmentSlotsRequest, options?: AxiosRequestConfig) {
+    public getSelfShipAppointmentSlots(requestParameters: FbaInboundApiGetSelfShipAppointmentSlotsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).getSelfShipAppointmentSlots(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2832,7 +2890,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public getShipment(requestParameters: FbaInboundApiGetShipmentRequest, options?: AxiosRequestConfig) {
+    public getShipment(requestParameters: FbaInboundApiGetShipmentRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).getShipment(requestParameters.inboundPlanId, requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2843,7 +2901,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public listInboundPlanBoxes(requestParameters: FbaInboundApiListInboundPlanBoxesRequest, options?: AxiosRequestConfig) {
+    public listInboundPlanBoxes(requestParameters: FbaInboundApiListInboundPlanBoxesRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).listInboundPlanBoxes(requestParameters.inboundPlanId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2854,7 +2912,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public listInboundPlanItems(requestParameters: FbaInboundApiListInboundPlanItemsRequest, options?: AxiosRequestConfig) {
+    public listInboundPlanItems(requestParameters: FbaInboundApiListInboundPlanItemsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).listInboundPlanItems(requestParameters.inboundPlanId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2865,7 +2923,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public listInboundPlanPallets(requestParameters: FbaInboundApiListInboundPlanPalletsRequest, options?: AxiosRequestConfig) {
+    public listInboundPlanPallets(requestParameters: FbaInboundApiListInboundPlanPalletsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).listInboundPlanPallets(requestParameters.inboundPlanId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2876,7 +2934,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public listInboundPlans(requestParameters: FbaInboundApiListInboundPlansRequest = {}, options?: AxiosRequestConfig) {
+    public listInboundPlans(requestParameters: FbaInboundApiListInboundPlansRequest = {}, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).listInboundPlans(requestParameters.pageSize, requestParameters.paginationToken, requestParameters.status, requestParameters.sortBy, requestParameters.sortOrder, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2887,7 +2945,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public listItemComplianceDetails(requestParameters: FbaInboundApiListItemComplianceDetailsRequest, options?: AxiosRequestConfig) {
+    public listItemComplianceDetails(requestParameters: FbaInboundApiListItemComplianceDetailsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).listItemComplianceDetails(requestParameters.mskus, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2898,7 +2956,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public listPackingGroupItems(requestParameters: FbaInboundApiListPackingGroupItemsRequest, options?: AxiosRequestConfig) {
+    public listPackingGroupItems(requestParameters: FbaInboundApiListPackingGroupItemsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).listPackingGroupItems(requestParameters.inboundPlanId, requestParameters.packingOptionId, requestParameters.packingGroupId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2909,7 +2967,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public listPackingOptions(requestParameters: FbaInboundApiListPackingOptionsRequest, options?: AxiosRequestConfig) {
+    public listPackingOptions(requestParameters: FbaInboundApiListPackingOptionsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).listPackingOptions(requestParameters.inboundPlanId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2920,7 +2978,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public listPlacementOptions(requestParameters: FbaInboundApiListPlacementOptionsRequest, options?: AxiosRequestConfig) {
+    public listPlacementOptions(requestParameters: FbaInboundApiListPlacementOptionsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).listPlacementOptions(requestParameters.inboundPlanId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2931,7 +2989,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public listTransportationOptions(requestParameters: FbaInboundApiListTransportationOptionsRequest, options?: AxiosRequestConfig) {
+    public listTransportationOptions(requestParameters: FbaInboundApiListTransportationOptionsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).listTransportationOptions(requestParameters.inboundPlanId, requestParameters.pageSize, requestParameters.paginationToken, requestParameters.placementOptionId, requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2942,7 +3000,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public scheduleSelfShipAppointment(requestParameters: FbaInboundApiScheduleSelfShipAppointmentRequest, options?: AxiosRequestConfig) {
+    public scheduleSelfShipAppointment(requestParameters: FbaInboundApiScheduleSelfShipAppointmentRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).scheduleSelfShipAppointment(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.slotId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2953,7 +3011,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public setPackingInformation(requestParameters: FbaInboundApiSetPackingInformationRequest, options?: AxiosRequestConfig) {
+    public setPackingInformation(requestParameters: FbaInboundApiSetPackingInformationRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).setPackingInformation(requestParameters.inboundPlanId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2964,7 +3022,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public updateItemComplianceDetails(requestParameters: FbaInboundApiUpdateItemComplianceDetailsRequest, options?: AxiosRequestConfig) {
+    public updateItemComplianceDetails(requestParameters: FbaInboundApiUpdateItemComplianceDetailsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).updateItemComplianceDetails(requestParameters.marketplaceId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2975,7 +3033,7 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public updateShipmentDeliveryWindow(requestParameters: FbaInboundApiUpdateShipmentDeliveryWindowRequest, options?: AxiosRequestConfig) {
+    public updateShipmentDeliveryWindow(requestParameters: FbaInboundApiUpdateShipmentDeliveryWindowRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).updateShipmentDeliveryWindow(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2986,7 +3044,33 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public updateShipmentTrackingDetails(requestParameters: FbaInboundApiUpdateShipmentTrackingDetailsRequest, options?: AxiosRequestConfig) {
+    public updateShipmentTrackingDetails(requestParameters: FbaInboundApiUpdateShipmentTrackingDetailsRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).updateShipmentTrackingDetails(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const ListInboundPlansStatusEnum = {
+    Active: 'ACTIVE',
+    Voided: 'VOIDED',
+    Shipped: 'SHIPPED'
+} as const;
+export type ListInboundPlansStatusEnum = typeof ListInboundPlansStatusEnum[keyof typeof ListInboundPlansStatusEnum];
+/**
+ * @export
+ */
+export const ListInboundPlansSortByEnum = {
+    LastUpdatedTime: 'LAST_UPDATED_TIME',
+    CreationTime: 'CREATION_TIME'
+} as const;
+export type ListInboundPlansSortByEnum = typeof ListInboundPlansSortByEnum[keyof typeof ListInboundPlansSortByEnum];
+/**
+ * @export
+ */
+export const ListInboundPlansSortOrderEnum = {
+    Asc: 'ASC',
+    Desc: 'DESC'
+} as const;
+export type ListInboundPlansSortOrderEnum = typeof ListInboundPlansSortOrderEnum[keyof typeof ListInboundPlansSortOrderEnum];

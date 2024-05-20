@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MoneyType } from './money-type';
+import type { MoneyType } from './money-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Points } from './points';
+import type { Points } from './points';
 
 /**
  * Price information for an item, used to estimate fees.

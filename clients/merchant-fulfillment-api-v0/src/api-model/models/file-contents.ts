@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FileType } from './file-type';
+import type { FileType } from './file-type';
 
 /**
  * The document data and checksum.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TaxType } from './tax-type';
+import type { TaxType } from './tax-type';
 
 /**
  * Indicates the tax specifications associated with the shipment for customs compliance purposes in certain regions.

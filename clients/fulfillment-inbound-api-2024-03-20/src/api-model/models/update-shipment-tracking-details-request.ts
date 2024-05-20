@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TrackingDetailsInput } from './tracking-details-input';
+import type { TrackingDetailsInput } from './tracking-details-input';
 
 /**
  * The `updateShipmentTrackingDetails` request.

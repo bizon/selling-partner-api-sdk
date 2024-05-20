@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Currency } from './currency';
+import type { Currency } from './currency';
 // May contain unused imports in some cases
 // @ts-ignore
-import { DangerousGoodsDetails } from './dangerous-goods-details';
+import type { DangerousGoodsDetails } from './dangerous-goods-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { DirectFulfillmentItemIdentifiers } from './direct-fulfillment-item-identifiers';
+import type { DirectFulfillmentItemIdentifiers } from './direct-fulfillment-item-identifiers';
 // May contain unused imports in some cases
 // @ts-ignore
-import { InvoiceDetails } from './invoice-details';
+import type { InvoiceDetails } from './invoice-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { LiquidVolume } from './liquid-volume';
+import type { LiquidVolume } from './liquid-volume';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Weight } from './weight';
+import type { Weight } from './weight';
 
 /**
  * An item in a package.

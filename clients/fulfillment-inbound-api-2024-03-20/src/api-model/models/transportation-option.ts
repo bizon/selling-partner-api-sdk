@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AppointmentSlot } from './appointment-slot';
+import type { AppointmentSlot } from './appointment-slot';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Carrier } from './carrier';
+import type { Carrier } from './carrier';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Quote } from './quote';
+import type { Quote } from './quote';
 
 /**
  * Contains information pertaining to a transportation option and the related carrier.

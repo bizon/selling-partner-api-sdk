@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DecoratorType } from './decorator-type';
+import type { DecoratorType } from './decorator-type';
 
 /**
  * A decorator applied to a content string value in order to create rich text.

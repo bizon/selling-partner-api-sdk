@@ -14,17 +14,17 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { SubmitInventoryUpdateRequest } from '../models';
+import type { SubmitInventoryUpdateRequest } from '../models';
 // @ts-ignore
-import { SubmitInventoryUpdateResponse } from '../models';
+import type { SubmitInventoryUpdateResponse } from '../models';
 /**
  * UpdateInventoryApi - axios parameter creator
  * @export
@@ -38,7 +38,7 @@ export const UpdateInventoryApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitInventoryUpdate: async (warehouseId: string, body: SubmitInventoryUpdateRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        submitInventoryUpdate: async (warehouseId: string, body: SubmitInventoryUpdateRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'warehouseId' is not null or undefined
             assertParamExists('submitInventoryUpdate', 'warehouseId', warehouseId)
             // verify required parameter 'body' is not null or undefined
@@ -87,9 +87,11 @@ export const UpdateInventoryApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async submitInventoryUpdate(warehouseId: string, body: SubmitInventoryUpdateRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitInventoryUpdateResponse>> {
+        async submitInventoryUpdate(warehouseId: string, body: SubmitInventoryUpdateRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitInventoryUpdateResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.submitInventoryUpdate(warehouseId, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['UpdateInventoryApi.submitInventoryUpdate']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -107,7 +109,7 @@ export const UpdateInventoryApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitInventoryUpdate(requestParameters: UpdateInventoryApiSubmitInventoryUpdateRequest, options?: AxiosRequestConfig): AxiosPromise<SubmitInventoryUpdateResponse> {
+        submitInventoryUpdate(requestParameters: UpdateInventoryApiSubmitInventoryUpdateRequest, options?: RawAxiosRequestConfig): AxiosPromise<SubmitInventoryUpdateResponse> {
             return localVarFp.submitInventoryUpdate(requestParameters.warehouseId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
@@ -148,7 +150,8 @@ export class UpdateInventoryApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof UpdateInventoryApi
      */
-    public submitInventoryUpdate(requestParameters: UpdateInventoryApiSubmitInventoryUpdateRequest, options?: AxiosRequestConfig) {
+    public submitInventoryUpdate(requestParameters: UpdateInventoryApiSubmitInventoryUpdateRequest, options?: RawAxiosRequestConfig) {
         return UpdateInventoryApiFp(this.configuration).submitInventoryUpdate(requestParameters.warehouseId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

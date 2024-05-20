@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { RemovalShipmentItemAdjustment } from './removal-shipment-item-adjustment';
+import type { RemovalShipmentItemAdjustment } from './removal-shipment-item-adjustment';
 
 /**
  * A financial adjustment event for FBA liquidated inventory. A positive value indicates money owed to Amazon by the buyer (for example, when the charge was incorrectly calculated as less than it should be). A negative value indicates a full or partial refund owed to the buyer (for example, when the buyer receives damaged items or fewer items than ordered).

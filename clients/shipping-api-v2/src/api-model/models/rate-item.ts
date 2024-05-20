@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Currency } from './currency';
+import type { Currency } from './currency';
 // May contain unused imports in some cases
 // @ts-ignore
-import { RateItemID } from './rate-item-id';
+import type { RateItemID } from './rate-item-id';
 // May contain unused imports in some cases
 // @ts-ignore
-import { RateItemType } from './rate-item-type';
+import type { RateItemType } from './rate-item-type';
 
 /**
  * Rate Item for shipping (base cost, transaction fee, confirmation, insurance, etc.) Data source definition: 

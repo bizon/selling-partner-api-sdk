@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Order } from './order';
+import type { Order } from './order';
 
 /**
  * A list of orders along with additional information to make subsequent API calls.

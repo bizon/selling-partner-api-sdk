@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Money } from './money';
+import type { Money } from './money';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OrderItemStatusAcknowledgementStatus } from './order-item-status-acknowledgement-status';
+import type { OrderItemStatusAcknowledgementStatus } from './order-item-status-acknowledgement-status';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OrderItemStatusOrderedQuantity } from './order-item-status-ordered-quantity';
+import type { OrderItemStatusOrderedQuantity } from './order-item-status-ordered-quantity';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OrderItemStatusReceivingStatus } from './order-item-status-receiving-status';
+import type { OrderItemStatusReceivingStatus } from './order-item-status-receiving-status';
 
 /**
  * 

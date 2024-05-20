@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { UnitOfMeasurement } from './unit-of-measurement';
+import type { UnitOfMeasurement } from './unit-of-measurement';
 
 /**
  * The dimension values and unit of measurement.

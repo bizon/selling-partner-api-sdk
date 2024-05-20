@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { OrderItemsInner } from './order-items-inner';
+import type { OrderItemsInner } from './order-items-inner';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipmentStatus } from './shipment-status';
+import type { ShipmentStatus } from './shipment-status';
 
 /**
  * The request body for the `updateShipmentStatus` operation.

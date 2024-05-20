@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AddressTypeEnum } from './address-type-enum';
+import type { AddressTypeEnum } from './address-type-enum';
 
 /**
  * The shipping address details of the shipment.

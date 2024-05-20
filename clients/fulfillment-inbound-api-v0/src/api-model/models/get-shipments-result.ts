@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { InboundShipmentInfo } from './inbound-shipment-info';
+import type { InboundShipmentInfo } from './inbound-shipment-info';
 
 /**
  * Result for the get shipments operation

@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AccessPointType } from './access-point-type';
+import type { AccessPointType } from './access-point-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { AccessibilityAttributes } from './accessibility-attributes';
+import type { AccessibilityAttributes } from './accessibility-attributes';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ExceptionOperatingHours } from './exception-operating-hours';
+import type { ExceptionOperatingHours } from './exception-operating-hours';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OperatingHours } from './operating-hours';
+import type { OperatingHours } from './operating-hours';
 
 /**
  * Access point details

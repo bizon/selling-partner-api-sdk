@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BrandRefinement } from './brand-refinement';
+import type { BrandRefinement } from './brand-refinement';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ClassificationRefinement } from './classification-refinement';
+import type { ClassificationRefinement } from './classification-refinement';
 
 /**
  * Search refinements.

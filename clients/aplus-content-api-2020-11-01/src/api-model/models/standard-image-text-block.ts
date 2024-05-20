@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ImageComponent } from './image-component';
+import type { ImageComponent } from './image-component';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ParagraphComponent } from './paragraph-component';
+import type { ParagraphComponent } from './paragraph-component';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TextComponent } from './text-component';
+import type { TextComponent } from './text-component';
 
 /**
  * The A+ Content standard image and text box block.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { OpenInterval } from './open-interval';
+import type { OpenInterval } from './open-interval';
 
 /**
  * Dates when the business is closed or open with a different time window.

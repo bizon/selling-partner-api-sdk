@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PredefinedPackageDimensions } from './predefined-package-dimensions';
+import type { PredefinedPackageDimensions } from './predefined-package-dimensions';
 // May contain unused imports in some cases
 // @ts-ignore
-import { UnitOfLength } from './unit-of-length';
+import type { UnitOfLength } from './unit-of-length';
 
 /**
  * The dimensions of a package contained in a shipment.

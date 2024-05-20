@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentChannelType } from './fulfillment-channel-type';
+import type { FulfillmentChannelType } from './fulfillment-channel-type';
 
 /**
  * The total number of offers for the specified condition and fulfillment channel.

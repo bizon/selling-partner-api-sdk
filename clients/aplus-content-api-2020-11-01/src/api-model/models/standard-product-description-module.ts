@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ParagraphComponent } from './paragraph-component';
+import type { ParagraphComponent } from './paragraph-component';
 
 /**
  * Standard product description text.

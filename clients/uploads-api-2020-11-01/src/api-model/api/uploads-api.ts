@@ -14,15 +14,15 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CreateUploadDestinationResponse } from '../models';
+import type { CreateUploadDestinationResponse } from '../models';
 /**
  * UploadsApi - axios parameter creator
  * @export
@@ -38,7 +38,7 @@ export const UploadsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createUploadDestinationForResource: async (marketplaceIds: Array<string>, contentMD5: string, resource: string, contentType?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createUploadDestinationForResource: async (marketplaceIds: Array<string>, contentMD5: string, resource: string, contentType?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('createUploadDestinationForResource', 'marketplaceIds', marketplaceIds)
             // verify required parameter 'contentMD5' is not null or undefined
@@ -100,9 +100,11 @@ export const UploadsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createUploadDestinationForResource(marketplaceIds: Array<string>, contentMD5: string, resource: string, contentType?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateUploadDestinationResponse>> {
+        async createUploadDestinationForResource(marketplaceIds: Array<string>, contentMD5: string, resource: string, contentType?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateUploadDestinationResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createUploadDestinationForResource(marketplaceIds, contentMD5, resource, contentType, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['UploadsApi.createUploadDestinationForResource']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -120,7 +122,7 @@ export const UploadsApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createUploadDestinationForResource(requestParameters: UploadsApiCreateUploadDestinationForResourceRequest, options?: AxiosRequestConfig): AxiosPromise<CreateUploadDestinationResponse> {
+        createUploadDestinationForResource(requestParameters: UploadsApiCreateUploadDestinationForResourceRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateUploadDestinationResponse> {
             return localVarFp.createUploadDestinationForResource(requestParameters.marketplaceIds, requestParameters.contentMD5, requestParameters.resource, requestParameters.contentType, options).then((request) => request(axios, basePath));
         },
     };
@@ -175,7 +177,8 @@ export class UploadsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof UploadsApi
      */
-    public createUploadDestinationForResource(requestParameters: UploadsApiCreateUploadDestinationForResourceRequest, options?: AxiosRequestConfig) {
+    public createUploadDestinationForResource(requestParameters: UploadsApiCreateUploadDestinationForResourceRequest, options?: RawAxiosRequestConfig) {
         return UploadsApiFp(this.configuration).createUploadDestinationForResource(requestParameters.marketplaceIds, requestParameters.contentMD5, requestParameters.resource, requestParameters.contentType, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

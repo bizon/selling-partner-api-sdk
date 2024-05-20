@@ -15,31 +15,31 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AccessPointDetails } from './access-point-details';
+import type { AccessPointDetails } from './access-point-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ChannelDetails } from './channel-details';
+import type { ChannelDetails } from './channel-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OneClickShipmentValueAddedService } from './one-click-shipment-value-added-service';
+import type { OneClickShipmentValueAddedService } from './one-click-shipment-value-added-service';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Package } from './package';
+import type { Package } from './package';
 // May contain unused imports in some cases
 // @ts-ignore
-import { RequestedDocumentSpecification } from './requested-document-specification';
+import type { RequestedDocumentSpecification } from './requested-document-specification';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ServiceSelection } from './service-selection';
+import type { ServiceSelection } from './service-selection';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipperInstruction } from './shipper-instruction';
+import type { ShipperInstruction } from './shipper-instruction';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TaxDetail } from './tax-detail';
+import type { TaxDetail } from './tax-detail';
 
 /**
  * The request schema for the OneClickShipment operation. When the channelType is not Amazon, shipTo is required and when channelType is Amazon shipTo is ignored.

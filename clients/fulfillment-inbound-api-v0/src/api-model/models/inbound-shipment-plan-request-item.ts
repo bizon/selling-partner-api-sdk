@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Condition } from './condition';
+import type { Condition } from './condition';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PrepDetails } from './prep-details';
+import type { PrepDetails } from './prep-details';
 
 /**
  * Item information for creating an inbound shipment plan. Submitted with a call to the createInboundShipmentPlan operation.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Geocode } from './geocode';
+import type { Geocode } from './geocode';
 
 /**
  * The address.

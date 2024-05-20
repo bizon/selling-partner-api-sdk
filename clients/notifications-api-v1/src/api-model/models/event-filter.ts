@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AggregationFilter } from './aggregation-filter';
+import type { AggregationFilter } from './aggregation-filter';
 // May contain unused imports in some cases
 // @ts-ignore
-import { AggregationSettings } from './aggregation-settings';
+import type { AggregationSettings } from './aggregation-settings';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EventFilterAllOf } from './event-filter-all-of';
+import type { EventFilterAllOf } from './event-filter-all-of';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MarketplaceFilter } from './marketplace-filter';
+import type { MarketplaceFilter } from './marketplace-filter';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OrderChangeTypeEnum } from './order-change-type-enum';
+import type { OrderChangeTypeEnum } from './order-change-type-enum';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OrderChangeTypeFilter } from './order-change-type-filter';
+import type { OrderChangeTypeFilter } from './order-change-type-filter';
 
 /**
  * @type EventFilter

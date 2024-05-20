@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Feed } from './feed';
+import type { Feed } from './feed';
 
 /**
  * Response schema.

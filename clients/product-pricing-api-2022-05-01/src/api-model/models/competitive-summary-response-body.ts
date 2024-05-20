@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Errors } from './errors';
+import type { Errors } from './errors';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeaturedBuyingOption } from './featured-buying-option';
+import type { FeaturedBuyingOption } from './featured-buying-option';
 
 /**
  * The `competitiveSummaryResponse` body for a requested ASIN and `marketplaceId`.

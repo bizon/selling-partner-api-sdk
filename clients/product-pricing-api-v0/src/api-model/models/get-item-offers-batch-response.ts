@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemOffersResponse } from './item-offers-response';
+import type { ItemOffersResponse } from './item-offers-response';
 
 /**
  * The response associated with the `getItemOffersBatch` API call.

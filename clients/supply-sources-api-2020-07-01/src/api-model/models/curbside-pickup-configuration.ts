@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { OperationalConfiguration } from './operational-configuration';
+import type { OperationalConfiguration } from './operational-configuration';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ParkingWithAddressConfiguration } from './parking-with-address-configuration';
+import type { ParkingWithAddressConfiguration } from './parking-with-address-configuration';
 
 /**
  * The curbside pickup configuration of a supply source.

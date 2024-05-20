@@ -15,31 +15,31 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CODSettings } from './codsettings';
+import type { CODSettings } from './codsettings';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CreateFulfillmentOrderItem } from './create-fulfillment-order-item';
+import type { CreateFulfillmentOrderItem } from './create-fulfillment-order-item';
 // May contain unused imports in some cases
 // @ts-ignore
-import { DeliveryWindow } from './delivery-window';
+import type { DeliveryWindow } from './delivery-window';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeatureSettings } from './feature-settings';
+import type { FeatureSettings } from './feature-settings';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentAction } from './fulfillment-action';
+import type { FulfillmentAction } from './fulfillment-action';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentPolicy } from './fulfillment-policy';
+import type { FulfillmentPolicy } from './fulfillment-policy';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PaymentInformation } from './payment-information';
+import type { PaymentInformation } from './payment-information';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShippingSpeedCategory } from './shipping-speed-category';
+import type { ShippingSpeedCategory } from './shipping-speed-category';
 
 /**
  * The request body schema for the `createFulfillmentOrder` operation.

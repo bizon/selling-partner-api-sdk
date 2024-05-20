@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardImageTextBlock } from './standard-image-text-block';
+import type { StandardImageTextBlock } from './standard-image-text-block';
 
 /**
  * Four standard images with text, presented on a grid of four quadrants.

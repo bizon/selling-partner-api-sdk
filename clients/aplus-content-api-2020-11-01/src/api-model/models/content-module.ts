@@ -15,52 +15,52 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContentModuleType } from './content-module-type';
+import type { ContentModuleType } from './content-module-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardCompanyLogoModule } from './standard-company-logo-module';
+import type { StandardCompanyLogoModule } from './standard-company-logo-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardComparisonTableModule } from './standard-comparison-table-module';
+import type { StandardComparisonTableModule } from './standard-comparison-table-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardFourImageTextModule } from './standard-four-image-text-module';
+import type { StandardFourImageTextModule } from './standard-four-image-text-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardFourImageTextQuadrantModule } from './standard-four-image-text-quadrant-module';
+import type { StandardFourImageTextQuadrantModule } from './standard-four-image-text-quadrant-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardHeaderImageTextModule } from './standard-header-image-text-module';
+import type { StandardHeaderImageTextModule } from './standard-header-image-text-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardImageSidebarModule } from './standard-image-sidebar-module';
+import type { StandardImageSidebarModule } from './standard-image-sidebar-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardImageTextOverlayModule } from './standard-image-text-overlay-module';
+import type { StandardImageTextOverlayModule } from './standard-image-text-overlay-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardMultipleImageTextModule } from './standard-multiple-image-text-module';
+import type { StandardMultipleImageTextModule } from './standard-multiple-image-text-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardProductDescriptionModule } from './standard-product-description-module';
+import type { StandardProductDescriptionModule } from './standard-product-description-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardSingleImageHighlightsModule } from './standard-single-image-highlights-module';
+import type { StandardSingleImageHighlightsModule } from './standard-single-image-highlights-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardSingleImageSpecsDetailModule } from './standard-single-image-specs-detail-module';
+import type { StandardSingleImageSpecsDetailModule } from './standard-single-image-specs-detail-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardSingleSideImageModule } from './standard-single-side-image-module';
+import type { StandardSingleSideImageModule } from './standard-single-side-image-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardTechSpecsModule } from './standard-tech-specs-module';
+import type { StandardTechSpecsModule } from './standard-tech-specs-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardTextModule } from './standard-text-module';
+import type { StandardTextModule } from './standard-text-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardThreeImageTextModule } from './standard-three-image-text-module';
+import type { StandardThreeImageTextModule } from './standard-three-image-text-module';
 
 /**
  * An A+ Content module. An A+ Content document is composed of content modules. The contentModuleType property selects which content module types to use.

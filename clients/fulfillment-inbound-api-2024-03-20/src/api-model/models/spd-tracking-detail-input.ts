@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { SpdTrackingItemInput } from './spd-tracking-item-input';
+import type { SpdTrackingItemInput } from './spd-tracking-item-input';
 
 /**
  * Contains input information to update Small Parcel Delivery (SPD) tracking information.

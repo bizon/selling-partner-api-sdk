@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { SegmentedFeaturedOffer } from './segmented-featured-offer';
+import type { SegmentedFeaturedOffer } from './segmented-featured-offer';
 
 /**
  * Describes a featured buying option which includes a list of segmented featured offers for a particular item condition.

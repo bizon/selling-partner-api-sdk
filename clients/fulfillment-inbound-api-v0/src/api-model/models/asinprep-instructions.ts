@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BarcodeInstruction } from './barcode-instruction';
+import type { BarcodeInstruction } from './barcode-instruction';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PrepGuidance } from './prep-guidance';
+import type { PrepGuidance } from './prep-guidance';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PrepInstruction } from './prep-instruction';
+import type { PrepInstruction } from './prep-instruction';
 
 /**
  * Item preparation instructions to help with item sourcing decisions.

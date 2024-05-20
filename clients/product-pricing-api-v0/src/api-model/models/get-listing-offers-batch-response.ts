@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ListingOffersResponse } from './listing-offers-response';
+import type { ListingOffersResponse } from './listing-offers-response';
 
 /**
  * The response associated with the `getListingOffersBatch` API call.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeedDocumentEncryptionDetails } from './feed-document-encryption-details';
+import type { FeedDocumentEncryptionDetails } from './feed-document-encryption-details';
 
 /**
  * Information required to encrypt and upload a feed document\'s contents.

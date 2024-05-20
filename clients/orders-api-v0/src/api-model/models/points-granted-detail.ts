@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Money } from './money';
+import type { Money } from './money';
 
 /**
  * The number of Amazon Points offered with the purchase of an item, and their monetary value.

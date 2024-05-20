@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentAvailability } from './fulfillment-availability';
+import type { FulfillmentAvailability } from './fulfillment-availability';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Issue } from './issue';
+import type { Issue } from './issue';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemOfferByMarketplace } from './item-offer-by-marketplace';
+import type { ItemOfferByMarketplace } from './item-offer-by-marketplace';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemProcurement } from './item-procurement';
+import type { ItemProcurement } from './item-procurement';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemSummaryByMarketplace } from './item-summary-by-marketplace';
+import type { ItemSummaryByMarketplace } from './item-summary-by-marketplace';
 
 /**
  * A listings item.
@@ -49,10 +49,10 @@ export interface Item {
     'summaries'?: Array<ItemSummaryByMarketplace>;
     /**
      * A JSON object containing structured listings item attribute data keyed by attribute name.
-     * @type {object}
+     * @type {{ [key: string]: any; }}
      * @memberof Item
      */
-    'attributes'?: object;
+    'attributes'?: { [key: string]: any; };
     /**
      * The issues associated with the listings item.
      * @type {Array<Issue>}

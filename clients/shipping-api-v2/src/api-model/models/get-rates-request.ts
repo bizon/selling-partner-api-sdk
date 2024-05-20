@@ -15,31 +15,31 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AccessPointDetails } from './access-point-details';
+import type { AccessPointDetails } from './access-point-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ChannelDetails } from './channel-details';
+import type { ChannelDetails } from './channel-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ClientReferenceDetail } from './client-reference-detail';
+import type { ClientReferenceDetail } from './client-reference-detail';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Package } from './package';
+import type { Package } from './package';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipmentType } from './shipment-type';
+import type { ShipmentType } from './shipment-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipperInstruction } from './shipper-instruction';
+import type { ShipperInstruction } from './shipper-instruction';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TaxDetail } from './tax-detail';
+import type { TaxDetail } from './tax-detail';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ValueAddedServiceDetails } from './value-added-service-details';
+import type { ValueAddedServiceDetails } from './value-added-service-details';
 
 /**
  * The request schema for the getRates operation. When the channelType is Amazon, the shipTo address is not required and will be ignored.

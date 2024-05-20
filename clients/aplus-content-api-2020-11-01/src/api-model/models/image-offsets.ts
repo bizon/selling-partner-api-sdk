@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { IntegerWithUnits } from './integer-with-units';
+import type { IntegerWithUnits } from './integer-with-units';
 
 /**
  * The top left corner of the cropped image, specified in the original image\'s coordinate space.

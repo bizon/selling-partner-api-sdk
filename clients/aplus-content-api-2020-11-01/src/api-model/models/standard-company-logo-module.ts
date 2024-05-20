@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ImageComponent } from './image-component';
+import type { ImageComponent } from './image-component';
 
 /**
  * The standard company logo image.

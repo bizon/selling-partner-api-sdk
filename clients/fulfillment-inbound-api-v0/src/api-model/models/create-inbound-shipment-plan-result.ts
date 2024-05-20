@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { InboundShipmentPlan } from './inbound-shipment-plan';
+import type { InboundShipmentPlan } from './inbound-shipment-plan';
 
 /**
  * Result for the create inbound shipment operation

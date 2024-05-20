@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ImageComponent } from './image-component';
+import type { ImageComponent } from './image-component';
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardHeaderTextListBlock } from './standard-header-text-list-block';
+import type { StandardHeaderTextListBlock } from './standard-header-text-list-block';
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardTextBlock } from './standard-text-block';
+import type { StandardTextBlock } from './standard-text-block';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TextComponent } from './text-component';
+import type { TextComponent } from './text-component';
 
 /**
  * A standard image with several paragraphs and a bulleted list.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DestinationResourceSpecification } from './destination-resource-specification';
+import type { DestinationResourceSpecification } from './destination-resource-specification';
 
 /**
  * The request schema for the `createDestination` operation.

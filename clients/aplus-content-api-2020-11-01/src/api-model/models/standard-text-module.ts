@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ParagraphComponent } from './paragraph-component';
+import type { ParagraphComponent } from './paragraph-component';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TextComponent } from './text-component';
+import type { TextComponent } from './text-component';
 
 /**
  * A standard headline and body text.

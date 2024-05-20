@@ -14,29 +14,29 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CancelShipmentResponse } from '../models';
+import type { CancelShipmentResponse } from '../models';
 // @ts-ignore
-import { CreateShipmentRequest } from '../models';
+import type { CreateShipmentRequest } from '../models';
 // @ts-ignore
-import { CreateShipmentResponse } from '../models';
+import type { CreateShipmentResponse } from '../models';
 // @ts-ignore
-import { GetAdditionalSellerInputsRequest } from '../models';
+import type { GetAdditionalSellerInputsRequest } from '../models';
 // @ts-ignore
-import { GetAdditionalSellerInputsResponse } from '../models';
+import type { GetAdditionalSellerInputsResponse } from '../models';
 // @ts-ignore
-import { GetEligibleShipmentServicesRequest } from '../models';
+import type { GetEligibleShipmentServicesRequest } from '../models';
 // @ts-ignore
-import { GetEligibleShipmentServicesResponse } from '../models';
+import type { GetEligibleShipmentServicesResponse } from '../models';
 // @ts-ignore
-import { GetShipmentResponse } from '../models';
+import type { GetShipmentResponse } from '../models';
 /**
  * MerchantFulfillmentApi - axios parameter creator
  * @export
@@ -49,7 +49,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelShipment: async (shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        cancelShipment: async (shipmentId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('cancelShipment', 'shipmentId', shipmentId)
             const localVarPath = `/mfn/v0/shipments/{shipmentId}`
@@ -82,7 +82,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createShipment: async (body: CreateShipmentRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createShipment: async (body: CreateShipmentRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createShipment', 'body', body)
             const localVarPath = `/mfn/v0/shipments`;
@@ -117,7 +117,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAdditionalSellerInputs: async (body: GetAdditionalSellerInputsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAdditionalSellerInputs: async (body: GetAdditionalSellerInputsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getAdditionalSellerInputs', 'body', body)
             const localVarPath = `/mfn/v0/additionalSellerInputs`;
@@ -152,7 +152,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEligibleShipmentServices: async (body: GetEligibleShipmentServicesRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getEligibleShipmentServices: async (body: GetEligibleShipmentServicesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getEligibleShipmentServices', 'body', body)
             const localVarPath = `/mfn/v0/eligibleShippingServices`;
@@ -187,7 +187,7 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipment: async (shipmentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getShipment: async (shipmentId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getShipment', 'shipmentId', shipmentId)
             const localVarPath = `/mfn/v0/shipments/{shipmentId}`
@@ -230,9 +230,11 @@ export const MerchantFulfillmentApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelShipment(shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelShipmentResponse>> {
+        async cancelShipment(shipmentId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelShipment(shipmentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MerchantFulfillmentApi.cancelShipment']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Create a shipment with the information provided.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -240,9 +242,11 @@ export const MerchantFulfillmentApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createShipment(body: CreateShipmentRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateShipmentResponse>> {
+        async createShipment(body: CreateShipmentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createShipment(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MerchantFulfillmentApi.createShipment']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Gets a list of additional seller inputs required for a ship method. This is generally used for international shipping.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -250,9 +254,11 @@ export const MerchantFulfillmentApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAdditionalSellerInputs(body: GetAdditionalSellerInputsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAdditionalSellerInputsResponse>> {
+        async getAdditionalSellerInputs(body: GetAdditionalSellerInputsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAdditionalSellerInputsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAdditionalSellerInputs(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MerchantFulfillmentApi.getAdditionalSellerInputs']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a list of shipping service offers that satisfy the specified shipment request details.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -260,9 +266,11 @@ export const MerchantFulfillmentApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getEligibleShipmentServices(body: GetEligibleShipmentServicesRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetEligibleShipmentServicesResponse>> {
+        async getEligibleShipmentServices(body: GetEligibleShipmentServicesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetEligibleShipmentServicesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getEligibleShipmentServices(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MerchantFulfillmentApi.getEligibleShipmentServices']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the shipment information for an existing shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -270,9 +278,11 @@ export const MerchantFulfillmentApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShipment(shipmentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentResponse>> {
+        async getShipment(shipmentId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShipment(shipmentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MerchantFulfillmentApi.getShipment']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -290,7 +300,7 @@ export const MerchantFulfillmentApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelShipment(requestParameters: MerchantFulfillmentApiCancelShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<CancelShipmentResponse> {
+        cancelShipment(requestParameters: MerchantFulfillmentApiCancelShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<CancelShipmentResponse> {
             return localVarFp.cancelShipment(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -299,7 +309,7 @@ export const MerchantFulfillmentApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createShipment(requestParameters: MerchantFulfillmentApiCreateShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<CreateShipmentResponse> {
+        createShipment(requestParameters: MerchantFulfillmentApiCreateShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateShipmentResponse> {
             return localVarFp.createShipment(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -308,7 +318,7 @@ export const MerchantFulfillmentApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAdditionalSellerInputs(requestParameters: MerchantFulfillmentApiGetAdditionalSellerInputsRequest, options?: AxiosRequestConfig): AxiosPromise<GetAdditionalSellerInputsResponse> {
+        getAdditionalSellerInputs(requestParameters: MerchantFulfillmentApiGetAdditionalSellerInputsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetAdditionalSellerInputsResponse> {
             return localVarFp.getAdditionalSellerInputs(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -317,7 +327,7 @@ export const MerchantFulfillmentApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEligibleShipmentServices(requestParameters: MerchantFulfillmentApiGetEligibleShipmentServicesRequest, options?: AxiosRequestConfig): AxiosPromise<GetEligibleShipmentServicesResponse> {
+        getEligibleShipmentServices(requestParameters: MerchantFulfillmentApiGetEligibleShipmentServicesRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetEligibleShipmentServicesResponse> {
             return localVarFp.getEligibleShipmentServices(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -326,7 +336,7 @@ export const MerchantFulfillmentApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipment(requestParameters: MerchantFulfillmentApiGetShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<GetShipmentResponse> {
+        getShipment(requestParameters: MerchantFulfillmentApiGetShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetShipmentResponse> {
             return localVarFp.getShipment(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
     };
@@ -416,7 +426,7 @@ export class MerchantFulfillmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public cancelShipment(requestParameters: MerchantFulfillmentApiCancelShipmentRequest, options?: AxiosRequestConfig) {
+    public cancelShipment(requestParameters: MerchantFulfillmentApiCancelShipmentRequest, options?: RawAxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).cancelShipment(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -427,7 +437,7 @@ export class MerchantFulfillmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public createShipment(requestParameters: MerchantFulfillmentApiCreateShipmentRequest, options?: AxiosRequestConfig) {
+    public createShipment(requestParameters: MerchantFulfillmentApiCreateShipmentRequest, options?: RawAxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).createShipment(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -438,7 +448,7 @@ export class MerchantFulfillmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public getAdditionalSellerInputs(requestParameters: MerchantFulfillmentApiGetAdditionalSellerInputsRequest, options?: AxiosRequestConfig) {
+    public getAdditionalSellerInputs(requestParameters: MerchantFulfillmentApiGetAdditionalSellerInputsRequest, options?: RawAxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).getAdditionalSellerInputs(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -449,7 +459,7 @@ export class MerchantFulfillmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public getEligibleShipmentServices(requestParameters: MerchantFulfillmentApiGetEligibleShipmentServicesRequest, options?: AxiosRequestConfig) {
+    public getEligibleShipmentServices(requestParameters: MerchantFulfillmentApiGetEligibleShipmentServicesRequest, options?: RawAxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).getEligibleShipmentServices(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -460,7 +470,8 @@ export class MerchantFulfillmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MerchantFulfillmentApi
      */
-    public getShipment(requestParameters: MerchantFulfillmentApiGetShipmentRequest, options?: AxiosRequestConfig) {
+    public getShipment(requestParameters: MerchantFulfillmentApiGetShipmentRequest, options?: RawAxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).getShipment(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

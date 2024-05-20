@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Scenario } from './scenario';
+import type { Scenario } from './scenario';
 
 /**
  * The set of test case data returned in response to the test data request.

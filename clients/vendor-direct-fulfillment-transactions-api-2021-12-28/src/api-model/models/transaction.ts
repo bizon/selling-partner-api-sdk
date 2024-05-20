@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ErrorList } from './error-list';
+import type { ErrorList } from './error-list';
 
 /**
  * The transaction status details.

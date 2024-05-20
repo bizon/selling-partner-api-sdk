@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactDetails } from './contact-details';
+import type { ContactDetails } from './contact-details';
 
 /**
  * The address and contact details.

@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SupplySourceCapabilities } from './supply-source-capabilities';
+import type { SupplySourceCapabilities } from './supply-source-capabilities';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SupplySourceConfiguration } from './supply-source-configuration';
+import type { SupplySourceConfiguration } from './supply-source-configuration';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SupplySourceStatusReadOnly } from './supply-source-status-read-only';
+import type { SupplySourceStatusReadOnly } from './supply-source-status-read-only';
 
 /**
  * The supply source details, including configurations and capabilities.

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Amount } from './amount';
+import type { Amount } from './amount';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PrepInstruction } from './prep-instruction';
+import type { PrepInstruction } from './prep-instruction';
 
 /**
  * The fees for Amazon to prep goods for shipment.

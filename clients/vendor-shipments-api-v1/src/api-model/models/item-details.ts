@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Expiry } from './expiry';
+import type { Expiry } from './expiry';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Money } from './money';
+import type { Money } from './money';
 
 /**
  * Item details for be provided for every item in shipment at either the item or carton or pallet level, whichever is appropriate.

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Currency } from './currency';
+import type { Currency } from './currency';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SAFETReimbursementItem } from './safetreimbursement-item';
+import type { SAFETReimbursementItem } from './safetreimbursement-item';
 
 /**
  * A SAFE-T claim reimbursement on the seller\'s account.

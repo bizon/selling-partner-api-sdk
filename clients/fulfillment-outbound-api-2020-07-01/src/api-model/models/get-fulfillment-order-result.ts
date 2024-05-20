@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentOrder } from './fulfillment-order';
+import type { FulfillmentOrder } from './fulfillment-order';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentOrderItem } from './fulfillment-order-item';
+import type { FulfillmentOrderItem } from './fulfillment-order-item';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentShipment } from './fulfillment-shipment';
+import type { FulfillmentShipment } from './fulfillment-shipment';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PaymentInformation } from './payment-information';
+import type { PaymentInformation } from './payment-information';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ReturnAuthorization } from './return-authorization';
+import type { ReturnAuthorization } from './return-authorization';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ReturnItem } from './return-item';
+import type { ReturnItem } from './return-item';
 
 /**
  * 

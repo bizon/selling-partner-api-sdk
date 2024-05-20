@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DateRange } from './date-range';
+import type { DateRange } from './date-range';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OperatingHours } from './operating-hours';
+import type { OperatingHours } from './operating-hours';
 
 /**
  * Defines exceptions to standard operating hours for certain date ranges.

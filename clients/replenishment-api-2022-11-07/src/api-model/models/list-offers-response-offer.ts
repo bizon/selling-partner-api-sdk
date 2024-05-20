@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EligibilityStatus } from './eligibility-status';
+import type { EligibilityStatus } from './eligibility-status';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OfferProgramConfiguration } from './offer-program-configuration';
+import type { OfferProgramConfiguration } from './offer-program-configuration';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ProgramType } from './program-type';
+import type { ProgramType } from './program-type';
 
 /**
  * An object which contains details about an offer.

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ErrorList } from './error-list';
+import type { ErrorList } from './error-list';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TransactionId } from './transaction-id';
+import type { TransactionId } from './transaction-id';
 
 /**
  * The response schema for the submitAcknowledgement operation.

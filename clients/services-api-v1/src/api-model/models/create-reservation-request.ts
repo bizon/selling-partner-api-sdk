@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Reservation } from './reservation';
+import type { Reservation } from './reservation';
 
 /**
  * Request schema for the `createReservation` operation.

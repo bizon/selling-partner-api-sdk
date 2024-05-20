@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeeDetail } from './fee-detail';
+import type { FeeDetail } from './fee-detail';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MoneyType } from './money-type';
+import type { MoneyType } from './money-type';
 
 /**
  * The total estimated fees for an item and a list of details.

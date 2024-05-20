@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Amount } from './amount';
+import type { Amount } from './amount';
 
 /**
  * The manual processing fee per unit and total fee for a shipment.

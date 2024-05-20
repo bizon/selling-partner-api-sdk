@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ASINIdentifier } from './asinidentifier';
+import type { ASINIdentifier } from './asinidentifier';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SellerSKUIdentifier } from './seller-skuidentifier';
+import type { SellerSKUIdentifier } from './seller-skuidentifier';
 
 /**
  * Specifies the identifiers used to uniquely identify an item.

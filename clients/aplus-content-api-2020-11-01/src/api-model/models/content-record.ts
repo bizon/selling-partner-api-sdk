@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContentDocument } from './content-document';
+import type { ContentDocument } from './content-document';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContentMetadata } from './content-metadata';
+import type { ContentMetadata } from './content-metadata';
 
 /**
  * A content document with additional information for content management.

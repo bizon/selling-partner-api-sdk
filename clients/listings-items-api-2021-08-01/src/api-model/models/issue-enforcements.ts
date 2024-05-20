@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { IssueEnforcementAction } from './issue-enforcement-action';
+import type { IssueEnforcementAction } from './issue-enforcement-action';
 // May contain unused imports in some cases
 // @ts-ignore
-import { IssueExemption } from './issue-exemption';
+import type { IssueExemption } from './issue-exemption';
 
 /**
  * This field provides information about the enforcement actions taken by Amazon that affect the publishing or status of a listing. It also includes details about any associated exemptions.

@@ -14,29 +14,29 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CancelFeedResponse } from '../models';
+import type { CancelFeedResponse } from '../models';
 // @ts-ignore
-import { CreateFeedDocumentResponse } from '../models';
+import type { CreateFeedDocumentResponse } from '../models';
 // @ts-ignore
-import { CreateFeedDocumentSpecification } from '../models';
+import type { CreateFeedDocumentSpecification } from '../models';
 // @ts-ignore
-import { CreateFeedResponse } from '../models';
+import type { CreateFeedResponse } from '../models';
 // @ts-ignore
-import { CreateFeedSpecification } from '../models';
+import type { CreateFeedSpecification } from '../models';
 // @ts-ignore
-import { GetFeedDocumentResponse } from '../models';
+import type { GetFeedDocumentResponse } from '../models';
 // @ts-ignore
-import { GetFeedResponse } from '../models';
+import type { GetFeedResponse } from '../models';
 // @ts-ignore
-import { GetFeedsResponse } from '../models';
+import type { GetFeedsResponse } from '../models';
 /**
  * FeedsApi - axios parameter creator
  * @export
@@ -50,7 +50,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * @deprecated
          * @throws {RequiredError}
          */
-        cancelFeed: async (feedId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        cancelFeed: async (feedId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'feedId' is not null or undefined
             assertParamExists('cancelFeed', 'feedId', feedId)
             const localVarPath = `/feeds/2020-09-04/feeds/{feedId}`
@@ -84,7 +84,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * @deprecated
          * @throws {RequiredError}
          */
-        createFeed: async (body: CreateFeedSpecification, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createFeed: async (body: CreateFeedSpecification, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createFeed', 'body', body)
             const localVarPath = `/feeds/2020-09-04/feeds`;
@@ -120,7 +120,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * @deprecated
          * @throws {RequiredError}
          */
-        createFeedDocument: async (body: CreateFeedDocumentSpecification, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createFeedDocument: async (body: CreateFeedDocumentSpecification, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createFeedDocument', 'body', body)
             const localVarPath = `/feeds/2020-09-04/documents`;
@@ -156,7 +156,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * @deprecated
          * @throws {RequiredError}
          */
-        getFeed: async (feedId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getFeed: async (feedId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'feedId' is not null or undefined
             assertParamExists('getFeed', 'feedId', feedId)
             const localVarPath = `/feeds/2020-09-04/feeds/{feedId}`
@@ -190,7 +190,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * @deprecated
          * @throws {RequiredError}
          */
-        getFeedDocument: async (feedDocumentId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getFeedDocument: async (feedDocumentId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'feedDocumentId' is not null or undefined
             assertParamExists('getFeedDocument', 'feedDocumentId', feedDocumentId)
             const localVarPath = `/feeds/2020-09-04/documents/{feedDocumentId}`
@@ -222,7 +222,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {Array<string>} [feedTypes] A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required.
          * @param {Array<string>} [marketplaceIds] A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify.
          * @param {number} [pageSize] The maximum number of feeds to return in a single call.
-         * @param {Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>} [processingStatuses] A list of processing statuses used to filter feeds.
+         * @param {Array<GetFeedsProcessingStatusesEnum>} [processingStatuses] A list of processing statuses used to filter feeds.
          * @param {string} [createdSince] The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days.
          * @param {string} [createdUntil] The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now.
          * @param {string} [nextToken] A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.
@@ -230,7 +230,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
          * @deprecated
          * @throws {RequiredError}
          */
-        getFeeds: async (feedTypes?: Array<string>, marketplaceIds?: Array<string>, pageSize?: number, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, createdSince?: string, createdUntil?: string, nextToken?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getFeeds: async (feedTypes?: Array<string>, marketplaceIds?: Array<string>, pageSize?: number, processingStatuses?: Array<GetFeedsProcessingStatusesEnum>, createdSince?: string, createdUntil?: string, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/feeds/2020-09-04/feeds`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -303,9 +303,11 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async cancelFeed(feedId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelFeedResponse>> {
+        async cancelFeed(feedId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelFeedResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelFeed(feedId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FeedsApi.cancelFeed']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Effective June 27, 2023, the `createFeed` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
@@ -314,9 +316,11 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async createFeed(body: CreateFeedSpecification, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateFeedResponse>> {
+        async createFeed(body: CreateFeedSpecification, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateFeedResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createFeed(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FeedsApi.createFeed']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Effective June 27, 2023, the `createFeedDocument` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
@@ -325,9 +329,11 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async createFeedDocument(body: CreateFeedDocumentSpecification, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateFeedDocumentResponse>> {
+        async createFeedDocument(body: CreateFeedDocumentSpecification, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateFeedDocumentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createFeedDocument(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FeedsApi.createFeedDocument']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Effective June 27, 2023, the `getFeed` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
@@ -336,9 +342,11 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async getFeed(feedId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeedResponse>> {
+        async getFeed(feedId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeedResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getFeed(feedId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FeedsApi.getFeed']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Effective June 27, 2023, the `getFeedDocument` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
@@ -347,16 +355,18 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async getFeedDocument(feedDocumentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeedDocumentResponse>> {
+        async getFeedDocument(feedDocumentId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeedDocumentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getFeedDocument(feedDocumentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FeedsApi.getFeedDocument']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Effective June 27, 2023, the `getFeeds` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
          * @param {Array<string>} [feedTypes] A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required.
          * @param {Array<string>} [marketplaceIds] A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify.
          * @param {number} [pageSize] The maximum number of feeds to return in a single call.
-         * @param {Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>} [processingStatuses] A list of processing statuses used to filter feeds.
+         * @param {Array<GetFeedsProcessingStatusesEnum>} [processingStatuses] A list of processing statuses used to filter feeds.
          * @param {string} [createdSince] The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days.
          * @param {string} [createdUntil] The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now.
          * @param {string} [nextToken] A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.
@@ -364,9 +374,11 @@ export const FeedsApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async getFeeds(feedTypes?: Array<string>, marketplaceIds?: Array<string>, pageSize?: number, processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>, createdSince?: string, createdUntil?: string, nextToken?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeedsResponse>> {
+        async getFeeds(feedTypes?: Array<string>, marketplaceIds?: Array<string>, pageSize?: number, processingStatuses?: Array<GetFeedsProcessingStatusesEnum>, createdSince?: string, createdUntil?: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeedsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getFeeds(feedTypes, marketplaceIds, pageSize, processingStatuses, createdSince, createdUntil, nextToken, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FeedsApi.getFeeds']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -385,7 +397,7 @@ export const FeedsApiFactory = function (configuration?: Configuration, basePath
          * @deprecated
          * @throws {RequiredError}
          */
-        cancelFeed(requestParameters: FeedsApiCancelFeedRequest, options?: AxiosRequestConfig): AxiosPromise<CancelFeedResponse> {
+        cancelFeed(requestParameters: FeedsApiCancelFeedRequest, options?: RawAxiosRequestConfig): AxiosPromise<CancelFeedResponse> {
             return localVarFp.cancelFeed(requestParameters.feedId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -395,7 +407,7 @@ export const FeedsApiFactory = function (configuration?: Configuration, basePath
          * @deprecated
          * @throws {RequiredError}
          */
-        createFeed(requestParameters: FeedsApiCreateFeedRequest, options?: AxiosRequestConfig): AxiosPromise<CreateFeedResponse> {
+        createFeed(requestParameters: FeedsApiCreateFeedRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateFeedResponse> {
             return localVarFp.createFeed(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -405,7 +417,7 @@ export const FeedsApiFactory = function (configuration?: Configuration, basePath
          * @deprecated
          * @throws {RequiredError}
          */
-        createFeedDocument(requestParameters: FeedsApiCreateFeedDocumentRequest, options?: AxiosRequestConfig): AxiosPromise<CreateFeedDocumentResponse> {
+        createFeedDocument(requestParameters: FeedsApiCreateFeedDocumentRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateFeedDocumentResponse> {
             return localVarFp.createFeedDocument(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -415,7 +427,7 @@ export const FeedsApiFactory = function (configuration?: Configuration, basePath
          * @deprecated
          * @throws {RequiredError}
          */
-        getFeed(requestParameters: FeedsApiGetFeedRequest, options?: AxiosRequestConfig): AxiosPromise<GetFeedResponse> {
+        getFeed(requestParameters: FeedsApiGetFeedRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetFeedResponse> {
             return localVarFp.getFeed(requestParameters.feedId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -425,7 +437,7 @@ export const FeedsApiFactory = function (configuration?: Configuration, basePath
          * @deprecated
          * @throws {RequiredError}
          */
-        getFeedDocument(requestParameters: FeedsApiGetFeedDocumentRequest, options?: AxiosRequestConfig): AxiosPromise<GetFeedDocumentResponse> {
+        getFeedDocument(requestParameters: FeedsApiGetFeedDocumentRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetFeedDocumentResponse> {
             return localVarFp.getFeedDocument(requestParameters.feedDocumentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -435,7 +447,7 @@ export const FeedsApiFactory = function (configuration?: Configuration, basePath
          * @deprecated
          * @throws {RequiredError}
          */
-        getFeeds(requestParameters: FeedsApiGetFeedsRequest = {}, options?: AxiosRequestConfig): AxiosPromise<GetFeedsResponse> {
+        getFeeds(requestParameters: FeedsApiGetFeedsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<GetFeedsResponse> {
             return localVarFp.getFeeds(requestParameters.feedTypes, requestParameters.marketplaceIds, requestParameters.pageSize, requestParameters.processingStatuses, requestParameters.createdSince, requestParameters.createdUntil, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
     };
@@ -543,7 +555,7 @@ export interface FeedsApiGetFeedsRequest {
      * @type {Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>}
      * @memberof FeedsApiGetFeeds
      */
-    readonly processingStatuses?: Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>
+    readonly processingStatuses?: Array<GetFeedsProcessingStatusesEnum>
 
     /**
      * The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days.
@@ -582,7 +594,7 @@ export class FeedsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedsApi
      */
-    public cancelFeed(requestParameters: FeedsApiCancelFeedRequest, options?: AxiosRequestConfig) {
+    public cancelFeed(requestParameters: FeedsApiCancelFeedRequest, options?: RawAxiosRequestConfig) {
         return FeedsApiFp(this.configuration).cancelFeed(requestParameters.feedId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -594,7 +606,7 @@ export class FeedsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedsApi
      */
-    public createFeed(requestParameters: FeedsApiCreateFeedRequest, options?: AxiosRequestConfig) {
+    public createFeed(requestParameters: FeedsApiCreateFeedRequest, options?: RawAxiosRequestConfig) {
         return FeedsApiFp(this.configuration).createFeed(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -606,7 +618,7 @@ export class FeedsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedsApi
      */
-    public createFeedDocument(requestParameters: FeedsApiCreateFeedDocumentRequest, options?: AxiosRequestConfig) {
+    public createFeedDocument(requestParameters: FeedsApiCreateFeedDocumentRequest, options?: RawAxiosRequestConfig) {
         return FeedsApiFp(this.configuration).createFeedDocument(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -618,7 +630,7 @@ export class FeedsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedsApi
      */
-    public getFeed(requestParameters: FeedsApiGetFeedRequest, options?: AxiosRequestConfig) {
+    public getFeed(requestParameters: FeedsApiGetFeedRequest, options?: RawAxiosRequestConfig) {
         return FeedsApiFp(this.configuration).getFeed(requestParameters.feedId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -630,7 +642,7 @@ export class FeedsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedsApi
      */
-    public getFeedDocument(requestParameters: FeedsApiGetFeedDocumentRequest, options?: AxiosRequestConfig) {
+    public getFeedDocument(requestParameters: FeedsApiGetFeedDocumentRequest, options?: RawAxiosRequestConfig) {
         return FeedsApiFp(this.configuration).getFeedDocument(requestParameters.feedDocumentId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -642,7 +654,19 @@ export class FeedsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeedsApi
      */
-    public getFeeds(requestParameters: FeedsApiGetFeedsRequest = {}, options?: AxiosRequestConfig) {
+    public getFeeds(requestParameters: FeedsApiGetFeedsRequest = {}, options?: RawAxiosRequestConfig) {
         return FeedsApiFp(this.configuration).getFeeds(requestParameters.feedTypes, requestParameters.marketplaceIds, requestParameters.pageSize, requestParameters.processingStatuses, requestParameters.createdSince, requestParameters.createdUntil, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetFeedsProcessingStatusesEnum = {
+    Cancelled: 'CANCELLED',
+    Done: 'DONE',
+    Fatal: 'FATAL',
+    InProgress: 'IN_PROGRESS',
+    InQueue: 'IN_QUEUE'
+} as const;
+export type GetFeedsProcessingStatusesEnum = typeof GetFeedsProcessingStatusesEnum[keyof typeof GetFeedsProcessingStatusesEnum];

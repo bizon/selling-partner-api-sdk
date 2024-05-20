@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TransportStatus } from './transport-status';
+import type { TransportStatus } from './transport-status';
 
 /**
  * The workflow status for a shipment with an Amazon-partnered carrier.

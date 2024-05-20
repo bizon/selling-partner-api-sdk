@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AdditionalLocationInfo } from './additional-location-info';
+import type { AdditionalLocationInfo } from './additional-location-info';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CurrentStatus } from './current-status';
+import type { CurrentStatus } from './current-status';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TrackingAddress } from './tracking-address';
+import type { TrackingAddress } from './tracking-address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TrackingEvent } from './tracking-event';
+import type { TrackingEvent } from './tracking-event';
 
 /**
  * 

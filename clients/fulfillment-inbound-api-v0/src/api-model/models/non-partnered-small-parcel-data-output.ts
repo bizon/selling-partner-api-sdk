@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { NonPartneredSmallParcelPackageOutput } from './non-partnered-small-parcel-package-output';
+import type { NonPartneredSmallParcelPackageOutput } from './non-partnered-small-parcel-package-output';
 
 /**
  * Information returned by Amazon about a Small Parcel shipment by a carrier that has not partnered with Amazon.

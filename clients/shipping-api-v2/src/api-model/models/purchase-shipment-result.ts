@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PackageDocumentDetail } from './package-document-detail';
+import type { PackageDocumentDetail } from './package-document-detail';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Promise } from './promise';
+import type { Promise } from './promise';
 
 /**
  * The payload for the purchaseShipment operation.

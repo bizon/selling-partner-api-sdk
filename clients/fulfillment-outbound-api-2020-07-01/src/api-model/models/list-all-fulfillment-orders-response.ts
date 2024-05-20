@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ListAllFulfillmentOrdersResult } from './list-all-fulfillment-orders-result';
+import type { ListAllFulfillmentOrdersResult } from './list-all-fulfillment-orders-result';
 
 /**
  * The response schema for the `listAllFulfillmentOrders` operation.

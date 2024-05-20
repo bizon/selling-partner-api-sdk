@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactInformation } from './contact-information';
+import type { ContactInformation } from './contact-information';
 // May contain unused imports in some cases
 // @ts-ignore
-import { WindowInput } from './window-input';
+import type { WindowInput } from './window-input';
 
 /**
  * The transportation option selected to confirm.

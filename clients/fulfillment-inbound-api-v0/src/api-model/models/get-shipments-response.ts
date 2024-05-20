@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { GetShipmentsResult } from './get-shipments-result';
+import type { GetShipmentsResult } from './get-shipments-result';
 
 /**
  * The response schema for the getShipments operation.

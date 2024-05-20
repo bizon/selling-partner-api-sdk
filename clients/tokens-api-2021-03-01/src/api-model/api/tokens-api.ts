@@ -14,19 +14,19 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CreateRestrictedDataTokenRequest } from '../models';
+import type { CreateRestrictedDataTokenRequest } from '../models';
 // @ts-ignore
-import { CreateRestrictedDataTokenResponse } from '../models';
+import type { CreateRestrictedDataTokenResponse } from '../models';
 // @ts-ignore
-import { ErrorList } from '../models';
+import type { ErrorList } from '../models';
 /**
  * TokensApi - axios parameter creator
  * @export
@@ -39,7 +39,7 @@ export const TokensApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createRestrictedDataToken: async (body: CreateRestrictedDataTokenRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createRestrictedDataToken: async (body: CreateRestrictedDataTokenRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createRestrictedDataToken', 'body', body)
             const localVarPath = `/tokens/2021-03-01/restrictedDataToken`;
@@ -84,9 +84,11 @@ export const TokensApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createRestrictedDataToken(body: CreateRestrictedDataTokenRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateRestrictedDataTokenResponse>> {
+        async createRestrictedDataToken(body: CreateRestrictedDataTokenRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateRestrictedDataTokenResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createRestrictedDataToken(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['TokensApi.createRestrictedDataToken']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -104,7 +106,7 @@ export const TokensApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createRestrictedDataToken(requestParameters: TokensApiCreateRestrictedDataTokenRequest, options?: AxiosRequestConfig): AxiosPromise<CreateRestrictedDataTokenResponse> {
+        createRestrictedDataToken(requestParameters: TokensApiCreateRestrictedDataTokenRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateRestrictedDataTokenResponse> {
             return localVarFp.createRestrictedDataToken(requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
@@ -138,7 +140,8 @@ export class TokensApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TokensApi
      */
-    public createRestrictedDataToken(requestParameters: TokensApiCreateRestrictedDataTokenRequest, options?: AxiosRequestConfig) {
+    public createRestrictedDataToken(requestParameters: TokensApiCreateRestrictedDataTokenRequest, options?: RawAxiosRequestConfig) {
         return TokensApiFp(this.configuration).createRestrictedDataToken(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

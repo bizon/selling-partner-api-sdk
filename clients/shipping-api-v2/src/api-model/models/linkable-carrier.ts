@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { LinkableAccountType } from './linkable-account-type';
+import type { LinkableAccountType } from './linkable-account-type';
 
 /**
  * Info About Linkable Carrier

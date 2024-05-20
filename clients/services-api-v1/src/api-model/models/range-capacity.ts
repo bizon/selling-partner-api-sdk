@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CapacityType } from './capacity-type';
+import type { CapacityType } from './capacity-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { RangeSlot } from './range-slot';
+import type { RangeSlot } from './range-slot';
 
 /**
  * Range capacity entity where each entry has a capacity type and corresponding slots.

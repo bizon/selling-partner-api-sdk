@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { RemovalShipmentItem } from './removal-shipment-item';
+import type { RemovalShipmentItem } from './removal-shipment-item';
 
 /**
  * A removal shipment event for a removal order.

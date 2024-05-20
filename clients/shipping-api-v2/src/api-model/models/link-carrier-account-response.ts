@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AccountStatus } from './account-status';
+import type { AccountStatus } from './account-status';
 
 /**
  * The Response  for the LinkCarrierAccount operation.

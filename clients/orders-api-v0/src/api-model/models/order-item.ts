@@ -15,34 +15,34 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AssociatedItem } from './associated-item';
+import type { AssociatedItem } from './associated-item';
 // May contain unused imports in some cases
 // @ts-ignore
-import { BuyerRequestedCancel } from './buyer-requested-cancel';
+import type { BuyerRequestedCancel } from './buyer-requested-cancel';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemBuyerInfo } from './item-buyer-info';
+import type { ItemBuyerInfo } from './item-buyer-info';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Measurement } from './measurement';
+import type { Measurement } from './measurement';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Money } from './money';
+import type { Money } from './money';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PointsGrantedDetail } from './points-granted-detail';
+import type { PointsGrantedDetail } from './points-granted-detail';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ProductInfoDetail } from './product-info-detail';
+import type { ProductInfoDetail } from './product-info-detail';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShippingConstraints } from './shipping-constraints';
+import type { ShippingConstraints } from './shipping-constraints';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SubstitutionPreferences } from './substitution-preferences';
+import type { SubstitutionPreferences } from './substitution-preferences';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TaxCollection } from './tax-collection';
+import type { TaxCollection } from './tax-collection';
 
 /**
  * A single order item.

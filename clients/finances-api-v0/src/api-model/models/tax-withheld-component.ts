@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ChargeComponent } from './charge-component';
+import type { ChargeComponent } from './charge-component';
 
 /**
  * Information about the taxes withheld.

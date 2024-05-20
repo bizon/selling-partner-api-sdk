@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Dimensions } from './dimensions';
+import type { Dimensions } from './dimensions';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PackageStatus } from './package-status';
+import type { PackageStatus } from './package-status';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Weight } from './weight';
+import type { Weight } from './weight';
 
 /**
  * Dimension, weight, and shipping information for the package.

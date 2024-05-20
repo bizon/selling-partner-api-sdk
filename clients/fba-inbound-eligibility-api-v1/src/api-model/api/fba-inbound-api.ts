@@ -14,15 +14,15 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { GetItemEligibilityPreviewResponse } from '../models';
+import type { GetItemEligibilityPreviewResponse } from '../models';
 /**
  * FbaInboundApi - axios parameter creator
  * @export
@@ -32,12 +32,12 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
         /**
          * This operation gets an eligibility preview for an item that you specify. You can specify the type of eligibility preview that you want (INBOUND or COMMINGLING). For INBOUND previews, you can specify the marketplace in which you want to determine the item\'s eligibility.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} asin The ASIN of the item for which you want an eligibility preview.
-         * @param {'INBOUND' | 'COMMINGLING'} program The program that you want to check eligibility against.
+         * @param {GetItemEligibilityPreviewProgramEnum} program The program that you want to check eligibility against.
          * @param {Array<string>} [marketplaceIds] The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getItemEligibilityPreview: async (asin: string, program: 'INBOUND' | 'COMMINGLING', marketplaceIds?: Array<string>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getItemEligibilityPreview: async (asin: string, program: GetItemEligibilityPreviewProgramEnum, marketplaceIds?: Array<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'asin' is not null or undefined
             assertParamExists('getItemEligibilityPreview', 'asin', asin)
             // verify required parameter 'program' is not null or undefined
@@ -90,14 +90,16 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
         /**
          * This operation gets an eligibility preview for an item that you specify. You can specify the type of eligibility preview that you want (INBOUND or COMMINGLING). For INBOUND previews, you can specify the marketplace in which you want to determine the item\'s eligibility.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} asin The ASIN of the item for which you want an eligibility preview.
-         * @param {'INBOUND' | 'COMMINGLING'} program The program that you want to check eligibility against.
+         * @param {GetItemEligibilityPreviewProgramEnum} program The program that you want to check eligibility against.
          * @param {Array<string>} [marketplaceIds] The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getItemEligibilityPreview(asin: string, program: 'INBOUND' | 'COMMINGLING', marketplaceIds?: Array<string>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetItemEligibilityPreviewResponse>> {
+        async getItemEligibilityPreview(asin: string, program: GetItemEligibilityPreviewProgramEnum, marketplaceIds?: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetItemEligibilityPreviewResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getItemEligibilityPreview(asin, program, marketplaceIds, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.getItemEligibilityPreview']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -115,7 +117,7 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getItemEligibilityPreview(requestParameters: FbaInboundApiGetItemEligibilityPreviewRequest, options?: AxiosRequestConfig): AxiosPromise<GetItemEligibilityPreviewResponse> {
+        getItemEligibilityPreview(requestParameters: FbaInboundApiGetItemEligibilityPreviewRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetItemEligibilityPreviewResponse> {
             return localVarFp.getItemEligibilityPreview(requestParameters.asin, requestParameters.program, requestParameters.marketplaceIds, options).then((request) => request(axios, basePath));
         },
     };
@@ -139,7 +141,7 @@ export interface FbaInboundApiGetItemEligibilityPreviewRequest {
      * @type {'INBOUND' | 'COMMINGLING'}
      * @memberof FbaInboundApiGetItemEligibilityPreview
      */
-    readonly program: 'INBOUND' | 'COMMINGLING'
+    readonly program: GetItemEligibilityPreviewProgramEnum
 
     /**
      * The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND.
@@ -163,7 +165,16 @@ export class FbaInboundApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
-    public getItemEligibilityPreview(requestParameters: FbaInboundApiGetItemEligibilityPreviewRequest, options?: AxiosRequestConfig) {
+    public getItemEligibilityPreview(requestParameters: FbaInboundApiGetItemEligibilityPreviewRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundApiFp(this.configuration).getItemEligibilityPreview(requestParameters.asin, requestParameters.program, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetItemEligibilityPreviewProgramEnum = {
+    Inbound: 'INBOUND',
+    Commingling: 'COMMINGLING'
+} as const;
+export type GetItemEligibilityPreviewProgramEnum = typeof GetItemEligibilityPreviewProgramEnum[keyof typeof GetItemEligibilityPreviewProgramEnum];

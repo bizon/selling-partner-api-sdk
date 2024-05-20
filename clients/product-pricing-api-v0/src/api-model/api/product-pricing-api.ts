@@ -14,27 +14,27 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { Errors } from '../models';
+import type { Errors } from '../models';
 // @ts-ignore
-import { GetItemOffersBatchRequest } from '../models';
+import type { GetItemOffersBatchRequest } from '../models';
 // @ts-ignore
-import { GetItemOffersBatchResponse } from '../models';
+import type { GetItemOffersBatchResponse } from '../models';
 // @ts-ignore
-import { GetListingOffersBatchRequest } from '../models';
+import type { GetListingOffersBatchRequest } from '../models';
 // @ts-ignore
-import { GetListingOffersBatchResponse } from '../models';
+import type { GetListingOffersBatchResponse } from '../models';
 // @ts-ignore
-import { GetOffersResponse } from '../models';
+import type { GetOffersResponse } from '../models';
 // @ts-ignore
-import { GetPricingResponse } from '../models';
+import type { GetPricingResponse } from '../models';
 /**
  * ProductPricingApi - axios parameter creator
  * @export
@@ -44,14 +44,14 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
         /**
          * Returns competitive pricing information for a seller\'s offer listings based on seller SKU or ASIN.  **Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for which prices are returned.
-         * @param {'Asin' | 'Sku'} itemType Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku.
+         * @param {GetCompetitivePricingItemTypeEnum} itemType Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku.
          * @param {Array<string>} [asins] A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace.
          * @param {Array<string>} [skus] A list of up to twenty seller SKU values used to identify items in the given marketplace.
-         * @param {'Consumer' | 'Business'} [customerType] Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer.
+         * @param {GetCompetitivePricingCustomerTypeEnum} [customerType] Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCompetitivePricing: async (marketplaceId: string, itemType: 'Asin' | 'Sku', asins?: Array<string>, skus?: Array<string>, customerType?: 'Consumer' | 'Business', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getCompetitivePricing: async (marketplaceId: string, itemType: GetCompetitivePricingItemTypeEnum, asins?: Array<string>, skus?: Array<string>, customerType?: GetCompetitivePricingCustomerTypeEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getCompetitivePricing', 'marketplaceId', marketplaceId)
             // verify required parameter 'itemType' is not null or undefined
@@ -102,13 +102,13 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
         /**
          * Returns the lowest priced offers for a single item based on ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for which prices are returned.
-         * @param {'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'} itemCondition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
+         * @param {GetItemOffersItemConditionEnum} itemCondition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
          * @param {string} asin The Amazon Standard Identification Number (ASIN) of the item.
-         * @param {'Consumer' | 'Business'} [customerType] Indicates whether to request Consumer or Business offers. Default is Consumer.
+         * @param {GetItemOffersCustomerTypeEnum} [customerType] Indicates whether to request Consumer or Business offers. Default is Consumer.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getItemOffers: async (marketplaceId: string, itemCondition: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', asin: string, customerType?: 'Consumer' | 'Business', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getItemOffers: async (marketplaceId: string, itemCondition: GetItemOffersItemConditionEnum, asin: string, customerType?: GetItemOffersCustomerTypeEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getItemOffers', 'marketplaceId', marketplaceId)
             // verify required parameter 'itemCondition' is not null or undefined
@@ -157,7 +157,7 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getItemOffersBatch: async (getItemOffersBatchRequestBody: GetItemOffersBatchRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getItemOffersBatch: async (getItemOffersBatchRequestBody: GetItemOffersBatchRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'getItemOffersBatchRequestBody' is not null or undefined
             assertParamExists('getItemOffersBatch', 'getItemOffersBatchRequestBody', getItemOffersBatchRequestBody)
             const localVarPath = `/batches/products/pricing/v0/itemOffers`;
@@ -189,13 +189,13 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
         /**
          * Returns the lowest priced offers for a single SKU listing.  **Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for which prices are returned.
-         * @param {'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'} itemCondition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
+         * @param {GetListingOffersItemConditionEnum} itemCondition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
          * @param {string} sellerSKU Identifies an item in the given marketplace. SellerSKU is qualified by the seller\&#39;s SellerId, which is included with every operation that you submit.
-         * @param {'Consumer' | 'Business'} [customerType] Indicates whether to request Consumer or Business offers. Default is Consumer.
+         * @param {GetListingOffersCustomerTypeEnum} [customerType] Indicates whether to request Consumer or Business offers. Default is Consumer.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getListingOffers: async (marketplaceId: string, itemCondition: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', sellerSKU: string, customerType?: 'Consumer' | 'Business', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getListingOffers: async (marketplaceId: string, itemCondition: GetListingOffersItemConditionEnum, sellerSKU: string, customerType?: GetListingOffersCustomerTypeEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getListingOffers', 'marketplaceId', marketplaceId)
             // verify required parameter 'itemCondition' is not null or undefined
@@ -244,7 +244,7 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getListingOffersBatch: async (getListingOffersBatchRequestBody: GetListingOffersBatchRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getListingOffersBatch: async (getListingOffersBatchRequestBody: GetListingOffersBatchRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'getListingOffersBatchRequestBody' is not null or undefined
             assertParamExists('getListingOffersBatch', 'getListingOffersBatchRequestBody', getListingOffersBatchRequestBody)
             const localVarPath = `/batches/products/pricing/v0/listingOffers`;
@@ -276,15 +276,15 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
         /**
          * Returns pricing information for a seller\'s offer listings based on seller SKU or ASIN.  **Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for which prices are returned.
-         * @param {'Asin' | 'Sku'} itemType Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter.
+         * @param {GetPricingItemTypeEnum} itemType Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter.
          * @param {Array<string>} [asins] A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace.
          * @param {Array<string>} [skus] A list of up to twenty seller SKU values used to identify items in the given marketplace.
-         * @param {'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'} [itemCondition] Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
-         * @param {'B2C' | 'B2B'} [offerType] Indicates whether to request pricing information for the seller\&#39;s B2C or B2B offers. Default is B2C.
+         * @param {GetPricingItemConditionEnum} [itemCondition] Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
+         * @param {GetPricingOfferTypeEnum} [offerType] Indicates whether to request pricing information for the seller\&#39;s B2C or B2B offers. Default is B2C.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPricing: async (marketplaceId: string, itemType: 'Asin' | 'Sku', asins?: Array<string>, skus?: Array<string>, itemCondition?: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', offerType?: 'B2C' | 'B2B', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getPricing: async (marketplaceId: string, itemType: GetPricingItemTypeEnum, asins?: Array<string>, skus?: Array<string>, itemCondition?: GetPricingItemConditionEnum, offerType?: GetPricingOfferTypeEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getPricing', 'marketplaceId', marketplaceId)
             // verify required parameter 'itemType' is not null or undefined
@@ -349,29 +349,33 @@ export const ProductPricingApiFp = function(configuration?: Configuration) {
         /**
          * Returns competitive pricing information for a seller\'s offer listings based on seller SKU or ASIN.  **Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for which prices are returned.
-         * @param {'Asin' | 'Sku'} itemType Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku.
+         * @param {GetCompetitivePricingItemTypeEnum} itemType Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku.
          * @param {Array<string>} [asins] A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace.
          * @param {Array<string>} [skus] A list of up to twenty seller SKU values used to identify items in the given marketplace.
-         * @param {'Consumer' | 'Business'} [customerType] Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer.
+         * @param {GetCompetitivePricingCustomerTypeEnum} [customerType] Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCompetitivePricing(marketplaceId: string, itemType: 'Asin' | 'Sku', asins?: Array<string>, skus?: Array<string>, customerType?: 'Consumer' | 'Business', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPricingResponse>> {
+        async getCompetitivePricing(marketplaceId: string, itemType: GetCompetitivePricingItemTypeEnum, asins?: Array<string>, skus?: Array<string>, customerType?: GetCompetitivePricingCustomerTypeEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPricingResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCompetitivePricing(marketplaceId, itemType, asins, skus, customerType, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductPricingApi.getCompetitivePricing']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the lowest priced offers for a single item based on ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for which prices are returned.
-         * @param {'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'} itemCondition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
+         * @param {GetItemOffersItemConditionEnum} itemCondition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
          * @param {string} asin The Amazon Standard Identification Number (ASIN) of the item.
-         * @param {'Consumer' | 'Business'} [customerType] Indicates whether to request Consumer or Business offers. Default is Consumer.
+         * @param {GetItemOffersCustomerTypeEnum} [customerType] Indicates whether to request Consumer or Business offers. Default is Consumer.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getItemOffers(marketplaceId: string, itemCondition: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', asin: string, customerType?: 'Consumer' | 'Business', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOffersResponse>> {
+        async getItemOffers(marketplaceId: string, itemCondition: GetItemOffersItemConditionEnum, asin: string, customerType?: GetItemOffersCustomerTypeEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOffersResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getItemOffers(marketplaceId, itemCondition, asin, customerType, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductPricingApi.getItemOffers']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the lowest priced offers for a batch of items based on ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -379,22 +383,26 @@ export const ProductPricingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getItemOffersBatch(getItemOffersBatchRequestBody: GetItemOffersBatchRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetItemOffersBatchResponse>> {
+        async getItemOffersBatch(getItemOffersBatchRequestBody: GetItemOffersBatchRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetItemOffersBatchResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getItemOffersBatch(getItemOffersBatchRequestBody, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductPricingApi.getItemOffersBatch']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the lowest priced offers for a single SKU listing.  **Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for which prices are returned.
-         * @param {'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'} itemCondition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
+         * @param {GetListingOffersItemConditionEnum} itemCondition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
          * @param {string} sellerSKU Identifies an item in the given marketplace. SellerSKU is qualified by the seller\&#39;s SellerId, which is included with every operation that you submit.
-         * @param {'Consumer' | 'Business'} [customerType] Indicates whether to request Consumer or Business offers. Default is Consumer.
+         * @param {GetListingOffersCustomerTypeEnum} [customerType] Indicates whether to request Consumer or Business offers. Default is Consumer.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getListingOffers(marketplaceId: string, itemCondition: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', sellerSKU: string, customerType?: 'Consumer' | 'Business', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOffersResponse>> {
+        async getListingOffers(marketplaceId: string, itemCondition: GetListingOffersItemConditionEnum, sellerSKU: string, customerType?: GetListingOffersCustomerTypeEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOffersResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getListingOffers(marketplaceId, itemCondition, sellerSKU, customerType, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductPricingApi.getListingOffers']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the lowest priced offers for a batch of listings by SKU.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -402,24 +410,28 @@ export const ProductPricingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getListingOffersBatch(getListingOffersBatchRequestBody: GetListingOffersBatchRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetListingOffersBatchResponse>> {
+        async getListingOffersBatch(getListingOffersBatchRequestBody: GetListingOffersBatchRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetListingOffersBatchResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getListingOffersBatch(getListingOffersBatchRequestBody, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductPricingApi.getListingOffersBatch']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns pricing information for a seller\'s offer listings based on seller SKU or ASIN.  **Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for which prices are returned.
-         * @param {'Asin' | 'Sku'} itemType Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter.
+         * @param {GetPricingItemTypeEnum} itemType Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter.
          * @param {Array<string>} [asins] A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace.
          * @param {Array<string>} [skus] A list of up to twenty seller SKU values used to identify items in the given marketplace.
-         * @param {'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'} [itemCondition] Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
-         * @param {'B2C' | 'B2B'} [offerType] Indicates whether to request pricing information for the seller\&#39;s B2C or B2B offers. Default is B2C.
+         * @param {GetPricingItemConditionEnum} [itemCondition] Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
+         * @param {GetPricingOfferTypeEnum} [offerType] Indicates whether to request pricing information for the seller\&#39;s B2C or B2B offers. Default is B2C.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getPricing(marketplaceId: string, itemType: 'Asin' | 'Sku', asins?: Array<string>, skus?: Array<string>, itemCondition?: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club', offerType?: 'B2C' | 'B2B', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPricingResponse>> {
+        async getPricing(marketplaceId: string, itemType: GetPricingItemTypeEnum, asins?: Array<string>, skus?: Array<string>, itemCondition?: GetPricingItemConditionEnum, offerType?: GetPricingOfferTypeEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetPricingResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getPricing(marketplaceId, itemType, asins, skus, itemCondition, offerType, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductPricingApi.getPricing']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -437,7 +449,7 @@ export const ProductPricingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCompetitivePricing(requestParameters: ProductPricingApiGetCompetitivePricingRequest, options?: AxiosRequestConfig): AxiosPromise<GetPricingResponse> {
+        getCompetitivePricing(requestParameters: ProductPricingApiGetCompetitivePricingRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetPricingResponse> {
             return localVarFp.getCompetitivePricing(requestParameters.marketplaceId, requestParameters.itemType, requestParameters.asins, requestParameters.skus, requestParameters.customerType, options).then((request) => request(axios, basePath));
         },
         /**
@@ -446,7 +458,7 @@ export const ProductPricingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getItemOffers(requestParameters: ProductPricingApiGetItemOffersRequest, options?: AxiosRequestConfig): AxiosPromise<GetOffersResponse> {
+        getItemOffers(requestParameters: ProductPricingApiGetItemOffersRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOffersResponse> {
             return localVarFp.getItemOffers(requestParameters.marketplaceId, requestParameters.itemCondition, requestParameters.asin, requestParameters.customerType, options).then((request) => request(axios, basePath));
         },
         /**
@@ -455,7 +467,7 @@ export const ProductPricingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getItemOffersBatch(requestParameters: ProductPricingApiGetItemOffersBatchRequest, options?: AxiosRequestConfig): AxiosPromise<GetItemOffersBatchResponse> {
+        getItemOffersBatch(requestParameters: ProductPricingApiGetItemOffersBatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetItemOffersBatchResponse> {
             return localVarFp.getItemOffersBatch(requestParameters.getItemOffersBatchRequestBody, options).then((request) => request(axios, basePath));
         },
         /**
@@ -464,7 +476,7 @@ export const ProductPricingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getListingOffers(requestParameters: ProductPricingApiGetListingOffersRequest, options?: AxiosRequestConfig): AxiosPromise<GetOffersResponse> {
+        getListingOffers(requestParameters: ProductPricingApiGetListingOffersRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOffersResponse> {
             return localVarFp.getListingOffers(requestParameters.marketplaceId, requestParameters.itemCondition, requestParameters.sellerSKU, requestParameters.customerType, options).then((request) => request(axios, basePath));
         },
         /**
@@ -473,7 +485,7 @@ export const ProductPricingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getListingOffersBatch(requestParameters: ProductPricingApiGetListingOffersBatchRequest, options?: AxiosRequestConfig): AxiosPromise<GetListingOffersBatchResponse> {
+        getListingOffersBatch(requestParameters: ProductPricingApiGetListingOffersBatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetListingOffersBatchResponse> {
             return localVarFp.getListingOffersBatch(requestParameters.getListingOffersBatchRequestBody, options).then((request) => request(axios, basePath));
         },
         /**
@@ -482,7 +494,7 @@ export const ProductPricingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPricing(requestParameters: ProductPricingApiGetPricingRequest, options?: AxiosRequestConfig): AxiosPromise<GetPricingResponse> {
+        getPricing(requestParameters: ProductPricingApiGetPricingRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetPricingResponse> {
             return localVarFp.getPricing(requestParameters.marketplaceId, requestParameters.itemType, requestParameters.asins, requestParameters.skus, requestParameters.itemCondition, requestParameters.offerType, options).then((request) => request(axios, basePath));
         },
     };
@@ -506,7 +518,7 @@ export interface ProductPricingApiGetCompetitivePricingRequest {
      * @type {'Asin' | 'Sku'}
      * @memberof ProductPricingApiGetCompetitivePricing
      */
-    readonly itemType: 'Asin' | 'Sku'
+    readonly itemType: GetCompetitivePricingItemTypeEnum
 
     /**
      * A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace.
@@ -527,7 +539,7 @@ export interface ProductPricingApiGetCompetitivePricingRequest {
      * @type {'Consumer' | 'Business'}
      * @memberof ProductPricingApiGetCompetitivePricing
      */
-    readonly customerType?: 'Consumer' | 'Business'
+    readonly customerType?: GetCompetitivePricingCustomerTypeEnum
 }
 
 /**
@@ -548,7 +560,7 @@ export interface ProductPricingApiGetItemOffersRequest {
      * @type {'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'}
      * @memberof ProductPricingApiGetItemOffers
      */
-    readonly itemCondition: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'
+    readonly itemCondition: GetItemOffersItemConditionEnum
 
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
@@ -562,7 +574,7 @@ export interface ProductPricingApiGetItemOffersRequest {
      * @type {'Consumer' | 'Business'}
      * @memberof ProductPricingApiGetItemOffers
      */
-    readonly customerType?: 'Consumer' | 'Business'
+    readonly customerType?: GetItemOffersCustomerTypeEnum
 }
 
 /**
@@ -597,7 +609,7 @@ export interface ProductPricingApiGetListingOffersRequest {
      * @type {'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'}
      * @memberof ProductPricingApiGetListingOffers
      */
-    readonly itemCondition: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'
+    readonly itemCondition: GetListingOffersItemConditionEnum
 
     /**
      * Identifies an item in the given marketplace. SellerSKU is qualified by the seller\&#39;s SellerId, which is included with every operation that you submit.
@@ -611,7 +623,7 @@ export interface ProductPricingApiGetListingOffersRequest {
      * @type {'Consumer' | 'Business'}
      * @memberof ProductPricingApiGetListingOffers
      */
-    readonly customerType?: 'Consumer' | 'Business'
+    readonly customerType?: GetListingOffersCustomerTypeEnum
 }
 
 /**
@@ -646,7 +658,7 @@ export interface ProductPricingApiGetPricingRequest {
      * @type {'Asin' | 'Sku'}
      * @memberof ProductPricingApiGetPricing
      */
-    readonly itemType: 'Asin' | 'Sku'
+    readonly itemType: GetPricingItemTypeEnum
 
     /**
      * A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace.
@@ -667,14 +679,14 @@ export interface ProductPricingApiGetPricingRequest {
      * @type {'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'}
      * @memberof ProductPricingApiGetPricing
      */
-    readonly itemCondition?: 'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'
+    readonly itemCondition?: GetPricingItemConditionEnum
 
     /**
      * Indicates whether to request pricing information for the seller\&#39;s B2C or B2B offers. Default is B2C.
      * @type {'B2C' | 'B2B'}
      * @memberof ProductPricingApiGetPricing
      */
-    readonly offerType?: 'B2C' | 'B2B'
+    readonly offerType?: GetPricingOfferTypeEnum
 }
 
 /**
@@ -691,7 +703,7 @@ export class ProductPricingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ProductPricingApi
      */
-    public getCompetitivePricing(requestParameters: ProductPricingApiGetCompetitivePricingRequest, options?: AxiosRequestConfig) {
+    public getCompetitivePricing(requestParameters: ProductPricingApiGetCompetitivePricingRequest, options?: RawAxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getCompetitivePricing(requestParameters.marketplaceId, requestParameters.itemType, requestParameters.asins, requestParameters.skus, requestParameters.customerType, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -702,7 +714,7 @@ export class ProductPricingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ProductPricingApi
      */
-    public getItemOffers(requestParameters: ProductPricingApiGetItemOffersRequest, options?: AxiosRequestConfig) {
+    public getItemOffers(requestParameters: ProductPricingApiGetItemOffersRequest, options?: RawAxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getItemOffers(requestParameters.marketplaceId, requestParameters.itemCondition, requestParameters.asin, requestParameters.customerType, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -713,7 +725,7 @@ export class ProductPricingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ProductPricingApi
      */
-    public getItemOffersBatch(requestParameters: ProductPricingApiGetItemOffersBatchRequest, options?: AxiosRequestConfig) {
+    public getItemOffersBatch(requestParameters: ProductPricingApiGetItemOffersBatchRequest, options?: RawAxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getItemOffersBatch(requestParameters.getItemOffersBatchRequestBody, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -724,7 +736,7 @@ export class ProductPricingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ProductPricingApi
      */
-    public getListingOffers(requestParameters: ProductPricingApiGetListingOffersRequest, options?: AxiosRequestConfig) {
+    public getListingOffers(requestParameters: ProductPricingApiGetListingOffersRequest, options?: RawAxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getListingOffers(requestParameters.marketplaceId, requestParameters.itemCondition, requestParameters.sellerSKU, requestParameters.customerType, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -735,7 +747,7 @@ export class ProductPricingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ProductPricingApi
      */
-    public getListingOffersBatch(requestParameters: ProductPricingApiGetListingOffersBatchRequest, options?: AxiosRequestConfig) {
+    public getListingOffersBatch(requestParameters: ProductPricingApiGetListingOffersBatchRequest, options?: RawAxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getListingOffersBatch(requestParameters.getListingOffersBatchRequestBody, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -746,7 +758,89 @@ export class ProductPricingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ProductPricingApi
      */
-    public getPricing(requestParameters: ProductPricingApiGetPricingRequest, options?: AxiosRequestConfig) {
+    public getPricing(requestParameters: ProductPricingApiGetPricingRequest, options?: RawAxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getPricing(requestParameters.marketplaceId, requestParameters.itemType, requestParameters.asins, requestParameters.skus, requestParameters.itemCondition, requestParameters.offerType, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetCompetitivePricingItemTypeEnum = {
+    Asin: 'Asin',
+    Sku: 'Sku'
+} as const;
+export type GetCompetitivePricingItemTypeEnum = typeof GetCompetitivePricingItemTypeEnum[keyof typeof GetCompetitivePricingItemTypeEnum];
+/**
+ * @export
+ */
+export const GetCompetitivePricingCustomerTypeEnum = {
+    Consumer: 'Consumer',
+    Business: 'Business'
+} as const;
+export type GetCompetitivePricingCustomerTypeEnum = typeof GetCompetitivePricingCustomerTypeEnum[keyof typeof GetCompetitivePricingCustomerTypeEnum];
+/**
+ * @export
+ */
+export const GetItemOffersItemConditionEnum = {
+    New: 'New',
+    Used: 'Used',
+    Collectible: 'Collectible',
+    Refurbished: 'Refurbished',
+    Club: 'Club'
+} as const;
+export type GetItemOffersItemConditionEnum = typeof GetItemOffersItemConditionEnum[keyof typeof GetItemOffersItemConditionEnum];
+/**
+ * @export
+ */
+export const GetItemOffersCustomerTypeEnum = {
+    Consumer: 'Consumer',
+    Business: 'Business'
+} as const;
+export type GetItemOffersCustomerTypeEnum = typeof GetItemOffersCustomerTypeEnum[keyof typeof GetItemOffersCustomerTypeEnum];
+/**
+ * @export
+ */
+export const GetListingOffersItemConditionEnum = {
+    New: 'New',
+    Used: 'Used',
+    Collectible: 'Collectible',
+    Refurbished: 'Refurbished',
+    Club: 'Club'
+} as const;
+export type GetListingOffersItemConditionEnum = typeof GetListingOffersItemConditionEnum[keyof typeof GetListingOffersItemConditionEnum];
+/**
+ * @export
+ */
+export const GetListingOffersCustomerTypeEnum = {
+    Consumer: 'Consumer',
+    Business: 'Business'
+} as const;
+export type GetListingOffersCustomerTypeEnum = typeof GetListingOffersCustomerTypeEnum[keyof typeof GetListingOffersCustomerTypeEnum];
+/**
+ * @export
+ */
+export const GetPricingItemTypeEnum = {
+    Asin: 'Asin',
+    Sku: 'Sku'
+} as const;
+export type GetPricingItemTypeEnum = typeof GetPricingItemTypeEnum[keyof typeof GetPricingItemTypeEnum];
+/**
+ * @export
+ */
+export const GetPricingItemConditionEnum = {
+    New: 'New',
+    Used: 'Used',
+    Collectible: 'Collectible',
+    Refurbished: 'Refurbished',
+    Club: 'Club'
+} as const;
+export type GetPricingItemConditionEnum = typeof GetPricingItemConditionEnum[keyof typeof GetPricingItemConditionEnum];
+/**
+ * @export
+ */
+export const GetPricingOfferTypeEnum = {
+    B2C: 'B2C',
+    B2B: 'B2B'
+} as const;
+export type GetPricingOfferTypeEnum = typeof GetPricingOfferTypeEnum[keyof typeof GetPricingOfferTypeEnum];

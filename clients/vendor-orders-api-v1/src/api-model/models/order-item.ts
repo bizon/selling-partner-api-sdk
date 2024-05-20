@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemQuantity } from './item-quantity';
+import type { ItemQuantity } from './item-quantity';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Money } from './money';
+import type { Money } from './money';
 
 /**
  * 

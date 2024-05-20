@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Granularity } from './granularity';
+import type { Granularity } from './granularity';
 // May contain unused imports in some cases
 // @ts-ignore
-import { InventorySummary } from './inventory-summary';
+import type { InventorySummary } from './inventory-summary';
 
 /**
  * The payload schema for the getInventorySummaries operation.

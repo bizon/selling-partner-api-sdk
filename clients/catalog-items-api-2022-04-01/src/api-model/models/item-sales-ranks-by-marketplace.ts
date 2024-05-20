@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemClassificationSalesRank } from './item-classification-sales-rank';
+import type { ItemClassificationSalesRank } from './item-classification-sales-rank';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemDisplayGroupSalesRank } from './item-display-group-sales-rank';
+import type { ItemDisplayGroupSalesRank } from './item-display-group-sales-rank';
 
 /**
  * Sales ranks of an Amazon catalog item for the indicated Amazon marketplace.

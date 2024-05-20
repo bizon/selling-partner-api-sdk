@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipmentDates } from './shipment-dates';
+import type { ShipmentDates } from './shipment-dates';
 
 /**
  * Shipment details required for the shipment.

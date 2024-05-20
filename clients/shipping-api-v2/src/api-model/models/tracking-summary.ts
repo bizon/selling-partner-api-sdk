@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Status } from './status';
+import type { Status } from './status';
 
 /**
  * A package status summary.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Warning } from './warning';
+import type { Warning } from './warning';
 
 /**
  * The payload for the `assignAppointmentResource` operation.

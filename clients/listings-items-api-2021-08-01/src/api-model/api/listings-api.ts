@@ -14,23 +14,23 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { ErrorList } from '../models';
+import type { ErrorList } from '../models';
 // @ts-ignore
-import { Item } from '../models';
+import type { Item } from '../models';
 // @ts-ignore
-import { ListingsItemPatchRequest } from '../models';
+import type { ListingsItemPatchRequest } from '../models';
 // @ts-ignore
-import { ListingsItemPutRequest } from '../models';
+import type { ListingsItemPutRequest } from '../models';
 // @ts-ignore
-import { ListingsItemSubmissionResponse } from '../models';
+import type { ListingsItemSubmissionResponse } from '../models';
 /**
  * ListingsApi - axios parameter creator
  * @export
@@ -46,7 +46,7 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        deleteListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerId' is not null or undefined
             assertParamExists('deleteListingsItem', 'sellerId', sellerId)
             // verify required parameter 'sku' is not null or undefined
@@ -92,11 +92,11 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} sku A selling partner provided identifier for an Amazon listing.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
          * @param {string} [issueLocale] A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale.
-         * @param {Array<'summaries' | 'attributes' | 'issues' | 'offers' | 'fulfillmentAvailability' | 'procurement'>} [includedData] A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;.
+         * @param {Array<GetListingsItemIncludedDataEnum>} [includedData] A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, includedData?: Array<'summaries' | 'attributes' | 'issues' | 'offers' | 'fulfillmentAvailability' | 'procurement'>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, includedData?: Array<GetListingsItemIncludedDataEnum>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerId' is not null or undefined
             assertParamExists('getListingsItem', 'sellerId', sellerId)
             // verify required parameter 'sku' is not null or undefined
@@ -146,13 +146,13 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} sku A selling partner provided identifier for an Amazon listing.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
          * @param {ListingsItemPatchRequest} body The request body schema for the &#x60;patchListingsItem&#x60; operation.
-         * @param {Array<'identifiers' | 'issues'>} [includedData] A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;.
-         * @param {'VALIDATION_PREVIEW'} [mode] The mode of operation for the request.
+         * @param {Array<PatchListingsItemIncludedDataEnum>} [includedData] A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;.
+         * @param {PatchListingsItemModeEnum} [mode] The mode of operation for the request.
          * @param {string} [issueLocale] A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        patchListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPatchRequest, includedData?: Array<'identifiers' | 'issues'>, mode?: 'VALIDATION_PREVIEW', issueLocale?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        patchListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPatchRequest, includedData?: Array<PatchListingsItemIncludedDataEnum>, mode?: PatchListingsItemModeEnum, issueLocale?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerId' is not null or undefined
             assertParamExists('patchListingsItem', 'sellerId', sellerId)
             // verify required parameter 'sku' is not null or undefined
@@ -211,13 +211,13 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} sku A selling partner provided identifier for an Amazon listing.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
          * @param {ListingsItemPutRequest} body The request body schema for the &#x60;putListingsItem&#x60; operation.
-         * @param {Array<'identifiers' | 'issues'>} [includedData] A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;.
-         * @param {'VALIDATION_PREVIEW'} [mode] The mode of operation for the request.
+         * @param {Array<PutListingsItemIncludedDataEnum>} [includedData] A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;.
+         * @param {PutListingsItemModeEnum} [mode] The mode of operation for the request.
          * @param {string} [issueLocale] A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        putListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPutRequest, includedData?: Array<'identifiers' | 'issues'>, mode?: 'VALIDATION_PREVIEW', issueLocale?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        putListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPutRequest, includedData?: Array<PutListingsItemIncludedDataEnum>, mode?: PutListingsItemModeEnum, issueLocale?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerId' is not null or undefined
             assertParamExists('putListingsItem', 'sellerId', sellerId)
             // verify required parameter 'sku' is not null or undefined
@@ -289,9 +289,11 @@ export const ListingsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
+        async deleteListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteListingsItem(sellerId, sku, marketplaceIds, issueLocale, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ListingsApi.deleteListingsItem']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns details about a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -299,13 +301,15 @@ export const ListingsApiFp = function(configuration?: Configuration) {
          * @param {string} sku A selling partner provided identifier for an Amazon listing.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
          * @param {string} [issueLocale] A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale.
-         * @param {Array<'summaries' | 'attributes' | 'issues' | 'offers' | 'fulfillmentAvailability' | 'procurement'>} [includedData] A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;.
+         * @param {Array<GetListingsItemIncludedDataEnum>} [includedData] A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, includedData?: Array<'summaries' | 'attributes' | 'issues' | 'offers' | 'fulfillmentAvailability' | 'procurement'>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Item>> {
+        async getListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, includedData?: Array<GetListingsItemIncludedDataEnum>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Item>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getListingsItem(sellerId, sku, marketplaceIds, issueLocale, includedData, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ListingsApi.getListingsItem']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Note:** This operation has a throttling rate of one request per second when `mode` is `VALIDATION_PREVIEW`.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -313,15 +317,17 @@ export const ListingsApiFp = function(configuration?: Configuration) {
          * @param {string} sku A selling partner provided identifier for an Amazon listing.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
          * @param {ListingsItemPatchRequest} body The request body schema for the &#x60;patchListingsItem&#x60; operation.
-         * @param {Array<'identifiers' | 'issues'>} [includedData] A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;.
-         * @param {'VALIDATION_PREVIEW'} [mode] The mode of operation for the request.
+         * @param {Array<PatchListingsItemIncludedDataEnum>} [includedData] A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;.
+         * @param {PatchListingsItemModeEnum} [mode] The mode of operation for the request.
          * @param {string} [issueLocale] A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async patchListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPatchRequest, includedData?: Array<'identifiers' | 'issues'>, mode?: 'VALIDATION_PREVIEW', issueLocale?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
+        async patchListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPatchRequest, includedData?: Array<PatchListingsItemIncludedDataEnum>, mode?: PatchListingsItemModeEnum, issueLocale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.patchListingsItem(sellerId, sku, marketplaceIds, body, includedData, mode, issueLocale, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ListingsApi.patchListingsItem']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Creates or fully updates an existing listings item for a selling partner.  **Note:** This operation has a throttling rate of one request per second when `mode` is `VALIDATION_PREVIEW`.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -329,15 +335,17 @@ export const ListingsApiFp = function(configuration?: Configuration) {
          * @param {string} sku A selling partner provided identifier for an Amazon listing.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
          * @param {ListingsItemPutRequest} body The request body schema for the &#x60;putListingsItem&#x60; operation.
-         * @param {Array<'identifiers' | 'issues'>} [includedData] A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;.
-         * @param {'VALIDATION_PREVIEW'} [mode] The mode of operation for the request.
+         * @param {Array<PutListingsItemIncludedDataEnum>} [includedData] A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;.
+         * @param {PutListingsItemModeEnum} [mode] The mode of operation for the request.
          * @param {string} [issueLocale] A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async putListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPutRequest, includedData?: Array<'identifiers' | 'issues'>, mode?: 'VALIDATION_PREVIEW', issueLocale?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
+        async putListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPutRequest, includedData?: Array<PutListingsItemIncludedDataEnum>, mode?: PutListingsItemModeEnum, issueLocale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.putListingsItem(sellerId, sku, marketplaceIds, body, includedData, mode, issueLocale, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ListingsApi.putListingsItem']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -355,7 +363,7 @@ export const ListingsApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteListingsItem(requestParameters: ListingsApiDeleteListingsItemRequest, options?: AxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
+        deleteListingsItem(requestParameters: ListingsApiDeleteListingsItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
             return localVarFp.deleteListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.issueLocale, options).then((request) => request(axios, basePath));
         },
         /**
@@ -364,7 +372,7 @@ export const ListingsApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getListingsItem(requestParameters: ListingsApiGetListingsItemRequest, options?: AxiosRequestConfig): AxiosPromise<Item> {
+        getListingsItem(requestParameters: ListingsApiGetListingsItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<Item> {
             return localVarFp.getListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.issueLocale, requestParameters.includedData, options).then((request) => request(axios, basePath));
         },
         /**
@@ -373,7 +381,7 @@ export const ListingsApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        patchListingsItem(requestParameters: ListingsApiPatchListingsItemRequest, options?: AxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
+        patchListingsItem(requestParameters: ListingsApiPatchListingsItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
             return localVarFp.patchListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.includedData, requestParameters.mode, requestParameters.issueLocale, options).then((request) => request(axios, basePath));
         },
         /**
@@ -382,7 +390,7 @@ export const ListingsApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        putListingsItem(requestParameters: ListingsApiPutListingsItemRequest, options?: AxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
+        putListingsItem(requestParameters: ListingsApiPutListingsItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
             return localVarFp.putListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.includedData, requestParameters.mode, requestParameters.issueLocale, options).then((request) => request(axios, basePath));
         },
     };
@@ -462,7 +470,7 @@ export interface ListingsApiGetListingsItemRequest {
      * @type {Array<'summaries' | 'attributes' | 'issues' | 'offers' | 'fulfillmentAvailability' | 'procurement'>}
      * @memberof ListingsApiGetListingsItem
      */
-    readonly includedData?: Array<'summaries' | 'attributes' | 'issues' | 'offers' | 'fulfillmentAvailability' | 'procurement'>
+    readonly includedData?: Array<GetListingsItemIncludedDataEnum>
 }
 
 /**
@@ -504,14 +512,14 @@ export interface ListingsApiPatchListingsItemRequest {
      * @type {Array<'identifiers' | 'issues'>}
      * @memberof ListingsApiPatchListingsItem
      */
-    readonly includedData?: Array<'identifiers' | 'issues'>
+    readonly includedData?: Array<PatchListingsItemIncludedDataEnum>
 
     /**
      * The mode of operation for the request.
      * @type {'VALIDATION_PREVIEW'}
      * @memberof ListingsApiPatchListingsItem
      */
-    readonly mode?: 'VALIDATION_PREVIEW'
+    readonly mode?: PatchListingsItemModeEnum
 
     /**
      * A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale.
@@ -560,14 +568,14 @@ export interface ListingsApiPutListingsItemRequest {
      * @type {Array<'identifiers' | 'issues'>}
      * @memberof ListingsApiPutListingsItem
      */
-    readonly includedData?: Array<'identifiers' | 'issues'>
+    readonly includedData?: Array<PutListingsItemIncludedDataEnum>
 
     /**
      * The mode of operation for the request.
      * @type {'VALIDATION_PREVIEW'}
      * @memberof ListingsApiPutListingsItem
      */
-    readonly mode?: 'VALIDATION_PREVIEW'
+    readonly mode?: PutListingsItemModeEnum
 
     /**
      * A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale.
@@ -591,7 +599,7 @@ export class ListingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ListingsApi
      */
-    public deleteListingsItem(requestParameters: ListingsApiDeleteListingsItemRequest, options?: AxiosRequestConfig) {
+    public deleteListingsItem(requestParameters: ListingsApiDeleteListingsItemRequest, options?: RawAxiosRequestConfig) {
         return ListingsApiFp(this.configuration).deleteListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -602,7 +610,7 @@ export class ListingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ListingsApi
      */
-    public getListingsItem(requestParameters: ListingsApiGetListingsItemRequest, options?: AxiosRequestConfig) {
+    public getListingsItem(requestParameters: ListingsApiGetListingsItemRequest, options?: RawAxiosRequestConfig) {
         return ListingsApiFp(this.configuration).getListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.issueLocale, requestParameters.includedData, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -613,7 +621,7 @@ export class ListingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ListingsApi
      */
-    public patchListingsItem(requestParameters: ListingsApiPatchListingsItemRequest, options?: AxiosRequestConfig) {
+    public patchListingsItem(requestParameters: ListingsApiPatchListingsItemRequest, options?: RawAxiosRequestConfig) {
         return ListingsApiFp(this.configuration).patchListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.includedData, requestParameters.mode, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -624,7 +632,50 @@ export class ListingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ListingsApi
      */
-    public putListingsItem(requestParameters: ListingsApiPutListingsItemRequest, options?: AxiosRequestConfig) {
+    public putListingsItem(requestParameters: ListingsApiPutListingsItemRequest, options?: RawAxiosRequestConfig) {
         return ListingsApiFp(this.configuration).putListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.includedData, requestParameters.mode, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetListingsItemIncludedDataEnum = {
+    Summaries: 'summaries',
+    Attributes: 'attributes',
+    Issues: 'issues',
+    Offers: 'offers',
+    FulfillmentAvailability: 'fulfillmentAvailability',
+    Procurement: 'procurement'
+} as const;
+export type GetListingsItemIncludedDataEnum = typeof GetListingsItemIncludedDataEnum[keyof typeof GetListingsItemIncludedDataEnum];
+/**
+ * @export
+ */
+export const PatchListingsItemIncludedDataEnum = {
+    Identifiers: 'identifiers',
+    Issues: 'issues'
+} as const;
+export type PatchListingsItemIncludedDataEnum = typeof PatchListingsItemIncludedDataEnum[keyof typeof PatchListingsItemIncludedDataEnum];
+/**
+ * @export
+ */
+export const PatchListingsItemModeEnum = {
+    ValidationPreview: 'VALIDATION_PREVIEW'
+} as const;
+export type PatchListingsItemModeEnum = typeof PatchListingsItemModeEnum[keyof typeof PatchListingsItemModeEnum];
+/**
+ * @export
+ */
+export const PutListingsItemIncludedDataEnum = {
+    Identifiers: 'identifiers',
+    Issues: 'issues'
+} as const;
+export type PutListingsItemIncludedDataEnum = typeof PutListingsItemIncludedDataEnum[keyof typeof PutListingsItemIncludedDataEnum];
+/**
+ * @export
+ */
+export const PutListingsItemModeEnum = {
+    ValidationPreview: 'VALIDATION_PREVIEW'
+} as const;
+export type PutListingsItemModeEnum = typeof PutListingsItemModeEnum[keyof typeof PutListingsItemModeEnum];

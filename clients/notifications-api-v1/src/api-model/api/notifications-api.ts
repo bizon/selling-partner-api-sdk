@@ -14,33 +14,33 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CreateDestinationRequest } from '../models';
+import type { CreateDestinationRequest } from '../models';
 // @ts-ignore
-import { CreateDestinationResponse } from '../models';
+import type { CreateDestinationResponse } from '../models';
 // @ts-ignore
-import { CreateSubscriptionRequest } from '../models';
+import type { CreateSubscriptionRequest } from '../models';
 // @ts-ignore
-import { CreateSubscriptionResponse } from '../models';
+import type { CreateSubscriptionResponse } from '../models';
 // @ts-ignore
-import { DeleteDestinationResponse } from '../models';
+import type { DeleteDestinationResponse } from '../models';
 // @ts-ignore
-import { DeleteSubscriptionByIdResponse } from '../models';
+import type { DeleteSubscriptionByIdResponse } from '../models';
 // @ts-ignore
-import { GetDestinationResponse } from '../models';
+import type { GetDestinationResponse } from '../models';
 // @ts-ignore
-import { GetDestinationsResponse } from '../models';
+import type { GetDestinationsResponse } from '../models';
 // @ts-ignore
-import { GetSubscriptionByIdResponse } from '../models';
+import type { GetSubscriptionByIdResponse } from '../models';
 // @ts-ignore
-import { GetSubscriptionResponse } from '../models';
+import type { GetSubscriptionResponse } from '../models';
 /**
  * NotificationsApi - axios parameter creator
  * @export
@@ -53,7 +53,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createDestination: async (body: CreateDestinationRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createDestination: async (body: CreateDestinationRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createDestination', 'body', body)
             const localVarPath = `/notifications/v1/destinations`;
@@ -89,7 +89,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createSubscription: async (notificationType: string, body: CreateSubscriptionRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createSubscription: async (notificationType: string, body: CreateSubscriptionRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'notificationType' is not null or undefined
             assertParamExists('createSubscription', 'notificationType', notificationType)
             // verify required parameter 'body' is not null or undefined
@@ -127,7 +127,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteDestination: async (destinationId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        deleteDestination: async (destinationId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'destinationId' is not null or undefined
             assertParamExists('deleteDestination', 'destinationId', destinationId)
             const localVarPath = `/notifications/v1/destinations/{destinationId}`
@@ -161,7 +161,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteSubscriptionById: async (subscriptionId: string, notificationType: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        deleteSubscriptionById: async (subscriptionId: string, notificationType: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'subscriptionId' is not null or undefined
             assertParamExists('deleteSubscriptionById', 'subscriptionId', subscriptionId)
             // verify required parameter 'notificationType' is not null or undefined
@@ -197,7 +197,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDestination: async (destinationId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getDestination: async (destinationId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'destinationId' is not null or undefined
             assertParamExists('getDestination', 'destinationId', destinationId)
             const localVarPath = `/notifications/v1/destinations/{destinationId}`
@@ -229,7 +229,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDestinations: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getDestinations: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/notifications/v1/destinations`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -260,7 +260,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSubscription: async (notificationType: string, payloadVersion?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getSubscription: async (notificationType: string, payloadVersion?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'notificationType' is not null or undefined
             assertParamExists('getSubscription', 'notificationType', notificationType)
             const localVarPath = `/notifications/v1/subscriptions/{notificationType}`
@@ -298,7 +298,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSubscriptionById: async (subscriptionId: string, notificationType: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getSubscriptionById: async (subscriptionId: string, notificationType: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'subscriptionId' is not null or undefined
             assertParamExists('getSubscriptionById', 'subscriptionId', subscriptionId)
             // verify required parameter 'notificationType' is not null or undefined
@@ -344,9 +344,11 @@ export const NotificationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createDestination(body: CreateDestinationRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateDestinationResponse>> {
+        async createDestination(body: CreateDestinationRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateDestinationResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createDestination(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['NotificationsApi.createDestination']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Creates a subscription for the specified notification type to be delivered to the specified destination. Before you can subscribe, you must first create the destination by calling the `createDestination` operation. In cases where the specified notification type supports multiple payload versions, you can utilize this API to subscribe to a different payload version if you already have an existing subscription for a different payload version.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -355,9 +357,11 @@ export const NotificationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createSubscription(notificationType: string, body: CreateSubscriptionRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateSubscriptionResponse>> {
+        async createSubscription(notificationType: string, body: CreateSubscriptionRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateSubscriptionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createSubscription(notificationType, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['NotificationsApi.createSubscription']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Deletes the destination that you specify. The `deleteDestination` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -365,9 +369,11 @@ export const NotificationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteDestination(destinationId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeleteDestinationResponse>> {
+        async deleteDestination(destinationId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeleteDestinationResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteDestination(destinationId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['NotificationsApi.deleteDestination']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The `deleteSubscriptionById` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -376,9 +382,11 @@ export const NotificationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteSubscriptionById(subscriptionId: string, notificationType: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeleteSubscriptionByIdResponse>> {
+        async deleteSubscriptionById(subscriptionId: string, notificationType: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeleteSubscriptionByIdResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteSubscriptionById(subscriptionId, notificationType, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['NotificationsApi.deleteSubscriptionById']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns information about the destination that you specify. The `getDestination` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -386,18 +394,22 @@ export const NotificationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getDestination(destinationId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDestinationResponse>> {
+        async getDestination(destinationId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDestinationResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getDestination(destinationId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['NotificationsApi.getDestination']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns information about all destinations. The `getDestinations` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getDestinations(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDestinationsResponse>> {
+        async getDestinations(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetDestinationsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getDestinations(options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['NotificationsApi.getDestinations']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns information about subscription of the specified notification type and payload version. `payloadVersion` is an optional parameter. When `payloadVersion` is not provided, it will return latest payload version subscription\'s information. You can use this API to get subscription information when you do not have a subscription identifier.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -406,9 +418,11 @@ export const NotificationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSubscription(notificationType: string, payloadVersion?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSubscriptionResponse>> {
+        async getSubscription(notificationType: string, payloadVersion?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSubscriptionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getSubscription(notificationType, payloadVersion, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['NotificationsApi.getSubscription']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns information about a subscription for the specified notification type. The `getSubscriptionById` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -417,9 +431,11 @@ export const NotificationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSubscriptionById(subscriptionId: string, notificationType: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSubscriptionByIdResponse>> {
+        async getSubscriptionById(subscriptionId: string, notificationType: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSubscriptionByIdResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getSubscriptionById(subscriptionId, notificationType, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['NotificationsApi.getSubscriptionById']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -437,7 +453,7 @@ export const NotificationsApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createDestination(requestParameters: NotificationsApiCreateDestinationRequest, options?: AxiosRequestConfig): AxiosPromise<CreateDestinationResponse> {
+        createDestination(requestParameters: NotificationsApiCreateDestinationRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateDestinationResponse> {
             return localVarFp.createDestination(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -446,7 +462,7 @@ export const NotificationsApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createSubscription(requestParameters: NotificationsApiCreateSubscriptionRequest, options?: AxiosRequestConfig): AxiosPromise<CreateSubscriptionResponse> {
+        createSubscription(requestParameters: NotificationsApiCreateSubscriptionRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateSubscriptionResponse> {
             return localVarFp.createSubscription(requestParameters.notificationType, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -455,7 +471,7 @@ export const NotificationsApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteDestination(requestParameters: NotificationsApiDeleteDestinationRequest, options?: AxiosRequestConfig): AxiosPromise<DeleteDestinationResponse> {
+        deleteDestination(requestParameters: NotificationsApiDeleteDestinationRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeleteDestinationResponse> {
             return localVarFp.deleteDestination(requestParameters.destinationId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -464,7 +480,7 @@ export const NotificationsApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteSubscriptionById(requestParameters: NotificationsApiDeleteSubscriptionByIdRequest, options?: AxiosRequestConfig): AxiosPromise<DeleteSubscriptionByIdResponse> {
+        deleteSubscriptionById(requestParameters: NotificationsApiDeleteSubscriptionByIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeleteSubscriptionByIdResponse> {
             return localVarFp.deleteSubscriptionById(requestParameters.subscriptionId, requestParameters.notificationType, options).then((request) => request(axios, basePath));
         },
         /**
@@ -473,7 +489,7 @@ export const NotificationsApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDestination(requestParameters: NotificationsApiGetDestinationRequest, options?: AxiosRequestConfig): AxiosPromise<GetDestinationResponse> {
+        getDestination(requestParameters: NotificationsApiGetDestinationRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetDestinationResponse> {
             return localVarFp.getDestination(requestParameters.destinationId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -481,7 +497,7 @@ export const NotificationsApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDestinations(options?: AxiosRequestConfig): AxiosPromise<GetDestinationsResponse> {
+        getDestinations(options?: RawAxiosRequestConfig): AxiosPromise<GetDestinationsResponse> {
             return localVarFp.getDestinations(options).then((request) => request(axios, basePath));
         },
         /**
@@ -490,7 +506,7 @@ export const NotificationsApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSubscription(requestParameters: NotificationsApiGetSubscriptionRequest, options?: AxiosRequestConfig): AxiosPromise<GetSubscriptionResponse> {
+        getSubscription(requestParameters: NotificationsApiGetSubscriptionRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetSubscriptionResponse> {
             return localVarFp.getSubscription(requestParameters.notificationType, requestParameters.payloadVersion, options).then((request) => request(axios, basePath));
         },
         /**
@@ -499,7 +515,7 @@ export const NotificationsApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSubscriptionById(requestParameters: NotificationsApiGetSubscriptionByIdRequest, options?: AxiosRequestConfig): AxiosPromise<GetSubscriptionByIdResponse> {
+        getSubscriptionById(requestParameters: NotificationsApiGetSubscriptionByIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetSubscriptionByIdResponse> {
             return localVarFp.getSubscriptionById(requestParameters.subscriptionId, requestParameters.notificationType, options).then((request) => request(axios, basePath));
         },
     };
@@ -645,7 +661,7 @@ export class NotificationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public createDestination(requestParameters: NotificationsApiCreateDestinationRequest, options?: AxiosRequestConfig) {
+    public createDestination(requestParameters: NotificationsApiCreateDestinationRequest, options?: RawAxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).createDestination(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -656,7 +672,7 @@ export class NotificationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public createSubscription(requestParameters: NotificationsApiCreateSubscriptionRequest, options?: AxiosRequestConfig) {
+    public createSubscription(requestParameters: NotificationsApiCreateSubscriptionRequest, options?: RawAxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).createSubscription(requestParameters.notificationType, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -667,7 +683,7 @@ export class NotificationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public deleteDestination(requestParameters: NotificationsApiDeleteDestinationRequest, options?: AxiosRequestConfig) {
+    public deleteDestination(requestParameters: NotificationsApiDeleteDestinationRequest, options?: RawAxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).deleteDestination(requestParameters.destinationId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -678,7 +694,7 @@ export class NotificationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public deleteSubscriptionById(requestParameters: NotificationsApiDeleteSubscriptionByIdRequest, options?: AxiosRequestConfig) {
+    public deleteSubscriptionById(requestParameters: NotificationsApiDeleteSubscriptionByIdRequest, options?: RawAxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).deleteSubscriptionById(requestParameters.subscriptionId, requestParameters.notificationType, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -689,7 +705,7 @@ export class NotificationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public getDestination(requestParameters: NotificationsApiGetDestinationRequest, options?: AxiosRequestConfig) {
+    public getDestination(requestParameters: NotificationsApiGetDestinationRequest, options?: RawAxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).getDestination(requestParameters.destinationId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -699,7 +715,7 @@ export class NotificationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public getDestinations(options?: AxiosRequestConfig) {
+    public getDestinations(options?: RawAxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).getDestinations(options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -710,7 +726,7 @@ export class NotificationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public getSubscription(requestParameters: NotificationsApiGetSubscriptionRequest, options?: AxiosRequestConfig) {
+    public getSubscription(requestParameters: NotificationsApiGetSubscriptionRequest, options?: RawAxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).getSubscription(requestParameters.notificationType, requestParameters.payloadVersion, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -721,7 +737,8 @@ export class NotificationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof NotificationsApi
      */
-    public getSubscriptionById(requestParameters: NotificationsApiGetSubscriptionByIdRequest, options?: AxiosRequestConfig) {
+    public getSubscriptionById(requestParameters: NotificationsApiGetSubscriptionByIdRequest, options?: RawAxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).getSubscriptionById(requestParameters.subscriptionId, requestParameters.notificationType, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

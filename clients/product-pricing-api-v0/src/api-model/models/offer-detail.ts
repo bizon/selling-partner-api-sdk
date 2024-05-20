@@ -15,28 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DetailedShippingTimeType } from './detailed-shipping-time-type';
+import type { DetailedShippingTimeType } from './detailed-shipping-time-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MoneyType } from './money-type';
+import type { MoneyType } from './money-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OfferCustomerType } from './offer-customer-type';
+import type { OfferCustomerType } from './offer-customer-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Points } from './points';
+import type { Points } from './points';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PrimeInformationType } from './prime-information-type';
+import type { PrimeInformationType } from './prime-information-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { QuantityDiscountPriceType } from './quantity-discount-price-type';
+import type { QuantityDiscountPriceType } from './quantity-discount-price-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SellerFeedbackType } from './seller-feedback-type';
+import type { SellerFeedbackType } from './seller-feedback-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipsFromType } from './ships-from-type';
+import type { ShipsFromType } from './ships-from-type';
 
 /**
  * 

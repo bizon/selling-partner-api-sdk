@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DecimalWithUnits } from './decimal-with-units';
+import type { DecimalWithUnits } from './decimal-with-units';
 // May contain unused imports in some cases
 // @ts-ignore
-import { DimensionType } from './dimension-type';
+import type { DimensionType } from './dimension-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { IdentifierType } from './identifier-type';
+import type { IdentifierType } from './identifier-type';
 
 /**
  * Specific variations of the item.

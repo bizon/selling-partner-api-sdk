@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { OrderItemsBuyerInfoList } from './order-items-buyer-info-list';
+import type { OrderItemsBuyerInfoList } from './order-items-buyer-info-list';
 
 /**
  * The response schema for the `getOrderItemsBuyerInfo` operation.

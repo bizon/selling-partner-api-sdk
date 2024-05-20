@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { WindowInput } from './window-input';
+import type { WindowInput } from './window-input';
 
 /**
  * The `updateShipmentDeliveryWindow` request.

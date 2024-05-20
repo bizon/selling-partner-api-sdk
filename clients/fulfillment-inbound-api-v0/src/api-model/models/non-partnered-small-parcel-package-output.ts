@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PackageStatus } from './package-status';
+import type { PackageStatus } from './package-status';
 
 /**
  * Carrier, tracking number, and status information for the package.

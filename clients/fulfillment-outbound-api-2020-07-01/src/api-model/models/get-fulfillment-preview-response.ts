@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { GetFulfillmentPreviewResult } from './get-fulfillment-preview-result';
+import type { GetFulfillmentPreviewResult } from './get-fulfillment-preview-result';
 
 /**
  * The response schema for the `getFulfillmentPreview` operation.

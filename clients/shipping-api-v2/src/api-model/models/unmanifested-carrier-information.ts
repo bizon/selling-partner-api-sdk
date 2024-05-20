@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { UnmanifestedShipmentLocation } from './unmanifested-shipment-location';
+import type { UnmanifestedShipmentLocation } from './unmanifested-shipment-location';
 
 /**
  * UnmanifestedCarrierInformation like carrierId CarrierName and Location

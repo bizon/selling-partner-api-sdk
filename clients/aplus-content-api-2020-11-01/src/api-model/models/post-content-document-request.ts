@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContentDocument } from './content-document';
+import type { ContentDocument } from './content-document';
 
 /**
  * 

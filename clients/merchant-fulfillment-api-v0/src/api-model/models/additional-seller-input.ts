@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CurrencyAmount } from './currency-amount';
+import type { CurrencyAmount } from './currency-amount';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Length } from './length';
+import type { Length } from './length';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Weight } from './weight';
+import type { Weight } from './weight';
 
 /**
  * Additional information required to purchase shipping.

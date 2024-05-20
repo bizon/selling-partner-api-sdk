@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ConfirmShipmentOrderItem } from './confirm-shipment-order-item';
+import type { ConfirmShipmentOrderItem } from './confirm-shipment-order-item';
 
 /**
  * Properties of packages

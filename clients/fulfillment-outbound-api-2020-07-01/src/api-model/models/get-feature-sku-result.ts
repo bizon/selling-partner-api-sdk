@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeatureSku } from './feature-sku';
+import type { FeatureSku } from './feature-sku';
 
 /**
  * The payload for the `getFeatureSKU` operation.

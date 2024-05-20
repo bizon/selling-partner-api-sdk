@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AvailabilityRecord } from './availability-record';
+import type { AvailabilityRecord } from './availability-record';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Warning } from './warning';
+import type { Warning } from './warning';
 
 /**
  * `UpdateScheduleRecord` entity contains the `AvailabilityRecord` if there is an error/warning while performing the requested operation on it.

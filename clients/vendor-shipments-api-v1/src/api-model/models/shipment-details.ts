@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Pagination } from './pagination';
+import type { Pagination } from './pagination';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Shipment } from './shipment';
+import type { Shipment } from './shipment';
 
 /**
  * The request schema for the GetShipmentDetails operation.

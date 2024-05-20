@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentShipmentItem } from './fulfillment-shipment-item';
+import type { FulfillmentShipmentItem } from './fulfillment-shipment-item';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FulfillmentShipmentPackage } from './fulfillment-shipment-package';
+import type { FulfillmentShipmentPackage } from './fulfillment-shipment-package';
 
 /**
  * Delivery and item information for a shipment in a fulfillment order.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CreateFeedResult } from './create-feed-result';
+import type { CreateFeedResult } from './create-feed-result';
 
 /**
  * Response schema.

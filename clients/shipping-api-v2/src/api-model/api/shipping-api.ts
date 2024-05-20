@@ -14,69 +14,69 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CancelShipmentResponse } from '../models';
+import type { CancelShipmentResponse } from '../models';
 // @ts-ignore
-import { DirectPurchaseRequest } from '../models';
+import type { DirectPurchaseRequest } from '../models';
 // @ts-ignore
-import { DirectPurchaseResponse } from '../models';
+import type { DirectPurchaseResponse } from '../models';
 // @ts-ignore
-import { ErrorList } from '../models';
+import type { ErrorList } from '../models';
 // @ts-ignore
-import { GenerateCollectionFormRequest } from '../models';
+import type { GenerateCollectionFormRequest } from '../models';
 // @ts-ignore
-import { GenerateCollectionFormResponse } from '../models';
+import type { GenerateCollectionFormResponse } from '../models';
 // @ts-ignore
-import { GetAccessPointsResponse } from '../models';
+import type { GetAccessPointsResponse } from '../models';
 // @ts-ignore
-import { GetAdditionalInputsResponse } from '../models';
+import type { GetAdditionalInputsResponse } from '../models';
 // @ts-ignore
-import { GetCarrierAccountFormInputsResponse } from '../models';
+import type { GetCarrierAccountFormInputsResponse } from '../models';
 // @ts-ignore
-import { GetCarrierAccountsRequest } from '../models';
+import type { GetCarrierAccountsRequest } from '../models';
 // @ts-ignore
-import { GetCarrierAccountsResponse } from '../models';
+import type { GetCarrierAccountsResponse } from '../models';
 // @ts-ignore
-import { GetCollectionFormHistoryRequest } from '../models';
+import type { GetCollectionFormHistoryRequest } from '../models';
 // @ts-ignore
-import { GetCollectionFormHistoryResponse } from '../models';
+import type { GetCollectionFormHistoryResponse } from '../models';
 // @ts-ignore
-import { GetCollectionFormResponse } from '../models';
+import type { GetCollectionFormResponse } from '../models';
 // @ts-ignore
-import { GetRatesRequest } from '../models';
+import type { GetRatesRequest } from '../models';
 // @ts-ignore
-import { GetRatesResponse } from '../models';
+import type { GetRatesResponse } from '../models';
 // @ts-ignore
-import { GetShipmentDocumentsResponse } from '../models';
+import type { GetShipmentDocumentsResponse } from '../models';
 // @ts-ignore
-import { GetTrackingResponse } from '../models';
+import type { GetTrackingResponse } from '../models';
 // @ts-ignore
-import { GetUnmanifestedShipmentsRequest } from '../models';
+import type { GetUnmanifestedShipmentsRequest } from '../models';
 // @ts-ignore
-import { GetUnmanifestedShipmentsResponse } from '../models';
+import type { GetUnmanifestedShipmentsResponse } from '../models';
 // @ts-ignore
-import { LinkCarrierAccountRequest } from '../models';
+import type { LinkCarrierAccountRequest } from '../models';
 // @ts-ignore
-import { LinkCarrierAccountResponse } from '../models';
+import type { LinkCarrierAccountResponse } from '../models';
 // @ts-ignore
-import { OneClickShipmentRequest } from '../models';
+import type { OneClickShipmentRequest } from '../models';
 // @ts-ignore
-import { OneClickShipmentResponse } from '../models';
+import type { OneClickShipmentResponse } from '../models';
 // @ts-ignore
-import { PurchaseShipmentRequest } from '../models';
+import type { PurchaseShipmentRequest } from '../models';
 // @ts-ignore
-import { PurchaseShipmentResponse } from '../models';
+import type { PurchaseShipmentResponse } from '../models';
 // @ts-ignore
-import { UnlinkCarrierAccountRequest } from '../models';
+import type { UnlinkCarrierAccountRequest } from '../models';
 // @ts-ignore
-import { UnlinkCarrierAccountResponse } from '../models';
+import type { UnlinkCarrierAccountResponse } from '../models';
 /**
  * ShippingApi - axios parameter creator
  * @export
@@ -86,11 +86,11 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * Cancels a purchased shipment. Returns an empty object if the shipment is successfully cancelled.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} shipmentId The shipment identifier originally returned by the purchaseShipment operation.
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {CancelShipmentXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelShipment: async (shipmentId: string, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        cancelShipment: async (shipmentId: string, xAmznShippingBusinessId?: CancelShipmentXAmznShippingBusinessIdEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('cancelShipment', 'shipmentId', shipmentId)
             const localVarPath = `/shipping/v2/shipments/{shipmentId}/cancel`
@@ -126,11 +126,11 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {DirectPurchaseRequest} body 
          * @param {string} [xAmznIdempotencyKey] A unique value which the server uses to recognize subsequent retries of the same request.
          * @param {string} [locale] The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA). The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary language subtags. 
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {DirectPurchaseShipmentXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        directPurchaseShipment: async (body: DirectPurchaseRequest, xAmznIdempotencyKey?: string, locale?: string, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        directPurchaseShipment: async (body: DirectPurchaseRequest, xAmznIdempotencyKey?: string, locale?: string, xAmznShippingBusinessId?: DirectPurchaseShipmentXAmznShippingBusinessIdEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('directPurchaseShipment', 'body', body)
             const localVarPath = `/shipping/v2/shipments/directPurchase`;
@@ -175,11 +175,11 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * This API  Call to generate the collection form.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {GenerateCollectionFormRequest} body 
          * @param {string} [xAmznIdempotencyKey] A unique value which the server uses to recognize subsequent retries of the same request.
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GenerateCollectionFormXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generateCollectionForm: async (body: GenerateCollectionFormRequest, xAmznIdempotencyKey?: string, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        generateCollectionForm: async (body: GenerateCollectionFormRequest, xAmznIdempotencyKey?: string, xAmznShippingBusinessId?: GenerateCollectionFormXAmznShippingBusinessIdEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('generateCollectionForm', 'body', body)
             const localVarPath = `/shipping/v2/collectionForms`;
@@ -218,14 +218,14 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * Returns a list of access points in proximity of input postal code.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {Array<'HELIX' | 'CAMPUS_LOCKER' | 'OMNI_LOCKER' | 'ODIN_LOCKER' | 'DOBBY_LOCKER' | 'CORE_LOCKER' | '3P' | 'CAMPUS_ROOM'>} accessPointTypes 
+         * @param {Array<GetAccessPointsAccessPointTypesEnum>} accessPointTypes 
          * @param {string} countryCode 
          * @param {string} postalCode 
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetAccessPointsXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAccessPoints: async (accessPointTypes: Array<'HELIX' | 'CAMPUS_LOCKER' | 'OMNI_LOCKER' | 'ODIN_LOCKER' | 'DOBBY_LOCKER' | 'CORE_LOCKER' | '3P' | 'CAMPUS_ROOM'>, countryCode: string, postalCode: string, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAccessPoints: async (accessPointTypes: Array<GetAccessPointsAccessPointTypesEnum>, countryCode: string, postalCode: string, xAmznShippingBusinessId?: GetAccessPointsXAmznShippingBusinessIdEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'accessPointTypes' is not null or undefined
             assertParamExists('getAccessPoints', 'accessPointTypes', accessPointTypes)
             // verify required parameter 'countryCode' is not null or undefined
@@ -275,11 +275,11 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * Returns the JSON schema to use for providing additional inputs when needed to purchase a shipping offering. Call the getAdditionalInputs operation when the response to a previous call to the getRates operation indicates that additional inputs are required for the rate (shipping offering) that you want to purchase.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} requestToken The request token returned in the response to the getRates operation.
          * @param {string} rateId The rate identifier for the shipping offering (rate) returned in the response to the getRates operation.
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetAdditionalInputsXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAdditionalInputs: async (requestToken: string, rateId: string, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAdditionalInputs: async (requestToken: string, rateId: string, xAmznShippingBusinessId?: GetAdditionalInputsXAmznShippingBusinessIdEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'requestToken' is not null or undefined
             assertParamExists('getAdditionalInputs', 'requestToken', requestToken)
             // verify required parameter 'rateId' is not null or undefined
@@ -321,11 +321,11 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * This API will return a list of input schema required to register a shipper account with the carrier.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCarrierAccountFormInputs: async (xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getCarrierAccountFormInputs: async (xAmznShippingBusinessId?: GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/shipping/v2/carrierAccountFormInputs`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -356,11 +356,11 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * This API will return Get all carrier accounts for a merchant.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {GetCarrierAccountsRequest} body 
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetCarrierAccountsXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCarrierAccounts: async (body: GetCarrierAccountsRequest, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getCarrierAccounts: async (body: GetCarrierAccountsRequest, xAmznShippingBusinessId?: GetCarrierAccountsXAmznShippingBusinessIdEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getCarrierAccounts', 'body', body)
             const localVarPath = `/shipping/v2/carrierAccounts`;
@@ -396,11 +396,11 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * This API reprint a collection form.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} collectionFormId collection form Id to reprint a collection.
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetCollectionFormXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCollectionForm: async (collectionFormId: string, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getCollectionForm: async (collectionFormId: string, xAmznShippingBusinessId?: GetCollectionFormXAmznShippingBusinessIdEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'collectionFormId' is not null or undefined
             assertParamExists('getCollectionForm', 'collectionFormId', collectionFormId)
             const localVarPath = `/shipping/v2/collectionForms/{collectionFormId}`
@@ -434,11 +434,11 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * This API Call to get the history of the previously generated collection forms.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {GetCollectionFormHistoryRequest} body 
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetCollectionFormHistoryXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCollectionFormHistory: async (body: GetCollectionFormHistoryRequest, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getCollectionFormHistory: async (body: GetCollectionFormHistoryRequest, xAmznShippingBusinessId?: GetCollectionFormHistoryXAmznShippingBusinessIdEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getCollectionFormHistory', 'body', body)
             const localVarPath = `/shipping/v2/collectionForms/history`;
@@ -474,11 +474,11 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * Returns the available shipping service offerings.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {GetRatesRequest} body 
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetRatesXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRates: async (body: GetRatesRequest, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getRates: async (body: GetRatesRequest, xAmznShippingBusinessId?: GetRatesXAmznShippingBusinessIdEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getRates', 'body', body)
             const localVarPath = `/shipping/v2/shipments/rates`;
@@ -517,11 +517,11 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} packageClientReferenceId The package client reference identifier originally provided in the request body parameter for the getRates operation.
          * @param {string} [format] The file format of the document. Must be one of the supported formats returned by the getRates operation.
          * @param {number} [dpi] The resolution of the document (for example, 300 means 300 dots per inch). Must be one of the supported resolutions returned in the response to the getRates operation.
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetShipmentDocumentsXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipmentDocuments: async (shipmentId: string, packageClientReferenceId: string, format?: string, dpi?: number, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getShipmentDocuments: async (shipmentId: string, packageClientReferenceId: string, format?: string, dpi?: number, xAmznShippingBusinessId?: GetShipmentDocumentsXAmznShippingBusinessIdEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getShipmentDocuments', 'shipmentId', shipmentId)
             // verify required parameter 'packageClientReferenceId' is not null or undefined
@@ -570,11 +570,11 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * Returns tracking information for a purchased shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} trackingId A carrier-generated tracking identifier originally returned by the purchaseShipment operation.
          * @param {string} carrierId A carrier identifier originally returned by the getRates operation for the selected rate.
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetTrackingXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTracking: async (trackingId: string, carrierId: string, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getTracking: async (trackingId: string, carrierId: string, xAmznShippingBusinessId?: GetTrackingXAmznShippingBusinessIdEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'trackingId' is not null or undefined
             assertParamExists('getTracking', 'trackingId', trackingId)
             // verify required parameter 'carrierId' is not null or undefined
@@ -617,11 +617,11 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * This API Get all unmanifested carriers with shipment locations. Any locations which has unmanifested shipments         with an eligible carrier for manifesting shall be returned.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {GetUnmanifestedShipmentsRequest} body 
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getUnmanifestedShipments: async (body: GetUnmanifestedShipmentsRequest, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getUnmanifestedShipments: async (body: GetUnmanifestedShipmentsRequest, xAmznShippingBusinessId?: GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getUnmanifestedShipments', 'body', body)
             const localVarPath = `/shipping/v2/unmanifestedShipments`;
@@ -658,11 +658,11 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * This API associates/links the specified carrier account with the merchant.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} carrierId The unique identifier associated with the carrier account.
          * @param {LinkCarrierAccountRequest} body 
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {LinkCarrierAccountXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        linkCarrierAccount: async (carrierId: string, body: LinkCarrierAccountRequest, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        linkCarrierAccount: async (carrierId: string, body: LinkCarrierAccountRequest, xAmznShippingBusinessId?: LinkCarrierAccountXAmznShippingBusinessIdEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'carrierId' is not null or undefined
             assertParamExists('linkCarrierAccount', 'carrierId', carrierId)
             // verify required parameter 'body' is not null or undefined
@@ -701,11 +701,11 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * Purchases a shipping service identifier and returns purchase-related details and documents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {OneClickShipmentRequest} body 
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {OneClickShipmentXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        oneClickShipment: async (body: OneClickShipmentRequest, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        oneClickShipment: async (body: OneClickShipmentRequest, xAmznShippingBusinessId?: OneClickShipmentXAmznShippingBusinessIdEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('oneClickShipment', 'body', body)
             const localVarPath = `/shipping/v2/oneClickShipment`;
@@ -742,11 +742,11 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * Purchases a shipping service and returns purchase related details and documents.  Note: You must complete the purchase within 10 minutes of rate creation by the shipping service provider. If you make the request after the 10 minutes have expired, you will receive an error response with the error code equal to \"TOKEN_EXPIRED\". If you receive this error response, you must get the rates for the shipment again.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {PurchaseShipmentRequest} body 
          * @param {string} [xAmznIdempotencyKey] A unique value which the server uses to recognize subsequent retries of the same request.
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {PurchaseShipmentXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        purchaseShipment: async (body: PurchaseShipmentRequest, xAmznIdempotencyKey?: string, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        purchaseShipment: async (body: PurchaseShipmentRequest, xAmznIdempotencyKey?: string, xAmznShippingBusinessId?: PurchaseShipmentXAmznShippingBusinessIdEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('purchaseShipment', 'body', body)
             const localVarPath = `/shipping/v2/shipments`;
@@ -787,11 +787,11 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
          * This API Unlink the specified carrier account with the merchant.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} carrierId carrier Id to unlink with merchant.
          * @param {UnlinkCarrierAccountRequest} body 
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {UnlinkCarrierAccountXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        unlinkCarrierAccount: async (carrierId: string, body: UnlinkCarrierAccountRequest, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        unlinkCarrierAccount: async (carrierId: string, body: UnlinkCarrierAccountRequest, xAmznShippingBusinessId?: UnlinkCarrierAccountXAmznShippingBusinessIdEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'carrierId' is not null or undefined
             assertParamExists('unlinkCarrierAccount', 'carrierId', carrierId)
             // verify required parameter 'body' is not null or undefined
@@ -840,117 +840,137 @@ export const ShippingApiFp = function(configuration?: Configuration) {
         /**
          * Cancels a purchased shipment. Returns an empty object if the shipment is successfully cancelled.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} shipmentId The shipment identifier originally returned by the purchaseShipment operation.
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {CancelShipmentXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelShipment(shipmentId: string, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelShipmentResponse>> {
+        async cancelShipment(shipmentId: string, xAmznShippingBusinessId?: CancelShipmentXAmznShippingBusinessIdEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelShipment(shipmentId, xAmznShippingBusinessId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.cancelShipment']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Purchases the shipping service for a shipment using the best fit service offering. Returns purchase related details and documents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {DirectPurchaseRequest} body 
          * @param {string} [xAmznIdempotencyKey] A unique value which the server uses to recognize subsequent retries of the same request.
          * @param {string} [locale] The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA). The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary language subtags. 
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {DirectPurchaseShipmentXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async directPurchaseShipment(body: DirectPurchaseRequest, xAmznIdempotencyKey?: string, locale?: string, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DirectPurchaseResponse>> {
+        async directPurchaseShipment(body: DirectPurchaseRequest, xAmznIdempotencyKey?: string, locale?: string, xAmznShippingBusinessId?: DirectPurchaseShipmentXAmznShippingBusinessIdEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DirectPurchaseResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.directPurchaseShipment(body, xAmznIdempotencyKey, locale, xAmznShippingBusinessId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.directPurchaseShipment']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * This API  Call to generate the collection form.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {GenerateCollectionFormRequest} body 
          * @param {string} [xAmznIdempotencyKey] A unique value which the server uses to recognize subsequent retries of the same request.
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GenerateCollectionFormXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async generateCollectionForm(body: GenerateCollectionFormRequest, xAmznIdempotencyKey?: string, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GenerateCollectionFormResponse>> {
+        async generateCollectionForm(body: GenerateCollectionFormRequest, xAmznIdempotencyKey?: string, xAmznShippingBusinessId?: GenerateCollectionFormXAmznShippingBusinessIdEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GenerateCollectionFormResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.generateCollectionForm(body, xAmznIdempotencyKey, xAmznShippingBusinessId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.generateCollectionForm']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns a list of access points in proximity of input postal code.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {Array<'HELIX' | 'CAMPUS_LOCKER' | 'OMNI_LOCKER' | 'ODIN_LOCKER' | 'DOBBY_LOCKER' | 'CORE_LOCKER' | '3P' | 'CAMPUS_ROOM'>} accessPointTypes 
+         * @param {Array<GetAccessPointsAccessPointTypesEnum>} accessPointTypes 
          * @param {string} countryCode 
          * @param {string} postalCode 
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetAccessPointsXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAccessPoints(accessPointTypes: Array<'HELIX' | 'CAMPUS_LOCKER' | 'OMNI_LOCKER' | 'ODIN_LOCKER' | 'DOBBY_LOCKER' | 'CORE_LOCKER' | '3P' | 'CAMPUS_ROOM'>, countryCode: string, postalCode: string, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAccessPointsResponse>> {
+        async getAccessPoints(accessPointTypes: Array<GetAccessPointsAccessPointTypesEnum>, countryCode: string, postalCode: string, xAmznShippingBusinessId?: GetAccessPointsXAmznShippingBusinessIdEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAccessPointsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAccessPoints(accessPointTypes, countryCode, postalCode, xAmznShippingBusinessId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.getAccessPoints']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the JSON schema to use for providing additional inputs when needed to purchase a shipping offering. Call the getAdditionalInputs operation when the response to a previous call to the getRates operation indicates that additional inputs are required for the rate (shipping offering) that you want to purchase.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} requestToken The request token returned in the response to the getRates operation.
          * @param {string} rateId The rate identifier for the shipping offering (rate) returned in the response to the getRates operation.
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetAdditionalInputsXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAdditionalInputs(requestToken: string, rateId: string, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAdditionalInputsResponse>> {
+        async getAdditionalInputs(requestToken: string, rateId: string, xAmznShippingBusinessId?: GetAdditionalInputsXAmznShippingBusinessIdEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetAdditionalInputsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAdditionalInputs(requestToken, rateId, xAmznShippingBusinessId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.getAdditionalInputs']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * This API will return a list of input schema required to register a shipper account with the carrier.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCarrierAccountFormInputs(xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCarrierAccountFormInputsResponse>> {
+        async getCarrierAccountFormInputs(xAmznShippingBusinessId?: GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCarrierAccountFormInputsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCarrierAccountFormInputs(xAmznShippingBusinessId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.getCarrierAccountFormInputs']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * This API will return Get all carrier accounts for a merchant.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {GetCarrierAccountsRequest} body 
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetCarrierAccountsXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCarrierAccounts(body: GetCarrierAccountsRequest, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCarrierAccountsResponse>> {
+        async getCarrierAccounts(body: GetCarrierAccountsRequest, xAmznShippingBusinessId?: GetCarrierAccountsXAmznShippingBusinessIdEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCarrierAccountsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCarrierAccounts(body, xAmznShippingBusinessId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.getCarrierAccounts']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * This API reprint a collection form.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} collectionFormId collection form Id to reprint a collection.
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetCollectionFormXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCollectionForm(collectionFormId: string, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCollectionFormResponse>> {
+        async getCollectionForm(collectionFormId: string, xAmznShippingBusinessId?: GetCollectionFormXAmznShippingBusinessIdEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCollectionFormResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCollectionForm(collectionFormId, xAmznShippingBusinessId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.getCollectionForm']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * This API Call to get the history of the previously generated collection forms.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {GetCollectionFormHistoryRequest} body 
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetCollectionFormHistoryXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCollectionFormHistory(body: GetCollectionFormHistoryRequest, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCollectionFormHistoryResponse>> {
+        async getCollectionFormHistory(body: GetCollectionFormHistoryRequest, xAmznShippingBusinessId?: GetCollectionFormHistoryXAmznShippingBusinessIdEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetCollectionFormHistoryResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCollectionFormHistory(body, xAmznShippingBusinessId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.getCollectionFormHistory']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the available shipping service offerings.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {GetRatesRequest} body 
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetRatesXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getRates(body: GetRatesRequest, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetRatesResponse>> {
+        async getRates(body: GetRatesRequest, xAmznShippingBusinessId?: GetRatesXAmznShippingBusinessIdEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetRatesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getRates(body, xAmznShippingBusinessId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.getRates']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the shipping documents associated with a package in a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -958,83 +978,97 @@ export const ShippingApiFp = function(configuration?: Configuration) {
          * @param {string} packageClientReferenceId The package client reference identifier originally provided in the request body parameter for the getRates operation.
          * @param {string} [format] The file format of the document. Must be one of the supported formats returned by the getRates operation.
          * @param {number} [dpi] The resolution of the document (for example, 300 means 300 dots per inch). Must be one of the supported resolutions returned in the response to the getRates operation.
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetShipmentDocumentsXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShipmentDocuments(shipmentId: string, packageClientReferenceId: string, format?: string, dpi?: number, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentDocumentsResponse>> {
+        async getShipmentDocuments(shipmentId: string, packageClientReferenceId: string, format?: string, dpi?: number, xAmznShippingBusinessId?: GetShipmentDocumentsXAmznShippingBusinessIdEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentDocumentsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShipmentDocuments(shipmentId, packageClientReferenceId, format, dpi, xAmznShippingBusinessId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.getShipmentDocuments']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns tracking information for a purchased shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} trackingId A carrier-generated tracking identifier originally returned by the purchaseShipment operation.
          * @param {string} carrierId A carrier identifier originally returned by the getRates operation for the selected rate.
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetTrackingXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTracking(trackingId: string, carrierId: string, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetTrackingResponse>> {
+        async getTracking(trackingId: string, carrierId: string, xAmznShippingBusinessId?: GetTrackingXAmznShippingBusinessIdEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetTrackingResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getTracking(trackingId, carrierId, xAmznShippingBusinessId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.getTracking']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * This API Get all unmanifested carriers with shipment locations. Any locations which has unmanifested shipments         with an eligible carrier for manifesting shall be returned.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {GetUnmanifestedShipmentsRequest} body 
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getUnmanifestedShipments(body: GetUnmanifestedShipmentsRequest, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetUnmanifestedShipmentsResponse>> {
+        async getUnmanifestedShipments(body: GetUnmanifestedShipmentsRequest, xAmznShippingBusinessId?: GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetUnmanifestedShipmentsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getUnmanifestedShipments(body, xAmznShippingBusinessId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.getUnmanifestedShipments']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * This API associates/links the specified carrier account with the merchant.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} carrierId The unique identifier associated with the carrier account.
          * @param {LinkCarrierAccountRequest} body 
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {LinkCarrierAccountXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async linkCarrierAccount(carrierId: string, body: LinkCarrierAccountRequest, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LinkCarrierAccountResponse>> {
+        async linkCarrierAccount(carrierId: string, body: LinkCarrierAccountRequest, xAmznShippingBusinessId?: LinkCarrierAccountXAmznShippingBusinessIdEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LinkCarrierAccountResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.linkCarrierAccount(carrierId, body, xAmznShippingBusinessId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.linkCarrierAccount']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Purchases a shipping service identifier and returns purchase-related details and documents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {OneClickShipmentRequest} body 
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {OneClickShipmentXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async oneClickShipment(body: OneClickShipmentRequest, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OneClickShipmentResponse>> {
+        async oneClickShipment(body: OneClickShipmentRequest, xAmznShippingBusinessId?: OneClickShipmentXAmznShippingBusinessIdEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OneClickShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.oneClickShipment(body, xAmznShippingBusinessId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.oneClickShipment']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Purchases a shipping service and returns purchase related details and documents.  Note: You must complete the purchase within 10 minutes of rate creation by the shipping service provider. If you make the request after the 10 minutes have expired, you will receive an error response with the error code equal to \"TOKEN_EXPIRED\". If you receive this error response, you must get the rates for the shipment again.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {PurchaseShipmentRequest} body 
          * @param {string} [xAmznIdempotencyKey] A unique value which the server uses to recognize subsequent retries of the same request.
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {PurchaseShipmentXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async purchaseShipment(body: PurchaseShipmentRequest, xAmznIdempotencyKey?: string, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PurchaseShipmentResponse>> {
+        async purchaseShipment(body: PurchaseShipmentRequest, xAmznIdempotencyKey?: string, xAmznShippingBusinessId?: PurchaseShipmentXAmznShippingBusinessIdEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PurchaseShipmentResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.purchaseShipment(body, xAmznIdempotencyKey, xAmznShippingBusinessId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.purchaseShipment']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * This API Unlink the specified carrier account with the merchant.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 80 | 100 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} carrierId carrier Id to unlink with merchant.
          * @param {UnlinkCarrierAccountRequest} body 
-         * @param {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+         * @param {UnlinkCarrierAccountXAmznShippingBusinessIdEnum} [xAmznShippingBusinessId] Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async unlinkCarrierAccount(carrierId: string, body: UnlinkCarrierAccountRequest, xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UnlinkCarrierAccountResponse>> {
+        async unlinkCarrierAccount(carrierId: string, body: UnlinkCarrierAccountRequest, xAmznShippingBusinessId?: UnlinkCarrierAccountXAmznShippingBusinessIdEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UnlinkCarrierAccountResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.unlinkCarrierAccount(carrierId, body, xAmznShippingBusinessId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ShippingApi.unlinkCarrierAccount']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -1052,7 +1086,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelShipment(requestParameters: ShippingApiCancelShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<CancelShipmentResponse> {
+        cancelShipment(requestParameters: ShippingApiCancelShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<CancelShipmentResponse> {
             return localVarFp.cancelShipment(requestParameters.shipmentId, requestParameters.xAmznShippingBusinessId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1061,7 +1095,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        directPurchaseShipment(requestParameters: ShippingApiDirectPurchaseShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<DirectPurchaseResponse> {
+        directPurchaseShipment(requestParameters: ShippingApiDirectPurchaseShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<DirectPurchaseResponse> {
             return localVarFp.directPurchaseShipment(requestParameters.body, requestParameters.xAmznIdempotencyKey, requestParameters.locale, requestParameters.xAmznShippingBusinessId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1070,7 +1104,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generateCollectionForm(requestParameters: ShippingApiGenerateCollectionFormRequest, options?: AxiosRequestConfig): AxiosPromise<GenerateCollectionFormResponse> {
+        generateCollectionForm(requestParameters: ShippingApiGenerateCollectionFormRequest, options?: RawAxiosRequestConfig): AxiosPromise<GenerateCollectionFormResponse> {
             return localVarFp.generateCollectionForm(requestParameters.body, requestParameters.xAmznIdempotencyKey, requestParameters.xAmznShippingBusinessId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1079,7 +1113,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAccessPoints(requestParameters: ShippingApiGetAccessPointsRequest, options?: AxiosRequestConfig): AxiosPromise<GetAccessPointsResponse> {
+        getAccessPoints(requestParameters: ShippingApiGetAccessPointsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetAccessPointsResponse> {
             return localVarFp.getAccessPoints(requestParameters.accessPointTypes, requestParameters.countryCode, requestParameters.postalCode, requestParameters.xAmznShippingBusinessId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1088,7 +1122,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAdditionalInputs(requestParameters: ShippingApiGetAdditionalInputsRequest, options?: AxiosRequestConfig): AxiosPromise<GetAdditionalInputsResponse> {
+        getAdditionalInputs(requestParameters: ShippingApiGetAdditionalInputsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetAdditionalInputsResponse> {
             return localVarFp.getAdditionalInputs(requestParameters.requestToken, requestParameters.rateId, requestParameters.xAmznShippingBusinessId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1097,7 +1131,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCarrierAccountFormInputs(requestParameters: ShippingApiGetCarrierAccountFormInputsRequest = {}, options?: AxiosRequestConfig): AxiosPromise<GetCarrierAccountFormInputsResponse> {
+        getCarrierAccountFormInputs(requestParameters: ShippingApiGetCarrierAccountFormInputsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<GetCarrierAccountFormInputsResponse> {
             return localVarFp.getCarrierAccountFormInputs(requestParameters.xAmznShippingBusinessId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1106,7 +1140,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCarrierAccounts(requestParameters: ShippingApiGetCarrierAccountsRequest, options?: AxiosRequestConfig): AxiosPromise<GetCarrierAccountsResponse> {
+        getCarrierAccounts(requestParameters: ShippingApiGetCarrierAccountsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetCarrierAccountsResponse> {
             return localVarFp.getCarrierAccounts(requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1115,7 +1149,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCollectionForm(requestParameters: ShippingApiGetCollectionFormRequest, options?: AxiosRequestConfig): AxiosPromise<GetCollectionFormResponse> {
+        getCollectionForm(requestParameters: ShippingApiGetCollectionFormRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetCollectionFormResponse> {
             return localVarFp.getCollectionForm(requestParameters.collectionFormId, requestParameters.xAmznShippingBusinessId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1124,7 +1158,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCollectionFormHistory(requestParameters: ShippingApiGetCollectionFormHistoryRequest, options?: AxiosRequestConfig): AxiosPromise<GetCollectionFormHistoryResponse> {
+        getCollectionFormHistory(requestParameters: ShippingApiGetCollectionFormHistoryRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetCollectionFormHistoryResponse> {
             return localVarFp.getCollectionFormHistory(requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1133,7 +1167,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRates(requestParameters: ShippingApiGetRatesRequest, options?: AxiosRequestConfig): AxiosPromise<GetRatesResponse> {
+        getRates(requestParameters: ShippingApiGetRatesRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetRatesResponse> {
             return localVarFp.getRates(requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1142,7 +1176,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipmentDocuments(requestParameters: ShippingApiGetShipmentDocumentsRequest, options?: AxiosRequestConfig): AxiosPromise<GetShipmentDocumentsResponse> {
+        getShipmentDocuments(requestParameters: ShippingApiGetShipmentDocumentsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetShipmentDocumentsResponse> {
             return localVarFp.getShipmentDocuments(requestParameters.shipmentId, requestParameters.packageClientReferenceId, requestParameters.format, requestParameters.dpi, requestParameters.xAmznShippingBusinessId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1151,7 +1185,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTracking(requestParameters: ShippingApiGetTrackingRequest, options?: AxiosRequestConfig): AxiosPromise<GetTrackingResponse> {
+        getTracking(requestParameters: ShippingApiGetTrackingRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetTrackingResponse> {
             return localVarFp.getTracking(requestParameters.trackingId, requestParameters.carrierId, requestParameters.xAmznShippingBusinessId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1160,7 +1194,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getUnmanifestedShipments(requestParameters: ShippingApiGetUnmanifestedShipmentsRequest, options?: AxiosRequestConfig): AxiosPromise<GetUnmanifestedShipmentsResponse> {
+        getUnmanifestedShipments(requestParameters: ShippingApiGetUnmanifestedShipmentsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetUnmanifestedShipmentsResponse> {
             return localVarFp.getUnmanifestedShipments(requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1169,7 +1203,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        linkCarrierAccount(requestParameters: ShippingApiLinkCarrierAccountRequest, options?: AxiosRequestConfig): AxiosPromise<LinkCarrierAccountResponse> {
+        linkCarrierAccount(requestParameters: ShippingApiLinkCarrierAccountRequest, options?: RawAxiosRequestConfig): AxiosPromise<LinkCarrierAccountResponse> {
             return localVarFp.linkCarrierAccount(requestParameters.carrierId, requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1178,7 +1212,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        oneClickShipment(requestParameters: ShippingApiOneClickShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<OneClickShipmentResponse> {
+        oneClickShipment(requestParameters: ShippingApiOneClickShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<OneClickShipmentResponse> {
             return localVarFp.oneClickShipment(requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1187,7 +1221,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        purchaseShipment(requestParameters: ShippingApiPurchaseShipmentRequest, options?: AxiosRequestConfig): AxiosPromise<PurchaseShipmentResponse> {
+        purchaseShipment(requestParameters: ShippingApiPurchaseShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<PurchaseShipmentResponse> {
             return localVarFp.purchaseShipment(requestParameters.body, requestParameters.xAmznIdempotencyKey, requestParameters.xAmznShippingBusinessId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1196,7 +1230,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        unlinkCarrierAccount(requestParameters: ShippingApiUnlinkCarrierAccountRequest, options?: AxiosRequestConfig): AxiosPromise<UnlinkCarrierAccountResponse> {
+        unlinkCarrierAccount(requestParameters: ShippingApiUnlinkCarrierAccountRequest, options?: RawAxiosRequestConfig): AxiosPromise<UnlinkCarrierAccountResponse> {
             return localVarFp.unlinkCarrierAccount(requestParameters.carrierId, requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(axios, basePath));
         },
     };
@@ -1220,7 +1254,7 @@ export interface ShippingApiCancelShipmentRequest {
      * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
      * @memberof ShippingApiCancelShipment
      */
-    readonly xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'
+    readonly xAmznShippingBusinessId?: CancelShipmentXAmznShippingBusinessIdEnum
 }
 
 /**
@@ -1255,7 +1289,7 @@ export interface ShippingApiDirectPurchaseShipmentRequest {
      * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
      * @memberof ShippingApiDirectPurchaseShipment
      */
-    readonly xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'
+    readonly xAmznShippingBusinessId?: DirectPurchaseShipmentXAmznShippingBusinessIdEnum
 }
 
 /**
@@ -1283,7 +1317,7 @@ export interface ShippingApiGenerateCollectionFormRequest {
      * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
      * @memberof ShippingApiGenerateCollectionForm
      */
-    readonly xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'
+    readonly xAmznShippingBusinessId?: GenerateCollectionFormXAmznShippingBusinessIdEnum
 }
 
 /**
@@ -1297,7 +1331,7 @@ export interface ShippingApiGetAccessPointsRequest {
      * @type {Array<'HELIX' | 'CAMPUS_LOCKER' | 'OMNI_LOCKER' | 'ODIN_LOCKER' | 'DOBBY_LOCKER' | 'CORE_LOCKER' | '3P' | 'CAMPUS_ROOM'>}
      * @memberof ShippingApiGetAccessPoints
      */
-    readonly accessPointTypes: Array<'HELIX' | 'CAMPUS_LOCKER' | 'OMNI_LOCKER' | 'ODIN_LOCKER' | 'DOBBY_LOCKER' | 'CORE_LOCKER' | '3P' | 'CAMPUS_ROOM'>
+    readonly accessPointTypes: Array<GetAccessPointsAccessPointTypesEnum>
 
     /**
      * 
@@ -1318,7 +1352,7 @@ export interface ShippingApiGetAccessPointsRequest {
      * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
      * @memberof ShippingApiGetAccessPoints
      */
-    readonly xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'
+    readonly xAmznShippingBusinessId?: GetAccessPointsXAmznShippingBusinessIdEnum
 }
 
 /**
@@ -1346,7 +1380,7 @@ export interface ShippingApiGetAdditionalInputsRequest {
      * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
      * @memberof ShippingApiGetAdditionalInputs
      */
-    readonly xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'
+    readonly xAmznShippingBusinessId?: GetAdditionalInputsXAmznShippingBusinessIdEnum
 }
 
 /**
@@ -1360,7 +1394,7 @@ export interface ShippingApiGetCarrierAccountFormInputsRequest {
      * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
      * @memberof ShippingApiGetCarrierAccountFormInputs
      */
-    readonly xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'
+    readonly xAmznShippingBusinessId?: GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum
 }
 
 /**
@@ -1381,7 +1415,7 @@ export interface ShippingApiGetCarrierAccountsRequest {
      * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
      * @memberof ShippingApiGetCarrierAccounts
      */
-    readonly xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'
+    readonly xAmznShippingBusinessId?: GetCarrierAccountsXAmznShippingBusinessIdEnum
 }
 
 /**
@@ -1402,7 +1436,7 @@ export interface ShippingApiGetCollectionFormRequest {
      * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
      * @memberof ShippingApiGetCollectionForm
      */
-    readonly xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'
+    readonly xAmznShippingBusinessId?: GetCollectionFormXAmznShippingBusinessIdEnum
 }
 
 /**
@@ -1423,7 +1457,7 @@ export interface ShippingApiGetCollectionFormHistoryRequest {
      * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
      * @memberof ShippingApiGetCollectionFormHistory
      */
-    readonly xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'
+    readonly xAmznShippingBusinessId?: GetCollectionFormHistoryXAmznShippingBusinessIdEnum
 }
 
 /**
@@ -1444,7 +1478,7 @@ export interface ShippingApiGetRatesRequest {
      * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
      * @memberof ShippingApiGetRates
      */
-    readonly xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'
+    readonly xAmznShippingBusinessId?: GetRatesXAmznShippingBusinessIdEnum
 }
 
 /**
@@ -1486,7 +1520,7 @@ export interface ShippingApiGetShipmentDocumentsRequest {
      * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
      * @memberof ShippingApiGetShipmentDocuments
      */
-    readonly xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'
+    readonly xAmznShippingBusinessId?: GetShipmentDocumentsXAmznShippingBusinessIdEnum
 }
 
 /**
@@ -1514,7 +1548,7 @@ export interface ShippingApiGetTrackingRequest {
      * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
      * @memberof ShippingApiGetTracking
      */
-    readonly xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'
+    readonly xAmznShippingBusinessId?: GetTrackingXAmznShippingBusinessIdEnum
 }
 
 /**
@@ -1535,7 +1569,7 @@ export interface ShippingApiGetUnmanifestedShipmentsRequest {
      * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
      * @memberof ShippingApiGetUnmanifestedShipments
      */
-    readonly xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'
+    readonly xAmznShippingBusinessId?: GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum
 }
 
 /**
@@ -1563,7 +1597,7 @@ export interface ShippingApiLinkCarrierAccountRequest {
      * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
      * @memberof ShippingApiLinkCarrierAccount
      */
-    readonly xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'
+    readonly xAmznShippingBusinessId?: LinkCarrierAccountXAmznShippingBusinessIdEnum
 }
 
 /**
@@ -1584,7 +1618,7 @@ export interface ShippingApiOneClickShipmentRequest {
      * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
      * @memberof ShippingApiOneClickShipment
      */
-    readonly xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'
+    readonly xAmznShippingBusinessId?: OneClickShipmentXAmznShippingBusinessIdEnum
 }
 
 /**
@@ -1612,7 +1646,7 @@ export interface ShippingApiPurchaseShipmentRequest {
      * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
      * @memberof ShippingApiPurchaseShipment
      */
-    readonly xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'
+    readonly xAmznShippingBusinessId?: PurchaseShipmentXAmznShippingBusinessIdEnum
 }
 
 /**
@@ -1640,7 +1674,7 @@ export interface ShippingApiUnlinkCarrierAccountRequest {
      * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
      * @memberof ShippingApiUnlinkCarrierAccount
      */
-    readonly xAmznShippingBusinessId?: 'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'
+    readonly xAmznShippingBusinessId?: UnlinkCarrierAccountXAmznShippingBusinessIdEnum
 }
 
 /**
@@ -1657,7 +1691,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public cancelShipment(requestParameters: ShippingApiCancelShipmentRequest, options?: AxiosRequestConfig) {
+    public cancelShipment(requestParameters: ShippingApiCancelShipmentRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).cancelShipment(requestParameters.shipmentId, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1668,7 +1702,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public directPurchaseShipment(requestParameters: ShippingApiDirectPurchaseShipmentRequest, options?: AxiosRequestConfig) {
+    public directPurchaseShipment(requestParameters: ShippingApiDirectPurchaseShipmentRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).directPurchaseShipment(requestParameters.body, requestParameters.xAmznIdempotencyKey, requestParameters.locale, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1679,7 +1713,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public generateCollectionForm(requestParameters: ShippingApiGenerateCollectionFormRequest, options?: AxiosRequestConfig) {
+    public generateCollectionForm(requestParameters: ShippingApiGenerateCollectionFormRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).generateCollectionForm(requestParameters.body, requestParameters.xAmznIdempotencyKey, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1690,7 +1724,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getAccessPoints(requestParameters: ShippingApiGetAccessPointsRequest, options?: AxiosRequestConfig) {
+    public getAccessPoints(requestParameters: ShippingApiGetAccessPointsRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getAccessPoints(requestParameters.accessPointTypes, requestParameters.countryCode, requestParameters.postalCode, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1701,7 +1735,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getAdditionalInputs(requestParameters: ShippingApiGetAdditionalInputsRequest, options?: AxiosRequestConfig) {
+    public getAdditionalInputs(requestParameters: ShippingApiGetAdditionalInputsRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getAdditionalInputs(requestParameters.requestToken, requestParameters.rateId, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1712,7 +1746,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getCarrierAccountFormInputs(requestParameters: ShippingApiGetCarrierAccountFormInputsRequest = {}, options?: AxiosRequestConfig) {
+    public getCarrierAccountFormInputs(requestParameters: ShippingApiGetCarrierAccountFormInputsRequest = {}, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getCarrierAccountFormInputs(requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1723,7 +1757,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getCarrierAccounts(requestParameters: ShippingApiGetCarrierAccountsRequest, options?: AxiosRequestConfig) {
+    public getCarrierAccounts(requestParameters: ShippingApiGetCarrierAccountsRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getCarrierAccounts(requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1734,7 +1768,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getCollectionForm(requestParameters: ShippingApiGetCollectionFormRequest, options?: AxiosRequestConfig) {
+    public getCollectionForm(requestParameters: ShippingApiGetCollectionFormRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getCollectionForm(requestParameters.collectionFormId, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1745,7 +1779,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getCollectionFormHistory(requestParameters: ShippingApiGetCollectionFormHistoryRequest, options?: AxiosRequestConfig) {
+    public getCollectionFormHistory(requestParameters: ShippingApiGetCollectionFormHistoryRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getCollectionFormHistory(requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1756,7 +1790,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getRates(requestParameters: ShippingApiGetRatesRequest, options?: AxiosRequestConfig) {
+    public getRates(requestParameters: ShippingApiGetRatesRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getRates(requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1767,7 +1801,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getShipmentDocuments(requestParameters: ShippingApiGetShipmentDocumentsRequest, options?: AxiosRequestConfig) {
+    public getShipmentDocuments(requestParameters: ShippingApiGetShipmentDocumentsRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getShipmentDocuments(requestParameters.shipmentId, requestParameters.packageClientReferenceId, requestParameters.format, requestParameters.dpi, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1778,7 +1812,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getTracking(requestParameters: ShippingApiGetTrackingRequest, options?: AxiosRequestConfig) {
+    public getTracking(requestParameters: ShippingApiGetTrackingRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getTracking(requestParameters.trackingId, requestParameters.carrierId, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1789,7 +1823,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public getUnmanifestedShipments(requestParameters: ShippingApiGetUnmanifestedShipmentsRequest, options?: AxiosRequestConfig) {
+    public getUnmanifestedShipments(requestParameters: ShippingApiGetUnmanifestedShipmentsRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getUnmanifestedShipments(requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1800,7 +1834,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public linkCarrierAccount(requestParameters: ShippingApiLinkCarrierAccountRequest, options?: AxiosRequestConfig) {
+    public linkCarrierAccount(requestParameters: ShippingApiLinkCarrierAccountRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).linkCarrierAccount(requestParameters.carrierId, requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1811,7 +1845,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public oneClickShipment(requestParameters: ShippingApiOneClickShipmentRequest, options?: AxiosRequestConfig) {
+    public oneClickShipment(requestParameters: ShippingApiOneClickShipmentRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).oneClickShipment(requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1822,7 +1856,7 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public purchaseShipment(requestParameters: ShippingApiPurchaseShipmentRequest, options?: AxiosRequestConfig) {
+    public purchaseShipment(requestParameters: ShippingApiPurchaseShipmentRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).purchaseShipment(requestParameters.body, requestParameters.xAmznIdempotencyKey, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1833,7 +1867,294 @@ export class ShippingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ShippingApi
      */
-    public unlinkCarrierAccount(requestParameters: ShippingApiUnlinkCarrierAccountRequest, options?: AxiosRequestConfig) {
+    public unlinkCarrierAccount(requestParameters: ShippingApiUnlinkCarrierAccountRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).unlinkCarrierAccount(requestParameters.carrierId, requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const CancelShipmentXAmznShippingBusinessIdEnum = {
+    Us: 'AmazonShipping_US',
+    In: 'AmazonShipping_IN',
+    Uk: 'AmazonShipping_UK',
+    Uae: 'AmazonShipping_UAE',
+    Sa: 'AmazonShipping_SA',
+    Eg: 'AmazonShipping_EG',
+    It: 'AmazonShipping_IT',
+    Es: 'AmazonShipping_ES',
+    Fr: 'AmazonShipping_FR',
+    Jp: 'AmazonShipping_JP'
+} as const;
+export type CancelShipmentXAmznShippingBusinessIdEnum = typeof CancelShipmentXAmznShippingBusinessIdEnum[keyof typeof CancelShipmentXAmznShippingBusinessIdEnum];
+/**
+ * @export
+ */
+export const DirectPurchaseShipmentXAmznShippingBusinessIdEnum = {
+    Us: 'AmazonShipping_US',
+    In: 'AmazonShipping_IN',
+    Uk: 'AmazonShipping_UK',
+    Uae: 'AmazonShipping_UAE',
+    Sa: 'AmazonShipping_SA',
+    Eg: 'AmazonShipping_EG',
+    It: 'AmazonShipping_IT',
+    Es: 'AmazonShipping_ES',
+    Fr: 'AmazonShipping_FR',
+    Jp: 'AmazonShipping_JP'
+} as const;
+export type DirectPurchaseShipmentXAmznShippingBusinessIdEnum = typeof DirectPurchaseShipmentXAmznShippingBusinessIdEnum[keyof typeof DirectPurchaseShipmentXAmznShippingBusinessIdEnum];
+/**
+ * @export
+ */
+export const GenerateCollectionFormXAmznShippingBusinessIdEnum = {
+    Us: 'AmazonShipping_US',
+    In: 'AmazonShipping_IN',
+    Uk: 'AmazonShipping_UK',
+    Uae: 'AmazonShipping_UAE',
+    Sa: 'AmazonShipping_SA',
+    Eg: 'AmazonShipping_EG',
+    It: 'AmazonShipping_IT',
+    Es: 'AmazonShipping_ES',
+    Fr: 'AmazonShipping_FR',
+    Jp: 'AmazonShipping_JP'
+} as const;
+export type GenerateCollectionFormXAmznShippingBusinessIdEnum = typeof GenerateCollectionFormXAmznShippingBusinessIdEnum[keyof typeof GenerateCollectionFormXAmznShippingBusinessIdEnum];
+/**
+ * @export
+ */
+export const GetAccessPointsAccessPointTypesEnum = {
+    Helix: 'HELIX',
+    CampusLocker: 'CAMPUS_LOCKER',
+    OmniLocker: 'OMNI_LOCKER',
+    OdinLocker: 'ODIN_LOCKER',
+    DobbyLocker: 'DOBBY_LOCKER',
+    CoreLocker: 'CORE_LOCKER',
+    _3P: '3P',
+    CampusRoom: 'CAMPUS_ROOM'
+} as const;
+export type GetAccessPointsAccessPointTypesEnum = typeof GetAccessPointsAccessPointTypesEnum[keyof typeof GetAccessPointsAccessPointTypesEnum];
+/**
+ * @export
+ */
+export const GetAccessPointsXAmznShippingBusinessIdEnum = {
+    Us: 'AmazonShipping_US',
+    In: 'AmazonShipping_IN',
+    Uk: 'AmazonShipping_UK',
+    Uae: 'AmazonShipping_UAE',
+    Sa: 'AmazonShipping_SA',
+    Eg: 'AmazonShipping_EG',
+    It: 'AmazonShipping_IT',
+    Es: 'AmazonShipping_ES',
+    Fr: 'AmazonShipping_FR',
+    Jp: 'AmazonShipping_JP'
+} as const;
+export type GetAccessPointsXAmznShippingBusinessIdEnum = typeof GetAccessPointsXAmznShippingBusinessIdEnum[keyof typeof GetAccessPointsXAmznShippingBusinessIdEnum];
+/**
+ * @export
+ */
+export const GetAdditionalInputsXAmznShippingBusinessIdEnum = {
+    Us: 'AmazonShipping_US',
+    In: 'AmazonShipping_IN',
+    Uk: 'AmazonShipping_UK',
+    Uae: 'AmazonShipping_UAE',
+    Sa: 'AmazonShipping_SA',
+    Eg: 'AmazonShipping_EG',
+    It: 'AmazonShipping_IT',
+    Es: 'AmazonShipping_ES',
+    Fr: 'AmazonShipping_FR',
+    Jp: 'AmazonShipping_JP'
+} as const;
+export type GetAdditionalInputsXAmznShippingBusinessIdEnum = typeof GetAdditionalInputsXAmznShippingBusinessIdEnum[keyof typeof GetAdditionalInputsXAmznShippingBusinessIdEnum];
+/**
+ * @export
+ */
+export const GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum = {
+    Us: 'AmazonShipping_US',
+    In: 'AmazonShipping_IN',
+    Uk: 'AmazonShipping_UK',
+    Uae: 'AmazonShipping_UAE',
+    Sa: 'AmazonShipping_SA',
+    Eg: 'AmazonShipping_EG',
+    It: 'AmazonShipping_IT',
+    Es: 'AmazonShipping_ES',
+    Fr: 'AmazonShipping_FR',
+    Jp: 'AmazonShipping_JP'
+} as const;
+export type GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum = typeof GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum[keyof typeof GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum];
+/**
+ * @export
+ */
+export const GetCarrierAccountsXAmznShippingBusinessIdEnum = {
+    Us: 'AmazonShipping_US',
+    In: 'AmazonShipping_IN',
+    Uk: 'AmazonShipping_UK',
+    Uae: 'AmazonShipping_UAE',
+    Sa: 'AmazonShipping_SA',
+    Eg: 'AmazonShipping_EG',
+    It: 'AmazonShipping_IT',
+    Es: 'AmazonShipping_ES',
+    Fr: 'AmazonShipping_FR',
+    Jp: 'AmazonShipping_JP'
+} as const;
+export type GetCarrierAccountsXAmznShippingBusinessIdEnum = typeof GetCarrierAccountsXAmznShippingBusinessIdEnum[keyof typeof GetCarrierAccountsXAmznShippingBusinessIdEnum];
+/**
+ * @export
+ */
+export const GetCollectionFormXAmznShippingBusinessIdEnum = {
+    Us: 'AmazonShipping_US',
+    In: 'AmazonShipping_IN',
+    Uk: 'AmazonShipping_UK',
+    Uae: 'AmazonShipping_UAE',
+    Sa: 'AmazonShipping_SA',
+    Eg: 'AmazonShipping_EG',
+    It: 'AmazonShipping_IT',
+    Es: 'AmazonShipping_ES',
+    Fr: 'AmazonShipping_FR',
+    Jp: 'AmazonShipping_JP'
+} as const;
+export type GetCollectionFormXAmznShippingBusinessIdEnum = typeof GetCollectionFormXAmznShippingBusinessIdEnum[keyof typeof GetCollectionFormXAmznShippingBusinessIdEnum];
+/**
+ * @export
+ */
+export const GetCollectionFormHistoryXAmznShippingBusinessIdEnum = {
+    Us: 'AmazonShipping_US',
+    In: 'AmazonShipping_IN',
+    Uk: 'AmazonShipping_UK',
+    Uae: 'AmazonShipping_UAE',
+    Sa: 'AmazonShipping_SA',
+    Eg: 'AmazonShipping_EG',
+    It: 'AmazonShipping_IT',
+    Es: 'AmazonShipping_ES',
+    Fr: 'AmazonShipping_FR',
+    Jp: 'AmazonShipping_JP'
+} as const;
+export type GetCollectionFormHistoryXAmznShippingBusinessIdEnum = typeof GetCollectionFormHistoryXAmznShippingBusinessIdEnum[keyof typeof GetCollectionFormHistoryXAmznShippingBusinessIdEnum];
+/**
+ * @export
+ */
+export const GetRatesXAmznShippingBusinessIdEnum = {
+    Us: 'AmazonShipping_US',
+    In: 'AmazonShipping_IN',
+    Uk: 'AmazonShipping_UK',
+    Uae: 'AmazonShipping_UAE',
+    Sa: 'AmazonShipping_SA',
+    Eg: 'AmazonShipping_EG',
+    It: 'AmazonShipping_IT',
+    Es: 'AmazonShipping_ES',
+    Fr: 'AmazonShipping_FR',
+    Jp: 'AmazonShipping_JP'
+} as const;
+export type GetRatesXAmznShippingBusinessIdEnum = typeof GetRatesXAmznShippingBusinessIdEnum[keyof typeof GetRatesXAmznShippingBusinessIdEnum];
+/**
+ * @export
+ */
+export const GetShipmentDocumentsXAmznShippingBusinessIdEnum = {
+    Us: 'AmazonShipping_US',
+    In: 'AmazonShipping_IN',
+    Uk: 'AmazonShipping_UK',
+    Uae: 'AmazonShipping_UAE',
+    Sa: 'AmazonShipping_SA',
+    Eg: 'AmazonShipping_EG',
+    It: 'AmazonShipping_IT',
+    Es: 'AmazonShipping_ES',
+    Fr: 'AmazonShipping_FR',
+    Jp: 'AmazonShipping_JP'
+} as const;
+export type GetShipmentDocumentsXAmznShippingBusinessIdEnum = typeof GetShipmentDocumentsXAmznShippingBusinessIdEnum[keyof typeof GetShipmentDocumentsXAmznShippingBusinessIdEnum];
+/**
+ * @export
+ */
+export const GetTrackingXAmznShippingBusinessIdEnum = {
+    Us: 'AmazonShipping_US',
+    In: 'AmazonShipping_IN',
+    Uk: 'AmazonShipping_UK',
+    Uae: 'AmazonShipping_UAE',
+    Sa: 'AmazonShipping_SA',
+    Eg: 'AmazonShipping_EG',
+    It: 'AmazonShipping_IT',
+    Es: 'AmazonShipping_ES',
+    Fr: 'AmazonShipping_FR',
+    Jp: 'AmazonShipping_JP'
+} as const;
+export type GetTrackingXAmznShippingBusinessIdEnum = typeof GetTrackingXAmznShippingBusinessIdEnum[keyof typeof GetTrackingXAmznShippingBusinessIdEnum];
+/**
+ * @export
+ */
+export const GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum = {
+    Us: 'AmazonShipping_US',
+    In: 'AmazonShipping_IN',
+    Uk: 'AmazonShipping_UK',
+    Uae: 'AmazonShipping_UAE',
+    Sa: 'AmazonShipping_SA',
+    Eg: 'AmazonShipping_EG',
+    It: 'AmazonShipping_IT',
+    Es: 'AmazonShipping_ES',
+    Fr: 'AmazonShipping_FR',
+    Jp: 'AmazonShipping_JP'
+} as const;
+export type GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum = typeof GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum[keyof typeof GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum];
+/**
+ * @export
+ */
+export const LinkCarrierAccountXAmznShippingBusinessIdEnum = {
+    Us: 'AmazonShipping_US',
+    In: 'AmazonShipping_IN',
+    Uk: 'AmazonShipping_UK',
+    Uae: 'AmazonShipping_UAE',
+    Sa: 'AmazonShipping_SA',
+    Eg: 'AmazonShipping_EG',
+    It: 'AmazonShipping_IT',
+    Es: 'AmazonShipping_ES',
+    Fr: 'AmazonShipping_FR',
+    Jp: 'AmazonShipping_JP'
+} as const;
+export type LinkCarrierAccountXAmznShippingBusinessIdEnum = typeof LinkCarrierAccountXAmznShippingBusinessIdEnum[keyof typeof LinkCarrierAccountXAmznShippingBusinessIdEnum];
+/**
+ * @export
+ */
+export const OneClickShipmentXAmznShippingBusinessIdEnum = {
+    Us: 'AmazonShipping_US',
+    In: 'AmazonShipping_IN',
+    Uk: 'AmazonShipping_UK',
+    Uae: 'AmazonShipping_UAE',
+    Sa: 'AmazonShipping_SA',
+    Eg: 'AmazonShipping_EG',
+    It: 'AmazonShipping_IT',
+    Es: 'AmazonShipping_ES',
+    Fr: 'AmazonShipping_FR',
+    Jp: 'AmazonShipping_JP'
+} as const;
+export type OneClickShipmentXAmznShippingBusinessIdEnum = typeof OneClickShipmentXAmznShippingBusinessIdEnum[keyof typeof OneClickShipmentXAmznShippingBusinessIdEnum];
+/**
+ * @export
+ */
+export const PurchaseShipmentXAmznShippingBusinessIdEnum = {
+    Us: 'AmazonShipping_US',
+    In: 'AmazonShipping_IN',
+    Uk: 'AmazonShipping_UK',
+    Uae: 'AmazonShipping_UAE',
+    Sa: 'AmazonShipping_SA',
+    Eg: 'AmazonShipping_EG',
+    It: 'AmazonShipping_IT',
+    Es: 'AmazonShipping_ES',
+    Fr: 'AmazonShipping_FR',
+    Jp: 'AmazonShipping_JP'
+} as const;
+export type PurchaseShipmentXAmznShippingBusinessIdEnum = typeof PurchaseShipmentXAmznShippingBusinessIdEnum[keyof typeof PurchaseShipmentXAmznShippingBusinessIdEnum];
+/**
+ * @export
+ */
+export const UnlinkCarrierAccountXAmznShippingBusinessIdEnum = {
+    Us: 'AmazonShipping_US',
+    In: 'AmazonShipping_IN',
+    Uk: 'AmazonShipping_UK',
+    Uae: 'AmazonShipping_UAE',
+    Sa: 'AmazonShipping_SA',
+    Eg: 'AmazonShipping_EG',
+    It: 'AmazonShipping_IT',
+    Es: 'AmazonShipping_ES',
+    Fr: 'AmazonShipping_FR',
+    Jp: 'AmazonShipping_JP'
+} as const;
+export type UnlinkCarrierAccountXAmznShippingBusinessIdEnum = typeof UnlinkCarrierAccountXAmznShippingBusinessIdEnum[keyof typeof UnlinkCarrierAccountXAmznShippingBusinessIdEnum];

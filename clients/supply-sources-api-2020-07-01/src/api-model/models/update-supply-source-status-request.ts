@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { SupplySourceStatus } from './supply-source-status';
+import type { SupplySourceStatus } from './supply-source-status';
 
 /**
  * A request to update the status of a supply source.

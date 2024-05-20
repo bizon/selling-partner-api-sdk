@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ScheduledPackageId } from './scheduled-package-id';
+import type { ScheduledPackageId } from './scheduled-package-id';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TimeSlot } from './time-slot';
+import type { TimeSlot } from './time-slot';
 
 /**
  * Request to update the time slot of a package.

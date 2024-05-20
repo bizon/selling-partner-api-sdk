@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { InboundShipmentPlanRequestItem } from './inbound-shipment-plan-request-item';
+import type { InboundShipmentPlanRequestItem } from './inbound-shipment-plan-request-item';
 // May contain unused imports in some cases
 // @ts-ignore
-import { LabelPrepPreference } from './label-prep-preference';
+import type { LabelPrepPreference } from './label-prep-preference';
 
 /**
  * The request schema for the createInboundShipmentPlan operation.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ImageCropSpecification } from './image-crop-specification';
+import type { ImageCropSpecification } from './image-crop-specification';
 
 /**
  * A reference to an image, hosted in the A+ Content media library.

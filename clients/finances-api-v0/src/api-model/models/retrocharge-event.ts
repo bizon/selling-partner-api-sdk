@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Currency } from './currency';
+import type { Currency } from './currency';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TaxWithheldComponent } from './tax-withheld-component';
+import type { TaxWithheldComponent } from './tax-withheld-component';
 
 /**
  * A retrocharge or retrocharge reversal.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { IneligibilityReason } from './ineligibility-reason';
+import type { IneligibilityReason } from './ineligibility-reason';
 
 /**
  * Detailed information for an ineligible shipping service offering.

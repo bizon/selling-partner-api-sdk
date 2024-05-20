@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ImageDimensions } from './image-dimensions';
+import type { ImageDimensions } from './image-dimensions';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ImageOffsets } from './image-offsets';
+import type { ImageOffsets } from './image-offsets';
 
 /**
  * The instructions for optionally cropping an image. If no cropping is desired, set the dimensions to the original image size. If the image is cropped and no offset values are provided, then the coordinates of the top left corner of the cropped image, relative to the original image, are defaulted to (0,0).

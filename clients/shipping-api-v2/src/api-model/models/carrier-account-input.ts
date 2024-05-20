@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { InputType } from './input-type';
+import type { InputType } from './input-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ValidationMetadata } from './validation-metadata';
+import type { ValidationMetadata } from './validation-metadata';
 
 /**
  * Info About CarrierAccountInput

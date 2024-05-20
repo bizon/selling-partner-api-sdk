@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContentRecord } from './content-record';
+import type { ContentRecord } from './content-record';
 
 /**
  * 

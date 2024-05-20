@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { StandardImageTextCaptionBlock } from './standard-image-text-caption-block';
+import type { StandardImageTextCaptionBlock } from './standard-image-text-caption-block';
 
 /**
  * Standard images with text, presented one at a time. The user clicks on thumbnails to view each block.

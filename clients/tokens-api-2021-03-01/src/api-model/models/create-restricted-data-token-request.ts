@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { RestrictedResource } from './restricted-resource';
+import type { RestrictedResource } from './restricted-resource';
 
 /**
  * The request schema for the createRestrictedDataToken operation.

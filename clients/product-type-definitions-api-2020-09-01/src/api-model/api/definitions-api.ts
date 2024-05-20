@@ -14,19 +14,19 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { ErrorList } from '../models';
+import type { ErrorList } from '../models';
 // @ts-ignore
-import { ProductTypeDefinition } from '../models';
+import type { ProductTypeDefinition } from '../models';
 // @ts-ignore
-import { ProductTypeList } from '../models';
+import type { ProductTypeList } from '../models';
 /**
  * DefinitionsApi - axios parameter creator
  * @export
@@ -39,13 +39,13 @@ export const DefinitionsApiAxiosParamCreator = function (configuration?: Configu
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. Note: This parameter is limited to one marketplaceId at this time.
          * @param {string} [sellerId] A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner.
          * @param {string} [productTypeVersion] The version of the Amazon product type to retrieve. Defaults to \&quot;LATEST\&quot;,. Prerelease versions of product type definitions may be retrieved with \&quot;RELEASE_CANDIDATE\&quot;. If no prerelease version is currently available, the \&quot;LATEST\&quot; live version will be provided.
-         * @param {'LISTING' | 'LISTING_PRODUCT_ONLY' | 'LISTING_OFFER_ONLY'} [requirements] The name of the requirements set to retrieve requirements for.
-         * @param {'ENFORCED' | 'NOT_ENFORCED'} [requirementsEnforced] Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates).
-         * @param {'DEFAULT' | 'ar' | 'ar_AE' | 'de' | 'de_DE' | 'en' | 'en_AE' | 'en_AU' | 'en_CA' | 'en_GB' | 'en_IN' | 'en_SG' | 'en_US' | 'es' | 'es_ES' | 'es_MX' | 'es_US' | 'fr' | 'fr_CA' | 'fr_FR' | 'it' | 'it_IT' | 'ja' | 'ja_JP' | 'nl' | 'nl_NL' | 'pl' | 'pl_PL' | 'pt' | 'pt_BR' | 'pt_PT' | 'sv' | 'sv_SE' | 'tr' | 'tr_TR' | 'zh' | 'zh_CN' | 'zh_TW'} [locale] Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request.
+         * @param {GetDefinitionsProductTypeRequirementsEnum} [requirements] The name of the requirements set to retrieve requirements for.
+         * @param {GetDefinitionsProductTypeRequirementsEnforcedEnum} [requirementsEnforced] Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates).
+         * @param {GetDefinitionsProductTypeLocaleEnum} [locale] Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDefinitionsProductType: async (productType: string, marketplaceIds: Array<string>, sellerId?: string, productTypeVersion?: string, requirements?: 'LISTING' | 'LISTING_PRODUCT_ONLY' | 'LISTING_OFFER_ONLY', requirementsEnforced?: 'ENFORCED' | 'NOT_ENFORCED', locale?: 'DEFAULT' | 'ar' | 'ar_AE' | 'de' | 'de_DE' | 'en' | 'en_AE' | 'en_AU' | 'en_CA' | 'en_GB' | 'en_IN' | 'en_SG' | 'en_US' | 'es' | 'es_ES' | 'es_MX' | 'es_US' | 'fr' | 'fr_CA' | 'fr_FR' | 'it' | 'it_IT' | 'ja' | 'ja_JP' | 'nl' | 'nl_NL' | 'pl' | 'pl_PL' | 'pt' | 'pt_BR' | 'pt_PT' | 'sv' | 'sv_SE' | 'tr' | 'tr_TR' | 'zh' | 'zh_CN' | 'zh_TW', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getDefinitionsProductType: async (productType: string, marketplaceIds: Array<string>, sellerId?: string, productTypeVersion?: string, requirements?: GetDefinitionsProductTypeRequirementsEnum, requirementsEnforced?: GetDefinitionsProductTypeRequirementsEnforcedEnum, locale?: GetDefinitionsProductTypeLocaleEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'productType' is not null or undefined
             assertParamExists('getDefinitionsProductType', 'productType', productType)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -108,7 +108,7 @@ export const DefinitionsApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchDefinitionsProductTypes: async (marketplaceIds: Array<string>, keywords?: Array<string>, itemName?: string, locale?: string, searchLocale?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        searchDefinitionsProductTypes: async (marketplaceIds: Array<string>, keywords?: Array<string>, itemName?: string, locale?: string, searchLocale?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('searchDefinitionsProductTypes', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/definitions/2020-09-01/productTypes`;
@@ -170,15 +170,17 @@ export const DefinitionsApiFp = function(configuration?: Configuration) {
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. Note: This parameter is limited to one marketplaceId at this time.
          * @param {string} [sellerId] A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner.
          * @param {string} [productTypeVersion] The version of the Amazon product type to retrieve. Defaults to \&quot;LATEST\&quot;,. Prerelease versions of product type definitions may be retrieved with \&quot;RELEASE_CANDIDATE\&quot;. If no prerelease version is currently available, the \&quot;LATEST\&quot; live version will be provided.
-         * @param {'LISTING' | 'LISTING_PRODUCT_ONLY' | 'LISTING_OFFER_ONLY'} [requirements] The name of the requirements set to retrieve requirements for.
-         * @param {'ENFORCED' | 'NOT_ENFORCED'} [requirementsEnforced] Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates).
-         * @param {'DEFAULT' | 'ar' | 'ar_AE' | 'de' | 'de_DE' | 'en' | 'en_AE' | 'en_AU' | 'en_CA' | 'en_GB' | 'en_IN' | 'en_SG' | 'en_US' | 'es' | 'es_ES' | 'es_MX' | 'es_US' | 'fr' | 'fr_CA' | 'fr_FR' | 'it' | 'it_IT' | 'ja' | 'ja_JP' | 'nl' | 'nl_NL' | 'pl' | 'pl_PL' | 'pt' | 'pt_BR' | 'pt_PT' | 'sv' | 'sv_SE' | 'tr' | 'tr_TR' | 'zh' | 'zh_CN' | 'zh_TW'} [locale] Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request.
+         * @param {GetDefinitionsProductTypeRequirementsEnum} [requirements] The name of the requirements set to retrieve requirements for.
+         * @param {GetDefinitionsProductTypeRequirementsEnforcedEnum} [requirementsEnforced] Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates).
+         * @param {GetDefinitionsProductTypeLocaleEnum} [locale] Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getDefinitionsProductType(productType: string, marketplaceIds: Array<string>, sellerId?: string, productTypeVersion?: string, requirements?: 'LISTING' | 'LISTING_PRODUCT_ONLY' | 'LISTING_OFFER_ONLY', requirementsEnforced?: 'ENFORCED' | 'NOT_ENFORCED', locale?: 'DEFAULT' | 'ar' | 'ar_AE' | 'de' | 'de_DE' | 'en' | 'en_AE' | 'en_AU' | 'en_CA' | 'en_GB' | 'en_IN' | 'en_SG' | 'en_US' | 'es' | 'es_ES' | 'es_MX' | 'es_US' | 'fr' | 'fr_CA' | 'fr_FR' | 'it' | 'it_IT' | 'ja' | 'ja_JP' | 'nl' | 'nl_NL' | 'pl' | 'pl_PL' | 'pt' | 'pt_BR' | 'pt_PT' | 'sv' | 'sv_SE' | 'tr' | 'tr_TR' | 'zh' | 'zh_CN' | 'zh_TW', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductTypeDefinition>> {
+        async getDefinitionsProductType(productType: string, marketplaceIds: Array<string>, sellerId?: string, productTypeVersion?: string, requirements?: GetDefinitionsProductTypeRequirementsEnum, requirementsEnforced?: GetDefinitionsProductTypeRequirementsEnforcedEnum, locale?: GetDefinitionsProductTypeLocaleEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductTypeDefinition>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getDefinitionsProductType(productType, marketplaceIds, sellerId, productTypeVersion, requirements, requirementsEnforced, locale, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefinitionsApi.getDefinitionsProductType']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Search for and return a list of Amazon product types that have definitions available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -190,9 +192,11 @@ export const DefinitionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async searchDefinitionsProductTypes(marketplaceIds: Array<string>, keywords?: Array<string>, itemName?: string, locale?: string, searchLocale?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductTypeList>> {
+        async searchDefinitionsProductTypes(marketplaceIds: Array<string>, keywords?: Array<string>, itemName?: string, locale?: string, searchLocale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductTypeList>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.searchDefinitionsProductTypes(marketplaceIds, keywords, itemName, locale, searchLocale, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefinitionsApi.searchDefinitionsProductTypes']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -210,7 +214,7 @@ export const DefinitionsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDefinitionsProductType(requestParameters: DefinitionsApiGetDefinitionsProductTypeRequest, options?: AxiosRequestConfig): AxiosPromise<ProductTypeDefinition> {
+        getDefinitionsProductType(requestParameters: DefinitionsApiGetDefinitionsProductTypeRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductTypeDefinition> {
             return localVarFp.getDefinitionsProductType(requestParameters.productType, requestParameters.marketplaceIds, requestParameters.sellerId, requestParameters.productTypeVersion, requestParameters.requirements, requestParameters.requirementsEnforced, requestParameters.locale, options).then((request) => request(axios, basePath));
         },
         /**
@@ -219,7 +223,7 @@ export const DefinitionsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchDefinitionsProductTypes(requestParameters: DefinitionsApiSearchDefinitionsProductTypesRequest, options?: AxiosRequestConfig): AxiosPromise<ProductTypeList> {
+        searchDefinitionsProductTypes(requestParameters: DefinitionsApiSearchDefinitionsProductTypesRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductTypeList> {
             return localVarFp.searchDefinitionsProductTypes(requestParameters.marketplaceIds, requestParameters.keywords, requestParameters.itemName, requestParameters.locale, requestParameters.searchLocale, options).then((request) => request(axios, basePath));
         },
     };
@@ -264,21 +268,21 @@ export interface DefinitionsApiGetDefinitionsProductTypeRequest {
      * @type {'LISTING' | 'LISTING_PRODUCT_ONLY' | 'LISTING_OFFER_ONLY'}
      * @memberof DefinitionsApiGetDefinitionsProductType
      */
-    readonly requirements?: 'LISTING' | 'LISTING_PRODUCT_ONLY' | 'LISTING_OFFER_ONLY'
+    readonly requirements?: GetDefinitionsProductTypeRequirementsEnum
 
     /**
      * Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates).
      * @type {'ENFORCED' | 'NOT_ENFORCED'}
      * @memberof DefinitionsApiGetDefinitionsProductType
      */
-    readonly requirementsEnforced?: 'ENFORCED' | 'NOT_ENFORCED'
+    readonly requirementsEnforced?: GetDefinitionsProductTypeRequirementsEnforcedEnum
 
     /**
      * Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request.
      * @type {'DEFAULT' | 'ar' | 'ar_AE' | 'de' | 'de_DE' | 'en' | 'en_AE' | 'en_AU' | 'en_CA' | 'en_GB' | 'en_IN' | 'en_SG' | 'en_US' | 'es' | 'es_ES' | 'es_MX' | 'es_US' | 'fr' | 'fr_CA' | 'fr_FR' | 'it' | 'it_IT' | 'ja' | 'ja_JP' | 'nl' | 'nl_NL' | 'pl' | 'pl_PL' | 'pt' | 'pt_BR' | 'pt_PT' | 'sv' | 'sv_SE' | 'tr' | 'tr_TR' | 'zh' | 'zh_CN' | 'zh_TW'}
      * @memberof DefinitionsApiGetDefinitionsProductType
      */
-    readonly locale?: 'DEFAULT' | 'ar' | 'ar_AE' | 'de' | 'de_DE' | 'en' | 'en_AE' | 'en_AU' | 'en_CA' | 'en_GB' | 'en_IN' | 'en_SG' | 'en_US' | 'es' | 'es_ES' | 'es_MX' | 'es_US' | 'fr' | 'fr_CA' | 'fr_FR' | 'it' | 'it_IT' | 'ja' | 'ja_JP' | 'nl' | 'nl_NL' | 'pl' | 'pl_PL' | 'pt' | 'pt_BR' | 'pt_PT' | 'sv' | 'sv_SE' | 'tr' | 'tr_TR' | 'zh' | 'zh_CN' | 'zh_TW'
+    readonly locale?: GetDefinitionsProductTypeLocaleEnum
 }
 
 /**
@@ -337,7 +341,7 @@ export class DefinitionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DefinitionsApi
      */
-    public getDefinitionsProductType(requestParameters: DefinitionsApiGetDefinitionsProductTypeRequest, options?: AxiosRequestConfig) {
+    public getDefinitionsProductType(requestParameters: DefinitionsApiGetDefinitionsProductTypeRequest, options?: RawAxiosRequestConfig) {
         return DefinitionsApiFp(this.configuration).getDefinitionsProductType(requestParameters.productType, requestParameters.marketplaceIds, requestParameters.sellerId, requestParameters.productTypeVersion, requestParameters.requirements, requestParameters.requirementsEnforced, requestParameters.locale, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -348,7 +352,69 @@ export class DefinitionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DefinitionsApi
      */
-    public searchDefinitionsProductTypes(requestParameters: DefinitionsApiSearchDefinitionsProductTypesRequest, options?: AxiosRequestConfig) {
+    public searchDefinitionsProductTypes(requestParameters: DefinitionsApiSearchDefinitionsProductTypesRequest, options?: RawAxiosRequestConfig) {
         return DefinitionsApiFp(this.configuration).searchDefinitionsProductTypes(requestParameters.marketplaceIds, requestParameters.keywords, requestParameters.itemName, requestParameters.locale, requestParameters.searchLocale, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetDefinitionsProductTypeRequirementsEnum = {
+    Listing: 'LISTING',
+    ListingProductOnly: 'LISTING_PRODUCT_ONLY',
+    ListingOfferOnly: 'LISTING_OFFER_ONLY'
+} as const;
+export type GetDefinitionsProductTypeRequirementsEnum = typeof GetDefinitionsProductTypeRequirementsEnum[keyof typeof GetDefinitionsProductTypeRequirementsEnum];
+/**
+ * @export
+ */
+export const GetDefinitionsProductTypeRequirementsEnforcedEnum = {
+    Enforced: 'ENFORCED',
+    NotEnforced: 'NOT_ENFORCED'
+} as const;
+export type GetDefinitionsProductTypeRequirementsEnforcedEnum = typeof GetDefinitionsProductTypeRequirementsEnforcedEnum[keyof typeof GetDefinitionsProductTypeRequirementsEnforcedEnum];
+/**
+ * @export
+ */
+export const GetDefinitionsProductTypeLocaleEnum = {
+    Default: 'DEFAULT',
+    Ar: 'ar',
+    ArAe: 'ar_AE',
+    De: 'de',
+    DeDe: 'de_DE',
+    En: 'en',
+    EnAe: 'en_AE',
+    EnAu: 'en_AU',
+    EnCa: 'en_CA',
+    EnGb: 'en_GB',
+    EnIn: 'en_IN',
+    EnSg: 'en_SG',
+    EnUs: 'en_US',
+    Es: 'es',
+    EsEs: 'es_ES',
+    EsMx: 'es_MX',
+    EsUs: 'es_US',
+    Fr: 'fr',
+    FrCa: 'fr_CA',
+    FrFr: 'fr_FR',
+    It: 'it',
+    ItIt: 'it_IT',
+    Ja: 'ja',
+    JaJp: 'ja_JP',
+    Nl: 'nl',
+    NlNl: 'nl_NL',
+    Pl: 'pl',
+    PlPl: 'pl_PL',
+    Pt: 'pt',
+    PtBr: 'pt_BR',
+    PtPt: 'pt_PT',
+    Sv: 'sv',
+    SvSe: 'sv_SE',
+    Tr: 'tr',
+    TrTr: 'tr_TR',
+    Zh: 'zh',
+    ZhCn: 'zh_CN',
+    ZhTw: 'zh_TW'
+} as const;
+export type GetDefinitionsProductTypeLocaleEnum = typeof GetDefinitionsProductTypeLocaleEnum[keyof typeof GetDefinitionsProductTypeLocaleEnum];

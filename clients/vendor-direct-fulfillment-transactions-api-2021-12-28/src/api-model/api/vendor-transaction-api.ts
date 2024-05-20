@@ -14,17 +14,17 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { ErrorList } from '../models';
+import type { ErrorList } from '../models';
 // @ts-ignore
-import { TransactionStatus } from '../models';
+import type { TransactionStatus } from '../models';
 /**
  * VendorTransactionApi - axios parameter creator
  * @export
@@ -37,7 +37,7 @@ export const VendorTransactionApiAxiosParamCreator = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransactionStatus: async (transactionId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getTransactionStatus: async (transactionId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'transactionId' is not null or undefined
             assertParamExists('getTransactionStatus', 'transactionId', transactionId)
             const localVarPath = `/vendor/directFulfillment/transactions/2021-12-28/transactions/{transactionId}`
@@ -80,9 +80,11 @@ export const VendorTransactionApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTransactionStatus(transactionId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionStatus>> {
+        async getTransactionStatus(transactionId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionStatus>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getTransactionStatus(transactionId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['VendorTransactionApi.getTransactionStatus']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -100,7 +102,7 @@ export const VendorTransactionApiFactory = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransactionStatus(requestParameters: VendorTransactionApiGetTransactionStatusRequest, options?: AxiosRequestConfig): AxiosPromise<TransactionStatus> {
+        getTransactionStatus(requestParameters: VendorTransactionApiGetTransactionStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<TransactionStatus> {
             return localVarFp.getTransactionStatus(requestParameters.transactionId, options).then((request) => request(axios, basePath));
         },
     };
@@ -134,7 +136,8 @@ export class VendorTransactionApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof VendorTransactionApi
      */
-    public getTransactionStatus(requestParameters: VendorTransactionApiGetTransactionStatusRequest, options?: AxiosRequestConfig) {
+    public getTransactionStatus(requestParameters: VendorTransactionApiGetTransactionStatusRequest, options?: RawAxiosRequestConfig) {
         return VendorTransactionApiFp(this.configuration).getTransactionStatus(requestParameters.transactionId, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

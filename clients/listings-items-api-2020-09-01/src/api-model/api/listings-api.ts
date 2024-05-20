@@ -14,21 +14,21 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { ErrorList } from '../models';
+import type { ErrorList } from '../models';
 // @ts-ignore
-import { ListingsItemPatchRequest } from '../models';
+import type { ListingsItemPatchRequest } from '../models';
 // @ts-ignore
-import { ListingsItemPutRequest } from '../models';
+import type { ListingsItemPutRequest } from '../models';
 // @ts-ignore
-import { ListingsItemSubmissionResponse } from '../models';
+import type { ListingsItemSubmissionResponse } from '../models';
 /**
  * ListingsApi - axios parameter creator
  * @export
@@ -44,7 +44,7 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        deleteListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerId' is not null or undefined
             assertParamExists('deleteListingsItem', 'sellerId', sellerId)
             // verify required parameter 'sku' is not null or undefined
@@ -94,7 +94,7 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        patchListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPatchRequest, issueLocale?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        patchListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPatchRequest, issueLocale?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerId' is not null or undefined
             assertParamExists('patchListingsItem', 'sellerId', sellerId)
             // verify required parameter 'sku' is not null or undefined
@@ -149,7 +149,7 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        putListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPutRequest, issueLocale?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        putListingsItem: async (sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPutRequest, issueLocale?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerId' is not null or undefined
             assertParamExists('putListingsItem', 'sellerId', sellerId)
             // verify required parameter 'sku' is not null or undefined
@@ -213,9 +213,11 @@ export const ListingsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
+        async deleteListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteListingsItem(sellerId, sku, marketplaceIds, issueLocale, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ListingsApi.deleteListingsItem']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -227,9 +229,11 @@ export const ListingsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async patchListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPatchRequest, issueLocale?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
+        async patchListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPatchRequest, issueLocale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.patchListingsItem(sellerId, sku, marketplaceIds, body, issueLocale, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ListingsApi.patchListingsItem']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Creates a new or fully-updates an existing listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -241,9 +245,11 @@ export const ListingsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async putListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPutRequest, issueLocale?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
+        async putListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPutRequest, issueLocale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.putListingsItem(sellerId, sku, marketplaceIds, body, issueLocale, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ListingsApi.putListingsItem']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -261,7 +267,7 @@ export const ListingsApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteListingsItem(requestParameters: ListingsApiDeleteListingsItemRequest, options?: AxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
+        deleteListingsItem(requestParameters: ListingsApiDeleteListingsItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
             return localVarFp.deleteListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.issueLocale, options).then((request) => request(axios, basePath));
         },
         /**
@@ -270,7 +276,7 @@ export const ListingsApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        patchListingsItem(requestParameters: ListingsApiPatchListingsItemRequest, options?: AxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
+        patchListingsItem(requestParameters: ListingsApiPatchListingsItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
             return localVarFp.patchListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.issueLocale, options).then((request) => request(axios, basePath));
         },
         /**
@@ -279,7 +285,7 @@ export const ListingsApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        putListingsItem(requestParameters: ListingsApiPutListingsItemRequest, options?: AxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
+        putListingsItem(requestParameters: ListingsApiPutListingsItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
             return localVarFp.putListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.issueLocale, options).then((request) => request(axios, basePath));
         },
     };
@@ -418,7 +424,7 @@ export class ListingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ListingsApi
      */
-    public deleteListingsItem(requestParameters: ListingsApiDeleteListingsItemRequest, options?: AxiosRequestConfig) {
+    public deleteListingsItem(requestParameters: ListingsApiDeleteListingsItemRequest, options?: RawAxiosRequestConfig) {
         return ListingsApiFp(this.configuration).deleteListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -429,7 +435,7 @@ export class ListingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ListingsApi
      */
-    public patchListingsItem(requestParameters: ListingsApiPatchListingsItemRequest, options?: AxiosRequestConfig) {
+    public patchListingsItem(requestParameters: ListingsApiPatchListingsItemRequest, options?: RawAxiosRequestConfig) {
         return ListingsApiFp(this.configuration).patchListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -440,7 +446,8 @@ export class ListingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ListingsApi
      */
-    public putListingsItem(requestParameters: ListingsApiPutListingsItemRequest, options?: AxiosRequestConfig) {
+    public putListingsItem(requestParameters: ListingsApiPutListingsItemRequest, options?: RawAxiosRequestConfig) {
         return ListingsApiFp(this.configuration).putListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

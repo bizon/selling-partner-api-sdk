@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Currency } from './currency';
+import type { Currency } from './currency';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PalletInput } from './pallet-input';
+import type { PalletInput } from './pallet-input';
 
 /**
  * Pallet information, including weight, dimensions, quantity, stackability, freight class, and declared value.

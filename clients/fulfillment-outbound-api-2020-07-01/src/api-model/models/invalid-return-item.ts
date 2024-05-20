@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { InvalidItemReason } from './invalid-item-reason';
+import type { InvalidItemReason } from './invalid-item-reason';
 
 /**
  * An item that is invalid for return.

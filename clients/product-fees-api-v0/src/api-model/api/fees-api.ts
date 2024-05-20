@@ -14,23 +14,23 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { FeesEstimateByIdRequest } from '../models';
+import type { FeesEstimateByIdRequest } from '../models';
 // @ts-ignore
-import { FeesEstimateResult } from '../models';
+import type { FeesEstimateResult } from '../models';
 // @ts-ignore
-import { GetMyFeesEstimateRequest } from '../models';
+import type { GetMyFeesEstimateRequest } from '../models';
 // @ts-ignore
-import { GetMyFeesEstimateResponse } from '../models';
+import type { GetMyFeesEstimateResponse } from '../models';
 // @ts-ignore
-import { GetMyFeesEstimatesErrorList } from '../models';
+import type { GetMyFeesEstimatesErrorList } from '../models';
 /**
  * FeesApi - axios parameter creator
  * @export
@@ -44,7 +44,7 @@ export const FeesApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyFeesEstimateForASIN: async (asin: string, body: GetMyFeesEstimateRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getMyFeesEstimateForASIN: async (asin: string, body: GetMyFeesEstimateRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'asin' is not null or undefined
             assertParamExists('getMyFeesEstimateForASIN', 'asin', asin)
             // verify required parameter 'body' is not null or undefined
@@ -83,7 +83,7 @@ export const FeesApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyFeesEstimateForSKU: async (sellerSKU: string, body: GetMyFeesEstimateRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getMyFeesEstimateForSKU: async (sellerSKU: string, body: GetMyFeesEstimateRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sellerSKU' is not null or undefined
             assertParamExists('getMyFeesEstimateForSKU', 'sellerSKU', sellerSKU)
             // verify required parameter 'body' is not null or undefined
@@ -121,7 +121,7 @@ export const FeesApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyFeesEstimates: async (body: Array<FeesEstimateByIdRequest>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getMyFeesEstimates: async (body: Array<FeesEstimateByIdRequest>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getMyFeesEstimates', 'body', body)
             const localVarPath = `/products/fees/v0/feesEstimate`;
@@ -167,9 +167,11 @@ export const FeesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMyFeesEstimateForASIN(asin: string, body: GetMyFeesEstimateRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyFeesEstimateResponse>> {
+        async getMyFeesEstimateForASIN(asin: string, body: GetMyFeesEstimateRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyFeesEstimateResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMyFeesEstimateForASIN(asin, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FeesApi.getMyFeesEstimateForASIN']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the estimated fees for the item indicated by the specified seller SKU in the marketplace specified in the request body.  **Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  You can call `getMyFeesEstimateForSKU` for an item on behalf of a selling partner before the selling partner sets the item\'s price. The selling partner can then take any estimated fees into account. Each fees estimate request must include an original identifier. This identifier is included in the fees estimate so that you can correlate a fees estimate with the original request.  **Note:** This identifier value is used to identify an estimate. Actual costs may vary. Search \"fees\" in [Seller Central](https://sellercentral.amazon.com/) and consult the store-specific fee schedule for the most up-to-date information.  **Note:** When sellers use the `getMyFeesEstimateForSKU` operation with their `SellerSKU`, they get accurate fees based on real item measurements, but only after they\'ve sent their items to Amazon.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -178,9 +180,11 @@ export const FeesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMyFeesEstimateForSKU(sellerSKU: string, body: GetMyFeesEstimateRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyFeesEstimateResponse>> {
+        async getMyFeesEstimateForSKU(sellerSKU: string, body: GetMyFeesEstimateRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMyFeesEstimateResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMyFeesEstimateForSKU(sellerSKU, body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FeesApi.getMyFeesEstimateForSKU']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the estimated fees for a list of products.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -188,9 +192,11 @@ export const FeesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMyFeesEstimates(body: Array<FeesEstimateByIdRequest>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<FeesEstimateResult>>> {
+        async getMyFeesEstimates(body: Array<FeesEstimateByIdRequest>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<FeesEstimateResult>>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getMyFeesEstimates(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FeesApi.getMyFeesEstimates']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -208,7 +214,7 @@ export const FeesApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyFeesEstimateForASIN(requestParameters: FeesApiGetMyFeesEstimateForASINRequest, options?: AxiosRequestConfig): AxiosPromise<GetMyFeesEstimateResponse> {
+        getMyFeesEstimateForASIN(requestParameters: FeesApiGetMyFeesEstimateForASINRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetMyFeesEstimateResponse> {
             return localVarFp.getMyFeesEstimateForASIN(requestParameters.asin, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -217,7 +223,7 @@ export const FeesApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyFeesEstimateForSKU(requestParameters: FeesApiGetMyFeesEstimateForSKURequest, options?: AxiosRequestConfig): AxiosPromise<GetMyFeesEstimateResponse> {
+        getMyFeesEstimateForSKU(requestParameters: FeesApiGetMyFeesEstimateForSKURequest, options?: RawAxiosRequestConfig): AxiosPromise<GetMyFeesEstimateResponse> {
             return localVarFp.getMyFeesEstimateForSKU(requestParameters.sellerSKU, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -226,7 +232,7 @@ export const FeesApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyFeesEstimates(requestParameters: FeesApiGetMyFeesEstimatesRequest, options?: AxiosRequestConfig): AxiosPromise<Array<FeesEstimateResult>> {
+        getMyFeesEstimates(requestParameters: FeesApiGetMyFeesEstimatesRequest, options?: RawAxiosRequestConfig): AxiosPromise<Array<FeesEstimateResult>> {
             return localVarFp.getMyFeesEstimates(requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
@@ -302,7 +308,7 @@ export class FeesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeesApi
      */
-    public getMyFeesEstimateForASIN(requestParameters: FeesApiGetMyFeesEstimateForASINRequest, options?: AxiosRequestConfig) {
+    public getMyFeesEstimateForASIN(requestParameters: FeesApiGetMyFeesEstimateForASINRequest, options?: RawAxiosRequestConfig) {
         return FeesApiFp(this.configuration).getMyFeesEstimateForASIN(requestParameters.asin, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -313,7 +319,7 @@ export class FeesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeesApi
      */
-    public getMyFeesEstimateForSKU(requestParameters: FeesApiGetMyFeesEstimateForSKURequest, options?: AxiosRequestConfig) {
+    public getMyFeesEstimateForSKU(requestParameters: FeesApiGetMyFeesEstimateForSKURequest, options?: RawAxiosRequestConfig) {
         return FeesApiFp(this.configuration).getMyFeesEstimateForSKU(requestParameters.sellerSKU, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -324,7 +330,8 @@ export class FeesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof FeesApi
      */
-    public getMyFeesEstimates(requestParameters: FeesApiGetMyFeesEstimatesRequest, options?: AxiosRequestConfig) {
+    public getMyFeesEstimates(requestParameters: FeesApiGetMyFeesEstimatesRequest, options?: RawAxiosRequestConfig) {
         return FeesApiFp(this.configuration).getMyFeesEstimates(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

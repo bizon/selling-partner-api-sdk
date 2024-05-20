@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AccountType } from './account-type';
+import type { AccountType } from './account-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CarrierAccountInput } from './carrier-account-input';
+import type { CarrierAccountInput } from './carrier-account-input';
 
 /**
  * Info About Linkable Account Type

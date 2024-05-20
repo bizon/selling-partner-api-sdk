@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AppointmentTime } from './appointment-time';
+import type { AppointmentTime } from './appointment-time';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Poa } from './poa';
+import type { Poa } from './poa';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Technician } from './technician';
+import type { Technician } from './technician';
 
 /**
  * The details of an appointment.

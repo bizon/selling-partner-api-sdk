@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { OperatingHour } from './operating-hour';
+import type { OperatingHour } from './operating-hour';
 
 /**
  * The operating hours per day

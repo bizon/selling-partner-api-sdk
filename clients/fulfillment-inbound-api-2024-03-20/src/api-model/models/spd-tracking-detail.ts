@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { SpdTrackingItem } from './spd-tracking-item';
+import type { SpdTrackingItem } from './spd-tracking-item';
 
 /**
  * Contains information related to Small Parcel Delivery (SPD) shipment tracking.

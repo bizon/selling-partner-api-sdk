@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MoneyType } from './money-type';
+import type { MoneyType } from './money-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { QuantityDiscountType } from './quantity-discount-type';
+import type { QuantityDiscountType } from './quantity-discount-type';
 
 /**
  * Contains pricing information that includes special pricing when buying in bulk.

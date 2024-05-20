@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { UnitOfWeight } from './unit-of-weight';
+import type { UnitOfWeight } from './unit-of-weight';
 
 /**
  * The weight of the package.

@@ -15,25 +15,25 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactInformation } from './contact-information';
+import type { ContactInformation } from './contact-information';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Dates } from './dates';
+import type { Dates } from './dates';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PalletInformation } from './pallet-information';
+import type { PalletInformation } from './pallet-information';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SelfShipAppointmentDetails } from './self-ship-appointment-details';
+import type { SelfShipAppointmentDetails } from './self-ship-appointment-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipmentDestination } from './shipment-destination';
+import type { ShipmentDestination } from './shipment-destination';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipmentSource } from './shipment-source';
+import type { ShipmentSource } from './shipment-source';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TrackingDetails } from './tracking-details';
+import type { TrackingDetails } from './tracking-details';
 
 /**
  * Contains information pertaining to a shipment in an inbound plan.

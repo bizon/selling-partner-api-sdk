@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomPlacementInput } from './custom-placement-input';
+import type { CustomPlacementInput } from './custom-placement-input';
 
 /**
  * The `generatePlacementOptions` request.

@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AcceptedRate } from './accepted-rate';
+import type { AcceptedRate } from './accepted-rate';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Container } from './container';
+import type { Container } from './container';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Party } from './party';
+import type { Party } from './party';
 
 /**
  * The shipment related data.

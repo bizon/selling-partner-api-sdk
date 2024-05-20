@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AplusPaginatedResponse } from './aplus-paginated-response';
+import type { AplusPaginatedResponse } from './aplus-paginated-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { AsinMetadata } from './asin-metadata';
+import type { AsinMetadata } from './asin-metadata';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ListContentDocumentAsinRelationsResponseAllOf } from './list-content-document-asin-relations-response-all-of';
+import type { ListContentDocumentAsinRelationsResponseAllOf } from './list-content-document-asin-relations-response-all-of';
 
 /**
  * @type ListContentDocumentAsinRelationsResponse

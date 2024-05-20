@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AvailableShippingServiceOptions } from './available-shipping-service-options';
+import type { AvailableShippingServiceOptions } from './available-shipping-service-options';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CurrencyAmount } from './currency-amount';
+import type { CurrencyAmount } from './currency-amount';
 // May contain unused imports in some cases
 // @ts-ignore
-import { LabelFormat } from './label-format';
+import type { LabelFormat } from './label-format';
 // May contain unused imports in some cases
 // @ts-ignore
-import { LabelFormatOption } from './label-format-option';
+import type { LabelFormatOption } from './label-format-option';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShippingServiceOptions } from './shipping-service-options';
+import type { ShippingServiceOptions } from './shipping-service-options';
 
 /**
  * A shipping service offer made by a carrier.

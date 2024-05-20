@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { InvalidReturnItem } from './invalid-return-item';
+import type { InvalidReturnItem } from './invalid-return-item';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ReturnAuthorization } from './return-authorization';
+import type { ReturnAuthorization } from './return-authorization';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ReturnItem } from './return-item';
+import type { ReturnItem } from './return-item';
 
 /**
  * 

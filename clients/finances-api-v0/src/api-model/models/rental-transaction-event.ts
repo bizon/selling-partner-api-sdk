@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ChargeComponent } from './charge-component';
+import type { ChargeComponent } from './charge-component';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Currency } from './currency';
+import type { Currency } from './currency';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeeComponent } from './fee-component';
+import type { FeeComponent } from './fee-component';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TaxWithheldComponent } from './tax-withheld-component';
+import type { TaxWithheldComponent } from './tax-withheld-component';
 
 /**
  * An event related to a rental transaction.

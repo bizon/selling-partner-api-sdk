@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TimeRange } from './time-range';
+import type { TimeRange } from './time-range';
 
 /**
  * The promised delivery time and pickup time.

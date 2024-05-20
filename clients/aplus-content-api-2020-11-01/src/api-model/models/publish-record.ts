@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContentType } from './content-type';
+import type { ContentType } from './content-type';
 
 /**
  * The full context for an A+ Content publishing event.

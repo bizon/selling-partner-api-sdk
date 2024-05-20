@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AttributeSetListType } from './attribute-set-list-type';
+import type { AttributeSetListType } from './attribute-set-list-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { IdentifierType } from './identifier-type';
+import type { IdentifierType } from './identifier-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { RelationshipType } from './relationship-type';
+import type { RelationshipType } from './relationship-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SalesRankType } from './sales-rank-type';
+import type { SalesRankType } from './sales-rank-type';
 
 /**
  * An item in the Amazon catalog.

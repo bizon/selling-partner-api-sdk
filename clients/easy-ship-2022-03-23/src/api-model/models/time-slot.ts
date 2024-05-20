@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { HandoverMethod } from './handover-method';
+import type { HandoverMethod } from './handover-method';
 
 /**
  * A time window to hand over an Easy Ship package to Amazon Logistics.

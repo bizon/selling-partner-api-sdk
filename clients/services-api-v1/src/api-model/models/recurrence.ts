@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DayOfWeek } from './day-of-week';
+import type { DayOfWeek } from './day-of-week';
 
 /**
  * Repeated occurrence of an event in a time range.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AsinBadge } from './asin-badge';
+import type { AsinBadge } from './asin-badge';
 
 /**
  * The A+ Content ASIN with additional metadata for content management. If you don\'t include the `includedDataSet` parameter in a call to the listContentDocumentAsinRelations operation, the related ASINs are returned without metadata.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TaxClassification } from './tax-classification';
+import type { TaxClassification } from './tax-classification';
 
 /**
  * Tax information about the buyer.

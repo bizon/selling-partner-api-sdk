@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactInformation } from './contact-information';
+import type { ContactInformation } from './contact-information';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PackingOptionSummary } from './packing-option-summary';
+import type { PackingOptionSummary } from './packing-option-summary';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PlacementOptionSummary } from './placement-option-summary';
+import type { PlacementOptionSummary } from './placement-option-summary';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShipmentSummary } from './shipment-summary';
+import type { ShipmentSummary } from './shipment-summary';
 
 /**
  * Inbound plan containing details of the inbound workflow.

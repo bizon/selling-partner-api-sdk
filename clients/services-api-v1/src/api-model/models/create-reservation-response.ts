@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CreateReservationRecord } from './create-reservation-record';
+import type { CreateReservationRecord } from './create-reservation-record';
 
 /**
  * Response schema for the `createReservation` operation.

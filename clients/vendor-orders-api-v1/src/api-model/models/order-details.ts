@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ImportDetails } from './import-details';
+import type { ImportDetails } from './import-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import { OrderItem } from './order-item';
+import type { OrderItem } from './order-item';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PartyIdentification } from './party-identification';
+import type { PartyIdentification } from './party-identification';
 
 /**
  * Details of an order.

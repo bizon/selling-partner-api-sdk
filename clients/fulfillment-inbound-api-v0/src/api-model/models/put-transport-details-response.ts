@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonTransportResult } from './common-transport-result';
+import type { CommonTransportResult } from './common-transport-result';
 
 /**
  * Workflow status for a shipment with an Amazon-partnered carrier.

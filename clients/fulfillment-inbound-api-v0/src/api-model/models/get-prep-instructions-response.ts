@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { GetPrepInstructionsResult } from './get-prep-instructions-result';
+import type { GetPrepInstructionsResult } from './get-prep-instructions-result';
 
 /**
  * The response schema for the getPrepInstructions operation.

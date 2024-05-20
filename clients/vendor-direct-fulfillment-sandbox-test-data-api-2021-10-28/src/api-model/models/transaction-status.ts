@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Transaction } from './transaction';
+import type { Transaction } from './transaction';
 
 /**
  * The payload for the getOrderScenarios operation.

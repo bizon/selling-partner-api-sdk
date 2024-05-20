@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BatchOffersResponse } from './batch-offers-response';
+import type { BatchOffersResponse } from './batch-offers-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { GetOffersHttpStatusLine } from './get-offers-http-status-line';
+import type { GetOffersHttpStatusLine } from './get-offers-http-status-line';
 // May contain unused imports in some cases
 // @ts-ignore
-import { GetOffersResponse } from './get-offers-response';
+import type { GetOffersResponse } from './get-offers-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { HttpResponseHeaders } from './http-response-headers';
+import type { HttpResponseHeaders } from './http-response-headers';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemOffersRequestParams } from './item-offers-request-params';
+import type { ItemOffersRequestParams } from './item-offers-request-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ItemOffersResponseAllOf } from './item-offers-response-all-of';
+import type { ItemOffersResponseAllOf } from './item-offers-response-all-of';
 
 /**
  * @type ItemOffersResponse

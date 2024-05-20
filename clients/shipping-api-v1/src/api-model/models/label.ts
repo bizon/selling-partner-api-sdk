@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { LabelSpecification } from './label-specification';
+import type { LabelSpecification } from './label-specification';
 
 /**
  * The label details of the container.

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { LabelData } from './label-data';
+import type { LabelData } from './label-data';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PartyIdentification } from './party-identification';
+import type { PartyIdentification } from './party-identification';
 
 /**
  * 

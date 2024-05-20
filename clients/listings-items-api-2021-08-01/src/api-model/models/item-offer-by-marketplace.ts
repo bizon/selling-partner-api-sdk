@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Money } from './money';
+import type { Money } from './money';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Points } from './points';
+import type { Points } from './points';
 
 /**
  * Offer details of a listings item for an Amazon marketplace.

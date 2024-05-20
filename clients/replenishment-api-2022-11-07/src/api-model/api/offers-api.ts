@@ -14,27 +14,27 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { ErrorList } from '../models';
+import type { ErrorList } from '../models';
 // @ts-ignore
-import { GetSellingPartnerMetricsRequest } from '../models';
+import type { GetSellingPartnerMetricsRequest } from '../models';
 // @ts-ignore
-import { GetSellingPartnerMetricsResponse } from '../models';
+import type { GetSellingPartnerMetricsResponse } from '../models';
 // @ts-ignore
-import { ListOfferMetricsRequest } from '../models';
+import type { ListOfferMetricsRequest } from '../models';
 // @ts-ignore
-import { ListOfferMetricsResponse } from '../models';
+import type { ListOfferMetricsResponse } from '../models';
 // @ts-ignore
-import { ListOffersRequest } from '../models';
+import type { ListOffersRequest } from '../models';
 // @ts-ignore
-import { ListOffersResponse } from '../models';
+import type { ListOffersResponse } from '../models';
 /**
  * OffersApi - axios parameter creator
  * @export
@@ -47,7 +47,7 @@ export const OffersApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSellingPartnerMetrics: async (body?: GetSellingPartnerMetricsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getSellingPartnerMetrics: async (body?: GetSellingPartnerMetricsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/replenishment/2022-11-07/sellingPartners/metrics/search`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -80,7 +80,7 @@ export const OffersApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listOfferMetrics: async (body?: ListOfferMetricsRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listOfferMetrics: async (body?: ListOfferMetricsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/replenishment/2022-11-07/offers/metrics/search`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -113,7 +113,7 @@ export const OffersApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listOffers: async (body?: ListOffersRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listOffers: async (body?: ListOffersRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/replenishment/2022-11-07/offers/search`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -156,9 +156,11 @@ export const OffersApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSellingPartnerMetrics(body?: GetSellingPartnerMetricsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSellingPartnerMetricsResponse>> {
+        async getSellingPartnerMetrics(body?: GetSellingPartnerMetricsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSellingPartnerMetricsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getSellingPartnerMetrics(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['OffersApi.getSellingPartnerMetrics']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns aggregated replenishment program metrics for a selling partner\'s offers.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -166,9 +168,11 @@ export const OffersApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listOfferMetrics(body?: ListOfferMetricsRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListOfferMetricsResponse>> {
+        async listOfferMetrics(body?: ListOfferMetricsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListOfferMetricsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listOfferMetrics(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['OffersApi.listOfferMetrics']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the details of a selling partner\'s replenishment program offers. Note that this operation only supports sellers at this time.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -176,9 +180,11 @@ export const OffersApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listOffers(body?: ListOffersRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListOffersResponse>> {
+        async listOffers(body?: ListOffersRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListOffersResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listOffers(body, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['OffersApi.listOffers']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -196,7 +202,7 @@ export const OffersApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSellingPartnerMetrics(requestParameters: OffersApiGetSellingPartnerMetricsRequest = {}, options?: AxiosRequestConfig): AxiosPromise<GetSellingPartnerMetricsResponse> {
+        getSellingPartnerMetrics(requestParameters: OffersApiGetSellingPartnerMetricsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<GetSellingPartnerMetricsResponse> {
             return localVarFp.getSellingPartnerMetrics(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -205,7 +211,7 @@ export const OffersApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listOfferMetrics(requestParameters: OffersApiListOfferMetricsRequest = {}, options?: AxiosRequestConfig): AxiosPromise<ListOfferMetricsResponse> {
+        listOfferMetrics(requestParameters: OffersApiListOfferMetricsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ListOfferMetricsResponse> {
             return localVarFp.listOfferMetrics(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -214,7 +220,7 @@ export const OffersApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listOffers(requestParameters: OffersApiListOffersRequest = {}, options?: AxiosRequestConfig): AxiosPromise<ListOffersResponse> {
+        listOffers(requestParameters: OffersApiListOffersRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ListOffersResponse> {
             return localVarFp.listOffers(requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
@@ -276,7 +282,7 @@ export class OffersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OffersApi
      */
-    public getSellingPartnerMetrics(requestParameters: OffersApiGetSellingPartnerMetricsRequest = {}, options?: AxiosRequestConfig) {
+    public getSellingPartnerMetrics(requestParameters: OffersApiGetSellingPartnerMetricsRequest = {}, options?: RawAxiosRequestConfig) {
         return OffersApiFp(this.configuration).getSellingPartnerMetrics(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -287,7 +293,7 @@ export class OffersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OffersApi
      */
-    public listOfferMetrics(requestParameters: OffersApiListOfferMetricsRequest = {}, options?: AxiosRequestConfig) {
+    public listOfferMetrics(requestParameters: OffersApiListOfferMetricsRequest = {}, options?: RawAxiosRequestConfig) {
         return OffersApiFp(this.configuration).listOfferMetrics(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -298,7 +304,8 @@ export class OffersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OffersApi
      */
-    public listOffers(requestParameters: OffersApiListOffersRequest = {}, options?: AxiosRequestConfig) {
+    public listOffers(requestParameters: OffersApiListOffersRequest = {}, options?: RawAxiosRequestConfig) {
         return OffersApiFp(this.configuration).listOffers(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
+

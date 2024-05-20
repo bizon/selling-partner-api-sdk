@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { LabelSpecification } from './label-specification';
+import type { LabelSpecification } from './label-specification';
 
 /**
  * The request schema for the retrieveShippingLabel operation.

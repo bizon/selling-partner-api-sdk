@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FeesEstimateRequest } from './fees-estimate-request';
+import type { FeesEstimateRequest } from './fees-estimate-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { IdType } from './id-type';
+import type { IdType } from './id-type';
 
 /**
  * A product, marketplace, and proposed price used to request estimated fees.

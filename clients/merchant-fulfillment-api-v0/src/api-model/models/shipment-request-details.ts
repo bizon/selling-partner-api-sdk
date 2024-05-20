@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Address } from './address';
+import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Item } from './item';
+import type { Item } from './item';
 // May contain unused imports in some cases
 // @ts-ignore
-import { LabelCustomization } from './label-customization';
+import type { LabelCustomization } from './label-customization';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PackageDimensions } from './package-dimensions';
+import type { PackageDimensions } from './package-dimensions';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShippingServiceOptions } from './shipping-service-options';
+import type { ShippingServiceOptions } from './shipping-service-options';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Weight } from './weight';
+import type { Weight } from './weight';
 
 /**
  * Shipment information required for requesting shipping service offers or for creating a shipment.

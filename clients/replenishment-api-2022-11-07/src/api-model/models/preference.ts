@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AutoEnrollmentPreference } from './auto-enrollment-preference';
+import type { AutoEnrollmentPreference } from './auto-enrollment-preference';
 
 /**
  * Offer preferences that you can include in the result filter criteria.

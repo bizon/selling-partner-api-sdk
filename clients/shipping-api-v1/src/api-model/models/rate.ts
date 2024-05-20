@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Currency } from './currency';
+import type { Currency } from './currency';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ServiceType } from './service-type';
+import type { ServiceType } from './service-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ShippingPromiseSet } from './shipping-promise-set';
+import type { ShippingPromiseSet } from './shipping-promise-set';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Weight } from './weight';
+import type { Weight } from './weight';
 
 /**
  * The available rate that can be used to send the shipment

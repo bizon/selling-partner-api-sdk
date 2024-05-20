@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/orders-api-v0",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response. Note: The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.",
-  "version": "3.1.2",
+  "version": "3.2.0",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

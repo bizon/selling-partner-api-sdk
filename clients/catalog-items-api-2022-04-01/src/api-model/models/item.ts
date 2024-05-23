@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { ItemBrowseClassificationsByMarketplace } from './item-browse-classifications-by-marketplace';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ItemDimensionsByMarketplace } from './item-dimensions-by-marketplace';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -56,6 +59,12 @@ export interface Item {
      * @memberof Item
      */
     'attributes'?: { [key: string]: any; };
+    /**
+     * Array of classifications (browse nodes) associated with the item in the Amazon catalog by Amazon marketplace.
+     * @type {Array<ItemBrowseClassificationsByMarketplace>}
+     * @memberof Item
+     */
+    'classifications'?: Array<ItemBrowseClassificationsByMarketplace>;
     /**
      * Array of dimensions associated with the item in the Amazon catalog by Amazon marketplace.
      * @type {Array<ItemDimensionsByMarketplace>}

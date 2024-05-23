@@ -31,6 +31,7 @@ import type { HttpStatusLine } from './http-status-line';
 
 /**
  * @type FeaturedOfferExpectedPriceResponse
+ * Schema for an individual featured offer expected price response.
  * @export
  */
 export type FeaturedOfferExpectedPriceResponse = BatchResponse & FeaturedOfferExpectedPriceResponseAllOf;

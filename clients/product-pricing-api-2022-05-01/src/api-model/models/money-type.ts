@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Currency type and monetary value. Schema for demonstrating pricing info.
  * @export
  * @interface MoneyType
  */

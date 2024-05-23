@@ -27,6 +27,9 @@ import type { MoneyType } from './money-type';
 import type { Points } from './points';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { PrimeDetails } from './prime-details';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ShippingOption } from './shipping-option';
 
 /**
@@ -47,6 +50,12 @@ export interface Offer {
      * @memberof Offer
      */
     'condition': Condition;
+    /**
+     * The item subcondition for the offer.
+     * @type {string}
+     * @memberof Offer
+     */
+    'subCondition'?: OfferSubConditionEnum;
     /**
      * 
      * @type {FulfillmentType}
@@ -71,7 +80,30 @@ export interface Offer {
      * @memberof Offer
      */
     'points'?: Points;
+    /**
+     * 
+     * @type {PrimeDetails}
+     * @memberof Offer
+     */
+    'primeDetails'?: PrimeDetails;
 }
 
+export const OfferSubConditionEnum = {
+    New: 'New',
+    Mint: 'Mint',
+    VeryGood: 'VeryGood',
+    Good: 'Good',
+    Acceptable: 'Acceptable',
+    Poor: 'Poor',
+    Club: 'Club',
+    Oem: 'OEM',
+    Warranty: 'Warranty',
+    RefurbishedWarranty: 'RefurbishedWarranty',
+    Refurbished: 'Refurbished',
+    OpenBox: 'OpenBox',
+    Other: 'Other'
+} as const;
+
+export type OfferSubConditionEnum = typeof OfferSubConditionEnum[keyof typeof OfferSubConditionEnum];
 
 

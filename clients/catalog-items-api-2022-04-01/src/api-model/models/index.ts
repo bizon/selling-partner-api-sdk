@@ -5,6 +5,7 @@ export * from './dimensions';
 export * from './error-list';
 export * from './item';
 export * from './item-browse-classification';
+export * from './item-browse-classifications-by-marketplace';
 export * from './item-classification-sales-rank';
 export * from './item-contributor';
 export * from './item-contributor-role';

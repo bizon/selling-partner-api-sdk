@@ -15,34 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MoneyType } from './money-type';
+import type { LowestPricedOffersInput } from './lowest-priced-offers-input';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Points } from './points';
+import type { Offer } from './offer';
 
 /**
- * Schema for item\'s price information, including listing price, shipping price, and Amazon points.
+ * The lowest priced offer for the requested item condition and offer type.
  * @export
- * @interface Price
+ * @interface LowestPricedOffer
  */
-export interface Price {
+export interface LowestPricedOffer {
     /**
      * 
-     * @type {MoneyType}
-     * @memberof Price
+     * @type {LowestPricedOffersInput}
+     * @memberof LowestPricedOffer
      */
-    'listingPrice': MoneyType;
+    'lowestPricedOffersInput': LowestPricedOffersInput;
     /**
-     * 
-     * @type {MoneyType}
-     * @memberof Price
+     * A list of up to 20 lowest priced offers that match the criteria specified in the `lowestPricedOffersInput` parameter.
+     * @type {Array<Offer>}
+     * @memberof LowestPricedOffer
      */
-    'shippingPrice'?: MoneyType;
-    /**
-     * 
-     * @type {Points}
-     * @memberof Price
-     */
-    'points'?: Points;
+    'offers': Array<Offer>;
 }
 

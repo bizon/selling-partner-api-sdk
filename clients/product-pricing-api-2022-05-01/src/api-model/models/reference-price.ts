@@ -13,20 +13,27 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { MoneyType } from './money-type';
 
 /**
- * The supported types of data in the `getCompetitiveSummary` API.
+ * The reference price for the given ASIN `marketplaceId` combination. 
  * @export
- * @enum {string}
+ * @interface ReferencePrice
  */
-
-export const CompetitiveSummaryIncludedData = {
-    FeaturedBuyingOptions: 'featuredBuyingOptions',
-    ReferencePrices: 'referencePrices',
-    LowestPricedOffers: 'lowestPricedOffers'
-} as const;
-
-export type CompetitiveSummaryIncludedData = typeof CompetitiveSummaryIncludedData[keyof typeof CompetitiveSummaryIncludedData];
-
-
+export interface ReferencePrice {
+    /**
+     * The name of the reference price like `CompetitivePriceThreshold`.
+     * @type {string}
+     * @memberof ReferencePrice
+     */
+    'name': string;
+    /**
+     * 
+     * @type {MoneyType}
+     * @memberof ReferencePrice
+     */
+    'price': MoneyType;
+}
 

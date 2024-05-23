@@ -15,18 +15,25 @@
 
 
 /**
- * The supported types of data in the `getCompetitiveSummary` API.
+ * Amazon Prime details.
  * @export
- * @enum {string}
+ * @interface PrimeDetails
  */
+export interface PrimeDetails {
+    /**
+     * Indicates whether the offer is an Amazon Prime offer.
+     * @type {string}
+     * @memberof PrimeDetails
+     */
+    'eligibility': PrimeDetailsEligibilityEnum;
+}
 
-export const CompetitiveSummaryIncludedData = {
-    FeaturedBuyingOptions: 'featuredBuyingOptions',
-    ReferencePrices: 'referencePrices',
-    LowestPricedOffers: 'lowestPricedOffers'
+export const PrimeDetailsEligibilityEnum = {
+    National: 'NATIONAL',
+    Regional: 'REGIONAL',
+    None: 'NONE'
 } as const;
 
-export type CompetitiveSummaryIncludedData = typeof CompetitiveSummaryIncludedData[keyof typeof CompetitiveSummaryIncludedData];
-
+export type PrimeDetailsEligibilityEnum = typeof PrimeDetailsEligibilityEnum[keyof typeof PrimeDetailsEligibilityEnum];
 
 

@@ -21,7 +21,7 @@
  */
 export interface ItemBrowseClassification {
     /**
-     * Display name for the classification.
+     * Display name for the classification (browse node).
      * @type {string}
      * @memberof ItemBrowseClassification
      */
@@ -32,5 +32,11 @@ export interface ItemBrowseClassification {
      * @memberof ItemBrowseClassification
      */
     'classificationId': string;
+    /**
+     * 
+     * @type {ItemBrowseClassification}
+     * @memberof ItemBrowseClassification
+     */
+    'parent'?: ItemBrowseClassification;
 }
 

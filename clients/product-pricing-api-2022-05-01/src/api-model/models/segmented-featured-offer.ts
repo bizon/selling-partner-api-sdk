@@ -33,6 +33,9 @@ import type { Offer } from './offer';
 import type { Points } from './points';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { PrimeDetails } from './prime-details';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { SegmentedFeaturedOfferAllOf } from './segmented-featured-offer-all-of';
 // May contain unused imports in some cases
 // @ts-ignore

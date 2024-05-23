@@ -16,38 +16,31 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import type { Condition } from './condition';
-// May contain unused imports in some cases
-// @ts-ignore
-import type { OfferIdentifier } from './offer-identifier';
-// May contain unused imports in some cases
-// @ts-ignore
-import type { Price } from './price';
 
 /**
- * Schema for `currentFeaturedOffer` or `competingFeaturedOffer`.
+ * The input required for building the `LowestPricedOffers` data in the response.
  * @export
- * @interface FeaturedOffer
+ * @interface LowestPricedOffersInput
  */
-export interface FeaturedOffer {
-    /**
-     * 
-     * @type {OfferIdentifier}
-     * @memberof FeaturedOffer
-     */
-    'offerIdentifier': OfferIdentifier;
+export interface LowestPricedOffersInput {
     /**
      * 
      * @type {Condition}
-     * @memberof FeaturedOffer
+     * @memberof LowestPricedOffersInput
      */
-    'condition'?: Condition;
+    'itemCondition': Condition;
     /**
-     * 
-     * @type {Price}
-     * @memberof FeaturedOffer
+     * The type of offers requested for the `LowestPricedOffers`. The `offerType` options are `Consumer` or `Business`. The default `offerType` is `Consumer`.
+     * @type {string}
+     * @memberof LowestPricedOffersInput
      */
-    'price'?: Price;
+    'offerType': LowestPricedOffersInputOfferTypeEnum;
 }
 
+export const LowestPricedOffersInputOfferTypeEnum = {
+    Consumer: 'CONSUMER'
+} as const;
+
+export type LowestPricedOffersInputOfferTypeEnum = typeof LowestPricedOffersInputOfferTypeEnum[keyof typeof LowestPricedOffersInputOfferTypeEnum];
 
 

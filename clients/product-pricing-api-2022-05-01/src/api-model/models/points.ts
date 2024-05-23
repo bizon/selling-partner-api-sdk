@@ -18,7 +18,7 @@
 import type { MoneyType } from './money-type';
 
 /**
- * 
+ * The number of Amazon Points offered with the purchase of an item, and their monetary value.
  * @export
  * @interface Points
  */

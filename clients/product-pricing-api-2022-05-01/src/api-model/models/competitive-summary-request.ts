@@ -19,6 +19,9 @@ import type { CompetitiveSummaryIncludedData } from './competitive-summary-inclu
 // May contain unused imports in some cases
 // @ts-ignore
 import type { HttpMethod } from './http-method';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { LowestPricedOffersInput } from './lowest-priced-offers-input';
 
 /**
  * An individual `competitiveSummary` request for an ASIN and `marketplaceId`.
@@ -44,6 +47,12 @@ export interface CompetitiveSummaryRequest {
      * @memberof CompetitiveSummaryRequest
      */
     'includedData': Array<CompetitiveSummaryIncludedData>;
+    /**
+     * The list of `lowestPricedOffersInput` parameters used to build the `lowestPricedOffers` in the response. This attribute is valid only if `lowestPricedOffers` is requested in `includedData`.
+     * @type {Array<LowestPricedOffersInput>}
+     * @memberof CompetitiveSummaryRequest
+     */
+    'lowestPricedOffersInputs'?: Array<LowestPricedOffersInput>;
     /**
      * 
      * @type {HttpMethod}

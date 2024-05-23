@@ -15,10 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Errors } from './errors';
+import type { FeaturedBuyingOption } from './featured-buying-option';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FeaturedBuyingOption } from './featured-buying-option';
+import type { LowestPricedOffer } from './lowest-priced-offer';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { ReferencePrice } from './reference-price';
 
 /**
  * The `competitiveSummaryResponse` body for a requested ASIN and `marketplaceId`.
@@ -45,10 +48,22 @@ export interface CompetitiveSummaryResponseBody {
      */
     'featuredBuyingOptions'?: Array<FeaturedBuyingOption>;
     /**
-     * 
-     * @type {Errors}
+     * A list of the lowest priced offers for the given ASIN `marketplaceId` combination.
+     * @type {Array<LowestPricedOffer>}
      * @memberof CompetitiveSummaryResponseBody
      */
-    'errors'?: Errors;
+    'lowestPricedOffers'?: Array<LowestPricedOffer>;
+    /**
+     * A list of reference prices for the given ASIN `marketplaceId` combination.
+     * @type {Array<ReferencePrice>}
+     * @memberof CompetitiveSummaryResponseBody
+     */
+    'referencePrices'?: Array<ReferencePrice>;
+    /**
+     * A list of error responses returned when a request is unsuccessful.
+     * @type {Array<Error>}
+     * @memberof CompetitiveSummaryResponseBody
+     */
+    'errors'?: Array<Error>;
 }
 

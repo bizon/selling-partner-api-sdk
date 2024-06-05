@@ -21,13 +21,13 @@
  */
 export interface ShipmentSummary {
     /**
-     * Identifier to a shipment. A shipment contains the boxes and units being inbounded.
+     * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
      * @type {string}
      * @memberof ShipmentSummary
      */
     'shipmentId': string;
     /**
-     * The status of a shipment. The state of the shipment will typically start in `WORKING` and transition to `READY_TO_SHIP` once required actions are complete prior to being picked up or shipped out. Can be `ABANDONED`, `CANCELLED`, `CHECKED_IN`, `CLOSED`, `DELETED`, `DELIVERED`, `IN_TRANSIT`, `MIXED`, `READY_TO_SHIP`, `RECEIVING`, `SHIPPED`, or `WORKING`.
+     * The status of a shipment. The state of the shipment will typically start in `WORKING` and transition to `READY_TO_SHIP` once required actions are complete prior to being picked up or shipped out. Can be: `ABANDONED`, `CANCELLED`, `CHECKED_IN`, `CLOSED`, `DELETED`, `DELIVERED`, `IN_TRANSIT`, `MIXED`, `READY_TO_SHIP`, `RECEIVING`, `SHIPPED`, `WORKING`.
      * @type {string}
      * @memberof ShipmentSummary
      */

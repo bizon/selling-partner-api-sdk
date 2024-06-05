@@ -30,7 +30,7 @@ export interface Quote {
      */
     'cost': Currency;
     /**
-     * The timestamp at which this transportation option quote becomes no longer valid. This is in ISO 8601 datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * The timestamp at which this transportation option quote becomes no longer valid. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      * @type {string}
      * @memberof Quote
      */

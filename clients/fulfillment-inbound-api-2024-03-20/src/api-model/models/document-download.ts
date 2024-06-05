@@ -21,7 +21,7 @@
  */
 export interface DocumentDownload {
     /**
-     * The type of download. Can be `URL` or `PDF_BASE64`.
+     * The type of download. Can be `URL`.
      * @type {string}
      * @memberof DocumentDownload
      */

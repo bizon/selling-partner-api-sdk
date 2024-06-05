@@ -16,9 +16,6 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import type { Address } from './address';
-// May contain unused imports in some cases
-// @ts-ignore
-import type { ContactInformation } from './contact-information';
 
 /**
  * A light-weight inbound plan.
@@ -27,25 +24,19 @@ import type { ContactInformation } from './contact-information';
  */
 export interface InboundPlanSummary {
     /**
-     * 
-     * @type {ContactInformation}
-     * @memberof InboundPlanSummary
-     */
-    'contactInformation': ContactInformation;
-    /**
      * The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      * @type {string}
      * @memberof InboundPlanSummary
      */
     'createdAt': string;
     /**
-     * Identifier to an inbound plan.
+     * Identifier of an inbound plan.
      * @type {string}
      * @memberof InboundPlanSummary
      */
     'inboundPlanId': string;
     /**
-     * ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      * @type {string}
      * @memberof InboundPlanSummary
      */
@@ -69,7 +60,7 @@ export interface InboundPlanSummary {
      */
     'sourceAddress': Address;
     /**
-     * Current status of the inbound plan. Can be \'ACTIVE\', \'VOIDED\', or \'SHIPPED\'.
+     * Current status of the inbound plan. Can be: `ACTIVE`, `VOIDED`, `SHIPPED`, \'ERRORED\'.
      * @type {string}
      * @memberof InboundPlanSummary
      */

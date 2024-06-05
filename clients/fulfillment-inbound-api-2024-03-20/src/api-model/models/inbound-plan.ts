@@ -18,9 +18,6 @@
 import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ContactInformation } from './contact-information';
-// May contain unused imports in some cases
-// @ts-ignore
 import type { PackingOptionSummary } from './packing-option-summary';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -36,19 +33,13 @@ import type { ShipmentSummary } from './shipment-summary';
  */
 export interface InboundPlan {
     /**
-     * 
-     * @type {ContactInformation}
-     * @memberof InboundPlan
-     */
-    'contactInformation': ContactInformation;
-    /**
      * The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      * @type {string}
      * @memberof InboundPlan
      */
     'createdAt': string;
     /**
-     * Identifier to an inbound plan.
+     * Identifier of an inbound plan.
      * @type {string}
      * @memberof InboundPlan
      */
@@ -66,25 +57,25 @@ export interface InboundPlan {
      */
     'marketplaceIds': Array<string>;
     /**
-     * The human-readable name of the inbound plan.
+     * Human-readable name of the inbound plan.
      * @type {string}
      * @memberof InboundPlan
      */
     'name': string;
     /**
-     * Packing options for the inbound plan. This property will be populated when it has been generated via the corresponding endpoint. If there is a chosen placement option, only packing options for that placement option will be returned. If there are confirmed shipments, only packing options for those shipments will be returned. Query the packing option for more details.
+     * Packing options for the inbound plan. This property will be populated when it has been generated via the corresponding operation. If there is a chosen placement option, only packing options for that placement option will be returned. If there are confirmed shipments, only packing options for those shipments will be returned. Query the packing option for more details.
      * @type {Array<PackingOptionSummary>}
      * @memberof InboundPlan
      */
     'packingOptions'?: Array<PackingOptionSummary>;
     /**
-     * Placement options for the inbound plan. This property will be populated when it has been generated via the corresponding endpoint. If there is a chosen placement option, that will be the only returned option. Query the placement option for more details.
+     * Placement options for the inbound plan. This property will be populated when it has been generated via the corresponding operation. If there is a chosen placement option, that will be the only returned option. Query the placement option for more details.
      * @type {Array<PlacementOptionSummary>}
      * @memberof InboundPlan
      */
     'placementOptions'?: Array<PlacementOptionSummary>;
     /**
-     * Shipment IDs for the inbound plan. This property will be populated when it has been generated via the corresponding endpoint. If there is a chosen placement option, only shipments for that option will be returned. If there are confirmed shipments, only those shipments will be returned. Query the shipment for more details.
+     * Shipment IDs for the inbound plan. This property will be populated when it has been generated via the corresponding operation. If there is a chosen placement option, only shipments for that option will be returned. If there are confirmed shipments, only those shipments will be returned. Query the shipment for more details.
      * @type {Array<ShipmentSummary>}
      * @memberof InboundPlan
      */
@@ -96,7 +87,7 @@ export interface InboundPlan {
      */
     'sourceAddress': Address;
     /**
-     * Current status of the inbound plan. Can be `ACTIVE`, `VOIDED`, or `SHIPPED`.
+     * Current status of the inbound plan. Can be: `ACTIVE`, `VOIDED`, `SHIPPED`, \'ERRORED\'.
      * @type {string}
      * @memberof InboundPlan
      */

@@ -21,7 +21,7 @@ import type { Pagination } from './pagination';
 import type { Pallet } from './pallet';
 
 /**
- * `listInboundPlanPallets` response.
+ * The `listInboundPlanPallets` response.
  * @export
  * @interface ListInboundPlanPalletsResponse
  */

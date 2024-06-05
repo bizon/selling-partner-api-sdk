@@ -21,13 +21,13 @@ import type { Item } from './item';
 import type { Pagination } from './pagination';
 
 /**
- * `listPackingGroupItems` response.
+ * The `listPackingGroupItems` response.
  * @export
  * @interface ListPackingGroupItemsResponse
  */
 export interface ListPackingGroupItemsResponse {
     /**
-     * Provides the information about the list of items in the inbound plan.
+     * Provides the information about the list of items in the packing group.
      * @type {Array<Item>}
      * @memberof ListPackingGroupItemsResponse
      */

@@ -21,7 +21,7 @@ import type { Pagination } from './pagination';
 import type { PlacementOption } from './placement-option';
 
 /**
- * `listPlacementOptions` response.
+ * The `listPlacementOptions` response.
  * @export
  * @interface ListPlacementOptionsResponse
  */

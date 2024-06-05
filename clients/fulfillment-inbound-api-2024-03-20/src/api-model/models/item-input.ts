@@ -45,7 +45,7 @@ export interface ItemInput {
      */
     'manufacturingLotCode'?: string;
     /**
-     * The merchant SKU.
+     * Merchant SKU.
      * @type {string}
      * @memberof ItemInput
      */
@@ -57,7 +57,7 @@ export interface ItemInput {
      */
     'prepOwner': PrepOwner;
     /**
-     * The number of units of the specified MSKU that will be shipped.
+     * The number of units of the specified msku that will be shipped.
      * @type {number}
      * @memberof ItemInput
      */

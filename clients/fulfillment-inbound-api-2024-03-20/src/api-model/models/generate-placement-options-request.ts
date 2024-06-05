@@ -24,7 +24,7 @@ import type { CustomPlacementInput } from './custom-placement-input';
  */
 export interface GeneratePlacementOptionsRequest {
     /**
-     * Custom placements options to be added to the plan.
+     * Custom placement options to be added to the plan.
      * @type {Array<CustomPlacementInput>}
      * @memberof GeneratePlacementOptionsRequest
      */

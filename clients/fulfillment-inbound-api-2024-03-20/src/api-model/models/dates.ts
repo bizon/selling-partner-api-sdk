@@ -18,17 +18,11 @@
 import type { Window } from './window';
 
 /**
- * Specifies the dates that the seller expects their shipment will be shipped and delivered.
+ * Specifies the date that the seller expects their shipment will be shipped.
  * @export
  * @interface Dates
  */
 export interface Dates {
-    /**
-     * 
-     * @type {Window}
-     * @memberof Dates
-     */
-    'deliveryWindow'?: Window;
     /**
      * 
      * @type {Window}

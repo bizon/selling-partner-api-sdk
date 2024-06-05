@@ -15,10 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
-// May contain unused imports in some cases
-// @ts-ignore
-import type { ContactInformation } from './contact-information';
+import type { AddressInput } from './address-input';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ItemInput } from './item-input';
@@ -29,12 +26,6 @@ import type { ItemInput } from './item-input';
  * @interface CreateInboundPlanRequest
  */
 export interface CreateInboundPlanRequest {
-    /**
-     * 
-     * @type {ContactInformation}
-     * @memberof CreateInboundPlanRequest
-     */
-    'contactInformation': ContactInformation;
     /**
      * Marketplaces where the items need to be shipped to. Currently only one marketplace can be selected in this request.
      * @type {Array<string>}
@@ -55,9 +46,9 @@ export interface CreateInboundPlanRequest {
     'name'?: string;
     /**
      * 
-     * @type {Address}
+     * @type {AddressInput}
      * @memberof CreateInboundPlanRequest
      */
-    'sourceAddress': Address;
+    'sourceAddress': AddressInput;
 }
 

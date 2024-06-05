@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { BoxContentInformationSource } from './box-content-information-source';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { Dimensions } from './dimensions';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -27,17 +30,23 @@ import type { Region } from './region';
 import type { Weight } from './weight';
 
 /**
- * Contains information about a box that is used in the inbound plan. The box may contain an item and metadata about the box itself.
+ * Contains information about a box that is used in the inbound plan. The box is a container that holds multiple items.
  * @export
  * @interface Box
  */
 export interface Box {
     /**
-     * The ID provided by Amazon that identifies a given box. This ID is comprised of the external shipment ID (which         is generated after transportation has been confirmed) and the index of the box.
+     * The ID provided by Amazon that identifies a given box. This ID is comprised of the external shipment ID (which is generated after transportation has been confirmed) and the index of the box.
      * @type {string}
      * @memberof Box
      */
     'boxId'?: string;
+    /**
+     * 
+     * @type {BoxContentInformationSource}
+     * @memberof Box
+     */
+    'contentInformationSource'?: BoxContentInformationSource;
     /**
      * 
      * @type {Region}
@@ -81,4 +90,6 @@ export interface Box {
      */
     'weight'?: Weight;
 }
+
+
 

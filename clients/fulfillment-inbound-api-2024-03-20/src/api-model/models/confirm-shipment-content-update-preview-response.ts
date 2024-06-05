@@ -15,15 +15,15 @@
 
 
 /**
- * The `updateShipmentDeliveryWindow` response.
+ * The `confirmShipmentContentUpdatePreview` response.
  * @export
- * @interface UpdateShipmentDeliveryWindowResponse
+ * @interface ConfirmShipmentContentUpdatePreviewResponse
  */
-export interface UpdateShipmentDeliveryWindowResponse {
+export interface ConfirmShipmentContentUpdatePreviewResponse {
     /**
      * UUID for the given operation.
      * @type {string}
-     * @memberof UpdateShipmentDeliveryWindowResponse
+     * @memberof ConfirmShipmentContentUpdatePreviewResponse
      */
     'operationId': string;
 }

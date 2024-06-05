@@ -15,7 +15,7 @@
 
 
 /**
- * `setPackingInformation` response.
+ * The `setPackingInformation` response.
  * @export
  * @interface SetPackingInformationResponse
  */

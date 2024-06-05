@@ -21,7 +21,7 @@ import type { InboundPlanSummary } from './inbound-plan-summary';
 import type { Pagination } from './pagination';
 
 /**
- * `listInboundPlans` response.
+ * The `listInboundPlans` response.
  * @export
  * @interface ListInboundPlansResponse
  */

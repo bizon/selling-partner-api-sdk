@@ -16,9 +16,6 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ContactInformation } from './contact-information';
-// May contain unused imports in some cases
-// @ts-ignore
-import type { WindowInput } from './window-input';
 
 /**
  * The transportation option selected to confirm.
@@ -32,12 +29,6 @@ export interface TransportationSelection {
      * @memberof TransportationSelection
      */
     'contactInformation'?: ContactInformation;
-    /**
-     * 
-     * @type {WindowInput}
-     * @memberof TransportationSelection
-     */
-    'deliveryWindow'?: WindowInput;
     /**
      * Shipment ID that the transportation Option is for.
      * @type {string}

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AppointmentSlot } from './appointment-slot';
+import type { Carrier } from './carrier';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Carrier } from './carrier';
+import type { CarrierAppointment } from './carrier-appointment';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { Quote } from './quote';
@@ -31,28 +31,22 @@ import type { Quote } from './quote';
 export interface TransportationOption {
     /**
      * 
-     * @type {AppointmentSlot}
-     * @memberof TransportationOption
-     */
-    'appointmentSlot'?: AppointmentSlot;
-    /**
-     * 
      * @type {Carrier}
      * @memberof TransportationOption
      */
     'carrier': Carrier;
     /**
-     * Identifier to an inbound plan.
-     * @type {string}
+     * 
+     * @type {CarrierAppointment}
      * @memberof TransportationOption
      */
-    'inboundPlanId': string;
+    'carrierAppointment'?: CarrierAppointment;
     /**
-     * The identifier of a placement option. A placement option represents the shipment splits and destinations of SKUs.
-     * @type {string}
+     * Identifies a list of preconditions for confirming the transportation option.
+     * @type {Array<string>}
      * @memberof TransportationOption
      */
-    'placementOptionId': string;
+    'preconditions': Array<string>;
     /**
      * 
      * @type {Quote}
@@ -60,25 +54,25 @@ export interface TransportationOption {
      */
     'quote'?: Quote;
     /**
-     * Identifier to a shipment. A shipment contains the boxes and units being inbounded.
+     * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
      * @type {string}
      * @memberof TransportationOption
      */
     'shipmentId': string;
     /**
-     * The shipping mode associated with the transportation option. Available modes are ground small parcel, freight less-than-truckload (LTL), freight full-truckload (FTL) palletized, freight FTL non-palletized, ocean less-than-container-load (LCL), ocean full-container load (FCL), air small parcel, and air small parcel express.
+     * Mode of shipment transportation that this option will provide. Can be: `GROUND_SMALL_PARCEL`, `FREIGHT_LTL`, `FREIGHT_FTL_PALLET`, `FREIGHT_FTL_NONPALLET`, `OCEAN_LCL`, `OCEAN_FCL`, `AIR_SMALL_PARCEL`, `AIR_SMALL_PARCEL_EXPRESS`.
      * @type {string}
      * @memberof TransportationOption
      */
     'shippingMode': string;
     /**
-     * The shipping solution associated with the transportation option. Available solutions are Amazon-partnered carrier or \'use your own carrier\'.
+     * Shipping program for the option. Can be: `AMAZON_PARTNERED_CARRIER`, `USE_YOUR_OWN_CARRIER`.
      * @type {string}
      * @memberof TransportationOption
      */
     'shippingSolution': string;
     /**
-     * Identifier to a transportation option. A transportation option represent one option for how to send a shipment.
+     * Identifier of a transportation option. A transportation option represent one option for how to send a shipment.
      * @type {string}
      * @memberof TransportationOption
      */

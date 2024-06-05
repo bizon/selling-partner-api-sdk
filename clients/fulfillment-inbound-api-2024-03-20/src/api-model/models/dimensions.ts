@@ -18,19 +18,19 @@
 import type { UnitOfMeasurement } from './unit-of-measurement';
 
 /**
- * Measurement of a package dimensions.
+ * Measurement of a package\'s dimensions.
  * @export
  * @interface Dimensions
  */
 export interface Dimensions {
     /**
-     * Height.
+     * The height of a package.
      * @type {number}
      * @memberof Dimensions
      */
     'height': number;
     /**
-     * Length.
+     * The length of a package.
      * @type {number}
      * @memberof Dimensions
      */
@@ -42,7 +42,7 @@ export interface Dimensions {
      */
     'unitOfMeasurement': UnitOfMeasurement;
     /**
-     * Width.
+     * The width of a package.
      * @type {number}
      * @memberof Dimensions
      */

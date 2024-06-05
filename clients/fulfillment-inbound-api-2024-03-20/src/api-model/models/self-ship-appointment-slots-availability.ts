@@ -24,7 +24,7 @@ import type { AppointmentSlot } from './appointment-slot';
  */
 export interface SelfShipAppointmentSlotsAvailability {
     /**
-     * ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      * @type {string}
      * @memberof SelfShipAppointmentSlotsAvailability
      */

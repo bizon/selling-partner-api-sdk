@@ -18,7 +18,7 @@
 import type { ReasonComment } from './reason-comment';
 
 /**
- * `scheduleSelfShipAppointment` request.
+ * The `scheduleSelfShipAppointment` request.
  * @export
  * @interface ScheduleSelfShipAppointmentRequest
  */

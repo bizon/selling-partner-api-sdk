@@ -15,7 +15,7 @@
 
 
 /**
- * The `cancelSelfShipAppointment` response.
+ * The `CancelSelfShipAppointment` response.
  * @export
  * @interface CancelSelfShipAppointmentResponse
  */

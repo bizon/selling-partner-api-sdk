@@ -21,7 +21,7 @@
  */
 export interface PackingOptionSummary {
     /**
-     * Identifier to a packing option.
+     * Identifier of a packing option.
      * @type {string}
      * @memberof PackingOptionSummary
      */

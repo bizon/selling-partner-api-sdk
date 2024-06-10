@@ -16,33 +16,24 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import type { Currency } from './currency';
-// May contain unused imports in some cases
-// @ts-ignore
-import type { PalletInput } from './pallet-input';
 
 /**
- * Pallet information, including weight, dimensions, quantity, stackability, freight class, and declared value.
+ * Freight information describes the skus being transported. Freight carrier options and quotes will only be returned if the freight information is provided.
  * @export
- * @interface PalletInformation
+ * @interface FreightInformation
  */
-export interface PalletInformation {
+export interface FreightInformation {
     /**
      * 
      * @type {Currency}
-     * @memberof PalletInformation
+     * @memberof FreightInformation
      */
     'declaredValue'?: Currency;
     /**
-     * Freight class. Can be `NONE`, `FC_50`, `FC_55`, `FC_60`, `FC_65`, `FC_70`, `FC_77_5`, `FC_85`, `FC_92_5`, `FC_100`, `FC_110`, `FC_125`, `FC_150`, `FC_175`, `FC_200`, `FC_250`, `FC_300`, `FC_400`, or `FC_500`.
+     * Freight class. Can be: `NONE`, `FC_50`, `FC_55`, `FC_60`, `FC_65`, `FC_70`, `FC_77_5`, `FC_85`, `FC_92_5`, `FC_100`, `FC_110`, `FC_125`, `FC_150`, `FC_175`, `FC_200`, `FC_250`, `FC_300`, `FC_400`, `FC_500`.
      * @type {string}
-     * @memberof PalletInformation
+     * @memberof FreightInformation
      */
     'freightClass'?: string;
-    /**
-     * Set pallet configuration for Less-Than-Truckload (LTL).
-     * @type {Array<PalletInput>}
-     * @memberof PalletInformation
-     */
-    'pallets': Array<PalletInput>;
 }
 

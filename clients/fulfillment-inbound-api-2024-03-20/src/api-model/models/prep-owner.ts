@@ -15,14 +15,15 @@
 
 
 /**
- * In some situations, special preparations are required for items and this field reflects the owner of the preparations. Options include `AMAZON` or `SELLER`.
+ * In some situations, special preparations are required for items and this field reflects the owner of the preparations. Options include `AMAZON`, `SELLER` or `NONE`.
  * @export
  * @enum {string}
  */
 
 export const PrepOwner = {
     Amazon: 'AMAZON',
-    Seller: 'SELLER'
+    Seller: 'SELLER',
+    None: 'NONE'
 } as const;
 
 export type PrepOwner = typeof PrepOwner[keyof typeof PrepOwner];

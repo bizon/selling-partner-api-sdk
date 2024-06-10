@@ -21,7 +21,7 @@
  */
 export interface CreateInboundPlanResponse {
     /**
-     * Identifier to an inbound plan.
+     * Identifier of an inbound plan.
      * @type {string}
      * @memberof CreateInboundPlanResponse
      */

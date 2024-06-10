@@ -18,7 +18,7 @@
 import type { SelfShipAppointmentDetails } from './self-ship-appointment-details';
 
 /**
- * `scheduleSelfShipAppointment` response.
+ * The `scheduleSelfShipAppointment` response.
  * @export
  * @interface ScheduleSelfShipAppointmentResponse
  */

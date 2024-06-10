@@ -18,7 +18,10 @@
 import type { ContactInformation } from './contact-information';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PalletInformation } from './pallet-information';
+import type { FreightInformation } from './freight-information';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PalletInput } from './pallet-input';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { WindowInput } from './window-input';
@@ -37,10 +40,16 @@ export interface ShipmentTransportationConfiguration {
     'contactInformation'?: ContactInformation;
     /**
      * 
-     * @type {PalletInformation}
+     * @type {FreightInformation}
      * @memberof ShipmentTransportationConfiguration
      */
-    'palletInformation'?: PalletInformation;
+    'freightInformation'?: FreightInformation;
+    /**
+     * List of pallet configuration inputs.
+     * @type {Array<PalletInput>}
+     * @memberof ShipmentTransportationConfiguration
+     */
+    'pallets'?: Array<PalletInput>;
     /**
      * 
      * @type {WindowInput}
@@ -48,7 +57,7 @@ export interface ShipmentTransportationConfiguration {
      */
     'readyToShipWindow': WindowInput;
     /**
-     * Identifier to a shipment. A shipment contains the boxes and units being inbounded.
+     * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
      * @type {string}
      * @memberof ShipmentTransportationConfiguration
      */

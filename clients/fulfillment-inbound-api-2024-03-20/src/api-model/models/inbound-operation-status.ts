@@ -21,19 +21,19 @@ import type { OperationProblem } from './operation-problem';
 import type { OperationStatus } from './operation-status';
 
 /**
- * The `getInboundOperationStatus` response.
+ * GetInboundOperationStatus response.
  * @export
  * @interface InboundOperationStatus
  */
 export interface InboundOperationStatus {
     /**
-     * The name of the operation that was executed in the asynchronous API call.
+     * The name of the operation in the asynchronous API call.
      * @type {string}
      * @memberof InboundOperationStatus
      */
     'operation': string;
     /**
-     * The operation Id returned by the asynchronous API call.
+     * The operation ID returned by the asynchronous API call.
      * @type {string}
      * @memberof InboundOperationStatus
      */

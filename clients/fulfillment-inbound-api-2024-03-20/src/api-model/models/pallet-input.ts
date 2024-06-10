@@ -24,7 +24,7 @@ import type { Stackability } from './stackability';
 import type { Weight } from './weight';
 
 /**
- * Set pallet configuration for Less-Than-Truckload (LTL).
+ * Contains input information about a pallet to be used in the inbound plan.
  * @export
  * @interface PalletInput
  */

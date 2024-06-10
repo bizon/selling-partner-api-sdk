@@ -21,13 +21,13 @@
  */
 export interface PlacementOptionSummary {
     /**
-     * Identifier to a placement option. A placement option represents the shipment splits and destinations of SKUs.
+     * The identifier of a placement option. A placement option represents the shipment splits and destinations of SKUs.
      * @type {string}
      * @memberof PlacementOptionSummary
      */
     'placementOptionId': string;
     /**
-     * The status of a placement option. Can be `OFFERED` or `ACCEPTED`.
+     * The status of a placement option. Can be: `OFFERED` or `ACCEPTED`.
      * @type {string}
      * @memberof PlacementOptionSummary
      */

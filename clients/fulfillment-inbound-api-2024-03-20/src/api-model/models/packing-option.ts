@@ -33,7 +33,7 @@ export interface PackingOption {
      */
     'discounts': Array<Incentive>;
     /**
-     * The timestamp at which this packing option becomes no longer valid. This is in ISO 8601 datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * The timestamp at which this packing option becomes no longer valid. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      * @type {string}
      * @memberof PackingOption
      */
@@ -45,25 +45,19 @@ export interface PackingOption {
      */
     'fees': Array<Incentive>;
     /**
-     * Identifier to an inbound plan.
-     * @type {string}
-     * @memberof PackingOption
-     */
-    'inboundPlanId': string;
-    /**
      * Packing group IDs.
      * @type {Array<string>}
      * @memberof PackingOption
      */
     'packingGroups': Array<string>;
     /**
-     * Identifier to a packing option.
+     * Identifier of a packing option.
      * @type {string}
      * @memberof PackingOption
      */
     'packingOptionId': string;
     /**
-     * The status of the packing option. Can be `OFFERED`, `ACCEPTED`, or `EXPIRED`.
+     * The status of the packing option. Can be: `OFFERED`, `ACCEPTED`, or `EXPIRED`.
      * @type {string}
      * @memberof PackingOption
      */

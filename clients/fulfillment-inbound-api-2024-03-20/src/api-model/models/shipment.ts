@@ -21,7 +21,10 @@ import type { ContactInformation } from './contact-information';
 import type { Dates } from './dates';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PalletInformation } from './pallet-information';
+import type { FreightInformation } from './freight-information';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { SelectedDeliveryWindow } from './selected-delivery-window';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { SelfShipAppointmentDetails } from './self-ship-appointment-details';
@@ -66,11 +69,11 @@ export interface Shipment {
      */
     'destination': ShipmentDestination;
     /**
-     * Identifier to an inbound plan.
-     * @type {string}
+     * 
+     * @type {FreightInformation}
      * @memberof Shipment
      */
-    'inboundPlanId': string;
+    'freightInformation'?: FreightInformation;
     /**
      * The name of the shipment.
      * @type {string}
@@ -78,19 +81,19 @@ export interface Shipment {
      */
     'name'?: string;
     /**
-     * 
-     * @type {PalletInformation}
-     * @memberof Shipment
-     */
-    'palletInformation'?: PalletInformation;
-    /**
-     * Identifier to a placement option. A placement option represents the shipment splits and destinations of SKUs.
+     * The identifier of a placement option. A placement option represents the shipment splits and destinations of SKUs.
      * @type {string}
      * @memberof Shipment
      */
     'placementOptionId': string;
     /**
-     * Identifier to a transportation option. A transportation option represent one option for how to send a shipment.
+     * 
+     * @type {SelectedDeliveryWindow}
+     * @memberof Shipment
+     */
+    'selectedDeliveryWindow'?: SelectedDeliveryWindow;
+    /**
+     * Identifier of a transportation option. A transportation option represent one option for how to send a shipment.
      * @type {string}
      * @memberof Shipment
      */
@@ -102,13 +105,13 @@ export interface Shipment {
      */
     'selfShipAppointmentDetails'?: Array<SelfShipAppointmentDetails>;
     /**
-     * The confirmed shipment ID which shows up on labels (for example, FBA1234ABCD).
+     * The confirmed shipment ID which shows up on labels (for example, `FBA1234ABCD`).
      * @type {string}
      * @memberof Shipment
      */
     'shipmentConfirmationId'?: string;
     /**
-     * Identifier to a shipment. A shipment contains the boxes and units being inbounded.
+     * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
      * @type {string}
      * @memberof Shipment
      */

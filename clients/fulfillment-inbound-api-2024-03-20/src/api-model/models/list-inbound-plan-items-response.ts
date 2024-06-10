@@ -21,7 +21,7 @@ import type { Item } from './item';
 import type { Pagination } from './pagination';
 
 /**
- * `listInboundPlanItems` response.
+ * The `listInboundPlanItems` response.
  * @export
  * @interface ListInboundPlanItemsResponse
  */

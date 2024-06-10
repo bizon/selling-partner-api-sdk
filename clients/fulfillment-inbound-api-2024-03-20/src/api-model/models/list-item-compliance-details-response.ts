@@ -18,7 +18,7 @@
 import type { ComplianceDetail } from './compliance-detail';
 
 /**
- * `listItemComplianceDetails` response.
+ * The `listItemComplianceDetails` response.
  * @export
  * @interface ListItemComplianceDetailsResponse
  */

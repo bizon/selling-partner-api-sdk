@@ -42,7 +42,7 @@ export interface Item {
      */
     'fnsku': string;
     /**
-     * Specifies who will label the items. Options include `AMAZON` and `SELLER`.
+     * Specifies who will label the items. Options include `AMAZON`, `SELLER`, and `NONE`.
      * @type {string}
      * @memberof Item
      */

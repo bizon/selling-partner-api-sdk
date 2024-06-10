@@ -21,7 +21,7 @@ import type { Box } from './box';
 import type { Pagination } from './pagination';
 
 /**
- * `listInboundPlanBoxes` response.
+ * The `listInboundPlanBoxes` response.
  * @export
  * @interface ListInboundPlanBoxesResponse
  */

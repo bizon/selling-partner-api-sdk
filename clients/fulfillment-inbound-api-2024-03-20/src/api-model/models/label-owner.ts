@@ -15,14 +15,15 @@
 
 
 /**
- * Specifies who will label the items. Options include `AMAZON` and `SELLER`.
+ * Specifies who will label the items. Options include `AMAZON`, `SELLER` or `NONE`.
  * @export
  * @enum {string}
  */
 
 export const LabelOwner = {
     Amazon: 'AMAZON',
-    Seller: 'SELLER'
+    Seller: 'SELLER',
+    None: 'NONE'
 } as const;
 
 export type LabelOwner = typeof LabelOwner[keyof typeof LabelOwner];

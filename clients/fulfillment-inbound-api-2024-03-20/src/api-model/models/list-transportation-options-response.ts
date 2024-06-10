@@ -21,7 +21,7 @@ import type { Pagination } from './pagination';
 import type { TransportationOption } from './transportation-option';
 
 /**
- * `listTransportationOptions` response.
+ * The `listTransportationOptions` response.
  * @export
  * @interface ListTransportationOptionsResponse
  */

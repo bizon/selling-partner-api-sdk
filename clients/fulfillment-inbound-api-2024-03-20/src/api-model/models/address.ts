@@ -51,11 +51,23 @@ export interface Address {
      */
     'countryCode': string;
     /**
-     * The name of the individual or business.
+     * The email address.
+     * @type {string}
+     * @memberof Address
+     */
+    'email'?: string;
+    /**
+     * The name of the individual who is the primary contact.
      * @type {string}
      * @memberof Address
      */
     'name': string;
+    /**
+     * The phone number.
+     * @type {string}
+     * @memberof Address
+     */
+    'phoneNumber'?: string;
     /**
      * The postal code.
      * @type {string}

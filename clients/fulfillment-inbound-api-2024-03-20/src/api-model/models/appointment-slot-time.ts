@@ -15,7 +15,7 @@
 
 
 /**
- * An appointment slot time with a start and end.
+ * An appointment slot time with start and end.
  * @export
  * @interface AppointmentSlotTime
  */

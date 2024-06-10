@@ -18,7 +18,7 @@
 import type { PackageGroupingInput } from './package-grouping-input';
 
 /**
- * `setPackingInformation` request.
+ * The `setPackingInformation` request.
  * @export
  * @interface SetPackingInformationRequest
  */
@@ -28,6 +28,6 @@ export interface SetPackingInformationRequest {
      * @type {Array<PackageGroupingInput>}
      * @memberof SetPackingInformationRequest
      */
-    'packageGroupings'?: Array<PackageGroupingInput>;
+    'packageGroupings': Array<PackageGroupingInput>;
 }
 

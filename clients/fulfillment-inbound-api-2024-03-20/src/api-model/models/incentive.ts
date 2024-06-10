@@ -36,7 +36,7 @@ export interface Incentive {
      */
     'target': string;
     /**
-     * Type of incentive. Can be `FEE` or `DISCOUNT`.
+     * Type of incentive. Can be: `FEE`, `DISCOUNT`.
      * @type {string}
      * @memberof Incentive
      */

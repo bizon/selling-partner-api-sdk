@@ -21,19 +21,19 @@
  */
 export interface ContactInformation {
     /**
-     * Email address.
+     * The email address.
      * @type {string}
      * @memberof ContactInformation
      */
     'email'?: string;
     /**
-     * The name belonging to the contact. This field is required when contact information is being provided for         Less-Than-Truckload (LTL) carrier shipments.
+     * The contact\'s name.
      * @type {string}
      * @memberof ContactInformation
      */
-    'name'?: string;
+    'name': string;
     /**
-     * The phone number of the seller.
+     * The phone number.
      * @type {string}
      * @memberof ContactInformation
      */

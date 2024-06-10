@@ -30,7 +30,7 @@ export interface PlacementOption {
      */
     'discounts': Array<Incentive>;
     /**
-     * The expiration date of the placement option. This is in ISO 8601 datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * The expiration date of the placement option. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      * @type {string}
      * @memberof PlacementOption
      */
@@ -42,7 +42,7 @@ export interface PlacementOption {
      */
     'fees': Array<Incentive>;
     /**
-     * Identifier to a placement option. A placement option represents the shipment splits and destinations of SKUs.
+     * The identifier of a placement option. A placement option represents the shipment splits and destinations of SKUs.
      * @type {string}
      * @memberof PlacementOption
      */
@@ -54,7 +54,7 @@ export interface PlacementOption {
      */
     'shipmentIds': Array<string>;
     /**
-     * The status of a placement option. Can be `OFFERED`, `ACCEPTED`, or `EXPIRED`.
+     * The status of a placement option. Can be: `OFFERED`, `ACCEPTED`, or `EXPIRED`.
      * @type {string}
      * @memberof PlacementOption
      */

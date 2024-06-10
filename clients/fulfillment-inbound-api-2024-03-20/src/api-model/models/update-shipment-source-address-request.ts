@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { WindowInput } from './window-input';
+import type { AddressInput } from './address-input';
 
 /**
- * The `updateShipmentDeliveryWindow` request.
+ * The `UpdateShipmentSourceAddress` request.
  * @export
- * @interface UpdateShipmentDeliveryWindowRequest
+ * @interface UpdateShipmentSourceAddressRequest
  */
-export interface UpdateShipmentDeliveryWindowRequest {
+export interface UpdateShipmentSourceAddressRequest {
     /**
      * 
-     * @type {WindowInput}
-     * @memberof UpdateShipmentDeliveryWindowRequest
+     * @type {AddressInput}
+     * @memberof UpdateShipmentSourceAddressRequest
      */
-    'deliveryWindow': WindowInput;
+    'address': AddressInput;
 }
 

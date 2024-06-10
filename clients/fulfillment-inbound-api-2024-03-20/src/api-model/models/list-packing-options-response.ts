@@ -21,7 +21,7 @@ import type { PackingOption } from './packing-option';
 import type { Pagination } from './pagination';
 
 /**
- * `listPackingOptions` response.
+ * The `listPlacementOptions` response.
  * @export
  * @interface ListPackingOptionsResponse
  */

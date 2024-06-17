@@ -29,7 +29,7 @@
     "tsx": "^4.15.6",
     "turbo": "^1.13.3",
     "typedoc": "^0.25.13",
-    "typedoc-plugin-missing-exports": "^2.2.0",
+    "typedoc-plugin-missing-exports": "^2.3.0",
     "typescript": "^5.4.5",
     "xo": "^0.58.0"
   },

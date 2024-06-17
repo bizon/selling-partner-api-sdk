@@ -786,8 +786,8 @@ importers:
         specifier: ^14.0.1
         version: 14.0.1
       json-schema-to-typescript:
-        specifier: ^14.0.0
-        version: 14.0.4
+        specifier: ^14.0.5
+        version: 14.0.5
       jsonfile:
         specifier: ^6.1.0
         version: 6.1.0
@@ -3716,8 +3716,8 @@ packages:
     resolution: {integrity: sha512-fi0NG4bPjCHunUJffmLd0gxssIgkNmArMvis4iNah6Owg1MCJjWhEcDLmsK6iGkJq3tHwbDkTlce70/tmXN4cQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
-  json-schema-to-typescript@14.0.4:
-    resolution: {integrity: sha512-covPOp3hrbD+oEcMvDxP5Rh6xNZj7lOTZkXAeQoDyu1PuEl1A6oRZ3Sy05HN11vXXmdJ6gLh5P3Qz0mgMPTzzw==}
+  json-schema-to-typescript@14.0.5:
+    resolution: {integrity: sha512-JmHsbgY0KKo8Pw0HRXpGzAlZYxlu+M5kFhSzhNkUSrVJ4sCXPdAGIdSpzva5ev2/Kybz10S6AfnNdF4o3Pzt3A==}
     engines: {node: '>=16.0.0'}
     hasBin: true
 
@@ -8954,13 +8954,13 @@ snapshots:
 
   json-parse-even-better-errors@3.0.2: {}
 
-  json-schema-to-typescript@14.0.4:
+  json-schema-to-typescript@14.0.5:
     dependencies:
       '@apidevtools/json-schema-ref-parser': 11.6.1
       '@types/json-schema': 7.0.15
       '@types/lodash': 4.17.4
       cli-color: 2.0.4
-      glob: 10.3.12
+      glob: 10.4.1
       is-glob: 4.0.3
       js-yaml: 4.1.0
       lodash: 4.17.21
@@ -9762,7 +9762,7 @@ snapshots:
   path-scurry@1.10.2:
     dependencies:
       lru-cache: 10.2.2
-      minipass: 7.0.4
+      minipass: 7.1.2
 
   path-scurry@1.11.1:
     dependencies:

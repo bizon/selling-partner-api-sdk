@@ -33,7 +33,7 @@ export interface PaymentInformation {
      */
     'paymentMode': string;
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof PaymentInformation
      */

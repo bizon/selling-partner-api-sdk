@@ -25,7 +25,10 @@ export const Metric = {
     TotalSubscriptionsRevenue: 'TOTAL_SUBSCRIPTIONS_REVENUE',
     ActiveSubscriptions: 'ACTIVE_SUBSCRIPTIONS',
     NotDeliveredDueToOos: 'NOT_DELIVERED_DUE_TO_OOS',
-    SubscriberNonSubscriberAverageRevenue: 'SUBSCRIBER_NON_SUBSCRIBER_AVERAGE_REVENUE'
+    SubscriberNonSubscriberAverageRevenue: 'SUBSCRIBER_NON_SUBSCRIBER_AVERAGE_REVENUE',
+    LostRevenueDueToOos: 'LOST_REVENUE_DUE_TO_OOS',
+    SubscriberNonSubscriberAverageReorders: 'SUBSCRIBER_NON_SUBSCRIBER_AVERAGE_REORDERS',
+    CouponsRevenuePenetration: 'COUPONS_REVENUE_PENETRATION'
 } as const;
 
 export type Metric = typeof Metric[keyof typeof Metric];

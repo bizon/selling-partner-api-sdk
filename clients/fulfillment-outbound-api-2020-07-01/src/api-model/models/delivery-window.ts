@@ -21,13 +21,13 @@
  */
 export interface DeliveryWindow {
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof DeliveryWindow
      */
     'startDate': string;
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof DeliveryWindow
      */

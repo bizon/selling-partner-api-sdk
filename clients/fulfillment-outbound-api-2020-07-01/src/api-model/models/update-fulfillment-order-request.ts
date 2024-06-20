@@ -51,7 +51,7 @@ export interface UpdateFulfillmentOrderRequest {
      */
     'displayableOrderId'?: string;
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof UpdateFulfillmentOrderRequest
      */

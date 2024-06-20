@@ -22,6 +22,16 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { AddInventoryRequest } from '../models';
+// @ts-ignore
+import type { AddInventoryResponse } from '../models';
+// @ts-ignore
+import type { CreateInventoryItemRequest } from '../models';
+// @ts-ignore
+import type { CreateInventoryItemResponse } from '../models';
+// @ts-ignore
+import type { DeleteInventoryItemResponse } from '../models';
+// @ts-ignore
 import type { GetInventorySummariesResponse } from '../models';
 /**
  * FbaInventoryApi - axios parameter creator
@@ -30,7 +40,124 @@ import type { GetInventorySummariesResponse } from '../models';
 export const FbaInventoryApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the `startDateTime`, `sellerSkus` and `sellerSku` parameters:  - All inventory summaries with available details are returned when the `startDateTime`, `sellerSkus` and `sellerSku` parameters are omitted. - When `startDateTime` is provided, the operation returns inventory summaries that have had changes after the date and time specified. The `sellerSkus` and `sellerSku` parameters are ignored. **Important:** To avoid errors, use both `startDateTime` and `nextToken` to get the next page of inventory summaries that have changed after the date and time specified. - When the `sellerSkus` parameter is provided, the operation returns inventory summaries for only the specified `sellerSkus`. The `sellerSku` parameter is ignored. - When the `sellerSku` parameter is provided, the operation returns inventory summaries for only the specified `sellerSku`.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Requests that Amazon add items to the Sandbox Inventory with desired amount of quantity in the sandbox environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
+         * @param {string} xAmznIdempotencyToken A unique token/requestId provided with each call to ensure idempotency.
+         * @param {AddInventoryRequest} addInventoryRequestBody List of items to add to Sandbox inventory.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        addInventory: async (xAmznIdempotencyToken: string, addInventoryRequestBody: AddInventoryRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'xAmznIdempotencyToken' is not null or undefined
+            assertParamExists('addInventory', 'xAmznIdempotencyToken', xAmznIdempotencyToken)
+            // verify required parameter 'addInventoryRequestBody' is not null or undefined
+            assertParamExists('addInventory', 'addInventoryRequestBody', addInventoryRequestBody)
+            const localVarPath = `/fba/inventory/v1/items/inventory`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (xAmznIdempotencyToken != null) {
+                localVarHeaderParameter['x-amzn-idempotency-token'] = String(xAmznIdempotencyToken);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(addInventoryRequestBody, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Requests that Amazon create product-details in the Sandbox Inventory in the sandbox environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
+         * @param {CreateInventoryItemRequest} createInventoryItemRequestBody CreateInventoryItem Request Body Parameter.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createInventoryItem: async (createInventoryItemRequestBody: CreateInventoryItemRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'createInventoryItemRequestBody' is not null or undefined
+            assertParamExists('createInventoryItem', 'createInventoryItemRequestBody', createInventoryItemRequestBody)
+            const localVarPath = `/fba/inventory/v1/items`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(createInventoryItemRequestBody, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Requests that Amazon Deletes an item from the Sandbox Inventory in the sandbox environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
+         * @param {string} sellerSku A single seller SKU used for querying the specified seller SKU inventory summaries.
+         * @param {string} marketplaceId The marketplace ID for the marketplace for which the sellerSku is to be deleted.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteInventoryItem: async (sellerSku: string, marketplaceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'sellerSku' is not null or undefined
+            assertParamExists('deleteInventoryItem', 'sellerSku', sellerSku)
+            // verify required parameter 'marketplaceId' is not null or undefined
+            assertParamExists('deleteInventoryItem', 'marketplaceId', marketplaceId)
+            const localVarPath = `/fba/inventory/v1/items/{sellerSku}`
+                .replace(`{${"sellerSku"}}`, encodeURIComponent(String(sellerSku)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (marketplaceId !== undefined) {
+                localVarQueryParameter['marketplaceId'] = marketplaceId;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the startDateTime, sellerSkus and sellerSku parameters:  - All inventory summaries with available details are returned when the startDateTime, sellerSkus and sellerSku parameters are omitted. - When startDateTime is provided, the operation returns inventory summaries that have had changes after the date and time specified. The sellerSkus and sellerSku parameters are ignored. Important: To avoid errors, use both startDateTime and nextToken to get the next page of inventory summaries that have changed after the date and time specified. - When the sellerSkus parameter is provided, the operation returns inventory summaries for only the specified sellerSkus. The sellerSku parameter is ignored. - When the sellerSku parameter is provided, the operation returns inventory summaries for only the specified sellerSku.  Note: The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to URL Encoding.  Usage Plan:  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see Usage Plans and Rate Limits in the Selling Partner API.
          * @param {GetInventorySummariesGranularityTypeEnum} granularityType The granularity type for the inventory aggregation level.
          * @param {string} granularityId The granularity ID for the inventory aggregation level.
          * @param {Array<string>} marketplaceIds The marketplace ID for the marketplace for which to return inventory summaries.
@@ -117,7 +244,45 @@ export const FbaInventoryApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = FbaInventoryApiAxiosParamCreator(configuration)
     return {
         /**
-         * Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the `startDateTime`, `sellerSkus` and `sellerSku` parameters:  - All inventory summaries with available details are returned when the `startDateTime`, `sellerSkus` and `sellerSku` parameters are omitted. - When `startDateTime` is provided, the operation returns inventory summaries that have had changes after the date and time specified. The `sellerSkus` and `sellerSku` parameters are ignored. **Important:** To avoid errors, use both `startDateTime` and `nextToken` to get the next page of inventory summaries that have changed after the date and time specified. - When the `sellerSkus` parameter is provided, the operation returns inventory summaries for only the specified `sellerSkus`. The `sellerSku` parameter is ignored. - When the `sellerSku` parameter is provided, the operation returns inventory summaries for only the specified `sellerSku`.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Requests that Amazon add items to the Sandbox Inventory with desired amount of quantity in the sandbox environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
+         * @param {string} xAmznIdempotencyToken A unique token/requestId provided with each call to ensure idempotency.
+         * @param {AddInventoryRequest} addInventoryRequestBody List of items to add to Sandbox inventory.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async addInventory(xAmznIdempotencyToken: string, addInventoryRequestBody: AddInventoryRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AddInventoryResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.addInventory(xAmznIdempotencyToken, addInventoryRequestBody, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInventoryApi.addInventory']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Requests that Amazon create product-details in the Sandbox Inventory in the sandbox environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
+         * @param {CreateInventoryItemRequest} createInventoryItemRequestBody CreateInventoryItem Request Body Parameter.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createInventoryItem(createInventoryItemRequestBody: CreateInventoryItemRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateInventoryItemResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createInventoryItem(createInventoryItemRequestBody, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInventoryApi.createInventoryItem']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Requests that Amazon Deletes an item from the Sandbox Inventory in the sandbox environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
+         * @param {string} sellerSku A single seller SKU used for querying the specified seller SKU inventory summaries.
+         * @param {string} marketplaceId The marketplace ID for the marketplace for which the sellerSku is to be deleted.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteInventoryItem(sellerSku: string, marketplaceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeleteInventoryItemResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteInventoryItem(sellerSku, marketplaceId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FbaInventoryApi.deleteInventoryItem']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the startDateTime, sellerSkus and sellerSku parameters:  - All inventory summaries with available details are returned when the startDateTime, sellerSkus and sellerSku parameters are omitted. - When startDateTime is provided, the operation returns inventory summaries that have had changes after the date and time specified. The sellerSkus and sellerSku parameters are ignored. Important: To avoid errors, use both startDateTime and nextToken to get the next page of inventory summaries that have changed after the date and time specified. - When the sellerSkus parameter is provided, the operation returns inventory summaries for only the specified sellerSkus. The sellerSku parameter is ignored. - When the sellerSku parameter is provided, the operation returns inventory summaries for only the specified sellerSku.  Note: The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to URL Encoding.  Usage Plan:  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see Usage Plans and Rate Limits in the Selling Partner API.
          * @param {GetInventorySummariesGranularityTypeEnum} granularityType The granularity type for the inventory aggregation level.
          * @param {string} granularityId The granularity ID for the inventory aggregation level.
          * @param {Array<string>} marketplaceIds The marketplace ID for the marketplace for which to return inventory summaries.
@@ -146,7 +311,34 @@ export const FbaInventoryApiFactory = function (configuration?: Configuration, b
     const localVarFp = FbaInventoryApiFp(configuration)
     return {
         /**
-         * Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the `startDateTime`, `sellerSkus` and `sellerSku` parameters:  - All inventory summaries with available details are returned when the `startDateTime`, `sellerSkus` and `sellerSku` parameters are omitted. - When `startDateTime` is provided, the operation returns inventory summaries that have had changes after the date and time specified. The `sellerSkus` and `sellerSku` parameters are ignored. **Important:** To avoid errors, use both `startDateTime` and `nextToken` to get the next page of inventory summaries that have changed after the date and time specified. - When the `sellerSkus` parameter is provided, the operation returns inventory summaries for only the specified `sellerSkus`. The `sellerSku` parameter is ignored. - When the `sellerSku` parameter is provided, the operation returns inventory summaries for only the specified `sellerSku`.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Requests that Amazon add items to the Sandbox Inventory with desired amount of quantity in the sandbox environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
+         * @param {FbaInventoryApiAddInventoryRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        addInventory(requestParameters: FbaInventoryApiAddInventoryRequest, options?: RawAxiosRequestConfig): AxiosPromise<AddInventoryResponse> {
+            return localVarFp.addInventory(requestParameters.xAmznIdempotencyToken, requestParameters.addInventoryRequestBody, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Requests that Amazon create product-details in the Sandbox Inventory in the sandbox environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
+         * @param {FbaInventoryApiCreateInventoryItemRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createInventoryItem(requestParameters: FbaInventoryApiCreateInventoryItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateInventoryItemResponse> {
+            return localVarFp.createInventoryItem(requestParameters.createInventoryItemRequestBody, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Requests that Amazon Deletes an item from the Sandbox Inventory in the sandbox environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
+         * @param {FbaInventoryApiDeleteInventoryItemRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteInventoryItem(requestParameters: FbaInventoryApiDeleteInventoryItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeleteInventoryItemResponse> {
+            return localVarFp.deleteInventoryItem(requestParameters.sellerSku, requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the startDateTime, sellerSkus and sellerSku parameters:  - All inventory summaries with available details are returned when the startDateTime, sellerSkus and sellerSku parameters are omitted. - When startDateTime is provided, the operation returns inventory summaries that have had changes after the date and time specified. The sellerSkus and sellerSku parameters are ignored. Important: To avoid errors, use both startDateTime and nextToken to get the next page of inventory summaries that have changed after the date and time specified. - When the sellerSkus parameter is provided, the operation returns inventory summaries for only the specified sellerSkus. The sellerSku parameter is ignored. - When the sellerSku parameter is provided, the operation returns inventory summaries for only the specified sellerSku.  Note: The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to URL Encoding.  Usage Plan:  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see Usage Plans and Rate Limits in the Selling Partner API.
          * @param {FbaInventoryApiGetInventorySummariesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -156,6 +348,62 @@ export const FbaInventoryApiFactory = function (configuration?: Configuration, b
         },
     };
 };
+
+/**
+ * Request parameters for addInventory operation in FbaInventoryApi.
+ * @export
+ * @interface FbaInventoryApiAddInventoryRequest
+ */
+export interface FbaInventoryApiAddInventoryRequest {
+    /**
+     * A unique token/requestId provided with each call to ensure idempotency.
+     * @type {string}
+     * @memberof FbaInventoryApiAddInventory
+     */
+    readonly xAmznIdempotencyToken: string
+
+    /**
+     * List of items to add to Sandbox inventory.
+     * @type {AddInventoryRequest}
+     * @memberof FbaInventoryApiAddInventory
+     */
+    readonly addInventoryRequestBody: AddInventoryRequest
+}
+
+/**
+ * Request parameters for createInventoryItem operation in FbaInventoryApi.
+ * @export
+ * @interface FbaInventoryApiCreateInventoryItemRequest
+ */
+export interface FbaInventoryApiCreateInventoryItemRequest {
+    /**
+     * CreateInventoryItem Request Body Parameter.
+     * @type {CreateInventoryItemRequest}
+     * @memberof FbaInventoryApiCreateInventoryItem
+     */
+    readonly createInventoryItemRequestBody: CreateInventoryItemRequest
+}
+
+/**
+ * Request parameters for deleteInventoryItem operation in FbaInventoryApi.
+ * @export
+ * @interface FbaInventoryApiDeleteInventoryItemRequest
+ */
+export interface FbaInventoryApiDeleteInventoryItemRequest {
+    /**
+     * A single seller SKU used for querying the specified seller SKU inventory summaries.
+     * @type {string}
+     * @memberof FbaInventoryApiDeleteInventoryItem
+     */
+    readonly sellerSku: string
+
+    /**
+     * The marketplace ID for the marketplace for which the sellerSku is to be deleted.
+     * @type {string}
+     * @memberof FbaInventoryApiDeleteInventoryItem
+     */
+    readonly marketplaceId: string
+}
 
 /**
  * Request parameters for getInventorySummaries operation in FbaInventoryApi.
@@ -228,7 +476,40 @@ export interface FbaInventoryApiGetInventorySummariesRequest {
  */
 export class FbaInventoryApi extends BaseAPI {
     /**
-     * Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the `startDateTime`, `sellerSkus` and `sellerSku` parameters:  - All inventory summaries with available details are returned when the `startDateTime`, `sellerSkus` and `sellerSku` parameters are omitted. - When `startDateTime` is provided, the operation returns inventory summaries that have had changes after the date and time specified. The `sellerSkus` and `sellerSku` parameters are ignored. **Important:** To avoid errors, use both `startDateTime` and `nextToken` to get the next page of inventory summaries that have changed after the date and time specified. - When the `sellerSkus` parameter is provided, the operation returns inventory summaries for only the specified `sellerSkus`. The `sellerSku` parameter is ignored. - When the `sellerSku` parameter is provided, the operation returns inventory summaries for only the specified `sellerSku`.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Requests that Amazon add items to the Sandbox Inventory with desired amount of quantity in the sandbox environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
+     * @param {FbaInventoryApiAddInventoryRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof FbaInventoryApi
+     */
+    public addInventory(requestParameters: FbaInventoryApiAddInventoryRequest, options?: RawAxiosRequestConfig) {
+        return FbaInventoryApiFp(this.configuration).addInventory(requestParameters.xAmznIdempotencyToken, requestParameters.addInventoryRequestBody, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Requests that Amazon create product-details in the Sandbox Inventory in the sandbox environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
+     * @param {FbaInventoryApiCreateInventoryItemRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof FbaInventoryApi
+     */
+    public createInventoryItem(requestParameters: FbaInventoryApiCreateInventoryItemRequest, options?: RawAxiosRequestConfig) {
+        return FbaInventoryApiFp(this.configuration).createInventoryItem(requestParameters.createInventoryItemRequestBody, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Requests that Amazon Deletes an item from the Sandbox Inventory in the sandbox environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
+     * @param {FbaInventoryApiDeleteInventoryItemRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof FbaInventoryApi
+     */
+    public deleteInventoryItem(requestParameters: FbaInventoryApiDeleteInventoryItemRequest, options?: RawAxiosRequestConfig) {
+        return FbaInventoryApiFp(this.configuration).deleteInventoryItem(requestParameters.sellerSku, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the startDateTime, sellerSkus and sellerSku parameters:  - All inventory summaries with available details are returned when the startDateTime, sellerSkus and sellerSku parameters are omitted. - When startDateTime is provided, the operation returns inventory summaries that have had changes after the date and time specified. The sellerSkus and sellerSku parameters are ignored. Important: To avoid errors, use both startDateTime and nextToken to get the next page of inventory summaries that have changed after the date and time specified. - When the sellerSkus parameter is provided, the operation returns inventory summaries for only the specified sellerSkus. The sellerSku parameter is ignored. - When the sellerSku parameter is provided, the operation returns inventory summaries for only the specified sellerSku.  Note: The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to URL Encoding.  Usage Plan:  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see Usage Plans and Rate Limits in the Selling Partner API.
      * @param {FbaInventoryApiGetInventorySummariesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}

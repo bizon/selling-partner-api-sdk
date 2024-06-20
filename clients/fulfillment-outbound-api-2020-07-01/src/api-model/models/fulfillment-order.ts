@@ -63,7 +63,7 @@ export interface FulfillmentOrder {
      */
     'displayableOrderId': string;
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof FulfillmentOrder
      */
@@ -111,7 +111,7 @@ export interface FulfillmentOrder {
      */
     'codSettings'?: CODSettings;
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof FulfillmentOrder
      */
@@ -123,7 +123,7 @@ export interface FulfillmentOrder {
      */
     'fulfillmentOrderStatus': FulfillmentOrderStatus;
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof FulfillmentOrder
      */

@@ -33,7 +33,7 @@ import type { ReturnAuthorization } from './return-authorization';
 import type { ReturnItem } from './return-item';
 
 /**
- * 
+ * The request for the getFulfillmentOrder operation.
  * @export
  * @interface GetFulfillmentOrderResult
  */

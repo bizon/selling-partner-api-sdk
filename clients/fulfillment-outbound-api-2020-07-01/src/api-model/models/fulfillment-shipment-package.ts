@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { LockerDetails } from './locker-details';
 
 /**
  * Package information for a shipment in a fulfillment order.
@@ -39,10 +42,16 @@ export interface FulfillmentShipmentPackage {
      */
     'trackingNumber'?: string;
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof FulfillmentShipmentPackage
      */
     'estimatedArrivalDate'?: string;
+    /**
+     * 
+     * @type {LockerDetails}
+     * @memberof FulfillmentShipmentPackage
+     */
+    'lockerDetails'?: LockerDetails;
 }
 

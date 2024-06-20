@@ -27,7 +27,7 @@ import type { TrackingAddress } from './tracking-address';
  */
 export interface TrackingEvent {
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof TrackingEvent
      */

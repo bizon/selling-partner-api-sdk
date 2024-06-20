@@ -39,7 +39,7 @@ export interface UnfulfillablePreviewItem {
      */
     'sellerFulfillmentOrderItemId': string;
     /**
-     * 
+     * String list
      * @type {Array<string>}
      * @memberof UnfulfillablePreviewItem
      */

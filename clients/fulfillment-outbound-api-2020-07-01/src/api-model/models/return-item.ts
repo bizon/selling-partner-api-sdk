@@ -69,7 +69,7 @@ export interface ReturnItem {
      */
     'status': FulfillmentReturnItemStatus;
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof ReturnItem
      */

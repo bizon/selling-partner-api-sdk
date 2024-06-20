@@ -30,67 +30,79 @@ export interface ListOfferMetricsResponseOffer {
      */
     'asin'?: string;
     /**
-     * The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable only for the PERFORMANCE timePeriodType.
+     * The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable only for the `PERFORMANCE` `timePeriodType`.
      * @type {number}
      * @memberof ListOfferMetricsResponseOffer
      */
     'notDeliveredDueToOOS'?: number;
     /**
-     * The revenue generated from subscriptions over a period of time. Applicable only for the PERFORMANCE timePeriodType.
+     * The revenue generated from subscriptions over a period of time. Applicable only for the `PERFORMANCE` `timePeriodType`.
      * @type {number}
      * @memberof ListOfferMetricsResponseOffer
      */
     'totalSubscriptionsRevenue'?: number;
     /**
-     * The number of units shipped to the subscribers over a period of time. Applicable only for the PERFORMANCE timePeriodType.
+     * The number of units shipped to the subscribers over a period of time. Applicable only for the `PERFORMANCE` `timePeriodType`.
      * @type {number}
      * @memberof ListOfferMetricsResponseOffer
      */
     'shippedSubscriptionUnits'?: number;
     /**
-     * The number of active subscriptions present at the end of the period. Applicable only for the PERFORMANCE timePeriodType.
+     * The number of active subscriptions present at the end of the period. Applicable only for the `PERFORMANCE` `timePeriodType`.
      * @type {number}
      * @memberof ListOfferMetricsResponseOffer
      */
     'activeSubscriptions'?: number;
     /**
-     * The percentage of total program revenue out of total product revenue. Applicable only for the PERFORMANCE timePeriodType.
+     * The percentage of total program revenue out of total product revenue. Applicable only for the `PERFORMANCE` `timePeriodType`.
      * @type {number}
      * @memberof ListOfferMetricsResponseOffer
      */
     'revenuePenetration'?: number;
     /**
-     * The forecasted total subscription revenue for the next 30 days. Applicable only for the FORECAST timePeriodType.
+     * The revenue that would have been generated had there not been out of stock. Applicable only for the PERFORMANCE timePeriodType.
+     * @type {number}
+     * @memberof ListOfferMetricsResponseOffer
+     */
+    'lostRevenueDueToOOS'?: number;
+    /**
+     * The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable only for the PERFORMANCE timePeriodType.
+     * @type {number}
+     * @memberof ListOfferMetricsResponseOffer
+     */
+    'couponsRevenuePenetration'?: number;
+    /**
+     * The forecasted total subscription revenue for the next 30 days. Applicable only for the `FORECAST` `timePeriodType`.
      * @type {number}
      * @memberof ListOfferMetricsResponseOffer
      */
     'next30DayTotalSubscriptionsRevenue'?: number;
     /**
-     * The forecasted total subscription revenue for the next 60 days. Applicable only for the FORECAST timePeriodType.
+     * The forecasted total subscription revenue for the next 60 days. Applicable only for the `FORECAST` `timePeriodType`.
      * @type {number}
      * @memberof ListOfferMetricsResponseOffer
      */
     'next60DayTotalSubscriptionsRevenue'?: number;
     /**
-     * The forecasted total subscription revenue for the next 90 days. Applicable only for the FORECAST timePeriodType.
+     * The forecasted total subscription revenue for the next 90 days. Applicable only for the `FORECAST` `timePeriodType`.
      * @type {number}
      * @memberof ListOfferMetricsResponseOffer
      */
     'next90DayTotalSubscriptionsRevenue'?: number;
     /**
-     * The forecasted shipped subscription units for the next 30 days. Applicable only for the FORECAST timePeriodType.
+     * The forecasted shipped subscription units for the next 30 days. Applicable only for the `FORECAST` `timePeriodType`.
      * @type {number}
      * @memberof ListOfferMetricsResponseOffer
      */
     'next30DayShippedSubscriptionUnits'?: number;
     /**
-     * The forecasted shipped subscription units for the next 60 days. Applicable only for the FORECAST timePeriodType.
+     * The forecasted shipped subscription units for the next 60 days. Applicable only for the `FORECAST` `timePeriodType`.
      * @type {number}
      * @memberof ListOfferMetricsResponseOffer
      */
     'next60DayShippedSubscriptionUnits'?: number;
     /**
-     * The forecasted shipped subscription units for the next 90 days. Applicable only for the FORECAST timePeriodType.
+     * The forecasted shipped subscription units for the next 90 days. Applicable only for the `FORECAST` `timePeriodType`.
      * @type {number}
      * @memberof ListOfferMetricsResponseOffer
      */

@@ -32,6 +32,7 @@ This SDK supports the following features:
 
 This repository contains an API client for each of the available Selling Partner API version:
 
+- [amazon-warehousing-and-distribution-2024-05-09](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/amazon-warehousing-and-distribution-2024-05-09)
 - [aplus-content-api-2020-11-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/aplus-content-api-2020-11-01)
 - [application-management-api-2023-11-30](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/application-management-api-2023-11-30)
 - [authorization-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/authorization-api-v1)
@@ -46,6 +47,7 @@ This repository contains an API client for each of the available Selling Partner
 - [feeds-api-2020-09-04](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/feeds-api-2020-09-04)
 - [feeds-api-2021-06-30](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/feeds-api-2021-06-30)
 - [finances-api-v0](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/finances-api-v0)
+- [fulfillment-inbound-api-2024-03-20](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/fulfillment-inbound-api-2024-03-20)
 - [fulfillment-inbound-api-v0](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/fulfillment-inbound-api-v0)
 - [fulfillment-outbound-api-2020-07-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/fulfillment-outbound-api-2020-07-01)
 - [listings-items-api-2020-09-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/listings-items-api-2020-09-01)

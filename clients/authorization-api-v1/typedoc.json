@@ -1,6 +1,0 @@
-{
-  "$schema": "https://typedoc.org/schema.json",
-  "includeVersion": true,
-  "entryPoints": ["index.ts"],
-  "internalModule": "Internal"
-}

@@ -90,7 +90,7 @@ export interface FulfillmentPreview {
      */
     'unfulfillablePreviewItems'?: Array<UnfulfillablePreviewItem>;
     /**
-     * 
+     * String list
      * @type {Array<string>}
      * @memberof FulfillmentPreview
      */

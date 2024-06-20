@@ -27,7 +27,7 @@ import type { TrackingAddress } from './tracking-address';
 import type { TrackingEvent } from './tracking-event';
 
 /**
- * 
+ * Tracking details of package
  * @export
  * @interface PackageTrackingDetails
  */
@@ -69,13 +69,13 @@ export interface PackageTrackingDetails {
      */
     'carrierURL'?: string;
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof PackageTrackingDetails
      */
     'shipDate'?: string;
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof PackageTrackingDetails
      */

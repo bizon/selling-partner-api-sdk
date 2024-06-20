@@ -24,6 +24,9 @@ import type { CODSettings } from './codsettings';
 import type { CreateFulfillmentOrderItem } from './create-fulfillment-order-item';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { DeliveryPreferences } from './delivery-preferences';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { DeliveryWindow } from './delivery-window';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -66,7 +69,7 @@ export interface CreateFulfillmentOrderRequest {
      */
     'displayableOrderId': string;
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof CreateFulfillmentOrderRequest
      */
@@ -95,6 +98,12 @@ export interface CreateFulfillmentOrderRequest {
      * @memberof CreateFulfillmentOrderRequest
      */
     'destinationAddress': Address;
+    /**
+     * 
+     * @type {DeliveryPreferences}
+     * @memberof CreateFulfillmentOrderRequest
+     */
+    'deliveryPreferences'?: DeliveryPreferences;
     /**
      * 
      * @type {FulfillmentAction}

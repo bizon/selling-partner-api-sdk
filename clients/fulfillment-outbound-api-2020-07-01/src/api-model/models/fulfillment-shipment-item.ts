@@ -50,5 +50,11 @@ export interface FulfillmentShipmentItem {
      * @memberof FulfillmentShipmentItem
      */
     'serialNumber'?: string;
+    /**
+     * String list
+     * @type {Array<string>}
+     * @memberof FulfillmentShipmentItem
+     */
+    'manufacturerLotCodes'?: Array<string>;
 }
 

@@ -45,13 +45,13 @@ export interface FulfillmentShipment {
      */
     'fulfillmentShipmentStatus': FulfillmentShipmentFulfillmentShipmentStatusEnum;
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof FulfillmentShipment
      */
     'shippingDate'?: string;
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof FulfillmentShipment
      */

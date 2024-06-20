@@ -24,25 +24,25 @@ import type { FulfillmentPreviewItem } from './fulfillment-preview-item';
  */
 export interface FulfillmentPreviewShipment {
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof FulfillmentPreviewShipment
      */
     'earliestShipDate'?: string;
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof FulfillmentPreviewShipment
      */
     'latestShipDate'?: string;
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof FulfillmentPreviewShipment
      */
     'earliestArrivalDate'?: string;
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof FulfillmentPreviewShipment
      */

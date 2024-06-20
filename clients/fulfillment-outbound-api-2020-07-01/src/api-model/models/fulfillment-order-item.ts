@@ -78,13 +78,13 @@ export interface FulfillmentOrderItem {
      */
     'unfulfillableQuantity': number;
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof FulfillmentOrderItem
      */
     'estimatedShipDate'?: string;
     /**
-     * 
+     * Date timestamp
      * @type {string}
      * @memberof FulfillmentOrderItem
      */

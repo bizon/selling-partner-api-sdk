@@ -51,7 +51,7 @@ export interface GetFulfillmentPreviewRequest {
      */
     'items': Array<GetFulfillmentPreviewItem>;
     /**
-     * 
+     * ShippingSpeedCategory List
      * @type {Array<ShippingSpeedCategory>}
      * @memberof GetFulfillmentPreviewRequest
      */

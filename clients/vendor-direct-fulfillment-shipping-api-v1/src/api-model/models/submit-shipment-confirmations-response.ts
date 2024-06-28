@@ -18,7 +18,7 @@
 import type { TransactionReference } from './transaction-reference';
 
 /**
- * The response schema for the submitShipmentConfirmations operation.
+ * The response schema for the `submitShipmentConfirmations` operation.
  * @export
  * @interface SubmitShipmentConfirmationsResponse
  */

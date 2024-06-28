@@ -18,7 +18,7 @@
 import type { TaxDetails } from './tax-details';
 
 /**
- * 
+ * The total tax object within the shipment that relates to the order.
  * @export
  * @interface OrderDetailsTaxTotal
  */

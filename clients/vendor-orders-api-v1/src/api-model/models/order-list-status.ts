@@ -21,7 +21,7 @@ import type { OrderStatus } from './order-status';
 import type { Pagination } from './pagination';
 
 /**
- * 
+ * A list of order statuses.
  * @export
  * @interface OrderListStatus
  */
@@ -33,7 +33,7 @@ export interface OrderListStatus {
      */
     'pagination'?: Pagination;
     /**
-     * 
+     * Represents an order status within the `OrderListStatus`.
      * @type {Array<OrderStatus>}
      * @memberof OrderListStatus
      */

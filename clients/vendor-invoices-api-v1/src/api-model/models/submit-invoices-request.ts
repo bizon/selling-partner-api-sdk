@@ -18,13 +18,13 @@
 import type { Invoice } from './invoice';
 
 /**
- * The request schema for the submitInvoices operation.
+ * The request schema for the `submitInvoices` operation.
  * @export
  * @interface SubmitInvoicesRequest
  */
 export interface SubmitInvoicesRequest {
     /**
-     * 
+     * An array of Invoice objects representing the invoices or credit notes to be submitted.
      * @type {Array<Invoice>}
      * @memberof SubmitInvoicesRequest
      */

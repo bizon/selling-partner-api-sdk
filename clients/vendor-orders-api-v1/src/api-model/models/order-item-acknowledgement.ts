@@ -18,7 +18,7 @@
 import type { ItemQuantity } from './item-quantity';
 
 /**
- * 
+ * Represents the acknowledgement details for an individual order item, including the acknowledgement code, acknowledged quantity, scheduled ship and delivery dates, and rejection reason (if applicable).
  * @export
  * @interface OrderItemAcknowledgement
  */
@@ -36,13 +36,13 @@ export interface OrderItemAcknowledgement {
      */
     'acknowledgedQuantity': ItemQuantity;
     /**
-     * Estimated ship date per line item. Must be in ISO-8601 date/time format.
+     * Estimated ship date per line item. Must be in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date/time format.
      * @type {string}
      * @memberof OrderItemAcknowledgement
      */
     'scheduledShipDate'?: string;
     /**
-     * Estimated delivery date per line item. Must be in ISO-8601 date/time format.
+     * Estimated delivery date per line item. Must be in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date/time format.
      * @type {string}
      * @memberof OrderItemAcknowledgement
      */

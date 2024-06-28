@@ -18,7 +18,7 @@
 import type { TransactionReference } from './transaction-reference';
 
 /**
- * The response schema for the submitInventoryUpdate operation.
+ * The response schema for the `submitInventoryUpdate` operation.
  * @export
  * @interface SubmitInventoryUpdateResponse
  */

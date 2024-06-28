@@ -18,7 +18,7 @@
 import type { TransactionReference } from './transaction-reference';
 
 /**
- * The response schema for the submitShippingLabelRequest operation.
+ * The response schema for the `submitShippingLabelRequest` operation.
  * @export
  * @interface SubmitShippingLabelsResponse
  */

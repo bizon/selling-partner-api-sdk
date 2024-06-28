@@ -33,7 +33,7 @@ export interface ItemQuantity {
      */
     'unitOfMeasure': ItemQuantityUnitOfMeasureEnum;
     /**
-     * The case size, if the unit of measure value is Cases.
+     * The case size, if the unit of measure value is `Cases`.
      * @type {number}
      * @memberof ItemQuantity
      */

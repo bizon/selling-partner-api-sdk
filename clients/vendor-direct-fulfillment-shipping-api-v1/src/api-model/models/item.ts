@@ -30,7 +30,7 @@ export interface Item {
      */
     'itemSequenceNumber': number;
     /**
-     * Buyer\'s Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.
+     * Buyer\'s Standard Identification Number (ASIN) of an item. Either `buyerProductIdentifier` or `vendorProductIdentifier` is required.
      * @type {string}
      * @memberof Item
      */

@@ -13,35 +13,24 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import type { UnitOfLength } from './unit-of-length';
 
 /**
- * Dimensions for printing a shipping label.
+ * An object representing an excluded benefit that is excluded for a shipping offer or rate.
  * @export
- * @interface LabelDimensions
+ * @interface ExcludedBenefit
  */
-export interface LabelDimensions {
+export interface ExcludedBenefit {
     /**
-     * A label dimension.
-     * @type {number}
-     * @memberof LabelDimensions
+     * A benefit that is being excluded from a shipment.
+     * @type {string}
+     * @memberof ExcludedBenefit
      */
-    'Length': number;
+    'Benefit'?: string;
     /**
-     * A label dimension.
-     * @type {number}
-     * @memberof LabelDimensions
+     * List of reasons (for example, `LATE_DELIVERY_RISK`) why a benefit is excluded for a shipping offer.
+     * @type {Array<string>}
+     * @memberof ExcludedBenefit
      */
-    'Width': number;
-    /**
-     * 
-     * @type {UnitOfLength}
-     * @memberof LabelDimensions
-     */
-    'Unit': UnitOfLength;
+    'ReasonCodes'?: Array<string>;
 }
-
-
 

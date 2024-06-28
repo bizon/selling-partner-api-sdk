@@ -37,7 +37,7 @@ export const VendorDFSandboxApiAxiosParamCreator = function (configuration?: Con
     return {
         /**
          * Submits a request to generate test order data for Vendor Direct Fulfillment API entities.
-         * @param {GenerateOrderScenarioRequest} body 
+         * @param {GenerateOrderScenarioRequest} body The request payload that contain parameters to generate test order data scenarios.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -71,8 +71,8 @@ export const VendorDFSandboxApiAxiosParamCreator = function (configuration?: Con
             };
         },
         /**
-         * Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
-         * @param {string} transactionId The transaction identifier returned in the response to the generateOrderScenarios operation.
+         * Retrieves the transaction status identified by the specified `transactionId`, and returns the requested test order data if the transaction is successful.
+         * @param {string} transactionId The transaction identifier returned in the response for the &#x60;generateOrderScenarios&#x60; operation.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -115,7 +115,7 @@ export const VendorDFSandboxApiFp = function(configuration?: Configuration) {
     return {
         /**
          * Submits a request to generate test order data for Vendor Direct Fulfillment API entities.
-         * @param {GenerateOrderScenarioRequest} body 
+         * @param {GenerateOrderScenarioRequest} body The request payload that contain parameters to generate test order data scenarios.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -126,8 +126,8 @@ export const VendorDFSandboxApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
-         * @param {string} transactionId The transaction identifier returned in the response to the generateOrderScenarios operation.
+         * Retrieves the transaction status identified by the specified `transactionId`, and returns the requested test order data if the transaction is successful.
+         * @param {string} transactionId The transaction identifier returned in the response for the &#x60;generateOrderScenarios&#x60; operation.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -157,7 +157,7 @@ export const VendorDFSandboxApiFactory = function (configuration?: Configuration
             return localVarFp.generateOrderScenarios(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
-         * Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
+         * Retrieves the transaction status identified by the specified `transactionId`, and returns the requested test order data if the transaction is successful.
          * @param {VendorDFSandboxApiGetOrderScenariosRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -175,7 +175,7 @@ export const VendorDFSandboxApiFactory = function (configuration?: Configuration
  */
 export interface VendorDFSandboxApiGenerateOrderScenariosRequest {
     /**
-     * 
+     * The request payload that contain parameters to generate test order data scenarios.
      * @type {GenerateOrderScenarioRequest}
      * @memberof VendorDFSandboxApiGenerateOrderScenarios
      */
@@ -189,7 +189,7 @@ export interface VendorDFSandboxApiGenerateOrderScenariosRequest {
  */
 export interface VendorDFSandboxApiGetOrderScenariosRequest {
     /**
-     * The transaction identifier returned in the response to the generateOrderScenarios operation.
+     * The transaction identifier returned in the response for the &#x60;generateOrderScenarios&#x60; operation.
      * @type {string}
      * @memberof VendorDFSandboxApiGetOrderScenarios
      */
@@ -215,7 +215,7 @@ export class VendorDFSandboxApi extends BaseAPI {
     }
 
     /**
-     * Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
+     * Retrieves the transaction status identified by the specified `transactionId`, and returns the requested test order data if the transaction is successful.
      * @param {VendorDFSandboxApiGetOrderScenariosRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}

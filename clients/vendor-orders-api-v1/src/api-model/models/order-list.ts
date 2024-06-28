@@ -21,7 +21,7 @@ import type { Order } from './order';
 import type { Pagination } from './pagination';
 
 /**
- * 
+ * A list of orders returned as response.
  * @export
  * @interface OrderList
  */
@@ -33,7 +33,7 @@ export interface OrderList {
      */
     'pagination'?: Pagination;
     /**
-     * 
+     * Represents an individual order within the `OrderList`.
      * @type {Array<Order>}
      * @memberof OrderList
      */

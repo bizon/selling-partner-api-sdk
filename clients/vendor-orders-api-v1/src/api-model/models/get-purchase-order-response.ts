@@ -18,7 +18,7 @@
 import type { Order } from './order';
 
 /**
- * The response schema for the getPurchaseOrder operation.
+ * The response schema for the `getPurchaseOrder` operation.
  * @export
  * @interface GetPurchaseOrderResponse
  */

@@ -18,7 +18,7 @@
 import type { Money } from './money';
 
 /**
- * 
+ * The tax details related to the order.
  * @export
  * @interface TaxDetails
  */

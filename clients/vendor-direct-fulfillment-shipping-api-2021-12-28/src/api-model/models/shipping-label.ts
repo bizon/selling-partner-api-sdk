@@ -21,7 +21,7 @@ import type { LabelData } from './label-data';
 import type { PartyIdentification } from './party-identification';
 
 /**
- * 
+ * Shipping label information for an order. Includes the purchase order number, selling party, ship from party, label format, and package details.
  * @export
  * @interface ShippingLabel
  */

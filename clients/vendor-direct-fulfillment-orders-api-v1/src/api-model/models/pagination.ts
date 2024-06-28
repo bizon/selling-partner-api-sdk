@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * The pagination elements required to retrieve the remaining data.
  * @export
  * @interface Pagination
  */

@@ -39,7 +39,7 @@ import type { PaymentTerms } from './payment-terms';
 import type { TaxDetails } from './tax-details';
 
 /**
- * 
+ * Represents an invoice or credit note document with details about the transaction, parties involved, and line items.
  * @export
  * @interface Invoice
  */
@@ -63,7 +63,7 @@ export interface Invoice {
      */
     'referenceNumber'?: string;
     /**
-     * Defines a date and time according to ISO8601.
+     * Defines a date and time according to <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a>.
      * @type {string}
      * @memberof Invoice
      */

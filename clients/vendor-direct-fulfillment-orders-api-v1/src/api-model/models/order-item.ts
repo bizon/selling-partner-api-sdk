@@ -30,7 +30,7 @@ import type { OrderItemTaxDetails } from './order-item-tax-details';
 import type { ScheduledDeliveryShipment } from './scheduled-delivery-shipment';
 
 /**
- * 
+ * An order item.
  * @export
  * @interface OrderItem
  */

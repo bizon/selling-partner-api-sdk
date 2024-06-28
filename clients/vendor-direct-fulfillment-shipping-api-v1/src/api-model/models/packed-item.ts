@@ -18,7 +18,7 @@
 import type { ItemQuantity } from './item-quantity';
 
 /**
- * 
+ * Represents an item that has been packed into a container for shipping.
  * @export
  * @interface PackedItem
  */
@@ -30,7 +30,7 @@ export interface PackedItem {
      */
     'itemSequenceNumber': number;
     /**
-     * Buyer\'s Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.
+     * Buyer\'s Standard Identification Number (ASIN) of an item. Either `buyerProductIdentifier` or `vendorProductIdentifier` is required.
      * @type {string}
      * @memberof PackedItem
      */

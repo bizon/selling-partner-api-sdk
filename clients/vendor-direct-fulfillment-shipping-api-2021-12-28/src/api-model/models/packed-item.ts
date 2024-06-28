@@ -18,7 +18,7 @@
 import type { ItemQuantity } from './item-quantity';
 
 /**
- * 
+ * Represents an item packed into a container for shipping.
  * @export
  * @interface PackedItem
  */

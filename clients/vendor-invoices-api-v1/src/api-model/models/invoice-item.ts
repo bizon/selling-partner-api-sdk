@@ -69,13 +69,13 @@ export interface InvoiceItem {
      */
     'netCost': Money;
     /**
-     * The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when invoiceType is Invoice, and is not required when invoiceType is CreditNote.
+     * The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when `invoiceType` is `Invoice`, and is not required when `invoiceType` is `CreditNote`.
      * @type {string}
      * @memberof InvoiceItem
      */
     'purchaseOrderNumber'?: string;
     /**
-     * HSN Tax code. The HSN number cannot contain alphabets.
+     * The HSN Tax code. The HSN number cannot contain alphabets.
      * @type {string}
      * @memberof InvoiceItem
      */

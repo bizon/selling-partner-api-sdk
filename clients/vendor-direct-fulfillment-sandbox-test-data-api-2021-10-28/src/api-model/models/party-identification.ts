@@ -15,13 +15,13 @@
 
 
 /**
- * The identification object for the party information. For example, warehouse code or vendor code. Please refer to specific party for more details.
+ * The identification object for the party information. For example, warehouse code or vendor code.
  * @export
  * @interface PartyIdentification
  */
 export interface PartyIdentification {
     /**
-     * Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details.
+     * Assigned identification for the party. For example, warehouse code or vendor code.
      * @type {string}
      * @memberof PartyIdentification
      */

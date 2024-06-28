@@ -24,7 +24,7 @@ import type { PackedItem } from './packed-item';
 import type { Weight } from './weight';
 
 /**
- * 
+ * A container for shipping and packing items.
  * @export
  * @interface Container
  */

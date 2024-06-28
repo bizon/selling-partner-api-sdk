@@ -21,7 +21,7 @@
  */
 export interface TransactionReference {
     /**
-     * 
+     * A GUID (Globally Unique Identifier) assigned by Amazon to uniquely identify the transaction.
      * @type {string}
      * @memberof TransactionReference
      */

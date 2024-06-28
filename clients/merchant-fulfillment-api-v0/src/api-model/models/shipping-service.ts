@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Merchant Fulfillment
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon\'s Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -16,6 +16,9 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import type { AvailableShippingServiceOptions } from './available-shipping-service-options';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { Benefits } from './benefits';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { CurrencyAmount } from './currency-amount';
@@ -36,7 +39,7 @@ import type { ShippingServiceOptions } from './shipping-service-options';
  */
 export interface ShippingService {
     /**
-     * A plain text representation of a carrier\'s shipping service. For example, \"UPS Ground\" or \"FedEx Standard Overnight\". 
+     * A plain text representation of a carrier\'s shipping service. For example, UPS Ground or FedEx Standard Overnight. 
      * @type {string}
      * @memberof ShippingService
      */
@@ -60,19 +63,19 @@ export interface ShippingService {
      */
     'ShippingServiceOfferId': string;
     /**
-     * 
+     * Date-time formatted timestamp.
      * @type {string}
      * @memberof ShippingService
      */
     'ShipDate': string;
     /**
-     * 
+     * Date-time formatted timestamp.
      * @type {string}
      * @memberof ShippingService
      */
     'EarliestEstimatedDeliveryDate'?: string;
     /**
-     * 
+     * Date-time formatted timestamp.
      * @type {string}
      * @memberof ShippingService
      */
@@ -113,5 +116,11 @@ export interface ShippingService {
      * @memberof ShippingService
      */
     'RequiresAdditionalSellerInputs': boolean;
+    /**
+     * 
+     * @type {Benefits}
+     * @memberof ShippingService
+     */
+    'Benefits'?: Benefits;
 }
 

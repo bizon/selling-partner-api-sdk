@@ -33,7 +33,7 @@ import type { PartyIdentification } from './party-identification';
 import type { TaxDetail } from './tax-detail';
 
 /**
- * 
+ * Represents the invoice details, including the invoice number, date, parties involved, payment terms, totals, taxes, charges, and line items.
  * @export
  * @interface InvoiceDetail
  */

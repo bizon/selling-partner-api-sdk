@@ -21,7 +21,7 @@
  */
 export interface ModelError {
     /**
-     * An error code that identifies the type of error that occured.
+     * An error code that identifies the type of error that occurred.
      * @type {string}
      * @memberof ModelError
      */

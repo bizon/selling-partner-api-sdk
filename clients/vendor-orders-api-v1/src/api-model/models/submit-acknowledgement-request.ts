@@ -18,13 +18,13 @@
 import type { OrderAcknowledgement } from './order-acknowledgement';
 
 /**
- * The request schema for the submitAcknowledgment operation.
+ * The request schema for the `submitAcknowledgment` operation.
  * @export
  * @interface SubmitAcknowledgementRequest
  */
 export interface SubmitAcknowledgementRequest {
     /**
-     * 
+     * An array of order acknowledgements to be submitted.
      * @type {Array<OrderAcknowledgement>}
      * @memberof SubmitAcknowledgementRequest
      */

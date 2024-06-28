@@ -18,7 +18,7 @@
 import type { CustomerInvoiceList } from './customer-invoice-list';
 
 /**
- * The response schema for the getCustomerInvoices operation.
+ * The response schema for the `getCustomerInvoices` operation.
  * @export
  * @interface GetCustomerInvoicesResponse
  */

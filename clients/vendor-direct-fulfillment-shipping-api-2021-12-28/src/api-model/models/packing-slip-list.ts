@@ -33,7 +33,7 @@ export interface PackingSlipList {
      */
     'pagination'?: Pagination;
     /**
-     * 
+     * An array of packing slip objects.
      * @type {Array<PackingSlip>}
      * @memberof PackingSlipList
      */

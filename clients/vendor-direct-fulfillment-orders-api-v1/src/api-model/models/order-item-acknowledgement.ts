@@ -18,7 +18,7 @@
 import type { ItemQuantity } from './item-quantity';
 
 /**
- * 
+ * Individual item details within the acknowledged order.
  * @export
  * @interface OrderItemAcknowledgement
  */

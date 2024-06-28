@@ -27,7 +27,7 @@ import type { PartyIdentification } from './party-identification';
 import type { ShipmentDetails } from './shipment-details';
 
 /**
- * 
+ * Represents the confirmation details of a shipment, including the purchase order number and other shipment details.
  * @export
  * @interface ShipmentConfirmation
  */

@@ -18,13 +18,13 @@
 import type { ShipmentStatusUpdate } from './shipment-status-update';
 
 /**
- * 
+ * Represents the request payload for submitting updates to the status of shipments, containing an array of one or more `ShipmentStatusUpdate` objects.
  * @export
  * @interface SubmitShipmentStatusUpdatesRequest
  */
 export interface SubmitShipmentStatusUpdatesRequest {
     /**
-     * 
+     * Contains a list of one or more `ShipmentStatusUpdate` objects, each representing an update to the status of a specific shipment.
      * @type {Array<ShipmentStatusUpdate>}
      * @memberof SubmitShipmentStatusUpdatesRequest
      */

@@ -18,7 +18,7 @@
 import type { PackingSlipList } from './packing-slip-list';
 
 /**
- * 
+ * Response payload with the list of packing slips.
  * @export
  * @interface GetPackingSlipListResponse
  */

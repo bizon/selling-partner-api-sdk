@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Represents a customer invoice associated with a purchase order.
  * @export
  * @interface CustomerInvoice
  */

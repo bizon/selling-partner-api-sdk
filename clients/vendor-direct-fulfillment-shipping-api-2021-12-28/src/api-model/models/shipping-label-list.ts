@@ -21,7 +21,7 @@ import type { Pagination } from './pagination';
 import type { ShippingLabel } from './shipping-label';
 
 /**
- * 
+ * Response payload with the shipping labels list.
  * @export
  * @interface ShippingLabelList
  */
@@ -33,7 +33,7 @@ export interface ShippingLabelList {
      */
     'pagination'?: Pagination;
     /**
-     * 
+     * An array that contains the details of the generated shipping labels.
      * @type {Array<ShippingLabel>}
      * @memberof ShippingLabelList
      */

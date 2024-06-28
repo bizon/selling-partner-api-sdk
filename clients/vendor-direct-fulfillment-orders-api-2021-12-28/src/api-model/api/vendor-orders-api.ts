@@ -149,7 +149,7 @@ export const VendorOrdersApiAxiosParamCreator = function (configuration?: Config
         },
         /**
          * Submits acknowledgements for one or more purchase orders.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {SubmitAcknowledgementRequest} body 
+         * @param {SubmitAcknowledgementRequest} body The request body containing the acknowledgement to an order
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -225,7 +225,7 @@ export const VendorOrdersApiFp = function(configuration?: Configuration) {
         },
         /**
          * Submits acknowledgements for one or more purchase orders.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {SubmitAcknowledgementRequest} body 
+         * @param {SubmitAcknowledgementRequest} body The request body containing the acknowledgement to an order
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -359,7 +359,7 @@ export interface VendorOrdersApiGetOrdersRequest {
  */
 export interface VendorOrdersApiSubmitAcknowledgementRequest {
     /**
-     * 
+     * The request body containing the acknowledgement to an order
      * @type {SubmitAcknowledgementRequest}
      * @memberof VendorOrdersApiSubmitAcknowledgement
      */

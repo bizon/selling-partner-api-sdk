@@ -21,7 +21,7 @@ import type { Address } from './address';
 import type { TaxRegistrationDetail } from './tax-registration-detail';
 
 /**
- * 
+ * Name, address, and tax details of a party.
  * @export
  * @interface PartyIdentification
  */

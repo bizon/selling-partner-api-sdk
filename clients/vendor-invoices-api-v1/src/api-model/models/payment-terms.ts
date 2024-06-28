@@ -33,7 +33,7 @@ export interface PaymentTerms {
      */
     'discountPercent'?: string;
     /**
-     * The number of calendar days from the Base date (Invoice date) until the discount is no longer valid.
+     * The number of calendar days from the base date (Invoice date) until the discount is no longer valid.
      * @type {number}
      * @memberof PaymentTerms
      */

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Merchant Fulfillment
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon\'s Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -51,7 +51,7 @@ export interface ShipmentRequestDetails {
      */
     'SellerOrderId'?: string;
     /**
-     * The list of items to be included in a shipment.
+     * The list of items you want to include in a shipment.
      * @type {Array<Item>}
      * @memberof ShipmentRequestDetails
      */
@@ -75,13 +75,13 @@ export interface ShipmentRequestDetails {
      */
     'Weight': Weight;
     /**
-     * 
+     * Date-time formatted timestamp.
      * @type {string}
      * @memberof ShipmentRequestDetails
      */
     'MustArriveByDate'?: string;
     /**
-     * 
+     * Date-time formatted timestamp.
      * @type {string}
      * @memberof ShipmentRequestDetails
      */

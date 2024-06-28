@@ -33,7 +33,7 @@ import type { ScheduledDeliveryShipment } from './scheduled-delivery-shipment';
 import type { TaxItemDetails } from './tax-item-details';
 
 /**
- * 
+ * An item within an order
  * @export
  * @interface OrderItem
  */

@@ -18,7 +18,7 @@
 import type { TransactionId } from './transaction-id';
 
 /**
- * The response schema for the submitInvoices operation.
+ * The response schema for the `submitInvoices` operation.
  * @export
  * @interface SubmitInvoicesResponse
  */

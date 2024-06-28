@@ -21,7 +21,7 @@ import type { Container } from './container';
 import type { PartyIdentification } from './party-identification';
 
 /**
- * 
+ * Represents the request payload for creating a shipping label, containing the purchase order number, selling party, ship from party, and a list of containers or packages in the shipment.
  * @export
  * @interface ShippingLabelRequest
  */

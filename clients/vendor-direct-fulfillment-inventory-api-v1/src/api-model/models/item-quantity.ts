@@ -15,7 +15,7 @@
 
 
 /**
- * Details of item quantity.
+ * Details about item quantity.
  * @export
  * @interface ItemQuantity
  */

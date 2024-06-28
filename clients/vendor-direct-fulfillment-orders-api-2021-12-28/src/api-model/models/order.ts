@@ -18,7 +18,7 @@
 import type { OrderDetails } from './order-details';
 
 /**
- * 
+ * Represents a purchase order.
  * @export
  * @interface Order
  */

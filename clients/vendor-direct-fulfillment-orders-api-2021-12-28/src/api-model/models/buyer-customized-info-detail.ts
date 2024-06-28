@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * The details of the products the vendor has configured as customizable.
  * @export
  * @interface BuyerCustomizedInfoDetail
  */

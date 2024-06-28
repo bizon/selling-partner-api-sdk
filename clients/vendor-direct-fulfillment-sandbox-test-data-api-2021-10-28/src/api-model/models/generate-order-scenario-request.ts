@@ -18,7 +18,7 @@
 import type { OrderScenarioRequest } from './order-scenario-request';
 
 /**
- * The request body for the generateOrderScenarios operation.
+ * The `generateOrderScenarios` request body.
  * @export
  * @interface GenerateOrderScenarioRequest
  */

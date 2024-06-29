@@ -214,11 +214,10 @@ export const FbaOutboundApiAxiosParamCreator = function (configuration?: Configu
          * @param {string} marketplaceId The marketplace for which to return a list of the inventory that is eligible for the specified feature.
          * @param {string} featureName The name of the feature for which to return a list of eligible inventory.
          * @param {string} [nextToken] A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page.
-         * @param {string} [queryStartDate] A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFeatureInventory: async (marketplaceId: string, featureName: string, nextToken?: string, queryStartDate?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getFeatureInventory: async (marketplaceId: string, featureName: string, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getFeatureInventory', 'marketplaceId', marketplaceId)
             // verify required parameter 'featureName' is not null or undefined
@@ -242,12 +241,6 @@ export const FbaOutboundApiAxiosParamCreator = function (configuration?: Configu
 
             if (nextToken !== undefined) {
                 localVarQueryParameter['nextToken'] = nextToken;
-            }
-
-            if (queryStartDate !== undefined) {
-                localVarQueryParameter['queryStartDate'] = (queryStartDate as any instanceof Date) ?
-                    (queryStartDate as any).toISOString() :
-                    queryStartDate;
             }
 
 
@@ -679,12 +672,11 @@ export const FbaOutboundApiFp = function(configuration?: Configuration) {
          * @param {string} marketplaceId The marketplace for which to return a list of the inventory that is eligible for the specified feature.
          * @param {string} featureName The name of the feature for which to return a list of eligible inventory.
          * @param {string} [nextToken] A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page.
-         * @param {string} [queryStartDate] A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getFeatureInventory(marketplaceId: string, featureName: string, nextToken?: string, queryStartDate?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeatureInventoryResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getFeatureInventory(marketplaceId, featureName, nextToken, queryStartDate, options);
+        async getFeatureInventory(marketplaceId: string, featureName: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetFeatureInventoryResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getFeatureInventory(marketplaceId, featureName, nextToken, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['FbaOutboundApi.getFeatureInventory']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -858,7 +850,7 @@ export const FbaOutboundApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         getFeatureInventory(requestParameters: FbaOutboundApiGetFeatureInventoryRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetFeatureInventoryResponse> {
-            return localVarFp.getFeatureInventory(requestParameters.marketplaceId, requestParameters.featureName, requestParameters.nextToken, requestParameters.queryStartDate, options).then((request) => request(axios, basePath));
+            return localVarFp.getFeatureInventory(requestParameters.marketplaceId, requestParameters.featureName, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn\'t eligible, the response will contain an empty skuInfo object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1033,13 +1025,6 @@ export interface FbaOutboundApiGetFeatureInventoryRequest {
      * @memberof FbaOutboundApiGetFeatureInventory
      */
     readonly nextToken?: string
-
-    /**
-     * A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ
-     * @type {string}
-     * @memberof FbaOutboundApiGetFeatureInventory
-     */
-    readonly queryStartDate?: string
 }
 
 /**
@@ -1283,7 +1268,7 @@ export class FbaOutboundApi extends BaseAPI {
      * @memberof FbaOutboundApi
      */
     public getFeatureInventory(requestParameters: FbaOutboundApiGetFeatureInventoryRequest, options?: RawAxiosRequestConfig) {
-        return FbaOutboundApiFp(this.configuration).getFeatureInventory(requestParameters.marketplaceId, requestParameters.featureName, requestParameters.nextToken, requestParameters.queryStartDate, options).then((request) => request(this.axios, this.basePath));
+        return FbaOutboundApiFp(this.configuration).getFeatureInventory(requestParameters.marketplaceId, requestParameters.featureName, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

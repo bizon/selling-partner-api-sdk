@@ -36,7 +36,7 @@ import type { ShipmentListing } from '../models';
 export const AwdApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Retrieves an AWD inbound shipment.
+         * Retrieves an AWD inbound shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
          * @param {string} shipmentId ID for the shipment. A shipment contains the cases being inbounded.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -69,7 +69,7 @@ export const AwdApiAxiosParamCreator = function (configuration?: Configuration) 
             };
         },
         /**
-         * Retrieves a summary for all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.
+         * Retrieves a summary for all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {ListInboundShipmentsSortByEnum} [sortBy] Field to sort results by. Required if &#x60;sortOrder&#x60; is provided.
          * @param {ListInboundShipmentsSortOrderEnum} [sortOrder] Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order.
          * @param {ListInboundShipmentsShipmentStatusEnum} [shipmentStatus] Filter by inbound shipment status.
@@ -137,7 +137,7 @@ export const AwdApiAxiosParamCreator = function (configuration?: Configuration) 
             };
         },
         /**
-         * Lists AWD inventory associated with a merchant with the ability to apply optional filters.
+         * Lists AWD inventory associated with a merchant with the ability to apply optional filters.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} [sku] Filter by seller or merchant SKU for the item.
          * @param {ListInventorySortOrderEnum} [sortOrder] Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order.
          * @param {ListInventoryDetailsEnum} [details] Set to &#x60;SHOW&#x60; to return summaries with additional inventory details. Defaults to &#x60;HIDE,&#x60; which returns only inventory summary totals.
@@ -201,7 +201,7 @@ export const AwdApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = AwdApiAxiosParamCreator(configuration)
     return {
         /**
-         * Retrieves an AWD inbound shipment.
+         * Retrieves an AWD inbound shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
          * @param {string} shipmentId ID for the shipment. A shipment contains the cases being inbounded.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -213,7 +213,7 @@ export const AwdApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Retrieves a summary for all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.
+         * Retrieves a summary for all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {ListInboundShipmentsSortByEnum} [sortBy] Field to sort results by. Required if &#x60;sortOrder&#x60; is provided.
          * @param {ListInboundShipmentsSortOrderEnum} [sortOrder] Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order.
          * @param {ListInboundShipmentsShipmentStatusEnum} [shipmentStatus] Filter by inbound shipment status.
@@ -231,7 +231,7 @@ export const AwdApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Lists AWD inventory associated with a merchant with the ability to apply optional filters.
+         * Lists AWD inventory associated with a merchant with the ability to apply optional filters.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} [sku] Filter by seller or merchant SKU for the item.
          * @param {ListInventorySortOrderEnum} [sortOrder] Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order.
          * @param {ListInventoryDetailsEnum} [details] Set to &#x60;SHOW&#x60; to return summaries with additional inventory details. Defaults to &#x60;HIDE,&#x60; which returns only inventory summary totals.
@@ -257,7 +257,7 @@ export const AwdApiFactory = function (configuration?: Configuration, basePath?:
     const localVarFp = AwdApiFp(configuration)
     return {
         /**
-         * Retrieves an AWD inbound shipment.
+         * Retrieves an AWD inbound shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
          * @param {AwdApiGetInboundShipmentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -266,7 +266,7 @@ export const AwdApiFactory = function (configuration?: Configuration, basePath?:
             return localVarFp.getInboundShipment(requestParameters.shipmentId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Retrieves a summary for all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.
+         * Retrieves a summary for all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {AwdApiListInboundShipmentsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -275,7 +275,7 @@ export const AwdApiFactory = function (configuration?: Configuration, basePath?:
             return localVarFp.listInboundShipments(requestParameters.sortBy, requestParameters.sortOrder, requestParameters.shipmentStatus, requestParameters.updatedAfter, requestParameters.updatedBefore, requestParameters.maxResults, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
-         * Lists AWD inventory associated with a merchant with the ability to apply optional filters.
+         * Lists AWD inventory associated with a merchant with the ability to apply optional filters.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {AwdApiListInventoryRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -406,7 +406,7 @@ export interface AwdApiListInventoryRequest {
  */
 export class AwdApi extends BaseAPI {
     /**
-     * Retrieves an AWD inbound shipment.
+     * Retrieves an AWD inbound shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
      * @param {AwdApiGetInboundShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -417,7 +417,7 @@ export class AwdApi extends BaseAPI {
     }
 
     /**
-     * Retrieves a summary for all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.
+     * Retrieves a summary for all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {AwdApiListInboundShipmentsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -428,7 +428,7 @@ export class AwdApi extends BaseAPI {
     }
 
     /**
-     * Lists AWD inventory associated with a merchant with the ability to apply optional filters.
+     * Lists AWD inventory associated with a merchant with the ability to apply optional filters.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {AwdApiListInventoryRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Merchant Fulfillment
- * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon\'s Buy Shipping Services.
+ * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -63,7 +63,7 @@ export interface Address {
      */
     'City': string;
     /**
-     * The state or province code. Note: Required in Canada, US, and UK marketplaces. Also required for shipments originating in China.
+     * The state or province code. **Note.** Required in the Canada, US, and UK marketplaces. Also required for shipments originating from China.
      * @type {string}
      * @memberof Address
      */

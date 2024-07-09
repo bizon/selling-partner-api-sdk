@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Merchant Fulfillment
- * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon\'s Buy Shipping Services.
+ * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -27,19 +27,19 @@ import type { UnitOfLength } from './unit-of-length';
  */
 export interface PackageDimensions {
     /**
-     * Number that represents the given package dimension.
+     * Number representing the given package dimension.
      * @type {number}
      * @memberof PackageDimensions
      */
     'Length'?: number;
     /**
-     * Number that represents the given package dimension.
+     * Number representing the given package dimension.
      * @type {number}
      * @memberof PackageDimensions
      */
     'Width'?: number;
     /**
-     * Number that represents the given package dimension.
+     * Number representing the given package dimension.
      * @type {number}
      * @memberof PackageDimensions
      */

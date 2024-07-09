@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Merchant Fulfillment
- * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon\'s Buy Shipping Services.
+ * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -15,7 +15,7 @@
 
 
 /**
- * Details related to any dangerous goods or items that are shipped.
+ * Details related to any dangerous goods/items that are being shipped.
  * @export
  * @interface DangerousGoodsDetails
  */
@@ -27,7 +27,7 @@ export interface DangerousGoodsDetails {
      */
     'UnitedNationsRegulatoryId'?: string;
     /**
-     * The specific regulatory class of the shipped item.
+     * The specific regulatory class  of the item being shipped.
      * @type {string}
      * @memberof DangerousGoodsDetails
      */

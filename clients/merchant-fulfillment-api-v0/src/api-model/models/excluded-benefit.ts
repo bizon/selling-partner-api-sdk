@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Merchant Fulfillment
- * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon\'s Buy Shipping Services.
+ * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -15,19 +15,19 @@
 
 
 /**
- * An object representing an excluded benefit that is excluded for a shipping offer or rate.
+ * Object representing an excluded benefit that is excluded for a shipping offer or rate.
  * @export
  * @interface ExcludedBenefit
  */
 export interface ExcludedBenefit {
     /**
-     * A benefit that is being excluded from a shipment.
+     * Benefit that is being excluded from a shipment.
      * @type {string}
      * @memberof ExcludedBenefit
      */
     'Benefit'?: string;
     /**
-     * List of reasons (for example, `LATE_DELIVERY_RISK`) why a benefit is excluded for a shipping offer.
+     * List of reasons (eg. LATE_DELIVERY_RISK, etc.) indicating why a benefit is excluded for a shipping offer.
      * @type {Array<string>}
      * @memberof ExcludedBenefit
      */

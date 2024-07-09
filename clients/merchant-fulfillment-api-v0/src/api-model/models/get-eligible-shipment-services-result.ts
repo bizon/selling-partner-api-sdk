@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Merchant Fulfillment
- * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon\'s Buy Shipping Services.
+ * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -27,7 +27,7 @@ import type { TemporarilyUnavailableCarrier } from './temporarily-unavailable-ca
 import type { TermsAndConditionsNotAcceptedCarrier } from './terms-and-conditions-not-accepted-carrier';
 
 /**
- * The payload for the `getEligibleShipmentServices` operation.
+ * The payload for the getEligibleShipmentServices operation.
  * @export
  * @interface GetEligibleShipmentServicesResult
  */
@@ -39,7 +39,7 @@ export interface GetEligibleShipmentServicesResult {
      */
     'ShippingServiceList': Array<ShippingService>;
     /**
-     * List of services that are for some reason unavailable for this request
+     * List of services that were for some reason unavailable for this request
      * @type {Array<RejectedShippingService>}
      * @memberof GetEligibleShipmentServicesResult
      */

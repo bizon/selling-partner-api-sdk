@@ -30,7 +30,7 @@
     "turbo": "^2.0.9",
     "typedoc": "^0.26.5",
     "typedoc-plugin-missing-exports": "^3.0.0",
-    "typescript": "^5.5.3",
+    "typescript": "^5.5.4",
     "xo": "^0.59.0"
   },
   "xo": {

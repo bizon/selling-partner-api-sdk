@@ -49,8 +49,9 @@ export type TheEstimatedArrivalDateTimeSchema = string
 /**
  * An explanation about the purpose of this instance.
  */
-export type TheFulfillmentShipmentPackagesSchema = TheFulfillmentShipmentPackagesSchema1 &
-  TheFulfillmentShipmentPackagesSchema2
+export type TheFulfillmentShipmentPackagesSchema = {
+  FulfillmentShipmentPackageItem?: TheInfoSchema
+} & PropertiesPayloadPropertiesFulfillmentOrderStatusNotificationPropertiesFulfillmentShipmentPropertiesFulfillmentShipmentPackagesPropertiesFulfillmentShipmentPackageItem[]
 /**
  * An explanation about the purpose of this instance.
  */
@@ -77,8 +78,6 @@ export type TheCarrierCodeSchema1 = string
  * An explanation about the purpose of this instance.
  */
 export type TheTrackingNumberSchema1 = string
-export type TheFulfillmentShipmentPackagesSchema2 =
-  PropertiesPayloadPropertiesFulfillmentOrderStatusNotificationPropertiesFulfillmentShipmentPropertiesFulfillmentShipmentPackagesPropertiesFulfillmentShipmentPackageItem[]
 /**
  * An explanation about the purpose of this instance.
  */
@@ -145,9 +144,6 @@ export interface TheFulfillmentShipmentSchema {
   AmazonShipmentId: TheAmazonShipmentIdSchema
   EstimatedArrivalDateTime: TheEstimatedArrivalDateTimeSchema
   FulfillmentShipmentPackages: TheFulfillmentShipmentPackagesSchema
-}
-export interface TheFulfillmentShipmentPackagesSchema1 {
-  FulfillmentShipmentPackageItem?: TheInfoSchema
 }
 /**
  * An explanation about the purpose of this instance.

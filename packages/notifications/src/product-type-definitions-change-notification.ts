@@ -29,9 +29,7 @@ export type TheVersionOfLatestProductTypeDefinitions = string
 /**
  * List of new Product Types release in the marketplace.
  */
-export type NewProductTypes = NewProductTypes1 & NewProductTypes2
-export type NewProductTypes1 = string
-export type NewProductTypes2 = unknown[]
+export type NewProductTypes = string & unknown[]
 /**
  * An explanation about the purpose of this instance.
  */

@@ -41,7 +41,7 @@ if (generators.size === 0) {
 
   await fs.rm('selling-partner-api-models', {recursive: true})
   // eslint-disable-next-line unicorn/prefer-top-level-await
-})().catch((error) => {
+})().catch((error: unknown) => {
   console.log(error)
   process.exit(1)
 })

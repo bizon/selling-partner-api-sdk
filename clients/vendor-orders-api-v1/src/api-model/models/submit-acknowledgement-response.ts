@@ -18,7 +18,7 @@
 import type { TransactionId } from './transaction-id';
 
 /**
- * The response schema for the `submitAcknowledgement` operation
+ * The response schema for the submitAcknowledgement operation
  * @export
  * @interface SubmitAcknowledgementResponse
  */

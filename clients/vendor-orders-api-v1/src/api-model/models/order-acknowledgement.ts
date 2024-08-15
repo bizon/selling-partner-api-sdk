@@ -21,7 +21,7 @@ import type { OrderAcknowledgementItem } from './order-acknowledgement-item';
 import type { PartyIdentification } from './party-identification';
 
 /**
- * Represents an acknowledgement for an order, including the purchase order number, selling party details, acknowledgement date, and a list of acknowledged items.
+ * 
  * @export
  * @interface OrderAcknowledgement
  */
@@ -39,7 +39,7 @@ export interface OrderAcknowledgement {
      */
     'sellingParty': PartyIdentification;
     /**
-     * The date and time when the purchase order is acknowledged, in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date/time format.
+     * The date and time when the purchase order is acknowledged, in ISO-8601 date/time format.
      * @type {string}
      * @memberof OrderAcknowledgement
      */

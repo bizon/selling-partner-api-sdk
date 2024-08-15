@@ -18,7 +18,7 @@
 import type { OrderList } from './order-list';
 
 /**
- * The response schema for the `getPurchaseOrders` operation.
+ * The response schema for the getPurchaseOrders operation.
  * @export
  * @interface GetPurchaseOrdersResponse
  */

@@ -18,7 +18,7 @@
 import type { OrderListStatus } from './order-list-status';
 
 /**
- * The response schema for the `getPurchaseOrdersStatus` operation.
+ * The response schema for the getPurchaseOrdersStatus operation.
  * @export
  * @interface GetPurchaseOrdersStatusResponse
  */

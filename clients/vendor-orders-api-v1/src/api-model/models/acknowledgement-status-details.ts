@@ -18,13 +18,13 @@
 import type { ItemQuantity } from './item-quantity';
 
 /**
- * Details of the item quantity ordered
+ * Details of item quantity ordered
  * @export
  * @interface AcknowledgementStatusDetails
  */
 export interface AcknowledgementStatusDetails {
     /**
-     * The date when the line item was confirmed by the vendor. Must be in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date/time format.
+     * The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format.
      * @type {string}
      * @memberof AcknowledgementStatusDetails
      */

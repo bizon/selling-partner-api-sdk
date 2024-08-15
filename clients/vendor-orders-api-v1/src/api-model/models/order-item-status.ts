@@ -27,7 +27,7 @@ import type { OrderItemStatusOrderedQuantity } from './order-item-status-ordered
 import type { OrderItemStatusReceivingStatus } from './order-item-status-receiving-status';
 
 /**
- * Represents the current status of an order item, including acknowledgement and receiving details.
+ * 
  * @export
  * @interface OrderItemStatus
  */

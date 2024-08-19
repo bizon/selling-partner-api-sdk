@@ -30,19 +30,19 @@ import type { PartyIdentification } from './party-identification';
  */
 export interface OrderDetails {
     /**
-     * The date the purchase order was placed. Must be in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date/time format.
+     * The date the purchase order was placed. Must be in ISO-8601 date/time format.
      * @type {string}
      * @memberof OrderDetails
      */
     'purchaseOrderDate': string;
     /**
-     * The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than \'purchaseOrderDate\'. This means the PO data was changed on that date and vendors are required to fulfill the updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date/time format.
+     * The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than \'purchaseOrderDate\'. This means the PO data was changed on that date and vendors are required to fulfill the  updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in ISO-8601 date/time format.
      * @type {string}
      * @memberof OrderDetails
      */
     'purchaseOrderChangedDate'?: string;
     /**
-     * The date when current purchase order state was changed. Current purchase order state is available in the field \'purchaseOrderState\'. Must be in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date/time format.
+     * The date when current purchase order state was changed. Current purchase order state is available in the field \'purchaseOrderState\'. Must be in ISO-8601 date/time format.
      * @type {string}
      * @memberof OrderDetails
      */
@@ -96,13 +96,13 @@ export interface OrderDetails {
      */
     'billToParty'?: PartyIdentification;
     /**
-     * Defines a date time interval according to <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a>. Interval is separated by double hyphen (--).
+     * Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--).
      * @type {string}
      * @memberof OrderDetails
      */
     'shipWindow'?: string;
     /**
-     * Defines a date time interval according to <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a>. Interval is separated by double hyphen (--).
+     * Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--).
      * @type {string}
      * @memberof OrderDetails
      */

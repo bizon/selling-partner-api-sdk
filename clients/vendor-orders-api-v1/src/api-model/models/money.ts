@@ -15,7 +15,7 @@
 
 
 /**
- * An amount of money, including units in the form of currency.
+ * An amount of money. Includes the currency code and an optional unit of measure for items priced by weight.
  * @export
  * @interface Money
  */
@@ -32,5 +32,21 @@ export interface Money {
      * @memberof Money
      */
     'amount'?: string;
+    /**
+     * The unit of measure for prices of items sold by weight. If this field is absent, the item is sold by eaches.
+     * @type {string}
+     * @memberof Money
+     */
+    'unitOfMeasure'?: MoneyUnitOfMeasureEnum;
 }
+
+export const MoneyUnitOfMeasureEnum = {
+    Pounds: 'POUNDS',
+    Ounces: 'OUNCES',
+    Grams: 'GRAMS',
+    Kilograms: 'KILOGRAMS'
+} as const;
+
+export type MoneyUnitOfMeasureEnum = typeof MoneyUnitOfMeasureEnum[keyof typeof MoneyUnitOfMeasureEnum];
+
 

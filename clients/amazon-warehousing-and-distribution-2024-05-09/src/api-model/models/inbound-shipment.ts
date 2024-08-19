@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * The Selling Partner API for AWD
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD).
+ * The Selling Partner API for Amazon Warehousing and Distribution
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. 
  *
  * The version of the OpenAPI document: 2024-05-09
  * 
@@ -28,6 +28,9 @@ import type { InboundShipmentStatus } from './inbound-shipment-status';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { InventoryQuantity } from './inventory-quantity';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { SkuQuantity } from './sku-quantity';
 
 /**
  * Represents an AWD inbound shipment.
@@ -95,6 +98,12 @@ export interface InboundShipment {
      * @memberof InboundShipment
      */
     'shipmentId': string;
+    /**
+     * Quantity details at SKU level for the shipment. This attribute will only appear if the skuQuantities parameter in the request is set to SHOW.
+     * @type {Array<SkuQuantity>}
+     * @memberof InboundShipment
+     */
+    'shipmentSkuQuantities'?: Array<SkuQuantity>;
     /**
      * 
      * @type {InboundShipmentStatus}

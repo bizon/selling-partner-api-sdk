@@ -1,7 +1,7 @@
 {
   "name": "@sp-api-sdk/amazon-warehousing-and-distribution-2024-05-09",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
-  "description": "The Selling Partner API for Amazon Warehousing and Distribution (AWD).",
+  "description": "The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.",
   "version": "1.2.0",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",

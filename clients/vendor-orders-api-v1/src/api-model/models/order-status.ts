@@ -39,13 +39,13 @@ export interface OrderStatus {
      */
     'purchaseOrderStatus': OrderStatusPurchaseOrderStatusEnum;
     /**
-     * The date the purchase order was placed. Must be in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date/time format.
+     * The date the purchase order was placed. Must be in ISO-8601 date/time format.
      * @type {string}
      * @memberof OrderStatus
      */
     'purchaseOrderDate': string;
     /**
-     * The date when the purchase order was last updated. Must be in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date/time format.
+     * The date when the purchase order was last updated. Must be in ISO-8601 date/time format.
      * @type {string}
      * @memberof OrderStatus
      */

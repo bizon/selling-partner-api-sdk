@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * The Selling Partner API for AWD
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD).
+ * The Selling Partner API for Amazon Warehousing and Distribution
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. 
  *
  * The version of the OpenAPI document: 2024-05-09
  * 
@@ -35,6 +35,12 @@ export interface InventorySummary {
      * @memberof InventorySummary
      */
     'sku': string;
+    /**
+     * Total quantity that is in-transit from the seller and has not yet been received at an AWD Distribution Center
+     * @type {number}
+     * @memberof InventorySummary
+     */
+    'totalInboundQuantity'?: number;
     /**
      * Total quantity that is present in AWD distribution centers.
      * @type {number}

@@ -21,7 +21,7 @@ import type { ItemQuantity } from './item-quantity';
 import type { Money } from './money';
 
 /**
- * Represents an individual item in an order, including item details, quantities, pricing, and backorder information.
+ * 
  * @export
  * @interface OrderItem
  */

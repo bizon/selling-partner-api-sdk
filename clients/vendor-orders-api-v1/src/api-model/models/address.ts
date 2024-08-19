@@ -69,7 +69,7 @@ export interface Address {
      */
     'stateOrRegion'?: string;
     /**
-     * The postal code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
+     * The postal code of that address. It conatins a series of letters or digits or both, sometimes including spaces or punctuation.
      * @type {string}
      * @memberof Address
      */

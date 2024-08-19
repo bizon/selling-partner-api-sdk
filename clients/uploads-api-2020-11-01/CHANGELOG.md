@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/uploads-api-2020-11-01@2.1.3...@sp-api-sdk/uploads-api-2020-11-01@2.2.0) (2024-08-19)
+
+### Features
+
+* expose request types and base API classes ([#1284](https://github.com/bizon/selling-partner-api-sdk/issues/1284)) ([ca794d0](https://github.com/bizon/selling-partner-api-sdk/commit/ca794d023bcb7b0177de0fdae93ae1aaa7ac3670)), closes [#757](https://github.com/bizon/selling-partner-api-sdk/issues/757)
+
 ## [2.1.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/uploads-api-2020-11-01@2.1.2...@sp-api-sdk/uploads-api-2020-11-01@2.1.3) (2024-07-03)
 
 **Note:** Version bump only for package @sp-api-sdk/uploads-api-2020-11-01

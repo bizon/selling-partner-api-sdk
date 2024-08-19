@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-shipments-api-v1@2.2.3...@sp-api-sdk/vendor-shipments-api-v1@2.3.0) (2024-08-19)
+
+### Features
+
+* expose request types and base API classes ([#1284](https://github.com/bizon/selling-partner-api-sdk/issues/1284)) ([ca794d0](https://github.com/bizon/selling-partner-api-sdk/commit/ca794d023bcb7b0177de0fdae93ae1aaa7ac3670)), closes [#757](https://github.com/bizon/selling-partner-api-sdk/issues/757)
+
 ## [2.2.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-shipments-api-v1@2.2.2...@sp-api-sdk/vendor-shipments-api-v1@2.2.3) (2024-07-03)
 
 **Note:** Version bump only for package @sp-api-sdk/vendor-shipments-api-v1

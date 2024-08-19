@@ -32,6 +32,12 @@ This SDK supports the following features:
 
 This repository contains an API client for each of the available Selling Partner API version:
 
+<!---
+Generated using:
+
+ls clients | sed 's$\(.*\)$- [\1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/\1)$' | pbcopy
+-->
+
 - [amazon-warehousing-and-distribution-2024-05-09](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/amazon-warehousing-and-distribution-2024-05-09)
 - [aplus-content-api-2020-11-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/aplus-content-api-2020-11-01)
 - [application-management-api-2023-11-30](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/application-management-api-2023-11-30)

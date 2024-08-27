@@ -34,6 +34,6 @@ exports[`src/errors should handle response-less errors 1`] = `
   "name": "SellingPartnerApiError",
   "number": undefined,
   "stack": Any<String>,
-  "status": null,
+  "status": undefined,
 }
 `;

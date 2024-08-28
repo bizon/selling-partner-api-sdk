@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/fba-inventory-api-v1",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for FBA Inventory lets you programmatically retrieve information about inventory in Amazon's fulfillment network.",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

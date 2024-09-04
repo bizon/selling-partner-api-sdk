@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@sp-api-sdk/common": "workspace:*",
-    "axios": "^1.7.5"
+    "axios": "^1.7.7"
   },
   "devDependencies": {
     "@sp-api-sdk/auth": "workspace:*"

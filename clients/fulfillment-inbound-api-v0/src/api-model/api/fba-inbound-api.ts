@@ -455,7 +455,6 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {string} [lastUpdatedBefore] A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller.
          * @param {string} [nextToken] A string token returned in the response to your previous request.
          * @param {*} [options] Override http request option.
-         * @deprecated
          * @throws {RequiredError}
          */
         getShipmentItems: async (queryType: GetShipmentItemsQueryTypeEnum, marketplaceId: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -515,7 +514,6 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {string} shipmentId A shipment identifier used for selecting items in a specific inbound shipment.
          * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored.
          * @param {*} [options] Override http request option.
-         * @deprecated
          * @throws {RequiredError}
          */
         getShipmentItemsByShipmentId: async (shipmentId: string, marketplaceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -561,7 +559,6 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
          * @param {string} [lastUpdatedBefore] A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller.
          * @param {string} [nextToken] A string token returned in the response to your previous request.
          * @param {*} [options] Override http request option.
-         * @deprecated
          * @throws {RequiredError}
          */
         getShipments: async (queryType: GetShipmentsQueryTypeEnum, marketplaceId: string, shipmentStatusList?: Array<GetShipmentsShipmentStatusListEnum>, shipmentIdList?: Array<string>, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -917,7 +914,6 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {string} [lastUpdatedBefore] A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller.
          * @param {string} [nextToken] A string token returned in the response to your previous request.
          * @param {*} [options] Override http request option.
-         * @deprecated
          * @throws {RequiredError}
          */
         async getShipmentItems(queryType: GetShipmentItemsQueryTypeEnum, marketplaceId: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentItemsResponse>> {
@@ -931,7 +927,6 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {string} shipmentId A shipment identifier used for selecting items in a specific inbound shipment.
          * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored.
          * @param {*} [options] Override http request option.
-         * @deprecated
          * @throws {RequiredError}
          */
         async getShipmentItemsByShipmentId(shipmentId: string, marketplaceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentItemsResponse>> {
@@ -950,7 +945,6 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
          * @param {string} [lastUpdatedBefore] A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller.
          * @param {string} [nextToken] A string token returned in the response to your previous request.
          * @param {*} [options] Override http request option.
-         * @deprecated
          * @throws {RequiredError}
          */
         async getShipments(queryType: GetShipmentsQueryTypeEnum, marketplaceId: string, shipmentStatusList?: Array<GetShipmentsShipmentStatusListEnum>, shipmentIdList?: Array<string>, lastUpdatedAfter?: string, lastUpdatedBefore?: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentsResponse>> {
@@ -1114,7 +1108,6 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * Returns a list of items in a specified inbound shipment, or a list of items that were updated within a specified time frame.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {FbaInboundApiGetShipmentItemsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
-         * @deprecated
          * @throws {RequiredError}
          */
         getShipmentItems(requestParameters: FbaInboundApiGetShipmentItemsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetShipmentItemsResponse> {
@@ -1124,7 +1117,6 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * Returns a list of items in a specified inbound shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {FbaInboundApiGetShipmentItemsByShipmentIdRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
-         * @deprecated
          * @throws {RequiredError}
          */
         getShipmentItemsByShipmentId(requestParameters: FbaInboundApiGetShipmentItemsByShipmentIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetShipmentItemsResponse> {
@@ -1134,7 +1126,6 @@ export const FbaInboundApiFactory = function (configuration?: Configuration, bas
          * Returns a list of inbound shipments based on criteria that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {FbaInboundApiGetShipmentsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
-         * @deprecated
          * @throws {RequiredError}
          */
         getShipments(requestParameters: FbaInboundApiGetShipmentsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetShipmentsResponse> {
@@ -1705,7 +1696,6 @@ export class FbaInboundApi extends BaseAPI {
      * Returns a list of items in a specified inbound shipment, or a list of items that were updated within a specified time frame.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {FbaInboundApiGetShipmentItemsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
-     * @deprecated
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
@@ -1717,7 +1707,6 @@ export class FbaInboundApi extends BaseAPI {
      * Returns a list of items in a specified inbound shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {FbaInboundApiGetShipmentItemsByShipmentIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
-     * @deprecated
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */
@@ -1729,7 +1718,6 @@ export class FbaInboundApi extends BaseAPI {
      * Returns a list of inbound shipments based on criteria that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {FbaInboundApiGetShipmentsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
-     * @deprecated
      * @throws {RequiredError}
      * @memberof FbaInboundApi
      */

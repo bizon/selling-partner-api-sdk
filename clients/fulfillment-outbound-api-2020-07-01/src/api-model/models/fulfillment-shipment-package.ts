@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { DeliveryInformation } from './delivery-information';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { LockerDetails } from './locker-details';
 
 /**
@@ -53,5 +56,11 @@ export interface FulfillmentShipmentPackage {
      * @memberof FulfillmentShipmentPackage
      */
     'lockerDetails'?: LockerDetails;
+    /**
+     * 
+     * @type {DeliveryInformation}
+     * @memberof FulfillmentShipmentPackage
+     */
+    'deliveryInformation'?: DeliveryInformation;
 }
 

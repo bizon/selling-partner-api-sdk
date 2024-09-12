@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Orders
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  **Note:** The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don\'t show up in the response).
  *
  * The version of the OpenAPI document: v0
  * 
@@ -30,13 +30,13 @@ export interface PackageDetail {
      */
     'packageReferenceId': string;
     /**
-     * Identifies the carrier that will deliver the package. This field is required for all marketplaces. For the acceptable `CarrierCode` value, refer to the list of <a href=\'https://images-na.ssl-images-amazon.com/images/G/01/rainier/help/xsd/release_1_9/amzn-base._TTH_.xsd\'>CarrierCode</a>.
+     * Identifies the carrier that will deliver the package. This field is required for all marketplaces. For more information, refer to the [`CarrierCode` announcement](https://developer-docs.amazon.com/sp-api/changelog/carriercode-value-required-in-shipment-confirmations-for-br-mx-ca-sg-au-in-jp-marketplaces).
      * @type {string}
      * @memberof PackageDetail
      */
     'carrierCode': string;
     /**
-     * Carrier Name that will deliver the package. Required when carrierCode is \"Others\" 
+     * Carrier Name that will deliver the package. Required when `carrierCode` is \"Others\" 
      * @type {string}
      * @memberof PackageDetail
      */
@@ -60,7 +60,7 @@ export interface PackageDetail {
      */
     'shipDate': string;
     /**
-     * The unique identifier of the supply source.
+     * The unique identifier for the supply source.
      * @type {string}
      * @memberof PackageDetail
      */

@@ -15,29 +15,22 @@
 
 
 /**
- * A quantity based on unit of measure.
+ * A delivery document for a package.
  * @export
- * @interface DeliveryQuantity
+ * @interface DeliveryDocument
  */
-export interface DeliveryQuantity {
+export interface DeliveryDocument {
     /**
-     * The unit of measure for the amount.
+     * The delivery document type. Values are `SIGNATURE` and `DELIVERY_IMAGE`.
      * @type {string}
-     * @memberof DeliveryQuantity
+     * @memberof DeliveryDocument
      */
-    'unitOfMeasure': DeliveryQuantityUnitOfMeasureEnum;
+    'documentType': string;
     /**
-     * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.
+     * A URL that you can use to download the document. This URL has a `Content-Type` header. Note that the URL expires after one hour. To get a new URL, you must call the API again.
      * @type {string}
-     * @memberof DeliveryQuantity
+     * @memberof DeliveryDocument
      */
-    'amount': string;
+    'url'?: string;
 }
-
-export const DeliveryQuantityUnitOfMeasureEnum = {
-    Each: 'Each'
-} as const;
-
-export type DeliveryQuantityUnitOfMeasureEnum = typeof DeliveryQuantityUnitOfMeasureEnum[keyof typeof DeliveryQuantityUnitOfMeasureEnum];
-
 

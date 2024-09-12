@@ -1,8 +1,8 @@
 # `orders-api-v0`
 
-The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.
+Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools. 
 
-**Note:** The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+_Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
 
 [![npm version](https://badgen.net/npm/v/@sp-api-sdk/orders-api-v0)](https://www.npmjs.com/package/@sp-api-sdk/orders-api-v0)
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)

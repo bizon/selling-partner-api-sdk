@@ -31,7 +31,7 @@ export interface FeaturedOfferExpectedPriceResponseBody {
      * @type {OfferIdentifier}
      * @memberof FeaturedOfferExpectedPriceResponseBody
      */
-    'offerIdentifier': OfferIdentifier;
+    'offerIdentifier'?: OfferIdentifier;
     /**
      * A list of featured offer expected price results for the requested offer.
      * @type {Array<FeaturedOfferExpectedPriceResult>}

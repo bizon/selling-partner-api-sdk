@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { Audience } from './audience';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { Money } from './money';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -50,6 +53,12 @@ export interface ItemOfferByMarketplace {
      * @memberof ItemOfferByMarketplace
      */
     'points'?: Points;
+    /**
+     * 
+     * @type {Audience}
+     * @memberof ItemOfferByMarketplace
+     */
+    'audience'?: Audience;
 }
 
 export const ItemOfferByMarketplaceOfferTypeEnum = {

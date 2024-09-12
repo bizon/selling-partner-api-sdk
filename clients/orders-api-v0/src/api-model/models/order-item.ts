@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Orders
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  **Note:** The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don\'t show up in the response).
  *
  * The version of the OpenAPI document: v0
  * 
@@ -51,13 +51,13 @@ import type { TaxCollection } from './tax-collection';
  */
 export interface OrderItem {
     /**
-     * The Amazon Standard Identification Number (ASIN) of the item.
+     * The item\'s Amazon Standard Identification Number (ASIN).
      * @type {string}
      * @memberof OrderItem
      */
     'ASIN': string;
     /**
-     * The seller stock keeping unit (SKU) of the item.
+     * The item\'s seller stock keeping unit (SKU).
      * @type {string}
      * @memberof OrderItem
      */
@@ -75,7 +75,7 @@ export interface OrderItem {
      */
     'AssociatedItems'?: Array<AssociatedItem>;
     /**
-     * The name of the item.
+     * The item\'s name.
      * @type {string}
      * @memberof OrderItem
      */
@@ -171,43 +171,43 @@ export interface OrderItem {
      */
     'CODFeeDiscount'?: Money;
     /**
-     * Indicates whether the item is a gift.  **Possible values**: `true`, `false`.
+     * Indicates whether the item is a gift.  **Possible values**: `true` and `false`.
      * @type {string}
      * @memberof OrderItem
      */
     'IsGift'?: string;
     /**
-     * The condition of the item as described by the seller.
+     * The condition of the item, as described by the seller.
      * @type {string}
      * @memberof OrderItem
      */
     'ConditionNote'?: string;
     /**
-     * The condition of the item.  **Possible values**: `New`, `Used`, `Collectible`, `Refurbished`, `Preorder`, `Club`.
+     * The condition of the item.  **Possible values**: `New`, `Used`, `Collectible`, `Refurbished`, `Preorder`, and `Club`.
      * @type {string}
      * @memberof OrderItem
      */
     'ConditionId'?: string;
     /**
-     * The subcondition of the item.  **Possible values**: `New`, `Mint`, `Very Good`, `Good`, `Acceptable`, `Poor`, `Club`, `OEM`, `Warranty`, `Refurbished Warranty`, `Refurbished`, `Open Box`, `Any`, `Other`.
+     * The subcondition of the item.  **Possible values**: `New`, `Mint`, `Very Good`, `Good`, `Acceptable`, `Poor`, `Club`, `OEM`, `Warranty`, `Refurbished Warranty`, `Refurbished`, `Open Box`, `Any`, and `Other`.
      * @type {string}
      * @memberof OrderItem
      */
     'ConditionSubtypeId'?: string;
     /**
-     * The start date of the scheduled delivery window in the time zone of the order destination. In <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format.
+     * The start date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
      * @type {string}
      * @memberof OrderItem
      */
     'ScheduledDeliveryStartDate'?: string;
     /**
-     * The end date of the scheduled delivery window in the time zone of the order destination. In <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format.
+     * The end date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
      * @type {string}
      * @memberof OrderItem
      */
     'ScheduledDeliveryEndDate'?: string;
     /**
-     * Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, refer to [Amazon Business](https://business.amazon.com).   **Possible values**: `BusinessPrice` - A special price that is available only for Amazon Business orders.
+     * Indicates that the selling price is a special price that is only available for Amazon Business orders. For more information about the Amazon Business Seller Program, refer to the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).   **Possible values**: `BusinessPrice`
      * @type {string}
      * @memberof OrderItem
      */
@@ -219,19 +219,19 @@ export interface OrderItem {
      */
     'TaxCollection'?: TaxCollection;
     /**
-     * When true, the product type for this item has a serial number.  Returned only for Amazon Easy Ship orders.
+     * When true, the product type for this item has a serial number.   Only returned for Amazon Easy Ship orders.
      * @type {boolean}
      * @memberof OrderItem
      */
     'SerialNumberRequired'?: boolean;
     /**
-     * When true, the ASIN is enrolled in Transparency and the Transparency serial number that needs to be submitted can be determined by the following:  **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN). **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number will be applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode. **QR code SN:** Submit the URL that the QR code generates.
+     * When true, the ASIN is enrolled in Transparency. The Transparency serial number that you must submit is determined by:  **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN). **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number is applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode. **QR code SN:** Submit the URL that the QR code generates.
      * @type {boolean}
      * @memberof OrderItem
      */
     'IsTransparency'?: boolean;
     /**
-     * The IOSS number for the marketplace. Sellers shipping to the European Union (EU) from outside of the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.
+     * The IOSS number of the marketplace. Sellers shipping to the EU from outside the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.
      * @type {string}
      * @memberof OrderItem
      */

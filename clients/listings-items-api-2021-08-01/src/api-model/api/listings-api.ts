@@ -26,6 +26,8 @@ import type { ErrorList } from '../models';
 // @ts-ignore
 import type { Item } from '../models';
 // @ts-ignore
+import type { ItemSearchResults } from '../models';
+// @ts-ignore
 import type { ListingsItemPatchRequest } from '../models';
 // @ts-ignore
 import type { ListingsItemPutRequest } from '../models';
@@ -270,6 +272,76 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * Search for and return list of listings items and respective details for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} sellerId A selling partner identifier, such as a merchant account or vendor code.
+         * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
+         * @param {Array<string>} [identifiers] A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided.
+         * @param {SearchListingsItemsIdentifiersTypeEnum} [identifiersType] Type of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiers&#x60; is provided.
+         * @param {number} [pageSize] Number of results to be returned per page.
+         * @param {string} [pageToken] A token to fetch a certain page when there are multiple pages worth of results.
+         * @param {Array<SearchListingsItemsIncludedDataEnum>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
+         * @param {string} [issueLocale] A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        searchListingsItems: async (sellerId: string, marketplaceIds: Array<string>, identifiers?: Array<string>, identifiersType?: SearchListingsItemsIdentifiersTypeEnum, pageSize?: number, pageToken?: string, includedData?: Array<SearchListingsItemsIncludedDataEnum>, issueLocale?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'sellerId' is not null or undefined
+            assertParamExists('searchListingsItems', 'sellerId', sellerId)
+            // verify required parameter 'marketplaceIds' is not null or undefined
+            assertParamExists('searchListingsItems', 'marketplaceIds', marketplaceIds)
+            const localVarPath = `/listings/2021-08-01/items/{sellerId}`
+                .replace(`{${"sellerId"}}`, encodeURIComponent(String(sellerId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (marketplaceIds) {
+                localVarQueryParameter['marketplaceIds'] = marketplaceIds.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (identifiers) {
+                localVarQueryParameter['identifiers'] = identifiers.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (identifiersType !== undefined) {
+                localVarQueryParameter['identifiersType'] = identifiersType;
+            }
+
+            if (pageSize !== undefined) {
+                localVarQueryParameter['pageSize'] = pageSize;
+            }
+
+            if (pageToken !== undefined) {
+                localVarQueryParameter['pageToken'] = pageToken;
+            }
+
+            if (includedData) {
+                localVarQueryParameter['includedData'] = includedData.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (issueLocale !== undefined) {
+                localVarQueryParameter['issueLocale'] = issueLocale;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -347,6 +419,25 @@ export const ListingsApiFp = function(configuration?: Configuration) {
             const localVarOperationServerBasePath = operationServerMap['ListingsApi.putListingsItem']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
+        /**
+         * Search for and return list of listings items and respective details for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} sellerId A selling partner identifier, such as a merchant account or vendor code.
+         * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
+         * @param {Array<string>} [identifiers] A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided.
+         * @param {SearchListingsItemsIdentifiersTypeEnum} [identifiersType] Type of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiers&#x60; is provided.
+         * @param {number} [pageSize] Number of results to be returned per page.
+         * @param {string} [pageToken] A token to fetch a certain page when there are multiple pages worth of results.
+         * @param {Array<SearchListingsItemsIncludedDataEnum>} [includedData] A comma-delimited list of data sets to include in the response. Default: summaries.
+         * @param {string} [issueLocale] A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async searchListingsItems(sellerId: string, marketplaceIds: Array<string>, identifiers?: Array<string>, identifiersType?: SearchListingsItemsIdentifiersTypeEnum, pageSize?: number, pageToken?: string, includedData?: Array<SearchListingsItemsIncludedDataEnum>, issueLocale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ItemSearchResults>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.searchListingsItems(sellerId, marketplaceIds, identifiers, identifiersType, pageSize, pageToken, includedData, issueLocale, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ListingsApi.searchListingsItems']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
     }
 };
 
@@ -392,6 +483,15 @@ export const ListingsApiFactory = function (configuration?: Configuration, baseP
          */
         putListingsItem(requestParameters: ListingsApiPutListingsItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
             return localVarFp.putListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.includedData, requestParameters.mode, requestParameters.issueLocale, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Search for and return list of listings items and respective details for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {ListingsApiSearchListingsItemsRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        searchListingsItems(requestParameters: ListingsApiSearchListingsItemsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ItemSearchResults> {
+            return localVarFp.searchListingsItems(requestParameters.sellerId, requestParameters.marketplaceIds, requestParameters.identifiers, requestParameters.identifiersType, requestParameters.pageSize, requestParameters.pageToken, requestParameters.includedData, requestParameters.issueLocale, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -586,6 +686,69 @@ export interface ListingsApiPutListingsItemRequest {
 }
 
 /**
+ * Request parameters for searchListingsItems operation in ListingsApi.
+ * @export
+ * @interface ListingsApiSearchListingsItemsRequest
+ */
+export interface ListingsApiSearchListingsItemsRequest {
+    /**
+     * A selling partner identifier, such as a merchant account or vendor code.
+     * @type {string}
+     * @memberof ListingsApiSearchListingsItems
+     */
+    readonly sellerId: string
+
+    /**
+     * A comma-delimited list of Amazon marketplace identifiers for the request.
+     * @type {Array<string>}
+     * @memberof ListingsApiSearchListingsItems
+     */
+    readonly marketplaceIds: Array<string>
+
+    /**
+     * A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided.
+     * @type {Array<string>}
+     * @memberof ListingsApiSearchListingsItems
+     */
+    readonly identifiers?: Array<string>
+
+    /**
+     * Type of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiers&#x60; is provided.
+     * @type {'ASIN' | 'EAN' | 'GTIN' | 'ISBN' | 'JAN' | 'MINSAN' | 'SKU' | 'UPC'}
+     * @memberof ListingsApiSearchListingsItems
+     */
+    readonly identifiersType?: SearchListingsItemsIdentifiersTypeEnum
+
+    /**
+     * Number of results to be returned per page.
+     * @type {number}
+     * @memberof ListingsApiSearchListingsItems
+     */
+    readonly pageSize?: number
+
+    /**
+     * A token to fetch a certain page when there are multiple pages worth of results.
+     * @type {string}
+     * @memberof ListingsApiSearchListingsItems
+     */
+    readonly pageToken?: string
+
+    /**
+     * A comma-delimited list of data sets to include in the response. Default: summaries.
+     * @type {Array<'summaries' | 'attributes' | 'issues' | 'offers' | 'fulfillmentAvailability' | 'procurement'>}
+     * @memberof ListingsApiSearchListingsItems
+     */
+    readonly includedData?: Array<SearchListingsItemsIncludedDataEnum>
+
+    /**
+     * A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale.
+     * @type {string}
+     * @memberof ListingsApiSearchListingsItems
+     */
+    readonly issueLocale?: string
+}
+
+/**
  * ListingsApi - object-oriented interface
  * @export
  * @class ListingsApi
@@ -635,6 +798,17 @@ export class ListingsApi extends BaseAPI {
     public putListingsItem(requestParameters: ListingsApiPutListingsItemRequest, options?: RawAxiosRequestConfig) {
         return ListingsApiFp(this.configuration).putListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.includedData, requestParameters.mode, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
     }
+
+    /**
+     * Search for and return list of listings items and respective details for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {ListingsApiSearchListingsItemsRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ListingsApi
+     */
+    public searchListingsItems(requestParameters: ListingsApiSearchListingsItemsRequest, options?: RawAxiosRequestConfig) {
+        return ListingsApiFp(this.configuration).searchListingsItems(requestParameters.sellerId, requestParameters.marketplaceIds, requestParameters.identifiers, requestParameters.identifiersType, requestParameters.pageSize, requestParameters.pageToken, requestParameters.includedData, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
+    }
 }
 
 /**
@@ -679,3 +853,29 @@ export const PutListingsItemModeEnum = {
     ValidationPreview: 'VALIDATION_PREVIEW'
 } as const;
 export type PutListingsItemModeEnum = typeof PutListingsItemModeEnum[keyof typeof PutListingsItemModeEnum];
+/**
+ * @export
+ */
+export const SearchListingsItemsIdentifiersTypeEnum = {
+    Asin: 'ASIN',
+    Ean: 'EAN',
+    Gtin: 'GTIN',
+    Isbn: 'ISBN',
+    Jan: 'JAN',
+    Minsan: 'MINSAN',
+    Sku: 'SKU',
+    Upc: 'UPC'
+} as const;
+export type SearchListingsItemsIdentifiersTypeEnum = typeof SearchListingsItemsIdentifiersTypeEnum[keyof typeof SearchListingsItemsIdentifiersTypeEnum];
+/**
+ * @export
+ */
+export const SearchListingsItemsIncludedDataEnum = {
+    Summaries: 'summaries',
+    Attributes: 'attributes',
+    Issues: 'issues',
+    Offers: 'offers',
+    FulfillmentAvailability: 'fulfillmentAvailability',
+    Procurement: 'procurement'
+} as const;
+export type SearchListingsItemsIncludedDataEnum = typeof SearchListingsItemsIncludedDataEnum[keyof typeof SearchListingsItemsIncludedDataEnum];

@@ -15,7 +15,7 @@
 
 
 /**
- * The locker details, if provided can be used to access locker delivery box.
+ * The locker details, which you can use to access the locker delivery box.
  * @export
  * @interface LockerDetails
  */

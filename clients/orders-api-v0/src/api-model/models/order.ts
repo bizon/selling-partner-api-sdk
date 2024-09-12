@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Orders
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  **Note:** The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don\'t show up in the response).
  *
  * The version of the OpenAPI document: v0
  * 
@@ -69,7 +69,7 @@ export interface Order {
      */
     'PurchaseDate': string;
     /**
-     * The date when the order was last updated.  **Note**: `LastUpdateDate` is returned with an incorrect date for orders that were last updated before 2009-04-01.
+     * The date when the order was last updated.  __Note__: `LastUpdateDate` is returned with an incorrect date for orders that were last updated before 2009-04-01.
      * @type {string}
      * @memberof Order
      */
@@ -81,25 +81,25 @@ export interface Order {
      */
     'OrderStatus': OrderOrderStatusEnum;
     /**
-     * Whether the order was fulfilled by Amazon (AFN) or by the seller (MFN).
+     * Whether the order was fulfilled by Amazon (`AFN`) or by the seller (`MFN`).
      * @type {string}
      * @memberof Order
      */
     'FulfillmentChannel'?: OrderFulfillmentChannelEnum;
     /**
-     * The sales channel of the first item in the order.
+     * The sales channel for the first item in the order.
      * @type {string}
      * @memberof Order
      */
     'SalesChannel'?: string;
     /**
-     * The order channel of the first item in the order.
+     * The order channel for the first item in the order.
      * @type {string}
      * @memberof Order
      */
     'OrderChannel'?: string;
     /**
-     * The shipment service level of the order.
+     * The order\'s shipment service level.
      * @type {string}
      * @memberof Order
      */
@@ -129,7 +129,7 @@ export interface Order {
      */
     'PaymentExecutionDetail'?: Array<PaymentExecutionDetailItem>;
     /**
-     * The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the `PaymentExecutionDetailItem` object, we recommend using the `PaymentMethodDetails` property to get payment method information.
+     * The payment method for the order. This property is limited to COD and CVS payment methods. Unless you need the specific COD payment information provided by the `PaymentExecutionDetailItem` object, we recommend using the `PaymentMethodDetails` property to get payment method information.
      * @type {string}
      * @memberof Order
      */
@@ -147,7 +147,7 @@ export interface Order {
      */
     'MarketplaceId'?: string;
     /**
-     * The shipment service level category of the order.  **Possible values**: `Expedited`, `FreeEconomy`, `NextDay`, `Priority`, `SameDay`, `SecondDay`, `Scheduled`, `Standard`.
+     * The shipment service level category for the order.  **Possible values**: `Expedited`, `FreeEconomy`, `NextDay`, `Priority`, `SameDay`, `SecondDay`, `Scheduled`, and `Standard`.
      * @type {string}
      * @memberof Order
      */
@@ -165,31 +165,31 @@ export interface Order {
      */
     'CbaDisplayableShippingLabel'?: string;
     /**
-     * The type of the order.
+     * The order\'s type.
      * @type {string}
      * @memberof Order
      */
     'OrderType'?: OrderOrderTypeEnum;
     /**
-     * The start of the time period within which you have committed to ship the order. In <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.  **Note**: `EarliestShipDate` might not be returned for orders placed before February 1, 2013.
+     * The start of the time period within which you have committed to ship the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.  __Note__: `EarliestShipDate` might not be returned for orders placed before February 1, 2013.
      * @type {string}
      * @memberof Order
      */
     'EarliestShipDate'?: string;
     /**
-     * The end of the time period within which you have committed to ship the order. In <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.  **Note**: `LatestShipDate` might not be returned for orders placed before February 1, 2013.
+     * The end of the time period within which you have committed to ship the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.  __Note__: `LatestShipDate` might not be returned for orders placed before February 1, 2013.
      * @type {string}
      * @memberof Order
      */
     'LatestShipDate'?: string;
     /**
-     * The start of the time period within which you have committed to fulfill the order. In <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.
+     * The start of the time period within which you have committed to fulfill the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.
      * @type {string}
      * @memberof Order
      */
     'EarliestDeliveryDate'?: string;
     /**
-     * The end of the time period within which you have committed to fulfill the order. In <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders that do not have a `PendingAvailability`, Pending, or Canceled status.
+     * The end of the time period within which you have committed to fulfill the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders that do not have a `PendingAvailability`, `Pending`, or `Canceled` status.
      * @type {string}
      * @memberof Order
      */
@@ -207,19 +207,19 @@ export interface Order {
      */
     'IsPrime'?: boolean;
     /**
-     * When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, see \"Premium Shipping Options\" in the Seller Central Help for your marketplace.
+     * When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, refer to \"Premium Shipping Options\" in the Seller Central Help for your marketplace.
      * @type {boolean}
      * @memberof Order
      */
     'IsPremiumOrder'?: boolean;
     /**
-     * When true, the order is a GlobalExpress order.
+     * When true, the order is a `GlobalExpress` order.
      * @type {boolean}
      * @memberof Order
      */
     'IsGlobalExpressEnabled'?: boolean;
     /**
-     * The order ID value for the order that is being replaced. Returned only if `IsReplacementOrder` = true.
+     * The order ID value for the order that is being replaced. Returned only if IsReplacementOrder = true.
      * @type {string}
      * @memberof Order
      */
@@ -231,13 +231,13 @@ export interface Order {
      */
     'IsReplacementOrder'?: boolean;
     /**
-     * Indicates the date by which the seller must respond to the buyer with an estimated ship date. Returned only for Sourcing on Demand orders.
+     * Indicates the date by which the seller must respond to the buyer with an estimated ship date. Only returned for Sourcing on Demand orders.
      * @type {string}
      * @memberof Order
      */
     'PromiseResponseDueDate'?: string;
     /**
-     * When true, the estimated ship date is specified for the order. Returned only for Sourcing on Demand orders.
+     * When true, the estimated ship date is set for the order. Only returned for Sourcing on Demand orders.
      * @type {boolean}
      * @memberof Order
      */

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Orders
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  **Note:** The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don\'t show up in the response).
  *
  * The version of the OpenAPI document: v0
  * 
@@ -18,10 +18,13 @@
 import type { RejectionReason } from './rejection-reason';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { ValidVerificationDetail } from './valid-verification-detail';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { VerificationStatus } from './verification-status';
 
 /**
- * The verification status of the order along with associated approval or rejection metadata.
+ * The verification status of the order, along with associated approval or rejection metadata.
  * @export
  * @interface RegulatedOrderVerificationStatus
  */
@@ -51,7 +54,7 @@ export interface RegulatedOrderVerificationStatus {
      */
     'RejectionReason'?: RejectionReason;
     /**
-     * The date the order was reviewed. In <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format.
+     * The date the order was reviewed. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
      * @type {string}
      * @memberof RegulatedOrderVerificationStatus
      */
@@ -62,6 +65,12 @@ export interface RegulatedOrderVerificationStatus {
      * @memberof RegulatedOrderVerificationStatus
      */
     'ExternalReviewerId'?: string;
+    /**
+     * A list of valid verification details that may be provided and the criteria required for when the verification detail can be provided.
+     * @type {Array<ValidVerificationDetail>}
+     * @memberof RegulatedOrderVerificationStatus
+     */
+    'ValidVerificationDetails'?: Array<ValidVerificationDetail>;
 }
 
 

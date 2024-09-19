@@ -755,8 +755,8 @@ importers:
   codegen:
     dependencies:
       '@openapitools/openapi-generator-cli':
-        specifier: ^2.13.5
-        version: 2.13.5(encoding@0.1.13)
+        specifier: ^2.13.7
+        version: 2.13.7(encoding@0.1.13)
       bluebird:
         specifier: ^3.7.2
         version: 3.7.2
@@ -1412,19 +1412,19 @@ packages:
     resolution: {integrity: sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA==}
     engines: {node: '>=8'}
 
-  '@nestjs/axios@3.0.2':
-    resolution: {integrity: sha512-Z6GuOUdNQjP7FX+OuV2Ybyamse+/e0BFdTWBX5JxpBDKA+YkdLynDgG6HTF04zy6e9zPa19UX0WA2VDoehwhXQ==}
+  '@nestjs/axios@3.0.3':
+    resolution: {integrity: sha512-h6TCn3yJwD6OKqqqfmtRS5Zo4E46Ip2n+gK1sqwzNBC+qxQ9xpCu+ODVRFur6V3alHSCSBxb3nNtt73VEdluyA==}
     peerDependencies:
       '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
       axios: ^1.3.1
       rxjs: ^6.0.0 || ^7.0.0
 
-  '@nestjs/common@10.3.0':
-    resolution: {integrity: sha512-DGv34UHsZBxCM3H5QGE2XE/+oLJzz5+714JQjBhjD9VccFlQs3LRxo/epso4l7nJIiNlZkPyIUC8WzfU/5RTsQ==}
+  '@nestjs/common@10.4.3':
+    resolution: {integrity: sha512-4hbLd3XIJubHSylYd/1WSi4VQvG68KM/ECYpMDqA3k3J1/T17SAg40sDoq3ZoO5OZgU0xuNyjuISdOTjs11qVg==}
     peerDependencies:
       class-transformer: '*'
       class-validator: '*'
-      reflect-metadata: ^0.1.12
+      reflect-metadata: ^0.1.12 || ^0.2.0
       rxjs: ^7.1.0
     peerDependenciesMeta:
       class-transformer:
@@ -1432,14 +1432,14 @@ packages:
       class-validator:
         optional: true
 
-  '@nestjs/core@10.3.0':
-    resolution: {integrity: sha512-N06P5ncknW/Pm8bj964WvLIZn2gNhHliCBoAO1LeBvNImYkecqKcrmLbY49Fa1rmMfEM3MuBHeDys3edeuYAOA==}
+  '@nestjs/core@10.4.3':
+    resolution: {integrity: sha512-6OQz+5C8mT8yRtfvE5pPCq+p6w5jDot+oQku1KzQ24ABn+lay1KGuJwcKZhdVNuselx+8xhdMxknZTA8wrGLIg==}
     peerDependencies:
       '@nestjs/common': ^10.0.0
       '@nestjs/microservices': ^10.0.0
       '@nestjs/platform-express': ^10.0.0
       '@nestjs/websockets': ^10.0.0
-      reflect-metadata: ^0.1.12
+      reflect-metadata: ^0.1.12 || ^0.2.0
       rxjs: ^7.1.0
     peerDependenciesMeta:
       '@nestjs/microservices':
@@ -1579,8 +1579,8 @@ packages:
   '@octokit/types@13.5.0':
     resolution: {integrity: sha512-HdqWTf5Z3qwDVlzCrP8UJquMwunpDiMPt5er+QjGzL4hqr/vBVY/MauQgS1xWxCDT1oMx1EULyqxncdCY/NVSQ==}
 
-  '@openapitools/openapi-generator-cli@2.13.5':
-    resolution: {integrity: sha512-9VgeKOTiiatKSwZDKKB3C86cW8tN9eDcFohotD4eisdK38UQswk/4Ysoq9KChRCbymjoMp6AIDHPtK1DQ2fTgw==}
+  '@openapitools/openapi-generator-cli@2.13.7':
+    resolution: {integrity: sha512-DS3wWEma1WXPhlqcv+XRVPlCBkME0hkKBVr7GSwlQWvWwIekm/fU4PR8sxhVXYJ33EIpKHfGofT0ZH9+K2lvjQ==}
     engines: {node: '>=10.0.0'}
     hasBin: true
 
@@ -4423,8 +4423,8 @@ packages:
     resolution: {integrity: sha512-ypGJsmGtdXUOeM5u93TyeIEfEhM6s+ljAhrk5vAvSx8uyY/02OvrZnA0YNGUrPXfpJMgI1ODd3nwz8Npx4O4cg==}
     engines: {node: 20 || >=22}
 
-  path-to-regexp@3.2.0:
-    resolution: {integrity: sha512-jczvQbCUS7XmS7o+y1aEO9OBVFeZBQ1MDSEqmO7xSoPgOPoowY/SxLpZ6Vh97/8qHZOteiCKb7gkG9gA2ZUxJA==}
+  path-to-regexp@3.3.0:
+    resolution: {integrity: sha512-qyCH421YQPS2WFDxDjftfc1ZR5WKQzVzqsp4n9M2kQhVOo/ByahFoUNJfl58kOcEGfQ//7weFTDhm+ss8Ecxgw==}
 
   path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
@@ -5099,6 +5099,9 @@ packages:
   tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
 
+  tslib@2.7.0:
+    resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
+
   tsx@4.19.1:
     resolution: {integrity: sha512-0flMz1lh74BR4wOvBjuh9olbnwqCPc35OOlfyzHba0Dc+QNUeWX/Gq2YTbnwcWPO3BMd8fkzRVrHcsR+a7z7rA==}
     engines: {node: '>=18.0.0'}
@@ -5506,7 +5509,7 @@ snapshots:
       '@babel/traverse': 7.24.5
       '@babel/types': 7.24.5
       convert-source-map: 2.0.0
-      debug: 4.3.6
+      debug: 4.3.7
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -5677,7 +5680,7 @@ snapshots:
       '@babel/helper-split-export-declaration': 7.24.5
       '@babel/parser': 7.24.5
       '@babel/types': 7.24.5
-      debug: 4.3.6
+      debug: 4.3.7
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -5784,7 +5787,7 @@ snapshots:
   '@eslint/eslintrc@2.1.4':
     dependencies:
       ajv: 6.12.6
-      debug: 4.3.6
+      debug: 4.3.7
       espree: 9.6.1
       globals: 13.24.0
       ignore: 5.3.1
@@ -5814,7 +5817,7 @@ snapshots:
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
-      debug: 4.3.6
+      debug: 4.3.7
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
@@ -6242,30 +6245,30 @@ snapshots:
 
   '@lukeed/csprng@1.1.0': {}
 
-  '@nestjs/axios@3.0.2(@nestjs/common@10.3.0(reflect-metadata@0.1.13)(rxjs@7.8.1))(axios@1.7.4)(rxjs@7.8.1)':
+  '@nestjs/axios@3.0.3(@nestjs/common@10.4.3(reflect-metadata@0.1.13)(rxjs@7.8.1))(axios@1.7.4)(rxjs@7.8.1)':
     dependencies:
-      '@nestjs/common': 10.3.0(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/common': 10.4.3(reflect-metadata@0.1.13)(rxjs@7.8.1)
       axios: 1.7.4
       rxjs: 7.8.1
 
-  '@nestjs/common@10.3.0(reflect-metadata@0.1.13)(rxjs@7.8.1)':
+  '@nestjs/common@10.4.3(reflect-metadata@0.1.13)(rxjs@7.8.1)':
     dependencies:
       iterare: 1.2.1
       reflect-metadata: 0.1.13
       rxjs: 7.8.1
-      tslib: 2.6.2
+      tslib: 2.7.0
       uid: 2.0.2
 
-  '@nestjs/core@10.3.0(@nestjs/common@10.3.0(reflect-metadata@0.1.13)(rxjs@7.8.1))(encoding@0.1.13)(reflect-metadata@0.1.13)(rxjs@7.8.1)':
+  '@nestjs/core@10.4.3(@nestjs/common@10.4.3(reflect-metadata@0.1.13)(rxjs@7.8.1))(encoding@0.1.13)(reflect-metadata@0.1.13)(rxjs@7.8.1)':
     dependencies:
-      '@nestjs/common': 10.3.0(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/common': 10.4.3(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nuxtjs/opencollective': 0.3.2(encoding@0.1.13)
       fast-safe-stringify: 2.1.1
       iterare: 1.2.1
-      path-to-regexp: 3.2.0
+      path-to-regexp: 3.3.0
       reflect-metadata: 0.1.13
       rxjs: 7.8.1
-      tslib: 2.6.2
+      tslib: 2.7.0
       uid: 2.0.2
     transitivePeerDependencies:
       - encoding
@@ -6483,11 +6486,11 @@ snapshots:
     dependencies:
       '@octokit/openapi-types': 22.2.0
 
-  '@openapitools/openapi-generator-cli@2.13.5(encoding@0.1.13)':
+  '@openapitools/openapi-generator-cli@2.13.7(encoding@0.1.13)':
     dependencies:
-      '@nestjs/axios': 3.0.2(@nestjs/common@10.3.0(reflect-metadata@0.1.13)(rxjs@7.8.1))(axios@1.7.4)(rxjs@7.8.1)
-      '@nestjs/common': 10.3.0(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/core': 10.3.0(@nestjs/common@10.3.0(reflect-metadata@0.1.13)(rxjs@7.8.1))(encoding@0.1.13)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/axios': 3.0.3(@nestjs/common@10.4.3(reflect-metadata@0.1.13)(rxjs@7.8.1))(axios@1.7.4)(rxjs@7.8.1)
+      '@nestjs/common': 10.4.3(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 10.4.3(@nestjs/common@10.4.3(reflect-metadata@0.1.13)(rxjs@7.8.1))(encoding@0.1.13)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nuxtjs/opencollective': 0.3.2(encoding@0.1.13)
       axios: 1.7.4
       chalk: 4.1.2
@@ -6745,7 +6748,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/typescript-estree': 7.17.0(typescript@5.6.2)
       '@typescript-eslint/utils': 7.17.0(eslint@8.57.0)(typescript@5.6.2)
-      debug: 4.3.6
+      debug: 4.3.7
       eslint: 8.57.0
       ts-api-utils: 1.3.0(typescript@5.6.2)
     optionalDependencies:
@@ -6759,7 +6762,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 7.17.0
       '@typescript-eslint/visitor-keys': 7.17.0
-      debug: 4.3.6
+      debug: 4.3.7
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.5
@@ -6893,7 +6896,7 @@ snapshots:
 
   agent-base@7.1.1:
     dependencies:
-      debug: 4.3.6
+      debug: 4.3.7
     transitivePeerDependencies:
       - supports-color
 
@@ -8417,7 +8420,7 @@ snapshots:
   https-proxy-agent@7.0.4:
     dependencies:
       agent-base: 7.1.1
-      debug: 4.3.6
+      debug: 4.3.7
     transitivePeerDependencies:
       - supports-color
 
@@ -8723,7 +8726,7 @@ snapshots:
 
   istanbul-lib-source-maps@4.0.1:
     dependencies:
-      debug: 4.3.6
+      debug: 4.3.7
       istanbul-lib-coverage: 3.2.2
       source-map: 0.6.1
     transitivePeerDependencies:
@@ -9444,7 +9447,7 @@ snapshots:
   micromark@4.0.0:
     dependencies:
       '@types/debug': 4.1.12
-      debug: 4.3.6
+      debug: 4.3.7
       decode-named-character-reference: 1.0.2
       devlop: 1.1.0
       micromark-core-commonmark: 2.0.1
@@ -9892,7 +9895,7 @@ snapshots:
       lru-cache: 11.0.1
       minipass: 7.1.2
 
-  path-to-regexp@3.2.0: {}
+  path-to-regexp@3.3.0: {}
 
   path-type@4.0.0: {}
 
@@ -10141,7 +10144,7 @@ snapshots:
 
   rxjs@7.8.1:
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.7.0
 
   safe-array-concat@1.1.2:
     dependencies:
@@ -10413,7 +10416,7 @@ snapshots:
   synckit@0.9.1:
     dependencies:
       '@pkgr/core': 0.1.1
-      tslib: 2.6.2
+      tslib: 2.7.0
 
   tapable@0.1.10: {}
 
@@ -10538,6 +10541,8 @@ snapshots:
   tslib@1.14.1: {}
 
   tslib@2.6.2: {}
+
+  tslib@2.7.0: {}
 
   tsx@4.19.1:
     dependencies:

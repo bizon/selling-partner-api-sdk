@@ -95,6 +95,27 @@ ls clients | sed 's$\(.*\)$- [\1](https://www.github.com/bizon/selling-partner-a
 The API clients are automatically generated from the Swagger/OpenAPI models from [the official models repository](https://github.com/amzn/selling-partner-api-models).
 [A code generation workflow](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/codegen.yml) runs twice a day and will create a PR on this repository whenever there are changes to the models.
 
+## Schemas
+
+The SDK exposes notifications, reports and feeds schemas through `@sp-api-sdk/schemas`.  
+It exposes the JSON schemas as well as typescript types.
+
+For example, if you need the JSON schema for Vendor inventory reports:
+
+```js
+import { Reports } from "@sp-api-sdk/schemas";
+
+console.log(Reports.vendorInventoryReport);
+```
+
+If you need the typescript type:
+
+```ts
+import { Reports } from "@sp-api-sdk/schemas";
+
+const report = (await getVendorInventoryReportData()) as Reports.VendorInventoryReport;
+```
+
 ## Code generation
 
 Some of the source Open API models are invalid (see the [issues](https://github.com/amzn/selling-partner-api-models/issues) and [PRs](https://github.com/amzn/selling-partner-api-models/pulls) on the Amazon repository), so this SDK defines some patches to account for those errors.

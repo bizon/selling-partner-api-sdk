@@ -55,14 +55,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
         run: |
-          pnpm lerna publish --skip-bump-only-release --yes
+          pnpm lerna publish --skip-bump-only-releases --yes
 
       - name: Publish packages from package
         if: ${{ github.event.inputs.from-package == true }}
         env:
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
         run: |
-          pnpm lerna publish from-package --skip-bump-only-release --yes
+          pnpm lerna publish from-package --skip-bump-only-releases --yes
 
   docs:
     name: Update and publish documentation

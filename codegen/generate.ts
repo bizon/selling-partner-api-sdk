@@ -6,9 +6,9 @@ import process from 'node:process'
 import {promisify} from 'node:util'
 
 import {generateClients} from './generate-clients.js'
-import {generateNotificationSchemas} from './generate-notification-schemas.js'
+import {generateSchemas} from './generate-schemas.js'
 
-type Generator = 'clients' | 'notifications'
+type Generator = 'clients' | 'schemas'
 
 const exec = promisify(childProcess.exec)
 
@@ -20,7 +20,7 @@ async function runCommand(command: string) {
 const generators = new Set<Generator>((process.argv[2]?.split(',') as Generator[]) ?? [])
 if (generators.size === 0) {
   generators.add('clients')
-  generators.add('notifications')
+  generators.add('schemas')
 }
 
 ;(async () => {
@@ -33,10 +33,10 @@ if (generators.size === 0) {
     await runCommand('xo --fix clients')
   }
 
-  if (generators.has('notifications')) {
-    console.info('Generating notification schemas…')
-    await generateNotificationSchemas()
-    await runCommand('xo --fix packages/notifications')
+  if (generators.has('schemas')) {
+    console.info('Generating schemas…')
+    await generateSchemas()
+    await runCommand('xo --fix packages/schemas')
   }
 
   await fs.rm('selling-partner-api-models', {recursive: true})

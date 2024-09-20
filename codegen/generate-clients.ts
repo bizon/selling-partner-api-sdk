@@ -8,7 +8,7 @@ import Bluebird from 'bluebird'
 import camelCase from 'camelcase'
 import {globby} from 'globby'
 import jsonfile from 'jsonfile'
-import _ from 'lodash'
+import {reduce} from 'lodash-es'
 import {type OpenAPIV3} from 'openapi-types'
 import {remark} from 'remark'
 import remarkStrip from 'strip-markdown'
@@ -130,7 +130,7 @@ async function generateClientVersion(modelFilePath: string) {
     }),
   )
 
-  const rateLimits = _.reduce(
+  const rateLimits = reduce(
     document.paths,
     (accumulator: RateLimit[], value, key) => {
       if (!value) {

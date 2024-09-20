@@ -81,7 +81,7 @@ jobs:
       - name: Create or update schemas pull request
         uses: peter-evans/create-pull-request@v7
         with:
-          add-paths: packages/notifications
+          add-paths: packages/schemas
           branch: codegen/update-schemas
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
           title: "feat(schemas): update schemas as of ${{ steps.date.outputs.date }}"

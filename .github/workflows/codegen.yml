@@ -51,8 +51,8 @@ jobs:
           delete-branch: true
           reviewers: tusbar
 
-  update-notification-schemas:
-    name: "Codegen: update notification schemas"
+  update-schemas:
+    name: "Codegen: update schemas"
     runs-on: ubuntu-latest
 
     steps:
@@ -71,21 +71,21 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Generate notification schemas from models
-        run: pnpm codegen notifications
+      - name: Generate schemas
+        run: pnpm codegen schemas
 
       - name: Get current date
         id: date
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
-      - name: Create or update notifications pull request
+      - name: Create or update schemas pull request
         uses: peter-evans/create-pull-request@v7
         with:
           add-paths: packages/notifications
-          branch: codegen/update-notifications
+          branch: codegen/update-schemas
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
-          title: "feat(notifications): update notification schemas as of ${{ steps.date.outputs.date }}"
-          commit-message: "feat(notifications): update notification schemas as of ${{ steps.date.outputs.date }}"
+          title: "feat(schemas): update schemas as of ${{ steps.date.outputs.date }}"
+          commit-message: "feat(schemas): update schemas as of ${{ steps.date.outputs.date }}"
           body: |
             This is an automated pull request that was generated due to changes detected in the [Amazon Selling Partner API models](https://github.com/amzn/selling-partner-api-models).
 

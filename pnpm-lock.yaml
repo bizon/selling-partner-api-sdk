@@ -755,8 +755,8 @@ importers:
   codegen:
     dependencies:
       '@openapitools/openapi-generator-cli':
-        specifier: ^2.13.7
-        version: 2.13.7(encoding@0.1.13)
+        specifier: ^2.13.9
+        version: 2.13.9(encoding@0.1.13)
       bluebird:
         specifier: ^3.7.2
         version: 3.7.2
@@ -1573,8 +1573,8 @@ packages:
   '@octokit/types@13.5.0':
     resolution: {integrity: sha512-HdqWTf5Z3qwDVlzCrP8UJquMwunpDiMPt5er+QjGzL4hqr/vBVY/MauQgS1xWxCDT1oMx1EULyqxncdCY/NVSQ==}
 
-  '@openapitools/openapi-generator-cli@2.13.7':
-    resolution: {integrity: sha512-DS3wWEma1WXPhlqcv+XRVPlCBkME0hkKBVr7GSwlQWvWwIekm/fU4PR8sxhVXYJ33EIpKHfGofT0ZH9+K2lvjQ==}
+  '@openapitools/openapi-generator-cli@2.13.9':
+    resolution: {integrity: sha512-GJaWGcHmLsvj/G1mRDytm9PTDwRGSYUDTf1uA/2FYxQAb5sq4nkZz1tD4Z7qDlZ3xTYSTw4Z8BQUdlsnrA8rcw==}
     engines: {node: '>=10.0.0'}
     hasBin: true
 
@@ -6480,7 +6480,7 @@ snapshots:
     dependencies:
       '@octokit/openapi-types': 22.2.0
 
-  '@openapitools/openapi-generator-cli@2.13.7(encoding@0.1.13)':
+  '@openapitools/openapi-generator-cli@2.13.9(encoding@0.1.13)':
     dependencies:
       '@nestjs/axios': 3.0.3(@nestjs/common@10.4.3(reflect-metadata@0.1.13)(rxjs@7.8.1))(axios@1.7.4)(rxjs@7.8.1)
       '@nestjs/common': 10.4.3(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -9052,7 +9052,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 20.16.5
+      '@types/node': 20.16.6
       merge-stream: 2.0.0
       supports-color: 8.1.1
 

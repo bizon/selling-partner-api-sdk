@@ -71,5 +71,11 @@ export interface InventorySummary {
      * @memberof InventorySummary
      */
     'totalQuantity'?: number;
+    /**
+     * A list of seller-enrolled stores that apply to this seller SKU.
+     * @type {Array<string>}
+     * @memberof InventorySummary
+     */
+    'stores'?: Array<string>;
 }
 

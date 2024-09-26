@@ -219,6 +219,19 @@ importers:
         specifier: workspace:*
         version: link:../../packages/auth
 
+  clients/finances-api-2024-06-19:
+    dependencies:
+      '@sp-api-sdk/common':
+        specifier: workspace:*
+        version: link:../../packages/common
+      axios:
+        specifier: ^1.7.7
+        version: 1.7.7
+    devDependencies:
+      '@sp-api-sdk/auth':
+        specifier: workspace:*
+        version: link:../../packages/auth
+
   clients/finances-api-v0:
     dependencies:
       '@sp-api-sdk/common':
@@ -259,6 +272,19 @@ importers:
         version: link:../../packages/auth
 
   clients/fulfillment-outbound-api-2020-07-01:
+    dependencies:
+      '@sp-api-sdk/common':
+        specifier: workspace:*
+        version: link:../../packages/common
+      axios:
+        specifier: ^1.7.7
+        version: 1.7.7
+    devDependencies:
+      '@sp-api-sdk/auth':
+        specifier: workspace:*
+        version: link:../../packages/auth
+
+  clients/invoices-api-2024-06-19:
     dependencies:
       '@sp-api-sdk/common':
         specifier: workspace:*

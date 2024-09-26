@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Finances
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller\'s business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
+ * The Selling Partner API for Finances provides financial information that is relevant to a seller\'s business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range. 
  *
  * The version of the OpenAPI document: v0
  * 
@@ -24,7 +24,7 @@ import type { RemovalShipmentItemAdjustment } from './removal-shipment-item-adju
  */
 export interface RemovalShipmentAdjustmentEvent {
     /**
-     * 
+     * A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @type {string}
      * @memberof RemovalShipmentAdjustmentEvent
      */
@@ -48,13 +48,13 @@ export interface RemovalShipmentAdjustmentEvent {
      */
     'OrderId'?: string;
     /**
-     * The type of removal order.  Possible values:  * WHOLESALE_LIQUIDATION.
+     * The type of removal order.  Possible values:  * `WHOLESALE_LIQUIDATION`.
      * @type {string}
      * @memberof RemovalShipmentAdjustmentEvent
      */
     'TransactionType'?: string;
     /**
-     * A comma-delimited list of Removal shipmentItemAdjustment details for FBA inventory.
+     * A comma-delimited list of `RemovalShipmentItemAdjustment` details for FBA inventory.
      * @type {Array<RemovalShipmentItemAdjustment>}
      * @memberof RemovalShipmentAdjustmentEvent
      */

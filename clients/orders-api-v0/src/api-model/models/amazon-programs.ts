@@ -13,27 +13,18 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import type { FulfillmentPlan } from './fulfillment-plan';
 
 /**
- * Contains all fulfillment plans for the order
+ * Contains the list of programs that are associated with an item.  Possible programs are:  - **Subscribe and Save**: Offers recurring, scheduled deliveries to Amazon customers and Amazon Business customers for their frequently ordered products.
  * @export
- * @interface FulfillmentInstructions
+ * @interface AmazonPrograms
  */
-export interface FulfillmentInstructions {
+export interface AmazonPrograms {
     /**
-     * List of all fulfillment plans for the given order id
-     * @type {Array<FulfillmentPlan>}
-     * @memberof FulfillmentInstructions
+     * A list of the programs that are associated with the specified order item.  **Possible values**: `SUBSCRIBE_AND_SAVE`
+     * @type {Array<string>}
+     * @memberof AmazonPrograms
      */
-    'FulfillmentPlans'?: Array<FulfillmentPlan>;
-    /**
-     * An Amazon-defined order identifier, in 3-7-7 format.
-     * @type {string}
-     * @memberof FulfillmentInstructions
-     */
-    'AmazonOrderId': string;
+    'Programs': Array<string>;
 }
 

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Finances
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller\'s business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
+ * The Selling Partner API for Finances provides financial information that is relevant to a seller\'s business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range. 
  *
  * The version of the OpenAPI document: v0
  * 
@@ -24,13 +24,13 @@ import type { Currency } from './currency';
  */
 export interface ValueAddedServiceChargeEvent {
     /**
-     * Indicates the type of transaction.  Example: \'Other Support Service fees\'
+     * The transaction type. For example, \'Other Support Service fees\'
      * @type {string}
      * @memberof ValueAddedServiceChargeEvent
      */
     'TransactionType'?: string;
     /**
-     * 
+     * A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @type {string}
      * @memberof ValueAddedServiceChargeEvent
      */

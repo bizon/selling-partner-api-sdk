@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { AmazonPrograms } from './amazon-programs';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { AssociatedItem } from './associated-item';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -284,6 +287,12 @@ export interface OrderItem {
      * @memberof OrderItem
      */
     'ShippingConstraints'?: ShippingConstraints;
+    /**
+     * 
+     * @type {AmazonPrograms}
+     * @memberof OrderItem
+     */
+    'AmazonPrograms'?: AmazonPrograms;
 }
 
 export const OrderItemDeemedResellerCategoryEnum = {

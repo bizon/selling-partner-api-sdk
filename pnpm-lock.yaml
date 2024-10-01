@@ -89,6 +89,19 @@ importers:
         specifier: workspace:*
         version: link:../../packages/auth
 
+  clients/application-integrations-api-2024-04-01:
+    dependencies:
+      '@sp-api-sdk/common':
+        specifier: workspace:*
+        version: link:../../packages/common
+      axios:
+        specifier: ^1.7.7
+        version: 1.7.7
+    devDependencies:
+      '@sp-api-sdk/auth':
+        specifier: workspace:*
+        version: link:../../packages/auth
+
   clients/application-management-api-2023-11-30:
     dependencies:
       '@sp-api-sdk/common':
@@ -9078,7 +9091,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 20.16.6
+      '@types/node': 20.16.9
       merge-stream: 2.0.0
       supports-color: 8.1.1
 

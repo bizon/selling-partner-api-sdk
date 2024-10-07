@@ -28,6 +28,12 @@ This SDK supports the following features:
 - Logging (non-auth) API requests, responses and errors.
 - Passing restricted data tokens to API clients.
 
+## Packages
+
+- [auth](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/packages/auth): Authentication helpers for the Selling Partner API.
+- [common](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/packages/common): Common utilities for the SDK.
+- [schemas](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/packages/schemas): JSON schemas and TypeScript types for notifications, reports and feeds.
+
 ## Clients
 
 This repository contains an API client for each of the available Selling Partner API version:
@@ -100,7 +106,7 @@ The API clients are automatically generated from the Swagger/OpenAPI models from
 
 ## Schemas
 
-The SDK exposes notifications, reports and feeds schemas through `@sp-api-sdk/schemas`.  
+The SDK exposes notifications, reports and feeds schemas through [`@sp-api-sdk/schemas`](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/packages/schemas).  
 It exposes the JSON schemas as well as typescript types.
 
 For example, if you need the JSON schema for Vendor inventory reports:
@@ -120,6 +126,8 @@ const report = (await getVendorInventoryReportData()) as Reports.VendorInventory
 ```
 
 ## Code generation
+
+To see the code generation process, see the [codegen](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/codegen) module.
 
 Some of the source Open API models are invalid (see the [issues](https://github.com/amzn/selling-partner-api-models/issues) and [PRs](https://github.com/amzn/selling-partner-api-models/pulls) on the Amazon repository), so this SDK defines some patches to account for those errors.
 

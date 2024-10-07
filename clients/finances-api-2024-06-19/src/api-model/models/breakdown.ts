@@ -36,10 +36,10 @@ export interface Breakdown {
      */
     'breakdownAmount'?: Currency;
     /**
-     * 
-     * @type {Breakdown}
+     * A list of breakdowns that provide details on how the total amount is calculated for the transaction.
+     * @type {Array<Breakdown>}
      * @memberof Breakdown
      */
-    'breakdowns'?: Breakdown;
+    'breakdowns'?: Array<Breakdown>;
 }
 

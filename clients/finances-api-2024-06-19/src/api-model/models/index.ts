@@ -8,6 +8,7 @@ export * from './error-list';
 export * from './item';
 export * from './item-related-identifier';
 export * from './list-transactions-response';
+export * from './list-transactions-response-payload';
 export * from './marketplace-details';
 export * from './model-error';
 export * from './payments-context';

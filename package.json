@@ -11,7 +11,9 @@
     "clean": "turbo run clean",
     "check:ts": "turbo run check:ts",
     "test": "turbo run test",
-    "codegen": "tsx --tsconfig codegen/tsconfig.json codegen/generate.ts"
+    "codegen": "tsx --tsconfig codegen/tsconfig.json codegen/generate.ts",
+    "predocs": "turbo run build --filter=@sp-api-sdk/common",
+    "docs": "typedoc"
   },
   "devDependencies": {
     "@jest/types": "^29.6.3",

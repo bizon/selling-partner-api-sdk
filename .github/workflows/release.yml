@@ -86,7 +86,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build documentation
-        run: pnpm typedoc
+        run: pnpm run docs
         env:
           NODE_OPTIONS: --max_old_space_size=6144
 

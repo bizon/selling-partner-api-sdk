@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/orders-api-v0@3.6.0...@sp-api-sdk/orders-api-v0@3.6.1) (2024-10-07)
+
+### Bug Fixes
+
+* remove exports from package.json ([6a34763](https://github.com/bizon/selling-partner-api-sdk/commit/6a347634f8089f511a393ad481a93796431e8947))
+
 # [3.6.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/orders-api-v0@3.5.0...@sp-api-sdk/orders-api-v0@3.6.0) (2024-10-07)
 
 ### Features

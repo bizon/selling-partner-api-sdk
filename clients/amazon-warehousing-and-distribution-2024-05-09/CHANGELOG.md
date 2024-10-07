@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/amazon-warehousing-and-distribution-2024-05-09@1.5.0...@sp-api-sdk/amazon-warehousing-and-distribution-2024-05-09@1.5.1) (2024-10-07)
+
+### Bug Fixes
+
+* remove exports from package.json ([6a34763](https://github.com/bizon/selling-partner-api-sdk/commit/6a347634f8089f511a393ad481a93796431e8947))
+
 # [1.5.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/amazon-warehousing-and-distribution-2024-05-09@1.4.2...@sp-api-sdk/amazon-warehousing-and-distribution-2024-05-09@1.5.0) (2024-10-07)
 
 ### Features

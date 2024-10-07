@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/generator@0.14.0...@sp-api-sdk/generator@0.14.1) (2024-10-07)
+
+### Bug Fixes
+
+* remove exports from package.json ([6a34763](https://github.com/bizon/selling-partner-api-sdk/commit/6a347634f8089f511a393ad481a93796431e8947))
+
 # [0.14.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/generator@0.13.2...@sp-api-sdk/generator@0.14.0) (2024-10-07)
 
 ### Bug Fixes

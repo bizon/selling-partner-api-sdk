@@ -6,7 +6,6 @@
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "license": "MIT",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "build": "turbo run build",
     "clean": "turbo run clean",
     "check:ts": "turbo run check:ts",

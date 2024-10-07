@@ -1,8 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "rootDir": "src",
     "declarationDir": "dist/types",
     "outDir": "dist/cjs"
   },
-  "include": ["index.ts", "src/**/*.ts"]
+  "include": ["src/**/*.ts"]
 }

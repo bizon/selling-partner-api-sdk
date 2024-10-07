@@ -1,11 +1,18 @@
 {
   "name": "@sp-api-sdk/auth",
-  "author": "Vincent Mesquita <vincent.mesquita@bizon.solutions>",
+  "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "Amazon Selling Partner API authentication package",
   "version": "2.0.13",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
+  "exports": {
+    "default": {
+      "import": "./dist/es/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "types": "./dist/types/index.d.ts"
+  },
   "license": "MIT",
   "publishConfig": {
     "access": "public"

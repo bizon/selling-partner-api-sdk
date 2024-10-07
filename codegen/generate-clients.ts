@@ -190,8 +190,8 @@ async function generateClientVersion(modelFilePath: string) {
     await renderTemplate('codegen/templates/typedoc.json.mustache'),
   )
   await fs.writeFile(
-    `${clientDirectoryPath}/index.ts`,
-    await renderTemplate('codegen/templates/index.ts.mustache'),
+    `${clientDirectoryPath}/src/index.ts`,
+    await renderTemplate('codegen/templates/src/index.ts.mustache'),
   )
   await fs.writeFile(
     `${clientDirectoryPath}/src/client.ts`,

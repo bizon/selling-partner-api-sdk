@@ -794,8 +794,8 @@ importers:
   codegen:
     dependencies:
       '@openapitools/openapi-generator-cli':
-        specifier: ^2.13.13
-        version: 2.13.13(encoding@0.1.13)
+        specifier: ^2.14.0
+        version: 2.14.0(encoding@0.1.13)
       bluebird:
         specifier: ^3.7.2
         version: 3.7.2
@@ -1626,8 +1626,8 @@ packages:
   '@octokit/types@13.6.1':
     resolution: {integrity: sha512-PHZE9Z+kWXb23Ndik8MKPirBPziOc0D2/3KH1P+6jK5nGWe96kadZuE4jev2/Jq7FvIfTlT2Ltg8Fv2x1v0a5g==}
 
-  '@openapitools/openapi-generator-cli@2.13.13':
-    resolution: {integrity: sha512-uioqbxB6TfiLoOEE3T8kqTn/ffaRzOwS3ATMQnoMvh2lwADKMT6bDLfE3YO3XTEj+HflXcsLXQGK6PLiqa8Mmw==}
+  '@openapitools/openapi-generator-cli@2.14.0':
+    resolution: {integrity: sha512-k+ioQLtXLXgNbhQbp1UOxtaUnnYTWwAPev88hP5qauFA+eq4NyeQGNojknFssXg2x0VT0TUGmU3PZ2DiQ70IVg==}
     engines: {node: '>=16'}
     hasBin: true
 
@@ -5890,7 +5890,7 @@ snapshots:
   '@eslint/eslintrc@3.1.0':
     dependencies:
       ajv: 6.12.6
-      debug: 4.3.6
+      debug: 4.3.7
       espree: 10.0.1
       globals: 14.0.0
       ignore: 5.3.1
@@ -6582,7 +6582,7 @@ snapshots:
     dependencies:
       '@octokit/openapi-types': 22.2.0
 
-  '@openapitools/openapi-generator-cli@2.13.13(encoding@0.1.13)':
+  '@openapitools/openapi-generator-cli@2.14.0(encoding@0.1.13)':
     dependencies:
       '@nestjs/axios': 3.0.3(@nestjs/common@10.4.3(reflect-metadata@0.1.13)(rxjs@7.8.1))(axios@1.7.7)(rxjs@7.8.1)
       '@nestjs/common': 10.4.3(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -6828,7 +6828,7 @@ snapshots:
       '@typescript-eslint/types': 7.17.0
       '@typescript-eslint/typescript-estree': 7.17.0(typescript@5.6.3)
       '@typescript-eslint/visitor-keys': 7.17.0
-      debug: 4.3.6
+      debug: 4.3.7
       eslint: 8.57.0
     optionalDependencies:
       typescript: 5.6.3
@@ -7872,7 +7872,7 @@ snapshots:
       array.prototype.find: 2.2.3
       debug: 3.2.7
       enhanced-resolve: 0.9.1
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.17.0(eslint@8.57.0)(typescript@5.6.3))(eslint-import-resolver-webpack@0.13.8(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.17.0(eslint@8.57.0)(typescript@5.6.3))(eslint@8.57.0))(webpack@5.91.0))(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.17.0(eslint@8.57.0)(typescript@5.6.3))(eslint-import-resolver-webpack@0.13.8)(eslint@8.57.0)
       find-root: 1.1.0
       hasown: 2.0.2
       interpret: 1.4.0
@@ -7921,7 +7921,7 @@ snapshots:
       eslint: 8.57.0
       ignore: 5.3.1
 
-  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.17.0(eslint@8.57.0)(typescript@5.6.3))(eslint-import-resolver-webpack@0.13.8(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.17.0(eslint@8.57.0)(typescript@5.6.3))(eslint@8.57.0))(webpack@5.91.0))(eslint@8.57.0):
+  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.17.0(eslint@8.57.0)(typescript@5.6.3))(eslint-import-resolver-webpack@0.13.8)(eslint@8.57.0):
     dependencies:
       array-includes: 3.1.8
       array.prototype.findlastindex: 1.2.5
@@ -8039,7 +8039,7 @@ snapshots:
       ajv: 6.12.6
       chalk: 4.1.2
       cross-spawn: 7.0.3
-      debug: 4.3.6
+      debug: 4.3.7
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.2.2
@@ -11036,7 +11036,7 @@ snapshots:
       eslint-import-resolver-webpack: 0.13.8(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.17.0(eslint@8.57.0)(typescript@5.6.3))(eslint@8.57.0))(webpack@5.91.0)
       eslint-plugin-ava: 14.0.0(eslint@8.57.0)
       eslint-plugin-eslint-comments: 3.2.0(eslint@8.57.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.17.0(eslint@8.57.0)(typescript@5.6.3))(eslint-import-resolver-webpack@0.13.8(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.17.0(eslint@8.57.0)(typescript@5.6.3))(eslint@8.57.0))(webpack@5.91.0))(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.17.0(eslint@8.57.0)(typescript@5.6.3))(eslint-import-resolver-webpack@0.13.8)(eslint@8.57.0)
       eslint-plugin-n: 17.9.0(eslint@8.57.0)
       eslint-plugin-no-use-extend-native: 0.5.0
       eslint-plugin-prettier: 5.2.1(@types/eslint@9.6.1)(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.3.3)

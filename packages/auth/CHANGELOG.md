@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.2](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@2.1.1...@sp-api-sdk/auth@2.1.2) (2024-10-09)
+
+### Bug Fixes
+
+* **auth:** add missing CLIENT_CREDENTIAL_ROTATION grantless scope ([#1333](https://github.com/bizon/selling-partner-api-sdk/issues/1333)) ([cfa41b8](https://github.com/bizon/selling-partner-api-sdk/commit/cfa41b854e1d5c13e1ecdc46d5b54f443561efd2))
+
 ## [2.1.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@2.1.0...@sp-api-sdk/auth@2.1.1) (2024-10-07)
 
 ### Bug Fixes

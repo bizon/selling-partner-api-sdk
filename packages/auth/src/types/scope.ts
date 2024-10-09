@@ -1,4 +1,4 @@
 export enum AuthorizationScope {
   NOTIFICATIONS = 'sellingpartnerapi::notifications',
-  MIGRATION = 'sellingpartnerapi::migration',
+  CLIENT_CREDENTIAL_ROTATION = 'sellingpartnerapi::client_credential:rotation',
 }

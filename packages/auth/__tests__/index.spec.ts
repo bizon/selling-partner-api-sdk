@@ -87,14 +87,14 @@ describe('src/index', () => {
           client_id: 'CLIENT_ID',
           client_secret: 'CLIENT_SECRET',
           grant_type: 'client_credentials',
-          scope: AuthorizationScope.MIGRATION,
+          scope: AuthorizationScope.CLIENT_CREDENTIAL_ROTATION,
         })
         .replyWithError('unknown error')
 
       const auth = new SellingPartnerApiAuth({
         clientId: 'CLIENT_ID',
         clientSecret: 'CLIENT_SECRET',
-        scopes: [AuthorizationScope.MIGRATION],
+        scopes: [AuthorizationScope.CLIENT_CREDENTIAL_ROTATION],
       })
 
       let authError: SellingPartnerApiAuthError

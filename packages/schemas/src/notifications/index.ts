@@ -84,3 +84,7 @@ export {
   reportProcessingFinishedNotification,
   type ReportProcessingFinishedNotification,
 } from './report-processing-finished-notification'
+export {
+  transactionUpdateNotification,
+  type TransactionUpdateNotification,
+} from './transaction-update-notification'

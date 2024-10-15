@@ -15,22 +15,16 @@
 
 
 /**
- * The type and amount of currency.
+ * The `setPrepDetails` response.
  * @export
- * @interface Currency
+ * @interface SetPrepDetailsResponse
  */
-export interface Currency {
+export interface SetPrepDetailsResponse {
     /**
-     * Decimal value of the currency.
-     * @type {number}
-     * @memberof Currency
-     */
-    'amount': number;
-    /**
-     * ISO 4217 standard of a currency code.
+     * UUID for the given operation.
      * @type {string}
-     * @memberof Currency
+     * @memberof SetPrepDetailsResponse
      */
-    'code': string;
+    'operationId': string;
 }
 

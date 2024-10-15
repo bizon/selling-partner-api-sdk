@@ -30,13 +30,13 @@ export interface PlacementOption {
      */
     'discounts': Array<Incentive>;
     /**
-     * The expiration date of the placement option. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * The expiration date of the placement option. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      * @type {string}
      * @memberof PlacementOption
      */
     'expiration'?: string;
     /**
-     * Fee for the offered option.
+     * The fee for the offered option.
      * @type {Array<Incentive>}
      * @memberof PlacementOption
      */
@@ -54,7 +54,7 @@ export interface PlacementOption {
      */
     'shipmentIds': Array<string>;
     /**
-     * The status of a placement option. Can be: `OFFERED`, `ACCEPTED`, or `EXPIRED`.
+     * The status of a placement option. Possible values: `OFFERED`, `ACCEPTED`, `EXPIRED`.
      * @type {string}
      * @memberof PlacementOption
      */

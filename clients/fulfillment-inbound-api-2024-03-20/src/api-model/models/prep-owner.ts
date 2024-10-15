@@ -15,7 +15,7 @@
 
 
 /**
- * In some situations, special preparations are required for items and this field reflects the owner of the preparations. Options include `AMAZON`, `SELLER` or `NONE`.
+ * The owner of the preparations, if special preparations are required.
  * @export
  * @enum {string}
  */

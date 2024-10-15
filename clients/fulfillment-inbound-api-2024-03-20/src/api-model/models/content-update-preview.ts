@@ -33,7 +33,7 @@ export interface ContentUpdatePreview {
      */
     'contentUpdatePreviewId': string;
     /**
-     * The date in ISO 8601 format for when the content update expires.
+     * The time at which the content update expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      * @type {string}
      * @memberof ContentUpdatePreview
      */

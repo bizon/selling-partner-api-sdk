@@ -21,13 +21,13 @@
  */
 export interface GenerateSelfShipAppointmentSlotsRequest {
     /**
-     * The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * The desired end date. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
      * @type {string}
      * @memberof GenerateSelfShipAppointmentSlotsRequest
      */
     'desiredEndDate'?: string;
     /**
-     * The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * The desired start date. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
      * @type {string}
      * @memberof GenerateSelfShipAppointmentSlotsRequest
      */

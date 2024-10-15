@@ -30,13 +30,13 @@ export interface Incentive {
      */
     'description': string;
     /**
-     * Target of the incentive. Can be \'Placement Services\' or \'Fulfillment Fee Discount\'.
+     * Target of the incentive. Possible values: \'Placement Services\', \'Fulfillment Fee Discount\'.
      * @type {string}
      * @memberof Incentive
      */
     'target': string;
     /**
-     * Type of incentive. Can be: `FEE`, `DISCOUNT`.
+     * Type of incentive. Possible values: `FEE`, `DISCOUNT`.
      * @type {string}
      * @memberof Incentive
      */

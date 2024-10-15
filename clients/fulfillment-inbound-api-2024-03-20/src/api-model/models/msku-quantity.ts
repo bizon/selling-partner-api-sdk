@@ -15,7 +15,7 @@
 
 
 /**
- * Represents an msku and the related quantity.
+ * Represents an MSKU and the related quantity.
  * @export
  * @interface MskuQuantity
  */

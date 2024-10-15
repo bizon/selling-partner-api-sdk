@@ -30,7 +30,7 @@ export interface Item {
      */
     'asin': string;
     /**
-     * The expiration date of the MSKU in ISO 8601 format. The same MSKU with different expiration dates cannot go into the same box.
+     * The expiration date of the MSKU. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern`YYYY-MM-DD`. The same MSKU with different expiration dates cannot go into the same box.
      * @type {string}
      * @memberof Item
      */
@@ -54,7 +54,7 @@ export interface Item {
      */
     'manufacturingLotCode'?: string;
     /**
-     * The merchant defined SKU ID.
+     * The merchant SKU, a merchant-supplied identifier of a specific SKU.
      * @type {string}
      * @memberof Item
      */

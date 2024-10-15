@@ -39,7 +39,7 @@ export interface OperationProblem {
      */
     'message': string;
     /**
-     * The severity of the problem. Can be: `WARNING`, `ERROR`.
+     * The severity of the problem. Possible values: `WARNING`, `ERROR`.
      * @type {string}
      * @memberof OperationProblem
      */

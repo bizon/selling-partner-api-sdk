@@ -15,22 +15,18 @@
 
 
 /**
- * The type and amount of currency.
+ * A constraint that can apply to an individual owner. If no constraint is specified, both `AMAZON` and `SELLER` are acceptable.
  * @export
- * @interface Currency
+ * @enum {string}
  */
-export interface Currency {
-    /**
-     * Decimal value of the currency.
-     * @type {number}
-     * @memberof Currency
-     */
-    'amount': number;
-    /**
-     * ISO 4217 standard of a currency code.
-     * @type {string}
-     * @memberof Currency
-     */
-    'code': string;
-}
+
+export const OwnerConstraint = {
+    AmazonOnly: 'AMAZON_ONLY',
+    NoneOnly: 'NONE_ONLY',
+    SellerOnly: 'SELLER_ONLY'
+} as const;
+
+export type OwnerConstraint = typeof OwnerConstraint[keyof typeof OwnerConstraint];
+
+
 

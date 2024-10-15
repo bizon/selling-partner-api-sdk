@@ -13,24 +13,21 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { MskuPrepDetail } from './msku-prep-detail';
 
 /**
- * The type and amount of currency.
+ * The response to the `listPrepDetails` operation.
  * @export
- * @interface Currency
+ * @interface ListPrepDetailsResponse
  */
-export interface Currency {
+export interface ListPrepDetailsResponse {
     /**
-     * Decimal value of the currency.
-     * @type {number}
-     * @memberof Currency
+     * A list of MSKUs and related prep details.
+     * @type {Array<MskuPrepDetail>}
+     * @memberof ListPrepDetailsResponse
      */
-    'amount': number;
-    /**
-     * ISO 4217 standard of a currency code.
-     * @type {string}
-     * @memberof Currency
-     */
-    'code': string;
+    'mskuPrepDetails': Array<MskuPrepDetail>;
 }
 

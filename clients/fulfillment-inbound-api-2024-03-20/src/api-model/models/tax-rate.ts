@@ -33,7 +33,7 @@ export interface TaxRate {
      */
     'gstRate'?: number;
     /**
-     * Type of tax. Can be: `CGST`, `SGST`, `IGST`, `TOTAL_TAX`.
+     * Type of tax. Possible values: `CGST`, `SGST`, `IGST`, `TOTAL_TAX`.
      * @type {string}
      * @memberof TaxRate
      */

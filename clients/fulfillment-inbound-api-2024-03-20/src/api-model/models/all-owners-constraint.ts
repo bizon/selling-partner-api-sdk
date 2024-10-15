@@ -15,22 +15,16 @@
 
 
 /**
- * The type and amount of currency.
+ * A constraint that applies to all owners. If no constraint is specified, defer to any individual owner constraints.
  * @export
- * @interface Currency
+ * @enum {string}
  */
-export interface Currency {
-    /**
-     * Decimal value of the currency.
-     * @type {number}
-     * @memberof Currency
-     */
-    'amount': number;
-    /**
-     * ISO 4217 standard of a currency code.
-     * @type {string}
-     * @memberof Currency
-     */
-    'code': string;
-}
+
+export const AllOwnersConstraint = {
+    MustMatch: 'MUST_MATCH'
+} as const;
+
+export type AllOwnersConstraint = typeof AllOwnersConstraint[keyof typeof AllOwnersConstraint];
+
+
 

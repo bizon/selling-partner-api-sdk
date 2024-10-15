@@ -15,22 +15,29 @@
 
 
 /**
- * The type and amount of currency.
+ * The preparation category for shipping an item to Amazon\'s fulfillment network.
  * @export
- * @interface Currency
+ * @enum {string}
  */
-export interface Currency {
-    /**
-     * Decimal value of the currency.
-     * @type {number}
-     * @memberof Currency
-     */
-    'amount': number;
-    /**
-     * ISO 4217 standard of a currency code.
-     * @type {string}
-     * @memberof Currency
-     */
-    'code': string;
-}
+
+export const PrepCategory = {
+    Adult: 'ADULT',
+    Baby: 'BABY',
+    FcProvided: 'FC_PROVIDED',
+    Fragile: 'FRAGILE',
+    Granular: 'GRANULAR',
+    Hanger: 'HANGER',
+    Liquid: 'LIQUID',
+    Perforated: 'PERFORATED',
+    Set: 'SET',
+    Sharp: 'SHARP',
+    Small: 'SMALL',
+    Textile: 'TEXTILE',
+    Unknown: 'UNKNOWN',
+    None: 'NONE'
+} as const;
+
+export type PrepCategory = typeof PrepCategory[keyof typeof PrepCategory];
+
+
 

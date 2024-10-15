@@ -30,7 +30,7 @@ export interface ShipmentDestination {
      */
     'address'?: Address;
     /**
-     * The type of destination for this shipment. Can be: `AMAZON_OPTIMIZED`, `AMAZON_WAREHOUSE`.
+     * The type of destination for this shipment. Possible values: `AMAZON_OPTIMIZED`, `AMAZON_WAREHOUSE`.
      * @type {string}
      * @memberof ShipmentDestination
      */

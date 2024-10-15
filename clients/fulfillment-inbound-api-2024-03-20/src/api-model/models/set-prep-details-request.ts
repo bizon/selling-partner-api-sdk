@@ -15,25 +15,25 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Currency } from './currency';
+import type { MskuPrepDetailInput } from './msku-prep-detail-input';
 
 /**
- * Freight information describes the skus being transported. Freight carrier options and quotes will only be returned if the freight information is provided.
+ * The `setPrepDetails` request.
  * @export
- * @interface FreightInformation
+ * @interface SetPrepDetailsRequest
  */
-export interface FreightInformation {
+export interface SetPrepDetailsRequest {
     /**
-     * 
-     * @type {Currency}
-     * @memberof FreightInformation
-     */
-    'declaredValue'?: Currency;
-    /**
-     * Freight class.  Possible values: `NONE`, `FC_50`, `FC_55`, `FC_60`, `FC_65`, `FC_70`, `FC_77_5`, `FC_85`, `FC_92_5`, `FC_100`, `FC_110`, `FC_125`, `FC_150`, `FC_175`, `FC_200`, `FC_250`, `FC_300`, `FC_400`, `FC_500`.
+     * The marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @type {string}
-     * @memberof FreightInformation
+     * @memberof SetPrepDetailsRequest
      */
-    'freightClass'?: string;
+    'marketplaceId': string;
+    /**
+     * A list of MSKUs and related prep details.
+     * @type {Array<MskuPrepDetailInput>}
+     * @memberof SetPrepDetailsRequest
+     */
+    'mskuPrepDetails': Array<MskuPrepDetailInput>;
 }
 

@@ -27,7 +27,7 @@ export interface PackingOptionSummary {
      */
     'packingOptionId': string;
     /**
-     * The status of a packing option. Can be \'OFFERED\', \'ACCEPTED\', or \'EXPIRED\'.
+     * The status of a packing option. Possible values: \'OFFERED\', \'ACCEPTED\', \'EXPIRED\'.
      * @type {string}
      * @memberof PackingOptionSummary
      */

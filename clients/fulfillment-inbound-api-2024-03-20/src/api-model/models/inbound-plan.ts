@@ -33,7 +33,7 @@ import type { ShipmentSummary } from './shipment-summary';
  */
 export interface InboundPlan {
     /**
-     * The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * The time at which the inbound plan was created. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime with pattern `yyyy-MM-ddTHH:mm:ssZ`.
      * @type {string}
      * @memberof InboundPlan
      */
@@ -45,13 +45,13 @@ export interface InboundPlan {
      */
     'inboundPlanId': string;
     /**
-     * The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * The time at which the inbound plan was last updated. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ssZ`.
      * @type {string}
      * @memberof InboundPlan
      */
     'lastUpdatedAt': string;
     /**
-     * Marketplace IDs.
+     * A list of marketplace IDs.
      * @type {Array<string>}
      * @memberof InboundPlan
      */
@@ -75,7 +75,7 @@ export interface InboundPlan {
      */
     'placementOptions'?: Array<PlacementOptionSummary>;
     /**
-     * Shipment IDs for the inbound plan. This property will be populated when it has been generated via the corresponding operation. If there is a chosen placement option, only shipments for that option will be returned. If there are confirmed shipments, only those shipments will be returned. Query the shipment for more details.
+     * A list of shipment IDs for the inbound plan. This property is populated when it has been generated with the `confirmPlacementOptions` operation. Only shipments from the chosen placement option are returned. Query the shipment for more details.
      * @type {Array<ShipmentSummary>}
      * @memberof InboundPlan
      */
@@ -87,7 +87,7 @@ export interface InboundPlan {
      */
     'sourceAddress': Address;
     /**
-     * Current status of the inbound plan. Can be: `ACTIVE`, `VOIDED`, `SHIPPED`, \'ERRORED\'.
+     * Current status of the inbound plan. Possible values: `ACTIVE`, `VOIDED`, `SHIPPED`, `ERRORED`.
      * @type {string}
      * @memberof InboundPlan
      */

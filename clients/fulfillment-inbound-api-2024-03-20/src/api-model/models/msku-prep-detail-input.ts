@@ -15,25 +15,36 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AppointmentSlot } from './appointment-slot';
+import type { PrepCategory } from './prep-category';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PrepType } from './prep-type';
 
 /**
- * The self ship appointment time slots availability and an expiration date for which the slots can be scheduled.
+ * An MSKU and its related prep details.
  * @export
- * @interface SelfShipAppointmentSlotsAvailability
+ * @interface MskuPrepDetailInput
  */
-export interface SelfShipAppointmentSlotsAvailability {
+export interface MskuPrepDetailInput {
     /**
-     * The time at which the self ship appointment slot expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
+     * The merchant SKU, a merchant-supplied identifier for a specific SKU.
      * @type {string}
-     * @memberof SelfShipAppointmentSlotsAvailability
+     * @memberof MskuPrepDetailInput
      */
-    'expiresAt'?: string;
+    'msku': string;
     /**
-     * A list of appointment slots.
-     * @type {Array<AppointmentSlot>}
-     * @memberof SelfShipAppointmentSlotsAvailability
+     * 
+     * @type {PrepCategory}
+     * @memberof MskuPrepDetailInput
      */
-    'slots'?: Array<AppointmentSlot>;
+    'prepCategory': PrepCategory;
+    /**
+     * A list of preparation types associated with a preparation category.
+     * @type {Array<PrepType>}
+     * @memberof MskuPrepDetailInput
+     */
+    'prepTypes': Array<PrepType>;
 }
+
+
 

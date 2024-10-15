@@ -33,7 +33,7 @@ export interface PackingOption {
      */
     'discounts': Array<Incentive>;
     /**
-     * The timestamp at which this packing option becomes no longer valid. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * The time at which this packing option is no longer valid. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      * @type {string}
      * @memberof PackingOption
      */
@@ -57,7 +57,7 @@ export interface PackingOption {
      */
     'packingOptionId': string;
     /**
-     * The status of the packing option. Can be: `OFFERED`, `ACCEPTED`, or `EXPIRED`.
+     * The status of the packing option. Possible values: `OFFERED`, `ACCEPTED`, `EXPIRED`.
      * @type {string}
      * @memberof PackingOption
      */

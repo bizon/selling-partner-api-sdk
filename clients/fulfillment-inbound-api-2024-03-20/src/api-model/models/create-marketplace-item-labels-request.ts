@@ -48,13 +48,13 @@ export interface CreateMarketplaceItemLabelsRequest {
      */
     'localeCode'?: string;
     /**
-     * The Marketplace ID. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a list of possible values.
+     * The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @type {string}
      * @memberof CreateMarketplaceItemLabelsRequest
      */
     'marketplaceId': string;
     /**
-     * Represents the quantity of an msku to print item labels for.
+     * Represents the quantity of an MSKU to print item labels for.
      * @type {Array<MskuQuantity>}
      * @memberof CreateMarketplaceItemLabelsRequest
      */

@@ -24,7 +24,7 @@ import type { Address } from './address';
  */
 export interface InboundPlanSummary {
     /**
-     * The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * The time at which the inbound plan was created. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ssZ`.
      * @type {string}
      * @memberof InboundPlanSummary
      */
@@ -36,13 +36,13 @@ export interface InboundPlanSummary {
      */
     'inboundPlanId': string;
     /**
-     * The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * The time at which the inbound plan was last updated. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ssZ`.
      * @type {string}
      * @memberof InboundPlanSummary
      */
     'lastUpdatedAt': string;
     /**
-     * Marketplace IDs.
+     * A list of marketplace IDs.
      * @type {Array<string>}
      * @memberof InboundPlanSummary
      */
@@ -60,7 +60,7 @@ export interface InboundPlanSummary {
      */
     'sourceAddress': Address;
     /**
-     * Current status of the inbound plan. Can be: `ACTIVE`, `VOIDED`, `SHIPPED`, \'ERRORED\'.
+     * The current status of the inbound plan. Possible values: `ACTIVE`, `VOIDED`, `SHIPPED`, `ERRORED`.
      * @type {string}
      * @memberof InboundPlanSummary
      */

@@ -19,7 +19,7 @@
     "@lerna-lite/cli": "^3.10.0",
     "@lerna-lite/publish": "^3.10.0",
     "@tsconfig/node20": "^20.1.4",
-    "@types/jest": "^29.5.13",
+    "@types/jest": "^29.5.14",
     "@types/node": "^20.16.14",
     "conventional-changelog-conventionalcommits": "^8.0.0",
     "eslint-config-xo-bizon": "^3.0.3",

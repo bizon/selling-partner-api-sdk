@@ -27,7 +27,7 @@
     "rimraf": "^6.0.1",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
-    "tsx": "^4.19.1",
+    "tsx": "^4.19.2",
     "turbo": "^2.2.3",
     "typedoc": "^0.26.10",
     "typedoc-plugin-missing-exports": "^3.0.0",

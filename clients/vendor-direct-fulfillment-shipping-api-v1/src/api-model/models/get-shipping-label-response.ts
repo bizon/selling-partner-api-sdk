@@ -18,7 +18,7 @@
 import type { ShippingLabel } from './shipping-label';
 
 /**
- * The response schema for the `getShippingLabel` operation.
+ * The response schema for the getShippingLabel operation.
  * @export
  * @interface GetShippingLabelResponse
  */

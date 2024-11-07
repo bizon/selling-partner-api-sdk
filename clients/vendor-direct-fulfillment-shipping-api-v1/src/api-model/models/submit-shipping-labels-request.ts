@@ -18,7 +18,7 @@
 import type { ShippingLabelRequest } from './shipping-label-request';
 
 /**
- * The request schema for the `submitShippingLabelRequest` operation.
+ * The request schema for the submitShippingLabelRequest operation.
  * @export
  * @interface SubmitShippingLabelsRequest
  */

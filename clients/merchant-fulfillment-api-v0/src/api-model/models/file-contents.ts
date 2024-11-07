@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Merchant Fulfillment
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon\'s Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -24,7 +24,7 @@ import type { FileType } from './file-type';
  */
 export interface FileContents {
     /**
-     * Data for printing labels, in the form of a Base64-encoded, GZip-compressed string.
+     * Data for printing labels encoded into a Base64, GZip-compressed string.
      * @type {string}
      * @memberof FileContents
      */
@@ -36,7 +36,7 @@ export interface FileContents {
      */
     'FileType': FileType;
     /**
-     * An MD5 hash to validate the PDF document data, in the form of a Base64-encoded string.
+     * An MD5 hash to validate the PDF document data, in the form of a Base64 string.
      * @type {string}
      * @memberof FileContents
      */

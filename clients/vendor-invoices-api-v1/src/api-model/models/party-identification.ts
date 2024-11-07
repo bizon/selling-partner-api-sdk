@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Selling Partner API for Retail Procurement Payments
+ * Vendor Invoices v1
  * The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
  *
  * The version of the OpenAPI document: v1
@@ -21,7 +21,7 @@ import type { Address } from './address';
 import type { TaxRegistrationDetails } from './tax-registration-details';
 
 /**
- * Name, address, and tax details of a party.
+ * Name, address and tax details of a party.
  * @export
  * @interface PartyIdentification
  */

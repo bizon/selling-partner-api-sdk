@@ -18,7 +18,7 @@
 import type { ItemQuantity } from './item-quantity';
 
 /**
- * Details of item quantity ordered
+ * Details of item quantity ordered.
  * @export
  * @interface OrderedQuantityDetails
  */

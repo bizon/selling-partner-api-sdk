@@ -15,7 +15,7 @@
 
 
 /**
- * A response that contains the transaction ID.
+ * Response containing the transaction ID.
  * @export
  * @interface TransactionReference
  */

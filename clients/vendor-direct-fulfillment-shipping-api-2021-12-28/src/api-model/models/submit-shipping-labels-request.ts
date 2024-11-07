@@ -18,13 +18,13 @@
 import type { ShippingLabelRequest } from './shipping-label-request';
 
 /**
- * The request schema for the `submitShippingLabelRequest` operation.
+ * The request schema for the submitShippingLabelRequest operation.
  * @export
  * @interface SubmitShippingLabelsRequest
  */
 export interface SubmitShippingLabelsRequest {
     /**
-     * An array of shipping label requests you want to process.
+     * An array of shipping label requests to be processed.
      * @type {Array<ShippingLabelRequest>}
      * @memberof SubmitShippingLabelsRequest
      */

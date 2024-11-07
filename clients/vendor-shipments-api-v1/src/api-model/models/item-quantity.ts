@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Selling Partner API for Retail Procurement Shipments
+ * Vendor Shipments v1
  * The Selling Partner API for Retail Procurement Shipments provides programmatic access to retail shipping data for vendors.
  *
  * The version of the OpenAPI document: v1
@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { TotalWeight } from './total-weight';
 
 /**
  * Details of item quantity.
@@ -38,6 +41,12 @@ export interface ItemQuantity {
      * @memberof ItemQuantity
      */
     'unitSize'?: number;
+    /**
+     * 
+     * @type {TotalWeight}
+     * @memberof ItemQuantity
+     */
+    'totalWeight'?: TotalWeight;
 }
 
 export const ItemQuantityUnitOfMeasureEnum = {

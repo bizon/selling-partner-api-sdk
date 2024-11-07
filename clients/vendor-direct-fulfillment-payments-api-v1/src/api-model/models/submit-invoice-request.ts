@@ -24,7 +24,7 @@ import type { InvoiceDetail } from './invoice-detail';
  */
 export interface SubmitInvoiceRequest {
     /**
-     * An array of invoice details you want to submit.
+     * An array of invoice details to be submitted.
      * @type {Array<InvoiceDetail>}
      * @memberof SubmitInvoiceRequest
      */

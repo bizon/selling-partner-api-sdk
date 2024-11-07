@@ -7,8 +7,8 @@ export const clientRateLimits: RateLimit[] = [
     method: 'post',
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/mfn/v0/eligibleShippingServices$'),
-    rate: 5,
-    burst: 10,
+    rate: 6,
+    burst: 12,
   },
   {
     method: 'get',
@@ -28,8 +28,8 @@ export const clientRateLimits: RateLimit[] = [
     method: 'post',
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/mfn/v0/shipments$'),
-    rate: 1,
-    burst: 1,
+    rate: 2,
+    burst: 2,
   },
   {
     method: 'post',

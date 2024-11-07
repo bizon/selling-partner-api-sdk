@@ -15,7 +15,7 @@
 
 
 /**
- * A field where the selling party provides additional information.
+ * A field where the selling party can provide additional information for tax-related or any other purposes.
  * @export
  * @interface AdditionalDetails
  */

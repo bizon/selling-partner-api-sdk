@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Selling Partner API for Retail Procurement Payments
+ * Vendor Invoices v1
  * The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
  *
  * The version of the OpenAPI document: v1
@@ -63,7 +63,7 @@ export interface Invoice {
      */
     'referenceNumber'?: string;
     /**
-     * Defines a date and time according to <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a>.
+     * Defines a date and time according to ISO8601.
      * @type {string}
      * @memberof Invoice
      */

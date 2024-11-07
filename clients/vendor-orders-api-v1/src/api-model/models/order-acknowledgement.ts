@@ -21,7 +21,7 @@ import type { OrderAcknowledgementItem } from './order-acknowledgement-item';
 import type { PartyIdentification } from './party-identification';
 
 /**
- * 
+ * Represents an acknowledgement for an order, including the purchase order number, selling party details, acknowledgement date, and a list of acknowledged items.
  * @export
  * @interface OrderAcknowledgement
  */

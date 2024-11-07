@@ -14,6 +14,5 @@
 
 
 
-export * from './api/create-container-label-api';
 export * from './api/vendor-shipping-api';
 

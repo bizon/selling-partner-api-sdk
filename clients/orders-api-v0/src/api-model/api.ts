@@ -15,5 +15,4 @@
 
 
 export * from './api/orders-api';
-export * from './api/orders-v0-api';
 

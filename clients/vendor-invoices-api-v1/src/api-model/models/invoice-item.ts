@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Selling Partner API for Retail Procurement Payments
+ * Vendor Invoices v1
  * The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
  *
  * The version of the OpenAPI document: v1
@@ -28,6 +28,9 @@ import type { ItemQuantity } from './item-quantity';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { Money } from './money';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { NetCostUnitOfMeasure } from './net-cost-unit-of-measure';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { TaxDetails } from './tax-details';
@@ -69,13 +72,19 @@ export interface InvoiceItem {
      */
     'netCost': Money;
     /**
-     * The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when `invoiceType` is `Invoice`, and is not required when `invoiceType` is `CreditNote`.
+     * 
+     * @type {NetCostUnitOfMeasure}
+     * @memberof InvoiceItem
+     */
+    'netCostUnitOfMeasure'?: NetCostUnitOfMeasure;
+    /**
+     * The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when invoiceType is Invoice, and is not required when invoiceType is CreditNote.
      * @type {string}
      * @memberof InvoiceItem
      */
     'purchaseOrderNumber'?: string;
     /**
-     * The HSN Tax code. The HSN number cannot contain alphabets.
+     * HSN Tax code. The HSN number cannot contain alphabets.
      * @type {string}
      * @memberof InvoiceItem
      */
@@ -105,4 +114,6 @@ export interface InvoiceItem {
      */
     'allowanceDetails'?: Array<AllowanceDetails>;
 }
+
+
 

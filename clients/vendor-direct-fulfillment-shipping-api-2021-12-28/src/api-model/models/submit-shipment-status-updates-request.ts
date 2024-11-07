@@ -18,13 +18,13 @@
 import type { ShipmentStatusUpdate } from './shipment-status-update';
 
 /**
- * The `submitShipmentStatusUpdates` request schema.
+ * The request schema for the submitShipmentStatusUpdates operation.
  * @export
  * @interface SubmitShipmentStatusUpdatesRequest
  */
 export interface SubmitShipmentStatusUpdatesRequest {
     /**
-     * Contains a list of one or more `ShipmentStatusUpdate` objects, each represents a status update of a specific shipment.
+     * Contains a list of one or more ShipmentStatusUpdate objects, each representing an update to the status of a specific shipment.
      * @type {Array<ShipmentStatusUpdate>}
      * @memberof SubmitShipmentStatusUpdatesRequest
      */

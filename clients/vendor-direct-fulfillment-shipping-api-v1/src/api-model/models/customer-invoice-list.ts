@@ -33,7 +33,7 @@ export interface CustomerInvoiceList {
      */
     'pagination'?: Pagination;
     /**
-     * Represents a customer invoice within the `CustomerInvoiceList`.
+     * Represents a customer invoice within the CustomerInvoiceList.
      * @type {Array<CustomerInvoice>}
      * @memberof CustomerInvoiceList
      */

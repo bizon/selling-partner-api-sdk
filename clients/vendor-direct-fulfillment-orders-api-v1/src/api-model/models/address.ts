@@ -21,7 +21,7 @@
  */
 export interface Address {
     /**
-     * The name of the person, business, or institution at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
+     * The name of the person, business or institution at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      * @type {string}
      * @memberof Address
      */
@@ -51,19 +51,19 @@ export interface Address {
      */
     'addressLine3'?: string;
     /**
-     * The city where the person, business, or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
+     * The city where the person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      * @type {string}
      * @memberof Address
      */
     'city'?: string;
     /**
-     * The county where the person, business, or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
+     * The county where person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      * @type {string}
      * @memberof Address
      */
     'county'?: string;
     /**
-     * The district where the person, business, or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
+     * The district where person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      * @type {string}
      * @memberof Address
      */
@@ -87,7 +87,7 @@ export interface Address {
      */
     'countryCode': string;
     /**
-     * The phone number of the person, business, or institution located at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
+     * The phone number of the person, business or institution located at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      * @type {string}
      * @memberof Address
      */

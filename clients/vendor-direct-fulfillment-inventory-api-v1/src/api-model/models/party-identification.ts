@@ -15,7 +15,7 @@
 
 
 /**
- * Name, address and tax details for a group.
+ * Name, address and tax details of a party.
  * @export
  * @interface PartyIdentification
  */

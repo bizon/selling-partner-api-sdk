@@ -24,13 +24,13 @@ import type { ItemQuantity } from './item-quantity';
  */
 export interface ItemDetails {
     /**
-     * The buyer-selected product identification for the item. Either `buyerProductIdentifier` or `vendorProductIdentifier` must be submitted.
+     * The buyer selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
      * @type {string}
      * @memberof ItemDetails
      */
     'buyerProductIdentifier'?: string;
     /**
-     * The vendor selected product identification for the item. Either `buyerProductIdentifier` or `vendorProductIdentifier` must be submitted.
+     * The vendor selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
      * @type {string}
      * @memberof ItemDetails
      */
@@ -42,7 +42,7 @@ export interface ItemDetails {
      */
     'availableQuantity': ItemQuantity;
     /**
-     * When `true`, the item is permanently unavailable.
+     * When true, the item is permanently unavailable.
      * @type {boolean}
      * @memberof ItemDetails
      */

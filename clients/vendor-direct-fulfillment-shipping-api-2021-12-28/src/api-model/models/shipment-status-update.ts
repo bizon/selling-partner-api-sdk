@@ -21,7 +21,7 @@ import type { PartyIdentification } from './party-identification';
 import type { StatusUpdateDetails } from './status-update-details';
 
 /**
- * Represents a shipment status update.
+ * Represents an update to the status of a shipment.
  * @export
  * @interface ShipmentStatusUpdate
  */

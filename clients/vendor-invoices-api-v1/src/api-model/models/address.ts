@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Selling Partner API for Retail Procurement Payments
+ * Vendor Invoices v1
  * The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
  *
  * The version of the OpenAPI document: v1
@@ -45,31 +45,31 @@ export interface Address {
      */
     'addressLine3'?: string;
     /**
-     * The city where the person, business, or institution is located.
+     * The city where the person, business or institution is located.
      * @type {string}
      * @memberof Address
      */
     'city'?: string;
     /**
-     * The county where person, business, or institution is located.
+     * The county where person, business or institution is located.
      * @type {string}
      * @memberof Address
      */
     'county'?: string;
     /**
-     * The district where person, business, or institution is located.
+     * The district where person, business or institution is located.
      * @type {string}
      * @memberof Address
      */
     'district'?: string;
     /**
-     * The state or region where person, business, or institution is located.
+     * The state or region where person, business or institution is located.
      * @type {string}
      * @memberof Address
      */
     'stateOrRegion'?: string;
     /**
-     * The postal or zip code of that address. It contains a series of letters, digits, or both, sometimes including spaces or punctuation.
+     * The postal or zip code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
      * @type {string}
      * @memberof Address
      */

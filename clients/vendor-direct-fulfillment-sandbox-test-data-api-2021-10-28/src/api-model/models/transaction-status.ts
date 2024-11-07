@@ -18,7 +18,7 @@
 import type { Transaction } from './transaction';
 
 /**
- * The payload for `getOrderScenarios`.
+ * The payload for the getOrderScenarios operation.
  * @export
  * @interface TransactionStatus
  */

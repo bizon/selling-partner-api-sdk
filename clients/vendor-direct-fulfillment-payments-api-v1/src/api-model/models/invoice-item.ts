@@ -27,7 +27,7 @@ import type { Money } from './money';
 import type { TaxDetail } from './tax-detail';
 
 /**
- * Details of the invoice items.
+ * Provides the details of the items in this invoice.
  * @export
  * @interface InvoiceItem
  */

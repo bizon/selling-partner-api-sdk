@@ -22,6 +22,10 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { CreateContainerLabelRequest } from '../models';
+// @ts-ignore
+import type { CreateContainerLabelResponse } from '../models';
+// @ts-ignore
 import type { CreateShippingLabelsRequest } from '../models';
 // @ts-ignore
 import type { CustomerInvoice } from '../models';
@@ -52,9 +56,44 @@ import type { TransactionReference } from '../models';
 export const VendorShippingApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
+         * Creates container (pallet) label for provided shipment package association
+         * @param {CreateContainerLabelRequest} body Request body containing the container label data.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createContainerLabel: async (body: CreateContainerLabelRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('createContainerLabel', 'body', body)
+            const localVarPath = `/vendor/directFulfillment/shipping/2021-12-28/containerLabel`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} purchaseOrderNumber The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order.
-         * @param {CreateShippingLabelsRequest} body The request payload that contains parameters for creating shipping labels.
+         * @param {CreateShippingLabelsRequest} body The request payload containing parameters for creating shipping labels.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -292,7 +331,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
         },
         /**
          * Returns a shipping label for the purchaseOrderNumber that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} purchaseOrderNumber The purchase order number for which you want to return the shipping label. Should be the same &#x60;purchaseOrderNumber&#x60; as received in the order.
+         * @param {string} purchaseOrderNumber The purchase order number for which you want to return the shipping label and should be the same purchaseOrderNumber as received in the order.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -427,7 +466,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
         },
         /**
          * This operation is only to be used by Vendor-Own-Carrier (VOC) vendors. Calling this API submits a shipment status update for the package that a vendor has shipped. It will provide the Amazon customer visibility on their order, when the package is outside of Amazon Network visibility.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {SubmitShipmentStatusUpdatesRequest} body Request body that contains the shipment status update data.
+         * @param {SubmitShipmentStatusUpdatesRequest} body Request body containing the shipment status update data.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -462,7 +501,7 @@ export const VendorShippingApiAxiosParamCreator = function (configuration?: Conf
         },
         /**
          * Creates a shipping label for a purchase order and returns a transactionId for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {SubmitShippingLabelsRequest} body Request body that contains the shipping labels data.
+         * @param {SubmitShippingLabelsRequest} body Request body containing the shipping labels data.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -506,9 +545,21 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = VendorShippingApiAxiosParamCreator(configuration)
     return {
         /**
+         * Creates container (pallet) label for provided shipment package association
+         * @param {CreateContainerLabelRequest} body Request body containing the container label data.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createContainerLabel(body: CreateContainerLabelRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateContainerLabelResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createContainerLabel(body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['VendorShippingApi.createContainerLabel']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} purchaseOrderNumber The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order.
-         * @param {CreateShippingLabelsRequest} body The request payload that contains parameters for creating shipping labels.
+         * @param {CreateShippingLabelsRequest} body The request payload containing parameters for creating shipping labels.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -578,7 +629,7 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
         },
         /**
          * Returns a shipping label for the purchaseOrderNumber that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} purchaseOrderNumber The purchase order number for which you want to return the shipping label. Should be the same &#x60;purchaseOrderNumber&#x60; as received in the order.
+         * @param {string} purchaseOrderNumber The purchase order number for which you want to return the shipping label and should be the same purchaseOrderNumber as received in the order.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -619,7 +670,7 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
         },
         /**
          * This operation is only to be used by Vendor-Own-Carrier (VOC) vendors. Calling this API submits a shipment status update for the package that a vendor has shipped. It will provide the Amazon customer visibility on their order, when the package is outside of Amazon Network visibility.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {SubmitShipmentStatusUpdatesRequest} body Request body that contains the shipment status update data.
+         * @param {SubmitShipmentStatusUpdatesRequest} body Request body containing the shipment status update data.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -631,7 +682,7 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
         },
         /**
          * Creates a shipping label for a purchase order and returns a transactionId for reference.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {SubmitShippingLabelsRequest} body Request body that contains the shipping labels data.
+         * @param {SubmitShippingLabelsRequest} body Request body containing the shipping labels data.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -651,6 +702,15 @@ export const VendorShippingApiFp = function(configuration?: Configuration) {
 export const VendorShippingApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = VendorShippingApiFp(configuration)
     return {
+        /**
+         * Creates container (pallet) label for provided shipment package association
+         * @param {VendorShippingApiCreateContainerLabelRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createContainerLabel(requestParameters: VendorShippingApiCreateContainerLabelRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateContainerLabelResponse> {
+            return localVarFp.createContainerLabel(requestParameters.body, options).then((request) => request(axios, basePath));
+        },
         /**
          * Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {VendorShippingApiCreateShippingLabelsRequest} requestParameters Request parameters.
@@ -745,6 +805,20 @@ export const VendorShippingApiFactory = function (configuration?: Configuration,
 };
 
 /**
+ * Request parameters for createContainerLabel operation in VendorShippingApi.
+ * @export
+ * @interface VendorShippingApiCreateContainerLabelRequest
+ */
+export interface VendorShippingApiCreateContainerLabelRequest {
+    /**
+     * Request body containing the container label data.
+     * @type {CreateContainerLabelRequest}
+     * @memberof VendorShippingApiCreateContainerLabel
+     */
+    readonly body: CreateContainerLabelRequest
+}
+
+/**
  * Request parameters for createShippingLabels operation in VendorShippingApi.
  * @export
  * @interface VendorShippingApiCreateShippingLabelsRequest
@@ -758,7 +832,7 @@ export interface VendorShippingApiCreateShippingLabelsRequest {
     readonly purchaseOrderNumber: string
 
     /**
-     * The request payload that contains parameters for creating shipping labels.
+     * The request payload containing parameters for creating shipping labels.
      * @type {CreateShippingLabelsRequest}
      * @memberof VendorShippingApiCreateShippingLabels
      */
@@ -898,7 +972,7 @@ export interface VendorShippingApiGetPackingSlipsRequest {
  */
 export interface VendorShippingApiGetShippingLabelRequest {
     /**
-     * The purchase order number for which you want to return the shipping label. Should be the same &#x60;purchaseOrderNumber&#x60; as received in the order.
+     * The purchase order number for which you want to return the shipping label and should be the same purchaseOrderNumber as received in the order.
      * @type {string}
      * @memberof VendorShippingApiGetShippingLabel
      */
@@ -975,7 +1049,7 @@ export interface VendorShippingApiSubmitShipmentConfirmationsRequest {
  */
 export interface VendorShippingApiSubmitShipmentStatusUpdatesRequest {
     /**
-     * Request body that contains the shipment status update data.
+     * Request body containing the shipment status update data.
      * @type {SubmitShipmentStatusUpdatesRequest}
      * @memberof VendorShippingApiSubmitShipmentStatusUpdates
      */
@@ -989,7 +1063,7 @@ export interface VendorShippingApiSubmitShipmentStatusUpdatesRequest {
  */
 export interface VendorShippingApiSubmitShippingLabelRequestRequest {
     /**
-     * Request body that contains the shipping labels data.
+     * Request body containing the shipping labels data.
      * @type {SubmitShippingLabelsRequest}
      * @memberof VendorShippingApiSubmitShippingLabelRequest
      */
@@ -1003,6 +1077,17 @@ export interface VendorShippingApiSubmitShippingLabelRequestRequest {
  * @extends {BaseAPI}
  */
 export class VendorShippingApi extends BaseAPI {
+    /**
+     * Creates container (pallet) label for provided shipment package association
+     * @param {VendorShippingApiCreateContainerLabelRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof VendorShippingApi
+     */
+    public createContainerLabel(requestParameters: VendorShippingApiCreateContainerLabelRequest, options?: RawAxiosRequestConfig) {
+        return VendorShippingApiFp(this.configuration).createContainerLabel(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * Creates shipping labels for a purchase order and returns the labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {VendorShippingApiCreateShippingLabelsRequest} requestParameters Request parameters.

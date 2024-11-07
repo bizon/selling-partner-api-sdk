@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Selling Partner API for Listings Items
+ * Listings Items v2021-08-01
  * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2021-08-01
@@ -34,13 +34,14 @@ import type { ListingsItemPutRequest } from '../models';
 // @ts-ignore
 import type { ListingsItemSubmissionResponse } from '../models';
 /**
- * ListingsApi - axios parameter creator
+ * ListingsItemsApi - axios parameter creator
  * @export
  */
-export const ListingsApiAxiosParamCreator = function (configuration?: Configuration) {
+export const ListingsItemsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
          * Delete a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @summary deleteListingsItem
          * @param {string} sellerId A selling partner identifier, such as a merchant account or vendor code.
          * @param {string} sku A selling partner provided identifier for an Amazon listing.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
@@ -90,6 +91,7 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * Returns details about a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @summary getListingsItem
          * @param {string} sellerId A selling partner identifier, such as a merchant account or vendor code.
          * @param {string} sku A selling partner provided identifier for an Amazon listing.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
@@ -144,6 +146,7 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Note:** This operation has a throttling rate of one request per second when `mode` is `VALIDATION_PREVIEW`.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @summary patchListingsItem
          * @param {string} sellerId A selling partner identifier, such as a merchant account or vendor code.
          * @param {string} sku A selling partner provided identifier for an Amazon listing.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
@@ -209,6 +212,7 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * Creates or fully updates an existing listings item for a selling partner.  **Note:** This operation has a throttling rate of one request per second when `mode` is `VALIDATION_PREVIEW`.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @summary putListingsItem
          * @param {string} sellerId A selling partner identifier, such as a merchant account or vendor code.
          * @param {string} sku A selling partner provided identifier for an Amazon listing.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
@@ -274,6 +278,7 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * Search for and return list of listings items and respective details for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @summary searchListingsItems
          * @param {string} sellerId A selling partner identifier, such as a merchant account or vendor code.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
          * @param {Array<string>} [identifiers] A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided.
@@ -346,14 +351,15 @@ export const ListingsApiAxiosParamCreator = function (configuration?: Configurat
 };
 
 /**
- * ListingsApi - functional programming interface
+ * ListingsItemsApi - functional programming interface
  * @export
  */
-export const ListingsApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = ListingsApiAxiosParamCreator(configuration)
+export const ListingsItemsApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = ListingsItemsApiAxiosParamCreator(configuration)
     return {
         /**
          * Delete a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @summary deleteListingsItem
          * @param {string} sellerId A selling partner identifier, such as a merchant account or vendor code.
          * @param {string} sku A selling partner provided identifier for an Amazon listing.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
@@ -364,11 +370,12 @@ export const ListingsApiFp = function(configuration?: Configuration) {
         async deleteListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteListingsItem(sellerId, sku, marketplaceIds, issueLocale, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ListingsApi.deleteListingsItem']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ListingsItemsApi.deleteListingsItem']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns details about a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @summary getListingsItem
          * @param {string} sellerId A selling partner identifier, such as a merchant account or vendor code.
          * @param {string} sku A selling partner provided identifier for an Amazon listing.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
@@ -380,11 +387,12 @@ export const ListingsApiFp = function(configuration?: Configuration) {
         async getListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, issueLocale?: string, includedData?: Array<GetListingsItemIncludedDataEnum>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Item>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getListingsItem(sellerId, sku, marketplaceIds, issueLocale, includedData, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ListingsApi.getListingsItem']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ListingsItemsApi.getListingsItem']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Note:** This operation has a throttling rate of one request per second when `mode` is `VALIDATION_PREVIEW`.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @summary patchListingsItem
          * @param {string} sellerId A selling partner identifier, such as a merchant account or vendor code.
          * @param {string} sku A selling partner provided identifier for an Amazon listing.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
@@ -398,11 +406,12 @@ export const ListingsApiFp = function(configuration?: Configuration) {
         async patchListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPatchRequest, includedData?: Array<PatchListingsItemIncludedDataEnum>, mode?: PatchListingsItemModeEnum, issueLocale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.patchListingsItem(sellerId, sku, marketplaceIds, body, includedData, mode, issueLocale, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ListingsApi.patchListingsItem']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ListingsItemsApi.patchListingsItem']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Creates or fully updates an existing listings item for a selling partner.  **Note:** This operation has a throttling rate of one request per second when `mode` is `VALIDATION_PREVIEW`.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @summary putListingsItem
          * @param {string} sellerId A selling partner identifier, such as a merchant account or vendor code.
          * @param {string} sku A selling partner provided identifier for an Amazon listing.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
@@ -416,11 +425,12 @@ export const ListingsApiFp = function(configuration?: Configuration) {
         async putListingsItem(sellerId: string, sku: string, marketplaceIds: Array<string>, body: ListingsItemPutRequest, includedData?: Array<PutListingsItemIncludedDataEnum>, mode?: PutListingsItemModeEnum, issueLocale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListingsItemSubmissionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.putListingsItem(sellerId, sku, marketplaceIds, body, includedData, mode, issueLocale, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ListingsApi.putListingsItem']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ListingsItemsApi.putListingsItem']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Search for and return list of listings items and respective details for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @summary searchListingsItems
          * @param {string} sellerId A selling partner identifier, such as a merchant account or vendor code.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
          * @param {Array<string>} [identifiers] A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided.
@@ -435,379 +445,389 @@ export const ListingsApiFp = function(configuration?: Configuration) {
         async searchListingsItems(sellerId: string, marketplaceIds: Array<string>, identifiers?: Array<string>, identifiersType?: SearchListingsItemsIdentifiersTypeEnum, pageSize?: number, pageToken?: string, includedData?: Array<SearchListingsItemsIncludedDataEnum>, issueLocale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ItemSearchResults>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.searchListingsItems(sellerId, marketplaceIds, identifiers, identifiersType, pageSize, pageToken, includedData, issueLocale, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ListingsApi.searchListingsItems']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ListingsItemsApi.searchListingsItems']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
 
 /**
- * ListingsApi - factory interface
+ * ListingsItemsApi - factory interface
  * @export
  */
-export const ListingsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = ListingsApiFp(configuration)
+export const ListingsItemsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = ListingsItemsApiFp(configuration)
     return {
         /**
          * Delete a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {ListingsApiDeleteListingsItemRequest} requestParameters Request parameters.
+         * @summary deleteListingsItem
+         * @param {ListingsItemsApiDeleteListingsItemRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteListingsItem(requestParameters: ListingsApiDeleteListingsItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
+        deleteListingsItem(requestParameters: ListingsItemsApiDeleteListingsItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
             return localVarFp.deleteListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.issueLocale, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns details about a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {ListingsApiGetListingsItemRequest} requestParameters Request parameters.
+         * @summary getListingsItem
+         * @param {ListingsItemsApiGetListingsItemRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getListingsItem(requestParameters: ListingsApiGetListingsItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<Item> {
+        getListingsItem(requestParameters: ListingsItemsApiGetListingsItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<Item> {
             return localVarFp.getListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.issueLocale, requestParameters.includedData, options).then((request) => request(axios, basePath));
         },
         /**
          * Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Note:** This operation has a throttling rate of one request per second when `mode` is `VALIDATION_PREVIEW`.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {ListingsApiPatchListingsItemRequest} requestParameters Request parameters.
+         * @summary patchListingsItem
+         * @param {ListingsItemsApiPatchListingsItemRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        patchListingsItem(requestParameters: ListingsApiPatchListingsItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
+        patchListingsItem(requestParameters: ListingsItemsApiPatchListingsItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
             return localVarFp.patchListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.includedData, requestParameters.mode, requestParameters.issueLocale, options).then((request) => request(axios, basePath));
         },
         /**
          * Creates or fully updates an existing listings item for a selling partner.  **Note:** This operation has a throttling rate of one request per second when `mode` is `VALIDATION_PREVIEW`.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {ListingsApiPutListingsItemRequest} requestParameters Request parameters.
+         * @summary putListingsItem
+         * @param {ListingsItemsApiPutListingsItemRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        putListingsItem(requestParameters: ListingsApiPutListingsItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
+        putListingsItem(requestParameters: ListingsItemsApiPutListingsItemRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListingsItemSubmissionResponse> {
             return localVarFp.putListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.includedData, requestParameters.mode, requestParameters.issueLocale, options).then((request) => request(axios, basePath));
         },
         /**
          * Search for and return list of listings items and respective details for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {ListingsApiSearchListingsItemsRequest} requestParameters Request parameters.
+         * @summary searchListingsItems
+         * @param {ListingsItemsApiSearchListingsItemsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchListingsItems(requestParameters: ListingsApiSearchListingsItemsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ItemSearchResults> {
+        searchListingsItems(requestParameters: ListingsItemsApiSearchListingsItemsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ItemSearchResults> {
             return localVarFp.searchListingsItems(requestParameters.sellerId, requestParameters.marketplaceIds, requestParameters.identifiers, requestParameters.identifiersType, requestParameters.pageSize, requestParameters.pageToken, requestParameters.includedData, requestParameters.issueLocale, options).then((request) => request(axios, basePath));
         },
     };
 };
 
 /**
- * Request parameters for deleteListingsItem operation in ListingsApi.
+ * Request parameters for deleteListingsItem operation in ListingsItemsApi.
  * @export
- * @interface ListingsApiDeleteListingsItemRequest
+ * @interface ListingsItemsApiDeleteListingsItemRequest
  */
-export interface ListingsApiDeleteListingsItemRequest {
+export interface ListingsItemsApiDeleteListingsItemRequest {
     /**
      * A selling partner identifier, such as a merchant account or vendor code.
      * @type {string}
-     * @memberof ListingsApiDeleteListingsItem
+     * @memberof ListingsItemsApiDeleteListingsItem
      */
     readonly sellerId: string
 
     /**
      * A selling partner provided identifier for an Amazon listing.
      * @type {string}
-     * @memberof ListingsApiDeleteListingsItem
+     * @memberof ListingsItemsApiDeleteListingsItem
      */
     readonly sku: string
 
     /**
      * A comma-delimited list of Amazon marketplace identifiers for the request.
      * @type {Array<string>}
-     * @memberof ListingsApiDeleteListingsItem
+     * @memberof ListingsItemsApiDeleteListingsItem
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale.
      * @type {string}
-     * @memberof ListingsApiDeleteListingsItem
+     * @memberof ListingsItemsApiDeleteListingsItem
      */
     readonly issueLocale?: string
 }
 
 /**
- * Request parameters for getListingsItem operation in ListingsApi.
+ * Request parameters for getListingsItem operation in ListingsItemsApi.
  * @export
- * @interface ListingsApiGetListingsItemRequest
+ * @interface ListingsItemsApiGetListingsItemRequest
  */
-export interface ListingsApiGetListingsItemRequest {
+export interface ListingsItemsApiGetListingsItemRequest {
     /**
      * A selling partner identifier, such as a merchant account or vendor code.
      * @type {string}
-     * @memberof ListingsApiGetListingsItem
+     * @memberof ListingsItemsApiGetListingsItem
      */
     readonly sellerId: string
 
     /**
      * A selling partner provided identifier for an Amazon listing.
      * @type {string}
-     * @memberof ListingsApiGetListingsItem
+     * @memberof ListingsItemsApiGetListingsItem
      */
     readonly sku: string
 
     /**
      * A comma-delimited list of Amazon marketplace identifiers for the request.
      * @type {Array<string>}
-     * @memberof ListingsApiGetListingsItem
+     * @memberof ListingsItemsApiGetListingsItem
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale.
      * @type {string}
-     * @memberof ListingsApiGetListingsItem
+     * @memberof ListingsItemsApiGetListingsItem
      */
     readonly issueLocale?: string
 
     /**
      * A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;.
      * @type {Array<'summaries' | 'attributes' | 'issues' | 'offers' | 'fulfillmentAvailability' | 'procurement'>}
-     * @memberof ListingsApiGetListingsItem
+     * @memberof ListingsItemsApiGetListingsItem
      */
     readonly includedData?: Array<GetListingsItemIncludedDataEnum>
 }
 
 /**
- * Request parameters for patchListingsItem operation in ListingsApi.
+ * Request parameters for patchListingsItem operation in ListingsItemsApi.
  * @export
- * @interface ListingsApiPatchListingsItemRequest
+ * @interface ListingsItemsApiPatchListingsItemRequest
  */
-export interface ListingsApiPatchListingsItemRequest {
+export interface ListingsItemsApiPatchListingsItemRequest {
     /**
      * A selling partner identifier, such as a merchant account or vendor code.
      * @type {string}
-     * @memberof ListingsApiPatchListingsItem
+     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly sellerId: string
 
     /**
      * A selling partner provided identifier for an Amazon listing.
      * @type {string}
-     * @memberof ListingsApiPatchListingsItem
+     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly sku: string
 
     /**
      * A comma-delimited list of Amazon marketplace identifiers for the request.
      * @type {Array<string>}
-     * @memberof ListingsApiPatchListingsItem
+     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * The request body schema for the &#x60;patchListingsItem&#x60; operation.
      * @type {ListingsItemPatchRequest}
-     * @memberof ListingsApiPatchListingsItem
+     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly body: ListingsItemPatchRequest
 
     /**
      * A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;.
      * @type {Array<'identifiers' | 'issues'>}
-     * @memberof ListingsApiPatchListingsItem
+     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly includedData?: Array<PatchListingsItemIncludedDataEnum>
 
     /**
      * The mode of operation for the request.
      * @type {'VALIDATION_PREVIEW'}
-     * @memberof ListingsApiPatchListingsItem
+     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly mode?: PatchListingsItemModeEnum
 
     /**
      * A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale.
      * @type {string}
-     * @memberof ListingsApiPatchListingsItem
+     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly issueLocale?: string
 }
 
 /**
- * Request parameters for putListingsItem operation in ListingsApi.
+ * Request parameters for putListingsItem operation in ListingsItemsApi.
  * @export
- * @interface ListingsApiPutListingsItemRequest
+ * @interface ListingsItemsApiPutListingsItemRequest
  */
-export interface ListingsApiPutListingsItemRequest {
+export interface ListingsItemsApiPutListingsItemRequest {
     /**
      * A selling partner identifier, such as a merchant account or vendor code.
      * @type {string}
-     * @memberof ListingsApiPutListingsItem
+     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly sellerId: string
 
     /**
      * A selling partner provided identifier for an Amazon listing.
      * @type {string}
-     * @memberof ListingsApiPutListingsItem
+     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly sku: string
 
     /**
      * A comma-delimited list of Amazon marketplace identifiers for the request.
      * @type {Array<string>}
-     * @memberof ListingsApiPutListingsItem
+     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * The request body schema for the &#x60;putListingsItem&#x60; operation.
      * @type {ListingsItemPutRequest}
-     * @memberof ListingsApiPutListingsItem
+     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly body: ListingsItemPutRequest
 
     /**
      * A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;.
      * @type {Array<'identifiers' | 'issues'>}
-     * @memberof ListingsApiPutListingsItem
+     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly includedData?: Array<PutListingsItemIncludedDataEnum>
 
     /**
      * The mode of operation for the request.
      * @type {'VALIDATION_PREVIEW'}
-     * @memberof ListingsApiPutListingsItem
+     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly mode?: PutListingsItemModeEnum
 
     /**
      * A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale.
      * @type {string}
-     * @memberof ListingsApiPutListingsItem
+     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly issueLocale?: string
 }
 
 /**
- * Request parameters for searchListingsItems operation in ListingsApi.
+ * Request parameters for searchListingsItems operation in ListingsItemsApi.
  * @export
- * @interface ListingsApiSearchListingsItemsRequest
+ * @interface ListingsItemsApiSearchListingsItemsRequest
  */
-export interface ListingsApiSearchListingsItemsRequest {
+export interface ListingsItemsApiSearchListingsItemsRequest {
     /**
      * A selling partner identifier, such as a merchant account or vendor code.
      * @type {string}
-     * @memberof ListingsApiSearchListingsItems
+     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly sellerId: string
 
     /**
      * A comma-delimited list of Amazon marketplace identifiers for the request.
      * @type {Array<string>}
-     * @memberof ListingsApiSearchListingsItems
+     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided.
      * @type {Array<string>}
-     * @memberof ListingsApiSearchListingsItems
+     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly identifiers?: Array<string>
 
     /**
      * Type of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiers&#x60; is provided.
      * @type {'ASIN' | 'EAN' | 'GTIN' | 'ISBN' | 'JAN' | 'MINSAN' | 'SKU' | 'UPC'}
-     * @memberof ListingsApiSearchListingsItems
+     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly identifiersType?: SearchListingsItemsIdentifiersTypeEnum
 
     /**
      * Number of results to be returned per page.
      * @type {number}
-     * @memberof ListingsApiSearchListingsItems
+     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly pageSize?: number
 
     /**
      * A token to fetch a certain page when there are multiple pages worth of results.
      * @type {string}
-     * @memberof ListingsApiSearchListingsItems
+     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly pageToken?: string
 
     /**
      * A comma-delimited list of data sets to include in the response. Default: summaries.
      * @type {Array<'summaries' | 'attributes' | 'issues' | 'offers' | 'fulfillmentAvailability' | 'procurement'>}
-     * @memberof ListingsApiSearchListingsItems
+     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly includedData?: Array<SearchListingsItemsIncludedDataEnum>
 
     /**
      * A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale.
      * @type {string}
-     * @memberof ListingsApiSearchListingsItems
+     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly issueLocale?: string
 }
 
 /**
- * ListingsApi - object-oriented interface
+ * ListingsItemsApi - object-oriented interface
  * @export
- * @class ListingsApi
+ * @class ListingsItemsApi
  * @extends {BaseAPI}
  */
-export class ListingsApi extends BaseAPI {
+export class ListingsItemsApi extends BaseAPI {
     /**
      * Delete a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @param {ListingsApiDeleteListingsItemRequest} requestParameters Request parameters.
+     * @summary deleteListingsItem
+     * @param {ListingsItemsApiDeleteListingsItemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ListingsApi
+     * @memberof ListingsItemsApi
      */
-    public deleteListingsItem(requestParameters: ListingsApiDeleteListingsItemRequest, options?: RawAxiosRequestConfig) {
-        return ListingsApiFp(this.configuration).deleteListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
+    public deleteListingsItem(requestParameters: ListingsItemsApiDeleteListingsItemRequest, options?: RawAxiosRequestConfig) {
+        return ListingsItemsApiFp(this.configuration).deleteListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns details about a listings item for a selling partner.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @param {ListingsApiGetListingsItemRequest} requestParameters Request parameters.
+     * @summary getListingsItem
+     * @param {ListingsItemsApiGetListingsItemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ListingsApi
+     * @memberof ListingsItemsApi
      */
-    public getListingsItem(requestParameters: ListingsApiGetListingsItemRequest, options?: RawAxiosRequestConfig) {
-        return ListingsApiFp(this.configuration).getListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.issueLocale, requestParameters.includedData, options).then((request) => request(this.axios, this.basePath));
+    public getListingsItem(requestParameters: ListingsItemsApiGetListingsItemRequest, options?: RawAxiosRequestConfig) {
+        return ListingsItemsApiFp(this.configuration).getListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.issueLocale, requestParameters.includedData, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Note:** This operation has a throttling rate of one request per second when `mode` is `VALIDATION_PREVIEW`.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @param {ListingsApiPatchListingsItemRequest} requestParameters Request parameters.
+     * @summary patchListingsItem
+     * @param {ListingsItemsApiPatchListingsItemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ListingsApi
+     * @memberof ListingsItemsApi
      */
-    public patchListingsItem(requestParameters: ListingsApiPatchListingsItemRequest, options?: RawAxiosRequestConfig) {
-        return ListingsApiFp(this.configuration).patchListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.includedData, requestParameters.mode, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
+    public patchListingsItem(requestParameters: ListingsItemsApiPatchListingsItemRequest, options?: RawAxiosRequestConfig) {
+        return ListingsItemsApiFp(this.configuration).patchListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.includedData, requestParameters.mode, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Creates or fully updates an existing listings item for a selling partner.  **Note:** This operation has a throttling rate of one request per second when `mode` is `VALIDATION_PREVIEW`.  **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @param {ListingsApiPutListingsItemRequest} requestParameters Request parameters.
+     * @summary putListingsItem
+     * @param {ListingsItemsApiPutListingsItemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ListingsApi
+     * @memberof ListingsItemsApi
      */
-    public putListingsItem(requestParameters: ListingsApiPutListingsItemRequest, options?: RawAxiosRequestConfig) {
-        return ListingsApiFp(this.configuration).putListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.includedData, requestParameters.mode, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
+    public putListingsItem(requestParameters: ListingsItemsApiPutListingsItemRequest, options?: RawAxiosRequestConfig) {
+        return ListingsItemsApiFp(this.configuration).putListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.includedData, requestParameters.mode, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Search for and return list of listings items and respective details for a selling partner.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @param {ListingsApiSearchListingsItemsRequest} requestParameters Request parameters.
+     * @summary searchListingsItems
+     * @param {ListingsItemsApiSearchListingsItemsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ListingsApi
+     * @memberof ListingsItemsApi
      */
-    public searchListingsItems(requestParameters: ListingsApiSearchListingsItemsRequest, options?: RawAxiosRequestConfig) {
-        return ListingsApiFp(this.configuration).searchListingsItems(requestParameters.sellerId, requestParameters.marketplaceIds, requestParameters.identifiers, requestParameters.identifiersType, requestParameters.pageSize, requestParameters.pageToken, requestParameters.includedData, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
+    public searchListingsItems(requestParameters: ListingsItemsApiSearchListingsItemsRequest, options?: RawAxiosRequestConfig) {
+        return ListingsItemsApiFp(this.configuration).searchListingsItems(requestParameters.sellerId, requestParameters.marketplaceIds, requestParameters.identifiers, requestParameters.identifiersType, requestParameters.pageSize, requestParameters.pageToken, requestParameters.includedData, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

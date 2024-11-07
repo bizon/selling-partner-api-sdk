@@ -18,7 +18,7 @@
 import type { TransactionStatus } from './transaction-status';
 
 /**
- * The response schema for the `getTransactionStatus` operation.
+ * The response schema for the getTransactionStatus operation.
  * @export
  * @interface GetTransactionResponse
  */

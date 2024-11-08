@@ -24,7 +24,7 @@ import type { HttpMethod } from './http-method';
  */
 export interface BatchRequest {
     /**
-     * The URI associated with an individual request within a batch. For `FeaturedOfferExpectedPrice`, this should be `/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice`.
+     * The URI associated with an individual request within a batch. For `FeaturedOfferExpectedPrice`, this is `/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice`.
      * @type {string}
      * @memberof BatchRequest
      */
@@ -36,13 +36,13 @@ export interface BatchRequest {
      */
     'method': HttpMethod;
     /**
-     * Additional HTTP body information associated with an individual request within a batch.
+     * Additional HTTP body information that is associated with an individual request within a batch.
      * @type {{ [key: string]: object; }}
      * @memberof BatchRequest
      */
     'body'?: { [key: string]: object; };
     /**
-     * A mapping of additional HTTP headers to send/receive for an individual request within a batch.
+     * A mapping of additional HTTP headers to send or receive for an individual request within a batch.
      * @type {{ [key: string]: string; }}
      * @memberof BatchRequest
      */

@@ -21,7 +21,7 @@ import type { LowestPricedOffersInput } from './lowest-priced-offers-input';
 import type { Offer } from './offer';
 
 /**
- * The lowest priced offer for the requested item condition and offer type.
+ * Describes the lowest priced offers for the specified item condition and offer type.
  * @export
  * @interface LowestPricedOffer
  */
@@ -33,7 +33,7 @@ export interface LowestPricedOffer {
      */
     'lowestPricedOffersInput': LowestPricedOffersInput;
     /**
-     * A list of up to 20 lowest priced offers that match the criteria specified in the `lowestPricedOffersInput` parameter.
+     * A list of up to 20 lowest priced offers that match the criteria specified in `lowestPricedOffersInput`.
      * @type {Array<Offer>}
      * @memberof LowestPricedOffer
      */

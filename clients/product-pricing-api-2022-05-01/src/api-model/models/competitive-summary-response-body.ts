@@ -30,7 +30,7 @@ import type { ReferencePrice } from './reference-price';
  */
 export interface CompetitiveSummaryResponseBody {
     /**
-     * The Amazon Standard Identification Number (ASIN) of the item.
+     * The ASIN of the item.
      * @type {string}
      * @memberof CompetitiveSummaryResponseBody
      */
@@ -42,25 +42,25 @@ export interface CompetitiveSummaryResponseBody {
      */
     'marketplaceId': string;
     /**
-     * A list of featured buying options for the given ASIN `marketplaceId` combination.
+     * A list of featured buying options for the specified ASIN `marketplaceId` combination.
      * @type {Array<FeaturedBuyingOption>}
      * @memberof CompetitiveSummaryResponseBody
      */
     'featuredBuyingOptions'?: Array<FeaturedBuyingOption>;
     /**
-     * A list of the lowest priced offers for the given ASIN `marketplaceId` combination.
+     * A list of lowest priced offers for the specified ASIN `marketplaceId` combination.
      * @type {Array<LowestPricedOffer>}
      * @memberof CompetitiveSummaryResponseBody
      */
     'lowestPricedOffers'?: Array<LowestPricedOffer>;
     /**
-     * A list of reference prices for the given ASIN `marketplaceId` combination.
+     * A list of reference prices for the specified ASIN `marketplaceId` combination.
      * @type {Array<ReferencePrice>}
      * @memberof CompetitiveSummaryResponseBody
      */
     'referencePrices'?: Array<ReferencePrice>;
     /**
-     * A list of error responses returned when a request is unsuccessful.
+     * A list of error responses that are returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof CompetitiveSummaryResponseBody
      */

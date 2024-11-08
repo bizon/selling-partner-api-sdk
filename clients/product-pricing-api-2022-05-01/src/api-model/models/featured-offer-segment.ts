@@ -24,7 +24,7 @@ import type { SegmentDetails } from './segment-details';
  */
 export interface FeaturedOfferSegment {
     /**
-     * The customer membership type that make up this segment
+     * The customer membership type that makes up this segment
      * @type {string}
      * @memberof FeaturedOfferSegment
      */

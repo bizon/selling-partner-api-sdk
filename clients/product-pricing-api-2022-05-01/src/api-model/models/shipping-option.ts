@@ -24,7 +24,7 @@ import type { MoneyType } from './money-type';
  */
 export interface ShippingOption {
     /**
-     * The type of the shipping option.
+     * The type of shipping option.
      * @type {string}
      * @memberof ShippingOption
      */

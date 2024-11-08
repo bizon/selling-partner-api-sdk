@@ -18,13 +18,13 @@
 import type { CompetitiveSummaryResponse } from './competitive-summary-response';
 
 /**
- * The response schema of the `competitiveSummaryBatch` operation.
+ * The response schema for the `competitiveSummaryBatch` operation.
  * @export
  * @interface CompetitiveSummaryBatchResponse
  */
 export interface CompetitiveSummaryBatchResponse {
     /**
-     * The response list of the `competitiveSummaryBatch` operation.
+     * The response list for the `competitiveSummaryBatch` operation.
      * @type {Array<CompetitiveSummaryResponse>}
      * @memberof CompetitiveSummaryBatchResponse
      */

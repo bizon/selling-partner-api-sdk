@@ -51,7 +51,7 @@ export interface Offer {
      */
     'condition': Condition;
     /**
-     * The item subcondition for the offer.
+     * The item subcondition of the offer.
      * @type {string}
      * @memberof Offer
      */

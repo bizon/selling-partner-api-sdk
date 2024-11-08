@@ -21,7 +21,7 @@ import type { MoneyType } from './money-type';
 import type { Points } from './points';
 
 /**
- * Schema for item\'s price information, including listing price, shipping price, and Amazon points.
+ * The schema for item\'s price information, including listing price, shipping price, and Amazon Points.
  * @export
  * @interface Price
  */

@@ -21,7 +21,7 @@
  */
 export interface SegmentDetails {
     /**
-     * Glance view weight percentage for this segment. The glance views for this segment as a percentage of total glance views across all segments on the ASIN. A higher percentage indicates more Amazon customers see this offer as the Featured Offer.
+     * The glance view weighted percentage for this segment, which is the glance views for this segment as a percentage of total glance views across all segments for the ASIN. A higher percentage indicates that more Amazon customers receive this offer as the Featured Offer.
      * @type {number}
      * @memberof SegmentDetails
      */

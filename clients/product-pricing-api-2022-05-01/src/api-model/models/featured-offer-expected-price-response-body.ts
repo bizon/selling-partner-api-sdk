@@ -21,7 +21,7 @@ import type { FeaturedOfferExpectedPriceResult } from './featured-offer-expected
 import type { OfferIdentifier } from './offer-identifier';
 
 /**
- * The featured offer expected price response data for a requested SKU.
+ * The FOEP response data for a requested SKU.
  * @export
  * @interface FeaturedOfferExpectedPriceResponseBody
  */
@@ -33,13 +33,13 @@ export interface FeaturedOfferExpectedPriceResponseBody {
      */
     'offerIdentifier'?: OfferIdentifier;
     /**
-     * A list of featured offer expected price results for the requested offer.
+     * A list of FOEP results for the requested offer.
      * @type {Array<FeaturedOfferExpectedPriceResult>}
      * @memberof FeaturedOfferExpectedPriceResponseBody
      */
     'featuredOfferExpectedPriceResults'?: Array<FeaturedOfferExpectedPriceResult>;
     /**
-     * A list of error responses returned when a request is unsuccessful.
+     * A list of error responses that are returned when a request is unsuccessful.
      * @type {Array<Error>}
      * @memberof FeaturedOfferExpectedPriceResponseBody
      */

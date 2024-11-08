@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Finances
- * The Selling Partner API for Finances provides financial information that is relevant to a seller\'s business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range. 
+ * The Selling Partner API for Finances helps you obtain financial information relevant to a seller\'s business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -24,7 +24,7 @@ import type { Currency } from './currency';
  */
 export interface FailedAdhocDisbursementEvent {
     /**
-     * The type of fund transfer. For example, `Refund`.
+     * The type of fund transfer.   Example \"Refund\"
      * @type {string}
      * @memberof FailedAdhocDisbursementEvent
      */
@@ -42,13 +42,13 @@ export interface FailedAdhocDisbursementEvent {
      */
     'DisbursementId'?: string;
     /**
-     * The type of payment for disbursement. For example, `CREDIT_CARD`.
+     * The type of payment for disbursement.   Example `CREDIT_CARD`
      * @type {string}
      * @memberof FailedAdhocDisbursementEvent
      */
     'PaymentDisbursementType'?: string;
     /**
-     * The status of the failed `AdhocDisbursement`. For example, `HARD_DECLINED`.
+     * The status of the failed `AdhocDisbursement`.   Example `HARD_DECLINED`
      * @type {string}
      * @memberof FailedAdhocDisbursementEvent
      */
@@ -60,7 +60,7 @@ export interface FailedAdhocDisbursementEvent {
      */
     'TransferAmount'?: Currency;
     /**
-     * A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
      * @type {string}
      * @memberof FailedAdhocDisbursementEvent
      */

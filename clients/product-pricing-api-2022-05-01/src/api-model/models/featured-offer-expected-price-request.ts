@@ -25,7 +25,7 @@ import type { HttpMethod } from './http-method';
 
 /**
  * @type FeaturedOfferExpectedPriceRequest
- * An individual featured offer expected price request for a particular SKU.
+ * An individual FOEP request for a particular SKU.
  * @export
  */
 export type FeaturedOfferExpectedPriceRequest = BatchRequest & FeaturedOfferExpectedPriceRequestParams;

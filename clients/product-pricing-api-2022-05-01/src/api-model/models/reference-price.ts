@@ -18,13 +18,13 @@
 import type { MoneyType } from './money-type';
 
 /**
- * The reference price for the given ASIN `marketplaceId` combination. 
+ * The reference price for the specified ASIN `marketplaceId` combination.
  * @export
  * @interface ReferencePrice
  */
 export interface ReferencePrice {
     /**
-     * The name of the reference price like `CompetitivePriceThreshold`.
+     * The name of the reference price, such as `CompetitivePriceThreshold` and `WasPrice`. For reference price definitions, refer to the [Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).
      * @type {string}
      * @memberof ReferencePrice
      */

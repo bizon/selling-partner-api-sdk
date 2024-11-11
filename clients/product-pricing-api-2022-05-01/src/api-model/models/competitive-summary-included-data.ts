@@ -15,7 +15,7 @@
 
 
 /**
- * The supported types of data in the `getCompetitiveSummary` API.
+ * The supported data types in the `getCompetitiveSummary` API.
  * @export
  * @enum {string}
  */

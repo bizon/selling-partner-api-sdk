@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Finances
- * The Selling Partner API for Finances provides financial information that is relevant to a seller\'s business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range. 
+ * The Selling Partner API for Finances helps you obtain financial information relevant to a seller\'s business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -99,7 +99,7 @@ import type { TrialShipmentEvent } from './trial-shipment-event';
 import type { ValueAddedServiceChargeEvent } from './value-added-service-charge-event';
 
 /**
- * All the information that is related to a financial event.
+ * Contains all information related to a financial event.
  * @export
  * @interface FinancialEvents
  */
@@ -141,13 +141,13 @@ export interface FinancialEvents {
      */
     'PayWithAmazonEventList'?: Array<PayWithAmazonEvent>;
     /**
-     * A list of `SolutionProviderCreditEvent`.
+     * A list of information about solution provider credits.
      * @type {Array<SolutionProviderCreditEvent>}
      * @memberof FinancialEvents
      */
     'ServiceProviderCreditEventList'?: Array<SolutionProviderCreditEvent>;
     /**
-     * A list of information about `Retrocharge` or `RetrochargeReversal` events.
+     * A list of information about Retrocharge or RetrochargeReversal events.
      * @type {Array<RetrochargeEvent>}
      * @memberof FinancialEvents
      */
@@ -195,7 +195,7 @@ export interface FinancialEvents {
      */
     'AdjustmentEventList'?: Array<AdjustmentEvent>;
     /**
-     * A list of `SAFETReimbursementEvent`.
+     * A list of SAFETReimbursementEvents.
      * @type {Array<SAFETReimbursementEvent>}
      * @memberof FinancialEvents
      */
@@ -249,7 +249,7 @@ export interface FinancialEvents {
      */
     'RemovalShipmentEventList'?: Array<RemovalShipmentEvent>;
     /**
-     * A comma-delimited list of `RemovalShipmentAdjustment` details for FBA inventory.
+     * A comma-delimited list of Removal shipmentAdjustment details for FBA inventory.
      * @type {Array<RemovalShipmentAdjustmentEvent>}
      * @memberof FinancialEvents
      */
@@ -273,7 +273,7 @@ export interface FinancialEvents {
      */
     'AdhocDisbursementEventList'?: Array<AdhocDisbursementEvent>;
     /**
-     * A list of tax withholding events.
+     * A list of `TaxWithholding` events.
      * @type {Array<TaxWithholdingEvent>}
      * @memberof FinancialEvents
      */
@@ -285,7 +285,7 @@ export interface FinancialEvents {
      */
     'ChargeRefundEventList'?: Array<ChargeRefundEvent>;
     /**
-     * A list of `FailedAdhocDisbursementEvent`.
+     * A list of `FailedAdhocDisbursementEvent`s.
      * @type {Array<FailedAdhocDisbursementEvent>}
      * @memberof FinancialEvents
      */

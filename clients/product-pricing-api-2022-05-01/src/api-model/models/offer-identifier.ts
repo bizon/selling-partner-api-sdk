@@ -18,7 +18,7 @@
 import type { FulfillmentType } from './fulfillment-type';
 
 /**
- * Identifies an offer from a particular seller on an ASIN.
+ * Identifies an offer from a particular seller for a specified ASIN.
  * @export
  * @interface OfferIdentifier
  */
@@ -36,13 +36,13 @@ export interface OfferIdentifier {
      */
     'sellerId'?: string;
     /**
-     * The seller stock keeping unit (SKU) of the item. This will only be present for the target offer, which belongs to the requesting seller.
+     * The seller SKU of the item. This will only be present for the target offer, which belongs to the requesting seller.
      * @type {string}
      * @memberof OfferIdentifier
      */
     'sku'?: string;
     /**
-     * The Amazon Standard Identification Number (ASIN) of the item.
+     * The ASIN of the item.
      * @type {string}
      * @memberof OfferIdentifier
      */

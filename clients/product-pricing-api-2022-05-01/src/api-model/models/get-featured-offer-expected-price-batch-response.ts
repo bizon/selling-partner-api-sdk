@@ -24,7 +24,7 @@ import type { FeaturedOfferExpectedPriceResponse } from './featured-offer-expect
  */
 export interface GetFeaturedOfferExpectedPriceBatchResponse {
     /**
-     * A batched list of featured offer expected price responses.
+     * A batched list of FOEP responses.
      * @type {Array<FeaturedOfferExpectedPriceResponse>}
      * @memberof GetFeaturedOfferExpectedPriceBatchResponse
      */

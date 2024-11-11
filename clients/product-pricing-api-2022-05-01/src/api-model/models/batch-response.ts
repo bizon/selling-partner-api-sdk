@@ -24,7 +24,7 @@ import type { HttpStatusLine } from './http-status-line';
  */
 export interface BatchResponse {
     /**
-     * A mapping of additional HTTP headers to send/receive for an individual request within a batch.
+     * A mapping of additional HTTP headers to send or receive for an individual request within a batch.
      * @type {{ [key: string]: string; }}
      * @memberof BatchResponse
      */

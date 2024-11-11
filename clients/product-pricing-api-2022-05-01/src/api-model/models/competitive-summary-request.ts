@@ -30,7 +30,7 @@ import type { LowestPricedOffersInput } from './lowest-priced-offers-input';
  */
 export interface CompetitiveSummaryRequest {
     /**
-     * The Amazon Standard Identification Number (ASIN) of the item.
+     * The ASIN of the item.
      * @type {string}
      * @memberof CompetitiveSummaryRequest
      */
@@ -48,7 +48,7 @@ export interface CompetitiveSummaryRequest {
      */
     'includedData': Array<CompetitiveSummaryIncludedData>;
     /**
-     * The list of `lowestPricedOffersInput` parameters used to build the `lowestPricedOffers` in the response. This attribute is valid only if `lowestPricedOffers` is requested in `includedData`.
+     * The list of `lowestPricedOffersInput` parameters that are used to build `lowestPricedOffers` in the response. This attribute is only valid if `lowestPricedOffers` is requested in `includedData`
      * @type {Array<LowestPricedOffersInput>}
      * @memberof CompetitiveSummaryRequest
      */
@@ -60,7 +60,7 @@ export interface CompetitiveSummaryRequest {
      */
     'method': HttpMethod;
     /**
-     * The URI associated with the individual APIs being called as part of the batch request.
+     * The URI associated with the individual APIs that are called as part of the batch request.
      * @type {string}
      * @memberof CompetitiveSummaryRequest
      */

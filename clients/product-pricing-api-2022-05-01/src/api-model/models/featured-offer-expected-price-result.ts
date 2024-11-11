@@ -21,7 +21,7 @@ import type { FeaturedOffer } from './featured-offer';
 import type { FeaturedOfferExpectedPrice } from './featured-offer-expected-price';
 
 /**
- * The featured offer expected price result data for the requested offer.
+ * The FOEP result data for the requested offer.
  * @export
  * @interface FeaturedOfferExpectedPriceResult
  */
@@ -33,7 +33,7 @@ export interface FeaturedOfferExpectedPriceResult {
      */
     'featuredOfferExpectedPrice'?: FeaturedOfferExpectedPrice;
     /**
-     * The status of the featured offer expected price computation. Possible values include `VALID_FOEP`, `NO_COMPETING_OFFER`, `OFFER_NOT_ELIGIBLE`, `OFFER_NOT_FOUND`, `ASIN_NOT_ELIGIBLE`. Additional values may be added in the future.
+     * The status of the FOEP computation. Possible values include `VALID_FOEP`, `NO_COMPETING_OFFER`, `OFFER_NOT_ELIGIBLE`, `OFFER_NOT_FOUND`, and `ASIN_NOT_ELIGIBLE`. Additional values might be added in the future.
      * @type {string}
      * @memberof FeaturedOfferExpectedPriceResult
      */

@@ -30,7 +30,7 @@
     "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {
-    "nock": "^13.5.5",
+    "nock": "^13.5.6",
     "type-fest": "^4.26.1"
   },
   "repository": {

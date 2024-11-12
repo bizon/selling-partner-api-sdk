@@ -116,7 +116,6 @@ async function generateClientVersion(modelFilePath: string) {
       -o ${clientDirectoryPath}/src/api-model`,
   )
 
-  await fs.mkdir(`${clientDirectoryPath}/__tests__`, {recursive: true})
   await fs.writeFile(
     `${clientDirectoryPath}/package.json`,
     await renderTemplate('codegen/templates/package.json.mustache', {
@@ -217,14 +216,6 @@ async function generateClientVersion(modelFilePath: string) {
       )}.html`,
       grantlessScope: grantlessInfo?.scope,
     }),
-  )
-  await fs.writeFile(
-    `${clientDirectoryPath}/__tests__/client.spec.ts`,
-    await renderTemplate('codegen/templates/__tests__/client.spec.ts.mustache', {clientClassName}),
-  )
-  await fs.writeFile(
-    `${clientDirectoryPath}/jest.config.ts`,
-    await renderTemplate('codegen/templates/jest.config.ts.mustache'),
   )
 
   const generatedFiles = await fs.readdir(`${clientDirectoryPath}/src/api-model/`)

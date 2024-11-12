@@ -22,8 +22,7 @@
     "build:cjs": "tsc -p tsconfig.json",
     "build:es": "tsc -p tsconfig.es.json",
     "build": "pnpm build:cjs && pnpm build:es",
-    "clean": "rimraf dist",
-    "test": "jest"
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "@sp-api-sdk/common": "workspace:*",

@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28@2.5.0...@sp-api-sdk/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28@2.5.1) (2024-11-12)
+
+**Note:** Version bump only for package @sp-api-sdk/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28
+
 # [2.5.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28@2.4.2...@sp-api-sdk/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28@2.5.0) (2024-11-07)
 
 ### Features

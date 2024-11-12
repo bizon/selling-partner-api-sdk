@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/supply-sources-api-2020-07-01",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "Manage configurations and capabilities of seller supply sources.",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

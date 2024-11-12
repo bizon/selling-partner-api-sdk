@@ -13,7 +13,6 @@ export default async function setup(): Promise<Config.InitialOptions> {
     clearMocks: true,
     collectCoverage: true,
     collectCoverageFrom: ['src/**.ts'],
-    coveragePathIgnorePatterns: ['src/api-model'],
     coverageReporters: ['text-summary', 'cobertura'],
     reporters: ['default', 'github-actions'],
   }

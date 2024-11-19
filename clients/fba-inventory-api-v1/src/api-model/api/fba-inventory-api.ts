@@ -63,14 +63,13 @@ export const FbaInventoryApiAxiosParamCreator = function (configuration?: Config
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            if (xAmznIdempotencyToken != null) {
-                localVarHeaderParameter['x-amzn-idempotency-token'] = String(xAmznIdempotencyToken);
-            }
-
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
+            if (xAmznIdempotencyToken != null) {
+                localVarHeaderParameter['x-amzn-idempotency-token'] = String(xAmznIdempotencyToken);
+            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};

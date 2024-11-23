@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.4](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/aplus-content-api-2020-11-01@2.3.3...@sp-api-sdk/aplus-content-api-2020-11-01@2.3.4) (2024-11-23)
+
+**Note:** Version bump only for package @sp-api-sdk/aplus-content-api-2020-11-01
+
 ## [2.3.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/aplus-content-api-2020-11-01@2.3.2...@sp-api-sdk/aplus-content-api-2020-11-01@2.3.3) (2024-11-12)
 
 **Note:** Version bump only for package @sp-api-sdk/aplus-content-api-2020-11-01

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/listings-items-api-2021-08-01@2.7.1...@sp-api-sdk/listings-items-api-2021-08-01@2.8.0) (2024-11-23)
+
+### Features
+
+* **clients:** update models as of 2024-11-22 ([#1364](https://github.com/bizon/selling-partner-api-sdk/issues/1364)) ([48ad6ae](https://github.com/bizon/selling-partner-api-sdk/commit/48ad6aeafe5fc5312aea7b0ef4a1561af6d139b1))
+
 ## [2.7.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/listings-items-api-2021-08-01@2.7.0...@sp-api-sdk/listings-items-api-2021-08-01@2.7.1) (2024-11-12)
 
 **Note:** Version bump only for package @sp-api-sdk/listings-items-api-2021-08-01

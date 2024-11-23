@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/product-pricing-api-2022-05-01@2.7.0...@sp-api-sdk/product-pricing-api-2022-05-01@2.7.1) (2024-11-23)
+
+**Note:** Version bump only for package @sp-api-sdk/product-pricing-api-2022-05-01
+
 # [2.7.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/product-pricing-api-2022-05-01@2.6.2...@sp-api-sdk/product-pricing-api-2022-05-01@2.7.0) (2024-11-12)
 
 ### Features

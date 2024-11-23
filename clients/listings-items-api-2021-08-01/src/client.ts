@@ -31,13 +31,6 @@ export const clientRateLimits: RateLimit[] = [
     rate: 5,
     burst: 10,
   },
-  {
-    method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/listings/2021-08-01/items/[^/]*$'),
-    rate: 5,
-    burst: 5,
-  },
 ]
 
 export class ListingsItemsApiClient extends ListingsItemsApi {

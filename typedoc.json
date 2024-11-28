@@ -3,6 +3,5 @@
   "name": "Selling Partner API SDK for JavaScript",
   "out": "docs",
   "entryPointStrategy": "packages",
-  "entryPoints": ["packages/*", "clients/*"],
-  "plugin": ["typedoc-plugin-missing-exports"]
+  "entryPoints": ["packages/*", "clients/*"]
 }

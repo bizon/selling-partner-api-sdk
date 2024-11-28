@@ -2,7 +2,7 @@
 
 Amazon Selling Partner API authentication package
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/auth](https://www.npmjs.com/package/@sp-api-sdk/auth)
+[![npm version](https://badgen.net/npm/v/@sp-api-sdk/auth)](https://www.npmjs.com/package/@sp-api-sdk/auth)
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
 
 ## Installing

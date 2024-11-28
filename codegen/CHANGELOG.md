@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/generator@0.15.2...@sp-api-sdk/generator@0.16.0) (2024-11-28)
+
+### Features
+
+* **codegen:** remove vendor-direct-fulfillment-shipping-api-2021-12-28 patch ([#1380](https://github.com/bizon/selling-partner-api-sdk/issues/1380)) ([982735e](https://github.com/bizon/selling-partner-api-sdk/commit/982735ed96af04e8c44b994812e3c8d698dbc7ca))
+
 ## [0.15.2](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/generator@0.15.1...@sp-api-sdk/generator@0.15.2) (2024-11-23)
 
 **Note:** Version bump only for package @sp-api-sdk/generator

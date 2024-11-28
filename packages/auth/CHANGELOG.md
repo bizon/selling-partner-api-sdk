@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@2.1.4...@sp-api-sdk/auth@2.2.0) (2024-11-28)
+
+### Features
+
+* **auth:** expose accessTokenExpiration to subclasses ([#1377](https://github.com/bizon/selling-partner-api-sdk/issues/1377)) ([3e942f7](https://github.com/bizon/selling-partner-api-sdk/commit/3e942f71623777c0358f3ee90cc83b5e9d45a4ae)), closes [#1373](https://github.com/bizon/selling-partner-api-sdk/issues/1373)
+
 ## [2.1.4](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@2.1.3...@sp-api-sdk/auth@2.1.4) (2024-11-23)
 
 **Note:** Version bump only for package @sp-api-sdk/auth

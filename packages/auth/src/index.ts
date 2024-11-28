@@ -24,8 +24,8 @@ export class SellingPartnerApiAuth {
   private readonly refreshToken?: string
   private readonly scopes?: AuthorizationScope[]
 
-  private accessToken?: string
-  private accessTokenExpiration?: Date
+  #accessToken?: string
+  #accessTokenExpiration?: Date
 
   constructor(
     parameters: RequireExactlyOne<SellingPartnerAuthParameters, 'refreshToken' | 'scopes'>,
@@ -58,8 +58,8 @@ export class SellingPartnerApiAuth {
    */
   async getAccessToken() {
     if (
-      !this.accessToken ||
-      (this.accessTokenExpiration && Date.now() >= this.accessTokenExpiration.getTime())
+      !this.#accessToken ||
+      (this.#accessTokenExpiration && Date.now() >= this.#accessTokenExpiration.getTime())
     ) {
       const body: AccessTokenQuery = {
         client_id: this.clientId,
@@ -82,8 +82,8 @@ export class SellingPartnerApiAuth {
 
         expiration.setSeconds(expiration.getSeconds() + data.expires_in)
 
-        this.accessToken = data.access_token
-        this.accessTokenExpiration = expiration
+        this.#accessToken = data.access_token
+        this.#accessTokenExpiration = expiration
       } catch (error: unknown) {
         if (error instanceof AxiosError) {
           throw new SellingPartnerApiAuthError(error)
@@ -93,7 +93,14 @@ export class SellingPartnerApiAuth {
       }
     }
 
-    return this.accessToken
+    return this.#accessToken
+  }
+
+  /**
+   * Access token expiration date
+   */
+  protected get accessTokenExpiration() {
+    return this.#accessTokenExpiration
   }
 }
 

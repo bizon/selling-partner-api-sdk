@@ -28,10 +28,5 @@
     "op": "replace",
     "path": "/paths/~1vendor~1directFulfillment~1shipping~12021-12-28~1customerInvoices~1{purchaseOrderNumber}/get/tags/0",
     "value": "vendorShipping"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1vendor~1directFulfillment~1shipping~12021-12-28~1containerLabel/post/tags/0",
-    "value": "vendorShipping"
   }
 ]

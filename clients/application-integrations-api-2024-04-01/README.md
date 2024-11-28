@@ -9,7 +9,7 @@ With the AppIntegrations API v2024-04-01, you can send notifications to Amazon S
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
-Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_application_integrations_api_2024_04_01.html) for this API client.
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_application-integrations-api-2024-04-01.html) for this API client.
 
 ## Installing
 

@@ -11,7 +11,7 @@ For more information, see the [Listings Items API Use Case Guide](https://develo
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
-Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_listings_items_api_2021_08_01.html) for this API client.
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_listings-items-api-2021-08-01.html) for this API client.
 
 ## Installing
 

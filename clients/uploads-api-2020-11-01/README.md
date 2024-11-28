@@ -9,7 +9,7 @@ The Uploads API lets you upload files that you can programmatically access using
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
-Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_uploads_api_2020_11_01.html) for this API client.
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_uploads-api-2020-11-01.html) for this API client.
 
 ## Installing
 

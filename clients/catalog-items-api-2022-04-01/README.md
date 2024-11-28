@@ -11,7 +11,7 @@ For more information, refer to the [Catalog Items API Use Case Guide](https://de
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
-Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_catalog_items_api_2022_04_01.html) for this API client.
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_catalog-items-api-2022-04-01.html) for this API client.
 
 ## Installing
 

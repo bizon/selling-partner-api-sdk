@@ -9,7 +9,7 @@ With the Selling Partner API for Merchant Fulfillment, you can build application
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
-Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_merchant_fulfillment_api_v0.html) for this API client.
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_merchant-fulfillment-api-v0.html) for this API client.
 
 ## Installing
 

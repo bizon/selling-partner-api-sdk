@@ -9,7 +9,7 @@ The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides p
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
-Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_amazon_warehousing_and_distribution_2024_05_09.html) for this API client.
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_amazon-warehousing-and-distribution-2024-05-09.html) for this API client.
 
 ## Installing
 

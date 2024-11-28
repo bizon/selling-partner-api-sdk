@@ -210,10 +210,7 @@ async function generateClientVersion(modelFilePath: string) {
       packageName,
       className: clientClassName,
       description: document.info.description,
-      sdkClientDocUrl: `https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_${packageName.replaceAll(
-        /\W/g,
-        '_',
-      )}.html`,
+      sdkClientDocUrl: `https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_${packageName}.html`,
       grantlessScope: grantlessInfo?.scope,
     }),
   )

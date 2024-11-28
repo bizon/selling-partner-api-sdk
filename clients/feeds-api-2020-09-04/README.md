@@ -9,7 +9,7 @@ Effective **June 27, 2024**, the Selling Partner API for Feeds v2020-09-04 will 
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
-Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_feeds_api_2020_09_04.html) for this API client.
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_feeds-api-2020-09-04.html) for this API client.
 
 ## Installing
 

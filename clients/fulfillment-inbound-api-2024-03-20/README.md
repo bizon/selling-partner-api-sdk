@@ -9,7 +9,7 @@ The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
-Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_fulfillment_inbound_api_2024_03_20.html) for this API client.
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_fulfillment-inbound-api-2024-03-20.html) for this API client.
 
 ## Installing
 

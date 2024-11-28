@@ -11,7 +11,7 @@ For more information, refer to the [Product Pricing v2022-05-01 Use Case Guide](
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
-Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_product_pricing_api_2022_05_01.html) for this API client.
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_product-pricing-api-2022-05-01.html) for this API client.
 
 ## Installing
 

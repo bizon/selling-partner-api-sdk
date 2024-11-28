@@ -9,7 +9,7 @@ The Amazon Shipping API is designed to support outbound shipping use cases both 
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
-Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_shipping_api_v2.html) for this API client.
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_shipping-api-v2.html) for this API client.
 
 ## Installing
 

@@ -9,7 +9,7 @@ The Selling Partner API for Sales provides APIs related to sales performance.
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
-Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_sales_api_v1.html) for this API client.
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_sales-api-v1.html) for this API client.
 
 ## Installing
 

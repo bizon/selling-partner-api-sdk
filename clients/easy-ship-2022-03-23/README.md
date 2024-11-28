@@ -19,7 +19,7 @@ See the [Marketplace Support Table](https://developer-docs.amazon.com/sp-api/doc
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
-Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_easy_ship_2022_03_23.html) for this API client.
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_easy-ship-2022-03-23.html) for this API client.
 
 ## Installing
 

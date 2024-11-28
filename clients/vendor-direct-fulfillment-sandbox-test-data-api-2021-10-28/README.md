@@ -9,7 +9,7 @@ The Selling Partner API for Vendor Direct Fulfillment Sandbox Test Data provides
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
-Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_vendor_direct_fulfillment_sandbox_test_data_api_2021_10_28.html) for this API client.
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28.html) for this API client.
 
 ## Installing
 

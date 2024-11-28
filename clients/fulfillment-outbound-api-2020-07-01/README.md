@@ -9,7 +9,7 @@ The Selling Partner API for Fulfillment Outbound lets you create applications th
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
-Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_fulfillment_outbound_api_2020_07_01.html) for this API client.
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_fulfillment-outbound-api-2020-07-01.html) for this API client.
 
 ## Installing
 

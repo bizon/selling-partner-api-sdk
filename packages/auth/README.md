@@ -60,7 +60,7 @@ class StoredSellingPartnerApiAuth extends SellingPartnerApiAuth {
     }
 
     token = await super.getAccessToken();
-    await storeToken(token, this.accessTokenExpiration);
+    await storeToken(token, { ttl: this.accessTokenExpiration });
 
     return token;
   }

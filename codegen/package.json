@@ -7,7 +7,7 @@
     "check:ts": "tsc --noEmit"
   },
   "engines": {
-    "node": "20.x"
+    "node": "22.x"
   },
   "dependencies": {
     "@openapitools/openapi-generator-cli": "^2.15.3",

@@ -18,9 +18,9 @@
     "@jest/types": "^29.6.3",
     "@lerna-lite/cli": "^3.10.0",
     "@lerna-lite/publish": "^3.10.0",
-    "@tsconfig/node20": "^20.1.4",
+    "@tsconfig/node22": "^22.0.0",
     "@types/jest": "^29.5.14",
-    "@types/node": "^20.17.9",
+    "@types/node": "^22.10.1",
     "conventional-changelog-conventionalcommits": "^8.0.0",
     "eslint-config-xo-bizon": "^3.0.3",
     "jest": "^29.7.0",
@@ -62,5 +62,5 @@
   "prettier": {
     "printWidth": 100
   },
-  "packageManager": "pnpm@9.14.2+sha512.6e2baf77d06b9362294152c851c4f278ede37ab1eba3a55fda317a4a17b209f4dbb973fb250a77abc463a341fcb1f17f17cfa24091c4eb319cda0d9b84278387"
+  "packageManager": "pnpm@9.14.4+sha512.c8180b3fbe4e4bca02c94234717896b5529740a6cbadf19fa78254270403ea2f27d4e1d46a08a0f56c89b63dc8ebfd3ee53326da720273794e6200fcf0d184ab"
 }

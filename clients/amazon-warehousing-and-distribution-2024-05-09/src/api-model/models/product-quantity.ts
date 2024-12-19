@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { PrepDetails } from './prep-details';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ProductAttribute } from './product-attribute';
 
 /**
@@ -41,5 +44,17 @@ export interface ProductQuantity {
      * @memberof ProductQuantity
      */
     'sku': string;
+    /**
+     * The expiration date for the SKU. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     * @type {string}
+     * @memberof ProductQuantity
+     */
+    'expiration'?: string;
+    /**
+     * 
+     * @type {PrepDetails}
+     * @memberof ProductQuantity
+     */
+    'prepDetails'?: PrepDetails;
 }
 

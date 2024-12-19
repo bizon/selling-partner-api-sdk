@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Direct Fulfillment Shipping
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor\'s shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor\'s shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -60,7 +60,7 @@ export interface Container {
      */
     'manifestDate'?: string;
     /**
-     * The shipment method. This property is required when calling the submitShipmentConfirmations operation, and optional otherwise.
+     * The shipment method. This property is required when calling the `submitShipmentConfirmations` operation, and optional otherwise.
      * @type {string}
      * @memberof Container
      */

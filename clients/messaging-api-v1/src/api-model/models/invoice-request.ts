@@ -18,7 +18,7 @@
 import type { Attachment } from './attachment';
 
 /**
- * The request schema for the sendInvoice operation.
+ * The request schema for the `sendInvoice` operation.
  * @export
  * @interface InvoiceRequest
  */

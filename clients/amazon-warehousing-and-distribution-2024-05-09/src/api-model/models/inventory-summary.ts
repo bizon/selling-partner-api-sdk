@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { ExpirationDetails } from './expiration-details';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { InventoryDetails } from './inventory-details';
 
 /**
@@ -23,6 +26,12 @@ import type { InventoryDetails } from './inventory-details';
  * @interface InventorySummary
  */
 export interface InventorySummary {
+    /**
+     * The expiration details of the inventory. This object will only appear if the `details` parameter in the request is set to `SHOW`.
+     * @type {Array<ExpirationDetails>}
+     * @memberof InventorySummary
+     */
+    'expirationDetails'?: Array<ExpirationDetails>;
     /**
      * 
      * @type {InventoryDetails}

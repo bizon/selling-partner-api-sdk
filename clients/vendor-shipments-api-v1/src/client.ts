@@ -1,6 +1,6 @@
 import {type ClientConfiguration, createAxiosInstance, type RateLimit} from '@sp-api-sdk/common'
 
-import {Configuration, VendorShipmentsApi} from './api-model'
+import {Configuration, VendorShippingApi} from './api-model'
 
 export const clientRateLimits: RateLimit[] = [
   {
@@ -24,9 +24,16 @@ export const clientRateLimits: RateLimit[] = [
     rate: 10,
     burst: 10,
   },
+  {
+    method: 'get',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/vendor/shipping/v1/transportLabels$'),
+    rate: 10,
+    burst: 10,
+  },
 ]
 
-export class VendorShipmentsApiClient extends VendorShipmentsApi {
+export class VendorShipmentsApiClient extends VendorShippingApi {
   constructor(configuration: ClientConfiguration) {
     const {axios, endpoint} = createAxiosInstance(configuration, clientRateLimits)
 

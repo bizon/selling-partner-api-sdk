@@ -18,7 +18,7 @@
 import type { GetSchemaResponseLinks } from './get-schema-response-links';
 
 /**
- * 
+ * The `GET` request schema response.
  * @export
  * @interface GetSchemaResponse
  */

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Direct Fulfillment Shipping
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor\'s shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor\'s shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -27,7 +27,7 @@ import type { ShipmentSchedule } from './shipment-schedule';
  */
 export interface StatusUpdateDetails {
     /**
-     * This is required to be provided for every package and should match with the trackingNumber sent for the shipment confirmation.
+     * The shipment tracking number is required for every package and should match the `trackingNumber` sent for the shipment confirmation.
      * @type {string}
      * @memberof StatusUpdateDetails
      */
@@ -45,7 +45,7 @@ export interface StatusUpdateDetails {
      */
     'reasonCode': string;
     /**
-     * The date and time when the shipment status was updated. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+     * The date and time when the shipment status was updated. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      * @type {string}
      * @memberof StatusUpdateDetails
      */

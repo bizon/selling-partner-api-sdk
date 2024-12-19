@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Vendor Shipments v1
+ * Selling Partner API for Retail Procurement Shipments
  * The Selling Partner API for Retail Procurement Shipments provides programmatic access to retail shipping data for vendors.
  *
  * The version of the OpenAPI document: v1
@@ -15,13 +15,13 @@
 
 
 /**
- * Amount of units shipped for items sold by weight at a shipment level.
+ * The total weight of units that are sold by weight in a shipment.
  * @export
  * @interface TotalWeight
  */
 export interface TotalWeight {
     /**
-     * This field represents weight unit of measure of items that are ordered by cases and supporting priced by weight.
+     * The unit of measure for the weight of items that are ordered by cases and support pricing by weight.
      * @type {string}
      * @memberof TotalWeight
      */

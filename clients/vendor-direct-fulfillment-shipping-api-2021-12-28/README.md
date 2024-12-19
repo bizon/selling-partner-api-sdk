@@ -1,6 +1,6 @@
 # `vendor-direct-fulfillment-shipping-api-2021-12-28`
 
-The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
 
 [![npm version](https://badgen.net/npm/v/@sp-api-sdk/vendor-direct-fulfillment-shipping-api-2021-12-28)](https://www.npmjs.com/package/@sp-api-sdk/vendor-direct-fulfillment-shipping-api-2021-12-28)
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)

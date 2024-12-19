@@ -15,7 +15,7 @@
 
 
 /**
- * The response schema for the createDigitalAccessKey operation.
+ * The response schema for the `createDigitalAccessKey` operation.
  * @export
  * @interface CreateDigitalAccessKeyResponse
  */

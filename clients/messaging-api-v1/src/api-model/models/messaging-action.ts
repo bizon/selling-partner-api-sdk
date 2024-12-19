@@ -21,7 +21,7 @@
  */
 export interface MessagingAction {
     /**
-     * 
+     * The name of the template.
      * @type {string}
      * @memberof MessagingAction
      */

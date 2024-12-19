@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Direct Fulfillment Shipping
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor\'s shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor\'s shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -75,7 +75,7 @@ export interface Address {
      */
     'postalCode'?: string;
     /**
-     * The two digit country code in ISO 3166-1 alpha-2 format.
+     * The two-letter country code in [ISO 3166-1 alpha-2](https://www.iban.com/country-codes) format.
      * @type {string}
      * @memberof Address
      */

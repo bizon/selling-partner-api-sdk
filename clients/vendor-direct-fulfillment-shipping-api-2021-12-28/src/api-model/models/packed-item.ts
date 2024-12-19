@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Direct Fulfillment Shipping
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor\'s shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor\'s shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -18,19 +18,19 @@
 import type { ItemQuantity } from './item-quantity';
 
 /**
- * Represents an item that has been packed into a container for shipping.
+ * An item that has been packed into a container for shipping.
  * @export
  * @interface PackedItem
  */
 export interface PackedItem {
     /**
-     * Item Sequence Number for the item. This must be the same value as sent in the order for a given item.
+     * The sequence number of the item. The number must be the same as the order number of the item.
      * @type {number}
      * @memberof PackedItem
      */
     'itemSequenceNumber': number;
     /**
-     * Buyer\'s Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.
+     * The buyer\'s Amazon Standard Identification Number (ASIN) of an item. Either `buyerProductIdentifier` or `vendorProductIdentifier` is required.
      * @type {string}
      * @memberof PackedItem
      */
@@ -42,7 +42,7 @@ export interface PackedItem {
      */
     'pieceNumber'?: number;
     /**
-     * The vendor selected product identification of the item. Should be the same as was sent in the Purchase Order, like SKU Number.
+     * An item\'s product identifier, which the vendor selects. This identifier should be the same as the identifier, such as a SKU, in the purchase order.
      * @type {string}
      * @memberof PackedItem
      */

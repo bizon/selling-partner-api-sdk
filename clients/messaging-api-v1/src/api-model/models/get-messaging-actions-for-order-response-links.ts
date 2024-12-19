@@ -18,7 +18,7 @@
 import type { LinkObject } from './link-object';
 
 /**
- * 
+ * The links response that is associated with the specified `amazonOrderId`.
  * @export
  * @interface GetMessagingActionsForOrderResponseLinks
  */

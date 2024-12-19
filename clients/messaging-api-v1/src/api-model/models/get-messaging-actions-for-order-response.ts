@@ -21,7 +21,7 @@ import type { GetMessagingActionsForOrderResponseEmbedded } from './get-messagin
 import type { GetMessagingActionsForOrderResponseLinks } from './get-messaging-actions-for-order-response-links';
 
 /**
- * The response schema for the getMessagingActionsForOrder operation.
+ * The response schema for the `getMessagingActionsForOrder` operation.
  * @export
  * @interface GetMessagingActionsForOrderResponse
  */

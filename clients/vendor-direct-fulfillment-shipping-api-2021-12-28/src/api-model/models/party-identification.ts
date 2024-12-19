@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Direct Fulfillment Shipping
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor\'s shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor\'s shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -21,13 +21,13 @@ import type { Address } from './address';
 import type { TaxRegistrationDetails } from './tax-registration-details';
 
 /**
- * Name, address and tax details of a party.
+ * The name, address, and tax details of a party.
  * @export
  * @interface PartyIdentification
  */
 export interface PartyIdentification {
     /**
-     * Assigned Identification for the party.
+     * The identifier of the party.
      * @type {string}
      * @memberof PartyIdentification
      */
@@ -39,7 +39,7 @@ export interface PartyIdentification {
      */
     'address'?: Address;
     /**
-     * Tax registration details of the entity.
+     * The tax registration details of the party.
      * @type {Array<TaxRegistrationDetails>}
      * @memberof PartyIdentification
      */

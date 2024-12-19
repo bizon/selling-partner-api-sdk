@@ -1,6 +1,6 @@
 import {type ClientConfiguration, createAxiosInstance, type RateLimit} from '@sp-api-sdk/common'
 
-import {Configuration, ListingsItemsApi} from './api-model'
+import {Configuration, ListingsApi} from './api-model'
 
 export const clientRateLimits: RateLimit[] = [
   {
@@ -22,7 +22,7 @@ export const clientRateLimits: RateLimit[] = [
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/listings/2021-08-01/items/[^/]*$'),
     rate: 5,
-    burst: 10,
+    burst: 5,
   },
   {
     method: 'put',
@@ -31,9 +31,16 @@ export const clientRateLimits: RateLimit[] = [
     rate: 5,
     burst: 10,
   },
+  {
+    method: 'get',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/listings/2021-08-01/items/[^/]*$'),
+    rate: 5,
+    burst: 5,
+  },
 ]
 
-export class ListingsItemsApiClient extends ListingsItemsApi {
+export class ListingsItemsApiClient extends ListingsApi {
   constructor(configuration: ClientConfiguration) {
     const {axios, endpoint} = createAxiosInstance(configuration, clientRateLimits)
 

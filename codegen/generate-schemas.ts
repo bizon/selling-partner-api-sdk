@@ -2,10 +2,10 @@ import fs, {mkdir} from 'node:fs/promises'
 import os from 'node:os'
 import {basename, parse as parsePath} from 'node:path'
 
-import Bluebird from 'bluebird'
 import camelCase from 'camelcase'
 import {globby} from 'globby'
 import {kebabCase} from 'lodash-es'
+import pMap from 'p-map'
 
 import {logger} from './utils/logger.js'
 
@@ -93,7 +93,7 @@ export async function generateDirectorySchemas(schemaDirectory: string, director
   const outputDirectory = `packages/schemas/src/${directoryName}`
   await mkdir(outputDirectory, {recursive: true})
 
-  const schemas = await Bluebird.map(
+  const schemas = await pMap(
     schemaFilePaths,
     async (schemaFilePath) => generateSchema(schemaFilePath, outputDirectory),
     {

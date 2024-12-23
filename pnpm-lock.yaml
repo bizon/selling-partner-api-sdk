@@ -806,9 +806,6 @@ importers:
       '@openapitools/openapi-generator-cli':
         specifier: ^2.15.3
         version: 2.15.3(encoding@0.1.13)
-      bluebird:
-        specifier: ^3.7.2
-        version: 3.7.2
       camelcase:
         specifier: ^8.0.0
         version: 8.0.0
@@ -830,6 +827,9 @@ importers:
       mustache:
         specifier: ^4.2.0
         version: 4.2.0
+      p-map:
+        specifier: ^7.0.3
+        version: 7.0.3
       remark:
         specifier: ^15.0.1
         version: 15.0.1
@@ -840,9 +840,6 @@ importers:
         specifier: ^3.17.0
         version: 3.17.0
     devDependencies:
-      '@types/bluebird':
-        specifier: ^3.5.42
-        version: 3.5.42
       '@types/jsonfile':
         specifier: ^6.1.4
         version: 6.1.4
@@ -1754,9 +1751,6 @@ packages:
   '@types/babel__traverse@7.20.5':
     resolution: {integrity: sha512-WXCyOcRtH37HAUkpXhUduaxdm82b4GSlyTqajXviN4EfiuPgNYR109xMCKvpl6zPIpua0DGlMEDCq+g8EdoheQ==}
 
-  '@types/bluebird@3.5.42':
-    resolution: {integrity: sha512-Jhy+MWRlro6UjVi578V/4ZGNfeCOcNCp0YaFNIUGFKlImowqwb1O/22wDVk3FDGMLqxdpOV3qQHD5fPEH4hK6A==}
-
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
 
@@ -2175,9 +2169,6 @@ packages:
 
   bl@4.1.0:
     resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
-
-  bluebird@3.7.2:
-    resolution: {integrity: sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==}
 
   brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
@@ -6808,8 +6799,6 @@ snapshots:
     dependencies:
       '@babel/types': 7.24.5
 
-  '@types/bluebird@3.5.42': {}
-
   '@types/debug@4.1.12':
     dependencies:
       '@types/ms': 0.7.34
@@ -7317,8 +7306,6 @@ snapshots:
       buffer: 5.7.1
       inherits: 2.0.4
       readable-stream: 3.6.2
-
-  bluebird@3.7.2: {}
 
   brace-expansion@1.1.11:
     dependencies:

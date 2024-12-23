@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@openapitools/openapi-generator-cli": "^2.15.3",
-    "bluebird": "^3.7.2",
     "camelcase": "^8.0.0",
     "chalk": "^5.4.1",
     "fast-json-patch": "^3.1.1",
@@ -19,12 +18,12 @@
     "jsonfile": "^6.1.0",
     "lodash-es": "^4.17.21",
     "mustache": "^4.2.0",
+    "p-map": "^7.0.3",
     "remark": "^15.0.1",
     "strip-markdown": "^6.0.0",
     "winston": "^3.17.0"
   },
   "devDependencies": {
-    "@types/bluebird": "^3.5.42",
     "@types/jsonfile": "^6.1.4",
     "@types/lodash-es": "^4.17.12",
     "@types/mustache": "^4.2.5",

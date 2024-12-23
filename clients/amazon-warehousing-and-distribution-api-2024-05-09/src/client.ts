@@ -26,7 +26,7 @@ export const clientRateLimits: RateLimit[] = [
   },
 ]
 
-export class AmazonWarehousingAndDistributionClient extends AwdApi {
+export class AmazonWarehousingAndDistributionApiClient extends AwdApi {
   constructor(configuration: ClientConfiguration) {
     const {axios, endpoint} = createAxiosInstance(configuration, clientRateLimits)
 

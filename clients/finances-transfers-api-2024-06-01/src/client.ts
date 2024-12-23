@@ -19,7 +19,7 @@ export const clientRateLimits: RateLimit[] = [
   },
 ]
 
-export class FinancesApiClient extends DefaultApi {
+export class FinancesTransfersApiClient extends DefaultApi {
   constructor(configuration: ClientConfiguration) {
     const {axios, endpoint} = createAxiosInstance(configuration, clientRateLimits)
 

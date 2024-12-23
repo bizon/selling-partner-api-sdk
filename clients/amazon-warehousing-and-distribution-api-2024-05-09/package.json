@@ -1,8 +1,8 @@
 {
-  "name": "@sp-api-sdk/easy-ship-2022-03-23",
+  "name": "@sp-api-sdk/amazon-warehousing-and-distribution-api-2024-05-09",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
-  "description": "The Selling Partner API for Easy Ship helps you build applications that help sellers manage and ship Amazon Easy Ship orders. Your Easy Ship applications can: Get available time slots for packages to be scheduled for delivery. Schedule, reschedule, and cancel Easy Ship orders. Print labels, invoices, and warranties. See the Marketplace Support Table for the differences in Easy Ship operations by marketplace.",
-  "version": "2.3.6",
+  "description": "The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.",
+  "version": "1.5.6",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
@@ -34,12 +34,12 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/bizon/selling-partner-api-sdk.git",
-    "directory": "clients/easy-ship-2022-03-23"
+    "directory": "clients/amazon-warehousing-and-distribution-api-2024-05-09"
   },
   "bugs": {
     "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
   },
-  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/easy-ship-2022-03-23",
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/amazon-warehousing-and-distribution-api-2024-05-09",
   "keywords": [
     "amazon",
     "bizon",
@@ -48,6 +48,6 @@
     "selling partner api",
     "sp api",
     "sp sdk",
-    "easy ship"
+    "amazon warehousing and distribution api"
   ]
 }

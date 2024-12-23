@@ -1,27 +1,27 @@
-# `amazon-warehousing-and-distribution-2024-05-09`
+# `amazon-warehousing-and-distribution-api-2024-05-09`
 
 The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. 
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/amazon-warehousing-and-distribution-2024-05-09)](https://www.npmjs.com/package/@sp-api-sdk/amazon-warehousing-and-distribution-2024-05-09)
+[![npm version](https://badgen.net/npm/v/@sp-api-sdk/amazon-warehousing-and-distribution-api-2024-05-09)](https://www.npmjs.com/package/@sp-api-sdk/amazon-warehousing-and-distribution-api-2024-05-09)
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
-Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_amazon-warehousing-and-distribution-2024-05-09.html) for this API client.
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_amazon-warehousing-and-distribution-api-2024-05-09.html) for this API client.
 
 ## Installing
 
 ```sh
-npm install @sp-api-sdk/amazon-warehousing-and-distribution-2024-05-09
+npm install @sp-api-sdk/amazon-warehousing-and-distribution-api-2024-05-09
 ```
 
 ## Getting Started
 
 ```javascript
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
-import {AmazonWarehousingAndDistributionClient} from '@sp-api-sdk/amazon-warehousing-and-distribution-2024-05-09'
+import {AmazonWarehousingAndDistributionApiClient} from '@sp-api-sdk/amazon-warehousing-and-distribution-api-2024-05-09'
 
 const auth = new SellingPartnerApiAuth({
   clientId: process.env.LWA_CLIENT_ID,
@@ -29,7 +29,7 @@ const auth = new SellingPartnerApiAuth({
   refreshToken: 'Atzr|…',
 })
 
-const client = new AmazonWarehousingAndDistributionClient({
+const client = new AmazonWarehousingAndDistributionApiClient({
   auth,
   region: 'eu',
 })
@@ -40,7 +40,7 @@ const client = new AmazonWarehousingAndDistributionClient({
 In order to retry rate limited requests (HTTP 429), you can configure the API client as such:
 
 ```javascript
-const client = new AmazonWarehousingAndDistributionClient({
+const client = new AmazonWarehousingAndDistributionApiClient({
   auth,
   region: 'eu',
   rateLimiting: {
@@ -60,7 +60,7 @@ The rate limits used for each route are specified in the [API documentation](htt
 You can enable logging for both SP-API requests and responses by configuring the `logging.request` and `logging.response` properties.
 
 ```javascript
-const client = new AmazonWarehousingAndDistributionClient({
+const client = new AmazonWarehousingAndDistributionApiClient({
   auth,
   region: 'eu',
   logging: {

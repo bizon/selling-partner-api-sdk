@@ -40,7 +40,7 @@ export const clientRateLimits: RateLimit[] = [
   },
 ]
 
-export class EasyShipClient extends EasyShipApi {
+export class EasyShipApiClient extends EasyShipApi {
   constructor(configuration: ClientConfiguration) {
     const {axios, endpoint} = createAxiosInstance(configuration, clientRateLimits)
 

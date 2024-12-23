@@ -1,4 +1,4 @@
-# `easy-ship-2022-03-23`
+# `easy-ship-api-2022-03-23`
 
 The Selling Partner API for Easy Ship helps you build applications that help sellers manage and ship Amazon Easy Ship orders.
 
@@ -12,26 +12,26 @@ Your Easy Ship applications can:
 
 See the [Marketplace Support Table](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support-table) for the differences in Easy Ship operations by marketplace.
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/easy-ship-2022-03-23)](https://www.npmjs.com/package/@sp-api-sdk/easy-ship-2022-03-23)
+[![npm version](https://badgen.net/npm/v/@sp-api-sdk/easy-ship-api-2022-03-23)](https://www.npmjs.com/package/@sp-api-sdk/easy-ship-api-2022-03-23)
 [![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
 
-Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_easy-ship-2022-03-23.html) for this API client.
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_easy-ship-api-2022-03-23.html) for this API client.
 
 ## Installing
 
 ```sh
-npm install @sp-api-sdk/easy-ship-2022-03-23
+npm install @sp-api-sdk/easy-ship-api-2022-03-23
 ```
 
 ## Getting Started
 
 ```javascript
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
-import {EasyShipClient} from '@sp-api-sdk/easy-ship-2022-03-23'
+import {EasyShipApiClient} from '@sp-api-sdk/easy-ship-api-2022-03-23'
 
 const auth = new SellingPartnerApiAuth({
   clientId: process.env.LWA_CLIENT_ID,
@@ -39,7 +39,7 @@ const auth = new SellingPartnerApiAuth({
   refreshToken: 'Atzr|…',
 })
 
-const client = new EasyShipClient({
+const client = new EasyShipApiClient({
   auth,
   region: 'eu',
 })
@@ -50,7 +50,7 @@ const client = new EasyShipClient({
 In order to retry rate limited requests (HTTP 429), you can configure the API client as such:
 
 ```javascript
-const client = new EasyShipClient({
+const client = new EasyShipApiClient({
   auth,
   region: 'eu',
   rateLimiting: {
@@ -70,7 +70,7 @@ The rate limits used for each route are specified in the [API documentation](htt
 You can enable logging for both SP-API requests and responses by configuring the `logging.request` and `logging.response` properties.
 
 ```javascript
-const client = new EasyShipClient({
+const client = new EasyShipApiClient({
   auth,
   region: 'eu',
   logging: {

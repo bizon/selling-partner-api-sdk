@@ -1,5 +1,5 @@
 {
-  "name": "@sp-api-sdk/finances-api-2024-06-01",
+  "name": "@sp-api-sdk/finances-transfers-api-2024-06-01",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Transfers enables selling partners to retrieve payment methods and initiate payouts for their seller accounts. This API supports the following marketplaces: DE, FR, IT, ES, SE, NL, PL, and BE.",
   "version": "1.0.0",
@@ -34,12 +34,12 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/bizon/selling-partner-api-sdk.git",
-    "directory": "clients/finances-api-2024-06-01"
+    "directory": "clients/finances-transfers-api-2024-06-01"
   },
   "bugs": {
     "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
   },
-  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/finances-api-2024-06-01",
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/finances-transfers-api-2024-06-01",
   "keywords": [
     "amazon",
     "bizon",
@@ -48,6 +48,6 @@
     "selling partner api",
     "sp api",
     "sp sdk",
-    "finances api"
+    "finances transfers api"
   ]
 }

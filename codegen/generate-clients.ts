@@ -1,14 +1,14 @@
 import * as childProcess from 'node:child_process'
 import fs from 'node:fs/promises'
 import os from 'node:os'
-import {parse as parsePath} from 'node:path'
+import {basename, parse as parsePath} from 'node:path'
 import {promisify} from 'node:util'
 
 import Bluebird from 'bluebird'
 import camelCase from 'camelcase'
 import {globby} from 'globby'
 import jsonfile from 'jsonfile'
-import {reduce} from 'lodash-es'
+import {kebabCase, reduce} from 'lodash-es'
 import {type OpenAPIV3} from 'openapi-types'
 import {remark} from 'remark'
 import remarkStrip from 'strip-markdown'
@@ -86,8 +86,35 @@ async function generateClientVersion(modelFilePath: string) {
 
   const startedAt = Date.now()
 
-  const clientNameBase = modelDirectory.replace(/-model$/, '')
+  const apiCategory = modelDirectory.replace(/(-api)?-model$/, '')
+  let cleanModelName = kebabCase(basename(modelName, '.json')).replace(/v-(\d+)/, 'v$1')
+
+  if (cleanModelName.endsWith(`-${document.info.version}`)) {
+    cleanModelName = cleanModelName.slice(0, -document.info.version.length - 1)
+  }
+
+  // Manual overrides, as the model names are not consistent
+  if (
+    (apiCategory === 'amazon-warehousing-and-distribution' && cleanModelName === 'awd') ||
+    (apiCategory === 'application-integrations' && cleanModelName === 'app-integrations') ||
+    (apiCategory === 'application-management' && cleanModelName === 'application') ||
+    (apiCategory === 'fba-inbound-eligibility' && cleanModelName === 'fba-inbound') ||
+    (apiCategory === 'vendor-direct-fulfillment-sandbox-test-data' &&
+      cleanModelName === 'vendor-direct-fulfillment-sandbox-data') ||
+    (apiCategory === 'product-type-definitions' && cleanModelName === 'definitions-product-types')
+  ) {
+    cleanModelName = apiCategory
+  }
+
+  if (cleanModelName.startsWith(apiCategory)) {
+    cleanModelName = cleanModelName.slice(apiCategory.length)
+  }
+
+  const clientNameBase = [apiCategory, cleanModelName.replace(/(-api)?-model$/, ''), 'api']
+    .filter(Boolean)
+    .join('-')
   const packageName = `${clientNameBase}-${document.info.version}`
+
   const clientDirectoryPath = `clients/${packageName}`
 
   const clientClassName = camelCase(`${clientNameBase}Client`, {

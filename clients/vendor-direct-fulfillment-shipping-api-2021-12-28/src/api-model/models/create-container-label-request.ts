@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Direct Fulfillment Shipping
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor\'s shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor\'s shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -24,7 +24,7 @@ import type { Package } from './package';
 import type { PartyIdentification } from './party-identification';
 
 /**
- * The request body schema for the createContainerLabel operation.
+ * The request body schema for the `createContainerLabel` operation.
  * @export
  * @interface CreateContainerLabelRequest
  */
@@ -48,13 +48,13 @@ export interface CreateContainerLabelRequest {
      */
     'carrierId': CarrierId;
     /**
-     * unique identifier for the container provided by the vendor.
+     * The unique, vendor-provided identifier for the container.
      * @type {string}
      * @memberof CreateContainerLabelRequest
      */
     'vendorContainerId': string;
     /**
-     * Array of package object in order to associate shipments packages with given container.
+     * An array of package objects in a container.
      * @type {Array<Package>}
      * @memberof CreateContainerLabelRequest
      */

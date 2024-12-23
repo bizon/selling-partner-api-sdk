@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Direct Fulfillment Shipping
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor\'s shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor\'s shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -18,19 +18,19 @@
 import type { ContainerLabelFormat } from './container-label-format';
 
 /**
- * Details of the container label.
+ * The details of the container label.
  * @export
  * @interface ContainerLabel
  */
 export interface ContainerLabel {
     /**
-     * Container (pallet) tracking identifier from the shipping carrier.
+     * The container (pallet) tracking identifier from the shipping carrier.
      * @type {string}
      * @memberof ContainerLabel
      */
     'containerTrackingNumber'?: string;
     /**
-     * This field will contain the Base64encoded string of the container label content.
+     * The `Base64encoded` string of the container label content.
      * @type {string}
      * @memberof ContainerLabel
      */

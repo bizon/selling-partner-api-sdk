@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Direct Fulfillment Shipping
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor\'s shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor\'s shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -27,7 +27,7 @@ import type { PartyIdentification } from './party-identification';
  */
 export interface ShippingLabelRequest {
     /**
-     * Purchase order number of the order for which to create a shipping label.
+     * The purchase order number of the order for which to create a shipping label.
      * @type {string}
      * @memberof ShippingLabelRequest
      */

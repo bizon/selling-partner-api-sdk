@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Listings Items v2021-08-01
+ * Selling Partner API for Listings Items
  * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2021-08-01
@@ -25,6 +25,12 @@ import type { ItemOfferByMarketplace } from './item-offer-by-marketplace';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ItemProcurement } from './item-procurement';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { ItemProductTypeByMarketplace } from './item-product-type-by-marketplace';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { ItemRelationshipsByMarketplace } from './item-relationships-by-marketplace';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ItemSummaryByMarketplace } from './item-summary-by-marketplace';
@@ -77,5 +83,17 @@ export interface Item {
      * @memberof Item
      */
     'procurement'?: Array<ItemProcurement>;
+    /**
+     * Relationships for a listing item, by marketplace (for example, variations).
+     * @type {Array<ItemRelationshipsByMarketplace>}
+     * @memberof Item
+     */
+    'relationships'?: Array<ItemRelationshipsByMarketplace>;
+    /**
+     * Product types for a listing item, by marketplace.
+     * @type {Array<ItemProductTypeByMarketplace>}
+     * @memberof Item
+     */
+    'productTypes'?: Array<ItemProductTypeByMarketplace>;
 }
 

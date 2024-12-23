@@ -18,7 +18,7 @@
 import type { GetSchemaResponse } from './get-schema-response';
 
 /**
- * 
+ * The embedded response associated with the messaging action.
  * @export
  * @interface GetMessagingActionResponseEmbedded
  */

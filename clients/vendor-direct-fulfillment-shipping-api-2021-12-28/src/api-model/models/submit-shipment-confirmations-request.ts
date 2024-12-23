@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Direct Fulfillment Shipping
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor\'s shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor\'s shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -24,7 +24,7 @@ import type { ShipmentConfirmation } from './shipment-confirmation';
  */
 export interface SubmitShipmentConfirmationsRequest {
     /**
-     * Array of ShipmentConfirmation objects, each representing confirmation details for a specific shipment.
+     * Array of `ShipmentConfirmation` objects. Each `ShipmentConfirmation` object represents the confirmation details for a specific shipment.
      * @type {Array<ShipmentConfirmation>}
      * @memberof SubmitShipmentConfirmationsRequest
      */

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Direct Fulfillment Shipping
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor\'s shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor\'s shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -15,13 +15,13 @@
 
 
 /**
- * Object describing Package that is going to be associated with given container.
+ * The package that is associated with the container.
  * @export
  * @interface Package
  */
 export interface Package {
     /**
-     * tracking identifier present on label of shipment package. Tracking number can be fetched from fetched from shippingLabels API response. Alternatively bar code on the shipping label can be scanned by the scanner to get the tracking number.
+     * The tracking number on the label of shipment package, that you can fetch from the `shippingLabels` response. You can also scan the bar code on the shipping label to get the tracking number.
      * @type {string}
      * @memberof Package
      */

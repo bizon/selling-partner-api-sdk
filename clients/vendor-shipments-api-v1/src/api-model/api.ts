@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Vendor Shipments v1
+ * Selling Partner API for Retail Procurement Shipments
  * The Selling Partner API for Retail Procurement Shipments provides programmatic access to retail shipping data for vendors.
  *
  * The version of the OpenAPI document: v1
@@ -14,5 +14,5 @@
 
 
 
-export * from './api/vendor-shipments-api';
+export * from './api/vendor-shipping-api';
 

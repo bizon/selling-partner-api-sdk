@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Direct Fulfillment Shipping
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor\'s shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor\'s shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -18,13 +18,13 @@
 import type { ShipmentStatusUpdate } from './shipment-status-update';
 
 /**
- * The request schema for the submitShipmentStatusUpdates operation.
+ * The request schema for the `submitShipmentStatusUpdates` operation.
  * @export
  * @interface SubmitShipmentStatusUpdatesRequest
  */
 export interface SubmitShipmentStatusUpdatesRequest {
     /**
-     * Contains a list of one or more ShipmentStatusUpdate objects, each representing an update to the status of a specific shipment.
+     * Contains a list of one or more `ShipmentStatusUpdate` objects. Each `ShipmentStatusUpdate` object represents an update to the status of a specific shipment.
      * @type {Array<ShipmentStatusUpdate>}
      * @memberof SubmitShipmentStatusUpdatesRequest
      */

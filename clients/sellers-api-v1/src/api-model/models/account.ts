@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Selling Partner API for Sellers
- * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API\'s operations, data types, and schemas.
+ * The Selling Partner API for Sellers
+ * The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -18,7 +18,7 @@
 import type { Business } from './business';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MarketplaceLevelAttributes } from './marketplace-level-attributes';
+import type { MarketplaceParticipation } from './marketplace-participation';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { PrimaryContact } from './primary-contact';
@@ -30,17 +30,23 @@ import type { PrimaryContact } from './primary-contact';
  */
 export interface Account {
     /**
-     * A list of details of the marketplaces where the seller account is active.
-     * @type {Array<MarketplaceLevelAttributes>}
+     * List of marketplace participations.
+     * @type {Array<MarketplaceParticipation>}
      * @memberof Account
      */
-    'marketplaceLevelAttributes': Array<MarketplaceLevelAttributes>;
+    'marketplaceParticipationList': Array<MarketplaceParticipation>;
     /**
      * The type of business registered for the seller account.
      * @type {string}
      * @memberof Account
      */
     'businessType': AccountBusinessTypeEnum;
+    /**
+     * The selling plan details.
+     * @type {string}
+     * @memberof Account
+     */
+    'sellingPlan': AccountSellingPlanEnum;
     /**
      * 
      * @type {Business}
@@ -67,5 +73,11 @@ export const AccountBusinessTypeEnum = {
 } as const;
 
 export type AccountBusinessTypeEnum = typeof AccountBusinessTypeEnum[keyof typeof AccountBusinessTypeEnum];
+export const AccountSellingPlanEnum = {
+    Professional: 'PROFESSIONAL',
+    Individual: 'INDIVIDUAL'
+} as const;
+
+export type AccountSellingPlanEnum = typeof AccountSellingPlanEnum[keyof typeof AccountSellingPlanEnum];
 
 

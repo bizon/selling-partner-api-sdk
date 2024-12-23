@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Direct Fulfillment Shipping
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor\'s shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor\'s shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -21,13 +21,13 @@
  */
 export interface ShipmentDetails {
     /**
-     * This field indicates the date of the departure of the shipment from vendor\'s location. Vendors are requested to send ASNs within 30 minutes of departure from their warehouse/distribution center or at least 6 hours prior to the appointment time at the Amazon destination warehouse, whichever is sooner. Shipped date mentioned in the Shipment Confirmation should not be in the future.
+     * The date of the shipment\'s departure from vendor\'s location. Vendors send ASNs within 30 minutes of departure from their warehouse/distribution center or six hours prior to the appointment time at the Amazon destination warehouse. The shipped date mentioned in the shipment confirmation cannot be in the future.
      * @type {string}
      * @memberof ShipmentDetails
      */
     'shippedDate': string;
     /**
-     * Indicate the shipment status.
+     * The shipment status.
      * @type {string}
      * @memberof ShipmentDetails
      */
@@ -45,7 +45,7 @@ export interface ShipmentDetails {
      */
     'vendorOrderNumber'?: string;
     /**
-     * Date on which the shipment is expected to reach the buyer\'s warehouse. It needs to be an estimate based on the average transit time between the ship-from location and the destination. The exact appointment time will be provided by buyer and is potentially not known when creating the shipment confirmation.
+     * The date on which the shipment is expected to reach the buyer\'s warehouse. The date is estimated based on the average transit time between the ship-from location and the destination. Usually, the exact appointment time is unknown when creating the shipment confirmation and is later provided by the buyer.
      * @type {string}
      * @memberof ShipmentDetails
      */

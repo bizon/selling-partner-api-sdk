@@ -15,13 +15,13 @@
 
 
 /**
- * Represents a file uploaded to a destination that was created by the [createUploadDestinationForResource](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Selling Partner API for Uploads.
+ * Represents a file that was uploaded to a destination that was created by the Uploads API [`createUploadDestinationForResource`](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation.
  * @export
  * @interface Attachment
  */
 export interface Attachment {
     /**
-     * The identifier of the upload destination. Get this value by calling the [createUploadDestinationForResource](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Uploads API.
+     * The identifier for the upload destination. To retrieve this value, call the Uploads API [`createUploadDestinationForResource`](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation.
      * @type {string}
      * @memberof Attachment
      */

@@ -81,7 +81,7 @@ export const AwdApiAxiosParamCreator = function (configuration?: Configuration) 
          * @param {string} [updatedAfter] List the inbound shipments that were updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
          * @param {string} [updatedBefore] List the inbound shipments that were updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
          * @param {number} [maxResults] Maximum number of results to return.
-         * @param {string} [nextToken] Token to retrieve the next set of paginated results.
+         * @param {string} [nextToken] A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -146,7 +146,7 @@ export const AwdApiAxiosParamCreator = function (configuration?: Configuration) 
          * @param {string} [sku] Filter by seller or merchant SKU for the item.
          * @param {ListInventorySortOrderEnum} [sortOrder] Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order.
          * @param {ListInventoryDetailsEnum} [details] Set to &#x60;SHOW&#x60; to return summaries with additional inventory details. Defaults to &#x60;HIDE,&#x60; which returns only inventory summary totals.
-         * @param {string} [nextToken] Token to retrieve the next set of paginated results.
+         * @param {string} [nextToken] A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
          * @param {number} [maxResults] Maximum number of results to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -226,7 +226,7 @@ export const AwdApiFp = function(configuration?: Configuration) {
          * @param {string} [updatedAfter] List the inbound shipments that were updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
          * @param {string} [updatedBefore] List the inbound shipments that were updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
          * @param {number} [maxResults] Maximum number of results to return.
-         * @param {string} [nextToken] Token to retrieve the next set of paginated results.
+         * @param {string} [nextToken] A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -241,7 +241,7 @@ export const AwdApiFp = function(configuration?: Configuration) {
          * @param {string} [sku] Filter by seller or merchant SKU for the item.
          * @param {ListInventorySortOrderEnum} [sortOrder] Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order.
          * @param {ListInventoryDetailsEnum} [details] Set to &#x60;SHOW&#x60; to return summaries with additional inventory details. Defaults to &#x60;HIDE,&#x60; which returns only inventory summary totals.
-         * @param {string} [nextToken] Token to retrieve the next set of paginated results.
+         * @param {string} [nextToken] A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
          * @param {number} [maxResults] Maximum number of results to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -362,7 +362,7 @@ export interface AwdApiListInboundShipmentsRequest {
     readonly maxResults?: number
 
     /**
-     * Token to retrieve the next set of paginated results.
+     * A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
      * @type {string}
      * @memberof AwdApiListInboundShipments
      */
@@ -397,7 +397,7 @@ export interface AwdApiListInventoryRequest {
     readonly details?: ListInventoryDetailsEnum
 
     /**
-     * Token to retrieve the next set of paginated results.
+     * A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
      * @type {string}
      * @memberof AwdApiListInventory
      */

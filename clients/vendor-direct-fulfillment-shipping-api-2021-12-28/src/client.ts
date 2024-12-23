@@ -73,6 +73,13 @@ export const clientRateLimits: RateLimit[] = [
     rate: 10,
     burst: 10,
   },
+  {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/2021-12-28/containerLabel$'),
+    rate: 10,
+    burst: 10,
+  },
 ]
 
 export class VendorDirectFulfillmentShippingApiClient extends VendorShippingApi {

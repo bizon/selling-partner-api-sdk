@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Vendor Shipments v1
+ * Selling Partner API for Retail Procurement Shipments
  * The Selling Partner API for Retail Procurement Shipments provides programmatic access to retail shipping data for vendors.
  *
  * The version of the OpenAPI document: v1
@@ -24,16 +24,18 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { GetShipmentDetailsResponse } from '../models';
 // @ts-ignore
+import type { GetShipmentLabels } from '../models';
+// @ts-ignore
 import type { SubmitShipmentConfirmationsRequest } from '../models';
 // @ts-ignore
 import type { SubmitShipmentConfirmationsResponse } from '../models';
 // @ts-ignore
 import type { SubmitShipments } from '../models';
 /**
- * VendorShipmentsApi - axios parameter creator
+ * VendorShippingApi - axios parameter creator
  * @export
  */
-export const VendorShipmentsApiAxiosParamCreator = function (configuration?: Configuration) {
+export const VendorShippingApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
          * Returns the Details about Shipment, Carrier Details,  status of the shipment, container details and other details related to shipment based on the filter parameters value that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -218,6 +220,79 @@ export const VendorShipmentsApiAxiosParamCreator = function (configuration?: Con
             };
         },
         /**
+         * Returns small parcel shipment labels based on the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {number} [limit] The limit to the number of records returned. Default value is 50 records.
+         * @param {GetShipmentLabelsSortOrderEnum} [sortOrder] Sort the list by shipment label creation date in ascending or descending order.
+         * @param {string} [nextToken] A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
+         * @param {string} [labelCreatedAfter] Shipment labels created after this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
+         * @param {string} [labelCreatedBefore] Shipment labels created before this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
+         * @param {string} [buyerReferenceNumber] Get Shipment labels by passing buyer reference number.
+         * @param {string} [vendorShipmentIdentifier] Get Shipment labels by passing vendor shipment identifier.
+         * @param {string} [sellerWarehouseCode] Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getShipmentLabels: async (limit?: number, sortOrder?: GetShipmentLabelsSortOrderEnum, nextToken?: string, labelCreatedAfter?: string, labelCreatedBefore?: string, buyerReferenceNumber?: string, vendorShipmentIdentifier?: string, sellerWarehouseCode?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/vendor/shipping/v1/transportLabels`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (sortOrder !== undefined) {
+                localVarQueryParameter['sortOrder'] = sortOrder;
+            }
+
+            if (nextToken !== undefined) {
+                localVarQueryParameter['nextToken'] = nextToken;
+            }
+
+            if (labelCreatedAfter !== undefined) {
+                localVarQueryParameter['labelCreatedAfter'] = (labelCreatedAfter as any instanceof Date) ?
+                    (labelCreatedAfter as any).toISOString() :
+                    labelCreatedAfter;
+            }
+
+            if (labelCreatedBefore !== undefined) {
+                localVarQueryParameter['labelCreatedBefore'] = (labelCreatedBefore as any instanceof Date) ?
+                    (labelCreatedBefore as any).toISOString() :
+                    labelCreatedBefore;
+            }
+
+            if (buyerReferenceNumber !== undefined) {
+                localVarQueryParameter['buyerReferenceNumber'] = buyerReferenceNumber;
+            }
+
+            if (vendorShipmentIdentifier !== undefined) {
+                localVarQueryParameter['vendorShipmentIdentifier'] = vendorShipmentIdentifier;
+            }
+
+            if (sellerWarehouseCode !== undefined) {
+                localVarQueryParameter['sellerWarehouseCode'] = sellerWarehouseCode;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Submits one or more shipment confirmations for vendor orders.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @summary SubmitShipmentConfirmations
          * @param {SubmitShipmentConfirmationsRequest} body A request to submit shipment confirmation.
@@ -293,11 +368,11 @@ export const VendorShipmentsApiAxiosParamCreator = function (configuration?: Con
 };
 
 /**
- * VendorShipmentsApi - functional programming interface
+ * VendorShippingApi - functional programming interface
  * @export
  */
-export const VendorShipmentsApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = VendorShipmentsApiAxiosParamCreator(configuration)
+export const VendorShippingApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = VendorShippingApiAxiosParamCreator(configuration)
     return {
         /**
          * Returns the Details about Shipment, Carrier Details,  status of the shipment, container details and other details related to shipment based on the filter parameters value that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -332,7 +407,26 @@ export const VendorShipmentsApiFp = function(configuration?: Configuration) {
         async getShipmentDetails(limit?: number, sortOrder?: GetShipmentDetailsSortOrderEnum, nextToken?: string, createdAfter?: string, createdBefore?: string, shipmentConfirmedBefore?: string, shipmentConfirmedAfter?: string, packageLabelCreatedBefore?: string, packageLabelCreatedAfter?: string, shippedBefore?: string, shippedAfter?: string, estimatedDeliveryBefore?: string, estimatedDeliveryAfter?: string, shipmentDeliveryBefore?: string, shipmentDeliveryAfter?: string, requestedPickUpBefore?: string, requestedPickUpAfter?: string, scheduledPickUpBefore?: string, scheduledPickUpAfter?: string, currentShipmentStatus?: string, vendorShipmentIdentifier?: string, buyerReferenceNumber?: string, buyerWarehouseCode?: string, sellerWarehouseCode?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentDetailsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShipmentDetails(limit, sortOrder, nextToken, createdAfter, createdBefore, shipmentConfirmedBefore, shipmentConfirmedAfter, packageLabelCreatedBefore, packageLabelCreatedAfter, shippedBefore, shippedAfter, estimatedDeliveryBefore, estimatedDeliveryAfter, shipmentDeliveryBefore, shipmentDeliveryAfter, requestedPickUpBefore, requestedPickUpAfter, scheduledPickUpBefore, scheduledPickUpAfter, currentShipmentStatus, vendorShipmentIdentifier, buyerReferenceNumber, buyerWarehouseCode, sellerWarehouseCode, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['VendorShipmentsApi.getShipmentDetails']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['VendorShippingApi.getShipmentDetails']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Returns small parcel shipment labels based on the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {number} [limit] The limit to the number of records returned. Default value is 50 records.
+         * @param {GetShipmentLabelsSortOrderEnum} [sortOrder] Sort the list by shipment label creation date in ascending or descending order.
+         * @param {string} [nextToken] A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
+         * @param {string} [labelCreatedAfter] Shipment labels created after this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
+         * @param {string} [labelCreatedBefore] Shipment labels created before this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
+         * @param {string} [buyerReferenceNumber] Get Shipment labels by passing buyer reference number.
+         * @param {string} [vendorShipmentIdentifier] Get Shipment labels by passing vendor shipment identifier.
+         * @param {string} [sellerWarehouseCode] Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getShipmentLabels(limit?: number, sortOrder?: GetShipmentLabelsSortOrderEnum, nextToken?: string, labelCreatedAfter?: string, labelCreatedBefore?: string, buyerReferenceNumber?: string, vendorShipmentIdentifier?: string, sellerWarehouseCode?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentLabels>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getShipmentLabels(limit, sortOrder, nextToken, labelCreatedAfter, labelCreatedBefore, buyerReferenceNumber, vendorShipmentIdentifier, sellerWarehouseCode, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['VendorShippingApi.getShipmentLabels']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -345,7 +439,7 @@ export const VendorShipmentsApiFp = function(configuration?: Configuration) {
         async submitShipmentConfirmations(body: SubmitShipmentConfirmationsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitShipmentConfirmationsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.submitShipmentConfirmations(body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['VendorShipmentsApi.submitShipmentConfirmations']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['VendorShippingApi.submitShipmentConfirmations']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -358,296 +452,379 @@ export const VendorShipmentsApiFp = function(configuration?: Configuration) {
         async submitShipments(body: SubmitShipments, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitShipmentConfirmationsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.submitShipments(body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['VendorShipmentsApi.submitShipments']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['VendorShippingApi.submitShipments']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
 
 /**
- * VendorShipmentsApi - factory interface
+ * VendorShippingApi - factory interface
  * @export
  */
-export const VendorShipmentsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = VendorShipmentsApiFp(configuration)
+export const VendorShippingApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = VendorShippingApiFp(configuration)
     return {
         /**
          * Returns the Details about Shipment, Carrier Details,  status of the shipment, container details and other details related to shipment based on the filter parameters value that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @summary GetShipmentDetails
-         * @param {VendorShipmentsApiGetShipmentDetailsRequest} requestParameters Request parameters.
+         * @param {VendorShippingApiGetShipmentDetailsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipmentDetails(requestParameters: VendorShipmentsApiGetShipmentDetailsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<GetShipmentDetailsResponse> {
+        getShipmentDetails(requestParameters: VendorShippingApiGetShipmentDetailsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<GetShipmentDetailsResponse> {
             return localVarFp.getShipmentDetails(requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipmentConfirmedBefore, requestParameters.shipmentConfirmedAfter, requestParameters.packageLabelCreatedBefore, requestParameters.packageLabelCreatedAfter, requestParameters.shippedBefore, requestParameters.shippedAfter, requestParameters.estimatedDeliveryBefore, requestParameters.estimatedDeliveryAfter, requestParameters.shipmentDeliveryBefore, requestParameters.shipmentDeliveryAfter, requestParameters.requestedPickUpBefore, requestParameters.requestedPickUpAfter, requestParameters.scheduledPickUpBefore, requestParameters.scheduledPickUpAfter, requestParameters.currentShipmentStatus, requestParameters.vendorShipmentIdentifier, requestParameters.buyerReferenceNumber, requestParameters.buyerWarehouseCode, requestParameters.sellerWarehouseCode, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Returns small parcel shipment labels based on the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {VendorShippingApiGetShipmentLabelsRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getShipmentLabels(requestParameters: VendorShippingApiGetShipmentLabelsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<GetShipmentLabels> {
+            return localVarFp.getShipmentLabels(requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.labelCreatedAfter, requestParameters.labelCreatedBefore, requestParameters.buyerReferenceNumber, requestParameters.vendorShipmentIdentifier, requestParameters.sellerWarehouseCode, options).then((request) => request(axios, basePath));
         },
         /**
          * Submits one or more shipment confirmations for vendor orders.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @summary SubmitShipmentConfirmations
-         * @param {VendorShipmentsApiSubmitShipmentConfirmationsRequest} requestParameters Request parameters.
+         * @param {VendorShippingApiSubmitShipmentConfirmationsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitShipmentConfirmations(requestParameters: VendorShipmentsApiSubmitShipmentConfirmationsRequest, options?: RawAxiosRequestConfig): AxiosPromise<SubmitShipmentConfirmationsResponse> {
+        submitShipmentConfirmations(requestParameters: VendorShippingApiSubmitShipmentConfirmationsRequest, options?: RawAxiosRequestConfig): AxiosPromise<SubmitShipmentConfirmationsResponse> {
             return localVarFp.submitShipmentConfirmations(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Submits one or more shipment request for vendor Orders.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @summary SubmitShipments
-         * @param {VendorShipmentsApiSubmitShipmentsRequest} requestParameters Request parameters.
+         * @param {VendorShippingApiSubmitShipmentsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitShipments(requestParameters: VendorShipmentsApiSubmitShipmentsRequest, options?: RawAxiosRequestConfig): AxiosPromise<SubmitShipmentConfirmationsResponse> {
+        submitShipments(requestParameters: VendorShippingApiSubmitShipmentsRequest, options?: RawAxiosRequestConfig): AxiosPromise<SubmitShipmentConfirmationsResponse> {
             return localVarFp.submitShipments(requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
 };
 
 /**
- * Request parameters for getShipmentDetails operation in VendorShipmentsApi.
+ * Request parameters for getShipmentDetails operation in VendorShippingApi.
  * @export
- * @interface VendorShipmentsApiGetShipmentDetailsRequest
+ * @interface VendorShippingApiGetShipmentDetailsRequest
  */
-export interface VendorShipmentsApiGetShipmentDetailsRequest {
+export interface VendorShippingApiGetShipmentDetailsRequest {
     /**
      * The limit to the number of records returned. Default value is 50 records.
      * @type {number}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly limit?: number
 
     /**
      * Sort in ascending or descending order by purchase order creation date.
      * @type {'ASC' | 'DESC'}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly sortOrder?: GetShipmentDetailsSortOrderEnum
 
     /**
      * Used for pagination when there are more shipments than the specified result size limit.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly nextToken?: string
 
     /**
      * Get Shipment Details that became available after this timestamp will be included in the result. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly createdAfter?: string
 
     /**
      * Get Shipment Details that became available before this timestamp will be included in the result. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly createdBefore?: string
 
     /**
      * Get Shipment Details by passing Shipment confirmed create Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly shipmentConfirmedBefore?: string
 
     /**
      * Get Shipment Details by passing Shipment confirmed create Date After. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly shipmentConfirmedAfter?: string
 
     /**
      * Get Shipment Details by passing Package label create Date by buyer. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly packageLabelCreatedBefore?: string
 
     /**
      * Get Shipment Details by passing Package label create Date After by buyer. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly packageLabelCreatedAfter?: string
 
     /**
      * Get Shipment Details by passing Shipped Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly shippedBefore?: string
 
     /**
      * Get Shipment Details by passing Shipped Date After. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly shippedAfter?: string
 
     /**
      * Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly estimatedDeliveryBefore?: string
 
     /**
      * Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly estimatedDeliveryAfter?: string
 
     /**
      * Get Shipment Details by passing Shipment Delivery Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly shipmentDeliveryBefore?: string
 
     /**
      * Get Shipment Details by passing Shipment Delivery Date After. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly shipmentDeliveryAfter?: string
 
     /**
      * Get Shipment Details by passing Before Requested pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly requestedPickUpBefore?: string
 
     /**
      * Get Shipment Details by passing After Requested pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly requestedPickUpAfter?: string
 
     /**
      * Get Shipment Details by passing Before scheduled pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly scheduledPickUpBefore?: string
 
     /**
      * Get Shipment Details by passing After Scheduled pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly scheduledPickUpAfter?: string
 
     /**
      * Get Shipment Details by passing Current shipment status.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly currentShipmentStatus?: string
 
     /**
      * Get Shipment Details by passing Vendor Shipment ID
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly vendorShipmentIdentifier?: string
 
     /**
      * Get Shipment Details by passing buyer Reference ID
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly buyerReferenceNumber?: string
 
     /**
      * Get Shipping Details based on buyer warehouse code. This value should be same as \&#39;shipToParty.partyId\&#39; in the Shipment.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly buyerWarehouseCode?: string
 
     /**
      * Get Shipping Details based on vendor warehouse code. This value should be same as \&#39;sellingParty.partyId\&#39; in the Shipment.
      * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
+     * @memberof VendorShippingApiGetShipmentDetails
      */
     readonly sellerWarehouseCode?: string
 }
 
 /**
- * Request parameters for submitShipmentConfirmations operation in VendorShipmentsApi.
+ * Request parameters for getShipmentLabels operation in VendorShippingApi.
  * @export
- * @interface VendorShipmentsApiSubmitShipmentConfirmationsRequest
+ * @interface VendorShippingApiGetShipmentLabelsRequest
  */
-export interface VendorShipmentsApiSubmitShipmentConfirmationsRequest {
+export interface VendorShippingApiGetShipmentLabelsRequest {
+    /**
+     * The limit to the number of records returned. Default value is 50 records.
+     * @type {number}
+     * @memberof VendorShippingApiGetShipmentLabels
+     */
+    readonly limit?: number
+
+    /**
+     * Sort the list by shipment label creation date in ascending or descending order.
+     * @type {'ASC' | 'DESC'}
+     * @memberof VendorShippingApiGetShipmentLabels
+     */
+    readonly sortOrder?: GetShipmentLabelsSortOrderEnum
+
+    /**
+     * A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
+     * @type {string}
+     * @memberof VendorShippingApiGetShipmentLabels
+     */
+    readonly nextToken?: string
+
+    /**
+     * Shipment labels created after this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
+     * @type {string}
+     * @memberof VendorShippingApiGetShipmentLabels
+     */
+    readonly labelCreatedAfter?: string
+
+    /**
+     * Shipment labels created before this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
+     * @type {string}
+     * @memberof VendorShippingApiGetShipmentLabels
+     */
+    readonly labelCreatedBefore?: string
+
+    /**
+     * Get Shipment labels by passing buyer reference number.
+     * @type {string}
+     * @memberof VendorShippingApiGetShipmentLabels
+     */
+    readonly buyerReferenceNumber?: string
+
+    /**
+     * Get Shipment labels by passing vendor shipment identifier.
+     * @type {string}
+     * @memberof VendorShippingApiGetShipmentLabels
+     */
+    readonly vendorShipmentIdentifier?: string
+
+    /**
+     * Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment.
+     * @type {string}
+     * @memberof VendorShippingApiGetShipmentLabels
+     */
+    readonly sellerWarehouseCode?: string
+}
+
+/**
+ * Request parameters for submitShipmentConfirmations operation in VendorShippingApi.
+ * @export
+ * @interface VendorShippingApiSubmitShipmentConfirmationsRequest
+ */
+export interface VendorShippingApiSubmitShipmentConfirmationsRequest {
     /**
      * A request to submit shipment confirmation.
      * @type {SubmitShipmentConfirmationsRequest}
-     * @memberof VendorShipmentsApiSubmitShipmentConfirmations
+     * @memberof VendorShippingApiSubmitShipmentConfirmations
      */
     readonly body: SubmitShipmentConfirmationsRequest
 }
 
 /**
- * Request parameters for submitShipments operation in VendorShipmentsApi.
+ * Request parameters for submitShipments operation in VendorShippingApi.
  * @export
- * @interface VendorShipmentsApiSubmitShipmentsRequest
+ * @interface VendorShippingApiSubmitShipmentsRequest
  */
-export interface VendorShipmentsApiSubmitShipmentsRequest {
+export interface VendorShippingApiSubmitShipmentsRequest {
     /**
      * A request to submit shipment request.
      * @type {SubmitShipments}
-     * @memberof VendorShipmentsApiSubmitShipments
+     * @memberof VendorShippingApiSubmitShipments
      */
     readonly body: SubmitShipments
 }
 
 /**
- * VendorShipmentsApi - object-oriented interface
+ * VendorShippingApi - object-oriented interface
  * @export
- * @class VendorShipmentsApi
+ * @class VendorShippingApi
  * @extends {BaseAPI}
  */
-export class VendorShipmentsApi extends BaseAPI {
+export class VendorShippingApi extends BaseAPI {
     /**
      * Returns the Details about Shipment, Carrier Details,  status of the shipment, container details and other details related to shipment based on the filter parameters value that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @summary GetShipmentDetails
-     * @param {VendorShipmentsApiGetShipmentDetailsRequest} requestParameters Request parameters.
+     * @param {VendorShippingApiGetShipmentDetailsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorShipmentsApi
+     * @memberof VendorShippingApi
      */
-    public getShipmentDetails(requestParameters: VendorShipmentsApiGetShipmentDetailsRequest = {}, options?: RawAxiosRequestConfig) {
-        return VendorShipmentsApiFp(this.configuration).getShipmentDetails(requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipmentConfirmedBefore, requestParameters.shipmentConfirmedAfter, requestParameters.packageLabelCreatedBefore, requestParameters.packageLabelCreatedAfter, requestParameters.shippedBefore, requestParameters.shippedAfter, requestParameters.estimatedDeliveryBefore, requestParameters.estimatedDeliveryAfter, requestParameters.shipmentDeliveryBefore, requestParameters.shipmentDeliveryAfter, requestParameters.requestedPickUpBefore, requestParameters.requestedPickUpAfter, requestParameters.scheduledPickUpBefore, requestParameters.scheduledPickUpAfter, requestParameters.currentShipmentStatus, requestParameters.vendorShipmentIdentifier, requestParameters.buyerReferenceNumber, requestParameters.buyerWarehouseCode, requestParameters.sellerWarehouseCode, options).then((request) => request(this.axios, this.basePath));
+    public getShipmentDetails(requestParameters: VendorShippingApiGetShipmentDetailsRequest = {}, options?: RawAxiosRequestConfig) {
+        return VendorShippingApiFp(this.configuration).getShipmentDetails(requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipmentConfirmedBefore, requestParameters.shipmentConfirmedAfter, requestParameters.packageLabelCreatedBefore, requestParameters.packageLabelCreatedAfter, requestParameters.shippedBefore, requestParameters.shippedAfter, requestParameters.estimatedDeliveryBefore, requestParameters.estimatedDeliveryAfter, requestParameters.shipmentDeliveryBefore, requestParameters.shipmentDeliveryAfter, requestParameters.requestedPickUpBefore, requestParameters.requestedPickUpAfter, requestParameters.scheduledPickUpBefore, requestParameters.scheduledPickUpAfter, requestParameters.currentShipmentStatus, requestParameters.vendorShipmentIdentifier, requestParameters.buyerReferenceNumber, requestParameters.buyerWarehouseCode, requestParameters.sellerWarehouseCode, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Returns small parcel shipment labels based on the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {VendorShippingApiGetShipmentLabelsRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof VendorShippingApi
+     */
+    public getShipmentLabels(requestParameters: VendorShippingApiGetShipmentLabelsRequest = {}, options?: RawAxiosRequestConfig) {
+        return VendorShippingApiFp(this.configuration).getShipmentLabels(requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.labelCreatedAfter, requestParameters.labelCreatedBefore, requestParameters.buyerReferenceNumber, requestParameters.vendorShipmentIdentifier, requestParameters.sellerWarehouseCode, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Submits one or more shipment confirmations for vendor orders.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @summary SubmitShipmentConfirmations
-     * @param {VendorShipmentsApiSubmitShipmentConfirmationsRequest} requestParameters Request parameters.
+     * @param {VendorShippingApiSubmitShipmentConfirmationsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorShipmentsApi
+     * @memberof VendorShippingApi
      */
-    public submitShipmentConfirmations(requestParameters: VendorShipmentsApiSubmitShipmentConfirmationsRequest, options?: RawAxiosRequestConfig) {
-        return VendorShipmentsApiFp(this.configuration).submitShipmentConfirmations(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    public submitShipmentConfirmations(requestParameters: VendorShippingApiSubmitShipmentConfirmationsRequest, options?: RawAxiosRequestConfig) {
+        return VendorShippingApiFp(this.configuration).submitShipmentConfirmations(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Submits one or more shipment request for vendor Orders.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @summary SubmitShipments
-     * @param {VendorShipmentsApiSubmitShipmentsRequest} requestParameters Request parameters.
+     * @param {VendorShippingApiSubmitShipmentsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorShipmentsApi
+     * @memberof VendorShippingApi
      */
-    public submitShipments(requestParameters: VendorShipmentsApiSubmitShipmentsRequest, options?: RawAxiosRequestConfig) {
-        return VendorShipmentsApiFp(this.configuration).submitShipments(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    public submitShipments(requestParameters: VendorShippingApiSubmitShipmentsRequest, options?: RawAxiosRequestConfig) {
+        return VendorShippingApiFp(this.configuration).submitShipments(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -659,3 +836,11 @@ export const GetShipmentDetailsSortOrderEnum = {
     Desc: 'DESC'
 } as const;
 export type GetShipmentDetailsSortOrderEnum = typeof GetShipmentDetailsSortOrderEnum[keyof typeof GetShipmentDetailsSortOrderEnum];
+/**
+ * @export
+ */
+export const GetShipmentLabelsSortOrderEnum = {
+    Asc: 'ASC',
+    Desc: 'DESC'
+} as const;
+export type GetShipmentLabelsSortOrderEnum = typeof GetShipmentLabelsSortOrderEnum[keyof typeof GetShipmentLabelsSortOrderEnum];

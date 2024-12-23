@@ -105,6 +105,12 @@ export interface InboundShipment {
      */
     'shipmentSkuQuantities'?: Array<SkuQuantity>;
     /**
+     * Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east]
+     * @type {string}
+     * @memberof InboundShipment
+     */
+    'destinationRegion'?: string;
+    /**
      * 
      * @type {InboundShipmentStatus}
      * @memberof InboundShipment

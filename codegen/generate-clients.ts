@@ -4,12 +4,12 @@ import os from 'node:os'
 import {basename, parse as parsePath} from 'node:path'
 import {promisify} from 'node:util'
 
-import Bluebird from 'bluebird'
 import camelCase from 'camelcase'
 import {globby} from 'globby'
 import jsonfile from 'jsonfile'
 import {kebabCase, reduce} from 'lodash-es'
 import {type OpenAPIV3} from 'openapi-types'
+import pMap from 'p-map'
 import {remark} from 'remark'
 import remarkStrip from 'strip-markdown'
 import {type PackageJson} from 'type-fest'
@@ -270,11 +270,7 @@ export async function generateClients() {
     cwd: 'selling-partner-api-models/models',
   })
 
-  await Bluebird.map(
-    modelFilePaths,
-    async (modelFilePath) => generateClientVersion(modelFilePath),
-    {
-      concurrency: os.cpus().length,
-    },
-  )
+  await pMap(modelFilePaths, async (modelFilePath) => generateClientVersion(modelFilePath), {
+    concurrency: os.cpus().length,
+  })
 }

@@ -512,15 +512,13 @@ export const FbaInboundApiAxiosParamCreator = function (configuration?: Configur
         /**
          * Returns a list of items in a specified inbound shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} shipmentId A shipment identifier used for selecting items in a specific inbound shipment.
-         * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored.
+         * @param {string} [marketplaceId] Deprecated. Do not use.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipmentItemsByShipmentId: async (shipmentId: string, marketplaceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getShipmentItemsByShipmentId: async (shipmentId: string, marketplaceId?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getShipmentItemsByShipmentId', 'shipmentId', shipmentId)
-            // verify required parameter 'marketplaceId' is not null or undefined
-            assertParamExists('getShipmentItemsByShipmentId', 'marketplaceId', marketplaceId)
             const localVarPath = `/fba/inbound/v0/shipments/{shipmentId}/items`
                 .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -925,11 +923,11 @@ export const FbaInboundApiFp = function(configuration?: Configuration) {
         /**
          * Returns a list of items in a specified inbound shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} shipmentId A shipment identifier used for selecting items in a specific inbound shipment.
-         * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored.
+         * @param {string} [marketplaceId] Deprecated. Do not use.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShipmentItemsByShipmentId(shipmentId: string, marketplaceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentItemsResponse>> {
+        async getShipmentItemsByShipmentId(shipmentId: string, marketplaceId?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentItemsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getShipmentItemsByShipmentId(shipmentId, marketplaceId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['FbaInboundApi.getShipmentItemsByShipmentId']?.[localVarOperationServerIndex]?.url;
@@ -1447,11 +1445,11 @@ export interface FbaInboundApiGetShipmentItemsByShipmentIdRequest {
     readonly shipmentId: string
 
     /**
-     * A marketplace identifier. Specifies the marketplace where the product would be stored.
+     * Deprecated. Do not use.
      * @type {string}
      * @memberof FbaInboundApiGetShipmentItemsByShipmentId
      */
-    readonly marketplaceId: string
+    readonly marketplaceId?: string
 }
 
 /**

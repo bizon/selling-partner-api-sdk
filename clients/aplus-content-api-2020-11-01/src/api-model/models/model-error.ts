@@ -21,19 +21,19 @@
  */
 export interface ModelError {
     /**
-     * The code that identifies the type of error condition.
+     * An error code that identifies the type of error that occurred.
      * @type {string}
      * @memberof ModelError
      */
     'code': string;
     /**
-     * A human readable description of the error condition.
+     * A message that describes the error condition.
      * @type {string}
      * @memberof ModelError
      */
     'message': string;
     /**
-     * Additional information, if available, to clarify the error condition.
+     * Additional details that can help the caller understand or fix the issue.
      * @type {string}
      * @memberof ModelError
      */

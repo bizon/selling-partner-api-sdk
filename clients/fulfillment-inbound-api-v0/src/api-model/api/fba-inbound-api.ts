@@ -1776,18 +1776,18 @@ export class FbaInboundApi extends BaseAPI {
  * @export
  */
 export const GetLabelsPageTypeEnum = {
-    Letter2: 'PackageLabel_Letter_2',
-    Letter4: 'PackageLabel_Letter_4',
-    Letter6: 'PackageLabel_Letter_6',
-    Letter6CarrierLeft: 'PackageLabel_Letter_6_CarrierLeft',
-    A42: 'PackageLabel_A4_2',
-    A44: 'PackageLabel_A4_4',
-    PlainPaper: 'PackageLabel_Plain_Paper',
-    PlainPaperCarrierBottom: 'PackageLabel_Plain_Paper_CarrierBottom',
-    Thermal: 'PackageLabel_Thermal',
-    ThermalUnified: 'PackageLabel_Thermal_Unified',
-    ThermalNonPcp: 'PackageLabel_Thermal_NonPCP',
-    ThermalNoCarrierRotation: 'PackageLabel_Thermal_No_Carrier_Rotation'
+    PackageLabelLetter2: 'PackageLabel_Letter_2',
+    PackageLabelLetter4: 'PackageLabel_Letter_4',
+    PackageLabelLetter6: 'PackageLabel_Letter_6',
+    PackageLabelLetter6CarrierLeft: 'PackageLabel_Letter_6_CarrierLeft',
+    PackageLabelA42: 'PackageLabel_A4_2',
+    PackageLabelA44: 'PackageLabel_A4_4',
+    PackageLabelPlainPaper: 'PackageLabel_Plain_Paper',
+    PackageLabelPlainPaperCarrierBottom: 'PackageLabel_Plain_Paper_CarrierBottom',
+    PackageLabelThermal: 'PackageLabel_Thermal',
+    PackageLabelThermalUnified: 'PackageLabel_Thermal_Unified',
+    PackageLabelThermalNonPcp: 'PackageLabel_Thermal_NonPCP',
+    PackageLabelThermalNoCarrierRotation: 'PackageLabel_Thermal_No_Carrier_Rotation'
 } as const;
 export type GetLabelsPageTypeEnum = typeof GetLabelsPageTypeEnum[keyof typeof GetLabelsPageTypeEnum];
 /**

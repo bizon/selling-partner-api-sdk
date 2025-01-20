@@ -21,8 +21,8 @@
  */
 
 export const PaymentType = {
-    ThroughAmazon: 'PAY_THROUGH_AMAZON',
-    DirectToCarrier: 'PAY_DIRECT_TO_CARRIER'
+    PayThroughAmazon: 'PAY_THROUGH_AMAZON',
+    PayDirectToCarrier: 'PAY_DIRECT_TO_CARRIER'
 } as const;
 
 export type PaymentType = typeof PaymentType[keyof typeof PaymentType];

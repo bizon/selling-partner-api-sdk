@@ -21,9 +21,9 @@
  */
 
 export const OptionalFulfillmentProgram = {
-    Core: 'FBA_CORE',
-    Snl: 'FBA_SNL',
-    Efn: 'FBA_EFN'
+    FbaCore: 'FBA_CORE',
+    FbaSnl: 'FBA_SNL',
+    FbaEfn: 'FBA_EFN'
 } as const;
 
 export type OptionalFulfillmentProgram = typeof OptionalFulfillmentProgram[keyof typeof OptionalFulfillmentProgram];

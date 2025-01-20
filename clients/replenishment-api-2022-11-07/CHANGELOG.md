@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/replenishment-api-2022-11-07@3.0.1...@sp-api-sdk/replenishment-api-2022-11-07@4.0.0) (2025-01-20)
+
+### Features
+
+* **clients:** bump openapi-generator to 7.11.0 ([#1407](https://github.com/bizon/selling-partner-api-sdk/issues/1407)) ([f838283](https://github.com/bizon/selling-partner-api-sdk/commit/f838283172bb7acc895cdecadeddbe9879c07ba6))
+
+### BREAKING CHANGES
+
+* **clients:** Add prefix to enums.
+
 ## [3.0.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/replenishment-api-2022-11-07@3.0.0...@sp-api-sdk/replenishment-api-2022-11-07@3.0.1) (2025-01-08)
 
 **Note:** Version bump only for package @sp-api-sdk/replenishment-api-2022-11-07

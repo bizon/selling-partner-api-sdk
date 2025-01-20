@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/fulfillment-inbound-api-v0@2.7.0...@sp-api-sdk/fulfillment-inbound-api-v0@3.0.0) (2025-01-20)
+
+### Features
+
+* **clients:** bump openapi-generator to 7.11.0 ([#1407](https://github.com/bizon/selling-partner-api-sdk/issues/1407)) ([f838283](https://github.com/bizon/selling-partner-api-sdk/commit/f838283172bb7acc895cdecadeddbe9879c07ba6))
+
+### BREAKING CHANGES
+
+* **clients:** Add prefix to enums.
+
 # [2.7.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/fulfillment-inbound-api-v0@2.6.5...@sp-api-sdk/fulfillment-inbound-api-v0@2.7.0) (2025-01-08)
 
 ### Features

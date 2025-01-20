@@ -21,8 +21,8 @@
  */
 
 export const AutoEnrollmentPreference = {
-    In: 'OPTED_IN',
-    Out: 'OPTED_OUT'
+    OptedIn: 'OPTED_IN',
+    OptedOut: 'OPTED_OUT'
 } as const;
 
 export type AutoEnrollmentPreference = typeof AutoEnrollmentPreference[keyof typeof AutoEnrollmentPreference];

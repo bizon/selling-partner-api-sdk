@@ -21,22 +21,22 @@
  */
 
 export const PrepType = {
-    BlackShrinkwrap: 'ITEM_BLACK_SHRINKWRAP',
-    Blankstk: 'ITEM_BLANKSTK',
-    Boxing: 'ITEM_BOXING',
-    Bubblewrap: 'ITEM_BUBBLEWRAP',
-    CapSealing: 'ITEM_CAP_SEALING',
-    Debundle: 'ITEM_DEBUNDLE',
-    HangGarment: 'ITEM_HANG_GARMENT',
-    Labeling: 'ITEM_LABELING',
-    NoPrep: 'ITEM_NO_PREP',
-    Polybagging: 'ITEM_POLYBAGGING',
-    Rmovhang: 'ITEM_RMOVHANG',
-    Setcreat: 'ITEM_SETCREAT',
-    Setstk: 'ITEM_SETSTK',
-    Sioc: 'ITEM_SIOC',
-    Suffostk: 'ITEM_SUFFOSTK',
-    Taping: 'ITEM_TAPING'
+    ItemBlackShrinkwrap: 'ITEM_BLACK_SHRINKWRAP',
+    ItemBlankstk: 'ITEM_BLANKSTK',
+    ItemBoxing: 'ITEM_BOXING',
+    ItemBubblewrap: 'ITEM_BUBBLEWRAP',
+    ItemCapSealing: 'ITEM_CAP_SEALING',
+    ItemDebundle: 'ITEM_DEBUNDLE',
+    ItemHangGarment: 'ITEM_HANG_GARMENT',
+    ItemLabeling: 'ITEM_LABELING',
+    ItemNoPrep: 'ITEM_NO_PREP',
+    ItemPolybagging: 'ITEM_POLYBAGGING',
+    ItemRmovhang: 'ITEM_RMOVHANG',
+    ItemSetcreat: 'ITEM_SETCREAT',
+    ItemSetstk: 'ITEM_SETSTK',
+    ItemSioc: 'ITEM_SIOC',
+    ItemSuffostk: 'ITEM_SUFFOSTK',
+    ItemTaping: 'ITEM_TAPING'
 } as const;
 
 export type PrepType = typeof PrepType[keyof typeof PrepType];

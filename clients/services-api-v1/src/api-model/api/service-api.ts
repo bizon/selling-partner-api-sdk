@@ -2051,8 +2051,8 @@ export type GetServiceJobsServiceJobStatusEnum = typeof GetServiceJobsServiceJob
  * @export
  */
 export const GetServiceJobsSortFieldEnum = {
-    Date: 'JOB_DATE',
-    Status: 'JOB_STATUS'
+    JobDate: 'JOB_DATE',
+    JobStatus: 'JOB_STATUS'
 } as const;
 export type GetServiceJobsSortFieldEnum = typeof GetServiceJobsSortFieldEnum[keyof typeof GetServiceJobsSortFieldEnum];
 /**

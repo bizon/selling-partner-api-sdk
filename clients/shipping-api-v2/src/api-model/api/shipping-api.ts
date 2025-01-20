@@ -1855,48 +1855,48 @@ export class ShippingApi extends BaseAPI {
  * @export
  */
 export const CancelShipmentXAmznShippingBusinessIdEnum = {
-    Us: 'AmazonShipping_US',
-    In: 'AmazonShipping_IN',
-    Uk: 'AmazonShipping_UK',
-    Uae: 'AmazonShipping_UAE',
-    Sa: 'AmazonShipping_SA',
-    Eg: 'AmazonShipping_EG',
-    It: 'AmazonShipping_IT',
-    Es: 'AmazonShipping_ES',
-    Fr: 'AmazonShipping_FR',
-    Jp: 'AmazonShipping_JP'
+    AmazonShippingUs: 'AmazonShipping_US',
+    AmazonShippingIn: 'AmazonShipping_IN',
+    AmazonShippingUk: 'AmazonShipping_UK',
+    AmazonShippingUae: 'AmazonShipping_UAE',
+    AmazonShippingSa: 'AmazonShipping_SA',
+    AmazonShippingEg: 'AmazonShipping_EG',
+    AmazonShippingIt: 'AmazonShipping_IT',
+    AmazonShippingEs: 'AmazonShipping_ES',
+    AmazonShippingFr: 'AmazonShipping_FR',
+    AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type CancelShipmentXAmznShippingBusinessIdEnum = typeof CancelShipmentXAmznShippingBusinessIdEnum[keyof typeof CancelShipmentXAmznShippingBusinessIdEnum];
 /**
  * @export
  */
 export const DirectPurchaseShipmentXAmznShippingBusinessIdEnum = {
-    Us: 'AmazonShipping_US',
-    In: 'AmazonShipping_IN',
-    Uk: 'AmazonShipping_UK',
-    Uae: 'AmazonShipping_UAE',
-    Sa: 'AmazonShipping_SA',
-    Eg: 'AmazonShipping_EG',
-    It: 'AmazonShipping_IT',
-    Es: 'AmazonShipping_ES',
-    Fr: 'AmazonShipping_FR',
-    Jp: 'AmazonShipping_JP'
+    AmazonShippingUs: 'AmazonShipping_US',
+    AmazonShippingIn: 'AmazonShipping_IN',
+    AmazonShippingUk: 'AmazonShipping_UK',
+    AmazonShippingUae: 'AmazonShipping_UAE',
+    AmazonShippingSa: 'AmazonShipping_SA',
+    AmazonShippingEg: 'AmazonShipping_EG',
+    AmazonShippingIt: 'AmazonShipping_IT',
+    AmazonShippingEs: 'AmazonShipping_ES',
+    AmazonShippingFr: 'AmazonShipping_FR',
+    AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type DirectPurchaseShipmentXAmznShippingBusinessIdEnum = typeof DirectPurchaseShipmentXAmznShippingBusinessIdEnum[keyof typeof DirectPurchaseShipmentXAmznShippingBusinessIdEnum];
 /**
  * @export
  */
 export const GenerateCollectionFormXAmznShippingBusinessIdEnum = {
-    Us: 'AmazonShipping_US',
-    In: 'AmazonShipping_IN',
-    Uk: 'AmazonShipping_UK',
-    Uae: 'AmazonShipping_UAE',
-    Sa: 'AmazonShipping_SA',
-    Eg: 'AmazonShipping_EG',
-    It: 'AmazonShipping_IT',
-    Es: 'AmazonShipping_ES',
-    Fr: 'AmazonShipping_FR',
-    Jp: 'AmazonShipping_JP'
+    AmazonShippingUs: 'AmazonShipping_US',
+    AmazonShippingIn: 'AmazonShipping_IN',
+    AmazonShippingUk: 'AmazonShipping_UK',
+    AmazonShippingUae: 'AmazonShipping_UAE',
+    AmazonShippingSa: 'AmazonShipping_SA',
+    AmazonShippingEg: 'AmazonShipping_EG',
+    AmazonShippingIt: 'AmazonShipping_IT',
+    AmazonShippingEs: 'AmazonShipping_ES',
+    AmazonShippingFr: 'AmazonShipping_FR',
+    AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GenerateCollectionFormXAmznShippingBusinessIdEnum = typeof GenerateCollectionFormXAmznShippingBusinessIdEnum[keyof typeof GenerateCollectionFormXAmznShippingBusinessIdEnum];
 /**
@@ -1917,223 +1917,223 @@ export type GetAccessPointsAccessPointTypesEnum = typeof GetAccessPointsAccessPo
  * @export
  */
 export const GetAccessPointsXAmznShippingBusinessIdEnum = {
-    Us: 'AmazonShipping_US',
-    In: 'AmazonShipping_IN',
-    Uk: 'AmazonShipping_UK',
-    Uae: 'AmazonShipping_UAE',
-    Sa: 'AmazonShipping_SA',
-    Eg: 'AmazonShipping_EG',
-    It: 'AmazonShipping_IT',
-    Es: 'AmazonShipping_ES',
-    Fr: 'AmazonShipping_FR',
-    Jp: 'AmazonShipping_JP'
+    AmazonShippingUs: 'AmazonShipping_US',
+    AmazonShippingIn: 'AmazonShipping_IN',
+    AmazonShippingUk: 'AmazonShipping_UK',
+    AmazonShippingUae: 'AmazonShipping_UAE',
+    AmazonShippingSa: 'AmazonShipping_SA',
+    AmazonShippingEg: 'AmazonShipping_EG',
+    AmazonShippingIt: 'AmazonShipping_IT',
+    AmazonShippingEs: 'AmazonShipping_ES',
+    AmazonShippingFr: 'AmazonShipping_FR',
+    AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetAccessPointsXAmznShippingBusinessIdEnum = typeof GetAccessPointsXAmznShippingBusinessIdEnum[keyof typeof GetAccessPointsXAmznShippingBusinessIdEnum];
 /**
  * @export
  */
 export const GetAdditionalInputsXAmznShippingBusinessIdEnum = {
-    Us: 'AmazonShipping_US',
-    In: 'AmazonShipping_IN',
-    Uk: 'AmazonShipping_UK',
-    Uae: 'AmazonShipping_UAE',
-    Sa: 'AmazonShipping_SA',
-    Eg: 'AmazonShipping_EG',
-    It: 'AmazonShipping_IT',
-    Es: 'AmazonShipping_ES',
-    Fr: 'AmazonShipping_FR',
-    Jp: 'AmazonShipping_JP'
+    AmazonShippingUs: 'AmazonShipping_US',
+    AmazonShippingIn: 'AmazonShipping_IN',
+    AmazonShippingUk: 'AmazonShipping_UK',
+    AmazonShippingUae: 'AmazonShipping_UAE',
+    AmazonShippingSa: 'AmazonShipping_SA',
+    AmazonShippingEg: 'AmazonShipping_EG',
+    AmazonShippingIt: 'AmazonShipping_IT',
+    AmazonShippingEs: 'AmazonShipping_ES',
+    AmazonShippingFr: 'AmazonShipping_FR',
+    AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetAdditionalInputsXAmznShippingBusinessIdEnum = typeof GetAdditionalInputsXAmznShippingBusinessIdEnum[keyof typeof GetAdditionalInputsXAmznShippingBusinessIdEnum];
 /**
  * @export
  */
 export const GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum = {
-    Us: 'AmazonShipping_US',
-    In: 'AmazonShipping_IN',
-    Uk: 'AmazonShipping_UK',
-    Uae: 'AmazonShipping_UAE',
-    Sa: 'AmazonShipping_SA',
-    Eg: 'AmazonShipping_EG',
-    It: 'AmazonShipping_IT',
-    Es: 'AmazonShipping_ES',
-    Fr: 'AmazonShipping_FR',
-    Jp: 'AmazonShipping_JP'
+    AmazonShippingUs: 'AmazonShipping_US',
+    AmazonShippingIn: 'AmazonShipping_IN',
+    AmazonShippingUk: 'AmazonShipping_UK',
+    AmazonShippingUae: 'AmazonShipping_UAE',
+    AmazonShippingSa: 'AmazonShipping_SA',
+    AmazonShippingEg: 'AmazonShipping_EG',
+    AmazonShippingIt: 'AmazonShipping_IT',
+    AmazonShippingEs: 'AmazonShipping_ES',
+    AmazonShippingFr: 'AmazonShipping_FR',
+    AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum = typeof GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum[keyof typeof GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum];
 /**
  * @export
  */
 export const GetCarrierAccountsXAmznShippingBusinessIdEnum = {
-    Us: 'AmazonShipping_US',
-    In: 'AmazonShipping_IN',
-    Uk: 'AmazonShipping_UK',
-    Uae: 'AmazonShipping_UAE',
-    Sa: 'AmazonShipping_SA',
-    Eg: 'AmazonShipping_EG',
-    It: 'AmazonShipping_IT',
-    Es: 'AmazonShipping_ES',
-    Fr: 'AmazonShipping_FR',
-    Jp: 'AmazonShipping_JP'
+    AmazonShippingUs: 'AmazonShipping_US',
+    AmazonShippingIn: 'AmazonShipping_IN',
+    AmazonShippingUk: 'AmazonShipping_UK',
+    AmazonShippingUae: 'AmazonShipping_UAE',
+    AmazonShippingSa: 'AmazonShipping_SA',
+    AmazonShippingEg: 'AmazonShipping_EG',
+    AmazonShippingIt: 'AmazonShipping_IT',
+    AmazonShippingEs: 'AmazonShipping_ES',
+    AmazonShippingFr: 'AmazonShipping_FR',
+    AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetCarrierAccountsXAmznShippingBusinessIdEnum = typeof GetCarrierAccountsXAmznShippingBusinessIdEnum[keyof typeof GetCarrierAccountsXAmznShippingBusinessIdEnum];
 /**
  * @export
  */
 export const GetCollectionFormXAmznShippingBusinessIdEnum = {
-    Us: 'AmazonShipping_US',
-    In: 'AmazonShipping_IN',
-    Uk: 'AmazonShipping_UK',
-    Uae: 'AmazonShipping_UAE',
-    Sa: 'AmazonShipping_SA',
-    Eg: 'AmazonShipping_EG',
-    It: 'AmazonShipping_IT',
-    Es: 'AmazonShipping_ES',
-    Fr: 'AmazonShipping_FR',
-    Jp: 'AmazonShipping_JP'
+    AmazonShippingUs: 'AmazonShipping_US',
+    AmazonShippingIn: 'AmazonShipping_IN',
+    AmazonShippingUk: 'AmazonShipping_UK',
+    AmazonShippingUae: 'AmazonShipping_UAE',
+    AmazonShippingSa: 'AmazonShipping_SA',
+    AmazonShippingEg: 'AmazonShipping_EG',
+    AmazonShippingIt: 'AmazonShipping_IT',
+    AmazonShippingEs: 'AmazonShipping_ES',
+    AmazonShippingFr: 'AmazonShipping_FR',
+    AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetCollectionFormXAmznShippingBusinessIdEnum = typeof GetCollectionFormXAmznShippingBusinessIdEnum[keyof typeof GetCollectionFormXAmznShippingBusinessIdEnum];
 /**
  * @export
  */
 export const GetCollectionFormHistoryXAmznShippingBusinessIdEnum = {
-    Us: 'AmazonShipping_US',
-    In: 'AmazonShipping_IN',
-    Uk: 'AmazonShipping_UK',
-    Uae: 'AmazonShipping_UAE',
-    Sa: 'AmazonShipping_SA',
-    Eg: 'AmazonShipping_EG',
-    It: 'AmazonShipping_IT',
-    Es: 'AmazonShipping_ES',
-    Fr: 'AmazonShipping_FR',
-    Jp: 'AmazonShipping_JP'
+    AmazonShippingUs: 'AmazonShipping_US',
+    AmazonShippingIn: 'AmazonShipping_IN',
+    AmazonShippingUk: 'AmazonShipping_UK',
+    AmazonShippingUae: 'AmazonShipping_UAE',
+    AmazonShippingSa: 'AmazonShipping_SA',
+    AmazonShippingEg: 'AmazonShipping_EG',
+    AmazonShippingIt: 'AmazonShipping_IT',
+    AmazonShippingEs: 'AmazonShipping_ES',
+    AmazonShippingFr: 'AmazonShipping_FR',
+    AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetCollectionFormHistoryXAmznShippingBusinessIdEnum = typeof GetCollectionFormHistoryXAmznShippingBusinessIdEnum[keyof typeof GetCollectionFormHistoryXAmznShippingBusinessIdEnum];
 /**
  * @export
  */
 export const GetRatesXAmznShippingBusinessIdEnum = {
-    Us: 'AmazonShipping_US',
-    In: 'AmazonShipping_IN',
-    Uk: 'AmazonShipping_UK',
-    Uae: 'AmazonShipping_UAE',
-    Sa: 'AmazonShipping_SA',
-    Eg: 'AmazonShipping_EG',
-    It: 'AmazonShipping_IT',
-    Es: 'AmazonShipping_ES',
-    Fr: 'AmazonShipping_FR',
-    Jp: 'AmazonShipping_JP'
+    AmazonShippingUs: 'AmazonShipping_US',
+    AmazonShippingIn: 'AmazonShipping_IN',
+    AmazonShippingUk: 'AmazonShipping_UK',
+    AmazonShippingUae: 'AmazonShipping_UAE',
+    AmazonShippingSa: 'AmazonShipping_SA',
+    AmazonShippingEg: 'AmazonShipping_EG',
+    AmazonShippingIt: 'AmazonShipping_IT',
+    AmazonShippingEs: 'AmazonShipping_ES',
+    AmazonShippingFr: 'AmazonShipping_FR',
+    AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetRatesXAmznShippingBusinessIdEnum = typeof GetRatesXAmznShippingBusinessIdEnum[keyof typeof GetRatesXAmznShippingBusinessIdEnum];
 /**
  * @export
  */
 export const GetShipmentDocumentsXAmznShippingBusinessIdEnum = {
-    Us: 'AmazonShipping_US',
-    In: 'AmazonShipping_IN',
-    Uk: 'AmazonShipping_UK',
-    Uae: 'AmazonShipping_UAE',
-    Sa: 'AmazonShipping_SA',
-    Eg: 'AmazonShipping_EG',
-    It: 'AmazonShipping_IT',
-    Es: 'AmazonShipping_ES',
-    Fr: 'AmazonShipping_FR',
-    Jp: 'AmazonShipping_JP'
+    AmazonShippingUs: 'AmazonShipping_US',
+    AmazonShippingIn: 'AmazonShipping_IN',
+    AmazonShippingUk: 'AmazonShipping_UK',
+    AmazonShippingUae: 'AmazonShipping_UAE',
+    AmazonShippingSa: 'AmazonShipping_SA',
+    AmazonShippingEg: 'AmazonShipping_EG',
+    AmazonShippingIt: 'AmazonShipping_IT',
+    AmazonShippingEs: 'AmazonShipping_ES',
+    AmazonShippingFr: 'AmazonShipping_FR',
+    AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetShipmentDocumentsXAmznShippingBusinessIdEnum = typeof GetShipmentDocumentsXAmznShippingBusinessIdEnum[keyof typeof GetShipmentDocumentsXAmznShippingBusinessIdEnum];
 /**
  * @export
  */
 export const GetTrackingXAmznShippingBusinessIdEnum = {
-    Us: 'AmazonShipping_US',
-    In: 'AmazonShipping_IN',
-    Uk: 'AmazonShipping_UK',
-    Uae: 'AmazonShipping_UAE',
-    Sa: 'AmazonShipping_SA',
-    Eg: 'AmazonShipping_EG',
-    It: 'AmazonShipping_IT',
-    Es: 'AmazonShipping_ES',
-    Fr: 'AmazonShipping_FR',
-    Jp: 'AmazonShipping_JP'
+    AmazonShippingUs: 'AmazonShipping_US',
+    AmazonShippingIn: 'AmazonShipping_IN',
+    AmazonShippingUk: 'AmazonShipping_UK',
+    AmazonShippingUae: 'AmazonShipping_UAE',
+    AmazonShippingSa: 'AmazonShipping_SA',
+    AmazonShippingEg: 'AmazonShipping_EG',
+    AmazonShippingIt: 'AmazonShipping_IT',
+    AmazonShippingEs: 'AmazonShipping_ES',
+    AmazonShippingFr: 'AmazonShipping_FR',
+    AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetTrackingXAmznShippingBusinessIdEnum = typeof GetTrackingXAmznShippingBusinessIdEnum[keyof typeof GetTrackingXAmznShippingBusinessIdEnum];
 /**
  * @export
  */
 export const GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum = {
-    Us: 'AmazonShipping_US',
-    In: 'AmazonShipping_IN',
-    Uk: 'AmazonShipping_UK',
-    Uae: 'AmazonShipping_UAE',
-    Sa: 'AmazonShipping_SA',
-    Eg: 'AmazonShipping_EG',
-    It: 'AmazonShipping_IT',
-    Es: 'AmazonShipping_ES',
-    Fr: 'AmazonShipping_FR',
-    Jp: 'AmazonShipping_JP'
+    AmazonShippingUs: 'AmazonShipping_US',
+    AmazonShippingIn: 'AmazonShipping_IN',
+    AmazonShippingUk: 'AmazonShipping_UK',
+    AmazonShippingUae: 'AmazonShipping_UAE',
+    AmazonShippingSa: 'AmazonShipping_SA',
+    AmazonShippingEg: 'AmazonShipping_EG',
+    AmazonShippingIt: 'AmazonShipping_IT',
+    AmazonShippingEs: 'AmazonShipping_ES',
+    AmazonShippingFr: 'AmazonShipping_FR',
+    AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum = typeof GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum[keyof typeof GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum];
 /**
  * @export
  */
 export const LinkCarrierAccountXAmznShippingBusinessIdEnum = {
-    Us: 'AmazonShipping_US',
-    In: 'AmazonShipping_IN',
-    Uk: 'AmazonShipping_UK',
-    Uae: 'AmazonShipping_UAE',
-    Sa: 'AmazonShipping_SA',
-    Eg: 'AmazonShipping_EG',
-    It: 'AmazonShipping_IT',
-    Es: 'AmazonShipping_ES',
-    Fr: 'AmazonShipping_FR',
-    Jp: 'AmazonShipping_JP'
+    AmazonShippingUs: 'AmazonShipping_US',
+    AmazonShippingIn: 'AmazonShipping_IN',
+    AmazonShippingUk: 'AmazonShipping_UK',
+    AmazonShippingUae: 'AmazonShipping_UAE',
+    AmazonShippingSa: 'AmazonShipping_SA',
+    AmazonShippingEg: 'AmazonShipping_EG',
+    AmazonShippingIt: 'AmazonShipping_IT',
+    AmazonShippingEs: 'AmazonShipping_ES',
+    AmazonShippingFr: 'AmazonShipping_FR',
+    AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type LinkCarrierAccountXAmznShippingBusinessIdEnum = typeof LinkCarrierAccountXAmznShippingBusinessIdEnum[keyof typeof LinkCarrierAccountXAmznShippingBusinessIdEnum];
 /**
  * @export
  */
 export const OneClickShipmentXAmznShippingBusinessIdEnum = {
-    Us: 'AmazonShipping_US',
-    In: 'AmazonShipping_IN',
-    Uk: 'AmazonShipping_UK',
-    Uae: 'AmazonShipping_UAE',
-    Sa: 'AmazonShipping_SA',
-    Eg: 'AmazonShipping_EG',
-    It: 'AmazonShipping_IT',
-    Es: 'AmazonShipping_ES',
-    Fr: 'AmazonShipping_FR',
-    Jp: 'AmazonShipping_JP'
+    AmazonShippingUs: 'AmazonShipping_US',
+    AmazonShippingIn: 'AmazonShipping_IN',
+    AmazonShippingUk: 'AmazonShipping_UK',
+    AmazonShippingUae: 'AmazonShipping_UAE',
+    AmazonShippingSa: 'AmazonShipping_SA',
+    AmazonShippingEg: 'AmazonShipping_EG',
+    AmazonShippingIt: 'AmazonShipping_IT',
+    AmazonShippingEs: 'AmazonShipping_ES',
+    AmazonShippingFr: 'AmazonShipping_FR',
+    AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type OneClickShipmentXAmznShippingBusinessIdEnum = typeof OneClickShipmentXAmznShippingBusinessIdEnum[keyof typeof OneClickShipmentXAmznShippingBusinessIdEnum];
 /**
  * @export
  */
 export const PurchaseShipmentXAmznShippingBusinessIdEnum = {
-    Us: 'AmazonShipping_US',
-    In: 'AmazonShipping_IN',
-    Uk: 'AmazonShipping_UK',
-    Uae: 'AmazonShipping_UAE',
-    Sa: 'AmazonShipping_SA',
-    Eg: 'AmazonShipping_EG',
-    It: 'AmazonShipping_IT',
-    Es: 'AmazonShipping_ES',
-    Fr: 'AmazonShipping_FR',
-    Jp: 'AmazonShipping_JP'
+    AmazonShippingUs: 'AmazonShipping_US',
+    AmazonShippingIn: 'AmazonShipping_IN',
+    AmazonShippingUk: 'AmazonShipping_UK',
+    AmazonShippingUae: 'AmazonShipping_UAE',
+    AmazonShippingSa: 'AmazonShipping_SA',
+    AmazonShippingEg: 'AmazonShipping_EG',
+    AmazonShippingIt: 'AmazonShipping_IT',
+    AmazonShippingEs: 'AmazonShipping_ES',
+    AmazonShippingFr: 'AmazonShipping_FR',
+    AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type PurchaseShipmentXAmznShippingBusinessIdEnum = typeof PurchaseShipmentXAmznShippingBusinessIdEnum[keyof typeof PurchaseShipmentXAmznShippingBusinessIdEnum];
 /**
  * @export
  */
 export const UnlinkCarrierAccountXAmznShippingBusinessIdEnum = {
-    Us: 'AmazonShipping_US',
-    In: 'AmazonShipping_IN',
-    Uk: 'AmazonShipping_UK',
-    Uae: 'AmazonShipping_UAE',
-    Sa: 'AmazonShipping_SA',
-    Eg: 'AmazonShipping_EG',
-    It: 'AmazonShipping_IT',
-    Es: 'AmazonShipping_ES',
-    Fr: 'AmazonShipping_FR',
-    Jp: 'AmazonShipping_JP'
+    AmazonShippingUs: 'AmazonShipping_US',
+    AmazonShippingIn: 'AmazonShipping_IN',
+    AmazonShippingUk: 'AmazonShipping_UK',
+    AmazonShippingUae: 'AmazonShipping_UAE',
+    AmazonShippingSa: 'AmazonShipping_SA',
+    AmazonShippingEg: 'AmazonShipping_EG',
+    AmazonShippingIt: 'AmazonShipping_IT',
+    AmazonShippingEs: 'AmazonShipping_ES',
+    AmazonShippingFr: 'AmazonShipping_FR',
+    AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type UnlinkCarrierAccountXAmznShippingBusinessIdEnum = typeof UnlinkCarrierAccountXAmznShippingBusinessIdEnum[keyof typeof UnlinkCarrierAccountXAmznShippingBusinessIdEnum];

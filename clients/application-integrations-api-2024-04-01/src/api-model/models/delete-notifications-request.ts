@@ -35,8 +35,8 @@ export interface DeleteNotificationsRequest {
 }
 
 export const DeleteNotificationsRequestDeletionReasonEnum = {
-    Content: 'INCORRECT_CONTENT',
-    Recipient: 'INCORRECT_RECIPIENT'
+    IncorrectContent: 'INCORRECT_CONTENT',
+    IncorrectRecipient: 'INCORRECT_RECIPIENT'
 } as const;
 
 export type DeleteNotificationsRequestDeletionReasonEnum = typeof DeleteNotificationsRequestDeletionReasonEnum[keyof typeof DeleteNotificationsRequestDeletionReasonEnum];

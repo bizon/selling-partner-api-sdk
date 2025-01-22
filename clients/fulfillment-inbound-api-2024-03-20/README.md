@@ -2,8 +2,8 @@
 
 The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon's fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/fulfillment-inbound-api-2024-03-20)](https://www.npmjs.com/package/@sp-api-sdk/fulfillment-inbound-api-2024-03-20)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/fulfillment-inbound-api-2024-03-20)](https://www.npmjs.com/package/@sp-api-sdk/fulfillment-inbound-api-2024-03-20)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 

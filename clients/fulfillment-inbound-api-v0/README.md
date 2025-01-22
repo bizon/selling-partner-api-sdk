@@ -2,8 +2,8 @@
 
 The Selling Partner API for Fulfillment Inbound lets you create applications that create and update inbound shipments of inventory to Amazon's fulfillment network.
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/fulfillment-inbound-api-v0)](https://www.npmjs.com/package/@sp-api-sdk/fulfillment-inbound-api-v0)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/fulfillment-inbound-api-v0)](https://www.npmjs.com/package/@sp-api-sdk/fulfillment-inbound-api-v0)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 

@@ -2,8 +2,8 @@
 
 The Uploads API lets you upload files that you can programmatically access using other Selling Partner APIs, such as the A+ Content API and the Messaging API.
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/uploads-api-2020-11-01)](https://www.npmjs.com/package/@sp-api-sdk/uploads-api-2020-11-01)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/uploads-api-2020-11-01)](https://www.npmjs.com/package/@sp-api-sdk/uploads-api-2020-11-01)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 

@@ -2,8 +2,8 @@
 
 Use the Selling Partner API for Invoices to retrieve and manage invoice-related operations, which can help selling partners manage their bookkeeping processes.
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/invoices-api-2024-06-19)](https://www.npmjs.com/package/@sp-api-sdk/invoices-api-2024-06-19)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/invoices-api-2024-06-19)](https://www.npmjs.com/package/@sp-api-sdk/invoices-api-2024-06-19)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 

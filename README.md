@@ -3,7 +3,7 @@
 A modularized SDK library for Amazon Selling Partner API (fully typed in TypeScript)
 
 [![codecov](https://codecov.io/gh/bizon/selling-partner-api-sdk/branch/master/graph/badge.svg?token=tqBs3JHHP2)](https://codecov.io/gh/bizon/selling-partner-api-sdk)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 

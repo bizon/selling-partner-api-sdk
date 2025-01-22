@@ -4,8 +4,8 @@ Use the Orders Selling Partner API to programmatically retrieve order informatio
 
 _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/orders-api-v0)](https://www.npmjs.com/package/@sp-api-sdk/orders-api-v0)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/orders-api-v0)](https://www.npmjs.com/package/@sp-api-sdk/orders-api-v0)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 

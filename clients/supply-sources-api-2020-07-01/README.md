@@ -2,8 +2,8 @@
 
 Manage configurations and capabilities of seller supply sources.
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/supply-sources-api-2020-07-01)](https://www.npmjs.com/package/@sp-api-sdk/supply-sources-api-2020-07-01)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/supply-sources-api-2020-07-01)](https://www.npmjs.com/package/@sp-api-sdk/supply-sources-api-2020-07-01)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 

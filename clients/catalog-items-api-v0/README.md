@@ -2,8 +2,8 @@
 
 The Selling Partner API for Catalog Items helps you programmatically retrieve item details for items in the catalog.
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/catalog-items-api-v0)](https://www.npmjs.com/package/@sp-api-sdk/catalog-items-api-v0)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/catalog-items-api-v0)](https://www.npmjs.com/package/@sp-api-sdk/catalog-items-api-v0)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 

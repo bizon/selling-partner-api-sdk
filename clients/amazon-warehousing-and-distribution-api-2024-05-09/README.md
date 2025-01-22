@@ -2,8 +2,8 @@
 
 The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. 
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/amazon-warehousing-and-distribution-api-2024-05-09)](https://www.npmjs.com/package/@sp-api-sdk/amazon-warehousing-and-distribution-api-2024-05-09)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/amazon-warehousing-and-distribution-api-2024-05-09)](https://www.npmjs.com/package/@sp-api-sdk/amazon-warehousing-and-distribution-api-2024-05-09)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 

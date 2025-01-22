@@ -4,8 +4,8 @@ The Selling Partner API for Tokens provides a secure way to access a customer's 
 
 For more information, see the [Tokens API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/tokens-api-use-case-guide).
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/tokens-api-2021-03-01)](https://www.npmjs.com/package/@sp-api-sdk/tokens-api-2021-03-01)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/tokens-api-2021-03-01)](https://www.npmjs.com/package/@sp-api-sdk/tokens-api-2021-03-01)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 

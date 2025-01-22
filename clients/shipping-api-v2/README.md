@@ -2,8 +2,8 @@
 
 The Amazon Shipping API is designed to support outbound shipping use cases both for orders originating on Amazon-owned marketplaces as well as external channels/marketplaces. With these APIs, you can request shipping rates, create shipments, cancel shipments, and track shipments.
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/shipping-api-v2)](https://www.npmjs.com/package/@sp-api-sdk/shipping-api-v2)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/shipping-api-v2)](https://www.npmjs.com/package/@sp-api-sdk/shipping-api-v2)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 

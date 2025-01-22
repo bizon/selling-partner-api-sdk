@@ -4,8 +4,8 @@ The Selling Partner API for Listings Items (Listings Items API) provides program
 
 For more information, see the [Listing Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2020-09-01-use-case-guide).
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/listings-items-api-2020-09-01)](https://www.npmjs.com/package/@sp-api-sdk/listings-items-api-2020-09-01)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/listings-items-api-2020-09-01)](https://www.npmjs.com/package/@sp-api-sdk/listings-items-api-2020-09-01)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 

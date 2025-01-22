@@ -2,8 +2,8 @@
 
 The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/sellers-api-v1)](https://www.npmjs.com/package/@sp-api-sdk/sellers-api-v1)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/sellers-api-v1)](https://www.npmjs.com/package/@sp-api-sdk/sellers-api-v1)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 

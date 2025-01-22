@@ -4,8 +4,8 @@ The Selling Partner API for Replenishment (Replenishment API) provides programma
 
 The Replenishment API is available worldwide wherever Amazon Subscribe & Save is available or is supported. The API is available to vendors and FBA selling partners.
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/replenishment-api-2022-11-07)](https://www.npmjs.com/package/@sp-api-sdk/replenishment-api-2022-11-07)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/replenishment-api-2022-11-07)](https://www.npmjs.com/package/@sp-api-sdk/replenishment-api-2022-11-07)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 

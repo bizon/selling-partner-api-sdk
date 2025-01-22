@@ -2,8 +2,8 @@
 
 The Selling Partner API for Product Fees lets you programmatically retrieve estimated fees for a product. You can then account for those fees in your pricing.
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/product-fees-api-v0)](https://www.npmjs.com/package/@sp-api-sdk/product-fees-api-v0)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/product-fees-api-v0)](https://www.npmjs.com/package/@sp-api-sdk/product-fees-api-v0)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 

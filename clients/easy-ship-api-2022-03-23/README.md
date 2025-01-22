@@ -12,8 +12,8 @@ Your Easy Ship applications can:
 
 See the [Marketplace Support Table](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support-table) for the differences in Easy Ship operations by marketplace.
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/easy-ship-api-2022-03-23)](https://www.npmjs.com/package/@sp-api-sdk/easy-ship-api-2022-03-23)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/easy-ship-api-2022-03-23)](https://www.npmjs.com/package/@sp-api-sdk/easy-ship-api-2022-03-23)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 

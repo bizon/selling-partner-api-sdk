@@ -2,8 +2,8 @@
 
 With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/merchant-fulfillment-api-v0)](https://www.npmjs.com/package/@sp-api-sdk/merchant-fulfillment-api-v0)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/merchant-fulfillment-api-v0)](https://www.npmjs.com/package/@sp-api-sdk/merchant-fulfillment-api-v0)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 

@@ -2,8 +2,10 @@
 
 Amazon Selling Partner API schemas
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/schemas)](https://www.npmjs.com/package/@sp-api-sdk/schemas)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/schemas)](https://www.npmjs.com/package/@sp-api-sdk/schemas)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
+
+[<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 
 ## Documentation
 

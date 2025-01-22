@@ -2,8 +2,8 @@
 
 The Selling Partner API for Data Kiosk lets you submit GraphQL queries from a variety of schemas to help selling partners manage their businesses.
 
-[![npm version](https://badgen.net/npm/v/@sp-api-sdk/data-kiosk-api-2023-11-15)](https://www.npmjs.com/package/@sp-api-sdk/data-kiosk-api-2023-11-15)
-[![XO code style](https://badgen.net/badge/code%20style/XO/cyan)](https://github.com/xojs/xo)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/data-kiosk-api-2023-11-15)](https://www.npmjs.com/package/@sp-api-sdk/data-kiosk-api-2023-11-15)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 ## Documentation
 

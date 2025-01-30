@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Fulfillment Inbound v2024-03-20
+ * The Selling Partner API for FBA inbound operations.
  * The Selling Partner API for Fulfillment By Amazon (FBA) Inbound. The FBA Inbound API enables building inbound workflows to create, manage, and send shipments into Amazon\'s fulfillment network. The API has interoperability with the Send-to-Amazon user interface.
  *
  * The version of the OpenAPI document: 2024-03-20
@@ -16,6 +16,9 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import type { Incentive } from './incentive';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PackingConfiguration } from './packing-configuration';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ShippingConfiguration } from './shipping-configuration';
@@ -63,7 +66,13 @@ export interface PackingOption {
      */
     'status': string;
     /**
-     * List of supported shipping modes.
+     * A list of possible configurations for this option.
+     * @type {Array<PackingConfiguration>}
+     * @memberof PackingOption
+     */
+    'supportedConfigurations': Array<PackingConfiguration>;
+    /**
+     * **This field is deprecated**. Use the `shippingRequirements` property under `supportedConfigurations` instead. List of supported shipping modes.
      * @type {Array<ShippingConfiguration>}
      * @memberof PackingOption
      */

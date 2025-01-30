@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { Segment } from './segment';
 
 /**
  * The parameters for an individual request.
@@ -32,5 +35,11 @@ export interface FeaturedOfferExpectedPriceRequestParams {
      * @memberof FeaturedOfferExpectedPriceRequestParams
      */
     'sku': string;
+    /**
+     * 
+     * @type {Segment}
+     * @memberof FeaturedOfferExpectedPriceRequestParams
+     */
+    'segment'?: Segment;
 }
 

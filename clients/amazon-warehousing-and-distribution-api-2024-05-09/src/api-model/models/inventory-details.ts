@@ -27,6 +27,12 @@ export interface InventoryDetails {
      */
     'availableDistributableQuantity'?: number;
     /**
+     * Quantity that is in transit from AWD and has not yet been received at FBA.
+     * @type {number}
+     * @memberof InventoryDetails
+     */
+    'replenishmentQuantity'?: number;
+    /**
      * Quantity that is reserved for a downstream channel replenishment order that is being prepared for shipment.
      * @type {number}
      * @memberof InventoryDetails

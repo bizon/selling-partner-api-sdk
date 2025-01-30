@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.2](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/schemas@1.4.1...@sp-api-sdk/schemas@1.4.2) (2025-01-30)
+
+**Note:** Version bump only for package @sp-api-sdk/schemas
+
 ## [1.4.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/schemas@1.4.0...@sp-api-sdk/schemas@1.4.1) (2024-12-13)
 
 **Note:** Version bump only for package @sp-api-sdk/schemas

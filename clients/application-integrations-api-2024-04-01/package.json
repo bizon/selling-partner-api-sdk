@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/application-integrations-api-2024-04-01",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "With the AppIntegrations API v2024-04-01, you can send notifications to Amazon Selling Partners and display the notifications in Seller Central.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

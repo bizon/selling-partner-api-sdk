@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/application-management-api-2023-11-30@2.0.0...@sp-api-sdk/application-management-api-2023-11-30@2.0.1) (2025-01-30)
+
+**Note:** Version bump only for package @sp-api-sdk/application-management-api-2023-11-30
+
 # [2.0.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/application-management-api-2023-11-30@1.4.8...@sp-api-sdk/application-management-api-2023-11-30@2.0.0) (2025-01-20)
 
 ### Features

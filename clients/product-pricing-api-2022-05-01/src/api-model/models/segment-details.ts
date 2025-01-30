@@ -13,9 +13,12 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { SampleLocation } from './sample-location';
 
 /**
- * The details about the segment.
+ * The details about the segment. The FeaturedOfferExpectedPrice API uses only the sampleLocation portion as input.
  * @export
  * @interface SegmentDetails
  */
@@ -26,5 +29,11 @@ export interface SegmentDetails {
      * @memberof SegmentDetails
      */
     'glanceViewWeightPercentage'?: number;
+    /**
+     * 
+     * @type {SampleLocation}
+     * @memberof SegmentDetails
+     */
+    'sampleLocation'?: SampleLocation;
 }
 

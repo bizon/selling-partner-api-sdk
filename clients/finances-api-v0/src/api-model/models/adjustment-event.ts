@@ -39,6 +39,12 @@ export interface AdjustmentEvent {
      */
     'PostedDate'?: string;
     /**
+     * The name of the store where the event occurred.
+     * @type {string}
+     * @memberof AdjustmentEvent
+     */
+    'StoreName'?: string;
+    /**
      * 
      * @type {Currency}
      * @memberof AdjustmentEvent

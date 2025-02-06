@@ -216,6 +216,36 @@ export const clientRateLimits: RateLimit[] = [
   {
     method: 'put',
     // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp(
+      '^/inbound/fba/2024-03-20/inboundPlans/[^/]*/selfShipAppointmentCancellation$',
+    ),
+    rate: 2,
+    burst: 30,
+  },
+  {
+    method: 'get',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/inbound/fba/2024-03-20/inboundPlans/[^/]*/selfShipAppointmentSlots$'),
+    rate: 2,
+    burst: 6,
+  },
+  {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/inbound/fba/2024-03-20/inboundPlans/[^/]*/selfShipAppointmentSlots$'),
+    rate: 2,
+    burst: 2,
+  },
+  {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/inbound/fba/2024-03-20/inboundPlans/[^/]*/schedule$'),
+    rate: 2,
+    burst: 2,
+  },
+  {
+    method: 'put',
+    // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/inbound/fba/2024-03-20/inboundPlans/[^/]*/sourceAddress$'),
     rate: 2,
     burst: 30,

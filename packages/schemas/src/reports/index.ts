@@ -26,6 +26,14 @@ export {
   type SellingPartnerRepeatPurchaseReport,
 } from './selling-partner-repeat-purchase-report'
 export {
+  sellingPartnerSearchCatalogPerformanceReport,
+  type SellingPartnerSearchCatalogPerformanceReport,
+} from './selling-partner-search-catalog-performance-report'
+export {
+  sellingPartnerSearchQueryPerformanceReport,
+  type SellingPartnerSearchQueryPerformanceReport,
+} from './selling-partner-search-query-performance-report'
+export {
   sellingPartnerSearchTermsReport,
   type SellingPartnerSearchTermsReport,
 } from './selling-partner-search-terms-report'

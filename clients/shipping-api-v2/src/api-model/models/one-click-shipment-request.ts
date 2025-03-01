@@ -24,6 +24,9 @@ import type { Address } from './address';
 import type { ChannelDetails } from './channel-details';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { GoodsOwner } from './goods-owner';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { OneClickShipmentValueAddedService } from './one-click-shipment-value-added-service';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -71,6 +74,12 @@ export interface OneClickShipmentRequest {
      * @memberof OneClickShipmentRequest
      */
     'shipDate'?: string;
+    /**
+     * 
+     * @type {GoodsOwner}
+     * @memberof OneClickShipmentRequest
+     */
+    'goodsOwner'?: GoodsOwner;
     /**
      * A list of packages to be shipped through a shipping service offering.
      * @type {Array<Package>}

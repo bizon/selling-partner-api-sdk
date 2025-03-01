@@ -22,6 +22,9 @@ import type { DocumentSize } from './document-size';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { DocumentType } from './document-type';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { RequestedLabelCustomization } from './requested-label-customization';
 
 /**
  * The document specifications requested. For calls to the purchaseShipment operation, the shipment purchase fails if the specified document specifications are not among those returned in the response to the getRates operation.
@@ -65,6 +68,12 @@ export interface RequestedDocumentSpecification {
      * @memberof RequestedDocumentSpecification
      */
     'requestedDocumentTypes': Array<DocumentType>;
+    /**
+     * 
+     * @type {RequestedLabelCustomization}
+     * @memberof RequestedDocumentSpecification
+     */
+    'requestedLabelCustomization'?: RequestedLabelCustomization;
 }
 
 

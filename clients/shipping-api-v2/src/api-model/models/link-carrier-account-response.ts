@@ -29,6 +29,12 @@ export interface LinkCarrierAccountResponse {
      * @memberof LinkCarrierAccountResponse
      */
     'registrationStatus'?: AccountStatus;
+    /**
+     * Identifier for the seller\'s carrier account.
+     * @type {string}
+     * @memberof LinkCarrierAccountResponse
+     */
+    'accountId'?: string;
 }
 
 

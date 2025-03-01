@@ -632,6 +632,19 @@ importers:
         specifier: workspace:*
         version: link:../../packages/auth
 
+  clients/vehicles-api-2024-11-01:
+    dependencies:
+      '@sp-api-sdk/common':
+        specifier: workspace:*
+        version: link:../../packages/common
+      axios:
+        specifier: ^1.8.1
+        version: 1.8.1
+    devDependencies:
+      '@sp-api-sdk/auth':
+        specifier: workspace:*
+        version: link:../../packages/auth
+
   clients/vendor-direct-fulfillment-inventory-api-v1:
     dependencies:
       '@sp-api-sdk/common':

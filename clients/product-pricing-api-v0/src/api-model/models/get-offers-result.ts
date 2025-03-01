@@ -27,7 +27,7 @@ import type { OfferDetail } from './offer-detail';
 import type { Summary } from './summary';
 
 /**
- * 
+ * The payload for the getListingOffers and getItemOffers operations.
  * @export
  * @interface GetOffersResult
  */
@@ -75,7 +75,7 @@ export interface GetOffersResult {
      */
     'Summary': Summary;
     /**
-     * 
+     * A list of offer details. The list is the same length as the TotalOfferCount in the Summary or 20, whichever is less.
      * @type {Array<OfferDetail>}
      * @memberof GetOffersResult
      */

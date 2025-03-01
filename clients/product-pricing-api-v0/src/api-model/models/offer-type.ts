@@ -27,7 +27,7 @@ import type { PriceType } from './price-type';
 import type { QuantityDiscountPriceType } from './quantity-discount-price-type';
 
 /**
- * 
+ * Schema for an individual offer.
  * @export
  * @interface OfferType
  */
@@ -57,7 +57,7 @@ export interface OfferType {
      */
     'businessPrice'?: MoneyType;
     /**
-     * 
+     * List of `QuantityDiscountPrice` that contains item\'s pricing information when buy in bulk.
      * @type {Array<QuantityDiscountPriceType>}
      * @memberof OfferType
      */

@@ -27,7 +27,7 @@ export interface CustomerInvoice {
      */
     'purchaseOrderNumber': string;
     /**
-     * The Base64encoded customer invoice.
+     * The Base64 customer invoice.
      * @type {string}
      * @memberof CustomerInvoice
      */

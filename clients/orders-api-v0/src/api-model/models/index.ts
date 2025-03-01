@@ -18,6 +18,7 @@ export * from './delivery-preferences';
 export * from './easy-ship-shipment-status';
 export * from './electronic-invoice-status';
 export * from './exception-dates';
+export * from './export-info';
 export * from './fulfillment-instruction';
 export * from './get-order-address-response';
 export * from './get-order-buyer-info-response';

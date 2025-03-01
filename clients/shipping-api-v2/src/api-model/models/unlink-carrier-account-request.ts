@@ -29,5 +29,11 @@ export interface UnlinkCarrierAccountRequest {
      * @memberof UnlinkCarrierAccountRequest
      */
     'clientReferenceDetails'?: Array<ClientReferenceDetail>;
+    /**
+     * Identifier for the seller\'s carrier account.
+     * @type {string}
+     * @memberof UnlinkCarrierAccountRequest
+     */
+    'accountId'?: string;
 }
 

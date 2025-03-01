@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * The Selling Partner API for Finances
- * The Selling Partner API for Finances provides financial information relevant to a seller\'s business. You can obtain financial events for a given order or date range without having to wait until a statement period closes.
+ * The Selling Partner API for Finances helps you obtain financial information relevant to a seller\'s business. You can obtain financial events for a given order or date range without having to wait until a statement period closes.
  *
  * The version of the OpenAPI document: 2024-06-19
  * 
@@ -27,19 +27,19 @@ import type { Currency } from './currency';
 import type { ItemRelatedIdentifier } from './item-related-identifier';
 
 /**
- * Additional information about the items in a transaction.
+ * Additional information about the items in Transaction.
  * @export
  * @interface Item
  */
 export interface Item {
     /**
-     * A description of the items in a transaction.
+     * Description of items in the transaction
      * @type {string}
      * @memberof Item
      */
     'description'?: string;
     /**
-     * Related business identifiers of the item in the transaction.
+     * Related Business identifiers of the item in Transaction.
      * @type {Array<ItemRelatedIdentifier>}
      * @memberof Item
      */
@@ -51,13 +51,13 @@ export interface Item {
      */
     'totalAmount'?: Currency;
     /**
-     * A list of breakdowns that provide details on how the total amount is calculated for the transaction.
+     * List of breakdowns which will provide the details on how the total amount is calculated for the financial transaction.
      * @type {Array<Breakdown>}
      * @memberof Item
      */
     'breakdowns'?: Array<Breakdown>;
     /**
-     * A list of additional information about the item.
+     * List of additional Information about the item.
      * @type {Array<Context>}
      * @memberof Item
      */

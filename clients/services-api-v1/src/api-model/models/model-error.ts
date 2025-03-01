@@ -27,7 +27,7 @@ export interface ModelError {
      */
     'code': string;
     /**
-     * A message that describes the error condition in a human-readable form.
+     * A message that describes the error condition.
      * @type {string}
      * @memberof ModelError
      */

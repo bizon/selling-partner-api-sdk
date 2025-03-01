@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * The Selling Partner API for Finances
- * The Selling Partner API for Finances provides financial information relevant to a seller\'s business. You can obtain financial events for a given order or date range without having to wait until a statement period closes.
+ * The Selling Partner API for Finances helps you obtain financial information relevant to a seller\'s business. You can obtain financial events for a given order or date range without having to wait until a statement period closes.
  *
  * The version of the OpenAPI document: 2024-06-19
  * 
@@ -21,13 +21,13 @@
  */
 export interface RelatedIdentifier {
     /**
-     * An enumerated set of related business identifier names.
+     * Enumerated set of related business identifier names.
      * @type {string}
      * @memberof RelatedIdentifier
      */
     'relatedIdentifierName'?: RelatedIdentifierRelatedIdentifierNameEnum;
     /**
-     * Corresponding value of `RelatedIdentifierName`.
+     * Corresponding value of RelatedIdentifierName
      * @type {string}
      * @memberof RelatedIdentifier
      */
@@ -41,8 +41,7 @@ export const RelatedIdentifierRelatedIdentifierNameEnum = {
     RefundId: 'REFUND_ID',
     InvoiceId: 'INVOICE_ID',
     DisbursementId: 'DISBURSEMENT_ID',
-    TransferId: 'TRANSFER_ID',
-    DeferredTransactionId: 'DEFERRED_TRANSACTION_ID'
+    TransferId: 'TRANSFER_ID'
 } as const;
 
 export type RelatedIdentifierRelatedIdentifierNameEnum = typeof RelatedIdentifierRelatedIdentifierNameEnum[keyof typeof RelatedIdentifierRelatedIdentifierNameEnum];

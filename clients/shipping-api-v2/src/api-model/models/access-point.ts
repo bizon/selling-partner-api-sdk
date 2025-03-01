@@ -72,13 +72,13 @@ export interface AccessPoint {
      */
     'address'?: Address;
     /**
-     * 
+     * Exception operating hours for Access Point
      * @type {Array<ExceptionOperatingHours>}
      * @memberof AccessPoint
      */
     'exceptionOperatingHours'?: Array<ExceptionOperatingHours>;
     /**
-     * 
+     * Assistance type enum for Access point i.e. STAFF_ASSISTED or SELF_ASSISTED
      * @type {string}
      * @memberof AccessPoint
      */

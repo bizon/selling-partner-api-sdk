@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Catalog Items v2022-04-01
+ * Selling Partner API for Catalog Items
  * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2022-04-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2022-04-01
@@ -14,5 +14,5 @@
 
 
 
-export * from './api/catalog-items-api';
+export * from './api/catalog-api';
 

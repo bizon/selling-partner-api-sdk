@@ -19,6 +19,9 @@ import type { EventCode } from './event-code';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { Location } from './location';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { ShipmentType } from './shipment-type';
 
 /**
  * A tracking event.
@@ -44,6 +47,12 @@ export interface Event {
      * @memberof Event
      */
     'eventTime': string;
+    /**
+     * 
+     * @type {ShipmentType}
+     * @memberof Event
+     */
+    'shipmentType'?: ShipmentType;
 }
 
 

@@ -34,6 +34,7 @@ import type { ItemOffersResponseAllOf } from './item-offers-response-all-of';
 
 /**
  * @type ItemOffersResponse
+ * Schema for an individual `ItemOffersResponse`
  * @export
  */
 export type ItemOffersResponse = BatchOffersResponse & ItemOffersResponseAllOf;

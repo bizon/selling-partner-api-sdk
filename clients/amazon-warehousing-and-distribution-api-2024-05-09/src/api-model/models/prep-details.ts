@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * The Selling Partner API for Amazon Warehousing and Distribution
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. 
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.
  *
  * The version of the OpenAPI document: 2024-05-09
  * 
@@ -16,6 +16,9 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import type { LabelOwner } from './label-owner';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PrepCategory } from './prep-category';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { PrepInstruction } from './prep-instruction';
@@ -36,13 +39,13 @@ export interface PrepDetails {
      */
     'labelOwner'?: LabelOwner;
     /**
-     * The preparation category for shipping an item to Amazon\'s fulfillment network.
-     * @type {string}
+     * 
+     * @type {PrepCategory}
      * @memberof PrepDetails
      */
-    'prepCategory'?: string;
+    'prepCategory'?: PrepCategory;
     /**
-     * Information that pertains to the preparation of inbound products. This is generated based on the specified category.
+     * Contains information about the preparation of the inbound products. The system auto-generates this field with the use of the `prepCategory`, and if you attempt to pass a value for this field, the system will ignore it.
      * @type {Array<PrepInstruction>}
      * @memberof PrepDetails
      */

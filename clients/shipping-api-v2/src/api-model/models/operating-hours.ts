@@ -36,7 +36,7 @@ export interface OperatingHours {
      */
     'openingTime'?: TimeOfDay;
     /**
-     * 
+     * midDayClosures operating hours array
      * @type {Array<TimeOfDay>}
      * @memberof OperatingHours
      */

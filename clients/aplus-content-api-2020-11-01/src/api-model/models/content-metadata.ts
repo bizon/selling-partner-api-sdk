@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for A+ Content Management
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * The version of the OpenAPI document: 2020-11-01
  * 
@@ -21,19 +21,19 @@ import type { ContentBadge } from './content-badge';
 import type { ContentStatus } from './content-status';
 
 /**
- * The metadata of an A+ Content document.
+ * The A+ Content document\'s metadata.
  * @export
  * @interface ContentMetadata
  */
 export interface ContentMetadata {
     /**
-     * The A+ Content document name.
+     * The A+ Content document\'s name.
      * @type {string}
      * @memberof ContentMetadata
      */
     'name': string;
     /**
-     * The identifier for the marketplace where the A+ Content is published.
+     * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @type {string}
      * @memberof ContentMetadata
      */

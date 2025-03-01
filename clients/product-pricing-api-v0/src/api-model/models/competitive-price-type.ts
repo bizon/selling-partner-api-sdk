@@ -24,7 +24,7 @@ import type { PriceType } from './price-type';
 import type { QuantityDiscountType } from './quantity-discount-type';
 
 /**
- * 
+ * Schema for competitive pricing information
  * @export
  * @interface CompetitivePriceType
  */

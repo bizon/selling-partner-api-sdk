@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Schema to identify an item by MarketPlaceId, SellerId, and SellerSKU.
  * @export
  * @interface SellerSKUIdentifier
  */

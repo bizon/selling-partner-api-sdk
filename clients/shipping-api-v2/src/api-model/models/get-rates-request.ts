@@ -21,6 +21,9 @@ import type { AccessPointDetails } from './access-point-details';
 import type { Address } from './address';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { CarrierAccount } from './carrier-account';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ChannelDetails } from './channel-details';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -119,6 +122,12 @@ export interface GetRatesRequest {
      * @memberof GetRatesRequest
      */
     'destinationAccessPointDetails'?: AccessPointDetails;
+    /**
+     * A list of CarrierAccounts
+     * @type {Array<CarrierAccount>}
+     * @memberof GetRatesRequest
+     */
+    'carrierAccounts'?: Array<CarrierAccount>;
 }
 
 

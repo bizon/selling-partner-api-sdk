@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * The Selling Partner API for Finances
- * The Selling Partner API for Finances provides financial information relevant to a seller\'s business. You can obtain financial events for a given order or date range without having to wait until a statement period closes.
+ * The Selling Partner API for Finances helps you obtain financial information relevant to a seller\'s business. You can obtain financial events for a given order or date range without having to wait until a statement period closes.
  *
  * The version of the OpenAPI document: 2024-06-19
  * 
@@ -21,13 +21,13 @@
  */
 export interface AmazonPayContext {
     /**
-     * The name of the store that is related to the transaction.
+     * Store name related to transaction.
      * @type {string}
      * @memberof AmazonPayContext
      */
     'storeName'?: string;
     /**
-     * The transaction\'s order type.
+     * Order type of the transaction.
      * @type {string}
      * @memberof AmazonPayContext
      */

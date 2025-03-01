@@ -27,7 +27,7 @@ import type { Points } from './points';
 import type { QuantityDiscountType } from './quantity-discount-type';
 
 /**
- * 
+ * Schema for an individual buybox price.
  * @export
  * @interface BuyBoxPriceType
  */

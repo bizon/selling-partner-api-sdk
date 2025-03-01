@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Schema to identify an item by MarketPlaceId and ASIN.
  * @export
  * @interface ASINIdentifier
  */

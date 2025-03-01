@@ -81,6 +81,13 @@ export const clientRateLimits: RateLimit[] = [
     burst: 100,
   },
   {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/shipping/v2/carrierAccounts/[^/]*$'),
+    rate: 5,
+    burst: 10,
+  },
+  {
     method: 'put',
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/shipping/v2/carrierAccounts/[^/]*/unlink$'),
@@ -119,6 +126,20 @@ export const clientRateLimits: RateLimit[] = [
     method: 'get',
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/shipping/v2/accessPoints$'),
+    rate: 80,
+    burst: 100,
+  },
+  {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/shipping/v2/ndrFeedback$'),
+    rate: 80,
+    burst: 100,
+  },
+  {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/shipping/v2/claims$'),
     rate: 80,
     burst: 100,
   },

@@ -16,6 +16,9 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import type { Status } from './status';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { TrackingDetailCodes } from './tracking-detail-codes';
 
 /**
  * A package status summary.
@@ -29,6 +32,12 @@ export interface TrackingSummary {
      * @memberof TrackingSummary
      */
     'status'?: Status;
+    /**
+     * 
+     * @type {TrackingDetailCodes}
+     * @memberof TrackingSummary
+     */
+    'trackingDetailCodes'?: TrackingDetailCodes;
 }
 
 

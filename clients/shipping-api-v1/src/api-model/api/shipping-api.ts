@@ -57,7 +57,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
     return {
         /**
          * Cancel a shipment by the given shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} shipmentId 
+         * @param {string} shipmentId Shipment Id to cancel a shipment
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -90,7 +90,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * Create a new shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {CreateShipmentRequest} body 
+         * @param {CreateShipmentRequest} body CreateShipmentRequest Body
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -154,7 +154,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * Get service rates.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {GetRatesRequest} body 
+         * @param {GetRatesRequest} body GetRatesRequest body
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -189,7 +189,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * Return the entire shipment object for the shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} shipmentId 
+         * @param {string} shipmentId Shipment id to return the entire shipment object
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -222,7 +222,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * Return the tracking information of a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} trackingId 
+         * @param {string} trackingId Tracking Id
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -255,8 +255,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * Purchase shipping labels based on a given rate.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} shipmentId 
-         * @param {PurchaseLabelsRequest} body 
+         * @param {string} shipmentId Shipment id for purchase shipping label
+         * @param {PurchaseLabelsRequest} body PurchaseShippingLabelRequest body
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -294,7 +294,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * Purchase shipping labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {PurchaseShipmentRequest} body 
+         * @param {PurchaseShipmentRequest} body PurchaseShipmentRequest body
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -329,9 +329,9 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * Retrieve shipping label based on the shipment id and tracking id.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} shipmentId 
-         * @param {string} trackingId 
-         * @param {RetrieveShippingLabelRequest} body 
+         * @param {string} shipmentId Shipment Id to retreive label
+         * @param {string} trackingId Tracking Id
+         * @param {RetrieveShippingLabelRequest} body RetrieveShippingLabelRequest body
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -382,7 +382,7 @@ export const ShippingApiFp = function(configuration?: Configuration) {
     return {
         /**
          * Cancel a shipment by the given shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} shipmentId 
+         * @param {string} shipmentId Shipment Id to cancel a shipment
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -394,7 +394,7 @@ export const ShippingApiFp = function(configuration?: Configuration) {
         },
         /**
          * Create a new shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {CreateShipmentRequest} body 
+         * @param {CreateShipmentRequest} body CreateShipmentRequest Body
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -417,7 +417,7 @@ export const ShippingApiFp = function(configuration?: Configuration) {
         },
         /**
          * Get service rates.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {GetRatesRequest} body 
+         * @param {GetRatesRequest} body GetRatesRequest body
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -429,7 +429,7 @@ export const ShippingApiFp = function(configuration?: Configuration) {
         },
         /**
          * Return the entire shipment object for the shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} shipmentId 
+         * @param {string} shipmentId Shipment id to return the entire shipment object
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -441,7 +441,7 @@ export const ShippingApiFp = function(configuration?: Configuration) {
         },
         /**
          * Return the tracking information of a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} trackingId 
+         * @param {string} trackingId Tracking Id
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -453,8 +453,8 @@ export const ShippingApiFp = function(configuration?: Configuration) {
         },
         /**
          * Purchase shipping labels based on a given rate.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} shipmentId 
-         * @param {PurchaseLabelsRequest} body 
+         * @param {string} shipmentId Shipment id for purchase shipping label
+         * @param {PurchaseLabelsRequest} body PurchaseShippingLabelRequest body
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -466,7 +466,7 @@ export const ShippingApiFp = function(configuration?: Configuration) {
         },
         /**
          * Purchase shipping labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {PurchaseShipmentRequest} body 
+         * @param {PurchaseShipmentRequest} body PurchaseShipmentRequest body
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -478,9 +478,9 @@ export const ShippingApiFp = function(configuration?: Configuration) {
         },
         /**
          * Retrieve shipping label based on the shipment id and tracking id.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} shipmentId 
-         * @param {string} trackingId 
-         * @param {RetrieveShippingLabelRequest} body 
+         * @param {string} shipmentId Shipment Id to retreive label
+         * @param {string} trackingId Tracking Id
+         * @param {RetrieveShippingLabelRequest} body RetrieveShippingLabelRequest body
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -590,7 +590,7 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
  */
 export interface ShippingApiCancelShipmentRequest {
     /**
-     * 
+     * Shipment Id to cancel a shipment
      * @type {string}
      * @memberof ShippingApiCancelShipment
      */
@@ -604,7 +604,7 @@ export interface ShippingApiCancelShipmentRequest {
  */
 export interface ShippingApiCreateShipmentRequest {
     /**
-     * 
+     * CreateShipmentRequest Body
      * @type {CreateShipmentRequest}
      * @memberof ShippingApiCreateShipment
      */
@@ -618,7 +618,7 @@ export interface ShippingApiCreateShipmentRequest {
  */
 export interface ShippingApiGetRatesRequest {
     /**
-     * 
+     * GetRatesRequest body
      * @type {GetRatesRequest}
      * @memberof ShippingApiGetRates
      */
@@ -632,7 +632,7 @@ export interface ShippingApiGetRatesRequest {
  */
 export interface ShippingApiGetShipmentRequest {
     /**
-     * 
+     * Shipment id to return the entire shipment object
      * @type {string}
      * @memberof ShippingApiGetShipment
      */
@@ -646,7 +646,7 @@ export interface ShippingApiGetShipmentRequest {
  */
 export interface ShippingApiGetTrackingInformationRequest {
     /**
-     * 
+     * Tracking Id
      * @type {string}
      * @memberof ShippingApiGetTrackingInformation
      */
@@ -660,14 +660,14 @@ export interface ShippingApiGetTrackingInformationRequest {
  */
 export interface ShippingApiPurchaseLabelsRequest {
     /**
-     * 
+     * Shipment id for purchase shipping label
      * @type {string}
      * @memberof ShippingApiPurchaseLabels
      */
     readonly shipmentId: string
 
     /**
-     * 
+     * PurchaseShippingLabelRequest body
      * @type {PurchaseLabelsRequest}
      * @memberof ShippingApiPurchaseLabels
      */
@@ -681,7 +681,7 @@ export interface ShippingApiPurchaseLabelsRequest {
  */
 export interface ShippingApiPurchaseShipmentRequest {
     /**
-     * 
+     * PurchaseShipmentRequest body
      * @type {PurchaseShipmentRequest}
      * @memberof ShippingApiPurchaseShipment
      */
@@ -695,21 +695,21 @@ export interface ShippingApiPurchaseShipmentRequest {
  */
 export interface ShippingApiRetrieveShippingLabelRequest {
     /**
-     * 
+     * Shipment Id to retreive label
      * @type {string}
      * @memberof ShippingApiRetrieveShippingLabel
      */
     readonly shipmentId: string
 
     /**
-     * 
+     * Tracking Id
      * @type {string}
      * @memberof ShippingApiRetrieveShippingLabel
      */
     readonly trackingId: string
 
     /**
-     * 
+     * RetrieveShippingLabelRequest body
      * @type {RetrieveShippingLabelRequest}
      * @memberof ShippingApiRetrieveShippingLabel
      */

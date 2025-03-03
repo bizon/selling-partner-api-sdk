@@ -31,6 +31,7 @@ import type { ItemCondition } from './item-condition';
 
 /**
  * @type ItemOffersRequest
+ * List of request parameters can be accepted by `ItemOffersRequests` operation
  * @export
  */
 export type ItemOffersRequest = BatchOffersRequestParams & BatchRequest;

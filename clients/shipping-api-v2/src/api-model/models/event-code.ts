@@ -31,7 +31,10 @@ export const EventCode = {
     ArrivedAtCarrierFacility: 'ArrivedAtCarrierFacility',
     Rejected: 'Rejected',
     Undeliverable: 'Undeliverable',
-    PickupCancelled: 'PickupCancelled'
+    PickupCancelled: 'PickupCancelled',
+    ReturnInitiated: 'ReturnInitiated',
+    AvailableForPickup: 'AvailableForPickup',
+    RecipientRequestedAlternateDeliveryTiming: 'RecipientRequestedAlternateDeliveryTiming'
 } as const;
 
 export type EventCode = typeof EventCode[keyof typeof EventCode];

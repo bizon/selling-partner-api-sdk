@@ -21,7 +21,7 @@
  */
 export interface ActiveAccount {
     /**
-     * Account Id associated with this account.
+     * Identifier for the seller\'s carrier account.
      * @type {string}
      * @memberof ActiveAccount
      */

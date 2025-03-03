@@ -30,7 +30,7 @@ export interface ContainerLabel {
      */
     'containerTrackingNumber'?: string;
     /**
-     * The `Base64encoded` string of the container label content.
+     * The container label content encoded into a Base64 string.
      * @type {string}
      * @memberof ContainerLabel
      */

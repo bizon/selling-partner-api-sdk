@@ -1,0 +1,53 @@
+{
+  "name": "@sp-api-sdk/vehicles-api-2024-11-01",
+  "author": "Bertrand Marron <bertrand@bizon.solutions>",
+  "description": "The Selling Partner API for Automotive provides programmatic access to information needed by selling partners to provide compatibility information about their listed products.",
+  "version": "1.0.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "scripts": {
+    "check:ts": "tsc --noEmit",
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:es": "tsc -p tsconfig.es.json",
+    "build": "pnpm build:cjs && pnpm build:es",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@sp-api-sdk/common": "workspace:*",
+    "axios": "^1.8.1"
+  },
+  "devDependencies": {
+    "@sp-api-sdk/auth": "workspace:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bizon/selling-partner-api-sdk.git",
+    "directory": "clients/vehicles-api-2024-11-01"
+  },
+  "bugs": {
+    "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
+  },
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/vehicles-api-2024-11-01",
+  "keywords": [
+    "amazon",
+    "bizon",
+    "marketplace web services",
+    "mws",
+    "selling partner api",
+    "sp api",
+    "sp sdk",
+    "vehicles api"
+  ]
+}

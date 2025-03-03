@@ -48,7 +48,12 @@ export const RateItemID = {
     ResidentialSurcharge: 'RESIDENTIAL_SURCHARGE',
     AdditionalSurcharge: 'ADDITIONAL_SURCHARGE',
     Surcharge: 'SURCHARGE',
-    Rebate: 'REBATE'
+    Rebate: 'REBATE',
+    HighCubeSurcharge: 'HIGH_CUBE_SURCHARGE',
+    HighLengthSurcharge: 'HIGH_LENGTH_SURCHARGE',
+    HighWidthSurcharge: 'HIGH_WIDTH_SURCHARGE',
+    DemandSurcharge: 'DEMAND_SURCHARGE',
+    NonstandardFee: 'NONSTANDARD_FEE'
 } as const;
 
 export type RateItemID = typeof RateItemID[keyof typeof RateItemID];

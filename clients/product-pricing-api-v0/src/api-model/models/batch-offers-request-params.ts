@@ -21,7 +21,7 @@ import type { CustomerType } from './customer-type';
 import type { ItemCondition } from './item-condition';
 
 /**
- * 
+ * Common request parameters that can be accepted by `ItemOffersRequest` and `ListingOffersRequest`
  * @export
  * @interface BatchOffersRequestParams
  */

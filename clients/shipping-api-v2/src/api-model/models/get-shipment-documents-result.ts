@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { Benefits } from './benefits';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { PackageDocumentDetail } from './package-document-detail';
 
 /**
@@ -35,5 +38,11 @@ export interface GetShipmentDocumentsResult {
      * @memberof GetShipmentDocumentsResult
      */
     'packageDocumentDetail': PackageDocumentDetail;
+    /**
+     * 
+     * @type {Benefits}
+     * @memberof GetShipmentDocumentsResult
+     */
+    'benefits'?: Benefits;
 }
 

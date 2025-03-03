@@ -24,7 +24,7 @@ import type { Price } from './price';
  */
 export interface GetPricingResponse {
     /**
-     * 
+     * The payload for the `getPricing` and `getCompetitivePricing` operations.
      * @type {Array<Price>}
      * @memberof GetPricingResponse
      */

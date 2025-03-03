@@ -29,7 +29,7 @@ export interface HttpResponseHeaders {
      */
     'Date'?: string;
     /**
-     * Unique request reference ID.
+     * Unique request reference identifier.
      * @type {string}
      * @memberof HttpResponseHeaders
      */

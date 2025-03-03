@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Vendor Invoices v1
+ * Selling Partner API for Retail Procurement Payments
  * The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
  *
  * The version of the OpenAPI document: v1
@@ -26,14 +26,13 @@ import type { SubmitInvoicesRequest } from '../models';
 // @ts-ignore
 import type { SubmitInvoicesResponse } from '../models';
 /**
- * VendorInvoicesApi - axios parameter creator
+ * VendorPaymentsApi - axios parameter creator
  * @export
  */
-export const VendorInvoicesApiAxiosParamCreator = function (configuration?: Configuration) {
+export const VendorPaymentsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
          * Submit new invoices to Amazon.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary submitInvoices
          * @param {SubmitInvoicesRequest} body The request body containing the invoice data to submit.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -71,15 +70,14 @@ export const VendorInvoicesApiAxiosParamCreator = function (configuration?: Conf
 };
 
 /**
- * VendorInvoicesApi - functional programming interface
+ * VendorPaymentsApi - functional programming interface
  * @export
  */
-export const VendorInvoicesApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = VendorInvoicesApiAxiosParamCreator(configuration)
+export const VendorPaymentsApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = VendorPaymentsApiAxiosParamCreator(configuration)
     return {
         /**
          * Submit new invoices to Amazon.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary submitInvoices
          * @param {SubmitInvoicesRequest} body The request body containing the invoice data to submit.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -87,63 +85,61 @@ export const VendorInvoicesApiFp = function(configuration?: Configuration) {
         async submitInvoices(body: SubmitInvoicesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitInvoicesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.submitInvoices(body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['VendorInvoicesApi.submitInvoices']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['VendorPaymentsApi.submitInvoices']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
 
 /**
- * VendorInvoicesApi - factory interface
+ * VendorPaymentsApi - factory interface
  * @export
  */
-export const VendorInvoicesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = VendorInvoicesApiFp(configuration)
+export const VendorPaymentsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = VendorPaymentsApiFp(configuration)
     return {
         /**
          * Submit new invoices to Amazon.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary submitInvoices
-         * @param {VendorInvoicesApiSubmitInvoicesRequest} requestParameters Request parameters.
+         * @param {VendorPaymentsApiSubmitInvoicesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        submitInvoices(requestParameters: VendorInvoicesApiSubmitInvoicesRequest, options?: RawAxiosRequestConfig): AxiosPromise<SubmitInvoicesResponse> {
+        submitInvoices(requestParameters: VendorPaymentsApiSubmitInvoicesRequest, options?: RawAxiosRequestConfig): AxiosPromise<SubmitInvoicesResponse> {
             return localVarFp.submitInvoices(requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
 };
 
 /**
- * Request parameters for submitInvoices operation in VendorInvoicesApi.
+ * Request parameters for submitInvoices operation in VendorPaymentsApi.
  * @export
- * @interface VendorInvoicesApiSubmitInvoicesRequest
+ * @interface VendorPaymentsApiSubmitInvoicesRequest
  */
-export interface VendorInvoicesApiSubmitInvoicesRequest {
+export interface VendorPaymentsApiSubmitInvoicesRequest {
     /**
      * The request body containing the invoice data to submit.
      * @type {SubmitInvoicesRequest}
-     * @memberof VendorInvoicesApiSubmitInvoices
+     * @memberof VendorPaymentsApiSubmitInvoices
      */
     readonly body: SubmitInvoicesRequest
 }
 
 /**
- * VendorInvoicesApi - object-oriented interface
+ * VendorPaymentsApi - object-oriented interface
  * @export
- * @class VendorInvoicesApi
+ * @class VendorPaymentsApi
  * @extends {BaseAPI}
  */
-export class VendorInvoicesApi extends BaseAPI {
+export class VendorPaymentsApi extends BaseAPI {
     /**
      * Submit new invoices to Amazon.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @summary submitInvoices
-     * @param {VendorInvoicesApiSubmitInvoicesRequest} requestParameters Request parameters.
+     * @param {VendorPaymentsApiSubmitInvoicesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorInvoicesApi
+     * @memberof VendorPaymentsApi
      */
-    public submitInvoices(requestParameters: VendorInvoicesApiSubmitInvoicesRequest, options?: RawAxiosRequestConfig) {
-        return VendorInvoicesApiFp(this.configuration).submitInvoices(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    public submitInvoices(requestParameters: VendorPaymentsApiSubmitInvoicesRequest, options?: RawAxiosRequestConfig) {
+        return VendorPaymentsApiFp(this.configuration).submitInvoices(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

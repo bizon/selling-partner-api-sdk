@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Orders v0
+ * Selling Partner API for Orders
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don\'t show up in the response).
  *
  * The version of the OpenAPI document: v0
@@ -48,14 +48,13 @@ import type { UpdateVerificationStatusErrorResponse } from '../models';
 // @ts-ignore
 import type { UpdateVerificationStatusRequest } from '../models';
 /**
- * OrdersApi - axios parameter creator
+ * OrdersV0Api - axios parameter creator
  * @export
  */
-export const OrdersApiAxiosParamCreator = function (configuration?: Configuration) {
+export const OrdersV0ApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
          * Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary confirmShipment
          * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
          * @param {ConfirmShipmentRequest} payload Request body of &#x60;confirmShipment&#x60;.
          * @param {*} [options] Override http request option.
@@ -95,7 +94,6 @@ export const OrdersApiAxiosParamCreator = function (configuration?: Configuratio
         },
         /**
          * Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary getOrder
          * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -129,7 +127,6 @@ export const OrdersApiAxiosParamCreator = function (configuration?: Configuratio
         },
         /**
          * Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary getOrderAddress
          * @param {string} orderId An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -163,7 +160,6 @@ export const OrdersApiAxiosParamCreator = function (configuration?: Configuratio
         },
         /**
          * Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary getOrderBuyerInfo
          * @param {string} orderId An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -197,7 +193,6 @@ export const OrdersApiAxiosParamCreator = function (configuration?: Configuratio
         },
         /**
          * Returns detailed order item information for the order that you specify. If `NextToken` is provided, it\'s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary getOrderItems
          * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
          * @param {string} [nextToken] A string token returned in the response of your previous request.
          * @param {*} [options] Override http request option.
@@ -236,7 +231,6 @@ export const OrdersApiAxiosParamCreator = function (configuration?: Configuratio
         },
         /**
          * Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary getOrderItemsBuyerInfo
          * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
          * @param {string} [nextToken] A string token returned in the response of your previous request.
          * @param {*} [options] Override http request option.
@@ -275,7 +269,6 @@ export const OrdersApiAxiosParamCreator = function (configuration?: Configuratio
         },
         /**
          * Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary getOrderRegulatedInfo
          * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -309,7 +302,6 @@ export const OrdersApiAxiosParamCreator = function (configuration?: Configuratio
         },
         /**
          * Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. `NextToken` doesn\'t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
-         * @summary getOrders
          * @param {Array<string>} marketplaceIds A list of &#x60;MarketplaceId&#x60; values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of &#x60;marketplaceId&#x60; values.
          * @param {string} [createdAfter] Use this date to select orders created after (or at) a specified time. Only orders placed after the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.  **Note**: Either the &#x60;CreatedAfter&#x60; parameter or the &#x60;LastUpdatedAfter&#x60; parameter is required. Both cannot be empty. &#x60;LastUpdatedAfter&#x60; and &#x60;LastUpdatedBefore&#x60; cannot be set when &#x60;CreatedAfter&#x60; is set.
          * @param {string} [createdBefore] Use this date to select orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.  **Note**: &#x60;CreatedBefore&#x60; is optional when &#x60;CreatedAfter&#x60; is set. If specified, &#x60;CreatedBefore&#x60; must be equal to or after the &#x60;CreatedAfter&#x60; date and at least two minutes before current time.
@@ -451,7 +443,6 @@ export const OrdersApiAxiosParamCreator = function (configuration?: Configuratio
         },
         /**
          * Update the shipment status for an order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary updateShipmentStatus
          * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
          * @param {UpdateShipmentStatusRequest} payload The request body for the &#x60;updateShipmentStatus&#x60; operation.
          * @param {*} [options] Override http request option.
@@ -491,7 +482,6 @@ export const OrdersApiAxiosParamCreator = function (configuration?: Configuratio
         },
         /**
          * Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary updateVerificationStatus
          * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
          * @param {UpdateVerificationStatusRequest} payload The request body for the &#x60;updateVerificationStatus&#x60; operation.
          * @param {*} [options] Override http request option.
@@ -533,15 +523,14 @@ export const OrdersApiAxiosParamCreator = function (configuration?: Configuratio
 };
 
 /**
- * OrdersApi - functional programming interface
+ * OrdersV0Api - functional programming interface
  * @export
  */
-export const OrdersApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = OrdersApiAxiosParamCreator(configuration)
+export const OrdersV0ApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = OrdersV0ApiAxiosParamCreator(configuration)
     return {
         /**
          * Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary confirmShipment
          * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
          * @param {ConfirmShipmentRequest} payload Request body of &#x60;confirmShipment&#x60;.
          * @param {*} [options] Override http request option.
@@ -550,12 +539,11 @@ export const OrdersApiFp = function(configuration?: Configuration) {
         async confirmShipment(orderId: string, payload: ConfirmShipmentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.confirmShipment(orderId, payload, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['OrdersApi.confirmShipment']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.confirmShipment']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary getOrder
          * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -563,12 +551,11 @@ export const OrdersApiFp = function(configuration?: Configuration) {
         async getOrder(orderId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrder(orderId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['OrdersApi.getOrder']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.getOrder']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary getOrderAddress
          * @param {string} orderId An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -576,12 +563,11 @@ export const OrdersApiFp = function(configuration?: Configuration) {
         async getOrderAddress(orderId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderAddressResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderAddress(orderId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['OrdersApi.getOrderAddress']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.getOrderAddress']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary getOrderBuyerInfo
          * @param {string} orderId An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -589,12 +575,11 @@ export const OrdersApiFp = function(configuration?: Configuration) {
         async getOrderBuyerInfo(orderId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderBuyerInfoResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderBuyerInfo(orderId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['OrdersApi.getOrderBuyerInfo']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.getOrderBuyerInfo']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns detailed order item information for the order that you specify. If `NextToken` is provided, it\'s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary getOrderItems
          * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
          * @param {string} [nextToken] A string token returned in the response of your previous request.
          * @param {*} [options] Override http request option.
@@ -603,12 +588,11 @@ export const OrdersApiFp = function(configuration?: Configuration) {
         async getOrderItems(orderId: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderItemsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderItems(orderId, nextToken, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['OrdersApi.getOrderItems']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.getOrderItems']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary getOrderItemsBuyerInfo
          * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
          * @param {string} [nextToken] A string token returned in the response of your previous request.
          * @param {*} [options] Override http request option.
@@ -617,12 +601,11 @@ export const OrdersApiFp = function(configuration?: Configuration) {
         async getOrderItemsBuyerInfo(orderId: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderItemsBuyerInfoResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderItemsBuyerInfo(orderId, nextToken, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['OrdersApi.getOrderItemsBuyerInfo']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.getOrderItemsBuyerInfo']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary getOrderRegulatedInfo
          * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -630,12 +613,11 @@ export const OrdersApiFp = function(configuration?: Configuration) {
         async getOrderRegulatedInfo(orderId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderRegulatedInfoResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderRegulatedInfo(orderId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['OrdersApi.getOrderRegulatedInfo']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.getOrderRegulatedInfo']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. `NextToken` doesn\'t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
-         * @summary getOrders
          * @param {Array<string>} marketplaceIds A list of &#x60;MarketplaceId&#x60; values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of &#x60;marketplaceId&#x60; values.
          * @param {string} [createdAfter] Use this date to select orders created after (or at) a specified time. Only orders placed after the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.  **Note**: Either the &#x60;CreatedAfter&#x60; parameter or the &#x60;LastUpdatedAfter&#x60; parameter is required. Both cannot be empty. &#x60;LastUpdatedAfter&#x60; and &#x60;LastUpdatedBefore&#x60; cannot be set when &#x60;CreatedAfter&#x60; is set.
          * @param {string} [createdBefore] Use this date to select orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.  **Note**: &#x60;CreatedBefore&#x60; is optional when &#x60;CreatedAfter&#x60; is set. If specified, &#x60;CreatedBefore&#x60; must be equal to or after the &#x60;CreatedAfter&#x60; date and at least two minutes before current time.
@@ -664,12 +646,11 @@ export const OrdersApiFp = function(configuration?: Configuration) {
         async getOrders(marketplaceIds: Array<string>, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, orderStatuses?: Array<string>, fulfillmentChannels?: Array<string>, paymentMethods?: Array<string>, buyerEmail?: string, sellerOrderId?: string, maxResultsPerPage?: number, easyShipShipmentStatuses?: Array<string>, electronicInvoiceStatuses?: Array<string>, nextToken?: string, amazonOrderIds?: Array<string>, actualFulfillmentSupplySourceId?: string, isISPU?: boolean, storeChainStoreId?: string, earliestDeliveryDateBefore?: string, earliestDeliveryDateAfter?: string, latestDeliveryDateBefore?: string, latestDeliveryDateAfter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrdersResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrders(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, electronicInvoiceStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, earliestDeliveryDateBefore, earliestDeliveryDateAfter, latestDeliveryDateBefore, latestDeliveryDateAfter, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['OrdersApi.getOrders']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.getOrders']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Update the shipment status for an order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary updateShipmentStatus
          * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
          * @param {UpdateShipmentStatusRequest} payload The request body for the &#x60;updateShipmentStatus&#x60; operation.
          * @param {*} [options] Override http request option.
@@ -678,12 +659,11 @@ export const OrdersApiFp = function(configuration?: Configuration) {
         async updateShipmentStatus(orderId: string, payload: UpdateShipmentStatusRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateShipmentStatus(orderId, payload, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['OrdersApi.updateShipmentStatus']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.updateShipmentStatus']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary updateVerificationStatus
          * @param {string} orderId An Amazon-defined order identifier, in 3-7-7 format.
          * @param {UpdateVerificationStatusRequest} payload The request body for the &#x60;updateVerificationStatus&#x60; operation.
          * @param {*} [options] Override http request option.
@@ -692,569 +672,549 @@ export const OrdersApiFp = function(configuration?: Configuration) {
         async updateVerificationStatus(orderId: string, payload: UpdateVerificationStatusRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateVerificationStatus(orderId, payload, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['OrdersApi.updateVerificationStatus']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['OrdersV0Api.updateVerificationStatus']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
 
 /**
- * OrdersApi - factory interface
+ * OrdersV0Api - factory interface
  * @export
  */
-export const OrdersApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = OrdersApiFp(configuration)
+export const OrdersV0ApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = OrdersV0ApiFp(configuration)
     return {
         /**
          * Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary confirmShipment
-         * @param {OrdersApiConfirmShipmentRequest} requestParameters Request parameters.
+         * @param {OrdersV0ApiConfirmShipmentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        confirmShipment(requestParameters: OrdersApiConfirmShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+        confirmShipment(requestParameters: OrdersV0ApiConfirmShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.confirmShipment(requestParameters.orderId, requestParameters.payload, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary getOrder
-         * @param {OrdersApiGetOrderRequest} requestParameters Request parameters.
+         * @param {OrdersV0ApiGetOrderRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrder(requestParameters: OrdersApiGetOrderRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderResponse> {
+        getOrder(requestParameters: OrdersV0ApiGetOrderRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderResponse> {
             return localVarFp.getOrder(requestParameters.orderId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary getOrderAddress
-         * @param {OrdersApiGetOrderAddressRequest} requestParameters Request parameters.
+         * @param {OrdersV0ApiGetOrderAddressRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderAddress(requestParameters: OrdersApiGetOrderAddressRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderAddressResponse> {
+        getOrderAddress(requestParameters: OrdersV0ApiGetOrderAddressRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderAddressResponse> {
             return localVarFp.getOrderAddress(requestParameters.orderId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary getOrderBuyerInfo
-         * @param {OrdersApiGetOrderBuyerInfoRequest} requestParameters Request parameters.
+         * @param {OrdersV0ApiGetOrderBuyerInfoRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderBuyerInfo(requestParameters: OrdersApiGetOrderBuyerInfoRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderBuyerInfoResponse> {
+        getOrderBuyerInfo(requestParameters: OrdersV0ApiGetOrderBuyerInfoRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderBuyerInfoResponse> {
             return localVarFp.getOrderBuyerInfo(requestParameters.orderId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns detailed order item information for the order that you specify. If `NextToken` is provided, it\'s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary getOrderItems
-         * @param {OrdersApiGetOrderItemsRequest} requestParameters Request parameters.
+         * @param {OrdersV0ApiGetOrderItemsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderItems(requestParameters: OrdersApiGetOrderItemsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderItemsResponse> {
+        getOrderItems(requestParameters: OrdersV0ApiGetOrderItemsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderItemsResponse> {
             return localVarFp.getOrderItems(requestParameters.orderId, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary getOrderItemsBuyerInfo
-         * @param {OrdersApiGetOrderItemsBuyerInfoRequest} requestParameters Request parameters.
+         * @param {OrdersV0ApiGetOrderItemsBuyerInfoRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderItemsBuyerInfo(requestParameters: OrdersApiGetOrderItemsBuyerInfoRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderItemsBuyerInfoResponse> {
+        getOrderItemsBuyerInfo(requestParameters: OrdersV0ApiGetOrderItemsBuyerInfoRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderItemsBuyerInfoResponse> {
             return localVarFp.getOrderItemsBuyerInfo(requestParameters.orderId, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary getOrderRegulatedInfo
-         * @param {OrdersApiGetOrderRegulatedInfoRequest} requestParameters Request parameters.
+         * @param {OrdersV0ApiGetOrderRegulatedInfoRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderRegulatedInfo(requestParameters: OrdersApiGetOrderRegulatedInfoRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderRegulatedInfoResponse> {
+        getOrderRegulatedInfo(requestParameters: OrdersV0ApiGetOrderRegulatedInfoRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderRegulatedInfoResponse> {
             return localVarFp.getOrderRegulatedInfo(requestParameters.orderId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. `NextToken` doesn\'t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
-         * @summary getOrders
-         * @param {OrdersApiGetOrdersRequest} requestParameters Request parameters.
+         * @param {OrdersV0ApiGetOrdersRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrders(requestParameters: OrdersApiGetOrdersRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrdersResponse> {
+        getOrders(requestParameters: OrdersV0ApiGetOrdersRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrdersResponse> {
             return localVarFp.getOrders(requestParameters.marketplaceIds, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.orderStatuses, requestParameters.fulfillmentChannels, requestParameters.paymentMethods, requestParameters.buyerEmail, requestParameters.sellerOrderId, requestParameters.maxResultsPerPage, requestParameters.easyShipShipmentStatuses, requestParameters.electronicInvoiceStatuses, requestParameters.nextToken, requestParameters.amazonOrderIds, requestParameters.actualFulfillmentSupplySourceId, requestParameters.isISPU, requestParameters.storeChainStoreId, requestParameters.earliestDeliveryDateBefore, requestParameters.earliestDeliveryDateAfter, requestParameters.latestDeliveryDateBefore, requestParameters.latestDeliveryDateAfter, options).then((request) => request(axios, basePath));
         },
         /**
          * Update the shipment status for an order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary updateShipmentStatus
-         * @param {OrdersApiUpdateShipmentStatusRequest} requestParameters Request parameters.
+         * @param {OrdersV0ApiUpdateShipmentStatusRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateShipmentStatus(requestParameters: OrdersApiUpdateShipmentStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+        updateShipmentStatus(requestParameters: OrdersV0ApiUpdateShipmentStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.updateShipmentStatus(requestParameters.orderId, requestParameters.payload, options).then((request) => request(axios, basePath));
         },
         /**
          * Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @summary updateVerificationStatus
-         * @param {OrdersApiUpdateVerificationStatusRequest} requestParameters Request parameters.
+         * @param {OrdersV0ApiUpdateVerificationStatusRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateVerificationStatus(requestParameters: OrdersApiUpdateVerificationStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+        updateVerificationStatus(requestParameters: OrdersV0ApiUpdateVerificationStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.updateVerificationStatus(requestParameters.orderId, requestParameters.payload, options).then((request) => request(axios, basePath));
         },
     };
 };
 
 /**
- * Request parameters for confirmShipment operation in OrdersApi.
+ * Request parameters for confirmShipment operation in OrdersV0Api.
  * @export
- * @interface OrdersApiConfirmShipmentRequest
+ * @interface OrdersV0ApiConfirmShipmentRequest
  */
-export interface OrdersApiConfirmShipmentRequest {
+export interface OrdersV0ApiConfirmShipmentRequest {
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
      * @type {string}
-     * @memberof OrdersApiConfirmShipment
+     * @memberof OrdersV0ApiConfirmShipment
      */
     readonly orderId: string
 
     /**
      * Request body of &#x60;confirmShipment&#x60;.
      * @type {ConfirmShipmentRequest}
-     * @memberof OrdersApiConfirmShipment
+     * @memberof OrdersV0ApiConfirmShipment
      */
     readonly payload: ConfirmShipmentRequest
 }
 
 /**
- * Request parameters for getOrder operation in OrdersApi.
+ * Request parameters for getOrder operation in OrdersV0Api.
  * @export
- * @interface OrdersApiGetOrderRequest
+ * @interface OrdersV0ApiGetOrderRequest
  */
-export interface OrdersApiGetOrderRequest {
+export interface OrdersV0ApiGetOrderRequest {
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
      * @type {string}
-     * @memberof OrdersApiGetOrder
+     * @memberof OrdersV0ApiGetOrder
      */
     readonly orderId: string
 }
 
 /**
- * Request parameters for getOrderAddress operation in OrdersApi.
+ * Request parameters for getOrderAddress operation in OrdersV0Api.
  * @export
- * @interface OrdersApiGetOrderAddressRequest
+ * @interface OrdersV0ApiGetOrderAddressRequest
  */
-export interface OrdersApiGetOrderAddressRequest {
+export interface OrdersV0ApiGetOrderAddressRequest {
     /**
      * An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.
      * @type {string}
-     * @memberof OrdersApiGetOrderAddress
+     * @memberof OrdersV0ApiGetOrderAddress
      */
     readonly orderId: string
 }
 
 /**
- * Request parameters for getOrderBuyerInfo operation in OrdersApi.
+ * Request parameters for getOrderBuyerInfo operation in OrdersV0Api.
  * @export
- * @interface OrdersApiGetOrderBuyerInfoRequest
+ * @interface OrdersV0ApiGetOrderBuyerInfoRequest
  */
-export interface OrdersApiGetOrderBuyerInfoRequest {
+export interface OrdersV0ApiGetOrderBuyerInfoRequest {
     /**
      * An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.
      * @type {string}
-     * @memberof OrdersApiGetOrderBuyerInfo
+     * @memberof OrdersV0ApiGetOrderBuyerInfo
      */
     readonly orderId: string
 }
 
 /**
- * Request parameters for getOrderItems operation in OrdersApi.
+ * Request parameters for getOrderItems operation in OrdersV0Api.
  * @export
- * @interface OrdersApiGetOrderItemsRequest
+ * @interface OrdersV0ApiGetOrderItemsRequest
  */
-export interface OrdersApiGetOrderItemsRequest {
+export interface OrdersV0ApiGetOrderItemsRequest {
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
      * @type {string}
-     * @memberof OrdersApiGetOrderItems
+     * @memberof OrdersV0ApiGetOrderItems
      */
     readonly orderId: string
 
     /**
      * A string token returned in the response of your previous request.
      * @type {string}
-     * @memberof OrdersApiGetOrderItems
+     * @memberof OrdersV0ApiGetOrderItems
      */
     readonly nextToken?: string
 }
 
 /**
- * Request parameters for getOrderItemsBuyerInfo operation in OrdersApi.
+ * Request parameters for getOrderItemsBuyerInfo operation in OrdersV0Api.
  * @export
- * @interface OrdersApiGetOrderItemsBuyerInfoRequest
+ * @interface OrdersV0ApiGetOrderItemsBuyerInfoRequest
  */
-export interface OrdersApiGetOrderItemsBuyerInfoRequest {
+export interface OrdersV0ApiGetOrderItemsBuyerInfoRequest {
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
      * @type {string}
-     * @memberof OrdersApiGetOrderItemsBuyerInfo
+     * @memberof OrdersV0ApiGetOrderItemsBuyerInfo
      */
     readonly orderId: string
 
     /**
      * A string token returned in the response of your previous request.
      * @type {string}
-     * @memberof OrdersApiGetOrderItemsBuyerInfo
+     * @memberof OrdersV0ApiGetOrderItemsBuyerInfo
      */
     readonly nextToken?: string
 }
 
 /**
- * Request parameters for getOrderRegulatedInfo operation in OrdersApi.
+ * Request parameters for getOrderRegulatedInfo operation in OrdersV0Api.
  * @export
- * @interface OrdersApiGetOrderRegulatedInfoRequest
+ * @interface OrdersV0ApiGetOrderRegulatedInfoRequest
  */
-export interface OrdersApiGetOrderRegulatedInfoRequest {
+export interface OrdersV0ApiGetOrderRegulatedInfoRequest {
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
      * @type {string}
-     * @memberof OrdersApiGetOrderRegulatedInfo
+     * @memberof OrdersV0ApiGetOrderRegulatedInfo
      */
     readonly orderId: string
 }
 
 /**
- * Request parameters for getOrders operation in OrdersApi.
+ * Request parameters for getOrders operation in OrdersV0Api.
  * @export
- * @interface OrdersApiGetOrdersRequest
+ * @interface OrdersV0ApiGetOrdersRequest
  */
-export interface OrdersApiGetOrdersRequest {
+export interface OrdersV0ApiGetOrdersRequest {
     /**
      * A list of &#x60;MarketplaceId&#x60; values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of &#x60;marketplaceId&#x60; values.
      * @type {Array<string>}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * Use this date to select orders created after (or at) a specified time. Only orders placed after the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.  **Note**: Either the &#x60;CreatedAfter&#x60; parameter or the &#x60;LastUpdatedAfter&#x60; parameter is required. Both cannot be empty. &#x60;LastUpdatedAfter&#x60; and &#x60;LastUpdatedBefore&#x60; cannot be set when &#x60;CreatedAfter&#x60; is set.
      * @type {string}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly createdAfter?: string
 
     /**
      * Use this date to select orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.  **Note**: &#x60;CreatedBefore&#x60; is optional when &#x60;CreatedAfter&#x60; is set. If specified, &#x60;CreatedBefore&#x60; must be equal to or after the &#x60;CreatedAfter&#x60; date and at least two minutes before current time.
      * @type {string}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly createdBefore?: string
 
     /**
      * Use this date to select orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.  **Note**: Either the &#x60;CreatedAfter&#x60; parameter or the &#x60;LastUpdatedAfter&#x60; parameter is required. Both cannot be empty. &#x60;CreatedAfter&#x60; or &#x60;CreatedBefore&#x60; cannot be set when &#x60;LastUpdatedAfter&#x60; is set.
      * @type {string}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly lastUpdatedAfter?: string
 
     /**
      * Use this date to select orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.  **Note**: &#x60;LastUpdatedBefore&#x60; is optional when &#x60;LastUpdatedAfter&#x60; is set. But if specified, &#x60;LastUpdatedBefore&#x60; must be equal to or after the &#x60;LastUpdatedAfter&#x60; date and at least two minutes before current time.
      * @type {string}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly lastUpdatedBefore?: string
 
     /**
      * A list of &#x60;OrderStatus&#x60; values used to filter the results.  **Possible values:** - &#x60;PendingAvailability&#x60; (This status is available for pre-orders only. The order has been placed, payment has not been authorized, and the release date of the item is in the future.) - &#x60;Pending&#x60; (The order has been placed but payment has not been authorized.) - &#x60;Unshipped&#x60; (Payment has been authorized and the order is ready for shipment, but no items in the order have been shipped.) - &#x60;PartiallyShipped&#x60; (One or more, but not all, items in the order have been shipped.) - &#x60;Shipped&#x60; (All items in the order have been shipped.) - &#x60;InvoiceUnconfirmed&#x60; (All items in the order have been shipped. The seller has not yet given confirmation to Amazon that the invoice has been shipped to the buyer.) - &#x60;Canceled&#x60; (The order has been canceled.) - &#x60;Unfulfillable&#x60; (The order cannot be fulfilled. This state applies only to Multi-Channel Fulfillment orders.)
      * @type {Array<string>}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly orderStatuses?: Array<string>
 
     /**
      * A list that indicates how an order was fulfilled. Filters the results by fulfillment channel.   **Possible values**: &#x60;AFN&#x60; (fulfilled by Amazon), &#x60;MFN&#x60; (fulfilled by seller).
      * @type {Array<string>}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly fulfillmentChannels?: Array<string>
 
     /**
      * A list of payment method values. Use this field to select orders that were paid with the specified payment methods.  **Possible values**: &#x60;COD&#x60; (cash on delivery), &#x60;CVS&#x60; (convenience store), &#x60;Other&#x60; (Any payment method other than COD or CVS).
      * @type {Array<string>}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly paymentMethods?: Array<string>
 
     /**
      * The email address of a buyer. Used to select orders that contain the specified email address.
      * @type {string}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly buyerEmail?: string
 
     /**
      * An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If &#x60;SellerOrderId&#x60; is specified, then &#x60;FulfillmentChannels&#x60;, &#x60;OrderStatuses&#x60;, &#x60;PaymentMethod&#x60;, &#x60;LastUpdatedAfter&#x60;, LastUpdatedBefore, and &#x60;BuyerEmail&#x60; cannot be specified.
      * @type {string}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly sellerOrderId?: string
 
     /**
      * A number that indicates the maximum number of orders that can be returned per page. Value must be 1 - 100. Default 100.
      * @type {number}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly maxResultsPerPage?: number
 
     /**
      * A list of &#x60;EasyShipShipmentStatus&#x60; values. Used to select Easy Ship orders with statuses that match the specified values. If &#x60;EasyShipShipmentStatus&#x60; is specified, only Amazon Easy Ship orders are returned.  **Possible values:** - &#x60;PendingSchedule&#x60; (The package is awaiting the schedule for pick-up.) - &#x60;PendingPickUp&#x60; (Amazon has not yet picked up the package from the seller.) - &#x60;PendingDropOff&#x60; (The seller will deliver the package to the carrier.) - &#x60;LabelCanceled&#x60; (The seller canceled the pickup.) - &#x60;PickedUp&#x60; (Amazon has picked up the package from the seller.) - &#x60;DroppedOff&#x60; (The package is delivered to the carrier by the seller.) - &#x60;AtOriginFC&#x60; (The packaged is at the origin fulfillment center.) - &#x60;AtDestinationFC&#x60; (The package is at the destination fulfillment center.) - &#x60;Delivered&#x60; (The package has been delivered.) - &#x60;RejectedByBuyer&#x60; (The package has been rejected by the buyer.) - &#x60;Undeliverable&#x60; (The package cannot be delivered.) - &#x60;ReturningToSeller&#x60; (The package was not delivered and is being returned to the seller.) - &#x60;ReturnedToSeller&#x60; (The package was not delivered and was returned to the seller.) - &#x60;Lost&#x60; (The package is lost.) - &#x60;OutForDelivery&#x60; (The package is out for delivery.) - &#x60;Damaged&#x60; (The package was damaged by the carrier.)
      * @type {Array<string>}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly easyShipShipmentStatuses?: Array<string>
 
     /**
      * A list of &#x60;ElectronicInvoiceStatus&#x60; values. Used to select orders with electronic invoice statuses that match the specified values.  **Possible values:** - &#x60;NotRequired&#x60; (Electronic invoice submission is not required for this order.) - &#x60;NotFound&#x60; (The electronic invoice was not submitted for this order.) - &#x60;Processing&#x60; (The electronic invoice is being processed for this order.) - &#x60;Errored&#x60; (The last submitted electronic invoice was rejected for this order.) - &#x60;Accepted&#x60; (The last submitted electronic invoice was submitted and accepted.)
      * @type {Array<string>}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly electronicInvoiceStatuses?: Array<string>
 
     /**
      * A string token returned in the response of your previous request.
      * @type {string}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly nextToken?: string
 
     /**
      * A list of &#x60;AmazonOrderId&#x60; values. An &#x60;AmazonOrderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.
      * @type {Array<string>}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly amazonOrderIds?: Array<string>
 
     /**
      * The &#x60;sourceId&#x60; of the location from where you want the order fulfilled.
      * @type {string}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly actualFulfillmentSupplySourceId?: string
 
     /**
      * When true, this order is marked to be picked up from a store rather than delivered.
      * @type {boolean}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly isISPU?: boolean
 
     /**
      * The store chain store identifier. Linked to a specific store in a store chain.
      * @type {string}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly storeChainStoreId?: string
 
     /**
      * Use this date to select orders with a earliest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
      * @type {string}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly earliestDeliveryDateBefore?: string
 
     /**
      * Use this date to select orders with a earliest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
      * @type {string}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly earliestDeliveryDateAfter?: string
 
     /**
      * Use this date to select orders with a latest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
      * @type {string}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly latestDeliveryDateBefore?: string
 
     /**
      * Use this date to select orders with a latest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
      * @type {string}
-     * @memberof OrdersApiGetOrders
+     * @memberof OrdersV0ApiGetOrders
      */
     readonly latestDeliveryDateAfter?: string
 }
 
 /**
- * Request parameters for updateShipmentStatus operation in OrdersApi.
+ * Request parameters for updateShipmentStatus operation in OrdersV0Api.
  * @export
- * @interface OrdersApiUpdateShipmentStatusRequest
+ * @interface OrdersV0ApiUpdateShipmentStatusRequest
  */
-export interface OrdersApiUpdateShipmentStatusRequest {
+export interface OrdersV0ApiUpdateShipmentStatusRequest {
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
      * @type {string}
-     * @memberof OrdersApiUpdateShipmentStatus
+     * @memberof OrdersV0ApiUpdateShipmentStatus
      */
     readonly orderId: string
 
     /**
      * The request body for the &#x60;updateShipmentStatus&#x60; operation.
      * @type {UpdateShipmentStatusRequest}
-     * @memberof OrdersApiUpdateShipmentStatus
+     * @memberof OrdersV0ApiUpdateShipmentStatus
      */
     readonly payload: UpdateShipmentStatusRequest
 }
 
 /**
- * Request parameters for updateVerificationStatus operation in OrdersApi.
+ * Request parameters for updateVerificationStatus operation in OrdersV0Api.
  * @export
- * @interface OrdersApiUpdateVerificationStatusRequest
+ * @interface OrdersV0ApiUpdateVerificationStatusRequest
  */
-export interface OrdersApiUpdateVerificationStatusRequest {
+export interface OrdersV0ApiUpdateVerificationStatusRequest {
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
      * @type {string}
-     * @memberof OrdersApiUpdateVerificationStatus
+     * @memberof OrdersV0ApiUpdateVerificationStatus
      */
     readonly orderId: string
 
     /**
      * The request body for the &#x60;updateVerificationStatus&#x60; operation.
      * @type {UpdateVerificationStatusRequest}
-     * @memberof OrdersApiUpdateVerificationStatus
+     * @memberof OrdersV0ApiUpdateVerificationStatus
      */
     readonly payload: UpdateVerificationStatusRequest
 }
 
 /**
- * OrdersApi - object-oriented interface
+ * OrdersV0Api - object-oriented interface
  * @export
- * @class OrdersApi
+ * @class OrdersV0Api
  * @extends {BaseAPI}
  */
-export class OrdersApi extends BaseAPI {
+export class OrdersV0Api extends BaseAPI {
     /**
      * Updates the shipment confirmation status for a specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @summary confirmShipment
-     * @param {OrdersApiConfirmShipmentRequest} requestParameters Request parameters.
+     * @param {OrdersV0ApiConfirmShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
+     * @memberof OrdersV0Api
      */
-    public confirmShipment(requestParameters: OrdersApiConfirmShipmentRequest, options?: RawAxiosRequestConfig) {
-        return OrdersApiFp(this.configuration).confirmShipment(requestParameters.orderId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
+    public confirmShipment(requestParameters: OrdersV0ApiConfirmShipmentRequest, options?: RawAxiosRequestConfig) {
+        return OrdersV0ApiFp(this.configuration).confirmShipment(requestParameters.orderId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @summary getOrder
-     * @param {OrdersApiGetOrderRequest} requestParameters Request parameters.
+     * @param {OrdersV0ApiGetOrderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
+     * @memberof OrdersV0Api
      */
-    public getOrder(requestParameters: OrdersApiGetOrderRequest, options?: RawAxiosRequestConfig) {
-        return OrdersApiFp(this.configuration).getOrder(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
+    public getOrder(requestParameters: OrdersV0ApiGetOrderRequest, options?: RawAxiosRequestConfig) {
+        return OrdersV0ApiFp(this.configuration).getOrder(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns the shipping address for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @summary getOrderAddress
-     * @param {OrdersApiGetOrderAddressRequest} requestParameters Request parameters.
+     * @param {OrdersV0ApiGetOrderAddressRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
+     * @memberof OrdersV0Api
      */
-    public getOrderAddress(requestParameters: OrdersApiGetOrderAddressRequest, options?: RawAxiosRequestConfig) {
-        return OrdersApiFp(this.configuration).getOrderAddress(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
+    public getOrderAddress(requestParameters: OrdersV0ApiGetOrderAddressRequest, options?: RawAxiosRequestConfig) {
+        return OrdersV0ApiFp(this.configuration).getOrderAddress(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns buyer information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @summary getOrderBuyerInfo
-     * @param {OrdersApiGetOrderBuyerInfoRequest} requestParameters Request parameters.
+     * @param {OrdersV0ApiGetOrderBuyerInfoRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
+     * @memberof OrdersV0Api
      */
-    public getOrderBuyerInfo(requestParameters: OrdersApiGetOrderBuyerInfoRequest, options?: RawAxiosRequestConfig) {
-        return OrdersApiFp(this.configuration).getOrderBuyerInfo(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
+    public getOrderBuyerInfo(requestParameters: OrdersV0ApiGetOrderBuyerInfoRequest, options?: RawAxiosRequestConfig) {
+        return OrdersV0ApiFp(this.configuration).getOrderBuyerInfo(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns detailed order item information for the order that you specify. If `NextToken` is provided, it\'s used to retrieve the next page of order items.  __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @summary getOrderItems
-     * @param {OrdersApiGetOrderItemsRequest} requestParameters Request parameters.
+     * @param {OrdersV0ApiGetOrderItemsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
+     * @memberof OrdersV0Api
      */
-    public getOrderItems(requestParameters: OrdersApiGetOrderItemsRequest, options?: RawAxiosRequestConfig) {
-        return OrdersApiFp(this.configuration).getOrderItems(requestParameters.orderId, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
+    public getOrderItems(requestParameters: OrdersV0ApiGetOrderItemsRequest, options?: RawAxiosRequestConfig) {
+        return OrdersV0ApiFp(this.configuration).getOrderItems(requestParameters.orderId, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns buyer information for the order items in the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @summary getOrderItemsBuyerInfo
-     * @param {OrdersApiGetOrderItemsBuyerInfoRequest} requestParameters Request parameters.
+     * @param {OrdersV0ApiGetOrderItemsBuyerInfoRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
+     * @memberof OrdersV0Api
      */
-    public getOrderItemsBuyerInfo(requestParameters: OrdersApiGetOrderItemsBuyerInfoRequest, options?: RawAxiosRequestConfig) {
-        return OrdersApiFp(this.configuration).getOrderItemsBuyerInfo(requestParameters.orderId, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
+    public getOrderItemsBuyerInfo(requestParameters: OrdersV0ApiGetOrderItemsBuyerInfoRequest, options?: RawAxiosRequestConfig) {
+        return OrdersV0ApiFp(this.configuration).getOrderItemsBuyerInfo(requestParameters.orderId, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns regulated information for the order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @summary getOrderRegulatedInfo
-     * @param {OrdersApiGetOrderRegulatedInfoRequest} requestParameters Request parameters.
+     * @param {OrdersV0ApiGetOrderRegulatedInfoRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
+     * @memberof OrdersV0Api
      */
-    public getOrderRegulatedInfo(requestParameters: OrdersApiGetOrderRegulatedInfoRequest, options?: RawAxiosRequestConfig) {
-        return OrdersApiFp(this.configuration).getOrderRegulatedInfo(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
+    public getOrderRegulatedInfo(requestParameters: OrdersV0ApiGetOrderRegulatedInfoRequest, options?: RawAxiosRequestConfig) {
+        return OrdersV0ApiFp(this.configuration).getOrderRegulatedInfo(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. `NextToken` doesn\'t affect any filters that you include in your request; it only impacts the pagination for the filtered orders response.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
-     * @summary getOrders
-     * @param {OrdersApiGetOrdersRequest} requestParameters Request parameters.
+     * @param {OrdersV0ApiGetOrdersRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
+     * @memberof OrdersV0Api
      */
-    public getOrders(requestParameters: OrdersApiGetOrdersRequest, options?: RawAxiosRequestConfig) {
-        return OrdersApiFp(this.configuration).getOrders(requestParameters.marketplaceIds, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.orderStatuses, requestParameters.fulfillmentChannels, requestParameters.paymentMethods, requestParameters.buyerEmail, requestParameters.sellerOrderId, requestParameters.maxResultsPerPage, requestParameters.easyShipShipmentStatuses, requestParameters.electronicInvoiceStatuses, requestParameters.nextToken, requestParameters.amazonOrderIds, requestParameters.actualFulfillmentSupplySourceId, requestParameters.isISPU, requestParameters.storeChainStoreId, requestParameters.earliestDeliveryDateBefore, requestParameters.earliestDeliveryDateAfter, requestParameters.latestDeliveryDateBefore, requestParameters.latestDeliveryDateAfter, options).then((request) => request(this.axios, this.basePath));
+    public getOrders(requestParameters: OrdersV0ApiGetOrdersRequest, options?: RawAxiosRequestConfig) {
+        return OrdersV0ApiFp(this.configuration).getOrders(requestParameters.marketplaceIds, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.orderStatuses, requestParameters.fulfillmentChannels, requestParameters.paymentMethods, requestParameters.buyerEmail, requestParameters.sellerOrderId, requestParameters.maxResultsPerPage, requestParameters.easyShipShipmentStatuses, requestParameters.electronicInvoiceStatuses, requestParameters.nextToken, requestParameters.amazonOrderIds, requestParameters.actualFulfillmentSupplySourceId, requestParameters.isISPU, requestParameters.storeChainStoreId, requestParameters.earliestDeliveryDateBefore, requestParameters.earliestDeliveryDateAfter, requestParameters.latestDeliveryDateBefore, requestParameters.latestDeliveryDateAfter, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Update the shipment status for an order that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @summary updateShipmentStatus
-     * @param {OrdersApiUpdateShipmentStatusRequest} requestParameters Request parameters.
+     * @param {OrdersV0ApiUpdateShipmentStatusRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
+     * @memberof OrdersV0Api
      */
-    public updateShipmentStatus(requestParameters: OrdersApiUpdateShipmentStatusRequest, options?: RawAxiosRequestConfig) {
-        return OrdersApiFp(this.configuration).updateShipmentStatus(requestParameters.orderId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
+    public updateShipmentStatus(requestParameters: OrdersV0ApiUpdateShipmentStatusRequest, options?: RawAxiosRequestConfig) {
+        return OrdersV0ApiFp(this.configuration).updateShipmentStatus(requestParameters.orderId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Updates (approves or rejects) the verification status of an order containing regulated products.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @summary updateVerificationStatus
-     * @param {OrdersApiUpdateVerificationStatusRequest} requestParameters Request parameters.
+     * @param {OrdersV0ApiUpdateVerificationStatusRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
+     * @memberof OrdersV0Api
      */
-    public updateVerificationStatus(requestParameters: OrdersApiUpdateVerificationStatusRequest, options?: RawAxiosRequestConfig) {
-        return OrdersApiFp(this.configuration).updateVerificationStatus(requestParameters.orderId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
+    public updateVerificationStatus(requestParameters: OrdersV0ApiUpdateVerificationStatusRequest, options?: RawAxiosRequestConfig) {
+        return OrdersV0ApiFp(this.configuration).updateVerificationStatus(requestParameters.orderId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -39,7 +39,7 @@ import type { SellerFeedbackType } from './seller-feedback-type';
 import type { ShipsFromType } from './ships-from-type';
 
 /**
- * 
+ * Schema for an individual offer. Object in `OfferDetailList`.
  * @export
  * @interface OfferDetail
  */
@@ -93,7 +93,7 @@ export interface OfferDetail {
      */
     'ListingPrice': MoneyType;
     /**
-     * 
+     * List of `QuantityDiscountPrice` that contains item\'s pricing information when buy in bulk.
      * @type {Array<QuantityDiscountPriceType>}
      * @memberof OfferDetail
      */

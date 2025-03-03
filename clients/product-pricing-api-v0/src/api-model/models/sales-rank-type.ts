@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Sales rank information for the item, by category
  * @export
  * @interface SalesRankType
  */

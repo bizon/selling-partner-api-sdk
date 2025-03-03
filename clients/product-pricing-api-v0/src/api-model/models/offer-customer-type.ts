@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * Indicates whether the offer is a B2B or B2C offer
  * @export
  * @enum {string}
  */

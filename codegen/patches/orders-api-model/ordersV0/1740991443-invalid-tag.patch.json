@@ -1,0 +1,7 @@
+[
+  {
+    "op": "replace",
+    "path": "/paths/~1orders~1v0~1orders~1{orderId}~1shipment/post/tags/0",
+    "value": "ordersV0"
+  }
+]

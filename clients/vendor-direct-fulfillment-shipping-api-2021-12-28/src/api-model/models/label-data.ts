@@ -45,7 +45,7 @@ export interface LabelData {
      */
     'shipMethodName'?: string;
     /**
-     * This field will contain the Base64encoded string of the shipment label content.
+     * This field will contain the Base64 string of the shipment label content.
      * @type {string}
      * @memberof LabelData
      */

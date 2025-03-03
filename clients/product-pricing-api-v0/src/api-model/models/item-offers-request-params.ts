@@ -28,6 +28,7 @@ import type { ItemOffersRequestParamsAllOf } from './item-offers-request-params-
 
 /**
  * @type ItemOffersRequestParams
+ * List of request parameters that can be accepted by `ItemOffersRequest`
  * @export
  */
 export type ItemOffersRequestParams = BatchOffersRequestParams & ItemOffersRequestParamsAllOf;

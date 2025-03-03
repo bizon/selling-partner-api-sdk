@@ -866,8 +866,8 @@ importers:
         specifier: ^12.1.3
         version: 12.1.3
       type-fest:
-        specifier: ^4.34.1
-        version: 4.34.1
+        specifier: ^4.36.0
+        version: 4.36.0
 
   packages/auth:
     dependencies:
@@ -882,8 +882,8 @@ importers:
         specifier: ^14.0.1
         version: 14.0.1
       type-fest:
-        specifier: ^4.34.1
-        version: 4.34.1
+        specifier: ^4.36.0
+        version: 4.36.0
 
   packages/common:
     dependencies:
@@ -5482,10 +5482,6 @@ packages:
   type-fest@3.13.1:
     resolution: {integrity: sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==}
     engines: {node: '>=14.16'}
-
-  type-fest@4.34.1:
-    resolution: {integrity: sha512-6kSc32kT0rbwxD6QL1CYe8IqdzN/J/ILMrNK+HMQCKH3insCDRY/3ITb0vcBss0a3t72fzh2YSzj8ko1HgwT3g==}
-    engines: {node: '>=16'}
 
   type-fest@4.36.0:
     resolution: {integrity: sha512-3T/PUdKTCnkUmhQU6FFJEHsLwadsRegktX3TNHk+2JJB9HlA8gp1/VXblXVDI93kSnXF2rdPx0GMbHtJIV2LPg==}
@@ -11141,8 +11137,6 @@ snapshots:
   type-fest@2.19.0: {}
 
   type-fest@3.13.1: {}
-
-  type-fest@4.34.1: {}
 
   type-fest@4.36.0: {}
 

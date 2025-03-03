@@ -18,7 +18,7 @@
 import type { Product } from './product';
 
 /**
- * 
+ * Schema for price info in `getPricing` response
  * @export
  * @interface Price
  */

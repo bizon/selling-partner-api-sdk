@@ -153,7 +153,7 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
         },
         /**
          * Returns the lowest priced offers for a batch of items based on ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {GetItemOffersBatchRequest} getItemOffersBatchRequestBody 
+         * @param {GetItemOffersBatchRequest} getItemOffersBatchRequestBody The request associated with the &#x60;getItemOffersBatch&#x60; API call.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -240,7 +240,7 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
         },
         /**
          * Returns the lowest priced offers for a batch of listings by SKU.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {GetListingOffersBatchRequest} getListingOffersBatchRequestBody 
+         * @param {GetListingOffersBatchRequest} getListingOffersBatchRequestBody The request associated with the &#x60;getListingOffersBatch&#x60; API call.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -379,7 +379,7 @@ export const ProductPricingApiFp = function(configuration?: Configuration) {
         },
         /**
          * Returns the lowest priced offers for a batch of items based on ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {GetItemOffersBatchRequest} getItemOffersBatchRequestBody 
+         * @param {GetItemOffersBatchRequest} getItemOffersBatchRequestBody The request associated with the &#x60;getItemOffersBatch&#x60; API call.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -406,7 +406,7 @@ export const ProductPricingApiFp = function(configuration?: Configuration) {
         },
         /**
          * Returns the lowest priced offers for a batch of listings by SKU.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {GetListingOffersBatchRequest} getListingOffersBatchRequestBody 
+         * @param {GetListingOffersBatchRequest} getListingOffersBatchRequestBody The request associated with the &#x60;getListingOffersBatch&#x60; API call.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -584,7 +584,7 @@ export interface ProductPricingApiGetItemOffersRequest {
  */
 export interface ProductPricingApiGetItemOffersBatchRequest {
     /**
-     * 
+     * The request associated with the &#x60;getItemOffersBatch&#x60; API call.
      * @type {GetItemOffersBatchRequest}
      * @memberof ProductPricingApiGetItemOffersBatch
      */
@@ -633,7 +633,7 @@ export interface ProductPricingApiGetListingOffersRequest {
  */
 export interface ProductPricingApiGetListingOffersBatchRequest {
     /**
-     * 
+     * The request associated with the &#x60;getListingOffersBatch&#x60; API call.
      * @type {GetListingOffersBatchRequest}
      * @memberof ProductPricingApiGetListingOffersBatch
      */

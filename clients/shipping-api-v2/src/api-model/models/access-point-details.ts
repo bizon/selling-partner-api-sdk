@@ -15,7 +15,7 @@
 
 
 /**
- * 
+ * AccessPointDetails object
  * @export
  * @interface AccessPointDetails
  */

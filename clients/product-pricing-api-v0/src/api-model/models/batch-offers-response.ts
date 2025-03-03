@@ -24,7 +24,7 @@ import type { GetOffersResponse } from './get-offers-response';
 import type { HttpResponseHeaders } from './http-response-headers';
 
 /**
- * 
+ * Common schema that present in `ItemOffersResponse` and `ListingOffersResponse`
  * @export
  * @interface BatchOffersResponse
  */

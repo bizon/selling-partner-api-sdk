@@ -42,19 +42,19 @@ export interface Summary {
      */
     'TotalOfferCount': number;
     /**
-     * 
+     * A list that contains the total number of offers information for given conditions and fulfillment channels.
      * @type {Array<OfferCountType>}
      * @memberof Summary
      */
     'NumberOfOffers'?: Array<OfferCountType>;
     /**
-     * 
+     * A list of the lowest prices.
      * @type {Array<LowestPriceType>}
      * @memberof Summary
      */
     'LowestPrices'?: Array<LowestPriceType>;
     /**
-     * 
+     * A list of the Buy Box prices.
      * @type {Array<BuyBoxPriceType>}
      * @memberof Summary
      */
@@ -84,7 +84,7 @@ export interface Summary {
      */
     'SalesRankings'?: Array<SalesRankType>;
     /**
-     * 
+     * A list that contains the total number of offers that are eligible for the Buy Box for the given conditions and fulfillment channels.
      * @type {Array<OfferCountType>}
      * @memberof Summary
      */

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * The Selling Partner API for Amazon Warehousing and Distribution
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. 
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.
  *
  * The version of the OpenAPI document: 2024-05-09
  * 
@@ -105,7 +105,7 @@ export interface InboundShipment {
      */
     'shipmentSkuQuantities'?: Array<SkuQuantity>;
     /**
-     * Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east]
+     * Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east, us-southcentral, us-southeast]
      * @type {string}
      * @memberof InboundShipment
      */

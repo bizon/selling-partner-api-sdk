@@ -27,7 +27,7 @@ export interface PackingSlip {
      */
     'purchaseOrderNumber': string;
     /**
-     * A Base64encoded string of the packing slip PDF.
+     * A Base64 string of the packing slip PDF.
      * @type {string}
      * @memberof PackingSlip
      */

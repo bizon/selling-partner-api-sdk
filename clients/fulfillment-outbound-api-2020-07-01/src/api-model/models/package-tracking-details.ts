@@ -21,6 +21,9 @@ import type { AdditionalLocationInfo } from './additional-location-info';
 import type { CurrentStatus } from './current-status';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { DateRange } from './date-range';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { TrackingAddress } from './tracking-address';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -93,11 +96,17 @@ export interface PackageTrackingDetails {
      */
     'currentStatus'?: CurrentStatus;
     /**
-     * Description corresponding to the `CurrentStatus` value.
+     * Description corresponding to the CurrentStatus value.
      * @type {string}
      * @memberof PackageTrackingDetails
      */
     'currentStatusDescription'?: string;
+    /**
+     * 
+     * @type {DateRange}
+     * @memberof PackageTrackingDetails
+     */
+    'deliveryWindow'?: DateRange;
     /**
      * The name of the person who signed for the package.
      * @type {string}

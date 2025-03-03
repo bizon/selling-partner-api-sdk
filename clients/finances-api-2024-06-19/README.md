@@ -1,6 +1,6 @@
 # `finances-api-2024-06-19`
 
-The Selling Partner API for Finances provides financial information relevant to a seller's business. You can obtain financial events for a given order or date range without having to wait until a statement period closes.
+The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order or date range without having to wait until a statement period closes.
 
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/finances-api-2024-06-19)](https://www.npmjs.com/package/@sp-api-sdk/finances-api-2024-06-19)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)

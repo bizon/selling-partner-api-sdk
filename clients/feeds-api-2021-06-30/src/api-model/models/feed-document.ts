@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Feeds v2021-06-30
+ * Selling Partner API for Feeds
  * The Selling Partner API for Feeds lets you upload data to Amazon on behalf of a selling partner.
  *
  * The version of the OpenAPI document: 2021-06-30

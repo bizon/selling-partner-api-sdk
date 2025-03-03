@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/sales-api-v1",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Sales provides APIs related to sales performance.",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

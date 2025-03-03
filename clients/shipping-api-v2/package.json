@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/shipping-api-v2",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Amazon Shipping API is designed to support outbound shipping use cases both for orders originating on Amazon-owned marketplaces as well as external channels/marketplaces. With these APIs, you can request shipping rates, create shipments, cancel shipments, and track shipments.",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

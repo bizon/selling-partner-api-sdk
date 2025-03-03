@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/catalog-items-api-v0",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Catalog Items helps you programmatically retrieve item details for items in the catalog.",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

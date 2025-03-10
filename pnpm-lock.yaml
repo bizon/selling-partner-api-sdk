@@ -866,8 +866,8 @@ importers:
         specifier: ^12.1.3
         version: 12.1.3
       type-fest:
-        specifier: ^4.36.0
-        version: 4.36.0
+        specifier: ^4.37.0
+        version: 4.37.0
 
   packages/auth:
     dependencies:
@@ -882,8 +882,8 @@ importers:
         specifier: ^14.0.1
         version: 14.0.1
       type-fest:
-        specifier: ^4.36.0
-        version: 4.36.0
+        specifier: ^4.37.0
+        version: 4.37.0
 
   packages/common:
     dependencies:
@@ -1871,6 +1871,9 @@ packages:
   '@types/node@22.10.5':
     resolution: {integrity: sha512-F8Q+SeGimwOo86fiovQh8qiXfFEh2/ocYv7tU5pJ3EXMSSxk1Joj5wefpFK2fHTf/N6HKGSxIDBT9f3gCxXPkQ==}
 
+  '@types/node@22.13.10':
+    resolution: {integrity: sha512-I6LPUvlRH+O6VRUqYOcMudhaIdUVWfsjnZavnsraHvpBwaEyMN29ry+0UVJhImYL16xsscu0aske3yA+uPOWfw==}
+
   '@types/node@22.13.9':
     resolution: {integrity: sha512-acBjXdRJ3A6Pb3tqnw9HZmyR3Fiol3aGxRCK1x3d+6CDAMjl7I649wpSd+yNURCjbOUGu9tqtLKnTGxmK6CyGw==}
 
@@ -2040,6 +2043,11 @@ packages:
 
   acorn@8.14.0:
     resolution: {integrity: sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+
+  acorn@8.14.1:
+    resolution: {integrity: sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
 
@@ -2329,8 +2337,8 @@ packages:
   caniuse-lite@1.0.30001687:
     resolution: {integrity: sha512-0S/FDhf4ZiqrTUiQ39dKeUjYRjkv7lOZU1Dgif2rIqrTzX/1wV2hfKu9TOm1IHkdSijfLswxTFzl/cvir+SLSQ==}
 
-  caniuse-lite@1.0.30001701:
-    resolution: {integrity: sha512-faRs/AW3jA9nTwmJBSO1PQ6L/EOgsB5HMQQq4iCu5zhPgVVgO/pZRHlmatwijZKetFw8/Pr4q6dEN8sJuq8qTw==}
+  caniuse-lite@1.0.30001703:
+    resolution: {integrity: sha512-kRlAGTRWgPsOj7oARC9m1okJEXdL/8fekFVcxA8Hl7GH4r/sN4OJn/i6Flde373T50KS7Y37oFbMwlE8+F42kQ==}
 
   chalk@2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
@@ -2729,8 +2737,8 @@ packages:
     engines: {node: '>=0.10.0'}
     hasBin: true
 
-  electron-to-chromium@1.5.110:
-    resolution: {integrity: sha512-/p/OvOm6AfLtQteAHTUWwf+Vhh76PlluagzQlSnxMoOJ4R6SmAScWBrVev6rExJoUhP9zudN9+lBxoYUEmC1HQ==}
+  electron-to-chromium@1.5.114:
+    resolution: {integrity: sha512-DFptFef3iktoKlFQK/afbo274/XNWD00Am0xa7M8FZUepHlHT8PEuiNBoRfFHbH1okqN58AlhbJ4QTkcnXorjA==}
 
   electron-to-chromium@1.5.71:
     resolution: {integrity: sha512-dB68l59BI75W1BUGVTAEJy45CEVuEGy9qPVVQ8pnHyHMn36PLPPoE1mjLH+lo9rKulO3HC2OhbACI/8tCqJBcA==}
@@ -5269,8 +5277,8 @@ packages:
     resolution: {integrity: sha512-nHc6S/bwIilKHNRgK/3jlhDoIHcp45YgyiwcAk46Tr0LfEqGBVpmiAyuiuxeVE44m3mXnEeVhaipLOEWmH+Njw==}
     engines: {node: '>=14.16'}
 
-  terser-webpack-plugin@5.3.12:
-    resolution: {integrity: sha512-jDLYqo7oF8tJIttjXO6jBY5Hk8p3A8W4ttih7cCEq64fQFWmgJ4VqAQjKr7WwIDlmXKEc6QeoRb5ecjZ+2afcg==}
+  terser-webpack-plugin@5.3.14:
+    resolution: {integrity: sha512-vkZjpUjb6OMS7dhV+tILUW6BhpDR7P2L/aQSAv+Uwk+m8KATX9EccViHTJR2qDtACKPIYndLGCyl3FMo+r2LMw==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
       '@swc/core': '*'
@@ -5483,8 +5491,8 @@ packages:
     resolution: {integrity: sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==}
     engines: {node: '>=14.16'}
 
-  type-fest@4.36.0:
-    resolution: {integrity: sha512-3T/PUdKTCnkUmhQU6FFJEHsLwadsRegktX3TNHk+2JJB9HlA8gp1/VXblXVDI93kSnXF2rdPx0GMbHtJIV2LPg==}
+  type-fest@4.37.0:
+    resolution: {integrity: sha512-S/5/0kFftkq27FPNye0XM1e2NsnoD/3FS+pBmbjmmtLT6I+i344KoOf7pvXreaFsDamWeaJX55nczA1m5PsBDg==}
     engines: {node: '>=16'}
 
   typed-array-buffer@1.0.2:
@@ -7059,6 +7067,10 @@ snapshots:
     dependencies:
       undici-types: 6.20.0
 
+  '@types/node@22.13.10':
+    dependencies:
+      undici-types: 6.20.0
+
   '@types/node@22.13.9':
     dependencies:
       undici-types: 6.20.0
@@ -7251,9 +7263,9 @@ snapshots:
 
   abbrev@2.0.0: {}
 
-  acorn-import-assertions@1.9.0(acorn@8.14.0):
+  acorn-import-assertions@1.9.0(acorn@8.14.1):
     dependencies:
-      acorn: 8.14.0
+      acorn: 8.14.1
 
   acorn-jsx@5.3.2(acorn@8.14.0):
     dependencies:
@@ -7264,6 +7276,8 @@ snapshots:
   acorn@8.11.3: {}
 
   acorn@8.14.0: {}
+
+  acorn@8.14.1: {}
 
   add-stream@1.0.0: {}
 
@@ -7533,8 +7547,8 @@ snapshots:
 
   browserslist@4.24.4:
     dependencies:
-      caniuse-lite: 1.0.30001701
-      electron-to-chromium: 1.5.110
+      caniuse-lite: 1.0.30001703
+      electron-to-chromium: 1.5.114
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.24.4)
 
@@ -7599,7 +7613,7 @@ snapshots:
 
   caniuse-lite@1.0.30001687: {}
 
-  caniuse-lite@1.0.30001701: {}
+  caniuse-lite@1.0.30001703: {}
 
   chalk@2.4.2:
     dependencies:
@@ -7976,7 +7990,7 @@ snapshots:
     dependencies:
       jake: 10.9.2
 
-  electron-to-chromium@1.5.110: {}
+  electron-to-chromium@1.5.114: {}
 
   electron-to-chromium@1.5.71: {}
 
@@ -9522,7 +9536,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.13.9
+      '@types/node': 22.13.10
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -10367,7 +10381,7 @@ snapshots:
     dependencies:
       '@babel/code-frame': 7.26.2
       index-to-position: 0.1.2
-      type-fest: 4.36.0
+      type-fest: 4.37.0
 
   parse-ms@4.0.0: {}
 
@@ -10529,7 +10543,7 @@ snapshots:
     dependencies:
       find-up: 6.3.0
       read-pkg: 8.1.0
-      type-fest: 4.36.0
+      type-fest: 4.37.0
 
   read-pkg-up@7.0.1:
     dependencies:
@@ -10549,14 +10563,14 @@ snapshots:
       '@types/normalize-package-data': 2.4.4
       normalize-package-data: 6.0.2
       parse-json: 7.1.1
-      type-fest: 4.36.0
+      type-fest: 4.37.0
 
   read-pkg@9.0.1:
     dependencies:
       '@types/normalize-package-data': 2.4.4
       normalize-package-data: 6.0.2
       parse-json: 8.1.0
-      type-fest: 4.36.0
+      type-fest: 4.37.0
       unicorn-magic: 0.1.0
 
   readable-stream@3.6.2:
@@ -10960,7 +10974,7 @@ snapshots:
 
   temp-dir@3.0.0: {}
 
-  terser-webpack-plugin@5.3.12(webpack@5.91.0):
+  terser-webpack-plugin@5.3.14(webpack@5.91.0):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       jest-worker: 27.5.1
@@ -10972,7 +10986,7 @@ snapshots:
   terser@5.39.0:
     dependencies:
       '@jridgewell/source-map': 0.3.6
-      acorn: 8.14.0
+      acorn: 8.14.1
       commander: 2.20.3
       source-map-support: 0.5.21
 
@@ -11138,7 +11152,7 @@ snapshots:
 
   type-fest@3.13.1: {}
 
-  type-fest@4.36.0: {}
+  type-fest@4.37.0: {}
 
   typed-array-buffer@1.0.2:
     dependencies:
@@ -11324,8 +11338,8 @@ snapshots:
       '@webassemblyjs/ast': 1.14.1
       '@webassemblyjs/wasm-edit': 1.14.1
       '@webassemblyjs/wasm-parser': 1.14.1
-      acorn: 8.14.0
-      acorn-import-assertions: 1.9.0(acorn@8.14.0)
+      acorn: 8.14.1
+      acorn-import-assertions: 1.9.0(acorn@8.14.1)
       browserslist: 4.24.4
       chrome-trace-event: 1.0.4
       enhanced-resolve: 5.18.1
@@ -11340,7 +11354,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.12(webpack@5.91.0)
+      terser-webpack-plugin: 5.3.14(webpack@5.91.0)
       watchpack: 2.4.2
       webpack-sources: 3.2.3
     transitivePeerDependencies:
@@ -11447,7 +11461,7 @@ snapshots:
       deepmerge-ts: 7.1.5
       read-pkg: 9.0.1
       sort-keys: 5.1.0
-      type-fest: 4.36.0
+      type-fest: 4.37.0
       write-json-file: 6.0.0
 
   xo@0.60.0(@types/eslint@9.6.1)(webpack@5.91.0):

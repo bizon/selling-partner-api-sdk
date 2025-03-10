@@ -1,11 +1,11 @@
 # `listings-items-api-2021-08-01`
 
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/listings-items-api-2021-08-01)](https://www.npmjs.com/package/@sp-api-sdk/listings-items-api-2021-08-01)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
+
 The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.
 
 For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
-
-[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/listings-items-api-2021-08-01)](https://www.npmjs.com/package/@sp-api-sdk/listings-items-api-2021-08-01)
-[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 

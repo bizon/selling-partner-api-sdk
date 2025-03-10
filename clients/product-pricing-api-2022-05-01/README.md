@@ -1,11 +1,11 @@
 # `product-pricing-api-2022-05-01`
 
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/product-pricing-api-2022-05-01)](https://www.npmjs.com/package/@sp-api-sdk/product-pricing-api-2022-05-01)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
+
 The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer pricing information for Amazon Marketplace products.
 
 For more information, refer to the [Product Pricing v2022-05-01 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).
-
-[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/product-pricing-api-2022-05-01)](https://www.npmjs.com/package/@sp-api-sdk/product-pricing-api-2022-05-01)
-[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 

@@ -1,11 +1,11 @@
 # `product-type-definitions-api-2020-09-01`
 
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/product-type-definitions-api-2020-09-01)](https://www.npmjs.com/package/@sp-api-sdk/product-type-definitions-api-2020-09-01)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
+
 The Selling Partner API for Product Type Definitions provides programmatic access to attribute and data requirements for product types in the Amazon catalog. Use this API to return the JSON Schema for a product type that you can then use with other Selling Partner APIs, such as the Selling Partner API for Listings Items, the Selling Partner API for Catalog Items, and the Selling Partner API for Feeds (for JSON-based listing feeds).
 
 For more information, see the [Product Type Definitions API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-type-api-use-case-guide).
-
-[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/product-type-definitions-api-2020-09-01)](https://www.npmjs.com/package/@sp-api-sdk/product-type-definitions-api-2020-09-01)
-[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 

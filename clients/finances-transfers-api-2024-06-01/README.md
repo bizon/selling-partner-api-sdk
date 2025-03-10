@@ -1,9 +1,9 @@
 # `finances-transfers-api-2024-06-01`
 
-The Selling Partner API for Transfers enables selling partners to retrieve payment methods and initiate payouts for their seller accounts. This API supports the following marketplaces: DE, FR, IT, ES, SE, NL, PL, and BE.
-
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/finances-transfers-api-2024-06-01)](https://www.npmjs.com/package/@sp-api-sdk/finances-transfers-api-2024-06-01)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
+
+The Selling Partner API for Transfers enables selling partners to retrieve payment methods and initiate payouts for their seller accounts. This API supports the following marketplaces: DE, FR, IT, ES, SE, NL, PL, and BE.
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 

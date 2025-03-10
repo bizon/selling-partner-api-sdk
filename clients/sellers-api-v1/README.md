@@ -1,5 +1,8 @@
 # `sellers-api-v1`
 
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/sellers-api-v1)](https://www.npmjs.com/package/@sp-api-sdk/sellers-api-v1)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
+
 The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:
 
 - The marketplaces a seller can list in
@@ -7,9 +10,6 @@ The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/d
 - Whether the seller has suspended listings
 
 Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
-
-[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/sellers-api-v1)](https://www.npmjs.com/package/@sp-api-sdk/sellers-api-v1)
-[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 

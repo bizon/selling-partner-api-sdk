@@ -1,9 +1,9 @@
 # `vendor-invoices-api-v1`
 
-The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
-
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/vendor-invoices-api-v1)](https://www.npmjs.com/package/@sp-api-sdk/vendor-invoices-api-v1)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
+
+The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 

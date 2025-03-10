@@ -1,9 +1,9 @@
 # selling-partner-api-sdk
 
-A modularized SDK library for Amazon Selling Partner API (fully typed in TypeScript)
-
 [![codecov](https://codecov.io/gh/bizon/selling-partner-api-sdk/branch/master/graph/badge.svg?token=tqBs3JHHP2)](https://codecov.io/gh/bizon/selling-partner-api-sdk)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
+
+A modularized SDK library for Amazon Selling Partner API (fully typed in TypeScript)
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 
@@ -88,6 +88,7 @@ ls clients | sed 's$\(.*\)$- [\1](https://www.github.com/bizon/selling-partner-a
 - [supply-sources-api-2020-07-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/supply-sources-api-2020-07-01)
 - [tokens-api-2021-03-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/tokens-api-2021-03-01)
 - [uploads-api-2020-11-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/uploads-api-2020-11-01)
+- [vehicles-api-2024-11-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vehicles-api-2024-11-01)
 - [vendor-direct-fulfillment-inventory-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-direct-fulfillment-inventory-api-v1)
 - [vendor-direct-fulfillment-orders-api-2021-12-28](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-direct-fulfillment-orders-api-2021-12-28)
 - [vendor-direct-fulfillment-orders-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-direct-fulfillment-orders-api-v1)

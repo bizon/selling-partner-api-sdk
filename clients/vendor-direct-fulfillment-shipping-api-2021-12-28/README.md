@@ -1,9 +1,9 @@
 # `vendor-direct-fulfillment-shipping-api-2021-12-28`
 
-Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
-
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/vendor-direct-fulfillment-shipping-api-2021-12-28)](https://www.npmjs.com/package/@sp-api-sdk/vendor-direct-fulfillment-shipping-api-2021-12-28)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
+
+Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 

@@ -1,11 +1,11 @@
 # `tokens-api-2021-03-01`
 
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/tokens-api-2021-03-01)](https://www.npmjs.com/package/@sp-api-sdk/tokens-api-2021-03-01)
+[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
+
 The Selling Partner API for Tokens provides a secure way to access a customer's PII (Personally Identifiable Information). You can call the Tokens API to get a Restricted Data Token (RDT) for one or more restricted resources that you specify. The RDT authorizes subsequent calls to restricted operations that correspond to the restricted resources that you specified.
 
 For more information, see the [Tokens API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/tokens-api-use-case-guide).
-
-[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/tokens-api-2021-03-01)](https://www.npmjs.com/package/@sp-api-sdk/tokens-api-2021-03-01)
-[![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 

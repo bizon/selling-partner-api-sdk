@@ -1,9 +1,9 @@
 # `product-fees-api-v0`
 
-The Selling Partner API for Product Fees lets you programmatically retrieve estimated fees for a product. You can then account for those fees in your pricing.
-
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/product-fees-api-v0)](https://www.npmjs.com/package/@sp-api-sdk/product-fees-api-v0)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
+
+The Selling Partner API for Product Fees lets you programmatically retrieve estimated fees for a product. You can then account for those fees in your pricing.
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 

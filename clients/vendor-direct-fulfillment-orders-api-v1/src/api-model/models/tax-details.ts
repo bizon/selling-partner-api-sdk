@@ -18,7 +18,7 @@
 import type { Money } from './money';
 
 /**
- * The tax details related to the order.
+ * The tax details for the order. _Note:_ Amazon calculates tax on the list price (Amazon retail price).
  * @export
  * @interface TaxDetails
  */

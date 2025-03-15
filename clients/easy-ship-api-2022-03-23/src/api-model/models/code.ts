@@ -15,17 +15,26 @@
 
 
 /**
- * Identifies the method by which a seller will hand a package over to Amazon Logistics.
+ * An error code that identifies the type of error that occurred. The error codes listed below are specific to the Easy Ship section.
  * @export
  * @enum {string}
  */
 
-export const HandoverMethod = {
-    Pickup: 'Pickup',
-    Dropoff: 'Dropoff'
+export const Code = {
+    InvalidInput: 'InvalidInput',
+    InvalidTimeSlotId: 'InvalidTimeSlotId',
+    ScheduledPackageAlreadyExists: 'ScheduledPackageAlreadyExists',
+    ScheduleWindowExpired: 'ScheduleWindowExpired',
+    RetryableAfterGettingNewSlots: 'RetryableAfterGettingNewSlots',
+    TimeSlotNotAvailable: 'TimeSlotNotAvailable',
+    ResourceNotFound: 'ResourceNotFound',
+    InvalidOrderState: 'InvalidOrderState',
+    RegionNotSupported: 'RegionNotSupported',
+    OrderNotEligibleForRescheduling: 'OrderNotEligibleForRescheduling',
+    InternalServerError: 'InternalServerError'
 } as const;
 
-export type HandoverMethod = typeof HandoverMethod[keyof typeof HandoverMethod];
+export type Code = typeof Code[keyof typeof Code];
 
 
 

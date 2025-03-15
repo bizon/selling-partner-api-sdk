@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/application-integrations-api-2024-04-01@2.0.2...@sp-api-sdk/application-integrations-api-2024-04-01@2.0.3) (2025-03-15)
+
+**Note:** Version bump only for package @sp-api-sdk/application-integrations-api-2024-04-01
+
 ## [2.0.2](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/application-integrations-api-2024-04-01@2.0.1...@sp-api-sdk/application-integrations-api-2024-04-01@2.0.2) (2025-03-03)
 
 **Note:** Version bump only for package @sp-api-sdk/application-integrations-api-2024-04-01

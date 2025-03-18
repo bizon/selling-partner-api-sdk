@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Catalog Items
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2022-04-01
  * 
@@ -15,7 +15,7 @@
 
 
 /**
- * Identifier associated with the item in the Amazon catalog, such as a UPC or EAN identifier.
+ * The identifier that is associated with the item in the Amazon catalog, such as a UPC or EAN identifier.
  * @export
  * @interface ItemIdentifier
  */
@@ -27,7 +27,7 @@ export interface ItemIdentifier {
      */
     'identifierType': string;
     /**
-     * Identifier.
+     * Identifier of the item.
      * @type {string}
      * @memberof ItemIdentifier
      */

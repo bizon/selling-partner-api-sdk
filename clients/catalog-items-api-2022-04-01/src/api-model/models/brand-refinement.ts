@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Catalog Items
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2022-04-01
  * 
@@ -15,19 +15,19 @@
 
 
 /**
- * Description of a brand that can be used to get more fine-grained search results.
+ * A brand that you can use to refine your search.
  * @export
  * @interface BrandRefinement
  */
 export interface BrandRefinement {
     /**
-     * The estimated number of results that would still be returned if refinement key applied.
+     * The estimated number of results that would be returned if you refine your search by the specified `brandName`.
      * @type {number}
      * @memberof BrandRefinement
      */
     'numberOfResults': number;
     /**
-     * Brand name. For display and can be used as a search refinement.
+     * The brand name that you can use to refine your search.
      * @type {string}
      * @memberof BrandRefinement
      */

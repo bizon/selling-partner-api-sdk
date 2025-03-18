@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Catalog Items
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2022-04-01
  * 
@@ -15,19 +15,19 @@
 
 
 /**
- * Classification (browse node) associated with an Amazon catalog item.
+ * Classification (browse node) for an Amazon catalog item.
  * @export
  * @interface ItemBrowseClassification
  */
 export interface ItemBrowseClassification {
     /**
-     * Display name for the classification (browse node).
+     * Display name for the classification.
      * @type {string}
      * @memberof ItemBrowseClassification
      */
     'displayName': string;
     /**
-     * Identifier of the classification (browse node identifier).
+     * Identifier of the classification.
      * @type {string}
      * @memberof ItemBrowseClassification
      */

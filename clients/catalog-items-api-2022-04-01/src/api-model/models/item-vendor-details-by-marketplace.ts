@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Catalog Items
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2022-04-01
  * 
@@ -18,31 +18,31 @@
 import type { ItemVendorDetailsCategory } from './item-vendor-details-category';
 
 /**
- * Vendor details associated with an Amazon catalog item for the indicated Amazon marketplace.
+ * The vendor details that are associated with an Amazon catalog item for the specified `marketplaceId`.
  * @export
  * @interface ItemVendorDetailsByMarketplace
  */
 export interface ItemVendorDetailsByMarketplace {
     /**
-     * Amazon marketplace identifier.
+     * Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @type {string}
      * @memberof ItemVendorDetailsByMarketplace
      */
     'marketplaceId': string;
     /**
-     * Brand code associated with an Amazon catalog item.
+     * The brand code that is associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemVendorDetailsByMarketplace
      */
     'brandCode'?: string;
     /**
-     * Manufacturer code associated with an Amazon catalog item.
+     * The manufacturer code that is associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemVendorDetailsByMarketplace
      */
     'manufacturerCode'?: string;
     /**
-     * Parent vendor code of the manufacturer code.
+     * The parent vendor code of the manufacturer code.
      * @type {string}
      * @memberof ItemVendorDetailsByMarketplace
      */
@@ -54,7 +54,7 @@ export interface ItemVendorDetailsByMarketplace {
      */
     'productCategory'?: ItemVendorDetailsCategory;
     /**
-     * Product group associated with an Amazon catalog item.
+     * The product group that is associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemVendorDetailsByMarketplace
      */
@@ -66,7 +66,7 @@ export interface ItemVendorDetailsByMarketplace {
      */
     'productSubcategory'?: ItemVendorDetailsCategory;
     /**
-     * Replenishment category associated with an Amazon catalog item.
+     * The replenishment category that is associated with an Amazon catalog item.
      * @type {string}
      * @memberof ItemVendorDetailsByMarketplace
      */

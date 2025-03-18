@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Catalog Items
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2022-04-01
  * 
@@ -18,19 +18,19 @@
 import type { ItemImage } from './item-image';
 
 /**
- * Images for an item in the Amazon catalog for the indicated Amazon marketplace.
+ * Images for an item in the Amazon catalog, grouped by `marketplaceId`.
  * @export
  * @interface ItemImagesByMarketplace
  */
 export interface ItemImagesByMarketplace {
     /**
-     * Amazon marketplace identifier.
+     * Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @type {string}
      * @memberof ItemImagesByMarketplace
      */
     'marketplaceId': string;
     /**
-     * Images for an item in the Amazon catalog for the indicated Amazon marketplace.
+     * Images for an item in the Amazon catalog, grouped by `marketplaceId`.
      * @type {Array<ItemImage>}
      * @memberof ItemImagesByMarketplace
      */

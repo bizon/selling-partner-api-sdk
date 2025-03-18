@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Catalog Items
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2022-04-01
  * 
@@ -15,19 +15,19 @@
 
 
 /**
- * Product category or subcategory associated with an Amazon catalog item.
+ * The product category or subcategory that is associated with an Amazon catalog item.
  * @export
  * @interface ItemVendorDetailsCategory
  */
 export interface ItemVendorDetailsCategory {
     /**
-     * Display name of the product category or subcategory
+     * The display name of the product category or subcategory.
      * @type {string}
      * @memberof ItemVendorDetailsCategory
      */
     'displayName'?: string;
     /**
-     * Value (code) of the product category or subcategory.
+     * The code that identifies the product category or subcategory.
      * @type {string}
      * @memberof ItemVendorDetailsCategory
      */

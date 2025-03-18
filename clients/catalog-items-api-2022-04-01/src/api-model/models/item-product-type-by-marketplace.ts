@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Catalog Items
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2022-04-01
  * 
@@ -15,19 +15,19 @@
 
 
 /**
- * Product type associated with the Amazon catalog item for the indicated Amazon marketplace.
+ * Product type that is associated with the Amazon catalog item, grouped by `marketplaceId`.
  * @export
  * @interface ItemProductTypeByMarketplace
  */
 export interface ItemProductTypeByMarketplace {
     /**
-     * Amazon marketplace identifier.
+     * Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @type {string}
      * @memberof ItemProductTypeByMarketplace
      */
     'marketplaceId'?: string;
     /**
-     * Name of the product type associated with the Amazon catalog item.
+     * Name of the product type that is associated with the Amazon catalog item.
      * @type {string}
      * @memberof ItemProductTypeByMarketplace
      */

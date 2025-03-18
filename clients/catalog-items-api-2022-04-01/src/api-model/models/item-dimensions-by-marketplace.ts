@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Catalog Items
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2022-04-01
  * 
@@ -18,13 +18,13 @@
 import type { Dimensions } from './dimensions';
 
 /**
- * Dimensions associated with the item in the Amazon catalog for the indicated Amazon marketplace.
+ * Dimensions that are associated with the item in the Amazon catalog for the indicated `marketplaceId`.
  * @export
  * @interface ItemDimensionsByMarketplace
  */
 export interface ItemDimensionsByMarketplace {
     /**
-     * Amazon marketplace identifier.
+     * Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @type {string}
      * @memberof ItemDimensionsByMarketplace
      */

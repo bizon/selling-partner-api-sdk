@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Catalog Items
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2022-04-01
  * 
@@ -15,19 +15,19 @@
 
 
 /**
- * Individual dimension value of an Amazon catalog item or item package.
+ * The value of an individual dimension for an Amazon catalog item or item package.
  * @export
  * @interface Dimension
  */
 export interface Dimension {
     /**
-     * Measurement unit of the dimension value.
+     * Unit of measurement for the dimension value.
      * @type {string}
      * @memberof Dimension
      */
     'unit'?: string;
     /**
-     * Numeric dimension value.
+     * Numeric value of the dimension.
      * @type {number}
      * @memberof Dimension
      */

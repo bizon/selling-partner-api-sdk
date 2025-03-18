@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Catalog Items
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2022-04-01
  * 
@@ -21,25 +21,25 @@ import type { ItemClassificationSalesRank } from './item-classification-sales-ra
 import type { ItemDisplayGroupSalesRank } from './item-display-group-sales-rank';
 
 /**
- * Sales ranks of an Amazon catalog item for the indicated Amazon marketplace.
+ * Sales ranks of an Amazon catalog item, grouped by `marketplaceId`.
  * @export
  * @interface ItemSalesRanksByMarketplace
  */
 export interface ItemSalesRanksByMarketplace {
     /**
-     * Amazon marketplace identifier.
+     * Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @type {string}
      * @memberof ItemSalesRanksByMarketplace
      */
     'marketplaceId': string;
     /**
-     * Sales ranks of an Amazon catalog item for an Amazon marketplace by classification.
+     * Sales ranks of an Amazon catalog item for a `marketplaceId`, grouped by classification.
      * @type {Array<ItemClassificationSalesRank>}
      * @memberof ItemSalesRanksByMarketplace
      */
     'classificationRanks'?: Array<ItemClassificationSalesRank>;
     /**
-     * Sales ranks of an Amazon catalog item for an Amazon marketplace by website display group.
+     * Sales ranks of an Amazon catalog item for a `marketplaceId`, grouped by website display group.
      * @type {Array<ItemDisplayGroupSalesRank>}
      * @memberof ItemSalesRanksByMarketplace
      */

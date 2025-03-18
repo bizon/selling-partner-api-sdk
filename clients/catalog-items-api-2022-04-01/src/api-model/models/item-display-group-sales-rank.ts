@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Catalog Items
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2022-04-01
  * 
@@ -15,31 +15,31 @@
 
 
 /**
- * Sales rank of an Amazon catalog item by website display group.
+ * Sales rank of an Amazon catalog item, grouped by website display group.
  * @export
  * @interface ItemDisplayGroupSalesRank
  */
 export interface ItemDisplayGroupSalesRank {
     /**
-     * Name of the website display group associated with the sales rank
+     * Name of the website display group that is associated with the sales rank
      * @type {string}
      * @memberof ItemDisplayGroupSalesRank
      */
     'websiteDisplayGroup': string;
     /**
-     * Title, or name, of the sales rank.
+     * Name of the sales rank.
      * @type {string}
      * @memberof ItemDisplayGroupSalesRank
      */
     'title': string;
     /**
-     * Corresponding Amazon retail website link, or URL, for the sales rank.
+     * Corresponding Amazon retail website URL for the sales rank.
      * @type {string}
      * @memberof ItemDisplayGroupSalesRank
      */
     'link'?: string;
     /**
-     * Sales rank value.
+     * Sales rank.
      * @type {number}
      * @memberof ItemDisplayGroupSalesRank
      */

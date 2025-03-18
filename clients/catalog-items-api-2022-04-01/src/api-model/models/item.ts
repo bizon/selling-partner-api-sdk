@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Catalog Items
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2022-04-01-use-case-guide).
+ * Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.  For more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2022-04-01
  * 
@@ -48,25 +48,25 @@ import type { ItemVendorDetailsByMarketplace } from './item-vendor-details-by-ma
  */
 export interface Item {
     /**
-     * Amazon Standard Identification Number (ASIN) is the unique identifier for an item in the Amazon catalog.
+     * The unique identifier of an item in the Amazon catalog.
      * @type {string}
      * @memberof Item
      */
     'asin': string;
     /**
-     * A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.
+     * A JSON object containing structured item attribute data that is keyed by attribute name. Catalog item attributes conform to the related Amazon product type definitions that you can get from the [Product Type Definitions API](https://developer-docs.amazon.com/sp-api/docs/product-type-definitions-api-v2020-09-01-reference).
      * @type {{ [key: string]: any; }}
      * @memberof Item
      */
     'attributes'?: { [key: string]: any; };
     /**
-     * Array of classifications (browse nodes) associated with the item in the Amazon catalog by Amazon marketplace.
+     * An array of classifications (browse nodes) that is associated with the item in the Amazon catalog, grouped by `marketplaceId`.
      * @type {Array<ItemBrowseClassificationsByMarketplace>}
      * @memberof Item
      */
     'classifications'?: Array<ItemBrowseClassificationsByMarketplace>;
     /**
-     * Array of dimensions associated with the item in the Amazon catalog by Amazon marketplace.
+     * An array of dimensions that are associated with the item in the Amazon catalog, grouped by `marketplaceId`.
      * @type {Array<ItemDimensionsByMarketplace>}
      * @memberof Item
      */
@@ -78,19 +78,19 @@ export interface Item {
      */
     'identifiers'?: Array<ItemIdentifiersByMarketplace>;
     /**
-     * Images for an item in the Amazon catalog.
+     * The images for an item in the Amazon catalog.
      * @type {Array<ItemImagesByMarketplace>}
      * @memberof Item
      */
     'images'?: Array<ItemImagesByMarketplace>;
     /**
-     * Product types associated with the Amazon catalog item.
+     * Product types that are associated with the Amazon catalog item.
      * @type {Array<ItemProductTypeByMarketplace>}
      * @memberof Item
      */
     'productTypes'?: Array<ItemProductTypeByMarketplace>;
     /**
-     * Relationships by marketplace for an Amazon catalog item (for example, variations).
+     * Relationships grouped by `marketplaceId` for an Amazon catalog item (for example, variations).
      * @type {Array<ItemRelationshipsByMarketplace>}
      * @memberof Item
      */
@@ -102,13 +102,13 @@ export interface Item {
      */
     'salesRanks'?: Array<ItemSalesRanksByMarketplace>;
     /**
-     * Summary details of an Amazon catalog item.
+     * Summaries of Amazon catalog items.
      * @type {Array<ItemSummaryByMarketplace>}
      * @memberof Item
      */
     'summaries'?: Array<ItemSummaryByMarketplace>;
     /**
-     * Vendor details associated with an Amazon catalog item. Vendor details are available to vendors only.
+     * The vendor details that are associated with an Amazon catalog item. Vendor details are only available to vendors.
      * @type {Array<ItemVendorDetailsByMarketplace>}
      * @memberof Item
      */

@@ -66,8 +66,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -79,8 +79,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -92,8 +92,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -105,8 +105,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -118,8 +118,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -131,8 +131,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -144,8 +144,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -157,8 +157,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -170,8 +170,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -183,8 +183,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -196,8 +196,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -209,8 +209,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -222,8 +222,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -235,8 +235,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -248,8 +248,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -261,8 +261,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -274,8 +274,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -287,8 +287,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -300,8 +300,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -313,8 +313,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -326,8 +326,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -339,8 +339,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -352,8 +352,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -365,8 +365,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -378,8 +378,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -391,8 +391,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -404,8 +404,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -417,8 +417,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -430,8 +430,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -443,8 +443,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -456,8 +456,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -469,8 +469,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -482,8 +482,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -495,8 +495,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -508,8 +508,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -521,8 +521,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -534,8 +534,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -547,8 +547,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -560,8 +560,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -573,8 +573,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -586,8 +586,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -599,8 +599,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -612,8 +612,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -625,8 +625,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -638,8 +638,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -651,8 +651,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -664,8 +664,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -677,8 +677,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -690,8 +690,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -703,8 +703,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -716,8 +716,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -729,8 +729,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -742,8 +742,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -755,8 +755,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -768,8 +768,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -781,8 +781,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -794,8 +794,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -807,8 +807,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
     devDependencies:
       '@sp-api-sdk/auth':
         specifier: workspace:*
@@ -872,8 +872,8 @@ importers:
   packages/auth:
     dependencies:
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
       read-pkg-up:
         specifier: ^7.0.1
         version: 7.0.1
@@ -891,14 +891,14 @@ importers:
         specifier: workspace:*
         version: link:../auth
       axios:
-        specifier: ^1.8.3
-        version: 1.8.3
+        specifier: ^1.8.4
+        version: 1.8.4
       axios-logger:
         specifier: ^2.8.1
         version: 2.8.1
       axios-retry:
         specifier: ^4.5.0
-        version: 4.5.0(axios@1.8.3)
+        version: 4.5.0(axios@1.8.4)
       read-pkg-up:
         specifier: ^7.0.1
         version: 7.0.1
@@ -2202,6 +2202,9 @@ packages:
   axios@1.8.3:
     resolution: {integrity: sha512-iP4DebzoNlP/YN2dpwCgb8zoCmhtkajzS48JvwmkSkXvPI3DHc7m+XYL5tGnSlJtR6nImXZmdCuN5aP8dh1d8A==}
 
+  axios@1.8.4:
+    resolution: {integrity: sha512-eBSYY4Y68NNlHbHBMdeDmKNtDgXWhQsJcGqzO3iLUM0GraQFSS9cVgPX5I9b3lbdFKyYoAEGAZF1DwhTaljNAw==}
+
   babel-jest@29.7.0:
     resolution: {integrity: sha512-BrvGY3xZSwEcCzKvKsCi2GgHqDqsYkOP4/by5xCgIwGXQxIEh+8ew3gmrE1y7XRR6LHZIj6yLYnUi/mm2KXKBg==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -2735,8 +2738,8 @@ packages:
     engines: {node: '>=0.10.0'}
     hasBin: true
 
-  electron-to-chromium@1.5.120:
-    resolution: {integrity: sha512-oTUp3gfX1gZI+xfD2djr2rzQdHCwHzPQrrK0CD7WpTdF0nPdQ/INcRVjWgLdCT4a9W3jFObR9DAfsuyFQnI8CQ==}
+  electron-to-chromium@1.5.122:
+    resolution: {integrity: sha512-EML1wnwkY5MFh/xUnCvY8FrhUuKzdYhowuZExZOfwJo+Zu9OsNCI23Cgl5y7awy7HrUHSwB1Z8pZX5TI34lsUg==}
 
   electron-to-chromium@1.5.71:
     resolution: {integrity: sha512-dB68l59BI75W1BUGVTAEJy45CEVuEGy9qPVVQ8pnHyHMn36PLPPoE1mjLH+lo9rKulO3HC2OhbACI/8tCqJBcA==}
@@ -7419,12 +7422,20 @@ snapshots:
       chalk: 4.1.2
       dateformat: 3.0.3
 
-  axios-retry@4.5.0(axios@1.8.3):
+  axios-retry@4.5.0(axios@1.8.4):
     dependencies:
-      axios: 1.8.3
+      axios: 1.8.4
       is-retry-allowed: 2.2.0
 
   axios@1.8.3:
+    dependencies:
+      follow-redirects: 1.15.9
+      form-data: 4.0.2
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+
+  axios@1.8.4:
     dependencies:
       follow-redirects: 1.15.9
       form-data: 4.0.2
@@ -7530,7 +7541,7 @@ snapshots:
   browserslist@4.24.4:
     dependencies:
       caniuse-lite: 1.0.30001706
-      electron-to-chromium: 1.5.120
+      electron-to-chromium: 1.5.122
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.24.4)
 
@@ -7974,7 +7985,7 @@ snapshots:
     dependencies:
       jake: 10.9.2
 
-  electron-to-chromium@1.5.120: {}
+  electron-to-chromium@1.5.122: {}
 
   electron-to-chromium@1.5.71: {}
 

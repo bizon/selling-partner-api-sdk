@@ -8,8 +8,11 @@ export default async function setup(): Promise<Config.InitialOptions> {
   delete process.env.LWA_CLIENT_ID
 
   return {
-    preset: 'ts-jest',
     testEnvironment: 'node',
+    transform: {
+      '^.+\\.(t|j)sx?$': '@swc/jest',
+    },
+    extensionsToTreatAsEsm: ['.ts', '.tsx'],
     clearMocks: true,
     collectCoverage: true,
     collectCoverageFrom: ['src/**.ts'],

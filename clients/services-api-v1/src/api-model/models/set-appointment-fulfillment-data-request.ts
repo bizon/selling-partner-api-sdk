@@ -18,6 +18,9 @@
 import type { AppointmentResource } from './appointment-resource';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { DateTimeRange } from './date-time-range';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { FulfillmentDocument } from './fulfillment-document';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -29,6 +32,12 @@ import type { FulfillmentTime } from './fulfillment-time';
  * @interface SetAppointmentFulfillmentDataRequest
  */
 export interface SetAppointmentFulfillmentDataRequest {
+    /**
+     * 
+     * @type {DateTimeRange}
+     * @memberof SetAppointmentFulfillmentDataRequest
+     */
+    'estimatedArrivalTime'?: DateTimeRange;
     /**
      * 
      * @type {FulfillmentTime}

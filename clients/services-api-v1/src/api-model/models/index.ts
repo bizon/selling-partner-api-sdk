@@ -20,6 +20,7 @@ export * from './create-reservation-record';
 export * from './create-reservation-request';
 export * from './create-reservation-response';
 export * from './create-service-document-upload-destination';
+export * from './date-time-range';
 export * from './day-of-week';
 export * from './encryption-details';
 export * from './fixed-slot';

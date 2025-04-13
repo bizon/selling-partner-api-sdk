@@ -134,7 +134,7 @@ export const b2bAnyOfferChangedNotification = {
         },
         listingPrice: {
           description: 'The price at this quantity tier.',
-          $ref: '#/definitions/MoneyType',
+          $ref: '#/definitions/moneyType',
         },
       },
       description:

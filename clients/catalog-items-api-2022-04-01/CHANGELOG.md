@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/catalog-items-api-2022-04-01@3.1.1...@sp-api-sdk/catalog-items-api-2022-04-01@3.2.0) (2025-04-14)
+
+### Features
+
+* **clients:** update models as of 2025-03-18 ([#1454](https://github.com/bizon/selling-partner-api-sdk/issues/1454)) ([0996f91](https://github.com/bizon/selling-partner-api-sdk/commit/0996f9118b439c3805d83b9f995733eec16b9f2b))
+
 ## [3.1.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/catalog-items-api-2022-04-01@3.1.0...@sp-api-sdk/catalog-items-api-2022-04-01@3.1.1) (2025-03-15)
 
 **Note:** Version bump only for package @sp-api-sdk/catalog-items-api-2022-04-01

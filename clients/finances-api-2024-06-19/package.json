@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/finances-api-2024-06-19",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order or date range without having to wait until a statement period closes.",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

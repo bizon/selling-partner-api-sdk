@@ -18,7 +18,7 @@
     "@jest/types": "^29.6.3",
     "@lerna-lite/cli": "^4.0.0",
     "@lerna-lite/publish": "^4.0.0",
-    "@swc/core": "^1.11.20",
+    "@swc/core": "^1.11.21",
     "@swc/jest": "^0.2.37",
     "@tsconfig/node22": "^22.0.1",
     "@types/jest": "^29.5.14",

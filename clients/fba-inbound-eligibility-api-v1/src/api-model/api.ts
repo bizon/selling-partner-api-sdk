@@ -14,5 +14,5 @@
 
 
 
-export * from './api/fba-inbound-api';
+export * from './api/fba-inbound-eligibility-api';
 

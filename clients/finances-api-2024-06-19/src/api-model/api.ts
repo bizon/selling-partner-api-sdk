@@ -14,5 +14,5 @@
 
 
 
-export * from './api/default-api';
+export * from './api/finances-api';
 

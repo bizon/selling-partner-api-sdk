@@ -1,6 +1,6 @@
 import {type ClientConfiguration, createAxiosInstance, type RateLimit} from '@sp-api-sdk/common'
 
-import {AwdApi, Configuration} from './api-model'
+import {AmazonWarehousingAndDistributionApi, Configuration} from './api-model'
 
 export const clientRateLimits: RateLimit[] = [
   {
@@ -82,7 +82,7 @@ export const clientRateLimits: RateLimit[] = [
   },
 ]
 
-export class AmazonWarehousingAndDistributionApiClient extends AwdApi {
+export class AmazonWarehousingAndDistributionApiClient extends AmazonWarehousingAndDistributionApi {
   constructor(configuration: ClientConfiguration) {
     const {axios, endpoint} = createAxiosInstance(configuration, clientRateLimits)
 

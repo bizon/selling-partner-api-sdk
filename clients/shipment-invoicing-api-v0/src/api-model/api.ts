@@ -14,5 +14,5 @@
 
 
 
-export * from './api/shipment-invoice-api';
+export * from './api/shipment-invoicing-api';
 

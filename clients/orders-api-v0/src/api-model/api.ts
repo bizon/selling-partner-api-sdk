@@ -14,5 +14,5 @@
 
 
 
-export * from './api/orders-v0-api';
+export * from './api/orders-api';
 

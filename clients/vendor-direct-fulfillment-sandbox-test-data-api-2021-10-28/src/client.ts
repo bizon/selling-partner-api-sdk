@@ -1,10 +1,10 @@
 import {type ClientConfiguration, createAxiosInstance, type RateLimit} from '@sp-api-sdk/common'
 
-import {Configuration, VendorDFSandboxApi} from './api-model'
+import {Configuration, VendorDirectFulfillmentSandboxTestDataApi} from './api-model'
 
 export const clientRateLimits: RateLimit[] = []
 
-export class VendorDirectFulfillmentSandboxTestDataApiClient extends VendorDFSandboxApi {
+export class VendorDirectFulfillmentSandboxTestDataApiClient extends VendorDirectFulfillmentSandboxTestDataApi {
   constructor(configuration: ClientConfiguration) {
     const {axios, endpoint} = createAxiosInstance(configuration, clientRateLimits)
 

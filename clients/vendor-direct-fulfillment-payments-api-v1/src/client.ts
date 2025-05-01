@@ -1,6 +1,6 @@
 import {type ClientConfiguration, createAxiosInstance, type RateLimit} from '@sp-api-sdk/common'
 
-import {Configuration, VendorInvoiceApi} from './api-model'
+import {Configuration, VendorDirectFulfillmentPaymentsApi} from './api-model'
 
 export const clientRateLimits: RateLimit[] = [
   {
@@ -12,7 +12,7 @@ export const clientRateLimits: RateLimit[] = [
   },
 ]
 
-export class VendorDirectFulfillmentPaymentsApiClient extends VendorInvoiceApi {
+export class VendorDirectFulfillmentPaymentsApiClient extends VendorDirectFulfillmentPaymentsApi {
   constructor(configuration: ClientConfiguration) {
     const {axios, endpoint} = createAxiosInstance(configuration, clientRateLimits)
 

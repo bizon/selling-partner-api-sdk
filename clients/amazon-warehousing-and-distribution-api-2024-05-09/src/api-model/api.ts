@@ -14,5 +14,5 @@
 
 
 
-export * from './api/awd-api';
+export * from './api/amazon-warehousing-and-distribution-api';
 

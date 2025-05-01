@@ -14,5 +14,5 @@
 
 
 
-export * from './api/service-api';
+export * from './api/services-api';
 

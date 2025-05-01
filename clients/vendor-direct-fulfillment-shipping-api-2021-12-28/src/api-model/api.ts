@@ -14,5 +14,5 @@
 
 
 
-export * from './api/vendor-shipping-api';
+export * from './api/vendor-direct-fulfillment-shipping-api';
 

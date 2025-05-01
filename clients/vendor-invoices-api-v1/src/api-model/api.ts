@@ -14,5 +14,5 @@
 
 
 
-export * from './api/vendor-payments-api';
+export * from './api/vendor-invoices-api';
 

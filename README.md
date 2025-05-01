@@ -79,6 +79,7 @@ ls clients | sed 's$\(.*\)$- [\1](https://www.github.com/bizon/selling-partner-a
 - [reports-api-2020-09-04](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/reports-api-2020-09-04)
 - [reports-api-2021-06-30](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/reports-api-2021-06-30)
 - [sales-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/sales-api-v1)
+- [seller-wallet-api-2024-03-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/seller-wallet-api-2024-03-01)
 - [sellers-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/sellers-api-v1)
 - [services-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/services-api-v1)
 - [shipment-invoicing-api-v0](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/shipment-invoicing-api-v0)

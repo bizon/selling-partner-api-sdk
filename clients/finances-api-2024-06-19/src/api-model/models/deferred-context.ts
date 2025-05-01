@@ -21,7 +21,7 @@
  */
 export interface DeferredContext {
     /**
-     * Deferral policy applied on the transaction.  Example: \'B2B\',\'DD7\'
+     * The deferral policy applied to the transaction.  **Examples:** `B2B` (invoiced orders), `DD7` (delivery date policy)
      * @type {string}
      * @memberof DeferredContext
      */
@@ -32,11 +32,5 @@ export interface DeferredContext {
      * @memberof DeferredContext
      */
     'maturityDate'?: string;
-    /**
-     * Status of the transaction.   Example: \'HOLD\',\'RELEASE\'
-     * @type {string}
-     * @memberof DeferredContext
-     */
-    'deferralStatus'?: string;
 }
 

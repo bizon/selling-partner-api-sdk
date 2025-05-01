@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vehicles-api-2024-11-01@1.1.2...@sp-api-sdk/vehicles-api-2024-11-01@1.1.3) (2025-05-01)
+
+**Note:** Version bump only for package @sp-api-sdk/vehicles-api-2024-11-01
+
 ## [1.1.2](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vehicles-api-2024-11-01@1.1.1...@sp-api-sdk/vehicles-api-2024-11-01@1.1.2) (2025-04-14)
 
 **Note:** Version bump only for package @sp-api-sdk/vehicles-api-2024-11-01

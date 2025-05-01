@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/seller-wallet-api-2024-03-01",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "This is a Amazon open banking api specification based on the Swagger 2.0 standard. It specifies all the api's that the third party will have to connect to in order to receive information from Amazon related to their customer's financial data. Please note the authentication & authorization api's are not part of this section and would be created & shared separately Some useful links: The SP-API repository The source API definition for the Amazon Seller Wallet Open Banking API",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/aplus-content-api-2020-11-01",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.",
-  "version": "3.1.2",
+  "version": "3.1.3",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

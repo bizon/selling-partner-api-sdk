@@ -1,0 +1,53 @@
+{
+  "name": "@sp-api-sdk/seller-wallet-api-2024-03-01",
+  "author": "Bertrand Marron <bertrand@bizon.solutions>",
+  "description": "This is a Amazon open banking api specification based on the Swagger 2.0 standard. It specifies all the api's that the third party will have to connect to in order to receive information from Amazon related to their customer's financial data. Please note the authentication & authorization api's are not part of this section and would be created & shared separately Some useful links: The SP-API repository The source API definition for the Amazon Seller Wallet Open Banking API",
+  "version": "1.0.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "scripts": {
+    "check:ts": "tsc --noEmit",
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:es": "tsc -p tsconfig.es.json",
+    "build": "pnpm build:cjs && pnpm build:es",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@sp-api-sdk/common": "workspace:*",
+    "axios": "^1.9.0"
+  },
+  "devDependencies": {
+    "@sp-api-sdk/auth": "workspace:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bizon/selling-partner-api-sdk.git",
+    "directory": "clients/seller-wallet-api-2024-03-01"
+  },
+  "bugs": {
+    "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
+  },
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/seller-wallet-api-2024-03-01",
+  "keywords": [
+    "amazon",
+    "bizon",
+    "marketplace web services",
+    "mws",
+    "selling partner api",
+    "sp api",
+    "sp sdk",
+    "seller wallet api"
+  ]
+}

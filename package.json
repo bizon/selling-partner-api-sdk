@@ -16,8 +16,8 @@
   },
   "devDependencies": {
     "@jest/types": "^29.6.3",
-    "@lerna-lite/cli": "^4.0.0",
-    "@lerna-lite/publish": "^4.0.0",
+    "@lerna-lite/cli": "^4.1.1",
+    "@lerna-lite/publish": "^4.1.1",
     "@swc/core": "^1.11.24",
     "@swc/jest": "^0.2.38",
     "@tsconfig/node22": "^22.0.1",

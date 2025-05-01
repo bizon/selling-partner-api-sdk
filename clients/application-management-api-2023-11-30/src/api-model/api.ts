@@ -14,5 +14,5 @@
 
 
 
-export * from './api/applications-api';
+export * from './api/application-management-api';
 

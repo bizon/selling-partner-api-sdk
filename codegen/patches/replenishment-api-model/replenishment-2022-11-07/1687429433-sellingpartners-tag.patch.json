@@ -1,7 +1,0 @@
-[
-  {
-    "op": "replace",
-    "path": "/paths/~1replenishment~12022-11-07~1sellingPartners~1metrics~1search/post/tags/0",
-    "value": "offers"
-  }
-]

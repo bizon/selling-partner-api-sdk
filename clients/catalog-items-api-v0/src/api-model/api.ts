@@ -14,5 +14,5 @@
 
 
 
-export * from './api/catalog-api';
+export * from './api/catalog-items-api';
 

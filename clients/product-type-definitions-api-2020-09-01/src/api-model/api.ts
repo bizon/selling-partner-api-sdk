@@ -14,5 +14,5 @@
 
 
 
-export * from './api/definitions-api';
+export * from './api/product-type-definitions-api';
 

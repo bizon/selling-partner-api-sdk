@@ -17,6 +17,7 @@ import {type PackageJson} from 'type-fest'
 import {logger} from './utils/logger.js'
 import {applyPatches} from './utils/patch.js'
 import {renderTemplate} from './utils/render-template.js'
+import {replaceAllTags} from './utils/tags.js'
 
 const exec = promisify(childProcess.exec)
 
@@ -81,9 +82,6 @@ async function generateClientVersion(modelFilePath: string) {
 
   const document = JSON.parse(model) as OpenAPIV3.Document
 
-  await applyPatches(document, patchesPath)
-  await jsonfile.writeFile(modelPath, document)
-
   const startedAt = Date.now()
 
   const apiCategory = modelDirectory.replace(/(-api)?-model$/, '')
@@ -110,29 +108,30 @@ async function generateClientVersion(modelFilePath: string) {
     cleanModelName = cleanModelName.slice(apiCategory.length)
   }
 
-  const clientNameBase = [apiCategory, cleanModelName.replace(/(-api)?-model$/, ''), 'api']
+  const clientNameBase = [apiCategory, cleanModelName.replace(/(-api)?-model$/, '')]
     .filter(Boolean)
     .join('-')
-  const packageName = `${clientNameBase}-${document.info.version}`
+  const clientApiNameBase = `${clientNameBase}-api`
 
+  await applyPatches(document, patchesPath)
+  replaceAllTags(document, clientNameBase)
+  await jsonfile.writeFile(modelPath, document)
+
+  const packageName = `${clientApiNameBase}-${document.info.version}`
   const clientDirectoryPath = `clients/${packageName}`
 
-  const clientClassName = camelCase(`${clientNameBase}Client`, {
+  const clientClassName = camelCase(`${clientApiNameBase}Client`, {
     pascalCase: true,
     locale: false,
   })
 
-  const operations = Object.values(document.paths)
-    .flatMap((path) => Object.values(path ?? {}))
-    .filter((operation): operation is OpenAPIV3.OperationObject => typeof operation !== 'string')
-  const [firstTag = 'Default'] = operations.flatMap((operation) => operation.tags ?? [])
   const grantlessInfo = GRANTLESS_APIS.find(({name}) => packageName === name)
 
   logger.info('generating…', {packageName})
 
   await fs.rm(`${clientDirectoryPath}/src/api-model`, {recursive: true, force: true})
 
-  // TODO: disable REFRACTOR_ALLOF_INLINE_SCHEMAS when https://github.com/OpenAPITools/openapi-generator/issues/16150 is fixed.
+  // TODO: disable REFACTOR_ALLOF_INLINE_SCHEMAS when https://github.com/OpenAPITools/openapi-generator/issues/16150 is fixed.
   await exec(
     `codegen/node_modules/.bin/openapi-generator-cli generate \
       --additional-properties=supportsES6=true,useSingleRequestParameter=true,withSeparateModelsAndApi=true,modelPackage=models,apiPackage=api \
@@ -149,7 +148,7 @@ async function generateClientVersion(modelFilePath: string) {
       packageName,
       description: JSON.stringify(await cleanMarkdown(document.info.description ?? '', true)),
       version: (await readPackageVersion(clientDirectoryPath)) ?? '1.0.0',
-      apiName: clientNameBase.replaceAll('-', ' '),
+      apiName: clientApiNameBase.replaceAll('-', ' '),
       dependencies: {
         axios: await getAxiosVersion(),
       },
@@ -223,7 +222,7 @@ async function generateClientVersion(modelFilePath: string) {
     `${clientDirectoryPath}/src/client.ts`,
     await renderTemplate('codegen/templates/src/client.ts.mustache', {
       clientClassName,
-      className: camelCase(`${firstTag}Api`, {
+      className: camelCase(clientApiNameBase, {
         pascalCase: true,
         locale: false,
         preserveConsecutiveUppercase: true,

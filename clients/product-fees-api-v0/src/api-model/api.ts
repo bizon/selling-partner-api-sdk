@@ -14,5 +14,5 @@
 
 
 
-export * from './api/fees-api';
+export * from './api/product-fees-api';
 

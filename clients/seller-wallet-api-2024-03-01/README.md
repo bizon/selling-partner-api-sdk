@@ -3,14 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/seller-wallet-api-2024-03-01)](https://www.npmjs.com/package/@sp-api-sdk/seller-wallet-api-2024-03-01)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
-This is a Amazon open banking api specification based on the Swagger 2.0 standard.
-It specifies all the api's that the third party will have to connect to in order to receive information from Amazon related to their customer's financial data.
-
-_Please note the authentication & authorization api's are not part of this section and would be created & shared separately_
-
-Some useful links:
-- [The SP-API repository](https://swagger-editor.dovydenk.people.a2z.com/)
-- [The source API definition for the Amazon Seller Wallet Open Banking API](https://swagger-editor.dovydenk.people.a2z.com/)
+The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 

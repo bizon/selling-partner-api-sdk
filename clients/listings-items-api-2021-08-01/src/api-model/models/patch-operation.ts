@@ -21,7 +21,7 @@
  */
 export interface PatchOperation {
     /**
-     * Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information.
+     * Type of JSON Patch operation. Supported JSON Patch operations include `add`, `replace`, `merge` and `delete`. Refer to <https://tools.ietf.org/html/rfc6902>.
      * @type {string}
      * @memberof PatchOperation
      */
@@ -33,7 +33,7 @@ export interface PatchOperation {
      */
     'path': string;
     /**
-     * JSON value to add, replace, or delete.
+     * JSON value to `add`, `replace`, `merge` or `delete`.
      * @type {Array<{ [key: string]: any; }>}
      * @memberof PatchOperation
      */
@@ -43,6 +43,7 @@ export interface PatchOperation {
 export const PatchOperationOpEnum = {
     Add: 'add',
     Replace: 'replace',
+    Merge: 'merge',
     Delete: 'delete'
 } as const;
 

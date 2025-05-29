@@ -39,7 +39,8 @@ export interface FeaturedOfferSegment {
 
 export const FeaturedOfferSegmentCustomerMembershipEnum = {
     Prime: 'PRIME',
-    NonPrime: 'NON_PRIME'
+    NonPrime: 'NON_PRIME',
+    Default: 'DEFAULT'
 } as const;
 
 export type FeaturedOfferSegmentCustomerMembershipEnum = typeof FeaturedOfferSegmentCustomerMembershipEnum[keyof typeof FeaturedOfferSegmentCustomerMembershipEnum];

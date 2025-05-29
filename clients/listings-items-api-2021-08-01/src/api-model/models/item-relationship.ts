@@ -18,7 +18,7 @@
 import type { ItemVariationTheme } from './item-variation-theme';
 
 /**
- * the relationship details for a listing item.
+ * The relationship details for a listing item.
  * @export
  * @interface ItemRelationship
  */

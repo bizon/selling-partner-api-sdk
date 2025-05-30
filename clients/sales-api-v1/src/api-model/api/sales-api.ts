@@ -40,10 +40,11 @@ export const SalesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {GetOrderMetricsFirstDayOfWeekEnum} [firstDayOfWeek] Specifies the day that the week starts on when granularity&#x3D;Week, either Monday or Sunday. Default: Monday. Example: Sunday, if you want the week to start on a Sunday.
          * @param {string} [asin] Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN.
          * @param {string} [sku] Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU.
+         * @param {GetOrderMetricsAmazonProgramEnum} [amazonProgram] Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** &#x60;AmazonHaul&#x60; returns order metrics for the Amazon Haul program only.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrderMetrics: async (marketplaceIds: Array<string>, interval: string, granularity: GetOrderMetricsGranularityEnum, granularityTimeZone?: string, buyerType?: GetOrderMetricsBuyerTypeEnum, fulfillmentNetwork?: string, firstDayOfWeek?: GetOrderMetricsFirstDayOfWeekEnum, asin?: string, sku?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getOrderMetrics: async (marketplaceIds: Array<string>, interval: string, granularity: GetOrderMetricsGranularityEnum, granularityTimeZone?: string, buyerType?: GetOrderMetricsBuyerTypeEnum, fulfillmentNetwork?: string, firstDayOfWeek?: GetOrderMetricsFirstDayOfWeekEnum, asin?: string, sku?: string, amazonProgram?: GetOrderMetricsAmazonProgramEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('getOrderMetrics', 'marketplaceIds', marketplaceIds)
             // verify required parameter 'interval' is not null or undefined
@@ -98,6 +99,10 @@ export const SalesApiAxiosParamCreator = function (configuration?: Configuration
                 localVarQueryParameter['sku'] = sku;
             }
 
+            if (amazonProgram !== undefined) {
+                localVarQueryParameter['amazonProgram'] = amazonProgram;
+            }
+
 
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -130,11 +135,12 @@ export const SalesApiFp = function(configuration?: Configuration) {
          * @param {GetOrderMetricsFirstDayOfWeekEnum} [firstDayOfWeek] Specifies the day that the week starts on when granularity&#x3D;Week, either Monday or Sunday. Default: Monday. Example: Sunday, if you want the week to start on a Sunday.
          * @param {string} [asin] Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN.
          * @param {string} [sku] Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU.
+         * @param {GetOrderMetricsAmazonProgramEnum} [amazonProgram] Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** &#x60;AmazonHaul&#x60; returns order metrics for the Amazon Haul program only.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrderMetrics(marketplaceIds: Array<string>, interval: string, granularity: GetOrderMetricsGranularityEnum, granularityTimeZone?: string, buyerType?: GetOrderMetricsBuyerTypeEnum, fulfillmentNetwork?: string, firstDayOfWeek?: GetOrderMetricsFirstDayOfWeekEnum, asin?: string, sku?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderMetricsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderMetrics(marketplaceIds, interval, granularity, granularityTimeZone, buyerType, fulfillmentNetwork, firstDayOfWeek, asin, sku, options);
+        async getOrderMetrics(marketplaceIds: Array<string>, interval: string, granularity: GetOrderMetricsGranularityEnum, granularityTimeZone?: string, buyerType?: GetOrderMetricsBuyerTypeEnum, fulfillmentNetwork?: string, firstDayOfWeek?: GetOrderMetricsFirstDayOfWeekEnum, asin?: string, sku?: string, amazonProgram?: GetOrderMetricsAmazonProgramEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetOrderMetricsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getOrderMetrics(marketplaceIds, interval, granularity, granularityTimeZone, buyerType, fulfillmentNetwork, firstDayOfWeek, asin, sku, amazonProgram, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SalesApi.getOrderMetrics']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -156,7 +162,7 @@ export const SalesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         getOrderMetrics(requestParameters: SalesApiGetOrderMetricsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetOrderMetricsResponse> {
-            return localVarFp.getOrderMetrics(requestParameters.marketplaceIds, requestParameters.interval, requestParameters.granularity, requestParameters.granularityTimeZone, requestParameters.buyerType, requestParameters.fulfillmentNetwork, requestParameters.firstDayOfWeek, requestParameters.asin, requestParameters.sku, options).then((request) => request(axios, basePath));
+            return localVarFp.getOrderMetrics(requestParameters.marketplaceIds, requestParameters.interval, requestParameters.granularity, requestParameters.granularityTimeZone, requestParameters.buyerType, requestParameters.fulfillmentNetwork, requestParameters.firstDayOfWeek, requestParameters.asin, requestParameters.sku, requestParameters.amazonProgram, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -229,6 +235,13 @@ export interface SalesApiGetOrderMetricsRequest {
      * @memberof SalesApiGetOrderMetrics
      */
     readonly sku?: string
+
+    /**
+     * Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** &#x60;AmazonHaul&#x60; returns order metrics for the Amazon Haul program only.
+     * @type {'AmazonHaul'}
+     * @memberof SalesApiGetOrderMetrics
+     */
+    readonly amazonProgram?: GetOrderMetricsAmazonProgramEnum
 }
 
 /**
@@ -246,7 +259,7 @@ export class SalesApi extends BaseAPI {
      * @memberof SalesApi
      */
     public getOrderMetrics(requestParameters: SalesApiGetOrderMetricsRequest, options?: RawAxiosRequestConfig) {
-        return SalesApiFp(this.configuration).getOrderMetrics(requestParameters.marketplaceIds, requestParameters.interval, requestParameters.granularity, requestParameters.granularityTimeZone, requestParameters.buyerType, requestParameters.fulfillmentNetwork, requestParameters.firstDayOfWeek, requestParameters.asin, requestParameters.sku, options).then((request) => request(this.axios, this.basePath));
+        return SalesApiFp(this.configuration).getOrderMetrics(requestParameters.marketplaceIds, requestParameters.interval, requestParameters.granularity, requestParameters.granularityTimeZone, requestParameters.buyerType, requestParameters.fulfillmentNetwork, requestParameters.firstDayOfWeek, requestParameters.asin, requestParameters.sku, requestParameters.amazonProgram, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -279,3 +292,10 @@ export const GetOrderMetricsFirstDayOfWeekEnum = {
     Sunday: 'Sunday'
 } as const;
 export type GetOrderMetricsFirstDayOfWeekEnum = typeof GetOrderMetricsFirstDayOfWeekEnum[keyof typeof GetOrderMetricsFirstDayOfWeekEnum];
+/**
+ * @export
+ */
+export const GetOrderMetricsAmazonProgramEnum = {
+    AmazonHaul: 'AmazonHaul'
+} as const;
+export type GetOrderMetricsAmazonProgramEnum = typeof GetOrderMetricsAmazonProgramEnum[keyof typeof GetOrderMetricsAmazonProgramEnum];

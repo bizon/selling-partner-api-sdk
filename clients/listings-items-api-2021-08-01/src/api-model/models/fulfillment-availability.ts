@@ -21,7 +21,7 @@
  */
 export interface FulfillmentAvailability {
     /**
-     * The code of the fulfillment network that will be used.
+     * Designates which fulfillment network is used.
      * @type {string}
      * @memberof FulfillmentAvailability
      */

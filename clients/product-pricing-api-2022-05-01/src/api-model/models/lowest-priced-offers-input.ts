@@ -38,7 +38,7 @@ export interface LowestPricedOffersInput {
 }
 
 export const LowestPricedOffersInputOfferTypeEnum = {
-    Consumer: 'CONSUMER'
+    Consumer: 'Consumer'
 } as const;
 
 export type LowestPricedOffersInputOfferTypeEnum = typeof LowestPricedOffersInputOfferTypeEnum[keyof typeof LowestPricedOffersInputOfferTypeEnum];

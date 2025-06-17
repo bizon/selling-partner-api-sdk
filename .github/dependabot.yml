@@ -12,6 +12,12 @@ updates:
     schedule:
       interval: weekly
     groups:
+      jest:
+        patterns:
+          - "@jest/types"
+          - "@swc/core"
+          - "@swc/jest"
+          - "jest"
       lerna-lite:
         patterns:
           - "@lerna-lite/*"

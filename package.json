@@ -32,7 +32,7 @@
     "turbo": "^2.5.4",
     "typedoc": "^0.28.5",
     "typescript": "^5.8.3",
-    "xo": "^0.60.0"
+    "xo": "^1.1.0"
   },
   "xo": {
     "extends": "xo-bizon",

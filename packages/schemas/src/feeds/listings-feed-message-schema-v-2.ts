@@ -59,9 +59,9 @@ export const listingsFeedMessageSchemaV2 = {
         properties: {
           op: {
             description:
-              'Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. See https://tools.ietf.org/html/rfc6902.',
+              'Type of JSON Patch operation. Supported JSON Patch operations include add, replace, merge, and delete. See https://tools.ietf.org/html/rfc6902.',
             example: 'replace',
-            enum: ['add', 'replace', 'delete'],
+            enum: ['add', 'replace', 'merge', 'delete'],
             type: 'string',
           },
           path: {

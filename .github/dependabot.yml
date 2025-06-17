@@ -17,6 +17,7 @@ updates:
           - "@jest/types"
           - "@swc/core"
           - "@swc/jest"
+          - "@types/jest"
           - "jest"
       lerna-lite:
         patterns:

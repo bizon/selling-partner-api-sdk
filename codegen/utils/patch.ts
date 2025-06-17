@@ -2,7 +2,7 @@ import {readdir} from 'node:fs/promises'
 import {join as joinPath} from 'node:path'
 
 import fjp, {type Operation} from 'fast-json-patch'
-import jsonfile from 'jsonfile'
+import {readFile as readJsonFile} from 'jsonfile'
 import {type OpenAPIV3} from 'openapi-types'
 
 import {instanceOfNodeError} from './error.js'
@@ -18,7 +18,7 @@ async function getPatches(patchPath: string): Promise<Patch[]> {
 
     return await Promise.all(
       files.sort().map(async (filename) => ({
-        operations: await jsonfile.readFile(joinPath(patchPath, filename)),
+        operations: await readJsonFile(joinPath(patchPath, filename)),
         filename,
       })),
     )

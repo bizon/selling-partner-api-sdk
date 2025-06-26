@@ -15,13 +15,13 @@
 
 
 /**
- * Contains the list of programs that are associated with an item.  Possible programs are:  - **Subscribe and Save**: Offers recurring, scheduled deliveries to Amazon customers and Amazon Business customers for their frequently ordered products.
+ * Contains the list of programs that Amazon associates with an item.  Possible programs are:  - **Subscribe and Save**: Offers recurring, scheduled deliveries to Amazon customers and Amazon Business customers for their frequently ordered products. - **FBM Ship+**: Unlocks expedited shipping without the extra cost. Helps you to provide accurate and fast delivery dates to Amazon customers. You also receive protection from late deliveries, a discount on expedited shipping rates, and cash back when you ship.
  * @export
  * @interface AmazonPrograms
  */
 export interface AmazonPrograms {
     /**
-     * A list of the programs that are associated with the specified order item.  **Possible values**: `SUBSCRIBE_AND_SAVE`
+     * A list of the programs that Amazon associates with the order item.  **Possible values**: `SUBSCRIBE_AND_SAVE`, `FBM_SHIP_PLUS`
      * @type {Array<string>}
      * @memberof AmazonPrograms
      */

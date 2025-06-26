@@ -51,6 +51,7 @@ ls clients | sed 's$\(.*\)$- [\1](https://www.github.com/bizon/selling-partner-a
 - [catalog-items-api-2020-12-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/catalog-items-api-2020-12-01)
 - [catalog-items-api-2022-04-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/catalog-items-api-2022-04-01)
 - [catalog-items-api-v0](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/catalog-items-api-v0)
+- [customer-feedback-api-2024-06-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/customer-feedback-api-2024-06-01)
 - [data-kiosk-api-2023-11-15](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/data-kiosk-api-2023-11-15)
 - [easy-ship-api-2022-03-23](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/easy-ship-api-2022-03-23)
 - [fba-inbound-eligibility-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/fba-inbound-eligibility-api-v1)

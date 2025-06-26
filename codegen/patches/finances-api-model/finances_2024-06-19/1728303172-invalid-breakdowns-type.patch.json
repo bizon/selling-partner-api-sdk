@@ -1,7 +1,0 @@
-[
-  {
-    "op": "replace",
-    "path": "/definitions/Breakdown/properties/breakdowns/$ref",
-    "value": "#/definitions/Breakdowns"
-  }
-]

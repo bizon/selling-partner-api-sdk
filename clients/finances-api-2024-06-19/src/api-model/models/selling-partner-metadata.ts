@@ -33,7 +33,7 @@ export interface SellingPartnerMetadata {
      */
     'accountType'?: string;
     /**
-     * Marketplace identifier of transaction.
+     * The identifier of the marketplace where the transaction occurred. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @type {string}
      * @memberof SellingPartnerMetadata
      */

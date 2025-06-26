@@ -18,21 +18,21 @@
 import type { Transaction } from './transaction';
 
 /**
- * The payload wrapping the response for the `listTransactions` operation.
+ * The payload for the `listTransactions` operation.
  * @export
- * @interface ListTransactionsResponsePayload
+ * @interface TransactionsPayload
  */
-export interface ListTransactionsResponsePayload {
+export interface TransactionsPayload {
     /**
-     * The response includes `nextToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.
+     * When present and not empty, pass this string token in the next request to return the next response page.
      * @type {string}
-     * @memberof ListTransactionsResponsePayload
+     * @memberof TransactionsPayload
      */
     'nextToken'?: string;
     /**
      * Contains transactions within a given time period.
      * @type {Array<Transaction>}
-     * @memberof ListTransactionsResponsePayload
+     * @memberof TransactionsPayload
      */
     'transactions'?: Array<Transaction>;
 }

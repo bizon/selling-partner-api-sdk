@@ -37,13 +37,14 @@ export interface RelatedIdentifier {
 export const RelatedIdentifierRelatedIdentifierNameEnum = {
     OrderId: 'ORDER_ID',
     ShipmentId: 'SHIPMENT_ID',
-    EventGroupId: 'EVENT_GROUP_ID',
+    FinancialEventGroupId: 'FINANCIAL_EVENT_GROUP_ID',
     RefundId: 'REFUND_ID',
     InvoiceId: 'INVOICE_ID',
     DisbursementId: 'DISBURSEMENT_ID',
     TransferId: 'TRANSFER_ID',
     DeferredTransactionId: 'DEFERRED_TRANSACTION_ID',
-    ReleaseTransactionId: 'RELEASE_TRANSACTION_ID'
+    ReleaseTransactionId: 'RELEASE_TRANSACTION_ID',
+    SettlementId: 'SETTLEMENT_ID'
 } as const;
 
 export type RelatedIdentifierRelatedIdentifierNameEnum = typeof RelatedIdentifierRelatedIdentifierNameEnum[keyof typeof RelatedIdentifierRelatedIdentifierNameEnum];

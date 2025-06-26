@@ -18,6 +18,9 @@
 import type { AmazonPayContext } from './amazon-pay-context';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { BusinessContext } from './business-context';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ContextAllOf } from './context-all-of';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -37,6 +40,6 @@ import type { TimeRangeContext } from './time-range-context';
  * Additional Information about the item.
  * @export
  */
-export type Context = AmazonPayContext & ContextAllOf & DeferredContext & PaymentsContext & ProductContext & TimeRangeContext;
+export type Context = AmazonPayContext & BusinessContext & ContextAllOf & DeferredContext & PaymentsContext & ProductContext & TimeRangeContext;
 
 

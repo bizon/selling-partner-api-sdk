@@ -51,7 +51,7 @@ export interface Item {
      */
     'totalAmount'?: Currency;
     /**
-     * List of breakdowns which will provide the details on how the total amount is calculated for the financial transaction.
+     * A list of breakdowns that detail how the total amount is calculated for the transaction.
      * @type {Array<Breakdown>}
      * @memberof Item
      */

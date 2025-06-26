@@ -36,7 +36,7 @@ export interface PackageDetail {
      */
     'carrierCode': string;
     /**
-     * Carrier Name that will deliver the package. Required when `carrierCode` is \"Others\" 
+     * Carrier name that will deliver the package. Required when `carrierCode` is \"Other\" 
      * @type {string}
      * @memberof PackageDetail
      */

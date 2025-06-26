@@ -24,9 +24,6 @@ import type { AssociatedItem } from './associated-item';
 import type { BuyerRequestedCancel } from './buyer-requested-cancel';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ExportInfo } from './export-info';
-// May contain unused imports in some cases
-// @ts-ignore
 import type { ItemBuyerInfo } from './item-buyer-info';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -296,12 +293,6 @@ export interface OrderItem {
      * @memberof OrderItem
      */
     'AmazonPrograms'?: AmazonPrograms;
-    /**
-     * 
-     * @type {ExportInfo}
-     * @memberof OrderItem
-     */
-    'ExportInfo'?: ExportInfo;
 }
 
 export const OrderItemDeemedResellerCategoryEnum = {

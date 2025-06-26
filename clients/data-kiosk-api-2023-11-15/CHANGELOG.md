@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/data-kiosk-api-2023-11-15@3.0.0...@sp-api-sdk/data-kiosk-api-2023-11-15@3.0.1) (2025-06-26)
+
+**Note:** Version bump only for package @sp-api-sdk/data-kiosk-api-2023-11-15
+
 # [3.0.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/data-kiosk-api-2023-11-15@2.0.4...@sp-api-sdk/data-kiosk-api-2023-11-15@3.0.0) (2025-05-01)
 
 ### Features

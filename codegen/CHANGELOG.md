@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.20.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/generator@0.19.0...@sp-api-sdk/generator@0.20.0) (2025-06-26)
+
+### Bug Fixes
+
+* **codegen:** update broken jsonfile import ([8a411e1](https://github.com/bizon/selling-partner-api-sdk/commit/8a411e12131e6bfd3247d5451bb39d03daa472f9))
+
+### Features
+
+* **clients:** update finances-api-2024-06-19 client ([#1528](https://github.com/bizon/selling-partner-api-sdk/issues/1528)) ([3130eb4](https://github.com/bizon/selling-partner-api-sdk/commit/3130eb4d7d032fdf3b65c8548766733d40338c4e))
+
 # [0.19.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/generator@0.18.2...@sp-api-sdk/generator@0.19.0) (2025-05-01)
 
 ### Features

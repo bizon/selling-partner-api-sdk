@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/sales-api-v1@3.0.5...@sp-api-sdk/sales-api-v1@3.1.0) (2025-06-26)
+
+### Features
+
+* **clients:** update models as of 2025-05-29 ([#1507](https://github.com/bizon/selling-partner-api-sdk/issues/1507)) ([362c6e1](https://github.com/bizon/selling-partner-api-sdk/commit/362c6e180e39a38899778ee17955e2a76fd666d1))
+
 ## [3.0.5](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/sales-api-v1@3.0.4...@sp-api-sdk/sales-api-v1@3.0.5) (2025-05-01)
 
 **Note:** Version bump only for package @sp-api-sdk/sales-api-v1

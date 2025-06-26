@@ -66,7 +66,7 @@ export interface Transaction {
      */
     'transactionId'?: string;
     /**
-     * The status of the transaction.  **Possible values:**  * `DEFERRED`: the transaction is currently deferred. * `RELEASED`: the transaction is currently released. * `DEFERRED_RELEASED`: the transaction was deferred in the past, but is now released. Deferred transactions will have their status updated to `DEFERRED_RELEASED` when released.
+     * The status of the transaction.  **Possible values:**  * `DEFERRED`: the transaction is currently deferred. * `RELEASED`: the transaction is currently released. * `DEFERRED_RELEASED`: the transaction was deferred in the past, but is now released. The status of a deferred transaction is updated to `DEFERRED_RELEASED` when the transaction is released.
      * @type {string}
      * @memberof Transaction
      */
@@ -108,7 +108,7 @@ export interface Transaction {
      */
     'contexts'?: Array<Context>;
     /**
-     * List of breakdowns which will provide the details on how the total amount is calculated for the financial transaction.
+     * A list of breakdowns that detail how the total amount is calculated for the transaction.
      * @type {Array<Breakdown>}
      * @memberof Transaction
      */

@@ -13,21 +13,25 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import type { TransactionsPayload } from './transactions-payload';
 
 /**
- * The response schema for the `listTransactions` operation.
+ * Information about the line of business associated with a transaction.
  * @export
- * @interface ListTransactionsResponse
+ * @interface BusinessContext
  */
-export interface ListTransactionsResponse {
+export interface BusinessContext {
     /**
-     * 
-     * @type {TransactionsPayload}
-     * @memberof ListTransactionsResponse
+     * The store name associated with the transaction.
+     * @type {string}
+     * @memberof BusinessContext
      */
-    'payload'?: TransactionsPayload;
+    'storeName'?: BusinessContextStoreNameEnum;
 }
+
+export const BusinessContextStoreNameEnum = {
+    AmazonHaul: 'AMAZON_HAUL'
+} as const;
+
+export type BusinessContextStoreNameEnum = typeof BusinessContextStoreNameEnum[keyof typeof BusinessContextStoreNameEnum];
+
 

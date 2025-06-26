@@ -32,15 +32,16 @@ import type { ListTransactionsResponse } from '../models';
 export const FinancesApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Returns transactions for the given parameters. It may take up to 48 hours for transactions to appear in your transaction events.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} postedAfter A date used for selecting transactions posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format.
+         * Returns transactions for the given parameters. Financial events might not include orders from the last 48 hours.  **Usage plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
+         * @param {string} postedAfter The response includes financial events posted on or after this date. This date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The date-time must be more than two minutes before the time of the request.
          * @param {string} [postedBefore] A date used for selecting transactions posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no transactions are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes.
-         * @param {string} [marketplaceId] A string token used to select Marketplace ID.
+         * @param {string} [marketplaceId] The identifier of the marketplace from which you want to retrieve transactions. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * @param {string} [transactionStatus] The status of the transaction.  **Possible values:**  * &#x60;DEFERRED&#x60;: the transaction is currently deferred. * &#x60;RELEASED&#x60;: the transaction is currently released. * &#x60;DEFERRED_RELEASED&#x60;: the transaction was deferred in the past, but is now released. The status of a deferred transaction is updated to &#x60;DEFERRED_RELEASED&#x60; when the transaction is released.
          * @param {string} [nextToken] A string token returned in the response of your previous request.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTransactions: async (postedAfter: string, postedBefore?: string, marketplaceId?: string, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listTransactions: async (postedAfter: string, postedBefore?: string, marketplaceId?: string, transactionStatus?: string, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'postedAfter' is not null or undefined
             assertParamExists('listTransactions', 'postedAfter', postedAfter)
             const localVarPath = `/finances/2024-06-19/transactions`;
@@ -71,6 +72,10 @@ export const FinancesApiAxiosParamCreator = function (configuration?: Configurat
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
+            if (transactionStatus !== undefined) {
+                localVarQueryParameter['transactionStatus'] = transactionStatus;
+            }
+
             if (nextToken !== undefined) {
                 localVarQueryParameter['nextToken'] = nextToken;
             }
@@ -97,16 +102,17 @@ export const FinancesApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = FinancesApiAxiosParamCreator(configuration)
     return {
         /**
-         * Returns transactions for the given parameters. It may take up to 48 hours for transactions to appear in your transaction events.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} postedAfter A date used for selecting transactions posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format.
+         * Returns transactions for the given parameters. Financial events might not include orders from the last 48 hours.  **Usage plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
+         * @param {string} postedAfter The response includes financial events posted on or after this date. This date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The date-time must be more than two minutes before the time of the request.
          * @param {string} [postedBefore] A date used for selecting transactions posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no transactions are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes.
-         * @param {string} [marketplaceId] A string token used to select Marketplace ID.
+         * @param {string} [marketplaceId] The identifier of the marketplace from which you want to retrieve transactions. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * @param {string} [transactionStatus] The status of the transaction.  **Possible values:**  * &#x60;DEFERRED&#x60;: the transaction is currently deferred. * &#x60;RELEASED&#x60;: the transaction is currently released. * &#x60;DEFERRED_RELEASED&#x60;: the transaction was deferred in the past, but is now released. The status of a deferred transaction is updated to &#x60;DEFERRED_RELEASED&#x60; when the transaction is released.
          * @param {string} [nextToken] A string token returned in the response of your previous request.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTransactions(postedAfter: string, postedBefore?: string, marketplaceId?: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListTransactionsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listTransactions(postedAfter, postedBefore, marketplaceId, nextToken, options);
+        async listTransactions(postedAfter: string, postedBefore?: string, marketplaceId?: string, transactionStatus?: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListTransactionsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listTransactions(postedAfter, postedBefore, marketplaceId, transactionStatus, nextToken, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['FinancesApi.listTransactions']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -122,13 +128,13 @@ export const FinancesApiFactory = function (configuration?: Configuration, baseP
     const localVarFp = FinancesApiFp(configuration)
     return {
         /**
-         * Returns transactions for the given parameters. It may take up to 48 hours for transactions to appear in your transaction events.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns transactions for the given parameters. Financial events might not include orders from the last 48 hours.  **Usage plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
          * @param {FinancesApiListTransactionsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         listTransactions(requestParameters: FinancesApiListTransactionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ListTransactionsResponse> {
-            return localVarFp.listTransactions(requestParameters.postedAfter, requestParameters.postedBefore, requestParameters.marketplaceId, requestParameters.nextToken, options).then((request) => request(axios, basePath));
+            return localVarFp.listTransactions(requestParameters.postedAfter, requestParameters.postedBefore, requestParameters.marketplaceId, requestParameters.transactionStatus, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -140,7 +146,7 @@ export const FinancesApiFactory = function (configuration?: Configuration, baseP
  */
 export interface FinancesApiListTransactionsRequest {
     /**
-     * A date used for selecting transactions posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format.
+     * The response includes financial events posted on or after this date. This date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The date-time must be more than two minutes before the time of the request.
      * @type {string}
      * @memberof FinancesApiListTransactions
      */
@@ -154,11 +160,18 @@ export interface FinancesApiListTransactionsRequest {
     readonly postedBefore?: string
 
     /**
-     * A string token used to select Marketplace ID.
+     * The identifier of the marketplace from which you want to retrieve transactions. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @type {string}
      * @memberof FinancesApiListTransactions
      */
     readonly marketplaceId?: string
+
+    /**
+     * The status of the transaction.  **Possible values:**  * &#x60;DEFERRED&#x60;: the transaction is currently deferred. * &#x60;RELEASED&#x60;: the transaction is currently released. * &#x60;DEFERRED_RELEASED&#x60;: the transaction was deferred in the past, but is now released. The status of a deferred transaction is updated to &#x60;DEFERRED_RELEASED&#x60; when the transaction is released.
+     * @type {string}
+     * @memberof FinancesApiListTransactions
+     */
+    readonly transactionStatus?: string
 
     /**
      * A string token returned in the response of your previous request.
@@ -176,14 +189,14 @@ export interface FinancesApiListTransactionsRequest {
  */
 export class FinancesApi extends BaseAPI {
     /**
-     * Returns transactions for the given parameters. It may take up to 48 hours for transactions to appear in your transaction events.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Returns transactions for the given parameters. Financial events might not include orders from the last 48 hours.  **Usage plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
      * @param {FinancesApiListTransactionsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FinancesApi
      */
     public listTransactions(requestParameters: FinancesApiListTransactionsRequest, options?: RawAxiosRequestConfig) {
-        return FinancesApiFp(this.configuration).listTransactions(requestParameters.postedAfter, requestParameters.postedBefore, requestParameters.marketplaceId, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
+        return FinancesApiFp(this.configuration).listTransactions(requestParameters.postedAfter, requestParameters.postedBefore, requestParameters.marketplaceId, requestParameters.transactionStatus, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

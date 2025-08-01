@@ -15,7 +15,7 @@
 
 
 /**
- * The status of the Amazon Seller Wallet account holder.
+ * Represents status of the Amazon Seller Wallet accountholder
  * @export
  * @enum {string}
  */

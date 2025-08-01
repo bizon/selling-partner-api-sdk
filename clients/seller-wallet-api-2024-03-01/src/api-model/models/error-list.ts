@@ -21,7 +21,7 @@
  */
 export interface ErrorList {
     /**
-     * List of errors
+     * List of errors 
      * @type {Array<Error>}
      * @memberof ErrorList
      */

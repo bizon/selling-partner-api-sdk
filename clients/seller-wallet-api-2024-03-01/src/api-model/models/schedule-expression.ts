@@ -21,7 +21,7 @@ import type { RecurringFrequency } from './recurring-frequency';
 import type { ScheduleExpressionType } from './schedule-expression-type';
 
 /**
- * The configuration of the schedule.
+ * Parameters containing information of the expression that defines when the schedule runs. The following formats are supported. 
  * @export
  * @interface ScheduleExpression
  */

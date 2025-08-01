@@ -27,19 +27,19 @@ import type { BankAccountOwnershipType } from './bank-account-ownership-type';
 import type { BankNumberFormat } from './bank-number-format';
 
 /**
- * Details of an Amazon Seller Wallet bank account. This account is used to hold the money that a Seller Wallet customer earns by selling items.
+ * Details of an Amazon SW bank account, used to hold money earned by a SW customer by selling items. NOTE: Not including account_links, short cut links to the account balance and transactions -> since not mandatory 
  * @export
  * @interface BankAccount
  */
 export interface BankAccount {
     /**
-     * The unique identifier provided by Amazon to identify the account.
+     * The unique identifier provided by Amazon to identify the account 
      * @type {string}
      * @memberof BankAccount
      */
     'accountId'?: string;
     /**
-     * The bank account holder\'s name (expected to be an Amazon customer).
+     * BankAccount holder\'s name (expected to be Amazon customer) 
      * @type {string}
      * @memberof BankAccount
      */
@@ -51,7 +51,7 @@ export interface BankAccount {
      */
     'bankAccountNumberFormat': BankAccountNumberFormat;
     /**
-     * The name of the bank. This value is Amazon Seller Wallet for Amazon Seller Wallet accounts.
+     * The name of the bank, for all Amazon Seller Wallet account the value will be Amazon Seller Wallet 
      * @type {string}
      * @memberof BankAccount
      */
@@ -63,7 +63,7 @@ export interface BankAccount {
      */
     'bankAccountOwnershipType': BankAccountOwnershipType;
     /**
-     * Routing number for automated clearing house transfers. This value is nine consecutive zeros for Amazon Seller Wallet accounts.
+     * Routing number for automated clearing house transfers, for all Amazon Seller Wallet account the value will be denoted by nine cosecutive 0\'s,  
      * @type {string}
      * @memberof BankAccount
      */
@@ -75,19 +75,19 @@ export interface BankAccount {
      */
     'bankNumberFormat': BankNumberFormat;
     /**
-     * The two-digit country code in ISO 3166 format.
+     * The two digit country code, in ISO 3166 format. 
      * @type {string}
      * @memberof BankAccount
      */
     'accountCountryCode': string;
     /**
-     * Bank account currency code in ISO 4217 format.
+     * BankAccount currency code in ISO 4217 format 
      * @type {string}
      * @memberof BankAccount
      */
     'accountCurrency': string;
     /**
-     * The last 3 digit of the bank account number. This value is three consecutive zeros for Amazon Seller Wallet accounts.
+     * Last 3 digit of the bank account number, for all Amazon Seller Wallet account the value will be three consecutive 0\'s 
      * @type {string}
      * @memberof BankAccount
      */

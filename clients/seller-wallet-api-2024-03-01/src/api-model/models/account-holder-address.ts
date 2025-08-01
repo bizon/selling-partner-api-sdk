@@ -15,49 +15,49 @@
 
 
 /**
- * The Address used to verify the bank account of the payee. This can be a person or business mailing address.
+ * Address for bank account verification of the Payee. For example, this can be a person or business mailing address 
  * @export
  * @interface AccountHolderAddress
  */
 export interface AccountHolderAddress {
     /**
-     * Address Line 1 of the public address.
+     * Address Line 1 of the public address 
      * @type {string}
      * @memberof AccountHolderAddress
      */
     'addressLine1': string;
     /**
-     * Address Line 2 of the public address.
+     * Address Line 2 of the public address 
      * @type {string}
      * @memberof AccountHolderAddress
      */
     'addressLine2'?: string;
     /**
-     * City name of the public address.
+     * City name of the public address 
      * @type {string}
      * @memberof AccountHolderAddress
      */
     'city': string;
     /**
-     * State name of the public address. This will be state or region for CN (China) based addresses.
+     * State name of the public address. This is the state or region for China-based addresses.
      * @type {string}
      * @memberof AccountHolderAddress
      */
     'state': string;
     /**
-     * Postal code of the public address.
+     * Postal code of the public address 
      * @type {string}
      * @memberof AccountHolderAddress
      */
     'postalCode': string;
     /**
-     * Country name of the public address.
+     * Country name of the public address 
      * @type {string}
      * @memberof AccountHolderAddress
      */
     'country'?: string;
     /**
-     * The two digit country code, in ISO 3166 format.
+     * The two digit country code, in ISO 3166 format. 
      * @type {string}
      * @memberof AccountHolderAddress
      */

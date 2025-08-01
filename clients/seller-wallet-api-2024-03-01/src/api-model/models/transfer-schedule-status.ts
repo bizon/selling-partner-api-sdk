@@ -15,7 +15,7 @@
 
 
 /**
- * The schedule status of the transfer.
+ * Represents the schedule status of the transfer.
  * @export
  * @enum {string}
  */

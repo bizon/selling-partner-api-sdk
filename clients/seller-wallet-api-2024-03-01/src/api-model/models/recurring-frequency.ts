@@ -15,7 +15,7 @@
 
 
 /**
- * The frequency at which the transaction is repeated.
+ * Represent parameters to specify recurrence of the scheduled transfer.
  * @export
  * @enum {string}
  */

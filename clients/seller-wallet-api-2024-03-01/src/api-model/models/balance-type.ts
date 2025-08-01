@@ -15,7 +15,7 @@
 
 
 /**
- * The type of bank account balance.
+ * Represent a bank account balance type.
  * @export
  * @enum {string}
  */

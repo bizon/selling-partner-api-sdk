@@ -18,13 +18,13 @@
 import type { BankAccount } from './bank-account';
 
 /**
- * A list of bank accounts.
+ * Struct that holds collection of accounts.
  * @export
  * @interface BankAccountListing
  */
 export interface BankAccountListing {
     /**
-     * A list of bank accounts.
+     * Collection that holds BankAccount 
      * @type {Array<BankAccount>}
      * @memberof BankAccountListing
      */

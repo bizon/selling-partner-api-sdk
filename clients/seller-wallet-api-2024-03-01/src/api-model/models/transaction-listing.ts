@@ -18,19 +18,19 @@
 import type { Transaction } from './transaction';
 
 /**
- * A list of transactions.
+ * Struct that holds collection of transactions.
  * @export
  * @interface TransactionListing
  */
 export interface TransactionListing {
     /**
-     * A token that you use to retrieve the next page of results. The response includes `nextPageToken` when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextPageToken` is null. Note that this operation can return empty pages.
+     * If present, use this pagination token to retrieve the next page of supply sources, if not provided the API will return same response. The field will only be provided when the list is greater than 100.
      * @type {string}
      * @memberof TransactionListing
      */
     'nextPageToken'?: string;
     /**
-     * A list of transactions.
+     * Collection that holds Transaction 
      * @type {Array<Transaction>}
      * @memberof TransactionListing
      */

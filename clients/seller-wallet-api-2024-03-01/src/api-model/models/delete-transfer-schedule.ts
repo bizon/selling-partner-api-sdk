@@ -15,13 +15,13 @@
 
 
 /**
- * The response returned when the schedule transfer\'s delete request is successful.
+ * Response returned when the schedule transfer\'s delete request is successful.
  * @export
  * @interface DeleteTransferSchedule
  */
 export interface DeleteTransferSchedule {
     /**
-     * A success code that specifies that the delete operation was successful. For example, HTTP 200.
+     * A success code that specifies the delete operation was successful. eg:HTTP 200.
      * @type {string}
      * @memberof DeleteTransferSchedule
      */

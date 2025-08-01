@@ -15,7 +15,7 @@
 
 
 /**
- * The current status of the transaction.
+ * Represents current status of the transaction.
  * @export
  * @enum {string}
  */

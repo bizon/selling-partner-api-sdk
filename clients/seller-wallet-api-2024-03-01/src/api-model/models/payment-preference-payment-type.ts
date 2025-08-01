@@ -15,7 +15,7 @@
 
 
 /**
- * The type of payment preference.
+ * Represent a type of payment preference.
  * @export
  * @enum {string}
  */

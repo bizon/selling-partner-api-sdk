@@ -27,7 +27,7 @@ export interface Currency {
      */
     'currencyCode'?: string;
     /**
-     * A decimal number, such as an amount or FX rate.
+     * A decimal number such as amount or FX rate.
      * @type {number}
      * @memberof Currency
      */

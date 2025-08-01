@@ -15,7 +15,7 @@
 
 
 /**
- * The type of fee on the transaction.
+ * Represents different types of fees that can be applied on a transaction.
  * @export
  * @enum {string}
  */

@@ -911,8 +911,8 @@ importers:
         version: 7.0.1
     devDependencies:
       nock:
-        specifier: ^14.0.5
-        version: 14.0.5
+        specifier: ^14.0.8
+        version: 14.0.8
       type-fest:
         specifier: ^4.40.1
         version: 4.41.0
@@ -936,8 +936,8 @@ importers:
         version: 7.0.1
     devDependencies:
       nock:
-        specifier: ^14.0.5
-        version: 14.0.5
+        specifier: ^14.0.8
+        version: 14.0.8
       strip-ansi:
         specifier: ^6.0.1
         version: 6.0.1
@@ -1580,8 +1580,8 @@ packages:
     resolution: {integrity: sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA==}
     engines: {node: '>=8'}
 
-  '@mswjs/interceptors@0.38.7':
-    resolution: {integrity: sha512-Jkb27iSn7JPdkqlTqKfhncFfnEZsIJVYxsFbUSWEkxdIPdsyngrhoDBk0/BGD2FQcRH99vlRrkHpNTyKqI+0/w==}
+  '@mswjs/interceptors@0.39.5':
+    resolution: {integrity: sha512-B9nHSJYtsv79uo7QdkZ/b/WoKm20IkVSmTc/WCKarmDtFwM0dRx2ouEniqwNkzCSLn3fydzKmnMzjtfdOWt3VQ==}
     engines: {node: '>=18'}
 
   '@nestjs/axios@4.0.0':
@@ -4567,8 +4567,8 @@ packages:
     resolution: {integrity: sha512-NHDDGYudnvRutt/VhKFlX26IotXe1w0cmkDm6JGquh5bz/bDTw0LufSmH/GxTjEdpHEO+bVKFTwdrcGa/9XlKQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  nock@14.0.5:
-    resolution: {integrity: sha512-R49fALR9caB6vxuSWUIaK2eBYeTloZQUFBZ4rHO+TbhMGQHtwnhdqKLYki+o+8qMgLvoBYWrp/2KzGPhxL4S6w==}
+  nock@14.0.8:
+    resolution: {integrity: sha512-5DCGrkwK1f8kxUvqvzLWb97XuDUY4/t5M3ZcogPfLGvC2wO8wjRQsIDSXj2L6e1J0Dv8xscf9wWSvGnS3OL29Q==}
     engines: {node: '>=18.20.0 <20 || >=20.12.1'}
 
   node-fetch@2.7.0:
@@ -6765,7 +6765,7 @@ snapshots:
 
   '@lukeed/csprng@1.1.0': {}
 
-  '@mswjs/interceptors@0.38.7':
+  '@mswjs/interceptors@0.39.5':
     dependencies:
       '@open-draft/deferred-promise': 2.2.0
       '@open-draft/logger': 0.3.0
@@ -10332,9 +10332,9 @@ snapshots:
     dependencies:
       type-fest: 2.19.0
 
-  nock@14.0.5:
+  nock@14.0.8:
     dependencies:
-      '@mswjs/interceptors': 0.38.7
+      '@mswjs/interceptors': 0.39.5
       json-stringify-safe: 5.0.1
       propagate: 2.0.1
 

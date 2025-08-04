@@ -27,25 +27,25 @@ import type { TransactionInstrumentDetails } from './transaction-instrument-deta
 import type { TransferRatePreview } from './transfer-rate-preview';
 
 /**
- * Request body to initiate a transaction from a Seller Wallet bank account to another customer-defined bank account.
+ * Request body to initiate a transaction from a SW bank account to another customer defined bank account 
  * @export
  * @interface TransactionInitiationRequest
  */
 export interface TransactionInitiationRequest {
     /**
-     * The unique identifier of the source Amazon Seller Wallet bank account from which the money is debited.
+     * The unique identifier of the source Amazon SW bank account from where the money needs to be debited 
      * @type {string}
      * @memberof TransactionInitiationRequest
      */
     'sourceAccountId': string;
     /**
-     * The unique identifier of the destination bank account where the money is deposited.
+     * Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited 
      * @type {string}
      * @memberof TransactionInitiationRequest
      */
     'destinationAccountId'?: string;
     /**
-     * A description of the transaction.
+     * Optional field to specify description for the transaction 
      * @type {string}
      * @memberof TransactionInitiationRequest
      */
@@ -75,7 +75,7 @@ export interface TransactionInitiationRequest {
      */
     'transferRateDetails'?: TransferRatePreview;
     /**
-     * The time at which the transaction was initiated in [ISO 8601 date time format](https://developer-docs.amazon.com/sp-api/docs/iso-8601).
+     * The transaction initiation request time in date-time format 
      * @type {string}
      * @memberof TransactionInitiationRequest
      */

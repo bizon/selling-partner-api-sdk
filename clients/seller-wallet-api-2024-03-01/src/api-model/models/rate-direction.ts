@@ -15,7 +15,7 @@
 
 
 /**
- * Whether the customer is buying or selling the source currency.
+ * Represents the rate direction at which the transaction is performed.
  * @export
  * @enum {string}
  */

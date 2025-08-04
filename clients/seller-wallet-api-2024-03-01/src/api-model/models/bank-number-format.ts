@@ -15,7 +15,7 @@
 
 
 /**
- * The format of the bank number. Also known as the routing number type.
+ * Represents a format of a bank number also called routing number type
  * @export
  * @enum {string}
  */

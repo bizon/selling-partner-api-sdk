@@ -30,13 +30,13 @@ import type { TransactionType } from './transaction-type';
 import type { TransferRatePreview } from './transfer-rate-preview';
 
 /**
- * The current transaction status and historical details related to it.
+ * The current transaction status and related historical details.
  * @export
  * @interface Transaction
  */
 export interface Transaction {
     /**
-     * The unique identifier provided by Amazon to the transaction.
+     * The unique identifier provided by Amazon to the transaction 
      * @type {string}
      * @memberof Transaction
      */
@@ -54,43 +54,43 @@ export interface Transaction {
      */
     'transactionStatus': TransactionStatus;
     /**
-     * The date on which the transaction was initiated.
+     * The date when the transaction was initiated.
      * @type {string}
      * @memberof Transaction
      */
     'transactionRequestDate': string;
     /**
-     * The expected completion date of the transaction.
+     * Expected completion date of a transaction, for existing active Payees (Trusted Beneficiaries) it will be 24 hours but for new destination bank accounts the value could go up to 5 days 
      * @type {string}
      * @memberof Transaction
      */
     'expectedCompletionDate'?: string;
     /**
-     * The transaction\'s completion date.
+     * Transaction completion date 
      * @type {string}
      * @memberof Transaction
      */
     'transactionActualCompletionDate'?: string;
     /**
-     * The date of the most recent account balance update.
+     * The last update date on the transaction 
      * @type {string}
      * @memberof Transaction
      */
     'lastUpdateDate': string;
     /**
-     * The Amazon Seller Wallet customer who requested the transaction.
+     * Amazon SW customer who requested the transaction 
      * @type {string}
      * @memberof Transaction
      */
     'requesterName'?: string;
     /**
-     * The transaction initiation source. This value could be the Amazon portal or PISP name that the customer used to start the transaction.
+     * The transaction initiation source. This value is either the Amazon portal or PISP name that the customer used to start the transaction.
      * @type {string}
      * @memberof Transaction
      */
     'transactionRequesterSource': string;
     /**
-     * The description provided by the requester in the transaction request at time of transaction initiation.
+     * A description of the transaction that the requester provides when they initiate the transaction.
      * @type {string}
      * @memberof Transaction
      */
@@ -126,7 +126,7 @@ export interface Transaction {
      */
     'transactionFinalAmount'?: Currency;
     /**
-     * The reason the transaction failed, if applicable.
+     * Description in case the transaction fails before completion 
      * @type {string}
      * @memberof Transaction
      */

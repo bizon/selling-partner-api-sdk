@@ -52,11 +52,11 @@ import type { TransferScheduleRequest } from '../models';
 export const SellerWalletApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Create a transaction request from an Amazon Seller Wallet account to another customer-provided account.
-         * @summary Create a transaction request from Amazon Seller Wallet account to another customer-provided account
+         * Create a transaction request from a Seller Wallet account to another customer-provided account.
+         * @summary Create a transaction request from Amazon SW account to another customer provided account
          * @param {string} destAccountDigitalSignature Digital signature for the destination bank account details.
          * @param {string} amountDigitalSignature Digital signature for the source currency transaction amount.
-         * @param {TransactionInitiationRequest} body The payload of the request
+         * @param {TransactionInitiationRequest} body Defines the actual payload of the request
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -100,11 +100,11 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Create a transfer schedule request from an Amazon Seller Wallet account to another customer-provided account.
-         * @summary Create a transfer schedule request from Amazon Seller Wallet account to another customer-provided account
+         * Create a transfer schedule request from a Seller Wallet account to another customer-provided account.
+         * @summary Create a transfer schedule request from Amazon SW account to another customer provided account
          * @param {string} destAccountDigitalSignature Digital signature for the destination bank account details.
          * @param {string} amountDigitalSignature Digital signature for the source currency transaction amount.
-         * @param {TransferScheduleRequest} body The payload of the request.
+         * @param {TransferScheduleRequest} body Defines the actual payload of the request
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -148,16 +148,16 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account.
-         * @summary Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account
-         * @param {string} transferScheduleId A unique reference ID for a scheduled transfer.
+         * Delete a transaction request that is scheduled from a Seller Wallet account to another customer-provided account.
+         * @summary Delete a transaction request that is scheduled from Amazon SW account to another customer provided account
+         * @param {string} transferScheduleId A unique reference id for a scheduled transfer
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         deleteScheduleTransaction: async (transferScheduleId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'transferScheduleId' is not null or undefined
             assertParamExists('deleteScheduleTransaction', 'transferScheduleId', transferScheduleId)
-            const localVarPath = `/finances/transfers/wallet/2024-03-01/transferSchedules/{transferScheduleId}`
+            const localVarPath = `/finances/transfers/wallet/2024-03-01/transferSchedules`
                 .replace(`{${"transferScheduleId"}}`, encodeURIComponent(String(transferScheduleId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -182,9 +182,9 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Retrieve an Amazon Seller Wallet bank account by Amazon account identifier.
-         * @summary Find particular Amazon Seller Wallet account by Amazon account identifier
-         * @param {string} accountId The ID of the Amazon Seller Wallet account.
+         * Retrieve a Seller Wallet bank account by Amazon account identifier.
+         * @summary Find particular Amazon SW account by Amazon account identifier
+         * @param {string} accountId ID of the Amazon SW account
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -216,9 +216,9 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Find a transaction by the Amazon transaction identifier.
-         * @summary Find particular Amazon Seller Wallet account transaction by Amazon transaction identifier
-         * @param {string} transactionId The ID of the Amazon Seller Wallet transaction.
+         * Returns a transaction
+         * @summary Find particular Amazon SW account transaction by Amazon transaction identifier
+         * @param {string} transactionId ID of the Amazon SW transaction
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -250,13 +250,13 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Retrieve a list of potential fees on a transaction.
+         * Returns list of potential fees on a transaction based on the source and destination country currency code
          * @summary Fetch potential fees that could be applied on a transaction on the basis of the source and destination country currency code
-         * @param {string} sourceCountryCode Country code of the source transaction account in ISO 3166 format.
-         * @param {string} sourceCurrencyCode Currency code of the source transaction country in ISO 4217 format.
-         * @param {string} destinationCountryCode Country code of the destination transaction account in ISO 3166 format.
-         * @param {string} destinationCurrencyCode Currency code of the destination transaction country in ISO 4217 format.
-         * @param {number} baseAmount The base transaction amount without any markup fees.
+         * @param {string} sourceCountryCode Represents 2 character country code of source transaction account in ISO 3166 standard format.
+         * @param {string} sourceCurrencyCode Represents 3 letter currency code in ISO 4217 standard format of the source transaction country.
+         * @param {string} destinationCountryCode Represents 2 character country code of destination transaction account in ISO 3166 standard format.
+         * @param {string} destinationCurrencyCode Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.
+         * @param {number} baseAmount Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -315,9 +315,9 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Find a particular Amazon Seller Wallet account transfer schedule.
-         * @summary Find particular Amazon Seller Wallet account transfer schedule by Amazon transfer schedule identifier
-         * @param {string} transferScheduleId The schedule ID of the Amazon Seller Wallet transfer.
+         * Find a particular Seller Wallet account transfer schedule.
+         * @summary Find particular Amazon SW account transfer schedule by Amazon transfer schedule identifier
+         * @param {string} transferScheduleId Schedule ID of the Amazon SW transfer
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -349,9 +349,9 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Retrieve the balance in a given Amazon Seller Wallet bank account.
-         * @summary Find balance in particular Amazon Seller Wallet account by Amazon account identifier
-         * @param {string} accountId The ID of the Amazon Seller Wallet account.
+         * Retrieve the balance in a given Seller Wallet bank account.
+         * @summary Find balance in particular Amazon SW account by Amazon account identifier
+         * @param {string} accountId ID of the Amazon SW account
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -383,10 +383,10 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Retrieve a list of transactions for a given Amazon Seller Wallet bank account.
-         * @summary The API will return all the transactions for a given Amazon Seller Wallet account sorted by the transaction request date
-         * @param {string} accountId The ID of the Amazon Seller Wallet account.
-         * @param {string} [nextPageToken] A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages.
+         * Retrieve a list of transactions for a given Seller Wallet bank account.
+         * @summary The API will return all the transactions for a given Amazon SW account sorted by the transaction request date
+         * @param {string} accountId ID of the Amazon SW account
+         * @param {string} [nextPageToken] Pagination token to retrieve a specific page of results.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -425,9 +425,9 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Get all Seller Wallet accounts for a given seller.
-         * @summary Get all Amazon Seller Wallet accounts for the seller
-         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * Get Seller Wallet accounts for a seller.
+         * @summary Get all Amazon SW accounts for the seller
+         * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for which items are returned.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -462,10 +462,10 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Returns all transfer schedules of a given Amazon Seller Wallet bank account with the schedule ID in response if present.
-         * @summary The API will return all the transfer schedules for a given Amazon Seller Wallet account
-         * @param {string} accountId The ID of the Amazon Seller Wallet account.
-         * @param {string} [nextPageToken] A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages.
+         * Retrieve transfer schedules of a Seller Wallet bank account.
+         * @summary The API will return all the transfer schedules for a given Amazon SW account
+         * @param {string} accountId ID of the Amazon SW account
+         * @param {string} [nextPageToken] Pagination token to retrieve a specific page of results.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -504,11 +504,11 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Update transfer schedule information. Returns a transfer belonging to the updated scheduled transfer request.
+         * Returns a transfer belonging to the updated scheduled transfer request
          * @summary Update a transfer schedule information. Only fields (i.e; transferScheduleInformation, paymentPreference, transferScheduleStatus) in the request body can be updated.
          * @param {string} destAccountDigitalSignature Digital signature for the destination bank account details.
          * @param {string} amountDigitalSignature Digital signature for the source currency transaction amount.
-         * @param {TransferSchedule} body The payload of the scheduled transfer request that is to be updated.
+         * @param {TransferSchedule} body Defines the actual payload of the scheduled transfer request that is to be updated. 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -562,11 +562,11 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = SellerWalletApiAxiosParamCreator(configuration)
     return {
         /**
-         * Create a transaction request from an Amazon Seller Wallet account to another customer-provided account.
-         * @summary Create a transaction request from Amazon Seller Wallet account to another customer-provided account
+         * Create a transaction request from a Seller Wallet account to another customer-provided account.
+         * @summary Create a transaction request from Amazon SW account to another customer provided account
          * @param {string} destAccountDigitalSignature Digital signature for the destination bank account details.
          * @param {string} amountDigitalSignature Digital signature for the source currency transaction amount.
-         * @param {TransactionInitiationRequest} body The payload of the request
+         * @param {TransactionInitiationRequest} body Defines the actual payload of the request
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -577,11 +577,11 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Create a transfer schedule request from an Amazon Seller Wallet account to another customer-provided account.
-         * @summary Create a transfer schedule request from Amazon Seller Wallet account to another customer-provided account
+         * Create a transfer schedule request from a Seller Wallet account to another customer-provided account.
+         * @summary Create a transfer schedule request from Amazon SW account to another customer provided account
          * @param {string} destAccountDigitalSignature Digital signature for the destination bank account details.
          * @param {string} amountDigitalSignature Digital signature for the source currency transaction amount.
-         * @param {TransferScheduleRequest} body The payload of the request.
+         * @param {TransferScheduleRequest} body Defines the actual payload of the request
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -592,9 +592,9 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account.
-         * @summary Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account
-         * @param {string} transferScheduleId A unique reference ID for a scheduled transfer.
+         * Delete a transaction request that is scheduled from a Seller Wallet account to another customer-provided account.
+         * @summary Delete a transaction request that is scheduled from Amazon SW account to another customer provided account
+         * @param {string} transferScheduleId A unique reference id for a scheduled transfer
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -605,9 +605,9 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Retrieve an Amazon Seller Wallet bank account by Amazon account identifier.
-         * @summary Find particular Amazon Seller Wallet account by Amazon account identifier
-         * @param {string} accountId The ID of the Amazon Seller Wallet account.
+         * Retrieve a Seller Wallet bank account by Amazon account identifier.
+         * @summary Find particular Amazon SW account by Amazon account identifier
+         * @param {string} accountId ID of the Amazon SW account
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -618,9 +618,9 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Find a transaction by the Amazon transaction identifier.
-         * @summary Find particular Amazon Seller Wallet account transaction by Amazon transaction identifier
-         * @param {string} transactionId The ID of the Amazon Seller Wallet transaction.
+         * Returns a transaction
+         * @summary Find particular Amazon SW account transaction by Amazon transaction identifier
+         * @param {string} transactionId ID of the Amazon SW transaction
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -631,13 +631,13 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Retrieve a list of potential fees on a transaction.
+         * Returns list of potential fees on a transaction based on the source and destination country currency code
          * @summary Fetch potential fees that could be applied on a transaction on the basis of the source and destination country currency code
-         * @param {string} sourceCountryCode Country code of the source transaction account in ISO 3166 format.
-         * @param {string} sourceCurrencyCode Currency code of the source transaction country in ISO 4217 format.
-         * @param {string} destinationCountryCode Country code of the destination transaction account in ISO 3166 format.
-         * @param {string} destinationCurrencyCode Currency code of the destination transaction country in ISO 4217 format.
-         * @param {number} baseAmount The base transaction amount without any markup fees.
+         * @param {string} sourceCountryCode Represents 2 character country code of source transaction account in ISO 3166 standard format.
+         * @param {string} sourceCurrencyCode Represents 3 letter currency code in ISO 4217 standard format of the source transaction country.
+         * @param {string} destinationCountryCode Represents 2 character country code of destination transaction account in ISO 3166 standard format.
+         * @param {string} destinationCurrencyCode Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.
+         * @param {number} baseAmount Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -648,9 +648,9 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Find a particular Amazon Seller Wallet account transfer schedule.
-         * @summary Find particular Amazon Seller Wallet account transfer schedule by Amazon transfer schedule identifier
-         * @param {string} transferScheduleId The schedule ID of the Amazon Seller Wallet transfer.
+         * Find a particular Seller Wallet account transfer schedule.
+         * @summary Find particular Amazon SW account transfer schedule by Amazon transfer schedule identifier
+         * @param {string} transferScheduleId Schedule ID of the Amazon SW transfer
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -661,9 +661,9 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Retrieve the balance in a given Amazon Seller Wallet bank account.
-         * @summary Find balance in particular Amazon Seller Wallet account by Amazon account identifier
-         * @param {string} accountId The ID of the Amazon Seller Wallet account.
+         * Retrieve the balance in a given Seller Wallet bank account.
+         * @summary Find balance in particular Amazon SW account by Amazon account identifier
+         * @param {string} accountId ID of the Amazon SW account
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -674,10 +674,10 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Retrieve a list of transactions for a given Amazon Seller Wallet bank account.
-         * @summary The API will return all the transactions for a given Amazon Seller Wallet account sorted by the transaction request date
-         * @param {string} accountId The ID of the Amazon Seller Wallet account.
-         * @param {string} [nextPageToken] A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages.
+         * Retrieve a list of transactions for a given Seller Wallet bank account.
+         * @summary The API will return all the transactions for a given Amazon SW account sorted by the transaction request date
+         * @param {string} accountId ID of the Amazon SW account
+         * @param {string} [nextPageToken] Pagination token to retrieve a specific page of results.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -688,9 +688,9 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Get all Seller Wallet accounts for a given seller.
-         * @summary Get all Amazon Seller Wallet accounts for the seller
-         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * Get Seller Wallet accounts for a seller.
+         * @summary Get all Amazon SW accounts for the seller
+         * @param {string} marketplaceId A marketplace identifier. Specifies the marketplace for which items are returned.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -701,10 +701,10 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Returns all transfer schedules of a given Amazon Seller Wallet bank account with the schedule ID in response if present.
-         * @summary The API will return all the transfer schedules for a given Amazon Seller Wallet account
-         * @param {string} accountId The ID of the Amazon Seller Wallet account.
-         * @param {string} [nextPageToken] A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages.
+         * Retrieve transfer schedules of a Seller Wallet bank account.
+         * @summary The API will return all the transfer schedules for a given Amazon SW account
+         * @param {string} accountId ID of the Amazon SW account
+         * @param {string} [nextPageToken] Pagination token to retrieve a specific page of results.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -715,11 +715,11 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Update transfer schedule information. Returns a transfer belonging to the updated scheduled transfer request.
+         * Returns a transfer belonging to the updated scheduled transfer request
          * @summary Update a transfer schedule information. Only fields (i.e; transferScheduleInformation, paymentPreference, transferScheduleStatus) in the request body can be updated.
          * @param {string} destAccountDigitalSignature Digital signature for the destination bank account details.
          * @param {string} amountDigitalSignature Digital signature for the source currency transaction amount.
-         * @param {TransferSchedule} body The payload of the scheduled transfer request that is to be updated.
+         * @param {TransferSchedule} body Defines the actual payload of the scheduled transfer request that is to be updated. 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -740,8 +740,8 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
     const localVarFp = SellerWalletApiFp(configuration)
     return {
         /**
-         * Create a transaction request from an Amazon Seller Wallet account to another customer-provided account.
-         * @summary Create a transaction request from Amazon Seller Wallet account to another customer-provided account
+         * Create a transaction request from a Seller Wallet account to another customer-provided account.
+         * @summary Create a transaction request from Amazon SW account to another customer provided account
          * @param {SellerWalletApiCreateTransactionRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -750,8 +750,8 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
             return localVarFp.createTransaction(requestParameters.destAccountDigitalSignature, requestParameters.amountDigitalSignature, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
-         * Create a transfer schedule request from an Amazon Seller Wallet account to another customer-provided account.
-         * @summary Create a transfer schedule request from Amazon Seller Wallet account to another customer-provided account
+         * Create a transfer schedule request from a Seller Wallet account to another customer-provided account.
+         * @summary Create a transfer schedule request from Amazon SW account to another customer provided account
          * @param {SellerWalletApiCreateTransferScheduleRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -760,8 +760,8 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
             return localVarFp.createTransferSchedule(requestParameters.destAccountDigitalSignature, requestParameters.amountDigitalSignature, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
-         * Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account.
-         * @summary Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account
+         * Delete a transaction request that is scheduled from a Seller Wallet account to another customer-provided account.
+         * @summary Delete a transaction request that is scheduled from Amazon SW account to another customer provided account
          * @param {SellerWalletApiDeleteScheduleTransactionRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -770,8 +770,8 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
             return localVarFp.deleteScheduleTransaction(requestParameters.transferScheduleId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Retrieve an Amazon Seller Wallet bank account by Amazon account identifier.
-         * @summary Find particular Amazon Seller Wallet account by Amazon account identifier
+         * Retrieve a Seller Wallet bank account by Amazon account identifier.
+         * @summary Find particular Amazon SW account by Amazon account identifier
          * @param {SellerWalletApiGetAccountRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -780,8 +780,8 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
             return localVarFp.getAccount(requestParameters.accountId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Find a transaction by the Amazon transaction identifier.
-         * @summary Find particular Amazon Seller Wallet account transaction by Amazon transaction identifier
+         * Returns a transaction
+         * @summary Find particular Amazon SW account transaction by Amazon transaction identifier
          * @param {SellerWalletApiGetTransactionRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -790,7 +790,7 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
             return localVarFp.getTransaction(requestParameters.transactionId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Retrieve a list of potential fees on a transaction.
+         * Returns list of potential fees on a transaction based on the source and destination country currency code
          * @summary Fetch potential fees that could be applied on a transaction on the basis of the source and destination country currency code
          * @param {SellerWalletApiGetTransferPreviewRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
@@ -800,8 +800,8 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
             return localVarFp.getTransferPreview(requestParameters.sourceCountryCode, requestParameters.sourceCurrencyCode, requestParameters.destinationCountryCode, requestParameters.destinationCurrencyCode, requestParameters.baseAmount, options).then((request) => request(axios, basePath));
         },
         /**
-         * Find a particular Amazon Seller Wallet account transfer schedule.
-         * @summary Find particular Amazon Seller Wallet account transfer schedule by Amazon transfer schedule identifier
+         * Find a particular Seller Wallet account transfer schedule.
+         * @summary Find particular Amazon SW account transfer schedule by Amazon transfer schedule identifier
          * @param {SellerWalletApiGetTransferScheduleRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -810,8 +810,8 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
             return localVarFp.getTransferSchedule(requestParameters.transferScheduleId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Retrieve the balance in a given Amazon Seller Wallet bank account.
-         * @summary Find balance in particular Amazon Seller Wallet account by Amazon account identifier
+         * Retrieve the balance in a given Seller Wallet bank account.
+         * @summary Find balance in particular Amazon SW account by Amazon account identifier
          * @param {SellerWalletApiListAccountBalancesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -820,8 +820,8 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
             return localVarFp.listAccountBalances(requestParameters.accountId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Retrieve a list of transactions for a given Amazon Seller Wallet bank account.
-         * @summary The API will return all the transactions for a given Amazon Seller Wallet account sorted by the transaction request date
+         * Retrieve a list of transactions for a given Seller Wallet bank account.
+         * @summary The API will return all the transactions for a given Amazon SW account sorted by the transaction request date
          * @param {SellerWalletApiListAccountTransactionsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -830,8 +830,8 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
             return localVarFp.listAccountTransactions(requestParameters.accountId, requestParameters.nextPageToken, options).then((request) => request(axios, basePath));
         },
         /**
-         * Get all Seller Wallet accounts for a given seller.
-         * @summary Get all Amazon Seller Wallet accounts for the seller
+         * Get Seller Wallet accounts for a seller.
+         * @summary Get all Amazon SW accounts for the seller
          * @param {SellerWalletApiListAccountsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -840,8 +840,8 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
             return localVarFp.listAccounts(requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Returns all transfer schedules of a given Amazon Seller Wallet bank account with the schedule ID in response if present.
-         * @summary The API will return all the transfer schedules for a given Amazon Seller Wallet account
+         * Retrieve transfer schedules of a Seller Wallet bank account.
+         * @summary The API will return all the transfer schedules for a given Amazon SW account
          * @param {SellerWalletApiListTransferSchedulesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -850,7 +850,7 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
             return localVarFp.listTransferSchedules(requestParameters.accountId, requestParameters.nextPageToken, options).then((request) => request(axios, basePath));
         },
         /**
-         * Update transfer schedule information. Returns a transfer belonging to the updated scheduled transfer request.
+         * Returns a transfer belonging to the updated scheduled transfer request
          * @summary Update a transfer schedule information. Only fields (i.e; transferScheduleInformation, paymentPreference, transferScheduleStatus) in the request body can be updated.
          * @param {SellerWalletApiUpdateTransferScheduleRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
@@ -883,7 +883,7 @@ export interface SellerWalletApiCreateTransactionRequest {
     readonly amountDigitalSignature: string
 
     /**
-     * The payload of the request
+     * Defines the actual payload of the request
      * @type {TransactionInitiationRequest}
      * @memberof SellerWalletApiCreateTransaction
      */
@@ -911,7 +911,7 @@ export interface SellerWalletApiCreateTransferScheduleRequest {
     readonly amountDigitalSignature: string
 
     /**
-     * The payload of the request.
+     * Defines the actual payload of the request
      * @type {TransferScheduleRequest}
      * @memberof SellerWalletApiCreateTransferSchedule
      */
@@ -925,7 +925,7 @@ export interface SellerWalletApiCreateTransferScheduleRequest {
  */
 export interface SellerWalletApiDeleteScheduleTransactionRequest {
     /**
-     * A unique reference ID for a scheduled transfer.
+     * A unique reference id for a scheduled transfer
      * @type {string}
      * @memberof SellerWalletApiDeleteScheduleTransaction
      */
@@ -939,7 +939,7 @@ export interface SellerWalletApiDeleteScheduleTransactionRequest {
  */
 export interface SellerWalletApiGetAccountRequest {
     /**
-     * The ID of the Amazon Seller Wallet account.
+     * ID of the Amazon SW account
      * @type {string}
      * @memberof SellerWalletApiGetAccount
      */
@@ -953,7 +953,7 @@ export interface SellerWalletApiGetAccountRequest {
  */
 export interface SellerWalletApiGetTransactionRequest {
     /**
-     * The ID of the Amazon Seller Wallet transaction.
+     * ID of the Amazon SW transaction
      * @type {string}
      * @memberof SellerWalletApiGetTransaction
      */
@@ -967,35 +967,35 @@ export interface SellerWalletApiGetTransactionRequest {
  */
 export interface SellerWalletApiGetTransferPreviewRequest {
     /**
-     * Country code of the source transaction account in ISO 3166 format.
+     * Represents 2 character country code of source transaction account in ISO 3166 standard format.
      * @type {string}
      * @memberof SellerWalletApiGetTransferPreview
      */
     readonly sourceCountryCode: string
 
     /**
-     * Currency code of the source transaction country in ISO 4217 format.
+     * Represents 3 letter currency code in ISO 4217 standard format of the source transaction country.
      * @type {string}
      * @memberof SellerWalletApiGetTransferPreview
      */
     readonly sourceCurrencyCode: string
 
     /**
-     * Country code of the destination transaction account in ISO 3166 format.
+     * Represents 2 character country code of destination transaction account in ISO 3166 standard format.
      * @type {string}
      * @memberof SellerWalletApiGetTransferPreview
      */
     readonly destinationCountryCode: string
 
     /**
-     * Currency code of the destination transaction country in ISO 4217 format.
+     * Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.
      * @type {string}
      * @memberof SellerWalletApiGetTransferPreview
      */
     readonly destinationCurrencyCode: string
 
     /**
-     * The base transaction amount without any markup fees.
+     * Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.
      * @type {number}
      * @memberof SellerWalletApiGetTransferPreview
      */
@@ -1009,7 +1009,7 @@ export interface SellerWalletApiGetTransferPreviewRequest {
  */
 export interface SellerWalletApiGetTransferScheduleRequest {
     /**
-     * The schedule ID of the Amazon Seller Wallet transfer.
+     * Schedule ID of the Amazon SW transfer
      * @type {string}
      * @memberof SellerWalletApiGetTransferSchedule
      */
@@ -1023,7 +1023,7 @@ export interface SellerWalletApiGetTransferScheduleRequest {
  */
 export interface SellerWalletApiListAccountBalancesRequest {
     /**
-     * The ID of the Amazon Seller Wallet account.
+     * ID of the Amazon SW account
      * @type {string}
      * @memberof SellerWalletApiListAccountBalances
      */
@@ -1037,14 +1037,14 @@ export interface SellerWalletApiListAccountBalancesRequest {
  */
 export interface SellerWalletApiListAccountTransactionsRequest {
     /**
-     * The ID of the Amazon Seller Wallet account.
+     * ID of the Amazon SW account
      * @type {string}
      * @memberof SellerWalletApiListAccountTransactions
      */
     readonly accountId: string
 
     /**
-     * A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages.
+     * Pagination token to retrieve a specific page of results.
      * @type {string}
      * @memberof SellerWalletApiListAccountTransactions
      */
@@ -1058,7 +1058,7 @@ export interface SellerWalletApiListAccountTransactionsRequest {
  */
 export interface SellerWalletApiListAccountsRequest {
     /**
-     * The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * A marketplace identifier. Specifies the marketplace for which items are returned.
      * @type {string}
      * @memberof SellerWalletApiListAccounts
      */
@@ -1072,14 +1072,14 @@ export interface SellerWalletApiListAccountsRequest {
  */
 export interface SellerWalletApiListTransferSchedulesRequest {
     /**
-     * The ID of the Amazon Seller Wallet account.
+     * ID of the Amazon SW account
      * @type {string}
      * @memberof SellerWalletApiListTransferSchedules
      */
     readonly accountId: string
 
     /**
-     * A token that you use to retrieve the next page of results. The response includes &#x60;nextPageToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages.
+     * Pagination token to retrieve a specific page of results.
      * @type {string}
      * @memberof SellerWalletApiListTransferSchedules
      */
@@ -1107,7 +1107,7 @@ export interface SellerWalletApiUpdateTransferScheduleRequest {
     readonly amountDigitalSignature: string
 
     /**
-     * The payload of the scheduled transfer request that is to be updated.
+     * Defines the actual payload of the scheduled transfer request that is to be updated. 
      * @type {TransferSchedule}
      * @memberof SellerWalletApiUpdateTransferSchedule
      */
@@ -1122,8 +1122,8 @@ export interface SellerWalletApiUpdateTransferScheduleRequest {
  */
 export class SellerWalletApi extends BaseAPI {
     /**
-     * Create a transaction request from an Amazon Seller Wallet account to another customer-provided account.
-     * @summary Create a transaction request from Amazon Seller Wallet account to another customer-provided account
+     * Create a transaction request from a Seller Wallet account to another customer-provided account.
+     * @summary Create a transaction request from Amazon SW account to another customer provided account
      * @param {SellerWalletApiCreateTransactionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1134,8 +1134,8 @@ export class SellerWalletApi extends BaseAPI {
     }
 
     /**
-     * Create a transfer schedule request from an Amazon Seller Wallet account to another customer-provided account.
-     * @summary Create a transfer schedule request from Amazon Seller Wallet account to another customer-provided account
+     * Create a transfer schedule request from a Seller Wallet account to another customer-provided account.
+     * @summary Create a transfer schedule request from Amazon SW account to another customer provided account
      * @param {SellerWalletApiCreateTransferScheduleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1146,8 +1146,8 @@ export class SellerWalletApi extends BaseAPI {
     }
 
     /**
-     * Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account.
-     * @summary Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account
+     * Delete a transaction request that is scheduled from a Seller Wallet account to another customer-provided account.
+     * @summary Delete a transaction request that is scheduled from Amazon SW account to another customer provided account
      * @param {SellerWalletApiDeleteScheduleTransactionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1158,8 +1158,8 @@ export class SellerWalletApi extends BaseAPI {
     }
 
     /**
-     * Retrieve an Amazon Seller Wallet bank account by Amazon account identifier.
-     * @summary Find particular Amazon Seller Wallet account by Amazon account identifier
+     * Retrieve a Seller Wallet bank account by Amazon account identifier.
+     * @summary Find particular Amazon SW account by Amazon account identifier
      * @param {SellerWalletApiGetAccountRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1170,8 +1170,8 @@ export class SellerWalletApi extends BaseAPI {
     }
 
     /**
-     * Find a transaction by the Amazon transaction identifier.
-     * @summary Find particular Amazon Seller Wallet account transaction by Amazon transaction identifier
+     * Returns a transaction
+     * @summary Find particular Amazon SW account transaction by Amazon transaction identifier
      * @param {SellerWalletApiGetTransactionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1182,7 +1182,7 @@ export class SellerWalletApi extends BaseAPI {
     }
 
     /**
-     * Retrieve a list of potential fees on a transaction.
+     * Returns list of potential fees on a transaction based on the source and destination country currency code
      * @summary Fetch potential fees that could be applied on a transaction on the basis of the source and destination country currency code
      * @param {SellerWalletApiGetTransferPreviewRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
@@ -1194,8 +1194,8 @@ export class SellerWalletApi extends BaseAPI {
     }
 
     /**
-     * Find a particular Amazon Seller Wallet account transfer schedule.
-     * @summary Find particular Amazon Seller Wallet account transfer schedule by Amazon transfer schedule identifier
+     * Find a particular Seller Wallet account transfer schedule.
+     * @summary Find particular Amazon SW account transfer schedule by Amazon transfer schedule identifier
      * @param {SellerWalletApiGetTransferScheduleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1206,8 +1206,8 @@ export class SellerWalletApi extends BaseAPI {
     }
 
     /**
-     * Retrieve the balance in a given Amazon Seller Wallet bank account.
-     * @summary Find balance in particular Amazon Seller Wallet account by Amazon account identifier
+     * Retrieve the balance in a given Seller Wallet bank account.
+     * @summary Find balance in particular Amazon SW account by Amazon account identifier
      * @param {SellerWalletApiListAccountBalancesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1218,8 +1218,8 @@ export class SellerWalletApi extends BaseAPI {
     }
 
     /**
-     * Retrieve a list of transactions for a given Amazon Seller Wallet bank account.
-     * @summary The API will return all the transactions for a given Amazon Seller Wallet account sorted by the transaction request date
+     * Retrieve a list of transactions for a given Seller Wallet bank account.
+     * @summary The API will return all the transactions for a given Amazon SW account sorted by the transaction request date
      * @param {SellerWalletApiListAccountTransactionsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1230,8 +1230,8 @@ export class SellerWalletApi extends BaseAPI {
     }
 
     /**
-     * Get all Seller Wallet accounts for a given seller.
-     * @summary Get all Amazon Seller Wallet accounts for the seller
+     * Get Seller Wallet accounts for a seller.
+     * @summary Get all Amazon SW accounts for the seller
      * @param {SellerWalletApiListAccountsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1242,8 +1242,8 @@ export class SellerWalletApi extends BaseAPI {
     }
 
     /**
-     * Returns all transfer schedules of a given Amazon Seller Wallet bank account with the schedule ID in response if present.
-     * @summary The API will return all the transfer schedules for a given Amazon Seller Wallet account
+     * Retrieve transfer schedules of a Seller Wallet bank account.
+     * @summary The API will return all the transfer schedules for a given Amazon SW account
      * @param {SellerWalletApiListTransferSchedulesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1254,7 +1254,7 @@ export class SellerWalletApi extends BaseAPI {
     }
 
     /**
-     * Update transfer schedule information. Returns a transfer belonging to the updated scheduled transfer request.
+     * Returns a transfer belonging to the updated scheduled transfer request
      * @summary Update a transfer schedule information. Only fields (i.e; transferScheduleInformation, paymentPreference, transferScheduleStatus) in the request body can be updated.
      * @param {SellerWalletApiUpdateTransferScheduleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.

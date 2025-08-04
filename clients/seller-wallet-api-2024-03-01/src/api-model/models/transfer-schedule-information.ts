@@ -21,19 +21,19 @@ import type { ScheduleExpression } from './schedule-expression';
 import type { ScheduleTransferType } from './schedule-transfer-type';
 
 /**
- * Mandatory information for initiating a schedule transfer.
+ * Parameters containing information required for initiating a schedule transfer 
  * @export
  * @interface TransferScheduleInformation
  */
 export interface TransferScheduleInformation {
     /**
-     * The start date of the scheduled transfer.
+     * Field to specify start date of the scheduled transfer 
      * @type {string}
      * @memberof TransferScheduleInformation
      */
     'scheduleStartDate'?: string;
     /**
-     * The end date of the scheduled transfer.
+     * Field to specify end date of the scheduled transfer 
      * @type {string}
      * @memberof TransferScheduleInformation
      */

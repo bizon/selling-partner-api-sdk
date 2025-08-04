@@ -15,7 +15,7 @@
 
 
 /**
- * The destination bank account\'s ownership type.
+ * Represents destination bank account\'s ownership type.
  * @export
  * @enum {string}
  */

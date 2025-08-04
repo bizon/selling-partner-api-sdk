@@ -8,7 +8,7 @@ export const clientRateLimits: RateLimit[] = [
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/listings/2021-08-01/items/[^/]*$'),
     rate: 5,
-    burst: 10,
+    burst: 5,
   },
   {
     method: 'get',

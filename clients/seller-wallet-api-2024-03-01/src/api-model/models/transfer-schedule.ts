@@ -33,13 +33,13 @@ import type { TransferScheduleInformation } from './transfer-schedule-informatio
 import type { TransferScheduleStatus } from './transfer-schedule-status';
 
 /**
- * Transfer schedule details and historical details related to it.
+ * Transfer schedule details and related historical details.
  * @export
  * @interface TransferSchedule
  */
 export interface TransferSchedule {
     /**
-     * The unique identifier provided by Amazon to the scheduled transfer.
+     * The unique identifier provided by Amazon to the scheduled transfer 
      * @type {string}
      * @memberof TransferSchedule
      */
@@ -81,7 +81,7 @@ export interface TransferSchedule {
      */
     'paymentPreference'?: PaymentPreference;
     /**
-     * A list of transfer schedule failures.
+     * Collection that holds Transfer Schedules that has been cancelled or failed due to certain reasons. 
      * @type {Array<TransferScheduleFailures>}
      * @memberof TransferSchedule
      */

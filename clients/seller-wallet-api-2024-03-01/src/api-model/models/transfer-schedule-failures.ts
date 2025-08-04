@@ -15,19 +15,19 @@
 
 
 /**
- * The time of and reason for the transfer schedule failure.
+ * Specifies the balance amount in the Amazon SW bank account
  * @export
  * @interface TransferScheduleFailures
  */
 export interface TransferScheduleFailures {
     /**
-     * The transfer schedule failure date.
+     * The transfer schedule cancellation date 
      * @type {string}
      * @memberof TransferScheduleFailures
      */
     'transferScheduleFailureDate': string;
     /**
-     * The reason listed for the failure of the transfer schedule.
+     * The statement/reasoning listed for the cancellation of the transfer schedule 
      * @type {string}
      * @memberof TransferScheduleFailures
      */

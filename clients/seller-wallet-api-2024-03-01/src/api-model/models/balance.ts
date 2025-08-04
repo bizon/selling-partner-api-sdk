@@ -18,13 +18,13 @@
 import type { BalanceType } from './balance-type';
 
 /**
- * The balance amount in the Amazon Seller Wallet bank account.
+ * Specifies the balance amount in the Amazon SW bank account
  * @export
  * @interface Balance
  */
 export interface Balance {
     /**
-     * The unique identifier provided by Amazon to identify the account.
+     * The unique identifier provided by Amazon to identify the account 
      * @type {string}
      * @memberof Balance
      */
@@ -36,19 +36,19 @@ export interface Balance {
      */
     'balanceType'?: BalanceType;
     /**
-     * A decimal number, such as an amount or FX rate.
+     * A decimal number such as amount or FX rate.
      * @type {number}
      * @memberof Balance
      */
     'balanceAmount': number;
     /**
-     * The Amazon Seller Wallet bank account currency code in ISO 4217 format.
+     * The Amazon SW bank account currency code in ISO 4217 format 
      * @type {string}
      * @memberof Balance
      */
     'balanceCurrency': string;
     /**
-     * The date of the most recent account balance update.
+     * The last update date on the account balance 
      * @type {string}
      * @memberof Balance
      */

@@ -15,7 +15,7 @@
 
 
 /**
- * The bank account\'s format type.
+ * The format of the bank account number.
  * @export
  * @enum {string}
  */

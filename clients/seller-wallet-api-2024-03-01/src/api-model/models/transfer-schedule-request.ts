@@ -30,25 +30,25 @@ import type { TransferScheduleInformation } from './transfer-schedule-informatio
 import type { TransferScheduleStatus } from './transfer-schedule-status';
 
 /**
- * Request body to initiate a scheduled transfer from a Seller Wallet bank account to another customer-defined bank account.
+ * Request body to initiate a scheduled transfer from a SW bank account to another customer defined bank account 
  * @export
  * @interface TransferScheduleRequest
  */
 export interface TransferScheduleRequest {
     /**
-     * The unique identifier of the source Amazon Seller Wallet bank account from which money is debited.
+     * The unique identifier of the source Amazon SW bank account from where the money needs to be debited 
      * @type {string}
      * @memberof TransferScheduleRequest
      */
     'sourceAccountId': string;
     /**
-     * The three-letter currency code of the source payment method country, in ISO 4217 format.
+     * Represents 3 letter currency code in ISO 4217 standard format of the source payment method country 
      * @type {string}
      * @memberof TransferScheduleRequest
      */
     'sourceCurrencyCode': string;
     /**
-     * The unique identifier of the destination bank account where the money is deposited.
+     * Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited 
      * @type {string}
      * @memberof TransferScheduleRequest
      */

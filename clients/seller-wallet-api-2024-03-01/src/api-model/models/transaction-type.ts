@@ -15,7 +15,7 @@
 
 
 /**
- * The type of transaction.
+ * Represent type of transaction.
  * @export
  * @enum {string}
  */

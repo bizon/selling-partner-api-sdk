@@ -15,7 +15,7 @@
 
 
 /**
- * The type of scheduled transfer expression.
+ * Represent a type of schedule transfer expression.
  * @export
  * @enum {string}
  */

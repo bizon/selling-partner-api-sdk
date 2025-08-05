@@ -34,13 +34,6 @@ export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
     // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/messaging/v1/orders/[^/]*/messages/negativeFeedbackRemoval$'),
-    rate: 1,
-    burst: 5,
-  },
-  {
-    method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/messaging/v1/orders/[^/]*/messages/confirmOrderDetails$'),
     rate: 1,
     burst: 5,

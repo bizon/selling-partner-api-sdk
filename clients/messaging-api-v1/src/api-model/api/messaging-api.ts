@@ -50,8 +50,6 @@ import type { CreateLegalDisclosureRequest } from '../models';
 // @ts-ignore
 import type { CreateLegalDisclosureResponse } from '../models';
 // @ts-ignore
-import type { CreateNegativeFeedbackRemovalResponse } from '../models';
-// @ts-ignore
 import type { CreateUnexpectedProblemRequest } from '../models';
 // @ts-ignore
 import type { CreateUnexpectedProblemResponse } from '../models';
@@ -396,46 +394,6 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * Sends a non-critical message that asks a buyer to remove their negative feedback. This message should only be sent after the seller has resolved the buyer\'s problem.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        createNegativeFeedbackRemoval: async (amazonOrderId: string, marketplaceIds: Array<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'amazonOrderId' is not null or undefined
-            assertParamExists('createNegativeFeedbackRemoval', 'amazonOrderId', amazonOrderId)
-            // verify required parameter 'marketplaceIds' is not null or undefined
-            assertParamExists('createNegativeFeedbackRemoval', 'marketplaceIds', marketplaceIds)
-            const localVarPath = `/messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval`
-                .replace(`{${"amazonOrderId"}}`, encodeURIComponent(String(amazonOrderId)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (marketplaceIds) {
-                localVarQueryParameter['marketplaceIds'] = marketplaceIds.join(COLLECTION_FORMATS.csv);
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
          * Sends a critical message to a buyer that an unexpected problem was encountered affecting the completion of the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent.
          * @param {Array<string>} marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
@@ -762,19 +720,6 @@ export const MessagingApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Sends a non-critical message that asks a buyer to remove their negative feedback. This message should only be sent after the seller has resolved the buyer\'s problem.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async createNegativeFeedbackRemoval(amazonOrderId: string, marketplaceIds: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateNegativeFeedbackRemovalResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.createNegativeFeedbackRemoval(amazonOrderId, marketplaceIds, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['MessagingApi.createNegativeFeedbackRemoval']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
          * Sends a critical message to a buyer that an unexpected problem was encountered affecting the completion of the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent.
          * @param {Array<string>} marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
@@ -914,15 +859,6 @@ export const MessagingApiFactory = function (configuration?: Configuration, base
          */
         createLegalDisclosure(requestParameters: MessagingApiCreateLegalDisclosureRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateLegalDisclosureResponse> {
             return localVarFp.createLegalDisclosure(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Sends a non-critical message that asks a buyer to remove their negative feedback. This message should only be sent after the seller has resolved the buyer\'s problem.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {MessagingApiCreateNegativeFeedbackRemovalRequest} requestParameters Request parameters.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        createNegativeFeedbackRemoval(requestParameters: MessagingApiCreateNegativeFeedbackRemovalRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateNegativeFeedbackRemovalResponse> {
-            return localVarFp.createNegativeFeedbackRemoval(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(axios, basePath));
         },
         /**
          * Sends a critical message to a buyer that an unexpected problem was encountered affecting the completion of the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1169,27 +1105,6 @@ export interface MessagingApiCreateLegalDisclosureRequest {
 }
 
 /**
- * Request parameters for createNegativeFeedbackRemoval operation in MessagingApi.
- * @export
- * @interface MessagingApiCreateNegativeFeedbackRemovalRequest
- */
-export interface MessagingApiCreateNegativeFeedbackRemovalRequest {
-    /**
-     * An Amazon order identifier. This identifies the order for which a message is sent.
-     * @type {string}
-     * @memberof MessagingApiCreateNegativeFeedbackRemoval
-     */
-    readonly amazonOrderId: string
-
-    /**
-     * A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-     * @type {Array<string>}
-     * @memberof MessagingApiCreateNegativeFeedbackRemoval
-     */
-    readonly marketplaceIds: Array<string>
-}
-
-/**
  * Request parameters for createUnexpectedProblem operation in MessagingApi.
  * @export
  * @interface MessagingApiCreateUnexpectedProblemRequest
@@ -1397,17 +1312,6 @@ export class MessagingApi extends BaseAPI {
      */
     public createLegalDisclosure(requestParameters: MessagingApiCreateLegalDisclosureRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).createLegalDisclosure(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Sends a non-critical message that asks a buyer to remove their negative feedback. This message should only be sent after the seller has resolved the buyer\'s problem.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @param {MessagingApiCreateNegativeFeedbackRemovalRequest} requestParameters Request parameters.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof MessagingApi
-     */
-    public createNegativeFeedbackRemoval(requestParameters: MessagingApiCreateNegativeFeedbackRemovalRequest, options?: RawAxiosRequestConfig) {
-        return MessagingApiFp(this.configuration).createNegativeFeedbackRemoval(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

@@ -13,7 +13,6 @@ export * from './create-digital-access-key-request';
 export * from './create-digital-access-key-response';
 export * from './create-legal-disclosure-request';
 export * from './create-legal-disclosure-response';
-export * from './create-negative-feedback-removal-response';
 export * from './create-unexpected-problem-request';
 export * from './create-unexpected-problem-response';
 export * from './create-warranty-request';

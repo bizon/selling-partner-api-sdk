@@ -911,8 +911,8 @@ importers:
         version: 7.0.1
     devDependencies:
       nock:
-        specifier: ^14.0.8
-        version: 14.0.8
+        specifier: ^14.0.9
+        version: 14.0.9
       type-fest:
         specifier: ^4.40.1
         version: 4.41.0
@@ -936,8 +936,8 @@ importers:
         version: 7.0.1
     devDependencies:
       nock:
-        specifier: ^14.0.8
-        version: 14.0.8
+        specifier: ^14.0.9
+        version: 14.0.9
       strip-ansi:
         specifier: ^6.0.1
         version: 6.0.1
@@ -4562,8 +4562,8 @@ packages:
     resolution: {integrity: sha512-NHDDGYudnvRutt/VhKFlX26IotXe1w0cmkDm6JGquh5bz/bDTw0LufSmH/GxTjEdpHEO+bVKFTwdrcGa/9XlKQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  nock@14.0.8:
-    resolution: {integrity: sha512-5DCGrkwK1f8kxUvqvzLWb97XuDUY4/t5M3ZcogPfLGvC2wO8wjRQsIDSXj2L6e1J0Dv8xscf9wWSvGnS3OL29Q==}
+  nock@14.0.9:
+    resolution: {integrity: sha512-aVIPgW9WVyb3XPCqfrwETc+hazxzgt8/QvARHAhC6BYHtTsZONUjlXoIB8EGmwqUBkKvOew4yqkGRBmwctdCrw==}
     engines: {node: '>=18.20.0 <20 || >=20.12.1'}
 
   node-fetch@2.7.0:
@@ -10338,7 +10338,7 @@ snapshots:
     dependencies:
       type-fest: 2.19.0
 
-  nock@14.0.8:
+  nock@14.0.9:
     dependencies:
       '@mswjs/interceptors': 0.39.5
       json-stringify-safe: 5.0.1

@@ -50,7 +50,7 @@ async function getAxiosVersion() {
     assert: {type: 'json'},
   })
 
-  return packageJson.dependencies!.axios
+  return packageJson.dependencies.axios
 }
 
 const cleaner = remark().use(remarkStrip)

@@ -26,9 +26,6 @@ importers:
       '@swc/jest':
         specifier: ^0.2.38
         version: 0.2.38(@swc/core@1.12.1)
-      '@tsconfig/node24':
-        specifier: ^24.0.1
-        version: 24.0.1
       '@types/jest':
         specifier: ^29.5.14
         version: 29.5.14
@@ -75,9 +72,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/aplus-content-api-2020-11-01:
     dependencies:
@@ -88,9 +85,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/application-integrations-api-2024-04-01:
     dependencies:
@@ -101,9 +98,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/application-management-api-2023-11-30:
     dependencies:
@@ -114,9 +111,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/catalog-items-api-2020-12-01:
     dependencies:
@@ -127,9 +124,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/catalog-items-api-2022-04-01:
     dependencies:
@@ -140,9 +137,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/catalog-items-api-v0:
     dependencies:
@@ -153,9 +150,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/customer-feedback-api-2024-06-01:
     dependencies:
@@ -166,9 +163,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/data-kiosk-api-2023-11-15:
     dependencies:
@@ -179,9 +176,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/easy-ship-api-2022-03-23:
     dependencies:
@@ -192,9 +189,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/fba-inbound-eligibility-api-v1:
     dependencies:
@@ -205,9 +202,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/fba-inventory-api-v1:
     dependencies:
@@ -218,9 +215,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/feeds-api-2021-06-30:
     dependencies:
@@ -231,9 +228,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/finances-api-2024-06-19:
     dependencies:
@@ -244,9 +241,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/finances-api-v0:
     dependencies:
@@ -257,9 +254,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/finances-transfers-api-2024-06-01:
     dependencies:
@@ -270,9 +267,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/fulfillment-inbound-api-2024-03-20:
     dependencies:
@@ -283,9 +280,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/fulfillment-inbound-api-v0:
     dependencies:
@@ -296,9 +293,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/fulfillment-outbound-api-2020-07-01:
     dependencies:
@@ -309,9 +306,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/invoices-api-2024-06-19:
     dependencies:
@@ -322,9 +319,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/listings-items-api-2020-09-01:
     dependencies:
@@ -335,9 +332,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/listings-items-api-2021-08-01:
     dependencies:
@@ -348,9 +345,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/listings-restrictions-api-2021-08-01:
     dependencies:
@@ -361,9 +358,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/merchant-fulfillment-api-v0:
     dependencies:
@@ -374,9 +371,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/messaging-api-v1:
     dependencies:
@@ -387,9 +384,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/notifications-api-v1:
     dependencies:
@@ -400,9 +397,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/orders-api-v0:
     dependencies:
@@ -413,9 +410,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/product-fees-api-v0:
     dependencies:
@@ -426,9 +423,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/product-pricing-api-2022-05-01:
     dependencies:
@@ -439,9 +436,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/product-pricing-api-v0:
     dependencies:
@@ -452,9 +449,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/product-type-definitions-api-2020-09-01:
     dependencies:
@@ -465,9 +462,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/replenishment-api-2022-11-07:
     dependencies:
@@ -478,9 +475,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/reports-api-2021-06-30:
     dependencies:
@@ -491,9 +488,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/sales-api-v1:
     dependencies:
@@ -504,9 +501,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/seller-wallet-api-2024-03-01:
     dependencies:
@@ -517,9 +514,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/sellers-api-v1:
     dependencies:
@@ -530,9 +527,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/services-api-v1:
     dependencies:
@@ -543,9 +540,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/shipment-invoicing-api-v0:
     dependencies:
@@ -556,9 +553,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/shipping-api-v1:
     dependencies:
@@ -569,9 +566,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/shipping-api-v2:
     dependencies:
@@ -582,9 +579,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/solicitations-api-v1:
     dependencies:
@@ -595,9 +592,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/supply-sources-api-2020-07-01:
     dependencies:
@@ -608,9 +605,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/tokens-api-2021-03-01:
     dependencies:
@@ -621,9 +618,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/uploads-api-2020-11-01:
     dependencies:
@@ -634,9 +631,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/vehicles-api-2024-11-01:
     dependencies:
@@ -647,9 +644,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/vendor-direct-fulfillment-inventory-api-v1:
     dependencies:
@@ -660,9 +657,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/vendor-direct-fulfillment-orders-api-2021-12-28:
     dependencies:
@@ -673,9 +670,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/vendor-direct-fulfillment-orders-api-v1:
     dependencies:
@@ -686,9 +683,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/vendor-direct-fulfillment-payments-api-v1:
     dependencies:
@@ -699,9 +696,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28:
     dependencies:
@@ -712,9 +709,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/vendor-direct-fulfillment-shipping-api-2021-12-28:
     dependencies:
@@ -725,9 +722,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/vendor-direct-fulfillment-shipping-api-v1:
     dependencies:
@@ -738,9 +735,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/vendor-direct-fulfillment-transactions-api-2021-12-28:
     dependencies:
@@ -751,9 +748,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/vendor-direct-fulfillment-transactions-api-v1:
     dependencies:
@@ -764,9 +761,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/vendor-invoices-api-v1:
     dependencies:
@@ -777,9 +774,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/vendor-orders-api-v1:
     dependencies:
@@ -790,9 +787,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/vendor-shipments-api-v1:
     dependencies:
@@ -803,9 +800,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   clients/vendor-transaction-status-api-v1:
     dependencies:
@@ -816,9 +813,9 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
     devDependencies:
-      '@sp-api-sdk/auth':
+      '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/auth
+        version: link:../../packages/typescript-config
 
   codegen:
     dependencies:
@@ -859,6 +856,9 @@ importers:
         specifier: ^3.17.0
         version: 3.17.0
     devDependencies:
+      '@tsconfig/node24':
+        specifier: ^24.0.1
+        version: 24.0.1
       '@types/jsonfile':
         specifier: ^6.1.4
         version: 6.1.4
@@ -884,6 +884,9 @@ importers:
         specifier: ^7.0.1
         version: 7.0.1
     devDependencies:
+      '@sp-api-sdk/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
       nock:
         specifier: ^14.0.9
         version: 14.0.9
@@ -909,6 +912,9 @@ importers:
         specifier: ^7.0.1
         version: 7.0.1
     devDependencies:
+      '@sp-api-sdk/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
       nock:
         specifier: ^14.0.9
         version: 14.0.9
@@ -921,6 +927,16 @@ importers:
       json-schema-to-ts:
         specifier: ^3.1.1
         version: 3.1.1
+    devDependencies:
+      '@sp-api-sdk/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+
+  packages/typescript-config:
+    dependencies:
+      '@tsconfig/node24':
+        specifier: ^24.0.1
+        version: 24.0.1
 
 packages:
 

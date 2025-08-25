@@ -19,6 +19,7 @@
     "dist/**/*.d.ts"
   ],
   "scripts": {
+    "xo": "xo",
     "check:ts": "tsc --noEmit",
     "build:cjs": "tsc -p tsconfig.json",
     "build:es": "tsc -p tsconfig.es.json",
@@ -34,6 +35,7 @@
     "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {
+    "@sp-api-sdk/typescript-config": "workspace:*",
     "nock": "^14.0.9",
     "strip-ansi": "^6.0.1"
   },
@@ -54,5 +56,20 @@
     "mws",
     "selling partner api",
     "marketplace webservice"
-  ]
+  ],
+  "xo": {
+    "extends": [
+      "xo-bizon"
+    ],
+    "settings": {
+      "import/internal-regex": "^@sp-api-sdk/"
+    },
+    "semicolon": false,
+    "space": 2,
+    "prettier": true
+  },
+  "prettier": {
+    "printWidth": 100,
+    "jsxSingleQuote": true
+  }
 }

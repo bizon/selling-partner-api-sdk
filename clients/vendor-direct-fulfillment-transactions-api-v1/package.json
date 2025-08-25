@@ -18,6 +18,7 @@
     "dist/**/*.d.ts"
   ],
   "scripts": {
+    "xo": "xo",
     "check:ts": "tsc --noEmit",
     "build:cjs": "tsc -p tsconfig.json",
     "build:es": "tsc -p tsconfig.es.json",
@@ -29,7 +30,7 @@
     "axios": "^1.11.0"
   },
   "devDependencies": {
-    "@sp-api-sdk/auth": "workspace:*"
+    "@sp-api-sdk/typescript-config": "workspace:*"
   },
   "repository": {
     "type": "git",
@@ -49,5 +50,26 @@
     "sp api",
     "sp sdk",
     "vendor direct fulfillment transactions api"
-  ]
+  ],
+  "xo": {
+    "extends": [
+      "xo-bizon"
+    ],
+    "settings": {
+      "import/internal-regex": "^@sp-api-sdk/"
+    },
+    "semicolon": false,
+    "space": 2,
+    "prettier": true,
+    "ignores": [
+      "src/api-model/**"
+    ],
+    "rules": {
+      "unicorn/prevent-abbreviations": "off"
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "jsxSingleQuote": true
+  }
 }

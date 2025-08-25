@@ -30,13 +30,13 @@ if (generators.size === 0) {
   if (generators.has('clients')) {
     console.info('Generating clients…')
     await generateClients()
-    await runCommand('xo --fix clients')
+    await runCommand('pnpm --filter "./clients/**" xo --fix')
   }
 
   if (generators.has('schemas')) {
     console.info('Generating schemas…')
     await generateSchemas()
-    await runCommand('xo --fix packages/schemas')
+    await runCommand('pnpm --filter schemas xo --fix')
   }
 
   await fs.rm('selling-partner-api-models', {recursive: true})

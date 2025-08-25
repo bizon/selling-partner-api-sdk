@@ -19,20 +19,11 @@ import type { Account } from './account';
 
 /**
  * The response schema for the `getAccount` operation.
- * @export
- * @interface GetAccountResponse
  */
 export interface GetAccountResponse {
-    /**
-     * 
-     * @type {Account}
-     * @memberof GetAccountResponse
-     */
     'payload'?: Account;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetAccountResponse
      */
     'errors'?: Array<Error>;
 }

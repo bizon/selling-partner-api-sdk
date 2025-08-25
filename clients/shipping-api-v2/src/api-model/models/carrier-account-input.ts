@@ -22,56 +22,35 @@ import type { ValidationMetadata } from './validation-metadata';
 
 /**
  * Info About CarrierAccountInput
- * @export
- * @interface CarrierAccountInput
  */
 export interface CarrierAccountInput {
     /**
      * descriptionLocalizationKey value .
-     * @type {string}
-     * @memberof CarrierAccountInput
      */
     'descriptionLocalizationKey'?: string;
     /**
      * name value .
-     * @type {string}
-     * @memberof CarrierAccountInput
      */
     'name'?: string;
     /**
      * groupName value .
-     * @type {string}
-     * @memberof CarrierAccountInput
      */
     'groupName'?: string;
-    /**
-     * 
-     * @type {InputType}
-     * @memberof CarrierAccountInput
-     */
     'inputType'?: InputType;
     /**
      * mandatory or not  value .
-     * @type {boolean}
-     * @memberof CarrierAccountInput
      */
     'isMandatory'?: boolean;
     /**
      * is value is Confidential .
-     * @type {boolean}
-     * @memberof CarrierAccountInput
      */
     'isConfidential'?: boolean;
     /**
      * is value is hidden .
-     * @type {boolean}
-     * @memberof CarrierAccountInput
      */
     'isHidden'?: boolean;
     /**
      * A list of ValidationMetadata
-     * @type {Array<ValidationMetadata>}
-     * @memberof CarrierAccountInput
      */
     'validationMetadata'?: Array<ValidationMetadata>;
 }

@@ -19,20 +19,11 @@ import type { DestinationResourceSpecification } from './destination-resource-sp
 
 /**
  * The request schema for the `createDestination` operation.
- * @export
- * @interface CreateDestinationRequest
  */
 export interface CreateDestinationRequest {
-    /**
-     * 
-     * @type {DestinationResourceSpecification}
-     * @memberof CreateDestinationRequest
-     */
     'resourceSpecification': DestinationResourceSpecification;
     /**
      * A developer-defined name to help identify this destination.
-     * @type {string}
-     * @memberof CreateDestinationRequest
      */
     'name': string;
 }

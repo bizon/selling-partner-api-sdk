@@ -25,7 +25,6 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 import type { GetTransactionResponse } from '../models';
 /**
  * VendorTransactionStatusApi - axios parameter creator
- * @export
  */
 export const VendorTransactionStatusApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -67,7 +66,6 @@ export const VendorTransactionStatusApiAxiosParamCreator = function (configurati
 
 /**
  * VendorTransactionStatusApi - functional programming interface
- * @export
  */
 export const VendorTransactionStatusApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = VendorTransactionStatusApiAxiosParamCreator(configuration)
@@ -89,7 +87,6 @@ export const VendorTransactionStatusApiFp = function(configuration?: Configurati
 
 /**
  * VendorTransactionStatusApi - factory interface
- * @export
  */
 export const VendorTransactionStatusApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = VendorTransactionStatusApiFp(configuration)
@@ -108,23 +105,16 @@ export const VendorTransactionStatusApiFactory = function (configuration?: Confi
 
 /**
  * Request parameters for getTransaction operation in VendorTransactionStatusApi.
- * @export
- * @interface VendorTransactionStatusApiGetTransactionRequest
  */
 export interface VendorTransactionStatusApiGetTransactionRequest {
     /**
      * The GUID provided by Amazon in the \&#39;transactionId\&#39; field in response to the post request of a specific transaction.
-     * @type {string}
-     * @memberof VendorTransactionStatusApiGetTransaction
      */
     readonly transactionId: string
 }
 
 /**
  * VendorTransactionStatusApi - object-oriented interface
- * @export
- * @class VendorTransactionStatusApi
- * @extends {BaseAPI}
  */
 export class VendorTransactionStatusApi extends BaseAPI {
     /**
@@ -132,7 +122,6 @@ export class VendorTransactionStatusApi extends BaseAPI {
      * @param {VendorTransactionStatusApiGetTransactionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorTransactionStatusApi
      */
     public getTransaction(requestParameters: VendorTransactionStatusApiGetTransactionRequest, options?: RawAxiosRequestConfig) {
         return VendorTransactionStatusApiFp(this.configuration).getTransaction(requestParameters.transactionId, options).then((request) => request(this.axios, this.basePath));

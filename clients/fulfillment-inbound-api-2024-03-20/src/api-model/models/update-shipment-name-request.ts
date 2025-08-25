@@ -16,14 +16,10 @@
 
 /**
  * The `updateShipmentName` request.
- * @export
- * @interface UpdateShipmentNameRequest
  */
 export interface UpdateShipmentNameRequest {
     /**
      * A human-readable name to update the shipment name to.
-     * @type {string}
-     * @memberof UpdateShipmentNameRequest
      */
     'name': string;
 }

@@ -51,7 +51,6 @@ import type { RetrieveShippingLabelRequest } from '../models';
 import type { RetrieveShippingLabelResponse } from '../models';
 /**
  * ShippingApi - axios parameter creator
- * @export
  */
 export const ShippingApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -375,7 +374,6 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
 
 /**
  * ShippingApi - functional programming interface
- * @export
  */
 export const ShippingApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ShippingApiAxiosParamCreator(configuration)
@@ -495,7 +493,6 @@ export const ShippingApiFp = function(configuration?: Configuration) {
 
 /**
  * ShippingApi - factory interface
- * @export
  */
 export const ShippingApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = ShippingApiFp(configuration)
@@ -585,142 +582,101 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
 
 /**
  * Request parameters for cancelShipment operation in ShippingApi.
- * @export
- * @interface ShippingApiCancelShipmentRequest
  */
 export interface ShippingApiCancelShipmentRequest {
     /**
      * Shipment Id to cancel a shipment
-     * @type {string}
-     * @memberof ShippingApiCancelShipment
      */
     readonly shipmentId: string
 }
 
 /**
  * Request parameters for createShipment operation in ShippingApi.
- * @export
- * @interface ShippingApiCreateShipmentRequest
  */
 export interface ShippingApiCreateShipmentRequest {
     /**
      * CreateShipmentRequest Body
-     * @type {CreateShipmentRequest}
-     * @memberof ShippingApiCreateShipment
      */
     readonly body: CreateShipmentRequest
 }
 
 /**
  * Request parameters for getRates operation in ShippingApi.
- * @export
- * @interface ShippingApiGetRatesRequest
  */
 export interface ShippingApiGetRatesRequest {
     /**
      * GetRatesRequest body
-     * @type {GetRatesRequest}
-     * @memberof ShippingApiGetRates
      */
     readonly body: GetRatesRequest
 }
 
 /**
  * Request parameters for getShipment operation in ShippingApi.
- * @export
- * @interface ShippingApiGetShipmentRequest
  */
 export interface ShippingApiGetShipmentRequest {
     /**
      * Shipment id to return the entire shipment object
-     * @type {string}
-     * @memberof ShippingApiGetShipment
      */
     readonly shipmentId: string
 }
 
 /**
  * Request parameters for getTrackingInformation operation in ShippingApi.
- * @export
- * @interface ShippingApiGetTrackingInformationRequest
  */
 export interface ShippingApiGetTrackingInformationRequest {
     /**
      * Tracking Id
-     * @type {string}
-     * @memberof ShippingApiGetTrackingInformation
      */
     readonly trackingId: string
 }
 
 /**
  * Request parameters for purchaseLabels operation in ShippingApi.
- * @export
- * @interface ShippingApiPurchaseLabelsRequest
  */
 export interface ShippingApiPurchaseLabelsRequest {
     /**
      * Shipment id for purchase shipping label
-     * @type {string}
-     * @memberof ShippingApiPurchaseLabels
      */
     readonly shipmentId: string
 
     /**
      * PurchaseShippingLabelRequest body
-     * @type {PurchaseLabelsRequest}
-     * @memberof ShippingApiPurchaseLabels
      */
     readonly body: PurchaseLabelsRequest
 }
 
 /**
  * Request parameters for purchaseShipment operation in ShippingApi.
- * @export
- * @interface ShippingApiPurchaseShipmentRequest
  */
 export interface ShippingApiPurchaseShipmentRequest {
     /**
      * PurchaseShipmentRequest body
-     * @type {PurchaseShipmentRequest}
-     * @memberof ShippingApiPurchaseShipment
      */
     readonly body: PurchaseShipmentRequest
 }
 
 /**
  * Request parameters for retrieveShippingLabel operation in ShippingApi.
- * @export
- * @interface ShippingApiRetrieveShippingLabelRequest
  */
 export interface ShippingApiRetrieveShippingLabelRequest {
     /**
      * Shipment Id to retreive label
-     * @type {string}
-     * @memberof ShippingApiRetrieveShippingLabel
      */
     readonly shipmentId: string
 
     /**
      * Tracking Id
-     * @type {string}
-     * @memberof ShippingApiRetrieveShippingLabel
      */
     readonly trackingId: string
 
     /**
      * RetrieveShippingLabelRequest body
-     * @type {RetrieveShippingLabelRequest}
-     * @memberof ShippingApiRetrieveShippingLabel
      */
     readonly body: RetrieveShippingLabelRequest
 }
 
 /**
  * ShippingApi - object-oriented interface
- * @export
- * @class ShippingApi
- * @extends {BaseAPI}
  */
 export class ShippingApi extends BaseAPI {
     /**
@@ -728,7 +684,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiCancelShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public cancelShipment(requestParameters: ShippingApiCancelShipmentRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).cancelShipment(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
@@ -739,7 +694,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiCreateShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public createShipment(requestParameters: ShippingApiCreateShipmentRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).createShipment(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -749,7 +703,6 @@ export class ShippingApi extends BaseAPI {
      * Verify if the current account is valid.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public getAccount(options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getAccount(options).then((request) => request(this.axios, this.basePath));
@@ -760,7 +713,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiGetRatesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public getRates(requestParameters: ShippingApiGetRatesRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getRates(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -771,7 +723,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiGetShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public getShipment(requestParameters: ShippingApiGetShipmentRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getShipment(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
@@ -782,7 +733,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiGetTrackingInformationRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public getTrackingInformation(requestParameters: ShippingApiGetTrackingInformationRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getTrackingInformation(requestParameters.trackingId, options).then((request) => request(this.axios, this.basePath));
@@ -793,7 +743,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiPurchaseLabelsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public purchaseLabels(requestParameters: ShippingApiPurchaseLabelsRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).purchaseLabels(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -804,7 +753,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiPurchaseShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public purchaseShipment(requestParameters: ShippingApiPurchaseShipmentRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).purchaseShipment(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -815,7 +763,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiRetrieveShippingLabelRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public retrieveShippingLabel(requestParameters: ShippingApiRetrieveShippingLabelRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).retrieveShippingLabel(requestParameters.shipmentId, requestParameters.trackingId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));

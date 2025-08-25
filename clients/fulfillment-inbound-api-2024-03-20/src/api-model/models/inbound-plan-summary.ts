@@ -19,50 +19,31 @@ import type { Address } from './address';
 
 /**
  * A light-weight inbound plan.
- * @export
- * @interface InboundPlanSummary
  */
 export interface InboundPlanSummary {
     /**
      * The time at which the inbound plan was created. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ssZ`.
-     * @type {string}
-     * @memberof InboundPlanSummary
      */
     'createdAt': string;
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof InboundPlanSummary
      */
     'inboundPlanId': string;
     /**
      * The time at which the inbound plan was last updated. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ssZ`.
-     * @type {string}
-     * @memberof InboundPlanSummary
      */
     'lastUpdatedAt': string;
     /**
      * A list of marketplace IDs.
-     * @type {Array<string>}
-     * @memberof InboundPlanSummary
      */
     'marketplaceIds': Array<string>;
     /**
      * Human-readable name of the inbound plan.
-     * @type {string}
-     * @memberof InboundPlanSummary
      */
     'name': string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof InboundPlanSummary
-     */
     'sourceAddress': Address;
     /**
      * The current status of the inbound plan. Possible values: `ACTIVE`, `VOIDED`, `SHIPPED`, `ERRORED`.
-     * @type {string}
-     * @memberof InboundPlanSummary
      */
     'status': string;
 }

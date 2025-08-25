@@ -16,8 +16,6 @@
 
 /**
  * Represents status of the Amazon Seller Wallet accountholder
- * @export
- * @enum {string}
  */
 
 export const BankAccountHolderStatus = {

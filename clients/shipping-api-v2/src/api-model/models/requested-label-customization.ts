@@ -19,14 +19,10 @@ import type { LabelAttribute } from './label-attribute';
 
 /**
  * Object contains customised data requested by a shipper to be printed on a shipping label.
- * @export
- * @interface RequestedLabelCustomization
  */
 export interface RequestedLabelCustomization {
     /**
      * Specify the type of attributes to be added on a label.
-     * @type {Array<LabelAttribute>}
-     * @memberof RequestedLabelCustomization
      */
     'requestAttributes'?: Array<LabelAttribute>;
 }

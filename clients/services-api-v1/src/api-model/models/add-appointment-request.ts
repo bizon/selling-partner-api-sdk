@@ -19,15 +19,8 @@ import type { AppointmentTimeInput } from './appointment-time-input';
 
 /**
  * Input for add appointment operation.
- * @export
- * @interface AddAppointmentRequest
  */
 export interface AddAppointmentRequest {
-    /**
-     * 
-     * @type {AppointmentTimeInput}
-     * @memberof AddAppointmentRequest
-     */
     'appointmentTime': AppointmentTimeInput;
 }
 

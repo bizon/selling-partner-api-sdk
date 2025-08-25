@@ -16,8 +16,6 @@
 
 /**
  * The currency code.
- * @export
- * @enum {string}
  */
 
 export const CurrencyCode = {

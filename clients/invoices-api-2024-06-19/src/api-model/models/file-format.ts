@@ -16,8 +16,6 @@
 
 /**
  * Supported invoice file extensions.
- * @export
- * @enum {string}
  */
 
 export const FileFormat = {

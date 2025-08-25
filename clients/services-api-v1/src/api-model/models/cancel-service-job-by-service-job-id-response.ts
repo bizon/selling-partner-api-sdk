@@ -16,14 +16,10 @@
 
 /**
  * Response schema for the `cancelServiceJobByServiceJobId` operation.
- * @export
- * @interface CancelServiceJobByServiceJobIdResponse
  */
 export interface CancelServiceJobByServiceJobIdResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CancelServiceJobByServiceJobIdResponse
      */
     'errors'?: Array<Error>;
 }

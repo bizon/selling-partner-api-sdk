@@ -19,20 +19,11 @@ import type { RetrieveShippingLabelResult } from './retrieve-shipping-label-resu
 
 /**
  * The response schema for the retrieveShippingLabel operation.
- * @export
- * @interface RetrieveShippingLabelResponse
  */
 export interface RetrieveShippingLabelResponse {
-    /**
-     * 
-     * @type {RetrieveShippingLabelResult}
-     * @memberof RetrieveShippingLabelResponse
-     */
     'payload'?: RetrieveShippingLabelResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof RetrieveShippingLabelResponse
      */
     'errors'?: Array<Error>;
 }

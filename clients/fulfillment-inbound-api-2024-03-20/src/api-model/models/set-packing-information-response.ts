@@ -16,14 +16,10 @@
 
 /**
  * The `setPackingInformation` response.
- * @export
- * @interface SetPackingInformationResponse
  */
 export interface SetPackingInformationResponse {
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof SetPackingInformationResponse
      */
     'operationId': string;
 }

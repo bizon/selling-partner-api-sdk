@@ -19,27 +19,16 @@ import type { Currency } from './currency';
 
 /**
  * A payment instrument.
- * @export
- * @interface ChargeInstrument
  */
 export interface ChargeInstrument {
     /**
      * A short description of the charge instrument.
-     * @type {string}
-     * @memberof ChargeInstrument
      */
     'Description'?: string;
     /**
      * The account tail (trailing digits) of the charge instrument.
-     * @type {string}
-     * @memberof ChargeInstrument
      */
     'Tail'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof ChargeInstrument
-     */
     'Amount'?: Currency;
 }
 

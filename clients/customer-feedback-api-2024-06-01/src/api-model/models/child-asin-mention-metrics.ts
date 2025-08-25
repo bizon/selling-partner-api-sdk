@@ -16,20 +16,14 @@
 
 /**
  * The child ASIN review topic mention metrics.
- * @export
- * @interface ChildAsinMentionMetrics
  */
 export interface ChildAsinMentionMetrics {
     /**
      * The child ASIN of the requested item.
-     * @type {string}
-     * @memberof ChildAsinMentionMetrics
      */
     'asin': string;
     /**
      * The number of times reviews of the child ASIN mention the topic.
-     * @type {number}
-     * @memberof ChildAsinMentionMetrics
      */
     'numberOfMentions': number;
 }

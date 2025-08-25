@@ -16,20 +16,14 @@
 
 /**
  * The identifier for a transaction.
- * @export
- * @interface TransactionIdentifier
  */
 export interface TransactionIdentifier {
     /**
      * The transaction identifier name. Use the `getInvoicesAttributes` operation to check `transactionIdentifierName` options.
-     * @type {string}
-     * @memberof TransactionIdentifier
      */
     'name'?: string;
     /**
      * The transaction identifier.
-     * @type {string}
-     * @memberof TransactionIdentifier
      */
     'id'?: string;
 }

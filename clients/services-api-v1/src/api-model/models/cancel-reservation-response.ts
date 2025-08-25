@@ -16,14 +16,10 @@
 
 /**
  * Response schema for the `cancelReservation` operation.
- * @export
- * @interface CancelReservationResponse
  */
 export interface CancelReservationResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CancelReservationResponse
      */
     'errors'?: Array<Error>;
 }

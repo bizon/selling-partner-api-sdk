@@ -22,27 +22,13 @@ import type { SupplySourceConfiguration } from './supply-source-configuration';
 
 /**
  * A request to update the configuration and capabilities of a supply source.
- * @export
- * @interface UpdateSupplySourceRequest
  */
 export interface UpdateSupplySourceRequest {
     /**
      * The custom alias for this supply source
-     * @type {string}
-     * @memberof UpdateSupplySourceRequest
      */
     'alias'?: string;
-    /**
-     * 
-     * @type {SupplySourceConfiguration}
-     * @memberof UpdateSupplySourceRequest
-     */
     'configuration'?: SupplySourceConfiguration;
-    /**
-     * 
-     * @type {SupplySourceCapabilities}
-     * @memberof UpdateSupplySourceRequest
-     */
     'capabilities'?: SupplySourceCapabilities;
 }
 

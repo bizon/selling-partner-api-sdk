@@ -28,57 +28,15 @@ import type { TextComponent } from './text-component';
 
 /**
  * A standard image with paragraphs, a bulleted list, and extra space for technical details.
- * @export
- * @interface StandardSingleImageSpecsDetailModule
  */
 export interface StandardSingleImageSpecsDetailModule {
-    /**
-     * 
-     * @type {TextComponent}
-     * @memberof StandardSingleImageSpecsDetailModule
-     */
     'headline'?: TextComponent;
-    /**
-     * 
-     * @type {ImageComponent}
-     * @memberof StandardSingleImageSpecsDetailModule
-     */
     'image'?: ImageComponent;
-    /**
-     * 
-     * @type {TextComponent}
-     * @memberof StandardSingleImageSpecsDetailModule
-     */
     'descriptionHeadline'?: TextComponent;
-    /**
-     * 
-     * @type {StandardTextBlock}
-     * @memberof StandardSingleImageSpecsDetailModule
-     */
     'descriptionBlock1'?: StandardTextBlock;
-    /**
-     * 
-     * @type {StandardTextBlock}
-     * @memberof StandardSingleImageSpecsDetailModule
-     */
     'descriptionBlock2'?: StandardTextBlock;
-    /**
-     * 
-     * @type {TextComponent}
-     * @memberof StandardSingleImageSpecsDetailModule
-     */
     'specificationHeadline'?: TextComponent;
-    /**
-     * 
-     * @type {StandardHeaderTextListBlock}
-     * @memberof StandardSingleImageSpecsDetailModule
-     */
     'specificationListBlock'?: StandardHeaderTextListBlock;
-    /**
-     * 
-     * @type {StandardTextBlock}
-     * @memberof StandardSingleImageSpecsDetailModule
-     */
     'specificationTextBlock'?: StandardTextBlock;
 }
 

@@ -16,15 +16,8 @@
 
 /**
  * A simple object containing the name of the template.
- * @export
- * @interface SolicitationsAction
  */
 export interface SolicitationsAction {
-    /**
-     * 
-     * @type {string}
-     * @memberof SolicitationsAction
-     */
     'name': string;
 }
 

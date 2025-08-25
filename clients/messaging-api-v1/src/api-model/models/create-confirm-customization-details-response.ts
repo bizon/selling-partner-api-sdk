@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the confirmCustomizationDetails operation.
- * @export
- * @interface CreateConfirmCustomizationDetailsResponse
  */
 export interface CreateConfirmCustomizationDetailsResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CreateConfirmCustomizationDetailsResponse
      */
     'errors'?: Array<Error>;
 }

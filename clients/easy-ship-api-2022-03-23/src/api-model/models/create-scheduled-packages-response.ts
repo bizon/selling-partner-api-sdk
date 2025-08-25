@@ -22,26 +22,18 @@ import type { RejectedOrder } from './rejected-order';
 
 /**
  * The response schema for the bulk scheduling API. It returns by the bulk scheduling API containing an array of the scheduled packtages, an optional list of orders we couldn\'t schedule with the reason, and a pre-signed URL for a ZIP file containing the associated shipping labels plus the documents enabled for your marketplace.
- * @export
- * @interface CreateScheduledPackagesResponse
  */
 export interface CreateScheduledPackagesResponse {
     /**
      * A list of packages. Refer to the `Package` object.
-     * @type {Array<Package>}
-     * @memberof CreateScheduledPackagesResponse
      */
     'scheduledPackages'?: Array<Package>;
     /**
      * A list of orders we couldn\'t scheduled on your behalf. Each element contains the reason and details on the error.
-     * @type {Array<RejectedOrder>}
-     * @memberof CreateScheduledPackagesResponse
      */
     'rejectedOrders'?: Array<RejectedOrder>;
     /**
      * A pre-signed URL for the zip document containing the shipping labels and the documents enabled for your marketplace.
-     * @type {string}
-     * @memberof CreateScheduledPackagesResponse
      */
     'printableDocumentsUrl'?: string;
 }

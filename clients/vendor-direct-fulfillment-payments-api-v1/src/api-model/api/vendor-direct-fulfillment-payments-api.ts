@@ -27,7 +27,6 @@ import type { SubmitInvoiceRequest } from '../models';
 import type { SubmitInvoiceResponse } from '../models';
 /**
  * VendorDirectFulfillmentPaymentsApi - axios parameter creator
- * @export
  */
 export const VendorDirectFulfillmentPaymentsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -71,7 +70,6 @@ export const VendorDirectFulfillmentPaymentsApiAxiosParamCreator = function (con
 
 /**
  * VendorDirectFulfillmentPaymentsApi - functional programming interface
- * @export
  */
 export const VendorDirectFulfillmentPaymentsApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = VendorDirectFulfillmentPaymentsApiAxiosParamCreator(configuration)
@@ -93,7 +91,6 @@ export const VendorDirectFulfillmentPaymentsApiFp = function(configuration?: Con
 
 /**
  * VendorDirectFulfillmentPaymentsApi - factory interface
- * @export
  */
 export const VendorDirectFulfillmentPaymentsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = VendorDirectFulfillmentPaymentsApiFp(configuration)
@@ -112,23 +109,16 @@ export const VendorDirectFulfillmentPaymentsApiFactory = function (configuration
 
 /**
  * Request parameters for submitInvoice operation in VendorDirectFulfillmentPaymentsApi.
- * @export
- * @interface VendorDirectFulfillmentPaymentsApiSubmitInvoiceRequest
  */
 export interface VendorDirectFulfillmentPaymentsApiSubmitInvoiceRequest {
     /**
      * The request body containing one or more invoices for vendor orders.
-     * @type {SubmitInvoiceRequest}
-     * @memberof VendorDirectFulfillmentPaymentsApiSubmitInvoice
      */
     readonly body: SubmitInvoiceRequest
 }
 
 /**
  * VendorDirectFulfillmentPaymentsApi - object-oriented interface
- * @export
- * @class VendorDirectFulfillmentPaymentsApi
- * @extends {BaseAPI}
  */
 export class VendorDirectFulfillmentPaymentsApi extends BaseAPI {
     /**
@@ -136,7 +126,6 @@ export class VendorDirectFulfillmentPaymentsApi extends BaseAPI {
      * @param {VendorDirectFulfillmentPaymentsApiSubmitInvoiceRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentPaymentsApi
      */
     public submitInvoice(requestParameters: VendorDirectFulfillmentPaymentsApiSubmitInvoiceRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentPaymentsApiFp(this.configuration).submitInvoice(requestParameters.body, options).then((request) => request(this.axios, this.basePath));

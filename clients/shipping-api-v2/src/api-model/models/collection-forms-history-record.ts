@@ -22,39 +22,21 @@ import type { GenerationStatus } from './generation-status';
 
 /**
  * Active Account Details
- * @export
- * @interface CollectionFormsHistoryRecord
  */
 export interface CollectionFormsHistoryRecord {
     /**
      * The carrier name for the offering.
-     * @type {string}
-     * @memberof CollectionFormsHistoryRecord
      */
     'carrierName'?: string;
     /**
      * Creation Time for this account.
-     * @type {string}
-     * @memberof CollectionFormsHistoryRecord
      */
     'creationDate'?: string;
-    /**
-     * 
-     * @type {GenerationStatus}
-     * @memberof CollectionFormsHistoryRecord
-     */
     'generationStatus'?: GenerationStatus;
     /**
      * Collection Form Id for Reprint .
-     * @type {string}
-     * @memberof CollectionFormsHistoryRecord
      */
     'collectionFormId'?: string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof CollectionFormsHistoryRecord
-     */
     'shipFromAddress'?: Address;
 }
 

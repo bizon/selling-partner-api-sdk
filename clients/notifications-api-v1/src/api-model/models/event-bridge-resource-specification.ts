@@ -16,20 +16,14 @@
 
 /**
  * The information required to create an Amazon EventBridge destination.
- * @export
- * @interface EventBridgeResourceSpecification
  */
 export interface EventBridgeResourceSpecification {
     /**
      * The AWS region in which you will be receiving the notifications.
-     * @type {string}
-     * @memberof EventBridgeResourceSpecification
      */
     'region': string;
     /**
      * The identifier for the AWS account that is responsible for charges related to receiving notifications.
-     * @type {string}
-     * @memberof EventBridgeResourceSpecification
      */
     'accountId': string;
 }

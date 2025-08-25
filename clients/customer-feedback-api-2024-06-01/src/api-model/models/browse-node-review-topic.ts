@@ -22,32 +22,19 @@ import type { BrowseNodeSubtopic } from './browse-node-subtopic';
 
 /**
  * The browse node review topic.
- * @export
- * @interface BrowseNodeReviewTopic
  */
 export interface BrowseNodeReviewTopic {
     /**
      * The name browse node review topic.
-     * @type {string}
-     * @memberof BrowseNodeReviewTopic
      */
     'topic': string;
-    /**
-     * 
-     * @type {BrowseNodeReviewTopicMetrics}
-     * @memberof BrowseNodeReviewTopic
-     */
     'browseNodeMetrics': BrowseNodeReviewTopicMetrics;
     /**
      * A list of up to three snippets from reviews that contain the topic. This value is `null` if there aren\'t enough review snippets for the topic.
-     * @type {Array<string>}
-     * @memberof BrowseNodeReviewTopic
      */
     'reviewSnippets'?: Array<string>;
     /**
      * A list of the five subtopics that occur most frequently. This value is `null` if there are no subtopics.
-     * @type {Array<BrowseNodeSubtopic>}
-     * @memberof BrowseNodeReviewTopic
      */
     'subtopics'?: Array<BrowseNodeSubtopic>;
 }

@@ -14,16 +14,9 @@
 
 
 
-/**
- * 
- * @export
- * @interface PostContentDocumentAsinRelationsRequest
- */
 export interface PostContentDocumentAsinRelationsRequest {
     /**
      * The set of ASINs.
-     * @type {Set<string>}
-     * @memberof PostContentDocumentAsinRelationsRequest
      */
     'asinSet': Set<string>;
 }

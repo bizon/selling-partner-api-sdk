@@ -16,14 +16,10 @@
 
 /**
  * The account related with the shipment.
- * @export
- * @interface Party
  */
 export interface Party {
     /**
      * This is the Amazon Shipping account id generated during the Amazon Shipping onboarding process.
-     * @type {string}
-     * @memberof Party
      */
     'accountId'?: string;
 }

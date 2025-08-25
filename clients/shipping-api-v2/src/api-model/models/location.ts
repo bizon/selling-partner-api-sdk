@@ -16,32 +16,22 @@
 
 /**
  * The location where the person, business or institution is located.
- * @export
- * @interface Location
  */
 export interface Location {
     /**
      * The state, county or region where the person, business or institution is located.
-     * @type {string}
-     * @memberof Location
      */
     'stateOrRegion'?: string;
     /**
      * The city or town where the person, business or institution is located.
-     * @type {string}
-     * @memberof Location
      */
     'city'?: string;
     /**
      * The two digit country code. Follows ISO 3166-1 alpha-2 format.
-     * @type {string}
-     * @memberof Location
      */
     'countryCode'?: string;
     /**
      * The postal code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
-     * @type {string}
-     * @memberof Location
      */
     'postalCode'?: string;
 }

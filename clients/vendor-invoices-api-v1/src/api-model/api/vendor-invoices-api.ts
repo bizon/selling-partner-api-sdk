@@ -27,7 +27,6 @@ import type { SubmitInvoicesRequest } from '../models';
 import type { SubmitInvoicesResponse } from '../models';
 /**
  * VendorInvoicesApi - axios parameter creator
- * @export
  */
 export const VendorInvoicesApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -71,7 +70,6 @@ export const VendorInvoicesApiAxiosParamCreator = function (configuration?: Conf
 
 /**
  * VendorInvoicesApi - functional programming interface
- * @export
  */
 export const VendorInvoicesApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = VendorInvoicesApiAxiosParamCreator(configuration)
@@ -93,7 +91,6 @@ export const VendorInvoicesApiFp = function(configuration?: Configuration) {
 
 /**
  * VendorInvoicesApi - factory interface
- * @export
  */
 export const VendorInvoicesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = VendorInvoicesApiFp(configuration)
@@ -112,23 +109,16 @@ export const VendorInvoicesApiFactory = function (configuration?: Configuration,
 
 /**
  * Request parameters for submitInvoices operation in VendorInvoicesApi.
- * @export
- * @interface VendorInvoicesApiSubmitInvoicesRequest
  */
 export interface VendorInvoicesApiSubmitInvoicesRequest {
     /**
      * The request body containing the invoice data to submit.
-     * @type {SubmitInvoicesRequest}
-     * @memberof VendorInvoicesApiSubmitInvoices
      */
     readonly body: SubmitInvoicesRequest
 }
 
 /**
  * VendorInvoicesApi - object-oriented interface
- * @export
- * @class VendorInvoicesApi
- * @extends {BaseAPI}
  */
 export class VendorInvoicesApi extends BaseAPI {
     /**
@@ -136,7 +126,6 @@ export class VendorInvoicesApi extends BaseAPI {
      * @param {VendorInvoicesApiSubmitInvoicesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorInvoicesApi
      */
     public submitInvoices(requestParameters: VendorInvoicesApiSubmitInvoicesRequest, options?: RawAxiosRequestConfig) {
         return VendorInvoicesApiFp(this.configuration).submitInvoices(requestParameters.body, options).then((request) => request(this.axios, this.basePath));

@@ -19,20 +19,14 @@ import type { Invoice } from './invoice';
 
 /**
  * Success.
- * @export
- * @interface GetInvoicesResponse
  */
 export interface GetInvoicesResponse {
     /**
      * A list of invoices.
-     * @type {Array<Invoice>}
-     * @memberof GetInvoicesResponse
      */
     'invoices'?: Array<Invoice>;
     /**
      * This token is returned when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the `getInvoices` operation and include this token with the previous call parameters.
-     * @type {string}
-     * @memberof GetInvoicesResponse
      */
     'nextToken'?: string;
 }

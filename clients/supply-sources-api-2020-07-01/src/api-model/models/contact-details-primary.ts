@@ -14,22 +14,13 @@
 
 
 
-/**
- * 
- * @export
- * @interface ContactDetailsPrimary
- */
 export interface ContactDetailsPrimary {
     /**
      * The email address to which email messages are delivered.
-     * @type {string}
-     * @memberof ContactDetailsPrimary
      */
     'email'?: string;
     /**
      * The phone number of the person, business or institution.
-     * @type {string}
-     * @memberof ContactDetailsPrimary
      */
     'phone'?: string;
 }

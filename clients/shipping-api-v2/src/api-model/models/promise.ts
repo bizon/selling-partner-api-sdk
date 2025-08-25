@@ -19,21 +19,9 @@ import type { TimeWindow } from './time-window';
 
 /**
  * The time windows promised for pickup and delivery events.
- * @export
- * @interface Promise
  */
 export interface Promise {
-    /**
-     * 
-     * @type {TimeWindow}
-     * @memberof Promise
-     */
     'deliveryWindow'?: TimeWindow;
-    /**
-     * 
-     * @type {TimeWindow}
-     * @memberof Promise
-     */
     'pickupWindow'?: TimeWindow;
 }
 

@@ -22,21 +22,9 @@ import type { DeliveryExperienceOption } from './delivery-experience-option';
 
 /**
  * The available delivery confirmation options, and the fee charged, if any.
- * @export
- * @interface AvailableDeliveryExperienceOption
  */
 export interface AvailableDeliveryExperienceOption {
-    /**
-     * 
-     * @type {DeliveryExperienceOption}
-     * @memberof AvailableDeliveryExperienceOption
-     */
     'DeliveryExperienceOption': DeliveryExperienceOption;
-    /**
-     * 
-     * @type {CurrencyAmount}
-     * @memberof AvailableDeliveryExperienceOption
-     */
     'Charge': CurrencyAmount;
 }
 

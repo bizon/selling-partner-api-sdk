@@ -16,8 +16,6 @@
 
 /**
  * The unit of weight.
- * @export
- * @enum {string}
  */
 
 export const UnitOfWeight = {

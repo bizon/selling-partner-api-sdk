@@ -19,27 +19,13 @@ import type { ItemQuantity } from './item-quantity';
 
 /**
  * Details of item quantity ordered
- * @export
- * @interface AcknowledgementStatusDetails
  */
 export interface AcknowledgementStatusDetails {
     /**
      * The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof AcknowledgementStatusDetails
      */
     'acknowledgementDate'?: string;
-    /**
-     * 
-     * @type {ItemQuantity}
-     * @memberof AcknowledgementStatusDetails
-     */
     'acceptedQuantity'?: ItemQuantity;
-    /**
-     * 
-     * @type {ItemQuantity}
-     * @memberof AcknowledgementStatusDetails
-     */
     'rejectedQuantity'?: ItemQuantity;
 }
 

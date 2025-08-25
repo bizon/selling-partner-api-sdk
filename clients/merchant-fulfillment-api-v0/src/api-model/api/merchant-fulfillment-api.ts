@@ -39,7 +39,6 @@ import type { GetEligibleShipmentServicesResponse } from '../models';
 import type { GetShipmentResponse } from '../models';
 /**
  * MerchantFulfillmentApi - axios parameter creator
- * @export
  */
 export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -219,7 +218,6 @@ export const MerchantFulfillmentApiAxiosParamCreator = function (configuration?:
 
 /**
  * MerchantFulfillmentApi - functional programming interface
- * @export
  */
 export const MerchantFulfillmentApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = MerchantFulfillmentApiAxiosParamCreator(configuration)
@@ -289,7 +287,6 @@ export const MerchantFulfillmentApiFp = function(configuration?: Configuration) 
 
 /**
  * MerchantFulfillmentApi - factory interface
- * @export
  */
 export const MerchantFulfillmentApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = MerchantFulfillmentApiFp(configuration)
@@ -344,79 +341,56 @@ export const MerchantFulfillmentApiFactory = function (configuration?: Configura
 
 /**
  * Request parameters for cancelShipment operation in MerchantFulfillmentApi.
- * @export
- * @interface MerchantFulfillmentApiCancelShipmentRequest
  */
 export interface MerchantFulfillmentApiCancelShipmentRequest {
     /**
      * The Amazon-defined shipment identifier for the shipment to cancel.
-     * @type {string}
-     * @memberof MerchantFulfillmentApiCancelShipment
      */
     readonly shipmentId: string
 }
 
 /**
  * Request parameters for createShipment operation in MerchantFulfillmentApi.
- * @export
- * @interface MerchantFulfillmentApiCreateShipmentRequest
  */
 export interface MerchantFulfillmentApiCreateShipmentRequest {
     /**
      * The request schema for the &#x60;CreateShipment&#x60; operation.
-     * @type {CreateShipmentRequest}
-     * @memberof MerchantFulfillmentApiCreateShipment
      */
     readonly body: CreateShipmentRequest
 }
 
 /**
  * Request parameters for getAdditionalSellerInputs operation in MerchantFulfillmentApi.
- * @export
- * @interface MerchantFulfillmentApiGetAdditionalSellerInputsRequest
  */
 export interface MerchantFulfillmentApiGetAdditionalSellerInputsRequest {
     /**
      * The request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation.
-     * @type {GetAdditionalSellerInputsRequest}
-     * @memberof MerchantFulfillmentApiGetAdditionalSellerInputs
      */
     readonly body: GetAdditionalSellerInputsRequest
 }
 
 /**
  * Request parameters for getEligibleShipmentServices operation in MerchantFulfillmentApi.
- * @export
- * @interface MerchantFulfillmentApiGetEligibleShipmentServicesRequest
  */
 export interface MerchantFulfillmentApiGetEligibleShipmentServicesRequest {
     /**
      * The request schema for the &#x60;GetEligibleShipmentServices&#x60; operation.
-     * @type {GetEligibleShipmentServicesRequest}
-     * @memberof MerchantFulfillmentApiGetEligibleShipmentServices
      */
     readonly body: GetEligibleShipmentServicesRequest
 }
 
 /**
  * Request parameters for getShipment operation in MerchantFulfillmentApi.
- * @export
- * @interface MerchantFulfillmentApiGetShipmentRequest
  */
 export interface MerchantFulfillmentApiGetShipmentRequest {
     /**
      * The Amazon-defined shipment identifier for the shipment.
-     * @type {string}
-     * @memberof MerchantFulfillmentApiGetShipment
      */
     readonly shipmentId: string
 }
 
 /**
  * MerchantFulfillmentApi - object-oriented interface
- * @export
- * @class MerchantFulfillmentApi
- * @extends {BaseAPI}
  */
 export class MerchantFulfillmentApi extends BaseAPI {
     /**
@@ -424,7 +398,6 @@ export class MerchantFulfillmentApi extends BaseAPI {
      * @param {MerchantFulfillmentApiCancelShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MerchantFulfillmentApi
      */
     public cancelShipment(requestParameters: MerchantFulfillmentApiCancelShipmentRequest, options?: RawAxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).cancelShipment(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
@@ -435,7 +408,6 @@ export class MerchantFulfillmentApi extends BaseAPI {
      * @param {MerchantFulfillmentApiCreateShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MerchantFulfillmentApi
      */
     public createShipment(requestParameters: MerchantFulfillmentApiCreateShipmentRequest, options?: RawAxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).createShipment(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -446,7 +418,6 @@ export class MerchantFulfillmentApi extends BaseAPI {
      * @param {MerchantFulfillmentApiGetAdditionalSellerInputsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MerchantFulfillmentApi
      */
     public getAdditionalSellerInputs(requestParameters: MerchantFulfillmentApiGetAdditionalSellerInputsRequest, options?: RawAxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).getAdditionalSellerInputs(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -457,7 +428,6 @@ export class MerchantFulfillmentApi extends BaseAPI {
      * @param {MerchantFulfillmentApiGetEligibleShipmentServicesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MerchantFulfillmentApi
      */
     public getEligibleShipmentServices(requestParameters: MerchantFulfillmentApiGetEligibleShipmentServicesRequest, options?: RawAxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).getEligibleShipmentServices(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -468,7 +438,6 @@ export class MerchantFulfillmentApi extends BaseAPI {
      * @param {MerchantFulfillmentApiGetShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MerchantFulfillmentApi
      */
     public getShipment(requestParameters: MerchantFulfillmentApiGetShipmentRequest, options?: RawAxiosRequestConfig) {
         return MerchantFulfillmentApiFp(this.configuration).getShipment(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));

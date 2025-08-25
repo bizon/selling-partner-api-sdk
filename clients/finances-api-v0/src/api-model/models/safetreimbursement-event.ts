@@ -22,38 +22,23 @@ import type { SAFETReimbursementItem } from './safetreimbursement-item';
 
 /**
  * A SAFE-T claim reimbursement on the seller\'s account.
- * @export
- * @interface SAFETReimbursementEvent
  */
 export interface SAFETReimbursementEvent {
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof SAFETReimbursementEvent
      */
     'PostedDate'?: string;
     /**
      * A SAFE-T claim identifier.
-     * @type {string}
-     * @memberof SAFETReimbursementEvent
      */
     'SAFETClaimId'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof SAFETReimbursementEvent
-     */
     'ReimbursedAmount'?: Currency;
     /**
      * Indicates why the seller was reimbursed.
-     * @type {string}
-     * @memberof SAFETReimbursementEvent
      */
     'ReasonCode'?: string;
     /**
      * A list of SAFETReimbursementItems.
-     * @type {Array<SAFETReimbursementItem>}
-     * @memberof SAFETReimbursementEvent
      */
     'SAFETReimbursementItemList'?: Array<SAFETReimbursementItem>;
 }

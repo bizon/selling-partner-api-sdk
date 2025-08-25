@@ -19,20 +19,11 @@ import type { BillOfLadingDownloadURL } from './bill-of-lading-download-url';
 
 /**
  * The response schema for the getBillOfLading operation.
- * @export
- * @interface GetBillOfLadingResponse
  */
 export interface GetBillOfLadingResponse {
-    /**
-     * 
-     * @type {BillOfLadingDownloadURL}
-     * @memberof GetBillOfLadingResponse
-     */
     'payload'?: BillOfLadingDownloadURL;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetBillOfLadingResponse
      */
     'errors'?: Array<Error>;
 }

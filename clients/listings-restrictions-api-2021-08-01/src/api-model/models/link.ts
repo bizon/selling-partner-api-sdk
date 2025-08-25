@@ -16,32 +16,22 @@
 
 /**
  * A link to resources related to a listing restriction.
- * @export
- * @interface Link
  */
 export interface Link {
     /**
      * The URI of the related resource.
-     * @type {string}
-     * @memberof Link
      */
     'resource': string;
     /**
      * The HTTP verb used to interact with the related resource.
-     * @type {string}
-     * @memberof Link
      */
     'verb': LinkVerbEnum;
     /**
      * The title of the related resource.
-     * @type {string}
-     * @memberof Link
      */
     'title'?: string;
     /**
      * The media type of the related resource.
-     * @type {string}
-     * @memberof Link
      */
     'type'?: string;
 }

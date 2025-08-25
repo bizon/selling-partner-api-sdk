@@ -16,20 +16,14 @@
 
 /**
  * Information about withheld taxes.
- * @export
- * @interface TaxCollection
  */
 export interface TaxCollection {
     /**
      * The tax collection model applied to the item.
-     * @type {string}
-     * @memberof TaxCollection
      */
     'Model'?: TaxCollectionModelEnum;
     /**
      * The party responsible for withholding the taxes and remitting them to the taxing authority.
-     * @type {string}
-     * @memberof TaxCollection
      */
     'ResponsibleParty'?: TaxCollectionResponsiblePartyEnum;
 }

@@ -19,21 +19,12 @@ import type { UnitOfLength } from './unit-of-length';
 
 /**
  * The length.
- * @export
- * @interface Length
  */
 export interface Length {
     /**
      * The value in units.
-     * @type {number}
-     * @memberof Length
      */
     'value'?: number;
-    /**
-     * 
-     * @type {UnitOfLength}
-     * @memberof Length
-     */
     'unit'?: UnitOfLength;
 }
 

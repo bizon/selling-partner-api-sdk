@@ -16,26 +16,18 @@
 
 /**
  * An item to be created in the inventory.
- * @export
- * @interface CreateInventoryItemRequest
  */
 export interface CreateInventoryItemRequest {
     /**
      * The seller SKU of the item.
-     * @type {string}
-     * @memberof CreateInventoryItemRequest
      */
     'sellerSku': string;
     /**
      * The marketplaceId.
-     * @type {string}
-     * @memberof CreateInventoryItemRequest
      */
     'marketplaceId': string;
     /**
      * The name of the item.
-     * @type {string}
-     * @memberof CreateInventoryItemRequest
      */
     'productName': string;
 }

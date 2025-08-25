@@ -22,32 +22,19 @@ import type { TaxDetails } from './tax-details';
 
 /**
  * Monetary and tax details of the charge.
- * @export
- * @interface ChargeDetails
  */
 export interface ChargeDetails {
     /**
      * Type of the charge applied.
-     * @type {string}
-     * @memberof ChargeDetails
      */
     'type': ChargeDetailsTypeEnum;
     /**
      * Description of the charge.
-     * @type {string}
-     * @memberof ChargeDetails
      */
     'description'?: string;
-    /**
-     * 
-     * @type {Money}
-     * @memberof ChargeDetails
-     */
     'chargeAmount': Money;
     /**
      * Tax amount details applied on this charge.
-     * @type {Array<TaxDetails>}
-     * @memberof ChargeDetails
      */
     'taxDetails'?: Array<TaxDetails>;
 }

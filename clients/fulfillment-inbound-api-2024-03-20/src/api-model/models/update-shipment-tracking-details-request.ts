@@ -19,15 +19,8 @@ import type { TrackingDetailsInput } from './tracking-details-input';
 
 /**
  * The `updateShipmentTrackingDetails` request.
- * @export
- * @interface UpdateShipmentTrackingDetailsRequest
  */
 export interface UpdateShipmentTrackingDetailsRequest {
-    /**
-     * 
-     * @type {TrackingDetailsInput}
-     * @memberof UpdateShipmentTrackingDetailsRequest
-     */
     'trackingDetails': TrackingDetailsInput;
 }
 

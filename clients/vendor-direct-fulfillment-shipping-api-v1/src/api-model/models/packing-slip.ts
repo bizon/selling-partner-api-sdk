@@ -16,26 +16,18 @@
 
 /**
  * Packing slip information.
- * @export
- * @interface PackingSlip
  */
 export interface PackingSlip {
     /**
      * Purchase order number of the shipment that corresponds to the packing slip.
-     * @type {string}
-     * @memberof PackingSlip
      */
     'purchaseOrderNumber': string;
     /**
      * A Base64encoded string of the packing slip PDF.
-     * @type {string}
-     * @memberof PackingSlip
      */
     'content': string;
     /**
      * The format of the file such as PDF, JPEG etc.
-     * @type {string}
-     * @memberof PackingSlip
      */
     'contentType'?: PackingSlipContentTypeEnum;
 }

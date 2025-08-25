@@ -16,14 +16,10 @@
 
 /**
  * Download URL for a label
- * @export
- * @interface LabelDownloadURL
  */
 export interface LabelDownloadURL {
     /**
      * URL to download the label for the package. Note: The URL will only be valid for 15 seconds
-     * @type {string}
-     * @memberof LabelDownloadURL
      */
     'DownloadURL'?: string;
 }

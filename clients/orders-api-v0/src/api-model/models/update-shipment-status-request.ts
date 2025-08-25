@@ -22,26 +22,15 @@ import type { ShipmentStatus } from './shipment-status';
 
 /**
  * The request body for the `updateShipmentStatus` operation.
- * @export
- * @interface UpdateShipmentStatusRequest
  */
 export interface UpdateShipmentStatusRequest {
     /**
      * The unobfuscated marketplace identifier.
-     * @type {string}
-     * @memberof UpdateShipmentStatusRequest
      */
     'marketplaceId': string;
-    /**
-     * 
-     * @type {ShipmentStatus}
-     * @memberof UpdateShipmentStatusRequest
-     */
     'shipmentStatus': ShipmentStatus;
     /**
      * For partial shipment status updates, the list of order items and quantities to be updated.
-     * @type {Array<OrderItemsInner>}
-     * @memberof UpdateShipmentStatusRequest
      */
     'orderItems'?: Array<OrderItemsInner>;
 }

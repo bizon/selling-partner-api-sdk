@@ -16,14 +16,10 @@
 
 /**
  * The error response schema for the `UpdateVerificationStatus` operation.
- * @export
- * @interface UpdateVerificationStatusErrorResponse
  */
 export interface UpdateVerificationStatusErrorResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof UpdateVerificationStatusErrorResponse
      */
     'errors'?: Array<Error>;
 }

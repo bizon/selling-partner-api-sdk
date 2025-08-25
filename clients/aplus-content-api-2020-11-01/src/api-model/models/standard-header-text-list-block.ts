@@ -22,21 +22,9 @@ import type { TextComponent } from './text-component';
 
 /**
  * The A+ standard fixed-length list of text and a related headline.
- * @export
- * @interface StandardHeaderTextListBlock
  */
 export interface StandardHeaderTextListBlock {
-    /**
-     * 
-     * @type {TextComponent}
-     * @memberof StandardHeaderTextListBlock
-     */
     'headline'?: TextComponent;
-    /**
-     * 
-     * @type {StandardTextListBlock}
-     * @memberof StandardHeaderTextListBlock
-     */
     'block'?: StandardTextListBlock;
 }
 

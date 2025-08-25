@@ -16,20 +16,14 @@
 
 /**
  * Specifies the balance amount in the Amazon SW bank account
- * @export
- * @interface TransferScheduleFailures
  */
 export interface TransferScheduleFailures {
     /**
      * The transfer schedule cancellation date 
-     * @type {string}
-     * @memberof TransferScheduleFailures
      */
     'transferScheduleFailureDate': string;
     /**
      * The statement/reasoning listed for the cancellation of the transfer schedule 
-     * @type {string}
-     * @memberof TransferScheduleFailures
      */
     'transferScheduleFailureReason': string;
 }

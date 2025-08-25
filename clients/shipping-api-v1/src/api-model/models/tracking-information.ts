@@ -22,32 +22,19 @@ import type { TrackingSummary } from './tracking-summary';
 
 /**
  * The payload schema for the getTrackingInformation operation.
- * @export
- * @interface TrackingInformation
  */
 export interface TrackingInformation {
     /**
      * The tracking id generated to each shipment. It contains a series of letters or digits or both.
-     * @type {string}
-     * @memberof TrackingInformation
      */
     'trackingId': string;
-    /**
-     * 
-     * @type {TrackingSummary}
-     * @memberof TrackingInformation
-     */
     'summary': TrackingSummary;
     /**
      * The promised delivery date and time of a shipment.
-     * @type {string}
-     * @memberof TrackingInformation
      */
     'promisedDeliveryDate': string;
     /**
      * A list of events of a shipment.
-     * @type {Array<Event>}
-     * @memberof TrackingInformation
      */
     'eventHistory': Array<Event>;
 }

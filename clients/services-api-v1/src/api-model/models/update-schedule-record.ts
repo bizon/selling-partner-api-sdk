@@ -22,26 +22,15 @@ import type { Warning } from './warning';
 
 /**
  * `UpdateScheduleRecord` entity contains the `AvailabilityRecord` if there is an error/warning while performing the requested operation on it.
- * @export
- * @interface UpdateScheduleRecord
  */
 export interface UpdateScheduleRecord {
-    /**
-     * 
-     * @type {AvailabilityRecord}
-     * @memberof UpdateScheduleRecord
-     */
     'availability'?: AvailabilityRecord;
     /**
      * A list of warnings returned in the sucessful execution response of an API request.
-     * @type {Array<Warning>}
-     * @memberof UpdateScheduleRecord
      */
     'warnings'?: Array<Warning>;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof UpdateScheduleRecord
      */
     'errors'?: Array<Error>;
 }

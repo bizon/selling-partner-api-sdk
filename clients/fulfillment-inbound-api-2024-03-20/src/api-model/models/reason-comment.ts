@@ -16,8 +16,6 @@
 
 /**
  * Reason for cancelling or rescheduling a self-ship appointment.
- * @export
- * @enum {string}
  */
 
 export const ReasonComment = {

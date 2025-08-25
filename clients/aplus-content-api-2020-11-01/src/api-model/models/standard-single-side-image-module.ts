@@ -22,21 +22,9 @@ import type { StandardImageTextBlock } from './standard-image-text-block';
 
 /**
  * A standard headline and body text with an image on the side.
- * @export
- * @interface StandardSingleSideImageModule
  */
 export interface StandardSingleSideImageModule {
-    /**
-     * 
-     * @type {PositionType}
-     * @memberof StandardSingleSideImageModule
-     */
     'imagePositionType': PositionType;
-    /**
-     * 
-     * @type {StandardImageTextBlock}
-     * @memberof StandardSingleSideImageModule
-     */
     'block'?: StandardImageTextBlock;
 }
 

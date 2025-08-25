@@ -19,20 +19,11 @@ import type { TransactionId } from './transaction-id';
 
 /**
  * The response schema for the submitInvoices operation.
- * @export
- * @interface SubmitInvoicesResponse
  */
 export interface SubmitInvoicesResponse {
-    /**
-     * 
-     * @type {TransactionId}
-     * @memberof SubmitInvoicesResponse
-     */
     'payload'?: TransactionId;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof SubmitInvoicesResponse
      */
     'errors'?: Array<Error>;
 }

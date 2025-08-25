@@ -16,26 +16,18 @@
 
 /**
  * Dates for the scheduled delivery shipments.
- * @export
- * @interface ScheduledDeliveryShipment
  */
 export interface ScheduledDeliveryShipment {
     /**
      * Scheduled delivery service type.
-     * @type {string}
-     * @memberof ScheduledDeliveryShipment
      */
     'scheduledDeliveryServiceType'?: string;
     /**
      * Earliest nominated delivery date for the scheduled delivery.
-     * @type {string}
-     * @memberof ScheduledDeliveryShipment
      */
     'earliestNominatedDeliveryDate'?: string;
     /**
      * Latest nominated delivery date for the scheduled delivery.
-     * @type {string}
-     * @memberof ScheduledDeliveryShipment
      */
     'latestNominatedDeliveryDate'?: string;
 }

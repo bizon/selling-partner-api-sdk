@@ -16,20 +16,14 @@
 
 /**
  * Additional information related to time range for transaction.
- * @export
- * @interface TimeRangeContext
  */
 export interface TimeRangeContext {
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof TimeRangeContext
      */
     'startTime'?: string;
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof TimeRangeContext
      */
     'endTime'?: string;
 }

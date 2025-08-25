@@ -19,20 +19,11 @@ import type { OrderItemsBuyerInfoList } from './order-items-buyer-info-list';
 
 /**
  * The response schema for the `getOrderItemsBuyerInfo` operation.
- * @export
- * @interface GetOrderItemsBuyerInfoResponse
  */
 export interface GetOrderItemsBuyerInfoResponse {
-    /**
-     * 
-     * @type {OrderItemsBuyerInfoList}
-     * @memberof GetOrderItemsBuyerInfoResponse
-     */
     'payload'?: OrderItemsBuyerInfoList;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetOrderItemsBuyerInfoResponse
      */
     'errors'?: Array<Error>;
 }

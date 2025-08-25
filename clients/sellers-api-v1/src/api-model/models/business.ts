@@ -19,38 +19,23 @@ import type { Address } from './address';
 
 /**
  * Information about the seller\'s business. Certain fields may be omitted depending on the seller\'s `businessType`.
- * @export
- * @interface Business
  */
 export interface Business {
     /**
      * The registered business name.
-     * @type {string}
-     * @memberof Business
      */
     'name': string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof Business
-     */
     'registeredBusinessAddress': Address;
     /**
      * The seller\'s company registration number, if applicable. This field will be absent for individual sellers and sole proprietorships.
-     * @type {string}
-     * @memberof Business
      */
     'companyRegistrationNumber'?: string;
     /**
      * The seller\'s company tax identification number, if applicable. This field will be present for certain business types only, such as sole proprietorships.
-     * @type {string}
-     * @memberof Business
      */
     'companyTaxIdentificationNumber'?: string;
     /**
      * The non-Latin script version of the registered business name, if applicable.
-     * @type {string}
-     * @memberof Business
      */
     'nonLatinName'?: string;
 }

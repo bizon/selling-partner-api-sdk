@@ -16,20 +16,14 @@
 
 /**
  * The preferred location to leave packages at the destination address.
- * @export
- * @interface DropOffLocation
  */
 export interface DropOffLocation {
     /**
      * Specifies the preferred location to leave the package at the destination address.
-     * @type {string}
-     * @memberof DropOffLocation
      */
     'type': DropOffLocationTypeEnum;
     /**
      * Additional information about the drop-off location that can vary depending on the type of drop-off location specified in the `type` field. If the `type` is set to `FALLBACK_NEIGHBOR_DELIVERY`, the `attributes` object should include the exact keys `neighborName` and `houseNumber` to provide the name and house number of the designated neighbor.
-     * @type {{ [key: string]: string; }}
-     * @memberof DropOffLocation
      */
     'attributes'?: { [key: string]: string; };
 }

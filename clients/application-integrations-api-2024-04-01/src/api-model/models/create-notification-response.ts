@@ -16,14 +16,10 @@
 
 /**
  * The response for the `createNotification` operation.
- * @export
- * @interface CreateNotificationResponse
  */
 export interface CreateNotificationResponse {
     /**
      * The unique identifier assigned to each notification.
-     * @type {string}
-     * @memberof CreateNotificationResponse
      */
     'notificationId'?: string;
 }

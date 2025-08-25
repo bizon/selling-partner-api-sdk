@@ -19,26 +19,15 @@ import type { FulfillmentChannelType } from './fulfillment-channel-type';
 
 /**
  * The total number of offers for the specified condition and fulfillment channel.
- * @export
- * @interface OfferCountType
  */
 export interface OfferCountType {
     /**
      * Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
-     * @type {string}
-     * @memberof OfferCountType
      */
     'condition'?: string;
-    /**
-     * 
-     * @type {FulfillmentChannelType}
-     * @memberof OfferCountType
-     */
     'fulfillmentChannel'?: FulfillmentChannelType;
     /**
      * The number of offers in a fulfillment channel that meet a specific condition.
-     * @type {number}
-     * @memberof OfferCountType
      */
     'OfferCount'?: number;
 }

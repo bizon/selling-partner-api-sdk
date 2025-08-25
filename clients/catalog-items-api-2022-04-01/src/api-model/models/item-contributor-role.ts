@@ -16,20 +16,14 @@
 
 /**
  * Role of an individual contributor in the creation of an item, such as author or actor.
- * @export
- * @interface ItemContributorRole
  */
 export interface ItemContributorRole {
     /**
      * Display name of the role in the requested locale, such as `Author` or `Actor`.
-     * @type {string}
-     * @memberof ItemContributorRole
      */
     'displayName'?: string;
     /**
      * Role value for the Amazon catalog item, such as `author` or `actor`.
-     * @type {string}
-     * @memberof ItemContributorRole
      */
     'value': string;
 }

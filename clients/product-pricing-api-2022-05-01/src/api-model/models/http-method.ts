@@ -16,8 +16,6 @@
 
 /**
  * The HTTP method associated with an individual request within a batch.
- * @export
- * @enum {string}
  */
 
 export const HttpMethod = {

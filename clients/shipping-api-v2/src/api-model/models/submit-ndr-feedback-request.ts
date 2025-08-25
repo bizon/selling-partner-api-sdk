@@ -22,27 +22,13 @@ import type { NdrRequestData } from './ndr-request-data';
 
 /**
  * The request schema for the NdrFeedback operation
- * @export
- * @interface SubmitNdrFeedbackRequest
  */
 export interface SubmitNdrFeedbackRequest {
     /**
      * The carrier generated identifier for a package in a purchased shipment.
-     * @type {string}
-     * @memberof SubmitNdrFeedbackRequest
      */
     'trackingId': string;
-    /**
-     * 
-     * @type {NdrAction}
-     * @memberof SubmitNdrFeedbackRequest
-     */
     'ndrAction': NdrAction;
-    /**
-     * 
-     * @type {NdrRequestData}
-     * @memberof SubmitNdrFeedbackRequest
-     */
     'ndrRequestData'?: NdrRequestData;
 }
 

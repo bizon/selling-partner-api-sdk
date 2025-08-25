@@ -25,7 +25,6 @@ import type { SearchContentPublishRecordsResponseAllOf } from './search-content-
 
 /**
  * @type SearchContentPublishRecordsResponse
- * @export
  */
 export type SearchContentPublishRecordsResponse = AplusPaginatedResponse & SearchContentPublishRecordsResponseAllOf;
 

@@ -19,20 +19,14 @@ import type { ItemBrowseClassification } from './item-browse-classification';
 
 /**
  * Classifications (browse nodes) that are associated with the item in the Amazon catalog for the indicated `marketplaceId`.
- * @export
- * @interface ItemBrowseClassificationsByMarketplace
  */
 export interface ItemBrowseClassificationsByMarketplace {
     /**
      * Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof ItemBrowseClassificationsByMarketplace
      */
     'marketplaceId': string;
     /**
      * Classifications (browse nodes) that are associated with the item in the Amazon catalog.
-     * @type {Array<ItemBrowseClassification>}
-     * @memberof ItemBrowseClassificationsByMarketplace
      */
     'classifications'?: Array<ItemBrowseClassification>;
 }

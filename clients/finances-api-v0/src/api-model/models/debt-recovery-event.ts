@@ -25,38 +25,20 @@ import type { DebtRecoveryItem } from './debt-recovery-item';
 
 /**
  * A debt payment or debt adjustment.
- * @export
- * @interface DebtRecoveryEvent
  */
 export interface DebtRecoveryEvent {
     /**
      * The debt recovery type.  Possible values:  * DebtPayment  * DebtPaymentFailure  * DebtAdjustment
-     * @type {string}
-     * @memberof DebtRecoveryEvent
      */
     'DebtRecoveryType'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof DebtRecoveryEvent
-     */
     'RecoveryAmount'?: Currency;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof DebtRecoveryEvent
-     */
     'OverPaymentCredit'?: Currency;
     /**
      * A list of debt recovery item information.
-     * @type {Array<DebtRecoveryItem>}
-     * @memberof DebtRecoveryEvent
      */
     'DebtRecoveryItemList'?: Array<DebtRecoveryItem>;
     /**
      * A list of payment instruments.
-     * @type {Array<ChargeInstrument>}
-     * @memberof DebtRecoveryEvent
      */
     'ChargeInstrumentList'?: Array<ChargeInstrument>;
 }

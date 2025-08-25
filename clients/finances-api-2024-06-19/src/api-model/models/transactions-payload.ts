@@ -19,20 +19,14 @@ import type { Transaction } from './transaction';
 
 /**
  * The payload for the `listTransactions` operation.
- * @export
- * @interface TransactionsPayload
  */
 export interface TransactionsPayload {
     /**
      * When present and not empty, pass this string token in the next request to return the next response page.
-     * @type {string}
-     * @memberof TransactionsPayload
      */
     'nextToken'?: string;
     /**
      * Contains transactions within a given time period.
-     * @type {Array<Transaction>}
-     * @memberof TransactionsPayload
      */
     'transactions'?: Array<Transaction>;
 }

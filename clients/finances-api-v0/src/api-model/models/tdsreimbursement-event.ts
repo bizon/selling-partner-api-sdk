@@ -19,27 +19,16 @@ import type { Currency } from './currency';
 
 /**
  * An event related to a Tax-Deducted-at-Source (TDS) reimbursement.
- * @export
- * @interface TDSReimbursementEvent
  */
 export interface TDSReimbursementEvent {
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof TDSReimbursementEvent
      */
     'PostedDate'?: string;
     /**
      * The Tax-Deducted-at-Source (TDS) identifier.
-     * @type {string}
-     * @memberof TDSReimbursementEvent
      */
     'TDSOrderId'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof TDSReimbursementEvent
-     */
     'ReimbursedAmount'?: Currency;
 }
 

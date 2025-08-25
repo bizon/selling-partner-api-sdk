@@ -34,57 +34,24 @@ import type { ShippingOption } from './shipping-option';
 
 /**
  * The offer data of a product.
- * @export
- * @interface Offer
  */
 export interface Offer {
     /**
      * The seller identifier for the offer.
-     * @type {string}
-     * @memberof Offer
      */
     'sellerId': string;
-    /**
-     * 
-     * @type {Condition}
-     * @memberof Offer
-     */
     'condition': Condition;
     /**
      * The item subcondition of the offer.
-     * @type {string}
-     * @memberof Offer
      */
     'subCondition'?: OfferSubConditionEnum;
-    /**
-     * 
-     * @type {FulfillmentType}
-     * @memberof Offer
-     */
     'fulfillmentType': FulfillmentType;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof Offer
-     */
     'listingPrice': MoneyType;
     /**
      * A list of shipping options associated with this offer
-     * @type {Array<ShippingOption>}
-     * @memberof Offer
      */
     'shippingOptions'?: Array<ShippingOption>;
-    /**
-     * 
-     * @type {Points}
-     * @memberof Offer
-     */
     'points'?: Points;
-    /**
-     * 
-     * @type {PrimeDetails}
-     * @memberof Offer
-     */
     'primeDetails'?: PrimeDetails;
 }
 

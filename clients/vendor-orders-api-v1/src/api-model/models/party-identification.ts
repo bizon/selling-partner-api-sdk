@@ -22,27 +22,13 @@ import type { TaxRegistrationDetails } from './tax-registration-details';
 
 /**
  * Name, address and tax details of a party.
- * @export
- * @interface PartyIdentification
  */
 export interface PartyIdentification {
     /**
      * Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details.
-     * @type {string}
-     * @memberof PartyIdentification
      */
     'partyId': string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof PartyIdentification
-     */
     'address'?: Address;
-    /**
-     * 
-     * @type {TaxRegistrationDetails}
-     * @memberof PartyIdentification
-     */
     'taxInfo'?: TaxRegistrationDetails;
 }
 

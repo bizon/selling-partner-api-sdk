@@ -16,8 +16,6 @@
 
 /**
  * Unit of measurement for the package weight.
- * @export
- * @enum {string}
  */
 
 export const WeightUnitOfMeasurement = {

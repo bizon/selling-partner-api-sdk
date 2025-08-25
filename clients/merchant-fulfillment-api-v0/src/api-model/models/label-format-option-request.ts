@@ -16,14 +16,10 @@
 
 /**
  * Whether to include a packing slip.
- * @export
- * @interface LabelFormatOptionRequest
  */
 export interface LabelFormatOptionRequest {
     /**
      * When true, include a packing slip with the label.
-     * @type {boolean}
-     * @memberof LabelFormatOptionRequest
      */
     'IncludePackingSlipWithLabel'?: boolean;
 }

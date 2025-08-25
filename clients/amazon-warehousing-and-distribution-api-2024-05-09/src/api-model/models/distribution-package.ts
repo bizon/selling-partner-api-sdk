@@ -25,27 +25,10 @@ import type { MeasurementData } from './measurement-data';
 
 /**
  * Represents an AWD distribution package.
- * @export
- * @interface DistributionPackage
  */
 export interface DistributionPackage {
-    /**
-     * 
-     * @type {DistributionPackageContents}
-     * @memberof DistributionPackage
-     */
     'contents': DistributionPackageContents;
-    /**
-     * 
-     * @type {MeasurementData}
-     * @memberof DistributionPackage
-     */
     'measurements': MeasurementData;
-    /**
-     * 
-     * @type {DistributionPackageType}
-     * @memberof DistributionPackage
-     */
     'type': DistributionPackageType;
 }
 

@@ -28,45 +28,16 @@ import type { RequestedDocumentSpecification } from './requested-document-specif
 
 /**
  * The request schema for the directPurchaseShipment operation. When the channel type is Amazon, the shipTo address is not required and will be ignored.
- * @export
- * @interface DirectPurchaseRequest
  */
 export interface DirectPurchaseRequest {
-    /**
-     * 
-     * @type {Address}
-     * @memberof DirectPurchaseRequest
-     */
     'shipTo'?: Address;
-    /**
-     * 
-     * @type {Address}
-     * @memberof DirectPurchaseRequest
-     */
     'shipFrom'?: Address;
-    /**
-     * 
-     * @type {Address}
-     * @memberof DirectPurchaseRequest
-     */
     'returnTo'?: Address;
     /**
      * A list of packages to be shipped through a shipping service offering.
-     * @type {Array<Package>}
-     * @memberof DirectPurchaseRequest
      */
     'packages'?: Array<Package>;
-    /**
-     * 
-     * @type {ChannelDetails}
-     * @memberof DirectPurchaseRequest
-     */
     'channelDetails': ChannelDetails;
-    /**
-     * 
-     * @type {RequestedDocumentSpecification}
-     * @memberof DirectPurchaseRequest
-     */
     'labelSpecifications'?: RequestedDocumentSpecification;
 }
 

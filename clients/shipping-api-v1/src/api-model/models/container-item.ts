@@ -22,32 +22,16 @@ import type { Weight } from './weight';
 
 /**
  * Item in the container.
- * @export
- * @interface ContainerItem
  */
 export interface ContainerItem {
     /**
      * The quantity of the items of this type in the container.
-     * @type {number}
-     * @memberof ContainerItem
      */
     'quantity': number;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof ContainerItem
-     */
     'unitPrice': Currency;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof ContainerItem
-     */
     'unitWeight': Weight;
     /**
      * A descriptive title of the item.
-     * @type {string}
-     * @memberof ContainerItem
      */
     'title': string;
 }

@@ -19,14 +19,10 @@ import type { InventoryItem } from './inventory-item';
 
 /**
  * The object with the list of Inventory to be added
- * @export
- * @interface AddInventoryRequest
  */
 export interface AddInventoryRequest {
     /**
      * List of Inventory to be added
-     * @type {Array<InventoryItem>}
-     * @memberof AddInventoryRequest
      */
     'inventoryItems'?: Array<InventoryItem>;
 }

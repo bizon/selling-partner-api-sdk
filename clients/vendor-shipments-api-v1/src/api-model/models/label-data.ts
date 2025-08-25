@@ -16,38 +16,26 @@
 
 /**
  * Label details as part of the transport label response
- * @export
- * @interface LabelData
  */
 export interface LabelData {
     /**
      * A sequential number assigned to each label within a shipment.
-     * @type {number}
-     * @memberof LabelData
      */
     'labelSequenceNumber'?: number;
     /**
      * The format of the label.
-     * @type {string}
-     * @memberof LabelData
      */
     'labelFormat'?: LabelDataLabelFormatEnum;
     /**
      * Unique identification of the carrier.
-     * @type {string}
-     * @memberof LabelData
      */
     'carrierCode'?: string;
     /**
      * Tracking Id for the transportation.
-     * @type {string}
-     * @memberof LabelData
      */
     'trackingId'?: string;
     /**
      * The base-64 encoded string that represents the shipment label.
-     * @type {string}
-     * @memberof LabelData
      */
     'label'?: string;
 }

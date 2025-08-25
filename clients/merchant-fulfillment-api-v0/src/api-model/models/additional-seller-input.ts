@@ -28,63 +28,31 @@ import type { Weight } from './weight';
 
 /**
  * Additional information required to purchase shipping.
- * @export
- * @interface AdditionalSellerInput
  */
 export interface AdditionalSellerInput {
     /**
      * The data type of the additional information.
-     * @type {string}
-     * @memberof AdditionalSellerInput
      */
     'DataType'?: string;
     /**
      * The value when the data type is string.
-     * @type {string}
-     * @memberof AdditionalSellerInput
      */
     'ValueAsString'?: string;
     /**
      * The value when the data type is boolean.
-     * @type {boolean}
-     * @memberof AdditionalSellerInput
      */
     'ValueAsBoolean'?: boolean;
     /**
      * The value when the data type is integer.
-     * @type {number}
-     * @memberof AdditionalSellerInput
      */
     'ValueAsInteger'?: number;
     /**
      * Date-time formatted timestamp.
-     * @type {string}
-     * @memberof AdditionalSellerInput
      */
     'ValueAsTimestamp'?: string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof AdditionalSellerInput
-     */
     'ValueAsAddress'?: Address;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof AdditionalSellerInput
-     */
     'ValueAsWeight'?: Weight;
-    /**
-     * 
-     * @type {Length}
-     * @memberof AdditionalSellerInput
-     */
     'ValueAsDimension'?: Length;
-    /**
-     * 
-     * @type {CurrencyAmount}
-     * @memberof AdditionalSellerInput
-     */
     'ValueAsCurrency'?: CurrencyAmount;
 }
 

@@ -19,26 +19,12 @@ import type { InventoryQuantity } from './inventory-quantity';
 
 /**
  * Quantity details for a SKU as part of a shipment
- * @export
- * @interface SkuQuantity
  */
 export interface SkuQuantity {
-    /**
-     * 
-     * @type {InventoryQuantity}
-     * @memberof SkuQuantity
-     */
     'expectedQuantity': InventoryQuantity;
-    /**
-     * 
-     * @type {InventoryQuantity}
-     * @memberof SkuQuantity
-     */
     'receivedQuantity'?: InventoryQuantity;
     /**
      * The merchant stock keeping unit
-     * @type {string}
-     * @memberof SkuQuantity
      */
     'sku': string;
 }

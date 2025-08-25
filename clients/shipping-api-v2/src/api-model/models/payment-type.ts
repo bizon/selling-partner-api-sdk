@@ -16,8 +16,6 @@
 
 /**
  * Payment type of the purchase.
- * @export
- * @enum {string}
  */
 
 export const PaymentType = {

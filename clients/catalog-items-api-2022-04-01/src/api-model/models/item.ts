@@ -43,74 +43,50 @@ import type { ItemVendorDetailsByMarketplace } from './item-vendor-details-by-ma
 
 /**
  * An item in the Amazon catalog.
- * @export
- * @interface Item
  */
 export interface Item {
     /**
      * The unique identifier of an item in the Amazon catalog.
-     * @type {string}
-     * @memberof Item
      */
     'asin': string;
     /**
      * A JSON object containing structured item attribute data that is keyed by attribute name. Catalog item attributes conform to the related Amazon product type definitions that you can get from the [Product Type Definitions API](https://developer-docs.amazon.com/sp-api/reference/product-type-definitions-v2020-09-01).
-     * @type {{ [key: string]: any; }}
-     * @memberof Item
      */
     'attributes'?: { [key: string]: any; };
     /**
      * An array of classifications (browse nodes) that is associated with the item in the Amazon catalog, grouped by `marketplaceId`.
-     * @type {Array<ItemBrowseClassificationsByMarketplace>}
-     * @memberof Item
      */
     'classifications'?: Array<ItemBrowseClassificationsByMarketplace>;
     /**
      * An array of dimensions that are associated with the item in the Amazon catalog, grouped by `marketplaceId`.
-     * @type {Array<ItemDimensionsByMarketplace>}
-     * @memberof Item
      */
     'dimensions'?: Array<ItemDimensionsByMarketplace>;
     /**
      * Identifiers associated with the item in the Amazon catalog, such as UPC and EAN identifiers.
-     * @type {Array<ItemIdentifiersByMarketplace>}
-     * @memberof Item
      */
     'identifiers'?: Array<ItemIdentifiersByMarketplace>;
     /**
      * The images for an item in the Amazon catalog.
-     * @type {Array<ItemImagesByMarketplace>}
-     * @memberof Item
      */
     'images'?: Array<ItemImagesByMarketplace>;
     /**
      * Product types that are associated with the Amazon catalog item.
-     * @type {Array<ItemProductTypeByMarketplace>}
-     * @memberof Item
      */
     'productTypes'?: Array<ItemProductTypeByMarketplace>;
     /**
      * Relationships grouped by `marketplaceId` for an Amazon catalog item (for example, variations).
-     * @type {Array<ItemRelationshipsByMarketplace>}
-     * @memberof Item
      */
     'relationships'?: Array<ItemRelationshipsByMarketplace>;
     /**
      * Sales ranks of an Amazon catalog item.
-     * @type {Array<ItemSalesRanksByMarketplace>}
-     * @memberof Item
      */
     'salesRanks'?: Array<ItemSalesRanksByMarketplace>;
     /**
      * Summaries of Amazon catalog items.
-     * @type {Array<ItemSummaryByMarketplace>}
-     * @memberof Item
      */
     'summaries'?: Array<ItemSummaryByMarketplace>;
     /**
      * The vendor details that are associated with an Amazon catalog item. Vendor details are only available to vendors.
-     * @type {Array<ItemVendorDetailsByMarketplace>}
-     * @memberof Item
      */
     'vendorDetails'?: Array<ItemVendorDetailsByMarketplace>;
 }

@@ -22,27 +22,10 @@ import type { Points } from './points';
 
 /**
  * Price information for an item, used to estimate fees.
- * @export
- * @interface PriceToEstimateFees
  */
 export interface PriceToEstimateFees {
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof PriceToEstimateFees
-     */
     'ListingPrice': MoneyType;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof PriceToEstimateFees
-     */
     'Shipping'?: MoneyType;
-    /**
-     * 
-     * @type {Points}
-     * @memberof PriceToEstimateFees
-     */
     'Points'?: Points;
 }
 

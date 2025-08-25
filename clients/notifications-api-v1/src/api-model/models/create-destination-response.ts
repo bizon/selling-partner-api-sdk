@@ -19,20 +19,11 @@ import type { Destination } from './destination';
 
 /**
  * The response schema for the createDestination operation.
- * @export
- * @interface CreateDestinationResponse
  */
 export interface CreateDestinationResponse {
-    /**
-     * 
-     * @type {Destination}
-     * @memberof CreateDestinationResponse
-     */
     'payload'?: Destination;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CreateDestinationResponse
      */
     'errors'?: Array<Error>;
 }

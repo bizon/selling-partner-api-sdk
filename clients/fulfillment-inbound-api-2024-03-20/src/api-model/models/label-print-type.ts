@@ -16,8 +16,6 @@
 
 /**
  * Indicates the type of print type for a given label.
- * @export
- * @enum {string}
  */
 
 export const LabelPrintType = {

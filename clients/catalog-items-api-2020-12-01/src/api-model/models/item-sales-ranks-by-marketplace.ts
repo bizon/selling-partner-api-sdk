@@ -19,20 +19,14 @@ import type { ItemSalesRank } from './item-sales-rank';
 
 /**
  * Sales ranks of an Amazon catalog item for the indicated Amazon marketplace.
- * @export
- * @interface ItemSalesRanksByMarketplace
  */
 export interface ItemSalesRanksByMarketplace {
     /**
      * Amazon marketplace identifier.
-     * @type {string}
-     * @memberof ItemSalesRanksByMarketplace
      */
     'marketplaceId': string;
     /**
      * Sales ranks of an Amazon catalog item for an Amazon marketplace.
-     * @type {Array<ItemSalesRank>}
-     * @memberof ItemSalesRanksByMarketplace
      */
     'ranks': Array<ItemSalesRank>;
 }

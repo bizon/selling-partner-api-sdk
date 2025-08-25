@@ -19,26 +19,15 @@ import type { Currency } from './currency';
 
 /**
  * Breakdown provides details regarding the money movement under the financial transaction. Breakdowns get categorized further into breakdown types, breakdown amounts, and further breakdowns into a hierarchical structure.
- * @export
- * @interface Breakdown
  */
 export interface Breakdown {
     /**
      * The type of charge.
-     * @type {string}
-     * @memberof Breakdown
      */
     'breakdownType'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof Breakdown
-     */
     'breakdownAmount'?: Currency;
     /**
      * A list of breakdowns that detail how the total amount is calculated for the transaction.
-     * @type {Array<Breakdown>}
-     * @memberof Breakdown
      */
     'breakdowns'?: Array<Breakdown>;
 }

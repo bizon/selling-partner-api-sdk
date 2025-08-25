@@ -34,56 +34,20 @@ import type { TransferScheduleStatus } from './transfer-schedule-status';
 
 /**
  * Transfer schedule details and related historical details.
- * @export
- * @interface TransferSchedule
  */
 export interface TransferSchedule {
     /**
      * The unique identifier provided by Amazon to the scheduled transfer 
-     * @type {string}
-     * @memberof TransferSchedule
      */
     'transferScheduleId': string;
-    /**
-     * 
-     * @type {TransactionType}
-     * @memberof TransferSchedule
-     */
     'transactionType': TransactionType;
-    /**
-     * 
-     * @type {TransactionAccount}
-     * @memberof TransferSchedule
-     */
     'transactionSourceAccount'?: TransactionAccount;
-    /**
-     * 
-     * @type {TransactionAccount}
-     * @memberof TransferSchedule
-     */
     'transactionDestinationAccount': TransactionAccount;
-    /**
-     * 
-     * @type {TransferScheduleStatus}
-     * @memberof TransferSchedule
-     */
     'transferScheduleStatus': TransferScheduleStatus;
-    /**
-     * 
-     * @type {TransferScheduleInformation}
-     * @memberof TransferSchedule
-     */
     'transferScheduleInformation': TransferScheduleInformation;
-    /**
-     * 
-     * @type {PaymentPreference}
-     * @memberof TransferSchedule
-     */
     'paymentPreference'?: PaymentPreference;
     /**
      * Collection that holds Transfer Schedules that has been cancelled or failed due to certain reasons. 
-     * @type {Array<TransferScheduleFailures>}
-     * @memberof TransferSchedule
      */
     'transferScheduleFailures': Array<TransferScheduleFailures>;
 }

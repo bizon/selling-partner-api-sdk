@@ -28,50 +28,22 @@ import type { ItemReviewTopicMetrics } from './item-review-topic-metrics';
 
 /**
  * Details of item review topic.
- * @export
- * @interface ItemReviewTopic
  */
 export interface ItemReviewTopic {
     /**
      * The name of the item review topic.
-     * @type {string}
-     * @memberof ItemReviewTopic
      */
     'topic': string;
-    /**
-     * 
-     * @type {ItemReviewTopicMetrics}
-     * @memberof ItemReviewTopic
-     */
     'asinMetrics': ItemReviewTopicMetrics;
-    /**
-     * 
-     * @type {ItemReviewTopicMetrics}
-     * @memberof ItemReviewTopic
-     */
     'parentAsinMetrics'?: ItemReviewTopicMetrics;
-    /**
-     * 
-     * @type {ItemReviewBrowseNodeMetrics}
-     * @memberof ItemReviewTopic
-     */
     'browseNodeMetrics'?: ItemReviewBrowseNodeMetrics;
-    /**
-     * 
-     * @type {ChildAsinMetrics}
-     * @memberof ItemReviewTopic
-     */
     'childAsinMetrics'?: ChildAsinMetrics;
     /**
      * A list of up to three snippets from reviews that contain the topic. This value is `null` if there aren\'t enough review snippets for the topic.
-     * @type {Array<string>}
-     * @memberof ItemReviewTopic
      */
     'reviewSnippets'?: Array<string>;
     /**
      * A list of up to five top subtopics for the topic. The percentage of customer reviews that mention the subtopic determine the topic\'s placement in the list. This value is `null` if there are no subtopics.
-     * @type {Array<ItemReviewSubtopic>}
-     * @memberof ItemReviewTopic
      */
     'subtopics'?: Array<ItemReviewSubtopic>;
 }

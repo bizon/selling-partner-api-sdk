@@ -22,26 +22,15 @@ import type { Warning } from './warning';
 
 /**
  * `UpdateReservationRecord` entity contains the `Reservation` if there is an error/warning while performing the requested operation on it, otherwise it will contain the new `reservationId`.
- * @export
- * @interface UpdateReservationRecord
  */
 export interface UpdateReservationRecord {
-    /**
-     * 
-     * @type {Reservation}
-     * @memberof UpdateReservationRecord
-     */
     'reservation'?: Reservation;
     /**
      * A list of warnings returned in the sucessful execution response of an API request.
-     * @type {Array<Warning>}
-     * @memberof UpdateReservationRecord
      */
     'warnings'?: Array<Warning>;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof UpdateReservationRecord
      */
     'errors'?: Array<Error>;
 }

@@ -19,33 +19,20 @@ import type { Currency } from './currency';
 
 /**
  * Contains details about cost related modifications to the placement cost.
- * @export
- * @interface Incentive
  */
 export interface Incentive {
     /**
      * Description of the incentive.
-     * @type {string}
-     * @memberof Incentive
      */
     'description': string;
     /**
      * Target of the incentive. Possible values: \'Placement Services\', \'Fulfillment Fee Discount\'.
-     * @type {string}
-     * @memberof Incentive
      */
     'target': string;
     /**
      * Type of incentive. Possible values: `FEE`, `DISCOUNT`.
-     * @type {string}
-     * @memberof Incentive
      */
     'type': string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof Incentive
-     */
     'value': Currency;
 }
 

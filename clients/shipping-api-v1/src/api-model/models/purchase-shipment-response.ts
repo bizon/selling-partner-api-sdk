@@ -19,20 +19,11 @@ import type { PurchaseShipmentResult } from './purchase-shipment-result';
 
 /**
  * The response schema for the purchaseShipment operation.
- * @export
- * @interface PurchaseShipmentResponse
  */
 export interface PurchaseShipmentResponse {
-    /**
-     * 
-     * @type {PurchaseShipmentResult}
-     * @memberof PurchaseShipmentResponse
-     */
     'payload'?: PurchaseShipmentResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof PurchaseShipmentResponse
      */
     'errors'?: Array<Error>;
 }

@@ -22,39 +22,12 @@ import type { TextComponent } from './text-component';
 
 /**
  * Four standard images with text, presented across a single row.
- * @export
- * @interface StandardFourImageTextModule
  */
 export interface StandardFourImageTextModule {
-    /**
-     * 
-     * @type {TextComponent}
-     * @memberof StandardFourImageTextModule
-     */
     'headline'?: TextComponent;
-    /**
-     * 
-     * @type {StandardImageTextBlock}
-     * @memberof StandardFourImageTextModule
-     */
     'block1'?: StandardImageTextBlock;
-    /**
-     * 
-     * @type {StandardImageTextBlock}
-     * @memberof StandardFourImageTextModule
-     */
     'block2'?: StandardImageTextBlock;
-    /**
-     * 
-     * @type {StandardImageTextBlock}
-     * @memberof StandardFourImageTextModule
-     */
     'block3'?: StandardImageTextBlock;
-    /**
-     * 
-     * @type {StandardImageTextBlock}
-     * @memberof StandardFourImageTextModule
-     */
     'block4'?: StandardImageTextBlock;
 }
 

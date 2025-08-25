@@ -37,7 +37,6 @@ import type { UpdateSupplySourceRequest } from '../models';
 import type { UpdateSupplySourceStatusRequest } from '../models';
 /**
  * SupplySourcesApi - axios parameter creator
- * @export
  */
 export const SupplySourcesApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -260,7 +259,6 @@ export const SupplySourcesApiAxiosParamCreator = function (configuration?: Confi
 
 /**
  * SupplySourcesApi - functional programming interface
- * @export
  */
 export const SupplySourcesApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = SupplySourcesApiAxiosParamCreator(configuration)
@@ -345,7 +343,6 @@ export const SupplySourcesApiFp = function(configuration?: Configuration) {
 
 /**
  * SupplySourcesApi - factory interface
- * @export
  */
 export const SupplySourcesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = SupplySourcesApiFp(configuration)
@@ -409,114 +406,75 @@ export const SupplySourcesApiFactory = function (configuration?: Configuration, 
 
 /**
  * Request parameters for archiveSupplySource operation in SupplySourcesApi.
- * @export
- * @interface SupplySourcesApiArchiveSupplySourceRequest
  */
 export interface SupplySourcesApiArchiveSupplySourceRequest {
     /**
      * The unique identifier of a supply source.
-     * @type {string}
-     * @memberof SupplySourcesApiArchiveSupplySource
      */
     readonly supplySourceId: string
 }
 
 /**
  * Request parameters for createSupplySource operation in SupplySourcesApi.
- * @export
- * @interface SupplySourcesApiCreateSupplySourceRequest
  */
 export interface SupplySourcesApiCreateSupplySourceRequest {
     /**
      * A request to create a supply source.
-     * @type {CreateSupplySourceRequest}
-     * @memberof SupplySourcesApiCreateSupplySource
      */
     readonly payload: CreateSupplySourceRequest
 }
 
 /**
  * Request parameters for getSupplySource operation in SupplySourcesApi.
- * @export
- * @interface SupplySourcesApiGetSupplySourceRequest
  */
 export interface SupplySourcesApiGetSupplySourceRequest {
     /**
      * The unique identifier of a supply source.
-     * @type {string}
-     * @memberof SupplySourcesApiGetSupplySource
      */
     readonly supplySourceId: string
 }
 
 /**
  * Request parameters for getSupplySources operation in SupplySourcesApi.
- * @export
- * @interface SupplySourcesApiGetSupplySourcesRequest
  */
 export interface SupplySourcesApiGetSupplySourcesRequest {
     /**
      * The pagination token to retrieve a specific page of results.
-     * @type {string}
-     * @memberof SupplySourcesApiGetSupplySources
      */
     readonly nextPageToken?: string
 
     /**
      * The number of supply sources to return per paginated request.
-     * @type {number}
-     * @memberof SupplySourcesApiGetSupplySources
      */
     readonly pageSize?: number
 }
 
 /**
  * Request parameters for updateSupplySource operation in SupplySourcesApi.
- * @export
- * @interface SupplySourcesApiUpdateSupplySourceRequest
  */
 export interface SupplySourcesApiUpdateSupplySourceRequest {
     /**
      * The unique identitier of a supply source.
-     * @type {string}
-     * @memberof SupplySourcesApiUpdateSupplySource
      */
     readonly supplySourceId: string
 
-    /**
-     * 
-     * @type {UpdateSupplySourceRequest}
-     * @memberof SupplySourcesApiUpdateSupplySource
-     */
     readonly payload?: UpdateSupplySourceRequest
 }
 
 /**
  * Request parameters for updateSupplySourceStatus operation in SupplySourcesApi.
- * @export
- * @interface SupplySourcesApiUpdateSupplySourceStatusRequest
  */
 export interface SupplySourcesApiUpdateSupplySourceStatusRequest {
     /**
      * The unique identifier of a supply source.
-     * @type {string}
-     * @memberof SupplySourcesApiUpdateSupplySourceStatus
      */
     readonly supplySourceId: string
 
-    /**
-     * 
-     * @type {UpdateSupplySourceStatusRequest}
-     * @memberof SupplySourcesApiUpdateSupplySourceStatus
-     */
     readonly payload?: UpdateSupplySourceStatusRequest
 }
 
 /**
  * SupplySourcesApi - object-oriented interface
- * @export
- * @class SupplySourcesApi
- * @extends {BaseAPI}
  */
 export class SupplySourcesApi extends BaseAPI {
     /**
@@ -524,7 +482,6 @@ export class SupplySourcesApi extends BaseAPI {
      * @param {SupplySourcesApiArchiveSupplySourceRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SupplySourcesApi
      */
     public archiveSupplySource(requestParameters: SupplySourcesApiArchiveSupplySourceRequest, options?: RawAxiosRequestConfig) {
         return SupplySourcesApiFp(this.configuration).archiveSupplySource(requestParameters.supplySourceId, options).then((request) => request(this.axios, this.basePath));
@@ -535,7 +492,6 @@ export class SupplySourcesApi extends BaseAPI {
      * @param {SupplySourcesApiCreateSupplySourceRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SupplySourcesApi
      */
     public createSupplySource(requestParameters: SupplySourcesApiCreateSupplySourceRequest, options?: RawAxiosRequestConfig) {
         return SupplySourcesApiFp(this.configuration).createSupplySource(requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
@@ -546,7 +502,6 @@ export class SupplySourcesApi extends BaseAPI {
      * @param {SupplySourcesApiGetSupplySourceRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SupplySourcesApi
      */
     public getSupplySource(requestParameters: SupplySourcesApiGetSupplySourceRequest, options?: RawAxiosRequestConfig) {
         return SupplySourcesApiFp(this.configuration).getSupplySource(requestParameters.supplySourceId, options).then((request) => request(this.axios, this.basePath));
@@ -557,7 +512,6 @@ export class SupplySourcesApi extends BaseAPI {
      * @param {SupplySourcesApiGetSupplySourcesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SupplySourcesApi
      */
     public getSupplySources(requestParameters: SupplySourcesApiGetSupplySourcesRequest = {}, options?: RawAxiosRequestConfig) {
         return SupplySourcesApiFp(this.configuration).getSupplySources(requestParameters.nextPageToken, requestParameters.pageSize, options).then((request) => request(this.axios, this.basePath));
@@ -568,7 +522,6 @@ export class SupplySourcesApi extends BaseAPI {
      * @param {SupplySourcesApiUpdateSupplySourceRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SupplySourcesApi
      */
     public updateSupplySource(requestParameters: SupplySourcesApiUpdateSupplySourceRequest, options?: RawAxiosRequestConfig) {
         return SupplySourcesApiFp(this.configuration).updateSupplySource(requestParameters.supplySourceId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
@@ -579,7 +532,6 @@ export class SupplySourcesApi extends BaseAPI {
      * @param {SupplySourcesApiUpdateSupplySourceStatusRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SupplySourcesApi
      */
     public updateSupplySourceStatus(requestParameters: SupplySourcesApiUpdateSupplySourceStatusRequest, options?: RawAxiosRequestConfig) {
         return SupplySourcesApiFp(this.configuration).updateSupplySourceStatus(requestParameters.supplySourceId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));

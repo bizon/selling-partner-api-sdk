@@ -19,20 +19,11 @@ import type { TransactionReference } from './transaction-reference';
 
 /**
  * The response schema for the submitInvoice operation.
- * @export
- * @interface SubmitInvoiceResponse
  */
 export interface SubmitInvoiceResponse {
-    /**
-     * 
-     * @type {TransactionReference}
-     * @memberof SubmitInvoiceResponse
-     */
     'payload'?: TransactionReference;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof SubmitInvoiceResponse
      */
     'errors'?: Array<Error>;
 }

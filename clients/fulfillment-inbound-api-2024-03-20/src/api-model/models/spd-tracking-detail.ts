@@ -19,14 +19,10 @@ import type { SpdTrackingItem } from './spd-tracking-item';
 
 /**
  * Contains information related to Small Parcel Delivery (SPD) shipment tracking.
- * @export
- * @interface SpdTrackingDetail
  */
 export interface SpdTrackingDetail {
     /**
      * List of Small Parcel Delivery (SPD) tracking items.
-     * @type {Array<SpdTrackingItem>}
-     * @memberof SpdTrackingDetail
      */
     'spdTrackingItems'?: Array<SpdTrackingItem>;
 }

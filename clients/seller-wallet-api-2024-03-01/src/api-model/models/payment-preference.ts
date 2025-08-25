@@ -19,20 +19,11 @@ import type { PaymentPreferencePaymentType } from './payment-preference-payment-
 
 /**
  * Payment preference type in which transfer is being scheduled 
- * @export
- * @interface PaymentPreference
  */
 export interface PaymentPreference {
-    /**
-     * 
-     * @type {PaymentPreferencePaymentType}
-     * @memberof PaymentPreference
-     */
     'paymentPreferencePaymentType': PaymentPreferencePaymentType;
     /**
      * A decimal number such as amount or FX rate.
-     * @type {number}
-     * @memberof PaymentPreference
      */
     'value': number;
 }

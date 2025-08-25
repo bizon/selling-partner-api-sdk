@@ -16,8 +16,6 @@
 
 /**
  * The type of label preparation that is required for the inbound shipment.
- * @export
- * @enum {string}
  */
 
 export const LabelPrepType = {

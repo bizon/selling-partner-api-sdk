@@ -16,15 +16,8 @@
 
 /**
  * The number of Amazon Points offered with the purchase of an item, and their monetary value. Note that the `Points` element is only returned in Japan (JP).
- * @export
- * @interface Points
  */
 export interface Points {
-    /**
-     * 
-     * @type {number}
-     * @memberof Points
-     */
     'pointsNumber': number;
 }
 

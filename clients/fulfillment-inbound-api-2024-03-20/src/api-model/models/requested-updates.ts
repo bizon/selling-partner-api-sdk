@@ -22,20 +22,14 @@ import type { ItemInput } from './item-input';
 
 /**
  * Objects that were included in the update request.
- * @export
- * @interface RequestedUpdates
  */
 export interface RequestedUpdates {
     /**
      * A list of boxes that will be present in the shipment after the update.
-     * @type {Array<BoxUpdateInput>}
-     * @memberof RequestedUpdates
      */
     'boxes'?: Array<BoxUpdateInput>;
     /**
      * A list of all items that will be present in the shipment after the update.
-     * @type {Array<ItemInput>}
-     * @memberof RequestedUpdates
      */
     'items'?: Array<ItemInput>;
 }

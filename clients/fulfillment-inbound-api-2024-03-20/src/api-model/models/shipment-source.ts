@@ -19,20 +19,11 @@ import type { Address } from './address';
 
 /**
  * Specifies the \'ship from\' address for the shipment.
- * @export
- * @interface ShipmentSource
  */
 export interface ShipmentSource {
-    /**
-     * 
-     * @type {Address}
-     * @memberof ShipmentSource
-     */
     'address'?: Address;
     /**
      * The type of source for this shipment. Possible values: `SELLER_FACILITY`.
-     * @type {string}
-     * @memberof ShipmentSource
      */
     'sourceType': string;
 }

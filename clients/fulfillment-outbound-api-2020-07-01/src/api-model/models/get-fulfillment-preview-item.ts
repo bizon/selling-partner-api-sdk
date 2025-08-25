@@ -19,32 +19,19 @@ import type { Money } from './money';
 
 /**
  * Item information for a fulfillment order preview.
- * @export
- * @interface GetFulfillmentPreviewItem
  */
 export interface GetFulfillmentPreviewItem {
     /**
      * The seller SKU of the item.
-     * @type {string}
-     * @memberof GetFulfillmentPreviewItem
      */
     'sellerSku': string;
     /**
      * The item quantity.
-     * @type {number}
-     * @memberof GetFulfillmentPreviewItem
      */
     'quantity': number;
-    /**
-     * 
-     * @type {Money}
-     * @memberof GetFulfillmentPreviewItem
-     */
     'perUnitDeclaredValue'?: Money;
     /**
      * A fulfillment order item identifier that the seller creates to track items in the fulfillment preview.
-     * @type {string}
-     * @memberof GetFulfillmentPreviewItem
      */
     'sellerFulfillmentOrderItemId': string;
 }

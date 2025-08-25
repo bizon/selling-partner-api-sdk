@@ -19,15 +19,8 @@ import type { GetMessagingActionResponse } from './get-messaging-action-response
 
 /**
  * The messaging actions response that is associated with the specified `amazonOrderId`.
- * @export
- * @interface GetMessagingActionsForOrderResponseEmbedded
  */
 export interface GetMessagingActionsForOrderResponseEmbedded {
-    /**
-     * 
-     * @type {Array<GetMessagingActionResponse>}
-     * @memberof GetMessagingActionsForOrderResponseEmbedded
-     */
     'actions': Array<GetMessagingActionResponse>;
 }
 

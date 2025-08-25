@@ -19,32 +19,19 @@ import type { Recurrence } from './recurrence';
 
 /**
  * `AvailabilityRecord` to represent the capacity of a resource over a time range.
- * @export
- * @interface AvailabilityRecord
  */
 export interface AvailabilityRecord {
     /**
      * Denotes the time from when the resource is available in a day in ISO-8601 format.
-     * @type {string}
-     * @memberof AvailabilityRecord
      */
     'startTime': string;
     /**
      * Denotes the time till when the resource is available in a day in ISO-8601 format.
-     * @type {string}
-     * @memberof AvailabilityRecord
      */
     'endTime': string;
-    /**
-     * 
-     * @type {Recurrence}
-     * @memberof AvailabilityRecord
-     */
     'recurrence'?: Recurrence;
     /**
      * Signifies the capacity of a resource which is available.
-     * @type {number}
-     * @memberof AvailabilityRecord
      */
     'capacity'?: number;
 }

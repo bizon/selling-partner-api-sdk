@@ -19,14 +19,10 @@ import type { OrderChangeTypeEnum } from './order-change-type-enum';
 
 /**
  * An event filter to customize your subscription to send notifications for only the specified `orderChangeType`.
- * @export
- * @interface OrderChangeTypeFilter
  */
 export interface OrderChangeTypeFilter {
     /**
      * A list of order change types to subscribe to (for example: `BuyerRequestedChange`). To receive notifications of all change types, do not provide this list.
-     * @type {Array<OrderChangeTypeEnum>}
-     * @memberof OrderChangeTypeFilter
      */
     'orderChangeTypes'?: Array<OrderChangeTypeEnum>;
 }

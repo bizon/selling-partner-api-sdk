@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the createLegalDisclosure operation.
- * @export
- * @interface CreateLegalDisclosureResponse
  */
 export interface CreateLegalDisclosureResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CreateLegalDisclosureResponse
      */
     'errors'?: Array<Error>;
 }

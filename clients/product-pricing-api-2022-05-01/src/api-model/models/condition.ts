@@ -16,8 +16,6 @@
 
 /**
  * The condition of the item.
- * @export
- * @enum {string}
  */
 
 export const Condition = {

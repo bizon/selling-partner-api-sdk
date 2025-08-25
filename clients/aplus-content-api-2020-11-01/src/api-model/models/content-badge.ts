@@ -16,8 +16,6 @@
 
 /**
  * A flag that provides additional information about an A+ Content document.
- * @export
- * @enum {string}
  */
 
 export const ContentBadge = {

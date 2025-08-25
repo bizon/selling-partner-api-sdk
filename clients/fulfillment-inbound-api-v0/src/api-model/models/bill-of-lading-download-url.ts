@@ -16,14 +16,10 @@
 
 /**
  * Download URL for the bill of lading.
- * @export
- * @interface BillOfLadingDownloadURL
  */
 export interface BillOfLadingDownloadURL {
     /**
      * URL to download the bill of lading for the package. Note: The URL will only be valid for 15 seconds
-     * @type {string}
-     * @memberof BillOfLadingDownloadURL
      */
     'DownloadURL'?: string;
 }

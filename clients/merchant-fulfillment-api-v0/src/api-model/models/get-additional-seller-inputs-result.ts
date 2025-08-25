@@ -22,20 +22,14 @@ import type { ItemLevelFields } from './item-level-fields';
 
 /**
  * The payload for the `getAdditionalSellerInputs` operation.
- * @export
- * @interface GetAdditionalSellerInputsResult
  */
 export interface GetAdditionalSellerInputsResult {
     /**
      * A list of additional inputs.
-     * @type {Array<AdditionalInputs>}
-     * @memberof GetAdditionalSellerInputsResult
      */
     'ShipmentLevelFields'?: Array<AdditionalInputs>;
     /**
      * A list of item level fields.
-     * @type {Array<ItemLevelFields>}
-     * @memberof GetAdditionalSellerInputsResult
      */
     'ItemLevelFieldsList'?: Array<ItemLevelFields>;
 }

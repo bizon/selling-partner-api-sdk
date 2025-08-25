@@ -19,20 +19,14 @@ import type { ItemIdentifier } from './item-identifier';
 
 /**
  * Identifiers associated with the item in the Amazon catalog for the indicated Amazon marketplace.
- * @export
- * @interface ItemIdentifiersByMarketplace
  */
 export interface ItemIdentifiersByMarketplace {
     /**
      * Amazon marketplace identifier.
-     * @type {string}
-     * @memberof ItemIdentifiersByMarketplace
      */
     'marketplaceId': string;
     /**
      * Identifiers associated with the item in the Amazon catalog for the indicated Amazon marketplace.
-     * @type {Array<ItemIdentifier>}
-     * @memberof ItemIdentifiersByMarketplace
      */
     'identifiers': Array<ItemIdentifier>;
 }

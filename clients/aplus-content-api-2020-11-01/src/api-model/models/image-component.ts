@@ -19,26 +19,15 @@ import type { ImageCropSpecification } from './image-crop-specification';
 
 /**
  * A reference to an image, hosted in the A+ Content media library.
- * @export
- * @interface ImageComponent
  */
 export interface ImageComponent {
     /**
      * This identifier is provided by the [Uploads API](https://developer-docs.amazon.com/sp-api/reference/welcome-to-api-references).
-     * @type {string}
-     * @memberof ImageComponent
      */
     'uploadDestinationId': string;
-    /**
-     * 
-     * @type {ImageCropSpecification}
-     * @memberof ImageComponent
-     */
     'imageCropSpecification': ImageCropSpecification;
     /**
      * The alternative text for the image.
-     * @type {string}
-     * @memberof ImageComponent
      */
     'altText': string;
 }

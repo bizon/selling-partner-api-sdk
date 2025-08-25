@@ -22,32 +22,22 @@ import type { ClientReferenceDetail } from './client-reference-detail';
 
 /**
  * The request schema for verify and add the merchant\'s account with a certain carrier.
- * @export
- * @interface LinkCarrierAccountRequest
  */
 export interface LinkCarrierAccountRequest {
     /**
      * Object to pass additional information about the MCI Integrator shipperType: List of ClientReferenceDetail
-     * @type {Array<ClientReferenceDetail>}
-     * @memberof LinkCarrierAccountRequest
      */
     'clientReferenceDetails'?: Array<ClientReferenceDetail>;
     /**
      * CarrierAccountType  associated with account.
-     * @type {string}
-     * @memberof LinkCarrierAccountRequest
      */
     'carrierAccountType': string;
     /**
      * A list of all attributes required by the carrier in order to successfully link the merchant\'s account
-     * @type {Array<CarrierAccountAttribute>}
-     * @memberof LinkCarrierAccountRequest
      */
     'carrierAccountAttributes': Array<CarrierAccountAttribute>;
     /**
      * A list of all attributes required by the carrier in order to successfully link the merchant\'s account
-     * @type {Array<CarrierAccountAttribute>}
-     * @memberof LinkCarrierAccountRequest
      */
     'encryptedCarrierAccountAttributes'?: Array<CarrierAccountAttribute>;
 }

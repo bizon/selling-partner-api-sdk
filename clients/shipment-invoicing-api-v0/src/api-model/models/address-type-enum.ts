@@ -16,8 +16,6 @@
 
 /**
  * The shipping address type.
- * @export
- * @enum {string}
  */
 
 export const AddressTypeEnum = {

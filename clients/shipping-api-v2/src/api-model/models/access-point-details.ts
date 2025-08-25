@@ -16,14 +16,10 @@
 
 /**
  * AccessPointDetails object
- * @export
- * @interface AccessPointDetails
  */
 export interface AccessPointDetails {
     /**
      * Unique identifier for the access point
-     * @type {string}
-     * @memberof AccessPointDetails
      */
     'accessPointId'?: string;
 }

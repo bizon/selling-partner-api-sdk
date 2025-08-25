@@ -25,57 +25,30 @@ import type { FeeComponent } from './fee-component';
 
 /**
  * An event related to coupon payments.
- * @export
- * @interface CouponPaymentEvent
  */
 export interface CouponPaymentEvent {
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof CouponPaymentEvent
      */
     'PostedDate'?: string;
     /**
      * A coupon identifier.
-     * @type {string}
-     * @memberof CouponPaymentEvent
      */
     'CouponId'?: string;
     /**
      * The description provided by the seller when they created the coupon.
-     * @type {string}
-     * @memberof CouponPaymentEvent
      */
     'SellerCouponDescription'?: string;
     /**
      * The number of coupon clips or redemptions.
-     * @type {number}
-     * @memberof CouponPaymentEvent
      */
     'ClipOrRedemptionCount'?: number;
     /**
      * A payment event identifier.
-     * @type {string}
-     * @memberof CouponPaymentEvent
      */
     'PaymentEventId'?: string;
-    /**
-     * 
-     * @type {FeeComponent}
-     * @memberof CouponPaymentEvent
-     */
     'FeeComponent'?: FeeComponent;
-    /**
-     * 
-     * @type {ChargeComponent}
-     * @memberof CouponPaymentEvent
-     */
     'ChargeComponent'?: ChargeComponent;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof CouponPaymentEvent
-     */
     'TotalAmount'?: Currency;
 }
 

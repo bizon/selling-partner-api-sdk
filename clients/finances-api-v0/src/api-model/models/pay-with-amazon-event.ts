@@ -22,68 +22,43 @@ import type { FeeComponent } from './fee-component';
 
 /**
  * An event related to the seller\'s Pay with Amazon account.
- * @export
- * @interface PayWithAmazonEvent
  */
 export interface PayWithAmazonEvent {
     /**
      * An order identifier that is specified by the seller.
-     * @type {string}
-     * @memberof PayWithAmazonEvent
      */
     'SellerOrderId'?: string;
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof PayWithAmazonEvent
      */
     'TransactionPostedDate'?: string;
     /**
      * The type of business object.
-     * @type {string}
-     * @memberof PayWithAmazonEvent
      */
     'BusinessObjectType'?: string;
     /**
      * The sales channel for the transaction.
-     * @type {string}
-     * @memberof PayWithAmazonEvent
      */
     'SalesChannel'?: string;
-    /**
-     * 
-     * @type {ChargeComponent}
-     * @memberof PayWithAmazonEvent
-     */
     'Charge'?: ChargeComponent;
     /**
      * A list of fee component information.
-     * @type {Array<FeeComponent>}
-     * @memberof PayWithAmazonEvent
      */
     'FeeList'?: Array<FeeComponent>;
     /**
      * The type of payment.  Possible values:  * Sales
-     * @type {string}
-     * @memberof PayWithAmazonEvent
      */
     'PaymentAmountType'?: string;
     /**
      * A short description of this payment event.
-     * @type {string}
-     * @memberof PayWithAmazonEvent
      */
     'AmountDescription'?: string;
     /**
      * The fulfillment channel.  Possible values:  * AFN - Amazon Fulfillment Network (Fulfillment by Amazon)  * MFN - Merchant Fulfillment Network (self-fulfilled)
-     * @type {string}
-     * @memberof PayWithAmazonEvent
      */
     'FulfillmentChannel'?: string;
     /**
      * The store name where the event occurred.
-     * @type {string}
-     * @memberof PayWithAmazonEvent
      */
     'StoreName'?: string;
 }

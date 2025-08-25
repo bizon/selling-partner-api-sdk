@@ -19,27 +19,16 @@ import type { UnitOfWeight } from './unit-of-weight';
 
 /**
  * The range of weights that are allowed for a package.
- * @export
- * @interface WeightRange
  */
 export interface WeightRange {
     /**
      * Maximum allowed weight.
-     * @type {number}
-     * @memberof WeightRange
      */
     'maximum': number;
     /**
      * Minimum allowed weight.
-     * @type {number}
-     * @memberof WeightRange
      */
     'minimum': number;
-    /**
-     * 
-     * @type {UnitOfWeight}
-     * @memberof WeightRange
-     */
     'unit': UnitOfWeight;
 }
 

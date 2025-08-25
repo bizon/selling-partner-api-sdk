@@ -19,14 +19,10 @@ import type { FeaturedOfferSegment } from './featured-offer-segment';
 
 /**
  * The list of segment information in which the offer is featured.
- * @export
- * @interface SegmentedFeaturedOfferAllOf
  */
 export interface SegmentedFeaturedOfferAllOf {
     /**
      * The list of segment information in which the offer is featured.
-     * @type {Array<FeaturedOfferSegment>}
-     * @memberof SegmentedFeaturedOfferAllOf
      */
     'featuredOfferSegments': Array<FeaturedOfferSegment>;
 }

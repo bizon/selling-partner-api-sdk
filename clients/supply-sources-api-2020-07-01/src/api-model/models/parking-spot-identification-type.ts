@@ -16,8 +16,6 @@
 
 /**
  * The type of parking spot identification.
- * @export
- * @enum {string}
  */
 
 export const ParkingSpotIdentificationType = {

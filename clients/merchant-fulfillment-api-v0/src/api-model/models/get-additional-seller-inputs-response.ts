@@ -19,20 +19,11 @@ import type { GetAdditionalSellerInputsResult } from './get-additional-seller-in
 
 /**
  * Response schema.
- * @export
- * @interface GetAdditionalSellerInputsResponse
  */
 export interface GetAdditionalSellerInputsResponse {
-    /**
-     * 
-     * @type {GetAdditionalSellerInputsResult}
-     * @memberof GetAdditionalSellerInputsResponse
-     */
     'payload'?: GetAdditionalSellerInputsResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetAdditionalSellerInputsResponse
      */
     'errors'?: Array<Error>;
 }

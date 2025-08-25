@@ -16,8 +16,6 @@
 
 /**
  * The status of the package being shipped.
- * @export
- * @enum {string}
  */
 
 export const Status = {

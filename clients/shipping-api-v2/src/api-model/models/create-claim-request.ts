@@ -25,45 +25,22 @@ import type { SettlementType } from './settlement-type';
 
 /**
  * The request schema for the CreateClaim operation
- * @export
- * @interface CreateClaimRequest
  */
 export interface CreateClaimRequest {
     /**
      * The carrier generated identifier for a package in a purchased shipment.
-     * @type {string}
-     * @memberof CreateClaimRequest
      */
     'trackingId': string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof CreateClaimRequest
-     */
     'declaredValue'?: Currency;
-    /**
-     * 
-     * @type {ClaimReason}
-     * @memberof CreateClaimRequest
-     */
     'claimReason': ClaimReason;
     /**
      * Applicable for only On Amazon shipments to identify if replacement was sent
-     * @type {boolean}
-     * @memberof CreateClaimRequest
      */
     'isReplacementPackageSent'?: boolean;
     /**
      * A list of proof URLs for a claim. Basic URL validation will happen for each URLs present in the list
-     * @type {Array<string>}
-     * @memberof CreateClaimRequest
      */
     'proofs'?: Array<string>;
-    /**
-     * 
-     * @type {SettlementType}
-     * @memberof CreateClaimRequest
-     */
     'settlementType': SettlementType;
 }
 

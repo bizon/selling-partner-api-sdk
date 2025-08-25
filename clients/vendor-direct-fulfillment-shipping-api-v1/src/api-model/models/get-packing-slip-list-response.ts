@@ -19,20 +19,11 @@ import type { PackingSlipList } from './packing-slip-list';
 
 /**
  * Response payload with the list of Packing Slips.
- * @export
- * @interface GetPackingSlipListResponse
  */
 export interface GetPackingSlipListResponse {
-    /**
-     * 
-     * @type {PackingSlipList}
-     * @memberof GetPackingSlipListResponse
-     */
     'payload'?: PackingSlipList;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetPackingSlipListResponse
      */
     'errors'?: Array<Error>;
 }

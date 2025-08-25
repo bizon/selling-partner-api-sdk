@@ -16,20 +16,14 @@
 
 /**
  * Related business identifiers of the item.
- * @export
- * @interface ItemRelatedIdentifier
  */
 export interface ItemRelatedIdentifier {
     /**
      * Enumerated set of related item identifier names for the item.
-     * @type {string}
-     * @memberof ItemRelatedIdentifier
      */
     'itemRelatedIdentifierName'?: ItemRelatedIdentifierItemRelatedIdentifierNameEnum;
     /**
      * Corresponding value of ItemRelatedIdentifierName
-     * @type {string}
-     * @memberof ItemRelatedIdentifier
      */
     'itemRelatedIdentifierValue'?: string;
 }

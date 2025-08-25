@@ -22,45 +22,25 @@ import type { ItemReviewTopics } from './item-review-topics';
 
 /**
  * The response for the `getItemReviewTopics` operation.
- * @export
- * @interface ItemReviewTopicsResponse
  */
 export interface ItemReviewTopicsResponse {
     /**
      * The requested ASIN. The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace.
-     * @type {string}
-     * @memberof ItemReviewTopicsResponse
      */
     'asin': string;
     /**
      * The product title of the requested ASIN.
-     * @type {string}
-     * @memberof ItemReviewTopicsResponse
      */
     'itemName': string;
     /**
      * The requested marketplace id.
-     * @type {string}
-     * @memberof ItemReviewTopicsResponse
      */
     'marketplaceId': string;
     /**
      * The two digit country code of the requested marketplace id, in ISO 3166-1 alpha-2 format.
-     * @type {string}
-     * @memberof ItemReviewTopicsResponse
      */
     'countryCode': string;
-    /**
-     * 
-     * @type {DateRange}
-     * @memberof ItemReviewTopicsResponse
-     */
     'dateRange': DateRange;
-    /**
-     * 
-     * @type {ItemReviewTopics}
-     * @memberof ItemReviewTopicsResponse
-     */
     'topics': ItemReviewTopics;
 }
 

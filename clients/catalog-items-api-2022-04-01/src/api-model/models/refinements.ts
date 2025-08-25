@@ -22,20 +22,14 @@ import type { ClassificationRefinement } from './classification-refinement';
 
 /**
  * Optional fields that you can use to refine your search results.
- * @export
- * @interface Refinements
  */
 export interface Refinements {
     /**
      * A list of brands you can use to refine your search.
-     * @type {Array<BrandRefinement>}
-     * @memberof Refinements
      */
     'brands': Array<BrandRefinement>;
     /**
      * A list of classifications you can use to refine your search.
-     * @type {Array<ClassificationRefinement>}
-     * @memberof Refinements
      */
     'classifications': Array<ClassificationRefinement>;
 }

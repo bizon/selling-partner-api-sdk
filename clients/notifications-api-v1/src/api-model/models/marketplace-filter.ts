@@ -16,14 +16,10 @@
 
 /**
  * An event filter to customize your subscription to send notifications for only the specified `marketplaceId`s.
- * @export
- * @interface MarketplaceFilter
  */
 export interface MarketplaceFilter {
     /**
      * A list of marketplace identifiers to subscribe to (for example: ATVPDKIKX0DER). To receive notifications in every marketplace, do not provide this list.
-     * @type {Array<string>}
-     * @memberof MarketplaceFilter
      */
     'marketplaceIds'?: Array<string>;
 }

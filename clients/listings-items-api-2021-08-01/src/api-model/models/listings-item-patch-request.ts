@@ -19,20 +19,14 @@ import type { PatchOperation } from './patch-operation';
 
 /**
  * The request body schema for the `patchListingsItem` operation.
- * @export
- * @interface ListingsItemPatchRequest
  */
 export interface ListingsItemPatchRequest {
     /**
      * The Amazon product type of the listings item.
-     * @type {string}
-     * @memberof ListingsItemPatchRequest
      */
     'productType': string;
     /**
      * One or more JSON Patch operations to perform on the listings item.
-     * @type {Array<PatchOperation>}
-     * @memberof ListingsItemPatchRequest
      */
     'patches': Array<PatchOperation>;
 }

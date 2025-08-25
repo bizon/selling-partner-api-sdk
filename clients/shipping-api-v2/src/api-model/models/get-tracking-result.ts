@@ -22,39 +22,24 @@ import type { TrackingSummary } from './tracking-summary';
 
 /**
  * The payload for the getTracking operation.
- * @export
- * @interface GetTrackingResult
  */
 export interface GetTrackingResult {
     /**
      * The carrier generated identifier for a package in a purchased shipment.
-     * @type {string}
-     * @memberof GetTrackingResult
      */
     'trackingId': string;
     /**
      * The carrier generated reverse identifier for a returned package in a purchased shipment.
-     * @type {string}
-     * @memberof GetTrackingResult
      */
     'alternateLegTrackingId': string;
     /**
      * A list of tracking events.
-     * @type {Array<Event>}
-     * @memberof GetTrackingResult
      */
     'eventHistory': Array<Event>;
     /**
      * The date and time by which the shipment is promised to be delivered.
-     * @type {string}
-     * @memberof GetTrackingResult
      */
     'promisedDeliveryDate': string;
-    /**
-     * 
-     * @type {TrackingSummary}
-     * @memberof GetTrackingResult
-     */
     'summary': TrackingSummary;
 }
 

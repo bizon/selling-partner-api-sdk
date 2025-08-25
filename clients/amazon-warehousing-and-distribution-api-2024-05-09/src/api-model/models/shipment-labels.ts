@@ -19,21 +19,12 @@ import type { LabelStatus } from './label-status';
 
 /**
  * Shipment labels.
- * @export
- * @interface ShipmentLabels
  */
 export interface ShipmentLabels {
     /**
      * The URL to download shipment labels. The URL is active for 600 seconds from generation.
-     * @type {string}
-     * @memberof ShipmentLabels
      */
     'labelDownloadURL'?: string;
-    /**
-     * 
-     * @type {LabelStatus}
-     * @memberof ShipmentLabels
-     */
     'labelStatus': LabelStatus;
 }
 

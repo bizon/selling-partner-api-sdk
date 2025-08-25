@@ -16,14 +16,10 @@
 
 /**
  * The error response schema for the `getFixedSlotCapacity` operation.
- * @export
- * @interface FixedSlotCapacityErrors
  */
 export interface FixedSlotCapacityErrors {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof FixedSlotCapacityErrors
      */
     'errors'?: Array<Error>;
 }

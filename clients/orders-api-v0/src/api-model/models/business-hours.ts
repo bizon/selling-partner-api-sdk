@@ -19,20 +19,14 @@ import type { OpenInterval } from './open-interval';
 
 /**
  * Business days and hours when the destination is open for deliveries.
- * @export
- * @interface BusinessHours
  */
 export interface BusinessHours {
     /**
      * Day of the week.
-     * @type {string}
-     * @memberof BusinessHours
      */
     'DayOfWeek'?: BusinessHoursDayOfWeekEnum;
     /**
      * Time window during the day when the business is open.
-     * @type {Array<OpenInterval>}
-     * @memberof BusinessHours
      */
     'OpenIntervals'?: Array<OpenInterval>;
 }

@@ -19,14 +19,10 @@ import type { TaxDetails } from './tax-details';
 
 /**
  * Total tax details for the line item.
- * @export
- * @interface OrderItemTaxDetails
  */
 export interface OrderItemTaxDetails {
     /**
      * A list of tax line items.
-     * @type {Array<TaxDetails>}
-     * @memberof OrderItemTaxDetails
      */
     'taxLineItem'?: Array<TaxDetails>;
 }

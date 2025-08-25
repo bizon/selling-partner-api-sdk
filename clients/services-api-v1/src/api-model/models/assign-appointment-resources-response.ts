@@ -19,20 +19,11 @@ import type { AssignAppointmentResourcesResponsePayload } from './assign-appoint
 
 /**
  * Response schema for the `assignAppointmentResources` operation.
- * @export
- * @interface AssignAppointmentResourcesResponse
  */
 export interface AssignAppointmentResourcesResponse {
-    /**
-     * 
-     * @type {AssignAppointmentResourcesResponsePayload}
-     * @memberof AssignAppointmentResourcesResponse
-     */
     'payload'?: AssignAppointmentResourcesResponsePayload;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof AssignAppointmentResourcesResponse
      */
     'errors'?: Array<Error>;
 }

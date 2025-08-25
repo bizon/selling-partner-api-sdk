@@ -19,21 +19,12 @@ import type { HttpStatusLine } from './http-status-line';
 
 /**
  * The common properties for responses to individual requests within a batch.
- * @export
- * @interface BatchResponse
  */
 export interface BatchResponse {
     /**
      * A mapping of additional HTTP headers to send or receive for an individual request within a batch.
-     * @type {{ [key: string]: string; }}
-     * @memberof BatchResponse
      */
     'headers': { [key: string]: string; };
-    /**
-     * 
-     * @type {HttpStatusLine}
-     * @memberof BatchResponse
-     */
     'status': HttpStatusLine;
 }
 

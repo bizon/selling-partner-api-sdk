@@ -46,87 +46,32 @@ import type { TaxDetail } from './tax-detail';
 
 /**
  * The request schema for the OneClickShipment operation. When the channelType is not Amazon, shipTo is required and when channelType is Amazon shipTo is ignored.
- * @export
- * @interface OneClickShipmentRequest
  */
 export interface OneClickShipmentRequest {
-    /**
-     * 
-     * @type {Address}
-     * @memberof OneClickShipmentRequest
-     */
     'shipTo'?: Address;
-    /**
-     * 
-     * @type {Address}
-     * @memberof OneClickShipmentRequest
-     */
     'shipFrom': Address;
-    /**
-     * 
-     * @type {Address}
-     * @memberof OneClickShipmentRequest
-     */
     'returnTo'?: Address;
     /**
      * The ship date and time (the requested pickup). This defaults to the current date and time.
-     * @type {string}
-     * @memberof OneClickShipmentRequest
      */
     'shipDate'?: string;
-    /**
-     * 
-     * @type {GoodsOwner}
-     * @memberof OneClickShipmentRequest
-     */
     'goodsOwner'?: GoodsOwner;
     /**
      * A list of packages to be shipped through a shipping service offering.
-     * @type {Array<Package>}
-     * @memberof OneClickShipmentRequest
      */
     'packages': Array<Package>;
     /**
      * The value-added services to be added to a shipping service purchase.
-     * @type {Array<OneClickShipmentValueAddedService>}
-     * @memberof OneClickShipmentRequest
      */
     'valueAddedServicesDetails'?: Array<OneClickShipmentValueAddedService>;
     /**
      * A list of tax detail information.
-     * @type {Array<TaxDetail>}
-     * @memberof OneClickShipmentRequest
      */
     'taxDetails'?: Array<TaxDetail>;
-    /**
-     * 
-     * @type {ChannelDetails}
-     * @memberof OneClickShipmentRequest
-     */
     'channelDetails': ChannelDetails;
-    /**
-     * 
-     * @type {RequestedDocumentSpecification}
-     * @memberof OneClickShipmentRequest
-     */
     'labelSpecifications': RequestedDocumentSpecification;
-    /**
-     * 
-     * @type {ServiceSelection}
-     * @memberof OneClickShipmentRequest
-     */
     'serviceSelection': ServiceSelection;
-    /**
-     * 
-     * @type {ShipperInstruction}
-     * @memberof OneClickShipmentRequest
-     */
     'shipperInstruction'?: ShipperInstruction;
-    /**
-     * 
-     * @type {AccessPointDetails}
-     * @memberof OneClickShipmentRequest
-     */
     'destinationAccessPointDetails'?: AccessPointDetails;
 }
 

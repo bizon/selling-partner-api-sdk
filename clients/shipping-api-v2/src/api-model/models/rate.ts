@@ -40,93 +40,48 @@ import type { Weight } from './weight';
 
 /**
  * The details of a shipping service offering.
- * @export
- * @interface Rate
  */
 export interface Rate {
     /**
      * An identifier for the rate (shipment offering) provided by a shipping service provider.
-     * @type {string}
-     * @memberof Rate
      */
     'rateId': string;
     /**
      * The carrier identifier for the offering, provided by the carrier.
-     * @type {string}
-     * @memberof Rate
      */
     'carrierId': string;
     /**
      * The carrier name for the offering.
-     * @type {string}
-     * @memberof Rate
      */
     'carrierName': string;
     /**
      * An identifier for the shipping service.
-     * @type {string}
-     * @memberof Rate
      */
     'serviceId': string;
     /**
      * The name of the shipping service.
-     * @type {string}
-     * @memberof Rate
      */
     'serviceName': string;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof Rate
-     */
     'billedWeight'?: Weight;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof Rate
-     */
     'totalCharge': Currency;
-    /**
-     * 
-     * @type {Promise}
-     * @memberof Rate
-     */
     'promise': Promise;
     /**
      * A list of the document specifications supported for a shipment service offering.
-     * @type {Array<SupportedDocumentSpecification>}
-     * @memberof Rate
      */
     'supportedDocumentSpecifications': Array<SupportedDocumentSpecification>;
     /**
      * A list of value-added services available for a shipping service offering.
-     * @type {Array<AvailableValueAddedServiceGroup>}
-     * @memberof Rate
      */
     'availableValueAddedServiceGroups'?: Array<AvailableValueAddedServiceGroup>;
     /**
      * When true, indicates that additional inputs are required to purchase this shipment service. You must then call the getAdditionalInputs operation to return the JSON schema to use when providing the additional inputs to the purchaseShipment operation.
-     * @type {boolean}
-     * @memberof Rate
      */
     'requiresAdditionalInputs': boolean;
     /**
      * A list of RateItem
-     * @type {Array<RateItem>}
-     * @memberof Rate
      */
     'rateItemList'?: Array<RateItem>;
-    /**
-     * 
-     * @type {PaymentType}
-     * @memberof Rate
-     */
     'paymentType'?: PaymentType;
-    /**
-     * 
-     * @type {Benefits}
-     * @memberof Rate
-     */
     'benefits'?: Benefits;
 }
 

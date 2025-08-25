@@ -16,14 +16,10 @@
 
 /**
  * Contains the instructions about the fulfillment, such as the location from where you want the order filled.
- * @export
- * @interface FulfillmentInstruction
  */
 export interface FulfillmentInstruction {
     /**
      * The `sourceId` of the location from where you want the order fulfilled.
-     * @type {string}
-     * @memberof FulfillmentInstruction
      */
     'FulfillmentSupplySourceId'?: string;
 }

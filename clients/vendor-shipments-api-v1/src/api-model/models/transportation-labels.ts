@@ -22,20 +22,11 @@ import type { TransportLabel } from './transport-label';
 
 /**
  * The request schema for the GetShipmentLabels operation.
- * @export
- * @interface TransportationLabels
  */
 export interface TransportationLabels {
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof TransportationLabels
-     */
     'pagination'?: Pagination;
     /**
      * A list of one or more ShipmentLabels.
-     * @type {Array<TransportLabel>}
-     * @memberof TransportationLabels
      */
     'transportLabels'?: Array<TransportLabel>;
 }

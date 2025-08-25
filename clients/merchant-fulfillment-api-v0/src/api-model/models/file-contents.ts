@@ -19,26 +19,15 @@ import type { FileType } from './file-type';
 
 /**
  * The document data and checksum.
- * @export
- * @interface FileContents
  */
 export interface FileContents {
     /**
      * Data for printing labels encoded into a Base64, GZip-compressed string.
-     * @type {string}
-     * @memberof FileContents
      */
     'Contents': string;
-    /**
-     * 
-     * @type {FileType}
-     * @memberof FileContents
-     */
     'FileType': FileType;
     /**
      * An MD5 hash to validate the PDF document data, in the form of a Base64 string.
-     * @type {string}
-     * @memberof FileContents
      */
     'Checksum': string;
 }

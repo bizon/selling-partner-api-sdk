@@ -22,21 +22,9 @@ import type { PrepOwner } from './prep-owner';
 
 /**
  * Preparation instructions and who is responsible for the preparation.
- * @export
- * @interface PrepDetails
  */
 export interface PrepDetails {
-    /**
-     * 
-     * @type {PrepInstruction}
-     * @memberof PrepDetails
-     */
     'PrepInstruction': PrepInstruction;
-    /**
-     * 
-     * @type {PrepOwner}
-     * @memberof PrepDetails
-     */
     'PrepOwner': PrepOwner;
 }
 

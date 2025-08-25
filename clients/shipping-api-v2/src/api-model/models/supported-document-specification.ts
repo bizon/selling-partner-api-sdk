@@ -25,26 +25,12 @@ import type { PrintOption } from './print-option';
 
 /**
  * Document specification that is supported for a service offering.
- * @export
- * @interface SupportedDocumentSpecification
  */
 export interface SupportedDocumentSpecification {
-    /**
-     * 
-     * @type {DocumentFormat}
-     * @memberof SupportedDocumentSpecification
-     */
     'format': DocumentFormat;
-    /**
-     * 
-     * @type {DocumentSize}
-     * @memberof SupportedDocumentSpecification
-     */
     'size': DocumentSize;
     /**
      * A list of the format options for a label.
-     * @type {Array<PrintOption>}
-     * @memberof SupportedDocumentSpecification
      */
     'printOptions': Array<PrintOption>;
 }

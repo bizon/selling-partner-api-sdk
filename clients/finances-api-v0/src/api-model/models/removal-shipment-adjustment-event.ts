@@ -19,44 +19,30 @@ import type { RemovalShipmentItemAdjustment } from './removal-shipment-item-adju
 
 /**
  * A financial adjustment event for FBA liquidated inventory. A positive value indicates money owed to Amazon by the buyer (for example, when the charge was incorrectly calculated as less than it should be). A negative value indicates a full or partial refund owed to the buyer (for example, when the buyer receives damaged items or fewer items than ordered).
- * @export
- * @interface RemovalShipmentAdjustmentEvent
  */
 export interface RemovalShipmentAdjustmentEvent {
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof RemovalShipmentAdjustmentEvent
      */
     'PostedDate'?: string;
     /**
      * The unique identifier for the adjustment event.
-     * @type {string}
-     * @memberof RemovalShipmentAdjustmentEvent
      */
     'AdjustmentEventId'?: string;
     /**
      * The merchant removal orderId.
-     * @type {string}
-     * @memberof RemovalShipmentAdjustmentEvent
      */
     'MerchantOrderId'?: string;
     /**
      * The orderId for shipping inventory.
-     * @type {string}
-     * @memberof RemovalShipmentAdjustmentEvent
      */
     'OrderId'?: string;
     /**
      * The type of removal order.  Possible values:  * WHOLESALE_LIQUIDATION.
-     * @type {string}
-     * @memberof RemovalShipmentAdjustmentEvent
      */
     'TransactionType'?: string;
     /**
      * A comma-delimited list of Removal shipmentItemAdjustment details for FBA inventory.
-     * @type {Array<RemovalShipmentItemAdjustment>}
-     * @memberof RemovalShipmentAdjustmentEvent
      */
     'RemovalShipmentItemAdjustmentList'?: Array<RemovalShipmentItemAdjustment>;
 }

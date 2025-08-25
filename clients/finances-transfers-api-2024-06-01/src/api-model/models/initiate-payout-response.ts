@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the `initiatePayout` operation.
- * @export
- * @interface InitiatePayoutResponse
  */
 export interface InitiatePayoutResponse {
     /**
      * The financial event group ID for a successfully initiated payout. You can use this ID to track payout information.
-     * @type {string}
-     * @memberof InitiatePayoutResponse
      */
     'payoutReferenceId': string;
 }

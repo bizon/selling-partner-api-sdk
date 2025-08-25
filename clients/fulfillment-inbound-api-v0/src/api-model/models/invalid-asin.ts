@@ -19,21 +19,12 @@ import type { ErrorReason } from './error-reason';
 
 /**
  * Contains details about an invalid ASIN
- * @export
- * @interface InvalidASIN
  */
 export interface InvalidASIN {
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof InvalidASIN
      */
     'ASIN'?: string;
-    /**
-     * 
-     * @type {ErrorReason}
-     * @memberof InvalidASIN
-     */
     'ErrorReason'?: ErrorReason;
 }
 

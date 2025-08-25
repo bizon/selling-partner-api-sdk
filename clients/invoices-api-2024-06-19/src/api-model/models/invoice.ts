@@ -19,68 +19,46 @@ import type { TransactionIdentifier } from './transaction-identifier';
 
 /**
  * Provides detailed information about an invoice.
- * @export
- * @interface Invoice
  */
 export interface Invoice {
     /**
      * The date and time the invoice is issued. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
-     * @type {string}
-     * @memberof Invoice
      */
     'date'?: string;
     /**
      * If the invoice is in an error state, this attribute displays the error code.
-     * @type {string}
-     * @memberof Invoice
      */
     'errorCode'?: string;
     /**
      * The invoice identifier that is used by an external party. This is typically the government agency that authorized the invoice.
-     * @type {string}
-     * @memberof Invoice
      */
     'externalInvoiceId'?: string;
     /**
      * The response message from the government authority when there is an error during invoice issuance.
-     * @type {string}
-     * @memberof Invoice
      */
     'govResponse'?: string;
     /**
      * The invoice identifier.
-     * @type {string}
-     * @memberof Invoice
      */
     'id'?: string;
     /**
      * The classification of the invoice type. This varies across marketplaces. Use the `getInvoicesAttributes` operation to check `invoiceType` options.
-     * @type {string}
-     * @memberof Invoice
      */
     'invoiceType'?: string;
     /**
      * Use this identifier in conjunction with `externalInvoiceId` to identify invoices from the same seller.
-     * @type {string}
-     * @memberof Invoice
      */
     'series'?: string;
     /**
      * The invoice status classification. Use the `getInvoicesAttributes` operation to check invoice status options.
-     * @type {string}
-     * @memberof Invoice
      */
     'status'?: string;
     /**
      * List with identifiers for the transactions associated to the invoice.
-     * @type {Array<TransactionIdentifier>}
-     * @memberof Invoice
      */
     'transactionIds'?: Array<TransactionIdentifier>;
     /**
      * Classification of the transaction that originated this invoice. Use the `getInvoicesAttributes` operation to check `transactionType` options.
-     * @type {string}
-     * @memberof Invoice
      */
     'transactionType'?: string;
 }

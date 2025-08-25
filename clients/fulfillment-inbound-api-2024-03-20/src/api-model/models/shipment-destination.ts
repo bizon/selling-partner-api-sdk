@@ -19,26 +19,15 @@ import type { Address } from './address';
 
 /**
  * The Amazon fulfillment center address and warehouse ID.
- * @export
- * @interface ShipmentDestination
  */
 export interface ShipmentDestination {
-    /**
-     * 
-     * @type {Address}
-     * @memberof ShipmentDestination
-     */
     'address'?: Address;
     /**
      * The type of destination for this shipment. Possible values: `AMAZON_OPTIMIZED`, `AMAZON_WAREHOUSE`.
-     * @type {string}
-     * @memberof ShipmentDestination
      */
     'destinationType': string;
     /**
      * The warehouse that the shipment should be sent to. Empty if the destination type is `AMAZON_OPTIMIZED`.
-     * @type {string}
-     * @memberof ShipmentDestination
      */
     'warehouseId'?: string;
 }

@@ -25,26 +25,18 @@ import type { ReturnItem } from './return-item';
 
 /**
  * The result for the createFulfillmentReturn operation.
- * @export
- * @interface CreateFulfillmentReturnResult
  */
 export interface CreateFulfillmentReturnResult {
     /**
      * An array of items that Amazon accepted for return. Returns empty if no items were accepted for return.
-     * @type {Array<ReturnItem>}
-     * @memberof CreateFulfillmentReturnResult
      */
     'returnItems'?: Array<ReturnItem>;
     /**
      * An array of invalid return item information.
-     * @type {Array<InvalidReturnItem>}
-     * @memberof CreateFulfillmentReturnResult
      */
     'invalidReturnItems'?: Array<InvalidReturnItem>;
     /**
      * An array of return authorization information.
-     * @type {Array<ReturnAuthorization>}
-     * @memberof CreateFulfillmentReturnResult
      */
     'returnAuthorizations'?: Array<ReturnAuthorization>;
 }

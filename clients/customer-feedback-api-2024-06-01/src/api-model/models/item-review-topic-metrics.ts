@@ -16,26 +16,18 @@
 
 /**
  * The item review topic metrics.
- * @export
- * @interface ItemReviewTopicMetrics
  */
 export interface ItemReviewTopicMetrics {
     /**
      * The number of times that reviews mention the topic. This value is `null` if reviews do not mention the topic frequently enough.
-     * @type {number}
-     * @memberof ItemReviewTopicMetrics
      */
     'numberOfMentions'?: number;
     /**
      * The percentage of customer reviews that mention the topic. This value is `null` if reviews do not mention the topic frequently enough.
-     * @type {number}
-     * @memberof ItemReviewTopicMetrics
      */
     'occurrencePercentage'?: number;
     /**
      * The effect of the topic on the star rating of the ASIN. This value can be positive or negative. This value is `null` if the topic does\'t affect the star rating of the ASIN.
-     * @type {number}
-     * @memberof ItemReviewTopicMetrics
      */
     'starRatingImpact'?: number;
 }

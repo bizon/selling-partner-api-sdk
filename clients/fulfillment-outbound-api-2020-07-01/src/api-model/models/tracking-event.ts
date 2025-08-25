@@ -22,32 +22,16 @@ import type { TrackingAddress } from './tracking-address';
 
 /**
  * Information for tracking package deliveries.
- * @export
- * @interface TrackingEvent
  */
 export interface TrackingEvent {
     /**
      * Date timestamp
-     * @type {string}
-     * @memberof TrackingEvent
      */
     'eventDate': string;
-    /**
-     * 
-     * @type {TrackingAddress}
-     * @memberof TrackingEvent
-     */
     'eventAddress': TrackingAddress;
-    /**
-     * 
-     * @type {EventCode}
-     * @memberof TrackingEvent
-     */
     'eventCode': EventCode;
     /**
      * A description for the corresponding event code.
-     * @type {string}
-     * @memberof TrackingEvent
      */
     'eventDescription': string;
 }

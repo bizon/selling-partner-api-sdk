@@ -27,7 +27,6 @@ import type { CreateProductReviewAndSellerFeedbackSolicitationResponse } from '.
 import type { GetSolicitationActionsForOrderResponse } from '../models';
 /**
  * SolicitationsApi - axios parameter creator
- * @export
  */
 export const SolicitationsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -116,7 +115,6 @@ export const SolicitationsApiAxiosParamCreator = function (configuration?: Confi
 
 /**
  * SolicitationsApi - functional programming interface
- * @export
  */
 export const SolicitationsApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = SolicitationsApiAxiosParamCreator(configuration)
@@ -152,7 +150,6 @@ export const SolicitationsApiFp = function(configuration?: Configuration) {
 
 /**
  * SolicitationsApi - factory interface
- * @export
  */
 export const SolicitationsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = SolicitationsApiFp(configuration)
@@ -180,51 +177,36 @@ export const SolicitationsApiFactory = function (configuration?: Configuration, 
 
 /**
  * Request parameters for createProductReviewAndSellerFeedbackSolicitation operation in SolicitationsApi.
- * @export
- * @interface SolicitationsApiCreateProductReviewAndSellerFeedbackSolicitationRequest
  */
 export interface SolicitationsApiCreateProductReviewAndSellerFeedbackSolicitationRequest {
     /**
      * An Amazon order identifier. This specifies the order for which a solicitation is sent.
-     * @type {string}
-     * @memberof SolicitationsApiCreateProductReviewAndSellerFeedbackSolicitation
      */
     readonly amazonOrderId: string
 
     /**
      * A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-     * @type {Array<string>}
-     * @memberof SolicitationsApiCreateProductReviewAndSellerFeedbackSolicitation
      */
     readonly marketplaceIds: Array<string>
 }
 
 /**
  * Request parameters for getSolicitationActionsForOrder operation in SolicitationsApi.
- * @export
- * @interface SolicitationsApiGetSolicitationActionsForOrderRequest
  */
 export interface SolicitationsApiGetSolicitationActionsForOrderRequest {
     /**
      * An Amazon order identifier. This specifies the order for which you want a list of available solicitation types.
-     * @type {string}
-     * @memberof SolicitationsApiGetSolicitationActionsForOrder
      */
     readonly amazonOrderId: string
 
     /**
      * A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-     * @type {Array<string>}
-     * @memberof SolicitationsApiGetSolicitationActionsForOrder
      */
     readonly marketplaceIds: Array<string>
 }
 
 /**
  * SolicitationsApi - object-oriented interface
- * @export
- * @class SolicitationsApi
- * @extends {BaseAPI}
  */
 export class SolicitationsApi extends BaseAPI {
     /**
@@ -232,7 +214,6 @@ export class SolicitationsApi extends BaseAPI {
      * @param {SolicitationsApiCreateProductReviewAndSellerFeedbackSolicitationRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SolicitationsApi
      */
     public createProductReviewAndSellerFeedbackSolicitation(requestParameters: SolicitationsApiCreateProductReviewAndSellerFeedbackSolicitationRequest, options?: RawAxiosRequestConfig) {
         return SolicitationsApiFp(this.configuration).createProductReviewAndSellerFeedbackSolicitation(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
@@ -243,7 +224,6 @@ export class SolicitationsApi extends BaseAPI {
      * @param {SolicitationsApiGetSolicitationActionsForOrderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SolicitationsApi
      */
     public getSolicitationActionsForOrder(requestParameters: SolicitationsApiGetSolicitationActionsForOrderRequest, options?: RawAxiosRequestConfig) {
         return SolicitationsApiFp(this.configuration).getSolicitationActionsForOrder(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));

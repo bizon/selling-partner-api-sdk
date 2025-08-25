@@ -28,32 +28,16 @@ import type { FulfillmentTime } from './fulfillment-time';
 
 /**
  * Input for set appointment fulfillment data operation.
- * @export
- * @interface SetAppointmentFulfillmentDataRequest
  */
 export interface SetAppointmentFulfillmentDataRequest {
-    /**
-     * 
-     * @type {DateTimeRange}
-     * @memberof SetAppointmentFulfillmentDataRequest
-     */
     'estimatedArrivalTime'?: DateTimeRange;
-    /**
-     * 
-     * @type {FulfillmentTime}
-     * @memberof SetAppointmentFulfillmentDataRequest
-     */
     'fulfillmentTime'?: FulfillmentTime;
     /**
      * List of resources that performs or performed job appointment fulfillment.
-     * @type {Array<AppointmentResource>}
-     * @memberof SetAppointmentFulfillmentDataRequest
      */
     'appointmentResources'?: Array<AppointmentResource>;
     /**
      * List of documents captured during service appointment fulfillment.
-     * @type {Array<FulfillmentDocument>}
-     * @memberof SetAppointmentFulfillmentDataRequest
      */
     'fulfillmentDocuments'?: Array<FulfillmentDocument>;
 }

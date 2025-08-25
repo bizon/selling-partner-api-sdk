@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the createUnexpectedProblem operation.
- * @export
- * @interface CreateUnexpectedProblemResponse
  */
 export interface CreateUnexpectedProblemResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CreateUnexpectedProblemResponse
      */
     'errors'?: Array<Error>;
 }

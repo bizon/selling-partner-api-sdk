@@ -28,33 +28,11 @@ import type { Weight } from './weight';
 
 /**
  * The specific rate for a shipping service, or null if no service available.
- * @export
- * @interface ServiceRate
  */
 export interface ServiceRate {
-    /**
-     * 
-     * @type {Currency}
-     * @memberof ServiceRate
-     */
     'totalCharge': Currency;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof ServiceRate
-     */
     'billableWeight': Weight;
-    /**
-     * 
-     * @type {ServiceType}
-     * @memberof ServiceRate
-     */
     'serviceType': ServiceType;
-    /**
-     * 
-     * @type {ShippingPromiseSet}
-     * @memberof ServiceRate
-     */
     'promise': ShippingPromiseSet;
 }
 

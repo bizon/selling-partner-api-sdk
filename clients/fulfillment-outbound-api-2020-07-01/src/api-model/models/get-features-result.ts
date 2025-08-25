@@ -19,14 +19,10 @@ import type { Feature } from './feature';
 
 /**
  * The payload for the `getFeatures` operation.
- * @export
- * @interface GetFeaturesResult
  */
 export interface GetFeaturesResult {
     /**
      * An array of features.
-     * @type {Array<Feature>}
-     * @memberof GetFeaturesResult
      */
     'features': Array<Feature>;
 }

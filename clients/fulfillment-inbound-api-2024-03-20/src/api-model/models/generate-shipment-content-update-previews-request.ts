@@ -22,20 +22,14 @@ import type { ItemInput } from './item-input';
 
 /**
  * The `GenerateShipmentContentUpdatePreviews` request.
- * @export
- * @interface GenerateShipmentContentUpdatePreviewsRequest
  */
 export interface GenerateShipmentContentUpdatePreviewsRequest {
     /**
      * A list of boxes that will be present in the shipment after the update.
-     * @type {Array<BoxUpdateInput>}
-     * @memberof GenerateShipmentContentUpdatePreviewsRequest
      */
     'boxes': Array<BoxUpdateInput>;
     /**
      * A list of all items that will be present in the shipment after the update.
-     * @type {Array<ItemInput>}
-     * @memberof GenerateShipmentContentUpdatePreviewsRequest
      */
     'items': Array<ItemInput>;
 }

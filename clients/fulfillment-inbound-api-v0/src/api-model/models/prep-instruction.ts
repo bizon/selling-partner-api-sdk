@@ -16,8 +16,6 @@
 
 /**
  * Preparation instructions for shipping an item to Amazon\'s fulfillment network. For more information about preparing items for shipment to Amazon\'s fulfillment network, see the Seller Central Help for your marketplace.
- * @export
- * @enum {string}
  */
 
 export const PrepInstruction = {

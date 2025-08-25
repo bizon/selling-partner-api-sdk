@@ -19,15 +19,8 @@ import type { PrescriptionDetail } from './prescription-detail';
 
 /**
  * Additional information related to the verification of a regulated order.
- * @export
- * @interface VerificationDetails
  */
 export interface VerificationDetails {
-    /**
-     * 
-     * @type {PrescriptionDetail}
-     * @memberof VerificationDetails
-     */
     'prescriptionDetail'?: PrescriptionDetail;
 }
 

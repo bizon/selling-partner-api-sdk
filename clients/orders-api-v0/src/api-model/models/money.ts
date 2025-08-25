@@ -16,20 +16,14 @@
 
 /**
  * The monetary value of the order.
- * @export
- * @interface Money
  */
 export interface Money {
     /**
      * The three-digit currency code. In ISO 4217 format.
-     * @type {string}
-     * @memberof Money
      */
     'CurrencyCode'?: string;
     /**
      * The currency amount.
-     * @type {string}
-     * @memberof Money
      */
     'Amount'?: string;
 }

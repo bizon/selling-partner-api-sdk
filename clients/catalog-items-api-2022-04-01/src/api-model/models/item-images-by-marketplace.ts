@@ -19,20 +19,14 @@ import type { ItemImage } from './item-image';
 
 /**
  * Images for an item in the Amazon catalog, grouped by `marketplaceId`.
- * @export
- * @interface ItemImagesByMarketplace
  */
 export interface ItemImagesByMarketplace {
     /**
      * Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof ItemImagesByMarketplace
      */
     'marketplaceId': string;
     /**
      * Images for an item in the Amazon catalog, grouped by `marketplaceId`.
-     * @type {Array<ItemImage>}
-     * @memberof ItemImagesByMarketplace
      */
     'images': Array<ItemImage>;
 }

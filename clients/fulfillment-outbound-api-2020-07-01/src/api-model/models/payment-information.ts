@@ -16,26 +16,18 @@
 
 /**
  * The attributes related to the payment made from customer to seller for this order.
- * @export
- * @interface PaymentInformation
  */
 export interface PaymentInformation {
     /**
      * The transaction identifier of this payment.
-     * @type {string}
-     * @memberof PaymentInformation
      */
     'paymentTransactionId': string;
     /**
      * The transaction mode of this payment.
-     * @type {string}
-     * @memberof PaymentInformation
      */
     'paymentMode': string;
     /**
      * Date timestamp
-     * @type {string}
-     * @memberof PaymentInformation
      */
     'paymentDate': string;
 }

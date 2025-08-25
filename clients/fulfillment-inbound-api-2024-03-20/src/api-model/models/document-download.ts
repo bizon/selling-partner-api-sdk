@@ -16,26 +16,18 @@
 
 /**
  * Resource to download the requested document.
- * @export
- * @interface DocumentDownload
  */
 export interface DocumentDownload {
     /**
      * The type of download. Possible values: `URL`.
-     * @type {string}
-     * @memberof DocumentDownload
      */
     'downloadType': string;
     /**
      * The URI\'s expiration time. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
-     * @type {string}
-     * @memberof DocumentDownload
      */
     'expiration'?: string;
     /**
      * Uniform resource identifier to identify where the document is located.
-     * @type {string}
-     * @memberof DocumentDownload
      */
     'uri': string;
 }

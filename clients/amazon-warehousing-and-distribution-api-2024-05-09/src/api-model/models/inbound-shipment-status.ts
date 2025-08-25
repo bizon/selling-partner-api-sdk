@@ -16,8 +16,6 @@
 
 /**
  * Possible shipment statuses used by shipments.
- * @export
- * @enum {string}
  */
 
 export const InboundShipmentStatus = {

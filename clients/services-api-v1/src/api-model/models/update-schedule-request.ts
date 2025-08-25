@@ -19,14 +19,10 @@ import type { AvailabilityRecord } from './availability-record';
 
 /**
  * Request schema for the `updateSchedule` operation.
- * @export
- * @interface UpdateScheduleRequest
  */
 export interface UpdateScheduleRequest {
     /**
      * List of `AvailabilityRecord`s to represent the capacity of a resource over a time range.
-     * @type {Array<AvailabilityRecord>}
-     * @memberof UpdateScheduleRequest
      */
     'schedules': Array<AvailabilityRecord>;
 }

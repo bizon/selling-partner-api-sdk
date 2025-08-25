@@ -19,26 +19,12 @@ import type { TimeOfDay } from './time-of-day';
 
 /**
  * The hours in which the access point shall remain operational
- * @export
- * @interface OperatingHours
  */
 export interface OperatingHours {
-    /**
-     * 
-     * @type {TimeOfDay}
-     * @memberof OperatingHours
-     */
     'closingTime'?: TimeOfDay;
-    /**
-     * 
-     * @type {TimeOfDay}
-     * @memberof OperatingHours
-     */
     'openingTime'?: TimeOfDay;
     /**
      * midDayClosures operating hours array
-     * @type {Array<TimeOfDay>}
-     * @memberof OperatingHours
      */
     'midDayClosures'?: Array<TimeOfDay>;
 }

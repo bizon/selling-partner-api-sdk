@@ -22,7 +22,6 @@ import type { PostContentDocumentResponseAllOf } from './post-content-document-r
 
 /**
  * @type PostContentDocumentResponse
- * @export
  */
 export type PostContentDocumentResponse = AplusResponse & PostContentDocumentResponseAllOf;
 

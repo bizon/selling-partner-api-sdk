@@ -22,44 +22,27 @@ import type { PlainTextItem } from './plain-text-item';
 
 /**
  * The A+ Content standard comparison product block.
- * @export
- * @interface StandardComparisonProductBlock
  */
 export interface StandardComparisonProductBlock {
     /**
      * The rank or index of this comparison product block within the module. Different blocks cannot occupy the same position within a single module.
-     * @type {number}
-     * @memberof StandardComparisonProductBlock
      */
     'position': number;
-    /**
-     * 
-     * @type {ImageComponent}
-     * @memberof StandardComparisonProductBlock
-     */
     'image'?: ImageComponent;
     /**
      * The comparison product title.
-     * @type {string}
-     * @memberof StandardComparisonProductBlock
      */
     'title'?: string;
     /**
      * The Amazon Standard Identification Number (ASIN).
-     * @type {string}
-     * @memberof StandardComparisonProductBlock
      */
     'asin'?: string;
     /**
      * When true, indicates that this content block is visually highlighted.
-     * @type {boolean}
-     * @memberof StandardComparisonProductBlock
      */
     'highlight'?: boolean;
     /**
      * Comparison metrics for the product.
-     * @type {Array<PlainTextItem>}
-     * @memberof StandardComparisonProductBlock
      */
     'metrics'?: Array<PlainTextItem>;
 }

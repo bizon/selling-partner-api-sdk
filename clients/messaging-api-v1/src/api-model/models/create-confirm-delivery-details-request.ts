@@ -16,14 +16,10 @@
 
 /**
  * The request schema for the createConfirmDeliveryDetails operation.
- * @export
- * @interface CreateConfirmDeliveryDetailsRequest
  */
 export interface CreateConfirmDeliveryDetailsRequest {
     /**
      * The text to be sent to the buyer. Only links related to order delivery are allowed. Do not include HTML or email addresses. The text must be written in the buyer\'s language of preference, which can be retrieved from the GetAttributes operation.
-     * @type {string}
-     * @memberof CreateConfirmDeliveryDetailsRequest
      */
     'text'?: string;
 }

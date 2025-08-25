@@ -31,7 +31,6 @@ import type { InitiatePayoutRequest } from '../models';
 import type { InitiatePayoutResponse } from '../models';
 /**
  * FinancesTransfersApi - axios parameter creator
- * @export
  */
 export const FinancesTransfersApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -116,7 +115,6 @@ export const FinancesTransfersApiAxiosParamCreator = function (configuration?: C
 
 /**
  * FinancesTransfersApi - functional programming interface
- * @export
  */
 export const FinancesTransfersApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = FinancesTransfersApiAxiosParamCreator(configuration)
@@ -151,7 +149,6 @@ export const FinancesTransfersApiFp = function(configuration?: Configuration) {
 
 /**
  * FinancesTransfersApi - factory interface
- * @export
  */
 export const FinancesTransfersApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = FinancesTransfersApiFp(configuration)
@@ -179,44 +176,31 @@ export const FinancesTransfersApiFactory = function (configuration?: Configurati
 
 /**
  * Request parameters for getPaymentMethods operation in FinancesTransfersApi.
- * @export
- * @interface FinancesTransfersApiGetPaymentMethodsRequest
  */
 export interface FinancesTransfersApiGetPaymentMethodsRequest {
     /**
      * The identifier of the marketplace from which you want to retrieve payment methods. For the list of possible marketplace identifiers, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof FinancesTransfersApiGetPaymentMethods
      */
     readonly marketplaceId: string
 
     /**
      * A comma-separated list of the payment method types you want to include in the response.
-     * @type {Set<'BANK_ACCOUNT' | 'CARD' | 'SELLER_WALLET'>}
-     * @memberof FinancesTransfersApiGetPaymentMethods
      */
     readonly paymentMethodTypes?: Set<GetPaymentMethodsPaymentMethodTypesEnum>
 }
 
 /**
  * Request parameters for initiatePayout operation in FinancesTransfersApi.
- * @export
- * @interface FinancesTransfersApiInitiatePayoutRequest
  */
 export interface FinancesTransfersApiInitiatePayoutRequest {
     /**
      * The request body for the &#x60;initiatePayout&#x60; operation.
-     * @type {InitiatePayoutRequest}
-     * @memberof FinancesTransfersApiInitiatePayout
      */
     readonly body: InitiatePayoutRequest
 }
 
 /**
  * FinancesTransfersApi - object-oriented interface
- * @export
- * @class FinancesTransfersApi
- * @extends {BaseAPI}
  */
 export class FinancesTransfersApi extends BaseAPI {
     /**
@@ -224,7 +208,6 @@ export class FinancesTransfersApi extends BaseAPI {
      * @param {FinancesTransfersApiGetPaymentMethodsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FinancesTransfersApi
      */
     public getPaymentMethods(requestParameters: FinancesTransfersApiGetPaymentMethodsRequest, options?: RawAxiosRequestConfig) {
         return FinancesTransfersApiFp(this.configuration).getPaymentMethods(requestParameters.marketplaceId, requestParameters.paymentMethodTypes, options).then((request) => request(this.axios, this.basePath));
@@ -235,16 +218,12 @@ export class FinancesTransfersApi extends BaseAPI {
      * @param {FinancesTransfersApiInitiatePayoutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FinancesTransfersApi
      */
     public initiatePayout(requestParameters: FinancesTransfersApiInitiatePayoutRequest, options?: RawAxiosRequestConfig) {
         return FinancesTransfersApiFp(this.configuration).initiatePayout(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetPaymentMethodsPaymentMethodTypesEnum = {
     BankAccount: 'BANK_ACCOUNT',
     Card: 'CARD',

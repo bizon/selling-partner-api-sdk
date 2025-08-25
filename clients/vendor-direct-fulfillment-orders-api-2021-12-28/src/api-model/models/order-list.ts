@@ -22,20 +22,11 @@ import type { Pagination } from './pagination';
 
 /**
  * A list of purchase orders.
- * @export
- * @interface OrderList
  */
 export interface OrderList {
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof OrderList
-     */
     'pagination'?: Pagination;
     /**
      * Represents a purchase order within the OrderList.
-     * @type {Array<Order>}
-     * @memberof OrderList
      */
     'orders'?: Array<Order>;
 }

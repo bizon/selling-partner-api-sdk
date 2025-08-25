@@ -28,44 +28,24 @@ import type { PrepInstruction } from './prep-instruction';
 
 /**
  * Labeling requirements and item preparation instructions to help you prepare items for shipment to Amazon\'s fulfillment network.
- * @export
- * @interface SKUPrepInstructions
  */
 export interface SKUPrepInstructions {
     /**
      * The seller SKU of the item.
-     * @type {string}
-     * @memberof SKUPrepInstructions
      */
     'SellerSKU'?: string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof SKUPrepInstructions
      */
     'ASIN'?: string;
-    /**
-     * 
-     * @type {BarcodeInstruction}
-     * @memberof SKUPrepInstructions
-     */
     'BarcodeInstruction'?: BarcodeInstruction;
-    /**
-     * 
-     * @type {PrepGuidance}
-     * @memberof SKUPrepInstructions
-     */
     'PrepGuidance'?: PrepGuidance;
     /**
      * A list of preparation instructions to help with item sourcing decisions.
-     * @type {Array<PrepInstruction>}
-     * @memberof SKUPrepInstructions
      */
     'PrepInstructionList'?: Array<PrepInstruction>;
     /**
      * A list of preparation instructions and fees for Amazon to prep goods for shipment.
-     * @type {Array<AmazonPrepFeesDetails>}
-     * @memberof SKUPrepInstructions
      */
     'AmazonPrepFeesDetailsList'?: Array<AmazonPrepFeesDetails>;
 }

@@ -19,14 +19,10 @@ import type { AppointmentResource } from './appointment-resource';
 
 /**
  * Request schema for the `assignAppointmentResources` operation.
- * @export
- * @interface AssignAppointmentResourcesRequest
  */
 export interface AssignAppointmentResourcesRequest {
     /**
      * List of resources that performs or performed job appointment fulfillment.
-     * @type {Array<AppointmentResource>}
-     * @memberof AssignAppointmentResourcesRequest
      */
     'resources': Array<AppointmentResource>;
 }

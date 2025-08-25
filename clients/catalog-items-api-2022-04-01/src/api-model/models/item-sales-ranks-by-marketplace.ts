@@ -22,26 +22,18 @@ import type { ItemDisplayGroupSalesRank } from './item-display-group-sales-rank'
 
 /**
  * Sales ranks of an Amazon catalog item, grouped by `marketplaceId`.
- * @export
- * @interface ItemSalesRanksByMarketplace
  */
 export interface ItemSalesRanksByMarketplace {
     /**
      * Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof ItemSalesRanksByMarketplace
      */
     'marketplaceId': string;
     /**
      * Sales ranks of an Amazon catalog item for a `marketplaceId`, grouped by classification.
-     * @type {Array<ItemClassificationSalesRank>}
-     * @memberof ItemSalesRanksByMarketplace
      */
     'classificationRanks'?: Array<ItemClassificationSalesRank>;
     /**
      * Sales ranks of an Amazon catalog item for a `marketplaceId`, grouped by website display group.
-     * @type {Array<ItemDisplayGroupSalesRank>}
-     * @memberof ItemSalesRanksByMarketplace
      */
     'displayGroupRanks'?: Array<ItemDisplayGroupSalesRank>;
 }

@@ -16,14 +16,10 @@
 
 /**
  * The `confirmTransportationOptions` response.
- * @export
- * @interface ConfirmTransportationOptionsResponse
  */
 export interface ConfirmTransportationOptionsResponse {
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof ConfirmTransportationOptionsResponse
      */
     'operationId': string;
 }

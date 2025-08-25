@@ -17,22 +17,10 @@
 // @ts-ignore
 import type { GetMyFeesEstimateResult } from './get-my-fees-estimate-result';
 
-/**
- * 
- * @export
- * @interface GetMyFeesEstimateResponse
- */
 export interface GetMyFeesEstimateResponse {
-    /**
-     * 
-     * @type {GetMyFeesEstimateResult}
-     * @memberof GetMyFeesEstimateResponse
-     */
     'payload'?: GetMyFeesEstimateResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetMyFeesEstimateResponse
      */
     'errors'?: Array<Error>;
 }

@@ -22,21 +22,9 @@ import type { ServicesCapability } from './services-capability';
 
 /**
  * The capabilities of a supply source.
- * @export
- * @interface SupplySourceCapabilities
  */
 export interface SupplySourceCapabilities {
-    /**
-     * 
-     * @type {OutboundCapability}
-     * @memberof SupplySourceCapabilities
-     */
     'outbound'?: OutboundCapability;
-    /**
-     * 
-     * @type {ServicesCapability}
-     * @memberof SupplySourceCapabilities
-     */
     'services'?: ServicesCapability;
 }
 

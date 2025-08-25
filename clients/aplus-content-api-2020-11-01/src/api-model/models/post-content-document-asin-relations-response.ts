@@ -19,7 +19,6 @@ import type { AplusResponse } from './aplus-response';
 
 /**
  * @type PostContentDocumentAsinRelationsResponse
- * @export
  */
 export type PostContentDocumentAsinRelationsResponse = AplusResponse;
 

@@ -19,14 +19,10 @@ import type { Stop } from './stop';
 
 /**
  * This is used only for direct import shipment confirmations.
- * @export
- * @interface Route
  */
 export interface Route {
     /**
      * The port or location involved in transporting the cargo, as specified in transportation contracts or operational plans.
-     * @type {Array<Stop>}
-     * @memberof Route
      */
     'stops': Array<Stop>;
 }

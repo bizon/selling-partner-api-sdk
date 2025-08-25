@@ -22,33 +22,14 @@ import type { StatusUpdateDetails } from './status-update-details';
 
 /**
  * Represents an update to the status of a shipment.
- * @export
- * @interface ShipmentStatusUpdate
  */
 export interface ShipmentStatusUpdate {
     /**
      * Purchase order number of the shipment for which to update the shipment status.
-     * @type {string}
-     * @memberof ShipmentStatusUpdate
      */
     'purchaseOrderNumber': string;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof ShipmentStatusUpdate
-     */
     'sellingParty': PartyIdentification;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof ShipmentStatusUpdate
-     */
     'shipFromParty': PartyIdentification;
-    /**
-     * 
-     * @type {StatusUpdateDetails}
-     * @memberof ShipmentStatusUpdate
-     */
     'statusUpdateDetails': StatusUpdateDetails;
 }
 

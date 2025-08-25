@@ -19,20 +19,11 @@ import type { IneligibilityReasonCode } from './ineligibility-reason-code';
 
 /**
  * The reason why a shipping service offering is ineligible.
- * @export
- * @interface IneligibilityReason
  */
 export interface IneligibilityReason {
-    /**
-     * 
-     * @type {IneligibilityReasonCode}
-     * @memberof IneligibilityReason
-     */
     'code': IneligibilityReasonCode;
     /**
      * The ineligibility reason.
-     * @type {string}
-     * @memberof IneligibilityReason
      */
     'message': string;
 }

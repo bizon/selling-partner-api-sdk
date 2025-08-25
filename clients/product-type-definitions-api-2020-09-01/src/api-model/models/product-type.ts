@@ -16,26 +16,18 @@
 
 /**
  * An Amazon product type with a definition available.
- * @export
- * @interface ProductType
  */
 export interface ProductType {
     /**
      * The name of the Amazon product type.
-     * @type {string}
-     * @memberof ProductType
      */
     'name': string;
     /**
      * The human-readable and localized description of the Amazon product type.
-     * @type {string}
-     * @memberof ProductType
      */
     'displayName': string;
     /**
      * The Amazon marketplace identifiers for which the product type definition is available.
-     * @type {Array<string>}
-     * @memberof ProductType
      */
     'marketplaceIds': Array<string>;
 }

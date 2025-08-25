@@ -19,20 +19,11 @@ import type { CarrierCode } from './carrier-code';
 
 /**
  * Tracking details for the shipment. If using SPD transportation, this can be for each case. If not using SPD transportation, this is a single tracking entry for the entire shipment.
- * @export
- * @interface TrackingDetails
  */
 export interface TrackingDetails {
-    /**
-     * 
-     * @type {CarrierCode}
-     * @memberof TrackingDetails
-     */
     'carrierCode'?: CarrierCode;
     /**
      * The identifier that is received from transportation to uniquely identify a booking.
-     * @type {string}
-     * @memberof TrackingDetails
      */
     'bookingId': string;
 }

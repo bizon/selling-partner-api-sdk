@@ -19,39 +19,24 @@ import type { Measurement } from './measurement';
 
 /**
  * Substitution options for an order item.
- * @export
- * @interface SubstitutionOption
  */
 export interface SubstitutionOption {
     /**
      * The item\'s Amazon Standard Identification Number (ASIN).
-     * @type {string}
-     * @memberof SubstitutionOption
      */
     'ASIN'?: string;
     /**
      * The number of items to be picked for this substitution option. 
-     * @type {number}
-     * @memberof SubstitutionOption
      */
     'QuantityOrdered'?: number;
     /**
      * The item\'s seller stock keeping unit (SKU).
-     * @type {string}
-     * @memberof SubstitutionOption
      */
     'SellerSKU'?: string;
     /**
      * The item\'s title.
-     * @type {string}
-     * @memberof SubstitutionOption
      */
     'Title'?: string;
-    /**
-     * 
-     * @type {Measurement}
-     * @memberof SubstitutionOption
-     */
     'Measurement'?: Measurement;
 }
 

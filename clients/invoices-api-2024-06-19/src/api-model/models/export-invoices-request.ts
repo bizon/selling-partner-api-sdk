@@ -22,68 +22,40 @@ import type { TransactionIdentifier } from './transaction-identifier';
 
 /**
  * The information required to create the export request.
- * @export
- * @interface ExportInvoicesRequest
  */
 export interface ExportInvoicesRequest {
     /**
      * The latest invoice creation date for invoices that you want to include in the response. Dates are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default is the time of the request.
-     * @type {string}
-     * @memberof ExportInvoicesRequest
      */
     'dateEnd'?: string;
     /**
      * The earliest invoice creation date for invoices that you want to include in the response. Dates are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default is 24 hours prior to the time of the request.
-     * @type {string}
-     * @memberof ExportInvoicesRequest
      */
     'dateStart'?: string;
     /**
      * The external ID of the invoices you want included in the response.
-     * @type {string}
-     * @memberof ExportInvoicesRequest
      */
     'externalInvoiceId'?: string;
-    /**
-     * 
-     * @type {FileFormat}
-     * @memberof ExportInvoicesRequest
-     */
     'fileFormat'?: FileFormat;
     /**
      * The marketplace-specific classification of the invoice type. Use the `getInvoicesAttributes` operation to check `invoiceType` options.
-     * @type {string}
-     * @memberof ExportInvoicesRequest
      */
     'invoiceType'?: string;
     /**
      * The ID of the marketplace from which you want the invoices.
-     * @type {string}
-     * @memberof ExportInvoicesRequest
      */
     'marketplaceId': string;
     /**
      * The series number of the invoices you want included in the response.
-     * @type {string}
-     * @memberof ExportInvoicesRequest
      */
     'series'?: string;
     /**
      * A list of statuses that you can use to filter invoices. Use the `getInvoicesAttributes` operation to check invoice status options.  Min count: 1
-     * @type {Array<string>}
-     * @memberof ExportInvoicesRequest
      */
     'statuses'?: Array<string>;
-    /**
-     * 
-     * @type {TransactionIdentifier}
-     * @memberof ExportInvoicesRequest
-     */
     'transactionIdentifier'?: TransactionIdentifier;
     /**
      * The marketplace-specific classification of the transaction type for which the invoice was created. Use the `getInvoicesAttributes` operation to check `transactionType` options
-     * @type {string}
-     * @memberof ExportInvoicesRequest
      */
     'transactionType'?: string;
 }

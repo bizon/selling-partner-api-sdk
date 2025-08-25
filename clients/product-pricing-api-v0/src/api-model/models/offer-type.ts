@@ -28,62 +28,30 @@ import type { QuantityDiscountPriceType } from './quantity-discount-price-type';
 
 /**
  * Schema for an individual offer.
- * @export
- * @interface OfferType
  */
 export interface OfferType {
-    /**
-     * 
-     * @type {OfferCustomerType}
-     * @memberof OfferType
-     */
     'offerType'?: OfferCustomerType;
-    /**
-     * 
-     * @type {PriceType}
-     * @memberof OfferType
-     */
     'BuyingPrice': PriceType;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof OfferType
-     */
     'RegularPrice': MoneyType;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof OfferType
-     */
     'businessPrice'?: MoneyType;
     /**
      * List of `QuantityDiscountPrice` that contains item\'s pricing information when buy in bulk.
-     * @type {Array<QuantityDiscountPriceType>}
-     * @memberof OfferType
      */
     'quantityDiscountPrices'?: Array<QuantityDiscountPriceType>;
     /**
      * The fulfillment channel for the offer listing. Possible values:  * Amazon - Fulfilled by Amazon. * Merchant - Fulfilled by the seller.
-     * @type {string}
-     * @memberof OfferType
      */
     'FulfillmentChannel': string;
     /**
      * The item condition for the offer listing. Possible values: New, Used, Collectible, Refurbished, or Club.
-     * @type {string}
-     * @memberof OfferType
      */
     'ItemCondition': string;
     /**
      * The item subcondition for the offer listing. Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
-     * @type {string}
-     * @memberof OfferType
      */
     'ItemSubCondition': string;
     /**
      * The seller stock keeping unit (SKU) of the item.
-     * @type {string}
-     * @memberof OfferType
      */
     'SellerSKU': string;
 }

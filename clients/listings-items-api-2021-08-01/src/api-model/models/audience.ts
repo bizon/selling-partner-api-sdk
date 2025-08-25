@@ -16,20 +16,14 @@
 
 /**
  * Buyer segment or program this offer is applicable to.
- * @export
- * @interface Audience
  */
 export interface Audience {
     /**
      * Name of the audience an offer is applicable to.   Common values:   * \'ALL\' - Standard offer audience for buyers on Amazon retail websites.   * \'B2B\' - Offer audience for Amazon Business website buyers.
-     * @type {string}
-     * @memberof Audience
      */
     'value'?: string;
     /**
      * Localized display name for the audience.
-     * @type {string}
-     * @memberof Audience
      */
     'displayName'?: string;
 }

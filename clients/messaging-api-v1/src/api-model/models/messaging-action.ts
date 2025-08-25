@@ -16,14 +16,10 @@
 
 /**
  * A simple object containing the name of the template.
- * @export
- * @interface MessagingAction
  */
 export interface MessagingAction {
     /**
      * The name of the template.
-     * @type {string}
-     * @memberof MessagingAction
      */
     'name': string;
 }

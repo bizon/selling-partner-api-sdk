@@ -25,7 +25,6 @@ import type { SearchContentDocumentsResponseAllOf } from './search-content-docum
 
 /**
  * @type SearchContentDocumentsResponse
- * @export
  */
 export type SearchContentDocumentsResponse = AplusPaginatedResponse & SearchContentDocumentsResponseAllOf;
 

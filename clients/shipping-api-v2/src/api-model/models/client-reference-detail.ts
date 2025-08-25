@@ -16,20 +16,14 @@
 
 /**
  * Client Reference Details
- * @export
- * @interface ClientReferenceDetail
  */
 export interface ClientReferenceDetail {
     /**
      * Client Reference type.
-     * @type {string}
-     * @memberof ClientReferenceDetail
      */
     'clientReferenceType': ClientReferenceDetailClientReferenceTypeEnum;
     /**
      * The Client Reference Id.
-     * @type {string}
-     * @memberof ClientReferenceDetail
      */
     'clientReferenceId': string;
 }

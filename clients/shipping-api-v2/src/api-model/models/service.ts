@@ -16,20 +16,14 @@
 
 /**
  * Service Related Info
- * @export
- * @interface Service
  */
 export interface Service {
     /**
      * An identifier for the shipping service.
-     * @type {string}
-     * @memberof Service
      */
     'id': string;
     /**
      * The name of the shipping service.
-     * @type {string}
-     * @memberof Service
      */
     'name': string;
 }

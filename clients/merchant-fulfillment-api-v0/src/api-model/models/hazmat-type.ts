@@ -16,8 +16,6 @@
 
 /**
  * Hazardous materials options for a package. Consult the terms and conditions for each carrier for more information on hazardous materials.
- * @export
- * @enum {string}
  */
 
 export const HazmatType = {

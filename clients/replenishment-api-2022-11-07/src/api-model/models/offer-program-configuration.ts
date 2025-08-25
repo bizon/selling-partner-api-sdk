@@ -25,27 +25,10 @@ import type { OfferProgramConfigurationPromotions } from './offer-program-config
 
 /**
  * The offer program configuration contains a set of program properties for an offer.
- * @export
- * @interface OfferProgramConfiguration
  */
 export interface OfferProgramConfiguration {
-    /**
-     * 
-     * @type {OfferProgramConfigurationPreferences}
-     * @memberof OfferProgramConfiguration
-     */
     'preferences'?: OfferProgramConfigurationPreferences;
-    /**
-     * 
-     * @type {OfferProgramConfigurationPromotions}
-     * @memberof OfferProgramConfiguration
-     */
     'promotions'?: OfferProgramConfigurationPromotions;
-    /**
-     * 
-     * @type {EnrollmentMethod}
-     * @memberof OfferProgramConfiguration
-     */
     'enrollmentMethod'?: EnrollmentMethod;
 }
 

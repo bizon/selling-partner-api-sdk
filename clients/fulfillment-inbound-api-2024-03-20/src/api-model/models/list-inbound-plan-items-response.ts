@@ -22,21 +22,12 @@ import type { Pagination } from './pagination';
 
 /**
  * The `listInboundPlanItems` response.
- * @export
- * @interface ListInboundPlanItemsResponse
  */
 export interface ListInboundPlanItemsResponse {
     /**
      * The items in an inbound plan.
-     * @type {Array<Item>}
-     * @memberof ListInboundPlanItemsResponse
      */
     'items': Array<Item>;
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof ListInboundPlanItemsResponse
-     */
     'pagination'?: Pagination;
 }
 

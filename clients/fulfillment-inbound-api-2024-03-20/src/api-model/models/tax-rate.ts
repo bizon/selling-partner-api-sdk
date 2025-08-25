@@ -16,26 +16,18 @@
 
 /**
  * Contains the type and rate of tax.
- * @export
- * @interface TaxRate
  */
 export interface TaxRate {
     /**
      * Rate of cess tax.
-     * @type {number}
-     * @memberof TaxRate
      */
     'cessRate'?: number;
     /**
      * Rate of gst tax.
-     * @type {number}
-     * @memberof TaxRate
      */
     'gstRate'?: number;
     /**
      * Type of tax. Possible values: `CGST`, `SGST`, `IGST`, `TOTAL_TAX`.
-     * @type {string}
-     * @memberof TaxRate
      */
     'taxType'?: string;
 }

@@ -22,33 +22,14 @@ import type { FeaturedOfferExpectedPrice } from './featured-offer-expected-price
 
 /**
  * The FOEP result data for the requested offer.
- * @export
- * @interface FeaturedOfferExpectedPriceResult
  */
 export interface FeaturedOfferExpectedPriceResult {
-    /**
-     * 
-     * @type {FeaturedOfferExpectedPrice}
-     * @memberof FeaturedOfferExpectedPriceResult
-     */
     'featuredOfferExpectedPrice'?: FeaturedOfferExpectedPrice;
     /**
      * The status of the FOEP computation. Possible values include `VALID_FOEP`, `NO_COMPETING_OFFER`, `OFFER_NOT_ELIGIBLE`, `OFFER_NOT_FOUND`, and `ASIN_NOT_ELIGIBLE`. Additional values might be added in the future.
-     * @type {string}
-     * @memberof FeaturedOfferExpectedPriceResult
      */
     'resultStatus': string;
-    /**
-     * 
-     * @type {FeaturedOffer}
-     * @memberof FeaturedOfferExpectedPriceResult
-     */
     'competingFeaturedOffer'?: FeaturedOffer;
-    /**
-     * 
-     * @type {FeaturedOffer}
-     * @memberof FeaturedOfferExpectedPriceResult
-     */
     'currentFeaturedOffer'?: FeaturedOffer;
 }
 

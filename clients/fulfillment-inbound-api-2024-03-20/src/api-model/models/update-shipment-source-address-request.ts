@@ -19,15 +19,8 @@ import type { AddressInput } from './address-input';
 
 /**
  * The `UpdateShipmentSourceAddress` request.
- * @export
- * @interface UpdateShipmentSourceAddressRequest
  */
 export interface UpdateShipmentSourceAddressRequest {
-    /**
-     * 
-     * @type {AddressInput}
-     * @memberof UpdateShipmentSourceAddressRequest
-     */
     'address': AddressInput;
 }
 

@@ -16,14 +16,10 @@
 
 /**
  * Service Selection Criteria.
- * @export
- * @interface ServiceSelection
  */
 export interface ServiceSelection {
     /**
      * A list of ServiceId.
-     * @type {Array<string>}
-     * @memberof ServiceSelection
      */
     'serviceId': Array<string>;
 }

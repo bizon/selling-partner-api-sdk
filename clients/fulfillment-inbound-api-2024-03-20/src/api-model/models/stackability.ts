@@ -16,8 +16,6 @@
 
 /**
  * Indicates whether pallets will be stacked when carrier arrives for pick-up.
- * @export
- * @enum {string}
  */
 
 export const Stackability = {

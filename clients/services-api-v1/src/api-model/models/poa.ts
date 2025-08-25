@@ -22,38 +22,23 @@ import type { Technician } from './technician';
 
 /**
  * Proof of Appointment (POA) details.
- * @export
- * @interface Poa
  */
 export interface Poa {
-    /**
-     * 
-     * @type {AppointmentTime}
-     * @memberof Poa
-     */
     'appointmentTime'?: AppointmentTime;
     /**
      * A list of technicians.
-     * @type {Array<Technician>}
-     * @memberof Poa
      */
     'technicians'?: Array<Technician>;
     /**
      * The identifier of the technician who uploaded the POA.
-     * @type {string}
-     * @memberof Poa
      */
     'uploadingTechnician'?: string;
     /**
      * The date and time when the POA was uploaded in ISO 8601 format.
-     * @type {string}
-     * @memberof Poa
      */
     'uploadTime'?: string;
     /**
      * The type of POA uploaded.
-     * @type {string}
-     * @memberof Poa
      */
     'poaType'?: PoaPoaTypeEnum;
 }

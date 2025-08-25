@@ -16,8 +16,6 @@
 
 /**
  * The relative color scheme of your content.
- * @export
- * @enum {string}
  */
 
 export const ColorType = {

@@ -25,44 +25,30 @@ import type { ReferencePrice } from './reference-price';
 
 /**
  * The `competitiveSummaryResponse` body for a requested ASIN and `marketplaceId`.
- * @export
- * @interface CompetitiveSummaryResponseBody
  */
 export interface CompetitiveSummaryResponseBody {
     /**
      * The ASIN of the item.
-     * @type {string}
-     * @memberof CompetitiveSummaryResponseBody
      */
     'asin': string;
     /**
      * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof CompetitiveSummaryResponseBody
      */
     'marketplaceId': string;
     /**
      * A list of featured buying options for the specified ASIN `marketplaceId` combination.
-     * @type {Array<FeaturedBuyingOption>}
-     * @memberof CompetitiveSummaryResponseBody
      */
     'featuredBuyingOptions'?: Array<FeaturedBuyingOption>;
     /**
      * A list of lowest priced offers for the specified ASIN `marketplaceId` combination.
-     * @type {Array<LowestPricedOffer>}
-     * @memberof CompetitiveSummaryResponseBody
      */
     'lowestPricedOffers'?: Array<LowestPricedOffer>;
     /**
      * A list of reference prices for the specified ASIN `marketplaceId` combination.
-     * @type {Array<ReferencePrice>}
-     * @memberof CompetitiveSummaryResponseBody
      */
     'referencePrices'?: Array<ReferencePrice>;
     /**
      * A list of error responses that are returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CompetitiveSummaryResponseBody
      */
     'errors'?: Array<Error>;
 }

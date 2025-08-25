@@ -16,20 +16,14 @@
 
 /**
  * Contains details for a transportation carrier appointment. This appointment is vended out by Amazon and is an indicator for when a transportation carrier is accepting shipments to be picked up.
- * @export
- * @interface CarrierAppointment
  */
 export interface CarrierAppointment {
     /**
      * The end timestamp of the appointment in UTC.
-     * @type {string}
-     * @memberof CarrierAppointment
      */
     'endTime': string;
     /**
      * The start timestamp of the appointment in UTC.
-     * @type {string}
-     * @memberof CarrierAppointment
      */
     'startTime': string;
 }

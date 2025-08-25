@@ -16,26 +16,18 @@
 
 /**
  * Details of item quantity.
- * @export
- * @interface PackedQuantity
  */
 export interface PackedQuantity {
     /**
      * Amount of units shipped for a specific item at a shipment level. If the item is present only in certain cartons or pallets within the shipment, please provide this at the appropriate carton or pallet level.
-     * @type {number}
-     * @memberof PackedQuantity
      */
     'amount': number;
     /**
      * Unit of measure for the shipped quantity.
-     * @type {string}
-     * @memberof PackedQuantity
      */
     'unitOfMeasure': PackedQuantityUnitOfMeasureEnum;
     /**
      * The case size, in the event that we ordered using cases. Otherwise, 1.
-     * @type {number}
-     * @memberof PackedQuantity
      */
     'unitSize'?: number;
 }

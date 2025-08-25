@@ -25,80 +25,48 @@ import type { Weight } from './weight';
 
 /**
  * A container used for shipping and packing items.
- * @export
- * @interface Container
  */
 export interface Container {
     /**
      * The type of container.
-     * @type {string}
-     * @memberof Container
      */
     'containerType': ContainerContainerTypeEnum;
     /**
      * The container identifier.
-     * @type {string}
-     * @memberof Container
      */
     'containerIdentifier': string;
     /**
      * The tracking number.
-     * @type {string}
-     * @memberof Container
      */
     'trackingNumber'?: string;
     /**
      * The manifest identifier.
-     * @type {string}
-     * @memberof Container
      */
     'manifestId'?: string;
     /**
      * The date of the manifest.
-     * @type {string}
-     * @memberof Container
      */
     'manifestDate'?: string;
     /**
      * The shipment method.
-     * @type {string}
-     * @memberof Container
      */
     'shipMethod'?: string;
     /**
      * SCAC code required for NA VOC vendors only.
-     * @type {string}
-     * @memberof Container
      */
     'scacCode'?: string;
     /**
      * Carrier required for EU VOC vendors only.
-     * @type {string}
-     * @memberof Container
      */
     'carrier'?: string;
     /**
      * An integer that must be submitted for multi-box shipments only, where one item may come in separate packages.
-     * @type {number}
-     * @memberof Container
      */
     'containerSequenceNumber'?: number;
-    /**
-     * 
-     * @type {Dimensions}
-     * @memberof Container
-     */
     'dimensions'?: Dimensions;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof Container
-     */
     'weight': Weight;
     /**
      * A list of packed items.
-     * @type {Array<PackedItem>}
-     * @memberof Container
      */
     'packedItems': Array<PackedItem>;
 }

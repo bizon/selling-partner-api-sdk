@@ -22,21 +22,12 @@ import type { PaginationResponse } from './pagination-response';
 
 /**
  * The response schema for the `listOfferMetrics` operation.
- * @export
- * @interface ListOfferMetricsResponse
  */
 export interface ListOfferMetricsResponse {
     /**
      * A list of offers and associated metrics.
-     * @type {Array<ListOfferMetricsResponseOffer>}
-     * @memberof ListOfferMetricsResponse
      */
     'offers'?: Array<ListOfferMetricsResponseOffer>;
-    /**
-     * 
-     * @type {PaginationResponse}
-     * @memberof ListOfferMetricsResponse
-     */
     'pagination'?: PaginationResponse;
 }
 

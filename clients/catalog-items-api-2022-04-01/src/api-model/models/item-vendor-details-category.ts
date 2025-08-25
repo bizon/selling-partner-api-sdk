@@ -16,20 +16,14 @@
 
 /**
  * The product category or subcategory that is associated with an Amazon catalog item.
- * @export
- * @interface ItemVendorDetailsCategory
  */
 export interface ItemVendorDetailsCategory {
     /**
      * The display name of the product category or subcategory.
-     * @type {string}
-     * @memberof ItemVendorDetailsCategory
      */
     'displayName'?: string;
     /**
      * The code that identifies the product category or subcategory.
-     * @type {string}
-     * @memberof ItemVendorDetailsCategory
      */
     'value'?: string;
 }

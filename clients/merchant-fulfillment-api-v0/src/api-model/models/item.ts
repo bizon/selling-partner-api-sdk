@@ -28,63 +28,34 @@ import type { Weight } from './weight';
 
 /**
  * An Amazon order item identifier and a quantity.
- * @export
- * @interface Item
  */
 export interface Item {
     /**
      * An Amazon-defined identifier for an individual item in an order.
-     * @type {string}
-     * @memberof Item
      */
     'OrderItemId': string;
     /**
      * The number of items.
-     * @type {number}
-     * @memberof Item
      */
     'Quantity': number;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof Item
-     */
     'ItemWeight'?: Weight;
     /**
      * The description of the item.
-     * @type {string}
-     * @memberof Item
      */
     'ItemDescription'?: string;
     /**
      * A list of transparency codes.
-     * @type {Array<string>}
-     * @memberof Item
      */
     'TransparencyCodeList'?: Array<string>;
     /**
      * A list of additional seller input pairs required to purchase shipping.
-     * @type {Array<AdditionalSellerInputs>}
-     * @memberof Item
      */
     'ItemLevelSellerInputsList'?: Array<AdditionalSellerInputs>;
-    /**
-     * 
-     * @type {LiquidVolume}
-     * @memberof Item
-     */
     'LiquidVolume'?: LiquidVolume;
     /**
      * When true, the item qualifies as hazardous materials (hazmat). Defaults to false.
-     * @type {boolean}
-     * @memberof Item
      */
     'IsHazmat'?: boolean;
-    /**
-     * 
-     * @type {DangerousGoodsDetails}
-     * @memberof Item
-     */
     'DangerousGoodsDetails'?: DangerousGoodsDetails;
 }
 

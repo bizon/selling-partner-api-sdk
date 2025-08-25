@@ -31,45 +31,13 @@ import type { TextComponent } from './text-component';
 
 /**
  * Two images, two paragraphs, and two bulleted lists. One image is smaller and displayed in the sidebar.
- * @export
- * @interface StandardImageSidebarModule
  */
 export interface StandardImageSidebarModule {
-    /**
-     * 
-     * @type {TextComponent}
-     * @memberof StandardImageSidebarModule
-     */
     'headline'?: TextComponent;
-    /**
-     * 
-     * @type {StandardImageCaptionBlock}
-     * @memberof StandardImageSidebarModule
-     */
     'imageCaptionBlock'?: StandardImageCaptionBlock;
-    /**
-     * 
-     * @type {StandardTextBlock}
-     * @memberof StandardImageSidebarModule
-     */
     'descriptionTextBlock'?: StandardTextBlock;
-    /**
-     * 
-     * @type {StandardTextListBlock}
-     * @memberof StandardImageSidebarModule
-     */
     'descriptionListBlock'?: StandardTextListBlock;
-    /**
-     * 
-     * @type {StandardImageTextBlock}
-     * @memberof StandardImageSidebarModule
-     */
     'sidebarImageTextBlock'?: StandardImageTextBlock;
-    /**
-     * 
-     * @type {StandardTextListBlock}
-     * @memberof StandardImageSidebarModule
-     */
     'sidebarListBlock'?: StandardTextListBlock;
 }
 

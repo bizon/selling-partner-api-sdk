@@ -19,44 +19,30 @@ import type { AsinBadge } from './asin-badge';
 
 /**
  * The A+ Content ASIN with additional metadata for content management. If you don\'t include the `includedDataSet` parameter in a call to the `listContentDocumentAsinRelations` operation, the related ASINs are returned without metadata.
- * @export
- * @interface AsinMetadata
  */
 export interface AsinMetadata {
     /**
      * The Amazon Standard Identification Number (ASIN).
-     * @type {string}
-     * @memberof AsinMetadata
      */
     'asin': string;
     /**
      * The set of ASIN badges.
-     * @type {Set<AsinBadge>}
-     * @memberof AsinMetadata
      */
     'badgeSet'?: Set<AsinBadge>;
     /**
      * The Amazon Standard Identification Number (ASIN).
-     * @type {string}
-     * @memberof AsinMetadata
      */
     'parent'?: string;
     /**
      * The title for the ASIN in the Amazon catalog.
-     * @type {string}
-     * @memberof AsinMetadata
      */
     'title'?: string;
     /**
      * The default image for the ASIN in the Amazon catalog.
-     * @type {string}
-     * @memberof AsinMetadata
      */
     'imageUrl'?: string;
     /**
      * A set of content reference keys.
-     * @type {Set<string>}
-     * @memberof AsinMetadata
      */
     'contentReferenceKeySet'?: Set<string>;
 }

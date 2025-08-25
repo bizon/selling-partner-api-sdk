@@ -19,20 +19,11 @@ import type { CreateReservationRecord } from './create-reservation-record';
 
 /**
  * Response schema for the `createReservation` operation.
- * @export
- * @interface CreateReservationResponse
  */
 export interface CreateReservationResponse {
-    /**
-     * 
-     * @type {CreateReservationRecord}
-     * @memberof CreateReservationResponse
-     */
     'payload'?: CreateReservationRecord;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CreateReservationResponse
      */
     'errors'?: Array<Error>;
 }

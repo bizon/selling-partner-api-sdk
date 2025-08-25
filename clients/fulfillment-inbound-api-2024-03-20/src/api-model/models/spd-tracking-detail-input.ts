@@ -19,14 +19,10 @@ import type { SpdTrackingItemInput } from './spd-tracking-item-input';
 
 /**
  * Contains input information to update Small Parcel Delivery (SPD) tracking information.
- * @export
- * @interface SpdTrackingDetailInput
  */
 export interface SpdTrackingDetailInput {
     /**
      * List of Small Parcel Delivery (SPD) tracking items input.
-     * @type {Array<SpdTrackingItemInput>}
-     * @memberof SpdTrackingDetailInput
      */
     'spdTrackingItems': Array<SpdTrackingItemInput>;
 }

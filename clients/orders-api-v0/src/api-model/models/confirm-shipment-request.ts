@@ -19,26 +19,15 @@ import type { PackageDetail } from './package-detail';
 
 /**
  * The request schema for an shipment confirmation.
- * @export
- * @interface ConfirmShipmentRequest
  */
 export interface ConfirmShipmentRequest {
-    /**
-     * 
-     * @type {PackageDetail}
-     * @memberof ConfirmShipmentRequest
-     */
     'packageDetail': PackageDetail;
     /**
      * The COD collection method (only supported in the JP marketplace).
-     * @type {string}
-     * @memberof ConfirmShipmentRequest
      */
     'codCollectionMethod'?: ConfirmShipmentRequestCodCollectionMethodEnum;
     /**
      * The unobfuscated marketplace identifier.
-     * @type {string}
-     * @memberof ConfirmShipmentRequest
      */
     'marketplaceId': string;
 }

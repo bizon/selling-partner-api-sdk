@@ -16,26 +16,18 @@
 
 /**
  * Location identifier.
- * @export
- * @interface Location
  */
 export interface Location {
     /**
      * Type of location identification.
-     * @type {string}
-     * @memberof Location
      */
     'type'?: string;
     /**
      * Location code.
-     * @type {string}
-     * @memberof Location
      */
     'locationCode'?: string;
     /**
      * The two digit country code. In ISO 3166-1 alpha-2 format.
-     * @type {string}
-     * @memberof Location
      */
     'countryCode'?: string;
 }

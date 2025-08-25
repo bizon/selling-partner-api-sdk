@@ -16,8 +16,6 @@
 
 /**
  * The preparation category for shipping an item to Amazon\'s fulfillment network.
- * @export
- * @enum {string}
  */
 
 export const PrepCategory = {

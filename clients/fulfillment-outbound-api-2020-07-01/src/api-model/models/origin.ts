@@ -16,14 +16,10 @@
 
 /**
  * The origin for the delivery offer.
- * @export
- * @interface Origin
  */
 export interface Origin {
     /**
      * The two digit country code the items should ship from. In ISO 3166-1 alpha-2 format.
-     * @type {string}
-     * @memberof Origin
      */
     'countryCode': string;
 }

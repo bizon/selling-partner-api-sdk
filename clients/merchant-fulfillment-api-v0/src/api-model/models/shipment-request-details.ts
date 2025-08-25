@@ -34,69 +34,32 @@ import type { Weight } from './weight';
 
 /**
  * Shipment information required for requesting shipping service offers or for creating a shipment.
- * @export
- * @interface ShipmentRequestDetails
  */
 export interface ShipmentRequestDetails {
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
-     * @type {string}
-     * @memberof ShipmentRequestDetails
      */
     'AmazonOrderId': string;
     /**
      * A seller-defined order identifier.
-     * @type {string}
-     * @memberof ShipmentRequestDetails
      */
     'SellerOrderId'?: string;
     /**
      * The list of items you want to include in a shipment.
-     * @type {Array<Item>}
-     * @memberof ShipmentRequestDetails
      */
     'ItemList': Array<Item>;
-    /**
-     * 
-     * @type {Address}
-     * @memberof ShipmentRequestDetails
-     */
     'ShipFromAddress': Address;
-    /**
-     * 
-     * @type {PackageDimensions}
-     * @memberof ShipmentRequestDetails
-     */
     'PackageDimensions': PackageDimensions;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof ShipmentRequestDetails
-     */
     'Weight': Weight;
     /**
      * Date-time formatted timestamp.
-     * @type {string}
-     * @memberof ShipmentRequestDetails
      */
     'MustArriveByDate'?: string;
     /**
      * Date-time formatted timestamp.
-     * @type {string}
-     * @memberof ShipmentRequestDetails
      */
     'ShipDate'?: string;
-    /**
-     * 
-     * @type {ShippingServiceOptions}
-     * @memberof ShipmentRequestDetails
-     */
     'ShippingServiceOptions': ShippingServiceOptions;
-    /**
-     * 
-     * @type {LabelCustomization}
-     * @memberof ShipmentRequestDetails
-     */
     'LabelCustomization'?: LabelCustomization;
 }
 

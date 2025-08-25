@@ -19,32 +19,19 @@ import type { ItemQuantity } from './item-quantity';
 
 /**
  * Updated inventory details for an item.
- * @export
- * @interface ItemDetails
  */
 export interface ItemDetails {
     /**
      * The buyer selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
-     * @type {string}
-     * @memberof ItemDetails
      */
     'buyerProductIdentifier'?: string;
     /**
      * The vendor selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
-     * @type {string}
-     * @memberof ItemDetails
      */
     'vendorProductIdentifier'?: string;
-    /**
-     * 
-     * @type {ItemQuantity}
-     * @memberof ItemDetails
-     */
     'availableQuantity': ItemQuantity;
     /**
      * When true, the item is permanently unavailable.
-     * @type {boolean}
-     * @memberof ItemDetails
      */
     'isObsolete'?: boolean;
 }

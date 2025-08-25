@@ -22,26 +22,15 @@ import type { TaxRegistrationDetails } from './tax-registration-details';
 
 /**
  * Name, address and tax details of a party.
- * @export
- * @interface PartyIdentification
  */
 export interface PartyIdentification {
     /**
      * Assigned Identification for the party.
-     * @type {string}
-     * @memberof PartyIdentification
      */
     'partyId': string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof PartyIdentification
-     */
     'address'?: Address;
     /**
      * Tax registration details of the entity.
-     * @type {Array<TaxRegistrationDetails>}
-     * @memberof PartyIdentification
      */
     'taxRegistrationDetails'?: Array<TaxRegistrationDetails>;
 }

@@ -19,21 +19,9 @@ import type { LinkObject } from './link-object';
 
 /**
  * The links response that is associated with the messaging action.
- * @export
- * @interface GetMessagingActionResponseLinks
  */
 export interface GetMessagingActionResponseLinks {
-    /**
-     * 
-     * @type {LinkObject}
-     * @memberof GetMessagingActionResponseLinks
-     */
     'self': LinkObject;
-    /**
-     * 
-     * @type {LinkObject}
-     * @memberof GetMessagingActionResponseLinks
-     */
     'schema': LinkObject;
 }
 

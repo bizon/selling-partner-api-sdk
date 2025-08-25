@@ -19,20 +19,14 @@ import type { DeliveryWindow } from './delivery-window';
 
 /**
  * Delivery information for a scheduled delivery. This is only available in the JP marketplace.
- * @export
- * @interface ScheduledDeliveryInfo
  */
 export interface ScheduledDeliveryInfo {
     /**
      * The time zone of the destination address for the fulfillment order preview. Must be an IANA time zone name. Example: Asia/Tokyo.
-     * @type {string}
-     * @memberof ScheduledDeliveryInfo
      */
     'deliveryTimeZone': string;
     /**
      * An array of delivery windows.
-     * @type {Array<DeliveryWindow>}
-     * @memberof ScheduledDeliveryInfo
      */
     'deliveryWindows': Array<DeliveryWindow>;
 }

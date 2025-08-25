@@ -19,26 +19,15 @@ import type { AppointmentSlotTime } from './appointment-slot-time';
 
 /**
  * Appointment details for carrier pickup or fulfillment center appointments.
- * @export
- * @interface SelfShipAppointmentDetails
  */
 export interface SelfShipAppointmentDetails {
     /**
      * Identifier for appointment.
-     * @type {number}
-     * @memberof SelfShipAppointmentDetails
      */
     'appointmentId'?: number;
-    /**
-     * 
-     * @type {AppointmentSlotTime}
-     * @memberof SelfShipAppointmentDetails
-     */
     'appointmentSlotTime'?: AppointmentSlotTime;
     /**
      * Status of the appointment.
-     * @type {string}
-     * @memberof SelfShipAppointmentDetails
      */
     'appointmentStatus'?: string;
 }

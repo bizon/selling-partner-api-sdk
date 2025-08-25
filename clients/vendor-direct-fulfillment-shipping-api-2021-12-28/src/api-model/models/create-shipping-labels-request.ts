@@ -22,26 +22,12 @@ import type { PartyIdentification } from './party-identification';
 
 /**
  * The request body for the createShippingLabels operation.
- * @export
- * @interface CreateShippingLabelsRequest
  */
 export interface CreateShippingLabelsRequest {
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof CreateShippingLabelsRequest
-     */
     'sellingParty': PartyIdentification;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof CreateShippingLabelsRequest
-     */
     'shipFromParty': PartyIdentification;
     /**
      * A list of the packages in this shipment.
-     * @type {Array<Container>}
-     * @memberof CreateShippingLabelsRequest
      */
     'containers'?: Array<Container>;
 }

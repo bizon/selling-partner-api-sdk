@@ -25,39 +25,18 @@ import type { Points } from './points';
 
 /**
  * Offer details of a listings item for an Amazon marketplace.
- * @export
- * @interface ItemOfferByMarketplace
  */
 export interface ItemOfferByMarketplace {
     /**
      * The Amazon marketplace identifier.
-     * @type {string}
-     * @memberof ItemOfferByMarketplace
      */
     'marketplaceId': string;
     /**
      * Type of offer for the listings item.
-     * @type {string}
-     * @memberof ItemOfferByMarketplace
      */
     'offerType': ItemOfferByMarketplaceOfferTypeEnum;
-    /**
-     * 
-     * @type {Money}
-     * @memberof ItemOfferByMarketplace
-     */
     'price': Money;
-    /**
-     * 
-     * @type {Points}
-     * @memberof ItemOfferByMarketplace
-     */
     'points'?: Points;
-    /**
-     * 
-     * @type {Audience}
-     * @memberof ItemOfferByMarketplace
-     */
     'audience'?: Audience;
 }
 

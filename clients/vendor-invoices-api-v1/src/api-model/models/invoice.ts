@@ -40,98 +40,48 @@ import type { TaxDetails } from './tax-details';
 
 /**
  * Represents an invoice or credit note document with details about the transaction, parties involved, and line items.
- * @export
- * @interface Invoice
  */
 export interface Invoice {
     /**
      * Identifies the type of invoice.
-     * @type {string}
-     * @memberof Invoice
      */
     'invoiceType': InvoiceInvoiceTypeEnum;
     /**
      * Unique number relating to the charges defined in this document. This will be invoice number if the document type is Invoice or CreditNote number if the document type is Credit Note. Failure to provide this reference will result in a rejection.
-     * @type {string}
-     * @memberof Invoice
      */
     'id': string;
     /**
      * An additional unique reference number used for regulatory or other purposes.
-     * @type {string}
-     * @memberof Invoice
      */
     'referenceNumber'?: string;
     /**
      * Defines a date and time according to ISO8601.
-     * @type {string}
-     * @memberof Invoice
      */
     'date': string;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof Invoice
-     */
     'remitToParty': PartyIdentification;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof Invoice
-     */
     'shipToParty'?: PartyIdentification;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof Invoice
-     */
     'shipFromParty'?: PartyIdentification;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof Invoice
-     */
     'billToParty'?: PartyIdentification;
-    /**
-     * 
-     * @type {PaymentTerms}
-     * @memberof Invoice
-     */
     'paymentTerms'?: PaymentTerms;
-    /**
-     * 
-     * @type {Money}
-     * @memberof Invoice
-     */
     'invoiceTotal': Money;
     /**
      * Total tax amount details for all line items.
-     * @type {Array<TaxDetails>}
-     * @memberof Invoice
      */
     'taxDetails'?: Array<TaxDetails>;
     /**
      * Additional details provided by the selling party, for tax related or other purposes.
-     * @type {Array<AdditionalDetails>}
-     * @memberof Invoice
      */
     'additionalDetails'?: Array<AdditionalDetails>;
     /**
      * Total charge amount details for all line items.
-     * @type {Array<ChargeDetails>}
-     * @memberof Invoice
      */
     'chargeDetails'?: Array<ChargeDetails>;
     /**
      * Total allowance amount details for all line items.
-     * @type {Array<AllowanceDetails>}
-     * @memberof Invoice
      */
     'allowanceDetails'?: Array<AllowanceDetails>;
     /**
      * The list of invoice items.
-     * @type {Array<InvoiceItem>}
-     * @memberof Invoice
      */
     'items'?: Array<InvoiceItem>;
 }

@@ -16,8 +16,6 @@
 
 /**
  * The type of A+ Content module.
- * @export
- * @enum {string}
  */
 
 export const ContentModuleType = {

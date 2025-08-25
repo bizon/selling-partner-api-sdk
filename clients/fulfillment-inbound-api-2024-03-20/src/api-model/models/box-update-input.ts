@@ -28,45 +28,22 @@ import type { Weight } from './weight';
 
 /**
  * Input information for updating a box
- * @export
- * @interface BoxUpdateInput
  */
 export interface BoxUpdateInput {
-    /**
-     * 
-     * @type {BoxContentInformationSource}
-     * @memberof BoxUpdateInput
-     */
     'contentInformationSource': BoxContentInformationSource;
-    /**
-     * 
-     * @type {Dimensions}
-     * @memberof BoxUpdateInput
-     */
     'dimensions': Dimensions;
     /**
      * The items and their quantity in the box. This must be empty if the box `contentInformationSource` is `BARCODE_2D` or `MANUAL_PROCESS`.
-     * @type {Array<ItemInput>}
-     * @memberof BoxUpdateInput
      */
     'items'?: Array<ItemInput>;
     /**
      * Primary key to uniquely identify a Box Package. PackageId must be provided if the intent is to update an existing box. Adding a new box will not require providing this value. Any existing PackageIds not provided will be treated as to-be-removed
-     * @type {string}
-     * @memberof BoxUpdateInput
      */
     'packageId'?: string;
     /**
      * The number of containers where all other properties like weight or dimensions are identical.
-     * @type {number}
-     * @memberof BoxUpdateInput
      */
     'quantity': number;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof BoxUpdateInput
-     */
     'weight': Weight;
 }
 

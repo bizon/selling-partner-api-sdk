@@ -16,26 +16,18 @@
 
 /**
  * Information about an upload destination.
- * @export
- * @interface UploadDestination
  */
 export interface UploadDestination {
     /**
      * The unique identifier for the upload destination.
-     * @type {string}
-     * @memberof UploadDestination
      */
     'uploadDestinationId'?: string;
     /**
      * The URL for the upload destination.
-     * @type {string}
-     * @memberof UploadDestination
      */
     'url'?: string;
     /**
      * The headers to include in the upload request.
-     * @type {object}
-     * @memberof UploadDestination
      */
     'headers'?: object;
 }

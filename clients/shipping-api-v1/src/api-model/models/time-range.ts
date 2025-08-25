@@ -16,20 +16,14 @@
 
 /**
  * The time range.
- * @export
- * @interface TimeRange
  */
 export interface TimeRange {
     /**
      * The start date and time. This defaults to the current date and time.
-     * @type {string}
-     * @memberof TimeRange
      */
     'start'?: string;
     /**
      * The end date and time. This must come after the value of start. This defaults to the next business day from the start.
-     * @type {string}
-     * @memberof TimeRange
      */
     'end'?: string;
 }

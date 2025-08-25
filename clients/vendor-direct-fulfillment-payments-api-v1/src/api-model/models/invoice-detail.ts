@@ -34,86 +34,46 @@ import type { TaxDetail } from './tax-detail';
 
 /**
  * Represents the details of an invoice, including invoice number, date, parties involved, payment terms, totals, taxes, charges, and line items.
- * @export
- * @interface InvoiceDetail
  */
 export interface InvoiceDetail {
     /**
      * The unique invoice number.
-     * @type {string}
-     * @memberof InvoiceDetail
      */
     'invoiceNumber': string;
     /**
      * Invoice date.
-     * @type {string}
-     * @memberof InvoiceDetail
      */
     'invoiceDate': string;
     /**
      * An additional unique reference number used for regulatory or other purposes.
-     * @type {string}
-     * @memberof InvoiceDetail
      */
     'referenceNumber'?: string;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof InvoiceDetail
-     */
     'remitToParty': PartyIdentification;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof InvoiceDetail
-     */
     'shipFromParty': PartyIdentification;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof InvoiceDetail
-     */
     'billToParty'?: PartyIdentification;
     /**
      * Ship-to country code.
-     * @type {string}
-     * @memberof InvoiceDetail
      */
     'shipToCountryCode'?: string;
     /**
      * The payment terms for the invoice.
-     * @type {string}
-     * @memberof InvoiceDetail
      */
     'paymentTermsCode'?: string;
-    /**
-     * 
-     * @type {Money}
-     * @memberof InvoiceDetail
-     */
     'invoiceTotal': Money;
     /**
      * Individual tax details per line item.
-     * @type {Array<TaxDetail>}
-     * @memberof InvoiceDetail
      */
     'taxTotals'?: Array<TaxDetail>;
     /**
      * Additional details provided by the selling party, for tax-related or other purposes.
-     * @type {Array<AdditionalDetails>}
-     * @memberof InvoiceDetail
      */
     'additionalDetails'?: Array<AdditionalDetails>;
     /**
      * Total charge amount details for all line items.
-     * @type {Array<ChargeDetails>}
-     * @memberof InvoiceDetail
      */
     'chargeDetails'?: Array<ChargeDetails>;
     /**
      * Provides the details of the items in this invoice.
-     * @type {Array<InvoiceItem>}
-     * @memberof InvoiceDetail
      */
     'items': Array<InvoiceItem>;
 }

@@ -19,20 +19,14 @@ import type { ItemInput } from './item-input';
 
 /**
  * Provide units going to the warehouse.
- * @export
- * @interface CustomPlacementInput
  */
 export interface CustomPlacementInput {
     /**
      * Items included while creating Inbound Plan.
-     * @type {Array<ItemInput>}
-     * @memberof CustomPlacementInput
      */
     'items': Array<ItemInput>;
     /**
      * Warehouse Id.
-     * @type {string}
-     * @memberof CustomPlacementInput
      */
     'warehouseId': string;
 }

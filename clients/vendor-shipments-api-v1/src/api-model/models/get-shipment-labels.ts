@@ -19,20 +19,11 @@ import type { TransportationLabels } from './transportation-labels';
 
 /**
  * The response schema for the GetShipmentLabels operation.
- * @export
- * @interface GetShipmentLabels
  */
 export interface GetShipmentLabels {
-    /**
-     * 
-     * @type {TransportationLabels}
-     * @memberof GetShipmentLabels
-     */
     'payload'?: TransportationLabels;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetShipmentLabels
      */
     'errors'?: Array<Error>;
 }

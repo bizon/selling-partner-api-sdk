@@ -19,21 +19,12 @@ import type { AdditionalSellerInput } from './additional-seller-input';
 
 /**
  * An additional set of seller inputs required to purchase shipping.
- * @export
- * @interface AdditionalSellerInputs
  */
 export interface AdditionalSellerInputs {
     /**
      * The name of the additional input field.
-     * @type {string}
-     * @memberof AdditionalSellerInputs
      */
     'AdditionalInputFieldName': string;
-    /**
-     * 
-     * @type {AdditionalSellerInput}
-     * @memberof AdditionalSellerInputs
-     */
     'AdditionalSellerInput': AdditionalSellerInput;
 }
 

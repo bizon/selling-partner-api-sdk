@@ -22,21 +22,9 @@ import type { ThroughputUnit } from './throughput-unit';
 
 /**
  * The throughput configuration.
- * @export
- * @interface ThroughputConfig
  */
 export interface ThroughputConfig {
-    /**
-     * 
-     * @type {ThroughputCap}
-     * @memberof ThroughputConfig
-     */
     'throughputCap'?: ThroughputCap;
-    /**
-     * 
-     * @type {ThroughputUnit}
-     * @memberof ThroughputConfig
-     */
     'throughputUnit': ThroughputUnit;
 }
 

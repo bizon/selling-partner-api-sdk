@@ -22,44 +22,24 @@ import type { PrepOwner } from './prep-owner';
 
 /**
  * Defines an item\'s input parameters.
- * @export
- * @interface ItemInput
  */
 export interface ItemInput {
     /**
      * The expiration date of the MSKU. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `YYYY-MM-DD`. Items with the same MSKU but different expiration dates cannot go into the same box.
-     * @type {string}
-     * @memberof ItemInput
      */
     'expiration'?: string;
-    /**
-     * 
-     * @type {LabelOwner}
-     * @memberof ItemInput
-     */
     'labelOwner': LabelOwner;
     /**
      * The manufacturing lot code.
-     * @type {string}
-     * @memberof ItemInput
      */
     'manufacturingLotCode'?: string;
     /**
      * The merchant SKU, a merchant-supplied identifier of a specific SKU.
-     * @type {string}
-     * @memberof ItemInput
      */
     'msku': string;
-    /**
-     * 
-     * @type {PrepOwner}
-     * @memberof ItemInput
-     */
     'prepOwner': PrepOwner;
     /**
      * The number of units of the specified MSKU that will be shipped.
-     * @type {number}
-     * @memberof ItemInput
      */
     'quantity': number;
 }

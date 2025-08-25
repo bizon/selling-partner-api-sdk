@@ -31,50 +31,25 @@ import type { Weight } from './weight';
 
 /**
  * Details of the Pallet/Tare being shipped.
- * @export
- * @interface Pallet
  */
 export interface Pallet {
     /**
      * A list of pallet identifiers.
-     * @type {Array<ContainerIdentification>}
-     * @memberof Pallet
      */
     'palletIdentifiers': Array<ContainerIdentification>;
     /**
      * Number of layers per pallet. Only applicable to container type Pallet.
-     * @type {number}
-     * @memberof Pallet
      */
     'tier'?: number;
     /**
      * Number of cartons per layer on the pallet. Only applicable to container type Pallet.
-     * @type {number}
-     * @memberof Pallet
      */
     'block'?: number;
-    /**
-     * 
-     * @type {Dimensions}
-     * @memberof Pallet
-     */
     'dimensions'?: Dimensions;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof Pallet
-     */
     'weight'?: Weight;
-    /**
-     * 
-     * @type {CartonReferenceDetails}
-     * @memberof Pallet
-     */
     'cartonReferenceDetails'?: CartonReferenceDetails;
     /**
      * A list of container item details.
-     * @type {Array<ContainerItem>}
-     * @memberof Pallet
      */
     'items'?: Array<ContainerItem>;
 }

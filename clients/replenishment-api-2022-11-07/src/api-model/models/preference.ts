@@ -19,14 +19,10 @@ import type { AutoEnrollmentPreference } from './auto-enrollment-preference';
 
 /**
  * Offer preferences that you can include in the result filter criteria.
- * @export
- * @interface Preference
  */
 export interface Preference {
     /**
      * Filters the results to only include offers with the auto-enrollment preference specified.
-     * @type {Set<AutoEnrollmentPreference>}
-     * @memberof Preference
      */
     'autoEnrollment'?: Set<AutoEnrollmentPreference>;
 }

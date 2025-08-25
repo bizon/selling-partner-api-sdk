@@ -19,33 +19,20 @@ import type { TotalWeight } from './total-weight';
 
 /**
  * Details of quantity.
- * @export
- * @interface ItemQuantity
  */
 export interface ItemQuantity {
     /**
      * Quantity of an item. This value should not be zero.
-     * @type {number}
-     * @memberof ItemQuantity
      */
     'amount': number;
     /**
      * Unit of measure for the quantity.
-     * @type {string}
-     * @memberof ItemQuantity
      */
     'unitOfMeasure': ItemQuantityUnitOfMeasureEnum;
     /**
      * The case size, if the unit of measure value is Cases.
-     * @type {number}
-     * @memberof ItemQuantity
      */
     'unitSize'?: number;
-    /**
-     * 
-     * @type {TotalWeight}
-     * @memberof ItemQuantity
-     */
     'totalWeight'?: TotalWeight;
 }
 

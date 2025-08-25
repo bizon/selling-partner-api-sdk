@@ -17,16 +17,9 @@
 // @ts-ignore
 import type { AsinMetadata } from './asin-metadata';
 
-/**
- * 
- * @export
- * @interface ListContentDocumentAsinRelationsResponseAllOf
- */
 export interface ListContentDocumentAsinRelationsResponseAllOf {
     /**
      * The set of ASIN metadata.
-     * @type {Set<AsinMetadata>}
-     * @memberof ListContentDocumentAsinRelationsResponseAllOf
      */
     'asinMetadataSet': Set<AsinMetadata>;
 }

@@ -19,69 +19,44 @@ import type { ItemImage } from './item-image';
 
 /**
  * Summary details of a listings item for an Amazon marketplace.
- * @export
- * @interface ItemSummaryByMarketplace
  */
 export interface ItemSummaryByMarketplace {
     /**
      * A marketplace identifier. Identifies the Amazon marketplace for the listings item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'marketplaceId': string;
     /**
      * Amazon Standard Identification Number (ASIN) of the listings item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'asin'?: string;
     /**
      * The Amazon product type of the listings item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'productType': string;
     /**
      * Identifies the condition of the listings item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'conditionType'?: ItemSummaryByMarketplaceConditionTypeEnum;
     /**
      * Statuses that apply to the listings item.
-     * @type {Array<string>}
-     * @memberof ItemSummaryByMarketplace
      */
     'status': Array<ItemSummaryByMarketplaceStatusEnum>;
     /**
      * The fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'fnSku'?: string;
     /**
      * The name or title associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'itemName'?: string;
     /**
      * The date the listings item was created in ISO 8601 format.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'createdDate': string;
     /**
      * The date the listings item was last updated in ISO 8601 format.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'lastUpdatedDate': string;
-    /**
-     * 
-     * @type {ItemImage}
-     * @memberof ItemSummaryByMarketplace
-     */
     'mainImage'?: ItemImage;
 }
 

@@ -25,33 +25,14 @@ import type { FeesEstimateIdentifier } from './fees-estimate-identifier';
 
 /**
  * An item identifier and the estimated fees for the item.
- * @export
- * @interface FeesEstimateResult
  */
 export interface FeesEstimateResult {
     /**
      * The status of the fee request. Possible values: Success, ClientError, ServiceError.
-     * @type {string}
-     * @memberof FeesEstimateResult
      */
     'Status'?: string;
-    /**
-     * 
-     * @type {FeesEstimateIdentifier}
-     * @memberof FeesEstimateResult
-     */
     'FeesEstimateIdentifier'?: FeesEstimateIdentifier;
-    /**
-     * 
-     * @type {FeesEstimate}
-     * @memberof FeesEstimateResult
-     */
     'FeesEstimate'?: FeesEstimate;
-    /**
-     * 
-     * @type {FeesEstimateError}
-     * @memberof FeesEstimateResult
-     */
     'Error'?: FeesEstimateError;
 }
 

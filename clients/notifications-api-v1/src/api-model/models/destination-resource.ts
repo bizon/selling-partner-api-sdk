@@ -22,21 +22,9 @@ import type { SqsResource } from './sqs-resource';
 
 /**
  * The destination resource types.
- * @export
- * @interface DestinationResource
  */
 export interface DestinationResource {
-    /**
-     * 
-     * @type {SqsResource}
-     * @memberof DestinationResource
-     */
     'sqs'?: SqsResource;
-    /**
-     * 
-     * @type {EventBridgeResource}
-     * @memberof DestinationResource
-     */
     'eventBridge'?: EventBridgeResource;
 }
 

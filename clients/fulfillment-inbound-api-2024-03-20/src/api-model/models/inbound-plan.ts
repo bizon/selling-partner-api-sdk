@@ -28,68 +28,43 @@ import type { ShipmentSummary } from './shipment-summary';
 
 /**
  * Inbound plan containing details of the inbound workflow.
- * @export
- * @interface InboundPlan
  */
 export interface InboundPlan {
     /**
      * The time at which the inbound plan was created. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime with pattern `yyyy-MM-ddTHH:mm:ssZ`.
-     * @type {string}
-     * @memberof InboundPlan
      */
     'createdAt': string;
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof InboundPlan
      */
     'inboundPlanId': string;
     /**
      * The time at which the inbound plan was last updated. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ssZ`.
-     * @type {string}
-     * @memberof InboundPlan
      */
     'lastUpdatedAt': string;
     /**
      * A list of marketplace IDs.
-     * @type {Array<string>}
-     * @memberof InboundPlan
      */
     'marketplaceIds': Array<string>;
     /**
      * Human-readable name of the inbound plan.
-     * @type {string}
-     * @memberof InboundPlan
      */
     'name': string;
     /**
      * Packing options for the inbound plan. This property will be populated when it has been generated via the corresponding operation. If there is a chosen placement option, only packing options for that placement option will be returned. If there are confirmed shipments, only packing options for those shipments will be returned. Query the packing option for more details.
-     * @type {Array<PackingOptionSummary>}
-     * @memberof InboundPlan
      */
     'packingOptions'?: Array<PackingOptionSummary>;
     /**
      * Placement options for the inbound plan. This property will be populated when it has been generated via the corresponding operation. If there is a chosen placement option, that will be the only returned option. Query the placement option for more details.
-     * @type {Array<PlacementOptionSummary>}
-     * @memberof InboundPlan
      */
     'placementOptions'?: Array<PlacementOptionSummary>;
     /**
      * A list of shipment IDs for the inbound plan. This property is populated when it has been generated with the `confirmPlacementOptions` operation. Only shipments from the chosen placement option are returned. Query the shipment for more details.
-     * @type {Array<ShipmentSummary>}
-     * @memberof InboundPlan
      */
     'shipments'?: Array<ShipmentSummary>;
-    /**
-     * 
-     * @type {Address}
-     * @memberof InboundPlan
-     */
     'sourceAddress': Address;
     /**
      * Current status of the inbound plan. Possible values: `ACTIVE`, `VOIDED`, `SHIPPED`, `ERRORED`.
-     * @type {string}
-     * @memberof InboundPlan
      */
     'status': string;
 }

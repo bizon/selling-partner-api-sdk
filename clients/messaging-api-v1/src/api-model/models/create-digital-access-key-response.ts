@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the `createDigitalAccessKey` operation.
- * @export
- * @interface CreateDigitalAccessKeyResponse
  */
 export interface CreateDigitalAccessKeyResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CreateDigitalAccessKeyResponse
      */
     'errors'?: Array<Error>;
 }

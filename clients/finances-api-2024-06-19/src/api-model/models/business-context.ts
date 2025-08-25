@@ -16,14 +16,10 @@
 
 /**
  * Information about the line of business associated with a transaction.
- * @export
- * @interface BusinessContext
  */
 export interface BusinessContext {
     /**
      * The store name associated with the transaction.
-     * @type {string}
-     * @memberof BusinessContext
      */
     'storeName'?: BusinessContextStoreNameEnum;
 }

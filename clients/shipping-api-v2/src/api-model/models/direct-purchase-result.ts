@@ -19,20 +19,14 @@ import type { PackageDocumentDetail } from './package-document-detail';
 
 /**
  * The payload for the directPurchaseShipment operation.
- * @export
- * @interface DirectPurchaseResult
  */
 export interface DirectPurchaseResult {
     /**
      * The unique shipment identifier provided by a shipping service.
-     * @type {string}
-     * @memberof DirectPurchaseResult
      */
     'shipmentId': string;
     /**
      * A list of post-purchase details about a package that will be shipped using a shipping service.
-     * @type {Array<PackageDocumentDetail>}
-     * @memberof DirectPurchaseResult
      */
     'packageDocumentDetailList'?: Array<PackageDocumentDetail>;
 }

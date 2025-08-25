@@ -22,33 +22,17 @@ import type { ScheduleTransferType } from './schedule-transfer-type';
 
 /**
  * Parameters containing information required for initiating a schedule transfer 
- * @export
- * @interface TransferScheduleInformation
  */
 export interface TransferScheduleInformation {
     /**
      * Field to specify start date of the scheduled transfer 
-     * @type {string}
-     * @memberof TransferScheduleInformation
      */
     'scheduleStartDate'?: string;
     /**
      * Field to specify end date of the scheduled transfer 
-     * @type {string}
-     * @memberof TransferScheduleInformation
      */
     'scheduleEndDate'?: string;
-    /**
-     * 
-     * @type {ScheduleExpression}
-     * @memberof TransferScheduleInformation
-     */
     'scheduleExpression'?: ScheduleExpression;
-    /**
-     * 
-     * @type {ScheduleTransferType}
-     * @memberof TransferScheduleInformation
-     */
     'scheduleType'?: ScheduleTransferType;
 }
 

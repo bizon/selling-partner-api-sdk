@@ -19,38 +19,26 @@ import type { IneligibilityReason } from './ineligibility-reason';
 
 /**
  * Detailed information for an ineligible shipping service offering.
- * @export
- * @interface IneligibleRate
  */
 export interface IneligibleRate {
     /**
      * An identifier for the shipping service.
-     * @type {string}
-     * @memberof IneligibleRate
      */
     'serviceId': string;
     /**
      * The name of the shipping service.
-     * @type {string}
-     * @memberof IneligibleRate
      */
     'serviceName': string;
     /**
      * The carrier name for the offering.
-     * @type {string}
-     * @memberof IneligibleRate
      */
     'carrierName': string;
     /**
      * The carrier identifier for the offering, provided by the carrier.
-     * @type {string}
-     * @memberof IneligibleRate
      */
     'carrierId': string;
     /**
      * A list of reasons why a shipping service offering is ineligible.
-     * @type {Array<IneligibilityReason>}
-     * @memberof IneligibleRate
      */
     'ineligibilityReasons': Array<IneligibilityReason>;
 }

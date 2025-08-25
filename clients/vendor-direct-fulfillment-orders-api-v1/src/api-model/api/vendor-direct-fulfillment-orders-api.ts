@@ -31,7 +31,6 @@ import type { SubmitAcknowledgementRequest } from '../models';
 import type { SubmitAcknowledgementResponse } from '../models';
 /**
  * VendorDirectFulfillmentOrdersApi - axios parameter creator
- * @export
  */
 export const VendorDirectFulfillmentOrdersApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -185,7 +184,6 @@ export const VendorDirectFulfillmentOrdersApiAxiosParamCreator = function (confi
 
 /**
  * VendorDirectFulfillmentOrdersApi - functional programming interface
- * @export
  */
 export const VendorDirectFulfillmentOrdersApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = VendorDirectFulfillmentOrdersApiAxiosParamCreator(configuration)
@@ -238,7 +236,6 @@ export const VendorDirectFulfillmentOrdersApiFp = function(configuration?: Confi
 
 /**
  * VendorDirectFulfillmentOrdersApi - factory interface
- * @export
  */
 export const VendorDirectFulfillmentOrdersApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = VendorDirectFulfillmentOrdersApiFp(configuration)
@@ -275,100 +272,71 @@ export const VendorDirectFulfillmentOrdersApiFactory = function (configuration?:
 
 /**
  * Request parameters for getOrder operation in VendorDirectFulfillmentOrdersApi.
- * @export
- * @interface VendorDirectFulfillmentOrdersApiGetOrderRequest
  */
 export interface VendorDirectFulfillmentOrdersApiGetOrderRequest {
     /**
      * The order identifier for the purchase order that you want. Formatting Notes: alpha-numeric code.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentOrdersApiGetOrder
      */
     readonly purchaseOrderNumber: string
 }
 
 /**
  * Request parameters for getOrders operation in VendorDirectFulfillmentOrdersApi.
- * @export
- * @interface VendorDirectFulfillmentOrdersApiGetOrdersRequest
  */
 export interface VendorDirectFulfillmentOrdersApiGetOrdersRequest {
     /**
      * Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentOrdersApiGetOrders
      */
     readonly createdAfter: string
 
     /**
      * Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentOrdersApiGetOrders
      */
     readonly createdBefore: string
 
     /**
      * The vendor warehouse identifier for the fulfillment warehouse. If not specified, the result will contain orders for all warehouses.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentOrdersApiGetOrders
      */
     readonly shipFromPartyId?: string
 
     /**
      * Returns only the purchase orders that match the specified status. If not specified, the result will contain orders that match any status.
-     * @type {'NEW' | 'SHIPPED' | 'ACCEPTED' | 'CANCELLED'}
-     * @memberof VendorDirectFulfillmentOrdersApiGetOrders
      */
     readonly status?: GetOrdersStatusEnum
 
     /**
      * The limit to the number of purchase orders returned.
-     * @type {number}
-     * @memberof VendorDirectFulfillmentOrdersApiGetOrders
      */
     readonly limit?: number
 
     /**
      * Sort the list in ascending or descending order by order creation date.
-     * @type {'ASC' | 'DESC'}
-     * @memberof VendorDirectFulfillmentOrdersApiGetOrders
      */
     readonly sortOrder?: GetOrdersSortOrderEnum
 
     /**
      * Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentOrdersApiGetOrders
      */
     readonly nextToken?: string
 
     /**
      * When true, returns the complete purchase order details. Otherwise, only purchase order numbers are returned.
-     * @type {boolean}
-     * @memberof VendorDirectFulfillmentOrdersApiGetOrders
      */
     readonly includeDetails?: boolean
 }
 
 /**
  * Request parameters for submitAcknowledgement operation in VendorDirectFulfillmentOrdersApi.
- * @export
- * @interface VendorDirectFulfillmentOrdersApiSubmitAcknowledgementRequest
  */
 export interface VendorDirectFulfillmentOrdersApiSubmitAcknowledgementRequest {
     /**
      * The request body containing the acknowledgement to an order.
-     * @type {SubmitAcknowledgementRequest}
-     * @memberof VendorDirectFulfillmentOrdersApiSubmitAcknowledgement
      */
     readonly body: SubmitAcknowledgementRequest
 }
 
 /**
  * VendorDirectFulfillmentOrdersApi - object-oriented interface
- * @export
- * @class VendorDirectFulfillmentOrdersApi
- * @extends {BaseAPI}
  */
 export class VendorDirectFulfillmentOrdersApi extends BaseAPI {
     /**
@@ -376,7 +344,6 @@ export class VendorDirectFulfillmentOrdersApi extends BaseAPI {
      * @param {VendorDirectFulfillmentOrdersApiGetOrderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentOrdersApi
      */
     public getOrder(requestParameters: VendorDirectFulfillmentOrdersApiGetOrderRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentOrdersApiFp(this.configuration).getOrder(requestParameters.purchaseOrderNumber, options).then((request) => request(this.axios, this.basePath));
@@ -387,7 +354,6 @@ export class VendorDirectFulfillmentOrdersApi extends BaseAPI {
      * @param {VendorDirectFulfillmentOrdersApiGetOrdersRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentOrdersApi
      */
     public getOrders(requestParameters: VendorDirectFulfillmentOrdersApiGetOrdersRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentOrdersApiFp(this.configuration).getOrders(requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipFromPartyId, requestParameters.status, requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.includeDetails, options).then((request) => request(this.axios, this.basePath));
@@ -398,16 +364,12 @@ export class VendorDirectFulfillmentOrdersApi extends BaseAPI {
      * @param {VendorDirectFulfillmentOrdersApiSubmitAcknowledgementRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentOrdersApi
      */
     public submitAcknowledgement(requestParameters: VendorDirectFulfillmentOrdersApiSubmitAcknowledgementRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentOrdersApiFp(this.configuration).submitAcknowledgement(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetOrdersStatusEnum = {
     New: 'NEW',
     Shipped: 'SHIPPED',
@@ -415,9 +377,6 @@ export const GetOrdersStatusEnum = {
     Cancelled: 'CANCELLED'
 } as const;
 export type GetOrdersStatusEnum = typeof GetOrdersStatusEnum[keyof typeof GetOrdersStatusEnum];
-/**
- * @export
- */
 export const GetOrdersSortOrderEnum = {
     Asc: 'ASC',
     Desc: 'DESC'

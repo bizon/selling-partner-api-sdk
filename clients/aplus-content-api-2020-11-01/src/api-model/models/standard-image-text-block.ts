@@ -25,27 +25,10 @@ import type { TextComponent } from './text-component';
 
 /**
  * The A+ Content standard image and text box block.
- * @export
- * @interface StandardImageTextBlock
  */
 export interface StandardImageTextBlock {
-    /**
-     * 
-     * @type {ImageComponent}
-     * @memberof StandardImageTextBlock
-     */
     'image'?: ImageComponent;
-    /**
-     * 
-     * @type {TextComponent}
-     * @memberof StandardImageTextBlock
-     */
     'headline'?: TextComponent;
-    /**
-     * 
-     * @type {ParagraphComponent}
-     * @memberof StandardImageTextBlock
-     */
     'body'?: ParagraphComponent;
 }
 

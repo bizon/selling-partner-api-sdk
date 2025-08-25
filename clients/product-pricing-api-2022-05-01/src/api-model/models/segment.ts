@@ -19,15 +19,8 @@ import type { SegmentDetails } from './segment-details';
 
 /**
  * Input segment for featured offer expected price. The segment contains the location information for which featured offer expected price is requested.
- * @export
- * @interface Segment
  */
 export interface Segment {
-    /**
-     * 
-     * @type {SegmentDetails}
-     * @memberof Segment
-     */
     'segmentDetails'?: SegmentDetails;
 }
 

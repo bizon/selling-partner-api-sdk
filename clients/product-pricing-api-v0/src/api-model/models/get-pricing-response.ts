@@ -19,20 +19,14 @@ import type { Price } from './price';
 
 /**
  * The response schema for the `getPricing` and `getCompetitivePricing` operations.
- * @export
- * @interface GetPricingResponse
  */
 export interface GetPricingResponse {
     /**
      * The payload for the `getPricing` and `getCompetitivePricing` operations.
-     * @type {Array<Price>}
-     * @memberof GetPricingResponse
      */
     'payload'?: Array<Price>;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetPricingResponse
      */
     'errors'?: Array<Error>;
 }

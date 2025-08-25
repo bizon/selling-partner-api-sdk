@@ -25,27 +25,10 @@ import type { PackageWeight } from './package-weight';
 
 /**
  * Package weight and dimension.
- * @export
- * @interface MeasurementData
  */
 export interface MeasurementData {
-    /**
-     * 
-     * @type {PackageDimensions}
-     * @memberof MeasurementData
-     */
     'dimensions'?: PackageDimensions;
-    /**
-     * 
-     * @type {PackageVolume}
-     * @memberof MeasurementData
-     */
     'volume'?: PackageVolume;
-    /**
-     * 
-     * @type {PackageWeight}
-     * @memberof MeasurementData
-     */
     'weight': PackageWeight;
 }
 

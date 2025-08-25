@@ -16,8 +16,6 @@
 
 /**
  * Represent parameters to specify recurrence of the scheduled transfer.
- * @export
- * @enum {string}
  */
 
 export const RecurringFrequency = {

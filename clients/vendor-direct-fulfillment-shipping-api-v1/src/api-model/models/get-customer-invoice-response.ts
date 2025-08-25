@@ -19,20 +19,11 @@ import type { CustomerInvoice } from './customer-invoice';
 
 /**
  * The response schema for the getCustomerInvoice operation.
- * @export
- * @interface GetCustomerInvoiceResponse
  */
 export interface GetCustomerInvoiceResponse {
-    /**
-     * 
-     * @type {CustomerInvoice}
-     * @memberof GetCustomerInvoiceResponse
-     */
     'payload'?: CustomerInvoice;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetCustomerInvoiceResponse
      */
     'errors'?: Array<Error>;
 }

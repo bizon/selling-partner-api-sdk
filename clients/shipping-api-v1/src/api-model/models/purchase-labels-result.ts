@@ -22,32 +22,19 @@ import type { LabelResult } from './label-result';
 
 /**
  * The payload schema for the purchaseLabels operation.
- * @export
- * @interface PurchaseLabelsResult
  */
 export interface PurchaseLabelsResult {
     /**
      * The unique shipment identifier.
-     * @type {string}
-     * @memberof PurchaseLabelsResult
      */
     'shipmentId': string;
     /**
      * Client reference id.
-     * @type {string}
-     * @memberof PurchaseLabelsResult
      */
     'clientReferenceId'?: string;
-    /**
-     * 
-     * @type {AcceptedRate}
-     * @memberof PurchaseLabelsResult
-     */
     'acceptedRate': AcceptedRate;
     /**
      * A list of label results
-     * @type {Array<LabelResult>}
-     * @memberof PurchaseLabelsResult
      */
     'labelResults': Array<LabelResult>;
 }

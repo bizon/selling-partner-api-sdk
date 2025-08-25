@@ -16,14 +16,10 @@
 
 /**
  * The browse node review trend occurrence metrics.
- * @export
- * @interface BrowseNodeOccurrence
  */
 export interface BrowseNodeOccurrence {
     /**
      * The percentage of reviews of products in the browse node that mention a topic.
-     * @type {number}
-     * @memberof BrowseNodeOccurrence
      */
     'allProducts': number;
 }

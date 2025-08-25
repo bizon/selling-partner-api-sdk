@@ -16,14 +16,10 @@
 
 /**
  * The seller owning the goods before handing them over to the carrier
- * @export
- * @interface GoodsOwner
  */
 export interface GoodsOwner {
     /**
      * merchant Id of provided merchant 
-     * @type {string}
-     * @memberof GoodsOwner
      */
     'merchantId': string;
 }

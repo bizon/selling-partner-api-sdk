@@ -14,16 +14,9 @@
 
 
 
-/**
- * 
- * @export
- * @interface ListingOffersRequestParamsAllOf
- */
 export interface ListingOffersRequestParamsAllOf {
     /**
      * The seller stock keeping unit (SKU) of the item. This is the same SKU passed as a path parameter.
-     * @type {string}
-     * @memberof ListingOffersRequestParamsAllOf
      */
     'SellerSKU': string;
 }

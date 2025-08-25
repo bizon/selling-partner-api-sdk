@@ -22,20 +22,11 @@ import type { Pagination } from './pagination';
 
 /**
  * Represents a list of customer invoices, potentially paginated.
- * @export
- * @interface CustomerInvoiceList
  */
 export interface CustomerInvoiceList {
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof CustomerInvoiceList
-     */
     'pagination'?: Pagination;
     /**
      * Represents a customer invoice within the CustomerInvoiceList.
-     * @type {Array<CustomerInvoice>}
-     * @memberof CustomerInvoiceList
      */
     'customerInvoices'?: Array<CustomerInvoice>;
 }

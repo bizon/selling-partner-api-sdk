@@ -16,8 +16,6 @@
 
 /**
  * The delivery confirmation level.
- * @export
- * @enum {string}
  */
 
 export const DeliveryExperienceType = {

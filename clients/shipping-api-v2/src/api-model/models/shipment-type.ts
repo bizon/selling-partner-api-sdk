@@ -16,8 +16,6 @@
 
 /**
  * Shipment type.
- * @export
- * @enum {string}
  */
 
 export const ShipmentType = {

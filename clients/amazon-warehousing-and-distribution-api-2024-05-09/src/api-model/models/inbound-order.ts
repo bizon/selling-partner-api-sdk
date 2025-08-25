@@ -31,62 +31,30 @@ import type { InboundStatus } from './inbound-status';
 
 /**
  * Represents an AWD inbound order.
- * @export
- * @interface InboundOrder
  */
 export interface InboundOrder {
     /**
      * Date when this order was created.
-     * @type {string}
-     * @memberof InboundOrder
      */
     'createdAt': string;
-    /**
-     * 
-     * @type {DestinationDetails}
-     * @memberof InboundOrder
-     */
     'destinationDetails'?: DestinationDetails;
     /**
      * Reference ID that can be used to correlate the order with partner resources.
-     * @type {string}
-     * @memberof InboundOrder
      */
     'externalReferenceId'?: string;
     /**
      * Inbound order ID.
-     * @type {string}
-     * @memberof InboundOrder
      */
     'orderId': string;
-    /**
-     * 
-     * @type {InboundStatus}
-     * @memberof InboundOrder
-     */
     'orderStatus': InboundStatus;
-    /**
-     * 
-     * @type {Address}
-     * @memberof InboundOrder
-     */
     'originAddress': Address;
     /**
      * List of packages to be inbounded.
-     * @type {Array<DistributionPackageQuantity>}
-     * @memberof InboundOrder
      */
     'packagesToInbound': Array<DistributionPackageQuantity>;
-    /**
-     * 
-     * @type {InboundPreferences}
-     * @memberof InboundOrder
-     */
     'preferences'?: InboundPreferences;
     /**
      * Date when this order was last updated.
-     * @type {string}
-     * @memberof InboundOrder
      */
     'updatedAt'?: string;
 }

@@ -19,20 +19,14 @@ import type { BrowseNodeReviewTrendPoint } from './browse-node-review-trend-poin
 
 /**
  * The trend of review topic metrics for all items in the requested browse node.
- * @export
- * @interface BrowseNodeReviewTrend
  */
 export interface BrowseNodeReviewTrend {
     /**
      * The name of the topic.
-     * @type {string}
-     * @memberof BrowseNodeReviewTrend
      */
     'topic': string;
     /**
      * The browse node\'s review trend metrics for the past six months.
-     * @type {Array<BrowseNodeReviewTrendPoint>}
-     * @memberof BrowseNodeReviewTrend
      */
     'trendMetrics': Array<BrowseNodeReviewTrendPoint>;
 }

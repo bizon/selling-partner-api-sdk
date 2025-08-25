@@ -16,20 +16,14 @@
 
 /**
  * Document that captured during service appointment fulfillment that portrays proof of completion
- * @export
- * @interface FulfillmentDocument
  */
 export interface FulfillmentDocument {
     /**
      * The identifier of the upload destination. Get this value by calling the `createServiceDocumentUploadDestination` operation of the Services API.
-     * @type {string}
-     * @memberof FulfillmentDocument
      */
     'uploadDestinationId'?: string;
     /**
      * Sha256 hash of the file content. This value is used to determine if the file has been corrupted or tampered with during transit.
-     * @type {string}
-     * @memberof FulfillmentDocument
      */
     'contentSha256'?: string;
 }

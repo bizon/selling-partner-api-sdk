@@ -19,20 +19,14 @@ import type { SupplySourceListInner } from './supply-source-list-inner';
 
 /**
  * The paginated list of supply sources.
- * @export
- * @interface GetSupplySourcesResponse
  */
 export interface GetSupplySourcesResponse {
     /**
      * The list of `SupplySource`s.
-     * @type {Array<SupplySourceListInner>}
-     * @memberof GetSupplySourcesResponse
      */
     'supplySources'?: Array<SupplySourceListInner>;
     /**
      * If present, use this pagination token to retrieve the next page of supply sources.
-     * @type {string}
-     * @memberof GetSupplySourcesResponse
      */
     'nextPageToken'?: string;
 }

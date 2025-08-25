@@ -16,20 +16,14 @@
 
 /**
  * Carrier Account details used to fetch rates.
- * @export
- * @interface CarrierAccount
  */
 export interface CarrierAccount {
     /**
      * Identifier for the seller\'s carrier account.
-     * @type {string}
-     * @memberof CarrierAccount
      */
     'carrierAccountId': string;
     /**
      * The carrier identifier for the offering, provided by the carrier.
-     * @type {string}
-     * @memberof CarrierAccount
      */
     'carrierId': string;
 }

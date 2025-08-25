@@ -19,33 +19,11 @@ import type { ConstraintType } from './constraint-type';
 
 /**
  * Delivery constraints applicable to this order.
- * @export
- * @interface ShippingConstraints
  */
 export interface ShippingConstraints {
-    /**
-     * 
-     * @type {ConstraintType}
-     * @memberof ShippingConstraints
-     */
     'PalletDelivery'?: ConstraintType;
-    /**
-     * 
-     * @type {ConstraintType}
-     * @memberof ShippingConstraints
-     */
     'SignatureConfirmation'?: ConstraintType;
-    /**
-     * 
-     * @type {ConstraintType}
-     * @memberof ShippingConstraints
-     */
     'RecipientIdentityVerification'?: ConstraintType;
-    /**
-     * 
-     * @type {ConstraintType}
-     * @memberof ShippingConstraints
-     */
     'RecipientAgeVerification'?: ConstraintType;
 }
 

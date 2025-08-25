@@ -19,20 +19,14 @@ import type { LinkableAccountType } from './linkable-account-type';
 
 /**
  * Info About Linkable Carrier
- * @export
- * @interface LinkableCarrier
  */
 export interface LinkableCarrier {
     /**
      * The carrier identifier for the offering, provided by the carrier.
-     * @type {string}
-     * @memberof LinkableCarrier
      */
     'carrierId'?: string;
     /**
      * A list of LinkableAccountType
-     * @type {Array<LinkableAccountType>}
-     * @memberof LinkableCarrier
      */
     'linkableAccountTypes'?: Array<LinkableAccountType>;
 }

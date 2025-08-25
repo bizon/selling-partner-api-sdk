@@ -25,7 +25,6 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 import type { GetOrderMetricsResponse } from '../models';
 /**
  * SalesApi - axios parameter creator
- * @export
  */
 export const SalesApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -119,7 +118,6 @@ export const SalesApiAxiosParamCreator = function (configuration?: Configuration
 
 /**
  * SalesApi - functional programming interface
- * @export
  */
 export const SalesApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = SalesApiAxiosParamCreator(configuration)
@@ -150,7 +148,6 @@ export const SalesApiFp = function(configuration?: Configuration) {
 
 /**
  * SalesApi - factory interface
- * @export
  */
 export const SalesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = SalesApiFp(configuration)
@@ -169,86 +166,61 @@ export const SalesApiFactory = function (configuration?: Configuration, basePath
 
 /**
  * Request parameters for getOrderMetrics operation in SalesApi.
- * @export
- * @interface SalesApiGetOrderMetricsRequest
  */
 export interface SalesApiGetOrderMetricsRequest {
     /**
      * A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.  For example, ATVPDKIKX0DER indicates the US marketplace.
-     * @type {Array<string>}
-     * @memberof SalesApiGetOrderMetrics
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * A time interval used for selecting order metrics. This takes the form of two dates separated by two hyphens (first date is inclusive; second date is exclusive). Dates are in ISO8601 format and must represent absolute time (either Z notation or offset notation). Example: 2018-09-01T00:00:00-07:00--2018-09-04T00:00:00-07:00 requests order metrics for Sept 1st, 2nd and 3rd in the -07:00 zone.
-     * @type {string}
-     * @memberof SalesApiGetOrderMetrics
      */
     readonly interval: string
 
     /**
      * The granularity of the grouping of order metrics, based on a unit of time. Specifying granularity&#x3D;Hour results in a successful request only if the interval specified is less than or equal to 30 days from now. For all other granularities, the interval specified must be less or equal to 2 years from now. Specifying granularity&#x3D;Total results in order metrics that are aggregated over the entire interval that you specify. If the interval start and end date don’t align with the specified granularity, the head and tail end of the response interval will contain partial data. Example: Day to get a daily breakdown of the request interval, where the day boundary is defined by the granularityTimeZone.
-     * @type {'Hour' | 'Day' | 'Week' | 'Month' | 'Year' | 'Total'}
-     * @memberof SalesApiGetOrderMetrics
      */
     readonly granularity: GetOrderMetricsGranularityEnum
 
     /**
      * An IANA-compatible time zone for determining the day boundary. Required when specifying a granularity value greater than Hour. The granularityTimeZone value must align with the offset of the specified interval value. For example, if the interval value uses Z notation, then granularityTimeZone must be UTC. If the interval value uses an offset, then granularityTimeZone must be an IANA-compatible time zone that matches the offset. Example: US/Pacific to compute day boundaries, accounting for daylight time savings, for US/Pacific zone.
-     * @type {string}
-     * @memberof SalesApiGetOrderMetrics
      */
     readonly granularityTimeZone?: string
 
     /**
      * Filters the results by the buyer type that you specify, B2B (business to business) or B2C (business to customer). Example: B2B, if you want the response to include order metrics for only B2B buyers.
-     * @type {'B2B' | 'B2C' | 'All'}
-     * @memberof SalesApiGetOrderMetrics
      */
     readonly buyerType?: GetOrderMetricsBuyerTypeEnum
 
     /**
      * Filters the results by the fulfillment network that you specify, MFN (merchant fulfillment network) or AFN (Amazon fulfillment network). Do not include this filter if you want the response to include order metrics for all fulfillment networks. Example: AFN, if you want the response to include order metrics for only Amazon fulfillment network.
-     * @type {string}
-     * @memberof SalesApiGetOrderMetrics
      */
     readonly fulfillmentNetwork?: string
 
     /**
      * Specifies the day that the week starts on when granularity&#x3D;Week, either Monday or Sunday. Default: Monday. Example: Sunday, if you want the week to start on a Sunday.
-     * @type {'Monday' | 'Sunday'}
-     * @memberof SalesApiGetOrderMetrics
      */
     readonly firstDayOfWeek?: GetOrderMetricsFirstDayOfWeekEnum
 
     /**
      * Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN.
-     * @type {string}
-     * @memberof SalesApiGetOrderMetrics
      */
     readonly asin?: string
 
     /**
      * Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU.
-     * @type {string}
-     * @memberof SalesApiGetOrderMetrics
      */
     readonly sku?: string
 
     /**
      * Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** &#x60;AmazonHaul&#x60; returns order metrics for the Amazon Haul program only.
-     * @type {'AmazonHaul'}
-     * @memberof SalesApiGetOrderMetrics
      */
     readonly amazonProgram?: GetOrderMetricsAmazonProgramEnum
 }
 
 /**
  * SalesApi - object-oriented interface
- * @export
- * @class SalesApi
- * @extends {BaseAPI}
  */
 export class SalesApi extends BaseAPI {
     /**
@@ -256,16 +228,12 @@ export class SalesApi extends BaseAPI {
      * @param {SalesApiGetOrderMetricsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SalesApi
      */
     public getOrderMetrics(requestParameters: SalesApiGetOrderMetricsRequest, options?: RawAxiosRequestConfig) {
         return SalesApiFp(this.configuration).getOrderMetrics(requestParameters.marketplaceIds, requestParameters.interval, requestParameters.granularity, requestParameters.granularityTimeZone, requestParameters.buyerType, requestParameters.fulfillmentNetwork, requestParameters.firstDayOfWeek, requestParameters.asin, requestParameters.sku, requestParameters.amazonProgram, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetOrderMetricsGranularityEnum = {
     Hour: 'Hour',
     Day: 'Day',
@@ -275,26 +243,17 @@ export const GetOrderMetricsGranularityEnum = {
     Total: 'Total'
 } as const;
 export type GetOrderMetricsGranularityEnum = typeof GetOrderMetricsGranularityEnum[keyof typeof GetOrderMetricsGranularityEnum];
-/**
- * @export
- */
 export const GetOrderMetricsBuyerTypeEnum = {
     B2B: 'B2B',
     B2C: 'B2C',
     All: 'All'
 } as const;
 export type GetOrderMetricsBuyerTypeEnum = typeof GetOrderMetricsBuyerTypeEnum[keyof typeof GetOrderMetricsBuyerTypeEnum];
-/**
- * @export
- */
 export const GetOrderMetricsFirstDayOfWeekEnum = {
     Monday: 'Monday',
     Sunday: 'Sunday'
 } as const;
 export type GetOrderMetricsFirstDayOfWeekEnum = typeof GetOrderMetricsFirstDayOfWeekEnum[keyof typeof GetOrderMetricsFirstDayOfWeekEnum];
-/**
- * @export
- */
 export const GetOrderMetricsAmazonProgramEnum = {
     AmazonHaul: 'AmazonHaul'
 } as const;

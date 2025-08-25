@@ -16,20 +16,14 @@
 
 /**
  * Plain positional text that is used in collections of brief labels and descriptors.
- * @export
- * @interface PlainTextItem
  */
 export interface PlainTextItem {
     /**
      * The rank or index of this text item within the collection. Different items cannot occupy the same position within a single collection.
-     * @type {number}
-     * @memberof PlainTextItem
      */
     'position': number;
     /**
      * The actual plain text.
-     * @type {string}
-     * @memberof PlainTextItem
      */
     'value': string;
 }

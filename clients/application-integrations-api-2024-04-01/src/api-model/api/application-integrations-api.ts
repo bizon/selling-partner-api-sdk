@@ -33,7 +33,6 @@ import type { ErrorList } from '../models';
 import type { RecordActionFeedbackRequest } from '../models';
 /**
  * ApplicationIntegrationsApi - axios parameter creator
- * @export
  */
 export const ApplicationIntegrationsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -151,7 +150,6 @@ export const ApplicationIntegrationsApiAxiosParamCreator = function (configurati
 
 /**
  * ApplicationIntegrationsApi - functional programming interface
- * @export
  */
 export const ApplicationIntegrationsApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ApplicationIntegrationsApiAxiosParamCreator(configuration)
@@ -198,7 +196,6 @@ export const ApplicationIntegrationsApiFp = function(configuration?: Configurati
 
 /**
  * ApplicationIntegrationsApi - factory interface
- * @export
  */
 export const ApplicationIntegrationsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = ApplicationIntegrationsApiFp(configuration)
@@ -235,58 +232,41 @@ export const ApplicationIntegrationsApiFactory = function (configuration?: Confi
 
 /**
  * Request parameters for createNotification operation in ApplicationIntegrationsApi.
- * @export
- * @interface ApplicationIntegrationsApiCreateNotificationRequest
  */
 export interface ApplicationIntegrationsApiCreateNotificationRequest {
     /**
      * The request body for the &#x60;createNotification&#x60; operation.
-     * @type {CreateNotificationRequest}
-     * @memberof ApplicationIntegrationsApiCreateNotification
      */
     readonly body: CreateNotificationRequest
 }
 
 /**
  * Request parameters for deleteNotifications operation in ApplicationIntegrationsApi.
- * @export
- * @interface ApplicationIntegrationsApiDeleteNotificationsRequest
  */
 export interface ApplicationIntegrationsApiDeleteNotificationsRequest {
     /**
      * The request body for the &#x60;deleteNotifications&#x60; operation.
-     * @type {DeleteNotificationsRequest}
-     * @memberof ApplicationIntegrationsApiDeleteNotifications
      */
     readonly body: DeleteNotificationsRequest
 }
 
 /**
  * Request parameters for recordActionFeedback operation in ApplicationIntegrationsApi.
- * @export
- * @interface ApplicationIntegrationsApiRecordActionFeedbackRequest
  */
 export interface ApplicationIntegrationsApiRecordActionFeedbackRequest {
     /**
      * A &#x60;notificationId&#x60; uniquely identifies a notification.
-     * @type {string}
-     * @memberof ApplicationIntegrationsApiRecordActionFeedback
      */
     readonly notificationId: string
 
     /**
      * The request body for the &#x60;recordActionFeedback&#x60; operation.
-     * @type {RecordActionFeedbackRequest}
-     * @memberof ApplicationIntegrationsApiRecordActionFeedback
      */
     readonly body: RecordActionFeedbackRequest
 }
 
 /**
  * ApplicationIntegrationsApi - object-oriented interface
- * @export
- * @class ApplicationIntegrationsApi
- * @extends {BaseAPI}
  */
 export class ApplicationIntegrationsApi extends BaseAPI {
     /**
@@ -294,7 +274,6 @@ export class ApplicationIntegrationsApi extends BaseAPI {
      * @param {ApplicationIntegrationsApiCreateNotificationRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ApplicationIntegrationsApi
      */
     public createNotification(requestParameters: ApplicationIntegrationsApiCreateNotificationRequest, options?: RawAxiosRequestConfig) {
         return ApplicationIntegrationsApiFp(this.configuration).createNotification(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -305,7 +284,6 @@ export class ApplicationIntegrationsApi extends BaseAPI {
      * @param {ApplicationIntegrationsApiDeleteNotificationsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ApplicationIntegrationsApi
      */
     public deleteNotifications(requestParameters: ApplicationIntegrationsApiDeleteNotificationsRequest, options?: RawAxiosRequestConfig) {
         return ApplicationIntegrationsApiFp(this.configuration).deleteNotifications(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -316,7 +294,6 @@ export class ApplicationIntegrationsApi extends BaseAPI {
      * @param {ApplicationIntegrationsApiRecordActionFeedbackRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ApplicationIntegrationsApi
      */
     public recordActionFeedback(requestParameters: ApplicationIntegrationsApiRecordActionFeedbackRequest, options?: RawAxiosRequestConfig) {
         return ApplicationIntegrationsApiFp(this.configuration).recordActionFeedback(requestParameters.notificationId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));

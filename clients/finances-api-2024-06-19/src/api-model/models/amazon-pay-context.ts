@@ -16,26 +16,18 @@
 
 /**
  * Additional information related to Amazon Pay.
- * @export
- * @interface AmazonPayContext
  */
 export interface AmazonPayContext {
     /**
      * Store name related to transaction.
-     * @type {string}
-     * @memberof AmazonPayContext
      */
     'storeName'?: string;
     /**
      * Order type of the transaction.
-     * @type {string}
-     * @memberof AmazonPayContext
      */
     'orderType'?: string;
     /**
      * Channel details of related transaction.
-     * @type {string}
-     * @memberof AmazonPayContext
      */
     'channel'?: string;
 }

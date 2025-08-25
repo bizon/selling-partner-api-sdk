@@ -16,8 +16,6 @@
 
 /**
  * The status of an operation.
- * @export
- * @enum {string}
  */
 
 export const OperationStatus = {

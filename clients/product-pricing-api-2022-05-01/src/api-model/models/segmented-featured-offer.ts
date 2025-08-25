@@ -44,7 +44,6 @@ import type { ShippingOption } from './shipping-option';
 /**
  * @type SegmentedFeaturedOffer
  * A product offer with segment information indicating where it\'s featured.
- * @export
  */
 export type SegmentedFeaturedOffer = Offer & SegmentedFeaturedOfferAllOf;
 

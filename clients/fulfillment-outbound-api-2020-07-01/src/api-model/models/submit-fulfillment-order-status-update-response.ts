@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the `SubmitFulfillmentOrderStatusUpdate` operation.
- * @export
- * @interface SubmitFulfillmentOrderStatusUpdateResponse
  */
 export interface SubmitFulfillmentOrderStatusUpdateResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof SubmitFulfillmentOrderStatusUpdateResponse
      */
     'errors'?: Array<Error>;
 }

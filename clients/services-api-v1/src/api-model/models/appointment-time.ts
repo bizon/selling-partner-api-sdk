@@ -16,20 +16,14 @@
 
 /**
  * The time of the appointment window.
- * @export
- * @interface AppointmentTime
  */
 export interface AppointmentTime {
     /**
      * The date and time of the start of the appointment window in ISO 8601 format.
-     * @type {string}
-     * @memberof AppointmentTime
      */
     'startTime': string;
     /**
      * The duration of the appointment window, in minutes.
-     * @type {number}
-     * @memberof AppointmentTime
      */
     'durationInMinutes': number;
 }

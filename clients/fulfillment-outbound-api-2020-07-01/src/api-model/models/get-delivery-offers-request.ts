@@ -22,21 +22,9 @@ import type { GetDeliveryOffersTerms } from './get-delivery-offers-terms';
 
 /**
  * The request body schema for the getDeliveryOffers operation.
- * @export
- * @interface GetDeliveryOffersRequest
  */
 export interface GetDeliveryOffersRequest {
-    /**
-     * 
-     * @type {GetDeliveryOffersProduct}
-     * @memberof GetDeliveryOffersRequest
-     */
     'product': GetDeliveryOffersProduct;
-    /**
-     * 
-     * @type {GetDeliveryOffersTerms}
-     * @memberof GetDeliveryOffersRequest
-     */
     'terms': GetDeliveryOffersTerms;
 }
 

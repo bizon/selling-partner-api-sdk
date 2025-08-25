@@ -19,15 +19,8 @@ import type { BrowseNodeOccurrence } from './browse-node-occurrence';
 
 /**
  * A single browse node review or return trend metric.
- * @export
- * @interface BrowseNodeTrendMetrics
  */
 export interface BrowseNodeTrendMetrics {
-    /**
-     * 
-     * @type {BrowseNodeOccurrence}
-     * @memberof BrowseNodeTrendMetrics
-     */
     'occurrencePercentage': BrowseNodeOccurrence;
 }
 

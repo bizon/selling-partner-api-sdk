@@ -16,14 +16,10 @@
 
 /**
  * A carrier whose terms and conditions have not been accepted by the seller.
- * @export
- * @interface TermsAndConditionsNotAcceptedCarrier
  */
 export interface TermsAndConditionsNotAcceptedCarrier {
     /**
      * The name of the carrier.
-     * @type {string}
-     * @memberof TermsAndConditionsNotAcceptedCarrier
      */
     'CarrierName': string;
 }

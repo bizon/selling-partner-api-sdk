@@ -19,21 +19,12 @@ import type { TimeUnit } from './time-unit';
 
 /**
  * The throughput capacity
- * @export
- * @interface ThroughputCap
  */
 export interface ThroughputCap {
     /**
      * An unsigned integer that can be only positive or zero.
-     * @type {number}
-     * @memberof ThroughputCap
      */
     'value'?: number;
-    /**
-     * 
-     * @type {TimeUnit}
-     * @memberof ThroughputCap
-     */
     'timeUnit'?: TimeUnit;
 }
 

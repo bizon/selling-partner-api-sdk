@@ -16,8 +16,6 @@
 
 /**
  * Indicates the type of tax.
- * @export
- * @enum {string}
  */
 
 export const TaxType = {

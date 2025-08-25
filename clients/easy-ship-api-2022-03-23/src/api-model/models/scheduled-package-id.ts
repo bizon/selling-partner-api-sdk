@@ -16,20 +16,14 @@
 
 /**
  * Identifies the scheduled package to be updated.
- * @export
- * @interface ScheduledPackageId
  */
 export interface ScheduledPackageId {
     /**
      * An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
-     * @type {string}
-     * @memberof ScheduledPackageId
      */
     'amazonOrderId': string;
     /**
      * An Amazon-defined identifier for the scheduled package.
-     * @type {string}
-     * @memberof ScheduledPackageId
      */
     'packageId'?: string;
 }

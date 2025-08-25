@@ -19,21 +19,12 @@ import type { Money } from './money';
 
 /**
  * The number of Amazon Points offered with the purchase of an item, and their monetary value.
- * @export
- * @interface PointsGrantedDetail
  */
 export interface PointsGrantedDetail {
     /**
      * The number of Amazon Points granted with the purchase of an item.
-     * @type {number}
-     * @memberof PointsGrantedDetail
      */
     'PointsNumber'?: number;
-    /**
-     * 
-     * @type {Money}
-     * @memberof PointsGrantedDetail
-     */
     'PointsMonetaryValue'?: Money;
 }
 

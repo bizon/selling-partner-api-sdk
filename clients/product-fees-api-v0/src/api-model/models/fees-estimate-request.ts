@@ -22,39 +22,21 @@ import type { PriceToEstimateFees } from './price-to-estimate-fees';
 
 /**
  * A product, marketplace, and proposed price used to request estimated fees.
- * @export
- * @interface FeesEstimateRequest
  */
 export interface FeesEstimateRequest {
     /**
      * A marketplace identifier.
-     * @type {string}
-     * @memberof FeesEstimateRequest
      */
     'MarketplaceId': string;
     /**
      * When true, the offer is fulfilled by Amazon.
-     * @type {boolean}
-     * @memberof FeesEstimateRequest
      */
     'IsAmazonFulfilled'?: boolean;
-    /**
-     * 
-     * @type {PriceToEstimateFees}
-     * @memberof FeesEstimateRequest
-     */
     'PriceToEstimateFees': PriceToEstimateFees;
     /**
      * A unique identifier provided by the caller to track this request.
-     * @type {string}
-     * @memberof FeesEstimateRequest
      */
     'Identifier': string;
-    /**
-     * 
-     * @type {OptionalFulfillmentProgram}
-     * @memberof FeesEstimateRequest
-     */
     'OptionalFulfillmentProgram'?: OptionalFulfillmentProgram;
 }
 

@@ -16,8 +16,6 @@
 
 /**
  * The type of standard identifier to print on the label.
- * @export
- * @enum {string}
  */
 
 export const StandardIdForLabel = {

@@ -19,15 +19,8 @@ import type { Invoice } from './invoice';
 
 /**
  * Success.
- * @export
- * @interface GetInvoiceResponse
  */
 export interface GetInvoiceResponse {
-    /**
-     * 
-     * @type {Invoice}
-     * @memberof GetInvoiceResponse
-     */
     'invoice'?: Invoice;
 }
 

@@ -22,21 +22,9 @@ import type { ShippingOfferingFilter } from './shipping-offering-filter';
 
 /**
  * Request schema.
- * @export
- * @interface GetEligibleShipmentServicesRequest
  */
 export interface GetEligibleShipmentServicesRequest {
-    /**
-     * 
-     * @type {ShipmentRequestDetails}
-     * @memberof GetEligibleShipmentServicesRequest
-     */
     'ShipmentRequestDetails': ShipmentRequestDetails;
-    /**
-     * 
-     * @type {ShippingOfferingFilter}
-     * @memberof GetEligibleShipmentServicesRequest
-     */
     'ShippingOfferingFilter'?: ShippingOfferingFilter;
 }
 

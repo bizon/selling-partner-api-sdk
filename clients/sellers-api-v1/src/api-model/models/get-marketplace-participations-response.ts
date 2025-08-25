@@ -19,20 +19,14 @@ import type { MarketplaceParticipation } from './marketplace-participation';
 
 /**
  * The response schema for the `getMarketplaceParticipations` operation.
- * @export
- * @interface GetMarketplaceParticipationsResponse
  */
 export interface GetMarketplaceParticipationsResponse {
     /**
      * List of marketplace participations.
-     * @type {Array<MarketplaceParticipation>}
-     * @memberof GetMarketplaceParticipationsResponse
      */
     'payload'?: Array<MarketplaceParticipation>;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetMarketplaceParticipationsResponse
      */
     'errors'?: Array<Error>;
 }

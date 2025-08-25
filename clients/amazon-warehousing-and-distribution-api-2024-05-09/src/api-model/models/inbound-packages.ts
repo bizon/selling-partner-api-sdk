@@ -19,14 +19,10 @@ import type { DistributionPackageQuantity } from './distribution-package-quantit
 
 /**
  * Represents the packages to inbound.
- * @export
- * @interface InboundPackages
  */
 export interface InboundPackages {
     /**
      * List of packages to be inbounded.
-     * @type {Array<DistributionPackageQuantity>}
-     * @memberof InboundPackages
      */
     'packagesToInbound': Array<DistributionPackageQuantity>;
 }

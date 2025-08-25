@@ -16,14 +16,10 @@
 
 /**
  * The list of attributes related to the buyer.
- * @export
- * @interface GetAttributesResponseBuyer
  */
 export interface GetAttributesResponseBuyer {
     /**
      * The buyer\'s language of preference, indicated with a locale-specific language tag. Examples: \"en-US\", \"zh-CN\", and \"en-GB\".
-     * @type {string}
-     * @memberof GetAttributesResponseBuyer
      */
     'locale'?: string;
 }

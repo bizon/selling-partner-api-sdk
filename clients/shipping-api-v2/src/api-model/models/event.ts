@@ -25,33 +25,14 @@ import type { ShipmentType } from './shipment-type';
 
 /**
  * A tracking event.
- * @export
- * @interface Event
  */
 export interface Event {
-    /**
-     * 
-     * @type {EventCode}
-     * @memberof Event
-     */
     'eventCode': EventCode;
-    /**
-     * 
-     * @type {Location}
-     * @memberof Event
-     */
     'location'?: Location;
     /**
      * The ISO 8601 formatted timestamp of the event.
-     * @type {string}
-     * @memberof Event
      */
     'eventTime': string;
-    /**
-     * 
-     * @type {ShipmentType}
-     * @memberof Event
-     */
     'shipmentType'?: ShipmentType;
 }
 

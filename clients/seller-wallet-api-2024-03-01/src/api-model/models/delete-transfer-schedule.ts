@@ -16,26 +16,18 @@
 
 /**
  * Response returned when the schedule transfer\'s delete request is successful.
- * @export
- * @interface DeleteTransferSchedule
  */
 export interface DeleteTransferSchedule {
     /**
      * A success code that specifies the delete operation was successful. eg:HTTP 200.
-     * @type {string}
-     * @memberof DeleteTransferSchedule
      */
     'code': string;
     /**
      * A message that describes the success condition of the delete schedule transaction.
-     * @type {string}
-     * @memberof DeleteTransferSchedule
      */
     'message': string;
     /**
      * Additional details that can help the caller understand the operation execution.
-     * @type {string}
-     * @memberof DeleteTransferSchedule
      */
     'details'?: string;
 }

@@ -19,32 +19,22 @@ import type { PurchaseOrderItems } from './purchase-order-items';
 
 /**
  * Transport Request pickup date
- * @export
- * @interface PurchaseOrders
  */
 export interface PurchaseOrders {
     /**
      * Purchase order numbers involved in this shipment, list all the PO that are involved as part of this shipment.
-     * @type {string}
-     * @memberof PurchaseOrders
      */
     'purchaseOrderNumber'?: string;
     /**
      * Purchase order numbers involved in this shipment, list all the PO that are involved as part of this shipment.
-     * @type {string}
-     * @memberof PurchaseOrders
      */
     'purchaseOrderDate'?: string;
     /**
      * Date range in which shipment is expected for these purchase orders.
-     * @type {string}
-     * @memberof PurchaseOrders
      */
     'shipWindow'?: string;
     /**
      * A list of the items that are associated to the PO in this transport and their associated details.
-     * @type {Array<PurchaseOrderItems>}
-     * @memberof PurchaseOrders
      */
     'items'?: Array<PurchaseOrderItems>;
 }

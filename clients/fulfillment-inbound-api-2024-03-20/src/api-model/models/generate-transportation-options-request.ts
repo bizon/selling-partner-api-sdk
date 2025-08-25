@@ -19,20 +19,14 @@ import type { ShipmentTransportationConfiguration } from './shipment-transportat
 
 /**
  * The `generateTransportationOptions` request.
- * @export
- * @interface GenerateTransportationOptionsRequest
  */
 export interface GenerateTransportationOptionsRequest {
     /**
      * The placement option to generate transportation options for.
-     * @type {string}
-     * @memberof GenerateTransportationOptionsRequest
      */
     'placementOptionId': string;
     /**
      * List of shipment transportation configurations.
-     * @type {Array<ShipmentTransportationConfiguration>}
-     * @memberof GenerateTransportationOptionsRequest
      */
     'shipmentTransportationConfigurations': Array<ShipmentTransportationConfiguration>;
 }

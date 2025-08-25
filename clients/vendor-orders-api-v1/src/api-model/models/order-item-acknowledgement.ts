@@ -19,38 +19,23 @@ import type { ItemQuantity } from './item-quantity';
 
 /**
  * Represents the acknowledgement details for an individual order item, including the acknowledgement code, acknowledged quantity, scheduled ship and delivery dates, and rejection reason (if applicable).
- * @export
- * @interface OrderItemAcknowledgement
  */
 export interface OrderItemAcknowledgement {
     /**
      * This indicates the acknowledgement code.
-     * @type {string}
-     * @memberof OrderItemAcknowledgement
      */
     'acknowledgementCode': OrderItemAcknowledgementAcknowledgementCodeEnum;
-    /**
-     * 
-     * @type {ItemQuantity}
-     * @memberof OrderItemAcknowledgement
-     */
     'acknowledgedQuantity': ItemQuantity;
     /**
      * Estimated ship date per line item. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof OrderItemAcknowledgement
      */
     'scheduledShipDate'?: string;
     /**
      * Estimated delivery date per line item. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof OrderItemAcknowledgement
      */
     'scheduledDeliveryDate'?: string;
     /**
      * Indicates the reason for rejection.
-     * @type {string}
-     * @memberof OrderItemAcknowledgement
      */
     'rejectionReason'?: OrderItemAcknowledgementRejectionReasonEnum;
 }

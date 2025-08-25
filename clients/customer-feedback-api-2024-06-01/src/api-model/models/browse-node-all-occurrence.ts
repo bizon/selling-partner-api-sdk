@@ -16,20 +16,14 @@
 
 /**
  * The browse node review occurrence metrics.
- * @export
- * @interface BrowseNodeAllOccurrence
  */
 export interface BrowseNodeAllOccurrence {
     /**
      * The percentage of reviews of the top 25 percent of products in the browse node that mention the topic.
-     * @type {number}
-     * @memberof BrowseNodeAllOccurrence
      */
     'topTwentyFivePercentProducts': number;
     /**
      * The percentage of reviews of products in the browse node that mention the topic.
-     * @type {number}
-     * @memberof BrowseNodeAllOccurrence
      */
     'allProducts': number;
 }

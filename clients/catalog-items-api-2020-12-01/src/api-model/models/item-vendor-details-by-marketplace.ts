@@ -16,56 +16,38 @@
 
 /**
  * Vendor details associated with an Amazon catalog item for the indicated Amazon marketplace.
- * @export
- * @interface ItemVendorDetailsByMarketplace
  */
 export interface ItemVendorDetailsByMarketplace {
     /**
      * Amazon marketplace identifier.
-     * @type {string}
-     * @memberof ItemVendorDetailsByMarketplace
      */
     'marketplaceId': string;
     /**
      * Brand code associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemVendorDetailsByMarketplace
      */
     'brandCode'?: string;
     /**
      * Product category associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemVendorDetailsByMarketplace
      */
     'categoryCode'?: string;
     /**
      * Manufacturer code associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemVendorDetailsByMarketplace
      */
     'manufacturerCode'?: string;
     /**
      * Parent vendor code of the manufacturer code.
-     * @type {string}
-     * @memberof ItemVendorDetailsByMarketplace
      */
     'manufacturerCodeParent'?: string;
     /**
      * Product group associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemVendorDetailsByMarketplace
      */
     'productGroup'?: string;
     /**
      * Replenishment category associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemVendorDetailsByMarketplace
      */
     'replenishmentCategory'?: ItemVendorDetailsByMarketplaceReplenishmentCategoryEnum;
     /**
      * Product subcategory associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemVendorDetailsByMarketplace
      */
     'subcategoryCode'?: string;
 }

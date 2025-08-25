@@ -19,14 +19,10 @@ import type { DeliveryOffer } from './delivery-offer';
 
 /**
  * A list of delivery offers, including offer expiration, earliest and latest date and time range, and the delivery offer policy.
- * @export
- * @interface GetDeliveryOffersResult
  */
 export interface GetDeliveryOffersResult {
     /**
      * An array of delivery offer information.
-     * @type {Array<DeliveryOffer>}
-     * @memberof GetDeliveryOffersResult
      */
     'deliveryOffers'?: Array<DeliveryOffer>;
 }

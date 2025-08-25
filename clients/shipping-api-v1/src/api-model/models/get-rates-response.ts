@@ -19,20 +19,11 @@ import type { GetRatesResult } from './get-rates-result';
 
 /**
  * The response schema for the getRates operation.
- * @export
- * @interface GetRatesResponse
  */
 export interface GetRatesResponse {
-    /**
-     * 
-     * @type {GetRatesResult}
-     * @memberof GetRatesResponse
-     */
     'payload'?: GetRatesResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetRatesResponse
      */
     'errors'?: Array<Error>;
 }

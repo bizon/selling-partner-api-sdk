@@ -16,38 +16,26 @@
 
 /**
  * Information required to create the report schedule.
- * @export
- * @interface CreateReportScheduleSpecification
  */
 export interface CreateReportScheduleSpecification {
     /**
      * The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
-     * @type {string}
-     * @memberof CreateReportScheduleSpecification
      */
     'reportType': string;
     /**
      * A list of marketplace identifiers for the report schedule.
-     * @type {Array<string>}
-     * @memberof CreateReportScheduleSpecification
      */
     'marketplaceIds': Array<string>;
     /**
      * Additional information passed to reports. This varies by report type.
-     * @type {{ [key: string]: string; }}
-     * @memberof CreateReportScheduleSpecification
      */
     'reportOptions'?: { [key: string]: string; };
     /**
      * One of a set of predefined <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> periods that specifies how often a report should be created.
-     * @type {string}
-     * @memberof CreateReportScheduleSpecification
      */
     'period': CreateReportScheduleSpecificationPeriodEnum;
     /**
      * The date and time when the schedule will create its next report, in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format.
-     * @type {string}
-     * @memberof CreateReportScheduleSpecification
      */
     'nextReportCreationTime'?: string;
 }

@@ -22,33 +22,17 @@ import type { DeliveryExperienceOption } from './delivery-experience-option';
 
 /**
  * Filter for use when requesting eligible shipping services.
- * @export
- * @interface ShippingOfferingFilter
  */
 export interface ShippingOfferingFilter {
     /**
      * When true, include a packing slip with the label.
-     * @type {boolean}
-     * @memberof ShippingOfferingFilter
      */
     'IncludePackingSlipWithLabel'?: boolean;
     /**
      * When true, include complex shipping options.
-     * @type {boolean}
-     * @memberof ShippingOfferingFilter
      */
     'IncludeComplexShippingOptions'?: boolean;
-    /**
-     * 
-     * @type {CarrierWillPickUpOption}
-     * @memberof ShippingOfferingFilter
-     */
     'CarrierWillPickUp'?: CarrierWillPickUpOption;
-    /**
-     * 
-     * @type {DeliveryExperienceOption}
-     * @memberof ShippingOfferingFilter
-     */
     'DeliveryExperience'?: DeliveryExperienceOption;
 }
 

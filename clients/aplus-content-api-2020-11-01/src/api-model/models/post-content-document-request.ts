@@ -17,17 +17,7 @@
 // @ts-ignore
 import type { ContentDocument } from './content-document';
 
-/**
- * 
- * @export
- * @interface PostContentDocumentRequest
- */
 export interface PostContentDocumentRequest {
-    /**
-     * 
-     * @type {ContentDocument}
-     * @memberof PostContentDocumentRequest
-     */
     'contentDocument': ContentDocument;
 }
 

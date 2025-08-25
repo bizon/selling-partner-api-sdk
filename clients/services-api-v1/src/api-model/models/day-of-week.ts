@@ -16,8 +16,6 @@
 
 /**
  * The day of the week.
- * @export
- * @enum {string}
  */
 
 export const DayOfWeek = {

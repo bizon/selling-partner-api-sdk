@@ -19,20 +19,11 @@ import type { TransactionReference } from './transaction-reference';
 
 /**
  * The response schema for the submitShipmentStatusUpdates operation.
- * @export
- * @interface SubmitShipmentStatusUpdatesResponse
  */
 export interface SubmitShipmentStatusUpdatesResponse {
-    /**
-     * 
-     * @type {TransactionReference}
-     * @memberof SubmitShipmentStatusUpdatesResponse
-     */
     'payload'?: TransactionReference;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof SubmitShipmentStatusUpdatesResponse
      */
     'errors'?: Array<Error>;
 }

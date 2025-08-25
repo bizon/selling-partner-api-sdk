@@ -19,14 +19,10 @@ import type { Shipment } from './shipment';
 
 /**
  * The request schema for the SubmitShipments operation.
- * @export
- * @interface SubmitShipments
  */
 export interface SubmitShipments {
     /**
      * A list of one or more shipments with underlying details.
-     * @type {Array<Shipment>}
-     * @memberof SubmitShipments
      */
     'shipments'?: Array<Shipment>;
 }

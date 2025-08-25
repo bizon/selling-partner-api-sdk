@@ -22,21 +22,9 @@ import type { TimeSlot } from './time-slot';
 
 /**
  * Request to update the time slot of a package.
- * @export
- * @interface UpdatePackageDetails
  */
 export interface UpdatePackageDetails {
-    /**
-     * 
-     * @type {ScheduledPackageId}
-     * @memberof UpdatePackageDetails
-     */
     'scheduledPackageId': ScheduledPackageId;
-    /**
-     * 
-     * @type {TimeSlot}
-     * @memberof UpdatePackageDetails
-     */
     'packageTimeSlot': TimeSlot;
 }
 

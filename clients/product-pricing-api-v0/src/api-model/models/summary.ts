@@ -31,68 +31,37 @@ import type { SalesRankType } from './sales-rank-type';
 
 /**
  * Contains price information about the product, including the LowestPrices and BuyBoxPrices, the ListPrice, the SuggestedLowerPricePlusShipping, and NumberOfOffers and NumberOfBuyBoxEligibleOffers.
- * @export
- * @interface Summary
  */
 export interface Summary {
     /**
      * The number of unique offers contained in NumberOfOffers.
-     * @type {number}
-     * @memberof Summary
      */
     'TotalOfferCount': number;
     /**
      * A list that contains the total number of offers information for given conditions and fulfillment channels.
-     * @type {Array<OfferCountType>}
-     * @memberof Summary
      */
     'NumberOfOffers'?: Array<OfferCountType>;
     /**
      * A list of the lowest prices.
-     * @type {Array<LowestPriceType>}
-     * @memberof Summary
      */
     'LowestPrices'?: Array<LowestPriceType>;
     /**
      * A list of the Buy Box prices.
-     * @type {Array<BuyBoxPriceType>}
-     * @memberof Summary
      */
     'BuyBoxPrices'?: Array<BuyBoxPriceType>;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof Summary
-     */
     'ListPrice'?: MoneyType;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof Summary
-     */
     'CompetitivePriceThreshold'?: MoneyType;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof Summary
-     */
     'SuggestedLowerPricePlusShipping'?: MoneyType;
     /**
      * A list of sales rank information for the item, by category.
-     * @type {Array<SalesRankType>}
-     * @memberof Summary
      */
     'SalesRankings'?: Array<SalesRankType>;
     /**
      * A list that contains the total number of offers that are eligible for the Buy Box for the given conditions and fulfillment channels.
-     * @type {Array<OfferCountType>}
-     * @memberof Summary
      */
     'BuyBoxEligibleOffers'?: Array<OfferCountType>;
     /**
      * When the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing.
-     * @type {string}
-     * @memberof Summary
      */
     'OffersAvailableTime'?: string;
 }

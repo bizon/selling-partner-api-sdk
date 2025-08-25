@@ -19,27 +19,16 @@ import type { ErrorList } from './error-list';
 
 /**
  * The transaction status details.
- * @export
- * @interface Transaction
  */
 export interface Transaction {
     /**
      * The unique identifier sent in the \'transactionId\' field in response to the post request of a specific transaction.
-     * @type {string}
-     * @memberof Transaction
      */
     'transactionId': string;
     /**
      * Current processing status of the transaction.
-     * @type {string}
-     * @memberof Transaction
      */
     'status': TransactionStatusEnum;
-    /**
-     * 
-     * @type {ErrorList}
-     * @memberof Transaction
-     */
     'errors'?: ErrorList;
 }
 

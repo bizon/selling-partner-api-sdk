@@ -19,26 +19,15 @@ import type { Address } from './address';
 
 /**
  * Information about the seller\'s primary contact.
- * @export
- * @interface PrimaryContact
  */
 export interface PrimaryContact {
     /**
      * The full name of the seller\'s primary contact.
-     * @type {string}
-     * @memberof PrimaryContact
      */
     'name': string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof PrimaryContact
-     */
     'address': Address;
     /**
      * The non-Latin script version of the primary contact\'s name, if applicable.
-     * @type {string}
-     * @memberof PrimaryContact
      */
     'nonLatinName'?: string;
 }

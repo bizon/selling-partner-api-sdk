@@ -16,26 +16,18 @@
 
 /**
  * A Multi-Channel Fulfillment feature.
- * @export
- * @interface Feature
  */
 export interface Feature {
     /**
      * The feature name.
-     * @type {string}
-     * @memberof Feature
      */
     'featureName': string;
     /**
      * The feature description.
-     * @type {string}
-     * @memberof Feature
      */
     'featureDescription': string;
     /**
      * When true, indicates that the seller is eligible to use the feature.
-     * @type {boolean}
-     * @memberof Feature
      */
     'sellerEligible'?: boolean;
 }

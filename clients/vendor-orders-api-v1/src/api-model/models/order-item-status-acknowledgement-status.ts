@@ -22,32 +22,16 @@ import type { ItemQuantity } from './item-quantity';
 
 /**
  * Acknowledgement status information.
- * @export
- * @interface OrderItemStatusAcknowledgementStatus
  */
 export interface OrderItemStatusAcknowledgementStatus {
     /**
      * Confirmation status of line item.
-     * @type {string}
-     * @memberof OrderItemStatusAcknowledgementStatus
      */
     'confirmationStatus'?: OrderItemStatusAcknowledgementStatusConfirmationStatusEnum;
-    /**
-     * 
-     * @type {ItemQuantity}
-     * @memberof OrderItemStatusAcknowledgementStatus
-     */
     'acceptedQuantity'?: ItemQuantity;
-    /**
-     * 
-     * @type {ItemQuantity}
-     * @memberof OrderItemStatusAcknowledgementStatus
-     */
     'rejectedQuantity'?: ItemQuantity;
     /**
      * Details of item quantity confirmed.
-     * @type {Array<AcknowledgementStatusDetails>}
-     * @memberof OrderItemStatusAcknowledgementStatus
      */
     'acknowledgementStatusDetails'?: Array<AcknowledgementStatusDetails>;
 }

@@ -22,32 +22,16 @@ import type { PartyIdentification } from './party-identification';
 
 /**
  * Represents the request payload for creating a shipping label, containing the purchase order number, selling party, ship from party, and a list of containers or packages in the shipment.
- * @export
- * @interface ShippingLabelRequest
  */
 export interface ShippingLabelRequest {
     /**
      * Purchase order number of the order for which to create a shipping label.
-     * @type {string}
-     * @memberof ShippingLabelRequest
      */
     'purchaseOrderNumber': string;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof ShippingLabelRequest
-     */
     'sellingParty': PartyIdentification;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof ShippingLabelRequest
-     */
     'shipFromParty': PartyIdentification;
     /**
      * A list of the packages in this shipment.
-     * @type {Array<Container>}
-     * @memberof ShippingLabelRequest
      */
     'containers'?: Array<Container>;
 }

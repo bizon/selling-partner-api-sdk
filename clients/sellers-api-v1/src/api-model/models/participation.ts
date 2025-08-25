@@ -16,20 +16,14 @@
 
 /**
  * Information that is specific to a seller in a marketplace.
- * @export
- * @interface Participation
  */
 export interface Participation {
     /**
      * If `true`, the seller participates in the marketplace. Otherwise `false`.
-     * @type {boolean}
-     * @memberof Participation
      */
     'isParticipating': boolean;
     /**
      * Specifies if the seller has suspended listings. `true` if the seller Listing Status is set to Inactive, otherwise `false`.
-     * @type {boolean}
-     * @memberof Participation
      */
     'hasSuspendedListings': boolean;
 }

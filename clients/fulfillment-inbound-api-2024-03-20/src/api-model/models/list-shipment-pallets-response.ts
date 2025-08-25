@@ -22,20 +22,11 @@ import type { Pallet } from './pallet';
 
 /**
  * The `listShipmentPallets` response.
- * @export
- * @interface ListShipmentPalletsResponse
  */
 export interface ListShipmentPalletsResponse {
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof ListShipmentPalletsResponse
-     */
     'pagination'?: Pagination;
     /**
      * The pallets in a shipment.
-     * @type {Array<Pallet>}
-     * @memberof ListShipmentPalletsResponse
      */
     'pallets': Array<Pallet>;
 }

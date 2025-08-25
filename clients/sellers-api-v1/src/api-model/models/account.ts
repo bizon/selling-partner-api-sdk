@@ -25,39 +25,21 @@ import type { PrimaryContact } from './primary-contact';
 
 /**
  * The response schema for the `getAccount` operation.
- * @export
- * @interface Account
  */
 export interface Account {
     /**
      * List of marketplace participations.
-     * @type {Array<MarketplaceParticipation>}
-     * @memberof Account
      */
     'marketplaceParticipationList': Array<MarketplaceParticipation>;
     /**
      * The type of business registered for the seller account.
-     * @type {string}
-     * @memberof Account
      */
     'businessType': AccountBusinessTypeEnum;
     /**
      * The selling plan details.
-     * @type {string}
-     * @memberof Account
      */
     'sellingPlan': AccountSellingPlanEnum;
-    /**
-     * 
-     * @type {Business}
-     * @memberof Account
-     */
     'business'?: Business;
-    /**
-     * 
-     * @type {PrimaryContact}
-     * @memberof Account
-     */
     'primaryContact'?: PrimaryContact;
 }
 

@@ -16,8 +16,6 @@
 
 /**
  * The status of your label.
- * @export
- * @enum {string}
  */
 
 export const LabelStatus = {

@@ -16,20 +16,14 @@
 
 /**
  * Information about the seller\'s feedback, including the percentage of positive feedback, and the total number of ratings received.
- * @export
- * @interface SellerFeedbackType
  */
 export interface SellerFeedbackType {
     /**
      * The percentage of positive feedback for the seller in the past 365 days.
-     * @type {number}
-     * @memberof SellerFeedbackType
      */
     'SellerPositiveFeedbackRating'?: number;
     /**
      * The number of ratings received about the seller.
-     * @type {number}
-     * @memberof SellerFeedbackType
      */
     'FeedbackCount': number;
 }

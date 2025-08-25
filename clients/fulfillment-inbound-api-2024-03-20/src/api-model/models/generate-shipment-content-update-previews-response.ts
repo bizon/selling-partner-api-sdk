@@ -16,14 +16,10 @@
 
 /**
  * The `GenerateShipmentContentUpdatePreviews` response.
- * @export
- * @interface GenerateShipmentContentUpdatePreviewsResponse
  */
 export interface GenerateShipmentContentUpdatePreviewsResponse {
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof GenerateShipmentContentUpdatePreviewsResponse
      */
     'operationId': string;
 }

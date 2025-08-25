@@ -19,38 +19,23 @@ import type { Address } from './address';
 
 /**
  * Return authorization information for items accepted for return.
- * @export
- * @interface ReturnAuthorization
  */
 export interface ReturnAuthorization {
     /**
      * An identifier for the return authorization. This identifier associates return items with the return authorization used to return them.
-     * @type {string}
-     * @memberof ReturnAuthorization
      */
     'returnAuthorizationId': string;
     /**
      * An identifier for the Amazon fulfillment center that the return items should be sent to.
-     * @type {string}
-     * @memberof ReturnAuthorization
      */
     'fulfillmentCenterId': string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof ReturnAuthorization
-     */
     'returnToAddress': Address;
     /**
      * The return merchandise authorization (RMA) that Amazon needs to process the return.
-     * @type {string}
-     * @memberof ReturnAuthorization
      */
     'amazonRmaId': string;
     /**
      * A URL for a web page that contains the return authorization barcode and the mailing label. This does not include pre-paid shipping.
-     * @type {string}
-     * @memberof ReturnAuthorization
      */
     'rmaPageURL': string;
 }

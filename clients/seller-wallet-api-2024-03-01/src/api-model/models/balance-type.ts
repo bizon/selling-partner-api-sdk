@@ -16,8 +16,6 @@
 
 /**
  * Represent a bank account balance type.
- * @export
- * @enum {string}
  */
 
 export const BalanceType = {

@@ -19,20 +19,14 @@ import type { MskuPrepDetailInput } from './msku-prep-detail-input';
 
 /**
  * The `setPrepDetails` request.
- * @export
- * @interface SetPrepDetailsRequest
  */
 export interface SetPrepDetailsRequest {
     /**
      * The marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof SetPrepDetailsRequest
      */
     'marketplaceId': string;
     /**
      * A list of MSKUs and related prep details.
-     * @type {Array<MskuPrepDetailInput>}
-     * @memberof SetPrepDetailsRequest
      */
     'mskuPrepDetails': Array<MskuPrepDetailInput>;
 }

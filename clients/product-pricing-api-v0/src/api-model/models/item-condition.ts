@@ -16,8 +16,6 @@
 
 /**
  * Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
- * @export
- * @enum {string}
  */
 
 export const ItemCondition = {

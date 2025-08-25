@@ -22,20 +22,11 @@ import type { Pagination } from './pagination';
 
 /**
  * A list of packing slips.
- * @export
- * @interface PackingSlipList
  */
 export interface PackingSlipList {
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof PackingSlipList
-     */
     'pagination'?: Pagination;
     /**
      * An array of packing slip objects.
-     * @type {Array<PackingSlip>}
-     * @memberof PackingSlipList
      */
     'packingSlips'?: Array<PackingSlip>;
 }

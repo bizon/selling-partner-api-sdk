@@ -28,44 +28,21 @@ import type { ShipmentRequestDetails } from './shipment-request-details';
 
 /**
  * Request schema.
- * @export
- * @interface CreateShipmentRequest
  */
 export interface CreateShipmentRequest {
-    /**
-     * 
-     * @type {ShipmentRequestDetails}
-     * @memberof CreateShipmentRequest
-     */
     'ShipmentRequestDetails': ShipmentRequestDetails;
     /**
      * An Amazon-defined shipping service identifier.
-     * @type {string}
-     * @memberof CreateShipmentRequest
      */
     'ShippingServiceId': string;
     /**
      * Identifies a shipping service order made by a carrier.
-     * @type {string}
-     * @memberof CreateShipmentRequest
      */
     'ShippingServiceOfferId'?: string;
-    /**
-     * 
-     * @type {HazmatType}
-     * @memberof CreateShipmentRequest
-     */
     'HazmatType'?: HazmatType;
-    /**
-     * 
-     * @type {LabelFormatOptionRequest}
-     * @memberof CreateShipmentRequest
-     */
     'LabelFormatOption'?: LabelFormatOptionRequest;
     /**
      * A list of additional seller input pairs required to purchase shipping.
-     * @type {Array<AdditionalSellerInputs>}
-     * @memberof CreateShipmentRequest
      */
     'ShipmentLevelSellerInputsList'?: Array<AdditionalSellerInputs>;
 }

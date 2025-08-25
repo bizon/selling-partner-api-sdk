@@ -22,21 +22,9 @@ import type { TextComponent } from './text-component';
 
 /**
  * The A+ Content standard text box block, which contains a paragraph and a headline.
- * @export
- * @interface StandardTextBlock
  */
 export interface StandardTextBlock {
-    /**
-     * 
-     * @type {TextComponent}
-     * @memberof StandardTextBlock
-     */
     'headline'?: TextComponent;
-    /**
-     * 
-     * @type {ParagraphComponent}
-     * @memberof StandardTextBlock
-     */
     'body'?: ParagraphComponent;
 }
 

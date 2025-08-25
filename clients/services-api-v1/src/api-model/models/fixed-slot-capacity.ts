@@ -19,32 +19,22 @@ import type { FixedSlot } from './fixed-slot';
 
 /**
  * Response schema for the `getFixedSlotCapacity` operation.
- * @export
- * @interface FixedSlotCapacity
  */
 export interface FixedSlotCapacity {
     /**
      * Resource Identifier.
-     * @type {string}
-     * @memberof FixedSlotCapacity
      */
     'resourceId'?: string;
     /**
      * The duration of each slot which is returned. This value will be a multiple of 5 and fall in the following range: 5 <= `slotDuration` <= 360.
-     * @type {number}
-     * @memberof FixedSlotCapacity
      */
     'slotDuration'?: number;
     /**
      * Array of capacity slots in fixed slot format.
-     * @type {Array<FixedSlot>}
-     * @memberof FixedSlotCapacity
      */
     'capacities'?: Array<FixedSlot>;
     /**
      * Next page token, if there are more pages.
-     * @type {string}
-     * @memberof FixedSlotCapacity
      */
     'nextPageToken'?: string;
 }

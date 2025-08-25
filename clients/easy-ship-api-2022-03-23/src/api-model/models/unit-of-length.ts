@@ -16,8 +16,6 @@
 
 /**
  * The unit of measurement used to measure the length.
- * @export
- * @enum {string}
  */
 
 export const UnitOfLength = {

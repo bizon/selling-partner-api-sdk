@@ -19,14 +19,10 @@ import type { ActiveAccount } from './active-account';
 
 /**
  * The Response  for the GetCarrierAccountsResponse operation.
- * @export
- * @interface GetCarrierAccountsResponse
  */
 export interface GetCarrierAccountsResponse {
     /**
      * A list of ActiveAccount
-     * @type {Array<ActiveAccount>}
-     * @memberof GetCarrierAccountsResponse
      */
     'activeAccounts': Array<ActiveAccount>;
 }

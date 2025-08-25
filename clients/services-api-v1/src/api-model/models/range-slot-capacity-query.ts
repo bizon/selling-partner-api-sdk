@@ -19,26 +19,18 @@ import type { CapacityType } from './capacity-type';
 
 /**
  * Request schema for the `getRangeSlotCapacity` operation. This schema is used to define the time range and capacity types that are being queried.
- * @export
- * @interface RangeSlotCapacityQuery
  */
 export interface RangeSlotCapacityQuery {
     /**
      * An array of capacity types which are being requested. Default value is `[SCHEDULED_CAPACITY]`.
-     * @type {Array<CapacityType>}
-     * @memberof RangeSlotCapacityQuery
      */
     'capacityTypes'?: Array<CapacityType>;
     /**
      * Start date time from which the capacity slots are being requested in ISO 8601 format.
-     * @type {string}
-     * @memberof RangeSlotCapacityQuery
      */
     'startDateTime': string;
     /**
      * End date time up to which the capacity slots are being requested in ISO 8601 format.
-     * @type {string}
-     * @memberof RangeSlotCapacityQuery
      */
     'endDateTime': string;
 }

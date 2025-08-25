@@ -19,14 +19,10 @@ import type { ClientReferenceDetail } from './client-reference-detail';
 
 /**
  * The request schema for the GetCarrierAccounts operation.
- * @export
- * @interface GetCarrierAccountsRequest
  */
 export interface GetCarrierAccountsRequest {
     /**
      * Object to pass additional information about the MCI Integrator shipperType: List of ClientReferenceDetail
-     * @type {Array<ClientReferenceDetail>}
-     * @memberof GetCarrierAccountsRequest
      */
     'clientReferenceDetails'?: Array<ClientReferenceDetail>;
 }

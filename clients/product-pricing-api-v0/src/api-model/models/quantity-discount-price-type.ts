@@ -22,27 +22,13 @@ import type { QuantityDiscountType } from './quantity-discount-type';
 
 /**
  * Contains pricing information that includes special pricing when buying in bulk.
- * @export
- * @interface QuantityDiscountPriceType
  */
 export interface QuantityDiscountPriceType {
     /**
      * Indicates at what quantity this price becomes active.
-     * @type {number}
-     * @memberof QuantityDiscountPriceType
      */
     'quantityTier': number;
-    /**
-     * 
-     * @type {QuantityDiscountType}
-     * @memberof QuantityDiscountPriceType
-     */
     'quantityDiscountType': QuantityDiscountType;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof QuantityDiscountPriceType
-     */
     'listingPrice': MoneyType;
 }
 

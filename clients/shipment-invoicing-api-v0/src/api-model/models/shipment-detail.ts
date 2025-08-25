@@ -28,92 +28,53 @@ import type { ShipmentItem } from './shipment-item';
 
 /**
  * The information required by a selling partner to issue a shipment invoice.
- * @export
- * @interface ShipmentDetail
  */
 export interface ShipmentDetail {
     /**
      * The Amazon-defined identifier for the warehouse.
-     * @type {string}
-     * @memberof ShipmentDetail
      */
     'WarehouseId'?: string;
     /**
      * The Amazon-defined identifier for the order.
-     * @type {string}
-     * @memberof ShipmentDetail
      */
     'AmazonOrderId'?: string;
     /**
      * The Amazon-defined identifier for the shipment.
-     * @type {string}
-     * @memberof ShipmentDetail
      */
     'AmazonShipmentId'?: string;
     /**
      * The date and time when the order was created.
-     * @type {string}
-     * @memberof ShipmentDetail
      */
     'PurchaseDate'?: string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof ShipmentDetail
-     */
     'ShippingAddress'?: Address;
     /**
      * The list of payment method details.
-     * @type {Array<string>}
-     * @memberof ShipmentDetail
      */
     'PaymentMethodDetails'?: Array<string>;
     /**
      * The identifier for the marketplace where the order was placed.
-     * @type {string}
-     * @memberof ShipmentDetail
      */
     'MarketplaceId'?: string;
     /**
      * The seller identifier.
-     * @type {string}
-     * @memberof ShipmentDetail
      */
     'SellerId'?: string;
     /**
      * The name of the buyer.
-     * @type {string}
-     * @memberof ShipmentDetail
      */
     'BuyerName'?: string;
     /**
      * The county of the buyer.
-     * @type {string}
-     * @memberof ShipmentDetail
      */
     'BuyerCounty'?: string;
-    /**
-     * 
-     * @type {BuyerTaxInfo}
-     * @memberof ShipmentDetail
-     */
     'BuyerTaxInfo'?: BuyerTaxInfo;
-    /**
-     * 
-     * @type {MarketplaceTaxInfo}
-     * @memberof ShipmentDetail
-     */
     'MarketplaceTaxInfo'?: MarketplaceTaxInfo;
     /**
      * The seller’s friendly name registered in the marketplace.
-     * @type {string}
-     * @memberof ShipmentDetail
      */
     'SellerDisplayName'?: string;
     /**
      * A list of shipment items.
-     * @type {Array<ShipmentItem>}
-     * @memberof ShipmentDetail
      */
     'ShipmentItems'?: Array<ShipmentItem>;
 }

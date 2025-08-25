@@ -19,26 +19,18 @@ import type { OrderItemBuyerInfo } from './order-item-buyer-info';
 
 /**
  * A single order item\'s buyer information list with the order ID.
- * @export
- * @interface OrderItemsBuyerInfoList
  */
 export interface OrderItemsBuyerInfoList {
     /**
      * A single order item\'s buyer information list.
-     * @type {Array<OrderItemBuyerInfo>}
-     * @memberof OrderItemsBuyerInfoList
      */
     'OrderItems': Array<OrderItemBuyerInfo>;
     /**
      * When present and not empty, pass this string token in the next request to return the next response page.
-     * @type {string}
-     * @memberof OrderItemsBuyerInfoList
      */
     'NextToken'?: string;
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
-     * @type {string}
-     * @memberof OrderItemsBuyerInfoList
      */
     'AmazonOrderId': string;
 }

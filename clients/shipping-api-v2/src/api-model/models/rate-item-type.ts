@@ -16,8 +16,6 @@
 
 /**
  * Type of the rateItem.
- * @export
- * @enum {string}
  */
 
 export const RateItemType = {

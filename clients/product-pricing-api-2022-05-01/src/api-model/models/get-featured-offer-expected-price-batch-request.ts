@@ -19,14 +19,10 @@ import type { FeaturedOfferExpectedPriceRequest } from './featured-offer-expecte
 
 /**
  * The request body for the `getFeaturedOfferExpectedPriceBatch` operation.
- * @export
- * @interface GetFeaturedOfferExpectedPriceBatchRequest
  */
 export interface GetFeaturedOfferExpectedPriceBatchRequest {
     /**
      * A batched list of FOEP requests.
-     * @type {Array<FeaturedOfferExpectedPriceRequest>}
-     * @memberof GetFeaturedOfferExpectedPriceBatchRequest
      */
     'requests'?: Array<FeaturedOfferExpectedPriceRequest>;
 }

@@ -19,15 +19,8 @@ import type { LinkObject } from './link-object';
 
 /**
  * The links response that is associated with the object.
- * @export
- * @interface GetSchemaResponseLinks
  */
 export interface GetSchemaResponseLinks {
-    /**
-     * 
-     * @type {LinkObject}
-     * @memberof GetSchemaResponseLinks
-     */
     'self': LinkObject;
 }
 

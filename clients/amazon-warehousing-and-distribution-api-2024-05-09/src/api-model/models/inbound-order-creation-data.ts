@@ -25,33 +25,17 @@ import type { InboundPreferences } from './inbound-preferences';
 
 /**
  * Payload for creating an inbound order.
- * @export
- * @interface InboundOrderCreationData
  */
 export interface InboundOrderCreationData {
     /**
      * Reference ID that can be used to correlate the order with partner resources.
-     * @type {string}
-     * @memberof InboundOrderCreationData
      */
     'externalReferenceId'?: string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof InboundOrderCreationData
-     */
     'originAddress': Address;
     /**
      * List of packages to be inbounded.
-     * @type {Array<DistributionPackageQuantity>}
-     * @memberof InboundOrderCreationData
      */
     'packagesToInbound': Array<DistributionPackageQuantity>;
-    /**
-     * 
-     * @type {InboundPreferences}
-     * @memberof InboundOrderCreationData
-     */
     'preferences'?: InboundPreferences;
 }
 

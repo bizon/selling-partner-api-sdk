@@ -38,7 +38,6 @@ import type { TimeRangeContext } from './time-range-context';
 /**
  * @type Context
  * Additional Information about the item.
- * @export
  */
 export type Context = AmazonPayContext & BusinessContext & ContextAllOf & DeferredContext & PaymentsContext & ProductContext & TimeRangeContext;
 

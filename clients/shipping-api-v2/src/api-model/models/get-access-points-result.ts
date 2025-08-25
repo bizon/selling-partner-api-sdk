@@ -19,14 +19,10 @@ import type { AccessPoint } from './access-point';
 
 /**
  * The payload for the GetAccessPoints API.
- * @export
- * @interface GetAccessPointsResult
  */
 export interface GetAccessPointsResult {
     /**
      * Map of type of access point to list of access points
-     * @type {{ [key: string]: Array<AccessPoint>; }}
-     * @memberof GetAccessPointsResult
      */
     'accessPointsMap': { [key: string]: Array<AccessPoint>; };
 }

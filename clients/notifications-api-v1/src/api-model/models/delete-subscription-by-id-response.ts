@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the `deleteSubscriptionById` operation.
- * @export
- * @interface DeleteSubscriptionByIdResponse
  */
 export interface DeleteSubscriptionByIdResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof DeleteSubscriptionByIdResponse
      */
     'errors'?: Array<Error>;
 }

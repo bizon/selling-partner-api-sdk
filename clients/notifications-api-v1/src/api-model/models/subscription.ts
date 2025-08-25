@@ -19,33 +19,20 @@ import type { ProcessingDirective } from './processing-directive';
 
 /**
  * Information about the subscription.
- * @export
- * @interface Subscription
  */
 export interface Subscription {
     /**
      * The subscription identifier generated when the subscription is created.
-     * @type {string}
-     * @memberof Subscription
      */
     'subscriptionId': string;
     /**
      * The version of the payload object to be used in the notification.
-     * @type {string}
-     * @memberof Subscription
      */
     'payloadVersion': string;
     /**
      * The identifier for the destination where notifications will be delivered.
-     * @type {string}
-     * @memberof Subscription
      */
     'destinationId': string;
-    /**
-     * 
-     * @type {ProcessingDirective}
-     * @memberof Subscription
-     */
     'processingDirective'?: ProcessingDirective;
 }
 

@@ -19,20 +19,11 @@ import type { ProductType } from './product-type';
 
 /**
  * A list of Amazon product types with definitions available.
- * @export
- * @interface ProductTypeList
  */
 export interface ProductTypeList {
-    /**
-     * 
-     * @type {Array<ProductType>}
-     * @memberof ProductTypeList
-     */
     'productTypes': Array<ProductType>;
     /**
      * Amazon product type version identifier.
-     * @type {string}
-     * @memberof ProductTypeList
      */
     'productTypeVersion': string;
 }

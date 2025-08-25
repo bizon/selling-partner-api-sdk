@@ -33,7 +33,6 @@ import type { GetMyFeesEstimateResponse } from '../models';
 import type { GetMyFeesEstimatesErrorList } from '../models';
 /**
  * ProductFeesApi - axios parameter creator
- * @export
  */
 export const ProductFeesApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -155,7 +154,6 @@ export const ProductFeesApiAxiosParamCreator = function (configuration?: Configu
 
 /**
  * ProductFeesApi - functional programming interface
- * @export
  */
 export const ProductFeesApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ProductFeesApiAxiosParamCreator(configuration)
@@ -203,7 +201,6 @@ export const ProductFeesApiFp = function(configuration?: Configuration) {
 
 /**
  * ProductFeesApi - factory interface
- * @export
  */
 export const ProductFeesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = ProductFeesApiFp(configuration)
@@ -240,65 +237,37 @@ export const ProductFeesApiFactory = function (configuration?: Configuration, ba
 
 /**
  * Request parameters for getMyFeesEstimateForASIN operation in ProductFeesApi.
- * @export
- * @interface ProductFeesApiGetMyFeesEstimateForASINRequest
  */
 export interface ProductFeesApiGetMyFeesEstimateForASINRequest {
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof ProductFeesApiGetMyFeesEstimateForASIN
      */
     readonly asin: string
 
-    /**
-     * 
-     * @type {GetMyFeesEstimateRequest}
-     * @memberof ProductFeesApiGetMyFeesEstimateForASIN
-     */
     readonly body: GetMyFeesEstimateRequest
 }
 
 /**
  * Request parameters for getMyFeesEstimateForSKU operation in ProductFeesApi.
- * @export
- * @interface ProductFeesApiGetMyFeesEstimateForSKURequest
  */
 export interface ProductFeesApiGetMyFeesEstimateForSKURequest {
     /**
      * Used to identify an item in the given marketplace. SellerSKU is qualified by the seller\&#39;s SellerId, which is included with every operation that you submit.
-     * @type {string}
-     * @memberof ProductFeesApiGetMyFeesEstimateForSKU
      */
     readonly sellerSKU: string
 
-    /**
-     * 
-     * @type {GetMyFeesEstimateRequest}
-     * @memberof ProductFeesApiGetMyFeesEstimateForSKU
-     */
     readonly body: GetMyFeesEstimateRequest
 }
 
 /**
  * Request parameters for getMyFeesEstimates operation in ProductFeesApi.
- * @export
- * @interface ProductFeesApiGetMyFeesEstimatesRequest
  */
 export interface ProductFeesApiGetMyFeesEstimatesRequest {
-    /**
-     * 
-     * @type {Array<FeesEstimateByIdRequest>}
-     * @memberof ProductFeesApiGetMyFeesEstimates
-     */
     readonly body: Array<FeesEstimateByIdRequest>
 }
 
 /**
  * ProductFeesApi - object-oriented interface
- * @export
- * @class ProductFeesApi
- * @extends {BaseAPI}
  */
 export class ProductFeesApi extends BaseAPI {
     /**
@@ -306,7 +275,6 @@ export class ProductFeesApi extends BaseAPI {
      * @param {ProductFeesApiGetMyFeesEstimateForASINRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ProductFeesApi
      */
     public getMyFeesEstimateForASIN(requestParameters: ProductFeesApiGetMyFeesEstimateForASINRequest, options?: RawAxiosRequestConfig) {
         return ProductFeesApiFp(this.configuration).getMyFeesEstimateForASIN(requestParameters.asin, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -317,7 +285,6 @@ export class ProductFeesApi extends BaseAPI {
      * @param {ProductFeesApiGetMyFeesEstimateForSKURequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ProductFeesApi
      */
     public getMyFeesEstimateForSKU(requestParameters: ProductFeesApiGetMyFeesEstimateForSKURequest, options?: RawAxiosRequestConfig) {
         return ProductFeesApiFp(this.configuration).getMyFeesEstimateForSKU(requestParameters.sellerSKU, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -328,7 +295,6 @@ export class ProductFeesApi extends BaseAPI {
      * @param {ProductFeesApiGetMyFeesEstimatesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ProductFeesApi
      */
     public getMyFeesEstimates(requestParameters: ProductFeesApiGetMyFeesEstimatesRequest, options?: RawAxiosRequestConfig) {
         return ProductFeesApiFp(this.configuration).getMyFeesEstimates(requestParameters.body, options).then((request) => request(this.axios, this.basePath));

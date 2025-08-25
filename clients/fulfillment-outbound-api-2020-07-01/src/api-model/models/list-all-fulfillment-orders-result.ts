@@ -19,20 +19,14 @@ import type { FulfillmentOrder } from './fulfillment-order';
 
 /**
  * The request for the listAllFulfillmentOrders operation.
- * @export
- * @interface ListAllFulfillmentOrdersResult
  */
 export interface ListAllFulfillmentOrdersResult {
     /**
      * When present and not empty, pass this string token in the next request to return the next response page.
-     * @type {string}
-     * @memberof ListAllFulfillmentOrdersResult
      */
     'nextToken'?: string;
     /**
      * An array of fulfillment order information.
-     * @type {Array<FulfillmentOrder>}
-     * @memberof ListAllFulfillmentOrdersResult
      */
     'fulfillmentOrders'?: Array<FulfillmentOrder>;
 }

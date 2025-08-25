@@ -19,63 +19,40 @@ import type { QueryPagination } from './query-pagination';
 
 /**
  * Detailed information about the query.
- * @export
- * @interface Query
  */
 export interface Query {
     /**
      * The query identifier. This identifier is unique only in combination with a selling partner account ID.
-     * @type {string}
-     * @memberof Query
      */
     'queryId': string;
     /**
      * The submitted query.
-     * @type {string}
-     * @memberof Query
      */
     'query': string;
     /**
      * The date and time when the query was created, in ISO 8601 date time format.
-     * @type {string}
-     * @memberof Query
      */
     'createdTime': string;
     /**
      * The processing status of the query.
-     * @type {string}
-     * @memberof Query
      */
     'processingStatus': QueryProcessingStatusEnum;
     /**
      * The date and time when the query processing started, in ISO 8601 date time format.
-     * @type {string}
-     * @memberof Query
      */
     'processingStartTime'?: string;
     /**
      * The date and time when the query processing completed, in ISO 8601 date time format.
-     * @type {string}
-     * @memberof Query
      */
     'processingEndTime'?: string;
     /**
      * The data document identifier. This identifier is only present when there is data available as a result of the query. This identifier is unique only in combination with a selling partner account ID. Pass this identifier into the `getDocument` operation to get the information required to retrieve the data document\'s contents.
-     * @type {string}
-     * @memberof Query
      */
     'dataDocumentId'?: string;
     /**
      * The error document identifier. This identifier is only present when an error occurs during query processing. This identifier is unique only in combination with a selling partner account ID. Pass this identifier into the `getDocument` operation to get the information required to retrieve the error document\'s contents.
-     * @type {string}
-     * @memberof Query
      */
     'errorDocumentId'?: string;
-    /**
-     * 
-     * @type {QueryPagination}
-     * @memberof Query
-     */
     'pagination'?: QueryPagination;
 }
 

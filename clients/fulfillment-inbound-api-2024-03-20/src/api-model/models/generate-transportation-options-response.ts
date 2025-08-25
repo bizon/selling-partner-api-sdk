@@ -16,14 +16,10 @@
 
 /**
  * The `generateTransportationOptions` response.
- * @export
- * @interface GenerateTransportationOptionsResponse
  */
 export interface GenerateTransportationOptionsResponse {
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof GenerateTransportationOptionsResponse
      */
     'operationId': string;
 }

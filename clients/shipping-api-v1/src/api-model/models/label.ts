@@ -19,21 +19,12 @@ import type { LabelSpecification } from './label-specification';
 
 /**
  * The label details of the container.
- * @export
- * @interface Label
  */
 export interface Label {
     /**
      * Contains binary image data encoded as a base-64 string.
-     * @type {string}
-     * @memberof Label
      */
     'labelStream'?: string;
-    /**
-     * 
-     * @type {LabelSpecification}
-     * @memberof Label
-     */
     'labelSpecification'?: LabelSpecification;
 }
 

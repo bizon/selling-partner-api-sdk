@@ -19,20 +19,14 @@ import type { TransferSchedule } from './transfer-schedule';
 
 /**
  * Struct that holds collection of transfer schedules.
- * @export
- * @interface TransferScheduleListing
  */
 export interface TransferScheduleListing {
     /**
      * If present, use this pagination token to retrieve the next page of supply sources, if not provided the API will return same response. The field will only be provided when the list is greater than 100.
-     * @type {string}
-     * @memberof TransferScheduleListing
      */
     'nextPageToken'?: string;
     /**
      * Collection that holds list of Transfer Schedules 
-     * @type {Array<TransferSchedule>}
-     * @memberof TransferScheduleListing
      */
     'transferSchedules': Array<TransferSchedule>;
 }

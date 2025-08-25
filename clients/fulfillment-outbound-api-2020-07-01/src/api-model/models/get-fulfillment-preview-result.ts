@@ -19,14 +19,10 @@ import type { FulfillmentPreview } from './fulfillment-preview';
 
 /**
  * A list of fulfillment order previews, including estimated shipping weights, estimated shipping fees, and estimated ship dates and arrival dates.
- * @export
- * @interface GetFulfillmentPreviewResult
  */
 export interface GetFulfillmentPreviewResult {
     /**
      * An array of fulfillment preview information.
-     * @type {Array<FulfillmentPreview>}
-     * @memberof GetFulfillmentPreviewResult
      */
     'fulfillmentPreviews'?: Array<FulfillmentPreview>;
 }

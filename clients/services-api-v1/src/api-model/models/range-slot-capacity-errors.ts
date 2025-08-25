@@ -16,14 +16,10 @@
 
 /**
  * The error response schema for the `getRangeSlotCapacity` operation.
- * @export
- * @interface RangeSlotCapacityErrors
  */
 export interface RangeSlotCapacityErrors {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof RangeSlotCapacityErrors
      */
     'errors'?: Array<Error>;
 }

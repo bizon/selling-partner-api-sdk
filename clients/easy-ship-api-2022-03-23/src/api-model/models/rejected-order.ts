@@ -16,21 +16,12 @@
 
 /**
  * A order which we couldn\'t schedule on your behalf. It contains its id, and information on the error.
- * @export
- * @interface RejectedOrder
  */
 export interface RejectedOrder {
     /**
      * An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
-     * @type {string}
-     * @memberof RejectedOrder
      */
     'amazonOrderId': string;
-    /**
-     * 
-     * @type {Error}
-     * @memberof RejectedOrder
-     */
     'error'?: Error;
 }
 

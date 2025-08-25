@@ -19,26 +19,15 @@ import type { ContactInformation } from './contact-information';
 
 /**
  * The transportation option selected to confirm.
- * @export
- * @interface TransportationSelection
  */
 export interface TransportationSelection {
-    /**
-     * 
-     * @type {ContactInformation}
-     * @memberof TransportationSelection
-     */
     'contactInformation'?: ContactInformation;
     /**
      * Shipment ID that the transportation Option is for.
-     * @type {string}
-     * @memberof TransportationSelection
      */
     'shipmentId': string;
     /**
      * Transportation option being selected for the provided shipment.
-     * @type {string}
-     * @memberof TransportationSelection
      */
     'transportationOptionId': string;
 }

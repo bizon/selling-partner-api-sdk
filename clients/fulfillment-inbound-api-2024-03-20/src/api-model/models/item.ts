@@ -19,56 +19,38 @@ import type { PrepInstruction } from './prep-instruction';
 
 /**
  * Information associated with a single SKU in the seller\'s catalog.
- * @export
- * @interface Item
  */
 export interface Item {
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof Item
      */
     'asin': string;
     /**
      * The expiration date of the MSKU. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern`YYYY-MM-DD`. The same MSKU with different expiration dates cannot go into the same box.
-     * @type {string}
-     * @memberof Item
      */
     'expiration'?: string;
     /**
      * A unique identifier assigned by Amazon to products stored in and fulfilled from an Amazon fulfillment center.
-     * @type {string}
-     * @memberof Item
      */
     'fnsku': string;
     /**
      * Specifies who will label the items. Options include `AMAZON`, `SELLER`, and `NONE`.
-     * @type {string}
-     * @memberof Item
      */
     'labelOwner': string;
     /**
      * The manufacturing lot code.
-     * @type {string}
-     * @memberof Item
      */
     'manufacturingLotCode'?: string;
     /**
      * The merchant SKU, a merchant-supplied identifier of a specific SKU.
-     * @type {string}
-     * @memberof Item
      */
     'msku': string;
     /**
      * Special preparations that are required for an item.
-     * @type {Array<PrepInstruction>}
-     * @memberof Item
      */
     'prepInstructions': Array<PrepInstruction>;
     /**
      * The number of the specified MSKU.
-     * @type {number}
-     * @memberof Item
      */
     'quantity': number;
 }

@@ -16,8 +16,6 @@
 
 /**
  * The replenishment program type.
- * @export
- * @enum {string}
  */
 
 export const ProgramType = {

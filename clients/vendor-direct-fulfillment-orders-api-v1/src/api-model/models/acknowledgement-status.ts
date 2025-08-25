@@ -16,20 +16,14 @@
 
 /**
  * Status of acknowledgement.
- * @export
- * @interface AcknowledgementStatus
  */
 export interface AcknowledgementStatus {
     /**
      * Acknowledgement code is a unique two digit value which indicates the status of the acknowledgement. For a list of acknowledgement codes that Amazon supports, see the Vendor Direct Fulfillment APIs Use Case Guide.
-     * @type {string}
-     * @memberof AcknowledgementStatus
      */
     'code'?: string;
     /**
      * Reason for the acknowledgement code.
-     * @type {string}
-     * @memberof AcknowledgementStatus
      */
     'description'?: string;
 }

@@ -19,27 +19,16 @@ import type { Currency } from './currency';
 
 /**
  * A promotion applied to an item.
- * @export
- * @interface Promotion
  */
 export interface Promotion {
     /**
      * The type of promotion.
-     * @type {string}
-     * @memberof Promotion
      */
     'PromotionType'?: string;
     /**
      * The seller-specified identifier for the promotion.
-     * @type {string}
-     * @memberof Promotion
      */
     'PromotionId'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof Promotion
-     */
     'PromotionAmount'?: Currency;
 }
 

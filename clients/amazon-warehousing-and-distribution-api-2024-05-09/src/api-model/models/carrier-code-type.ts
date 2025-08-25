@@ -16,8 +16,6 @@
 
 /**
  * Denotes the type for the carrier.
- * @export
- * @enum {string}
  */
 
 export const CarrierCodeType = {

@@ -22,38 +22,23 @@ import type { ContentType } from './content-type';
 
 /**
  * The A+ Content document. This is the enhanced content that is published to product detail pages.
- * @export
- * @interface ContentDocument
  */
 export interface ContentDocument {
     /**
      * The A+ Content document name.
-     * @type {string}
-     * @memberof ContentDocument
      */
     'name': string;
-    /**
-     * 
-     * @type {ContentType}
-     * @memberof ContentDocument
-     */
     'contentType': ContentType;
     /**
      * The A+ Content document subtype. This represents a special-purpose type of an A+ Content document. Not every A+ Content document type has a subtype, and subtypes can change at any time.
-     * @type {string}
-     * @memberof ContentDocument
      */
     'contentSubType'?: string;
     /**
      * The IETF language tag, which supports the primary language subtag and one secondary language subtag. The secondary language subtag is usually a regional designation. This doesn\'t support subtags other than the primary and secondary subtags. **Pattern:** ^[a-z]{2,}-[A-Z0-9]{2,}$
-     * @type {string}
-     * @memberof ContentDocument
      */
     'locale': string;
     /**
      * A list of A+ Content modules.
-     * @type {Array<ContentModule>}
-     * @memberof ContentDocument
      */
     'contentModuleList': Array<ContentModule>;
 }

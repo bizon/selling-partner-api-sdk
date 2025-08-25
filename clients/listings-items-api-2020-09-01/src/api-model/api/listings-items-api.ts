@@ -31,7 +31,6 @@ import type { ListingsItemPutRequest } from '../models';
 import type { ListingsItemSubmissionResponse } from '../models';
 /**
  * ListingsItemsApi - axios parameter creator
- * @export
  */
 export const ListingsItemsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -199,7 +198,6 @@ export const ListingsItemsApiAxiosParamCreator = function (configuration?: Confi
 
 /**
  * ListingsItemsApi - functional programming interface
- * @export
  */
 export const ListingsItemsApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ListingsItemsApiAxiosParamCreator(configuration)
@@ -256,7 +254,6 @@ export const ListingsItemsApiFp = function(configuration?: Configuration) {
 
 /**
  * ListingsItemsApi - factory interface
- * @export
  */
 export const ListingsItemsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = ListingsItemsApiFp(configuration)
@@ -293,128 +290,91 @@ export const ListingsItemsApiFactory = function (configuration?: Configuration, 
 
 /**
  * Request parameters for deleteListingsItem operation in ListingsItemsApi.
- * @export
- * @interface ListingsItemsApiDeleteListingsItemRequest
  */
 export interface ListingsItemsApiDeleteListingsItemRequest {
     /**
      * A selling partner identifier, such as a merchant account or vendor code.
-     * @type {string}
-     * @memberof ListingsItemsApiDeleteListingsItem
      */
     readonly sellerId: string
 
     /**
      * A selling partner provided identifier for an Amazon listing.
-     * @type {string}
-     * @memberof ListingsItemsApiDeleteListingsItem
      */
     readonly sku: string
 
     /**
      * A comma-delimited list of Amazon marketplace identifiers for the request.
-     * @type {Array<string>}
-     * @memberof ListingsItemsApiDeleteListingsItem
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale.
-     * @type {string}
-     * @memberof ListingsItemsApiDeleteListingsItem
      */
     readonly issueLocale?: string
 }
 
 /**
  * Request parameters for patchListingsItem operation in ListingsItemsApi.
- * @export
- * @interface ListingsItemsApiPatchListingsItemRequest
  */
 export interface ListingsItemsApiPatchListingsItemRequest {
     /**
      * A selling partner identifier, such as a merchant account or vendor code.
-     * @type {string}
-     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly sellerId: string
 
     /**
      * A selling partner provided identifier for an Amazon listing.
-     * @type {string}
-     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly sku: string
 
     /**
      * A comma-delimited list of Amazon marketplace identifiers for the request.
-     * @type {Array<string>}
-     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * The request body schema for the patchListingsItem operation.
-     * @type {ListingsItemPatchRequest}
-     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly body: ListingsItemPatchRequest
 
     /**
      * A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale.
-     * @type {string}
-     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly issueLocale?: string
 }
 
 /**
  * Request parameters for putListingsItem operation in ListingsItemsApi.
- * @export
- * @interface ListingsItemsApiPutListingsItemRequest
  */
 export interface ListingsItemsApiPutListingsItemRequest {
     /**
      * A selling partner identifier, such as a merchant account or vendor code.
-     * @type {string}
-     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly sellerId: string
 
     /**
      * A selling partner provided identifier for an Amazon listing.
-     * @type {string}
-     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly sku: string
 
     /**
      * A comma-delimited list of Amazon marketplace identifiers for the request.
-     * @type {Array<string>}
-     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * The request body schema for the putListingsItem operation.
-     * @type {ListingsItemPutRequest}
-     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly body: ListingsItemPutRequest
 
     /**
      * A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale.
-     * @type {string}
-     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly issueLocale?: string
 }
 
 /**
  * ListingsItemsApi - object-oriented interface
- * @export
- * @class ListingsItemsApi
- * @extends {BaseAPI}
  */
 export class ListingsItemsApi extends BaseAPI {
     /**
@@ -422,7 +382,6 @@ export class ListingsItemsApi extends BaseAPI {
      * @param {ListingsItemsApiDeleteListingsItemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ListingsItemsApi
      */
     public deleteListingsItem(requestParameters: ListingsItemsApiDeleteListingsItemRequest, options?: RawAxiosRequestConfig) {
         return ListingsItemsApiFp(this.configuration).deleteListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
@@ -433,7 +392,6 @@ export class ListingsItemsApi extends BaseAPI {
      * @param {ListingsItemsApiPatchListingsItemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ListingsItemsApi
      */
     public patchListingsItem(requestParameters: ListingsItemsApiPatchListingsItemRequest, options?: RawAxiosRequestConfig) {
         return ListingsItemsApiFp(this.configuration).patchListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
@@ -444,7 +402,6 @@ export class ListingsItemsApi extends BaseAPI {
      * @param {ListingsItemsApiPutListingsItemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ListingsItemsApi
      */
     public putListingsItem(requestParameters: ListingsItemsApiPutListingsItemRequest, options?: RawAxiosRequestConfig) {
         return ListingsItemsApiFp(this.configuration).putListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));

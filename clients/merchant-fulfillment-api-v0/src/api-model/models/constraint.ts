@@ -16,20 +16,14 @@
 
 /**
  * A validation constraint.
- * @export
- * @interface Constraint
  */
 export interface Constraint {
     /**
      * A regular expression.
-     * @type {string}
-     * @memberof Constraint
      */
     'ValidationRegEx'?: string;
     /**
      * A validation string.
-     * @type {string}
-     * @memberof Constraint
      */
     'ValidationString': string;
 }

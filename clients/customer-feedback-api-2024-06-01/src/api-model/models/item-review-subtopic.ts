@@ -19,26 +19,15 @@ import type { ItemReviewSubtopicMetrics } from './item-review-subtopic-metrics';
 
 /**
  * Details of the subtopic for an item review topic.
- * @export
- * @interface ItemReviewSubtopic
  */
 export interface ItemReviewSubtopic {
     /**
      * The name of the subtopic.
-     * @type {string}
-     * @memberof ItemReviewSubtopic
      */
     'subtopic': string;
-    /**
-     * 
-     * @type {ItemReviewSubtopicMetrics}
-     * @memberof ItemReviewSubtopic
-     */
     'metrics': ItemReviewSubtopicMetrics;
     /**
      * A list of up to three snippets from reviews that contain the subtopic. This value is `null` if there aren\'t enough review snippets for the subtopic.
-     * @type {Array<string>}
-     * @memberof ItemReviewSubtopic
      */
     'reviewSnippets'?: Array<string>;
 }

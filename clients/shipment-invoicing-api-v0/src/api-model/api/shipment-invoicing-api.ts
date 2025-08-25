@@ -31,7 +31,6 @@ import type { SubmitInvoiceRequest } from '../models';
 import type { SubmitInvoiceResponse } from '../models';
 /**
  * ShipmentInvoicingApi - axios parameter creator
- * @export
  */
 export const ShipmentInvoicingApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -145,7 +144,6 @@ export const ShipmentInvoicingApiAxiosParamCreator = function (configuration?: C
 
 /**
  * ShipmentInvoicingApi - functional programming interface
- * @export
  */
 export const ShipmentInvoicingApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ShipmentInvoicingApiAxiosParamCreator(configuration)
@@ -192,7 +190,6 @@ export const ShipmentInvoicingApiFp = function(configuration?: Configuration) {
 
 /**
  * ShipmentInvoicingApi - factory interface
- * @export
  */
 export const ShipmentInvoicingApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = ShipmentInvoicingApiFp(configuration)
@@ -229,58 +226,38 @@ export const ShipmentInvoicingApiFactory = function (configuration?: Configurati
 
 /**
  * Request parameters for getInvoiceStatus operation in ShipmentInvoicingApi.
- * @export
- * @interface ShipmentInvoicingApiGetInvoiceStatusRequest
  */
 export interface ShipmentInvoicingApiGetInvoiceStatusRequest {
     /**
      * The shipment identifier for the shipment.
-     * @type {string}
-     * @memberof ShipmentInvoicingApiGetInvoiceStatus
      */
     readonly shipmentId: string
 }
 
 /**
  * Request parameters for getShipmentDetails operation in ShipmentInvoicingApi.
- * @export
- * @interface ShipmentInvoicingApiGetShipmentDetailsRequest
  */
 export interface ShipmentInvoicingApiGetShipmentDetailsRequest {
     /**
      * The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
-     * @type {string}
-     * @memberof ShipmentInvoicingApiGetShipmentDetails
      */
     readonly shipmentId: string
 }
 
 /**
  * Request parameters for submitInvoice operation in ShipmentInvoicingApi.
- * @export
- * @interface ShipmentInvoicingApiSubmitInvoiceRequest
  */
 export interface ShipmentInvoicingApiSubmitInvoiceRequest {
     /**
      * The identifier for the shipment.
-     * @type {string}
-     * @memberof ShipmentInvoicingApiSubmitInvoice
      */
     readonly shipmentId: string
 
-    /**
-     * 
-     * @type {SubmitInvoiceRequest}
-     * @memberof ShipmentInvoicingApiSubmitInvoice
-     */
     readonly body: SubmitInvoiceRequest
 }
 
 /**
  * ShipmentInvoicingApi - object-oriented interface
- * @export
- * @class ShipmentInvoicingApi
- * @extends {BaseAPI}
  */
 export class ShipmentInvoicingApi extends BaseAPI {
     /**
@@ -288,7 +265,6 @@ export class ShipmentInvoicingApi extends BaseAPI {
      * @param {ShipmentInvoicingApiGetInvoiceStatusRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShipmentInvoicingApi
      */
     public getInvoiceStatus(requestParameters: ShipmentInvoicingApiGetInvoiceStatusRequest, options?: RawAxiosRequestConfig) {
         return ShipmentInvoicingApiFp(this.configuration).getInvoiceStatus(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
@@ -299,7 +275,6 @@ export class ShipmentInvoicingApi extends BaseAPI {
      * @param {ShipmentInvoicingApiGetShipmentDetailsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShipmentInvoicingApi
      */
     public getShipmentDetails(requestParameters: ShipmentInvoicingApiGetShipmentDetailsRequest, options?: RawAxiosRequestConfig) {
         return ShipmentInvoicingApiFp(this.configuration).getShipmentDetails(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
@@ -310,7 +285,6 @@ export class ShipmentInvoicingApi extends BaseAPI {
      * @param {ShipmentInvoicingApiSubmitInvoiceRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShipmentInvoicingApi
      */
     public submitInvoice(requestParameters: ShipmentInvoicingApiSubmitInvoiceRequest, options?: RawAxiosRequestConfig) {
         return ShipmentInvoicingApiFp(this.configuration).submitInvoice(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));

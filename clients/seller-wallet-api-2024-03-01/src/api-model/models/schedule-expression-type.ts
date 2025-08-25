@@ -16,8 +16,6 @@
 
 /**
  * Represent a type of schedule transfer expression.
- * @export
- * @enum {string}
  */
 
 export const ScheduleExpressionType = {

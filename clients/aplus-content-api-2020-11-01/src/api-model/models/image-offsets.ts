@@ -19,21 +19,9 @@ import type { IntegerWithUnits } from './integer-with-units';
 
 /**
  * The top left corner of the cropped image, specified in the original image\'s coordinate space.
- * @export
- * @interface ImageOffsets
  */
 export interface ImageOffsets {
-    /**
-     * 
-     * @type {IntegerWithUnits}
-     * @memberof ImageOffsets
-     */
     'x': IntegerWithUnits;
-    /**
-     * 
-     * @type {IntegerWithUnits}
-     * @memberof ImageOffsets
-     */
     'y': IntegerWithUnits;
 }
 

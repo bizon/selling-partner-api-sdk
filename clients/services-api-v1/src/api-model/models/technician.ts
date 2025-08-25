@@ -16,20 +16,14 @@
 
 /**
  * A technician who is assigned to perform the service job in part or in full.
- * @export
- * @interface Technician
  */
 export interface Technician {
     /**
      * The technician identifier.
-     * @type {string}
-     * @memberof Technician
      */
     'technicianId'?: string;
     /**
      * The name of the technician.
-     * @type {string}
-     * @memberof Technician
      */
     'name'?: string;
 }

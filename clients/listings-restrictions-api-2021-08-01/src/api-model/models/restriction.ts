@@ -19,26 +19,18 @@ import type { Reason } from './reason';
 
 /**
  * A listing restriction, optionally qualified by a condition, with a list of reasons for the restriction.
- * @export
- * @interface Restriction
  */
 export interface Restriction {
     /**
      * A marketplace identifier. Identifies the Amazon marketplace where the restriction is enforced.
-     * @type {string}
-     * @memberof Restriction
      */
     'marketplaceId': string;
     /**
      * The condition that applies to the restriction.
-     * @type {string}
-     * @memberof Restriction
      */
     'conditionType'?: RestrictionConditionTypeEnum;
     /**
      * A list of reasons for the restriction.
-     * @type {Array<Reason>}
-     * @memberof Restriction
      */
     'reasons'?: Array<Reason>;
 }

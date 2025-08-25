@@ -19,20 +19,11 @@ import type { ListReturnReasonCodesResult } from './list-return-reason-codes-res
 
 /**
  * The response schema for the `listReturnReasonCodes` operation.
- * @export
- * @interface ListReturnReasonCodesResponse
  */
 export interface ListReturnReasonCodesResponse {
-    /**
-     * 
-     * @type {ListReturnReasonCodesResult}
-     * @memberof ListReturnReasonCodesResponse
-     */
     'payload'?: ListReturnReasonCodesResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof ListReturnReasonCodesResponse
      */
     'errors'?: Array<Error>;
 }

@@ -16,20 +16,14 @@
 
 /**
  * A list of carton identifiers.
- * @export
- * @interface ContainerIdentification
  */
 export interface ContainerIdentification {
     /**
      * The container identification type.
-     * @type {string}
-     * @memberof ContainerIdentification
      */
     'containerIdentificationType': ContainerIdentificationContainerIdentificationTypeEnum;
     /**
      * Container identification number that adheres to the definition of the container identification type.
-     * @type {string}
-     * @memberof ContainerIdentification
      */
     'containerIdentificationNumber': string;
 }

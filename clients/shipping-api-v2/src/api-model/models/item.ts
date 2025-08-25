@@ -34,81 +34,37 @@ import type { Weight } from './weight';
 
 /**
  * An item in a package.
- * @export
- * @interface Item
  */
 export interface Item {
-    /**
-     * 
-     * @type {Currency}
-     * @memberof Item
-     */
     'itemValue'?: Currency;
     /**
      * The product description of the item.
-     * @type {string}
-     * @memberof Item
      */
     'description'?: string;
     /**
      * A unique identifier for an item provided by the client.
-     * @type {string}
-     * @memberof Item
      */
     'itemIdentifier'?: string;
     /**
      * The number of units. This value is required.
-     * @type {number}
-     * @memberof Item
      */
     'quantity': number;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof Item
-     */
     'weight'?: Weight;
-    /**
-     * 
-     * @type {LiquidVolume}
-     * @memberof Item
-     */
     'liquidVolume'?: LiquidVolume;
     /**
      * When true, the item qualifies as hazardous materials (hazmat). Defaults to false.
-     * @type {boolean}
-     * @memberof Item
      */
     'isHazmat'?: boolean;
-    /**
-     * 
-     * @type {DangerousGoodsDetails}
-     * @memberof Item
-     */
     'dangerousGoodsDetails'?: DangerousGoodsDetails;
     /**
      * The product type of the item.
-     * @type {string}
-     * @memberof Item
      */
     'productType'?: string;
-    /**
-     * 
-     * @type {InvoiceDetails}
-     * @memberof Item
-     */
     'invoiceDetails'?: InvoiceDetails;
     /**
      * A list of unique serial numbers in an Amazon package that can be used to guarantee non-fraudulent items. The number of serial numbers in the list must be less than or equal to the quantity of items being shipped. Only applicable when channel source is Amazon.
-     * @type {Array<string>}
-     * @memberof Item
      */
     'serialNumbers'?: Array<string>;
-    /**
-     * 
-     * @type {DirectFulfillmentItemIdentifiers}
-     * @memberof Item
-     */
     'directFulfillmentItemIdentifiers'?: DirectFulfillmentItemIdentifiers;
 }
 

@@ -19,14 +19,10 @@ import type { ShipmentConfirmation } from './shipment-confirmation';
 
 /**
  * The request schema for the submitShipmentConfirmations operation.
- * @export
- * @interface SubmitShipmentConfirmationsRequest
  */
 export interface SubmitShipmentConfirmationsRequest {
     /**
      * Array of `ShipmentConfirmation` objects. Each `ShipmentConfirmation` object represents the confirmation details for a specific shipment.
-     * @type {Array<ShipmentConfirmation>}
-     * @memberof SubmitShipmentConfirmationsRequest
      */
     'shipmentConfirmations'?: Array<ShipmentConfirmation>;
 }

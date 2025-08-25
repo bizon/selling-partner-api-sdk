@@ -19,15 +19,8 @@ import type { InventoryUpdate } from './inventory-update';
 
 /**
  * The request body for the submitInventoryUpdate operation.
- * @export
- * @interface SubmitInventoryUpdateRequest
  */
 export interface SubmitInventoryUpdateRequest {
-    /**
-     * 
-     * @type {InventoryUpdate}
-     * @memberof SubmitInventoryUpdateRequest
-     */
     'inventory'?: InventoryUpdate;
 }
 

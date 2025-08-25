@@ -19,20 +19,11 @@ import type { VolumeUnitOfMeasurement } from './volume-unit-of-measurement';
 
 /**
  * Represents the volume of the package with a unit of measurement.
- * @export
- * @interface PackageVolume
  */
 export interface PackageVolume {
-    /**
-     * 
-     * @type {VolumeUnitOfMeasurement}
-     * @memberof PackageVolume
-     */
     'unitOfMeasurement': VolumeUnitOfMeasurement;
     /**
      * The package volume value.
-     * @type {number}
-     * @memberof PackageVolume
      */
     'volume': number;
 }

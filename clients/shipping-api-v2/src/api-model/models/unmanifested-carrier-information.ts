@@ -19,26 +19,18 @@ import type { UnmanifestedShipmentLocation } from './unmanifested-shipment-locat
 
 /**
  * UnmanifestedCarrierInformation like carrierId CarrierName and Location
- * @export
- * @interface UnmanifestedCarrierInformation
  */
 export interface UnmanifestedCarrierInformation {
     /**
      * The carrier identifier for the offering, provided by the carrier.
-     * @type {string}
-     * @memberof UnmanifestedCarrierInformation
      */
     'carrierId'?: string;
     /**
      * The carrier name for the offering.
-     * @type {string}
-     * @memberof UnmanifestedCarrierInformation
      */
     'carrierName'?: string;
     /**
      * A list of UnmanifestedShipmentLocation
-     * @type {Array<UnmanifestedShipmentLocation>}
-     * @memberof UnmanifestedCarrierInformation
      */
     'unmanifestedShipmentLocationList'?: Array<UnmanifestedShipmentLocation>;
 }

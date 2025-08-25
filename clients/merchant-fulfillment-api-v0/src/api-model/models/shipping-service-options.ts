@@ -28,39 +28,15 @@ import type { LabelFormat } from './label-format';
 
 /**
  * Extra services provided by a carrier.
- * @export
- * @interface ShippingServiceOptions
  */
 export interface ShippingServiceOptions {
-    /**
-     * 
-     * @type {DeliveryExperienceType}
-     * @memberof ShippingServiceOptions
-     */
     'DeliveryExperience': DeliveryExperienceType;
-    /**
-     * 
-     * @type {CurrencyAmount}
-     * @memberof ShippingServiceOptions
-     */
     'DeclaredValue'?: CurrencyAmount;
     /**
      * When true, the carrier will pick up the package. Note: Scheduled carrier pickup is available only using Dynamex (US), DPD (UK), and Royal Mail (UK).
-     * @type {boolean}
-     * @memberof ShippingServiceOptions
      */
     'CarrierWillPickUp': boolean;
-    /**
-     * 
-     * @type {CarrierWillPickUpOption}
-     * @memberof ShippingServiceOptions
-     */
     'CarrierWillPickUpOption'?: CarrierWillPickUpOption;
-    /**
-     * 
-     * @type {LabelFormat}
-     * @memberof ShippingServiceOptions
-     */
     'LabelFormat'?: LabelFormat;
 }
 

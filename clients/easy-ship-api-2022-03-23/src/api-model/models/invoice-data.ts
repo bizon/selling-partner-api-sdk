@@ -16,20 +16,14 @@
 
 /**
  * Invoice number and date.
- * @export
- * @interface InvoiceData
  */
 export interface InvoiceData {
     /**
      * A string of up to 255 characters.
-     * @type {string}
-     * @memberof InvoiceData
      */
     'invoiceNumber': string;
     /**
      * A datetime value in ISO 8601 format.
-     * @type {string}
-     * @memberof InvoiceData
      */
     'invoiceDate'?: string;
 }

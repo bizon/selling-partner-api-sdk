@@ -16,20 +16,14 @@
 
 /**
  * Shipment dates.
- * @export
- * @interface ShipmentDates
  */
 export interface ShipmentDates {
     /**
      * Time by which the vendor is required to ship the order.
-     * @type {string}
-     * @memberof ShipmentDates
      */
     'requiredShipDate': string;
     /**
      * Delivery date promised to the Amazon customer.
-     * @type {string}
-     * @memberof ShipmentDates
      */
     'promisedDeliveryDate'?: string;
 }

@@ -47,7 +47,6 @@ import type { SearchContentPublishRecordsResponse } from '../models';
 import type { ValidateContentDocumentAsinRelationsResponse } from '../models';
 /**
  * AplusContentApi - axios parameter creator
- * @export
  */
 export const AplusContentApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -508,7 +507,6 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
 
 /**
  * AplusContentApi - functional programming interface
- * @export
  */
 export const AplusContentApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = AplusContentApiAxiosParamCreator(configuration)
@@ -656,7 +654,6 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
 
 /**
  * AplusContentApi - factory interface
- * @export
  */
 export const AplusContentApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = AplusContentApiFp(configuration)
@@ -756,275 +753,196 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
 
 /**
  * Request parameters for createContentDocument operation in AplusContentApi.
- * @export
- * @interface AplusContentApiCreateContentDocumentRequest
  */
 export interface AplusContentApiCreateContentDocumentRequest {
     /**
      * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof AplusContentApiCreateContentDocument
      */
     readonly marketplaceId: string
 
     /**
      * The content document request details.
-     * @type {PostContentDocumentRequest}
-     * @memberof AplusContentApiCreateContentDocument
      */
     readonly postContentDocumentRequest: PostContentDocumentRequest
 }
 
 /**
  * Request parameters for getContentDocument operation in AplusContentApi.
- * @export
- * @interface AplusContentApiGetContentDocumentRequest
  */
 export interface AplusContentApiGetContentDocumentRequest {
     /**
      * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-     * @type {string}
-     * @memberof AplusContentApiGetContentDocument
      */
     readonly contentReferenceKey: string
 
     /**
      * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof AplusContentApiGetContentDocument
      */
     readonly marketplaceId: string
 
     /**
      * The set of A+ Content data types to include in the response.
-     * @type {Set<'CONTENTS' | 'METADATA'>}
-     * @memberof AplusContentApiGetContentDocument
      */
     readonly includedDataSet: Set<GetContentDocumentIncludedDataSetEnum>
 }
 
 /**
  * Request parameters for listContentDocumentAsinRelations operation in AplusContentApi.
- * @export
- * @interface AplusContentApiListContentDocumentAsinRelationsRequest
  */
 export interface AplusContentApiListContentDocumentAsinRelationsRequest {
     /**
      * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-     * @type {string}
-     * @memberof AplusContentApiListContentDocumentAsinRelations
      */
     readonly contentReferenceKey: string
 
     /**
      * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof AplusContentApiListContentDocumentAsinRelations
      */
     readonly marketplaceId: string
 
     /**
      * The set of A+ Content data types to include in the response. If you don\&#39;t include this parameter, the operation returns the related ASINs without metadata.
-     * @type {Set<'METADATA'>}
-     * @memberof AplusContentApiListContentDocumentAsinRelations
      */
     readonly includedDataSet?: Set<ListContentDocumentAsinRelationsIncludedDataSetEnum>
 
     /**
      * The set of ASINs.
-     * @type {Set<string>}
-     * @memberof AplusContentApiListContentDocumentAsinRelations
      */
     readonly asinSet?: Set<string>
 
     /**
      * A token that you use to fetch a specific page when there are multiple pages of results.
-     * @type {string}
-     * @memberof AplusContentApiListContentDocumentAsinRelations
      */
     readonly pageToken?: string
 }
 
 /**
  * Request parameters for postContentDocumentApprovalSubmission operation in AplusContentApi.
- * @export
- * @interface AplusContentApiPostContentDocumentApprovalSubmissionRequest
  */
 export interface AplusContentApiPostContentDocumentApprovalSubmissionRequest {
     /**
      * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-     * @type {string}
-     * @memberof AplusContentApiPostContentDocumentApprovalSubmission
      */
     readonly contentReferenceKey: string
 
     /**
      * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof AplusContentApiPostContentDocumentApprovalSubmission
      */
     readonly marketplaceId: string
 }
 
 /**
  * Request parameters for postContentDocumentAsinRelations operation in AplusContentApi.
- * @export
- * @interface AplusContentApiPostContentDocumentAsinRelationsRequest
  */
 export interface AplusContentApiPostContentDocumentAsinRelationsRequest {
     /**
      * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-     * @type {string}
-     * @memberof AplusContentApiPostContentDocumentAsinRelations
      */
     readonly contentReferenceKey: string
 
     /**
      * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof AplusContentApiPostContentDocumentAsinRelations
      */
     readonly marketplaceId: string
 
     /**
      * The request details for the content document ASIN relations.
-     * @type {PostContentDocumentAsinRelationsRequest}
-     * @memberof AplusContentApiPostContentDocumentAsinRelations
      */
     readonly postContentDocumentAsinRelationsRequest: PostContentDocumentAsinRelationsRequest
 }
 
 /**
  * Request parameters for postContentDocumentSuspendSubmission operation in AplusContentApi.
- * @export
- * @interface AplusContentApiPostContentDocumentSuspendSubmissionRequest
  */
 export interface AplusContentApiPostContentDocumentSuspendSubmissionRequest {
     /**
      * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-     * @type {string}
-     * @memberof AplusContentApiPostContentDocumentSuspendSubmission
      */
     readonly contentReferenceKey: string
 
     /**
      * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof AplusContentApiPostContentDocumentSuspendSubmission
      */
     readonly marketplaceId: string
 }
 
 /**
  * Request parameters for searchContentDocuments operation in AplusContentApi.
- * @export
- * @interface AplusContentApiSearchContentDocumentsRequest
  */
 export interface AplusContentApiSearchContentDocumentsRequest {
     /**
      * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof AplusContentApiSearchContentDocuments
      */
     readonly marketplaceId: string
 
     /**
      * A token that you use to fetch a specific page when there are multiple pages of results.
-     * @type {string}
-     * @memberof AplusContentApiSearchContentDocuments
      */
     readonly pageToken?: string
 }
 
 /**
  * Request parameters for searchContentPublishRecords operation in AplusContentApi.
- * @export
- * @interface AplusContentApiSearchContentPublishRecordsRequest
  */
 export interface AplusContentApiSearchContentPublishRecordsRequest {
     /**
      * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof AplusContentApiSearchContentPublishRecords
      */
     readonly marketplaceId: string
 
     /**
      * The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace.
-     * @type {string}
-     * @memberof AplusContentApiSearchContentPublishRecords
      */
     readonly asin: string
 
     /**
      * A token that you use to fetch a specific page when there are multiple pages of results.
-     * @type {string}
-     * @memberof AplusContentApiSearchContentPublishRecords
      */
     readonly pageToken?: string
 }
 
 /**
  * Request parameters for updateContentDocument operation in AplusContentApi.
- * @export
- * @interface AplusContentApiUpdateContentDocumentRequest
  */
 export interface AplusContentApiUpdateContentDocumentRequest {
     /**
      * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-     * @type {string}
-     * @memberof AplusContentApiUpdateContentDocument
      */
     readonly contentReferenceKey: string
 
     /**
      * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof AplusContentApiUpdateContentDocument
      */
     readonly marketplaceId: string
 
     /**
      * The content document request details.
-     * @type {PostContentDocumentRequest}
-     * @memberof AplusContentApiUpdateContentDocument
      */
     readonly postContentDocumentRequest: PostContentDocumentRequest
 }
 
 /**
  * Request parameters for validateContentDocumentAsinRelations operation in AplusContentApi.
- * @export
- * @interface AplusContentApiValidateContentDocumentAsinRelationsRequest
  */
 export interface AplusContentApiValidateContentDocumentAsinRelationsRequest {
     /**
      * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof AplusContentApiValidateContentDocumentAsinRelations
      */
     readonly marketplaceId: string
 
     /**
      * The content document request details.
-     * @type {PostContentDocumentRequest}
-     * @memberof AplusContentApiValidateContentDocumentAsinRelations
      */
     readonly postContentDocumentRequest: PostContentDocumentRequest
 
     /**
      * The set of ASINs.
-     * @type {Set<string>}
-     * @memberof AplusContentApiValidateContentDocumentAsinRelations
      */
     readonly asinSet?: Set<string>
 }
 
 /**
  * AplusContentApi - object-oriented interface
- * @export
- * @class AplusContentApi
- * @extends {BaseAPI}
  */
 export class AplusContentApi extends BaseAPI {
     /**
@@ -1032,7 +950,6 @@ export class AplusContentApi extends BaseAPI {
      * @param {AplusContentApiCreateContentDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AplusContentApi
      */
     public createContentDocument(requestParameters: AplusContentApiCreateContentDocumentRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).createContentDocument(requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, options).then((request) => request(this.axios, this.basePath));
@@ -1043,7 +960,6 @@ export class AplusContentApi extends BaseAPI {
      * @param {AplusContentApiGetContentDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AplusContentApi
      */
     public getContentDocument(requestParameters: AplusContentApiGetContentDocumentRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).getContentDocument(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.includedDataSet, options).then((request) => request(this.axios, this.basePath));
@@ -1054,7 +970,6 @@ export class AplusContentApi extends BaseAPI {
      * @param {AplusContentApiListContentDocumentAsinRelationsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AplusContentApi
      */
     public listContentDocumentAsinRelations(requestParameters: AplusContentApiListContentDocumentAsinRelationsRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).listContentDocumentAsinRelations(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.includedDataSet, requestParameters.asinSet, requestParameters.pageToken, options).then((request) => request(this.axios, this.basePath));
@@ -1065,7 +980,6 @@ export class AplusContentApi extends BaseAPI {
      * @param {AplusContentApiPostContentDocumentApprovalSubmissionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AplusContentApi
      */
     public postContentDocumentApprovalSubmission(requestParameters: AplusContentApiPostContentDocumentApprovalSubmissionRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).postContentDocumentApprovalSubmission(requestParameters.contentReferenceKey, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
@@ -1076,7 +990,6 @@ export class AplusContentApi extends BaseAPI {
      * @param {AplusContentApiPostContentDocumentAsinRelationsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AplusContentApi
      */
     public postContentDocumentAsinRelations(requestParameters: AplusContentApiPostContentDocumentAsinRelationsRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).postContentDocumentAsinRelations(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.postContentDocumentAsinRelationsRequest, options).then((request) => request(this.axios, this.basePath));
@@ -1087,7 +1000,6 @@ export class AplusContentApi extends BaseAPI {
      * @param {AplusContentApiPostContentDocumentSuspendSubmissionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AplusContentApi
      */
     public postContentDocumentSuspendSubmission(requestParameters: AplusContentApiPostContentDocumentSuspendSubmissionRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).postContentDocumentSuspendSubmission(requestParameters.contentReferenceKey, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
@@ -1098,7 +1010,6 @@ export class AplusContentApi extends BaseAPI {
      * @param {AplusContentApiSearchContentDocumentsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AplusContentApi
      */
     public searchContentDocuments(requestParameters: AplusContentApiSearchContentDocumentsRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).searchContentDocuments(requestParameters.marketplaceId, requestParameters.pageToken, options).then((request) => request(this.axios, this.basePath));
@@ -1109,7 +1020,6 @@ export class AplusContentApi extends BaseAPI {
      * @param {AplusContentApiSearchContentPublishRecordsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AplusContentApi
      */
     public searchContentPublishRecords(requestParameters: AplusContentApiSearchContentPublishRecordsRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).searchContentPublishRecords(requestParameters.marketplaceId, requestParameters.asin, requestParameters.pageToken, options).then((request) => request(this.axios, this.basePath));
@@ -1120,7 +1030,6 @@ export class AplusContentApi extends BaseAPI {
      * @param {AplusContentApiUpdateContentDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AplusContentApi
      */
     public updateContentDocument(requestParameters: AplusContentApiUpdateContentDocumentRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).updateContentDocument(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, options).then((request) => request(this.axios, this.basePath));
@@ -1131,24 +1040,17 @@ export class AplusContentApi extends BaseAPI {
      * @param {AplusContentApiValidateContentDocumentAsinRelationsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AplusContentApi
      */
     public validateContentDocumentAsinRelations(requestParameters: AplusContentApiValidateContentDocumentAsinRelationsRequest, options?: RawAxiosRequestConfig) {
         return AplusContentApiFp(this.configuration).validateContentDocumentAsinRelations(requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, requestParameters.asinSet, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetContentDocumentIncludedDataSetEnum = {
     Contents: 'CONTENTS',
     Metadata: 'METADATA'
 } as const;
 export type GetContentDocumentIncludedDataSetEnum = typeof GetContentDocumentIncludedDataSetEnum[keyof typeof GetContentDocumentIncludedDataSetEnum];
-/**
- * @export
- */
 export const ListContentDocumentAsinRelationsIncludedDataSetEnum = {
     Metadata: 'METADATA'
 } as const;

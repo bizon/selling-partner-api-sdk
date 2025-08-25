@@ -16,26 +16,18 @@
 
 /**
  * Representation of a location used within the inbounding experience.
- * @export
- * @interface Region
  */
 export interface Region {
     /**
      * ISO 3166 standard alpha-2 country code.
-     * @type {string}
-     * @memberof Region
      */
     'countryCode'?: string;
     /**
      * State.
-     * @type {string}
-     * @memberof Region
      */
     'state'?: string;
     /**
      * An identifier for a warehouse, such as a FC, IXD, upstream storage.
-     * @type {string}
-     * @memberof Region
      */
     'warehouseId'?: string;
 }

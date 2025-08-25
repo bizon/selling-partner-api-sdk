@@ -19,20 +19,11 @@ import type { PackageTrackingDetails } from './package-tracking-details';
 
 /**
  * The response schema for the `getPackageTrackingDetails` operation.
- * @export
- * @interface GetPackageTrackingDetailsResponse
  */
 export interface GetPackageTrackingDetailsResponse {
-    /**
-     * 
-     * @type {PackageTrackingDetails}
-     * @memberof GetPackageTrackingDetailsResponse
-     */
     'payload'?: PackageTrackingDetails;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetPackageTrackingDetailsResponse
      */
     'errors'?: Array<Error>;
 }

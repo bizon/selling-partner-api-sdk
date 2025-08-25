@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the createWarranty operation.
- * @export
- * @interface CreateWarrantyResponse
  */
 export interface CreateWarrantyResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CreateWarrantyResponse
      */
     'errors'?: Array<Error>;
 }

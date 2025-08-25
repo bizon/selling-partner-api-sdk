@@ -16,20 +16,14 @@
 
 /**
  * Describes a granularity at which inventory data can be aggregated. For example, if you use Marketplace granularity, the fulfillable quantity will reflect inventory that could be fulfilled in the given marketplace.
- * @export
- * @interface Granularity
  */
 export interface Granularity {
     /**
      * The granularity type for the inventory aggregation level.
-     * @type {string}
-     * @memberof Granularity
      */
     'granularityType'?: string;
     /**
      * The granularity ID for the specified granularity type. When granularityType is Marketplace, specify the marketplaceId.
-     * @type {string}
-     * @memberof Granularity
      */
     'granularityId'?: string;
 }

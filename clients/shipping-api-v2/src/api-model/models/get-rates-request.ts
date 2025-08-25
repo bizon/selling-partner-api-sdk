@@ -46,86 +46,34 @@ import type { ValueAddedServiceDetails } from './value-added-service-details';
 
 /**
  * The request schema for the getRates operation. When the channelType is Amazon, the shipTo address is not required and will be ignored.
- * @export
- * @interface GetRatesRequest
  */
 export interface GetRatesRequest {
-    /**
-     * 
-     * @type {Address}
-     * @memberof GetRatesRequest
-     */
     'shipTo'?: Address;
-    /**
-     * 
-     * @type {Address}
-     * @memberof GetRatesRequest
-     */
     'shipFrom': Address;
-    /**
-     * 
-     * @type {Address}
-     * @memberof GetRatesRequest
-     */
     'returnTo'?: Address;
     /**
      * The ship date and time (the requested pickup). This defaults to the current date and time.
-     * @type {string}
-     * @memberof GetRatesRequest
      */
     'shipDate'?: string;
-    /**
-     * 
-     * @type {ShipperInstruction}
-     * @memberof GetRatesRequest
-     */
     'shipperInstruction'?: ShipperInstruction;
     /**
      * A list of packages to be shipped through a shipping service offering.
-     * @type {Array<Package>}
-     * @memberof GetRatesRequest
      */
     'packages': Array<Package>;
-    /**
-     * 
-     * @type {ValueAddedServiceDetails}
-     * @memberof GetRatesRequest
-     */
     'valueAddedServices'?: ValueAddedServiceDetails;
     /**
      * A list of tax detail information.
-     * @type {Array<TaxDetail>}
-     * @memberof GetRatesRequest
      */
     'taxDetails'?: Array<TaxDetail>;
-    /**
-     * 
-     * @type {ChannelDetails}
-     * @memberof GetRatesRequest
-     */
     'channelDetails': ChannelDetails;
     /**
      * Object to pass additional information about the MCI Integrator shipperType: List of ClientReferenceDetail
-     * @type {Array<ClientReferenceDetail>}
-     * @memberof GetRatesRequest
      */
     'clientReferenceDetails'?: Array<ClientReferenceDetail>;
-    /**
-     * 
-     * @type {ShipmentType}
-     * @memberof GetRatesRequest
-     */
     'shipmentType'?: ShipmentType;
-    /**
-     * 
-     * @type {AccessPointDetails}
-     * @memberof GetRatesRequest
-     */
     'destinationAccessPointDetails'?: AccessPointDetails;
     /**
      * A list of CarrierAccounts
-     * @type {Array<CarrierAccount>}
-     * @memberof GetRatesRequest
      */
     'carrierAccounts'?: Array<CarrierAccount>;
 }

@@ -22,20 +22,11 @@ import type { InventorySummary } from './inventory-summary';
 
 /**
  * The payload schema for the getInventorySummaries operation.
- * @export
- * @interface GetInventorySummariesResult
  */
 export interface GetInventorySummariesResult {
-    /**
-     * 
-     * @type {Granularity}
-     * @memberof GetInventorySummariesResult
-     */
     'granularity': Granularity;
     /**
      * A list of inventory summaries.
-     * @type {Array<InventorySummary>}
-     * @memberof GetInventorySummariesResult
      */
     'inventorySummaries': Array<InventorySummary>;
 }

@@ -22,38 +22,23 @@ import type { ContentStatus } from './content-status';
 
 /**
  * The A+ Content document\'s metadata.
- * @export
- * @interface ContentMetadata
  */
 export interface ContentMetadata {
     /**
      * The A+ Content document\'s name.
-     * @type {string}
-     * @memberof ContentMetadata
      */
     'name': string;
     /**
      * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof ContentMetadata
      */
     'marketplaceId': string;
-    /**
-     * 
-     * @type {ContentStatus}
-     * @memberof ContentMetadata
-     */
     'status': ContentStatus;
     /**
      * The set of content badges.
-     * @type {Set<ContentBadge>}
-     * @memberof ContentMetadata
      */
     'badgeSet': Set<ContentBadge>;
     /**
      * The approximate age of the A+ Content document and metadata.
-     * @type {string}
-     * @memberof ContentMetadata
      */
     'updateTime': string;
 }

@@ -16,8 +16,6 @@
 
 /**
  * Unit of measurement for the package volume.
- * @export
- * @enum {string}
  */
 
 export const VolumeUnitOfMeasurement = {

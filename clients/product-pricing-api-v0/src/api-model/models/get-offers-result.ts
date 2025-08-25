@@ -28,56 +28,29 @@ import type { Summary } from './summary';
 
 /**
  * The payload for the getListingOffers and getItemOffers operations.
- * @export
- * @interface GetOffersResult
  */
 export interface GetOffersResult {
     /**
      * A marketplace identifier.
-     * @type {string}
-     * @memberof GetOffersResult
      */
     'MarketplaceID': string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof GetOffersResult
      */
     'ASIN'?: string;
     /**
      * The stock keeping unit (SKU) of the item.
-     * @type {string}
-     * @memberof GetOffersResult
      */
     'SKU'?: string;
-    /**
-     * 
-     * @type {ConditionType}
-     * @memberof GetOffersResult
-     */
     'ItemCondition': ConditionType;
     /**
      * The status of the operation.
-     * @type {string}
-     * @memberof GetOffersResult
      */
     'status': string;
-    /**
-     * 
-     * @type {ItemIdentifier}
-     * @memberof GetOffersResult
-     */
     'Identifier': ItemIdentifier;
-    /**
-     * 
-     * @type {Summary}
-     * @memberof GetOffersResult
-     */
     'Summary': Summary;
     /**
      * A list of offer details. The list is the same length as the TotalOfferCount in the Summary or 20, whichever is less.
-     * @type {Array<OfferDetail>}
-     * @memberof GetOffersResult
      */
     'Offers': Array<OfferDetail>;
 }

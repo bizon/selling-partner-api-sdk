@@ -16,14 +16,10 @@
 
 /**
  * The `generateSelfShipAppointmentSlots` response.
- * @export
- * @interface GenerateSelfShipAppointmentSlotsResponse
  */
 export interface GenerateSelfShipAppointmentSlotsResponse {
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof GenerateSelfShipAppointmentSlotsResponse
      */
     'operationId': string;
 }

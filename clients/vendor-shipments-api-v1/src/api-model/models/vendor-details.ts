@@ -19,20 +19,11 @@ import type { PartyIdentification } from './party-identification';
 
 /**
  * Vendor Details as part of Label response.
- * @export
- * @interface VendorDetails
  */
 export interface VendorDetails {
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof VendorDetails
-     */
     'sellingParty'?: PartyIdentification;
     /**
      * Unique vendor shipment id which is not used in last 365 days
-     * @type {string}
-     * @memberof VendorDetails
      */
     'vendorShipmentIdentifier'?: string;
 }

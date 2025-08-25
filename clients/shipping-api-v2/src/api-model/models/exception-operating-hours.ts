@@ -22,21 +22,9 @@ import type { OperatingHours } from './operating-hours';
 
 /**
  * Defines exceptions to standard operating hours for certain date ranges.
- * @export
- * @interface ExceptionOperatingHours
  */
 export interface ExceptionOperatingHours {
-    /**
-     * 
-     * @type {DateRange}
-     * @memberof ExceptionOperatingHours
-     */
     'dateRange'?: DateRange;
-    /**
-     * 
-     * @type {OperatingHours}
-     * @memberof ExceptionOperatingHours
-     */
     'operatingHours'?: OperatingHours;
 }
 

@@ -16,20 +16,14 @@
 
 /**
  * Measurement information for an order item.
- * @export
- * @interface Measurement
  */
 export interface Measurement {
     /**
      * The unit of measure.
-     * @type {string}
-     * @memberof Measurement
      */
     'Unit': MeasurementUnitEnum;
     /**
      * The measurement value.
-     * @type {number}
-     * @memberof Measurement
      */
     'Value': number;
 }

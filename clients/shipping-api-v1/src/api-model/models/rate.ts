@@ -28,45 +28,19 @@ import type { Weight } from './weight';
 
 /**
  * The available rate that can be used to send the shipment
- * @export
- * @interface Rate
  */
 export interface Rate {
     /**
      * An identifier for the rate.
-     * @type {string}
-     * @memberof Rate
      */
     'rateId'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof Rate
-     */
     'totalCharge'?: Currency;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof Rate
-     */
     'billedWeight'?: Weight;
     /**
      * The time after which the offering will expire.
-     * @type {string}
-     * @memberof Rate
      */
     'expirationTime'?: string;
-    /**
-     * 
-     * @type {ServiceType}
-     * @memberof Rate
-     */
     'serviceType'?: ServiceType;
-    /**
-     * 
-     * @type {ShippingPromiseSet}
-     * @memberof Rate
-     */
     'promise'?: ShippingPromiseSet;
 }
 

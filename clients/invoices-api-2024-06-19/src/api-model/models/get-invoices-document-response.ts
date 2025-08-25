@@ -19,15 +19,8 @@ import type { InvoicesDocument } from './invoices-document';
 
 /**
  * Success.
- * @export
- * @interface GetInvoicesDocumentResponse
  */
 export interface GetInvoicesDocumentResponse {
-    /**
-     * 
-     * @type {InvoicesDocument}
-     * @memberof GetInvoicesDocumentResponse
-     */
     'invoicesDocument'?: InvoicesDocument;
 }
 

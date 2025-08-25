@@ -19,20 +19,14 @@ import type { AdditionalInputs } from './additional-inputs';
 
 /**
  * A list of item level fields.
- * @export
- * @interface ItemLevelFields
  */
 export interface ItemLevelFields {
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof ItemLevelFields
      */
     'Asin': string;
     /**
      * A list of additional inputs.
-     * @type {Array<AdditionalInputs>}
-     * @memberof ItemLevelFields
      */
     'AdditionalInputs': Array<AdditionalInputs>;
 }

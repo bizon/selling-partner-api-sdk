@@ -19,15 +19,8 @@ import type { FulfillmentOrderStatus } from './fulfillment-order-status';
 
 /**
  * The request body schema for the `submitFulfillmentOrderStatusUpdate` operation.
- * @export
- * @interface SubmitFulfillmentOrderStatusUpdateRequest
  */
 export interface SubmitFulfillmentOrderStatusUpdateRequest {
-    /**
-     * 
-     * @type {FulfillmentOrderStatus}
-     * @memberof SubmitFulfillmentOrderStatusUpdateRequest
-     */
     'fulfillmentOrderStatus'?: FulfillmentOrderStatus;
 }
 

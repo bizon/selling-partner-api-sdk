@@ -22,32 +22,19 @@ import type { PreferredDeliveryTime } from './preferred-delivery-time';
 
 /**
  * Contains all of the delivery instructions provided by the customer for the shipping address.
- * @export
- * @interface DeliveryPreferences
  */
 export interface DeliveryPreferences {
     /**
      * Drop-off location selected by the customer.
-     * @type {string}
-     * @memberof DeliveryPreferences
      */
     'DropOffLocation'?: string;
-    /**
-     * 
-     * @type {PreferredDeliveryTime}
-     * @memberof DeliveryPreferences
-     */
     'PreferredDeliveryTime'?: PreferredDeliveryTime;
     /**
      * Enumerated list of miscellaneous delivery attributes associated with the shipping address.
-     * @type {Array<OtherDeliveryAttributes>}
-     * @memberof DeliveryPreferences
      */
     'OtherAttributes'?: Array<OtherDeliveryAttributes>;
     /**
      * Building instructions, nearby landmark or navigation instructions.
-     * @type {string}
-     * @memberof DeliveryPreferences
      */
     'AddressInstructions'?: string;
 }

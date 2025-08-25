@@ -19,15 +19,8 @@ import type { GetShipmentDocumentsResult } from './get-shipment-documents-result
 
 /**
  * The response schema for the the getShipmentDocuments operation.
- * @export
- * @interface GetShipmentDocumentsResponse
  */
 export interface GetShipmentDocumentsResponse {
-    /**
-     * 
-     * @type {GetShipmentDocumentsResult}
-     * @memberof GetShipmentDocumentsResponse
-     */
     'payload'?: GetShipmentDocumentsResult;
 }
 

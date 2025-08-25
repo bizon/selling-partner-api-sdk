@@ -16,8 +16,6 @@
 
 /**
  * The current delivery status of the package.
- * @export
- * @enum {string}
  */
 
 export const CurrentStatus = {

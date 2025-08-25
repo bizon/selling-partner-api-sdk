@@ -16,8 +16,6 @@
 
 /**
  * The shipment invoice status.
- * @export
- * @enum {string}
  */
 
 export const ShipmentInvoiceStatus = {

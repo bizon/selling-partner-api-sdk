@@ -16,8 +16,6 @@
 
 /**
  * Type of settlement the shipper wants to receive for a particular shipment.
- * @export
- * @enum {string}
  */
 
 export const SettlementType = {

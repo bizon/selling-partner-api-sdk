@@ -14,28 +14,17 @@
 
 
 
-/**
- * 
- * @export
- * @interface Categories
- */
 export interface Categories {
     /**
      * The identifier for the product category (or browse node).
-     * @type {string}
-     * @memberof Categories
      */
     'ProductCategoryId'?: string;
     /**
      * The name of the product category (or browse node).
-     * @type {string}
-     * @memberof Categories
      */
     'ProductCategoryName'?: string;
     /**
      * The parent product category.
-     * @type {object}
-     * @memberof Categories
      */
     'parent'?: object;
 }

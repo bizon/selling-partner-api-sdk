@@ -19,20 +19,11 @@ import type { GetOffersResult } from './get-offers-result';
 
 /**
  * The response schema for the `getListingOffers` and `getItemOffers` operations.
- * @export
- * @interface GetOffersResponse
  */
 export interface GetOffersResponse {
-    /**
-     * 
-     * @type {GetOffersResult}
-     * @memberof GetOffersResponse
-     */
     'payload'?: GetOffersResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetOffersResponse
      */
     'errors'?: Array<Error>;
 }

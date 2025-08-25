@@ -16,14 +16,10 @@
 
 /**
  * The `confirmShipmentContentUpdatePreview` response.
- * @export
- * @interface ConfirmShipmentContentUpdatePreviewResponse
  */
 export interface ConfirmShipmentContentUpdatePreviewResponse {
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof ConfirmShipmentContentUpdatePreviewResponse
      */
     'operationId': string;
 }

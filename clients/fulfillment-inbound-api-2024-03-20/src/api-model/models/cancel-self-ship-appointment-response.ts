@@ -16,14 +16,10 @@
 
 /**
  * The `CancelSelfShipAppointment` response.
- * @export
- * @interface CancelSelfShipAppointmentResponse
  */
 export interface CancelSelfShipAppointmentResponse {
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof CancelSelfShipAppointmentResponse
      */
     'operationId': string;
 }

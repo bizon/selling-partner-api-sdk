@@ -16,8 +16,6 @@
 
 /**
  * Represents a format of a bank number also called routing number type
- * @export
- * @enum {string}
  */
 
 export const BankNumberFormat = {

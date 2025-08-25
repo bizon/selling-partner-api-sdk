@@ -16,8 +16,6 @@
 
 /**
  * The unit of length.
- * @export
- * @enum {string}
  */
 
 export const UnitOfLength = {

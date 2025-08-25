@@ -16,8 +16,6 @@
 
 /**
  * Represents the schedule status of the transfer.
- * @export
- * @enum {string}
  */
 
 export const TransferScheduleStatus = {

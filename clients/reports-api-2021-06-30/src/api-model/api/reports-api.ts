@@ -43,7 +43,6 @@ import type { ReportSchedule } from '../models';
 import type { ReportScheduleList } from '../models';
 /**
  * ReportsApi - axios parameter creator
- * @export
  */
 export const ReportsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -391,7 +390,6 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
 /**
  * ReportsApi - functional programming interface
- * @export
  */
 export const ReportsApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ReportsApiAxiosParamCreator(configuration)
@@ -515,7 +513,6 @@ export const ReportsApiFp = function(configuration?: Configuration) {
 
 /**
  * ReportsApi - factory interface
- * @export
  */
 export const ReportsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = ReportsApiFp(configuration)
@@ -606,177 +603,126 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
 
 /**
  * Request parameters for cancelReport operation in ReportsApi.
- * @export
- * @interface ReportsApiCancelReportRequest
  */
 export interface ReportsApiCancelReportRequest {
     /**
      * The identifier for the report. This identifier is unique only in combination with a seller ID.
-     * @type {string}
-     * @memberof ReportsApiCancelReport
      */
     readonly reportId: string
 }
 
 /**
  * Request parameters for cancelReportSchedule operation in ReportsApi.
- * @export
- * @interface ReportsApiCancelReportScheduleRequest
  */
 export interface ReportsApiCancelReportScheduleRequest {
     /**
      * The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
-     * @type {string}
-     * @memberof ReportsApiCancelReportSchedule
      */
     readonly reportScheduleId: string
 }
 
 /**
  * Request parameters for createReport operation in ReportsApi.
- * @export
- * @interface ReportsApiCreateReportRequest
  */
 export interface ReportsApiCreateReportRequest {
     /**
      * Information required to create the report.
-     * @type {CreateReportSpecification}
-     * @memberof ReportsApiCreateReport
      */
     readonly body: CreateReportSpecification
 }
 
 /**
  * Request parameters for createReportSchedule operation in ReportsApi.
- * @export
- * @interface ReportsApiCreateReportScheduleRequest
  */
 export interface ReportsApiCreateReportScheduleRequest {
     /**
      * Information required to create the report schedule.
-     * @type {CreateReportScheduleSpecification}
-     * @memberof ReportsApiCreateReportSchedule
      */
     readonly body: CreateReportScheduleSpecification
 }
 
 /**
  * Request parameters for getReport operation in ReportsApi.
- * @export
- * @interface ReportsApiGetReportRequest
  */
 export interface ReportsApiGetReportRequest {
     /**
      * The identifier for the report. This identifier is unique only in combination with a seller ID.
-     * @type {string}
-     * @memberof ReportsApiGetReport
      */
     readonly reportId: string
 }
 
 /**
  * Request parameters for getReportDocument operation in ReportsApi.
- * @export
- * @interface ReportsApiGetReportDocumentRequest
  */
 export interface ReportsApiGetReportDocumentRequest {
     /**
      * The identifier for the report document.
-     * @type {string}
-     * @memberof ReportsApiGetReportDocument
      */
     readonly reportDocumentId: string
 }
 
 /**
  * Request parameters for getReportSchedule operation in ReportsApi.
- * @export
- * @interface ReportsApiGetReportScheduleRequest
  */
 export interface ReportsApiGetReportScheduleRequest {
     /**
      * The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
-     * @type {string}
-     * @memberof ReportsApiGetReportSchedule
      */
     readonly reportScheduleId: string
 }
 
 /**
  * Request parameters for getReportSchedules operation in ReportsApi.
- * @export
- * @interface ReportsApiGetReportSchedulesRequest
  */
 export interface ReportsApiGetReportSchedulesRequest {
     /**
      * A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
-     * @type {Array<string>}
-     * @memberof ReportsApiGetReportSchedules
      */
     readonly reportTypes: Array<string>
 }
 
 /**
  * Request parameters for getReports operation in ReportsApi.
- * @export
- * @interface ReportsApiGetReportsRequest
  */
 export interface ReportsApiGetReportsRequest {
     /**
      * A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required.
-     * @type {Array<string>}
-     * @memberof ReportsApiGetReports
      */
     readonly reportTypes?: Array<string>
 
     /**
      * A list of processing statuses used to filter reports.
-     * @type {Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>}
-     * @memberof ReportsApiGetReports
      */
     readonly processingStatuses?: Array<GetReportsProcessingStatusesEnum>
 
     /**
      * A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify.
-     * @type {Array<string>}
-     * @memberof ReportsApiGetReports
      */
     readonly marketplaceIds?: Array<string>
 
     /**
      * The maximum number of reports to return in a single call.
-     * @type {number}
-     * @memberof ReportsApiGetReports
      */
     readonly pageSize?: number
 
     /**
      * The earliest report creation date and time for reports to include in the response, in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days.
-     * @type {string}
-     * @memberof ReportsApiGetReports
      */
     readonly createdSince?: string
 
     /**
      * The latest report creation date and time for reports to include in the response, in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; date time format. The default is now.
-     * @type {string}
-     * @memberof ReportsApiGetReports
      */
     readonly createdUntil?: string
 
     /**
      * A string token returned in the response to your previous request. &#x60;nextToken&#x60; is returned when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the &#x60;getReports&#x60; operation and include this token as the only parameter. Specifying &#x60;nextToken&#x60; with any other parameters will cause the request to fail.
-     * @type {string}
-     * @memberof ReportsApiGetReports
      */
     readonly nextToken?: string
 }
 
 /**
  * ReportsApi - object-oriented interface
- * @export
- * @class ReportsApi
- * @extends {BaseAPI}
  */
 export class ReportsApi extends BaseAPI {
     /**
@@ -784,7 +730,6 @@ export class ReportsApi extends BaseAPI {
      * @param {ReportsApiCancelReportRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ReportsApi
      */
     public cancelReport(requestParameters: ReportsApiCancelReportRequest, options?: RawAxiosRequestConfig) {
         return ReportsApiFp(this.configuration).cancelReport(requestParameters.reportId, options).then((request) => request(this.axios, this.basePath));
@@ -795,7 +740,6 @@ export class ReportsApi extends BaseAPI {
      * @param {ReportsApiCancelReportScheduleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ReportsApi
      */
     public cancelReportSchedule(requestParameters: ReportsApiCancelReportScheduleRequest, options?: RawAxiosRequestConfig) {
         return ReportsApiFp(this.configuration).cancelReportSchedule(requestParameters.reportScheduleId, options).then((request) => request(this.axios, this.basePath));
@@ -806,7 +750,6 @@ export class ReportsApi extends BaseAPI {
      * @param {ReportsApiCreateReportRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ReportsApi
      */
     public createReport(requestParameters: ReportsApiCreateReportRequest, options?: RawAxiosRequestConfig) {
         return ReportsApiFp(this.configuration).createReport(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -817,7 +760,6 @@ export class ReportsApi extends BaseAPI {
      * @param {ReportsApiCreateReportScheduleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ReportsApi
      */
     public createReportSchedule(requestParameters: ReportsApiCreateReportScheduleRequest, options?: RawAxiosRequestConfig) {
         return ReportsApiFp(this.configuration).createReportSchedule(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -828,7 +770,6 @@ export class ReportsApi extends BaseAPI {
      * @param {ReportsApiGetReportRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ReportsApi
      */
     public getReport(requestParameters: ReportsApiGetReportRequest, options?: RawAxiosRequestConfig) {
         return ReportsApiFp(this.configuration).getReport(requestParameters.reportId, options).then((request) => request(this.axios, this.basePath));
@@ -839,7 +780,6 @@ export class ReportsApi extends BaseAPI {
      * @param {ReportsApiGetReportDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ReportsApi
      */
     public getReportDocument(requestParameters: ReportsApiGetReportDocumentRequest, options?: RawAxiosRequestConfig) {
         return ReportsApiFp(this.configuration).getReportDocument(requestParameters.reportDocumentId, options).then((request) => request(this.axios, this.basePath));
@@ -850,7 +790,6 @@ export class ReportsApi extends BaseAPI {
      * @param {ReportsApiGetReportScheduleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ReportsApi
      */
     public getReportSchedule(requestParameters: ReportsApiGetReportScheduleRequest, options?: RawAxiosRequestConfig) {
         return ReportsApiFp(this.configuration).getReportSchedule(requestParameters.reportScheduleId, options).then((request) => request(this.axios, this.basePath));
@@ -861,7 +800,6 @@ export class ReportsApi extends BaseAPI {
      * @param {ReportsApiGetReportSchedulesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ReportsApi
      */
     public getReportSchedules(requestParameters: ReportsApiGetReportSchedulesRequest, options?: RawAxiosRequestConfig) {
         return ReportsApiFp(this.configuration).getReportSchedules(requestParameters.reportTypes, options).then((request) => request(this.axios, this.basePath));
@@ -872,16 +810,12 @@ export class ReportsApi extends BaseAPI {
      * @param {ReportsApiGetReportsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ReportsApi
      */
     public getReports(requestParameters: ReportsApiGetReportsRequest = {}, options?: RawAxiosRequestConfig) {
         return ReportsApiFp(this.configuration).getReports(requestParameters.reportTypes, requestParameters.processingStatuses, requestParameters.marketplaceIds, requestParameters.pageSize, requestParameters.createdSince, requestParameters.createdUntil, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetReportsProcessingStatusesEnum = {
     Cancelled: 'CANCELLED',
     Done: 'DONE',

@@ -19,50 +19,34 @@ import type { OperatingHour } from './operating-hour';
 
 /**
  * The operating hours per day
- * @export
- * @interface OperatingHoursByDay
  */
 export interface OperatingHoursByDay {
     /**
      * A list of Operating Hours.
-     * @type {Array<OperatingHour>}
-     * @memberof OperatingHoursByDay
      */
     'monday'?: Array<OperatingHour>;
     /**
      * A list of Operating Hours.
-     * @type {Array<OperatingHour>}
-     * @memberof OperatingHoursByDay
      */
     'tuesday'?: Array<OperatingHour>;
     /**
      * A list of Operating Hours.
-     * @type {Array<OperatingHour>}
-     * @memberof OperatingHoursByDay
      */
     'wednesday'?: Array<OperatingHour>;
     /**
      * A list of Operating Hours.
-     * @type {Array<OperatingHour>}
-     * @memberof OperatingHoursByDay
      */
     'thursday'?: Array<OperatingHour>;
     /**
      * A list of Operating Hours.
-     * @type {Array<OperatingHour>}
-     * @memberof OperatingHoursByDay
      */
     'friday'?: Array<OperatingHour>;
     /**
      * A list of Operating Hours.
-     * @type {Array<OperatingHour>}
-     * @memberof OperatingHoursByDay
      */
     'saturday'?: Array<OperatingHour>;
     /**
      * A list of Operating Hours.
-     * @type {Array<OperatingHour>}
-     * @memberof OperatingHoursByDay
      */
     'sunday'?: Array<OperatingHour>;
 }

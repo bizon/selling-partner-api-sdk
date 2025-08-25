@@ -16,15 +16,8 @@
 
 /**
  * A list of error responses returned when a request is unsuccessful.
- * @export
- * @interface GetMyFeesEstimatesErrorList
  */
 export interface GetMyFeesEstimatesErrorList {
-    /**
-     * 
-     * @type {Array<Error>}
-     * @memberof GetMyFeesEstimatesErrorList
-     */
     'errors': Array<Error>;
 }
 

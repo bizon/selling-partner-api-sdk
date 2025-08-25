@@ -16,14 +16,10 @@
 
 /**
  * The browse node review subtopic metrics.
- * @export
- * @interface BrowseNodeReviewSubtopicMetrics
  */
 export interface BrowseNodeReviewSubtopicMetrics {
     /**
      * The percentage of reviews that mention the subtopic.
-     * @type {number}
-     * @memberof BrowseNodeReviewSubtopicMetrics
      */
     'occurrencePercentage': number;
 }

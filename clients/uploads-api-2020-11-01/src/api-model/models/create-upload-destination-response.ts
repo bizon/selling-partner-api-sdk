@@ -19,20 +19,11 @@ import type { UploadDestination } from './upload-destination';
 
 /**
  * The response schema for the createUploadDestination operation.
- * @export
- * @interface CreateUploadDestinationResponse
  */
 export interface CreateUploadDestinationResponse {
-    /**
-     * 
-     * @type {UploadDestination}
-     * @memberof CreateUploadDestinationResponse
-     */
     'payload'?: UploadDestination;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CreateUploadDestinationResponse
      */
     'errors'?: Array<Error>;
 }

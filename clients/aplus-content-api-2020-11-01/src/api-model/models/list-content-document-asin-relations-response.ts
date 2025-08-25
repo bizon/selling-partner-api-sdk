@@ -25,7 +25,6 @@ import type { ListContentDocumentAsinRelationsResponseAllOf } from './list-conte
 
 /**
  * @type ListContentDocumentAsinRelationsResponse
- * @export
  */
 export type ListContentDocumentAsinRelationsResponse = AplusPaginatedResponse & ListContentDocumentAsinRelationsResponseAllOf;
 

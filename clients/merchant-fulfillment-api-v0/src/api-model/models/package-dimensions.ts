@@ -22,39 +22,21 @@ import type { UnitOfLength } from './unit-of-length';
 
 /**
  * The dimensions of a package contained in a shipment.
- * @export
- * @interface PackageDimensions
  */
 export interface PackageDimensions {
     /**
      * A number that represents the given package dimension.
-     * @type {number}
-     * @memberof PackageDimensions
      */
     'Length'?: number;
     /**
      * A number that represents the given package dimension.
-     * @type {number}
-     * @memberof PackageDimensions
      */
     'Width'?: number;
     /**
      * A number that represents the given package dimension.
-     * @type {number}
-     * @memberof PackageDimensions
      */
     'Height'?: number;
-    /**
-     * 
-     * @type {UnitOfLength}
-     * @memberof PackageDimensions
-     */
     'Unit'?: UnitOfLength;
-    /**
-     * 
-     * @type {PredefinedPackageDimensions}
-     * @memberof PackageDimensions
-     */
     'PredefinedPackageDimensions'?: PredefinedPackageDimensions;
 }
 

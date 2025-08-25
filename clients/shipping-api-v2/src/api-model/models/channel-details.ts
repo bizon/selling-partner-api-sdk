@@ -25,27 +25,10 @@ import type { ChannelType } from './channel-type';
 
 /**
  * Shipment source channel related information.
- * @export
- * @interface ChannelDetails
  */
 export interface ChannelDetails {
-    /**
-     * 
-     * @type {ChannelType}
-     * @memberof ChannelDetails
-     */
     'channelType': ChannelType;
-    /**
-     * 
-     * @type {AmazonOrderDetails}
-     * @memberof ChannelDetails
-     */
     'amazonOrderDetails'?: AmazonOrderDetails;
-    /**
-     * 
-     * @type {AmazonShipmentDetails}
-     * @memberof ChannelDetails
-     */
     'amazonShipmentDetails'?: AmazonShipmentDetails;
 }
 

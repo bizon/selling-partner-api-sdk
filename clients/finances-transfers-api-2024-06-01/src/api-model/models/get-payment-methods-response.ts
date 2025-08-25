@@ -19,14 +19,10 @@ import type { PaymentMethodDetails } from './payment-method-details';
 
 /**
  * The response schema for the `getPaymentMethods` operation.
- * @export
- * @interface GetPaymentMethodsResponse
  */
 export interface GetPaymentMethodsResponse {
     /**
      * The list of payment methods with payment method details.
-     * @type {Array<PaymentMethodDetails>}
-     * @memberof GetPaymentMethodsResponse
      */
     'paymentMethods'?: Array<PaymentMethodDetails>;
 }

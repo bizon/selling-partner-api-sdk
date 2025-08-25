@@ -16,38 +16,26 @@
 
 /**
  * Selected delivery window attributes.
- * @export
- * @interface SelectedDeliveryWindow
  */
 export interface SelectedDeliveryWindow {
     /**
      * Identifies type of Delivery Window Availability. Values: `AVAILABLE`, `CONGESTED`
-     * @type {string}
-     * @memberof SelectedDeliveryWindow
      */
     'availabilityType': string;
     /**
      * Identifier of a delivery window option. A delivery window option represent one option for when a shipment is expected to be delivered.
-     * @type {string}
-     * @memberof SelectedDeliveryWindow
      */
     'deliveryWindowOptionId': string;
     /**
      * The timestamp at which this Window can no longer be edited.
-     * @type {string}
-     * @memberof SelectedDeliveryWindow
      */
     'editableUntil'?: string;
     /**
      * The end timestamp of the window.
-     * @type {string}
-     * @memberof SelectedDeliveryWindow
      */
     'endDate': string;
     /**
      * The start timestamp of the window.
-     * @type {string}
-     * @memberof SelectedDeliveryWindow
      */
     'startDate': string;
 }

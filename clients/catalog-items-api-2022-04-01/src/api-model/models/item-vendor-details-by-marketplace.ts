@@ -19,56 +19,32 @@ import type { ItemVendorDetailsCategory } from './item-vendor-details-category';
 
 /**
  * The vendor details that are associated with an Amazon catalog item for the specified `marketplaceId`.
- * @export
- * @interface ItemVendorDetailsByMarketplace
  */
 export interface ItemVendorDetailsByMarketplace {
     /**
      * Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof ItemVendorDetailsByMarketplace
      */
     'marketplaceId': string;
     /**
      * The brand code that is associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemVendorDetailsByMarketplace
      */
     'brandCode'?: string;
     /**
      * The manufacturer code that is associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemVendorDetailsByMarketplace
      */
     'manufacturerCode'?: string;
     /**
      * The parent vendor code of the manufacturer code.
-     * @type {string}
-     * @memberof ItemVendorDetailsByMarketplace
      */
     'manufacturerCodeParent'?: string;
-    /**
-     * 
-     * @type {ItemVendorDetailsCategory}
-     * @memberof ItemVendorDetailsByMarketplace
-     */
     'productCategory'?: ItemVendorDetailsCategory;
     /**
      * The product group that is associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemVendorDetailsByMarketplace
      */
     'productGroup'?: string;
-    /**
-     * 
-     * @type {ItemVendorDetailsCategory}
-     * @memberof ItemVendorDetailsByMarketplace
-     */
     'productSubcategory'?: ItemVendorDetailsCategory;
     /**
      * The replenishment category that is associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemVendorDetailsByMarketplace
      */
     'replenishmentCategory'?: ItemVendorDetailsByMarketplaceReplenishmentCategoryEnum;
 }

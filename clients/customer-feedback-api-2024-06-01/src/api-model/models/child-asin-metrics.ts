@@ -19,21 +19,9 @@ import type { ChildAsinMentionMetrics } from './child-asin-mention-metrics';
 
 /**
  * The review topic metrics for other child ASINs that have the same parent ASIN. This value is `null` if there isn\'t any child ASIN metric data.
- * @export
- * @interface ChildAsinMetrics
  */
 export interface ChildAsinMetrics {
-    /**
-     * 
-     * @type {ChildAsinMentionMetrics}
-     * @memberof ChildAsinMetrics
-     */
     'mostMentions'?: ChildAsinMentionMetrics;
-    /**
-     * 
-     * @type {ChildAsinMentionMetrics}
-     * @memberof ChildAsinMetrics
-     */
     'leastMentions'?: ChildAsinMentionMetrics;
 }
 

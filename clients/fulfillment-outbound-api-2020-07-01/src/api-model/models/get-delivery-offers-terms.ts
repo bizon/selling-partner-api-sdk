@@ -22,21 +22,9 @@ import type { Origin } from './origin';
 
 /**
  * The delivery terms for the delivery offer.
- * @export
- * @interface GetDeliveryOffersTerms
  */
 export interface GetDeliveryOffersTerms {
-    /**
-     * 
-     * @type {Origin}
-     * @memberof GetDeliveryOffersTerms
-     */
     'origin': Origin;
-    /**
-     * 
-     * @type {Destination}
-     * @memberof GetDeliveryOffersTerms
-     */
     'destination': Destination;
 }
 

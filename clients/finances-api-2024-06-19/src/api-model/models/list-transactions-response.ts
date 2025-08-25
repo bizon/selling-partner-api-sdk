@@ -19,15 +19,8 @@ import type { TransactionsPayload } from './transactions-payload';
 
 /**
  * The response schema for the `listTransactions` operation.
- * @export
- * @interface ListTransactionsResponse
  */
 export interface ListTransactionsResponse {
-    /**
-     * 
-     * @type {TransactionsPayload}
-     * @memberof ListTransactionsResponse
-     */
     'payload'?: TransactionsPayload;
 }
 

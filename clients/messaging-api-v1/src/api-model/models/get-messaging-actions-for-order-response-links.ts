@@ -19,20 +19,11 @@ import type { LinkObject } from './link-object';
 
 /**
  * The links response that is associated with the specified `amazonOrderId`.
- * @export
- * @interface GetMessagingActionsForOrderResponseLinks
  */
 export interface GetMessagingActionsForOrderResponseLinks {
-    /**
-     * 
-     * @type {LinkObject}
-     * @memberof GetMessagingActionsForOrderResponseLinks
-     */
     'self': LinkObject;
     /**
      * Eligible actions for the specified amazonOrderId.
-     * @type {Array<LinkObject>}
-     * @memberof GetMessagingActionsForOrderResponseLinks
      */
     'actions': Array<LinkObject>;
 }

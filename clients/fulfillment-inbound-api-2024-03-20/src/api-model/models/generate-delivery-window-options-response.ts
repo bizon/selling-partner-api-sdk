@@ -16,14 +16,10 @@
 
 /**
  * The `generateDeliveryWindowOptions` response.
- * @export
- * @interface GenerateDeliveryWindowOptionsResponse
  */
 export interface GenerateDeliveryWindowOptionsResponse {
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof GenerateDeliveryWindowOptionsResponse
      */
     'operationId': string;
 }

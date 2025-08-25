@@ -22,33 +22,17 @@ import type { VerificationStatus } from './verification-status';
 
 /**
  * The updated values of the `VerificationStatus` field.
- * @export
- * @interface UpdateVerificationStatusRequestBody
  */
 export interface UpdateVerificationStatusRequestBody {
-    /**
-     * 
-     * @type {VerificationStatus}
-     * @memberof UpdateVerificationStatusRequestBody
-     */
     'status'?: VerificationStatus;
     /**
      * The identifier of the order\'s regulated information reviewer.
-     * @type {string}
-     * @memberof UpdateVerificationStatusRequestBody
      */
     'externalReviewerId': string;
     /**
      * The unique identifier of the rejection reason used for rejecting the order\'s regulated information. Only required if the new status is rejected.
-     * @type {string}
-     * @memberof UpdateVerificationStatusRequestBody
      */
     'rejectionReasonId'?: string;
-    /**
-     * 
-     * @type {VerificationDetails}
-     * @memberof UpdateVerificationStatusRequestBody
-     */
     'verificationDetails'?: VerificationDetails;
 }
 

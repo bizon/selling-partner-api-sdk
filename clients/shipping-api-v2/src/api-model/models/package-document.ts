@@ -22,26 +22,12 @@ import type { DocumentType } from './document-type';
 
 /**
  * A document related to a package.
- * @export
- * @interface PackageDocument
  */
 export interface PackageDocument {
-    /**
-     * 
-     * @type {DocumentType}
-     * @memberof PackageDocument
-     */
     'type': DocumentType;
-    /**
-     * 
-     * @type {DocumentFormat}
-     * @memberof PackageDocument
-     */
     'format': DocumentFormat;
     /**
      * A Base64 encoded string of the file contents.
-     * @type {string}
-     * @memberof PackageDocument
      */
     'contents': string;
 }

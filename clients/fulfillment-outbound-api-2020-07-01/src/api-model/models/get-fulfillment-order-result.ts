@@ -34,44 +34,27 @@ import type { ReturnItem } from './return-item';
 
 /**
  * The request for the getFulfillmentOrder operation.
- * @export
- * @interface GetFulfillmentOrderResult
  */
 export interface GetFulfillmentOrderResult {
-    /**
-     * 
-     * @type {FulfillmentOrder}
-     * @memberof GetFulfillmentOrderResult
-     */
     'fulfillmentOrder': FulfillmentOrder;
     /**
      * An array of fulfillment order item information.
-     * @type {Array<FulfillmentOrderItem>}
-     * @memberof GetFulfillmentOrderResult
      */
     'fulfillmentOrderItems': Array<FulfillmentOrderItem>;
     /**
      * An array of fulfillment shipment information.
-     * @type {Array<FulfillmentShipment>}
-     * @memberof GetFulfillmentOrderResult
      */
     'fulfillmentShipments'?: Array<FulfillmentShipment>;
     /**
      * An array of items that Amazon accepted for return. Returns empty if no items were accepted for return.
-     * @type {Array<ReturnItem>}
-     * @memberof GetFulfillmentOrderResult
      */
     'returnItems': Array<ReturnItem>;
     /**
      * An array of return authorization information.
-     * @type {Array<ReturnAuthorization>}
-     * @memberof GetFulfillmentOrderResult
      */
     'returnAuthorizations': Array<ReturnAuthorization>;
     /**
      * An array of various payment attributes related to this fulfillment order.
-     * @type {Array<PaymentInformation>}
-     * @memberof GetFulfillmentOrderResult
      */
     'paymentInformation'?: Array<PaymentInformation>;
 }

@@ -19,14 +19,10 @@ import type { ReportSchedule } from './report-schedule';
 
 /**
  * A list of report schedules.
- * @export
- * @interface ReportScheduleList
  */
 export interface ReportScheduleList {
     /**
      * Detailed information about a report schedule.
-     * @type {Array<ReportSchedule>}
-     * @memberof ReportScheduleList
      */
     'reportSchedules': Array<ReportSchedule>;
 }

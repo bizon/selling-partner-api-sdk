@@ -16,8 +16,6 @@
 
 /**
  * The supported order change type of ORDER_CHANGE notification.
- * @export
- * @enum {string}
  */
 
 export const OrderChangeTypeEnum = {

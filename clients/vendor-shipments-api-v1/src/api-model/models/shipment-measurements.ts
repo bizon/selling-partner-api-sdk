@@ -22,32 +22,16 @@ import type { Weight } from './weight';
 
 /**
  * Shipment measurement details.
- * @export
- * @interface ShipmentMeasurements
  */
 export interface ShipmentMeasurements {
-    /**
-     * 
-     * @type {Weight}
-     * @memberof ShipmentMeasurements
-     */
     'grossShipmentWeight'?: Weight;
-    /**
-     * 
-     * @type {Volume}
-     * @memberof ShipmentMeasurements
-     */
     'shipmentVolume'?: Volume;
     /**
      * Number of cartons present in the shipment. Provide the cartonCount only for non-palletized shipments.
-     * @type {number}
-     * @memberof ShipmentMeasurements
      */
     'cartonCount'?: number;
     /**
      * Number of pallets present in the shipment. Provide the palletCount only for palletized shipments.
-     * @type {number}
-     * @memberof ShipmentMeasurements
      */
     'palletCount'?: number;
 }

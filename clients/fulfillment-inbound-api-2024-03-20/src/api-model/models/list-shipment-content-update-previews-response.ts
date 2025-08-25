@@ -22,21 +22,12 @@ import type { Pagination } from './pagination';
 
 /**
  * The `ListShipmentContentUpdatePreviews` response.
- * @export
- * @interface ListShipmentContentUpdatePreviewsResponse
  */
 export interface ListShipmentContentUpdatePreviewsResponse {
     /**
      * A list of content update previews in a shipment.
-     * @type {Array<ContentUpdatePreview>}
-     * @memberof ListShipmentContentUpdatePreviewsResponse
      */
     'contentUpdatePreviews': Array<ContentUpdatePreview>;
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof ListShipmentContentUpdatePreviewsResponse
-     */
     'pagination'?: Pagination;
 }
 

@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the createProductReviewAndSellerFeedbackSolicitation operation.
- * @export
- * @interface CreateProductReviewAndSellerFeedbackSolicitationResponse
  */
 export interface CreateProductReviewAndSellerFeedbackSolicitationResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CreateProductReviewAndSellerFeedbackSolicitationResponse
      */
     'errors'?: Array<Error>;
 }

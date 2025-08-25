@@ -16,8 +16,6 @@
 
 /**
  * Shipper Account Type.
- * @export
- * @enum {string}
  */
 
 export const AccountType = {

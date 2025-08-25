@@ -16,20 +16,14 @@
 
 /**
  * The definition of the attribute option.
- * @export
- * @interface AttributeOption
  */
 export interface AttributeOption {
     /**
      * The description of the attribute value.
-     * @type {string}
-     * @memberof AttributeOption
      */
     'description'?: string;
     /**
      * The possible values for the attribute option.
-     * @type {string}
-     * @memberof AttributeOption
      */
     'value'?: string;
 }

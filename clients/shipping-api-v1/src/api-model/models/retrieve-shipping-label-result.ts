@@ -19,21 +19,12 @@ import type { LabelSpecification } from './label-specification';
 
 /**
  * The payload schema for the retrieveShippingLabel operation.
- * @export
- * @interface RetrieveShippingLabelResult
  */
 export interface RetrieveShippingLabelResult {
     /**
      * Contains binary image data encoded as a base-64 string.
-     * @type {string}
-     * @memberof RetrieveShippingLabelResult
      */
     'labelStream': string;
-    /**
-     * 
-     * @type {LabelSpecification}
-     * @memberof RetrieveShippingLabelResult
-     */
     'labelSpecification': LabelSpecification;
 }
 

@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the `deleteDestination` operation.
- * @export
- * @interface DeleteDestinationResponse
  */
 export interface DeleteDestinationResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof DeleteDestinationResponse
      */
     'errors'?: Array<Error>;
 }

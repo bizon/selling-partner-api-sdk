@@ -19,27 +19,16 @@ import type { AvailabilityRecord } from './availability-record';
 
 /**
  * Reservation object reduces the capacity of a resource.
- * @export
- * @interface Reservation
  */
 export interface Reservation {
     /**
      * Unique identifier for a reservation. If present, it is treated as an update reservation request and will update the corresponding reservation. Otherwise, it is treated as a new create reservation request.
-     * @type {string}
-     * @memberof Reservation
      */
     'reservationId'?: string;
     /**
      * Type of reservation.
-     * @type {string}
-     * @memberof Reservation
      */
     'type': ReservationTypeEnum;
-    /**
-     * 
-     * @type {AvailabilityRecord}
-     * @memberof Reservation
-     */
     'availability': AvailabilityRecord;
 }
 

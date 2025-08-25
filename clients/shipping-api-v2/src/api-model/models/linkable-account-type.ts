@@ -22,20 +22,11 @@ import type { CarrierAccountInput } from './carrier-account-input';
 
 /**
  * Info About Linkable Account Type
- * @export
- * @interface LinkableAccountType
  */
 export interface LinkableAccountType {
-    /**
-     * 
-     * @type {AccountType}
-     * @memberof LinkableAccountType
-     */
     'accountType'?: AccountType;
     /**
      * A list of CarrierAccountInput
-     * @type {Array<CarrierAccountInput>}
-     * @memberof LinkableAccountType
      */
     'carrierAccountInputs'?: Array<CarrierAccountInput>;
 }

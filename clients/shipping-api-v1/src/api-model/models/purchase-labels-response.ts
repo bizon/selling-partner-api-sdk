@@ -19,20 +19,11 @@ import type { PurchaseLabelsResult } from './purchase-labels-result';
 
 /**
  * The response schema for the purchaseLabels operation.
- * @export
- * @interface PurchaseLabelsResponse
  */
 export interface PurchaseLabelsResponse {
-    /**
-     * 
-     * @type {PurchaseLabelsResult}
-     * @memberof PurchaseLabelsResponse
-     */
     'payload'?: PurchaseLabelsResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof PurchaseLabelsResponse
      */
     'errors'?: Array<Error>;
 }

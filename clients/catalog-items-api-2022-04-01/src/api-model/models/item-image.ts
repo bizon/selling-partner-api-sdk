@@ -16,32 +16,22 @@
 
 /**
  * Image for an item in the Amazon catalog.
- * @export
- * @interface ItemImage
  */
 export interface ItemImage {
     /**
      * Variant of the image, such as `MAIN` or `PT01`.
-     * @type {string}
-     * @memberof ItemImage
      */
     'variant': ItemImageVariantEnum;
     /**
      * URL for the image.
-     * @type {string}
-     * @memberof ItemImage
      */
     'link': string;
     /**
      * Height of the image in pixels.
-     * @type {number}
-     * @memberof ItemImage
      */
     'height': number;
     /**
      * Width of the image in pixels.
-     * @type {number}
-     * @memberof ItemImage
      */
     'width': number;
 }

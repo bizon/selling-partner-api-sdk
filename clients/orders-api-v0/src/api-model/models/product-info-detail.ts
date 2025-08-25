@@ -16,14 +16,10 @@
 
 /**
  * Product information on the number of items.
- * @export
- * @interface ProductInfoDetail
  */
 export interface ProductInfoDetail {
     /**
      * The total number of items that are included in the ASIN.
-     * @type {string}
-     * @memberof ProductInfoDetail
      */
     'NumberOfItems'?: string;
 }

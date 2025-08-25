@@ -25,7 +25,6 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 import type { CreateUploadDestinationResponse } from '../models';
 /**
  * UploadsApi - axios parameter creator
- * @export
  */
 export const UploadsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -86,7 +85,6 @@ export const UploadsApiAxiosParamCreator = function (configuration?: Configurati
 
 /**
  * UploadsApi - functional programming interface
- * @export
  */
 export const UploadsApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = UploadsApiAxiosParamCreator(configuration)
@@ -111,7 +109,6 @@ export const UploadsApiFp = function(configuration?: Configuration) {
 
 /**
  * UploadsApi - factory interface
- * @export
  */
 export const UploadsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = UploadsApiFp(configuration)
@@ -130,44 +127,31 @@ export const UploadsApiFactory = function (configuration?: Configuration, basePa
 
 /**
  * Request parameters for createUploadDestinationForResource operation in UploadsApi.
- * @export
- * @interface UploadsApiCreateUploadDestinationForResourceRequest
  */
 export interface UploadsApiCreateUploadDestinationForResourceRequest {
     /**
      * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {Array<string>}
-     * @memberof UploadsApiCreateUploadDestinationForResource
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.
-     * @type {string}
-     * @memberof UploadsApiCreateUploadDestinationForResource
      */
     readonly contentMD5: string
 
     /**
      * The upload destination for your resource. For example, if you create an upload destination for the &#x60;createLegalDisclosure&#x60; operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you create an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/2020-11-01/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.
-     * @type {string}
-     * @memberof UploadsApiCreateUploadDestinationForResource
      */
     readonly resource: string
 
     /**
      * The content type of the file you upload.
-     * @type {string}
-     * @memberof UploadsApiCreateUploadDestinationForResource
      */
     readonly contentType?: string
 }
 
 /**
  * UploadsApi - object-oriented interface
- * @export
- * @class UploadsApi
- * @extends {BaseAPI}
  */
 export class UploadsApi extends BaseAPI {
     /**
@@ -175,7 +159,6 @@ export class UploadsApi extends BaseAPI {
      * @param {UploadsApiCreateUploadDestinationForResourceRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof UploadsApi
      */
     public createUploadDestinationForResource(requestParameters: UploadsApiCreateUploadDestinationForResourceRequest, options?: RawAxiosRequestConfig) {
         return UploadsApiFp(this.configuration).createUploadDestinationForResource(requestParameters.marketplaceIds, requestParameters.contentMD5, requestParameters.resource, requestParameters.contentType, options).then((request) => request(this.axios, this.basePath));

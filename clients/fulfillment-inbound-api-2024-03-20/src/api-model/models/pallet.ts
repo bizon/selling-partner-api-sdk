@@ -25,39 +25,18 @@ import type { Weight } from './weight';
 
 /**
  * Contains information about a pallet that is used in the inbound plan. The pallet is a container that holds multiple items or boxes.
- * @export
- * @interface Pallet
  */
 export interface Pallet {
-    /**
-     * 
-     * @type {Dimensions}
-     * @memberof Pallet
-     */
     'dimensions'?: Dimensions;
     /**
      * Primary key to uniquely identify a Package (Box or Pallet).
-     * @type {string}
-     * @memberof Pallet
      */
     'packageId': string;
     /**
      * The number of containers where all other properties like weight or dimensions are identical.
-     * @type {number}
-     * @memberof Pallet
      */
     'quantity'?: number;
-    /**
-     * 
-     * @type {Stackability}
-     * @memberof Pallet
-     */
     'stackability'?: Stackability;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof Pallet
-     */
     'weight'?: Weight;
 }
 

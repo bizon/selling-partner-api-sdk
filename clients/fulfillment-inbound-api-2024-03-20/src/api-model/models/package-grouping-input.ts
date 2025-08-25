@@ -19,26 +19,18 @@ import type { BoxInput } from './box-input';
 
 /**
  * Packing information for the inbound plan.
- * @export
- * @interface PackageGroupingInput
  */
 export interface PackageGroupingInput {
     /**
      * Box level information being provided.
-     * @type {Array<BoxInput>}
-     * @memberof PackageGroupingInput
      */
     'boxes': Array<BoxInput>;
     /**
      * The ID of the `packingGroup` that packages are grouped according to. The `PackingGroupId` can only be provided before placement confirmation, and it must belong to the confirmed `PackingOption`. One of `ShipmentId` or `PackingGroupId` must be provided with every request.
-     * @type {string}
-     * @memberof PackageGroupingInput
      */
     'packingGroupId'?: string;
     /**
      * The ID of the shipment that packages are grouped according to. The `ShipmentId` can only be provided after placement confirmation, and the shipment must belong to the confirmed placement option. One of `ShipmentId` or `PackingGroupId` must be provided with every request.
-     * @type {string}
-     * @memberof PackageGroupingInput
      */
     'shipmentId'?: string;
 }

@@ -19,15 +19,8 @@ import type { ParagraphComponent } from './paragraph-component';
 
 /**
  * Standard product description text.
- * @export
- * @interface StandardProductDescriptionModule
  */
 export interface StandardProductDescriptionModule {
-    /**
-     * 
-     * @type {ParagraphComponent}
-     * @memberof StandardProductDescriptionModule
-     */
     'body': ParagraphComponent;
 }
 

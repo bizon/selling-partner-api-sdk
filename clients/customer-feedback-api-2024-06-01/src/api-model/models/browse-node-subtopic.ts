@@ -19,26 +19,15 @@ import type { BrowseNodeReviewSubtopicMetrics } from './browse-node-review-subto
 
 /**
  * The browse node review subtopic.
- * @export
- * @interface BrowseNodeSubtopic
  */
 export interface BrowseNodeSubtopic {
     /**
      * The name of the browse node review subtopic.
-     * @type {string}
-     * @memberof BrowseNodeSubtopic
      */
     'subtopic': string;
-    /**
-     * 
-     * @type {BrowseNodeReviewSubtopicMetrics}
-     * @memberof BrowseNodeSubtopic
-     */
     'metrics': BrowseNodeReviewSubtopicMetrics;
     /**
      * A list of up to three snippets from reviews that contain the topic. This value is `null` if there aren\'t enough review snippets for the subtopic.
-     * @type {Array<string>}
-     * @memberof BrowseNodeSubtopic
      */
     'reviewSnippets'?: Array<string>;
 }

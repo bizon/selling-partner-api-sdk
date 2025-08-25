@@ -16,32 +16,22 @@
 
 /**
  * Information about the buyer.
- * @export
- * @interface Buyer
  */
 export interface Buyer {
     /**
      * The identifier of the buyer.
-     * @type {string}
-     * @memberof Buyer
      */
     'buyerId'?: string;
     /**
      * The name of the buyer.
-     * @type {string}
-     * @memberof Buyer
      */
     'name'?: string;
     /**
      * The phone number of the buyer.
-     * @type {string}
-     * @memberof Buyer
      */
     'phone'?: string;
     /**
      * When true, the service is for an Amazon Prime buyer.
-     * @type {boolean}
-     * @memberof Buyer
      */
     'isPrimeMember'?: boolean;
 }

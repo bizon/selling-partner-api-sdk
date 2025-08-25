@@ -16,32 +16,22 @@
 
 /**
  * The container for address extended fields (such as `street name` and `street number`). Currently only available with Brazil shipping addresses.
- * @export
- * @interface AddressExtendedFields
  */
 export interface AddressExtendedFields {
     /**
      * The street name.
-     * @type {string}
-     * @memberof AddressExtendedFields
      */
     'StreetName'?: string;
     /**
      * The house, building, or property number associated with the location\'s street address.
-     * @type {string}
-     * @memberof AddressExtendedFields
      */
     'StreetNumber'?: string;
     /**
      * The floor number/unit number in the building/private house number.
-     * @type {string}
-     * @memberof AddressExtendedFields
      */
     'Complement'?: string;
     /**
      * The neighborhood. This value is only used in some countries (such as Brazil).
-     * @type {string}
-     * @memberof AddressExtendedFields
      */
     'Neighborhood'?: string;
 }

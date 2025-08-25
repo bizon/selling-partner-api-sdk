@@ -16,14 +16,10 @@
 
 /**
  * Representation of tracking metadata.
- * @export
- * @interface TrackingDetails
  */
 export interface TrackingDetails {
     /**
      * A string of up to 255 characters.
-     * @type {string}
-     * @memberof TrackingDetails
      */
     'trackingId'?: string;
 }

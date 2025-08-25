@@ -16,26 +16,18 @@
 
 /**
  * A classification that you can use to refine your search.
- * @export
- * @interface ClassificationRefinement
  */
 export interface ClassificationRefinement {
     /**
      * The estimated number of results that would be returned if you refine your search by the specified `classificationId`.
-     * @type {number}
-     * @memberof ClassificationRefinement
      */
     'numberOfResults': number;
     /**
      * Display name for the classification.
-     * @type {string}
-     * @memberof ClassificationRefinement
      */
     'displayName': string;
     /**
      * The identifier of the classification that you can use to refine your search.
-     * @type {string}
-     * @memberof ClassificationRefinement
      */
     'classificationId': string;
 }

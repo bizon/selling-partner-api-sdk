@@ -22,21 +22,9 @@ import type { Weight } from './weight';
 
 /**
  * Container specification for checking the service rate.
- * @export
- * @interface ContainerSpecification
  */
 export interface ContainerSpecification {
-    /**
-     * 
-     * @type {Dimensions}
-     * @memberof ContainerSpecification
-     */
     'dimensions': Dimensions;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof ContainerSpecification
-     */
     'weight': Weight;
 }
 

@@ -16,20 +16,14 @@
 
 /**
  * The response for the `getItemBrowseNode` operation.
- * @export
- * @interface BrowseNodeResponse
  */
 export interface BrowseNodeResponse {
     /**
      * A browse node id is the unique identifier of a given browse node. A browse node is a location in a browse tree that is used for navigation, product classification, and website content.
-     * @type {string}
-     * @memberof BrowseNodeResponse
      */
     'browseNodeId': string;
     /**
      * The display name of the browse node as visible on the Amazon retail website.
-     * @type {string}
-     * @memberof BrowseNodeResponse
      */
     'displayName': string;
 }

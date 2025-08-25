@@ -16,8 +16,6 @@
 
 /**
  * Indicates whether the additional seller input is at the item or shipment level.
- * @export
- * @enum {string}
  */
 
 export const InputTargetType = {

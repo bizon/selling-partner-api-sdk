@@ -28,44 +28,24 @@ import type { Weight } from './weight';
 
 /**
  * Details of the carton/package being shipped.
- * @export
- * @interface Carton
  */
 export interface Carton {
     /**
      * A list of carton identifiers.
-     * @type {Array<ContainerIdentification>}
-     * @memberof Carton
      */
     'cartonIdentifiers'?: Array<ContainerIdentification>;
     /**
      * Carton sequence number for the carton. The first carton will be 001, the second 002, and so on. This number is used as a reference to refer to this carton from the pallet level.
-     * @type {string}
-     * @memberof Carton
      */
     'cartonSequenceNumber': string;
-    /**
-     * 
-     * @type {Dimensions}
-     * @memberof Carton
-     */
     'dimensions'?: Dimensions;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof Carton
-     */
     'weight'?: Weight;
     /**
      * This is required to be provided for every carton in the small parcel shipments.
-     * @type {string}
-     * @memberof Carton
      */
     'trackingNumber'?: string;
     /**
      * A list of container item details.
-     * @type {Array<ContainerItem>}
-     * @memberof Carton
      */
     'items': Array<ContainerItem>;
 }

@@ -22,20 +22,14 @@ import type { ProductQuantity } from './product-quantity';
 
 /**
  * Represents the contents inside a package, which can be products or a nested package.
- * @export
- * @interface DistributionPackageContents
  */
 export interface DistributionPackageContents {
     /**
      * This is required only when `DistributionPackageType=PALLET`.
-     * @type {Array<DistributionPackageQuantity>}
-     * @memberof DistributionPackageContents
      */
     'packages'?: Array<DistributionPackageQuantity>;
     /**
      * This is required only when `DistributionPackageType=CASE`.
-     * @type {Array<ProductQuantity>}
-     * @memberof DistributionPackageContents
      */
     'products'?: Array<ProductQuantity>;
 }

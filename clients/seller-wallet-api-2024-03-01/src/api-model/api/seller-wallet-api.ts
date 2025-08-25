@@ -47,7 +47,6 @@ import type { TransferScheduleListing } from '../models';
 import type { TransferScheduleRequest } from '../models';
 /**
  * SellerWalletApi - axios parameter creator
- * @export
  */
 export const SellerWalletApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -556,7 +555,6 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
 
 /**
  * SellerWalletApi - functional programming interface
- * @export
  */
 export const SellerWalletApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = SellerWalletApiAxiosParamCreator(configuration)
@@ -734,7 +732,6 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
 
 /**
  * SellerWalletApi - factory interface
- * @export
  */
 export const SellerWalletApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = SellerWalletApiFp(configuration)
@@ -864,261 +861,186 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
 
 /**
  * Request parameters for createTransaction operation in SellerWalletApi.
- * @export
- * @interface SellerWalletApiCreateTransactionRequest
  */
 export interface SellerWalletApiCreateTransactionRequest {
     /**
      * Digital signature for the destination bank account details.
-     * @type {string}
-     * @memberof SellerWalletApiCreateTransaction
      */
     readonly destAccountDigitalSignature: string
 
     /**
      * Digital signature for the source currency transaction amount.
-     * @type {string}
-     * @memberof SellerWalletApiCreateTransaction
      */
     readonly amountDigitalSignature: string
 
     /**
      * Defines the actual payload of the request
-     * @type {TransactionInitiationRequest}
-     * @memberof SellerWalletApiCreateTransaction
      */
     readonly body: TransactionInitiationRequest
 }
 
 /**
  * Request parameters for createTransferSchedule operation in SellerWalletApi.
- * @export
- * @interface SellerWalletApiCreateTransferScheduleRequest
  */
 export interface SellerWalletApiCreateTransferScheduleRequest {
     /**
      * Digital signature for the destination bank account details.
-     * @type {string}
-     * @memberof SellerWalletApiCreateTransferSchedule
      */
     readonly destAccountDigitalSignature: string
 
     /**
      * Digital signature for the source currency transaction amount.
-     * @type {string}
-     * @memberof SellerWalletApiCreateTransferSchedule
      */
     readonly amountDigitalSignature: string
 
     /**
      * Defines the actual payload of the request
-     * @type {TransferScheduleRequest}
-     * @memberof SellerWalletApiCreateTransferSchedule
      */
     readonly body: TransferScheduleRequest
 }
 
 /**
  * Request parameters for deleteScheduleTransaction operation in SellerWalletApi.
- * @export
- * @interface SellerWalletApiDeleteScheduleTransactionRequest
  */
 export interface SellerWalletApiDeleteScheduleTransactionRequest {
     /**
      * A unique reference id for a scheduled transfer
-     * @type {string}
-     * @memberof SellerWalletApiDeleteScheduleTransaction
      */
     readonly transferScheduleId: string
 }
 
 /**
  * Request parameters for getAccount operation in SellerWalletApi.
- * @export
- * @interface SellerWalletApiGetAccountRequest
  */
 export interface SellerWalletApiGetAccountRequest {
     /**
      * ID of the Amazon SW account
-     * @type {string}
-     * @memberof SellerWalletApiGetAccount
      */
     readonly accountId: string
 }
 
 /**
  * Request parameters for getTransaction operation in SellerWalletApi.
- * @export
- * @interface SellerWalletApiGetTransactionRequest
  */
 export interface SellerWalletApiGetTransactionRequest {
     /**
      * ID of the Amazon SW transaction
-     * @type {string}
-     * @memberof SellerWalletApiGetTransaction
      */
     readonly transactionId: string
 }
 
 /**
  * Request parameters for getTransferPreview operation in SellerWalletApi.
- * @export
- * @interface SellerWalletApiGetTransferPreviewRequest
  */
 export interface SellerWalletApiGetTransferPreviewRequest {
     /**
      * Represents 2 character country code of source transaction account in ISO 3166 standard format.
-     * @type {string}
-     * @memberof SellerWalletApiGetTransferPreview
      */
     readonly sourceCountryCode: string
 
     /**
      * Represents 3 letter currency code in ISO 4217 standard format of the source transaction country.
-     * @type {string}
-     * @memberof SellerWalletApiGetTransferPreview
      */
     readonly sourceCurrencyCode: string
 
     /**
      * Represents 2 character country code of destination transaction account in ISO 3166 standard format.
-     * @type {string}
-     * @memberof SellerWalletApiGetTransferPreview
      */
     readonly destinationCountryCode: string
 
     /**
      * Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.
-     * @type {string}
-     * @memberof SellerWalletApiGetTransferPreview
      */
     readonly destinationCurrencyCode: string
 
     /**
      * Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.
-     * @type {number}
-     * @memberof SellerWalletApiGetTransferPreview
      */
     readonly baseAmount: number
 }
 
 /**
  * Request parameters for getTransferSchedule operation in SellerWalletApi.
- * @export
- * @interface SellerWalletApiGetTransferScheduleRequest
  */
 export interface SellerWalletApiGetTransferScheduleRequest {
     /**
      * Schedule ID of the Amazon SW transfer
-     * @type {string}
-     * @memberof SellerWalletApiGetTransferSchedule
      */
     readonly transferScheduleId: string
 }
 
 /**
  * Request parameters for listAccountBalances operation in SellerWalletApi.
- * @export
- * @interface SellerWalletApiListAccountBalancesRequest
  */
 export interface SellerWalletApiListAccountBalancesRequest {
     /**
      * ID of the Amazon SW account
-     * @type {string}
-     * @memberof SellerWalletApiListAccountBalances
      */
     readonly accountId: string
 }
 
 /**
  * Request parameters for listAccountTransactions operation in SellerWalletApi.
- * @export
- * @interface SellerWalletApiListAccountTransactionsRequest
  */
 export interface SellerWalletApiListAccountTransactionsRequest {
     /**
      * ID of the Amazon SW account
-     * @type {string}
-     * @memberof SellerWalletApiListAccountTransactions
      */
     readonly accountId: string
 
     /**
      * Pagination token to retrieve a specific page of results.
-     * @type {string}
-     * @memberof SellerWalletApiListAccountTransactions
      */
     readonly nextPageToken?: string
 }
 
 /**
  * Request parameters for listAccounts operation in SellerWalletApi.
- * @export
- * @interface SellerWalletApiListAccountsRequest
  */
 export interface SellerWalletApiListAccountsRequest {
     /**
      * A marketplace identifier. Specifies the marketplace for which items are returned.
-     * @type {string}
-     * @memberof SellerWalletApiListAccounts
      */
     readonly marketplaceId: string
 }
 
 /**
  * Request parameters for listTransferSchedules operation in SellerWalletApi.
- * @export
- * @interface SellerWalletApiListTransferSchedulesRequest
  */
 export interface SellerWalletApiListTransferSchedulesRequest {
     /**
      * ID of the Amazon SW account
-     * @type {string}
-     * @memberof SellerWalletApiListTransferSchedules
      */
     readonly accountId: string
 
     /**
      * Pagination token to retrieve a specific page of results.
-     * @type {string}
-     * @memberof SellerWalletApiListTransferSchedules
      */
     readonly nextPageToken?: string
 }
 
 /**
  * Request parameters for updateTransferSchedule operation in SellerWalletApi.
- * @export
- * @interface SellerWalletApiUpdateTransferScheduleRequest
  */
 export interface SellerWalletApiUpdateTransferScheduleRequest {
     /**
      * Digital signature for the destination bank account details.
-     * @type {string}
-     * @memberof SellerWalletApiUpdateTransferSchedule
      */
     readonly destAccountDigitalSignature: string
 
     /**
      * Digital signature for the source currency transaction amount.
-     * @type {string}
-     * @memberof SellerWalletApiUpdateTransferSchedule
      */
     readonly amountDigitalSignature: string
 
     /**
      * Defines the actual payload of the scheduled transfer request that is to be updated. 
-     * @type {TransferSchedule}
-     * @memberof SellerWalletApiUpdateTransferSchedule
      */
     readonly body: TransferSchedule
 }
 
 /**
  * SellerWalletApi - object-oriented interface
- * @export
- * @class SellerWalletApi
- * @extends {BaseAPI}
  */
 export class SellerWalletApi extends BaseAPI {
     /**
@@ -1127,7 +1049,6 @@ export class SellerWalletApi extends BaseAPI {
      * @param {SellerWalletApiCreateTransactionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SellerWalletApi
      */
     public createTransaction(requestParameters: SellerWalletApiCreateTransactionRequest, options?: RawAxiosRequestConfig) {
         return SellerWalletApiFp(this.configuration).createTransaction(requestParameters.destAccountDigitalSignature, requestParameters.amountDigitalSignature, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1139,7 +1060,6 @@ export class SellerWalletApi extends BaseAPI {
      * @param {SellerWalletApiCreateTransferScheduleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SellerWalletApi
      */
     public createTransferSchedule(requestParameters: SellerWalletApiCreateTransferScheduleRequest, options?: RawAxiosRequestConfig) {
         return SellerWalletApiFp(this.configuration).createTransferSchedule(requestParameters.destAccountDigitalSignature, requestParameters.amountDigitalSignature, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1151,7 +1071,6 @@ export class SellerWalletApi extends BaseAPI {
      * @param {SellerWalletApiDeleteScheduleTransactionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SellerWalletApi
      */
     public deleteScheduleTransaction(requestParameters: SellerWalletApiDeleteScheduleTransactionRequest, options?: RawAxiosRequestConfig) {
         return SellerWalletApiFp(this.configuration).deleteScheduleTransaction(requestParameters.transferScheduleId, options).then((request) => request(this.axios, this.basePath));
@@ -1163,7 +1082,6 @@ export class SellerWalletApi extends BaseAPI {
      * @param {SellerWalletApiGetAccountRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SellerWalletApi
      */
     public getAccount(requestParameters: SellerWalletApiGetAccountRequest, options?: RawAxiosRequestConfig) {
         return SellerWalletApiFp(this.configuration).getAccount(requestParameters.accountId, options).then((request) => request(this.axios, this.basePath));
@@ -1175,7 +1093,6 @@ export class SellerWalletApi extends BaseAPI {
      * @param {SellerWalletApiGetTransactionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SellerWalletApi
      */
     public getTransaction(requestParameters: SellerWalletApiGetTransactionRequest, options?: RawAxiosRequestConfig) {
         return SellerWalletApiFp(this.configuration).getTransaction(requestParameters.transactionId, options).then((request) => request(this.axios, this.basePath));
@@ -1187,7 +1104,6 @@ export class SellerWalletApi extends BaseAPI {
      * @param {SellerWalletApiGetTransferPreviewRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SellerWalletApi
      */
     public getTransferPreview(requestParameters: SellerWalletApiGetTransferPreviewRequest, options?: RawAxiosRequestConfig) {
         return SellerWalletApiFp(this.configuration).getTransferPreview(requestParameters.sourceCountryCode, requestParameters.sourceCurrencyCode, requestParameters.destinationCountryCode, requestParameters.destinationCurrencyCode, requestParameters.baseAmount, options).then((request) => request(this.axios, this.basePath));
@@ -1199,7 +1115,6 @@ export class SellerWalletApi extends BaseAPI {
      * @param {SellerWalletApiGetTransferScheduleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SellerWalletApi
      */
     public getTransferSchedule(requestParameters: SellerWalletApiGetTransferScheduleRequest, options?: RawAxiosRequestConfig) {
         return SellerWalletApiFp(this.configuration).getTransferSchedule(requestParameters.transferScheduleId, options).then((request) => request(this.axios, this.basePath));
@@ -1211,7 +1126,6 @@ export class SellerWalletApi extends BaseAPI {
      * @param {SellerWalletApiListAccountBalancesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SellerWalletApi
      */
     public listAccountBalances(requestParameters: SellerWalletApiListAccountBalancesRequest, options?: RawAxiosRequestConfig) {
         return SellerWalletApiFp(this.configuration).listAccountBalances(requestParameters.accountId, options).then((request) => request(this.axios, this.basePath));
@@ -1223,7 +1137,6 @@ export class SellerWalletApi extends BaseAPI {
      * @param {SellerWalletApiListAccountTransactionsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SellerWalletApi
      */
     public listAccountTransactions(requestParameters: SellerWalletApiListAccountTransactionsRequest, options?: RawAxiosRequestConfig) {
         return SellerWalletApiFp(this.configuration).listAccountTransactions(requestParameters.accountId, requestParameters.nextPageToken, options).then((request) => request(this.axios, this.basePath));
@@ -1235,7 +1148,6 @@ export class SellerWalletApi extends BaseAPI {
      * @param {SellerWalletApiListAccountsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SellerWalletApi
      */
     public listAccounts(requestParameters: SellerWalletApiListAccountsRequest, options?: RawAxiosRequestConfig) {
         return SellerWalletApiFp(this.configuration).listAccounts(requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
@@ -1247,7 +1159,6 @@ export class SellerWalletApi extends BaseAPI {
      * @param {SellerWalletApiListTransferSchedulesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SellerWalletApi
      */
     public listTransferSchedules(requestParameters: SellerWalletApiListTransferSchedulesRequest, options?: RawAxiosRequestConfig) {
         return SellerWalletApiFp(this.configuration).listTransferSchedules(requestParameters.accountId, requestParameters.nextPageToken, options).then((request) => request(this.axios, this.basePath));
@@ -1259,7 +1170,6 @@ export class SellerWalletApi extends BaseAPI {
      * @param {SellerWalletApiUpdateTransferScheduleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SellerWalletApi
      */
     public updateTransferSchedule(requestParameters: SellerWalletApiUpdateTransferScheduleRequest, options?: RawAxiosRequestConfig) {
         return SellerWalletApiFp(this.configuration).updateTransferSchedule(requestParameters.destAccountDigitalSignature, requestParameters.amountDigitalSignature, requestParameters.body, options).then((request) => request(this.axios, this.basePath));

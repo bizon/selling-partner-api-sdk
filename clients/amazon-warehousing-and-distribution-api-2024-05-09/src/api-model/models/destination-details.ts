@@ -19,26 +19,15 @@ import type { Address } from './address';
 
 /**
  * Destination details of an inbound order based on the assigned region and DC for the order.
- * @export
- * @interface DestinationDetails
  */
 export interface DestinationDetails {
-    /**
-     * 
-     * @type {Address}
-     * @memberof DestinationDetails
-     */
     'destinationAddress'?: Address;
     /**
      * Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east, us-southcentral, us-southeast]
-     * @type {string}
-     * @memberof DestinationDetails
      */
     'destinationRegion'?: string;
     /**
      * Unique ID of the confirmed shipment being shipped to the assigned destination. This will be available only after an inbound order is confirmed and can be used to track the shipment.
-     * @type {string}
-     * @memberof DestinationDetails
      */
     'shipmentId'?: string;
 }

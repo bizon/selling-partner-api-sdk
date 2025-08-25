@@ -16,20 +16,14 @@
 
 /**
  * Represents a customer invoice associated with a purchase order.
- * @export
- * @interface CustomerInvoice
  */
 export interface CustomerInvoice {
     /**
      * The purchase order number for this order.
-     * @type {string}
-     * @memberof CustomerInvoice
      */
     'purchaseOrderNumber': string;
     /**
      * The Base64encoded customer invoice.
-     * @type {string}
-     * @memberof CustomerInvoice
      */
     'content': string;
 }

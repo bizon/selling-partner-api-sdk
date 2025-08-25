@@ -33,7 +33,6 @@ import type { GetShipmentItemsResponse } from '../models';
 import type { GetShipmentsResponse } from '../models';
 /**
  * FulfillmentInboundApi - axios parameter creator
- * @export
  */
 export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -365,7 +364,6 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
 
 /**
  * FulfillmentInboundApi - functional programming interface
- * @export
  */
 export const FulfillmentInboundApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = FulfillmentInboundApiAxiosParamCreator(configuration)
@@ -467,7 +465,6 @@ export const FulfillmentInboundApiFp = function(configuration?: Configuration) {
 
 /**
  * FulfillmentInboundApi - factory interface
- * @export
  */
 export const FulfillmentInboundApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = FulfillmentInboundApiFp(configuration)
@@ -531,233 +528,166 @@ export const FulfillmentInboundApiFactory = function (configuration?: Configurat
 
 /**
  * Request parameters for getBillOfLading operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiGetBillOfLadingRequest
  */
 export interface FulfillmentInboundApiGetBillOfLadingRequest {
     /**
      * A shipment identifier originally returned by the createInboundShipmentPlan operation.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetBillOfLading
      */
     readonly shipmentId: string
 }
 
 /**
  * Request parameters for getLabels operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiGetLabelsRequest
  */
 export interface FulfillmentInboundApiGetLabelsRequest {
     /**
      * A shipment identifier originally returned by the createInboundShipmentPlan operation.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetLabels
      */
     readonly shipmentId: string
 
     /**
      * The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error.
-     * @type {'PackageLabel_Letter_2' | 'PackageLabel_Letter_4' | 'PackageLabel_Letter_6' | 'PackageLabel_Letter_6_CarrierLeft' | 'PackageLabel_A4_2' | 'PackageLabel_A4_4' | 'PackageLabel_Plain_Paper' | 'PackageLabel_Plain_Paper_CarrierBottom' | 'PackageLabel_Thermal' | 'PackageLabel_Thermal_Unified' | 'PackageLabel_Thermal_NonPCP' | 'PackageLabel_Thermal_No_Carrier_Rotation'}
-     * @memberof FulfillmentInboundApiGetLabels
      */
     readonly pageType: GetLabelsPageTypeEnum
 
     /**
      * The type of labels requested. 
-     * @type {'BARCODE_2D' | 'UNIQUE' | 'PALLET'}
-     * @memberof FulfillmentInboundApiGetLabels
      */
     readonly labelType: GetLabelsLabelTypeEnum
 
     /**
      * The number of packages in the shipment.
-     * @type {number}
-     * @memberof FulfillmentInboundApiGetLabels
      */
     readonly numberOfPackages?: number
 
     /**
      * A list of identifiers that specify packages for which you want package labels printed.  If you provide box content information with the [FBA Inbound Shipment Carton Information Feed](https://developer-docs.amazon.com/sp-api/docs/fulfillment-by-amazon-feed-type-values#fba-inbound-shipment-carton-information-feed), then &#x60;PackageLabelsToPrint&#x60; must match the &#x60;CartonId&#x60; values you provide through that feed. If you provide box content information with the Fulfillment Inbound API v2024-03-20, then &#x60;PackageLabelsToPrint&#x60; must match the &#x60;boxID&#x60; values from the [&#x60;listShipmentBoxes&#x60;](https://developer-docs.amazon.com/sp-api/reference/listshipmentboxes) response. If these values do not match as required, the operation returns the &#x60;IncorrectPackageIdentifier&#x60; error code.
-     * @type {Array<string>}
-     * @memberof FulfillmentInboundApiGetLabels
      */
     readonly packageLabelsToPrint?: Array<string>
 
     /**
      * The number of pallets in the shipment. This returns four identical labels for each pallet.
-     * @type {number}
-     * @memberof FulfillmentInboundApiGetLabels
      */
     readonly numberOfPallets?: number
 
     /**
      * The page size for paginating through the total packages\&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. Max value:1000.
-     * @type {number}
-     * @memberof FulfillmentInboundApiGetLabels
      */
     readonly pageSize?: number
 
     /**
      * The page start index for paginating through the total packages\&#39; labels. This is a required parameter for Non-Partnered LTL Shipments.
-     * @type {number}
-     * @memberof FulfillmentInboundApiGetLabels
      */
     readonly pageStartIndex?: number
 }
 
 /**
  * Request parameters for getPrepInstructions operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiGetPrepInstructionsRequest
  */
 export interface FulfillmentInboundApiGetPrepInstructionsRequest {
     /**
      * The country code of the country to which the items will be shipped. Note that labeling requirements and item preparation instructions can vary by country.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetPrepInstructions
      */
     readonly shipToCountryCode: string
 
     /**
      * A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon\&#39;s fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon\&#39;s retail website. If you include a seller SKU that you have never used to list an item on Amazon\&#39;s retail website, the seller SKU is returned in the InvalidSKUList property in the response.
-     * @type {Array<string>}
-     * @memberof FulfillmentInboundApiGetPrepInstructions
      */
     readonly sellerSKUList?: Array<string>
 
     /**
      * A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers.
-     * @type {Array<string>}
-     * @memberof FulfillmentInboundApiGetPrepInstructions
      */
     readonly aSINList?: Array<string>
 }
 
 /**
  * Request parameters for getShipmentItems operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiGetShipmentItemsRequest
  */
 export interface FulfillmentInboundApiGetShipmentItemsRequest {
     /**
      * Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request.
-     * @type {'DATE_RANGE' | 'NEXT_TOKEN'}
-     * @memberof FulfillmentInboundApiGetShipmentItems
      */
     readonly queryType: GetShipmentItemsQueryTypeEnum
 
     /**
      * A marketplace identifier. Specifies the marketplace where the product would be stored.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetShipmentItems
      */
     readonly marketplaceId: string
 
     /**
      * A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetShipmentItems
      */
     readonly lastUpdatedAfter?: string
 
     /**
      * A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetShipmentItems
      */
     readonly lastUpdatedBefore?: string
 
     /**
      * A string token returned in the response to your previous request.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetShipmentItems
      */
     readonly nextToken?: string
 }
 
 /**
  * Request parameters for getShipmentItemsByShipmentId operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiGetShipmentItemsByShipmentIdRequest
  */
 export interface FulfillmentInboundApiGetShipmentItemsByShipmentIdRequest {
     /**
      * A shipment identifier used for selecting items in a specific inbound shipment.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetShipmentItemsByShipmentId
      */
     readonly shipmentId: string
 
     /**
      * Deprecated. Do not use.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetShipmentItemsByShipmentId
      */
     readonly marketplaceId?: string
 }
 
 /**
  * Request parameters for getShipments operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiGetShipmentsRequest
  */
 export interface FulfillmentInboundApiGetShipmentsRequest {
     /**
      * Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request.
-     * @type {'SHIPMENT' | 'DATE_RANGE' | 'NEXT_TOKEN'}
-     * @memberof FulfillmentInboundApiGetShipments
      */
     readonly queryType: GetShipmentsQueryTypeEnum
 
     /**
      * A marketplace identifier. Specifies the marketplace where the product would be stored.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetShipments
      */
     readonly marketplaceId: string
 
     /**
      * A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify.
-     * @type {Array<'WORKING' | 'READY_TO_SHIP' | 'SHIPPED' | 'RECEIVING' | 'CANCELLED' | 'DELETED' | 'CLOSED' | 'ERROR' | 'IN_TRANSIT' | 'DELIVERED' | 'CHECKED_IN'>}
-     * @memberof FulfillmentInboundApiGetShipments
      */
     readonly shipmentStatusList?: Array<GetShipmentsShipmentStatusListEnum>
 
     /**
      * A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned.
-     * @type {Array<string>}
-     * @memberof FulfillmentInboundApiGetShipments
      */
     readonly shipmentIdList?: Array<string>
 
     /**
      * A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetShipments
      */
     readonly lastUpdatedAfter?: string
 
     /**
      * A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetShipments
      */
     readonly lastUpdatedBefore?: string
 
     /**
      * A string token returned in the response to your previous request.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetShipments
      */
     readonly nextToken?: string
 }
 
 /**
  * FulfillmentInboundApi - object-oriented interface
- * @export
- * @class FulfillmentInboundApi
- * @extends {BaseAPI}
  */
 export class FulfillmentInboundApi extends BaseAPI {
     /**
@@ -765,7 +695,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiGetBillOfLadingRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public getBillOfLading(requestParameters: FulfillmentInboundApiGetBillOfLadingRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).getBillOfLading(requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
@@ -776,7 +705,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiGetLabelsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public getLabels(requestParameters: FulfillmentInboundApiGetLabelsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).getLabels(requestParameters.shipmentId, requestParameters.pageType, requestParameters.labelType, requestParameters.numberOfPackages, requestParameters.packageLabelsToPrint, requestParameters.numberOfPallets, requestParameters.pageSize, requestParameters.pageStartIndex, options).then((request) => request(this.axios, this.basePath));
@@ -787,7 +715,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiGetPrepInstructionsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public getPrepInstructions(requestParameters: FulfillmentInboundApiGetPrepInstructionsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).getPrepInstructions(requestParameters.shipToCountryCode, requestParameters.sellerSKUList, requestParameters.aSINList, options).then((request) => request(this.axios, this.basePath));
@@ -798,7 +725,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiGetShipmentItemsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public getShipmentItems(requestParameters: FulfillmentInboundApiGetShipmentItemsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).getShipmentItems(requestParameters.queryType, requestParameters.marketplaceId, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
@@ -809,7 +735,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiGetShipmentItemsByShipmentIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public getShipmentItemsByShipmentId(requestParameters: FulfillmentInboundApiGetShipmentItemsByShipmentIdRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).getShipmentItemsByShipmentId(requestParameters.shipmentId, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
@@ -820,16 +745,12 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiGetShipmentsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public getShipments(requestParameters: FulfillmentInboundApiGetShipmentsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).getShipments(requestParameters.queryType, requestParameters.marketplaceId, requestParameters.shipmentStatusList, requestParameters.shipmentIdList, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetLabelsPageTypeEnum = {
     PackageLabelLetter2: 'PackageLabel_Letter_2',
     PackageLabelLetter4: 'PackageLabel_Letter_4',
@@ -845,35 +766,23 @@ export const GetLabelsPageTypeEnum = {
     PackageLabelThermalNoCarrierRotation: 'PackageLabel_Thermal_No_Carrier_Rotation'
 } as const;
 export type GetLabelsPageTypeEnum = typeof GetLabelsPageTypeEnum[keyof typeof GetLabelsPageTypeEnum];
-/**
- * @export
- */
 export const GetLabelsLabelTypeEnum = {
     Barcode2D: 'BARCODE_2D',
     Unique: 'UNIQUE',
     Pallet: 'PALLET'
 } as const;
 export type GetLabelsLabelTypeEnum = typeof GetLabelsLabelTypeEnum[keyof typeof GetLabelsLabelTypeEnum];
-/**
- * @export
- */
 export const GetShipmentItemsQueryTypeEnum = {
     DateRange: 'DATE_RANGE',
     NextToken: 'NEXT_TOKEN'
 } as const;
 export type GetShipmentItemsQueryTypeEnum = typeof GetShipmentItemsQueryTypeEnum[keyof typeof GetShipmentItemsQueryTypeEnum];
-/**
- * @export
- */
 export const GetShipmentsQueryTypeEnum = {
     Shipment: 'SHIPMENT',
     DateRange: 'DATE_RANGE',
     NextToken: 'NEXT_TOKEN'
 } as const;
 export type GetShipmentsQueryTypeEnum = typeof GetShipmentsQueryTypeEnum[keyof typeof GetShipmentsQueryTypeEnum];
-/**
- * @export
- */
 export const GetShipmentsShipmentStatusListEnum = {
     Working: 'WORKING',
     ReadyToShip: 'READY_TO_SHIP',

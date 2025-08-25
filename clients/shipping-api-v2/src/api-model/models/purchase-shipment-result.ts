@@ -25,33 +25,17 @@ import type { Promise } from './promise';
 
 /**
  * The payload for the purchaseShipment operation.
- * @export
- * @interface PurchaseShipmentResult
  */
 export interface PurchaseShipmentResult {
     /**
      * The unique shipment identifier provided by a shipping service.
-     * @type {string}
-     * @memberof PurchaseShipmentResult
      */
     'shipmentId': string;
     /**
      * A list of post-purchase details about a package that will be shipped using a shipping service.
-     * @type {Array<PackageDocumentDetail>}
-     * @memberof PurchaseShipmentResult
      */
     'packageDocumentDetails': Array<PackageDocumentDetail>;
-    /**
-     * 
-     * @type {Promise}
-     * @memberof PurchaseShipmentResult
-     */
     'promise': Promise;
-    /**
-     * 
-     * @type {Benefits}
-     * @memberof PurchaseShipmentResult
-     */
     'benefits'?: Benefits;
 }
 

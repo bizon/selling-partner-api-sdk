@@ -19,50 +19,31 @@ import type { CarrierDetails } from './carrier-details';
 
 /**
  * Transportation details for this shipment.
- * @export
- * @interface TransportationDetails
  */
 export interface TransportationDetails {
     /**
      * The type of shipment.
-     * @type {string}
-     * @memberof TransportationDetails
      */
     'shipMode'?: TransportationDetailsShipModeEnum;
     /**
      * The mode of transportation for this shipment.
-     * @type {string}
-     * @memberof TransportationDetails
      */
     'transportationMode'?: TransportationDetailsTransportationModeEnum;
     /**
      * Date when shipment is performed by the Vendor to Buyer
-     * @type {string}
-     * @memberof TransportationDetails
      */
     'shippedDate'?: string;
     /**
      * Estimated Date on which shipment will be delivered from Vendor to Buyer
-     * @type {string}
-     * @memberof TransportationDetails
      */
     'estimatedDeliveryDate'?: string;
     /**
      * Date on which shipment will be delivered from Vendor to Buyer
-     * @type {string}
-     * @memberof TransportationDetails
      */
     'shipmentDeliveryDate'?: string;
-    /**
-     * 
-     * @type {CarrierDetails}
-     * @memberof TransportationDetails
-     */
     'carrierDetails'?: CarrierDetails;
     /**
      * The Bill of Lading (BOL) number is a unique number assigned to each shipment of goods by the vendor or shipper during the creation of the Bill of Lading. This number must be unique for every shipment and cannot be a date/time or single character. The BOL numer is mandatory in Shipment Confirmation message for FTL and LTL shipments, and must match the paper BOL provided with the shipment. Instead of BOL, an alternative reference number (like Delivery Note Number) for the shipment can also be sent in this field.
-     * @type {string}
-     * @memberof TransportationDetails
      */
     'billOfLadingNumber'?: string;
 }

@@ -28,39 +28,12 @@ import type { ReturnLocation } from './return-location';
 
 /**
  * The outbound capability of a supply source.
- * @export
- * @interface OutboundCapability
  */
 export interface OutboundCapability {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof OutboundCapability
-     */
     'isSupported'?: boolean;
-    /**
-     * 
-     * @type {OperationalConfiguration}
-     * @memberof OutboundCapability
-     */
     'operationalConfiguration'?: OperationalConfiguration;
-    /**
-     * 
-     * @type {ReturnLocation}
-     * @memberof OutboundCapability
-     */
     'returnLocation'?: ReturnLocation;
-    /**
-     * 
-     * @type {DeliveryChannel}
-     * @memberof OutboundCapability
-     */
     'deliveryChannel'?: DeliveryChannel;
-    /**
-     * 
-     * @type {PickupChannel}
-     * @memberof OutboundCapability
-     */
     'pickupChannel'?: PickupChannel;
 }
 

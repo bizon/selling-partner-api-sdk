@@ -19,15 +19,8 @@ import type { AutoEnrollmentPreference } from './auto-enrollment-preference';
 
 /**
  * An object which contains the preferences applied to the offer.
- * @export
- * @interface OfferProgramConfigurationPreferences
  */
 export interface OfferProgramConfigurationPreferences {
-    /**
-     * 
-     * @type {AutoEnrollmentPreference}
-     * @memberof OfferProgramConfigurationPreferences
-     */
     'autoEnrollment'?: AutoEnrollmentPreference;
 }
 

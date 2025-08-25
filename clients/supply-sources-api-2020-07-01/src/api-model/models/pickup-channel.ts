@@ -28,39 +28,12 @@ import type { OperationalConfiguration } from './operational-configuration';
 
 /**
  * The pick up channel of a supply source.
- * @export
- * @interface PickupChannel
  */
 export interface PickupChannel {
-    /**
-     * 
-     * @type {Duration}
-     * @memberof PickupChannel
-     */
     'inventoryHoldPeriod'?: Duration;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PickupChannel
-     */
     'isSupported'?: boolean;
-    /**
-     * 
-     * @type {OperationalConfiguration}
-     * @memberof PickupChannel
-     */
     'operationalConfiguration'?: OperationalConfiguration;
-    /**
-     * 
-     * @type {InStorePickupConfiguration}
-     * @memberof PickupChannel
-     */
     'inStorePickupConfiguration'?: InStorePickupConfiguration;
-    /**
-     * 
-     * @type {CurbsidePickupConfiguration}
-     * @memberof PickupChannel
-     */
     'curbsidePickupConfiguration'?: CurbsidePickupConfiguration;
 }
 

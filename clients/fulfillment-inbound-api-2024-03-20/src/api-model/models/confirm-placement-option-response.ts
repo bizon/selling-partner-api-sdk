@@ -16,14 +16,10 @@
 
 /**
  * The `confirmPlacementOption` response.
- * @export
- * @interface ConfirmPlacementOptionResponse
  */
 export interface ConfirmPlacementOptionResponse {
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof ConfirmPlacementOptionResponse
      */
     'operationId': string;
 }

@@ -22,38 +22,17 @@ import type { Money } from './money';
 
 /**
  * A single item\'s buyer information.
- * @export
- * @interface ItemBuyerInfo
  */
 export interface ItemBuyerInfo {
-    /**
-     * 
-     * @type {BuyerCustomizedInfoDetail}
-     * @memberof ItemBuyerInfo
-     */
     'BuyerCustomizedInfo'?: BuyerCustomizedInfoDetail;
-    /**
-     * 
-     * @type {Money}
-     * @memberof ItemBuyerInfo
-     */
     'GiftWrapPrice'?: Money;
-    /**
-     * 
-     * @type {Money}
-     * @memberof ItemBuyerInfo
-     */
     'GiftWrapTax'?: Money;
     /**
      * A gift message provided by the buyer.  **Note**: This attribute is only available for MFN (fulfilled by seller) orders.
-     * @type {string}
-     * @memberof ItemBuyerInfo
      */
     'GiftMessageText'?: string;
     /**
      * The gift wrap level specified by the buyer.
-     * @type {string}
-     * @memberof ItemBuyerInfo
      */
     'GiftWrapLevel'?: string;
 }

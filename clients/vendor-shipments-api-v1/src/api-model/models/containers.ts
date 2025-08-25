@@ -31,68 +31,37 @@ import type { Weight } from './weight';
 
 /**
  * A list of the items in this transportation and their associated inner container details. If any of the item detail fields are common at a carton or a pallet level, provide them at the corresponding carton or pallet level.
- * @export
- * @interface Containers
  */
 export interface Containers {
     /**
      * The type of container.
-     * @type {string}
-     * @memberof Containers
      */
     'containerType': ContainersContainerTypeEnum;
     /**
      * An integer that must be submitted for multi-box shipments only, where one item may come in separate packages.
-     * @type {string}
-     * @memberof Containers
      */
     'containerSequenceNumber'?: string;
     /**
      * A list of carton identifiers.
-     * @type {Array<ContainerIdentification>}
-     * @memberof Containers
      */
     'containerIdentifiers': Array<ContainerIdentification>;
     /**
      * The tracking number used for identifying the shipment.
-     * @type {string}
-     * @memberof Containers
      */
     'trackingNumber'?: string;
-    /**
-     * 
-     * @type {Dimensions}
-     * @memberof Containers
-     */
     'dimensions'?: Dimensions;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof Containers
-     */
     'weight'?: Weight;
     /**
      * Number of layers per pallet.
-     * @type {number}
-     * @memberof Containers
      */
     'tier'?: number;
     /**
      * Number of cartons per layer on the pallet.
-     * @type {number}
-     * @memberof Containers
      */
     'block'?: number;
-    /**
-     * 
-     * @type {InnerContainersDetails}
-     * @memberof Containers
-     */
     'innerContainersDetails'?: InnerContainersDetails;
     /**
      * A list of packed items.
-     * @type {Array<PackedItems>}
-     * @memberof Containers
      */
     'packedItems'?: Array<PackedItems>;
 }

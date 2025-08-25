@@ -19,27 +19,16 @@ import type { OrderDetails } from './order-details';
 
 /**
  * Represents an order placed by Amazon, including the purchase order number, current state, and order details.
- * @export
- * @interface Order
  */
 export interface Order {
     /**
      * The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
-     * @type {string}
-     * @memberof Order
      */
     'purchaseOrderNumber': string;
     /**
      * This field will contain the current state of the purchase order.
-     * @type {string}
-     * @memberof Order
      */
     'purchaseOrderState': OrderPurchaseOrderStateEnum;
-    /**
-     * 
-     * @type {OrderDetails}
-     * @memberof Order
-     */
     'orderDetails'?: OrderDetails;
 }
 

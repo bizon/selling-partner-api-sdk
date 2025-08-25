@@ -22,38 +22,20 @@ import type { PartyIdentification } from './party-identification';
 
 /**
  * Shipping label information for an order, including the purchase order number, selling party, ship from party, label format, and package details.
- * @export
- * @interface ShippingLabel
  */
 export interface ShippingLabel {
     /**
      * This field will contain the Purchase Order Number for this order.
-     * @type {string}
-     * @memberof ShippingLabel
      */
     'purchaseOrderNumber': string;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof ShippingLabel
-     */
     'sellingParty': PartyIdentification;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof ShippingLabel
-     */
     'shipFromParty': PartyIdentification;
     /**
      * Format of the label.
-     * @type {string}
-     * @memberof ShippingLabel
      */
     'labelFormat': ShippingLabelLabelFormatEnum;
     /**
      * Provides the details of the packages in this shipment.
-     * @type {Array<LabelData>}
-     * @memberof ShippingLabel
      */
     'labelData': Array<LabelData>;
 }

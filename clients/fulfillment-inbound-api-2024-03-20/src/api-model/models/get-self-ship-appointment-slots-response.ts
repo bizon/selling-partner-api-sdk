@@ -22,21 +22,9 @@ import type { SelfShipAppointmentSlotsAvailability } from './self-ship-appointme
 
 /**
  * The `getSelfShipAppointmentSlots` response.
- * @export
- * @interface GetSelfShipAppointmentSlotsResponse
  */
 export interface GetSelfShipAppointmentSlotsResponse {
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof GetSelfShipAppointmentSlotsResponse
-     */
     'pagination'?: Pagination;
-    /**
-     * 
-     * @type {SelfShipAppointmentSlotsAvailability}
-     * @memberof GetSelfShipAppointmentSlotsResponse
-     */
     'selfShipAppointmentSlotsAvailability': SelfShipAppointmentSlotsAvailability;
 }
 

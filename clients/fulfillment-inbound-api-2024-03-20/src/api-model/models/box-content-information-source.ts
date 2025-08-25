@@ -16,8 +16,6 @@
 
 /**
  * Indication of how box content is meant to be provided.
- * @export
- * @enum {string}
  */
 
 export const BoxContentInformationSource = {

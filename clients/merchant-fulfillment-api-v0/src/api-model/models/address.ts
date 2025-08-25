@@ -16,74 +16,50 @@
 
 /**
  * The postal address information.
- * @export
- * @interface Address
  */
 export interface Address {
     /**
      * The name of the addressee, or business name.
-     * @type {string}
-     * @memberof Address
      */
     'Name': string;
     /**
      * The street address information.
-     * @type {string}
-     * @memberof Address
      */
     'AddressLine1': string;
     /**
      * Additional street address information.
-     * @type {string}
-     * @memberof Address
      */
     'AddressLine2'?: string;
     /**
      * Additional street address information.
-     * @type {string}
-     * @memberof Address
      */
     'AddressLine3'?: string;
     /**
      * The district or county.
-     * @type {string}
-     * @memberof Address
      */
     'DistrictOrCounty'?: string;
     /**
      * The email address.
-     * @type {string}
-     * @memberof Address
      */
     'Email': string;
     /**
      * The city.
-     * @type {string}
-     * @memberof Address
      */
     'City': string;
     /**
      * The state or province code. This is a required field in Canada, US, and UK marketplaces, and for shipments that originate in China.
-     * @type {string}
-     * @memberof Address
      */
     'StateOrProvinceCode'?: string;
     /**
      * The zip code or postal code.
-     * @type {string}
-     * @memberof Address
      */
     'PostalCode': string;
     /**
      * The two-letter country code in [ISO 3166-1 alpha-2](https://www.iban.com/country-codes) format.
-     * @type {string}
-     * @memberof Address
      */
     'CountryCode': string;
     /**
      * The phone number.
-     * @type {string}
-     * @memberof Address
      */
     'Phone': string;
 }

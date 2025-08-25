@@ -22,21 +22,12 @@ import type { IssueExemption } from './issue-exemption';
 
 /**
  * This field provides information about the enforcement actions taken by Amazon that affect the publishing or status of a listing. It also includes details about any associated exemptions.
- * @export
- * @interface IssueEnforcements
  */
 export interface IssueEnforcements {
     /**
      * List of enforcement actions taken by Amazon that affect the publishing or status of a listing.
-     * @type {Array<IssueEnforcementAction>}
-     * @memberof IssueEnforcements
      */
     'actions': Array<IssueEnforcementAction>;
-    /**
-     * 
-     * @type {IssueExemption}
-     * @memberof IssueEnforcements
-     */
     'exemption': IssueExemption;
 }
 

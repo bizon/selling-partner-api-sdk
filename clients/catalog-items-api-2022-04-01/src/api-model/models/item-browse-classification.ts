@@ -16,27 +16,16 @@
 
 /**
  * Classification (browse node) for an Amazon catalog item.
- * @export
- * @interface ItemBrowseClassification
  */
 export interface ItemBrowseClassification {
     /**
      * Display name for the classification.
-     * @type {string}
-     * @memberof ItemBrowseClassification
      */
     'displayName': string;
     /**
      * Identifier of the classification.
-     * @type {string}
-     * @memberof ItemBrowseClassification
      */
     'classificationId': string;
-    /**
-     * 
-     * @type {ItemBrowseClassification}
-     * @memberof ItemBrowseClassification
-     */
     'parent'?: ItemBrowseClassification;
 }
 

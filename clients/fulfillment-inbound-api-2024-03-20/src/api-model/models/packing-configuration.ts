@@ -25,26 +25,15 @@ import type { ShippingRequirements } from './shipping-requirements';
 
 /**
  * A way to configure this packing option. Some box content information sources might not be allowed. Non-standard minimum and maximum box weights might be enforced.
- * @export
- * @interface PackingConfiguration
  */
 export interface PackingConfiguration {
     /**
      * The box content information sources that are allowed.
-     * @type {Array<BoxContentInformationSource>}
-     * @memberof PackingConfiguration
      */
     'boxPackingMethods'?: Array<BoxContentInformationSource>;
-    /**
-     * 
-     * @type {BoxRequirements}
-     * @memberof PackingConfiguration
-     */
     'boxRequirements'?: BoxRequirements;
     /**
      * A list of supported shipping requirements for this packing configuration.
-     * @type {Array<ShippingRequirements>}
-     * @memberof PackingConfiguration
      */
     'shippingRequirements'?: Array<ShippingRequirements>;
 }

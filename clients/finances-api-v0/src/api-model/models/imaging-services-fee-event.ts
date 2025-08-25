@@ -19,32 +19,22 @@ import type { FeeComponent } from './fee-component';
 
 /**
  * A fee event related to Amazon Imaging services.
- * @export
- * @interface ImagingServicesFeeEvent
  */
 export interface ImagingServicesFeeEvent {
     /**
      * The identifier for the imaging services request.
-     * @type {string}
-     * @memberof ImagingServicesFeeEvent
      */
     'ImagingRequestBillingItemID'?: string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item for which the imaging service was requested.
-     * @type {string}
-     * @memberof ImagingServicesFeeEvent
      */
     'ASIN'?: string;
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof ImagingServicesFeeEvent
      */
     'PostedDate'?: string;
     /**
      * A list of fee component information.
-     * @type {Array<FeeComponent>}
-     * @memberof ImagingServicesFeeEvent
      */
     'FeeList'?: Array<FeeComponent>;
 }

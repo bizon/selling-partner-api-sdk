@@ -19,39 +19,15 @@ import type { Money } from './money';
 
 /**
  * The COD (Cash On Delivery) charges that you associate with a COD fulfillment order.
- * @export
- * @interface CODSettings
  */
 export interface CODSettings {
     /**
      * When true, this fulfillment order requires a COD (Cash On Delivery) payment.
-     * @type {boolean}
-     * @memberof CODSettings
      */
     'isCodRequired': boolean;
-    /**
-     * 
-     * @type {Money}
-     * @memberof CODSettings
-     */
     'codCharge'?: Money;
-    /**
-     * 
-     * @type {Money}
-     * @memberof CODSettings
-     */
     'codChargeTax'?: Money;
-    /**
-     * 
-     * @type {Money}
-     * @memberof CODSettings
-     */
     'shippingCharge'?: Money;
-    /**
-     * 
-     * @type {Money}
-     * @memberof CODSettings
-     */
     'shippingChargeTax'?: Money;
 }
 

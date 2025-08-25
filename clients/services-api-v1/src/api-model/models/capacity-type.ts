@@ -16,8 +16,6 @@
 
 /**
  * Type of capacity
- * @export
- * @enum {string}
  */
 
 export const CapacityType = {

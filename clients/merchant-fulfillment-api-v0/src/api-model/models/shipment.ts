@@ -40,98 +40,42 @@ import type { Weight } from './weight';
 
 /**
  * The details of a shipment. Includes the shipment status.
- * @export
- * @interface Shipment
  */
 export interface Shipment {
     /**
      * An Amazon-defined shipment identifier.
-     * @type {string}
-     * @memberof Shipment
      */
     'ShipmentId': string;
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
-     * @type {string}
-     * @memberof Shipment
      */
     'AmazonOrderId': string;
     /**
      * A seller-defined order identifier.
-     * @type {string}
-     * @memberof Shipment
      */
     'SellerOrderId'?: string;
     /**
      * The list of items you want to include in a shipment.
-     * @type {Array<Item>}
-     * @memberof Shipment
      */
     'ItemList': Array<Item>;
-    /**
-     * 
-     * @type {Address}
-     * @memberof Shipment
-     */
     'ShipFromAddress': Address;
-    /**
-     * 
-     * @type {Address}
-     * @memberof Shipment
-     */
     'ShipToAddress': Address;
-    /**
-     * 
-     * @type {PackageDimensions}
-     * @memberof Shipment
-     */
     'PackageDimensions': PackageDimensions;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof Shipment
-     */
     'Weight': Weight;
-    /**
-     * 
-     * @type {CurrencyAmount}
-     * @memberof Shipment
-     */
     'Insurance': CurrencyAmount;
-    /**
-     * 
-     * @type {ShippingService}
-     * @memberof Shipment
-     */
     'ShippingService': ShippingService;
-    /**
-     * 
-     * @type {Label}
-     * @memberof Shipment
-     */
     'Label': Label;
-    /**
-     * 
-     * @type {ShipmentStatus}
-     * @memberof Shipment
-     */
     'Status': ShipmentStatus;
     /**
      * The shipment tracking identifier provided by the carrier.
-     * @type {string}
-     * @memberof Shipment
      */
     'TrackingId'?: string;
     /**
      * Date-time formatted timestamp.
-     * @type {string}
-     * @memberof Shipment
      */
     'CreatedDate': string;
     /**
      * Date-time formatted timestamp.
-     * @type {string}
-     * @memberof Shipment
      */
     'LastUpdatedDate'?: string;
 }

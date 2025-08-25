@@ -19,32 +19,22 @@ import type { SupportedDocumentDetail } from './supported-document-detail';
 
 /**
  * The format options available for a label.
- * @export
- * @interface PrintOption
  */
 export interface PrintOption {
     /**
      * A list of the supported DPI options for a document.
-     * @type {Array<number>}
-     * @memberof PrintOption
      */
     'supportedDPIs'?: Array<number>;
     /**
      * A list of the supported page layout options for a document.
-     * @type {Array<string>}
-     * @memberof PrintOption
      */
     'supportedPageLayouts': Array<string>;
     /**
      * A list of the supported needFileJoining boolean values for a document.
-     * @type {Array<boolean>}
-     * @memberof PrintOption
      */
     'supportedFileJoiningOptions': Array<boolean>;
     /**
      * A list of the supported documented details.
-     * @type {Array<SupportedDocumentDetail>}
-     * @memberof PrintOption
      */
     'supportedDocumentDetails': Array<SupportedDocumentDetail>;
 }

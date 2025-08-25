@@ -19,27 +19,13 @@ import type { Amount } from './amount';
 
 /**
  * The manual processing fee per unit and total fee for a shipment.
- * @export
- * @interface BoxContentsFeeDetails
  */
 export interface BoxContentsFeeDetails {
     /**
      * The item quantity.
-     * @type {number}
-     * @memberof BoxContentsFeeDetails
      */
     'TotalUnits'?: number;
-    /**
-     * 
-     * @type {Amount}
-     * @memberof BoxContentsFeeDetails
-     */
     'FeePerUnit'?: Amount;
-    /**
-     * 
-     * @type {Amount}
-     * @memberof BoxContentsFeeDetails
-     */
     'TotalFee'?: Amount;
 }
 

@@ -16,8 +16,6 @@
 
 /**
  * Generation Status.
- * @export
- * @enum {string}
  */
 
 export const GenerationStatus = {

@@ -16,32 +16,22 @@
 
 /**
  * Details related to any dangerous goods or items that are shipped.
- * @export
- * @interface DangerousGoodsDetails
  */
 export interface DangerousGoodsDetails {
     /**
      * The specific UNID of the item being shipped.
-     * @type {string}
-     * @memberof DangerousGoodsDetails
      */
     'UnitedNationsRegulatoryId'?: string;
     /**
      * The specific regulatory class of the shipped item.
-     * @type {string}
-     * @memberof DangerousGoodsDetails
      */
     'TransportationRegulatoryClass'?: string;
     /**
      * The specific packaging group of the item being shipped.
-     * @type {string}
-     * @memberof DangerousGoodsDetails
      */
     'PackingGroup'?: DangerousGoodsDetailsPackingGroupEnum;
     /**
      * The specific packing instruction of the item being shipped.
-     * @type {string}
-     * @memberof DangerousGoodsDetails
      */
     'PackingInstruction'?: DangerousGoodsDetailsPackingInstructionEnum;
 }

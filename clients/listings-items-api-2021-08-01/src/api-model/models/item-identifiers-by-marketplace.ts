@@ -16,20 +16,14 @@
 
 /**
  * Identity attributes associated with the item in the Amazon catalog for the indicated Amazon marketplace.
- * @export
- * @interface ItemIdentifiersByMarketplace
  */
 export interface ItemIdentifiersByMarketplace {
     /**
      * A marketplace identifier. Identifies the Amazon marketplace for the listings item.
-     * @type {string}
-     * @memberof ItemIdentifiersByMarketplace
      */
     'marketplaceId'?: string;
     /**
      * Amazon Standard Identification Number (ASIN) of the listings item.
-     * @type {string}
-     * @memberof ItemIdentifiersByMarketplace
      */
     'asin'?: string;
 }

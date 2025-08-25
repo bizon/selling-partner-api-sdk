@@ -19,15 +19,8 @@ import type { TextItem } from './text-item';
 
 /**
  * The A+ Content standard fixed-length list of text, usually presented as bullet points.
- * @export
- * @interface StandardTextListBlock
  */
 export interface StandardTextListBlock {
-    /**
-     * 
-     * @type {Array<TextItem>}
-     * @memberof StandardTextListBlock
-     */
     'textList': Array<TextItem>;
 }
 

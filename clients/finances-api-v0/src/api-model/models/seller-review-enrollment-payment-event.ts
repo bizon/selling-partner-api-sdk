@@ -25,45 +25,22 @@ import type { FeeComponent } from './fee-component';
 
 /**
  * A fee payment event for the Early Reviewer Program.
- * @export
- * @interface SellerReviewEnrollmentPaymentEvent
  */
 export interface SellerReviewEnrollmentPaymentEvent {
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof SellerReviewEnrollmentPaymentEvent
      */
     'PostedDate'?: string;
     /**
      * An enrollment identifier.
-     * @type {string}
-     * @memberof SellerReviewEnrollmentPaymentEvent
      */
     'EnrollmentId'?: string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item that was enrolled in the Early Reviewer Program.
-     * @type {string}
-     * @memberof SellerReviewEnrollmentPaymentEvent
      */
     'ParentASIN'?: string;
-    /**
-     * 
-     * @type {FeeComponent}
-     * @memberof SellerReviewEnrollmentPaymentEvent
-     */
     'FeeComponent'?: FeeComponent;
-    /**
-     * 
-     * @type {ChargeComponent}
-     * @memberof SellerReviewEnrollmentPaymentEvent
-     */
     'ChargeComponent'?: ChargeComponent;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof SellerReviewEnrollmentPaymentEvent
-     */
     'TotalAmount'?: Currency;
 }
 

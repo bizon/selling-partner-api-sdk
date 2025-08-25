@@ -22,21 +22,9 @@ import type { TransactionId } from './transaction-id';
 
 /**
  * The response schema for the submitAcknowledgement operation.
- * @export
- * @interface SubmitAcknowledgementResponse
  */
 export interface SubmitAcknowledgementResponse {
-    /**
-     * 
-     * @type {TransactionId}
-     * @memberof SubmitAcknowledgementResponse
-     */
     'payload'?: TransactionId;
-    /**
-     * 
-     * @type {ErrorList}
-     * @memberof SubmitAcknowledgementResponse
-     */
     'errors'?: ErrorList;
 }
 

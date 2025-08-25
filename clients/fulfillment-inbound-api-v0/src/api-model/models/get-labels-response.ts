@@ -19,20 +19,11 @@ import type { LabelDownloadURL } from './label-download-url';
 
 /**
  * The response schema for the getLabels operation.
- * @export
- * @interface GetLabelsResponse
  */
 export interface GetLabelsResponse {
-    /**
-     * 
-     * @type {LabelDownloadURL}
-     * @memberof GetLabelsResponse
-     */
     'payload'?: LabelDownloadURL;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetLabelsResponse
      */
     'errors'?: Array<Error>;
 }

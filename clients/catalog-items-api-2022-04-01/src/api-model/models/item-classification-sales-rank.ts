@@ -16,32 +16,22 @@
 
 /**
  * Sales rank of an Amazon catalog item.
- * @export
- * @interface ItemClassificationSalesRank
  */
 export interface ItemClassificationSalesRank {
     /**
      * Identifier of the classification that is associated with the sales rank.
-     * @type {string}
-     * @memberof ItemClassificationSalesRank
      */
     'classificationId': string;
     /**
      * Name of the sales rank.
-     * @type {string}
-     * @memberof ItemClassificationSalesRank
      */
     'title': string;
     /**
      * Corresponding Amazon retail website URL for the sales category.
-     * @type {string}
-     * @memberof ItemClassificationSalesRank
      */
     'link'?: string;
     /**
      * Sales rank.
-     * @type {number}
-     * @memberof ItemClassificationSalesRank
      */
     'rank': number;
 }

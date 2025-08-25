@@ -29,7 +29,6 @@ import type { ListingOffersRequestParamsAllOf } from './listing-offers-request-p
 /**
  * @type ListingOffersRequestParams
  * List of request parameters that can be accepted by `ListingOffersRequest`
- * @export
  */
 export type ListingOffersRequestParams = BatchOffersRequestParams & ListingOffersRequestParamsAllOf;
 

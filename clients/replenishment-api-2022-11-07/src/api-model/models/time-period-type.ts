@@ -16,8 +16,6 @@
 
 /**
  * The time period type that determines whether the metrics requested are backward-looking (performance) or forward-looking (forecast).
- * @export
- * @enum {string}
  */
 
 export const TimePeriodType = {

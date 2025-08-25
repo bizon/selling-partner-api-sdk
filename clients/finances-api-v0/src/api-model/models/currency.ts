@@ -16,20 +16,14 @@
 
 /**
  * A currency type and amount.
- * @export
- * @interface Currency
  */
 export interface Currency {
     /**
      * The three-digit currency code in ISO 4217 format.
-     * @type {string}
-     * @memberof Currency
      */
     'CurrencyCode'?: string;
     /**
      * Fields with a schema type of BigDecimal are a signed decimal number (for example CurrencyAmount).
-     * @type {number}
-     * @memberof Currency
      */
     'CurrencyAmount'?: number;
 }

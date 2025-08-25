@@ -19,26 +19,18 @@ import type { TaxClassification } from './tax-classification';
 
 /**
  * Tax information about the marketplace.
- * @export
- * @interface MarketplaceTaxInfo
  */
 export interface MarketplaceTaxInfo {
     /**
      * The legal name of the company.
-     * @type {string}
-     * @memberof MarketplaceTaxInfo
      */
     'CompanyLegalName'?: string;
     /**
      * The country or region imposing the tax.
-     * @type {string}
-     * @memberof MarketplaceTaxInfo
      */
     'TaxingRegion'?: string;
     /**
      * The list of tax classifications.
-     * @type {Array<TaxClassification>}
-     * @memberof MarketplaceTaxInfo
      */
     'TaxClassifications'?: Array<TaxClassification>;
 }

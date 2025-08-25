@@ -16,8 +16,6 @@
 
 /**
  * Additional location information.
- * @export
- * @enum {string}
  */
 
 export const AdditionalLocationInfo = {

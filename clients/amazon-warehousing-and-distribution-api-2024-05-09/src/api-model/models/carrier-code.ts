@@ -19,20 +19,11 @@ import type { CarrierCodeType } from './carrier-code-type';
 
 /**
  * Identifies the carrier that will deliver the shipment.
- * @export
- * @interface CarrierCode
  */
 export interface CarrierCode {
-    /**
-     * 
-     * @type {CarrierCodeType}
-     * @memberof CarrierCode
-     */
     'carrierCodeType'?: CarrierCodeType;
     /**
      * Value of the carrier code.
-     * @type {string}
-     * @memberof CarrierCode
      */
     'carrierCodeValue'?: string;
 }

@@ -19,32 +19,19 @@ import type { Location } from './location';
 
 /**
  * Contractual or operational port or point relevant to the movement of the cargo.
- * @export
- * @interface Stop
  */
 export interface Stop {
     /**
      * Provide the function code.
-     * @type {string}
-     * @memberof Stop
      */
     'functionCode': StopFunctionCodeEnum;
-    /**
-     * 
-     * @type {Location}
-     * @memberof Stop
-     */
     'locationIdentification'?: Location;
     /**
      * Date and time of the arrival of the cargo.
-     * @type {string}
-     * @memberof Stop
      */
     'arrivalTime'?: string;
     /**
      * Date and time of the departure of the cargo.
-     * @type {string}
-     * @memberof Stop
      */
     'departureTime'?: string;
 }

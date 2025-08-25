@@ -28,50 +28,22 @@ import type { Party } from './party';
 
 /**
  * The shipment related data.
- * @export
- * @interface Shipment
  */
 export interface Shipment {
     /**
      * The unique shipment identifier.
-     * @type {string}
-     * @memberof Shipment
      */
     'shipmentId': string;
     /**
      * Client reference id.
-     * @type {string}
-     * @memberof Shipment
      */
     'clientReferenceId': string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof Shipment
-     */
     'shipFrom': Address;
-    /**
-     * 
-     * @type {Address}
-     * @memberof Shipment
-     */
     'shipTo': Address;
-    /**
-     * 
-     * @type {AcceptedRate}
-     * @memberof Shipment
-     */
     'acceptedRate'?: AcceptedRate;
-    /**
-     * 
-     * @type {Party}
-     * @memberof Shipment
-     */
     'shipper'?: Party;
     /**
      * A list of container.
-     * @type {Array<Container>}
-     * @memberof Shipment
      */
     'containers': Array<Container>;
 }

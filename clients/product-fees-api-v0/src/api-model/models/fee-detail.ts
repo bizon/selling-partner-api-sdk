@@ -22,44 +22,18 @@ import type { MoneyType } from './money-type';
 
 /**
  * The type of fee, fee amount, and other details.
- * @export
- * @interface FeeDetail
  */
 export interface FeeDetail {
     /**
      * The type of fee charged to a seller.
-     * @type {string}
-     * @memberof FeeDetail
      */
     'FeeType': string;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof FeeDetail
-     */
     'FeeAmount': MoneyType;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof FeeDetail
-     */
     'FeePromotion'?: MoneyType;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof FeeDetail
-     */
     'TaxAmount'?: MoneyType;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof FeeDetail
-     */
     'FinalFee': MoneyType;
     /**
      * A list of other fees that contribute to a given fee.
-     * @type {Array<IncludedFeeDetail>}
-     * @memberof FeeDetail
      */
     'IncludedFeeDetailList'?: Array<IncludedFeeDetail>;
 }

@@ -16,44 +16,30 @@
 
 /**
  * Item information for a shipment in a fulfillment order.
- * @export
- * @interface FulfillmentShipmentItem
  */
 export interface FulfillmentShipmentItem {
     /**
      * The seller SKU of the item.
-     * @type {string}
-     * @memberof FulfillmentShipmentItem
      */
     'sellerSku': string;
     /**
      * The fulfillment order item identifier that the seller created and submitted with a call to the `createFulfillmentOrder` operation.
-     * @type {string}
-     * @memberof FulfillmentShipmentItem
      */
     'sellerFulfillmentOrderItemId': string;
     /**
      * The item quantity.
-     * @type {number}
-     * @memberof FulfillmentShipmentItem
      */
     'quantity': number;
     /**
      * An identifier for the package that contains the item quantity.
-     * @type {number}
-     * @memberof FulfillmentShipmentItem
      */
     'packageNumber'?: number;
     /**
      * The serial number of the shipped item.
-     * @type {string}
-     * @memberof FulfillmentShipmentItem
      */
     'serialNumber'?: string;
     /**
      * String list
-     * @type {Array<string>}
-     * @memberof FulfillmentShipmentItem
      */
     'manufacturerLotCodes'?: Array<string>;
 }

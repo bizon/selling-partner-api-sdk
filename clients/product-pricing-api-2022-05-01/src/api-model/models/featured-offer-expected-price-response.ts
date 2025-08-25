@@ -32,7 +32,6 @@ import type { HttpStatusLine } from './http-status-line';
 /**
  * @type FeaturedOfferExpectedPriceResponse
  * Schema for an individual FOEP response.
- * @export
  */
 export type FeaturedOfferExpectedPriceResponse = BatchResponse & FeaturedOfferExpectedPriceResponseAllOf;
 

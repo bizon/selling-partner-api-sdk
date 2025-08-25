@@ -19,15 +19,8 @@ import type { FeesEstimateResult } from './fees-estimate-result';
 
 /**
  * Response schema.
- * @export
- * @interface GetMyFeesEstimateResult
  */
 export interface GetMyFeesEstimateResult {
-    /**
-     * 
-     * @type {FeesEstimateResult}
-     * @memberof GetMyFeesEstimateResult
-     */
     'FeesEstimateResult'?: FeesEstimateResult;
 }
 

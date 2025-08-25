@@ -19,20 +19,14 @@ import type { Feed } from './feed';
 
 /**
  * Response schema.
- * @export
- * @interface GetFeedsResponse
  */
 export interface GetFeedsResponse {
     /**
      * A list of feeds.
-     * @type {Array<Feed>}
-     * @memberof GetFeedsResponse
      */
     'feeds': Array<Feed>;
     /**
      * Returned when the number of results exceeds pageSize. To get the next page of results, call the getFeeds operation with this token as the only parameter.
-     * @type {string}
-     * @memberof GetFeedsResponse
      */
     'nextToken'?: string;
 }

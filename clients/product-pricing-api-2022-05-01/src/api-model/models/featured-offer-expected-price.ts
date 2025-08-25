@@ -22,21 +22,9 @@ import type { Points } from './points';
 
 /**
  * The item price at or below which the target offer may be featured.
- * @export
- * @interface FeaturedOfferExpectedPrice
  */
 export interface FeaturedOfferExpectedPrice {
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof FeaturedOfferExpectedPrice
-     */
     'listingPrice': MoneyType;
-    /**
-     * 
-     * @type {Points}
-     * @memberof FeaturedOfferExpectedPrice
-     */
     'points'?: Points;
 }
 

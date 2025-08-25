@@ -28,33 +28,11 @@ import type { Weight } from './weight';
 
 /**
  * The specific rate purchased for the shipment, or null if unpurchased.
- * @export
- * @interface AcceptedRate
  */
 export interface AcceptedRate {
-    /**
-     * 
-     * @type {Currency}
-     * @memberof AcceptedRate
-     */
     'totalCharge'?: Currency;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof AcceptedRate
-     */
     'billedWeight'?: Weight;
-    /**
-     * 
-     * @type {ServiceType}
-     * @memberof AcceptedRate
-     */
     'serviceType'?: ServiceType;
-    /**
-     * 
-     * @type {ShippingPromiseSet}
-     * @memberof AcceptedRate
-     */
     'promise'?: ShippingPromiseSet;
 }
 

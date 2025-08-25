@@ -19,14 +19,10 @@ import type { CompetitiveSummaryRequest } from './competitive-summary-request';
 
 /**
  * The `competitiveSummary` batch request data.
- * @export
- * @interface CompetitiveSummaryBatchRequest
  */
 export interface CompetitiveSummaryBatchRequest {
     /**
      * A batched list of `competitiveSummary` requests.
-     * @type {Array<CompetitiveSummaryRequest>}
-     * @memberof CompetitiveSummaryBatchRequest
      */
     'requests': Array<CompetitiveSummaryRequest>;
 }

@@ -16,20 +16,14 @@
 
 /**
  * Additional information required for the NDR action that has been filed. If the NDR Action is RESCHEDULE, rescheduleDate is a required field. Otherwise, if the NDR Action is REATTEMPT, additionalAddressNotes is a required field. 
- * @export
- * @interface NdrRequestData
  */
 export interface NdrRequestData {
     /**
      * The date on which the Seller wants to reschedule shipment delivery, in ISO-8601 date/time format
-     * @type {string}
-     * @memberof NdrRequestData
      */
     'rescheduleDate'?: string;
     /**
      * Address notes to re-attempt delivery with.
-     * @type {string}
-     * @memberof NdrRequestData
      */
     'additionalAddressNotes'?: string;
 }

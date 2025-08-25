@@ -22,20 +22,11 @@ import type { OrderedQuantityDetails } from './ordered-quantity-details';
 
 /**
  * Ordered quantity information.
- * @export
- * @interface OrderItemStatusOrderedQuantity
  */
 export interface OrderItemStatusOrderedQuantity {
-    /**
-     * 
-     * @type {ItemQuantity}
-     * @memberof OrderItemStatusOrderedQuantity
-     */
     'orderedQuantity'?: ItemQuantity;
     /**
      * Details of item quantity ordered.
-     * @type {Array<OrderedQuantityDetails>}
-     * @memberof OrderItemStatusOrderedQuantity
      */
     'orderedQuantityDetails'?: Array<OrderedQuantityDetails>;
 }

@@ -19,21 +19,12 @@ import type { SellerInputDefinition } from './seller-input-definition';
 
 /**
  * Maps the additional seller input to the definition. The key to the map is the field name.
- * @export
- * @interface AdditionalInputs
  */
 export interface AdditionalInputs {
     /**
      * The field name.
-     * @type {string}
-     * @memberof AdditionalInputs
      */
     'AdditionalInputFieldName'?: string;
-    /**
-     * 
-     * @type {SellerInputDefinition}
-     * @memberof AdditionalInputs
-     */
     'SellerInputDefinition'?: SellerInputDefinition;
 }
 

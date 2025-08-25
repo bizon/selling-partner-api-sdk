@@ -16,14 +16,10 @@
 
 /**
  * A list of error responses returned when a request is unsuccessful.
- * @export
- * @interface ErrorList
  */
 export interface ErrorList {
     /**
      * An array of individual error objects containing error details.
-     * @type {Array<Error>}
-     * @memberof ErrorList
      */
     'errors': Array<Error>;
 }

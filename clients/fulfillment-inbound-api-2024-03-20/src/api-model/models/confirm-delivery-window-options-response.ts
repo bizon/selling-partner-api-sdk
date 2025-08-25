@@ -16,14 +16,10 @@
 
 /**
  * The `confirmDeliveryWindowOptions` response.
- * @export
- * @interface ConfirmDeliveryWindowOptionsResponse
  */
 export interface ConfirmDeliveryWindowOptionsResponse {
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof ConfirmDeliveryWindowOptionsResponse
      */
     'operationId': string;
 }

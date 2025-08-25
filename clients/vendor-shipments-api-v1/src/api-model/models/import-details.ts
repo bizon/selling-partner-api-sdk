@@ -22,50 +22,28 @@ import type { Weight } from './weight';
 
 /**
  * Provide these fields only if this shipment is a direct import.
- * @export
- * @interface ImportDetails
  */
 export interface ImportDetails {
     /**
      * This is used for import purchase orders only. If the recipient requests, this field will contain the shipment method of payment.
-     * @type {string}
-     * @memberof ImportDetails
      */
     'methodOfPayment'?: ImportDetailsMethodOfPaymentEnum;
     /**
      * The container\'s seal number.
-     * @type {string}
-     * @memberof ImportDetails
      */
     'sealNumber'?: string;
-    /**
-     * 
-     * @type {Route}
-     * @memberof ImportDetails
-     */
     'route'?: Route;
     /**
      * Types and numbers of container(s) for import purchase orders. Can be a comma-separated list if shipment has multiple containers.
-     * @type {string}
-     * @memberof ImportDetails
      */
     'importContainers'?: string;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof ImportDetails
-     */
     'billableWeight'?: Weight;
     /**
      * Date on which the shipment is expected to be shipped. This value should not be in the past and not more than 60 days out in the future.
-     * @type {string}
-     * @memberof ImportDetails
      */
     'estimatedShipByDate'?: string;
     /**
      * Identification of the instructions on how specified item/carton/pallet should be handled.
-     * @type {string}
-     * @memberof ImportDetails
      */
     'handlingInstructions'?: ImportDetailsHandlingInstructionsEnum;
 }

@@ -19,20 +19,14 @@ import type { DetailCodes } from './detail-codes';
 
 /**
  * Contains detail codes that provide additional details related to the forward and return leg of the shipment.
- * @export
- * @interface TrackingDetailCodes
  */
 export interface TrackingDetailCodes {
     /**
      * Contains detail codes that provide additional details related to the forward leg of the shipment.
-     * @type {Array<DetailCodes>}
-     * @memberof TrackingDetailCodes
      */
     'forward': Array<DetailCodes>;
     /**
      * Contains detail codes that provide additional details related to the return leg of the shipment.
-     * @type {Array<DetailCodes>}
-     * @memberof TrackingDetailCodes
      */
     'returns': Array<DetailCodes>;
 }

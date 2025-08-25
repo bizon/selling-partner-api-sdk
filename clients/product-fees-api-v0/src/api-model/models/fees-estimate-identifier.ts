@@ -25,57 +25,30 @@ import type { PriceToEstimateFees } from './price-to-estimate-fees';
 
 /**
  * An item identifier, marketplace, time of request, and other details that identify an estimate.
- * @export
- * @interface FeesEstimateIdentifier
  */
 export interface FeesEstimateIdentifier {
     /**
      * A marketplace identifier.
-     * @type {string}
-     * @memberof FeesEstimateIdentifier
      */
     'MarketplaceId'?: string;
     /**
      * The seller identifier.
-     * @type {string}
-     * @memberof FeesEstimateIdentifier
      */
     'SellerId'?: string;
-    /**
-     * 
-     * @type {IdType}
-     * @memberof FeesEstimateIdentifier
-     */
     'IdType'?: IdType;
     /**
      * The item identifier.
-     * @type {string}
-     * @memberof FeesEstimateIdentifier
      */
     'IdValue'?: string;
     /**
      * When true, the offer is fulfilled by Amazon.
-     * @type {boolean}
-     * @memberof FeesEstimateIdentifier
      */
     'IsAmazonFulfilled'?: boolean;
-    /**
-     * 
-     * @type {PriceToEstimateFees}
-     * @memberof FeesEstimateIdentifier
-     */
     'PriceToEstimateFees'?: PriceToEstimateFees;
     /**
      * A unique identifier provided by the caller to track this request.
-     * @type {string}
-     * @memberof FeesEstimateIdentifier
      */
     'SellerInputIdentifier'?: string;
-    /**
-     * 
-     * @type {OptionalFulfillmentProgram}
-     * @memberof FeesEstimateIdentifier
-     */
     'OptionalFulfillmentProgram'?: OptionalFulfillmentProgram;
 }
 

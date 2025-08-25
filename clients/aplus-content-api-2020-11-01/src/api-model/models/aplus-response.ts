@@ -16,14 +16,10 @@
 
 /**
  * The base response data for all A+ Content operations when a request is successful or partially successful. Individual operations can extend this with additional data.
- * @export
- * @interface AplusResponse
  */
 export interface AplusResponse {
     /**
      * A set of messages to the user, such as warnings or comments.
-     * @type {Set<Error>}
-     * @memberof AplusResponse
      */
     'warnings'?: Set<Error>;
 }

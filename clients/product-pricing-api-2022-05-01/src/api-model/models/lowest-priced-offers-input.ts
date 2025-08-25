@@ -19,20 +19,11 @@ import type { Condition } from './condition';
 
 /**
  * The input required for building `LowestPricedOffers` data in the response.
- * @export
- * @interface LowestPricedOffersInput
  */
 export interface LowestPricedOffersInput {
-    /**
-     * 
-     * @type {Condition}
-     * @memberof LowestPricedOffersInput
-     */
     'itemCondition': Condition;
     /**
      * The input parameter specifies the type of offers requested for `LowestPricedOffers`. This applies to `Consumer` and `Business` offers. `Consumer` is the default `offerType`.
-     * @type {string}
-     * @memberof LowestPricedOffersInput
      */
     'offerType': LowestPricedOffersInputOfferTypeEnum;
 }

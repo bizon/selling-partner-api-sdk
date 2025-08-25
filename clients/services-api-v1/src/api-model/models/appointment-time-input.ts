@@ -16,20 +16,14 @@
 
 /**
  * The input appointment time details.
- * @export
- * @interface AppointmentTimeInput
  */
 export interface AppointmentTimeInput {
     /**
      * The date, time in UTC for the start time of an appointment in ISO 8601 format.
-     * @type {string}
-     * @memberof AppointmentTimeInput
      */
     'startTime': string;
     /**
      * The duration of an appointment in minutes.
-     * @type {number}
-     * @memberof AppointmentTimeInput
      */
     'durationInMinutes'?: number;
 }

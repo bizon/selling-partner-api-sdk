@@ -16,20 +16,14 @@
 
 /**
  * Date Range for query the results.
- * @export
- * @interface DateRange
  */
 export interface DateRange {
     /**
      * Start Date for query .
-     * @type {string}
-     * @memberof DateRange
      */
     'startDate'?: string;
     /**
      * end date for query.
-     * @type {string}
-     * @memberof DateRange
      */
     'endDate'?: string;
 }

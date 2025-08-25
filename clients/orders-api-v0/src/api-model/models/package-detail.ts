@@ -19,56 +19,38 @@ import type { ConfirmShipmentOrderItem } from './confirm-shipment-order-item';
 
 /**
  * Properties of packages
- * @export
- * @interface PackageDetail
  */
 export interface PackageDetail {
     /**
      * A seller-supplied identifier that uniquely identifies a package within the scope of an order. Only positive numeric values are supported.
-     * @type {string}
-     * @memberof PackageDetail
      */
     'packageReferenceId': string;
     /**
      * Identifies the carrier that will deliver the package. This field is required for all marketplaces. For more information, refer to the [`CarrierCode` announcement](https://developer-docs.amazon.com/sp-api/changelog/carriercode-value-required-in-shipment-confirmations-for-br-mx-ca-sg-au-in-jp-marketplaces).
-     * @type {string}
-     * @memberof PackageDetail
      */
     'carrierCode': string;
     /**
      * Carrier name that will deliver the package. Required when `carrierCode` is \"Other\" 
-     * @type {string}
-     * @memberof PackageDetail
      */
     'carrierName'?: string;
     /**
      * Ship method to be used for shipping the order.
-     * @type {string}
-     * @memberof PackageDetail
      */
     'shippingMethod'?: string;
     /**
      * The tracking number used to obtain tracking and delivery information.
-     * @type {string}
-     * @memberof PackageDetail
      */
     'trackingNumber': string;
     /**
      * The shipping date for the package. Must be in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date/time format.
-     * @type {string}
-     * @memberof PackageDetail
      */
     'shipDate': string;
     /**
      * The unique identifier for the supply source.
-     * @type {string}
-     * @memberof PackageDetail
      */
     'shipFromSupplySourceId'?: string;
     /**
      * A list of order items.
-     * @type {Array<ConfirmShipmentOrderItem>}
-     * @memberof PackageDetail
      */
     'orderItems': Array<ConfirmShipmentOrderItem>;
 }

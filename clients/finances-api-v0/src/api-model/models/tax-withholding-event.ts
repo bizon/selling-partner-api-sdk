@@ -22,33 +22,14 @@ import type { TaxWithholdingPeriod } from './tax-withholding-period';
 
 /**
  * A TaxWithholding event on seller\'s account.
- * @export
- * @interface TaxWithholdingEvent
  */
 export interface TaxWithholdingEvent {
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof TaxWithholdingEvent
      */
     'PostedDate'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof TaxWithholdingEvent
-     */
     'BaseAmount'?: Currency;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof TaxWithholdingEvent
-     */
     'WithheldAmount'?: Currency;
-    /**
-     * 
-     * @type {TaxWithholdingPeriod}
-     * @memberof TaxWithholdingEvent
-     */
     'TaxWithholdingPeriod'?: TaxWithholdingPeriod;
 }
 

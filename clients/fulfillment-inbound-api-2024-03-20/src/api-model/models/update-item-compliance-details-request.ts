@@ -19,21 +19,12 @@ import type { TaxDetails } from './tax-details';
 
 /**
  * The `updateItemComplianceDetails` request.
- * @export
- * @interface UpdateItemComplianceDetailsRequest
  */
 export interface UpdateItemComplianceDetailsRequest {
     /**
      * The merchant SKU, a merchant-supplied identifier for a specific SKU.
-     * @type {string}
-     * @memberof UpdateItemComplianceDetailsRequest
      */
     'msku': string;
-    /**
-     * 
-     * @type {TaxDetails}
-     * @memberof UpdateItemComplianceDetailsRequest
-     */
     'taxDetails': TaxDetails;
 }
 

@@ -19,20 +19,11 @@ import type { PrepOwner } from './prep-owner';
 
 /**
  * Information pertaining to the preparation of inbound products.
- * @export
- * @interface PrepInstruction
  */
 export interface PrepInstruction {
-    /**
-     * 
-     * @type {PrepOwner}
-     * @memberof PrepInstruction
-     */
     'prepOwner'?: PrepOwner;
     /**
      * The type of preparation to be done. For more information about preparing items, refer to [Prep guidance](https://sellercentral.amazon.com/help/hub/reference/external/GF4G7547KSLDX2KC) on Seller Central.
-     * @type {string}
-     * @memberof PrepInstruction
      */
     'prepType'?: string;
 }

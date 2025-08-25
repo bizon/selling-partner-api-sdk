@@ -16,20 +16,14 @@
 
 /**
  * Defines the latitude and longitude of the access point.
- * @export
- * @interface Geocode
  */
 export interface Geocode {
     /**
      * The latitude of access point.
-     * @type {string}
-     * @memberof Geocode
      */
     'latitude'?: string;
     /**
      * The longitude of access point.
-     * @type {string}
-     * @memberof Geocode
      */
     'longitude'?: string;
 }

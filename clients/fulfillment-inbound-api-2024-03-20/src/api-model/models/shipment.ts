@@ -40,99 +40,46 @@ import type { TrackingDetails } from './tracking-details';
 
 /**
  * Contains information pertaining to a shipment in an inbound plan.
- * @export
- * @interface Shipment
  */
 export interface Shipment {
     /**
      * A unique identifier created by Amazon that identifies this Amazon-partnered, Less Than Truckload/Full Truckload (LTL/FTL) shipment.
-     * @type {string}
-     * @memberof Shipment
      */
     'amazonReferenceId'?: string;
-    /**
-     * 
-     * @type {ContactInformation}
-     * @memberof Shipment
-     */
     'contactInformation'?: ContactInformation;
-    /**
-     * 
-     * @type {Dates}
-     * @memberof Shipment
-     */
     'dates'?: Dates;
-    /**
-     * 
-     * @type {ShipmentDestination}
-     * @memberof Shipment
-     */
     'destination': ShipmentDestination;
-    /**
-     * 
-     * @type {FreightInformation}
-     * @memberof Shipment
-     */
     'freightInformation'?: FreightInformation;
     /**
      * The name of the shipment.
-     * @type {string}
-     * @memberof Shipment
      */
     'name'?: string;
     /**
      * The identifier of a placement option. A placement option represents the shipment splits and destinations of SKUs.
-     * @type {string}
-     * @memberof Shipment
      */
     'placementOptionId': string;
-    /**
-     * 
-     * @type {SelectedDeliveryWindow}
-     * @memberof Shipment
-     */
     'selectedDeliveryWindow'?: SelectedDeliveryWindow;
     /**
      * Identifier of a transportation option. A transportation option represent one option for how to send a shipment.
-     * @type {string}
-     * @memberof Shipment
      */
     'selectedTransportationOptionId'?: string;
     /**
      * List of self ship appointment details.
-     * @type {Array<SelfShipAppointmentDetails>}
-     * @memberof Shipment
      */
     'selfShipAppointmentDetails'?: Array<SelfShipAppointmentDetails>;
     /**
      * The confirmed shipment ID which shows up on labels (for example, `FBA1234ABCD`).
-     * @type {string}
-     * @memberof Shipment
      */
     'shipmentConfirmationId'?: string;
     /**
      * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-     * @type {string}
-     * @memberof Shipment
      */
     'shipmentId': string;
-    /**
-     * 
-     * @type {ShipmentSource}
-     * @memberof Shipment
-     */
     'source': ShipmentSource;
     /**
      * The status of a shipment. The state of the shipment will typically start as `UNCONFIRMED`, then transition to `WORKING` after a placement option has been confirmed, and then to `READY_TO_SHIP` once labels are generated.  Possible values: `ABANDONED`, `CANCELLED`, `CHECKED_IN`, `CLOSED`, `DELETED`, `DELIVERED`, `IN_TRANSIT`, `MIXED`, `READY_TO_SHIP`, `RECEIVING`, `SHIPPED`, `UNCONFIRMED`, `WORKING`
-     * @type {string}
-     * @memberof Shipment
      */
     'status'?: string;
-    /**
-     * 
-     * @type {TrackingDetails}
-     * @memberof Shipment
-     */
     'trackingDetails'?: TrackingDetails;
 }
 

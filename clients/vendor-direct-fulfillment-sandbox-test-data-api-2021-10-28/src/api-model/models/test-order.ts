@@ -16,14 +16,10 @@
 
 /**
  * Error response returned when the request is unsuccessful.
- * @export
- * @interface TestOrder
  */
 export interface TestOrder {
     /**
      * An error code that identifies the type of error that occurred.
-     * @type {string}
-     * @memberof TestOrder
      */
     'orderId': string;
 }

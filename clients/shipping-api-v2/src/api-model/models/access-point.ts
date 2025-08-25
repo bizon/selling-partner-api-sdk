@@ -31,68 +31,37 @@ import type { OperatingHours } from './operating-hours';
 
 /**
  * Access point details
- * @export
- * @interface AccessPoint
  */
 export interface AccessPoint {
     /**
      * Unique identifier for the access point
-     * @type {string}
-     * @memberof AccessPoint
      */
     'accessPointId'?: string;
     /**
      * Name of entity (store/hub etc) where this access point is located
-     * @type {string}
-     * @memberof AccessPoint
      */
     'name'?: string;
     /**
      * Timezone of access point
-     * @type {string}
-     * @memberof AccessPoint
      */
     'timezone'?: string;
-    /**
-     * 
-     * @type {AccessPointType}
-     * @memberof AccessPoint
-     */
     'type'?: AccessPointType;
-    /**
-     * 
-     * @type {AccessibilityAttributes}
-     * @memberof AccessPoint
-     */
     'accessibilityAttributes'?: AccessibilityAttributes;
-    /**
-     * 
-     * @type {Address}
-     * @memberof AccessPoint
-     */
     'address'?: Address;
     /**
      * Exception operating hours for Access Point
-     * @type {Array<ExceptionOperatingHours>}
-     * @memberof AccessPoint
      */
     'exceptionOperatingHours'?: Array<ExceptionOperatingHours>;
     /**
      * Assistance type enum for Access point i.e. STAFF_ASSISTED or SELF_ASSISTED
-     * @type {string}
-     * @memberof AccessPoint
      */
     'assistanceType'?: AccessPointAssistanceTypeEnum;
     /**
      * The score of access point, based on proximity to postal code and sorting preference. This can be used to sort access point results on shipper\'s end.
-     * @type {string}
-     * @memberof AccessPoint
      */
     'score'?: string;
     /**
      * Map of day of the week to operating hours of that day
-     * @type {{ [key: string]: OperatingHours; }}
-     * @memberof AccessPoint
      */
     'standardOperatingHours'?: { [key: string]: OperatingHours; };
 }

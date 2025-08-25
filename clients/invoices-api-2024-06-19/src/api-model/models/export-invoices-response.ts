@@ -16,14 +16,10 @@
 
 /**
  * Success.
- * @export
- * @interface ExportInvoicesResponse
  */
 export interface ExportInvoicesResponse {
     /**
      * The export identifier.
-     * @type {string}
-     * @memberof ExportInvoicesResponse
      */
     'exportId'?: string;
 }

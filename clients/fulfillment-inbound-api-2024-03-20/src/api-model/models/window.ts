@@ -16,26 +16,18 @@
 
 /**
  * Contains a start and end DateTime representing a time range.
- * @export
- * @interface Window
  */
 export interface Window {
     /**
      * The timestamp at which this Window can no longer be edited.
-     * @type {string}
-     * @memberof Window
      */
     'editableUntil'?: string;
     /**
      * The end timestamp of the window.
-     * @type {string}
-     * @memberof Window
      */
     'end': string;
     /**
      * The start timestamp of the window.
-     * @type {string}
-     * @memberof Window
      */
     'start': string;
 }

@@ -19,33 +19,20 @@ import type { RateDirection } from './rate-direction';
 
 /**
  * Foreign exchange rate details displayed when transfer preview is requested. 
- * @export
- * @interface FxRateDetails
  */
 export interface FxRateDetails {
     /**
      * Unique identifier assigned to the fees/foreign exchange Rate of a transaction. 
-     * @type {string}
-     * @memberof FxRateDetails
      */
     'fxRateId': string;
     /**
      * A decimal number such as amount or FX rate.
-     * @type {number}
-     * @memberof FxRateDetails
      */
     'baseRate': number;
     /**
      * A decimal number such as amount or FX rate.
-     * @type {number}
-     * @memberof FxRateDetails
      */
     'effectiveFxRate': number;
-    /**
-     * 
-     * @type {RateDirection}
-     * @memberof FxRateDetails
-     */
     'rateDirection': RateDirection;
 }
 

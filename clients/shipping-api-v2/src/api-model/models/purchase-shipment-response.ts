@@ -19,15 +19,8 @@ import type { PurchaseShipmentResult } from './purchase-shipment-result';
 
 /**
  * The response schema for the purchaseShipment operation.
- * @export
- * @interface PurchaseShipmentResponse
  */
 export interface PurchaseShipmentResponse {
-    /**
-     * 
-     * @type {PurchaseShipmentResult}
-     * @memberof PurchaseShipmentResponse
-     */
     'payload'?: PurchaseShipmentResult;
 }
 

@@ -22,27 +22,13 @@ import type { DeliveryPolicy } from './delivery-policy';
 
 /**
  * An available offer for delivery of a product.
- * @export
- * @interface DeliveryOffer
  */
 export interface DeliveryOffer {
     /**
      * Date timestamp
-     * @type {string}
-     * @memberof DeliveryOffer
      */
     'expiresAt'?: string;
-    /**
-     * 
-     * @type {DateRange}
-     * @memberof DeliveryOffer
-     */
     'dateRange'?: DateRange;
-    /**
-     * 
-     * @type {DeliveryPolicy}
-     * @memberof DeliveryOffer
-     */
     'policy'?: DeliveryPolicy;
 }
 

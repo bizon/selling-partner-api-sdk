@@ -19,14 +19,10 @@ import type { Balance } from './balance';
 
 /**
  * Struct that holds list of balances on the seller account.
- * @export
- * @interface BalanceListing
  */
 export interface BalanceListing {
     /**
      * Collection that holds list of balances on the account 
-     * @type {Array<Balance>}
-     * @memberof BalanceListing
      */
     'balances'?: Array<Balance>;
 }

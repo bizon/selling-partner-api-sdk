@@ -16,20 +16,14 @@
 
 /**
  * The fulfillment availability details for the listings item.
- * @export
- * @interface FulfillmentAvailability
  */
 export interface FulfillmentAvailability {
     /**
      * Designates which fulfillment network is used.
-     * @type {string}
-     * @memberof FulfillmentAvailability
      */
     'fulfillmentChannelCode': string;
     /**
      * The quantity of the item you are making available for sale.
-     * @type {number}
-     * @memberof FulfillmentAvailability
      */
     'quantity'?: number;
 }

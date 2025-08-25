@@ -19,20 +19,11 @@ import type { UpdateReservationRecord } from './update-reservation-record';
 
 /**
  * Response schema for the `updateReservation` operation.
- * @export
- * @interface UpdateReservationResponse
  */
 export interface UpdateReservationResponse {
-    /**
-     * 
-     * @type {UpdateReservationRecord}
-     * @memberof UpdateReservationResponse
-     */
     'payload'?: UpdateReservationRecord;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof UpdateReservationResponse
      */
     'errors'?: Array<Error>;
 }

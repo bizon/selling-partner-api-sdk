@@ -16,8 +16,6 @@
 
 /**
  * The shipment status to apply.
- * @export
- * @enum {string}
  */
 
 export const ShipmentStatus = {

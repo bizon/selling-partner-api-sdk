@@ -22,21 +22,9 @@ import type { StandardImageTextBlock } from './standard-image-text-block';
 
 /**
  * A standard background image with a floating text box.
- * @export
- * @interface StandardImageTextOverlayModule
  */
 export interface StandardImageTextOverlayModule {
-    /**
-     * 
-     * @type {ColorType}
-     * @memberof StandardImageTextOverlayModule
-     */
     'overlayColorType': ColorType;
-    /**
-     * 
-     * @type {StandardImageTextBlock}
-     * @memberof StandardImageTextOverlayModule
-     */
     'block'?: StandardImageTextBlock;
 }
 

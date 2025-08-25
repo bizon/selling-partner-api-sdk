@@ -22,20 +22,11 @@ import type { PlacementOption } from './placement-option';
 
 /**
  * The `listPlacementOptions` response.
- * @export
- * @interface ListPlacementOptionsResponse
  */
 export interface ListPlacementOptionsResponse {
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof ListPlacementOptionsResponse
-     */
     'pagination'?: Pagination;
     /**
      * Placement options generated for the inbound plan.
-     * @type {Array<PlacementOption>}
-     * @memberof ListPlacementOptionsResponse
      */
     'placementOptions': Array<PlacementOption>;
 }

@@ -16,20 +16,14 @@
 
 /**
  * Shipment Status details.
- * @export
- * @interface ShipmentStatusDetails
  */
 export interface ShipmentStatusDetails {
     /**
      * Current status of the shipment on whether it is picked up or scheduled.
-     * @type {string}
-     * @memberof ShipmentStatusDetails
      */
     'shipmentStatus'?: ShipmentStatusDetailsShipmentStatusEnum;
     /**
      * Date and time on last status update received for the shipment
-     * @type {string}
-     * @memberof ShipmentStatusDetails
      */
     'shipmentStatusDate'?: string;
 }

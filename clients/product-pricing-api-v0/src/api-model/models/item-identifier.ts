@@ -19,33 +19,20 @@ import type { ConditionType } from './condition-type';
 
 /**
  * Information that identifies an item.
- * @export
- * @interface ItemIdentifier
  */
 export interface ItemIdentifier {
     /**
      * A marketplace identifier. Specifies the marketplace from which prices are returned.
-     * @type {string}
-     * @memberof ItemIdentifier
      */
     'MarketplaceId': string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof ItemIdentifier
      */
     'ASIN'?: string;
     /**
      * The seller stock keeping unit (SKU) of the item.
-     * @type {string}
-     * @memberof ItemIdentifier
      */
     'SellerSKU'?: string;
-    /**
-     * 
-     * @type {ConditionType}
-     * @memberof ItemIdentifier
-     */
     'ItemCondition': ConditionType;
 }
 

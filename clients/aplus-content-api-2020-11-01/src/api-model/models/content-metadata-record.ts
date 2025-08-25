@@ -19,21 +19,12 @@ import type { ContentMetadata } from './content-metadata';
 
 /**
  * The metadata for an A+ Content document, with additional information for content management.
- * @export
- * @interface ContentMetadataRecord
  */
 export interface ContentMetadataRecord {
     /**
      * A unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-     * @type {string}
-     * @memberof ContentMetadataRecord
      */
     'contentReferenceKey': string;
-    /**
-     * 
-     * @type {ContentMetadata}
-     * @memberof ContentMetadataRecord
-     */
     'contentMetadata': ContentMetadata;
 }
 

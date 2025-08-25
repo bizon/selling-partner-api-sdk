@@ -16,14 +16,10 @@
 
 /**
  * Response schema.
- * @export
- * @interface CreateFeedResponse
  */
 export interface CreateFeedResponse {
     /**
      * The identifier for the feed. This identifier is unique only in combination with a seller ID.
-     * @type {string}
-     * @memberof CreateFeedResponse
      */
     'feedId': string;
 }

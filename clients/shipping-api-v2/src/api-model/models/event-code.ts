@@ -16,8 +16,6 @@
 
 /**
  * The tracking event type.
- * @export
- * @enum {string}
  */
 
 export const EventCode = {

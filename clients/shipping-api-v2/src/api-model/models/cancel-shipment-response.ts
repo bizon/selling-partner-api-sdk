@@ -16,14 +16,10 @@
 
 /**
  * Response schema for the cancelShipment operation.
- * @export
- * @interface CancelShipmentResponse
  */
 export interface CancelShipmentResponse {
     /**
      * The payload for the cancelShipment operation.
-     * @type {{ [key: string]: object; }}
-     * @memberof CancelShipmentResponse
      */
     'payload'?: { [key: string]: object; };
 }

@@ -28,56 +28,26 @@ import type { TransferRatePreview } from './transfer-rate-preview';
 
 /**
  * Request body to initiate a transaction from a SW bank account to another customer defined bank account 
- * @export
- * @interface TransactionInitiationRequest
  */
 export interface TransactionInitiationRequest {
     /**
      * The unique identifier of the source Amazon SW bank account from where the money needs to be debited 
-     * @type {string}
-     * @memberof TransactionInitiationRequest
      */
     'sourceAccountId': string;
     /**
      * Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited 
-     * @type {string}
-     * @memberof TransactionInitiationRequest
      */
     'destinationAccountId'?: string;
     /**
      * Optional field to specify description for the transaction 
-     * @type {string}
-     * @memberof TransactionInitiationRequest
      */
     'description': string;
-    /**
-     * 
-     * @type {TransactionInstrumentDetails}
-     * @memberof TransactionInitiationRequest
-     */
     'destinationTransactionInstrument': TransactionInstrumentDetails;
-    /**
-     * 
-     * @type {AccountHolderAddress}
-     * @memberof TransactionInitiationRequest
-     */
     'destinationAccountHolderAddress'?: AccountHolderAddress;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof TransactionInitiationRequest
-     */
     'sourceAmount': Currency;
-    /**
-     * 
-     * @type {TransferRatePreview}
-     * @memberof TransactionInitiationRequest
-     */
     'transferRateDetails'?: TransferRatePreview;
     /**
      * The transaction initiation request time in date-time format 
-     * @type {string}
-     * @memberof TransactionInitiationRequest
      */
     'requestTime': string;
 }

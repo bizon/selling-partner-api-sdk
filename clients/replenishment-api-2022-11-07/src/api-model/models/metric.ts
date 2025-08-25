@@ -16,8 +16,6 @@
 
 /**
  * The metric name and description.
- * @export
- * @enum {string}
  */
 
 export const Metric = {

@@ -16,20 +16,14 @@
 
 /**
  * The start and end time that specifies the time interval of an event.
- * @export
- * @interface TimeWindow
  */
 export interface TimeWindow {
     /**
      * The start time of the time window.
-     * @type {string}
-     * @memberof TimeWindow
      */
     'start'?: string;
     /**
      * The end time of the time window.
-     * @type {string}
-     * @memberof TimeWindow
      */
     'end'?: string;
 }

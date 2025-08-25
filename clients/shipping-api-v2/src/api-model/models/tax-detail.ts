@@ -19,20 +19,11 @@ import type { TaxType } from './tax-type';
 
 /**
  * Indicates the tax specifications associated with the shipment for customs compliance purposes in certain regions.
- * @export
- * @interface TaxDetail
  */
 export interface TaxDetail {
-    /**
-     * 
-     * @type {TaxType}
-     * @memberof TaxDetail
-     */
     'taxType': TaxType;
     /**
      * The shipper\'s tax registration number associated with the shipment for customs compliance purposes in certain regions.
-     * @type {string}
-     * @memberof TaxDetail
      */
     'taxRegistrationNumber': string;
 }

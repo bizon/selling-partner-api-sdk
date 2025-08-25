@@ -16,14 +16,10 @@
 
 /**
  * The `generatePlacementOptions` response.
- * @export
- * @interface GeneratePlacementOptionsResponse
  */
 export interface GeneratePlacementOptionsResponse {
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof GeneratePlacementOptionsResponse
      */
     'operationId': string;
 }

@@ -19,32 +19,22 @@ import type { AppointmentSlot } from './appointment-slot';
 
 /**
  * Availability information as per the service context queried.
- * @export
- * @interface AppointmentSlotReport
  */
 export interface AppointmentSlotReport {
     /**
      * Defines the type of slots.
-     * @type {string}
-     * @memberof AppointmentSlotReport
      */
     'schedulingType'?: AppointmentSlotReportSchedulingTypeEnum;
     /**
      * Start Time from which the appointment slots are generated in ISO 8601 format.
-     * @type {string}
-     * @memberof AppointmentSlotReport
      */
     'startTime'?: string;
     /**
      * End Time up to which the appointment slots are generated in ISO 8601 format.
-     * @type {string}
-     * @memberof AppointmentSlotReport
      */
     'endTime'?: string;
     /**
      * A list of time windows along with associated capacity in which the service can be performed.
-     * @type {Array<AppointmentSlot>}
-     * @memberof AppointmentSlotReport
      */
     'appointmentSlots'?: Array<AppointmentSlot>;
 }

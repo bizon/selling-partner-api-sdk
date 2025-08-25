@@ -25,32 +25,16 @@ import type { PrepInstruction } from './prep-instruction';
 
 /**
  * Item preparation instructions to help with item sourcing decisions.
- * @export
- * @interface ASINPrepInstructions
  */
 export interface ASINPrepInstructions {
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof ASINPrepInstructions
      */
     'ASIN'?: string;
-    /**
-     * 
-     * @type {BarcodeInstruction}
-     * @memberof ASINPrepInstructions
-     */
     'BarcodeInstruction'?: BarcodeInstruction;
-    /**
-     * 
-     * @type {PrepGuidance}
-     * @memberof ASINPrepInstructions
-     */
     'PrepGuidance'?: PrepGuidance;
     /**
      * A list of preparation instructions to help with item sourcing decisions.
-     * @type {Array<PrepInstruction>}
-     * @memberof ASINPrepInstructions
      */
     'PrepInstructionList'?: Array<PrepInstruction>;
 }

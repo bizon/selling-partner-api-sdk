@@ -19,15 +19,8 @@ import type { TextComponent } from './text-component';
 
 /**
  * A list of rich text content that is typically presented in a text box.
- * @export
- * @interface ParagraphComponent
  */
 export interface ParagraphComponent {
-    /**
-     * 
-     * @type {Array<TextComponent>}
-     * @memberof ParagraphComponent
-     */
     'textList': Array<TextComponent>;
 }
 

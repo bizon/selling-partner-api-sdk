@@ -19,33 +19,17 @@ import type { Money } from './money';
 
 /**
  * Details of tax amount applied.
- * @export
- * @interface TaxDetails
  */
 export interface TaxDetails {
     /**
      * Type of the tax applied.
-     * @type {string}
-     * @memberof TaxDetails
      */
     'taxType': TaxDetailsTaxTypeEnum;
     /**
      * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. <br>**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
-     * @type {string}
-     * @memberof TaxDetails
      */
     'taxRate'?: string;
-    /**
-     * 
-     * @type {Money}
-     * @memberof TaxDetails
-     */
     'taxAmount': Money;
-    /**
-     * 
-     * @type {Money}
-     * @memberof TaxDetails
-     */
     'taxableAmount'?: Money;
 }
 

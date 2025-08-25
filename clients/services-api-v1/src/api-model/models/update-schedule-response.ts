@@ -19,20 +19,14 @@ import type { UpdateScheduleRecord } from './update-schedule-record';
 
 /**
  * Response schema for the `updateSchedule` operation.
- * @export
- * @interface UpdateScheduleResponse
  */
 export interface UpdateScheduleResponse {
     /**
      * Contains the `UpdateScheduleRecords` for which the error/warning has occurred.
-     * @type {Array<UpdateScheduleRecord>}
-     * @memberof UpdateScheduleResponse
      */
     'payload'?: Array<UpdateScheduleRecord>;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof UpdateScheduleResponse
      */
     'errors'?: Array<Error>;
 }

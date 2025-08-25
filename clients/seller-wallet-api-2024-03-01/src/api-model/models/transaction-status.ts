@@ -16,8 +16,6 @@
 
 /**
  * Represents current status of the transaction.
- * @export
- * @enum {string}
  */
 
 export const TransactionStatus = {

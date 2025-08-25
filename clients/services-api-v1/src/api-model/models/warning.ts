@@ -16,26 +16,18 @@
 
 /**
  * Warning returned when the request is successful, but there are important callouts based on which API clients should take defined actions.
- * @export
- * @interface Warning
  */
 export interface Warning {
     /**
      * An warning code that identifies the type of warning that occurred.
-     * @type {string}
-     * @memberof Warning
      */
     'code': string;
     /**
      * A message that describes the warning condition in a human-readable form.
-     * @type {string}
-     * @memberof Warning
      */
     'message': string;
     /**
      * Additional details that can help the caller understand or address the warning.
-     * @type {string}
-     * @memberof Warning
      */
     'details'?: string;
 }

@@ -19,27 +19,13 @@ import type { Dimensions } from './dimensions';
 
 /**
  * Dimensions that are associated with the item in the Amazon catalog for the indicated `marketplaceId`.
- * @export
- * @interface ItemDimensionsByMarketplace
  */
 export interface ItemDimensionsByMarketplace {
     /**
      * Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof ItemDimensionsByMarketplace
      */
     'marketplaceId': string;
-    /**
-     * 
-     * @type {Dimensions}
-     * @memberof ItemDimensionsByMarketplace
-     */
     'item'?: Dimensions;
-    /**
-     * 
-     * @type {Dimensions}
-     * @memberof ItemDimensionsByMarketplace
-     */
     'package'?: Dimensions;
 }
 

@@ -25,27 +25,10 @@ import type { Price } from './price';
 
 /**
  * Schema for `currentFeaturedOffer` or `competingFeaturedOffer`.
- * @export
- * @interface FeaturedOffer
  */
 export interface FeaturedOffer {
-    /**
-     * 
-     * @type {OfferIdentifier}
-     * @memberof FeaturedOffer
-     */
     'offerIdentifier': OfferIdentifier;
-    /**
-     * 
-     * @type {Condition}
-     * @memberof FeaturedOffer
-     */
     'condition'?: Condition;
-    /**
-     * 
-     * @type {Price}
-     * @memberof FeaturedOffer
-     */
     'price'?: Price;
 }
 

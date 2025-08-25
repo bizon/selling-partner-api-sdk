@@ -19,14 +19,10 @@ import type { ListingOffersResponse } from './listing-offers-response';
 
 /**
  * The response associated with the `getListingOffersBatch` API call.
- * @export
- * @interface GetListingOffersBatchResponse
  */
 export interface GetListingOffersBatchResponse {
     /**
      * A list of `getListingOffers` batched responses.
-     * @type {Array<ListingOffersResponse>}
-     * @memberof GetListingOffersBatchResponse
      */
     'responses'?: Array<ListingOffersResponse>;
 }

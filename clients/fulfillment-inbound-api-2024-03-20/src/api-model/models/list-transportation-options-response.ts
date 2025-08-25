@@ -22,20 +22,11 @@ import type { TransportationOption } from './transportation-option';
 
 /**
  * The `listTransportationOptions` response.
- * @export
- * @interface ListTransportationOptionsResponse
  */
 export interface ListTransportationOptionsResponse {
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof ListTransportationOptionsResponse
-     */
     'pagination'?: Pagination;
     /**
      * Transportation options generated for the placement option.
-     * @type {Array<TransportationOption>}
-     * @memberof ListTransportationOptionsResponse
      */
     'transportationOptions': Array<TransportationOption>;
 }

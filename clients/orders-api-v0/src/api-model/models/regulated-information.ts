@@ -19,14 +19,10 @@ import type { RegulatedInformationField } from './regulated-information-field';
 
 /**
  * The regulated information collected during purchase and used to verify the order.
- * @export
- * @interface RegulatedInformation
  */
 export interface RegulatedInformation {
     /**
      * A list of regulated information fields as collected from the regulatory form.
-     * @type {Array<RegulatedInformationField>}
-     * @memberof RegulatedInformation
      */
     'Fields': Array<RegulatedInformationField>;
 }

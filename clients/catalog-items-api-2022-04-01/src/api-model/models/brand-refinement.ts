@@ -16,20 +16,14 @@
 
 /**
  * A brand that you can use to refine your search.
- * @export
- * @interface BrandRefinement
  */
 export interface BrandRefinement {
     /**
      * The estimated number of results that would be returned if you refine your search by the specified `brandName`.
-     * @type {number}
-     * @memberof BrandRefinement
      */
     'numberOfResults': number;
     /**
      * The brand name that you can use to refine your search.
-     * @type {string}
-     * @memberof BrandRefinement
      */
     'brandName': string;
 }

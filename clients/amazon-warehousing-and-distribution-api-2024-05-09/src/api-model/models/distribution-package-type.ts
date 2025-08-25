@@ -16,8 +16,6 @@
 
 /**
  * Type of distribution packages.
- * @export
- * @enum {string}
  */
 
 export const DistributionPackageType = {

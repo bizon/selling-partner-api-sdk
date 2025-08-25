@@ -22,21 +22,9 @@ import type { ScheduleExpressionType } from './schedule-expression-type';
 
 /**
  * Parameters containing information of the expression that defines when the schedule runs. The following formats are supported. 
- * @export
- * @interface ScheduleExpression
  */
 export interface ScheduleExpression {
-    /**
-     * 
-     * @type {ScheduleExpressionType}
-     * @memberof ScheduleExpression
-     */
     'scheduleExpressionType': ScheduleExpressionType;
-    /**
-     * 
-     * @type {RecurringFrequency}
-     * @memberof ScheduleExpression
-     */
     'recurringFrequency'?: RecurringFrequency;
 }
 

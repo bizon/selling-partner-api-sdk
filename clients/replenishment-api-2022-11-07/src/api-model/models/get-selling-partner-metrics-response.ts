@@ -19,14 +19,10 @@ import type { GetSellingPartnerMetricsResponseMetric } from './get-selling-partn
 
 /**
  * The response schema for the `getSellingPartnerMetrics` operation.
- * @export
- * @interface GetSellingPartnerMetricsResponse
  */
 export interface GetSellingPartnerMetricsResponse {
     /**
      * A list of metrics data for the selling partner.
-     * @type {Array<GetSellingPartnerMetricsResponseMetric>}
-     * @memberof GetSellingPartnerMetricsResponse
      */
     'metrics'?: Array<GetSellingPartnerMetricsResponseMetric>;
 }

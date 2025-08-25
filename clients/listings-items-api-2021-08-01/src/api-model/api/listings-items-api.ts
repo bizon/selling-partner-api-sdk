@@ -35,7 +35,6 @@ import type { ListingsItemPutRequest } from '../models';
 import type { ListingsItemSubmissionResponse } from '../models';
 /**
  * ListingsItemsApi - axios parameter creator
- * @export
  */
 export const ListingsItemsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -410,7 +409,6 @@ export const ListingsItemsApiAxiosParamCreator = function (configuration?: Confi
 
 /**
  * ListingsItemsApi - functional programming interface
- * @export
  */
 export const ListingsItemsApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ListingsItemsApiAxiosParamCreator(configuration)
@@ -517,7 +515,6 @@ export const ListingsItemsApiFp = function(configuration?: Configuration) {
 
 /**
  * ListingsItemsApi - factory interface
- * @export
  */
 export const ListingsItemsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = ListingsItemsApiFp(configuration)
@@ -572,338 +569,241 @@ export const ListingsItemsApiFactory = function (configuration?: Configuration, 
 
 /**
  * Request parameters for deleteListingsItem operation in ListingsItemsApi.
- * @export
- * @interface ListingsItemsApiDeleteListingsItemRequest
  */
 export interface ListingsItemsApiDeleteListingsItemRequest {
     /**
      * A selling partner identifier, such as a merchant account or vendor code.
-     * @type {string}
-     * @memberof ListingsItemsApiDeleteListingsItem
      */
     readonly sellerId: string
 
     /**
      * A selling partner provided identifier for an Amazon listing.
-     * @type {string}
-     * @memberof ListingsItemsApiDeleteListingsItem
      */
     readonly sku: string
 
     /**
      * A comma-delimited list of Amazon marketplace identifiers for the request.
-     * @type {Array<string>}
-     * @memberof ListingsItemsApiDeleteListingsItem
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale.
-     * @type {string}
-     * @memberof ListingsItemsApiDeleteListingsItem
      */
     readonly issueLocale?: string
 }
 
 /**
  * Request parameters for getListingsItem operation in ListingsItemsApi.
- * @export
- * @interface ListingsItemsApiGetListingsItemRequest
  */
 export interface ListingsItemsApiGetListingsItemRequest {
     /**
      * A selling partner identifier, such as a merchant account or vendor code.
-     * @type {string}
-     * @memberof ListingsItemsApiGetListingsItem
      */
     readonly sellerId: string
 
     /**
      * A selling partner provided identifier for an Amazon listing.
-     * @type {string}
-     * @memberof ListingsItemsApiGetListingsItem
      */
     readonly sku: string
 
     /**
      * A comma-delimited list of Amazon marketplace identifiers for the request.
-     * @type {Array<string>}
-     * @memberof ListingsItemsApiGetListingsItem
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale.
-     * @type {string}
-     * @memberof ListingsItemsApiGetListingsItem
      */
     readonly issueLocale?: string
 
     /**
      * A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;.
-     * @type {Array<'summaries' | 'attributes' | 'issues' | 'offers' | 'fulfillmentAvailability' | 'procurement' | 'relationships' | 'productTypes'>}
-     * @memberof ListingsItemsApiGetListingsItem
      */
     readonly includedData?: Array<GetListingsItemIncludedDataEnum>
 }
 
 /**
  * Request parameters for patchListingsItem operation in ListingsItemsApi.
- * @export
- * @interface ListingsItemsApiPatchListingsItemRequest
  */
 export interface ListingsItemsApiPatchListingsItemRequest {
     /**
      * A selling partner identifier, such as a merchant account or vendor code.
-     * @type {string}
-     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly sellerId: string
 
     /**
      * A selling partner provided identifier for an Amazon listing.
-     * @type {string}
-     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly sku: string
 
     /**
      * A comma-delimited list of Amazon marketplace identifiers for the request.
-     * @type {Array<string>}
-     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * The request body schema for the &#x60;patchListingsItem&#x60; operation.
-     * @type {ListingsItemPatchRequest}
-     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly body: ListingsItemPatchRequest
 
     /**
      * A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;.
-     * @type {Array<'identifiers' | 'issues'>}
-     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly includedData?: Array<PatchListingsItemIncludedDataEnum>
 
     /**
      * The mode of operation for the request.
-     * @type {'VALIDATION_PREVIEW'}
-     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly mode?: PatchListingsItemModeEnum
 
     /**
      * A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale.
-     * @type {string}
-     * @memberof ListingsItemsApiPatchListingsItem
      */
     readonly issueLocale?: string
 }
 
 /**
  * Request parameters for putListingsItem operation in ListingsItemsApi.
- * @export
- * @interface ListingsItemsApiPutListingsItemRequest
  */
 export interface ListingsItemsApiPutListingsItemRequest {
     /**
      * A selling partner identifier, such as a merchant account or vendor code.
-     * @type {string}
-     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly sellerId: string
 
     /**
      * A selling partner provided identifier for an Amazon listing.
-     * @type {string}
-     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly sku: string
 
     /**
      * A comma-delimited list of Amazon marketplace identifiers for the request.
-     * @type {Array<string>}
-     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * The request body schema for the &#x60;putListingsItem&#x60; operation.
-     * @type {ListingsItemPutRequest}
-     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly body: ListingsItemPutRequest
 
     /**
      * A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;.
-     * @type {Array<'identifiers' | 'issues'>}
-     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly includedData?: Array<PutListingsItemIncludedDataEnum>
 
     /**
      * The mode of operation for the request.
-     * @type {'VALIDATION_PREVIEW'}
-     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly mode?: PutListingsItemModeEnum
 
     /**
      * A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale.
-     * @type {string}
-     * @memberof ListingsItemsApiPutListingsItem
      */
     readonly issueLocale?: string
 }
 
 /**
  * Request parameters for searchListingsItems operation in ListingsItemsApi.
- * @export
- * @interface ListingsItemsApiSearchListingsItemsRequest
  */
 export interface ListingsItemsApiSearchListingsItemsRequest {
     /**
      * A selling partner identifier, such as a merchant account or vendor code.
-     * @type {string}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly sellerId: string
 
     /**
      * A comma-delimited list of Amazon marketplace identifiers for the request.
-     * @type {Array<string>}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * A locale that is used to localize issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. When a localization is not available in the specified locale, localized messages default to \&quot;en_US\&quot;.
-     * @type {string}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly issueLocale?: string
 
     /**
      * A comma-delimited list of datasets that you want to include in the response. Default: &#x60;summaries&#x60;.
-     * @type {Array<'summaries' | 'attributes' | 'issues' | 'offers' | 'fulfillmentAvailability' | 'procurement' | 'relationships' | 'productTypes'>}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly includedData?: Array<SearchListingsItemsIncludedDataEnum>
 
     /**
      * A comma-delimited list of product identifiers that you can use to search for listings items.   **Note**:  1. This is required when you specify &#x60;identifiersType&#x60;. 2. You cannot use \&#39;identifiers\&#39; if you specify &#x60;variationParentSku&#x60; or &#x60;packageHierarchySku&#x60;.
-     * @type {Array<string>}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly identifiers?: Array<string>
 
     /**
      * A type of product identifiers that you can use to search for listings items.   **Note**:  This is required when &#x60;identifiers&#x60; is provided.
-     * @type {'ASIN' | 'EAN' | 'FNSKU' | 'GTIN' | 'ISBN' | 'JAN' | 'MINSAN' | 'SKU' | 'UPC'}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly identifiersType?: SearchListingsItemsIdentifiersTypeEnum
 
     /**
      * Filters results to include listing items that are variation children of the specified SKU.   **Note**: You cannot use &#x60;variationParentSku&#x60; if you include &#x60;identifiers&#x60; or &#x60;packageHierarchySku&#x60; in your request.
-     * @type {string}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly variationParentSku?: string
 
     /**
      * Filter results to include listing items that contain or are contained by the specified SKU.   **Note**: You cannot use &#x60;packageHierarchySku&#x60; if you include &#x60;identifiers&#x60; or &#x60;variationParentSku&#x60; in your request.
-     * @type {string}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly packageHierarchySku?: string
 
     /**
      * A date-time that is used to filter listing items. The response includes listings items that were created at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
-     * @type {string}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly createdAfter?: string
 
     /**
      * A date-time that is used to filter listing items. The response includes listings items that were created at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
-     * @type {string}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly createdBefore?: string
 
     /**
      * A date-time that is used to filter listing items. The response includes listings items that were last updated at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
-     * @type {string}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly lastUpdatedAfter?: string
 
     /**
      * A date-time that is used to filter listing items. The response includes listings items that were last updated at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
-     * @type {string}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly lastUpdatedBefore?: string
 
     /**
      * Filter results to include only listing items that have issues that match one or more of the specified severity levels.
-     * @type {Array<'WARNING' | 'ERROR'>}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly withIssueSeverity?: Array<SearchListingsItemsWithIssueSeverityEnum>
 
     /**
      * Filter results to include only listing items that have the specified status.
-     * @type {Array<'BUYABLE' | 'DISCOVERABLE'>}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly withStatus?: Array<SearchListingsItemsWithStatusEnum>
 
     /**
      * Filter results to include only listing items that don\&#39;t contain the specified statuses.
-     * @type {Array<'BUYABLE' | 'DISCOVERABLE'>}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly withoutStatus?: Array<SearchListingsItemsWithoutStatusEnum>
 
     /**
      * An attribute by which to sort the returned listing items.
-     * @type {'sku' | 'createdDate' | 'lastUpdatedDate'}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly sortBy?: SearchListingsItemsSortByEnum
 
     /**
      * The order in which to sort the result items.
-     * @type {'ASC' | 'DESC'}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly sortOrder?: SearchListingsItemsSortOrderEnum
 
     /**
      * The number of results that you want to include on each page.
-     * @type {number}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly pageSize?: number
 
     /**
      * A token that you can use to fetch a specific page when there are multiple pages of results.
-     * @type {string}
-     * @memberof ListingsItemsApiSearchListingsItems
      */
     readonly pageToken?: string
 }
 
 /**
  * ListingsItemsApi - object-oriented interface
- * @export
- * @class ListingsItemsApi
- * @extends {BaseAPI}
  */
 export class ListingsItemsApi extends BaseAPI {
     /**
@@ -911,7 +811,6 @@ export class ListingsItemsApi extends BaseAPI {
      * @param {ListingsItemsApiDeleteListingsItemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ListingsItemsApi
      */
     public deleteListingsItem(requestParameters: ListingsItemsApiDeleteListingsItemRequest, options?: RawAxiosRequestConfig) {
         return ListingsItemsApiFp(this.configuration).deleteListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
@@ -922,7 +821,6 @@ export class ListingsItemsApi extends BaseAPI {
      * @param {ListingsItemsApiGetListingsItemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ListingsItemsApi
      */
     public getListingsItem(requestParameters: ListingsItemsApiGetListingsItemRequest, options?: RawAxiosRequestConfig) {
         return ListingsItemsApiFp(this.configuration).getListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.issueLocale, requestParameters.includedData, options).then((request) => request(this.axios, this.basePath));
@@ -933,7 +831,6 @@ export class ListingsItemsApi extends BaseAPI {
      * @param {ListingsItemsApiPatchListingsItemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ListingsItemsApi
      */
     public patchListingsItem(requestParameters: ListingsItemsApiPatchListingsItemRequest, options?: RawAxiosRequestConfig) {
         return ListingsItemsApiFp(this.configuration).patchListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.includedData, requestParameters.mode, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
@@ -944,7 +841,6 @@ export class ListingsItemsApi extends BaseAPI {
      * @param {ListingsItemsApiPutListingsItemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ListingsItemsApi
      */
     public putListingsItem(requestParameters: ListingsItemsApiPutListingsItemRequest, options?: RawAxiosRequestConfig) {
         return ListingsItemsApiFp(this.configuration).putListingsItem(requestParameters.sellerId, requestParameters.sku, requestParameters.marketplaceIds, requestParameters.body, requestParameters.includedData, requestParameters.mode, requestParameters.issueLocale, options).then((request) => request(this.axios, this.basePath));
@@ -955,16 +851,12 @@ export class ListingsItemsApi extends BaseAPI {
      * @param {ListingsItemsApiSearchListingsItemsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ListingsItemsApi
      */
     public searchListingsItems(requestParameters: ListingsItemsApiSearchListingsItemsRequest, options?: RawAxiosRequestConfig) {
         return ListingsItemsApiFp(this.configuration).searchListingsItems(requestParameters.sellerId, requestParameters.marketplaceIds, requestParameters.issueLocale, requestParameters.includedData, requestParameters.identifiers, requestParameters.identifiersType, requestParameters.variationParentSku, requestParameters.packageHierarchySku, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.withIssueSeverity, requestParameters.withStatus, requestParameters.withoutStatus, requestParameters.sortBy, requestParameters.sortOrder, requestParameters.pageSize, requestParameters.pageToken, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetListingsItemIncludedDataEnum = {
     Summaries: 'summaries',
     Attributes: 'attributes',
@@ -976,39 +868,24 @@ export const GetListingsItemIncludedDataEnum = {
     ProductTypes: 'productTypes'
 } as const;
 export type GetListingsItemIncludedDataEnum = typeof GetListingsItemIncludedDataEnum[keyof typeof GetListingsItemIncludedDataEnum];
-/**
- * @export
- */
 export const PatchListingsItemIncludedDataEnum = {
     Identifiers: 'identifiers',
     Issues: 'issues'
 } as const;
 export type PatchListingsItemIncludedDataEnum = typeof PatchListingsItemIncludedDataEnum[keyof typeof PatchListingsItemIncludedDataEnum];
-/**
- * @export
- */
 export const PatchListingsItemModeEnum = {
     ValidationPreview: 'VALIDATION_PREVIEW'
 } as const;
 export type PatchListingsItemModeEnum = typeof PatchListingsItemModeEnum[keyof typeof PatchListingsItemModeEnum];
-/**
- * @export
- */
 export const PutListingsItemIncludedDataEnum = {
     Identifiers: 'identifiers',
     Issues: 'issues'
 } as const;
 export type PutListingsItemIncludedDataEnum = typeof PutListingsItemIncludedDataEnum[keyof typeof PutListingsItemIncludedDataEnum];
-/**
- * @export
- */
 export const PutListingsItemModeEnum = {
     ValidationPreview: 'VALIDATION_PREVIEW'
 } as const;
 export type PutListingsItemModeEnum = typeof PutListingsItemModeEnum[keyof typeof PutListingsItemModeEnum];
-/**
- * @export
- */
 export const SearchListingsItemsIncludedDataEnum = {
     Summaries: 'summaries',
     Attributes: 'attributes',
@@ -1020,9 +897,6 @@ export const SearchListingsItemsIncludedDataEnum = {
     ProductTypes: 'productTypes'
 } as const;
 export type SearchListingsItemsIncludedDataEnum = typeof SearchListingsItemsIncludedDataEnum[keyof typeof SearchListingsItemsIncludedDataEnum];
-/**
- * @export
- */
 export const SearchListingsItemsIdentifiersTypeEnum = {
     Asin: 'ASIN',
     Ean: 'EAN',
@@ -1035,42 +909,27 @@ export const SearchListingsItemsIdentifiersTypeEnum = {
     Upc: 'UPC'
 } as const;
 export type SearchListingsItemsIdentifiersTypeEnum = typeof SearchListingsItemsIdentifiersTypeEnum[keyof typeof SearchListingsItemsIdentifiersTypeEnum];
-/**
- * @export
- */
 export const SearchListingsItemsWithIssueSeverityEnum = {
     Warning: 'WARNING',
     Error: 'ERROR'
 } as const;
 export type SearchListingsItemsWithIssueSeverityEnum = typeof SearchListingsItemsWithIssueSeverityEnum[keyof typeof SearchListingsItemsWithIssueSeverityEnum];
-/**
- * @export
- */
 export const SearchListingsItemsWithStatusEnum = {
     Buyable: 'BUYABLE',
     Discoverable: 'DISCOVERABLE'
 } as const;
 export type SearchListingsItemsWithStatusEnum = typeof SearchListingsItemsWithStatusEnum[keyof typeof SearchListingsItemsWithStatusEnum];
-/**
- * @export
- */
 export const SearchListingsItemsWithoutStatusEnum = {
     Buyable: 'BUYABLE',
     Discoverable: 'DISCOVERABLE'
 } as const;
 export type SearchListingsItemsWithoutStatusEnum = typeof SearchListingsItemsWithoutStatusEnum[keyof typeof SearchListingsItemsWithoutStatusEnum];
-/**
- * @export
- */
 export const SearchListingsItemsSortByEnum = {
     Sku: 'sku',
     CreatedDate: 'createdDate',
     LastUpdatedDate: 'lastUpdatedDate'
 } as const;
 export type SearchListingsItemsSortByEnum = typeof SearchListingsItemsSortByEnum[keyof typeof SearchListingsItemsSortByEnum];
-/**
- * @export
- */
 export const SearchListingsItemsSortOrderEnum = {
     Asc: 'ASC',
     Desc: 'DESC'

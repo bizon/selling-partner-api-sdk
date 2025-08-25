@@ -31,44 +31,21 @@ import type { TimePeriodType } from './time-period-type';
 
 /**
  * The request body for the `getSellingPartnerMetrics` operation.
- * @export
- * @interface GetSellingPartnerMetricsRequest
  */
 export interface GetSellingPartnerMetricsRequest {
-    /**
-     * 
-     * @type {AggregationFrequency}
-     * @memberof GetSellingPartnerMetricsRequest
-     */
     'aggregationFrequency'?: AggregationFrequency;
-    /**
-     * 
-     * @type {TimeInterval}
-     * @memberof GetSellingPartnerMetricsRequest
-     */
     'timeInterval': TimeInterval;
     /**
      * The list of metrics requested. If no metric value is provided, data for all of the metrics will be returned.
-     * @type {Set<Metric>}
-     * @memberof GetSellingPartnerMetricsRequest
      */
     'metrics'?: Set<Metric>;
-    /**
-     * 
-     * @type {TimePeriodType}
-     * @memberof GetSellingPartnerMetricsRequest
-     */
     'timePeriodType': TimePeriodType;
     /**
      * The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
-     * @type {string}
-     * @memberof GetSellingPartnerMetricsRequest
      */
     'marketplaceId': string;
     /**
      * A list of replenishment program types.
-     * @type {Set<ProgramType>}
-     * @memberof GetSellingPartnerMetricsRequest
      */
     'programTypes': Set<ProgramType>;
 }

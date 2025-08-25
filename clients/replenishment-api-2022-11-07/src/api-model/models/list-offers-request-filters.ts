@@ -28,50 +28,28 @@ import type { Promotion } from './promotion';
 
 /**
  * Use these parameters to filter results. Any result must match all of the provided parameters. For any parameter that is an array, the result must match at least one element in the provided array.
- * @export
- * @interface ListOffersRequestFilters
  */
 export interface ListOffersRequestFilters {
     /**
      * The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
-     * @type {string}
-     * @memberof ListOffersRequestFilters
      */
     'marketplaceId': string;
     /**
      * A list of SKUs to filter. This filter is only supported for sellers and not for vendors.
-     * @type {Set<string>}
-     * @memberof ListOffersRequestFilters
      */
     'skus'?: Set<string>;
     /**
      * A list of Amazon Standard Identification Numbers (ASINs).
-     * @type {Set<string>}
-     * @memberof ListOffersRequestFilters
      */
     'asins'?: Set<string>;
     /**
      * A list of eligibilities associated with an offer.
-     * @type {Set<EligibilityStatus>}
-     * @memberof ListOffersRequestFilters
      */
     'eligibilities'?: Set<EligibilityStatus>;
-    /**
-     * 
-     * @type {Preference}
-     * @memberof ListOffersRequestFilters
-     */
     'preferences'?: Preference;
-    /**
-     * 
-     * @type {Promotion}
-     * @memberof ListOffersRequestFilters
-     */
     'promotions'?: Promotion;
     /**
      * A list of replenishment program types.
-     * @type {Set<ProgramType>}
-     * @memberof ListOffersRequestFilters
      */
     'programTypes': Set<ProgramType>;
 }

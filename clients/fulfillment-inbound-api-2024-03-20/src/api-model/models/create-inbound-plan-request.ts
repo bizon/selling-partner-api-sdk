@@ -22,33 +22,20 @@ import type { ItemInput } from './item-input';
 
 /**
  * The `createInboundPlan` request.
- * @export
- * @interface CreateInboundPlanRequest
  */
 export interface CreateInboundPlanRequest {
     /**
      * Marketplaces where the items need to be shipped to. Currently only one marketplace can be selected in this request.
-     * @type {Array<string>}
-     * @memberof CreateInboundPlanRequest
      */
     'destinationMarketplaces': Array<string>;
     /**
      * Items included in this plan.
-     * @type {Array<ItemInput>}
-     * @memberof CreateInboundPlanRequest
      */
     'items': Array<ItemInput>;
     /**
      * Name for the Inbound Plan. If one isn\'t provided, a default name will be provided.
-     * @type {string}
-     * @memberof CreateInboundPlanRequest
      */
     'name'?: string;
-    /**
-     * 
-     * @type {AddressInput}
-     * @memberof CreateInboundPlanRequest
-     */
     'sourceAddress': AddressInput;
 }
 

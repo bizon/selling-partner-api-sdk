@@ -19,27 +19,16 @@ import type { Currency } from './currency';
 
 /**
  * A value-added service available for purchase with a shipment service offering.
- * @export
- * @interface ValueAddedService
  */
 export interface ValueAddedService {
     /**
      * The identifier for the value-added service.
-     * @type {string}
-     * @memberof ValueAddedService
      */
     'id': string;
     /**
      * The name of the value-added service.
-     * @type {string}
-     * @memberof ValueAddedService
      */
     'name': string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof ValueAddedService
-     */
     'cost': Currency;
 }
 

@@ -19,26 +19,18 @@ import type { ChargeComponent } from './charge-component';
 
 /**
  * An item from a SAFE-T claim reimbursement.
- * @export
- * @interface SAFETReimbursementItem
  */
 export interface SAFETReimbursementItem {
     /**
      * A list of charge information on the seller\'s account.
-     * @type {Array<ChargeComponent>}
-     * @memberof SAFETReimbursementItem
      */
     'itemChargeList'?: Array<ChargeComponent>;
     /**
      * The description of the item as shown on the product detail page on the retail website.
-     * @type {string}
-     * @memberof SAFETReimbursementItem
      */
     'productDescription'?: string;
     /**
      * The number of units of the item being reimbursed.
-     * @type {string}
-     * @memberof SAFETReimbursementItem
      */
     'quantity'?: string;
 }

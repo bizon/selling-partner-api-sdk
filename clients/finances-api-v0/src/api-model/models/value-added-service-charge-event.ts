@@ -19,33 +19,20 @@ import type { Currency } from './currency';
 
 /**
  * An event related to a value added service charge.
- * @export
- * @interface ValueAddedServiceChargeEvent
  */
 export interface ValueAddedServiceChargeEvent {
     /**
      * Indicates the type of transaction.  Example: \'Other Support Service fees\'
-     * @type {string}
-     * @memberof ValueAddedServiceChargeEvent
      */
     'TransactionType'?: string;
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof ValueAddedServiceChargeEvent
      */
     'PostedDate'?: string;
     /**
      * A short description of the service charge event.
-     * @type {string}
-     * @memberof ValueAddedServiceChargeEvent
      */
     'Description'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof ValueAddedServiceChargeEvent
-     */
     'TransactionAmount'?: Currency;
 }
 

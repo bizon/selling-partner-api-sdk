@@ -16,8 +16,6 @@
 
 /**
  * The file format of the document.
- * @export
- * @enum {string}
  */
 
 export const DocumentFormat = {

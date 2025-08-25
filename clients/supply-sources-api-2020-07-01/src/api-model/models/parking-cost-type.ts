@@ -16,8 +16,6 @@
 
 /**
  * The parking cost type.
- * @export
- * @enum {string}
  */
 
 export const ParkingCostType = {

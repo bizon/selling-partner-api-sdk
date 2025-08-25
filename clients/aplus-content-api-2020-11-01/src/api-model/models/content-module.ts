@@ -64,105 +64,23 @@ import type { StandardThreeImageTextModule } from './standard-three-image-text-m
 
 /**
  * An A+ Content module. An A+ Content document is composed of content modules. The `contentModuleType` property selects which content module types to use.
- * @export
- * @interface ContentModule
  */
 export interface ContentModule {
-    /**
-     * 
-     * @type {ContentModuleType}
-     * @memberof ContentModule
-     */
     'contentModuleType': ContentModuleType;
-    /**
-     * 
-     * @type {StandardCompanyLogoModule}
-     * @memberof ContentModule
-     */
     'standardCompanyLogo'?: StandardCompanyLogoModule;
-    /**
-     * 
-     * @type {StandardComparisonTableModule}
-     * @memberof ContentModule
-     */
     'standardComparisonTable'?: StandardComparisonTableModule;
-    /**
-     * 
-     * @type {StandardFourImageTextModule}
-     * @memberof ContentModule
-     */
     'standardFourImageText'?: StandardFourImageTextModule;
-    /**
-     * 
-     * @type {StandardFourImageTextQuadrantModule}
-     * @memberof ContentModule
-     */
     'standardFourImageTextQuadrant'?: StandardFourImageTextQuadrantModule;
-    /**
-     * 
-     * @type {StandardHeaderImageTextModule}
-     * @memberof ContentModule
-     */
     'standardHeaderImageText'?: StandardHeaderImageTextModule;
-    /**
-     * 
-     * @type {StandardImageSidebarModule}
-     * @memberof ContentModule
-     */
     'standardImageSidebar'?: StandardImageSidebarModule;
-    /**
-     * 
-     * @type {StandardImageTextOverlayModule}
-     * @memberof ContentModule
-     */
     'standardImageTextOverlay'?: StandardImageTextOverlayModule;
-    /**
-     * 
-     * @type {StandardMultipleImageTextModule}
-     * @memberof ContentModule
-     */
     'standardMultipleImageText'?: StandardMultipleImageTextModule;
-    /**
-     * 
-     * @type {StandardProductDescriptionModule}
-     * @memberof ContentModule
-     */
     'standardProductDescription'?: StandardProductDescriptionModule;
-    /**
-     * 
-     * @type {StandardSingleImageHighlightsModule}
-     * @memberof ContentModule
-     */
     'standardSingleImageHighlights'?: StandardSingleImageHighlightsModule;
-    /**
-     * 
-     * @type {StandardSingleImageSpecsDetailModule}
-     * @memberof ContentModule
-     */
     'standardSingleImageSpecsDetail'?: StandardSingleImageSpecsDetailModule;
-    /**
-     * 
-     * @type {StandardSingleSideImageModule}
-     * @memberof ContentModule
-     */
     'standardSingleSideImage'?: StandardSingleSideImageModule;
-    /**
-     * 
-     * @type {StandardTechSpecsModule}
-     * @memberof ContentModule
-     */
     'standardTechSpecs'?: StandardTechSpecsModule;
-    /**
-     * 
-     * @type {StandardTextModule}
-     * @memberof ContentModule
-     */
     'standardText'?: StandardTextModule;
-    /**
-     * 
-     * @type {StandardThreeImageTextModule}
-     * @memberof ContentModule
-     */
     'standardThreeImageText'?: StandardThreeImageTextModule;
 }
 

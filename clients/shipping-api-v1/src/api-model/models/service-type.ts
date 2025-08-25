@@ -16,8 +16,6 @@
 
 /**
  * The type of shipping service that will be used for the service offering.
- * @export
- * @enum {string}
  */
 
 export const ServiceType = {

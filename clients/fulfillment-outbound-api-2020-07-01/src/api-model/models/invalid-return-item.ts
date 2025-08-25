@@ -19,27 +19,16 @@ import type { InvalidItemReason } from './invalid-item-reason';
 
 /**
  * An item that is invalid for return.
- * @export
- * @interface InvalidReturnItem
  */
 export interface InvalidReturnItem {
     /**
      * An identifier assigned by the seller to the return item.
-     * @type {string}
-     * @memberof InvalidReturnItem
      */
     'sellerReturnItemId': string;
     /**
      * The identifier assigned to the item by the seller when the fulfillment order was created.
-     * @type {string}
-     * @memberof InvalidReturnItem
      */
     'sellerFulfillmentOrderItemId': string;
-    /**
-     * 
-     * @type {InvalidItemReason}
-     * @memberof InvalidReturnItem
-     */
     'invalidItemReason': InvalidItemReason;
 }
 

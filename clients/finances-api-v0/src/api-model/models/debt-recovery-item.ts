@@ -19,32 +19,16 @@ import type { Currency } from './currency';
 
 /**
  * An item of a debt payment or debt adjustment.
- * @export
- * @interface DebtRecoveryItem
  */
 export interface DebtRecoveryItem {
-    /**
-     * 
-     * @type {Currency}
-     * @memberof DebtRecoveryItem
-     */
     'RecoveryAmount'?: Currency;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof DebtRecoveryItem
-     */
     'OriginalAmount'?: Currency;
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof DebtRecoveryItem
      */
     'GroupBeginDate'?: string;
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof DebtRecoveryItem
      */
     'GroupEndDate'?: string;
 }

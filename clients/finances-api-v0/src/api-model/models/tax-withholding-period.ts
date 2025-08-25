@@ -16,20 +16,14 @@
 
 /**
  * Period which taxwithholding on seller\'s account is calculated.
- * @export
- * @interface TaxWithholdingPeriod
  */
 export interface TaxWithholdingPeriod {
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof TaxWithholdingPeriod
      */
     'StartDate'?: string;
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof TaxWithholdingPeriod
      */
     'EndDate'?: string;
 }

@@ -19,33 +19,11 @@ import type { OfferProgramConfigurationPromotionsDiscountFunding } from './offer
 
 /**
  * An object which represents all promotions applied to an offer.
- * @export
- * @interface OfferProgramConfigurationPromotions
  */
 export interface OfferProgramConfigurationPromotions {
-    /**
-     * 
-     * @type {OfferProgramConfigurationPromotionsDiscountFunding}
-     * @memberof OfferProgramConfigurationPromotions
-     */
     'sellingPartnerFundedBaseDiscount'?: OfferProgramConfigurationPromotionsDiscountFunding;
-    /**
-     * 
-     * @type {OfferProgramConfigurationPromotionsDiscountFunding}
-     * @memberof OfferProgramConfigurationPromotions
-     */
     'sellingPartnerFundedTieredDiscount'?: OfferProgramConfigurationPromotionsDiscountFunding;
-    /**
-     * 
-     * @type {OfferProgramConfigurationPromotionsDiscountFunding}
-     * @memberof OfferProgramConfigurationPromotions
-     */
     'amazonFundedBaseDiscount'?: OfferProgramConfigurationPromotionsDiscountFunding;
-    /**
-     * 
-     * @type {OfferProgramConfigurationPromotionsDiscountFunding}
-     * @memberof OfferProgramConfigurationPromotions
-     */
     'amazonFundedTieredDiscount'?: OfferProgramConfigurationPromotionsDiscountFunding;
 }
 

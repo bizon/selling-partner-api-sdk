@@ -37,62 +37,42 @@ import type { ItemSummaryByMarketplace } from './item-summary-by-marketplace';
 
 /**
  * A listings item.
- * @export
- * @interface Item
  */
 export interface Item {
     /**
      * A selling partner provided identifier for an Amazon listing.
-     * @type {string}
-     * @memberof Item
      */
     'sku': string;
     /**
      * Summary details of a listings item.
-     * @type {Array<ItemSummaryByMarketplace>}
-     * @memberof Item
      */
     'summaries'?: Array<ItemSummaryByMarketplace>;
     /**
      * A JSON object containing structured listings item attribute data keyed by attribute name.
-     * @type {{ [key: string]: any; }}
-     * @memberof Item
      */
     'attributes'?: { [key: string]: any; };
     /**
      * The issues associated with the listings item.
-     * @type {Array<Issue>}
-     * @memberof Item
      */
     'issues'?: Array<Issue>;
     /**
      * Offer details for the listings item.
-     * @type {Array<ItemOfferByMarketplace>}
-     * @memberof Item
      */
     'offers'?: Array<ItemOfferByMarketplace>;
     /**
      * The fulfillment availability for the listings item.
-     * @type {Array<FulfillmentAvailability>}
-     * @memberof Item
      */
     'fulfillmentAvailability'?: Array<FulfillmentAvailability>;
     /**
      * The vendor procurement information for the listings item.
-     * @type {Array<ItemProcurement>}
-     * @memberof Item
      */
     'procurement'?: Array<ItemProcurement>;
     /**
      * Relationships for a listing item, by marketplace (for example, variations).
-     * @type {Array<ItemRelationshipsByMarketplace>}
-     * @memberof Item
      */
     'relationships'?: Array<ItemRelationshipsByMarketplace>;
     /**
      * Product types for a listing item, by marketplace.
-     * @type {Array<ItemProductTypeByMarketplace>}
-     * @memberof Item
      */
     'productTypes'?: Array<ItemProductTypeByMarketplace>;
 }

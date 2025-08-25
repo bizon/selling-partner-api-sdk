@@ -16,14 +16,10 @@
 
 /**
  * The resource that performs or performed appointment fulfillment.
- * @export
- * @interface AppointmentResource
  */
 export interface AppointmentResource {
     /**
      * The resource identifier.
-     * @type {string}
-     * @memberof AppointmentResource
      */
     'resourceId'?: string;
 }

@@ -22,27 +22,16 @@ import type { OrderScheduleDetails } from './order-schedule-details';
 
 /**
  * The request body for the POST /easyShip/2022-03-23/packages/bulk API.
- * @export
- * @interface CreateScheduledPackagesRequest
  */
 export interface CreateScheduledPackagesRequest {
     /**
      * A string of up to 255 characters.
-     * @type {string}
-     * @memberof CreateScheduledPackagesRequest
      */
     'marketplaceId': string;
     /**
      * An array allowing users to specify orders to be scheduled.
-     * @type {Array<OrderScheduleDetails>}
-     * @memberof CreateScheduledPackagesRequest
      */
     'orderScheduleDetailsList': Array<OrderScheduleDetails>;
-    /**
-     * 
-     * @type {LabelFormat}
-     * @memberof CreateScheduledPackagesRequest
-     */
     'labelFormat': LabelFormat;
 }
 

@@ -17,16 +17,9 @@
 // @ts-ignore
 import type { PublishRecord } from './publish-record';
 
-/**
- * 
- * @export
- * @interface SearchContentPublishRecordsResponseAllOf
- */
 export interface SearchContentPublishRecordsResponseAllOf {
     /**
      * A list of A+ Content publishing records.
-     * @type {Array<PublishRecord>}
-     * @memberof SearchContentPublishRecordsResponseAllOf
      */
     'publishRecordList': Array<PublishRecord>;
 }

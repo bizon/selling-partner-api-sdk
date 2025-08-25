@@ -19,15 +19,8 @@ import type { GetTrackingResult } from './get-tracking-result';
 
 /**
  * The response schema for the getTracking operation.
- * @export
- * @interface GetTrackingResponse
  */
 export interface GetTrackingResponse {
-    /**
-     * 
-     * @type {GetTrackingResult}
-     * @memberof GetTrackingResponse
-     */
     'payload'?: GetTrackingResult;
 }
 

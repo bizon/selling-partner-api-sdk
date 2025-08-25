@@ -16,15 +16,8 @@
 
 /**
  * A list of error responses returned when a request is unsuccessful.
- * @export
- * @interface ErrorList
  */
 export interface ErrorList {
-    /**
-     * 
-     * @type {Array<Error>}
-     * @memberof ErrorList
-     */
     'errors'?: Array<Error>;
 }
 

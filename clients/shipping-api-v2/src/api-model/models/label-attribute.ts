@@ -16,8 +16,6 @@
 
 /**
  * Enumerates the attributes supported to be printed on a shipping label. The values for these attributes are retrieved from GetRates/OneClickShipment request
- * @export
- * @enum {string}
  */
 
 export const LabelAttribute = {

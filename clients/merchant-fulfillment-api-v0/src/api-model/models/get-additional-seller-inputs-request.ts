@@ -19,26 +19,15 @@ import type { Address } from './address';
 
 /**
  * Request schema.
- * @export
- * @interface GetAdditionalSellerInputsRequest
  */
 export interface GetAdditionalSellerInputsRequest {
     /**
      * An Amazon-defined shipping service identifier.
-     * @type {string}
-     * @memberof GetAdditionalSellerInputsRequest
      */
     'ShippingServiceId': string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof GetAdditionalSellerInputsRequest
-     */
     'ShipFromAddress': Address;
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
-     * @type {string}
-     * @memberof GetAdditionalSellerInputsRequest
      */
     'OrderId': string;
 }

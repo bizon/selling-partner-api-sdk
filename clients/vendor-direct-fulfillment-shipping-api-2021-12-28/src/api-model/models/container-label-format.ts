@@ -16,8 +16,6 @@
 
 /**
  * The format of the container label.
- * @export
- * @enum {string}
  */
 
 export const ContainerLabelFormat = {

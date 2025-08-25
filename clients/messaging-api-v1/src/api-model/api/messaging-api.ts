@@ -67,7 +67,6 @@ import type { InvoiceRequest } from '../models';
 import type { InvoiceResponse } from '../models';
 /**
  * MessagingApi - axios parameter creator
- * @export
  */
 export const MessagingApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -616,7 +615,6 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
 
 /**
  * MessagingApi - functional programming interface
- * @export
  */
 export const MessagingApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = MessagingApiAxiosParamCreator(configuration)
@@ -792,7 +790,6 @@ export const MessagingApiFp = function(configuration?: Configuration) {
 
 /**
  * MessagingApi - factory interface
- * @export
  */
 export const MessagingApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = MessagingApiFp(configuration)
@@ -910,331 +907,236 @@ export const MessagingApiFactory = function (configuration?: Configuration, base
 
 /**
  * Request parameters for confirmCustomizationDetails operation in MessagingApi.
- * @export
- * @interface MessagingApiConfirmCustomizationDetailsRequest
  */
 export interface MessagingApiConfirmCustomizationDetailsRequest {
     /**
      * An Amazon order identifier. This identifies the order for which a message is sent.
-     * @type {string}
-     * @memberof MessagingApiConfirmCustomizationDetails
      */
     readonly amazonOrderId: string
 
     /**
      * A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-     * @type {Array<string>}
-     * @memberof MessagingApiConfirmCustomizationDetails
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * This contains the message body for a message.
-     * @type {CreateConfirmCustomizationDetailsRequest}
-     * @memberof MessagingApiConfirmCustomizationDetails
      */
     readonly body: CreateConfirmCustomizationDetailsRequest
 }
 
 /**
  * Request parameters for createAmazonMotors operation in MessagingApi.
- * @export
- * @interface MessagingApiCreateAmazonMotorsRequest
  */
 export interface MessagingApiCreateAmazonMotorsRequest {
     /**
      * An Amazon order identifier. This identifies the order for which a message is sent.
-     * @type {string}
-     * @memberof MessagingApiCreateAmazonMotors
      */
     readonly amazonOrderId: string
 
     /**
      * A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-     * @type {Array<string>}
-     * @memberof MessagingApiCreateAmazonMotors
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * This contains the message body for a message.
-     * @type {CreateAmazonMotorsRequest}
-     * @memberof MessagingApiCreateAmazonMotors
      */
     readonly body: CreateAmazonMotorsRequest
 }
 
 /**
  * Request parameters for createConfirmDeliveryDetails operation in MessagingApi.
- * @export
- * @interface MessagingApiCreateConfirmDeliveryDetailsRequest
  */
 export interface MessagingApiCreateConfirmDeliveryDetailsRequest {
     /**
      * An Amazon order identifier. This identifies the order for which a message is sent.
-     * @type {string}
-     * @memberof MessagingApiCreateConfirmDeliveryDetails
      */
     readonly amazonOrderId: string
 
     /**
      * A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-     * @type {Array<string>}
-     * @memberof MessagingApiCreateConfirmDeliveryDetails
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * This contains the message body for a message.
-     * @type {CreateConfirmDeliveryDetailsRequest}
-     * @memberof MessagingApiCreateConfirmDeliveryDetails
      */
     readonly body: CreateConfirmDeliveryDetailsRequest
 }
 
 /**
  * Request parameters for createConfirmOrderDetails operation in MessagingApi.
- * @export
- * @interface MessagingApiCreateConfirmOrderDetailsRequest
  */
 export interface MessagingApiCreateConfirmOrderDetailsRequest {
     /**
      * An Amazon order identifier. This identifies the order for which a message is sent.
-     * @type {string}
-     * @memberof MessagingApiCreateConfirmOrderDetails
      */
     readonly amazonOrderId: string
 
     /**
      * A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-     * @type {Array<string>}
-     * @memberof MessagingApiCreateConfirmOrderDetails
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * This contains the message body for a message.
-     * @type {CreateConfirmOrderDetailsRequest}
-     * @memberof MessagingApiCreateConfirmOrderDetails
      */
     readonly body: CreateConfirmOrderDetailsRequest
 }
 
 /**
  * Request parameters for createConfirmServiceDetails operation in MessagingApi.
- * @export
- * @interface MessagingApiCreateConfirmServiceDetailsRequest
  */
 export interface MessagingApiCreateConfirmServiceDetailsRequest {
     /**
      * An Amazon order identifier. This identifies the order for which a message is sent.
-     * @type {string}
-     * @memberof MessagingApiCreateConfirmServiceDetails
      */
     readonly amazonOrderId: string
 
     /**
      * A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-     * @type {Array<string>}
-     * @memberof MessagingApiCreateConfirmServiceDetails
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * This contains the message body for a message.
-     * @type {CreateConfirmServiceDetailsRequest}
-     * @memberof MessagingApiCreateConfirmServiceDetails
      */
     readonly body: CreateConfirmServiceDetailsRequest
 }
 
 /**
  * Request parameters for createDigitalAccessKey operation in MessagingApi.
- * @export
- * @interface MessagingApiCreateDigitalAccessKeyRequest
  */
 export interface MessagingApiCreateDigitalAccessKeyRequest {
     /**
      * An Amazon order identifier. This identifies the order for which a message is sent.
-     * @type {string}
-     * @memberof MessagingApiCreateDigitalAccessKey
      */
     readonly amazonOrderId: string
 
     /**
      * A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-     * @type {Array<string>}
-     * @memberof MessagingApiCreateDigitalAccessKey
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * This contains the message body for a message.
-     * @type {CreateDigitalAccessKeyRequest}
-     * @memberof MessagingApiCreateDigitalAccessKey
      */
     readonly body: CreateDigitalAccessKeyRequest
 }
 
 /**
  * Request parameters for createLegalDisclosure operation in MessagingApi.
- * @export
- * @interface MessagingApiCreateLegalDisclosureRequest
  */
 export interface MessagingApiCreateLegalDisclosureRequest {
     /**
      * An Amazon order identifier. This identifies the order for which a message is sent.
-     * @type {string}
-     * @memberof MessagingApiCreateLegalDisclosure
      */
     readonly amazonOrderId: string
 
     /**
      * A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-     * @type {Array<string>}
-     * @memberof MessagingApiCreateLegalDisclosure
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * This contains the message body for a message.
-     * @type {CreateLegalDisclosureRequest}
-     * @memberof MessagingApiCreateLegalDisclosure
      */
     readonly body: CreateLegalDisclosureRequest
 }
 
 /**
  * Request parameters for createUnexpectedProblem operation in MessagingApi.
- * @export
- * @interface MessagingApiCreateUnexpectedProblemRequest
  */
 export interface MessagingApiCreateUnexpectedProblemRequest {
     /**
      * An Amazon order identifier. This identifies the order for which a message is sent.
-     * @type {string}
-     * @memberof MessagingApiCreateUnexpectedProblem
      */
     readonly amazonOrderId: string
 
     /**
      * A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-     * @type {Array<string>}
-     * @memberof MessagingApiCreateUnexpectedProblem
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * This contains the message body for a message.
-     * @type {CreateUnexpectedProblemRequest}
-     * @memberof MessagingApiCreateUnexpectedProblem
      */
     readonly body: CreateUnexpectedProblemRequest
 }
 
 /**
  * Request parameters for createWarranty operation in MessagingApi.
- * @export
- * @interface MessagingApiCreateWarrantyRequest
  */
 export interface MessagingApiCreateWarrantyRequest {
     /**
      * An Amazon order identifier. This identifies the order for which a message is sent.
-     * @type {string}
-     * @memberof MessagingApiCreateWarranty
      */
     readonly amazonOrderId: string
 
     /**
      * A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-     * @type {Array<string>}
-     * @memberof MessagingApiCreateWarranty
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * This contains the message body for a message.
-     * @type {CreateWarrantyRequest}
-     * @memberof MessagingApiCreateWarranty
      */
     readonly body: CreateWarrantyRequest
 }
 
 /**
  * Request parameters for getAttributes operation in MessagingApi.
- * @export
- * @interface MessagingApiGetAttributesRequest
  */
 export interface MessagingApiGetAttributesRequest {
     /**
      * An Amazon order identifier. This identifies the order for which a message is sent.
-     * @type {string}
-     * @memberof MessagingApiGetAttributes
      */
     readonly amazonOrderId: string
 
     /**
      * A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-     * @type {Array<string>}
-     * @memberof MessagingApiGetAttributes
      */
     readonly marketplaceIds: Array<string>
 }
 
 /**
  * Request parameters for getMessagingActionsForOrder operation in MessagingApi.
- * @export
- * @interface MessagingApiGetMessagingActionsForOrderRequest
  */
 export interface MessagingApiGetMessagingActionsForOrderRequest {
     /**
      * An Amazon order identifier. This specifies the order for which you want a list of available message types.
-     * @type {string}
-     * @memberof MessagingApiGetMessagingActionsForOrder
      */
     readonly amazonOrderId: string
 
     /**
      * A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-     * @type {Array<string>}
-     * @memberof MessagingApiGetMessagingActionsForOrder
      */
     readonly marketplaceIds: Array<string>
 }
 
 /**
  * Request parameters for sendInvoice operation in MessagingApi.
- * @export
- * @interface MessagingApiSendInvoiceRequest
  */
 export interface MessagingApiSendInvoiceRequest {
     /**
      * An Amazon order identifier. This identifies the order for which a message is sent.
-     * @type {string}
-     * @memberof MessagingApiSendInvoice
      */
     readonly amazonOrderId: string
 
     /**
      * A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-     * @type {Array<string>}
-     * @memberof MessagingApiSendInvoice
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * This contains the message body for a message.
-     * @type {InvoiceRequest}
-     * @memberof MessagingApiSendInvoice
      */
     readonly body: InvoiceRequest
 }
 
 /**
  * MessagingApi - object-oriented interface
- * @export
- * @class MessagingApi
- * @extends {BaseAPI}
  */
 export class MessagingApi extends BaseAPI {
     /**
@@ -1242,7 +1144,6 @@ export class MessagingApi extends BaseAPI {
      * @param {MessagingApiConfirmCustomizationDetailsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MessagingApi
      */
     public confirmCustomizationDetails(requestParameters: MessagingApiConfirmCustomizationDetailsRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).confirmCustomizationDetails(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1253,7 +1154,6 @@ export class MessagingApi extends BaseAPI {
      * @param {MessagingApiCreateAmazonMotorsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MessagingApi
      */
     public createAmazonMotors(requestParameters: MessagingApiCreateAmazonMotorsRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).createAmazonMotors(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1264,7 +1164,6 @@ export class MessagingApi extends BaseAPI {
      * @param {MessagingApiCreateConfirmDeliveryDetailsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MessagingApi
      */
     public createConfirmDeliveryDetails(requestParameters: MessagingApiCreateConfirmDeliveryDetailsRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).createConfirmDeliveryDetails(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1275,7 +1174,6 @@ export class MessagingApi extends BaseAPI {
      * @param {MessagingApiCreateConfirmOrderDetailsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MessagingApi
      */
     public createConfirmOrderDetails(requestParameters: MessagingApiCreateConfirmOrderDetailsRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).createConfirmOrderDetails(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1286,7 +1184,6 @@ export class MessagingApi extends BaseAPI {
      * @param {MessagingApiCreateConfirmServiceDetailsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MessagingApi
      */
     public createConfirmServiceDetails(requestParameters: MessagingApiCreateConfirmServiceDetailsRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).createConfirmServiceDetails(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1297,7 +1194,6 @@ export class MessagingApi extends BaseAPI {
      * @param {MessagingApiCreateDigitalAccessKeyRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MessagingApi
      */
     public createDigitalAccessKey(requestParameters: MessagingApiCreateDigitalAccessKeyRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).createDigitalAccessKey(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1308,7 +1204,6 @@ export class MessagingApi extends BaseAPI {
      * @param {MessagingApiCreateLegalDisclosureRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MessagingApi
      */
     public createLegalDisclosure(requestParameters: MessagingApiCreateLegalDisclosureRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).createLegalDisclosure(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1319,7 +1214,6 @@ export class MessagingApi extends BaseAPI {
      * @param {MessagingApiCreateUnexpectedProblemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MessagingApi
      */
     public createUnexpectedProblem(requestParameters: MessagingApiCreateUnexpectedProblemRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).createUnexpectedProblem(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1330,7 +1224,6 @@ export class MessagingApi extends BaseAPI {
      * @param {MessagingApiCreateWarrantyRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MessagingApi
      */
     public createWarranty(requestParameters: MessagingApiCreateWarrantyRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).createWarranty(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1341,7 +1234,6 @@ export class MessagingApi extends BaseAPI {
      * @param {MessagingApiGetAttributesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MessagingApi
      */
     public getAttributes(requestParameters: MessagingApiGetAttributesRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).getAttributes(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
@@ -1352,7 +1244,6 @@ export class MessagingApi extends BaseAPI {
      * @param {MessagingApiGetMessagingActionsForOrderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MessagingApi
      */
     public getMessagingActionsForOrder(requestParameters: MessagingApiGetMessagingActionsForOrderRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).getMessagingActionsForOrder(requestParameters.amazonOrderId, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
@@ -1363,7 +1254,6 @@ export class MessagingApi extends BaseAPI {
      * @param {MessagingApiSendInvoiceRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MessagingApi
      */
     public sendInvoice(requestParameters: MessagingApiSendInvoiceRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).sendInvoice(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));

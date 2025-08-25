@@ -16,8 +16,6 @@
 
 /**
  * Indicates the type of quantity discount this price applies to.
- * @export
- * @enum {string}
  */
 
 export const QuantityDiscountType = {

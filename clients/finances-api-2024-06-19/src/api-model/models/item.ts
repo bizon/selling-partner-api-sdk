@@ -28,38 +28,23 @@ import type { ItemRelatedIdentifier } from './item-related-identifier';
 
 /**
  * Additional information about the items in Transaction.
- * @export
- * @interface Item
  */
 export interface Item {
     /**
      * Description of items in the transaction
-     * @type {string}
-     * @memberof Item
      */
     'description'?: string;
     /**
      * Related Business identifiers of the item in Transaction.
-     * @type {Array<ItemRelatedIdentifier>}
-     * @memberof Item
      */
     'relatedIdentifiers'?: Array<ItemRelatedIdentifier>;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof Item
-     */
     'totalAmount'?: Currency;
     /**
      * A list of breakdowns that detail how the total amount is calculated for the transaction.
-     * @type {Array<Breakdown>}
-     * @memberof Item
      */
     'breakdowns'?: Array<Breakdown>;
     /**
      * List of additional Information about the item.
-     * @type {Array<Context>}
-     * @memberof Item
      */
     'contexts'?: Array<Context>;
 }

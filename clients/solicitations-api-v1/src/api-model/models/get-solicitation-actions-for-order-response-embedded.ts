@@ -17,17 +17,7 @@
 // @ts-ignore
 import type { GetSolicitationActionResponse } from './get-solicitation-action-response';
 
-/**
- * 
- * @export
- * @interface GetSolicitationActionsForOrderResponseEmbedded
- */
 export interface GetSolicitationActionsForOrderResponseEmbedded {
-    /**
-     * 
-     * @type {Array<GetSolicitationActionResponse>}
-     * @memberof GetSolicitationActionsForOrderResponseEmbedded
-     */
     'actions': Array<GetSolicitationActionResponse>;
 }
 

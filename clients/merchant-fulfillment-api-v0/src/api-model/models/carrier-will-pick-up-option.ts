@@ -16,8 +16,6 @@
 
 /**
  * Carrier will pick up option.
- * @export
- * @enum {string}
  */
 
 export const CarrierWillPickUpOption = {

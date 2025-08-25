@@ -25,39 +25,21 @@ import type { DateRange } from './date-range';
 
 /**
  * The request schema to get query collections form history API .
- * @export
- * @interface GetCollectionFormHistoryRequest
  */
 export interface GetCollectionFormHistoryRequest {
     /**
      * Object to pass additional information about the MCI Integrator shipperType: List of ClientReferenceDetail
-     * @type {Array<ClientReferenceDetail>}
-     * @memberof GetCollectionFormHistoryRequest
      */
     'clientReferenceDetails'?: Array<ClientReferenceDetail>;
     /**
      * max Number of Results for query .
-     * @type {number}
-     * @memberof GetCollectionFormHistoryRequest
      */
     'maxResults'?: number;
     /**
      * The carrier identifier for the offering, provided by the carrier.
-     * @type {string}
-     * @memberof GetCollectionFormHistoryRequest
      */
     'carrierId'?: string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof GetCollectionFormHistoryRequest
-     */
     'shipFromAddress'?: Address;
-    /**
-     * 
-     * @type {DateRange}
-     * @memberof GetCollectionFormHistoryRequest
-     */
     'dateRange'?: DateRange;
 }
 

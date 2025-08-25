@@ -19,20 +19,11 @@ import type { ShippingLabel } from './shipping-label';
 
 /**
  * The response schema for the getShippingLabel operation.
- * @export
- * @interface GetShippingLabelResponse
  */
 export interface GetShippingLabelResponse {
-    /**
-     * 
-     * @type {ShippingLabel}
-     * @memberof GetShippingLabelResponse
-     */
     'payload'?: ShippingLabel;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetShippingLabelResponse
      */
     'errors'?: Array<Error>;
 }

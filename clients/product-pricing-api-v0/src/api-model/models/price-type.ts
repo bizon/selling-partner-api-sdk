@@ -22,33 +22,11 @@ import type { Points } from './points';
 
 /**
  * Schema for item\'s price information, including listing price, shipping price, and Amazon points.
- * @export
- * @interface PriceType
  */
 export interface PriceType {
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof PriceType
-     */
     'LandedPrice'?: MoneyType;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof PriceType
-     */
     'ListingPrice': MoneyType;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof PriceType
-     */
     'Shipping'?: MoneyType;
-    /**
-     * 
-     * @type {Points}
-     * @memberof PriceType
-     */
     'Points'?: Points;
 }
 

@@ -19,27 +19,16 @@ import type { ProcessingDirective } from './processing-directive';
 
 /**
  * The request schema for the `createSubscription` operation.
- * @export
- * @interface CreateSubscriptionRequest
  */
 export interface CreateSubscriptionRequest {
     /**
      * The version of the payload object to be used in the notification.
-     * @type {string}
-     * @memberof CreateSubscriptionRequest
      */
     'payloadVersion': string;
     /**
      * The identifier for the destination where notifications will be delivered.
-     * @type {string}
-     * @memberof CreateSubscriptionRequest
      */
     'destinationId': string;
-    /**
-     * 
-     * @type {ProcessingDirective}
-     * @memberof CreateSubscriptionRequest
-     */
     'processingDirective'?: ProcessingDirective;
 }
 

@@ -19,20 +19,11 @@ import type { AppointmentSlotReport } from './appointment-slot-report';
 
 /**
  * The response of fetching appointment slots based on service context.
- * @export
- * @interface GetAppointmentSlotsResponse
  */
 export interface GetAppointmentSlotsResponse {
-    /**
-     * 
-     * @type {AppointmentSlotReport}
-     * @memberof GetAppointmentSlotsResponse
-     */
     'payload'?: AppointmentSlotReport;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetAppointmentSlotsResponse
      */
     'errors'?: Array<Error>;
 }

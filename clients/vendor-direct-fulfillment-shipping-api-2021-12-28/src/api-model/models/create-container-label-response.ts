@@ -19,15 +19,8 @@ import type { ContainerLabel } from './container-label';
 
 /**
  * The response schema for the `createContainerLabel` operation.
- * @export
- * @interface CreateContainerLabelResponse
  */
 export interface CreateContainerLabelResponse {
-    /**
-     * 
-     * @type {ContainerLabel}
-     * @memberof CreateContainerLabelResponse
-     */
     'containerLabel': ContainerLabel;
 }
 

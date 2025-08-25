@@ -16,32 +16,22 @@
 
 /**
  * A field collected from the regulatory form.
- * @export
- * @interface RegulatedInformationField
  */
 export interface RegulatedInformationField {
     /**
      * The unique identifier of the field.
-     * @type {string}
-     * @memberof RegulatedInformationField
      */
     'FieldId': string;
     /**
      * The name of the field.
-     * @type {string}
-     * @memberof RegulatedInformationField
      */
     'FieldLabel': string;
     /**
      * The type of field.
-     * @type {string}
-     * @memberof RegulatedInformationField
      */
     'FieldType': RegulatedInformationFieldFieldTypeEnum;
     /**
      * The content of the field as collected in regulatory form. Note that `FileAttachment` type fields contain a URL where you can download the attachment.
-     * @type {string}
-     * @memberof RegulatedInformationField
      */
     'FieldValue': string;
 }

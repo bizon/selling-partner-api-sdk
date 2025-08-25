@@ -16,8 +16,6 @@
 
 /**
  * A flag that provides additional information about an ASIN. This is contextual and can change depending on the request that generated it.
- * @export
- * @enum {string}
  */
 
 export const AsinBadge = {

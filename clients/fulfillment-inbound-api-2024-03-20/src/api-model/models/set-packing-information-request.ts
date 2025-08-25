@@ -19,14 +19,10 @@ import type { PackageGroupingInput } from './package-grouping-input';
 
 /**
  * The `setPackingInformation` request.
- * @export
- * @interface SetPackingInformationRequest
  */
 export interface SetPackingInformationRequest {
     /**
      * List of packing information for the inbound plan.
-     * @type {Array<PackageGroupingInput>}
-     * @memberof SetPackingInformationRequest
      */
     'packageGroupings': Array<PackageGroupingInput>;
 }

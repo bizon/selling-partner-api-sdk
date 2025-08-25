@@ -37,7 +37,6 @@ import type { ListOffersRequest } from '../models';
 import type { ListOffersResponse } from '../models';
 /**
  * ReplenishmentApi - axios parameter creator
- * @export
  */
 export const ReplenishmentApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -145,7 +144,6 @@ export const ReplenishmentApiAxiosParamCreator = function (configuration?: Confi
 
 /**
  * ReplenishmentApi - functional programming interface
- * @export
  */
 export const ReplenishmentApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ReplenishmentApiAxiosParamCreator(configuration)
@@ -191,7 +189,6 @@ export const ReplenishmentApiFp = function(configuration?: Configuration) {
 
 /**
  * ReplenishmentApi - factory interface
- * @export
  */
 export const ReplenishmentApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = ReplenishmentApiFp(configuration)
@@ -228,51 +225,36 @@ export const ReplenishmentApiFactory = function (configuration?: Configuration, 
 
 /**
  * Request parameters for getSellingPartnerMetrics operation in ReplenishmentApi.
- * @export
- * @interface ReplenishmentApiGetSellingPartnerMetricsRequest
  */
 export interface ReplenishmentApiGetSellingPartnerMetricsRequest {
     /**
      * The request body for the &#x60;getSellingPartnerMetrics&#x60; operation.
-     * @type {GetSellingPartnerMetricsRequest}
-     * @memberof ReplenishmentApiGetSellingPartnerMetrics
      */
     readonly body?: GetSellingPartnerMetricsRequest
 }
 
 /**
  * Request parameters for listOfferMetrics operation in ReplenishmentApi.
- * @export
- * @interface ReplenishmentApiListOfferMetricsRequest
  */
 export interface ReplenishmentApiListOfferMetricsRequest {
     /**
      * The request body for the &#x60;listOfferMetrics&#x60; operation.
-     * @type {ListOfferMetricsRequest}
-     * @memberof ReplenishmentApiListOfferMetrics
      */
     readonly body?: ListOfferMetricsRequest
 }
 
 /**
  * Request parameters for listOffers operation in ReplenishmentApi.
- * @export
- * @interface ReplenishmentApiListOffersRequest
  */
 export interface ReplenishmentApiListOffersRequest {
     /**
      * The request body for the &#x60;listOffers&#x60; operation.
-     * @type {ListOffersRequest}
-     * @memberof ReplenishmentApiListOffers
      */
     readonly body?: ListOffersRequest
 }
 
 /**
  * ReplenishmentApi - object-oriented interface
- * @export
- * @class ReplenishmentApi
- * @extends {BaseAPI}
  */
 export class ReplenishmentApi extends BaseAPI {
     /**
@@ -280,7 +262,6 @@ export class ReplenishmentApi extends BaseAPI {
      * @param {ReplenishmentApiGetSellingPartnerMetricsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ReplenishmentApi
      */
     public getSellingPartnerMetrics(requestParameters: ReplenishmentApiGetSellingPartnerMetricsRequest = {}, options?: RawAxiosRequestConfig) {
         return ReplenishmentApiFp(this.configuration).getSellingPartnerMetrics(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -291,7 +272,6 @@ export class ReplenishmentApi extends BaseAPI {
      * @param {ReplenishmentApiListOfferMetricsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ReplenishmentApi
      */
     public listOfferMetrics(requestParameters: ReplenishmentApiListOfferMetricsRequest = {}, options?: RawAxiosRequestConfig) {
         return ReplenishmentApiFp(this.configuration).listOfferMetrics(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -302,7 +282,6 @@ export class ReplenishmentApi extends BaseAPI {
      * @param {ReplenishmentApiListOffersRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ReplenishmentApi
      */
     public listOffers(requestParameters: ReplenishmentApiListOffersRequest = {}, options?: RawAxiosRequestConfig) {
         return ReplenishmentApiFp(this.configuration).listOffers(requestParameters.body, options).then((request) => request(this.axios, this.basePath));

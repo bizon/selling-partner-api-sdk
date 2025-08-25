@@ -16,20 +16,14 @@
 
 /**
  * The carrier for the inbound shipment.
- * @export
- * @interface Carrier
  */
 export interface Carrier {
     /**
      * The carrier code. For example, USPS or DHLEX.
-     * @type {string}
-     * @memberof Carrier
      */
     'alphaCode'?: string;
     /**
      * The name of the carrier.
-     * @type {string}
-     * @memberof Carrier
      */
     'name'?: string;
 }

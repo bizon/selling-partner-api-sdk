@@ -19,14 +19,10 @@ import type { TransportationSelection } from './transportation-selection';
 
 /**
  * The `confirmTransportationOptions` request.
- * @export
- * @interface ConfirmTransportationOptionsRequest
  */
 export interface ConfirmTransportationOptionsRequest {
     /**
      * Information needed to confirm one of the available transportation options.
-     * @type {Array<TransportationSelection>}
-     * @memberof ConfirmTransportationOptionsRequest
      */
     'transportationSelections': Array<TransportationSelection>;
 }

@@ -19,20 +19,14 @@ import type { Rate } from './rate';
 
 /**
  * The payload schema for the createShipment operation.
- * @export
- * @interface CreateShipmentResult
  */
 export interface CreateShipmentResult {
     /**
      * The unique shipment identifier.
-     * @type {string}
-     * @memberof CreateShipmentResult
      */
     'shipmentId': string;
     /**
      * A list of all the available rates that can be used to send the shipment.
-     * @type {Array<Rate>}
-     * @memberof CreateShipmentResult
      */
     'eligibleRates': Array<Rate>;
 }

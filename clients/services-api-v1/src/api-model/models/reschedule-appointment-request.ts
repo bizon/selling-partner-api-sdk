@@ -19,20 +19,11 @@ import type { AppointmentTimeInput } from './appointment-time-input';
 
 /**
  * Input for rescheduled appointment operation.
- * @export
- * @interface RescheduleAppointmentRequest
  */
 export interface RescheduleAppointmentRequest {
-    /**
-     * 
-     * @type {AppointmentTimeInput}
-     * @memberof RescheduleAppointmentRequest
-     */
     'appointmentTime': AppointmentTimeInput;
     /**
      * The appointment reschedule reason code.
-     * @type {string}
-     * @memberof RescheduleAppointmentRequest
      */
     'rescheduleReasonCode': string;
 }

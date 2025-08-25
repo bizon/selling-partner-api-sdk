@@ -19,26 +19,18 @@ import type { OpenInterval } from './open-interval';
 
 /**
  * Dates when the business is closed or open with a different time window.
- * @export
- * @interface ExceptionDates
  */
 export interface ExceptionDates {
     /**
      * Date when the business is closed, in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date format.
-     * @type {string}
-     * @memberof ExceptionDates
      */
     'ExceptionDate'?: string;
     /**
      * Boolean indicating if the business is closed or open on that date.
-     * @type {boolean}
-     * @memberof ExceptionDates
      */
     'IsOpen'?: boolean;
     /**
      * Time window during the day when the business is open.
-     * @type {Array<OpenInterval>}
-     * @memberof ExceptionDates
      */
     'OpenIntervals'?: Array<OpenInterval>;
 }

@@ -28,50 +28,31 @@ import type { ShippingSpeedCategory } from './shipping-speed-category';
 
 /**
  * The request body schema for the `getFulfillmentPreview` operation.
- * @export
- * @interface GetFulfillmentPreviewRequest
  */
 export interface GetFulfillmentPreviewRequest {
     /**
      * The marketplace the fulfillment order is placed against.
-     * @type {string}
-     * @memberof GetFulfillmentPreviewRequest
      */
     'marketplaceId'?: string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof GetFulfillmentPreviewRequest
-     */
     'address': Address;
     /**
      * An array of fulfillment preview item information.
-     * @type {Array<GetFulfillmentPreviewItem>}
-     * @memberof GetFulfillmentPreviewRequest
      */
     'items': Array<GetFulfillmentPreviewItem>;
     /**
      * ShippingSpeedCategory List
-     * @type {Array<ShippingSpeedCategory>}
-     * @memberof GetFulfillmentPreviewRequest
      */
     'shippingSpeedCategories'?: Array<ShippingSpeedCategory>;
     /**
      * When true, returns all fulfillment order previews both for COD and not for COD. Otherwise, returns only fulfillment order previews that are not for COD.
-     * @type {boolean}
-     * @memberof GetFulfillmentPreviewRequest
      */
     'includeCODFulfillmentPreview'?: boolean;
     /**
      * When true, returns the `ScheduledDeliveryInfo` response object, which contains the available delivery windows for a Scheduled Delivery. The `ScheduledDeliveryInfo` response object can only be returned for fulfillment order previews with `ShippingSpeedCategories` = `ScheduledDelivery`.
-     * @type {boolean}
-     * @memberof GetFulfillmentPreviewRequest
      */
     'includeDeliveryWindows'?: boolean;
     /**
      * A list of features and their fulfillment policies to apply to the order.
-     * @type {Array<FeatureSettings>}
-     * @memberof GetFulfillmentPreviewRequest
      */
     'featureConstraints'?: Array<FeatureSettings>;
 }

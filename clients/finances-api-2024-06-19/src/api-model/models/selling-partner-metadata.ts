@@ -16,26 +16,18 @@
 
 /**
  * Metadata describing the seller.
- * @export
- * @interface SellingPartnerMetadata
  */
 export interface SellingPartnerMetadata {
     /**
      * Unique seller identifier.
-     * @type {string}
-     * @memberof SellingPartnerMetadata
      */
     'sellingPartnerId'?: string;
     /**
      * Account type of transaction.
-     * @type {string}
-     * @memberof SellingPartnerMetadata
      */
     'accountType'?: string;
     /**
      * The identifier of the marketplace where the transaction occurred. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof SellingPartnerMetadata
      */
     'marketplaceId'?: string;
 }

@@ -17,16 +17,9 @@
 // @ts-ignore
 import type { ContentMetadataRecord } from './content-metadata-record';
 
-/**
- * 
- * @export
- * @interface SearchContentDocumentsResponseAllOf
- */
 export interface SearchContentDocumentsResponseAllOf {
     /**
      * A list of A+ Content metadata records.
-     * @type {Array<ContentMetadataRecord>}
-     * @memberof SearchContentDocumentsResponseAllOf
      */
     'contentMetadataRecords': Array<ContentMetadataRecord>;
 }

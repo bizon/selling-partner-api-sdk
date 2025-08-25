@@ -16,26 +16,18 @@
 
 /**
  * An amount of money. Includes the currency code and an optional unit of measure for items priced by weight.
- * @export
- * @interface Money
  */
 export interface Money {
     /**
      * Three digit currency code in ISO 4217 format. String of length 3.
-     * @type {string}
-     * @memberof Money
      */
     'currencyCode'?: string;
     /**
      * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. <br>**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
-     * @type {string}
-     * @memberof Money
      */
     'amount'?: string;
     /**
      * The unit of measure for prices of items sold by weight. If this field is absent, the item is sold by eaches.
-     * @type {string}
-     * @memberof Money
      */
     'unitOfMeasure'?: MoneyUnitOfMeasureEnum;
 }

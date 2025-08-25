@@ -16,74 +16,50 @@
 
 /**
  * Detailed information about the report.
- * @export
- * @interface Report
  */
 export interface Report {
     /**
      * A list of marketplace identifiers for the report.
-     * @type {Array<string>}
-     * @memberof Report
      */
     'marketplaceIds'?: Array<string>;
     /**
      * The identifier for the report. This identifier is unique only in combination with a seller ID.
-     * @type {string}
-     * @memberof Report
      */
     'reportId': string;
     /**
      * The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
-     * @type {string}
-     * @memberof Report
      */
     'reportType': string;
     /**
      * The start of a date and time range used for selecting the data to report.
-     * @type {string}
-     * @memberof Report
      */
     'dataStartTime'?: string;
     /**
      * The end of a date and time range used for selecting the data to report.
-     * @type {string}
-     * @memberof Report
      */
     'dataEndTime'?: string;
     /**
      * The identifier of the report schedule that created this report (if any). This identifier is unique only in combination with a seller ID.
-     * @type {string}
-     * @memberof Report
      */
     'reportScheduleId'?: string;
     /**
      * The date and time when the report was created.
-     * @type {string}
-     * @memberof Report
      */
     'createdTime': string;
     /**
      * The processing status of the report.
-     * @type {string}
-     * @memberof Report
      */
     'processingStatus': ReportProcessingStatusEnum;
     /**
      * The date and time when the report processing started, in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format.
-     * @type {string}
-     * @memberof Report
      */
     'processingStartTime'?: string;
     /**
      * The date and time when the report processing completed, in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format.
-     * @type {string}
-     * @memberof Report
      */
     'processingEndTime'?: string;
     /**
      * The identifier for the report document. Pass this into the `getReportDocument` operation to get the information you will need to retrieve the report document\'s contents.
-     * @type {string}
-     * @memberof Report
      */
     'reportDocumentId'?: string;
 }

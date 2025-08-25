@@ -16,14 +16,10 @@
 
 /**
  * Use these parameters to paginate through the response.
- * @export
- * @interface PaginationResponse
  */
 export interface PaginationResponse {
     /**
      * Total number of results matching the given filter criteria.
-     * @type {number}
-     * @memberof PaginationResponse
      */
     'totalResults'?: number;
 }

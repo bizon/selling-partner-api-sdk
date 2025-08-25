@@ -19,20 +19,14 @@ import type { TestOrder } from './test-order';
 
 /**
  * A scenario test case response returned when the request is successful.
- * @export
- * @interface Scenario
  */
 export interface Scenario {
     /**
      * An identifier that identifies the type of scenario that user can use for testing.
-     * @type {string}
-     * @memberof Scenario
      */
     'scenarioId': string;
     /**
      * A list of orders that can be used by the caller to test each life cycle or scenario.
-     * @type {Array<TestOrder>}
-     * @memberof Scenario
      */
     'orders': Array<TestOrder>;
 }

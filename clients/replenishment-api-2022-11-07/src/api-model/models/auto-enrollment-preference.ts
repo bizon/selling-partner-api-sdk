@@ -16,8 +16,6 @@
 
 /**
  * The auto-enrollment preference indicates whether the offer is opted-in to or opted-out of Amazon\'s auto-enrollment feature.
- * @export
- * @enum {string}
  */
 
 export const AutoEnrollmentPreference = {

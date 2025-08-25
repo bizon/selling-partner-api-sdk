@@ -16,20 +16,14 @@
 
 /**
  * Link to retrieve the schema.
- * @export
- * @interface SchemaLinkLink
  */
 export interface SchemaLinkLink {
     /**
      * URI resource for the link.
-     * @type {string}
-     * @memberof SchemaLinkLink
      */
     'resource': string;
     /**
      * HTTP method for the link operation.
-     * @type {string}
-     * @memberof SchemaLinkLink
      */
     'verb': SchemaLinkLinkVerbEnum;
 }

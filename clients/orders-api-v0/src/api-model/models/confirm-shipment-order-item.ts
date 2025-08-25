@@ -16,26 +16,18 @@
 
 /**
  * A single order item.
- * @export
- * @interface ConfirmShipmentOrderItem
  */
 export interface ConfirmShipmentOrderItem {
     /**
      * The order item\'s unique identifier.
-     * @type {string}
-     * @memberof ConfirmShipmentOrderItem
      */
     'orderItemId': string;
     /**
      * The item\'s quantity.
-     * @type {number}
-     * @memberof ConfirmShipmentOrderItem
      */
     'quantity': number;
     /**
      * A list of order items.
-     * @type {Array<string>}
-     * @memberof ConfirmShipmentOrderItem
      */
     'transparencyCodes'?: Array<string>;
 }

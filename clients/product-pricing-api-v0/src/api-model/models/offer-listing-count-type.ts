@@ -16,20 +16,14 @@
 
 /**
  * The number of offer listings with the specified condition.
- * @export
- * @interface OfferListingCountType
  */
 export interface OfferListingCountType {
     /**
      * The number of offer listings.
-     * @type {number}
-     * @memberof OfferListingCountType
      */
     'Count': number;
     /**
      * The condition of the item.
-     * @type {string}
-     * @memberof OfferListingCountType
      */
     'condition': string;
 }

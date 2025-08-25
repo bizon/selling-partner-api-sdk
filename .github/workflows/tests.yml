@@ -67,7 +67,12 @@ jobs:
       - name: Run tests
         run: pnpm test
 
-      - name: Upload code coverage to codecov
+      - name: Upload test results to Codecov
+        uses: codecov/test-results-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Upload code coverage to Codecov
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}

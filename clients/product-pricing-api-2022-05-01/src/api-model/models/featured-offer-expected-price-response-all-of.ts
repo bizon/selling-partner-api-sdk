@@ -20,23 +20,8 @@ import type { FeaturedOfferExpectedPriceRequestParams } from './featured-offer-e
 // @ts-ignore
 import type { FeaturedOfferExpectedPriceResponseBody } from './featured-offer-expected-price-response-body';
 
-/**
- * 
- * @export
- * @interface FeaturedOfferExpectedPriceResponseAllOf
- */
 export interface FeaturedOfferExpectedPriceResponseAllOf {
-    /**
-     * 
-     * @type {FeaturedOfferExpectedPriceRequestParams}
-     * @memberof FeaturedOfferExpectedPriceResponseAllOf
-     */
     'request': FeaturedOfferExpectedPriceRequestParams;
-    /**
-     * 
-     * @type {FeaturedOfferExpectedPriceResponseBody}
-     * @memberof FeaturedOfferExpectedPriceResponseAllOf
-     */
     'body'?: FeaturedOfferExpectedPriceResponseBody;
 }
 

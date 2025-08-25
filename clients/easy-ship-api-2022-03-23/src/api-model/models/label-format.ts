@@ -16,8 +16,6 @@
 
 /**
  * The file format in which the shipping label will be created.
- * @export
- * @enum {string}
  */
 
 export const LabelFormat = {

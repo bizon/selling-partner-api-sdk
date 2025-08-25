@@ -16,14 +16,10 @@
 
 /**
  * The discount funding on the offer.
- * @export
- * @interface DiscountFunding
  */
 export interface DiscountFunding {
     /**
      * Filters the results to only include offers with the percentage specified.
-     * @type {Set<number>}
-     * @memberof DiscountFunding
      */
     'percentage'?: Set<number>;
 }

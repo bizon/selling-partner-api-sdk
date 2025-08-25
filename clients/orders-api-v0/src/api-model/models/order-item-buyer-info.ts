@@ -22,44 +22,21 @@ import type { Money } from './money';
 
 /**
  * A single order item\'s buyer information.
- * @export
- * @interface OrderItemBuyerInfo
  */
 export interface OrderItemBuyerInfo {
     /**
      * An Amazon-defined order item identifier.
-     * @type {string}
-     * @memberof OrderItemBuyerInfo
      */
     'OrderItemId': string;
-    /**
-     * 
-     * @type {BuyerCustomizedInfoDetail}
-     * @memberof OrderItemBuyerInfo
-     */
     'BuyerCustomizedInfo'?: BuyerCustomizedInfoDetail;
-    /**
-     * 
-     * @type {Money}
-     * @memberof OrderItemBuyerInfo
-     */
     'GiftWrapPrice'?: Money;
-    /**
-     * 
-     * @type {Money}
-     * @memberof OrderItemBuyerInfo
-     */
     'GiftWrapTax'?: Money;
     /**
      * A gift message provided by the buyer.  **Note**: This attribute is only available for MFN (fulfilled by seller) orders.
-     * @type {string}
-     * @memberof OrderItemBuyerInfo
      */
     'GiftMessageText'?: string;
     /**
      * The gift wrap level specified by the buyer.
-     * @type {string}
-     * @memberof OrderItemBuyerInfo
      */
     'GiftWrapLevel'?: string;
 }

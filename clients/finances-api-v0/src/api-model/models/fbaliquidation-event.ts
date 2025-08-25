@@ -19,33 +19,17 @@ import type { Currency } from './currency';
 
 /**
  * A payment event for Fulfillment by Amazon (FBA) inventory liquidation. This event is used only in the US marketplace.
- * @export
- * @interface FBALiquidationEvent
  */
 export interface FBALiquidationEvent {
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof FBALiquidationEvent
      */
     'PostedDate'?: string;
     /**
      * The identifier for the original removal order.
-     * @type {string}
-     * @memberof FBALiquidationEvent
      */
     'OriginalRemovalOrderId'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof FBALiquidationEvent
-     */
     'LiquidationProceedsAmount'?: Currency;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof FBALiquidationEvent
-     */
     'LiquidationFeeAmount'?: Currency;
 }
 

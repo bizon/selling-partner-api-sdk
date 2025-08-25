@@ -16,8 +16,6 @@
 
 /**
  * Specifies who will label the items. Options include `AMAZON`, `SELLER` or `NONE`.
- * @export
- * @enum {string}
  */
 
 export const LabelOwner = {

@@ -19,21 +19,12 @@ import type { FinancialEvents } from './financial-events';
 
 /**
  * The payload for the listFinancialEvents operation.
- * @export
- * @interface ListFinancialEventsPayload
  */
 export interface ListFinancialEventsPayload {
     /**
      * When present and not empty, pass this string token in the next request to return the next response page.
-     * @type {string}
-     * @memberof ListFinancialEventsPayload
      */
     'NextToken'?: string;
-    /**
-     * 
-     * @type {FinancialEvents}
-     * @memberof ListFinancialEventsPayload
-     */
     'FinancialEvents'?: FinancialEvents;
 }
 

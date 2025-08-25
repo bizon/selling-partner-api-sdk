@@ -22,7 +22,6 @@ import type { ErrorList } from './error-list';
 
 /**
  * @type ValidateContentDocumentAsinRelationsResponse
- * @export
  */
 export type ValidateContentDocumentAsinRelationsResponse = AplusResponse & ErrorList;
 

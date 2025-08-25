@@ -16,26 +16,18 @@
 
 /**
  * Individual JSON Patch operation for an HTTP PATCH request.
- * @export
- * @interface PatchOperation
  */
 export interface PatchOperation {
     /**
      * Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. See <https://tools.ietf.org/html/rfc6902>.
-     * @type {string}
-     * @memberof PatchOperation
      */
     'op': PatchOperationOpEnum;
     /**
      * JSON Pointer path of the element to patch. See <https://tools.ietf.org/html/rfc6902>.
-     * @type {string}
-     * @memberof PatchOperation
      */
     'path': string;
     /**
      * JSON value to add, replace, or delete.
-     * @type {Array<{ [key: string]: any; }>}
-     * @memberof PatchOperation
      */
     'value'?: Array<{ [key: string]: any; }>;
 }

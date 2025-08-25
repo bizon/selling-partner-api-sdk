@@ -22,33 +22,11 @@ import type { TextComponent } from './text-component';
 
 /**
  * Three standard images with text, presented across a single row.
- * @export
- * @interface StandardThreeImageTextModule
  */
 export interface StandardThreeImageTextModule {
-    /**
-     * 
-     * @type {TextComponent}
-     * @memberof StandardThreeImageTextModule
-     */
     'headline'?: TextComponent;
-    /**
-     * 
-     * @type {StandardImageTextBlock}
-     * @memberof StandardThreeImageTextModule
-     */
     'block1'?: StandardImageTextBlock;
-    /**
-     * 
-     * @type {StandardImageTextBlock}
-     * @memberof StandardThreeImageTextModule
-     */
     'block2'?: StandardImageTextBlock;
-    /**
-     * 
-     * @type {StandardImageTextBlock}
-     * @memberof StandardThreeImageTextModule
-     */
     'block3'?: StandardImageTextBlock;
 }
 

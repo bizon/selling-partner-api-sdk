@@ -19,21 +19,12 @@ import type { Currency } from './currency';
 
 /**
  * A value-added service to be applied to a shipping service purchase.
- * @export
- * @interface OneClickShipmentValueAddedService
  */
 export interface OneClickShipmentValueAddedService {
     /**
      * The identifier of the selected value-added service.
-     * @type {string}
-     * @memberof OneClickShipmentValueAddedService
      */
     'id': string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof OneClickShipmentValueAddedService
-     */
     'amount'?: Currency;
 }
 

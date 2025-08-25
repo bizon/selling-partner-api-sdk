@@ -17,17 +17,7 @@
 // @ts-ignore
 import type { ListingOffersRequestParams } from './listing-offers-request-params';
 
-/**
- * 
- * @export
- * @interface ListingOffersResponseAllOf
- */
 export interface ListingOffersResponseAllOf {
-    /**
-     * 
-     * @type {ListingOffersRequestParams}
-     * @memberof ListingOffersResponseAllOf
-     */
     'request'?: ListingOffersRequestParams;
 }
 

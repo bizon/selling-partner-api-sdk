@@ -16,20 +16,14 @@
 
 /**
  * Input for fulfillment time details
- * @export
- * @interface FulfillmentTime
  */
 export interface FulfillmentTime {
     /**
      * The date, time in UTC of the fulfillment start time in ISO 8601 format.
-     * @type {string}
-     * @memberof FulfillmentTime
      */
     'startTime'?: string;
     /**
      * The date, time in UTC of the fulfillment end time in ISO 8601 format.
-     * @type {string}
-     * @memberof FulfillmentTime
      */
     'endTime'?: string;
 }

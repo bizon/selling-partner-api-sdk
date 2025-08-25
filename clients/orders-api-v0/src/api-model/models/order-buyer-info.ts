@@ -19,44 +19,27 @@ import type { BuyerTaxInfo } from './buyer-tax-info';
 
 /**
  * Buyer information for an order.
- * @export
- * @interface OrderBuyerInfo
  */
 export interface OrderBuyerInfo {
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
-     * @type {string}
-     * @memberof OrderBuyerInfo
      */
     'AmazonOrderId': string;
     /**
      * The anonymized email address of the buyer.
-     * @type {string}
-     * @memberof OrderBuyerInfo
      */
     'BuyerEmail'?: string;
     /**
      * The buyer name or the recipient name.
-     * @type {string}
-     * @memberof OrderBuyerInfo
      */
     'BuyerName'?: string;
     /**
      * The county of the buyer.  **Note**: This attribute is only available in the Brazil marketplace.
-     * @type {string}
-     * @memberof OrderBuyerInfo
      */
     'BuyerCounty'?: string;
-    /**
-     * 
-     * @type {BuyerTaxInfo}
-     * @memberof OrderBuyerInfo
-     */
     'BuyerTaxInfo'?: BuyerTaxInfo;
     /**
      * The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout.
-     * @type {string}
-     * @memberof OrderBuyerInfo
      */
     'PurchaseOrderNumber'?: string;
 }

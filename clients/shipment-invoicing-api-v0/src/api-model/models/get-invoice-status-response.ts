@@ -19,20 +19,11 @@ import type { ShipmentInvoiceStatusResponse } from './shipment-invoice-status-re
 
 /**
  * The response schema for the getInvoiceStatus operation.
- * @export
- * @interface GetInvoiceStatusResponse
  */
 export interface GetInvoiceStatusResponse {
-    /**
-     * 
-     * @type {ShipmentInvoiceStatusResponse}
-     * @memberof GetInvoiceStatusResponse
-     */
     'payload'?: ShipmentInvoiceStatusResponse;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetInvoiceStatusResponse
      */
     'errors'?: Array<Error>;
 }

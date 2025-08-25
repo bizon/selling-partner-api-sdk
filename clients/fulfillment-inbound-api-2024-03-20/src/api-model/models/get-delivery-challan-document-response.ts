@@ -19,15 +19,8 @@ import type { DocumentDownload } from './document-download';
 
 /**
  * The `getDeliveryChallanDocumentResponse` response.
- * @export
- * @interface GetDeliveryChallanDocumentResponse
  */
 export interface GetDeliveryChallanDocumentResponse {
-    /**
-     * 
-     * @type {DocumentDownload}
-     * @memberof GetDeliveryChallanDocumentResponse
-     */
     'documentDownload': DocumentDownload;
 }
 

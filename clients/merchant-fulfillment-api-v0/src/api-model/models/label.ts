@@ -28,39 +28,15 @@ import type { StandardIdForLabel } from './standard-id-for-label';
 
 /**
  * Data for creating a shipping label and dimensions for printing the label.
- * @export
- * @interface Label
  */
 export interface Label {
     /**
      * Custom text to print on the label. Note: Custom text is only included on labels that are in ZPL format (ZPL203). FedEx does not support `CustomTextForLabel`.
-     * @type {string}
-     * @memberof Label
      */
     'CustomTextForLabel'?: string;
-    /**
-     * 
-     * @type {LabelDimensions}
-     * @memberof Label
-     */
     'Dimensions': LabelDimensions;
-    /**
-     * 
-     * @type {FileContents}
-     * @memberof Label
-     */
     'FileContents': FileContents;
-    /**
-     * 
-     * @type {LabelFormat}
-     * @memberof Label
-     */
     'LabelFormat'?: LabelFormat;
-    /**
-     * 
-     * @type {StandardIdForLabel}
-     * @memberof Label
-     */
     'StandardIdForLabel'?: StandardIdForLabel;
 }
 

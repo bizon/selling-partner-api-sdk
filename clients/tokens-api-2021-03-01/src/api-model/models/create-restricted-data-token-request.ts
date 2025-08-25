@@ -19,20 +19,14 @@ import type { RestrictedResource } from './restricted-resource';
 
 /**
  * The request schema for the createRestrictedDataToken operation.
- * @export
- * @interface CreateRestrictedDataTokenRequest
  */
 export interface CreateRestrictedDataTokenRequest {
     /**
      * The application ID for the target application to which access is being delegated.
-     * @type {string}
-     * @memberof CreateRestrictedDataTokenRequest
      */
     'targetApplication'?: string;
     /**
      * A list of restricted resources. Maximum: 50
-     * @type {Array<RestrictedResource>}
-     * @memberof CreateRestrictedDataTokenRequest
      */
     'restrictedResources': Array<RestrictedResource>;
 }

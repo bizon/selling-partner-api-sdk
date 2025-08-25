@@ -19,21 +19,12 @@ import type { AppointmentSlotTime } from './appointment-slot-time';
 
 /**
  * The fulfillment center appointment slot for the transportation option.
- * @export
- * @interface AppointmentSlot
  */
 export interface AppointmentSlot {
     /**
      * An identifier to a self-ship appointment slot.
-     * @type {string}
-     * @memberof AppointmentSlot
      */
     'slotId': string;
-    /**
-     * 
-     * @type {AppointmentSlotTime}
-     * @memberof AppointmentSlot
-     */
     'slotTime': AppointmentSlotTime;
 }
 

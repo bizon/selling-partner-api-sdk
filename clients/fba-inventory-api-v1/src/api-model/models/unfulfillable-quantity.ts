@@ -16,50 +16,34 @@
 
 /**
  * The quantity of unfulfillable inventory.
- * @export
- * @interface UnfulfillableQuantity
  */
 export interface UnfulfillableQuantity {
     /**
      * The total number of units in Amazon\'s fulfillment network in unsellable condition.
-     * @type {number}
-     * @memberof UnfulfillableQuantity
      */
     'totalUnfulfillableQuantity'?: number;
     /**
      * The number of units in customer damaged disposition.
-     * @type {number}
-     * @memberof UnfulfillableQuantity
      */
     'customerDamagedQuantity'?: number;
     /**
      * The number of units in warehouse damaged disposition.
-     * @type {number}
-     * @memberof UnfulfillableQuantity
      */
     'warehouseDamagedQuantity'?: number;
     /**
      * The number of units in distributor damaged disposition.
-     * @type {number}
-     * @memberof UnfulfillableQuantity
      */
     'distributorDamagedQuantity'?: number;
     /**
      * The number of units in carrier damaged disposition.
-     * @type {number}
-     * @memberof UnfulfillableQuantity
      */
     'carrierDamagedQuantity'?: number;
     /**
      * The number of units in defective disposition.
-     * @type {number}
-     * @memberof UnfulfillableQuantity
      */
     'defectiveQuantity'?: number;
     /**
      * The number of units in expired disposition.
-     * @type {number}
-     * @memberof UnfulfillableQuantity
      */
     'expiredQuantity'?: number;
 }

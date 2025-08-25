@@ -16,62 +16,42 @@
 
 /**
  * Summary details of an Amazon catalog item for the indicated Amazon marketplace.
- * @export
- * @interface ItemSummaryByMarketplace
  */
 export interface ItemSummaryByMarketplace {
     /**
      * Amazon marketplace identifier.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'marketplaceId': string;
     /**
      * Name of the brand associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'brandName'?: string;
     /**
      * Identifier of the browse node associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'browseNode'?: string;
     /**
      * Name of the color associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'colorName'?: string;
     /**
      * Name, or title, associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'itemName'?: string;
     /**
      * Name of the manufacturer associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'manufacturer'?: string;
     /**
      * Model number associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'modelNumber'?: string;
     /**
      * Name of the size associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'sizeName'?: string;
     /**
      * Name of the style associated with an Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'styleName'?: string;
 }

@@ -14,16 +14,9 @@
 
 
 
-/**
- * 
- * @export
- * @interface AplusPaginatedResponseAllOf
- */
 export interface AplusPaginatedResponseAllOf {
     /**
      * A token that you use to fetch a specific page when there are multiple pages of results.
-     * @type {string}
-     * @memberof AplusPaginatedResponseAllOf
      */
     'nextPageToken'?: string;
 }

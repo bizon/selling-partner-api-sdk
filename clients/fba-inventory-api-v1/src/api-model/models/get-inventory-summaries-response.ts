@@ -22,26 +22,12 @@ import type { Pagination } from './pagination';
 
 /**
  * The Response schema.
- * @export
- * @interface GetInventorySummariesResponse
  */
 export interface GetInventorySummariesResponse {
-    /**
-     * 
-     * @type {GetInventorySummariesResult}
-     * @memberof GetInventorySummariesResponse
-     */
     'payload'?: GetInventorySummariesResult;
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof GetInventorySummariesResponse
-     */
     'pagination'?: Pagination;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetInventorySummariesResponse
      */
     'errors'?: Array<Error>;
 }

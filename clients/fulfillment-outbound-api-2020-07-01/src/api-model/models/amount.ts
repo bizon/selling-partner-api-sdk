@@ -16,20 +16,14 @@
 
 /**
  * A quantity based on unit of measure.
- * @export
- * @interface Amount
  */
 export interface Amount {
     /**
      * The unit of measure for the amount.
-     * @type {string}
-     * @memberof Amount
      */
     'unitOfMeasure': AmountUnitOfMeasureEnum;
     /**
      * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.
-     * @type {string}
-     * @memberof Amount
      */
     'value': string;
 }

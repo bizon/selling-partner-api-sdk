@@ -19,26 +19,15 @@ import type { Currency } from './currency';
 
 /**
  * Information pertaining to the preparation of inbound goods.
- * @export
- * @interface PrepInstruction
  */
 export interface PrepInstruction {
-    /**
-     * 
-     * @type {Currency}
-     * @memberof PrepInstruction
-     */
     'fee'?: Currency;
     /**
      * In some situations, special preparations are required for items and this field reflects the owner of the preparations. Options include `AMAZON`, `SELLER` or `NONE`.
-     * @type {string}
-     * @memberof PrepInstruction
      */
     'prepOwner'?: string;
     /**
      * Type of preparation that should be done.  Possible values: `ITEM_LABELING`, `ITEM_BUBBLEWRAP`, `ITEM_POLYBAGGING`, `ITEM_TAPING`, `ITEM_BLACK_SHRINKWRAP`, `ITEM_HANG_GARMENT`, `ITEM_BOXING`, `ITEM_SETCREAT`, `ITEM_RMOVHANG`, `ITEM_SUFFOSTK`, `ITEM_CAP_SEALING`, `ITEM_DEBUNDLE`, `ITEM_SETSTK`, `ITEM_SIOC`, `ITEM_NO_PREP`, `ADULT`, `BABY`, `TEXTILE`, `HANGER`, `FRAGILE`, `LIQUID`, `SHARP`, `SMALL`, `PERFORATED`, `GRANULAR`, `SET`, `FC_PROVIDED`, `UNKNOWN`, `NONE`.
-     * @type {string}
-     * @memberof PrepInstruction
      */
     'prepType'?: string;
 }

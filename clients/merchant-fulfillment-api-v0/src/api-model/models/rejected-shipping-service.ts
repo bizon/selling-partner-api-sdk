@@ -16,38 +16,26 @@
 
 /**
  * Information about a rejected shipping service
- * @export
- * @interface RejectedShippingService
  */
 export interface RejectedShippingService {
     /**
      * The rejected shipping carrier name. For example, USPS.
-     * @type {string}
-     * @memberof RejectedShippingService
      */
     'CarrierName': string;
     /**
      * The rejected shipping service localized name. For example, FedEx Standard Overnight.
-     * @type {string}
-     * @memberof RejectedShippingService
      */
     'ShippingServiceName': string;
     /**
      * An Amazon-defined shipping service identifier.
-     * @type {string}
-     * @memberof RejectedShippingService
      */
     'ShippingServiceId': string;
     /**
      * A reason code meant to be consumed programatically. For example, `CARRIER_CANNOT_SHIP_TO_POBOX`.
-     * @type {string}
-     * @memberof RejectedShippingService
      */
     'RejectionReasonCode': string;
     /**
      * A localized human readable description of the rejected reason.
-     * @type {string}
-     * @memberof RejectedShippingService
      */
     'RejectionReasonMessage'?: string;
 }

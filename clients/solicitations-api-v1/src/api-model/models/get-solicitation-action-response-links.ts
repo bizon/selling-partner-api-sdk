@@ -17,23 +17,8 @@
 // @ts-ignore
 import type { LinkObject } from './link-object';
 
-/**
- * 
- * @export
- * @interface GetSolicitationActionResponseLinks
- */
 export interface GetSolicitationActionResponseLinks {
-    /**
-     * 
-     * @type {LinkObject}
-     * @memberof GetSolicitationActionResponseLinks
-     */
     'self': LinkObject;
-    /**
-     * 
-     * @type {LinkObject}
-     * @memberof GetSolicitationActionResponseLinks
-     */
     'schema': LinkObject;
 }
 

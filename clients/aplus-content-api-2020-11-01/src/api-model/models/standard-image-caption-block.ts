@@ -22,21 +22,9 @@ import type { TextComponent } from './text-component';
 
 /**
  * The A+ Content standard image and caption block.
- * @export
- * @interface StandardImageCaptionBlock
  */
 export interface StandardImageCaptionBlock {
-    /**
-     * 
-     * @type {ImageComponent}
-     * @memberof StandardImageCaptionBlock
-     */
     'image'?: ImageComponent;
-    /**
-     * 
-     * @type {TextComponent}
-     * @memberof StandardImageCaptionBlock
-     */
     'caption'?: TextComponent;
 }
 

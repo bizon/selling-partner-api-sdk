@@ -19,15 +19,8 @@ import type { Currency } from './currency';
 
 /**
  * The amount to collect on delivery.
- * @export
- * @interface CollectOnDelivery
  */
 export interface CollectOnDelivery {
-    /**
-     * 
-     * @type {Currency}
-     * @memberof CollectOnDelivery
-     */
     'amount': Currency;
 }
 

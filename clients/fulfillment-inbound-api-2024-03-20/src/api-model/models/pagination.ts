@@ -16,14 +16,10 @@
 
 /**
  * Contains tokens to fetch from a certain page.
- * @export
- * @interface Pagination
  */
 export interface Pagination {
     /**
      * When present, pass this string token in the next request to return the next response page.
-     * @type {string}
-     * @memberof Pagination
      */
     'nextToken'?: string;
 }

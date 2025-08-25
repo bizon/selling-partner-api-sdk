@@ -16,8 +16,6 @@
 
 /**
  * The reason for which shipper is filing the claim for a particular shipment.
- * @export
- * @enum {string}
  */
 
 export const ClaimReason = {

@@ -25,27 +25,10 @@ import type { ListOfferMetricsRequestSort } from './list-offer-metrics-request-s
 
 /**
  * The request body for the `listOfferMetrics` operation.
- * @export
- * @interface ListOfferMetricsRequest
  */
 export interface ListOfferMetricsRequest {
-    /**
-     * 
-     * @type {ListOfferMetricsRequestPagination}
-     * @memberof ListOfferMetricsRequest
-     */
     'pagination': ListOfferMetricsRequestPagination;
-    /**
-     * 
-     * @type {ListOfferMetricsRequestSort}
-     * @memberof ListOfferMetricsRequest
-     */
     'sort'?: ListOfferMetricsRequestSort;
-    /**
-     * 
-     * @type {ListOfferMetricsRequestFilters}
-     * @memberof ListOfferMetricsRequest
-     */
     'filters': ListOfferMetricsRequestFilters;
 }
 

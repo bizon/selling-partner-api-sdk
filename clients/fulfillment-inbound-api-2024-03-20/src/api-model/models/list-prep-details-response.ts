@@ -19,14 +19,10 @@ import type { MskuPrepDetail } from './msku-prep-detail';
 
 /**
  * The response to the `listPrepDetails` operation.
- * @export
- * @interface ListPrepDetailsResponse
  */
 export interface ListPrepDetailsResponse {
     /**
      * A list of MSKUs and related prep details.
-     * @type {Array<MskuPrepDetail>}
-     * @memberof ListPrepDetailsResponse
      */
     'mskuPrepDetails': Array<MskuPrepDetail>;
 }

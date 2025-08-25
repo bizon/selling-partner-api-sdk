@@ -19,20 +19,11 @@ import type { Subscription } from './subscription';
 
 /**
  * The response schema for the `getSubscriptionById` operation.
- * @export
- * @interface GetSubscriptionByIdResponse
  */
 export interface GetSubscriptionByIdResponse {
-    /**
-     * 
-     * @type {Subscription}
-     * @memberof GetSubscriptionByIdResponse
-     */
     'payload'?: Subscription;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetSubscriptionByIdResponse
      */
     'errors'?: Array<Error>;
 }

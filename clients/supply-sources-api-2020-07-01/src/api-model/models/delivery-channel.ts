@@ -19,21 +19,9 @@ import type { OperationalConfiguration } from './operational-configuration';
 
 /**
  * The delivery channel of a supply source.
- * @export
- * @interface DeliveryChannel
  */
 export interface DeliveryChannel {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof DeliveryChannel
-     */
     'isSupported'?: boolean;
-    /**
-     * 
-     * @type {OperationalConfiguration}
-     * @memberof DeliveryChannel
-     */
     'operationalConfiguration'?: OperationalConfiguration;
 }
 

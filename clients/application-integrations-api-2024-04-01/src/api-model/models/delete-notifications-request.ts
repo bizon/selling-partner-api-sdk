@@ -16,20 +16,14 @@
 
 /**
  * The request for the `deleteNotifications` operation.
- * @export
- * @interface DeleteNotificationsRequest
  */
 export interface DeleteNotificationsRequest {
     /**
      * The unique identifier of the notification template you used to onboard your application.
-     * @type {string}
-     * @memberof DeleteNotificationsRequest
      */
     'templateId': string;
     /**
      * The unique identifier that maps each notification status to a reason code.
-     * @type {string}
-     * @memberof DeleteNotificationsRequest
      */
     'deletionReason': DeleteNotificationsRequestDeletionReasonEnum;
 }

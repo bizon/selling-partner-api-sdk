@@ -19,20 +19,11 @@ import type { GetFulfillmentOrderResult } from './get-fulfillment-order-result';
 
 /**
  * The response schema for the `getFulfillmentOrder` operation.
- * @export
- * @interface GetFulfillmentOrderResponse
  */
 export interface GetFulfillmentOrderResponse {
-    /**
-     * 
-     * @type {GetFulfillmentOrderResult}
-     * @memberof GetFulfillmentOrderResponse
-     */
     'payload'?: GetFulfillmentOrderResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetFulfillmentOrderResponse
      */
     'errors'?: Array<Error>;
 }

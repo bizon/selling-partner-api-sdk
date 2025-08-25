@@ -19,51 +19,32 @@ import type { ItemDelivery } from './item-delivery';
 
 /**
  * Information about an item associated with the service job.
- * @export
- * @interface AssociatedItem
  */
 export interface AssociatedItem {
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof AssociatedItem
      */
     'asin'?: string;
     /**
      * The title of the item.
-     * @type {string}
-     * @memberof AssociatedItem
      */
     'title'?: string;
     /**
      * The total number of items included in the order.
-     * @type {number}
-     * @memberof AssociatedItem
      */
     'quantity'?: number;
     /**
      * The Amazon-defined identifier for an order placed by the buyer, in 3-7-7 format.
-     * @type {string}
-     * @memberof AssociatedItem
      */
     'orderId'?: string;
     /**
      * The status of the item.
-     * @type {string}
-     * @memberof AssociatedItem
      */
     'itemStatus'?: AssociatedItemItemStatusEnum;
     /**
      * The brand name of the item.
-     * @type {string}
-     * @memberof AssociatedItem
      */
     'brandName'?: string;
-    /**
-     * 
-     * @type {ItemDelivery}
-     * @memberof AssociatedItem
-     */
     'itemDelivery'?: ItemDelivery;
 }
 

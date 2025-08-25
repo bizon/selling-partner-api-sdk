@@ -16,8 +16,6 @@
 
 /**
  * The enrollment method used to enroll the offer into the program.
- * @export
- * @enum {string}
  */
 
 export const EnrollmentMethod = {

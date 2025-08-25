@@ -143,7 +143,6 @@ import type { UpdateShipmentTrackingDetailsRequest } from '../models';
 import type { UpdateShipmentTrackingDetailsResponse } from '../models';
 /**
  * FulfillmentInboundApi - axios parameter creator
- * @export
  */
 export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -2023,7 +2022,6 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
 
 /**
  * FulfillmentInboundApi - functional programming interface
- * @export
  */
 export const FulfillmentInboundApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = FulfillmentInboundApiAxiosParamCreator(configuration)
@@ -2649,7 +2647,6 @@ export const FulfillmentInboundApiFp = function(configuration?: Configuration) {
 
 /**
  * FulfillmentInboundApi - factory interface
- * @export
  */
 export const FulfillmentInboundApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = FulfillmentInboundApiFp(configuration)
@@ -3064,1171 +3061,836 @@ export const FulfillmentInboundApiFactory = function (configuration?: Configurat
 
 /**
  * Request parameters for cancelInboundPlan operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiCancelInboundPlanRequest
  */
 export interface FulfillmentInboundApiCancelInboundPlanRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiCancelInboundPlan
      */
     readonly inboundPlanId: string
 }
 
 /**
  * Request parameters for cancelSelfShipAppointment operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiCancelSelfShipAppointmentRequest
  */
 export interface FulfillmentInboundApiCancelSelfShipAppointmentRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiCancelSelfShipAppointment
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-     * @type {string}
-     * @memberof FulfillmentInboundApiCancelSelfShipAppointment
      */
     readonly shipmentId: string
 
     /**
      * The body of the request to &#x60;cancelSelfShipAppointment&#x60;.
-     * @type {CancelSelfShipAppointmentRequest}
-     * @memberof FulfillmentInboundApiCancelSelfShipAppointment
      */
     readonly body: CancelSelfShipAppointmentRequest
 }
 
 /**
  * Request parameters for confirmDeliveryWindowOptions operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiConfirmDeliveryWindowOptionsRequest
  */
 export interface FulfillmentInboundApiConfirmDeliveryWindowOptionsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiConfirmDeliveryWindowOptions
      */
     readonly inboundPlanId: string
 
     /**
      * The shipment to confirm the delivery window option for.
-     * @type {string}
-     * @memberof FulfillmentInboundApiConfirmDeliveryWindowOptions
      */
     readonly shipmentId: string
 
     /**
      * The id of the delivery window option to be confirmed.
-     * @type {string}
-     * @memberof FulfillmentInboundApiConfirmDeliveryWindowOptions
      */
     readonly deliveryWindowOptionId: string
 }
 
 /**
  * Request parameters for confirmPackingOption operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiConfirmPackingOptionRequest
  */
 export interface FulfillmentInboundApiConfirmPackingOptionRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiConfirmPackingOption
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a packing option.
-     * @type {string}
-     * @memberof FulfillmentInboundApiConfirmPackingOption
      */
     readonly packingOptionId: string
 }
 
 /**
  * Request parameters for confirmPlacementOption operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiConfirmPlacementOptionRequest
  */
 export interface FulfillmentInboundApiConfirmPlacementOptionRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiConfirmPlacementOption
      */
     readonly inboundPlanId: string
 
     /**
      * The identifier of a placement option. A placement option represents the shipment splits and destinations of SKUs.
-     * @type {string}
-     * @memberof FulfillmentInboundApiConfirmPlacementOption
      */
     readonly placementOptionId: string
 }
 
 /**
  * Request parameters for confirmShipmentContentUpdatePreview operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiConfirmShipmentContentUpdatePreviewRequest
  */
 export interface FulfillmentInboundApiConfirmShipmentContentUpdatePreviewRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiConfirmShipmentContentUpdatePreview
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-     * @type {string}
-     * @memberof FulfillmentInboundApiConfirmShipmentContentUpdatePreview
      */
     readonly shipmentId: string
 
     /**
      * Identifier of a content update preview.
-     * @type {string}
-     * @memberof FulfillmentInboundApiConfirmShipmentContentUpdatePreview
      */
     readonly contentUpdatePreviewId: string
 }
 
 /**
  * Request parameters for confirmTransportationOptions operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiConfirmTransportationOptionsRequest
  */
 export interface FulfillmentInboundApiConfirmTransportationOptionsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiConfirmTransportationOptions
      */
     readonly inboundPlanId: string
 
     /**
      * The body of the request to &#x60;confirmTransportationOptions&#x60;.
-     * @type {ConfirmTransportationOptionsRequest}
-     * @memberof FulfillmentInboundApiConfirmTransportationOptions
      */
     readonly body: ConfirmTransportationOptionsRequest
 }
 
 /**
  * Request parameters for createInboundPlan operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiCreateInboundPlanRequest
  */
 export interface FulfillmentInboundApiCreateInboundPlanRequest {
     /**
      * The body of the request to &#x60;createInboundPlan&#x60;.
-     * @type {CreateInboundPlanRequest}
-     * @memberof FulfillmentInboundApiCreateInboundPlan
      */
     readonly body: CreateInboundPlanRequest
 }
 
 /**
  * Request parameters for createMarketplaceItemLabels operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiCreateMarketplaceItemLabelsRequest
  */
 export interface FulfillmentInboundApiCreateMarketplaceItemLabelsRequest {
     /**
      * The body of the request to &#x60;createMarketplaceItemLabels&#x60;.
-     * @type {CreateMarketplaceItemLabelsRequest}
-     * @memberof FulfillmentInboundApiCreateMarketplaceItemLabels
      */
     readonly body: CreateMarketplaceItemLabelsRequest
 }
 
 /**
  * Request parameters for generateDeliveryWindowOptions operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiGenerateDeliveryWindowOptionsRequest
  */
 export interface FulfillmentInboundApiGenerateDeliveryWindowOptionsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGenerateDeliveryWindowOptions
      */
     readonly inboundPlanId: string
 
     /**
      * The shipment to generate delivery window options for.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGenerateDeliveryWindowOptions
      */
     readonly shipmentId: string
 }
 
 /**
  * Request parameters for generatePackingOptions operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiGeneratePackingOptionsRequest
  */
 export interface FulfillmentInboundApiGeneratePackingOptionsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGeneratePackingOptions
      */
     readonly inboundPlanId: string
 }
 
 /**
  * Request parameters for generatePlacementOptions operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiGeneratePlacementOptionsRequest
  */
 export interface FulfillmentInboundApiGeneratePlacementOptionsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGeneratePlacementOptions
      */
     readonly inboundPlanId: string
 
     /**
      * The body of the request to &#x60;generatePlacementOptions&#x60;.
-     * @type {GeneratePlacementOptionsRequest}
-     * @memberof FulfillmentInboundApiGeneratePlacementOptions
      */
     readonly body: GeneratePlacementOptionsRequest
 }
 
 /**
  * Request parameters for generateSelfShipAppointmentSlots operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiGenerateSelfShipAppointmentSlotsRequest
  */
 export interface FulfillmentInboundApiGenerateSelfShipAppointmentSlotsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGenerateSelfShipAppointmentSlots
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGenerateSelfShipAppointmentSlots
      */
     readonly shipmentId: string
 
     /**
      * The body of the request to &#x60;generateSelfShipAppointmentSlots&#x60;.
-     * @type {GenerateSelfShipAppointmentSlotsRequest}
-     * @memberof FulfillmentInboundApiGenerateSelfShipAppointmentSlots
      */
     readonly body: GenerateSelfShipAppointmentSlotsRequest
 }
 
 /**
  * Request parameters for generateShipmentContentUpdatePreviews operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiGenerateShipmentContentUpdatePreviewsRequest
  */
 export interface FulfillmentInboundApiGenerateShipmentContentUpdatePreviewsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGenerateShipmentContentUpdatePreviews
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGenerateShipmentContentUpdatePreviews
      */
     readonly shipmentId: string
 
     /**
      * The body of the request to &#x60;generateShipmentContentUpdatePreviews&#x60;.
-     * @type {GenerateShipmentContentUpdatePreviewsRequest}
-     * @memberof FulfillmentInboundApiGenerateShipmentContentUpdatePreviews
      */
     readonly body: GenerateShipmentContentUpdatePreviewsRequest
 }
 
 /**
  * Request parameters for generateTransportationOptions operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiGenerateTransportationOptionsRequest
  */
 export interface FulfillmentInboundApiGenerateTransportationOptionsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGenerateTransportationOptions
      */
     readonly inboundPlanId: string
 
     /**
      * The body of the request to &#x60;generateTransportationOptions&#x60;.
-     * @type {GenerateTransportationOptionsRequest}
-     * @memberof FulfillmentInboundApiGenerateTransportationOptions
      */
     readonly body: GenerateTransportationOptionsRequest
 }
 
 /**
  * Request parameters for getDeliveryChallanDocument operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiGetDeliveryChallanDocumentRequest
  */
 export interface FulfillmentInboundApiGetDeliveryChallanDocumentRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetDeliveryChallanDocument
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetDeliveryChallanDocument
      */
     readonly shipmentId: string
 }
 
 /**
  * Request parameters for getInboundOperationStatus operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiGetInboundOperationStatusRequest
  */
 export interface FulfillmentInboundApiGetInboundOperationStatusRequest {
     /**
      * Identifier of an asynchronous operation.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetInboundOperationStatus
      */
     readonly operationId: string
 }
 
 /**
  * Request parameters for getInboundPlan operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiGetInboundPlanRequest
  */
 export interface FulfillmentInboundApiGetInboundPlanRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetInboundPlan
      */
     readonly inboundPlanId: string
 }
 
 /**
  * Request parameters for getSelfShipAppointmentSlots operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiGetSelfShipAppointmentSlotsRequest
  */
 export interface FulfillmentInboundApiGetSelfShipAppointmentSlotsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetSelfShipAppointmentSlots
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetSelfShipAppointmentSlots
      */
     readonly shipmentId: string
 
     /**
      * The number of self ship appointment slots to return in the response matching the given query.
-     * @type {number}
-     * @memberof FulfillmentInboundApiGetSelfShipAppointmentSlots
      */
     readonly pageSize?: number
 
     /**
      * A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetSelfShipAppointmentSlots
      */
     readonly paginationToken?: string
 }
 
 /**
  * Request parameters for getShipment operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiGetShipmentRequest
  */
 export interface FulfillmentInboundApiGetShipmentRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetShipment
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetShipment
      */
     readonly shipmentId: string
 }
 
 /**
  * Request parameters for getShipmentContentUpdatePreview operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiGetShipmentContentUpdatePreviewRequest
  */
 export interface FulfillmentInboundApiGetShipmentContentUpdatePreviewRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetShipmentContentUpdatePreview
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetShipmentContentUpdatePreview
      */
     readonly shipmentId: string
 
     /**
      * Identifier of a content update preview.
-     * @type {string}
-     * @memberof FulfillmentInboundApiGetShipmentContentUpdatePreview
      */
     readonly contentUpdatePreviewId: string
 }
 
 /**
  * Request parameters for listDeliveryWindowOptions operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiListDeliveryWindowOptionsRequest
  */
 export interface FulfillmentInboundApiListDeliveryWindowOptionsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListDeliveryWindowOptions
      */
     readonly inboundPlanId: string
 
     /**
      * The shipment to get delivery window options for.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListDeliveryWindowOptions
      */
     readonly shipmentId: string
 
     /**
      * The number of delivery window options to return in the response matching the given query.
-     * @type {number}
-     * @memberof FulfillmentInboundApiListDeliveryWindowOptions
      */
     readonly pageSize?: number
 
     /**
      * A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListDeliveryWindowOptions
      */
     readonly paginationToken?: string
 }
 
 /**
  * Request parameters for listInboundPlanBoxes operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiListInboundPlanBoxesRequest
  */
 export interface FulfillmentInboundApiListInboundPlanBoxesRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListInboundPlanBoxes
      */
     readonly inboundPlanId: string
 
     /**
      * The number of boxes to return in the response matching the given query.
-     * @type {number}
-     * @memberof FulfillmentInboundApiListInboundPlanBoxes
      */
     readonly pageSize?: number
 
     /**
      * A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListInboundPlanBoxes
      */
     readonly paginationToken?: string
 }
 
 /**
  * Request parameters for listInboundPlanItems operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiListInboundPlanItemsRequest
  */
 export interface FulfillmentInboundApiListInboundPlanItemsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListInboundPlanItems
      */
     readonly inboundPlanId: string
 
     /**
      * The number of items to return in the response matching the given query.
-     * @type {number}
-     * @memberof FulfillmentInboundApiListInboundPlanItems
      */
     readonly pageSize?: number
 
     /**
      * A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListInboundPlanItems
      */
     readonly paginationToken?: string
 }
 
 /**
  * Request parameters for listInboundPlanPallets operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiListInboundPlanPalletsRequest
  */
 export interface FulfillmentInboundApiListInboundPlanPalletsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListInboundPlanPallets
      */
     readonly inboundPlanId: string
 
     /**
      * The number of pallets to return in the response matching the given query.
-     * @type {number}
-     * @memberof FulfillmentInboundApiListInboundPlanPallets
      */
     readonly pageSize?: number
 
     /**
      * A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListInboundPlanPallets
      */
     readonly paginationToken?: string
 }
 
 /**
  * Request parameters for listInboundPlans operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiListInboundPlansRequest
  */
 export interface FulfillmentInboundApiListInboundPlansRequest {
     /**
      * The number of inbound plans to return in the response matching the given query.
-     * @type {number}
-     * @memberof FulfillmentInboundApiListInboundPlans
      */
     readonly pageSize?: number
 
     /**
      * A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListInboundPlans
      */
     readonly paginationToken?: string
 
     /**
      * The status of an inbound plan.
-     * @type {'ACTIVE' | 'VOIDED' | 'SHIPPED'}
-     * @memberof FulfillmentInboundApiListInboundPlans
      */
     readonly status?: ListInboundPlansStatusEnum
 
     /**
      * Sort by field.
-     * @type {'LAST_UPDATED_TIME' | 'CREATION_TIME'}
-     * @memberof FulfillmentInboundApiListInboundPlans
      */
     readonly sortBy?: ListInboundPlansSortByEnum
 
     /**
      * The sort order.
-     * @type {'ASC' | 'DESC'}
-     * @memberof FulfillmentInboundApiListInboundPlans
      */
     readonly sortOrder?: ListInboundPlansSortOrderEnum
 }
 
 /**
  * Request parameters for listItemComplianceDetails operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiListItemComplianceDetailsRequest
  */
 export interface FulfillmentInboundApiListItemComplianceDetailsRequest {
     /**
      * A list of merchant SKUs, a merchant-supplied identifier of a specific SKU.
-     * @type {Array<string>}
-     * @memberof FulfillmentInboundApiListItemComplianceDetails
      */
     readonly mskus: Array<string>
 
     /**
      * The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof FulfillmentInboundApiListItemComplianceDetails
      */
     readonly marketplaceId: string
 }
 
 /**
  * Request parameters for listPackingGroupBoxes operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiListPackingGroupBoxesRequest
  */
 export interface FulfillmentInboundApiListPackingGroupBoxesRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListPackingGroupBoxes
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a packing group.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListPackingGroupBoxes
      */
     readonly packingGroupId: string
 
     /**
      * The number of packing group boxes to return in the response matching the given query.
-     * @type {number}
-     * @memberof FulfillmentInboundApiListPackingGroupBoxes
      */
     readonly pageSize?: number
 
     /**
      * A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListPackingGroupBoxes
      */
     readonly paginationToken?: string
 }
 
 /**
  * Request parameters for listPackingGroupItems operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiListPackingGroupItemsRequest
  */
 export interface FulfillmentInboundApiListPackingGroupItemsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListPackingGroupItems
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a packing group.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListPackingGroupItems
      */
     readonly packingGroupId: string
 
     /**
      * The number of packing group items to return in the response matching the given query.
-     * @type {number}
-     * @memberof FulfillmentInboundApiListPackingGroupItems
      */
     readonly pageSize?: number
 
     /**
      * A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListPackingGroupItems
      */
     readonly paginationToken?: string
 }
 
 /**
  * Request parameters for listPackingOptions operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiListPackingOptionsRequest
  */
 export interface FulfillmentInboundApiListPackingOptionsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListPackingOptions
      */
     readonly inboundPlanId: string
 
     /**
      * The number of packing options to return in the response matching the given query.
-     * @type {number}
-     * @memberof FulfillmentInboundApiListPackingOptions
      */
     readonly pageSize?: number
 
     /**
      * A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListPackingOptions
      */
     readonly paginationToken?: string
 }
 
 /**
  * Request parameters for listPlacementOptions operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiListPlacementOptionsRequest
  */
 export interface FulfillmentInboundApiListPlacementOptionsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListPlacementOptions
      */
     readonly inboundPlanId: string
 
     /**
      * The number of placement options to return in the response matching the given query.
-     * @type {number}
-     * @memberof FulfillmentInboundApiListPlacementOptions
      */
     readonly pageSize?: number
 
     /**
      * A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListPlacementOptions
      */
     readonly paginationToken?: string
 }
 
 /**
  * Request parameters for listPrepDetails operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiListPrepDetailsRequest
  */
 export interface FulfillmentInboundApiListPrepDetailsRequest {
     /**
      * The marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof FulfillmentInboundApiListPrepDetails
      */
     readonly marketplaceId: string
 
     /**
      * A list of merchant SKUs, a merchant-supplied identifier of a specific SKU.
-     * @type {Array<string>}
-     * @memberof FulfillmentInboundApiListPrepDetails
      */
     readonly mskus: Array<string>
 }
 
 /**
  * Request parameters for listShipmentBoxes operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiListShipmentBoxesRequest
  */
 export interface FulfillmentInboundApiListShipmentBoxesRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListShipmentBoxes
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListShipmentBoxes
      */
     readonly shipmentId: string
 
     /**
      * The number of boxes to return in the response matching the given query.
-     * @type {number}
-     * @memberof FulfillmentInboundApiListShipmentBoxes
      */
     readonly pageSize?: number
 
     /**
      * A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListShipmentBoxes
      */
     readonly paginationToken?: string
 }
 
 /**
  * Request parameters for listShipmentContentUpdatePreviews operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiListShipmentContentUpdatePreviewsRequest
  */
 export interface FulfillmentInboundApiListShipmentContentUpdatePreviewsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListShipmentContentUpdatePreviews
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListShipmentContentUpdatePreviews
      */
     readonly shipmentId: string
 
     /**
      * The number of content update previews to return.
-     * @type {number}
-     * @memberof FulfillmentInboundApiListShipmentContentUpdatePreviews
      */
     readonly pageSize?: number
 
     /**
      * A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListShipmentContentUpdatePreviews
      */
     readonly paginationToken?: string
 }
 
 /**
  * Request parameters for listShipmentItems operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiListShipmentItemsRequest
  */
 export interface FulfillmentInboundApiListShipmentItemsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListShipmentItems
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListShipmentItems
      */
     readonly shipmentId: string
 
     /**
      * The number of items to return in the response matching the given query.
-     * @type {number}
-     * @memberof FulfillmentInboundApiListShipmentItems
      */
     readonly pageSize?: number
 
     /**
      * A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListShipmentItems
      */
     readonly paginationToken?: string
 }
 
 /**
  * Request parameters for listShipmentPallets operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiListShipmentPalletsRequest
  */
 export interface FulfillmentInboundApiListShipmentPalletsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListShipmentPallets
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListShipmentPallets
      */
     readonly shipmentId: string
 
     /**
      * The number of pallets to return in the response matching the given query.
-     * @type {number}
-     * @memberof FulfillmentInboundApiListShipmentPallets
      */
     readonly pageSize?: number
 
     /**
      * A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListShipmentPallets
      */
     readonly paginationToken?: string
 }
 
 /**
  * Request parameters for listTransportationOptions operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiListTransportationOptionsRequest
  */
 export interface FulfillmentInboundApiListTransportationOptionsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListTransportationOptions
      */
     readonly inboundPlanId: string
 
     /**
      * The number of transportation options to return in the response matching the given query.
-     * @type {number}
-     * @memberof FulfillmentInboundApiListTransportationOptions
      */
     readonly pageSize?: number
 
     /**
      * A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListTransportationOptions
      */
     readonly paginationToken?: string
 
     /**
      * The placement option to get transportation options for. Either &#x60;placementOptionId&#x60; or &#x60;shipmentId&#x60; must be specified.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListTransportationOptions
      */
     readonly placementOptionId?: string
 
     /**
      * The shipment to get transportation options for. Either &#x60;placementOptionId&#x60; or &#x60;shipmentId&#x60; must be specified.
-     * @type {string}
-     * @memberof FulfillmentInboundApiListTransportationOptions
      */
     readonly shipmentId?: string
 }
 
 /**
  * Request parameters for scheduleSelfShipAppointment operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiScheduleSelfShipAppointmentRequest
  */
 export interface FulfillmentInboundApiScheduleSelfShipAppointmentRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiScheduleSelfShipAppointment
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-     * @type {string}
-     * @memberof FulfillmentInboundApiScheduleSelfShipAppointment
      */
     readonly shipmentId: string
 
     /**
      * An identifier to a self-ship appointment slot.
-     * @type {string}
-     * @memberof FulfillmentInboundApiScheduleSelfShipAppointment
      */
     readonly slotId: string
 
     /**
      * The body of the request to &#x60;scheduleSelfShipAppointment&#x60;.
-     * @type {ScheduleSelfShipAppointmentRequest}
-     * @memberof FulfillmentInboundApiScheduleSelfShipAppointment
      */
     readonly body: ScheduleSelfShipAppointmentRequest
 }
 
 /**
  * Request parameters for setPackingInformation operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiSetPackingInformationRequest
  */
 export interface FulfillmentInboundApiSetPackingInformationRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiSetPackingInformation
      */
     readonly inboundPlanId: string
 
     /**
      * The body of the request to &#x60;setPackingInformation&#x60;.
-     * @type {SetPackingInformationRequest}
-     * @memberof FulfillmentInboundApiSetPackingInformation
      */
     readonly body: SetPackingInformationRequest
 }
 
 /**
  * Request parameters for setPrepDetails operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiSetPrepDetailsRequest
  */
 export interface FulfillmentInboundApiSetPrepDetailsRequest {
     /**
      * The body of the request to &#x60;setPrepDetails&#x60;.
-     * @type {SetPrepDetailsRequest}
-     * @memberof FulfillmentInboundApiSetPrepDetails
      */
     readonly body: SetPrepDetailsRequest
 }
 
 /**
  * Request parameters for updateInboundPlanName operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiUpdateInboundPlanNameRequest
  */
 export interface FulfillmentInboundApiUpdateInboundPlanNameRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiUpdateInboundPlanName
      */
     readonly inboundPlanId: string
 
     /**
      * The body of the request to &#x60;updateInboundPlanName&#x60;.
-     * @type {UpdateInboundPlanNameRequest}
-     * @memberof FulfillmentInboundApiUpdateInboundPlanName
      */
     readonly body: UpdateInboundPlanNameRequest
 }
 
 /**
  * Request parameters for updateItemComplianceDetails operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiUpdateItemComplianceDetailsRequest
  */
 export interface FulfillmentInboundApiUpdateItemComplianceDetailsRequest {
     /**
      * The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof FulfillmentInboundApiUpdateItemComplianceDetails
      */
     readonly marketplaceId: string
 
     /**
      * The body of the request to &#x60;updateItemComplianceDetails&#x60;.
-     * @type {UpdateItemComplianceDetailsRequest}
-     * @memberof FulfillmentInboundApiUpdateItemComplianceDetails
      */
     readonly body: UpdateItemComplianceDetailsRequest
 }
 
 /**
  * Request parameters for updateShipmentName operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiUpdateShipmentNameRequest
  */
 export interface FulfillmentInboundApiUpdateShipmentNameRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiUpdateShipmentName
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-     * @type {string}
-     * @memberof FulfillmentInboundApiUpdateShipmentName
      */
     readonly shipmentId: string
 
     /**
      * The body of the request to &#x60;updateShipmentName&#x60;.
-     * @type {UpdateShipmentNameRequest}
-     * @memberof FulfillmentInboundApiUpdateShipmentName
      */
     readonly body: UpdateShipmentNameRequest
 }
 
 /**
  * Request parameters for updateShipmentSourceAddress operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiUpdateShipmentSourceAddressRequest
  */
 export interface FulfillmentInboundApiUpdateShipmentSourceAddressRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiUpdateShipmentSourceAddress
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-     * @type {string}
-     * @memberof FulfillmentInboundApiUpdateShipmentSourceAddress
      */
     readonly shipmentId: string
 
     /**
      * The body of the request to &#x60;updateShipmentSourceAddress&#x60;.
-     * @type {UpdateShipmentSourceAddressRequest}
-     * @memberof FulfillmentInboundApiUpdateShipmentSourceAddress
      */
     readonly body: UpdateShipmentSourceAddressRequest
 }
 
 /**
  * Request parameters for updateShipmentTrackingDetails operation in FulfillmentInboundApi.
- * @export
- * @interface FulfillmentInboundApiUpdateShipmentTrackingDetailsRequest
  */
 export interface FulfillmentInboundApiUpdateShipmentTrackingDetailsRequest {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof FulfillmentInboundApiUpdateShipmentTrackingDetails
      */
     readonly inboundPlanId: string
 
     /**
      * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-     * @type {string}
-     * @memberof FulfillmentInboundApiUpdateShipmentTrackingDetails
      */
     readonly shipmentId: string
 
     /**
      * The body of the request to &#x60;updateShipmentTrackingDetails&#x60;.
-     * @type {UpdateShipmentTrackingDetailsRequest}
-     * @memberof FulfillmentInboundApiUpdateShipmentTrackingDetails
      */
     readonly body: UpdateShipmentTrackingDetailsRequest
 }
 
 /**
  * FulfillmentInboundApi - object-oriented interface
- * @export
- * @class FulfillmentInboundApi
- * @extends {BaseAPI}
  */
 export class FulfillmentInboundApi extends BaseAPI {
     /**
@@ -4236,7 +3898,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiCancelInboundPlanRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public cancelInboundPlan(requestParameters: FulfillmentInboundApiCancelInboundPlanRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).cancelInboundPlan(requestParameters.inboundPlanId, options).then((request) => request(this.axios, this.basePath));
@@ -4247,7 +3908,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiCancelSelfShipAppointmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public cancelSelfShipAppointment(requestParameters: FulfillmentInboundApiCancelSelfShipAppointmentRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).cancelSelfShipAppointment(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -4258,7 +3918,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiConfirmDeliveryWindowOptionsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public confirmDeliveryWindowOptions(requestParameters: FulfillmentInboundApiConfirmDeliveryWindowOptionsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).confirmDeliveryWindowOptions(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.deliveryWindowOptionId, options).then((request) => request(this.axios, this.basePath));
@@ -4269,7 +3928,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiConfirmPackingOptionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public confirmPackingOption(requestParameters: FulfillmentInboundApiConfirmPackingOptionRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).confirmPackingOption(requestParameters.inboundPlanId, requestParameters.packingOptionId, options).then((request) => request(this.axios, this.basePath));
@@ -4280,7 +3938,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiConfirmPlacementOptionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public confirmPlacementOption(requestParameters: FulfillmentInboundApiConfirmPlacementOptionRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).confirmPlacementOption(requestParameters.inboundPlanId, requestParameters.placementOptionId, options).then((request) => request(this.axios, this.basePath));
@@ -4291,7 +3948,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiConfirmShipmentContentUpdatePreviewRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public confirmShipmentContentUpdatePreview(requestParameters: FulfillmentInboundApiConfirmShipmentContentUpdatePreviewRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).confirmShipmentContentUpdatePreview(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.contentUpdatePreviewId, options).then((request) => request(this.axios, this.basePath));
@@ -4302,7 +3958,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiConfirmTransportationOptionsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public confirmTransportationOptions(requestParameters: FulfillmentInboundApiConfirmTransportationOptionsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).confirmTransportationOptions(requestParameters.inboundPlanId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -4313,7 +3968,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiCreateInboundPlanRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public createInboundPlan(requestParameters: FulfillmentInboundApiCreateInboundPlanRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).createInboundPlan(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -4324,7 +3978,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiCreateMarketplaceItemLabelsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public createMarketplaceItemLabels(requestParameters: FulfillmentInboundApiCreateMarketplaceItemLabelsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).createMarketplaceItemLabels(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -4335,7 +3988,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiGenerateDeliveryWindowOptionsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public generateDeliveryWindowOptions(requestParameters: FulfillmentInboundApiGenerateDeliveryWindowOptionsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).generateDeliveryWindowOptions(requestParameters.inboundPlanId, requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
@@ -4346,7 +3998,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiGeneratePackingOptionsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public generatePackingOptions(requestParameters: FulfillmentInboundApiGeneratePackingOptionsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).generatePackingOptions(requestParameters.inboundPlanId, options).then((request) => request(this.axios, this.basePath));
@@ -4357,7 +4008,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiGeneratePlacementOptionsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public generatePlacementOptions(requestParameters: FulfillmentInboundApiGeneratePlacementOptionsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).generatePlacementOptions(requestParameters.inboundPlanId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -4368,7 +4018,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiGenerateSelfShipAppointmentSlotsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public generateSelfShipAppointmentSlots(requestParameters: FulfillmentInboundApiGenerateSelfShipAppointmentSlotsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).generateSelfShipAppointmentSlots(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -4379,7 +4028,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiGenerateShipmentContentUpdatePreviewsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public generateShipmentContentUpdatePreviews(requestParameters: FulfillmentInboundApiGenerateShipmentContentUpdatePreviewsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).generateShipmentContentUpdatePreviews(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -4390,7 +4038,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiGenerateTransportationOptionsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public generateTransportationOptions(requestParameters: FulfillmentInboundApiGenerateTransportationOptionsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).generateTransportationOptions(requestParameters.inboundPlanId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -4401,7 +4048,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiGetDeliveryChallanDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public getDeliveryChallanDocument(requestParameters: FulfillmentInboundApiGetDeliveryChallanDocumentRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).getDeliveryChallanDocument(requestParameters.inboundPlanId, requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
@@ -4412,7 +4058,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiGetInboundOperationStatusRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public getInboundOperationStatus(requestParameters: FulfillmentInboundApiGetInboundOperationStatusRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).getInboundOperationStatus(requestParameters.operationId, options).then((request) => request(this.axios, this.basePath));
@@ -4423,7 +4068,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiGetInboundPlanRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public getInboundPlan(requestParameters: FulfillmentInboundApiGetInboundPlanRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).getInboundPlan(requestParameters.inboundPlanId, options).then((request) => request(this.axios, this.basePath));
@@ -4434,7 +4078,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiGetSelfShipAppointmentSlotsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public getSelfShipAppointmentSlots(requestParameters: FulfillmentInboundApiGetSelfShipAppointmentSlotsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).getSelfShipAppointmentSlots(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
@@ -4445,7 +4088,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiGetShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public getShipment(requestParameters: FulfillmentInboundApiGetShipmentRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).getShipment(requestParameters.inboundPlanId, requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
@@ -4456,7 +4098,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiGetShipmentContentUpdatePreviewRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public getShipmentContentUpdatePreview(requestParameters: FulfillmentInboundApiGetShipmentContentUpdatePreviewRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).getShipmentContentUpdatePreview(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.contentUpdatePreviewId, options).then((request) => request(this.axios, this.basePath));
@@ -4467,7 +4108,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiListDeliveryWindowOptionsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public listDeliveryWindowOptions(requestParameters: FulfillmentInboundApiListDeliveryWindowOptionsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).listDeliveryWindowOptions(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
@@ -4478,7 +4118,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiListInboundPlanBoxesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public listInboundPlanBoxes(requestParameters: FulfillmentInboundApiListInboundPlanBoxesRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).listInboundPlanBoxes(requestParameters.inboundPlanId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
@@ -4489,7 +4128,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiListInboundPlanItemsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public listInboundPlanItems(requestParameters: FulfillmentInboundApiListInboundPlanItemsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).listInboundPlanItems(requestParameters.inboundPlanId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
@@ -4500,7 +4138,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiListInboundPlanPalletsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public listInboundPlanPallets(requestParameters: FulfillmentInboundApiListInboundPlanPalletsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).listInboundPlanPallets(requestParameters.inboundPlanId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
@@ -4511,7 +4148,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiListInboundPlansRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public listInboundPlans(requestParameters: FulfillmentInboundApiListInboundPlansRequest = {}, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).listInboundPlans(requestParameters.pageSize, requestParameters.paginationToken, requestParameters.status, requestParameters.sortBy, requestParameters.sortOrder, options).then((request) => request(this.axios, this.basePath));
@@ -4522,7 +4158,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiListItemComplianceDetailsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public listItemComplianceDetails(requestParameters: FulfillmentInboundApiListItemComplianceDetailsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).listItemComplianceDetails(requestParameters.mskus, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
@@ -4533,7 +4168,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiListPackingGroupBoxesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public listPackingGroupBoxes(requestParameters: FulfillmentInboundApiListPackingGroupBoxesRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).listPackingGroupBoxes(requestParameters.inboundPlanId, requestParameters.packingGroupId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
@@ -4544,7 +4178,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiListPackingGroupItemsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public listPackingGroupItems(requestParameters: FulfillmentInboundApiListPackingGroupItemsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).listPackingGroupItems(requestParameters.inboundPlanId, requestParameters.packingGroupId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
@@ -4555,7 +4188,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiListPackingOptionsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public listPackingOptions(requestParameters: FulfillmentInboundApiListPackingOptionsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).listPackingOptions(requestParameters.inboundPlanId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
@@ -4566,7 +4198,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiListPlacementOptionsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public listPlacementOptions(requestParameters: FulfillmentInboundApiListPlacementOptionsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).listPlacementOptions(requestParameters.inboundPlanId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
@@ -4577,7 +4208,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiListPrepDetailsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public listPrepDetails(requestParameters: FulfillmentInboundApiListPrepDetailsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).listPrepDetails(requestParameters.marketplaceId, requestParameters.mskus, options).then((request) => request(this.axios, this.basePath));
@@ -4588,7 +4218,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiListShipmentBoxesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public listShipmentBoxes(requestParameters: FulfillmentInboundApiListShipmentBoxesRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).listShipmentBoxes(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
@@ -4599,7 +4228,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiListShipmentContentUpdatePreviewsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public listShipmentContentUpdatePreviews(requestParameters: FulfillmentInboundApiListShipmentContentUpdatePreviewsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).listShipmentContentUpdatePreviews(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
@@ -4610,7 +4238,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiListShipmentItemsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public listShipmentItems(requestParameters: FulfillmentInboundApiListShipmentItemsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).listShipmentItems(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
@@ -4621,7 +4248,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiListShipmentPalletsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public listShipmentPallets(requestParameters: FulfillmentInboundApiListShipmentPalletsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).listShipmentPallets(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.pageSize, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
@@ -4632,7 +4258,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiListTransportationOptionsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public listTransportationOptions(requestParameters: FulfillmentInboundApiListTransportationOptionsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).listTransportationOptions(requestParameters.inboundPlanId, requestParameters.pageSize, requestParameters.paginationToken, requestParameters.placementOptionId, requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
@@ -4643,7 +4268,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiScheduleSelfShipAppointmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public scheduleSelfShipAppointment(requestParameters: FulfillmentInboundApiScheduleSelfShipAppointmentRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).scheduleSelfShipAppointment(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.slotId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -4654,7 +4278,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiSetPackingInformationRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public setPackingInformation(requestParameters: FulfillmentInboundApiSetPackingInformationRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).setPackingInformation(requestParameters.inboundPlanId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -4665,7 +4288,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiSetPrepDetailsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public setPrepDetails(requestParameters: FulfillmentInboundApiSetPrepDetailsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).setPrepDetails(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -4676,7 +4298,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiUpdateInboundPlanNameRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public updateInboundPlanName(requestParameters: FulfillmentInboundApiUpdateInboundPlanNameRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).updateInboundPlanName(requestParameters.inboundPlanId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -4687,7 +4308,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiUpdateItemComplianceDetailsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public updateItemComplianceDetails(requestParameters: FulfillmentInboundApiUpdateItemComplianceDetailsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).updateItemComplianceDetails(requestParameters.marketplaceId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -4698,7 +4318,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiUpdateShipmentNameRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public updateShipmentName(requestParameters: FulfillmentInboundApiUpdateShipmentNameRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).updateShipmentName(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -4709,7 +4328,6 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiUpdateShipmentSourceAddressRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public updateShipmentSourceAddress(requestParameters: FulfillmentInboundApiUpdateShipmentSourceAddressRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).updateShipmentSourceAddress(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -4720,33 +4338,23 @@ export class FulfillmentInboundApi extends BaseAPI {
      * @param {FulfillmentInboundApiUpdateShipmentTrackingDetailsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentInboundApi
      */
     public updateShipmentTrackingDetails(requestParameters: FulfillmentInboundApiUpdateShipmentTrackingDetailsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentInboundApiFp(this.configuration).updateShipmentTrackingDetails(requestParameters.inboundPlanId, requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const ListInboundPlansStatusEnum = {
     Active: 'ACTIVE',
     Voided: 'VOIDED',
     Shipped: 'SHIPPED'
 } as const;
 export type ListInboundPlansStatusEnum = typeof ListInboundPlansStatusEnum[keyof typeof ListInboundPlansStatusEnum];
-/**
- * @export
- */
 export const ListInboundPlansSortByEnum = {
     LastUpdatedTime: 'LAST_UPDATED_TIME',
     CreationTime: 'CREATION_TIME'
 } as const;
 export type ListInboundPlansSortByEnum = typeof ListInboundPlansSortByEnum[keyof typeof ListInboundPlansSortByEnum];
-/**
- * @export
- */
 export const ListInboundPlansSortOrderEnum = {
     Asc: 'ASC',
     Desc: 'DESC'

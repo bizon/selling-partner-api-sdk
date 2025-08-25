@@ -20,28 +20,11 @@ import type { Marketplace } from './marketplace';
 // @ts-ignore
 import type { Participation } from './participation';
 
-/**
- * 
- * @export
- * @interface MarketplaceParticipation
- */
 export interface MarketplaceParticipation {
-    /**
-     * 
-     * @type {Marketplace}
-     * @memberof MarketplaceParticipation
-     */
     'marketplace': Marketplace;
-    /**
-     * 
-     * @type {Participation}
-     * @memberof MarketplaceParticipation
-     */
     'participation': Participation;
     /**
      * The name of the seller\'s store as displayed in the marketplace.
-     * @type {string}
-     * @memberof MarketplaceParticipation
      */
     'storeName': string;
 }

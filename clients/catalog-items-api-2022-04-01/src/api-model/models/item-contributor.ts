@@ -19,20 +19,11 @@ import type { ItemContributorRole } from './item-contributor-role';
 
 /**
  * Individual contributor to the creation of an item, such as an author or actor.
- * @export
- * @interface ItemContributor
  */
 export interface ItemContributor {
-    /**
-     * 
-     * @type {ItemContributorRole}
-     * @memberof ItemContributor
-     */
     'role': ItemContributorRole;
     /**
      * Name of the contributor, such as `Jane Austen`.
-     * @type {string}
-     * @memberof ItemContributor
      */
     'value': string;
 }

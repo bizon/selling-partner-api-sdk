@@ -22,27 +22,13 @@ import type { ParkingWithAddressConfiguration } from './parking-with-address-con
 
 /**
  * The curbside pickup configuration of a supply source.
- * @export
- * @interface CurbsidePickupConfiguration
  */
 export interface CurbsidePickupConfiguration {
     /**
      * When true, curbside pickup is supported by the supply source.
-     * @type {boolean}
-     * @memberof CurbsidePickupConfiguration
      */
     'isSupported'?: boolean;
-    /**
-     * 
-     * @type {OperationalConfiguration}
-     * @memberof CurbsidePickupConfiguration
-     */
     'operationalConfiguration'?: OperationalConfiguration;
-    /**
-     * 
-     * @type {ParkingWithAddressConfiguration}
-     * @memberof CurbsidePickupConfiguration
-     */
     'parkingWithAddressConfiguration'?: ParkingWithAddressConfiguration;
 }
 

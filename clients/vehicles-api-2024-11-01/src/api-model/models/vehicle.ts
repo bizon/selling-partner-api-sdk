@@ -28,80 +28,45 @@ import type { VehicleStatusInCatalog } from './vehicle-status-in-catalog';
 
 /**
  * Combinations of attributes and unique identifier that represents a vehicle in vehicle list.
- * @export
- * @interface Vehicle
  */
 export interface Vehicle {
     /**
      * Vehicle Brand.
-     * @type {string}
-     * @memberof Vehicle
      */
     'make': string;
     /**
      * Specific model of a vehicle.
-     * @type {string}
-     * @memberof Vehicle
      */
     'model': string;
     /**
      * Name of the vehicle variant.
-     * @type {string}
-     * @memberof Vehicle
      */
     'variantName'?: string;
     /**
      * Body style of vehicle (example: Hatchback, Cabriolet).
-     * @type {string}
-     * @memberof Vehicle
      */
     'bodyStyle'?: string;
     /**
      * Drive type of vehicle(example: Rear wheel drive).
-     * @type {string}
-     * @memberof Vehicle
      */
     'driveType'?: string;
     /**
      * Energy Source for the vehicle(example: Petrol)
-     * @type {string}
-     * @memberof Vehicle
      */
     'energy'?: string;
     /**
      * Engine output of vehicle.
-     * @type {Array<EngineOutput>}
-     * @memberof Vehicle
      */
     'engineOutput'?: Array<EngineOutput>;
-    /**
-     * 
-     * @type {MonthAndYear}
-     * @memberof Vehicle
-     */
     'manufacturingStartDate'?: MonthAndYear;
-    /**
-     * 
-     * @type {MonthAndYear}
-     * @memberof Vehicle
-     */
     'manufacturingStopDate'?: MonthAndYear;
     /**
      * The date on which the vehicle was last updated, in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof Vehicle
      */
     'lastProcessedDate'?: string;
-    /**
-     * 
-     * @type {VehicleStatusInCatalog}
-     * @memberof Vehicle
-     */
     'status'?: VehicleStatusInCatalog;
     /**
      * Identifiers that can be used to identify the vehicle uniquely
-     * @type {Array<VehicleIdentifiers>}
-     * @memberof Vehicle
      */
     'identifiers': Array<VehicleIdentifiers>;
 }

@@ -39,7 +39,6 @@ import type { ItemReviewTopicsResponse } from '../models';
 import type { ItemReviewTrendsResponse } from '../models';
 /**
  * CustomerFeedbackApi - axios parameter creator
- * @export
  */
 export const CustomerFeedbackApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -342,7 +341,6 @@ export const CustomerFeedbackApiAxiosParamCreator = function (configuration?: Co
 
 /**
  * CustomerFeedbackApi - functional programming interface
- * @export
  */
 export const CustomerFeedbackApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = CustomerFeedbackApiAxiosParamCreator(configuration)
@@ -445,7 +443,6 @@ export const CustomerFeedbackApiFp = function(configuration?: Configuration) {
 
 /**
  * CustomerFeedbackApi - factory interface
- * @export
  */
 export const CustomerFeedbackApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = CustomerFeedbackApiFp(configuration)
@@ -518,170 +515,121 @@ export const CustomerFeedbackApiFactory = function (configuration?: Configuratio
 
 /**
  * Request parameters for getBrowseNodeReturnTopics operation in CustomerFeedbackApi.
- * @export
- * @interface CustomerFeedbackApiGetBrowseNodeReturnTopicsRequest
  */
 export interface CustomerFeedbackApiGetBrowseNodeReturnTopicsRequest {
     /**
      * A browse node ID is a unique identifier for a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.
-     * @type {string}
-     * @memberof CustomerFeedbackApiGetBrowseNodeReturnTopics
      */
     readonly browseNodeId: string
 
     /**
      * The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.
-     * @type {string}
-     * @memberof CustomerFeedbackApiGetBrowseNodeReturnTopics
      */
     readonly marketplaceId: string
 }
 
 /**
  * Request parameters for getBrowseNodeReturnTrends operation in CustomerFeedbackApi.
- * @export
- * @interface CustomerFeedbackApiGetBrowseNodeReturnTrendsRequest
  */
 export interface CustomerFeedbackApiGetBrowseNodeReturnTrendsRequest {
     /**
      * A browse node ID is a unique identifier of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.
-     * @type {string}
-     * @memberof CustomerFeedbackApiGetBrowseNodeReturnTrends
      */
     readonly browseNodeId: string
 
     /**
      * The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.
-     * @type {string}
-     * @memberof CustomerFeedbackApiGetBrowseNodeReturnTrends
      */
     readonly marketplaceId: string
 }
 
 /**
  * Request parameters for getBrowseNodeReviewTopics operation in CustomerFeedbackApi.
- * @export
- * @interface CustomerFeedbackApiGetBrowseNodeReviewTopicsRequest
  */
 export interface CustomerFeedbackApiGetBrowseNodeReviewTopicsRequest {
     /**
      * The ID of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.
-     * @type {string}
-     * @memberof CustomerFeedbackApiGetBrowseNodeReviewTopics
      */
     readonly browseNodeId: string
 
     /**
      * The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.
-     * @type {string}
-     * @memberof CustomerFeedbackApiGetBrowseNodeReviewTopics
      */
     readonly marketplaceId: string
 
     /**
      * The metric by which to sort the data in the response.
-     * @type {string}
-     * @memberof CustomerFeedbackApiGetBrowseNodeReviewTopics
      */
     readonly sortBy: string
 }
 
 /**
  * Request parameters for getBrowseNodeReviewTrends operation in CustomerFeedbackApi.
- * @export
- * @interface CustomerFeedbackApiGetBrowseNodeReviewTrendsRequest
  */
 export interface CustomerFeedbackApiGetBrowseNodeReviewTrendsRequest {
     /**
      * A browse node ID is a unique identifier of a browse node. A browse node is a named location in a browse tree that is used for navigation, product classification, and website content.
-     * @type {string}
-     * @memberof CustomerFeedbackApiGetBrowseNodeReviewTrends
      */
     readonly browseNodeId: string
 
     /**
      * The marketplace ID is the globally unique identifier of a marketplace. For more information, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof CustomerFeedbackApiGetBrowseNodeReviewTrends
      */
     readonly marketplaceId: string
 }
 
 /**
  * Request parameters for getItemBrowseNode operation in CustomerFeedbackApi.
- * @export
- * @interface CustomerFeedbackApiGetItemBrowseNodeRequest
  */
 export interface CustomerFeedbackApiGetItemBrowseNodeRequest {
     /**
      * The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace.
-     * @type {string}
-     * @memberof CustomerFeedbackApiGetItemBrowseNode
      */
     readonly asin: string
 
     /**
      * The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.
-     * @type {string}
-     * @memberof CustomerFeedbackApiGetItemBrowseNode
      */
     readonly marketplaceId: string
 }
 
 /**
  * Request parameters for getItemReviewTopics operation in CustomerFeedbackApi.
- * @export
- * @interface CustomerFeedbackApiGetItemReviewTopicsRequest
  */
 export interface CustomerFeedbackApiGetItemReviewTopicsRequest {
     /**
      * The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. The value must be a child ASIN.
-     * @type {string}
-     * @memberof CustomerFeedbackApiGetItemReviewTopics
      */
     readonly asin: string
 
     /**
      * The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.
-     * @type {string}
-     * @memberof CustomerFeedbackApiGetItemReviewTopics
      */
     readonly marketplaceId: string
 
     /**
      * The metric by which to sort data in the response.
-     * @type {string}
-     * @memberof CustomerFeedbackApiGetItemReviewTopics
      */
     readonly sortBy: string
 }
 
 /**
  * Request parameters for getItemReviewTrends operation in CustomerFeedbackApi.
- * @export
- * @interface CustomerFeedbackApiGetItemReviewTrendsRequest
  */
 export interface CustomerFeedbackApiGetItemReviewTrendsRequest {
     /**
      * The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. This API takes child ASIN as an input.
-     * @type {string}
-     * @memberof CustomerFeedbackApiGetItemReviewTrends
      */
     readonly asin: string
 
     /**
      * The MarketplaceId is the globally unique identifier of a marketplace, you can refer to the marketplaceId here : https://developer-docs.amazon.com/sp-api/docs/marketplace-ids.
-     * @type {string}
-     * @memberof CustomerFeedbackApiGetItemReviewTrends
      */
     readonly marketplaceId: string
 }
 
 /**
  * CustomerFeedbackApi - object-oriented interface
- * @export
- * @class CustomerFeedbackApi
- * @extends {BaseAPI}
  */
 export class CustomerFeedbackApi extends BaseAPI {
     /**
@@ -689,7 +637,6 @@ export class CustomerFeedbackApi extends BaseAPI {
      * @param {CustomerFeedbackApiGetBrowseNodeReturnTopicsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof CustomerFeedbackApi
      */
     public getBrowseNodeReturnTopics(requestParameters: CustomerFeedbackApiGetBrowseNodeReturnTopicsRequest, options?: RawAxiosRequestConfig) {
         return CustomerFeedbackApiFp(this.configuration).getBrowseNodeReturnTopics(requestParameters.browseNodeId, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
@@ -700,7 +647,6 @@ export class CustomerFeedbackApi extends BaseAPI {
      * @param {CustomerFeedbackApiGetBrowseNodeReturnTrendsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof CustomerFeedbackApi
      */
     public getBrowseNodeReturnTrends(requestParameters: CustomerFeedbackApiGetBrowseNodeReturnTrendsRequest, options?: RawAxiosRequestConfig) {
         return CustomerFeedbackApiFp(this.configuration).getBrowseNodeReturnTrends(requestParameters.browseNodeId, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
@@ -711,7 +657,6 @@ export class CustomerFeedbackApi extends BaseAPI {
      * @param {CustomerFeedbackApiGetBrowseNodeReviewTopicsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof CustomerFeedbackApi
      */
     public getBrowseNodeReviewTopics(requestParameters: CustomerFeedbackApiGetBrowseNodeReviewTopicsRequest, options?: RawAxiosRequestConfig) {
         return CustomerFeedbackApiFp(this.configuration).getBrowseNodeReviewTopics(requestParameters.browseNodeId, requestParameters.marketplaceId, requestParameters.sortBy, options).then((request) => request(this.axios, this.basePath));
@@ -722,7 +667,6 @@ export class CustomerFeedbackApi extends BaseAPI {
      * @param {CustomerFeedbackApiGetBrowseNodeReviewTrendsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof CustomerFeedbackApi
      */
     public getBrowseNodeReviewTrends(requestParameters: CustomerFeedbackApiGetBrowseNodeReviewTrendsRequest, options?: RawAxiosRequestConfig) {
         return CustomerFeedbackApiFp(this.configuration).getBrowseNodeReviewTrends(requestParameters.browseNodeId, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
@@ -733,7 +677,6 @@ export class CustomerFeedbackApi extends BaseAPI {
      * @param {CustomerFeedbackApiGetItemBrowseNodeRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof CustomerFeedbackApi
      */
     public getItemBrowseNode(requestParameters: CustomerFeedbackApiGetItemBrowseNodeRequest, options?: RawAxiosRequestConfig) {
         return CustomerFeedbackApiFp(this.configuration).getItemBrowseNode(requestParameters.asin, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
@@ -744,7 +687,6 @@ export class CustomerFeedbackApi extends BaseAPI {
      * @param {CustomerFeedbackApiGetItemReviewTopicsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof CustomerFeedbackApi
      */
     public getItemReviewTopics(requestParameters: CustomerFeedbackApiGetItemReviewTopicsRequest, options?: RawAxiosRequestConfig) {
         return CustomerFeedbackApiFp(this.configuration).getItemReviewTopics(requestParameters.asin, requestParameters.marketplaceId, requestParameters.sortBy, options).then((request) => request(this.axios, this.basePath));
@@ -755,7 +697,6 @@ export class CustomerFeedbackApi extends BaseAPI {
      * @param {CustomerFeedbackApiGetItemReviewTrendsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof CustomerFeedbackApi
      */
     public getItemReviewTrends(requestParameters: CustomerFeedbackApiGetItemReviewTrendsRequest, options?: RawAxiosRequestConfig) {
         return CustomerFeedbackApiFp(this.configuration).getItemReviewTrends(requestParameters.asin, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));

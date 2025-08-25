@@ -16,14 +16,10 @@
 
 /**
  * This exception is thrown when client inputs are invalid.
- * @export
- * @interface ErrorList
  */
 export interface ErrorList {
     /**
      * A list of errors describing the failures.
-     * @type {Array<Error>}
-     * @memberof ErrorList
      */
     'errors': Array<Error>;
 }

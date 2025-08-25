@@ -16,26 +16,18 @@
 
 /**
  * Variation details for the Amazon catalog item for the indicated Amazon marketplace.
- * @export
- * @interface ItemVariationsByMarketplace
  */
 export interface ItemVariationsByMarketplace {
     /**
      * Amazon marketplace identifier.
-     * @type {string}
-     * @memberof ItemVariationsByMarketplace
      */
     'marketplaceId': string;
     /**
      * Identifiers (ASINs) of the related items.
-     * @type {Array<string>}
-     * @memberof ItemVariationsByMarketplace
      */
     'asins': Array<string>;
     /**
      * Type of variation relationship of the Amazon catalog item in the request to the related item(s): \"PARENT\" or \"CHILD\".
-     * @type {string}
-     * @memberof ItemVariationsByMarketplace
      */
     'variationType': ItemVariationsByMarketplaceVariationTypeEnum;
 }

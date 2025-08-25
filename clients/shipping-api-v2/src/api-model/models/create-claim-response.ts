@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the createClaim operation.
- * @export
- * @interface CreateClaimResponse
  */
 export interface CreateClaimResponse {
     /**
      * The claim identifier originally returned by the createClaim operation.
-     * @type {string}
-     * @memberof CreateClaimResponse
      */
     'claimId'?: string;
 }

@@ -16,8 +16,6 @@
 
 /**
  * The attribute to use to sort the results.
- * @export
- * @enum {string}
  */
 
 export const ListOffersSortKey = {

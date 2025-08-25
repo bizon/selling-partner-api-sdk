@@ -19,20 +19,11 @@ import type { ServiceDocumentUploadDestination } from './service-document-upload
 
 /**
  * The response schema for the `createServiceDocumentUploadDestination` operation.
- * @export
- * @interface CreateServiceDocumentUploadDestination
  */
 export interface CreateServiceDocumentUploadDestination {
-    /**
-     * 
-     * @type {ServiceDocumentUploadDestination}
-     * @memberof CreateServiceDocumentUploadDestination
-     */
     'payload'?: ServiceDocumentUploadDestination;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CreateServiceDocumentUploadDestination
      */
     'errors'?: Array<Error>;
 }

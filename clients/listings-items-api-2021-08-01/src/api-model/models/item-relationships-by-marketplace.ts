@@ -19,20 +19,14 @@ import type { ItemRelationship } from './item-relationship';
 
 /**
  * Relationship details for the listing item in the specified marketplace.
- * @export
- * @interface ItemRelationshipsByMarketplace
  */
 export interface ItemRelationshipsByMarketplace {
     /**
      * Amazon marketplace identifier.
-     * @type {string}
-     * @memberof ItemRelationshipsByMarketplace
      */
     'marketplaceId': string;
     /**
      * Relationships for the listing item.
-     * @type {Array<ItemRelationship>}
-     * @memberof ItemRelationshipsByMarketplace
      */
     'relationships': Array<ItemRelationship>;
 }

@@ -19,33 +19,11 @@ import type { StandardImageTextBlock } from './standard-image-text-block';
 
 /**
  * Four standard images with text, presented on a grid of four quadrants.
- * @export
- * @interface StandardFourImageTextQuadrantModule
  */
 export interface StandardFourImageTextQuadrantModule {
-    /**
-     * 
-     * @type {StandardImageTextBlock}
-     * @memberof StandardFourImageTextQuadrantModule
-     */
     'block1': StandardImageTextBlock;
-    /**
-     * 
-     * @type {StandardImageTextBlock}
-     * @memberof StandardFourImageTextQuadrantModule
-     */
     'block2': StandardImageTextBlock;
-    /**
-     * 
-     * @type {StandardImageTextBlock}
-     * @memberof StandardFourImageTextQuadrantModule
-     */
     'block3': StandardImageTextBlock;
-    /**
-     * 
-     * @type {StandardImageTextBlock}
-     * @memberof StandardFourImageTextQuadrantModule
-     */
     'block4': StandardImageTextBlock;
 }
 

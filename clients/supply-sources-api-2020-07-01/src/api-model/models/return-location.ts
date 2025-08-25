@@ -19,21 +19,12 @@ import type { AddressWithContact } from './address-with-contact';
 
 /**
  * The address or reference to another `supplySourceId` to act as a return location.
- * @export
- * @interface ReturnLocation
  */
 export interface ReturnLocation {
     /**
      * The Amazon provided `supplySourceId` where orders can be returned to.
-     * @type {string}
-     * @memberof ReturnLocation
      */
     'supplySourceId'?: string;
-    /**
-     * 
-     * @type {AddressWithContact}
-     * @memberof ReturnLocation
-     */
     'addressWithContact'?: AddressWithContact;
 }
 

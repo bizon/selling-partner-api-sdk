@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the getAdditionalInputs operation.
- * @export
- * @interface GetAdditionalInputsResponse
  */
 export interface GetAdditionalInputsResponse {
     /**
      * The JSON schema to use to provide additional inputs when required to purchase a shipping offering.
-     * @type {{ [key: string]: object; }}
-     * @memberof GetAdditionalInputsResponse
      */
     'payload'?: { [key: string]: object; };
 }

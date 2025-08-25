@@ -19,56 +19,32 @@ import type { Currency } from './currency';
 
 /**
  * An item in an adjustment to the seller\'s account.
- * @export
- * @interface AdjustmentItem
  */
 export interface AdjustmentItem {
     /**
      * Represents the number of units in the seller\'s inventory when the AdustmentType is FBAInventoryReimbursement.
-     * @type {string}
-     * @memberof AdjustmentItem
      */
     'Quantity'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof AdjustmentItem
-     */
     'PerUnitAmount'?: Currency;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof AdjustmentItem
-     */
     'TotalAmount'?: Currency;
     /**
      * The seller SKU of the item. The seller SKU is qualified by the seller\'s seller ID, which is included with every call to the Selling Partner API.
-     * @type {string}
-     * @memberof AdjustmentItem
      */
     'SellerSKU'?: string;
     /**
      * A unique identifier assigned to products stored in and fulfilled from a fulfillment center.
-     * @type {string}
-     * @memberof AdjustmentItem
      */
     'FnSKU'?: string;
     /**
      * A short description of the item.
-     * @type {string}
-     * @memberof AdjustmentItem
      */
     'ProductDescription'?: string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof AdjustmentItem
      */
     'ASIN'?: string;
     /**
      * The transaction number that is related to the adjustment.
-     * @type {string}
-     * @memberof AdjustmentItem
      */
     'TransactionNumber'?: string;
 }

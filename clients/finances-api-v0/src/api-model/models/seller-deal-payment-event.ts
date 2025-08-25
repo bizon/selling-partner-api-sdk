@@ -19,57 +19,30 @@ import type { Currency } from './currency';
 
 /**
  * An event linked to the payment of a fee related to the specified deal.
- * @export
- * @interface SellerDealPaymentEvent
  */
 export interface SellerDealPaymentEvent {
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof SellerDealPaymentEvent
      */
     'postedDate'?: string;
     /**
      * The unique identifier of the deal.
-     * @type {string}
-     * @memberof SellerDealPaymentEvent
      */
     'dealId'?: string;
     /**
      * The internal description of the deal.
-     * @type {string}
-     * @memberof SellerDealPaymentEvent
      */
     'dealDescription'?: string;
     /**
      * The type of event: SellerDealComplete.
-     * @type {string}
-     * @memberof SellerDealPaymentEvent
      */
     'eventType'?: string;
     /**
      * The type of fee: RunLightningDealFee.
-     * @type {string}
-     * @memberof SellerDealPaymentEvent
      */
     'feeType'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof SellerDealPaymentEvent
-     */
     'feeAmount'?: Currency;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof SellerDealPaymentEvent
-     */
     'taxAmount'?: Currency;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof SellerDealPaymentEvent
-     */
     'totalAmount'?: Currency;
 }
 

@@ -19,14 +19,10 @@ import type { Warning } from './warning';
 
 /**
  * The payload for the `assignAppointmentResource` operation.
- * @export
- * @interface AssignAppointmentResourcesResponsePayload
  */
 export interface AssignAppointmentResourcesResponsePayload {
     /**
      * A list of warnings returned in the sucessful execution response of an API request.
-     * @type {Array<Warning>}
-     * @memberof AssignAppointmentResourcesResponsePayload
      */
     'warnings'?: Array<Warning>;
 }

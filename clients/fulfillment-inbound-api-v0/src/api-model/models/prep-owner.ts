@@ -16,8 +16,6 @@
 
 /**
  * Indicates who will prepare the item.
- * @export
- * @enum {string}
  */
 
 export const PrepOwner = {

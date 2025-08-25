@@ -16,14 +16,10 @@
 
 /**
  * The `setPrepDetails` response.
- * @export
- * @interface SetPrepDetailsResponse
  */
 export interface SetPrepDetailsResponse {
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof SetPrepDetailsResponse
      */
     'operationId': string;
 }

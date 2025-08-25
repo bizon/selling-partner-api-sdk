@@ -16,8 +16,6 @@
 
 /**
  * The content\'s relative positioning.
- * @export
- * @enum {string}
  */
 
 export const PositionType = {

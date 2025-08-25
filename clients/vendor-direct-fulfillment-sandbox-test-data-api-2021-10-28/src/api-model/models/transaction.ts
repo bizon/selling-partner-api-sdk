@@ -19,27 +19,16 @@ import type { TestCaseData } from './test-case-data';
 
 /**
  * The transaction details including the status. If the transaction was successful, also includes the requested test order data.
- * @export
- * @interface Transaction
  */
 export interface Transaction {
     /**
      * The unique identifier returned in the response to the generateOrderScenarios request.
-     * @type {string}
-     * @memberof Transaction
      */
     'transactionId': string;
     /**
      * The current processing status of the transaction.
-     * @type {string}
-     * @memberof Transaction
      */
     'status': TransactionStatusEnum;
-    /**
-     * 
-     * @type {TestCaseData}
-     * @memberof Transaction
-     */
     'testCaseData'?: TestCaseData;
 }
 

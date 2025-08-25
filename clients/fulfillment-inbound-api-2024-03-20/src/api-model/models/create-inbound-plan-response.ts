@@ -16,20 +16,14 @@
 
 /**
  * The `createInboundPlan` response.
- * @export
- * @interface CreateInboundPlanResponse
  */
 export interface CreateInboundPlanResponse {
     /**
      * Identifier of an inbound plan.
-     * @type {string}
-     * @memberof CreateInboundPlanResponse
      */
     'inboundPlanId': string;
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof CreateInboundPlanResponse
      */
     'operationId': string;
 }

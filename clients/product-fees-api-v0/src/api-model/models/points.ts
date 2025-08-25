@@ -17,23 +17,8 @@
 // @ts-ignore
 import type { MoneyType } from './money-type';
 
-/**
- * 
- * @export
- * @interface Points
- */
 export interface Points {
-    /**
-     * 
-     * @type {number}
-     * @memberof Points
-     */
     'PointsNumber'?: number;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof Points
-     */
     'PointsMonetaryValue'?: MoneyType;
 }
 

@@ -19,21 +19,12 @@ import type { LabelFormat } from './label-format';
 
 /**
  * The label format details and whether to include a packing slip.
- * @export
- * @interface LabelFormatOption
  */
 export interface LabelFormatOption {
     /**
      * When true, include a packing slip with the label.
-     * @type {boolean}
-     * @memberof LabelFormatOption
      */
     'IncludePackingSlipWithLabel'?: boolean;
-    /**
-     * 
-     * @type {LabelFormat}
-     * @memberof LabelFormatOption
-     */
     'LabelFormat'?: LabelFormat;
 }
 

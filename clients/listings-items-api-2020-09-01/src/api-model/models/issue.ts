@@ -16,32 +16,22 @@
 
 /**
  * An issue with a listings item.
- * @export
- * @interface Issue
  */
 export interface Issue {
     /**
      * An issue code that identifies the type of issue.
-     * @type {string}
-     * @memberof Issue
      */
     'code': string;
     /**
      * A message that describes the issue.
-     * @type {string}
-     * @memberof Issue
      */
     'message': string;
     /**
      * The severity of the issue.
-     * @type {string}
-     * @memberof Issue
      */
     'severity': IssueSeverityEnum;
     /**
      * Name of the attribute associated with the issue, if applicable.
-     * @type {string}
-     * @memberof Issue
      */
     'attributeName'?: string;
 }

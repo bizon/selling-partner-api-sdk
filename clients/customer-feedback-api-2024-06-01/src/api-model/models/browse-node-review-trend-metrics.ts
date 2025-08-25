@@ -19,15 +19,8 @@ import type { BrowseNodeAllOccurrence } from './browse-node-all-occurrence';
 
 /**
  * The browse node review topic metrics.
- * @export
- * @interface BrowseNodeReviewTrendMetrics
  */
 export interface BrowseNodeReviewTrendMetrics {
-    /**
-     * 
-     * @type {BrowseNodeAllOccurrence}
-     * @memberof BrowseNodeReviewTrendMetrics
-     */
     'occurrencePercentage': BrowseNodeAllOccurrence;
 }
 

@@ -16,8 +16,6 @@
 
 /**
  * Unit of linear measure.
- * @export
- * @enum {string}
  */
 
 export const UnitOfMeasurement = {

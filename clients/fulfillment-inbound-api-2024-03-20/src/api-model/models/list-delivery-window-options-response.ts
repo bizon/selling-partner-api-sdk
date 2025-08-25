@@ -22,21 +22,12 @@ import type { Pagination } from './pagination';
 
 /**
  * The `listDeliveryWindowOptions` response.
- * @export
- * @interface ListDeliveryWindowOptionsResponse
  */
 export interface ListDeliveryWindowOptionsResponse {
     /**
      * Delivery window options generated for the placement option.
-     * @type {Array<DeliveryWindowOption>}
-     * @memberof ListDeliveryWindowOptionsResponse
      */
     'deliveryWindowOptions': Array<DeliveryWindowOption>;
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof ListDeliveryWindowOptionsResponse
-     */
     'pagination'?: Pagination;
 }
 

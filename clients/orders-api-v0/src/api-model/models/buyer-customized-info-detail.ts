@@ -16,14 +16,10 @@
 
 /**
  * Buyer information for custom orders from the Amazon Custom program.
- * @export
- * @interface BuyerCustomizedInfoDetail
  */
 export interface BuyerCustomizedInfoDetail {
     /**
      * The location of a ZIP file containing Amazon Custom data.
-     * @type {string}
-     * @memberof BuyerCustomizedInfoDetail
      */
     'CustomizedURL'?: string;
 }

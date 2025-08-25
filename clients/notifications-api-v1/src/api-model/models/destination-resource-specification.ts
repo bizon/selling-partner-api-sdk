@@ -22,21 +22,9 @@ import type { SqsResource } from './sqs-resource';
 
 /**
  * The information required to create a destination resource. Applications should use one resource type (sqs or eventBridge) per destination.
- * @export
- * @interface DestinationResourceSpecification
  */
 export interface DestinationResourceSpecification {
-    /**
-     * 
-     * @type {SqsResource}
-     * @memberof DestinationResourceSpecification
-     */
     'sqs'?: SqsResource;
-    /**
-     * 
-     * @type {EventBridgeResourceSpecification}
-     * @memberof DestinationResourceSpecification
-     */
     'eventBridge'?: EventBridgeResourceSpecification;
 }
 

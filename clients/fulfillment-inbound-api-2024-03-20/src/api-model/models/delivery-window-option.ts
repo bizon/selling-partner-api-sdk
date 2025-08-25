@@ -16,38 +16,26 @@
 
 /**
  * Contains information pertaining to a delivery window option.
- * @export
- * @interface DeliveryWindowOption
  */
 export interface DeliveryWindowOption {
     /**
      * Identifies type of Delivery Window Availability. Values: `AVAILABLE`, `CONGESTED`
-     * @type {string}
-     * @memberof DeliveryWindowOption
      */
     'availabilityType': string;
     /**
      * Identifier of a delivery window option. A delivery window option represent one option for when a shipment is expected to be delivered.
-     * @type {string}
-     * @memberof DeliveryWindowOption
      */
     'deliveryWindowOptionId': string;
     /**
      * The time at which this delivery window option ends. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mmZ`.
-     * @type {string}
-     * @memberof DeliveryWindowOption
      */
     'endDate': string;
     /**
      * The time at which this delivery window option starts. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mmZ`.
-     * @type {string}
-     * @memberof DeliveryWindowOption
      */
     'startDate': string;
     /**
      * The time at which this window delivery option is no longer valid. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mmZ`.
-     * @type {string}
-     * @memberof DeliveryWindowOption
      */
     'validUntil': string;
 }

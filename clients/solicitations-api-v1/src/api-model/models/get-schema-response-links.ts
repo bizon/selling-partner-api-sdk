@@ -17,17 +17,7 @@
 // @ts-ignore
 import type { LinkObject } from './link-object';
 
-/**
- * 
- * @export
- * @interface GetSchemaResponseLinks
- */
 export interface GetSchemaResponseLinks {
-    /**
-     * 
-     * @type {LinkObject}
-     * @memberof GetSchemaResponseLinks
-     */
     'self': LinkObject;
 }
 

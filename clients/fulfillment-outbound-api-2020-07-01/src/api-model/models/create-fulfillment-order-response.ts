@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the `createFulfillmentOrder` operation.
- * @export
- * @interface CreateFulfillmentOrderResponse
  */
 export interface CreateFulfillmentOrderResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CreateFulfillmentOrderResponse
      */
     'errors'?: Array<Error>;
 }

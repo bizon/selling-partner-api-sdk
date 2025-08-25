@@ -16,8 +16,6 @@
 
 /**
  * The file type for a label.
- * @export
- * @enum {string}
  */
 
 export const FileType = {

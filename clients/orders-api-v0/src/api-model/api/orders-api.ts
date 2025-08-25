@@ -49,7 +49,6 @@ import type { UpdateVerificationStatusErrorResponse } from '../models';
 import type { UpdateVerificationStatusRequest } from '../models';
 /**
  * OrdersApi - axios parameter creator
- * @export
  */
 export const OrdersApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -524,7 +523,6 @@ export const OrdersApiAxiosParamCreator = function (configuration?: Configuratio
 
 /**
  * OrdersApi - functional programming interface
- * @export
  */
 export const OrdersApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = OrdersApiAxiosParamCreator(configuration)
@@ -680,7 +678,6 @@ export const OrdersApiFp = function(configuration?: Configuration) {
 
 /**
  * OrdersApi - factory interface
- * @export
  */
 export const OrdersApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = OrdersApiFp(configuration)
@@ -780,331 +777,236 @@ export const OrdersApiFactory = function (configuration?: Configuration, basePat
 
 /**
  * Request parameters for confirmShipment operation in OrdersApi.
- * @export
- * @interface OrdersApiConfirmShipmentRequest
  */
 export interface OrdersApiConfirmShipmentRequest {
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
-     * @type {string}
-     * @memberof OrdersApiConfirmShipment
      */
     readonly orderId: string
 
     /**
      * Request body of &#x60;confirmShipment&#x60;.
-     * @type {ConfirmShipmentRequest}
-     * @memberof OrdersApiConfirmShipment
      */
     readonly payload: ConfirmShipmentRequest
 }
 
 /**
  * Request parameters for getOrder operation in OrdersApi.
- * @export
- * @interface OrdersApiGetOrderRequest
  */
 export interface OrdersApiGetOrderRequest {
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
-     * @type {string}
-     * @memberof OrdersApiGetOrder
      */
     readonly orderId: string
 }
 
 /**
  * Request parameters for getOrderAddress operation in OrdersApi.
- * @export
- * @interface OrdersApiGetOrderAddressRequest
  */
 export interface OrdersApiGetOrderAddressRequest {
     /**
      * The Amazon order identifier in 3-7-7 format.
-     * @type {string}
-     * @memberof OrdersApiGetOrderAddress
      */
     readonly orderId: string
 }
 
 /**
  * Request parameters for getOrderBuyerInfo operation in OrdersApi.
- * @export
- * @interface OrdersApiGetOrderBuyerInfoRequest
  */
 export interface OrdersApiGetOrderBuyerInfoRequest {
     /**
      * The Amazon order identifier in 3-7-7 format.
-     * @type {string}
-     * @memberof OrdersApiGetOrderBuyerInfo
      */
     readonly orderId: string
 }
 
 /**
  * Request parameters for getOrderItems operation in OrdersApi.
- * @export
- * @interface OrdersApiGetOrderItemsRequest
  */
 export interface OrdersApiGetOrderItemsRequest {
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
-     * @type {string}
-     * @memberof OrdersApiGetOrderItems
      */
     readonly orderId: string
 
     /**
      * A string token returned in the response of your previous request.
-     * @type {string}
-     * @memberof OrdersApiGetOrderItems
      */
     readonly nextToken?: string
 }
 
 /**
  * Request parameters for getOrderItemsBuyerInfo operation in OrdersApi.
- * @export
- * @interface OrdersApiGetOrderItemsBuyerInfoRequest
  */
 export interface OrdersApiGetOrderItemsBuyerInfoRequest {
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
-     * @type {string}
-     * @memberof OrdersApiGetOrderItemsBuyerInfo
      */
     readonly orderId: string
 
     /**
      * A string token returned in the response of your previous request.
-     * @type {string}
-     * @memberof OrdersApiGetOrderItemsBuyerInfo
      */
     readonly nextToken?: string
 }
 
 /**
  * Request parameters for getOrderRegulatedInfo operation in OrdersApi.
- * @export
- * @interface OrdersApiGetOrderRegulatedInfoRequest
  */
 export interface OrdersApiGetOrderRegulatedInfoRequest {
     /**
      * The Amazon order identifier in 3-7-7 format.
-     * @type {string}
-     * @memberof OrdersApiGetOrderRegulatedInfo
      */
     readonly orderId: string
 }
 
 /**
  * Request parameters for getOrders operation in OrdersApi.
- * @export
- * @interface OrdersApiGetOrdersRequest
  */
 export interface OrdersApiGetOrdersRequest {
     /**
      * A list of &#x60;MarketplaceId&#x60; values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of &#x60;marketplaceId&#x60; values.
-     * @type {Array<string>}
-     * @memberof OrdersApiGetOrders
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * Use this date to select orders created after (or at) a specified time. Only orders placed after the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.  **Note**: Either the &#x60;CreatedAfter&#x60; parameter or the &#x60;LastUpdatedAfter&#x60; parameter is required. Both cannot be empty. &#x60;LastUpdatedAfter&#x60; and &#x60;LastUpdatedBefore&#x60; cannot be set when &#x60;CreatedAfter&#x60; is set.
-     * @type {string}
-     * @memberof OrdersApiGetOrders
      */
     readonly createdAfter?: string
 
     /**
      * Use this date to select orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.  **Note**: &#x60;CreatedBefore&#x60; is optional when &#x60;CreatedAfter&#x60; is set. If specified, &#x60;CreatedBefore&#x60; must be equal to or after the &#x60;CreatedAfter&#x60; date and at least two minutes before current time.
-     * @type {string}
-     * @memberof OrdersApiGetOrders
      */
     readonly createdBefore?: string
 
     /**
      * Use this date to select orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.  **Note**: Either the &#x60;CreatedAfter&#x60; parameter or the &#x60;LastUpdatedAfter&#x60; parameter is required. Both cannot be empty. &#x60;CreatedAfter&#x60; or &#x60;CreatedBefore&#x60; cannot be set when &#x60;LastUpdatedAfter&#x60; is set.
-     * @type {string}
-     * @memberof OrdersApiGetOrders
      */
     readonly lastUpdatedAfter?: string
 
     /**
      * Use this date to select orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.  **Note**: &#x60;LastUpdatedBefore&#x60; is optional when &#x60;LastUpdatedAfter&#x60; is set. But if specified, &#x60;LastUpdatedBefore&#x60; must be equal to or after the &#x60;LastUpdatedAfter&#x60; date and at least two minutes before current time.
-     * @type {string}
-     * @memberof OrdersApiGetOrders
      */
     readonly lastUpdatedBefore?: string
 
     /**
      * A list of &#x60;OrderStatus&#x60; values used to filter the results.  **Possible values:** - &#x60;PendingAvailability&#x60; (This status is available for pre-orders only. The order has been placed, payment has not been authorized, and the release date of the item is in the future.) - &#x60;Pending&#x60; (The order has been placed but payment has not been authorized.) - &#x60;Unshipped&#x60; (Payment has been authorized and the order is ready for shipment, but no items in the order have been shipped.) - &#x60;PartiallyShipped&#x60; (One or more, but not all, items in the order have been shipped.) - &#x60;Shipped&#x60; (All items in the order have been shipped.) - &#x60;InvoiceUnconfirmed&#x60; (All items in the order have been shipped. The seller has not yet given confirmation to Amazon that the invoice has been shipped to the buyer.) - &#x60;Canceled&#x60; (The order has been canceled.) - &#x60;Unfulfillable&#x60; (The order cannot be fulfilled. This state applies only to Multi-Channel Fulfillment orders.)
-     * @type {Array<string>}
-     * @memberof OrdersApiGetOrders
      */
     readonly orderStatuses?: Array<string>
 
     /**
      * A list that indicates how an order was fulfilled. Filters the results by fulfillment channel.   **Possible values**: &#x60;AFN&#x60; (fulfilled by Amazon), &#x60;MFN&#x60; (fulfilled by seller).
-     * @type {Array<string>}
-     * @memberof OrdersApiGetOrders
      */
     readonly fulfillmentChannels?: Array<string>
 
     /**
      * A list of payment method values. Use this field to select orders that were paid with the specified payment methods.  **Possible values**: &#x60;COD&#x60; (cash on delivery), &#x60;CVS&#x60; (convenience store), &#x60;Other&#x60; (Any payment method other than COD or CVS).
-     * @type {Array<string>}
-     * @memberof OrdersApiGetOrders
      */
     readonly paymentMethods?: Array<string>
 
     /**
      * The email address of a buyer. Used to select orders that contain the specified email address.
-     * @type {string}
-     * @memberof OrdersApiGetOrders
      */
     readonly buyerEmail?: string
 
     /**
      * An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If &#x60;SellerOrderId&#x60; is specified, then &#x60;FulfillmentChannels&#x60;, &#x60;OrderStatuses&#x60;, &#x60;PaymentMethod&#x60;, &#x60;LastUpdatedAfter&#x60;, LastUpdatedBefore, and &#x60;BuyerEmail&#x60; cannot be specified.
-     * @type {string}
-     * @memberof OrdersApiGetOrders
      */
     readonly sellerOrderId?: string
 
     /**
      * A number that indicates the maximum number of orders that can be returned per page. Value must be 1 - 100. Default 100.
-     * @type {number}
-     * @memberof OrdersApiGetOrders
      */
     readonly maxResultsPerPage?: number
 
     /**
      * A list of &#x60;EasyShipShipmentStatus&#x60; values. Used to select Easy Ship orders with statuses that match the specified values. If &#x60;EasyShipShipmentStatus&#x60; is specified, only Amazon Easy Ship orders are returned.  **Possible values:** - &#x60;PendingSchedule&#x60; (The package is awaiting the schedule for pick-up.) - &#x60;PendingPickUp&#x60; (Amazon has not yet picked up the package from the seller.) - &#x60;PendingDropOff&#x60; (The seller will deliver the package to the carrier.) - &#x60;LabelCanceled&#x60; (The seller canceled the pickup.) - &#x60;PickedUp&#x60; (Amazon has picked up the package from the seller.) - &#x60;DroppedOff&#x60; (The package is delivered to the carrier by the seller.) - &#x60;AtOriginFC&#x60; (The packaged is at the origin fulfillment center.) - &#x60;AtDestinationFC&#x60; (The package is at the destination fulfillment center.) - &#x60;Delivered&#x60; (The package has been delivered.) - &#x60;RejectedByBuyer&#x60; (The package has been rejected by the buyer.) - &#x60;Undeliverable&#x60; (The package cannot be delivered.) - &#x60;ReturningToSeller&#x60; (The package was not delivered and is being returned to the seller.) - &#x60;ReturnedToSeller&#x60; (The package was not delivered and was returned to the seller.) - &#x60;Lost&#x60; (The package is lost.) - &#x60;OutForDelivery&#x60; (The package is out for delivery.) - &#x60;Damaged&#x60; (The package was damaged by the carrier.)
-     * @type {Array<string>}
-     * @memberof OrdersApiGetOrders
      */
     readonly easyShipShipmentStatuses?: Array<string>
 
     /**
      * A list of &#x60;ElectronicInvoiceStatus&#x60; values. Used to select orders with electronic invoice statuses that match the specified values.  **Possible values:** - &#x60;NotRequired&#x60; (Electronic invoice submission is not required for this order.) - &#x60;NotFound&#x60; (The electronic invoice was not submitted for this order.) - &#x60;Processing&#x60; (The electronic invoice is being processed for this order.) - &#x60;Errored&#x60; (The last submitted electronic invoice was rejected for this order.) - &#x60;Accepted&#x60; (The last submitted electronic invoice was submitted and accepted.)
-     * @type {Array<string>}
-     * @memberof OrdersApiGetOrders
      */
     readonly electronicInvoiceStatuses?: Array<string>
 
     /**
      * A string token returned in the response of your previous request.
-     * @type {string}
-     * @memberof OrdersApiGetOrders
      */
     readonly nextToken?: string
 
     /**
      * A list of &#x60;AmazonOrderId&#x60; values. An &#x60;AmazonOrderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format.
-     * @type {Array<string>}
-     * @memberof OrdersApiGetOrders
      */
     readonly amazonOrderIds?: Array<string>
 
     /**
      * The &#x60;sourceId&#x60; of the location from where you want the order fulfilled.
-     * @type {string}
-     * @memberof OrdersApiGetOrders
      */
     readonly actualFulfillmentSupplySourceId?: string
 
     /**
      * When true, this order is marked to be picked up from a store rather than delivered.
-     * @type {boolean}
-     * @memberof OrdersApiGetOrders
      */
     readonly isISPU?: boolean
 
     /**
      * The store chain store identifier. Linked to a specific store in a store chain.
-     * @type {string}
-     * @memberof OrdersApiGetOrders
      */
     readonly storeChainStoreId?: string
 
     /**
      * Use this date to select orders with a earliest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
-     * @type {string}
-     * @memberof OrdersApiGetOrders
      */
     readonly earliestDeliveryDateBefore?: string
 
     /**
      * Use this date to select orders with a earliest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
-     * @type {string}
-     * @memberof OrdersApiGetOrders
      */
     readonly earliestDeliveryDateAfter?: string
 
     /**
      * Use this date to select orders with a latest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
-     * @type {string}
-     * @memberof OrdersApiGetOrders
      */
     readonly latestDeliveryDateBefore?: string
 
     /**
      * Use this date to select orders with a latest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
-     * @type {string}
-     * @memberof OrdersApiGetOrders
      */
     readonly latestDeliveryDateAfter?: string
 }
 
 /**
  * Request parameters for updateShipmentStatus operation in OrdersApi.
- * @export
- * @interface OrdersApiUpdateShipmentStatusRequest
  */
 export interface OrdersApiUpdateShipmentStatusRequest {
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
-     * @type {string}
-     * @memberof OrdersApiUpdateShipmentStatus
      */
     readonly orderId: string
 
     /**
      * The request body for the &#x60;updateShipmentStatus&#x60; operation.
-     * @type {UpdateShipmentStatusRequest}
-     * @memberof OrdersApiUpdateShipmentStatus
      */
     readonly payload: UpdateShipmentStatusRequest
 }
 
 /**
  * Request parameters for updateVerificationStatus operation in OrdersApi.
- * @export
- * @interface OrdersApiUpdateVerificationStatusRequest
  */
 export interface OrdersApiUpdateVerificationStatusRequest {
     /**
      * The Amazon order identifier in 3-7-7 format.
-     * @type {string}
-     * @memberof OrdersApiUpdateVerificationStatus
      */
     readonly orderId: string
 
     /**
      * The request body for the &#x60;updateVerificationStatus&#x60; operation.
-     * @type {UpdateVerificationStatusRequest}
-     * @memberof OrdersApiUpdateVerificationStatus
      */
     readonly payload: UpdateVerificationStatusRequest
 }
 
 /**
  * OrdersApi - object-oriented interface
- * @export
- * @class OrdersApi
- * @extends {BaseAPI}
  */
 export class OrdersApi extends BaseAPI {
     /**
@@ -1112,7 +1014,6 @@ export class OrdersApi extends BaseAPI {
      * @param {OrdersApiConfirmShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
      */
     public confirmShipment(requestParameters: OrdersApiConfirmShipmentRequest, options?: RawAxiosRequestConfig) {
         return OrdersApiFp(this.configuration).confirmShipment(requestParameters.orderId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
@@ -1123,7 +1024,6 @@ export class OrdersApi extends BaseAPI {
      * @param {OrdersApiGetOrderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
      */
     public getOrder(requestParameters: OrdersApiGetOrderRequest, options?: RawAxiosRequestConfig) {
         return OrdersApiFp(this.configuration).getOrder(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
@@ -1134,7 +1034,6 @@ export class OrdersApi extends BaseAPI {
      * @param {OrdersApiGetOrderAddressRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
      */
     public getOrderAddress(requestParameters: OrdersApiGetOrderAddressRequest, options?: RawAxiosRequestConfig) {
         return OrdersApiFp(this.configuration).getOrderAddress(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
@@ -1145,7 +1044,6 @@ export class OrdersApi extends BaseAPI {
      * @param {OrdersApiGetOrderBuyerInfoRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
      */
     public getOrderBuyerInfo(requestParameters: OrdersApiGetOrderBuyerInfoRequest, options?: RawAxiosRequestConfig) {
         return OrdersApiFp(this.configuration).getOrderBuyerInfo(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
@@ -1156,7 +1054,6 @@ export class OrdersApi extends BaseAPI {
      * @param {OrdersApiGetOrderItemsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
      */
     public getOrderItems(requestParameters: OrdersApiGetOrderItemsRequest, options?: RawAxiosRequestConfig) {
         return OrdersApiFp(this.configuration).getOrderItems(requestParameters.orderId, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
@@ -1167,7 +1064,6 @@ export class OrdersApi extends BaseAPI {
      * @param {OrdersApiGetOrderItemsBuyerInfoRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
      */
     public getOrderItemsBuyerInfo(requestParameters: OrdersApiGetOrderItemsBuyerInfoRequest, options?: RawAxiosRequestConfig) {
         return OrdersApiFp(this.configuration).getOrderItemsBuyerInfo(requestParameters.orderId, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
@@ -1178,7 +1074,6 @@ export class OrdersApi extends BaseAPI {
      * @param {OrdersApiGetOrderRegulatedInfoRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
      */
     public getOrderRegulatedInfo(requestParameters: OrdersApiGetOrderRegulatedInfoRequest, options?: RawAxiosRequestConfig) {
         return OrdersApiFp(this.configuration).getOrderRegulatedInfo(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
@@ -1189,7 +1084,6 @@ export class OrdersApi extends BaseAPI {
      * @param {OrdersApiGetOrdersRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
      */
     public getOrders(requestParameters: OrdersApiGetOrdersRequest, options?: RawAxiosRequestConfig) {
         return OrdersApiFp(this.configuration).getOrders(requestParameters.marketplaceIds, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.orderStatuses, requestParameters.fulfillmentChannels, requestParameters.paymentMethods, requestParameters.buyerEmail, requestParameters.sellerOrderId, requestParameters.maxResultsPerPage, requestParameters.easyShipShipmentStatuses, requestParameters.electronicInvoiceStatuses, requestParameters.nextToken, requestParameters.amazonOrderIds, requestParameters.actualFulfillmentSupplySourceId, requestParameters.isISPU, requestParameters.storeChainStoreId, requestParameters.earliestDeliveryDateBefore, requestParameters.earliestDeliveryDateAfter, requestParameters.latestDeliveryDateBefore, requestParameters.latestDeliveryDateAfter, options).then((request) => request(this.axios, this.basePath));
@@ -1200,7 +1094,6 @@ export class OrdersApi extends BaseAPI {
      * @param {OrdersApiUpdateShipmentStatusRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
      */
     public updateShipmentStatus(requestParameters: OrdersApiUpdateShipmentStatusRequest, options?: RawAxiosRequestConfig) {
         return OrdersApiFp(this.configuration).updateShipmentStatus(requestParameters.orderId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));
@@ -1211,7 +1104,6 @@ export class OrdersApi extends BaseAPI {
      * @param {OrdersApiUpdateVerificationStatusRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof OrdersApi
      */
     public updateVerificationStatus(requestParameters: OrdersApiUpdateVerificationStatusRequest, options?: RawAxiosRequestConfig) {
         return OrdersApiFp(this.configuration).updateVerificationStatus(requestParameters.orderId, requestParameters.payload, options).then((request) => request(this.axios, this.basePath));

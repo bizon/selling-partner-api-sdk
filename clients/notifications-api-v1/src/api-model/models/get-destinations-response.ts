@@ -19,20 +19,14 @@ import type { Destination } from './destination';
 
 /**
  * The response schema for the `getDestinations` operation.
- * @export
- * @interface GetDestinationsResponse
  */
 export interface GetDestinationsResponse {
     /**
      * A list of destinations.
-     * @type {Array<Destination>}
-     * @memberof GetDestinationsResponse
      */
     'payload'?: Array<Destination>;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetDestinationsResponse
      */
     'errors'?: Array<Error>;
 }

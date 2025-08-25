@@ -19,15 +19,8 @@ import type { GetAccessPointsResult } from './get-access-points-result';
 
 /**
  * The response schema for the GetAccessPoints operation.
- * @export
- * @interface GetAccessPointsResponse
  */
 export interface GetAccessPointsResponse {
-    /**
-     * 
-     * @type {GetAccessPointsResult}
-     * @memberof GetAccessPointsResponse
-     */
     'payload'?: GetAccessPointsResult;
 }
 

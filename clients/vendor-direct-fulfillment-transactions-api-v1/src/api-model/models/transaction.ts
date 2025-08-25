@@ -16,26 +16,18 @@
 
 /**
  * The transaction status details.
- * @export
- * @interface Transaction
  */
 export interface Transaction {
     /**
      * The unique identifier sent in the \'transactionId\' field in response to the post request of a specific transaction.
-     * @type {string}
-     * @memberof Transaction
      */
     'transactionId': string;
     /**
      * Current processing status of the transaction.
-     * @type {string}
-     * @memberof Transaction
      */
     'status': TransactionStatusEnum;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof Transaction
      */
     'errors'?: Array<Error>;
 }

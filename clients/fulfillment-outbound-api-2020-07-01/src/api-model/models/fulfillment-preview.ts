@@ -37,74 +37,41 @@ import type { Weight } from './weight';
 
 /**
  * Information about a fulfillment order preview, including delivery and fee information based on shipping method.
- * @export
- * @interface FulfillmentPreview
  */
 export interface FulfillmentPreview {
-    /**
-     * 
-     * @type {ShippingSpeedCategory}
-     * @memberof FulfillmentPreview
-     */
     'shippingSpeedCategory': ShippingSpeedCategory;
-    /**
-     * 
-     * @type {ScheduledDeliveryInfo}
-     * @memberof FulfillmentPreview
-     */
     'scheduledDeliveryInfo'?: ScheduledDeliveryInfo;
     /**
      * When true, this fulfillment order preview is fulfillable.
-     * @type {boolean}
-     * @memberof FulfillmentPreview
      */
     'isFulfillable': boolean;
     /**
      * When true, this fulfillment order preview is for COD (Cash On Delivery).
-     * @type {boolean}
-     * @memberof FulfillmentPreview
      */
     'isCODCapable': boolean;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof FulfillmentPreview
-     */
     'estimatedShippingWeight'?: Weight;
     /**
      * An array of fee type and cost pairs.
-     * @type {Array<Fee>}
-     * @memberof FulfillmentPreview
      */
     'estimatedFees'?: Array<Fee>;
     /**
      * An array of fulfillment preview shipment information.
-     * @type {Array<FulfillmentPreviewShipment>}
-     * @memberof FulfillmentPreview
      */
     'fulfillmentPreviewShipments'?: Array<FulfillmentPreviewShipment>;
     /**
      * An array of unfulfillable preview item information.
-     * @type {Array<UnfulfillablePreviewItem>}
-     * @memberof FulfillmentPreview
      */
     'unfulfillablePreviewItems'?: Array<UnfulfillablePreviewItem>;
     /**
      * String list
-     * @type {Array<string>}
-     * @memberof FulfillmentPreview
      */
     'orderUnfulfillableReasons'?: Array<string>;
     /**
      * The marketplace the fulfillment order is placed against.
-     * @type {string}
-     * @memberof FulfillmentPreview
      */
     'marketplaceId': string;
     /**
      * A list of features and their fulfillment policies to apply to the order.
-     * @type {Array<FeatureSettings>}
-     * @memberof FulfillmentPreview
      */
     'featureConstraints'?: Array<FeatureSettings>;
 }

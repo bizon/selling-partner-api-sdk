@@ -27,7 +27,6 @@ import type { SubmitInventoryUpdateRequest } from '../models';
 import type { SubmitInventoryUpdateResponse } from '../models';
 /**
  * VendorDirectFulfillmentInventoryApi - axios parameter creator
- * @export
  */
 export const VendorDirectFulfillmentInventoryApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -75,7 +74,6 @@ export const VendorDirectFulfillmentInventoryApiAxiosParamCreator = function (co
 
 /**
  * VendorDirectFulfillmentInventoryApi - functional programming interface
- * @export
  */
 export const VendorDirectFulfillmentInventoryApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = VendorDirectFulfillmentInventoryApiAxiosParamCreator(configuration)
@@ -98,7 +96,6 @@ export const VendorDirectFulfillmentInventoryApiFp = function(configuration?: Co
 
 /**
  * VendorDirectFulfillmentInventoryApi - factory interface
- * @export
  */
 export const VendorDirectFulfillmentInventoryApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = VendorDirectFulfillmentInventoryApiFp(configuration)
@@ -117,30 +114,21 @@ export const VendorDirectFulfillmentInventoryApiFactory = function (configuratio
 
 /**
  * Request parameters for submitInventoryUpdate operation in VendorDirectFulfillmentInventoryApi.
- * @export
- * @interface VendorDirectFulfillmentInventoryApiSubmitInventoryUpdateRequest
  */
 export interface VendorDirectFulfillmentInventoryApiSubmitInventoryUpdateRequest {
     /**
      * Identifier for the warehouse for which to update inventory.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentInventoryApiSubmitInventoryUpdate
      */
     readonly warehouseId: string
 
     /**
      * The request body containing the inventory update data to submit.
-     * @type {SubmitInventoryUpdateRequest}
-     * @memberof VendorDirectFulfillmentInventoryApiSubmitInventoryUpdate
      */
     readonly body: SubmitInventoryUpdateRequest
 }
 
 /**
  * VendorDirectFulfillmentInventoryApi - object-oriented interface
- * @export
- * @class VendorDirectFulfillmentInventoryApi
- * @extends {BaseAPI}
  */
 export class VendorDirectFulfillmentInventoryApi extends BaseAPI {
     /**
@@ -148,7 +136,6 @@ export class VendorDirectFulfillmentInventoryApi extends BaseAPI {
      * @param {VendorDirectFulfillmentInventoryApiSubmitInventoryUpdateRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentInventoryApi
      */
     public submitInventoryUpdate(requestParameters: VendorDirectFulfillmentInventoryApiSubmitInventoryUpdateRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentInventoryApiFp(this.configuration).submitInventoryUpdate(requestParameters.warehouseId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));

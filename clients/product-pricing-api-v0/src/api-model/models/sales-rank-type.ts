@@ -16,20 +16,14 @@
 
 /**
  * Sales rank information for the item, by category
- * @export
- * @interface SalesRankType
  */
 export interface SalesRankType {
     /**
      *  Identifies the item category from which the sales rank is taken.
-     * @type {string}
-     * @memberof SalesRankType
      */
     'ProductCategoryId': string;
     /**
      * The sales rank of the item within the item category.
-     * @type {number}
-     * @memberof SalesRankType
      */
     'Rank': number;
 }

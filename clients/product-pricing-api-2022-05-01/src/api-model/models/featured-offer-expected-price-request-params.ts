@@ -19,27 +19,16 @@ import type { Segment } from './segment';
 
 /**
  * The parameters for an individual request.
- * @export
- * @interface FeaturedOfferExpectedPriceRequestParams
  */
 export interface FeaturedOfferExpectedPriceRequestParams {
     /**
      * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof FeaturedOfferExpectedPriceRequestParams
      */
     'marketplaceId': string;
     /**
      * The seller SKU of the item.
-     * @type {string}
-     * @memberof FeaturedOfferExpectedPriceRequestParams
      */
     'sku': string;
-    /**
-     * 
-     * @type {Segment}
-     * @memberof FeaturedOfferExpectedPriceRequestParams
-     */
     'segment'?: Segment;
 }
 

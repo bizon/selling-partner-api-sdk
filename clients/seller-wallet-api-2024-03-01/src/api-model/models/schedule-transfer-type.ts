@@ -16,8 +16,6 @@
 
 /**
  * Defines the type of schedule trigger used for executing transfers. Schedule based on time patterns using EventBridge. 
- * @export
- * @enum {string}
  */
 
 export const ScheduleTransferType = {

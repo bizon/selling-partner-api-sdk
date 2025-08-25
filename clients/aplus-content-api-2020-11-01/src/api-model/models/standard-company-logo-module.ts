@@ -19,15 +19,8 @@ import type { ImageComponent } from './image-component';
 
 /**
  * The standard company logo image.
- * @export
- * @interface StandardCompanyLogoModule
  */
 export interface StandardCompanyLogoModule {
-    /**
-     * 
-     * @type {ImageComponent}
-     * @memberof StandardCompanyLogoModule
-     */
     'companyLogo': ImageComponent;
 }
 

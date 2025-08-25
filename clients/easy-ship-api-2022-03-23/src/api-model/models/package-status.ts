@@ -16,8 +16,6 @@
 
 /**
  * The status of the package.
- * @export
- * @enum {string}
  */
 
 export const PackageStatus = {

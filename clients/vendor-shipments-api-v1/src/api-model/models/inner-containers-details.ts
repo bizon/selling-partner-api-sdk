@@ -19,20 +19,14 @@ import type { ContainerSequenceNumbers } from './container-sequence-numbers';
 
 /**
  * Details of the innerContainersDetails.
- * @export
- * @interface InnerContainersDetails
  */
 export interface InnerContainersDetails {
     /**
      * Total containers as part of the shipment
-     * @type {number}
-     * @memberof InnerContainersDetails
      */
     'containerCount'?: number;
     /**
      * Container sequence numbers that are involved in this shipment.
-     * @type {Array<ContainerSequenceNumbers>}
-     * @memberof InnerContainersDetails
      */
     'containerSequenceNumbers'?: Array<ContainerSequenceNumbers>;
 }

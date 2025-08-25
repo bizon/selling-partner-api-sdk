@@ -29,7 +29,6 @@ import type { Segment } from './segment';
 /**
  * @type FeaturedOfferExpectedPriceRequest
  * An individual FOEP request for a particular SKU.
- * @export
  */
 export type FeaturedOfferExpectedPriceRequest = BatchRequest & FeaturedOfferExpectedPriceRequestParams;
 

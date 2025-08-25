@@ -16,14 +16,10 @@
 
 /**
  * Amazon order information. This is required if the shipment source channel is Amazon.
- * @export
- * @interface AmazonOrderDetails
  */
 export interface AmazonOrderDetails {
     /**
      * The Amazon order ID associated with the Amazon order fulfilled by this shipment.
-     * @type {string}
-     * @memberof AmazonOrderDetails
      */
     'orderId': string;
 }

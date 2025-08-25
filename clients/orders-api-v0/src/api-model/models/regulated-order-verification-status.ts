@@ -25,50 +25,28 @@ import type { VerificationStatus } from './verification-status';
 
 /**
  * The verification status of the order, along with associated approval or rejection metadata.
- * @export
- * @interface RegulatedOrderVerificationStatus
  */
 export interface RegulatedOrderVerificationStatus {
-    /**
-     * 
-     * @type {VerificationStatus}
-     * @memberof RegulatedOrderVerificationStatus
-     */
     'Status': VerificationStatus;
     /**
      * When true, the regulated information provided in the order requires a review by the merchant.
-     * @type {boolean}
-     * @memberof RegulatedOrderVerificationStatus
      */
     'RequiresMerchantAction': boolean;
     /**
      * A list of valid rejection reasons that may be used to reject the order\'s regulated information.
-     * @type {Array<RejectionReason>}
-     * @memberof RegulatedOrderVerificationStatus
      */
     'ValidRejectionReasons': Array<RejectionReason>;
-    /**
-     * 
-     * @type {RejectionReason}
-     * @memberof RegulatedOrderVerificationStatus
-     */
     'RejectionReason'?: RejectionReason;
     /**
      * The date the order was reviewed. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
-     * @type {string}
-     * @memberof RegulatedOrderVerificationStatus
      */
     'ReviewDate'?: string;
     /**
      * The identifier for the order\'s regulated information reviewer.
-     * @type {string}
-     * @memberof RegulatedOrderVerificationStatus
      */
     'ExternalReviewerId'?: string;
     /**
      * A list of valid verification details that may be provided and the criteria required for when the verification detail can be provided.
-     * @type {Array<ValidVerificationDetail>}
-     * @memberof RegulatedOrderVerificationStatus
      */
     'ValidVerificationDetails'?: Array<ValidVerificationDetail>;
 }

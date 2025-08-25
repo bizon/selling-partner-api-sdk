@@ -16,26 +16,18 @@
 
 /**
  * A time window along with associated capacity in which the service can be performed.
- * @export
- * @interface AppointmentSlot
  */
 export interface AppointmentSlot {
     /**
      * Time window start time in ISO 8601 format.
-     * @type {string}
-     * @memberof AppointmentSlot
      */
     'startTime'?: string;
     /**
      * Time window end time in ISO 8601 format.
-     * @type {string}
-     * @memberof AppointmentSlot
      */
     'endTime'?: string;
     /**
      * Number of resources for which a slot can be reserved.
-     * @type {number}
-     * @memberof AppointmentSlot
      */
     'capacity'?: number;
 }

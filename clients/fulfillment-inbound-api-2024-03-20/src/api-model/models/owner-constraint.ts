@@ -16,8 +16,6 @@
 
 /**
  * A constraint that can apply to an individual owner. If no constraint is specified, both `AMAZON` and `SELLER` are acceptable.
- * @export
- * @enum {string}
  */
 
 export const OwnerConstraint = {

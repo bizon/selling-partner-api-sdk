@@ -16,32 +16,22 @@
 
 /**
  * Physical dimensional measurements of a container.
- * @export
- * @interface Dimensions
  */
 export interface Dimensions {
     /**
      * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.  <br>**Pattern** : `^-?(0|([1-9]\\\\d*))(\\\\.\\\\d+)?([eE][+-]?\\\\d+)?$`.
-     * @type {string}
-     * @memberof Dimensions
      */
     'length': string;
     /**
      * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.  <br>**Pattern** : `^-?(0|([1-9]\\\\d*))(\\\\.\\\\d+)?([eE][+-]?\\\\d+)?$`.
-     * @type {string}
-     * @memberof Dimensions
      */
     'width': string;
     /**
      * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.  <br>**Pattern** : `^-?(0|([1-9]\\\\d*))(\\\\.\\\\d+)?([eE][+-]?\\\\d+)?$`.
-     * @type {string}
-     * @memberof Dimensions
      */
     'height': string;
     /**
      * The unit of measure for dimensions.
-     * @type {string}
-     * @memberof Dimensions
      */
     'unitOfMeasure': DimensionsUnitOfMeasureEnum;
 }

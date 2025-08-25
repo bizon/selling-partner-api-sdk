@@ -22,44 +22,27 @@ import type { DateRange } from './date-range';
 
 /**
  * The response for the `getBrowseNodeReturnTopics` operation.
- * @export
- * @interface BrowseNodeReturnTopicsResponse
  */
 export interface BrowseNodeReturnTopicsResponse {
     /**
      * The requested browse node id. A browse node id is the unique identifier of a given browse node.
-     * @type {string}
-     * @memberof BrowseNodeReturnTopicsResponse
      */
     'browseNodeId': string;
     /**
      * The display name of the browse node, as visible on the Amazon retail website.
-     * @type {string}
-     * @memberof BrowseNodeReturnTopicsResponse
      */
     'displayName': string;
     /**
      * The requested marketplace id.
-     * @type {string}
-     * @memberof BrowseNodeReturnTopicsResponse
      */
     'marketplaceId': string;
     /**
      * The two digit country code of requested marketplace id, in ISO 3166-1 alpha-2 format.
-     * @type {string}
-     * @memberof BrowseNodeReturnTopicsResponse
      */
     'countryCode': string;
-    /**
-     * 
-     * @type {DateRange}
-     * @memberof BrowseNodeReturnTopicsResponse
-     */
     'dateRange': DateRange;
     /**
      * The list of browse node return topics.
-     * @type {Array<BrowseNodeReturnTopics>}
-     * @memberof BrowseNodeReturnTopicsResponse
      */
     'topics': Array<BrowseNodeReturnTopics>;
 }

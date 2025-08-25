@@ -16,8 +16,6 @@
 
 /**
  * The default payment method type.
- * @export
- * @enum {string}
  */
 
 export const AssignmentType = {

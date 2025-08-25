@@ -19,26 +19,18 @@ import type { Attachment } from './attachment';
 
 /**
  * The request schema for the createWarranty operation.
- * @export
- * @interface CreateWarrantyRequest
  */
 export interface CreateWarrantyRequest {
     /**
      * Attachments to include in the message to the buyer. If any text is included in the attachment, the text must be written in the buyer\'s language of preference, which can be retrieved from the GetAttributes operation.
-     * @type {Array<Attachment>}
-     * @memberof CreateWarrantyRequest
      */
     'attachments'?: Array<Attachment>;
     /**
      * The start date of the warranty coverage to include in the message to the buyer.
-     * @type {string}
-     * @memberof CreateWarrantyRequest
      */
     'coverageStartDate'?: string;
     /**
      * The end date of the warranty coverage to include in the message to the buyer.
-     * @type {string}
-     * @memberof CreateWarrantyRequest
      */
     'coverageEndDate'?: string;
 }

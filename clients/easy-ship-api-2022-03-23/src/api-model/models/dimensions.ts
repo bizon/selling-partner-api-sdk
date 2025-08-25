@@ -19,38 +19,23 @@ import type { UnitOfLength } from './unit-of-length';
 
 /**
  * The dimensions of the scheduled package.
- * @export
- * @interface Dimensions
  */
 export interface Dimensions {
     /**
      * The numerical value of the specified dimension.
-     * @type {number}
-     * @memberof Dimensions
      */
     'length'?: number;
     /**
      * The numerical value of the specified dimension.
-     * @type {number}
-     * @memberof Dimensions
      */
     'width'?: number;
     /**
      * The numerical value of the specified dimension.
-     * @type {number}
-     * @memberof Dimensions
      */
     'height'?: number;
-    /**
-     * 
-     * @type {UnitOfLength}
-     * @memberof Dimensions
-     */
     'unit'?: UnitOfLength;
     /**
      * A string of up to 255 characters.
-     * @type {string}
-     * @memberof Dimensions
      */
     'identifier'?: string;
 }

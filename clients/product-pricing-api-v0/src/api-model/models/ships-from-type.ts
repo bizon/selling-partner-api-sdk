@@ -16,20 +16,14 @@
 
 /**
  * The state and country from where the item is shipped.
- * @export
- * @interface ShipsFromType
  */
 export interface ShipsFromType {
     /**
      * The state from where the item is shipped.
-     * @type {string}
-     * @memberof ShipsFromType
      */
     'State'?: string;
     /**
      * The country from where the item is shipped.
-     * @type {string}
-     * @memberof ShipsFromType
      */
     'Country'?: string;
 }

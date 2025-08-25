@@ -17,22 +17,10 @@
 // @ts-ignore
 import type { Categories } from './categories';
 
-/**
- * 
- * @export
- * @interface ListCatalogCategoriesResponse
- */
 export interface ListCatalogCategoriesResponse {
-    /**
-     * 
-     * @type {Array<Categories>}
-     * @memberof ListCatalogCategoriesResponse
-     */
     'payload'?: Array<Categories>;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof ListCatalogCategoriesResponse
      */
     'errors'?: Array<Error>;
 }

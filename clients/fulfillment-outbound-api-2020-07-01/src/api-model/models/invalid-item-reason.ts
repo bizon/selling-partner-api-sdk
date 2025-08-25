@@ -19,20 +19,11 @@ import type { InvalidItemReasonCode } from './invalid-item-reason-code';
 
 /**
  * The reason that the item is invalid for return.
- * @export
- * @interface InvalidItemReason
  */
 export interface InvalidItemReason {
-    /**
-     * 
-     * @type {InvalidItemReasonCode}
-     * @memberof InvalidItemReason
-     */
     'invalidItemReasonCode': InvalidItemReasonCode;
     /**
      * A human readable description of the invalid item reason code.
-     * @type {string}
-     * @memberof InvalidItemReason
      */
     'description': string;
 }

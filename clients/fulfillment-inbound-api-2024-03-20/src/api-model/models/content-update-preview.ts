@@ -22,33 +22,17 @@ import type { TransportationOption } from './transportation-option';
 
 /**
  * Preview of the changes that will be applied to the shipment.
- * @export
- * @interface ContentUpdatePreview
  */
 export interface ContentUpdatePreview {
     /**
      * Identifier of a content update preview.
-     * @type {string}
-     * @memberof ContentUpdatePreview
      */
     'contentUpdatePreviewId': string;
     /**
      * The time at which the content update expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
-     * @type {string}
-     * @memberof ContentUpdatePreview
      */
     'expiration': string;
-    /**
-     * 
-     * @type {RequestedUpdates}
-     * @memberof ContentUpdatePreview
-     */
     'requestedUpdates': RequestedUpdates;
-    /**
-     * 
-     * @type {TransportationOption}
-     * @memberof ContentUpdatePreview
-     */
     'transportationOption': TransportationOption;
 }
 

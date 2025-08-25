@@ -16,8 +16,6 @@
 
 /**
  * Unique ID for the rateItem.
- * @export
- * @enum {string}
  */
 
 export const RateItemID = {

@@ -19,15 +19,8 @@ import type { CollectOnDelivery } from './collect-on-delivery';
 
 /**
  * A collection of supported value-added services.
- * @export
- * @interface ValueAddedServiceDetails
  */
 export interface ValueAddedServiceDetails {
-    /**
-     * 
-     * @type {CollectOnDelivery}
-     * @memberof ValueAddedServiceDetails
-     */
     'collectOnDelivery'?: CollectOnDelivery;
 }
 

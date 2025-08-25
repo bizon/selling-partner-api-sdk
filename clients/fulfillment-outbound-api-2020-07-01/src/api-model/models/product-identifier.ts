@@ -16,14 +16,10 @@
 
 /**
  * Product identifier input that locates a product for MCF.
- * @export
- * @interface ProductIdentifier
  */
 export interface ProductIdentifier {
     /**
      * The merchant SKU for the product.
-     * @type {string}
-     * @memberof ProductIdentifier
      */
     'merchantSku': string;
 }

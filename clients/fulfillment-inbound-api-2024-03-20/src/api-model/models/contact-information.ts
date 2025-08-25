@@ -16,26 +16,18 @@
 
 /**
  * The seller\'s contact information.
- * @export
- * @interface ContactInformation
  */
 export interface ContactInformation {
     /**
      * The email address.
-     * @type {string}
-     * @memberof ContactInformation
      */
     'email'?: string;
     /**
      * The contact\'s name.
-     * @type {string}
-     * @memberof ContactInformation
      */
     'name': string;
     /**
      * The phone number.
-     * @type {string}
-     * @memberof ContactInformation
      */
     'phoneNumber': string;
 }

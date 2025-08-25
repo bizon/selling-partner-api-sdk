@@ -16,20 +16,14 @@
 
 /**
  * The HTTP status line associated with the response for an individual request within a batch. For more information, refer to [RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).
- * @export
- * @interface HttpStatusLine
  */
 export interface HttpStatusLine {
     /**
      * The HTTP response status code.
-     * @type {number}
-     * @memberof HttpStatusLine
      */
     'statusCode'?: number;
     /**
      * The HTTP response reason phrase.
-     * @type {string}
-     * @memberof HttpStatusLine
      */
     'reasonPhrase'?: string;
 }

@@ -16,14 +16,10 @@
 
 /**
  * The tracking summary.
- * @export
- * @interface TrackingSummary
  */
 export interface TrackingSummary {
     /**
      * The derived status based on the events in the eventHistory.
-     * @type {string}
-     * @memberof TrackingSummary
      */
     'status'?: string;
 }

@@ -19,14 +19,10 @@ import type { CustomPlacementInput } from './custom-placement-input';
 
 /**
  * The `generatePlacementOptions` request.
- * @export
- * @interface GeneratePlacementOptionsRequest
  */
 export interface GeneratePlacementOptionsRequest {
     /**
      * Custom placement options you want to add to the plan. This is only used for the India (IN - A21TJRUUN4KGV) marketplace.
-     * @type {Array<CustomPlacementInput>}
-     * @memberof GeneratePlacementOptionsRequest
      */
     'customPlacement'?: Array<CustomPlacementInput>;
 }

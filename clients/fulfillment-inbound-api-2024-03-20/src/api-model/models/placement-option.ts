@@ -19,44 +19,30 @@ import type { Incentive } from './incentive';
 
 /**
  * Contains information pertaining to the placement of the contents of an inbound plan and the related costs.
- * @export
- * @interface PlacementOption
  */
 export interface PlacementOption {
     /**
      * Discount for the offered option.
-     * @type {Array<Incentive>}
-     * @memberof PlacementOption
      */
     'discounts': Array<Incentive>;
     /**
      * The expiration date of the placement option. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
-     * @type {string}
-     * @memberof PlacementOption
      */
     'expiration'?: string;
     /**
      * The fee for the offered option.
-     * @type {Array<Incentive>}
-     * @memberof PlacementOption
      */
     'fees': Array<Incentive>;
     /**
      * The identifier of a placement option. A placement option represents the shipment splits and destinations of SKUs.
-     * @type {string}
-     * @memberof PlacementOption
      */
     'placementOptionId': string;
     /**
      * Shipment ids.
-     * @type {Array<string>}
-     * @memberof PlacementOption
      */
     'shipmentIds': Array<string>;
     /**
      * The status of a placement option. Possible values: `OFFERED`, `ACCEPTED`, `EXPIRED`.
-     * @type {string}
-     * @memberof PlacementOption
      */
     'status': string;
 }

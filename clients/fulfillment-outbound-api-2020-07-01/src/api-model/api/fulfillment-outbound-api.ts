@@ -63,7 +63,6 @@ import type { UpdateFulfillmentOrderRequest } from '../models';
 import type { UpdateFulfillmentOrderResponse } from '../models';
 /**
  * FulfillmentOutboundApi - axios parameter creator
- * @export
  */
 export const FulfillmentOutboundApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -620,7 +619,6 @@ export const FulfillmentOutboundApiAxiosParamCreator = function (configuration?:
 
 /**
  * FulfillmentOutboundApi - functional programming interface
- * @export
  */
 export const FulfillmentOutboundApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = FulfillmentOutboundApiAxiosParamCreator(configuration)
@@ -810,7 +808,6 @@ export const FulfillmentOutboundApiFp = function(configuration?: Configuration) 
 
 /**
  * FulfillmentOutboundApi - factory interface
- * @export
  */
 export const FulfillmentOutboundApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = FulfillmentOutboundApiFp(configuration)
@@ -946,289 +943,206 @@ export const FulfillmentOutboundApiFactory = function (configuration?: Configura
 
 /**
  * Request parameters for cancelFulfillmentOrder operation in FulfillmentOutboundApi.
- * @export
- * @interface FulfillmentOutboundApiCancelFulfillmentOrderRequest
  */
 export interface FulfillmentOutboundApiCancelFulfillmentOrderRequest {
     /**
      * The identifier assigned to the item by the seller when the fulfillment order was created.
-     * @type {string}
-     * @memberof FulfillmentOutboundApiCancelFulfillmentOrder
      */
     readonly sellerFulfillmentOrderId: string
 }
 
 /**
  * Request parameters for createFulfillmentOrder operation in FulfillmentOutboundApi.
- * @export
- * @interface FulfillmentOutboundApiCreateFulfillmentOrderRequest
  */
 export interface FulfillmentOutboundApiCreateFulfillmentOrderRequest {
     /**
      * CreateFulfillmentOrderRequest parameter
-     * @type {CreateFulfillmentOrderRequest}
-     * @memberof FulfillmentOutboundApiCreateFulfillmentOrder
      */
     readonly body: CreateFulfillmentOrderRequest
 }
 
 /**
  * Request parameters for createFulfillmentReturn operation in FulfillmentOutboundApi.
- * @export
- * @interface FulfillmentOutboundApiCreateFulfillmentReturnRequest
  */
 export interface FulfillmentOutboundApiCreateFulfillmentReturnRequest {
     /**
      * An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer\&#39;s request to return items.
-     * @type {string}
-     * @memberof FulfillmentOutboundApiCreateFulfillmentReturn
      */
     readonly sellerFulfillmentOrderId: string
 
     /**
      * CreateFulfillmentReturnRequest parameter
-     * @type {CreateFulfillmentReturnRequest}
-     * @memberof FulfillmentOutboundApiCreateFulfillmentReturn
      */
     readonly body: CreateFulfillmentReturnRequest
 }
 
 /**
  * Request parameters for deliveryOffers operation in FulfillmentOutboundApi.
- * @export
- * @interface FulfillmentOutboundApiDeliveryOffersRequest
  */
 export interface FulfillmentOutboundApiDeliveryOffersRequest {
     /**
      * GetDeliveryOffersRequest parameter
-     * @type {GetDeliveryOffersRequest}
-     * @memberof FulfillmentOutboundApiDeliveryOffers
      */
     readonly body: GetDeliveryOffersRequest
 }
 
 /**
  * Request parameters for getFeatureInventory operation in FulfillmentOutboundApi.
- * @export
- * @interface FulfillmentOutboundApiGetFeatureInventoryRequest
  */
 export interface FulfillmentOutboundApiGetFeatureInventoryRequest {
     /**
      * The marketplace for which to return a list of the inventory that is eligible for the specified feature.
-     * @type {string}
-     * @memberof FulfillmentOutboundApiGetFeatureInventory
      */
     readonly marketplaceId: string
 
     /**
      * The name of the feature for which to return a list of eligible inventory.
-     * @type {string}
-     * @memberof FulfillmentOutboundApiGetFeatureInventory
      */
     readonly featureName: string
 
     /**
      * A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page.
-     * @type {string}
-     * @memberof FulfillmentOutboundApiGetFeatureInventory
      */
     readonly nextToken?: string
 
     /**
      * A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ
-     * @type {string}
-     * @memberof FulfillmentOutboundApiGetFeatureInventory
      */
     readonly queryStartDate?: string
 }
 
 /**
  * Request parameters for getFeatureSKU operation in FulfillmentOutboundApi.
- * @export
- * @interface FulfillmentOutboundApiGetFeatureSKURequest
  */
 export interface FulfillmentOutboundApiGetFeatureSKURequest {
     /**
      * The marketplace for which to return the count.
-     * @type {string}
-     * @memberof FulfillmentOutboundApiGetFeatureSKU
      */
     readonly marketplaceId: string
 
     /**
      * The name of the feature.
-     * @type {string}
-     * @memberof FulfillmentOutboundApiGetFeatureSKU
      */
     readonly featureName: string
 
     /**
      * Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller\&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit.
-     * @type {string}
-     * @memberof FulfillmentOutboundApiGetFeatureSKU
      */
     readonly sellerSku: string
 }
 
 /**
  * Request parameters for getFeatures operation in FulfillmentOutboundApi.
- * @export
- * @interface FulfillmentOutboundApiGetFeaturesRequest
  */
 export interface FulfillmentOutboundApiGetFeaturesRequest {
     /**
      * The marketplace for which to return the list of features.
-     * @type {string}
-     * @memberof FulfillmentOutboundApiGetFeatures
      */
     readonly marketplaceId: string
 }
 
 /**
  * Request parameters for getFulfillmentOrder operation in FulfillmentOutboundApi.
- * @export
- * @interface FulfillmentOutboundApiGetFulfillmentOrderRequest
  */
 export interface FulfillmentOutboundApiGetFulfillmentOrderRequest {
     /**
      * The identifier assigned to the item by the seller when the fulfillment order was created.
-     * @type {string}
-     * @memberof FulfillmentOutboundApiGetFulfillmentOrder
      */
     readonly sellerFulfillmentOrderId: string
 }
 
 /**
  * Request parameters for getFulfillmentPreview operation in FulfillmentOutboundApi.
- * @export
- * @interface FulfillmentOutboundApiGetFulfillmentPreviewRequest
  */
 export interface FulfillmentOutboundApiGetFulfillmentPreviewRequest {
     /**
      * GetFulfillmentPreviewRequest parameter
-     * @type {GetFulfillmentPreviewRequest}
-     * @memberof FulfillmentOutboundApiGetFulfillmentPreview
      */
     readonly body: GetFulfillmentPreviewRequest
 }
 
 /**
  * Request parameters for getPackageTrackingDetails operation in FulfillmentOutboundApi.
- * @export
- * @interface FulfillmentOutboundApiGetPackageTrackingDetailsRequest
  */
 export interface FulfillmentOutboundApiGetPackageTrackingDetailsRequest {
     /**
      * The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation.
-     * @type {number}
-     * @memberof FulfillmentOutboundApiGetPackageTrackingDetails
      */
     readonly packageNumber: number
 }
 
 /**
  * Request parameters for listAllFulfillmentOrders operation in FulfillmentOutboundApi.
- * @export
- * @interface FulfillmentOutboundApiListAllFulfillmentOrdersRequest
  */
 export interface FulfillmentOutboundApiListAllFulfillmentOrdersRequest {
     /**
      * A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order.
-     * @type {string}
-     * @memberof FulfillmentOutboundApiListAllFulfillmentOrders
      */
     readonly queryStartDate?: string
 
     /**
      * A string token returned in the response to your previous request.
-     * @type {string}
-     * @memberof FulfillmentOutboundApiListAllFulfillmentOrders
      */
     readonly nextToken?: string
 }
 
 /**
  * Request parameters for listReturnReasonCodes operation in FulfillmentOutboundApi.
- * @export
- * @interface FulfillmentOutboundApiListReturnReasonCodesRequest
  */
 export interface FulfillmentOutboundApiListReturnReasonCodesRequest {
     /**
      * The seller SKU for which return reason codes are required.
-     * @type {string}
-     * @memberof FulfillmentOutboundApiListReturnReasonCodes
      */
     readonly sellerSku: string
 
     /**
      * The marketplace for which the seller wants return reason codes.
-     * @type {string}
-     * @memberof FulfillmentOutboundApiListReturnReasonCodes
      */
     readonly marketplaceId?: string
 
     /**
      * The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes.
-     * @type {string}
-     * @memberof FulfillmentOutboundApiListReturnReasonCodes
      */
     readonly sellerFulfillmentOrderId?: string
 
     /**
      * The language that the &#x60;TranslatedDescription&#x60; property of the &#x60;ReasonCodeDetails&#x60; response object should be translated into.
-     * @type {string}
-     * @memberof FulfillmentOutboundApiListReturnReasonCodes
      */
     readonly language?: string
 }
 
 /**
  * Request parameters for submitFulfillmentOrderStatusUpdate operation in FulfillmentOutboundApi.
- * @export
- * @interface FulfillmentOutboundApiSubmitFulfillmentOrderStatusUpdateRequest
  */
 export interface FulfillmentOutboundApiSubmitFulfillmentOrderStatusUpdateRequest {
     /**
      * The identifier assigned to the item by the seller when the fulfillment order was created.
-     * @type {string}
-     * @memberof FulfillmentOutboundApiSubmitFulfillmentOrderStatusUpdate
      */
     readonly sellerFulfillmentOrderId: string
 
     /**
      * The identifier assigned to the item by the seller when the fulfillment order was created.
-     * @type {SubmitFulfillmentOrderStatusUpdateRequest}
-     * @memberof FulfillmentOutboundApiSubmitFulfillmentOrderStatusUpdate
      */
     readonly body: SubmitFulfillmentOrderStatusUpdateRequest
 }
 
 /**
  * Request parameters for updateFulfillmentOrder operation in FulfillmentOutboundApi.
- * @export
- * @interface FulfillmentOutboundApiUpdateFulfillmentOrderRequest
  */
 export interface FulfillmentOutboundApiUpdateFulfillmentOrderRequest {
     /**
      * The identifier assigned to the item by the seller when the fulfillment order was created.
-     * @type {string}
-     * @memberof FulfillmentOutboundApiUpdateFulfillmentOrder
      */
     readonly sellerFulfillmentOrderId: string
 
     /**
      * UpdateFulfillmentOrderRequest parameter
-     * @type {UpdateFulfillmentOrderRequest}
-     * @memberof FulfillmentOutboundApiUpdateFulfillmentOrder
      */
     readonly body: UpdateFulfillmentOrderRequest
 }
 
 /**
  * FulfillmentOutboundApi - object-oriented interface
- * @export
- * @class FulfillmentOutboundApi
- * @extends {BaseAPI}
  */
 export class FulfillmentOutboundApi extends BaseAPI {
     /**
@@ -1236,7 +1150,6 @@ export class FulfillmentOutboundApi extends BaseAPI {
      * @param {FulfillmentOutboundApiCancelFulfillmentOrderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentOutboundApi
      */
     public cancelFulfillmentOrder(requestParameters: FulfillmentOutboundApiCancelFulfillmentOrderRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentOutboundApiFp(this.configuration).cancelFulfillmentOrder(requestParameters.sellerFulfillmentOrderId, options).then((request) => request(this.axios, this.basePath));
@@ -1247,7 +1160,6 @@ export class FulfillmentOutboundApi extends BaseAPI {
      * @param {FulfillmentOutboundApiCreateFulfillmentOrderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentOutboundApi
      */
     public createFulfillmentOrder(requestParameters: FulfillmentOutboundApiCreateFulfillmentOrderRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentOutboundApiFp(this.configuration).createFulfillmentOrder(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1258,7 +1170,6 @@ export class FulfillmentOutboundApi extends BaseAPI {
      * @param {FulfillmentOutboundApiCreateFulfillmentReturnRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentOutboundApi
      */
     public createFulfillmentReturn(requestParameters: FulfillmentOutboundApiCreateFulfillmentReturnRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentOutboundApiFp(this.configuration).createFulfillmentReturn(requestParameters.sellerFulfillmentOrderId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1269,7 +1180,6 @@ export class FulfillmentOutboundApi extends BaseAPI {
      * @param {FulfillmentOutboundApiDeliveryOffersRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentOutboundApi
      */
     public deliveryOffers(requestParameters: FulfillmentOutboundApiDeliveryOffersRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentOutboundApiFp(this.configuration).deliveryOffers(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1280,7 +1190,6 @@ export class FulfillmentOutboundApi extends BaseAPI {
      * @param {FulfillmentOutboundApiGetFeatureInventoryRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentOutboundApi
      */
     public getFeatureInventory(requestParameters: FulfillmentOutboundApiGetFeatureInventoryRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentOutboundApiFp(this.configuration).getFeatureInventory(requestParameters.marketplaceId, requestParameters.featureName, requestParameters.nextToken, requestParameters.queryStartDate, options).then((request) => request(this.axios, this.basePath));
@@ -1291,7 +1200,6 @@ export class FulfillmentOutboundApi extends BaseAPI {
      * @param {FulfillmentOutboundApiGetFeatureSKURequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentOutboundApi
      */
     public getFeatureSKU(requestParameters: FulfillmentOutboundApiGetFeatureSKURequest, options?: RawAxiosRequestConfig) {
         return FulfillmentOutboundApiFp(this.configuration).getFeatureSKU(requestParameters.marketplaceId, requestParameters.featureName, requestParameters.sellerSku, options).then((request) => request(this.axios, this.basePath));
@@ -1302,7 +1210,6 @@ export class FulfillmentOutboundApi extends BaseAPI {
      * @param {FulfillmentOutboundApiGetFeaturesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentOutboundApi
      */
     public getFeatures(requestParameters: FulfillmentOutboundApiGetFeaturesRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentOutboundApiFp(this.configuration).getFeatures(requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
@@ -1313,7 +1220,6 @@ export class FulfillmentOutboundApi extends BaseAPI {
      * @param {FulfillmentOutboundApiGetFulfillmentOrderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentOutboundApi
      */
     public getFulfillmentOrder(requestParameters: FulfillmentOutboundApiGetFulfillmentOrderRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentOutboundApiFp(this.configuration).getFulfillmentOrder(requestParameters.sellerFulfillmentOrderId, options).then((request) => request(this.axios, this.basePath));
@@ -1324,7 +1230,6 @@ export class FulfillmentOutboundApi extends BaseAPI {
      * @param {FulfillmentOutboundApiGetFulfillmentPreviewRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentOutboundApi
      */
     public getFulfillmentPreview(requestParameters: FulfillmentOutboundApiGetFulfillmentPreviewRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentOutboundApiFp(this.configuration).getFulfillmentPreview(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1335,7 +1240,6 @@ export class FulfillmentOutboundApi extends BaseAPI {
      * @param {FulfillmentOutboundApiGetPackageTrackingDetailsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentOutboundApi
      */
     public getPackageTrackingDetails(requestParameters: FulfillmentOutboundApiGetPackageTrackingDetailsRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentOutboundApiFp(this.configuration).getPackageTrackingDetails(requestParameters.packageNumber, options).then((request) => request(this.axios, this.basePath));
@@ -1346,7 +1250,6 @@ export class FulfillmentOutboundApi extends BaseAPI {
      * @param {FulfillmentOutboundApiListAllFulfillmentOrdersRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentOutboundApi
      */
     public listAllFulfillmentOrders(requestParameters: FulfillmentOutboundApiListAllFulfillmentOrdersRequest = {}, options?: RawAxiosRequestConfig) {
         return FulfillmentOutboundApiFp(this.configuration).listAllFulfillmentOrders(requestParameters.queryStartDate, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
@@ -1357,7 +1260,6 @@ export class FulfillmentOutboundApi extends BaseAPI {
      * @param {FulfillmentOutboundApiListReturnReasonCodesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentOutboundApi
      */
     public listReturnReasonCodes(requestParameters: FulfillmentOutboundApiListReturnReasonCodesRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentOutboundApiFp(this.configuration).listReturnReasonCodes(requestParameters.sellerSku, requestParameters.marketplaceId, requestParameters.sellerFulfillmentOrderId, requestParameters.language, options).then((request) => request(this.axios, this.basePath));
@@ -1368,7 +1270,6 @@ export class FulfillmentOutboundApi extends BaseAPI {
      * @param {FulfillmentOutboundApiSubmitFulfillmentOrderStatusUpdateRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentOutboundApi
      */
     public submitFulfillmentOrderStatusUpdate(requestParameters: FulfillmentOutboundApiSubmitFulfillmentOrderStatusUpdateRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentOutboundApiFp(this.configuration).submitFulfillmentOrderStatusUpdate(requestParameters.sellerFulfillmentOrderId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1379,7 +1280,6 @@ export class FulfillmentOutboundApi extends BaseAPI {
      * @param {FulfillmentOutboundApiUpdateFulfillmentOrderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FulfillmentOutboundApi
      */
     public updateFulfillmentOrder(requestParameters: FulfillmentOutboundApiUpdateFulfillmentOrderRequest, options?: RawAxiosRequestConfig) {
         return FulfillmentOutboundApiFp(this.configuration).updateFulfillmentOrder(requestParameters.sellerFulfillmentOrderId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));

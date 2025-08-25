@@ -19,27 +19,16 @@ import type { Location } from './location';
 
 /**
  * An event of a shipment
- * @export
- * @interface Event
  */
 export interface Event {
     /**
      * The event code of a shipment, such as Departed, Received, and ReadyForReceive.
-     * @type {string}
-     * @memberof Event
      */
     'eventCode': string;
     /**
      * The date and time of an event for a shipment.
-     * @type {string}
-     * @memberof Event
      */
     'eventTime': string;
-    /**
-     * 
-     * @type {Location}
-     * @memberof Event
-     */
     'location'?: Location;
 }
 

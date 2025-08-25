@@ -16,20 +16,14 @@
 
 /**
  * The reason for rejecting the order\'s regulated information. This is only present if the order is rejected.
- * @export
- * @interface RejectionReason
  */
 export interface RejectionReason {
     /**
      * The unique identifier for the rejection reason.
-     * @type {string}
-     * @memberof RejectionReason
      */
     'RejectionReasonId': string;
     /**
      * The description of this rejection reason.
-     * @type {string}
-     * @memberof RejectionReason
      */
     'RejectionReasonDescription': string;
 }

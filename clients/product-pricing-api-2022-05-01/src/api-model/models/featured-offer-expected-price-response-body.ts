@@ -22,26 +22,15 @@ import type { OfferIdentifier } from './offer-identifier';
 
 /**
  * The FOEP response data for a requested SKU.
- * @export
- * @interface FeaturedOfferExpectedPriceResponseBody
  */
 export interface FeaturedOfferExpectedPriceResponseBody {
-    /**
-     * 
-     * @type {OfferIdentifier}
-     * @memberof FeaturedOfferExpectedPriceResponseBody
-     */
     'offerIdentifier'?: OfferIdentifier;
     /**
      * A list of FOEP results for the requested offer.
-     * @type {Array<FeaturedOfferExpectedPriceResult>}
-     * @memberof FeaturedOfferExpectedPriceResponseBody
      */
     'featuredOfferExpectedPriceResults'?: Array<FeaturedOfferExpectedPriceResult>;
     /**
      * A list of error responses that are returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof FeaturedOfferExpectedPriceResponseBody
      */
     'errors'?: Array<Error>;
 }

@@ -19,32 +19,19 @@ import type { DecoratorType } from './decorator-type';
 
 /**
  * A decorator that is applied to a content string value in order to create rich text.
- * @export
- * @interface Decorator
  */
 export interface Decorator {
-    /**
-     * 
-     * @type {DecoratorType}
-     * @memberof Decorator
-     */
     'type'?: DecoratorType;
     /**
      * The starting value of this decorator within the content string. Use zero (`0`) for the first value.
-     * @type {number}
-     * @memberof Decorator
      */
     'offset'?: number;
     /**
      * The number of content characters to alter with this decorator. Decorators, such as line breaks, can have zero length and fit between characters.
-     * @type {number}
-     * @memberof Decorator
      */
     'length'?: number;
     /**
      * The relative intensity or variation of this decorator. Decorators, such as bullet-points, can have multiple indentation depths.
-     * @type {number}
-     * @memberof Decorator
      */
     'depth'?: number;
 }

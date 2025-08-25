@@ -16,20 +16,14 @@
 
 /**
  * Represents the ineligibility reason for one SKU.
- * @export
- * @interface SkuIneligibilityReason
  */
 export interface SkuIneligibilityReason {
     /**
      * Code for the SKU ineligibility.
-     * @type {string}
-     * @memberof SkuIneligibilityReason
      */
     'code': string;
     /**
      * Detailed description of the SKU ineligibility.
-     * @type {string}
-     * @memberof SkuIneligibilityReason
      */
     'description': string;
 }

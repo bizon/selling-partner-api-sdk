@@ -19,20 +19,11 @@ import type { TransactionStatus } from './transaction-status';
 
 /**
  * The response schema for the getTransaction operation.
- * @export
- * @interface GetTransactionResponse
  */
 export interface GetTransactionResponse {
-    /**
-     * 
-     * @type {TransactionStatus}
-     * @memberof GetTransactionResponse
-     */
     'payload'?: TransactionStatus;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetTransactionResponse
      */
     'errors'?: Array<Error>;
 }

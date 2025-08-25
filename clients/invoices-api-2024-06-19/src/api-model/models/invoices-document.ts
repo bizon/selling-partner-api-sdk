@@ -16,20 +16,14 @@
 
 /**
  * An object that contains the `documentId` and an S3 pre-signed URL that you can use to download the specified file.
- * @export
- * @interface InvoicesDocument
  */
 export interface InvoicesDocument {
     /**
      * The identifier of the export document.
-     * @type {string}
-     * @memberof InvoicesDocument
      */
     'invoicesDocumentId'?: string;
     /**
      * A pre-signed URL that you can use to download the invoices document in zip format. This URL expires after 30 seconds.
-     * @type {string}
-     * @memberof InvoicesDocument
      */
     'invoicesDocumentUrl'?: string;
 }

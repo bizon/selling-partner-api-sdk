@@ -25,51 +25,26 @@ import type { UnfulfillableQuantity } from './unfulfillable-quantity';
 
 /**
  * Summarized inventory details. This object will not appear if the details parameter in the request is false.
- * @export
- * @interface InventoryDetails
  */
 export interface InventoryDetails {
     /**
      * The item quantity that can be picked, packed, and shipped.
-     * @type {number}
-     * @memberof InventoryDetails
      */
     'fulfillableQuantity'?: number;
     /**
      * The number of units in an inbound shipment for which you have notified Amazon.
-     * @type {number}
-     * @memberof InventoryDetails
      */
     'inboundWorkingQuantity'?: number;
     /**
      * The number of units in an inbound shipment that you have notified Amazon about and have provided a tracking number.
-     * @type {number}
-     * @memberof InventoryDetails
      */
     'inboundShippedQuantity'?: number;
     /**
      * The number of units that have not yet been received at an Amazon fulfillment center for processing, but are part of an inbound shipment with some units that have already been received and processed.
-     * @type {number}
-     * @memberof InventoryDetails
      */
     'inboundReceivingQuantity'?: number;
-    /**
-     * 
-     * @type {ReservedQuantity}
-     * @memberof InventoryDetails
-     */
     'reservedQuantity'?: ReservedQuantity;
-    /**
-     * 
-     * @type {ResearchingQuantity}
-     * @memberof InventoryDetails
-     */
     'researchingQuantity'?: ResearchingQuantity;
-    /**
-     * 
-     * @type {UnfulfillableQuantity}
-     * @memberof InventoryDetails
-     */
     'unfulfillableQuantity'?: UnfulfillableQuantity;
 }
 

@@ -16,38 +16,26 @@
 
 /**
  * An item that Amazon accepted for return.
- * @export
- * @interface CreateReturnItem
  */
 export interface CreateReturnItem {
     /**
      * An identifier assigned by the seller to the return item.
-     * @type {string}
-     * @memberof CreateReturnItem
      */
     'sellerReturnItemId': string;
     /**
      * The identifier assigned to the item by the seller when the fulfillment order was created.
-     * @type {string}
-     * @memberof CreateReturnItem
      */
     'sellerFulfillmentOrderItemId': string;
     /**
      * The identifier for the shipment that is associated with the return item.
-     * @type {string}
-     * @memberof CreateReturnItem
      */
     'amazonShipmentId': string;
     /**
      * The return reason code assigned to the return item by the seller.
-     * @type {string}
-     * @memberof CreateReturnItem
      */
     'returnReasonCode': string;
     /**
      * An optional comment about the return item.
-     * @type {string}
-     * @memberof CreateReturnItem
      */
     'returnComment'?: string;
 }

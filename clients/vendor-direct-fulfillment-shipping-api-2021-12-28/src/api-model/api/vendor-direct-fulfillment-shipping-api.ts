@@ -51,7 +51,6 @@ import type { SubmitShippingLabelsRequest } from '../models';
 import type { TransactionReference } from '../models';
 /**
  * VendorDirectFulfillmentShippingApi - axios parameter creator
- * @export
  */
 export const VendorDirectFulfillmentShippingApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -550,7 +549,6 @@ export const VendorDirectFulfillmentShippingApiAxiosParamCreator = function (con
 
 /**
  * VendorDirectFulfillmentShippingApi - functional programming interface
- * @export
  */
 export const VendorDirectFulfillmentShippingApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = VendorDirectFulfillmentShippingApiAxiosParamCreator(configuration)
@@ -719,7 +717,6 @@ export const VendorDirectFulfillmentShippingApiFp = function(configuration?: Con
 
 /**
  * VendorDirectFulfillmentShippingApi - factory interface
- * @export
  */
 export const VendorDirectFulfillmentShippingApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = VendorDirectFulfillmentShippingApiFp(configuration)
@@ -839,275 +836,196 @@ export const VendorDirectFulfillmentShippingApiFactory = function (configuration
 
 /**
  * Request parameters for createContainerLabel operation in VendorDirectFulfillmentShippingApi.
- * @export
- * @interface VendorDirectFulfillmentShippingApiCreateContainerLabelRequest
  */
 export interface VendorDirectFulfillmentShippingApiCreateContainerLabelRequest {
     /**
      * Request body containing the container label data.
-     * @type {CreateContainerLabelRequest}
-     * @memberof VendorDirectFulfillmentShippingApiCreateContainerLabel
      */
     readonly body: CreateContainerLabelRequest
 }
 
 /**
  * Request parameters for createShippingLabels operation in VendorDirectFulfillmentShippingApi.
- * @export
- * @interface VendorDirectFulfillmentShippingApiCreateShippingLabelsRequest
  */
 export interface VendorDirectFulfillmentShippingApiCreateShippingLabelsRequest {
     /**
      * The purchase order number for which you want to return the shipping labels. It should be the same number as the &#x60;purchaseOrderNumber&#x60; in the order.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentShippingApiCreateShippingLabels
      */
     readonly purchaseOrderNumber: string
 
     /**
      * The request payload that contains the parameters for creating shipping labels.
-     * @type {CreateShippingLabelsRequest}
-     * @memberof VendorDirectFulfillmentShippingApiCreateShippingLabels
      */
     readonly body: CreateShippingLabelsRequest
 }
 
 /**
  * Request parameters for getCustomerInvoice operation in VendorDirectFulfillmentShippingApi.
- * @export
- * @interface VendorDirectFulfillmentShippingApiGetCustomerInvoiceRequest
  */
 export interface VendorDirectFulfillmentShippingApiGetCustomerInvoiceRequest {
     /**
      * Purchase order number of the shipment for which to return the invoice.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentShippingApiGetCustomerInvoice
      */
     readonly purchaseOrderNumber: string
 }
 
 /**
  * Request parameters for getCustomerInvoices operation in VendorDirectFulfillmentShippingApi.
- * @export
- * @interface VendorDirectFulfillmentShippingApiGetCustomerInvoicesRequest
  */
 export interface VendorDirectFulfillmentShippingApiGetCustomerInvoicesRequest {
     /**
      * Orders that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentShippingApiGetCustomerInvoices
      */
     readonly createdAfter: string
 
     /**
      * Orders that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentShippingApiGetCustomerInvoices
      */
     readonly createdBefore: string
 
     /**
      * The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentShippingApiGetCustomerInvoices
      */
     readonly shipFromPartyId?: string
 
     /**
      * The limit to the number of records returned
-     * @type {number}
-     * @memberof VendorDirectFulfillmentShippingApiGetCustomerInvoices
      */
     readonly limit?: number
 
     /**
      * Sort ASC or DESC by order creation date.
-     * @type {'ASC' | 'DESC'}
-     * @memberof VendorDirectFulfillmentShippingApiGetCustomerInvoices
      */
     readonly sortOrder?: GetCustomerInvoicesSortOrderEnum
 
     /**
      * Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentShippingApiGetCustomerInvoices
      */
     readonly nextToken?: string
 }
 
 /**
  * Request parameters for getPackingSlip operation in VendorDirectFulfillmentShippingApi.
- * @export
- * @interface VendorDirectFulfillmentShippingApiGetPackingSlipRequest
  */
 export interface VendorDirectFulfillmentShippingApiGetPackingSlipRequest {
     /**
      * The &#x60;purchaseOrderNumber&#x60; for the packing slip that you want.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentShippingApiGetPackingSlip
      */
     readonly purchaseOrderNumber: string
 }
 
 /**
  * Request parameters for getPackingSlips operation in VendorDirectFulfillmentShippingApi.
- * @export
- * @interface VendorDirectFulfillmentShippingApiGetPackingSlipsRequest
  */
 export interface VendorDirectFulfillmentShippingApiGetPackingSlipsRequest {
     /**
      * Packing slips that become available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentShippingApiGetPackingSlips
      */
     readonly createdAfter: string
 
     /**
      * Packing slips that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentShippingApiGetPackingSlips
      */
     readonly createdBefore: string
 
     /**
      * The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result contains orders for all warehouses.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentShippingApiGetPackingSlips
      */
     readonly shipFromPartyId?: string
 
     /**
      * The maximum number of records to return.
-     * @type {number}
-     * @memberof VendorDirectFulfillmentShippingApiGetPackingSlips
      */
     readonly limit?: number
 
     /**
      * The packing slip creation dates, which are sorted by ascending or descending order.
-     * @type {'ASC' | 'DESC'}
-     * @memberof VendorDirectFulfillmentShippingApiGetPackingSlips
      */
     readonly sortOrder?: GetPackingSlipsSortOrderEnum
 
     /**
      * Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentShippingApiGetPackingSlips
      */
     readonly nextToken?: string
 }
 
 /**
  * Request parameters for getShippingLabel operation in VendorDirectFulfillmentShippingApi.
- * @export
- * @interface VendorDirectFulfillmentShippingApiGetShippingLabelRequest
  */
 export interface VendorDirectFulfillmentShippingApiGetShippingLabelRequest {
     /**
      * The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; that you received in the order.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentShippingApiGetShippingLabel
      */
     readonly purchaseOrderNumber: string
 }
 
 /**
  * Request parameters for getShippingLabels operation in VendorDirectFulfillmentShippingApi.
- * @export
- * @interface VendorDirectFulfillmentShippingApiGetShippingLabelsRequest
  */
 export interface VendorDirectFulfillmentShippingApiGetShippingLabelsRequest {
     /**
      * Shipping labels that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentShippingApiGetShippingLabels
      */
     readonly createdAfter: string
 
     /**
      * Shipping labels that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentShippingApiGetShippingLabels
      */
     readonly createdBefore: string
 
     /**
      * The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result contains orders for all warehouses.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentShippingApiGetShippingLabels
      */
     readonly shipFromPartyId?: string
 
     /**
      * The limit to the number of records returned.
-     * @type {number}
-     * @memberof VendorDirectFulfillmentShippingApiGetShippingLabels
      */
     readonly limit?: number
 
     /**
      * The sort order creation date. You can choose between ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) sort order.
-     * @type {'ASC' | 'DESC'}
-     * @memberof VendorDirectFulfillmentShippingApiGetShippingLabels
      */
     readonly sortOrder?: GetShippingLabelsSortOrderEnum
 
     /**
      * Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentShippingApiGetShippingLabels
      */
     readonly nextToken?: string
 }
 
 /**
  * Request parameters for submitShipmentConfirmations operation in VendorDirectFulfillmentShippingApi.
- * @export
- * @interface VendorDirectFulfillmentShippingApiSubmitShipmentConfirmationsRequest
  */
 export interface VendorDirectFulfillmentShippingApiSubmitShipmentConfirmationsRequest {
     /**
      * Request body containing the shipment confirmations data.
-     * @type {SubmitShipmentConfirmationsRequest}
-     * @memberof VendorDirectFulfillmentShippingApiSubmitShipmentConfirmations
      */
     readonly body: SubmitShipmentConfirmationsRequest
 }
 
 /**
  * Request parameters for submitShipmentStatusUpdates operation in VendorDirectFulfillmentShippingApi.
- * @export
- * @interface VendorDirectFulfillmentShippingApiSubmitShipmentStatusUpdatesRequest
  */
 export interface VendorDirectFulfillmentShippingApiSubmitShipmentStatusUpdatesRequest {
     /**
      * Request body containing the shipment status update data.
-     * @type {SubmitShipmentStatusUpdatesRequest}
-     * @memberof VendorDirectFulfillmentShippingApiSubmitShipmentStatusUpdates
      */
     readonly body: SubmitShipmentStatusUpdatesRequest
 }
 
 /**
  * Request parameters for submitShippingLabelRequest operation in VendorDirectFulfillmentShippingApi.
- * @export
- * @interface VendorDirectFulfillmentShippingApiSubmitShippingLabelRequestRequest
  */
 export interface VendorDirectFulfillmentShippingApiSubmitShippingLabelRequestRequest {
     /**
      * The request body that contains the shipping labels data.
-     * @type {SubmitShippingLabelsRequest}
-     * @memberof VendorDirectFulfillmentShippingApiSubmitShippingLabelRequest
      */
     readonly body: SubmitShippingLabelsRequest
 }
 
 /**
  * VendorDirectFulfillmentShippingApi - object-oriented interface
- * @export
- * @class VendorDirectFulfillmentShippingApi
- * @extends {BaseAPI}
  */
 export class VendorDirectFulfillmentShippingApi extends BaseAPI {
     /**
@@ -1116,7 +1034,6 @@ export class VendorDirectFulfillmentShippingApi extends BaseAPI {
      * @param {VendorDirectFulfillmentShippingApiCreateContainerLabelRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentShippingApi
      */
     public createContainerLabel(requestParameters: VendorDirectFulfillmentShippingApiCreateContainerLabelRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentShippingApiFp(this.configuration).createContainerLabel(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1128,7 +1045,6 @@ export class VendorDirectFulfillmentShippingApi extends BaseAPI {
      * @param {VendorDirectFulfillmentShippingApiCreateShippingLabelsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentShippingApi
      */
     public createShippingLabels(requestParameters: VendorDirectFulfillmentShippingApiCreateShippingLabelsRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentShippingApiFp(this.configuration).createShippingLabels(requestParameters.purchaseOrderNumber, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1140,7 +1056,6 @@ export class VendorDirectFulfillmentShippingApi extends BaseAPI {
      * @param {VendorDirectFulfillmentShippingApiGetCustomerInvoiceRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentShippingApi
      */
     public getCustomerInvoice(requestParameters: VendorDirectFulfillmentShippingApiGetCustomerInvoiceRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentShippingApiFp(this.configuration).getCustomerInvoice(requestParameters.purchaseOrderNumber, options).then((request) => request(this.axios, this.basePath));
@@ -1152,7 +1067,6 @@ export class VendorDirectFulfillmentShippingApi extends BaseAPI {
      * @param {VendorDirectFulfillmentShippingApiGetCustomerInvoicesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentShippingApi
      */
     public getCustomerInvoices(requestParameters: VendorDirectFulfillmentShippingApiGetCustomerInvoicesRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentShippingApiFp(this.configuration).getCustomerInvoices(requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipFromPartyId, requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
@@ -1164,7 +1078,6 @@ export class VendorDirectFulfillmentShippingApi extends BaseAPI {
      * @param {VendorDirectFulfillmentShippingApiGetPackingSlipRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentShippingApi
      */
     public getPackingSlip(requestParameters: VendorDirectFulfillmentShippingApiGetPackingSlipRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentShippingApiFp(this.configuration).getPackingSlip(requestParameters.purchaseOrderNumber, options).then((request) => request(this.axios, this.basePath));
@@ -1176,7 +1089,6 @@ export class VendorDirectFulfillmentShippingApi extends BaseAPI {
      * @param {VendorDirectFulfillmentShippingApiGetPackingSlipsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentShippingApi
      */
     public getPackingSlips(requestParameters: VendorDirectFulfillmentShippingApiGetPackingSlipsRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentShippingApiFp(this.configuration).getPackingSlips(requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipFromPartyId, requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
@@ -1188,7 +1100,6 @@ export class VendorDirectFulfillmentShippingApi extends BaseAPI {
      * @param {VendorDirectFulfillmentShippingApiGetShippingLabelRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentShippingApi
      */
     public getShippingLabel(requestParameters: VendorDirectFulfillmentShippingApiGetShippingLabelRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentShippingApiFp(this.configuration).getShippingLabel(requestParameters.purchaseOrderNumber, options).then((request) => request(this.axios, this.basePath));
@@ -1200,7 +1111,6 @@ export class VendorDirectFulfillmentShippingApi extends BaseAPI {
      * @param {VendorDirectFulfillmentShippingApiGetShippingLabelsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentShippingApi
      */
     public getShippingLabels(requestParameters: VendorDirectFulfillmentShippingApiGetShippingLabelsRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentShippingApiFp(this.configuration).getShippingLabels(requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipFromPartyId, requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
@@ -1212,7 +1122,6 @@ export class VendorDirectFulfillmentShippingApi extends BaseAPI {
      * @param {VendorDirectFulfillmentShippingApiSubmitShipmentConfirmationsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentShippingApi
      */
     public submitShipmentConfirmations(requestParameters: VendorDirectFulfillmentShippingApiSubmitShipmentConfirmationsRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentShippingApiFp(this.configuration).submitShipmentConfirmations(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1224,7 +1133,6 @@ export class VendorDirectFulfillmentShippingApi extends BaseAPI {
      * @param {VendorDirectFulfillmentShippingApiSubmitShipmentStatusUpdatesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentShippingApi
      */
     public submitShipmentStatusUpdates(requestParameters: VendorDirectFulfillmentShippingApiSubmitShipmentStatusUpdatesRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentShippingApiFp(this.configuration).submitShipmentStatusUpdates(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1236,32 +1144,22 @@ export class VendorDirectFulfillmentShippingApi extends BaseAPI {
      * @param {VendorDirectFulfillmentShippingApiSubmitShippingLabelRequestRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentShippingApi
      */
     public submitShippingLabelRequest(requestParameters: VendorDirectFulfillmentShippingApiSubmitShippingLabelRequestRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentShippingApiFp(this.configuration).submitShippingLabelRequest(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetCustomerInvoicesSortOrderEnum = {
     Asc: 'ASC',
     Desc: 'DESC'
 } as const;
 export type GetCustomerInvoicesSortOrderEnum = typeof GetCustomerInvoicesSortOrderEnum[keyof typeof GetCustomerInvoicesSortOrderEnum];
-/**
- * @export
- */
 export const GetPackingSlipsSortOrderEnum = {
     Asc: 'ASC',
     Desc: 'DESC'
 } as const;
 export type GetPackingSlipsSortOrderEnum = typeof GetPackingSlipsSortOrderEnum[keyof typeof GetPackingSlipsSortOrderEnum];
-/**
- * @export
- */
 export const GetShippingLabelsSortOrderEnum = {
     Asc: 'ASC',
     Desc: 'DESC'

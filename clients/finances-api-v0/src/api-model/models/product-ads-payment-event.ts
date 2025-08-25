@@ -19,45 +19,22 @@ import type { Currency } from './currency';
 
 /**
  * A Sponsored Products payment event.
- * @export
- * @interface ProductAdsPaymentEvent
  */
 export interface ProductAdsPaymentEvent {
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof ProductAdsPaymentEvent
      */
     'postedDate'?: string;
     /**
      * Indicates if the transaction is for a charge or a refund.  Possible values:  * charge - Charge  * refund - Refund
-     * @type {string}
-     * @memberof ProductAdsPaymentEvent
      */
     'transactionType'?: string;
     /**
      * Identifier for the invoice that the transaction appears in.
-     * @type {string}
-     * @memberof ProductAdsPaymentEvent
      */
     'invoiceId'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof ProductAdsPaymentEvent
-     */
     'baseValue'?: Currency;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof ProductAdsPaymentEvent
-     */
     'taxValue'?: Currency;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof ProductAdsPaymentEvent
-     */
     'transactionValue'?: Currency;
 }
 

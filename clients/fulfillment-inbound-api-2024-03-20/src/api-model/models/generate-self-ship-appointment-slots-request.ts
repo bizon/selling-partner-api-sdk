@@ -16,20 +16,14 @@
 
 /**
  * The `generateSelfShipAppointmentSlots` request.
- * @export
- * @interface GenerateSelfShipAppointmentSlotsRequest
  */
 export interface GenerateSelfShipAppointmentSlotsRequest {
     /**
      * The desired end date. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
-     * @type {string}
-     * @memberof GenerateSelfShipAppointmentSlotsRequest
      */
     'desiredEndDate'?: string;
     /**
      * The desired start date. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
-     * @type {string}
-     * @memberof GenerateSelfShipAppointmentSlotsRequest
      */
     'desiredStartDate'?: string;
 }

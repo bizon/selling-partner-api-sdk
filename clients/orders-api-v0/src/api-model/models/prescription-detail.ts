@@ -16,50 +16,34 @@
 
 /**
  * Information about the prescription that is used to verify a regulated product. This must be provided once per order and reflect the seller’s own records. Only approved orders can have prescriptions.
- * @export
- * @interface PrescriptionDetail
  */
 export interface PrescriptionDetail {
     /**
      * The identifier for the prescription used to verify the regulated product.
-     * @type {string}
-     * @memberof PrescriptionDetail
      */
     'prescriptionId': string;
     /**
      * The expiration date of the prescription used to verify the regulated product, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
-     * @type {string}
-     * @memberof PrescriptionDetail
      */
     'expirationDate': string;
     /**
      * The number of units in each fill as provided in the prescription.
-     * @type {number}
-     * @memberof PrescriptionDetail
      */
     'writtenQuantity': number;
     /**
      * The total number of refills written in the original prescription used to verify the regulated product. If a prescription originally had no refills, this value must be 0.
-     * @type {number}
-     * @memberof PrescriptionDetail
      */
     'totalRefillsAuthorized': number;
     /**
      * The number of refills remaining for the prescription used to verify the regulated product. If a prescription originally had 10 total refills, this value must be `10` for the first order, `9` for the second order, and `0` for the eleventh order. If a prescription originally had no refills, this value must be 0.
-     * @type {number}
-     * @memberof PrescriptionDetail
      */
     'refillsRemaining': number;
     /**
      * The identifier for the clinic which provided the prescription used to verify the regulated product.
-     * @type {string}
-     * @memberof PrescriptionDetail
      */
     'clinicId': string;
     /**
      * The instructions for the prescription as provided by the approver of the regulated product.
-     * @type {string}
-     * @memberof PrescriptionDetail
      */
     'usageInstructions': string;
 }

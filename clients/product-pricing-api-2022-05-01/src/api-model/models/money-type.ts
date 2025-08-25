@@ -16,20 +16,14 @@
 
 /**
  * Currency type and monetary value schema to demonstrate pricing information.
- * @export
- * @interface MoneyType
  */
 export interface MoneyType {
     /**
      * The currency code in ISO 4217 format.
-     * @type {string}
-     * @memberof MoneyType
      */
     'currencyCode'?: string;
     /**
      * The monetary value.
-     * @type {number}
-     * @memberof MoneyType
      */
     'amount'?: number;
 }

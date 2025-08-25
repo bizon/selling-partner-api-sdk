@@ -16,8 +16,6 @@
 
 /**
  * A list of codes used to provide additional shipment information.
- * @export
- * @enum {string}
  */
 
 export const DetailCodes = {

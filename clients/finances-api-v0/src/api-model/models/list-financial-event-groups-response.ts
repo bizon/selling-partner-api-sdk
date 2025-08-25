@@ -19,20 +19,11 @@ import type { ListFinancialEventGroupsPayload } from './list-financial-event-gro
 
 /**
  * The response schema for the listFinancialEventGroups operation.
- * @export
- * @interface ListFinancialEventGroupsResponse
  */
 export interface ListFinancialEventGroupsResponse {
-    /**
-     * 
-     * @type {ListFinancialEventGroupsPayload}
-     * @memberof ListFinancialEventGroupsResponse
-     */
     'payload'?: ListFinancialEventGroupsPayload;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof ListFinancialEventGroupsResponse
      */
     'errors'?: Array<Error>;
 }

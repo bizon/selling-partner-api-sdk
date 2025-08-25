@@ -19,32 +19,19 @@ import type { Address } from './address';
 
 /**
  * Tax registration details of the entity.
- * @export
- * @interface TaxRegistrationDetails
  */
 export interface TaxRegistrationDetails {
     /**
      * Tax registration type for the entity.
-     * @type {string}
-     * @memberof TaxRegistrationDetails
      */
     'taxRegistrationType'?: TaxRegistrationDetailsTaxRegistrationTypeEnum;
     /**
      * Tax registration number for the party. For example, VAT ID.
-     * @type {string}
-     * @memberof TaxRegistrationDetails
      */
     'taxRegistrationNumber': string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof TaxRegistrationDetails
-     */
     'taxRegistrationAddress'?: Address;
     /**
      * Tax registration message that can be used for additional tax related details.
-     * @type {string}
-     * @memberof TaxRegistrationDetails
      */
     'taxRegistrationMessages'?: string;
 }

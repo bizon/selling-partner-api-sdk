@@ -27,7 +27,6 @@ import type { ErrorList } from '../models';
 import type { TransactionStatus } from '../models';
 /**
  * VendorDirectFulfillmentTransactionsApi - axios parameter creator
- * @export
  */
 export const VendorDirectFulfillmentTransactionsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -69,7 +68,6 @@ export const VendorDirectFulfillmentTransactionsApiAxiosParamCreator = function 
 
 /**
  * VendorDirectFulfillmentTransactionsApi - functional programming interface
- * @export
  */
 export const VendorDirectFulfillmentTransactionsApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = VendorDirectFulfillmentTransactionsApiAxiosParamCreator(configuration)
@@ -91,7 +89,6 @@ export const VendorDirectFulfillmentTransactionsApiFp = function(configuration?:
 
 /**
  * VendorDirectFulfillmentTransactionsApi - factory interface
- * @export
  */
 export const VendorDirectFulfillmentTransactionsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = VendorDirectFulfillmentTransactionsApiFp(configuration)
@@ -110,23 +107,16 @@ export const VendorDirectFulfillmentTransactionsApiFactory = function (configura
 
 /**
  * Request parameters for getTransactionStatus operation in VendorDirectFulfillmentTransactionsApi.
- * @export
- * @interface VendorDirectFulfillmentTransactionsApiGetTransactionStatusRequest
  */
 export interface VendorDirectFulfillmentTransactionsApiGetTransactionStatusRequest {
     /**
      * Previously returned in the response to the POST request of a specific transaction.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentTransactionsApiGetTransactionStatus
      */
     readonly transactionId: string
 }
 
 /**
  * VendorDirectFulfillmentTransactionsApi - object-oriented interface
- * @export
- * @class VendorDirectFulfillmentTransactionsApi
- * @extends {BaseAPI}
  */
 export class VendorDirectFulfillmentTransactionsApi extends BaseAPI {
     /**
@@ -134,7 +124,6 @@ export class VendorDirectFulfillmentTransactionsApi extends BaseAPI {
      * @param {VendorDirectFulfillmentTransactionsApiGetTransactionStatusRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentTransactionsApi
      */
     public getTransactionStatus(requestParameters: VendorDirectFulfillmentTransactionsApiGetTransactionStatusRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentTransactionsApiFp(this.configuration).getTransactionStatus(requestParameters.transactionId, options).then((request) => request(this.axios, this.basePath));

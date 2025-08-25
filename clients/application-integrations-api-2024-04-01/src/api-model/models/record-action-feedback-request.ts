@@ -16,14 +16,10 @@
 
 /**
  * The request for the `recordActionFeedback` operation.
- * @export
- * @interface RecordActionFeedbackRequest
  */
 export interface RecordActionFeedbackRequest {
     /**
      * The unique identifier for each notification status.
-     * @type {string}
-     * @memberof RecordActionFeedbackRequest
      */
     'feedbackActionCode': RecordActionFeedbackRequestFeedbackActionCodeEnum;
 }

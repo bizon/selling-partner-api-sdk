@@ -19,27 +19,16 @@ import type { Duration } from './duration';
 
 /**
  * Expiry refers to the collection of dates required  for certain items. These could be either expiryDate or mfgDate and expiryAfterDuration. These are mandatory for perishable items.
- * @export
- * @interface Expiry
  */
 export interface Expiry {
     /**
      * Production, packaging or assembly date determined by the manufacturer. Its meaning is determined based on the trade item context.
-     * @type {string}
-     * @memberof Expiry
      */
     'manufacturerDate'?: string;
     /**
      * The date that determines the limit of consumption or use of a product. Its meaning is determined based on the trade item context.
-     * @type {string}
-     * @memberof Expiry
      */
     'expiryDate'?: string;
-    /**
-     * 
-     * @type {Duration}
-     * @memberof Expiry
-     */
     'expiryAfterDuration'?: Duration;
 }
 

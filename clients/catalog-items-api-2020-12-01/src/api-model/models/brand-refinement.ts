@@ -16,20 +16,14 @@
 
 /**
  * Description of a brand that can be used to get more fine-grained search results.
- * @export
- * @interface BrandRefinement
  */
 export interface BrandRefinement {
     /**
      * The estimated number of results that would still be returned if refinement key applied.
-     * @type {number}
-     * @memberof BrandRefinement
      */
     'numberOfResults': number;
     /**
      * Brand name. For display and can be used as a search refinement.
-     * @type {string}
-     * @memberof BrandRefinement
      */
     'brandName': string;
 }

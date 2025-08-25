@@ -16,20 +16,14 @@
 
 /**
  * A date range.
- * @export
- * @interface DateRange
  */
 export interface DateRange {
     /**
      * The start date of the date range in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof DateRange
      */
     'startDate': string;
     /**
      * The end date of the date range in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof DateRange
      */
     'endDate': string;
 }

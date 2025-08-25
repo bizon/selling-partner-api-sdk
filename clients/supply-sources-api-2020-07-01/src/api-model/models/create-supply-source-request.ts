@@ -19,27 +19,16 @@ import type { Address } from './address';
 
 /**
  * A request to create a supply source.
- * @export
- * @interface CreateSupplySourceRequest
  */
 export interface CreateSupplySourceRequest {
     /**
      * The seller-provided unique supply source code.
-     * @type {string}
-     * @memberof CreateSupplySourceRequest
      */
     'supplySourceCode': string;
     /**
      * The custom alias for this supply source
-     * @type {string}
-     * @memberof CreateSupplySourceRequest
      */
     'alias': string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof CreateSupplySourceRequest
-     */
     'address': Address;
 }
 

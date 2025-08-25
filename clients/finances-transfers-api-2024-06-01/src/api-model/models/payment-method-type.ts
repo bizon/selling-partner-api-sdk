@@ -16,8 +16,6 @@
 
 /**
  * The type of payment method.
- * @export
- * @enum {string}
  */
 
 export const PaymentMethodType = {

@@ -19,14 +19,10 @@ import type { TaxClassification } from './tax-classification';
 
 /**
  * Tax information about the marketplace.
- * @export
- * @interface MarketplaceTaxInfo
  */
 export interface MarketplaceTaxInfo {
     /**
      * A list of tax classifications that apply to the order.
-     * @type {Array<TaxClassification>}
-     * @memberof MarketplaceTaxInfo
      */
     'TaxClassifications'?: Array<TaxClassification>;
 }

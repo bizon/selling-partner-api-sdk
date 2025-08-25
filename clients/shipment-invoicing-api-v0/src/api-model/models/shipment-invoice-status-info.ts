@@ -19,21 +19,12 @@ import type { ShipmentInvoiceStatus } from './shipment-invoice-status';
 
 /**
  * The shipment invoice status information.
- * @export
- * @interface ShipmentInvoiceStatusInfo
  */
 export interface ShipmentInvoiceStatusInfo {
     /**
      * The Amazon-defined shipment identifier.
-     * @type {string}
-     * @memberof ShipmentInvoiceStatusInfo
      */
     'AmazonShipmentId'?: string;
-    /**
-     * 
-     * @type {ShipmentInvoiceStatus}
-     * @memberof ShipmentInvoiceStatusInfo
-     */
     'InvoiceStatus'?: ShipmentInvoiceStatus;
 }
 

@@ -16,20 +16,14 @@
 
 /**
  * Information required to upload a feed document\'s contents.
- * @export
- * @interface CreateFeedDocumentResponse
  */
 export interface CreateFeedDocumentResponse {
     /**
      * The identifier of the feed document.
-     * @type {string}
-     * @memberof CreateFeedDocumentResponse
      */
     'feedDocumentId': string;
     /**
      * The presigned URL for uploading the feed contents. This URL expires after 5 minutes.
-     * @type {string}
-     * @memberof CreateFeedDocumentResponse
      */
     'url': string;
 }

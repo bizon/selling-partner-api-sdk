@@ -28,39 +28,18 @@ import type { Weight } from './weight';
 
 /**
  * Input information for a given box.
- * @export
- * @interface BoxInput
  */
 export interface BoxInput {
-    /**
-     * 
-     * @type {BoxContentInformationSource}
-     * @memberof BoxInput
-     */
     'contentInformationSource': BoxContentInformationSource;
-    /**
-     * 
-     * @type {Dimensions}
-     * @memberof BoxInput
-     */
     'dimensions': Dimensions;
     /**
      * The items and their quantity in the box. This must be empty if the box `contentInformationSource` is `BARCODE_2D` or `MANUAL_PROCESS`.
-     * @type {Array<ItemInput>}
-     * @memberof BoxInput
      */
     'items'?: Array<ItemInput>;
     /**
      * The number of containers where all other properties like weight or dimensions are identical.
-     * @type {number}
-     * @memberof BoxInput
      */
     'quantity': number;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof BoxInput
-     */
     'weight': Weight;
 }
 

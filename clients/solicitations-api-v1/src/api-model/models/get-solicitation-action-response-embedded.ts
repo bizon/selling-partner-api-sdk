@@ -17,17 +17,7 @@
 // @ts-ignore
 import type { GetSchemaResponse } from './get-schema-response';
 
-/**
- * 
- * @export
- * @interface GetSolicitationActionResponseEmbedded
- */
 export interface GetSolicitationActionResponseEmbedded {
-    /**
-     * 
-     * @type {GetSchemaResponse}
-     * @memberof GetSolicitationActionResponseEmbedded
-     */
     'schema'?: GetSchemaResponse;
 }
 

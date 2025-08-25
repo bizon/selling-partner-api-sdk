@@ -16,20 +16,14 @@
 
 /**
  * Schema to identify an item by MarketPlaceId and ASIN.
- * @export
- * @interface ASINIdentifier
  */
 export interface ASINIdentifier {
     /**
      * A marketplace identifier.
-     * @type {string}
-     * @memberof ASINIdentifier
      */
     'MarketplaceId': string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof ASINIdentifier
      */
     'ASIN': string;
 }

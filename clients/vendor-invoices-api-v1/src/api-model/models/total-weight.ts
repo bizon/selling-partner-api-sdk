@@ -16,20 +16,14 @@
 
 /**
  * The aggregate weight of this item being invoiced. This information will be available for items sold by weight.
- * @export
- * @interface TotalWeight
  */
 export interface TotalWeight {
     /**
      * The unit of measure for items sold by weight.
-     * @type {string}
-     * @memberof TotalWeight
      */
     'unitOfMeasure': TotalWeightUnitOfMeasureEnum;
     /**
      * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. <br>**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
-     * @type {string}
-     * @memberof TotalWeight
      */
     'amount': string;
 }

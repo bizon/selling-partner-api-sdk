@@ -16,8 +16,6 @@
 
 /**
  * The time unit
- * @export
- * @enum {string}
  */
 
 export const TimeUnit = {

@@ -16,8 +16,6 @@
 
 /**
  * Details the importance of the constraint present on the item
- * @export
- * @enum {string}
  */
 
 export const ConstraintType = {

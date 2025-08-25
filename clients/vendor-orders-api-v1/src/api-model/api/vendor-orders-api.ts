@@ -33,7 +33,6 @@ import type { SubmitAcknowledgementRequest } from '../models';
 import type { SubmitAcknowledgementResponse } from '../models';
 /**
  * VendorOrdersApi - axios parameter creator
- * @export
  */
 export const VendorOrdersApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -309,7 +308,6 @@ export const VendorOrdersApiAxiosParamCreator = function (configuration?: Config
 
 /**
  * VendorOrdersApi - functional programming interface
- * @export
  */
 export const VendorOrdersApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = VendorOrdersApiAxiosParamCreator(configuration)
@@ -390,7 +388,6 @@ export const VendorOrdersApiFp = function(configuration?: Configuration) {
 
 /**
  * VendorOrdersApi - factory interface
- * @export
  */
 export const VendorOrdersApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = VendorOrdersApiFp(configuration)
@@ -436,226 +433,161 @@ export const VendorOrdersApiFactory = function (configuration?: Configuration, b
 
 /**
  * Request parameters for getPurchaseOrder operation in VendorOrdersApi.
- * @export
- * @interface VendorOrdersApiGetPurchaseOrderRequest
  */
 export interface VendorOrdersApiGetPurchaseOrderRequest {
     /**
      * The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code.
-     * @type {string}
-     * @memberof VendorOrdersApiGetPurchaseOrder
      */
     readonly purchaseOrderNumber: string
 }
 
 /**
  * Request parameters for getPurchaseOrders operation in VendorOrdersApi.
- * @export
- * @interface VendorOrdersApiGetPurchaseOrdersRequest
  */
 export interface VendorOrdersApiGetPurchaseOrdersRequest {
     /**
      * The limit to the number of records returned. Default value is 100 records.
-     * @type {number}
-     * @memberof VendorOrdersApiGetPurchaseOrders
      */
     readonly limit?: number
 
     /**
      * Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof VendorOrdersApiGetPurchaseOrders
      */
     readonly createdAfter?: string
 
     /**
      * Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof VendorOrdersApiGetPurchaseOrders
      */
     readonly createdBefore?: string
 
     /**
      * Sort in ascending or descending order by purchase order creation date.
-     * @type {'ASC' | 'DESC'}
-     * @memberof VendorOrdersApiGetPurchaseOrders
      */
     readonly sortOrder?: GetPurchaseOrdersSortOrderEnum
 
     /**
      * Used for pagination when there is more purchase orders than the specified result size limit. The token value is returned in the previous API call
-     * @type {string}
-     * @memberof VendorOrdersApiGetPurchaseOrders
      */
     readonly nextToken?: string
 
     /**
      * When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true.
-     * @type {boolean}
-     * @memberof VendorOrdersApiGetPurchaseOrders
      */
     readonly includeDetails?: boolean
 
     /**
      * Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof VendorOrdersApiGetPurchaseOrders
      */
     readonly changedAfter?: string
 
     /**
      * Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof VendorOrdersApiGetPurchaseOrders
      */
     readonly changedBefore?: string
 
     /**
      * Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero.
-     * @type {'Cancelled'}
-     * @memberof VendorOrdersApiGetPurchaseOrders
      */
     readonly poItemState?: GetPurchaseOrdersPoItemStateEnum
 
     /**
      * When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false.
-     * @type {boolean}
-     * @memberof VendorOrdersApiGetPurchaseOrders
      */
     readonly isPOChanged?: boolean
 
     /**
      * Filters purchase orders based on the purchase order state.
-     * @type {'New' | 'Acknowledged' | 'Closed'}
-     * @memberof VendorOrdersApiGetPurchaseOrders
      */
     readonly purchaseOrderState?: GetPurchaseOrdersPurchaseOrderStateEnum
 
     /**
      * Filters purchase orders based on the specified ordering vendor code. This value should be same as \&#39;sellingParty.partyId\&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned.
-     * @type {string}
-     * @memberof VendorOrdersApiGetPurchaseOrders
      */
     readonly orderingVendorCode?: string
 }
 
 /**
  * Request parameters for getPurchaseOrdersStatus operation in VendorOrdersApi.
- * @export
- * @interface VendorOrdersApiGetPurchaseOrdersStatusRequest
  */
 export interface VendorOrdersApiGetPurchaseOrdersStatusRequest {
     /**
      * The limit to the number of records returned. Default value is 100 records.
-     * @type {number}
-     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
      */
     readonly limit?: number
 
     /**
      * Sort in ascending or descending order by purchase order creation date.
-     * @type {'ASC' | 'DESC'}
-     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
      */
     readonly sortOrder?: GetPurchaseOrdersStatusSortOrderEnum
 
     /**
      * Used for pagination when there are more purchase orders than the specified result size limit.
-     * @type {string}
-     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
      */
     readonly nextToken?: string
 
     /**
      * Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
      */
     readonly createdAfter?: string
 
     /**
      * Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
      */
     readonly createdBefore?: string
 
     /**
      * Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
      */
     readonly updatedAfter?: string
 
     /**
      * Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
      */
     readonly updatedBefore?: string
 
     /**
      * Provides purchase order status for the specified purchase order number.
-     * @type {string}
-     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
      */
     readonly purchaseOrderNumber?: string
 
     /**
      * Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses.
-     * @type {'OPEN' | 'CLOSED'}
-     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
      */
     readonly purchaseOrderStatus?: GetPurchaseOrdersStatusPurchaseOrderStatusEnum
 
     /**
      * Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included.
-     * @type {'ACCEPTED' | 'PARTIALLY_ACCEPTED' | 'REJECTED' | 'UNCONFIRMED'}
-     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
      */
     readonly itemConfirmationStatus?: GetPurchaseOrdersStatusItemConfirmationStatusEnum
 
     /**
      * Filters purchase orders based on the purchase order\&#39;s item receive status. If the item receive status is not included in the filter, purchase orders for all receive statuses are included.
-     * @type {'NOT_RECEIVED' | 'PARTIALLY_RECEIVED' | 'RECEIVED'}
-     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
      */
     readonly itemReceiveStatus?: GetPurchaseOrdersStatusItemReceiveStatusEnum
 
     /**
      * Filters purchase orders based on the specified ordering vendor code. This value should be same as \&#39;sellingParty.partyId\&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned.
-     * @type {string}
-     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
      */
     readonly orderingVendorCode?: string
 
     /**
      * Filters purchase orders for a specific buyer\&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as \&#39;shipToParty.partyId\&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer\&#39;s warehouses used for vendor group purchase orders.
-     * @type {string}
-     * @memberof VendorOrdersApiGetPurchaseOrdersStatus
      */
     readonly shipToPartyId?: string
 }
 
 /**
  * Request parameters for submitAcknowledgement operation in VendorOrdersApi.
- * @export
- * @interface VendorOrdersApiSubmitAcknowledgementRequest
  */
 export interface VendorOrdersApiSubmitAcknowledgementRequest {
     /**
      * Submits acknowledgements for one or more purchase orders from a vendor.
-     * @type {SubmitAcknowledgementRequest}
-     * @memberof VendorOrdersApiSubmitAcknowledgement
      */
     readonly body: SubmitAcknowledgementRequest
 }
 
 /**
  * VendorOrdersApi - object-oriented interface
- * @export
- * @class VendorOrdersApi
- * @extends {BaseAPI}
  */
 export class VendorOrdersApi extends BaseAPI {
     /**
@@ -663,7 +595,6 @@ export class VendorOrdersApi extends BaseAPI {
      * @param {VendorOrdersApiGetPurchaseOrderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorOrdersApi
      */
     public getPurchaseOrder(requestParameters: VendorOrdersApiGetPurchaseOrderRequest, options?: RawAxiosRequestConfig) {
         return VendorOrdersApiFp(this.configuration).getPurchaseOrder(requestParameters.purchaseOrderNumber, options).then((request) => request(this.axios, this.basePath));
@@ -674,7 +605,6 @@ export class VendorOrdersApi extends BaseAPI {
      * @param {VendorOrdersApiGetPurchaseOrdersRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorOrdersApi
      */
     public getPurchaseOrders(requestParameters: VendorOrdersApiGetPurchaseOrdersRequest = {}, options?: RawAxiosRequestConfig) {
         return VendorOrdersApiFp(this.configuration).getPurchaseOrders(requestParameters.limit, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.includeDetails, requestParameters.changedAfter, requestParameters.changedBefore, requestParameters.poItemState, requestParameters.isPOChanged, requestParameters.purchaseOrderState, requestParameters.orderingVendorCode, options).then((request) => request(this.axios, this.basePath));
@@ -685,7 +615,6 @@ export class VendorOrdersApi extends BaseAPI {
      * @param {VendorOrdersApiGetPurchaseOrdersStatusRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorOrdersApi
      */
     public getPurchaseOrdersStatus(requestParameters: VendorOrdersApiGetPurchaseOrdersStatusRequest = {}, options?: RawAxiosRequestConfig) {
         return VendorOrdersApiFp(this.configuration).getPurchaseOrdersStatus(requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.updatedAfter, requestParameters.updatedBefore, requestParameters.purchaseOrderNumber, requestParameters.purchaseOrderStatus, requestParameters.itemConfirmationStatus, requestParameters.itemReceiveStatus, requestParameters.orderingVendorCode, requestParameters.shipToPartyId, options).then((request) => request(this.axios, this.basePath));
@@ -696,56 +625,37 @@ export class VendorOrdersApi extends BaseAPI {
      * @param {VendorOrdersApiSubmitAcknowledgementRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorOrdersApi
      */
     public submitAcknowledgement(requestParameters: VendorOrdersApiSubmitAcknowledgementRequest, options?: RawAxiosRequestConfig) {
         return VendorOrdersApiFp(this.configuration).submitAcknowledgement(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetPurchaseOrdersSortOrderEnum = {
     Asc: 'ASC',
     Desc: 'DESC'
 } as const;
 export type GetPurchaseOrdersSortOrderEnum = typeof GetPurchaseOrdersSortOrderEnum[keyof typeof GetPurchaseOrdersSortOrderEnum];
-/**
- * @export
- */
 export const GetPurchaseOrdersPoItemStateEnum = {
     Cancelled: 'Cancelled'
 } as const;
 export type GetPurchaseOrdersPoItemStateEnum = typeof GetPurchaseOrdersPoItemStateEnum[keyof typeof GetPurchaseOrdersPoItemStateEnum];
-/**
- * @export
- */
 export const GetPurchaseOrdersPurchaseOrderStateEnum = {
     New: 'New',
     Acknowledged: 'Acknowledged',
     Closed: 'Closed'
 } as const;
 export type GetPurchaseOrdersPurchaseOrderStateEnum = typeof GetPurchaseOrdersPurchaseOrderStateEnum[keyof typeof GetPurchaseOrdersPurchaseOrderStateEnum];
-/**
- * @export
- */
 export const GetPurchaseOrdersStatusSortOrderEnum = {
     Asc: 'ASC',
     Desc: 'DESC'
 } as const;
 export type GetPurchaseOrdersStatusSortOrderEnum = typeof GetPurchaseOrdersStatusSortOrderEnum[keyof typeof GetPurchaseOrdersStatusSortOrderEnum];
-/**
- * @export
- */
 export const GetPurchaseOrdersStatusPurchaseOrderStatusEnum = {
     Open: 'OPEN',
     Closed: 'CLOSED'
 } as const;
 export type GetPurchaseOrdersStatusPurchaseOrderStatusEnum = typeof GetPurchaseOrdersStatusPurchaseOrderStatusEnum[keyof typeof GetPurchaseOrdersStatusPurchaseOrderStatusEnum];
-/**
- * @export
- */
 export const GetPurchaseOrdersStatusItemConfirmationStatusEnum = {
     Accepted: 'ACCEPTED',
     PartiallyAccepted: 'PARTIALLY_ACCEPTED',
@@ -753,9 +663,6 @@ export const GetPurchaseOrdersStatusItemConfirmationStatusEnum = {
     Unconfirmed: 'UNCONFIRMED'
 } as const;
 export type GetPurchaseOrdersStatusItemConfirmationStatusEnum = typeof GetPurchaseOrdersStatusItemConfirmationStatusEnum[keyof typeof GetPurchaseOrdersStatusItemConfirmationStatusEnum];
-/**
- * @export
- */
 export const GetPurchaseOrdersStatusItemReceiveStatusEnum = {
     NotReceived: 'NOT_RECEIVED',
     PartiallyReceived: 'PARTIALLY_RECEIVED',

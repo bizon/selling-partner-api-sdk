@@ -16,38 +16,26 @@
 
 /**
  * In this slot format each slot only has the requested capacity types. This slot size is as specified by slot duration.
- * @export
- * @interface FixedSlot
  */
 export interface FixedSlot {
     /**
      * Start date time of slot in ISO 8601 format with precision of seconds.
-     * @type {string}
-     * @memberof FixedSlot
      */
     'startDateTime'?: string;
     /**
      * Scheduled capacity corresponding to the slot. This capacity represents the originally allocated capacity as per resource schedule.
-     * @type {number}
-     * @memberof FixedSlot
      */
     'scheduledCapacity'?: number;
     /**
      * Available capacity corresponding to the slot. This capacity represents the capacity available for allocation to reservations.
-     * @type {number}
-     * @memberof FixedSlot
      */
     'availableCapacity'?: number;
     /**
      * Encumbered capacity corresponding to the slot. This capacity represents the capacity allocated for Amazon Jobs/Appointments/Orders.
-     * @type {number}
-     * @memberof FixedSlot
      */
     'encumberedCapacity'?: number;
     /**
      * Reserved capacity corresponding to the slot. This capacity represents the capacity made unavailable due to events like Breaks/Leaves/Lunch.
-     * @type {number}
-     * @memberof FixedSlot
      */
     'reservedCapacity'?: number;
 }

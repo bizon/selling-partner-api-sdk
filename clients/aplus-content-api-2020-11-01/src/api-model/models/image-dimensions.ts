@@ -19,21 +19,9 @@ import type { IntegerWithUnits } from './integer-with-units';
 
 /**
  * The dimensions that extend from the top left corner of the image (this applies to cropped and uncropped images). `ImageDimensions` units must be in pixels.
- * @export
- * @interface ImageDimensions
  */
 export interface ImageDimensions {
-    /**
-     * 
-     * @type {IntegerWithUnits}
-     * @memberof ImageDimensions
-     */
     'width': IntegerWithUnits;
-    /**
-     * 
-     * @type {IntegerWithUnits}
-     * @memberof ImageDimensions
-     */
     'height': IntegerWithUnits;
 }
 

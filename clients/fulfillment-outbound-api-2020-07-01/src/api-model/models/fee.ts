@@ -19,21 +19,12 @@ import type { Money } from './money';
 
 /**
  * Fee type and cost.
- * @export
- * @interface Fee
  */
 export interface Fee {
     /**
      * The type of fee.
-     * @type {string}
-     * @memberof Fee
      */
     'name': FeeNameEnum;
-    /**
-     * 
-     * @type {Money}
-     * @memberof Fee
-     */
     'amount': Money;
 }
 

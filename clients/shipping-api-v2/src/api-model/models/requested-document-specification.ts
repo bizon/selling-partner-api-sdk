@@ -28,51 +28,26 @@ import type { RequestedLabelCustomization } from './requested-label-customizatio
 
 /**
  * The document specifications requested. For calls to the purchaseShipment operation, the shipment purchase fails if the specified document specifications are not among those returned in the response to the getRates operation.
- * @export
- * @interface RequestedDocumentSpecification
  */
 export interface RequestedDocumentSpecification {
-    /**
-     * 
-     * @type {DocumentFormat}
-     * @memberof RequestedDocumentSpecification
-     */
     'format': DocumentFormat;
-    /**
-     * 
-     * @type {DocumentSize}
-     * @memberof RequestedDocumentSpecification
-     */
     'size': DocumentSize;
     /**
      * The dots per inch (DPI) value used in printing. This value represents a measure of the resolution of the document.
-     * @type {number}
-     * @memberof RequestedDocumentSpecification
      */
     'dpi'?: number;
     /**
      * Indicates the position of the label on the paper. Should be the same value as returned in getRates response.
-     * @type {string}
-     * @memberof RequestedDocumentSpecification
      */
     'pageLayout'?: string;
     /**
      * When true, files should be stitched together. Otherwise, files should be returned separately. Defaults to false.
-     * @type {boolean}
-     * @memberof RequestedDocumentSpecification
      */
     'needFileJoining': boolean;
     /**
      * A list of the document types requested.
-     * @type {Array<DocumentType>}
-     * @memberof RequestedDocumentSpecification
      */
     'requestedDocumentTypes': Array<DocumentType>;
-    /**
-     * 
-     * @type {RequestedLabelCustomization}
-     * @memberof RequestedDocumentSpecification
-     */
     'requestedLabelCustomization'?: RequestedLabelCustomization;
 }
 

@@ -19,20 +19,14 @@ import type { ItemReviewTrendPoint } from './item-review-trend-point';
 
 /**
  * The trend of review topic metrics for the requested item.
- * @export
- * @interface ItemReviewTrend
  */
 export interface ItemReviewTrend {
     /**
      * The name of the item review topic.
-     * @type {string}
-     * @memberof ItemReviewTrend
      */
     'topic': string;
     /**
      * The item\'s review trend metrics for the past six months.
-     * @type {Array<ItemReviewTrendPoint>}
-     * @memberof ItemReviewTrend
      */
     'trendMetrics': Array<ItemReviewTrendPoint>;
 }

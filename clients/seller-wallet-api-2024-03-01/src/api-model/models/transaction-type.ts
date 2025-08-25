@@ -16,8 +16,6 @@
 
 /**
  * Represent type of transaction.
- * @export
- * @enum {string}
  */
 
 export const TransactionType = {

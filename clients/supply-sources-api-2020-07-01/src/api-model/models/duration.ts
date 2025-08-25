@@ -19,21 +19,12 @@ import type { TimeUnit } from './time-unit';
 
 /**
  * The duration of time.
- * @export
- * @interface Duration
  */
 export interface Duration {
     /**
      * An unsigned integer that can be only positive or zero.
-     * @type {number}
-     * @memberof Duration
      */
     'value'?: number;
-    /**
-     * 
-     * @type {TimeUnit}
-     * @memberof Duration
-     */
     'timeUnit'?: TimeUnit;
 }
 

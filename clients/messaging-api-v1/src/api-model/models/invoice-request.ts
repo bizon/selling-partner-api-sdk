@@ -19,14 +19,10 @@ import type { Attachment } from './attachment';
 
 /**
  * The request schema for the `sendInvoice` operation.
- * @export
- * @interface InvoiceRequest
  */
 export interface InvoiceRequest {
     /**
      * Attachments to include in the message to the buyer.
-     * @type {Array<Attachment>}
-     * @memberof InvoiceRequest
      */
     'attachments'?: Array<Attachment>;
 }

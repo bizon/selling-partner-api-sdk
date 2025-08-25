@@ -27,7 +27,6 @@ import type { GetAccountResponse } from '../models';
 import type { GetMarketplaceParticipationsResponse } from '../models';
 /**
  * SellersApi - axios parameter creator
- * @export
  */
 export const SellersApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -94,7 +93,6 @@ export const SellersApiAxiosParamCreator = function (configuration?: Configurati
 
 /**
  * SellersApi - functional programming interface
- * @export
  */
 export const SellersApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = SellersApiAxiosParamCreator(configuration)
@@ -126,7 +124,6 @@ export const SellersApiFp = function(configuration?: Configuration) {
 
 /**
  * SellersApi - factory interface
- * @export
  */
 export const SellersApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = SellersApiFp(configuration)
@@ -152,16 +149,12 @@ export const SellersApiFactory = function (configuration?: Configuration, basePa
 
 /**
  * SellersApi - object-oriented interface
- * @export
- * @class SellersApi
- * @extends {BaseAPI}
  */
 export class SellersApi extends BaseAPI {
     /**
      * Returns information about a seller account and its marketplaces.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.016 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SellersApi
      */
     public getAccount(options?: RawAxiosRequestConfig) {
         return SellersApiFp(this.configuration).getAccount(options).then((request) => request(this.axios, this.basePath));
@@ -171,7 +164,6 @@ export class SellersApi extends BaseAPI {
      * Returns a list of marketplaces where the seller can list items and information about the seller\'s participation in those marketplaces.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.016 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof SellersApi
      */
     public getMarketplaceParticipations(options?: RawAxiosRequestConfig) {
         return SellersApiFp(this.configuration).getMarketplaceParticipations(options).then((request) => request(this.axios, this.basePath));

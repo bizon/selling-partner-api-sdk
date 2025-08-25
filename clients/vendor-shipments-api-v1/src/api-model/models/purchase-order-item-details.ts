@@ -19,15 +19,8 @@ import type { Money } from './money';
 
 /**
  * Item details for be provided for every item in shipment at either the item or carton or pallet level, whichever is appropriate.
- * @export
- * @interface PurchaseOrderItemDetails
  */
 export interface PurchaseOrderItemDetails {
-    /**
-     * 
-     * @type {Money}
-     * @memberof PurchaseOrderItemDetails
-     */
     'maximumRetailPrice'?: Money;
 }
 

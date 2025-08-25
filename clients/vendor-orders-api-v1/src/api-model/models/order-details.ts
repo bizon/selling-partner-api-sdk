@@ -25,92 +25,47 @@ import type { PartyIdentification } from './party-identification';
 
 /**
  * Details of an order.
- * @export
- * @interface OrderDetails
  */
 export interface OrderDetails {
     /**
      * The date the purchase order was placed. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof OrderDetails
      */
     'purchaseOrderDate': string;
     /**
      * The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than \'purchaseOrderDate\'. This means the PO data was changed on that date and vendors are required to fulfill the  updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof OrderDetails
      */
     'purchaseOrderChangedDate'?: string;
     /**
      * The date when current purchase order state was changed. Current purchase order state is available in the field \'purchaseOrderState\'. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof OrderDetails
      */
     'purchaseOrderStateChangedDate': string;
     /**
      * Type of purchase order.
-     * @type {string}
-     * @memberof OrderDetails
      */
     'purchaseOrderType'?: OrderDetailsPurchaseOrderTypeEnum;
-    /**
-     * 
-     * @type {ImportDetails}
-     * @memberof OrderDetails
-     */
     'importDetails'?: ImportDetails;
     /**
      * If requested by the recipient, this field will contain a promotional/deal number. The discount code line is optional. It is used to obtain a price discount on items on the order.
-     * @type {string}
-     * @memberof OrderDetails
      */
     'dealCode'?: string;
     /**
      * Payment method used.
-     * @type {string}
-     * @memberof OrderDetails
      */
     'paymentMethod'?: OrderDetailsPaymentMethodEnum;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof OrderDetails
-     */
     'buyingParty'?: PartyIdentification;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof OrderDetails
-     */
     'sellingParty'?: PartyIdentification;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof OrderDetails
-     */
     'shipToParty'?: PartyIdentification;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof OrderDetails
-     */
     'billToParty'?: PartyIdentification;
     /**
      * Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--).
-     * @type {string}
-     * @memberof OrderDetails
      */
     'shipWindow'?: string;
     /**
      * Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--).
-     * @type {string}
-     * @memberof OrderDetails
      */
     'deliveryWindow'?: string;
     /**
      * A list of items in this purchase order.
-     * @type {Array<OrderItem>}
-     * @memberof OrderDetails
      */
     'items': Array<OrderItem>;
 }

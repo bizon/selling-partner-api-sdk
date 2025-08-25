@@ -19,32 +19,19 @@ import type { ItemVariationTheme } from './item-variation-theme';
 
 /**
  * Relationship details for an Amazon catalog item.
- * @export
- * @interface ItemRelationship
  */
 export interface ItemRelationship {
     /**
      * ASINs of the related items that are children of this item.
-     * @type {Array<string>}
-     * @memberof ItemRelationship
      */
     'childAsins'?: Array<string>;
     /**
      * ASINs of the related items that are parents of this item.
-     * @type {Array<string>}
-     * @memberof ItemRelationship
      */
     'parentAsins'?: Array<string>;
-    /**
-     * 
-     * @type {ItemVariationTheme}
-     * @memberof ItemRelationship
-     */
     'variationTheme'?: ItemVariationTheme;
     /**
      * Type of relationship.
-     * @type {string}
-     * @memberof ItemRelationship
      */
     'type': ItemRelationshipTypeEnum;
 }

@@ -19,15 +19,8 @@ import type { CollectionsFormDocument } from './collections-form-document';
 
 /**
  * The Response  for the GetCollectionFormResponse operation.
- * @export
- * @interface GetCollectionFormResponse
  */
 export interface GetCollectionFormResponse {
-    /**
-     * 
-     * @type {CollectionsFormDocument}
-     * @memberof GetCollectionFormResponse
-     */
     'collectionsFormDocument'?: CollectionsFormDocument;
 }
 

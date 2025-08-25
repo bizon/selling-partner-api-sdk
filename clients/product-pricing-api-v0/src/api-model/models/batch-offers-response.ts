@@ -25,27 +25,10 @@ import type { HttpResponseHeaders } from './http-response-headers';
 
 /**
  * Common schema that present in `ItemOffersResponse` and `ListingOffersResponse`
- * @export
- * @interface BatchOffersResponse
  */
 export interface BatchOffersResponse {
-    /**
-     * 
-     * @type {HttpResponseHeaders}
-     * @memberof BatchOffersResponse
-     */
     'headers'?: HttpResponseHeaders;
-    /**
-     * 
-     * @type {GetOffersHttpStatusLine}
-     * @memberof BatchOffersResponse
-     */
     'status'?: GetOffersHttpStatusLine;
-    /**
-     * 
-     * @type {GetOffersResponse}
-     * @memberof BatchOffersResponse
-     */
     'body': GetOffersResponse;
 }
 

@@ -19,21 +19,12 @@ import type { Address } from './address';
 
 /**
  * Information about the location of the service job.
- * @export
- * @interface ServiceLocation
  */
 export interface ServiceLocation {
     /**
      * The location of the service job.
-     * @type {string}
-     * @memberof ServiceLocation
      */
     'serviceLocationType'?: ServiceLocationServiceLocationTypeEnum;
-    /**
-     * 
-     * @type {Address}
-     * @memberof ServiceLocation
-     */
     'address'?: Address;
 }
 

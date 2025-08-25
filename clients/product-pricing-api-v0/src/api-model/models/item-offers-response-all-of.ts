@@ -17,17 +17,7 @@
 // @ts-ignore
 import type { ItemOffersRequestParams } from './item-offers-request-params';
 
-/**
- * 
- * @export
- * @interface ItemOffersResponseAllOf
- */
 export interface ItemOffersResponseAllOf {
-    /**
-     * 
-     * @type {ItemOffersRequestParams}
-     * @memberof ItemOffersResponseAllOf
-     */
     'request': ItemOffersRequestParams;
 }
 

@@ -25,32 +25,13 @@ import type { RateItemType } from './rate-item-type';
 
 /**
  * Rate Item for shipping (base cost, transaction fee, confirmation, insurance, etc.) Data source definition: 
- * @export
- * @interface RateItem
  */
 export interface RateItem {
-    /**
-     * 
-     * @type {RateItemID}
-     * @memberof RateItem
-     */
     'rateItemID'?: RateItemID;
-    /**
-     * 
-     * @type {RateItemType}
-     * @memberof RateItem
-     */
     'rateItemType'?: RateItemType;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof RateItem
-     */
     'rateItemCharge'?: Currency;
     /**
      * Used for the localization.
-     * @type {string}
-     * @memberof RateItem
      */
     'rateItemNameLocalization'?: string;
 }

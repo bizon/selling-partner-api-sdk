@@ -25,45 +25,25 @@ import type { Technician } from './technician';
 
 /**
  * The details of an appointment.
- * @export
- * @interface Appointment
  */
 export interface Appointment {
     /**
      * The appointment identifier.
-     * @type {string}
-     * @memberof Appointment
      */
     'appointmentId'?: string;
     /**
      * The status of the appointment.
-     * @type {string}
-     * @memberof Appointment
      */
     'appointmentStatus'?: AppointmentAppointmentStatusEnum;
-    /**
-     * 
-     * @type {AppointmentTime}
-     * @memberof Appointment
-     */
     'appointmentTime'?: AppointmentTime;
     /**
      * A list of technicians assigned to the service job.
-     * @type {Array<Technician>}
-     * @memberof Appointment
      */
     'assignedTechnicians'?: Array<Technician>;
     /**
      * The appointment identifier.
-     * @type {string}
-     * @memberof Appointment
      */
     'rescheduledAppointmentId'?: string;
-    /**
-     * 
-     * @type {Poa}
-     * @memberof Appointment
-     */
     'poa'?: Poa;
 }
 

@@ -29,7 +29,6 @@ import type { CreateRestrictedDataTokenResponse } from '../models';
 import type { ErrorList } from '../models';
 /**
  * TokensApi - axios parameter creator
- * @export
  */
 export const TokensApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -73,7 +72,6 @@ export const TokensApiAxiosParamCreator = function (configuration?: Configuratio
 
 /**
  * TokensApi - functional programming interface
- * @export
  */
 export const TokensApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = TokensApiAxiosParamCreator(configuration)
@@ -95,7 +93,6 @@ export const TokensApiFp = function(configuration?: Configuration) {
 
 /**
  * TokensApi - factory interface
- * @export
  */
 export const TokensApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = TokensApiFp(configuration)
@@ -114,23 +111,16 @@ export const TokensApiFactory = function (configuration?: Configuration, basePat
 
 /**
  * Request parameters for createRestrictedDataToken operation in TokensApi.
- * @export
- * @interface TokensApiCreateRestrictedDataTokenRequest
  */
 export interface TokensApiCreateRestrictedDataTokenRequest {
     /**
      * The restricted data token request details.
-     * @type {CreateRestrictedDataTokenRequest}
-     * @memberof TokensApiCreateRestrictedDataToken
      */
     readonly body: CreateRestrictedDataTokenRequest
 }
 
 /**
  * TokensApi - object-oriented interface
- * @export
- * @class TokensApi
- * @extends {BaseAPI}
  */
 export class TokensApi extends BaseAPI {
     /**
@@ -138,7 +128,6 @@ export class TokensApi extends BaseAPI {
      * @param {TokensApiCreateRestrictedDataTokenRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof TokensApi
      */
     public createRestrictedDataToken(requestParameters: TokensApiCreateRestrictedDataTokenRequest, options?: RawAxiosRequestConfig) {
         return TokensApiFp(this.configuration).createRestrictedDataToken(requestParameters.body, options).then((request) => request(this.axios, this.basePath));

@@ -16,32 +16,22 @@
 
 /**
  * Sales rank of an Amazon catalog item, grouped by website display group.
- * @export
- * @interface ItemDisplayGroupSalesRank
  */
 export interface ItemDisplayGroupSalesRank {
     /**
      * Name of the website display group that is associated with the sales rank
-     * @type {string}
-     * @memberof ItemDisplayGroupSalesRank
      */
     'websiteDisplayGroup': string;
     /**
      * Name of the sales rank.
-     * @type {string}
-     * @memberof ItemDisplayGroupSalesRank
      */
     'title': string;
     /**
      * Corresponding Amazon retail website URL for the sales rank.
-     * @type {string}
-     * @memberof ItemDisplayGroupSalesRank
      */
     'link'?: string;
     /**
      * Sales rank.
-     * @type {number}
-     * @memberof ItemDisplayGroupSalesRank
      */
     'rank': number;
 }

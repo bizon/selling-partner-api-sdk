@@ -19,32 +19,19 @@ import type { EncryptionDetails } from './encryption-details';
 
 /**
  * Information about an upload destination.
- * @export
- * @interface ServiceDocumentUploadDestination
  */
 export interface ServiceDocumentUploadDestination {
     /**
      * The unique identifier to be used by APIs that reference the upload destination.
-     * @type {string}
-     * @memberof ServiceDocumentUploadDestination
      */
     'uploadDestinationId': string;
     /**
      * The URL to which to upload the file.
-     * @type {string}
-     * @memberof ServiceDocumentUploadDestination
      */
     'url': string;
-    /**
-     * 
-     * @type {EncryptionDetails}
-     * @memberof ServiceDocumentUploadDestination
-     */
     'encryptionDetails': EncryptionDetails;
     /**
      * The headers to include in the upload request.
-     * @type {object}
-     * @memberof ServiceDocumentUploadDestination
      */
     'headers'?: object;
 }

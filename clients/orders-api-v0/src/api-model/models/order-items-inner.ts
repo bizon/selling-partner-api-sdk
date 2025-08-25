@@ -14,22 +14,13 @@
 
 
 
-/**
- * 
- * @export
- * @interface OrderItemsInner
- */
 export interface OrderItemsInner {
     /**
      * The order item\'s unique identifier.
-     * @type {string}
-     * @memberof OrderItemsInner
      */
     'orderItemId'?: string;
     /**
      * The quantity for which to update the shipment status.
-     * @type {number}
-     * @memberof OrderItemsInner
      */
     'quantity'?: number;
 }

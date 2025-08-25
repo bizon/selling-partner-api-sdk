@@ -22,26 +22,18 @@ import type { Rate } from './rate';
 
 /**
  * The payload for the getRates operation.
- * @export
- * @interface GetRatesResult
  */
 export interface GetRatesResult {
     /**
      * A unique token generated to identify a getRates operation.
-     * @type {string}
-     * @memberof GetRatesResult
      */
     'requestToken': string;
     /**
      * A list of eligible shipping service offerings.
-     * @type {Array<Rate>}
-     * @memberof GetRatesResult
      */
     'rates': Array<Rate>;
     /**
      * A list of ineligible shipping service offerings.
-     * @type {Array<IneligibleRate>}
-     * @memberof GetRatesResult
      */
     'ineligibleRates'?: Array<IneligibleRate>;
 }

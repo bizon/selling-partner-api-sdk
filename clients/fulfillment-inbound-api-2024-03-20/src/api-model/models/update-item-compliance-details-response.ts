@@ -16,14 +16,10 @@
 
 /**
  * The `updateItemComplianceDetails` response.
- * @export
- * @interface UpdateItemComplianceDetailsResponse
  */
 export interface UpdateItemComplianceDetailsResponse {
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof UpdateItemComplianceDetailsResponse
      */
     'operationId': string;
 }

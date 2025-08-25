@@ -19,14 +19,10 @@ import type { ReasonCodeDetails } from './reason-code-details';
 
 /**
  * The request for the listReturnReasonCodes operation.
- * @export
- * @interface ListReturnReasonCodesResult
  */
 export interface ListReturnReasonCodesResult {
     /**
      * An array of return reason code details.
-     * @type {Array<ReasonCodeDetails>}
-     * @memberof ListReturnReasonCodesResult
      */
     'reasonCodeDetails'?: Array<ReasonCodeDetails>;
 }

@@ -16,8 +16,6 @@
 
 /**
  * The type of shipping document.
- * @export
- * @enum {string}
  */
 
 export const DocumentType = {

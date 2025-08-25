@@ -31,98 +31,54 @@ import type { TrackingEvent } from './tracking-event';
 
 /**
  * Tracking details of package
- * @export
- * @interface PackageTrackingDetails
  */
 export interface PackageTrackingDetails {
     /**
      * The package identifier.
-     * @type {number}
-     * @memberof PackageTrackingDetails
      */
     'packageNumber': number;
     /**
      * The tracking number for the package.
-     * @type {string}
-     * @memberof PackageTrackingDetails
      */
     'trackingNumber'?: string;
     /**
      * Link on swiship.com that allows customers to track the package.
-     * @type {string}
-     * @memberof PackageTrackingDetails
      */
     'customerTrackingLink'?: string;
     /**
      * The name of the carrier.
-     * @type {string}
-     * @memberof PackageTrackingDetails
      */
     'carrierCode'?: string;
     /**
      * The phone number of the carrier.
-     * @type {string}
-     * @memberof PackageTrackingDetails
      */
     'carrierPhoneNumber'?: string;
     /**
      * The URL of the carrier\'s website.
-     * @type {string}
-     * @memberof PackageTrackingDetails
      */
     'carrierURL'?: string;
     /**
      * Date timestamp
-     * @type {string}
-     * @memberof PackageTrackingDetails
      */
     'shipDate'?: string;
     /**
      * Date timestamp
-     * @type {string}
-     * @memberof PackageTrackingDetails
      */
     'estimatedArrivalDate'?: string;
-    /**
-     * 
-     * @type {TrackingAddress}
-     * @memberof PackageTrackingDetails
-     */
     'shipToAddress'?: TrackingAddress;
-    /**
-     * 
-     * @type {CurrentStatus}
-     * @memberof PackageTrackingDetails
-     */
     'currentStatus'?: CurrentStatus;
     /**
      * Description corresponding to the CurrentStatus value.
-     * @type {string}
-     * @memberof PackageTrackingDetails
      */
     'currentStatusDescription'?: string;
-    /**
-     * 
-     * @type {DateRange}
-     * @memberof PackageTrackingDetails
-     */
     'deliveryWindow'?: DateRange;
     /**
      * The name of the person who signed for the package.
-     * @type {string}
-     * @memberof PackageTrackingDetails
      */
     'signedForBy'?: string;
-    /**
-     * 
-     * @type {AdditionalLocationInfo}
-     * @memberof PackageTrackingDetails
-     */
     'additionalLocationInfo'?: AdditionalLocationInfo;
     /**
      * An array of tracking event information.
-     * @type {Array<TrackingEvent>}
-     * @memberof PackageTrackingDetails
      */
     'trackingEvents'?: Array<TrackingEvent>;
 }

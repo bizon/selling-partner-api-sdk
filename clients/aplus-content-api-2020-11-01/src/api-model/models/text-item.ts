@@ -19,21 +19,12 @@ import type { TextComponent } from './text-component';
 
 /**
  * Rich positional text that is usually presented as a collection of bullet points.
- * @export
- * @interface TextItem
  */
 export interface TextItem {
     /**
      * The rank or index of this text item within the collection. Different items cannot occupy the same position within a single collection.
-     * @type {number}
-     * @memberof TextItem
      */
     'position': number;
-    /**
-     * 
-     * @type {TextComponent}
-     * @memberof TextItem
-     */
     'text': TextComponent;
 }
 

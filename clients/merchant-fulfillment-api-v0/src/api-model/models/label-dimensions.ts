@@ -19,27 +19,16 @@ import type { UnitOfLength } from './unit-of-length';
 
 /**
  * Dimensions for printing a shipping label.
- * @export
- * @interface LabelDimensions
  */
 export interface LabelDimensions {
     /**
      * A label dimension.
-     * @type {number}
-     * @memberof LabelDimensions
      */
     'Length': number;
     /**
      * A label dimension.
-     * @type {number}
-     * @memberof LabelDimensions
      */
     'Width': number;
-    /**
-     * 
-     * @type {UnitOfLength}
-     * @memberof LabelDimensions
-     */
     'Unit': UnitOfLength;
 }
 

@@ -19,20 +19,14 @@ import type { Attachment } from './attachment';
 
 /**
  * The request schema for the `createDigitalAccessKey` operation.
- * @export
- * @interface CreateDigitalAccessKeyRequest
  */
 export interface CreateDigitalAccessKeyRequest {
     /**
      * The text that is sent to the buyer. Only links that are related to the digital access key are allowed. Do not include HTML or email addresses. The text must be written in the buyer\'s preferred language, which you can retrieve from the `GetAttributes` operation.
-     * @type {string}
-     * @memberof CreateDigitalAccessKeyRequest
      */
     'text'?: string;
     /**
      * Attachments that you want to include in the message to the buyer.
-     * @type {Array<Attachment>}
-     * @memberof CreateDigitalAccessKeyRequest
      */
     'attachments'?: Array<Attachment>;
 }

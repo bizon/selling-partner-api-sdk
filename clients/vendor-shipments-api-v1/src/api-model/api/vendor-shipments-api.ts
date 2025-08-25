@@ -33,7 +33,6 @@ import type { SubmitShipmentConfirmationsResponse } from '../models';
 import type { SubmitShipments } from '../models';
 /**
  * VendorShipmentsApi - axios parameter creator
- * @export
  */
 export const VendorShipmentsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -369,7 +368,6 @@ export const VendorShipmentsApiAxiosParamCreator = function (configuration?: Con
 
 /**
  * VendorShipmentsApi - functional programming interface
- * @export
  */
 export const VendorShipmentsApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = VendorShipmentsApiAxiosParamCreator(configuration)
@@ -460,7 +458,6 @@ export const VendorShipmentsApiFp = function(configuration?: Configuration) {
 
 /**
  * VendorShipmentsApi - factory interface
- * @export
  */
 export const VendorShipmentsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = VendorShipmentsApiFp(configuration)
@@ -509,275 +506,196 @@ export const VendorShipmentsApiFactory = function (configuration?: Configuration
 
 /**
  * Request parameters for getShipmentDetails operation in VendorShipmentsApi.
- * @export
- * @interface VendorShipmentsApiGetShipmentDetailsRequest
  */
 export interface VendorShipmentsApiGetShipmentDetailsRequest {
     /**
      * The limit to the number of records returned. Default value is 50 records.
-     * @type {number}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly limit?: number
 
     /**
      * Sort in ascending or descending order by purchase order creation date.
-     * @type {'ASC' | 'DESC'}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly sortOrder?: GetShipmentDetailsSortOrderEnum
 
     /**
      * Used for pagination when there are more shipments than the specified result size limit.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly nextToken?: string
 
     /**
      * Get Shipment Details that became available after this timestamp will be included in the result. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly createdAfter?: string
 
     /**
      * Get Shipment Details that became available before this timestamp will be included in the result. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly createdBefore?: string
 
     /**
      * Get Shipment Details by passing Shipment confirmed create Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly shipmentConfirmedBefore?: string
 
     /**
      * Get Shipment Details by passing Shipment confirmed create Date After. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly shipmentConfirmedAfter?: string
 
     /**
      * Get Shipment Details by passing Package label create Date by buyer. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly packageLabelCreatedBefore?: string
 
     /**
      * Get Shipment Details by passing Package label create Date After by buyer. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly packageLabelCreatedAfter?: string
 
     /**
      * Get Shipment Details by passing Shipped Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly shippedBefore?: string
 
     /**
      * Get Shipment Details by passing Shipped Date After. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly shippedAfter?: string
 
     /**
      * Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly estimatedDeliveryBefore?: string
 
     /**
      * Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly estimatedDeliveryAfter?: string
 
     /**
      * Get Shipment Details by passing Shipment Delivery Date Before. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly shipmentDeliveryBefore?: string
 
     /**
      * Get Shipment Details by passing Shipment Delivery Date After. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly shipmentDeliveryAfter?: string
 
     /**
      * Get Shipment Details by passing Before Requested pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly requestedPickUpBefore?: string
 
     /**
      * Get Shipment Details by passing After Requested pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly requestedPickUpAfter?: string
 
     /**
      * Get Shipment Details by passing Before scheduled pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly scheduledPickUpBefore?: string
 
     /**
      * Get Shipment Details by passing After Scheduled pickup date. Must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly scheduledPickUpAfter?: string
 
     /**
      * Get Shipment Details by passing Current shipment status.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly currentShipmentStatus?: string
 
     /**
      * Get Shipment Details by passing Vendor Shipment ID
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly vendorShipmentIdentifier?: string
 
     /**
      * Get Shipment Details by passing buyer Reference ID
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly buyerReferenceNumber?: string
 
     /**
      * Get Shipping Details based on buyer warehouse code. This value should be same as \&#39;shipToParty.partyId\&#39; in the Shipment.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly buyerWarehouseCode?: string
 
     /**
      * Get Shipping Details based on vendor warehouse code. This value should be same as \&#39;sellingParty.partyId\&#39; in the Shipment.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentDetails
      */
     readonly sellerWarehouseCode?: string
 }
 
 /**
  * Request parameters for getShipmentLabels operation in VendorShipmentsApi.
- * @export
- * @interface VendorShipmentsApiGetShipmentLabelsRequest
  */
 export interface VendorShipmentsApiGetShipmentLabelsRequest {
     /**
      * The limit to the number of records returned. Default value is 50 records.
-     * @type {number}
-     * @memberof VendorShipmentsApiGetShipmentLabels
      */
     readonly limit?: number
 
     /**
      * Sort the list by shipment label creation date in ascending or descending order.
-     * @type {'ASC' | 'DESC'}
-     * @memberof VendorShipmentsApiGetShipmentLabels
      */
     readonly sortOrder?: GetShipmentLabelsSortOrderEnum
 
     /**
      * A token that you use to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentLabels
      */
     readonly nextToken?: string
 
     /**
      * Shipment labels created after this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentLabels
      */
     readonly labelCreatedAfter?: string
 
     /**
      * Shipment labels created before this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentLabels
      */
     readonly labelCreatedBefore?: string
 
     /**
      * Get Shipment labels by passing buyer reference number.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentLabels
      */
     readonly buyerReferenceNumber?: string
 
     /**
      * Get Shipment labels by passing vendor shipment identifier.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentLabels
      */
     readonly vendorShipmentIdentifier?: string
 
     /**
      * Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment.
-     * @type {string}
-     * @memberof VendorShipmentsApiGetShipmentLabels
      */
     readonly sellerWarehouseCode?: string
 }
 
 /**
  * Request parameters for submitShipmentConfirmations operation in VendorShipmentsApi.
- * @export
- * @interface VendorShipmentsApiSubmitShipmentConfirmationsRequest
  */
 export interface VendorShipmentsApiSubmitShipmentConfirmationsRequest {
     /**
      * A request to submit shipment confirmation.
-     * @type {SubmitShipmentConfirmationsRequest}
-     * @memberof VendorShipmentsApiSubmitShipmentConfirmations
      */
     readonly body: SubmitShipmentConfirmationsRequest
 }
 
 /**
  * Request parameters for submitShipments operation in VendorShipmentsApi.
- * @export
- * @interface VendorShipmentsApiSubmitShipmentsRequest
  */
 export interface VendorShipmentsApiSubmitShipmentsRequest {
     /**
      * A request to submit shipment request.
-     * @type {SubmitShipments}
-     * @memberof VendorShipmentsApiSubmitShipments
      */
     readonly body: SubmitShipments
 }
 
 /**
  * VendorShipmentsApi - object-oriented interface
- * @export
- * @class VendorShipmentsApi
- * @extends {BaseAPI}
  */
 export class VendorShipmentsApi extends BaseAPI {
     /**
@@ -786,7 +704,6 @@ export class VendorShipmentsApi extends BaseAPI {
      * @param {VendorShipmentsApiGetShipmentDetailsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorShipmentsApi
      */
     public getShipmentDetails(requestParameters: VendorShipmentsApiGetShipmentDetailsRequest = {}, options?: RawAxiosRequestConfig) {
         return VendorShipmentsApiFp(this.configuration).getShipmentDetails(requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.shipmentConfirmedBefore, requestParameters.shipmentConfirmedAfter, requestParameters.packageLabelCreatedBefore, requestParameters.packageLabelCreatedAfter, requestParameters.shippedBefore, requestParameters.shippedAfter, requestParameters.estimatedDeliveryBefore, requestParameters.estimatedDeliveryAfter, requestParameters.shipmentDeliveryBefore, requestParameters.shipmentDeliveryAfter, requestParameters.requestedPickUpBefore, requestParameters.requestedPickUpAfter, requestParameters.scheduledPickUpBefore, requestParameters.scheduledPickUpAfter, requestParameters.currentShipmentStatus, requestParameters.vendorShipmentIdentifier, requestParameters.buyerReferenceNumber, requestParameters.buyerWarehouseCode, requestParameters.sellerWarehouseCode, options).then((request) => request(this.axios, this.basePath));
@@ -797,7 +714,6 @@ export class VendorShipmentsApi extends BaseAPI {
      * @param {VendorShipmentsApiGetShipmentLabelsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorShipmentsApi
      */
     public getShipmentLabels(requestParameters: VendorShipmentsApiGetShipmentLabelsRequest = {}, options?: RawAxiosRequestConfig) {
         return VendorShipmentsApiFp(this.configuration).getShipmentLabels(requestParameters.limit, requestParameters.sortOrder, requestParameters.nextToken, requestParameters.labelCreatedAfter, requestParameters.labelCreatedBefore, requestParameters.buyerReferenceNumber, requestParameters.vendorShipmentIdentifier, requestParameters.sellerWarehouseCode, options).then((request) => request(this.axios, this.basePath));
@@ -809,7 +725,6 @@ export class VendorShipmentsApi extends BaseAPI {
      * @param {VendorShipmentsApiSubmitShipmentConfirmationsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorShipmentsApi
      */
     public submitShipmentConfirmations(requestParameters: VendorShipmentsApiSubmitShipmentConfirmationsRequest, options?: RawAxiosRequestConfig) {
         return VendorShipmentsApiFp(this.configuration).submitShipmentConfirmations(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -821,24 +736,17 @@ export class VendorShipmentsApi extends BaseAPI {
      * @param {VendorShipmentsApiSubmitShipmentsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorShipmentsApi
      */
     public submitShipments(requestParameters: VendorShipmentsApiSubmitShipmentsRequest, options?: RawAxiosRequestConfig) {
         return VendorShipmentsApiFp(this.configuration).submitShipments(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetShipmentDetailsSortOrderEnum = {
     Asc: 'ASC',
     Desc: 'DESC'
 } as const;
 export type GetShipmentDetailsSortOrderEnum = typeof GetShipmentDetailsSortOrderEnum[keyof typeof GetShipmentDetailsSortOrderEnum];
-/**
- * @export
- */
 export const GetShipmentLabelsSortOrderEnum = {
     Asc: 'ASC',
     Desc: 'DESC'

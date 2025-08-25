@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the createConfirmServiceDetails operation.
- * @export
- * @interface CreateConfirmServiceDetailsResponse
  */
 export interface CreateConfirmServiceDetailsResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CreateConfirmServiceDetailsResponse
      */
     'errors'?: Array<Error>;
 }

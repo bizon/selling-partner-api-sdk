@@ -19,15 +19,8 @@ import type { Restriction } from './restriction';
 
 /**
  * A list of restrictions for the specified Amazon catalog item.
- * @export
- * @interface RestrictionList
  */
 export interface RestrictionList {
-    /**
-     * 
-     * @type {Array<Restriction>}
-     * @memberof RestrictionList
-     */
     'restrictions': Array<Restriction>;
 }
 

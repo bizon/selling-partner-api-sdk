@@ -16,8 +16,6 @@
 
 /**
  * Unit of measurement for the inventory.
- * @export
- * @enum {string}
  */
 
 export const InventoryUnitOfMeasurement = {

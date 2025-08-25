@@ -19,20 +19,11 @@ import type { OrderAddress } from './order-address';
 
 /**
  * The response schema for the `getOrderAddress` operation.
- * @export
- * @interface GetOrderAddressResponse
  */
 export interface GetOrderAddressResponse {
-    /**
-     * 
-     * @type {OrderAddress}
-     * @memberof GetOrderAddressResponse
-     */
     'payload'?: OrderAddress;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetOrderAddressResponse
      */
     'errors'?: Array<Error>;
 }

@@ -19,98 +19,63 @@ import type { AddressExtendedFields } from './address-extended-fields';
 
 /**
  * The shipping address for the order.
- * @export
- * @interface Address
  */
 export interface Address {
     /**
      * The name.
-     * @type {string}
-     * @memberof Address
      */
     'Name': string;
     /**
      * The company name of the recipient.  **Note**: This attribute is only available for shipping address.
-     * @type {string}
-     * @memberof Address
      */
     'CompanyName'?: string;
     /**
      * The street address.
-     * @type {string}
-     * @memberof Address
      */
     'AddressLine1'?: string;
     /**
      * Additional street address information, if required.
-     * @type {string}
-     * @memberof Address
      */
     'AddressLine2'?: string;
     /**
      * Additional street address information, if required.
-     * @type {string}
-     * @memberof Address
      */
     'AddressLine3'?: string;
     /**
      * The city.
-     * @type {string}
-     * @memberof Address
      */
     'City'?: string;
     /**
      * The county.
-     * @type {string}
-     * @memberof Address
      */
     'County'?: string;
     /**
      * The district.
-     * @type {string}
-     * @memberof Address
      */
     'District'?: string;
     /**
      * The state or region.
-     * @type {string}
-     * @memberof Address
      */
     'StateOrRegion'?: string;
     /**
      * The municipality.
-     * @type {string}
-     * @memberof Address
      */
     'Municipality'?: string;
     /**
      * The postal code.
-     * @type {string}
-     * @memberof Address
      */
     'PostalCode'?: string;
     /**
      * The country code. A two-character country code, in ISO 3166-1 alpha-2 format.
-     * @type {string}
-     * @memberof Address
      */
     'CountryCode'?: string;
     /**
      * The phone number of the buyer.  **Note**:  1. This attribute is only available for shipping address. 2. In some cases, the buyer phone number is suppressed:  a. Phone is suppressed for all `AFN` (fulfilled by Amazon) orders. b. Phone is suppressed for the shipped `MFN` (fulfilled by seller) order when the current date is past the Latest Delivery Date.
-     * @type {string}
-     * @memberof Address
      */
     'Phone'?: string;
-    /**
-     * 
-     * @type {AddressExtendedFields}
-     * @memberof Address
-     */
     'ExtendedFields'?: AddressExtendedFields;
     /**
      * The address type of the shipping address.
-     * @type {string}
-     * @memberof Address
      */
     'AddressType'?: AddressAddressTypeEnum;
 }

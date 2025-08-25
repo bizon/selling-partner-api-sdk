@@ -19,14 +19,10 @@ import type { DocumentDownload } from './document-download';
 
 /**
  * The `createMarketplaceItemLabels` response.
- * @export
- * @interface CreateMarketplaceItemLabelsResponse
  */
 export interface CreateMarketplaceItemLabelsResponse {
     /**
      * Resources to download the requested document.
-     * @type {Array<DocumentDownload>}
-     * @memberof CreateMarketplaceItemLabelsResponse
      */
     'documentDownloads': Array<DocumentDownload>;
 }

@@ -22,21 +22,9 @@ import type { ProductIdentifier } from './product-identifier';
 
 /**
  * The product details for the delivery offer.
- * @export
- * @interface GetDeliveryOffersProduct
  */
 export interface GetDeliveryOffersProduct {
-    /**
-     * 
-     * @type {ProductIdentifier}
-     * @memberof GetDeliveryOffersProduct
-     */
     'productIdentifier': ProductIdentifier;
-    /**
-     * 
-     * @type {Amount}
-     * @memberof GetDeliveryOffersProduct
-     */
     'amount'?: Amount;
 }
 

@@ -22,21 +22,12 @@ import type { Pagination } from './pagination';
 
 /**
  * The `listPackingGroupBoxes` response.
- * @export
- * @interface ListPackingGroupBoxesResponse
  */
 export interface ListPackingGroupBoxesResponse {
     /**
      * Provides the information about the list of boxes in the packing group.
-     * @type {Array<Box>}
-     * @memberof ListPackingGroupBoxesResponse
      */
     'boxes': Array<Box>;
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof ListPackingGroupBoxesResponse
-     */
     'pagination'?: Pagination;
 }
 

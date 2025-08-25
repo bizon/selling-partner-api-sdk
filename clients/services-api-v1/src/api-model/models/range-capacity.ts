@@ -22,20 +22,11 @@ import type { RangeSlot } from './range-slot';
 
 /**
  * Range capacity entity where each entry has a capacity type and corresponding slots.
- * @export
- * @interface RangeCapacity
  */
 export interface RangeCapacity {
-    /**
-     * 
-     * @type {CapacityType}
-     * @memberof RangeCapacity
-     */
     'capacityType'?: CapacityType;
     /**
      * Array of capacity slots in range slot format.
-     * @type {Array<RangeSlot>}
-     * @memberof RangeCapacity
      */
     'slots'?: Array<RangeSlot>;
 }

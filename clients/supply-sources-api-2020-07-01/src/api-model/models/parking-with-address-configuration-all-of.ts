@@ -17,17 +17,7 @@
 // @ts-ignore
 import type { Address } from './address';
 
-/**
- * 
- * @export
- * @interface ParkingWithAddressConfigurationAllOf
- */
 export interface ParkingWithAddressConfigurationAllOf {
-    /**
-     * 
-     * @type {Address}
-     * @memberof ParkingWithAddressConfigurationAllOf
-     */
     'address'?: Address;
 }
 

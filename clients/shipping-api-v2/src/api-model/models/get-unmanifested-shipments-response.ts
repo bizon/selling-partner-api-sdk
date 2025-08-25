@@ -19,14 +19,10 @@ import type { UnmanifestedCarrierInformation } from './unmanifested-carrier-info
 
 /**
  * The Response  for the GetUnmanifestedShipmentsResponse operation.
- * @export
- * @interface GetUnmanifestedShipmentsResponse
  */
 export interface GetUnmanifestedShipmentsResponse {
     /**
      * A list of UnmanifestedCarrierInformation
-     * @type {Array<UnmanifestedCarrierInformation>}
-     * @memberof GetUnmanifestedShipmentsResponse
      */
     'unmanifestedCarrierInformationList'?: Array<UnmanifestedCarrierInformation>;
 }

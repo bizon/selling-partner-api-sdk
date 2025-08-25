@@ -22,20 +22,11 @@ import type { Vehicle } from './vehicle';
 
 /**
  * Get paginated list of vehicle from Amazon\'s catalog
- * @export
- * @interface VehiclesResponse
  */
 export interface VehiclesResponse {
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof VehiclesResponse
-     */
     'pagination'?: Pagination;
     /**
      * List of vehicles from Amazon\'s catalog.
-     * @type {Array<Vehicle>}
-     * @memberof VehiclesResponse
      */
     'vehicles': Array<Vehicle>;
 }

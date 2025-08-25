@@ -19,21 +19,12 @@ import type { InventoryUnitOfMeasurement } from './inventory-unit-of-measurement
 
 /**
  * Quantity of inventory with an associated measurement unit context.
- * @export
- * @interface InventoryQuantity
  */
 export interface InventoryQuantity {
     /**
      * Quantity of the respective inventory.
-     * @type {number}
-     * @memberof InventoryQuantity
      */
     'quantity': number;
-    /**
-     * 
-     * @type {InventoryUnitOfMeasurement}
-     * @memberof InventoryQuantity
-     */
     'unitOfMeasurement': InventoryUnitOfMeasurement;
 }
 

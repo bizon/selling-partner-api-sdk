@@ -16,26 +16,18 @@
 
 /**
  * Details of quantity ordered.
- * @export
- * @interface ItemQuantity
  */
 export interface ItemQuantity {
     /**
      * Acknowledged quantity. This value should not be zero.
-     * @type {number}
-     * @memberof ItemQuantity
      */
     'amount'?: number;
     /**
      * Unit of measure for the acknowledged quantity.
-     * @type {string}
-     * @memberof ItemQuantity
      */
     'unitOfMeasure'?: ItemQuantityUnitOfMeasureEnum;
     /**
      * The case size, in the event that we ordered using cases.
-     * @type {number}
-     * @memberof ItemQuantity
      */
     'unitSize'?: number;
 }

@@ -19,33 +19,20 @@ import type { Currency } from './currency';
 
 /**
  * An event related to an Adhoc Disbursement.
- * @export
- * @interface AdhocDisbursementEvent
  */
 export interface AdhocDisbursementEvent {
     /**
      * Indicates the type of transaction.  Example: \"Disbursed to Amazon Gift Card balance\"
-     * @type {string}
-     * @memberof AdhocDisbursementEvent
      */
     'TransactionType'?: string;
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof AdhocDisbursementEvent
      */
     'PostedDate'?: string;
     /**
      * The identifier for the transaction.
-     * @type {string}
-     * @memberof AdhocDisbursementEvent
      */
     'TransactionId'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof AdhocDisbursementEvent
-     */
     'TransactionAmount'?: Currency;
 }
 

@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the createAmazonMotors operation.
- * @export
- * @interface CreateAmazonMotorsResponse
  */
 export interface CreateAmazonMotorsResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CreateAmazonMotorsResponse
      */
     'errors'?: Array<Error>;
 }

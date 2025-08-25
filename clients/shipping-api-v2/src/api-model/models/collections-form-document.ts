@@ -16,20 +16,14 @@
 
 /**
  * Collection Form Document Details
- * @export
- * @interface CollectionsFormDocument
  */
 export interface CollectionsFormDocument {
     /**
      * Base64 document Value of Collection.
-     * @type {string}
-     * @memberof CollectionsFormDocument
      */
     'base64EncodedContent'?: string;
     /**
      * Collection Document format is PDF.
-     * @type {string}
-     * @memberof CollectionsFormDocument
      */
     'documentFormat'?: string;
 }

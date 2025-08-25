@@ -43,7 +43,6 @@ import type { GetSubscriptionByIdResponse } from '../models';
 import type { GetSubscriptionResponse } from '../models';
 /**
  * NotificationsApi - axios parameter creator
- * @export
  */
 export const NotificationsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -333,7 +332,6 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
 
 /**
  * NotificationsApi - functional programming interface
- * @export
  */
 export const NotificationsApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = NotificationsApiAxiosParamCreator(configuration)
@@ -442,7 +440,6 @@ export const NotificationsApiFp = function(configuration?: Configuration) {
 
 /**
  * NotificationsApi - factory interface
- * @export
  */
 export const NotificationsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = NotificationsApiFp(configuration)
@@ -523,135 +520,90 @@ export const NotificationsApiFactory = function (configuration?: Configuration, 
 
 /**
  * Request parameters for createDestination operation in NotificationsApi.
- * @export
- * @interface NotificationsApiCreateDestinationRequest
  */
 export interface NotificationsApiCreateDestinationRequest {
-    /**
-     * 
-     * @type {CreateDestinationRequest}
-     * @memberof NotificationsApiCreateDestination
-     */
     readonly body: CreateDestinationRequest
 }
 
 /**
  * Request parameters for createSubscription operation in NotificationsApi.
- * @export
- * @interface NotificationsApiCreateSubscriptionRequest
  */
 export interface NotificationsApiCreateSubscriptionRequest {
     /**
      * The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
-     * @type {string}
-     * @memberof NotificationsApiCreateSubscription
      */
     readonly notificationType: string
 
-    /**
-     * 
-     * @type {CreateSubscriptionRequest}
-     * @memberof NotificationsApiCreateSubscription
-     */
     readonly body: CreateSubscriptionRequest
 }
 
 /**
  * Request parameters for deleteDestination operation in NotificationsApi.
- * @export
- * @interface NotificationsApiDeleteDestinationRequest
  */
 export interface NotificationsApiDeleteDestinationRequest {
     /**
      * The identifier for the destination that you want to delete.
-     * @type {string}
-     * @memberof NotificationsApiDeleteDestination
      */
     readonly destinationId: string
 }
 
 /**
  * Request parameters for deleteSubscriptionById operation in NotificationsApi.
- * @export
- * @interface NotificationsApiDeleteSubscriptionByIdRequest
  */
 export interface NotificationsApiDeleteSubscriptionByIdRequest {
     /**
      * The identifier for the subscription that you want to delete.
-     * @type {string}
-     * @memberof NotificationsApiDeleteSubscriptionById
      */
     readonly subscriptionId: string
 
     /**
      * The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
-     * @type {string}
-     * @memberof NotificationsApiDeleteSubscriptionById
      */
     readonly notificationType: string
 }
 
 /**
  * Request parameters for getDestination operation in NotificationsApi.
- * @export
- * @interface NotificationsApiGetDestinationRequest
  */
 export interface NotificationsApiGetDestinationRequest {
     /**
      * The identifier generated when you created the destination.
-     * @type {string}
-     * @memberof NotificationsApiGetDestination
      */
     readonly destinationId: string
 }
 
 /**
  * Request parameters for getSubscription operation in NotificationsApi.
- * @export
- * @interface NotificationsApiGetSubscriptionRequest
  */
 export interface NotificationsApiGetSubscriptionRequest {
     /**
      * The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
-     * @type {string}
-     * @memberof NotificationsApiGetSubscription
      */
     readonly notificationType: string
 
     /**
      * The version of the payload object to be used in the notification.
-     * @type {string}
-     * @memberof NotificationsApiGetSubscription
      */
     readonly payloadVersion?: string
 }
 
 /**
  * Request parameters for getSubscriptionById operation in NotificationsApi.
- * @export
- * @interface NotificationsApiGetSubscriptionByIdRequest
  */
 export interface NotificationsApiGetSubscriptionByIdRequest {
     /**
      * The identifier for the subscription that you want to get.
-     * @type {string}
-     * @memberof NotificationsApiGetSubscriptionById
      */
     readonly subscriptionId: string
 
     /**
      * The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
-     * @type {string}
-     * @memberof NotificationsApiGetSubscriptionById
      */
     readonly notificationType: string
 }
 
 /**
  * NotificationsApi - object-oriented interface
- * @export
- * @class NotificationsApi
- * @extends {BaseAPI}
  */
 export class NotificationsApi extends BaseAPI {
     /**
@@ -659,7 +611,6 @@ export class NotificationsApi extends BaseAPI {
      * @param {NotificationsApiCreateDestinationRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof NotificationsApi
      */
     public createDestination(requestParameters: NotificationsApiCreateDestinationRequest, options?: RawAxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).createDestination(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -670,7 +621,6 @@ export class NotificationsApi extends BaseAPI {
      * @param {NotificationsApiCreateSubscriptionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof NotificationsApi
      */
     public createSubscription(requestParameters: NotificationsApiCreateSubscriptionRequest, options?: RawAxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).createSubscription(requestParameters.notificationType, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -681,7 +631,6 @@ export class NotificationsApi extends BaseAPI {
      * @param {NotificationsApiDeleteDestinationRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof NotificationsApi
      */
     public deleteDestination(requestParameters: NotificationsApiDeleteDestinationRequest, options?: RawAxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).deleteDestination(requestParameters.destinationId, options).then((request) => request(this.axios, this.basePath));
@@ -692,7 +641,6 @@ export class NotificationsApi extends BaseAPI {
      * @param {NotificationsApiDeleteSubscriptionByIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof NotificationsApi
      */
     public deleteSubscriptionById(requestParameters: NotificationsApiDeleteSubscriptionByIdRequest, options?: RawAxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).deleteSubscriptionById(requestParameters.subscriptionId, requestParameters.notificationType, options).then((request) => request(this.axios, this.basePath));
@@ -703,7 +651,6 @@ export class NotificationsApi extends BaseAPI {
      * @param {NotificationsApiGetDestinationRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof NotificationsApi
      */
     public getDestination(requestParameters: NotificationsApiGetDestinationRequest, options?: RawAxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).getDestination(requestParameters.destinationId, options).then((request) => request(this.axios, this.basePath));
@@ -713,7 +660,6 @@ export class NotificationsApi extends BaseAPI {
      * Returns information about all destinations. The `getDestinations` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof NotificationsApi
      */
     public getDestinations(options?: RawAxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).getDestinations(options).then((request) => request(this.axios, this.basePath));
@@ -724,7 +670,6 @@ export class NotificationsApi extends BaseAPI {
      * @param {NotificationsApiGetSubscriptionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof NotificationsApi
      */
     public getSubscription(requestParameters: NotificationsApiGetSubscriptionRequest, options?: RawAxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).getSubscription(requestParameters.notificationType, requestParameters.payloadVersion, options).then((request) => request(this.axios, this.basePath));
@@ -735,7 +680,6 @@ export class NotificationsApi extends BaseAPI {
      * @param {NotificationsApiGetSubscriptionByIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof NotificationsApi
      */
     public getSubscriptionById(requestParameters: NotificationsApiGetSubscriptionByIdRequest, options?: RawAxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).getSubscriptionById(requestParameters.subscriptionId, requestParameters.notificationType, options).then((request) => request(this.axios, this.basePath));

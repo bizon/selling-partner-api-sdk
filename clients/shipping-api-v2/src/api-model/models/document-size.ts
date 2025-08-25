@@ -16,26 +16,18 @@
 
 /**
  * The size dimensions of the label.
- * @export
- * @interface DocumentSize
  */
 export interface DocumentSize {
     /**
      * The width of the document measured in the units specified.
-     * @type {number}
-     * @memberof DocumentSize
      */
     'width': number;
     /**
      * The length of the document measured in the units specified.
-     * @type {number}
-     * @memberof DocumentSize
      */
     'length': number;
     /**
      * The unit of measurement.
-     * @type {string}
-     * @memberof DocumentSize
      */
     'unit': DocumentSizeUnitEnum;
 }

@@ -19,27 +19,16 @@ import type { AssociationType } from './association-type';
 
 /**
  * An item that is associated with an order item. For example, a tire installation service that is purchased with tires.
- * @export
- * @interface AssociatedItem
  */
 export interface AssociatedItem {
     /**
      * The order item\'s order identifier, in 3-7-7 format.
-     * @type {string}
-     * @memberof AssociatedItem
      */
     'OrderId'?: string;
     /**
      * An Amazon-defined item identifier for the associated item.
-     * @type {string}
-     * @memberof AssociatedItem
      */
     'OrderItemId'?: string;
-    /**
-     * 
-     * @type {AssociationType}
-     * @memberof AssociatedItem
-     */
     'AssociationType'?: AssociationType;
 }
 

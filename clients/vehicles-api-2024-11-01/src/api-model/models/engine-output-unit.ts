@@ -16,8 +16,6 @@
 
 /**
  * Unit for measuring engine power.
- * @export
- * @enum {string}
  */
 
 export const EngineOutputUnit = {

@@ -19,15 +19,8 @@ import type { DeliveryMessage } from './delivery-message';
 
 /**
  * The policy for a delivery offering.
- * @export
- * @interface DeliveryPolicy
  */
 export interface DeliveryPolicy {
-    /**
-     * 
-     * @type {DeliveryMessage}
-     * @memberof DeliveryPolicy
-     */
     'message'?: DeliveryMessage;
 }
 

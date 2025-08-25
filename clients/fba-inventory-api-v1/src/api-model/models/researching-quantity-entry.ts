@@ -16,20 +16,14 @@
 
 /**
  * The misplaced or warehouse damaged inventory that is actively being confirmed at our fulfillment centers.
- * @export
- * @interface ResearchingQuantityEntry
  */
 export interface ResearchingQuantityEntry {
     /**
      * The duration of the research.
-     * @type {string}
-     * @memberof ResearchingQuantityEntry
      */
     'name': ResearchingQuantityEntryNameEnum;
     /**
      * The number of units.
-     * @type {number}
-     * @memberof ResearchingQuantityEntry
      */
     'quantity': number;
 }

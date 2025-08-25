@@ -32,7 +32,6 @@ import type { ParkingWithAddressConfigurationAllOf } from './parking-with-addres
 /**
  * @type ParkingWithAddressConfiguration
  * The parking configuration with the address.
- * @export
  */
 export type ParkingWithAddressConfiguration = ParkingConfiguration & ParkingWithAddressConfigurationAllOf;
 

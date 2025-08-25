@@ -16,20 +16,14 @@
 
 /**
  * The total value of all items in the container.
- * @export
- * @interface Currency
  */
 export interface Currency {
     /**
      * The amount of currency.
-     * @type {number}
-     * @memberof Currency
      */
     'value': number;
     /**
      * A 3-character currency code.
-     * @type {string}
-     * @memberof Currency
      */
     'unit': string;
 }

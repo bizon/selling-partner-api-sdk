@@ -19,20 +19,11 @@ import type { OrderList } from './order-list';
 
 /**
  * The response schema for the getPurchaseOrders operation.
- * @export
- * @interface GetPurchaseOrdersResponse
  */
 export interface GetPurchaseOrdersResponse {
-    /**
-     * 
-     * @type {OrderList}
-     * @memberof GetPurchaseOrdersResponse
-     */
     'payload'?: OrderList;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetPurchaseOrdersResponse
      */
     'errors'?: Array<Error>;
 }

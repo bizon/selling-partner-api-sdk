@@ -22,26 +22,12 @@ import type { GetMessagingActionsForOrderResponseLinks } from './get-messaging-a
 
 /**
  * The response schema for the `getMessagingActionsForOrder` operation.
- * @export
- * @interface GetMessagingActionsForOrderResponse
  */
 export interface GetMessagingActionsForOrderResponse {
-    /**
-     * 
-     * @type {GetMessagingActionsForOrderResponseLinks}
-     * @memberof GetMessagingActionsForOrderResponse
-     */
     '_links'?: GetMessagingActionsForOrderResponseLinks;
-    /**
-     * 
-     * @type {GetMessagingActionsForOrderResponseEmbedded}
-     * @memberof GetMessagingActionsForOrderResponse
-     */
     '_embedded'?: GetMessagingActionsForOrderResponseEmbedded;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetMessagingActionsForOrderResponse
      */
     'errors'?: Array<Error>;
 }

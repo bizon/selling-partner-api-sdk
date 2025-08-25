@@ -19,15 +19,8 @@ import type { Window } from './window';
 
 /**
  * Specifies the date that the seller expects their shipment will be shipped.
- * @export
- * @interface Dates
  */
 export interface Dates {
-    /**
-     * 
-     * @type {Window}
-     * @memberof Dates
-     */
     'readyToShipWindow'?: Window;
 }
 

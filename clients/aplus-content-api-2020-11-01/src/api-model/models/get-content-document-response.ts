@@ -25,7 +25,6 @@ import type { GetContentDocumentResponseAllOf } from './get-content-document-res
 
 /**
  * @type GetContentDocumentResponse
- * @export
  */
 export type GetContentDocumentResponse = AplusResponse & GetContentDocumentResponseAllOf;
 

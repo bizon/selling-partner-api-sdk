@@ -16,14 +16,10 @@
 
 /**
  * The `cancelInboundPlan` response.
- * @export
- * @interface CancelInboundPlanResponse
  */
 export interface CancelInboundPlanResponse {
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof CancelInboundPlanResponse
      */
     'operationId': string;
 }

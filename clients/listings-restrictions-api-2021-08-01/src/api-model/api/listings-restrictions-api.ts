@@ -25,7 +25,6 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 import type { RestrictionList } from '../models';
 /**
  * ListingsRestrictionsApi - axios parameter creator
- * @export
  */
 export const ListingsRestrictionsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -94,7 +93,6 @@ export const ListingsRestrictionsApiAxiosParamCreator = function (configuration?
 
 /**
  * ListingsRestrictionsApi - functional programming interface
- * @export
  */
 export const ListingsRestrictionsApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ListingsRestrictionsApiAxiosParamCreator(configuration)
@@ -120,7 +118,6 @@ export const ListingsRestrictionsApiFp = function(configuration?: Configuration)
 
 /**
  * ListingsRestrictionsApi - factory interface
- * @export
  */
 export const ListingsRestrictionsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = ListingsRestrictionsApiFp(configuration)
@@ -139,51 +136,36 @@ export const ListingsRestrictionsApiFactory = function (configuration?: Configur
 
 /**
  * Request parameters for getListingsRestrictions operation in ListingsRestrictionsApi.
- * @export
- * @interface ListingsRestrictionsApiGetListingsRestrictionsRequest
  */
 export interface ListingsRestrictionsApiGetListingsRestrictionsRequest {
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof ListingsRestrictionsApiGetListingsRestrictions
      */
     readonly asin: string
 
     /**
      * A selling partner identifier, such as a merchant account.
-     * @type {string}
-     * @memberof ListingsRestrictionsApiGetListingsRestrictions
      */
     readonly sellerId: string
 
     /**
      * A comma-delimited list of Amazon marketplace identifiers for the request.
-     * @type {Array<string>}
-     * @memberof ListingsRestrictionsApiGetListingsRestrictions
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * The condition used to filter restrictions.
-     * @type {'new_new' | 'new_open_box' | 'new_oem' | 'refurbished_refurbished' | 'used_like_new' | 'used_very_good' | 'used_good' | 'used_acceptable' | 'collectible_like_new' | 'collectible_very_good' | 'collectible_good' | 'collectible_acceptable' | 'club_club'}
-     * @memberof ListingsRestrictionsApiGetListingsRestrictions
      */
     readonly conditionType?: GetListingsRestrictionsConditionTypeEnum
 
     /**
      * A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale.
-     * @type {string}
-     * @memberof ListingsRestrictionsApiGetListingsRestrictions
      */
     readonly reasonLocale?: string
 }
 
 /**
  * ListingsRestrictionsApi - object-oriented interface
- * @export
- * @class ListingsRestrictionsApi
- * @extends {BaseAPI}
  */
 export class ListingsRestrictionsApi extends BaseAPI {
     /**
@@ -191,16 +173,12 @@ export class ListingsRestrictionsApi extends BaseAPI {
      * @param {ListingsRestrictionsApiGetListingsRestrictionsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ListingsRestrictionsApi
      */
     public getListingsRestrictions(requestParameters: ListingsRestrictionsApiGetListingsRestrictionsRequest, options?: RawAxiosRequestConfig) {
         return ListingsRestrictionsApiFp(this.configuration).getListingsRestrictions(requestParameters.asin, requestParameters.sellerId, requestParameters.marketplaceIds, requestParameters.conditionType, requestParameters.reasonLocale, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetListingsRestrictionsConditionTypeEnum = {
     NewNew: 'new_new',
     NewOpenBox: 'new_open_box',

@@ -16,8 +16,6 @@
 
 /**
  * The `SupplySource` status.
- * @export
- * @enum {string}
  */
 
 export const SupplySourceStatusReadOnly = {

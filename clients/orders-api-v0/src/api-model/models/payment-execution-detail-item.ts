@@ -19,20 +19,11 @@ import type { Money } from './money';
 
 /**
  * Information about a sub-payment method used to pay for a COD order.
- * @export
- * @interface PaymentExecutionDetailItem
  */
 export interface PaymentExecutionDetailItem {
-    /**
-     * 
-     * @type {Money}
-     * @memberof PaymentExecutionDetailItem
-     */
     'Payment': Money;
     /**
      * A sub-payment method for a COD order.  **Possible values**: * `COD`: Cash on delivery  * `GC`: Gift card  * `PointsAccount`: Amazon Points * `Invoice`: Invoice
-     * @type {string}
-     * @memberof PaymentExecutionDetailItem
      */
     'PaymentMethod': string;
 }

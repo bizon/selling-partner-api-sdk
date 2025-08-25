@@ -16,20 +16,14 @@
 
 /**
  * Information about the marketplace where the transaction occurred.
- * @export
- * @interface MarketplaceDetails
  */
 export interface MarketplaceDetails {
     /**
      * The identifier of the marketplace where the transaction occurred. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof MarketplaceDetails
      */
     'marketplaceId'?: string;
     /**
      * The name of the marketplace where the transaction occurred.   Example: \'Amazon.com\',\'Amazon.in\'
-     * @type {string}
-     * @memberof MarketplaceDetails
      */
     'marketplaceName'?: string;
 }

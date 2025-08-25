@@ -19,32 +19,22 @@ import type { ChargeRefundTransaction } from './charge-refund-transaction';
 
 /**
  * An event related to charge refund.
- * @export
- * @interface ChargeRefundEvent
  */
 export interface ChargeRefundEvent {
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof ChargeRefundEvent
      */
     'PostedDate'?: string;
     /**
      * The reason given for a charge refund.  Example: `SubscriptionFeeCorrection`
-     * @type {string}
-     * @memberof ChargeRefundEvent
      */
     'ReasonCode'?: string;
     /**
      * A description of the Reason Code.   Example: `SubscriptionFeeCorrection`
-     * @type {string}
-     * @memberof ChargeRefundEvent
      */
     'ReasonCodeDescription'?: string;
     /**
      * A list of `ChargeRefund` transactions
-     * @type {Array<ChargeRefundTransaction>}
-     * @memberof ChargeRefundEvent
      */
     'ChargeRefundTransactions'?: Array<ChargeRefundTransaction>;
 }

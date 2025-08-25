@@ -19,20 +19,11 @@ import type { GetFeatureSkuResult } from './get-feature-sku-result';
 
 /**
  * The response schema for the `getFeatureSKU` operation.
- * @export
- * @interface GetFeatureSkuResponse
  */
 export interface GetFeatureSkuResponse {
-    /**
-     * 
-     * @type {GetFeatureSkuResult}
-     * @memberof GetFeatureSkuResponse
-     */
     'payload'?: GetFeatureSkuResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetFeatureSkuResponse
      */
     'errors'?: Array<Error>;
 }

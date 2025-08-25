@@ -31,57 +31,24 @@ import type { TransferScheduleStatus } from './transfer-schedule-status';
 
 /**
  * Request body to initiate a scheduled transfer from a SW bank account to another customer defined bank account 
- * @export
- * @interface TransferScheduleRequest
  */
 export interface TransferScheduleRequest {
     /**
      * The unique identifier of the source Amazon SW bank account from where the money needs to be debited 
-     * @type {string}
-     * @memberof TransferScheduleRequest
      */
     'sourceAccountId': string;
     /**
      * Represents 3 letter currency code in ISO 4217 standard format of the source payment method country 
-     * @type {string}
-     * @memberof TransferScheduleRequest
      */
     'sourceCurrencyCode': string;
     /**
      * Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited 
-     * @type {string}
-     * @memberof TransferScheduleRequest
      */
     'destinationAccountId': string;
-    /**
-     * 
-     * @type {TransactionInstrumentDetails}
-     * @memberof TransferScheduleRequest
-     */
     'destinationTransactionInstrument': TransactionInstrumentDetails;
-    /**
-     * 
-     * @type {TransactionType}
-     * @memberof TransferScheduleRequest
-     */
     'transactionType': TransactionType;
-    /**
-     * 
-     * @type {TransferScheduleInformation}
-     * @memberof TransferScheduleRequest
-     */
     'transferScheduleInformation': TransferScheduleInformation;
-    /**
-     * 
-     * @type {PaymentPreference}
-     * @memberof TransferScheduleRequest
-     */
     'paymentPreference': PaymentPreference;
-    /**
-     * 
-     * @type {TransferScheduleStatus}
-     * @memberof TransferScheduleRequest
-     */
     'transferScheduleStatus'?: TransferScheduleStatus;
 }
 

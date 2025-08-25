@@ -22,33 +22,17 @@ import type { DeliveryPreferences } from './delivery-preferences';
 
 /**
  * The shipping address for the order.
- * @export
- * @interface OrderAddress
  */
 export interface OrderAddress {
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
-     * @type {string}
-     * @memberof OrderAddress
      */
     'AmazonOrderId': string;
     /**
      * The company name of the contact buyer. For IBA orders, the buyer company must be Amazon entities.
-     * @type {string}
-     * @memberof OrderAddress
      */
     'BuyerCompanyName'?: string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof OrderAddress
-     */
     'ShippingAddress'?: Address;
-    /**
-     * 
-     * @type {DeliveryPreferences}
-     * @memberof OrderAddress
-     */
     'DeliveryPreferences'?: DeliveryPreferences;
 }
 

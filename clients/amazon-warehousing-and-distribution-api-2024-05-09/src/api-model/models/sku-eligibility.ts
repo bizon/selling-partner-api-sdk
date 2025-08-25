@@ -25,27 +25,13 @@ import type { SkuIneligibilityReason } from './sku-ineligibility-reason';
 
 /**
  * Represents eligibility of one SKU.
- * @export
- * @interface SkuEligibility
  */
 export interface SkuEligibility {
     /**
      * If not eligible, these are list of error codes and descriptions.
-     * @type {Array<SkuIneligibilityReason>}
-     * @memberof SkuEligibility
      */
     'ineligibilityReasons'?: Array<SkuIneligibilityReason>;
-    /**
-     * 
-     * @type {DistributionPackageQuantity}
-     * @memberof SkuEligibility
-     */
     'packageQuantity': DistributionPackageQuantity;
-    /**
-     * 
-     * @type {InboundEligibilityStatus}
-     * @memberof SkuEligibility
-     */
     'status': InboundEligibilityStatus;
 }
 

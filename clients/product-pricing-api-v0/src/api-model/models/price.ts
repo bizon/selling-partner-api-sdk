@@ -19,33 +19,20 @@ import type { Product } from './product';
 
 /**
  * Schema for price info in `getPricing` response
- * @export
- * @interface Price
  */
 export interface Price {
     /**
      * The status of the operation.
-     * @type {string}
-     * @memberof Price
      */
     'status': string;
     /**
      * The seller stock keeping unit (SKU) of the item.
-     * @type {string}
-     * @memberof Price
      */
     'SellerSKU'?: string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof Price
      */
     'ASIN'?: string;
-    /**
-     * 
-     * @type {Product}
-     * @memberof Price
-     */
     'Product'?: Product;
 }
 

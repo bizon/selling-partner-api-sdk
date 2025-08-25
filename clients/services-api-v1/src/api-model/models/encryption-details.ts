@@ -16,26 +16,18 @@
 
 /**
  * Encryption details for required client-side encryption and decryption of document contents.
- * @export
- * @interface EncryptionDetails
  */
 export interface EncryptionDetails {
     /**
      * The encryption standard required to encrypt or decrypt the document contents.
-     * @type {string}
-     * @memberof EncryptionDetails
      */
     'standard': EncryptionDetailsStandardEnum;
     /**
      * The vector to encrypt or decrypt the document contents using Cipher Block Chaining (CBC).
-     * @type {string}
-     * @memberof EncryptionDetails
      */
     'initializationVector': string;
     /**
      * The encryption key used to encrypt or decrypt the document contents.
-     * @type {string}
-     * @memberof EncryptionDetails
      */
     'key': string;
 }

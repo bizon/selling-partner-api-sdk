@@ -19,38 +19,23 @@ import type { BuyerTaxInfo } from './buyer-tax-info';
 
 /**
  * Buyer information.
- * @export
- * @interface BuyerInfo
  */
 export interface BuyerInfo {
     /**
      * The anonymized email address of the buyer.
-     * @type {string}
-     * @memberof BuyerInfo
      */
     'BuyerEmail'?: string;
     /**
      * The buyer name or the recipient name.
-     * @type {string}
-     * @memberof BuyerInfo
      */
     'BuyerName'?: string;
     /**
      * The county of the buyer.  **Note**: This attribute is only available in the Brazil marketplace.
-     * @type {string}
-     * @memberof BuyerInfo
      */
     'BuyerCounty'?: string;
-    /**
-     * 
-     * @type {BuyerTaxInfo}
-     * @memberof BuyerInfo
-     */
     'BuyerTaxInfo'?: BuyerTaxInfo;
     /**
      * The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout.
-     * @type {string}
-     * @memberof BuyerInfo
      */
     'PurchaseOrderNumber'?: string;
 }

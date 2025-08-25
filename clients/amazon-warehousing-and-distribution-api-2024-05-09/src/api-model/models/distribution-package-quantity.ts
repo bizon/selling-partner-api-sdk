@@ -19,21 +19,12 @@ import type { DistributionPackage } from './distribution-package';
 
 /**
  * Represents a distribution package with its respective quantity.
- * @export
- * @interface DistributionPackageQuantity
  */
 export interface DistributionPackageQuantity {
     /**
      * Number of cases or pallets with the same package configuration.
-     * @type {number}
-     * @memberof DistributionPackageQuantity
      */
     'count': number;
-    /**
-     * 
-     * @type {DistributionPackage}
-     * @memberof DistributionPackageQuantity
-     */
     'distributionPackage': DistributionPackage;
 }
 

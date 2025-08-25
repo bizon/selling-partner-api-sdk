@@ -19,33 +19,20 @@ import type { HandoverMethod } from './handover-method';
 
 /**
  * A time window to hand over an Easy Ship package to Amazon Logistics.
- * @export
- * @interface TimeSlot
  */
 export interface TimeSlot {
     /**
      * A string of up to 255 characters.
-     * @type {string}
-     * @memberof TimeSlot
      */
     'slotId': string;
     /**
      * A datetime value in ISO 8601 format.
-     * @type {string}
-     * @memberof TimeSlot
      */
     'startTime'?: string;
     /**
      * A datetime value in ISO 8601 format.
-     * @type {string}
-     * @memberof TimeSlot
      */
     'endTime'?: string;
-    /**
-     * 
-     * @type {HandoverMethod}
-     * @memberof TimeSlot
-     */
     'handoverMethod'?: HandoverMethod;
 }
 

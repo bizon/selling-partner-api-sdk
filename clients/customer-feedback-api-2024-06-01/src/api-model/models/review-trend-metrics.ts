@@ -16,14 +16,10 @@
 
 /**
  * The item review trend metrics.
- * @export
- * @interface ReviewTrendMetrics
  */
 export interface ReviewTrendMetrics {
     /**
      * The percentage of reviews that mention the topic.
-     * @type {number}
-     * @memberof ReviewTrendMetrics
      */
     'occurrencePercentage': number;
 }

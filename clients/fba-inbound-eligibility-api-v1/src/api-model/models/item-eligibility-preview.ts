@@ -16,38 +16,26 @@
 
 /**
  * The response object which contains the ASIN, marketplaceId if required, eligibility program, the eligibility status (boolean), and a list of ineligibility reason codes.
- * @export
- * @interface ItemEligibilityPreview
  */
 export interface ItemEligibilityPreview {
     /**
      * The ASIN for which eligibility was determined.
-     * @type {string}
-     * @memberof ItemEligibilityPreview
      */
     'asin': string;
     /**
      * The marketplace for which eligibility was determined.
-     * @type {string}
-     * @memberof ItemEligibilityPreview
      */
     'marketplaceId'?: string;
     /**
      * The program for which eligibility was determined.
-     * @type {string}
-     * @memberof ItemEligibilityPreview
      */
     'program': ItemEligibilityPreviewProgramEnum;
     /**
      * Indicates if the item is eligible for the program.
-     * @type {boolean}
-     * @memberof ItemEligibilityPreview
      */
     'isEligibleForProgram': boolean;
     /**
      * Potential Ineligibility Reason Codes.
-     * @type {Array<string>}
-     * @memberof ItemEligibilityPreview
      */
     'ineligibilityReasonList'?: Array<ItemEligibilityPreviewIneligibilityReasonListEnum>;
 }

@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the cancelShipment operation.
- * @export
- * @interface CancelShipmentResponse
  */
 export interface CancelShipmentResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CancelShipmentResponse
      */
     'errors'?: Array<Error>;
 }

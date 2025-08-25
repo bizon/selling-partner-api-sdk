@@ -39,7 +39,6 @@ import type { FeedDocument } from '../models';
 import type { GetFeedsResponse } from '../models';
 /**
  * FeedsApi - axios parameter creator
- * @export
  */
 export const FeedsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -285,7 +284,6 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
 
 /**
  * FeedsApi - functional programming interface
- * @export
  */
 export const FeedsApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = FeedsApiAxiosParamCreator(configuration)
@@ -373,7 +371,6 @@ export const FeedsApiFp = function(configuration?: Configuration) {
 
 /**
  * FeedsApi - factory interface
- * @export
  */
 export const FeedsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = FeedsApiFp(configuration)
@@ -437,135 +434,96 @@ export const FeedsApiFactory = function (configuration?: Configuration, basePath
 
 /**
  * Request parameters for cancelFeed operation in FeedsApi.
- * @export
- * @interface FeedsApiCancelFeedRequest
  */
 export interface FeedsApiCancelFeedRequest {
     /**
      * The identifier for the feed. This identifier is unique only in combination with a seller ID.
-     * @type {string}
-     * @memberof FeedsApiCancelFeed
      */
     readonly feedId: string
 }
 
 /**
  * Request parameters for createFeed operation in FeedsApi.
- * @export
- * @interface FeedsApiCreateFeedRequest
  */
 export interface FeedsApiCreateFeedRequest {
     /**
      * Information required to create the feed.
-     * @type {CreateFeedSpecification}
-     * @memberof FeedsApiCreateFeed
      */
     readonly body: CreateFeedSpecification
 }
 
 /**
  * Request parameters for createFeedDocument operation in FeedsApi.
- * @export
- * @interface FeedsApiCreateFeedDocumentRequest
  */
 export interface FeedsApiCreateFeedDocumentRequest {
     /**
      * Specifies the content type for the createFeedDocument operation.
-     * @type {CreateFeedDocumentSpecification}
-     * @memberof FeedsApiCreateFeedDocument
      */
     readonly body: CreateFeedDocumentSpecification
 }
 
 /**
  * Request parameters for getFeed operation in FeedsApi.
- * @export
- * @interface FeedsApiGetFeedRequest
  */
 export interface FeedsApiGetFeedRequest {
     /**
      * The identifier for the feed. This identifier is unique only in combination with a seller ID.
-     * @type {string}
-     * @memberof FeedsApiGetFeed
      */
     readonly feedId: string
 }
 
 /**
  * Request parameters for getFeedDocument operation in FeedsApi.
- * @export
- * @interface FeedsApiGetFeedDocumentRequest
  */
 export interface FeedsApiGetFeedDocumentRequest {
     /**
      * The identifier of the feed document.
-     * @type {string}
-     * @memberof FeedsApiGetFeedDocument
      */
     readonly feedDocumentId: string
 }
 
 /**
  * Request parameters for getFeeds operation in FeedsApi.
- * @export
- * @interface FeedsApiGetFeedsRequest
  */
 export interface FeedsApiGetFeedsRequest {
     /**
      * A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required.
-     * @type {Array<string>}
-     * @memberof FeedsApiGetFeeds
      */
     readonly feedTypes?: Array<string>
 
     /**
      * A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify.
-     * @type {Array<string>}
-     * @memberof FeedsApiGetFeeds
      */
     readonly marketplaceIds?: Array<string>
 
     /**
      * The maximum number of feeds to return in a single call.
-     * @type {number}
-     * @memberof FeedsApiGetFeeds
      */
     readonly pageSize?: number
 
     /**
      * A list of processing statuses used to filter feeds.
-     * @type {Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>}
-     * @memberof FeedsApiGetFeeds
      */
     readonly processingStatuses?: Array<GetFeedsProcessingStatusesEnum>
 
     /**
      * The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days.
-     * @type {string}
-     * @memberof FeedsApiGetFeeds
      */
     readonly createdSince?: string
 
     /**
      * The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now.
-     * @type {string}
-     * @memberof FeedsApiGetFeeds
      */
     readonly createdUntil?: string
 
     /**
      * A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.
-     * @type {string}
-     * @memberof FeedsApiGetFeeds
      */
     readonly nextToken?: string
 }
 
 /**
  * FeedsApi - object-oriented interface
- * @export
- * @class FeedsApi
- * @extends {BaseAPI}
  */
 export class FeedsApi extends BaseAPI {
     /**
@@ -573,7 +531,6 @@ export class FeedsApi extends BaseAPI {
      * @param {FeedsApiCancelFeedRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FeedsApi
      */
     public cancelFeed(requestParameters: FeedsApiCancelFeedRequest, options?: RawAxiosRequestConfig) {
         return FeedsApiFp(this.configuration).cancelFeed(requestParameters.feedId, options).then((request) => request(this.axios, this.basePath));
@@ -584,7 +541,6 @@ export class FeedsApi extends BaseAPI {
      * @param {FeedsApiCreateFeedRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FeedsApi
      */
     public createFeed(requestParameters: FeedsApiCreateFeedRequest, options?: RawAxiosRequestConfig) {
         return FeedsApiFp(this.configuration).createFeed(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -595,7 +551,6 @@ export class FeedsApi extends BaseAPI {
      * @param {FeedsApiCreateFeedDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FeedsApi
      */
     public createFeedDocument(requestParameters: FeedsApiCreateFeedDocumentRequest, options?: RawAxiosRequestConfig) {
         return FeedsApiFp(this.configuration).createFeedDocument(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -606,7 +561,6 @@ export class FeedsApi extends BaseAPI {
      * @param {FeedsApiGetFeedRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FeedsApi
      */
     public getFeed(requestParameters: FeedsApiGetFeedRequest, options?: RawAxiosRequestConfig) {
         return FeedsApiFp(this.configuration).getFeed(requestParameters.feedId, options).then((request) => request(this.axios, this.basePath));
@@ -617,7 +571,6 @@ export class FeedsApi extends BaseAPI {
      * @param {FeedsApiGetFeedDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FeedsApi
      */
     public getFeedDocument(requestParameters: FeedsApiGetFeedDocumentRequest, options?: RawAxiosRequestConfig) {
         return FeedsApiFp(this.configuration).getFeedDocument(requestParameters.feedDocumentId, options).then((request) => request(this.axios, this.basePath));
@@ -628,16 +581,12 @@ export class FeedsApi extends BaseAPI {
      * @param {FeedsApiGetFeedsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FeedsApi
      */
     public getFeeds(requestParameters: FeedsApiGetFeedsRequest = {}, options?: RawAxiosRequestConfig) {
         return FeedsApiFp(this.configuration).getFeeds(requestParameters.feedTypes, requestParameters.marketplaceIds, requestParameters.pageSize, requestParameters.processingStatuses, requestParameters.createdSince, requestParameters.createdUntil, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetFeedsProcessingStatusesEnum = {
     Cancelled: 'CANCELLED',
     Done: 'DONE',

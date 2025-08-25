@@ -22,21 +22,9 @@ import type { SortOrder } from './sort-order';
 
 /**
  * Use these parameters to sort the response.
- * @export
- * @interface ListOfferMetricsRequestSort
  */
 export interface ListOfferMetricsRequestSort {
-    /**
-     * 
-     * @type {SortOrder}
-     * @memberof ListOfferMetricsRequestSort
-     */
     'order': SortOrder;
-    /**
-     * 
-     * @type {ListOfferMetricsSortKey}
-     * @memberof ListOfferMetricsRequestSort
-     */
     'key': ListOfferMetricsSortKey;
 }
 

@@ -16,26 +16,18 @@
 
 /**
  * The request schema for the submitInvoice operation.
- * @export
- * @interface SubmitInvoiceRequest
  */
 export interface SubmitInvoiceRequest {
     /**
      * Shipment invoice document content.
-     * @type {string}
-     * @memberof SubmitInvoiceRequest
      */
     'InvoiceContent': string;
     /**
      * An Amazon marketplace identifier.
-     * @type {string}
-     * @memberof SubmitInvoiceRequest
      */
     'MarketplaceId'?: string;
     /**
      * MD5 sum for validating the invoice data. For more information about calculating this value, see [Working with Content-MD5 Checksums](https://docs.developer.amazonservices.com/en_US/dev_guide/DG_MD5.html).
-     * @type {string}
-     * @memberof SubmitInvoiceRequest
      */
     'ContentMD5Value': string;
 }

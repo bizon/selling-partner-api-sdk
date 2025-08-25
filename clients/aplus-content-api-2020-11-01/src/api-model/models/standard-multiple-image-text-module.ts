@@ -19,15 +19,8 @@ import type { StandardImageTextCaptionBlock } from './standard-image-text-captio
 
 /**
  * Standard images with text, presented one at a time. The user clicks on thumbnails to view each block.
- * @export
- * @interface StandardMultipleImageTextModule
  */
 export interface StandardMultipleImageTextModule {
-    /**
-     * 
-     * @type {Array<StandardImageTextCaptionBlock>}
-     * @memberof StandardMultipleImageTextModule
-     */
     'blocks'?: Array<StandardImageTextCaptionBlock>;
 }
 

@@ -19,14 +19,10 @@ import type { ItemOffersRequest } from './item-offers-request';
 
 /**
  * The request associated with the `getItemOffersBatch` API call.
- * @export
- * @interface GetItemOffersBatchRequest
  */
 export interface GetItemOffersBatchRequest {
     /**
      * A list of `getListingOffers` batched requests to run.
-     * @type {Array<ItemOffersRequest>}
-     * @memberof GetItemOffersBatchRequest
      */
     'requests'?: Array<ItemOffersRequest>;
 }

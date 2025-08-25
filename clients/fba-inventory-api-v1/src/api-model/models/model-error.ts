@@ -16,26 +16,18 @@
 
 /**
  * An error response returned when the request is unsuccessful.
- * @export
- * @interface ModelError
  */
 export interface ModelError {
     /**
      * An error code that identifies the type of error that occurred.
-     * @type {string}
-     * @memberof ModelError
      */
     'code': string;
     /**
      * A message that describes the error condition in a human-readable form.
-     * @type {string}
-     * @memberof ModelError
      */
     'message'?: string;
     /**
      * Additional information that can help the caller understand or fix the issue.
-     * @type {string}
-     * @memberof ModelError
      */
     'details'?: string;
 }

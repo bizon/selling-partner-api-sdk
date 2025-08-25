@@ -16,20 +16,14 @@
 
 /**
  * The monetary value in the currency indicated, in ISO 4217 standard format.
- * @export
- * @interface Currency
  */
 export interface Currency {
     /**
      * The monetary value.
-     * @type {number}
-     * @memberof Currency
      */
     'value': number;
     /**
      * The ISO 4217 format 3-character currency code.
-     * @type {string}
-     * @memberof Currency
      */
     'unit': string;
 }

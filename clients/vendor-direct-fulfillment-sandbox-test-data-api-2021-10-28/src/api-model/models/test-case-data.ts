@@ -19,14 +19,10 @@ import type { Scenario } from './scenario';
 
 /**
  * The set of test case data returned in response to the test data request.
- * @export
- * @interface TestCaseData
  */
 export interface TestCaseData {
     /**
      * Set of use cases that describes the possible test scenarios.
-     * @type {Array<Scenario>}
-     * @memberof TestCaseData
      */
     'scenarios'?: Array<Scenario>;
 }

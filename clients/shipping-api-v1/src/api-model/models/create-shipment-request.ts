@@ -22,32 +22,16 @@ import type { Container } from './container';
 
 /**
  * The request schema for the createShipment operation.
- * @export
- * @interface CreateShipmentRequest
  */
 export interface CreateShipmentRequest {
     /**
      * Client reference id.
-     * @type {string}
-     * @memberof CreateShipmentRequest
      */
     'clientReferenceId': string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof CreateShipmentRequest
-     */
     'shipTo': Address;
-    /**
-     * 
-     * @type {Address}
-     * @memberof CreateShipmentRequest
-     */
     'shipFrom': Address;
     /**
      * A list of container.
-     * @type {Array<Container>}
-     * @memberof CreateShipmentRequest
      */
     'containers': Array<Container>;
 }

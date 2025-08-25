@@ -19,20 +19,11 @@ import type { GetFeatureInventoryResult } from './get-feature-inventory-result';
 
 /**
  * The breakdown of eligibility inventory by feature.
- * @export
- * @interface GetFeatureInventoryResponse
  */
 export interface GetFeatureInventoryResponse {
-    /**
-     * 
-     * @type {GetFeatureInventoryResult}
-     * @memberof GetFeatureInventoryResponse
-     */
     'payload'?: GetFeatureInventoryResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetFeatureInventoryResponse
      */
     'errors'?: Array<Error>;
 }

@@ -16,20 +16,14 @@
 
 /**
  * The item review subtopic metrics.
- * @export
- * @interface ItemReviewSubtopicMetrics
  */
 export interface ItemReviewSubtopicMetrics {
     /**
      * The number of times that reviews mention the subtopic.
-     * @type {number}
-     * @memberof ItemReviewSubtopicMetrics
      */
     'numberOfMentions': number;
     /**
      * The percentage of reviews that mention the subtopic.
-     * @type {number}
-     * @memberof ItemReviewSubtopicMetrics
      */
     'occurrencePercentage': number;
 }

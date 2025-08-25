@@ -16,8 +16,6 @@
 
 /**
  * Represents different types of fees that can be applied on a transaction.
- * @export
- * @enum {string}
  */
 
 export const FeeType = {

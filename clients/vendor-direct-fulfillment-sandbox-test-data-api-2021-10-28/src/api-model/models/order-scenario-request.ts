@@ -19,21 +19,9 @@ import type { PartyIdentification } from './party-identification';
 
 /**
  * The party identifiers required to generate the test data.
- * @export
- * @interface OrderScenarioRequest
  */
 export interface OrderScenarioRequest {
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof OrderScenarioRequest
-     */
     'sellingParty': PartyIdentification;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof OrderScenarioRequest
-     */
     'shipFromParty': PartyIdentification;
 }
 

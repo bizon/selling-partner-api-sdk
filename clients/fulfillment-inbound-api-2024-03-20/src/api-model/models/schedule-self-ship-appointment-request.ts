@@ -19,15 +19,8 @@ import type { ReasonComment } from './reason-comment';
 
 /**
  * The `scheduleSelfShipAppointment` request.
- * @export
- * @interface ScheduleSelfShipAppointmentRequest
  */
 export interface ScheduleSelfShipAppointmentRequest {
-    /**
-     * 
-     * @type {ReasonComment}
-     * @memberof ScheduleSelfShipAppointmentRequest
-     */
     'reasonComment'?: ReasonComment;
 }
 

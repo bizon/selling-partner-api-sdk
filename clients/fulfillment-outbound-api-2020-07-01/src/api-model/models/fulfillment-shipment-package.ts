@@ -22,45 +22,25 @@ import type { LockerDetails } from './locker-details';
 
 /**
  * Package information for a shipment in a fulfillment order.
- * @export
- * @interface FulfillmentShipmentPackage
  */
 export interface FulfillmentShipmentPackage {
     /**
      * Identifies a package in a shipment.
-     * @type {number}
-     * @memberof FulfillmentShipmentPackage
      */
     'packageNumber': number;
     /**
      * Identifies the carrier who will deliver the shipment to the recipient.
-     * @type {string}
-     * @memberof FulfillmentShipmentPackage
      */
     'carrierCode': string;
     /**
      * The tracking number, if provided, can be used to obtain tracking and delivery information.
-     * @type {string}
-     * @memberof FulfillmentShipmentPackage
      */
     'trackingNumber'?: string;
     /**
      * Date timestamp
-     * @type {string}
-     * @memberof FulfillmentShipmentPackage
      */
     'estimatedArrivalDate'?: string;
-    /**
-     * 
-     * @type {LockerDetails}
-     * @memberof FulfillmentShipmentPackage
-     */
     'lockerDetails'?: LockerDetails;
-    /**
-     * 
-     * @type {DeliveryInformation}
-     * @memberof FulfillmentShipmentPackage
-     */
     'deliveryInformation'?: DeliveryInformation;
 }
 

@@ -22,39 +22,21 @@ import type { Weight } from './weight';
 
 /**
  * Shipment measurement details.
- * @export
- * @interface TransportShipmentMeasurements
  */
 export interface TransportShipmentMeasurements {
     /**
      * Total number of cartons present in the shipment. Provide the cartonCount only for non-palletized shipments.
-     * @type {number}
-     * @memberof TransportShipmentMeasurements
      */
     'totalCartonCount'?: number;
     /**
      * Total number of Stackable Pallets present in the shipment.
-     * @type {number}
-     * @memberof TransportShipmentMeasurements
      */
     'totalPalletStackable'?: number;
     /**
      * Total number of Non Stackable Pallets present in the shipment.
-     * @type {number}
-     * @memberof TransportShipmentMeasurements
      */
     'totalPalletNonStackable'?: number;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof TransportShipmentMeasurements
-     */
     'shipmentWeight'?: Weight;
-    /**
-     * 
-     * @type {Volume}
-     * @memberof TransportShipmentMeasurements
-     */
     'shipmentVolume'?: Volume;
 }
 

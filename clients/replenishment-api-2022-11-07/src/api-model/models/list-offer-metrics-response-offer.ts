@@ -19,110 +19,71 @@ import type { TimeInterval } from './time-interval';
 
 /**
  * An object which contains offer metrics.
- * @export
- * @interface ListOfferMetricsResponseOffer
  */
 export interface ListOfferMetricsResponseOffer {
     /**
      * The Amazon Standard Identification Number (ASIN).
-     * @type {string}
-     * @memberof ListOfferMetricsResponseOffer
      */
     'asin'?: string;
     /**
      * The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to PERFORMANCE timePeriodType.
-     * @type {number}
-     * @memberof ListOfferMetricsResponseOffer
      */
     'notDeliveredDueToOOS'?: number;
     /**
      * The revenue generated from subscriptions over a period of time. Applicable to PERFORMANCE timePeriodType.
-     * @type {number}
-     * @memberof ListOfferMetricsResponseOffer
      */
     'totalSubscriptionsRevenue'?: number;
     /**
      * The number of units shipped to the subscribers over a period of time. Applicable to PERFORMANCE timePeriodType.
-     * @type {number}
-     * @memberof ListOfferMetricsResponseOffer
      */
     'shippedSubscriptionUnits'?: number;
     /**
      * The number of active subscriptions present at the end of the period. Applicable to PERFORMANCE timePeriodType.
-     * @type {number}
-     * @memberof ListOfferMetricsResponseOffer
      */
     'activeSubscriptions'?: number;
     /**
      * The percentage of total program revenue out of total product revenue. Applicable to PERFORMANCE timePeriodType.
-     * @type {number}
-     * @memberof ListOfferMetricsResponseOffer
      */
     'revenuePenetration'?: number;
     /**
      * The revenue that would have been generated had there not been out of stock. Applicable to PERFORMANCE timePeriodType.
-     * @type {number}
-     * @memberof ListOfferMetricsResponseOffer
      */
     'lostRevenueDueToOOS'?: number;
     /**
      * The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to PERFORMANCE timePeriodType.
-     * @type {number}
-     * @memberof ListOfferMetricsResponseOffer
      */
     'couponsRevenuePenetration'?: number;
     /**
      * The percentage of new subscriptions acquired through coupons. Applicable to PERFORMANCE timePeriodType.
-     * @type {number}
-     * @memberof ListOfferMetricsResponseOffer
      */
     'shareOfCouponSubscriptions'?: number;
     /**
      * The forecasted total subscription revenue for the next 30 days. Applicable to FORECAST timePeriodType.
-     * @type {number}
-     * @memberof ListOfferMetricsResponseOffer
      */
     'next30DayTotalSubscriptionsRevenue'?: number;
     /**
      * The forecasted total subscription revenue for the next 60 days. Applicable to FORECAST timePeriodType.
-     * @type {number}
-     * @memberof ListOfferMetricsResponseOffer
      */
     'next60DayTotalSubscriptionsRevenue'?: number;
     /**
      * The forecasted total subscription revenue for the next 90 days. Applicable to FORECAST timePeriodType.
-     * @type {number}
-     * @memberof ListOfferMetricsResponseOffer
      */
     'next90DayTotalSubscriptionsRevenue'?: number;
     /**
      * The forecasted shipped subscription units for the next 30 days. Applicable to FORECAST timePeriodType.
-     * @type {number}
-     * @memberof ListOfferMetricsResponseOffer
      */
     'next30DayShippedSubscriptionUnits'?: number;
     /**
      * The forecasted shipped subscription units for the next 60 days. Applicable to FORECAST timePeriodType.
-     * @type {number}
-     * @memberof ListOfferMetricsResponseOffer
      */
     'next60DayShippedSubscriptionUnits'?: number;
     /**
      * The forecasted shipped subscription units for the next 90 days. Applicable to FORECAST timePeriodType.
-     * @type {number}
-     * @memberof ListOfferMetricsResponseOffer
      */
     'next90DayShippedSubscriptionUnits'?: number;
-    /**
-     * 
-     * @type {TimeInterval}
-     * @memberof ListOfferMetricsResponseOffer
-     */
     'timeInterval'?: TimeInterval;
     /**
      * The currency code in ISO 4217 format.
-     * @type {string}
-     * @memberof ListOfferMetricsResponseOffer
      */
     'currencyCode'?: string;
 }

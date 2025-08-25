@@ -16,20 +16,14 @@
 
 /**
  * Information about whether or not a buyer requested cancellation.
- * @export
- * @interface BuyerRequestedCancel
  */
 export interface BuyerRequestedCancel {
     /**
      * Indicate whether the buyer has requested cancellation.  **Possible Values**: `true`, `false`.
-     * @type {string}
-     * @memberof BuyerRequestedCancel
      */
     'IsBuyerRequestedCancel'?: string;
     /**
      * The reason that the buyer requested cancellation.
-     * @type {string}
-     * @memberof BuyerRequestedCancel
      */
     'BuyerCancelReason'?: string;
 }

@@ -25,7 +25,6 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 import type { GetItemEligibilityPreviewResponse } from '../models';
 /**
  * FbaInboundEligibilityApi - axios parameter creator
- * @export
  */
 export const FbaInboundEligibilityApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -82,7 +81,6 @@ export const FbaInboundEligibilityApiAxiosParamCreator = function (configuration
 
 /**
  * FbaInboundEligibilityApi - functional programming interface
- * @export
  */
 export const FbaInboundEligibilityApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = FbaInboundEligibilityApiAxiosParamCreator(configuration)
@@ -106,7 +104,6 @@ export const FbaInboundEligibilityApiFp = function(configuration?: Configuration
 
 /**
  * FbaInboundEligibilityApi - factory interface
- * @export
  */
 export const FbaInboundEligibilityApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = FbaInboundEligibilityApiFp(configuration)
@@ -125,37 +122,26 @@ export const FbaInboundEligibilityApiFactory = function (configuration?: Configu
 
 /**
  * Request parameters for getItemEligibilityPreview operation in FbaInboundEligibilityApi.
- * @export
- * @interface FbaInboundEligibilityApiGetItemEligibilityPreviewRequest
  */
 export interface FbaInboundEligibilityApiGetItemEligibilityPreviewRequest {
     /**
      * The ASIN of the item for which you want an eligibility preview.
-     * @type {string}
-     * @memberof FbaInboundEligibilityApiGetItemEligibilityPreview
      */
     readonly asin: string
 
     /**
      * The program that you want to check eligibility against.
-     * @type {'INBOUND' | 'COMMINGLING'}
-     * @memberof FbaInboundEligibilityApiGetItemEligibilityPreview
      */
     readonly program: GetItemEligibilityPreviewProgramEnum
 
     /**
      * The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND.
-     * @type {Array<string>}
-     * @memberof FbaInboundEligibilityApiGetItemEligibilityPreview
      */
     readonly marketplaceIds?: Array<string>
 }
 
 /**
  * FbaInboundEligibilityApi - object-oriented interface
- * @export
- * @class FbaInboundEligibilityApi
- * @extends {BaseAPI}
  */
 export class FbaInboundEligibilityApi extends BaseAPI {
     /**
@@ -163,16 +149,12 @@ export class FbaInboundEligibilityApi extends BaseAPI {
      * @param {FbaInboundEligibilityApiGetItemEligibilityPreviewRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FbaInboundEligibilityApi
      */
     public getItemEligibilityPreview(requestParameters: FbaInboundEligibilityApiGetItemEligibilityPreviewRequest, options?: RawAxiosRequestConfig) {
         return FbaInboundEligibilityApiFp(this.configuration).getItemEligibilityPreview(requestParameters.asin, requestParameters.program, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetItemEligibilityPreviewProgramEnum = {
     Inbound: 'INBOUND',
     Commingling: 'COMMINGLING'

@@ -22,27 +22,13 @@ import type { ItemCondition } from './item-condition';
 
 /**
  * Common request parameters that can be accepted by `ItemOffersRequest` and `ListingOffersRequest`
- * @export
- * @interface BatchOffersRequestParams
  */
 export interface BatchOffersRequestParams {
     /**
      * A marketplace identifier. Specifies the marketplace for which prices are returned.
-     * @type {string}
-     * @memberof BatchOffersRequestParams
      */
     'MarketplaceId': string;
-    /**
-     * 
-     * @type {ItemCondition}
-     * @memberof BatchOffersRequestParams
-     */
     'ItemCondition': ItemCondition;
-    /**
-     * 
-     * @type {CustomerType}
-     * @memberof BatchOffersRequestParams
-     */
     'CustomerType'?: CustomerType;
 }
 

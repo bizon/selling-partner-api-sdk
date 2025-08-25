@@ -19,20 +19,11 @@ import type { Shipment } from './shipment';
 
 /**
  * Response schema.
- * @export
- * @interface CancelShipmentResponse
  */
 export interface CancelShipmentResponse {
-    /**
-     * 
-     * @type {Shipment}
-     * @memberof CancelShipmentResponse
-     */
     'payload'?: Shipment;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CancelShipmentResponse
      */
     'errors'?: Array<Error>;
 }

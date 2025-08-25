@@ -22,32 +22,19 @@ import type { TaxDetails } from './tax-details';
 
 /**
  * Monetary and tax details of the allowance.
- * @export
- * @interface AllowanceDetails
  */
 export interface AllowanceDetails {
     /**
      * Type of the allowance applied.
-     * @type {string}
-     * @memberof AllowanceDetails
      */
     'type': AllowanceDetailsTypeEnum;
     /**
      * Description of the allowance.
-     * @type {string}
-     * @memberof AllowanceDetails
      */
     'description'?: string;
-    /**
-     * 
-     * @type {Money}
-     * @memberof AllowanceDetails
-     */
     'allowanceAmount': Money;
     /**
      * Tax amount details applied on this allowance.
-     * @type {Array<TaxDetails>}
-     * @memberof AllowanceDetails
      */
     'taxDetails'?: Array<TaxDetails>;
 }

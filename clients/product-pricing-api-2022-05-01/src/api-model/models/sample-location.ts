@@ -19,15 +19,8 @@ import type { PostalCode } from './postal-code';
 
 /**
  * Information about a location. It uses a postal code to identify the location.
- * @export
- * @interface SampleLocation
  */
 export interface SampleLocation {
-    /**
-     * 
-     * @type {PostalCode}
-     * @memberof SampleLocation
-     */
     'postalCode'?: PostalCode;
 }
 

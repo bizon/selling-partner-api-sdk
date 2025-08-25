@@ -22,21 +22,9 @@ import type { SpdTrackingDetailInput } from './spd-tracking-detail-input';
 
 /**
  * Tracking information input for Less-Than-Truckload (LTL) and Small Parcel Delivery (SPD) shipments.
- * @export
- * @interface TrackingDetailsInput
  */
 export interface TrackingDetailsInput {
-    /**
-     * 
-     * @type {LtlTrackingDetailInput}
-     * @memberof TrackingDetailsInput
-     */
     'ltlTrackingDetail'?: LtlTrackingDetailInput;
-    /**
-     * 
-     * @type {SpdTrackingDetailInput}
-     * @memberof TrackingDetailsInput
-     */
     'spdTrackingDetail'?: SpdTrackingDetailInput;
 }
 

@@ -19,38 +19,23 @@ import type { BalanceType } from './balance-type';
 
 /**
  * Specifies the balance amount in the Amazon SW bank account
- * @export
- * @interface Balance
  */
 export interface Balance {
     /**
      * The unique identifier provided by Amazon to identify the account 
-     * @type {string}
-     * @memberof Balance
      */
     'accountId': string;
-    /**
-     * 
-     * @type {BalanceType}
-     * @memberof Balance
-     */
     'balanceType'?: BalanceType;
     /**
      * A decimal number such as amount or FX rate.
-     * @type {number}
-     * @memberof Balance
      */
     'balanceAmount': number;
     /**
      * The Amazon SW bank account currency code in ISO 4217 format 
-     * @type {string}
-     * @memberof Balance
      */
     'balanceCurrency': string;
     /**
      * The last update date on the account balance 
-     * @type {string}
-     * @memberof Balance
      */
     'lastUpdateDate': string;
 }

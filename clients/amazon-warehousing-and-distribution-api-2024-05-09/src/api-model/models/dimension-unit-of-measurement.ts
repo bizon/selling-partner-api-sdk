@@ -16,8 +16,6 @@
 
 /**
  * Unit of measurement for package dimensions.
- * @export
- * @enum {string}
  */
 
 export const DimensionUnitOfMeasurement = {

@@ -19,14 +19,10 @@ import type { LinkableCarrier } from './linkable-carrier';
 
 /**
  * The Response  for the GetCarrierAccountFormInputsResponse operation.
- * @export
- * @interface GetCarrierAccountFormInputsResponse
  */
 export interface GetCarrierAccountFormInputsResponse {
     /**
      * A list of LinkableCarrier
-     * @type {Array<LinkableCarrier>}
-     * @memberof GetCarrierAccountFormInputsResponse
      */
     'linkableCarriersList'?: Array<LinkableCarrier>;
 }

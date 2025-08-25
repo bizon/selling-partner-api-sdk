@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the submitInvoice operation.
- * @export
- * @interface SubmitInvoiceResponse
  */
 export interface SubmitInvoiceResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof SubmitInvoiceResponse
      */
     'errors'?: Array<Error>;
 }

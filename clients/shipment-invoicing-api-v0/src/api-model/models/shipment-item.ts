@@ -19,74 +19,35 @@ import type { Money } from './money';
 
 /**
  * The shipment item information required by a seller to issue a shipment invoice.
- * @export
- * @interface ShipmentItem
  */
 export interface ShipmentItem {
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof ShipmentItem
      */
     'ASIN'?: string;
     /**
      * The seller SKU of the item.
-     * @type {string}
-     * @memberof ShipmentItem
      */
     'SellerSKU'?: string;
     /**
      * The Amazon-defined identifier for the order item.
-     * @type {string}
-     * @memberof ShipmentItem
      */
     'OrderItemId'?: string;
     /**
      * The name of the item.
-     * @type {string}
-     * @memberof ShipmentItem
      */
     'Title'?: string;
     /**
      * The number of items ordered.
-     * @type {number}
-     * @memberof ShipmentItem
      */
     'QuantityOrdered'?: number;
-    /**
-     * 
-     * @type {Money}
-     * @memberof ShipmentItem
-     */
     'ItemPrice'?: Money;
-    /**
-     * 
-     * @type {Money}
-     * @memberof ShipmentItem
-     */
     'ShippingPrice'?: Money;
-    /**
-     * 
-     * @type {Money}
-     * @memberof ShipmentItem
-     */
     'GiftWrapPrice'?: Money;
-    /**
-     * 
-     * @type {Money}
-     * @memberof ShipmentItem
-     */
     'ShippingDiscount'?: Money;
-    /**
-     * 
-     * @type {Money}
-     * @memberof ShipmentItem
-     */
     'PromotionDiscount'?: Money;
     /**
      * The list of serial numbers.
-     * @type {Array<string>}
-     * @memberof ShipmentItem
      */
     'SerialNumbers'?: Array<string>;
 }

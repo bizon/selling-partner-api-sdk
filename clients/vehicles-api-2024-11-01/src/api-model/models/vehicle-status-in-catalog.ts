@@ -16,8 +16,6 @@
 
 /**
  * Status of vehicle in Amazon\'s catalog.
- * @export
- * @enum {string}
  */
 
 export const VehicleStatusInCatalog = {

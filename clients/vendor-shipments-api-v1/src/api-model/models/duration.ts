@@ -16,20 +16,14 @@
 
 /**
  * Duration after manufacturing date during which the product is valid for consumption.
- * @export
- * @interface Duration
  */
 export interface Duration {
     /**
      * Unit for duration.
-     * @type {string}
-     * @memberof Duration
      */
     'durationUnit': DurationDurationUnitEnum;
     /**
      * Value for the duration in terms of the durationUnit.
-     * @type {number}
-     * @memberof Duration
      */
     'durationValue': number;
 }

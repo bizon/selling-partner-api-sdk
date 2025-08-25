@@ -16,20 +16,14 @@
 
 /**
  * Defines the accessibility details of the access point.
- * @export
- * @interface AccessibilityAttributes
  */
 export interface AccessibilityAttributes {
     /**
      * The approximate distance of access point from input postalCode\'s centroid.
-     * @type {string}
-     * @memberof AccessibilityAttributes
      */
     'distance'?: string;
     /**
      * The approximate (static) drive time from input postal code\'s centroid.
-     * @type {number}
-     * @memberof AccessibilityAttributes
      */
     'driveTime'?: number;
 }

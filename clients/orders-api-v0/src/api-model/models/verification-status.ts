@@ -16,8 +16,6 @@
 
 /**
  * The verification status of the order.
- * @export
- * @enum {string}
  */
 
 export const VerificationStatus = {

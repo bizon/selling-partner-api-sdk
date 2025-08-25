@@ -19,27 +19,16 @@ import type { PackageDetails } from './package-details';
 
 /**
  * The request schema for the `createScheduledPackage` operation.
- * @export
- * @interface CreateScheduledPackageRequest
  */
 export interface CreateScheduledPackageRequest {
     /**
      * An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
-     * @type {string}
-     * @memberof CreateScheduledPackageRequest
      */
     'amazonOrderId': string;
     /**
      * A string of up to 255 characters.
-     * @type {string}
-     * @memberof CreateScheduledPackageRequest
      */
     'marketplaceId': string;
-    /**
-     * 
-     * @type {PackageDetails}
-     * @memberof CreateScheduledPackageRequest
-     */
     'packageDetails': PackageDetails;
 }
 

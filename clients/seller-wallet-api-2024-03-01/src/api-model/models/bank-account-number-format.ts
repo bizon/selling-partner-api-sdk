@@ -16,8 +16,6 @@
 
 /**
  * The format of the bank account number.
- * @export
- * @enum {string}
  */
 
 export const BankAccountNumberFormat = {

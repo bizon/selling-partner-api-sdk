@@ -16,32 +16,22 @@
 
 /**
  * A set of measurements for a three-dimensional object.
- * @export
- * @interface Dimensions
  */
 export interface Dimensions {
     /**
      * The length of the package.
-     * @type {number}
-     * @memberof Dimensions
      */
     'length': number;
     /**
      * The width of the package.
-     * @type {number}
-     * @memberof Dimensions
      */
     'width': number;
     /**
      * The height of the package.
-     * @type {number}
-     * @memberof Dimensions
      */
     'height': number;
     /**
      * The unit of measurement.
-     * @type {string}
-     * @memberof Dimensions
      */
     'unit': DimensionsUnitEnum;
 }

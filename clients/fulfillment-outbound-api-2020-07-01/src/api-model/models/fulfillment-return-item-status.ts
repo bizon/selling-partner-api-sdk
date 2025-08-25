@@ -16,8 +16,6 @@
 
 /**
  * Indicates if the return item has been processed by a fulfillment center.
- * @export
- * @enum {string}
  */
 
 export const FulfillmentReturnItemStatus = {

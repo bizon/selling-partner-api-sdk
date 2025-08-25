@@ -19,21 +19,12 @@ import type { LabelSpecification } from './label-specification';
 
 /**
  * The request schema for the purchaseLabels operation.
- * @export
- * @interface PurchaseLabelsRequest
  */
 export interface PurchaseLabelsRequest {
     /**
      * An identifier for the rating.
-     * @type {string}
-     * @memberof PurchaseLabelsRequest
      */
     'rateId': string;
-    /**
-     * 
-     * @type {LabelSpecification}
-     * @memberof PurchaseLabelsRequest
-     */
     'labelSpecification': LabelSpecification;
 }
 

@@ -17,17 +17,7 @@
 // @ts-ignore
 import type { ContentRecord } from './content-record';
 
-/**
- * 
- * @export
- * @interface GetContentDocumentResponseAllOf
- */
 export interface GetContentDocumentResponseAllOf {
-    /**
-     * 
-     * @type {ContentRecord}
-     * @memberof GetContentDocumentResponseAllOf
-     */
     'contentRecord': ContentRecord;
 }
 

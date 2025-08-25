@@ -16,8 +16,6 @@
 
 /**
  * The type of product identifier used in a `FeesEstimateByIdRequest`.
- * @export
- * @enum {string}
  */
 
 export const IdType = {

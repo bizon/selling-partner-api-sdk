@@ -19,15 +19,8 @@ import type { DirectPurchaseResult } from './direct-purchase-result';
 
 /**
  * The response schema for the directPurchaseShipment operation.
- * @export
- * @interface DirectPurchaseResponse
  */
 export interface DirectPurchaseResponse {
-    /**
-     * 
-     * @type {DirectPurchaseResult}
-     * @memberof DirectPurchaseResponse
-     */
     'payload'?: DirectPurchaseResult;
 }
 

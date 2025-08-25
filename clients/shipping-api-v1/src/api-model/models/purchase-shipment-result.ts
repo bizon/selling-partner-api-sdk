@@ -22,26 +22,15 @@ import type { ServiceRate } from './service-rate';
 
 /**
  * The payload schema for the purchaseShipment operation.
- * @export
- * @interface PurchaseShipmentResult
  */
 export interface PurchaseShipmentResult {
     /**
      * The unique shipment identifier.
-     * @type {string}
-     * @memberof PurchaseShipmentResult
      */
     'shipmentId': string;
-    /**
-     * 
-     * @type {ServiceRate}
-     * @memberof PurchaseShipmentResult
-     */
     'serviceRate': ServiceRate;
     /**
      * A list of label results
-     * @type {Array<LabelResult>}
-     * @memberof PurchaseShipmentResult
      */
     'labelResults': Array<LabelResult>;
 }

@@ -19,26 +19,15 @@ import type { ItemQuantity } from './item-quantity';
 
 /**
  * Item receive status at the buyer\'s warehouse.
- * @export
- * @interface OrderItemStatusReceivingStatus
  */
 export interface OrderItemStatusReceivingStatus {
     /**
      * Receive status of the line item.
-     * @type {string}
-     * @memberof OrderItemStatusReceivingStatus
      */
     'receiveStatus'?: OrderItemStatusReceivingStatusReceiveStatusEnum;
-    /**
-     * 
-     * @type {ItemQuantity}
-     * @memberof OrderItemStatusReceivingStatus
-     */
     'receivedQuantity'?: ItemQuantity;
     /**
      * The date when the most recent item was received at the buyer\'s warehouse. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof OrderItemStatusReceivingStatus
      */
     'lastReceiveDate'?: string;
 }

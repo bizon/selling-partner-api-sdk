@@ -19,21 +19,12 @@ import type { OrderDetails } from './order-details';
 
 /**
  * Represents a purchase order.
- * @export
- * @interface Order
  */
 export interface Order {
     /**
      * The purchase order number for this order. Formatting Notes: alpha-numeric code.
-     * @type {string}
-     * @memberof Order
      */
     'purchaseOrderNumber': string;
-    /**
-     * 
-     * @type {OrderDetails}
-     * @memberof Order
-     */
     'orderDetails'?: OrderDetails;
 }
 

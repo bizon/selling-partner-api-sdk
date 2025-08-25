@@ -16,14 +16,10 @@
 
 /**
  * A promotional percentage discount applied to the offer.
- * @export
- * @interface OfferProgramConfigurationPromotionsDiscountFunding
  */
 export interface OfferProgramConfigurationPromotionsDiscountFunding {
     /**
      * The percentage discount on the offer.
-     * @type {number}
-     * @memberof OfferProgramConfigurationPromotionsDiscountFunding
      */
     'percentage'?: number;
 }

@@ -19,15 +19,8 @@ import type { GetRatesResult } from './get-rates-result';
 
 /**
  * The response schema for the getRates operation.
- * @export
- * @interface GetRatesResponse
  */
 export interface GetRatesResponse {
-    /**
-     * 
-     * @type {GetRatesResult}
-     * @memberof GetRatesResponse
-     */
     'payload'?: GetRatesResult;
 }
 

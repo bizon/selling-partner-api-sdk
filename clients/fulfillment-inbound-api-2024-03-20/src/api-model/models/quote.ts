@@ -19,26 +19,15 @@ import type { Currency } from './currency';
 
 /**
  * The estimated shipping cost associated with the transportation option.
- * @export
- * @interface Quote
  */
 export interface Quote {
-    /**
-     * 
-     * @type {Currency}
-     * @memberof Quote
-     */
     'cost': Currency;
     /**
      * The time at which this transportation option quote expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
-     * @type {string}
-     * @memberof Quote
      */
     'expiration'?: string;
     /**
      * Voidable until timestamp.
-     * @type {string}
-     * @memberof Quote
      */
     'voidableUntil'?: string;
 }

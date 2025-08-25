@@ -19,63 +19,28 @@ import type { Currency } from './currency';
 
 /**
  * An expense related to an affordability promotion.
- * @export
- * @interface AffordabilityExpenseEvent
  */
 export interface AffordabilityExpenseEvent {
     /**
      * An Amazon-defined identifier for an order.
-     * @type {string}
-     * @memberof AffordabilityExpenseEvent
      */
     'AmazonOrderId'?: string;
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof AffordabilityExpenseEvent
      */
     'PostedDate'?: string;
     /**
      * An encrypted, Amazon-defined marketplace identifier.
-     * @type {string}
-     * @memberof AffordabilityExpenseEvent
      */
     'MarketplaceId'?: string;
     /**
      * Indicates the type of transaction.   Possible values:  * Charge - For an affordability promotion expense.  * Refund - For an affordability promotion expense reversal.
-     * @type {string}
-     * @memberof AffordabilityExpenseEvent
      */
     'TransactionType'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof AffordabilityExpenseEvent
-     */
     'BaseExpense'?: Currency;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof AffordabilityExpenseEvent
-     */
     'TaxTypeCGST': Currency;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof AffordabilityExpenseEvent
-     */
     'TaxTypeSGST': Currency;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof AffordabilityExpenseEvent
-     */
     'TaxTypeIGST': Currency;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof AffordabilityExpenseEvent
-     */
     'TotalExpense'?: Currency;
 }
 

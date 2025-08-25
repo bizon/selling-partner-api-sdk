@@ -19,20 +19,11 @@ import type { Currency } from './currency';
 
 /**
  * The charge refund transaction.
- * @export
- * @interface ChargeRefundTransaction
  */
 export interface ChargeRefundTransaction {
-    /**
-     * 
-     * @type {Currency}
-     * @memberof ChargeRefundTransaction
-     */
     'ChargeAmount'?: Currency;
     /**
      * The type of charge.
-     * @type {string}
-     * @memberof ChargeRefundTransaction
      */
     'ChargeType'?: string;
 }

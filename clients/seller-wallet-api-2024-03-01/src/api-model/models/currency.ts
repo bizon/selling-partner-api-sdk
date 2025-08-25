@@ -16,20 +16,14 @@
 
 /**
  * A currency type and amount.
- * @export
- * @interface Currency
  */
 export interface Currency {
     /**
      * The three-digit currency code in ISO 4217 format.
-     * @type {string}
-     * @memberof Currency
      */
     'currencyCode'?: string;
     /**
      * A decimal number such as amount or FX rate.
-     * @type {number}
-     * @memberof Currency
      */
     'currencyAmount'?: number;
 }

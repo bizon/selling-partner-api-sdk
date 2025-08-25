@@ -16,14 +16,10 @@
 
 /**
  * The response payload for the SubmitShipmentConfirmations operation.
- * @export
- * @interface TransactionReference
  */
 export interface TransactionReference {
     /**
      * GUID assigned by Buyer to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction.
-     * @type {string}
-     * @memberof TransactionReference
      */
     'transactionId'?: string;
 }

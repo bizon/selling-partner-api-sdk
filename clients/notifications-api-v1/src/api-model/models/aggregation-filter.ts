@@ -19,15 +19,8 @@ import type { AggregationSettings } from './aggregation-settings';
 
 /**
  * A filter used to select the aggregation time period at which to send notifications (for example: limit to one notification every five minutes for high frequency notifications).
- * @export
- * @interface AggregationFilter
  */
 export interface AggregationFilter {
-    /**
-     * 
-     * @type {AggregationSettings}
-     * @memberof AggregationFilter
-     */
     'aggregationSettings'?: AggregationSettings;
 }
 

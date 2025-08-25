@@ -14,17 +14,7 @@
 
 
 
-/**
- * 
- * @export
- * @interface ContextAllOf
- */
 export interface ContextAllOf {
-    /**
-     * 
-     * @type {string}
-     * @memberof ContextAllOf
-     */
     'contextType': string;
 }
 

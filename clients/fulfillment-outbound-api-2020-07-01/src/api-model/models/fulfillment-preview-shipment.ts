@@ -19,44 +19,30 @@ import type { FulfillmentPreviewItem } from './fulfillment-preview-item';
 
 /**
  * Delivery and item information for a shipment in a fulfillment order preview.
- * @export
- * @interface FulfillmentPreviewShipment
  */
 export interface FulfillmentPreviewShipment {
     /**
      * Date timestamp
-     * @type {string}
-     * @memberof FulfillmentPreviewShipment
      */
     'earliestShipDate'?: string;
     /**
      * Date timestamp
-     * @type {string}
-     * @memberof FulfillmentPreviewShipment
      */
     'latestShipDate'?: string;
     /**
      * Date timestamp
-     * @type {string}
-     * @memberof FulfillmentPreviewShipment
      */
     'earliestArrivalDate'?: string;
     /**
      * Date timestamp
-     * @type {string}
-     * @memberof FulfillmentPreviewShipment
      */
     'latestArrivalDate'?: string;
     /**
      * Provides additional insight into the shipment timeline when exact delivery dates are not able to be precomputed.
-     * @type {Array<string>}
-     * @memberof FulfillmentPreviewShipment
      */
     'shippingNotes'?: Array<string>;
     /**
      * An array of fulfillment preview item information.
-     * @type {Array<FulfillmentPreviewItem>}
-     * @memberof FulfillmentPreviewShipment
      */
     'fulfillmentPreviewItems': Array<FulfillmentPreviewItem>;
 }

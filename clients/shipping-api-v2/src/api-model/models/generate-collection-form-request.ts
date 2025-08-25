@@ -22,27 +22,16 @@ import type { ClientReferenceDetail } from './client-reference-detail';
 
 /**
  * The request schema Call to generate the collection form.
- * @export
- * @interface GenerateCollectionFormRequest
  */
 export interface GenerateCollectionFormRequest {
     /**
      * Object to pass additional information about the MCI Integrator shipperType: List of ClientReferenceDetail
-     * @type {Array<ClientReferenceDetail>}
-     * @memberof GenerateCollectionFormRequest
      */
     'clientReferenceDetails'?: Array<ClientReferenceDetail>;
     /**
      * The carrier identifier for the offering, provided by the carrier.
-     * @type {string}
-     * @memberof GenerateCollectionFormRequest
      */
     'carrierId': string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof GenerateCollectionFormRequest
-     */
     'shipFromAddress'?: Address;
 }
 

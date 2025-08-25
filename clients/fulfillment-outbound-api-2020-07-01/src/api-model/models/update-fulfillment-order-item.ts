@@ -19,69 +19,38 @@ import type { Money } from './money';
 
 /**
  * Item information for updating a fulfillment order.
- * @export
- * @interface UpdateFulfillmentOrderItem
  */
 export interface UpdateFulfillmentOrderItem {
     /**
      * The seller SKU of the item.
-     * @type {string}
-     * @memberof UpdateFulfillmentOrderItem
      */
     'sellerSku'?: string;
     /**
      * Identifies the fulfillment order item to update. Created with a previous call to the createFulfillmentOrder operation.
-     * @type {string}
-     * @memberof UpdateFulfillmentOrderItem
      */
     'sellerFulfillmentOrderItemId': string;
     /**
      * The item quantity.
-     * @type {number}
-     * @memberof UpdateFulfillmentOrderItem
      */
     'quantity': number;
     /**
      * A message to the gift recipient, if applicable.
-     * @type {string}
-     * @memberof UpdateFulfillmentOrderItem
      */
     'giftMessage'?: string;
     /**
      * Item-specific text that displays in recipient-facing materials such as the outbound shipment packing slip.
-     * @type {string}
-     * @memberof UpdateFulfillmentOrderItem
      */
     'displayableComment'?: string;
     /**
      * Amazon\'s fulfillment network SKU of the item.
-     * @type {string}
-     * @memberof UpdateFulfillmentOrderItem
      */
     'fulfillmentNetworkSku'?: string;
     /**
      * Indicates whether the item is sellable or unsellable.
-     * @type {string}
-     * @memberof UpdateFulfillmentOrderItem
      */
     'orderItemDisposition'?: string;
-    /**
-     * 
-     * @type {Money}
-     * @memberof UpdateFulfillmentOrderItem
-     */
     'perUnitDeclaredValue'?: Money;
-    /**
-     * 
-     * @type {Money}
-     * @memberof UpdateFulfillmentOrderItem
-     */
     'perUnitPrice'?: Money;
-    /**
-     * 
-     * @type {Money}
-     * @memberof UpdateFulfillmentOrderItem
-     */
     'perUnitTax'?: Money;
 }
 

@@ -22,39 +22,24 @@ import type { ProductAttribute } from './product-attribute';
 
 /**
  * Represents a product with the SKU details and the corresponding quantity.
- * @export
- * @interface ProductQuantity
  */
 export interface ProductQuantity {
     /**
      * Contains attributes for this instance of the product. For example, item color, or other attributes that distinguish the product beyond the SKU. This is metadata for the product and Amazon does not process this data.
-     * @type {Array<ProductAttribute>}
-     * @memberof ProductQuantity
      */
     'attributes'?: Array<ProductAttribute>;
     /**
      * Product quantity.
-     * @type {number}
-     * @memberof ProductQuantity
      */
     'quantity': number;
     /**
      * The seller or merchant SKU.
-     * @type {string}
-     * @memberof ProductQuantity
      */
     'sku': string;
     /**
      * The expiration date for the SKU. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
-     * @type {string}
-     * @memberof ProductQuantity
      */
     'expiration'?: string;
-    /**
-     * 
-     * @type {PrepDetails}
-     * @memberof ProductQuantity
-     */
     'prepDetails'?: PrepDetails;
 }
 

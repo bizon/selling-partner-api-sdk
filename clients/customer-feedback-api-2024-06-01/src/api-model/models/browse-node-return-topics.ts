@@ -19,21 +19,12 @@ import type { BrowseNodeTrendMetrics } from './browse-node-trend-metrics';
 
 /**
  * Topics from returns for all items in a browse node.
- * @export
- * @interface BrowseNodeReturnTopics
  */
 export interface BrowseNodeReturnTopics {
     /**
      * The name of the return feedback topic .
-     * @type {string}
-     * @memberof BrowseNodeReturnTopics
      */
     'topic': string;
-    /**
-     * 
-     * @type {BrowseNodeTrendMetrics}
-     * @memberof BrowseNodeReturnTopics
-     */
     'browseNodeMetrics': BrowseNodeTrendMetrics;
 }
 

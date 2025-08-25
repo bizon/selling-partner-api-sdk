@@ -16,20 +16,14 @@
 
 /**
  * An amount of money, including units in the form of currency.
- * @export
- * @interface Money
  */
 export interface Money {
     /**
      * Three digit currency code in ISO 4217 format. String of length 3.
-     * @type {string}
-     * @memberof Money
      */
     'currencyCode'?: string;
     /**
      * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.
-     * @type {string}
-     * @memberof Money
      */
     'amount'?: string;
 }

@@ -16,8 +16,6 @@
 
 /**
  * The current status of the fulfillment order.
- * @export
- * @enum {string}
  */
 
 export const FulfillmentOrderStatus = {

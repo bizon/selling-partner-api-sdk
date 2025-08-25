@@ -27,7 +27,6 @@ import type { ErrorList } from '../models';
 import type { VehiclesResponse } from '../models';
 /**
  * VehiclesApi - axios parameter creator
- * @export
  */
 export const VehiclesApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -89,7 +88,6 @@ export const VehiclesApiAxiosParamCreator = function (configuration?: Configurat
 
 /**
  * VehiclesApi - functional programming interface
- * @export
  */
 export const VehiclesApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = VehiclesApiAxiosParamCreator(configuration)
@@ -114,7 +112,6 @@ export const VehiclesApiFp = function(configuration?: Configuration) {
 
 /**
  * VehiclesApi - factory interface
- * @export
  */
 export const VehiclesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = VehiclesApiFp(configuration)
@@ -133,44 +130,31 @@ export const VehiclesApiFactory = function (configuration?: Configuration, baseP
 
 /**
  * Request parameters for getVehicles operation in VehiclesApi.
- * @export
- * @interface VehiclesApiGetVehiclesRequest
  */
 export interface VehiclesApiGetVehiclesRequest {
     /**
      * An identifier for the marketplace in which the resource operates.
-     * @type {string}
-     * @memberof VehiclesApiGetVehicles
      */
     readonly marketplaceId: string
 
     /**
      * An identifier for vehicle type.
-     * @type {'CAR' | 'MOTORBIKE'}
-     * @memberof VehiclesApiGetVehicles
      */
     readonly vehicleType: GetVehiclesVehicleTypeEnum
 
     /**
      * A token to fetch a certain page when there are multiple pages worth of results.
-     * @type {string}
-     * @memberof VehiclesApiGetVehicles
      */
     readonly pageToken?: string
 
     /**
      * Date in ISO 8601 format, if provided only vehicles which are modified/added to Amazon\&#39;s catalog after this date will be returned.
-     * @type {string}
-     * @memberof VehiclesApiGetVehicles
      */
     readonly updatedAfter?: string
 }
 
 /**
  * VehiclesApi - object-oriented interface
- * @export
- * @class VehiclesApi
- * @extends {BaseAPI}
  */
 export class VehiclesApi extends BaseAPI {
     /**
@@ -178,16 +162,12 @@ export class VehiclesApi extends BaseAPI {
      * @param {VehiclesApiGetVehiclesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VehiclesApi
      */
     public getVehicles(requestParameters: VehiclesApiGetVehiclesRequest, options?: RawAxiosRequestConfig) {
         return VehiclesApiFp(this.configuration).getVehicles(requestParameters.marketplaceId, requestParameters.vehicleType, requestParameters.pageToken, requestParameters.updatedAfter, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetVehiclesVehicleTypeEnum = {
     Car: 'CAR',
     Motorbike: 'MOTORBIKE'

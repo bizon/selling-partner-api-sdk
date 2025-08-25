@@ -16,8 +16,6 @@
 
 /**
  * The supported statuses for an inbound order.
- * @export
- * @enum {string}
  */
 
 export const InboundStatus = {

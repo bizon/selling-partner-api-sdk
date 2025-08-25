@@ -22,21 +22,9 @@ import type { StandardComparisonProductBlock } from './standard-comparison-produ
 
 /**
  * The standard product comparison table.
- * @export
- * @interface StandardComparisonTableModule
  */
 export interface StandardComparisonTableModule {
-    /**
-     * 
-     * @type {Array<StandardComparisonProductBlock>}
-     * @memberof StandardComparisonTableModule
-     */
     'productColumns'?: Array<StandardComparisonProductBlock>;
-    /**
-     * 
-     * @type {Array<PlainTextItem>}
-     * @memberof StandardComparisonTableModule
-     */
     'metricRowLabels'?: Array<PlainTextItem>;
 }
 

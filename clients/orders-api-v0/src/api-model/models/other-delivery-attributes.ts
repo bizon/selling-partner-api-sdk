@@ -16,8 +16,6 @@
 
 /**
  * Miscellaneous delivery attributes associated with the shipping address.
- * @export
- * @enum {string}
  */
 
 export const OtherDeliveryAttributes = {

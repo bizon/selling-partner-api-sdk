@@ -19,14 +19,10 @@ import type { TrackingDetails } from './tracking-details';
 
 /**
  * Transportation details for the shipment.
- * @export
- * @interface TransportationDetails
  */
 export interface TransportationDetails {
     /**
      * Tracking details for the shipment. If using SPD transportation, this can be for each case. If not using SPD transportation, this is a single tracking entry for the entire shipment.
-     * @type {Array<TrackingDetails>}
-     * @memberof TransportationDetails
      */
     'trackingDetails': Array<TrackingDetails>;
 }

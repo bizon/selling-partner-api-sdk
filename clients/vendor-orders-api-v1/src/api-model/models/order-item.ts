@@ -22,51 +22,26 @@ import type { Money } from './money';
 
 /**
  * Represents an individual item in an order, including item details, quantities, pricing, and backorder information.
- * @export
- * @interface OrderItem
  */
 export interface OrderItem {
     /**
      * Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.
-     * @type {string}
-     * @memberof OrderItem
      */
     'itemSequenceNumber': string;
     /**
      * Amazon Standard Identification Number (ASIN) of an item.
-     * @type {string}
-     * @memberof OrderItem
      */
     'amazonProductIdentifier'?: string;
     /**
      * The vendor selected product identification of the item.
-     * @type {string}
-     * @memberof OrderItem
      */
     'vendorProductIdentifier'?: string;
-    /**
-     * 
-     * @type {ItemQuantity}
-     * @memberof OrderItem
-     */
     'orderedQuantity': ItemQuantity;
     /**
      * When true, we will accept backorder confirmations for this item.
-     * @type {boolean}
-     * @memberof OrderItem
      */
     'isBackOrderAllowed': boolean;
-    /**
-     * 
-     * @type {Money}
-     * @memberof OrderItem
-     */
     'netCost'?: Money;
-    /**
-     * 
-     * @type {Money}
-     * @memberof OrderItem
-     */
     'listPrice'?: Money;
 }
 

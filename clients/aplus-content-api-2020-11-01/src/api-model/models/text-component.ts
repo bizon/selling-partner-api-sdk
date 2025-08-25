@@ -19,20 +19,14 @@ import type { Decorator } from './decorator';
 
 /**
  * Rich text content.
- * @export
- * @interface TextComponent
  */
 export interface TextComponent {
     /**
      * The actual plain text.
-     * @type {string}
-     * @memberof TextComponent
      */
     'value': string;
     /**
      * A set of content decorators.
-     * @type {Set<Decorator>}
-     * @memberof TextComponent
      */
     'decoratorSet'?: Set<Decorator>;
 }

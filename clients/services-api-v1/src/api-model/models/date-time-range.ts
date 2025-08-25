@@ -16,20 +16,14 @@
 
 /**
  * A range of time.
- * @export
- * @interface DateTimeRange
  */
 export interface DateTimeRange {
     /**
      * The beginning of the time range. Must be in UTC in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
-     * @type {string}
-     * @memberof DateTimeRange
      */
     'startTime': string;
     /**
      * The end of the time range. Must be in UTC in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
-     * @type {string}
-     * @memberof DateTimeRange
      */
     'endTime': string;
 }

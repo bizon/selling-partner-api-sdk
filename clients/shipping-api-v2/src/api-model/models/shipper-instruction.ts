@@ -16,14 +16,10 @@
 
 /**
  * The shipper instruction.
- * @export
- * @interface ShipperInstruction
  */
 export interface ShipperInstruction {
     /**
      * The delivery notes for the shipment
-     * @type {string}
-     * @memberof ShipperInstruction
      */
     'deliveryNotes'?: string;
 }

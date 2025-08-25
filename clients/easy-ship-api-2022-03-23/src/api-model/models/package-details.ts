@@ -22,26 +22,15 @@ import type { TimeSlot } from './time-slot';
 
 /**
  * Package details. Includes `packageItems`, `packageTimeSlot`, and `packageIdentifier`.
- * @export
- * @interface PackageDetails
  */
 export interface PackageDetails {
     /**
      * A list of items contained in the package.
-     * @type {Array<Item>}
-     * @memberof PackageDetails
      */
     'packageItems'?: Array<Item>;
-    /**
-     * 
-     * @type {TimeSlot}
-     * @memberof PackageDetails
-     */
     'packageTimeSlot': TimeSlot;
     /**
      * Optional seller-created identifier that is printed on the shipping label to help the seller identify the package.
-     * @type {string}
-     * @memberof PackageDetails
      */
     'packageIdentifier'?: string;
 }

@@ -19,20 +19,11 @@ import type { Currency } from './currency';
 
 /**
  * The type and amount of a charge applied on a package.
- * @export
- * @interface ChargeComponent
  */
 export interface ChargeComponent {
-    /**
-     * 
-     * @type {Currency}
-     * @memberof ChargeComponent
-     */
     'amount'?: Currency;
     /**
      * The type of charge.
-     * @type {string}
-     * @memberof ChargeComponent
      */
     'chargeType'?: ChargeComponentChargeTypeEnum;
 }

@@ -19,21 +19,12 @@ import type { PackageDetails } from './package-details';
 
 /**
  * This object allows users to specify an order to be scheduled. Only the amazonOrderId is required. 
- * @export
- * @interface OrderScheduleDetails
  */
 export interface OrderScheduleDetails {
     /**
      * An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
-     * @type {string}
-     * @memberof OrderScheduleDetails
      */
     'amazonOrderId': string;
-    /**
-     * 
-     * @type {PackageDetails}
-     * @memberof OrderScheduleDetails
-     */
     'packageDetails'?: PackageDetails;
 }
 

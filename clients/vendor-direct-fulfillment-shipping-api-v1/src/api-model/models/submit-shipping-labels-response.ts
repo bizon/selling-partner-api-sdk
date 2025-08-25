@@ -19,20 +19,11 @@ import type { TransactionReference } from './transaction-reference';
 
 /**
  * The response schema for the submitShippingLabelRequest operation.
- * @export
- * @interface SubmitShippingLabelsResponse
  */
 export interface SubmitShippingLabelsResponse {
-    /**
-     * 
-     * @type {TransactionReference}
-     * @memberof SubmitShippingLabelsResponse
-     */
     'payload'?: TransactionReference;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof SubmitShippingLabelsResponse
      */
     'errors'?: Array<Error>;
 }

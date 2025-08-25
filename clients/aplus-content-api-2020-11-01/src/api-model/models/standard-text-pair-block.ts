@@ -19,21 +19,9 @@ import type { TextComponent } from './text-component';
 
 /**
  * The A+ Content standard label and description block, which contains a pair of text components.
- * @export
- * @interface StandardTextPairBlock
  */
 export interface StandardTextPairBlock {
-    /**
-     * 
-     * @type {TextComponent}
-     * @memberof StandardTextPairBlock
-     */
     'label'?: TextComponent;
-    /**
-     * 
-     * @type {TextComponent}
-     * @memberof StandardTextPairBlock
-     */
     'description'?: TextComponent;
 }
 

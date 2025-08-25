@@ -16,14 +16,10 @@
 
 /**
  * Information about the seller of the service job.
- * @export
- * @interface Seller
  */
 export interface Seller {
     /**
      * The identifier of the seller of the service job.
-     * @type {string}
-     * @memberof Seller
      */
     'sellerId'?: string;
 }

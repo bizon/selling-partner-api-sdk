@@ -45,7 +45,6 @@ import type { ShipmentListing } from '../models';
 import type { TransportationDetails } from '../models';
 /**
  * AmazonWarehousingAndDistributionApi - axios parameter creator
- * @export
  */
 export const AmazonWarehousingAndDistributionApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -504,7 +503,6 @@ export const AmazonWarehousingAndDistributionApiAxiosParamCreator = function (co
 
 /**
  * AmazonWarehousingAndDistributionApi - functional programming interface
- * @export
  */
 export const AmazonWarehousingAndDistributionApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = AmazonWarehousingAndDistributionApiAxiosParamCreator(configuration)
@@ -661,7 +659,6 @@ export const AmazonWarehousingAndDistributionApiFp = function(configuration?: Co
 
 /**
  * AmazonWarehousingAndDistributionApi - factory interface
- * @export
  */
 export const AmazonWarehousingAndDistributionApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = AmazonWarehousingAndDistributionApiFp(configuration)
@@ -770,268 +767,191 @@ export const AmazonWarehousingAndDistributionApiFactory = function (configuratio
 
 /**
  * Request parameters for cancelInbound operation in AmazonWarehousingAndDistributionApi.
- * @export
- * @interface AmazonWarehousingAndDistributionApiCancelInboundRequest
  */
 export interface AmazonWarehousingAndDistributionApiCancelInboundRequest {
     /**
      * The ID of the inbound order you want to cancel.
-     * @type {string}
-     * @memberof AmazonWarehousingAndDistributionApiCancelInbound
      */
     readonly orderId: string
 }
 
 /**
  * Request parameters for checkInboundEligibility operation in AmazonWarehousingAndDistributionApi.
- * @export
- * @interface AmazonWarehousingAndDistributionApiCheckInboundEligibilityRequest
  */
 export interface AmazonWarehousingAndDistributionApiCheckInboundEligibilityRequest {
     /**
      * Represents the packages you want to inbound.
-     * @type {InboundPackages}
-     * @memberof AmazonWarehousingAndDistributionApiCheckInboundEligibility
      */
     readonly body: InboundPackages
 }
 
 /**
  * Request parameters for confirmInbound operation in AmazonWarehousingAndDistributionApi.
- * @export
- * @interface AmazonWarehousingAndDistributionApiConfirmInboundRequest
  */
 export interface AmazonWarehousingAndDistributionApiConfirmInboundRequest {
     /**
      * The ID of the inbound order that you want to confirm.
-     * @type {string}
-     * @memberof AmazonWarehousingAndDistributionApiConfirmInbound
      */
     readonly orderId: string
 }
 
 /**
  * Request parameters for createInbound operation in AmazonWarehousingAndDistributionApi.
- * @export
- * @interface AmazonWarehousingAndDistributionApiCreateInboundRequest
  */
 export interface AmazonWarehousingAndDistributionApiCreateInboundRequest {
     /**
      * Payload for creating an inbound order.
-     * @type {InboundOrderCreationData}
-     * @memberof AmazonWarehousingAndDistributionApiCreateInbound
      */
     readonly body: InboundOrderCreationData
 }
 
 /**
  * Request parameters for getInbound operation in AmazonWarehousingAndDistributionApi.
- * @export
- * @interface AmazonWarehousingAndDistributionApiGetInboundRequest
  */
 export interface AmazonWarehousingAndDistributionApiGetInboundRequest {
     /**
      * The ID of the inbound order that you want to retrieve.
-     * @type {string}
-     * @memberof AmazonWarehousingAndDistributionApiGetInbound
      */
     readonly orderId: string
 }
 
 /**
  * Request parameters for getInboundShipment operation in AmazonWarehousingAndDistributionApi.
- * @export
- * @interface AmazonWarehousingAndDistributionApiGetInboundShipmentRequest
  */
 export interface AmazonWarehousingAndDistributionApiGetInboundShipmentRequest {
     /**
      * ID for the shipment. A shipment contains the cases being inbounded.
-     * @type {string}
-     * @memberof AmazonWarehousingAndDistributionApiGetInboundShipment
      */
     readonly shipmentId: string
 
     /**
      * If equal to &#x60;SHOW&#x60;, the response includes the shipment SKU quantity details.  Defaults to &#x60;HIDE&#x60;, in which case the response does not contain SKU quantities
-     * @type {'SHOW' | 'HIDE'}
-     * @memberof AmazonWarehousingAndDistributionApiGetInboundShipment
      */
     readonly skuQuantities?: GetInboundShipmentSkuQuantitiesEnum
 }
 
 /**
  * Request parameters for getInboundShipmentLabels operation in AmazonWarehousingAndDistributionApi.
- * @export
- * @interface AmazonWarehousingAndDistributionApiGetInboundShipmentLabelsRequest
  */
 export interface AmazonWarehousingAndDistributionApiGetInboundShipmentLabelsRequest {
     /**
      * ID for the shipment.
-     * @type {string}
-     * @memberof AmazonWarehousingAndDistributionApiGetInboundShipmentLabels
      */
     readonly shipmentId: string
 
     /**
      * Page type for the generated labels. The default is &#x60;PLAIN_PAPER&#x60;.
-     * @type {'THERMAL_NONPCP' | 'PLAIN_PAPER' | 'LETTER_6'}
-     * @memberof AmazonWarehousingAndDistributionApiGetInboundShipmentLabels
      */
     readonly pageType?: GetInboundShipmentLabelsPageTypeEnum
 
     /**
      * The format type of the output file that contains your labels. The default format type is &#x60;PDF&#x60;.
-     * @type {'PDF'}
-     * @memberof AmazonWarehousingAndDistributionApiGetInboundShipmentLabels
      */
     readonly formatType?: GetInboundShipmentLabelsFormatTypeEnum
 }
 
 /**
  * Request parameters for listInboundShipments operation in AmazonWarehousingAndDistributionApi.
- * @export
- * @interface AmazonWarehousingAndDistributionApiListInboundShipmentsRequest
  */
 export interface AmazonWarehousingAndDistributionApiListInboundShipmentsRequest {
     /**
      * Field to sort results by. By default, the response will be sorted by UPDATED_AT.
-     * @type {'UPDATED_AT' | 'CREATED_AT'}
-     * @memberof AmazonWarehousingAndDistributionApiListInboundShipments
      */
     readonly sortBy?: ListInboundShipmentsSortByEnum
 
     /**
      * Sort the response in ASCENDING or DESCENDING order. By default, the response will be sorted in DESCENDING order.
-     * @type {'ASCENDING' | 'DESCENDING'}
-     * @memberof AmazonWarehousingAndDistributionApiListInboundShipments
      */
     readonly sortOrder?: ListInboundShipmentsSortOrderEnum
 
     /**
      * Filter by inbound shipment status.
-     * @type {'CREATED' | 'SHIPPED' | 'IN_TRANSIT' | 'RECEIVING' | 'DELIVERED' | 'CLOSED' | 'CANCELLED'}
-     * @memberof AmazonWarehousingAndDistributionApiListInboundShipments
      */
     readonly shipmentStatus?: ListInboundShipmentsShipmentStatusEnum
 
     /**
      * List the inbound shipments that were updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
-     * @type {string}
-     * @memberof AmazonWarehousingAndDistributionApiListInboundShipments
      */
     readonly updatedAfter?: string
 
     /**
      * List the inbound shipments that were updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;\&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601\&#39;&gt;ISO 8601&lt;/a&gt; format.
-     * @type {string}
-     * @memberof AmazonWarehousingAndDistributionApiListInboundShipments
      */
     readonly updatedBefore?: string
 
     /**
      * Maximum number of results to return.
-     * @type {number}
-     * @memberof AmazonWarehousingAndDistributionApiListInboundShipments
      */
     readonly maxResults?: number
 
     /**
      * A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
-     * @type {string}
-     * @memberof AmazonWarehousingAndDistributionApiListInboundShipments
      */
     readonly nextToken?: string
 }
 
 /**
  * Request parameters for listInventory operation in AmazonWarehousingAndDistributionApi.
- * @export
- * @interface AmazonWarehousingAndDistributionApiListInventoryRequest
  */
 export interface AmazonWarehousingAndDistributionApiListInventoryRequest {
     /**
      * Filter by seller or merchant SKU for the item.
-     * @type {string}
-     * @memberof AmazonWarehousingAndDistributionApiListInventory
      */
     readonly sku?: string
 
     /**
      * Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order.
-     * @type {'ASCENDING' | 'DESCENDING'}
-     * @memberof AmazonWarehousingAndDistributionApiListInventory
      */
     readonly sortOrder?: ListInventorySortOrderEnum
 
     /**
      * Set to &#x60;SHOW&#x60; to return summaries with additional inventory details. Defaults to &#x60;HIDE,&#x60; which returns only inventory summary totals.
-     * @type {'SHOW' | 'HIDE'}
-     * @memberof AmazonWarehousingAndDistributionApiListInventory
      */
     readonly details?: ListInventoryDetailsEnum
 
     /**
      * A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
-     * @type {string}
-     * @memberof AmazonWarehousingAndDistributionApiListInventory
      */
     readonly nextToken?: string
 
     /**
      * Maximum number of results to return.
-     * @type {number}
-     * @memberof AmazonWarehousingAndDistributionApiListInventory
      */
     readonly maxResults?: number
 }
 
 /**
  * Request parameters for updateInbound operation in AmazonWarehousingAndDistributionApi.
- * @export
- * @interface AmazonWarehousingAndDistributionApiUpdateInboundRequest
  */
 export interface AmazonWarehousingAndDistributionApiUpdateInboundRequest {
     /**
      * The ID of the inbound order that you want to update.
-     * @type {string}
-     * @memberof AmazonWarehousingAndDistributionApiUpdateInbound
      */
     readonly orderId: string
 
     /**
      * Represents an AWD inbound order.
-     * @type {InboundOrder}
-     * @memberof AmazonWarehousingAndDistributionApiUpdateInbound
      */
     readonly body: InboundOrder
 }
 
 /**
  * Request parameters for updateInboundShipmentTransportDetails operation in AmazonWarehousingAndDistributionApi.
- * @export
- * @interface AmazonWarehousingAndDistributionApiUpdateInboundShipmentTransportDetailsRequest
  */
 export interface AmazonWarehousingAndDistributionApiUpdateInboundShipmentTransportDetailsRequest {
     /**
      * The shipment ID.
-     * @type {string}
-     * @memberof AmazonWarehousingAndDistributionApiUpdateInboundShipmentTransportDetails
      */
     readonly shipmentId: string
 
     /**
      * Transportation details for the shipment.
-     * @type {TransportationDetails}
-     * @memberof AmazonWarehousingAndDistributionApiUpdateInboundShipmentTransportDetails
      */
     readonly body: TransportationDetails
 }
 
 /**
  * AmazonWarehousingAndDistributionApi - object-oriented interface
- * @export
- * @class AmazonWarehousingAndDistributionApi
- * @extends {BaseAPI}
  */
 export class AmazonWarehousingAndDistributionApi extends BaseAPI {
     /**
@@ -1039,7 +959,6 @@ export class AmazonWarehousingAndDistributionApi extends BaseAPI {
      * @param {AmazonWarehousingAndDistributionApiCancelInboundRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AmazonWarehousingAndDistributionApi
      */
     public cancelInbound(requestParameters: AmazonWarehousingAndDistributionApiCancelInboundRequest, options?: RawAxiosRequestConfig) {
         return AmazonWarehousingAndDistributionApiFp(this.configuration).cancelInbound(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
@@ -1050,7 +969,6 @@ export class AmazonWarehousingAndDistributionApi extends BaseAPI {
      * @param {AmazonWarehousingAndDistributionApiCheckInboundEligibilityRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AmazonWarehousingAndDistributionApi
      */
     public checkInboundEligibility(requestParameters: AmazonWarehousingAndDistributionApiCheckInboundEligibilityRequest, options?: RawAxiosRequestConfig) {
         return AmazonWarehousingAndDistributionApiFp(this.configuration).checkInboundEligibility(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1061,7 +979,6 @@ export class AmazonWarehousingAndDistributionApi extends BaseAPI {
      * @param {AmazonWarehousingAndDistributionApiConfirmInboundRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AmazonWarehousingAndDistributionApi
      */
     public confirmInbound(requestParameters: AmazonWarehousingAndDistributionApiConfirmInboundRequest, options?: RawAxiosRequestConfig) {
         return AmazonWarehousingAndDistributionApiFp(this.configuration).confirmInbound(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
@@ -1072,7 +989,6 @@ export class AmazonWarehousingAndDistributionApi extends BaseAPI {
      * @param {AmazonWarehousingAndDistributionApiCreateInboundRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AmazonWarehousingAndDistributionApi
      */
     public createInbound(requestParameters: AmazonWarehousingAndDistributionApiCreateInboundRequest, options?: RawAxiosRequestConfig) {
         return AmazonWarehousingAndDistributionApiFp(this.configuration).createInbound(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1083,7 +999,6 @@ export class AmazonWarehousingAndDistributionApi extends BaseAPI {
      * @param {AmazonWarehousingAndDistributionApiGetInboundRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AmazonWarehousingAndDistributionApi
      */
     public getInbound(requestParameters: AmazonWarehousingAndDistributionApiGetInboundRequest, options?: RawAxiosRequestConfig) {
         return AmazonWarehousingAndDistributionApiFp(this.configuration).getInbound(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
@@ -1094,7 +1009,6 @@ export class AmazonWarehousingAndDistributionApi extends BaseAPI {
      * @param {AmazonWarehousingAndDistributionApiGetInboundShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AmazonWarehousingAndDistributionApi
      */
     public getInboundShipment(requestParameters: AmazonWarehousingAndDistributionApiGetInboundShipmentRequest, options?: RawAxiosRequestConfig) {
         return AmazonWarehousingAndDistributionApiFp(this.configuration).getInboundShipment(requestParameters.shipmentId, requestParameters.skuQuantities, options).then((request) => request(this.axios, this.basePath));
@@ -1105,7 +1019,6 @@ export class AmazonWarehousingAndDistributionApi extends BaseAPI {
      * @param {AmazonWarehousingAndDistributionApiGetInboundShipmentLabelsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AmazonWarehousingAndDistributionApi
      */
     public getInboundShipmentLabels(requestParameters: AmazonWarehousingAndDistributionApiGetInboundShipmentLabelsRequest, options?: RawAxiosRequestConfig) {
         return AmazonWarehousingAndDistributionApiFp(this.configuration).getInboundShipmentLabels(requestParameters.shipmentId, requestParameters.pageType, requestParameters.formatType, options).then((request) => request(this.axios, this.basePath));
@@ -1116,7 +1029,6 @@ export class AmazonWarehousingAndDistributionApi extends BaseAPI {
      * @param {AmazonWarehousingAndDistributionApiListInboundShipmentsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AmazonWarehousingAndDistributionApi
      */
     public listInboundShipments(requestParameters: AmazonWarehousingAndDistributionApiListInboundShipmentsRequest = {}, options?: RawAxiosRequestConfig) {
         return AmazonWarehousingAndDistributionApiFp(this.configuration).listInboundShipments(requestParameters.sortBy, requestParameters.sortOrder, requestParameters.shipmentStatus, requestParameters.updatedAfter, requestParameters.updatedBefore, requestParameters.maxResults, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
@@ -1127,7 +1039,6 @@ export class AmazonWarehousingAndDistributionApi extends BaseAPI {
      * @param {AmazonWarehousingAndDistributionApiListInventoryRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AmazonWarehousingAndDistributionApi
      */
     public listInventory(requestParameters: AmazonWarehousingAndDistributionApiListInventoryRequest = {}, options?: RawAxiosRequestConfig) {
         return AmazonWarehousingAndDistributionApiFp(this.configuration).listInventory(requestParameters.sku, requestParameters.sortOrder, requestParameters.details, requestParameters.nextToken, requestParameters.maxResults, options).then((request) => request(this.axios, this.basePath));
@@ -1138,7 +1049,6 @@ export class AmazonWarehousingAndDistributionApi extends BaseAPI {
      * @param {AmazonWarehousingAndDistributionApiUpdateInboundRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AmazonWarehousingAndDistributionApi
      */
     public updateInbound(requestParameters: AmazonWarehousingAndDistributionApiUpdateInboundRequest, options?: RawAxiosRequestConfig) {
         return AmazonWarehousingAndDistributionApiFp(this.configuration).updateInbound(requestParameters.orderId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1149,56 +1059,37 @@ export class AmazonWarehousingAndDistributionApi extends BaseAPI {
      * @param {AmazonWarehousingAndDistributionApiUpdateInboundShipmentTransportDetailsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AmazonWarehousingAndDistributionApi
      */
     public updateInboundShipmentTransportDetails(requestParameters: AmazonWarehousingAndDistributionApiUpdateInboundShipmentTransportDetailsRequest, options?: RawAxiosRequestConfig) {
         return AmazonWarehousingAndDistributionApiFp(this.configuration).updateInboundShipmentTransportDetails(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetInboundShipmentSkuQuantitiesEnum = {
     Show: 'SHOW',
     Hide: 'HIDE'
 } as const;
 export type GetInboundShipmentSkuQuantitiesEnum = typeof GetInboundShipmentSkuQuantitiesEnum[keyof typeof GetInboundShipmentSkuQuantitiesEnum];
-/**
- * @export
- */
 export const GetInboundShipmentLabelsPageTypeEnum = {
     ThermalNonpcp: 'THERMAL_NONPCP',
     PlainPaper: 'PLAIN_PAPER',
     Letter6: 'LETTER_6'
 } as const;
 export type GetInboundShipmentLabelsPageTypeEnum = typeof GetInboundShipmentLabelsPageTypeEnum[keyof typeof GetInboundShipmentLabelsPageTypeEnum];
-/**
- * @export
- */
 export const GetInboundShipmentLabelsFormatTypeEnum = {
     Pdf: 'PDF'
 } as const;
 export type GetInboundShipmentLabelsFormatTypeEnum = typeof GetInboundShipmentLabelsFormatTypeEnum[keyof typeof GetInboundShipmentLabelsFormatTypeEnum];
-/**
- * @export
- */
 export const ListInboundShipmentsSortByEnum = {
     UpdatedAt: 'UPDATED_AT',
     CreatedAt: 'CREATED_AT'
 } as const;
 export type ListInboundShipmentsSortByEnum = typeof ListInboundShipmentsSortByEnum[keyof typeof ListInboundShipmentsSortByEnum];
-/**
- * @export
- */
 export const ListInboundShipmentsSortOrderEnum = {
     Ascending: 'ASCENDING',
     Descending: 'DESCENDING'
 } as const;
 export type ListInboundShipmentsSortOrderEnum = typeof ListInboundShipmentsSortOrderEnum[keyof typeof ListInboundShipmentsSortOrderEnum];
-/**
- * @export
- */
 export const ListInboundShipmentsShipmentStatusEnum = {
     Created: 'CREATED',
     Shipped: 'SHIPPED',
@@ -1209,17 +1100,11 @@ export const ListInboundShipmentsShipmentStatusEnum = {
     Cancelled: 'CANCELLED'
 } as const;
 export type ListInboundShipmentsShipmentStatusEnum = typeof ListInboundShipmentsShipmentStatusEnum[keyof typeof ListInboundShipmentsShipmentStatusEnum];
-/**
- * @export
- */
 export const ListInventorySortOrderEnum = {
     Ascending: 'ASCENDING',
     Descending: 'DESCENDING'
 } as const;
 export type ListInventorySortOrderEnum = typeof ListInventorySortOrderEnum[keyof typeof ListInventorySortOrderEnum];
-/**
- * @export
- */
 export const ListInventoryDetailsEnum = {
     Show: 'SHOW',
     Hide: 'HIDE'

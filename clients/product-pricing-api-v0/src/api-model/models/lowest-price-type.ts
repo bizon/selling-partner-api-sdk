@@ -28,63 +28,25 @@ import type { QuantityDiscountType } from './quantity-discount-type';
 
 /**
  * Schema for an individual lowest price.
- * @export
- * @interface LowestPriceType
  */
 export interface LowestPriceType {
     /**
      * Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
-     * @type {string}
-     * @memberof LowestPriceType
      */
     'condition': string;
     /**
      * Indicates whether the item is fulfilled by Amazon or by the seller.
-     * @type {string}
-     * @memberof LowestPriceType
      */
     'fulfillmentChannel': string;
-    /**
-     * 
-     * @type {OfferCustomerType}
-     * @memberof LowestPriceType
-     */
     'offerType'?: OfferCustomerType;
     /**
      * Indicates at what quantity this price becomes active.
-     * @type {number}
-     * @memberof LowestPriceType
      */
     'quantityTier'?: number;
-    /**
-     * 
-     * @type {QuantityDiscountType}
-     * @memberof LowestPriceType
-     */
     'quantityDiscountType'?: QuantityDiscountType;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof LowestPriceType
-     */
     'LandedPrice'?: MoneyType;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof LowestPriceType
-     */
     'ListingPrice': MoneyType;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof LowestPriceType
-     */
     'Shipping'?: MoneyType;
-    /**
-     * 
-     * @type {Points}
-     * @memberof LowestPriceType
-     */
     'Points'?: Points;
 }
 

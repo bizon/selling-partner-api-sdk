@@ -16,56 +16,38 @@
 
 /**
  * Detailed information about the feed.
- * @export
- * @interface Feed
  */
 export interface Feed {
     /**
      * The identifier for the feed. This identifier is unique only in combination with a seller ID.
-     * @type {string}
-     * @memberof Feed
      */
     'feedId': string;
     /**
      * The feed type.
-     * @type {string}
-     * @memberof Feed
      */
     'feedType': string;
     /**
      * A list of identifiers for the marketplaces that the feed is applied to.
-     * @type {Array<string>}
-     * @memberof Feed
      */
     'marketplaceIds'?: Array<string>;
     /**
      * The date and time when the feed was created, in ISO 8601 date time format.
-     * @type {string}
-     * @memberof Feed
      */
     'createdTime': string;
     /**
      * The processing status of the feed.
-     * @type {string}
-     * @memberof Feed
      */
     'processingStatus': FeedProcessingStatusEnum;
     /**
      * The date and time when feed processing started, in ISO 8601 date time format.
-     * @type {string}
-     * @memberof Feed
      */
     'processingStartTime'?: string;
     /**
      * The date and time when feed processing completed, in ISO 8601 date time format.
-     * @type {string}
-     * @memberof Feed
      */
     'processingEndTime'?: string;
     /**
      * The identifier for the feed document. This identifier is unique only in combination with a seller ID.
-     * @type {string}
-     * @memberof Feed
      */
     'resultFeedDocumentId'?: string;
 }

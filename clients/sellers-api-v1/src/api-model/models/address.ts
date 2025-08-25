@@ -16,44 +16,30 @@
 
 /**
  * Represents an address
- * @export
- * @interface Address
  */
 export interface Address {
     /**
      * Street address information.
-     * @type {string}
-     * @memberof Address
      */
     'addressLine1': string;
     /**
      * Additional street address information.
-     * @type {string}
-     * @memberof Address
      */
     'addressLine2'?: string;
     /**
      * The country code in two-character ISO 3166-1 alpha-2 format.
-     * @type {string}
-     * @memberof Address
      */
     'countryCode': string;
     /**
      * The state or province code.
-     * @type {string}
-     * @memberof Address
      */
     'stateOrProvinceCode'?: string;
     /**
      * The city.
-     * @type {string}
-     * @memberof Address
      */
     'city'?: string;
     /**
      * The postal code.
-     * @type {string}
-     * @memberof Address
      */
     'postalCode'?: string;
 }

@@ -22,26 +22,15 @@ import type { TaxRate } from './tax-rate';
 
 /**
  * Information used to determine the tax compliance.
- * @export
- * @interface TaxDetails
  */
 export interface TaxDetails {
-    /**
-     * 
-     * @type {Currency}
-     * @memberof TaxDetails
-     */
     'declaredValue'?: Currency;
     /**
      * Harmonized System of Nomenclature code.
-     * @type {string}
-     * @memberof TaxDetails
      */
     'hsnCode'?: string;
     /**
      * List of tax rates.
-     * @type {Array<TaxRate>}
-     * @memberof TaxDetails
      */
     'taxRates'?: Array<TaxRate>;
 }

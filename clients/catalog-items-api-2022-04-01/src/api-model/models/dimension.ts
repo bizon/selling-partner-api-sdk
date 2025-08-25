@@ -16,20 +16,14 @@
 
 /**
  * The value of an individual dimension for an Amazon catalog item or item package.
- * @export
- * @interface Dimension
  */
 export interface Dimension {
     /**
      * Unit of measurement for the dimension value.
-     * @type {string}
-     * @memberof Dimension
      */
     'unit'?: string;
     /**
      * Numeric value of the dimension.
-     * @type {number}
-     * @memberof Dimension
      */
     'value'?: number;
 }

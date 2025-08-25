@@ -19,7 +19,6 @@ import type { AplusResponse } from './aplus-response';
 
 /**
  * @type PostContentDocumentSuspendSubmissionResponse
- * @export
  */
 export type PostContentDocumentSuspendSubmissionResponse = AplusResponse;
 

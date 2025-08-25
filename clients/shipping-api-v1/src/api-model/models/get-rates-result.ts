@@ -19,14 +19,10 @@ import type { ServiceRate } from './service-rate';
 
 /**
  * The payload schema for the getRates operation.
- * @export
- * @interface GetRatesResult
  */
 export interface GetRatesResult {
     /**
      * A list of service rates.
-     * @type {Array<ServiceRate>}
-     * @memberof GetRatesResult
      */
     'serviceRates': Array<ServiceRate>;
 }

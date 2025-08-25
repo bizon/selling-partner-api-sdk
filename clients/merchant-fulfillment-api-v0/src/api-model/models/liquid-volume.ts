@@ -16,20 +16,14 @@
 
 /**
  * Liquid volume.
- * @export
- * @interface LiquidVolume
  */
 export interface LiquidVolume {
     /**
      * The unit of measurement.
-     * @type {string}
-     * @memberof LiquidVolume
      */
     'Unit': LiquidVolumeUnitEnum;
     /**
      * The measurement value.
-     * @type {number}
-     * @memberof LiquidVolume
      */
     'Value': number;
 }

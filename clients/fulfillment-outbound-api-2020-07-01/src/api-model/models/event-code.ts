@@ -16,8 +16,6 @@
 
 /**
  * The event code for the delivery event.
- * @export
- * @enum {string}
  */
 
 export const EventCode = {

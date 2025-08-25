@@ -22,50 +22,28 @@ import type { TaxWithheldComponent } from './tax-withheld-component';
 
 /**
  * A retrocharge or retrocharge reversal.
- * @export
- * @interface RetrochargeEvent
  */
 export interface RetrochargeEvent {
     /**
      * The type of event.  Possible values:  * Retrocharge  * RetrochargeReversal
-     * @type {string}
-     * @memberof RetrochargeEvent
      */
     'RetrochargeEventType'?: string;
     /**
      * An Amazon-defined identifier for an order.
-     * @type {string}
-     * @memberof RetrochargeEvent
      */
     'AmazonOrderId'?: string;
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof RetrochargeEvent
      */
     'PostedDate'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof RetrochargeEvent
-     */
     'BaseTax'?: Currency;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof RetrochargeEvent
-     */
     'ShippingTax'?: Currency;
     /**
      * The name of the marketplace where the retrocharge event occurred.
-     * @type {string}
-     * @memberof RetrochargeEvent
      */
     'MarketplaceName'?: string;
     /**
      * A list of information about taxes withheld.
-     * @type {Array<TaxWithheldComponent>}
-     * @memberof RetrochargeEvent
      */
     'RetrochargeTaxWithheldList'?: Array<TaxWithheldComponent>;
 }

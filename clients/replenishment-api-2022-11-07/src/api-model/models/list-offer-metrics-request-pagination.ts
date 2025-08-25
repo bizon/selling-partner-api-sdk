@@ -16,20 +16,14 @@
 
 /**
  * Use these parameters to paginate through the response.
- * @export
- * @interface ListOfferMetricsRequestPagination
  */
 export interface ListOfferMetricsRequestPagination {
     /**
      * The maximum number of results to return in the response.
-     * @type {number}
-     * @memberof ListOfferMetricsRequestPagination
      */
     'limit': number;
     /**
      * The offset from which to retrieve the number of results specified by the `limit` value. The first result is at offset 0.
-     * @type {number}
-     * @memberof ListOfferMetricsRequestPagination
      */
     'offset': number;
 }

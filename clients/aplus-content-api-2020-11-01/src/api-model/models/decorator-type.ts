@@ -16,8 +16,6 @@
 
 /**
  * The type of rich text decorator.
- * @export
- * @enum {string}
  */
 
 export const DecoratorType = {

@@ -16,32 +16,22 @@
 
 /**
  * Additional information related to the product.
- * @export
- * @interface ProductContext
  */
 export interface ProductContext {
     /**
      * Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof ProductContext
      */
     'asin'?: string;
     /**
      * Stock keeping unit (SKU) of the item.
-     * @type {string}
-     * @memberof ProductContext
      */
     'sku'?: string;
     /**
      * Quantity of the item shipped.
-     * @type {number}
-     * @memberof ProductContext
      */
     'quantityShipped'?: number;
     /**
      * Fulfillment network of the item.
-     * @type {string}
-     * @memberof ProductContext
      */
     'fulfillmentNetwork'?: string;
 }

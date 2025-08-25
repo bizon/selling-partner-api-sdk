@@ -22,20 +22,14 @@ import type { ClassificationRefinement } from './classification-refinement';
 
 /**
  * Search refinements.
- * @export
- * @interface Refinements
  */
 export interface Refinements {
     /**
      * Brand search refinements.
-     * @type {Array<BrandRefinement>}
-     * @memberof Refinements
      */
     'brands': Array<BrandRefinement>;
     /**
      * Classification search refinements.
-     * @type {Array<ClassificationRefinement>}
-     * @memberof Refinements
      */
     'classifications': Array<ClassificationRefinement>;
 }

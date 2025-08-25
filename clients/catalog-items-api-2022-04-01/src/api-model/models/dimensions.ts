@@ -19,33 +19,11 @@ import type { Dimension } from './dimension';
 
 /**
  * Dimensions of an Amazon catalog item or item in its packaging.
- * @export
- * @interface Dimensions
  */
 export interface Dimensions {
-    /**
-     * 
-     * @type {Dimension}
-     * @memberof Dimensions
-     */
     'height'?: Dimension;
-    /**
-     * 
-     * @type {Dimension}
-     * @memberof Dimensions
-     */
     'length'?: Dimension;
-    /**
-     * 
-     * @type {Dimension}
-     * @memberof Dimensions
-     */
     'weight'?: Dimension;
-    /**
-     * 
-     * @type {Dimension}
-     * @memberof Dimensions
-     */
     'width'?: Dimension;
 }
 

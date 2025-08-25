@@ -22,26 +22,15 @@ import type { MoneyType } from './money-type';
 
 /**
  * The total estimated fees for an item and a list of details.
- * @export
- * @interface FeesEstimate
  */
 export interface FeesEstimate {
     /**
      * The time at which the fees were estimated. This defaults to the time the request is made.
-     * @type {string}
-     * @memberof FeesEstimate
      */
     'TimeOfFeesEstimation': string;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof FeesEstimate
-     */
     'TotalFeesEstimate'?: MoneyType;
     /**
      * A list of other fees that contribute to a given fee.
-     * @type {Array<FeeDetail>}
-     * @memberof FeesEstimate
      */
     'FeeDetailList'?: Array<FeeDetail>;
 }

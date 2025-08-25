@@ -22,20 +22,11 @@ import type { ShippingLabel } from './shipping-label';
 
 /**
  * Response payload with the list of shipping labels
- * @export
- * @interface ShippingLabelList
  */
 export interface ShippingLabelList {
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof ShippingLabelList
-     */
     'pagination'?: Pagination;
     /**
      * An array containing the details of the generated shipping labels.
-     * @type {Array<ShippingLabel>}
-     * @memberof ShippingLabelList
      */
     'shippingLabels'?: Array<ShippingLabel>;
 }

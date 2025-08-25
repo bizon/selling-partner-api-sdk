@@ -19,14 +19,10 @@ import type { OrderAcknowledgementItem } from './order-acknowledgement-item';
 
 /**
  * The request schema for the submitAcknowledgement operation.
- * @export
- * @interface SubmitAcknowledgementRequest
  */
 export interface SubmitAcknowledgementRequest {
     /**
      * A list of one or more purchase orders.
-     * @type {Array<OrderAcknowledgementItem>}
-     * @memberof SubmitAcknowledgementRequest
      */
     'orderAcknowledgements'?: Array<OrderAcknowledgementItem>;
 }

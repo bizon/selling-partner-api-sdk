@@ -19,50 +19,31 @@ import type { BankAccountNumberFormat } from './bank-account-number-format';
 
 /**
  * Details of the bank account involved in the transaction.
- * @export
- * @interface TransactionAccount
  */
 export interface TransactionAccount {
     /**
      * The unique identifier provided by Amazon to identify the account 
-     * @type {string}
-     * @memberof TransactionAccount
      */
     'accountId'?: string;
     /**
      * BankAccount holder\'s name 
-     * @type {string}
-     * @memberof TransactionAccount
      */
     'bankAccountHolderName': string;
     /**
      * The name of the bank 
-     * @type {string}
-     * @memberof TransactionAccount
      */
     'bankName': string;
-    /**
-     * 
-     * @type {BankAccountNumberFormat}
-     * @memberof TransactionAccount
-     */
     'bankAccountNumberFormat': BankAccountNumberFormat;
     /**
      * Last 3 digit of the bank account number 
-     * @type {string}
-     * @memberof TransactionAccount
      */
     'bankAccountNumberTail'?: string;
     /**
      * The two digit country code, in ISO 3166 format. This field is OPTIONAL for transactionSourceAccount object but is MANDATORY field for transactionDestinationAccount 
-     * @type {string}
-     * @memberof TransactionAccount
      */
     'bankAccountCountryCode'?: string;
     /**
      * The currency code in ISO 4217 format 
-     * @type {string}
-     * @memberof TransactionAccount
      */
     'bankAccountCurrency': string;
 }

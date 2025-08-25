@@ -16,20 +16,14 @@
 
 /**
  * Carrier Related Info
- * @export
- * @interface Carrier
  */
 export interface Carrier {
     /**
      * The carrier identifier for the offering, provided by the carrier.
-     * @type {string}
-     * @memberof Carrier
      */
     'id': string;
     /**
      * The carrier name for the offering.
-     * @type {string}
-     * @memberof Carrier
      */
     'name': string;
 }

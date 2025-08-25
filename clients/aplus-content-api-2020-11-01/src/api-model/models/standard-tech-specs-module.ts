@@ -22,26 +22,15 @@ import type { TextComponent } from './text-component';
 
 /**
  * The standard table of technical feature names and definitions.
- * @export
- * @interface StandardTechSpecsModule
  */
 export interface StandardTechSpecsModule {
-    /**
-     * 
-     * @type {TextComponent}
-     * @memberof StandardTechSpecsModule
-     */
     'headline'?: TextComponent;
     /**
      * The specification list.
-     * @type {Array<StandardTextPairBlock>}
-     * @memberof StandardTechSpecsModule
      */
     'specificationList': Array<StandardTextPairBlock>;
     /**
      * The number of tables you want present. Features are evenly divided between the tables.
-     * @type {number}
-     * @memberof StandardTechSpecsModule
      */
     'tableCount'?: number;
 }

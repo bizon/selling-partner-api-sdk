@@ -16,20 +16,14 @@
 
 /**
  * Product type associated with the Amazon catalog item for the indicated Amazon marketplace.
- * @export
- * @interface ItemProductTypeByMarketplace
  */
 export interface ItemProductTypeByMarketplace {
     /**
      * Amazon marketplace identifier.
-     * @type {string}
-     * @memberof ItemProductTypeByMarketplace
      */
     'marketplaceId'?: string;
     /**
      * Name of the product type associated with the Amazon catalog item.
-     * @type {string}
-     * @memberof ItemProductTypeByMarketplace
      */
     'productType'?: string;
 }

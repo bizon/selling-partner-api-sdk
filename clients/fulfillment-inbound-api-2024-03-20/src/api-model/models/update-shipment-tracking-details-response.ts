@@ -16,14 +16,10 @@
 
 /**
  * The `updateShipmentTrackingDetails` response.
- * @export
- * @interface UpdateShipmentTrackingDetailsResponse
  */
 export interface UpdateShipmentTrackingDetailsResponse {
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof UpdateShipmentTrackingDetailsResponse
      */
     'operationId': string;
 }

@@ -16,8 +16,6 @@
 
 /**
  * Indicates whether the item is fulfilled by Amazon or by the seller (merchant).
- * @export
- * @enum {string}
  */
 
 export const FulfillmentChannelType = {

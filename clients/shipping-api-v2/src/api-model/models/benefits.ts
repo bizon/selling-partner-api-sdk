@@ -19,20 +19,14 @@ import type { ExcludedBenefit } from './excluded-benefit';
 
 /**
  * Benefits that are included and excluded for each shipping offer. Benefits represents services provided by Amazon (eg. CLAIMS_PROTECTED, etc.) when sellers purchase shipping through Amazon. Benefit details will be made available for any shipment placed on or after January 1st 2024 00:00 UTC.
- * @export
- * @interface Benefits
  */
 export interface Benefits {
     /**
      * A list of included benefits.
-     * @type {Array<string>}
-     * @memberof Benefits
      */
     'includedBenefits': Array<string>;
     /**
      * A list of excluded benefit. Refer to the ExcludeBenefit object for further documentation
-     * @type {Array<ExcludedBenefit>}
-     * @memberof Benefits
      */
     'excludedBenefits': Array<ExcludedBenefit>;
 }

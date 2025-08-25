@@ -37,7 +37,6 @@ import type { GetOffersResponse } from '../models';
 import type { GetPricingResponse } from '../models';
 /**
  * ProductPricingApi - axios parameter creator
- * @export
  */
 export const ProductPricingApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -341,7 +340,6 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
 
 /**
  * ProductPricingApi - functional programming interface
- * @export
  */
 export const ProductPricingApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ProductPricingApiAxiosParamCreator(configuration)
@@ -438,7 +436,6 @@ export const ProductPricingApiFp = function(configuration?: Configuration) {
 
 /**
  * ProductPricingApi - factory interface
- * @export
  */
 export const ProductPricingApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = ProductPricingApiFp(configuration)
@@ -502,198 +499,141 @@ export const ProductPricingApiFactory = function (configuration?: Configuration,
 
 /**
  * Request parameters for getCompetitivePricing operation in ProductPricingApi.
- * @export
- * @interface ProductPricingApiGetCompetitivePricingRequest
  */
 export interface ProductPricingApiGetCompetitivePricingRequest {
     /**
      * A marketplace identifier. Specifies the marketplace for which prices are returned.
-     * @type {string}
-     * @memberof ProductPricingApiGetCompetitivePricing
      */
     readonly marketplaceId: string
 
     /**
      * Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku.
-     * @type {'Asin' | 'Sku'}
-     * @memberof ProductPricingApiGetCompetitivePricing
      */
     readonly itemType: GetCompetitivePricingItemTypeEnum
 
     /**
      * A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace.
-     * @type {Array<string>}
-     * @memberof ProductPricingApiGetCompetitivePricing
      */
     readonly asins?: Array<string>
 
     /**
      * A list of up to twenty seller SKU values used to identify items in the given marketplace.
-     * @type {Array<string>}
-     * @memberof ProductPricingApiGetCompetitivePricing
      */
     readonly skus?: Array<string>
 
     /**
      * Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer.
-     * @type {'Consumer' | 'Business'}
-     * @memberof ProductPricingApiGetCompetitivePricing
      */
     readonly customerType?: GetCompetitivePricingCustomerTypeEnum
 }
 
 /**
  * Request parameters for getItemOffers operation in ProductPricingApi.
- * @export
- * @interface ProductPricingApiGetItemOffersRequest
  */
 export interface ProductPricingApiGetItemOffersRequest {
     /**
      * A marketplace identifier. Specifies the marketplace for which prices are returned.
-     * @type {string}
-     * @memberof ProductPricingApiGetItemOffers
      */
     readonly marketplaceId: string
 
     /**
      * Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
-     * @type {'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'}
-     * @memberof ProductPricingApiGetItemOffers
      */
     readonly itemCondition: GetItemOffersItemConditionEnum
 
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof ProductPricingApiGetItemOffers
      */
     readonly asin: string
 
     /**
      * Indicates whether to request Consumer or Business offers. Default is Consumer.
-     * @type {'Consumer' | 'Business'}
-     * @memberof ProductPricingApiGetItemOffers
      */
     readonly customerType?: GetItemOffersCustomerTypeEnum
 }
 
 /**
  * Request parameters for getItemOffersBatch operation in ProductPricingApi.
- * @export
- * @interface ProductPricingApiGetItemOffersBatchRequest
  */
 export interface ProductPricingApiGetItemOffersBatchRequest {
     /**
      * The request associated with the &#x60;getItemOffersBatch&#x60; API call.
-     * @type {GetItemOffersBatchRequest}
-     * @memberof ProductPricingApiGetItemOffersBatch
      */
     readonly getItemOffersBatchRequestBody: GetItemOffersBatchRequest
 }
 
 /**
  * Request parameters for getListingOffers operation in ProductPricingApi.
- * @export
- * @interface ProductPricingApiGetListingOffersRequest
  */
 export interface ProductPricingApiGetListingOffersRequest {
     /**
      * A marketplace identifier. Specifies the marketplace for which prices are returned.
-     * @type {string}
-     * @memberof ProductPricingApiGetListingOffers
      */
     readonly marketplaceId: string
 
     /**
      * Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
-     * @type {'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'}
-     * @memberof ProductPricingApiGetListingOffers
      */
     readonly itemCondition: GetListingOffersItemConditionEnum
 
     /**
      * Identifies an item in the given marketplace. SellerSKU is qualified by the seller\&#39;s SellerId, which is included with every operation that you submit.
-     * @type {string}
-     * @memberof ProductPricingApiGetListingOffers
      */
     readonly sellerSKU: string
 
     /**
      * Indicates whether to request Consumer or Business offers. Default is Consumer.
-     * @type {'Consumer' | 'Business'}
-     * @memberof ProductPricingApiGetListingOffers
      */
     readonly customerType?: GetListingOffersCustomerTypeEnum
 }
 
 /**
  * Request parameters for getListingOffersBatch operation in ProductPricingApi.
- * @export
- * @interface ProductPricingApiGetListingOffersBatchRequest
  */
 export interface ProductPricingApiGetListingOffersBatchRequest {
     /**
      * The request associated with the &#x60;getListingOffersBatch&#x60; API call.
-     * @type {GetListingOffersBatchRequest}
-     * @memberof ProductPricingApiGetListingOffersBatch
      */
     readonly getListingOffersBatchRequestBody: GetListingOffersBatchRequest
 }
 
 /**
  * Request parameters for getPricing operation in ProductPricingApi.
- * @export
- * @interface ProductPricingApiGetPricingRequest
  */
 export interface ProductPricingApiGetPricingRequest {
     /**
      * A marketplace identifier. Specifies the marketplace for which prices are returned.
-     * @type {string}
-     * @memberof ProductPricingApiGetPricing
      */
     readonly marketplaceId: string
 
     /**
      * Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter.
-     * @type {'Asin' | 'Sku'}
-     * @memberof ProductPricingApiGetPricing
      */
     readonly itemType: GetPricingItemTypeEnum
 
     /**
      * A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace.
-     * @type {Array<string>}
-     * @memberof ProductPricingApiGetPricing
      */
     readonly asins?: Array<string>
 
     /**
      * A list of up to twenty seller SKU values used to identify items in the given marketplace.
-     * @type {Array<string>}
-     * @memberof ProductPricingApiGetPricing
      */
     readonly skus?: Array<string>
 
     /**
      * Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
-     * @type {'New' | 'Used' | 'Collectible' | 'Refurbished' | 'Club'}
-     * @memberof ProductPricingApiGetPricing
      */
     readonly itemCondition?: GetPricingItemConditionEnum
 
     /**
      * Indicates whether to request pricing information for the seller\&#39;s B2C or B2B offers. Default is B2C.
-     * @type {'B2C' | 'B2B'}
-     * @memberof ProductPricingApiGetPricing
      */
     readonly offerType?: GetPricingOfferTypeEnum
 }
 
 /**
  * ProductPricingApi - object-oriented interface
- * @export
- * @class ProductPricingApi
- * @extends {BaseAPI}
  */
 export class ProductPricingApi extends BaseAPI {
     /**
@@ -701,7 +641,6 @@ export class ProductPricingApi extends BaseAPI {
      * @param {ProductPricingApiGetCompetitivePricingRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ProductPricingApi
      */
     public getCompetitivePricing(requestParameters: ProductPricingApiGetCompetitivePricingRequest, options?: RawAxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getCompetitivePricing(requestParameters.marketplaceId, requestParameters.itemType, requestParameters.asins, requestParameters.skus, requestParameters.customerType, options).then((request) => request(this.axios, this.basePath));
@@ -712,7 +651,6 @@ export class ProductPricingApi extends BaseAPI {
      * @param {ProductPricingApiGetItemOffersRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ProductPricingApi
      */
     public getItemOffers(requestParameters: ProductPricingApiGetItemOffersRequest, options?: RawAxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getItemOffers(requestParameters.marketplaceId, requestParameters.itemCondition, requestParameters.asin, requestParameters.customerType, options).then((request) => request(this.axios, this.basePath));
@@ -723,7 +661,6 @@ export class ProductPricingApi extends BaseAPI {
      * @param {ProductPricingApiGetItemOffersBatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ProductPricingApi
      */
     public getItemOffersBatch(requestParameters: ProductPricingApiGetItemOffersBatchRequest, options?: RawAxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getItemOffersBatch(requestParameters.getItemOffersBatchRequestBody, options).then((request) => request(this.axios, this.basePath));
@@ -734,7 +671,6 @@ export class ProductPricingApi extends BaseAPI {
      * @param {ProductPricingApiGetListingOffersRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ProductPricingApi
      */
     public getListingOffers(requestParameters: ProductPricingApiGetListingOffersRequest, options?: RawAxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getListingOffers(requestParameters.marketplaceId, requestParameters.itemCondition, requestParameters.sellerSKU, requestParameters.customerType, options).then((request) => request(this.axios, this.basePath));
@@ -745,7 +681,6 @@ export class ProductPricingApi extends BaseAPI {
      * @param {ProductPricingApiGetListingOffersBatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ProductPricingApi
      */
     public getListingOffersBatch(requestParameters: ProductPricingApiGetListingOffersBatchRequest, options?: RawAxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getListingOffersBatch(requestParameters.getListingOffersBatchRequestBody, options).then((request) => request(this.axios, this.basePath));
@@ -756,32 +691,22 @@ export class ProductPricingApi extends BaseAPI {
      * @param {ProductPricingApiGetPricingRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ProductPricingApi
      */
     public getPricing(requestParameters: ProductPricingApiGetPricingRequest, options?: RawAxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getPricing(requestParameters.marketplaceId, requestParameters.itemType, requestParameters.asins, requestParameters.skus, requestParameters.itemCondition, requestParameters.offerType, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetCompetitivePricingItemTypeEnum = {
     Asin: 'Asin',
     Sku: 'Sku'
 } as const;
 export type GetCompetitivePricingItemTypeEnum = typeof GetCompetitivePricingItemTypeEnum[keyof typeof GetCompetitivePricingItemTypeEnum];
-/**
- * @export
- */
 export const GetCompetitivePricingCustomerTypeEnum = {
     Consumer: 'Consumer',
     Business: 'Business'
 } as const;
 export type GetCompetitivePricingCustomerTypeEnum = typeof GetCompetitivePricingCustomerTypeEnum[keyof typeof GetCompetitivePricingCustomerTypeEnum];
-/**
- * @export
- */
 export const GetItemOffersItemConditionEnum = {
     New: 'New',
     Used: 'Used',
@@ -790,17 +715,11 @@ export const GetItemOffersItemConditionEnum = {
     Club: 'Club'
 } as const;
 export type GetItemOffersItemConditionEnum = typeof GetItemOffersItemConditionEnum[keyof typeof GetItemOffersItemConditionEnum];
-/**
- * @export
- */
 export const GetItemOffersCustomerTypeEnum = {
     Consumer: 'Consumer',
     Business: 'Business'
 } as const;
 export type GetItemOffersCustomerTypeEnum = typeof GetItemOffersCustomerTypeEnum[keyof typeof GetItemOffersCustomerTypeEnum];
-/**
- * @export
- */
 export const GetListingOffersItemConditionEnum = {
     New: 'New',
     Used: 'Used',
@@ -809,25 +728,16 @@ export const GetListingOffersItemConditionEnum = {
     Club: 'Club'
 } as const;
 export type GetListingOffersItemConditionEnum = typeof GetListingOffersItemConditionEnum[keyof typeof GetListingOffersItemConditionEnum];
-/**
- * @export
- */
 export const GetListingOffersCustomerTypeEnum = {
     Consumer: 'Consumer',
     Business: 'Business'
 } as const;
 export type GetListingOffersCustomerTypeEnum = typeof GetListingOffersCustomerTypeEnum[keyof typeof GetListingOffersCustomerTypeEnum];
-/**
- * @export
- */
 export const GetPricingItemTypeEnum = {
     Asin: 'Asin',
     Sku: 'Sku'
 } as const;
 export type GetPricingItemTypeEnum = typeof GetPricingItemTypeEnum[keyof typeof GetPricingItemTypeEnum];
-/**
- * @export
- */
 export const GetPricingItemConditionEnum = {
     New: 'New',
     Used: 'Used',
@@ -836,9 +746,6 @@ export const GetPricingItemConditionEnum = {
     Club: 'Club'
 } as const;
 export type GetPricingItemConditionEnum = typeof GetPricingItemConditionEnum[keyof typeof GetPricingItemConditionEnum];
-/**
- * @export
- */
 export const GetPricingOfferTypeEnum = {
     B2C: 'B2C',
     B2B: 'B2B'

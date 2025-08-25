@@ -19,27 +19,16 @@ import type { Label } from './label';
 
 /**
  * Label details including label stream, format, size.
- * @export
- * @interface LabelResult
  */
 export interface LabelResult {
     /**
      * An identifier for the container. This must be unique within all the containers in the same shipment.
-     * @type {string}
-     * @memberof LabelResult
      */
     'containerReferenceId'?: string;
     /**
      * The tracking identifier assigned to the container.
-     * @type {string}
-     * @memberof LabelResult
      */
     'trackingId'?: string;
-    /**
-     * 
-     * @type {Label}
-     * @memberof LabelResult
-     */
     'label'?: Label;
 }
 

@@ -25,7 +25,6 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 import type { ListCatalogCategoriesResponse } from '../models';
 /**
  * CatalogItemsApi - axios parameter creator
- * @export
  */
 export const CatalogItemsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -80,7 +79,6 @@ export const CatalogItemsApiAxiosParamCreator = function (configuration?: Config
 
 /**
  * CatalogItemsApi - functional programming interface
- * @export
  */
 export const CatalogItemsApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = CatalogItemsApiAxiosParamCreator(configuration)
@@ -104,7 +102,6 @@ export const CatalogItemsApiFp = function(configuration?: Configuration) {
 
 /**
  * CatalogItemsApi - factory interface
- * @export
  */
 export const CatalogItemsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = CatalogItemsApiFp(configuration)
@@ -123,37 +120,26 @@ export const CatalogItemsApiFactory = function (configuration?: Configuration, b
 
 /**
  * Request parameters for listCatalogCategories operation in CatalogItemsApi.
- * @export
- * @interface CatalogItemsApiListCatalogCategoriesRequest
  */
 export interface CatalogItemsApiListCatalogCategoriesRequest {
     /**
      * A marketplace identifier. Specifies the marketplace for the item.
-     * @type {string}
-     * @memberof CatalogItemsApiListCatalogCategories
      */
     readonly marketplaceId: string
 
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof CatalogItemsApiListCatalogCategories
      */
     readonly aSIN?: string
 
     /**
      * Used to identify items in the given marketplace. SellerSKU is qualified by the seller\&#39;s SellerId, which is included with every operation that you submit.
-     * @type {string}
-     * @memberof CatalogItemsApiListCatalogCategories
      */
     readonly sellerSKU?: string
 }
 
 /**
  * CatalogItemsApi - object-oriented interface
- * @export
- * @class CatalogItemsApi
- * @extends {BaseAPI}
  */
 export class CatalogItemsApi extends BaseAPI {
     /**
@@ -161,7 +147,6 @@ export class CatalogItemsApi extends BaseAPI {
      * @param {CatalogItemsApiListCatalogCategoriesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof CatalogItemsApi
      */
     public listCatalogCategories(requestParameters: CatalogItemsApiListCatalogCategoriesRequest, options?: RawAxiosRequestConfig) {
         return CatalogItemsApiFp(this.configuration).listCatalogCategories(requestParameters.marketplaceId, requestParameters.aSIN, requestParameters.sellerSKU, options).then((request) => request(this.axios, this.basePath));

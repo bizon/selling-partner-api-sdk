@@ -19,38 +19,23 @@ import type { Weight } from './weight';
 
 /**
  * Item information for a shipment in a fulfillment order preview.
- * @export
- * @interface FulfillmentPreviewItem
  */
 export interface FulfillmentPreviewItem {
     /**
      * The seller SKU of the item.
-     * @type {string}
-     * @memberof FulfillmentPreviewItem
      */
     'sellerSku': string;
     /**
      * The item quantity.
-     * @type {number}
-     * @memberof FulfillmentPreviewItem
      */
     'quantity': number;
     /**
      * A fulfillment order item identifier that the seller created with a call to the `createFulfillmentOrder` operation.
-     * @type {string}
-     * @memberof FulfillmentPreviewItem
      */
     'sellerFulfillmentOrderItemId': string;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof FulfillmentPreviewItem
-     */
     'estimatedShippingWeight'?: Weight;
     /**
      * The method used to calculate the estimated shipping weight.
-     * @type {string}
-     * @memberof FulfillmentPreviewItem
      */
     'shippingWeightCalculationMethod'?: FulfillmentPreviewItemShippingWeightCalculationMethodEnum;
 }

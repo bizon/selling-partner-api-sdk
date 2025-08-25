@@ -16,20 +16,14 @@
 
 /**
  * Related business identifier of the transaction.
- * @export
- * @interface RelatedIdentifier
  */
 export interface RelatedIdentifier {
     /**
      * Enumerated set of related business identifier names.
-     * @type {string}
-     * @memberof RelatedIdentifier
      */
     'relatedIdentifierName'?: RelatedIdentifierRelatedIdentifierNameEnum;
     /**
      * Corresponding value of RelatedIdentifierName
-     * @type {string}
-     * @memberof RelatedIdentifier
      */
     'relatedIdentifierValue'?: string;
 }

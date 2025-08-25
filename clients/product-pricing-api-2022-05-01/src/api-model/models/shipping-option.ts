@@ -19,21 +19,12 @@ import type { MoneyType } from './money-type';
 
 /**
  * The shipping option available for the offer.
- * @export
- * @interface ShippingOption
  */
 export interface ShippingOption {
     /**
      * The type of shipping option.
-     * @type {string}
-     * @memberof ShippingOption
      */
     'shippingOptionType': ShippingOptionShippingOptionTypeEnum;
-    /**
-     * 
-     * @type {MoneyType}
-     * @memberof ShippingOption
-     */
     'price': MoneyType;
 }
 

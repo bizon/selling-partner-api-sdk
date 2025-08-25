@@ -16,20 +16,14 @@
 
 /**
  * The tax classification of the order.
- * @export
- * @interface TaxClassification
  */
 export interface TaxClassification {
     /**
      * The type of tax.
-     * @type {string}
-     * @memberof TaxClassification
      */
     'Name'?: string;
     /**
      * The buyer\'s tax identifier.
-     * @type {string}
-     * @memberof TaxClassification
      */
     'Value'?: string;
 }

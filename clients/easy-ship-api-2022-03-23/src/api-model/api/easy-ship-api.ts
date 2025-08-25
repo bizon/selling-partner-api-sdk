@@ -41,7 +41,6 @@ import type { Packages } from '../models';
 import type { UpdateScheduledPackagesRequest } from '../models';
 /**
  * EasyShipApi - axios parameter creator
- * @export
  */
 export const EasyShipApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -229,7 +228,6 @@ export const EasyShipApiAxiosParamCreator = function (configuration?: Configurat
 
 /**
  * EasyShipApi - functional programming interface
- * @export
  */
 export const EasyShipApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = EasyShipApiAxiosParamCreator(configuration)
@@ -300,7 +298,6 @@ export const EasyShipApiFp = function(configuration?: Configuration) {
 
 /**
  * EasyShipApi - factory interface
- * @export
  */
 export const EasyShipApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = EasyShipApiFp(configuration)
@@ -355,86 +352,61 @@ export const EasyShipApiFactory = function (configuration?: Configuration, baseP
 
 /**
  * Request parameters for createScheduledPackage operation in EasyShipApi.
- * @export
- * @interface EasyShipApiCreateScheduledPackageRequest
  */
 export interface EasyShipApiCreateScheduledPackageRequest {
     /**
      * The request schema for the &#x60;createScheduledPackage&#x60; operation.
-     * @type {CreateScheduledPackageRequest}
-     * @memberof EasyShipApiCreateScheduledPackage
      */
     readonly createScheduledPackageRequest: CreateScheduledPackageRequest
 }
 
 /**
  * Request parameters for createScheduledPackageBulk operation in EasyShipApi.
- * @export
- * @interface EasyShipApiCreateScheduledPackageBulkRequest
  */
 export interface EasyShipApiCreateScheduledPackageBulkRequest {
     /**
      * The request schema for the &#x60;createScheduledPackageBulk&#x60; operation.
-     * @type {CreateScheduledPackagesRequest}
-     * @memberof EasyShipApiCreateScheduledPackageBulk
      */
     readonly createScheduledPackagesRequest: CreateScheduledPackagesRequest
 }
 
 /**
  * Request parameters for getScheduledPackage operation in EasyShipApi.
- * @export
- * @interface EasyShipApiGetScheduledPackageRequest
  */
 export interface EasyShipApiGetScheduledPackageRequest {
     /**
      * An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
-     * @type {string}
-     * @memberof EasyShipApiGetScheduledPackage
      */
     readonly amazonOrderId: string
 
     /**
      * An identifier for the marketplace in which the seller is selling.
-     * @type {string}
-     * @memberof EasyShipApiGetScheduledPackage
      */
     readonly marketplaceId: string
 }
 
 /**
  * Request parameters for listHandoverSlots operation in EasyShipApi.
- * @export
- * @interface EasyShipApiListHandoverSlotsRequest
  */
 export interface EasyShipApiListHandoverSlotsRequest {
     /**
      * The request schema for the &#x60;listHandoverSlots&#x60; operation.
-     * @type {ListHandoverSlotsRequest}
-     * @memberof EasyShipApiListHandoverSlots
      */
     readonly listHandoverSlotsRequest?: ListHandoverSlotsRequest
 }
 
 /**
  * Request parameters for updateScheduledPackages operation in EasyShipApi.
- * @export
- * @interface EasyShipApiUpdateScheduledPackagesRequest
  */
 export interface EasyShipApiUpdateScheduledPackagesRequest {
     /**
      * The request schema for the &#x60;updateScheduledPackages&#x60; operation.
-     * @type {UpdateScheduledPackagesRequest}
-     * @memberof EasyShipApiUpdateScheduledPackages
      */
     readonly updateScheduledPackagesRequest?: UpdateScheduledPackagesRequest
 }
 
 /**
  * EasyShipApi - object-oriented interface
- * @export
- * @class EasyShipApi
- * @extends {BaseAPI}
  */
 export class EasyShipApi extends BaseAPI {
     /**
@@ -442,7 +414,6 @@ export class EasyShipApi extends BaseAPI {
      * @param {EasyShipApiCreateScheduledPackageRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof EasyShipApi
      */
     public createScheduledPackage(requestParameters: EasyShipApiCreateScheduledPackageRequest, options?: RawAxiosRequestConfig) {
         return EasyShipApiFp(this.configuration).createScheduledPackage(requestParameters.createScheduledPackageRequest, options).then((request) => request(this.axios, this.basePath));
@@ -453,7 +424,6 @@ export class EasyShipApi extends BaseAPI {
      * @param {EasyShipApiCreateScheduledPackageBulkRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof EasyShipApi
      */
     public createScheduledPackageBulk(requestParameters: EasyShipApiCreateScheduledPackageBulkRequest, options?: RawAxiosRequestConfig) {
         return EasyShipApiFp(this.configuration).createScheduledPackageBulk(requestParameters.createScheduledPackagesRequest, options).then((request) => request(this.axios, this.basePath));
@@ -464,7 +434,6 @@ export class EasyShipApi extends BaseAPI {
      * @param {EasyShipApiGetScheduledPackageRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof EasyShipApi
      */
     public getScheduledPackage(requestParameters: EasyShipApiGetScheduledPackageRequest, options?: RawAxiosRequestConfig) {
         return EasyShipApiFp(this.configuration).getScheduledPackage(requestParameters.amazonOrderId, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
@@ -475,7 +444,6 @@ export class EasyShipApi extends BaseAPI {
      * @param {EasyShipApiListHandoverSlotsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof EasyShipApi
      */
     public listHandoverSlots(requestParameters: EasyShipApiListHandoverSlotsRequest = {}, options?: RawAxiosRequestConfig) {
         return EasyShipApiFp(this.configuration).listHandoverSlots(requestParameters.listHandoverSlotsRequest, options).then((request) => request(this.axios, this.basePath));
@@ -486,7 +454,6 @@ export class EasyShipApi extends BaseAPI {
      * @param {EasyShipApiUpdateScheduledPackagesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof EasyShipApi
      */
     public updateScheduledPackages(requestParameters: EasyShipApiUpdateScheduledPackagesRequest = {}, options?: RawAxiosRequestConfig) {
         return EasyShipApiFp(this.configuration).updateScheduledPackages(requestParameters.updateScheduledPackagesRequest, options).then((request) => request(this.axios, this.basePath));

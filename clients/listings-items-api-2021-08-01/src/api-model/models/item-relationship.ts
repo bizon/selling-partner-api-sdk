@@ -19,32 +19,19 @@ import type { ItemVariationTheme } from './item-variation-theme';
 
 /**
  * The relationship details for a listing item.
- * @export
- * @interface ItemRelationship
  */
 export interface ItemRelationship {
     /**
      * Identifiers (SKUs) of the related items that are children of this listing item.
-     * @type {Array<string>}
-     * @memberof ItemRelationship
      */
     'childSkus'?: Array<string>;
     /**
      * Identifiers (SKUs) of the related items that are parents of this listing item.
-     * @type {Array<string>}
-     * @memberof ItemRelationship
      */
     'parentSkus'?: Array<string>;
-    /**
-     * 
-     * @type {ItemVariationTheme}
-     * @memberof ItemRelationship
-     */
     'variationTheme'?: ItemVariationTheme;
     /**
      * The type of relationship.
-     * @type {string}
-     * @memberof ItemRelationship
      */
     'type': ItemRelationshipTypeEnum;
 }

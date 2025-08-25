@@ -29,7 +29,6 @@ import type { Item } from '../models';
 import type { ItemSearchResults } from '../models';
 /**
  * CatalogItemsApi - axios parameter creator
- * @export
  */
 export const CatalogItemsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -166,7 +165,6 @@ export const CatalogItemsApiAxiosParamCreator = function (configuration?: Config
 
 /**
  * CatalogItemsApi - functional programming interface
- * @export
  */
 export const CatalogItemsApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = CatalogItemsApiAxiosParamCreator(configuration)
@@ -211,7 +209,6 @@ export const CatalogItemsApiFp = function(configuration?: Configuration) {
 
 /**
  * CatalogItemsApi - factory interface
- * @export
  */
 export const CatalogItemsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = CatalogItemsApiFp(configuration)
@@ -239,114 +236,81 @@ export const CatalogItemsApiFactory = function (configuration?: Configuration, b
 
 /**
  * Request parameters for getCatalogItem operation in CatalogItemsApi.
- * @export
- * @interface CatalogItemsApiGetCatalogItemRequest
  */
 export interface CatalogItemsApiGetCatalogItemRequest {
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof CatalogItemsApiGetCatalogItem
      */
     readonly asin: string
 
     /**
      * A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.
-     * @type {Array<string>}
-     * @memberof CatalogItemsApiGetCatalogItem
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * A comma-delimited list of data sets to include in the response. Default: summaries.
-     * @type {Array<'attributes' | 'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>}
-     * @memberof CatalogItemsApiGetCatalogItem
      */
     readonly includedData?: Array<GetCatalogItemIncludedDataEnum>
 
     /**
      * Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
-     * @type {string}
-     * @memberof CatalogItemsApiGetCatalogItem
      */
     readonly locale?: string
 }
 
 /**
  * Request parameters for searchCatalogItems operation in CatalogItemsApi.
- * @export
- * @interface CatalogItemsApiSearchCatalogItemsRequest
  */
 export interface CatalogItemsApiSearchCatalogItemsRequest {
     /**
      * A comma-delimited list of words or item identifiers to search the Amazon catalog for.
-     * @type {Array<string>}
-     * @memberof CatalogItemsApiSearchCatalogItems
      */
     readonly keywords: Array<string>
 
     /**
      * A comma-delimited list of Amazon marketplace identifiers for the request.
-     * @type {Array<string>}
-     * @memberof CatalogItemsApiSearchCatalogItems
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * A comma-delimited list of data sets to include in the response. Default: summaries.
-     * @type {Array<'identifiers' | 'images' | 'productTypes' | 'salesRanks' | 'summaries' | 'variations' | 'vendorDetails'>}
-     * @memberof CatalogItemsApiSearchCatalogItems
      */
     readonly includedData?: Array<SearchCatalogItemsIncludedDataEnum>
 
     /**
      * A comma-delimited list of brand names to limit the search to.
-     * @type {Array<string>}
-     * @memberof CatalogItemsApiSearchCatalogItems
      */
     readonly brandNames?: Array<string>
 
     /**
      * A comma-delimited list of classification identifiers to limit the search to.
-     * @type {Array<string>}
-     * @memberof CatalogItemsApiSearchCatalogItems
      */
     readonly classificationIds?: Array<string>
 
     /**
      * Number of results to be returned per page.
-     * @type {number}
-     * @memberof CatalogItemsApiSearchCatalogItems
      */
     readonly pageSize?: number
 
     /**
      * A token to fetch a certain page when there are multiple pages worth of results.
-     * @type {string}
-     * @memberof CatalogItemsApiSearchCatalogItems
      */
     readonly pageToken?: string
 
     /**
      * The language the keywords are provided in. Defaults to the primary locale of the marketplace.
-     * @type {string}
-     * @memberof CatalogItemsApiSearchCatalogItems
      */
     readonly keywordsLocale?: string
 
     /**
      * Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
-     * @type {string}
-     * @memberof CatalogItemsApiSearchCatalogItems
      */
     readonly locale?: string
 }
 
 /**
  * CatalogItemsApi - object-oriented interface
- * @export
- * @class CatalogItemsApi
- * @extends {BaseAPI}
  */
 export class CatalogItemsApi extends BaseAPI {
     /**
@@ -354,7 +318,6 @@ export class CatalogItemsApi extends BaseAPI {
      * @param {CatalogItemsApiGetCatalogItemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof CatalogItemsApi
      */
     public getCatalogItem(requestParameters: CatalogItemsApiGetCatalogItemRequest, options?: RawAxiosRequestConfig) {
         return CatalogItemsApiFp(this.configuration).getCatalogItem(requestParameters.asin, requestParameters.marketplaceIds, requestParameters.includedData, requestParameters.locale, options).then((request) => request(this.axios, this.basePath));
@@ -365,16 +328,12 @@ export class CatalogItemsApi extends BaseAPI {
      * @param {CatalogItemsApiSearchCatalogItemsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof CatalogItemsApi
      */
     public searchCatalogItems(requestParameters: CatalogItemsApiSearchCatalogItemsRequest, options?: RawAxiosRequestConfig) {
         return CatalogItemsApiFp(this.configuration).searchCatalogItems(requestParameters.keywords, requestParameters.marketplaceIds, requestParameters.includedData, requestParameters.brandNames, requestParameters.classificationIds, requestParameters.pageSize, requestParameters.pageToken, requestParameters.keywordsLocale, requestParameters.locale, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetCatalogItemIncludedDataEnum = {
     Attributes: 'attributes',
     Identifiers: 'identifiers',
@@ -386,9 +345,6 @@ export const GetCatalogItemIncludedDataEnum = {
     VendorDetails: 'vendorDetails'
 } as const;
 export type GetCatalogItemIncludedDataEnum = typeof GetCatalogItemIncludedDataEnum[keyof typeof GetCatalogItemIncludedDataEnum];
-/**
- * @export
- */
 export const SearchCatalogItemsIncludedDataEnum = {
     Identifiers: 'identifiers',
     Images: 'images',

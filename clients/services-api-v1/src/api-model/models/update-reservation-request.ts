@@ -19,21 +19,12 @@ import type { Reservation } from './reservation';
 
 /**
  * Request schema for the `updateReservation` operation.
- * @export
- * @interface UpdateReservationRequest
  */
 export interface UpdateReservationRequest {
     /**
      * Resource (store) identifier.
-     * @type {string}
-     * @memberof UpdateReservationRequest
      */
     'resourceId': string;
-    /**
-     * 
-     * @type {Reservation}
-     * @memberof UpdateReservationRequest
-     */
     'reservation': Reservation;
 }
 

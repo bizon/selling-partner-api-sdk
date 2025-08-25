@@ -19,20 +19,14 @@ import type { TimeSlot } from './time-slot';
 
 /**
  * The response schema for the `listHandoverSlots` operation.
- * @export
- * @interface ListHandoverSlotsResponse
  */
 export interface ListHandoverSlotsResponse {
     /**
      * An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
-     * @type {string}
-     * @memberof ListHandoverSlotsResponse
      */
     'amazonOrderId': string;
     /**
      * A list of time slots.
-     * @type {Array<TimeSlot>}
-     * @memberof ListHandoverSlotsResponse
      */
     'timeSlots': Array<TimeSlot>;
 }

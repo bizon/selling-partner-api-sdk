@@ -25,44 +25,27 @@ import type { LowestPricedOffersInput } from './lowest-priced-offers-input';
 
 /**
  * An individual `competitiveSummary` request for an ASIN and `marketplaceId`.
- * @export
- * @interface CompetitiveSummaryRequest
  */
 export interface CompetitiveSummaryRequest {
     /**
      * The ASIN of the item.
-     * @type {string}
-     * @memberof CompetitiveSummaryRequest
      */
     'asin': string;
     /**
      * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof CompetitiveSummaryRequest
      */
     'marketplaceId': string;
     /**
      * The list of requested competitive pricing data for the product.
-     * @type {Array<CompetitiveSummaryIncludedData>}
-     * @memberof CompetitiveSummaryRequest
      */
     'includedData': Array<CompetitiveSummaryIncludedData>;
     /**
      * The list of `lowestPricedOffersInput` parameters that are used to build `lowestPricedOffers` in the response. This attribute is only valid if `lowestPricedOffers` is requested in `includedData`
-     * @type {Array<LowestPricedOffersInput>}
-     * @memberof CompetitiveSummaryRequest
      */
     'lowestPricedOffersInputs'?: Array<LowestPricedOffersInput>;
-    /**
-     * 
-     * @type {HttpMethod}
-     * @memberof CompetitiveSummaryRequest
-     */
     'method': HttpMethod;
     /**
      * The URI associated with the individual APIs that are called as part of the batch request.
-     * @type {string}
-     * @memberof CompetitiveSummaryRequest
      */
     'uri': string;
 }

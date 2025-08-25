@@ -16,20 +16,14 @@
 
 /**
  * The identifier that is associated with the item in the Amazon catalog, such as a UPC or EAN identifier.
- * @export
- * @interface ItemIdentifier
  */
 export interface ItemIdentifier {
     /**
      * Type of identifier, such as UPC, EAN, or ISBN.
-     * @type {string}
-     * @memberof ItemIdentifier
      */
     'identifierType': string;
     /**
      * Identifier of the item.
-     * @type {string}
-     * @memberof ItemIdentifier
      */
     'identifier': string;
 }

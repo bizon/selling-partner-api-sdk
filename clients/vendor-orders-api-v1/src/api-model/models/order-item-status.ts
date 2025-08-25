@@ -28,57 +28,24 @@ import type { OrderItemStatusReceivingStatus } from './order-item-status-receivi
 
 /**
  * Represents the current status of an order item, including acknowledgement and receiving details.
- * @export
- * @interface OrderItemStatus
  */
 export interface OrderItemStatus {
     /**
      * Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.
-     * @type {string}
-     * @memberof OrderItemStatus
      */
     'itemSequenceNumber': string;
     /**
      * Buyer\'s Standard Identification Number (ASIN) of an item.
-     * @type {string}
-     * @memberof OrderItemStatus
      */
     'buyerProductIdentifier'?: string;
     /**
      * The vendor selected product identification of the item.
-     * @type {string}
-     * @memberof OrderItemStatus
      */
     'vendorProductIdentifier'?: string;
-    /**
-     * 
-     * @type {Money}
-     * @memberof OrderItemStatus
-     */
     'netCost'?: Money;
-    /**
-     * 
-     * @type {Money}
-     * @memberof OrderItemStatus
-     */
     'listPrice'?: Money;
-    /**
-     * 
-     * @type {OrderItemStatusOrderedQuantity}
-     * @memberof OrderItemStatus
-     */
     'orderedQuantity'?: OrderItemStatusOrderedQuantity;
-    /**
-     * 
-     * @type {OrderItemStatusAcknowledgementStatus}
-     * @memberof OrderItemStatus
-     */
     'acknowledgementStatus'?: OrderItemStatusAcknowledgementStatus;
-    /**
-     * 
-     * @type {OrderItemStatusReceivingStatus}
-     * @memberof OrderItemStatus
-     */
     'receivingStatus'?: OrderItemStatusReceivingStatus;
 }
 

@@ -28,62 +28,30 @@ import type { SupplySourceStatusReadOnly } from './supply-source-status-read-onl
 
 /**
  * The supply source details, including configurations and capabilities.
- * @export
- * @interface SupplySource
  */
 export interface SupplySource {
     /**
      * An Amazon generated unique supply source ID.
-     * @type {string}
-     * @memberof SupplySource
      */
     'supplySourceId'?: string;
     /**
      * The seller-provided unique supply source code.
-     * @type {string}
-     * @memberof SupplySource
      */
     'supplySourceCode'?: string;
     /**
      * The custom alias for this supply source
-     * @type {string}
-     * @memberof SupplySource
      */
     'alias'?: string;
-    /**
-     * 
-     * @type {SupplySourceStatusReadOnly}
-     * @memberof SupplySource
-     */
     'status'?: SupplySourceStatusReadOnly;
-    /**
-     * 
-     * @type {Address}
-     * @memberof SupplySource
-     */
     'address'?: Address;
-    /**
-     * 
-     * @type {SupplySourceConfiguration}
-     * @memberof SupplySource
-     */
     'configuration'?: SupplySourceConfiguration;
-    /**
-     * 
-     * @type {SupplySourceCapabilities}
-     * @memberof SupplySource
-     */
     'capabilities'?: SupplySourceCapabilities;
     /**
      * A date and time in the rfc3339 format.
-     * @type {string}
-     * @memberof SupplySource
      */
     'createdAt'?: string;
     /**
      * A date and time in the rfc3339 format.
-     * @type {string}
-     * @memberof SupplySource
      */
     'updatedAt'?: string;
 }

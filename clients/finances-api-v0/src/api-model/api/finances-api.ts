@@ -27,7 +27,6 @@ import type { ListFinancialEventGroupsResponse } from '../models';
 import type { ListFinancialEventsResponse } from '../models';
 /**
  * FinancesApi - axios parameter creator
- * @export
  */
 export const FinancesApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -242,7 +241,6 @@ export const FinancesApiAxiosParamCreator = function (configuration?: Configurat
 
 /**
  * FinancesApi - functional programming interface
- * @export
  */
 export const FinancesApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = FinancesApiAxiosParamCreator(configuration)
@@ -312,7 +310,6 @@ export const FinancesApiFp = function(configuration?: Configuration) {
 
 /**
  * FinancesApi - factory interface
- * @export
  */
 export const FinancesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = FinancesApiFp(configuration)
@@ -358,149 +355,106 @@ export const FinancesApiFactory = function (configuration?: Configuration, baseP
 
 /**
  * Request parameters for listFinancialEventGroups operation in FinancesApi.
- * @export
- * @interface FinancesApiListFinancialEventGroupsRequest
  */
 export interface FinancesApiListFinancialEventGroupsRequest {
     /**
      * The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
-     * @type {number}
-     * @memberof FinancesApiListFinancialEventGroups
      */
     readonly maxResultsPerPage?: number
 
     /**
      * A date used for selecting financial event groups that opened before (but not at) a specified date and time, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned.
-     * @type {string}
-     * @memberof FinancesApiListFinancialEventGroups
      */
     readonly financialEventGroupStartedBefore?: string
 
     /**
      * A date used for selecting financial event groups that opened after (or at) a specified date and time, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. The date-time must be no later than two minutes before the request was submitted.
-     * @type {string}
-     * @memberof FinancesApiListFinancialEventGroups
      */
     readonly financialEventGroupStartedAfter?: string
 
     /**
      * A string token returned in the response of your previous request.
-     * @type {string}
-     * @memberof FinancesApiListFinancialEventGroups
      */
     readonly nextToken?: string
 }
 
 /**
  * Request parameters for listFinancialEvents operation in FinancesApi.
- * @export
- * @interface FinancesApiListFinancialEventsRequest
  */
 export interface FinancesApiListFinancialEventsRequest {
     /**
      * The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
-     * @type {number}
-     * @memberof FinancesApiListFinancialEvents
      */
     readonly maxResultsPerPage?: number
 
     /**
      * A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
-     * @type {string}
-     * @memberof FinancesApiListFinancialEvents
      */
     readonly postedAfter?: string
 
     /**
      * A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes.
-     * @type {string}
-     * @memberof FinancesApiListFinancialEvents
      */
     readonly postedBefore?: string
 
     /**
      * A string token returned in the response of your previous request.
-     * @type {string}
-     * @memberof FinancesApiListFinancialEvents
      */
     readonly nextToken?: string
 }
 
 /**
  * Request parameters for listFinancialEventsByGroupId operation in FinancesApi.
- * @export
- * @interface FinancesApiListFinancialEventsByGroupIdRequest
  */
 export interface FinancesApiListFinancialEventsByGroupIdRequest {
     /**
      * The identifier of the financial event group to which the events belong.
-     * @type {string}
-     * @memberof FinancesApiListFinancialEventsByGroupId
      */
     readonly eventGroupId: string
 
     /**
      * The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
-     * @type {number}
-     * @memberof FinancesApiListFinancialEventsByGroupId
      */
     readonly maxResultsPerPage?: number
 
     /**
      * A date used for selecting financial events posted after (or at) a specified time. The date-time **must** be more than two minutes before the time of the request, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
-     * @type {string}
-     * @memberof FinancesApiListFinancialEventsByGroupId
      */
     readonly postedAfter?: string
 
     /**
      * A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than &#x60;PostedAfter&#x60; and no later than two minutes before the request was submitted, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. If &#x60;PostedAfter&#x60; and &#x60;PostedBefore&#x60; are more than 180 days apart, no financial events are returned. You must specify the &#x60;PostedAfter&#x60; parameter if you specify the &#x60;PostedBefore&#x60; parameter. Default: Now minus two minutes.
-     * @type {string}
-     * @memberof FinancesApiListFinancialEventsByGroupId
      */
     readonly postedBefore?: string
 
     /**
      * A string token returned in the response of your previous request.
-     * @type {string}
-     * @memberof FinancesApiListFinancialEventsByGroupId
      */
     readonly nextToken?: string
 }
 
 /**
  * Request parameters for listFinancialEventsByOrderId operation in FinancesApi.
- * @export
- * @interface FinancesApiListFinancialEventsByOrderIdRequest
  */
 export interface FinancesApiListFinancialEventsByOrderIdRequest {
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
-     * @type {string}
-     * @memberof FinancesApiListFinancialEventsByOrderId
      */
     readonly orderId: string
 
     /**
      * The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with \&#39;InvalidInput\&#39;.
-     * @type {number}
-     * @memberof FinancesApiListFinancialEventsByOrderId
      */
     readonly maxResultsPerPage?: number
 
     /**
      * A string token returned in the response of your previous request.
-     * @type {string}
-     * @memberof FinancesApiListFinancialEventsByOrderId
      */
     readonly nextToken?: string
 }
 
 /**
  * FinancesApi - object-oriented interface
- * @export
- * @class FinancesApi
- * @extends {BaseAPI}
  */
 export class FinancesApi extends BaseAPI {
     /**
@@ -508,7 +462,6 @@ export class FinancesApi extends BaseAPI {
      * @param {FinancesApiListFinancialEventGroupsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FinancesApi
      */
     public listFinancialEventGroups(requestParameters: FinancesApiListFinancialEventGroupsRequest = {}, options?: RawAxiosRequestConfig) {
         return FinancesApiFp(this.configuration).listFinancialEventGroups(requestParameters.maxResultsPerPage, requestParameters.financialEventGroupStartedBefore, requestParameters.financialEventGroupStartedAfter, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
@@ -519,7 +472,6 @@ export class FinancesApi extends BaseAPI {
      * @param {FinancesApiListFinancialEventsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FinancesApi
      */
     public listFinancialEvents(requestParameters: FinancesApiListFinancialEventsRequest = {}, options?: RawAxiosRequestConfig) {
         return FinancesApiFp(this.configuration).listFinancialEvents(requestParameters.maxResultsPerPage, requestParameters.postedAfter, requestParameters.postedBefore, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
@@ -530,7 +482,6 @@ export class FinancesApi extends BaseAPI {
      * @param {FinancesApiListFinancialEventsByGroupIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FinancesApi
      */
     public listFinancialEventsByGroupId(requestParameters: FinancesApiListFinancialEventsByGroupIdRequest, options?: RawAxiosRequestConfig) {
         return FinancesApiFp(this.configuration).listFinancialEventsByGroupId(requestParameters.eventGroupId, requestParameters.maxResultsPerPage, requestParameters.postedAfter, requestParameters.postedBefore, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
@@ -541,7 +492,6 @@ export class FinancesApi extends BaseAPI {
      * @param {FinancesApiListFinancialEventsByOrderIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FinancesApi
      */
     public listFinancialEventsByOrderId(requestParameters: FinancesApiListFinancialEventsByOrderIdRequest, options?: RawAxiosRequestConfig) {
         return FinancesApiFp(this.configuration).listFinancialEventsByOrderId(requestParameters.orderId, requestParameters.maxResultsPerPage, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));

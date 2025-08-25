@@ -19,26 +19,18 @@ import type { DayOfWeek } from './day-of-week';
 
 /**
  * Repeated occurrence of an event in a time range.
- * @export
- * @interface Recurrence
  */
 export interface Recurrence {
     /**
      * End time of the recurrence.
-     * @type {string}
-     * @memberof Recurrence
      */
     'endTime': string;
     /**
      * Days of the week when recurrence is valid. If the schedule is valid every Monday, input will only contain `MONDAY` in the list.
-     * @type {Array<DayOfWeek>}
-     * @memberof Recurrence
      */
     'daysOfWeek'?: Array<DayOfWeek>;
     /**
      * Days of the month when recurrence is valid.
-     * @type {Array<number>}
-     * @memberof Recurrence
      */
     'daysOfMonth'?: Array<number>;
 }

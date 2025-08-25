@@ -16,20 +16,14 @@
 
 /**
  * Tax registration details of the entity.
- * @export
- * @interface TaxRegistrationDetails
  */
 export interface TaxRegistrationDetails {
     /**
      * Tax registration type for the entity.
-     * @type {string}
-     * @memberof TaxRegistrationDetails
      */
     'taxRegistrationType': TaxRegistrationDetailsTaxRegistrationTypeEnum;
     /**
      * Tax registration number for the entity. For example, VAT ID.
-     * @type {string}
-     * @memberof TaxRegistrationDetails
      */
     'taxRegistrationNumber': string;
 }

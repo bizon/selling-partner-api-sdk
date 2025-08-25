@@ -16,8 +16,6 @@
 
 /**
  * The owner of the preparations, if special preparations are required.
- * @export
- * @enum {string}
  */
 
 export const PrepOwner = {

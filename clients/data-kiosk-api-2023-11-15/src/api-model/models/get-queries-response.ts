@@ -22,21 +22,12 @@ import type { Query } from './query';
 
 /**
  * The response for the `getQueries` operation.
- * @export
- * @interface GetQueriesResponse
  */
 export interface GetQueriesResponse {
     /**
      * A list of queries.
-     * @type {Array<Query>}
-     * @memberof GetQueriesResponse
      */
     'queries': Array<Query>;
-    /**
-     * 
-     * @type {GetQueriesResponsePagination}
-     * @memberof GetQueriesResponse
-     */
     'pagination'?: GetQueriesResponsePagination;
 }
 

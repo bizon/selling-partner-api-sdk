@@ -19,20 +19,14 @@ import type { InboundShipmentInfo } from './inbound-shipment-info';
 
 /**
  * Result for the get shipments operation
- * @export
- * @interface GetShipmentsResult
  */
 export interface GetShipmentsResult {
     /**
      * A list of inbound shipment information.
-     * @type {Array<InboundShipmentInfo>}
-     * @memberof GetShipmentsResult
      */
     'ShipmentData'?: Array<InboundShipmentInfo>;
     /**
      * When present and not empty, pass this string token in the next request to return the next response page.
-     * @type {string}
-     * @memberof GetShipmentsResult
      */
     'NextToken'?: string;
 }

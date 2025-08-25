@@ -19,32 +19,22 @@ import type { FeatureSku } from './feature-sku';
 
 /**
  * The payload for the `getEligibileInventory` operation.
- * @export
- * @interface GetFeatureInventoryResult
  */
 export interface GetFeatureInventoryResult {
     /**
      * The requested marketplace.
-     * @type {string}
-     * @memberof GetFeatureInventoryResult
      */
     'marketplaceId': string;
     /**
      * The name of the feature.
-     * @type {string}
-     * @memberof GetFeatureInventoryResult
      */
     'featureName': string;
     /**
      * When present and not empty, pass this string token in the next request to return the next response page.
-     * @type {string}
-     * @memberof GetFeatureInventoryResult
      */
     'nextToken'?: string;
     /**
      * An array of SKUs eligible for this feature and the quantity available.
-     * @type {Array<FeatureSku>}
-     * @memberof GetFeatureInventoryResult
      */
     'featureSkus'?: Array<FeatureSku>;
 }

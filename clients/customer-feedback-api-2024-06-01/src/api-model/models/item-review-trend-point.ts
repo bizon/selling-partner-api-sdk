@@ -25,33 +25,11 @@ import type { ReviewTrendMetrics } from './review-trend-metrics';
 
 /**
  * The review metrics for a certain month.
- * @export
- * @interface ItemReviewTrendPoint
  */
 export interface ItemReviewTrendPoint {
-    /**
-     * 
-     * @type {DateRange}
-     * @memberof ItemReviewTrendPoint
-     */
     'dateRange': DateRange;
-    /**
-     * 
-     * @type {ReviewTrendMetrics}
-     * @memberof ItemReviewTrendPoint
-     */
     'asinMetrics': ReviewTrendMetrics;
-    /**
-     * 
-     * @type {ReviewTrendMetrics}
-     * @memberof ItemReviewTrendPoint
-     */
     'parentAsinMetrics'?: ReviewTrendMetrics;
-    /**
-     * 
-     * @type {BrowseNodeTrendMetrics}
-     * @memberof ItemReviewTrendPoint
-     */
     'browseNodeMetrics'?: BrowseNodeTrendMetrics;
 }
 

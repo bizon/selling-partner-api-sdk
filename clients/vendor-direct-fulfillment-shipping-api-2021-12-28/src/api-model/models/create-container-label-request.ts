@@ -25,38 +25,17 @@ import type { PartyIdentification } from './party-identification';
 
 /**
  * The request body schema for the `createContainerLabel` operation.
- * @export
- * @interface CreateContainerLabelRequest
  */
 export interface CreateContainerLabelRequest {
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof CreateContainerLabelRequest
-     */
     'sellingParty': PartyIdentification;
-    /**
-     * 
-     * @type {PartyIdentification}
-     * @memberof CreateContainerLabelRequest
-     */
     'shipFromParty': PartyIdentification;
-    /**
-     * 
-     * @type {CarrierId}
-     * @memberof CreateContainerLabelRequest
-     */
     'carrierId': CarrierId;
     /**
      * The unique, vendor-provided identifier for the container.
-     * @type {string}
-     * @memberof CreateContainerLabelRequest
      */
     'vendorContainerId': string;
     /**
      * An array of package objects in a container.
-     * @type {Array<Package>}
-     * @memberof CreateContainerLabelRequest
      */
     'packages': Array<Package>;
 }

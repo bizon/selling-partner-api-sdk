@@ -16,20 +16,14 @@
 
 /**
  * Represents a month in a specific year.
- * @export
- * @interface MonthAndYear
  */
 export interface MonthAndYear {
     /**
      * Year in YYYY format
-     * @type {number}
-     * @memberof MonthAndYear
      */
     'year'?: number;
     /**
      * Month in MM format
-     * @type {number}
-     * @memberof MonthAndYear
      */
     'month'?: number;
 }

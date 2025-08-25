@@ -16,20 +16,14 @@
 
 /**
  * The time range within which something (for example, a delivery) will occur.
- * @export
- * @interface DateRange
  */
 export interface DateRange {
     /**
      * Date timestamp
-     * @type {string}
-     * @memberof DateRange
      */
     'earliest': string;
     /**
      * Date timestamp
-     * @type {string}
-     * @memberof DateRange
      */
     'latest': string;
 }

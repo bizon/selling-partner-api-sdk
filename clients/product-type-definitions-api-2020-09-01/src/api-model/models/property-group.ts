@@ -16,26 +16,18 @@
 
 /**
  * A property group represents a logical grouping of schema properties that can be used for display or informational purposes.
- * @export
- * @interface PropertyGroup
  */
 export interface PropertyGroup {
     /**
      * The display label of the property group.
-     * @type {string}
-     * @memberof PropertyGroup
      */
     'title'?: string;
     /**
      * The description of the property group.
-     * @type {string}
-     * @memberof PropertyGroup
      */
     'description'?: string;
     /**
      * The names of the schema properties for the property group.
-     * @type {Array<string>}
-     * @memberof PropertyGroup
      */
     'propertyNames'?: Array<string>;
 }

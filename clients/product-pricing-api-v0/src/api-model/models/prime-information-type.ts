@@ -16,20 +16,14 @@
 
 /**
  * Amazon Prime information.
- * @export
- * @interface PrimeInformationType
  */
 export interface PrimeInformationType {
     /**
      * Indicates whether the offer is an Amazon Prime offer.
-     * @type {boolean}
-     * @memberof PrimeInformationType
      */
     'IsPrime': boolean;
     /**
      * Indicates whether the offer is an Amazon Prime offer throughout the entire marketplace where it is listed.
-     * @type {boolean}
-     * @memberof PrimeInformationType
      */
     'IsNationalPrime': boolean;
 }

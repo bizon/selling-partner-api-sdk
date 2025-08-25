@@ -16,14 +16,10 @@
 
 /**
  * Name, address and tax details of a party.
- * @export
- * @interface PartyIdentification
  */
 export interface PartyIdentification {
     /**
      * Assigned identification for the party.
-     * @type {string}
-     * @memberof PartyIdentification
      */
     'partyId': string;
 }

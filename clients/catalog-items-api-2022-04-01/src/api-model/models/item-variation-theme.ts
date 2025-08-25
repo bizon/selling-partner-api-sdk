@@ -16,20 +16,14 @@
 
 /**
  * The variation theme is a list of Amazon catalog item attributes that define the variation family.
- * @export
- * @interface ItemVariationTheme
  */
 export interface ItemVariationTheme {
     /**
      * Names of the Amazon catalog item attributes that are associated with the variation theme.
-     * @type {Array<string>}
-     * @memberof ItemVariationTheme
      */
     'attributes'?: Array<string>;
     /**
      * Variation theme that indicates the combination of Amazon catalog item attributes that define the variation family.
-     * @type {string}
-     * @memberof ItemVariationTheme
      */
     'theme'?: string;
 }

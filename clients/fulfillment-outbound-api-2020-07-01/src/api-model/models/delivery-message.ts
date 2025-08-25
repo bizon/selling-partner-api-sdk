@@ -16,20 +16,14 @@
 
 /**
  * Localized messaging for a delivery offering.
- * @export
- * @interface DeliveryMessage
  */
 export interface DeliveryMessage {
     /**
      * The message content for a delivery offering.
-     * @type {string}
-     * @memberof DeliveryMessage
      */
     'text'?: string;
     /**
      * The locale for the message (for example, en_US).
-     * @type {string}
-     * @memberof DeliveryMessage
      */
     'locale'?: string;
 }

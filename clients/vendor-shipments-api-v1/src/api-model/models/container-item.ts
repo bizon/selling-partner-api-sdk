@@ -22,27 +22,13 @@ import type { ItemQuantity } from './item-quantity';
 
 /**
  * Carton/Pallet level details for the item.
- * @export
- * @interface ContainerItem
  */
 export interface ContainerItem {
     /**
      * The reference number for the item. Please provide the itemSequenceNumber from the \'items\' segment to refer to that item\'s details here.
-     * @type {string}
-     * @memberof ContainerItem
      */
     'itemReference': string;
-    /**
-     * 
-     * @type {ItemQuantity}
-     * @memberof ContainerItem
-     */
     'shippedQuantity': ItemQuantity;
-    /**
-     * 
-     * @type {ItemDetails}
-     * @memberof ContainerItem
-     */
     'itemDetails'?: ItemDetails;
 }
 

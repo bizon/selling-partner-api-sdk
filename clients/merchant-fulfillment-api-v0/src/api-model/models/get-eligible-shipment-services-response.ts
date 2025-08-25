@@ -19,20 +19,11 @@ import type { GetEligibleShipmentServicesResult } from './get-eligible-shipment-
 
 /**
  * Response schema.
- * @export
- * @interface GetEligibleShipmentServicesResponse
  */
 export interface GetEligibleShipmentServicesResponse {
-    /**
-     * 
-     * @type {GetEligibleShipmentServicesResult}
-     * @memberof GetEligibleShipmentServicesResponse
-     */
     'payload'?: GetEligibleShipmentServicesResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetEligibleShipmentServicesResponse
      */
     'errors'?: Array<Error>;
 }

@@ -17,35 +17,19 @@
 // @ts-ignore
 import type { Address } from './address';
 
-/**
- * 
- * @export
- * @interface SupplySourceListInner
- */
 export interface SupplySourceListInner {
     /**
      * The custom alias for this supply source
-     * @type {string}
-     * @memberof SupplySourceListInner
      */
     'alias'?: string;
     /**
      * An Amazon generated unique supply source ID.
-     * @type {string}
-     * @memberof SupplySourceListInner
      */
     'supplySourceId'?: string;
     /**
      * The seller-provided unique supply source code.
-     * @type {string}
-     * @memberof SupplySourceListInner
      */
     'supplySourceCode'?: string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof SupplySourceListInner
-     */
     'address'?: Address;
 }
 

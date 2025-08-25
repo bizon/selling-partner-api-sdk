@@ -22,21 +22,12 @@ import type { Pagination } from './pagination';
 
 /**
  * The `listShipmentItems` response.
- * @export
- * @interface ListShipmentItemsResponse
  */
 export interface ListShipmentItemsResponse {
     /**
      * The items in a shipment.
-     * @type {Array<Item>}
-     * @memberof ListShipmentItemsResponse
      */
     'items': Array<Item>;
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof ListShipmentItemsResponse
-     */
     'pagination'?: Pagination;
 }
 

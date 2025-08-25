@@ -16,8 +16,6 @@
 
 /**
  * Indicates the condition of the item. Possible values: New, Used, Collectible, Refurbished, Club.
- * @export
- * @enum {string}
  */
 
 export const ConditionType = {

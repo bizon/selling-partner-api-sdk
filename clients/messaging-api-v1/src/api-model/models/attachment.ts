@@ -16,20 +16,14 @@
 
 /**
  * Represents a file that was uploaded to a destination that was created by the Uploads API [`createUploadDestinationForResource`](https://developer-docs.amazon.com/sp-api/reference/createuploaddestinationforresource) operation.
- * @export
- * @interface Attachment
  */
 export interface Attachment {
     /**
      * The identifier for the upload destination. To retrieve this value, call the Uploads API [`createUploadDestinationForResource`](https://developer-docs.amazon.com/sp-api/reference/createuploaddestinationforresource) operation.
-     * @type {string}
-     * @memberof Attachment
      */
     'uploadDestinationId': string;
     /**
      * The name of the file, including the extension. This is the file name that will appear in the message. This does not need to match the file name of the file that you uploaded.
-     * @type {string}
-     * @memberof Attachment
      */
     'fileName': string;
 }

@@ -19,27 +19,16 @@ import type { ContainerLabelFormat } from './container-label-format';
 
 /**
  * The details of the container label.
- * @export
- * @interface ContainerLabel
  */
 export interface ContainerLabel {
     /**
      * The container (pallet) tracking identifier from the shipping carrier.
-     * @type {string}
-     * @memberof ContainerLabel
      */
     'containerTrackingNumber'?: string;
     /**
      * The container label content encoded into a Base64 string.
-     * @type {string}
-     * @memberof ContainerLabel
      */
     'content': string;
-    /**
-     * 
-     * @type {ContainerLabelFormat}
-     * @memberof ContainerLabel
-     */
     'format': ContainerLabelFormat;
 }
 

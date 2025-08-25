@@ -19,20 +19,14 @@ import type { AppointmentSlot } from './appointment-slot';
 
 /**
  * The self ship appointment time slots availability and an expiration date for which the slots can be scheduled.
- * @export
- * @interface SelfShipAppointmentSlotsAvailability
  */
 export interface SelfShipAppointmentSlotsAvailability {
     /**
      * The time at which the self ship appointment slot expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
-     * @type {string}
-     * @memberof SelfShipAppointmentSlotsAvailability
      */
     'expiresAt'?: string;
     /**
      * A list of appointment slots.
-     * @type {Array<AppointmentSlot>}
-     * @memberof SelfShipAppointmentSlotsAvailability
      */
     'slots'?: Array<AppointmentSlot>;
 }

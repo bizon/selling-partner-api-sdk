@@ -16,32 +16,22 @@
 
 /**
  * Contains the business invoice tax information. Available only in the TR marketplace.
- * @export
- * @interface BuyerTaxInformation
  */
 export interface BuyerTaxInformation {
     /**
      * Business buyer\'s company legal name.
-     * @type {string}
-     * @memberof BuyerTaxInformation
      */
     'BuyerLegalCompanyName'?: string;
     /**
      * Business buyer\'s address.
-     * @type {string}
-     * @memberof BuyerTaxInformation
      */
     'BuyerBusinessAddress'?: string;
     /**
      * Business buyer\'s tax registration ID.
-     * @type {string}
-     * @memberof BuyerTaxInformation
      */
     'BuyerTaxRegistrationId'?: string;
     /**
      * Business buyer\'s tax office.
-     * @type {string}
-     * @memberof BuyerTaxInformation
      */
     'BuyerTaxOffice'?: string;
 }

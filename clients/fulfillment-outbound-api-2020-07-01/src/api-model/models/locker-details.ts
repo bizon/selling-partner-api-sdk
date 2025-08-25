@@ -16,20 +16,14 @@
 
 /**
  * The locker details, which you can use to access the locker delivery box.
- * @export
- * @interface LockerDetails
  */
 export interface LockerDetails {
     /**
      * Indicates the locker number
-     * @type {string}
-     * @memberof LockerDetails
      */
     'lockerNumber'?: string;
     /**
      * Indicates the locker access code
-     * @type {string}
-     * @memberof LockerDetails
      */
     'lockerAccessCode'?: string;
 }

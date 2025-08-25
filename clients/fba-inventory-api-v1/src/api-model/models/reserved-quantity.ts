@@ -16,32 +16,22 @@
 
 /**
  * The quantity of reserved inventory.
- * @export
- * @interface ReservedQuantity
  */
 export interface ReservedQuantity {
     /**
      * The total number of units in Amazon\'s fulfillment network that are currently being picked, packed, and shipped; or are sidelined for measurement, sampling, or other internal processes.
-     * @type {number}
-     * @memberof ReservedQuantity
      */
     'totalReservedQuantity'?: number;
     /**
      * The number of units reserved for customer orders.
-     * @type {number}
-     * @memberof ReservedQuantity
      */
     'pendingCustomerOrderQuantity'?: number;
     /**
      * The number of units being transferred from one fulfillment center to another.
-     * @type {number}
-     * @memberof ReservedQuantity
      */
     'pendingTransshipmentQuantity'?: number;
     /**
      * The number of units that have been sidelined at the fulfillment center for additional processing.
-     * @type {number}
-     * @memberof ReservedQuantity
      */
     'fcProcessingQuantity'?: number;
 }

@@ -19,33 +19,20 @@ import type { Currency } from './currency';
 
 /**
  * An event related to a capacity reservation billing charge.
- * @export
- * @interface CapacityReservationBillingEvent
  */
 export interface CapacityReservationBillingEvent {
     /**
      * Indicates the type of transaction. For example, FBA Inventory Fee
-     * @type {string}
-     * @memberof CapacityReservationBillingEvent
      */
     'TransactionType'?: string;
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof CapacityReservationBillingEvent
      */
     'PostedDate'?: string;
     /**
      * A short description of the capacity reservation billing event.
-     * @type {string}
-     * @memberof CapacityReservationBillingEvent
      */
     'Description'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof CapacityReservationBillingEvent
-     */
     'TransactionAmount'?: Currency;
 }
 

@@ -22,26 +22,12 @@ import type { IdType } from './id-type';
 
 /**
  * A product, marketplace, and proposed price used to request estimated fees.
- * @export
- * @interface FeesEstimateByIdRequest
  */
 export interface FeesEstimateByIdRequest {
-    /**
-     * 
-     * @type {FeesEstimateRequest}
-     * @memberof FeesEstimateByIdRequest
-     */
     'FeesEstimateRequest'?: FeesEstimateRequest;
-    /**
-     * 
-     * @type {IdType}
-     * @memberof FeesEstimateByIdRequest
-     */
     'IdType': IdType;
     /**
      * The item identifier.
-     * @type {string}
-     * @memberof FeesEstimateByIdRequest
      */
     'IdValue': string;
 }

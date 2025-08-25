@@ -19,32 +19,22 @@ import type { CapacityType } from './capacity-type';
 
 /**
  * Request schema for the `getFixedSlotCapacity` operation. This schema is used to define the time range, capacity types and slot duration which are being queried.
- * @export
- * @interface FixedSlotCapacityQuery
  */
 export interface FixedSlotCapacityQuery {
     /**
      * An array of capacity types which are being requested. Default value is `[SCHEDULED_CAPACITY]`.
-     * @type {Array<CapacityType>}
-     * @memberof FixedSlotCapacityQuery
      */
     'capacityTypes'?: Array<CapacityType>;
     /**
      * Size in which slots are being requested. This value should be a multiple of 5 and fall in the range: 5 <= `slotDuration` <= 360.
-     * @type {number}
-     * @memberof FixedSlotCapacityQuery
      */
     'slotDuration'?: number;
     /**
      * Start date time from which the capacity slots are being requested in ISO 8601 format.
-     * @type {string}
-     * @memberof FixedSlotCapacityQuery
      */
     'startDateTime': string;
     /**
      * End date time up to which the capacity slots are being requested in ISO 8601 format.
-     * @type {string}
-     * @memberof FixedSlotCapacityQuery
      */
     'endDateTime': string;
 }

@@ -19,81 +19,52 @@ import type { Geocode } from './geocode';
 
 /**
  * The address.
- * @export
- * @interface Address
  */
 export interface Address {
     /**
      * The name of the person, business or institution at the address.
-     * @type {string}
-     * @memberof Address
      */
     'name': string;
     /**
      * The first line of the address.
-     * @type {string}
-     * @memberof Address
      */
     'addressLine1': string;
     /**
      * Additional address information, if required.
-     * @type {string}
-     * @memberof Address
      */
     'addressLine2'?: string;
     /**
      * Additional address information, if required.
-     * @type {string}
-     * @memberof Address
      */
     'addressLine3'?: string;
     /**
      * The name of the business or institution associated with the address.
-     * @type {string}
-     * @memberof Address
      */
     'companyName'?: string;
     /**
      * The state, county or region where the person, business or institution is located.
-     * @type {string}
-     * @memberof Address
      */
     'stateOrRegion': string;
     /**
      * The city or town where the person, business or institution is located.
-     * @type {string}
-     * @memberof Address
      */
     'city': string;
     /**
      * The two digit country code. Follows ISO 3166-1 alpha-2 format.
-     * @type {string}
-     * @memberof Address
      */
     'countryCode': string;
     /**
      * The postal code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
-     * @type {string}
-     * @memberof Address
      */
     'postalCode': string;
     /**
      * The email address of the contact associated with the address.
-     * @type {string}
-     * @memberof Address
      */
     'email'?: string;
     /**
      * The phone number of the person, business or institution located at that address, including the country calling code.
-     * @type {string}
-     * @memberof Address
      */
     'phoneNumber'?: string;
-    /**
-     * 
-     * @type {Geocode}
-     * @memberof Address
-     */
     'geocode'?: Geocode;
 }
 

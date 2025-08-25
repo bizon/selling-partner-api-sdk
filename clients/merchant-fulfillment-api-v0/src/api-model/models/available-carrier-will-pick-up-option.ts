@@ -22,21 +22,9 @@ import type { CurrencyAmount } from './currency-amount';
 
 /**
  * Indicates whether the carrier will pick up the package, and what fee is charged, if any.
- * @export
- * @interface AvailableCarrierWillPickUpOption
  */
 export interface AvailableCarrierWillPickUpOption {
-    /**
-     * 
-     * @type {CarrierWillPickUpOption}
-     * @memberof AvailableCarrierWillPickUpOption
-     */
     'CarrierWillPickUpOption': CarrierWillPickUpOption;
-    /**
-     * 
-     * @type {CurrencyAmount}
-     * @memberof AvailableCarrierWillPickUpOption
-     */
     'Charge': CurrencyAmount;
 }
 

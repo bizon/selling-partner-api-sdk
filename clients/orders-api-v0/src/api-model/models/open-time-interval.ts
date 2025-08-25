@@ -16,20 +16,14 @@
 
 /**
  * The time when the business opens or closes.
- * @export
- * @interface OpenTimeInterval
  */
 export interface OpenTimeInterval {
     /**
      * The hour when the business opens or closes.
-     * @type {number}
-     * @memberof OpenTimeInterval
      */
     'Hour'?: number;
     /**
      * The minute when the business opens or closes.
-     * @type {number}
-     * @memberof OpenTimeInterval
      */
     'Minute'?: number;
 }

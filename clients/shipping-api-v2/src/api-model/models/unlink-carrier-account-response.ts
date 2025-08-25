@@ -16,14 +16,10 @@
 
 /**
  * The Response  for the UnlinkCarrierAccountResponse operation.
- * @export
- * @interface UnlinkCarrierAccountResponse
  */
 export interface UnlinkCarrierAccountResponse {
     /**
      * Is Carrier unlinked from Merchant
-     * @type {boolean}
-     * @memberof UnlinkCarrierAccountResponse
      */
     'isUnlinked'?: boolean;
 }

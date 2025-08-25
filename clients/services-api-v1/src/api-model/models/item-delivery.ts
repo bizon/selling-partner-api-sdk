@@ -19,21 +19,12 @@ import type { ItemDeliveryPromise } from './item-delivery-promise';
 
 /**
  * Delivery information for the item.
- * @export
- * @interface ItemDelivery
  */
 export interface ItemDelivery {
     /**
      * The date and time of the latest Estimated Delivery Date (EDD) of all the items with an EDD. In ISO 8601 format.
-     * @type {string}
-     * @memberof ItemDelivery
      */
     'estimatedDeliveryDate'?: string;
-    /**
-     * 
-     * @type {ItemDeliveryPromise}
-     * @memberof ItemDelivery
-     */
     'itemDeliveryPromise'?: ItemDeliveryPromise;
 }
 

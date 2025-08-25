@@ -16,74 +16,50 @@
 
 /**
  * Shipping address that represents the origin or destination location.
- * @export
- * @interface Address
  */
 export interface Address {
     /**
      * First line of the address text.
-     * @type {string}
-     * @memberof Address
      */
     'addressLine1': string;
     /**
      * Optional second line of the address text.
-     * @type {string}
-     * @memberof Address
      */
     'addressLine2'?: string;
     /**
      * Optional third line of the address text.
-     * @type {string}
-     * @memberof Address
      */
     'addressLine3'?: string;
     /**
      * Optional city where this address is located.
-     * @type {string}
-     * @memberof Address
      */
     'city'?: string;
     /**
      * Two-digit, ISO 3166-1 alpha-2 formatted country code where this address is located.
-     * @type {string}
-     * @memberof Address
      */
     'countryCode': string;
     /**
      * Optional county where this address is located.
-     * @type {string}
-     * @memberof Address
      */
     'county'?: string;
     /**
      * Optional district where this address is located.
-     * @type {string}
-     * @memberof Address
      */
     'district'?: string;
     /**
      * Name of the person, business, or institution at this address.
-     * @type {string}
-     * @memberof Address
      */
     'name': string;
     /**
      * Optional E.164-formatted phone number for an available contact at this address.
-     * @type {string}
-     * @memberof Address
      */
     'phoneNumber'?: string;
     /**
      * Optional postal code where this address is located.
-     * @type {string}
-     * @memberof Address
      */
     'postalCode'?: string;
     /**
      * State or region where this address is located. Note that this is contextual to the specified country code.
-     * @type {string}
-     * @memberof Address
      */
     'stateOrRegion': string;
 }

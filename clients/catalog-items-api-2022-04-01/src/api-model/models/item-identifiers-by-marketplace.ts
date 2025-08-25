@@ -19,20 +19,14 @@ import type { ItemIdentifier } from './item-identifier';
 
 /**
  * Identifiers that are associated with the item in the Amazon catalog, grouped by `marketplaceId`.
- * @export
- * @interface ItemIdentifiersByMarketplace
  */
 export interface ItemIdentifiersByMarketplace {
     /**
      * Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).identifier.
-     * @type {string}
-     * @memberof ItemIdentifiersByMarketplace
      */
     'marketplaceId': string;
     /**
      * Identifiers associated with the item in the Amazon catalog for the indicated `marketplaceId`.
-     * @type {Array<ItemIdentifier>}
-     * @memberof ItemIdentifiersByMarketplace
      */
     'identifiers': Array<ItemIdentifier>;
 }

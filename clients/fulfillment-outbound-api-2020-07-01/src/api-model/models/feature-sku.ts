@@ -16,38 +16,26 @@
 
 /**
  * Information about an SKU, including the count available, identifiers, and a list of overlapping SKUs that share the same inventory pool.
- * @export
- * @interface FeatureSku
  */
 export interface FeatureSku {
     /**
      * Used to identify an item in the given marketplace. `SellerSKU` is qualified by the seller\'s SellerId, which is included with every operation that you submit.
-     * @type {string}
-     * @memberof FeatureSku
      */
     'sellerSku'?: string;
     /**
      * The unique SKU used by Amazon\'s fulfillment network.
-     * @type {string}
-     * @memberof FeatureSku
      */
     'fnSku'?: string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
-     * @type {string}
-     * @memberof FeatureSku
      */
     'asin'?: string;
     /**
      * The number of SKUs available for this service.
-     * @type {number}
-     * @memberof FeatureSku
      */
     'skuCount'?: number;
     /**
      * Other seller SKUs that are shared across the same inventory.
-     * @type {Array<string>}
-     * @memberof FeatureSku
      */
     'overlappingSkus'?: Array<string>;
 }

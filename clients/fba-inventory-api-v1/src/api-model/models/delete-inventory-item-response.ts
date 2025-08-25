@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the DeleteInventoryItem operation.
- * @export
- * @interface DeleteInventoryItemResponse
  */
 export interface DeleteInventoryItemResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof DeleteInventoryItemResponse
      */
     'errors'?: Array<Error>;
 }

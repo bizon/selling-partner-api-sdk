@@ -19,33 +19,20 @@ import type { ItemQuantity } from './item-quantity';
 
 /**
  * Details of an individual item within the order being acknowledged.
- * @export
- * @interface OrderItemAcknowledgement
  */
 export interface OrderItemAcknowledgement {
     /**
      * Line item sequence number for the item.
-     * @type {string}
-     * @memberof OrderItemAcknowledgement
      */
     'itemSequenceNumber': string;
     /**
      * Buyer\'s standard identification number (ASIN) of an item.
-     * @type {string}
-     * @memberof OrderItemAcknowledgement
      */
     'buyerProductIdentifier'?: string;
     /**
      * The vendor selected product identification of the item. Should be the same as was provided in the purchase order.
-     * @type {string}
-     * @memberof OrderItemAcknowledgement
      */
     'vendorProductIdentifier'?: string;
-    /**
-     * 
-     * @type {ItemQuantity}
-     * @memberof OrderItemAcknowledgement
-     */
     'acknowledgedQuantity': ItemQuantity;
 }
 

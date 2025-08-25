@@ -16,14 +16,10 @@
 
 /**
  * Specifies the content type for the createFeedDocument operation.
- * @export
- * @interface CreateFeedDocumentSpecification
  */
 export interface CreateFeedDocumentSpecification {
     /**
      * The content type of the feed.
-     * @type {string}
-     * @memberof CreateFeedDocumentSpecification
      */
     'contentType': string;
 }

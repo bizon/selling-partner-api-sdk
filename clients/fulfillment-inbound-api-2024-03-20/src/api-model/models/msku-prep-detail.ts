@@ -28,44 +28,18 @@ import type { PrepType } from './prep-type';
 
 /**
  * An MSKU and its related prep details.
- * @export
- * @interface MskuPrepDetail
  */
 export interface MskuPrepDetail {
-    /**
-     * 
-     * @type {AllOwnersConstraint}
-     * @memberof MskuPrepDetail
-     */
     'allOwnersConstraint'?: AllOwnersConstraint;
-    /**
-     * 
-     * @type {OwnerConstraint}
-     * @memberof MskuPrepDetail
-     */
     'labelOwnerConstraint'?: OwnerConstraint;
     /**
      * The merchant SKU, a merchant-supplied identifier for a specific SKU.
-     * @type {string}
-     * @memberof MskuPrepDetail
      */
     'msku': string;
-    /**
-     * 
-     * @type {PrepCategory}
-     * @memberof MskuPrepDetail
-     */
     'prepCategory': PrepCategory;
-    /**
-     * 
-     * @type {OwnerConstraint}
-     * @memberof MskuPrepDetail
-     */
     'prepOwnerConstraint'?: OwnerConstraint;
     /**
      * A list of preparation types associated with a preparation category.
-     * @type {Array<PrepType>}
-     * @memberof MskuPrepDetail
      */
     'prepTypes': Array<PrepType>;
 }

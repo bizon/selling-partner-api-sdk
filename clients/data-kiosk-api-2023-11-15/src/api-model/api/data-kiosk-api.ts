@@ -35,7 +35,6 @@ import type { GetQueriesResponse } from '../models';
 import type { Query } from '../models';
 /**
  * DataKioskApi - axios parameter creator
- * @export
  */
 export const DataKioskApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -236,7 +235,6 @@ export const DataKioskApiAxiosParamCreator = function (configuration?: Configura
 
 /**
  * DataKioskApi - functional programming interface
- * @export
  */
 export const DataKioskApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = DataKioskApiAxiosParamCreator(configuration)
@@ -310,7 +308,6 @@ export const DataKioskApiFp = function(configuration?: Configuration) {
 
 /**
  * DataKioskApi - factory interface
- * @export
  */
 export const DataKioskApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = DataKioskApiFp(configuration)
@@ -365,107 +362,76 @@ export const DataKioskApiFactory = function (configuration?: Configuration, base
 
 /**
  * Request parameters for cancelQuery operation in DataKioskApi.
- * @export
- * @interface DataKioskApiCancelQueryRequest
  */
 export interface DataKioskApiCancelQueryRequest {
     /**
      * The identifier for the query. This identifier is unique only in combination with a selling partner account ID.
-     * @type {string}
-     * @memberof DataKioskApiCancelQuery
      */
     readonly queryId: string
 }
 
 /**
  * Request parameters for createQuery operation in DataKioskApi.
- * @export
- * @interface DataKioskApiCreateQueryRequest
  */
 export interface DataKioskApiCreateQueryRequest {
     /**
      * The body of the request.
-     * @type {CreateQuerySpecification}
-     * @memberof DataKioskApiCreateQuery
      */
     readonly body: CreateQuerySpecification
 }
 
 /**
  * Request parameters for getDocument operation in DataKioskApi.
- * @export
- * @interface DataKioskApiGetDocumentRequest
  */
 export interface DataKioskApiGetDocumentRequest {
     /**
      * The identifier for the Data Kiosk document.
-     * @type {string}
-     * @memberof DataKioskApiGetDocument
      */
     readonly documentId: string
 }
 
 /**
  * Request parameters for getQueries operation in DataKioskApi.
- * @export
- * @interface DataKioskApiGetQueriesRequest
  */
 export interface DataKioskApiGetQueriesRequest {
     /**
      * A list of processing statuses used to filter queries.
-     * @type {Array<'CANCELLED' | 'DONE' | 'FATAL' | 'IN_PROGRESS' | 'IN_QUEUE'>}
-     * @memberof DataKioskApiGetQueries
      */
     readonly processingStatuses?: Array<GetQueriesProcessingStatusesEnum>
 
     /**
      * The maximum number of queries to return in a single call.
-     * @type {number}
-     * @memberof DataKioskApiGetQueries
      */
     readonly pageSize?: number
 
     /**
      * The earliest query creation date and time for queries to include in the response, in ISO 8601 date time format. The default is 90 days ago.
-     * @type {string}
-     * @memberof DataKioskApiGetQueries
      */
     readonly createdSince?: string
 
     /**
      * The latest query creation date and time for queries to include in the response, in ISO 8601 date time format. The default is the time of the &#x60;getQueries&#x60; request.
-     * @type {string}
-     * @memberof DataKioskApiGetQueries
      */
     readonly createdUntil?: string
 
     /**
      * A token to fetch a certain page of results when there are multiple pages of results available. The value of this token is fetched from the &#x60;pagination.nextToken&#x60; field returned in the &#x60;GetQueriesResponse&#x60; object. All other parameters must be provided with the same values that were provided with the request that generated this token, with the exception of &#x60;pageSize&#x60; which can be modified between calls to &#x60;getQueries&#x60;. In the absence of this token value, &#x60;getQueries&#x60; returns the first page of results.
-     * @type {string}
-     * @memberof DataKioskApiGetQueries
      */
     readonly paginationToken?: string
 }
 
 /**
  * Request parameters for getQuery operation in DataKioskApi.
- * @export
- * @interface DataKioskApiGetQueryRequest
  */
 export interface DataKioskApiGetQueryRequest {
     /**
      * The query identifier.
-     * @type {string}
-     * @memberof DataKioskApiGetQuery
      */
     readonly queryId: string
 }
 
 /**
  * DataKioskApi - object-oriented interface
- * @export
- * @class DataKioskApi
- * @extends {BaseAPI}
  */
 export class DataKioskApi extends BaseAPI {
     /**
@@ -473,7 +439,6 @@ export class DataKioskApi extends BaseAPI {
      * @param {DataKioskApiCancelQueryRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof DataKioskApi
      */
     public cancelQuery(requestParameters: DataKioskApiCancelQueryRequest, options?: RawAxiosRequestConfig) {
         return DataKioskApiFp(this.configuration).cancelQuery(requestParameters.queryId, options).then((request) => request(this.axios, this.basePath));
@@ -484,7 +449,6 @@ export class DataKioskApi extends BaseAPI {
      * @param {DataKioskApiCreateQueryRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof DataKioskApi
      */
     public createQuery(requestParameters: DataKioskApiCreateQueryRequest, options?: RawAxiosRequestConfig) {
         return DataKioskApiFp(this.configuration).createQuery(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -495,7 +459,6 @@ export class DataKioskApi extends BaseAPI {
      * @param {DataKioskApiGetDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof DataKioskApi
      */
     public getDocument(requestParameters: DataKioskApiGetDocumentRequest, options?: RawAxiosRequestConfig) {
         return DataKioskApiFp(this.configuration).getDocument(requestParameters.documentId, options).then((request) => request(this.axios, this.basePath));
@@ -506,7 +469,6 @@ export class DataKioskApi extends BaseAPI {
      * @param {DataKioskApiGetQueriesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof DataKioskApi
      */
     public getQueries(requestParameters: DataKioskApiGetQueriesRequest = {}, options?: RawAxiosRequestConfig) {
         return DataKioskApiFp(this.configuration).getQueries(requestParameters.processingStatuses, requestParameters.pageSize, requestParameters.createdSince, requestParameters.createdUntil, requestParameters.paginationToken, options).then((request) => request(this.axios, this.basePath));
@@ -517,16 +479,12 @@ export class DataKioskApi extends BaseAPI {
      * @param {DataKioskApiGetQueryRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof DataKioskApi
      */
     public getQuery(requestParameters: DataKioskApiGetQueryRequest, options?: RawAxiosRequestConfig) {
         return DataKioskApiFp(this.configuration).getQuery(requestParameters.queryId, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetQueriesProcessingStatusesEnum = {
     Cancelled: 'CANCELLED',
     Done: 'DONE',

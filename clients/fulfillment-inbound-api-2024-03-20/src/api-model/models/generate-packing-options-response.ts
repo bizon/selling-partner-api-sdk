@@ -16,14 +16,10 @@
 
 /**
  * The `generatePackingOptions` response.
- * @export
- * @interface GeneratePackingOptionsResponse
  */
 export interface GeneratePackingOptionsResponse {
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof GeneratePackingOptionsResponse
      */
     'operationId': string;
 }

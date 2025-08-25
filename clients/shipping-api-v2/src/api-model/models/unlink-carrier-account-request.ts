@@ -19,20 +19,14 @@ import type { ClientReferenceDetail } from './client-reference-detail';
 
 /**
  * The request schema for remove the Carrier Account associated with the provided merchant.
- * @export
- * @interface UnlinkCarrierAccountRequest
  */
 export interface UnlinkCarrierAccountRequest {
     /**
      * Object to pass additional information about the MCI Integrator shipperType: List of ClientReferenceDetail
-     * @type {Array<ClientReferenceDetail>}
-     * @memberof UnlinkCarrierAccountRequest
      */
     'clientReferenceDetails'?: Array<ClientReferenceDetail>;
     /**
      * Identifier for the seller\'s carrier account.
-     * @type {string}
-     * @memberof UnlinkCarrierAccountRequest
      */
     'accountId'?: string;
 }

@@ -19,20 +19,11 @@ import type { JobListing } from './job-listing';
 
 /**
  * Response schema for the `getServiceJobs` operation.
- * @export
- * @interface GetServiceJobsResponse
  */
 export interface GetServiceJobsResponse {
-    /**
-     * 
-     * @type {JobListing}
-     * @memberof GetServiceJobsResponse
-     */
     'payload'?: JobListing;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetServiceJobsResponse
      */
     'errors'?: Array<Error>;
 }

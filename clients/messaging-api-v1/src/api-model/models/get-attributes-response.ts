@@ -19,20 +19,11 @@ import type { GetAttributesResponseBuyer } from './get-attributes-response-buyer
 
 /**
  * The response schema for the GetAttributes operation.
- * @export
- * @interface GetAttributesResponse
  */
 export interface GetAttributesResponse {
-    /**
-     * 
-     * @type {GetAttributesResponseBuyer}
-     * @memberof GetAttributesResponse
-     */
     'buyer'?: GetAttributesResponseBuyer;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetAttributesResponse
      */
     'errors'?: Array<Error>;
 }

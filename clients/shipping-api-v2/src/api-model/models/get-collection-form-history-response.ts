@@ -19,20 +19,14 @@ import type { CollectionFormsHistoryRecord } from './collection-forms-history-re
 
 /**
  * The Response  for the GetCollectionFormHistoryResponse operation.
- * @export
- * @interface GetCollectionFormHistoryResponse
  */
 export interface GetCollectionFormHistoryResponse {
     /**
      * A list of CollectionFormsHistoryRecord
-     * @type {Array<CollectionFormsHistoryRecord>}
-     * @memberof GetCollectionFormHistoryResponse
      */
     'collectionFormsHistoryRecordList'?: Array<CollectionFormsHistoryRecord>;
     /**
      * Last Refereshed Date of collection
-     * @type {string}
-     * @memberof GetCollectionFormHistoryResponse
      */
     'lastRefreshedDate'?: string;
 }

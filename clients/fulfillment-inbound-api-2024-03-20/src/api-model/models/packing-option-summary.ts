@@ -16,20 +16,14 @@
 
 /**
  * Summary information about a packing option.
- * @export
- * @interface PackingOptionSummary
  */
 export interface PackingOptionSummary {
     /**
      * Identifier of a packing option.
-     * @type {string}
-     * @memberof PackingOptionSummary
      */
     'packingOptionId': string;
     /**
      * The status of a packing option. Possible values: \'OFFERED\', \'ACCEPTED\', \'EXPIRED\'.
-     * @type {string}
-     * @memberof PackingOptionSummary
      */
     'status': string;
 }

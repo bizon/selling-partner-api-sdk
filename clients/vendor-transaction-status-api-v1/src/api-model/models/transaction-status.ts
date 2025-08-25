@@ -19,15 +19,8 @@ import type { Transaction } from './transaction';
 
 /**
  * Represents the status of a transaction.
- * @export
- * @interface TransactionStatus
  */
 export interface TransactionStatus {
-    /**
-     * 
-     * @type {Transaction}
-     * @memberof TransactionStatus
-     */
     'transactionStatus'?: Transaction;
 }
 

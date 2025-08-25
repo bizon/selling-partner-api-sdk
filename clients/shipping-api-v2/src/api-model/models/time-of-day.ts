@@ -16,26 +16,18 @@
 
 /**
  * Denotes time of the day, used for defining opening or closing time of access points
- * @export
- * @interface TimeOfDay
  */
 export interface TimeOfDay {
     /**
      * Denotes hour of the day, used for defining opening or closing time of access points
-     * @type {number}
-     * @memberof TimeOfDay
      */
     'hourOfDay'?: number;
     /**
      * Denotes minute of the hour, used for defining opening or closing time of access points
-     * @type {number}
-     * @memberof TimeOfDay
      */
     'minuteOfHour'?: number;
     /**
      * Denotes second of the minute, used for defining opening or closing time of access points
-     * @type {number}
-     * @memberof TimeOfDay
      */
     'secondOfMinute'?: number;
 }

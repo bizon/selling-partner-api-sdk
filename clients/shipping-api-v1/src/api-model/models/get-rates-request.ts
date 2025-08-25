@@ -25,38 +25,20 @@ import type { ServiceType } from './service-type';
 
 /**
  * The payload schema for the getRates operation.
- * @export
- * @interface GetRatesRequest
  */
 export interface GetRatesRequest {
-    /**
-     * 
-     * @type {Address}
-     * @memberof GetRatesRequest
-     */
     'shipTo': Address;
-    /**
-     * 
-     * @type {Address}
-     * @memberof GetRatesRequest
-     */
     'shipFrom': Address;
     /**
      * A list of service types that can be used to send the shipment.
-     * @type {Array<ServiceType>}
-     * @memberof GetRatesRequest
      */
     'serviceTypes': Array<ServiceType>;
     /**
      * The start date and time. This defaults to the current date and time.
-     * @type {string}
-     * @memberof GetRatesRequest
      */
     'shipDate'?: string;
     /**
      * A list of container specifications.
-     * @type {Array<ContainerSpecification>}
-     * @memberof GetRatesRequest
      */
     'containerSpecifications': Array<ContainerSpecification>;
 }

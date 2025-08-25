@@ -16,14 +16,10 @@
 
 /**
  * A response that contains the reference identifiers for the newly created or updated inbound order. Consists of an order ID and version.
- * @export
- * @interface InboundOrderReference
  */
 export interface InboundOrderReference {
     /**
      * Order ID of the inbound order.
-     * @type {string}
-     * @memberof InboundOrderReference
      */
     'orderId': string;
 }

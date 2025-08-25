@@ -19,14 +19,10 @@ import type { ClientReferenceDetail } from './client-reference-detail';
 
 /**
  * The request schema for the GetUnmanifestedShipmentsRequest operation.
- * @export
- * @interface GetUnmanifestedShipmentsRequest
  */
 export interface GetUnmanifestedShipmentsRequest {
     /**
      * Object to pass additional information about the MCI Integrator shipperType: List of ClientReferenceDetail
-     * @type {Array<ClientReferenceDetail>}
-     * @memberof GetUnmanifestedShipmentsRequest
      */
     'clientReferenceDetails'?: Array<ClientReferenceDetail>;
 }

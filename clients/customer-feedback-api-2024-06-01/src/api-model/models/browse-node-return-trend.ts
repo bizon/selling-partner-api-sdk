@@ -19,20 +19,14 @@ import type { BrowseNodeReturnTrendPoint } from './browse-node-return-trend-poin
 
 /**
  * The trend of return topic metrics for all items in the requested browse node.
- * @export
- * @interface BrowseNodeReturnTrend
  */
 export interface BrowseNodeReturnTrend {
     /**
      * The name of the topic.
-     * @type {string}
-     * @memberof BrowseNodeReturnTrend
      */
     'topic': string;
     /**
      * The browse node return trend metrics.
-     * @type {Array<BrowseNodeReturnTrendPoint>}
-     * @memberof BrowseNodeReturnTrend
      */
     'trendMetrics': Array<BrowseNodeReturnTrendPoint>;
 }

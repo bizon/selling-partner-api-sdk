@@ -16,8 +16,6 @@
 
 /**
  * Reasons that make a shipment service offering ineligible.
- * @export
- * @enum {string}
  */
 
 export const IneligibilityReasonCode = {

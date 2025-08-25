@@ -16,20 +16,14 @@
 
 /**
  * The expiration details of the inventory. This object will only appear if the details parameter in the request is set to `SHOW`.
- * @export
- * @interface ExpirationDetails
  */
 export interface ExpirationDetails {
     /**
      * The expiration date of the SKU.
-     * @type {string}
-     * @memberof ExpirationDetails
      */
     'expiration'?: string;
     /**
      * The quantity that is present in AWD.
-     * @type {number}
-     * @memberof ExpirationDetails
      */
     'onhandQuantity'?: number;
 }

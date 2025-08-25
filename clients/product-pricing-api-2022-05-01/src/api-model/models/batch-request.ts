@@ -19,32 +19,19 @@ import type { HttpMethod } from './http-method';
 
 /**
  * The common properties for individual requests within a batch.
- * @export
- * @interface BatchRequest
  */
 export interface BatchRequest {
     /**
      * The URI associated with an individual request within a batch. For `FeaturedOfferExpectedPrice`, this is `/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice`.
-     * @type {string}
-     * @memberof BatchRequest
      */
     'uri': string;
-    /**
-     * 
-     * @type {HttpMethod}
-     * @memberof BatchRequest
-     */
     'method': HttpMethod;
     /**
      * Additional HTTP body information that is associated with an individual request within a batch.
-     * @type {{ [key: string]: object; }}
-     * @memberof BatchRequest
      */
     'body'?: { [key: string]: object; };
     /**
      * A mapping of additional HTTP headers to send or receive for an individual request within a batch.
-     * @type {{ [key: string]: string; }}
-     * @memberof BatchRequest
      */
     'headers'?: { [key: string]: string; };
 }

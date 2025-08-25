@@ -22,45 +22,25 @@ import type { DateRange } from './date-range';
 
 /**
  * The response for the `getBrowseNodeReviewTopics` operation.
- * @export
- * @interface BrowseNodeReviewTopicsResponse
  */
 export interface BrowseNodeReviewTopicsResponse {
     /**
      * The requested browse node id. A browse node id is the unique identifier of a given browse node.
-     * @type {string}
-     * @memberof BrowseNodeReviewTopicsResponse
      */
     'browseNodeId': string;
     /**
      * The display name of the requested browse node id. The display name of the browse node as visible on the Amazon retail website.
-     * @type {string}
-     * @memberof BrowseNodeReviewTopicsResponse
      */
     'displayName': string;
     /**
      * The requested marketplace id.
-     * @type {string}
-     * @memberof BrowseNodeReviewTopicsResponse
      */
     'marketplaceId': string;
     /**
      * The two digit country code of requested marketplace id, in ISO 3166-1 alpha-2 format.
-     * @type {string}
-     * @memberof BrowseNodeReviewTopicsResponse
      */
     'countryCode': string;
-    /**
-     * 
-     * @type {DateRange}
-     * @memberof BrowseNodeReviewTopicsResponse
-     */
     'dateRange': DateRange;
-    /**
-     * 
-     * @type {BrowseNodeReviewTopics}
-     * @memberof BrowseNodeReviewTopicsResponse
-     */
     'topics': BrowseNodeReviewTopics;
 }
 

@@ -16,8 +16,6 @@
 
 /**
  * The sort order.
- * @export
- * @enum {string}
  */
 
 export const SortOrder = {

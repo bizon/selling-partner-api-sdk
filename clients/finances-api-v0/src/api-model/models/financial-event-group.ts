@@ -19,74 +19,41 @@ import type { Currency } from './currency';
 
 /**
  * Information related to a financial event group.
- * @export
- * @interface FinancialEventGroup
  */
 export interface FinancialEventGroup {
     /**
      * A unique identifier for the financial event group.
-     * @type {string}
-     * @memberof FinancialEventGroup
      */
     'FinancialEventGroupId'?: string;
     /**
      * The processing status of the financial event group indicates whether the balance of the financial event group is settled.  Possible values:  * Open  * Closed
-     * @type {string}
-     * @memberof FinancialEventGroup
      */
     'ProcessingStatus'?: string;
     /**
      * The status of the fund transfer.
-     * @type {string}
-     * @memberof FinancialEventGroup
      */
     'FundTransferStatus'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof FinancialEventGroup
-     */
     'OriginalTotal'?: Currency;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof FinancialEventGroup
-     */
     'ConvertedTotal'?: Currency;
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof FinancialEventGroup
      */
     'FundTransferDate'?: string;
     /**
      * The trace identifier used by sellers to look up transactions externally.
-     * @type {string}
-     * @memberof FinancialEventGroup
      */
     'TraceId'?: string;
     /**
      * The account tail of the payment instrument.
-     * @type {string}
-     * @memberof FinancialEventGroup
      */
     'AccountTail'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof FinancialEventGroup
-     */
     'BeginningBalance'?: Currency;
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof FinancialEventGroup
      */
     'FinancialEventGroupStart'?: string;
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof FinancialEventGroup
      */
     'FinancialEventGroupEnd'?: string;
 }

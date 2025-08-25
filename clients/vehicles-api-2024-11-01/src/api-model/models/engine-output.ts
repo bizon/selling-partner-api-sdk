@@ -19,21 +19,12 @@ import type { EngineOutputUnit } from './engine-output-unit';
 
 /**
  * Engine power output of vehicle.
- * @export
- * @interface EngineOutput
  */
 export interface EngineOutput {
     /**
      * Engine power value in specified unit.
-     * @type {number}
-     * @memberof EngineOutput
      */
     'value': number;
-    /**
-     * 
-     * @type {EngineOutputUnit}
-     * @memberof EngineOutput
-     */
     'unit': EngineOutputUnit;
 }
 

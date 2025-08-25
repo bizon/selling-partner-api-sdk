@@ -16,20 +16,14 @@
 
 /**
  * Object representing a benefit that is excluded for a shipping offer or rate.
- * @export
- * @interface ExcludedBenefit
  */
 export interface ExcludedBenefit {
     /**
      * benefit
-     * @type {string}
-     * @memberof ExcludedBenefit
      */
     'benefit': string;
     /**
      * List of reasons (eg. LATE_DELIVERY_RISK, etc.) indicating why a benefit is excluded for a shipping offer.
-     * @type {Array<string>}
-     * @memberof ExcludedBenefit
      */
     'reasonCodes'?: Array<string>;
 }

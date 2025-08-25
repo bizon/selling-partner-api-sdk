@@ -19,38 +19,26 @@ import type { FeeComponent } from './fee-component';
 
 /**
  * An event related to a trial shipment.
- * @export
- * @interface TrialShipmentEvent
  */
 export interface TrialShipmentEvent {
     /**
      * An Amazon-defined identifier for an order.
-     * @type {string}
-     * @memberof TrialShipmentEvent
      */
     'AmazonOrderId'?: string;
     /**
      * The identifier of the financial event group.
-     * @type {string}
-     * @memberof TrialShipmentEvent
      */
     'FinancialEventGroupId'?: string;
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof TrialShipmentEvent
      */
     'PostedDate'?: string;
     /**
      * The seller SKU of the item. The seller SKU is qualified by the seller\'s seller ID, which is included with every call to the Selling Partner API.
-     * @type {string}
-     * @memberof TrialShipmentEvent
      */
     'SKU'?: string;
     /**
      * A list of fee component information.
-     * @type {Array<FeeComponent>}
-     * @memberof TrialShipmentEvent
      */
     'FeeList'?: Array<FeeComponent>;
 }

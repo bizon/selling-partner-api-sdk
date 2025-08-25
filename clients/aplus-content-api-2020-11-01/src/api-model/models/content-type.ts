@@ -16,8 +16,6 @@
 
 /**
  * The A+ Content document type.
- * @export
- * @enum {string}
  */
 
 export const ContentType = {

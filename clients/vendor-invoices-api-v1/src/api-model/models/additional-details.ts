@@ -16,26 +16,18 @@
 
 /**
  * Additional information provided by the selling party for tax-related or any other purpose.
- * @export
- * @interface AdditionalDetails
  */
 export interface AdditionalDetails {
     /**
      * The type of the additional information provided by the selling party.
-     * @type {string}
-     * @memberof AdditionalDetails
      */
     'type': AdditionalDetailsTypeEnum;
     /**
      * The detail of the additional information provided by the selling party.
-     * @type {string}
-     * @memberof AdditionalDetails
      */
     'detail': string;
     /**
      * The language code of the additional information detail.
-     * @type {string}
-     * @memberof AdditionalDetails
      */
     'languageCode'?: string;
 }

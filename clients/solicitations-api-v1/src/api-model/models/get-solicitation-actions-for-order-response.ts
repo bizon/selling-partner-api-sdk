@@ -22,26 +22,12 @@ import type { GetSolicitationActionsForOrderResponseLinks } from './get-solicita
 
 /**
  * The response schema for the getSolicitationActionsForOrder operation.
- * @export
- * @interface GetSolicitationActionsForOrderResponse
  */
 export interface GetSolicitationActionsForOrderResponse {
-    /**
-     * 
-     * @type {GetSolicitationActionsForOrderResponseLinks}
-     * @memberof GetSolicitationActionsForOrderResponse
-     */
     '_links'?: GetSolicitationActionsForOrderResponseLinks;
-    /**
-     * 
-     * @type {GetSolicitationActionsForOrderResponseEmbedded}
-     * @memberof GetSolicitationActionsForOrderResponse
-     */
     '_embedded'?: GetSolicitationActionsForOrderResponseEmbedded;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetSolicitationActionsForOrderResponse
      */
     'errors'?: Array<Error>;
 }

@@ -16,8 +16,6 @@
 
 /**
  * A code for why the item is invalid for return.
- * @export
- * @enum {string}
  */
 
 export const InvalidItemReasonCode = {

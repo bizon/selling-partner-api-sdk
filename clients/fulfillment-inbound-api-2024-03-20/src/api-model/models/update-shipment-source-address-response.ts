@@ -16,14 +16,10 @@
 
 /**
  * The `UpdateShipmentSourceAddress` response.
- * @export
- * @interface UpdateShipmentSourceAddressResponse
  */
 export interface UpdateShipmentSourceAddressResponse {
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof UpdateShipmentSourceAddressResponse
      */
     'operationId': string;
 }

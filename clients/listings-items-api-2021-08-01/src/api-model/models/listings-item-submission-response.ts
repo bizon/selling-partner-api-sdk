@@ -22,38 +22,26 @@ import type { ItemIdentifiersByMarketplace } from './item-identifiers-by-marketp
 
 /**
  * Response containing the results of a submission to the Selling Partner API for Listings Items.
- * @export
- * @interface ListingsItemSubmissionResponse
  */
 export interface ListingsItemSubmissionResponse {
     /**
      * A selling partner provided identifier for an Amazon listing.
-     * @type {string}
-     * @memberof ListingsItemSubmissionResponse
      */
     'sku': string;
     /**
      * The status of the listings item submission.
-     * @type {string}
-     * @memberof ListingsItemSubmissionResponse
      */
     'status': ListingsItemSubmissionResponseStatusEnum;
     /**
      * The unique identifier of the listings item submission.
-     * @type {string}
-     * @memberof ListingsItemSubmissionResponse
      */
     'submissionId': string;
     /**
      * Listings item issues related to the listings item submission.
-     * @type {Array<Issue>}
-     * @memberof ListingsItemSubmissionResponse
      */
     'issues'?: Array<Issue>;
     /**
      * Identity attributes associated with the item in the Amazon catalog, such as the ASIN.
-     * @type {Array<ItemIdentifiersByMarketplace>}
-     * @memberof ListingsItemSubmissionResponse
      */
     'identifiers'?: Array<ItemIdentifiersByMarketplace>;
 }

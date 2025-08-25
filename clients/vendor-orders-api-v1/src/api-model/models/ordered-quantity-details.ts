@@ -19,27 +19,13 @@ import type { ItemQuantity } from './item-quantity';
 
 /**
  * Details of item quantity ordered.
- * @export
- * @interface OrderedQuantityDetails
  */
 export interface OrderedQuantityDetails {
     /**
      * The date when the line item quantity was updated by buyer. Must be in ISO-8601 date/time format.
-     * @type {string}
-     * @memberof OrderedQuantityDetails
      */
     'updatedDate'?: string;
-    /**
-     * 
-     * @type {ItemQuantity}
-     * @memberof OrderedQuantityDetails
-     */
     'orderedQuantity'?: ItemQuantity;
-    /**
-     * 
-     * @type {ItemQuantity}
-     * @memberof OrderedQuantityDetails
-     */
     'cancelledQuantity'?: ItemQuantity;
 }
 

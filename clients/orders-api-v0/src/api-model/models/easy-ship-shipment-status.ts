@@ -16,8 +16,6 @@
 
 /**
  * The status of the Amazon Easy Ship order. This property is only included for Amazon Easy Ship orders.
- * @export
- * @enum {string}
  */
 
 export const EasyShipShipmentStatus = {

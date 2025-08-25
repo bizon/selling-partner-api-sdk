@@ -19,20 +19,11 @@ import type { GetDeliveryOffersResult } from './get-delivery-offers-result';
 
 /**
  * The response schema for the getDeliveryOffers operation.
- * @export
- * @interface GetDeliveryOffersResponse
  */
 export interface GetDeliveryOffersResponse {
-    /**
-     * 
-     * @type {GetDeliveryOffersResult}
-     * @memberof GetDeliveryOffersResponse
-     */
     'payload'?: GetDeliveryOffersResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetDeliveryOffersResponse
      */
     'errors'?: Array<Error>;
 }

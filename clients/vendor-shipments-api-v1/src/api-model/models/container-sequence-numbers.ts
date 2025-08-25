@@ -16,14 +16,10 @@
 
 /**
  * Container sequence numbers that are involved in this shipment.
- * @export
- * @interface ContainerSequenceNumbers
  */
 export interface ContainerSequenceNumbers {
     /**
      * A list of containers shipped
-     * @type {string}
-     * @memberof ContainerSequenceNumbers
      */
     'containerSequenceNumber'?: string;
 }

@@ -22,21 +22,9 @@ import type { HttpStatusLine } from './http-status-line';
 
 /**
  * The response for the individual `competitiveSummary` request in the batch operation.
- * @export
- * @interface CompetitiveSummaryResponse
  */
 export interface CompetitiveSummaryResponse {
-    /**
-     * 
-     * @type {HttpStatusLine}
-     * @memberof CompetitiveSummaryResponse
-     */
     'status': HttpStatusLine;
-    /**
-     * 
-     * @type {CompetitiveSummaryResponseBody}
-     * @memberof CompetitiveSummaryResponse
-     */
     'body': CompetitiveSummaryResponseBody;
 }
 

@@ -16,20 +16,14 @@
 
 /**
  * A delivery document for a package.
- * @export
- * @interface DeliveryDocument
  */
 export interface DeliveryDocument {
     /**
      * The delivery document type. Values are `SIGNATURE` and `DELIVERY_IMAGE`.
-     * @type {string}
-     * @memberof DeliveryDocument
      */
     'documentType': string;
     /**
      * A URL that you can use to download the document. This URL has a `Content-Type` header. Note that the URL expires after one hour. To get a new URL, you must call the API again.
-     * @type {string}
-     * @memberof DeliveryDocument
      */
     'url'?: string;
 }

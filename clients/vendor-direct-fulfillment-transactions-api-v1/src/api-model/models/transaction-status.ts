@@ -19,15 +19,8 @@ import type { Transaction } from './transaction';
 
 /**
  * The payload for the getTransactionStatus operation.
- * @export
- * @interface TransactionStatus
  */
 export interface TransactionStatus {
-    /**
-     * 
-     * @type {Transaction}
-     * @memberof TransactionStatus
-     */
     'transactionStatus'?: Transaction;
 }
 

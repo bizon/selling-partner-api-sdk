@@ -19,33 +19,20 @@ import type { TaxDetails } from './tax-details';
 
 /**
  * Contains item identifiers and related tax information.
- * @export
- * @interface ComplianceDetail
  */
 export interface ComplianceDetail {
     /**
      * The Amazon Standard Identification Number, which identifies the detail page identifier.
-     * @type {string}
-     * @memberof ComplianceDetail
      */
     'asin'?: string;
     /**
      * The Fulfillment Network SKU, which identifies a real fulfillable item with catalog data and condition.
-     * @type {string}
-     * @memberof ComplianceDetail
      */
     'fnsku'?: string;
     /**
      * The merchant SKU, a merchant-supplied identifier for a specific SKU.
-     * @type {string}
-     * @memberof ComplianceDetail
      */
     'msku'?: string;
-    /**
-     * 
-     * @type {TaxDetails}
-     * @memberof ComplianceDetail
-     */
     'taxDetails'?: TaxDetails;
 }
 

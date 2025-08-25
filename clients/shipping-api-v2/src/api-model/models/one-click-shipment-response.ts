@@ -19,15 +19,8 @@ import type { OneClickShipmentResult } from './one-click-shipment-result';
 
 /**
  * The response schema for the OneClickShipment operation.
- * @export
- * @interface OneClickShipmentResponse
  */
 export interface OneClickShipmentResponse {
-    /**
-     * 
-     * @type {OneClickShipmentResult}
-     * @memberof OneClickShipmentResponse
-     */
     'payload'?: OneClickShipmentResult;
 }
 

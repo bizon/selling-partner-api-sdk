@@ -22,27 +22,13 @@ import type { PackageDocumentDetail } from './package-document-detail';
 
 /**
  * The payload for the getShipmentDocuments operation.
- * @export
- * @interface GetShipmentDocumentsResult
  */
 export interface GetShipmentDocumentsResult {
     /**
      * The unique shipment identifier provided by a shipping service.
-     * @type {string}
-     * @memberof GetShipmentDocumentsResult
      */
     'shipmentId': string;
-    /**
-     * 
-     * @type {PackageDocumentDetail}
-     * @memberof GetShipmentDocumentsResult
-     */
     'packageDocumentDetail': PackageDocumentDetail;
-    /**
-     * 
-     * @type {Benefits}
-     * @memberof GetShipmentDocumentsResult
-     */
     'benefits'?: Benefits;
 }
 

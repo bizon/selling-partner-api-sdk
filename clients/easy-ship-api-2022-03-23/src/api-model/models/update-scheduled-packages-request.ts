@@ -19,20 +19,14 @@ import type { UpdatePackageDetails } from './update-package-details';
 
 /**
  * The request schema for the `updateScheduledPackages` operation.
- * @export
- * @interface UpdateScheduledPackagesRequest
  */
 export interface UpdateScheduledPackagesRequest {
     /**
      * A string of up to 255 characters.
-     * @type {string}
-     * @memberof UpdateScheduledPackagesRequest
      */
     'marketplaceId': string;
     /**
      * A list of package update details.
-     * @type {Array<UpdatePackageDetails>}
-     * @memberof UpdateScheduledPackagesRequest
      */
     'updatePackageDetailsList': Array<UpdatePackageDetails>;
 }

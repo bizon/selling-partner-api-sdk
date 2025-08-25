@@ -22,21 +22,9 @@ import type { ContactDetails } from './contact-details';
 
 /**
  * The address and contact details.
- * @export
- * @interface AddressWithContact
  */
 export interface AddressWithContact {
-    /**
-     * 
-     * @type {ContactDetails}
-     * @memberof AddressWithContact
-     */
     'contactDetails'?: ContactDetails;
-    /**
-     * 
-     * @type {Address}
-     * @memberof AddressWithContact
-     */
     'address'?: Address;
 }
 

@@ -16,20 +16,14 @@
 
 /**
  * The weight.
- * @export
- * @interface Weight
  */
 export interface Weight {
     /**
      * The unit of weight.
-     * @type {string}
-     * @memberof Weight
      */
     'unit': WeightUnitEnum;
     /**
      * The weight value.
-     * @type {string}
-     * @memberof Weight
      */
     'value': string;
 }

@@ -16,26 +16,18 @@
 
 /**
  * Capacity slots represented in a format similar to availability rules.
- * @export
- * @interface RangeSlot
  */
 export interface RangeSlot {
     /**
      * Start date time of slot in ISO 8601 format with precision of seconds.
-     * @type {string}
-     * @memberof RangeSlot
      */
     'startDateTime'?: string;
     /**
      * End date time of slot in ISO 8601 format with precision of seconds.
-     * @type {string}
-     * @memberof RangeSlot
      */
     'endDateTime'?: string;
     /**
      * Capacity of the slot.
-     * @type {number}
-     * @memberof RangeSlot
      */
     'capacity'?: number;
 }

@@ -16,14 +16,10 @@
 
 /**
  * The effects of a topic on a browse node\'s star rating.
- * @export
- * @interface BrowseNodeStarRatingImpact
  */
 export interface BrowseNodeStarRatingImpact {
     /**
      * The effect of the topic on the star rating for all products in this browse node. This value can be positive or negative.
-     * @type {number}
-     * @memberof BrowseNodeStarRatingImpact
      */
     'allProducts': number;
 }

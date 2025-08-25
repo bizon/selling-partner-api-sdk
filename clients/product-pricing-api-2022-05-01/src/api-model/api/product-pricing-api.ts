@@ -33,7 +33,6 @@ import type { GetFeaturedOfferExpectedPriceBatchRequest } from '../models';
 import type { GetFeaturedOfferExpectedPriceBatchResponse } from '../models';
 /**
  * ProductPricingApi - axios parameter creator
- * @export
  */
 export const ProductPricingApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -112,7 +111,6 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
 
 /**
  * ProductPricingApi - functional programming interface
- * @export
  */
 export const ProductPricingApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ProductPricingApiAxiosParamCreator(configuration)
@@ -146,7 +144,6 @@ export const ProductPricingApiFp = function(configuration?: Configuration) {
 
 /**
  * ProductPricingApi - factory interface
- * @export
  */
 export const ProductPricingApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = ProductPricingApiFp(configuration)
@@ -174,37 +171,26 @@ export const ProductPricingApiFactory = function (configuration?: Configuration,
 
 /**
  * Request parameters for getCompetitiveSummary operation in ProductPricingApi.
- * @export
- * @interface ProductPricingApiGetCompetitiveSummaryRequest
  */
 export interface ProductPricingApiGetCompetitiveSummaryRequest {
     /**
      * The batch of &#x60;getCompetitiveSummary&#x60; requests.
-     * @type {CompetitiveSummaryBatchRequest}
-     * @memberof ProductPricingApiGetCompetitiveSummary
      */
     readonly requests: CompetitiveSummaryBatchRequest
 }
 
 /**
  * Request parameters for getFeaturedOfferExpectedPriceBatch operation in ProductPricingApi.
- * @export
- * @interface ProductPricingApiGetFeaturedOfferExpectedPriceBatchRequest
  */
 export interface ProductPricingApiGetFeaturedOfferExpectedPriceBatchRequest {
     /**
      * The batch of &#x60;getFeaturedOfferExpectedPrice&#x60; requests.
-     * @type {GetFeaturedOfferExpectedPriceBatchRequest}
-     * @memberof ProductPricingApiGetFeaturedOfferExpectedPriceBatch
      */
     readonly getFeaturedOfferExpectedPriceBatchRequestBody: GetFeaturedOfferExpectedPriceBatchRequest
 }
 
 /**
  * ProductPricingApi - object-oriented interface
- * @export
- * @class ProductPricingApi
- * @extends {BaseAPI}
  */
 export class ProductPricingApi extends BaseAPI {
     /**
@@ -212,7 +198,6 @@ export class ProductPricingApi extends BaseAPI {
      * @param {ProductPricingApiGetCompetitiveSummaryRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ProductPricingApi
      */
     public getCompetitiveSummary(requestParameters: ProductPricingApiGetCompetitiveSummaryRequest, options?: RawAxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getCompetitiveSummary(requestParameters.requests, options).then((request) => request(this.axios, this.basePath));
@@ -223,7 +208,6 @@ export class ProductPricingApi extends BaseAPI {
      * @param {ProductPricingApiGetFeaturedOfferExpectedPriceBatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ProductPricingApi
      */
     public getFeaturedOfferExpectedPriceBatch(requestParameters: ProductPricingApiGetFeaturedOfferExpectedPriceBatchRequest, options?: RawAxiosRequestConfig) {
         return ProductPricingApiFp(this.configuration).getFeaturedOfferExpectedPriceBatch(requestParameters.getFeaturedOfferExpectedPriceBatchRequestBody, options).then((request) => request(this.axios, this.basePath));

@@ -22,20 +22,14 @@ import type { AvailableDeliveryExperienceOption } from './available-delivery-exp
 
 /**
  * The available shipping service options.
- * @export
- * @interface AvailableShippingServiceOptions
  */
 export interface AvailableShippingServiceOptions {
     /**
      * List of available carrier pickup options.
-     * @type {Array<AvailableCarrierWillPickUpOption>}
-     * @memberof AvailableShippingServiceOptions
      */
     'AvailableCarrierWillPickUpOptions': Array<AvailableCarrierWillPickUpOption>;
     /**
      * List of available delivery experience options.
-     * @type {Array<AvailableDeliveryExperienceOption>}
-     * @memberof AvailableShippingServiceOptions
      */
     'AvailableDeliveryExperienceOptions': Array<AvailableDeliveryExperienceOption>;
 }

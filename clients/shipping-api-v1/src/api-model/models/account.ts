@@ -16,14 +16,10 @@
 
 /**
  * The account related data.
- * @export
- * @interface Account
  */
 export interface Account {
     /**
      * This is the Amazon Shipping account id generated during the Amazon Shipping onboarding process.
-     * @type {string}
-     * @memberof Account
      */
     'accountId': string;
 }

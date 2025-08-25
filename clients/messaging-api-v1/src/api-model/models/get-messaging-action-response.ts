@@ -25,32 +25,13 @@ import type { MessagingAction } from './messaging-action';
 
 /**
  * Describes a messaging action that can be taken for an order. Provides a JSON Hypertext Application Language (HAL) link to the JSON schema document that describes the expected input.
- * @export
- * @interface GetMessagingActionResponse
  */
 export interface GetMessagingActionResponse {
-    /**
-     * 
-     * @type {GetMessagingActionResponseLinks}
-     * @memberof GetMessagingActionResponse
-     */
     '_links'?: GetMessagingActionResponseLinks;
-    /**
-     * 
-     * @type {GetMessagingActionResponseEmbedded}
-     * @memberof GetMessagingActionResponse
-     */
     '_embedded'?: GetMessagingActionResponseEmbedded;
-    /**
-     * 
-     * @type {MessagingAction}
-     * @memberof GetMessagingActionResponse
-     */
     'payload'?: MessagingAction;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetMessagingActionResponse
      */
     'errors'?: Array<Error>;
 }

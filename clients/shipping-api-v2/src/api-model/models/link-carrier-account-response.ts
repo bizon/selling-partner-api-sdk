@@ -19,20 +19,11 @@ import type { AccountStatus } from './account-status';
 
 /**
  * The Response  for the LinkCarrierAccount operation.
- * @export
- * @interface LinkCarrierAccountResponse
  */
 export interface LinkCarrierAccountResponse {
-    /**
-     * 
-     * @type {AccountStatus}
-     * @memberof LinkCarrierAccountResponse
-     */
     'registrationStatus'?: AccountStatus;
     /**
      * Identifier for the seller\'s carrier account.
-     * @type {string}
-     * @memberof LinkCarrierAccountResponse
      */
     'accountId'?: string;
 }

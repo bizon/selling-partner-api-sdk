@@ -19,20 +19,11 @@ import type { VehicleStandard } from './vehicle-standard';
 
 /**
  * Combination of vehicle standard and id that can uniquely identify a vehicle from Amazon\'s catalog.
- * @export
- * @interface VehicleIdentifiers
  */
 export interface VehicleIdentifiers {
-    /**
-     * 
-     * @type {VehicleStandard}
-     * @memberof VehicleIdentifiers
-     */
     'standard': VehicleStandard;
     /**
      * Id that can uniquely identify a vehicle based the vehicle identification standard.
-     * @type {string}
-     * @memberof VehicleIdentifiers
      */
     'value': string;
 }

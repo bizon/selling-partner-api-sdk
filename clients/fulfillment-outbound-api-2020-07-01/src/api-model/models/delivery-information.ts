@@ -22,21 +22,12 @@ import type { DropOffLocation } from './drop-off-location';
 
 /**
  * The delivery information for the package. This information is available after the package is delivered.
- * @export
- * @interface DeliveryInformation
  */
 export interface DeliveryInformation {
     /**
      * A list of delivery documents for a package.
-     * @type {Array<DeliveryDocument>}
-     * @memberof DeliveryInformation
      */
     'deliveryDocumentList'?: Array<DeliveryDocument>;
-    /**
-     * 
-     * @type {DropOffLocation}
-     * @memberof DeliveryInformation
-     */
     'dropOffLocation'?: DropOffLocation;
 }
 

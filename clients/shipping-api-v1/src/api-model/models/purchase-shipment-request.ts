@@ -28,51 +28,23 @@ import type { ServiceType } from './service-type';
 
 /**
  * The payload schema for the purchaseShipment operation.
- * @export
- * @interface PurchaseShipmentRequest
  */
 export interface PurchaseShipmentRequest {
     /**
      * Client reference id.
-     * @type {string}
-     * @memberof PurchaseShipmentRequest
      */
     'clientReferenceId': string;
-    /**
-     * 
-     * @type {Address}
-     * @memberof PurchaseShipmentRequest
-     */
     'shipTo': Address;
-    /**
-     * 
-     * @type {Address}
-     * @memberof PurchaseShipmentRequest
-     */
     'shipFrom': Address;
     /**
      * The start date and time. This defaults to the current date and time.
-     * @type {string}
-     * @memberof PurchaseShipmentRequest
      */
     'shipDate'?: string;
-    /**
-     * 
-     * @type {ServiceType}
-     * @memberof PurchaseShipmentRequest
-     */
     'serviceType': ServiceType;
     /**
      * A list of container.
-     * @type {Array<Container>}
-     * @memberof PurchaseShipmentRequest
      */
     'containers': Array<Container>;
-    /**
-     * 
-     * @type {LabelSpecification}
-     * @memberof PurchaseShipmentRequest
-     */
     'labelSpecification': LabelSpecification;
 }
 

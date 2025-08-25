@@ -22,21 +22,9 @@ import type { TrackingDetailCodes } from './tracking-detail-codes';
 
 /**
  * A package status summary.
- * @export
- * @interface TrackingSummary
  */
 export interface TrackingSummary {
-    /**
-     * 
-     * @type {Status}
-     * @memberof TrackingSummary
-     */
     'status'?: Status;
-    /**
-     * 
-     * @type {TrackingDetailCodes}
-     * @memberof TrackingSummary
-     */
     'trackingDetailCodes'?: TrackingDetailCodes;
 }
 

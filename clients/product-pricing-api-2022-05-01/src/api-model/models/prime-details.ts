@@ -16,14 +16,10 @@
 
 /**
  * Amazon Prime details.
- * @export
- * @interface PrimeDetails
  */
 export interface PrimeDetails {
     /**
      * Indicates whether the offer is an Amazon Prime offer.
-     * @type {string}
-     * @memberof PrimeDetails
      */
     'eligibility': PrimeDetailsEligibilityEnum;
 }

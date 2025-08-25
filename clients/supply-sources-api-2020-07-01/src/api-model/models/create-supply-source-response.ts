@@ -16,20 +16,14 @@
 
 /**
  * The result of creating a new supply source.
- * @export
- * @interface CreateSupplySourceResponse
  */
 export interface CreateSupplySourceResponse {
     /**
      * An Amazon generated unique supply source ID.
-     * @type {string}
-     * @memberof CreateSupplySourceResponse
      */
     'supplySourceId': string;
     /**
      * The seller-provided unique supply source code.
-     * @type {string}
-     * @memberof CreateSupplySourceResponse
      */
     'supplySourceCode': string;
 }

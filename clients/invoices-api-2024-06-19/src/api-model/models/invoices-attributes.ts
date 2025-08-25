@@ -19,32 +19,22 @@ import type { AttributeOption } from './attribute-option';
 
 /**
  * An object that contains the invoice attributes definition.
- * @export
- * @interface InvoicesAttributes
  */
 export interface InvoicesAttributes {
     /**
      * A list of all the options that are available for the invoice status attribute.
-     * @type {Array<AttributeOption>}
-     * @memberof InvoicesAttributes
      */
     'invoiceStatusOptions'?: Array<AttributeOption>;
     /**
      * A list of all the options that are available for the invoice type attribute.
-     * @type {Array<AttributeOption>}
-     * @memberof InvoicesAttributes
      */
     'invoiceTypeOptions'?: Array<AttributeOption>;
     /**
      * A list of all the options that are available for the transaction identifier name attribute.
-     * @type {Array<AttributeOption>}
-     * @memberof InvoicesAttributes
      */
     'transactionIdentifierNameOptions'?: Array<AttributeOption>;
     /**
      * A list of all the options that are available for the transaction type attribute.
-     * @type {Array<AttributeOption>}
-     * @memberof InvoicesAttributes
      */
     'transactionTypeOptions'?: Array<AttributeOption>;
 }

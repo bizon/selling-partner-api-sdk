@@ -16,8 +16,6 @@
 
 /**
  * The submission status of the content document.
- * @export
- * @enum {string}
  */
 
 export const ContentStatus = {

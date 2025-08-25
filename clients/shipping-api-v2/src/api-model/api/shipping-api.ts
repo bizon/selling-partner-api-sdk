@@ -85,7 +85,6 @@ import type { UnlinkCarrierAccountRequest } from '../models';
 import type { UnlinkCarrierAccountResponse } from '../models';
 /**
  * ShippingApi - axios parameter creator
- * @export
  */
 export const ShippingApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -938,7 +937,6 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
 
 /**
  * ShippingApi - functional programming interface
- * @export
  */
 export const ShippingApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ShippingApiAxiosParamCreator(configuration)
@@ -1221,7 +1219,6 @@ export const ShippingApiFp = function(configuration?: Configuration) {
 
 /**
  * ShippingApi - factory interface
- * @export
  */
 export const ShippingApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = ShippingApiFp(configuration)
@@ -1411,520 +1408,371 @@ export const ShippingApiFactory = function (configuration?: Configuration, baseP
 
 /**
  * Request parameters for cancelShipment operation in ShippingApi.
- * @export
- * @interface ShippingApiCancelShipmentRequest
  */
 export interface ShippingApiCancelShipmentRequest {
     /**
      * The shipment identifier originally returned by the purchaseShipment operation.
-     * @type {string}
-     * @memberof ShippingApiCancelShipment
      */
     readonly shipmentId: string
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiCancelShipment
      */
     readonly xAmznShippingBusinessId?: CancelShipmentXAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for createClaim operation in ShippingApi.
- * @export
- * @interface ShippingApiCreateClaimRequest
  */
 export interface ShippingApiCreateClaimRequest {
     /**
      * Request body for the createClaim operation
-     * @type {CreateClaimRequest}
-     * @memberof ShippingApiCreateClaim
      */
     readonly body: CreateClaimRequest
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiCreateClaim
      */
     readonly xAmznShippingBusinessId?: CreateClaimXAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for directPurchaseShipment operation in ShippingApi.
- * @export
- * @interface ShippingApiDirectPurchaseShipmentRequest
  */
 export interface ShippingApiDirectPurchaseShipmentRequest {
     /**
      * DirectPurchaseRequest body
-     * @type {DirectPurchaseRequest}
-     * @memberof ShippingApiDirectPurchaseShipment
      */
     readonly body: DirectPurchaseRequest
 
     /**
      * A unique value which the server uses to recognize subsequent retries of the same request.
-     * @type {string}
-     * @memberof ShippingApiDirectPurchaseShipment
      */
     readonly xAmznIdempotencyKey?: string
 
     /**
      * The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA). The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary language subtags. 
-     * @type {string}
-     * @memberof ShippingApiDirectPurchaseShipment
      */
     readonly locale?: string
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiDirectPurchaseShipment
      */
     readonly xAmznShippingBusinessId?: DirectPurchaseShipmentXAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for generateCollectionForm operation in ShippingApi.
- * @export
- * @interface ShippingApiGenerateCollectionFormRequest
  */
 export interface ShippingApiGenerateCollectionFormRequest {
     /**
      * GenerateCollectionFormRequest body
-     * @type {GenerateCollectionFormRequest}
-     * @memberof ShippingApiGenerateCollectionForm
      */
     readonly body: GenerateCollectionFormRequest
 
     /**
      * A unique value which the server uses to recognize subsequent retries of the same request.
-     * @type {string}
-     * @memberof ShippingApiGenerateCollectionForm
      */
     readonly xAmznIdempotencyKey?: string
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiGenerateCollectionForm
      */
     readonly xAmznShippingBusinessId?: GenerateCollectionFormXAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for getAccessPoints operation in ShippingApi.
- * @export
- * @interface ShippingApiGetAccessPointsRequest
  */
 export interface ShippingApiGetAccessPointsRequest {
     /**
      * Access point types
-     * @type {Array<'HELIX' | 'CAMPUS_LOCKER' | 'OMNI_LOCKER' | 'ODIN_LOCKER' | 'DOBBY_LOCKER' | 'CORE_LOCKER' | '3P' | 'CAMPUS_ROOM'>}
-     * @memberof ShippingApiGetAccessPoints
      */
     readonly accessPointTypes: Array<GetAccessPointsAccessPointTypesEnum>
 
     /**
      * Country code for access point
-     * @type {string}
-     * @memberof ShippingApiGetAccessPoints
      */
     readonly countryCode: string
 
     /**
      * postal code for access point
-     * @type {string}
-     * @memberof ShippingApiGetAccessPoints
      */
     readonly postalCode: string
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiGetAccessPoints
      */
     readonly xAmznShippingBusinessId?: GetAccessPointsXAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for getAdditionalInputs operation in ShippingApi.
- * @export
- * @interface ShippingApiGetAdditionalInputsRequest
  */
 export interface ShippingApiGetAdditionalInputsRequest {
     /**
      * The request token returned in the response to the getRates operation.
-     * @type {string}
-     * @memberof ShippingApiGetAdditionalInputs
      */
     readonly requestToken: string
 
     /**
      * The rate identifier for the shipping offering (rate) returned in the response to the getRates operation.
-     * @type {string}
-     * @memberof ShippingApiGetAdditionalInputs
      */
     readonly rateId: string
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiGetAdditionalInputs
      */
     readonly xAmznShippingBusinessId?: GetAdditionalInputsXAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for getCarrierAccountFormInputs operation in ShippingApi.
- * @export
- * @interface ShippingApiGetCarrierAccountFormInputsRequest
  */
 export interface ShippingApiGetCarrierAccountFormInputsRequest {
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiGetCarrierAccountFormInputs
      */
     readonly xAmznShippingBusinessId?: GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for getCarrierAccounts operation in ShippingApi.
- * @export
- * @interface ShippingApiGetCarrierAccountsRequest
  */
 export interface ShippingApiGetCarrierAccountsRequest {
     /**
      * GetCarrierAccountsRequest body
-     * @type {GetCarrierAccountsRequest}
-     * @memberof ShippingApiGetCarrierAccounts
      */
     readonly body: GetCarrierAccountsRequest
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiGetCarrierAccounts
      */
     readonly xAmznShippingBusinessId?: GetCarrierAccountsXAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for getCollectionForm operation in ShippingApi.
- * @export
- * @interface ShippingApiGetCollectionFormRequest
  */
 export interface ShippingApiGetCollectionFormRequest {
     /**
      * collection form Id to reprint a collection.
-     * @type {string}
-     * @memberof ShippingApiGetCollectionForm
      */
     readonly collectionFormId: string
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiGetCollectionForm
      */
     readonly xAmznShippingBusinessId?: GetCollectionFormXAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for getCollectionFormHistory operation in ShippingApi.
- * @export
- * @interface ShippingApiGetCollectionFormHistoryRequest
  */
 export interface ShippingApiGetCollectionFormHistoryRequest {
     /**
      * GetCollectionFormHistoryRequest body
-     * @type {GetCollectionFormHistoryRequest}
-     * @memberof ShippingApiGetCollectionFormHistory
      */
     readonly body: GetCollectionFormHistoryRequest
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiGetCollectionFormHistory
      */
     readonly xAmznShippingBusinessId?: GetCollectionFormHistoryXAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for getRates operation in ShippingApi.
- * @export
- * @interface ShippingApiGetRatesRequest
  */
 export interface ShippingApiGetRatesRequest {
     /**
      * GetRatesRequest body
-     * @type {GetRatesRequest}
-     * @memberof ShippingApiGetRates
      */
     readonly body: GetRatesRequest
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiGetRates
      */
     readonly xAmznShippingBusinessId?: GetRatesXAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for getShipmentDocuments operation in ShippingApi.
- * @export
- * @interface ShippingApiGetShipmentDocumentsRequest
  */
 export interface ShippingApiGetShipmentDocumentsRequest {
     /**
      * The shipment identifier originally returned by the purchaseShipment operation.
-     * @type {string}
-     * @memberof ShippingApiGetShipmentDocuments
      */
     readonly shipmentId: string
 
     /**
      * The package client reference identifier originally provided in the request body parameter for the getRates operation.
-     * @type {string}
-     * @memberof ShippingApiGetShipmentDocuments
      */
     readonly packageClientReferenceId: string
 
     /**
      * The file format of the document. Must be one of the supported formats returned by the getRates operation.
-     * @type {string}
-     * @memberof ShippingApiGetShipmentDocuments
      */
     readonly format?: string
 
     /**
      * The resolution of the document (for example, 300 means 300 dots per inch). Must be one of the supported resolutions returned in the response to the getRates operation.
-     * @type {number}
-     * @memberof ShippingApiGetShipmentDocuments
      */
     readonly dpi?: number
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiGetShipmentDocuments
      */
     readonly xAmznShippingBusinessId?: GetShipmentDocumentsXAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for getTracking operation in ShippingApi.
- * @export
- * @interface ShippingApiGetTrackingRequest
  */
 export interface ShippingApiGetTrackingRequest {
     /**
      * A carrier-generated tracking identifier originally returned by the purchaseShipment operation.
-     * @type {string}
-     * @memberof ShippingApiGetTracking
      */
     readonly trackingId: string
 
     /**
      * A carrier identifier originally returned by the getRates operation for the selected rate.
-     * @type {string}
-     * @memberof ShippingApiGetTracking
      */
     readonly carrierId: string
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiGetTracking
      */
     readonly xAmznShippingBusinessId?: GetTrackingXAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for getUnmanifestedShipments operation in ShippingApi.
- * @export
- * @interface ShippingApiGetUnmanifestedShipmentsRequest
  */
 export interface ShippingApiGetUnmanifestedShipmentsRequest {
     /**
      * GetUmanifestedShipmentsRequest body
-     * @type {GetUnmanifestedShipmentsRequest}
-     * @memberof ShippingApiGetUnmanifestedShipments
      */
     readonly body: GetUnmanifestedShipmentsRequest
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiGetUnmanifestedShipments
      */
     readonly xAmznShippingBusinessId?: GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for linkCarrierAccount operation in ShippingApi.
- * @export
- * @interface ShippingApiLinkCarrierAccountRequest
  */
 export interface ShippingApiLinkCarrierAccountRequest {
     /**
      * An identifier for the carrier with which the seller\&#39;s account is being linked.
-     * @type {string}
-     * @memberof ShippingApiLinkCarrierAccount
      */
     readonly carrierId: string
 
     /**
      * LinkCarrierAccountRequest body
-     * @type {LinkCarrierAccountRequest}
-     * @memberof ShippingApiLinkCarrierAccount
      */
     readonly body: LinkCarrierAccountRequest
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiLinkCarrierAccount
      */
     readonly xAmznShippingBusinessId?: LinkCarrierAccountXAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for linkCarrierAccount_1 operation in ShippingApi.
- * @export
- * @interface ShippingApiLinkCarrierAccount0Request
  */
 export interface ShippingApiLinkCarrierAccount0Request {
     /**
      * An identifier for the carrier with which the seller\&#39;s account is being linked.
-     * @type {string}
-     * @memberof ShippingApiLinkCarrierAccount0
      */
     readonly carrierId: string
 
     /**
      * LinkCarrierAccountRequest body
-     * @type {LinkCarrierAccountRequest}
-     * @memberof ShippingApiLinkCarrierAccount0
      */
     readonly body: LinkCarrierAccountRequest
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiLinkCarrierAccount0
      */
     readonly xAmznShippingBusinessId?: LinkCarrierAccount0XAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for oneClickShipment operation in ShippingApi.
- * @export
- * @interface ShippingApiOneClickShipmentRequest
  */
 export interface ShippingApiOneClickShipmentRequest {
     /**
      * OneClickShipmentRequest body
-     * @type {OneClickShipmentRequest}
-     * @memberof ShippingApiOneClickShipment
      */
     readonly body: OneClickShipmentRequest
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiOneClickShipment
      */
     readonly xAmznShippingBusinessId?: OneClickShipmentXAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for purchaseShipment operation in ShippingApi.
- * @export
- * @interface ShippingApiPurchaseShipmentRequest
  */
 export interface ShippingApiPurchaseShipmentRequest {
     /**
      * PurchaseShipmentRequest body
-     * @type {PurchaseShipmentRequest}
-     * @memberof ShippingApiPurchaseShipment
      */
     readonly body: PurchaseShipmentRequest
 
     /**
      * A unique value which the server uses to recognize subsequent retries of the same request.
-     * @type {string}
-     * @memberof ShippingApiPurchaseShipment
      */
     readonly xAmznIdempotencyKey?: string
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiPurchaseShipment
      */
     readonly xAmznShippingBusinessId?: PurchaseShipmentXAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for submitNdrFeedback operation in ShippingApi.
- * @export
- * @interface ShippingApiSubmitNdrFeedbackRequest
  */
 export interface ShippingApiSubmitNdrFeedbackRequest {
     /**
      * Request body for ndrFeedback operation
-     * @type {SubmitNdrFeedbackRequest}
-     * @memberof ShippingApiSubmitNdrFeedback
      */
     readonly body: SubmitNdrFeedbackRequest
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiSubmitNdrFeedback
      */
     readonly xAmznShippingBusinessId?: SubmitNdrFeedbackXAmznShippingBusinessIdEnum
 }
 
 /**
  * Request parameters for unlinkCarrierAccount operation in ShippingApi.
- * @export
- * @interface ShippingApiUnlinkCarrierAccountRequest
  */
 export interface ShippingApiUnlinkCarrierAccountRequest {
     /**
      * carrier Id to unlink with merchant.
-     * @type {string}
-     * @memberof ShippingApiUnlinkCarrierAccount
      */
     readonly carrierId: string
 
     /**
      * UnlinkCarrierAccountRequest body
-     * @type {UnlinkCarrierAccountRequest}
-     * @memberof ShippingApiUnlinkCarrierAccount
      */
     readonly body: UnlinkCarrierAccountRequest
 
     /**
      * Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
-     * @type {'AmazonShipping_US' | 'AmazonShipping_IN' | 'AmazonShipping_UK' | 'AmazonShipping_UAE' | 'AmazonShipping_SA' | 'AmazonShipping_EG' | 'AmazonShipping_IT' | 'AmazonShipping_ES' | 'AmazonShipping_FR' | 'AmazonShipping_JP'}
-     * @memberof ShippingApiUnlinkCarrierAccount
      */
     readonly xAmznShippingBusinessId?: UnlinkCarrierAccountXAmznShippingBusinessIdEnum
 }
 
 /**
  * ShippingApi - object-oriented interface
- * @export
- * @class ShippingApi
- * @extends {BaseAPI}
  */
 export class ShippingApi extends BaseAPI {
     /**
@@ -1932,7 +1780,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiCancelShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public cancelShipment(requestParameters: ShippingApiCancelShipmentRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).cancelShipment(requestParameters.shipmentId, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -1943,7 +1790,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiCreateClaimRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public createClaim(requestParameters: ShippingApiCreateClaimRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).createClaim(requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -1954,7 +1800,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiDirectPurchaseShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public directPurchaseShipment(requestParameters: ShippingApiDirectPurchaseShipmentRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).directPurchaseShipment(requestParameters.body, requestParameters.xAmznIdempotencyKey, requestParameters.locale, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -1965,7 +1810,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiGenerateCollectionFormRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public generateCollectionForm(requestParameters: ShippingApiGenerateCollectionFormRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).generateCollectionForm(requestParameters.body, requestParameters.xAmznIdempotencyKey, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -1976,7 +1820,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiGetAccessPointsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public getAccessPoints(requestParameters: ShippingApiGetAccessPointsRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getAccessPoints(requestParameters.accessPointTypes, requestParameters.countryCode, requestParameters.postalCode, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -1987,7 +1830,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiGetAdditionalInputsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public getAdditionalInputs(requestParameters: ShippingApiGetAdditionalInputsRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getAdditionalInputs(requestParameters.requestToken, requestParameters.rateId, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -1998,7 +1840,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiGetCarrierAccountFormInputsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public getCarrierAccountFormInputs(requestParameters: ShippingApiGetCarrierAccountFormInputsRequest = {}, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getCarrierAccountFormInputs(requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -2009,7 +1850,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiGetCarrierAccountsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public getCarrierAccounts(requestParameters: ShippingApiGetCarrierAccountsRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getCarrierAccounts(requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -2020,7 +1860,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiGetCollectionFormRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public getCollectionForm(requestParameters: ShippingApiGetCollectionFormRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getCollectionForm(requestParameters.collectionFormId, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -2031,7 +1870,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiGetCollectionFormHistoryRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public getCollectionFormHistory(requestParameters: ShippingApiGetCollectionFormHistoryRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getCollectionFormHistory(requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -2042,7 +1880,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiGetRatesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public getRates(requestParameters: ShippingApiGetRatesRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getRates(requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -2053,7 +1890,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiGetShipmentDocumentsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public getShipmentDocuments(requestParameters: ShippingApiGetShipmentDocumentsRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getShipmentDocuments(requestParameters.shipmentId, requestParameters.packageClientReferenceId, requestParameters.format, requestParameters.dpi, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -2064,7 +1900,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiGetTrackingRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public getTracking(requestParameters: ShippingApiGetTrackingRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getTracking(requestParameters.trackingId, requestParameters.carrierId, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -2075,7 +1910,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiGetUnmanifestedShipmentsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public getUnmanifestedShipments(requestParameters: ShippingApiGetUnmanifestedShipmentsRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).getUnmanifestedShipments(requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -2086,7 +1920,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiLinkCarrierAccountRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public linkCarrierAccount(requestParameters: ShippingApiLinkCarrierAccountRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).linkCarrierAccount(requestParameters.carrierId, requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -2097,7 +1930,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiLinkCarrierAccount0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public linkCarrierAccount_1(requestParameters: ShippingApiLinkCarrierAccount0Request, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).linkCarrierAccount_1(requestParameters.carrierId, requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -2108,7 +1940,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiOneClickShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public oneClickShipment(requestParameters: ShippingApiOneClickShipmentRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).oneClickShipment(requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -2119,7 +1950,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiPurchaseShipmentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public purchaseShipment(requestParameters: ShippingApiPurchaseShipmentRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).purchaseShipment(requestParameters.body, requestParameters.xAmznIdempotencyKey, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -2130,7 +1960,6 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiSubmitNdrFeedbackRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public submitNdrFeedback(requestParameters: ShippingApiSubmitNdrFeedbackRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).submitNdrFeedback(requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
@@ -2141,16 +1970,12 @@ export class ShippingApi extends BaseAPI {
      * @param {ShippingApiUnlinkCarrierAccountRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ShippingApi
      */
     public unlinkCarrierAccount(requestParameters: ShippingApiUnlinkCarrierAccountRequest, options?: RawAxiosRequestConfig) {
         return ShippingApiFp(this.configuration).unlinkCarrierAccount(requestParameters.carrierId, requestParameters.body, requestParameters.xAmznShippingBusinessId, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const CancelShipmentXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2164,9 +1989,6 @@ export const CancelShipmentXAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type CancelShipmentXAmznShippingBusinessIdEnum = typeof CancelShipmentXAmznShippingBusinessIdEnum[keyof typeof CancelShipmentXAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const CreateClaimXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2180,9 +2002,6 @@ export const CreateClaimXAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type CreateClaimXAmznShippingBusinessIdEnum = typeof CreateClaimXAmznShippingBusinessIdEnum[keyof typeof CreateClaimXAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const DirectPurchaseShipmentXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2196,9 +2015,6 @@ export const DirectPurchaseShipmentXAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type DirectPurchaseShipmentXAmznShippingBusinessIdEnum = typeof DirectPurchaseShipmentXAmznShippingBusinessIdEnum[keyof typeof DirectPurchaseShipmentXAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const GenerateCollectionFormXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2212,9 +2028,6 @@ export const GenerateCollectionFormXAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GenerateCollectionFormXAmznShippingBusinessIdEnum = typeof GenerateCollectionFormXAmznShippingBusinessIdEnum[keyof typeof GenerateCollectionFormXAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const GetAccessPointsAccessPointTypesEnum = {
     Helix: 'HELIX',
     CampusLocker: 'CAMPUS_LOCKER',
@@ -2226,9 +2039,6 @@ export const GetAccessPointsAccessPointTypesEnum = {
     CampusRoom: 'CAMPUS_ROOM'
 } as const;
 export type GetAccessPointsAccessPointTypesEnum = typeof GetAccessPointsAccessPointTypesEnum[keyof typeof GetAccessPointsAccessPointTypesEnum];
-/**
- * @export
- */
 export const GetAccessPointsXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2242,9 +2052,6 @@ export const GetAccessPointsXAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetAccessPointsXAmznShippingBusinessIdEnum = typeof GetAccessPointsXAmznShippingBusinessIdEnum[keyof typeof GetAccessPointsXAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const GetAdditionalInputsXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2258,9 +2065,6 @@ export const GetAdditionalInputsXAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetAdditionalInputsXAmznShippingBusinessIdEnum = typeof GetAdditionalInputsXAmznShippingBusinessIdEnum[keyof typeof GetAdditionalInputsXAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2274,9 +2078,6 @@ export const GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum = typeof GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum[keyof typeof GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const GetCarrierAccountsXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2290,9 +2091,6 @@ export const GetCarrierAccountsXAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetCarrierAccountsXAmznShippingBusinessIdEnum = typeof GetCarrierAccountsXAmznShippingBusinessIdEnum[keyof typeof GetCarrierAccountsXAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const GetCollectionFormXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2306,9 +2104,6 @@ export const GetCollectionFormXAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetCollectionFormXAmznShippingBusinessIdEnum = typeof GetCollectionFormXAmznShippingBusinessIdEnum[keyof typeof GetCollectionFormXAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const GetCollectionFormHistoryXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2322,9 +2117,6 @@ export const GetCollectionFormHistoryXAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetCollectionFormHistoryXAmznShippingBusinessIdEnum = typeof GetCollectionFormHistoryXAmznShippingBusinessIdEnum[keyof typeof GetCollectionFormHistoryXAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const GetRatesXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2338,9 +2130,6 @@ export const GetRatesXAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetRatesXAmznShippingBusinessIdEnum = typeof GetRatesXAmznShippingBusinessIdEnum[keyof typeof GetRatesXAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const GetShipmentDocumentsXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2354,9 +2143,6 @@ export const GetShipmentDocumentsXAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetShipmentDocumentsXAmznShippingBusinessIdEnum = typeof GetShipmentDocumentsXAmznShippingBusinessIdEnum[keyof typeof GetShipmentDocumentsXAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const GetTrackingXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2370,9 +2156,6 @@ export const GetTrackingXAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetTrackingXAmznShippingBusinessIdEnum = typeof GetTrackingXAmznShippingBusinessIdEnum[keyof typeof GetTrackingXAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2386,9 +2169,6 @@ export const GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum = typeof GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum[keyof typeof GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const LinkCarrierAccountXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2402,9 +2182,6 @@ export const LinkCarrierAccountXAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type LinkCarrierAccountXAmznShippingBusinessIdEnum = typeof LinkCarrierAccountXAmznShippingBusinessIdEnum[keyof typeof LinkCarrierAccountXAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const LinkCarrierAccount0XAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2418,9 +2195,6 @@ export const LinkCarrierAccount0XAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type LinkCarrierAccount0XAmznShippingBusinessIdEnum = typeof LinkCarrierAccount0XAmznShippingBusinessIdEnum[keyof typeof LinkCarrierAccount0XAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const OneClickShipmentXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2434,9 +2208,6 @@ export const OneClickShipmentXAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type OneClickShipmentXAmznShippingBusinessIdEnum = typeof OneClickShipmentXAmznShippingBusinessIdEnum[keyof typeof OneClickShipmentXAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const PurchaseShipmentXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2450,9 +2221,6 @@ export const PurchaseShipmentXAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type PurchaseShipmentXAmznShippingBusinessIdEnum = typeof PurchaseShipmentXAmznShippingBusinessIdEnum[keyof typeof PurchaseShipmentXAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const SubmitNdrFeedbackXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',
@@ -2466,9 +2234,6 @@ export const SubmitNdrFeedbackXAmznShippingBusinessIdEnum = {
     AmazonShippingJp: 'AmazonShipping_JP'
 } as const;
 export type SubmitNdrFeedbackXAmznShippingBusinessIdEnum = typeof SubmitNdrFeedbackXAmznShippingBusinessIdEnum[keyof typeof SubmitNdrFeedbackXAmznShippingBusinessIdEnum];
-/**
- * @export
- */
 export const UnlinkCarrierAccountXAmznShippingBusinessIdEnum = {
     AmazonShippingUs: 'AmazonShipping_US',
     AmazonShippingIn: 'AmazonShipping_IN',

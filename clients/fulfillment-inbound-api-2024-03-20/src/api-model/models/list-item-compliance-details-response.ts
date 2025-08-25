@@ -19,14 +19,10 @@ import type { ComplianceDetail } from './compliance-detail';
 
 /**
  * The `listItemComplianceDetails` response.
- * @export
- * @interface ListItemComplianceDetailsResponse
  */
 export interface ListItemComplianceDetailsResponse {
     /**
      * List of compliance details.
-     * @type {Array<ComplianceDetail>}
-     * @memberof ListItemComplianceDetailsResponse
      */
     'complianceDetails'?: Array<ComplianceDetail>;
 }

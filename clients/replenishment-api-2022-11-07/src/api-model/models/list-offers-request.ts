@@ -25,27 +25,10 @@ import type { ListOffersRequestSort } from './list-offers-request-sort';
 
 /**
  * The request body for the `listOffers` operation.
- * @export
- * @interface ListOffersRequest
  */
 export interface ListOffersRequest {
-    /**
-     * 
-     * @type {ListOffersRequestPagination}
-     * @memberof ListOffersRequest
-     */
     'pagination': ListOffersRequestPagination;
-    /**
-     * 
-     * @type {ListOffersRequestFilters}
-     * @memberof ListOffersRequest
-     */
     'filters': ListOffersRequestFilters;
-    /**
-     * 
-     * @type {ListOffersRequestSort}
-     * @memberof ListOffersRequest
-     */
     'sort'?: ListOffersRequestSort;
 }
 

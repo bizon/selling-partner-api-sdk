@@ -16,14 +16,10 @@
 
 /**
  * The `confirmPackingOption` response.
- * @export
- * @interface ConfirmPackingOptionResponse
  */
 export interface ConfirmPackingOptionResponse {
     /**
      * UUID for the given operation.
-     * @type {string}
-     * @memberof ConfirmPackingOptionResponse
      */
     'operationId': string;
 }

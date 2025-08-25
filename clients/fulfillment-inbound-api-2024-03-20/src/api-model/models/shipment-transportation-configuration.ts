@@ -28,38 +28,17 @@ import type { WindowInput } from './window-input';
 
 /**
  * Details needed to generate the transportation options.
- * @export
- * @interface ShipmentTransportationConfiguration
  */
 export interface ShipmentTransportationConfiguration {
-    /**
-     * 
-     * @type {ContactInformation}
-     * @memberof ShipmentTransportationConfiguration
-     */
     'contactInformation'?: ContactInformation;
-    /**
-     * 
-     * @type {FreightInformation}
-     * @memberof ShipmentTransportationConfiguration
-     */
     'freightInformation'?: FreightInformation;
     /**
      * List of pallet configuration inputs.
-     * @type {Array<PalletInput>}
-     * @memberof ShipmentTransportationConfiguration
      */
     'pallets'?: Array<PalletInput>;
-    /**
-     * 
-     * @type {WindowInput}
-     * @memberof ShipmentTransportationConfiguration
-     */
     'readyToShipWindow': WindowInput;
     /**
      * Identifier of a shipment. A shipment contains the boxes and units being inbounded.
-     * @type {string}
-     * @memberof ShipmentTransportationConfiguration
      */
     'shipmentId': string;
 }

@@ -16,14 +16,10 @@
 
 /**
  * The information required to create an Amazon Simple Queue Service (Amazon SQS) queue destination.
- * @export
- * @interface SqsResource
  */
 export interface SqsResource {
     /**
      * The Amazon Resource Name (ARN) associated with the SQS queue.
-     * @type {string}
-     * @memberof SqsResource
      */
     'arn': string;
 }

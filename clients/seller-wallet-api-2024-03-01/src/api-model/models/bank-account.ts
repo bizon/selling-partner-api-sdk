@@ -28,75 +28,39 @@ import type { BankNumberFormat } from './bank-number-format';
 
 /**
  * Details of an Amazon SW bank account, used to hold money earned by a SW customer by selling items. NOTE: Not including account_links, short cut links to the account balance and transactions -> since not mandatory 
- * @export
- * @interface BankAccount
  */
 export interface BankAccount {
     /**
      * The unique identifier provided by Amazon to identify the account 
-     * @type {string}
-     * @memberof BankAccount
      */
     'accountId'?: string;
     /**
      * BankAccount holder\'s name (expected to be Amazon customer) 
-     * @type {string}
-     * @memberof BankAccount
      */
     'accountHolderName': string;
-    /**
-     * 
-     * @type {BankAccountNumberFormat}
-     * @memberof BankAccount
-     */
     'bankAccountNumberFormat': BankAccountNumberFormat;
     /**
      * The name of the bank, for all Amazon Seller Wallet account the value will be Amazon Seller Wallet 
-     * @type {string}
-     * @memberof BankAccount
      */
     'bankName'?: string;
-    /**
-     * 
-     * @type {BankAccountOwnershipType}
-     * @memberof BankAccount
-     */
     'bankAccountOwnershipType': BankAccountOwnershipType;
     /**
      * Routing number for automated clearing house transfers, for all Amazon Seller Wallet account the value will be denoted by nine cosecutive 0\'s,  
-     * @type {string}
-     * @memberof BankAccount
      */
     'routingNumber': string;
-    /**
-     * 
-     * @type {BankNumberFormat}
-     * @memberof BankAccount
-     */
     'bankNumberFormat': BankNumberFormat;
     /**
      * The two digit country code, in ISO 3166 format. 
-     * @type {string}
-     * @memberof BankAccount
      */
     'accountCountryCode': string;
     /**
      * BankAccount currency code in ISO 4217 format 
-     * @type {string}
-     * @memberof BankAccount
      */
     'accountCurrency': string;
     /**
      * Last 3 digit of the bank account number, for all Amazon Seller Wallet account the value will be three consecutive 0\'s 
-     * @type {string}
-     * @memberof BankAccount
      */
     'bankAccountNumberTail': string;
-    /**
-     * 
-     * @type {BankAccountHolderStatus}
-     * @memberof BankAccount
-     */
     'bankAccountHolderStatus'?: BankAccountHolderStatus;
 }
 

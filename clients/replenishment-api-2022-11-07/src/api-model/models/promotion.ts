@@ -19,33 +19,11 @@ import type { DiscountFunding } from './discount-funding';
 
 /**
  * Offer promotions to include in the result filter criteria.
- * @export
- * @interface Promotion
  */
 export interface Promotion {
-    /**
-     * 
-     * @type {DiscountFunding}
-     * @memberof Promotion
-     */
     'sellingPartnerFundedBaseDiscount'?: DiscountFunding;
-    /**
-     * 
-     * @type {DiscountFunding}
-     * @memberof Promotion
-     */
     'sellingPartnerFundedTieredDiscount'?: DiscountFunding;
-    /**
-     * 
-     * @type {DiscountFunding}
-     * @memberof Promotion
-     */
     'amazonFundedBaseDiscount'?: DiscountFunding;
-    /**
-     * 
-     * @type {DiscountFunding}
-     * @memberof Promotion
-     */
     'amazonFundedTieredDiscount'?: DiscountFunding;
 }
 

@@ -16,32 +16,22 @@
 
 /**
  * Information about unfulfillable items in a fulfillment order preview.
- * @export
- * @interface UnfulfillablePreviewItem
  */
 export interface UnfulfillablePreviewItem {
     /**
      * The seller SKU of the item.
-     * @type {string}
-     * @memberof UnfulfillablePreviewItem
      */
     'sellerSku': string;
     /**
      * The item quantity.
-     * @type {number}
-     * @memberof UnfulfillablePreviewItem
      */
     'quantity': number;
     /**
      * A fulfillment order item identifier created with a call to the `getFulfillmentPreview` operation.
-     * @type {string}
-     * @memberof UnfulfillablePreviewItem
      */
     'sellerFulfillmentOrderItemId': string;
     /**
      * String list
-     * @type {Array<string>}
-     * @memberof UnfulfillablePreviewItem
      */
     'itemUnfulfillableReasons'?: Array<string>;
 }

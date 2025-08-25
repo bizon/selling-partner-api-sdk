@@ -16,68 +16,46 @@
 
 /**
  * Specific details to identify a place.
- * @export
- * @interface Address
  */
 export interface Address {
     /**
      * Street address information.
-     * @type {string}
-     * @memberof Address
      */
     'addressLine1': string;
     /**
      * Additional street address information.
-     * @type {string}
-     * @memberof Address
      */
     'addressLine2'?: string;
     /**
      * The city.
-     * @type {string}
-     * @memberof Address
      */
     'city': string;
     /**
      * The name of the business.
-     * @type {string}
-     * @memberof Address
      */
     'companyName'?: string;
     /**
      * The country code in two-character ISO 3166-1 alpha-2 format.
-     * @type {string}
-     * @memberof Address
      */
     'countryCode': string;
     /**
      * The email address.
-     * @type {string}
-     * @memberof Address
      */
     'email'?: string;
     /**
      * The name of the individual who is the primary contact.
-     * @type {string}
-     * @memberof Address
      */
     'name': string;
     /**
      * The phone number.
-     * @type {string}
-     * @memberof Address
      */
     'phoneNumber'?: string;
     /**
      * The postal code.
-     * @type {string}
-     * @memberof Address
      */
     'postalCode': string;
     /**
      * The state or province code.
-     * @type {string}
-     * @memberof Address
      */
     'stateOrProvinceCode'?: string;
 }

@@ -19,20 +19,11 @@ import type { VariablePrecisionAddress } from './variable-precision-address';
 
 /**
  * The destination for the delivery offer.
- * @export
- * @interface Destination
  */
 export interface Destination {
-    /**
-     * 
-     * @type {VariablePrecisionAddress}
-     * @memberof Destination
-     */
     'deliveryAddress'?: VariablePrecisionAddress;
     /**
      * An IP Address.
-     * @type {string}
-     * @memberof Destination
      */
     'ipAddress'?: string;
 }

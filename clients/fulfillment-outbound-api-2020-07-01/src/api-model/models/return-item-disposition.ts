@@ -16,8 +16,6 @@
 
 /**
  * The condition of the return item when received by an Amazon fulfillment center.
- * @export
- * @enum {string}
  */
 
 export const ReturnItemDisposition = {

@@ -19,15 +19,8 @@ import type { ContactDetailsPrimary } from './contact-details-primary';
 
 /**
  * The contact details
- * @export
- * @interface ContactDetails
  */
 export interface ContactDetails {
-    /**
-     * 
-     * @type {ContactDetailsPrimary}
-     * @memberof ContactDetails
-     */
     'primary'?: ContactDetailsPrimary;
 }
 

@@ -16,14 +16,10 @@
 
 /**
  * Amazon shipment information.
- * @export
- * @interface AmazonShipmentDetails
  */
 export interface AmazonShipmentDetails {
     /**
      * This attribute is required only for a Direct Fulfillment shipment. This is the encrypted shipment ID.
-     * @type {string}
-     * @memberof AmazonShipmentDetails
      */
     'shipmentId': string;
 }

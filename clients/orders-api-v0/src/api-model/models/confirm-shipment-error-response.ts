@@ -16,14 +16,10 @@
 
 /**
  * The error response schema for the `confirmShipment` operation.
- * @export
- * @interface ConfirmShipmentErrorResponse
  */
 export interface ConfirmShipmentErrorResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof ConfirmShipmentErrorResponse
      */
     'errors'?: Array<Error>;
 }

@@ -16,26 +16,18 @@
 
 /**
  * An item in the list of inventory to be added.
- * @export
- * @interface InventoryItem
  */
 export interface InventoryItem {
     /**
      * The seller SKU of the item.
-     * @type {string}
-     * @memberof InventoryItem
      */
     'sellerSku': string;
     /**
      * The marketplaceId.
-     * @type {string}
-     * @memberof InventoryItem
      */
     'marketplaceId': string;
     /**
      * The quantity of item to add.
-     * @type {number}
-     * @memberof InventoryItem
      */
     'quantity': number;
 }

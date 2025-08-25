@@ -16,8 +16,6 @@
 
 /**
  * Standard followed to uniquely identify a vehicle.
- * @export
- * @enum {string}
  */
 
 export const VehicleStandard = {

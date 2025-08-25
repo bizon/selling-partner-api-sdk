@@ -16,8 +16,6 @@
 
 /**
  * The throughput unit
- * @export
- * @enum {string}
  */
 
 export const ThroughputUnit = {

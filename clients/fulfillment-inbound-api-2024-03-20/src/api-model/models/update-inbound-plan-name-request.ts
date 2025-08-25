@@ -16,14 +16,10 @@
 
 /**
  * The `updateInboundPlanName` request.
- * @export
- * @interface UpdateInboundPlanNameRequest
  */
 export interface UpdateInboundPlanNameRequest {
     /**
      * A human-readable name to update the inbound plan name to.
-     * @type {string}
-     * @memberof UpdateInboundPlanNameRequest
      */
     'name': string;
 }

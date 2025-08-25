@@ -35,7 +35,6 @@ import type { DeleteInventoryItemResponse } from '../models';
 import type { GetInventorySummariesResponse } from '../models';
 /**
  * FbaInventoryApi - axios parameter creator
- * @export
  */
 export const FbaInventoryApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -237,7 +236,6 @@ export const FbaInventoryApiAxiosParamCreator = function (configuration?: Config
 
 /**
  * FbaInventoryApi - functional programming interface
- * @export
  */
 export const FbaInventoryApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = FbaInventoryApiAxiosParamCreator(configuration)
@@ -304,7 +302,6 @@ export const FbaInventoryApiFp = function(configuration?: Configuration) {
 
 /**
  * FbaInventoryApi - factory interface
- * @export
  */
 export const FbaInventoryApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = FbaInventoryApiFp(configuration)
@@ -350,128 +347,91 @@ export const FbaInventoryApiFactory = function (configuration?: Configuration, b
 
 /**
  * Request parameters for addInventory operation in FbaInventoryApi.
- * @export
- * @interface FbaInventoryApiAddInventoryRequest
  */
 export interface FbaInventoryApiAddInventoryRequest {
     /**
      * A unique token/requestId provided with each call to ensure idempotency.
-     * @type {string}
-     * @memberof FbaInventoryApiAddInventory
      */
     readonly xAmznIdempotencyToken: string
 
     /**
      * List of items to add to Sandbox inventory.
-     * @type {AddInventoryRequest}
-     * @memberof FbaInventoryApiAddInventory
      */
     readonly addInventoryRequestBody: AddInventoryRequest
 }
 
 /**
  * Request parameters for createInventoryItem operation in FbaInventoryApi.
- * @export
- * @interface FbaInventoryApiCreateInventoryItemRequest
  */
 export interface FbaInventoryApiCreateInventoryItemRequest {
     /**
      * CreateInventoryItem Request Body Parameter.
-     * @type {CreateInventoryItemRequest}
-     * @memberof FbaInventoryApiCreateInventoryItem
      */
     readonly createInventoryItemRequestBody: CreateInventoryItemRequest
 }
 
 /**
  * Request parameters for deleteInventoryItem operation in FbaInventoryApi.
- * @export
- * @interface FbaInventoryApiDeleteInventoryItemRequest
  */
 export interface FbaInventoryApiDeleteInventoryItemRequest {
     /**
      * A single seller SKU used for querying the specified seller SKU inventory summaries.
-     * @type {string}
-     * @memberof FbaInventoryApiDeleteInventoryItem
      */
     readonly sellerSku: string
 
     /**
      * The marketplace ID for the marketplace for which the sellerSku is to be deleted.
-     * @type {string}
-     * @memberof FbaInventoryApiDeleteInventoryItem
      */
     readonly marketplaceId: string
 }
 
 /**
  * Request parameters for getInventorySummaries operation in FbaInventoryApi.
- * @export
- * @interface FbaInventoryApiGetInventorySummariesRequest
  */
 export interface FbaInventoryApiGetInventorySummariesRequest {
     /**
      * The granularity type for the inventory aggregation level.
-     * @type {'Marketplace'}
-     * @memberof FbaInventoryApiGetInventorySummaries
      */
     readonly granularityType: GetInventorySummariesGranularityTypeEnum
 
     /**
      * The granularity ID for the inventory aggregation level.
-     * @type {string}
-     * @memberof FbaInventoryApiGetInventorySummaries
      */
     readonly granularityId: string
 
     /**
      * The marketplace ID for the marketplace for which to return inventory summaries.
-     * @type {Array<string>}
-     * @memberof FbaInventoryApiGetInventorySummaries
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value).
-     * @type {boolean}
-     * @memberof FbaInventoryApiGetInventorySummaries
      */
     readonly details?: boolean
 
     /**
      * A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected.
-     * @type {string}
-     * @memberof FbaInventoryApiGetInventorySummaries
      */
     readonly startDateTime?: string
 
     /**
      * A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs.
-     * @type {Array<string>}
-     * @memberof FbaInventoryApiGetInventorySummaries
      */
     readonly sellerSkus?: Array<string>
 
     /**
      * A single seller SKU used for querying the specified seller SKU inventory summaries.
-     * @type {string}
-     * @memberof FbaInventoryApiGetInventorySummaries
      */
     readonly sellerSku?: string
 
     /**
      * String token returned in the response of your previous request. The string token will expire 30 seconds after being created.
-     * @type {string}
-     * @memberof FbaInventoryApiGetInventorySummaries
      */
     readonly nextToken?: string
 }
 
 /**
  * FbaInventoryApi - object-oriented interface
- * @export
- * @class FbaInventoryApi
- * @extends {BaseAPI}
  */
 export class FbaInventoryApi extends BaseAPI {
     /**
@@ -479,7 +439,6 @@ export class FbaInventoryApi extends BaseAPI {
      * @param {FbaInventoryApiAddInventoryRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FbaInventoryApi
      */
     public addInventory(requestParameters: FbaInventoryApiAddInventoryRequest, options?: RawAxiosRequestConfig) {
         return FbaInventoryApiFp(this.configuration).addInventory(requestParameters.xAmznIdempotencyToken, requestParameters.addInventoryRequestBody, options).then((request) => request(this.axios, this.basePath));
@@ -490,7 +449,6 @@ export class FbaInventoryApi extends BaseAPI {
      * @param {FbaInventoryApiCreateInventoryItemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FbaInventoryApi
      */
     public createInventoryItem(requestParameters: FbaInventoryApiCreateInventoryItemRequest, options?: RawAxiosRequestConfig) {
         return FbaInventoryApiFp(this.configuration).createInventoryItem(requestParameters.createInventoryItemRequestBody, options).then((request) => request(this.axios, this.basePath));
@@ -501,7 +459,6 @@ export class FbaInventoryApi extends BaseAPI {
      * @param {FbaInventoryApiDeleteInventoryItemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FbaInventoryApi
      */
     public deleteInventoryItem(requestParameters: FbaInventoryApiDeleteInventoryItemRequest, options?: RawAxiosRequestConfig) {
         return FbaInventoryApiFp(this.configuration).deleteInventoryItem(requestParameters.sellerSku, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
@@ -512,16 +469,12 @@ export class FbaInventoryApi extends BaseAPI {
      * @param {FbaInventoryApiGetInventorySummariesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FbaInventoryApi
      */
     public getInventorySummaries(requestParameters: FbaInventoryApiGetInventorySummariesRequest, options?: RawAxiosRequestConfig) {
         return FbaInventoryApiFp(this.configuration).getInventorySummaries(requestParameters.granularityType, requestParameters.granularityId, requestParameters.marketplaceIds, requestParameters.details, requestParameters.startDateTime, requestParameters.sellerSkus, requestParameters.sellerSku, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetInventorySummariesGranularityTypeEnum = {
     Marketplace: 'Marketplace'
 } as const;

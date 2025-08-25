@@ -19,20 +19,14 @@ import type { FinancialEventGroup } from './financial-event-group';
 
 /**
  * The payload for the listFinancialEventGroups operation.
- * @export
- * @interface ListFinancialEventGroupsPayload
  */
 export interface ListFinancialEventGroupsPayload {
     /**
      * When present and not empty, pass this string token in the next request to return the next response page.
-     * @type {string}
-     * @memberof ListFinancialEventGroupsPayload
      */
     'NextToken'?: string;
     /**
      * A list of financial event group information.
-     * @type {Array<FinancialEventGroup>}
-     * @memberof ListFinancialEventGroupsPayload
      */
     'FinancialEventGroupList'?: Array<FinancialEventGroup>;
 }

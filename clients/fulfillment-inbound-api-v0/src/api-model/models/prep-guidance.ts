@@ -16,8 +16,6 @@
 
 /**
  * Item preparation instructions.
- * @export
- * @enum {string}
  */
 
 export const PrepGuidance = {

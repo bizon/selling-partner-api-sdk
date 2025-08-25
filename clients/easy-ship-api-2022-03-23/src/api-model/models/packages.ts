@@ -19,14 +19,10 @@ import type { Package } from './package';
 
 /**
  * A list of packages.
- * @export
- * @interface Packages
  */
 export interface Packages {
     /**
      * A list of packages.
-     * @type {Array<Package>}
-     * @memberof Packages
      */
     'packages': Array<Package>;
 }

@@ -19,45 +19,28 @@ import type { ExportStatus } from './export-status';
 
 /**
  * Detailed information about the export.
- * @export
- * @interface Export
  */
 export interface Export {
     /**
      * When the export generation fails, this attribute contains a description of the error.
-     * @type {string}
-     * @memberof Export
      */
     'errorMessage'?: string;
     /**
      * The export identifier.
-     * @type {string}
-     * @memberof Export
      */
     'exportId'?: string;
     /**
      * The date and time when the export generation finished. Vales are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
-     * @type {string}
-     * @memberof Export
      */
     'generateExportFinishedAt'?: string;
     /**
      * The date and time when the export generation started. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
-     * @type {string}
-     * @memberof Export
      */
     'generateExportStartedAt'?: string;
     /**
      * The identifier for the export documents. To get the information required to retrieve the export document\'s contents, pass each ID in the `getInvoicesDocument` operation.  This list is empty until the status is `DONE`.
-     * @type {Array<string>}
-     * @memberof Export
      */
     'invoicesDocumentIds'?: Array<string>;
-    /**
-     * 
-     * @type {ExportStatus}
-     * @memberof Export
-     */
     'status'?: ExportStatus;
 }
 

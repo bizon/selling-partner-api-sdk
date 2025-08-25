@@ -31,7 +31,6 @@ import type { TransactionReference } from '../models';
 import type { TransactionStatus } from '../models';
 /**
  * VendorDirectFulfillmentSandboxTestDataApi - axios parameter creator
- * @export
  */
 export const VendorDirectFulfillmentSandboxTestDataApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -108,7 +107,6 @@ export const VendorDirectFulfillmentSandboxTestDataApiAxiosParamCreator = functi
 
 /**
  * VendorDirectFulfillmentSandboxTestDataApi - functional programming interface
- * @export
  */
 export const VendorDirectFulfillmentSandboxTestDataApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = VendorDirectFulfillmentSandboxTestDataApiAxiosParamCreator(configuration)
@@ -142,7 +140,6 @@ export const VendorDirectFulfillmentSandboxTestDataApiFp = function(configuratio
 
 /**
  * VendorDirectFulfillmentSandboxTestDataApi - factory interface
- * @export
  */
 export const VendorDirectFulfillmentSandboxTestDataApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = VendorDirectFulfillmentSandboxTestDataApiFp(configuration)
@@ -170,37 +167,26 @@ export const VendorDirectFulfillmentSandboxTestDataApiFactory = function (config
 
 /**
  * Request parameters for generateOrderScenarios operation in VendorDirectFulfillmentSandboxTestDataApi.
- * @export
- * @interface VendorDirectFulfillmentSandboxTestDataApiGenerateOrderScenariosRequest
  */
 export interface VendorDirectFulfillmentSandboxTestDataApiGenerateOrderScenariosRequest {
     /**
      * The request payload containing parameters for generating test order data scenarios.
-     * @type {GenerateOrderScenarioRequest}
-     * @memberof VendorDirectFulfillmentSandboxTestDataApiGenerateOrderScenarios
      */
     readonly body: GenerateOrderScenarioRequest
 }
 
 /**
  * Request parameters for getOrderScenarios operation in VendorDirectFulfillmentSandboxTestDataApi.
- * @export
- * @interface VendorDirectFulfillmentSandboxTestDataApiGetOrderScenariosRequest
  */
 export interface VendorDirectFulfillmentSandboxTestDataApiGetOrderScenariosRequest {
     /**
      * The transaction identifier returned in the response to the generateOrderScenarios operation.
-     * @type {string}
-     * @memberof VendorDirectFulfillmentSandboxTestDataApiGetOrderScenarios
      */
     readonly transactionId: string
 }
 
 /**
  * VendorDirectFulfillmentSandboxTestDataApi - object-oriented interface
- * @export
- * @class VendorDirectFulfillmentSandboxTestDataApi
- * @extends {BaseAPI}
  */
 export class VendorDirectFulfillmentSandboxTestDataApi extends BaseAPI {
     /**
@@ -208,7 +194,6 @@ export class VendorDirectFulfillmentSandboxTestDataApi extends BaseAPI {
      * @param {VendorDirectFulfillmentSandboxTestDataApiGenerateOrderScenariosRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentSandboxTestDataApi
      */
     public generateOrderScenarios(requestParameters: VendorDirectFulfillmentSandboxTestDataApiGenerateOrderScenariosRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentSandboxTestDataApiFp(this.configuration).generateOrderScenarios(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -219,7 +204,6 @@ export class VendorDirectFulfillmentSandboxTestDataApi extends BaseAPI {
      * @param {VendorDirectFulfillmentSandboxTestDataApiGetOrderScenariosRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof VendorDirectFulfillmentSandboxTestDataApi
      */
     public getOrderScenarios(requestParameters: VendorDirectFulfillmentSandboxTestDataApiGetOrderScenariosRequest, options?: RawAxiosRequestConfig) {
         return VendorDirectFulfillmentSandboxTestDataApiFp(this.configuration).getOrderScenarios(requestParameters.transactionId, options).then((request) => request(this.axios, this.basePath));

@@ -16,26 +16,18 @@
 
 /**
  * Attribute Properties required by carrier
- * @export
- * @interface CarrierAccountAttribute
  */
 export interface CarrierAccountAttribute {
     /**
      * Attribute Name .
-     * @type {string}
-     * @memberof CarrierAccountAttribute
      */
     'attributeName'?: string;
     /**
      * Property Group.
-     * @type {string}
-     * @memberof CarrierAccountAttribute
      */
     'propertyGroup'?: string;
     /**
      * Value .
-     * @type {string}
-     * @memberof CarrierAccountAttribute
      */
     'value'?: string;
 }

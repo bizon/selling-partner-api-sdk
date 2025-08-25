@@ -19,21 +19,12 @@ import type { SampleLocation } from './sample-location';
 
 /**
  * The details about the segment. The FeaturedOfferExpectedPrice API uses only the sampleLocation portion as input.
- * @export
- * @interface SegmentDetails
  */
 export interface SegmentDetails {
     /**
      * The glance view weighted percentage for this segment, which is the glance views for this segment as a percentage of total glance views across all segments for the ASIN. A higher percentage indicates that more Amazon customers receive this offer as the Featured Offer.
-     * @type {number}
-     * @memberof SegmentDetails
      */
     'glanceViewWeightPercentage'?: number;
-    /**
-     * 
-     * @type {SampleLocation}
-     * @memberof SegmentDetails
-     */
     'sampleLocation'?: SampleLocation;
 }
 

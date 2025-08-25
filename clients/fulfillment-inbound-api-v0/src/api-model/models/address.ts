@@ -16,56 +16,38 @@
 
 /**
  * Specific details to identify a place.
- * @export
- * @interface Address
  */
 export interface Address {
     /**
      * Name of the individual or business.
-     * @type {string}
-     * @memberof Address
      */
     'Name': string;
     /**
      * The street address information.
-     * @type {string}
-     * @memberof Address
      */
     'AddressLine1': string;
     /**
      * Additional street address information, if required.
-     * @type {string}
-     * @memberof Address
      */
     'AddressLine2'?: string;
     /**
      * The district or county.
-     * @type {string}
-     * @memberof Address
      */
     'DistrictOrCounty'?: string;
     /**
      * The city.
-     * @type {string}
-     * @memberof Address
      */
     'City': string;
     /**
      * The state or province code.  If state or province codes are used in your marketplace, it is recommended that you include one with your request. This helps Amazon to select the most appropriate Amazon fulfillment center for your inbound shipment plan.
-     * @type {string}
-     * @memberof Address
      */
     'StateOrProvinceCode': string;
     /**
      * The country code in two-character ISO 3166-1 alpha-2 format.
-     * @type {string}
-     * @memberof Address
      */
     'CountryCode': string;
     /**
      * The postal code.  If postal codes are used in your marketplace, we recommended that you include one with your request. This helps Amazon select the most appropriate Amazon fulfillment center for the inbound shipment plan.
-     * @type {string}
-     * @memberof Address
      */
     'PostalCode': string;
 }

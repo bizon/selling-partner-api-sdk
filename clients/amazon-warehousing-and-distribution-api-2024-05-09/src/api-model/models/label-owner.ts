@@ -16,8 +16,6 @@
 
 /**
  * The entity that labels the products.
- * @export
- * @enum {string}
  */
 
 export const LabelOwner = {

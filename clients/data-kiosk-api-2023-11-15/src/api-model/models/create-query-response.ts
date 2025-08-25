@@ -16,14 +16,10 @@
 
 /**
  * The response for the `createQuery` operation.
- * @export
- * @interface CreateQueryResponse
  */
 export interface CreateQueryResponse {
     /**
      * The identifier for the query. This identifier is unique only in combination with a selling partner account ID.
-     * @type {string}
-     * @memberof CreateQueryResponse
      */
     'queryId': string;
 }

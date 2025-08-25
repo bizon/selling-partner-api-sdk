@@ -19,20 +19,11 @@ import type { GetFeaturesResult } from './get-features-result';
 
 /**
  * The response schema for the `getFeatures` operation.
- * @export
- * @interface GetFeaturesResponse
  */
 export interface GetFeaturesResponse {
-    /**
-     * 
-     * @type {GetFeaturesResult}
-     * @memberof GetFeaturesResponse
-     */
     'payload'?: GetFeaturesResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetFeaturesResponse
      */
     'errors'?: Array<Error>;
 }

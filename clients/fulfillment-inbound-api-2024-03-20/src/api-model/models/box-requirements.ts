@@ -19,15 +19,8 @@ import type { WeightRange } from './weight-range';
 
 /**
  * The requirements for a box in the packing option.
- * @export
- * @interface BoxRequirements
  */
 export interface BoxRequirements {
-    /**
-     * 
-     * @type {WeightRange}
-     * @memberof BoxRequirements
-     */
     'weight': WeightRange;
 }
 

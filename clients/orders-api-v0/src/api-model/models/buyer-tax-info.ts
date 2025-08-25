@@ -19,26 +19,18 @@ import type { TaxClassification } from './tax-classification';
 
 /**
  * Tax information about the buyer.
- * @export
- * @interface BuyerTaxInfo
  */
 export interface BuyerTaxInfo {
     /**
      * The legal name of the company.
-     * @type {string}
-     * @memberof BuyerTaxInfo
      */
     'CompanyLegalName'?: string;
     /**
      * The country or region imposing the tax.
-     * @type {string}
-     * @memberof BuyerTaxInfo
      */
     'TaxingRegion'?: string;
     /**
      * A list of tax classifications that apply to the order.
-     * @type {Array<TaxClassification>}
-     * @memberof BuyerTaxInfo
      */
     'TaxClassifications'?: Array<TaxClassification>;
 }

@@ -19,21 +19,12 @@ import type { ParkingConfiguration } from './parking-configuration';
 
 /**
  * The in-store pickup configuration of a supply source.
- * @export
- * @interface InStorePickupConfiguration
  */
 export interface InStorePickupConfiguration {
     /**
      * When true, in-store pickup is supported by the supply source (default: `isSupported` value in `PickupChannel`).
-     * @type {boolean}
-     * @memberof InStorePickupConfiguration
      */
     'isSupported'?: boolean;
-    /**
-     * 
-     * @type {ParkingConfiguration}
-     * @memberof InStorePickupConfiguration
-     */
     'parkingConfiguration'?: ParkingConfiguration;
 }
 

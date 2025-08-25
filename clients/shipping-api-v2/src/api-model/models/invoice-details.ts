@@ -16,20 +16,14 @@
 
 /**
  * The invoice details for charges associated with the goods in the package. Only applies to certain regions.
- * @export
- * @interface InvoiceDetails
  */
 export interface InvoiceDetails {
     /**
      * The invoice number of the item.
-     * @type {string}
-     * @memberof InvoiceDetails
      */
     'invoiceNumber'?: string;
     /**
      * The invoice date of the item in ISO 8061 format.
-     * @type {string}
-     * @memberof InvoiceDetails
      */
     'invoiceDate'?: string;
 }

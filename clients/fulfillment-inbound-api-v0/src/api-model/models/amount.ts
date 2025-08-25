@@ -19,20 +19,11 @@ import type { CurrencyCode } from './currency-code';
 
 /**
  * The monetary value.
- * @export
- * @interface Amount
  */
 export interface Amount {
-    /**
-     * 
-     * @type {CurrencyCode}
-     * @memberof Amount
-     */
     'CurrencyCode': CurrencyCode;
     /**
      * Number format that supports decimal.
-     * @type {number}
-     * @memberof Amount
      */
     'Value': number;
 }

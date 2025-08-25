@@ -19,20 +19,11 @@ import type { TransactionReference } from './transaction-reference';
 
 /**
  * The response schema for the submitInventoryUpdate operation.
- * @export
- * @interface SubmitInventoryUpdateResponse
  */
 export interface SubmitInventoryUpdateResponse {
-    /**
-     * 
-     * @type {TransactionReference}
-     * @memberof SubmitInventoryUpdateResponse
-     */
     'payload'?: TransactionReference;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof SubmitInventoryUpdateResponse
      */
     'errors'?: Array<Error>;
 }

@@ -19,15 +19,8 @@ import type { Export } from './export';
 
 /**
  * Success.
- * @export
- * @interface GetInvoicesExportResponse
  */
 export interface GetInvoicesExportResponse {
-    /**
-     * 
-     * @type {Export}
-     * @memberof GetInvoicesExportResponse
-     */
     'export'?: Export;
 }
 

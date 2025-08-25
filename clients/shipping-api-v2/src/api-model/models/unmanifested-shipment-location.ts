@@ -19,20 +19,11 @@ import type { Address } from './address';
 
 /**
  * UnmanifestedShipmentLocation info 
- * @export
- * @interface UnmanifestedShipmentLocation
  */
 export interface UnmanifestedShipmentLocation {
-    /**
-     * 
-     * @type {Address}
-     * @memberof UnmanifestedShipmentLocation
-     */
     'address'?: Address;
     /**
      * Its Last Manifest Date.
-     * @type {string}
-     * @memberof UnmanifestedShipmentLocation
      */
     'lastManifestDate'?: string;
 }

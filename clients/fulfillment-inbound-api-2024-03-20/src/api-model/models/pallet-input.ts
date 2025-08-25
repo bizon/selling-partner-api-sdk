@@ -25,33 +25,14 @@ import type { Weight } from './weight';
 
 /**
  * Contains input information about a pallet to be used in the inbound plan.
- * @export
- * @interface PalletInput
  */
 export interface PalletInput {
-    /**
-     * 
-     * @type {Dimensions}
-     * @memberof PalletInput
-     */
     'dimensions'?: Dimensions;
     /**
      * The number of containers where all other properties like weight or dimensions are identical.
-     * @type {number}
-     * @memberof PalletInput
      */
     'quantity': number;
-    /**
-     * 
-     * @type {Stackability}
-     * @memberof PalletInput
-     */
     'stackability'?: Stackability;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof PalletInput
-     */
     'weight'?: Weight;
 }
 

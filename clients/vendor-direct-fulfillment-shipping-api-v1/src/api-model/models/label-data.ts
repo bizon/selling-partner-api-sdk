@@ -16,38 +16,26 @@
 
 /**
  * Details of the shipment label.
- * @export
- * @interface LabelData
  */
 export interface LabelData {
     /**
      * Identifier for the package. The first package will be 001, the second 002, and so on. This number is used as a reference to refer to this package from the pallet level.
-     * @type {string}
-     * @memberof LabelData
      */
     'packageIdentifier'?: string;
     /**
      * Package tracking identifier from the shipping carrier.
-     * @type {string}
-     * @memberof LabelData
      */
     'trackingNumber'?: string;
     /**
      * Ship method to be used for shipping the order. Amazon defines Ship Method Codes indicating shipping carrier and shipment service level. Ship Method Codes are case and format sensitive. The same ship method code should returned on the shipment confirmation. Note that the Ship Method Codes are vendor specific and will be provided to each vendor during the implementation.
-     * @type {string}
-     * @memberof LabelData
      */
     'shipMethod'?: string;
     /**
      * Shipping method name for internal reference.
-     * @type {string}
-     * @memberof LabelData
      */
     'shipMethodName'?: string;
     /**
      * This field will contain the Base64encoded string of the shipment label content.
-     * @type {string}
-     * @memberof LabelData
      */
     'content': string;
 }

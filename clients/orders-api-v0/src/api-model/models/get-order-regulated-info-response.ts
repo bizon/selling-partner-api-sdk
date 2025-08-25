@@ -19,20 +19,11 @@ import type { OrderRegulatedInfo } from './order-regulated-info';
 
 /**
  * The response schema for the `getOrderRegulatedInfo` operation.
- * @export
- * @interface GetOrderRegulatedInfoResponse
  */
 export interface GetOrderRegulatedInfoResponse {
-    /**
-     * 
-     * @type {OrderRegulatedInfo}
-     * @memberof GetOrderRegulatedInfoResponse
-     */
     'payload'?: OrderRegulatedInfo;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetOrderRegulatedInfoResponse
      */
     'errors'?: Array<Error>;
 }

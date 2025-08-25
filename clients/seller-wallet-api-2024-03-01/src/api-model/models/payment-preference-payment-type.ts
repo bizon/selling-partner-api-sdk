@@ -16,8 +16,6 @@
 
 /**
  * Represent a type of payment preference.
- * @export
- * @enum {string}
  */
 
 export const PaymentPreferencePaymentType = {

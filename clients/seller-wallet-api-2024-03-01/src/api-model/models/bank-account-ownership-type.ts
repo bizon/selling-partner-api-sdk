@@ -16,8 +16,6 @@
 
 /**
  * Represents destination bank account\'s ownership type.
- * @export
- * @enum {string}
  */
 
 export const BankAccountOwnershipType = {

@@ -19,20 +19,11 @@ import type { GetPrepInstructionsResult } from './get-prep-instructions-result';
 
 /**
  * The response schema for the getPrepInstructions operation.
- * @export
- * @interface GetPrepInstructionsResponse
  */
 export interface GetPrepInstructionsResponse {
-    /**
-     * 
-     * @type {GetPrepInstructionsResult}
-     * @memberof GetPrepInstructionsResponse
-     */
     'payload'?: GetPrepInstructionsResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetPrepInstructionsResponse
      */
     'errors'?: Array<Error>;
 }

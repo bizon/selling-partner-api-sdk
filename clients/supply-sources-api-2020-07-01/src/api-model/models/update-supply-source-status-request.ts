@@ -19,15 +19,8 @@ import type { SupplySourceStatus } from './supply-source-status';
 
 /**
  * A request to update the status of a supply source.
- * @export
- * @interface UpdateSupplySourceStatusRequest
  */
 export interface UpdateSupplySourceStatusRequest {
-    /**
-     * 
-     * @type {SupplySourceStatus}
-     * @memberof UpdateSupplySourceStatusRequest
-     */
     'status'?: SupplySourceStatus;
 }
 

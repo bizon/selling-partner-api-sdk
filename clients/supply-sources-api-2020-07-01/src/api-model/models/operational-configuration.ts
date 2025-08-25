@@ -28,33 +28,11 @@ import type { ThroughputConfig } from './throughput-config';
 
 /**
  * The operational configuration of `supplySources`.
- * @export
- * @interface OperationalConfiguration
  */
 export interface OperationalConfiguration {
-    /**
-     * 
-     * @type {ContactDetails}
-     * @memberof OperationalConfiguration
-     */
     'contactDetails'?: ContactDetails;
-    /**
-     * 
-     * @type {ThroughputConfig}
-     * @memberof OperationalConfiguration
-     */
     'throughputConfig'?: ThroughputConfig;
-    /**
-     * 
-     * @type {OperatingHoursByDay}
-     * @memberof OperationalConfiguration
-     */
     'operatingHoursByDay'?: OperatingHoursByDay;
-    /**
-     * 
-     * @type {Duration}
-     * @memberof OperationalConfiguration
-     */
     'handlingTime'?: Duration;
 }
 

@@ -16,20 +16,14 @@
 
 /**
  * The time range within which a Scheduled Delivery fulfillment order should be delivered. This is only available in the JP marketplace.
- * @export
- * @interface DeliveryWindow
  */
 export interface DeliveryWindow {
     /**
      * Date timestamp
-     * @type {string}
-     * @memberof DeliveryWindow
      */
     'startDate': string;
     /**
      * Date timestamp
-     * @type {string}
-     * @memberof DeliveryWindow
      */
     'endDate': string;
 }

@@ -16,26 +16,18 @@
 
 /**
  * ValidationMetadata Details
- * @export
- * @interface ValidationMetadata
  */
 export interface ValidationMetadata {
     /**
      * errorMessage for the error.
-     * @type {string}
-     * @memberof ValidationMetadata
      */
     'errorMessage'?: string;
     /**
      * validationStrategy for the error.
-     * @type {string}
-     * @memberof ValidationMetadata
      */
     'validationStrategy'?: string;
     /**
      * Value.
-     * @type {string}
-     * @memberof ValidationMetadata
      */
     'value'?: string;
 }

@@ -19,33 +19,20 @@ import type { ItemQuantity } from './item-quantity';
 
 /**
  * Details of the item being shipped.
- * @export
- * @interface Item
  */
 export interface Item {
     /**
      * The sequence number of the item. The number must be the same as the order number of the item.
-     * @type {number}
-     * @memberof Item
      */
     'itemSequenceNumber': number;
     /**
      * The buyer\'s Amazon Standard Identification Number (ASIN) of an item. Either `buyerProductIdentifier` or `vendorProductIdentifier` is required.
-     * @type {string}
-     * @memberof Item
      */
     'buyerProductIdentifier'?: string;
     /**
      * An item\'s product identifier, which the vendor selects. This identifier should be the same as the identifier, such as a SKU, in the purchase order.
-     * @type {string}
-     * @memberof Item
      */
     'vendorProductIdentifier'?: string;
-    /**
-     * 
-     * @type {ItemQuantity}
-     * @memberof Item
-     */
     'shippedQuantity': ItemQuantity;
 }
 

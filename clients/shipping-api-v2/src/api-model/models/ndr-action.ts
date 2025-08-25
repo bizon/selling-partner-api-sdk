@@ -16,8 +16,6 @@
 
 /**
  * The type of NDR action shipper wants to take for a particular shipment.
- * @export
- * @enum {string}
  */
 
 export const NdrAction = {

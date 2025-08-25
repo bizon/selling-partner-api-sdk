@@ -19,20 +19,11 @@ import type { OperationalConfiguration } from './operational-configuration';
 
 /**
  * Includes configuration and timezone of a supply source.
- * @export
- * @interface SupplySourceConfiguration
  */
 export interface SupplySourceConfiguration {
-    /**
-     * 
-     * @type {OperationalConfiguration}
-     * @memberof SupplySourceConfiguration
-     */
     'operationalConfiguration'?: OperationalConfiguration;
     /**
      * Please see RFC 6557, should be a canonical time zone ID as listed here: https://www.joda.org/joda-time/timezones.html.
-     * @type {string}
-     * @memberof SupplySourceConfiguration
      */
     'timezone'?: string;
 }

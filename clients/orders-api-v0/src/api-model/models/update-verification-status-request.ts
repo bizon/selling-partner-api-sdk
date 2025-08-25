@@ -19,15 +19,8 @@ import type { UpdateVerificationStatusRequestBody } from './update-verification-
 
 /**
  * The request body for the `updateVerificationStatus` operation.
- * @export
- * @interface UpdateVerificationStatusRequest
  */
 export interface UpdateVerificationStatusRequest {
-    /**
-     * 
-     * @type {UpdateVerificationStatusRequestBody}
-     * @memberof UpdateVerificationStatusRequest
-     */
     'regulatedOrderVerificationStatus': UpdateVerificationStatusRequestBody;
 }
 

@@ -22,20 +22,14 @@ import type { ExceptionDates } from './exception-dates';
 
 /**
  * The time window when the delivery is preferred.
- * @export
- * @interface PreferredDeliveryTime
  */
 export interface PreferredDeliveryTime {
     /**
      * Business hours when the business is open for deliveries.
-     * @type {Array<BusinessHours>}
-     * @memberof PreferredDeliveryTime
      */
     'BusinessHours'?: Array<BusinessHours>;
     /**
      * Dates when the business is closed during the next 30 days.
-     * @type {Array<ExceptionDates>}
-     * @memberof PreferredDeliveryTime
      */
     'ExceptionDates'?: Array<ExceptionDates>;
 }

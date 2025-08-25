@@ -19,14 +19,10 @@ import type { OrderScenarioRequest } from './order-scenario-request';
 
 /**
  * The request body for the generateOrderScenarios operation.
- * @export
- * @interface GenerateOrderScenarioRequest
  */
 export interface GenerateOrderScenarioRequest {
     /**
      * The list of test orders requested as indicated by party identifiers.
-     * @type {Array<OrderScenarioRequest>}
-     * @memberof GenerateOrderScenarioRequest
      */
     'orders'?: Array<OrderScenarioRequest>;
 }

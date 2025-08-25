@@ -16,20 +16,14 @@
 
 /**
  * Represents one ineligibility reason for the order (there can be multiple reasons).
- * @export
- * @interface OrderIneligibilityReason
  */
 export interface OrderIneligibilityReason {
     /**
      * Code for the order ineligibility.
-     * @type {string}
-     * @memberof OrderIneligibilityReason
      */
     'code': string;
     /**
      * Description detailing the ineligibility reason of the order.
-     * @type {string}
-     * @memberof OrderIneligibilityReason
      */
     'description': string;
 }

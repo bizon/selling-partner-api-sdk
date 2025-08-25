@@ -19,21 +19,12 @@ import type { ErrorReason } from './error-reason';
 
 /**
  * Contains detail about an invalid SKU
- * @export
- * @interface InvalidSKU
  */
 export interface InvalidSKU {
     /**
      * The seller SKU of the item.
-     * @type {string}
-     * @memberof InvalidSKU
      */
     'SellerSKU'?: string;
-    /**
-     * 
-     * @type {ErrorReason}
-     * @memberof InvalidSKU
-     */
     'ErrorReason'?: ErrorReason;
 }
 

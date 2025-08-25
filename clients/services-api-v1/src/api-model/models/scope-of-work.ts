@@ -16,32 +16,22 @@
 
 /**
  * The scope of work for the order.
- * @export
- * @interface ScopeOfWork
  */
 export interface ScopeOfWork {
     /**
      * The Amazon Standard Identification Number (ASIN) of the service job.
-     * @type {string}
-     * @memberof ScopeOfWork
      */
     'asin'?: string;
     /**
      * The title of the service job.
-     * @type {string}
-     * @memberof ScopeOfWork
      */
     'title'?: string;
     /**
      * The number of service jobs.
-     * @type {number}
-     * @memberof ScopeOfWork
      */
     'quantity'?: number;
     /**
      * A list of skills required to perform the job.
-     * @type {Array<string>}
-     * @memberof ScopeOfWork
      */
     'requiredSkills'?: Array<string>;
 }

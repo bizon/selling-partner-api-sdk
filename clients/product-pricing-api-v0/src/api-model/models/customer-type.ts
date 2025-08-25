@@ -16,8 +16,6 @@
 
 /**
  * Indicates whether to request Consumer or Business offers. Default is Consumer.
- * @export
- * @enum {string}
  */
 
 export const CustomerType = {

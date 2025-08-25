@@ -19,14 +19,10 @@ import type { FeaturedOfferExpectedPriceResponse } from './featured-offer-expect
 
 /**
  * The response schema for the `getFeaturedOfferExpectedPriceBatch` operation.
- * @export
- * @interface GetFeaturedOfferExpectedPriceBatchResponse
  */
 export interface GetFeaturedOfferExpectedPriceBatchResponse {
     /**
      * A batched list of FOEP responses.
-     * @type {Array<FeaturedOfferExpectedPriceResponse>}
-     * @memberof GetFeaturedOfferExpectedPriceBatchResponse
      */
     'responses'?: Array<FeaturedOfferExpectedPriceResponse>;
 }

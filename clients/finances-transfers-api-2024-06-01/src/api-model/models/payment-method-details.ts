@@ -25,51 +25,26 @@ import type { PaymentMethodType } from './payment-method-type';
 
 /**
  * The details of a payment method.
- * @export
- * @interface PaymentMethodDetails
  */
 export interface PaymentMethodDetails {
     /**
      * The name of the account holder who is registered for the payment method.
-     * @type {string}
-     * @memberof PaymentMethodDetails
      */
     'accountHolderName'?: string;
     /**
      * The payment method identifier.
-     * @type {string}
-     * @memberof PaymentMethodDetails
      */
     'paymentMethodId'?: string;
     /**
      * The last three or four digits of the payment method.
-     * @type {string}
-     * @memberof PaymentMethodDetails
      */
     'tail'?: string;
-    /**
-     * 
-     * @type {ExpiryDate}
-     * @memberof PaymentMethodDetails
-     */
     'expiryDate'?: ExpiryDate;
     /**
      * The two-letter country code in ISO 3166-1 alpha-2 format. For payment methods in the `card` category, the code is for the country where the card was issued. For payment methods in the `bank account` category, the code is for the country where the account is located.
-     * @type {string}
-     * @memberof PaymentMethodDetails
      */
     'countryCode'?: string;
-    /**
-     * 
-     * @type {PaymentMethodType}
-     * @memberof PaymentMethodDetails
-     */
     'paymentMethodType'?: PaymentMethodType;
-    /**
-     * 
-     * @type {AssignmentType}
-     * @memberof PaymentMethodDetails
-     */
     'assignmentType'?: AssignmentType;
 }
 

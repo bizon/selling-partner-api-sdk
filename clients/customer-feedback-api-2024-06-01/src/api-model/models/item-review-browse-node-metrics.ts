@@ -22,21 +22,9 @@ import type { BrowseNodeStarRatingImpact } from './browse-node-star-rating-impac
 
 /**
  * The browse node review topic metrics.
- * @export
- * @interface ItemReviewBrowseNodeMetrics
  */
 export interface ItemReviewBrowseNodeMetrics {
-    /**
-     * 
-     * @type {BrowseNodeOccurrence}
-     * @memberof ItemReviewBrowseNodeMetrics
-     */
     'occurrencePercentage'?: BrowseNodeOccurrence;
-    /**
-     * 
-     * @type {BrowseNodeStarRatingImpact}
-     * @memberof ItemReviewBrowseNodeMetrics
-     */
     'starRatingImpact'?: BrowseNodeStarRatingImpact;
 }
 

@@ -19,20 +19,14 @@ import type { ResearchingQuantityEntry } from './researching-quantity-entry';
 
 /**
  * The number of misplaced or warehouse damaged units that are actively being confirmed at our fulfillment centers.
- * @export
- * @interface ResearchingQuantity
  */
 export interface ResearchingQuantity {
     /**
      * The total number of units currently being researched in Amazon\'s fulfillment network.
-     * @type {number}
-     * @memberof ResearchingQuantity
      */
     'totalResearchingQuantity'?: number;
     /**
      * A list of quantity details for items currently being researched.
-     * @type {Array<ResearchingQuantityEntry>}
-     * @memberof ResearchingQuantity
      */
     'researchingQuantityBreakdown'?: Array<ResearchingQuantityEntry>;
 }

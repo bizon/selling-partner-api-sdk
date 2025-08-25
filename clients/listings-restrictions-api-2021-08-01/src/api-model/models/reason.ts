@@ -19,26 +19,18 @@ import type { Link } from './link';
 
 /**
  * A reason for the restriction, including path forward links that may allow Selling Partners to remove the restriction, if available.
- * @export
- * @interface Reason
  */
 export interface Reason {
     /**
      * A message describing the reason for the restriction.
-     * @type {string}
-     * @memberof Reason
      */
     'message': string;
     /**
      * A code indicating why the listing is restricted.
-     * @type {string}
-     * @memberof Reason
      */
     'reasonCode'?: ReasonReasonCodeEnum;
     /**
      * A list of path forward links that may allow Selling Partners to remove the restriction.
-     * @type {Array<Link>}
-     * @memberof Reason
      */
     'links'?: Array<Link>;
 }

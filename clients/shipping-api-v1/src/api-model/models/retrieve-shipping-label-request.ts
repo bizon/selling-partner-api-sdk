@@ -19,15 +19,8 @@ import type { LabelSpecification } from './label-specification';
 
 /**
  * The request schema for the retrieveShippingLabel operation.
- * @export
- * @interface RetrieveShippingLabelRequest
  */
 export interface RetrieveShippingLabelRequest {
-    /**
-     * 
-     * @type {LabelSpecification}
-     * @memberof RetrieveShippingLabelRequest
-     */
     'labelSpecification': LabelSpecification;
 }
 

@@ -19,20 +19,11 @@ import type { ShipmentDetail } from './shipment-detail';
 
 /**
  * The response schema for the getShipmentDetails operation.
- * @export
- * @interface GetShipmentDetailsResponse
  */
 export interface GetShipmentDetailsResponse {
-    /**
-     * 
-     * @type {ShipmentDetail}
-     * @memberof GetShipmentDetailsResponse
-     */
     'payload'?: ShipmentDetail;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetShipmentDetailsResponse
      */
     'errors'?: Array<Error>;
 }

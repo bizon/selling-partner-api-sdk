@@ -19,21 +19,9 @@ import type { TimeRange } from './time-range';
 
 /**
  * The promised delivery time and pickup time.
- * @export
- * @interface ShippingPromiseSet
  */
 export interface ShippingPromiseSet {
-    /**
-     * 
-     * @type {TimeRange}
-     * @memberof ShippingPromiseSet
-     */
     'deliveryWindow'?: TimeRange;
-    /**
-     * 
-     * @type {TimeRange}
-     * @memberof ShippingPromiseSet
-     */
     'receiveWindow'?: TimeRange;
 }
 

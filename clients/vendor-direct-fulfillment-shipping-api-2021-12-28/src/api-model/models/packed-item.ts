@@ -19,39 +19,24 @@ import type { ItemQuantity } from './item-quantity';
 
 /**
  * An item that has been packed into a container for shipping.
- * @export
- * @interface PackedItem
  */
 export interface PackedItem {
     /**
      * The sequence number of the item. The number must be the same as the order number of the item.
-     * @type {number}
-     * @memberof PackedItem
      */
     'itemSequenceNumber': number;
     /**
      * The buyer\'s Amazon Standard Identification Number (ASIN) of an item. Either `buyerProductIdentifier` or `vendorProductIdentifier` is required.
-     * @type {string}
-     * @memberof PackedItem
      */
     'buyerProductIdentifier'?: string;
     /**
      * The piece number of the item in this container. This is required when the item is split across different containers.
-     * @type {number}
-     * @memberof PackedItem
      */
     'pieceNumber'?: number;
     /**
      * An item\'s product identifier, which the vendor selects. This identifier should be the same as the identifier, such as a SKU, in the purchase order.
-     * @type {string}
-     * @memberof PackedItem
      */
     'vendorProductIdentifier'?: string;
-    /**
-     * 
-     * @type {ItemQuantity}
-     * @memberof PackedItem
-     */
     'packedQuantity': ItemQuantity;
 }
 

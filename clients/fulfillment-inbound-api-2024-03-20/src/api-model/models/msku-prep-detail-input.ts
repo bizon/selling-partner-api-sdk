@@ -22,26 +22,15 @@ import type { PrepType } from './prep-type';
 
 /**
  * An MSKU and its related prep details.
- * @export
- * @interface MskuPrepDetailInput
  */
 export interface MskuPrepDetailInput {
     /**
      * The merchant SKU, a merchant-supplied identifier for a specific SKU.
-     * @type {string}
-     * @memberof MskuPrepDetailInput
      */
     'msku': string;
-    /**
-     * 
-     * @type {PrepCategory}
-     * @memberof MskuPrepDetailInput
-     */
     'prepCategory': PrepCategory;
     /**
      * A list of preparation types associated with a preparation category.
-     * @type {Array<PrepType>}
-     * @memberof MskuPrepDetailInput
      */
     'prepTypes': Array<PrepType>;
 }

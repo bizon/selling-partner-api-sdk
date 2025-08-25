@@ -16,8 +16,6 @@
 
 /**
  * This field represents weight unit of measure of items that are ordered by cases and supporting priced by weight.
- * @export
- * @enum {string}
  */
 
 export const NetCostUnitOfMeasure = {

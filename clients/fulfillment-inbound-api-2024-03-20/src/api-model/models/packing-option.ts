@@ -25,56 +25,38 @@ import type { ShippingConfiguration } from './shipping-configuration';
 
 /**
  * A packing option contains a set of pack groups plus additional information about the packing option, such as any discounts or fees if it\'s selected.
- * @export
- * @interface PackingOption
  */
 export interface PackingOption {
     /**
      * Discount for the offered option.
-     * @type {Array<Incentive>}
-     * @memberof PackingOption
      */
     'discounts': Array<Incentive>;
     /**
      * The time at which this packing option is no longer valid. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
-     * @type {string}
-     * @memberof PackingOption
      */
     'expiration'?: string;
     /**
      * Fee for the offered option.
-     * @type {Array<Incentive>}
-     * @memberof PackingOption
      */
     'fees': Array<Incentive>;
     /**
      * Packing group IDs.
-     * @type {Array<string>}
-     * @memberof PackingOption
      */
     'packingGroups': Array<string>;
     /**
      * Identifier of a packing option.
-     * @type {string}
-     * @memberof PackingOption
      */
     'packingOptionId': string;
     /**
      * The status of the packing option. Possible values: `OFFERED`, `ACCEPTED`, `EXPIRED`.
-     * @type {string}
-     * @memberof PackingOption
      */
     'status': string;
     /**
      * A list of possible configurations for this option.
-     * @type {Array<PackingConfiguration>}
-     * @memberof PackingOption
      */
     'supportedConfigurations': Array<PackingConfiguration>;
     /**
      * **This field is deprecated**. Use the `shippingRequirements` property under `supportedConfigurations` instead. List of supported shipping modes.
-     * @type {Array<ShippingConfiguration>}
-     * @memberof PackingOption
      */
     'supportedShippingConfigurations': Array<ShippingConfiguration>;
 }

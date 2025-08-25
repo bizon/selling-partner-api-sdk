@@ -16,26 +16,18 @@
 
 /**
  * The image for the listings item.
- * @export
- * @interface ItemImage
  */
 export interface ItemImage {
     /**
      * The link, or URL, to the image.
-     * @type {string}
-     * @memberof ItemImage
      */
     'link': string;
     /**
      * The height of the image in pixels.
-     * @type {number}
-     * @memberof ItemImage
      */
     'height': number;
     /**
      * The width of the image in pixels.
-     * @type {number}
-     * @memberof ItemImage
      */
     'width': number;
 }

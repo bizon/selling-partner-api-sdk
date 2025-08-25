@@ -16,20 +16,14 @@
 
 /**
  * A Link object.
- * @export
- * @interface LinkObject
  */
 export interface LinkObject {
     /**
      * A URI for this object.
-     * @type {string}
-     * @memberof LinkObject
      */
     'href': string;
     /**
      * An identifier for this object.
-     * @type {string}
-     * @memberof LinkObject
      */
     'name'?: string;
 }

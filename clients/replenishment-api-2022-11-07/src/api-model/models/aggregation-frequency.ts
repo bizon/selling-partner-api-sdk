@@ -16,8 +16,6 @@
 
 /**
  * The time period used to group data in the response. Note that this is only valid for the `PERFORMANCE` time period type.
- * @export
- * @enum {string}
  */
 
 export const AggregationFrequency = {

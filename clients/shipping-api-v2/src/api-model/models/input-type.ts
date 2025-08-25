@@ -16,8 +16,6 @@
 
 /**
  * Type of Input.
- * @export
- * @enum {string}
  */
 
 export const InputType = {

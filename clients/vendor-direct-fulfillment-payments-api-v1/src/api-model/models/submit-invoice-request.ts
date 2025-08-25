@@ -19,14 +19,10 @@ import type { InvoiceDetail } from './invoice-detail';
 
 /**
  * The request schema for the submitInvoice operation.
- * @export
- * @interface SubmitInvoiceRequest
  */
 export interface SubmitInvoiceRequest {
     /**
      * An array of invoice details to be submitted.
-     * @type {Array<InvoiceDetail>}
-     * @memberof SubmitInvoiceRequest
      */
     'invoices'?: Array<InvoiceDetail>;
 }

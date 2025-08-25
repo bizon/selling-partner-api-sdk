@@ -19,15 +19,8 @@ import type { InvoicesAttributes } from './invoices-attributes';
 
 /**
  * Success.
- * @export
- * @interface GetInvoicesAttributesResponse
  */
 export interface GetInvoicesAttributesResponse {
-    /**
-     * 
-     * @type {InvoicesAttributes}
-     * @memberof GetInvoicesAttributesResponse
-     */
     'invoicesAttributes'?: InvoicesAttributes;
 }
 

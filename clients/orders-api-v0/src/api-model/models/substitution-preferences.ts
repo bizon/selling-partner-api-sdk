@@ -19,20 +19,14 @@ import type { SubstitutionOption } from './substitution-option';
 
 /**
  * Substitution preferences for an order item.
- * @export
- * @interface SubstitutionPreferences
  */
 export interface SubstitutionPreferences {
     /**
      * The type of substitution that these preferences represent.
-     * @type {string}
-     * @memberof SubstitutionPreferences
      */
     'SubstitutionType': SubstitutionPreferencesSubstitutionTypeEnum;
     /**
      * A collection of substitution options.
-     * @type {Array<SubstitutionOption>}
-     * @memberof SubstitutionPreferences
      */
     'SubstitutionOptions'?: Array<SubstitutionOption>;
 }

@@ -22,33 +22,17 @@ import type { Weight } from './weight';
 
 /**
  * The request schema for the `listHandoverSlots` operation.
- * @export
- * @interface ListHandoverSlotsRequest
  */
 export interface ListHandoverSlotsRequest {
     /**
      * A string of up to 255 characters.
-     * @type {string}
-     * @memberof ListHandoverSlotsRequest
      */
     'marketplaceId': string;
     /**
      * An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
-     * @type {string}
-     * @memberof ListHandoverSlotsRequest
      */
     'amazonOrderId': string;
-    /**
-     * 
-     * @type {Dimensions}
-     * @memberof ListHandoverSlotsRequest
-     */
     'packageDimensions': Dimensions;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof ListHandoverSlotsRequest
-     */
     'packageWeight': Weight;
 }
 

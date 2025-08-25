@@ -19,20 +19,11 @@ import type { ListAllFulfillmentOrdersResult } from './list-all-fulfillment-orde
 
 /**
  * The response schema for the `listAllFulfillmentOrders` operation.
- * @export
- * @interface ListAllFulfillmentOrdersResponse
  */
 export interface ListAllFulfillmentOrdersResponse {
-    /**
-     * 
-     * @type {ListAllFulfillmentOrdersResult}
-     * @memberof ListAllFulfillmentOrdersResponse
-     */
     'payload'?: ListAllFulfillmentOrdersResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof ListAllFulfillmentOrdersResponse
      */
     'errors'?: Array<Error>;
 }

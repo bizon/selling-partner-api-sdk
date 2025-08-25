@@ -19,20 +19,11 @@ import type { GetShipmentsResult } from './get-shipments-result';
 
 /**
  * The response schema for the getShipments operation.
- * @export
- * @interface GetShipmentsResponse
  */
 export interface GetShipmentsResponse {
-    /**
-     * 
-     * @type {GetShipmentsResult}
-     * @memberof GetShipmentsResponse
-     */
     'payload'?: GetShipmentsResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetShipmentsResponse
      */
     'errors'?: Array<Error>;
 }

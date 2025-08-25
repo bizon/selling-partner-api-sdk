@@ -25,32 +25,13 @@ import type { FxRateDetails } from './fx-rate-details';
 
 /**
  * The fees and foreign exchange rates that apply to the transaction.  If the fees are in terms of the `baseAmount` (source account) currency, then the effective rate is equal to **1 - (fees * `baseRate` / `baseAmount`)**.  If the fees are in terms of the `transferAmount` (destination account) currency, then the effective rate is equal to **`baseRate` - (fees / `baseAmount`)**.  In the preceding expressions, **fees** is equal to the sum of all `feeAmount.currencyAmount` values in the `fees` array.
- * @export
- * @interface TransferRatePreview
  */
 export interface TransferRatePreview {
-    /**
-     * 
-     * @type {Currency}
-     * @memberof TransferRatePreview
-     */
     'baseAmount': Currency;
-    /**
-     * 
-     * @type {FxRateDetails}
-     * @memberof TransferRatePreview
-     */
     'fxRateDetails': FxRateDetails;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof TransferRatePreview
-     */
     'transferAmount': Currency;
     /**
      * List of fees 
-     * @type {Array<Fee>}
-     * @memberof TransferRatePreview
      */
     'fees': Array<Fee>;
 }

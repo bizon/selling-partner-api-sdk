@@ -16,26 +16,18 @@
 
 /**
  * The request body schema for the putListingsItem operation.
- * @export
- * @interface ListingsItemPutRequest
  */
 export interface ListingsItemPutRequest {
     /**
      * The Amazon product type of the listings item.
-     * @type {string}
-     * @memberof ListingsItemPutRequest
      */
     'productType': string;
     /**
      * The name of the requirements set for the provided data.
-     * @type {string}
-     * @memberof ListingsItemPutRequest
      */
     'requirements'?: ListingsItemPutRequestRequirementsEnum;
     /**
      * JSON object containing structured listings item attribute data keyed by attribute name.
-     * @type {{ [key: string]: any; }}
-     * @memberof ListingsItemPutRequest
      */
     'attributes': { [key: string]: any; };
 }

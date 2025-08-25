@@ -16,20 +16,14 @@
 
 /**
  * Represents an MSKU and the related quantity.
- * @export
- * @interface MskuQuantity
  */
 export interface MskuQuantity {
     /**
      * The merchant SKU, a merchant-supplied identifier for a specific SKU.
-     * @type {string}
-     * @memberof MskuQuantity
      */
     'msku': string;
     /**
      * A positive integer.
-     * @type {number}
-     * @memberof MskuQuantity
      */
     'quantity': number;
 }

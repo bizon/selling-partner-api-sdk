@@ -19,32 +19,16 @@ import type { Money } from './money';
 
 /**
  * The tax details for the order. _Note:_ Amazon calculates tax on the list price (Amazon retail price).
- * @export
- * @interface TaxDetails
  */
 export interface TaxDetails {
     /**
      * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.
-     * @type {string}
-     * @memberof TaxDetails
      */
     'taxRate'?: string;
-    /**
-     * 
-     * @type {Money}
-     * @memberof TaxDetails
-     */
     'taxAmount': Money;
-    /**
-     * 
-     * @type {Money}
-     * @memberof TaxDetails
-     */
     'taxableAmount'?: Money;
     /**
      * Tax type.
-     * @type {string}
-     * @memberof TaxDetails
      */
     'type'?: TaxDetailsTypeEnum;
 }

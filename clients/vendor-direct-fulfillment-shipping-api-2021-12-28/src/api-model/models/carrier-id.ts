@@ -16,8 +16,6 @@
 
 /**
  * The unique carrier code for the carrier for whom container labels are requested.
- * @export
- * @enum {string}
  */
 
 export const CarrierId = {

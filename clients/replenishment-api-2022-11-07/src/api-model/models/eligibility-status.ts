@@ -16,8 +16,6 @@
 
 /**
  * The current eligibility status of an offer.
- * @export
- * @enum {string}
  */
 
 export const EligibilityStatus = {

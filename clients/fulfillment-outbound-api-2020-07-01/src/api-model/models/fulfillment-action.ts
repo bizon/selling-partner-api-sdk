@@ -16,8 +16,6 @@
 
 /**
  * Specifies whether the fulfillment order should ship now or have an order hold put on it.
- * @export
- * @enum {string}
  */
 
 export const FulfillmentAction = {

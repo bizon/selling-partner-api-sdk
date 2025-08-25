@@ -16,14 +16,10 @@
 
 /**
  * The response schema for the AddInventory operation.
- * @export
- * @interface AddInventoryResponse
  */
 export interface AddInventoryResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof AddInventoryResponse
      */
     'errors'?: Array<Error>;
 }

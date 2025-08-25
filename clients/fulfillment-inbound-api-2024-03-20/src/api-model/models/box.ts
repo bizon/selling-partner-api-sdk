@@ -31,75 +31,39 @@ import type { Weight } from './weight';
 
 /**
  * Contains information about a box that is used in the inbound plan. The box is a container that holds multiple items.
- * @export
- * @interface Box
  */
 export interface Box {
     /**
      * The ID provided by Amazon that identifies a given box. This ID is comprised of the external shipment ID (which is generated after transportation has been confirmed) and the index of the box.
-     * @type {string}
-     * @memberof Box
      */
     'boxId'?: string;
-    /**
-     * 
-     * @type {BoxContentInformationSource}
-     * @memberof Box
-     */
     'contentInformationSource'?: BoxContentInformationSource;
-    /**
-     * 
-     * @type {Region}
-     * @memberof Box
-     */
     'destinationRegion'?: Region;
-    /**
-     * 
-     * @type {Dimensions}
-     * @memberof Box
-     */
     'dimensions'?: Dimensions;
     /**
      * The external identifier for this container / box.
-     * @type {string}
-     * @memberof Box
      */
     'externalContainerIdentifier'?: string;
     /**
      * Type of the external identifier used. Can be: `AMAZON`, `SSCC`.
-     * @type {string}
-     * @memberof Box
      */
     'externalContainerIdentifierType'?: string;
     /**
      * Items contained within the box.
-     * @type {Array<Item>}
-     * @memberof Box
      */
     'items'?: Array<Item>;
     /**
      * Primary key to uniquely identify a Package (Box or Pallet).
-     * @type {string}
-     * @memberof Box
      */
     'packageId': string;
     /**
      * The number of containers where all other properties like weight or dimensions are identical.
-     * @type {number}
-     * @memberof Box
      */
     'quantity'?: number;
     /**
      * Template name of the box.
-     * @type {string}
-     * @memberof Box
      */
     'templateName'?: string;
-    /**
-     * 
-     * @type {Weight}
-     * @memberof Box
-     */
     'weight'?: Weight;
 }
 

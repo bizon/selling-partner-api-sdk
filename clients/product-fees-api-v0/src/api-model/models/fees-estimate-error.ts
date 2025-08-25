@@ -16,32 +16,22 @@
 
 /**
  * An unexpected error occurred during this operation.
- * @export
- * @interface FeesEstimateError
  */
 export interface FeesEstimateError {
     /**
      * An error type, identifying either the receiver or the sender as the originator of the error.
-     * @type {string}
-     * @memberof FeesEstimateError
      */
     'Type': string;
     /**
      * An error code that identifies the type of error that occurred.
-     * @type {string}
-     * @memberof FeesEstimateError
      */
     'Code': string;
     /**
      * A message that describes the error condition.
-     * @type {string}
-     * @memberof FeesEstimateError
      */
     'Message': string;
     /**
      * Additional information that can help the caller understand or fix the issue.
-     * @type {Array<object>}
-     * @memberof FeesEstimateError
      */
     'Detail': Array<object>;
 }

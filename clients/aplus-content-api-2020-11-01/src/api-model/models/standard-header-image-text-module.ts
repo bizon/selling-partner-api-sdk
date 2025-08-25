@@ -22,21 +22,9 @@ import type { TextComponent } from './text-component';
 
 /**
  * Standard headline text, an image, and body text.
- * @export
- * @interface StandardHeaderImageTextModule
  */
 export interface StandardHeaderImageTextModule {
-    /**
-     * 
-     * @type {TextComponent}
-     * @memberof StandardHeaderImageTextModule
-     */
     'headline'?: TextComponent;
-    /**
-     * 
-     * @type {StandardImageTextBlock}
-     * @memberof StandardHeaderImageTextModule
-     */
     'block'?: StandardImageTextBlock;
 }
 

@@ -28,33 +28,14 @@ import type { PrepOwner } from './prep-owner';
 
 /**
  * The preparation details for a product. This contains the prep category, prep owner, and label owner. Prep instructions are generated based on the specified category.
- * @export
- * @interface PrepDetails
  */
 export interface PrepDetails {
-    /**
-     * 
-     * @type {LabelOwner}
-     * @memberof PrepDetails
-     */
     'labelOwner'?: LabelOwner;
-    /**
-     * 
-     * @type {PrepCategory}
-     * @memberof PrepDetails
-     */
     'prepCategory'?: PrepCategory;
     /**
      * Contains information about the preparation of the inbound products. The system auto-generates this field with the use of the `prepCategory`, and if you attempt to pass a value for this field, the system will ignore it.
-     * @type {Array<PrepInstruction>}
-     * @memberof PrepDetails
      */
     'prepInstructions'?: Array<PrepInstruction>;
-    /**
-     * 
-     * @type {PrepOwner}
-     * @memberof PrepDetails
-     */
     'prepOwner'?: PrepOwner;
 }
 

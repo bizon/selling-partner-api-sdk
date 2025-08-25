@@ -19,20 +19,11 @@ import type { DocumentType } from './document-type';
 
 /**
  * The supported document types for a service offering.
- * @export
- * @interface SupportedDocumentDetail
  */
 export interface SupportedDocumentDetail {
-    /**
-     * 
-     * @type {DocumentType}
-     * @memberof SupportedDocumentDetail
-     */
     'name': DocumentType;
     /**
      * When true, the supported document type is required.
-     * @type {boolean}
-     * @memberof SupportedDocumentDetail
      */
     'isMandatory': boolean;
 }

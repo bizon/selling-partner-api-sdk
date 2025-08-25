@@ -14,22 +14,13 @@
 
 
 
-/**
- * 
- * @export
- * @interface MoneyType
- */
 export interface MoneyType {
     /**
      * The currency code in ISO 4217 format.
-     * @type {string}
-     * @memberof MoneyType
      */
     'CurrencyCode'?: string;
     /**
      * The monetary value.
-     * @type {number}
-     * @memberof MoneyType
      */
     'Amount'?: number;
 }

@@ -16,26 +16,18 @@
 
 /**
  * Input for to be uploaded document.
- * @export
- * @interface ServiceUploadDocument
  */
 export interface ServiceUploadDocument {
     /**
      * The content type of the to-be-uploaded file
-     * @type {string}
-     * @memberof ServiceUploadDocument
      */
     'contentType': ServiceUploadDocumentContentTypeEnum;
     /**
      * The content length of the to-be-uploaded file
-     * @type {number}
-     * @memberof ServiceUploadDocument
      */
     'contentLength': number;
     /**
      * An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.
-     * @type {string}
-     * @memberof ServiceUploadDocument
      */
     'contentMD5'?: string;
 }

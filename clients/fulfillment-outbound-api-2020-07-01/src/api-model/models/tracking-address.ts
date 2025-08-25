@@ -16,26 +16,18 @@
 
 /**
  * Address information for tracking the package.
- * @export
- * @interface TrackingAddress
  */
 export interface TrackingAddress {
     /**
      * The city.
-     * @type {string}
-     * @memberof TrackingAddress
      */
     'city': string;
     /**
      * The state.
-     * @type {string}
-     * @memberof TrackingAddress
      */
     'state': string;
     /**
      * The country.
-     * @type {string}
-     * @memberof TrackingAddress
      */
     'country': string;
 }

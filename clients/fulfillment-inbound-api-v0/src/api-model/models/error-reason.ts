@@ -16,8 +16,6 @@
 
 /**
  * The reason that the ASIN is invalid.
- * @export
- * @enum {string}
  */
 
 export const ErrorReason = {

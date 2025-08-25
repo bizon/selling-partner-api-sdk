@@ -22,21 +22,9 @@ import type { SellerSKUIdentifier } from './seller-skuidentifier';
 
 /**
  * Specifies the identifiers used to uniquely identify an item.
- * @export
- * @interface IdentifierType
  */
 export interface IdentifierType {
-    /**
-     * 
-     * @type {ASINIdentifier}
-     * @memberof IdentifierType
-     */
     'MarketplaceASIN': ASINIdentifier;
-    /**
-     * 
-     * @type {SellerSKUIdentifier}
-     * @memberof IdentifierType
-     */
     'SKUIdentifier'?: SellerSKUIdentifier;
 }
 

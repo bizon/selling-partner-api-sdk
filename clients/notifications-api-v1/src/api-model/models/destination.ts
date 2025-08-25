@@ -19,27 +19,16 @@ import type { DestinationResource } from './destination-resource';
 
 /**
  * Information about the destination created when you call the `createDestination` operation.
- * @export
- * @interface Destination
  */
 export interface Destination {
     /**
      * The developer-defined name for this destination.
-     * @type {string}
-     * @memberof Destination
      */
     'name': string;
     /**
      * The destination identifier generated when you created the destination.
-     * @type {string}
-     * @memberof Destination
      */
     'destinationId': string;
-    /**
-     * 
-     * @type {DestinationResource}
-     * @memberof Destination
-     */
     'resource': DestinationResource;
 }
 

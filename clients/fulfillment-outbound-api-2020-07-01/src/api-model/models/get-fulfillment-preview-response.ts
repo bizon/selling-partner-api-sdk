@@ -19,20 +19,11 @@ import type { GetFulfillmentPreviewResult } from './get-fulfillment-preview-resu
 
 /**
  * The response schema for the `getFulfillmentPreview` operation.
- * @export
- * @interface GetFulfillmentPreviewResponse
  */
 export interface GetFulfillmentPreviewResponse {
-    /**
-     * 
-     * @type {GetFulfillmentPreviewResult}
-     * @memberof GetFulfillmentPreviewResponse
-     */
     'payload'?: GetFulfillmentPreviewResult;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetFulfillmentPreviewResponse
      */
     'errors'?: Array<Error>;
 }

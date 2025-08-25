@@ -75,7 +75,6 @@ import type { UpdateScheduleRequest } from '../models';
 import type { UpdateScheduleResponse } from '../models';
 /**
  * ServicesApi - axios parameter creator
- * @export
  */
 export const ServicesApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -890,7 +889,6 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
 
 /**
  * ServicesApi - functional programming interface
- * @export
  */
 export const ServicesApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ServicesApiAxiosParamCreator(configuration)
@@ -1146,7 +1144,6 @@ export const ServicesApiFp = function(configuration?: Configuration) {
 
 /**
  * ServicesApi - factory interface
- * @export
  */
 export const ServicesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = ServicesApiFp(configuration)
@@ -1309,541 +1306,383 @@ export const ServicesApiFactory = function (configuration?: Configuration, baseP
 
 /**
  * Request parameters for addAppointmentForServiceJobByServiceJobId operation in ServicesApi.
- * @export
- * @interface ServicesApiAddAppointmentForServiceJobByServiceJobIdRequest
  */
 export interface ServicesApiAddAppointmentForServiceJobByServiceJobIdRequest {
     /**
      * An Amazon defined service job identifier.
-     * @type {string}
-     * @memberof ServicesApiAddAppointmentForServiceJobByServiceJobId
      */
     readonly serviceJobId: string
 
     /**
      * Add appointment operation input details.
-     * @type {AddAppointmentRequest}
-     * @memberof ServicesApiAddAppointmentForServiceJobByServiceJobId
      */
     readonly body: AddAppointmentRequest
 }
 
 /**
  * Request parameters for assignAppointmentResources operation in ServicesApi.
- * @export
- * @interface ServicesApiAssignAppointmentResourcesRequest
  */
 export interface ServicesApiAssignAppointmentResourcesRequest {
     /**
      * An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API.
-     * @type {string}
-     * @memberof ServicesApiAssignAppointmentResources
      */
     readonly serviceJobId: string
 
     /**
      * An Amazon-defined identifier of active service job appointment.
-     * @type {string}
-     * @memberof ServicesApiAssignAppointmentResources
      */
     readonly appointmentId: string
 
-    /**
-     * 
-     * @type {AssignAppointmentResourcesRequest}
-     * @memberof ServicesApiAssignAppointmentResources
-     */
     readonly body: AssignAppointmentResourcesRequest
 }
 
 /**
  * Request parameters for cancelReservation operation in ServicesApi.
- * @export
- * @interface ServicesApiCancelReservationRequest
  */
 export interface ServicesApiCancelReservationRequest {
     /**
      * Reservation Identifier
-     * @type {string}
-     * @memberof ServicesApiCancelReservation
      */
     readonly reservationId: string
 
     /**
      * An identifier for the marketplace in which the resource operates.
-     * @type {Array<string>}
-     * @memberof ServicesApiCancelReservation
      */
     readonly marketplaceIds: Array<string>
 }
 
 /**
  * Request parameters for cancelServiceJobByServiceJobId operation in ServicesApi.
- * @export
- * @interface ServicesApiCancelServiceJobByServiceJobIdRequest
  */
 export interface ServicesApiCancelServiceJobByServiceJobIdRequest {
     /**
      * An Amazon defined service job identifier.
-     * @type {string}
-     * @memberof ServicesApiCancelServiceJobByServiceJobId
      */
     readonly serviceJobId: string
 
     /**
      * A cancel reason code that specifies the reason for cancelling a service job.
-     * @type {string}
-     * @memberof ServicesApiCancelServiceJobByServiceJobId
      */
     readonly cancellationReasonCode: string
 }
 
 /**
  * Request parameters for completeServiceJobByServiceJobId operation in ServicesApi.
- * @export
- * @interface ServicesApiCompleteServiceJobByServiceJobIdRequest
  */
 export interface ServicesApiCompleteServiceJobByServiceJobIdRequest {
     /**
      * An Amazon defined service job identifier.
-     * @type {string}
-     * @memberof ServicesApiCompleteServiceJobByServiceJobId
      */
     readonly serviceJobId: string
 }
 
 /**
  * Request parameters for createReservation operation in ServicesApi.
- * @export
- * @interface ServicesApiCreateReservationRequest
  */
 export interface ServicesApiCreateReservationRequest {
     /**
      * An identifier for the marketplace in which the resource operates.
-     * @type {Array<string>}
-     * @memberof ServicesApiCreateReservation
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * Reservation details
-     * @type {CreateReservationRequest}
-     * @memberof ServicesApiCreateReservation
      */
     readonly body: CreateReservationRequest
 }
 
 /**
  * Request parameters for createServiceDocumentUploadDestination operation in ServicesApi.
- * @export
- * @interface ServicesApiCreateServiceDocumentUploadDestinationRequest
  */
 export interface ServicesApiCreateServiceDocumentUploadDestinationRequest {
     /**
      * Upload document operation input details.
-     * @type {ServiceUploadDocument}
-     * @memberof ServicesApiCreateServiceDocumentUploadDestination
      */
     readonly body: ServiceUploadDocument
 }
 
 /**
  * Request parameters for getAppointmentSlots operation in ServicesApi.
- * @export
- * @interface ServicesApiGetAppointmentSlotsRequest
  */
 export interface ServicesApiGetAppointmentSlotsRequest {
     /**
      * ASIN associated with the service.
-     * @type {string}
-     * @memberof ServicesApiGetAppointmentSlots
      */
     readonly asin: string
 
     /**
      * Store identifier defining the region scope to retrive appointment slots.
-     * @type {string}
-     * @memberof ServicesApiGetAppointmentSlots
      */
     readonly storeId: string
 
     /**
      * An identifier for the marketplace for which appointment slots are queried
-     * @type {Array<string>}
-     * @memberof ServicesApiGetAppointmentSlots
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration.
-     * @type {string}
-     * @memberof ServicesApiGetAppointmentSlots
      */
     readonly startTime?: string
 
     /**
      * A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days.
-     * @type {string}
-     * @memberof ServicesApiGetAppointmentSlots
      */
     readonly endTime?: string
 }
 
 /**
  * Request parameters for getAppointmmentSlotsByJobId operation in ServicesApi.
- * @export
- * @interface ServicesApiGetAppointmmentSlotsByJobIdRequest
  */
 export interface ServicesApiGetAppointmmentSlotsByJobIdRequest {
     /**
      * A service job identifier to retrive appointment slots for associated service.
-     * @type {string}
-     * @memberof ServicesApiGetAppointmmentSlotsByJobId
      */
     readonly serviceJobId: string
 
     /**
      * An identifier for the marketplace in which the resource operates.
-     * @type {Array<string>}
-     * @memberof ServicesApiGetAppointmmentSlotsByJobId
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration.
-     * @type {string}
-     * @memberof ServicesApiGetAppointmmentSlotsByJobId
      */
     readonly startTime?: string
 
     /**
      * A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days.
-     * @type {string}
-     * @memberof ServicesApiGetAppointmmentSlotsByJobId
      */
     readonly endTime?: string
 }
 
 /**
  * Request parameters for getFixedSlotCapacity operation in ServicesApi.
- * @export
- * @interface ServicesApiGetFixedSlotCapacityRequest
  */
 export interface ServicesApiGetFixedSlotCapacityRequest {
     /**
      * Resource Identifier.
-     * @type {string}
-     * @memberof ServicesApiGetFixedSlotCapacity
      */
     readonly resourceId: string
 
     /**
      * An identifier for the marketplace in which the resource operates.
-     * @type {Array<string>}
-     * @memberof ServicesApiGetFixedSlotCapacity
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * Request body.
-     * @type {FixedSlotCapacityQuery}
-     * @memberof ServicesApiGetFixedSlotCapacity
      */
     readonly body: FixedSlotCapacityQuery
 
     /**
      * Next page token returned in the response of your previous request.
-     * @type {string}
-     * @memberof ServicesApiGetFixedSlotCapacity
      */
     readonly nextPageToken?: string
 }
 
 /**
  * Request parameters for getRangeSlotCapacity operation in ServicesApi.
- * @export
- * @interface ServicesApiGetRangeSlotCapacityRequest
  */
 export interface ServicesApiGetRangeSlotCapacityRequest {
     /**
      * Resource Identifier.
-     * @type {string}
-     * @memberof ServicesApiGetRangeSlotCapacity
      */
     readonly resourceId: string
 
     /**
      * An identifier for the marketplace in which the resource operates.
-     * @type {Array<string>}
-     * @memberof ServicesApiGetRangeSlotCapacity
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * Request body.
-     * @type {RangeSlotCapacityQuery}
-     * @memberof ServicesApiGetRangeSlotCapacity
      */
     readonly body: RangeSlotCapacityQuery
 
     /**
      * Next page token returned in the response of your previous request.
-     * @type {string}
-     * @memberof ServicesApiGetRangeSlotCapacity
      */
     readonly nextPageToken?: string
 }
 
 /**
  * Request parameters for getServiceJobByServiceJobId operation in ServicesApi.
- * @export
- * @interface ServicesApiGetServiceJobByServiceJobIdRequest
  */
 export interface ServicesApiGetServiceJobByServiceJobIdRequest {
     /**
      * A service job identifier.
-     * @type {string}
-     * @memberof ServicesApiGetServiceJobByServiceJobId
      */
     readonly serviceJobId: string
 }
 
 /**
  * Request parameters for getServiceJobs operation in ServicesApi.
- * @export
- * @interface ServicesApiGetServiceJobsRequest
  */
 export interface ServicesApiGetServiceJobsRequest {
     /**
      * Used to select jobs that were placed in the specified marketplaces.
-     * @type {Array<string>}
-     * @memberof ServicesApiGetServiceJobs
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * List of service order ids for the query you want to perform.Max values supported 20.
-     * @type {Array<string>}
-     * @memberof ServicesApiGetServiceJobs
      */
     readonly serviceOrderIds?: Array<string>
 
     /**
      * A list of one or more job status by which to filter the list of jobs.
-     * @type {Array<'NOT_SERVICED' | 'CANCELLED' | 'COMPLETED' | 'PENDING_SCHEDULE' | 'NOT_FULFILLABLE' | 'HOLD' | 'PAYMENT_DECLINED'>}
-     * @memberof ServicesApiGetServiceJobs
      */
     readonly serviceJobStatus?: Array<GetServiceJobsServiceJobStatusEnum>
 
     /**
      * String returned in the response of your previous request.
-     * @type {string}
-     * @memberof ServicesApiGetServiceJobs
      */
     readonly pageToken?: string
 
     /**
      * A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20.
-     * @type {number}
-     * @memberof ServicesApiGetServiceJobs
      */
     readonly pageSize?: number
 
     /**
      * Sort fields on which you want to sort the output.
-     * @type {'JOB_DATE' | 'JOB_STATUS'}
-     * @memberof ServicesApiGetServiceJobs
      */
     readonly sortField?: GetServiceJobsSortFieldEnum
 
     /**
      * Sort order for the query you want to perform.
-     * @type {'ASC' | 'DESC'}
-     * @memberof ServicesApiGetServiceJobs
      */
     readonly sortOrder?: GetServiceJobsSortOrderEnum
 
     /**
      * A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
-     * @type {string}
-     * @memberof ServicesApiGetServiceJobs
      */
     readonly createdAfter?: string
 
     /**
      * A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format.
-     * @type {string}
-     * @memberof ServicesApiGetServiceJobs
      */
     readonly createdBefore?: string
 
     /**
      * A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if &#x60;createdAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error.
-     * @type {string}
-     * @memberof ServicesApiGetServiceJobs
      */
     readonly lastUpdatedAfter?: string
 
     /**
      * A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format.
-     * @type {string}
-     * @memberof ServicesApiGetServiceJobs
      */
     readonly lastUpdatedBefore?: string
 
     /**
      * A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date.
-     * @type {string}
-     * @memberof ServicesApiGetServiceJobs
      */
     readonly scheduleStartDate?: string
 
     /**
      * A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date.
-     * @type {string}
-     * @memberof ServicesApiGetServiceJobs
      */
     readonly scheduleEndDate?: string
 
     /**
      * List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20.
-     * @type {Array<string>}
-     * @memberof ServicesApiGetServiceJobs
      */
     readonly asins?: Array<string>
 
     /**
      * A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20.
-     * @type {Array<string>}
-     * @memberof ServicesApiGetServiceJobs
      */
     readonly requiredSkills?: Array<string>
 
     /**
      * List of Amazon-defined identifiers for the region scope. Max values supported is 50.
-     * @type {Array<string>}
-     * @memberof ServicesApiGetServiceJobs
      */
     readonly storeIds?: Array<string>
 }
 
 /**
  * Request parameters for rescheduleAppointmentForServiceJobByServiceJobId operation in ServicesApi.
- * @export
- * @interface ServicesApiRescheduleAppointmentForServiceJobByServiceJobIdRequest
  */
 export interface ServicesApiRescheduleAppointmentForServiceJobByServiceJobIdRequest {
     /**
      * An Amazon defined service job identifier.
-     * @type {string}
-     * @memberof ServicesApiRescheduleAppointmentForServiceJobByServiceJobId
      */
     readonly serviceJobId: string
 
     /**
      * An existing appointment identifier for the Service Job.
-     * @type {string}
-     * @memberof ServicesApiRescheduleAppointmentForServiceJobByServiceJobId
      */
     readonly appointmentId: string
 
     /**
      * Reschedule appointment operation input details.
-     * @type {RescheduleAppointmentRequest}
-     * @memberof ServicesApiRescheduleAppointmentForServiceJobByServiceJobId
      */
     readonly body: RescheduleAppointmentRequest
 }
 
 /**
  * Request parameters for setAppointmentFulfillmentData operation in ServicesApi.
- * @export
- * @interface ServicesApiSetAppointmentFulfillmentDataRequest
  */
 export interface ServicesApiSetAppointmentFulfillmentDataRequest {
     /**
      * An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API.
-     * @type {string}
-     * @memberof ServicesApiSetAppointmentFulfillmentData
      */
     readonly serviceJobId: string
 
     /**
      * An Amazon-defined identifier of active service job appointment.
-     * @type {string}
-     * @memberof ServicesApiSetAppointmentFulfillmentData
      */
     readonly appointmentId: string
 
     /**
      * Appointment fulfillment data collection details.
-     * @type {SetAppointmentFulfillmentDataRequest}
-     * @memberof ServicesApiSetAppointmentFulfillmentData
      */
     readonly body: SetAppointmentFulfillmentDataRequest
 }
 
 /**
  * Request parameters for updateReservation operation in ServicesApi.
- * @export
- * @interface ServicesApiUpdateReservationRequest
  */
 export interface ServicesApiUpdateReservationRequest {
     /**
      * Reservation Identifier
-     * @type {string}
-     * @memberof ServicesApiUpdateReservation
      */
     readonly reservationId: string
 
     /**
      * An identifier for the marketplace in which the resource operates.
-     * @type {Array<string>}
-     * @memberof ServicesApiUpdateReservation
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * Reservation details
-     * @type {UpdateReservationRequest}
-     * @memberof ServicesApiUpdateReservation
      */
     readonly body: UpdateReservationRequest
 }
 
 /**
  * Request parameters for updateSchedule operation in ServicesApi.
- * @export
- * @interface ServicesApiUpdateScheduleRequest
  */
 export interface ServicesApiUpdateScheduleRequest {
     /**
      * Resource (store) Identifier
-     * @type {string}
-     * @memberof ServicesApiUpdateSchedule
      */
     readonly resourceId: string
 
     /**
      * An identifier for the marketplace in which the resource operates.
-     * @type {Array<string>}
-     * @memberof ServicesApiUpdateSchedule
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * Schedule details
-     * @type {UpdateScheduleRequest}
-     * @memberof ServicesApiUpdateSchedule
      */
     readonly body: UpdateScheduleRequest
 }
 
 /**
  * ServicesApi - object-oriented interface
- * @export
- * @class ServicesApi
- * @extends {BaseAPI}
  */
 export class ServicesApi extends BaseAPI {
     /**
@@ -1851,7 +1690,6 @@ export class ServicesApi extends BaseAPI {
      * @param {ServicesApiAddAppointmentForServiceJobByServiceJobIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ServicesApi
      */
     public addAppointmentForServiceJobByServiceJobId(requestParameters: ServicesApiAddAppointmentForServiceJobByServiceJobIdRequest, options?: RawAxiosRequestConfig) {
         return ServicesApiFp(this.configuration).addAppointmentForServiceJobByServiceJobId(requestParameters.serviceJobId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1862,7 +1700,6 @@ export class ServicesApi extends BaseAPI {
      * @param {ServicesApiAssignAppointmentResourcesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ServicesApi
      */
     public assignAppointmentResources(requestParameters: ServicesApiAssignAppointmentResourcesRequest, options?: RawAxiosRequestConfig) {
         return ServicesApiFp(this.configuration).assignAppointmentResources(requestParameters.serviceJobId, requestParameters.appointmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1873,7 +1710,6 @@ export class ServicesApi extends BaseAPI {
      * @param {ServicesApiCancelReservationRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ServicesApi
      */
     public cancelReservation(requestParameters: ServicesApiCancelReservationRequest, options?: RawAxiosRequestConfig) {
         return ServicesApiFp(this.configuration).cancelReservation(requestParameters.reservationId, requestParameters.marketplaceIds, options).then((request) => request(this.axios, this.basePath));
@@ -1884,7 +1720,6 @@ export class ServicesApi extends BaseAPI {
      * @param {ServicesApiCancelServiceJobByServiceJobIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ServicesApi
      */
     public cancelServiceJobByServiceJobId(requestParameters: ServicesApiCancelServiceJobByServiceJobIdRequest, options?: RawAxiosRequestConfig) {
         return ServicesApiFp(this.configuration).cancelServiceJobByServiceJobId(requestParameters.serviceJobId, requestParameters.cancellationReasonCode, options).then((request) => request(this.axios, this.basePath));
@@ -1895,7 +1730,6 @@ export class ServicesApi extends BaseAPI {
      * @param {ServicesApiCompleteServiceJobByServiceJobIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ServicesApi
      */
     public completeServiceJobByServiceJobId(requestParameters: ServicesApiCompleteServiceJobByServiceJobIdRequest, options?: RawAxiosRequestConfig) {
         return ServicesApiFp(this.configuration).completeServiceJobByServiceJobId(requestParameters.serviceJobId, options).then((request) => request(this.axios, this.basePath));
@@ -1906,7 +1740,6 @@ export class ServicesApi extends BaseAPI {
      * @param {ServicesApiCreateReservationRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ServicesApi
      */
     public createReservation(requestParameters: ServicesApiCreateReservationRequest, options?: RawAxiosRequestConfig) {
         return ServicesApiFp(this.configuration).createReservation(requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1917,7 +1750,6 @@ export class ServicesApi extends BaseAPI {
      * @param {ServicesApiCreateServiceDocumentUploadDestinationRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ServicesApi
      */
     public createServiceDocumentUploadDestination(requestParameters: ServicesApiCreateServiceDocumentUploadDestinationRequest, options?: RawAxiosRequestConfig) {
         return ServicesApiFp(this.configuration).createServiceDocumentUploadDestination(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -1928,7 +1760,6 @@ export class ServicesApi extends BaseAPI {
      * @param {ServicesApiGetAppointmentSlotsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ServicesApi
      */
     public getAppointmentSlots(requestParameters: ServicesApiGetAppointmentSlotsRequest, options?: RawAxiosRequestConfig) {
         return ServicesApiFp(this.configuration).getAppointmentSlots(requestParameters.asin, requestParameters.storeId, requestParameters.marketplaceIds, requestParameters.startTime, requestParameters.endTime, options).then((request) => request(this.axios, this.basePath));
@@ -1939,7 +1770,6 @@ export class ServicesApi extends BaseAPI {
      * @param {ServicesApiGetAppointmmentSlotsByJobIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ServicesApi
      */
     public getAppointmmentSlotsByJobId(requestParameters: ServicesApiGetAppointmmentSlotsByJobIdRequest, options?: RawAxiosRequestConfig) {
         return ServicesApiFp(this.configuration).getAppointmmentSlotsByJobId(requestParameters.serviceJobId, requestParameters.marketplaceIds, requestParameters.startTime, requestParameters.endTime, options).then((request) => request(this.axios, this.basePath));
@@ -1950,7 +1780,6 @@ export class ServicesApi extends BaseAPI {
      * @param {ServicesApiGetFixedSlotCapacityRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ServicesApi
      */
     public getFixedSlotCapacity(requestParameters: ServicesApiGetFixedSlotCapacityRequest, options?: RawAxiosRequestConfig) {
         return ServicesApiFp(this.configuration).getFixedSlotCapacity(requestParameters.resourceId, requestParameters.marketplaceIds, requestParameters.body, requestParameters.nextPageToken, options).then((request) => request(this.axios, this.basePath));
@@ -1961,7 +1790,6 @@ export class ServicesApi extends BaseAPI {
      * @param {ServicesApiGetRangeSlotCapacityRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ServicesApi
      */
     public getRangeSlotCapacity(requestParameters: ServicesApiGetRangeSlotCapacityRequest, options?: RawAxiosRequestConfig) {
         return ServicesApiFp(this.configuration).getRangeSlotCapacity(requestParameters.resourceId, requestParameters.marketplaceIds, requestParameters.body, requestParameters.nextPageToken, options).then((request) => request(this.axios, this.basePath));
@@ -1972,7 +1800,6 @@ export class ServicesApi extends BaseAPI {
      * @param {ServicesApiGetServiceJobByServiceJobIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ServicesApi
      */
     public getServiceJobByServiceJobId(requestParameters: ServicesApiGetServiceJobByServiceJobIdRequest, options?: RawAxiosRequestConfig) {
         return ServicesApiFp(this.configuration).getServiceJobByServiceJobId(requestParameters.serviceJobId, options).then((request) => request(this.axios, this.basePath));
@@ -1983,7 +1810,6 @@ export class ServicesApi extends BaseAPI {
      * @param {ServicesApiGetServiceJobsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ServicesApi
      */
     public getServiceJobs(requestParameters: ServicesApiGetServiceJobsRequest, options?: RawAxiosRequestConfig) {
         return ServicesApiFp(this.configuration).getServiceJobs(requestParameters.marketplaceIds, requestParameters.serviceOrderIds, requestParameters.serviceJobStatus, requestParameters.pageToken, requestParameters.pageSize, requestParameters.sortField, requestParameters.sortOrder, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.scheduleStartDate, requestParameters.scheduleEndDate, requestParameters.asins, requestParameters.requiredSkills, requestParameters.storeIds, options).then((request) => request(this.axios, this.basePath));
@@ -1994,7 +1820,6 @@ export class ServicesApi extends BaseAPI {
      * @param {ServicesApiRescheduleAppointmentForServiceJobByServiceJobIdRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ServicesApi
      */
     public rescheduleAppointmentForServiceJobByServiceJobId(requestParameters: ServicesApiRescheduleAppointmentForServiceJobByServiceJobIdRequest, options?: RawAxiosRequestConfig) {
         return ServicesApiFp(this.configuration).rescheduleAppointmentForServiceJobByServiceJobId(requestParameters.serviceJobId, requestParameters.appointmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -2005,7 +1830,6 @@ export class ServicesApi extends BaseAPI {
      * @param {ServicesApiSetAppointmentFulfillmentDataRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ServicesApi
      */
     public setAppointmentFulfillmentData(requestParameters: ServicesApiSetAppointmentFulfillmentDataRequest, options?: RawAxiosRequestConfig) {
         return ServicesApiFp(this.configuration).setAppointmentFulfillmentData(requestParameters.serviceJobId, requestParameters.appointmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -2016,7 +1840,6 @@ export class ServicesApi extends BaseAPI {
      * @param {ServicesApiUpdateReservationRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ServicesApi
      */
     public updateReservation(requestParameters: ServicesApiUpdateReservationRequest, options?: RawAxiosRequestConfig) {
         return ServicesApiFp(this.configuration).updateReservation(requestParameters.reservationId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -2027,16 +1850,12 @@ export class ServicesApi extends BaseAPI {
      * @param {ServicesApiUpdateScheduleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ServicesApi
      */
     public updateSchedule(requestParameters: ServicesApiUpdateScheduleRequest, options?: RawAxiosRequestConfig) {
         return ServicesApiFp(this.configuration).updateSchedule(requestParameters.resourceId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetServiceJobsServiceJobStatusEnum = {
     NotServiced: 'NOT_SERVICED',
     Cancelled: 'CANCELLED',
@@ -2047,17 +1866,11 @@ export const GetServiceJobsServiceJobStatusEnum = {
     PaymentDeclined: 'PAYMENT_DECLINED'
 } as const;
 export type GetServiceJobsServiceJobStatusEnum = typeof GetServiceJobsServiceJobStatusEnum[keyof typeof GetServiceJobsServiceJobStatusEnum];
-/**
- * @export
- */
 export const GetServiceJobsSortFieldEnum = {
     JobDate: 'JOB_DATE',
     JobStatus: 'JOB_STATUS'
 } as const;
 export type GetServiceJobsSortFieldEnum = typeof GetServiceJobsSortFieldEnum[keyof typeof GetServiceJobsSortFieldEnum];
-/**
- * @export
- */
 export const GetServiceJobsSortOrderEnum = {
     Asc: 'ASC',
     Desc: 'DESC'

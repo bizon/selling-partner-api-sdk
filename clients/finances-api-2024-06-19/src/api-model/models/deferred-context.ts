@@ -16,20 +16,14 @@
 
 /**
  * Additional information related to Deferred transactions.
- * @export
- * @interface DeferredContext
  */
 export interface DeferredContext {
     /**
      * The deferral policy applied to the transaction.  **Examples:** `B2B` (invoiced orders), `DD7` (delivery date policy)
-     * @type {string}
-     * @memberof DeferredContext
      */
     'deferralReason'?: string;
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof DeferredContext
      */
     'maturityDate'?: string;
 }

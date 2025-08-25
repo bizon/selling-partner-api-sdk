@@ -16,26 +16,18 @@
 
 /**
  * The request for the `createNotification` operation.
- * @export
- * @interface CreateNotificationRequest
  */
 export interface CreateNotificationRequest {
     /**
      * The unique identifier of the notification template you used to onboard your application.
-     * @type {string}
-     * @memberof CreateNotificationRequest
      */
     'templateId': string;
     /**
      * The dynamic parameters required by the notification templated specified by `templateId`.
-     * @type {{ [key: string]: object; }}
-     * @memberof CreateNotificationRequest
      */
     'notificationParameters': { [key: string]: object; };
     /**
      * An encrypted marketplace identifier for the posted notification.
-     * @type {string}
-     * @memberof CreateNotificationRequest
      */
     'marketplaceId'?: string;
 }

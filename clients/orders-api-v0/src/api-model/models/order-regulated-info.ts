@@ -22,33 +22,17 @@ import type { RegulatedOrderVerificationStatus } from './regulated-order-verific
 
 /**
  * The order\'s regulated information along with its verification status.
- * @export
- * @interface OrderRegulatedInfo
  */
 export interface OrderRegulatedInfo {
     /**
      * An Amazon-defined order identifier, in 3-7-7 format.
-     * @type {string}
-     * @memberof OrderRegulatedInfo
      */
     'AmazonOrderId': string;
-    /**
-     * 
-     * @type {RegulatedInformation}
-     * @memberof OrderRegulatedInfo
-     */
     'RegulatedInformation': RegulatedInformation;
     /**
      * When true, the order requires attaching a dosage information label when shipped.
-     * @type {boolean}
-     * @memberof OrderRegulatedInfo
      */
     'RequiresDosageLabel': boolean;
-    /**
-     * 
-     * @type {RegulatedOrderVerificationStatus}
-     * @memberof OrderRegulatedInfo
-     */
     'RegulatedOrderVerificationStatus': RegulatedOrderVerificationStatus;
 }
 

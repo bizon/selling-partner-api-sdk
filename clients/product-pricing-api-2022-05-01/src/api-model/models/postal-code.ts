@@ -16,20 +16,14 @@
 
 /**
  * Postal code value with country code
- * @export
- * @interface PostalCode
  */
 export interface PostalCode {
     /**
      * Country code value
-     * @type {string}
-     * @memberof PostalCode
      */
     'countryCode'?: string;
     /**
      * Postal code value 
-     * @type {string}
-     * @memberof PostalCode
      */
     'value'?: string;
 }

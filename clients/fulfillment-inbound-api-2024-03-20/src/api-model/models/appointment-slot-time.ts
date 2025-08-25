@@ -16,20 +16,14 @@
 
 /**
  * An appointment slot time with start and end.
- * @export
- * @interface AppointmentSlotTime
  */
 export interface AppointmentSlotTime {
     /**
      * The end timestamp of the appointment in UTC.
-     * @type {string}
-     * @memberof AppointmentSlotTime
      */
     'endTime': string;
     /**
      * The start timestamp of the appointment in UTC.
-     * @type {string}
-     * @memberof AppointmentSlotTime
      */
     'startTime': string;
 }

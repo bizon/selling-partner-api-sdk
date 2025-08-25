@@ -16,8 +16,6 @@
 
 /**
  * Where the seller provided box contents information for a shipment.
- * @export
- * @enum {string}
  */
 
 export const BoxContentsSource = {

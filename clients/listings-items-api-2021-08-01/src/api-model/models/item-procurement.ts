@@ -19,15 +19,8 @@ import type { Money } from './money';
 
 /**
  * The vendor procurement information for the listings item.
- * @export
- * @interface ItemProcurement
  */
 export interface ItemProcurement {
-    /**
-     * 
-     * @type {Money}
-     * @memberof ItemProcurement
-     */
     'costPrice': Money;
 }
 

@@ -16,8 +16,6 @@
 
 /**
  * The shipment source channel type.
- * @export
- * @enum {string}
  */
 
 export const ChannelType = {

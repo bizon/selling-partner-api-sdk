@@ -31,104 +31,49 @@ import type { TransferRatePreview } from './transfer-rate-preview';
 
 /**
  * The current transaction status and related historical details.
- * @export
- * @interface Transaction
  */
 export interface Transaction {
     /**
      * The unique identifier provided by Amazon to the transaction 
-     * @type {string}
-     * @memberof Transaction
      */
     'transactionId': string;
-    /**
-     * 
-     * @type {TransactionType}
-     * @memberof Transaction
-     */
     'transactionType': TransactionType;
-    /**
-     * 
-     * @type {TransactionStatus}
-     * @memberof Transaction
-     */
     'transactionStatus': TransactionStatus;
     /**
      * The date when the transaction was initiated.
-     * @type {string}
-     * @memberof Transaction
      */
     'transactionRequestDate': string;
     /**
      * Expected completion date of a transaction, for existing active Payees (Trusted Beneficiaries) it will be 24 hours but for new destination bank accounts the value could go up to 5 days 
-     * @type {string}
-     * @memberof Transaction
      */
     'expectedCompletionDate'?: string;
     /**
      * Transaction completion date 
-     * @type {string}
-     * @memberof Transaction
      */
     'transactionActualCompletionDate'?: string;
     /**
      * The last update date on the transaction 
-     * @type {string}
-     * @memberof Transaction
      */
     'lastUpdateDate': string;
     /**
      * Amazon SW customer who requested the transaction 
-     * @type {string}
-     * @memberof Transaction
      */
     'requesterName'?: string;
     /**
      * The transaction initiation source. This value is either the Amazon portal or PISP name that the customer used to start the transaction.
-     * @type {string}
-     * @memberof Transaction
      */
     'transactionRequesterSource': string;
     /**
      * A description of the transaction that the requester provides when they initiate the transaction.
-     * @type {string}
-     * @memberof Transaction
      */
     'transactionDescription': string;
-    /**
-     * 
-     * @type {TransactionAccount}
-     * @memberof Transaction
-     */
     'transactionSourceAccount': TransactionAccount;
-    /**
-     * 
-     * @type {TransactionAccount}
-     * @memberof Transaction
-     */
     'transactionDestinationAccount': TransactionAccount;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof Transaction
-     */
     'transactionRequestAmount': Currency;
-    /**
-     * 
-     * @type {TransferRatePreview}
-     * @memberof Transaction
-     */
     'transferRateDetails': TransferRatePreview;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof Transaction
-     */
     'transactionFinalAmount'?: Currency;
     /**
      * Description in case the transaction fails before completion 
-     * @type {string}
-     * @memberof Transaction
      */
     'transactionFailureReason'?: string;
 }

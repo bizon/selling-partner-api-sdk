@@ -19,15 +19,8 @@ import type { AggregationTimePeriod } from './aggregation-time-period';
 
 /**
  * A container that holds all of the necessary properties to configure the aggregation of notifications.
- * @export
- * @interface AggregationSettings
  */
 export interface AggregationSettings {
-    /**
-     * 
-     * @type {AggregationTimePeriod}
-     * @memberof AggregationSettings
-     */
     'aggregationTimePeriod': AggregationTimePeriod;
 }
 

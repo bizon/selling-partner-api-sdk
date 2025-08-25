@@ -16,14 +16,10 @@
 
 /**
  * Information about the service job provider.
- * @export
- * @interface ServiceJobProvider
  */
 export interface ServiceJobProvider {
     /**
      * The identifier of the service job provider.
-     * @type {string}
-     * @memberof ServiceJobProvider
      */
     'serviceJobProviderId'?: string;
 }

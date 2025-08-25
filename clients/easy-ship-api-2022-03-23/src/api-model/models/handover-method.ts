@@ -16,8 +16,6 @@
 
 /**
  * Identifies the method by which a seller will hand a package over to Amazon Logistics.
- * @export
- * @enum {string}
  */
 
 export const HandoverMethod = {

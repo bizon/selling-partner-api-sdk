@@ -14,16 +14,9 @@
 
 
 
-/**
- * 
- * @export
- * @interface ItemOffersRequestParamsAllOf
- */
 export interface ItemOffersRequestParamsAllOf {
     /**
      * The Amazon Standard Identification Number (ASIN) of the item. This is the same Asin passed as a request parameter.
-     * @type {string}
-     * @memberof ItemOffersRequestParamsAllOf
      */
     'Asin'?: string;
 }

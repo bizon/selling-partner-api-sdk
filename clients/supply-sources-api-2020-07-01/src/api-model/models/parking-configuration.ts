@@ -22,26 +22,12 @@ import type { ParkingSpotIdentificationType } from './parking-spot-identificatio
 
 /**
  * The parking configuration.
- * @export
- * @interface ParkingConfiguration
  */
 export interface ParkingConfiguration {
-    /**
-     * 
-     * @type {ParkingCostType}
-     * @memberof ParkingConfiguration
-     */
     'parkingCostType'?: ParkingCostType;
-    /**
-     * 
-     * @type {ParkingSpotIdentificationType}
-     * @memberof ParkingConfiguration
-     */
     'parkingSpotIdentificationType'?: ParkingSpotIdentificationType;
     /**
      * An unsigned integer that can be only positive or zero.
-     * @type {number}
-     * @memberof ParkingConfiguration
      */
     'numberOfParkingSpots'?: number;
 }

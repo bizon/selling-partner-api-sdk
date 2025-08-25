@@ -16,14 +16,10 @@
 
 /**
  * The response schema.
- * @export
- * @interface CreateReportResponse
  */
 export interface CreateReportResponse {
     /**
      * The identifier for the report. This identifier is unique only in combination with a seller ID.
-     * @type {string}
-     * @memberof CreateReportResponse
      */
     'reportId': string;
 }

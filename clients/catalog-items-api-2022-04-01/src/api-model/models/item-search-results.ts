@@ -25,32 +25,16 @@ import type { Refinements } from './refinements';
 
 /**
  * Items in the Amazon catalog and search-related metadata.
- * @export
- * @interface ItemSearchResults
  */
 export interface ItemSearchResults {
     /**
      * For searches that are based on `identifiers`, `numberOfResults` is the total number of Amazon catalog items found. For searches that are based on `keywords`, `numberOfResults` is the estimated total number of Amazon catalog items that are matched by the search query. Only results up to the page count limit are returned per request regardless of the number found.  **Note:** The maximum number of items (ASINs) that can be returned and paged through is 1,000.
-     * @type {number}
-     * @memberof ItemSearchResults
      */
     'numberOfResults': number;
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof ItemSearchResults
-     */
     'pagination': Pagination;
-    /**
-     * 
-     * @type {Refinements}
-     * @memberof ItemSearchResults
-     */
     'refinements': Refinements;
     /**
      * A list of items from the Amazon catalog.
-     * @type {Array<Item>}
-     * @memberof ItemSearchResults
      */
     'items': Array<Item>;
 }

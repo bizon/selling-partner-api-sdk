@@ -19,21 +19,12 @@ import type { OperationalConfiguration } from './operational-configuration';
 
 /**
  * The services capability of a supply source.
- * @export
- * @interface ServicesCapability
  */
 export interface ServicesCapability {
     /**
      * When true, `SupplySource` supports the Service capability.
-     * @type {boolean}
-     * @memberof ServicesCapability
      */
     'isSupported'?: boolean;
-    /**
-     * 
-     * @type {OperationalConfiguration}
-     * @memberof ServicesCapability
-     */
     'operationalConfiguration'?: OperationalConfiguration;
 }
 

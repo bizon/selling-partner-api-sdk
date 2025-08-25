@@ -31,45 +31,19 @@ import type { Service } from './service';
 
 /**
  * The payload for the OneClickShipment API.
- * @export
- * @interface OneClickShipmentResult
  */
 export interface OneClickShipmentResult {
     /**
      * The unique shipment identifier provided by a shipping service.
-     * @type {string}
-     * @memberof OneClickShipmentResult
      */
     'shipmentId': string;
     /**
      * A list of post-purchase details about a package that will be shipped using a shipping service.
-     * @type {Array<PackageDocumentDetail>}
-     * @memberof OneClickShipmentResult
      */
     'packageDocumentDetails': Array<PackageDocumentDetail>;
-    /**
-     * 
-     * @type {Promise}
-     * @memberof OneClickShipmentResult
-     */
     'promise': Promise;
-    /**
-     * 
-     * @type {Carrier}
-     * @memberof OneClickShipmentResult
-     */
     'carrier': Carrier;
-    /**
-     * 
-     * @type {Service}
-     * @memberof OneClickShipmentResult
-     */
     'service': Service;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof OneClickShipmentResult
-     */
     'totalCharge': Currency;
 }
 

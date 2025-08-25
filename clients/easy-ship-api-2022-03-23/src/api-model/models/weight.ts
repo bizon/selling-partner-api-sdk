@@ -19,21 +19,12 @@ import type { UnitOfWeight } from './unit-of-weight';
 
 /**
  * The weight of the scheduled package
- * @export
- * @interface Weight
  */
 export interface Weight {
     /**
      * The weight of the package.
-     * @type {number}
-     * @memberof Weight
      */
     'value'?: number;
-    /**
-     * 
-     * @type {UnitOfWeight}
-     * @memberof Weight
-     */
     'unit'?: UnitOfWeight;
 }
 

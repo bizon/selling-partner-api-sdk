@@ -16,32 +16,22 @@
 
 /**
  * Additional information related to Payments related transactions.
- * @export
- * @interface PaymentsContext
  */
 export interface PaymentsContext {
     /**
      * Type of payment made.
-     * @type {string}
-     * @memberof PaymentsContext
      */
     'paymentType'?: string;
     /**
      * Method of payment made.
-     * @type {string}
-     * @memberof PaymentsContext
      */
     'paymentMethod'?: string;
     /**
      * Reference number of payment made.
-     * @type {string}
-     * @memberof PaymentsContext
      */
     'paymentReference'?: string;
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof PaymentsContext
      */
     'paymentDate'?: string;
 }

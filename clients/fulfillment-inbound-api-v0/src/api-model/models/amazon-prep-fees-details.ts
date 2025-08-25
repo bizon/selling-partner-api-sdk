@@ -22,21 +22,9 @@ import type { PrepInstruction } from './prep-instruction';
 
 /**
  * The fees for Amazon to prep goods for shipment.
- * @export
- * @interface AmazonPrepFeesDetails
  */
 export interface AmazonPrepFeesDetails {
-    /**
-     * 
-     * @type {PrepInstruction}
-     * @memberof AmazonPrepFeesDetails
-     */
     'PrepInstruction'?: PrepInstruction;
-    /**
-     * 
-     * @type {Amount}
-     * @memberof AmazonPrepFeesDetails
-     */
     'FeePerUnit'?: Amount;
 }
 

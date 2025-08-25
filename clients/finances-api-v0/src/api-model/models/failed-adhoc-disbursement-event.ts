@@ -19,50 +19,31 @@ import type { Currency } from './currency';
 
 /**
  * Failed ad hoc disbursement event list.
- * @export
- * @interface FailedAdhocDisbursementEvent
  */
 export interface FailedAdhocDisbursementEvent {
     /**
      * The type of fund transfer.   Example \"Refund\"
-     * @type {string}
-     * @memberof FailedAdhocDisbursementEvent
      */
     'FundsTransfersType'?: string;
     /**
      * The transfer identifier.
-     * @type {string}
-     * @memberof FailedAdhocDisbursementEvent
      */
     'TransferId'?: string;
     /**
      * The disbursement identifier.
-     * @type {string}
-     * @memberof FailedAdhocDisbursementEvent
      */
     'DisbursementId'?: string;
     /**
      * The type of payment for disbursement.   Example `CREDIT_CARD`
-     * @type {string}
-     * @memberof FailedAdhocDisbursementEvent
      */
     'PaymentDisbursementType'?: string;
     /**
      * The status of the failed `AdhocDisbursement`.   Example `HARD_DECLINED`
-     * @type {string}
-     * @memberof FailedAdhocDisbursementEvent
      */
     'Status'?: string;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof FailedAdhocDisbursementEvent
-     */
     'TransferAmount'?: Currency;
     /**
      * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @type {string}
-     * @memberof FailedAdhocDisbursementEvent
      */
     'PostedDate'?: string;
 }

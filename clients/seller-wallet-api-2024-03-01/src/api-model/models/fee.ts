@@ -22,33 +22,17 @@ import type { FeeType } from './fee-type';
 
 /**
  * If the fees is in baseAmount (sourceAccount) currency, effectiveRate =  (baseAmount - sum(fees.feeAmount.currencyAmount)) * baseRate) / baseAmount. If the fees is in transferAmount (destinationAccount) currency, effectiveRate =  (( baseAmount * baseRate ) -  sum(fees.feeAmount.currencyAmount )) / baseAmount 
- * @export
- * @interface Fee
  */
 export interface Fee {
     /**
      * Unique identifier assigned to the Fee. 
-     * @type {string}
-     * @memberof Fee
      */
     'feeId': string;
-    /**
-     * 
-     * @type {FeeType}
-     * @memberof Fee
-     */
     'feeType': FeeType;
     /**
      * A decimal number such as amount or FX rate.
-     * @type {number}
-     * @memberof Fee
      */
     'feeRateValue': number;
-    /**
-     * 
-     * @type {Currency}
-     * @memberof Fee
-     */
     'feeAmount': Currency;
 }
 

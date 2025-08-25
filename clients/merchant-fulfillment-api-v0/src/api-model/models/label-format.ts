@@ -16,8 +16,6 @@
 
 /**
  * The label format.
- * @export
- * @enum {string}
  */
 
 export const LabelFormat = {

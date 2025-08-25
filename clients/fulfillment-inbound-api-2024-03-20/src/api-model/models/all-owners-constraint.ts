@@ -16,8 +16,6 @@
 
 /**
  * A constraint that applies to all owners. If no constraint is specified, defer to any individual owner constraints.
- * @export
- * @enum {string}
  */
 
 export const AllOwnersConstraint = {

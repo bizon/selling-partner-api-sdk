@@ -25,50 +25,28 @@ import type { MskuQuantity } from './msku-quantity';
 
 /**
  * The `createMarketplaceItemLabels` request.
- * @export
- * @interface CreateMarketplaceItemLabelsRequest
  */
 export interface CreateMarketplaceItemLabelsRequest {
     /**
      * The height of the item label.
-     * @type {number}
-     * @memberof CreateMarketplaceItemLabelsRequest
      */
     'height'?: number;
-    /**
-     * 
-     * @type {LabelPrintType}
-     * @memberof CreateMarketplaceItemLabelsRequest
-     */
     'labelType': LabelPrintType;
     /**
      * The locale code constructed from ISO 639 language code and ISO 3166-1 alpha-2 standard of country codes separated by an underscore character.
-     * @type {string}
-     * @memberof CreateMarketplaceItemLabelsRequest
      */
     'localeCode'?: string;
     /**
      * The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof CreateMarketplaceItemLabelsRequest
      */
     'marketplaceId': string;
     /**
      * Represents the quantity of an MSKU to print item labels for.
-     * @type {Array<MskuQuantity>}
-     * @memberof CreateMarketplaceItemLabelsRequest
      */
     'mskuQuantities': Array<MskuQuantity>;
-    /**
-     * 
-     * @type {ItemLabelPageType}
-     * @memberof CreateMarketplaceItemLabelsRequest
-     */
     'pageType'?: ItemLabelPageType;
     /**
      * The width of the item label.
-     * @type {number}
-     * @memberof CreateMarketplaceItemLabelsRequest
      */
     'width'?: number;
 }

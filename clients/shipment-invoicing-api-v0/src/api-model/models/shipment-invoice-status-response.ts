@@ -19,15 +19,8 @@ import type { ShipmentInvoiceStatusInfo } from './shipment-invoice-status-info';
 
 /**
  * The shipment invoice status response.
- * @export
- * @interface ShipmentInvoiceStatusResponse
  */
 export interface ShipmentInvoiceStatusResponse {
-    /**
-     * 
-     * @type {ShipmentInvoiceStatusInfo}
-     * @memberof ShipmentInvoiceStatusResponse
-     */
     'Shipments'?: ShipmentInvoiceStatusInfo;
 }
 

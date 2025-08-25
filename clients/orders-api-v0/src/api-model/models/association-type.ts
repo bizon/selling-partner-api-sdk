@@ -16,8 +16,6 @@
 
 /**
  * The type of association an item has with an order item.
- * @export
- * @enum {string}
  */
 
 export const AssociationType = {

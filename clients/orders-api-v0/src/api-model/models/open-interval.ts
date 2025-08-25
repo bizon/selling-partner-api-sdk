@@ -19,21 +19,9 @@ import type { OpenTimeInterval } from './open-time-interval';
 
 /**
  * The time interval for which the business is open.
- * @export
- * @interface OpenInterval
  */
 export interface OpenInterval {
-    /**
-     * 
-     * @type {OpenTimeInterval}
-     * @memberof OpenInterval
-     */
     'StartTime'?: OpenTimeInterval;
-    /**
-     * 
-     * @type {OpenTimeInterval}
-     * @memberof OpenInterval
-     */
     'EndTime'?: OpenTimeInterval;
 }
 

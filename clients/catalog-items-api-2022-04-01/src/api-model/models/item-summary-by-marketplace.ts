@@ -22,128 +22,83 @@ import type { ItemContributor } from './item-contributor';
 
 /**
  * Information about an Amazon catalog item for the indicated `marketplaceId`.
- * @export
- * @interface ItemSummaryByMarketplace
  */
 export interface ItemSummaryByMarketplace {
     /**
      * Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'marketplaceId': string;
     /**
      * When `true`, the Amazon catalog item is intended for an adult audience or is sexual in nature.
-     * @type {boolean}
-     * @memberof ItemSummaryByMarketplace
      */
     'adultProduct'?: boolean;
     /**
      * When `true`, the Amazon catalog item is autographed.
-     * @type {boolean}
-     * @memberof ItemSummaryByMarketplace
      */
     'autographed'?: boolean;
     /**
      * Name of the brand that is associated with the Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'brand'?: string;
-    /**
-     * 
-     * @type {ItemBrowseClassification}
-     * @memberof ItemSummaryByMarketplace
-     */
     'browseClassification'?: ItemBrowseClassification;
     /**
      * The color that is associated with the Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'color'?: string;
     /**
      * Individual contributors to the creation of the item, such as the authors or actors.
-     * @type {Array<ItemContributor>}
-     * @memberof ItemSummaryByMarketplace
      */
     'contributors'?: Array<ItemContributor>;
     /**
      * Classification type that is associated with the Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'itemClassification'?: ItemSummaryByMarketplaceItemClassificationEnum;
     /**
      * The name that is associated with the Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'itemName'?: string;
     /**
      * The name of the manufacturer that is associated with the Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'manufacturer'?: string;
     /**
      * When true, the item is classified as memorabilia.
-     * @type {boolean}
-     * @memberof ItemSummaryByMarketplace
      */
     'memorabilia'?: boolean;
     /**
      * The model number that is associated with the Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'modelNumber'?: string;
     /**
      * The quantity of the Amazon catalog item within one package.
-     * @type {number}
-     * @memberof ItemSummaryByMarketplace
      */
     'packageQuantity'?: number;
     /**
      * The part number that is associated with the Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'partNumber'?: string;
     /**
      * The earliest date on which the Amazon catalog item can be shipped to customers.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'releaseDate'?: string;
     /**
      * The name of the size of the Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'size'?: string;
     /**
      * The name of the style that is associated with the Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'style'?: string;
     /**
      * When true, the Amazon catalog item is eligible for trade-in.
-     * @type {boolean}
-     * @memberof ItemSummaryByMarketplace
      */
     'tradeInEligible'?: boolean;
     /**
      * The identifier of the website display group that is associated with the Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'websiteDisplayGroup'?: string;
     /**
      * The display name of the website display group that is associated with the Amazon catalog item.
-     * @type {string}
-     * @memberof ItemSummaryByMarketplace
      */
     'websiteDisplayGroupName'?: string;
 }

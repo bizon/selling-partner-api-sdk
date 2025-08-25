@@ -29,7 +29,6 @@ import type { ProductTypeDefinition } from '../models';
 import type { ProductTypeList } from '../models';
 /**
  * ProductTypeDefinitionsApi - axios parameter creator
- * @export
  */
 export const ProductTypeDefinitionsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -159,7 +158,6 @@ export const ProductTypeDefinitionsApiAxiosParamCreator = function (configuratio
 
 /**
  * ProductTypeDefinitionsApi - functional programming interface
- * @export
  */
 export const ProductTypeDefinitionsApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ProductTypeDefinitionsApiAxiosParamCreator(configuration)
@@ -203,7 +201,6 @@ export const ProductTypeDefinitionsApiFp = function(configuration?: Configuratio
 
 /**
  * ProductTypeDefinitionsApi - factory interface
- * @export
  */
 export const ProductTypeDefinitionsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = ProductTypeDefinitionsApiFp(configuration)
@@ -231,107 +228,76 @@ export const ProductTypeDefinitionsApiFactory = function (configuration?: Config
 
 /**
  * Request parameters for getDefinitionsProductType operation in ProductTypeDefinitionsApi.
- * @export
- * @interface ProductTypeDefinitionsApiGetDefinitionsProductTypeRequest
  */
 export interface ProductTypeDefinitionsApiGetDefinitionsProductTypeRequest {
     /**
      * The Amazon product type name.
-     * @type {string}
-     * @memberof ProductTypeDefinitionsApiGetDefinitionsProductType
      */
     readonly productType: string
 
     /**
      * A comma-delimited list of Amazon marketplace identifiers for the request. Note: This parameter is limited to one marketplaceId at this time.
-     * @type {Array<string>}
-     * @memberof ProductTypeDefinitionsApiGetDefinitionsProductType
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner.
-     * @type {string}
-     * @memberof ProductTypeDefinitionsApiGetDefinitionsProductType
      */
     readonly sellerId?: string
 
     /**
      * The version of the Amazon product type to retrieve. Defaults to \&quot;LATEST\&quot;,. Prerelease versions of product type definitions may be retrieved with \&quot;RELEASE_CANDIDATE\&quot;. If no prerelease version is currently available, the \&quot;LATEST\&quot; live version will be provided.
-     * @type {string}
-     * @memberof ProductTypeDefinitionsApiGetDefinitionsProductType
      */
     readonly productTypeVersion?: string
 
     /**
      * The name of the requirements set to retrieve requirements for.
-     * @type {'LISTING' | 'LISTING_PRODUCT_ONLY' | 'LISTING_OFFER_ONLY'}
-     * @memberof ProductTypeDefinitionsApiGetDefinitionsProductType
      */
     readonly requirements?: GetDefinitionsProductTypeRequirementsEnum
 
     /**
      * Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates).
-     * @type {'ENFORCED' | 'NOT_ENFORCED'}
-     * @memberof ProductTypeDefinitionsApiGetDefinitionsProductType
      */
     readonly requirementsEnforced?: GetDefinitionsProductTypeRequirementsEnforcedEnum
 
     /**
      * Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request.
-     * @type {'DEFAULT' | 'ar' | 'ar_AE' | 'de' | 'de_DE' | 'en' | 'en_AE' | 'en_AU' | 'en_CA' | 'en_GB' | 'en_IN' | 'en_SG' | 'en_US' | 'es' | 'es_ES' | 'es_MX' | 'es_US' | 'fr' | 'fr_CA' | 'fr_FR' | 'it' | 'it_IT' | 'ja' | 'ja_JP' | 'nl' | 'nl_NL' | 'pl' | 'pl_PL' | 'pt' | 'pt_BR' | 'pt_PT' | 'sv' | 'sv_SE' | 'tr' | 'tr_TR' | 'zh' | 'zh_CN' | 'zh_TW'}
-     * @memberof ProductTypeDefinitionsApiGetDefinitionsProductType
      */
     readonly locale?: GetDefinitionsProductTypeLocaleEnum
 }
 
 /**
  * Request parameters for searchDefinitionsProductTypes operation in ProductTypeDefinitionsApi.
- * @export
- * @interface ProductTypeDefinitionsApiSearchDefinitionsProductTypesRequest
  */
 export interface ProductTypeDefinitionsApiSearchDefinitionsProductTypesRequest {
     /**
      * A comma-delimited list of Amazon marketplace identifiers for the request.
-     * @type {Array<string>}
-     * @memberof ProductTypeDefinitionsApiSearchDefinitionsProductTypes
      */
     readonly marketplaceIds: Array<string>
 
     /**
      * A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;.
-     * @type {Array<string>}
-     * @memberof ProductTypeDefinitionsApiSearchDefinitionsProductTypes
      */
     readonly keywords?: Array<string>
 
     /**
      * The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;.
-     * @type {string}
-     * @memberof ProductTypeDefinitionsApiSearchDefinitionsProductTypes
      */
     readonly itemName?: string
 
     /**
      * The locale for the display names in the response. Defaults to the primary locale of the marketplace.
-     * @type {string}
-     * @memberof ProductTypeDefinitionsApiSearchDefinitionsProductTypes
      */
     readonly locale?: string
 
     /**
      * The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace.
-     * @type {string}
-     * @memberof ProductTypeDefinitionsApiSearchDefinitionsProductTypes
      */
     readonly searchLocale?: string
 }
 
 /**
  * ProductTypeDefinitionsApi - object-oriented interface
- * @export
- * @class ProductTypeDefinitionsApi
- * @extends {BaseAPI}
  */
 export class ProductTypeDefinitionsApi extends BaseAPI {
     /**
@@ -339,7 +305,6 @@ export class ProductTypeDefinitionsApi extends BaseAPI {
      * @param {ProductTypeDefinitionsApiGetDefinitionsProductTypeRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ProductTypeDefinitionsApi
      */
     public getDefinitionsProductType(requestParameters: ProductTypeDefinitionsApiGetDefinitionsProductTypeRequest, options?: RawAxiosRequestConfig) {
         return ProductTypeDefinitionsApiFp(this.configuration).getDefinitionsProductType(requestParameters.productType, requestParameters.marketplaceIds, requestParameters.sellerId, requestParameters.productTypeVersion, requestParameters.requirements, requestParameters.requirementsEnforced, requestParameters.locale, options).then((request) => request(this.axios, this.basePath));
@@ -350,33 +315,23 @@ export class ProductTypeDefinitionsApi extends BaseAPI {
      * @param {ProductTypeDefinitionsApiSearchDefinitionsProductTypesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ProductTypeDefinitionsApi
      */
     public searchDefinitionsProductTypes(requestParameters: ProductTypeDefinitionsApiSearchDefinitionsProductTypesRequest, options?: RawAxiosRequestConfig) {
         return ProductTypeDefinitionsApiFp(this.configuration).searchDefinitionsProductTypes(requestParameters.marketplaceIds, requestParameters.keywords, requestParameters.itemName, requestParameters.locale, requestParameters.searchLocale, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetDefinitionsProductTypeRequirementsEnum = {
     Listing: 'LISTING',
     ListingProductOnly: 'LISTING_PRODUCT_ONLY',
     ListingOfferOnly: 'LISTING_OFFER_ONLY'
 } as const;
 export type GetDefinitionsProductTypeRequirementsEnum = typeof GetDefinitionsProductTypeRequirementsEnum[keyof typeof GetDefinitionsProductTypeRequirementsEnum];
-/**
- * @export
- */
 export const GetDefinitionsProductTypeRequirementsEnforcedEnum = {
     Enforced: 'ENFORCED',
     NotEnforced: 'NOT_ENFORCED'
 } as const;
 export type GetDefinitionsProductTypeRequirementsEnforcedEnum = typeof GetDefinitionsProductTypeRequirementsEnforcedEnum[keyof typeof GetDefinitionsProductTypeRequirementsEnforcedEnum];
-/**
- * @export
- */
 export const GetDefinitionsProductTypeLocaleEnum = {
     Default: 'DEFAULT',
     Ar: 'ar',

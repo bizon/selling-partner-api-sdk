@@ -17,22 +17,10 @@
 // @ts-ignore
 import type { LinkObject } from './link-object';
 
-/**
- * 
- * @export
- * @interface GetSolicitationActionsForOrderResponseLinks
- */
 export interface GetSolicitationActionsForOrderResponseLinks {
-    /**
-     * 
-     * @type {LinkObject}
-     * @memberof GetSolicitationActionsForOrderResponseLinks
-     */
     'self': LinkObject;
     /**
      * Eligible actions for the specified amazonOrderId.
-     * @type {Array<LinkObject>}
-     * @memberof GetSolicitationActionsForOrderResponseLinks
      */
     'actions': Array<LinkObject>;
 }

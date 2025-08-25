@@ -16,20 +16,14 @@
 
 /**
  * Product instance attribute that is not described at the SKU level in the catalog.
- * @export
- * @interface ProductAttribute
  */
 export interface ProductAttribute {
     /**
      * Product attribute name.
-     * @type {string}
-     * @memberof ProductAttribute
      */
     'name'?: string;
     /**
      * Product attribute value.
-     * @type {string}
-     * @memberof ProductAttribute
      */
     'value'?: string;
 }

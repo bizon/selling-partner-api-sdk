@@ -27,7 +27,6 @@ import type { ErrorList } from '../models';
 import type { ListTransactionsResponse } from '../models';
 /**
  * FinancesApi - axios parameter creator
- * @export
  */
 export const FinancesApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -96,7 +95,6 @@ export const FinancesApiAxiosParamCreator = function (configuration?: Configurat
 
 /**
  * FinancesApi - functional programming interface
- * @export
  */
 export const FinancesApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = FinancesApiAxiosParamCreator(configuration)
@@ -122,7 +120,6 @@ export const FinancesApiFp = function(configuration?: Configuration) {
 
 /**
  * FinancesApi - factory interface
- * @export
  */
 export const FinancesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = FinancesApiFp(configuration)
@@ -141,51 +138,36 @@ export const FinancesApiFactory = function (configuration?: Configuration, baseP
 
 /**
  * Request parameters for listTransactions operation in FinancesApi.
- * @export
- * @interface FinancesApiListTransactionsRequest
  */
 export interface FinancesApiListTransactionsRequest {
     /**
      * The response includes financial events posted on or after this date. This date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The date-time must be more than two minutes before the time of the request.
-     * @type {string}
-     * @memberof FinancesApiListTransactions
      */
     readonly postedAfter: string
 
     /**
      * A date used for selecting transactions posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no transactions are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes.
-     * @type {string}
-     * @memberof FinancesApiListTransactions
      */
     readonly postedBefore?: string
 
     /**
      * The identifier of the marketplace from which you want to retrieve transactions. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @type {string}
-     * @memberof FinancesApiListTransactions
      */
     readonly marketplaceId?: string
 
     /**
      * The status of the transaction.  **Possible values:**  * &#x60;DEFERRED&#x60;: the transaction is currently deferred. * &#x60;RELEASED&#x60;: the transaction is currently released. * &#x60;DEFERRED_RELEASED&#x60;: the transaction was deferred in the past, but is now released. The status of a deferred transaction is updated to &#x60;DEFERRED_RELEASED&#x60; when the transaction is released.
-     * @type {string}
-     * @memberof FinancesApiListTransactions
      */
     readonly transactionStatus?: string
 
     /**
      * A string token returned in the response of your previous request.
-     * @type {string}
-     * @memberof FinancesApiListTransactions
      */
     readonly nextToken?: string
 }
 
 /**
  * FinancesApi - object-oriented interface
- * @export
- * @class FinancesApi
- * @extends {BaseAPI}
  */
 export class FinancesApi extends BaseAPI {
     /**
@@ -193,7 +175,6 @@ export class FinancesApi extends BaseAPI {
      * @param {FinancesApiListTransactionsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof FinancesApi
      */
     public listTransactions(requestParameters: FinancesApiListTransactionsRequest, options?: RawAxiosRequestConfig) {
         return FinancesApiFp(this.configuration).listTransactions(requestParameters.postedAfter, requestParameters.postedBefore, requestParameters.marketplaceId, requestParameters.transactionStatus, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));

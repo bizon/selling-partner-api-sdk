@@ -19,21 +19,12 @@ import type { SegmentDetails } from './segment-details';
 
 /**
  * Describes the segment in which the offer is featured.
- * @export
- * @interface FeaturedOfferSegment
  */
 export interface FeaturedOfferSegment {
     /**
      * The customer membership type that makes up this segment
-     * @type {string}
-     * @memberof FeaturedOfferSegment
      */
     'customerMembership': FeaturedOfferSegmentCustomerMembershipEnum;
-    /**
-     * 
-     * @type {SegmentDetails}
-     * @memberof FeaturedOfferSegment
-     */
     'segmentDetails': SegmentDetails;
 }
 

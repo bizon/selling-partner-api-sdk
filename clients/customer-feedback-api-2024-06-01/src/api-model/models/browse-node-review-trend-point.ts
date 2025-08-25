@@ -22,21 +22,9 @@ import type { DateRange } from './date-range';
 
 /**
  * The browse node\'s review metrics for a certain month.
- * @export
- * @interface BrowseNodeReviewTrendPoint
  */
 export interface BrowseNodeReviewTrendPoint {
-    /**
-     * 
-     * @type {DateRange}
-     * @memberof BrowseNodeReviewTrendPoint
-     */
     'dateRange': DateRange;
-    /**
-     * 
-     * @type {BrowseNodeReviewTrendMetrics}
-     * @memberof BrowseNodeReviewTrendPoint
-     */
     'browseNodeMetrics': BrowseNodeReviewTrendMetrics;
 }
 

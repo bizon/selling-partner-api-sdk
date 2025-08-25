@@ -25,32 +25,13 @@ import type { SolicitationsAction } from './solicitations-action';
 
 /**
  * Describes a solicitation action that can be taken for an order. Provides a JSON Hypertext Application Language (HAL) link to the JSON schema document that describes the expected input.
- * @export
- * @interface GetSolicitationActionResponse
  */
 export interface GetSolicitationActionResponse {
-    /**
-     * 
-     * @type {GetSolicitationActionResponseLinks}
-     * @memberof GetSolicitationActionResponse
-     */
     '_links'?: GetSolicitationActionResponseLinks;
-    /**
-     * 
-     * @type {GetSolicitationActionResponseEmbedded}
-     * @memberof GetSolicitationActionResponse
-     */
     '_embedded'?: GetSolicitationActionResponseEmbedded;
-    /**
-     * 
-     * @type {SolicitationsAction}
-     * @memberof GetSolicitationActionResponse
-     */
     'payload'?: SolicitationsAction;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetSolicitationActionResponse
      */
     'errors'?: Array<Error>;
 }

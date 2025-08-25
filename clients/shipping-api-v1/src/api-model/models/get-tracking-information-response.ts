@@ -19,20 +19,11 @@ import type { TrackingInformation } from './tracking-information';
 
 /**
  * The response schema for the getTrackingInformation operation.
- * @export
- * @interface GetTrackingInformationResponse
  */
 export interface GetTrackingInformationResponse {
-    /**
-     * 
-     * @type {TrackingInformation}
-     * @memberof GetTrackingInformationResponse
-     */
     'payload'?: TrackingInformation;
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof GetTrackingInformationResponse
      */
     'errors'?: Array<Error>;
 }

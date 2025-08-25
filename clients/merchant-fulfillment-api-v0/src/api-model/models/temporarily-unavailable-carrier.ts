@@ -16,14 +16,10 @@
 
 /**
  * A carrier who is temporarily unavailable, most likely due to a service outage experienced by the carrier.
- * @export
- * @interface TemporarilyUnavailableCarrier
  */
 export interface TemporarilyUnavailableCarrier {
     /**
      * The name of the carrier.
-     * @type {string}
-     * @memberof TemporarilyUnavailableCarrier
      */
     'CarrierName': string;
 }

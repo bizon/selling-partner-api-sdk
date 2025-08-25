@@ -16,32 +16,22 @@
 
 /**
  * A problem with additional properties persisted to an operation.
- * @export
- * @interface OperationProblem
  */
 export interface OperationProblem {
     /**
      * An error code that identifies the type of error that occurred.
-     * @type {string}
-     * @memberof OperationProblem
      */
     'code': string;
     /**
      * Additional details that can help the caller understand or fix the issue.
-     * @type {string}
-     * @memberof OperationProblem
      */
     'details'?: string;
     /**
      * A message that describes the error condition.
-     * @type {string}
-     * @memberof OperationProblem
      */
     'message': string;
     /**
      * The severity of the problem. Possible values: `WARNING`, `ERROR`.
-     * @type {string}
-     * @memberof OperationProblem
      */
     'severity': string;
 }

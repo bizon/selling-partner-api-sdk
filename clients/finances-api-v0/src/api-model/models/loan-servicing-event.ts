@@ -19,20 +19,11 @@ import type { Currency } from './currency';
 
 /**
  * A loan advance, loan payment, or loan refund.
- * @export
- * @interface LoanServicingEvent
  */
 export interface LoanServicingEvent {
-    /**
-     * 
-     * @type {Currency}
-     * @memberof LoanServicingEvent
-     */
     'LoanAmount'?: Currency;
     /**
      * The type of event.  Possible values:  * LoanAdvance  * LoanPayment  * LoanRefund
-     * @type {string}
-     * @memberof LoanServicingEvent
      */
     'SourceBusinessEventType'?: string;
 }

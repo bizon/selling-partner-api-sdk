@@ -19,32 +19,22 @@ import type { ValueAddedService } from './value-added-service';
 
 /**
  * The value-added services available for purchase with a shipping service offering.
- * @export
- * @interface AvailableValueAddedServiceGroup
  */
 export interface AvailableValueAddedServiceGroup {
     /**
      * The type of the value-added service group.
-     * @type {string}
-     * @memberof AvailableValueAddedServiceGroup
      */
     'groupId': string;
     /**
      * The name of the value-added service group.
-     * @type {string}
-     * @memberof AvailableValueAddedServiceGroup
      */
     'groupDescription': string;
     /**
      * When true, one or more of the value-added services listed must be specified.
-     * @type {boolean}
-     * @memberof AvailableValueAddedServiceGroup
      */
     'isRequired': boolean;
     /**
      * A list of optional value-added services available for purchase with a shipping service offering.
-     * @type {Array<ValueAddedService>}
-     * @memberof AvailableValueAddedServiceGroup
      */
     'valueAddedServices'?: Array<ValueAddedService>;
 }

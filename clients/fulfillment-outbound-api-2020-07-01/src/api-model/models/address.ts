@@ -16,68 +16,46 @@
 
 /**
  * A physical address.
- * @export
- * @interface Address
  */
 export interface Address {
     /**
      * The name of the person, business or institution at the address.
-     * @type {string}
-     * @memberof Address
      */
     'name': string;
     /**
      * The first line of the address.
-     * @type {string}
-     * @memberof Address
      */
     'addressLine1': string;
     /**
      * Additional address information, if required.
-     * @type {string}
-     * @memberof Address
      */
     'addressLine2'?: string;
     /**
      * Additional address information, if required.
-     * @type {string}
-     * @memberof Address
      */
     'addressLine3'?: string;
     /**
      * The city where the person, business, or institution is located. This property is required in all countries except Japan. It should not be used in Japan.
-     * @type {string}
-     * @memberof Address
      */
     'city'?: string;
     /**
      * The district or county where the person, business, or institution is located.
-     * @type {string}
-     * @memberof Address
      */
     'districtOrCounty'?: string;
     /**
      * The state or region where the person, business or institution is located.
-     * @type {string}
-     * @memberof Address
      */
     'stateOrRegion': string;
     /**
      * The postal code of the address.
-     * @type {string}
-     * @memberof Address
      */
     'postalCode': string;
     /**
      * The two digit country code. In ISO 3166-1 alpha-2 format.
-     * @type {string}
-     * @memberof Address
      */
     'countryCode': string;
     /**
      * The phone number of the person, business, or institution located at the address.
-     * @type {string}
-     * @memberof Address
      */
     'phone'?: string;
 }

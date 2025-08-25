@@ -28,45 +28,13 @@ import type { TextComponent } from './text-component';
 
 /**
  * A standard image with several paragraphs and a bulleted list.
- * @export
- * @interface StandardSingleImageHighlightsModule
  */
 export interface StandardSingleImageHighlightsModule {
-    /**
-     * 
-     * @type {ImageComponent}
-     * @memberof StandardSingleImageHighlightsModule
-     */
     'image'?: ImageComponent;
-    /**
-     * 
-     * @type {TextComponent}
-     * @memberof StandardSingleImageHighlightsModule
-     */
     'headline'?: TextComponent;
-    /**
-     * 
-     * @type {StandardTextBlock}
-     * @memberof StandardSingleImageHighlightsModule
-     */
     'textBlock1'?: StandardTextBlock;
-    /**
-     * 
-     * @type {StandardTextBlock}
-     * @memberof StandardSingleImageHighlightsModule
-     */
     'textBlock2'?: StandardTextBlock;
-    /**
-     * 
-     * @type {StandardTextBlock}
-     * @memberof StandardSingleImageHighlightsModule
-     */
     'textBlock3'?: StandardTextBlock;
-    /**
-     * 
-     * @type {StandardHeaderTextListBlock}
-     * @memberof StandardSingleImageHighlightsModule
-     */
     'bulletedListBlock'?: StandardHeaderTextListBlock;
 }
 

@@ -16,44 +16,30 @@
 
 /**
  * Detailed information about a report schedule.
- * @export
- * @interface ReportSchedule
  */
 export interface ReportSchedule {
     /**
      * The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
-     * @type {string}
-     * @memberof ReportSchedule
      */
     'reportScheduleId': string;
     /**
      * The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
-     * @type {string}
-     * @memberof ReportSchedule
      */
     'reportType': string;
     /**
      * A list of marketplace identifiers. The report document\'s contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise.
-     * @type {Array<string>}
-     * @memberof ReportSchedule
      */
     'marketplaceIds'?: Array<string>;
     /**
      * Additional information passed to reports. This varies by report type.
-     * @type {{ [key: string]: string; }}
-     * @memberof ReportSchedule
      */
     'reportOptions'?: { [key: string]: string; };
     /**
      * An <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> period value that indicates how often a report should be created.
-     * @type {string}
-     * @memberof ReportSchedule
      */
     'period': string;
     /**
      * The date and time when the schedule will create its next report, in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> date time format.
-     * @type {string}
-     * @memberof ReportSchedule
      */
     'nextReportCreationTime'?: string;
 }

@@ -16,8 +16,6 @@
 
 /**
  * Account Status.
- * @export
- * @enum {string}
  */
 
 export const AccountStatus = {

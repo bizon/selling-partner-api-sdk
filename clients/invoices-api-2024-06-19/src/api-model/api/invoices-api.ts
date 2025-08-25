@@ -41,7 +41,6 @@ import type { GetInvoicesExportsResponse } from '../models';
 import type { GetInvoicesResponse } from '../models';
 /**
  * InvoicesApi - axios parameter creator
- * @export
  */
 export const InvoicesApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -397,7 +396,6 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
 
 /**
  * InvoicesApi - functional programming interface
- * @export
  */
 export const InvoicesApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = InvoicesApiAxiosParamCreator(configuration)
@@ -510,7 +508,6 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
 
 /**
  * InvoicesApi - factory interface
- * @export
  */
 export const InvoicesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = InvoicesApiFp(configuration)
@@ -583,240 +580,171 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
 
 /**
  * Request parameters for createInvoicesExport operation in InvoicesApi.
- * @export
- * @interface InvoicesApiCreateInvoicesExportRequest
  */
 export interface InvoicesApiCreateInvoicesExportRequest {
     /**
      * Information required to create the export request.
-     * @type {ExportInvoicesRequest}
-     * @memberof InvoicesApiCreateInvoicesExport
      */
     readonly body: ExportInvoicesRequest
 }
 
 /**
  * Request parameters for getInvoice operation in InvoicesApi.
- * @export
- * @interface InvoicesApiGetInvoiceRequest
  */
 export interface InvoicesApiGetInvoiceRequest {
     /**
      * The marketplace from which you want the invoice.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoice
      */
     readonly marketplaceId: string
 
     /**
      * The invoice identifier.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoice
      */
     readonly invoiceId: string
 }
 
 /**
  * Request parameters for getInvoices operation in InvoicesApi.
- * @export
- * @interface InvoicesApiGetInvoicesRequest
  */
 export interface InvoicesApiGetInvoicesRequest {
     /**
      * The response includes only the invoices that match the specified marketplace.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoices
      */
     readonly marketplaceId: string
 
     /**
      * The name of the transaction identifier filter. If you provide a value for this field, you must also provide a value for the &#x60;transactionIdentifierId&#x60; field.Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;transactionIdentifierName&#x60; options.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoices
      */
     readonly transactionIdentifierName?: string
 
     /**
      * The maximum number of invoices you want to return in a single call.  Minimum: 1  Maximum: 200
-     * @type {number}
-     * @memberof InvoicesApiGetInvoices
      */
     readonly pageSize?: number
 
     /**
      * The latest invoice creation date for invoices that you want to include in the response. Dates are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default is the current date-time.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoices
      */
     readonly dateEnd?: string
 
     /**
      * The marketplace-specific classification of the transaction type for which the invoice was created. Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;transactionType&#x60; options.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoices
      */
     readonly transactionType?: string
 
     /**
      * The ID of the transaction identifier filter. If you provide a value for this field, you must also provide a value for the &#x60;transactionIdentifierName&#x60; field.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoices
      */
     readonly transactionIdentifierId?: string
 
     /**
      * The earliest invoice creation date for invoices that you want to include in the response. Dates are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default is 24 hours prior to the time of the request.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoices
      */
     readonly dateStart?: string
 
     /**
      * Return invoices with the specified series number.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoices
      */
     readonly series?: string
 
     /**
      * The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoices
      */
     readonly nextToken?: string
 
     /**
      * Sort the invoices in the response in ascending or descending order.
-     * @type {'DESC' | 'ASC'}
-     * @memberof InvoicesApiGetInvoices
      */
     readonly sortOrder?: GetInvoicesSortOrderEnum
 
     /**
      * The marketplace-specific classification of the invoice type. Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;invoiceType&#x60; options.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoices
      */
     readonly invoiceType?: string
 
     /**
      * A list of statuses that you can use to filter invoices. Use the &#x60;getInvoicesAttributes&#x60; operation to check invoice status options.  Min count: 1
-     * @type {Array<string>}
-     * @memberof InvoicesApiGetInvoices
      */
     readonly statuses?: Array<string>
 
     /**
      * Return invoices that match this external ID. This is typically the Government Invoice ID.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoices
      */
     readonly externalInvoiceId?: string
 
     /**
      * The attribute by which you want to sort the invoices in the response.
-     * @type {'START_DATE_TIME'}
-     * @memberof InvoicesApiGetInvoices
      */
     readonly sortBy?: GetInvoicesSortByEnum
 }
 
 /**
  * Request parameters for getInvoicesAttributes operation in InvoicesApi.
- * @export
- * @interface InvoicesApiGetInvoicesAttributesRequest
  */
 export interface InvoicesApiGetInvoicesAttributesRequest {
     /**
      * The marketplace identifier.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoicesAttributes
      */
     readonly marketplaceId: string
 }
 
 /**
  * Request parameters for getInvoicesDocument operation in InvoicesApi.
- * @export
- * @interface InvoicesApiGetInvoicesDocumentRequest
  */
 export interface InvoicesApiGetInvoicesDocumentRequest {
     /**
      * The export document identifier.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoicesDocument
      */
     readonly invoicesDocumentId: string
 }
 
 /**
  * Request parameters for getInvoicesExport operation in InvoicesApi.
- * @export
- * @interface InvoicesApiGetInvoicesExportRequest
  */
 export interface InvoicesApiGetInvoicesExportRequest {
     /**
      * The unique identifier for the export.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoicesExport
      */
     readonly exportId: string
 }
 
 /**
  * Request parameters for getInvoicesExports operation in InvoicesApi.
- * @export
- * @interface InvoicesApiGetInvoicesExportsRequest
  */
 export interface InvoicesApiGetInvoicesExportsRequest {
     /**
      * The returned exports match the specified marketplace.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoicesExports
      */
     readonly marketplaceId: string
 
     /**
      * The earliest export creation date and time for exports that you want to include in the response. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default is 30 days ago.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoicesExports
      */
     readonly dateStart?: string
 
     /**
      * The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoicesExports
      */
     readonly nextToken?: string
 
     /**
      * The maximum number of invoices to return in a single call.  Minimum: 1  Maximum: 100
-     * @type {number}
-     * @memberof InvoicesApiGetInvoicesExports
      */
     readonly pageSize?: number
 
     /**
      * The latest export creation date and time for exports that you want to include in the response. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default value is the time of the request.
-     * @type {string}
-     * @memberof InvoicesApiGetInvoicesExports
      */
     readonly dateEnd?: string
 
     /**
      * Return exports matching the status specified. 
-     * @type {'REQUESTED' | 'PROCESSING' | 'DONE' | 'ERROR'}
-     * @memberof InvoicesApiGetInvoicesExports
      */
     readonly status?: GetInvoicesExportsStatusEnum
 }
 
 /**
  * InvoicesApi - object-oriented interface
- * @export
- * @class InvoicesApi
- * @extends {BaseAPI}
  */
 export class InvoicesApi extends BaseAPI {
     /**
@@ -824,7 +752,6 @@ export class InvoicesApi extends BaseAPI {
      * @param {InvoicesApiCreateInvoicesExportRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof InvoicesApi
      */
     public createInvoicesExport(requestParameters: InvoicesApiCreateInvoicesExportRequest, options?: RawAxiosRequestConfig) {
         return InvoicesApiFp(this.configuration).createInvoicesExport(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
@@ -835,7 +762,6 @@ export class InvoicesApi extends BaseAPI {
      * @param {InvoicesApiGetInvoiceRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof InvoicesApi
      */
     public getInvoice(requestParameters: InvoicesApiGetInvoiceRequest, options?: RawAxiosRequestConfig) {
         return InvoicesApiFp(this.configuration).getInvoice(requestParameters.marketplaceId, requestParameters.invoiceId, options).then((request) => request(this.axios, this.basePath));
@@ -846,7 +772,6 @@ export class InvoicesApi extends BaseAPI {
      * @param {InvoicesApiGetInvoicesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof InvoicesApi
      */
     public getInvoices(requestParameters: InvoicesApiGetInvoicesRequest, options?: RawAxiosRequestConfig) {
         return InvoicesApiFp(this.configuration).getInvoices(requestParameters.marketplaceId, requestParameters.transactionIdentifierName, requestParameters.pageSize, requestParameters.dateEnd, requestParameters.transactionType, requestParameters.transactionIdentifierId, requestParameters.dateStart, requestParameters.series, requestParameters.nextToken, requestParameters.sortOrder, requestParameters.invoiceType, requestParameters.statuses, requestParameters.externalInvoiceId, requestParameters.sortBy, options).then((request) => request(this.axios, this.basePath));
@@ -857,7 +782,6 @@ export class InvoicesApi extends BaseAPI {
      * @param {InvoicesApiGetInvoicesAttributesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof InvoicesApi
      */
     public getInvoicesAttributes(requestParameters: InvoicesApiGetInvoicesAttributesRequest, options?: RawAxiosRequestConfig) {
         return InvoicesApiFp(this.configuration).getInvoicesAttributes(requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
@@ -868,7 +792,6 @@ export class InvoicesApi extends BaseAPI {
      * @param {InvoicesApiGetInvoicesDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof InvoicesApi
      */
     public getInvoicesDocument(requestParameters: InvoicesApiGetInvoicesDocumentRequest, options?: RawAxiosRequestConfig) {
         return InvoicesApiFp(this.configuration).getInvoicesDocument(requestParameters.invoicesDocumentId, options).then((request) => request(this.axios, this.basePath));
@@ -879,7 +802,6 @@ export class InvoicesApi extends BaseAPI {
      * @param {InvoicesApiGetInvoicesExportRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof InvoicesApi
      */
     public getInvoicesExport(requestParameters: InvoicesApiGetInvoicesExportRequest, options?: RawAxiosRequestConfig) {
         return InvoicesApiFp(this.configuration).getInvoicesExport(requestParameters.exportId, options).then((request) => request(this.axios, this.basePath));
@@ -890,31 +812,21 @@ export class InvoicesApi extends BaseAPI {
      * @param {InvoicesApiGetInvoicesExportsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof InvoicesApi
      */
     public getInvoicesExports(requestParameters: InvoicesApiGetInvoicesExportsRequest, options?: RawAxiosRequestConfig) {
         return InvoicesApiFp(this.configuration).getInvoicesExports(requestParameters.marketplaceId, requestParameters.dateStart, requestParameters.nextToken, requestParameters.pageSize, requestParameters.dateEnd, requestParameters.status, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const GetInvoicesSortOrderEnum = {
     Desc: 'DESC',
     Asc: 'ASC'
 } as const;
 export type GetInvoicesSortOrderEnum = typeof GetInvoicesSortOrderEnum[keyof typeof GetInvoicesSortOrderEnum];
-/**
- * @export
- */
 export const GetInvoicesSortByEnum = {
     StartDateTime: 'START_DATE_TIME'
 } as const;
 export type GetInvoicesSortByEnum = typeof GetInvoicesSortByEnum[keyof typeof GetInvoicesSortByEnum];
-/**
- * @export
- */
 export const GetInvoicesExportsStatusEnum = {
     Requested: 'REQUESTED',
     Processing: 'PROCESSING',

@@ -16,20 +16,14 @@
 
 /**
  * Contains information related to Less-Than-Truckload (LTL) shipment tracking.
- * @export
- * @interface LtlTrackingDetail
  */
 export interface LtlTrackingDetail {
     /**
      * The number of the carrier shipment acknowledgement document.
-     * @type {string}
-     * @memberof LtlTrackingDetail
      */
     'billOfLadingNumber'?: string;
     /**
      * The number associated with the freight bill.
-     * @type {Array<string>}
-     * @memberof LtlTrackingDetail
      */
     'freightBillNumber'?: Array<string>;
 }

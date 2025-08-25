@@ -16,14 +16,10 @@
 
 /**
  * Response schema for the `completeServiceJobByServiceJobId` operation.
- * @export
- * @interface CompleteServiceJobByServiceJobIdResponse
  */
 export interface CompleteServiceJobByServiceJobIdResponse {
     /**
      * A list of error responses returned when a request is unsuccessful.
-     * @type {Array<Error>}
-     * @memberof CompleteServiceJobByServiceJobIdResponse
      */
     'errors'?: Array<Error>;
 }

@@ -16,8 +16,6 @@
 
 /**
  * Enum denoting the package inbound eligibility.
- * @export
- * @enum {string}
  */
 
 export const InboundEligibilityStatus = {

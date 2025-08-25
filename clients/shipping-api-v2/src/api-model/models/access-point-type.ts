@@ -16,8 +16,6 @@
 
 /**
  * The type of access point, like counter (HELIX), lockers, etc.
- * @export
- * @enum {string}
  */
 
 export const AccessPointType = {

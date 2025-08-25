@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@sp-api-sdk/typescript-config": "workspace:*",
-    "nock": "^14.0.9",
+    "nock": "^14.0.10",
     "type-fest": "^4.40.1"
   },
   "repository": {

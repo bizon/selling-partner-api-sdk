@@ -20,7 +20,6 @@
     "@lerna-lite/publish": "^4.7.2",
     "@swc/core": "^1.12.1",
     "@swc/jest": "^0.2.38",
-    "@tsconfig/node24": "^24.0.1",
     "@types/jest": "^29.5.14",
     "@types/node": "^24.2.1",
     "conventional-changelog-conventionalcommits": "^9.1.0",
@@ -33,35 +32,6 @@
     "typedoc": "^0.28.10",
     "typescript": "^5.8.3",
     "xo": "^0.60.0"
-  },
-  "xo": {
-    "extends": "xo-bizon",
-    "settings": {
-      "import/internal-regex": "^@sp-api-sdk/"
-    },
-    "parserOptions": {
-      "project": "./tsconfig.xo.json"
-    },
-    "semicolon": false,
-    "space": 2,
-    "ignores": [
-      "clients/*/src/api-model/**"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "packages/**",
-          "clients/**"
-        ],
-        "rules": {
-          "unicorn/prevent-abbreviations": "off"
-        }
-      }
-    ],
-    "prettier": true
-  },
-  "prettier": {
-    "printWidth": 100
   },
   "packageManager": "pnpm@10.8.1+sha512.c50088ba998c67b8ca8c99df8a5e02fd2ae2e2b29aaf238feaa9e124248d3f48f9fb6db2424949ff901cffbb5e0f0cc1ad6aedb602cd29450751d11c35023677"
 }

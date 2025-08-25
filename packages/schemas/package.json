@@ -18,11 +18,18 @@
     "dist/**/*.d.ts"
   ],
   "scripts": {
+    "xo": "xo",
     "check:ts": "tsc --noEmit",
     "build:cjs": "tsc -p tsconfig.json",
     "build:es": "tsc -p tsconfig.es.json",
     "build": "pnpm build:cjs && pnpm build:es",
     "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "json-schema-to-ts": "^3.1.1"
+  },
+  "devDependencies": {
+    "@sp-api-sdk/typescript-config": "workspace:*"
   },
   "repository": {
     "type": "git",
@@ -47,7 +54,19 @@
     "notifications",
     "reports"
   ],
-  "dependencies": {
-    "json-schema-to-ts": "^3.1.1"
+  "xo": {
+    "extends": [
+      "xo-bizon"
+    ],
+    "settings": {
+      "import/internal-regex": "^@sp-api-sdk/"
+    },
+    "semicolon": false,
+    "space": 2,
+    "prettier": true
+  },
+  "prettier": {
+    "printWidth": 100,
+    "jsxSingleQuote": true
   }
 }

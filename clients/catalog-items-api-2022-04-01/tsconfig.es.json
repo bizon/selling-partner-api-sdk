@@ -1,5 +1,6 @@
 {
-  "extends": "../../tsconfig.es.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@sp-api-sdk/typescript-config/esm.json",
   "compilerOptions": {
     "outDir": "dist/es"
   },

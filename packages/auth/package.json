@@ -31,6 +31,7 @@
     "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {
+    "@sp-api-sdk/jest": "workspace:*",
     "@sp-api-sdk/typescript-config": "workspace:*",
     "nock": "^14.0.10",
     "type-fest": "^4.40.1"

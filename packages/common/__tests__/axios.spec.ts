@@ -52,7 +52,7 @@ describe('src/axios', () => {
 
       expect(response.data).toBe('OK')
       expect(response.status).toBe(200)
-      expect(onRetry).toBeCalledTimes(1)
+      expect(onRetry).toHaveBeenCalledTimes(1)
       expect(onRetry.mock.calls[0][0]).toStrictEqual({
         rateLimit: 1,
         delay: 2500,
@@ -87,7 +87,7 @@ describe('src/axios', () => {
 
       expect(response.data).toBe('OK')
       expect(response.status).toBe(200)
-      expect(onRetry).toBeCalledTimes(2)
+      expect(onRetry).toHaveBeenCalledTimes(2)
       expect(onRetry.mock.calls[0][0]).toStrictEqual({
         rateLimit: 0.5,
         delay: 3500,
@@ -126,7 +126,7 @@ describe('src/axios', () => {
 
       expect(response.data).toBe('OK')
       expect(response.status).toBe(200)
-      expect(onRetry).toBeCalledTimes(1)
+      expect(onRetry).toHaveBeenCalledTimes(1)
       expect(onRetry.mock.calls[0][0]).toStrictEqual({
         rateLimit: 1,
         delay: 2500,

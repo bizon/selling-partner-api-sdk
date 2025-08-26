@@ -1,1 +1,1 @@
-export {default} from '../../jest.config'
+export {default} from '@sp-api-sdk/jest/config'

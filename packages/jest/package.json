@@ -1,0 +1,30 @@
+{
+  "name": "@sp-api-sdk/jest",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./config": "./src/jest.config.ts"
+  },
+  "scripts": {
+    "xo": "xo"
+  },
+  "dependencies": {
+    "@jest/types": "^30.0.5"
+  },
+  "xo": {
+    "extends": [
+      "xo-bizon"
+    ],
+    "settings": {
+      "import/internal-regex": "^@sp-api-sdk/"
+    },
+    "semicolon": false,
+    "space": 2,
+    "prettier": true
+  },
+  "prettier": {
+    "printWidth": 100,
+    "jsxSingleQuote": true
+  }
+}

@@ -14,5 +14,5 @@
       "message": "chore(release): publish [skip ci]"
     }
   },
-  "packages": ["codegen", "packages/*", "clients/*"]
+  "packages": ["codegen", "packages/*", "clients/*", "internal/*"]
 }

@@ -71,7 +71,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/aplus-content-api-2020-11-01:
     dependencies:
@@ -84,7 +84,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/application-integrations-api-2024-04-01:
     dependencies:
@@ -97,7 +97,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/application-management-api-2023-11-30:
     dependencies:
@@ -110,7 +110,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/catalog-items-api-2020-12-01:
     dependencies:
@@ -123,7 +123,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/catalog-items-api-2022-04-01:
     dependencies:
@@ -136,7 +136,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/catalog-items-api-v0:
     dependencies:
@@ -149,7 +149,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/customer-feedback-api-2024-06-01:
     dependencies:
@@ -162,7 +162,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/data-kiosk-api-2023-11-15:
     dependencies:
@@ -175,7 +175,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/easy-ship-api-2022-03-23:
     dependencies:
@@ -188,7 +188,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/fba-inbound-eligibility-api-v1:
     dependencies:
@@ -201,7 +201,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/fba-inventory-api-v1:
     dependencies:
@@ -214,7 +214,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/feeds-api-2021-06-30:
     dependencies:
@@ -227,7 +227,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/finances-api-2024-06-19:
     dependencies:
@@ -240,7 +240,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/finances-api-v0:
     dependencies:
@@ -253,7 +253,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/finances-transfers-api-2024-06-01:
     dependencies:
@@ -266,7 +266,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/fulfillment-inbound-api-2024-03-20:
     dependencies:
@@ -279,7 +279,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/fulfillment-inbound-api-v0:
     dependencies:
@@ -292,7 +292,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/fulfillment-outbound-api-2020-07-01:
     dependencies:
@@ -305,7 +305,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/invoices-api-2024-06-19:
     dependencies:
@@ -318,7 +318,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/listings-items-api-2020-09-01:
     dependencies:
@@ -331,7 +331,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/listings-items-api-2021-08-01:
     dependencies:
@@ -344,7 +344,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/listings-restrictions-api-2021-08-01:
     dependencies:
@@ -357,7 +357,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/merchant-fulfillment-api-v0:
     dependencies:
@@ -370,7 +370,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/messaging-api-v1:
     dependencies:
@@ -383,7 +383,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/notifications-api-v1:
     dependencies:
@@ -396,7 +396,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/orders-api-v0:
     dependencies:
@@ -409,7 +409,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/product-fees-api-v0:
     dependencies:
@@ -422,7 +422,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/product-pricing-api-2022-05-01:
     dependencies:
@@ -435,7 +435,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/product-pricing-api-v0:
     dependencies:
@@ -448,7 +448,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/product-type-definitions-api-2020-09-01:
     dependencies:
@@ -461,7 +461,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/replenishment-api-2022-11-07:
     dependencies:
@@ -474,7 +474,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/reports-api-2021-06-30:
     dependencies:
@@ -487,7 +487,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/sales-api-v1:
     dependencies:
@@ -500,7 +500,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/seller-wallet-api-2024-03-01:
     dependencies:
@@ -513,7 +513,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/sellers-api-v1:
     dependencies:
@@ -526,7 +526,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/services-api-v1:
     dependencies:
@@ -539,7 +539,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/shipment-invoicing-api-v0:
     dependencies:
@@ -552,7 +552,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/shipping-api-v1:
     dependencies:
@@ -565,7 +565,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/shipping-api-v2:
     dependencies:
@@ -578,7 +578,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/solicitations-api-v1:
     dependencies:
@@ -591,7 +591,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/supply-sources-api-2020-07-01:
     dependencies:
@@ -604,7 +604,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/tokens-api-2021-03-01:
     dependencies:
@@ -617,7 +617,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/uploads-api-2020-11-01:
     dependencies:
@@ -630,7 +630,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/vehicles-api-2024-11-01:
     dependencies:
@@ -643,7 +643,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/vendor-direct-fulfillment-inventory-api-v1:
     dependencies:
@@ -656,7 +656,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/vendor-direct-fulfillment-orders-api-2021-12-28:
     dependencies:
@@ -669,7 +669,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/vendor-direct-fulfillment-orders-api-v1:
     dependencies:
@@ -682,7 +682,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/vendor-direct-fulfillment-payments-api-v1:
     dependencies:
@@ -695,7 +695,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28:
     dependencies:
@@ -708,7 +708,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/vendor-direct-fulfillment-shipping-api-2021-12-28:
     dependencies:
@@ -721,7 +721,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/vendor-direct-fulfillment-shipping-api-v1:
     dependencies:
@@ -734,7 +734,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/vendor-direct-fulfillment-transactions-api-2021-12-28:
     dependencies:
@@ -747,7 +747,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/vendor-direct-fulfillment-transactions-api-v1:
     dependencies:
@@ -760,7 +760,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/vendor-invoices-api-v1:
     dependencies:
@@ -773,7 +773,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/vendor-orders-api-v1:
     dependencies:
@@ -786,7 +786,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/vendor-shipments-api-v1:
     dependencies:
@@ -799,7 +799,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   clients/vendor-transaction-status-api-v1:
     dependencies:
@@ -812,7 +812,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/typescript-config
+        version: link:../../internal/typescript-config
 
   codegen:
     dependencies:
@@ -872,6 +872,18 @@ importers:
         specifier: ^4.40.1
         version: 4.41.0
 
+  internal/jest:
+    dependencies:
+      '@jest/types':
+        specifier: ^30.0.5
+        version: 30.0.5
+
+  internal/typescript-config:
+    dependencies:
+      '@tsconfig/node24':
+        specifier: ^24.0.1
+        version: 24.0.1
+
   packages/auth:
     dependencies:
       axios:
@@ -883,10 +895,10 @@ importers:
     devDependencies:
       '@sp-api-sdk/jest':
         specifier: workspace:*
-        version: link:../jest
+        version: link:../../internal/jest
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../typescript-config
+        version: link:../../internal/typescript-config
       nock:
         specifier: ^14.0.10
         version: 14.0.10
@@ -914,22 +926,16 @@ importers:
     devDependencies:
       '@sp-api-sdk/jest':
         specifier: workspace:*
-        version: link:../jest
+        version: link:../../internal/jest
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../typescript-config
+        version: link:../../internal/typescript-config
       nock:
         specifier: ^14.0.10
         version: 14.0.10
       strip-ansi:
         specifier: ^6.0.1
         version: 6.0.1
-
-  packages/jest:
-    dependencies:
-      '@jest/types':
-        specifier: ^30.0.5
-        version: 30.0.5
 
   packages/schemas:
     dependencies:
@@ -939,13 +945,7 @@ importers:
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
-        version: link:../typescript-config
-
-  packages/typescript-config:
-    dependencies:
-      '@tsconfig/node24':
-        specifier: ^24.0.1
-        version: 24.0.1
+        version: link:../../internal/typescript-config
 
 packages:
 

@@ -13,22 +13,17 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import type { Address } from './address';
 
 /**
- * The Amazon fulfillment center address and warehouse ID.
+ * Type of Box Identifier.
  */
-export interface ShipmentDestination {
-    'address'?: Address;
-    /**
-     * The type of destination for this shipment. Possible values: `AMAZON_OPTIMIZED`, `AMAZON_WAREHOUSE`.
-     */
-    'destinationType': string;
-    /**
-     * The warehouse that the shipment should be sent to. This can be empty if the destination type is `AMAZON_OPTIMIZED`.
-     */
-    'warehouseId'?: string;
-}
+
+export const BoxIdentifierType = {
+    Amazon: 'AMAZON',
+    Sscc: 'SSCC'
+} as const;
+
+export type BoxIdentifierType = typeof BoxIdentifierType[keyof typeof BoxIdentifierType];
+
+
 

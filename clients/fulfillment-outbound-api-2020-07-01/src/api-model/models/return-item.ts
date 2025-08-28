@@ -25,7 +25,7 @@ import type { ReturnItemDisposition } from './return-item-disposition';
  */
 export interface ReturnItem {
     /**
-     * An identifier assigned by the seller to the return item.
+     * An identifier the seller assigns to the return item.
      */
     'sellerReturnItemId': string;
     /**

@@ -18,7 +18,7 @@
 import type { ReasonCodeDetails } from './reason-code-details';
 
 /**
- * The request for the listReturnReasonCodes operation.
+ * The request for the `listReturnReasonCodes` operation.
  */
 export interface ListReturnReasonCodesResult {
     /**

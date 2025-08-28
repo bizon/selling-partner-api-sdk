@@ -216,36 +216,6 @@ export const clientRateLimits: RateLimit[] = [
   {
     method: 'put',
     // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp(
-      '^/inbound/fba/2024-03-20/inboundPlans/[^/]*/selfShipAppointmentCancellation$',
-    ),
-    rate: 2,
-    burst: 30,
-  },
-  {
-    method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/inbound/fba/2024-03-20/inboundPlans/[^/]*/selfShipAppointmentSlots$'),
-    rate: 2,
-    burst: 6,
-  },
-  {
-    method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/inbound/fba/2024-03-20/inboundPlans/[^/]*/selfShipAppointmentSlots$'),
-    rate: 2,
-    burst: 2,
-  },
-  {
-    method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/inbound/fba/2024-03-20/inboundPlans/[^/]*/schedule$'),
-    rate: 2,
-    burst: 2,
-  },
-  {
-    method: 'put',
-    // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/inbound/fba/2024-03-20/inboundPlans/[^/]*/sourceAddress$'),
     rate: 2,
     burst: 30,
@@ -281,13 +251,6 @@ export const clientRateLimits: RateLimit[] = [
     burst: 2,
   },
   {
-    method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/inbound/fba/2024-03-20/items/compliance$'),
-    rate: 2,
-    burst: 6,
-  },
-  {
     method: 'put',
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/inbound/fba/2024-03-20/items/compliance$'),
@@ -298,13 +261,6 @@ export const clientRateLimits: RateLimit[] = [
     method: 'post',
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/inbound/fba/2024-03-20/items/labels$'),
-    rate: 2,
-    burst: 30,
-  },
-  {
-    method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/inbound/fba/2024-03-20/items/prepDetails$'),
     rate: 2,
     burst: 30,
   },

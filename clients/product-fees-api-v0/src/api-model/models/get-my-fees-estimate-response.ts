@@ -17,6 +17,9 @@
 // @ts-ignore
 import type { GetMyFeesEstimateResult } from './get-my-fees-estimate-result';
 
+/**
+ * The response object for the GetMyFeesEstimate operation.
+ */
 export interface GetMyFeesEstimateResponse {
     'payload'?: GetMyFeesEstimateResult;
     /**

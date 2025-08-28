@@ -15,18 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PaymentPreferencePaymentType } from './payment-preference-payment-type';
+import type { Transaction } from './transaction';
 
 /**
- * Payment preference type in which transfer is being scheduled 
+ * The transaction response and historical details related to it.
  */
-export interface PaymentPreference {
-    'paymentPreferencePaymentType': PaymentPreferencePaymentType;
+export interface CreateTransactionResponse {
+    'transaction': Transaction;
     /**
-     * A decimal number such as amount or FX rate.
+     * The callback URL for the transaction which the user have to click to approve/consent the transaction
      */
-    'value': number;
+    'callBackURL': string;
 }
-
-
 

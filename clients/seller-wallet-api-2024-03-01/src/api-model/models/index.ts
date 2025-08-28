@@ -8,6 +8,7 @@ export * from './bank-account-listing';
 export * from './bank-account-number-format';
 export * from './bank-account-ownership-type';
 export * from './bank-number-format';
+export * from './create-transaction-response';
 export * from './currency';
 export * from './delete-transfer-schedule';
 export * from './error-list';

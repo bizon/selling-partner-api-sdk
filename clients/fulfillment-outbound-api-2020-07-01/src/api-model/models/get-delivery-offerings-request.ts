@@ -15,20 +15,24 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InvalidItemReason } from './invalid-item-reason';
+import type { DeliveryQuantity } from './delivery-quantity';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { VariablePrecisionAddress } from './variable-precision-address';
 
 /**
- * An item that is invalid for return.
+ * The request body schema for the `getDeliveryOfferings` operation.
  */
-export interface InvalidReturnItem {
+export interface GetDeliveryOfferingsRequest {
+    'destinationAddress': VariablePrecisionAddress;
     /**
-     * An identifier the seller assigns to the return item.
+     * The two digit country code the items should ship from. In ISO 3166-1 alpha-2 format.
      */
-    'sellerReturnItemId': string;
+    'shipFromCountryCode': string;
     /**
-     * The identifier assigned to the item by the seller when the fulfillment order was created.
+     * The seller SKU of the item.
      */
-    'sellerFulfillmentOrderItemId': string;
-    'invalidItemReason': InvalidItemReason;
+    'sellerSku': string;
+    'quantity'?: DeliveryQuantity;
 }
 

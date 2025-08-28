@@ -15,16 +15,23 @@
 
 
 /**
- * Localized messaging for a delivery offering.
+ * A quantity based on unit of measure.
  */
-export interface DeliveryMessage {
+export interface DeliveryQuantity {
     /**
-     * The message content for a delivery offering.
+     * The unit of measure for the amount.
      */
-    'text'?: string;
+    'unitOfMeasure': DeliveryQuantityUnitOfMeasureEnum;
     /**
-     * The locale for the message (e.g., `en_US`).
+     * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.
      */
-    'locale'?: string;
+    'amount': string;
 }
+
+export const DeliveryQuantityUnitOfMeasureEnum = {
+    Each: 'Each'
+} as const;
+
+export type DeliveryQuantityUnitOfMeasureEnum = typeof DeliveryQuantityUnitOfMeasureEnum[keyof typeof DeliveryQuantityUnitOfMeasureEnum];
+
 

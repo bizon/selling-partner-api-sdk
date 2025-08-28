@@ -26,7 +26,7 @@ export interface ReturnAuthorization {
      */
     'returnAuthorizationId': string;
     /**
-     * An identifier for the Amazon fulfillment center that the return items should be sent to.
+     * An identifier for the Amazon fulfillment center to which the return items should be sent.
      */
     'fulfillmentCenterId': string;
     'returnToAddress': Address;

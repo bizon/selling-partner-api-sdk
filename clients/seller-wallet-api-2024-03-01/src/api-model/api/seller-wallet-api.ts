@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * The Selling Partner API for Amazon Seller Wallet Open Banking API
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller\'s Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
  * The version of the OpenAPI document: 2024-03-01
@@ -27,6 +27,8 @@ import type { BalanceListing } from '../models';
 import type { BankAccount } from '../models';
 // @ts-ignore
 import type { BankAccountListing } from '../models';
+// @ts-ignore
+import type { CreateTransactionResponse } from '../models';
 // @ts-ignore
 import type { DeleteTransferSchedule } from '../models';
 // @ts-ignore
@@ -55,15 +57,18 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
          * @summary Create a transaction request from Amazon SW account to another customer provided account
          * @param {string} destAccountDigitalSignature Digital signature for the destination bank account details.
          * @param {string} amountDigitalSignature Digital signature for the source currency transaction amount.
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {TransactionInitiationRequest} body Defines the actual payload of the request
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createTransaction: async (destAccountDigitalSignature: string, amountDigitalSignature: string, body: TransactionInitiationRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createTransaction: async (destAccountDigitalSignature: string, amountDigitalSignature: string, marketplaceId: string, body: TransactionInitiationRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'destAccountDigitalSignature' is not null or undefined
             assertParamExists('createTransaction', 'destAccountDigitalSignature', destAccountDigitalSignature)
             // verify required parameter 'amountDigitalSignature' is not null or undefined
             assertParamExists('createTransaction', 'amountDigitalSignature', amountDigitalSignature)
+            // verify required parameter 'marketplaceId' is not null or undefined
+            assertParamExists('createTransaction', 'marketplaceId', marketplaceId)
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createTransaction', 'body', body)
             const localVarPath = `/finances/transfers/wallet/2024-03-01/transactions`;
@@ -77,6 +82,10 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (marketplaceId !== undefined) {
+                localVarQueryParameter['marketplaceId'] = marketplaceId;
+            }
 
 
     
@@ -103,15 +112,18 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
          * @summary Create a transfer schedule request from Amazon SW account to another customer provided account
          * @param {string} destAccountDigitalSignature Digital signature for the destination bank account details.
          * @param {string} amountDigitalSignature Digital signature for the source currency transaction amount.
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {TransferScheduleRequest} body Defines the actual payload of the request
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createTransferSchedule: async (destAccountDigitalSignature: string, amountDigitalSignature: string, body: TransferScheduleRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createTransferSchedule: async (destAccountDigitalSignature: string, amountDigitalSignature: string, marketplaceId: string, body: TransferScheduleRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'destAccountDigitalSignature' is not null or undefined
             assertParamExists('createTransferSchedule', 'destAccountDigitalSignature', destAccountDigitalSignature)
             // verify required parameter 'amountDigitalSignature' is not null or undefined
             assertParamExists('createTransferSchedule', 'amountDigitalSignature', amountDigitalSignature)
+            // verify required parameter 'marketplaceId' is not null or undefined
+            assertParamExists('createTransferSchedule', 'marketplaceId', marketplaceId)
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createTransferSchedule', 'body', body)
             const localVarPath = `/finances/transfers/wallet/2024-03-01/transferSchedules`;
@@ -125,6 +137,10 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (marketplaceId !== undefined) {
+                localVarQueryParameter['marketplaceId'] = marketplaceId;
+            }
 
 
     
@@ -147,16 +163,19 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Delete a transaction request that is scheduled from a Seller Wallet account to another customer-provided account.
-         * @summary Delete a transaction request that is scheduled from Amazon SW account to another customer provided account
-         * @param {string} transferScheduleId A unique reference id for a scheduled transfer
+         * Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account.
+         * @summary Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account
+         * @param {string} transferScheduleId A unique reference ID for a scheduled transfer.
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteScheduleTransaction: async (transferScheduleId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        deleteScheduleTransaction: async (transferScheduleId: string, marketplaceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'transferScheduleId' is not null or undefined
             assertParamExists('deleteScheduleTransaction', 'transferScheduleId', transferScheduleId)
-            const localVarPath = `/finances/transfers/wallet/2024-03-01/transferSchedules`
+            // verify required parameter 'marketplaceId' is not null or undefined
+            assertParamExists('deleteScheduleTransaction', 'marketplaceId', marketplaceId)
+            const localVarPath = `/finances/transfers/wallet/2024-03-01/transferSchedules/{transferScheduleId}`
                 .replace(`{${"transferScheduleId"}}`, encodeURIComponent(String(transferScheduleId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -168,6 +187,10 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (marketplaceId !== undefined) {
+                localVarQueryParameter['marketplaceId'] = marketplaceId;
+            }
 
 
     
@@ -184,12 +207,15 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
          * Retrieve a Seller Wallet bank account by Amazon account identifier.
          * @summary Find particular Amazon SW account by Amazon account identifier
          * @param {string} accountId ID of the Amazon SW account
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAccount: async (accountId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAccount: async (accountId: string, marketplaceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'accountId' is not null or undefined
             assertParamExists('getAccount', 'accountId', accountId)
+            // verify required parameter 'marketplaceId' is not null or undefined
+            assertParamExists('getAccount', 'marketplaceId', marketplaceId)
             const localVarPath = `/finances/transfers/wallet/2024-03-01/accounts/{accountId}`
                 .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -202,6 +228,10 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (marketplaceId !== undefined) {
+                localVarQueryParameter['marketplaceId'] = marketplaceId;
+            }
 
 
     
@@ -218,12 +248,15 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
          * Returns a transaction
          * @summary Find particular Amazon SW account transaction by Amazon transaction identifier
          * @param {string} transactionId ID of the Amazon SW transaction
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransaction: async (transactionId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getTransaction: async (transactionId: string, marketplaceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'transactionId' is not null or undefined
             assertParamExists('getTransaction', 'transactionId', transactionId)
+            // verify required parameter 'marketplaceId' is not null or undefined
+            assertParamExists('getTransaction', 'marketplaceId', marketplaceId)
             const localVarPath = `/finances/transfers/wallet/2024-03-01/transactions/{transactionId}`
                 .replace(`{${"transactionId"}}`, encodeURIComponent(String(transactionId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -236,6 +269,10 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (marketplaceId !== undefined) {
+                localVarQueryParameter['marketplaceId'] = marketplaceId;
+            }
 
 
     
@@ -256,10 +293,11 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
          * @param {string} destinationCountryCode Represents 2 character country code of destination transaction account in ISO 3166 standard format.
          * @param {string} destinationCurrencyCode Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.
          * @param {number} baseAmount Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransferPreview: async (sourceCountryCode: string, sourceCurrencyCode: string, destinationCountryCode: string, destinationCurrencyCode: string, baseAmount: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getTransferPreview: async (sourceCountryCode: string, sourceCurrencyCode: string, destinationCountryCode: string, destinationCurrencyCode: string, baseAmount: number, marketplaceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sourceCountryCode' is not null or undefined
             assertParamExists('getTransferPreview', 'sourceCountryCode', sourceCountryCode)
             // verify required parameter 'sourceCurrencyCode' is not null or undefined
@@ -270,6 +308,8 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             assertParamExists('getTransferPreview', 'destinationCurrencyCode', destinationCurrencyCode)
             // verify required parameter 'baseAmount' is not null or undefined
             assertParamExists('getTransferPreview', 'baseAmount', baseAmount)
+            // verify required parameter 'marketplaceId' is not null or undefined
+            assertParamExists('getTransferPreview', 'marketplaceId', marketplaceId)
             const localVarPath = `/finances/transfers/wallet/2024-03-01/transferPreview`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -302,6 +342,10 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['baseAmount'] = baseAmount;
             }
 
+            if (marketplaceId !== undefined) {
+                localVarQueryParameter['marketplaceId'] = marketplaceId;
+            }
+
 
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -314,15 +358,18 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Find a particular Seller Wallet account transfer schedule.
-         * @summary Find particular Amazon SW account transfer schedule by Amazon transfer schedule identifier
-         * @param {string} transferScheduleId Schedule ID of the Amazon SW transfer
+         * Find a particular Amazon Seller Wallet account transfer schedule.
+         * @summary Find particular Amazon Seller Wallet account transfer schedule by Amazon transfer schedule identifier
+         * @param {string} transferScheduleId The schedule ID of the Amazon Seller Wallet transfer.
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransferSchedule: async (transferScheduleId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getTransferSchedule: async (transferScheduleId: string, marketplaceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'transferScheduleId' is not null or undefined
             assertParamExists('getTransferSchedule', 'transferScheduleId', transferScheduleId)
+            // verify required parameter 'marketplaceId' is not null or undefined
+            assertParamExists('getTransferSchedule', 'marketplaceId', marketplaceId)
             const localVarPath = `/finances/transfers/wallet/2024-03-01/transferSchedules/{transferScheduleId}`
                 .replace(`{${"transferScheduleId"}}`, encodeURIComponent(String(transferScheduleId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -335,6 +382,10 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (marketplaceId !== undefined) {
+                localVarQueryParameter['marketplaceId'] = marketplaceId;
+            }
 
 
     
@@ -351,12 +402,15 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
          * Retrieve the balance in a given Seller Wallet bank account.
          * @summary Find balance in particular Amazon SW account by Amazon account identifier
          * @param {string} accountId ID of the Amazon SW account
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listAccountBalances: async (accountId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listAccountBalances: async (accountId: string, marketplaceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'accountId' is not null or undefined
             assertParamExists('listAccountBalances', 'accountId', accountId)
+            // verify required parameter 'marketplaceId' is not null or undefined
+            assertParamExists('listAccountBalances', 'marketplaceId', marketplaceId)
             const localVarPath = `/finances/transfers/wallet/2024-03-01/accounts/{accountId}/balance`
                 .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -369,6 +423,10 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (marketplaceId !== undefined) {
+                localVarQueryParameter['marketplaceId'] = marketplaceId;
+            }
 
 
     
@@ -385,13 +443,16 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
          * Retrieve a list of transactions for a given Seller Wallet bank account.
          * @summary The API will return all the transactions for a given Amazon SW account sorted by the transaction request date
          * @param {string} accountId ID of the Amazon SW account
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {string} [nextPageToken] Pagination token to retrieve a specific page of results.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listAccountTransactions: async (accountId: string, nextPageToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listAccountTransactions: async (accountId: string, marketplaceId: string, nextPageToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'accountId' is not null or undefined
             assertParamExists('listAccountTransactions', 'accountId', accountId)
+            // verify required parameter 'marketplaceId' is not null or undefined
+            assertParamExists('listAccountTransactions', 'marketplaceId', marketplaceId)
             const localVarPath = `/finances/transfers/wallet/2024-03-01/transactions`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -410,6 +471,10 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
 
             if (nextPageToken !== undefined) {
                 localVarQueryParameter['nextPageToken'] = nextPageToken;
+            }
+
+            if (marketplaceId !== undefined) {
+                localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
 
@@ -464,13 +529,16 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
          * Retrieve transfer schedules of a Seller Wallet bank account.
          * @summary The API will return all the transfer schedules for a given Amazon SW account
          * @param {string} accountId ID of the Amazon SW account
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {string} [nextPageToken] Pagination token to retrieve a specific page of results.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTransferSchedules: async (accountId: string, nextPageToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listTransferSchedules: async (accountId: string, marketplaceId: string, nextPageToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'accountId' is not null or undefined
             assertParamExists('listTransferSchedules', 'accountId', accountId)
+            // verify required parameter 'marketplaceId' is not null or undefined
+            assertParamExists('listTransferSchedules', 'marketplaceId', marketplaceId)
             const localVarPath = `/finances/transfers/wallet/2024-03-01/transferSchedules`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -485,6 +553,10 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
 
             if (accountId !== undefined) {
                 localVarQueryParameter['accountId'] = accountId;
+            }
+
+            if (marketplaceId !== undefined) {
+                localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
             if (nextPageToken !== undefined) {
@@ -507,15 +579,18 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
          * @summary Update a transfer schedule information. Only fields (i.e; transferScheduleInformation, paymentPreference, transferScheduleStatus) in the request body can be updated.
          * @param {string} destAccountDigitalSignature Digital signature for the destination bank account details.
          * @param {string} amountDigitalSignature Digital signature for the source currency transaction amount.
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {TransferSchedule} body Defines the actual payload of the scheduled transfer request that is to be updated. 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateTransferSchedule: async (destAccountDigitalSignature: string, amountDigitalSignature: string, body: TransferSchedule, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateTransferSchedule: async (destAccountDigitalSignature: string, amountDigitalSignature: string, marketplaceId: string, body: TransferSchedule, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'destAccountDigitalSignature' is not null or undefined
             assertParamExists('updateTransferSchedule', 'destAccountDigitalSignature', destAccountDigitalSignature)
             // verify required parameter 'amountDigitalSignature' is not null or undefined
             assertParamExists('updateTransferSchedule', 'amountDigitalSignature', amountDigitalSignature)
+            // verify required parameter 'marketplaceId' is not null or undefined
+            assertParamExists('updateTransferSchedule', 'marketplaceId', marketplaceId)
             // verify required parameter 'body' is not null or undefined
             assertParamExists('updateTransferSchedule', 'body', body)
             const localVarPath = `/finances/transfers/wallet/2024-03-01/transferSchedules`;
@@ -529,6 +604,10 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (marketplaceId !== undefined) {
+                localVarQueryParameter['marketplaceId'] = marketplaceId;
+            }
 
 
     
@@ -564,12 +643,13 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
          * @summary Create a transaction request from Amazon SW account to another customer provided account
          * @param {string} destAccountDigitalSignature Digital signature for the destination bank account details.
          * @param {string} amountDigitalSignature Digital signature for the source currency transaction amount.
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {TransactionInitiationRequest} body Defines the actual payload of the request
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createTransaction(destAccountDigitalSignature: string, amountDigitalSignature: string, body: TransactionInitiationRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Transaction>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.createTransaction(destAccountDigitalSignature, amountDigitalSignature, body, options);
+        async createTransaction(destAccountDigitalSignature: string, amountDigitalSignature: string, marketplaceId: string, body: TransactionInitiationRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateTransactionResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createTransaction(destAccountDigitalSignature, amountDigitalSignature, marketplaceId, body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SellerWalletApi.createTransaction']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -579,25 +659,27 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
          * @summary Create a transfer schedule request from Amazon SW account to another customer provided account
          * @param {string} destAccountDigitalSignature Digital signature for the destination bank account details.
          * @param {string} amountDigitalSignature Digital signature for the source currency transaction amount.
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {TransferScheduleRequest} body Defines the actual payload of the request
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createTransferSchedule(destAccountDigitalSignature: string, amountDigitalSignature: string, body: TransferScheduleRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransferSchedule>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.createTransferSchedule(destAccountDigitalSignature, amountDigitalSignature, body, options);
+        async createTransferSchedule(destAccountDigitalSignature: string, amountDigitalSignature: string, marketplaceId: string, body: TransferScheduleRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransferSchedule>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createTransferSchedule(destAccountDigitalSignature, amountDigitalSignature, marketplaceId, body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SellerWalletApi.createTransferSchedule']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Delete a transaction request that is scheduled from a Seller Wallet account to another customer-provided account.
-         * @summary Delete a transaction request that is scheduled from Amazon SW account to another customer provided account
-         * @param {string} transferScheduleId A unique reference id for a scheduled transfer
+         * Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account.
+         * @summary Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account
+         * @param {string} transferScheduleId A unique reference ID for a scheduled transfer.
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteScheduleTransaction(transferScheduleId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeleteTransferSchedule>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteScheduleTransaction(transferScheduleId, options);
+        async deleteScheduleTransaction(transferScheduleId: string, marketplaceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeleteTransferSchedule>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteScheduleTransaction(transferScheduleId, marketplaceId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SellerWalletApi.deleteScheduleTransaction']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -606,11 +688,12 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
          * Retrieve a Seller Wallet bank account by Amazon account identifier.
          * @summary Find particular Amazon SW account by Amazon account identifier
          * @param {string} accountId ID of the Amazon SW account
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAccount(accountId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BankAccount>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getAccount(accountId, options);
+        async getAccount(accountId: string, marketplaceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BankAccount>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAccount(accountId, marketplaceId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SellerWalletApi.getAccount']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -619,11 +702,12 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
          * Returns a transaction
          * @summary Find particular Amazon SW account transaction by Amazon transaction identifier
          * @param {string} transactionId ID of the Amazon SW transaction
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTransaction(transactionId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Transaction>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getTransaction(transactionId, options);
+        async getTransaction(transactionId: string, marketplaceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Transaction>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getTransaction(transactionId, marketplaceId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SellerWalletApi.getTransaction']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -636,24 +720,26 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
          * @param {string} destinationCountryCode Represents 2 character country code of destination transaction account in ISO 3166 standard format.
          * @param {string} destinationCurrencyCode Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.
          * @param {number} baseAmount Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTransferPreview(sourceCountryCode: string, sourceCurrencyCode: string, destinationCountryCode: string, destinationCurrencyCode: string, baseAmount: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransferRatePreview>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getTransferPreview(sourceCountryCode, sourceCurrencyCode, destinationCountryCode, destinationCurrencyCode, baseAmount, options);
+        async getTransferPreview(sourceCountryCode: string, sourceCurrencyCode: string, destinationCountryCode: string, destinationCurrencyCode: string, baseAmount: number, marketplaceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransferRatePreview>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getTransferPreview(sourceCountryCode, sourceCurrencyCode, destinationCountryCode, destinationCurrencyCode, baseAmount, marketplaceId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SellerWalletApi.getTransferPreview']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Find a particular Seller Wallet account transfer schedule.
-         * @summary Find particular Amazon SW account transfer schedule by Amazon transfer schedule identifier
-         * @param {string} transferScheduleId Schedule ID of the Amazon SW transfer
+         * Find a particular Amazon Seller Wallet account transfer schedule.
+         * @summary Find particular Amazon Seller Wallet account transfer schedule by Amazon transfer schedule identifier
+         * @param {string} transferScheduleId The schedule ID of the Amazon Seller Wallet transfer.
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTransferSchedule(transferScheduleId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransferSchedule>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getTransferSchedule(transferScheduleId, options);
+        async getTransferSchedule(transferScheduleId: string, marketplaceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransferSchedule>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getTransferSchedule(transferScheduleId, marketplaceId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SellerWalletApi.getTransferSchedule']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -662,11 +748,12 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
          * Retrieve the balance in a given Seller Wallet bank account.
          * @summary Find balance in particular Amazon SW account by Amazon account identifier
          * @param {string} accountId ID of the Amazon SW account
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listAccountBalances(accountId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BalanceListing>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listAccountBalances(accountId, options);
+        async listAccountBalances(accountId: string, marketplaceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BalanceListing>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listAccountBalances(accountId, marketplaceId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SellerWalletApi.listAccountBalances']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -675,12 +762,13 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
          * Retrieve a list of transactions for a given Seller Wallet bank account.
          * @summary The API will return all the transactions for a given Amazon SW account sorted by the transaction request date
          * @param {string} accountId ID of the Amazon SW account
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {string} [nextPageToken] Pagination token to retrieve a specific page of results.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listAccountTransactions(accountId: string, nextPageToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionListing>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listAccountTransactions(accountId, nextPageToken, options);
+        async listAccountTransactions(accountId: string, marketplaceId: string, nextPageToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionListing>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listAccountTransactions(accountId, marketplaceId, nextPageToken, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SellerWalletApi.listAccountTransactions']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -702,12 +790,13 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
          * Retrieve transfer schedules of a Seller Wallet bank account.
          * @summary The API will return all the transfer schedules for a given Amazon SW account
          * @param {string} accountId ID of the Amazon SW account
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {string} [nextPageToken] Pagination token to retrieve a specific page of results.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTransferSchedules(accountId: string, nextPageToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransferScheduleListing>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listTransferSchedules(accountId, nextPageToken, options);
+        async listTransferSchedules(accountId: string, marketplaceId: string, nextPageToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransferScheduleListing>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listTransferSchedules(accountId, marketplaceId, nextPageToken, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SellerWalletApi.listTransferSchedules']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -717,12 +806,13 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
          * @summary Update a transfer schedule information. Only fields (i.e; transferScheduleInformation, paymentPreference, transferScheduleStatus) in the request body can be updated.
          * @param {string} destAccountDigitalSignature Digital signature for the destination bank account details.
          * @param {string} amountDigitalSignature Digital signature for the source currency transaction amount.
+         * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {TransferSchedule} body Defines the actual payload of the scheduled transfer request that is to be updated. 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateTransferSchedule(destAccountDigitalSignature: string, amountDigitalSignature: string, body: TransferSchedule, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransferSchedule>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.updateTransferSchedule(destAccountDigitalSignature, amountDigitalSignature, body, options);
+        async updateTransferSchedule(destAccountDigitalSignature: string, amountDigitalSignature: string, marketplaceId: string, body: TransferSchedule, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransferSchedule>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateTransferSchedule(destAccountDigitalSignature, amountDigitalSignature, marketplaceId, body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SellerWalletApi.updateTransferSchedule']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -743,8 +833,8 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createTransaction(requestParameters: SellerWalletApiCreateTransactionRequest, options?: RawAxiosRequestConfig): AxiosPromise<Transaction> {
-            return localVarFp.createTransaction(requestParameters.destAccountDigitalSignature, requestParameters.amountDigitalSignature, requestParameters.body, options).then((request) => request(axios, basePath));
+        createTransaction(requestParameters: SellerWalletApiCreateTransactionRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateTransactionResponse> {
+            return localVarFp.createTransaction(requestParameters.destAccountDigitalSignature, requestParameters.amountDigitalSignature, requestParameters.marketplaceId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Create a transfer schedule request from a Seller Wallet account to another customer-provided account.
@@ -754,17 +844,17 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
          * @throws {RequiredError}
          */
         createTransferSchedule(requestParameters: SellerWalletApiCreateTransferScheduleRequest, options?: RawAxiosRequestConfig): AxiosPromise<TransferSchedule> {
-            return localVarFp.createTransferSchedule(requestParameters.destAccountDigitalSignature, requestParameters.amountDigitalSignature, requestParameters.body, options).then((request) => request(axios, basePath));
+            return localVarFp.createTransferSchedule(requestParameters.destAccountDigitalSignature, requestParameters.amountDigitalSignature, requestParameters.marketplaceId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
-         * Delete a transaction request that is scheduled from a Seller Wallet account to another customer-provided account.
-         * @summary Delete a transaction request that is scheduled from Amazon SW account to another customer provided account
+         * Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account.
+         * @summary Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account
          * @param {SellerWalletApiDeleteScheduleTransactionRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         deleteScheduleTransaction(requestParameters: SellerWalletApiDeleteScheduleTransactionRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeleteTransferSchedule> {
-            return localVarFp.deleteScheduleTransaction(requestParameters.transferScheduleId, options).then((request) => request(axios, basePath));
+            return localVarFp.deleteScheduleTransaction(requestParameters.transferScheduleId, requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
          * Retrieve a Seller Wallet bank account by Amazon account identifier.
@@ -774,7 +864,7 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
          * @throws {RequiredError}
          */
         getAccount(requestParameters: SellerWalletApiGetAccountRequest, options?: RawAxiosRequestConfig): AxiosPromise<BankAccount> {
-            return localVarFp.getAccount(requestParameters.accountId, options).then((request) => request(axios, basePath));
+            return localVarFp.getAccount(requestParameters.accountId, requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a transaction
@@ -784,7 +874,7 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
          * @throws {RequiredError}
          */
         getTransaction(requestParameters: SellerWalletApiGetTransactionRequest, options?: RawAxiosRequestConfig): AxiosPromise<Transaction> {
-            return localVarFp.getTransaction(requestParameters.transactionId, options).then((request) => request(axios, basePath));
+            return localVarFp.getTransaction(requestParameters.transactionId, requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns list of potential fees on a transaction based on the source and destination country currency code
@@ -794,17 +884,17 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
          * @throws {RequiredError}
          */
         getTransferPreview(requestParameters: SellerWalletApiGetTransferPreviewRequest, options?: RawAxiosRequestConfig): AxiosPromise<TransferRatePreview> {
-            return localVarFp.getTransferPreview(requestParameters.sourceCountryCode, requestParameters.sourceCurrencyCode, requestParameters.destinationCountryCode, requestParameters.destinationCurrencyCode, requestParameters.baseAmount, options).then((request) => request(axios, basePath));
+            return localVarFp.getTransferPreview(requestParameters.sourceCountryCode, requestParameters.sourceCurrencyCode, requestParameters.destinationCountryCode, requestParameters.destinationCurrencyCode, requestParameters.baseAmount, requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Find a particular Seller Wallet account transfer schedule.
-         * @summary Find particular Amazon SW account transfer schedule by Amazon transfer schedule identifier
+         * Find a particular Amazon Seller Wallet account transfer schedule.
+         * @summary Find particular Amazon Seller Wallet account transfer schedule by Amazon transfer schedule identifier
          * @param {SellerWalletApiGetTransferScheduleRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getTransferSchedule(requestParameters: SellerWalletApiGetTransferScheduleRequest, options?: RawAxiosRequestConfig): AxiosPromise<TransferSchedule> {
-            return localVarFp.getTransferSchedule(requestParameters.transferScheduleId, options).then((request) => request(axios, basePath));
+            return localVarFp.getTransferSchedule(requestParameters.transferScheduleId, requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
          * Retrieve the balance in a given Seller Wallet bank account.
@@ -814,7 +904,7 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
          * @throws {RequiredError}
          */
         listAccountBalances(requestParameters: SellerWalletApiListAccountBalancesRequest, options?: RawAxiosRequestConfig): AxiosPromise<BalanceListing> {
-            return localVarFp.listAccountBalances(requestParameters.accountId, options).then((request) => request(axios, basePath));
+            return localVarFp.listAccountBalances(requestParameters.accountId, requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
          * Retrieve a list of transactions for a given Seller Wallet bank account.
@@ -824,7 +914,7 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
          * @throws {RequiredError}
          */
         listAccountTransactions(requestParameters: SellerWalletApiListAccountTransactionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<TransactionListing> {
-            return localVarFp.listAccountTransactions(requestParameters.accountId, requestParameters.nextPageToken, options).then((request) => request(axios, basePath));
+            return localVarFp.listAccountTransactions(requestParameters.accountId, requestParameters.marketplaceId, requestParameters.nextPageToken, options).then((request) => request(axios, basePath));
         },
         /**
          * Get Seller Wallet accounts for a seller.
@@ -844,7 +934,7 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
          * @throws {RequiredError}
          */
         listTransferSchedules(requestParameters: SellerWalletApiListTransferSchedulesRequest, options?: RawAxiosRequestConfig): AxiosPromise<TransferScheduleListing> {
-            return localVarFp.listTransferSchedules(requestParameters.accountId, requestParameters.nextPageToken, options).then((request) => request(axios, basePath));
+            return localVarFp.listTransferSchedules(requestParameters.accountId, requestParameters.marketplaceId, requestParameters.nextPageToken, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a transfer belonging to the updated scheduled transfer request
@@ -854,7 +944,7 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
          * @throws {RequiredError}
          */
         updateTransferSchedule(requestParameters: SellerWalletApiUpdateTransferScheduleRequest, options?: RawAxiosRequestConfig): AxiosPromise<TransferSchedule> {
-            return localVarFp.updateTransferSchedule(requestParameters.destAccountDigitalSignature, requestParameters.amountDigitalSignature, requestParameters.body, options).then((request) => request(axios, basePath));
+            return localVarFp.updateTransferSchedule(requestParameters.destAccountDigitalSignature, requestParameters.amountDigitalSignature, requestParameters.marketplaceId, requestParameters.body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -872,6 +962,11 @@ export interface SellerWalletApiCreateTransactionRequest {
      * Digital signature for the source currency transaction amount.
      */
     readonly amountDigitalSignature: string
+
+    /**
+     * The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     */
+    readonly marketplaceId: string
 
     /**
      * Defines the actual payload of the request
@@ -894,6 +989,11 @@ export interface SellerWalletApiCreateTransferScheduleRequest {
     readonly amountDigitalSignature: string
 
     /**
+     * The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     */
+    readonly marketplaceId: string
+
+    /**
      * Defines the actual payload of the request
      */
     readonly body: TransferScheduleRequest
@@ -904,9 +1004,14 @@ export interface SellerWalletApiCreateTransferScheduleRequest {
  */
 export interface SellerWalletApiDeleteScheduleTransactionRequest {
     /**
-     * A unique reference id for a scheduled transfer
+     * A unique reference ID for a scheduled transfer.
      */
     readonly transferScheduleId: string
+
+    /**
+     * The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     */
+    readonly marketplaceId: string
 }
 
 /**
@@ -917,6 +1022,11 @@ export interface SellerWalletApiGetAccountRequest {
      * ID of the Amazon SW account
      */
     readonly accountId: string
+
+    /**
+     * The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     */
+    readonly marketplaceId: string
 }
 
 /**
@@ -927,6 +1037,11 @@ export interface SellerWalletApiGetTransactionRequest {
      * ID of the Amazon SW transaction
      */
     readonly transactionId: string
+
+    /**
+     * The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     */
+    readonly marketplaceId: string
 }
 
 /**
@@ -957,6 +1072,11 @@ export interface SellerWalletApiGetTransferPreviewRequest {
      * Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.
      */
     readonly baseAmount: number
+
+    /**
+     * The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     */
+    readonly marketplaceId: string
 }
 
 /**
@@ -964,9 +1084,14 @@ export interface SellerWalletApiGetTransferPreviewRequest {
  */
 export interface SellerWalletApiGetTransferScheduleRequest {
     /**
-     * Schedule ID of the Amazon SW transfer
+     * The schedule ID of the Amazon Seller Wallet transfer.
      */
     readonly transferScheduleId: string
+
+    /**
+     * The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     */
+    readonly marketplaceId: string
 }
 
 /**
@@ -977,6 +1102,11 @@ export interface SellerWalletApiListAccountBalancesRequest {
      * ID of the Amazon SW account
      */
     readonly accountId: string
+
+    /**
+     * The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     */
+    readonly marketplaceId: string
 }
 
 /**
@@ -987,6 +1117,11 @@ export interface SellerWalletApiListAccountTransactionsRequest {
      * ID of the Amazon SW account
      */
     readonly accountId: string
+
+    /**
+     * The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     */
+    readonly marketplaceId: string
 
     /**
      * Pagination token to retrieve a specific page of results.
@@ -1014,6 +1149,11 @@ export interface SellerWalletApiListTransferSchedulesRequest {
     readonly accountId: string
 
     /**
+     * The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     */
+    readonly marketplaceId: string
+
+    /**
      * Pagination token to retrieve a specific page of results.
      */
     readonly nextPageToken?: string
@@ -1034,6 +1174,11 @@ export interface SellerWalletApiUpdateTransferScheduleRequest {
     readonly amountDigitalSignature: string
 
     /**
+     * The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     */
+    readonly marketplaceId: string
+
+    /**
      * Defines the actual payload of the scheduled transfer request that is to be updated. 
      */
     readonly body: TransferSchedule
@@ -1051,7 +1196,7 @@ export class SellerWalletApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public createTransaction(requestParameters: SellerWalletApiCreateTransactionRequest, options?: RawAxiosRequestConfig) {
-        return SellerWalletApiFp(this.configuration).createTransaction(requestParameters.destAccountDigitalSignature, requestParameters.amountDigitalSignature, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+        return SellerWalletApiFp(this.configuration).createTransaction(requestParameters.destAccountDigitalSignature, requestParameters.amountDigitalSignature, requestParameters.marketplaceId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1062,18 +1207,18 @@ export class SellerWalletApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public createTransferSchedule(requestParameters: SellerWalletApiCreateTransferScheduleRequest, options?: RawAxiosRequestConfig) {
-        return SellerWalletApiFp(this.configuration).createTransferSchedule(requestParameters.destAccountDigitalSignature, requestParameters.amountDigitalSignature, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+        return SellerWalletApiFp(this.configuration).createTransferSchedule(requestParameters.destAccountDigitalSignature, requestParameters.amountDigitalSignature, requestParameters.marketplaceId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * Delete a transaction request that is scheduled from a Seller Wallet account to another customer-provided account.
-     * @summary Delete a transaction request that is scheduled from Amazon SW account to another customer provided account
+     * Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account.
+     * @summary Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account
      * @param {SellerWalletApiDeleteScheduleTransactionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     public deleteScheduleTransaction(requestParameters: SellerWalletApiDeleteScheduleTransactionRequest, options?: RawAxiosRequestConfig) {
-        return SellerWalletApiFp(this.configuration).deleteScheduleTransaction(requestParameters.transferScheduleId, options).then((request) => request(this.axios, this.basePath));
+        return SellerWalletApiFp(this.configuration).deleteScheduleTransaction(requestParameters.transferScheduleId, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1084,7 +1229,7 @@ export class SellerWalletApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public getAccount(requestParameters: SellerWalletApiGetAccountRequest, options?: RawAxiosRequestConfig) {
-        return SellerWalletApiFp(this.configuration).getAccount(requestParameters.accountId, options).then((request) => request(this.axios, this.basePath));
+        return SellerWalletApiFp(this.configuration).getAccount(requestParameters.accountId, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1095,7 +1240,7 @@ export class SellerWalletApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public getTransaction(requestParameters: SellerWalletApiGetTransactionRequest, options?: RawAxiosRequestConfig) {
-        return SellerWalletApiFp(this.configuration).getTransaction(requestParameters.transactionId, options).then((request) => request(this.axios, this.basePath));
+        return SellerWalletApiFp(this.configuration).getTransaction(requestParameters.transactionId, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1106,18 +1251,18 @@ export class SellerWalletApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public getTransferPreview(requestParameters: SellerWalletApiGetTransferPreviewRequest, options?: RawAxiosRequestConfig) {
-        return SellerWalletApiFp(this.configuration).getTransferPreview(requestParameters.sourceCountryCode, requestParameters.sourceCurrencyCode, requestParameters.destinationCountryCode, requestParameters.destinationCurrencyCode, requestParameters.baseAmount, options).then((request) => request(this.axios, this.basePath));
+        return SellerWalletApiFp(this.configuration).getTransferPreview(requestParameters.sourceCountryCode, requestParameters.sourceCurrencyCode, requestParameters.destinationCountryCode, requestParameters.destinationCurrencyCode, requestParameters.baseAmount, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * Find a particular Seller Wallet account transfer schedule.
-     * @summary Find particular Amazon SW account transfer schedule by Amazon transfer schedule identifier
+     * Find a particular Amazon Seller Wallet account transfer schedule.
+     * @summary Find particular Amazon Seller Wallet account transfer schedule by Amazon transfer schedule identifier
      * @param {SellerWalletApiGetTransferScheduleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     public getTransferSchedule(requestParameters: SellerWalletApiGetTransferScheduleRequest, options?: RawAxiosRequestConfig) {
-        return SellerWalletApiFp(this.configuration).getTransferSchedule(requestParameters.transferScheduleId, options).then((request) => request(this.axios, this.basePath));
+        return SellerWalletApiFp(this.configuration).getTransferSchedule(requestParameters.transferScheduleId, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1128,7 +1273,7 @@ export class SellerWalletApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public listAccountBalances(requestParameters: SellerWalletApiListAccountBalancesRequest, options?: RawAxiosRequestConfig) {
-        return SellerWalletApiFp(this.configuration).listAccountBalances(requestParameters.accountId, options).then((request) => request(this.axios, this.basePath));
+        return SellerWalletApiFp(this.configuration).listAccountBalances(requestParameters.accountId, requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1139,7 +1284,7 @@ export class SellerWalletApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public listAccountTransactions(requestParameters: SellerWalletApiListAccountTransactionsRequest, options?: RawAxiosRequestConfig) {
-        return SellerWalletApiFp(this.configuration).listAccountTransactions(requestParameters.accountId, requestParameters.nextPageToken, options).then((request) => request(this.axios, this.basePath));
+        return SellerWalletApiFp(this.configuration).listAccountTransactions(requestParameters.accountId, requestParameters.marketplaceId, requestParameters.nextPageToken, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1161,7 +1306,7 @@ export class SellerWalletApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public listTransferSchedules(requestParameters: SellerWalletApiListTransferSchedulesRequest, options?: RawAxiosRequestConfig) {
-        return SellerWalletApiFp(this.configuration).listTransferSchedules(requestParameters.accountId, requestParameters.nextPageToken, options).then((request) => request(this.axios, this.basePath));
+        return SellerWalletApiFp(this.configuration).listTransferSchedules(requestParameters.accountId, requestParameters.marketplaceId, requestParameters.nextPageToken, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1172,7 +1317,7 @@ export class SellerWalletApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public updateTransferSchedule(requestParameters: SellerWalletApiUpdateTransferScheduleRequest, options?: RawAxiosRequestConfig) {
-        return SellerWalletApiFp(this.configuration).updateTransferSchedule(requestParameters.destAccountDigitalSignature, requestParameters.amountDigitalSignature, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+        return SellerWalletApiFp(this.configuration).updateTransferSchedule(requestParameters.destAccountDigitalSignature, requestParameters.amountDigitalSignature, requestParameters.marketplaceId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

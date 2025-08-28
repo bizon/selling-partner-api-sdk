@@ -29,7 +29,7 @@ export interface FulfillmentShipment {
      */
     'amazonShipmentId': string;
     /**
-     * An identifier for the fulfillment center that the shipment will be sent from.
+     * An identifier for the fulfillment center from which the shipment is sent.
      */
     'fulfillmentCenterId': string;
     /**
@@ -45,7 +45,7 @@ export interface FulfillmentShipment {
      */
     'estimatedArrivalDate'?: string;
     /**
-     * Provides additional insight into shipment timeline. Primairly used to communicate that actual delivery dates aren\'t available.
+     * Provides additional insight into shipment timeline. Primarily used to communicate that actual delivery dates aren\'t available.
      */
     'shippingNotes'?: Array<string>;
     /**

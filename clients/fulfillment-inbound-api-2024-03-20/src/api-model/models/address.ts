@@ -39,6 +39,10 @@ export interface Address {
      */
     'countryCode': string;
     /**
+     * The district or county.
+     */
+    'districtOrCounty'?: string;
+    /**
      * The email address.
      */
     'email'?: string;

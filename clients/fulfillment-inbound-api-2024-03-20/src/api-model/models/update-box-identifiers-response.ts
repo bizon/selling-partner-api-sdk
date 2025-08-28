@@ -13,22 +13,14 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import type { Address } from './address';
 
 /**
- * The Amazon fulfillment center address and warehouse ID.
+ * The `updateBoxIdentifiers` response.
  */
-export interface ShipmentDestination {
-    'address'?: Address;
+export interface UpdateBoxIdentifiersResponse {
     /**
-     * The type of destination for this shipment. Possible values: `AMAZON_OPTIMIZED`, `AMAZON_WAREHOUSE`.
+     * UUID for the given operation.
      */
-    'destinationType': string;
-    /**
-     * The warehouse that the shipment should be sent to. This can be empty if the destination type is `AMAZON_OPTIMIZED`.
-     */
-    'warehouseId'?: string;
+    'operationId': string;
 }
 

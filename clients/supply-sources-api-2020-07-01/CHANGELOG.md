@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.6](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/supply-sources-api-2020-07-01@2.1.5...@sp-api-sdk/supply-sources-api-2020-07-01@2.1.6) (2025-08-28)
+
+**Note:** Version bump only for package @sp-api-sdk/supply-sources-api-2020-07-01
+
 ## [2.1.5](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/supply-sources-api-2020-07-01@2.1.4...@sp-api-sdk/supply-sources-api-2020-07-01@2.1.5) (2025-08-26)
 
 **Note:** Version bump only for package @sp-api-sdk/supply-sources-api-2020-07-01

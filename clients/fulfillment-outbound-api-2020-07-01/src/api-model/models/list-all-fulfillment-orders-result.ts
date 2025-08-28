@@ -18,7 +18,7 @@
 import type { FulfillmentOrder } from './fulfillment-order';
 
 /**
- * The request for the listAllFulfillmentOrders operation.
+ * The request for the `listAllFulfillmentOrders` operation.
  */
 export interface ListAllFulfillmentOrdersResult {
     /**

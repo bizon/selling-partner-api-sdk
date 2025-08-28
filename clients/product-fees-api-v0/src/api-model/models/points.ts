@@ -17,7 +17,13 @@
 // @ts-ignore
 import type { MoneyType } from './money-type';
 
+/**
+ * The number of Amazon Points offered with the purchase of an item.The Amazon Points program is only available in Japan.
+ */
 export interface Points {
+    /**
+     * The number of Amazon Points
+     */
     'PointsNumber'?: number;
     'PointsMonetaryValue'?: MoneyType;
 }

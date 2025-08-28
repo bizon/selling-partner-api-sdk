@@ -13,18 +13,17 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { DeliveryOffering } from './delivery-offering';
 
 /**
- * Localized messaging for a delivery offering.
+ * A list of delivery offerings, including offering expiration, earliest and latest date and time range, and the delivery offering policy.
  */
-export interface DeliveryMessage {
+export interface GetDeliveryOfferingsResult {
     /**
-     * The message content for a delivery offering.
+     * An array of delivery offering information.
      */
-    'text'?: string;
-    /**
-     * The locale for the message (e.g., `en_US`).
-     */
-    'locale'?: string;
+    'deliveryOfferings'?: Array<DeliveryOffering>;
 }
 

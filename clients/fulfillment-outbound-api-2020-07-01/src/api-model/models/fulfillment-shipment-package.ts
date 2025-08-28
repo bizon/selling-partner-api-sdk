@@ -37,6 +37,10 @@ export interface FulfillmentShipmentPackage {
      */
     'trackingNumber'?: string;
     /**
+     * The Amazon fulfillment tracking number, if provided, can be used to obtain tracking and delivery information.
+     */
+    'amazonFulfillmentTrackingNumber'?: string;
+    /**
      * Date timestamp
      */
     'estimatedArrivalDate'?: string;

@@ -21,7 +21,7 @@ import type { GetDeliveryOffersProduct } from './get-delivery-offers-product';
 import type { GetDeliveryOffersTerms } from './get-delivery-offers-terms';
 
 /**
- * The request body schema for the getDeliveryOffers operation.
+ * The request body schema for the `getDeliveryOffers` operation.
  */
 export interface GetDeliveryOffersRequest {
     'product': GetDeliveryOffersProduct;

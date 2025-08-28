@@ -18,7 +18,7 @@
 import type { GetDeliveryOffersResult } from './get-delivery-offers-result';
 
 /**
- * The response schema for the getDeliveryOffers operation.
+ * The response schema for the `getDeliveryOffers` operation.
  */
 export interface GetDeliveryOffersResponse {
     'payload'?: GetDeliveryOffersResult;

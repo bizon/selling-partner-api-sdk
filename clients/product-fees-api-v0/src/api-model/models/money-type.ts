@@ -14,6 +14,9 @@
 
 
 
+/**
+ * An object representing a monetary value with its currency information.
+ */
 export interface MoneyType {
     /**
      * The currency code in ISO 4217 format.

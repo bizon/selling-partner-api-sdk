@@ -24,7 +24,7 @@ import type { ReturnAuthorization } from './return-authorization';
 import type { ReturnItem } from './return-item';
 
 /**
- * The result for the createFulfillmentReturn operation.
+ * The result for the `createFulfillmentReturn` operation.
  */
 export interface CreateFulfillmentReturnResult {
     /**

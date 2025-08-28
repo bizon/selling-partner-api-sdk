@@ -18,6 +18,9 @@
  * A list of error responses returned when a request is unsuccessful.
  */
 export interface GetMyFeesEstimatesErrorList {
+    /**
+     * A list of error responses returned when a request is unsuccessful.
+     */
     'errors': Array<Error>;
 }
 

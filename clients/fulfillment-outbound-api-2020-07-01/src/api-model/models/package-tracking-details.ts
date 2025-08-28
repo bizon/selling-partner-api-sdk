@@ -68,7 +68,7 @@ export interface PackageTrackingDetails {
     'shipToAddress'?: TrackingAddress;
     'currentStatus'?: CurrentStatus;
     /**
-     * Description corresponding to the CurrentStatus value.
+     * Description corresponding to the `CurrentStatus` value.
      */
     'currentStatusDescription'?: string;
     'deliveryWindow'?: DateRange;

@@ -42,7 +42,7 @@ export interface Item {
      */
     'manufacturingLotCode'?: string;
     /**
-     * The merchant SKU, a merchant-supplied identifier of a specific SKU.
+     * The merchant-defined SKU ID.
      */
     'msku': string;
     /**

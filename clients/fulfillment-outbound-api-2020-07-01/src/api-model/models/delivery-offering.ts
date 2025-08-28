@@ -13,18 +13,22 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { DateRange } from './date-range';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { DeliveryPolicy } from './delivery-policy';
 
 /**
- * Localized messaging for a delivery offering.
+ * An available offering for delivery of a product.
  */
-export interface DeliveryMessage {
+export interface DeliveryOffering {
     /**
-     * The message content for a delivery offering.
+     * Date timestamp
      */
-    'text'?: string;
-    /**
-     * The locale for the message (e.g., `en_US`).
-     */
-    'locale'?: string;
+    'expiresAt'?: string;
+    'dateRange'?: DateRange;
+    'policy'?: DeliveryPolicy;
 }
 

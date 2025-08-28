@@ -15,20 +15,15 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
+import type { BoxIdentifierInput } from './box-identifier-input';
 
 /**
- * The Amazon fulfillment center address and warehouse ID.
+ * Input information for updating a box identifier.
  */
-export interface ShipmentDestination {
-    'address'?: Address;
+export interface UpdateBoxIdentifiersRequest {
     /**
-     * The type of destination for this shipment. Possible values: `AMAZON_OPTIMIZED`, `AMAZON_WAREHOUSE`.
+     * Contains box identifier updates for the boxes within a shipment.
      */
-    'destinationType': string;
-    /**
-     * The warehouse that the shipment should be sent to. This can be empty if the destination type is `AMAZON_OPTIMIZED`.
-     */
-    'warehouseId'?: string;
+    'boxIdentifiers': Array<BoxIdentifierInput>;
 }
 

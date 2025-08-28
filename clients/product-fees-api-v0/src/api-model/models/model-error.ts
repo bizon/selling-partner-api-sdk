@@ -14,6 +14,9 @@
 
 
 
+/**
+ * An object representing an error that occurred during the API operation.
+ */
 export interface ModelError {
     /**
      * An error code that identifies the type of error that occurred.

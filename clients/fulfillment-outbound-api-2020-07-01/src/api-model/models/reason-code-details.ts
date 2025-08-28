@@ -27,7 +27,7 @@ export interface ReasonCodeDetails {
      */
     'description': string;
     /**
-     * A translation of the description. The translation is in the language specified in the Language request parameter.
+     * A translation of the description. The translation is in the language specified in the `language` request parameter.
      */
     'translatedDescription'?: string;
 }

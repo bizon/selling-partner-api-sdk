@@ -40,7 +40,7 @@ export interface GetFulfillmentPreviewRequest {
      */
     'items': Array<GetFulfillmentPreviewItem>;
     /**
-     * ShippingSpeedCategory List
+     * List of shipping speed categories.
      */
     'shippingSpeedCategories'?: Array<ShippingSpeedCategory>;
     /**
@@ -48,7 +48,7 @@ export interface GetFulfillmentPreviewRequest {
      */
     'includeCODFulfillmentPreview'?: boolean;
     /**
-     * When true, returns the `ScheduledDeliveryInfo` response object, which contains the available delivery windows for a Scheduled Delivery. The `ScheduledDeliveryInfo` response object can only be returned for fulfillment order previews with `ShippingSpeedCategories` = `ScheduledDelivery`.
+     * When true, returns the `ScheduledDeliveryInfo` response object, which contains the available delivery windows for a Scheduled Delivery. The `ScheduledDeliveryInfo` response object can only be returned for fulfillment order previews with `ShippingSpeedCategories` equal to `ScheduledDelivery`.
      */
     'includeDeliveryWindows'?: boolean;
     /**

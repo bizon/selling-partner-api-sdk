@@ -13,18 +13,18 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { GetDeliveryOfferingsResult } from './get-delivery-offerings-result';
 
 /**
- * Localized messaging for a delivery offering.
+ * The response schema for the `getDeliveryOfferings` operation.
  */
-export interface DeliveryMessage {
+export interface GetDeliveryOfferingsResponse {
+    'payload'?: GetDeliveryOfferingsResult;
     /**
-     * The message content for a delivery offering.
+     * A list of error responses returned when a request is unsuccessful.
      */
-    'text'?: string;
-    /**
-     * The locale for the message (e.g., `en_US`).
-     */
-    'locale'?: string;
+    'errors'?: Array<Error>;
 }
 

@@ -18,7 +18,7 @@
 import type { FeatureSku } from './feature-sku';
 
 /**
- * The payload for the `getEligibileInventory` operation.
+ * The payload for the `getEligibleInventory` operation.
  */
 export interface GetFeatureInventoryResult {
     /**

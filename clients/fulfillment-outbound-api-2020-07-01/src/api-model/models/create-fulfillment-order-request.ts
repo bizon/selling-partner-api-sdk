@@ -53,11 +53,11 @@ export interface CreateFulfillmentOrderRequest {
      */
     'marketplaceId'?: string;
     /**
-     * A fulfillment order identifier that the seller creates to track their fulfillment order. The `SellerFulfillmentOrderId` must be unique for each fulfillment order that a seller creates. If the seller\'s system already creates unique order identifiers, then these might be good values for them to use.
+     * A fulfillment order identifier that the seller creates to track their fulfillment order. The `sellerFulfillmentOrderId` must be unique for each fulfillment order that a seller creates. If the seller\'s system already creates unique order identifiers, then these might be good values for them to use.
      */
     'sellerFulfillmentOrderId': string;
     /**
-     * A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of `DisplayableOrderId` should match the order identifier that the seller provides to the recipient. The seller can use the `SellerFulfillmentOrderId` for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.  The value must be an alpha-numeric or ISO 8859-1 compliant string from one to 40 characters in length. Cannot contain two spaces in a row. Leading and trailing white space is removed.
+     * A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of `displayableOrderId` should match the order identifier that the seller provides to the recipient. The seller can use the SellerFulfillmentOrderId for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.  The value must be an alpha-numeric or ISO 8859-1 compliant string from one to 40 characters in length. Cannot contain two spaces in a row. Leading and trailing white space is removed.
      */
     'displayableOrderId': string;
     /**

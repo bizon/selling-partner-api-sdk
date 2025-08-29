@@ -6,6 +6,8 @@ export * from './get-shipment-details-response';
 export * from './marketplace-tax-info';
 export * from './model-error';
 export * from './money';
+export * from './payment-information';
+export * from './payment-method-enum';
 export * from './shipment-detail';
 export * from './shipment-invoice-status';
 export * from './shipment-invoice-status-info';

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/shipment-invoicing-api-v0@4.0.3...@sp-api-sdk/shipment-invoicing-api-v0@4.1.0) (2025-08-31)
+
+### Features
+
+* **clients:** update models as of 2025-08-29 ([#1574](https://github.com/bizon/selling-partner-api-sdk/issues/1574)) ([083bddb](https://github.com/bizon/selling-partner-api-sdk/commit/083bddb6f44d08d89303bbbe5b0dbadeca752456))
+
 ## [4.0.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/shipment-invoicing-api-v0@4.0.2...@sp-api-sdk/shipment-invoicing-api-v0@4.0.3) (2025-08-28)
 
 **Note:** Version bump only for package @sp-api-sdk/shipment-invoicing-api-v0

@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.4](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-transaction-status-api-v1@4.0.3...@sp-api-sdk/vendor-transaction-status-api-v1@4.0.4) (2025-08-31)
+
+**Note:** Version bump only for package @sp-api-sdk/vendor-transaction-status-api-v1
+
 ## [4.0.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-transaction-status-api-v1@4.0.2...@sp-api-sdk/vendor-transaction-status-api-v1@4.0.3) (2025-08-28)
 
 **Note:** Version bump only for package @sp-api-sdk/vendor-transaction-status-api-v1

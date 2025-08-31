@@ -15,8 +15,8 @@
     "docs": "typedoc"
   },
   "devDependencies": {
-    "@lerna-lite/cli": "^4.7.2",
-    "@lerna-lite/publish": "^4.7.2",
+    "@lerna-lite/cli": "^4.7.3",
+    "@lerna-lite/publish": "^4.7.3",
     "@swc/core": "^1.13.5",
     "@swc/jest": "^0.2.39",
     "@types/jest": "^30.0.0",

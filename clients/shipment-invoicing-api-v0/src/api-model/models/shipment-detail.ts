@@ -24,6 +24,9 @@ import type { BuyerTaxInfo } from './buyer-tax-info';
 import type { MarketplaceTaxInfo } from './marketplace-tax-info';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { PaymentInformation } from './payment-information';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ShipmentItem } from './shipment-item';
 
 /**
@@ -51,6 +54,10 @@ export interface ShipmentDetail {
      * The list of payment method details.
      */
     'PaymentMethodDetails'?: Array<string>;
+    /**
+     * List of payment transactions
+     */
+    'Payments'?: Array<PaymentInformation>;
     /**
      * The identifier for the marketplace where the order was placed.
      */

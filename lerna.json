@@ -5,7 +5,7 @@
   "command": {
     "publish": {
       "cleanupTempFiles": true,
-      "stripPackageKeys": ["devDependencies", "scripts"]
+      "stripPackageKeys": ["devDependencies", "scripts", "xo", "prettier"]
     },
     "version": {
       "conventionalCommits": true,

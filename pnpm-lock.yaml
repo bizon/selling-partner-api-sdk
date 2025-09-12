@@ -66,8 +66,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -79,8 +79,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -92,8 +92,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -105,8 +105,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -118,8 +118,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -131,8 +131,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -144,8 +144,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -157,8 +157,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -170,8 +170,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -183,8 +183,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -196,8 +196,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -209,8 +209,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -222,8 +222,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -235,8 +235,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -248,8 +248,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -261,8 +261,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -274,8 +274,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -287,8 +287,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -300,8 +300,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -313,8 +313,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -326,8 +326,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -339,8 +339,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -352,8 +352,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -365,8 +365,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -378,8 +378,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -391,8 +391,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -404,8 +404,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -417,8 +417,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -430,8 +430,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -443,8 +443,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -456,8 +456,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -469,8 +469,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -482,8 +482,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -495,8 +495,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -508,8 +508,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -521,8 +521,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -534,8 +534,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -547,8 +547,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -560,8 +560,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -573,8 +573,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -586,8 +586,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -599,8 +599,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -612,8 +612,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -625,8 +625,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -638,8 +638,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -651,8 +651,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -664,8 +664,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -677,8 +677,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -690,8 +690,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -703,8 +703,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -716,8 +716,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -729,8 +729,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -742,8 +742,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -755,8 +755,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -768,8 +768,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -781,8 +781,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -794,8 +794,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -807,8 +807,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/common
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
     devDependencies:
       '@sp-api-sdk/typescript-config':
         specifier: workspace:*
@@ -887,8 +887,8 @@ importers:
   packages/auth:
     dependencies:
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
       read-pkg-up:
         specifier: ^7.0.1
         version: 7.0.1
@@ -912,14 +912,14 @@ importers:
         specifier: workspace:*
         version: link:../auth
       axios:
-        specifier: ^1.11.0
-        version: 1.11.0
+        specifier: ^1.12.0
+        version: 1.12.0
       axios-logger:
         specifier: ^2.8.1
         version: 2.8.1
       axios-retry:
         specifier: ^4.5.0
-        version: 4.5.0(axios@1.11.0)
+        version: 4.5.0(axios@1.12.0)
       read-pkg-up:
         specifier: ^7.0.1
         version: 7.0.1
@@ -1555,6 +1555,9 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.30':
     resolution: {integrity: sha512-GQ7Nw5G2lTu/BtHTKfXhKHok2WGetd4XYcVKGx00SjAk8GMwgJM3zr6zORiPGuOE+/vkc90KtTosSSvaCjKb2Q==}
+
+  '@jridgewell/trace-mapping@0.3.31':
+    resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
@@ -2513,6 +2516,9 @@ packages:
 
   axios@1.11.0:
     resolution: {integrity: sha512-1Lx3WLFQWm3ooKDYZD1eXmoGO9fxYQjrycfHFC8P0sCfQVXyROp0p9PFWBehewBOdCwHc+f/b8I0fMto5eSfwA==}
+
+  axios@1.12.0:
+    resolution: {integrity: sha512-oXTDccv8PcfjZmPGlWsPSwtOJCZ/b6W5jAMCNcfwJbCzDckwG0jrYJFaWH1yvivfCXjVzV/SPDEhMB3Q+DSurg==}
 
   babel-jest@30.1.2:
     resolution: {integrity: sha512-IQCus1rt9kaSh7PQxLYRY5NmkNrNlU2TpabzwV7T2jljnpdHOcmnYYv8QmE04Li4S3a2Lj8/yXyET5pBarPr6g==}
@@ -6652,13 +6658,18 @@ snapshots:
   '@jridgewell/source-map@0.3.11':
     dependencies:
       '@jridgewell/gen-mapping': 0.3.13
-      '@jridgewell/trace-mapping': 0.3.30
+      '@jridgewell/trace-mapping': 0.3.31
 
   '@jridgewell/sourcemap-codec@1.4.15': {}
 
   '@jridgewell/sourcemap-codec@1.5.5': {}
 
   '@jridgewell/trace-mapping@0.3.30':
+    dependencies:
+      '@jridgewell/resolve-uri': 3.1.2
+      '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@jridgewell/trace-mapping@0.3.31':
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -7851,12 +7862,20 @@ snapshots:
       chalk: 4.1.2
       dateformat: 3.0.3
 
-  axios-retry@4.5.0(axios@1.11.0):
+  axios-retry@4.5.0(axios@1.12.0):
     dependencies:
-      axios: 1.11.0
+      axios: 1.12.0
       is-retry-allowed: 2.2.0
 
   axios@1.11.0:
+    dependencies:
+      follow-redirects: 1.15.11
+      form-data: 4.0.4
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+
+  axios@1.12.0:
     dependencies:
       follow-redirects: 1.15.11
       form-data: 4.0.4
@@ -11379,7 +11398,7 @@ snapshots:
 
   terser-webpack-plugin@5.3.14(@swc/core@1.13.5)(webpack@5.91.0(@swc/core@1.13.5)):
     dependencies:
-      '@jridgewell/trace-mapping': 0.3.30
+      '@jridgewell/trace-mapping': 0.3.31
       jest-worker: 27.5.1
       schema-utils: 4.3.2
       serialize-javascript: 6.0.2

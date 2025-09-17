@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@sp-api-sdk/auth": "workspace:*",
-    "axios": "^1.12.0",
+    "axios": "^1.12.2",
     "axios-logger": "^2.8.1",
     "axios-retry": "^4.5.0",
     "read-pkg-up": "^7.0.1"

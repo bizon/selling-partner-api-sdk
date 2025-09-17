@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@sp-api-sdk/common": "workspace:*",
-    "axios": "^1.12.0"
+    "axios": "^1.12.2"
   },
   "devDependencies": {
     "@sp-api-sdk/typescript-config": "workspace:*"

@@ -13,10 +13,10 @@ importers:
     devDependencies:
       '@lerna-lite/cli':
         specifier: ^4.8.0
-        version: 4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.1)(conventional-commits-filter@5.0.0))(@lerna-lite/version@4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.1)(conventional-commits-filter@5.0.0))(@types/node@24.5.1)(conventional-commits-filter@5.0.0))(@types/node@24.5.1)
+        version: 4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.2)(conventional-commits-filter@5.0.0))(@lerna-lite/version@4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.2)(conventional-commits-filter@5.0.0))(@types/node@24.5.2)(conventional-commits-filter@5.0.0))(@types/node@24.5.2)
       '@lerna-lite/publish':
         specifier: ^4.8.0
-        version: 4.8.0(@types/node@24.5.1)(conventional-commits-filter@5.0.0)
+        version: 4.8.0(@types/node@24.5.2)(conventional-commits-filter@5.0.0)
       '@swc/core':
         specifier: ^1.13.5
         version: 1.13.5
@@ -27,8 +27,8 @@ importers:
         specifier: ^30.0.0
         version: 30.0.0
       '@types/node':
-        specifier: ^24.5.1
-        version: 24.5.1
+        specifier: ^24.5.2
+        version: 24.5.2
       conventional-changelog-conventionalcommits:
         specifier: ^9.1.0
         version: 9.1.0
@@ -37,13 +37,13 @@ importers:
         version: 3.0.3
       jest:
         specifier: ^30.1.3
-        version: 30.1.3(@types/node@24.5.1)(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.1)(typescript@5.8.3))
+        version: 30.1.3(@types/node@24.5.2)(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.2)(typescript@5.8.3))
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@swc/core@1.13.5)(@types/node@24.5.1)(typescript@5.8.3)
+        version: 10.9.2(@swc/core@1.13.5)(@types/node@24.5.2)(typescript@5.8.3)
       tsx:
         specifier: ^4.20.5
         version: 4.20.5
@@ -2133,9 +2133,6 @@ packages:
   '@types/node@24.3.0':
     resolution: {integrity: sha512-aPTXCrfwnDLj4VvXrm+UUCQjNEvJgNA8s5F1cvwQU+3KNltTOkBm1j30uNLyqqPNe7gE3KFzImYoZEfLhp4Yow==}
 
-  '@types/node@24.5.1':
-    resolution: {integrity: sha512-/SQdmUP2xa+1rdx7VwB9yPq8PaKej8TD5cQ+XfKDPWWC+VDJU4rvVVagXqKUzhKjtFoNA8rXDJAkCxQPAe00+Q==}
-
   '@types/node@24.5.2':
     resolution: {integrity: sha512-FYxk1I7wPv3K2XBaoyH2cTnocQEu8AOZ60hPbsyukMPLv5/5qr7V1i8PLHdl6Zf87I+xZXFvPCXYjiTFq+YSDQ==}
 
@@ -3095,8 +3092,8 @@ packages:
   electron-to-chromium@1.5.215:
     resolution: {integrity: sha512-TIvGp57UpeNetj/wV/xpFNpWGb0b/ROw372lHPx5Aafx02gjTBtWnEEcaSX3W2dLM3OSdGGyHX/cHl01JQsLaQ==}
 
-  electron-to-chromium@1.5.222:
-    resolution: {integrity: sha512-gA7psSwSwQRE60CEoLz6JBCQPIxNeuzB2nL8vE03GK/OHxlvykbLyeiumQy1iH5C2f3YbRAZpGCMT12a/9ih9w==}
+  electron-to-chromium@1.5.223:
+    resolution: {integrity: sha512-qKm55ic6nbEmagFlTFczML33rF90aU+WtrJ9MdTCThrcvDNdUHN4p6QfVN78U06ZmguqXIyMPyYhw2TrbDUwPQ==}
 
   emittery@0.13.1:
     resolution: {integrity: sha512-DeWwawk6r5yR9jFgnDKYt4sLS0LmHJJi3ZOnb5/JdbYwj3nW+FxQnHIjhBKz8YLC7oRNPVM9NQ47I3CVx34eqQ==}
@@ -6448,26 +6445,26 @@ snapshots:
 
   '@inquirer/ansi@1.0.0': {}
 
-  '@inquirer/core@10.2.2(@types/node@24.5.1)':
+  '@inquirer/core@10.2.2(@types/node@24.5.2)':
     dependencies:
       '@inquirer/ansi': 1.0.0
       '@inquirer/figures': 1.0.13
-      '@inquirer/type': 3.0.8(@types/node@24.5.1)
+      '@inquirer/type': 3.0.8(@types/node@24.5.2)
       cli-width: 4.1.0
       mute-stream: 2.0.0
       signal-exit: 4.1.0
       wrap-ansi: 6.2.0
       yoctocolors-cjs: 2.1.3
     optionalDependencies:
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
 
-  '@inquirer/expand@4.0.20(@types/node@24.5.1)':
+  '@inquirer/expand@4.0.20(@types/node@24.5.2)':
     dependencies:
-      '@inquirer/core': 10.2.2(@types/node@24.5.1)
-      '@inquirer/type': 3.0.8(@types/node@24.5.1)
+      '@inquirer/core': 10.2.2(@types/node@24.5.2)
+      '@inquirer/type': 3.0.8(@types/node@24.5.2)
       yoctocolors-cjs: 2.1.3
     optionalDependencies:
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
 
   '@inquirer/external-editor@1.0.2(@types/node@24.5.2)':
     dependencies:
@@ -6478,26 +6475,26 @@ snapshots:
 
   '@inquirer/figures@1.0.13': {}
 
-  '@inquirer/input@4.2.4(@types/node@24.5.1)':
+  '@inquirer/input@4.2.4(@types/node@24.5.2)':
     dependencies:
-      '@inquirer/core': 10.2.2(@types/node@24.5.1)
-      '@inquirer/type': 3.0.8(@types/node@24.5.1)
+      '@inquirer/core': 10.2.2(@types/node@24.5.2)
+      '@inquirer/type': 3.0.8(@types/node@24.5.2)
     optionalDependencies:
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
 
-  '@inquirer/select@4.3.4(@types/node@24.5.1)':
+  '@inquirer/select@4.3.4(@types/node@24.5.2)':
     dependencies:
       '@inquirer/ansi': 1.0.0
-      '@inquirer/core': 10.2.2(@types/node@24.5.1)
+      '@inquirer/core': 10.2.2(@types/node@24.5.2)
       '@inquirer/figures': 1.0.13
-      '@inquirer/type': 3.0.8(@types/node@24.5.1)
+      '@inquirer/type': 3.0.8(@types/node@24.5.2)
       yoctocolors-cjs: 2.1.3
     optionalDependencies:
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
 
-  '@inquirer/type@3.0.8(@types/node@24.5.1)':
+  '@inquirer/type@3.0.8(@types/node@24.5.2)':
     optionalDependencies:
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
 
   '@isaacs/balanced-match@4.0.1': {}
 
@@ -6533,13 +6530,13 @@ snapshots:
   '@jest/console@30.1.2':
     dependencies:
       '@jest/types': 30.0.5
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
       chalk: 4.1.2
       jest-message-util: 30.1.0
       jest-util: 30.0.5
       slash: 3.0.0
 
-  '@jest/core@30.1.3(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.1)(typescript@5.8.3))':
+  '@jest/core@30.1.3(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.2)(typescript@5.8.3))':
     dependencies:
       '@jest/console': 30.1.2
       '@jest/pattern': 30.0.1
@@ -6547,14 +6544,14 @@ snapshots:
       '@jest/test-result': 30.1.3
       '@jest/transform': 30.1.2
       '@jest/types': 30.0.5
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       ci-info: 4.3.0
       exit-x: 0.2.2
       graceful-fs: 4.2.11
       jest-changed-files: 30.0.5
-      jest-config: 30.1.3(@types/node@24.5.1)(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.1)(typescript@5.8.3))
+      jest-config: 30.1.3(@types/node@24.5.2)(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.2)(typescript@5.8.3))
       jest-haste-map: 30.1.0
       jest-message-util: 30.1.0
       jest-regex-util: 30.0.1
@@ -6585,7 +6582,7 @@ snapshots:
     dependencies:
       '@jest/fake-timers': 30.1.2
       '@jest/types': 30.0.5
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
       jest-mock: 30.0.5
 
   '@jest/expect-utils@30.0.5':
@@ -6607,7 +6604,7 @@ snapshots:
     dependencies:
       '@jest/types': 30.0.5
       '@sinonjs/fake-timers': 13.0.5
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
       jest-message-util: 30.1.0
       jest-mock: 30.0.5
       jest-util: 30.0.5
@@ -6627,7 +6624,7 @@ snapshots:
 
   '@jest/pattern@30.0.1':
     dependencies:
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
       jest-regex-util: 30.0.1
 
   '@jest/reporters@30.1.3':
@@ -6638,7 +6635,7 @@ snapshots:
       '@jest/transform': 30.1.2
       '@jest/types': 30.0.5
       '@jridgewell/trace-mapping': 0.3.30
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
       chalk: 4.1.2
       collect-v8-coverage: 1.0.2
       exit-x: 0.2.2
@@ -6755,10 +6752,10 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  '@lerna-lite/cli@4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.1)(conventional-commits-filter@5.0.0))(@lerna-lite/version@4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.1)(conventional-commits-filter@5.0.0))(@types/node@24.5.1)(conventional-commits-filter@5.0.0))(@types/node@24.5.1)':
+  '@lerna-lite/cli@4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.2)(conventional-commits-filter@5.0.0))(@lerna-lite/version@4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.2)(conventional-commits-filter@5.0.0))(@types/node@24.5.2)(conventional-commits-filter@5.0.0))(@types/node@24.5.2)':
     dependencies:
-      '@lerna-lite/core': 4.8.0(@types/node@24.5.1)
-      '@lerna-lite/init': 4.8.0(@types/node@24.5.1)
+      '@lerna-lite/core': 4.8.0(@types/node@24.5.2)
+      '@lerna-lite/init': 4.8.0(@types/node@24.5.2)
       '@lerna-lite/npmlog': 4.7.3
       dedent: 1.7.0
       dotenv: 17.2.2
@@ -6766,18 +6763,18 @@ snapshots:
       load-json-file: 7.0.1
       yargs: 18.0.0
     optionalDependencies:
-      '@lerna-lite/publish': 4.8.0(@types/node@24.5.1)(conventional-commits-filter@5.0.0)
-      '@lerna-lite/version': 4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.1)(conventional-commits-filter@5.0.0))(@types/node@24.5.1)(conventional-commits-filter@5.0.0)
+      '@lerna-lite/publish': 4.8.0(@types/node@24.5.2)(conventional-commits-filter@5.0.0)
+      '@lerna-lite/version': 4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.2)(conventional-commits-filter@5.0.0))(@types/node@24.5.2)(conventional-commits-filter@5.0.0)
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
       - supports-color
 
-  '@lerna-lite/core@4.8.0(@types/node@24.5.1)':
+  '@lerna-lite/core@4.8.0(@types/node@24.5.2)':
     dependencies:
-      '@inquirer/expand': 4.0.20(@types/node@24.5.1)
-      '@inquirer/input': 4.2.4(@types/node@24.5.1)
-      '@inquirer/select': 4.3.4(@types/node@24.5.1)
+      '@inquirer/expand': 4.0.20(@types/node@24.5.2)
+      '@inquirer/input': 4.2.4(@types/node@24.5.2)
+      '@inquirer/select': 4.3.4(@types/node@24.5.2)
       '@lerna-lite/npmlog': 4.7.3
       '@npmcli/run-script': 10.0.0
       ci-info: 4.3.0
@@ -6808,9 +6805,9 @@ snapshots:
       - babel-plugin-macros
       - supports-color
 
-  '@lerna-lite/init@4.8.0(@types/node@24.5.1)':
+  '@lerna-lite/init@4.8.0(@types/node@24.5.2)':
     dependencies:
-      '@lerna-lite/core': 4.8.0(@types/node@24.5.1)
+      '@lerna-lite/core': 4.8.0(@types/node@24.5.2)
       fs-extra: 11.3.2
       p-map: 7.0.3
       write-json-file: 7.0.0
@@ -6830,12 +6827,12 @@ snapshots:
       signal-exit: 4.1.0
       wide-align: 1.1.5
 
-  '@lerna-lite/publish@4.8.0(@types/node@24.5.1)(conventional-commits-filter@5.0.0)':
+  '@lerna-lite/publish@4.8.0(@types/node@24.5.2)(conventional-commits-filter@5.0.0)':
     dependencies:
-      '@lerna-lite/cli': 4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.1)(conventional-commits-filter@5.0.0))(@lerna-lite/version@4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.1)(conventional-commits-filter@5.0.0))(@types/node@24.5.1)(conventional-commits-filter@5.0.0))(@types/node@24.5.1)
-      '@lerna-lite/core': 4.8.0(@types/node@24.5.1)
+      '@lerna-lite/cli': 4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.2)(conventional-commits-filter@5.0.0))(@lerna-lite/version@4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.2)(conventional-commits-filter@5.0.0))(@types/node@24.5.2)(conventional-commits-filter@5.0.0))(@types/node@24.5.2)
+      '@lerna-lite/core': 4.8.0(@types/node@24.5.2)
       '@lerna-lite/npmlog': 4.7.3
-      '@lerna-lite/version': 4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.1)(conventional-commits-filter@5.0.0))(@types/node@24.5.1)(conventional-commits-filter@5.0.0)
+      '@lerna-lite/version': 4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.2)(conventional-commits-filter@5.0.0))(@types/node@24.5.2)(conventional-commits-filter@5.0.0)
       '@npmcli/arborist': 9.1.4
       '@npmcli/package-json': 7.0.1
       byte-size: 9.0.1
@@ -6867,11 +6864,11 @@ snapshots:
       - conventional-commits-filter
       - supports-color
 
-  '@lerna-lite/version@4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.1)(conventional-commits-filter@5.0.0))(@types/node@24.5.1)(conventional-commits-filter@5.0.0)':
+  '@lerna-lite/version@4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.2)(conventional-commits-filter@5.0.0))(@types/node@24.5.2)(conventional-commits-filter@5.0.0)':
     dependencies:
       '@conventional-changelog/git-client': 2.5.1(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.2.0)
-      '@lerna-lite/cli': 4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.1)(conventional-commits-filter@5.0.0))(@lerna-lite/version@4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.1)(conventional-commits-filter@5.0.0))(@types/node@24.5.1)(conventional-commits-filter@5.0.0))(@types/node@24.5.1)
-      '@lerna-lite/core': 4.8.0(@types/node@24.5.1)
+      '@lerna-lite/cli': 4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.2)(conventional-commits-filter@5.0.0))(@lerna-lite/version@4.8.0(@lerna-lite/publish@4.8.0(@types/node@24.5.2)(conventional-commits-filter@5.0.0))(@types/node@24.5.2)(conventional-commits-filter@5.0.0))(@types/node@24.5.2)
+      '@lerna-lite/core': 4.8.0(@types/node@24.5.2)
       '@lerna-lite/npmlog': 4.7.3
       '@octokit/plugin-enterprise-rest': 6.0.1
       '@octokit/rest': 22.0.0
@@ -7564,10 +7561,6 @@ snapshots:
     dependencies:
       undici-types: 7.10.0
 
-  '@types/node@24.5.1':
-    dependencies:
-      undici-types: 7.12.0
-
   '@types/node@24.5.2':
     dependencies:
       undici-types: 7.12.0
@@ -8140,7 +8133,7 @@ snapshots:
     dependencies:
       baseline-browser-mapping: 2.8.6
       caniuse-lite: 1.0.30001743
-      electron-to-chromium: 1.5.222
+      electron-to-chromium: 1.5.223
       node-releases: 2.0.21
       update-browserslist-db: 1.1.3(browserslist@4.26.2)
 
@@ -8555,7 +8548,7 @@ snapshots:
 
   electron-to-chromium@1.5.215: {}
 
-  electron-to-chromium@1.5.222: {}
+  electron-to-chromium@1.5.223: {}
 
   emittery@0.13.1: {}
 
@@ -9794,7 +9787,7 @@ snapshots:
       '@jest/expect': 30.1.2
       '@jest/test-result': 30.1.3
       '@jest/types': 30.0.5
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
       chalk: 4.1.2
       co: 4.6.0
       dedent: 1.7.0
@@ -9814,15 +9807,15 @@ snapshots:
       - babel-plugin-macros
       - supports-color
 
-  jest-cli@30.1.3(@types/node@24.5.1)(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.1)(typescript@5.8.3)):
+  jest-cli@30.1.3(@types/node@24.5.2)(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.2)(typescript@5.8.3)):
     dependencies:
-      '@jest/core': 30.1.3(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.1)(typescript@5.8.3))
+      '@jest/core': 30.1.3(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.2)(typescript@5.8.3))
       '@jest/test-result': 30.1.3
       '@jest/types': 30.0.5
       chalk: 4.1.2
       exit-x: 0.2.2
       import-local: 3.2.0
-      jest-config: 30.1.3(@types/node@24.5.1)(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.1)(typescript@5.8.3))
+      jest-config: 30.1.3(@types/node@24.5.2)(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.2)(typescript@5.8.3))
       jest-util: 30.0.5
       jest-validate: 30.1.0
       yargs: 17.7.2
@@ -9833,7 +9826,7 @@ snapshots:
       - supports-color
       - ts-node
 
-  jest-config@30.1.3(@types/node@24.5.1)(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.1)(typescript@5.8.3)):
+  jest-config@30.1.3(@types/node@24.5.2)(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.2)(typescript@5.8.3)):
     dependencies:
       '@babel/core': 7.28.4
       '@jest/get-type': 30.1.0
@@ -9860,8 +9853,8 @@ snapshots:
       slash: 3.0.0
       strip-json-comments: 3.1.1
     optionalDependencies:
-      '@types/node': 24.5.1
-      ts-node: 10.9.2(@swc/core@1.13.5)(@types/node@24.5.1)(typescript@5.8.3)
+      '@types/node': 24.5.2
+      ts-node: 10.9.2(@swc/core@1.13.5)(@types/node@24.5.2)(typescript@5.8.3)
     transitivePeerDependencies:
       - babel-plugin-macros
       - supports-color
@@ -9897,7 +9890,7 @@ snapshots:
       '@jest/environment': 30.1.2
       '@jest/fake-timers': 30.1.2
       '@jest/types': 30.0.5
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
       jest-mock: 30.0.5
       jest-util: 30.0.5
       jest-validate: 30.1.0
@@ -9905,7 +9898,7 @@ snapshots:
   jest-haste-map@30.1.0:
     dependencies:
       '@jest/types': 30.0.5
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
       anymatch: 3.1.3
       fb-watchman: 2.0.2
       graceful-fs: 4.2.11
@@ -9963,7 +9956,7 @@ snapshots:
   jest-mock@30.0.5:
     dependencies:
       '@jest/types': 30.0.5
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
       jest-util: 30.0.5
 
   jest-pnp-resolver@1.2.3(jest-resolve@30.1.3):
@@ -9997,7 +9990,7 @@ snapshots:
       '@jest/test-result': 30.1.3
       '@jest/transform': 30.1.2
       '@jest/types': 30.0.5
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
       chalk: 4.1.2
       emittery: 0.13.1
       exit-x: 0.2.2
@@ -10026,7 +10019,7 @@ snapshots:
       '@jest/test-result': 30.1.3
       '@jest/transform': 30.1.2
       '@jest/types': 30.0.5
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
       chalk: 4.1.2
       cjs-module-lexer: 2.1.0
       collect-v8-coverage: 1.0.2
@@ -10073,7 +10066,7 @@ snapshots:
   jest-util@30.0.5:
     dependencies:
       '@jest/types': 30.0.5
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
       chalk: 4.1.2
       ci-info: 4.3.0
       graceful-fs: 4.2.11
@@ -10092,7 +10085,7 @@ snapshots:
     dependencies:
       '@jest/test-result': 30.1.3
       '@jest/types': 30.0.5
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       emittery: 0.13.1
@@ -10107,18 +10100,18 @@ snapshots:
 
   jest-worker@30.1.0:
     dependencies:
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
       '@ungap/structured-clone': 1.3.0
       jest-util: 30.0.5
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
-  jest@30.1.3(@types/node@24.5.1)(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.1)(typescript@5.8.3)):
+  jest@30.1.3(@types/node@24.5.2)(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.2)(typescript@5.8.3)):
     dependencies:
-      '@jest/core': 30.1.3(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.1)(typescript@5.8.3))
+      '@jest/core': 30.1.3(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.2)(typescript@5.8.3))
       '@jest/types': 30.0.5
       import-local: 3.2.0
-      jest-cli: 30.1.3(@types/node@24.5.1)(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.1)(typescript@5.8.3))
+      jest-cli: 30.1.3(@types/node@24.5.2)(ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.2)(typescript@5.8.3))
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
@@ -11642,14 +11635,14 @@ snapshots:
       picomatch: 4.0.3
       typescript: 5.8.3
 
-  ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.1)(typescript@5.8.3):
+  ts-node@10.9.2(@swc/core@1.13.5)(@types/node@24.5.2)(typescript@5.8.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 24.5.1
+      '@types/node': 24.5.2
       acorn: 8.11.3
       acorn-walk: 8.3.2
       arg: 4.1.3

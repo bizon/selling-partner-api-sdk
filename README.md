@@ -124,7 +124,8 @@ If you need the typescript type:
 ```ts
 import { Reports } from "@sp-api-sdk/schemas";
 
-const report = (await getVendorInventoryReportData()) as Reports.VendorInventoryReport;
+const report =
+  (await getVendorInventoryReportData()) as Reports.VendorInventoryReport;
 ```
 
 ## Code generation

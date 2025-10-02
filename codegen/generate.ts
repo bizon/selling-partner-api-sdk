@@ -30,7 +30,7 @@ if (generators.size === 0) {
   if (generators.has('clients')) {
     console.info('Generating clients…')
     await generateClients()
-    await runCommand('pnpm install')
+    await runCommand('pnpm install --no-frozen-lockfile')
     await runCommand('pnpm --filter "./clients/**" xo --fix')
   }
 

@@ -19,7 +19,7 @@
  */
 
 export const UnitOfLength = {
-    Cm: 'Cm'
+    Cm: 'cm'
 } as const;
 
 export type UnitOfLength = typeof UnitOfLength[keyof typeof UnitOfLength];

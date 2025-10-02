@@ -45,7 +45,7 @@ export interface Address {
     /**
      * The state or region where the person, business or institution is located.
      */
-    'stateOrRegion': string;
+    'stateOrRegion'?: string;
     /**
      * The postal code of the address.
      */

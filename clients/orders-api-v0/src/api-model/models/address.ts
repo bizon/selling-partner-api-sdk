@@ -24,7 +24,7 @@ export interface Address {
     /**
      * The name.
      */
-    'Name': string;
+    'Name'?: string;
     /**
      * The company name of the recipient.  **Note**: This attribute is only available for shipping address.
      */

@@ -111,6 +111,7 @@ async function generateClientVersion(modelFilePath: string) {
   const clientNameBase = [apiCategory, cleanModelName.replace(/(-api)?-model$/, '')]
     .filter(Boolean)
     .join('-')
+    .replaceAll(/--+/g, '-')
   const clientApiNameBase = `${clientNameBase}-api`
 
   await applyPatches(document, patchesPath)

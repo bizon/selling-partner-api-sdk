@@ -37,6 +37,9 @@ ls clients | sed 's$\(.*\)$- [\1](https://www.github.com/bizon/selling-partner-a
 <li><a href="https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/customer-feedback-api-2024-06-01">customer-feedback-api-2024-06-01</a></li>
 <li><a href="https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/data-kiosk-api-2023-11-15">data-kiosk-api-2023-11-15</a></li>
 <li><a href="https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/easy-ship-api-2022-03-23">easy-ship-api-2022-03-23</a></li>
+<li><a href="https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/external-fulfillment-inventory-api-2024-09-11">external-fulfillment-inventory-api-2024-09-11</a></li>
+<li><a href="https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/external-fulfillment-returns-api-2024-09-11">external-fulfillment-returns-api-2024-09-11</a></li>
+<li><a href="https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/external-fulfillment-shipments-api-2024-09-11">external-fulfillment-shipments-api-2024-09-11</a></li>
 <li><a href="https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/fba-inbound-eligibility-api-v1">fba-inbound-eligibility-api-v1</a></li>
 <li><a href="https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/fba-inventory-api-v1">fba-inventory-api-v1</a></li>
 <li><a href="https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/feeds-api-2021-06-30">feeds-api-2021-06-30</a></li>
@@ -95,7 +98,7 @@ It exposes the JSON schemas as well as typescript types.</p>
 </code><button type="button">Copy</button></pre>
 
 <p>If you need the typescript type:</p>
-<pre><code class="ts"><span class="hl-0">import</span><span class="hl-1"> { </span><span class="hl-2">Reports</span><span class="hl-1"> } </span><span class="hl-0">from</span><span class="hl-1"> </span><span class="hl-3">&quot;@sp-api-sdk/schemas&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">report</span><span class="hl-1"> = (</span><span class="hl-0">await</span><span class="hl-1"> </span><span class="hl-4">getVendorInventoryReportData</span><span class="hl-1">()) </span><span class="hl-0">as</span><span class="hl-1"> </span><span class="hl-7">Reports</span><span class="hl-1">.</span><span class="hl-7">VendorInventoryReport</span><span class="hl-1">;</span>
+<pre><code class="ts"><span class="hl-0">import</span><span class="hl-1"> { </span><span class="hl-2">Reports</span><span class="hl-1"> } </span><span class="hl-0">from</span><span class="hl-1"> </span><span class="hl-3">&quot;@sp-api-sdk/schemas&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">report</span><span class="hl-1"> =</span><br/><span class="hl-1">  (</span><span class="hl-0">await</span><span class="hl-1"> </span><span class="hl-4">getVendorInventoryReportData</span><span class="hl-1">()) </span><span class="hl-0">as</span><span class="hl-1"> </span><span class="hl-7">Reports</span><span class="hl-1">.</span><span class="hl-7">VendorInventoryReport</span><span class="hl-1">;</span>
 </code><button type="button">Copy</button></pre>
 
 <h2 id="code-generation" class="tsd-anchor-link">Code generation<a href="#code-generation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>To see the code generation process, see the <a href="https://www.github.com/bizon/selling-partner-api-sdk/tree/master/codegen">codegen</a> module.</p>

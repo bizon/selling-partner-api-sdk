@@ -19,8 +19,8 @@
  */
 
 export const UnitOfWeight = {
-    Grams: 'Grams',
-    G: 'G'
+    Grams: 'grams',
+    G: 'g'
 } as const;
 
 export type UnitOfWeight = typeof UnitOfWeight[keyof typeof UnitOfWeight];

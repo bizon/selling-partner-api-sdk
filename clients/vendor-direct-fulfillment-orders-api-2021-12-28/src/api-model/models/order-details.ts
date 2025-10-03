@@ -52,6 +52,10 @@ export interface OrderDetails {
     'shipToParty': Address;
     'billToParty': PartyIdentification;
     /**
+     * When `true`, the order contains customizable items.
+     */
+    'hasCustomizableItems'?: boolean;
+    /**
      * A list of items in this purchase order.
      */
     'items': Array<OrderItem>;

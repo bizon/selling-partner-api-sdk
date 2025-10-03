@@ -18,6 +18,9 @@
  * A list of error responses returned when a request is unsuccessful.
  */
 export interface ErrorList {
+    /**
+     * A list of error responses returned when a request is unsuccessful.
+     */
     'errors': Array<Error>;
 }
 

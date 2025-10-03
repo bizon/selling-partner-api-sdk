@@ -30,6 +30,9 @@ import type { LabelFormat } from './label-format';
 import type { LabelFormatOption } from './label-format-option';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { RateItem } from './rate-item';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ShippingServiceOptions } from './shipping-service-options';
 
 /**
@@ -65,6 +68,11 @@ export interface ShippingService {
      */
     'LatestEstimatedDeliveryDate'?: string;
     'Rate': CurrencyAmount;
+    'RateWithAdjustments': CurrencyAmount;
+    /**
+     * List of adjustments.
+     */
+    'AdjustmentItemList'?: Array<RateItem>;
     'ShippingServiceOptions': ShippingServiceOptions;
     'AvailableShippingServiceOptions'?: AvailableShippingServiceOptions;
     /**

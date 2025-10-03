@@ -1,0 +1,75 @@
+{
+  "name": "@sp-api-sdk/external-fulfillment-returns-api-2024-09-11",
+  "author": "Bertrand Marron <bertrand@bizon.solutions>",
+  "description": "You can use the Amazon External Fulfillment Return Item Processing API to retrieve, track, and process return items through Amazon's External Fulfillment returns management system.",
+  "version": "1.0.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "scripts": {
+    "xo": "xo",
+    "check:ts": "tsc --noEmit",
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:es": "tsc -p tsconfig.es.json",
+    "build": "pnpm build:cjs && pnpm build:es",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@sp-api-sdk/common": "workspace:*",
+    "axios": "^1.12.2"
+  },
+  "devDependencies": {
+    "@sp-api-sdk/typescript-config": "workspace:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bizon/selling-partner-api-sdk.git",
+    "directory": "clients/external-fulfillment-returns-api-2024-09-11"
+  },
+  "bugs": {
+    "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
+  },
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/external-fulfillment-returns-api-2024-09-11",
+  "keywords": [
+    "amazon",
+    "bizon",
+    "marketplace web services",
+    "mws",
+    "selling partner api",
+    "sp api",
+    "sp sdk",
+    "external fulfillment returns api"
+  ],
+  "xo": {
+    "extends": [
+      "xo-bizon"
+    ],
+    "settings": {
+      "import/internal-regex": "^@sp-api-sdk/"
+    },
+    "semicolon": false,
+    "space": 2,
+    "prettier": true,
+    "ignores": [
+      "src/api-model/**"
+    ],
+    "rules": {
+      "unicorn/prevent-abbreviations": "off"
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "jsxSingleQuote": true
+  }
+}

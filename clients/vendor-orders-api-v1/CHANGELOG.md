@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.10](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-orders-api-v1@3.0.9...@sp-api-sdk/vendor-orders-api-v1@3.0.10) (2025-10-03)
+
+**Note:** Version bump only for package @sp-api-sdk/vendor-orders-api-v1
+
 ## [3.0.9](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-orders-api-v1@3.0.8...@sp-api-sdk/vendor-orders-api-v1@3.0.9) (2025-08-31)
 
 **Note:** Version bump only for package @sp-api-sdk/vendor-orders-api-v1

@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/generator@0.20.2...@sp-api-sdk/generator@0.20.3) (2025-10-03)
+
+### Bug Fixes
+
+* **codegen:** install without frozen lockfile in ci ([41dcd3a](https://github.com/bizon/selling-partner-api-sdk/commit/41dcd3ac431a9e3e6c9ec298eddaec70a96d4a0c))
+* **codegen:** remove double dashes in client names ([666af84](https://github.com/bizon/selling-partner-api-sdk/commit/666af84fd90a9bb125271247899cb8c5c448e949))
+
 ## [0.20.2](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/generator@0.20.1...@sp-api-sdk/generator@0.20.2) (2025-09-10)
 
 **Note:** Version bump only for package @sp-api-sdk/generator

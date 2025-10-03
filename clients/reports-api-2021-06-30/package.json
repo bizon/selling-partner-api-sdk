@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/reports-api-2021-06-30",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.",
-  "version": "3.1.7",
+  "version": "3.1.8",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

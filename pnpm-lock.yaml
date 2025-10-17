@@ -856,8 +856,8 @@ importers:
   codegen:
     dependencies:
       '@openapitools/openapi-generator-cli':
-        specifier: ^2.24.0
-        version: 2.24.0(@types/node@24.7.0)(encoding@0.1.13)
+        specifier: ^2.25.0
+        version: 2.25.0(@types/node@24.7.2)(encoding@0.1.13)
       camelcase:
         specifier: ^8.0.0
         version: 8.0.0
@@ -1848,8 +1848,8 @@ packages:
   '@open-draft/until@2.1.0':
     resolution: {integrity: sha512-U69T3ItWHvLwGg5eJ0n3I62nWuE6ilHlmz7zM0npLBRvPRd7e6NYmg54vvRtP5mZG7kZqZCFVdsTWo7BPtBujg==}
 
-  '@openapitools/openapi-generator-cli@2.24.0':
-    resolution: {integrity: sha512-VS0sfW46oe/hQq7g1YZU1cJJebAQIwKhKqjsDY1/QFmcJMXYfe339yjMDTv02kMbsx621cSH46HIdvmW+i+7mg==}
+  '@openapitools/openapi-generator-cli@2.25.0':
+    resolution: {integrity: sha512-u/3VAbF8c68AXBgm8nBAdDPLPW/KgrtHz28yemf92zNB0iDZFGdRUX2W80Lzf177g6ctYLz0GIPHCOU0LTJegQ==}
     engines: {node: '>=16'}
     hasBin: true
 
@@ -2129,6 +2129,9 @@ packages:
 
   '@types/node@24.7.0':
     resolution: {integrity: sha512-IbKooQVqUBrlzWTi79E8Fw78l8k1RNtlDDNWsFZs7XonuQSJ8oNYfEeclhprUldXISRMLzBpILuKgPlIxm+/Yw==}
+
+  '@types/node@24.7.2':
+    resolution: {integrity: sha512-/NbVmcGTP+lj5oa4yiYxxeBjRivKQ5Ns1eSZeB99ExsEQ6rX5XYU1Zy/gGxY/ilqtD4Etx9mKyrPxZRetiahhA==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -2595,8 +2598,8 @@ packages:
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
 
-  baseline-browser-mapping@2.8.12:
-    resolution: {integrity: sha512-vAPMQdnyKCBtkmQA6FMCBvU9qFIppS3nzyXnEM+Lo2IAhG4Mpjv9cCxMudhgV3YdNNJv6TNqXy97dfRVL2LmaQ==}
+  baseline-browser-mapping@2.8.16:
+    resolution: {integrity: sha512-OMu3BGQ4E7P1ErFsIPpbJh0qvDudM/UuJeHgkAvfWe+0HFJCXh+t/l8L6fVLR55RI/UbKrVLnAXZSVwd9ysWYw==}
     hasBin: true
 
   baseline-browser-mapping@2.8.9:
@@ -2710,8 +2713,8 @@ packages:
   caniuse-lite@1.0.30001746:
     resolution: {integrity: sha512-eA7Ys/DGw+pnkWWSE/id29f2IcPHVoE8wxtvE5JdvD2V28VTDPy1yEeo11Guz0sJ4ZeGRcm3uaTcAqK1LXaphA==}
 
-  caniuse-lite@1.0.30001748:
-    resolution: {integrity: sha512-5P5UgAr0+aBmNiplks08JLw+AW/XG/SurlgZLgB1dDLfAw7EfRGxIwzPHxdSCGY/BTKDqIVyJL87cCN6s0ZR0w==}
+  caniuse-lite@1.0.30001750:
+    resolution: {integrity: sha512-cuom0g5sdX6rw00qOoLNSFCJ9/mYIsuSOA+yzpDw8eopiFqcVwQvZHqov0vmEighRxX++cfC0Vg1G+1Iy/mSpQ==}
 
   chalk@4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
@@ -2961,15 +2964,6 @@ packages:
       supports-color:
         optional: true
 
-  debug@4.4.1:
-    resolution: {integrity: sha512-KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ==}
-    engines: {node: '>=6.0'}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-
   debug@4.4.3:
     resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
     engines: {node: '>=6.0'}
@@ -3087,8 +3081,8 @@ packages:
   electron-to-chromium@1.5.228:
     resolution: {integrity: sha512-nxkiyuqAn4MJ1QbobwqJILiDtu/jk14hEAWaMiJmNPh1Z+jqoFlBFZjdXwLWGeVSeu9hGLg6+2G9yJaW8rBIFA==}
 
-  electron-to-chromium@1.5.231:
-    resolution: {integrity: sha512-cyl6vqZGkEBnz/PmvFHn/u9G/hbo+FF2CNAOXriG87QOeLsUdifCZ9UbHNscE9wGdrC8XstNMli0CbQnZQ+fkA==}
+  electron-to-chromium@1.5.235:
+    resolution: {integrity: sha512-i/7ntLFwOdoHY7sgjlTIDo4Sl8EdoTjWIaKinYOVfC6bOp71bmwenyZthWHcasxgHDNWbWxvG9M3Ia116zIaYQ==}
 
   emittery@0.13.1:
     resolution: {integrity: sha512-DeWwawk6r5yR9jFgnDKYt4sLS0LmHJJi3ZOnb5/JdbYwj3nW+FxQnHIjhBKz8YLC7oRNPVM9NQ47I3CVx34eqQ==}
@@ -4411,8 +4405,8 @@ packages:
     resolution: {integrity: sha512-Gnxj3ev3mB5TkVBGad0JM6dmLiQL+o0t23JPBZ9sd+yvSLk05mFoqKBw5N8gbbkU4TNXyqCgIrl/VM17OgUIgQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  loader-runner@4.3.0:
-    resolution: {integrity: sha512-3R/1M+yS3j5ou80Me59j7F9IMs4PXs3VqRrm0TU3AbKPxlmpoY1TNscJV/oGJXo8qCatFGTfDbY6W6ipGOYXfg==}
+  loader-runner@4.3.1:
+    resolution: {integrity: sha512-IWqP2SCPhyVFTBtRcgMHdzlf9ul25NwaFx4wCEH/KjAXuuHY4yNjvPXsBokp8jCB936PyWRaPKUNh8NvylLp2Q==}
     engines: {node: '>=6.11.5'}
 
   locate-path@5.0.0:
@@ -6388,7 +6382,7 @@ snapshots:
   '@eslint/eslintrc@3.3.1':
     dependencies:
       ajv: 6.12.6
-      debug: 4.4.1
+      debug: 4.4.3
       espree: 10.4.0
       globals: 14.0.0
       ignore: 5.3.2
@@ -6444,12 +6438,12 @@ snapshots:
     optionalDependencies:
       '@types/node': 24.7.0
 
-  '@inquirer/external-editor@1.0.2(@types/node@24.7.0)':
+  '@inquirer/external-editor@1.0.2(@types/node@24.7.2)':
     dependencies:
       chardet: 2.1.0
       iconv-lite: 0.7.0
     optionalDependencies:
-      '@types/node': 24.7.0
+      '@types/node': 24.7.2
 
   '@inquirer/figures@1.0.13': {}
 
@@ -7165,7 +7159,7 @@ snapshots:
 
   '@open-draft/until@2.1.0': {}
 
-  '@openapitools/openapi-generator-cli@2.24.0(@types/node@24.7.0)(encoding@0.1.13)':
+  '@openapitools/openapi-generator-cli@2.25.0(@types/node@24.7.2)(encoding@0.1.13)':
     dependencies:
       '@nestjs/axios': 4.0.1(@nestjs/common@11.1.6(reflect-metadata@0.2.2)(rxjs@7.8.2))(axios@1.12.2)(rxjs@7.8.2)
       '@nestjs/common': 11.1.6(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -7179,7 +7173,7 @@ snapshots:
       console.table: 0.10.0
       fs-extra: 11.3.2
       glob: 11.0.3
-      inquirer: 8.2.7(@types/node@24.7.0)
+      inquirer: 8.2.7(@types/node@24.7.2)
       proxy-agent: 6.5.0
       reflect-metadata: 0.2.2
       rxjs: 7.8.2
@@ -7474,6 +7468,10 @@ snapshots:
     dependencies:
       undici-types: 7.14.0
 
+  '@types/node@24.7.2':
+    dependencies:
+      undici-types: 7.14.0
+
   '@types/normalize-package-data@2.4.4': {}
 
   '@types/parse-path@7.1.0':
@@ -7518,7 +7516,7 @@ snapshots:
       '@typescript-eslint/types': 8.34.1
       '@typescript-eslint/typescript-estree': 8.34.1(typescript@5.9.3)
       '@typescript-eslint/visitor-keys': 8.34.1
-      debug: 4.4.1
+      debug: 4.4.3
       eslint: 8.57.1
       typescript: 5.9.3
     transitivePeerDependencies:
@@ -7989,7 +7987,7 @@ snapshots:
 
   base64-js@1.5.1: {}
 
-  baseline-browser-mapping@2.8.12: {}
+  baseline-browser-mapping@2.8.16: {}
 
   baseline-browser-mapping@2.8.9: {}
 
@@ -8041,9 +8039,9 @@ snapshots:
 
   browserslist@4.26.3:
     dependencies:
-      baseline-browser-mapping: 2.8.12
-      caniuse-lite: 1.0.30001748
-      electron-to-chromium: 1.5.231
+      baseline-browser-mapping: 2.8.16
+      caniuse-lite: 1.0.30001750
+      electron-to-chromium: 1.5.235
       node-releases: 2.0.23
       update-browserslist-db: 1.1.3(browserslist@4.26.3)
 
@@ -8124,7 +8122,7 @@ snapshots:
 
   caniuse-lite@1.0.30001746: {}
 
-  caniuse-lite@1.0.30001748: {}
+  caniuse-lite@1.0.30001750: {}
 
   chalk@4.1.2:
     dependencies:
@@ -8351,10 +8349,6 @@ snapshots:
     dependencies:
       ms: 2.1.3
 
-  debug@4.4.1:
-    dependencies:
-      ms: 2.1.3
-
   debug@4.4.3:
     dependencies:
       ms: 2.1.3
@@ -8450,7 +8444,7 @@ snapshots:
 
   electron-to-chromium@1.5.228: {}
 
-  electron-to-chromium@1.5.231: {}
+  electron-to-chromium@1.5.235: {}
 
   emittery@0.13.1: {}
 
@@ -8850,7 +8844,7 @@ snapshots:
       ajv: 6.12.6
       chalk: 4.1.2
       cross-spawn: 7.0.6
-      debug: 4.4.1
+      debug: 4.4.3
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.2.2
@@ -9408,9 +9402,9 @@ snapshots:
 
   ini@5.0.0: {}
 
-  inquirer@8.2.7(@types/node@24.7.0):
+  inquirer@8.2.7(@types/node@24.7.2):
     dependencies:
-      '@inquirer/external-editor': 1.0.2(@types/node@24.7.0)
+      '@inquirer/external-editor': 1.0.2(@types/node@24.7.2)
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       cli-cursor: 3.1.0
@@ -10018,7 +10012,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 24.7.0
+      '@types/node': 24.7.2
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -10150,7 +10144,7 @@ snapshots:
 
   load-json-file@7.0.1: {}
 
-  loader-runner@4.3.0: {}
+  loader-runner@4.3.1: {}
 
   locate-path@5.0.0:
     dependencies:
@@ -11841,7 +11835,7 @@ snapshots:
       glob-to-regexp: 0.4.1
       graceful-fs: 4.2.11
       json-parse-even-better-errors: 2.3.1
-      loader-runner: 4.3.0
+      loader-runner: 4.3.1
       mime-types: 2.1.35
       neo-async: 2.6.2
       schema-utils: 3.3.0

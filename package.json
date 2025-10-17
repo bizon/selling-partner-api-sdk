@@ -11,6 +11,7 @@
     "check:ts": "turbo run check:ts",
     "codegen": "tsx --tsconfig codegen/tsconfig.json codegen/generate.ts",
     "predocs": "turbo run build --filter=@sp-api-sdk/common",
+    "test": "turbo run test",
     "docs": "typedoc"
   },
   "devDependencies": {

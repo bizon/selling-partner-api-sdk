@@ -56,7 +56,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Run tests
-        run: pnpm -r test --ci --reporters=default --reporters=github-actions --reporters=jest-junit
+        run: pnpm test -- --ci --reporters=default --reporters=github-actions --reporters=jest-junit
 
       - name: Upload test results to Codecov
         uses: codecov/test-results-action@v1

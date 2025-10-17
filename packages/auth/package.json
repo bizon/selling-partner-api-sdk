@@ -34,7 +34,7 @@
     "@sp-api-sdk/jest": "workspace:*",
     "@sp-api-sdk/typescript-config": "workspace:*",
     "nock": "^14.0.10",
-    "type-fest": "^5.0.1"
+    "type-fest": "^5.1.0"
   },
   "repository": {
     "type": "git",

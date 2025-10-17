@@ -1,9 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
-    "test": {
-      "dependsOn": ["^build"]
-    },
     "clean": {
       "cache": false,
       "outputs": []

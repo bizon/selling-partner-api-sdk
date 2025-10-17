@@ -19,6 +19,7 @@ updates:
           - "@swc/jest"
           - "@types/jest"
           - "jest"
+          - "jest-junit"
       lerna-lite:
         patterns:
           - "@lerna-lite/*"

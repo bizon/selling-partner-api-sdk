@@ -5,6 +5,7 @@
 node_modules/
 docs/
 coverage/
+junit.xml
 
 clients/**/dist
 packages/**/dist

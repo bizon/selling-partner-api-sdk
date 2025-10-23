@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/invoices-api-2024-06-19",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "Use the Selling Partner API for Invoices to retrieve and manage invoice-related operations, which can help selling partners manage their bookkeeping processes.",
-  "version": "2.0.10",
+  "version": "2.0.11",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

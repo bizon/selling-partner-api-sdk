@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/fba-inbound-eligibility-api-v1@4.0.5...@sp-api-sdk/fba-inbound-eligibility-api-v1@4.1.0) (2025-10-23)
+
+### Features
+
+* **clients:** update models as of 2025-10-23 ([#1613](https://github.com/bizon/selling-partner-api-sdk/issues/1613)) ([97b1321](https://github.com/bizon/selling-partner-api-sdk/commit/97b13211a74adf070f15e3b913710f4748ee2b1c))
+
 ## [4.0.5](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/fba-inbound-eligibility-api-v1@4.0.4...@sp-api-sdk/fba-inbound-eligibility-api-v1@4.0.5) (2025-10-03)
 
 **Note:** Version bump only for package @sp-api-sdk/fba-inbound-eligibility-api-v1

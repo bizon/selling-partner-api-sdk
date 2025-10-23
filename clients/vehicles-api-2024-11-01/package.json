@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/vehicles-api-2024-11-01",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Automotive provides programmatic access to information needed by selling partners to provide compatibility information about their listed products.",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

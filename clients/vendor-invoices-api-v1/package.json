@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/vendor-invoices-api-v1",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.",
-  "version": "4.0.5",
+  "version": "4.0.6",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

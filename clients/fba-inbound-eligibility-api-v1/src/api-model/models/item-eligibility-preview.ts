@@ -85,6 +85,7 @@ export const ItemEligibilityPreviewIneligibilityReasonListEnum = {
     FbaInb0103: 'FBA_INB_0103',
     FbaInb0104: 'FBA_INB_0104',
     FbaInb0197: 'FBA_INB_0197',
+    FbaInb0342: 'FBA_INB_0342',
     UnknownInbErrorCode: 'UNKNOWN_INB_ERROR_CODE'
 } as const;
 

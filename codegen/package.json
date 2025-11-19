@@ -19,7 +19,7 @@
     "jsonfile": "^6.2.0",
     "lodash-es": "^4.17.21",
     "mustache": "^4.2.0",
-    "p-map": "^7.0.3",
+    "p-map": "^7.0.4",
     "remark": "^15.0.1",
     "strip-markdown": "^6.0.0",
     "winston": "^3.18.3"

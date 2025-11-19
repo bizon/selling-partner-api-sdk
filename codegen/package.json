@@ -25,7 +25,7 @@
     "winston": "^3.18.3"
   },
   "devDependencies": {
-    "@tsconfig/node24": "^24.0.1",
+    "@tsconfig/node24": "^24.0.3",
     "@types/jsonfile": "^6.1.4",
     "@types/lodash-es": "^4.17.12",
     "@types/mustache": "^4.2.6",

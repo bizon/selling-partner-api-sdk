@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/external-fulfillment-shipments-api-2024-09-11",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "You can use the External Fulfillment Shipments API to retrieve, manage, and track shipments processed through Amazon's external fulfillment network. Use this API to get shipment details, monitor status changes, and access fulfillment requirements.",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * The Selling Partner API for Finances
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller\'s business. You can obtain financial events for a given order or date range without having to wait until a statement period closes.
+ * The Selling Partner API for Finances provides financial information relevant to a seller\'s business. You can obtain financial events for a given order or date range without having to wait until a statement period closes.
  *
  * The version of the OpenAPI document: 2024-06-19
  * 
@@ -15,23 +15,23 @@
 
 
 /**
- * Additional information related to Payments related transactions.
+ * Additional information related to payments-related transactions.
  */
 export interface PaymentsContext {
     /**
-     * Type of payment made.
+     * The type of payment.
      */
     'paymentType'?: string;
     /**
-     * Method of payment made.
+     * The method of payment.
      */
     'paymentMethod'?: string;
     /**
-     * Reference number of payment made.
+     * The reference number of the payment.
      */
     'paymentReference'?: string;
     /**
-     * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
+     * A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     'paymentDate'?: string;
 }

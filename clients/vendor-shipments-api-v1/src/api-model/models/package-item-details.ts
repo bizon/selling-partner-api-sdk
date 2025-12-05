@@ -16,6 +16,9 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import type { Expiry } from './expiry';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { RegulationReferences } from './regulation-references';
 
 /**
  * Item details for be provided for every item in shipment at either the item or carton or pallet level, whichever is appropriate.
@@ -29,6 +32,29 @@ export interface PackageItemDetails {
      * The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items.
      */
     'lotNumber'?: string;
+    /**
+     * This is a reference to the lot number source location meaning the place where the product was assigned a traceability lot number. This is mandatory for goods in scope of the FDA Food Safety Modernization Act (FSMA 204). If provided, lotNumberSourceType must also be specified.
+     */
+    'lotNumberSourceReference'?: string;
+    /**
+     * The type of reference for the lot number source. Must be provided when lotNumberSourceReference is specified.
+     */
+    'lotNumberSourceType'?: PackageItemDetailsLotNumberSourceTypeEnum;
+    /**
+     * The two digit country code in ISO 3166-1 alpha-2 format representing the country where the product was manufactured or originated.
+     */
+    'countryOfOrigin'?: string;
+    'regulationReferences'?: RegulationReferences;
     'expiry'?: Expiry;
 }
+
+export const PackageItemDetailsLotNumberSourceTypeEnum = {
+    Gln: 'GLN',
+    Ffrn: 'FFRN',
+    UsdaE: 'USDA_E',
+    Url: 'URL'
+} as const;
+
+export type PackageItemDetailsLotNumberSourceTypeEnum = typeof PackageItemDetailsLotNumberSourceTypeEnum[keyof typeof PackageItemDetailsLotNumberSourceTypeEnum];
+
 

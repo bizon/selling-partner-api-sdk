@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AccountHolderAddress } from './account-holder-address';
+import type { Currency } from './currency';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Currency } from './currency';
+import type { PayeeContactInformation } from './payee-contact-information';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { TransactionInstrumentDetails } from './transaction-instrument-details';
@@ -47,7 +47,7 @@ export interface TransactionInitiationRequest {
      * If the payment is for VAT (Value-Added-Tax) then enter VAT identification number in this field which will be mandatory. The length constraint is 140 characters and do not allow user to enter any sensitive information other than VAT-ID.
      */
     'customerPaymentReference'?: string;
-    'destinationAccountHolderAddress'?: AccountHolderAddress;
+    'payeeContactInformation'?: PayeeContactInformation;
     'sourceAmount': Currency;
     'transferRateDetails'?: TransferRatePreview;
     /**

@@ -74,6 +74,10 @@ export interface Shipment {
      */
     'subStatus'?: ShipmentSubStatusEnum;
     /**
+     * The reason for the sub-status.
+     */
+    'reason'?: string;
+    /**
      * The line items in the shipment.
      */
     'lineItems': Array<ShipmentLineItem>;

@@ -20,8 +20,7 @@
 
 export const BankAccountOwnershipType = {
     ThirdParty: 'THIRD_PARTY',
-    Self: 'SELF',
-    Government: 'GOVERNMENT'
+    Self: 'SELF'
 } as const;
 
 export type BankAccountOwnershipType = typeof BankAccountOwnershipType[keyof typeof BankAccountOwnershipType];

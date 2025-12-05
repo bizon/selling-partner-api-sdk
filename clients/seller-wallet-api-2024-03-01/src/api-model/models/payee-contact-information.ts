@@ -13,11 +13,26 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PayeeEntityType } from './payee-entity-type';
 
 /**
- * Address for bank account verification of the Payee. For example, this can be a person or business mailing address 
+ * The contact information of the payee. This field is required when the request `bankAccountOwnershipType` is `THIRD_PARTY`. The contact information is used for payee verification and registration purposes.
  */
-export interface AccountHolderAddress {
+export interface PayeeContactInformation {
+    /**
+     * First name of the payee. There is a 50 character limit.
+     */
+    'payeeFirstName': string;
+    /**
+     * Middle name of the payee. There is a 50 character limit.
+     */
+    'payeeMiddleName'?: string;
+    /**
+     * Last name of the payee. There is a 50 character limit.
+     */
+    'payeeLastName': string;
     /**
      * Address Line 1 of the public address 
      */
@@ -46,5 +61,16 @@ export interface AccountHolderAddress {
      * The two digit country code, in ISO 3166 format. 
      */
     'countryCode': string;
+    /**
+     * Email address of the payee.
+     */
+    'emailAddress': string;
+    /**
+     * Valid phone number of the payee.
+     */
+    'phoneNumber': string;
+    'payeeEntityType': PayeeEntityType;
 }
+
+
 

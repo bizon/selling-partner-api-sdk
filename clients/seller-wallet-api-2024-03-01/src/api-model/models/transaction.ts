@@ -34,6 +34,10 @@ import type { TransferRatePreview } from './transfer-rate-preview';
  */
 export interface Transaction {
     /**
+     * The unique identifier of the Amazon Seller Wallet bank account from which the money is debited.
+     */
+    'accountId': string;
+    /**
      * The unique identifier provided by Amazon to the transaction 
      */
     'transactionId': string;
@@ -67,7 +71,7 @@ export interface Transaction {
      * A description of the transaction that the requester provides when they initiate the transaction.
      */
     'transactionDescription': string;
-    'transactionSourceAccount': TransactionAccount;
+    'transactionSourceAccount'?: TransactionAccount;
     'transactionDestinationAccount': TransactionAccount;
     'transactionRequestAmount': Currency;
     'transferRateDetails': TransferRatePreview;

@@ -1,0 +1,75 @@
+{
+  "name": "@sp-api-sdk/delivery-by-amazon-delivery-shipment-invoice-v2022-07-01-api-2022-07-01",
+  "author": "Bertrand Marron <bertrand@bizon.solutions>",
+  "description": "The Selling Partner API for Delivery Shipment Invoicing helps you programmatically retrieve shipment invoice information in the Brazil marketplace for a selling partner’s orders.",
+  "version": "1.0.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "scripts": {
+    "xo": "xo",
+    "check:ts": "tsc --noEmit",
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:es": "tsc -p tsconfig.es.json",
+    "build": "pnpm build:cjs && pnpm build:es",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@sp-api-sdk/common": "workspace:*",
+    "axios": "^1.13.2"
+  },
+  "devDependencies": {
+    "@sp-api-sdk/typescript-config": "workspace:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bizon/selling-partner-api-sdk.git",
+    "directory": "clients/delivery-by-amazon-delivery-shipment-invoice-v2022-07-01-api-2022-07-01"
+  },
+  "bugs": {
+    "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
+  },
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/delivery-by-amazon-delivery-shipment-invoice-v2022-07-01-api-2022-07-01",
+  "keywords": [
+    "amazon",
+    "bizon",
+    "marketplace web services",
+    "mws",
+    "selling partner api",
+    "sp api",
+    "sp sdk",
+    "delivery by amazon delivery shipment invoice v2022 07 01 api"
+  ],
+  "xo": {
+    "extends": [
+      "xo-bizon"
+    ],
+    "settings": {
+      "import/internal-regex": "^@sp-api-sdk/"
+    },
+    "semicolon": false,
+    "space": 2,
+    "prettier": true,
+    "ignores": [
+      "src/api-model/**"
+    ],
+    "rules": {
+      "unicorn/prevent-abbreviations": "off"
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "jsxSingleQuote": true
+  }
+}

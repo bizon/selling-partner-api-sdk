@@ -1,4 +1,3 @@
-export * from './account-holder-address';
 export * from './balance';
 export * from './balance-listing';
 export * from './balance-type';
@@ -16,6 +15,8 @@ export * from './fee';
 export * from './fee-type';
 export * from './fx-rate-details';
 export * from './model-error';
+export * from './payee-contact-information';
+export * from './payee-entity-type';
 export * from './payment-preference';
 export * from './payment-preference-payment-type';
 export * from './rate-direction';

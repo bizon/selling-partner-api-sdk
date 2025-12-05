@@ -27,28 +27,28 @@ import type { BankAccountOwnershipType } from './bank-account-ownership-type';
 import type { BankNumberFormat } from './bank-number-format';
 
 /**
- * Details of an Amazon SW bank account, used to hold money earned by a SW customer by selling items. NOTE: Not including account_links, short cut links to the account balance and transactions -> since not mandatory 
+ * Details of an Amazon Seller Wallet bank account. This account is used to hold the money that a Seller Wallet customer earns by selling items.
  */
 export interface BankAccount {
     /**
-     * The unique identifier provided by Amazon to identify the account 
+     * The unique bank account identifier provided by Amazon. To initiate a `SELF` transaction with Seller Wallet, you must choose `BANK_ACCOUNT` as the payment method type in the [getPaymentMethod](https://developer-docs.amazon.com/sp-api/reference/getpaymentmethods) request. Your Amazon Seller Wallet bank account identifier should match the `paymentMethodId` in the response. This field is required.
      */
     'accountId'?: string;
     /**
-     * BankAccount holder\'s name (expected to be Amazon customer) 
+     * The bank account holder\'s name (expected to be an Amazon customer). There is a 50 character limit.
      */
     'accountHolderName'?: string;
-    'bankAccountNumberFormat': BankAccountNumberFormat;
+    'bankAccountNumberFormat'?: BankAccountNumberFormat;
     /**
-     * The name of the bank, for all Amazon Seller Wallet account the value will be Amazon Seller Wallet 
+     * The name of the bank. This value is Amazon Seller Wallet for Amazon Seller Wallet accounts.
      */
     'bankName'?: string;
     'bankAccountOwnershipType': BankAccountOwnershipType;
     /**
-     * Routing number for automated clearing house transfers, for all Amazon Seller Wallet account the value will be denoted by nine cosecutive 0\'s,  
+     * Routing number for automated clearing house transfers for `THIRD_PARTY` transaction requests. This value is nine consecutive zeros for Amazon Seller Wallet accounts.
      */
-    'routingNumber': string;
-    'bankNumberFormat': BankNumberFormat;
+    'routingNumber'?: string;
+    'bankNumberFormat'?: BankNumberFormat;
     /**
      * The two digit country code, in ISO 3166 format. 
      */

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * The Selling Partner API for Finances
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller\'s business. You can obtain financial events for a given order or date range without having to wait until a statement period closes.
+ * The Selling Partner API for Finances provides financial information relevant to a seller\'s business. You can obtain financial events for a given order or date range without having to wait until a statement period closes.
  *
  * The version of the OpenAPI document: 2024-06-19
  * 
@@ -19,19 +19,19 @@
  */
 export interface ProductContext {
     /**
-     * Amazon Standard Identification Number (ASIN) of the item.
+     * The Amazon Standard Identification Number (ASIN) of the item.
      */
     'asin'?: string;
     /**
-     * Stock keeping unit (SKU) of the item.
+     * The Stock Keeping Unit (SKU) of the item.
      */
     'sku'?: string;
     /**
-     * Quantity of the item shipped.
+     * The quantity of the item shipped.
      */
     'quantityShipped'?: number;
     /**
-     * Fulfillment network of the item.
+     * The fulfillment network of the item.
      */
     'fulfillmentNetwork'?: string;
 }

@@ -19,7 +19,7 @@
  */
 export interface SelectedDeliveryWindow {
     /**
-     * Identifies type of Delivery Window Availability. Values: `AVAILABLE`, `CONGESTED`
+     * The type of delivery window availability. Values: `AVAILABLE`, `BLOCKED`, `CONGESTED`, `DISCOUNTED`
      */
     'availabilityType': string;
     /**

@@ -55,8 +55,8 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
         /**
          * Create a transaction request from a Seller Wallet account to another customer-provided account.
          * @summary Create a transaction request from Amazon SW account to another customer provided account
-         * @param {string} destAccountDigitalSignature Digital signature for the destination bank account details.
-         * @param {string} amountDigitalSignature Digital signature for the source currency transaction amount.
+         * @param {string} destAccountDigitalSignature Digital signature for the destination bank account details. For more information, refer to [Third-Party Provider Signature Guidance](https://developer-docs.amazon.com/sp-api/docs/tpp-registration-signature-guidance).
+         * @param {string} amountDigitalSignature Digital signature for the source currency transaction amount. Sign in the order of the request definitions. You can omit empty or optional fields. For more information, refer to [Third-Party Provider Signature Guidance](https://developer-docs.amazon.com/sp-api/docs/tpp-registration-signature-guidance).
          * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {TransactionInitiationRequest} body Defines the actual payload of the request
          * @param {*} [options] Override http request option.
@@ -641,8 +641,8 @@ export const SellerWalletApiFp = function(configuration?: Configuration) {
         /**
          * Create a transaction request from a Seller Wallet account to another customer-provided account.
          * @summary Create a transaction request from Amazon SW account to another customer provided account
-         * @param {string} destAccountDigitalSignature Digital signature for the destination bank account details.
-         * @param {string} amountDigitalSignature Digital signature for the source currency transaction amount.
+         * @param {string} destAccountDigitalSignature Digital signature for the destination bank account details. For more information, refer to [Third-Party Provider Signature Guidance](https://developer-docs.amazon.com/sp-api/docs/tpp-registration-signature-guidance).
+         * @param {string} amountDigitalSignature Digital signature for the source currency transaction amount. Sign in the order of the request definitions. You can omit empty or optional fields. For more information, refer to [Third-Party Provider Signature Guidance](https://developer-docs.amazon.com/sp-api/docs/tpp-registration-signature-guidance).
          * @param {string} marketplaceId The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {TransactionInitiationRequest} body Defines the actual payload of the request
          * @param {*} [options] Override http request option.
@@ -954,12 +954,12 @@ export const SellerWalletApiFactory = function (configuration?: Configuration, b
  */
 export interface SellerWalletApiCreateTransactionRequest {
     /**
-     * Digital signature for the destination bank account details.
+     * Digital signature for the destination bank account details. For more information, refer to [Third-Party Provider Signature Guidance](https://developer-docs.amazon.com/sp-api/docs/tpp-registration-signature-guidance).
      */
     readonly destAccountDigitalSignature: string
 
     /**
-     * Digital signature for the source currency transaction amount.
+     * Digital signature for the source currency transaction amount. Sign in the order of the request definitions. You can omit empty or optional fields. For more information, refer to [Third-Party Provider Signature Guidance](https://developer-docs.amazon.com/sp-api/docs/tpp-registration-signature-guidance).
      */
     readonly amountDigitalSignature: string
 

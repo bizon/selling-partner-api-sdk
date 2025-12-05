@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * The Selling Partner API for Finances
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller\'s business. You can obtain financial events for a given order or date range without having to wait until a statement period closes.
+ * The Selling Partner API for Finances provides financial information relevant to a seller\'s business. You can obtain financial events for a given order or date range without having to wait until a statement period closes.
  *
  * The version of the OpenAPI document: 2024-06-19
  * 
@@ -36,7 +36,7 @@ import type { RelatedIdentifier } from './related-identifier';
 import type { SellingPartnerMetadata } from './selling-partner-metadata';
 
 /**
- * Contains all information related to the transaction.
+ * All the information related to a transaction.
  */
 export interface Transaction {
     'sellingPartnerMetadata'?: SellingPartnerMetadata;
@@ -45,11 +45,11 @@ export interface Transaction {
      */
     'relatedIdentifiers'?: Array<RelatedIdentifier>;
     /**
-     * The type of transaction.  Possible values:  * Shipment
+     * The type of transaction.  **Possible value:** `Shipment`
      */
     'transactionType'?: string;
     /**
-     * The unique identifier for the transaction.
+     * The unique identifier of the transaction.
      */
     'transactionId'?: string;
     /**
@@ -57,21 +57,21 @@ export interface Transaction {
      */
     'transactionStatus'?: string;
     /**
-     * Describes the reasons for the transaction.  Example: \'Order Payment\',\'Refund Order\'
+     * Describes the reasons for the transaction.  **Example:** \'Order Payment\', \'Refund Order\'
      */
     'description'?: string;
     /**
-     * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
+     * A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     'postedDate'?: string;
     'totalAmount'?: Currency;
     'marketplaceDetails'?: MarketplaceDetails;
     /**
-     * List of items in the transaction
+     * A list of items in the transaction.
      */
     'items'?: Array<Item>;
     /**
-     * List of additional Information about the item.
+     * A list of additional information about the item.
      */
     'contexts'?: Array<Context>;
     /**

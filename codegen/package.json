@@ -22,7 +22,7 @@
     "p-map": "^7.0.4",
     "remark": "^15.0.1",
     "strip-markdown": "^6.0.0",
-    "winston": "^3.18.3"
+    "winston": "^3.19.0"
   },
   "devDependencies": {
     "@tsconfig/node24": "^24.0.3",

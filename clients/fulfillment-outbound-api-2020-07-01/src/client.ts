@@ -13,13 +13,6 @@ export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
     // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/outbound/2020-07-01/deliveryOfferings$'),
-    rate: 5,
-    burst: 30,
-  },
-  {
-    method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/fba/outbound/2020-07-01/deliveryOffers$'),
     rate: 5,
     burst: 30,

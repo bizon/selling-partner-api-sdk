@@ -69,8 +69,8 @@ export const UploadsApiAxiosParamCreator = function (configuration?: Configurati
                 localVarQueryParameter['contentType'] = contentType;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};

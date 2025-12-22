@@ -63,8 +63,8 @@ export const CatalogItemsApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['SellerSKU'] = sellerSKU;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};

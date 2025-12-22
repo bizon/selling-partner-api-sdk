@@ -111,8 +111,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             if (xAmznShippingBusinessId != null) {
                 localVarHeaderParameter['x-amzn-shipping-business-id'] = String(xAmznShippingBusinessId);
             }
@@ -147,9 +147,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             if (xAmznShippingBusinessId != null) {
                 localVarHeaderParameter['x-amzn-shipping-business-id'] = String(xAmznShippingBusinessId);
@@ -188,9 +187,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             if (xAmznIdempotencyKey != null) {
                 localVarHeaderParameter['x-amzn-IdempotencyKey'] = String(xAmznIdempotencyKey);
@@ -234,9 +232,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             if (xAmznIdempotencyKey != null) {
                 localVarHeaderParameter['x-amzn-IdempotencyKey'] = String(xAmznIdempotencyKey);
@@ -294,8 +291,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
                 localVarQueryParameter['postalCode'] = postalCode;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             if (xAmznShippingBusinessId != null) {
                 localVarHeaderParameter['x-amzn-shipping-business-id'] = String(xAmznShippingBusinessId);
             }
@@ -341,8 +338,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
                 localVarQueryParameter['rateId'] = rateId;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             if (xAmznShippingBusinessId != null) {
                 localVarHeaderParameter['x-amzn-shipping-business-id'] = String(xAmznShippingBusinessId);
             }
@@ -374,8 +371,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             if (xAmznShippingBusinessId != null) {
                 localVarHeaderParameter['x-amzn-shipping-business-id'] = String(xAmznShippingBusinessId);
             }
@@ -410,9 +407,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             if (xAmznShippingBusinessId != null) {
                 localVarHeaderParameter['x-amzn-shipping-business-id'] = String(xAmznShippingBusinessId);
@@ -450,8 +446,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             if (xAmznShippingBusinessId != null) {
                 localVarHeaderParameter['x-amzn-shipping-business-id'] = String(xAmznShippingBusinessId);
             }
@@ -486,9 +482,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             if (xAmznShippingBusinessId != null) {
                 localVarHeaderParameter['x-amzn-shipping-business-id'] = String(xAmznShippingBusinessId);
@@ -525,9 +520,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             if (xAmznShippingBusinessId != null) {
                 localVarHeaderParameter['x-amzn-shipping-business-id'] = String(xAmznShippingBusinessId);
@@ -582,8 +576,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
                 localVarQueryParameter['dpi'] = dpi;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             if (xAmznShippingBusinessId != null) {
                 localVarHeaderParameter['x-amzn-shipping-business-id'] = String(xAmznShippingBusinessId);
             }
@@ -629,8 +623,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
                 localVarQueryParameter['carrierId'] = carrierId;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             if (xAmznShippingBusinessId != null) {
                 localVarHeaderParameter['x-amzn-shipping-business-id'] = String(xAmznShippingBusinessId);
             }
@@ -665,9 +659,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             if (xAmznShippingBusinessId != null) {
                 localVarHeaderParameter['x-amzn-shipping-business-id'] = String(xAmznShippingBusinessId);
@@ -708,9 +701,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             if (xAmznShippingBusinessId != null) {
                 localVarHeaderParameter['x-amzn-shipping-business-id'] = String(xAmznShippingBusinessId);
@@ -751,9 +743,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             if (xAmznShippingBusinessId != null) {
                 localVarHeaderParameter['x-amzn-shipping-business-id'] = String(xAmznShippingBusinessId);
@@ -790,9 +781,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             if (xAmznShippingBusinessId != null) {
                 localVarHeaderParameter['x-amzn-shipping-business-id'] = String(xAmznShippingBusinessId);
@@ -830,9 +820,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             if (xAmznIdempotencyKey != null) {
                 localVarHeaderParameter['x-amzn-IdempotencyKey'] = String(xAmznIdempotencyKey);
@@ -872,9 +861,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             if (xAmznShippingBusinessId != null) {
                 localVarHeaderParameter['x-amzn-shipping-business-id'] = String(xAmznShippingBusinessId);
@@ -915,9 +903,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             if (xAmznShippingBusinessId != null) {
                 localVarHeaderParameter['x-amzn-shipping-business-id'] = String(xAmznShippingBusinessId);

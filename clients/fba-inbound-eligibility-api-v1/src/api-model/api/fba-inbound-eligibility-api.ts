@@ -65,8 +65,8 @@ export const FbaInboundEligibilityApiAxiosParamCreator = function (configuration
                 localVarQueryParameter['program'] = program;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json,ItemEligibilityPreview';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};

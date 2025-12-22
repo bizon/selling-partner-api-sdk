@@ -78,9 +78,8 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -128,8 +127,8 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['includedDataSet'] = Array.from(includedDataSet).join(COLLECTION_FORMATS.csv);
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -183,8 +182,8 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['pageToken'] = pageToken;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -223,8 +222,8 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -266,9 +265,8 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -309,8 +307,8 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -350,8 +348,8 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['pageToken'] = pageToken;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -398,8 +396,8 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['pageToken'] = pageToken;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -441,9 +439,8 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -488,9 +485,8 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['asinSet'] = Array.from(asinSet).join(COLLECTION_FORMATS.csv);
             }
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};

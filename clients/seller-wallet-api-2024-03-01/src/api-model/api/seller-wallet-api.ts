@@ -87,9 +87,8 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             if (destAccountDigitalSignature != null) {
                 localVarHeaderParameter['destAccountDigitalSignature'] = String(destAccountDigitalSignature);
@@ -142,9 +141,8 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             if (destAccountDigitalSignature != null) {
                 localVarHeaderParameter['destAccountDigitalSignature'] = String(destAccountDigitalSignature);
@@ -192,8 +190,8 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -233,8 +231,8 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -274,8 +272,8 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -346,8 +344,8 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -387,8 +385,8 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -428,8 +426,8 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -477,8 +475,8 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -514,8 +512,8 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -563,8 +561,8 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['nextPageToken'] = nextPageToken;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -609,9 +607,8 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             if (destAccountDigitalSignature != null) {
                 localVarHeaderParameter['destAccountDigitalSignature'] = String(destAccountDigitalSignature);

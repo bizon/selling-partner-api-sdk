@@ -71,8 +71,8 @@ export const CustomerFeedbackApiAxiosParamCreator = function (configuration?: Co
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -111,8 +111,8 @@ export const CustomerFeedbackApiAxiosParamCreator = function (configuration?: Co
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -158,8 +158,8 @@ export const CustomerFeedbackApiAxiosParamCreator = function (configuration?: Co
                 localVarQueryParameter['sortBy'] = sortBy;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -198,8 +198,8 @@ export const CustomerFeedbackApiAxiosParamCreator = function (configuration?: Co
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -238,8 +238,8 @@ export const CustomerFeedbackApiAxiosParamCreator = function (configuration?: Co
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -285,8 +285,8 @@ export const CustomerFeedbackApiAxiosParamCreator = function (configuration?: Co
                 localVarQueryParameter['sortBy'] = sortBy;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -325,8 +325,8 @@ export const CustomerFeedbackApiAxiosParamCreator = function (configuration?: Co
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};

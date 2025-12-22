@@ -86,8 +86,8 @@ export const ProductTypeDefinitionsApiAxiosParamCreator = function (configuratio
                 localVarQueryParameter['locale'] = locale;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -142,8 +142,8 @@ export const ProductTypeDefinitionsApiAxiosParamCreator = function (configuratio
                 localVarQueryParameter['searchLocale'] = searchLocale;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};

@@ -1,5 +1,4 @@
 /* tslint:disable */
-/* eslint-disable */
 /**
  * Selling Partner API for Orders
  * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don\'t show up in the response).
@@ -12,12 +11,24 @@
  * Do not edit the class manually.
  */
 
+interface AWSv4Configuration {
+  options?: {
+    region?: string
+    service?: string
+  }
+  credentials?: {
+    accessKeyId?: string
+    secretAccessKey?: string,
+    sessionToken?: string
+  }
+}
 
 export interface ConfigurationParameters {
     apiKey?: string | Promise<string> | ((name: string) => string) | ((name: string) => Promise<string>);
     username?: string;
     password?: string;
     accessToken?: string | Promise<string> | ((name?: string, scopes?: string[]) => string) | ((name?: string, scopes?: string[]) => Promise<string>);
+    awsv4?: AWSv4Configuration;
     basePath?: string;
     serverIndex?: number;
     baseOptions?: any;
@@ -45,6 +56,17 @@ export class Configuration {
      */
     accessToken?: string | Promise<string> | ((name?: string, scopes?: string[]) => string) | ((name?: string, scopes?: string[]) => Promise<string>);
     /**
+     * parameter for aws4 signature security
+     * @param {Object} AWS4Signature - AWS4 Signature security
+     * @param {string} options.region - aws region
+     * @param {string} options.service - name of the service.
+     * @param {string} credentials.accessKeyId - aws access key id
+     * @param {string} credentials.secretAccessKey - aws access key
+     * @param {string} credentials.sessionToken - aws session token
+     * @memberof Configuration
+     */
+    awsv4?: AWSv4Configuration;
+    /**
      * override base path
      */
     basePath?: string;
@@ -70,6 +92,7 @@ export class Configuration {
         this.username = param.username;
         this.password = param.password;
         this.accessToken = param.accessToken;
+        this.awsv4 = param.awsv4;
         this.basePath = param.basePath;
         this.serverIndex = param.serverIndex;
         this.baseOptions = {

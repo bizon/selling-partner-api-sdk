@@ -81,8 +81,8 @@ export const DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiAxiosParamCreato
                 localVarQueryParameter['programType'] = programType;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -123,9 +123,8 @@ export const DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiAxiosParamCreato
                 localVarQueryParameter['shipmentId'] = shipmentId;
             }
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};

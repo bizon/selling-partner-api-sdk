@@ -102,8 +102,8 @@ export const SalesApiAxiosParamCreator = function (configuration?: Configuration
                 localVarQueryParameter['amazonProgram'] = amazonProgram;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json,payload';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};

@@ -22,85 +22,129 @@ import type { TimeInterval } from './time-interval';
  */
 export interface GetSellingPartnerMetricsResponseMetric {
     /**
-     * The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to PERFORMANCE timePeriodType.
+     * The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'notDeliveredDueToOOS'?: number;
     /**
-     * The revenue generated from subscriptions over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.
+     * The revenue generated from subscriptions over a period of time. Applicable for both the `PERFORMANCE` and `FORECAST` `timePeriodType`.
      */
     'totalSubscriptionsRevenue'?: number;
     /**
-     * The number of units shipped to the subscribers over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.
+     * The number of units shipped to the subscribers over a period of time. Applicable for both the `PERFORMANCE` and `FORECAST` `timePeriodType`.
      */
     'shippedSubscriptionUnits'?: number;
     /**
-     * The number of active subscriptions present at the end of the period. Applicable to PERFORMANCE timePeriodType.
+     * The number of active subscriptions present at the end of the period. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'activeSubscriptions'?: number;
     /**
-     * The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to PERFORMANCE timePeriodType.
+     * The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'subscriberAverageRevenue'?: number;
     /**
-     * The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to PERFORMANCE timePeriodType.
+     * The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'nonSubscriberAverageRevenue'?: number;
     /**
-     * The revenue that would have been generated had there not been out of stock. Applicable to PERFORMANCE timePeriodType.
+     * The revenue that would have been generated had there not been out of stock. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'lostRevenueDueToOOS'?: number;
     /**
-     * The average reorders per subscriber of the program over a period of 12 months. Applicable to PERFORMANCE timePeriodType.
+     * The average reorders per subscriber of the program over a period of 12 months. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'subscriberAverageReorders'?: number;
     /**
-     * The average reorders per non-subscriber of the program over a period of past 12 months. Applicable to PERFORMANCE timePeriodType.
+     * The average reorders per non-subscriber of the program over a period of past 12 months. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'nonSubscriberAverageReorders'?: number;
     /**
-     * The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to PERFORMANCE timePeriodType.
+     * The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'couponsRevenuePenetration'?: number;
     /**
-     * The subscription revenue generated from subscriptions with over two deliveries over the past 12 months. Applicable to PERFORMANCE timePeriodType.
+     * The subscription revenue generated from subscriptions with over two deliveries over the past 12 months. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'revenueFromSubscriptionsWithMultipleDeliveries'?: number;
     /**
-     * The subscription revenue generated from active subscriptions with one delivery over the past 12 months. Applicable to PERFORMANCE timePeriodType.
+     * The subscription revenue generated from active subscriptions with one delivery over the past 12 months. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'revenueFromActiveSubscriptionsWithSingleDelivery'?: number;
     /**
-     * The subscription revenue generated from subscriptions which are cancelled after one delivery over the past 12 months. Applicable to PERFORMANCE timePeriodType.
+     * The subscription revenue generated from subscriptions which are cancelled after one delivery over the past 12 months. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'revenueFromCancelledSubscriptionsAfterSingleDelivery'?: number;
     /**
-     * The percentage of subscriptions retained after 30 days of subscription creation. Applicable to PERFORMANCE timePeriodType.
+     * The percentage of subscriptions retained after 30 days of subscription creation. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'subscriberRetentionFor30Days'?: number;
     /**
-     * The percentage of subscriptions retained after 90 days of subscription creation. Applicable to PERFORMANCE timePeriodType.
+     * The percentage of subscriptions retained after 90 days of subscription creation. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'subscriberRetentionFor90Days'?: number;
     /**
-     * The percentage of subscription revenue generated by offers with 0% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
+     * The percentage of subscription revenue generated by offers with 0% seller-funded discount over the last 12 months. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'revenuePenetrationFor0PercentSellerFunding'?: number;
     /**
-     * [Applicable only for Sellers] The percentage of subscription revenue generated by offers with 5% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
+     * [Applicable only for Sellers] The percentage of subscription revenue generated by offers with 5% seller-funded discount over the last 12 months. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'revenuePenetrationFor5PercentSellerFunding'?: number;
     /**
-     * [Applicable only for Sellers] The percentage of subscription revenue generated by offers with 10% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
+     * [Applicable only for Sellers] The percentage of subscription revenue generated by offers with 10% seller-funded discount over the last 12 months. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'revenuePenetrationFor10PercentSellerFunding'?: number;
     /**
-     * [Applicable only for vendors] The percentage of subscription revenue generated by offers with 5% or above seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
+     * [Applicable only for vendors] The percentage of subscription revenue generated by offers with 5% or above seller-funded discount over the last 12 months. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'revenuePenetrationFor5PlusPercentSellerFunding'?: number;
     /**
-     * The percentage of new subscriptions acquired through coupons. Applicable to PERFORMANCE timePeriodType.
+     * The percentage of new subscriptions acquired through coupons. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'shareOfCouponSubscriptions'?: number;
+    /**
+     * Total revenue from customers who have made purchases from your catalog but have never subscribed to any products
+     */
+    'nonSubscriberLifeTimeValueFromOTP'?: number;
+    /**
+     * Revenue from one-time purchase orders placed by customers who previously had subscriptions but currently have none active in your catalog.
+     */
+    'lostSubscriberLifeTimeValueFromOTP'?: number;
+    /**
+     * Revenue from Subscribe & Save orders placed by customers who previously had subscriptions but currently have none active in your catalog.
+     */
+    'lostSubscriberLifeTimeValueFromSNS'?: number;
+    /**
+     * Revenue from one-time purchase orders placed by customers who started their first subscription with your catalog within the past 12 months.
+     */
+    'growingSubscriberLifeTimeValueFromOTP'?: number;
+    /**
+     * Revenue from Subscribe & Save orders placed by customers who started their first subscription with your catalog within the past 12 months.
+     */
+    'growingSubscriberLifeTimeValueFromSNS'?: number;
+    /**
+     * Revenue from one-time purchase orders placed by customers who have maintained an active subscription with your catalog for more than 12 months.
+     */
+    'establishedSubscriberLifeTimeValueFromOTP'?: number;
+    /**
+     * Revenue from Subscribe & Save orders placed by customers who have maintained an active subscription with your catalog for more than 12 months.
+     */
+    'establishedSubscriberLifeTimeValueFromSNS'?: number;
+    /**
+     * Percentage of subscriptions created by offers with 0% seller-funded discount out of the total number of new orders placed over the past 12 months
+     */
+    'signupConversionFor0PercentSellerFunding'?: number;
+    /**
+     * [Applicable only for Sellers] Percentage of subscriptions created by offers with 5% seller-funded discount out of the total number of new orders placed over the past 12 months
+     */
+    'signupConversionFor5PercentSellerFunding'?: number;
+    /**
+     * [Applicable only for Sellers] Percentage of subscriptions created by offers with 10% seller-funded discount out of the total number of new orders placed over the past 12 months
+     */
+    'signupConversionFor10PercentSellerFunding'?: number;
+    /**
+     * [Applicable only for Vendors] Percentage of subscriptions created by offers with 5% or above seller-funded discount out of the total number of new orders placed over the past 12 months
+     */
+    'signupConversionFor5PlusPercentSellerFunding'?: number;
     'timeInterval'?: TimeInterval;
     /**
      * The currency code in ISO 4217 format.

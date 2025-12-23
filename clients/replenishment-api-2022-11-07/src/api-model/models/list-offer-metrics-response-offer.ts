@@ -26,35 +26,35 @@ export interface ListOfferMetricsResponseOffer {
      */
     'asin'?: string;
     /**
-     * The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to PERFORMANCE timePeriodType.
+     * The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to `FORECAST` `timePeriodType`.
      */
     'notDeliveredDueToOOS'?: number;
     /**
-     * The revenue generated from subscriptions over a period of time. Applicable to PERFORMANCE timePeriodType.
+     * The revenue generated from subscriptions over a period of time. Applicable to `FORECAST` `timePeriodType`.
      */
     'totalSubscriptionsRevenue'?: number;
     /**
-     * The number of units shipped to the subscribers over a period of time. Applicable to PERFORMANCE timePeriodType.
+     * The number of units shipped to the subscribers over a period of time. Applicable to `FORECAST` `timePeriodType`.
      */
     'shippedSubscriptionUnits'?: number;
     /**
-     * The number of active subscriptions present at the end of the period. Applicable to PERFORMANCE timePeriodType.
+     * The number of active subscriptions present at the end of the period. Applicable to `FORECAST` `timePeriodType`.
      */
     'activeSubscriptions'?: number;
     /**
-     * The percentage of total program revenue out of total product revenue. Applicable to PERFORMANCE timePeriodType.
+     * The percentage of total program revenue out of total product revenue. Applicable to `FORECAST` `timePeriodType`.
      */
     'revenuePenetration'?: number;
     /**
-     * The revenue that would have been generated had there not been out of stock. Applicable to PERFORMANCE timePeriodType.
+     * The revenue that would have been generated had there not been out of stock. Applicable to `FORECAST` `timePeriodType`.
      */
     'lostRevenueDueToOOS'?: number;
     /**
-     * The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to PERFORMANCE timePeriodType.
+     * The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to `FORECAST` `timePeriodType`.
      */
     'couponsRevenuePenetration'?: number;
     /**
-     * The percentage of new subscriptions acquired through coupons. Applicable to PERFORMANCE timePeriodType.
+     * The percentage of new subscriptions acquired through coupons. Applicable to `FORECAST` `timePeriodType`.
      */
     'shareOfCouponSubscriptions'?: number;
     /**

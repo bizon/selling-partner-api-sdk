@@ -13,18 +13,18 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { ListTransactionsPayload } from './list-transactions-payload';
 
 /**
- * A currency type and amount.
+ * The response schema for the `listTransactions` operation.
  */
-export interface Currency {
+export interface ListTransactionsResponse {
+    'payload'?: ListTransactionsPayload;
     /**
-     * The three-digit currency code in ISO 4217 format.
+     * A list of error responses returned when a request is unsuccessful.
      */
-    'CurrencyCode'?: string;
-    /**
-     * A signed decimal number.
-     */
-    'CurrencyAmount'?: number;
+    'errors'?: Array<Error>;
 }
 

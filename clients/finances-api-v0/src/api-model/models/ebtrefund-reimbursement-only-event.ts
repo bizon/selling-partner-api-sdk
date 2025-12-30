@@ -13,18 +13,22 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { Currency } from './currency';
 
 /**
- * A currency type and amount.
+ * An EBT refund reimbursement event.
  */
-export interface Currency {
+export interface EBTRefundReimbursementOnlyEvent {
     /**
-     * The three-digit currency code in ISO 4217 format.
+     * The identifier of an order.
      */
-    'CurrencyCode'?: string;
+    'OrderId'?: string;
     /**
-     * A signed decimal number.
+     * A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
-    'CurrencyAmount'?: number;
+    'PostedDate'?: string;
+    'Amount'?: Currency;
 }
 

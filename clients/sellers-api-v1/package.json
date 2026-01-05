@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/sellers-api-v1",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Sellers (Sellers API) provides essential information about seller accounts, such as: The marketplaces a seller can list in The default language and currency of a marketplace Whether the seller has suspended listings Refer to the Sellers API reference for details about this API's operations, data types, and schemas.",
-  "version": "4.1.10",
+  "version": "4.1.11",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

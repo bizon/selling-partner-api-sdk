@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Finances
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller\'s business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
+ * The Selling Partner API for Finances provides financial information that is relevant to a seller\'s business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range. 
  *
  * The version of the OpenAPI document: v0
  * 
@@ -22,15 +22,15 @@ import type { Currency } from './currency';
  */
 export interface ProductAdsPaymentEvent {
     /**
-     * Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
+     * A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     'postedDate'?: string;
     /**
-     * Indicates if the transaction is for a charge or a refund.  Possible values:  * charge - Charge  * refund - Refund
+     * Indicates if the transaction is for a charge or a refund.  Possible values:  * `charge`  * `refund`
      */
     'transactionType'?: string;
     /**
-     * Identifier for the invoice that the transaction appears in.
+     * The identifier for the invoice that includes the transaction.
      */
     'invoiceId'?: string;
     'baseValue'?: Currency;

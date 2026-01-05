@@ -15,16 +15,20 @@
 
 
 /**
- * A currency type and amount.
+ * Metadata describing the seller.
  */
-export interface Currency {
+export interface SellingPartnerMetadata {
     /**
-     * The three-digit currency code in ISO 4217 format.
+     * The unique seller identifier.
      */
-    'CurrencyCode'?: string;
+    'SellingPartnerId'?: string;
     /**
-     * A signed decimal number.
+     * The type of account in the transaction.
      */
-    'CurrencyAmount'?: number;
+    'AccountType'?: string;
+    /**
+     * The identifier of the marketplace in which the transaction occurred.
+     */
+    'MarketplaceId'?: string;
 }
 

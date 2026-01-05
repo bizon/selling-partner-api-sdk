@@ -16,23 +16,30 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import type { Currency } from './currency';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { RelatedIdentifier } from './related-identifier';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { SellingPartnerMetadata } from './selling-partner-metadata';
 
 /**
- * An event related to an Adhoc Disbursement.
+ * All the information related to the transaction.
  */
-export interface AdhocDisbursementEvent {
+export interface Transaction {
+    'SellingPartnerMetadata'?: SellingPartnerMetadata;
     /**
-     * The type of transaction. For example, \"Disbursed to Amazon Gift Card balance\".
+     * Related business identifiers of the transaction.
+     */
+    'RelatedIdentifiers'?: Array<RelatedIdentifier>;
+    /**
+     * The type of transaction.  Possible values:  * `Shipment`
      */
     'TransactionType'?: string;
     /**
      * A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     'PostedDate'?: string;
-    /**
-     * The identifier for the transaction.
-     */
-    'TransactionId'?: string;
-    'TransactionAmount'?: Currency;
+    'TotalAmount'?: Currency;
 }
 

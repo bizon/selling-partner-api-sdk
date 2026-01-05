@@ -15,16 +15,23 @@
 
 
 /**
- * A currency type and amount.
+ * Related business identifier of the transaction.
  */
-export interface Currency {
+export interface RelatedIdentifier {
     /**
-     * The three-digit currency code in ISO 4217 format.
+     * Enumerated set of related business identifier names.
      */
-    'CurrencyCode'?: string;
+    'RelatedIdentifierName'?: RelatedIdentifierRelatedIdentifierNameEnum;
     /**
-     * A signed decimal number.
+     * The corresponding value to `RelatedIdentifierName`.
      */
-    'CurrencyAmount'?: number;
+    'RelatedIdentifierValue'?: string;
 }
+
+export const RelatedIdentifierRelatedIdentifierNameEnum = {
+    OrderId: 'ORDER_ID'
+} as const;
+
+export type RelatedIdentifierRelatedIdentifierNameEnum = typeof RelatedIdentifierRelatedIdentifierNameEnum[keyof typeof RelatedIdentifierRelatedIdentifierNameEnum];
+
 

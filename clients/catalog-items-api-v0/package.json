@@ -18,7 +18,7 @@
     "dist/**/*.d.ts"
   ],
   "scripts": {
-    "xo": "xo",
+    "xo": "xo --cwd=../.. clients/catalog-items-api-v0",
     "check:ts": "tsc --noEmit",
     "build:cjs": "tsc -p tsconfig.json",
     "build:es": "tsc -p tsconfig.es.json",
@@ -50,26 +50,5 @@
     "sp api",
     "sp sdk",
     "catalog items api"
-  ],
-  "xo": {
-    "extends": [
-      "xo-bizon"
-    ],
-    "settings": {
-      "import/internal-regex": "^@sp-api-sdk/"
-    },
-    "semicolon": false,
-    "space": 2,
-    "prettier": true,
-    "ignores": [
-      "src/api-model/**"
-    ],
-    "rules": {
-      "unicorn/prevent-abbreviations": "off"
-    }
-  },
-  "prettier": {
-    "printWidth": 100,
-    "jsxSingleQuote": true
-  }
+  ]
 }

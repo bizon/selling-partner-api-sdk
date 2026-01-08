@@ -8,7 +8,7 @@ export class SellingPartnerApiAuthError extends AxiosError<AccessTokenData, Acce
   constructor(error: AxiosError<AccessTokenData, AccessTokenQuery>) {
     const message = error.response
       ? `access-token error: Response code ${error.response.status}`
-      : `access-token error: No response`
+      : 'access-token error: No response'
 
     super(message, error.code, error.config, error.request, error.response)
 

@@ -49,14 +49,17 @@ async function generateSchema(
     delete parsedSchema.$schema
 
     const lines = [
-      `import {type FromSchema} from 'json-schema-to-ts'`,
+      "import {type FromSchema} from 'json-schema-to-ts'",
       `export const ${schemaName} = ${JSON.stringify(parsedSchema, null, 2)} as const`,
       `export type ${schemaTypeName} = FromSchema<typeof ${schemaName}>`,
     ]
 
     await fs.writeFile(`${outputDirectory}/${fileName}.ts`, lines.join('\n\n'))
 
-    logger.info(`done in ${Date.now() - startedAt}ms`, {schemaName: schemaTypeName, schemaType})
+    logger.info(`done in ${Date.now() - startedAt}ms`, {
+      schemaName: schemaTypeName,
+      schemaType,
+    })
 
     return {
       fileName,
@@ -102,9 +105,7 @@ export async function generateDirectorySchemas(schemaDirectory: string, director
   )
 
   await generateDirectoryIndex(
-    schemas.filter((schema): schema is NonNullable<typeof schema> => {
-      return schema !== undefined
-    }),
+    schemas.filter((schema): schema is NonNullable<typeof schema> => schema !== undefined),
     outputDirectory,
   )
 
@@ -136,7 +137,8 @@ export async function generateSchemas() {
 
   const generatedDirectories: string[] = []
 
-  for await (const schemaDirectory of schemaDirectories) {
+  for (const schemaDirectory of schemaDirectories) {
+    // eslint-disable-next-line no-await-in-loop
     const length = await generateDirectorySchemas(`${prefix}/${schemaDirectory}`, schemaDirectory)
     if (length > 0) {
       generatedDirectories.push(schemaDirectory)

@@ -130,18 +130,19 @@ async function generateClientVersion(modelFilePath: string) {
 
   logger.info('generating…', {packageName})
 
-  await fs.rm(`${clientDirectoryPath}/src/api-model`, {recursive: true, force: true})
+  await fs.rm(`${clientDirectoryPath}/src/api-model`, {
+    recursive: true,
+    force: true,
+  })
 
   // TODO: disable REFACTOR_ALLOF_INLINE_SCHEMAS when https://github.com/OpenAPITools/openapi-generator/issues/16150 is fixed.
-  await exec(
-    `codegen/node_modules/.bin/openapi-generator-cli generate \
+  await exec(`codegen/node_modules/.bin/openapi-generator-cli generate \
       --additional-properties=supportsES6=true,useSingleRequestParameter=true,withSeparateModelsAndApi=true,modelPackage=models,apiPackage=api \
       --skip-validate-spec \
       --inline-schema-options REFACTOR_ALLOF_INLINE_SCHEMAS=true \
       -g typescript-axios \
       -i ${modelPath} \
-      -o ${clientDirectoryPath}/src/api-model`,
-  )
+      -o ${clientDirectoryPath}/src/api-model`)
 
   await fs.writeFile(
     `${clientDirectoryPath}/package.json`,
@@ -189,7 +190,9 @@ async function generateClientVersion(modelFilePath: string) {
 
             accumulator.push(value)
           } else {
-            logger.warn(`Warning: no rate limiting found for ${packageName}`, {packageName})
+            logger.warn(`Warning: no rate limiting found for ${packageName}`, {
+              packageName,
+            })
           }
         }
       }
@@ -256,7 +259,9 @@ async function generateClientVersion(modelFilePath: string) {
   await Promise.all(
     generatedFiles.map(async (file) => {
       if (!filesToKeep.has(file)) {
-        await fs.rm(`${clientDirectoryPath}/src/api-model/${file}`, {recursive: true})
+        await fs.rm(`${clientDirectoryPath}/src/api-model/${file}`, {
+          recursive: true,
+        })
       }
     }),
   )

@@ -7,24 +7,9 @@
     "./config": "./src/jest.config.ts"
   },
   "scripts": {
-    "xo": "xo"
+    "xo": "xo --cwd=../.. internal/jest"
   },
   "dependencies": {
     "@jest/types": "^30.2.0"
-  },
-  "xo": {
-    "extends": [
-      "xo-bizon"
-    ],
-    "settings": {
-      "import/internal-regex": "^@sp-api-sdk/"
-    },
-    "semicolon": false,
-    "space": 2,
-    "prettier": true
-  },
-  "prettier": {
-    "printWidth": 100,
-    "jsxSingleQuote": true
   }
 }

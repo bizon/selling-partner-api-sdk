@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.23](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@2.1.22...@sp-api-sdk/common@2.1.23) (2026-01-08)
+
+### Bug Fixes
+
+* upgrade eslint and xo to use flat config ([f307c0c](https://github.com/bizon/selling-partner-api-sdk/commit/f307c0c2e572352df654f2a1910b34f88b68c0f8))
+
 ## [2.1.22](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/common@2.1.21...@sp-api-sdk/common@2.1.22) (2026-01-05)
 
 **Note:** Version bump only for package @sp-api-sdk/common

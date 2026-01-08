@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.3.4](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/orders-api-v0@5.3.3...@sp-api-sdk/orders-api-v0@5.3.4) (2026-01-08)
+
+### Bug Fixes
+
+* upgrade eslint and xo to use flat config ([f307c0c](https://github.com/bizon/selling-partner-api-sdk/commit/f307c0c2e572352df654f2a1910b34f88b68c0f8))
+
 ## [5.3.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/orders-api-v0@5.3.2...@sp-api-sdk/orders-api-v0@5.3.3) (2026-01-05)
 
 **Note:** Version bump only for package @sp-api-sdk/orders-api-v0

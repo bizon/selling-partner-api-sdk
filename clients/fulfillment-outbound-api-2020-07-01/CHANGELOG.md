@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.5.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/fulfillment-outbound-api-2020-07-01@4.5.0...@sp-api-sdk/fulfillment-outbound-api-2020-07-01@4.5.1) (2026-01-08)
+
+### Bug Fixes
+
+* upgrade eslint and xo to use flat config ([f307c0c](https://github.com/bizon/selling-partner-api-sdk/commit/f307c0c2e572352df654f2a1910b34f88b68c0f8))
+
 # [4.5.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/fulfillment-outbound-api-2020-07-01@4.4.0...@sp-api-sdk/fulfillment-outbound-api-2020-07-01@4.5.0) (2026-01-05)
 
 ### Features

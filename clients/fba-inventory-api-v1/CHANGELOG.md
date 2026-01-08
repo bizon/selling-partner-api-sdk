@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.14](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/fba-inventory-api-v1@3.0.13...@sp-api-sdk/fba-inventory-api-v1@3.0.14) (2026-01-08)
+
+### Bug Fixes
+
+* upgrade eslint and xo to use flat config ([f307c0c](https://github.com/bizon/selling-partner-api-sdk/commit/f307c0c2e572352df654f2a1910b34f88b68c0f8))
+
 ## [3.0.13](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/fba-inventory-api-v1@3.0.12...@sp-api-sdk/fba-inventory-api-v1@3.0.13) (2026-01-05)
 
 **Note:** Version bump only for package @sp-api-sdk/fba-inventory-api-v1

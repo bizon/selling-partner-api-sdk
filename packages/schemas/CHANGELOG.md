@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/schemas@1.9.0...@sp-api-sdk/schemas@1.9.1) (2026-01-08)
+
+### Bug Fixes
+
+* upgrade eslint and xo to use flat config ([f307c0c](https://github.com/bizon/selling-partner-api-sdk/commit/f307c0c2e572352df654f2a1910b34f88b68c0f8))
+
 # [1.9.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/schemas@1.8.0...@sp-api-sdk/schemas@1.9.0) (2025-12-05)
 
 ### Features

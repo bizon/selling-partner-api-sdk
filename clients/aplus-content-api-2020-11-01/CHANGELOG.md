@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.12](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/aplus-content-api-2020-11-01@3.1.11...@sp-api-sdk/aplus-content-api-2020-11-01@3.1.12) (2026-01-08)
+
+### Bug Fixes
+
+* upgrade eslint and xo to use flat config ([f307c0c](https://github.com/bizon/selling-partner-api-sdk/commit/f307c0c2e572352df654f2a1910b34f88b68c0f8))
+
 ## [3.1.11](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/aplus-content-api-2020-11-01@3.1.10...@sp-api-sdk/aplus-content-api-2020-11-01@3.1.11) (2026-01-05)
 
 **Note:** Version bump only for package @sp-api-sdk/aplus-content-api-2020-11-01

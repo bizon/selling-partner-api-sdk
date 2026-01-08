@@ -3,15 +3,15 @@ interface BaseAccessTokenQuery {
   client_secret: string
 }
 
-interface RefreshTokenAccessTokenQuery extends BaseAccessTokenQuery {
+type RefreshTokenAccessTokenQuery = {
   grant_type: 'refresh_token'
   refresh_token: string
-}
+} & BaseAccessTokenQuery
 
-interface ClientCredentialsAccessTokenQuery extends BaseAccessTokenQuery {
+type ClientCredentialsAccessTokenQuery = {
   grant_type: 'client_credentials'
   scope: string
-}
+} & BaseAccessTokenQuery
 
 export type AccessTokenQuery = RefreshTokenAccessTokenQuery | ClientCredentialsAccessTokenQuery
 

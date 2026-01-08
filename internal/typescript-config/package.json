@@ -2,25 +2,7 @@
   "name": "@sp-api-sdk/typescript-config",
   "version": "1.0.3",
   "private": true,
-  "scripts": {
-    "xo": "xo"
-  },
   "dependencies": {
     "@tsconfig/node24": "^24.0.3"
-  },
-  "xo": {
-    "extends": [
-      "xo-bizon"
-    ],
-    "settings": {
-      "import/internal-regex": "^@sp-api-sdk/"
-    },
-    "semicolon": false,
-    "space": 2,
-    "prettier": true
-  },
-  "prettier": {
-    "printWidth": 100,
-    "jsxSingleQuote": true
   }
 }

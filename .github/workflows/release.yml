@@ -3,8 +3,8 @@ name: Release
 on:
   workflow_dispatch:
     inputs:
-      from-package:
-        description: "From package deployment"
+      force-patch-release:
+        description: "Force patch release for all packages"
         required: false
         type: boolean
         default: false
@@ -45,18 +45,14 @@ jobs:
           git config --global user.name  "${{ secrets.BOT_NAME }}"
 
       - name: Publish packages
-        if: ${{ github.event.inputs.from-package != true }}
         env:
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
         run: |
-          pnpm lerna publish --skip-bump-only-releases --yes
-
-      - name: Publish packages from package
-        if: ${{ github.event.inputs.from-package == true }}
-        env:
-          GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
-        run: |
-          pnpm lerna publish from-package --skip-bump-only-releases --yes
+          if [ "${{ github.event.inputs.force-patch-release }}" = "true" ]; then
+            pnpm lerna publish --force-publish --bump patch --skip-bump-only-releases --yes;
+          else
+            pnpm lerna publish --skip-bump-only-releases --yes;
+          fi
 
   docs:
     name: Update and publish documentation

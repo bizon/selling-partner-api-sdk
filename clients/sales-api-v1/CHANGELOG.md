@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.9](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/sales-api-v1@3.1.8...@sp-api-sdk/sales-api-v1@3.1.9) (2026-01-09)
+
+**Note:** Version bump only for package @sp-api-sdk/sales-api-v1
+
 ## [3.1.8](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/sales-api-v1@3.1.7...@sp-api-sdk/sales-api-v1@3.1.8) (2026-01-08)
 
 ### Bug Fixes

@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/seller-wallet-api-2024-03-01",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/fba-inbound-eligibility-api-v1",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "With the FBA Inbound Eligibility API, you can build applications that let sellers get eligibility previews for items before shipping them to Amazon's fulfillment centers. With this API you can find out if an item is eligible for inbound shipment to Amazon's fulfillment centers in a specific marketplace. You can also find out if an item is eligible for using the manufacturer barcode for FBA inventory tracking. Sellers can use this information to inform their decisions about which items to ship Amazon's fulfillment centers.",
-  "version": "4.1.3",
+  "version": "4.1.4",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

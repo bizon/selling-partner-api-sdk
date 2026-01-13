@@ -33,8 +33,8 @@ importers:
         specifier: ^9.1.0
         version: 9.1.0
       eslint-config-xo-bizon:
-        specifier: ^4.1.2
-        version: 4.1.2
+        specifier: ^4.2.0
+        version: 4.2.0
       jest:
         specifier: ^30.2.0
         version: 30.2.0(@types/node@24.10.7)(ts-node@10.9.2(@swc/core@1.15.8)(@types/node@24.10.7)(typescript@5.9.3))
@@ -3192,8 +3192,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-config-xo-bizon@4.1.2:
-    resolution: {integrity: sha512-jJW5d6woyUIwn1iYQKBEbpTp28fyCL9Wv+8cvNpaTwpasEvqQBL+xCcoYXvpxkufOspGz5D1aO1MY6asZtRquQ==}
+  eslint-config-xo-bizon@4.2.0:
+    resolution: {integrity: sha512-TjwAkQGw1/yWDWiYkxjDzcW1AGy+V8xAni3hhAcBP131g+Oa9KDFVPos+PB9BflHUIQB8EW3mrhc7id4HMf9BA==}
     engines: {node: '>=24'}
 
   eslint-config-xo-react@0.28.0:
@@ -8544,7 +8544,7 @@ snapshots:
     dependencies:
       eslint: 9.39.2
 
-  eslint-config-xo-bizon@4.1.2: {}
+  eslint-config-xo-bizon@4.2.0: {}
 
   eslint-config-xo-react@0.28.0(eslint@9.39.2):
     dependencies:

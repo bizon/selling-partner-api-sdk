@@ -37,8 +37,6 @@ export * from './shipment-information';
 export * from './shipment-measurements';
 export * from './shipment-status-details';
 export * from './stop';
-export * from './submit-shipment-confirmation-request';
-export * from './submit-shipment-confirmation-response';
 export * from './submit-shipment-confirmations-request';
 export * from './submit-shipment-confirmations-response';
 export * from './submit-shipments';

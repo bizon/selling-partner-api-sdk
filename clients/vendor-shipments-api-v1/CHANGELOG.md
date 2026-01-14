@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-shipments-api-v1@5.2.1...@sp-api-sdk/vendor-shipments-api-v1@5.3.0) (2026-01-14)
+
+### Features
+
+* **clients:** update models as of 2026-01-14 ([#1671](https://github.com/bizon/selling-partner-api-sdk/issues/1671)) ([babd84e](https://github.com/bizon/selling-partner-api-sdk/commit/babd84edd47ca53412ff03ab7b9da7f95a849b1e))
+
 ## [5.2.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-shipments-api-v1@5.2.0...@sp-api-sdk/vendor-shipments-api-v1@5.2.1) (2026-01-09)
 
 **Note:** Version bump only for package @sp-api-sdk/vendor-shipments-api-v1

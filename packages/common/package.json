@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/common",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "Selling Parner API common library",
-  "version": "2.1.24",
+  "version": "2.1.25",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

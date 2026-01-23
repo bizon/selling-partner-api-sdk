@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.3.5](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/fulfillment-inbound-api-2024-03-20@3.3.4...@sp-api-sdk/fulfillment-inbound-api-2024-03-20@3.3.5) (2026-01-23)
+
+**Note:** Version bump only for package @sp-api-sdk/fulfillment-inbound-api-2024-03-20
+
 ## [3.3.4](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/fulfillment-inbound-api-2024-03-20@3.3.3...@sp-api-sdk/fulfillment-inbound-api-2024-03-20@3.3.4) (2026-01-14)
 
 **Note:** Version bump only for package @sp-api-sdk/fulfillment-inbound-api-2024-03-20

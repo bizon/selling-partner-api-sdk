@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/schemas",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "Selling Parner API additional schema types",
-  "version": "1.9.2",
+  "version": "1.10.0",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

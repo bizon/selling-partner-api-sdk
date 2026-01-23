@@ -22,10 +22,6 @@ import type { BuyerTaxInfo } from './buyer-tax-info';
  */
 export interface BuyerInfo {
     /**
-     * The anonymized email address of the buyer.
-     */
-    'BuyerEmail'?: string;
-    /**
      * The buyer name or the recipient name.
      */
     'BuyerName'?: string;

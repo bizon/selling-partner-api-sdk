@@ -26,10 +26,6 @@ export interface OrderBuyerInfo {
      */
     'AmazonOrderId': string;
     /**
-     * The anonymized email address of the buyer.
-     */
-    'BuyerEmail'?: string;
-    /**
      * The buyer name or the recipient name.
      */
     'BuyerName'?: string;

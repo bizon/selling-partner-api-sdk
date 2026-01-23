@@ -71,7 +71,7 @@ export const listingsFeedSchemaV2 = {
       title: 'Feed Messages',
       description: 'Messages containing listings data submissions for the Selling Partner.',
       minItems: 1,
-      maxItems: 10_000,
+      maxItems: 25_000,
       items: {
         title: 'Feed Message',
         description: 'Message containing an individual listings data submission.',

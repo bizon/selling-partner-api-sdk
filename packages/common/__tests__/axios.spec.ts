@@ -1,7 +1,8 @@
-import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 import {AxiosError} from 'axios'
 import nock from 'nock'
 import stripAnsi from 'strip-ansi'
+
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 
 import {createAxiosInstance} from '../src/axios'
 import {SellingPartnerApiError} from '../src/errors'

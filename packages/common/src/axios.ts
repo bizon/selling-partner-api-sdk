@@ -1,7 +1,8 @@
-import {type SellingPartnerApiAuth, SellingPartnerApiAuthError} from '@sp-api-sdk/auth'
 import axios, {type AxiosError, isAxiosError, type Method} from 'axios'
 import {errorLogger, requestLogger, responseLogger} from 'axios-logger'
 import axiosRetry from 'axios-retry'
+
+import {type SellingPartnerApiAuth, SellingPartnerApiAuthError} from '@sp-api-sdk/auth'
 
 import {SellingPartnerApiError} from './errors'
 import {type SellingPartnerRegion, sellingPartnerRegions} from './regions'

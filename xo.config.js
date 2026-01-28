@@ -8,7 +8,7 @@ export default [
   },
   {
     settings: {
-      'import/internal-regex': '^@sp-api-sdk/',
+      'import-x/internal-regex': '^@sp-api-sdk/',
     },
   },
   {

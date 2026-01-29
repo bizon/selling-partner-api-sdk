@@ -8,7 +8,7 @@ export const anyOfferChangedNotification = {
   default: {},
   examples: [
     {
-      NotificatonTionVersion: '1.0',
+      NotificationVersion: '1.0',
       NotificationType: 'ANY_OFFER_CHANGED',
       PayloadVersion: '1.0',
       EventTime: '2020-07-13T19:42:04.284Z',
@@ -26,7 +26,7 @@ export const anyOfferChangedNotification = {
             ASIN: '123',
             ItemCondition: 'New',
             TimeOfOfferChange: '2020-07-13T19:42:04.284Z',
-            OfferChangeType: 'New',
+            OfferChangeType: 'Internal',
           },
           Summary: {
             NumberOfOffers: [
@@ -36,7 +36,7 @@ export const anyOfferChangedNotification = {
                 OfferCount: 10,
               },
               {
-                Condition: 'old',
+                Condition: 'used',
                 FulfillmentChannel: 'Amazon',
                 OfferCount: 21,
               },
@@ -59,7 +59,7 @@ export const anyOfferChangedNotification = {
                 },
               },
               {
-                Condition: 'old',
+                Condition: 'used',
                 FulfillmentChannel: 'Amazon',
                 LandedPrice: {
                   Amount: 11,
@@ -95,7 +95,7 @@ export const anyOfferChangedNotification = {
                 },
               },
               {
-                Condition: 'old',
+                Condition: 'used',
                 LandedPrice: {
                   Amount: 11,
                   CurrencyCode: 'USD',
@@ -143,7 +143,7 @@ export const anyOfferChangedNotification = {
                 OfferCount: 23,
               },
               {
-                Condition: 'old',
+                Condition: 'used',
                 FulfillmentChannel: 'Amazon',
                 OfferCount: 54,
               },
@@ -198,7 +198,7 @@ export const anyOfferChangedNotification = {
     },
   ],
   required: [
-    'NotificatonTionVersion',
+    'NotificationVersion',
     'NotificationType',
     'PayloadVersion',
     'EventTime',
@@ -207,10 +207,10 @@ export const anyOfferChangedNotification = {
   ],
   additionalProperties: true,
   properties: {
-    NotificatonTionVersion: {
-      $id: '#/properties/NotificatonTionVersion',
+    NotificationVersion: {
+      $id: '#/properties/NotificationVersion',
       type: 'string',
-      title: 'The NotificatonTionVersion schema',
+      title: 'The NotificationVersion schema',
       description: 'An explanation about the purpose of this instance.',
       default: '',
       examples: ['1.0'],
@@ -305,7 +305,7 @@ export const anyOfferChangedNotification = {
               ASIN: '123',
               ItemCondition: 'New',
               TimeOfOfferChange: '2020-07-13T19:42:04.284Z',
-              OfferChangeType: 'New',
+              OfferChangeType: 'Internal',
             },
             Summary: {
               NumberOfOffers: [
@@ -315,7 +315,7 @@ export const anyOfferChangedNotification = {
                   OfferCount: 10,
                 },
                 {
-                  Condition: 'old',
+                  Condition: 'used',
                   FulfillmentChannel: 'Amazon',
                   OfferCount: 21,
                 },
@@ -338,7 +338,7 @@ export const anyOfferChangedNotification = {
                   },
                 },
                 {
-                  Condition: 'old',
+                  Condition: 'used',
                   FulfillmentChannel: 'Amazon',
                   LandedPrice: {
                     Amount: 11,
@@ -374,7 +374,7 @@ export const anyOfferChangedNotification = {
                   },
                 },
                 {
-                  Condition: 'old',
+                  Condition: 'used',
                   LandedPrice: {
                     Amount: 11,
                     CurrencyCode: 'USD',
@@ -422,7 +422,7 @@ export const anyOfferChangedNotification = {
                   OfferCount: 23,
                 },
                 {
-                  Condition: 'old',
+                  Condition: 'used',
                   FulfillmentChannel: 'Amazon',
                   OfferCount: 54,
                 },
@@ -492,7 +492,7 @@ export const anyOfferChangedNotification = {
                 ASIN: '123',
                 ItemCondition: 'New',
                 TimeOfOfferChange: '2020-07-13T19:42:04.284Z',
-                OfferChangeType: 'New',
+                OfferChangeType: 'Internal',
               },
               Summary: {
                 NumberOfOffers: [
@@ -502,7 +502,7 @@ export const anyOfferChangedNotification = {
                     OfferCount: 10,
                   },
                   {
-                    Condition: 'old',
+                    Condition: 'used',
                     FulfillmentChannel: 'Amazon',
                     OfferCount: 21,
                   },
@@ -525,7 +525,7 @@ export const anyOfferChangedNotification = {
                     },
                   },
                   {
-                    Condition: 'old',
+                    Condition: 'used',
                     FulfillmentChannel: 'Amazon',
                     LandedPrice: {
                       Amount: 11,
@@ -561,7 +561,7 @@ export const anyOfferChangedNotification = {
                     },
                   },
                   {
-                    Condition: 'old',
+                    Condition: 'used',
                     LandedPrice: {
                       Amount: 11,
                       CurrencyCode: 'USD',
@@ -609,7 +609,7 @@ export const anyOfferChangedNotification = {
                     OfferCount: 23,
                   },
                   {
-                    Condition: 'old',
+                    Condition: 'used',
                     FulfillmentChannel: 'Amazon',
                     OfferCount: 54,
                   },
@@ -684,7 +684,7 @@ export const anyOfferChangedNotification = {
                   ASIN: '123',
                   ItemCondition: 'New',
                   TimeOfOfferChange: '2020-07-13T19:42:04.284Z',
-                  OfferChangeType: 'New',
+                  OfferChangeType: 'Internal',
                 },
               ],
               required: [
@@ -734,7 +734,7 @@ export const anyOfferChangedNotification = {
                   title: 'The OfferChangeType schema',
                   description: 'An explanation about the purpose of this instance.',
                   default: '',
-                  examples: ['New'],
+                  examples: ['Internal', 'External', 'FeaturedOffer'],
                 },
               },
             },
@@ -753,7 +753,7 @@ export const anyOfferChangedNotification = {
                       OfferCount: 10,
                     },
                     {
-                      Condition: 'old',
+                      Condition: 'used',
                       FulfillmentChannel: 'Amazon',
                       OfferCount: 21,
                     },
@@ -776,7 +776,7 @@ export const anyOfferChangedNotification = {
                       },
                     },
                     {
-                      Condition: 'old',
+                      Condition: 'used',
                       FulfillmentChannel: 'Amazon',
                       LandedPrice: {
                         Amount: 11,
@@ -812,7 +812,7 @@ export const anyOfferChangedNotification = {
                       },
                     },
                     {
-                      Condition: 'old',
+                      Condition: 'used',
                       LandedPrice: {
                         Amount: 11,
                         CurrencyCode: 'USD',
@@ -860,7 +860,7 @@ export const anyOfferChangedNotification = {
                       OfferCount: 23,
                     },
                     {
-                      Condition: 'old',
+                      Condition: 'used',
                       FulfillmentChannel: 'Amazon',
                       OfferCount: 54,
                     },
@@ -899,7 +899,7 @@ export const anyOfferChangedNotification = {
                         OfferCount: 10,
                       },
                       {
-                        Condition: 'old',
+                        Condition: 'used',
                         FulfillmentChannel: 'Amazon',
                         OfferCount: 21,
                       },
@@ -979,7 +979,7 @@ export const anyOfferChangedNotification = {
                         },
                       },
                       {
-                        Condition: 'old',
+                        Condition: 'used',
                         FulfillmentChannel: 'Amazon',
                         LandedPrice: {
                           Amount: 11,
@@ -1160,7 +1160,7 @@ export const anyOfferChangedNotification = {
                         default: {},
                         examples: [
                           {
-                            Condition: 'old',
+                            Condition: 'used',
                             FulfillmentChannel: 'Amazon',
                             LandedPrice: {
                               Amount: 11,
@@ -1195,7 +1195,7 @@ export const anyOfferChangedNotification = {
                             title: 'The Condition schema',
                             description: 'An explanation about the purpose of this instance.',
                             default: '',
-                            examples: ['old'],
+                            examples: ['new', 'used'],
                           },
                           FulfillmentChannel: {
                             $id: '#/properties/Payload/properties/AnyOfferChangedNotification/properties/Summary/properties/LowestPrices/items/anyOf/1/properties/FulfillmentChannel',
@@ -1358,7 +1358,7 @@ export const anyOfferChangedNotification = {
                         },
                       },
                       {
-                        Condition: 'old',
+                        Condition: 'used',
                         LandedPrice: {
                           Amount: 11,
                           CurrencyCode: 'USD',
@@ -1523,7 +1523,7 @@ export const anyOfferChangedNotification = {
                         default: {},
                         examples: [
                           {
-                            Condition: 'old',
+                            Condition: 'used',
                             LandedPrice: {
                               Amount: 11,
                               CurrencyCode: 'USD',
@@ -1556,7 +1556,7 @@ export const anyOfferChangedNotification = {
                             title: 'The Condition schema',
                             description: 'An explanation about the purpose of this instance.',
                             default: '',
-                            examples: ['old'],
+                            examples: ['new', 'used'],
                           },
                           LandedPrice: {
                             $id: '#/properties/Payload/properties/AnyOfferChangedNotification/properties/Summary/properties/BuyBoxPrices/items/anyOf/1/properties/LandedPrice',
@@ -1866,7 +1866,7 @@ export const anyOfferChangedNotification = {
                         OfferCount: 23,
                       },
                       {
-                        Condition: 'old',
+                        Condition: 'used',
                         FulfillmentChannel: 'Amazon',
                         OfferCount: 54,
                       },

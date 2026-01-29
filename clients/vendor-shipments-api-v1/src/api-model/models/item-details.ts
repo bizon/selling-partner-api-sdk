@@ -19,6 +19,9 @@ import type { Expiry } from './expiry';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { Money } from './money';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { RegulationReferences } from './regulation-references';
 
 /**
  * Item details for be provided for every item in shipment at either the item or carton or pallet level, whichever is appropriate.
@@ -32,6 +35,19 @@ export interface ItemDetails {
      * The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items.
      */
     'lotNumber'?: string;
+    /**
+     * The location identifier where the product receives a traceability lot number. Provide this field for products subject to the FDA Food Safety Modernization Act (FSMA) Section 204. When you provide `lotNumberSourceReference`, you must also specify the corresponding `lotNumberSourceType` field.
+     */
+    'lotNumberSourceReference'?: string;
+    /**
+     * The identifier type used for the lot number source. Provide this field when you specify `lotNumberSourceReference`.
+     */
+    'lotNumberSourceType'?: ItemDetailsLotNumberSourceTypeEnum;
+    /**
+     * The two-character country code for the country where the product was manufactured or originates. Use ISO 3166-1 alpha-2 format.
+     */
+    'countryOfOrigin'?: string;
+    'regulationReferences'?: RegulationReferences;
     'expiry'?: Expiry;
     'maximumRetailPrice'?: Money;
     /**
@@ -40,6 +56,14 @@ export interface ItemDetails {
     'handlingCode'?: ItemDetailsHandlingCodeEnum;
 }
 
+export const ItemDetailsLotNumberSourceTypeEnum = {
+    Gln: 'GLN',
+    Ffrn: 'FFRN',
+    UsdaE: 'USDA_E',
+    Url: 'URL'
+} as const;
+
+export type ItemDetailsLotNumberSourceTypeEnum = typeof ItemDetailsLotNumberSourceTypeEnum[keyof typeof ItemDetailsLotNumberSourceTypeEnum];
 export const ItemDetailsHandlingCodeEnum = {
     Oversized: 'Oversized',
     Fragile: 'Fragile',

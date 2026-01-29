@@ -39,11 +39,51 @@ import type { GetInvoicesExportResponse } from '../models';
 import type { GetInvoicesExportsResponse } from '../models';
 // @ts-ignore
 import type { GetInvoicesResponse } from '../models';
+// @ts-ignore
+import type { GovernmentInvoiceRequest } from '../models';
+// @ts-ignore
+import type { GovernmentInvoiceStatusResponse } from '../models';
+// @ts-ignore
+import type { GovtInvoiceDocumentResponse } from '../models';
 /**
  * InvoicesApi - axios parameter creator
  */
 export const InvoicesApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * Submits an asynchronous government invoice creation request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * @param {GovernmentInvoiceRequest} body Information required to create the government invoice.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createGovernmentInvoice: async (body: GovernmentInvoiceRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('createGovernmentInvoice', 'body', body)
+            const localVarPath = `/tax/invoices/2024-06-19/governmentInvoiceRequests`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * Creates an invoice export request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.167 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {ExportInvoicesRequest} body Information required to create the export request.
@@ -72,6 +112,132 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Returns an invoiceDocument object containing an invoiceDocumentUrl .  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * @param {string} marketplaceId The invoices returned will match the marketplace that you specify.
+         * @param {string} transactionType Marketplace specific classification of the transaction type that originated the invoice. Check \&#39;transactionType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
+         * @param {string} shipmentId The unique shipment identifier to get an invoice for.
+         * @param {string} invoiceType Marketplace specific classification of the invoice type. Check \&#39;invoiceType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
+         * @param {string} [inboundPlanId] The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
+         * @param {string} [fileFormat] Requested file format. Default is XML
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGovernmentInvoiceDocument: async (marketplaceId: string, transactionType: string, shipmentId: string, invoiceType: string, inboundPlanId?: string, fileFormat?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'marketplaceId' is not null or undefined
+            assertParamExists('getGovernmentInvoiceDocument', 'marketplaceId', marketplaceId)
+            // verify required parameter 'transactionType' is not null or undefined
+            assertParamExists('getGovernmentInvoiceDocument', 'transactionType', transactionType)
+            // verify required parameter 'shipmentId' is not null or undefined
+            assertParamExists('getGovernmentInvoiceDocument', 'shipmentId', shipmentId)
+            // verify required parameter 'invoiceType' is not null or undefined
+            assertParamExists('getGovernmentInvoiceDocument', 'invoiceType', invoiceType)
+            const localVarPath = `/tax/invoices/2024-06-19/governmentInvoiceRequests/{shipmentId}`
+                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (marketplaceId !== undefined) {
+                localVarQueryParameter['marketplaceId'] = marketplaceId;
+            }
+
+            if (transactionType !== undefined) {
+                localVarQueryParameter['transactionType'] = transactionType;
+            }
+
+            if (invoiceType !== undefined) {
+                localVarQueryParameter['invoiceType'] = invoiceType;
+            }
+
+            if (inboundPlanId !== undefined) {
+                localVarQueryParameter['inboundPlanId'] = inboundPlanId;
+            }
+
+            if (fileFormat !== undefined) {
+                localVarQueryParameter['fileFormat'] = fileFormat;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Returns the status of an invoice generation request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * @param {string} marketplaceId The invoices status will match the marketplace that you specify.
+         * @param {string} transactionType Marketplace specific classification of the transaction type that originated the invoice. Check \&#39;transactionType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
+         * @param {string} shipmentId The unique shipment identifier to get an invoice for.
+         * @param {string} invoiceType Marketplace specific classification of the invoice type. Check \&#39;invoiceType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
+         * @param {string} [inboundPlanId] The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGovernmentInvoiceStatus: async (marketplaceId: string, transactionType: string, shipmentId: string, invoiceType: string, inboundPlanId?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'marketplaceId' is not null or undefined
+            assertParamExists('getGovernmentInvoiceStatus', 'marketplaceId', marketplaceId)
+            // verify required parameter 'transactionType' is not null or undefined
+            assertParamExists('getGovernmentInvoiceStatus', 'transactionType', transactionType)
+            // verify required parameter 'shipmentId' is not null or undefined
+            assertParamExists('getGovernmentInvoiceStatus', 'shipmentId', shipmentId)
+            // verify required parameter 'invoiceType' is not null or undefined
+            assertParamExists('getGovernmentInvoiceStatus', 'invoiceType', invoiceType)
+            const localVarPath = `/tax/invoices/2024-06-19/governmentInvoiceRequests`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (marketplaceId !== undefined) {
+                localVarQueryParameter['marketplaceId'] = marketplaceId;
+            }
+
+            if (transactionType !== undefined) {
+                localVarQueryParameter['transactionType'] = transactionType;
+            }
+
+            if (shipmentId !== undefined) {
+                localVarQueryParameter['shipmentId'] = shipmentId;
+            }
+
+            if (invoiceType !== undefined) {
+                localVarQueryParameter['invoiceType'] = invoiceType;
+            }
+
+            if (inboundPlanId !== undefined) {
+                localVarQueryParameter['inboundPlanId'] = inboundPlanId;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -400,6 +566,18 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = InvoicesApiAxiosParamCreator(configuration)
     return {
         /**
+         * Submits an asynchronous government invoice creation request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * @param {GovernmentInvoiceRequest} body Information required to create the government invoice.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createGovernmentInvoice(body: GovernmentInvoiceRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createGovernmentInvoice(body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['InvoicesApi.createGovernmentInvoice']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Creates an invoice export request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.167 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {ExportInvoicesRequest} body Information required to create the export request.
          * @param {*} [options] Override http request option.
@@ -409,6 +587,39 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createInvoicesExport(body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['InvoicesApi.createInvoicesExport']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Returns an invoiceDocument object containing an invoiceDocumentUrl .  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * @param {string} marketplaceId The invoices returned will match the marketplace that you specify.
+         * @param {string} transactionType Marketplace specific classification of the transaction type that originated the invoice. Check \&#39;transactionType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
+         * @param {string} shipmentId The unique shipment identifier to get an invoice for.
+         * @param {string} invoiceType Marketplace specific classification of the invoice type. Check \&#39;invoiceType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
+         * @param {string} [inboundPlanId] The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
+         * @param {string} [fileFormat] Requested file format. Default is XML
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getGovernmentInvoiceDocument(marketplaceId: string, transactionType: string, shipmentId: string, invoiceType: string, inboundPlanId?: string, fileFormat?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GovtInvoiceDocumentResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getGovernmentInvoiceDocument(marketplaceId, transactionType, shipmentId, invoiceType, inboundPlanId, fileFormat, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['InvoicesApi.getGovernmentInvoiceDocument']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Returns the status of an invoice generation request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * @param {string} marketplaceId The invoices status will match the marketplace that you specify.
+         * @param {string} transactionType Marketplace specific classification of the transaction type that originated the invoice. Check \&#39;transactionType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
+         * @param {string} shipmentId The unique shipment identifier to get an invoice for.
+         * @param {string} invoiceType Marketplace specific classification of the invoice type. Check \&#39;invoiceType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
+         * @param {string} [inboundPlanId] The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getGovernmentInvoiceStatus(marketplaceId: string, transactionType: string, shipmentId: string, invoiceType: string, inboundPlanId?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GovernmentInvoiceStatusResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getGovernmentInvoiceStatus(marketplaceId, transactionType, shipmentId, invoiceType, inboundPlanId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['InvoicesApi.getGovernmentInvoiceStatus']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -512,6 +723,15 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
     const localVarFp = InvoicesApiFp(configuration)
     return {
         /**
+         * Submits an asynchronous government invoice creation request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * @param {InvoicesApiCreateGovernmentInvoiceRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createGovernmentInvoice(requestParameters: InvoicesApiCreateGovernmentInvoiceRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+            return localVarFp.createGovernmentInvoice(requestParameters.body, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Creates an invoice export request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.167 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {InvoicesApiCreateInvoicesExportRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
@@ -519,6 +739,24 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
          */
         createInvoicesExport(requestParameters: InvoicesApiCreateInvoicesExportRequest, options?: RawAxiosRequestConfig): AxiosPromise<ExportInvoicesResponse> {
             return localVarFp.createInvoicesExport(requestParameters.body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Returns an invoiceDocument object containing an invoiceDocumentUrl .  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * @param {InvoicesApiGetGovernmentInvoiceDocumentRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGovernmentInvoiceDocument(requestParameters: InvoicesApiGetGovernmentInvoiceDocumentRequest, options?: RawAxiosRequestConfig): AxiosPromise<GovtInvoiceDocumentResponse> {
+            return localVarFp.getGovernmentInvoiceDocument(requestParameters.marketplaceId, requestParameters.transactionType, requestParameters.shipmentId, requestParameters.invoiceType, requestParameters.inboundPlanId, requestParameters.fileFormat, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Returns the status of an invoice generation request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * @param {InvoicesApiGetGovernmentInvoiceStatusRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGovernmentInvoiceStatus(requestParameters: InvoicesApiGetGovernmentInvoiceStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<GovernmentInvoiceStatusResponse> {
+            return localVarFp.getGovernmentInvoiceStatus(requestParameters.marketplaceId, requestParameters.transactionType, requestParameters.shipmentId, requestParameters.invoiceType, requestParameters.inboundPlanId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns invoice data for the specified invoice. This operation returns only a subset of the invoices data; refer to the response definition to get all the possible attributes. To get the full invoice, use the `createInvoicesExport` operation to start an export request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -578,6 +816,16 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
 };
 
 /**
+ * Request parameters for createGovernmentInvoice operation in InvoicesApi.
+ */
+export interface InvoicesApiCreateGovernmentInvoiceRequest {
+    /**
+     * Information required to create the government invoice.
+     */
+    readonly body: GovernmentInvoiceRequest
+}
+
+/**
  * Request parameters for createInvoicesExport operation in InvoicesApi.
  */
 export interface InvoicesApiCreateInvoicesExportRequest {
@@ -585,6 +833,71 @@ export interface InvoicesApiCreateInvoicesExportRequest {
      * Information required to create the export request.
      */
     readonly body: ExportInvoicesRequest
+}
+
+/**
+ * Request parameters for getGovernmentInvoiceDocument operation in InvoicesApi.
+ */
+export interface InvoicesApiGetGovernmentInvoiceDocumentRequest {
+    /**
+     * The invoices returned will match the marketplace that you specify.
+     */
+    readonly marketplaceId: string
+
+    /**
+     * Marketplace specific classification of the transaction type that originated the invoice. Check \&#39;transactionType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
+     */
+    readonly transactionType: string
+
+    /**
+     * The unique shipment identifier to get an invoice for.
+     */
+    readonly shipmentId: string
+
+    /**
+     * Marketplace specific classification of the invoice type. Check \&#39;invoiceType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
+     */
+    readonly invoiceType: string
+
+    /**
+     * The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
+     */
+    readonly inboundPlanId?: string
+
+    /**
+     * Requested file format. Default is XML
+     */
+    readonly fileFormat?: string
+}
+
+/**
+ * Request parameters for getGovernmentInvoiceStatus operation in InvoicesApi.
+ */
+export interface InvoicesApiGetGovernmentInvoiceStatusRequest {
+    /**
+     * The invoices status will match the marketplace that you specify.
+     */
+    readonly marketplaceId: string
+
+    /**
+     * Marketplace specific classification of the transaction type that originated the invoice. Check \&#39;transactionType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
+     */
+    readonly transactionType: string
+
+    /**
+     * The unique shipment identifier to get an invoice for.
+     */
+    readonly shipmentId: string
+
+    /**
+     * Marketplace specific classification of the invoice type. Check \&#39;invoiceType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
+     */
+    readonly invoiceType: string
+
+    /**
+     * The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
+     */
+    readonly inboundPlanId?: string
 }
 
 /**
@@ -747,6 +1060,16 @@ export interface InvoicesApiGetInvoicesExportsRequest {
  */
 export class InvoicesApi extends BaseAPI {
     /**
+     * Submits an asynchronous government invoice creation request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+     * @param {InvoicesApiCreateGovernmentInvoiceRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createGovernmentInvoice(requestParameters: InvoicesApiCreateGovernmentInvoiceRequest, options?: RawAxiosRequestConfig) {
+        return InvoicesApiFp(this.configuration).createGovernmentInvoice(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Creates an invoice export request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.167 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {InvoicesApiCreateInvoicesExportRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
@@ -754,6 +1077,26 @@ export class InvoicesApi extends BaseAPI {
      */
     public createInvoicesExport(requestParameters: InvoicesApiCreateInvoicesExportRequest, options?: RawAxiosRequestConfig) {
         return InvoicesApiFp(this.configuration).createInvoicesExport(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Returns an invoiceDocument object containing an invoiceDocumentUrl .  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+     * @param {InvoicesApiGetGovernmentInvoiceDocumentRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public getGovernmentInvoiceDocument(requestParameters: InvoicesApiGetGovernmentInvoiceDocumentRequest, options?: RawAxiosRequestConfig) {
+        return InvoicesApiFp(this.configuration).getGovernmentInvoiceDocument(requestParameters.marketplaceId, requestParameters.transactionType, requestParameters.shipmentId, requestParameters.invoiceType, requestParameters.inboundPlanId, requestParameters.fileFormat, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Returns the status of an invoice generation request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+     * @param {InvoicesApiGetGovernmentInvoiceStatusRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public getGovernmentInvoiceStatus(requestParameters: InvoicesApiGetGovernmentInvoiceStatusRequest, options?: RawAxiosRequestConfig) {
+        return InvoicesApiFp(this.configuration).getGovernmentInvoiceStatus(requestParameters.marketplaceId, requestParameters.transactionType, requestParameters.shipmentId, requestParameters.invoiceType, requestParameters.inboundPlanId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

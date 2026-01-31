@@ -1,6 +1,4 @@
 export * from './attachment';
-export * from './create-amazon-motors-request';
-export * from './create-amazon-motors-response';
 export * from './create-confirm-customization-details-request';
 export * from './create-confirm-customization-details-response';
 export * from './create-confirm-delivery-details-request';

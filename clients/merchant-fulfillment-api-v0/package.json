@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/merchant-fulfillment-api-v0",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.",
-  "version": "3.1.7",
+  "version": "3.1.8",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",

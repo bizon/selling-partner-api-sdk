@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.18](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/tokens-api-2021-03-01@3.0.17...@sp-api-sdk/tokens-api-2021-03-01@3.0.18) (2026-02-02)
+
+**Note:** Version bump only for package @sp-api-sdk/tokens-api-2021-03-01
+
 ## [3.0.17](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/tokens-api-2021-03-01@3.0.16...@sp-api-sdk/tokens-api-2021-03-01@3.0.17) (2026-01-23)
 
 **Note:** Version bump only for package @sp-api-sdk/tokens-api-2021-03-01

@@ -74,6 +74,7 @@ ls clients | sed 's$\(.*\)$- [\1](https://www.github.com/bizon/selling-partner-a
 - [merchant-fulfillment-api-v0](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/merchant-fulfillment-api-v0)
 - [messaging-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/messaging-api-v1)
 - [notifications-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/notifications-api-v1)
+- [orders-api-2026-01-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/orders-api-2026-01-01)
 - [orders-api-v0](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/orders-api-v0)
 - [product-fees-api-v0](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/product-fees-api-v0)
 - [product-pricing-api-2022-05-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/product-pricing-api-2022-05-01)
@@ -128,8 +129,7 @@ If you need the typescript type:
 ```ts
 import { Reports } from "@sp-api-sdk/schemas";
 
-const report =
-  (await getVendorInventoryReportData()) as Reports.VendorInventoryReport;
+const report = (await getVendorInventoryReportData()) as Reports.VendorInventoryReport;
 ```
 
 ## Code generation

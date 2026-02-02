@@ -22,10 +22,6 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { CreateAmazonMotorsRequest } from '../models';
-// @ts-ignore
-import type { CreateAmazonMotorsResponse } from '../models';
-// @ts-ignore
 import type { CreateConfirmCustomizationDetailsRequest } from '../models';
 // @ts-ignore
 import type { CreateConfirmCustomizationDetailsResponse } from '../models';
@@ -86,51 +82,6 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
             // verify required parameter 'body' is not null or undefined
             assertParamExists('confirmCustomizationDetails', 'body', body)
             const localVarPath = `/messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails`
-                .replace(`{${"amazonOrderId"}}`, encodeURIComponent(String(amazonOrderId)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (marketplaceIds) {
-                localVarQueryParameter['marketplaceIds'] = marketplaceIds.join(COLLECTION_FORMATS.csv);
-            }
-
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Accept'] = 'application/hal+json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Sends a message to a buyer to provide details about an Amazon Motors order. This message can only be sent by Amazon Motors sellers.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-         * @param {CreateAmazonMotorsRequest} body This contains the message body for a message.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        createAmazonMotors: async (amazonOrderId: string, marketplaceIds: Array<string>, body: CreateAmazonMotorsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'amazonOrderId' is not null or undefined
-            assertParamExists('createAmazonMotors', 'amazonOrderId', amazonOrderId)
-            // verify required parameter 'marketplaceIds' is not null or undefined
-            assertParamExists('createAmazonMotors', 'marketplaceIds', marketplaceIds)
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('createAmazonMotors', 'body', body)
-            const localVarPath = `/messaging/v1/orders/{amazonOrderId}/messages/amazonMotors`
                 .replace(`{${"amazonOrderId"}}`, encodeURIComponent(String(amazonOrderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -624,20 +575,6 @@ export const MessagingApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Sends a message to a buyer to provide details about an Amazon Motors order. This message can only be sent by Amazon Motors sellers.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent.
-         * @param {Array<string>} marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-         * @param {CreateAmazonMotorsRequest} body This contains the message body for a message.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async createAmazonMotors(amazonOrderId: string, marketplaceIds: Array<string>, body: CreateAmazonMotorsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateAmazonMotorsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.createAmazonMotors(amazonOrderId, marketplaceIds, body, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['MessagingApi.createAmazonMotors']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
          * Sends a message to a buyer to arrange a delivery or to confirm contact information for making a delivery.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent.
          * @param {Array<string>} marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
@@ -794,15 +731,6 @@ export const MessagingApiFactory = function (configuration?: Configuration, base
             return localVarFp.confirmCustomizationDetails(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
-         * Sends a message to a buyer to provide details about an Amazon Motors order. This message can only be sent by Amazon Motors sellers.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {MessagingApiCreateAmazonMotorsRequest} requestParameters Request parameters.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        createAmazonMotors(requestParameters: MessagingApiCreateAmazonMotorsRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateAmazonMotorsResponse> {
-            return localVarFp.createAmazonMotors(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(axios, basePath));
-        },
-        /**
          * Sends a message to a buyer to arrange a delivery or to confirm contact information for making a delivery.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {MessagingApiCreateConfirmDeliveryDetailsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
@@ -913,26 +841,6 @@ export interface MessagingApiConfirmCustomizationDetailsRequest {
      * This contains the message body for a message.
      */
     readonly body: CreateConfirmCustomizationDetailsRequest
-}
-
-/**
- * Request parameters for createAmazonMotors operation in MessagingApi.
- */
-export interface MessagingApiCreateAmazonMotorsRequest {
-    /**
-     * An Amazon order identifier. This identifies the order for which a message is sent.
-     */
-    readonly amazonOrderId: string
-
-    /**
-     * A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-     */
-    readonly marketplaceIds: Array<string>
-
-    /**
-     * This contains the message body for a message.
-     */
-    readonly body: CreateAmazonMotorsRequest
 }
 
 /**
@@ -1137,16 +1045,6 @@ export class MessagingApi extends BaseAPI {
      */
     public confirmCustomizationDetails(requestParameters: MessagingApiConfirmCustomizationDetailsRequest, options?: RawAxiosRequestConfig) {
         return MessagingApiFp(this.configuration).confirmCustomizationDetails(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Sends a message to a buyer to provide details about an Amazon Motors order. This message can only be sent by Amazon Motors sellers.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-     * @param {MessagingApiCreateAmazonMotorsRequest} requestParameters Request parameters.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public createAmazonMotors(requestParameters: MessagingApiCreateAmazonMotorsRequest, options?: RawAxiosRequestConfig) {
-        return MessagingApiFp(this.configuration).createAmazonMotors(requestParameters.amazonOrderId, requestParameters.marketplaceIds, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

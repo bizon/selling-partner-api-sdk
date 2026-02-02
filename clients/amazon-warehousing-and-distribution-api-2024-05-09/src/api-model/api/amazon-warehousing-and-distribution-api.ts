@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * The Selling Partner API for Amazon Warehousing and Distribution
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. 
  *
  * The version of the OpenAPI document: 2024-05-09
  * 
@@ -37,6 +37,14 @@ import type { InboundPackages } from '../models';
 import type { InboundShipment } from '../models';
 // @ts-ignore
 import type { InventoryListing } from '../models';
+// @ts-ignore
+import type { ReplenishmentOrder } from '../models';
+// @ts-ignore
+import type { ReplenishmentOrderCreationData } from '../models';
+// @ts-ignore
+import type { ReplenishmentOrderListing } from '../models';
+// @ts-ignore
+import type { ReplenishmentOrderReference } from '../models';
 // @ts-ignore
 import type { ShipmentLabels } from '../models';
 // @ts-ignore
@@ -149,6 +157,39 @@ export const AmazonWarehousingAndDistributionApiAxiosParamCreator = function (co
             };
         },
         /**
+         * Confirms an AWD replenishment order in ELIGIBLE state with a set of shipments containing items that are needed to be replenished to an FBA node. Order can only be confirmed in ELIGIBLE state.
+         * @param {string} orderId ID of the replenishment order to be confirmed.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        confirmReplenishmentOrder: async (orderId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'orderId' is not null or undefined
+            assertParamExists('confirmReplenishmentOrder', 'orderId', orderId)
+            const localVarPath = `/awd/2024-05-09/replenishmentOrders/{orderId}/confirmation`
+                .replace(`{${"orderId"}}`, encodeURIComponent(String(orderId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Creates a draft AWD inbound order with a list of packages for inbound shipment. The operation creates one shipment per order.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {InboundOrderCreationData} body Payload for creating an inbound order.
          * @param {*} [options] Override http request option.
@@ -158,6 +199,40 @@ export const AmazonWarehousingAndDistributionApiAxiosParamCreator = function (co
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createInbound', 'body', body)
             const localVarPath = `/awd/2024-05-09/inboundOrders`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Creates an AWD replenishment order with given products to replenish. The API will return the order ID of the newly created order and also start an async validation check on the products to e. The order status will transition to ELIGIBLE/INELIGIBLE status from VALIDATING post validation check
+         * @param {ReplenishmentOrderCreationData} body Payload for creating a replenishment order.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createReplenishmentOrder: async (body: ReplenishmentOrderCreationData, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('createReplenishmentOrder', 'body', body)
+            const localVarPath = `/awd/2024-05-09/replenishmentOrders`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -297,6 +372,39 @@ export const AmazonWarehousingAndDistributionApiAxiosParamCreator = function (co
             };
         },
         /**
+         * Retrieves an AWD Replenishment order with a set of shipments containing items that is/was planned to be replenished into an FBA node.
+         * @param {string} orderId ID of the replenishment order to be retrieved.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getReplenishmentOrder: async (orderId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'orderId' is not null or undefined
+            assertParamExists('getReplenishmentOrder', 'orderId', orderId)
+            const localVarPath = `/awd/2024-05-09/replenishmentOrders/{orderId}`
+                .replace(`{${"orderId"}}`, encodeURIComponent(String(orderId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Retrieves a summary of all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {ListInboundShipmentsSortByEnum} [sortBy] Field to sort results by. By default, the response will be sorted by UPDATED_AT.
          * @param {ListInboundShipmentsSortOrderEnum} [sortOrder] Sort the response in ASCENDING or DESCENDING order. By default, the response will be sorted in DESCENDING order.
@@ -405,6 +513,64 @@ export const AmazonWarehousingAndDistributionApiAxiosParamCreator = function (co
 
             if (maxResults !== undefined) {
                 localVarQueryParameter['maxResults'] = maxResults;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieves all the AWD replenishment orders pertaining to a merchant with optional filters. API by default will sort orders by updatedAt attribute in descending order.
+         * @param {string} [updatedAfter] Get the replenishment orders updated after certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339.
+         * @param {string} [updatedBefore] Get the replenishment orders updated before certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339.
+         * @param {ListReplenishmentOrdersSortOrderEnum} [sortOrder] Sort the response in ASCENDING or DESCENDING order. The default sort order is DESCENDING.
+         * @param {number} [maxResults] Maximum results to be returned in a single response.
+         * @param {string} [nextToken] A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listReplenishmentOrders: async (updatedAfter?: string, updatedBefore?: string, sortOrder?: ListReplenishmentOrdersSortOrderEnum, maxResults?: number, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/awd/2024-05-09/replenishmentOrders`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (updatedAfter !== undefined) {
+                localVarQueryParameter['updatedAfter'] = (updatedAfter as any instanceof Date) ?
+                    (updatedAfter as any).toISOString() :
+                    updatedAfter;
+            }
+
+            if (updatedBefore !== undefined) {
+                localVarQueryParameter['updatedBefore'] = (updatedBefore as any instanceof Date) ?
+                    (updatedBefore as any).toISOString() :
+                    updatedBefore;
+            }
+
+            if (sortOrder !== undefined) {
+                localVarQueryParameter['sortOrder'] = sortOrder;
+            }
+
+            if (maxResults !== undefined) {
+                localVarQueryParameter['maxResults'] = maxResults;
+            }
+
+            if (nextToken !== undefined) {
+                localVarQueryParameter['nextToken'] = nextToken;
             }
 
             localVarHeaderParameter['Accept'] = 'application/json';
@@ -540,6 +706,18 @@ export const AmazonWarehousingAndDistributionApiFp = function(configuration?: Co
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Confirms an AWD replenishment order in ELIGIBLE state with a set of shipments containing items that are needed to be replenished to an FBA node. Order can only be confirmed in ELIGIBLE state.
+         * @param {string} orderId ID of the replenishment order to be confirmed.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async confirmReplenishmentOrder(orderId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.confirmReplenishmentOrder(orderId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AmazonWarehousingAndDistributionApi.confirmReplenishmentOrder']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Creates a draft AWD inbound order with a list of packages for inbound shipment. The operation creates one shipment per order.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {InboundOrderCreationData} body Payload for creating an inbound order.
          * @param {*} [options] Override http request option.
@@ -549,6 +727,18 @@ export const AmazonWarehousingAndDistributionApiFp = function(configuration?: Co
             const localVarAxiosArgs = await localVarAxiosParamCreator.createInbound(body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AmazonWarehousingAndDistributionApi.createInbound']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Creates an AWD replenishment order with given products to replenish. The API will return the order ID of the newly created order and also start an async validation check on the products to e. The order status will transition to ELIGIBLE/INELIGIBLE status from VALIDATING post validation check
+         * @param {ReplenishmentOrderCreationData} body Payload for creating a replenishment order.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createReplenishmentOrder(body: ReplenishmentOrderCreationData, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReplenishmentOrderReference>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createReplenishmentOrder(body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AmazonWarehousingAndDistributionApi.createReplenishmentOrder']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -591,6 +781,18 @@ export const AmazonWarehousingAndDistributionApiFp = function(configuration?: Co
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Retrieves an AWD Replenishment order with a set of shipments containing items that is/was planned to be replenished into an FBA node.
+         * @param {string} orderId ID of the replenishment order to be retrieved.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getReplenishmentOrder(orderId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReplenishmentOrder>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getReplenishmentOrder(orderId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AmazonWarehousingAndDistributionApi.getReplenishmentOrder']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Retrieves a summary of all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {ListInboundShipmentsSortByEnum} [sortBy] Field to sort results by. By default, the response will be sorted by UPDATED_AT.
          * @param {ListInboundShipmentsSortOrderEnum} [sortOrder] Sort the response in ASCENDING or DESCENDING order. By default, the response will be sorted in DESCENDING order.
@@ -622,6 +824,22 @@ export const AmazonWarehousingAndDistributionApiFp = function(configuration?: Co
             const localVarAxiosArgs = await localVarAxiosParamCreator.listInventory(sku, sortOrder, details, nextToken, maxResults, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AmazonWarehousingAndDistributionApi.listInventory']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Retrieves all the AWD replenishment orders pertaining to a merchant with optional filters. API by default will sort orders by updatedAt attribute in descending order.
+         * @param {string} [updatedAfter] Get the replenishment orders updated after certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339.
+         * @param {string} [updatedBefore] Get the replenishment orders updated before certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339.
+         * @param {ListReplenishmentOrdersSortOrderEnum} [sortOrder] Sort the response in ASCENDING or DESCENDING order. The default sort order is DESCENDING.
+         * @param {number} [maxResults] Maximum results to be returned in a single response.
+         * @param {string} [nextToken] A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listReplenishmentOrders(updatedAfter?: string, updatedBefore?: string, sortOrder?: ListReplenishmentOrdersSortOrderEnum, maxResults?: number, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReplenishmentOrderListing>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listReplenishmentOrders(updatedAfter, updatedBefore, sortOrder, maxResults, nextToken, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AmazonWarehousingAndDistributionApi.listReplenishmentOrders']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -687,6 +905,15 @@ export const AmazonWarehousingAndDistributionApiFactory = function (configuratio
             return localVarFp.confirmInbound(requestParameters.orderId, options).then((request) => request(axios, basePath));
         },
         /**
+         * Confirms an AWD replenishment order in ELIGIBLE state with a set of shipments containing items that are needed to be replenished to an FBA node. Order can only be confirmed in ELIGIBLE state.
+         * @param {AmazonWarehousingAndDistributionApiConfirmReplenishmentOrderRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        confirmReplenishmentOrder(requestParameters: AmazonWarehousingAndDistributionApiConfirmReplenishmentOrderRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+            return localVarFp.confirmReplenishmentOrder(requestParameters.orderId, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Creates a draft AWD inbound order with a list of packages for inbound shipment. The operation creates one shipment per order.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {AmazonWarehousingAndDistributionApiCreateInboundRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
@@ -694,6 +921,15 @@ export const AmazonWarehousingAndDistributionApiFactory = function (configuratio
          */
         createInbound(requestParameters: AmazonWarehousingAndDistributionApiCreateInboundRequest, options?: RawAxiosRequestConfig): AxiosPromise<InboundOrderReference> {
             return localVarFp.createInbound(requestParameters.body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Creates an AWD replenishment order with given products to replenish. The API will return the order ID of the newly created order and also start an async validation check on the products to e. The order status will transition to ELIGIBLE/INELIGIBLE status from VALIDATING post validation check
+         * @param {AmazonWarehousingAndDistributionApiCreateReplenishmentOrderRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createReplenishmentOrder(requestParameters: AmazonWarehousingAndDistributionApiCreateReplenishmentOrderRequest, options?: RawAxiosRequestConfig): AxiosPromise<ReplenishmentOrderReference> {
+            return localVarFp.createReplenishmentOrder(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Retrieves an AWD inbound order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -723,6 +959,15 @@ export const AmazonWarehousingAndDistributionApiFactory = function (configuratio
             return localVarFp.getInboundShipmentLabels(requestParameters.shipmentId, requestParameters.pageType, requestParameters.formatType, options).then((request) => request(axios, basePath));
         },
         /**
+         * Retrieves an AWD Replenishment order with a set of shipments containing items that is/was planned to be replenished into an FBA node.
+         * @param {AmazonWarehousingAndDistributionApiGetReplenishmentOrderRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getReplenishmentOrder(requestParameters: AmazonWarehousingAndDistributionApiGetReplenishmentOrderRequest, options?: RawAxiosRequestConfig): AxiosPromise<ReplenishmentOrder> {
+            return localVarFp.getReplenishmentOrder(requestParameters.orderId, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Retrieves a summary of all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {AmazonWarehousingAndDistributionApiListInboundShipmentsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
@@ -739,6 +984,15 @@ export const AmazonWarehousingAndDistributionApiFactory = function (configuratio
          */
         listInventory(requestParameters: AmazonWarehousingAndDistributionApiListInventoryRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<InventoryListing> {
             return localVarFp.listInventory(requestParameters.sku, requestParameters.sortOrder, requestParameters.details, requestParameters.nextToken, requestParameters.maxResults, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieves all the AWD replenishment orders pertaining to a merchant with optional filters. API by default will sort orders by updatedAt attribute in descending order.
+         * @param {AmazonWarehousingAndDistributionApiListReplenishmentOrdersRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listReplenishmentOrders(requestParameters: AmazonWarehousingAndDistributionApiListReplenishmentOrdersRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ReplenishmentOrderListing> {
+            return localVarFp.listReplenishmentOrders(requestParameters.updatedAfter, requestParameters.updatedBefore, requestParameters.sortOrder, requestParameters.maxResults, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
          * Updates an AWD inbound order that is in `DRAFT` status and not yet confirmed. Use this operation to update the `packagesToInbound`, `originAddress` and `preferences` attributes.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -792,6 +1046,16 @@ export interface AmazonWarehousingAndDistributionApiConfirmInboundRequest {
 }
 
 /**
+ * Request parameters for confirmReplenishmentOrder operation in AmazonWarehousingAndDistributionApi.
+ */
+export interface AmazonWarehousingAndDistributionApiConfirmReplenishmentOrderRequest {
+    /**
+     * ID of the replenishment order to be confirmed.
+     */
+    readonly orderId: string
+}
+
+/**
  * Request parameters for createInbound operation in AmazonWarehousingAndDistributionApi.
  */
 export interface AmazonWarehousingAndDistributionApiCreateInboundRequest {
@@ -799,6 +1063,16 @@ export interface AmazonWarehousingAndDistributionApiCreateInboundRequest {
      * Payload for creating an inbound order.
      */
     readonly body: InboundOrderCreationData
+}
+
+/**
+ * Request parameters for createReplenishmentOrder operation in AmazonWarehousingAndDistributionApi.
+ */
+export interface AmazonWarehousingAndDistributionApiCreateReplenishmentOrderRequest {
+    /**
+     * Payload for creating a replenishment order.
+     */
+    readonly body: ReplenishmentOrderCreationData
 }
 
 /**
@@ -844,6 +1118,16 @@ export interface AmazonWarehousingAndDistributionApiGetInboundShipmentLabelsRequ
      * The format type of the output file that contains your labels. The default format type is &#x60;PDF&#x60;.
      */
     readonly formatType?: GetInboundShipmentLabelsFormatTypeEnum
+}
+
+/**
+ * Request parameters for getReplenishmentOrder operation in AmazonWarehousingAndDistributionApi.
+ */
+export interface AmazonWarehousingAndDistributionApiGetReplenishmentOrderRequest {
+    /**
+     * ID of the replenishment order to be retrieved.
+     */
+    readonly orderId: string
 }
 
 /**
@@ -917,6 +1201,36 @@ export interface AmazonWarehousingAndDistributionApiListInventoryRequest {
 }
 
 /**
+ * Request parameters for listReplenishmentOrders operation in AmazonWarehousingAndDistributionApi.
+ */
+export interface AmazonWarehousingAndDistributionApiListReplenishmentOrdersRequest {
+    /**
+     * Get the replenishment orders updated after certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339.
+     */
+    readonly updatedAfter?: string
+
+    /**
+     * Get the replenishment orders updated before certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339.
+     */
+    readonly updatedBefore?: string
+
+    /**
+     * Sort the response in ASCENDING or DESCENDING order. The default sort order is DESCENDING.
+     */
+    readonly sortOrder?: ListReplenishmentOrdersSortOrderEnum
+
+    /**
+     * Maximum results to be returned in a single response.
+     */
+    readonly maxResults?: number
+
+    /**
+     * A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
+     */
+    readonly nextToken?: string
+}
+
+/**
  * Request parameters for updateInbound operation in AmazonWarehousingAndDistributionApi.
  */
 export interface AmazonWarehousingAndDistributionApiUpdateInboundRequest {
@@ -981,6 +1295,16 @@ export class AmazonWarehousingAndDistributionApi extends BaseAPI {
     }
 
     /**
+     * Confirms an AWD replenishment order in ELIGIBLE state with a set of shipments containing items that are needed to be replenished to an FBA node. Order can only be confirmed in ELIGIBLE state.
+     * @param {AmazonWarehousingAndDistributionApiConfirmReplenishmentOrderRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public confirmReplenishmentOrder(requestParameters: AmazonWarehousingAndDistributionApiConfirmReplenishmentOrderRequest, options?: RawAxiosRequestConfig) {
+        return AmazonWarehousingAndDistributionApiFp(this.configuration).confirmReplenishmentOrder(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Creates a draft AWD inbound order with a list of packages for inbound shipment. The operation creates one shipment per order.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {AmazonWarehousingAndDistributionApiCreateInboundRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
@@ -988,6 +1312,16 @@ export class AmazonWarehousingAndDistributionApi extends BaseAPI {
      */
     public createInbound(requestParameters: AmazonWarehousingAndDistributionApiCreateInboundRequest, options?: RawAxiosRequestConfig) {
         return AmazonWarehousingAndDistributionApiFp(this.configuration).createInbound(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Creates an AWD replenishment order with given products to replenish. The API will return the order ID of the newly created order and also start an async validation check on the products to e. The order status will transition to ELIGIBLE/INELIGIBLE status from VALIDATING post validation check
+     * @param {AmazonWarehousingAndDistributionApiCreateReplenishmentOrderRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createReplenishmentOrder(requestParameters: AmazonWarehousingAndDistributionApiCreateReplenishmentOrderRequest, options?: RawAxiosRequestConfig) {
+        return AmazonWarehousingAndDistributionApiFp(this.configuration).createReplenishmentOrder(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1021,6 +1355,16 @@ export class AmazonWarehousingAndDistributionApi extends BaseAPI {
     }
 
     /**
+     * Retrieves an AWD Replenishment order with a set of shipments containing items that is/was planned to be replenished into an FBA node.
+     * @param {AmazonWarehousingAndDistributionApiGetReplenishmentOrderRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public getReplenishmentOrder(requestParameters: AmazonWarehousingAndDistributionApiGetReplenishmentOrderRequest, options?: RawAxiosRequestConfig) {
+        return AmazonWarehousingAndDistributionApiFp(this.configuration).getReplenishmentOrder(requestParameters.orderId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Retrieves a summary of all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {AmazonWarehousingAndDistributionApiListInboundShipmentsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
@@ -1038,6 +1382,16 @@ export class AmazonWarehousingAndDistributionApi extends BaseAPI {
      */
     public listInventory(requestParameters: AmazonWarehousingAndDistributionApiListInventoryRequest = {}, options?: RawAxiosRequestConfig) {
         return AmazonWarehousingAndDistributionApiFp(this.configuration).listInventory(requestParameters.sku, requestParameters.sortOrder, requestParameters.details, requestParameters.nextToken, requestParameters.maxResults, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieves all the AWD replenishment orders pertaining to a merchant with optional filters. API by default will sort orders by updatedAt attribute in descending order.
+     * @param {AmazonWarehousingAndDistributionApiListReplenishmentOrdersRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listReplenishmentOrders(requestParameters: AmazonWarehousingAndDistributionApiListReplenishmentOrdersRequest = {}, options?: RawAxiosRequestConfig) {
+        return AmazonWarehousingAndDistributionApiFp(this.configuration).listReplenishmentOrders(requestParameters.updatedAfter, requestParameters.updatedBefore, requestParameters.sortOrder, requestParameters.maxResults, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1106,3 +1460,8 @@ export const ListInventoryDetailsEnum = {
     Hide: 'HIDE'
 } as const;
 export type ListInventoryDetailsEnum = typeof ListInventoryDetailsEnum[keyof typeof ListInventoryDetailsEnum];
+export const ListReplenishmentOrdersSortOrderEnum = {
+    Ascending: 'ASCENDING',
+    Descending: 'DESCENDING'
+} as const;
+export type ListReplenishmentOrdersSortOrderEnum = typeof ListReplenishmentOrdersSortOrderEnum[keyof typeof ListReplenishmentOrdersSortOrderEnum];

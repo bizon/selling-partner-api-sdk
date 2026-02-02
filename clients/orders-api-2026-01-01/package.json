@@ -1,0 +1,54 @@
+{
+  "name": "@sp-api-sdk/orders-api-2026-01-01",
+  "author": "Bertrand Marron <bertrand@bizon.solutions>",
+  "description": "The Selling Partner API for Orders returns orders information. This API supports the following types of orders: FBM (Fulfilled by Merchant) FBA (Fulfilled by Amazon) - read only Amazon Fresh This API does not display order data that is more than two years old, except in the JP, AU, and SG marketplaces, for which data from 2016 and after is available.",
+  "version": "1.0.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "scripts": {
+    "xo": "xo --cwd=../.. clients/orders-api-2026-01-01",
+    "check:ts": "tsc --noEmit",
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:es": "tsc -p tsconfig.es.json",
+    "build": "pnpm build:cjs && pnpm build:es",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@sp-api-sdk/common": "workspace:*",
+    "axios": "^1.13.2"
+  },
+  "devDependencies": {
+    "@sp-api-sdk/typescript-config": "workspace:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bizon/selling-partner-api-sdk.git",
+    "directory": "clients/orders-api-2026-01-01"
+  },
+  "bugs": {
+    "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
+  },
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/orders-api-2026-01-01",
+  "keywords": [
+    "amazon",
+    "bizon",
+    "marketplace web services",
+    "mws",
+    "selling partner api",
+    "sp api",
+    "sp sdk",
+    "orders api"
+  ]
+}

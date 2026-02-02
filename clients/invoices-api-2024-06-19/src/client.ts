@@ -39,6 +39,27 @@ export const clientRateLimits: RateLimit[] = [
     burst: 15,
   },
   {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/tax/invoices/2024-06-19/governmentInvoiceRequests$'),
+    rate: 0.0167,
+    burst: 1,
+  },
+  {
+    method: 'get',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/tax/invoices/2024-06-19/governmentInvoiceRequests$'),
+    rate: 0.0167,
+    burst: 1,
+  },
+  {
+    method: 'get',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/tax/invoices/2024-06-19/governmentInvoiceRequests/[^/]*$'),
+    rate: 0.0167,
+    burst: 1,
+  },
+  {
     method: 'get',
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/tax/invoices/2024-06-19/invoices$'),

@@ -15,7 +15,7 @@
 
 
 /**
- * The owner of the preparations, if special preparations are required.
+ * The owner of the preparations, if special preparations are required. `AMAZON` is not an accepted value in the US marketplace.
  */
 
 export const PrepOwner = {

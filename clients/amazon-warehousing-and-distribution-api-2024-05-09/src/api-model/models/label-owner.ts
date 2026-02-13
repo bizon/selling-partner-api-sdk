@@ -15,7 +15,7 @@
 
 
 /**
- * The entity that labels the products.
+ * The entity that labels the products. `AMAZON` is not an accepted value in the US marketplace.
  */
 
 export const LabelOwner = {

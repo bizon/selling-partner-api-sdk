@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/invoices-api-2024-06-19@2.1.0...@sp-api-sdk/invoices-api-2024-06-19@2.1.1) (2026-02-13)
+
+**Note:** Version bump only for package @sp-api-sdk/invoices-api-2024-06-19
+
 # [2.1.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/invoices-api-2024-06-19@2.0.17...@sp-api-sdk/invoices-api-2024-06-19@2.1.0) (2026-02-02)
 
 ### Features

@@ -33,7 +33,7 @@
   "devDependencies": {
     "@sp-api-sdk/jest": "workspace:*",
     "@sp-api-sdk/typescript-config": "workspace:*",
-    "nock": "^14.0.10",
+    "nock": "^14.0.11",
     "type-fest": "^5.4.4"
   },
   "repository": {

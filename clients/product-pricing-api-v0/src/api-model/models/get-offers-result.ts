@@ -33,7 +33,7 @@ export interface GetOffersResult {
     /**
      * A marketplace identifier.
      */
-    'MarketplaceID': string;
+    'marketplaceId': string;
     /**
      * The Amazon Standard Identification Number (ASIN) of the item.
      */

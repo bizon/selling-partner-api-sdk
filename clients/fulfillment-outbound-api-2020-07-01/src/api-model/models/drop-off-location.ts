@@ -23,7 +23,7 @@ export interface DropOffLocation {
      */
     'type': DropOffLocationTypeEnum;
     /**
-     * Additional information about the drop-off location that can vary depending on the type of drop-off location specified in the `type` field. If the `type` is set to `FALLBACK_NEIGHBOR_DELIVERY`, the `attributes` object should include the exact keys `neighborName` and `houseNumber` to provide the name and house number of the designated neighbor.
+     * Additional information about the drop-off location that can vary depending on the type of drop-off location specified in the `type` field. If the `type` is set to `FALLBACK_NEIGHBOR_DELIVERY`, the `attributes` object should include the exact keys `neighborName` and `houseNumber` to provide the name and house number of the designated neighbor.  For `RECEPTIONIST`, `MAIL_ROOM_CLERK`, and `AS_INSTRUCTED` types, the `attributes` object will include a `recipientName` field containing the name of the person who received the package.
      */
     'attributes'?: { [key: string]: string; };
 }
@@ -36,7 +36,9 @@ export const DropOffLocationTypeEnum = {
     Garage: 'GARAGE',
     Receptionist: 'RECEPTIONIST',
     FallbackNeighborDelivery: 'FALLBACK_NEIGHBOR_DELIVERY',
-    DoNotLeaveUnattended: 'DO_NOT_LEAVE_UNATTENDED'
+    DoNotLeaveUnattended: 'DO_NOT_LEAVE_UNATTENDED',
+    MailRoomClerk: 'MAIL_ROOM_CLERK',
+    AsInstructed: 'AS_INSTRUCTED'
 } as const;
 
 export type DropOffLocationTypeEnum = typeof DropOffLocationTypeEnum[keyof typeof DropOffLocationTypeEnum];

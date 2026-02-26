@@ -3,138 +3,137 @@ import {type FromSchema} from 'json-schema-to-ts'
 export const b2bAnyOfferChangedNotification = {
   type: 'object',
   description:
-    'The notification response schema that comprises the entire JSON document for B2B_ANY_OFFER_CHANGED notification.',
-  '#ref': '#/definitions/notificationResponse',
+    'The notification response schema that comprises the entire JSON document for B2B_ANY_OFFER_CHANGED notification',
+  '#ref': '#/definitions/NotificationResponse',
   definitions: {
-    notificationMetadata: {
+    NotificationMetadata: {
       type: 'object',
-      required: ['applicationId', 'subscriptionId', 'publishTime', 'notificationId'],
+      required: ['ApplicationId', 'SubscriptionId', 'PublishTime', 'NotificationId'],
       additionalProperties: true,
       properties: {
-        applicationId: {
+        ApplicationId: {
           type: 'string',
-          description: 'The identifier for the application that uses the notifications.',
+          description: 'The identifier for the application that uses the notifications',
         },
-        subscriptionId: {
+        SubscriptionId: {
           type: 'string',
           description:
-            'A unique identifier for the subscription which resulted in this notification.',
+            'A unique identifier for the subscription which resulted in this notification',
         },
-        publishTime: {
+        PublishTime: {
           type: 'string',
-          description:
-            'The date and time in ISO 8601 format in UTC time that the notification was sent.',
+          description: 'The date and time (in UTC) that the notification was sent',
         },
-        notificationId: {
+        NotificationId: {
           type: 'string',
-          description: 'A unique identifier for this notification instance.',
+          description: 'A unique identifier for this notification instance',
         },
       },
     },
-    offerChangeTrigger: {
+    OfferChangeTrigger: {
       type: 'object',
-      description: 'The event that caused the notification to be sent.',
-      required: ['marketplaceId', 'asin', 'itemCondition', 'timeOfOfferChange'],
+      description: 'The event that caused the notification to be sent',
+      required: ['MarketplaceId', 'ASIN', 'ItemCondition', 'TimeOfOfferChange'],
       additionalProperties: true,
       properties: {
-        marketplaceId: {
+        MarketplaceId: {
           type: 'string',
-          description: 'The marketplace identifier of the item that had an offer change.',
+          description: 'The marketplace identifier of the item that had an offer change',
         },
-        asin: {
+        ASIN: {
           type: 'string',
-          description: 'The ASIN for the item that had an offer change.',
+          description: 'The asin for the item that had an offer change',
         },
-        itemCondition: {
+        ItemCondition: {
           type: 'string',
-          description: 'The condition of the item that had an offer change.',
+          description: 'The condition of the item that had an offer change',
         },
-        timeOfOfferChange: {
+        TimeOfOfferChange: {
           type: 'string',
-          description: 'The update time for the offer that caused this notification.',
+          description: 'The update time for the offer that caused this notification',
         },
       },
     },
-    condition: {
+    Condition: {
       type: 'string',
-      description: 'The condition of the item.',
+      description: 'Indicates the condition of the item',
     },
-    fulfillmentChannel: {
+    FulfillmentChannel: {
       type: 'string',
-      description: 'Indicates whether the item is fulfilled by Amazon or by the seller.',
+      description: 'Indicates whether the item is fulfilled by Amazon or by the seller',
     },
-    offerCount: {
+    OfferCount: {
       type: 'object',
-      required: ['condition', 'fulfillmentChannel', 'offerCount'],
+      required: ['Condition', 'FulfillmentChannel', 'OfferCount'],
       additionalProperties: true,
       properties: {
-        condition: {
-          $ref: '#/definitions/condition',
+        Condition: {
+          $ref: '#/definitions/Condition',
         },
-        fulfillmentChannel: {
-          $ref: '#/definitions/fulfillmentChannel',
+        FulfillmentChannel: {
+          $ref: '#/definitions/FulfillmentChannel',
         },
-        offerCount: {
+        OfferCount: {
           type: 'integer',
           description:
-            'The total number of offers for the specified condition and fulfillment channel.',
+            'The total number of offers for the specified condition and fulfillment channel',
         },
       },
     },
-    offerType: {
+    OfferType: {
       type: 'string',
-      description: 'Indicates whether the offer is a B2B offer or a B2C offer.',
+      description: 'Indicates whether the offer is a B2B offer or a B2C offer',
     },
-    quantityTier: {
+    QuantityTier: {
       type: 'integer',
       description: 'The quantity tier for the offer',
     },
-    discountType: {
+    DiscountType: {
       type: 'string',
       description:
-        'Indicates whether the quantity tier is for Quantity Discount or Progressive Discount.',
+        'Indicates whether the quantity tier is for Quantity Discount or Progressive Discount',
     },
-    moneyType: {
+    MoneyType: {
       type: 'object',
-      required: ['amount', 'currencyCode'],
+      required: ['Amount', 'CurrencyCode'],
       additionalProperties: true,
       properties: {
-        amount: {
+        Amount: {
           type: 'number',
         },
-        currencyCode: {
+        CurrencyCode: {
           type: 'string',
         },
       },
     },
-    landedPrice: {
-      $ref: '#/definitions/moneyType',
-      description: 'The price of the item plus the shipping cost.',
+    LandedPrice: {
+      $ref: '#/definitions/MoneyType',
+      description: 'ListingPrice + Shipping',
     },
-    listingPrice: {
-      $ref: '#/definitions/moneyType',
-      description: 'The price of the item.',
+    ListingPrice: {
+      $ref: '#/definitions/MoneyType',
+      description: 'The price of the item',
     },
-    shipping: {
-      $ref: '#/definitions/moneyType',
-      description: 'The shipping cost.',
+    Shipping: {
+      $ref: '#/definitions/MoneyType',
+      description: 'The shipping cost',
     },
     QuantityDiscountPriceType: {
       type: 'object',
-      required: ['listingPrice', 'quantityDiscountType', 'quantityTier'],
+      required: ['ListingPrice', 'QuantityDiscountType', 'QuantityTier'],
       properties: {
-        quantityTier: {
+        QuantityTier: {
           type: 'integer',
           format: 'int32',
           description: 'Indicates at what quantity this price becomes active.',
         },
-        quantityDiscountType: {
+        QuantityDiscountType: {
           description: 'Indicates the type of quantity discount this price applies to.',
           $ref: '#/definitions/QuantityDiscountType',
         },
-        listingPrice: {
+        ListingPrice: {
           description: 'The price at this quantity tier.',
-          $ref: '#/definitions/moneyType',
+          $ref: '#/definitions/MoneyType',
         },
       },
       description:
@@ -146,327 +145,352 @@ export const b2bAnyOfferChangedNotification = {
       'x-docgen-enum-table-extension': [
         {
           value: 'QUANTITY_DISCOUNT',
-          description: 'A Quantity Discount.',
+          description: 'Quantity Discount',
         },
       ],
     },
-    lowestPrice: {
+    Points: {
       type: 'object',
-      required: ['condition', 'fulfillmentChannel', 'offerType', 'quantityTier', 'listingPrice'],
+      required: ['PointsNumber'],
       additionalProperties: true,
       properties: {
-        condition: {
-          $ref: '#/definitions/condition',
-        },
-        fulfillmentChannel: {
-          $ref: '#/definitions/fulfillmentChannel',
-        },
-        offerType: {
-          $ref: '#/definitions/offerType',
-        },
-        quantityTier: {
-          $ref: '#/definitions/quantityTier',
-        },
-        discountType: {
-          $ref: '#/definitions/discountType',
-        },
-        landedPrice: {
-          $ref: '#/definitions/landedPrice',
-        },
-        listingPrice: {
-          $ref: '#/definitions/listingPrice',
-        },
-        shipping: {
-          $ref: '#/definitions/shipping',
-        },
-      },
-    },
-    buyBoxPrice: {
-      type: 'object',
-      required: ['condition', 'offerType', 'quantityTier', 'listingPrice'],
-      additionalProperties: true,
-      properties: {
-        condition: {
-          $ref: '#/definitions/condition',
-        },
-        offerType: {
-          $ref: '#/definitions/offerType',
-        },
-        quantityTier: {
-          $ref: '#/definitions/quantityTier',
-        },
-        discountType: {
-          $ref: '#/definitions/discountType',
-        },
-        landedPrice: {
-          $ref: '#/definitions/landedPrice',
-        },
-        listingPrice: {
-          $ref: '#/definitions/listingPrice',
-        },
-        shipping: {
-          $ref: '#/definitions/shipping',
-        },
-        sellerId: {
-          type: 'string',
-          description: 'The seller identifier for the offer.',
-        },
-      },
-    },
-    sellerFeedbackRating: {
-      type: 'object',
-      required: ['feedbackCount', 'sellerPositiveFeedbackRating'],
-      additionalProperties: true,
-      properties: {
-        feedbackCount: {
+        PointsNumber: {
           type: 'integer',
-          description: 'The count of feedback received about the seller.',
+          description: 'The number of Amazon Points offered with the purchase of an item',
         },
-        sellerPositiveFeedbackRating: {
+      },
+    },
+    LowestPrice: {
+      type: 'object',
+      required: ['Condition', 'FulfillmentChannel', 'OfferType', 'QuantityTier', 'ListingPrice'],
+      additionalProperties: true,
+      properties: {
+        Condition: {
+          $ref: '#/definitions/Condition',
+        },
+        FulfillmentChannel: {
+          $ref: '#/definitions/FulfillmentChannel',
+        },
+        OfferType: {
+          $ref: '#/definitions/OfferType',
+        },
+        QuantityTier: {
+          $ref: '#/definitions/QuantityTier',
+        },
+        DiscountType: {
+          $ref: '#/definitions/DiscountType',
+        },
+        LandedPrice: {
+          $ref: '#/definitions/LandedPrice',
+        },
+        ListingPrice: {
+          $ref: '#/definitions/ListingPrice',
+        },
+        Shipping: {
+          $ref: '#/definitions/Shipping',
+        },
+        Points: {
+          $ref: '#/definitions/Points',
+        },
+      },
+    },
+    BuyBoxPrice: {
+      type: 'object',
+      required: ['Condition', 'OfferType', 'QuantityTier', 'ListingPrice'],
+      additionalProperties: true,
+      properties: {
+        Condition: {
+          $ref: '#/definitions/Condition',
+        },
+        OfferType: {
+          $ref: '#/definitions/OfferType',
+        },
+        QuantityTier: {
+          $ref: '#/definitions/QuantityTier',
+        },
+        DiscountType: {
+          $ref: '#/definitions/DiscountType',
+        },
+        LandedPrice: {
+          $ref: '#/definitions/LandedPrice',
+        },
+        ListingPrice: {
+          $ref: '#/definitions/ListingPrice',
+        },
+        Shipping: {
+          $ref: '#/definitions/Shipping',
+        },
+        Points: {
+          $ref: '#/definitions/Points',
+        },
+        SellerId: {
+          type: 'string',
+          description: 'The seller identifier for the offer',
+        },
+      },
+    },
+    SellerFeedbackRating: {
+      type: 'object',
+      required: ['FeedbackCount', 'SellerPositiveFeedbackRating'],
+      additionalProperties: true,
+      properties: {
+        FeedbackCount: {
+          type: 'integer',
+          description: 'The count of feedback received about the seller',
+        },
+        SellerPositiveFeedbackRating: {
           type: 'number',
-          description: 'The percentage of positive feedback for the seller in the past 365 days.',
+          description: 'The percentage of positive feedback for the seller in the past 365 days',
         },
       },
     },
-    shippingTime: {
-      type: 'object',
+    ShippingTime: {
       additionalProperties: true,
       properties: {
-        minimumHours: {
+        MinimumHours: {
           type: 'integer',
           description:
-            'The minimum time, in hours, that the item will likely be shipped after the order has been placed.',
+            'The minimum time, in hours, that the item will likely be shipped after the order has been placed',
         },
-        maximumHours: {
+        MaximumHours: {
           type: 'integer',
           description:
-            'The maximum time, in hours, that the item will likely be shipped after the order has been placed.',
+            'The maximum time, in hours, that the item will likely be shipped after the order has been placed',
         },
-        availabilityType: {
+        AvailabilityType: {
           type: 'string',
           description:
-            'Indicates whether the item is available for shipping now, or on a known or unknown date in the future.',
+            'Indicates whether the item is available for shipping now, or on a known or an unknown date in the future',
         },
-        availableDate: {
+        AvailableDate: {
           type: 'string',
           description:
-            'The date when the item will be available for shipping. Only displayed for items that are not currently available for shipping.',
+            'The date when the item will be available for shipping. Only displayed for items that are not currently available for shipping',
         },
       },
     },
-    shipsFrom: {
+    ShipsFrom: {
       type: 'object',
-      required: ['country'],
+      required: ['Country'],
       additionalProperties: true,
       properties: {
-        country: {
+        Country: {
+          type: 'string',
+        },
+        State: {
           type: 'string',
         },
       },
     },
-    primeInformation: {
+    PrimeInformation: {
       type: 'object',
-      required: ['isOfferPrime', 'isOfferNationalPrime'],
+      required: ['IsPrime', 'IsNationalPrime'],
       additionalProperties: true,
       properties: {
-        isOfferPrime: {
+        IsPrime: {
           type: 'boolean',
-          description: 'Indicates whether the offer is an Amazon Prime offer.',
+          description: 'Indicates whether the offer is an Amazon Prime offer',
         },
-        isOfferNationalPrime: {
+        IsNationalPrime: {
           type: 'boolean',
           description:
-            'Indicates whether the offer is an Amazon Prime offer throughout the entire marketplace where it is listed.',
+            'Indicates whether the offer is an Amazon Prime offer throughout the entire marketplace where it is listed',
         },
       },
     },
-    offer: {
+    Offer: {
       type: 'object',
       required: [
-        'sellerId',
-        'subCondition',
-        'shippingTime',
-        'listingPrice',
-        'shipping',
-        'isFulfilledByAmazon',
+        'SellerId',
+        'SubCondition',
+        'ShippingTime',
+        'ListingPrice',
+        'Shipping',
+        'IsFulfilledByAmazon',
       ],
       additionalProperties: true,
       properties: {
-        sellerId: {
+        SellerId: {
           type: 'string',
-          description: 'The seller identifier for the offer.',
+          description: 'The seller identifier for the offer',
         },
-        subCondition: {
+        SubCondition: {
           type: 'string',
-          description: 'The subcondition of the item.',
+          description: 'The subcondition of the item',
         },
-        sellerFeedbackRating: {
-          $ref: '#/definitions/sellerFeedbackRating',
+        SellerFeedbackRating: {
+          $ref: '#/definitions/SellerFeedbackRating',
         },
-        shippingTime: {
-          $ref: '#/definitions/shippingTime',
+        ShippingTime: {
+          $ref: '#/definitions/ShippingTime',
         },
-        listingPrice: {
-          $ref: '#/definitions/listingPrice',
+        ListingPrice: {
+          $ref: '#/definitions/ListingPrice',
         },
-        quantityDiscountPrice: {
+        Points: {
+          $ref: '#/definitions/Points',
+        },
+        QuantityDiscountPrice: {
           type: 'array',
           description:
-            'Contains a list of pricing information that includes special pricing when buying in bulk.',
+            'Contains a list of pricing information that includes special pricing when buying in bulk',
           items: {
             $ref: '#/definitions/QuantityDiscountPriceType',
           },
         },
-        shipping: {
-          $ref: '#/definitions/shipping',
+        Shipping: {
+          $ref: '#/definitions/Shipping',
         },
-        shipsFrom: {
-          $ref: '#/definitions/shipsFrom',
+        ShipsFrom: {
+          $ref: '#/definitions/ShipsFrom',
         },
-        isFulfilledByAmazon: {
+        IsFulfilledByAmazon: {
           type: 'boolean',
-          description: 'True when fulfilled by Amazon.',
+          description: 'Indicates whether the offer is fulfilled by Amazon',
         },
-        isBuyBoxWinner: {
+        IsBuyBoxWinner: {
           type: 'boolean',
           description:
-            'True when the offer is currently in the Buy Box. There can be up to two Buy Box winners at any time per ASIN, one that is eligible for Prime and one that is not eligible for Prime.',
+            'Indicates whether the offer is currently in the Buy Box. There can be up to two Buy Box winners at any time per ASIN, one that is eligible for Prime and one that is not eligible for Prime',
         },
-        conditionNotes: {
+        ConditionNotes: {
           type: 'string',
-          description: 'Information about the condition of the item.',
+          description: 'Information about the condition of the item',
         },
-        isFeaturedMerchant: {
+        PrimeInformation: {
+          $ref: '#/definitions/PrimeInformation',
+        },
+        IsFeaturedMerchant: {
           type: 'boolean',
-          description: 'True when the seller of the item is eligible to win the Buy Box.',
+          description: 'Indicates whether the seller of the item is eligible to win the Buy Box',
         },
       },
     },
-    summary: {
+    Summary: {
       type: 'object',
-      required: ['numberOfOffers', 'buyBoxEligibleOffers', 'lowestPrices', 'buyBoxPrices'],
+      required: ['NumberOfOffers', 'BuyBoxEligibleOffers', 'LowestPrices', 'BuyBoxPrices'],
       additionalProperties: true,
       properties: {
-        numberOfOffers: {
+        NumberOfOffers: {
           type: 'array',
           description:
-            'A list that contains the total number of B2B offers for the item for the given conditions and fulfillment channels.',
+            'A list that contains the total number of B2B offers for the item for the given conditions and fulfillment channels',
           additionalItems: true,
           items: [
             {
-              $ref: '#/definitions/offerCount',
+              $ref: '#/definitions/OfferCount',
             },
           ],
         },
-        buyBoxEligibleOffers: {
+        BuyBoxEligibleOffers: {
           type: 'array',
           description:
-            'A list that contains the total number of B2B offers that are eligible for the Buy Box for the given conditions and fulfillment channels.',
+            'A list that contains the total number of B2B offers that are eligible for the Buy Box for the given conditions and fulfillment channels',
           additionalItems: true,
           items: [
             {
-              $ref: '#/definitions/offerCount',
+              $ref: '#/definitions/OfferCount',
             },
           ],
         },
-        lowestPrices: {
+        LowestPrices: {
           type: 'array',
           description:
-            'A list that contains the lowest prices of the item for the given conditions, fulfillment channels, quantity tiers, and discount types.',
+            'A list that contains the lowest prices of the item for the given conditions, fulfillment channels, quantity tiers, and discount types',
           additionalItems: true,
           items: [
             {
-              $ref: '#/definitions/lowestPrice',
+              $ref: '#/definitions/LowestPrice',
             },
           ],
         },
-        buyBoxPrices: {
+        BuyBoxPrices: {
           type: 'array',
           description:
-            'A list that contains the Buy Box price of the item for the given conditions, quantity tiers, and discount types.',
+            'A list that contains the Buy Box price of the item for the given conditions, quantity tiers, and discount types',
           additionalItems: true,
           items: [
             {
-              $ref: '#/definitions/buyBoxPrice',
+              $ref: '#/definitions/BuyBoxPrice',
             },
           ],
         },
       },
     },
-    b2bAnyOfferChangedNotification: {
+    B2BAnyOfferChangedNotification: {
       type: 'object',
-      required: ['sellerId', 'offerChangeTrigger', 'summary', 'offers'],
+      required: ['SellerId', 'OfferChangeTrigger', 'Summary', 'Offers'],
       additionalProperties: true,
       properties: {
-        sellerId: {
+        SellerId: {
           type: 'string',
-          description: 'The seller identifier for the offer.',
+          description: 'The seller identifier for the offer',
         },
-        offerChangeTrigger: {
-          $ref: '#/definitions/offerChangeTrigger',
+        OfferChangeTrigger: {
+          $ref: '#/definitions/OfferChangeTrigger',
         },
-        summary: {
-          $ref: '#/definitions/summary',
+        Summary: {
+          $ref: '#/definitions/Summary',
         },
-        offers: {
+        Offers: {
           type: 'array',
           description:
-            'The top 20 competitive B2B offers for the item and condition that triggered the notification.',
+            'The top 20 competitive B2B offers for the item and condition that triggered the notification',
           additionalItems: true,
           items: [
             {
-              $ref: '#/definitions/offer',
+              $ref: '#/definitions/Offer',
             },
           ],
         },
       },
     },
-    payload: {
+    Payload: {
       type: 'object',
-      required: ['b2bAnyOfferChangedNotification'],
+      required: ['B2BAnyOfferChangedNotification'],
       additionalProperties: true,
       properties: {
-        b2bAnyOfferChangedNotification: {
-          $ref: '#/definitions/b2bAnyOfferChangedNotification',
+        B2BAnyOfferChangedNotification: {
+          $ref: '#/definitions/B2BAnyOfferChangedNotification',
         },
       },
     },
-    notificationResponse: {
+    NotificationResponse: {
       type: 'object',
       required: [
-        'notificationVersion',
-        'notificationType',
-        'payloadVersion',
-        'eventTime',
-        'notificationMetadata',
-        'payload',
+        'NotificationVersion',
+        'NotificationType',
+        'PayloadVersion',
+        'EventTime',
+        'NotificationMetadata',
+        'Payload',
       ],
       additionalProperties: true,
       properties: {
-        notificationVersion: {
+        NotificationVersion: {
           type: 'string',
-          description: 'The notification version. This controls the structure of the notification.',
+          description: 'The notification version. This controls the structure of the notification',
         },
-        notificationType: {
-          type: 'string',
-          description:
-            'The notification type. Combined with the payload version this controls the structure of the payload object.',
-        },
-        payloadVersion: {
+        NotificationType: {
           type: 'string',
           description:
-            'The payload version. Combined with the notification type this controls the structure of the payload object.',
+            'The notification type. Combined with payload version controls the structure of payload object',
         },
-        eventTime: {
+        PayloadVersion: {
           type: 'string',
           description:
-            'The date and time in ISO 8601 format in UTC time that the event which triggered the notification occurred.',
+            'The payload version. Combined with notification type controls the structure of payload',
         },
-        notificationMetadata: {
-          $ref: '#/definitions/notificationMetadata',
+        EventTime: {
+          type: 'string',
+          description:
+            'The date and time (in UTC) that the event which triggered the notification occurred',
         },
-        payload: {
-          $ref: '#/definitions/payload',
+        NotificationMetadata: {
+          $ref: '#/definitions/NotificationMetadata',
+        },
+        Payload: {
+          $ref: '#/definitions/Payload',
         },
       },
     },

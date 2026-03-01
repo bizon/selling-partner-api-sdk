@@ -13,9 +13,6 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import type { FeatureSku } from './feature-sku';
 
 /**
  * The payload for the `getFeatureSKU` operation.
@@ -37,6 +34,21 @@ export interface GetFeatureSkuResult {
      * A list of one or more reasons that the seller SKU is ineligible for the feature.  Possible values: * `MERCHANT_NOT_ENROLLED`: The merchant isn\'t enrolled for the feature. * `SKU_NOT_ELIGIBLE`: The SKU doesn\'t reside in a warehouse that supports the feature. * `INVALID_SKU`: There is an issue with the SKU provided.
      */
     'ineligibleReasons'?: Array<string>;
-    'skuInfo'?: FeatureSku;
+    /**
+     * Used to identify an item in the given marketplace. SellerSKU is qualified by the seller\'s SellerId, which is included with every operation that you submit.
+     */
+    'sellerSku'?: string;
+    /**
+     * The unique SKU used by Amazon\'s fulfillment network.
+     */
+    'fnSku'?: string;
+    /**
+     * The Amazon Standard Identification Number (ASIN) of the item.
+     */
+    'asin'?: string;
+    /**
+     * The number of SKUs available for this service.
+     */
+    'skuCount'?: number;
 }
 

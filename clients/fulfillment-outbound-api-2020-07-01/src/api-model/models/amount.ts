@@ -15,7 +15,7 @@
 
 
 /**
- * A quantity based on unit of measure.
+ * A quantity based on the specified unit of measurement.
  */
 export interface Amount {
     /**

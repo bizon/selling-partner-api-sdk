@@ -23,7 +23,7 @@ import type { VariablePrecisionAddress } from './variable-precision-address';
 export interface Destination {
     'deliveryAddress'?: VariablePrecisionAddress;
     /**
-     * An IP Address.
+     * An IP address.
      */
     'ipAddress'?: string;
 }

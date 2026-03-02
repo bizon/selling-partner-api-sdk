@@ -21,7 +21,7 @@ import type { DeliveryDocument } from './delivery-document';
 import type { DropOffLocation } from './drop-off-location';
 
 /**
- * The delivery information for the package. This information is available after the package is delivered.
+ * The delivery information of the package, this information is only available post package delivery to its intended destination.
  */
 export interface DeliveryInformation {
     /**

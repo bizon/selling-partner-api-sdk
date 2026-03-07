@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller\'s Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
  * The version of the OpenAPI document: 2024-03-01
@@ -30,19 +30,19 @@ import type { TransferScheduleInformation } from './transfer-schedule-informatio
 import type { TransferScheduleStatus } from './transfer-schedule-status';
 
 /**
- * Request body to initiate a scheduled transfer from a SW bank account to another customer defined bank account 
+ * Request body to initiate a scheduled transfer from a Seller Wallet bank account to another customer-defined bank account.
  */
 export interface TransferScheduleRequest {
     /**
-     * The unique identifier of the source Amazon SW bank account from where the money needs to be debited 
+     * The unique identifier of the source Amazon Seller Wallet bank account from which money is debited.
      */
     'sourceAccountId': string;
     /**
-     * Represents 3 letter currency code in ISO 4217 standard format of the source payment method country 
+     * The three-letter currency code of the source payment method country, in ISO 4217 format.
      */
     'sourceCurrencyCode': string;
     /**
-     * Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited 
+     * The unique identifier of the destination bank account where the money is deposited.
      */
     'destinationAccountId': string;
     'destinationTransactionInstrument': TransactionInstrumentDetails;

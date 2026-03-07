@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller\'s Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
  * The version of the OpenAPI document: 2024-03-01
@@ -21,11 +21,11 @@ import type { Currency } from './currency';
 import type { FeeType } from './fee-type';
 
 /**
- * If the fees is in baseAmount (sourceAccount) currency, effectiveRate =  (baseAmount - sum(fees.feeAmount.currencyAmount)) * baseRate) / baseAmount. If the fees is in transferAmount (destinationAccount) currency, effectiveRate =  (( baseAmount * baseRate ) -  sum(fees.feeAmount.currencyAmount )) / baseAmount 
+ * Details of the fee.
  */
 export interface Fee {
     /**
-     * Unique identifier assigned to the Fee. 
+     * The unique identifier assigned to the fee.
      */
     'feeId': string;
     'feeType': FeeType;

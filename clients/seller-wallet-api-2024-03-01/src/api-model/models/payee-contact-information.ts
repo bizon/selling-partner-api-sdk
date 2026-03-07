@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller\'s Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
  * The version of the OpenAPI document: 2024-03-01
@@ -34,15 +34,15 @@ export interface PayeeContactInformation {
      */
     'payeeLastName': string;
     /**
-     * Address Line 1 of the public address 
+     * Address Line 1 of the public address.
      */
     'addressLine1': string;
     /**
-     * Address Line 2 of the public address 
+     * Address Line 2 of the public address.
      */
     'addressLine2'?: string;
     /**
-     * City name of the public address 
+     * City name of the public address.
      */
     'city': string;
     /**
@@ -50,15 +50,15 @@ export interface PayeeContactInformation {
      */
     'state': string;
     /**
-     * Postal code of the public address 
+     * Postal code of the public address.
      */
     'postalCode': string;
     /**
-     * Country name of the public address 
+     * Country name of the public address.
      */
     'country'?: string;
     /**
-     * The two digit country code, in ISO 3166 format. 
+     * The two digit country code, in ISO 3166 format.
      */
     'countryCode': string;
     /**

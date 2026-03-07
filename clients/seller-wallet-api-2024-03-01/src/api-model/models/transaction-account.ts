@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller\'s Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
  * The version of the OpenAPI document: 2024-03-01
@@ -22,28 +22,28 @@ import type { BankAccountNumberFormat } from './bank-account-number-format';
  */
 export interface TransactionAccount {
     /**
-     * The unique identifier provided by Amazon to identify the account 
+     * The unique identifier provided by Amazon to identify the account.
      */
     'accountId'?: string;
     /**
-     * BankAccount holder\'s name 
+     * The account holder\'s name.
      */
     'bankAccountHolderName'?: string;
     /**
-     * The name of the bank 
+     * The name of the bank.
      */
     'bankName': string;
     'bankAccountNumberFormat': BankAccountNumberFormat;
     /**
-     * Last 3 digit of the bank account number 
+     * The last three digits of the bank account number.
      */
     'bankAccountNumberTail'?: string;
     /**
-     * The two digit country code, in ISO 3166 format. This field is OPTIONAL for transactionSourceAccount object but is MANDATORY field for transactionDestinationAccount 
+     * The two-digit country code, in ISO 3166 format. This field is optional for `transactionSourceAccount`, but is mandatory for `transactionDestinationAccount`.
      */
     'bankAccountCountryCode'?: string;
     /**
-     * The currency code in ISO 4217 format 
+     * The currency code in ISO 4217 format.
      */
     'bankAccountCurrency': string;
 }

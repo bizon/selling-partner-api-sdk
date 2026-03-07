@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller\'s Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
  * The version of the OpenAPI document: 2024-03-01
@@ -18,24 +18,24 @@
 import type { BalanceType } from './balance-type';
 
 /**
- * Specifies the balance amount in the Amazon SW bank account
+ * The balance amount in the Amazon Seller Wallet bank account.
  */
 export interface Balance {
     /**
-     * The unique identifier provided by Amazon to identify the account 
+     * The unique identifier provided by Amazon to identify the account.
      */
     'accountId': string;
     'balanceType'?: BalanceType;
     /**
-     * A decimal number such as amount or FX rate.
+     * A decimal number, such as an amount or FX rate.
      */
     'balanceAmount': number;
     /**
-     * The Amazon SW bank account currency code in ISO 4217 format 
+     * The Amazon Seller Wallet bank account currency code in ISO 4217 format.
      */
     'balanceCurrency': string;
     /**
-     * The last update date on the account balance 
+     * The date of the most recent account balance update.
      */
     'lastUpdateDate': string;
 }

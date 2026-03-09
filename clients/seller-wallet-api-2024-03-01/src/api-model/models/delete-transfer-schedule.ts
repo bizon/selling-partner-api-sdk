@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.  For more information, refer to the [Seller Wallet Open Banking API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/seller-wallet-open-banking-api-v2024-03-01-use-case-guide).
+ * The Selling Partner API for Amazon Seller Wallet Open Banking API
  * The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller\'s Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.
  *
  * The version of the OpenAPI document: 2024-03-01
@@ -15,11 +15,11 @@
 
 
 /**
- * Response returned when the schedule transfer\'s delete request is successful.
+ * The response returned when the schedule transfer\'s delete request is successful.
  */
 export interface DeleteTransferSchedule {
     /**
-     * A success code that specifies the delete operation was successful. eg:HTTP 200.
+     * A success code that specifies that the delete operation was successful. For example, HTTP 200.
      */
     'code': string;
     /**

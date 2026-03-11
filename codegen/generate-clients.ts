@@ -1,8 +1,6 @@
-import * as childProcess from 'node:child_process'
 import fs from 'node:fs/promises'
 import os from 'node:os'
 import {basename, parse as parsePath} from 'node:path'
-import {promisify} from 'node:util'
 
 import camelCase from 'camelcase'
 import {globby} from 'globby'
@@ -17,9 +15,8 @@ import {type PackageJson} from 'type-fest'
 import {logger} from './utils/logger.js'
 import {applyPatches} from './utils/patch.js'
 import {renderTemplate} from './utils/render-template.js'
+import {runCommand} from './utils/run-command.js'
 import {replaceAllTags} from './utils/tags.js'
-
-const exec = promisify(childProcess.exec)
 
 const GRANTLESS_APIS = [
   {name: 'notifications-api-v1', scope: 'NOTIFICATIONS'},
@@ -136,13 +133,16 @@ async function generateClientVersion(modelFilePath: string) {
   })
 
   // TODO: disable REFACTOR_ALLOF_INLINE_SCHEMAS when https://github.com/OpenAPITools/openapi-generator/issues/16150 is fixed.
-  await exec(`codegen/node_modules/.bin/openapi-generator-cli generate \
+  await runCommand(
+    `codegen/node_modules/.bin/openapi-generator-cli generate \
       --additional-properties=supportsES6=true,useSingleRequestParameter=true,withSeparateModelsAndApi=true,modelPackage=models,apiPackage=api \
       --skip-validate-spec \
       --inline-schema-options REFACTOR_ALLOF_INLINE_SCHEMAS=true \
       -g typescript-axios \
       -i ${modelPath} \
-      -o ${clientDirectoryPath}/src/api-model`)
+      -o ${clientDirectoryPath}/src/api-model`,
+    {quiet: true},
+  )
 
   await fs.writeFile(
     `${clientDirectoryPath}/package.json`,
@@ -270,6 +270,9 @@ async function generateClientVersion(modelFilePath: string) {
 }
 
 export async function generateClients() {
+  // Pre-download the JAR to avoid race conditions when running in parallel
+  await runCommand('codegen/node_modules/.bin/openapi-generator-cli version')
+
   const modelFilePaths = await globby('*/*.json', {
     onlyFiles: true,
     cwd: 'selling-partner-api-models/models',

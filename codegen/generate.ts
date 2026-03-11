@@ -1,21 +1,13 @@
 #!/usr/bin/env ts-node
 
-import * as childProcess from 'node:child_process'
 import fs from 'node:fs/promises'
 import process from 'node:process'
-import {promisify} from 'node:util'
 
 import {generateClients} from './generate-clients.js'
 import {generateSchemas} from './generate-schemas.js'
+import {runCommand} from './utils/run-command.js'
 
 type Generator = 'clients' | 'schemas'
-
-const exec = promisify(childProcess.exec)
-
-async function runCommand(command: string) {
-  console.info(`Running: ${command}`)
-  return exec(command)
-}
 
 const generators = new Set<Generator>((process.argv[2]?.split(',') as Generator[]) ?? [])
 if (generators.size === 0) {

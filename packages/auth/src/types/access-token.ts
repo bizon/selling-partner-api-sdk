@@ -13,8 +13,10 @@ type ClientCredentialsAccessTokenQuery = {
   scope: string
 } & BaseAccessTokenQuery
 
+/** Request body for the LWA token endpoint. */
 export type AccessTokenQuery = RefreshTokenAccessTokenQuery | ClientCredentialsAccessTokenQuery
 
+/** Response body from the LWA token endpoint. */
 export interface AccessTokenData {
   access_token: string
   refresh_token?: string

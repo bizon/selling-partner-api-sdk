@@ -12,37 +12,70 @@ type RequestLogConfig = Exclude<Parameters<typeof requestLogger>[1], undefined>
 type ResponseLogConfig = Exclude<Parameters<typeof responseLogger>[1], undefined>
 type ErrorLogConfig = Exclude<Parameters<typeof errorLogger>[1], undefined>
 
+/** Per-endpoint rate limit definition used for retry delay calculation. */
 export interface RateLimit {
+  /** Regular expression matched against the request URL pathname. */
   urlRegex: RegExp
+  /** Sustained request rate in requests per second. */
   rate: number
+  /** Maximum burst size (number of requests allowed before throttling). */
   burst: number
+  /** HTTP method this rate limit applies to. */
   method: Method
 }
 
+/** Parameters passed to the {@link ClientConfiguration.rateLimiting} `onRetry` callback. */
 export interface OnRetryParameters {
+  /** Delay in milliseconds before the next retry attempt. */
   delay: number
+  /** Rate limit (requests per second) used to calculate the delay, if available. */
   rateLimit?: number
+  /** Number of retry attempts so far. */
   retryCount: number
+  /** The Axios error that triggered the retry. */
   error: AxiosError
 }
 
+/** Configuration options for creating a Selling Partner API Axios instance. */
 export interface ClientConfiguration {
+  /** Authentication handler that provides LWA access tokens. */
   auth: SellingPartnerApiAuth
+  /** Restricted Data Token to use instead of the standard access token. */
   restrictedDataToken?: string
+  /** Selling Partner API region to send requests to. */
   region: SellingPartnerRegion
+  /** Custom `User-Agent` header value. */
   userAgent?: string
+  /** When `true`, requests are sent to the sandbox endpoint. Defaults to `false`. */
   sandbox?: boolean
+  /** Rate-limiting and retry configuration for 429 responses. */
   rateLimiting?: {
+    /** When `true`, automatically retries throttled (HTTP 429) requests. */
     retry: boolean
+    /** Optional callback invoked before each retry attempt. */
     onRetry?: (retryInfo: OnRetryParameters) => void
   }
+  /** Axios request/response/error logging configuration. Pass `true` to use defaults. */
   logging?: {
+    /** Log outgoing requests. */
     request?: RequestLogConfig | true
+    /** Log incoming responses. */
     response?: ResponseLogConfig | true
+    /** Log request errors. */
     error?: ErrorLogConfig | true
   }
 }
 
+/**
+ * Creates a pre-configured Axios instance for a Selling Partner API client.
+ *
+ * The instance handles authentication, rate-limit retries, error wrapping,
+ * and optional request/response logging.
+ *
+ * @param configuration - Client configuration options.
+ * @param rateLimits - Per-endpoint rate limits used for retry delay calculation.
+ * @returns An object containing the configured Axios instance and the resolved API endpoint.
+ */
 export function createAxiosInstance(
   {
     auth,

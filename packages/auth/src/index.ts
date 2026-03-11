@@ -8,15 +8,30 @@ import {type AccessTokenData, type AccessTokenQuery} from './types/access-token'
 import {type AuthorizationScope} from './types/scope'
 import {axios} from './utils/axios'
 
+/**
+ * Configuration parameters for Selling Partner API authentication.
+ *
+ * Both `clientId` and `clientSecret` fall back to the `LWA_CLIENT_ID` and
+ * `LWA_CLIENT_SECRET` environment variables when omitted.
+ * `refreshToken` falls back to `LWA_REFRESH_TOKEN`.
+ */
 export interface SellingPartnerAuthParameters {
+  /** LWA client identifier. Defaults to the `LWA_CLIENT_ID` environment variable. */
   clientId?: string
+  /** LWA client secret. Defaults to the `LWA_CLIENT_SECRET` environment variable. */
   clientSecret?: string
+  /** LWA refresh token. Defaults to the `LWA_REFRESH_TOKEN` environment variable. Mutually exclusive with `scopes`. */
   refreshToken?: string
+  /** Authorization scopes for grantless operations. Mutually exclusive with `refreshToken`. */
   scopes?: AuthorizationScope[]
 }
 
 /**
- * Class for simplify auth with Selling Partner API
+ * Handles Login with Amazon (LWA) OAuth token management for the Selling Partner API.
+ *
+ * Supports both refresh-token and grantless (scope-based) authentication flows.
+ * Tokens are cached and automatically refreshed when expired. Concurrent calls
+ * to {@link getAccessToken} are deduplicated into a single request.
  */
 export class SellingPartnerApiAuth {
   private readonly clientId: string
@@ -55,7 +70,11 @@ export class SellingPartnerApiAuth {
   }
 
   /**
-   * Get access token
+   * Returns a valid LWA access token, refreshing it if expired.
+   *
+   * Concurrent calls while a refresh is in progress share the same request.
+   *
+   * @returns The access token string.
    */
   async getAccessToken() {
     if (
@@ -115,7 +134,7 @@ export class SellingPartnerApiAuth {
   }
 
   /**
-   * Access token expiration date
+   * Expiration date of the currently cached access token, or `undefined` if no token has been fetched yet.
    */
   protected get accessTokenExpiration() {
     return this.#accessTokenExpiration

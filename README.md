@@ -15,7 +15,7 @@ A modularized SDK library for Amazon Selling Partner API (fully typed in TypeScr
 
 ## Documentation
 
-To learn more about the Selling Partner API, visit the [official Amazon documentation](https://developer-docs.amazon.com/sp-api/docs).  
+To learn more about the Selling Partner API, visit the [official Amazon documentation](https://developer-docs.amazon.com/sp-api/docs).
 Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/) for each API client.
 
 ## Features
@@ -24,9 +24,103 @@ This SDK supports the following features:
 
 - Installing only the API clients you need, versioned independently.
 - Passing client configuration through environment variables.
-- Retrying rate-limited requests by respecting the documented rate-limts and possibly provided headers.
+- Retrying rate-limited requests by respecting the documented rate-limits and possibly provided headers.
 - Logging (non-auth) API requests, responses and errors.
 - Passing restricted data tokens to API clients.
+- Fully typed TypeScript API with auto-generated models and type definitions.
+- Dual module output (CommonJS and ES Modules).
+- Sandbox mode for testing against Amazon's sandbox endpoints.
+- Multi-region support: North America (`na`), Europe (`eu`), and Far East (`fe`).
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 24 or later
+- Amazon Selling Partner API credentials ([LWA credentials](https://developer-docs.amazon.com/sp-api/docs/connecting-to-the-selling-partner-api))
+
+### Installation
+
+Install the authentication package and the API client(s) you need:
+
+```sh
+npm install @sp-api-sdk/auth @sp-api-sdk/orders-api-v0
+```
+
+### Usage
+
+```javascript
+import { SellingPartnerApiAuth } from "@sp-api-sdk/auth";
+import { OrdersApiClient } from "@sp-api-sdk/orders-api-v0";
+
+const auth = new SellingPartnerApiAuth({
+  clientId: process.env.LWA_CLIENT_ID,
+  clientSecret: process.env.LWA_CLIENT_SECRET,
+  refreshToken: "Atzr|…",
+});
+
+const client = new OrdersApiClient({
+  auth,
+  region: "eu",
+});
+
+const { data: orders } = await client.getOrders({
+  marketplaceIds: ["A1PA6795UKMFR9"],
+  createdAfter: "2024-01-01T00:00:00Z",
+});
+```
+
+### Configuration
+
+The `ClientConfiguration` object supports the following options:
+
+| Option                | Type                    | Required | Description                                                       |
+| --------------------- | ----------------------- | -------- | ----------------------------------------------------------------- |
+| `auth`                | `SellingPartnerApiAuth` | Yes      | Authentication instance (see [`@sp-api-sdk/auth`](packages/auth)) |
+| `region`              | `'na' \| 'eu' \| 'fe'`  | Yes      | Selling Partner API region                                        |
+| `sandbox`             | `boolean`               | No       | Use sandbox endpoints (default: `false`)                          |
+| `rateLimiting`        | `object`                | No       | Rate limiting configuration (see below)                           |
+| `logging`             | `object`                | No       | Logging configuration (see below)                                 |
+| `restrictedDataToken` | `string`                | No       | Restricted Data Token for accessing PII                           |
+| `userAgent`           | `string`                | No       | Custom user-agent header                                          |
+
+### Rate Limiting
+
+Enable automatic retry on rate-limited (HTTP 429) requests:
+
+```javascript
+const client = new OrdersApiClient({
+  auth,
+  region: "eu",
+  rateLimiting: {
+    retry: true,
+    onRetry: (retryInfo) => {
+      console.log(retryInfo);
+    },
+  },
+});
+```
+
+The retry delay is calculated from the `x-amzn-ratelimit-limit` response header when available, falling back to the documented rate limits for each endpoint.
+
+### Logging
+
+Enable request/response/error logging via [axios-logger](https://github.com/hg-pyun/axios-logger):
+
+```javascript
+const client = new OrdersApiClient({
+  auth,
+  region: "eu",
+  logging: {
+    request: true,
+    response: true,
+    error: true,
+  },
+});
+```
+
+Pass `true` to use default options, or an object to customize the [axios-logger configuration](https://github.com/hg-pyun/axios-logger#options).
+By default, `request` and `response` loggers use `console.info`, and the `error` logger uses `console.error`.
 
 ## Packages
 

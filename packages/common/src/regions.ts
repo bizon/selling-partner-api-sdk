@@ -1,3 +1,4 @@
+/** Selling Partner API region identifier. */
 export type SellingPartnerRegion = 'na' | 'eu' | 'fe'
 
 interface RegionConfiguration {
@@ -8,6 +9,7 @@ interface RegionConfiguration {
   }
 }
 
+/** AWS region and endpoint mapping for each Selling Partner API region. */
 export const sellingPartnerRegions: Record<SellingPartnerRegion, RegionConfiguration> = {
   na: {
     awsRegion: 'us-east-1',

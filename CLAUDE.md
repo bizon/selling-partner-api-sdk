@@ -26,6 +26,7 @@ pnpm test         # tests (Jest with SWC)
 - No `Co-Authored-By` trailer
 - PR titles follow the same conventions as commit subjects
 - No "Generated with Claude Code" footer in PR descriptions
+- Branch names prefixed with GitHub username (use `gh api user --jq '.login'`)
 
 ## Project structure
 

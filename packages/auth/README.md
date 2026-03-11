@@ -13,33 +13,57 @@ Amazon Selling Partner API authentication package
 npm install @sp-api-sdk/auth
 ```
 
-## Default values from the environment
+## Usage
 
-These constructor options can be passed using environment variables:
-
-| Property Name  | Environement variable |
-| -------------- | --------------------- |
-| `clientId`     | LWA_CLIENT_ID         |
-| `clientSecret` | LWA_CLIENT_SECRET     |
-| `refreshToken` | LWA_REFRESH_TOKEN     |
-
-## Grantless APIs support
-
-Some APIs require grantless authentication, which is done by passing scopes, instead of a refresh token.
-The available scopes are exposed in the `AuthorizationScope` enum from this library.
+The `SellingPartnerApiAuth` class handles OAuth token acquisition from Login with Amazon (LWA). You must provide exactly one of `refreshToken` or `scopes`.
 
 ```javascript
-import { SellingPartnerApiAuth, AuthorizationScope } from "@sp-api-sdk/auth";
-import { AuthorizationApiClient } from "@sp-api-sdk/authorization-api-v1";
+import { SellingPartnerApiAuth } from "@sp-api-sdk/auth";
 
 const auth = new SellingPartnerApiAuth({
-  clientId: "",
-  clientSecret: "",
-  scopes: [AuthorizationScope.NOTIFICATIONS, AuthorizationScope.CLIENT_CREDENTIAL_ROTATION], // Or choose the only ones you need
+  clientId: process.env.LWA_CLIENT_ID,
+  clientSecret: process.env.LWA_CLIENT_SECRET,
+  refreshToken: "Atzr|…",
 });
 
 const accessToken = await auth.getAccessToken();
 ```
+
+## Default values from the environment
+
+These constructor options can be passed using environment variables:
+
+| Property Name  | Environment variable |
+| -------------- | -------------------- |
+| `clientId`     | `LWA_CLIENT_ID`      |
+| `clientSecret` | `LWA_CLIENT_SECRET`  |
+| `refreshToken` | `LWA_REFRESH_TOKEN`  |
+
+## Grantless APIs support
+
+Some APIs (e.g. Notifications API) require grantless authentication, which is done by passing scopes instead of a refresh token.
+The available scopes are exposed in the `AuthorizationScope` enum from this library.
+
+```javascript
+import { SellingPartnerApiAuth, AuthorizationScope } from "@sp-api-sdk/auth";
+import { NotificationsApiClient } from "@sp-api-sdk/notifications-api-v1";
+
+const auth = new SellingPartnerApiAuth({
+  clientId: process.env.LWA_CLIENT_ID,
+  clientSecret: process.env.LWA_CLIENT_SECRET,
+  scopes: [AuthorizationScope.NOTIFICATIONS],
+});
+
+const client = new NotificationsApiClient({
+  auth,
+  region: "eu",
+});
+```
+
+Available scopes:
+
+- `AuthorizationScope.NOTIFICATIONS` - For the Notifications API
+- `AuthorizationScope.CLIENT_CREDENTIAL_ROTATION` - For client credential rotation
 
 ## Credentials caching
 
@@ -47,7 +71,9 @@ const accessToken = await auth.getAccessToken();
 
 ## Subclassing
 
-You can subclass `SellingPartnerApiAuth` to add custom logic, for example, caching the access token in a store.
+You can subclass `SellingPartnerApiAuth` to add custom logic, for example, caching the access token in an external store.
+
+The protected `accessTokenExpiration` getter provides the current token's expiration date, which is useful for setting TTLs in your cache.
 
 ```typescript
 import { SellingPartnerApiAuth } from "@sp-api-sdk/auth";
@@ -65,6 +91,22 @@ class StoredSellingPartnerApiAuth extends SellingPartnerApiAuth {
     await storeToken(token, { ttl: this.accessTokenExpiration });
 
     return token;
+  }
+}
+```
+
+## Error handling
+
+Authentication errors are thrown as `SellingPartnerApiAuthError` instances, which extend `AxiosError`.
+
+```javascript
+import { SellingPartnerApiAuth, SellingPartnerApiAuthError } from "@sp-api-sdk/auth";
+
+try {
+  const accessToken = await auth.getAccessToken();
+} catch (error) {
+  if (error instanceof SellingPartnerApiAuthError) {
+    console.error(error.message); // e.g. "access-token error: Response code 401"
   }
 }
 ```

@@ -26,6 +26,7 @@ export class SellingPartnerApiAuth {
 
   #accessToken?: string
   #accessTokenExpiration?: Date
+  #pendingTokenRequest?: Promise<string>
 
   constructor(
     parameters: RequireExactlyOne<SellingPartnerAuthParameters, 'refreshToken' | 'scopes'>,
@@ -58,42 +59,59 @@ export class SellingPartnerApiAuth {
    */
   async getAccessToken() {
     if (
-      !this.#accessToken ||
-      (this.#accessTokenExpiration && Date.now() >= this.#accessTokenExpiration.getTime())
+      this.#accessToken &&
+      (!this.#accessTokenExpiration || Date.now() < this.#accessTokenExpiration.getTime())
     ) {
-      const body: AccessTokenQuery = {
-        client_id: this.clientId,
-        client_secret: this.clientSecret,
-        ...(this.refreshToken
-          ? {
-              grant_type: 'refresh_token',
-              refresh_token: this.refreshToken,
-            }
-          : {
-              grant_type: 'client_credentials',
-              scope: this.scopes!.join(' '),
-            }),
-      }
-
-      try {
-        const expiration = new Date()
-
-        const {data} = await axios.post<AccessTokenData>('/o2/token', body)
-
-        expiration.setSeconds(expiration.getSeconds() + data.expires_in)
-
-        this.#accessToken = data.access_token
-        this.#accessTokenExpiration = expiration
-      } catch (error: unknown) {
-        if (error instanceof AxiosError) {
-          throw new SellingPartnerApiAuthError(error)
-        }
-
-        throw error
-      }
+      return this.#accessToken
     }
 
-    return this.#accessToken
+    // Deduplicate concurrent calls: share the same in-flight request
+    if (this.#pendingTokenRequest) {
+      return this.#pendingTokenRequest
+    }
+
+    this.#pendingTokenRequest = this.#refreshAccessToken()
+
+    try {
+      return await this.#pendingTokenRequest
+    } finally {
+      this.#pendingTokenRequest = undefined
+    }
+  }
+
+  async #refreshAccessToken() {
+    const body: AccessTokenQuery = {
+      client_id: this.clientId,
+      client_secret: this.clientSecret,
+      ...(this.refreshToken
+        ? {
+            grant_type: 'refresh_token',
+            refresh_token: this.refreshToken,
+          }
+        : {
+            grant_type: 'client_credentials',
+            scope: this.scopes!.join(' '),
+          }),
+    }
+
+    try {
+      const expiration = new Date()
+
+      const {data} = await axios.post<AccessTokenData>('/o2/token', body)
+
+      expiration.setSeconds(expiration.getSeconds() + data.expires_in)
+
+      this.#accessToken = data.access_token
+      this.#accessTokenExpiration = expiration
+
+      return data.access_token
+    } catch (error: unknown) {
+      if (error instanceof AxiosError) {
+        throw new SellingPartnerApiAuthError(error)
+      }
+
+      throw error
+    }
   }
 
   /**

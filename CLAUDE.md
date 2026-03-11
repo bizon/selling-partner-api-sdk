@@ -102,9 +102,9 @@ pnpm codegen schemas      # generate schemas only
 │    └── extends generated API class                  │
 ├─────────────────────────────────────────────────────┤
 │  @sp-api-sdk/common                                 │
-│    ├── createAxiosInstance (rate limiting, logging)  │
+│    ├── createAxiosInstance (rate limiting, logging) │
 │    ├── regions (NA, EU, FE endpoints)               │
-│    └── SellingPartnerApiError                        │
+│    └── SellingPartnerApiError                       │
 ├─────────────────────────────────────────────────────┤
 │  @sp-api-sdk/auth                                   │
 │    └── SellingPartnerApiAuth (LWA OAuth tokens)     │

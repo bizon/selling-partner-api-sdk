@@ -18,10 +18,7 @@ import {renderTemplate} from './utils/render-template.js'
 import {runCommand} from './utils/run-command.js'
 import {replaceAllTags} from './utils/tags.js'
 
-const GRANTLESS_APIS = [
-  {name: 'notifications-api-v1', scope: 'NOTIFICATIONS'},
-  {name: 'authorization-api-v1', scope: 'MIGRATION'},
-]
+const GRANTLESS_APIS = [{name: 'notifications-api-v1', scope: 'NOTIFICATIONS'}]
 
 interface RateLimit {
   method: string
@@ -34,7 +31,7 @@ interface RateLimit {
 async function readPackageVersion(path: string) {
   try {
     const {default: packageJson} = await import(`../${path}/package.json`, {
-      assert: {type: 'json'},
+      with: {type: 'json'},
     })
     return (packageJson as PackageJson).version
   } catch {
@@ -44,7 +41,7 @@ async function readPackageVersion(path: string) {
 
 async function getAxiosVersion() {
   const {default: packageJson} = await import('../packages/common/package.json', {
-    assert: {type: 'json'},
+    with: {type: 'json'},
   })
 
   return packageJson.dependencies.axios

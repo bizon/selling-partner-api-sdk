@@ -1,5 +1,3 @@
-#!/usr/bin/env ts-node
-
 import fs from 'node:fs/promises'
 import process from 'node:process'
 
@@ -15,26 +13,20 @@ if (generators.size === 0) {
   generators.add('schemas')
 }
 
-;(async () => {
-  await fs.rm('selling-partner-api-models', {recursive: true, force: true})
-  await runCommand('git clone https://github.com/amzn/selling-partner-api-models')
+await fs.rm('selling-partner-api-models', {recursive: true, force: true})
+await runCommand('git clone https://github.com/amzn/selling-partner-api-models')
 
-  if (generators.has('clients')) {
-    console.info('Generating clients…')
-    await generateClients()
-    await runCommand('pnpm install --no-frozen-lockfile')
-    await runCommand('pnpm --filter "./clients/**" xo --fix')
-  }
+if (generators.has('clients')) {
+  console.info('Generating clients…')
+  await generateClients()
+  await runCommand('pnpm install --no-frozen-lockfile')
+  await runCommand('pnpm --filter "./clients/**" xo --fix')
+}
 
-  if (generators.has('schemas')) {
-    console.info('Generating schemas…')
-    await generateSchemas()
-    await runCommand('pnpm --filter schemas xo --fix')
-  }
+if (generators.has('schemas')) {
+  console.info('Generating schemas…')
+  await generateSchemas()
+  await runCommand('pnpm --filter schemas xo --fix')
+}
 
-  await fs.rm('selling-partner-api-models', {recursive: true})
-  // eslint-disable-next-line unicorn/prefer-top-level-await
-})().catch((error: unknown) => {
-  console.log(error)
-  process.exit(1)
-})
+await fs.rm('selling-partner-api-models', {recursive: true})

@@ -135,15 +135,18 @@ export async function generateSchemas() {
     cwd: prefix,
   })
 
-  const generatedDirectories: string[] = []
+  const results = await pMap(
+    schemaDirectories,
+    async (schemaDirectory) => {
+      const length = await generateDirectorySchemas(`${prefix}/${schemaDirectory}`, schemaDirectory)
+      return length > 0 ? schemaDirectory : undefined
+    },
+    {concurrency: os.cpus().length},
+  )
 
-  for (const schemaDirectory of schemaDirectories) {
-    // eslint-disable-next-line no-await-in-loop
-    const length = await generateDirectorySchemas(`${prefix}/${schemaDirectory}`, schemaDirectory)
-    if (length > 0) {
-      generatedDirectories.push(schemaDirectory)
-    }
-  }
+  const generatedDirectories = results.filter(
+    (directory): directory is string => directory !== undefined,
+  )
 
   await generateIndex(generatedDirectories, 'packages/schemas/src')
 }

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.24](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@2.2.23...@sp-api-sdk/auth@2.2.24) (2026-03-11)
+
+### Bug Fixes
+
+* **auth:** deduplicate concurrent token requests ([#1713](https://github.com/bizon/selling-partner-api-sdk/issues/1713)) ([1d301fc](https://github.com/bizon/selling-partner-api-sdk/commit/1d301fc881627f1d92d55189a11f00ab30290c65))
+
 ## [2.2.23](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@2.2.22...@sp-api-sdk/auth@2.2.23) (2026-03-02)
 
 **Note:** Version bump only for package @sp-api-sdk/auth

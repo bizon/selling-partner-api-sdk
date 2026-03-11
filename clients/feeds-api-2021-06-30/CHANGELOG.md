@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.14](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/feeds-api-2021-06-30@3.2.13...@sp-api-sdk/feeds-api-2021-06-30@3.2.14) (2026-03-11)
+
+**Note:** Version bump only for package @sp-api-sdk/feeds-api-2021-06-30
+
 ## [3.2.13](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/feeds-api-2021-06-30@3.2.12...@sp-api-sdk/feeds-api-2021-06-30@3.2.13) (2026-03-02)
 
 **Note:** Version bump only for package @sp-api-sdk/feeds-api-2021-06-30

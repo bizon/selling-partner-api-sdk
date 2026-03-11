@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/generator@0.20.14...@sp-api-sdk/generator@0.21.0) (2026-03-11)
+
+### Features
+
+* **codegen:** clean up and modernize ([#1721](https://github.com/bizon/selling-partner-api-sdk/issues/1721)) ([74bfe9f](https://github.com/bizon/selling-partner-api-sdk/commit/74bfe9f5f48b4d41603b120a36cb8dd8c458fe54))
+
 ## [0.20.14](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/generator@0.20.13...@sp-api-sdk/generator@0.20.14) (2026-03-02)
 
 **Note:** Version bump only for package @sp-api-sdk/generator

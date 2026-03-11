@@ -136,5 +136,54 @@ describe('src/index', () => {
     it('should return a cached access token', async () => {
       await expect(sharedAuth.getAccessToken()).resolves.toEqual('ACCESS_TOKEN')
     })
+
+    it('should only make one HTTP request when called concurrently', async () => {
+      const auth = new SellingPartnerApiAuth({
+        clientId: 'CLIENT_ID',
+        clientSecret: 'CLIENT_SECRET',
+        refreshToken: 'REFRESH_TOKEN',
+      })
+
+      const scope = nock('https://api.amazon.com').post('/auth/o2/token').reply(200, {
+        access_token: 'CONCURRENT_TOKEN',
+        token_type: 'access_token',
+        expires_in: 3600,
+      })
+
+      const [token1, token2, token3] = await Promise.all([
+        auth.getAccessToken(),
+        auth.getAccessToken(),
+        auth.getAccessToken(),
+      ])
+
+      expect(token1).toBe('CONCURRENT_TOKEN')
+      expect(token2).toBe('CONCURRENT_TOKEN')
+      expect(token3).toBe('CONCURRENT_TOKEN')
+      expect(scope.isDone()).toBe(true)
+    })
+
+    it('should allow retrying after a concurrent failure', async () => {
+      const auth = new SellingPartnerApiAuth({
+        clientId: 'CLIENT_ID',
+        clientSecret: 'CLIENT_SECRET',
+        refreshToken: 'REFRESH_TOKEN',
+      })
+
+      nock('https://api.amazon.com').post('/auth/o2/token').reply(500, {error: 'server error'})
+
+      const results = await Promise.allSettled([auth.getAccessToken(), auth.getAccessToken()])
+
+      expect(results[0].status).toBe('rejected')
+      expect(results[1].status).toBe('rejected')
+
+      // Subsequent call should retry (not return stale rejection)
+      nock('https://api.amazon.com').post('/auth/o2/token').reply(200, {
+        access_token: 'RECOVERED_TOKEN',
+        token_type: 'access_token',
+        expires_in: 3600,
+      })
+
+      await expect(auth.getAccessToken()).resolves.toBe('RECOVERED_TOKEN')
+    })
   })
 })

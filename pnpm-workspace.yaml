@@ -3,6 +3,3 @@ packages:
   - "packages/*"
   - "clients/*"
   - "internal/*"
-
-overrides:
-  xo>@typescript-eslint/parser: "^8"

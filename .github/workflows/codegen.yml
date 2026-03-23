@@ -15,7 +15,7 @@ jobs:
         with:
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v5
       - uses: actions/setup-node@v6
         with:
           node-version-file: .node-version
@@ -57,7 +57,7 @@ jobs:
         with:
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v5
       - uses: actions/setup-node@v6
         with:
           node-version-file: .node-version

@@ -20,7 +20,7 @@
 
 export const ParkingCostType = {
     Free: 'Free',
-    Other: 'Other'
+    Other: 'Other',
 } as const;
 
 export type ParkingCostType = typeof ParkingCostType[keyof typeof ParkingCostType];

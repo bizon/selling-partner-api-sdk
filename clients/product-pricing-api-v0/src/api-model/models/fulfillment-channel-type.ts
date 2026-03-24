@@ -20,7 +20,7 @@
 
 export const FulfillmentChannelType = {
     Amazon: 'Amazon',
-    Merchant: 'Merchant'
+    Merchant: 'Merchant',
 } as const;
 
 export type FulfillmentChannelType = typeof FulfillmentChannelType[keyof typeof FulfillmentChannelType];

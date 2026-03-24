@@ -21,7 +21,7 @@
 export const CompetitiveSummaryIncludedData = {
     FeaturedBuyingOptions: 'featuredBuyingOptions',
     ReferencePrices: 'referencePrices',
-    LowestPricedOffers: 'lowestPricedOffers'
+    LowestPricedOffers: 'lowestPricedOffers',
 } as const;
 
 export type CompetitiveSummaryIncludedData = typeof CompetitiveSummaryIncludedData[keyof typeof CompetitiveSummaryIncludedData];

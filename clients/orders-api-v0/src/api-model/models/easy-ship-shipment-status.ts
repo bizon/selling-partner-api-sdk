@@ -34,7 +34,7 @@ export const EasyShipShipmentStatus = {
     ReturnedToSeller: 'ReturnedToSeller',
     Lost: 'Lost',
     OutForDelivery: 'OutForDelivery',
-    Damaged: 'Damaged'
+    Damaged: 'Damaged',
 } as const;
 
 export type EasyShipShipmentStatus = typeof EasyShipShipmentStatus[keyof typeof EasyShipShipmentStatus];

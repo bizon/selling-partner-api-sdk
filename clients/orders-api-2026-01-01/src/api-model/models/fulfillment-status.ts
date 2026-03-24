@@ -25,7 +25,7 @@ export const FulfillmentStatus = {
     PartiallyShipped: 'PARTIALLY_SHIPPED',
     Shipped: 'SHIPPED',
     Cancelled: 'CANCELLED',
-    Unfulfillable: 'UNFULFILLABLE'
+    Unfulfillable: 'UNFULFILLABLE',
 } as const;
 
 export type FulfillmentStatus = typeof FulfillmentStatus[keyof typeof FulfillmentStatus];

@@ -19,7 +19,7 @@
  */
 
 export const AllOwnersConstraint = {
-    MustMatch: 'MUST_MATCH'
+    MustMatch: 'MUST_MATCH',
 } as const;
 
 export type AllOwnersConstraint = typeof AllOwnersConstraint[keyof typeof AllOwnersConstraint];

@@ -23,7 +23,7 @@ export interface EventFilterAllOf {
 
 export const EventFilterAllOfEventFilterTypeEnum = {
     AnyOfferChanged: 'ANY_OFFER_CHANGED',
-    OrderChange: 'ORDER_CHANGE'
+    OrderChange: 'ORDER_CHANGE',
 } as const;
 
 export type EventFilterAllOfEventFilterTypeEnum = typeof EventFilterAllOfEventFilterTypeEnum[keyof typeof EventFilterAllOfEventFilterTypeEnum];

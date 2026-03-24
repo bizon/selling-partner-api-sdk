@@ -61,7 +61,7 @@ export const QueryProcessingStatusEnum = {
     Done: 'DONE',
     Fatal: 'FATAL',
     InProgress: 'IN_PROGRESS',
-    InQueue: 'IN_QUEUE'
+    InQueue: 'IN_QUEUE',
 } as const;
 
 export type QueryProcessingStatusEnum = typeof QueryProcessingStatusEnum[keyof typeof QueryProcessingStatusEnum];

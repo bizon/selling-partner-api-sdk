@@ -30,7 +30,7 @@ export interface Dimension {
 
 export const DimensionDimensionUnitEnum = {
     Cm: 'CM',
-    M: 'M'
+    M: 'M',
 } as const;
 
 export type DimensionDimensionUnitEnum = typeof DimensionDimensionUnitEnum[keyof typeof DimensionDimensionUnitEnum];

@@ -40,7 +40,7 @@ export const TaxDetailsTypeEnum = {
     Pst: 'PST',
     Total: 'TOTAL',
     Tva: 'TVA',
-    Vat: 'VAT'
+    Vat: 'VAT',
 } as const;
 
 export type TaxDetailsTypeEnum = typeof TaxDetailsTypeEnum[keyof typeof TaxDetailsTypeEnum];

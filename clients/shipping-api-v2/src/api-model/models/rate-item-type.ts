@@ -21,7 +21,7 @@
 export const RateItemType = {
     Mandatory: 'MANDATORY',
     Optional: 'OPTIONAL',
-    Included: 'INCLUDED'
+    Included: 'INCLUDED',
 } as const;
 
 export type RateItemType = typeof RateItemType[keyof typeof RateItemType];

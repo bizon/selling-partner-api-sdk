@@ -68,7 +68,7 @@ export const PredefinedPackageDimensions = {
     UspsRegionalRateBoxB2: 'USPS_RegionalRateBoxB2',
     UspsRegionalRateBoxC: 'USPS_RegionalRateBoxC',
     UspsSmallFlatRateBox: 'USPS_SmallFlatRateBox',
-    UspsSmallFlatRateEnvelope: 'USPS_SmallFlatRateEnvelope'
+    UspsSmallFlatRateEnvelope: 'USPS_SmallFlatRateEnvelope',
 } as const;
 
 export type PredefinedPackageDimensions = typeof PredefinedPackageDimensions[keyof typeof PredefinedPackageDimensions];

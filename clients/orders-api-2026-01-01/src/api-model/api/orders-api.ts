@@ -333,7 +333,7 @@ export const GetOrderIncludedDataEnum = {
     Promotion: 'PROMOTION',
     Cancellation: 'CANCELLATION',
     Fulfillment: 'FULFILLMENT',
-    Packages: 'PACKAGES'
+    Packages: 'PACKAGES',
 } as const;
 export type GetOrderIncludedDataEnum = typeof GetOrderIncludedDataEnum[keyof typeof GetOrderIncludedDataEnum];
 export const SearchOrdersFulfillmentStatusesEnum = {
@@ -343,12 +343,12 @@ export const SearchOrdersFulfillmentStatusesEnum = {
     PartiallyShipped: 'PARTIALLY_SHIPPED',
     Shipped: 'SHIPPED',
     Cancelled: 'CANCELLED',
-    Unfulfillable: 'UNFULFILLABLE'
+    Unfulfillable: 'UNFULFILLABLE',
 } as const;
 export type SearchOrdersFulfillmentStatusesEnum = typeof SearchOrdersFulfillmentStatusesEnum[keyof typeof SearchOrdersFulfillmentStatusesEnum];
 export const SearchOrdersFulfilledByEnum = {
     Merchant: 'MERCHANT',
-    Amazon: 'AMAZON'
+    Amazon: 'AMAZON',
 } as const;
 export type SearchOrdersFulfilledByEnum = typeof SearchOrdersFulfilledByEnum[keyof typeof SearchOrdersFulfilledByEnum];
 export const SearchOrdersIncludedDataEnum = {
@@ -359,6 +359,6 @@ export const SearchOrdersIncludedDataEnum = {
     Promotion: 'PROMOTION',
     Cancellation: 'CANCELLATION',
     Fulfillment: 'FULFILLMENT',
-    Packages: 'PACKAGES'
+    Packages: 'PACKAGES',
 } as const;
 export type SearchOrdersIncludedDataEnum = typeof SearchOrdersIncludedDataEnum[keyof typeof SearchOrdersIncludedDataEnum];

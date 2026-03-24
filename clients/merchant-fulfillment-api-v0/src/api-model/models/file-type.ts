@@ -21,7 +21,7 @@
 export const FileType = {
     ApplicationPdf: 'application/pdf',
     ApplicationZpl: 'application/zpl',
-    ImagePng: 'image/png'
+    ImagePng: 'image/png',
 } as const;
 
 export type FileType = typeof FileType[keyof typeof FileType];

@@ -39,7 +39,7 @@ export interface Stop {
 export const StopFunctionCodeEnum = {
     PortOfDischarge: 'PortOfDischarge',
     FreightPayableAt: 'FreightPayableAt',
-    PortOfLoading: 'PortOfLoading'
+    PortOfLoading: 'PortOfLoading',
 } as const;
 
 export type StopFunctionCodeEnum = typeof StopFunctionCodeEnum[keyof typeof StopFunctionCodeEnum];

@@ -19,7 +19,7 @@
  */
 
 export const CarrierId = {
-    Swa: 'SWA'
+    Swa: 'SWA',
 } as const;
 
 export type CarrierId = typeof CarrierId[keyof typeof CarrierId];

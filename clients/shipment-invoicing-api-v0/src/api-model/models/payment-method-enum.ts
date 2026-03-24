@@ -24,7 +24,7 @@ export const PaymentMethodEnum = {
     Pix: 'Pix',
     BankSlip: 'BankSlip',
     GiftCard: 'GiftCard',
-    Other: 'Other'
+    Other: 'Other',
 } as const;
 
 export type PaymentMethodEnum = typeof PaymentMethodEnum[keyof typeof PaymentMethodEnum];

@@ -19,7 +19,7 @@
  */
 
 export const TaxType = {
-    Gst: 'GST'
+    Gst: 'GST',
 } as const;
 
 export type TaxType = typeof TaxType[keyof typeof TaxType];

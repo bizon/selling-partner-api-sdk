@@ -42,7 +42,7 @@ export interface ShippingLabel {
 
 export const ShippingLabelLabelFormatEnum = {
     Png: 'PNG',
-    Zpl: 'ZPL'
+    Zpl: 'ZPL',
 } as const;
 
 export type ShippingLabelLabelFormatEnum = typeof ShippingLabelLabelFormatEnum[keyof typeof ShippingLabelLabelFormatEnum];

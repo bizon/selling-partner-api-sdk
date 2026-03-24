@@ -22,7 +22,7 @@ export const PackageSubStatus = {
     OutForDelivery: 'OUT_FOR_DELIVERY',
     Delivered: 'DELIVERED',
     NotDelivered: 'NOT_DELIVERED',
-    Undeliverable: 'UNDELIVERABLE'
+    Undeliverable: 'UNDELIVERABLE',
 } as const;
 
 export type PackageSubStatus = typeof PackageSubStatus[keyof typeof PackageSubStatus];

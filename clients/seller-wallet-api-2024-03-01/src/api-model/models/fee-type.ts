@@ -21,7 +21,7 @@
 export const FeeType = {
     MiscellaneousFee: 'MISCELLANEOUS_FEE',
     Tax: 'TAX',
-    TransactionFee: 'TRANSACTION_FEE'
+    TransactionFee: 'TRANSACTION_FEE',
 } as const;
 
 export type FeeType = typeof FeeType[keyof typeof FeeType];

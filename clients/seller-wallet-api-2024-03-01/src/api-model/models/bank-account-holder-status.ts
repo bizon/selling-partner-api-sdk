@@ -22,7 +22,7 @@ export const BankAccountHolderStatus = {
     Active: 'ACTIVE',
     Inactive: 'INACTIVE',
     UnderReview: 'UNDER_REVIEW',
-    VerificationFailed: 'VERIFICATION_FAILED'
+    VerificationFailed: 'VERIFICATION_FAILED',
 } as const;
 
 export type BankAccountHolderStatus = typeof BankAccountHolderStatus[keyof typeof BankAccountHolderStatus];

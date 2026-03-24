@@ -20,7 +20,7 @@
 
 export const RateDirection = {
     Buy: 'BUY',
-    Sell: 'SELL'
+    Sell: 'SELL',
 } as const;
 
 export type RateDirection = typeof RateDirection[keyof typeof RateDirection];

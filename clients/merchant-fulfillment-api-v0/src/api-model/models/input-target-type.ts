@@ -20,7 +20,7 @@
 
 export const InputTargetType = {
     ShipmentLevel: 'SHIPMENT_LEVEL',
-    ItemLevel: 'ITEM_LEVEL'
+    ItemLevel: 'ITEM_LEVEL',
 } as const;
 
 export type InputTargetType = typeof InputTargetType[keyof typeof InputTargetType];

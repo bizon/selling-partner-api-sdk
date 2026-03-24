@@ -38,7 +38,7 @@ export interface ModelError {
 
 export const ModelErrorErrorLevelEnum = {
     Error: 'ERROR',
-    Warning: 'WARNING'
+    Warning: 'WARNING',
 } as const;
 
 export type ModelErrorErrorLevelEnum = typeof ModelErrorErrorLevelEnum[keyof typeof ModelErrorErrorLevelEnum];

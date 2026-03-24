@@ -50,7 +50,7 @@ export const ChargeDetailsTypeEnum = {
     SpecialHandlingService: 'SpecialHandlingService',
     CollectionAndRecyclingService: 'CollectionAndRecyclingService',
     EnvironmentalProtectionService: 'EnvironmentalProtectionService',
-    TaxCollectedAtSource: 'TaxCollectedAtSource'
+    TaxCollectedAtSource: 'TaxCollectedAtSource',
 } as const;
 
 export type ChargeDetailsTypeEnum = typeof ChargeDetailsTypeEnum[keyof typeof ChargeDetailsTypeEnum];

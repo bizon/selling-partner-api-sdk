@@ -51,13 +51,13 @@ export const AccountBusinessTypeEnum = {
     PrivateLimited: 'PRIVATE_LIMITED',
     SoleProprietorship: 'SOLE_PROPRIETORSHIP',
     StateOwned: 'STATE_OWNED',
-    Individual: 'INDIVIDUAL'
+    Individual: 'INDIVIDUAL',
 } as const;
 
 export type AccountBusinessTypeEnum = typeof AccountBusinessTypeEnum[keyof typeof AccountBusinessTypeEnum];
 export const AccountSellingPlanEnum = {
     Professional: 'PROFESSIONAL',
-    Individual: 'INDIVIDUAL'
+    Individual: 'INDIVIDUAL',
 } as const;
 
 export type AccountSellingPlanEnum = typeof AccountSellingPlanEnum[keyof typeof AccountSellingPlanEnum];

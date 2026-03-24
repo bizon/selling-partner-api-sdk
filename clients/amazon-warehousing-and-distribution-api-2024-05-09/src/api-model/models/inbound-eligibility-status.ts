@@ -20,7 +20,7 @@
 
 export const InboundEligibilityStatus = {
     Eligible: 'ELIGIBLE',
-    Ineligible: 'INELIGIBLE'
+    Ineligible: 'INELIGIBLE',
 } as const;
 
 export type InboundEligibilityStatus = typeof InboundEligibilityStatus[keyof typeof InboundEligibilityStatus];

@@ -29,7 +29,7 @@ export interface SchemaLinkLink {
 }
 
 export const SchemaLinkLinkVerbEnum = {
-    Get: 'GET'
+    Get: 'GET',
 } as const;
 
 export type SchemaLinkLinkVerbEnum = typeof SchemaLinkLinkVerbEnum[keyof typeof SchemaLinkLinkVerbEnum];

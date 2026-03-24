@@ -42,7 +42,7 @@ export const ChargeChargeTypeEnum = {
     Shipping: 'SHIPPING',
     GiftWrap: 'GIFT_WRAP',
     Total: 'TOTAL',
-    Other: 'OTHER'
+    Other: 'OTHER',
 } as const;
 
 export type ChargeChargeTypeEnum = typeof ChargeChargeTypeEnum[keyof typeof ChargeChargeTypeEnum];

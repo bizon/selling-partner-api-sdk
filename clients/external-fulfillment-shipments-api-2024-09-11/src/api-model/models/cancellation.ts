@@ -39,7 +39,7 @@ export interface Cancellation {
 export const CancellationCancellationTypeEnum = {
     SellerRejected: 'SELLER_REJECTED',
     MarketplaceCancelled: 'MARKETPLACE_CANCELLED',
-    SystemCancelled: 'SYSTEM_CANCELLED'
+    SystemCancelled: 'SYSTEM_CANCELLED',
 } as const;
 
 export type CancellationCancellationTypeEnum = typeof CancellationCancellationTypeEnum[keyof typeof CancellationCancellationTypeEnum];

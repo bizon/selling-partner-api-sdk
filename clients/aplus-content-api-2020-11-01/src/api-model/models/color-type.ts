@@ -20,7 +20,7 @@
 
 export const ColorType = {
     Dark: 'DARK',
-    Light: 'LIGHT'
+    Light: 'LIGHT',
 } as const;
 
 export type ColorType = typeof ColorType[keyof typeof ColorType];

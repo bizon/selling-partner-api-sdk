@@ -23,7 +23,7 @@ export const ElectronicInvoiceStatus = {
     NotFound: 'NotFound',
     Processing: 'Processing',
     Errored: 'Errored',
-    Accepted: 'Accepted'
+    Accepted: 'Accepted',
 } as const;
 
 export type ElectronicInvoiceStatus = typeof ElectronicInvoiceStatus[keyof typeof ElectronicInvoiceStatus];

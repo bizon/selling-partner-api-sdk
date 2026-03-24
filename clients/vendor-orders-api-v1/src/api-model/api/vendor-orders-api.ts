@@ -632,39 +632,39 @@ export class VendorOrdersApi extends BaseAPI {
 
 export const GetPurchaseOrdersSortOrderEnum = {
     Asc: 'ASC',
-    Desc: 'DESC'
+    Desc: 'DESC',
 } as const;
 export type GetPurchaseOrdersSortOrderEnum = typeof GetPurchaseOrdersSortOrderEnum[keyof typeof GetPurchaseOrdersSortOrderEnum];
 export const GetPurchaseOrdersPoItemStateEnum = {
-    Cancelled: 'Cancelled'
+    Cancelled: 'Cancelled',
 } as const;
 export type GetPurchaseOrdersPoItemStateEnum = typeof GetPurchaseOrdersPoItemStateEnum[keyof typeof GetPurchaseOrdersPoItemStateEnum];
 export const GetPurchaseOrdersPurchaseOrderStateEnum = {
     New: 'New',
     Acknowledged: 'Acknowledged',
-    Closed: 'Closed'
+    Closed: 'Closed',
 } as const;
 export type GetPurchaseOrdersPurchaseOrderStateEnum = typeof GetPurchaseOrdersPurchaseOrderStateEnum[keyof typeof GetPurchaseOrdersPurchaseOrderStateEnum];
 export const GetPurchaseOrdersStatusSortOrderEnum = {
     Asc: 'ASC',
-    Desc: 'DESC'
+    Desc: 'DESC',
 } as const;
 export type GetPurchaseOrdersStatusSortOrderEnum = typeof GetPurchaseOrdersStatusSortOrderEnum[keyof typeof GetPurchaseOrdersStatusSortOrderEnum];
 export const GetPurchaseOrdersStatusPurchaseOrderStatusEnum = {
     Open: 'OPEN',
-    Closed: 'CLOSED'
+    Closed: 'CLOSED',
 } as const;
 export type GetPurchaseOrdersStatusPurchaseOrderStatusEnum = typeof GetPurchaseOrdersStatusPurchaseOrderStatusEnum[keyof typeof GetPurchaseOrdersStatusPurchaseOrderStatusEnum];
 export const GetPurchaseOrdersStatusItemConfirmationStatusEnum = {
     Accepted: 'ACCEPTED',
     PartiallyAccepted: 'PARTIALLY_ACCEPTED',
     Rejected: 'REJECTED',
-    Unconfirmed: 'UNCONFIRMED'
+    Unconfirmed: 'UNCONFIRMED',
 } as const;
 export type GetPurchaseOrdersStatusItemConfirmationStatusEnum = typeof GetPurchaseOrdersStatusItemConfirmationStatusEnum[keyof typeof GetPurchaseOrdersStatusItemConfirmationStatusEnum];
 export const GetPurchaseOrdersStatusItemReceiveStatusEnum = {
     NotReceived: 'NOT_RECEIVED',
     PartiallyReceived: 'PARTIALLY_RECEIVED',
-    Received: 'RECEIVED'
+    Received: 'RECEIVED',
 } as const;
 export type GetPurchaseOrdersStatusItemReceiveStatusEnum = typeof GetPurchaseOrdersStatusItemReceiveStatusEnum[keyof typeof GetPurchaseOrdersStatusItemReceiveStatusEnum];

@@ -38,7 +38,7 @@ export interface Reason {
 export const ReasonReasonCodeEnum = {
     ApprovalRequired: 'APPROVAL_REQUIRED',
     AsinNotFound: 'ASIN_NOT_FOUND',
-    NotEligible: 'NOT_ELIGIBLE'
+    NotEligible: 'NOT_ELIGIBLE',
 } as const;
 
 export type ReasonReasonCodeEnum = typeof ReasonReasonCodeEnum[keyof typeof ReasonReasonCodeEnum];

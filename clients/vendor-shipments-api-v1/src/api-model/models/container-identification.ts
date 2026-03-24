@@ -33,7 +33,7 @@ export const ContainerIdentificationContainerIdentificationTypeEnum = {
     Amzncc: 'AMZNCC',
     Gtin: 'GTIN',
     Bps: 'BPS',
-    Cid: 'CID'
+    Cid: 'CID',
 } as const;
 
 export type ContainerIdentificationContainerIdentificationTypeEnum = typeof ContainerIdentificationContainerIdentificationTypeEnum[keyof typeof ContainerIdentificationContainerIdentificationTypeEnum];

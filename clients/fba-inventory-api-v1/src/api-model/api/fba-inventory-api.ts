@@ -474,6 +474,6 @@ export class FbaInventoryApi extends BaseAPI {
 }
 
 export const GetInventorySummariesGranularityTypeEnum = {
-    Marketplace: 'Marketplace'
+    Marketplace: 'Marketplace',
 } as const;
 export type GetInventorySummariesGranularityTypeEnum = typeof GetInventorySummariesGranularityTypeEnum[keyof typeof GetInventorySummariesGranularityTypeEnum];

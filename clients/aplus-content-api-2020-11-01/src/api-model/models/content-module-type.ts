@@ -33,7 +33,7 @@ export const ContentModuleType = {
     StandardSingleSideImage: 'STANDARD_SINGLE_SIDE_IMAGE',
     StandardTechSpecs: 'STANDARD_TECH_SPECS',
     StandardText: 'STANDARD_TEXT',
-    StandardThreeImageText: 'STANDARD_THREE_IMAGE_TEXT'
+    StandardThreeImageText: 'STANDARD_THREE_IMAGE_TEXT',
 } as const;
 
 export type ContentModuleType = typeof ContentModuleType[keyof typeof ContentModuleType];

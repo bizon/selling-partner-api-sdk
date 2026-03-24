@@ -31,7 +31,7 @@ export interface ResearchingQuantityEntry {
 export const ResearchingQuantityEntryNameEnum = {
     ResearchingQuantityInShortTerm: 'researchingQuantityInShortTerm',
     ResearchingQuantityInMidTerm: 'researchingQuantityInMidTerm',
-    ResearchingQuantityInLongTerm: 'researchingQuantityInLongTerm'
+    ResearchingQuantityInLongTerm: 'researchingQuantityInLongTerm',
 } as const;
 
 export type ResearchingQuantityEntryNameEnum = typeof ResearchingQuantityEntryNameEnum[keyof typeof ResearchingQuantityEntryNameEnum];

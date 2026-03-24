@@ -23,7 +23,7 @@ export const LabelFormat = {
     Png: 'PNG',
     Zpl203: 'ZPL203',
     Zpl300: 'ZPL300',
-    ShippingServiceDefault: 'ShippingServiceDefault'
+    ShippingServiceDefault: 'ShippingServiceDefault',
 } as const;
 
 export type LabelFormat = typeof LabelFormat[keyof typeof LabelFormat];

@@ -20,7 +20,7 @@
 
 export const Priority = {
     High: 'HIGH',
-    Low: 'LOW'
+    Low: 'LOW',
 } as const;
 
 export type Priority = typeof Priority[keyof typeof Priority];

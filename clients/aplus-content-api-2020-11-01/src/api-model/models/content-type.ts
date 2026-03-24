@@ -20,7 +20,7 @@
 
 export const ContentType = {
     Ebc: 'EBC',
-    Emc: 'EMC'
+    Emc: 'EMC',
 } as const;
 
 export type ContentType = typeof ContentType[keyof typeof ContentType];

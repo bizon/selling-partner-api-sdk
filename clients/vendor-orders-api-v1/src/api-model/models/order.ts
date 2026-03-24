@@ -35,7 +35,7 @@ export interface Order {
 export const OrderPurchaseOrderStateEnum = {
     New: 'New',
     Acknowledged: 'Acknowledged',
-    Closed: 'Closed'
+    Closed: 'Closed',
 } as const;
 
 export type OrderPurchaseOrderStateEnum = typeof OrderPurchaseOrderStateEnum[keyof typeof OrderPurchaseOrderStateEnum];

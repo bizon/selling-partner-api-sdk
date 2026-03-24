@@ -36,7 +36,7 @@ export const MoneyUnitOfMeasureEnum = {
     Pounds: 'POUNDS',
     Ounces: 'OUNCES',
     Grams: 'GRAMS',
-    Kilograms: 'KILOGRAMS'
+    Kilograms: 'KILOGRAMS',
 } as const;
 
 export type MoneyUnitOfMeasureEnum = typeof MoneyUnitOfMeasureEnum[keyof typeof MoneyUnitOfMeasureEnum];

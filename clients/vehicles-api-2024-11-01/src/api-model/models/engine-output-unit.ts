@@ -20,7 +20,7 @@
 
 export const EngineOutputUnit = {
     Kilowatt: 'KILOWATT',
-    Horsepower: 'HORSEPOWER'
+    Horsepower: 'HORSEPOWER',
 } as const;
 
 export type EngineOutputUnit = typeof EngineOutputUnit[keyof typeof EngineOutputUnit];

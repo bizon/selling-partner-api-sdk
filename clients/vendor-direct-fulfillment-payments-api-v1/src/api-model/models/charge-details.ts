@@ -42,7 +42,7 @@ export const ChargeDetailsTypeEnum = {
     Packaging: 'PACKAGING',
     Loading: 'LOADING',
     Freightout: 'FREIGHTOUT',
-    TaxCollectedAtSource: 'TAX_COLLECTED_AT_SOURCE'
+    TaxCollectedAtSource: 'TAX_COLLECTED_AT_SOURCE',
 } as const;
 
 export type ChargeDetailsTypeEnum = typeof ChargeDetailsTypeEnum[keyof typeof ChargeDetailsTypeEnum];

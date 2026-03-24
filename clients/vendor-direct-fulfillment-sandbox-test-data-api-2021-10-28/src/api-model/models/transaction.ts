@@ -35,7 +35,7 @@ export interface Transaction {
 export const TransactionStatusEnum = {
     Failure: 'FAILURE',
     Processing: 'PROCESSING',
-    Success: 'SUCCESS'
+    Success: 'SUCCESS',
 } as const;
 
 export type TransactionStatusEnum = typeof TransactionStatusEnum[keyof typeof TransactionStatusEnum];

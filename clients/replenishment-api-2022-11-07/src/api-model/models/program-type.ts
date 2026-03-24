@@ -19,7 +19,7 @@
  */
 
 export const ProgramType = {
-    SubscribeAndSave: 'SUBSCRIBE_AND_SAVE'
+    SubscribeAndSave: 'SUBSCRIBE_AND_SAVE',
 } as const;
 
 export type ProgramType = typeof ProgramType[keyof typeof ProgramType];

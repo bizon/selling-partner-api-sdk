@@ -23,7 +23,7 @@ export const ContentBadge = {
     Generated: 'GENERATED',
     Launchpad: 'LAUNCHPAD',
     Premium: 'PREMIUM',
-    Standard: 'STANDARD'
+    Standard: 'STANDARD',
 } as const;
 
 export type ContentBadge = typeof ContentBadge[keyof typeof ContentBadge];

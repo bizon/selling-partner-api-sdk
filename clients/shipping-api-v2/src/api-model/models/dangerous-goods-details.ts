@@ -39,7 +39,7 @@ export interface DangerousGoodsDetails {
 export const DangerousGoodsDetailsPackingGroupEnum = {
     I: 'I',
     Ii: 'II',
-    Iii: 'III'
+    Iii: 'III',
 } as const;
 
 export type DangerousGoodsDetailsPackingGroupEnum = typeof DangerousGoodsDetailsPackingGroupEnum[keyof typeof DangerousGoodsDetailsPackingGroupEnum];
@@ -56,7 +56,7 @@ export const DangerousGoodsDetailsPackingInstructionEnum = {
     Pi969SectionI: 'PI969_SECTION_I',
     Pi969SectionIi: 'PI969_SECTION_II',
     Pi970SectionI: 'PI970_SECTION_I',
-    Pi970SectionIi: 'PI970_SECTION_II'
+    Pi970SectionIi: 'PI970_SECTION_II',
 } as const;
 
 export type DangerousGoodsDetailsPackingInstructionEnum = typeof DangerousGoodsDetailsPackingInstructionEnum[keyof typeof DangerousGoodsDetailsPackingInstructionEnum];

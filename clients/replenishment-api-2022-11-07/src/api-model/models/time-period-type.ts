@@ -20,7 +20,7 @@
 
 export const TimePeriodType = {
     Performance: 'PERFORMANCE',
-    Forecast: 'FORECAST'
+    Forecast: 'FORECAST',
 } as const;
 
 export type TimePeriodType = typeof TimePeriodType[keyof typeof TimePeriodType];

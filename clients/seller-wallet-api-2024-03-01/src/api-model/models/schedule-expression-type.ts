@@ -20,7 +20,7 @@
 
 export const ScheduleExpressionType = {
     Recurring: 'RECURRING',
-    OneTime: 'ONE_TIME'
+    OneTime: 'ONE_TIME',
 } as const;
 
 export type ScheduleExpressionType = typeof ScheduleExpressionType[keyof typeof ScheduleExpressionType];

@@ -110,7 +110,7 @@ export const ShipmentStatusEnum = {
     ShiplabelGenerated: 'SHIPLABEL_GENERATED',
     Cancelled: 'CANCELLED',
     Shipped: 'SHIPPED',
-    Delivered: 'DELIVERED'
+    Delivered: 'DELIVERED',
 } as const;
 
 export type ShipmentStatusEnum = typeof ShipmentStatusEnum[keyof typeof ShipmentStatusEnum];
@@ -128,7 +128,7 @@ export const ShipmentSubStatusEnum = {
     Undeliverable: 'UNDELIVERABLE',
     Lost: 'LOST',
     OutForDelivery: 'OUT_FOR_DELIVERY',
-    Damaged: 'DAMAGED'
+    Damaged: 'DAMAGED',
 } as const;
 
 export type ShipmentSubStatusEnum = typeof ShipmentSubStatusEnum[keyof typeof ShipmentSubStatusEnum];

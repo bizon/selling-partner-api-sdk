@@ -30,7 +30,7 @@ export interface ChargeComponent {
 
 export const ChargeComponentChargeTypeEnum = {
     Tax: 'TAX',
-    Discount: 'DISCOUNT'
+    Discount: 'DISCOUNT',
 } as const;
 
 export type ChargeComponentChargeTypeEnum = typeof ChargeComponentChargeTypeEnum[keyof typeof ChargeComponentChargeTypeEnum];

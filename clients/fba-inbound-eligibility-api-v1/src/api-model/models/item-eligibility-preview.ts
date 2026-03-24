@@ -42,7 +42,7 @@ export interface ItemEligibilityPreview {
 
 export const ItemEligibilityPreviewProgramEnum = {
     Inbound: 'INBOUND',
-    Commingling: 'COMMINGLING'
+    Commingling: 'COMMINGLING',
 } as const;
 
 export type ItemEligibilityPreviewProgramEnum = typeof ItemEligibilityPreviewProgramEnum[keyof typeof ItemEligibilityPreviewProgramEnum];
@@ -86,7 +86,7 @@ export const ItemEligibilityPreviewIneligibilityReasonListEnum = {
     FbaInb0104: 'FBA_INB_0104',
     FbaInb0197: 'FBA_INB_0197',
     FbaInb0342: 'FBA_INB_0342',
-    UnknownInbErrorCode: 'UNKNOWN_INB_ERROR_CODE'
+    UnknownInbErrorCode: 'UNKNOWN_INB_ERROR_CODE',
 } as const;
 
 export type ItemEligibilityPreviewIneligibilityReasonListEnum = typeof ItemEligibilityPreviewIneligibilityReasonListEnum[keyof typeof ItemEligibilityPreviewIneligibilityReasonListEnum];

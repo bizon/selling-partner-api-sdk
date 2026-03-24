@@ -32,7 +32,7 @@ export const PrepCategory = {
     Small: 'SMALL',
     Textile: 'TEXTILE',
     Unknown: 'UNKNOWN',
-    None: 'NONE'
+    None: 'NONE',
 } as const;
 
 export type PrepCategory = typeof PrepCategory[keyof typeof PrepCategory];

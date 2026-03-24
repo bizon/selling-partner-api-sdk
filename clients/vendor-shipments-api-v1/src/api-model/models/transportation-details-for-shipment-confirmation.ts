@@ -39,7 +39,7 @@ export interface TransportationDetailsForShipmentConfirmation {
 export const TransportationDetailsForShipmentConfirmationTransportationModeEnum = {
     Road: 'Road',
     Air: 'Air',
-    Ocean: 'Ocean'
+    Ocean: 'Ocean',
 } as const;
 
 export type TransportationDetailsForShipmentConfirmationTransportationModeEnum = typeof TransportationDetailsForShipmentConfirmationTransportationModeEnum[keyof typeof TransportationDetailsForShipmentConfirmationTransportationModeEnum];

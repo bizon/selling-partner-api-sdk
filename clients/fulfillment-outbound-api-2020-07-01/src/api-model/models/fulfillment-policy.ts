@@ -21,7 +21,7 @@
 export const FulfillmentPolicy = {
     FillOrKill: 'FillOrKill',
     FillAll: 'FillAll',
-    FillAllAvailable: 'FillAllAvailable'
+    FillAllAvailable: 'FillAllAvailable',
 } as const;
 
 export type FulfillmentPolicy = typeof FulfillmentPolicy[keyof typeof FulfillmentPolicy];

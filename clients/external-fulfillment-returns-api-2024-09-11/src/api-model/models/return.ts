@@ -86,14 +86,14 @@ export interface Return {
 
 export const ReturnReturnTypeEnum = {
     Customer: 'CUSTOMER',
-    Reject: 'REJECT'
+    Reject: 'REJECT',
 } as const;
 
 export type ReturnReturnTypeEnum = typeof ReturnReturnTypeEnum[keyof typeof ReturnReturnTypeEnum];
 export const ReturnReturnSubTypeEnum = {
     Normal: 'NORMAL',
     Replacement: 'REPLACEMENT',
-    Exchange: 'EXCHANGE'
+    Exchange: 'EXCHANGE',
 } as const;
 
 export type ReturnReturnSubTypeEnum = typeof ReturnReturnSubTypeEnum[keyof typeof ReturnReturnSubTypeEnum];
@@ -112,13 +112,13 @@ export const ReturnStatusEnum = {
     PartiallyProcessed: 'PARTIALLY_PROCESSED',
     Processed: 'PROCESSED',
     Rejected: 'REJECTED',
-    Cancelled: 'CANCELLED'
+    Cancelled: 'CANCELLED',
 } as const;
 
 export type ReturnStatusEnum = typeof ReturnStatusEnum[keyof typeof ReturnStatusEnum];
 export const ReturnPackageDeliveryModeEnum = {
     WithOtp: 'WITH_OTP',
-    WithoutOtp: 'WITHOUT_OTP'
+    WithoutOtp: 'WITHOUT_OTP',
 } as const;
 
 export type ReturnPackageDeliveryModeEnum = typeof ReturnPackageDeliveryModeEnum[keyof typeof ReturnPackageDeliveryModeEnum];

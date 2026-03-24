@@ -20,7 +20,7 @@
 
 export const AddressTypeEnum = {
     Residential: 'Residential',
-    Commercial: 'Commercial'
+    Commercial: 'Commercial',
 } as const;
 
 export type AddressTypeEnum = typeof AddressTypeEnum[keyof typeof AddressTypeEnum];

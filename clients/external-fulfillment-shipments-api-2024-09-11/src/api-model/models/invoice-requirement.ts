@@ -30,14 +30,14 @@ export interface InvoiceRequirement {
 
 export const InvoiceRequirementRequirementEnum = {
     Required: 'REQUIRED',
-    NotRequired: 'NOT_REQUIRED'
+    NotRequired: 'NOT_REQUIRED',
 } as const;
 
 export type InvoiceRequirementRequirementEnum = typeof InvoiceRequirementRequirementEnum[keyof typeof InvoiceRequirementRequirementEnum];
 export const InvoiceRequirementStatusEnum = {
     Pending: 'PENDING',
     Available: 'AVAILABLE',
-    NotAvailable: 'NOT_AVAILABLE'
+    NotAvailable: 'NOT_AVAILABLE',
 } as const;
 
 export type InvoiceRequirementStatusEnum = typeof InvoiceRequirementStatusEnum[keyof typeof InvoiceRequirementStatusEnum];

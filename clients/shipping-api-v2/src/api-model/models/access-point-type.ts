@@ -26,7 +26,7 @@ export const AccessPointType = {
     DobbyLocker: 'DOBBY_LOCKER',
     CoreLocker: 'CORE_LOCKER',
     _3P: '3P',
-    CampusRoom: 'CAMPUS_ROOM'
+    CampusRoom: 'CAMPUS_ROOM',
 } as const;
 
 export type AccessPointType = typeof AccessPointType[keyof typeof AccessPointType];

@@ -24,7 +24,7 @@ export const InboundStatus = {
     Confirmed: 'CONFIRMED',
     Closed: 'CLOSED',
     Expired: 'EXPIRED',
-    Cancelled: 'CANCELLED'
+    Cancelled: 'CANCELLED',
 } as const;
 
 export type InboundStatus = typeof InboundStatus[keyof typeof InboundStatus];

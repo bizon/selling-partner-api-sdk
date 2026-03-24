@@ -33,7 +33,7 @@ export interface EncryptionDetails {
 }
 
 export const EncryptionDetailsStandardEnum = {
-    Aes: 'AES'
+    Aes: 'AES',
 } as const;
 
 export type EncryptionDetailsStandardEnum = typeof EncryptionDetailsStandardEnum[keyof typeof EncryptionDetailsStandardEnum];

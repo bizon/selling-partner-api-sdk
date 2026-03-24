@@ -68,7 +68,7 @@ export const OfferSubConditionEnum = {
     RefurbishedWarranty: 'RefurbishedWarranty',
     Refurbished: 'Refurbished',
     OpenBox: 'OpenBox',
-    Other: 'Other'
+    Other: 'Other',
 } as const;
 
 export type OfferSubConditionEnum = typeof OfferSubConditionEnum[keyof typeof OfferSubConditionEnum];

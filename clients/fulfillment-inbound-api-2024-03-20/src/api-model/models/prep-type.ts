@@ -34,7 +34,7 @@ export const PrepType = {
     ItemSetstk: 'ITEM_SETSTK',
     ItemSioc: 'ITEM_SIOC',
     ItemSuffostk: 'ITEM_SUFFOSTK',
-    ItemTaping: 'ITEM_TAPING'
+    ItemTaping: 'ITEM_TAPING',
 } as const;
 
 export type PrepType = typeof PrepType[keyof typeof PrepType];

@@ -52,7 +52,7 @@ export const MeasurementUnitEnum = {
     CubicFeet: 'CUBIC_FEET',
     CubicInches: 'CUBIC_INCHES',
     CubicCentimeters: 'CUBIC_CENTIMETERS',
-    Count: 'COUNT'
+    Count: 'COUNT',
 } as const;
 
 export type MeasurementUnitEnum = typeof MeasurementUnitEnum[keyof typeof MeasurementUnitEnum];

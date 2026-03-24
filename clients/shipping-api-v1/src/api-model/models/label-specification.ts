@@ -29,12 +29,12 @@ export interface LabelSpecification {
 }
 
 export const LabelSpecificationLabelFormatEnum = {
-    Png: 'PNG'
+    Png: 'PNG',
 } as const;
 
 export type LabelSpecificationLabelFormatEnum = typeof LabelSpecificationLabelFormatEnum[keyof typeof LabelSpecificationLabelFormatEnum];
 export const LabelSpecificationLabelStockSizeEnum = {
-    _4x6: '4x6'
+    _4x6: '4x6',
 } as const;
 
 export type LabelSpecificationLabelStockSizeEnum = typeof LabelSpecificationLabelStockSizeEnum[keyof typeof LabelSpecificationLabelStockSizeEnum];

@@ -25,7 +25,7 @@ export interface RecordActionFeedbackRequest {
 }
 
 export const RecordActionFeedbackRequestFeedbackActionCodeEnum = {
-    SellerActionCompleted: 'SELLER_ACTION_COMPLETED'
+    SellerActionCompleted: 'SELLER_ACTION_COMPLETED',
 } as const;
 
 export type RecordActionFeedbackRequestFeedbackActionCodeEnum = typeof RecordActionFeedbackRequestFeedbackActionCodeEnum[keyof typeof RecordActionFeedbackRequestFeedbackActionCodeEnum];

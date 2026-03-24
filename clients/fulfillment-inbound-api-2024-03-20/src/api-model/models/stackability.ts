@@ -20,7 +20,7 @@
 
 export const Stackability = {
     Stackable: 'STACKABLE',
-    NonStackable: 'NON_STACKABLE'
+    NonStackable: 'NON_STACKABLE',
 } as const;
 
 export type Stackability = typeof Stackability[keyof typeof Stackability];

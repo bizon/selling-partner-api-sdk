@@ -22,7 +22,7 @@ export const RecurringFrequency = {
     Daily: 'DAILY',
     Weekly: 'WEEKLY',
     Biweekly: 'BIWEEKLY',
-    Monthly: 'MONTHLY'
+    Monthly: 'MONTHLY',
 } as const;
 
 export type RecurringFrequency = typeof RecurringFrequency[keyof typeof RecurringFrequency];

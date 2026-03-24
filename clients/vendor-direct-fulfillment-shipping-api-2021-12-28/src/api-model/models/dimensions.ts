@@ -38,7 +38,7 @@ export interface Dimensions {
 
 export const DimensionsUnitOfMeasureEnum = {
     In: 'IN',
-    Cm: 'CM'
+    Cm: 'CM',
 } as const;
 
 export type DimensionsUnitOfMeasureEnum = typeof DimensionsUnitOfMeasureEnum[keyof typeof DimensionsUnitOfMeasureEnum];

@@ -1030,7 +1030,7 @@ export class ExternalFulfillmentShipmentsApi extends BaseAPI {
 
 export const GenerateShipLabelsOperationEnum = {
     Generate: 'GENERATE',
-    Regenerate: 'REGENERATE'
+    Regenerate: 'REGENERATE',
 } as const;
 export type GenerateShipLabelsOperationEnum = typeof GenerateShipLabelsOperationEnum[keyof typeof GenerateShipLabelsOperationEnum];
 export const GetShipmentsStatusEnum = {
@@ -1043,15 +1043,15 @@ export const GetShipmentsStatusEnum = {
     ShiplabelGenerated: 'SHIPLABEL_GENERATED',
     Cancelled: 'CANCELLED',
     Shipped: 'SHIPPED',
-    Delivered: 'DELIVERED'
+    Delivered: 'DELIVERED',
 } as const;
 export type GetShipmentsStatusEnum = typeof GetShipmentsStatusEnum[keyof typeof GetShipmentsStatusEnum];
 export const ProcessShipmentOperationEnum = {
     Confirm: 'CONFIRM',
-    Reject: 'REJECT'
+    Reject: 'REJECT',
 } as const;
 export type ProcessShipmentOperationEnum = typeof ProcessShipmentOperationEnum[keyof typeof ProcessShipmentOperationEnum];
 export const UpdatePackageStatusStatusEnum = {
-    Shipped: 'SHIPPED'
+    Shipped: 'SHIPPED',
 } as const;
 export type UpdatePackageStatusStatusEnum = typeof UpdatePackageStatusStatusEnum[keyof typeof UpdatePackageStatusStatusEnum];

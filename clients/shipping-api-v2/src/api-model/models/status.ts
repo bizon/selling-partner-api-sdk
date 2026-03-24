@@ -28,7 +28,7 @@ export const Status = {
     Undeliverable: 'Undeliverable',
     DeliveryAttempted: 'DeliveryAttempted',
     PickupCancelled: 'PickupCancelled',
-    AwaitingCustomerPickup: 'AwaitingCustomerPickup'
+    AwaitingCustomerPickup: 'AwaitingCustomerPickup',
 } as const;
 
 export type Status = typeof Status[keyof typeof Status];

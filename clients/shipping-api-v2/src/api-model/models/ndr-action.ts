@@ -21,7 +21,7 @@
 export const NdrAction = {
     Reschedule: 'RESCHEDULE',
     Reattempt: 'REATTEMPT',
-    Rto: 'RTO'
+    Rto: 'RTO',
 } as const;
 
 export type NdrAction = typeof NdrAction[keyof typeof NdrAction];

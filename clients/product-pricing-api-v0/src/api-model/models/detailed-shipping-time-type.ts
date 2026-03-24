@@ -39,7 +39,7 @@ export interface DetailedShippingTimeType {
 export const DetailedShippingTimeTypeAvailabilityTypeEnum = {
     Now: 'NOW',
     FutureWithoutDate: 'FUTURE_WITHOUT_DATE',
-    FutureWithDate: 'FUTURE_WITH_DATE'
+    FutureWithDate: 'FUTURE_WITH_DATE',
 } as const;
 
 export type DetailedShippingTimeTypeAvailabilityTypeEnum = typeof DetailedShippingTimeTypeAvailabilityTypeEnum[keyof typeof DetailedShippingTimeTypeAvailabilityTypeEnum];

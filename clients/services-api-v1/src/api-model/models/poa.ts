@@ -47,7 +47,7 @@ export const PoaPoaTypeEnum = {
     NoSignatureDummyPos: 'NO_SIGNATURE_DUMMY_POS',
     CustomerSignature: 'CUSTOMER_SIGNATURE',
     DummyReceipt: 'DUMMY_RECEIPT',
-    PoaReceipt: 'POA_RECEIPT'
+    PoaReceipt: 'POA_RECEIPT',
 } as const;
 
 export type PoaPoaTypeEnum = typeof PoaPoaTypeEnum[keyof typeof PoaPoaTypeEnum];

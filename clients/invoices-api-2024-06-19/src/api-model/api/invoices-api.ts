@@ -1162,17 +1162,17 @@ export class InvoicesApi extends BaseAPI {
 
 export const GetInvoicesSortOrderEnum = {
     Desc: 'DESC',
-    Asc: 'ASC'
+    Asc: 'ASC',
 } as const;
 export type GetInvoicesSortOrderEnum = typeof GetInvoicesSortOrderEnum[keyof typeof GetInvoicesSortOrderEnum];
 export const GetInvoicesSortByEnum = {
-    StartDateTime: 'START_DATE_TIME'
+    StartDateTime: 'START_DATE_TIME',
 } as const;
 export type GetInvoicesSortByEnum = typeof GetInvoicesSortByEnum[keyof typeof GetInvoicesSortByEnum];
 export const GetInvoicesExportsStatusEnum = {
     Requested: 'REQUESTED',
     Processing: 'PROCESSING',
     Done: 'DONE',
-    Error: 'ERROR'
+    Error: 'ERROR',
 } as const;
 export type GetInvoicesExportsStatusEnum = typeof GetInvoicesExportsStatusEnum[keyof typeof GetInvoicesExportsStatusEnum];

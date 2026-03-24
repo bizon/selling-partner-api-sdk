@@ -23,7 +23,7 @@ export const ClaimReason = {
     DamagedInTransit: 'DAMAGED_IN_TRANSIT',
     DeliveredNotReceived: 'DELIVERED_NOT_RECEIVED',
     ItemMissingSwitcheroo: 'ITEM_MISSING_SWITCHEROO',
-    CodAbuse: 'COD_ABUSE'
+    CodAbuse: 'COD_ABUSE',
 } as const;
 
 export type ClaimReason = typeof ClaimReason[keyof typeof ClaimReason];

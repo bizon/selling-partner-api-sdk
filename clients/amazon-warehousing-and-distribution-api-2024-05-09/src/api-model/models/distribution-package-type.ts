@@ -20,7 +20,7 @@
 
 export const DistributionPackageType = {
     Case: 'CASE',
-    Pallet: 'PALLET'
+    Pallet: 'PALLET',
 } as const;
 
 export type DistributionPackageType = typeof DistributionPackageType[keyof typeof DistributionPackageType];

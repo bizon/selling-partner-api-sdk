@@ -20,7 +20,7 @@
 
 export const LabelFormat = {
     Pdf: 'PDF',
-    Zpl: 'ZPL'
+    Zpl: 'ZPL',
 } as const;
 
 export type LabelFormat = typeof LabelFormat[keyof typeof LabelFormat];

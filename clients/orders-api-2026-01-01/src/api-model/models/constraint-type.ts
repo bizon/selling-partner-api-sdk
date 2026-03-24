@@ -19,7 +19,7 @@
  */
 
 export const ConstraintType = {
-    Mandatory: 'MANDATORY'
+    Mandatory: 'MANDATORY',
 } as const;
 
 export type ConstraintType = typeof ConstraintType[keyof typeof ConstraintType];

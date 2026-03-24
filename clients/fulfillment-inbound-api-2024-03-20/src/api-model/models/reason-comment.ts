@@ -27,7 +27,7 @@ export const ReasonComment = {
     ProcurementDelay: 'PROCUREMENT_DELAY',
     ShippingPlanChanged: 'SHIPPING_PLAN_CHANGED',
     IncreasedQuantity: 'INCREASED_QUANTITY',
-    Other: 'OTHER'
+    Other: 'OTHER',
 } as const;
 
 export type ReasonComment = typeof ReasonComment[keyof typeof ReasonComment];

@@ -324,12 +324,12 @@ export class ProductTypeDefinitionsApi extends BaseAPI {
 export const GetDefinitionsProductTypeRequirementsEnum = {
     Listing: 'LISTING',
     ListingProductOnly: 'LISTING_PRODUCT_ONLY',
-    ListingOfferOnly: 'LISTING_OFFER_ONLY'
+    ListingOfferOnly: 'LISTING_OFFER_ONLY',
 } as const;
 export type GetDefinitionsProductTypeRequirementsEnum = typeof GetDefinitionsProductTypeRequirementsEnum[keyof typeof GetDefinitionsProductTypeRequirementsEnum];
 export const GetDefinitionsProductTypeRequirementsEnforcedEnum = {
     Enforced: 'ENFORCED',
-    NotEnforced: 'NOT_ENFORCED'
+    NotEnforced: 'NOT_ENFORCED',
 } as const;
 export type GetDefinitionsProductTypeRequirementsEnforcedEnum = typeof GetDefinitionsProductTypeRequirementsEnforcedEnum[keyof typeof GetDefinitionsProductTypeRequirementsEnforcedEnum];
 export const GetDefinitionsProductTypeLocaleEnum = {
@@ -370,6 +370,6 @@ export const GetDefinitionsProductTypeLocaleEnum = {
     TrTr: 'tr_TR',
     Zh: 'zh',
     ZhCn: 'zh_CN',
-    ZhTw: 'zh_TW'
+    ZhTw: 'zh_TW',
 } as const;
 export type GetDefinitionsProductTypeLocaleEnum = typeof GetDefinitionsProductTypeLocaleEnum[keyof typeof GetDefinitionsProductTypeLocaleEnum];

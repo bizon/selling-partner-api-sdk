@@ -20,7 +20,7 @@
 
 export const LabelPrintType = {
     StandardFormat: 'STANDARD_FORMAT',
-    ThermalPrinting: 'THERMAL_PRINTING'
+    ThermalPrinting: 'THERMAL_PRINTING',
 } as const;
 
 export type LabelPrintType = typeof LabelPrintType[keyof typeof LabelPrintType];

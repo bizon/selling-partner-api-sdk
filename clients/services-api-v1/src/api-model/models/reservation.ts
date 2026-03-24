@@ -37,7 +37,7 @@ export const ReservationTypeEnum = {
     Travel: 'TRAVEL',
     Vacation: 'VACATION',
     Break: 'BREAK',
-    Training: 'TRAINING'
+    Training: 'TRAINING',
 } as const;
 
 export type ReservationTypeEnum = typeof ReservationTypeEnum[keyof typeof ReservationTypeEnum];

@@ -32,7 +32,7 @@ export const DocumentFormatEnum = {
     Zpl: 'ZPL',
     Pdf: 'PDF',
     Png: 'PNG',
-    PlainText: 'PLAIN_TEXT'
+    PlainText: 'PLAIN_TEXT',
 } as const;
 
 export type DocumentFormatEnum = typeof DocumentFormatEnum[keyof typeof DocumentFormatEnum];

@@ -58,7 +58,7 @@ export const CreateReportScheduleSpecificationPeriodEnum = {
     P15D: 'P15D',
     P18D: 'P18D',
     P30D: 'P30D',
-    P1M: 'P1M'
+    P1M: 'P1M',
 } as const;
 
 export type CreateReportScheduleSpecificationPeriodEnum = typeof CreateReportScheduleSpecificationPeriodEnum[keyof typeof CreateReportScheduleSpecificationPeriodEnum];

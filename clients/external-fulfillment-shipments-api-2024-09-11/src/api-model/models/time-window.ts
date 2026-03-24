@@ -34,7 +34,7 @@ export interface TimeWindow {
 
 export const TimeWindowHandoverMethodEnum = {
     Pickup: 'PICKUP',
-    Dropoff: 'DROPOFF'
+    Dropoff: 'DROPOFF',
 } as const;
 
 export type TimeWindowHandoverMethodEnum = typeof TimeWindowHandoverMethodEnum[keyof typeof TimeWindowHandoverMethodEnum];

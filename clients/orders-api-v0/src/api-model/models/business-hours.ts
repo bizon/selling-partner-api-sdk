@@ -38,7 +38,7 @@ export const BusinessHoursDayOfWeekEnum = {
     Wed: 'WED',
     Thu: 'THU',
     Fri: 'FRI',
-    Sat: 'SAT'
+    Sat: 'SAT',
 } as const;
 
 export type BusinessHoursDayOfWeekEnum = typeof BusinessHoursDayOfWeekEnum[keyof typeof BusinessHoursDayOfWeekEnum];

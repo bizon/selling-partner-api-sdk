@@ -19,7 +19,7 @@
  */
 
 export const FileFormat = {
-    Xml: 'XML'
+    Xml: 'XML',
 } as const;
 
 export type FileFormat = typeof FileFormat[keyof typeof FileFormat];

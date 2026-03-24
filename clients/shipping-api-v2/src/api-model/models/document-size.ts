@@ -34,7 +34,7 @@ export interface DocumentSize {
 
 export const DocumentSizeUnitEnum = {
     Inch: 'INCH',
-    Centimeter: 'CENTIMETER'
+    Centimeter: 'CENTIMETER',
 } as const;
 
 export type DocumentSizeUnitEnum = typeof DocumentSizeUnitEnum[keyof typeof DocumentSizeUnitEnum];

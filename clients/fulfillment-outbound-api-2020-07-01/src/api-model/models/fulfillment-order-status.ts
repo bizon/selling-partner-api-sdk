@@ -27,7 +27,7 @@ export const FulfillmentOrderStatus = {
     Complete: 'Complete',
     CompletePartialled: 'CompletePartialled',
     Unfulfillable: 'Unfulfillable',
-    Invalid: 'Invalid'
+    Invalid: 'Invalid',
 } as const;
 
 export type FulfillmentOrderStatus = typeof FulfillmentOrderStatus[keyof typeof FulfillmentOrderStatus];

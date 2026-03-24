@@ -1147,16 +1147,16 @@ export class VendorDirectFulfillmentShippingApi extends BaseAPI {
 
 export const GetCustomerInvoicesSortOrderEnum = {
     Asc: 'ASC',
-    Desc: 'DESC'
+    Desc: 'DESC',
 } as const;
 export type GetCustomerInvoicesSortOrderEnum = typeof GetCustomerInvoicesSortOrderEnum[keyof typeof GetCustomerInvoicesSortOrderEnum];
 export const GetPackingSlipsSortOrderEnum = {
     Asc: 'ASC',
-    Desc: 'DESC'
+    Desc: 'DESC',
 } as const;
 export type GetPackingSlipsSortOrderEnum = typeof GetPackingSlipsSortOrderEnum[keyof typeof GetPackingSlipsSortOrderEnum];
 export const GetShippingLabelsSortOrderEnum = {
     Asc: 'ASC',
-    Desc: 'DESC'
+    Desc: 'DESC',
 } as const;
 export type GetShippingLabelsSortOrderEnum = typeof GetShippingLabelsSortOrderEnum[keyof typeof GetShippingLabelsSortOrderEnum];

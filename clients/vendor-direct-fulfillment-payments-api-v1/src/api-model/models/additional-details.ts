@@ -34,7 +34,7 @@ export interface AdditionalDetails {
 
 export const AdditionalDetailsTypeEnum = {
     Sur: 'SUR',
-    Ocr: 'OCR'
+    Ocr: 'OCR',
 } as const;
 
 export type AdditionalDetailsTypeEnum = typeof AdditionalDetailsTypeEnum[keyof typeof AdditionalDetailsTypeEnum];

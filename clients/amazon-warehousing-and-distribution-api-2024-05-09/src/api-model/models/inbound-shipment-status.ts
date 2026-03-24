@@ -25,7 +25,7 @@ export const InboundShipmentStatus = {
     Receiving: 'RECEIVING',
     Delivered: 'DELIVERED',
     Closed: 'CLOSED',
-    Cancelled: 'CANCELLED'
+    Cancelled: 'CANCELLED',
 } as const;
 
 export type InboundShipmentStatus = typeof InboundShipmentStatus[keyof typeof InboundShipmentStatus];

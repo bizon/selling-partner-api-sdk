@@ -62,7 +62,7 @@ export const ItemVendorDetailsByMarketplaceReplenishmentCategoryEnum = {
     NonReplenishable: 'NON_REPLENISHABLE',
     NonStockupable: 'NON_STOCKUPABLE',
     Obsolete: 'OBSOLETE',
-    PlannedReplenishment: 'PLANNED_REPLENISHMENT'
+    PlannedReplenishment: 'PLANNED_REPLENISHMENT',
 } as const;
 
 export type ItemVendorDetailsByMarketplaceReplenishmentCategoryEnum = typeof ItemVendorDetailsByMarketplaceReplenishmentCategoryEnum[keyof typeof ItemVendorDetailsByMarketplaceReplenishmentCategoryEnum];

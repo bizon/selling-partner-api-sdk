@@ -22,7 +22,7 @@ export const EligibilityStatus = {
     Eligible: 'ELIGIBLE',
     Ineligible: 'INELIGIBLE',
     Suspended: 'SUSPENDED',
-    ReplenishmentOnlyOrdering: 'REPLENISHMENT_ONLY_ORDERING'
+    ReplenishmentOnlyOrdering: 'REPLENISHMENT_ONLY_ORDERING',
 } as const;
 
 export type EligibilityStatus = typeof EligibilityStatus[keyof typeof EligibilityStatus];

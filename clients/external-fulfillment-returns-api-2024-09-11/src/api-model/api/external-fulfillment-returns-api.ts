@@ -355,6 +355,6 @@ export const ListReturnsStatusEnum = {
     PartiallyProcessed: 'PARTIALLY_PROCESSED',
     Processed: 'PROCESSED',
     Rejected: 'REJECTED',
-    Cancelled: 'CANCELLED'
+    Cancelled: 'CANCELLED',
 } as const;
 export type ListReturnsStatusEnum = typeof ListReturnsStatusEnum[keyof typeof ListReturnsStatusEnum];

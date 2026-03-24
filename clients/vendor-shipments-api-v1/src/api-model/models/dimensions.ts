@@ -40,7 +40,7 @@ export const DimensionsUnitOfMeasureEnum = {
     In: 'In',
     Ft: 'Ft',
     Meter: 'Meter',
-    Yard: 'Yard'
+    Yard: 'Yard',
 } as const;
 
 export type DimensionsUnitOfMeasureEnum = typeof DimensionsUnitOfMeasureEnum[keyof typeof DimensionsUnitOfMeasureEnum];

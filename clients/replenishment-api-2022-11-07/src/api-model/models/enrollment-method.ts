@@ -20,7 +20,7 @@
 
 export const EnrollmentMethod = {
     Manual: 'MANUAL',
-    Automatic: 'AUTOMATIC'
+    Automatic: 'AUTOMATIC',
 } as const;
 
 export type EnrollmentMethod = typeof EnrollmentMethod[keyof typeof EnrollmentMethod];

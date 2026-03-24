@@ -240,21 +240,21 @@ export const GetOrderMetricsGranularityEnum = {
     Week: 'Week',
     Month: 'Month',
     Year: 'Year',
-    Total: 'Total'
+    Total: 'Total',
 } as const;
 export type GetOrderMetricsGranularityEnum = typeof GetOrderMetricsGranularityEnum[keyof typeof GetOrderMetricsGranularityEnum];
 export const GetOrderMetricsBuyerTypeEnum = {
     B2B: 'B2B',
     B2C: 'B2C',
-    All: 'All'
+    All: 'All',
 } as const;
 export type GetOrderMetricsBuyerTypeEnum = typeof GetOrderMetricsBuyerTypeEnum[keyof typeof GetOrderMetricsBuyerTypeEnum];
 export const GetOrderMetricsFirstDayOfWeekEnum = {
     Monday: 'Monday',
-    Sunday: 'Sunday'
+    Sunday: 'Sunday',
 } as const;
 export type GetOrderMetricsFirstDayOfWeekEnum = typeof GetOrderMetricsFirstDayOfWeekEnum[keyof typeof GetOrderMetricsFirstDayOfWeekEnum];
 export const GetOrderMetricsAmazonProgramEnum = {
-    AmazonHaul: 'AmazonHaul'
+    AmazonHaul: 'AmazonHaul',
 } as const;
 export type GetOrderMetricsAmazonProgramEnum = typeof GetOrderMetricsAmazonProgramEnum[keyof typeof GetOrderMetricsAmazonProgramEnum];

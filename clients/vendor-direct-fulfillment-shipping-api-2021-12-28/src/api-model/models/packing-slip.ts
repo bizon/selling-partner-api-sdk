@@ -33,7 +33,7 @@ export interface PackingSlip {
 }
 
 export const PackingSlipContentTypeEnum = {
-    ApplicationPdf: 'application/pdf'
+    ApplicationPdf: 'application/pdf',
 } as const;
 
 export type PackingSlipContentTypeEnum = typeof PackingSlipContentTypeEnum[keyof typeof PackingSlipContentTypeEnum];

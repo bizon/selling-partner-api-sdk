@@ -20,7 +20,7 @@
 
 export const CurrencyCode = {
     Usd: 'USD',
-    Gbp: 'GBP'
+    Gbp: 'GBP',
 } as const;
 
 export type CurrencyCode = typeof CurrencyCode[keyof typeof CurrencyCode];

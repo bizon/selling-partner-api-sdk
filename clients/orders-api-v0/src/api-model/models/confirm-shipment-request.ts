@@ -33,7 +33,7 @@ export interface ConfirmShipmentRequest {
 }
 
 export const ConfirmShipmentRequestCodCollectionMethodEnum = {
-    DirectPayment: 'DirectPayment'
+    DirectPayment: 'DirectPayment',
 } as const;
 
 export type ConfirmShipmentRequestCodCollectionMethodEnum = typeof ConfirmShipmentRequestCodCollectionMethodEnum[keyof typeof ConfirmShipmentRequestCodCollectionMethodEnum];

@@ -20,7 +20,7 @@
 
 export const VehicleStandard = {
     Ktype: 'KTYPE',
-    AmazonId: 'AMAZON_ID'
+    AmazonId: 'AMAZON_ID',
 } as const;
 
 export type VehicleStandard = typeof VehicleStandard[keyof typeof VehicleStandard];

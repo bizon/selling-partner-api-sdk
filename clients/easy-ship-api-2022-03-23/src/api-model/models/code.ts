@@ -29,7 +29,7 @@ export const Code = {
     InvalidOrderState: 'InvalidOrderState',
     RegionNotSupported: 'RegionNotSupported',
     OrderNotEligibleForRescheduling: 'OrderNotEligibleForRescheduling',
-    InternalServerError: 'InternalServerError'
+    InternalServerError: 'InternalServerError',
 } as const;
 
 export type Code = typeof Code[keyof typeof Code];

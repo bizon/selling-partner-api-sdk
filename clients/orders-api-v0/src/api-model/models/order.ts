@@ -216,20 +216,20 @@ export const OrderOrderStatusEnum = {
     Canceled: 'Canceled',
     Unfulfillable: 'Unfulfillable',
     InvoiceUnconfirmed: 'InvoiceUnconfirmed',
-    PendingAvailability: 'PendingAvailability'
+    PendingAvailability: 'PendingAvailability',
 } as const;
 
 export type OrderOrderStatusEnum = typeof OrderOrderStatusEnum[keyof typeof OrderOrderStatusEnum];
 export const OrderFulfillmentChannelEnum = {
     Mfn: 'MFN',
-    Afn: 'AFN'
+    Afn: 'AFN',
 } as const;
 
 export type OrderFulfillmentChannelEnum = typeof OrderFulfillmentChannelEnum[keyof typeof OrderFulfillmentChannelEnum];
 export const OrderPaymentMethodEnum = {
     Cod: 'COD',
     Cvs: 'CVS',
-    Other: 'Other'
+    Other: 'Other',
 } as const;
 
 export type OrderPaymentMethodEnum = typeof OrderPaymentMethodEnum[keyof typeof OrderPaymentMethodEnum];
@@ -238,13 +238,13 @@ export const OrderOrderTypeEnum = {
     LongLeadTimeOrder: 'LongLeadTimeOrder',
     Preorder: 'Preorder',
     BackOrder: 'BackOrder',
-    SourcingOnDemandOrder: 'SourcingOnDemandOrder'
+    SourcingOnDemandOrder: 'SourcingOnDemandOrder',
 } as const;
 
 export type OrderOrderTypeEnum = typeof OrderOrderTypeEnum[keyof typeof OrderOrderTypeEnum];
 export const OrderBuyerInvoicePreferenceEnum = {
     Individual: 'INDIVIDUAL',
-    Business: 'BUSINESS'
+    Business: 'BUSINESS',
 } as const;
 
 export type OrderBuyerInvoicePreferenceEnum = typeof OrderBuyerInvoicePreferenceEnum[keyof typeof OrderBuyerInvoicePreferenceEnum];

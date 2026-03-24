@@ -36,7 +36,7 @@ export const RestrictedResourceMethodEnum = {
     Get: 'GET',
     Put: 'PUT',
     Post: 'POST',
-    Delete: 'DELETE'
+    Delete: 'DELETE',
 } as const;
 
 export type RestrictedResourceMethodEnum = typeof RestrictedResourceMethodEnum[keyof typeof RestrictedResourceMethodEnum];

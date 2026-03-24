@@ -32,7 +32,7 @@ export const FeeNameEnum = {
     FbaPerUnitFulfillmentFee: 'FBAPerUnitFulfillmentFee',
     FbaPerOrderFulfillmentFee: 'FBAPerOrderFulfillmentFee',
     FbaTransportationFee: 'FBATransportationFee',
-    FbaFulfillmentCodFee: 'FBAFulfillmentCODFee'
+    FbaFulfillmentCodFee: 'FBAFulfillmentCODFee',
 } as const;
 
 export type FeeNameEnum = typeof FeeNameEnum[keyof typeof FeeNameEnum];

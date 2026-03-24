@@ -36,7 +36,7 @@ export const PatchOperationOpEnum = {
     Add: 'add',
     Replace: 'replace',
     Merge: 'merge',
-    Delete: 'delete'
+    Delete: 'delete',
 } as const;
 
 export type PatchOperationOpEnum = typeof PatchOperationOpEnum[keyof typeof PatchOperationOpEnum];

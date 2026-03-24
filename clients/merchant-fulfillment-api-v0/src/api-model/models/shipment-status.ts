@@ -22,7 +22,7 @@ export const ShipmentStatus = {
     Purchased: 'Purchased',
     RefundPending: 'RefundPending',
     RefundRejected: 'RefundRejected',
-    RefundApplied: 'RefundApplied'
+    RefundApplied: 'RefundApplied',
 } as const;
 
 export type ShipmentStatus = typeof ShipmentStatus[keyof typeof ShipmentStatus];

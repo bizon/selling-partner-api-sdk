@@ -21,7 +21,7 @@
 export const ShipmentStatus = {
     ReadyForPickup: 'ReadyForPickup',
     PickedUp: 'PickedUp',
-    RefusedPickup: 'RefusedPickup'
+    RefusedPickup: 'RefusedPickup',
 } as const;
 
 export type ShipmentStatus = typeof ShipmentStatus[keyof typeof ShipmentStatus];

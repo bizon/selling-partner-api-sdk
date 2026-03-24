@@ -35,7 +35,7 @@ export interface PatchOperation {
 export const PatchOperationOpEnum = {
     Add: 'add',
     Replace: 'replace',
-    Delete: 'delete'
+    Delete: 'delete',
 } as const;
 
 export type PatchOperationOpEnum = typeof PatchOperationOpEnum[keyof typeof PatchOperationOpEnum];

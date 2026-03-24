@@ -158,7 +158,7 @@ export interface OrderItem {
 
 export const OrderItemDeemedResellerCategoryEnum = {
     Ioss: 'IOSS',
-    Uoss: 'UOSS'
+    Uoss: 'UOSS',
 } as const;
 
 export type OrderItemDeemedResellerCategoryEnum = typeof OrderItemDeemedResellerCategoryEnum[keyof typeof OrderItemDeemedResellerCategoryEnum];

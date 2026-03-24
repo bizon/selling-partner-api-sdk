@@ -20,7 +20,7 @@
 
 export const ChannelType = {
     Amazon: 'AMAZON',
-    External: 'EXTERNAL'
+    External: 'EXTERNAL',
 } as const;
 
 export type ChannelType = typeof ChannelType[keyof typeof ChannelType];

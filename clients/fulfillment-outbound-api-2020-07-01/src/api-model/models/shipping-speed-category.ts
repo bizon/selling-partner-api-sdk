@@ -22,7 +22,7 @@ export const ShippingSpeedCategory = {
     Standard: 'Standard',
     Expedited: 'Expedited',
     Priority: 'Priority',
-    ScheduledDelivery: 'ScheduledDelivery'
+    ScheduledDelivery: 'ScheduledDelivery',
 } as const;
 
 export type ShippingSpeedCategory = typeof ShippingSpeedCategory[keyof typeof ShippingSpeedCategory];

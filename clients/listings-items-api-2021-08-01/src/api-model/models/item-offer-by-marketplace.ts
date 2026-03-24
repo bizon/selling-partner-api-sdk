@@ -42,7 +42,7 @@ export interface ItemOfferByMarketplace {
 
 export const ItemOfferByMarketplaceOfferTypeEnum = {
     B2C: 'B2C',
-    B2B: 'B2B'
+    B2B: 'B2B',
 } as const;
 
 export type ItemOfferByMarketplaceOfferTypeEnum = typeof ItemOfferByMarketplaceOfferTypeEnum[keyof typeof ItemOfferByMarketplaceOfferTypeEnum];

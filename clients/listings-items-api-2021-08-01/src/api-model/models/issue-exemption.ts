@@ -31,7 +31,7 @@ export interface IssueExemption {
 export const IssueExemptionStatusEnum = {
     Exempt: 'EXEMPT',
     ExemptUntilExpiryDate: 'EXEMPT_UNTIL_EXPIRY_DATE',
-    NotExempt: 'NOT_EXEMPT'
+    NotExempt: 'NOT_EXEMPT',
 } as const;
 
 export type IssueExemptionStatusEnum = typeof IssueExemptionStatusEnum[keyof typeof IssueExemptionStatusEnum];

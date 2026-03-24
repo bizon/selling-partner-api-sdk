@@ -21,7 +21,7 @@
 export const VolumeUnitOfMeasurement = {
     CuIn: 'CU_IN',
     Cbm: 'CBM',
-    Cc: 'CC'
+    Cc: 'CC',
 } as const;
 
 export type VolumeUnitOfMeasurement = typeof VolumeUnitOfMeasurement[keyof typeof VolumeUnitOfMeasurement];

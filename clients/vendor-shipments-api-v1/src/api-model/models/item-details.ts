@@ -60,7 +60,7 @@ export const ItemDetailsLotNumberSourceTypeEnum = {
     Gln: 'GLN',
     Ffrn: 'FFRN',
     UsdaE: 'USDA_E',
-    Url: 'URL'
+    Url: 'URL',
 } as const;
 
 export type ItemDetailsLotNumberSourceTypeEnum = typeof ItemDetailsLotNumberSourceTypeEnum[keyof typeof ItemDetailsLotNumberSourceTypeEnum];
@@ -68,7 +68,7 @@ export const ItemDetailsHandlingCodeEnum = {
     Oversized: 'Oversized',
     Fragile: 'Fragile',
     Food: 'Food',
-    HandleWithCare: 'HandleWithCare'
+    HandleWithCare: 'HandleWithCare',
 } as const;
 
 export type ItemDetailsHandlingCodeEnum = typeof ItemDetailsHandlingCodeEnum[keyof typeof ItemDetailsHandlingCodeEnum];

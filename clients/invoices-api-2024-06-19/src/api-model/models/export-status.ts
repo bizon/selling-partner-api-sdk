@@ -22,7 +22,7 @@ export const ExportStatus = {
     Requested: 'REQUESTED',
     Processing: 'PROCESSING',
     Done: 'DONE',
-    Error: 'ERROR'
+    Error: 'ERROR',
 } as const;
 
 export type ExportStatus = typeof ExportStatus[keyof typeof ExportStatus];

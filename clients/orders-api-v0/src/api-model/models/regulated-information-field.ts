@@ -38,7 +38,7 @@ export interface RegulatedInformationField {
 
 export const RegulatedInformationFieldFieldTypeEnum = {
     Text: 'Text',
-    FileAttachment: 'FileAttachment'
+    FileAttachment: 'FileAttachment',
 } as const;
 
 export type RegulatedInformationFieldFieldTypeEnum = typeof RegulatedInformationFieldFieldTypeEnum[keyof typeof RegulatedInformationFieldFieldTypeEnum];

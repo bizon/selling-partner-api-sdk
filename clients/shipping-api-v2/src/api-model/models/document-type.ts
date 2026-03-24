@@ -22,7 +22,7 @@ export const DocumentType = {
     Packslip: 'PACKSLIP',
     Label: 'LABEL',
     Receipt: 'RECEIPT',
-    CustomForm: 'CUSTOM_FORM'
+    CustomForm: 'CUSTOM_FORM',
 } as const;
 
 export type DocumentType = typeof DocumentType[keyof typeof DocumentType];

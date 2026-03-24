@@ -23,7 +23,7 @@ export const ReturnItemDisposition = {
     Defective: 'Defective',
     CustomerDamaged: 'CustomerDamaged',
     CarrierDamaged: 'CarrierDamaged',
-    FulfillerDamaged: 'FulfillerDamaged'
+    FulfillerDamaged: 'FulfillerDamaged',
 } as const;
 
 export type ReturnItemDisposition = typeof ReturnItemDisposition[keyof typeof ReturnItemDisposition];

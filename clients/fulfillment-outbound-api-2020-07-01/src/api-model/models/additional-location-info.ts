@@ -44,7 +44,7 @@ export const AdditionalLocationInfo = {
     Receptionist: 'RECEPTIONIST',
     Receiver: 'RECEIVER',
     SecureLocation: 'SECURE_LOCATION',
-    SideDoor: 'SIDE_DOOR'
+    SideDoor: 'SIDE_DOOR',
 } as const;
 
 export type AdditionalLocationInfo = typeof AdditionalLocationInfo[keyof typeof AdditionalLocationInfo];

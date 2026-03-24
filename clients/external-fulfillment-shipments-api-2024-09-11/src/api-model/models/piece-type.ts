@@ -20,7 +20,7 @@
 
 export const PieceType = {
     Single: 'SINGLE',
-    Multiple: 'MULTIPLE'
+    Multiple: 'MULTIPLE',
 } as const;
 
 export type PieceType = typeof PieceType[keyof typeof PieceType];

@@ -20,7 +20,7 @@
 
 export const GenerationStatus = {
     Completed: 'Completed',
-    InProgress: 'InProgress'
+    InProgress: 'InProgress',
 } as const;
 
 export type GenerationStatus = typeof GenerationStatus[keyof typeof GenerationStatus];

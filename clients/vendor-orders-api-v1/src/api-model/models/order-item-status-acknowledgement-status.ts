@@ -40,7 +40,7 @@ export const OrderItemStatusAcknowledgementStatusConfirmationStatusEnum = {
     Accepted: 'ACCEPTED',
     PartiallyAccepted: 'PARTIALLY_ACCEPTED',
     Rejected: 'REJECTED',
-    Unconfirmed: 'UNCONFIRMED'
+    Unconfirmed: 'UNCONFIRMED',
 } as const;
 
 export type OrderItemStatusAcknowledgementStatusConfirmationStatusEnum = typeof OrderItemStatusAcknowledgementStatusConfirmationStatusEnum[keyof typeof OrderItemStatusAcknowledgementStatusConfirmationStatusEnum];

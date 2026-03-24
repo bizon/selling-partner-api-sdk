@@ -21,7 +21,7 @@
 export const BoxContentInformationSource = {
     BoxContentProvided: 'BOX_CONTENT_PROVIDED',
     ManualProcess: 'MANUAL_PROCESS',
-    Barcode2D: 'BARCODE_2D'
+    Barcode2D: 'BARCODE_2D',
 } as const;
 
 export type BoxContentInformationSource = typeof BoxContentInformationSource[keyof typeof BoxContentInformationSource];

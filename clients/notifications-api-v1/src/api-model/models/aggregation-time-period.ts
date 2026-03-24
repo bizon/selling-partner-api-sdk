@@ -20,7 +20,7 @@
 
 export const AggregationTimePeriod = {
     FiveMinutes: 'FiveMinutes',
-    TenMinutes: 'TenMinutes'
+    TenMinutes: 'TenMinutes',
 } as const;
 
 export type AggregationTimePeriod = typeof AggregationTimePeriod[keyof typeof AggregationTimePeriod];

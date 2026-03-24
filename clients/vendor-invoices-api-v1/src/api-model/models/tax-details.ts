@@ -47,7 +47,7 @@ export const TaxDetailsTaxTypeEnum = {
     St: 'ST',
     Consumption: 'Consumption',
     MutuallyDefined: 'MutuallyDefined',
-    DomesticVat: 'DomesticVAT'
+    DomesticVat: 'DomesticVAT',
 } as const;
 
 export type TaxDetailsTaxTypeEnum = typeof TaxDetailsTaxTypeEnum[keyof typeof TaxDetailsTaxTypeEnum];

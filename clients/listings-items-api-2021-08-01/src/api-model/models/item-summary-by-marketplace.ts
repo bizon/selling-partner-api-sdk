@@ -73,13 +73,13 @@ export const ItemSummaryByMarketplaceConditionTypeEnum = {
     CollectibleVeryGood: 'collectible_very_good',
     CollectibleGood: 'collectible_good',
     CollectibleAcceptable: 'collectible_acceptable',
-    ClubClub: 'club_club'
+    ClubClub: 'club_club',
 } as const;
 
 export type ItemSummaryByMarketplaceConditionTypeEnum = typeof ItemSummaryByMarketplaceConditionTypeEnum[keyof typeof ItemSummaryByMarketplaceConditionTypeEnum];
 export const ItemSummaryByMarketplaceStatusEnum = {
     Buyable: 'BUYABLE',
-    Discoverable: 'DISCOVERABLE'
+    Discoverable: 'DISCOVERABLE',
 } as const;
 
 export type ItemSummaryByMarketplaceStatusEnum = typeof ItemSummaryByMarketplaceStatusEnum[keyof typeof ItemSummaryByMarketplaceStatusEnum];

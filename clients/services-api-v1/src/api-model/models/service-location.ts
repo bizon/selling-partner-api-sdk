@@ -31,7 +31,7 @@ export interface ServiceLocation {
 export const ServiceLocationServiceLocationTypeEnum = {
     InHome: 'IN_HOME',
     InStore: 'IN_STORE',
-    Online: 'ONLINE'
+    Online: 'ONLINE',
 } as const;
 
 export type ServiceLocationServiceLocationTypeEnum = typeof ServiceLocationServiceLocationTypeEnum[keyof typeof ServiceLocationServiceLocationTypeEnum];

@@ -19,7 +19,7 @@
  */
 
 export const RateItemID = {
-    FbmShipPlusCredit: 'FBM_SHIP_PLUS_CREDIT'
+    FbmShipPlusCredit: 'FBM_SHIP_PLUS_CREDIT',
 } as const;
 
 export type RateItemID = typeof RateItemID[keyof typeof RateItemID];

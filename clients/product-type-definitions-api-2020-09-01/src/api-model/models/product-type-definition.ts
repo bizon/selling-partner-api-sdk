@@ -63,13 +63,13 @@ export interface ProductTypeDefinition {
 export const ProductTypeDefinitionRequirementsEnum = {
     Listing: 'LISTING',
     ListingProductOnly: 'LISTING_PRODUCT_ONLY',
-    ListingOfferOnly: 'LISTING_OFFER_ONLY'
+    ListingOfferOnly: 'LISTING_OFFER_ONLY',
 } as const;
 
 export type ProductTypeDefinitionRequirementsEnum = typeof ProductTypeDefinitionRequirementsEnum[keyof typeof ProductTypeDefinitionRequirementsEnum];
 export const ProductTypeDefinitionRequirementsEnforcedEnum = {
     Enforced: 'ENFORCED',
-    NotEnforced: 'NOT_ENFORCED'
+    NotEnforced: 'NOT_ENFORCED',
 } as const;
 
 export type ProductTypeDefinitionRequirementsEnforcedEnum = typeof ProductTypeDefinitionRequirementsEnforcedEnum[keyof typeof ProductTypeDefinitionRequirementsEnforcedEnum];

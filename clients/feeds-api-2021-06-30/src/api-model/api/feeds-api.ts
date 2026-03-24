@@ -590,6 +590,6 @@ export const GetFeedsProcessingStatusesEnum = {
     Done: 'DONE',
     Fatal: 'FATAL',
     InProgress: 'IN_PROGRESS',
-    InQueue: 'IN_QUEUE'
+    InQueue: 'IN_QUEUE',
 } as const;
 export type GetFeedsProcessingStatusesEnum = typeof GetFeedsProcessingStatusesEnum[keyof typeof GetFeedsProcessingStatusesEnum];

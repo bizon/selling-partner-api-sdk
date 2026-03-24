@@ -20,7 +20,7 @@
 
 export const BankAccountNumberFormat = {
     Iban: 'IBAN',
-    Bban: 'BBAN'
+    Bban: 'BBAN',
 } as const;
 
 export type BankAccountNumberFormat = typeof BankAccountNumberFormat[keyof typeof BankAccountNumberFormat];

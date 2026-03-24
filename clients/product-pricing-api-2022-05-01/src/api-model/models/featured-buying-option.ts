@@ -32,7 +32,7 @@ export interface FeaturedBuyingOption {
 }
 
 export const FeaturedBuyingOptionBuyingOptionTypeEnum = {
-    New: 'New'
+    New: 'New',
 } as const;
 
 export type FeaturedBuyingOptionBuyingOptionTypeEnum = typeof FeaturedBuyingOptionBuyingOptionTypeEnum[keyof typeof FeaturedBuyingOptionBuyingOptionTypeEnum];

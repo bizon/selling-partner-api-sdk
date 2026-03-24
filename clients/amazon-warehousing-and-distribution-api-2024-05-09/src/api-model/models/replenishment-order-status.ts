@@ -27,7 +27,7 @@ export const ReplenishmentOrderStatus = {
     Ineligible: 'INELIGIBLE',
     InventoryOutbound: 'INVENTORY_OUTBOUND',
     Success: 'SUCCESS',
-    Validating: 'VALIDATING'
+    Validating: 'VALIDATING',
 } as const;
 
 export type ReplenishmentOrderStatus = typeof ReplenishmentOrderStatus[keyof typeof ReplenishmentOrderStatus];

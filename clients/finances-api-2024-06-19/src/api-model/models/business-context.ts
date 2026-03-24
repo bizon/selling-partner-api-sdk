@@ -25,7 +25,7 @@ export interface BusinessContext {
 }
 
 export const BusinessContextStoreNameEnum = {
-    AmazonHaul: 'AMAZON_HAUL'
+    AmazonHaul: 'AMAZON_HAUL',
 } as const;
 
 export type BusinessContextStoreNameEnum = typeof BusinessContextStoreNameEnum[keyof typeof BusinessContextStoreNameEnum];

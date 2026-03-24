@@ -52,7 +52,7 @@ export const AssociatedItemItemStatusEnum = {
     Active: 'ACTIVE',
     Cancelled: 'CANCELLED',
     Shipped: 'SHIPPED',
-    Delivered: 'DELIVERED'
+    Delivered: 'DELIVERED',
 } as const;
 
 export type AssociatedItemItemStatusEnum = typeof AssociatedItemItemStatusEnum[keyof typeof AssociatedItemItemStatusEnum];

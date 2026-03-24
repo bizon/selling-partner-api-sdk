@@ -22,7 +22,7 @@ export const AggregationFrequency = {
     Week: 'WEEK',
     Month: 'MONTH',
     Quarter: 'QUARTER',
-    Year: 'YEAR'
+    Year: 'YEAR',
 } as const;
 
 export type AggregationFrequency = typeof AggregationFrequency[keyof typeof AggregationFrequency];

@@ -21,7 +21,7 @@
 export const LabelAttribute = {
     PackageClientReferenceId: 'PACKAGE_CLIENT_REFERENCE_ID',
     SellerDisplayName: 'SELLER_DISPLAY_NAME',
-    CollectOnDeliveryAmount: 'COLLECT_ON_DELIVERY_AMOUNT'
+    CollectOnDeliveryAmount: 'COLLECT_ON_DELIVERY_AMOUNT',
 } as const;
 
 export type LabelAttribute = typeof LabelAttribute[keyof typeof LabelAttribute];

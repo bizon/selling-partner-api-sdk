@@ -29,7 +29,7 @@ export interface ShippingOption {
 }
 
 export const ShippingOptionShippingOptionTypeEnum = {
-    Default: 'DEFAULT'
+    Default: 'DEFAULT',
 } as const;
 
 export type ShippingOptionShippingOptionTypeEnum = typeof ShippingOptionShippingOptionTypeEnum[keyof typeof ShippingOptionShippingOptionTypeEnum];

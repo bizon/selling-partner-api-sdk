@@ -55,13 +55,13 @@ export interface ShipmentInfo {
 export const ShipmentInfoShipmentTypeEnum = {
     New: 'NEW',
     Exchange: 'EXCHANGE',
-    Replacement: 'REPLACEMENT'
+    Replacement: 'REPLACEMENT',
 } as const;
 
 export type ShipmentInfoShipmentTypeEnum = typeof ShipmentInfoShipmentTypeEnum[keyof typeof ShipmentInfoShipmentTypeEnum];
 export const ShipmentInfoProcessingSourceEnum = {
     ExternalPlatform: 'EXTERNAL_PLATFORM',
-    InternalPlatform: 'INTERNAL_PLATFORM'
+    InternalPlatform: 'INTERNAL_PLATFORM',
 } as const;
 
 export type ShipmentInfoProcessingSourceEnum = typeof ShipmentInfoProcessingSourceEnum[keyof typeof ShipmentInfoProcessingSourceEnum];

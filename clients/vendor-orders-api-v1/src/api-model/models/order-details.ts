@@ -74,7 +74,7 @@ export const OrderDetailsPurchaseOrderTypeEnum = {
     RegularOrder: 'RegularOrder',
     ConsignedOrder: 'ConsignedOrder',
     NewProductIntroduction: 'NewProductIntroduction',
-    RushOrder: 'RushOrder'
+    RushOrder: 'RushOrder',
 } as const;
 
 export type OrderDetailsPurchaseOrderTypeEnum = typeof OrderDetailsPurchaseOrderTypeEnum[keyof typeof OrderDetailsPurchaseOrderTypeEnum];
@@ -82,7 +82,7 @@ export const OrderDetailsPaymentMethodEnum = {
     Invoice: 'Invoice',
     Consignment: 'Consignment',
     CreditCard: 'CreditCard',
-    Prepaid: 'Prepaid'
+    Prepaid: 'Prepaid',
 } as const;
 
 export type OrderDetailsPaymentMethodEnum = typeof OrderDetailsPaymentMethodEnum[keyof typeof OrderDetailsPaymentMethodEnum];

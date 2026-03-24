@@ -32,7 +32,7 @@ export const WeightUnitOfMeasureEnum = {
     G: 'G',
     Kg: 'Kg',
     Oz: 'Oz',
-    Lb: 'Lb'
+    Lb: 'Lb',
 } as const;
 
 export type WeightUnitOfMeasureEnum = typeof WeightUnitOfMeasureEnum[keyof typeof WeightUnitOfMeasureEnum];

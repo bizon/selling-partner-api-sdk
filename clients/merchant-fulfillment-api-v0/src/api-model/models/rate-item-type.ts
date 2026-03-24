@@ -19,7 +19,7 @@
  */
 
 export const RateItemType = {
-    Included: 'INCLUDED'
+    Included: 'INCLUDED',
 } as const;
 
 export type RateItemType = typeof RateItemType[keyof typeof RateItemType];

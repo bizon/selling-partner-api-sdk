@@ -25,7 +25,7 @@ export const DayOfWeek = {
     Thursday: 'THURSDAY',
     Friday: 'FRIDAY',
     Saturday: 'SATURDAY',
-    Sunday: 'SUNDAY'
+    Sunday: 'SUNDAY',
 } as const;
 
 export type DayOfWeek = typeof DayOfWeek[keyof typeof DayOfWeek];

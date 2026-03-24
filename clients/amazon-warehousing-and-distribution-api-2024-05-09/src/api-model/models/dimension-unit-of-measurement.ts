@@ -20,7 +20,7 @@
 
 export const DimensionUnitOfMeasurement = {
     Inches: 'INCHES',
-    Centimeters: 'CENTIMETERS'
+    Centimeters: 'CENTIMETERS',
 } as const;
 
 export type DimensionUnitOfMeasurement = typeof DimensionUnitOfMeasurement[keyof typeof DimensionUnitOfMeasurement];

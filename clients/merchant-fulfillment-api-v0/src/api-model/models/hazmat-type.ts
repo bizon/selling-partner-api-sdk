@@ -20,7 +20,7 @@
 
 export const HazmatType = {
     None: 'None',
-    LqHazmat: 'LQHazmat'
+    LqHazmat: 'LQHazmat',
 } as const;
 
 export type HazmatType = typeof HazmatType[keyof typeof HazmatType];

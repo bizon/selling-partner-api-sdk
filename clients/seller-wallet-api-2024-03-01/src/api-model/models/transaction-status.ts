@@ -24,7 +24,7 @@ export const TransactionStatus = {
     FailedCreditsApplied: 'FAILED_CREDITS_APPLIED',
     InProgress: 'IN_PROGRESS',
     PendingUserApproval: 'PENDING_USER_APPROVAL',
-    Successful: 'SUCCESSFUL'
+    Successful: 'SUCCESSFUL',
 } as const;
 
 export type TransactionStatus = typeof TransactionStatus[keyof typeof TransactionStatus];

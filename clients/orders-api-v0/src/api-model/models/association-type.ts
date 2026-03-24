@@ -19,7 +19,7 @@
  */
 
 export const AssociationType = {
-    ValueAddService: 'VALUE_ADD_SERVICE'
+    ValueAddService: 'VALUE_ADD_SERVICE',
 } as const;
 
 export type AssociationType = typeof AssociationType[keyof typeof AssociationType];

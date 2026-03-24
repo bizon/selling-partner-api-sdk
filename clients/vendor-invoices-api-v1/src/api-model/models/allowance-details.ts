@@ -45,7 +45,7 @@ export const AllowanceDetailsTypeEnum = {
     Defective: 'Defective',
     Promotional: 'Promotional',
     UnsaleableMerchandise: 'UnsaleableMerchandise',
-    Special: 'Special'
+    Special: 'Special',
 } as const;
 
 export type AllowanceDetailsTypeEnum = typeof AllowanceDetailsTypeEnum[keyof typeof AllowanceDetailsTypeEnum];

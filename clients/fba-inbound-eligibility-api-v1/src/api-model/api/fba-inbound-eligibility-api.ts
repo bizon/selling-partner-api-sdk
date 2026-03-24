@@ -157,6 +157,6 @@ export class FbaInboundEligibilityApi extends BaseAPI {
 
 export const GetItemEligibilityPreviewProgramEnum = {
     Inbound: 'INBOUND',
-    Commingling: 'COMMINGLING'
+    Commingling: 'COMMINGLING',
 } as const;
 export type GetItemEligibilityPreviewProgramEnum = typeof GetItemEligibilityPreviewProgramEnum[keyof typeof GetItemEligibilityPreviewProgramEnum];

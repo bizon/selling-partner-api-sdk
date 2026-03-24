@@ -22,7 +22,7 @@ export const LabelStatus = {
     Generating: 'GENERATING',
     Generated: 'GENERATED',
     GenerationFailed: 'GENERATION_FAILED',
-    NotReady: 'NOT_READY'
+    NotReady: 'NOT_READY',
 } as const;
 
 export type LabelStatus = typeof LabelStatus[keyof typeof LabelStatus];

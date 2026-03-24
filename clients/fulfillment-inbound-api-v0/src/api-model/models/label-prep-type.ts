@@ -21,7 +21,7 @@
 export const LabelPrepType = {
     NoLabel: 'NO_LABEL',
     SellerLabel: 'SELLER_LABEL',
-    AmazonLabel: 'AMAZON_LABEL'
+    AmazonLabel: 'AMAZON_LABEL',
 } as const;
 
 export type LabelPrepType = typeof LabelPrepType[keyof typeof LabelPrepType];

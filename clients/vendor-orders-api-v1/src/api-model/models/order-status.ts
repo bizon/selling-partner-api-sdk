@@ -50,7 +50,7 @@ export interface OrderStatus {
 
 export const OrderStatusPurchaseOrderStatusEnum = {
     Open: 'OPEN',
-    Closed: 'CLOSED'
+    Closed: 'CLOSED',
 } as const;
 
 export type OrderStatusPurchaseOrderStatusEnum = typeof OrderStatusPurchaseOrderStatusEnum[keyof typeof OrderStatusPurchaseOrderStatusEnum];

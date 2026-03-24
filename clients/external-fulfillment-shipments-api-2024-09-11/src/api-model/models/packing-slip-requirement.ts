@@ -30,13 +30,13 @@ export interface PackingSlipRequirement {
 
 export const PackingSlipRequirementRequirementEnum = {
     Required: 'REQUIRED',
-    NotRequired: 'NOT_REQUIRED'
+    NotRequired: 'NOT_REQUIRED',
 } as const;
 
 export type PackingSlipRequirementRequirementEnum = typeof PackingSlipRequirementRequirementEnum[keyof typeof PackingSlipRequirementRequirementEnum];
 export const PackingSlipRequirementStatusEnum = {
     Generated: 'GENERATED',
-    NotGenerated: 'NOT_GENERATED'
+    NotGenerated: 'NOT_GENERATED',
 } as const;
 
 export type PackingSlipRequirementStatusEnum = typeof PackingSlipRequirementStatusEnum[keyof typeof PackingSlipRequirementStatusEnum];

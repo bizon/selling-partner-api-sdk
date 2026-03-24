@@ -38,7 +38,7 @@ export const RelatedIdentifierRelatedIdentifierNameEnum = {
     TransferId: 'TRANSFER_ID',
     DeferredTransactionId: 'DEFERRED_TRANSACTION_ID',
     ReleaseTransactionId: 'RELEASE_TRANSACTION_ID',
-    SettlementId: 'SETTLEMENT_ID'
+    SettlementId: 'SETTLEMENT_ID',
 } as const;
 
 export type RelatedIdentifierRelatedIdentifierNameEnum = typeof RelatedIdentifierRelatedIdentifierNameEnum[keyof typeof RelatedIdentifierRelatedIdentifierNameEnum];

@@ -763,24 +763,24 @@ export const GetLabelsPageTypeEnum = {
     PackageLabelThermal: 'PackageLabel_Thermal',
     PackageLabelThermalUnified: 'PackageLabel_Thermal_Unified',
     PackageLabelThermalNonPcp: 'PackageLabel_Thermal_NonPCP',
-    PackageLabelThermalNoCarrierRotation: 'PackageLabel_Thermal_No_Carrier_Rotation'
+    PackageLabelThermalNoCarrierRotation: 'PackageLabel_Thermal_No_Carrier_Rotation',
 } as const;
 export type GetLabelsPageTypeEnum = typeof GetLabelsPageTypeEnum[keyof typeof GetLabelsPageTypeEnum];
 export const GetLabelsLabelTypeEnum = {
     Barcode2D: 'BARCODE_2D',
     Unique: 'UNIQUE',
-    Pallet: 'PALLET'
+    Pallet: 'PALLET',
 } as const;
 export type GetLabelsLabelTypeEnum = typeof GetLabelsLabelTypeEnum[keyof typeof GetLabelsLabelTypeEnum];
 export const GetShipmentItemsQueryTypeEnum = {
     DateRange: 'DATE_RANGE',
-    NextToken: 'NEXT_TOKEN'
+    NextToken: 'NEXT_TOKEN',
 } as const;
 export type GetShipmentItemsQueryTypeEnum = typeof GetShipmentItemsQueryTypeEnum[keyof typeof GetShipmentItemsQueryTypeEnum];
 export const GetShipmentsQueryTypeEnum = {
     Shipment: 'SHIPMENT',
     DateRange: 'DATE_RANGE',
-    NextToken: 'NEXT_TOKEN'
+    NextToken: 'NEXT_TOKEN',
 } as const;
 export type GetShipmentsQueryTypeEnum = typeof GetShipmentsQueryTypeEnum[keyof typeof GetShipmentsQueryTypeEnum];
 export const GetShipmentsShipmentStatusListEnum = {
@@ -794,6 +794,6 @@ export const GetShipmentsShipmentStatusListEnum = {
     Error: 'ERROR',
     InTransit: 'IN_TRANSIT',
     Delivered: 'DELIVERED',
-    CheckedIn: 'CHECKED_IN'
+    CheckedIn: 'CHECKED_IN',
 } as const;
 export type GetShipmentsShipmentStatusListEnum = typeof GetShipmentsShipmentStatusListEnum[keyof typeof GetShipmentsShipmentStatusListEnum];

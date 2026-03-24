@@ -28,7 +28,7 @@ export const IneligibilityReasonCode = {
     LateDelivery: 'LATE_DELIVERY',
     ProgramConstraints: 'PROGRAM_CONSTRAINTS',
     TermsAndConditionsNotAccepted: 'TERMS_AND_CONDITIONS_NOT_ACCEPTED',
-    Unknown: 'UNKNOWN'
+    Unknown: 'UNKNOWN',
 } as const;
 
 export type IneligibilityReasonCode = typeof IneligibilityReasonCode[keyof typeof IneligibilityReasonCode];

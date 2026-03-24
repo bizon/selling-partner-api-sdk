@@ -19,7 +19,7 @@
  */
 
 export const CarrierCodeType = {
-    Scac: 'SCAC'
+    Scac: 'SCAC',
 } as const;
 
 export type CarrierCodeType = typeof CarrierCodeType[keyof typeof CarrierCodeType];

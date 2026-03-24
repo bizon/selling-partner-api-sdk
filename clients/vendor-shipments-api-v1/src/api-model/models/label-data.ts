@@ -41,7 +41,7 @@ export interface LabelData {
 }
 
 export const LabelDataLabelFormatEnum = {
-    Pdf: 'PDF'
+    Pdf: 'PDF',
 } as const;
 
 export type LabelDataLabelFormatEnum = typeof LabelDataLabelFormatEnum[keyof typeof LabelDataLabelFormatEnum];

@@ -107,7 +107,7 @@ export const ItemSummaryByMarketplaceItemClassificationEnum = {
     BaseProduct: 'BASE_PRODUCT',
     Other: 'OTHER',
     ProductBundle: 'PRODUCT_BUNDLE',
-    VariationParent: 'VARIATION_PARENT'
+    VariationParent: 'VARIATION_PARENT',
 } as const;
 
 export type ItemSummaryByMarketplaceItemClassificationEnum = typeof ItemSummaryByMarketplaceItemClassificationEnum[keyof typeof ItemSummaryByMarketplaceItemClassificationEnum];

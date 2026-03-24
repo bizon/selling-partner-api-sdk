@@ -20,7 +20,7 @@
 
 export const RequirementLevel = {
     Required: 'REQUIRED',
-    Disallowed: 'DISALLOWED'
+    Disallowed: 'DISALLOWED',
 } as const;
 
 export type RequirementLevel = typeof RequirementLevel[keyof typeof RequirementLevel];

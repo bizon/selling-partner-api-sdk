@@ -20,7 +20,7 @@
 
 export const ConfirmationMode = {
     Auto: 'AUTO',
-    Manual: 'MANUAL'
+    Manual: 'MANUAL',
 } as const;
 
 export type ConfirmationMode = typeof ConfirmationMode[keyof typeof ConfirmationMode];

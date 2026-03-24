@@ -39,7 +39,7 @@ export interface Issue {
 export const IssueSeverityEnum = {
     Error: 'ERROR',
     Warning: 'WARNING',
-    Info: 'INFO'
+    Info: 'INFO',
 } as const;
 
 export type IssueSeverityEnum = typeof IssueSeverityEnum[keyof typeof IssueSeverityEnum];

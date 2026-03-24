@@ -21,7 +21,7 @@
 export const ServiceType = {
     AmazonShippingGround: 'Amazon Shipping Ground',
     AmazonShippingStandard: 'Amazon Shipping Standard',
-    AmazonShippingPremium: 'Amazon Shipping Premium'
+    AmazonShippingPremium: 'Amazon Shipping Premium',
 } as const;
 
 export type ServiceType = typeof ServiceType[keyof typeof ServiceType];

@@ -1417,27 +1417,27 @@ export class AmazonWarehousingAndDistributionApi extends BaseAPI {
 
 export const GetInboundShipmentSkuQuantitiesEnum = {
     Show: 'SHOW',
-    Hide: 'HIDE'
+    Hide: 'HIDE',
 } as const;
 export type GetInboundShipmentSkuQuantitiesEnum = typeof GetInboundShipmentSkuQuantitiesEnum[keyof typeof GetInboundShipmentSkuQuantitiesEnum];
 export const GetInboundShipmentLabelsPageTypeEnum = {
     ThermalNonpcp: 'THERMAL_NONPCP',
     PlainPaper: 'PLAIN_PAPER',
-    Letter6: 'LETTER_6'
+    Letter6: 'LETTER_6',
 } as const;
 export type GetInboundShipmentLabelsPageTypeEnum = typeof GetInboundShipmentLabelsPageTypeEnum[keyof typeof GetInboundShipmentLabelsPageTypeEnum];
 export const GetInboundShipmentLabelsFormatTypeEnum = {
-    Pdf: 'PDF'
+    Pdf: 'PDF',
 } as const;
 export type GetInboundShipmentLabelsFormatTypeEnum = typeof GetInboundShipmentLabelsFormatTypeEnum[keyof typeof GetInboundShipmentLabelsFormatTypeEnum];
 export const ListInboundShipmentsSortByEnum = {
     UpdatedAt: 'UPDATED_AT',
-    CreatedAt: 'CREATED_AT'
+    CreatedAt: 'CREATED_AT',
 } as const;
 export type ListInboundShipmentsSortByEnum = typeof ListInboundShipmentsSortByEnum[keyof typeof ListInboundShipmentsSortByEnum];
 export const ListInboundShipmentsSortOrderEnum = {
     Ascending: 'ASCENDING',
-    Descending: 'DESCENDING'
+    Descending: 'DESCENDING',
 } as const;
 export type ListInboundShipmentsSortOrderEnum = typeof ListInboundShipmentsSortOrderEnum[keyof typeof ListInboundShipmentsSortOrderEnum];
 export const ListInboundShipmentsShipmentStatusEnum = {
@@ -1447,21 +1447,21 @@ export const ListInboundShipmentsShipmentStatusEnum = {
     Receiving: 'RECEIVING',
     Delivered: 'DELIVERED',
     Closed: 'CLOSED',
-    Cancelled: 'CANCELLED'
+    Cancelled: 'CANCELLED',
 } as const;
 export type ListInboundShipmentsShipmentStatusEnum = typeof ListInboundShipmentsShipmentStatusEnum[keyof typeof ListInboundShipmentsShipmentStatusEnum];
 export const ListInventorySortOrderEnum = {
     Ascending: 'ASCENDING',
-    Descending: 'DESCENDING'
+    Descending: 'DESCENDING',
 } as const;
 export type ListInventorySortOrderEnum = typeof ListInventorySortOrderEnum[keyof typeof ListInventorySortOrderEnum];
 export const ListInventoryDetailsEnum = {
     Show: 'SHOW',
-    Hide: 'HIDE'
+    Hide: 'HIDE',
 } as const;
 export type ListInventoryDetailsEnum = typeof ListInventoryDetailsEnum[keyof typeof ListInventoryDetailsEnum];
 export const ListReplenishmentOrdersSortOrderEnum = {
     Ascending: 'ASCENDING',
-    Descending: 'DESCENDING'
+    Descending: 'DESCENDING',
 } as const;
 export type ListReplenishmentOrdersSortOrderEnum = typeof ListReplenishmentOrdersSortOrderEnum[keyof typeof ListReplenishmentOrdersSortOrderEnum];

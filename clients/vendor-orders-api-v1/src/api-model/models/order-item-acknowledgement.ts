@@ -43,14 +43,14 @@ export interface OrderItemAcknowledgement {
 export const OrderItemAcknowledgementAcknowledgementCodeEnum = {
     Accepted: 'Accepted',
     Backordered: 'Backordered',
-    Rejected: 'Rejected'
+    Rejected: 'Rejected',
 } as const;
 
 export type OrderItemAcknowledgementAcknowledgementCodeEnum = typeof OrderItemAcknowledgementAcknowledgementCodeEnum[keyof typeof OrderItemAcknowledgementAcknowledgementCodeEnum];
 export const OrderItemAcknowledgementRejectionReasonEnum = {
     TemporarilyUnavailable: 'TemporarilyUnavailable',
     InvalidProductIdentifier: 'InvalidProductIdentifier',
-    ObsoleteProduct: 'ObsoleteProduct'
+    ObsoleteProduct: 'ObsoleteProduct',
 } as const;
 
 export type OrderItemAcknowledgementRejectionReasonEnum = typeof OrderItemAcknowledgementRejectionReasonEnum[keyof typeof OrderItemAcknowledgementRejectionReasonEnum];

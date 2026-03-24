@@ -21,7 +21,7 @@
 export const TimeUnit = {
     Hours: 'Hours',
     Minutes: 'Minutes',
-    Days: 'Days'
+    Days: 'Days',
 } as const;
 
 export type TimeUnit = typeof TimeUnit[keyof typeof TimeUnit];

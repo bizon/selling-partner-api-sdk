@@ -33,7 +33,7 @@ export interface ReportDocument {
 }
 
 export const ReportDocumentCompressionAlgorithmEnum = {
-    Gzip: 'GZIP'
+    Gzip: 'GZIP',
 } as const;
 
 export type ReportDocumentCompressionAlgorithmEnum = typeof ReportDocumentCompressionAlgorithmEnum[keyof typeof ReportDocumentCompressionAlgorithmEnum];

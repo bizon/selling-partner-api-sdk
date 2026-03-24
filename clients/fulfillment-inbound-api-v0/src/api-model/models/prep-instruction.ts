@@ -34,7 +34,7 @@ export const PrepInstruction = {
     SetStickering: 'SetStickering',
     BlankStickering: 'BlankStickering',
     ShipsInProductPackaging: 'ShipsInProductPackaging',
-    NoPrep: 'NoPrep'
+    NoPrep: 'NoPrep',
 } as const;
 
 export type PrepInstruction = typeof PrepInstruction[keyof typeof PrepInstruction];

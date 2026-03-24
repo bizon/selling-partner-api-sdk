@@ -27,7 +27,7 @@ export const ListOfferMetricsSortKey = {
     Next30DaysShippedSubscriptionUnits: 'NEXT_30DAYS_SHIPPED_SUBSCRIPTION_UNITS',
     Next90DaysTotalSubscriptionsRevenue: 'NEXT_90DAYS_TOTAL_SUBSCRIPTIONS_REVENUE',
     Next60DaysTotalSubscriptionsRevenue: 'NEXT_60DAYS_TOTAL_SUBSCRIPTIONS_REVENUE',
-    Next30DaysTotalSubscriptionsRevenue: 'NEXT_30DAYS_TOTAL_SUBSCRIPTIONS_REVENUE'
+    Next30DaysTotalSubscriptionsRevenue: 'NEXT_30DAYS_TOTAL_SUBSCRIPTIONS_REVENUE',
 } as const;
 
 export type ListOfferMetricsSortKey = typeof ListOfferMetricsSortKey[keyof typeof ListOfferMetricsSortKey];

@@ -20,7 +20,7 @@
 
 export const HandoverMethod = {
     Pickup: 'PICKUP',
-    Dropoff: 'DROPOFF'
+    Dropoff: 'DROPOFF',
 } as const;
 
 export type HandoverMethod = typeof HandoverMethod[keyof typeof HandoverMethod];

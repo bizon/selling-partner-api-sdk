@@ -58,13 +58,13 @@ export const PackageStatusEnum = {
     ShiplabelGenerated: 'SHIPLABEL_GENERATED',
     Shipped: 'SHIPPED',
     Delivered: 'DELIVERED',
-    Cancelled: 'CANCELLED'
+    Cancelled: 'CANCELLED',
 } as const;
 
 export type PackageStatusEnum = typeof PackageStatusEnum[keyof typeof PackageStatusEnum];
 export const PackagePackageHandlingRequirementsEnum = {
     Normal: 'NORMAL',
-    Fragile: 'FRAGILE'
+    Fragile: 'FRAGILE',
 } as const;
 
 export type PackagePackageHandlingRequirementsEnum = typeof PackagePackageHandlingRequirementsEnum[keyof typeof PackagePackageHandlingRequirementsEnum];

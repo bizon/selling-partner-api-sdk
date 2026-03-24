@@ -82,7 +82,7 @@ export interface Address {
 
 export const AddressAddressTypeEnum = {
     Residential: 'Residential',
-    Commercial: 'Commercial'
+    Commercial: 'Commercial',
 } as const;
 
 export type AddressAddressTypeEnum = typeof AddressAddressTypeEnum[keyof typeof AddressAddressTypeEnum];

@@ -30,7 +30,7 @@ export const PackageStatus = {
     LostInTransit: 'LostInTransit',
     LabelCanceled: 'LabelCanceled',
     DamagedInTransit: 'DamagedInTransit',
-    OutForDelivery: 'OutForDelivery'
+    OutForDelivery: 'OutForDelivery',
 } as const;
 
 export type PackageStatus = typeof PackageStatus[keyof typeof PackageStatus];

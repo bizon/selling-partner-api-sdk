@@ -30,7 +30,7 @@ export interface ClientReferenceDetail {
 
 export const ClientReferenceDetailClientReferenceTypeEnum = {
     IntegratorShipperId: 'IntegratorShipperId',
-    IntegratorMerchantId: 'IntegratorMerchantId'
+    IntegratorMerchantId: 'IntegratorMerchantId',
 } as const;
 
 export type ClientReferenceDetailClientReferenceTypeEnum = typeof ClientReferenceDetailClientReferenceTypeEnum[keyof typeof ClientReferenceDetailClientReferenceTypeEnum];

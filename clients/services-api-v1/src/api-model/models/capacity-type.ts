@@ -22,7 +22,7 @@ export const CapacityType = {
     ScheduledCapacity: 'SCHEDULED_CAPACITY',
     AvailableCapacity: 'AVAILABLE_CAPACITY',
     EncumberedCapacity: 'ENCUMBERED_CAPACITY',
-    ReservedCapacity: 'RESERVED_CAPACITY'
+    ReservedCapacity: 'RESERVED_CAPACITY',
 } as const;
 
 export type CapacityType = typeof CapacityType[keyof typeof CapacityType];

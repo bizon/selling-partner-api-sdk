@@ -170,6 +170,6 @@ export class VehiclesApi extends BaseAPI {
 
 export const GetVehiclesVehicleTypeEnum = {
     Car: 'CAR',
-    Motorbike: 'MOTORBIKE'
+    Motorbike: 'MOTORBIKE',
 } as const;
 export type GetVehiclesVehicleTypeEnum = typeof GetVehiclesVehicleTypeEnum[keyof typeof GetVehiclesVehicleTypeEnum];

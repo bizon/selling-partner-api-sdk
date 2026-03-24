@@ -73,7 +73,7 @@ export interface Container {
 
 export const ContainerContainerTypeEnum = {
     Carton: 'carton',
-    Pallet: 'pallet'
+    Pallet: 'pallet',
 } as const;
 
 export type ContainerContainerTypeEnum = typeof ContainerContainerTypeEnum[keyof typeof ContainerContainerTypeEnum];

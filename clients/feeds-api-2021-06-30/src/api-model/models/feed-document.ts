@@ -33,7 +33,7 @@ export interface FeedDocument {
 }
 
 export const FeedDocumentCompressionAlgorithmEnum = {
-    Gzip: 'GZIP'
+    Gzip: 'GZIP',
 } as const;
 
 export type FeedDocumentCompressionAlgorithmEnum = typeof FeedDocumentCompressionAlgorithmEnum[keyof typeof FeedDocumentCompressionAlgorithmEnum];

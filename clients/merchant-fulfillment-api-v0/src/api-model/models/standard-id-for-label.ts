@@ -19,7 +19,7 @@
  */
 
 export const StandardIdForLabel = {
-    AmazonOrderId: 'AmazonOrderId'
+    AmazonOrderId: 'AmazonOrderId',
 } as const;
 
 export type StandardIdForLabel = typeof StandardIdForLabel[keyof typeof StandardIdForLabel];

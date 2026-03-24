@@ -20,7 +20,7 @@
 
 export const VehicleStatusInCatalog = {
     Active: 'ACTIVE',
-    Deleted: 'DELETED'
+    Deleted: 'DELETED',
 } as const;
 
 export type VehicleStatusInCatalog = typeof VehicleStatusInCatalog[keyof typeof VehicleStatusInCatalog];

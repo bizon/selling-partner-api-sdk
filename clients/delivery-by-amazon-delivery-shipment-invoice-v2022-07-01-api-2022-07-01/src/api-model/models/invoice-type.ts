@@ -19,7 +19,7 @@
  */
 
 export const InvoiceType = {
-    Outbound: 'Outbound'
+    Outbound: 'Outbound',
 } as const;
 
 export type InvoiceType = typeof InvoiceType[keyof typeof InvoiceType];

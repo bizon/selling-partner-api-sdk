@@ -49,7 +49,7 @@ export interface ListingsItemSubmissionResponse {
 export const ListingsItemSubmissionResponseStatusEnum = {
     Accepted: 'ACCEPTED',
     Invalid: 'INVALID',
-    Valid: 'VALID'
+    Valid: 'VALID',
 } as const;
 
 export type ListingsItemSubmissionResponseStatusEnum = typeof ListingsItemSubmissionResponseStatusEnum[keyof typeof ListingsItemSubmissionResponseStatusEnum];

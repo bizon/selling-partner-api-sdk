@@ -22,7 +22,7 @@ export const ShipmentInvoiceStatus = {
     Processing: 'Processing',
     Accepted: 'Accepted',
     Errored: 'Errored',
-    NotFound: 'NotFound'
+    NotFound: 'NotFound',
 } as const;
 
 export type ShipmentInvoiceStatus = typeof ShipmentInvoiceStatus[keyof typeof ShipmentInvoiceStatus];

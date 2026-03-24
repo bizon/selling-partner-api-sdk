@@ -35,7 +35,7 @@ export interface AdditionalDetails {
 export const AdditionalDetailsTypeEnum = {
     Sur: 'SUR',
     Ocr: 'OCR',
-    CartonCount: 'CartonCount'
+    CartonCount: 'CartonCount',
 } as const;
 
 export type AdditionalDetailsTypeEnum = typeof AdditionalDetailsTypeEnum[keyof typeof AdditionalDetailsTypeEnum];

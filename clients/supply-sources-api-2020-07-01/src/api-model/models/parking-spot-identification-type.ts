@@ -20,7 +20,7 @@
 
 export const ParkingSpotIdentificationType = {
     Numbered: 'Numbered',
-    Other: 'Other'
+    Other: 'Other',
 } as const;
 
 export type ParkingSpotIdentificationType = typeof ParkingSpotIdentificationType[keyof typeof ParkingSpotIdentificationType];

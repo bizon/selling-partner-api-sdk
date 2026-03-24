@@ -21,7 +21,7 @@
 export const OtherDeliveryAttributes = {
     HasAccessPoint: 'HAS_ACCESS_POINT',
     PalletEnabled: 'PALLET_ENABLED',
-    PalletDisabled: 'PALLET_DISABLED'
+    PalletDisabled: 'PALLET_DISABLED',
 } as const;
 
 export type OtherDeliveryAttributes = typeof OtherDeliveryAttributes[keyof typeof OtherDeliveryAttributes];

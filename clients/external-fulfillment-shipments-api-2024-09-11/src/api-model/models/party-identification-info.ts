@@ -40,7 +40,7 @@ export const PartyIdentificationInfoPartyTypeEnum = {
     BillToParty: 'BILL_TO_PARTY',
     ShipToParty: 'SHIP_TO_PARTY',
     ShipFromParty: 'SHIP_FROM_PARTY',
-    SellingParty: 'SELLING_PARTY'
+    SellingParty: 'SELLING_PARTY',
 } as const;
 
 export type PartyIdentificationInfoPartyTypeEnum = typeof PartyIdentificationInfoPartyTypeEnum[keyof typeof PartyIdentificationInfoPartyTypeEnum];

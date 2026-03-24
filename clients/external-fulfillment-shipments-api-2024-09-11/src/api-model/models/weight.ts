@@ -30,7 +30,7 @@ export interface Weight {
 
 export const WeightWeightUnitEnum = {
     G: 'G',
-    Kg: 'KG'
+    Kg: 'KG',
 } as const;
 
 export type WeightWeightUnitEnum = typeof WeightWeightUnitEnum[keyof typeof WeightWeightUnitEnum];

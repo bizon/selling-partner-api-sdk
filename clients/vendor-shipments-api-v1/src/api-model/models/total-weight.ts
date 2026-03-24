@@ -32,7 +32,7 @@ export const TotalWeightUnitOfMeasureEnum = {
     Pounds: 'POUNDS',
     Ounces: 'OUNCES',
     Grams: 'GRAMS',
-    Kilograms: 'KILOGRAMS'
+    Kilograms: 'KILOGRAMS',
 } as const;
 
 export type TotalWeightUnitOfMeasureEnum = typeof TotalWeightUnitOfMeasureEnum[keyof typeof TotalWeightUnitOfMeasureEnum];

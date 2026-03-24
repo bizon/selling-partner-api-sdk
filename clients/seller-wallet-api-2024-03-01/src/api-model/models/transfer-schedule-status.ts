@@ -22,7 +22,7 @@ export const TransferScheduleStatus = {
     Enabled: 'ENABLED',
     Disabled: 'DISABLED',
     Expired: 'EXPIRED',
-    Deleted: 'DELETED'
+    Deleted: 'DELETED',
 } as const;
 
 export type TransferScheduleStatus = typeof TransferScheduleStatus[keyof typeof TransferScheduleStatus];

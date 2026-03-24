@@ -34,7 +34,7 @@ export interface ItemVariationsByMarketplace {
 
 export const ItemVariationsByMarketplaceVariationTypeEnum = {
     Parent: 'PARENT',
-    Child: 'CHILD'
+    Child: 'CHILD',
 } as const;
 
 export type ItemVariationsByMarketplaceVariationTypeEnum = typeof ItemVariationsByMarketplaceVariationTypeEnum[keyof typeof ItemVariationsByMarketplaceVariationTypeEnum];

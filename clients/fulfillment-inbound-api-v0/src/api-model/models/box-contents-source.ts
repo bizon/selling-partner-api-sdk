@@ -22,7 +22,7 @@ export const BoxContentsSource = {
     None: 'NONE',
     Feed: 'FEED',
     _2DBarcode: '2D_BARCODE',
-    Interactive: 'INTERACTIVE'
+    Interactive: 'INTERACTIVE',
 } as const;
 
 export type BoxContentsSource = typeof BoxContentsSource[keyof typeof BoxContentsSource];

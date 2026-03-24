@@ -22,7 +22,7 @@ export const ContentStatus = {
     Approved: 'APPROVED',
     Draft: 'DRAFT',
     Rejected: 'REJECTED',
-    Submitted: 'SUBMITTED'
+    Submitted: 'SUBMITTED',
 } as const;
 
 export type ContentStatus = typeof ContentStatus[keyof typeof ContentStatus];

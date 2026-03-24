@@ -37,7 +37,7 @@ export interface ExceptionDate {
 
 export const ExceptionDateExceptionDateTypeEnum = {
     Closed: 'CLOSED',
-    Open: 'OPEN'
+    Open: 'OPEN',
 } as const;
 
 export type ExceptionDateExceptionDateTypeEnum = typeof ExceptionDateExceptionDateTypeEnum[keyof typeof ExceptionDateExceptionDateTypeEnum];

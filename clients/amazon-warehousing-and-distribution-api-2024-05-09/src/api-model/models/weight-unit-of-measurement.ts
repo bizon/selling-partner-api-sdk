@@ -20,7 +20,7 @@
 
 export const WeightUnitOfMeasurement = {
     Pounds: 'POUNDS',
-    Kilograms: 'KILOGRAMS'
+    Kilograms: 'KILOGRAMS',
 } as const;
 
 export type WeightUnitOfMeasurement = typeof WeightUnitOfMeasurement[keyof typeof WeightUnitOfMeasurement];

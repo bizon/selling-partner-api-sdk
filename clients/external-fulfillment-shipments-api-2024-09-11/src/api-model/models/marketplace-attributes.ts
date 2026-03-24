@@ -38,7 +38,7 @@ export interface MarketplaceAttributes {
 
 export const MarketplaceAttributesCustomAttributesEnum = {
     Prime: 'PRIME',
-    Fasttrack: 'FASTTRACK'
+    Fasttrack: 'FASTTRACK',
 } as const;
 
 export type MarketplaceAttributesCustomAttributesEnum = typeof MarketplaceAttributesCustomAttributesEnum[keyof typeof MarketplaceAttributesCustomAttributesEnum];

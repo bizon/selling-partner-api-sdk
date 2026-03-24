@@ -20,7 +20,7 @@
 
 export const BankNumberFormat = {
     Bic: 'BIC',
-    Basic: 'BASIC'
+    Basic: 'BASIC',
 } as const;
 
 export type BankNumberFormat = typeof BankNumberFormat[keyof typeof BankNumberFormat];

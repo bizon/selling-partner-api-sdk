@@ -1853,16 +1853,16 @@ export const GetServiceJobsServiceJobStatusEnum = {
     PendingSchedule: 'PENDING_SCHEDULE',
     NotFulfillable: 'NOT_FULFILLABLE',
     Hold: 'HOLD',
-    PaymentDeclined: 'PAYMENT_DECLINED'
+    PaymentDeclined: 'PAYMENT_DECLINED',
 } as const;
 export type GetServiceJobsServiceJobStatusEnum = typeof GetServiceJobsServiceJobStatusEnum[keyof typeof GetServiceJobsServiceJobStatusEnum];
 export const GetServiceJobsSortFieldEnum = {
     JobDate: 'JOB_DATE',
-    JobStatus: 'JOB_STATUS'
+    JobStatus: 'JOB_STATUS',
 } as const;
 export type GetServiceJobsSortFieldEnum = typeof GetServiceJobsSortFieldEnum[keyof typeof GetServiceJobsSortFieldEnum];
 export const GetServiceJobsSortOrderEnum = {
     Asc: 'ASC',
-    Desc: 'DESC'
+    Desc: 'DESC',
 } as const;
 export type GetServiceJobsSortOrderEnum = typeof GetServiceJobsSortOrderEnum[keyof typeof GetServiceJobsSortOrderEnum];

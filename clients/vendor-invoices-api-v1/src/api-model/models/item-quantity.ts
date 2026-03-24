@@ -38,7 +38,7 @@ export interface ItemQuantity {
 
 export const ItemQuantityUnitOfMeasureEnum = {
     Cases: 'Cases',
-    Eaches: 'Eaches'
+    Eaches: 'Eaches',
 } as const;
 
 export type ItemQuantityUnitOfMeasureEnum = typeof ItemQuantityUnitOfMeasureEnum[keyof typeof ItemQuantityUnitOfMeasureEnum];

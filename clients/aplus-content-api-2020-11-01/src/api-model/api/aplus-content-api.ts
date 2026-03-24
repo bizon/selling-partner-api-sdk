@@ -1044,10 +1044,10 @@ export class AplusContentApi extends BaseAPI {
 
 export const GetContentDocumentIncludedDataSetEnum = {
     Contents: 'CONTENTS',
-    Metadata: 'METADATA'
+    Metadata: 'METADATA',
 } as const;
 export type GetContentDocumentIncludedDataSetEnum = typeof GetContentDocumentIncludedDataSetEnum[keyof typeof GetContentDocumentIncludedDataSetEnum];
 export const ListContentDocumentAsinRelationsIncludedDataSetEnum = {
-    Metadata: 'METADATA'
+    Metadata: 'METADATA',
 } as const;
 export type ListContentDocumentAsinRelationsIncludedDataSetEnum = typeof ListContentDocumentAsinRelationsIncludedDataSetEnum[keyof typeof ListContentDocumentAsinRelationsIncludedDataSetEnum];

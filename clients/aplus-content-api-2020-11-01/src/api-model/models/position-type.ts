@@ -20,7 +20,7 @@
 
 export const PositionType = {
     Left: 'LEFT',
-    Right: 'RIGHT'
+    Right: 'RIGHT',
 } as const;
 
 export type PositionType = typeof PositionType[keyof typeof PositionType];

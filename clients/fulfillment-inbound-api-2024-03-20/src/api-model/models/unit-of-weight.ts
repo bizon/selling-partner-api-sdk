@@ -20,7 +20,7 @@
 
 export const UnitOfWeight = {
     Lb: 'LB',
-    Kg: 'KG'
+    Kg: 'KG',
 } as const;
 
 export type UnitOfWeight = typeof UnitOfWeight[keyof typeof UnitOfWeight];

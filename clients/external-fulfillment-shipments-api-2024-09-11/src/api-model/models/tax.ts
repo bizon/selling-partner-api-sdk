@@ -41,7 +41,7 @@ export const TaxTypeEnum = {
     Utgst: 'UTGST',
     Cess: 'CESS',
     Other: 'OTHER',
-    Total: 'TOTAL'
+    Total: 'TOTAL',
 } as const;
 
 export type TaxTypeEnum = typeof TaxTypeEnum[keyof typeof TaxTypeEnum];

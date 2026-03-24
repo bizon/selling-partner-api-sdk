@@ -88,7 +88,7 @@ export interface Invoice {
 
 export const InvoiceInvoiceTypeEnum = {
     Invoice: 'Invoice',
-    CreditNote: 'CreditNote'
+    CreditNote: 'CreditNote',
 } as const;
 
 export type InvoiceInvoiceTypeEnum = typeof InvoiceInvoiceTypeEnum[keyof typeof InvoiceInvoiceTypeEnum];

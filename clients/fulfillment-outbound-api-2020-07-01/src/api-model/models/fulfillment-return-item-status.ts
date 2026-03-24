@@ -20,7 +20,7 @@
 
 export const FulfillmentReturnItemStatus = {
     New: 'New',
-    Processed: 'Processed'
+    Processed: 'Processed',
 } as const;
 
 export type FulfillmentReturnItemStatus = typeof FulfillmentReturnItemStatus[keyof typeof FulfillmentReturnItemStatus];

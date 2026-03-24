@@ -32,7 +32,7 @@ export const VolumeUnitOfMeasureEnum = {
     CuFt: 'CuFt',
     CuIn: 'CuIn',
     CuM: 'CuM',
-    CuY: 'CuY'
+    CuY: 'CuY',
 } as const;
 
 export type VolumeUnitOfMeasureEnum = typeof VolumeUnitOfMeasureEnum[keyof typeof VolumeUnitOfMeasureEnum];

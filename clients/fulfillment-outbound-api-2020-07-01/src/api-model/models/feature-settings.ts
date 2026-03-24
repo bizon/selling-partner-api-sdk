@@ -30,7 +30,7 @@ export interface FeatureSettings {
 
 export const FeatureSettingsFeatureFulfillmentPolicyEnum = {
     Required: 'Required',
-    NotRequired: 'NotRequired'
+    NotRequired: 'NotRequired',
 } as const;
 
 export type FeatureSettingsFeatureFulfillmentPolicyEnum = typeof FeatureSettingsFeatureFulfillmentPolicyEnum[keyof typeof FeatureSettingsFeatureFulfillmentPolicyEnum];

@@ -23,7 +23,7 @@ export const CustomAttributeType = {
     Boolean: 'BOOLEAN',
     Integer: 'INTEGER',
     Double: 'DOUBLE',
-    JsonString: 'JSON_STRING'
+    JsonString: 'JSON_STRING',
 } as const;
 
 export type CustomAttributeType = typeof CustomAttributeType[keyof typeof CustomAttributeType];

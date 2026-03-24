@@ -21,7 +21,7 @@
 export const LabelOwner = {
     Amazon: 'AMAZON',
     Seller: 'SELLER',
-    None: 'NONE'
+    None: 'NONE',
 } as const;
 
 export type LabelOwner = typeof LabelOwner[keyof typeof LabelOwner];

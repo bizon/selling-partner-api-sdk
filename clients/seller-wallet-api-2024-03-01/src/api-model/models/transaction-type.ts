@@ -20,7 +20,7 @@
 
 export const TransactionType = {
     Credit: 'CREDIT',
-    Debit: 'DEBIT'
+    Debit: 'DEBIT',
 } as const;
 
 export type TransactionType = typeof TransactionType[keyof typeof TransactionType];

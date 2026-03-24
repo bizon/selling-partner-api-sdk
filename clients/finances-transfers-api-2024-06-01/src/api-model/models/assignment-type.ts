@@ -19,7 +19,7 @@
  */
 
 export const AssignmentType = {
-    DefaultDepositMethod: 'DEFAULT_DEPOSIT_METHOD'
+    DefaultDepositMethod: 'DEFAULT_DEPOSIT_METHOD',
 } as const;
 
 export type AssignmentType = typeof AssignmentType[keyof typeof AssignmentType];

@@ -21,7 +21,7 @@
 export const PayeeEntityType = {
     Individual: 'INDIVIDUAL',
     Business: 'BUSINESS',
-    TaxAuthority: 'TAX_AUTHORITY'
+    TaxAuthority: 'TAX_AUTHORITY',
 } as const;
 
 export type PayeeEntityType = typeof PayeeEntityType[keyof typeof PayeeEntityType];

@@ -863,25 +863,25 @@ export const GetListingsItemIncludedDataEnum = {
     FulfillmentAvailability: 'fulfillmentAvailability',
     Procurement: 'procurement',
     Relationships: 'relationships',
-    ProductTypes: 'productTypes'
+    ProductTypes: 'productTypes',
 } as const;
 export type GetListingsItemIncludedDataEnum = typeof GetListingsItemIncludedDataEnum[keyof typeof GetListingsItemIncludedDataEnum];
 export const PatchListingsItemIncludedDataEnum = {
     Identifiers: 'identifiers',
-    Issues: 'issues'
+    Issues: 'issues',
 } as const;
 export type PatchListingsItemIncludedDataEnum = typeof PatchListingsItemIncludedDataEnum[keyof typeof PatchListingsItemIncludedDataEnum];
 export const PatchListingsItemModeEnum = {
-    ValidationPreview: 'VALIDATION_PREVIEW'
+    ValidationPreview: 'VALIDATION_PREVIEW',
 } as const;
 export type PatchListingsItemModeEnum = typeof PatchListingsItemModeEnum[keyof typeof PatchListingsItemModeEnum];
 export const PutListingsItemIncludedDataEnum = {
     Identifiers: 'identifiers',
-    Issues: 'issues'
+    Issues: 'issues',
 } as const;
 export type PutListingsItemIncludedDataEnum = typeof PutListingsItemIncludedDataEnum[keyof typeof PutListingsItemIncludedDataEnum];
 export const PutListingsItemModeEnum = {
-    ValidationPreview: 'VALIDATION_PREVIEW'
+    ValidationPreview: 'VALIDATION_PREVIEW',
 } as const;
 export type PutListingsItemModeEnum = typeof PutListingsItemModeEnum[keyof typeof PutListingsItemModeEnum];
 export const SearchListingsItemsIncludedDataEnum = {
@@ -892,7 +892,7 @@ export const SearchListingsItemsIncludedDataEnum = {
     FulfillmentAvailability: 'fulfillmentAvailability',
     Procurement: 'procurement',
     Relationships: 'relationships',
-    ProductTypes: 'productTypes'
+    ProductTypes: 'productTypes',
 } as const;
 export type SearchListingsItemsIncludedDataEnum = typeof SearchListingsItemsIncludedDataEnum[keyof typeof SearchListingsItemsIncludedDataEnum];
 export const SearchListingsItemsIdentifiersTypeEnum = {
@@ -904,32 +904,32 @@ export const SearchListingsItemsIdentifiersTypeEnum = {
     Jan: 'JAN',
     Minsan: 'MINSAN',
     Sku: 'SKU',
-    Upc: 'UPC'
+    Upc: 'UPC',
 } as const;
 export type SearchListingsItemsIdentifiersTypeEnum = typeof SearchListingsItemsIdentifiersTypeEnum[keyof typeof SearchListingsItemsIdentifiersTypeEnum];
 export const SearchListingsItemsWithIssueSeverityEnum = {
     Warning: 'WARNING',
-    Error: 'ERROR'
+    Error: 'ERROR',
 } as const;
 export type SearchListingsItemsWithIssueSeverityEnum = typeof SearchListingsItemsWithIssueSeverityEnum[keyof typeof SearchListingsItemsWithIssueSeverityEnum];
 export const SearchListingsItemsWithStatusEnum = {
     Buyable: 'BUYABLE',
-    Discoverable: 'DISCOVERABLE'
+    Discoverable: 'DISCOVERABLE',
 } as const;
 export type SearchListingsItemsWithStatusEnum = typeof SearchListingsItemsWithStatusEnum[keyof typeof SearchListingsItemsWithStatusEnum];
 export const SearchListingsItemsWithoutStatusEnum = {
     Buyable: 'BUYABLE',
-    Discoverable: 'DISCOVERABLE'
+    Discoverable: 'DISCOVERABLE',
 } as const;
 export type SearchListingsItemsWithoutStatusEnum = typeof SearchListingsItemsWithoutStatusEnum[keyof typeof SearchListingsItemsWithoutStatusEnum];
 export const SearchListingsItemsSortByEnum = {
     Sku: 'sku',
     CreatedDate: 'createdDate',
-    LastUpdatedDate: 'lastUpdatedDate'
+    LastUpdatedDate: 'lastUpdatedDate',
 } as const;
 export type SearchListingsItemsSortByEnum = typeof SearchListingsItemsSortByEnum[keyof typeof SearchListingsItemsSortByEnum];
 export const SearchListingsItemsSortOrderEnum = {
     Asc: 'ASC',
-    Desc: 'DESC'
+    Desc: 'DESC',
 } as const;
 export type SearchListingsItemsSortOrderEnum = typeof SearchListingsItemsSortOrderEnum[keyof typeof SearchListingsItemsSortOrderEnum];

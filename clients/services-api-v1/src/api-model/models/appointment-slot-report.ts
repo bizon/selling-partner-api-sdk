@@ -41,7 +41,7 @@ export interface AppointmentSlotReport {
 
 export const AppointmentSlotReportSchedulingTypeEnum = {
     RealTimeScheduling: 'REAL_TIME_SCHEDULING',
-    NonRealTimeScheduling: 'NON_REAL_TIME_SCHEDULING'
+    NonRealTimeScheduling: 'NON_REAL_TIME_SCHEDULING',
 } as const;
 
 export type AppointmentSlotReportSchedulingTypeEnum = typeof AppointmentSlotReportSchedulingTypeEnum[keyof typeof AppointmentSlotReportSchedulingTypeEnum];

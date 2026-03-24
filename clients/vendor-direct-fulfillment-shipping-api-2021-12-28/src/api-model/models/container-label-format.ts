@@ -20,7 +20,7 @@
 
 export const ContainerLabelFormat = {
     Png: 'PNG',
-    Zpl: 'ZPL'
+    Zpl: 'ZPL',
 } as const;
 
 export type ContainerLabelFormat = typeof ContainerLabelFormat[keyof typeof ContainerLabelFormat];

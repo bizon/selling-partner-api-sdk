@@ -35,7 +35,7 @@ export const LiquidVolumeUnitEnum = {
     Gal: 'GAL',
     Pt: 'PT',
     Qt: 'QT',
-    C: 'C'
+    C: 'C',
 } as const;
 
 export type LiquidVolumeUnitEnum = typeof LiquidVolumeUnitEnum[keyof typeof LiquidVolumeUnitEnum];

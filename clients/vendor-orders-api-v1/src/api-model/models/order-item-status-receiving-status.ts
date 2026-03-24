@@ -35,7 +35,7 @@ export interface OrderItemStatusReceivingStatus {
 export const OrderItemStatusReceivingStatusReceiveStatusEnum = {
     NotReceived: 'NOT_RECEIVED',
     PartiallyReceived: 'PARTIALLY_RECEIVED',
-    Received: 'RECEIVED'
+    Received: 'RECEIVED',
 } as const;
 
 export type OrderItemStatusReceivingStatusReceiveStatusEnum = typeof OrderItemStatusReceivingStatusReceiveStatusEnum[keyof typeof OrderItemStatusReceivingStatusReceiveStatusEnum];

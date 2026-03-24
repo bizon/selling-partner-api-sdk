@@ -20,7 +20,7 @@
 
 export const SupplySourceStatus = {
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 
 export type SupplySourceStatus = typeof SupplySourceStatus[keyof typeof SupplySourceStatus];

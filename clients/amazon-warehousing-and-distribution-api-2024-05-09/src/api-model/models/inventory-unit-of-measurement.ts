@@ -21,7 +21,7 @@
 export const InventoryUnitOfMeasurement = {
     ProductUnits: 'PRODUCT_UNITS',
     Cases: 'CASES',
-    Pallets: 'PALLETS'
+    Pallets: 'PALLETS',
 } as const;
 
 export type InventoryUnitOfMeasurement = typeof InventoryUnitOfMeasurement[keyof typeof InventoryUnitOfMeasurement];

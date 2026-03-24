@@ -68,7 +68,7 @@ export interface AccessPoint {
 
 export const AccessPointAssistanceTypeEnum = {
     StaffAssisted: 'STAFF_ASSISTED',
-    SelfAssisted: 'SELF_ASSISTED'
+    SelfAssisted: 'SELF_ASSISTED',
 } as const;
 
 export type AccessPointAssistanceTypeEnum = typeof AccessPointAssistanceTypeEnum[keyof typeof AccessPointAssistanceTypeEnum];

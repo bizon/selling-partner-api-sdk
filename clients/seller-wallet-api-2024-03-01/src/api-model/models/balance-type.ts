@@ -22,7 +22,7 @@ export const BalanceType = {
     Available: 'AVAILABLE',
     LockedIn: 'LOCKED_IN',
     LockedOut: 'LOCKED_OUT',
-    Total: 'TOTAL'
+    Total: 'TOTAL',
 } as const;
 
 export type BalanceType = typeof BalanceType[keyof typeof BalanceType];

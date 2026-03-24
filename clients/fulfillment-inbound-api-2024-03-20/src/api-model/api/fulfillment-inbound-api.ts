@@ -4331,16 +4331,16 @@ export class FulfillmentInboundApi extends BaseAPI {
 export const ListInboundPlansStatusEnum = {
     Active: 'ACTIVE',
     Voided: 'VOIDED',
-    Shipped: 'SHIPPED'
+    Shipped: 'SHIPPED',
 } as const;
 export type ListInboundPlansStatusEnum = typeof ListInboundPlansStatusEnum[keyof typeof ListInboundPlansStatusEnum];
 export const ListInboundPlansSortByEnum = {
     LastUpdatedTime: 'LAST_UPDATED_TIME',
-    CreationTime: 'CREATION_TIME'
+    CreationTime: 'CREATION_TIME',
 } as const;
 export type ListInboundPlansSortByEnum = typeof ListInboundPlansSortByEnum[keyof typeof ListInboundPlansSortByEnum];
 export const ListInboundPlansSortOrderEnum = {
     Asc: 'ASC',
-    Desc: 'DESC'
+    Desc: 'DESC',
 } as const;
 export type ListInboundPlansSortOrderEnum = typeof ListInboundPlansSortOrderEnum[keyof typeof ListInboundPlansSortOrderEnum];

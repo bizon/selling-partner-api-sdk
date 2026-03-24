@@ -21,7 +21,7 @@
 export const OperationStatus = {
     Success: 'SUCCESS',
     Failed: 'FAILED',
-    InProgress: 'IN_PROGRESS'
+    InProgress: 'IN_PROGRESS',
 } as const;
 
 export type OperationStatus = typeof OperationStatus[keyof typeof OperationStatus];

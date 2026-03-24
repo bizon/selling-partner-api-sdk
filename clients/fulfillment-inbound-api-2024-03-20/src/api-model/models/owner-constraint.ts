@@ -21,7 +21,7 @@
 export const OwnerConstraint = {
     AmazonOnly: 'AMAZON_ONLY',
     NoneOnly: 'NONE_ONLY',
-    SellerOnly: 'SELLER_ONLY'
+    SellerOnly: 'SELLER_ONLY',
 } as const;
 
 export type OwnerConstraint = typeof OwnerConstraint[keyof typeof OwnerConstraint];

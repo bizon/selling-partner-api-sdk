@@ -32,7 +32,7 @@ export const EventCode = {
     PickupCancelled: 'PickupCancelled',
     ReturnInitiated: 'ReturnInitiated',
     AvailableForPickup: 'AvailableForPickup',
-    RecipientRequestedAlternateDeliveryTiming: 'RecipientRequestedAlternateDeliveryTiming'
+    RecipientRequestedAlternateDeliveryTiming: 'RecipientRequestedAlternateDeliveryTiming',
 } as const;
 
 export type EventCode = typeof EventCode[keyof typeof EventCode];

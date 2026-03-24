@@ -21,7 +21,7 @@
 export const ProgramType = {
     EasyShip: 'EasyShip',
     FbaOnSite: 'FbaOnSite',
-    SelfShip: 'SelfShip'
+    SelfShip: 'SelfShip',
 } as const;
 
 export type ProgramType = typeof ProgramType[keyof typeof ProgramType];

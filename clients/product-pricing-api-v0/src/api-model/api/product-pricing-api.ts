@@ -697,12 +697,12 @@ export class ProductPricingApi extends BaseAPI {
 
 export const GetCompetitivePricingItemTypeEnum = {
     Asin: 'Asin',
-    Sku: 'Sku'
+    Sku: 'Sku',
 } as const;
 export type GetCompetitivePricingItemTypeEnum = typeof GetCompetitivePricingItemTypeEnum[keyof typeof GetCompetitivePricingItemTypeEnum];
 export const GetCompetitivePricingCustomerTypeEnum = {
     Consumer: 'Consumer',
-    Business: 'Business'
+    Business: 'Business',
 } as const;
 export type GetCompetitivePricingCustomerTypeEnum = typeof GetCompetitivePricingCustomerTypeEnum[keyof typeof GetCompetitivePricingCustomerTypeEnum];
 export const GetItemOffersItemConditionEnum = {
@@ -710,12 +710,12 @@ export const GetItemOffersItemConditionEnum = {
     Used: 'Used',
     Collectible: 'Collectible',
     Refurbished: 'Refurbished',
-    Club: 'Club'
+    Club: 'Club',
 } as const;
 export type GetItemOffersItemConditionEnum = typeof GetItemOffersItemConditionEnum[keyof typeof GetItemOffersItemConditionEnum];
 export const GetItemOffersCustomerTypeEnum = {
     Consumer: 'Consumer',
-    Business: 'Business'
+    Business: 'Business',
 } as const;
 export type GetItemOffersCustomerTypeEnum = typeof GetItemOffersCustomerTypeEnum[keyof typeof GetItemOffersCustomerTypeEnum];
 export const GetListingOffersItemConditionEnum = {
@@ -723,17 +723,17 @@ export const GetListingOffersItemConditionEnum = {
     Used: 'Used',
     Collectible: 'Collectible',
     Refurbished: 'Refurbished',
-    Club: 'Club'
+    Club: 'Club',
 } as const;
 export type GetListingOffersItemConditionEnum = typeof GetListingOffersItemConditionEnum[keyof typeof GetListingOffersItemConditionEnum];
 export const GetListingOffersCustomerTypeEnum = {
     Consumer: 'Consumer',
-    Business: 'Business'
+    Business: 'Business',
 } as const;
 export type GetListingOffersCustomerTypeEnum = typeof GetListingOffersCustomerTypeEnum[keyof typeof GetListingOffersCustomerTypeEnum];
 export const GetPricingItemTypeEnum = {
     Asin: 'Asin',
-    Sku: 'Sku'
+    Sku: 'Sku',
 } as const;
 export type GetPricingItemTypeEnum = typeof GetPricingItemTypeEnum[keyof typeof GetPricingItemTypeEnum];
 export const GetPricingItemConditionEnum = {
@@ -741,11 +741,11 @@ export const GetPricingItemConditionEnum = {
     Used: 'Used',
     Collectible: 'Collectible',
     Refurbished: 'Refurbished',
-    Club: 'Club'
+    Club: 'Club',
 } as const;
 export type GetPricingItemConditionEnum = typeof GetPricingItemConditionEnum[keyof typeof GetPricingItemConditionEnum];
 export const GetPricingOfferTypeEnum = {
     B2C: 'B2C',
-    B2B: 'B2B'
+    B2B: 'B2B',
 } as const;
 export type GetPricingOfferTypeEnum = typeof GetPricingOfferTypeEnum[keyof typeof GetPricingOfferTypeEnum];

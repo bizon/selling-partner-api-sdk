@@ -92,7 +92,7 @@ export const ServiceJobServiceJobStatusEnum = {
     PendingSchedule: 'PENDING_SCHEDULE',
     NotFulfillable: 'NOT_FULFILLABLE',
     Hold: 'HOLD',
-    PaymentDeclined: 'PAYMENT_DECLINED'
+    PaymentDeclined: 'PAYMENT_DECLINED',
 } as const;
 
 export type ServiceJobServiceJobStatusEnum = typeof ServiceJobServiceJobStatusEnum[keyof typeof ServiceJobServiceJobStatusEnum];

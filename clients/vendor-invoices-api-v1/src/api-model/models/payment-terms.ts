@@ -42,7 +42,7 @@ export const PaymentTermsTypeEnum = {
     FixedDate: 'FixedDate',
     Proximo: 'Proximo',
     PaymentDueUponReceiptOfInvoice: 'PaymentDueUponReceiptOfInvoice',
-    LetterofCredit: 'LetterofCredit'
+    LetterofCredit: 'LetterofCredit',
 } as const;
 
 export type PaymentTermsTypeEnum = typeof PaymentTermsTypeEnum[keyof typeof PaymentTermsTypeEnum];

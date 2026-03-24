@@ -24,7 +24,7 @@ export const PackageStatus = {
     InvoiceGenerated: 'INVOICE_GENERATED',
     ShiplabelGenerated: 'SHIPLABEL_GENERATED',
     Shipped: 'SHIPPED',
-    Delivered: 'DELIVERED'
+    Delivered: 'DELIVERED',
 } as const;
 
 export type PackageStatus = typeof PackageStatus[keyof typeof PackageStatus];

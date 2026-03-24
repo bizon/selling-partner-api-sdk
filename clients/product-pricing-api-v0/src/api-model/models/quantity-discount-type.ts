@@ -19,7 +19,7 @@
  */
 
 export const QuantityDiscountType = {
-    QuantityDiscount: 'QUANTITY_DISCOUNT'
+    QuantityDiscount: 'QUANTITY_DISCOUNT',
 } as const;
 
 export type QuantityDiscountType = typeof QuantityDiscountType[keyof typeof QuantityDiscountType];

@@ -226,6 +226,6 @@ export class FinancesTransfersApi extends BaseAPI {
 export const GetPaymentMethodsPaymentMethodTypesEnum = {
     BankAccount: 'BANK_ACCOUNT',
     Card: 'CARD',
-    SellerWallet: 'SELLER_WALLET'
+    SellerWallet: 'SELLER_WALLET',
 } as const;
 export type GetPaymentMethodsPaymentMethodTypesEnum = typeof GetPaymentMethodsPaymentMethodTypesEnum[keyof typeof GetPaymentMethodsPaymentMethodTypesEnum];

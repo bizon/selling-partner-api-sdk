@@ -20,7 +20,7 @@
 
 export const PrepOwner = {
     Amazon: 'AMAZON',
-    Self: 'SELF'
+    Self: 'SELF',
 } as const;
 
 export type PrepOwner = typeof PrepOwner[keyof typeof PrepOwner];

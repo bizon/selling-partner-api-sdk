@@ -38,7 +38,7 @@ export interface Dimensions {
 
 export const DimensionsUnitEnum = {
     Inch: 'INCH',
-    Centimeter: 'CENTIMETER'
+    Centimeter: 'CENTIMETER',
 } as const;
 
 export type DimensionsUnitEnum = typeof DimensionsUnitEnum[keyof typeof DimensionsUnitEnum];

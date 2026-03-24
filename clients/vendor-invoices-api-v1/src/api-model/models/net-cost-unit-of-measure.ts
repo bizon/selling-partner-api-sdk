@@ -22,7 +22,7 @@ export const NetCostUnitOfMeasure = {
     Pounds: 'POUNDS',
     Ounces: 'OUNCES',
     Grams: 'GRAMS',
-    Kilograms: 'KILOGRAMS'
+    Kilograms: 'KILOGRAMS',
 } as const;
 
 export type NetCostUnitOfMeasure = typeof NetCostUnitOfMeasure[keyof typeof NetCostUnitOfMeasure];

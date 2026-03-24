@@ -21,7 +21,7 @@
 export const PrepGuidance = {
     ConsultHelpDocuments: 'ConsultHelpDocuments',
     NoAdditionalPrepRequired: 'NoAdditionalPrepRequired',
-    SeePrepInstructionsList: 'SeePrepInstructionsList'
+    SeePrepInstructionsList: 'SeePrepInstructionsList',
 } as const;
 
 export type PrepGuidance = typeof PrepGuidance[keyof typeof PrepGuidance];

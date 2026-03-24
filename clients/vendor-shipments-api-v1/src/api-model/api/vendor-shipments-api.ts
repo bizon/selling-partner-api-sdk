@@ -742,11 +742,11 @@ export class VendorShipmentsApi extends BaseAPI {
 
 export const GetShipmentDetailsSortOrderEnum = {
     Asc: 'ASC',
-    Desc: 'DESC'
+    Desc: 'DESC',
 } as const;
 export type GetShipmentDetailsSortOrderEnum = typeof GetShipmentDetailsSortOrderEnum[keyof typeof GetShipmentDetailsSortOrderEnum];
 export const GetShipmentLabelsSortOrderEnum = {
     Asc: 'ASC',
-    Desc: 'DESC'
+    Desc: 'DESC',
 } as const;
 export type GetShipmentLabelsSortOrderEnum = typeof GetShipmentLabelsSortOrderEnum[keyof typeof GetShipmentLabelsSortOrderEnum];

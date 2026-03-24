@@ -38,7 +38,7 @@ export const ServiceUploadDocumentContentTypeEnum = {
     Png: 'PNG',
     Jpeg: 'JPEG',
     Gif: 'GIF',
-    Pdf: 'PDF'
+    Pdf: 'PDF',
 } as const;
 
 export type ServiceUploadDocumentContentTypeEnum = typeof ServiceUploadDocumentContentTypeEnum[keyof typeof ServiceUploadDocumentContentTypeEnum];

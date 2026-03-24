@@ -30,7 +30,7 @@ export interface Duration {
 
 export const DurationDurationUnitEnum = {
     Days: 'Days',
-    Months: 'Months'
+    Months: 'Months',
 } as const;
 
 export type DurationDurationUnitEnum = typeof DurationDurationUnitEnum[keyof typeof DurationDurationUnitEnum];

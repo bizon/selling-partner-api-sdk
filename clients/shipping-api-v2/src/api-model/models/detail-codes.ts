@@ -48,7 +48,7 @@ export const DetailCodes = {
     AddressNotFound: 'AddressNotFound',
     HazmatShipment: 'HazmatShipment',
     Undeliverable: 'Undeliverable',
-    ArrivedAtLocalFacility: 'ArrivedAtLocalFacility'
+    ArrivedAtLocalFacility: 'ArrivedAtLocalFacility',
 } as const;
 
 export type DetailCodes = typeof DetailCodes[keyof typeof DetailCodes];

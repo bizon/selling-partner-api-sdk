@@ -1973,7 +1973,7 @@ export const CancelShipmentXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type CancelShipmentXAmznShippingBusinessIdEnum = typeof CancelShipmentXAmznShippingBusinessIdEnum[keyof typeof CancelShipmentXAmznShippingBusinessIdEnum];
 export const CreateClaimXAmznShippingBusinessIdEnum = {
@@ -1986,7 +1986,7 @@ export const CreateClaimXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type CreateClaimXAmznShippingBusinessIdEnum = typeof CreateClaimXAmznShippingBusinessIdEnum[keyof typeof CreateClaimXAmznShippingBusinessIdEnum];
 export const DirectPurchaseShipmentXAmznShippingBusinessIdEnum = {
@@ -1999,7 +1999,7 @@ export const DirectPurchaseShipmentXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type DirectPurchaseShipmentXAmznShippingBusinessIdEnum = typeof DirectPurchaseShipmentXAmznShippingBusinessIdEnum[keyof typeof DirectPurchaseShipmentXAmznShippingBusinessIdEnum];
 export const GenerateCollectionFormXAmznShippingBusinessIdEnum = {
@@ -2012,7 +2012,7 @@ export const GenerateCollectionFormXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type GenerateCollectionFormXAmznShippingBusinessIdEnum = typeof GenerateCollectionFormXAmznShippingBusinessIdEnum[keyof typeof GenerateCollectionFormXAmznShippingBusinessIdEnum];
 export const GetAccessPointsAccessPointTypesEnum = {
@@ -2023,7 +2023,7 @@ export const GetAccessPointsAccessPointTypesEnum = {
     DobbyLocker: 'DOBBY_LOCKER',
     CoreLocker: 'CORE_LOCKER',
     _3P: '3P',
-    CampusRoom: 'CAMPUS_ROOM'
+    CampusRoom: 'CAMPUS_ROOM',
 } as const;
 export type GetAccessPointsAccessPointTypesEnum = typeof GetAccessPointsAccessPointTypesEnum[keyof typeof GetAccessPointsAccessPointTypesEnum];
 export const GetAccessPointsXAmznShippingBusinessIdEnum = {
@@ -2036,7 +2036,7 @@ export const GetAccessPointsXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type GetAccessPointsXAmznShippingBusinessIdEnum = typeof GetAccessPointsXAmznShippingBusinessIdEnum[keyof typeof GetAccessPointsXAmznShippingBusinessIdEnum];
 export const GetAdditionalInputsXAmznShippingBusinessIdEnum = {
@@ -2049,7 +2049,7 @@ export const GetAdditionalInputsXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type GetAdditionalInputsXAmznShippingBusinessIdEnum = typeof GetAdditionalInputsXAmznShippingBusinessIdEnum[keyof typeof GetAdditionalInputsXAmznShippingBusinessIdEnum];
 export const GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum = {
@@ -2062,7 +2062,7 @@ export const GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum = typeof GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum[keyof typeof GetCarrierAccountFormInputsXAmznShippingBusinessIdEnum];
 export const GetCarrierAccountsXAmznShippingBusinessIdEnum = {
@@ -2075,7 +2075,7 @@ export const GetCarrierAccountsXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type GetCarrierAccountsXAmznShippingBusinessIdEnum = typeof GetCarrierAccountsXAmznShippingBusinessIdEnum[keyof typeof GetCarrierAccountsXAmznShippingBusinessIdEnum];
 export const GetCollectionFormXAmznShippingBusinessIdEnum = {
@@ -2088,7 +2088,7 @@ export const GetCollectionFormXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type GetCollectionFormXAmznShippingBusinessIdEnum = typeof GetCollectionFormXAmznShippingBusinessIdEnum[keyof typeof GetCollectionFormXAmznShippingBusinessIdEnum];
 export const GetCollectionFormHistoryXAmznShippingBusinessIdEnum = {
@@ -2101,7 +2101,7 @@ export const GetCollectionFormHistoryXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type GetCollectionFormHistoryXAmznShippingBusinessIdEnum = typeof GetCollectionFormHistoryXAmznShippingBusinessIdEnum[keyof typeof GetCollectionFormHistoryXAmznShippingBusinessIdEnum];
 export const GetRatesXAmznShippingBusinessIdEnum = {
@@ -2114,7 +2114,7 @@ export const GetRatesXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type GetRatesXAmznShippingBusinessIdEnum = typeof GetRatesXAmznShippingBusinessIdEnum[keyof typeof GetRatesXAmznShippingBusinessIdEnum];
 export const GetShipmentDocumentsXAmznShippingBusinessIdEnum = {
@@ -2127,7 +2127,7 @@ export const GetShipmentDocumentsXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type GetShipmentDocumentsXAmznShippingBusinessIdEnum = typeof GetShipmentDocumentsXAmznShippingBusinessIdEnum[keyof typeof GetShipmentDocumentsXAmznShippingBusinessIdEnum];
 export const GetTrackingXAmznShippingBusinessIdEnum = {
@@ -2140,7 +2140,7 @@ export const GetTrackingXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type GetTrackingXAmznShippingBusinessIdEnum = typeof GetTrackingXAmznShippingBusinessIdEnum[keyof typeof GetTrackingXAmznShippingBusinessIdEnum];
 export const GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum = {
@@ -2153,7 +2153,7 @@ export const GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum = typeof GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum[keyof typeof GetUnmanifestedShipmentsXAmznShippingBusinessIdEnum];
 export const LinkCarrierAccountXAmznShippingBusinessIdEnum = {
@@ -2166,7 +2166,7 @@ export const LinkCarrierAccountXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type LinkCarrierAccountXAmznShippingBusinessIdEnum = typeof LinkCarrierAccountXAmznShippingBusinessIdEnum[keyof typeof LinkCarrierAccountXAmznShippingBusinessIdEnum];
 export const LinkCarrierAccount0XAmznShippingBusinessIdEnum = {
@@ -2179,7 +2179,7 @@ export const LinkCarrierAccount0XAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type LinkCarrierAccount0XAmznShippingBusinessIdEnum = typeof LinkCarrierAccount0XAmznShippingBusinessIdEnum[keyof typeof LinkCarrierAccount0XAmznShippingBusinessIdEnum];
 export const OneClickShipmentXAmznShippingBusinessIdEnum = {
@@ -2192,7 +2192,7 @@ export const OneClickShipmentXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type OneClickShipmentXAmznShippingBusinessIdEnum = typeof OneClickShipmentXAmznShippingBusinessIdEnum[keyof typeof OneClickShipmentXAmznShippingBusinessIdEnum];
 export const PurchaseShipmentXAmznShippingBusinessIdEnum = {
@@ -2205,7 +2205,7 @@ export const PurchaseShipmentXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type PurchaseShipmentXAmznShippingBusinessIdEnum = typeof PurchaseShipmentXAmznShippingBusinessIdEnum[keyof typeof PurchaseShipmentXAmznShippingBusinessIdEnum];
 export const SubmitNdrFeedbackXAmznShippingBusinessIdEnum = {
@@ -2218,7 +2218,7 @@ export const SubmitNdrFeedbackXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type SubmitNdrFeedbackXAmznShippingBusinessIdEnum = typeof SubmitNdrFeedbackXAmznShippingBusinessIdEnum[keyof typeof SubmitNdrFeedbackXAmznShippingBusinessIdEnum];
 export const UnlinkCarrierAccountXAmznShippingBusinessIdEnum = {
@@ -2231,6 +2231,6 @@ export const UnlinkCarrierAccountXAmznShippingBusinessIdEnum = {
     AmazonShippingIt: 'AmazonShipping_IT',
     AmazonShippingEs: 'AmazonShipping_ES',
     AmazonShippingFr: 'AmazonShipping_FR',
-    AmazonShippingJp: 'AmazonShipping_JP'
+    AmazonShippingJp: 'AmazonShipping_JP',
 } as const;
 export type UnlinkCarrierAccountXAmznShippingBusinessIdEnum = typeof UnlinkCarrierAccountXAmznShippingBusinessIdEnum[keyof typeof UnlinkCarrierAccountXAmznShippingBusinessIdEnum];

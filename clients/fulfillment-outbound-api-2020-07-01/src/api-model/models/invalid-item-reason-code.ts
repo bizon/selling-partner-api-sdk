@@ -22,7 +22,7 @@ export const InvalidItemReasonCode = {
     InvalidValues: 'InvalidValues',
     DuplicateRequest: 'DuplicateRequest',
     NoCompletedShipItems: 'NoCompletedShipItems',
-    NoReturnableQuantity: 'NoReturnableQuantity'
+    NoReturnableQuantity: 'NoReturnableQuantity',
 } as const;
 
 export type InvalidItemReasonCode = typeof InvalidItemReasonCode[keyof typeof InvalidItemReasonCode];

@@ -50,7 +50,7 @@ export interface Appointment {
 export const AppointmentAppointmentStatusEnum = {
     Active: 'ACTIVE',
     Cancelled: 'CANCELLED',
-    Completed: 'COMPLETED'
+    Completed: 'COMPLETED',
 } as const;
 
 export type AppointmentAppointmentStatusEnum = typeof AppointmentAppointmentStatusEnum[keyof typeof AppointmentAppointmentStatusEnum];

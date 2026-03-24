@@ -373,11 +373,11 @@ export const GetOrdersStatusEnum = {
     New: 'NEW',
     Shipped: 'SHIPPED',
     Accepted: 'ACCEPTED',
-    Cancelled: 'CANCELLED'
+    Cancelled: 'CANCELLED',
 } as const;
 export type GetOrdersStatusEnum = typeof GetOrdersStatusEnum[keyof typeof GetOrdersStatusEnum];
 export const GetOrdersSortOrderEnum = {
     Asc: 'ASC',
-    Desc: 'DESC'
+    Desc: 'DESC',
 } as const;
 export type GetOrdersSortOrderEnum = typeof GetOrdersSortOrderEnum[keyof typeof GetOrdersSortOrderEnum];

@@ -23,7 +23,7 @@ export const Condition = {
     Used: 'Used',
     Collectible: 'Collectible',
     Refurbished: 'Refurbished',
-    Club: 'Club'
+    Club: 'Club',
 } as const;
 
 export type Condition = typeof Condition[keyof typeof Condition];

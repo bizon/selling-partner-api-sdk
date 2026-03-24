@@ -342,7 +342,7 @@ export const GetCatalogItemIncludedDataEnum = {
     SalesRanks: 'salesRanks',
     Summaries: 'summaries',
     Variations: 'variations',
-    VendorDetails: 'vendorDetails'
+    VendorDetails: 'vendorDetails',
 } as const;
 export type GetCatalogItemIncludedDataEnum = typeof GetCatalogItemIncludedDataEnum[keyof typeof GetCatalogItemIncludedDataEnum];
 export const SearchCatalogItemsIncludedDataEnum = {
@@ -352,6 +352,6 @@ export const SearchCatalogItemsIncludedDataEnum = {
     SalesRanks: 'salesRanks',
     Summaries: 'summaries',
     Variations: 'variations',
-    VendorDetails: 'vendorDetails'
+    VendorDetails: 'vendorDetails',
 } as const;
 export type SearchCatalogItemsIncludedDataEnum = typeof SearchCatalogItemsIncludedDataEnum[keyof typeof SearchCatalogItemsIncludedDataEnum];

@@ -36,7 +36,7 @@ export const DropOffLocationTypeEnum = {
     Garage: 'GARAGE',
     Receptionist: 'RECEPTIONIST',
     FallbackNeighborDelivery: 'FALLBACK_NEIGHBOR_DELIVERY',
-    DoNotLeaveUnattended: 'DO_NOT_LEAVE_UNATTENDED'
+    DoNotLeaveUnattended: 'DO_NOT_LEAVE_UNATTENDED',
 } as const;
 
 export type DropOffLocationTypeEnum = typeof DropOffLocationTypeEnum[keyof typeof DropOffLocationTypeEnum];

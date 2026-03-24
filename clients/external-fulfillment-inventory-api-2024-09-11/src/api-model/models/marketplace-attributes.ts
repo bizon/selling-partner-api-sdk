@@ -31,7 +31,7 @@ export interface MarketplaceAttributes {
 export const MarketplaceAttributesChannelNameEnum = {
     Fba: 'FBA',
     Mfn: 'MFN',
-    Df: 'DF'
+    Df: 'DF',
 } as const;
 
 export type MarketplaceAttributesChannelNameEnum = typeof MarketplaceAttributesChannelNameEnum[keyof typeof MarketplaceAttributesChannelNameEnum];

@@ -21,7 +21,7 @@
 export const CarrierWillPickUpOption = {
     CarrierWillPickUp: 'CarrierWillPickUp',
     ShipperWillDropOff: 'ShipperWillDropOff',
-    NoPreference: 'NoPreference'
+    NoPreference: 'NoPreference',
 } as const;
 
 export type CarrierWillPickUpOption = typeof CarrierWillPickUpOption[keyof typeof CarrierWillPickUpOption];

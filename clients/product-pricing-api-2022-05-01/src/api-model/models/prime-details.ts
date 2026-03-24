@@ -27,7 +27,7 @@ export interface PrimeDetails {
 export const PrimeDetailsEligibilityEnum = {
     National: 'NATIONAL',
     Regional: 'REGIONAL',
-    None: 'NONE'
+    None: 'NONE',
 } as const;
 
 export type PrimeDetailsEligibilityEnum = typeof PrimeDetailsEligibilityEnum[keyof typeof PrimeDetailsEligibilityEnum];

@@ -29,12 +29,12 @@ export interface TaxCollection {
 }
 
 export const TaxCollectionModelEnum = {
-    MarketplaceFacilitator: 'MarketplaceFacilitator'
+    MarketplaceFacilitator: 'MarketplaceFacilitator',
 } as const;
 
 export type TaxCollectionModelEnum = typeof TaxCollectionModelEnum[keyof typeof TaxCollectionModelEnum];
 export const TaxCollectionResponsiblePartyEnum = {
-    AmazonServicesInc: 'Amazon Services, Inc.'
+    AmazonServicesInc: 'Amazon Services, Inc.',
 } as const;
 
 export type TaxCollectionResponsiblePartyEnum = typeof TaxCollectionResponsiblePartyEnum[keyof typeof TaxCollectionResponsiblePartyEnum];

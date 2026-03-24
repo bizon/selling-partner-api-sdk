@@ -19,7 +19,7 @@
  */
 
 export const ScheduleTransferType = {
-    TimeBased: 'TIME_BASED'
+    TimeBased: 'TIME_BASED',
 } as const;
 
 export type ScheduleTransferType = typeof ScheduleTransferType[keyof typeof ScheduleTransferType];

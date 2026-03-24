@@ -34,7 +34,7 @@ export const PackageStatusStatusEnum = {
     Shipped: 'SHIPPED',
     Delivered: 'DELIVERED',
     Cancelled: 'CANCELLED',
-    Undeliverable: 'UNDELIVERABLE'
+    Undeliverable: 'UNDELIVERABLE',
 } as const;
 
 export type PackageStatusStatusEnum = typeof PackageStatusStatusEnum[keyof typeof PackageStatusStatusEnum];

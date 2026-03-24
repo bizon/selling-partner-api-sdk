@@ -281,12 +281,12 @@ export class DeliveryByAmazonDeliveryShipmentInvoiceV20220701Api extends BaseAPI
 }
 
 export const GetInvoiceStatusInvoiceTypeEnum = {
-    Outbound: 'Outbound'
+    Outbound: 'Outbound',
 } as const;
 export type GetInvoiceStatusInvoiceTypeEnum = typeof GetInvoiceStatusInvoiceTypeEnum[keyof typeof GetInvoiceStatusInvoiceTypeEnum];
 export const GetInvoiceStatusProgramTypeEnum = {
     EasyShip: 'EasyShip',
     FbaOnSite: 'FbaOnSite',
-    SelfShip: 'SelfShip'
+    SelfShip: 'SelfShip',
 } as const;
 export type GetInvoiceStatusProgramTypeEnum = typeof GetInvoiceStatusProgramTypeEnum[keyof typeof GetInvoiceStatusProgramTypeEnum];

@@ -93,14 +93,14 @@ export interface ShipmentConfirmation {
 
 export const ShipmentConfirmationShipmentConfirmationTypeEnum = {
     Original: 'Original',
-    Replace: 'Replace'
+    Replace: 'Replace',
 } as const;
 
 export type ShipmentConfirmationShipmentConfirmationTypeEnum = typeof ShipmentConfirmationShipmentConfirmationTypeEnum[keyof typeof ShipmentConfirmationShipmentConfirmationTypeEnum];
 export const ShipmentConfirmationShipmentTypeEnum = {
     TruckLoad: 'TruckLoad',
     LessThanTruckLoad: 'LessThanTruckLoad',
-    SmallParcel: 'SmallParcel'
+    SmallParcel: 'SmallParcel',
 } as const;
 
 export type ShipmentConfirmationShipmentTypeEnum = typeof ShipmentConfirmationShipmentTypeEnum[keyof typeof ShipmentConfirmationShipmentTypeEnum];
@@ -111,7 +111,7 @@ export const ShipmentConfirmationShipmentStructureEnum = {
     PalletizedStandardCase: 'PalletizedStandardCase',
     LooseStandardCase: 'LooseStandardCase',
     MasterPallet: 'MasterPallet',
-    MasterCase: 'MasterCase'
+    MasterCase: 'MasterCase',
 } as const;
 
 export type ShipmentConfirmationShipmentStructureEnum = typeof ShipmentConfirmationShipmentStructureEnum[keyof typeof ShipmentConfirmationShipmentStructureEnum];

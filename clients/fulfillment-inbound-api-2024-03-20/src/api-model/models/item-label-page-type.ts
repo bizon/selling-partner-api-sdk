@@ -29,7 +29,7 @@ export const ItemLabelPageType = {
     A427: 'A4_27',
     A44052x29: 'A4_40_52x29',
     A44448x25: 'A4_44_48x25',
-    Letter30: 'Letter_30'
+    Letter30: 'Letter_30',
 } as const;
 
 export type ItemLabelPageType = typeof ItemLabelPageType[keyof typeof ItemLabelPageType];

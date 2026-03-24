@@ -35,7 +35,7 @@ export interface ListingsItemPutRequest {
 export const ListingsItemPutRequestRequirementsEnum = {
     Listing: 'LISTING',
     ListingProductOnly: 'LISTING_PRODUCT_ONLY',
-    ListingOfferOnly: 'LISTING_OFFER_ONLY'
+    ListingOfferOnly: 'LISTING_OFFER_ONLY',
 } as const;
 
 export type ListingsItemPutRequestRequirementsEnum = typeof ListingsItemPutRequestRequirementsEnum[keyof typeof ListingsItemPutRequestRequirementsEnum];

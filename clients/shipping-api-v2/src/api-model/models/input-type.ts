@@ -20,7 +20,7 @@
 
 export const InputType = {
     Textbox: 'TEXTBOX',
-    Password: 'PASSWORD'
+    Password: 'PASSWORD',
 } as const;
 
 export type InputType = typeof InputType[keyof typeof InputType];

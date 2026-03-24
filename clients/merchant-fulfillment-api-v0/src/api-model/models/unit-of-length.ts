@@ -20,7 +20,7 @@
 
 export const UnitOfLength = {
     Inches: 'inches',
-    Centimeters: 'centimeters'
+    Centimeters: 'centimeters',
 } as const;
 
 export type UnitOfLength = typeof UnitOfLength[keyof typeof UnitOfLength];

@@ -23,7 +23,7 @@ export const ListOffersSortKey = {
     SellingPartnerFundedBaseDiscountPercentage: 'SELLING_PARTNER_FUNDED_BASE_DISCOUNT_PERCENTAGE',
     SellingPartnerFundedTieredDiscountPercentage: 'SELLING_PARTNER_FUNDED_TIERED_DISCOUNT_PERCENTAGE',
     AmazonFundedBaseDiscountPercentage: 'AMAZON_FUNDED_BASE_DISCOUNT_PERCENTAGE',
-    AmazonFundedTieredDiscountPercentage: 'AMAZON_FUNDED_TIERED_DISCOUNT_PERCENTAGE'
+    AmazonFundedTieredDiscountPercentage: 'AMAZON_FUNDED_TIERED_DISCOUNT_PERCENTAGE',
 } as const;
 
 export type ListOffersSortKey = typeof ListOffersSortKey[keyof typeof ListOffersSortKey];

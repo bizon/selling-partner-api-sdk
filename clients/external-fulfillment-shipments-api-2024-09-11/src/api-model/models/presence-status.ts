@@ -20,7 +20,7 @@
 
 export const PresenceStatus = {
     Absent: 'ABSENT',
-    Present: 'PRESENT'
+    Present: 'PRESENT',
 } as const;
 
 export type PresenceStatus = typeof PresenceStatus[keyof typeof PresenceStatus];

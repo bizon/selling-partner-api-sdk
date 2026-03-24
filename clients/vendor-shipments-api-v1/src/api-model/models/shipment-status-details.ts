@@ -32,7 +32,7 @@ export const ShipmentStatusDetailsShipmentStatusEnum = {
     Created: 'Created',
     TransportationRequested: 'TransportationRequested',
     CarrierAssigned: 'CarrierAssigned',
-    Shipped: 'Shipped'
+    Shipped: 'Shipped',
 } as const;
 
 export type ShipmentStatusDetailsShipmentStatusEnum = typeof ShipmentStatusDetailsShipmentStatusEnum[keyof typeof ShipmentStatusDetailsShipmentStatusEnum];

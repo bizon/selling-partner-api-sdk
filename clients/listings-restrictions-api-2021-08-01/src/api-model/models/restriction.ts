@@ -48,7 +48,7 @@ export const RestrictionConditionTypeEnum = {
     CollectibleVeryGood: 'collectible_very_good',
     CollectibleGood: 'collectible_good',
     CollectibleAcceptable: 'collectible_acceptable',
-    ClubClub: 'club_club'
+    ClubClub: 'club_club',
 } as const;
 
 export type RestrictionConditionTypeEnum = typeof RestrictionConditionTypeEnum[keyof typeof RestrictionConditionTypeEnum];

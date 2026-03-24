@@ -38,7 +38,7 @@ export interface ItemRelationship {
 
 export const ItemRelationshipTypeEnum = {
     Variation: 'VARIATION',
-    PackageHierarchy: 'PACKAGE_HIERARCHY'
+    PackageHierarchy: 'PACKAGE_HIERARCHY',
 } as const;
 
 export type ItemRelationshipTypeEnum = typeof ItemRelationshipTypeEnum[keyof typeof ItemRelationshipTypeEnum];

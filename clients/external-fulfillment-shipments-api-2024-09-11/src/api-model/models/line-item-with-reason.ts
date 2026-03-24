@@ -30,7 +30,7 @@ export interface LineItemWithReason {
 
 export const LineItemWithReasonReasonEnum = {
     OutOfStock: 'OUT_OF_STOCK',
-    CustomerRequested: 'CUSTOMER_REQUESTED'
+    CustomerRequested: 'CUSTOMER_REQUESTED',
 } as const;
 
 export type LineItemWithReasonReasonEnum = typeof LineItemWithReasonReasonEnum[keyof typeof LineItemWithReasonReasonEnum];

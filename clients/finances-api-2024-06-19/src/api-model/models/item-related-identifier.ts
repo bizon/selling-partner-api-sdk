@@ -32,7 +32,7 @@ export const ItemRelatedIdentifierItemRelatedIdentifierNameEnum = {
     OrderAdjustmentItemId: 'ORDER_ADJUSTMENT_ITEM_ID',
     CouponId: 'COUPON_ID',
     RemovalShipmentItemId: 'REMOVAL_SHIPMENT_ITEM_ID',
-    TransactionId: 'TRANSACTION_ID'
+    TransactionId: 'TRANSACTION_ID',
 } as const;
 
 export type ItemRelatedIdentifierItemRelatedIdentifierNameEnum = typeof ItemRelatedIdentifierItemRelatedIdentifierNameEnum[keyof typeof ItemRelatedIdentifierItemRelatedIdentifierNameEnum];

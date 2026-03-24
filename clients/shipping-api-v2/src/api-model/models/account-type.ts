@@ -21,7 +21,7 @@
 export const AccountType = {
     ShipperAccount: 'SHIPPER_ACCOUNT',
     ShipperAccountWithInvoice: 'SHIPPER_ACCOUNT_WITH_INVOICE',
-    AmazonAccount: 'AMAZON_ACCOUNT'
+    AmazonAccount: 'AMAZON_ACCOUNT',
 } as const;
 
 export type AccountType = typeof AccountType[keyof typeof AccountType];

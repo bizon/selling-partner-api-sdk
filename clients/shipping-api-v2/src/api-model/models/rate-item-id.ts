@@ -51,7 +51,7 @@ export const RateItemID = {
     HighLengthSurcharge: 'HIGH_LENGTH_SURCHARGE',
     HighWidthSurcharge: 'HIGH_WIDTH_SURCHARGE',
     DemandSurcharge: 'DEMAND_SURCHARGE',
-    NonstandardFee: 'NONSTANDARD_FEE'
+    NonstandardFee: 'NONSTANDARD_FEE',
 } as const;
 
 export type RateItemID = typeof RateItemID[keyof typeof RateItemID];

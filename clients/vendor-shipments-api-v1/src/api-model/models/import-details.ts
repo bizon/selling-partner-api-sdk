@@ -54,7 +54,7 @@ export const ImportDetailsMethodOfPaymentEnum = {
     DefinedByBuyerAndSeller: 'DefinedByBuyerAndSeller',
     FobPortOfCall: 'FOBPortOfCall',
     PrepaidBySeller: 'PrepaidBySeller',
-    PaidBySeller: 'PaidBySeller'
+    PaidBySeller: 'PaidBySeller',
 } as const;
 
 export type ImportDetailsMethodOfPaymentEnum = typeof ImportDetailsMethodOfPaymentEnum[keyof typeof ImportDetailsMethodOfPaymentEnum];
@@ -62,7 +62,7 @@ export const ImportDetailsHandlingInstructionsEnum = {
     Oversized: 'Oversized',
     Fragile: 'Fragile',
     Food: 'Food',
-    HandleWithCare: 'HandleWithCare'
+    HandleWithCare: 'HandleWithCare',
 } as const;
 
 export type ImportDetailsHandlingInstructionsEnum = typeof ImportDetailsHandlingInstructionsEnum[keyof typeof ImportDetailsHandlingInstructionsEnum];

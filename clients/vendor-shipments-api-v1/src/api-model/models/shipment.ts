@@ -105,7 +105,7 @@ export interface Shipment {
 
 export const ShipmentTransactionTypeEnum = {
     New: 'New',
-    Cancel: 'Cancel'
+    Cancel: 'Cancel',
 } as const;
 
 export type ShipmentTransactionTypeEnum = typeof ShipmentTransactionTypeEnum[keyof typeof ShipmentTransactionTypeEnum];
@@ -113,13 +113,13 @@ export const ShipmentCurrentShipmentStatusEnum = {
     Created: 'Created',
     TransportationRequested: 'TransportationRequested',
     CarrierAssigned: 'CarrierAssigned',
-    Shipped: 'Shipped'
+    Shipped: 'Shipped',
 } as const;
 
 export type ShipmentCurrentShipmentStatusEnum = typeof ShipmentCurrentShipmentStatusEnum[keyof typeof ShipmentCurrentShipmentStatusEnum];
 export const ShipmentShipmentFreightTermEnum = {
     Collect: 'Collect',
-    Prepaid: 'Prepaid'
+    Prepaid: 'Prepaid',
 } as const;
 
 export type ShipmentShipmentFreightTermEnum = typeof ShipmentShipmentFreightTermEnum[keyof typeof ShipmentShipmentFreightTermEnum];

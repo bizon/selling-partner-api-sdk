@@ -26,7 +26,7 @@ export const OutboundShipmentStatus = {
     Received: 'RECEIVED',
     Closed: 'CLOSED',
     Cancelled: 'CANCELLED',
-    Failed: 'FAILED'
+    Failed: 'FAILED',
 } as const;
 
 export type OutboundShipmentStatus = typeof OutboundShipmentStatus[keyof typeof OutboundShipmentStatus];

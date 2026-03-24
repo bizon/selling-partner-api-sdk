@@ -41,7 +41,7 @@ export const ShippingOptionsShipByEnum = {
     Marketplace: 'MARKETPLACE',
     Seller: 'SELLER',
     ThirdPartyCarrier: 'THIRD_PARTY_CARRIER',
-    Other: 'OTHER'
+    Other: 'OTHER',
 } as const;
 
 export type ShippingOptionsShipByEnum = typeof ShippingOptionsShipByEnum[keyof typeof ShippingOptionsShipByEnum];

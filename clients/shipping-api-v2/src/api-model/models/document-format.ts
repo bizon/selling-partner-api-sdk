@@ -21,7 +21,7 @@
 export const DocumentFormat = {
     Pdf: 'PDF',
     Png: 'PNG',
-    Zpl: 'ZPL'
+    Zpl: 'ZPL',
 } as const;
 
 export type DocumentFormat = typeof DocumentFormat[keyof typeof DocumentFormat];

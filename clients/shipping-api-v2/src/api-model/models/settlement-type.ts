@@ -20,7 +20,7 @@
 
 export const SettlementType = {
     Refund: 'REFUND',
-    CertificateOfFact: 'CERTIFICATE_OF_FACT'
+    CertificateOfFact: 'CERTIFICATE_OF_FACT',
 } as const;
 
 export type SettlementType = typeof SettlementType[keyof typeof SettlementType];

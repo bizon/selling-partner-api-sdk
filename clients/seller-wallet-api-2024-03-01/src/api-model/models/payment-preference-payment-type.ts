@@ -20,7 +20,7 @@
 
 export const PaymentPreferencePaymentType = {
     Percentage: 'PERCENTAGE',
-    Amount: 'AMOUNT'
+    Amount: 'AMOUNT',
 } as const;
 
 export type PaymentPreferencePaymentType = typeof PaymentPreferencePaymentType[keyof typeof PaymentPreferencePaymentType];

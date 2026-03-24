@@ -42,7 +42,7 @@ export interface ShipmentDetails {
 
 export const ShipmentDetailsShipmentStatusEnum = {
     Shipped: 'SHIPPED',
-    FloorDenial: 'FLOOR_DENIAL'
+    FloorDenial: 'FLOOR_DENIAL',
 } as const;
 
 export type ShipmentDetailsShipmentStatusEnum = typeof ShipmentDetailsShipmentStatusEnum[keyof typeof ShipmentDetailsShipmentStatusEnum];

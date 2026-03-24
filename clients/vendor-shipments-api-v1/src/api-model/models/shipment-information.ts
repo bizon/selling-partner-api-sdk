@@ -51,7 +51,7 @@ export interface ShipmentInformation {
 
 export const ShipmentInformationShipModeEnum = {
     SmallParcel: 'SmallParcel',
-    Ltl: 'LTL'
+    Ltl: 'LTL',
 } as const;
 
 export type ShipmentInformationShipModeEnum = typeof ShipmentInformationShipModeEnum[keyof typeof ShipmentInformationShipModeEnum];

@@ -19,7 +19,7 @@
  */
 
 export const ThroughputUnit = {
-    Order: 'Order'
+    Order: 'Order',
 } as const;
 
 export type ThroughputUnit = typeof ThroughputUnit[keyof typeof ThroughputUnit];

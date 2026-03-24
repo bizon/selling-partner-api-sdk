@@ -20,7 +20,7 @@
 
 export const FulfillmentAction = {
     Ship: 'Ship',
-    Hold: 'Hold'
+    Hold: 'Hold',
 } as const;
 
 export type FulfillmentAction = typeof FulfillmentAction[keyof typeof FulfillmentAction];

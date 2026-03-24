@@ -21,7 +21,7 @@
 export const GovernmentInvoiceCreationStatus = {
     Processing: 'PROCESSING',
     Success: 'SUCCESS',
-    Error: 'ERROR'
+    Error: 'ERROR',
 } as const;
 
 export type GovernmentInvoiceCreationStatus = typeof GovernmentInvoiceCreationStatus[keyof typeof GovernmentInvoiceCreationStatus];

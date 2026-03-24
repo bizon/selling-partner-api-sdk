@@ -26,7 +26,7 @@ export const DecoratorType = {
     StyleItalic: 'STYLE_ITALIC',
     StyleLinebreak: 'STYLE_LINEBREAK',
     StyleParagraph: 'STYLE_PARAGRAPH',
-    StyleUnderline: 'STYLE_UNDERLINE'
+    StyleUnderline: 'STYLE_UNDERLINE',
 } as const;
 
 export type DecoratorType = typeof DecoratorType[keyof typeof DecoratorType];

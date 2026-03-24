@@ -20,7 +20,7 @@
 
 export const UnitOfMeasurement = {
     In: 'IN',
-    Cm: 'CM'
+    Cm: 'CM',
 } as const;
 
 export type UnitOfMeasurement = typeof UnitOfMeasurement[keyof typeof UnitOfMeasurement];

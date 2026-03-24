@@ -46,7 +46,7 @@ export const ItemImageVariantEnum = {
     Pt06: 'PT06',
     Pt07: 'PT07',
     Pt08: 'PT08',
-    Swch: 'SWCH'
+    Swch: 'SWCH',
 } as const;
 
 export type ItemImageVariantEnum = typeof ItemImageVariantEnum[keyof typeof ItemImageVariantEnum];

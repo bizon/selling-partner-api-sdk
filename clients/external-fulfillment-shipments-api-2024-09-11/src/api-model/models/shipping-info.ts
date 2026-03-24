@@ -45,7 +45,7 @@ export interface ShippingInfo {
 
 export const ShippingInfoShippingTypeEnum = {
     Marketplace: 'MARKETPLACE',
-    Self: 'SELF'
+    Self: 'SELF',
 } as const;
 
 export type ShippingInfoShippingTypeEnum = typeof ShippingInfoShippingTypeEnum[keyof typeof ShippingInfoShippingTypeEnum];

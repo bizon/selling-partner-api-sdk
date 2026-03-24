@@ -32,7 +32,7 @@ export const Metric = {
     RevenuePenetrationBySellerFunding: 'REVENUE_PENETRATION_BY_SELLER_FUNDING',
     ShareOfCouponSubscriptions: 'SHARE_OF_COUPON_SUBSCRIPTIONS',
     SubscriberLifetimeValueByCustomerSegment: 'SUBSCRIBER_LIFETIME_VALUE_BY_CUSTOMER_SEGMENT',
-    SignupConversionBySellerFunding: 'SIGNUP_CONVERSION_BY_SELLER_FUNDING'
+    SignupConversionBySellerFunding: 'SIGNUP_CONVERSION_BY_SELLER_FUNDING',
 } as const;
 
 export type Metric = typeof Metric[keyof typeof Metric];

@@ -20,7 +20,7 @@
 
 export const IdType = {
     Asin: 'ASIN',
-    SellerSku: 'SellerSKU'
+    SellerSku: 'SellerSKU',
 } as const;
 
 export type IdType = typeof IdType[keyof typeof IdType];

@@ -51,14 +51,14 @@ export interface TransportationDetails {
 export const TransportationDetailsShipModeEnum = {
     TruckLoad: 'TruckLoad',
     LessThanTruckLoad: 'LessThanTruckLoad',
-    SmallParcel: 'SmallParcel'
+    SmallParcel: 'SmallParcel',
 } as const;
 
 export type TransportationDetailsShipModeEnum = typeof TransportationDetailsShipModeEnum[keyof typeof TransportationDetailsShipModeEnum];
 export const TransportationDetailsTransportationModeEnum = {
     Road: 'Road',
     Air: 'Air',
-    Ocean: 'Ocean'
+    Ocean: 'Ocean',
 } as const;
 
 export type TransportationDetailsTransportationModeEnum = typeof TransportationDetailsTransportationModeEnum[keyof typeof TransportationDetailsTransportationModeEnum];

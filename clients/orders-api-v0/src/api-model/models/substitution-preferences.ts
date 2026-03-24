@@ -34,7 +34,7 @@ export interface SubstitutionPreferences {
 export const SubstitutionPreferencesSubstitutionTypeEnum = {
     CustomerPreference: 'CUSTOMER_PREFERENCE',
     AmazonRecommended: 'AMAZON_RECOMMENDED',
-    DoNotSubstitute: 'DO_NOT_SUBSTITUTE'
+    DoNotSubstitute: 'DO_NOT_SUBSTITUTE',
 } as const;
 
 export type SubstitutionPreferencesSubstitutionTypeEnum = typeof SubstitutionPreferencesSubstitutionTypeEnum[keyof typeof SubstitutionPreferencesSubstitutionTypeEnum];

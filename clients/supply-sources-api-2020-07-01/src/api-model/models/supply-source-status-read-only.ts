@@ -21,7 +21,7 @@
 export const SupplySourceStatusReadOnly = {
     Active: 'Active',
     Inactive: 'Inactive',
-    Archived: 'Archived'
+    Archived: 'Archived',
 } as const;
 
 export type SupplySourceStatusReadOnly = typeof SupplySourceStatusReadOnly[keyof typeof SupplySourceStatusReadOnly];

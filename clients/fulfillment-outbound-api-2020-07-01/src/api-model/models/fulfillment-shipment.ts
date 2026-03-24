@@ -62,7 +62,7 @@ export const FulfillmentShipmentFulfillmentShipmentStatusEnum = {
     Pending: 'PENDING',
     Shipped: 'SHIPPED',
     CancelledByFulfiller: 'CANCELLED_BY_FULFILLER',
-    CancelledBySeller: 'CANCELLED_BY_SELLER'
+    CancelledBySeller: 'CANCELLED_BY_SELLER',
 } as const;
 
 export type FulfillmentShipmentFulfillmentShipmentStatusEnum = typeof FulfillmentShipmentFulfillmentShipmentStatusEnum[keyof typeof FulfillmentShipmentFulfillmentShipmentStatusEnum];

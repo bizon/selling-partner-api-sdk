@@ -20,7 +20,7 @@
 
 export const ShipmentType = {
     Forward: 'FORWARD',
-    Returns: 'RETURNS'
+    Returns: 'RETURNS',
 } as const;
 
 export type ShipmentType = typeof ShipmentType[keyof typeof ShipmentType];

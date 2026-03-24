@@ -21,7 +21,7 @@
 export const PrepOwner = {
     Amazon: 'AMAZON',
     Seller: 'SELLER',
-    None: 'NONE'
+    None: 'NONE',
 } as const;
 
 export type PrepOwner = typeof PrepOwner[keyof typeof PrepOwner];

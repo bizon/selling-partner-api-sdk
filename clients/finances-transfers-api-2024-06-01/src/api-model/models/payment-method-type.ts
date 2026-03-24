@@ -21,7 +21,7 @@
 export const PaymentMethodType = {
     BankAccount: 'BANK_ACCOUNT',
     Card: 'CARD',
-    SellerWallet: 'SELLER_WALLET'
+    SellerWallet: 'SELLER_WALLET',
 } as const;
 
 export type PaymentMethodType = typeof PaymentMethodType[keyof typeof PaymentMethodType];

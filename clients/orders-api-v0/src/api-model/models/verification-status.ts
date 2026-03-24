@@ -23,7 +23,7 @@ export const VerificationStatus = {
     Approved: 'Approved',
     Rejected: 'Rejected',
     Expired: 'Expired',
-    Cancelled: 'Cancelled'
+    Cancelled: 'Cancelled',
 } as const;
 
 export type VerificationStatus = typeof VerificationStatus[keyof typeof VerificationStatus];

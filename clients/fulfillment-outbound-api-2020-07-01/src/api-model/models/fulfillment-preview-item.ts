@@ -42,7 +42,7 @@ export interface FulfillmentPreviewItem {
 
 export const FulfillmentPreviewItemShippingWeightCalculationMethodEnum = {
     Package: 'Package',
-    Dimensional: 'Dimensional'
+    Dimensional: 'Dimensional',
 } as const;
 
 export type FulfillmentPreviewItemShippingWeightCalculationMethodEnum = typeof FulfillmentPreviewItemShippingWeightCalculationMethodEnum[keyof typeof FulfillmentPreviewItemShippingWeightCalculationMethodEnum];

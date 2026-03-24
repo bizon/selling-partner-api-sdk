@@ -37,7 +37,7 @@ export interface Link {
 }
 
 export const LinkVerbEnum = {
-    Get: 'GET'
+    Get: 'GET',
 } as const;
 
 export type LinkVerbEnum = typeof LinkVerbEnum[keyof typeof LinkVerbEnum];

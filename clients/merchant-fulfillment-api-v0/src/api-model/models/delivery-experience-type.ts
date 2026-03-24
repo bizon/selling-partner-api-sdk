@@ -22,7 +22,7 @@ export const DeliveryExperienceType = {
     DeliveryConfirmationWithAdultSignature: 'DeliveryConfirmationWithAdultSignature',
     DeliveryConfirmationWithSignature: 'DeliveryConfirmationWithSignature',
     DeliveryConfirmationWithoutSignature: 'DeliveryConfirmationWithoutSignature',
-    NoTracking: 'NoTracking'
+    NoTracking: 'NoTracking',
 } as const;
 
 export type DeliveryExperienceType = typeof DeliveryExperienceType[keyof typeof DeliveryExperienceType];

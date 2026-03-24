@@ -20,7 +20,7 @@
 
 export const FulfillmentType = {
     Afn: 'AFN',
-    Mfn: 'MFN'
+    Mfn: 'MFN',
 } as const;
 
 export type FulfillmentType = typeof FulfillmentType[keyof typeof FulfillmentType];

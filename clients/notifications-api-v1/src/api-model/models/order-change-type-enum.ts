@@ -20,7 +20,7 @@
 
 export const OrderChangeTypeEnum = {
     OrderStatusChange: 'OrderStatusChange',
-    BuyerRequestedChange: 'BuyerRequestedChange'
+    BuyerRequestedChange: 'BuyerRequestedChange',
 } as const;
 
 export type OrderChangeTypeEnum = typeof OrderChangeTypeEnum[keyof typeof OrderChangeTypeEnum];

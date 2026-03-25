@@ -55,7 +55,7 @@ export interface ShipmentDetail {
      */
     'PaymentMethodDetails'?: Array<string>;
     /**
-     * List of payment transactions
+     * A list of payment transactions.
      */
     'Payments'?: Array<PaymentInformation>;
     /**

@@ -21,21 +21,21 @@ import type { Money } from './money';
 import type { PaymentMethodEnum } from './payment-method-enum';
 
 /**
- * Payment transaction information
+ * Information about a payment transaction.
  */
 export interface PaymentInformation {
     'PaymentMethod'?: PaymentMethodEnum;
     /**
-     * Government ID of acquirer
+     * The government ID of the acquirer.
      */
     'AcquirerId'?: string;
     /**
-     * Credit card brand (if payment method is CreditCard)
+     * The credit card brand if the payment method is `CreditCard`.
      */
     'CardBrand'?: string;
     'PaymentValue'?: Money;
     /**
-     * Authorization code for this payment
+     * The authorization code of this payment.
      */
     'AuthorizationCode'?: string;
 }

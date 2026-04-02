@@ -27,6 +27,9 @@ import type { AssociatedItem } from './associated-item';
 import type { Buyer } from './buyer';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { Payment } from './payment';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ScopeOfWork } from './scope-of-work';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -83,6 +86,10 @@ export interface ServiceJob {
      */
     'associatedItems'?: Array<AssociatedItem>;
     'serviceLocation'?: ServiceLocation;
+    /**
+     * A list that contains payment information for the service job.
+     */
+    'payments'?: Array<Payment>;
 }
 
 export const ServiceJobServiceJobStatusEnum = {

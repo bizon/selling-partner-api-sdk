@@ -120,7 +120,7 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
          * Assigns new resource(s) or overwrite/update the existing one(s) to a service job appointment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API.
          * @param {string} appointmentId An Amazon-defined identifier of active service job appointment.
-         * @param {AssignAppointmentResourcesRequest} body 
+         * @param {AssignAppointmentResourcesRequest} body Input containing the resource details to be assigned to the appointment.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -900,7 +900,7 @@ export const ServicesApiFp = function(configuration?: Configuration) {
          * Assigns new resource(s) or overwrite/update the existing one(s) to a service job appointment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API.
          * @param {string} appointmentId An Amazon-defined identifier of active service job appointment.
-         * @param {AssignAppointmentResourcesRequest} body 
+         * @param {AssignAppointmentResourcesRequest} body Input containing the resource details to be assigned to the appointment.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1323,6 +1323,9 @@ export interface ServicesApiAssignAppointmentResourcesRequest {
      */
     readonly appointmentId: string
 
+    /**
+     * Input containing the resource details to be assigned to the appointment.
+     */
     readonly body: AssignAppointmentResourcesRequest
 }
 

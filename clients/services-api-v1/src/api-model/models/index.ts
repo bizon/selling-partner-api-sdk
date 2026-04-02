@@ -36,6 +36,8 @@ export * from './item-delivery';
 export * from './item-delivery-promise';
 export * from './job-listing';
 export * from './model-error';
+export * from './money-amount';
+export * from './payment';
 export * from './poa';
 export * from './range-capacity';
 export * from './range-slot';

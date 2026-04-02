@@ -13,19 +13,17 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { Item } from './item';
 
 /**
- * The supported data types in the `getCompetitiveSummary` API.
+ * The summary of similar items for the specified ASIN `marketplaceId` combination.
  */
-
-export const CompetitiveSummaryIncludedData = {
-    FeaturedBuyingOptions: 'featuredBuyingOptions',
-    ReferencePrices: 'referencePrices',
-    LowestPricedOffers: 'lowestPricedOffers',
-    SimilarItems: 'similarItems',
-} as const;
-
-export type CompetitiveSummaryIncludedData = typeof CompetitiveSummaryIncludedData[keyof typeof CompetitiveSummaryIncludedData];
-
-
+export interface SimilarItems {
+    /**
+     * A list of similar items for the specified ASIN `marketplaceId` combination.
+     */
+    'items'?: Array<Item>;
+}
 

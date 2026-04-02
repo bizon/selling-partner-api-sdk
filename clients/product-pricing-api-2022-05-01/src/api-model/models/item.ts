@@ -15,17 +15,12 @@
 
 
 /**
- * The supported data types in the `getCompetitiveSummary` API.
+ * A similar item for the specified ASIN `marketplaceId` combination.
  */
-
-export const CompetitiveSummaryIncludedData = {
-    FeaturedBuyingOptions: 'featuredBuyingOptions',
-    ReferencePrices: 'referencePrices',
-    LowestPricedOffers: 'lowestPricedOffers',
-    SimilarItems: 'similarItems',
-} as const;
-
-export type CompetitiveSummaryIncludedData = typeof CompetitiveSummaryIncludedData[keyof typeof CompetitiveSummaryIncludedData];
-
-
+export interface Item {
+    /**
+     * The ASIN of the item.
+     */
+    'asin': string;
+}
 

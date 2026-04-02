@@ -102,7 +102,7 @@ export interface GetSellingPartnerMetricsResponseMetric {
      */
     'shareOfCouponSubscriptions'?: number;
     /**
-     * Total revenue from customers who have made purchases from your catalog but have never subscribed to any products
+     * Total revenue from customers who have made purchases from your catalog but have never subscribed to any products.
      */
     'nonSubscriberLifeTimeValueFromOTP'?: number;
     /**
@@ -145,6 +145,10 @@ export interface GetSellingPartnerMetricsResponseMetric {
      * [Applicable only for Vendors] Percentage of subscriptions created by offers with 5% or above seller-funded discount out of the total number of new orders placed over the past 12 months
      */
     'signupConversionFor5PlusPercentSellerFunding'?: number;
+    /**
+     * The percentage of total program revenue out of total product revenue over a period of time. Applicable to `PERFORMANCE` `timePeriodType`.
+     */
+    'revenuePenetration'?: number;
     'timeInterval'?: TimeInterval;
     /**
      * The currency code in ISO 4217 format.

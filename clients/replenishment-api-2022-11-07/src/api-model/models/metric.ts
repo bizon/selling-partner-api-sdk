@@ -33,6 +33,7 @@ export const Metric = {
     ShareOfCouponSubscriptions: 'SHARE_OF_COUPON_SUBSCRIPTIONS',
     SubscriberLifetimeValueByCustomerSegment: 'SUBSCRIBER_LIFETIME_VALUE_BY_CUSTOMER_SEGMENT',
     SignupConversionBySellerFunding: 'SIGNUP_CONVERSION_BY_SELLER_FUNDING',
+    RevenuePenetration: 'REVENUE_PENETRATION',
 } as const;
 
 export type Metric = typeof Metric[keyof typeof Metric];

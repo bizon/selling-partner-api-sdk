@@ -15,22 +15,15 @@
 
 
 /**
- * The attribute to use to sort the results.
+ * The fulfillment channel type of an offer. Note that this is only valid for sellers and not for vendors.
  */
 
-export const ListOffersSortKey = {
-    Asin: 'ASIN',
-    SellingPartnerFundedBaseDiscountPercentage: 'SELLING_PARTNER_FUNDED_BASE_DISCOUNT_PERCENTAGE',
-    SellingPartnerFundedTieredDiscountPercentage: 'SELLING_PARTNER_FUNDED_TIERED_DISCOUNT_PERCENTAGE',
-    AmazonFundedBaseDiscountPercentage: 'AMAZON_FUNDED_BASE_DISCOUNT_PERCENTAGE',
-    AmazonFundedTieredDiscountPercentage: 'AMAZON_FUNDED_TIERED_DISCOUNT_PERCENTAGE',
-    Inventory: 'INVENTORY',
-    Price: 'PRICE',
-    SubscriptionCount: 'SUBSCRIPTION_COUNT',
-    FulfillmentNetworkIdType: 'FULFILLMENT_NETWORK_ID_TYPE',
+export const FulfillmentChannelType = {
+    Amazon: 'AMAZON',
+    Merchant: 'MERCHANT',
 } as const;
 
-export type ListOffersSortKey = typeof ListOffersSortKey[keyof typeof ListOffersSortKey];
+export type FulfillmentChannelType = typeof FulfillmentChannelType[keyof typeof FulfillmentChannelType];
 
 
 

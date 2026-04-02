@@ -22,6 +22,9 @@ import type { LowestPricedOffer } from './lowest-priced-offer';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ReferencePrice } from './reference-price';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { SimilarItems } from './similar-items';
 
 /**
  * The `competitiveSummaryResponse` body for a requested ASIN and `marketplaceId`.
@@ -47,6 +50,10 @@ export interface CompetitiveSummaryResponseBody {
      * A list of reference prices for the specified ASIN `marketplaceId` combination.
      */
     'referencePrices'?: Array<ReferencePrice>;
+    /**
+     * A list of similar items for the specified ASIN `marketplaceId` combination.
+     */
+    'similarItems'?: Array<SimilarItems>;
     /**
      * A list of error responses that are returned when a request is unsuccessful.
      */

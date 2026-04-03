@@ -15,22 +15,24 @@
 
 
 /**
- * The attribute to use to sort the results.
+ * An object which contains the projected subscriber demand for the offer over different time horizons.
  */
-
-export const ListOffersSortKey = {
-    Asin: 'ASIN',
-    SellingPartnerFundedBaseDiscountPercentage: 'SELLING_PARTNER_FUNDED_BASE_DISCOUNT_PERCENTAGE',
-    SellingPartnerFundedTieredDiscountPercentage: 'SELLING_PARTNER_FUNDED_TIERED_DISCOUNT_PERCENTAGE',
-    AmazonFundedBaseDiscountPercentage: 'AMAZON_FUNDED_BASE_DISCOUNT_PERCENTAGE',
-    AmazonFundedTieredDiscountPercentage: 'AMAZON_FUNDED_TIERED_DISCOUNT_PERCENTAGE',
-    Inventory: 'INVENTORY',
-    Price: 'PRICE',
-    SubscriptionCount: 'SUBSCRIPTION_COUNT',
-    FulfillmentNetworkIdType: 'FULFILLMENT_NETWORK_ID_TYPE',
-} as const;
-
-export type ListOffersSortKey = typeof ListOffersSortKey[keyof typeof ListOffersSortKey];
-
-
+export interface ForecastDeliveries {
+    /**
+     * The projected number of subscriber deliveries in the next 15 days.
+     */
+    'next15DaysDeliveries'?: number;
+    /**
+     * The projected number of subscriber deliveries in the next 30 days.
+     */
+    'next30DaysDeliveries'?: number;
+    /**
+     * The projected number of subscriber deliveries in the next 60 days.
+     */
+    'next60DaysDeliveries'?: number;
+    /**
+     * The projected number of subscriber deliveries in the next 90 days.
+     */
+    'next90DaysDeliveries'?: number;
+}
 

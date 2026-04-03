@@ -15,7 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { DeliveriesCondition } from './deliveries-condition';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { EligibilityStatus } from './eligibility-status';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { ForecastDeliveries } from './forecast-deliveries';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { OfferProgramConfiguration } from './offer-program-configuration';
@@ -36,7 +42,7 @@ export interface ListOffersResponseOffer {
      */
     'asin'?: string;
     /**
-     * The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
+     * The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE, and JP. The supported marketplaces for vendors only are BR, AU, MX, AE, and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
      */
     'marketplaceId'?: string;
     'eligibility'?: EligibilityStatus;
@@ -46,6 +52,35 @@ export interface ListOffersResponseOffer {
      * A list of vendor codes associated with the offer.
      */
     'vendorCodes'?: Array<string>;
+    /**
+     * The current price of the offer. This is the listed price amount for the item.
+     */
+    'price'?: number;
+    /**
+     * The currency code in ISO 4217 format for the price. For example, `USD` for US dollars.
+     */
+    'priceCurrencyCode'?: string;
+    /**
+     * The available inventory count for the offer.
+     */
+    'inventory'?: number;
+    /**
+     * The stock risk level of the offer, indicating the risk of the offer going out of stock.
+     */
+    'stockRisk'?: string;
+    /**
+     * A list of delivery conditions for the offer, indicating the health of upcoming deliveries. Each condition describes the quantity of upcoming deliveries associated with a particular delivery condition type.
+     */
+    'deliveriesConditions'?: Array<DeliveriesCondition>;
+    /**
+     * The number of active subscriptions for the offer.
+     */
+    'subscriptions'?: number;
+    /**
+     * The fulfillment network identifier type for the offer, indicating how the offer is fulfilled.
+     */
+    'fulfillmentNetworkIDType'?: string;
+    'forecastDeliveries'?: ForecastDeliveries;
 }
 
 

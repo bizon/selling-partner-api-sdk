@@ -216,10 +216,11 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * Returns the information required for retrieving a report document\'s contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} reportDocumentId The identifier for the report document.
+         * @param {boolean} [enableContentEncodingUrlHeader] When &#x60;true&#x60;, the Content-Encoding header on the returned URL is set to &#x60;gzip&#x60; instead of the default &#x60;identity&#x60; when &#x60;compressionAlgorithm&#x60; is &#x60;GZIP&#x60;. This allows automatic decompression by HTTP clients.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getReportDocument: async (reportDocumentId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getReportDocument: async (reportDocumentId: string, enableContentEncodingUrlHeader?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'reportDocumentId' is not null or undefined
             assertParamExists('getReportDocument', 'reportDocumentId', reportDocumentId)
             const localVarPath = `/reports/2021-06-30/documents/{reportDocumentId}`
@@ -234,6 +235,10 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (enableContentEncodingUrlHeader !== undefined) {
+                localVarQueryParameter['enableContentEncodingUrlHeader'] = enableContentEncodingUrlHeader;
+            }
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
@@ -455,11 +460,12 @@ export const ReportsApiFp = function(configuration?: Configuration) {
         /**
          * Returns the information required for retrieving a report document\'s contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {string} reportDocumentId The identifier for the report document.
+         * @param {boolean} [enableContentEncodingUrlHeader] When &#x60;true&#x60;, the Content-Encoding header on the returned URL is set to &#x60;gzip&#x60; instead of the default &#x60;identity&#x60; when &#x60;compressionAlgorithm&#x60; is &#x60;GZIP&#x60;. This allows automatic decompression by HTTP clients.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getReportDocument(reportDocumentId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReportDocument>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getReportDocument(reportDocumentId, options);
+        async getReportDocument(reportDocumentId: string, enableContentEncodingUrlHeader?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReportDocument>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getReportDocument(reportDocumentId, enableContentEncodingUrlHeader, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ReportsApi.getReportDocument']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -567,7 +573,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         getReportDocument(requestParameters: ReportsApiGetReportDocumentRequest, options?: RawAxiosRequestConfig): AxiosPromise<ReportDocument> {
-            return localVarFp.getReportDocument(requestParameters.reportDocumentId, options).then((request) => request(axios, basePath));
+            return localVarFp.getReportDocument(requestParameters.reportDocumentId, requestParameters.enableContentEncodingUrlHeader, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns report schedule details for the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -657,6 +663,11 @@ export interface ReportsApiGetReportDocumentRequest {
      * The identifier for the report document.
      */
     readonly reportDocumentId: string
+
+    /**
+     * When &#x60;true&#x60;, the Content-Encoding header on the returned URL is set to &#x60;gzip&#x60; instead of the default &#x60;identity&#x60; when &#x60;compressionAlgorithm&#x60; is &#x60;GZIP&#x60;. This allows automatic decompression by HTTP clients.
+     */
+    readonly enableContentEncodingUrlHeader?: boolean
 }
 
 /**
@@ -780,7 +791,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public getReportDocument(requestParameters: ReportsApiGetReportDocumentRequest, options?: RawAxiosRequestConfig) {
-        return ReportsApiFp(this.configuration).getReportDocument(requestParameters.reportDocumentId, options).then((request) => request(this.axios, this.basePath));
+        return ReportsApiFp(this.configuration).getReportDocument(requestParameters.reportDocumentId, requestParameters.enableContentEncodingUrlHeader, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

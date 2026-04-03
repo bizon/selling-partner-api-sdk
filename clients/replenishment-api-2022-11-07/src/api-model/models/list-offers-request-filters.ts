@@ -31,7 +31,7 @@ import type { Promotion } from './promotion';
  */
 export interface ListOffersRequestFilters {
     /**
-     * The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
+     * The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE, and JP. The supported marketplaces for vendors only are BR, AU, MX, AE, and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
      */
     'marketplaceId': string;
     /**
@@ -52,5 +52,20 @@ export interface ListOffersRequestFilters {
      * A list of replenishment program types.
      */
     'programTypes': Set<ProgramType>;
+    /**
+     * A list of delivery condition types to filter the results by. Results are filtered to only include offers with the specified delivery conditions.
+     */
+    'deliveriesConditions'?: Set<ListOffersRequestFiltersDeliveriesConditionsEnum>;
 }
+
+export const ListOffersRequestFiltersDeliveriesConditionsEnum = {
+    Next30DaysDeliveriesPausedPricing: 'NEXT_30_DAYS_DELIVERIES_PAUSED_PRICING',
+    Next30DaysDeliveriesPausedNonBuyable: 'NEXT_30_DAYS_DELIVERIES_PAUSED_NON_BUYABLE',
+    Next30DaysDeliveriesAtLowInventoryRiskOnly: 'NEXT_30_DAYS_DELIVERIES_AT_LOW_INVENTORY_RISK_ONLY',
+    Next30DaysDeliveriesAtLowInventoryRisk: 'NEXT_30_DAYS_DELIVERIES_AT_LOW_INVENTORY_RISK',
+    NoIssuesForNext30DaysDeliveries: 'NO_ISSUES_FOR_NEXT_30_DAYS_DELIVERIES',
+} as const;
+
+export type ListOffersRequestFiltersDeliveriesConditionsEnum = typeof ListOffersRequestFiltersDeliveriesConditionsEnum[keyof typeof ListOffersRequestFiltersDeliveriesConditionsEnum];
+
 

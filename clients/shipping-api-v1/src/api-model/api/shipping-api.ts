@@ -64,7 +64,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('cancelShipment', 'shipmentId', shipmentId)
             const localVarPath = `/shipping/v1/shipments/{shipmentId}/cancel`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -194,7 +194,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getShipment', 'shipmentId', shipmentId)
             const localVarPath = `/shipping/v1/shipments/{shipmentId}`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -227,7 +227,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'trackingId' is not null or undefined
             assertParamExists('getTrackingInformation', 'trackingId', trackingId)
             const localVarPath = `/shipping/v1/tracking/{trackingId}`
-                .replace(`{${"trackingId"}}`, encodeURIComponent(String(trackingId)));
+                .replace('{trackingId}', encodeURIComponent(String(trackingId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -263,7 +263,7 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'body' is not null or undefined
             assertParamExists('purchaseLabels', 'body', body)
             const localVarPath = `/shipping/v1/shipments/{shipmentId}/purchaseLabels`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -338,8 +338,8 @@ export const ShippingApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'body' is not null or undefined
             assertParamExists('retrieveShippingLabel', 'body', body)
             const localVarPath = `/shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)))
-                .replace(`{${"trackingId"}}`, encodeURIComponent(String(trackingId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)))
+                .replace('{trackingId}', encodeURIComponent(String(trackingId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

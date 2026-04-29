@@ -91,7 +91,7 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'body' is not null or undefined
             assertParamExists('addAppointmentForServiceJobByServiceJobId', 'body', body)
             const localVarPath = `/service/v1/serviceJobs/{serviceJobId}/appointments`
-                .replace(`{${"serviceJobId"}}`, encodeURIComponent(String(serviceJobId)));
+                .replace('{serviceJobId}', encodeURIComponent(String(serviceJobId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -132,8 +132,8 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'body' is not null or undefined
             assertParamExists('assignAppointmentResources', 'body', body)
             const localVarPath = `/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources`
-                .replace(`{${"serviceJobId"}}`, encodeURIComponent(String(serviceJobId)))
-                .replace(`{${"appointmentId"}}`, encodeURIComponent(String(appointmentId)));
+                .replace('{serviceJobId}', encodeURIComponent(String(serviceJobId)))
+                .replace('{appointmentId}', encodeURIComponent(String(appointmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -171,7 +171,7 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('cancelReservation', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/service/v1/reservation/{reservationId}`
-                .replace(`{${"reservationId"}}`, encodeURIComponent(String(reservationId)));
+                .replace('{reservationId}', encodeURIComponent(String(reservationId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -211,7 +211,7 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'cancellationReasonCode' is not null or undefined
             assertParamExists('cancelServiceJobByServiceJobId', 'cancellationReasonCode', cancellationReasonCode)
             const localVarPath = `/service/v1/serviceJobs/{serviceJobId}/cancellations`
-                .replace(`{${"serviceJobId"}}`, encodeURIComponent(String(serviceJobId)));
+                .replace('{serviceJobId}', encodeURIComponent(String(serviceJobId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -248,7 +248,7 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'serviceJobId' is not null or undefined
             assertParamExists('completeServiceJobByServiceJobId', 'serviceJobId', serviceJobId)
             const localVarPath = `/service/v1/serviceJobs/{serviceJobId}/completions`
-                .replace(`{${"serviceJobId"}}`, encodeURIComponent(String(serviceJobId)));
+                .replace('{serviceJobId}', encodeURIComponent(String(serviceJobId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -421,7 +421,7 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('getAppointmmentSlotsByJobId', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/service/v1/serviceJobs/{serviceJobId}/appointmentSlots`
-                .replace(`{${"serviceJobId"}}`, encodeURIComponent(String(serviceJobId)));
+                .replace('{serviceJobId}', encodeURIComponent(String(serviceJobId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -473,7 +473,7 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getFixedSlotCapacity', 'body', body)
             const localVarPath = `/service/v1/serviceResources/{resourceId}/capacity/fixed`
-                .replace(`{${"resourceId"}}`, encodeURIComponent(String(resourceId)));
+                .replace('{resourceId}', encodeURIComponent(String(resourceId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -523,7 +523,7 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'body' is not null or undefined
             assertParamExists('getRangeSlotCapacity', 'body', body)
             const localVarPath = `/service/v1/serviceResources/{resourceId}/capacity/range`
-                .replace(`{${"resourceId"}}`, encodeURIComponent(String(resourceId)));
+                .replace('{resourceId}', encodeURIComponent(String(resourceId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -566,7 +566,7 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'serviceJobId' is not null or undefined
             assertParamExists('getServiceJobByServiceJobId', 'serviceJobId', serviceJobId)
             const localVarPath = `/service/v1/serviceJobs/{serviceJobId}`
-                .replace(`{${"serviceJobId"}}`, encodeURIComponent(String(serviceJobId)));
+                .replace('{serviceJobId}', encodeURIComponent(String(serviceJobId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -716,8 +716,8 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'body' is not null or undefined
             assertParamExists('rescheduleAppointmentForServiceJobByServiceJobId', 'body', body)
             const localVarPath = `/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}`
-                .replace(`{${"serviceJobId"}}`, encodeURIComponent(String(serviceJobId)))
-                .replace(`{${"appointmentId"}}`, encodeURIComponent(String(appointmentId)));
+                .replace('{serviceJobId}', encodeURIComponent(String(serviceJobId)))
+                .replace('{appointmentId}', encodeURIComponent(String(appointmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -758,8 +758,8 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'body' is not null or undefined
             assertParamExists('setAppointmentFulfillmentData', 'body', body)
             const localVarPath = `/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment`
-                .replace(`{${"serviceJobId"}}`, encodeURIComponent(String(serviceJobId)))
-                .replace(`{${"appointmentId"}}`, encodeURIComponent(String(appointmentId)));
+                .replace('{serviceJobId}', encodeURIComponent(String(serviceJobId)))
+                .replace('{appointmentId}', encodeURIComponent(String(appointmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -800,7 +800,7 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'body' is not null or undefined
             assertParamExists('updateReservation', 'body', body)
             const localVarPath = `/service/v1/reservation/{reservationId}`
-                .replace(`{${"reservationId"}}`, encodeURIComponent(String(reservationId)));
+                .replace('{reservationId}', encodeURIComponent(String(reservationId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -845,7 +845,7 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'body' is not null or undefined
             assertParamExists('updateSchedule', 'body', body)
             const localVarPath = `/service/v1/serviceResources/{resourceId}/schedules`
-                .replace(`{${"resourceId"}}`, encodeURIComponent(String(resourceId)));
+                .replace('{resourceId}', encodeURIComponent(String(resourceId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

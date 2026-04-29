@@ -117,7 +117,7 @@ export const ApplicationIntegrationsApiAxiosParamCreator = function (configurati
             // verify required parameter 'body' is not null or undefined
             assertParamExists('recordActionFeedback', 'body', body)
             const localVarPath = `/appIntegrations/2024-04-01/notifications/{notificationId}/feedback`
-                .replace(`{${"notificationId"}}`, encodeURIComponent(String(notificationId)));
+                .replace('{notificationId}', encodeURIComponent(String(notificationId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

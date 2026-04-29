@@ -156,7 +156,7 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('cancelInboundPlan', 'inboundPlanId', inboundPlanId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/cancellation`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -195,8 +195,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'body' is not null or undefined
             assertParamExists('cancelSelfShipAppointment', 'body', body)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/selfShipAppointmentCancellation`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -237,9 +237,9 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'deliveryWindowOptionId' is not null or undefined
             assertParamExists('confirmDeliveryWindowOptions', 'deliveryWindowOptionId', deliveryWindowOptionId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/deliveryWindowOptions/{deliveryWindowOptionId}/confirmation`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)))
-                .replace(`{${"deliveryWindowOptionId"}}`, encodeURIComponent(String(deliveryWindowOptionId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)))
+                .replace('{deliveryWindowOptionId}', encodeURIComponent(String(deliveryWindowOptionId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -275,8 +275,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'packingOptionId' is not null or undefined
             assertParamExists('confirmPackingOption', 'packingOptionId', packingOptionId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/packingOptions/{packingOptionId}/confirmation`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"packingOptionId"}}`, encodeURIComponent(String(packingOptionId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{packingOptionId}', encodeURIComponent(String(packingOptionId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -312,8 +312,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'placementOptionId' is not null or undefined
             assertParamExists('confirmPlacementOption', 'placementOptionId', placementOptionId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/placementOptions/{placementOptionId}/confirmation`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"placementOptionId"}}`, encodeURIComponent(String(placementOptionId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{placementOptionId}', encodeURIComponent(String(placementOptionId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -352,9 +352,9 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'contentUpdatePreviewId' is not null or undefined
             assertParamExists('confirmShipmentContentUpdatePreview', 'contentUpdatePreviewId', contentUpdatePreviewId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/contentUpdatePreviews/{contentUpdatePreviewId}/confirmation`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)))
-                .replace(`{${"contentUpdatePreviewId"}}`, encodeURIComponent(String(contentUpdatePreviewId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)))
+                .replace('{contentUpdatePreviewId}', encodeURIComponent(String(contentUpdatePreviewId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -390,7 +390,7 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'body' is not null or undefined
             assertParamExists('confirmTransportationOptions', 'body', body)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/transportationOptions/confirmation`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -496,8 +496,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('generateDeliveryWindowOptions', 'shipmentId', shipmentId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/deliveryWindowOptions`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -530,7 +530,7 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('generatePackingOptions', 'inboundPlanId', inboundPlanId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/packingOptions`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -566,7 +566,7 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'body' is not null or undefined
             assertParamExists('generatePlacementOptions', 'body', body)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/placementOptions`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -607,8 +607,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'body' is not null or undefined
             assertParamExists('generateSelfShipAppointmentSlots', 'body', body)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/selfShipAppointmentSlots`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -649,8 +649,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'body' is not null or undefined
             assertParamExists('generateShipmentContentUpdatePreviews', 'body', body)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/contentUpdatePreviews`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -688,7 +688,7 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'body' is not null or undefined
             assertParamExists('generateTransportationOptions', 'body', body)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/transportationOptions`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -726,8 +726,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getDeliveryChallanDocument', 'shipmentId', shipmentId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/deliveryChallanDocument`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -760,7 +760,7 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'operationId' is not null or undefined
             assertParamExists('getInboundOperationStatus', 'operationId', operationId)
             const localVarPath = `/inbound/fba/2024-03-20/operations/{operationId}`
-                .replace(`{${"operationId"}}`, encodeURIComponent(String(operationId)));
+                .replace('{operationId}', encodeURIComponent(String(operationId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -793,7 +793,7 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('getInboundPlan', 'inboundPlanId', inboundPlanId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -831,8 +831,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getSelfShipAppointmentSlots', 'shipmentId', shipmentId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/selfShipAppointmentSlots`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -876,8 +876,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getShipment', 'shipmentId', shipmentId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -916,9 +916,9 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'contentUpdatePreviewId' is not null or undefined
             assertParamExists('getShipmentContentUpdatePreview', 'contentUpdatePreviewId', contentUpdatePreviewId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/contentUpdatePreviews/{contentUpdatePreviewId}`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)))
-                .replace(`{${"contentUpdatePreviewId"}}`, encodeURIComponent(String(contentUpdatePreviewId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)))
+                .replace('{contentUpdatePreviewId}', encodeURIComponent(String(contentUpdatePreviewId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -956,8 +956,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('listDeliveryWindowOptions', 'shipmentId', shipmentId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/deliveryWindowOptions`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1000,7 +1000,7 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('listInboundPlanBoxes', 'inboundPlanId', inboundPlanId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/boxes`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1043,7 +1043,7 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('listInboundPlanItems', 'inboundPlanId', inboundPlanId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/items`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1086,7 +1086,7 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('listInboundPlanPallets', 'inboundPlanId', inboundPlanId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/pallets`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1229,8 +1229,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'packingGroupId' is not null or undefined
             assertParamExists('listPackingGroupBoxes', 'packingGroupId', packingGroupId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/packingGroups/{packingGroupId}/boxes`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"packingGroupId"}}`, encodeURIComponent(String(packingGroupId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{packingGroupId}', encodeURIComponent(String(packingGroupId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1276,8 +1276,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'packingGroupId' is not null or undefined
             assertParamExists('listPackingGroupItems', 'packingGroupId', packingGroupId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/packingGroups/{packingGroupId}/items`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"packingGroupId"}}`, encodeURIComponent(String(packingGroupId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{packingGroupId}', encodeURIComponent(String(packingGroupId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1320,7 +1320,7 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('listPackingOptions', 'inboundPlanId', inboundPlanId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/packingOptions`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1363,7 +1363,7 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('listPlacementOptions', 'inboundPlanId', inboundPlanId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/placementOptions`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1452,8 +1452,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('listShipmentBoxes', 'shipmentId', shipmentId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/boxes`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1499,8 +1499,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('listShipmentContentUpdatePreviews', 'shipmentId', shipmentId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/contentUpdatePreviews`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1546,8 +1546,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('listShipmentItems', 'shipmentId', shipmentId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/items`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1593,8 +1593,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('listShipmentPallets', 'shipmentId', shipmentId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/pallets`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1639,7 +1639,7 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'inboundPlanId' is not null or undefined
             assertParamExists('listTransportationOptions', 'inboundPlanId', inboundPlanId)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/transportationOptions`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1697,9 +1697,9 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'body' is not null or undefined
             assertParamExists('scheduleSelfShipAppointment', 'body', body)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/selfShipAppointmentSlots/{slotId}/schedule`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)))
-                .replace(`{${"slotId"}}`, encodeURIComponent(String(slotId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)))
+                .replace('{slotId}', encodeURIComponent(String(slotId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1737,7 +1737,7 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'body' is not null or undefined
             assertParamExists('setPackingInformation', 'body', body)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/packingInformation`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1809,7 +1809,7 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'body' is not null or undefined
             assertParamExists('updateInboundPlanName', 'body', body)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/name`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1891,8 +1891,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'body' is not null or undefined
             assertParamExists('updateShipmentName', 'body', body)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/name`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1933,8 +1933,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'body' is not null or undefined
             assertParamExists('updateShipmentSourceAddress', 'body', body)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/sourceAddress`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -1975,8 +1975,8 @@ export const FulfillmentInboundApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'body' is not null or undefined
             assertParamExists('updateShipmentTrackingDetails', 'body', body)
             const localVarPath = `/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/trackingDetails`
-                .replace(`{${"inboundPlanId"}}`, encodeURIComponent(String(inboundPlanId)))
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{inboundPlanId}', encodeURIComponent(String(inboundPlanId)))
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

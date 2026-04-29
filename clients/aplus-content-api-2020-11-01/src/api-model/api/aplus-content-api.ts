@@ -107,7 +107,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'includedDataSet' is not null or undefined
             assertParamExists('getContentDocument', 'includedDataSet', includedDataSet)
             const localVarPath = `/aplus/2020-11-01/contentDocuments/{contentReferenceKey}`
-                .replace(`{${"contentReferenceKey"}}`, encodeURIComponent(String(contentReferenceKey)));
+                .replace('{contentReferenceKey}', encodeURIComponent(String(contentReferenceKey)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -154,7 +154,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('listContentDocumentAsinRelations', 'marketplaceId', marketplaceId)
             const localVarPath = `/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins`
-                .replace(`{${"contentReferenceKey"}}`, encodeURIComponent(String(contentReferenceKey)));
+                .replace('{contentReferenceKey}', encodeURIComponent(String(contentReferenceKey)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -206,7 +206,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('postContentDocumentApprovalSubmission', 'marketplaceId', marketplaceId)
             const localVarPath = `/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions`
-                .replace(`{${"contentReferenceKey"}}`, encodeURIComponent(String(contentReferenceKey)));
+                .replace('{contentReferenceKey}', encodeURIComponent(String(contentReferenceKey)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -249,7 +249,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'postContentDocumentAsinRelationsRequest' is not null or undefined
             assertParamExists('postContentDocumentAsinRelations', 'postContentDocumentAsinRelationsRequest', postContentDocumentAsinRelationsRequest)
             const localVarPath = `/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins`
-                .replace(`{${"contentReferenceKey"}}`, encodeURIComponent(String(contentReferenceKey)));
+                .replace('{contentReferenceKey}', encodeURIComponent(String(contentReferenceKey)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -291,7 +291,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('postContentDocumentSuspendSubmission', 'marketplaceId', marketplaceId)
             const localVarPath = `/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions`
-                .replace(`{${"contentReferenceKey"}}`, encodeURIComponent(String(contentReferenceKey)));
+                .replace('{contentReferenceKey}', encodeURIComponent(String(contentReferenceKey)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -423,7 +423,7 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'postContentDocumentRequest' is not null or undefined
             assertParamExists('updateContentDocument', 'postContentDocumentRequest', postContentDocumentRequest)
             const localVarPath = `/aplus/2020-11-01/contentDocuments/{contentReferenceKey}`
-                .replace(`{${"contentReferenceKey"}}`, encodeURIComponent(String(contentReferenceKey)));
+                .replace('{contentReferenceKey}', encodeURIComponent(String(contentReferenceKey)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

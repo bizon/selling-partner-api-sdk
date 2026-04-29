@@ -82,7 +82,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
             // verify required parameter 'body' is not null or undefined
             assertParamExists('confirmCustomizationDetails', 'body', body)
             const localVarPath = `/messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails`
-                .replace(`{${"amazonOrderId"}}`, encodeURIComponent(String(amazonOrderId)));
+                .replace('{amazonOrderId}', encodeURIComponent(String(amazonOrderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -127,7 +127,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createConfirmDeliveryDetails', 'body', body)
             const localVarPath = `/messaging/v1/orders/{amazonOrderId}/messages/confirmDeliveryDetails`
-                .replace(`{${"amazonOrderId"}}`, encodeURIComponent(String(amazonOrderId)));
+                .replace('{amazonOrderId}', encodeURIComponent(String(amazonOrderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -172,7 +172,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createConfirmOrderDetails', 'body', body)
             const localVarPath = `/messaging/v1/orders/{amazonOrderId}/messages/confirmOrderDetails`
-                .replace(`{${"amazonOrderId"}}`, encodeURIComponent(String(amazonOrderId)));
+                .replace('{amazonOrderId}', encodeURIComponent(String(amazonOrderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -217,7 +217,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createConfirmServiceDetails', 'body', body)
             const localVarPath = `/messaging/v1/orders/{amazonOrderId}/messages/confirmServiceDetails`
-                .replace(`{${"amazonOrderId"}}`, encodeURIComponent(String(amazonOrderId)));
+                .replace('{amazonOrderId}', encodeURIComponent(String(amazonOrderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -262,7 +262,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createDigitalAccessKey', 'body', body)
             const localVarPath = `/messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey`
-                .replace(`{${"amazonOrderId"}}`, encodeURIComponent(String(amazonOrderId)));
+                .replace('{amazonOrderId}', encodeURIComponent(String(amazonOrderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -307,7 +307,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createLegalDisclosure', 'body', body)
             const localVarPath = `/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure`
-                .replace(`{${"amazonOrderId"}}`, encodeURIComponent(String(amazonOrderId)));
+                .replace('{amazonOrderId}', encodeURIComponent(String(amazonOrderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -352,7 +352,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createUnexpectedProblem', 'body', body)
             const localVarPath = `/messaging/v1/orders/{amazonOrderId}/messages/unexpectedProblem`
-                .replace(`{${"amazonOrderId"}}`, encodeURIComponent(String(amazonOrderId)));
+                .replace('{amazonOrderId}', encodeURIComponent(String(amazonOrderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -397,7 +397,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createWarranty', 'body', body)
             const localVarPath = `/messaging/v1/orders/{amazonOrderId}/messages/warranty`
-                .replace(`{${"amazonOrderId"}}`, encodeURIComponent(String(amazonOrderId)));
+                .replace('{amazonOrderId}', encodeURIComponent(String(amazonOrderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -439,7 +439,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('getAttributes', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/messaging/v1/orders/{amazonOrderId}/attributes`
-                .replace(`{${"amazonOrderId"}}`, encodeURIComponent(String(amazonOrderId)));
+                .replace('{amazonOrderId}', encodeURIComponent(String(amazonOrderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -479,7 +479,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('getMessagingActionsForOrder', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/messaging/v1/orders/{amazonOrderId}`
-                .replace(`{${"amazonOrderId"}}`, encodeURIComponent(String(amazonOrderId)));
+                .replace('{amazonOrderId}', encodeURIComponent(String(amazonOrderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -522,7 +522,7 @@ export const MessagingApiAxiosParamCreator = function (configuration?: Configura
             // verify required parameter 'body' is not null or undefined
             assertParamExists('sendInvoice', 'body', body)
             const localVarPath = `/messaging/v1/orders/{amazonOrderId}/messages/invoice`
-                .replace(`{${"amazonOrderId"}}`, encodeURIComponent(String(amazonOrderId)));
+                .replace('{amazonOrderId}', encodeURIComponent(String(amazonOrderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

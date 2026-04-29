@@ -61,7 +61,7 @@ export const ExternalFulfillmentShipmentsApiAxiosParamCreator = function (config
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createPackages', 'body', body)
             const localVarPath = `/externalFulfillment/2024-09-11/shipments/{shipmentId}/packages`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -96,7 +96,7 @@ export const ExternalFulfillmentShipmentsApiAxiosParamCreator = function (config
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('generateInvoice', 'shipmentId', shipmentId)
             const localVarPath = `/externalFulfillment/2024-09-11/shipments/{shipmentId}/invoice`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -134,7 +134,7 @@ export const ExternalFulfillmentShipmentsApiAxiosParamCreator = function (config
             // verify required parameter 'operation' is not null or undefined
             assertParamExists('generateShipLabels', 'operation', operation)
             const localVarPath = `/externalFulfillment/2024-09-11/shipments/{shipmentId}/shipLabels`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -177,7 +177,7 @@ export const ExternalFulfillmentShipmentsApiAxiosParamCreator = function (config
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getShipment', 'shipmentId', shipmentId)
             const localVarPath = `/externalFulfillment/2024-09-11/shipments/{shipmentId}`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -289,7 +289,7 @@ export const ExternalFulfillmentShipmentsApiAxiosParamCreator = function (config
             // verify required parameter 'operation' is not null or undefined
             assertParamExists('processShipment', 'operation', operation)
             const localVarPath = `/externalFulfillment/2024-09-11/shipments/{shipmentId}`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -328,7 +328,7 @@ export const ExternalFulfillmentShipmentsApiAxiosParamCreator = function (config
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('retrieveInvoice', 'shipmentId', shipmentId)
             const localVarPath = `/externalFulfillment/2024-09-11/shipments/{shipmentId}/invoice`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -364,7 +364,7 @@ export const ExternalFulfillmentShipmentsApiAxiosParamCreator = function (config
             // verify required parameter 'packageId' is not null or undefined
             assertParamExists('retrieveShippingOptions', 'packageId', packageId)
             const localVarPath = `/externalFulfillment/2024-09-11/shipments/{shipmentId}/shippingOptions`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -407,8 +407,8 @@ export const ExternalFulfillmentShipmentsApiAxiosParamCreator = function (config
             // verify required parameter 'body' is not null or undefined
             assertParamExists('updatePackage', 'body', body)
             const localVarPath = `/externalFulfillment/2024-09-11/shipments/{shipmentId}/packages/{packageId}`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)))
-                .replace(`{${"packageId"}}`, encodeURIComponent(String(packageId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)))
+                .replace('{packageId}', encodeURIComponent(String(packageId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -448,8 +448,8 @@ export const ExternalFulfillmentShipmentsApiAxiosParamCreator = function (config
             // verify required parameter 'packageId' is not null or undefined
             assertParamExists('updatePackageStatus', 'packageId', packageId)
             const localVarPath = `/externalFulfillment/2024-09-11/shipments/{shipmentId}/packages/{packageId}`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)))
-                .replace(`{${"packageId"}}`, encodeURIComponent(String(packageId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)))
+                .replace('{packageId}', encodeURIComponent(String(packageId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

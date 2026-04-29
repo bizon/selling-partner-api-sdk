@@ -174,7 +174,7 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('deleteScheduleTransaction', 'marketplaceId', marketplaceId)
             const localVarPath = `/finances/transfers/wallet/2024-03-01/transferSchedules/{transferScheduleId}`
-                .replace(`{${"transferScheduleId"}}`, encodeURIComponent(String(transferScheduleId)));
+                .replace('{transferScheduleId}', encodeURIComponent(String(transferScheduleId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -215,7 +215,7 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getAccount', 'marketplaceId', marketplaceId)
             const localVarPath = `/finances/transfers/wallet/2024-03-01/accounts/{accountId}`
-                .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
+                .replace('{accountId}', encodeURIComponent(String(accountId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -256,7 +256,7 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getTransaction', 'marketplaceId', marketplaceId)
             const localVarPath = `/finances/transfers/wallet/2024-03-01/transactions/{transactionId}`
-                .replace(`{${"transactionId"}}`, encodeURIComponent(String(transactionId)));
+                .replace('{transactionId}', encodeURIComponent(String(transactionId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -369,7 +369,7 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getTransferSchedule', 'marketplaceId', marketplaceId)
             const localVarPath = `/finances/transfers/wallet/2024-03-01/transferSchedules/{transferScheduleId}`
-                .replace(`{${"transferScheduleId"}}`, encodeURIComponent(String(transferScheduleId)));
+                .replace('{transferScheduleId}', encodeURIComponent(String(transferScheduleId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -410,7 +410,7 @@ export const SellerWalletApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('listAccountBalances', 'marketplaceId', marketplaceId)
             const localVarPath = `/finances/transfers/wallet/2024-03-01/accounts/{accountId}/balance`
-                .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
+                .replace('{accountId}', encodeURIComponent(String(accountId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

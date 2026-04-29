@@ -139,7 +139,7 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'invoiceType' is not null or undefined
             assertParamExists('getGovernmentInvoiceDocument', 'invoiceType', invoiceType)
             const localVarPath = `/tax/invoices/2024-06-19/governmentInvoiceRequests/{shipmentId}`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -257,7 +257,7 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'invoiceId' is not null or undefined
             assertParamExists('getInvoice', 'invoiceId', invoiceId)
             const localVarPath = `/tax/invoices/2024-06-19/invoices/{invoiceId}`
-                .replace(`{${"invoiceId"}}`, encodeURIComponent(String(invoiceId)));
+                .replace('{invoiceId}', encodeURIComponent(String(invoiceId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -435,7 +435,7 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'invoicesDocumentId' is not null or undefined
             assertParamExists('getInvoicesDocument', 'invoicesDocumentId', invoicesDocumentId)
             const localVarPath = `/tax/invoices/2024-06-19/documents/{invoicesDocumentId}`
-                .replace(`{${"invoicesDocumentId"}}`, encodeURIComponent(String(invoicesDocumentId)));
+                .replace('{invoicesDocumentId}', encodeURIComponent(String(invoicesDocumentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -468,7 +468,7 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'exportId' is not null or undefined
             assertParamExists('getInvoicesExport', 'exportId', exportId)
             const localVarPath = `/tax/invoices/2024-06-19/exports/{exportId}`
-                .replace(`{${"exportId"}}`, encodeURIComponent(String(exportId)));
+                .replace('{exportId}', encodeURIComponent(String(exportId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

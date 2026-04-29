@@ -50,7 +50,7 @@ export const ProductTypeDefinitionsApiAxiosParamCreator = function (configuratio
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('getDefinitionsProductType', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/definitions/2020-09-01/productTypes/{productType}`
-                .replace(`{${"productType"}}`, encodeURIComponent(String(productType)));
+                .replace('{productType}', encodeURIComponent(String(productType)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

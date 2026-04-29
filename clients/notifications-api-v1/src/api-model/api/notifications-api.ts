@@ -93,7 +93,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createSubscription', 'body', body)
             const localVarPath = `/notifications/v1/subscriptions/{notificationType}`
-                .replace(`{${"notificationType"}}`, encodeURIComponent(String(notificationType)));
+                .replace('{notificationType}', encodeURIComponent(String(notificationType)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -128,7 +128,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'destinationId' is not null or undefined
             assertParamExists('deleteDestination', 'destinationId', destinationId)
             const localVarPath = `/notifications/v1/destinations/{destinationId}`
-                .replace(`{${"destinationId"}}`, encodeURIComponent(String(destinationId)));
+                .replace('{destinationId}', encodeURIComponent(String(destinationId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -164,8 +164,8 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'notificationType' is not null or undefined
             assertParamExists('deleteSubscriptionById', 'notificationType', notificationType)
             const localVarPath = `/notifications/v1/subscriptions/{notificationType}/{subscriptionId}`
-                .replace(`{${"subscriptionId"}}`, encodeURIComponent(String(subscriptionId)))
-                .replace(`{${"notificationType"}}`, encodeURIComponent(String(notificationType)));
+                .replace('{subscriptionId}', encodeURIComponent(String(subscriptionId)))
+                .replace('{notificationType}', encodeURIComponent(String(notificationType)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -198,7 +198,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'destinationId' is not null or undefined
             assertParamExists('getDestination', 'destinationId', destinationId)
             const localVarPath = `/notifications/v1/destinations/{destinationId}`
-                .replace(`{${"destinationId"}}`, encodeURIComponent(String(destinationId)));
+                .replace('{destinationId}', encodeURIComponent(String(destinationId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -261,7 +261,7 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'notificationType' is not null or undefined
             assertParamExists('getSubscription', 'notificationType', notificationType)
             const localVarPath = `/notifications/v1/subscriptions/{notificationType}`
-                .replace(`{${"notificationType"}}`, encodeURIComponent(String(notificationType)));
+                .replace('{notificationType}', encodeURIComponent(String(notificationType)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -301,8 +301,8 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'notificationType' is not null or undefined
             assertParamExists('getSubscriptionById', 'notificationType', notificationType)
             const localVarPath = `/notifications/v1/subscriptions/{notificationType}/{subscriptionId}`
-                .replace(`{${"subscriptionId"}}`, encodeURIComponent(String(subscriptionId)))
-                .replace(`{${"notificationType"}}`, encodeURIComponent(String(notificationType)));
+                .replace('{subscriptionId}', encodeURIComponent(String(subscriptionId)))
+                .replace('{notificationType}', encodeURIComponent(String(notificationType)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

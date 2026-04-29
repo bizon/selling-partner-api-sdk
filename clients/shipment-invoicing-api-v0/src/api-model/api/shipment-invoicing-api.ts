@@ -44,7 +44,7 @@ export const ShipmentInvoicingApiAxiosParamCreator = function (configuration?: C
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getInvoiceStatus', 'shipmentId', shipmentId)
             const localVarPath = `/fba/outbound/brazil/v0/shipments/{shipmentId}/invoice/status`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -77,7 +77,7 @@ export const ShipmentInvoicingApiAxiosParamCreator = function (configuration?: C
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getShipmentDetails', 'shipmentId', shipmentId)
             const localVarPath = `/fba/outbound/brazil/v0/shipments/{shipmentId}`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -113,7 +113,7 @@ export const ShipmentInvoicingApiAxiosParamCreator = function (configuration?: C
             // verify required parameter 'body' is not null or undefined
             assertParamExists('submitInvoice', 'body', body)
             const localVarPath = `/fba/outbound/brazil/v0/shipments/{shipmentId}/invoice`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

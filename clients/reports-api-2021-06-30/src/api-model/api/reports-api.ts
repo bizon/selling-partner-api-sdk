@@ -56,7 +56,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
             // verify required parameter 'reportId' is not null or undefined
             assertParamExists('cancelReport', 'reportId', reportId)
             const localVarPath = `/reports/2021-06-30/reports/{reportId}`
-                .replace(`{${"reportId"}}`, encodeURIComponent(String(reportId)));
+                .replace('{reportId}', encodeURIComponent(String(reportId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -89,7 +89,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
             // verify required parameter 'reportScheduleId' is not null or undefined
             assertParamExists('cancelReportSchedule', 'reportScheduleId', reportScheduleId)
             const localVarPath = `/reports/2021-06-30/schedules/{reportScheduleId}`
-                .replace(`{${"reportScheduleId"}}`, encodeURIComponent(String(reportScheduleId)));
+                .replace('{reportScheduleId}', encodeURIComponent(String(reportScheduleId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -190,7 +190,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
             // verify required parameter 'reportId' is not null or undefined
             assertParamExists('getReport', 'reportId', reportId)
             const localVarPath = `/reports/2021-06-30/reports/{reportId}`
-                .replace(`{${"reportId"}}`, encodeURIComponent(String(reportId)));
+                .replace('{reportId}', encodeURIComponent(String(reportId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -224,7 +224,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
             // verify required parameter 'reportDocumentId' is not null or undefined
             assertParamExists('getReportDocument', 'reportDocumentId', reportDocumentId)
             const localVarPath = `/reports/2021-06-30/documents/{reportDocumentId}`
-                .replace(`{${"reportDocumentId"}}`, encodeURIComponent(String(reportDocumentId)));
+                .replace('{reportDocumentId}', encodeURIComponent(String(reportDocumentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -261,7 +261,7 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
             // verify required parameter 'reportScheduleId' is not null or undefined
             assertParamExists('getReportSchedule', 'reportScheduleId', reportScheduleId)
             const localVarPath = `/reports/2021-06-30/schedules/{reportScheduleId}`
-                .replace(`{${"reportScheduleId"}}`, encodeURIComponent(String(reportScheduleId)));
+                .replace('{reportScheduleId}', encodeURIComponent(String(reportScheduleId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

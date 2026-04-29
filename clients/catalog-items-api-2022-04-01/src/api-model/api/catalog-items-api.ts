@@ -47,7 +47,7 @@ export const CatalogItemsApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('getCatalogItem', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/catalog/2022-04-01/items/{asin}`
-                .replace(`{${"asin"}}`, encodeURIComponent(String(asin)));
+                .replace('{asin}', encodeURIComponent(String(asin)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

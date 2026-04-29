@@ -42,7 +42,7 @@ export const ExternalFulfillmentReturnsApiAxiosParamCreator = function (configur
             // verify required parameter 'returnId' is not null or undefined
             assertParamExists('getReturn', 'returnId', returnId)
             const localVarPath = `/externalFulfillment/2024-09-11/returns/{returnId}`
-                .replace(`{${"returnId"}}`, encodeURIComponent(String(returnId)));
+                .replace('{returnId}', encodeURIComponent(String(returnId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

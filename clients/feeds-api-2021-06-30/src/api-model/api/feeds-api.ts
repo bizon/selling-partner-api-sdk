@@ -52,7 +52,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
             // verify required parameter 'feedId' is not null or undefined
             assertParamExists('cancelFeed', 'feedId', feedId)
             const localVarPath = `/feeds/2021-06-30/feeds/{feedId}`
-                .replace(`{${"feedId"}}`, encodeURIComponent(String(feedId)));
+                .replace('{feedId}', encodeURIComponent(String(feedId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -153,7 +153,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
             // verify required parameter 'feedId' is not null or undefined
             assertParamExists('getFeed', 'feedId', feedId)
             const localVarPath = `/feeds/2021-06-30/feeds/{feedId}`
-                .replace(`{${"feedId"}}`, encodeURIComponent(String(feedId)));
+                .replace('{feedId}', encodeURIComponent(String(feedId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -187,7 +187,7 @@ export const FeedsApiAxiosParamCreator = function (configuration?: Configuration
             // verify required parameter 'feedDocumentId' is not null or undefined
             assertParamExists('getFeedDocument', 'feedDocumentId', feedDocumentId)
             const localVarPath = `/feeds/2021-06-30/documents/{feedDocumentId}`
-                .replace(`{${"feedDocumentId"}}`, encodeURIComponent(String(feedDocumentId)));
+                .replace('{feedDocumentId}', encodeURIComponent(String(feedDocumentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

@@ -43,7 +43,7 @@ export const SolicitationsApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('createProductReviewAndSellerFeedbackSolicitation', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback`
-                .replace(`{${"amazonOrderId"}}`, encodeURIComponent(String(amazonOrderId)));
+                .replace('{amazonOrderId}', encodeURIComponent(String(amazonOrderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -83,7 +83,7 @@ export const SolicitationsApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('getSolicitationActionsForOrder', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/solicitations/v1/orders/{amazonOrderId}`
-                .replace(`{${"amazonOrderId"}}`, encodeURIComponent(String(amazonOrderId)));
+                .replace('{amazonOrderId}', encodeURIComponent(String(amazonOrderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

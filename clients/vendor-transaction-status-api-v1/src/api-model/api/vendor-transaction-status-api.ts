@@ -38,7 +38,7 @@ export const VendorTransactionStatusApiAxiosParamCreator = function (configurati
             // verify required parameter 'transactionId' is not null or undefined
             assertParamExists('getTransaction', 'transactionId', transactionId)
             const localVarPath = `/vendor/transactions/v1/transactions/{transactionId}`
-                .replace(`{${"transactionId"}}`, encodeURIComponent(String(transactionId)));
+                .replace('{transactionId}', encodeURIComponent(String(transactionId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

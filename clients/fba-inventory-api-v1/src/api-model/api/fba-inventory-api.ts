@@ -125,7 +125,7 @@ export const FbaInventoryApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('deleteInventoryItem', 'marketplaceId', marketplaceId)
             const localVarPath = `/fba/inventory/v1/items/{sellerSku}`
-                .replace(`{${"sellerSku"}}`, encodeURIComponent(String(sellerSku)));
+                .replace('{sellerSku}', encodeURIComponent(String(sellerSku)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

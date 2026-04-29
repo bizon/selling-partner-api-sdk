@@ -43,7 +43,7 @@ export const VendorDirectFulfillmentInventoryApiAxiosParamCreator = function (co
             // verify required parameter 'body' is not null or undefined
             assertParamExists('submitInventoryUpdate', 'body', body)
             const localVarPath = `/vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items`
-                .replace(`{${"warehouseId"}}`, encodeURIComponent(String(warehouseId)));
+                .replace('{warehouseId}', encodeURIComponent(String(warehouseId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

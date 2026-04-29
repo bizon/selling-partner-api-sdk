@@ -103,7 +103,7 @@ export const VendorDirectFulfillmentShippingApiAxiosParamCreator = function (con
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createShippingLabels', 'body', body)
             const localVarPath = `/vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}`
-                .replace(`{${"purchaseOrderNumber"}}`, encodeURIComponent(String(purchaseOrderNumber)));
+                .replace('{purchaseOrderNumber}', encodeURIComponent(String(purchaseOrderNumber)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -139,7 +139,7 @@ export const VendorDirectFulfillmentShippingApiAxiosParamCreator = function (con
             // verify required parameter 'purchaseOrderNumber' is not null or undefined
             assertParamExists('getCustomerInvoice', 'purchaseOrderNumber', purchaseOrderNumber)
             const localVarPath = `/vendor/directFulfillment/shipping/2021-12-28/customerInvoices/{purchaseOrderNumber}`
-                .replace(`{${"purchaseOrderNumber"}}`, encodeURIComponent(String(purchaseOrderNumber)));
+                .replace('{purchaseOrderNumber}', encodeURIComponent(String(purchaseOrderNumber)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -241,7 +241,7 @@ export const VendorDirectFulfillmentShippingApiAxiosParamCreator = function (con
             // verify required parameter 'purchaseOrderNumber' is not null or undefined
             assertParamExists('getPackingSlip', 'purchaseOrderNumber', purchaseOrderNumber)
             const localVarPath = `/vendor/directFulfillment/shipping/2021-12-28/packingSlips/{purchaseOrderNumber}`
-                .replace(`{${"purchaseOrderNumber"}}`, encodeURIComponent(String(purchaseOrderNumber)));
+                .replace('{purchaseOrderNumber}', encodeURIComponent(String(purchaseOrderNumber)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -343,7 +343,7 @@ export const VendorDirectFulfillmentShippingApiAxiosParamCreator = function (con
             // verify required parameter 'purchaseOrderNumber' is not null or undefined
             assertParamExists('getShippingLabel', 'purchaseOrderNumber', purchaseOrderNumber)
             const localVarPath = `/vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}`
-                .replace(`{${"purchaseOrderNumber"}}`, encodeURIComponent(String(purchaseOrderNumber)));
+                .replace('{purchaseOrderNumber}', encodeURIComponent(String(purchaseOrderNumber)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

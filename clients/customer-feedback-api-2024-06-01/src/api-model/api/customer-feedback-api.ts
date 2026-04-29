@@ -55,7 +55,7 @@ export const CustomerFeedbackApiAxiosParamCreator = function (configuration?: Co
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getBrowseNodeReturnTopics', 'marketplaceId', marketplaceId)
             const localVarPath = `/customerFeedback/2024-06-01/browseNodes/{browseNodeId}/returns/topics`
-                .replace(`{${"browseNodeId"}}`, encodeURIComponent(String(browseNodeId)));
+                .replace('{browseNodeId}', encodeURIComponent(String(browseNodeId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -95,7 +95,7 @@ export const CustomerFeedbackApiAxiosParamCreator = function (configuration?: Co
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getBrowseNodeReturnTrends', 'marketplaceId', marketplaceId)
             const localVarPath = `/customerFeedback/2024-06-01/browseNodes/{browseNodeId}/returns/trends`
-                .replace(`{${"browseNodeId"}}`, encodeURIComponent(String(browseNodeId)));
+                .replace('{browseNodeId}', encodeURIComponent(String(browseNodeId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -138,7 +138,7 @@ export const CustomerFeedbackApiAxiosParamCreator = function (configuration?: Co
             // verify required parameter 'sortBy' is not null or undefined
             assertParamExists('getBrowseNodeReviewTopics', 'sortBy', sortBy)
             const localVarPath = `/customerFeedback/2024-06-01/browseNodes/{browseNodeId}/reviews/topics`
-                .replace(`{${"browseNodeId"}}`, encodeURIComponent(String(browseNodeId)));
+                .replace('{browseNodeId}', encodeURIComponent(String(browseNodeId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -182,7 +182,7 @@ export const CustomerFeedbackApiAxiosParamCreator = function (configuration?: Co
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getBrowseNodeReviewTrends', 'marketplaceId', marketplaceId)
             const localVarPath = `/customerFeedback/2024-06-01/browseNodes/{browseNodeId}/reviews/trends`
-                .replace(`{${"browseNodeId"}}`, encodeURIComponent(String(browseNodeId)));
+                .replace('{browseNodeId}', encodeURIComponent(String(browseNodeId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -222,7 +222,7 @@ export const CustomerFeedbackApiAxiosParamCreator = function (configuration?: Co
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getItemBrowseNode', 'marketplaceId', marketplaceId)
             const localVarPath = `/customerFeedback/2024-06-01/items/{asin}/browseNode`
-                .replace(`{${"asin"}}`, encodeURIComponent(String(asin)));
+                .replace('{asin}', encodeURIComponent(String(asin)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -265,7 +265,7 @@ export const CustomerFeedbackApiAxiosParamCreator = function (configuration?: Co
             // verify required parameter 'sortBy' is not null or undefined
             assertParamExists('getItemReviewTopics', 'sortBy', sortBy)
             const localVarPath = `/customerFeedback/2024-06-01/items/{asin}/reviews/topics`
-                .replace(`{${"asin"}}`, encodeURIComponent(String(asin)));
+                .replace('{asin}', encodeURIComponent(String(asin)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -309,7 +309,7 @@ export const CustomerFeedbackApiAxiosParamCreator = function (configuration?: Co
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getItemReviewTrends', 'marketplaceId', marketplaceId)
             const localVarPath = `/customerFeedback/2024-06-01/items/{asin}/reviews/trends`
-                .replace(`{${"asin"}}`, encodeURIComponent(String(asin)));
+                .replace('{asin}', encodeURIComponent(String(asin)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

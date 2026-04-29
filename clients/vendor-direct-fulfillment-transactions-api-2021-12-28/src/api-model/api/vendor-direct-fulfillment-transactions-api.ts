@@ -40,7 +40,7 @@ export const VendorDirectFulfillmentTransactionsApiAxiosParamCreator = function 
             // verify required parameter 'transactionId' is not null or undefined
             assertParamExists('getTransactionStatus', 'transactionId', transactionId)
             const localVarPath = `/vendor/directFulfillment/transactions/2021-12-28/transactions/{transactionId}`
-                .replace(`{${"transactionId"}}`, encodeURIComponent(String(transactionId)));
+                .replace('{transactionId}', encodeURIComponent(String(transactionId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

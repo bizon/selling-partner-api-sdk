@@ -55,8 +55,8 @@ export const ListingsItemsApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('deleteListingsItem', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/listings/2021-08-01/items/{sellerId}/{sku}`
-                .replace(`{${"sellerId"}}`, encodeURIComponent(String(sellerId)))
-                .replace(`{${"sku"}}`, encodeURIComponent(String(sku)));
+                .replace('{sellerId}', encodeURIComponent(String(sellerId)))
+                .replace('{sku}', encodeURIComponent(String(sku)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -105,8 +105,8 @@ export const ListingsItemsApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('getListingsItem', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/listings/2021-08-01/items/{sellerId}/{sku}`
-                .replace(`{${"sellerId"}}`, encodeURIComponent(String(sellerId)))
-                .replace(`{${"sku"}}`, encodeURIComponent(String(sku)));
+                .replace('{sellerId}', encodeURIComponent(String(sellerId)))
+                .replace('{sku}', encodeURIComponent(String(sku)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -163,8 +163,8 @@ export const ListingsItemsApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'body' is not null or undefined
             assertParamExists('patchListingsItem', 'body', body)
             const localVarPath = `/listings/2021-08-01/items/{sellerId}/{sku}`
-                .replace(`{${"sellerId"}}`, encodeURIComponent(String(sellerId)))
-                .replace(`{${"sku"}}`, encodeURIComponent(String(sku)));
+                .replace('{sellerId}', encodeURIComponent(String(sellerId)))
+                .replace('{sku}', encodeURIComponent(String(sku)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -227,8 +227,8 @@ export const ListingsItemsApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'body' is not null or undefined
             assertParamExists('putListingsItem', 'body', body)
             const localVarPath = `/listings/2021-08-01/items/{sellerId}/{sku}`
-                .replace(`{${"sellerId"}}`, encodeURIComponent(String(sellerId)))
-                .replace(`{${"sku"}}`, encodeURIComponent(String(sku)));
+                .replace('{sellerId}', encodeURIComponent(String(sellerId)))
+                .replace('{sku}', encodeURIComponent(String(sku)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -299,7 +299,7 @@ export const ListingsItemsApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('searchListingsItems', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/listings/2021-08-01/items/{sellerId}`
-                .replace(`{${"sellerId"}}`, encodeURIComponent(String(sellerId)));
+                .replace('{sellerId}', encodeURIComponent(String(sellerId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

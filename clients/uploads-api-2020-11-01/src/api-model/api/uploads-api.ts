@@ -45,7 +45,7 @@ export const UploadsApiAxiosParamCreator = function (configuration?: Configurati
             // verify required parameter 'resource' is not null or undefined
             assertParamExists('createUploadDestinationForResource', 'resource', resource)
             const localVarPath = `/uploads/2020-11-01/uploadDestinations/{resource}`
-                .replace(`{${"resource"}}`, encodeURIComponent(String(resource)));
+                .replace('{resource}', encodeURIComponent(String(resource)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

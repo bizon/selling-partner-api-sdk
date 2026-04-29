@@ -50,7 +50,7 @@ export const SupplySourcesApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'supplySourceId' is not null or undefined
             assertParamExists('archiveSupplySource', 'supplySourceId', supplySourceId)
             const localVarPath = `/supplySources/2020-07-01/supplySources/{supplySourceId}`
-                .replace(`{${"supplySourceId"}}`, encodeURIComponent(String(supplySourceId)));
+                .replace('{supplySourceId}', encodeURIComponent(String(supplySourceId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -117,7 +117,7 @@ export const SupplySourcesApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'supplySourceId' is not null or undefined
             assertParamExists('getSupplySource', 'supplySourceId', supplySourceId)
             const localVarPath = `/supplySources/2020-07-01/supplySources/{supplySourceId}`
-                .replace(`{${"supplySourceId"}}`, encodeURIComponent(String(supplySourceId)));
+                .replace('{supplySourceId}', encodeURIComponent(String(supplySourceId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -190,7 +190,7 @@ export const SupplySourcesApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'supplySourceId' is not null or undefined
             assertParamExists('updateSupplySource', 'supplySourceId', supplySourceId)
             const localVarPath = `/supplySources/2020-07-01/supplySources/{supplySourceId}`
-                .replace(`{${"supplySourceId"}}`, encodeURIComponent(String(supplySourceId)));
+                .replace('{supplySourceId}', encodeURIComponent(String(supplySourceId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -226,7 +226,7 @@ export const SupplySourcesApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'supplySourceId' is not null or undefined
             assertParamExists('updateSupplySourceStatus', 'supplySourceId', supplySourceId)
             const localVarPath = `/supplySources/2020-07-01/supplySources/{supplySourceId}/status`
-                .replace(`{${"supplySourceId"}}`, encodeURIComponent(String(supplySourceId)));
+                .replace('{supplySourceId}', encodeURIComponent(String(supplySourceId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

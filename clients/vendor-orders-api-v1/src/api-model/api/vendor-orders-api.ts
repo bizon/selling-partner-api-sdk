@@ -46,7 +46,7 @@ export const VendorOrdersApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'purchaseOrderNumber' is not null or undefined
             assertParamExists('getPurchaseOrder', 'purchaseOrderNumber', purchaseOrderNumber)
             const localVarPath = `/vendor/orders/v1/purchaseOrders/{purchaseOrderNumber}`
-                .replace(`{${"purchaseOrderNumber"}}`, encodeURIComponent(String(purchaseOrderNumber)));
+                .replace('{purchaseOrderNumber}', encodeURIComponent(String(purchaseOrderNumber)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

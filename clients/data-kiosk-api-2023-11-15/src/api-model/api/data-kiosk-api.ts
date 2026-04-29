@@ -48,7 +48,7 @@ export const DataKioskApiAxiosParamCreator = function (configuration?: Configura
             // verify required parameter 'queryId' is not null or undefined
             assertParamExists('cancelQuery', 'queryId', queryId)
             const localVarPath = `/dataKiosk/2023-11-15/queries/{queryId}`
-                .replace(`{${"queryId"}}`, encodeURIComponent(String(queryId)));
+                .replace('{queryId}', encodeURIComponent(String(queryId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -115,7 +115,7 @@ export const DataKioskApiAxiosParamCreator = function (configuration?: Configura
             // verify required parameter 'documentId' is not null or undefined
             assertParamExists('getDocument', 'documentId', documentId)
             const localVarPath = `/dataKiosk/2023-11-15/documents/{documentId}`
-                .replace(`{${"documentId"}}`, encodeURIComponent(String(documentId)));
+                .replace('{documentId}', encodeURIComponent(String(documentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -206,7 +206,7 @@ export const DataKioskApiAxiosParamCreator = function (configuration?: Configura
             // verify required parameter 'queryId' is not null or undefined
             assertParamExists('getQuery', 'queryId', queryId)
             const localVarPath = `/dataKiosk/2023-11-15/queries/{queryId}`
-                .replace(`{${"queryId"}}`, encodeURIComponent(String(queryId)));
+                .replace('{queryId}', encodeURIComponent(String(queryId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

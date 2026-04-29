@@ -115,7 +115,7 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
             // verify required parameter 'asin' is not null or undefined
             assertParamExists('getItemOffers', 'asin', asin)
             const localVarPath = `/products/pricing/v0/items/{Asin}/offers`
-                .replace(`{${"Asin"}}`, encodeURIComponent(String(asin)));
+                .replace('{Asin}', encodeURIComponent(String(asin)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -201,7 +201,7 @@ export const ProductPricingApiAxiosParamCreator = function (configuration?: Conf
             // verify required parameter 'sellerSKU' is not null or undefined
             assertParamExists('getListingOffers', 'sellerSKU', sellerSKU)
             const localVarPath = `/products/pricing/v0/listings/{SellerSKU}/offers`
-                .replace(`{${"SellerSKU"}}`, encodeURIComponent(String(sellerSKU)));
+                .replace('{SellerSKU}', encodeURIComponent(String(sellerSKU)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

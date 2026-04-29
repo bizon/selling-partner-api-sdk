@@ -66,7 +66,7 @@ export const AmazonWarehousingAndDistributionApiAxiosParamCreator = function (co
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('cancelInbound', 'orderId', orderId)
             const localVarPath = `/awd/2024-05-09/inboundOrders/{orderId}/cancellation`
-                .replace(`{${"orderId"}}`, encodeURIComponent(String(orderId)));
+                .replace('{orderId}', encodeURIComponent(String(orderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -133,7 +133,7 @@ export const AmazonWarehousingAndDistributionApiAxiosParamCreator = function (co
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('confirmInbound', 'orderId', orderId)
             const localVarPath = `/awd/2024-05-09/inboundOrders/{orderId}/confirmation`
-                .replace(`{${"orderId"}}`, encodeURIComponent(String(orderId)));
+                .replace('{orderId}', encodeURIComponent(String(orderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -166,7 +166,7 @@ export const AmazonWarehousingAndDistributionApiAxiosParamCreator = function (co
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('confirmReplenishmentOrder', 'orderId', orderId)
             const localVarPath = `/awd/2024-05-09/replenishmentOrders/{orderId}/confirmation`
-                .replace(`{${"orderId"}}`, encodeURIComponent(String(orderId)));
+                .replace('{orderId}', encodeURIComponent(String(orderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -267,7 +267,7 @@ export const AmazonWarehousingAndDistributionApiAxiosParamCreator = function (co
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('getInbound', 'orderId', orderId)
             const localVarPath = `/awd/2024-05-09/inboundOrders/{orderId}`
-                .replace(`{${"orderId"}}`, encodeURIComponent(String(orderId)));
+                .replace('{orderId}', encodeURIComponent(String(orderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -301,7 +301,7 @@ export const AmazonWarehousingAndDistributionApiAxiosParamCreator = function (co
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getInboundShipment', 'shipmentId', shipmentId)
             const localVarPath = `/awd/2024-05-09/inboundShipments/{shipmentId}`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -340,7 +340,7 @@ export const AmazonWarehousingAndDistributionApiAxiosParamCreator = function (co
             // verify required parameter 'shipmentId' is not null or undefined
             assertParamExists('getInboundShipmentLabels', 'shipmentId', shipmentId)
             const localVarPath = `/awd/2024-05-09/inboundShipments/{shipmentId}/labels`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -381,7 +381,7 @@ export const AmazonWarehousingAndDistributionApiAxiosParamCreator = function (co
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('getReplenishmentOrder', 'orderId', orderId)
             const localVarPath = `/awd/2024-05-09/replenishmentOrders/{orderId}`
-                .replace(`{${"orderId"}}`, encodeURIComponent(String(orderId)));
+                .replace('{orderId}', encodeURIComponent(String(orderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -597,7 +597,7 @@ export const AmazonWarehousingAndDistributionApiAxiosParamCreator = function (co
             // verify required parameter 'body' is not null or undefined
             assertParamExists('updateInbound', 'body', body)
             const localVarPath = `/awd/2024-05-09/inboundOrders/{orderId}`
-                .replace(`{${"orderId"}}`, encodeURIComponent(String(orderId)));
+                .replace('{orderId}', encodeURIComponent(String(orderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -635,7 +635,7 @@ export const AmazonWarehousingAndDistributionApiAxiosParamCreator = function (co
             // verify required parameter 'body' is not null or undefined
             assertParamExists('updateInboundShipmentTransportDetails', 'body', body)
             const localVarPath = `/awd/2024-05-09/inboundShipments/{shipmentId}/transport`
-                .replace(`{${"shipmentId"}}`, encodeURIComponent(String(shipmentId)));
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

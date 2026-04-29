@@ -150,7 +150,7 @@ export const FinancesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'eventGroupId' is not null or undefined
             assertParamExists('listFinancialEventsByGroupId', 'eventGroupId', eventGroupId)
             const localVarPath = `/finances/v0/financialEventGroups/{eventGroupId}/financialEvents`
-                .replace(`{${"eventGroupId"}}`, encodeURIComponent(String(eventGroupId)));
+                .replace('{eventGroupId}', encodeURIComponent(String(eventGroupId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -205,7 +205,7 @@ export const FinancesApiAxiosParamCreator = function (configuration?: Configurat
             // verify required parameter 'orderId' is not null or undefined
             assertParamExists('listFinancialEventsByOrderId', 'orderId', orderId)
             const localVarPath = `/finances/v0/orders/{orderId}/financialEvents`
-                .replace(`{${"orderId"}}`, encodeURIComponent(String(orderId)));
+                .replace('{orderId}', encodeURIComponent(String(orderId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

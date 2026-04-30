@@ -15,25 +15,20 @@
 
 
 /**
- * A dimension of a package.
+ * Geographic coordinates.
  */
-export interface Dimension {
+export interface Geocodes {
     /**
      * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
      */
-    'value': string;
+    'latitude': string;
     /**
-     * The unit of measurement of the dimension.
+     * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
      */
-    'dimensionUnit': DimensionDimensionUnitEnum;
+    'longitude': string;
+    /**
+     * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
+     */
+    'elevation'?: string;
 }
-
-export const DimensionDimensionUnitEnum = {
-    Cm: 'CM',
-    M: 'M',
-    In: 'IN',
-} as const;
-
-export type DimensionDimensionUnitEnum = typeof DimensionDimensionUnitEnum[keyof typeof DimensionDimensionUnitEnum];
-
 

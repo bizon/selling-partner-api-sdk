@@ -13,18 +13,22 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import type { Money } from './money';
 
 /**
- * Further granular breakdown of the subtotal of the proceeds breakdown, only available for TAX and DISCOUNT proceeds types.
+ * An associated order item that a customer has purchased with the product. For example, a tire installation service purchased with tires.
  */
-export interface ItemProceedsDetailedBreakdown {
+export interface AssociatedOrderItem {
     /**
-     * Specific classification of the further granular breakdown.   **Possible values**: `ITEM`, `SHIPPING`, `GIFT_WRAP`, `COD_FEE`, `OTHER`, `DISCOUNT`
+     * The order identifier of the associated order item.
      */
-    'subtype'?: string;
-    'value'?: Money;
+    'orderId'?: string;
+    /**
+     * The order item identifier of the associated order item.
+     */
+    'orderItemId'?: string;
+    /**
+     * The type of association between the order items.  **Possible values**: - `VALUE_ADD_SERVICE` (The associated item is a service order)
+     */
+    'associationType'?: string;
 }
 

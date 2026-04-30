@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { AssociatedOrderItem } from './associated-order-item';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ItemCancellation } from './item-cancellation';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -33,6 +36,9 @@ import type { ItemProduct } from './item-product';
 import type { ItemPromotion } from './item-promotion';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { ItemTax } from './item-tax';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { Measurement } from './measurement';
 
 /**
@@ -49,6 +55,10 @@ export interface OrderItem {
     'quantityOrdered': number;
     'measurement'?: Measurement;
     /**
+     * A list of order items associated with this item. For example, a value-add service purchased with the product.
+     */
+    'associatedOrderItems'?: Array<AssociatedOrderItem>;
+    /**
      * Special programs that apply specifically to this item within the order.  **Possible values**: `TRANSPARENCY`, `SUBSCRIBE_AND_SAVE`
      */
     'programs'?: Array<string>;
@@ -58,5 +68,6 @@ export interface OrderItem {
     'promotion'?: ItemPromotion;
     'cancellation'?: ItemCancellation;
     'fulfillment'?: ItemFulfillment;
+    'tax'?: ItemTax;
 }
 

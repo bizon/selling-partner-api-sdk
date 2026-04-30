@@ -50,6 +50,10 @@ export interface ShipmentInfo {
      * The source of the order operation.
      */
     'processingSource'?: ShipmentInfoProcessingSourceEnum;
+    /**
+     * The payment method for the shipment.
+     */
+    'paymentMethod'?: ShipmentInfoPaymentMethodEnum;
 }
 
 export const ShipmentInfoShipmentTypeEnum = {
@@ -65,5 +69,11 @@ export const ShipmentInfoProcessingSourceEnum = {
 } as const;
 
 export type ShipmentInfoProcessingSourceEnum = typeof ShipmentInfoProcessingSourceEnum[keyof typeof ShipmentInfoProcessingSourceEnum];
+export const ShipmentInfoPaymentMethodEnum = {
+    CashOnDelivery: 'CASH_ON_DELIVERY',
+    Prepaid: 'PREPAID',
+} as const;
+
+export type ShipmentInfoPaymentMethodEnum = typeof ShipmentInfoPaymentMethodEnum[keyof typeof ShipmentInfoPaymentMethodEnum];
 
 

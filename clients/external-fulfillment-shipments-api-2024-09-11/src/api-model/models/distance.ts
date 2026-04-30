@@ -15,25 +15,24 @@
 
 
 /**
- * A dimension of a package.
+ * A distance measurement.
  */
-export interface Dimension {
+export interface Distance {
     /**
      * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
      */
     'value': string;
     /**
-     * The unit of measurement of the dimension.
+     * The unit of measurement of the distance.
      */
-    'dimensionUnit': DimensionDimensionUnitEnum;
+    'distanceUnit': DistanceDistanceUnitEnum;
 }
 
-export const DimensionDimensionUnitEnum = {
-    Cm: 'CM',
-    M: 'M',
-    In: 'IN',
+export const DistanceDistanceUnitEnum = {
+    Mi: 'MI',
+    Km: 'KM',
 } as const;
 
-export type DimensionDimensionUnitEnum = typeof DimensionDimensionUnitEnum[keyof typeof DimensionDimensionUnitEnum];
+export type DistanceDistanceUnitEnum = typeof DistanceDistanceUnitEnum[keyof typeof DistanceDistanceUnitEnum];
 
 

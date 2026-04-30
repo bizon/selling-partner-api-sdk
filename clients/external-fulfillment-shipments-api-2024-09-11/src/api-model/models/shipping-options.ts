@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { HandoverLocation } from './handover-location';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { TimeWindow } from './time-window';
 
 /**
@@ -35,6 +38,7 @@ export interface ShippingOptions {
     'carrierName'?: string;
     'pickupWindow'?: TimeWindow;
     'timeSlot'?: TimeWindow;
+    'handoverLocation'?: HandoverLocation;
 }
 
 export const ShippingOptionsShipByEnum = {

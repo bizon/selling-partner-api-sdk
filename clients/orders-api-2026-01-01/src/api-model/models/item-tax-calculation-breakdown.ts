@@ -13,18 +13,14 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import type { Money } from './money';
 
 /**
- * Further granular breakdown of the subtotal of the proceeds breakdown, only available for TAX and DISCOUNT proceeds types.
+ * Tax calculation breakdowns for an order item.
  */
-export interface ItemProceedsDetailedBreakdown {
+export interface ItemTaxCalculationBreakdown {
     /**
-     * Specific classification of the further granular breakdown.   **Possible values**: `ITEM`, `SHIPPING`, `GIFT_WRAP`, `COD_FEE`, `OTHER`, `DISCOUNT`
+     * The tax reporting scheme applied to this order item.  **Possible values**: - `UOSS` (Union one stop shop. The item being purchased is held in the EU for shipment) - `IOSS` (Import one stop shop. The item being purchased is not held in the EU for shipment)
      */
-    'subtype'?: string;
-    'value'?: Money;
+    'reportingScheme'?: string;
 }
 

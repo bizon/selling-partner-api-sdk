@@ -13,18 +13,18 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import type { Money } from './money';
 
 /**
- * Further granular breakdown of the subtotal of the proceeds breakdown, only available for TAX and DISCOUNT proceeds types.
+ * Tax collection information for an order item.
  */
-export interface ItemProceedsDetailedBreakdown {
+export interface ItemTaxCollection {
     /**
-     * Specific classification of the further granular breakdown.   **Possible values**: `ITEM`, `SHIPPING`, `GIFT_WRAP`, `COD_FEE`, `OTHER`, `DISCOUNT`
+     * The tax collection model applied to the item.  **Possible values**: - `MARKETPLACE_FACILITATOR` (Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller)
      */
-    'subtype'?: string;
-    'value'?: Money;
+    'model'?: string;
+    /**
+     * The party responsible for withholding the taxes and remitting them to the taxing authority.
+     */
+    'responsibleParty'?: string;
 }
 

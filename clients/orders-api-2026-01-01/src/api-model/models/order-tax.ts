@@ -15,16 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Money } from './money';
+import type { OrderTaxInvoicing } from './order-tax-invoicing';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { OrderTaxRegistration } from './order-tax-registration';
 
 /**
- * Further granular breakdown of the subtotal of the proceeds breakdown, only available for TAX and DISCOUNT proceeds types.
+ * Tax information about the order.
  */
-export interface ItemProceedsDetailedBreakdown {
+export interface OrderTax {
     /**
-     * Specific classification of the further granular breakdown.   **Possible values**: `ITEM`, `SHIPPING`, `GIFT_WRAP`, `COD_FEE`, `OTHER`, `DISCOUNT`
+     * A list of tax registrations associated with the order.
      */
-    'subtype'?: string;
-    'value'?: Money;
+    'taxRegistrations'?: Array<OrderTaxRegistration>;
+    'taxInvoicing'?: OrderTaxInvoicing;
 }
 

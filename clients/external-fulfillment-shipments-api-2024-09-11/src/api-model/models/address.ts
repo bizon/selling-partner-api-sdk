@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { Geocodes } from './geocodes';
 
 /**
  * The address.
@@ -39,7 +42,7 @@ export interface Address {
      */
     'district'?: string;
     /**
-     * The municiplaity where the person, business, or institution is located.
+     * The municipality where the person, business, or institution is located.
      */
     'municipality'?: string;
     /**
@@ -74,5 +77,6 @@ export interface Address {
      * The type of address.
      */
     'addressType'?: string;
+    'geocodes'?: Geocodes;
 }
 

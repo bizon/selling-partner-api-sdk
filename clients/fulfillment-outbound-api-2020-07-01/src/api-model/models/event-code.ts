@@ -52,6 +52,8 @@ export const EventCode = {
     Event417: 'EVENT_417',
     Event418: 'EVENT_418',
     Event419: 'EVENT_419',
+    Event801: 'EVENT_801',
+    Event804: 'EVENT_804',
 } as const;
 
 export type EventCode = typeof EventCode[keyof typeof EventCode];

@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.25](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@2.2.24...@sp-api-sdk/auth@2.2.25) (2026-04-30)
+
+**Note:** Version bump only for package @sp-api-sdk/auth
+
 ## [2.2.24](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/auth@2.2.23...@sp-api-sdk/auth@2.2.24) (2026-03-11)
 
 ### Bug Fixes

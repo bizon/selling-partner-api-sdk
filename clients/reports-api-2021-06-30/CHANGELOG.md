@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/reports-api-2021-06-30@3.1.19...@sp-api-sdk/reports-api-2021-06-30@3.2.0) (2026-04-30)
+
+### Features
+
+* **clients:** update models as of 2026-04-02 ([#1738](https://github.com/bizon/selling-partner-api-sdk/issues/1738)) ([cac996c](https://github.com/bizon/selling-partner-api-sdk/commit/cac996ce617e8a72234278f77887e5d2b3bf912c))
+
 ## [3.1.19](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/reports-api-2021-06-30@3.1.18...@sp-api-sdk/reports-api-2021-06-30@3.1.19) (2026-03-11)
 
 **Note:** Version bump only for package @sp-api-sdk/reports-api-2021-06-30

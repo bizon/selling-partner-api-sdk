@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.4](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/amazon-warehousing-and-distribution-api-2024-05-09@4.1.3...@sp-api-sdk/amazon-warehousing-and-distribution-api-2024-05-09@4.1.4) (2026-04-30)
+
+**Note:** Version bump only for package @sp-api-sdk/amazon-warehousing-and-distribution-api-2024-05-09
+
 ## [4.1.3](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/amazon-warehousing-and-distribution-api-2024-05-09@4.1.2...@sp-api-sdk/amazon-warehousing-and-distribution-api-2024-05-09@4.1.3) (2026-03-11)
 
 **Note:** Version bump only for package @sp-api-sdk/amazon-warehousing-and-distribution-api-2024-05-09

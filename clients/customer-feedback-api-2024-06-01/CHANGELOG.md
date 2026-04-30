@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.16](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/customer-feedback-api-2024-06-01@1.1.15...@sp-api-sdk/customer-feedback-api-2024-06-01@1.1.16) (2026-04-30)
+
+**Note:** Version bump only for package @sp-api-sdk/customer-feedback-api-2024-06-01
+
 ## [1.1.15](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/customer-feedback-api-2024-06-01@1.1.14...@sp-api-sdk/customer-feedback-api-2024-06-01@1.1.15) (2026-03-11)
 
 **Note:** Version bump only for package @sp-api-sdk/customer-feedback-api-2024-06-01

@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { HandoverLocation } from './handover-location';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { TimeWindow } from './time-window';
 
 /**
@@ -35,5 +38,6 @@ export interface ShipLabelMetadata {
     'trackingId': string;
     'pickupWindow'?: TimeWindow;
     'timeSlot'?: TimeWindow;
+    'handoverLocation'?: HandoverLocation;
 }
 

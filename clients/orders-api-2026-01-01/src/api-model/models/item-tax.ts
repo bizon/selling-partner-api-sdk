@@ -15,16 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Money } from './money';
+import type { ItemTaxCalculationBreakdown } from './item-tax-calculation-breakdown';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { ItemTaxCollection } from './item-tax-collection';
 
 /**
- * Further granular breakdown of the subtotal of the proceeds breakdown, only available for TAX and DISCOUNT proceeds types.
+ * Tax information for an order item.
  */
-export interface ItemProceedsDetailedBreakdown {
+export interface ItemTax {
     /**
-     * Specific classification of the further granular breakdown.   **Possible values**: `ITEM`, `SHIPPING`, `GIFT_WRAP`, `COD_FEE`, `OTHER`, `DISCOUNT`
+     * A list of tax calculation breakdowns for the order item.
      */
-    'subtype'?: string;
-    'value'?: Money;
+    'taxCalculationBreakdowns'?: Array<ItemTaxCalculationBreakdown>;
+    /**
+     * A list of tax collections for the order item.
+     */
+    'taxCollections'?: Array<ItemTaxCollection>;
 }
 

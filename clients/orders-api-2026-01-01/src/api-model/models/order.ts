@@ -33,7 +33,13 @@ import type { OrderItem } from './order-item';
 import type { OrderPackage } from './order-package';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { OrderPayment } from './order-payment';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { OrderProceeds } from './order-proceeds';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { OrderTax } from './order-tax';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { Recipient } from './recipient';
@@ -62,7 +68,7 @@ export interface Order {
      */
     'lastUpdatedTime': string;
     /**
-     * Special programs associated with this order that may affect fulfillment or customer experience.   **Possible values**: `AMAZON_BAZAAR`, `AMAZON_BUSINESS`,  `AMAZON_EASY_SHIP`, `AMAZON_HAUL`, `DELIVERY_BY_AMAZON`, `FBM_SHIP_PLUS`, `IN_STORE_PICK_UP`, `PREMIUM`, `PREORDER`, `PRIME`
+     * Special programs associated with this order that may affect fulfillment or customer experience.   **Possible values**: `AMAZON_BAZAAR`, `AMAZON_BUSINESS`, `AMAZON_EASY_SHIP`, `AMAZON_HAUL`, `DELIVERY_BY_AMAZON`, `FBM_SHIP_PLUS`, `INVOICE_BY_AMAZON`, `IN_STORE_PICK_UP`, `PREMIUM`, `PREORDER`, `PRIME`
      */
     'programs'?: Array<string>;
     /**
@@ -73,6 +79,8 @@ export interface Order {
     'buyer'?: Buyer;
     'recipient'?: Recipient;
     'proceeds'?: OrderProceeds;
+    'payment'?: OrderPayment;
+    'tax'?: OrderTax;
     'fulfillment'?: OrderFulfillment;
     /**
      * The list of all order items included in this order.

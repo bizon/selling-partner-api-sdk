@@ -16,11 +16,15 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import type { GiftOption } from './gift-option';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { SerialNumberRequirement } from './serial-number-requirement';
 
 /**
  * Information related to the packaging process for an order item.
  */
 export interface ItemPacking {
     'giftOption'?: GiftOption;
+    'serialNumberRequirement'?: SerialNumberRequirement;
 }
 

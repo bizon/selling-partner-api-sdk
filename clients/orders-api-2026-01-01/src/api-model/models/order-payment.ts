@@ -15,16 +15,15 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Money } from './money';
+import type { PaymentExecution } from './payment-execution';
 
 /**
- * Further granular breakdown of the subtotal of the proceeds breakdown, only available for TAX and DISCOUNT proceeds types.
+ * Payment information about the order.
  */
-export interface ItemProceedsDetailedBreakdown {
+export interface OrderPayment {
     /**
-     * Specific classification of the further granular breakdown.   **Possible values**: `ITEM`, `SHIPPING`, `GIFT_WRAP`, `COD_FEE`, `OTHER`, `DISCOUNT`
+     * A list of payment executions for the order.
      */
-    'subtype'?: string;
-    'value'?: Money;
+    'paymentExecutions'?: Array<PaymentExecution>;
 }
 

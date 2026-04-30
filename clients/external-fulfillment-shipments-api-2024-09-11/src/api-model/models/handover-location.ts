@@ -13,27 +13,22 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { Address } from './address';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { Distance } from './distance';
 
 /**
- * A dimension of a package.
+ * The drop-off location details for package handover.
  */
-export interface Dimension {
+export interface HandoverLocation {
+    'address'?: Address;
+    'distance'?: Distance;
     /**
-     * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
+     * URL to the map that shows the drop-off location.
      */
-    'value': string;
-    /**
-     * The unit of measurement of the dimension.
-     */
-    'dimensionUnit': DimensionDimensionUnitEnum;
+    'mapUrl'?: string;
 }
-
-export const DimensionDimensionUnitEnum = {
-    Cm: 'CM',
-    M: 'M',
-    In: 'IN',
-} as const;
-
-export type DimensionDimensionUnitEnum = typeof DimensionDimensionUnitEnum[keyof typeof DimensionDimensionUnitEnum];
-
 

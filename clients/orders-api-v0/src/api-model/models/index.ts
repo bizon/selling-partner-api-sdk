@@ -19,6 +19,7 @@ export * from './easy-ship-shipment-status';
 export * from './electronic-invoice-status';
 export * from './exception-dates';
 export * from './fulfillment-instruction';
+export * from './geo-coordinates';
 export * from './get-order-address-response';
 export * from './get-order-buyer-info-response';
 export * from './get-order-items-buyer-info-response';

@@ -13,9 +13,12 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { GeoCoordinates } from './geo-coordinates';
 
 /**
- * The container for address extended fields (such as `street name` and `street number`). Currently only available with Brazil shipping addresses.
+ * Extended address fields for additional address components including the street name or number.   Note: Available for grocery sellers and Brazil shipping addresses.
  */
 export interface AddressExtendedFields {
     /**
@@ -34,5 +37,6 @@ export interface AddressExtendedFields {
      * The neighborhood. This value is only used in some countries (such as Brazil).
      */
     'Neighborhood'?: string;
+    'GeoCoordinates'?: GeoCoordinates;
 }
 

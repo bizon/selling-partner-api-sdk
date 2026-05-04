@@ -13,34 +13,18 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import type { BuyerTaxInfo } from './buyer-tax-info';
 
 /**
- * Buyer information for an order.
+ * The latitude and longitude coordinates of the shipping address using the WGS84 coordinate system.
  */
-export interface OrderBuyerInfo {
+export interface GeoCoordinates {
     /**
-     * An Amazon-defined order identifier, in 3-7-7 format.
+     * The latitude coordinate of the shipping address using the WGS84 coordinate system.
      */
-    'AmazonOrderId': string;
+    'Latitude'?: number;
     /**
-     * The anonymized email address of the buyer.
+     * The longitude coordinate of the shipping address using the WGS84 coordinate system.
      */
-    'BuyerEmail'?: string;
-    /**
-     * The buyer name or the recipient name.
-     */
-    'BuyerName'?: string;
-    /**
-     * The county of the buyer.  **Note**: This attribute is only available in the Brazil marketplace.
-     */
-    'BuyerCounty'?: string;
-    'BuyerTaxInfo'?: BuyerTaxInfo;
-    /**
-     * The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout.
-     */
-    'PurchaseOrderNumber'?: string;
+    'Longitude'?: number;
 }
 

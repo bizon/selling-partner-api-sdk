@@ -23,7 +23,7 @@
     "@types/jest": "^30.0.0",
     "@types/node": "^24.12.4",
     "conventional-changelog-conventionalcommits": "^9.3.1",
-    "eslint-config-xo-bizon": "^4.2.0",
+    "eslint-config-xo-bizon": "^4.3.0",
     "jest": "^30.4.2",
     "jest-junit": "^17.0.0",
     "rimraf": "^6.1.3",

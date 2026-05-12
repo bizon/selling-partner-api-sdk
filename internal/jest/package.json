@@ -10,6 +10,6 @@
     "xo": "xo --cwd=../.. internal/jest"
   },
   "dependencies": {
-    "@jest/types": "^30.3.0"
+    "@jest/types": "^30.4.1"
   }
 }

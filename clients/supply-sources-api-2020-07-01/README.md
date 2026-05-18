@@ -25,10 +25,10 @@ npm install @sp-api-sdk/supply-sources-api-2020-07-01
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 import {SupplySourcesApiClient} from '@sp-api-sdk/supply-sources-api-2020-07-01'
 
+// `clientId` and `clientSecret` default to the `LWA_CLIENT_ID` and
+// `LWA_CLIENT_SECRET` environment variables.
 const auth = new SellingPartnerApiAuth({
-  clientId: process.env.LWA_CLIENT_ID,
-  clientSecret: process.env.LWA_CLIENT_SECRET,
-  refreshToken: 'Atzr|…',
+  refreshToken: await getRefreshTokenForSeller(sellerId),
 })
 
 const client = new SupplySourcesApiClient({

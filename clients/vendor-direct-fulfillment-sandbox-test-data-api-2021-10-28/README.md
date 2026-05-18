@@ -25,10 +25,10 @@ npm install @sp-api-sdk/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 import {VendorDirectFulfillmentSandboxTestDataApiClient} from '@sp-api-sdk/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28'
 
+// `clientId` and `clientSecret` default to the `LWA_CLIENT_ID` and
+// `LWA_CLIENT_SECRET` environment variables.
 const auth = new SellingPartnerApiAuth({
-  clientId: process.env.LWA_CLIENT_ID,
-  clientSecret: process.env.LWA_CLIENT_SECRET,
-  refreshToken: 'Atzr|…',
+  refreshToken: await getRefreshTokenForSeller(sellerId),
 })
 
 const client = new VendorDirectFulfillmentSandboxTestDataApiClient({

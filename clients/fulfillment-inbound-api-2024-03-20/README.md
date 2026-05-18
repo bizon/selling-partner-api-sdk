@@ -25,10 +25,10 @@ npm install @sp-api-sdk/fulfillment-inbound-api-2024-03-20
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 import {FulfillmentInboundApiClient} from '@sp-api-sdk/fulfillment-inbound-api-2024-03-20'
 
+// `clientId` and `clientSecret` default to the `LWA_CLIENT_ID` and
+// `LWA_CLIENT_SECRET` environment variables.
 const auth = new SellingPartnerApiAuth({
-  clientId: process.env.LWA_CLIENT_ID,
-  clientSecret: process.env.LWA_CLIENT_SECRET,
-  refreshToken: 'Atzr|…',
+  refreshToken: await getRefreshTokenForSeller(sellerId),
 })
 
 const client = new FulfillmentInboundApiClient({

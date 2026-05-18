@@ -1,4 +1,4 @@
-# `merchant-fulfillment-api-v0`
+# `@sp-api-sdk/merchant-fulfillment-api-v0`
 
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/merchant-fulfillment-api-v0)](https://www.npmjs.com/package/@sp-api-sdk/merchant-fulfillment-api-v0)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)

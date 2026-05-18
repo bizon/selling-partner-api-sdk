@@ -1,4 +1,4 @@
-# `orders-api-2026-01-01`
+# `@sp-api-sdk/orders-api-2026-01-01`
 
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/orders-api-2026-01-01)](https://www.npmjs.com/package/@sp-api-sdk/orders-api-2026-01-01)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)

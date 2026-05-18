@@ -1,4 +1,4 @@
-# `easy-ship-api-2022-03-23`
+# `@sp-api-sdk/easy-ship-api-2022-03-23`
 
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/easy-ship-api-2022-03-23)](https://www.npmjs.com/package/@sp-api-sdk/easy-ship-api-2022-03-23)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)

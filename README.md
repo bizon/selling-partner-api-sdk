@@ -132,12 +132,7 @@ By default, `request` and `response` loggers use `console.info`, and the `error`
 
 This repository contains an API client for each of the available Selling Partner API version:
 
-<!---
-Generated using:
-
-ls clients | sed 's$\(.*\)$- [\1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/\1)$' | pbcopy
--->
-
+<!-- codegen:clients:start -->
 - [amazon-warehousing-and-distribution-api-2024-05-09](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/amazon-warehousing-and-distribution-api-2024-05-09)
 - [aplus-content-api-2020-11-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/aplus-content-api-2020-11-01)
 - [application-integrations-api-2024-04-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/application-integrations-api-2024-04-01)
@@ -169,7 +164,7 @@ ls clients | sed 's$\(.*\)$- [\1](https://www.github.com/bizon/selling-partner-a
 - [messaging-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/messaging-api-v1)
 - [notifications-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/notifications-api-v1)
 - [orders-api-2026-01-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/orders-api-2026-01-01)
-- [orders-api-v0](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/orders-api-v0)
+- [orders-api-v0](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/orders-api-v0) — contains deprecated operations
 - [product-fees-api-v0](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/product-fees-api-v0)
 - [product-pricing-api-2022-05-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/product-pricing-api-2022-05-01)
 - [product-pricing-api-v0](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/product-pricing-api-v0)
@@ -201,6 +196,7 @@ ls clients | sed 's$\(.*\)$- [\1](https://www.github.com/bizon/selling-partner-a
 - [vendor-orders-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-orders-api-v1)
 - [vendor-shipments-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-shipments-api-v1)
 - [vendor-transaction-status-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-transaction-status-api-v1)
+<!-- codegen:clients:end -->
 
 The API clients are automatically generated from the Swagger/OpenAPI models from [the official models repository](https://github.com/amzn/selling-partner-api-models).
 [A code generation workflow](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/codegen.yml) runs twice a day and will create a PR on this repository whenever there are changes to the models.

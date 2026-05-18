@@ -99,7 +99,7 @@ pnpm codegen schemas      # generate schemas only
 ┌─────────────────────────────────────────────────────┐
 │                   User Code                         │
 ├─────────────────────────────────────────────────────┤
-│  @sp-api-sdk/orders-api-v0  (or any client)         │
+│  @sp-api-sdk/orders-api-2026-01-01  (or any client) │
 │    └── extends generated API class                  │
 ├─────────────────────────────────────────────────────┤
 │  @sp-api-sdk/common                                 │

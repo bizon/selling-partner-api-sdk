@@ -44,14 +44,14 @@ This SDK supports the following features:
 Install the authentication package and the API client(s) you need:
 
 ```sh
-npm install @sp-api-sdk/auth @sp-api-sdk/orders-api-v0
+npm install @sp-api-sdk/auth @sp-api-sdk/orders-api-2026-01-01
 ```
 
 ### Usage
 
 ```javascript
 import { SellingPartnerApiAuth } from "@sp-api-sdk/auth";
-import { OrdersApiClient } from "@sp-api-sdk/orders-api-v0";
+import { OrdersApiClient } from "@sp-api-sdk/orders-api-2026-01-01";
 
 const auth = new SellingPartnerApiAuth({
   clientId: process.env.LWA_CLIENT_ID,
@@ -64,9 +64,9 @@ const client = new OrdersApiClient({
   region: "eu",
 });
 
-const { data: orders } = await client.getOrders({
+const { data } = await client.searchOrders({
   marketplaceIds: ["A1PA6795UKMFR9"],
-  createdAfter: "2024-01-01T00:00:00Z",
+  createdAfter: "2026-01-01T00:00:00Z",
 });
 ```
 

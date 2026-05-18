@@ -98,12 +98,12 @@ API errors are wrapped in `SellingPartnerApiError`, which extends `AxiosError` a
 import { SellingPartnerApiError } from "@sp-api-sdk/common";
 
 try {
-  await client.getOrders({ marketplaceIds: ["A1PA6795UKMFR9"] });
+  await client.searchOrders({ marketplaceIds: ["A1PA6795UKMFR9"] });
 } catch (error) {
   if (error instanceof SellingPartnerApiError) {
-    console.error(error.message); // e.g. "orders (v0) error: Response code 403"
+    console.error(error.message); // e.g. "orders (2026-01-01) error: Response code 403"
     console.error(error.apiName); // e.g. "orders"
-    console.error(error.apiVersion); // e.g. "v0"
+    console.error(error.apiVersion); // e.g. "2026-01-01"
     console.error(error.innerMessage); // Original axios error message
   }
 }

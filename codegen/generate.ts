@@ -26,7 +26,7 @@ if (generators.has('clients')) {
 if (generators.has('schemas')) {
   console.info('Generating schemas…')
   await generateSchemas()
-  await runCommand('pnpm --filter schemas xo --fix')
+  await runCommand('pnpm --filter "./packages/schemas" xo --fix')
 }
 
 await fs.rm('selling-partner-api-models', {recursive: true})

@@ -25,10 +25,10 @@ npm install @sp-api-sdk/delivery-by-amazon-delivery-shipment-invoice-v2022-07-01
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 import {DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiClient} from '@sp-api-sdk/delivery-by-amazon-delivery-shipment-invoice-v2022-07-01-api-2022-07-01'
 
+// `clientId` and `clientSecret` default to the `LWA_CLIENT_ID` and
+// `LWA_CLIENT_SECRET` environment variables.
 const auth = new SellingPartnerApiAuth({
-  clientId: process.env.LWA_CLIENT_ID,
-  clientSecret: process.env.LWA_CLIENT_SECRET,
-  refreshToken: 'Atzr|…',
+  refreshToken: await getRefreshTokenForSeller(sellerId),
 })
 
 const client = new DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiClient({

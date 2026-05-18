@@ -25,10 +25,10 @@ npm install @sp-api-sdk/vendor-direct-fulfillment-inventory-api-v1
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 import {VendorDirectFulfillmentInventoryApiClient} from '@sp-api-sdk/vendor-direct-fulfillment-inventory-api-v1'
 
+// `clientId` and `clientSecret` default to the `LWA_CLIENT_ID` and
+// `LWA_CLIENT_SECRET` environment variables.
 const auth = new SellingPartnerApiAuth({
-  clientId: process.env.LWA_CLIENT_ID,
-  clientSecret: process.env.LWA_CLIENT_SECRET,
-  refreshToken: 'Atzr|…',
+  refreshToken: await getRefreshTokenForSeller(sellerId),
 })
 
 const client = new VendorDirectFulfillmentInventoryApiClient({

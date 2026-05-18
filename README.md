@@ -53,10 +53,10 @@ npm install @sp-api-sdk/auth @sp-api-sdk/orders-api-2026-01-01
 import { SellingPartnerApiAuth } from "@sp-api-sdk/auth";
 import { OrdersApiClient } from "@sp-api-sdk/orders-api-2026-01-01";
 
+// `clientId` and `clientSecret` default to the `LWA_CLIENT_ID` and
+// `LWA_CLIENT_SECRET` environment variables.
 const auth = new SellingPartnerApiAuth({
-  clientId: process.env.LWA_CLIENT_ID,
-  clientSecret: process.env.LWA_CLIENT_SECRET,
-  refreshToken: "Atzr|…",
+  refreshToken: await getRefreshTokenForSeller(sellerId),
 });
 
 const client = new OrdersApiClient({

@@ -20,10 +20,10 @@ The `SellingPartnerApiAuth` class handles OAuth token acquisition from Login wit
 ```javascript
 import { SellingPartnerApiAuth } from "@sp-api-sdk/auth";
 
+// `clientId` and `clientSecret` default to the `LWA_CLIENT_ID` and
+// `LWA_CLIENT_SECRET` environment variables.
 const auth = new SellingPartnerApiAuth({
-  clientId: process.env.LWA_CLIENT_ID,
-  clientSecret: process.env.LWA_CLIENT_SECRET,
-  refreshToken: "Atzr|…",
+  refreshToken: await getRefreshTokenForSeller(sellerId),
 });
 
 const accessToken = await auth.getAccessToken();
@@ -31,7 +31,7 @@ const accessToken = await auth.getAccessToken();
 
 ## Default values from the environment
 
-These constructor options can be passed using environment variables:
+The following constructor options default to environment variables when omitted. You can still pass them explicitly to override the defaults.
 
 | Property Name  | Environment variable |
 | -------------- | -------------------- |
@@ -48,9 +48,9 @@ The available scopes are exposed in the `AuthorizationScope` enum from this libr
 import { SellingPartnerApiAuth, AuthorizationScope } from "@sp-api-sdk/auth";
 import { NotificationsApiClient } from "@sp-api-sdk/notifications-api-v1";
 
+// `clientId` and `clientSecret` default to the `LWA_CLIENT_ID` and
+// `LWA_CLIENT_SECRET` environment variables.
 const auth = new SellingPartnerApiAuth({
-  clientId: process.env.LWA_CLIENT_ID,
-  clientSecret: process.env.LWA_CLIENT_SECRET,
   scopes: [AuthorizationScope.NOTIFICATIONS],
 });
 

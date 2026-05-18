@@ -27,10 +27,10 @@ npm install @sp-api-sdk/catalog-items-api-2022-04-01
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 import {CatalogItemsApiClient} from '@sp-api-sdk/catalog-items-api-2022-04-01'
 
+// `clientId` and `clientSecret` default to the `LWA_CLIENT_ID` and
+// `LWA_CLIENT_SECRET` environment variables.
 const auth = new SellingPartnerApiAuth({
-  clientId: process.env.LWA_CLIENT_ID,
-  clientSecret: process.env.LWA_CLIENT_SECRET,
-  refreshToken: 'Atzr|…',
+  refreshToken: await getRefreshTokenForSeller(sellerId),
 })
 
 const client = new CatalogItemsApiClient({

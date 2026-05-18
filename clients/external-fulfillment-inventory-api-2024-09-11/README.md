@@ -1,4 +1,4 @@
-# `external-fulfillment-inventory-api-2024-09-11`
+# `@sp-api-sdk/external-fulfillment-inventory-api-2024-09-11`
 
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/external-fulfillment-inventory-api-2024-09-11)](https://www.npmjs.com/package/@sp-api-sdk/external-fulfillment-inventory-api-2024-09-11)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)

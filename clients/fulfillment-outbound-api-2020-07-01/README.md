@@ -1,4 +1,4 @@
-# `fulfillment-outbound-api-2020-07-01`
+# `@sp-api-sdk/fulfillment-outbound-api-2020-07-01`
 
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/fulfillment-outbound-api-2020-07-01)](https://www.npmjs.com/package/@sp-api-sdk/fulfillment-outbound-api-2020-07-01)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)

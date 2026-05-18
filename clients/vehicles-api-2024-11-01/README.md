@@ -1,4 +1,4 @@
-# `vehicles-api-2024-11-01`
+# `@sp-api-sdk/vehicles-api-2024-11-01`
 
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/vehicles-api-2024-11-01)](https://www.npmjs.com/package/@sp-api-sdk/vehicles-api-2024-11-01)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)

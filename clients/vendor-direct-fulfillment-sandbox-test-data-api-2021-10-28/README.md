@@ -1,4 +1,4 @@
-# `vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28`
+# `@sp-api-sdk/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28`
 
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28)](https://www.npmjs.com/package/@sp-api-sdk/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)

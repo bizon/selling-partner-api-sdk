@@ -1,4 +1,4 @@
-# `data-kiosk-api-2023-11-15`
+# `@sp-api-sdk/data-kiosk-api-2023-11-15`
 
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/data-kiosk-api-2023-11-15)](https://www.npmjs.com/package/@sp-api-sdk/data-kiosk-api-2023-11-15)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)

@@ -1,4 +1,4 @@
-# `delivery-by-amazon-delivery-shipment-invoice-v2022-07-01-api-2022-07-01`
+# `@sp-api-sdk/delivery-by-amazon-delivery-shipment-invoice-v2022-07-01-api-2022-07-01`
 
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/delivery-by-amazon-delivery-shipment-invoice-v2022-07-01-api-2022-07-01)](https://www.npmjs.com/package/@sp-api-sdk/delivery-by-amazon-delivery-shipment-invoice-v2022-07-01-api-2022-07-01)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)

@@ -3,6 +3,8 @@
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/orders-api-v0)](https://www.npmjs.com/package/@sp-api-sdk/orders-api-v0)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
+> **Note:** This client contains deprecated operations. Refer to the [SP-API Deprecations Schedule](https://developer-docs.amazon.com/sp-api/docs/sp-api-deprecations) for more information.
+
 Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools. 
 
 _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).

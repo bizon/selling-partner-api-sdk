@@ -6,7 +6,7 @@ import camelCase from 'camelcase'
 import {globby} from 'globby'
 import jsonfile from 'jsonfile'
 import {kebabCase, reduce} from 'lodash-es'
-import {type OpenAPIV3} from 'openapi-types'
+import {OpenAPIV3} from 'openapi-types'
 import pMap from 'p-map'
 import {remark} from 'remark'
 import remarkStrip from 'strip-markdown'
@@ -26,6 +26,27 @@ interface RateLimit {
   burst: number
   urlRegex: string
   last?: boolean
+}
+
+interface ClientInfo {
+  packageName: string
+  hasDeprecatedOperations: boolean
+}
+
+function hasDeprecatedOperations(document: OpenAPIV3.Document): boolean {
+  for (const pathItem of Object.values(document.paths ?? {})) {
+    if (!pathItem) {
+      continue
+    }
+
+    for (const method of Object.values(OpenAPIV3.HttpMethods)) {
+      if (pathItem[method]?.deprecated) {
+        return true
+      }
+    }
+  }
+
+  return false
 }
 
 async function readPackageVersion(path: string) {
@@ -60,7 +81,7 @@ async function cleanMarkdown(input: string, stripNewLines?: boolean) {
   return result.trim()
 }
 
-async function generateClientVersion(modelFilePath: string) {
+async function generateClientVersion(modelFilePath: string): Promise<ClientInfo> {
   const {dir: modelDirectory, name: modelName} = parsePath(modelFilePath)
 
   const modelPath = `selling-partner-api-models/models/${modelFilePath}`
@@ -231,6 +252,8 @@ async function generateClientVersion(modelFilePath: string) {
       rateLimits,
     }),
   )
+  const deprecated = hasDeprecatedOperations(document)
+
   await fs.writeFile(
     `${clientDirectoryPath}/README.md`,
     await renderTemplate('codegen/templates/README.md.mustache', {
@@ -239,6 +262,7 @@ async function generateClientVersion(modelFilePath: string) {
       description: document.info.description,
       sdkClientDocUrl: `https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_${packageName}.html`,
       grantlessScope: grantlessInfo?.scope,
+      hasDeprecatedOperations: deprecated,
     }),
   )
 
@@ -264,6 +288,36 @@ async function generateClientVersion(modelFilePath: string) {
   )
 
   logger.info(`done in ${(Date.now() - startedAt) / 1000}s`, {packageName})
+
+  return {packageName, hasDeprecatedOperations: deprecated}
+}
+
+const CLIENTS_LIST_START = '<!-- codegen:clients:start -->'
+const CLIENTS_LIST_END = '<!-- codegen:clients:end -->'
+
+async function updateRootReadmeClientsList(clients: ClientInfo[]) {
+  const readmePath = 'README.md'
+  const readme = await fs.readFile(readmePath, 'utf8')
+
+  const sorted = [...clients].sort((a, b) => a.packageName.localeCompare(b.packageName))
+  const list = sorted
+    .map((client) => {
+      const url = `https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/${client.packageName}`
+      const suffix = client.hasDeprecatedOperations ? ' — contains deprecated operations' : ''
+      return `- [${client.packageName}](${url})${suffix}`
+    })
+    .join('\n')
+
+  const pattern = new RegExp(`${CLIENTS_LIST_START}[\\s\\S]*?${CLIENTS_LIST_END}`)
+
+  if (!pattern.test(readme)) {
+    throw new Error(
+      `Could not find clients list markers (${CLIENTS_LIST_START} / ${CLIENTS_LIST_END}) in ${readmePath}`,
+    )
+  }
+
+  const replacement = `${CLIENTS_LIST_START}\n${list}\n${CLIENTS_LIST_END}`
+  await fs.writeFile(readmePath, readme.replace(pattern, replacement))
 }
 
 export async function generateClients() {
@@ -275,7 +329,13 @@ export async function generateClients() {
     cwd: 'selling-partner-api-models/models',
   })
 
-  await pMap(modelFilePaths, async (modelFilePath) => generateClientVersion(modelFilePath), {
-    concurrency: os.cpus().length,
-  })
+  const clients = await pMap(
+    modelFilePaths,
+    async (modelFilePath) => generateClientVersion(modelFilePath),
+    {
+      concurrency: os.cpus().length,
+    },
+  )
+
+  await updateRootReadmeClientsList(clients)
 }

@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DistributionIneligibleReason } from './distribution-ineligible-reason';
+import type { DistributionIneligibleReason } from './distribution-ineligible-reason.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DistributionProduct } from './distribution-product';
+import type { DistributionProduct } from './distribution-product.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OutboundShipmentSummary } from './outbound-shipment-summary';
+import type { OutboundShipmentSummary } from './outbound-shipment-summary.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ReplenishmentOrderStatus } from './replenishment-order-status';
+import type { ReplenishmentOrderStatus } from './replenishment-order-status.js';
 
 /**
  * Represents an AWD replenishment order.

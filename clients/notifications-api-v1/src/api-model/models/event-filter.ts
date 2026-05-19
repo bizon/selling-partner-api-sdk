@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AggregationFilter } from './aggregation-filter';
+import type { AggregationFilter } from './aggregation-filter.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AggregationSettings } from './aggregation-settings';
+import type { AggregationSettings } from './aggregation-settings.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EventFilterAllOf } from './event-filter-all-of';
+import type { EventFilterAllOf } from './event-filter-all-of.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MarketplaceFilter } from './marketplace-filter';
+import type { MarketplaceFilter } from './marketplace-filter.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderChangeTypeEnum } from './order-change-type-enum';
+import type { OrderChangeTypeEnum } from './order-change-type-enum.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderChangeTypeFilter } from './order-change-type-filter';
+import type { OrderChangeTypeFilter } from './order-change-type-filter.js';
 
 /**
  * @type EventFilter

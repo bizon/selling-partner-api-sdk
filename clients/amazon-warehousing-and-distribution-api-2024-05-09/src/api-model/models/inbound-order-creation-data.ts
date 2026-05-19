@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
+import type { Address } from './address.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DistributionPackageQuantity } from './distribution-package-quantity';
+import type { DistributionPackageQuantity } from './distribution-package-quantity.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InboundPreferences } from './inbound-preferences';
+import type { InboundPreferences } from './inbound-preferences.js';
 
 /**
  * Payload for creating an inbound order.

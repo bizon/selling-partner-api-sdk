@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LabelAttribute } from './label-attribute';
+import type { LabelAttribute } from './label-attribute.js';
 
 /**
  * Object contains customised data requested by a shipper to be printed on a shipping label.

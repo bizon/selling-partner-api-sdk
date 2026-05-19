@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BoxContentInformationSource } from './box-content-information-source';
+import type { BoxContentInformationSource } from './box-content-information-source.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Dimensions } from './dimensions';
+import type { Dimensions } from './dimensions.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemInput } from './item-input';
+import type { ItemInput } from './item-input.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Weight } from './weight';
+import type { Weight } from './weight.js';
 
 /**
  * Input information for a given box.

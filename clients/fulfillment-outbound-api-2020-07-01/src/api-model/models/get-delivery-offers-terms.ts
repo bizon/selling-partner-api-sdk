@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Destination } from './destination';
+import type { Destination } from './destination.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Origin } from './origin';
+import type { Origin } from './origin.js';
 
 /**
  * The delivery terms for the delivery offer.

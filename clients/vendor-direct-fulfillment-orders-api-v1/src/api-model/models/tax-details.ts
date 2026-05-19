@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Money } from './money';
+import type { Money } from './money.js';
 
 /**
  * The tax details for the order. _Note:_ Amazon calculates tax on the list price (Amazon retail price).

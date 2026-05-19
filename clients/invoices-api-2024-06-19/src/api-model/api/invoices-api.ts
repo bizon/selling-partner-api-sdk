@@ -13,38 +13,38 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { ErrorList } from '../models';
+import type { ErrorList } from '../models/index.js';
 // @ts-ignore
-import type { ExportInvoicesRequest } from '../models';
+import type { ExportInvoicesRequest } from '../models/index.js';
 // @ts-ignore
-import type { ExportInvoicesResponse } from '../models';
+import type { ExportInvoicesResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetInvoiceResponse } from '../models';
+import type { GetInvoiceResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetInvoicesAttributesResponse } from '../models';
+import type { GetInvoicesAttributesResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetInvoicesDocumentResponse } from '../models';
+import type { GetInvoicesDocumentResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetInvoicesExportResponse } from '../models';
+import type { GetInvoicesExportResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetInvoicesExportsResponse } from '../models';
+import type { GetInvoicesExportsResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetInvoicesResponse } from '../models';
+import type { GetInvoicesResponse } from '../models/index.js';
 // @ts-ignore
-import type { GovernmentInvoiceRequest } from '../models';
+import type { GovernmentInvoiceRequest } from '../models/index.js';
 // @ts-ignore
-import type { GovernmentInvoiceStatusResponse } from '../models';
+import type { GovernmentInvoiceStatusResponse } from '../models/index.js';
 // @ts-ignore
-import type { GovtInvoiceDocumentResponse } from '../models';
+import type { GovtInvoiceDocumentResponse } from '../models/index.js';
 /**
  * InvoicesApi - axios parameter creator
  */

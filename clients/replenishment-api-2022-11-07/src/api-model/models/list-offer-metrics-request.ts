@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ListOfferMetricsRequestFilters } from './list-offer-metrics-request-filters';
+import type { ListOfferMetricsRequestFilters } from './list-offer-metrics-request-filters.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ListOfferMetricsRequestPagination } from './list-offer-metrics-request-pagination';
+import type { ListOfferMetricsRequestPagination } from './list-offer-metrics-request-pagination.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ListOfferMetricsRequestSort } from './list-offer-metrics-request-sort';
+import type { ListOfferMetricsRequestSort } from './list-offer-metrics-request-sort.js';
 
 /**
  * The request body for the `listOfferMetrics` operation.

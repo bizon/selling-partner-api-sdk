@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DistributionPackageContents } from './distribution-package-contents';
+import type { DistributionPackageContents } from './distribution-package-contents.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DistributionPackageType } from './distribution-package-type';
+import type { DistributionPackageType } from './distribution-package-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MeasurementData } from './measurement-data';
+import type { MeasurementData } from './measurement-data.js';
 
 /**
  * Represents an AWD distribution package.

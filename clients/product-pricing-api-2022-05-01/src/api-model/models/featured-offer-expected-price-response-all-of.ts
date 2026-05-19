@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FeaturedOfferExpectedPriceRequestParams } from './featured-offer-expected-price-request-params';
+import type { FeaturedOfferExpectedPriceRequestParams } from './featured-offer-expected-price-request-params.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FeaturedOfferExpectedPriceResponseBody } from './featured-offer-expected-price-response-body';
+import type { FeaturedOfferExpectedPriceResponseBody } from './featured-offer-expected-price-response-body.js';
 
 export interface FeaturedOfferExpectedPriceResponseAllOf {
     'request': FeaturedOfferExpectedPriceRequestParams;

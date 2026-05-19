@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AppointmentResource } from './appointment-resource';
+import type { AppointmentResource } from './appointment-resource.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DateTimeRange } from './date-time-range';
+import type { DateTimeRange } from './date-time-range.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FulfillmentDocument } from './fulfillment-document';
+import type { FulfillmentDocument } from './fulfillment-document.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FulfillmentTime } from './fulfillment-time';
+import type { FulfillmentTime } from './fulfillment-time.js';
 
 /**
  * Input for set appointment fulfillment data operation.

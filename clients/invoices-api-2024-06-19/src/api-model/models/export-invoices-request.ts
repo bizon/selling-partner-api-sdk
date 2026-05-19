@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FileFormat } from './file-format';
+import type { FileFormat } from './file-format.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransactionIdentifier } from './transaction-identifier';
+import type { TransactionIdentifier } from './transaction-identifier.js';
 
 /**
  * The information required to create the export request.

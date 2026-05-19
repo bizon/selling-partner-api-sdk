@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AggregationFrequency } from './aggregation-frequency';
+import type { AggregationFrequency } from './aggregation-frequency.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Metric } from './metric';
+import type { Metric } from './metric.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ProgramType } from './program-type';
+import type { ProgramType } from './program-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TimeInterval } from './time-interval';
+import type { TimeInterval } from './time-interval.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TimePeriodType } from './time-period-type';
+import type { TimePeriodType } from './time-period-type.js';
 
 /**
  * The request body for the `getSellingPartnerMetrics` operation.

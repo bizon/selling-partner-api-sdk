@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { UpdateScheduleRecord } from './update-schedule-record';
+import type { UpdateScheduleRecord } from './update-schedule-record.js';
 
 /**
  * Response schema for the `updateSchedule` operation.

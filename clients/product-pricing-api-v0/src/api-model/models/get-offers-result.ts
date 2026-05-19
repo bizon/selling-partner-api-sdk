@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ConditionType } from './condition-type';
+import type { ConditionType } from './condition-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemIdentifier } from './item-identifier';
+import type { ItemIdentifier } from './item-identifier.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OfferDetail } from './offer-detail';
+import type { OfferDetail } from './offer-detail.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Summary } from './summary';
+import type { Summary } from './summary.js';
 
 /**
  * The payload for the getListingOffers and getItemOffers operations.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackageTrackingDetails } from './package-tracking-details';
+import type { PackageTrackingDetails } from './package-tracking-details.js';
 
 /**
  * The response schema for the `getPackageTrackingDetails` operation.

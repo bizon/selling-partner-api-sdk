@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemCancellationRequest } from './item-cancellation-request';
+import type { ItemCancellationRequest } from './item-cancellation-request.js';
 
 /**
  * The cancellation information of the order item.

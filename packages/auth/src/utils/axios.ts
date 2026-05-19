@@ -1,6 +1,6 @@
 import globalAxios from 'axios'
 
-import {packageJson} from './package'
+import {packageJson} from './package.js'
 
 export const axios = globalAxios.create({
   baseURL: 'https://api.amazon.com/auth/',

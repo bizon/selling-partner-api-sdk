@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EventBridgeResource } from './event-bridge-resource';
+import type { EventBridgeResource } from './event-bridge-resource.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SqsResource } from './sqs-resource';
+import type { SqsResource } from './sqs-resource.js';
 
 /**
  * The destination resource types.

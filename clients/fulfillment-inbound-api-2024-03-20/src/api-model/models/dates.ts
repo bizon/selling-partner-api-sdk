@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Window } from './window';
+import type { Window } from './window.js';
 
 /**
  * Specifies the date that the seller expects their shipment will be shipped.

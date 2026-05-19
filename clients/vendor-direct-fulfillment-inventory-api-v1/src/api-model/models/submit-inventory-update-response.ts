@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransactionReference } from './transaction-reference';
+import type { TransactionReference } from './transaction-reference.js';
 
 /**
  * The response schema for the submitInventoryUpdate operation.

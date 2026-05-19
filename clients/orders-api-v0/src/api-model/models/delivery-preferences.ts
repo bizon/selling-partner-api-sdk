@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OtherDeliveryAttributes } from './other-delivery-attributes';
+import type { OtherDeliveryAttributes } from './other-delivery-attributes.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PreferredDeliveryTime } from './preferred-delivery-time';
+import type { PreferredDeliveryTime } from './preferred-delivery-time.js';
 
 /**
  * Contains all of the delivery instructions provided by the customer for the shipping address.

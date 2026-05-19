@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SupplySourceCapabilities } from './supply-source-capabilities';
+import type { SupplySourceCapabilities } from './supply-source-capabilities.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SupplySourceConfiguration } from './supply-source-configuration';
+import type { SupplySourceConfiguration } from './supply-source-configuration.js';
 
 /**
  * A request to update the configuration and capabilities of a supply source.

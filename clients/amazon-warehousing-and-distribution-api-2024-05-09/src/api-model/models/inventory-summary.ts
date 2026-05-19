@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ExpirationDetails } from './expiration-details';
+import type { ExpirationDetails } from './expiration-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InventoryDetails } from './inventory-details';
+import type { InventoryDetails } from './inventory-details.js';
 
 /**
  * Summary of inventory per SKU.

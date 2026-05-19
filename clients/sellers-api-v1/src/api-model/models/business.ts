@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
+import type { Address } from './address.js';
 
 /**
  * Information about the seller\'s business. Certain fields may be omitted depending on the seller\'s `businessType`.

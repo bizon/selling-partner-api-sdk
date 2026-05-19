@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BatchRequest } from './batch-request';
+import type { BatchRequest } from './batch-request.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FeaturedOfferExpectedPriceRequestParams } from './featured-offer-expected-price-request-params';
+import type { FeaturedOfferExpectedPriceRequestParams } from './featured-offer-expected-price-request-params.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { HttpMethod } from './http-method';
+import type { HttpMethod } from './http-method.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Segment } from './segment';
+import type { Segment } from './segment.js';
 
 /**
  * @type FeaturedOfferExpectedPriceRequest

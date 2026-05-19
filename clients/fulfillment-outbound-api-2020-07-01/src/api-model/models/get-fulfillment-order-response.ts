@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetFulfillmentOrderResult } from './get-fulfillment-order-result';
+import type { GetFulfillmentOrderResult } from './get-fulfillment-order-result.js';
 
 /**
  * The response schema for the `getFulfillmentOrder` operation.

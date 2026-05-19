@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemLabelPageType } from './item-label-page-type';
+import type { ItemLabelPageType } from './item-label-page-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LabelPrintType } from './label-print-type';
+import type { LabelPrintType } from './label-print-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MskuQuantity } from './msku-quantity';
+import type { MskuQuantity } from './msku-quantity.js';
 
 /**
  * The `createMarketplaceItemLabels` request.

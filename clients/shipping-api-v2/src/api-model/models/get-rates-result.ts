@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { IneligibleRate } from './ineligible-rate';
+import type { IneligibleRate } from './ineligible-rate.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Rate } from './rate';
+import type { Rate } from './rate.js';
 
 /**
  * The payload for the getRates operation.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CompetitiveSummaryRequest } from './competitive-summary-request';
+import type { CompetitiveSummaryRequest } from './competitive-summary-request.js';
 
 /**
  * The `competitiveSummary` batch request data.

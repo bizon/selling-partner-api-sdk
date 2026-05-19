@@ -14,5 +14,5 @@
 
 
 
-export * from './api/seller-wallet-api';
+export * from './api/seller-wallet-api.js';
 

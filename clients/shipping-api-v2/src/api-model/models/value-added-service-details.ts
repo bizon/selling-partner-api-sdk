@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CollectOnDelivery } from './collect-on-delivery';
+import type { CollectOnDelivery } from './collect-on-delivery.js';
 
 /**
  * A collection of supported value-added services.

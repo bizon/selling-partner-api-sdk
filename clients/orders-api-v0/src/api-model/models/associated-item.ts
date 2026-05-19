@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AssociationType } from './association-type';
+import type { AssociationType } from './association-type.js';
 
 /**
  * An item that is associated with an order item. For example, a tire installation service that is purchased with tires.

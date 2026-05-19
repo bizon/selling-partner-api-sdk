@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EligibilityStatus } from './eligibility-status';
+import type { EligibilityStatus } from './eligibility-status.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Preference } from './preference';
+import type { Preference } from './preference.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ProgramType } from './program-type';
+import type { ProgramType } from './program-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Promotion } from './promotion';
+import type { Promotion } from './promotion.js';
 
 /**
  * Use these parameters to filter results. Any result must match all provided parameters. For any parameter that is an array, the result must match at least one element in the provided array.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Subscription } from './subscription';
+import type { Subscription } from './subscription.js';
 
 /**
  * The response schema for the `getSubscriptionById` operation.

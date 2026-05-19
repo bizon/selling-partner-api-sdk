@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LabelSpecification } from './label-specification';
+import type { LabelSpecification } from './label-specification.js';
 
 /**
  * The request schema for the purchaseLabels operation.

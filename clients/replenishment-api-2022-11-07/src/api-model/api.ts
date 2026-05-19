@@ -14,5 +14,5 @@
 
 
 
-export * from './api/replenishment-api';
+export * from './api/replenishment-api.js';
 

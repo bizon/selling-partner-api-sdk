@@ -14,5 +14,5 @@
 
 
 
-export * from './api/fba-inventory-api';
+export * from './api/fba-inventory-api.js';
 

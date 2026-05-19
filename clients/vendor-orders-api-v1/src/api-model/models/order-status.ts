@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderItemStatus } from './order-item-status';
+import type { OrderItemStatus } from './order-item-status.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PartyIdentification } from './party-identification';
+import type { PartyIdentification } from './party-identification.js';
 
 /**
  * Current status of a purchase order.

@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Breakdown } from './breakdown';
+import type { Breakdown } from './breakdown.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Context } from './context';
+import type { Context } from './context.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Currency } from './currency';
+import type { Currency } from './currency.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemRelatedIdentifier } from './item-related-identifier';
+import type { ItemRelatedIdentifier } from './item-related-identifier.js';
 
 /**
  * Additional information about the items in a transaction.

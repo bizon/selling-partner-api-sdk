@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ServiceJob } from './service-job';
+import type { ServiceJob } from './service-job.js';
 
 /**
  * The payload for the `getServiceJobs` operation.

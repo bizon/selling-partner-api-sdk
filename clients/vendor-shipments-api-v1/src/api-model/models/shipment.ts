@@ -15,28 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CollectFreightPickupDetails } from './collect-freight-pickup-details';
+import type { CollectFreightPickupDetails } from './collect-freight-pickup-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Containers } from './containers';
+import type { Containers } from './containers.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ImportDetails } from './import-details';
+import type { ImportDetails } from './import-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PartyIdentification } from './party-identification';
+import type { PartyIdentification } from './party-identification.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PurchaseOrders } from './purchase-orders';
+import type { PurchaseOrders } from './purchase-orders.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentStatusDetails } from './shipment-status-details';
+import type { ShipmentStatusDetails } from './shipment-status-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransportShipmentMeasurements } from './transport-shipment-measurements';
+import type { TransportShipmentMeasurements } from './transport-shipment-measurements.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransportationDetails } from './transportation-details';
+import type { TransportationDetails } from './transportation-details.js';
 
 /**
  * A list of one or more shipments with respective details.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderScenarioRequest } from './order-scenario-request';
+import type { OrderScenarioRequest } from './order-scenario-request.js';
 
 /**
  * The request body for the generateOrderScenarios operation.

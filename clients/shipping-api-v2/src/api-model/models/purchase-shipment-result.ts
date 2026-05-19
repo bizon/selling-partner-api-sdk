@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Benefits } from './benefits';
+import type { Benefits } from './benefits.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackageDocumentDetail } from './package-document-detail';
+import type { PackageDocumentDetail } from './package-document-detail.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Promise } from './promise';
+import type { Promise } from './promise.js';
 
 /**
  * The payload for the purchaseShipment operation.

@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DocumentV2 } from './document-v2';
+import type { DocumentV2 } from './document-v2.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipLabelMetadata } from './ship-label-metadata';
+import type { ShipLabelMetadata } from './ship-label-metadata.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Status } from './status';
+import type { Status } from './status.js';
 
 /**
  * A shipping label with a label document for a single package. If label generation fails, you can use the `status` and `errorDetails` attributes to determine the cause of failure.

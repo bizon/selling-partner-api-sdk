@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ParagraphComponent } from './paragraph-component';
+import type { ParagraphComponent } from './paragraph-component.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TextComponent } from './text-component';
+import type { TextComponent } from './text-component.js';
 
 /**
  * The A+ Content standard text box block, which contains a paragraph and a headline.

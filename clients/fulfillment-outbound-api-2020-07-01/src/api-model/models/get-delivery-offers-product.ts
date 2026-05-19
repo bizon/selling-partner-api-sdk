@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Amount } from './amount';
+import type { Amount } from './amount.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ProductIdentifier } from './product-identifier';
+import type { ProductIdentifier } from './product-identifier.js';
 
 /**
  * The product details for the delivery offer.

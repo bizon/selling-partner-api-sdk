@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Amount } from './amount';
+import type { Amount } from './amount.js';
 
 /**
  * A line item in a package.

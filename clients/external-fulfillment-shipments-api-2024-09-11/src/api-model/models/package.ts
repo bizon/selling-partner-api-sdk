@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackageDimensions } from './package-dimensions';
+import type { PackageDimensions } from './package-dimensions.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackageLineItem } from './package-line-item';
+import type { PackageLineItem } from './package-line-item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Weight } from './weight';
+import type { Weight } from './weight.js';
 
 /**
  * A package that is created to ship one or more of a shipment\'s line items.

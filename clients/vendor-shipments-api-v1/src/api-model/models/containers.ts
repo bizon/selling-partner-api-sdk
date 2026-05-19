@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ContainerIdentification } from './container-identification';
+import type { ContainerIdentification } from './container-identification.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Dimensions } from './dimensions';
+import type { Dimensions } from './dimensions.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InnerContainersDetails } from './inner-containers-details';
+import type { InnerContainersDetails } from './inner-containers-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackedItems } from './packed-items';
+import type { PackedItems } from './packed-items.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Weight } from './weight';
+import type { Weight } from './weight.js';
 
 /**
  * A list of the items in this transportation and their associated inner container details. If any of the item detail fields are common at a carton or a pallet level, provide them at the corresponding carton or pallet level.

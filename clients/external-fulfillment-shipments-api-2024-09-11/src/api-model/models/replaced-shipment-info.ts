@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MarketplaceAttributes } from './marketplace-attributes';
+import type { MarketplaceAttributes } from './marketplace-attributes.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OriginalLineItem } from './original-line-item';
+import type { OriginalLineItem } from './original-line-item.js';
 
 /**
  * Details of the original shipment if `shipmentType` is either `REPLACEMENT` or `EXCHANGE`.

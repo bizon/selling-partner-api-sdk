@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RejectionReason } from './rejection-reason';
+import type { RejectionReason } from './rejection-reason.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ValidVerificationDetail } from './valid-verification-detail';
+import type { ValidVerificationDetail } from './valid-verification-detail.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { VerificationStatus } from './verification-status';
+import type { VerificationStatus } from './verification-status.js';
 
 /**
  * The verification status of the order, along with associated approval or rejection metadata.

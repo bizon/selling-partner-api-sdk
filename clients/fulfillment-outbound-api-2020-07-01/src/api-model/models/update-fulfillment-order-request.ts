@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
+import type { Address } from './address.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FeatureSettings } from './feature-settings';
+import type { FeatureSettings } from './feature-settings.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FulfillmentAction } from './fulfillment-action';
+import type { FulfillmentAction } from './fulfillment-action.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FulfillmentPolicy } from './fulfillment-policy';
+import type { FulfillmentPolicy } from './fulfillment-policy.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShippingSpeedCategory } from './shipping-speed-category';
+import type { ShippingSpeedCategory } from './shipping-speed-category.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { UpdateFulfillmentOrderItem } from './update-fulfillment-order-item';
+import type { UpdateFulfillmentOrderItem } from './update-fulfillment-order-item.js';
 
 /**
  * The request body schema for the `updateFulfillmentOrder` operation.

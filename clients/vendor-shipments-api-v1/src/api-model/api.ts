@@ -14,5 +14,5 @@
 
 
 
-export * from './api/vendor-shipments-api';
+export * from './api/vendor-shipments-api.js';
 

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MoneyType } from './money-type';
+import type { MoneyType } from './money-type.js';
 
 /**
  * The number of Amazon Points that are offered with the purchase of an item and the monetary value of these points.

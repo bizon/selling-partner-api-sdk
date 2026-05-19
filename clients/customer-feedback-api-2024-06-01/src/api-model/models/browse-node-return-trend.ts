@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BrowseNodeReturnTrendPoint } from './browse-node-return-trend-point';
+import type { BrowseNodeReturnTrendPoint } from './browse-node-return-trend-point.js';
 
 /**
  * The trend of return topic metrics for all items in the requested browse node.

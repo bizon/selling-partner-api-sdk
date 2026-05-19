@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DateRange } from './date-range';
+import type { DateRange } from './date-range.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemReviewTrends } from './item-review-trends';
+import type { ItemReviewTrends } from './item-review-trends.js';
 
 /**
  * The response for the `getItemReviewTrends` operation.

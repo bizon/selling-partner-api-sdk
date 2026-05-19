@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { JobListing } from './job-listing';
+import type { JobListing } from './job-listing.js';
 
 /**
  * Response schema for the `getServiceJobs` operation.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InventoryUnitOfMeasurement } from './inventory-unit-of-measurement';
+import type { InventoryUnitOfMeasurement } from './inventory-unit-of-measurement.js';
 
 /**
  * Quantity of inventory with an associated measurement unit context.

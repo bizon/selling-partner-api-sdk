@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemSubstitutionOption } from './item-substitution-option';
+import type { ItemSubstitutionOption } from './item-substitution-option.js';
 
 /**
  * Substitution preference for an order item when it becomes unavailable during fulfillment.

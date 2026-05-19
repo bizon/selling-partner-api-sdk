@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Stop } from './stop';
+import type { Stop } from './stop.js';
 
 /**
  * This is used only for direct import shipment confirmations.

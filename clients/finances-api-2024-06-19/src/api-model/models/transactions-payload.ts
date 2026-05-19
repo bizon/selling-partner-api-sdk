@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Transaction } from './transaction';
+import type { Transaction } from './transaction.js';
 
 /**
  * The payload for the `listTransactions` operation.

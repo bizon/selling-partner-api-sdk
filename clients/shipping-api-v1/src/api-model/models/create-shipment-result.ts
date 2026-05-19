@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Rate } from './rate';
+import type { Rate } from './rate.js';
 
 /**
  * The payload schema for the createShipment operation.

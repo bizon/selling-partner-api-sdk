@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AddressWithContact } from './address-with-contact';
+import type { AddressWithContact } from './address-with-contact.js';
 
 /**
  * The address or reference to another `supplySourceId` to act as a return location.

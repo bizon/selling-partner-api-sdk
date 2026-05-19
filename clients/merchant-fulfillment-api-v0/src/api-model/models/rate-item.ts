@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CurrencyAmount } from './currency-amount';
+import type { CurrencyAmount } from './currency-amount.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RateItemID } from './rate-item-id';
+import type { RateItemID } from './rate-item-id.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RateItemType } from './rate-item-type';
+import type { RateItemType } from './rate-item-type.js';
 
 /**
  * Rate item for shipping costs and adjustments.

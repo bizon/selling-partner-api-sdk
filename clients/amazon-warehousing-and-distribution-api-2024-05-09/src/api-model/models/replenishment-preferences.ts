@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ConfirmationMode } from './confirmation-mode';
+import type { ConfirmationMode } from './confirmation-mode.js';
 
 /**
  * Preferences that can be passed in context of a replenishment order

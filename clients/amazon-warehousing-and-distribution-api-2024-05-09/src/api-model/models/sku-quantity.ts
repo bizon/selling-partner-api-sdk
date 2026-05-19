@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InventoryQuantity } from './inventory-quantity';
+import type { InventoryQuantity } from './inventory-quantity.js';
 
 /**
  * Quantity details for a SKU as part of a shipment

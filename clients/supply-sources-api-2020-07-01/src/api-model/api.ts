@@ -14,5 +14,5 @@
 
 
 
-export * from './api/supply-sources-api';
+export * from './api/supply-sources-api.js';
 

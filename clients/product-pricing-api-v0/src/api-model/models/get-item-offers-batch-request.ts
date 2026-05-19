@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemOffersRequest } from './item-offers-request';
+import type { ItemOffersRequest } from './item-offers-request.js';
 
 /**
  * The request associated with the `getItemOffersBatch` API call.

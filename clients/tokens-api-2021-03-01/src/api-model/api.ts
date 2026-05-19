@@ -14,5 +14,5 @@
 
 
 
-export * from './api/tokens-api';
+export * from './api/tokens-api.js';
 

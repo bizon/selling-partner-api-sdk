@@ -14,5 +14,5 @@
 
 
 
-export * from './api/listings-restrictions-api';
+export * from './api/listings-restrictions-api.js';
 

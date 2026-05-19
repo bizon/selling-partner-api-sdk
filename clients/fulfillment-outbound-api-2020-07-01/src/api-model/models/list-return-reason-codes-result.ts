@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ReasonCodeDetails } from './reason-code-details';
+import type { ReasonCodeDetails } from './reason-code-details.js';
 
 /**
  * The request for the `listReturnReasonCodes` operation.

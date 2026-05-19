@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LabelStatus } from './label-status';
+import type { LabelStatus } from './label-status.js';
 
 /**
  * Shipment labels.

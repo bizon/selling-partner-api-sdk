@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ChargeBreakup } from './charge-breakup';
+import type { ChargeBreakup } from './charge-breakup.js';
 
 /**
  * Information about taxes.

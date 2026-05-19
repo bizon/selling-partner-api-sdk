@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Categories } from './categories';
+import type { Categories } from './categories.js';
 
 export interface ListCatalogCategoriesResponse {
     'payload'?: Array<Categories>;

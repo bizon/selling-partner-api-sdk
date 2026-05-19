@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CarrierId } from './carrier-id';
+import type { CarrierId } from './carrier-id.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Package } from './package';
+import type { Package } from './package.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PartyIdentification } from './party-identification';
+import type { PartyIdentification } from './party-identification.js';
 
 /**
  * The request body schema for the `createContainerLabel` operation.

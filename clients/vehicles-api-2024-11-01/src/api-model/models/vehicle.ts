@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EngineOutput } from './engine-output';
+import type { EngineOutput } from './engine-output.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MonthAndYear } from './month-and-year';
+import type { MonthAndYear } from './month-and-year.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { VehicleIdentifiers } from './vehicle-identifiers';
+import type { VehicleIdentifiers } from './vehicle-identifiers.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { VehicleStatusInCatalog } from './vehicle-status-in-catalog';
+import type { VehicleStatusInCatalog } from './vehicle-status-in-catalog.js';
 
 /**
  * Combinations of attributes and unique identifier that represents a vehicle in vehicle list.

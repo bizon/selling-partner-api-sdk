@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { UpdatePackageDetails } from './update-package-details';
+import type { UpdatePackageDetails } from './update-package-details.js';
 
 /**
  * The request schema for the `updateScheduledPackages` operation.

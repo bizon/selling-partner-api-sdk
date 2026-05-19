@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AdjustmentItem } from './adjustment-item';
+import type { AdjustmentItem } from './adjustment-item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Currency } from './currency';
+import type { Currency } from './currency.js';
 
 /**
  * An adjustment to the seller\'s account.

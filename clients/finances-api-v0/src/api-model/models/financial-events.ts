@@ -15,91 +15,91 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AdhocDisbursementEvent } from './adhoc-disbursement-event';
+import type { AdhocDisbursementEvent } from './adhoc-disbursement-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AdjustmentEvent } from './adjustment-event';
+import type { AdjustmentEvent } from './adjustment-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AffordabilityExpenseEvent } from './affordability-expense-event';
+import type { AffordabilityExpenseEvent } from './affordability-expense-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CapacityReservationBillingEvent } from './capacity-reservation-billing-event';
+import type { CapacityReservationBillingEvent } from './capacity-reservation-billing-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ChargeRefundEvent } from './charge-refund-event';
+import type { ChargeRefundEvent } from './charge-refund-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CouponPaymentEvent } from './coupon-payment-event';
+import type { CouponPaymentEvent } from './coupon-payment-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DebtRecoveryEvent } from './debt-recovery-event';
+import type { DebtRecoveryEvent } from './debt-recovery-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EBTRefundReimbursementOnlyEvent } from './ebtrefund-reimbursement-only-event';
+import type { EBTRefundReimbursementOnlyEvent } from './ebtrefund-reimbursement-only-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FBALiquidationEvent } from './fbaliquidation-event';
+import type { FBALiquidationEvent } from './fbaliquidation-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FailedAdhocDisbursementEvent } from './failed-adhoc-disbursement-event';
+import type { FailedAdhocDisbursementEvent } from './failed-adhoc-disbursement-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ImagingServicesFeeEvent } from './imaging-services-fee-event';
+import type { ImagingServicesFeeEvent } from './imaging-services-fee-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LoanServicingEvent } from './loan-servicing-event';
+import type { LoanServicingEvent } from './loan-servicing-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { NetworkComminglingTransactionEvent } from './network-commingling-transaction-event';
+import type { NetworkComminglingTransactionEvent } from './network-commingling-transaction-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PayWithAmazonEvent } from './pay-with-amazon-event';
+import type { PayWithAmazonEvent } from './pay-with-amazon-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ProductAdsPaymentEvent } from './product-ads-payment-event';
+import type { ProductAdsPaymentEvent } from './product-ads-payment-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RemovalShipmentAdjustmentEvent } from './removal-shipment-adjustment-event';
+import type { RemovalShipmentAdjustmentEvent } from './removal-shipment-adjustment-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RemovalShipmentEvent } from './removal-shipment-event';
+import type { RemovalShipmentEvent } from './removal-shipment-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RentalTransactionEvent } from './rental-transaction-event';
+import type { RentalTransactionEvent } from './rental-transaction-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RetrochargeEvent } from './retrocharge-event';
+import type { RetrochargeEvent } from './retrocharge-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SAFETReimbursementEvent } from './safetreimbursement-event';
+import type { SAFETReimbursementEvent } from './safetreimbursement-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SellerDealPaymentEvent } from './seller-deal-payment-event';
+import type { SellerDealPaymentEvent } from './seller-deal-payment-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SellerReviewEnrollmentPaymentEvent } from './seller-review-enrollment-payment-event';
+import type { SellerReviewEnrollmentPaymentEvent } from './seller-review-enrollment-payment-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ServiceFeeEvent } from './service-fee-event';
+import type { ServiceFeeEvent } from './service-fee-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentEvent } from './shipment-event';
+import type { ShipmentEvent } from './shipment-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SolutionProviderCreditEvent } from './solution-provider-credit-event';
+import type { SolutionProviderCreditEvent } from './solution-provider-credit-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TDSReimbursementEvent } from './tdsreimbursement-event';
+import type { TDSReimbursementEvent } from './tdsreimbursement-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TaxWithholdingEvent } from './tax-withholding-event';
+import type { TaxWithholdingEvent } from './tax-withholding-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TrialShipmentEvent } from './trial-shipment-event';
+import type { TrialShipmentEvent } from './trial-shipment-event.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ValueAddedServiceChargeEvent } from './value-added-service-charge-event';
+import type { ValueAddedServiceChargeEvent } from './value-added-service-charge-event.js';
 
 /**
  * All the information that is related to a financial event.

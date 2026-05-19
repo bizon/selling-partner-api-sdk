@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { VolumeUnitOfMeasurement } from './volume-unit-of-measurement';
+import type { VolumeUnitOfMeasurement } from './volume-unit-of-measurement.js';
 
 /**
  * Represents the volume of the package with a unit of measurement.

@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackageDimensions } from './package-dimensions';
+import type { PackageDimensions } from './package-dimensions.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackageVolume } from './package-volume';
+import type { PackageVolume } from './package-volume.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackageWeight } from './package-weight';
+import type { PackageWeight } from './package-weight.js';
 
 /**
  * Package weight and dimension.

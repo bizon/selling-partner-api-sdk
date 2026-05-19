@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ChargeComponent } from './charge-component';
+import type { ChargeComponent } from './charge-component.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DirectPayment } from './direct-payment';
+import type { DirectPayment } from './direct-payment.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FeeComponent } from './fee-component';
+import type { FeeComponent } from './fee-component.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentItem } from './shipment-item';
+import type { ShipmentItem } from './shipment-item.js';
 
 /**
  * A shipment, refund, guarantee claim, or chargeback.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderChangeTypeEnum } from './order-change-type-enum';
+import type { OrderChangeTypeEnum } from './order-change-type-enum.js';
 
 /**
  * An event filter to customize your subscription to send notifications for only the specified `orderChangeType`.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetAttributesResponseBuyer } from './get-attributes-response-buyer';
+import type { GetAttributesResponseBuyer } from './get-attributes-response-buyer.js';
 
 /**
  * The response schema for the GetAttributes operation.

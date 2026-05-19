@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemReviewTopic } from './item-review-topic';
+import type { ItemReviewTopic } from './item-review-topic.js';
 
 /**
  * The top 10 positive and negative item review topics.

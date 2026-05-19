@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RegulatedInformationField } from './regulated-information-field';
+import type { RegulatedInformationField } from './regulated-information-field.js';
 
 /**
  * The regulated information collected during purchase and used to verify the order.

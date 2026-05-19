@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Location } from './location';
+import type { Location } from './location.js';
 
 /**
  * Contractual or operational port or point relevant to the movement of the cargo.

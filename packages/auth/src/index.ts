@@ -3,10 +3,10 @@ import process from 'node:process'
 import {AxiosError} from 'axios'
 import {type RequireExactlyOne} from 'type-fest'
 
-import {SellingPartnerApiAuthError} from './error'
-import {type AccessTokenData, type AccessTokenQuery} from './types/access-token'
-import {type AuthorizationScope} from './types/scope'
-import {axios} from './utils/axios'
+import {SellingPartnerApiAuthError} from './error.js'
+import {type AccessTokenData, type AccessTokenQuery} from './types/access-token.js'
+import {type AuthorizationScope} from './types/scope.js'
+import {axios} from './utils/axios.js'
 
 /**
  * Configuration parameters for Selling Partner API authentication.
@@ -141,5 +141,5 @@ export class SellingPartnerApiAuth {
   }
 }
 
-export {SellingPartnerApiAuthError} from './error'
-export {AuthorizationScope} from './types/scope'
+export {SellingPartnerApiAuthError} from './error.js'
+export {AuthorizationScope} from './types/scope.js'

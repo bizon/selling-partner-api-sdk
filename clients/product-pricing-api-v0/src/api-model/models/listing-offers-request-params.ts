@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BatchOffersRequestParams } from './batch-offers-request-params';
+import type { BatchOffersRequestParams } from './batch-offers-request-params.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CustomerType } from './customer-type';
+import type { CustomerType } from './customer-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemCondition } from './item-condition';
+import type { ItemCondition } from './item-condition.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ListingOffersRequestParamsAllOf } from './listing-offers-request-params-all-of';
+import type { ListingOffersRequestParamsAllOf } from './listing-offers-request-params-all-of.js';
 
 /**
  * @type ListingOffersRequestParams

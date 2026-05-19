@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemQuantity } from './item-quantity';
+import type { ItemQuantity } from './item-quantity.js';
 
 /**
  * Details of an individual item within the order being acknowledged.

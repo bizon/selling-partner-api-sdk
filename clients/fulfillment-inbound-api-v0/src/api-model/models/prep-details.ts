@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PrepInstruction } from './prep-instruction';
+import type { PrepInstruction } from './prep-instruction.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PrepOwner } from './prep-owner';
+import type { PrepOwner } from './prep-owner.js';
 
 /**
  * Preparation instructions and who is responsible for the preparation.

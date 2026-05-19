@@ -4,9 +4,9 @@ import axiosRetry from 'axios-retry'
 
 import {type SellingPartnerApiAuth, SellingPartnerApiAuthError} from '@sp-api-sdk/auth'
 
-import {SellingPartnerApiError} from './errors'
-import {type SellingPartnerRegion, sellingPartnerRegions} from './regions'
-import {packageJson} from './utils/package'
+import {SellingPartnerApiError} from './errors.js'
+import {type SellingPartnerRegion, sellingPartnerRegions} from './regions.js'
+import {packageJson} from './utils/package.js'
 
 type RequestLogConfig = Exclude<Parameters<typeof requestLogger>[1], undefined>
 type ResponseLogConfig = Exclude<Parameters<typeof responseLogger>[1], undefined>

@@ -13,34 +13,34 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { CreateDestinationRequest } from '../models';
+import type { CreateDestinationRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateDestinationResponse } from '../models';
+import type { CreateDestinationResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateSubscriptionRequest } from '../models';
+import type { CreateSubscriptionRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateSubscriptionResponse } from '../models';
+import type { CreateSubscriptionResponse } from '../models/index.js';
 // @ts-ignore
-import type { DeleteDestinationResponse } from '../models';
+import type { DeleteDestinationResponse } from '../models/index.js';
 // @ts-ignore
-import type { DeleteSubscriptionByIdResponse } from '../models';
+import type { DeleteSubscriptionByIdResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetDestinationResponse } from '../models';
+import type { GetDestinationResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetDestinationsResponse } from '../models';
+import type { GetDestinationsResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetSubscriptionByIdResponse } from '../models';
+import type { GetSubscriptionByIdResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetSubscriptionResponse } from '../models';
+import type { GetSubscriptionResponse } from '../models/index.js';
 /**
  * NotificationsApi - axios parameter creator
  */

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ContentUpdatePreview } from './content-update-preview';
+import type { ContentUpdatePreview } from './content-update-preview.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Pagination } from './pagination';
+import type { Pagination } from './pagination.js';
 
 /**
  * The `ListShipmentContentUpdatePreviews` response.

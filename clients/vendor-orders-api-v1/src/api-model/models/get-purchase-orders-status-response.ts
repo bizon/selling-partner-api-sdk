@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderListStatus } from './order-list-status';
+import type { OrderListStatus } from './order-list-status.js';
 
 /**
  * The response schema for the getPurchaseOrdersStatus operation.

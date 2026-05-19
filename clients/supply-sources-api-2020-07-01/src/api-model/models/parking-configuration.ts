@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ParkingCostType } from './parking-cost-type';
+import type { ParkingCostType } from './parking-cost-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ParkingSpotIdentificationType } from './parking-spot-identification-type';
+import type { ParkingSpotIdentificationType } from './parking-spot-identification-type.js';
 
 /**
  * The parking configuration.

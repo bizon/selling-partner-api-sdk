@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MerchantAddress } from './merchant-address';
+import type { MerchantAddress } from './merchant-address.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackageItem } from './package-item';
+import type { PackageItem } from './package-item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackageStatus } from './package-status';
+import type { PackageStatus } from './package-status.js';
 
 /**
  * Information about a physical shipping package, including tracking details. **Note:** Only available for merchant-fulfilled (FBM) orders.

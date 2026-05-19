@@ -13,66 +13,66 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { AddAppointmentRequest } from '../models';
+import type { AddAppointmentRequest } from '../models/index.js';
 // @ts-ignore
-import type { AssignAppointmentResourcesRequest } from '../models';
+import type { AssignAppointmentResourcesRequest } from '../models/index.js';
 // @ts-ignore
-import type { AssignAppointmentResourcesResponse } from '../models';
+import type { AssignAppointmentResourcesResponse } from '../models/index.js';
 // @ts-ignore
-import type { CancelReservationResponse } from '../models';
+import type { CancelReservationResponse } from '../models/index.js';
 // @ts-ignore
-import type { CancelServiceJobByServiceJobIdResponse } from '../models';
+import type { CancelServiceJobByServiceJobIdResponse } from '../models/index.js';
 // @ts-ignore
-import type { CompleteServiceJobByServiceJobIdResponse } from '../models';
+import type { CompleteServiceJobByServiceJobIdResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateReservationRequest } from '../models';
+import type { CreateReservationRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateReservationResponse } from '../models';
+import type { CreateReservationResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateServiceDocumentUploadDestination } from '../models';
+import type { CreateServiceDocumentUploadDestination } from '../models/index.js';
 // @ts-ignore
-import type { FixedSlotCapacity } from '../models';
+import type { FixedSlotCapacity } from '../models/index.js';
 // @ts-ignore
-import type { FixedSlotCapacityErrors } from '../models';
+import type { FixedSlotCapacityErrors } from '../models/index.js';
 // @ts-ignore
-import type { FixedSlotCapacityQuery } from '../models';
+import type { FixedSlotCapacityQuery } from '../models/index.js';
 // @ts-ignore
-import type { GetAppointmentSlotsResponse } from '../models';
+import type { GetAppointmentSlotsResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetServiceJobByServiceJobIdResponse } from '../models';
+import type { GetServiceJobByServiceJobIdResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetServiceJobsResponse } from '../models';
+import type { GetServiceJobsResponse } from '../models/index.js';
 // @ts-ignore
-import type { RangeSlotCapacity } from '../models';
+import type { RangeSlotCapacity } from '../models/index.js';
 // @ts-ignore
-import type { RangeSlotCapacityErrors } from '../models';
+import type { RangeSlotCapacityErrors } from '../models/index.js';
 // @ts-ignore
-import type { RangeSlotCapacityQuery } from '../models';
+import type { RangeSlotCapacityQuery } from '../models/index.js';
 // @ts-ignore
-import type { RescheduleAppointmentRequest } from '../models';
+import type { RescheduleAppointmentRequest } from '../models/index.js';
 // @ts-ignore
-import type { ServiceUploadDocument } from '../models';
+import type { ServiceUploadDocument } from '../models/index.js';
 // @ts-ignore
-import type { SetAppointmentFulfillmentDataRequest } from '../models';
+import type { SetAppointmentFulfillmentDataRequest } from '../models/index.js';
 // @ts-ignore
-import type { SetAppointmentResponse } from '../models';
+import type { SetAppointmentResponse } from '../models/index.js';
 // @ts-ignore
-import type { UpdateReservationRequest } from '../models';
+import type { UpdateReservationRequest } from '../models/index.js';
 // @ts-ignore
-import type { UpdateReservationResponse } from '../models';
+import type { UpdateReservationResponse } from '../models/index.js';
 // @ts-ignore
-import type { UpdateScheduleRequest } from '../models';
+import type { UpdateScheduleRequest } from '../models/index.js';
 // @ts-ignore
-import type { UpdateScheduleResponse } from '../models';
+import type { UpdateScheduleResponse } from '../models/index.js';
 /**
  * ServicesApi - axios parameter creator
  */

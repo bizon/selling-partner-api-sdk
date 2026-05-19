@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TimeWindow } from './time-window';
+import type { TimeWindow } from './time-window.js';
 
 /**
  * Business days and hours when the destination is open for deliveries.

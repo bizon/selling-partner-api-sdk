@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetEligibleShipmentServicesResult } from './get-eligible-shipment-services-result';
+import type { GetEligibleShipmentServicesResult } from './get-eligible-shipment-services-result.js';
 
 /**
  * Response schema.

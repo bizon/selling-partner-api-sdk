@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FeaturedOfferExpectedPriceResult } from './featured-offer-expected-price-result';
+import type { FeaturedOfferExpectedPriceResult } from './featured-offer-expected-price-result.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OfferIdentifier } from './offer-identifier';
+import type { OfferIdentifier } from './offer-identifier.js';
 
 /**
  * The FOEP response data for a requested SKU.

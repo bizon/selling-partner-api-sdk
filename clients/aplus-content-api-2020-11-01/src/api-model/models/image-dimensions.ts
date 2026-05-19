@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { IntegerWithUnits } from './integer-with-units';
+import type { IntegerWithUnits } from './integer-with-units.js';
 
 /**
  * The dimensions that extend from the top left corner of the image (this applies to cropped and uncropped images). `ImageDimensions` units must be in pixels.

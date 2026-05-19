@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransportationSelection } from './transportation-selection';
+import type { TransportationSelection } from './transportation-selection.js';
 
 /**
  * The `confirmTransportationOptions` request.

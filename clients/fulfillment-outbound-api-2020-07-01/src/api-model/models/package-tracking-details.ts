@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AdditionalLocationInfo } from './additional-location-info';
+import type { AdditionalLocationInfo } from './additional-location-info.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CurrentStatus } from './current-status';
+import type { CurrentStatus } from './current-status.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DateRange } from './date-range';
+import type { DateRange } from './date-range.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TrackingAddress } from './tracking-address';
+import type { TrackingAddress } from './tracking-address.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TrackingEvent } from './tracking-event';
+import type { TrackingEvent } from './tracking-event.js';
 
 /**
  * Tracking details of package

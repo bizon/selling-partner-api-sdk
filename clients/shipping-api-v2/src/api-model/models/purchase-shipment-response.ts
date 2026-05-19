@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PurchaseShipmentResult } from './purchase-shipment-result';
+import type { PurchaseShipmentResult } from './purchase-shipment-result.js';
 
 /**
  * The response schema for the purchaseShipment operation.

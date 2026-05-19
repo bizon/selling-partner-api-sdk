@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Report } from './report';
+import type { Report } from './report.js';
 
 /**
  * The response for the `getReports` operation.

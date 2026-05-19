@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { UploadDestination } from './upload-destination';
+import type { UploadDestination } from './upload-destination.js';
 
 /**
  * The response schema for the createUploadDestination operation.

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BrowseNodeReviewTopics } from './browse-node-review-topics';
+import type { BrowseNodeReviewTopics } from './browse-node-review-topics.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DateRange } from './date-range';
+import type { DateRange } from './date-range.js';
 
 /**
  * The response for the `getBrowseNodeReviewTopics` operation.

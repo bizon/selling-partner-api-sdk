@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { UnitOfMeasurement } from './unit-of-measurement';
+import type { UnitOfMeasurement } from './unit-of-measurement.js';
 
 /**
  * Measurement of a package\'s dimensions.

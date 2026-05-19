@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AddressInput } from './address-input';
+import type { AddressInput } from './address-input.js';
 
 /**
  * The `UpdateShipmentSourceAddress` request.

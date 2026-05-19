@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DeliveryDocument } from './delivery-document';
+import type { DeliveryDocument } from './delivery-document.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DropOffLocation } from './drop-off-location';
+import type { DropOffLocation } from './drop-off-location.js';
 
 /**
  * The delivery information of the package, this information is only available post package delivery to its intended destination.

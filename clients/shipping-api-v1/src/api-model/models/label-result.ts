@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Label } from './label';
+import type { Label } from './label.js';
 
 /**
  * Label details including label stream, format, size.

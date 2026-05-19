@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FulfillmentOrder } from './fulfillment-order';
+import type { FulfillmentOrder } from './fulfillment-order.js';
 
 /**
  * The request for the `listAllFulfillmentOrders` operation.

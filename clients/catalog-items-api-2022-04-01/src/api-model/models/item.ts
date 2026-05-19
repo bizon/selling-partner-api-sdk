@@ -15,31 +15,31 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemBrowseClassificationsByMarketplace } from './item-browse-classifications-by-marketplace';
+import type { ItemBrowseClassificationsByMarketplace } from './item-browse-classifications-by-marketplace.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemDimensionsByMarketplace } from './item-dimensions-by-marketplace';
+import type { ItemDimensionsByMarketplace } from './item-dimensions-by-marketplace.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemIdentifiersByMarketplace } from './item-identifiers-by-marketplace';
+import type { ItemIdentifiersByMarketplace } from './item-identifiers-by-marketplace.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemImagesByMarketplace } from './item-images-by-marketplace';
+import type { ItemImagesByMarketplace } from './item-images-by-marketplace.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemProductTypeByMarketplace } from './item-product-type-by-marketplace';
+import type { ItemProductTypeByMarketplace } from './item-product-type-by-marketplace.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemRelationshipsByMarketplace } from './item-relationships-by-marketplace';
+import type { ItemRelationshipsByMarketplace } from './item-relationships-by-marketplace.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemSalesRanksByMarketplace } from './item-sales-ranks-by-marketplace';
+import type { ItemSalesRanksByMarketplace } from './item-sales-ranks-by-marketplace.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemSummaryByMarketplace } from './item-summary-by-marketplace';
+import type { ItemSummaryByMarketplace } from './item-summary-by-marketplace.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemVendorDetailsByMarketplace } from './item-vendor-details-by-marketplace';
+import type { ItemVendorDetailsByMarketplace } from './item-vendor-details-by-marketplace.js';
 
 /**
  * An item in the Amazon catalog.

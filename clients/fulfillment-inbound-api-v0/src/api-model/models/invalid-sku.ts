@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ErrorReason } from './error-reason';
+import type { ErrorReason } from './error-reason.js';
 
 /**
  * Contains detail about an invalid SKU

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderAddress } from './order-address';
+import type { OrderAddress } from './order-address.js';
 
 /**
  * The response schema for the `getOrderAddress` operation.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DetailCodes } from './detail-codes';
+import type { DetailCodes } from './detail-codes.js';
 
 /**
  * Contains detail codes that provide additional details related to the forward and return leg of the shipment.

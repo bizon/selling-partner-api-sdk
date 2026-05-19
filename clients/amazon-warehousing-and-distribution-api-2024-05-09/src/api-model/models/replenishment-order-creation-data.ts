@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DistributionProduct } from './distribution-product';
+import type { DistributionProduct } from './distribution-product.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ReplenishmentPreferences } from './replenishment-preferences';
+import type { ReplenishmentPreferences } from './replenishment-preferences.js';
 
 /**
  * This structure represents the payload for creating an AFN Replenishment Order. By default, all replenishment orders created support Partial order preferences.

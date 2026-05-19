@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
+import type { Address } from './address.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SupplySourceCapabilities } from './supply-source-capabilities';
+import type { SupplySourceCapabilities } from './supply-source-capabilities.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SupplySourceConfiguration } from './supply-source-configuration';
+import type { SupplySourceConfiguration } from './supply-source-configuration.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SupplySourceStatusReadOnly } from './supply-source-status-read-only';
+import type { SupplySourceStatusReadOnly } from './supply-source-status-read-only.js';
 
 /**
  * The supply source details, including configurations and capabilities.

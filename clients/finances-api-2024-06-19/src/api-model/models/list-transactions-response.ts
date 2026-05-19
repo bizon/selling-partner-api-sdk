@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransactionsPayload } from './transactions-payload';
+import type { TransactionsPayload } from './transactions-payload.js';
 
 /**
  * The response schema for the `listTransactions` operation.

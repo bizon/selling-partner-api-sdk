@@ -13,32 +13,32 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { CreateScheduledPackageRequest } from '../models';
+import type { CreateScheduledPackageRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateScheduledPackagesRequest } from '../models';
+import type { CreateScheduledPackagesRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateScheduledPackagesResponse } from '../models';
+import type { CreateScheduledPackagesResponse } from '../models/index.js';
 // @ts-ignore
-import type { ErrorList } from '../models';
+import type { ErrorList } from '../models/index.js';
 // @ts-ignore
-import type { ListHandoverSlotsRequest } from '../models';
+import type { ListHandoverSlotsRequest } from '../models/index.js';
 // @ts-ignore
-import type { ListHandoverSlotsResponse } from '../models';
+import type { ListHandoverSlotsResponse } from '../models/index.js';
 // @ts-ignore
-import type { Package } from '../models';
+import type { Package } from '../models/index.js';
 // @ts-ignore
-import type { Packages } from '../models';
+import type { Packages } from '../models/index.js';
 // @ts-ignore
-import type { UpdateScheduledPackagesRequest } from '../models';
+import type { UpdateScheduledPackagesRequest } from '../models/index.js';
 /**
  * EasyShipApi - axios parameter creator
  */

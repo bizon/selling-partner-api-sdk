@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PrepInstruction } from './prep-instruction';
+import type { PrepInstruction } from './prep-instruction.js';
 
 /**
  * Information associated with a single SKU in the seller\'s catalog.

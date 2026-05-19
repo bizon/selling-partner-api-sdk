@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CompetitiveSummaryIncludedData } from './competitive-summary-included-data';
+import type { CompetitiveSummaryIncludedData } from './competitive-summary-included-data.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { HttpMethod } from './http-method';
+import type { HttpMethod } from './http-method.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LowestPricedOffersInput } from './lowest-priced-offers-input';
+import type { LowestPricedOffersInput } from './lowest-priced-offers-input.js';
 
 /**
  * An individual `competitiveSummary` request for an ASIN and `marketplaceId`.

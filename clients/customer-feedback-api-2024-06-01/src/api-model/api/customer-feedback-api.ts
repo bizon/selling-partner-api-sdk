@@ -13,30 +13,30 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { BrowseNodeResponse } from '../models';
+import type { BrowseNodeResponse } from '../models/index.js';
 // @ts-ignore
-import type { BrowseNodeReturnTopicsResponse } from '../models';
+import type { BrowseNodeReturnTopicsResponse } from '../models/index.js';
 // @ts-ignore
-import type { BrowseNodeReturnTrendsResponse } from '../models';
+import type { BrowseNodeReturnTrendsResponse } from '../models/index.js';
 // @ts-ignore
-import type { BrowseNodeReviewTopicsResponse } from '../models';
+import type { BrowseNodeReviewTopicsResponse } from '../models/index.js';
 // @ts-ignore
-import type { BrowseNodeReviewTrendsResponse } from '../models';
+import type { BrowseNodeReviewTrendsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ErrorList } from '../models';
+import type { ErrorList } from '../models/index.js';
 // @ts-ignore
-import type { ItemReviewTopicsResponse } from '../models';
+import type { ItemReviewTopicsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ItemReviewTrendsResponse } from '../models';
+import type { ItemReviewTrendsResponse } from '../models/index.js';
 /**
  * CustomerFeedbackApi - axios parameter creator
  */

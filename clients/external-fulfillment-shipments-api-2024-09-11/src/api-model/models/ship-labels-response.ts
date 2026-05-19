@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackageShipLabel } from './package-ship-label';
+import type { PackageShipLabel } from './package-ship-label.js';
 
 /**
  * The response to the `generateShipLabels` operation.

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GiftOption } from './gift-option';
+import type { GiftOption } from './gift-option.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SerialNumberRequirement } from './serial-number-requirement';
+import type { SerialNumberRequirement } from './serial-number-requirement.js';
 
 /**
  * Information related to the packaging process for an order item.

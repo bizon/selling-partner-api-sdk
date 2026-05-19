@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LineItem } from './line-item';
+import type { LineItem } from './line-item.js';
 
 /**
  * Information about the line item being confirmed or rejected and the reason for the rejection.

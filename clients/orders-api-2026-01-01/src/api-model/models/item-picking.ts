@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemSubstitutionPreference } from './item-substitution-preference';
+import type { ItemSubstitutionPreference } from './item-substitution-preference.js';
 
 /**
  * Information related to the warehouse picking process for an order item.

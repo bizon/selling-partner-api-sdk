@@ -14,5 +14,5 @@
 
 
 
-export * from './api/solicitations-api';
+export * from './api/solicitations-api.js';
 

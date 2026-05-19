@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemBrowseClassification } from './item-browse-classification';
+import type { ItemBrowseClassification } from './item-browse-classification.js';
 
 /**
  * Classifications (browse nodes) that are associated with the item in the Amazon catalog for the indicated `marketplaceId`.

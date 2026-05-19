@@ -15,34 +15,34 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AccessPointDetails } from './access-point-details';
+import type { AccessPointDetails } from './access-point-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
+import type { Address } from './address.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ChannelDetails } from './channel-details';
+import type { ChannelDetails } from './channel-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GoodsOwner } from './goods-owner';
+import type { GoodsOwner } from './goods-owner.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OneClickShipmentValueAddedService } from './one-click-shipment-value-added-service';
+import type { OneClickShipmentValueAddedService } from './one-click-shipment-value-added-service.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Package } from './package';
+import type { Package } from './package.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RequestedDocumentSpecification } from './requested-document-specification';
+import type { RequestedDocumentSpecification } from './requested-document-specification.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ServiceSelection } from './service-selection';
+import type { ServiceSelection } from './service-selection.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipperInstruction } from './shipper-instruction';
+import type { ShipperInstruction } from './shipper-instruction.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TaxDetail } from './tax-detail';
+import type { TaxDetail } from './tax-detail.js';
 
 /**
  * The request schema for the OneClickShipment operation. When the channelType is not Amazon, shipTo is required and when channelType is Amazon shipTo is ignored.

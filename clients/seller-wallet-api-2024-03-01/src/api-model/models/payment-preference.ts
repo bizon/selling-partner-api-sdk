@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PaymentPreferencePaymentType } from './payment-preference-payment-type';
+import type { PaymentPreferencePaymentType } from './payment-preference-payment-type.js';
 
 /**
  * The type of payment preference in which the transfer is being scheduled.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PostalCode } from './postal-code';
+import type { PostalCode } from './postal-code.js';
 
 /**
  * Information about a location. It uses a postal code to identify the location.

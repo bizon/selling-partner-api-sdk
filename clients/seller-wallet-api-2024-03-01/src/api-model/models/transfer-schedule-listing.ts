@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransferSchedule } from './transfer-schedule';
+import type { TransferSchedule } from './transfer-schedule.js';
 
 /**
  * A list of transfer schedules.

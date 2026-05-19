@@ -15,31 +15,31 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Condition } from './condition';
+import type { Condition } from './condition.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FeaturedOfferSegment } from './featured-offer-segment';
+import type { FeaturedOfferSegment } from './featured-offer-segment.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FulfillmentType } from './fulfillment-type';
+import type { FulfillmentType } from './fulfillment-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MoneyType } from './money-type';
+import type { MoneyType } from './money-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Offer } from './offer';
+import type { Offer } from './offer.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Points } from './points';
+import type { Points } from './points.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PrimeDetails } from './prime-details';
+import type { PrimeDetails } from './prime-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SegmentedFeaturedOfferAllOf } from './segmented-featured-offer-all-of';
+import type { SegmentedFeaturedOfferAllOf } from './segmented-featured-offer-all-of.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShippingOption } from './shipping-option';
+import type { ShippingOption } from './shipping-option.js';
 
 /**
  * @type SegmentedFeaturedOffer

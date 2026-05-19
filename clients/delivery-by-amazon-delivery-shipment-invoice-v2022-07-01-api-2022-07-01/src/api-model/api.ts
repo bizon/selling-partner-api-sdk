@@ -14,5 +14,5 @@
 
 
 
-export * from './api/delivery-by-amazon-delivery-shipment-invoice-v20220701-api';
+export * from './api/delivery-by-amazon-delivery-shipment-invoice-v20220701-api.js';
 

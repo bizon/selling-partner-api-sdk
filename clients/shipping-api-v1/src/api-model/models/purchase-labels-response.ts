@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PurchaseLabelsResult } from './purchase-labels-result';
+import type { PurchaseLabelsResult } from './purchase-labels-result.js';
 
 /**
  * The response schema for the purchaseLabels operation.

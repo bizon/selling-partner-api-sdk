@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FulfillmentReturnItemStatus } from './fulfillment-return-item-status';
+import type { FulfillmentReturnItemStatus } from './fulfillment-return-item-status.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ReturnItemDisposition } from './return-item-disposition';
+import type { ReturnItemDisposition } from './return-item-disposition.js';
 
 /**
  * An item that Amazon accepted for return.

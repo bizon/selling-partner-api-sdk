@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ParkingConfiguration } from './parking-configuration';
+import type { ParkingConfiguration } from './parking-configuration.js';
 
 /**
  * The in-store pickup configuration of a supply source.

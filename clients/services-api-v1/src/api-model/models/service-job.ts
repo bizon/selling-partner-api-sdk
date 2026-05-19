@@ -15,31 +15,31 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Appointment } from './appointment';
+import type { Appointment } from './appointment.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AppointmentTime } from './appointment-time';
+import type { AppointmentTime } from './appointment-time.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AssociatedItem } from './associated-item';
+import type { AssociatedItem } from './associated-item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Buyer } from './buyer';
+import type { Buyer } from './buyer.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Payment } from './payment';
+import type { Payment } from './payment.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ScopeOfWork } from './scope-of-work';
+import type { ScopeOfWork } from './scope-of-work.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Seller } from './seller';
+import type { Seller } from './seller.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ServiceJobProvider } from './service-job-provider';
+import type { ServiceJobProvider } from './service-job-provider.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ServiceLocation } from './service-location';
+import type { ServiceLocation } from './service-location.js';
 
 /**
  * The job details of a service.

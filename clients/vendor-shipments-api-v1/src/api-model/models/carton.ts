@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ContainerIdentification } from './container-identification';
+import type { ContainerIdentification } from './container-identification.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ContainerItem } from './container-item';
+import type { ContainerItem } from './container-item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Dimensions } from './dimensions';
+import type { Dimensions } from './dimensions.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Weight } from './weight';
+import type { Weight } from './weight.js';
 
 /**
  * Details of the carton/package being shipped.

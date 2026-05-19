@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetTrackingResult } from './get-tracking-result';
+import type { GetTrackingResult } from './get-tracking-result.js';
 
 /**
  * The response schema for the getTracking operation.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CarrierDetailsContext } from './carrier-details-context';
+import type { CarrierDetailsContext } from './carrier-details-context.js';
 
 /**
  * Information required to create the government invoice.

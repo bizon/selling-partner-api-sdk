@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FeesEstimateResult } from './fees-estimate-result';
+import type { FeesEstimateResult } from './fees-estimate-result.js';
 
 /**
  * Response schema.

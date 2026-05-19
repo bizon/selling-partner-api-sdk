@@ -13,40 +13,40 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { BalanceListing } from '../models';
+import type { BalanceListing } from '../models/index.js';
 // @ts-ignore
-import type { BankAccount } from '../models';
+import type { BankAccount } from '../models/index.js';
 // @ts-ignore
-import type { BankAccountListing } from '../models';
+import type { BankAccountListing } from '../models/index.js';
 // @ts-ignore
-import type { CreateTransactionResponse } from '../models';
+import type { CreateTransactionResponse } from '../models/index.js';
 // @ts-ignore
-import type { DeleteTransferSchedule } from '../models';
+import type { DeleteTransferSchedule } from '../models/index.js';
 // @ts-ignore
-import type { ErrorList } from '../models';
+import type { ErrorList } from '../models/index.js';
 // @ts-ignore
-import type { Transaction } from '../models';
+import type { Transaction } from '../models/index.js';
 // @ts-ignore
-import type { TransactionInitiationRequest } from '../models';
+import type { TransactionInitiationRequest } from '../models/index.js';
 // @ts-ignore
-import type { TransactionListing } from '../models';
+import type { TransactionListing } from '../models/index.js';
 // @ts-ignore
-import type { TransferRatePreview } from '../models';
+import type { TransferRatePreview } from '../models/index.js';
 // @ts-ignore
-import type { TransferSchedule } from '../models';
+import type { TransferSchedule } from '../models/index.js';
 // @ts-ignore
-import type { TransferScheduleListing } from '../models';
+import type { TransferScheduleListing } from '../models/index.js';
 // @ts-ignore
-import type { TransferScheduleRequest } from '../models';
+import type { TransferScheduleRequest } from '../models/index.js';
 /**
  * SellerWalletApi - axios parameter creator
  */

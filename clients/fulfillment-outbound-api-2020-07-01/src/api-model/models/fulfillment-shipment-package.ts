@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DeliveryInformation } from './delivery-information';
+import type { DeliveryInformation } from './delivery-information.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LockerDetails } from './locker-details';
+import type { LockerDetails } from './locker-details.js';
 
 /**
  * Package information for a shipment in a fulfillment order.

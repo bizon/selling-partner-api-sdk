@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetSolicitationActionsForOrderResponseEmbedded } from './get-solicitation-actions-for-order-response-embedded';
+import type { GetSolicitationActionsForOrderResponseEmbedded } from './get-solicitation-actions-for-order-response-embedded.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetSolicitationActionsForOrderResponseLinks } from './get-solicitation-actions-for-order-response-links';
+import type { GetSolicitationActionsForOrderResponseLinks } from './get-solicitation-actions-for-order-response-links.js';
 
 /**
  * The response schema for the getSolicitationActionsForOrder operation.

@@ -1,3 +1,3 @@
-export * from './client'
-export * from './api-model/api'
-export type * from './api-model/models'
+export * from './client.js'
+export * from './api-model/api.js'
+export type * from './api-model/models/index.js'

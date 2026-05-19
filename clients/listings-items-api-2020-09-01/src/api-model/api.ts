@@ -14,5 +14,5 @@
 
 
 
-export * from './api/listings-items-api';
+export * from './api/listings-items-api.js';
 

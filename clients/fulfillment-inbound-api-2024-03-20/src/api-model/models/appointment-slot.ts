@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AppointmentSlotTime } from './appointment-slot-time';
+import type { AppointmentSlotTime } from './appointment-slot-time.js';
 
 /**
  * The fulfillment center appointment slot for the transportation option.

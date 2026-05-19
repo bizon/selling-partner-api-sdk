@@ -15,25 +15,25 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AmazonPayContext } from './amazon-pay-context';
+import type { AmazonPayContext } from './amazon-pay-context.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BusinessContext } from './business-context';
+import type { BusinessContext } from './business-context.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ContextAllOf } from './context-all-of';
+import type { ContextAllOf } from './context-all-of.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DeferredContext } from './deferred-context';
+import type { DeferredContext } from './deferred-context.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PaymentsContext } from './payments-context';
+import type { PaymentsContext } from './payments-context.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ProductContext } from './product-context';
+import type { ProductContext } from './product-context.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TimeRangeContext } from './time-range-context';
+import type { TimeRangeContext } from './time-range-context.js';
 
 /**
  * @type Context

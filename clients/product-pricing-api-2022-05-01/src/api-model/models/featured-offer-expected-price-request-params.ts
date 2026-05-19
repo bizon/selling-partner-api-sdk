@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Segment } from './segment';
+import type { Segment } from './segment.js';
 
 /**
  * The parameters for an individual request.

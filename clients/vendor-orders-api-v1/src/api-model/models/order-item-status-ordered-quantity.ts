@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemQuantity } from './item-quantity';
+import type { ItemQuantity } from './item-quantity.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderedQuantityDetails } from './ordered-quantity-details';
+import type { OrderedQuantityDetails } from './ordered-quantity-details.js';
 
 /**
  * Ordered quantity information.

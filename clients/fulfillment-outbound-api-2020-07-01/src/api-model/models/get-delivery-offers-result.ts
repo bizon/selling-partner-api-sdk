@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DeliveryOffer } from './delivery-offer';
+import type { DeliveryOffer } from './delivery-offer.js';
 
 /**
  * A list of delivery offers, including offer expiration, earliest and latest date and time range, and the delivery offer policy.

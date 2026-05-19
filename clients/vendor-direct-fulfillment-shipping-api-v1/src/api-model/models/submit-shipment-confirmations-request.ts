@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentConfirmation } from './shipment-confirmation';
+import type { ShipmentConfirmation } from './shipment-confirmation.js';
 
 /**
  * The request schema for the submitShipmentConfirmations operation.

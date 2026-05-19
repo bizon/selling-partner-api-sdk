@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PurchaseOrderItems } from './purchase-order-items';
+import type { PurchaseOrderItems } from './purchase-order-items.js';
 
 /**
  * Transport Request pickup date

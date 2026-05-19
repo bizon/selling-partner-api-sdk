@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ChargeComponent } from './charge-component';
+import type { ChargeComponent } from './charge-component.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FeeComponent } from './fee-component';
+import type { FeeComponent } from './fee-component.js';
 
 /**
  * An event related to the seller\'s Pay with Amazon account.

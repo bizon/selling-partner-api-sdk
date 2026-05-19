@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InvalidReturnItem } from './invalid-return-item';
+import type { InvalidReturnItem } from './invalid-return-item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ReturnAuthorization } from './return-authorization';
+import type { ReturnAuthorization } from './return-authorization.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ReturnItem } from './return-item';
+import type { ReturnItem } from './return-item.js';
 
 /**
  * The result for the `createFulfillmentReturn` operation.

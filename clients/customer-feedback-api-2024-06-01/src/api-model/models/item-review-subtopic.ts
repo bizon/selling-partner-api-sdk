@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemReviewSubtopicMetrics } from './item-review-subtopic-metrics';
+import type { ItemReviewSubtopicMetrics } from './item-review-subtopic-metrics.js';
 
 /**
  * Details of the subtopic for an item review topic.

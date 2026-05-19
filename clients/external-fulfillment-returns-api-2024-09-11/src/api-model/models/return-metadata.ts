@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InvoiceInformation } from './invoice-information';
+import type { InvoiceInformation } from './invoice-information.js';
 
 /**
  * Metadata about the return item.

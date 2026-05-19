@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BankAccountNumberFormat } from './bank-account-number-format';
+import type { BankAccountNumberFormat } from './bank-account-number-format.js';
 
 /**
  * Details of the bank account involved in the transaction.

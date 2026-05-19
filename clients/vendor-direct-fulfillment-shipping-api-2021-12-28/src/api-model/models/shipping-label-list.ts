@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Pagination } from './pagination';
+import type { Pagination } from './pagination.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShippingLabel } from './shipping-label';
+import type { ShippingLabel } from './shipping-label.js';
 
 /**
  * Response payload with the list of shipping labels.

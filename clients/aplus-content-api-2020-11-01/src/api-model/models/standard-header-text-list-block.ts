@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { StandardTextListBlock } from './standard-text-list-block';
+import type { StandardTextListBlock } from './standard-text-list-block.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TextComponent } from './text-component';
+import type { TextComponent } from './text-component.js';
 
 /**
  * The A+ standard fixed-length list of text and a related headline.

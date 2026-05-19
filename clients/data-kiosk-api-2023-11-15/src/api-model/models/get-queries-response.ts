@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetQueriesResponsePagination } from './get-queries-response-pagination';
+import type { GetQueriesResponsePagination } from './get-queries-response-pagination.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Query } from './query';
+import type { Query } from './query.js';
 
 /**
  * The response for the `getQueries` operation.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CurrencyCode } from './currency-code';
+import type { CurrencyCode } from './currency-code.js';
 
 /**
  * The monetary value.

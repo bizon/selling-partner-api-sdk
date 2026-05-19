@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PaymentMethodDetails } from './payment-method-details';
+import type { PaymentMethodDetails } from './payment-method-details.js';
 
 /**
  * The response schema for the `getPaymentMethods` operation.

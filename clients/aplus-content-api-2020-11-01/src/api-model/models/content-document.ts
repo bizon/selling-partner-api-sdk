@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ContentModule } from './content-module';
+import type { ContentModule } from './content-module.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ContentType } from './content-type';
+import type { ContentType } from './content-type.js';
 
 /**
  * The A+ Content document. This is the enhanced content that is published to product detail pages.

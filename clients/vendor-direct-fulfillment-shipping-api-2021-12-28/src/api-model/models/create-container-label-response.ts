@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ContainerLabel } from './container-label';
+import type { ContainerLabel } from './container-label.js';
 
 /**
  * The response schema for the `createContainerLabel` operation.

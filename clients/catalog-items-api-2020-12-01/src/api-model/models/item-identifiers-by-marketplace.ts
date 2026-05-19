@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemIdentifier } from './item-identifier';
+import type { ItemIdentifier } from './item-identifier.js';
 
 /**
  * Identifiers associated with the item in the Amazon catalog for the indicated Amazon marketplace.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ProductAttribute } from './product-attribute';
+import type { ProductAttribute } from './product-attribute.js';
 
 /**
  * Represents a product with sku details and corresponding quantity

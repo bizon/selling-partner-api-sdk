@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ListOfferMetricsSortKey } from './list-offer-metrics-sort-key';
+import type { ListOfferMetricsSortKey } from './list-offer-metrics-sort-key.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SortOrder } from './sort-order';
+import type { SortOrder } from './sort-order.js';
 
 /**
  * Use these parameters to sort the response.

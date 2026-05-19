@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BrowseNodeAllOccurrence } from './browse-node-all-occurrence';
+import type { BrowseNodeAllOccurrence } from './browse-node-all-occurrence.js';
 
 /**
  * The browse node review topic metrics.

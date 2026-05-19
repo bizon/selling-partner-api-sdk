@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MarketplaceAttributes } from './marketplace-attributes';
+import type { MarketplaceAttributes } from './marketplace-attributes.js';
 
 /**
  * The parameters for an individual request.

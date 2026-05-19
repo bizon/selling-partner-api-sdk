@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShippingLabelList } from './shipping-label-list';
+import type { ShippingLabelList } from './shipping-label-list.js';
 
 /**
  * The response schema for the getShippingLabels operation.

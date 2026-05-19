@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ChargeRefundTransaction } from './charge-refund-transaction';
+import type { ChargeRefundTransaction } from './charge-refund-transaction.js';
 
 /**
  * An event related to charge refund.

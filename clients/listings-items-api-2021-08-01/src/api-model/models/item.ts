@@ -15,25 +15,25 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FulfillmentAvailability } from './fulfillment-availability';
+import type { FulfillmentAvailability } from './fulfillment-availability.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Issue } from './issue';
+import type { Issue } from './issue.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemOfferByMarketplace } from './item-offer-by-marketplace';
+import type { ItemOfferByMarketplace } from './item-offer-by-marketplace.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemProcurement } from './item-procurement';
+import type { ItemProcurement } from './item-procurement.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemProductTypeByMarketplace } from './item-product-type-by-marketplace';
+import type { ItemProductTypeByMarketplace } from './item-product-type-by-marketplace.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemRelationshipsByMarketplace } from './item-relationships-by-marketplace';
+import type { ItemRelationshipsByMarketplace } from './item-relationships-by-marketplace.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemSummaryByMarketplace } from './item-summary-by-marketplace';
+import type { ItemSummaryByMarketplace } from './item-summary-by-marketplace.js';
 
 /**
  * A listings item.

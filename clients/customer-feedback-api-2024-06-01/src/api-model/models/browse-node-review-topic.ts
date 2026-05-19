@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BrowseNodeReviewTopicMetrics } from './browse-node-review-topic-metrics';
+import type { BrowseNodeReviewTopicMetrics } from './browse-node-review-topic-metrics.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BrowseNodeSubtopic } from './browse-node-subtopic';
+import type { BrowseNodeSubtopic } from './browse-node-subtopic.js';
 
 /**
  * The browse node review topic.

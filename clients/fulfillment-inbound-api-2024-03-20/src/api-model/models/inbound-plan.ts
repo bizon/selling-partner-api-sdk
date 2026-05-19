@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
+import type { Address } from './address.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackingOptionSummary } from './packing-option-summary';
+import type { PackingOptionSummary } from './packing-option-summary.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PlacementOptionSummary } from './placement-option-summary';
+import type { PlacementOptionSummary } from './placement-option-summary.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentSummary } from './shipment-summary';
+import type { ShipmentSummary } from './shipment-summary.js';
 
 /**
  * Inbound plan containing details of the inbound workflow.

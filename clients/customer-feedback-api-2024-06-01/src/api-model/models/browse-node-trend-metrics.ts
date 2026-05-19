@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BrowseNodeOccurrence } from './browse-node-occurrence';
+import type { BrowseNodeOccurrence } from './browse-node-occurrence.js';
 
 /**
  * A single browse node review or return trend metric.

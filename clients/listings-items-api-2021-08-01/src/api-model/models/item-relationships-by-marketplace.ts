@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemRelationship } from './item-relationship';
+import type { ItemRelationship } from './item-relationship.js';
 
 /**
  * Relationship details for the listing item in the specified marketplace.

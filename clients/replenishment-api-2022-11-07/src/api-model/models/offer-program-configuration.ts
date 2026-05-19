@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EnrollmentMethod } from './enrollment-method';
+import type { EnrollmentMethod } from './enrollment-method.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OfferProgramConfigurationPreferences } from './offer-program-configuration-preferences';
+import type { OfferProgramConfigurationPreferences } from './offer-program-configuration-preferences.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OfferProgramConfigurationPromotions } from './offer-program-configuration-promotions';
+import type { OfferProgramConfigurationPromotions } from './offer-program-configuration-promotions.js';
 
 /**
  * The offer program configuration contains a set of program properties for an offer.

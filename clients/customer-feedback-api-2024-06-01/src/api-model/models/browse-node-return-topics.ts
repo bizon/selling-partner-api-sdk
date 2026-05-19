@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BrowseNodeTrendMetrics } from './browse-node-trend-metrics';
+import type { BrowseNodeTrendMetrics } from './browse-node-trend-metrics.js';
 
 /**
  * Topics from returns for all items in a browse node.

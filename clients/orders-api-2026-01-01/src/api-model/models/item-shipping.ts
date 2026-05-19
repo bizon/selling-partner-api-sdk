@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DateTimeRange } from './date-time-range';
+import type { DateTimeRange } from './date-time-range.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemInternationalShipping } from './item-international-shipping';
+import type { ItemInternationalShipping } from './item-international-shipping.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemShippingConstraints } from './item-shipping-constraints';
+import type { ItemShippingConstraints } from './item-shipping-constraints.js';
 
 /**
  * Information related to the shipping and delivery process for an order item.

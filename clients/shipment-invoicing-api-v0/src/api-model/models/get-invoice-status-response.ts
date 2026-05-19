@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentInvoiceStatusResponse } from './shipment-invoice-status-response';
+import type { ShipmentInvoiceStatusResponse } from './shipment-invoice-status-response.js';
 
 /**
  * The response schema for the getInvoiceStatus operation.

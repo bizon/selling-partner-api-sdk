@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TimeUnit } from './time-unit';
+import type { TimeUnit } from './time-unit.js';
 
 /**
  * The duration of time.

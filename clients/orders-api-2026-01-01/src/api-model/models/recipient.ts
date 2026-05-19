@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CustomerAddress } from './customer-address';
+import type { CustomerAddress } from './customer-address.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DeliveryPreference } from './delivery-preference';
+import type { DeliveryPreference } from './delivery-preference.js';
 
 /**
  * Information about the recipient to whom the order should be delivered.

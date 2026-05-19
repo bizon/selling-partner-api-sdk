@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetOffersHttpStatusLine } from './get-offers-http-status-line';
+import type { GetOffersHttpStatusLine } from './get-offers-http-status-line.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetOffersResponse } from './get-offers-response';
+import type { GetOffersResponse } from './get-offers-response.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { HttpResponseHeaders } from './http-response-headers';
+import type { HttpResponseHeaders } from './http-response-headers.js';
 
 /**
  * Common schema that present in `ItemOffersResponse` and `ListingOffersResponse`

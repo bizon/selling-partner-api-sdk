@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ChildAsinMentionMetrics } from './child-asin-mention-metrics';
+import type { ChildAsinMentionMetrics } from './child-asin-mention-metrics.js';
 
 /**
  * The review topic metrics for other child ASINs that have the same parent ASIN. This value is `null` if there isn\'t any child ASIN metric data.

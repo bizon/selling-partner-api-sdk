@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DistributionPackage } from './distribution-package';
+import type { DistributionPackage } from './distribution-package.js';
 
 /**
  * Represents a distribution package with its respective quantity.

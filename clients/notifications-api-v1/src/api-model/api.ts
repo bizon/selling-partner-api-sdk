@@ -14,5 +14,5 @@
 
 
 
-export * from './api/notifications-api';
+export * from './api/notifications-api.js';
 

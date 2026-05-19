@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AdditionalSellerInput } from './additional-seller-input';
+import type { AdditionalSellerInput } from './additional-seller-input.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Constraint } from './constraint';
+import type { Constraint } from './constraint.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InputTargetType } from './input-target-type';
+import type { InputTargetType } from './input-target-type.js';
 
 /**
  * Specifies characteristics that apply to a seller input.

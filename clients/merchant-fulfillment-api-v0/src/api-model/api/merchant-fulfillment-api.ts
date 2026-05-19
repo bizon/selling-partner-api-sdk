@@ -13,30 +13,30 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { CancelShipmentResponse } from '../models';
+import type { CancelShipmentResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateShipmentRequest } from '../models';
+import type { CreateShipmentRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateShipmentResponse } from '../models';
+import type { CreateShipmentResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetAdditionalSellerInputsRequest } from '../models';
+import type { GetAdditionalSellerInputsRequest } from '../models/index.js';
 // @ts-ignore
-import type { GetAdditionalSellerInputsResponse } from '../models';
+import type { GetAdditionalSellerInputsResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetEligibleShipmentServicesRequest } from '../models';
+import type { GetEligibleShipmentServicesRequest } from '../models/index.js';
 // @ts-ignore
-import type { GetEligibleShipmentServicesResponse } from '../models';
+import type { GetEligibleShipmentServicesResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetShipmentResponse } from '../models';
+import type { GetShipmentResponse } from '../models/index.js';
 /**
  * MerchantFulfillmentApi - axios parameter creator
  */

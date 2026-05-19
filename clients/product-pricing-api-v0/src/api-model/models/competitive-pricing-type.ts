@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CompetitivePriceType } from './competitive-price-type';
+import type { CompetitivePriceType } from './competitive-price-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MoneyType } from './money-type';
+import type { MoneyType } from './money-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OfferListingCountType } from './offer-listing-count-type';
+import type { OfferListingCountType } from './offer-listing-count-type.js';
 
 /**
  * Competitive pricing information for the item.

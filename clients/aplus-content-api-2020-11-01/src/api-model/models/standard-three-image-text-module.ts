@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { StandardImageTextBlock } from './standard-image-text-block';
+import type { StandardImageTextBlock } from './standard-image-text-block.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TextComponent } from './text-component';
+import type { TextComponent } from './text-component.js';
 
 /**
  * Three standard images with text, presented across a single row.

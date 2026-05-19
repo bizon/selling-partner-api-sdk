@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { QueryPagination } from './query-pagination';
+import type { QueryPagination } from './query-pagination.js';
 
 /**
  * Detailed information about the query.

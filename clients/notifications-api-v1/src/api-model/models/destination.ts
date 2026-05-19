@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DestinationResource } from './destination-resource';
+import type { DestinationResource } from './destination-resource.js';
 
 /**
  * Information about the destination created when you call the `createDestination` operation.

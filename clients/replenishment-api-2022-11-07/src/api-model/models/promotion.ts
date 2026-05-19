@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DiscountFunding } from './discount-funding';
+import type { DiscountFunding } from './discount-funding.js';
 
 /**
  * Offer promotions to include in the result filter criteria.

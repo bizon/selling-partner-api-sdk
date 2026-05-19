@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FeatureSku } from './feature-sku';
+import type { FeatureSku } from './feature-sku.js';
 
 /**
  * The payload for the `getEligibleInventory` operation.

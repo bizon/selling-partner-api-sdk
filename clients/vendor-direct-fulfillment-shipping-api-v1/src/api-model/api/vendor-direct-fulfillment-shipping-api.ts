@@ -13,38 +13,38 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { GetCustomerInvoiceResponse } from '../models';
+import type { GetCustomerInvoiceResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetCustomerInvoicesResponse } from '../models';
+import type { GetCustomerInvoicesResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetPackingSlipListResponse } from '../models';
+import type { GetPackingSlipListResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetPackingSlipResponse } from '../models';
+import type { GetPackingSlipResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetShippingLabelListResponse } from '../models';
+import type { GetShippingLabelListResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetShippingLabelResponse } from '../models';
+import type { GetShippingLabelResponse } from '../models/index.js';
 // @ts-ignore
-import type { SubmitShipmentConfirmationsRequest } from '../models';
+import type { SubmitShipmentConfirmationsRequest } from '../models/index.js';
 // @ts-ignore
-import type { SubmitShipmentConfirmationsResponse } from '../models';
+import type { SubmitShipmentConfirmationsResponse } from '../models/index.js';
 // @ts-ignore
-import type { SubmitShipmentStatusUpdatesRequest } from '../models';
+import type { SubmitShipmentStatusUpdatesRequest } from '../models/index.js';
 // @ts-ignore
-import type { SubmitShipmentStatusUpdatesResponse } from '../models';
+import type { SubmitShipmentStatusUpdatesResponse } from '../models/index.js';
 // @ts-ignore
-import type { SubmitShippingLabelsRequest } from '../models';
+import type { SubmitShippingLabelsRequest } from '../models/index.js';
 // @ts-ignore
-import type { SubmitShippingLabelsResponse } from '../models';
+import type { SubmitShippingLabelsResponse } from '../models/index.js';
 /**
  * VendorDirectFulfillmentShippingApi - axios parameter creator
  */

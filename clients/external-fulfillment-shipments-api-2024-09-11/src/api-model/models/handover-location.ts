@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
+import type { Address } from './address.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Distance } from './distance';
+import type { Distance } from './distance.js';
 
 /**
  * The drop-off location details for package handover.

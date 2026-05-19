@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Incentive } from './incentive';
+import type { Incentive } from './incentive.js';
 
 /**
  * Contains information pertaining to the placement of the contents of an inbound plan and the related costs.

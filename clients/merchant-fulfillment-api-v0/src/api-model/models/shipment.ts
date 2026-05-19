@@ -15,28 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
+import type { Address } from './address.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CurrencyAmount } from './currency-amount';
+import type { CurrencyAmount } from './currency-amount.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Item } from './item';
+import type { Item } from './item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Label } from './label';
+import type { Label } from './label.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackageDimensions } from './package-dimensions';
+import type { PackageDimensions } from './package-dimensions.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentStatus } from './shipment-status';
+import type { ShipmentStatus } from './shipment-status.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShippingService } from './shipping-service';
+import type { ShippingService } from './shipping-service.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Weight } from './weight';
+import type { Weight } from './weight.js';
 
 /**
  * The details of a shipment. Includes the shipment status.

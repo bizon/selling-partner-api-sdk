@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RegulatedInformation } from './regulated-information';
+import type { RegulatedInformation } from './regulated-information.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RegulatedOrderVerificationStatus } from './regulated-order-verification-status';
+import type { RegulatedOrderVerificationStatus } from './regulated-order-verification-status.js';
 
 /**
  * The order\'s regulated information along with its verification status.

@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BoxContentInformationSource } from './box-content-information-source';
+import type { BoxContentInformationSource } from './box-content-information-source.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BoxRequirements } from './box-requirements';
+import type { BoxRequirements } from './box-requirements.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShippingRequirements } from './shipping-requirements';
+import type { ShippingRequirements } from './shipping-requirements.js';
 
 /**
  * A way to configure this packing option. Some box content information sources might not be allowed. Non-standard minimum and maximum box weights might be enforced.

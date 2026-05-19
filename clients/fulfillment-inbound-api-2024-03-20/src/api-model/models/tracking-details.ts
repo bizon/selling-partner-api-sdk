@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LtlTrackingDetail } from './ltl-tracking-detail';
+import type { LtlTrackingDetail } from './ltl-tracking-detail.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SpdTrackingDetail } from './spd-tracking-detail';
+import type { SpdTrackingDetail } from './spd-tracking-detail.js';
 
 /**
  * Tracking information for Less-Than-Truckload (LTL) and Small Parcel Delivery (SPD) shipments.

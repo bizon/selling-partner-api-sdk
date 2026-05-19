@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PreferredDeliveryTime } from './preferred-delivery-time';
+import type { PreferredDeliveryTime } from './preferred-delivery-time.js';
 
 /**
  * Contains all delivery instructions that the customer provides for the shipping address.

@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Document } from './document';
+import type { Document } from './document.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PresenceStatus } from './presence-status';
+import type { PresenceStatus } from './presence-status.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RequirementLevel } from './requirement-level';
+import type { RequirementLevel } from './requirement-level.js';
 
 /**
  * Information about any gift wrapping that is needed for this line item.

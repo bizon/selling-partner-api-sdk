@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EventBridgeResourceSpecification } from './event-bridge-resource-specification';
+import type { EventBridgeResourceSpecification } from './event-bridge-resource-specification.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SqsResource } from './sqs-resource';
+import type { SqsResource } from './sqs-resource.js';
 
 /**
  * The information required to create a destination resource. Applications should use one resource type (sqs or eventBridge) per destination.

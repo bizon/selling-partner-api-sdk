@@ -13,76 +13,76 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { CancelShipmentResponse } from '../models';
+import type { CancelShipmentResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateClaimRequest } from '../models';
+import type { CreateClaimRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateClaimResponse } from '../models';
+import type { CreateClaimResponse } from '../models/index.js';
 // @ts-ignore
-import type { DirectPurchaseRequest } from '../models';
+import type { DirectPurchaseRequest } from '../models/index.js';
 // @ts-ignore
-import type { DirectPurchaseResponse } from '../models';
+import type { DirectPurchaseResponse } from '../models/index.js';
 // @ts-ignore
-import type { ErrorList } from '../models';
+import type { ErrorList } from '../models/index.js';
 // @ts-ignore
-import type { GenerateCollectionFormRequest } from '../models';
+import type { GenerateCollectionFormRequest } from '../models/index.js';
 // @ts-ignore
-import type { GenerateCollectionFormResponse } from '../models';
+import type { GenerateCollectionFormResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetAccessPointsResponse } from '../models';
+import type { GetAccessPointsResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetAdditionalInputsResponse } from '../models';
+import type { GetAdditionalInputsResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetCarrierAccountFormInputsResponse } from '../models';
+import type { GetCarrierAccountFormInputsResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetCarrierAccountsRequest } from '../models';
+import type { GetCarrierAccountsRequest } from '../models/index.js';
 // @ts-ignore
-import type { GetCarrierAccountsResponse } from '../models';
+import type { GetCarrierAccountsResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetCollectionFormHistoryRequest } from '../models';
+import type { GetCollectionFormHistoryRequest } from '../models/index.js';
 // @ts-ignore
-import type { GetCollectionFormHistoryResponse } from '../models';
+import type { GetCollectionFormHistoryResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetCollectionFormResponse } from '../models';
+import type { GetCollectionFormResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetRatesRequest } from '../models';
+import type { GetRatesRequest } from '../models/index.js';
 // @ts-ignore
-import type { GetRatesResponse } from '../models';
+import type { GetRatesResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetShipmentDocumentsResponse } from '../models';
+import type { GetShipmentDocumentsResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetTrackingResponse } from '../models';
+import type { GetTrackingResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetUnmanifestedShipmentsRequest } from '../models';
+import type { GetUnmanifestedShipmentsRequest } from '../models/index.js';
 // @ts-ignore
-import type { GetUnmanifestedShipmentsResponse } from '../models';
+import type { GetUnmanifestedShipmentsResponse } from '../models/index.js';
 // @ts-ignore
-import type { LinkCarrierAccountRequest } from '../models';
+import type { LinkCarrierAccountRequest } from '../models/index.js';
 // @ts-ignore
-import type { LinkCarrierAccountResponse } from '../models';
+import type { LinkCarrierAccountResponse } from '../models/index.js';
 // @ts-ignore
-import type { OneClickShipmentRequest } from '../models';
+import type { OneClickShipmentRequest } from '../models/index.js';
 // @ts-ignore
-import type { OneClickShipmentResponse } from '../models';
+import type { OneClickShipmentResponse } from '../models/index.js';
 // @ts-ignore
-import type { PurchaseShipmentRequest } from '../models';
+import type { PurchaseShipmentRequest } from '../models/index.js';
 // @ts-ignore
-import type { PurchaseShipmentResponse } from '../models';
+import type { PurchaseShipmentResponse } from '../models/index.js';
 // @ts-ignore
-import type { SubmitNdrFeedbackRequest } from '../models';
+import type { SubmitNdrFeedbackRequest } from '../models/index.js';
 // @ts-ignore
-import type { UnlinkCarrierAccountRequest } from '../models';
+import type { UnlinkCarrierAccountRequest } from '../models/index.js';
 // @ts-ignore
-import type { UnlinkCarrierAccountResponse } from '../models';
+import type { UnlinkCarrierAccountResponse } from '../models/index.js';
 /**
  * ShippingApi - axios parameter creator
  */

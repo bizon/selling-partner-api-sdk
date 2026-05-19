@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DeliveryMessage } from './delivery-message';
+import type { DeliveryMessage } from './delivery-message.js';
 
 /**
  * The policy for a delivery offering.

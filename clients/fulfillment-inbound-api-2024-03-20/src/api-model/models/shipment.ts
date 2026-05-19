@@ -15,28 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ContactInformation } from './contact-information';
+import type { ContactInformation } from './contact-information.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Dates } from './dates';
+import type { Dates } from './dates.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FreightInformation } from './freight-information';
+import type { FreightInformation } from './freight-information.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SelectedDeliveryWindow } from './selected-delivery-window';
+import type { SelectedDeliveryWindow } from './selected-delivery-window.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SelfShipAppointmentDetails } from './self-ship-appointment-details';
+import type { SelfShipAppointmentDetails } from './self-ship-appointment-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentDestination } from './shipment-destination';
+import type { ShipmentDestination } from './shipment-destination.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentSource } from './shipment-source';
+import type { ShipmentSource } from './shipment-source.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TrackingDetails } from './tracking-details';
+import type { TrackingDetails } from './tracking-details.js';
 
 /**
  * Contains information pertaining to a shipment in an inbound plan.

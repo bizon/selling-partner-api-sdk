@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BuyerCustomizedInfoDetail } from './buyer-customized-info-detail';
+import type { BuyerCustomizedInfoDetail } from './buyer-customized-info-detail.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GiftDetails } from './gift-details';
+import type { GiftDetails } from './gift-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemQuantity } from './item-quantity';
+import type { ItemQuantity } from './item-quantity.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Money } from './money';
+import type { Money } from './money.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ScheduledDeliveryShipment } from './scheduled-delivery-shipment';
+import type { ScheduledDeliveryShipment } from './scheduled-delivery-shipment.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TaxItemDetails } from './tax-item-details';
+import type { TaxItemDetails } from './tax-item-details.js';
 
 /**
  * An item within an order

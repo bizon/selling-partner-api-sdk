@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Carrier } from './carrier';
+import type { Carrier } from './carrier.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CarrierAppointment } from './carrier-appointment';
+import type { CarrierAppointment } from './carrier-appointment.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Quote } from './quote';
+import type { Quote } from './quote.js';
 
 /**
  * Contains information pertaining to a transportation option and the related carrier.

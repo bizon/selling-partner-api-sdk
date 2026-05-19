@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderItemBuyerInfo } from './order-item-buyer-info';
+import type { OrderItemBuyerInfo } from './order-item-buyer-info.js';
 
 /**
  * A single order item\'s buyer information list with the order ID.

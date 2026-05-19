@@ -13,28 +13,28 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { CreateSupplySourceRequest } from '../models';
+import type { CreateSupplySourceRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateSupplySourceResponse } from '../models';
+import type { CreateSupplySourceResponse } from '../models/index.js';
 // @ts-ignore
-import type { ErrorList } from '../models';
+import type { ErrorList } from '../models/index.js';
 // @ts-ignore
-import type { GetSupplySourcesResponse } from '../models';
+import type { GetSupplySourcesResponse } from '../models/index.js';
 // @ts-ignore
-import type { SupplySource } from '../models';
+import type { SupplySource } from '../models/index.js';
 // @ts-ignore
-import type { UpdateSupplySourceRequest } from '../models';
+import type { UpdateSupplySourceRequest } from '../models/index.js';
 // @ts-ignore
-import type { UpdateSupplySourceStatusRequest } from '../models';
+import type { UpdateSupplySourceStatusRequest } from '../models/index.js';
 /**
  * SupplySourcesApi - axios parameter creator
  */

@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PaymentPreference } from './payment-preference';
+import type { PaymentPreference } from './payment-preference.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransactionAccount } from './transaction-account';
+import type { TransactionAccount } from './transaction-account.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransactionType } from './transaction-type';
+import type { TransactionType } from './transaction-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransferScheduleFailures } from './transfer-schedule-failures';
+import type { TransferScheduleFailures } from './transfer-schedule-failures.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransferScheduleInformation } from './transfer-schedule-information';
+import type { TransferScheduleInformation } from './transfer-schedule-information.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransferScheduleStatus } from './transfer-schedule-status';
+import type { TransferScheduleStatus } from './transfer-schedule-status.js';
 
 /**
  * Transfer schedule details and related historical details.

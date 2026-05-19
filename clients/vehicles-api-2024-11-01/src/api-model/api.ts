@@ -14,5 +14,5 @@
 
 
 
-export * from './api/vehicles-api';
+export * from './api/vehicles-api.js';
 

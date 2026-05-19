@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BusinessHour } from './business-hour';
+import type { BusinessHour } from './business-hour.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ExceptionDate } from './exception-date';
+import type { ExceptionDate } from './exception-date.js';
 
 /**
  * Customer-specified time preferences for when deliveries should be attempted at the destination address.

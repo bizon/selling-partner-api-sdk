@@ -14,5 +14,5 @@
 
 
 
-export * from './api/invoices-api';
+export * from './api/invoices-api.js';
 

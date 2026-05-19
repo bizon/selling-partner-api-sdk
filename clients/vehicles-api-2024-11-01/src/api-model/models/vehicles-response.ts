@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Pagination } from './pagination';
+import type { Pagination } from './pagination.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Vehicle } from './vehicle';
+import type { Vehicle } from './vehicle.js';
 
 /**
  * Get paginated list of vehicle from Amazon\'s catalog

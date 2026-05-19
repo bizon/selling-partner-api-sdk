@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Currency } from './currency';
+import type { Currency } from './currency.js';
 
 /**
  * Freight information describes the SKUs that are in transit. Freight carrier options and quotes will only be returned if the freight information is provided.

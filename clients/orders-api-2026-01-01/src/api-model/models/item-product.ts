@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemCondition } from './item-condition';
+import type { ItemCondition } from './item-condition.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemCustomization } from './item-customization';
+import type { ItemCustomization } from './item-customization.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemPrice } from './item-price';
+import type { ItemPrice } from './item-price.js';
 
 /**
  * Product information for an order item.

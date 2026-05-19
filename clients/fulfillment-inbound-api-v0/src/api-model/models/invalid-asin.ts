@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ErrorReason } from './error-reason';
+import type { ErrorReason } from './error-reason.js';
 
 /**
  * Contains details about an invalid ASIN

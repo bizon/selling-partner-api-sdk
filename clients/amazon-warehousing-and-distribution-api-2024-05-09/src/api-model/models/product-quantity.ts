@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PrepDetails } from './prep-details';
+import type { PrepDetails } from './prep-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ProductAttribute } from './product-attribute';
+import type { ProductAttribute } from './product-attribute.js';
 
 /**
  * Represents a product with the SKU details and the corresponding quantity.

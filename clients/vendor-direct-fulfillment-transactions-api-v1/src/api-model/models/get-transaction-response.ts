@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransactionStatus } from './transaction-status';
+import type { TransactionStatus } from './transaction-status.js';
 
 /**
  * The response schema for the getTransactionStatus operation.

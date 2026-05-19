@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BalanceType } from './balance-type';
+import type { BalanceType } from './balance-type.js';
 
 /**
  * The balance amount in the Amazon Seller Wallet bank account.

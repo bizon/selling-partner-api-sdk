@@ -14,5 +14,5 @@
 
 
 
-export * from './api/data-kiosk-api';
+export * from './api/data-kiosk-api.js';
 

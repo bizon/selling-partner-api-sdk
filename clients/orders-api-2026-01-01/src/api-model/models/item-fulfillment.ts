@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemPacking } from './item-packing';
+import type { ItemPacking } from './item-packing.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemPicking } from './item-picking';
+import type { ItemPicking } from './item-picking.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemShipping } from './item-shipping';
+import type { ItemShipping } from './item-shipping.js';
 
 /**
  * Information about how the order item should be processed, packed, and shipped to the customer.

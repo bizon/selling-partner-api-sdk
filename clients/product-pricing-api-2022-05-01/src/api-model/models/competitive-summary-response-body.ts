@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FeaturedBuyingOption } from './featured-buying-option';
+import type { FeaturedBuyingOption } from './featured-buying-option.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LowestPricedOffer } from './lowest-priced-offer';
+import type { LowestPricedOffer } from './lowest-priced-offer.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ReferencePrice } from './reference-price';
+import type { ReferencePrice } from './reference-price.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SimilarItems } from './similar-items';
+import type { SimilarItems } from './similar-items.js';
 
 /**
  * The `competitiveSummaryResponse` body for a requested ASIN and `marketplaceId`.

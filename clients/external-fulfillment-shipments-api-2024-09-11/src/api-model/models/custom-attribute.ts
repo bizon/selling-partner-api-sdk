@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CustomAttributeType } from './custom-attribute-type';
+import type { CustomAttributeType } from './custom-attribute-type.js';
 
 /**
  * A custom attribute that is loosely typed, modeled through a key-value pair and its data type.

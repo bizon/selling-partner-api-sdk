@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LinkObject } from './link-object';
+import type { LinkObject } from './link-object.js';
 
 /**
  * The links response that is associated with the specified `amazonOrderId`.

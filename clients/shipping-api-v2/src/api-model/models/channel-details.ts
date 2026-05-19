@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AmazonOrderDetails } from './amazon-order-details';
+import type { AmazonOrderDetails } from './amazon-order-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AmazonShipmentDetails } from './amazon-shipment-details';
+import type { AmazonShipmentDetails } from './amazon-shipment-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ChannelType } from './channel-type';
+import type { ChannelType } from './channel-type.js';
 
 /**
  * Shipment source channel related information.

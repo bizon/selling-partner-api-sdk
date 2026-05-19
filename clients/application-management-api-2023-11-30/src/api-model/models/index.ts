@@ -1,2 +1,2 @@
-export * from './error-list';
-export * from './model-error';
+export * from './error-list.js';
+export * from './model-error.js';

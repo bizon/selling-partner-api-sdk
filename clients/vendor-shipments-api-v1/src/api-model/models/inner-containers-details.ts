@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ContainerSequenceNumbers } from './container-sequence-numbers';
+import type { ContainerSequenceNumbers } from './container-sequence-numbers.js';
 
 /**
  * Details of the innerContainersDetails.

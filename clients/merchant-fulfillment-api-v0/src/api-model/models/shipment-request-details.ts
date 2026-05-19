@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
+import type { Address } from './address.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Item } from './item';
+import type { Item } from './item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LabelCustomization } from './label-customization';
+import type { LabelCustomization } from './label-customization.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackageDimensions } from './package-dimensions';
+import type { PackageDimensions } from './package-dimensions.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShippingServiceOptions } from './shipping-service-options';
+import type { ShippingServiceOptions } from './shipping-service-options.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Weight } from './weight';
+import type { Weight } from './weight.js';
 
 /**
  * Shipment information required for requesting shipping service offers or for creating a shipment.

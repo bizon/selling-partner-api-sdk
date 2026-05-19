@@ -14,5 +14,5 @@
 
 
 
-export * from './api/messaging-api';
+export * from './api/messaging-api.js';
 

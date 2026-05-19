@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderAcknowledgementItem } from './order-acknowledgement-item';
+import type { OrderAcknowledgementItem } from './order-acknowledgement-item.js';
 
 /**
  * The request schema for the submitAcknowledgement operation.

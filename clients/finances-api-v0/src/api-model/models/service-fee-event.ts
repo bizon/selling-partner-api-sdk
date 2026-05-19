@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FeeComponent } from './fee-component';
+import type { FeeComponent } from './fee-component.js';
 
 /**
  * A service fee on the seller\'s account.

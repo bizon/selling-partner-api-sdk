@@ -15,8 +15,8 @@ jest.unstable_mockModule('@sp-api-sdk/auth', () => ({
 }))
 
 const {SellingPartnerApiAuth} = await import('@sp-api-sdk/auth')
-const {createAxiosInstance} = await import('../src/axios')
-const {SellingPartnerApiError} = await import('../src/errors')
+const {createAxiosInstance} = await import('../src/axios.js')
+const {SellingPartnerApiError} = await import('../src/errors.js')
 
 describe('src/axios', () => {
   it('should throw if the region does not exist', () => {

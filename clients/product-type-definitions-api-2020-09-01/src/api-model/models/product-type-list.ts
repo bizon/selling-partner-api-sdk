@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ProductType } from './product-type';
+import type { ProductType } from './product-type.js';
 
 /**
  * A list of Amazon product types with definitions available.

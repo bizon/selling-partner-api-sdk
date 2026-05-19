@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SegmentDetails } from './segment-details';
+import type { SegmentDetails } from './segment-details.js';
 
 /**
  * Describes the segment in which the offer is featured.

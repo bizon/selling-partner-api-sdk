@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PaymentPreference } from './payment-preference';
+import type { PaymentPreference } from './payment-preference.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransactionInstrumentDetails } from './transaction-instrument-details';
+import type { TransactionInstrumentDetails } from './transaction-instrument-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransactionType } from './transaction-type';
+import type { TransactionType } from './transaction-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransferScheduleInformation } from './transfer-schedule-information';
+import type { TransferScheduleInformation } from './transfer-schedule-information.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransferScheduleStatus } from './transfer-schedule-status';
+import type { TransferScheduleStatus } from './transfer-schedule-status.js';
 
 /**
  * Request body to initiate a scheduled transfer from a Seller Wallet bank account to another customer-defined bank account.

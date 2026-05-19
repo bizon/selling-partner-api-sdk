@@ -15,25 +15,25 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Carton } from './carton';
+import type { Carton } from './carton.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ImportDetails } from './import-details';
+import type { ImportDetails } from './import-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Item } from './item';
+import type { Item } from './item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Pallet } from './pallet';
+import type { Pallet } from './pallet.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PartyIdentification } from './party-identification';
+import type { PartyIdentification } from './party-identification.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentMeasurements } from './shipment-measurements';
+import type { ShipmentMeasurements } from './shipment-measurements.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransportationDetailsForShipmentConfirmation } from './transportation-details-for-shipment-confirmation';
+import type { TransportationDetailsForShipmentConfirmation } from './transportation-details-for-shipment-confirmation.js';
 
 /**
  * A list of one or more shipment confirmations.

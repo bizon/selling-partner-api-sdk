@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RecurringFrequency } from './recurring-frequency';
+import type { RecurringFrequency } from './recurring-frequency.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ScheduleExpressionType } from './schedule-expression-type';
+import type { ScheduleExpressionType } from './schedule-expression-type.js';
 
 /**
  * The configuration of the schedule.

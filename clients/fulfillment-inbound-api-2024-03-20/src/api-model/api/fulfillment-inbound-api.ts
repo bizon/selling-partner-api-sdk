@@ -13,134 +13,134 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { CancelInboundPlanResponse } from '../models';
+import type { CancelInboundPlanResponse } from '../models/index.js';
 // @ts-ignore
-import type { CancelSelfShipAppointmentRequest } from '../models';
+import type { CancelSelfShipAppointmentRequest } from '../models/index.js';
 // @ts-ignore
-import type { CancelSelfShipAppointmentResponse } from '../models';
+import type { CancelSelfShipAppointmentResponse } from '../models/index.js';
 // @ts-ignore
-import type { ConfirmDeliveryWindowOptionsResponse } from '../models';
+import type { ConfirmDeliveryWindowOptionsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ConfirmPackingOptionResponse } from '../models';
+import type { ConfirmPackingOptionResponse } from '../models/index.js';
 // @ts-ignore
-import type { ConfirmPlacementOptionResponse } from '../models';
+import type { ConfirmPlacementOptionResponse } from '../models/index.js';
 // @ts-ignore
-import type { ConfirmShipmentContentUpdatePreviewResponse } from '../models';
+import type { ConfirmShipmentContentUpdatePreviewResponse } from '../models/index.js';
 // @ts-ignore
-import type { ConfirmTransportationOptionsRequest } from '../models';
+import type { ConfirmTransportationOptionsRequest } from '../models/index.js';
 // @ts-ignore
-import type { ConfirmTransportationOptionsResponse } from '../models';
+import type { ConfirmTransportationOptionsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ContentUpdatePreview } from '../models';
+import type { ContentUpdatePreview } from '../models/index.js';
 // @ts-ignore
-import type { CreateInboundPlanRequest } from '../models';
+import type { CreateInboundPlanRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateInboundPlanResponse } from '../models';
+import type { CreateInboundPlanResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateMarketplaceItemLabelsRequest } from '../models';
+import type { CreateMarketplaceItemLabelsRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateMarketplaceItemLabelsResponse } from '../models';
+import type { CreateMarketplaceItemLabelsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ErrorList } from '../models';
+import type { ErrorList } from '../models/index.js';
 // @ts-ignore
-import type { GenerateDeliveryWindowOptionsResponse } from '../models';
+import type { GenerateDeliveryWindowOptionsResponse } from '../models/index.js';
 // @ts-ignore
-import type { GeneratePackingOptionsResponse } from '../models';
+import type { GeneratePackingOptionsResponse } from '../models/index.js';
 // @ts-ignore
-import type { GeneratePlacementOptionsRequest } from '../models';
+import type { GeneratePlacementOptionsRequest } from '../models/index.js';
 // @ts-ignore
-import type { GeneratePlacementOptionsResponse } from '../models';
+import type { GeneratePlacementOptionsResponse } from '../models/index.js';
 // @ts-ignore
-import type { GenerateSelfShipAppointmentSlotsRequest } from '../models';
+import type { GenerateSelfShipAppointmentSlotsRequest } from '../models/index.js';
 // @ts-ignore
-import type { GenerateSelfShipAppointmentSlotsResponse } from '../models';
+import type { GenerateSelfShipAppointmentSlotsResponse } from '../models/index.js';
 // @ts-ignore
-import type { GenerateShipmentContentUpdatePreviewsRequest } from '../models';
+import type { GenerateShipmentContentUpdatePreviewsRequest } from '../models/index.js';
 // @ts-ignore
-import type { GenerateShipmentContentUpdatePreviewsResponse } from '../models';
+import type { GenerateShipmentContentUpdatePreviewsResponse } from '../models/index.js';
 // @ts-ignore
-import type { GenerateTransportationOptionsRequest } from '../models';
+import type { GenerateTransportationOptionsRequest } from '../models/index.js';
 // @ts-ignore
-import type { GenerateTransportationOptionsResponse } from '../models';
+import type { GenerateTransportationOptionsResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetDeliveryChallanDocumentResponse } from '../models';
+import type { GetDeliveryChallanDocumentResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetSelfShipAppointmentSlotsResponse } from '../models';
+import type { GetSelfShipAppointmentSlotsResponse } from '../models/index.js';
 // @ts-ignore
-import type { InboundOperationStatus } from '../models';
+import type { InboundOperationStatus } from '../models/index.js';
 // @ts-ignore
-import type { InboundPlan } from '../models';
+import type { InboundPlan } from '../models/index.js';
 // @ts-ignore
-import type { ListDeliveryWindowOptionsResponse } from '../models';
+import type { ListDeliveryWindowOptionsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ListInboundPlanBoxesResponse } from '../models';
+import type { ListInboundPlanBoxesResponse } from '../models/index.js';
 // @ts-ignore
-import type { ListInboundPlanItemsResponse } from '../models';
+import type { ListInboundPlanItemsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ListInboundPlanPalletsResponse } from '../models';
+import type { ListInboundPlanPalletsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ListInboundPlansResponse } from '../models';
+import type { ListInboundPlansResponse } from '../models/index.js';
 // @ts-ignore
-import type { ListItemComplianceDetailsResponse } from '../models';
+import type { ListItemComplianceDetailsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ListPackingGroupBoxesResponse } from '../models';
+import type { ListPackingGroupBoxesResponse } from '../models/index.js';
 // @ts-ignore
-import type { ListPackingGroupItemsResponse } from '../models';
+import type { ListPackingGroupItemsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ListPackingOptionsResponse } from '../models';
+import type { ListPackingOptionsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ListPlacementOptionsResponse } from '../models';
+import type { ListPlacementOptionsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ListPrepDetailsResponse } from '../models';
+import type { ListPrepDetailsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ListShipmentBoxesResponse } from '../models';
+import type { ListShipmentBoxesResponse } from '../models/index.js';
 // @ts-ignore
-import type { ListShipmentContentUpdatePreviewsResponse } from '../models';
+import type { ListShipmentContentUpdatePreviewsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ListShipmentItemsResponse } from '../models';
+import type { ListShipmentItemsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ListShipmentPalletsResponse } from '../models';
+import type { ListShipmentPalletsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ListTransportationOptionsResponse } from '../models';
+import type { ListTransportationOptionsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ScheduleSelfShipAppointmentRequest } from '../models';
+import type { ScheduleSelfShipAppointmentRequest } from '../models/index.js';
 // @ts-ignore
-import type { ScheduleSelfShipAppointmentResponse } from '../models';
+import type { ScheduleSelfShipAppointmentResponse } from '../models/index.js';
 // @ts-ignore
-import type { SetPackingInformationRequest } from '../models';
+import type { SetPackingInformationRequest } from '../models/index.js';
 // @ts-ignore
-import type { SetPackingInformationResponse } from '../models';
+import type { SetPackingInformationResponse } from '../models/index.js';
 // @ts-ignore
-import type { SetPrepDetailsRequest } from '../models';
+import type { SetPrepDetailsRequest } from '../models/index.js';
 // @ts-ignore
-import type { SetPrepDetailsResponse } from '../models';
+import type { SetPrepDetailsResponse } from '../models/index.js';
 // @ts-ignore
-import type { Shipment } from '../models';
+import type { Shipment } from '../models/index.js';
 // @ts-ignore
-import type { UpdateInboundPlanNameRequest } from '../models';
+import type { UpdateInboundPlanNameRequest } from '../models/index.js';
 // @ts-ignore
-import type { UpdateItemComplianceDetailsRequest } from '../models';
+import type { UpdateItemComplianceDetailsRequest } from '../models/index.js';
 // @ts-ignore
-import type { UpdateItemComplianceDetailsResponse } from '../models';
+import type { UpdateItemComplianceDetailsResponse } from '../models/index.js';
 // @ts-ignore
-import type { UpdateShipmentNameRequest } from '../models';
+import type { UpdateShipmentNameRequest } from '../models/index.js';
 // @ts-ignore
-import type { UpdateShipmentSourceAddressRequest } from '../models';
+import type { UpdateShipmentSourceAddressRequest } from '../models/index.js';
 // @ts-ignore
-import type { UpdateShipmentSourceAddressResponse } from '../models';
+import type { UpdateShipmentSourceAddressResponse } from '../models/index.js';
 // @ts-ignore
-import type { UpdateShipmentTrackingDetailsRequest } from '../models';
+import type { UpdateShipmentTrackingDetailsRequest } from '../models/index.js';
 // @ts-ignore
-import type { UpdateShipmentTrackingDetailsResponse } from '../models';
+import type { UpdateShipmentTrackingDetailsResponse } from '../models/index.js';
 /**
  * FulfillmentInboundApi - axios parameter creator
  */

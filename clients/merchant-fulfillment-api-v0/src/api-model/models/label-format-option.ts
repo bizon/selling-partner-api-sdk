@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LabelFormat } from './label-format';
+import type { LabelFormat } from './label-format.js';
 
 /**
  * The label format details and whether to include a packing slip.

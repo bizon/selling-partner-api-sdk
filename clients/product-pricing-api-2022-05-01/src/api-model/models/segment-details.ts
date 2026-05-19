@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SampleLocation } from './sample-location';
+import type { SampleLocation } from './sample-location.js';
 
 /**
  * The details about the segment. The FeaturedOfferExpectedPrice API uses only the sampleLocation portion as input.

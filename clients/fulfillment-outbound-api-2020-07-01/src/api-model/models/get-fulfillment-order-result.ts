@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FulfillmentOrder } from './fulfillment-order';
+import type { FulfillmentOrder } from './fulfillment-order.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FulfillmentOrderItem } from './fulfillment-order-item';
+import type { FulfillmentOrderItem } from './fulfillment-order-item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FulfillmentShipment } from './fulfillment-shipment';
+import type { FulfillmentShipment } from './fulfillment-shipment.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PaymentInformation } from './payment-information';
+import type { PaymentInformation } from './payment-information.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ReturnAuthorization } from './return-authorization';
+import type { ReturnAuthorization } from './return-authorization.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ReturnItem } from './return-item';
+import type { ReturnItem } from './return-item.js';
 
 /**
  * The request for the `getFulfillmentOrder` operation.

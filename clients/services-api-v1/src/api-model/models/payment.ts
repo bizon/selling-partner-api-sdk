@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MoneyAmount } from './money-amount';
+import type { MoneyAmount } from './money-amount.js';
 
 /**
  * Payment information for the service job.

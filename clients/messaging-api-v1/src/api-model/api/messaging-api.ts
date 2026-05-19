@@ -13,54 +13,54 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { CreateConfirmCustomizationDetailsRequest } from '../models';
+import type { CreateConfirmCustomizationDetailsRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateConfirmCustomizationDetailsResponse } from '../models';
+import type { CreateConfirmCustomizationDetailsResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateConfirmDeliveryDetailsRequest } from '../models';
+import type { CreateConfirmDeliveryDetailsRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateConfirmDeliveryDetailsResponse } from '../models';
+import type { CreateConfirmDeliveryDetailsResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateConfirmOrderDetailsRequest } from '../models';
+import type { CreateConfirmOrderDetailsRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateConfirmOrderDetailsResponse } from '../models';
+import type { CreateConfirmOrderDetailsResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateConfirmServiceDetailsRequest } from '../models';
+import type { CreateConfirmServiceDetailsRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateConfirmServiceDetailsResponse } from '../models';
+import type { CreateConfirmServiceDetailsResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateDigitalAccessKeyRequest } from '../models';
+import type { CreateDigitalAccessKeyRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateDigitalAccessKeyResponse } from '../models';
+import type { CreateDigitalAccessKeyResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateLegalDisclosureRequest } from '../models';
+import type { CreateLegalDisclosureRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateLegalDisclosureResponse } from '../models';
+import type { CreateLegalDisclosureResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateUnexpectedProblemRequest } from '../models';
+import type { CreateUnexpectedProblemRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateUnexpectedProblemResponse } from '../models';
+import type { CreateUnexpectedProblemResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateWarrantyRequest } from '../models';
+import type { CreateWarrantyRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateWarrantyResponse } from '../models';
+import type { CreateWarrantyResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetAttributesResponse } from '../models';
+import type { GetAttributesResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetMessagingActionsForOrderResponse } from '../models';
+import type { GetMessagingActionsForOrderResponse } from '../models/index.js';
 // @ts-ignore
-import type { InvoiceRequest } from '../models';
+import type { InvoiceRequest } from '../models/index.js';
 // @ts-ignore
-import type { InvoiceResponse } from '../models';
+import type { InvoiceResponse } from '../models/index.js';
 /**
  * MessagingApi - axios parameter creator
  */

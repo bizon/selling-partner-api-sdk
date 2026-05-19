@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Incentive } from './incentive';
+import type { Incentive } from './incentive.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackingConfiguration } from './packing-configuration';
+import type { PackingConfiguration } from './packing-configuration.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShippingConfiguration } from './shipping-configuration';
+import type { ShippingConfiguration } from './shipping-configuration.js';
 
 /**
  * A packing option contains a set of pack groups plus additional information about the packing option, such as any discounts or fees if it\'s selected.

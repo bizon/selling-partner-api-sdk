@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MskuPrepDetail } from './msku-prep-detail';
+import type { MskuPrepDetail } from './msku-prep-detail.js';
 
 /**
  * The response to the `listPrepDetails` operation.

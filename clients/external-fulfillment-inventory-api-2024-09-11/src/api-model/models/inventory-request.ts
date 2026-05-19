@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { HttpMethod } from './http-method';
+import type { HttpMethod } from './http-method.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InventoryRequestParams } from './inventory-request-params';
+import type { InventoryRequestParams } from './inventory-request-params.js';
 
 /**
  * An inventory request.

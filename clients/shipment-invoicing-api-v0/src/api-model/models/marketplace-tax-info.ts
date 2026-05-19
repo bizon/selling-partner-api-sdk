@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TaxClassification } from './tax-classification';
+import type { TaxClassification } from './tax-classification.js';
 
 /**
  * Tax information about the marketplace.

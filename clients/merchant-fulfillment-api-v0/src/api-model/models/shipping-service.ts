@@ -15,25 +15,25 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AvailableShippingServiceOptions } from './available-shipping-service-options';
+import type { AvailableShippingServiceOptions } from './available-shipping-service-options.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Benefits } from './benefits';
+import type { Benefits } from './benefits.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CurrencyAmount } from './currency-amount';
+import type { CurrencyAmount } from './currency-amount.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LabelFormat } from './label-format';
+import type { LabelFormat } from './label-format.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LabelFormatOption } from './label-format-option';
+import type { LabelFormatOption } from './label-format-option.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RateItem } from './rate-item';
+import type { RateItem } from './rate-item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShippingServiceOptions } from './shipping-service-options';
+import type { ShippingServiceOptions } from './shipping-service-options.js';
 
 /**
  * A shipping service offer made by a carrier.

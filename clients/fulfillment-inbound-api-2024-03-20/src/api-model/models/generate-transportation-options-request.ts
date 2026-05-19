@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentTransportationConfiguration } from './shipment-transportation-configuration';
+import type { ShipmentTransportationConfiguration } from './shipment-transportation-configuration.js';
 
 /**
  * The `generateTransportationOptions` request.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TimeWindow } from './time-window';
+import type { TimeWindow } from './time-window.js';
 
 /**
  * Special dates when normal business hours are modified or suspended, requiring different delivery scheduling.

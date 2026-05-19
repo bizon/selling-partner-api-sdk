@@ -14,5 +14,5 @@
 
 
 
-export * from './api/reports-api';
+export * from './api/reports-api.js';
 

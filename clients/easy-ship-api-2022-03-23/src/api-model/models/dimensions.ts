@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { UnitOfLength } from './unit-of-length';
+import type { UnitOfLength } from './unit-of-length.js';
 
 /**
  * The dimensions of the scheduled package.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ResearchingQuantityEntry } from './researching-quantity-entry';
+import type { ResearchingQuantityEntry } from './researching-quantity-entry.js';
 
 /**
  * The number of misplaced or warehouse damaged units that are actively being confirmed at our fulfillment centers.

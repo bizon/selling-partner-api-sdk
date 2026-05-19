@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ListFinancialEventGroupsPayload } from './list-financial-event-groups-payload';
+import type { ListFinancialEventGroupsPayload } from './list-financial-event-groups-payload.js';
 
 /**
  * The response schema for the `listFinancialEventGroups` operation.

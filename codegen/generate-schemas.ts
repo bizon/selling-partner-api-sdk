@@ -75,7 +75,7 @@ async function generateDirectoryIndex(schemas: SchemaFile[], outputDirectory: st
   const body = schemas
     .map(
       (schema) =>
-        `export {${schema.schemaName}, type ${schema.schemaTypeName}} from './${schema.fileName}'`,
+        `export {${schema.schemaName}, type ${schema.schemaTypeName}} from './${schema.fileName}.js'`,
     )
     .join('\n')
 

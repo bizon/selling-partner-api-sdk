@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ClaimReason } from './claim-reason';
+import type { ClaimReason } from './claim-reason.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Currency } from './currency';
+import type { Currency } from './currency.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SettlementType } from './settlement-type';
+import type { SettlementType } from './settlement-type.js';
 
 /**
  * The request schema for the CreateClaim operation

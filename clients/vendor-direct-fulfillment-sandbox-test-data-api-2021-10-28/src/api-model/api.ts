@@ -14,5 +14,5 @@
 
 
 
-export * from './api/vendor-direct-fulfillment-sandbox-test-data-api';
+export * from './api/vendor-direct-fulfillment-sandbox-test-data-api.js';
 

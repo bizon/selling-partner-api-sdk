@@ -14,5 +14,5 @@
 
 
 
-export * from './api/sales-api';
+export * from './api/sales-api.js';
 

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderBuyerInfo } from './order-buyer-info';
+import type { OrderBuyerInfo } from './order-buyer-info.js';
 
 /**
  * The response schema for the `getOrderBuyerInfo` operation.

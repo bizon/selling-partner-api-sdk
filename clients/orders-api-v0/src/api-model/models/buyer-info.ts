@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BuyerTaxInfo } from './buyer-tax-info';
+import type { BuyerTaxInfo } from './buyer-tax-info.js';
 
 /**
  * Buyer information.

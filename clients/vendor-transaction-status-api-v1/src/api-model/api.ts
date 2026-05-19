@@ -14,5 +14,5 @@
 
 
 
-export * from './api/vendor-transaction-status-api';
+export * from './api/vendor-transaction-status-api.js';
 

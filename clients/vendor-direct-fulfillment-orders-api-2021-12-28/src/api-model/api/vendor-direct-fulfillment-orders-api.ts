@@ -13,24 +13,24 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { ErrorList } from '../models';
+import type { ErrorList } from '../models/index.js';
 // @ts-ignore
-import type { Order } from '../models';
+import type { Order } from '../models/index.js';
 // @ts-ignore
-import type { OrderList } from '../models';
+import type { OrderList } from '../models/index.js';
 // @ts-ignore
-import type { SubmitAcknowledgementRequest } from '../models';
+import type { SubmitAcknowledgementRequest } from '../models/index.js';
 // @ts-ignore
-import type { TransactionId } from '../models';
+import type { TransactionId } from '../models/index.js';
 /**
  * VendorDirectFulfillmentOrdersApi - axios parameter creator
  */

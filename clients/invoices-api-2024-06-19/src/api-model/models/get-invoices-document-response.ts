@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InvoicesDocument } from './invoices-document';
+import type { InvoicesDocument } from './invoices-document.js';
 
 /**
  * Success.

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OperationProblem } from './operation-problem';
+import type { OperationProblem } from './operation-problem.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OperationStatus } from './operation-status';
+import type { OperationStatus } from './operation-status.js';
 
 /**
  * GetInboundOperationStatus response.

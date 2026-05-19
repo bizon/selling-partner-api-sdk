@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PointsGranted } from './points-granted';
+import type { PointsGranted } from './points-granted.js';
 
 /**
  * Information about Amazon Points granted with the purchase of an item, including both quantity and monetary equivalent value.

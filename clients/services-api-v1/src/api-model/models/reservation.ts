@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AvailabilityRecord } from './availability-record';
+import type { AvailabilityRecord } from './availability-record.js';
 
 /**
  * Reservation object reduces the capacity of a resource.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentStatusUpdate } from './shipment-status-update';
+import type { ShipmentStatusUpdate } from './shipment-status-update.js';
 
 /**
  * The request schema for the `submitShipmentStatusUpdates` operation.

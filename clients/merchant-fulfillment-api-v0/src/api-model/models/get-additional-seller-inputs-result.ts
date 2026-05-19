@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AdditionalInputs } from './additional-inputs';
+import type { AdditionalInputs } from './additional-inputs.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemLevelFields } from './item-level-fields';
+import type { ItemLevelFields } from './item-level-fields.js';
 
 /**
  * The payload for the `getAdditionalSellerInputs` operation.

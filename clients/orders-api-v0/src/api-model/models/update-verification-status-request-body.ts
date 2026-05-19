@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { VerificationDetails } from './verification-details';
+import type { VerificationDetails } from './verification-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { VerificationStatus } from './verification-status';
+import type { VerificationStatus } from './verification-status.js';
 
 /**
  * The updated values of the `VerificationStatus` field.

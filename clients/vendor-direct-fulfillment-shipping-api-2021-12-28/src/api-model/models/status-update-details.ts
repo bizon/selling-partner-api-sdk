@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
+import type { Address } from './address.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentSchedule } from './shipment-schedule';
+import type { ShipmentSchedule } from './shipment-schedule.js';
 
 /**
  * Details for the shipment status update given by the vendor for the specific package.

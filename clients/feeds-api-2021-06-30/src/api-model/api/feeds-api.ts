@@ -13,30 +13,30 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { CreateFeedDocumentResponse } from '../models';
+import type { CreateFeedDocumentResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateFeedDocumentSpecification } from '../models';
+import type { CreateFeedDocumentSpecification } from '../models/index.js';
 // @ts-ignore
-import type { CreateFeedResponse } from '../models';
+import type { CreateFeedResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateFeedSpecification } from '../models';
+import type { CreateFeedSpecification } from '../models/index.js';
 // @ts-ignore
-import type { ErrorList } from '../models';
+import type { ErrorList } from '../models/index.js';
 // @ts-ignore
-import type { Feed } from '../models';
+import type { Feed } from '../models/index.js';
 // @ts-ignore
-import type { FeedDocument } from '../models';
+import type { FeedDocument } from '../models/index.js';
 // @ts-ignore
-import type { GetFeedsResponse } from '../models';
+import type { GetFeedsResponse } from '../models/index.js';
 /**
  * FeedsApi - axios parameter creator
  */

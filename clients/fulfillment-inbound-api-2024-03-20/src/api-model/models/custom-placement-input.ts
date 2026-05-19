@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemInput } from './item-input';
+import type { ItemInput } from './item-input.js';
 
 /**
  * Provide units going to the warehouse.

@@ -14,5 +14,5 @@
 
 
 
-export * from './api/product-pricing-api';
+export * from './api/product-pricing-api.js';
 

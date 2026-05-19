@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TaxDetails } from './tax-details';
+import type { TaxDetails } from './tax-details.js';
 
 /**
  * Total tax details for the line item.

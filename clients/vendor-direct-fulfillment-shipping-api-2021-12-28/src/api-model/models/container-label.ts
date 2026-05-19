@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ContainerLabelFormat } from './container-label-format';
+import type { ContainerLabelFormat } from './container-label-format.js';
 
 /**
  * The details of the container label.

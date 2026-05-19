@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemPromotionBreakdown } from './item-promotion-breakdown';
+import type { ItemPromotionBreakdown } from './item-promotion-breakdown.js';
 
 /**
  * Details about any discounts, coupons, or promotional offers applied to this item.

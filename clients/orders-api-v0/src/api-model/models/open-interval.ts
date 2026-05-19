@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OpenTimeInterval } from './open-time-interval';
+import type { OpenTimeInterval } from './open-time-interval.js';
 
 /**
  * The time interval for which the business is open.

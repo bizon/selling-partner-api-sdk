@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { StandardIdForLabel } from './standard-id-for-label';
+import type { StandardIdForLabel } from './standard-id-for-label.js';
 
 /**
  * Custom text for shipping labels.

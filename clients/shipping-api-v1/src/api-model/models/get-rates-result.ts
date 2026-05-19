@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ServiceRate } from './service-rate';
+import type { ServiceRate } from './service-rate.js';
 
 /**
  * The payload schema for the getRates operation.

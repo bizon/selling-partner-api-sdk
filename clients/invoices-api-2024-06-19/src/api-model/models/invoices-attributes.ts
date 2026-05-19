@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AttributeOption } from './attribute-option';
+import type { AttributeOption } from './attribute-option.js';
 
 /**
  * An object that contains the invoice attributes definition.

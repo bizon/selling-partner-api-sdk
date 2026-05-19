@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MarketplaceChannelDetails } from './marketplace-channel-details';
+import type { MarketplaceChannelDetails } from './marketplace-channel-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OtpDetails } from './otp-details';
+import type { OtpDetails } from './otp-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ReplanningDetails } from './replanning-details';
+import type { ReplanningDetails } from './replanning-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ReturnMetadata } from './return-metadata';
+import type { ReturnMetadata } from './return-metadata.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ReturnShippingInfo } from './return-shipping-info';
+import type { ReturnShippingInfo } from './return-shipping-info.js';
 
 /**
  * Information about the return item.

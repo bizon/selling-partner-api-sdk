@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetSellingPartnerMetricsResponseMetric } from './get-selling-partner-metrics-response-metric';
+import type { GetSellingPartnerMetricsResponseMetric } from './get-selling-partner-metrics-response-metric.js';
 
 /**
  * The response schema for the `getSellingPartnerMetrics` operation.

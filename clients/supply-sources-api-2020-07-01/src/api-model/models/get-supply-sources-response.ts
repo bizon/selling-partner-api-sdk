@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SupplySourceListInner } from './supply-source-list-inner';
+import type { SupplySourceListInner } from './supply-source-list-inner.js';
 
 /**
  * The paginated list of supply sources.

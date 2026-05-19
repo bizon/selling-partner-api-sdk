@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
+import type { Address } from './address.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BuyerTaxInfo } from './buyer-tax-info';
+import type { BuyerTaxInfo } from './buyer-tax-info.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MarketplaceTaxInfo } from './marketplace-tax-info';
+import type { MarketplaceTaxInfo } from './marketplace-tax-info.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PaymentInformation } from './payment-information';
+import type { PaymentInformation } from './payment-information.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentItem } from './shipment-item';
+import type { ShipmentItem } from './shipment-item.js';
 
 /**
  * The information required by a selling partner to issue a shipment invoice.

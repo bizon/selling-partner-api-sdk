@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Money } from './money';
+import type { Money } from './money.js';
 
 /**
  * The money that the seller receives from the sale of the order.

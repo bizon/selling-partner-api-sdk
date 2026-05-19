@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Currency } from './currency';
+import type { Currency } from './currency.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransactionAccount } from './transaction-account';
+import type { TransactionAccount } from './transaction-account.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransactionStatus } from './transaction-status';
+import type { TransactionStatus } from './transaction-status.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransactionType } from './transaction-type';
+import type { TransactionType } from './transaction-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransferRatePreview } from './transfer-rate-preview';
+import type { TransferRatePreview } from './transfer-rate-preview.js';
 
 /**
  * The current transaction status and related historical details.

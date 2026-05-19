@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CurbsidePickupConfiguration } from './curbside-pickup-configuration';
+import type { CurbsidePickupConfiguration } from './curbside-pickup-configuration.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Duration } from './duration';
+import type { Duration } from './duration.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InStorePickupConfiguration } from './in-store-pickup-configuration';
+import type { InStorePickupConfiguration } from './in-store-pickup-configuration.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OperationalConfiguration } from './operational-configuration';
+import type { OperationalConfiguration } from './operational-configuration.js';
 
 /**
  * The pick up channel of a supply source.

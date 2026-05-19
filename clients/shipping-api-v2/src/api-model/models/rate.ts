@@ -15,28 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AvailableValueAddedServiceGroup } from './available-value-added-service-group';
+import type { AvailableValueAddedServiceGroup } from './available-value-added-service-group.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Benefits } from './benefits';
+import type { Benefits } from './benefits.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Currency } from './currency';
+import type { Currency } from './currency.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PaymentType } from './payment-type';
+import type { PaymentType } from './payment-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Promise } from './promise';
+import type { Promise } from './promise.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RateItem } from './rate-item';
+import type { RateItem } from './rate-item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SupportedDocumentSpecification } from './supported-document-specification';
+import type { SupportedDocumentSpecification } from './supported-document-specification.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Weight } from './weight';
+import type { Weight } from './weight.js';
 
 /**
  * The details of a shipping service offering.

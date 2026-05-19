@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BrowseNodeReviewTrendMetrics } from './browse-node-review-trend-metrics';
+import type { BrowseNodeReviewTrendMetrics } from './browse-node-review-trend-metrics.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DateRange } from './date-range';
+import type { DateRange } from './date-range.js';
 
 /**
  * The browse node\'s review metrics for a certain month.

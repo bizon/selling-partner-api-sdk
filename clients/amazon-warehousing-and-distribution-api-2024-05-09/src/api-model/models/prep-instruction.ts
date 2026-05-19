@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PrepOwner } from './prep-owner';
+import type { PrepOwner } from './prep-owner.js';
 
 /**
  * Information pertaining to the preparation of inbound products.

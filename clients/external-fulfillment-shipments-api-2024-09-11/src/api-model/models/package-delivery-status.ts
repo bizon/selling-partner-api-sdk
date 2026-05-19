@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackageStatus } from './package-status';
+import type { PackageStatus } from './package-status.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackageSubStatus } from './package-sub-status';
+import type { PackageSubStatus } from './package-sub-status.js';
 
 /**
  * The delivery status of the package.

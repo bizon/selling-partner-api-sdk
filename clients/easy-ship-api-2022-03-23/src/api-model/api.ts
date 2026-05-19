@@ -14,5 +14,5 @@
 
 
 
-export * from './api/easy-ship-api';
+export * from './api/easy-ship-api.js';
 

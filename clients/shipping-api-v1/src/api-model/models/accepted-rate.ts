@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Currency } from './currency';
+import type { Currency } from './currency.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ServiceType } from './service-type';
+import type { ServiceType } from './service-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShippingPromiseSet } from './shipping-promise-set';
+import type { ShippingPromiseSet } from './shipping-promise-set.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Weight } from './weight';
+import type { Weight } from './weight.js';
 
 /**
  * The specific rate purchased for the shipment, or null if unpurchased.

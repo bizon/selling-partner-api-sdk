@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BrowseNodeReviewTrendPoint } from './browse-node-review-trend-point';
+import type { BrowseNodeReviewTrendPoint } from './browse-node-review-trend-point.js';
 
 /**
  * The trend of review topic metrics for all items in the requested browse node.

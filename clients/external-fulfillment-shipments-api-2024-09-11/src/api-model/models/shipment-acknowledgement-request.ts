@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LineItemWithReason } from './line-item-with-reason';
+import type { LineItemWithReason } from './line-item-with-reason.js';
 
 /**
  * Information about the shipment and its line items, used to confirm or reject line items.

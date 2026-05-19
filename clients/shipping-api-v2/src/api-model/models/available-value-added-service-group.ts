@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ValueAddedService } from './value-added-service';
+import type { ValueAddedService } from './value-added-service.js';
 
 /**
  * The value-added services available for purchase with a shipping service offering.

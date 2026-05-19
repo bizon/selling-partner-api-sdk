@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AssignAppointmentResourcesResponsePayload } from './assign-appointment-resources-response-payload';
+import type { AssignAppointmentResourcesResponsePayload } from './assign-appointment-resources-response-payload.js';
 
 /**
  * Response schema for the `assignAppointmentResources` operation.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Condition } from './condition';
+import type { Condition } from './condition.js';
 
 /**
  * The input required for building `LowestPricedOffers` data in the response.

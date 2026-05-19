@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MoneyType } from './money-type';
+import type { MoneyType } from './money-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Points } from './points';
+import type { Points } from './points.js';
 
 /**
  * The schema for item\'s price information, including listing price, shipping price, and Amazon Points.

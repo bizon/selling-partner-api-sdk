@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Amount } from './amount';
+import type { Amount } from './amount.js';
 
 /**
  * The composition of the charge.

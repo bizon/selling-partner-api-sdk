@@ -14,5 +14,5 @@
 
 
 
-export * from './api/application-integrations-api';
+export * from './api/application-integrations-api.js';
 

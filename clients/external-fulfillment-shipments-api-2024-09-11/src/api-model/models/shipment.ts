@@ -15,31 +15,31 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Charge } from './charge';
+import type { Charge } from './charge.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InvoiceInfo } from './invoice-info';
+import type { InvoiceInfo } from './invoice-info.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MarketplaceAttributes } from './marketplace-attributes';
+import type { MarketplaceAttributes } from './marketplace-attributes.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Package } from './package';
+import type { Package } from './package.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PartyIdentificationInfo } from './party-identification-info';
+import type { PartyIdentificationInfo } from './party-identification-info.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentInfo } from './shipment-info';
+import type { ShipmentInfo } from './shipment-info.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentLineItem } from './shipment-line-item';
+import type { ShipmentLineItem } from './shipment-line-item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentRequirements } from './shipment-requirements';
+import type { ShipmentRequirements } from './shipment-requirements.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShippingInfo } from './shipping-info';
+import type { ShippingInfo } from './shipping-info.js';
 
 /**
  * Information about a shipment.

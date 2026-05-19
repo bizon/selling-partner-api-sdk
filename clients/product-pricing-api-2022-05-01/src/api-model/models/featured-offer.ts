@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Condition } from './condition';
+import type { Condition } from './condition.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OfferIdentifier } from './offer-identifier';
+import type { OfferIdentifier } from './offer-identifier.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Price } from './price';
+import type { Price } from './price.js';
 
 /**
  * Schema for `currentFeaturedOffer` or `competingFeaturedOffer`.

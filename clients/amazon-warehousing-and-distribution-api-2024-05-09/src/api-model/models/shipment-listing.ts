@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InboundShipmentSummary } from './inbound-shipment-summary';
+import type { InboundShipmentSummary } from './inbound-shipment-summary.js';
 
 /**
  * A list of inbound shipment summaries filtered by the attributes specified in the request.

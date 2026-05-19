@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Carrier } from './carrier';
+import type { Carrier } from './carrier.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Currency } from './currency';
+import type { Currency } from './currency.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackageDocumentDetail } from './package-document-detail';
+import type { PackageDocumentDetail } from './package-document-detail.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Promise } from './promise';
+import type { Promise } from './promise.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Service } from './service';
+import type { Service } from './service.js';
 
 /**
  * The payload for the OneClickShipment API.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackingSlipList } from './packing-slip-list';
+import type { PackingSlipList } from './packing-slip-list.js';
 
 /**
  * Response payload with the list of Packing Slips.

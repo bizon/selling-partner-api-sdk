@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BuyBoxPriceType } from './buy-box-price-type';
+import type { BuyBoxPriceType } from './buy-box-price-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LowestPriceType } from './lowest-price-type';
+import type { LowestPriceType } from './lowest-price-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MoneyType } from './money-type';
+import type { MoneyType } from './money-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OfferCountType } from './offer-count-type';
+import type { OfferCountType } from './offer-count-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SalesRankType } from './sales-rank-type';
+import type { SalesRankType } from './sales-rank-type.js';
 
 /**
  * Contains price information about the product, including the LowestPrices and BuyBoxPrices, the ListPrice, the SuggestedLowerPricePlusShipping, and NumberOfOffers and NumberOfBuyBoxEligibleOffers.

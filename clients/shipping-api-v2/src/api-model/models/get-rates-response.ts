@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetRatesResult } from './get-rates-result';
+import type { GetRatesResult } from './get-rates-result.js';
 
 /**
  * The response schema for the getRates operation.

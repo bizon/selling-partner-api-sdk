@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Weight } from './weight';
+import type { Weight } from './weight.js';
 
 /**
  * Item information for a shipment in a fulfillment order preview.

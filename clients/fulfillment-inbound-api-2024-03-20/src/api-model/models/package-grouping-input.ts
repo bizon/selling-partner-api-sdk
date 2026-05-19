@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BoxInput } from './box-input';
+import type { BoxInput } from './box-input.js';
 
 /**
  * Packing information for the inbound plan.

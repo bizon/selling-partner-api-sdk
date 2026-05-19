@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TimeOfDay } from './time-of-day';
+import type { TimeOfDay } from './time-of-day.js';
 
 /**
  * The hours in which the access point shall remain operational

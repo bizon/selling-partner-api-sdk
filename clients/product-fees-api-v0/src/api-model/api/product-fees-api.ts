@@ -13,24 +13,24 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { FeesEstimateByIdRequest } from '../models';
+import type { FeesEstimateByIdRequest } from '../models/index.js';
 // @ts-ignore
-import type { FeesEstimateResult } from '../models';
+import type { FeesEstimateResult } from '../models/index.js';
 // @ts-ignore
-import type { GetMyFeesEstimateRequest } from '../models';
+import type { GetMyFeesEstimateRequest } from '../models/index.js';
 // @ts-ignore
-import type { GetMyFeesEstimateResponse } from '../models';
+import type { GetMyFeesEstimateResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetMyFeesEstimatesErrorList } from '../models';
+import type { GetMyFeesEstimatesErrorList } from '../models/index.js';
 /**
  * ProductFeesApi - axios parameter creator
  */

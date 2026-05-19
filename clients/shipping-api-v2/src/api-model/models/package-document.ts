@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DocumentFormat } from './document-format';
+import type { DocumentFormat } from './document-format.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DocumentType } from './document-type';
+import type { DocumentType } from './document-type.js';
 
 /**
  * A document related to a package.

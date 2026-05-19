@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CarrierCodeType } from './carrier-code-type';
+import type { CarrierCodeType } from './carrier-code-type.js';
 
 /**
  * Identifies the carrier that will deliver the shipment.

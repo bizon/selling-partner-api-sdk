@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PartyIdentification } from './party-identification';
+import type { PartyIdentification } from './party-identification.js';
 
 /**
  * Vendor Details as part of Label response.

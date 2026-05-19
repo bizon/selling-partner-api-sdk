@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AssignmentType } from './assignment-type';
+import type { AssignmentType } from './assignment-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ExpiryDate } from './expiry-date';
+import type { ExpiryDate } from './expiry-date.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PaymentMethodType } from './payment-method-type';
+import type { PaymentMethodType } from './payment-method-type.js';
 
 /**
  * The details of a payment method.

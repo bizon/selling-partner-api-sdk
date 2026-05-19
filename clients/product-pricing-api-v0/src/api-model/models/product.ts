@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CompetitivePricingType } from './competitive-pricing-type';
+import type { CompetitivePricingType } from './competitive-pricing-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { IdentifierType } from './identifier-type';
+import type { IdentifierType } from './identifier-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OfferType } from './offer-type';
+import type { OfferType } from './offer-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SalesRankType } from './sales-rank-type';
+import type { SalesRankType } from './sales-rank-type.js';
 
 /**
  * An item.

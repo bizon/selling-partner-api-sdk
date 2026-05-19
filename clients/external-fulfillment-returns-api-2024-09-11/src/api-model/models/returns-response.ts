@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Return } from './return';
+import type { Return } from './return.js';
 
 /**
  * The response to the `listReturns` operation.

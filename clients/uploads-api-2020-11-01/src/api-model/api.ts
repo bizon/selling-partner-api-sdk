@@ -14,5 +14,5 @@
 
 
 
-export * from './api/uploads-api';
+export * from './api/uploads-api.js';
 

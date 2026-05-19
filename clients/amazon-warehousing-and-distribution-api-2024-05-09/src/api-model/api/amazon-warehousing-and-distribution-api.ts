@@ -13,44 +13,44 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { ErrorList } from '../models';
+import type { ErrorList } from '../models/index.js';
 // @ts-ignore
-import type { InboundEligibility } from '../models';
+import type { InboundEligibility } from '../models/index.js';
 // @ts-ignore
-import type { InboundOrder } from '../models';
+import type { InboundOrder } from '../models/index.js';
 // @ts-ignore
-import type { InboundOrderCreationData } from '../models';
+import type { InboundOrderCreationData } from '../models/index.js';
 // @ts-ignore
-import type { InboundOrderReference } from '../models';
+import type { InboundOrderReference } from '../models/index.js';
 // @ts-ignore
-import type { InboundPackages } from '../models';
+import type { InboundPackages } from '../models/index.js';
 // @ts-ignore
-import type { InboundShipment } from '../models';
+import type { InboundShipment } from '../models/index.js';
 // @ts-ignore
-import type { InventoryListing } from '../models';
+import type { InventoryListing } from '../models/index.js';
 // @ts-ignore
-import type { ReplenishmentOrder } from '../models';
+import type { ReplenishmentOrder } from '../models/index.js';
 // @ts-ignore
-import type { ReplenishmentOrderCreationData } from '../models';
+import type { ReplenishmentOrderCreationData } from '../models/index.js';
 // @ts-ignore
-import type { ReplenishmentOrderListing } from '../models';
+import type { ReplenishmentOrderListing } from '../models/index.js';
 // @ts-ignore
-import type { ReplenishmentOrderReference } from '../models';
+import type { ReplenishmentOrderReference } from '../models/index.js';
 // @ts-ignore
-import type { ShipmentLabels } from '../models';
+import type { ShipmentLabels } from '../models/index.js';
 // @ts-ignore
-import type { ShipmentListing } from '../models';
+import type { ShipmentListing } from '../models/index.js';
 // @ts-ignore
-import type { TransportationDetails } from '../models';
+import type { TransportationDetails } from '../models/index.js';
 /**
  * AmazonWarehousingAndDistributionApi - axios parameter creator
  */

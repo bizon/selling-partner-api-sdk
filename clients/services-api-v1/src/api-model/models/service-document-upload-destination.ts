@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EncryptionDetails } from './encryption-details';
+import type { EncryptionDetails } from './encryption-details.js';
 
 /**
  * Information about an upload destination.

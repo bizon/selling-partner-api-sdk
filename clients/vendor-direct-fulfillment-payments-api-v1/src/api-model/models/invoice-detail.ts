@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AdditionalDetails } from './additional-details';
+import type { AdditionalDetails } from './additional-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ChargeDetails } from './charge-details';
+import type { ChargeDetails } from './charge-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InvoiceItem } from './invoice-item';
+import type { InvoiceItem } from './invoice-item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Money } from './money';
+import type { Money } from './money.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PartyIdentification } from './party-identification';
+import type { PartyIdentification } from './party-identification.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TaxDetail } from './tax-detail';
+import type { TaxDetail } from './tax-detail.js';
 
 /**
  * Represents the details of an invoice, including invoice number, date, parties involved, payment terms, totals, taxes, charges, and line items.

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetInventorySummariesResult } from './get-inventory-summaries-result';
+import type { GetInventorySummariesResult } from './get-inventory-summaries-result.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Pagination } from './pagination';
+import type { Pagination } from './pagination.js';
 
 /**
  * The Response schema.

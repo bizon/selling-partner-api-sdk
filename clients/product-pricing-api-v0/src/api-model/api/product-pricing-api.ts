@@ -13,28 +13,28 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { Errors } from '../models';
+import type { Errors } from '../models/index.js';
 // @ts-ignore
-import type { GetItemOffersBatchRequest } from '../models';
+import type { GetItemOffersBatchRequest } from '../models/index.js';
 // @ts-ignore
-import type { GetItemOffersBatchResponse } from '../models';
+import type { GetItemOffersBatchResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetListingOffersBatchRequest } from '../models';
+import type { GetListingOffersBatchRequest } from '../models/index.js';
 // @ts-ignore
-import type { GetListingOffersBatchResponse } from '../models';
+import type { GetListingOffersBatchResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetOffersResponse } from '../models';
+import type { GetOffersResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetPricingResponse } from '../models';
+import type { GetPricingResponse } from '../models/index.js';
 /**
  * ProductPricingApi - axios parameter creator
  */

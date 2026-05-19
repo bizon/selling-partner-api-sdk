@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
+import type { Address } from './address.js';
 
 /**
  * Destination details of an inbound order based on the assigned region and DC for the order.

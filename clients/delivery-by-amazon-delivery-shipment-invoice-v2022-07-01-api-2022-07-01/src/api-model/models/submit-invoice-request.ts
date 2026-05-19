@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InvoiceType } from './invoice-type';
+import type { InvoiceType } from './invoice-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ProgramType } from './program-type';
+import type { ProgramType } from './program-type.js';
 
 /**
  * The request schema for the `submitInvoice` operation.

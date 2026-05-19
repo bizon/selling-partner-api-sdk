@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetDeliveryOffersProduct } from './get-delivery-offers-product';
+import type { GetDeliveryOffersProduct } from './get-delivery-offers-product.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetDeliveryOffersTerms } from './get-delivery-offers-terms';
+import type { GetDeliveryOffersTerms } from './get-delivery-offers-terms.js';
 
 /**
  * The request body schema for the `getDeliveryOffers` operation.

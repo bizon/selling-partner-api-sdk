@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { StandardImageCaptionBlock } from './standard-image-caption-block';
+import type { StandardImageCaptionBlock } from './standard-image-caption-block.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { StandardImageTextBlock } from './standard-image-text-block';
+import type { StandardImageTextBlock } from './standard-image-text-block.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { StandardTextBlock } from './standard-text-block';
+import type { StandardTextBlock } from './standard-text-block.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { StandardTextListBlock } from './standard-text-list-block';
+import type { StandardTextListBlock } from './standard-text-list-block.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TextComponent } from './text-component';
+import type { TextComponent } from './text-component.js';
 
 /**
  * Two images, two paragraphs, and two bulleted lists. One image is smaller and displayed in the sidebar.

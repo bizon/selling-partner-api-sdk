@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackageDocument } from './package-document';
+import type { PackageDocument } from './package-document.js';
 
 /**
  * The post-purchase details of a package that will be shipped using a shipping service.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PrepDetails } from './prep-details';
+import type { PrepDetails } from './prep-details.js';
 
 /**
  * Item information for an inbound shipment. Submitted with a call to the createInboundShipment or updateInboundShipment operation.

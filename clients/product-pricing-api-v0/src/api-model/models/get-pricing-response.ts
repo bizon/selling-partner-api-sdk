@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Price } from './price';
+import type { Price } from './price.js';
 
 /**
  * The response schema for the `getPricing` and `getCompetitivePricing` operations.

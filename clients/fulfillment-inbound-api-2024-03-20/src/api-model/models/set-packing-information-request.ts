@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackageGroupingInput } from './package-grouping-input';
+import type { PackageGroupingInput } from './package-grouping-input.js';
 
 /**
  * The `setPackingInformation` request.

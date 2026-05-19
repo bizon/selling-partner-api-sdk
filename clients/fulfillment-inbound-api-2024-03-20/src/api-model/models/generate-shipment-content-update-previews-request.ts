@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BoxUpdateInput } from './box-update-input';
+import type { BoxUpdateInput } from './box-update-input.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemInput } from './item-input';
+import type { ItemInput } from './item-input.js';
 
 /**
  * The `GenerateShipmentContentUpdatePreviews` request.

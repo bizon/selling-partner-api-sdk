@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RequestedDocumentSpecification } from './requested-document-specification';
+import type { RequestedDocumentSpecification } from './requested-document-specification.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RequestedValueAddedService } from './requested-value-added-service';
+import type { RequestedValueAddedService } from './requested-value-added-service.js';
 
 /**
  * The request schema for the purchaseShipment operation.

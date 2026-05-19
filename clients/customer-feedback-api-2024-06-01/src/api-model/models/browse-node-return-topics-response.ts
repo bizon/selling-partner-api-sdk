@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BrowseNodeReturnTopics } from './browse-node-return-topics';
+import type { BrowseNodeReturnTopics } from './browse-node-return-topics.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DateRange } from './date-range';
+import type { DateRange } from './date-range.js';
 
 /**
  * The response for the `getBrowseNodeReturnTopics` operation.

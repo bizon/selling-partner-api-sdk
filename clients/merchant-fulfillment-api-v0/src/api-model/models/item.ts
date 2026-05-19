@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AdditionalSellerInputs } from './additional-seller-inputs';
+import type { AdditionalSellerInputs } from './additional-seller-inputs.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DangerousGoodsDetails } from './dangerous-goods-details';
+import type { DangerousGoodsDetails } from './dangerous-goods-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LiquidVolume } from './liquid-volume';
+import type { LiquidVolume } from './liquid-volume.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Weight } from './weight';
+import type { Weight } from './weight.js';
 
 /**
  * An Amazon order item identifier and a quantity.

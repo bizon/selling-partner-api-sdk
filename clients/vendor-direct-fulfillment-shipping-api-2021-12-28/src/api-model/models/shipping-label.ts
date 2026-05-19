@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LabelData } from './label-data';
+import type { LabelData } from './label-data.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PartyIdentification } from './party-identification';
+import type { PartyIdentification } from './party-identification.js';
 
 /**
  * Shipping label information for an order, including the purchase order number, selling party, ship from party, label format, and package details.

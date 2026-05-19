@@ -14,5 +14,5 @@
 
 
 
-export * from './api/merchant-fulfillment-api';
+export * from './api/merchant-fulfillment-api.js';
 

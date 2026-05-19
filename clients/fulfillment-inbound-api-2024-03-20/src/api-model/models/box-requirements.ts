@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { WeightRange } from './weight-range';
+import type { WeightRange } from './weight-range.js';
 
 /**
  * The requirements for a box in the packing option.

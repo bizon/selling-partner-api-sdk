@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { UnmanifestedCarrierInformation } from './unmanifested-carrier-information';
+import type { UnmanifestedCarrierInformation } from './unmanifested-carrier-information.js';
 
 /**
  * The Response  for the GetUnmanifestedShipmentsResponse operation.

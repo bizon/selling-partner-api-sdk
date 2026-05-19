@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AppointmentSlot } from './appointment-slot';
+import type { AppointmentSlot } from './appointment-slot.js';
 
 /**
  * The self ship appointment time slots availability and an expiration date for which the slots can be scheduled.

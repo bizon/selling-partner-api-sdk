@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetSchemaResponse } from './get-schema-response';
+import type { GetSchemaResponse } from './get-schema-response.js';
 
 /**
  * The embedded response associated with the messaging action.

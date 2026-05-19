@@ -14,5 +14,5 @@
 
 
 
-export * from './api/feeds-api';
+export * from './api/feeds-api.js';
 

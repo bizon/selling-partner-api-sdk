@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Pagination } from './pagination';
+import type { Pagination } from './pagination.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Shipment } from './shipment';
+import type { Shipment } from './shipment.js';
 
 /**
  * The response of the `getShipments` operation.

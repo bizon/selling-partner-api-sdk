@@ -15,31 +15,31 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AssociatedOrderItem } from './associated-order-item';
+import type { AssociatedOrderItem } from './associated-order-item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemCancellation } from './item-cancellation';
+import type { ItemCancellation } from './item-cancellation.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemExpense } from './item-expense';
+import type { ItemExpense } from './item-expense.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemFulfillment } from './item-fulfillment';
+import type { ItemFulfillment } from './item-fulfillment.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemProceeds } from './item-proceeds';
+import type { ItemProceeds } from './item-proceeds.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemProduct } from './item-product';
+import type { ItemProduct } from './item-product.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemPromotion } from './item-promotion';
+import type { ItemPromotion } from './item-promotion.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemTax } from './item-tax';
+import type { ItemTax } from './item-tax.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Measurement } from './measurement';
+import type { Measurement } from './measurement.js';
 
 /**
  * Information about a single product within an order.

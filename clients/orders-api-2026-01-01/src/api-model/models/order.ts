@@ -15,37 +15,37 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Alias } from './alias';
+import type { Alias } from './alias.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AssociatedOrder } from './associated-order';
+import type { AssociatedOrder } from './associated-order.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Buyer } from './buyer';
+import type { Buyer } from './buyer.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderFulfillment } from './order-fulfillment';
+import type { OrderFulfillment } from './order-fulfillment.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderItem } from './order-item';
+import type { OrderItem } from './order-item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderPackage } from './order-package';
+import type { OrderPackage } from './order-package.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderPayment } from './order-payment';
+import type { OrderPayment } from './order-payment.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderProceeds } from './order-proceeds';
+import type { OrderProceeds } from './order-proceeds.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderTax } from './order-tax';
+import type { OrderTax } from './order-tax.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Recipient } from './recipient';
+import type { Recipient } from './recipient.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SalesChannel } from './sales-channel';
+import type { SalesChannel } from './sales-channel.js';
 
 /**
  * Comprehensive information about a customer order.

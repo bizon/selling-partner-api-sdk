@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MarketplaceChannel } from './marketplace-channel';
+import type { MarketplaceChannel } from './marketplace-channel.js';
 
 /**
  * Marketplace channel-specific attributes for the return. These attributes are not mandatory and each channel can provide them differently.

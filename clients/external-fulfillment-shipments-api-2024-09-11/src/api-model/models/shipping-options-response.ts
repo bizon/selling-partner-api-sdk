@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShippingOptions } from './shipping-options';
+import type { ShippingOptions } from './shipping-options.js';
 
 /**
  * The response to the `retrieveShippingOptions` operation. The response contains shipping options on a per-package basis from which the seller has to select one shipping option while they retrieve the shipping label. If the particular marketplace channel does not support scheduled shipping options, then this response will be empty.

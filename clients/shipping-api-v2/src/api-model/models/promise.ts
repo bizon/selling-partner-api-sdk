@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TimeWindow } from './time-window';
+import type { TimeWindow } from './time-window.js';
 
 /**
  * The time windows promised for pickup and delivery events.

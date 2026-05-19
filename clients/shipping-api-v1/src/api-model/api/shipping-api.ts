@@ -13,42 +13,42 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { CancelShipmentResponse } from '../models';
+import type { CancelShipmentResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateShipmentRequest } from '../models';
+import type { CreateShipmentRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateShipmentResponse } from '../models';
+import type { CreateShipmentResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetAccountResponse } from '../models';
+import type { GetAccountResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetRatesRequest } from '../models';
+import type { GetRatesRequest } from '../models/index.js';
 // @ts-ignore
-import type { GetRatesResponse } from '../models';
+import type { GetRatesResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetShipmentResponse } from '../models';
+import type { GetShipmentResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetTrackingInformationResponse } from '../models';
+import type { GetTrackingInformationResponse } from '../models/index.js';
 // @ts-ignore
-import type { PurchaseLabelsRequest } from '../models';
+import type { PurchaseLabelsRequest } from '../models/index.js';
 // @ts-ignore
-import type { PurchaseLabelsResponse } from '../models';
+import type { PurchaseLabelsResponse } from '../models/index.js';
 // @ts-ignore
-import type { PurchaseShipmentRequest } from '../models';
+import type { PurchaseShipmentRequest } from '../models/index.js';
 // @ts-ignore
-import type { PurchaseShipmentResponse } from '../models';
+import type { PurchaseShipmentResponse } from '../models/index.js';
 // @ts-ignore
-import type { RetrieveShippingLabelRequest } from '../models';
+import type { RetrieveShippingLabelRequest } from '../models/index.js';
 // @ts-ignore
-import type { RetrieveShippingLabelResponse } from '../models';
+import type { RetrieveShippingLabelResponse } from '../models/index.js';
 /**
  * ShippingApi - axios parameter creator
  */

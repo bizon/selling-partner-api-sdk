@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ContentDocument } from './content-document';
+import type { ContentDocument } from './content-document.js';
 
 export interface PostContentDocumentRequest {
     'contentDocument': ContentDocument;

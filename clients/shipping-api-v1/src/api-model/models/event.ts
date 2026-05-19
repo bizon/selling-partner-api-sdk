@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Location } from './location';
+import type { Location } from './location.js';
 
 /**
  * An event of a shipment

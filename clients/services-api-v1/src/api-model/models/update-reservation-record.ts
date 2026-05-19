@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Reservation } from './reservation';
+import type { Reservation } from './reservation.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Warning } from './warning';
+import type { Warning } from './warning.js';
 
 /**
  * `UpdateReservationRecord` entity contains the `Reservation` if there is an error/warning while performing the requested operation on it, otherwise it will contain the new `reservationId`.

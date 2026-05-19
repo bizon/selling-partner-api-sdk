@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ClientReferenceDetail } from './client-reference-detail';
+import type { ClientReferenceDetail } from './client-reference-detail.js';
 
 /**
  * The request schema for the GetUnmanifestedShipmentsRequest operation.

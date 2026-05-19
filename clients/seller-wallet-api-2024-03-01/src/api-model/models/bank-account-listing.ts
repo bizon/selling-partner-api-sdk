@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BankAccount } from './bank-account';
+import type { BankAccount } from './bank-account.js';
 
 /**
  * A list of bank accounts.

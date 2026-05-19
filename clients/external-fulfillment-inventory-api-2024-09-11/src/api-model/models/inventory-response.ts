@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { HttpStatusLine } from './http-status-line';
+import type { HttpStatusLine } from './http-status-line.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InventoryResponseBody } from './inventory-response-body';
+import type { InventoryResponseBody } from './inventory-response-body.js';
 
 /**
  * A response to an individual inventory request.

@@ -14,5 +14,5 @@
 
 
 
-export * from './api/external-fulfillment-inventory-api';
+export * from './api/external-fulfillment-inventory-api.js';
 

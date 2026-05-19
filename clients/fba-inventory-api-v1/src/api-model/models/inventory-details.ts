@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ResearchingQuantity } from './researching-quantity';
+import type { ResearchingQuantity } from './researching-quantity.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ReservedQuantity } from './reserved-quantity';
+import type { ReservedQuantity } from './reserved-quantity.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { UnfulfillableQuantity } from './unfulfillable-quantity';
+import type { UnfulfillableQuantity } from './unfulfillable-quantity.js';
 
 /**
  * Summarized inventory details. This object will not appear if the details parameter in the request is false.

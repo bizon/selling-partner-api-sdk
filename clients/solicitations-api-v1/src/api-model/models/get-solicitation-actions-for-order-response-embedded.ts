@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetSolicitationActionResponse } from './get-solicitation-action-response';
+import type { GetSolicitationActionResponse } from './get-solicitation-action-response.js';
 
 export interface GetSolicitationActionsForOrderResponseEmbedded {
     'actions': Array<GetSolicitationActionResponse>;

@@ -14,5 +14,5 @@
 
 
 
-export * from './api/shipping-api';
+export * from './api/shipping-api.js';
 

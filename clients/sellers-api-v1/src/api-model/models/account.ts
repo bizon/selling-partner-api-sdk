@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Business } from './business';
+import type { Business } from './business.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MarketplaceParticipation } from './marketplace-participation';
+import type { MarketplaceParticipation } from './marketplace-participation.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PrimaryContact } from './primary-contact';
+import type { PrimaryContact } from './primary-contact.js';
 
 /**
  * The response schema for the `getAccount` operation.

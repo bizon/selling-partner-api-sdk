@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DirectPurchaseResult } from './direct-purchase-result';
+import type { DirectPurchaseResult } from './direct-purchase-result.js';
 
 /**
  * The response schema for the directPurchaseShipment operation.

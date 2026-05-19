@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Account } from './account';
+import type { Account } from './account.js';
 
 /**
  * The response schema for the `getAccount` operation.

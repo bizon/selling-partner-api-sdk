@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderRegulatedInfo } from './order-regulated-info';
+import type { OrderRegulatedInfo } from './order-regulated-info.js';
 
 /**
  * The response schema for the `getOrderRegulatedInfo` operation.

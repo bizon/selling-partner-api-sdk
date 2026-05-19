@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AplusResponse } from './aplus-response';
+import type { AplusResponse } from './aplus-response.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ContentRecord } from './content-record';
+import type { ContentRecord } from './content-record.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetContentDocumentResponseAllOf } from './get-content-document-response-all-of';
+import type { GetContentDocumentResponseAllOf } from './get-content-document-response-all-of.js';
 
 /**
  * @type GetContentDocumentResponse

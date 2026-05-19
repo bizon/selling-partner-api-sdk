@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AggregationTimePeriod } from './aggregation-time-period';
+import type { AggregationTimePeriod } from './aggregation-time-period.js';
 
 /**
  * A container that holds all of the necessary properties to configure the aggregation of notifications.

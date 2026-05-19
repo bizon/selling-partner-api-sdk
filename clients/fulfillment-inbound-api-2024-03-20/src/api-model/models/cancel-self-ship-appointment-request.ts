@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ReasonComment } from './reason-comment';
+import type { ReasonComment } from './reason-comment.js';
 
 /**
  * The `cancelSelfShipAppointment` request.

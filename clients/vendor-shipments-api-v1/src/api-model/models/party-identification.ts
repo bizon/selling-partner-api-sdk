@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
+import type { Address } from './address.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TaxRegistrationDetails } from './tax-registration-details';
+import type { TaxRegistrationDetails } from './tax-registration-details.js';
 
 /**
  * Name/Address and tax details of the party.

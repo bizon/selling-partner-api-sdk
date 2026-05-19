@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LinkObject } from './link-object';
+import type { LinkObject } from './link-object.js';
 
 export interface GetSolicitationActionsForOrderResponseLinks {
     'self': LinkObject;

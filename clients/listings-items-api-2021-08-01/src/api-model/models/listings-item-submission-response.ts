@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Issue } from './issue';
+import type { Issue } from './issue.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemIdentifiersByMarketplace } from './item-identifiers-by-marketplace';
+import type { ItemIdentifiersByMarketplace } from './item-identifiers-by-marketplace.js';
 
 /**
  * Response containing the results of a submission to the Selling Partner API for Listings Items.

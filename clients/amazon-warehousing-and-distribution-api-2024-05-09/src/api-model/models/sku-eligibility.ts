@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DistributionPackageQuantity } from './distribution-package-quantity';
+import type { DistributionPackageQuantity } from './distribution-package-quantity.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InboundEligibilityStatus } from './inbound-eligibility-status';
+import type { InboundEligibilityStatus } from './inbound-eligibility-status.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SkuIneligibilityReason } from './sku-ineligibility-reason';
+import type { SkuIneligibilityReason } from './sku-ineligibility-reason.js';
 
 /**
  * Represents eligibility of one SKU.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetSchemaResponseLinks } from './get-schema-response-links';
+import type { GetSchemaResponseLinks } from './get-schema-response-links.js';
 
 export interface GetSchemaResponse {
     '_links'?: GetSchemaResponseLinks;

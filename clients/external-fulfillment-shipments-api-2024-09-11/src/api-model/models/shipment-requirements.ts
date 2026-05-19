@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InvoiceRequirement } from './invoice-requirement';
+import type { InvoiceRequirement } from './invoice-requirement.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackingSlipRequirement } from './packing-slip-requirement';
+import type { PackingSlipRequirement } from './packing-slip-requirement.js';
 
 /**
  * Whether specific capabilities are enabled or required for the shipment.

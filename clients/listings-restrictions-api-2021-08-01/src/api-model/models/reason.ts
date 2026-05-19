@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Link } from './link';
+import type { Link } from './link.js';
 
 /**
  * A reason for the restriction, including path forward links that may allow Selling Partners to remove the restriction, if available.

@@ -15,37 +15,37 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AmazonPrograms } from './amazon-programs';
+import type { AmazonPrograms } from './amazon-programs.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AssociatedItem } from './associated-item';
+import type { AssociatedItem } from './associated-item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BuyerRequestedCancel } from './buyer-requested-cancel';
+import type { BuyerRequestedCancel } from './buyer-requested-cancel.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemBuyerInfo } from './item-buyer-info';
+import type { ItemBuyerInfo } from './item-buyer-info.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Measurement } from './measurement';
+import type { Measurement } from './measurement.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Money } from './money';
+import type { Money } from './money.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PointsGrantedDetail } from './points-granted-detail';
+import type { PointsGrantedDetail } from './points-granted-detail.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ProductInfoDetail } from './product-info-detail';
+import type { ProductInfoDetail } from './product-info-detail.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShippingConstraints } from './shipping-constraints';
+import type { ShippingConstraints } from './shipping-constraints.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SubstitutionPreferences } from './substitution-preferences';
+import type { SubstitutionPreferences } from './substitution-preferences.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TaxCollection } from './tax-collection';
+import type { TaxCollection } from './tax-collection.js';
 
 /**
  * A single order item.

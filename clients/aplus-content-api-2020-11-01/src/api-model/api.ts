@@ -14,5 +14,5 @@
 
 
 
-export * from './api/aplus-content-api';
+export * from './api/aplus-content-api.js';
 

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Measurement } from './measurement';
+import type { Measurement } from './measurement.js';
 
 /**
  * Alternative product that can be substituted for an original order item when it becomes unavailable during fulfillment.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InventoryResponse } from './inventory-response';
+import type { InventoryResponse } from './inventory-response.js';
 
 /**
  * The response of the `batchInventory` operation.

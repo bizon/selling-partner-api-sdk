@@ -1,3 +1,3 @@
-export * from './create-upload-destination-response';
-export * from './model-error';
-export * from './upload-destination';
+export * from './create-upload-destination-response.js';
+export * from './model-error.js';
+export * from './upload-destination.js';

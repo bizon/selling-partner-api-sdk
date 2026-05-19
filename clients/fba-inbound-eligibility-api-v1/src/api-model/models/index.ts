@@ -1,3 +1,3 @@
-export * from './get-item-eligibility-preview-response';
-export * from './item-eligibility-preview';
-export * from './model-error';
+export * from './get-item-eligibility-preview-response.js';
+export * from './item-eligibility-preview.js';
+export * from './model-error.js';

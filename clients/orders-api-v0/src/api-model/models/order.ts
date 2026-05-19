@@ -15,34 +15,34 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
+import type { Address } from './address.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AutomatedShippingSettings } from './automated-shipping-settings';
+import type { AutomatedShippingSettings } from './automated-shipping-settings.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BuyerInfo } from './buyer-info';
+import type { BuyerInfo } from './buyer-info.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BuyerTaxInformation } from './buyer-tax-information';
+import type { BuyerTaxInformation } from './buyer-tax-information.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EasyShipShipmentStatus } from './easy-ship-shipment-status';
+import type { EasyShipShipmentStatus } from './easy-ship-shipment-status.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ElectronicInvoiceStatus } from './electronic-invoice-status';
+import type { ElectronicInvoiceStatus } from './electronic-invoice-status.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FulfillmentInstruction } from './fulfillment-instruction';
+import type { FulfillmentInstruction } from './fulfillment-instruction.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MarketplaceTaxInfo } from './marketplace-tax-info';
+import type { MarketplaceTaxInfo } from './marketplace-tax-info.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Money } from './money';
+import type { Money } from './money.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PaymentExecutionDetailItem } from './payment-execution-detail-item';
+import type { PaymentExecutionDetailItem } from './payment-execution-detail-item.js';
 
 /**
  * Order information.

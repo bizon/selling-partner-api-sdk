@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { VariablePrecisionAddress } from './variable-precision-address';
+import type { VariablePrecisionAddress } from './variable-precision-address.js';
 
 /**
  * The destination for the delivery offer.

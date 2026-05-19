@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransactionIdentifier } from './transaction-identifier';
+import type { TransactionIdentifier } from './transaction-identifier.js';
 
 /**
  * Provides detailed information about an invoice.

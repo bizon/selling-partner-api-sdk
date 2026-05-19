@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OutboundCapability } from './outbound-capability';
+import type { OutboundCapability } from './outbound-capability.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ServicesCapability } from './services-capability';
+import type { ServicesCapability } from './services-capability.js';
 
 /**
  * The capabilities of a supply source.

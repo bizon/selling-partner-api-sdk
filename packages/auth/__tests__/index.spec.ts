@@ -1,7 +1,11 @@
 import {describe, expect, it} from '@jest/globals'
 import nock from 'nock'
 
-import {AuthorizationScope, SellingPartnerApiAuth, SellingPartnerApiAuthError} from '../src'
+import {
+  AuthorizationScope,
+  SellingPartnerApiAuth,
+  SellingPartnerApiAuthError,
+} from '../src/index.js'
 
 describe('src/index', () => {
   describe('constructor', () => {

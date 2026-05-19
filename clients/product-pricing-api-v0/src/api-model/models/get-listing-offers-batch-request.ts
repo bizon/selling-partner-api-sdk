@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ListingOffersRequest } from './listing-offers-request';
+import type { ListingOffersRequest } from './listing-offers-request.js';
 
 /**
  * The request associated with the `getListingOffersBatch` API call.

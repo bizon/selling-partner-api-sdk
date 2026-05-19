@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetMyFeesEstimateResult } from './get-my-fees-estimate-result';
+import type { GetMyFeesEstimateResult } from './get-my-fees-estimate-result.js';
 
 /**
  * The response object for the GetMyFeesEstimate operation.

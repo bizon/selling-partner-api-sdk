@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ReplenishmentOrder } from './replenishment-order';
+import type { ReplenishmentOrder } from './replenishment-order.js';
 
 /**
  * A list of paginated replenishment orders filtered by the attributes passed in the request.

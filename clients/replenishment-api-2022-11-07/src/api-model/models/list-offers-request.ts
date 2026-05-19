@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ListOffersRequestFilters } from './list-offers-request-filters';
+import type { ListOffersRequestFilters } from './list-offers-request-filters.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ListOffersRequestPagination } from './list-offers-request-pagination';
+import type { ListOffersRequestPagination } from './list-offers-request-pagination.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ListOffersRequestSort } from './list-offers-request-sort';
+import type { ListOffersRequestSort } from './list-offers-request-sort.js';
 
 /**
  * The request body for the `listOffers` operation.

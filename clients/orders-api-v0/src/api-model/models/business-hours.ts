@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OpenInterval } from './open-interval';
+import type { OpenInterval } from './open-interval.js';
 
 /**
  * Business days and hours when the destination is open for deliveries.

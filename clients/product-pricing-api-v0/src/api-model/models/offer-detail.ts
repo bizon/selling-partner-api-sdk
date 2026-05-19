@@ -15,28 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DetailedShippingTimeType } from './detailed-shipping-time-type';
+import type { DetailedShippingTimeType } from './detailed-shipping-time-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MoneyType } from './money-type';
+import type { MoneyType } from './money-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OfferCustomerType } from './offer-customer-type';
+import type { OfferCustomerType } from './offer-customer-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Points } from './points';
+import type { Points } from './points.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PrimeInformationType } from './prime-information-type';
+import type { PrimeInformationType } from './prime-information-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { QuantityDiscountPriceType } from './quantity-discount-price-type';
+import type { QuantityDiscountPriceType } from './quantity-discount-price-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SellerFeedbackType } from './seller-feedback-type';
+import type { SellerFeedbackType } from './seller-feedback-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipsFromType } from './ships-from-type';
+import type { ShipsFromType } from './ships-from-type.js';
 
 /**
  * Schema for an individual offer. Object in `OfferDetailList`.

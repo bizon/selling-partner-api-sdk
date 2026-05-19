@@ -13,38 +13,38 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { ErrorList } from '../models';
+import type { ErrorList } from '../models/index.js';
 // @ts-ignore
-import type { GetContentDocumentResponse } from '../models';
+import type { GetContentDocumentResponse } from '../models/index.js';
 // @ts-ignore
-import type { ListContentDocumentAsinRelationsResponse } from '../models';
+import type { ListContentDocumentAsinRelationsResponse } from '../models/index.js';
 // @ts-ignore
-import type { PostContentDocumentApprovalSubmissionResponse } from '../models';
+import type { PostContentDocumentApprovalSubmissionResponse } from '../models/index.js';
 // @ts-ignore
-import type { PostContentDocumentAsinRelationsRequest } from '../models';
+import type { PostContentDocumentAsinRelationsRequest } from '../models/index.js';
 // @ts-ignore
-import type { PostContentDocumentAsinRelationsResponse } from '../models';
+import type { PostContentDocumentAsinRelationsResponse } from '../models/index.js';
 // @ts-ignore
-import type { PostContentDocumentRequest } from '../models';
+import type { PostContentDocumentRequest } from '../models/index.js';
 // @ts-ignore
-import type { PostContentDocumentResponse } from '../models';
+import type { PostContentDocumentResponse } from '../models/index.js';
 // @ts-ignore
-import type { PostContentDocumentSuspendSubmissionResponse } from '../models';
+import type { PostContentDocumentSuspendSubmissionResponse } from '../models/index.js';
 // @ts-ignore
-import type { SearchContentDocumentsResponse } from '../models';
+import type { SearchContentDocumentsResponse } from '../models/index.js';
 // @ts-ignore
-import type { SearchContentPublishRecordsResponse } from '../models';
+import type { SearchContentPublishRecordsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ValidateContentDocumentAsinRelationsResponse } from '../models';
+import type { ValidateContentDocumentAsinRelationsResponse } from '../models/index.js';
 /**
  * AplusContentApi - axios parameter creator
  */

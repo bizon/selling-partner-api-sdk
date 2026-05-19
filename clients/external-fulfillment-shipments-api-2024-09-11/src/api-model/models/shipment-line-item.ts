@@ -15,25 +15,25 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Amount } from './amount';
+import type { Amount } from './amount.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Cancellation } from './cancellation';
+import type { Cancellation } from './cancellation.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Charge } from './charge';
+import type { Charge } from './charge.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ComplianceAttributes } from './compliance-attributes';
+import type { ComplianceAttributes } from './compliance-attributes.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CustomAttribute } from './custom-attribute';
+import type { CustomAttribute } from './custom-attribute.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GiftAttributes } from './gift-attributes';
+import type { GiftAttributes } from './gift-attributes.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PieceType } from './piece-type';
+import type { PieceType } from './piece-type.js';
 
 /**
  * Information about a line item in a shipment.

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderTaxInvoicing } from './order-tax-invoicing';
+import type { OrderTaxInvoicing } from './order-tax-invoicing.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderTaxRegistration } from './order-tax-registration';
+import type { OrderTaxRegistration } from './order-tax-registration.js';
 
 /**
  * Tax information about the order.

@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InboundEligibilityStatus } from './inbound-eligibility-status';
+import type { InboundEligibilityStatus } from './inbound-eligibility-status.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderIneligibilityReason } from './order-ineligibility-reason';
+import type { OrderIneligibilityReason } from './order-ineligibility-reason.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SkuEligibility } from './sku-eligibility';
+import type { SkuEligibility } from './sku-eligibility.js';
 
 /**
  * Represents the eligibility status of the inbound packages.

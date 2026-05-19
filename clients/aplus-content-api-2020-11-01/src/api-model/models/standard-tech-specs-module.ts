@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { StandardTextPairBlock } from './standard-text-pair-block';
+import type { StandardTextPairBlock } from './standard-text-pair-block.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TextComponent } from './text-component';
+import type { TextComponent } from './text-component.js';
 
 /**
  * The standard table of technical feature names and definitions.

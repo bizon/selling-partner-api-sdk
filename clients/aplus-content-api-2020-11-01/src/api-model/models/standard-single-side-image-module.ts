@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PositionType } from './position-type';
+import type { PositionType } from './position-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { StandardImageTextBlock } from './standard-image-text-block';
+import type { StandardImageTextBlock } from './standard-image-text-block.js';
 
 /**
  * A standard headline and body text with an image on the side.

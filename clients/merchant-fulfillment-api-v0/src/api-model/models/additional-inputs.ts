@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SellerInputDefinition } from './seller-input-definition';
+import type { SellerInputDefinition } from './seller-input-definition.js';
 
 /**
  * Maps the additional seller input to the definition. The key to the map is the field name.

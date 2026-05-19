@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Package } from './package';
+import type { Package } from './package.js';
 
 /**
  * The request schema of the `createPackages` operation.

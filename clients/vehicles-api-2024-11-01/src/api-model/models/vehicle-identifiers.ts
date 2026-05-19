@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { VehicleStandard } from './vehicle-standard';
+import type { VehicleStandard } from './vehicle-standard.js';
 
 /**
  * Combination of vehicle standard and id that can uniquely identify a vehicle from Amazon\'s catalog.

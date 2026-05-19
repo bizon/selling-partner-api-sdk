@@ -14,5 +14,5 @@
 
 
 
-export * from './api/amazon-warehousing-and-distribution-api';
+export * from './api/amazon-warehousing-and-distribution-api.js';
 

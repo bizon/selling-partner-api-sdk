@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PlainTextItem } from './plain-text-item';
+import type { PlainTextItem } from './plain-text-item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { StandardComparisonProductBlock } from './standard-comparison-product-block';
+import type { StandardComparisonProductBlock } from './standard-comparison-product-block.js';
 
 /**
  * The standard product comparison table.

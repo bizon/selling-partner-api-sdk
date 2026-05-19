@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CustomerInvoiceList } from './customer-invoice-list';
+import type { CustomerInvoiceList } from './customer-invoice-list.js';
 
 /**
  * The response schema for the getCustomerInvoices operation.

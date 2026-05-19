@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemDetails } from './item-details';
+import type { ItemDetails } from './item-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PartyIdentification } from './party-identification';
+import type { PartyIdentification } from './party-identification.js';
 
 /**
  * Inventory details required to update some or all items for the requested warehouse.

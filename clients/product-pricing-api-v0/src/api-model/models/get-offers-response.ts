@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetOffersResult } from './get-offers-result';
+import type { GetOffersResult } from './get-offers-result.js';
 
 /**
  * The response schema for the `getListingOffers` and `getItemOffers` operations.

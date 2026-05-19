@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PayeeEntityType } from './payee-entity-type';
+import type { PayeeEntityType } from './payee-entity-type.js';
 
 /**
  * The contact information of the payee. This field is required when the request `bankAccountOwnershipType` is `THIRD_PARTY`. The contact information is used for payee verification and registration purposes.

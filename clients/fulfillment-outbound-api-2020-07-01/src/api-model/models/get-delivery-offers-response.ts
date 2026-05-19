@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetDeliveryOffersResult } from './get-delivery-offers-result';
+import type { GetDeliveryOffersResult } from './get-delivery-offers-result.js';
 
 /**
  * The response schema for the `getDeliveryOffers` operation.

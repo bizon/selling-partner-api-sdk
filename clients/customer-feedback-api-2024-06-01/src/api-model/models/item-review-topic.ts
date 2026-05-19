@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ChildAsinMetrics } from './child-asin-metrics';
+import type { ChildAsinMetrics } from './child-asin-metrics.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemReviewBrowseNodeMetrics } from './item-review-browse-node-metrics';
+import type { ItemReviewBrowseNodeMetrics } from './item-review-browse-node-metrics.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemReviewSubtopic } from './item-review-subtopic';
+import type { ItemReviewSubtopic } from './item-review-subtopic.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemReviewTopicMetrics } from './item-review-topic-metrics';
+import type { ItemReviewTopicMetrics } from './item-review-topic-metrics.js';
 
 /**
  * Details of item review topic.

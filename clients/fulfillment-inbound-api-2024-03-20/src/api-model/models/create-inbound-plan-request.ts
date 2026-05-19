@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AddressInput } from './address-input';
+import type { AddressInput } from './address-input.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemInput } from './item-input';
+import type { ItemInput } from './item-input.js';
 
 /**
  * The `createInboundPlan` request.

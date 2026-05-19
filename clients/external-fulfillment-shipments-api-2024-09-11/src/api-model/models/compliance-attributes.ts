@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RequirementLevel } from './requirement-level';
+import type { RequirementLevel } from './requirement-level.js';
 
 /**
  * All necessary compliance attributes specific to the line item.

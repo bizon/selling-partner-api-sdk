@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { HourMinute } from './hour-minute';
+import type { HourMinute } from './hour-minute.js';
 
 /**
  * Specific time interval defining the start and end times.

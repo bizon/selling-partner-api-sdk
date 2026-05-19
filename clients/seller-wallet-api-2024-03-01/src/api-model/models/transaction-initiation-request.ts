@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Currency } from './currency';
+import type { Currency } from './currency.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PayeeContactInformation } from './payee-contact-information';
+import type { PayeeContactInformation } from './payee-contact-information.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransactionInstrumentDetails } from './transaction-instrument-details';
+import type { TransactionInstrumentDetails } from './transaction-instrument-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TransferRatePreview } from './transfer-rate-preview';
+import type { TransferRatePreview } from './transfer-rate-preview.js';
 
 /**
  * Request body to initiate a transaction from a Seller Wallet bank account to another customer-defined bank account.

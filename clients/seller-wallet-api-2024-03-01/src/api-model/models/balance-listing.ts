@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Balance } from './balance';
+import type { Balance } from './balance.js';
 
 /**
  * A list of balances in the seller account.

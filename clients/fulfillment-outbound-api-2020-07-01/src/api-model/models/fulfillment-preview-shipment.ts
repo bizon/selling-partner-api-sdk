@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FulfillmentPreviewItem } from './fulfillment-preview-item';
+import type { FulfillmentPreviewItem } from './fulfillment-preview-item.js';
 
 /**
  * Delivery and item information for a shipment in a fulfillment order preview.

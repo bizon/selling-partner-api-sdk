@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BillOfLadingDownloadURL } from './bill-of-lading-download-url';
+import type { BillOfLadingDownloadURL } from './bill-of-lading-download-url.js';
 
 /**
  * The response schema for the getBillOfLading operation.

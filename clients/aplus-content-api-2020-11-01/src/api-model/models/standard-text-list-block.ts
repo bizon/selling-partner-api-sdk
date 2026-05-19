@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TextItem } from './text-item';
+import type { TextItem } from './text-item.js';
 
 /**
  * The A+ Content standard fixed-length list of text, usually presented as bullet points.

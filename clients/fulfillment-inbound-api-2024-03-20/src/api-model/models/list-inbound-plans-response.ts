@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InboundPlanSummary } from './inbound-plan-summary';
+import type { InboundPlanSummary } from './inbound-plan-summary.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Pagination } from './pagination';
+import type { Pagination } from './pagination.js';
 
 /**
  * The `listInboundPlans` response.

@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AmazonPrepFeesDetails } from './amazon-prep-fees-details';
+import type { AmazonPrepFeesDetails } from './amazon-prep-fees-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BarcodeInstruction } from './barcode-instruction';
+import type { BarcodeInstruction } from './barcode-instruction.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PrepGuidance } from './prep-guidance';
+import type { PrepGuidance } from './prep-guidance.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PrepInstruction } from './prep-instruction';
+import type { PrepInstruction } from './prep-instruction.js';
 
 /**
  * Labeling requirements and item preparation instructions to help you prepare items for shipment to Amazon\'s fulfillment network.

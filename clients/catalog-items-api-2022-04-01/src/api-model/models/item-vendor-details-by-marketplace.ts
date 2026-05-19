@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemVendorDetailsCategory } from './item-vendor-details-category';
+import type { ItemVendorDetailsCategory } from './item-vendor-details-category.js';
 
 /**
  * The vendor details that are associated with an Amazon catalog item for the specified `marketplaceId`.

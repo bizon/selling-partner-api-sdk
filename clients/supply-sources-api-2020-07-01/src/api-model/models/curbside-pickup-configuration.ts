@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OperationalConfiguration } from './operational-configuration';
+import type { OperationalConfiguration } from './operational-configuration.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ParkingWithAddressConfiguration } from './parking-with-address-configuration';
+import type { ParkingWithAddressConfiguration } from './parking-with-address-configuration.js';
 
 /**
  * The curbside pickup configuration of a supply source.

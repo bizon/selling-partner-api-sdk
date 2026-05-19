@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CapacityType } from './capacity-type';
+import type { CapacityType } from './capacity-type.js';
 
 /**
  * Request schema for the `getFixedSlotCapacity` operation. This schema is used to define the time range, capacity types and slot duration which are being queried.

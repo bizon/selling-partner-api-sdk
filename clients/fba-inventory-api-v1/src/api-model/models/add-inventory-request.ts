@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InventoryItem } from './inventory-item';
+import type { InventoryItem } from './inventory-item.js';
 
 /**
  * The object with the list of Inventory to be added

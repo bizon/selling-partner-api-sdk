@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SegmentDetails } from './segment-details';
+import type { SegmentDetails } from './segment-details.js';
 
 /**
  * Input segment for featured offer expected price. The segment contains the location information for which featured offer expected price is requested.

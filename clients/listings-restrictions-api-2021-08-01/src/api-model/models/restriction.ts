@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Reason } from './reason';
+import type { Reason } from './reason.js';
 
 /**
  * A listing restriction, optionally qualified by a condition, with a list of reasons for the restriction.

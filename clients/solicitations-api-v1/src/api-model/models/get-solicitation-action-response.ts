@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetSolicitationActionResponseEmbedded } from './get-solicitation-action-response-embedded';
+import type { GetSolicitationActionResponseEmbedded } from './get-solicitation-action-response-embedded.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetSolicitationActionResponseLinks } from './get-solicitation-action-response-links';
+import type { GetSolicitationActionResponseLinks } from './get-solicitation-action-response-links.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SolicitationsAction } from './solicitations-action';
+import type { SolicitationsAction } from './solicitations-action.js';
 
 /**
  * Describes a solicitation action that can be taken for an order. Provides a JSON Hypertext Application Language (HAL) link to the JSON schema document that describes the expected input.

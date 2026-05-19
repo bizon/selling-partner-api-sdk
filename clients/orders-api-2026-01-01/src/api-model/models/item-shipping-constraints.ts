@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ConstraintType } from './constraint-type';
+import type { ConstraintType } from './constraint-type.js';
 
 /**
  * Special shipping requirements and restrictions that must be observed when shipping an order item.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Money } from './money';
+import type { Money } from './money.js';
 
 /**
  * The COD (Cash On Delivery) charges that you associate with a COD fulfillment order.

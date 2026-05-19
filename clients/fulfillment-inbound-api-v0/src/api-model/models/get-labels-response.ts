@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LabelDownloadURL } from './label-download-url';
+import type { LabelDownloadURL } from './label-download-url.js';
 
 /**
  * The response schema for the getLabels operation.

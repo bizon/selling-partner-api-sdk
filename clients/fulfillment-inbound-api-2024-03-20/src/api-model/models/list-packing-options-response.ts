@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PackingOption } from './packing-option';
+import type { PackingOption } from './packing-option.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Pagination } from './pagination';
+import type { Pagination } from './pagination.js';
 
 /**
  * The `listPlacementOptions` response.

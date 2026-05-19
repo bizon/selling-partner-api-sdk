@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ChargeBreakup } from './charge-breakup';
+import type { ChargeBreakup } from './charge-breakup.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Tax } from './tax';
+import type { Tax } from './tax.js';
 
 /**
  * A shipment\'s charge with relevant tax information.

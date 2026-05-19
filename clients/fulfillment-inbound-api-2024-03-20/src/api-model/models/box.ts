@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BoxContentInformationSource } from './box-content-information-source';
+import type { BoxContentInformationSource } from './box-content-information-source.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Dimensions } from './dimensions';
+import type { Dimensions } from './dimensions.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Item } from './item';
+import type { Item } from './item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Region } from './region';
+import type { Region } from './region.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Weight } from './weight';
+import type { Weight } from './weight.js';
 
 /**
  * Contains information about a box that is used in the inbound plan. The box is a container that holds multiple items.

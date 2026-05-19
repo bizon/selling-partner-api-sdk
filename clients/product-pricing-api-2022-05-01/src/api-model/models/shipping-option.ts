@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MoneyType } from './money-type';
+import type { MoneyType } from './money-type.js';
 
 /**
  * The shipping option available for the offer.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Item } from './item';
+import type { Item } from './item.js';
 
 /**
  * The summary of similar items for the specified ASIN `marketplaceId` combination.

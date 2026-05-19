@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ProcessingDirective } from './processing-directive';
+import type { ProcessingDirective } from './processing-directive.js';
 
 /**
  * The request schema for the `createSubscription` operation.

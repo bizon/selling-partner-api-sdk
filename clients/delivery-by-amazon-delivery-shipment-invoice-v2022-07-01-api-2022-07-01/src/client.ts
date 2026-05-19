@@ -1,6 +1,9 @@
 import {type ClientConfiguration, createAxiosInstance, type RateLimit} from '@sp-api-sdk/common'
 
-import {Configuration, DeliveryByAmazonDeliveryShipmentInvoiceV20220701Api} from './api-model'
+import {
+  Configuration,
+  DeliveryByAmazonDeliveryShipmentInvoiceV20220701Api,
+} from './api-model/index.js'
 
 export const clientRateLimits: RateLimit[] = [
   {

@@ -14,5 +14,5 @@
 
 
 
-export * from './api/external-fulfillment-returns-api';
+export * from './api/external-fulfillment-returns-api.js';
 

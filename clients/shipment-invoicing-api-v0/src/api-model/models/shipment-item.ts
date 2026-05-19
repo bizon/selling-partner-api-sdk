@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Money } from './money';
+import type { Money } from './money.js';
 
 /**
  * The shipment item information required by a seller to issue a shipment invoice.

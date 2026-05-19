@@ -13,36 +13,36 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { ErrorList } from '../models';
+import type { ErrorList } from '../models/index.js';
 // @ts-ignore
-import type { InvoiceResponse } from '../models';
+import type { InvoiceResponse } from '../models/index.js';
 // @ts-ignore
-import type { Package } from '../models';
+import type { Package } from '../models/index.js';
 // @ts-ignore
-import type { PackageDeliveryStatus } from '../models';
+import type { PackageDeliveryStatus } from '../models/index.js';
 // @ts-ignore
-import type { Packages } from '../models';
+import type { Packages } from '../models/index.js';
 // @ts-ignore
-import type { ShipLabelsInput } from '../models';
+import type { ShipLabelsInput } from '../models/index.js';
 // @ts-ignore
-import type { ShipLabelsResponse } from '../models';
+import type { ShipLabelsResponse } from '../models/index.js';
 // @ts-ignore
-import type { Shipment } from '../models';
+import type { Shipment } from '../models/index.js';
 // @ts-ignore
-import type { ShipmentAcknowledgementRequest } from '../models';
+import type { ShipmentAcknowledgementRequest } from '../models/index.js';
 // @ts-ignore
-import type { ShipmentsResponse } from '../models';
+import type { ShipmentsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ShippingOptionsResponse } from '../models';
+import type { ShippingOptionsResponse } from '../models/index.js';
 /**
  * ExternalFulfillmentShipmentsApi - axios parameter creator
  */

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TotalWeight } from './total-weight';
+import type { TotalWeight } from './total-weight.js';
 
 /**
  * Details of item quantity.

@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AggregationFrequency } from './aggregation-frequency';
+import type { AggregationFrequency } from './aggregation-frequency.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ProgramType } from './program-type';
+import type { ProgramType } from './program-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TimeInterval } from './time-interval';
+import type { TimeInterval } from './time-interval.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TimePeriodType } from './time-period-type';
+import type { TimePeriodType } from './time-period-type.js';
 
 /**
  * Use these parameters to filter results. Any result must match all provided parameters. For any parameter that is an array, the result must match at least one element in the provided array.

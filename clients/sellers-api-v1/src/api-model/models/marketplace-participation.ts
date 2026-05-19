@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Marketplace } from './marketplace';
+import type { Marketplace } from './marketplace.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Participation } from './participation';
+import type { Participation } from './participation.js';
 
 export interface MarketplaceParticipation {
     'marketplace': Marketplace;

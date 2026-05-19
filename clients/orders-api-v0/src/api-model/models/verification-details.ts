@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PrescriptionDetail } from './prescription-detail';
+import type { PrescriptionDetail } from './prescription-detail.js';
 
 /**
  * Additional information related to the verification of a regulated order.

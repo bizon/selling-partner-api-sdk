@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Money } from './money';
+import type { Money } from './money.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderItemStatusAcknowledgementStatus } from './order-item-status-acknowledgement-status';
+import type { OrderItemStatusAcknowledgementStatus } from './order-item-status-acknowledgement-status.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderItemStatusOrderedQuantity } from './order-item-status-ordered-quantity';
+import type { OrderItemStatusOrderedQuantity } from './order-item-status-ordered-quantity.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderItemStatusReceivingStatus } from './order-item-status-receiving-status';
+import type { OrderItemStatusReceivingStatus } from './order-item-status-receiving-status.js';
 
 /**
  * Represents the current status of an order item, including acknowledgement and receiving details.

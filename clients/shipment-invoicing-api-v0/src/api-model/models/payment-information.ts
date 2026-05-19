@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Money } from './money';
+import type { Money } from './money.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PaymentMethodEnum } from './payment-method-enum';
+import type { PaymentMethodEnum } from './payment-method-enum.js';
 
 /**
  * Information about a payment transaction.

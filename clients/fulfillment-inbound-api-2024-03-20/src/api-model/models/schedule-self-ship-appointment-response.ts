@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SelfShipAppointmentDetails } from './self-ship-appointment-details';
+import type { SelfShipAppointmentDetails } from './self-ship-appointment-details.js';
 
 /**
  * The `scheduleSelfShipAppointment` response.

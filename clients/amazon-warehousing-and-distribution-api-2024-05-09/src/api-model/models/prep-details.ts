@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { LabelOwner } from './label-owner';
+import type { LabelOwner } from './label-owner.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PrepCategory } from './prep-category';
+import type { PrepCategory } from './prep-category.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PrepInstruction } from './prep-instruction';
+import type { PrepInstruction } from './prep-instruction.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PrepOwner } from './prep-owner';
+import type { PrepOwner } from './prep-owner.js';
 
 /**
  * The preparation details for a product. This contains the prep category, prep owner, and label owner. Prep instructions are generated based on the specified category.

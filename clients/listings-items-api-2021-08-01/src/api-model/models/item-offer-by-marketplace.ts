@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Audience } from './audience';
+import type { Audience } from './audience.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Money } from './money';
+import type { Money } from './money.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Points } from './points';
+import type { Points } from './points.js';
 
 /**
  * Offer details of a listings item for an Amazon marketplace.

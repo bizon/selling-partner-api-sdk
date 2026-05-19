@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GeoCoordinates } from './geo-coordinates';
+import type { GeoCoordinates } from './geo-coordinates.js';
 
 /**
  * Extended address fields for additional address components including the street name or number.   Note: Available for grocery sellers and Brazil shipping addresses.

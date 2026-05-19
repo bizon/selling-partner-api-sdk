@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OrderDetails } from './order-details';
+import type { OrderDetails } from './order-details.js';
 
 /**
  * Represents an order placed by Amazon, including the purchase order number, current state, and order details.

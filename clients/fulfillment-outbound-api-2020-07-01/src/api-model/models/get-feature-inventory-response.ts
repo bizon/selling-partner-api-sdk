@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetFeatureInventoryResult } from './get-feature-inventory-result';
+import type { GetFeatureInventoryResult } from './get-feature-inventory-result.js';
 
 /**
  * The breakdown of eligibility inventory by feature.

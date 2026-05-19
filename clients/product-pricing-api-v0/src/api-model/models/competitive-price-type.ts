@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OfferCustomerType } from './offer-customer-type';
+import type { OfferCustomerType } from './offer-customer-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PriceType } from './price-type';
+import type { PriceType } from './price-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { QuantityDiscountType } from './quantity-discount-type';
+import type { QuantityDiscountType } from './quantity-discount-type.js';
 
 /**
  * Schema for competitive pricing information

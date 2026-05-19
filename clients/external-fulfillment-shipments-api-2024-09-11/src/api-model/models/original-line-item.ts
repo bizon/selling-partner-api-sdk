@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Charge } from './charge';
+import type { Charge } from './charge.js';
 
 /**
  * A line item from the original shipment that corresponds to this shipment.

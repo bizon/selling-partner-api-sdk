@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DeliveriesCondition } from './deliveries-condition';
+import type { DeliveriesCondition } from './deliveries-condition.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EligibilityStatus } from './eligibility-status';
+import type { EligibilityStatus } from './eligibility-status.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ForecastDeliveries } from './forecast-deliveries';
+import type { ForecastDeliveries } from './forecast-deliveries.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { OfferProgramConfiguration } from './offer-program-configuration';
+import type { OfferProgramConfiguration } from './offer-program-configuration.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ProgramType } from './program-type';
+import type { ProgramType } from './program-type.js';
 
 /**
  * An object which contains details about an offer.

@@ -14,5 +14,5 @@
 
 
 
-export * from './api/customer-feedback-api';
+export * from './api/customer-feedback-api.js';
 

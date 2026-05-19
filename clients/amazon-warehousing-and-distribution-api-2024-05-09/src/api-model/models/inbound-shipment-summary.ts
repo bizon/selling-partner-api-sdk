@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InboundShipmentStatus } from './inbound-shipment-status';
+import type { InboundShipmentStatus } from './inbound-shipment-status.js';
 
 /**
  * Summary for an AWD inbound shipment containing the shipment ID, which can be used to retrieve the actual shipment.

@@ -13,54 +13,54 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { CancelFulfillmentOrderResponse } from '../models';
+import type { CancelFulfillmentOrderResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateFulfillmentOrderRequest } from '../models';
+import type { CreateFulfillmentOrderRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateFulfillmentOrderResponse } from '../models';
+import type { CreateFulfillmentOrderResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateFulfillmentReturnRequest } from '../models';
+import type { CreateFulfillmentReturnRequest } from '../models/index.js';
 // @ts-ignore
-import type { CreateFulfillmentReturnResponse } from '../models';
+import type { CreateFulfillmentReturnResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetDeliveryOffersRequest } from '../models';
+import type { GetDeliveryOffersRequest } from '../models/index.js';
 // @ts-ignore
-import type { GetDeliveryOffersResponse } from '../models';
+import type { GetDeliveryOffersResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetFeatureInventoryResponse } from '../models';
+import type { GetFeatureInventoryResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetFeatureSkuResponse } from '../models';
+import type { GetFeatureSkuResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetFeaturesResponse } from '../models';
+import type { GetFeaturesResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetFulfillmentOrderResponse } from '../models';
+import type { GetFulfillmentOrderResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetFulfillmentPreviewRequest } from '../models';
+import type { GetFulfillmentPreviewRequest } from '../models/index.js';
 // @ts-ignore
-import type { GetFulfillmentPreviewResponse } from '../models';
+import type { GetFulfillmentPreviewResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetPackageTrackingDetailsResponse } from '../models';
+import type { GetPackageTrackingDetailsResponse } from '../models/index.js';
 // @ts-ignore
-import type { ListAllFulfillmentOrdersResponse } from '../models';
+import type { ListAllFulfillmentOrdersResponse } from '../models/index.js';
 // @ts-ignore
-import type { ListReturnReasonCodesResponse } from '../models';
+import type { ListReturnReasonCodesResponse } from '../models/index.js';
 // @ts-ignore
-import type { SubmitFulfillmentOrderStatusUpdateRequest } from '../models';
+import type { SubmitFulfillmentOrderStatusUpdateRequest } from '../models/index.js';
 // @ts-ignore
-import type { SubmitFulfillmentOrderStatusUpdateResponse } from '../models';
+import type { SubmitFulfillmentOrderStatusUpdateResponse } from '../models/index.js';
 // @ts-ignore
-import type { UpdateFulfillmentOrderRequest } from '../models';
+import type { UpdateFulfillmentOrderRequest } from '../models/index.js';
 // @ts-ignore
-import type { UpdateFulfillmentOrderResponse } from '../models';
+import type { UpdateFulfillmentOrderResponse } from '../models/index.js';
 /**
  * FulfillmentOutboundApi - axios parameter creator
  */

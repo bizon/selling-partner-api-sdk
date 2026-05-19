@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RejectedShippingService } from './rejected-shipping-service';
+import type { RejectedShippingService } from './rejected-shipping-service.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShippingService } from './shipping-service';
+import type { ShippingService } from './shipping-service.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TemporarilyUnavailableCarrier } from './temporarily-unavailable-carrier';
+import type { TemporarilyUnavailableCarrier } from './temporarily-unavailable-carrier.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TermsAndConditionsNotAcceptedCarrier } from './terms-and-conditions-not-accepted-carrier';
+import type { TermsAndConditionsNotAcceptedCarrier } from './terms-and-conditions-not-accepted-carrier.js';
 
 /**
  * The payload for the `getEligibleShipmentServices` operation.

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentInvoiceStatus } from './shipment-invoice-status';
+import type { ShipmentInvoiceStatus } from './shipment-invoice-status.js';
 
 /**
  * The shipment invoice status information.

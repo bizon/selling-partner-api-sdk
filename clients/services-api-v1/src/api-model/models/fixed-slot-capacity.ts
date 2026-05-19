@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FixedSlot } from './fixed-slot';
+import type { FixedSlot } from './fixed-slot.js';
 
 /**
  * Response schema for the `getFixedSlotCapacity` operation.

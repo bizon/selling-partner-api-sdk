@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
+import type { Address } from './address.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FeatureSettings } from './feature-settings';
+import type { FeatureSettings } from './feature-settings.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { GetFulfillmentPreviewItem } from './get-fulfillment-preview-item';
+import type { GetFulfillmentPreviewItem } from './get-fulfillment-preview-item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShippingSpeedCategory } from './shipping-speed-category';
+import type { ShippingSpeedCategory } from './shipping-speed-category.js';
 
 /**
  * The request body schema for the `getFulfillmentPreview` operation.

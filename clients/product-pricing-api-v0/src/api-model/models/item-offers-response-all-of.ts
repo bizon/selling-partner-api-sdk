@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemOffersRequestParams } from './item-offers-request-params';
+import type { ItemOffersRequestParams } from './item-offers-request-params.js';
 
 export interface ItemOffersResponseAllOf {
     'request': ItemOffersRequestParams;

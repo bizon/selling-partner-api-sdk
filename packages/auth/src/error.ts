@@ -1,6 +1,6 @@
 import {AxiosError} from 'axios'
 
-import type {AccessTokenData, AccessTokenQuery} from './types/access-token'
+import type {AccessTokenData, AccessTokenQuery} from './types/access-token.js'
 
 /**
  * Error thrown when an LWA token request fails.

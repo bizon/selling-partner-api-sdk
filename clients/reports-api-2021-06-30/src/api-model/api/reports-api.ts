@@ -13,34 +13,34 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { CreateReportResponse } from '../models';
+import type { CreateReportResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateReportScheduleResponse } from '../models';
+import type { CreateReportScheduleResponse } from '../models/index.js';
 // @ts-ignore
-import type { CreateReportScheduleSpecification } from '../models';
+import type { CreateReportScheduleSpecification } from '../models/index.js';
 // @ts-ignore
-import type { CreateReportSpecification } from '../models';
+import type { CreateReportSpecification } from '../models/index.js';
 // @ts-ignore
-import type { ErrorList } from '../models';
+import type { ErrorList } from '../models/index.js';
 // @ts-ignore
-import type { GetReportsResponse } from '../models';
+import type { GetReportsResponse } from '../models/index.js';
 // @ts-ignore
-import type { Report } from '../models';
+import type { Report } from '../models/index.js';
 // @ts-ignore
-import type { ReportDocument } from '../models';
+import type { ReportDocument } from '../models/index.js';
 // @ts-ignore
-import type { ReportSchedule } from '../models';
+import type { ReportSchedule } from '../models/index.js';
 // @ts-ignore
-import type { ReportScheduleList } from '../models';
+import type { ReportScheduleList } from '../models/index.js';
 /**
  * ReportsApi - axios parameter creator
  */

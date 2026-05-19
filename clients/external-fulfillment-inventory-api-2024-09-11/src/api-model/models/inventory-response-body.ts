@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ActionableError } from './actionable-error';
+import type { ActionableError } from './actionable-error.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MarketplaceAttributes } from './marketplace-attributes';
+import type { MarketplaceAttributes } from './marketplace-attributes.js';
 
 /**
  * The response to an inventory request.

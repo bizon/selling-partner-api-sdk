@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ColorType } from './color-type';
+import type { ColorType } from './color-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { StandardImageTextBlock } from './standard-image-text-block';
+import type { StandardImageTextBlock } from './standard-image-text-block.js';
 
 /**
  * A standard background image with a floating text box.

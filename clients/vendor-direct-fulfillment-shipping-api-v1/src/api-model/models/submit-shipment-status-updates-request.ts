@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ShipmentStatusUpdate } from './shipment-status-update';
+import type { ShipmentStatusUpdate } from './shipment-status-update.js';
 
 /**
  * Represents the request payload for submitting updates to the status of shipments, containing an array of one or more ShipmentStatusUpdate objects.

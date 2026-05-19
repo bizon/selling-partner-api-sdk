@@ -13,40 +13,40 @@
  */
 
 
-import type { Configuration } from '../configuration';
+import type { Configuration } from '../configuration.js';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common.js';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
-import type { ConfirmShipmentErrorResponse } from '../models';
+import type { ConfirmShipmentErrorResponse } from '../models/index.js';
 // @ts-ignore
-import type { ConfirmShipmentRequest } from '../models';
+import type { ConfirmShipmentRequest } from '../models/index.js';
 // @ts-ignore
-import type { GetOrderAddressResponse } from '../models';
+import type { GetOrderAddressResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetOrderBuyerInfoResponse } from '../models';
+import type { GetOrderBuyerInfoResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetOrderItemsBuyerInfoResponse } from '../models';
+import type { GetOrderItemsBuyerInfoResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetOrderItemsResponse } from '../models';
+import type { GetOrderItemsResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetOrderRegulatedInfoResponse } from '../models';
+import type { GetOrderRegulatedInfoResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetOrderResponse } from '../models';
+import type { GetOrderResponse } from '../models/index.js';
 // @ts-ignore
-import type { GetOrdersResponse } from '../models';
+import type { GetOrdersResponse } from '../models/index.js';
 // @ts-ignore
-import type { UpdateShipmentStatusErrorResponse } from '../models';
+import type { UpdateShipmentStatusErrorResponse } from '../models/index.js';
 // @ts-ignore
-import type { UpdateShipmentStatusRequest } from '../models';
+import type { UpdateShipmentStatusRequest } from '../models/index.js';
 // @ts-ignore
-import type { UpdateVerificationStatusErrorResponse } from '../models';
+import type { UpdateVerificationStatusErrorResponse } from '../models/index.js';
 // @ts-ignore
-import type { UpdateVerificationStatusRequest } from '../models';
+import type { UpdateVerificationStatusRequest } from '../models/index.js';
 /**
  * OrdersApi - axios parameter creator
  */

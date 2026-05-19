@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EngineOutputUnit } from './engine-output-unit';
+import type { EngineOutputUnit } from './engine-output-unit.js';
 
 /**
  * Engine power output of vehicle.

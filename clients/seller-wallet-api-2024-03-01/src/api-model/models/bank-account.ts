@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BankAccountHolderStatus } from './bank-account-holder-status';
+import type { BankAccountHolderStatus } from './bank-account-holder-status.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BankAccountNumberFormat } from './bank-account-number-format';
+import type { BankAccountNumberFormat } from './bank-account-number-format.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BankAccountOwnershipType } from './bank-account-ownership-type';
+import type { BankAccountOwnershipType } from './bank-account-ownership-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BankNumberFormat } from './bank-number-format';
+import type { BankNumberFormat } from './bank-number-format.js';
 
 /**
  * Details of an Amazon Seller Wallet bank account. This account is used to hold the money that a Seller Wallet customer earns by selling items.

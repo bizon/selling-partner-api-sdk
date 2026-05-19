@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemTaxCalculationBreakdown } from './item-tax-calculation-breakdown';
+import type { ItemTaxCalculationBreakdown } from './item-tax-calculation-breakdown.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemTaxCollection } from './item-tax-collection';
+import type { ItemTaxCollection } from './item-tax-collection.js';
 
 /**
  * Tax information for an order item.

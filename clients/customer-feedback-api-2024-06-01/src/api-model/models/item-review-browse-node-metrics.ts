@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BrowseNodeOccurrence } from './browse-node-occurrence';
+import type { BrowseNodeOccurrence } from './browse-node-occurrence.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BrowseNodeStarRatingImpact } from './browse-node-star-rating-impact';
+import type { BrowseNodeStarRatingImpact } from './browse-node-star-rating-impact.js';
 
 /**
  * The browse node review topic metrics.

@@ -13,6 +13,9 @@ export default async function setup(): Promise<Config.InitialOptions> {
       '^.+\\.(t|j)sx?$': '@swc/jest',
     },
     extensionsToTreatAsEsm: ['.ts', '.tsx'],
+    moduleNameMapper: {
+      '^(\\.{1,2}/.*)\\.js$': '$1',
+    },
     clearMocks: true,
     collectCoverage: true,
     collectCoverageFrom: ['src/**.ts'],

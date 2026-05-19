@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemReviewTrend } from './item-review-trend';
+import type { ItemReviewTrend } from './item-review-trend.js';
 
 /**
  * The 10 most positive and most negative review topics for all items in a browse node.

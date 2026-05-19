@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemPointsCost } from './item-points-cost';
+import type { ItemPointsCost } from './item-points-cost.js';
 
 /**
  * The expense information related to this specific item.

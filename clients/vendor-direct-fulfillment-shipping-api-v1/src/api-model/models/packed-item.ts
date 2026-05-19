@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemQuantity } from './item-quantity';
+import type { ItemQuantity } from './item-quantity.js';
 
 /**
  * Represents an item that has been packed into a container for shipping.

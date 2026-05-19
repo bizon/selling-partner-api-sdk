@@ -15,28 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AdditionalDetails } from './additional-details';
+import type { AdditionalDetails } from './additional-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AllowanceDetails } from './allowance-details';
+import type { AllowanceDetails } from './allowance-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ChargeDetails } from './charge-details';
+import type { ChargeDetails } from './charge-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InvoiceItem } from './invoice-item';
+import type { InvoiceItem } from './invoice-item.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Money } from './money';
+import type { Money } from './money.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PartyIdentification } from './party-identification';
+import type { PartyIdentification } from './party-identification.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PaymentTerms } from './payment-terms';
+import type { PaymentTerms } from './payment-terms.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TaxDetails } from './tax-details';
+import type { TaxDetails } from './tax-details.js';
 
 /**
  * Represents an invoice or credit note document with details about the transaction, parties involved, and line items.

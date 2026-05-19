@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
+import type { Address } from './address.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CarrierCode } from './carrier-code';
+import type { CarrierCode } from './carrier-code.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DistributionPackageQuantity } from './distribution-package-quantity';
+import type { DistributionPackageQuantity } from './distribution-package-quantity.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InboundShipmentStatus } from './inbound-shipment-status';
+import type { InboundShipmentStatus } from './inbound-shipment-status.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { InventoryQuantity } from './inventory-quantity';
+import type { InventoryQuantity } from './inventory-quantity.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { SkuQuantity } from './sku-quantity';
+import type { SkuQuantity } from './sku-quantity.js';
 
 /**
  * Represents an AWD inbound shipment.

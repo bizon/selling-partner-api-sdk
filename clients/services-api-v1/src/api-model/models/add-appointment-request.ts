@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AppointmentTimeInput } from './appointment-time-input';
+import type { AppointmentTimeInput } from './appointment-time-input.js';
 
 /**
  * Input for add appointment operation.

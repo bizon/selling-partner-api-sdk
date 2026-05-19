@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DateTimeRange } from './date-time-range';
+import type { DateTimeRange } from './date-time-range.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { FulfillmentStatus } from './fulfillment-status';
+import type { FulfillmentStatus } from './fulfillment-status.js';
 
 /**
  * Information about how the order is being processed, packed, and shipped to the customer.

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { NdrAction } from './ndr-action';
+import type { NdrAction } from './ndr-action.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { NdrRequestData } from './ndr-request-data';
+import type { NdrRequestData } from './ndr-request-data.js';
 
 /**
  * The request schema for the NdrFeedback operation

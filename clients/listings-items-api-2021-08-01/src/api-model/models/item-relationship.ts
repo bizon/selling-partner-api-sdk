@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ItemVariationTheme } from './item-variation-theme';
+import type { ItemVariationTheme } from './item-variation-theme.js';
 
 /**
  * The relationship details for a listing item.

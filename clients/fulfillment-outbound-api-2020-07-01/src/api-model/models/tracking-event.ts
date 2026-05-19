@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EventCode } from './event-code';
+import type { EventCode } from './event-code.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TrackingAddress } from './tracking-address';
+import type { TrackingAddress } from './tracking-address.js';
 
 /**
  * Information for tracking package deliveries.

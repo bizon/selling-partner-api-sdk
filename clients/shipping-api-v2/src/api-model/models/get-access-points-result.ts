@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AccessPoint } from './access-point';
+import type { AccessPoint } from './access-point.js';
 
 /**
  * The payload for the GetAccessPoints API.

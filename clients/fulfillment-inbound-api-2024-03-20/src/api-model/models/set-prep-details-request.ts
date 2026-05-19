@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { MskuPrepDetailInput } from './msku-prep-detail-input';
+import type { MskuPrepDetailInput } from './msku-prep-detail-input.js';
 
 /**
  * The `setPrepDetails` request.

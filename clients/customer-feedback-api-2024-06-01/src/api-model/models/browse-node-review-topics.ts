@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BrowseNodeReviewTopic } from './browse-node-review-topic';
+import type { BrowseNodeReviewTopic } from './browse-node-review-topic.js';
 
 /**
  * The 10 most positive and most negative review topics for all items in a browse node.

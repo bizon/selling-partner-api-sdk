@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AsinMetadata } from './asin-metadata';
+import type { AsinMetadata } from './asin-metadata.js';
 
 export interface ListContentDocumentAsinRelationsResponseAllOf {
     /**

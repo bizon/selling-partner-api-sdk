@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { HandoverLocation } from './handover-location';
+import type { HandoverLocation } from './handover-location.js';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { TimeWindow } from './time-window';
+import type { TimeWindow } from './time-window.js';
 
 /**
  * Shipping options for a single package.

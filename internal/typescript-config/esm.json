@@ -3,7 +3,7 @@
   "extends": "./commonjs.json",
   "compilerOptions": {
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "declaration": false,
     "declarationDir": null
   }

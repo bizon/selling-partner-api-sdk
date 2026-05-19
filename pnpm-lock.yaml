@@ -1005,8 +1005,8 @@ importers:
         specifier: ^14.0.15
         version: 14.0.15
       strip-ansi:
-        specifier: ^6.0.1
-        version: 6.0.1
+        specifier: ^7.2.0
+        version: 7.2.0
 
   packages/schemas:
     dependencies:

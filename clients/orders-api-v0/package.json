@@ -3,27 +3,35 @@
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools. Note: For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).",
   "version": "5.8.0",
-  "main": "dist/cjs/index.js",
-  "module": "dist/es/index.js",
-  "types": "dist/types/index.d.ts",
   "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "source": "./src/index.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
   "publishConfig": {
     "access": "public"
   },
-  "directories": {
-    "lib": "dist"
-  },
   "files": [
-    "dist/**/*.js",
-    "dist/**/*.d.ts"
+    "dist"
   ],
   "scripts": {
     "xo": "xo --cwd=../.. clients/orders-api-v0",
     "check:ts": "tsc --noEmit",
-    "build:cjs": "tsc -p tsconfig.json",
-    "build:es": "tsc -p tsconfig.es.json",
-    "build": "pnpm build:cjs && pnpm build:es",
-    "clean": "rimraf dist"
+    "build": "tsup"
   },
   "dependencies": {
     "@sp-api-sdk/common": "workspace:*",

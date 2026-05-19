@@ -14,10 +14,10 @@ updates:
     groups:
       jest:
         patterns:
+          - "@jest/globals"
           - "@jest/types"
           - "@swc/core"
           - "@swc/jest"
-          - "@types/jest"
           - "jest"
           - "jest-junit"
       lerna-lite:

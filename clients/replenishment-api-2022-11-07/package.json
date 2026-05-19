@@ -3,27 +3,35 @@
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Replenishment (Replenishment API) provides programmatic access to replenishment program metrics and offers. These programs provide recurring delivery of any replenishable item at a frequency chosen by the customer. The Replenishment API is available worldwide wherever Amazon Subscribe & Save is available or is supported. The API is available to vendors and FBA selling partners.",
   "version": "5.2.0",
-  "main": "dist/cjs/index.js",
-  "module": "dist/es/index.js",
-  "types": "dist/types/index.d.ts",
   "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "source": "./src/index.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
   "publishConfig": {
     "access": "public"
   },
-  "directories": {
-    "lib": "dist"
-  },
   "files": [
-    "dist/**/*.js",
-    "dist/**/*.d.ts"
+    "dist"
   ],
   "scripts": {
     "xo": "xo --cwd=../.. clients/replenishment-api-2022-11-07",
     "check:ts": "tsc --noEmit",
-    "build:cjs": "tsc -p tsconfig.json",
-    "build:es": "tsc -p tsconfig.es.json",
-    "build": "pnpm build:cjs && pnpm build:es",
-    "clean": "rimraf dist"
+    "build": "tsup"
   },
   "dependencies": {
     "@sp-api-sdk/common": "workspace:*",

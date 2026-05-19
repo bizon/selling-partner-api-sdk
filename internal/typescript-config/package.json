@@ -2,7 +2,16 @@
   "name": "@sp-api-sdk/typescript-config",
   "version": "1.0.6",
   "private": true,
+  "exports": {
+    "./tsconfig.json": "./tsconfig.json",
+    "./tsup.config": "./tsup.config.ts"
+  },
+  "files": [
+    "tsconfig.json",
+    "tsup.config.ts"
+  ],
   "dependencies": {
-    "@tsconfig/node24": "^24.0.4"
+    "@tsconfig/node24": "^24.0.4",
+    "tsup": "^8.5.1"
   }
 }

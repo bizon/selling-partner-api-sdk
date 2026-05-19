@@ -1,6 +1,7 @@
 **/*.log
 **/*.tsbuildinfo
 
+.claude/
 .turbo/
 node_modules/
 docs/

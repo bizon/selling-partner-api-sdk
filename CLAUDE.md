@@ -38,7 +38,7 @@ packages/
   schemas/                  # @sp-api-sdk/schemas — JSON schemas + TS types (auto-generated src/)
 internal/
   jest/                     # Shared Jest config (private)
-  typescript-config/        # Shared TypeScript configs: CJS + ESM (private)
+  typescript-config/        # Shared TypeScript config (private)
 codegen/                    # Code generation tooling (private, not published)
   templates/                # Mustache templates for generated clients
   patches/                  # JSON Patch files for fixing invalid OpenAPI specs
@@ -53,7 +53,8 @@ codegen/                    # Code generation tooling (private, not published)
 | `clients/*/src/index.ts`   | Yes        | Mustache template output              |
 | `clients/*/package.json`   | Yes        | Mustache template output              |
 | `clients/*/README.md`      | Yes        | Mustache template output              |
-| `clients/*/tsconfig*.json` | Yes        | Mustache template output              |
+| `clients/*/tsconfig.json`  | Yes        | Mustache template output              |
+| `clients/*/tsup.config.ts` | Yes        | Mustache template output              |
 | `packages/schemas/src/`    | Yes        | Generated from Amazon JSON schemas    |
 | `packages/auth/`           | No         | Hand-written                          |
 | `packages/common/`         | No         | Hand-written                          |
@@ -83,7 +84,7 @@ pnpm codegen schemas      # generate schemas only
 
 ## Code patterns
 
-- **Dual output**: all packages compile to both CommonJS (`dist/cjs/`) and ES Modules (`dist/es/`), with type declarations in `dist/types/`
+- **Dual output**: all packages are built with [`tsup`](https://tsup.egoist.dev/) and emit ESM (`dist/index.js`) + CJS (`dist/index.cjs`) with type declarations (`dist/index.d.ts` and `dist/index.d.cts`) — shared tsup config lives in `internal/typescript-config/tsup.config.ts` and is re-exported by each package's `tsup.config.ts`
 - **Package runner**: use `pnpx` instead of `npx`
 - **Node version**: 24 (see `.node-version`)
 - **TypeScript configs**: shared via `@sp-api-sdk/typescript-config` in `internal/typescript-config/`

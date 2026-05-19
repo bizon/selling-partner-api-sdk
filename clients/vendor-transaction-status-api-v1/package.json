@@ -3,27 +3,35 @@
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Retail Procurement Transaction Status provides programmatic access to status information on specific asynchronous POST transactions for vendors.",
   "version": "4.0.17",
-  "main": "dist/cjs/index.js",
-  "module": "dist/es/index.js",
-  "types": "dist/types/index.d.ts",
   "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "source": "./src/index.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
   "publishConfig": {
     "access": "public"
   },
-  "directories": {
-    "lib": "dist"
-  },
   "files": [
-    "dist/**/*.js",
-    "dist/**/*.d.ts"
+    "dist"
   ],
   "scripts": {
     "xo": "xo --cwd=../.. clients/vendor-transaction-status-api-v1",
     "check:ts": "tsc --noEmit",
-    "build:cjs": "tsc -p tsconfig.json",
-    "build:es": "tsc -p tsconfig.es.json",
-    "build": "pnpm build:cjs && pnpm build:es",
-    "clean": "rimraf dist"
+    "build": "tsup"
   },
   "dependencies": {
     "@sp-api-sdk/common": "workspace:*",

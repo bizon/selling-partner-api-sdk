@@ -3,3 +3,12 @@ packages:
   - "packages/*"
   - "clients/*"
   - "internal/*"
+
+allowBuilds:
+  "@nestjs/core": false
+  "@openapitools/openapi-generator-cli": false
+  "@swc/core": false
+  esbuild: false
+  unrs-resolver: false
+
+minimumReleaseAge: 0

@@ -4,10 +4,6 @@
     "test": {
       "dependsOn": ["^build"]
     },
-    "clean": {
-      "cache": false,
-      "outputs": []
-    },
     "check:ts": {
       "dependsOn": ["^build"]
     },

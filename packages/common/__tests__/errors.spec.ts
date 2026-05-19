@@ -1,3 +1,4 @@
+import {describe, expect, it} from '@jest/globals'
 import {AxiosError, AxiosHeaders} from 'axios'
 
 import {SellingPartnerApiError} from '../src/errors'

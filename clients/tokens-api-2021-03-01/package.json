@@ -3,27 +3,35 @@
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Tokens provides a secure way to access a customer's PII (Personally Identifiable Information). You can call the Tokens API to get a Restricted Data Token (RDT) for one or more restricted resources that you specify. The RDT authorizes subsequent calls to restricted operations that correspond to the restricted resources that you specified. For more information, see the Tokens API Use Case Guide.",
   "version": "3.0.22",
-  "main": "dist/cjs/index.js",
-  "module": "dist/es/index.js",
-  "types": "dist/types/index.d.ts",
   "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "source": "./src/index.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
   "publishConfig": {
     "access": "public"
   },
-  "directories": {
-    "lib": "dist"
-  },
   "files": [
-    "dist/**/*.js",
-    "dist/**/*.d.ts"
+    "dist"
   ],
   "scripts": {
     "xo": "xo --cwd=../.. clients/tokens-api-2021-03-01",
     "check:ts": "tsc --noEmit",
-    "build:cjs": "tsc -p tsconfig.json",
-    "build:es": "tsc -p tsconfig.es.json",
-    "build": "pnpm build:cjs && pnpm build:es",
-    "clean": "rimraf dist"
+    "build": "tsup"
   },
   "dependencies": {
     "@sp-api-sdk/common": "workspace:*",

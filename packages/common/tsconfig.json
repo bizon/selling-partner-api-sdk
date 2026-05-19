@@ -1,10 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@sp-api-sdk/typescript-config/commonjs.json",
+  "extends": "@sp-api-sdk/typescript-config/tsconfig.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "declarationDir": "dist/types",
-    "outDir": "dist/cjs"
+    "outDir": "dist"
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "__tests__/**/*.ts", "jest.config.ts"]
 }

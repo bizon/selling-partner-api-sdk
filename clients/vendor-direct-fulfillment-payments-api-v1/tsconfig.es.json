@@ -1,9 +1,0 @@
-{
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@sp-api-sdk/typescript-config/esm.json",
-  "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist/es"
-  },
-  "include": ["src/**/*.ts"]
-}

@@ -3,29 +3,36 @@
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "Selling Parner API common library",
   "version": "2.1.31",
-  "main": "dist/cjs/index.js",
-  "module": "dist/es/index.js",
-  "types": "dist/types/index.d.ts",
   "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "source": "./src/index.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
   "publishConfig": {
     "access": "public"
   },
-  "directories": {
-    "lib": "dist",
-    "test": "__tests__"
-  },
   "files": [
-    "dist/**/*.js",
-    "dist/**/*.d.ts"
+    "dist"
   ],
   "scripts": {
     "xo": "xo --cwd=../.. packages/common",
     "check:ts": "tsc --noEmit",
-    "build:cjs": "tsc -p tsconfig.json",
-    "build:es": "tsc -p tsconfig.es.json",
-    "build": "pnpm build:cjs && pnpm build:es",
-    "clean": "rimraf dist",
-    "test": "jest"
+    "build": "tsup",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "dependencies": {
     "@sp-api-sdk/auth": "workspace:*",
@@ -35,6 +42,7 @@
     "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {
+    "@jest/globals": "^30.4.1",
     "@sp-api-sdk/jest": "workspace:*",
     "@sp-api-sdk/typescript-config": "workspace:*",
     "nock": "^14.0.15",

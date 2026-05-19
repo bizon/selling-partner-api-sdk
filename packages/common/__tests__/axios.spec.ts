@@ -1,18 +1,22 @@
+import {describe, expect, it, jest} from '@jest/globals'
 import {AxiosError} from 'axios'
 import nock from 'nock'
 import stripAnsi from 'strip-ansi'
 
-import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+import type * as Auth from '@sp-api-sdk/auth'
 
-import {createAxiosInstance} from '../src/axios'
-import {SellingPartnerApiError} from '../src/errors'
+const {SellingPartnerApiAuthError} = jest.requireActual<typeof Auth>('@sp-api-sdk/auth')
 
-jest.mock('@sp-api-sdk/auth', () => ({
-  SellingPartnerApiAuthError: jest.requireActual('@sp-api-sdk/auth').SellingPartnerApiAuthError,
+jest.unstable_mockModule('@sp-api-sdk/auth', () => ({
+  SellingPartnerApiAuthError,
   SellingPartnerApiAuth: jest.fn(() => ({
     getAccessToken: jest.fn(async () => 'FAKE_ACCESS_TOKEN'),
   })),
 }))
+
+const {SellingPartnerApiAuth} = await import('@sp-api-sdk/auth')
+const {createAxiosInstance} = await import('../src/axios')
+const {SellingPartnerApiError} = await import('../src/errors')
 
 describe('src/axios', () => {
   it('should throw if the region does not exist', () => {
@@ -139,7 +143,7 @@ describe('src/axios', () => {
   describe('Logging', () => {
     it('should allow logging requests', async () => {
       nock('https://www.example.com').get('/test?foo=bar').reply(200)
-      const requestLogger = jest.fn<string, any>()
+      const requestLogger = jest.fn<(message: string) => void>()
 
       const {axios} = createAxiosInstance(
         {
@@ -167,7 +171,7 @@ describe('src/axios', () => {
       nock('https://www.example.com').get('/test').reply(200, undefined, {
         'x-test-header': 'header',
       })
-      const responseLogger = jest.fn<string, any>()
+      const responseLogger = jest.fn<(message: string) => void>()
 
       const {axios} = createAxiosInstance(
         {
@@ -195,7 +199,7 @@ describe('src/axios', () => {
       nock('https://www.example.com').get('/test/error').reply(404, 'Not found', {
         'x-test-header': 'header',
       })
-      const errorLogger = jest.fn<string, any>()
+      const errorLogger = jest.fn<(message: string) => void>()
 
       const {axios} = createAxiosInstance(
         {
@@ -223,9 +227,9 @@ describe('src/axios', () => {
 
     it('should allow logging a successful request with everything enabled', async () => {
       nock('https://www.example.com').get('/test?foo=bar').reply(200)
-      const requestLogger = jest.fn<string, any>()
-      const responseLogger = jest.fn<string, any>()
-      const errorLogger = jest.fn<string, any>()
+      const requestLogger = jest.fn<(message: string) => void>()
+      const responseLogger = jest.fn<(message: string) => void>()
+      const errorLogger = jest.fn<(message: string) => void>()
 
       const {axios} = createAxiosInstance(
         {
@@ -255,9 +259,9 @@ describe('src/axios', () => {
 
     it('should allow logging a failed request with everything enabled', async () => {
       nock('https://www.example.com').get('/test/error?foo=bar').reply(404)
-      const requestLogger = jest.fn<string, any>()
-      const responseLogger = jest.fn<string, any>()
-      const errorLogger = jest.fn<string, any>()
+      const requestLogger = jest.fn<(message: string) => void>()
+      const responseLogger = jest.fn<(message: string) => void>()
+      const errorLogger = jest.fn<(message: string) => void>()
 
       const {axios} = createAxiosInstance(
         {

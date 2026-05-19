@@ -1,3 +1,4 @@
+import {describe, expect, it} from '@jest/globals'
 import nock from 'nock'
 
 import {AuthorizationScope, SellingPartnerApiAuth, SellingPartnerApiAuthError} from '../src'

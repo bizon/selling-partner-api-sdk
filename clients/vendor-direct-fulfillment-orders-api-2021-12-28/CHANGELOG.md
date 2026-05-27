@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-direct-fulfillment-orders-api-2021-12-28@4.1.12...@sp-api-sdk/vendor-direct-fulfillment-orders-api-2021-12-28@5.0.0) (2026-05-27)
+
+* chore!: migrate to tsup with modern exports (#1788) ([20f7731](https://github.com/bizon/selling-partner-api-sdk/commit/20f77312a1dda1d6a48efc5d48e6ba56e034bd6e)), closes [#1788](https://github.com/bizon/selling-partner-api-sdk/issues/1788)
+
+### BREAKING CHANGES
+
+* dist layout changed from dist/{cjs,es,types}/ to a
+flat dist/. Consumers using only the documented barrel import
+(import {X} from '@sp-api-sdk/<package>') are unaffected. Any
+undocumented deep imports into dist/cjs/... etc. now fail with
+ERR_PACKAGE_PATH_NOT_EXPORTED.
+
 ## [4.1.12](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/vendor-direct-fulfillment-orders-api-2021-12-28@4.1.11...@sp-api-sdk/vendor-direct-fulfillment-orders-api-2021-12-28@4.1.12) (2026-04-30)
 
 **Note:** Version bump only for package @sp-api-sdk/vendor-direct-fulfillment-orders-api-2021-12-28

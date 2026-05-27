@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/customer-feedback-api-2024-06-01",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Customer Feedback (Customer Feedback API) provides information about customer reviews and returns at both the item and browse node level.",
-  "version": "1.1.16",
+  "version": "2.0.0",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,

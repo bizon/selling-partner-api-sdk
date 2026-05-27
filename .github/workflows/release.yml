@@ -8,6 +8,11 @@ on:
         required: false
         type: boolean
         default: false
+      from-package:
+        description: "Publish from package.json (recovery mode for partial failures)"
+        required: false
+        type: boolean
+        default: false
 
 concurrency: release
 
@@ -48,7 +53,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
         run: |
-          if [ "${{ github.event.inputs.force-patch-release }}" = "true" ]; then
+          if [ "${{ github.event.inputs.from-package }}" = "true" ]; then
+            pnpm lerna publish from-package --yes;
+          elif [ "${{ github.event.inputs.force-patch-release }}" = "true" ]; then
             pnpm lerna publish --force-publish --bump patch --skip-bump-only-releases --yes;
           else
             pnpm lerna publish --skip-bump-only-releases --yes;

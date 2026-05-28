@@ -85,7 +85,7 @@ export const orderChangeNotification = {
       type: 'string',
       title: 'The NotificationType schema',
       description:
-        'The type of this notification, used to differentiate different notifications. Combined with payload version, this controls the structure of the payload object.',
+        'The type of this notification, used to differentiate different notifications. Combined with payload version controls the structure of payload object.',
       examples: ['ORDER_CHANGE'],
     },
     PayloadVersion: {
@@ -99,14 +99,16 @@ export const orderChangeNotification = {
       $id: '#/properties/EventTime',
       type: 'string',
       title: 'The EventTime schema',
-      description: 'The time when this notification was published, in ISO-8601 date/time format.',
+      description:
+        'The time when this notification was published, presented in ISO-8601 date/time format.',
       examples: ['2020-01-11T00:09:53.109Z'],
     },
     Payload: {
       $id: '#/properties/Payload',
       type: 'object',
       title: 'The Payload schema',
-      description: 'The payload for the ORDER_CHANGE notification.',
+      description:
+        "The payload for this ORDER_CHANGE notification. It's unique for different event type and will provide more in-depth information about this notification.",
       examples: [
         {
           OrderChangeNotification: {
@@ -238,17 +240,17 @@ export const orderChangeNotification = {
             OrderChangeType: {
               $id: '#/properties/Payload/properties/OrderChangeNotification/properties/OrderChangeType',
               type: 'string',
-              enum: ['BuyerRequestedChange', 'OrderStatusChange'],
+              enum: ['BuyerRequestedChange', 'DeliveryTipChange', 'OrderStatusChange'],
               title: 'The OrderChangeType schema',
               description:
-                'The type of order change that caused the notification to be sent. Possible values are BuyerRequestedChange and OrderStatusChange.',
+                'Change type of this notification. The possible values include BuyerRequestedChange, DeliveryTipChange, OrderStatusChange.',
               examples: ['BuyerRequestedChange'],
             },
             OrderChangeTrigger: {
               $id: '#/properties/Payload/properties/OrderChangeNotification/properties/OrderChangeTrigger',
               type: 'object',
               title: 'The OrderChangeTrigger schema',
-              description: 'Details about what caused this ORDER_CHANGE notification to be sent.',
+              description: 'Details about what triggered this ORDER_CHANGE notification.',
               examples: [
                 {
                   TimeOfOrderChange: '2022-11-29T19:42:04.284Z',
@@ -262,14 +264,14 @@ export const orderChangeNotification = {
                   type: ['string', 'null'],
                   title: 'The TimeOfOrderChange schema',
                   description:
-                    'The time of the change that caused this notification, in ISO-8601 date/time format. Will be null when there is no related timestamp.',
+                    'The timestamp for the change that caused this notification, presented in ISO-8601 date/time format. It will be null when there is no related timestamp.',
                   examples: ['2022-11-29T19:42:04.284Z'],
                 },
                 ChangeReason: {
                   $id: '#/properties/Payload/properties/OrderChangeNotification/properties/OrderChangeTrigger/properties/ChangeReason',
                   type: 'string',
                   title: 'The ChangeReason schema',
-                  description: 'The reason this ORDER_CHANGE notification was sent.',
+                  description: 'The reason for this ORDER_CHANGE notification.',
                   examples: ['Buyer Requested Cancel'],
                 },
               },
@@ -278,7 +280,7 @@ export const orderChangeNotification = {
               $id: '#/properties/Payload/properties/OrderChangeNotification/properties/Summary',
               type: 'object',
               title: 'The Summary schema',
-              description: 'Information about the order and order items that had the change.',
+              description: 'Information about order and order items that had the change.',
               examples: [
                 {
                   MarketplaceId: 'ATVPDKIKX0DER',
@@ -351,7 +353,7 @@ export const orderChangeNotification = {
                   type: ['string', 'null'],
                   title: 'The PurchaseDate schema',
                   description:
-                    'The purchase date of the order, in ISO-8601 date/time format. It will be null when there is no related information.',
+                    'The purchase date of the order, presented in ISO-8601 date/time format. It will be null when there is no related information.',
                   examples: ['2022-07-13T19:42:04.284Z'],
                 },
                 DestinationPostalCode: {
@@ -403,7 +405,7 @@ export const orderChangeNotification = {
                   type: 'string',
                   title: 'The EarliestDeliveryDate schema',
                   description:
-                    'The start of the time period during which you committed to fulfill the order, in ISO-8601 date/time format. Returned only for seller-fulfilled orders.',
+                    'The start of the time period within which you have committed to fulfill the order, presented in ISO-8601 date/time format. Returned only for seller-fulfilled orders.',
                   examples: ['2022-11-07T19:42:04.284Z'],
                 },
                 LatestDeliveryDate: {
@@ -411,7 +413,7 @@ export const orderChangeNotification = {
                   type: 'string',
                   title: 'The LatestDeliveryDate schema',
                   description:
-                    'The end of the time period during which you committed to fulfill the order, in ISO-8601 date/time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status.',
+                    'The end of the time period within which you have committed to fulfill the order, presented in ISO-8601 date/time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status.',
                   examples: ['2022-12-07T19:42:04.284Z'],
                 },
                 EarliestShipDate: {
@@ -419,7 +421,7 @@ export const orderChangeNotification = {
                   type: 'string',
                   title: 'The EarliestShipDate schema',
                   description:
-                    'The start of the time period during which you committed to ship the order, in ISO-8601 date/time format.',
+                    'The start of the time period within which you have committed to ship the order, presented in ISO-8601 date/time format.',
                   examples: ['2022-11-07T19:42:04.284Z'],
                 },
                 LatestShipDate: {
@@ -427,7 +429,7 @@ export const orderChangeNotification = {
                   type: 'string',
                   title: 'The LatestShipDate schema',
                   description:
-                    'The end of the time period during which you committed to ship the order, in ISO-8601 date/time format.',
+                    'The end of the time period within which you have committed to ship the order, presented in ISO-8601 date/time format.',
                   examples: ['2022-12-07T19:42:04.284Z'],
                 },
                 CancelNotifyDate: {
@@ -435,14 +437,14 @@ export const orderChangeNotification = {
                   type: 'string',
                   title: 'The CancelNotifyDate schema',
                   description:
-                    'The end of the time period during which you must notify the seller of possible cancellation, in ISO-8601 date/time format.',
+                    'The end of the time period which you cancel notify for the order, presented in ISO-8601 date/time format.',
                   examples: ['2022-12-07T19:42:04.284Z'],
                 },
                 OrderPrograms: {
                   $id: '#/properties/Payload/properties/OrderChangeNotification/properties/Summary/properties/OrderPrograms',
                   type: 'array',
                   title: 'The OrderPrograms schema',
-                  description: 'The order programs in which this order participates.',
+                  description: 'The order programs, if any, in which this order participates.',
                   items: {
                     type: 'string',
                     enum: ['Business', 'Prime', 'Premium', 'IBA', 'Replacement'],
@@ -453,7 +455,7 @@ export const orderChangeNotification = {
                   $id: '#/properties/Payload/properties/OrderChangeNotification/properties/Summary/properties/ShippingPrograms',
                   type: 'array',
                   title: 'The ShippingPrograms schema',
-                  description: 'The shipping programs in which this order participates.',
+                  description: 'The shipping programs, if any, in which this order participates.',
                   items: {
                     type: 'string',
                     enum: [
@@ -506,7 +508,7 @@ export const orderChangeNotification = {
                   type: 'array',
                   title: 'The OrderItems schema',
                   description:
-                    'Information about order items included in this order. For OrderItemLevel notifications, one payload includes one item, while for OrderLevel notifications, one payload includes all items.',
+                    'Information about order items included in this order. For OrderItemLevel notification, one payload include one item, while for OrderLevel notification, one payload include all items.',
                   examples: [
                     [
                       {
@@ -552,7 +554,7 @@ export const orderChangeNotification = {
                         $id: '#/properties/Payload/properties/OrderChangeNotification/properties/Summary/properties/OrderItems/SellerSKU',
                         type: 'string',
                         title: 'The SellerSKU schema',
-                        description: 'The seller-specific SKU for an item.',
+                        description: 'The seller-specific SKU identifier for an item.',
                         examples: ['SellerSKUID1'],
                       },
                       SupplySourceId: {
@@ -560,7 +562,7 @@ export const orderChangeNotification = {
                         type: ['string', 'null'],
                         title: 'The SupplySourceId schema',
                         description:
-                          'The unique identifier of the supply source. Will be null when there is no related information.',
+                          'The unique identifier of the supply source. It will be null when there is no related information.',
                         examples: ['d7679e14-031b-4ab3-a81b-ec4fc7a460b3'],
                       },
                       OrderItemStatus: {
@@ -569,7 +571,7 @@ export const orderChangeNotification = {
                         enum: ['Unshipped', 'Shipped'],
                         title: 'The OrderItemStatus schema',
                         description:
-                          "The current status of the order item. This field Will have a non-null value when items' statuses are different.",
+                          "The current status of the order item. Will display it when items' status are different.",
                         examples: ['Unshipped'],
                       },
                       Quantity: {
@@ -590,7 +592,8 @@ export const orderChangeNotification = {
                         $id: '#/properties/Payload/properties/OrderChangeNotification/properties/Summary/properties/OrderItems/IsBuyerRequestedCancel',
                         type: 'boolean',
                         title: 'The IsBuyerRequestedCancel schema',
-                        description: 'True when the buyer has requested cancelation.',
+                        description:
+                          'Information about whether or not a buyer requested cancellation. When true, the buyer has requested cancellation.',
                         examples: [true],
                       },
                       ItemEarliestDeliveryDate: {
@@ -598,7 +601,7 @@ export const orderChangeNotification = {
                         type: 'string',
                         title: 'The ItemEarliestDeliveryDate schema',
                         description:
-                          'The start of the time period during which you have committed to fulfill the order.',
+                          'The start of the time period within which you have committed to fulfill the order item.',
                         examples: ['2022-11-07T19:42:04.284Z'],
                       },
                       ItemLatestDeliveryDate: {
@@ -606,7 +609,7 @@ export const orderChangeNotification = {
                         type: 'string',
                         title: 'The ItemLatestDeliveryDate schema',
                         description:
-                          'The end of the time period during which you have committed to fulfill the order.',
+                          'The end of the time period within which you have committed to fulfill the order item.',
                         examples: ['2022-12-07T19:42:04.284Z'],
                       },
                     },
@@ -653,7 +656,7 @@ export const orderChangeNotification = {
           type: 'string',
           title: 'The PublishTime schema',
           description:
-            'The date and time (in UTC) that the notification was sent, in ISO-8601 date/time format.',
+            'The date and time (in UTC) that the notification was sent, presented in ISO-8601 date/time format.',
           examples: ['2020-07-13T19:42:04.284Z'],
         },
         NotificationId: {

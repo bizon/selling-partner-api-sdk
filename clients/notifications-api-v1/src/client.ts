@@ -32,6 +32,13 @@ export const clientRateLimits: RateLimit[] = [
     burst: 5,
   },
   {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/notifications/v1/subscriptions/[^/]*/testNotification$'),
+    rate: 1,
+    burst: 5,
+  },
+  {
     method: 'get',
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/notifications/v1/destinations$'),

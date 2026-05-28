@@ -34,7 +34,7 @@ import type { OrderChangeTypeFilter } from './order-change-type-filter.js';
 
 /**
  * @type EventFilter
- * A `notificationType` specific filter. This object contains all of the currently available filters and properties that you can use to define a `notificationType` specific filter.
+ * A `notificationType` filter. This object contains all of the available filters and properties that you can use to define a `notificationType` specific filter.
  */
 export type EventFilter = AggregationFilter & EventFilterAllOf & MarketplaceFilter & OrderChangeTypeFilter;
 

@@ -23,5 +23,8 @@ export * from './model-error.js';
 export * from './order-change-type-enum.js';
 export * from './order-change-type-filter.js';
 export * from './processing-directive.js';
+export * from './send-test-notification-request.js';
+export * from './send-test-notification-response.js';
 export * from './sqs-resource.js';
 export * from './subscription.js';
+export * from './test-notification.js';

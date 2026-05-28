@@ -24,6 +24,9 @@ import type { AssociatedOrder } from './associated-order.js';
 import type { Buyer } from './buyer.js';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { FulfillmentOrder } from './fulfillment-order.js';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { OrderFulfillment } from './order-fulfillment.js';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -90,5 +93,9 @@ export interface Order {
      * Shipping packages created for this order, including tracking information. **Note:** Only available for merchant-fulfilled (FBM) orders.
      */
     'packages'?: Array<OrderPackage>;
+    /**
+     * The list of fulfillment orders associated with this customer order. Each entry corresponds to one fulfillment unit created by Amazon for this order. **Note:** Only available for EasyShip orders at present.
+     */
+    'fulfillmentOrders'?: Array<FulfillmentOrder>;
 }
 

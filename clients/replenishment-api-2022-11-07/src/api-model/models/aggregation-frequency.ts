@@ -19,6 +19,7 @@
  */
 
 export const AggregationFrequency = {
+    Day: 'DAY',
     Week: 'WEEK',
     Month: 'MONTH',
     Quarter: 'QUARTER',

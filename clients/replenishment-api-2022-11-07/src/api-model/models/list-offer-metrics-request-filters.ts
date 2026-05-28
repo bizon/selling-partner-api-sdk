@@ -18,6 +18,9 @@
 import type { AggregationFrequency } from './aggregation-frequency.js';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { FulfillmentChannelType } from './fulfillment-channel-type.js';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ProgramType } from './program-type.js';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -27,7 +30,7 @@ import type { TimeInterval } from './time-interval.js';
 import type { TimePeriodType } from './time-period-type.js';
 
 /**
- * Use these parameters to filter results. Any result must match all provided parameters. For any parameter that is an array, the result must match at least one element in the provided array.
+ * Use these parameters to filter results. Any result must match all provided parameters. For parameters that accept multiple values (arrays), the API returns results that match at least one value in the array.
  */
 export interface ListOfferMetricsRequestFilters {
     'aggregationFrequency'?: AggregationFrequency;
@@ -42,9 +45,25 @@ export interface ListOfferMetricsRequestFilters {
      */
     'programTypes': Set<ProgramType>;
     /**
-     * A list of Amazon Standard Identification Numbers (ASINs).
+     * A list of Amazon Standard Identification Numbers (ASINs) to filter by.
      */
     'asins'?: Set<string>;
+    /**
+     * [Applicable only for Sellers] A list of SKUs to filter by.
+     */
+    'skus'?: Set<string>;
+    /**
+     * [Applicable only for Sellers] The fulfillment channel types to filter by.
+     */
+    'fulfillmentChannelTypes'?: Set<FulfillmentChannelType>;
+    /**
+     * [Applicable only for US marketplace] A list of brand names to filter by.
+     */
+    'brandNames'?: Set<string>;
+    /**
+     * [Applicable only for Vendors] A list of product group names to filter by.
+     */
+    'productGroups'?: Set<string>;
 }
 
 

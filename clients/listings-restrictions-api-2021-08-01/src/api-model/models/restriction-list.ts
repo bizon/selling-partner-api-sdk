@@ -21,6 +21,9 @@ import type { Restriction } from './restriction.js';
  * A list of restrictions for the specified Amazon catalog item.
  */
 export interface RestrictionList {
+    /**
+     * A list of restrictions.
+     */
     'restrictions': Array<Restriction>;
 }
 

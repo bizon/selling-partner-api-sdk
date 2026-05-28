@@ -18,6 +18,9 @@
 import type { RejectionReason } from './rejection-reason.js';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { ValidInterimStatusCode } from './valid-interim-status-code.js';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ValidVerificationDetail } from './valid-verification-detail.js';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -49,6 +52,10 @@ export interface RegulatedOrderVerificationStatus {
      * A list of valid verification details that may be provided and the criteria required for when the verification detail can be provided.
      */
     'ValidVerificationDetails'?: Array<ValidVerificationDetail>;
+    /**
+     * Valid interim status codes that may be used when populating `InterimStatusDetail`. Each element contains a `StatusCode` identifier and its customer-facing `StatusDescription`.
+     */
+    'ValidInterimStatusCodes'?: Array<ValidInterimStatusCode>;
 }
 
 

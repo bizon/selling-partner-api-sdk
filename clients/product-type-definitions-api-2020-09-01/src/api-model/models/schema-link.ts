@@ -17,10 +17,13 @@
 // @ts-ignore
 import type { SchemaLinkLink } from './schema-link-link.js';
 
+/**
+ * A link to metadata schema.
+ */
 export interface SchemaLink {
     'link': SchemaLinkLink;
     /**
-     * Checksum hash of the schema (Base64 MD5). Can be used to verify schema contents, identify changes between schema versions, and for caching.
+     * Checksum hash of the schema (Base64 MD5). Use this to verify schema contents, identify changes between schema versions, and for caching.
      */
     'checksum': string;
 }

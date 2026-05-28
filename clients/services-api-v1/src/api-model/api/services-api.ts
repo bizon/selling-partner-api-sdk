@@ -593,6 +593,8 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
          * Gets service job details for the specified filter query.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {Array<string>} marketplaceIds Used to select jobs that were placed in the specified marketplaces.
          * @param {Array<string>} [serviceOrderIds] List of service order ids for the query you want to perform.Max values supported 20.
+         * @param {Array<string>} [productOrderIds] A list of up to 20 associated product order IDs. You can use these IDs to query service jobs.
+         * @param {Array<string>} [trackingIds] A list of up to 20 associated product tracking IDs. You can use these IDs to query service jobs.
          * @param {Array<GetServiceJobsServiceJobStatusEnum>} [serviceJobStatus] A list of one or more job status by which to filter the list of jobs.
          * @param {string} [pageToken] String returned in the response of your previous request.
          * @param {number} [pageSize] A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20.
@@ -610,7 +612,7 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getServiceJobs: async (marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<GetServiceJobsServiceJobStatusEnum>, pageToken?: string, pageSize?: number, sortField?: GetServiceJobsSortFieldEnum, sortOrder?: GetServiceJobsSortOrderEnum, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, asins?: Array<string>, requiredSkills?: Array<string>, storeIds?: Array<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getServiceJobs: async (marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, productOrderIds?: Array<string>, trackingIds?: Array<string>, serviceJobStatus?: Array<GetServiceJobsServiceJobStatusEnum>, pageToken?: string, pageSize?: number, sortField?: GetServiceJobsSortFieldEnum, sortOrder?: GetServiceJobsSortOrderEnum, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, asins?: Array<string>, requiredSkills?: Array<string>, storeIds?: Array<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceIds' is not null or undefined
             assertParamExists('getServiceJobs', 'marketplaceIds', marketplaceIds)
             const localVarPath = `/service/v1/serviceJobs`;
@@ -627,6 +629,14 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
 
             if (serviceOrderIds) {
                 localVarQueryParameter['serviceOrderIds'] = serviceOrderIds.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (productOrderIds) {
+                localVarQueryParameter['productOrderIds'] = productOrderIds.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (trackingIds) {
+                localVarQueryParameter['trackingIds'] = trackingIds.join(COLLECTION_FORMATS.csv);
             }
 
             if (serviceJobStatus) {
@@ -1050,6 +1060,8 @@ export const ServicesApiFp = function(configuration?: Configuration) {
          * Gets service job details for the specified filter query.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {Array<string>} marketplaceIds Used to select jobs that were placed in the specified marketplaces.
          * @param {Array<string>} [serviceOrderIds] List of service order ids for the query you want to perform.Max values supported 20.
+         * @param {Array<string>} [productOrderIds] A list of up to 20 associated product order IDs. You can use these IDs to query service jobs.
+         * @param {Array<string>} [trackingIds] A list of up to 20 associated product tracking IDs. You can use these IDs to query service jobs.
          * @param {Array<GetServiceJobsServiceJobStatusEnum>} [serviceJobStatus] A list of one or more job status by which to filter the list of jobs.
          * @param {string} [pageToken] String returned in the response of your previous request.
          * @param {number} [pageSize] A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20.
@@ -1067,8 +1079,8 @@ export const ServicesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getServiceJobs(marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, serviceJobStatus?: Array<GetServiceJobsServiceJobStatusEnum>, pageToken?: string, pageSize?: number, sortField?: GetServiceJobsSortFieldEnum, sortOrder?: GetServiceJobsSortOrderEnum, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, asins?: Array<string>, requiredSkills?: Array<string>, storeIds?: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetServiceJobsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getServiceJobs(marketplaceIds, serviceOrderIds, serviceJobStatus, pageToken, pageSize, sortField, sortOrder, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, scheduleStartDate, scheduleEndDate, asins, requiredSkills, storeIds, options);
+        async getServiceJobs(marketplaceIds: Array<string>, serviceOrderIds?: Array<string>, productOrderIds?: Array<string>, trackingIds?: Array<string>, serviceJobStatus?: Array<GetServiceJobsServiceJobStatusEnum>, pageToken?: string, pageSize?: number, sortField?: GetServiceJobsSortFieldEnum, sortOrder?: GetServiceJobsSortOrderEnum, createdAfter?: string, createdBefore?: string, lastUpdatedAfter?: string, lastUpdatedBefore?: string, scheduleStartDate?: string, scheduleEndDate?: string, asins?: Array<string>, requiredSkills?: Array<string>, storeIds?: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetServiceJobsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getServiceJobs(marketplaceIds, serviceOrderIds, productOrderIds, trackingIds, serviceJobStatus, pageToken, pageSize, sortField, sortOrder, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, scheduleStartDate, scheduleEndDate, asins, requiredSkills, storeIds, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ServicesApi.getServiceJobs']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1253,7 +1265,7 @@ export const ServicesApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         getServiceJobs(requestParameters: ServicesApiGetServiceJobsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetServiceJobsResponse> {
-            return localVarFp.getServiceJobs(requestParameters.marketplaceIds, requestParameters.serviceOrderIds, requestParameters.serviceJobStatus, requestParameters.pageToken, requestParameters.pageSize, requestParameters.sortField, requestParameters.sortOrder, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.scheduleStartDate, requestParameters.scheduleEndDate, requestParameters.asins, requestParameters.requiredSkills, requestParameters.storeIds, options).then((request) => request(axios, basePath));
+            return localVarFp.getServiceJobs(requestParameters.marketplaceIds, requestParameters.serviceOrderIds, requestParameters.productOrderIds, requestParameters.trackingIds, requestParameters.serviceJobStatus, requestParameters.pageToken, requestParameters.pageSize, requestParameters.sortField, requestParameters.sortOrder, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.scheduleStartDate, requestParameters.scheduleEndDate, requestParameters.asins, requestParameters.requiredSkills, requestParameters.storeIds, options).then((request) => request(axios, basePath));
         },
         /**
          * Reschedules an appointment for the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -1522,6 +1534,16 @@ export interface ServicesApiGetServiceJobsRequest {
      * List of service order ids for the query you want to perform.Max values supported 20.
      */
     readonly serviceOrderIds?: Array<string>
+
+    /**
+     * A list of up to 20 associated product order IDs. You can use these IDs to query service jobs.
+     */
+    readonly productOrderIds?: Array<string>
+
+    /**
+     * A list of up to 20 associated product tracking IDs. You can use these IDs to query service jobs.
+     */
+    readonly trackingIds?: Array<string>
 
     /**
      * A list of one or more job status by which to filter the list of jobs.
@@ -1805,7 +1827,7 @@ export class ServicesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public getServiceJobs(requestParameters: ServicesApiGetServiceJobsRequest, options?: RawAxiosRequestConfig) {
-        return ServicesApiFp(this.configuration).getServiceJobs(requestParameters.marketplaceIds, requestParameters.serviceOrderIds, requestParameters.serviceJobStatus, requestParameters.pageToken, requestParameters.pageSize, requestParameters.sortField, requestParameters.sortOrder, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.scheduleStartDate, requestParameters.scheduleEndDate, requestParameters.asins, requestParameters.requiredSkills, requestParameters.storeIds, options).then((request) => request(this.axios, this.basePath));
+        return ServicesApiFp(this.configuration).getServiceJobs(requestParameters.marketplaceIds, requestParameters.serviceOrderIds, requestParameters.productOrderIds, requestParameters.trackingIds, requestParameters.serviceJobStatus, requestParameters.pageToken, requestParameters.pageSize, requestParameters.sortField, requestParameters.sortOrder, requestParameters.createdAfter, requestParameters.createdBefore, requestParameters.lastUpdatedAfter, requestParameters.lastUpdatedBefore, requestParameters.scheduleStartDate, requestParameters.scheduleEndDate, requestParameters.asins, requestParameters.requiredSkills, requestParameters.storeIds, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

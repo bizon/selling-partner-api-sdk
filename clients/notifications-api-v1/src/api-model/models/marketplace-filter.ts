@@ -15,11 +15,11 @@
 
 
 /**
- * An event filter to customize your subscription to send notifications for only the specified `marketplaceId`s.
+ * An event filter you can use to customize your subscription to send notifications for specific `marketplaceId`s.
  */
 export interface MarketplaceFilter {
     /**
-     * A list of marketplace identifiers to subscribe to (for example: ATVPDKIKX0DER). To receive notifications in every marketplace, do not provide this list.
+     * A list of marketplace identifiers you can subscribe to (for example, `ATVPDKIKX0DER`). To receive notifications in every marketplace, do not provide this list.
      */
     'marketplaceIds'?: Array<string>;
 }

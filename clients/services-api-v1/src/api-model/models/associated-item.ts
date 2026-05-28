@@ -16,6 +16,9 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ItemDelivery } from './item-delivery.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { LinkedAsset } from './linked-asset.js';
 
 /**
  * Information about an item associated with the service job.
@@ -46,6 +49,10 @@ export interface AssociatedItem {
      */
     'brandName'?: string;
     'itemDelivery'?: ItemDelivery;
+    /**
+     * A list of customer-owned assets on which the service must be performed.
+     */
+    'linkedAssets'?: Array<LinkedAsset>;
 }
 
 export const AssociatedItemItemStatusEnum = {

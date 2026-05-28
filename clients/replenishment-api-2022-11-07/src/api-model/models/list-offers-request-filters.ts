@@ -27,7 +27,7 @@ import type { ProgramType } from './program-type.js';
 import type { Promotion } from './promotion.js';
 
 /**
- * Use these parameters to filter results. Any result must match all provided parameters. For any parameter that is an array, the result must match at least one element in the provided array.
+ * Use these parameters to filter results. Any result must match all provided parameters. For parameters that accept multiple values (arrays), the API returns results that match at least one value in the array.
  */
 export interface ListOffersRequestFilters {
     /**

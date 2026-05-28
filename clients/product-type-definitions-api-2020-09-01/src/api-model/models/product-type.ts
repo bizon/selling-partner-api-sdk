@@ -23,7 +23,7 @@ export interface ProductType {
      */
     'name': string;
     /**
-     * The human-readable and localized description of the Amazon product type.
+     * Human-readable and localized description of the Amazon product type.
      */
     'displayName': string;
     /**

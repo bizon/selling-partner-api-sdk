@@ -53,6 +53,13 @@ export const clientRateLimits: RateLimit[] = [
     burst: 2,
   },
   {
+    method: 'get',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/awd/2024-05-09/inboundShipments/[^/]*/labelPageTypes$'),
+    rate: 1,
+    burst: 2,
+  },
+  {
     method: 'put',
     // eslint-disable-next-line prefer-regex-literals
     urlRegex: new RegExp('^/awd/2024-05-09/inboundShipments/[^/]*/transport$'),
@@ -79,6 +86,41 @@ export const clientRateLimits: RateLimit[] = [
     urlRegex: new RegExp('^/awd/2024-05-09/inventory$'),
     rate: 2,
     burst: 2,
+  },
+  {
+    method: 'get',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/awd/2024-05-09/outboundOrders$'),
+    rate: 1,
+    burst: 1,
+  },
+  {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/awd/2024-05-09/outboundOrders$'),
+    rate: 1,
+    burst: 1,
+  },
+  {
+    method: 'get',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/awd/2024-05-09/outboundOrders/[^/]*$'),
+    rate: 1,
+    burst: 1,
+  },
+  {
+    method: 'put',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/awd/2024-05-09/outboundOrders/[^/]*$'),
+    rate: 1,
+    burst: 1,
+  },
+  {
+    method: 'post',
+    // eslint-disable-next-line prefer-regex-literals
+    urlRegex: new RegExp('^/awd/2024-05-09/outboundOrders/[^/]*/confirmation$'),
+    rate: 1,
+    burst: 1,
   },
 ]
 

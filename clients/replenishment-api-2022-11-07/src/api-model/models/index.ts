@@ -8,6 +8,7 @@ export * from './error-list.js';
 export * from './forecast-deliveries.js';
 export * from './fulfillment-channel-type.js';
 export * from './get-selling-partner-metrics-request.js';
+export * from './get-selling-partner-metrics-request-filters.js';
 export * from './get-selling-partner-metrics-response.js';
 export * from './get-selling-partner-metrics-response-metric.js';
 export * from './list-offer-metrics-request.js';

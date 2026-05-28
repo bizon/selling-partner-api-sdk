@@ -15,6 +15,12 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { ApprovedAttribute } from './approved-attribute.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { InterimStatusDetail } from './interim-status-detail.js';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { PrescriptionDetail } from './prescription-detail.js';
 
 /**
@@ -22,5 +28,10 @@ import type { PrescriptionDetail } from './prescription-detail.js';
  */
 export interface VerificationDetails {
     'prescriptionDetail'?: PrescriptionDetail;
+    /**
+     * Pre-approved alternative product attributes available for a rejected order. Each element contains an attribute name, its original value from the rejected order, and the corrected value that would result in approval (for example, a substituted `asin` or adjusted `petWeight`).
+     */
+    'approvedAlternativeDetails'?: Array<ApprovedAttribute>;
+    'interimStatusDetail'?: InterimStatusDetail;
 }
 

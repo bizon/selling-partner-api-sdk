@@ -73,6 +73,14 @@ export interface ServiceJob {
      */
     'serviceOrderId'?: string;
     /**
+     * A list of associated product order IDs for the service job.
+     */
+    'productOrderIds'?: Array<string>;
+    /**
+     * A list of associated product tracking IDs for the service job.
+     */
+    'trackingIds'?: Array<string>;
+    /**
      * The marketplace identifier.
      */
     'marketplaceId'?: string;

@@ -21,6 +21,9 @@ import type { ProductType } from './product-type.js';
  * A list of Amazon product types with definitions available.
  */
 export interface ProductTypeList {
+    /**
+     * A list of product types.
+     */
     'productTypes': Array<ProductType>;
     /**
      * Amazon product type version identifier.

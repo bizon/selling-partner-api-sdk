@@ -35,10 +35,11 @@ export const ListingsRestrictionsApiAxiosParamCreator = function (configuration?
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
          * @param {GetListingsRestrictionsConditionTypeEnum} [conditionType] The condition used to filter restrictions.
          * @param {string} [reasonLocale] A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale.
+         * @param {string} [productType] The product type of the item. When provided with the brand name, the API evaluates GTIN exemption restrictions in addition to brand restrictions for the specified product type.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getListingsRestrictions: async (asin: string, sellerId: string, marketplaceIds: Array<string>, conditionType?: GetListingsRestrictionsConditionTypeEnum, reasonLocale?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getListingsRestrictions: async (asin: string, sellerId: string, marketplaceIds: Array<string>, conditionType?: GetListingsRestrictionsConditionTypeEnum, reasonLocale?: string, productType?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'asin' is not null or undefined
             assertParamExists('getListingsRestrictions', 'asin', asin)
             // verify required parameter 'sellerId' is not null or undefined
@@ -77,6 +78,10 @@ export const ListingsRestrictionsApiAxiosParamCreator = function (configuration?
                 localVarQueryParameter['reasonLocale'] = reasonLocale;
             }
 
+            if (productType !== undefined) {
+                localVarQueryParameter['productType'] = productType;
+            }
+
             localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -104,11 +109,12 @@ export const ListingsRestrictionsApiFp = function(configuration?: Configuration)
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
          * @param {GetListingsRestrictionsConditionTypeEnum} [conditionType] The condition used to filter restrictions.
          * @param {string} [reasonLocale] A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale.
+         * @param {string} [productType] The product type of the item. When provided with the brand name, the API evaluates GTIN exemption restrictions in addition to brand restrictions for the specified product type.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getListingsRestrictions(asin: string, sellerId: string, marketplaceIds: Array<string>, conditionType?: GetListingsRestrictionsConditionTypeEnum, reasonLocale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RestrictionList>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getListingsRestrictions(asin, sellerId, marketplaceIds, conditionType, reasonLocale, options);
+        async getListingsRestrictions(asin: string, sellerId: string, marketplaceIds: Array<string>, conditionType?: GetListingsRestrictionsConditionTypeEnum, reasonLocale?: string, productType?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RestrictionList>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getListingsRestrictions(asin, sellerId, marketplaceIds, conditionType, reasonLocale, productType, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ListingsRestrictionsApi.getListingsRestrictions']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -129,7 +135,7 @@ export const ListingsRestrictionsApiFactory = function (configuration?: Configur
          * @throws {RequiredError}
          */
         getListingsRestrictions(requestParameters: ListingsRestrictionsApiGetListingsRestrictionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<RestrictionList> {
-            return localVarFp.getListingsRestrictions(requestParameters.asin, requestParameters.sellerId, requestParameters.marketplaceIds, requestParameters.conditionType, requestParameters.reasonLocale, options).then((request) => request(axios, basePath));
+            return localVarFp.getListingsRestrictions(requestParameters.asin, requestParameters.sellerId, requestParameters.marketplaceIds, requestParameters.conditionType, requestParameters.reasonLocale, requestParameters.productType, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -162,6 +168,11 @@ export interface ListingsRestrictionsApiGetListingsRestrictionsRequest {
      * A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale.
      */
     readonly reasonLocale?: string
+
+    /**
+     * The product type of the item. When provided with the brand name, the API evaluates GTIN exemption restrictions in addition to brand restrictions for the specified product type.
+     */
+    readonly productType?: string
 }
 
 /**
@@ -175,7 +186,7 @@ export class ListingsRestrictionsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public getListingsRestrictions(requestParameters: ListingsRestrictionsApiGetListingsRestrictionsRequest, options?: RawAxiosRequestConfig) {
-        return ListingsRestrictionsApiFp(this.configuration).getListingsRestrictions(requestParameters.asin, requestParameters.sellerId, requestParameters.marketplaceIds, requestParameters.conditionType, requestParameters.reasonLocale, options).then((request) => request(this.axios, this.basePath));
+        return ListingsRestrictionsApiFp(this.configuration).getListingsRestrictions(requestParameters.asin, requestParameters.sellerId, requestParameters.marketplaceIds, requestParameters.conditionType, requestParameters.reasonLocale, requestParameters.productType, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

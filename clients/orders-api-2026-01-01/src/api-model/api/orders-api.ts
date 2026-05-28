@@ -336,6 +336,7 @@ export const GetOrderIncludedDataEnum = {
     Packages: 'PACKAGES',
     Tax: 'TAX',
     Payment: 'PAYMENT',
+    FulfillmentOrders: 'FULFILLMENT_ORDERS',
 } as const;
 export type GetOrderIncludedDataEnum = typeof GetOrderIncludedDataEnum[keyof typeof GetOrderIncludedDataEnum];
 export const SearchOrdersFulfillmentStatusesEnum = {
@@ -364,5 +365,6 @@ export const SearchOrdersIncludedDataEnum = {
     Packages: 'PACKAGES',
     Tax: 'TAX',
     Payment: 'PAYMENT',
+    FulfillmentOrders: 'FULFILLMENT_ORDERS',
 } as const;
 export type SearchOrdersIncludedDataEnum = typeof SearchOrdersIncludedDataEnum[keyof typeof SearchOrdersIncludedDataEnum];

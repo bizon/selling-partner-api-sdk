@@ -27,8 +27,8 @@ export interface ItemProceedsBreakdown {
     /**
      * Category classification of the proceeds breakdown.   **Possible values**: `ITEM`, `SHIPPING`, `GIFT_WRAP`, `COD_FEE`, `OTHER`, `TAX`, `DISCOUNT`
      */
-    'type'?: string;
-    'subtotal'?: Money;
+    'type': string;
+    'subtotal': Money;
     /**
      * Further granular breakdown of the subtotal.
      */

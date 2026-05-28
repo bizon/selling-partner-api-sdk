@@ -18,6 +18,9 @@
 import type { AggregationFrequency } from './aggregation-frequency.js';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { GetSellingPartnerMetricsRequestFilters } from './get-selling-partner-metrics-request-filters.js';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { Metric } from './metric.js';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -39,6 +42,7 @@ export interface GetSellingPartnerMetricsRequest {
      * The list of metrics requested. If no metric value is provided, data for all metrics will be returned.
      */
     'metrics'?: Set<Metric>;
+    'filters'?: GetSellingPartnerMetricsRequestFilters;
     'timePeriodType': TimePeriodType;
     /**
      * The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE, and JP. The supported marketplaces for vendors only are BR, AU, MX, AE, and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.

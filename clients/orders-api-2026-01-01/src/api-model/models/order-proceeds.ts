@@ -16,11 +16,18 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import type { Money } from './money.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { OrderProceedsBreakdown } from './order-proceeds-breakdown.js';
 
 /**
  * The money that the seller receives from the sale of the order.
  */
 export interface OrderProceeds {
     'grandTotal'?: Money;
+    /**
+     * Categorized proceeds for the order. Proceed categories are either aggregated across all order items (such as `ITEM`, `SHIPPING`, and `TAX`) or applied at the order level (such as `DELIVERY_TIP`).
+     */
+    'breakdowns'?: Array<OrderProceedsBreakdown>;
 }
 

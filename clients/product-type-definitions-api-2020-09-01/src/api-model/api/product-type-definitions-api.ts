@@ -37,14 +37,15 @@ export const ProductTypeDefinitionsApiAxiosParamCreator = function (configuratio
          * @param {string} productType The Amazon product type name.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. Note: This parameter is limited to one marketplaceId at this time.
          * @param {string} [sellerId] A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner.
-         * @param {string} [productTypeVersion] The version of the Amazon product type to retrieve. Defaults to \&quot;LATEST\&quot;,. Prerelease versions of product type definitions may be retrieved with \&quot;RELEASE_CANDIDATE\&quot;. If no prerelease version is currently available, the \&quot;LATEST\&quot; live version will be provided.
+         * @param {string} [productTypeVersion] The version of the Amazon product type to retrieve. Defaults to \&quot;LATEST\&quot;. Prerelease versions of product type definitions may be retrieved with \&quot;RELEASE_CANDIDATE\&quot;. If no prerelease version is currently available, the \&quot;LATEST\&quot; live version will be provided.
          * @param {GetDefinitionsProductTypeRequirementsEnum} [requirements] The name of the requirements set to retrieve requirements for.
          * @param {GetDefinitionsProductTypeRequirementsEnforcedEnum} [requirementsEnforced] Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates).
          * @param {GetDefinitionsProductTypeLocaleEnum} [locale] Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request.
+         * @param {GetDefinitionsProductTypeParentageLevelEnum} [parentageLevel] The parentage level of the listing to retrieve a schema for. When provided, the schema is simplified by resolving all conditional logic related to the specified parentage level, resulting in a smaller schema with fewer conditions.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDefinitionsProductType: async (productType: string, marketplaceIds: Array<string>, sellerId?: string, productTypeVersion?: string, requirements?: GetDefinitionsProductTypeRequirementsEnum, requirementsEnforced?: GetDefinitionsProductTypeRequirementsEnforcedEnum, locale?: GetDefinitionsProductTypeLocaleEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getDefinitionsProductType: async (productType: string, marketplaceIds: Array<string>, sellerId?: string, productTypeVersion?: string, requirements?: GetDefinitionsProductTypeRequirementsEnum, requirementsEnforced?: GetDefinitionsProductTypeRequirementsEnforcedEnum, locale?: GetDefinitionsProductTypeLocaleEnum, parentageLevel?: GetDefinitionsProductTypeParentageLevelEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'productType' is not null or undefined
             assertParamExists('getDefinitionsProductType', 'productType', productType)
             // verify required parameter 'marketplaceIds' is not null or undefined
@@ -86,6 +87,10 @@ export const ProductTypeDefinitionsApiAxiosParamCreator = function (configuratio
                 localVarQueryParameter['locale'] = locale;
             }
 
+            if (parentageLevel !== undefined) {
+                localVarQueryParameter['parentageLevel'] = parentageLevel;
+            }
+
             localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -101,9 +106,9 @@ export const ProductTypeDefinitionsApiAxiosParamCreator = function (configuratio
          * Search for and return a list of Amazon product types that have definitions available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
          * @param {Array<string>} [keywords] A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;.
-         * @param {string} [itemName] The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;.
-         * @param {string} [locale] The locale for the display names in the response. Defaults to the primary locale of the marketplace.
-         * @param {string} [searchLocale] The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace.
+         * @param {string} [itemName] Title of ASIN to get product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;.
+         * @param {string} [locale] Locale for display names in response. Defaults to primary locale of the marketplace.
+         * @param {string} [searchLocale] Language used for &#x60;keywords&#x60; or &#x60;itemName&#x60; parameters. Defaults to primary locale of the marketplace.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -167,15 +172,16 @@ export const ProductTypeDefinitionsApiFp = function(configuration?: Configuratio
          * @param {string} productType The Amazon product type name.
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. Note: This parameter is limited to one marketplaceId at this time.
          * @param {string} [sellerId] A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner.
-         * @param {string} [productTypeVersion] The version of the Amazon product type to retrieve. Defaults to \&quot;LATEST\&quot;,. Prerelease versions of product type definitions may be retrieved with \&quot;RELEASE_CANDIDATE\&quot;. If no prerelease version is currently available, the \&quot;LATEST\&quot; live version will be provided.
+         * @param {string} [productTypeVersion] The version of the Amazon product type to retrieve. Defaults to \&quot;LATEST\&quot;. Prerelease versions of product type definitions may be retrieved with \&quot;RELEASE_CANDIDATE\&quot;. If no prerelease version is currently available, the \&quot;LATEST\&quot; live version will be provided.
          * @param {GetDefinitionsProductTypeRequirementsEnum} [requirements] The name of the requirements set to retrieve requirements for.
          * @param {GetDefinitionsProductTypeRequirementsEnforcedEnum} [requirementsEnforced] Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates).
          * @param {GetDefinitionsProductTypeLocaleEnum} [locale] Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request.
+         * @param {GetDefinitionsProductTypeParentageLevelEnum} [parentageLevel] The parentage level of the listing to retrieve a schema for. When provided, the schema is simplified by resolving all conditional logic related to the specified parentage level, resulting in a smaller schema with fewer conditions.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getDefinitionsProductType(productType: string, marketplaceIds: Array<string>, sellerId?: string, productTypeVersion?: string, requirements?: GetDefinitionsProductTypeRequirementsEnum, requirementsEnforced?: GetDefinitionsProductTypeRequirementsEnforcedEnum, locale?: GetDefinitionsProductTypeLocaleEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductTypeDefinition>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getDefinitionsProductType(productType, marketplaceIds, sellerId, productTypeVersion, requirements, requirementsEnforced, locale, options);
+        async getDefinitionsProductType(productType: string, marketplaceIds: Array<string>, sellerId?: string, productTypeVersion?: string, requirements?: GetDefinitionsProductTypeRequirementsEnum, requirementsEnforced?: GetDefinitionsProductTypeRequirementsEnforcedEnum, locale?: GetDefinitionsProductTypeLocaleEnum, parentageLevel?: GetDefinitionsProductTypeParentageLevelEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductTypeDefinition>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getDefinitionsProductType(productType, marketplaceIds, sellerId, productTypeVersion, requirements, requirementsEnforced, locale, parentageLevel, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ProductTypeDefinitionsApi.getDefinitionsProductType']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -184,9 +190,9 @@ export const ProductTypeDefinitionsApiFp = function(configuration?: Configuratio
          * Search for and return a list of Amazon product types that have definitions available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {Array<string>} marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
          * @param {Array<string>} [keywords] A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;.
-         * @param {string} [itemName] The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;.
-         * @param {string} [locale] The locale for the display names in the response. Defaults to the primary locale of the marketplace.
-         * @param {string} [searchLocale] The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace.
+         * @param {string} [itemName] Title of ASIN to get product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;.
+         * @param {string} [locale] Locale for display names in response. Defaults to primary locale of the marketplace.
+         * @param {string} [searchLocale] Language used for &#x60;keywords&#x60; or &#x60;itemName&#x60; parameters. Defaults to primary locale of the marketplace.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -212,7 +218,7 @@ export const ProductTypeDefinitionsApiFactory = function (configuration?: Config
          * @throws {RequiredError}
          */
         getDefinitionsProductType(requestParameters: ProductTypeDefinitionsApiGetDefinitionsProductTypeRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductTypeDefinition> {
-            return localVarFp.getDefinitionsProductType(requestParameters.productType, requestParameters.marketplaceIds, requestParameters.sellerId, requestParameters.productTypeVersion, requestParameters.requirements, requestParameters.requirementsEnforced, requestParameters.locale, options).then((request) => request(axios, basePath));
+            return localVarFp.getDefinitionsProductType(requestParameters.productType, requestParameters.marketplaceIds, requestParameters.sellerId, requestParameters.productTypeVersion, requestParameters.requirements, requestParameters.requirementsEnforced, requestParameters.locale, requestParameters.parentageLevel, options).then((request) => request(axios, basePath));
         },
         /**
          * Search for and return a list of Amazon product types that have definitions available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
@@ -246,7 +252,7 @@ export interface ProductTypeDefinitionsApiGetDefinitionsProductTypeRequest {
     readonly sellerId?: string
 
     /**
-     * The version of the Amazon product type to retrieve. Defaults to \&quot;LATEST\&quot;,. Prerelease versions of product type definitions may be retrieved with \&quot;RELEASE_CANDIDATE\&quot;. If no prerelease version is currently available, the \&quot;LATEST\&quot; live version will be provided.
+     * The version of the Amazon product type to retrieve. Defaults to \&quot;LATEST\&quot;. Prerelease versions of product type definitions may be retrieved with \&quot;RELEASE_CANDIDATE\&quot;. If no prerelease version is currently available, the \&quot;LATEST\&quot; live version will be provided.
      */
     readonly productTypeVersion?: string
 
@@ -264,6 +270,11 @@ export interface ProductTypeDefinitionsApiGetDefinitionsProductTypeRequest {
      * Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request.
      */
     readonly locale?: GetDefinitionsProductTypeLocaleEnum
+
+    /**
+     * The parentage level of the listing to retrieve a schema for. When provided, the schema is simplified by resolving all conditional logic related to the specified parentage level, resulting in a smaller schema with fewer conditions.
+     */
+    readonly parentageLevel?: GetDefinitionsProductTypeParentageLevelEnum
 }
 
 /**
@@ -281,17 +292,17 @@ export interface ProductTypeDefinitionsApiSearchDefinitionsProductTypesRequest {
     readonly keywords?: Array<string>
 
     /**
-     * The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;.
+     * Title of ASIN to get product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;.
      */
     readonly itemName?: string
 
     /**
-     * The locale for the display names in the response. Defaults to the primary locale of the marketplace.
+     * Locale for display names in response. Defaults to primary locale of the marketplace.
      */
     readonly locale?: string
 
     /**
-     * The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace.
+     * Language used for &#x60;keywords&#x60; or &#x60;itemName&#x60; parameters. Defaults to primary locale of the marketplace.
      */
     readonly searchLocale?: string
 }
@@ -307,7 +318,7 @@ export class ProductTypeDefinitionsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public getDefinitionsProductType(requestParameters: ProductTypeDefinitionsApiGetDefinitionsProductTypeRequest, options?: RawAxiosRequestConfig) {
-        return ProductTypeDefinitionsApiFp(this.configuration).getDefinitionsProductType(requestParameters.productType, requestParameters.marketplaceIds, requestParameters.sellerId, requestParameters.productTypeVersion, requestParameters.requirements, requestParameters.requirementsEnforced, requestParameters.locale, options).then((request) => request(this.axios, this.basePath));
+        return ProductTypeDefinitionsApiFp(this.configuration).getDefinitionsProductType(requestParameters.productType, requestParameters.marketplaceIds, requestParameters.sellerId, requestParameters.productTypeVersion, requestParameters.requirements, requestParameters.requirementsEnforced, requestParameters.locale, requestParameters.parentageLevel, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -373,3 +384,9 @@ export const GetDefinitionsProductTypeLocaleEnum = {
     ZhTw: 'zh_TW',
 } as const;
 export type GetDefinitionsProductTypeLocaleEnum = typeof GetDefinitionsProductTypeLocaleEnum[keyof typeof GetDefinitionsProductTypeLocaleEnum];
+export const GetDefinitionsProductTypeParentageLevelEnum = {
+    None: 'NONE',
+    Child: 'CHILD',
+    Parent: 'PARENT',
+} as const;
+export type GetDefinitionsProductTypeParentageLevelEnum = typeof GetDefinitionsProductTypeParentageLevelEnum[keyof typeof GetDefinitionsProductTypeParentageLevelEnum];

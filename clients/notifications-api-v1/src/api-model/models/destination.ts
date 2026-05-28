@@ -18,7 +18,7 @@
 import type { DestinationResource } from './destination-resource.js';
 
 /**
- * Information about the destination created when you call the `createDestination` operation.
+ * Information about the destination you create when you call the `createDestination` operation.
  */
 export interface Destination {
     /**

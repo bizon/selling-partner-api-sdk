@@ -22,7 +22,7 @@ import type { VerificationStatus } from './verification-status.js';
  */
 export interface ValidVerificationDetail {
     /**
-     * A supported type of verification detail. The type indicates which verification detail could be shared while updating the regulated order. Valid value: `prescriptionDetail`.
+     * A supported type of verification detail. The type indicates which verification detail could be shared while updating the regulated order. Valid values: `prescriptionDetail`, `approvedAlternativeDetails`, `interimStatusDetail`.
      */
     'VerificationDetailType': string;
     /**

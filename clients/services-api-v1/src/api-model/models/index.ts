@@ -35,6 +35,7 @@ export * from './get-service-jobs-response.js';
 export * from './item-delivery.js';
 export * from './item-delivery-promise.js';
 export * from './job-listing.js';
+export * from './linked-asset.js';
 export * from './model-error.js';
 export * from './money-amount.js';
 export * from './payment.js';

@@ -98,7 +98,7 @@ export interface GetSellingPartnerMetricsResponseMetric {
      */
     'revenuePenetrationFor5PlusPercentSellerFunding'?: number;
     /**
-     * The percentage of new subscriptions acquired through coupons. Applicable to `PERFORMANCE` `timePeriodType`.
+     * The percentage of new subscriptions from coupons. Applicable to `PERFORMANCE` `timePeriodType`.
      */
     'shareOfCouponSubscriptions'?: number;
     /**
@@ -130,19 +130,19 @@ export interface GetSellingPartnerMetricsResponseMetric {
      */
     'establishedSubscriberLifeTimeValueFromSNS'?: number;
     /**
-     * Percentage of subscriptions created by offers with 0% seller-funded discount out of the total number of new orders placed over the past 12 months
+     * Percentage of subscriptions from offers with 0% seller-funded discount out of the total number of new orders placed over the past 12 months.
      */
     'signupConversionFor0PercentSellerFunding'?: number;
     /**
-     * [Applicable only for Sellers] Percentage of subscriptions created by offers with 5% seller-funded discount out of the total number of new orders placed over the past 12 months
+     * [Applicable only for Sellers] Percentage of subscriptions from offers with 5% seller-funded discount out of the total number of new orders placed over the past 12 months.
      */
     'signupConversionFor5PercentSellerFunding'?: number;
     /**
-     * [Applicable only for Sellers] Percentage of subscriptions created by offers with 10% seller-funded discount out of the total number of new orders placed over the past 12 months
+     * [Applicable only for Sellers] Percentage of subscriptions from offers with 10% seller-funded discount out of the total number of new orders placed over the past 12 months.
      */
     'signupConversionFor10PercentSellerFunding'?: number;
     /**
-     * [Applicable only for Vendors] Percentage of subscriptions created by offers with 5% or above seller-funded discount out of the total number of new orders placed over the past 12 months
+     * [Applicable only for Vendors] Percentage of subscriptions from offers with 5% or above seller-funded discount out of the total number of new orders placed over the past 12 months.
      */
     'signupConversionFor5PlusPercentSellerFunding'?: number;
     /**

@@ -18,7 +18,7 @@
 import type { AggregationSettings } from './aggregation-settings.js';
 
 /**
- * A filter used to select the aggregation time period at which to send notifications (for example: limit to one notification every five minutes for high frequency notifications).
+ * A filter you can use to select the aggregation time period at which to send notifications (for example, limit to one notification every five minutes for high frequency notifications).
  */
 export interface AggregationFilter {
     'aggregationSettings'?: AggregationSettings;

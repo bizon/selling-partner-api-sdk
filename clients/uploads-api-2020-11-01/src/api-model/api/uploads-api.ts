@@ -33,7 +33,7 @@ export const UploadsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {Array<string>} marketplaceIds The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {string} contentMD5 An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.
          * @param {string} resource The upload destination for your resource. For example, if you create an upload destination for the &#x60;createLegalDisclosure&#x60; operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you create an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/2020-11-01/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.
-         * @param {string} [contentType] The content type of the file you upload.
+         * @param {string} [contentType] The content type of the file you upload. This parameter is required for A+ content.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -94,7 +94,7 @@ export const UploadsApiFp = function(configuration?: Configuration) {
          * @param {Array<string>} marketplaceIds The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {string} contentMD5 An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.
          * @param {string} resource The upload destination for your resource. For example, if you create an upload destination for the &#x60;createLegalDisclosure&#x60; operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you create an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/2020-11-01/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;.
-         * @param {string} [contentType] The content type of the file you upload.
+         * @param {string} [contentType] The content type of the file you upload. This parameter is required for A+ content.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -145,7 +145,7 @@ export interface UploadsApiCreateUploadDestinationForResourceRequest {
     readonly resource: string
 
     /**
-     * The content type of the file you upload.
+     * The content type of the file you upload. This parameter is required for A+ content.
      */
     readonly contentType?: string
 }

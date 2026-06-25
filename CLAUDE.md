@@ -21,7 +21,7 @@ pnpm test         # tests (Jest with SWC)
 
 ## Commit and PR conventions
 
-- Use semantic commit messages (conventional commits)
+- Use semantic commit messages (Conventional Commits)
 - Subject line under 55 characters, body lines under 72 characters
 - No `Co-Authored-By` trailer
 - PR titles follow the same conventions as commit subjects

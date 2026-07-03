@@ -31,7 +31,7 @@
   "scripts": {
     "xo": "xo --cwd=../.. clients/easy-ship-api-2022-03-23",
     "check:ts": "tsc --noEmit",
-    "build": "tsup"
+    "build": "tsdown"
   },
   "dependencies": {
     "@sp-api-sdk/common": "workspace:*",

@@ -229,8 +229,8 @@ async function generateClientVersion(modelFilePath: string): Promise<ClientInfo>
     await renderTemplate('codegen/templates/tsconfig.json.mustache'),
   )
   await fs.writeFile(
-    `${clientDirectoryPath}/tsup.config.ts`,
-    await renderTemplate('codegen/templates/tsup.config.ts.mustache'),
+    `${clientDirectoryPath}/tsdown.config.ts`,
+    await renderTemplate('codegen/templates/tsdown.config.ts.mustache'),
   )
   await fs.writeFile(
     `${clientDirectoryPath}/typedoc.json`,

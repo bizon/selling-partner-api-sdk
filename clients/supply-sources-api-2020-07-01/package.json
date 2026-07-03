@@ -31,7 +31,7 @@
   "scripts": {
     "xo": "xo --cwd=../.. clients/supply-sources-api-2020-07-01",
     "check:ts": "tsc --noEmit",
-    "build": "tsup"
+    "build": "tsdown"
   },
   "dependencies": {
     "@sp-api-sdk/common": "workspace:*",

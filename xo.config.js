@@ -4,7 +4,7 @@ import xoBizon from 'eslint-config-xo-bizon'
 export default [
   ...xoBizon,
   {
-    ignores: ['clients/*/src/api-model/**', '**/tsup.config.ts'],
+    ignores: ['clients/*/src/api-model/**', '**/tsdown.config.ts'],
   },
   {
     settings: {

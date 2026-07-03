@@ -31,7 +31,7 @@
   "scripts": {
     "xo": "xo --cwd=../.. clients/data-kiosk-api-2023-11-15",
     "check:ts": "tsc --noEmit",
-    "build": "tsup"
+    "build": "tsdown"
   },
   "dependencies": {
     "@sp-api-sdk/common": "workspace:*",

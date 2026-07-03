@@ -31,7 +31,7 @@
   "scripts": {
     "xo": "xo --cwd=../.. clients/replenishment-api-2022-11-07",
     "check:ts": "tsc --noEmit",
-    "build": "tsup"
+    "build": "tsdown"
   },
   "dependencies": {
     "@sp-api-sdk/common": "workspace:*",

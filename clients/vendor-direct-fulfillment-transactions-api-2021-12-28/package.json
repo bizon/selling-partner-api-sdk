@@ -31,7 +31,7 @@
   "scripts": {
     "xo": "xo --cwd=../.. clients/vendor-direct-fulfillment-transactions-api-2021-12-28",
     "check:ts": "tsc --noEmit",
-    "build": "tsup"
+    "build": "tsdown"
   },
   "dependencies": {
     "@sp-api-sdk/common": "workspace:*",

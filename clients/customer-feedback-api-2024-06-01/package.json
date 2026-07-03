@@ -31,7 +31,7 @@
   "scripts": {
     "xo": "xo --cwd=../.. clients/customer-feedback-api-2024-06-01",
     "check:ts": "tsc --noEmit",
-    "build": "tsup"
+    "build": "tsdown"
   },
   "dependencies": {
     "@sp-api-sdk/common": "workspace:*",

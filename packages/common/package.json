@@ -31,7 +31,7 @@
   "scripts": {
     "xo": "xo --cwd=../.. packages/common",
     "check:ts": "tsc --noEmit",
-    "build": "tsup",
+    "build": "tsdown",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "dependencies": {

@@ -31,7 +31,7 @@
   "scripts": {
     "xo": "xo --cwd=../.. packages/auth",
     "check:ts": "tsc --noEmit",
-    "build": "tsup",
+    "build": "tsdown",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "dependencies": {

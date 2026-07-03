@@ -95,7 +95,7 @@ Mustache templates in `codegen/templates/` generate the non-model files for each
 | `src/client.ts.mustache`   | `src/client.ts`   | Client class with rate limits           |
 | `src/index.ts.mustache`    | `src/index.ts`    | Barrel re-exports                       |
 | `tsconfig.json.mustache`   | `tsconfig.json`   | TypeScript config (typecheck only)      |
-| `tsup.config.ts.mustache`  | `tsup.config.ts`  | Re-export of the shared tsup config     |
+| `tsdown.config.ts.mustache` | `tsdown.config.ts` | Re-export of the shared tsdown config |
 | `typedoc.json.mustache`    | `typedoc.json`    | Documentation config                    |
 | `README.md.mustache`       | `README.md`       | Package documentation                   |
 

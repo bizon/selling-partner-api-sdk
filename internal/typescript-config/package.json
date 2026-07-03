@@ -5,14 +5,14 @@
   "type": "module",
   "exports": {
     "./tsconfig.json": "./tsconfig.json",
-    "./tsup.config": "./tsup.config.ts"
+    "./tsdown.config": "./tsdown.config.ts"
   },
   "files": [
     "tsconfig.json",
-    "tsup.config.ts"
+    "tsdown.config.ts"
   ],
   "dependencies": {
     "@tsconfig/node24": "^24.0.4",
-    "tsup": "^8.5.1"
+    "tsdown": "^0.22.3"
   }
 }

@@ -54,7 +54,7 @@ codegen/                    # Code generation tooling (private, not published)
 | `clients/*/package.json`   | Yes        | Mustache template output              |
 | `clients/*/README.md`      | Yes        | Mustache template output              |
 | `clients/*/tsconfig.json`  | Yes        | Mustache template output              |
-| `clients/*/tsup.config.ts` | Yes        | Mustache template output              |
+| `clients/*/tsdown.config.ts` | Yes      | Mustache template output              |
 | `packages/schemas/src/`    | Yes        | Generated from Amazon JSON schemas    |
 | `packages/auth/`           | No         | Hand-written                          |
 | `packages/common/`         | No         | Hand-written                          |
@@ -84,7 +84,7 @@ pnpm codegen schemas      # generate schemas only
 
 ## Code patterns
 
-- **Dual output**: all packages are built with [`tsup`](https://tsup.egoist.dev/) and emit ESM (`dist/index.js`) + CJS (`dist/index.cjs`) with type declarations (`dist/index.d.ts` and `dist/index.d.cts`) — shared tsup config lives in `internal/typescript-config/tsup.config.ts` and is re-exported by each package's `tsup.config.ts`
+- **Dual output**: all packages are built with [`tsdown`](https://tsdown.dev/) and emit ESM (`dist/index.js`) + CJS (`dist/index.cjs`) with type declarations (`dist/index.d.ts` and `dist/index.d.cts`) — shared tsdown config lives in `internal/typescript-config/tsdown.config.ts` and is re-exported by each package's `tsdown.config.ts`
 - **Package runner**: use `pnpx` instead of `npx`
 - **Node version**: 24 (see `.node-version`)
 - **TypeScript configs**: shared via `@sp-api-sdk/typescript-config` in `internal/typescript-config/`

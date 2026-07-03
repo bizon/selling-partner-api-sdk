@@ -31,7 +31,7 @@
   "scripts": {
     "xo": "xo --cwd=../.. clients/external-fulfillment-returns-api-2024-09-11",
     "check:ts": "tsc --noEmit",
-    "build": "tsup"
+    "build": "tsdown"
   },
   "dependencies": {
     "@sp-api-sdk/common": "workspace:*",

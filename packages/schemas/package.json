@@ -31,7 +31,7 @@
   "scripts": {
     "xo": "xo --cwd=../.. packages/schemas",
     "check:ts": "tsc --noEmit",
-    "build": "tsup"
+    "build": "tsdown"
   },
   "dependencies": {
     "json-schema-to-ts": "^3.1.1"

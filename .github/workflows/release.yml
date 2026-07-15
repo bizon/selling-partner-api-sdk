@@ -31,7 +31,7 @@ jobs:
           fetch-depth: 0
 
       - uses: pnpm/action-setup@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .node-version
 
@@ -72,7 +72,7 @@ jobs:
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
 
       - uses: pnpm/action-setup@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .node-version
 

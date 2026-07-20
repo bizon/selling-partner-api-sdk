@@ -45,7 +45,7 @@
     "@jest/globals": "^30.4.1",
     "@sp-api-sdk/jest": "workspace:*",
     "@sp-api-sdk/typescript-config": "workspace:*",
-    "nock": "^14.0.15",
+    "nock": "^14.0.16",
     "strip-ansi": "^7.2.0"
   },
   "repository": {

@@ -35,19 +35,19 @@ export const clientRateLimits: RateLimit[] = [
   },
   {
     method: 'post',
-    urlRegex: /^\/service\/v1\/serviceJobs\/[^\/]*$/v,
+    urlRegex: /^\/service\/v1\/serviceJobs\/[^\/]*\/appointments\/[^\/]*$/v,
     rate: 5,
     burst: 20,
   },
   {
     method: 'put',
-    urlRegex: /^\/service\/v1\/serviceJobs\/[^\/]*\/resources$/v,
+    urlRegex: /^\/service\/v1\/serviceJobs\/[^\/]*\/appointments\/[^\/]*\/resources$/v,
     rate: 1,
     burst: 2,
   },
   {
     method: 'put',
-    urlRegex: /^\/service\/v1\/serviceJobs\/[^\/]*\/fulfillment$/v,
+    urlRegex: /^\/service\/v1\/serviceJobs\/[^\/]*\/appointments\/[^\/]*\/fulfillment$/v,
     rate: 5,
     burst: 20,
   },

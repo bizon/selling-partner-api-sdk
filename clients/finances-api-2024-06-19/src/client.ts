@@ -5,7 +5,7 @@ import {Configuration, FinancesApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    urlRegex: /^\/finances\/2024-06-19\/transactions$/v,
+    urlRegex: /^\/finances\/2024\u{2D}06\u{2D}19\/transactions$/v,
     rate: 0.5,
     burst: 10,
   },

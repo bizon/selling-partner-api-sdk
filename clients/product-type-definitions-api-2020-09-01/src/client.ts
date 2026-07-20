@@ -5,13 +5,13 @@ import {Configuration, ProductTypeDefinitionsApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    urlRegex: /^\/definitions\/2020-09-01\/productTypes$/v,
+    urlRegex: /^\/definitions\/2020\u{2D}09\u{2D}01\/productTypes$/v,
     rate: 5,
     burst: 10,
   },
   {
     method: 'get',
-    urlRegex: /^\/definitions\/2020-09-01\/productTypes\/[^\/]*$/v,
+    urlRegex: /^\/definitions\/2020\u{2D}09\u{2D}01\/productTypes\/[^\/]*$/v,
     rate: 5,
     burst: 10,
   },

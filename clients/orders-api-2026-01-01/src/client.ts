@@ -5,13 +5,13 @@ import {Configuration, OrdersApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    urlRegex: /^\/orders\/2026-01-01\/orders$/v,
+    urlRegex: /^\/orders\/2026\u{2D}01\u{2D}01\/orders$/v,
     rate: 0.0056,
     burst: 20,
   },
   {
     method: 'get',
-    urlRegex: /^\/orders\/2026-01-01\/orders\/[^\/]*$/v,
+    urlRegex: /^\/orders\/2026\u{2D}01\u{2D}01\/orders\/[^\/]*$/v,
     rate: 0.5,
     burst: 30,
   },

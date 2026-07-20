@@ -5,31 +5,31 @@ import {Configuration, EasyShipApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    urlRegex: /^\/easyShip\/2022-03-23\/timeSlot$/v,
+    urlRegex: /^\/easyShip\/2022\u{2D}03\u{2D}23\/timeSlot$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'get',
-    urlRegex: /^\/easyShip\/2022-03-23\/package$/v,
+    urlRegex: /^\/easyShip\/2022\u{2D}03\u{2D}23\/package$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'post',
-    urlRegex: /^\/easyShip\/2022-03-23\/package$/v,
+    urlRegex: /^\/easyShip\/2022\u{2D}03\u{2D}23\/package$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'patch',
-    urlRegex: /^\/easyShip\/2022-03-23\/package$/v,
+    urlRegex: /^\/easyShip\/2022\u{2D}03\u{2D}23\/package$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'post',
-    urlRegex: /^\/easyShip\/2022-03-23\/packages\/bulk$/v,
+    urlRegex: /^\/easyShip\/2022\u{2D}03\u{2D}23\/packages\/bulk$/v,
     rate: 1,
     burst: 5,
   },

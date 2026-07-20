@@ -8,13 +8,13 @@ import {
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    urlRegex: /^\/delivery\/2022-07-01\/invoice$/v,
+    urlRegex: /^\/delivery\/2022\u{2D}07\u{2D}01\/invoice$/v,
     rate: 1.133,
     burst: 25,
   },
   {
     method: 'get',
-    urlRegex: /^\/delivery\/2022-07-01\/invoice\/status$/v,
+    urlRegex: /^\/delivery\/2022\u{2D}07\u{2D}01\/invoice\/status$/v,
     rate: 1.133,
     burst: 25,
   },

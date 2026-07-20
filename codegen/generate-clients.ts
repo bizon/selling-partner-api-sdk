@@ -36,7 +36,7 @@ interface ClientInfo {
 function buildUrlRegex(path: string) {
   const source = path
     .split(/\{[^\{\}]+\}/v)
-    .map((literal) => literal.replaceAll(/[$\(\)*+.\/?\[\\\]^\{\|\}]/gv, String.raw`\$&`))
+    .map((literal) => RegExp.escape(literal))
     .join(String.raw`[^\/]*`)
 
   return `/^${source}$/v`

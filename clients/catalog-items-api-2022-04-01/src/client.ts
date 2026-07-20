@@ -5,13 +5,13 @@ import {CatalogItemsApi, Configuration} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    urlRegex: /^\/catalog\/2022-04-01\/items$/v,
+    urlRegex: /^\/catalog\/2022\u{2D}04\u{2D}01\/items$/v,
     rate: 2,
     burst: 2,
   },
   {
     method: 'get',
-    urlRegex: /^\/catalog\/2022-04-01\/items\/[^\/]*$/v,
+    urlRegex: /^\/catalog\/2022\u{2D}04\u{2D}01\/items\/[^\/]*$/v,
     rate: 2,
     burst: 2,
   },

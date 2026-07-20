@@ -5,67 +5,73 @@ import {Configuration, VendorDirectFulfillmentShippingApi} from './api-model/ind
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    urlRegex: /^\/vendor\/directFulfillment\/shipping\/2021-12-28\/shippingLabels$/v,
+    urlRegex: /^\/vendor\/directFulfillment\/shipping\/2021\u{2D}12\u{2D}28\/shippingLabels$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'post',
-    urlRegex: /^\/vendor\/directFulfillment\/shipping\/2021-12-28\/shippingLabels$/v,
+    urlRegex: /^\/vendor\/directFulfillment\/shipping\/2021\u{2D}12\u{2D}28\/shippingLabels$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'get',
-    urlRegex: /^\/vendor\/directFulfillment\/shipping\/2021-12-28\/shippingLabels\/[^\/]*$/v,
+    urlRegex:
+      /^\/vendor\/directFulfillment\/shipping\/2021\u{2D}12\u{2D}28\/shippingLabels\/[^\/]*$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'post',
-    urlRegex: /^\/vendor\/directFulfillment\/shipping\/2021-12-28\/shippingLabels\/[^\/]*$/v,
+    urlRegex:
+      /^\/vendor\/directFulfillment\/shipping\/2021\u{2D}12\u{2D}28\/shippingLabels\/[^\/]*$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'post',
-    urlRegex: /^\/vendor\/directFulfillment\/shipping\/2021-12-28\/shipmentConfirmations$/v,
+    urlRegex:
+      /^\/vendor\/directFulfillment\/shipping\/2021\u{2D}12\u{2D}28\/shipmentConfirmations$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'post',
-    urlRegex: /^\/vendor\/directFulfillment\/shipping\/2021-12-28\/shipmentStatusUpdates$/v,
+    urlRegex:
+      /^\/vendor\/directFulfillment\/shipping\/2021\u{2D}12\u{2D}28\/shipmentStatusUpdates$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'get',
-    urlRegex: /^\/vendor\/directFulfillment\/shipping\/2021-12-28\/customerInvoices$/v,
+    urlRegex: /^\/vendor\/directFulfillment\/shipping\/2021\u{2D}12\u{2D}28\/customerInvoices$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'get',
-    urlRegex: /^\/vendor\/directFulfillment\/shipping\/2021-12-28\/customerInvoices\/[^\/]*$/v,
+    urlRegex:
+      /^\/vendor\/directFulfillment\/shipping\/2021\u{2D}12\u{2D}28\/customerInvoices\/[^\/]*$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'get',
-    urlRegex: /^\/vendor\/directFulfillment\/shipping\/2021-12-28\/packingSlips$/v,
+    urlRegex: /^\/vendor\/directFulfillment\/shipping\/2021\u{2D}12\u{2D}28\/packingSlips$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'get',
-    urlRegex: /^\/vendor\/directFulfillment\/shipping\/2021-12-28\/packingSlips\/[^\/]*$/v,
+    urlRegex:
+      /^\/vendor\/directFulfillment\/shipping\/2021\u{2D}12\u{2D}28\/packingSlips\/[^\/]*$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'post',
-    urlRegex: /^\/vendor\/directFulfillment\/shipping\/2021-12-28\/containerLabel$/v,
+    urlRegex: /^\/vendor\/directFulfillment\/shipping\/2021\u{2D}12\u{2D}28\/containerLabel$/v,
     rate: 10,
     burst: 10,
   },

@@ -5,7 +5,7 @@ import {Configuration, TokensApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    urlRegex: /^\/tokens\/2021-03-01\/restrictedDataToken$/v,
+    urlRegex: /^\/tokens\/2021\u{2D}03\u{2D}01\/restrictedDataToken$/v,
     rate: 1,
     burst: 10,
   },

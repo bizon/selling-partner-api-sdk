@@ -5,7 +5,7 @@ import {ApplicationManagementApi, Configuration} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    urlRegex: /^\/applications\/2023-11-30\/clientSecret$/v,
+    urlRegex: /^\/applications\/2023\u{2D}11\u{2D}30\/clientSecret$/v,
     rate: 0.0167,
     burst: 1,
   },

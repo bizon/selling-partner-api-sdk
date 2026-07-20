@@ -17,13 +17,13 @@ export const clientRateLimits: RateLimit[] = [
   },
   {
     method: 'get',
-    urlRegex: /^\/notifications\/v1\/subscriptions\/[^\/]*$/v,
+    urlRegex: /^\/notifications\/v1\/subscriptions\/[^\/]*\/[^\/]*$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'delete',
-    urlRegex: /^\/notifications\/v1\/subscriptions\/[^\/]*$/v,
+    urlRegex: /^\/notifications\/v1\/subscriptions\/[^\/]*\/[^\/]*$/v,
     rate: 1,
     burst: 5,
   },

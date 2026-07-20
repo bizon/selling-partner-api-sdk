@@ -29,7 +29,7 @@ export const clientRateLimits: RateLimit[] = [
   },
   {
     method: 'post',
-    urlRegex: /^\/shipping\/v1\/shipments\/[^\/]*\/label$/v,
+    urlRegex: /^\/shipping\/v1\/shipments\/[^\/]*\/containers\/[^\/]*\/label$/v,
     rate: 5,
     burst: 15,
   },

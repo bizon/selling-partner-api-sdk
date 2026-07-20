@@ -5,13 +5,13 @@ import {Configuration, FinancesTransfersApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    urlRegex: /^\/finances\/transfers\/2024-06-01\/payouts$/v,
+    urlRegex: /^\/finances\/transfers\/2024\u{2D}06\u{2D}01\/payouts$/v,
     rate: 0.017,
     burst: 2,
   },
   {
     method: 'get',
-    urlRegex: /^\/finances\/transfers\/2024-06-01\/paymentMethods$/v,
+    urlRegex: /^\/finances\/transfers\/2024\u{2D}06\u{2D}01\/paymentMethods$/v,
     rate: 0.5,
     burst: 30,
   },

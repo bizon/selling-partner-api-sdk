@@ -5,19 +5,19 @@ import {ApplicationIntegrationsApi, Configuration} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    urlRegex: /^\/appIntegrations\/2024-04-01\/notifications$/v,
+    urlRegex: /^\/appIntegrations\/2024\u{2D}04\u{2D}01\/notifications$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'post',
-    urlRegex: /^\/appIntegrations\/2024-04-01\/notifications\/deletion$/v,
+    urlRegex: /^\/appIntegrations\/2024\u{2D}04\u{2D}01\/notifications\/deletion$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'post',
-    urlRegex: /^\/appIntegrations\/2024-04-01\/notifications\/[^\/]*\/feedback$/v,
+    urlRegex: /^\/appIntegrations\/2024\u{2D}04\u{2D}01\/notifications\/[^\/]*\/feedback$/v,
     rate: 1,
     burst: 5,
   },

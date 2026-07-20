@@ -1,0 +1,70 @@
+name: OpenAPI Generator
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * *"
+
+# Checkout and PR creation both use BOT_GITHUB_TOKEN_PUBLIC.
+permissions:
+  contents: read
+
+jobs:
+  update-generator:
+    name: "Codegen: update OpenAPI Generator"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
+
+      - name: Check for a new OpenAPI Generator release
+        id: version
+        run: |
+          current=$(jq -er '."generator-cli".version' openapitools.json)
+          latest=$(curl -sSf --max-time 30 "$METADATA_URL" | sed -n 's:.*<release>\(.*\)</release>.*:\1:p')
+
+          if [ -z "$latest" ]; then
+            echo "Could not determine the latest version from $METADATA_URL" >&2
+            exit 1
+          fi
+
+          echo "latest=$latest" >> "$GITHUB_OUTPUT"
+
+          # Only move forward: guards against a transient rollback in the metadata.
+          if [ "$current" != "$latest" ] && [ "$(printf '%s\n%s\n' "$current" "$latest" | sort -V | head -1)" = "$current" ]; then
+            echo "outdated=true" >> "$GITHUB_OUTPUT"
+            echo "OpenAPI Generator $current is outdated, $latest is available."
+          else
+            echo "outdated=false" >> "$GITHUB_OUTPUT"
+            echo "OpenAPI Generator $current is up to date."
+          fi
+        env:
+          METADATA_URL: https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/maven-metadata.xml
+
+      - name: Pin the new version
+        if: steps.version.outputs.outdated == 'true'
+        run: |
+          jq --arg version "$VERSION" '."generator-cli".version = $version' openapitools.json > openapitools.json.tmp
+          mv openapitools.json.tmp openapitools.json
+        env:
+          VERSION: ${{ steps.version.outputs.latest }}
+
+      - name: Create or update generator pull request
+        if: steps.version.outputs.outdated == 'true'
+        uses: peter-evans/create-pull-request@v8
+        with:
+          add-paths: openapitools.json
+          branch: codegen/update-generator
+          token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
+          title: "chore: bump openapi generator to v${{ steps.version.outputs.latest }}"
+          commit-message: "chore: bump openapi generator to v${{ steps.version.outputs.latest }}"
+          body: |
+            This is an automated pull request that was generated because [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) `${{ steps.version.outputs.latest }}` was released. See the [release notes](https://github.com/OpenAPITools/openapi-generator/releases/tag/v${{ steps.version.outputs.latest }}).
+
+            The clients are not regenerated here — the codegen workflow will pick up the new generator once this is merged.
+
+            The branch associated with this PR will be automatically updated if other changes occur.
+          delete-branch: true
+          reviewers: tusbar

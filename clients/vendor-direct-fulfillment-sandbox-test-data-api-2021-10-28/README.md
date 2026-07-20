@@ -67,10 +67,10 @@ const client = new VendorDirectFulfillmentSandboxTestDataApiClient({
   region: 'eu',
   logging: {
     request: {
-      logger: console.debug
+      logger: console.debug,
     },
     response: {
-      logger: console.debug
+      logger: console.debug,
     },
     error: true,
   },
@@ -81,14 +81,13 @@ Specifying `true` will use the default options, specifying an object will allow 
 This uses [axios-logger](https://github.com/hg-pyun/axios-logger) under the hood.  
 By default, if enabled, the `request` and `response` loggers will use `console.info` and the `error` logger will use `console.error`.
 
-
 ## License
 
 MIT
 
 ## Miscellaneous
 
-```
+```text
     ╚⊙ ⊙╝
   ╚═(███)═╝
  ╚═(███)═╝

@@ -5,29 +5,25 @@ import {Configuration, FinancesApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/finances/v0/financialEventGroups$'),
+    urlRegex: /^\/finances\/v0\/financialEventGroups$/v,
     rate: 0.5,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/finances/v0/financialEventGroups/[^/]*/financialEvents$'),
+    urlRegex: /^\/finances\/v0\/financialEventGroups\/[^\/]*\/financialEvents$/v,
     rate: 0.5,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/finances/v0/orders/[^/]*/financialEvents$'),
+    urlRegex: /^\/finances\/v0\/orders\/[^\/]*\/financialEvents$/v,
     rate: 0.5,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/finances/v0/financialEvents$'),
+    urlRegex: /^\/finances\/v0\/financialEvents$/v,
     rate: 0.5,
     burst: 30,
   },

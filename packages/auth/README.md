@@ -18,15 +18,15 @@ npm install @sp-api-sdk/auth
 The `SellingPartnerApiAuth` class handles OAuth token acquisition from Login with Amazon (LWA). You must provide exactly one of `refreshToken` or `scopes`.
 
 ```javascript
-import { SellingPartnerApiAuth } from "@sp-api-sdk/auth";
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 
 // `clientId` and `clientSecret` default to the `LWA_CLIENT_ID` and
 // `LWA_CLIENT_SECRET` environment variables.
 const auth = new SellingPartnerApiAuth({
   refreshToken: await getRefreshTokenForSeller(sellerId),
-});
+})
 
-const accessToken = await auth.getAccessToken();
+const accessToken = await auth.getAccessToken()
 ```
 
 ## Default values from the environment
@@ -45,19 +45,19 @@ Some APIs (e.g. Notifications API) require grantless authentication, which is do
 The available scopes are exposed in the `AuthorizationScope` enum from this library.
 
 ```javascript
-import { SellingPartnerApiAuth, AuthorizationScope } from "@sp-api-sdk/auth";
-import { NotificationsApiClient } from "@sp-api-sdk/notifications-api-v1";
+import {SellingPartnerApiAuth, AuthorizationScope} from '@sp-api-sdk/auth'
+import {NotificationsApiClient} from '@sp-api-sdk/notifications-api-v1'
 
 // `clientId` and `clientSecret` default to the `LWA_CLIENT_ID` and
 // `LWA_CLIENT_SECRET` environment variables.
 const auth = new SellingPartnerApiAuth({
   scopes: [AuthorizationScope.NOTIFICATIONS],
-});
+})
 
 const client = new NotificationsApiClient({
   auth,
-  region: "eu",
-});
+  region: 'eu',
+})
 ```
 
 Available scopes:
@@ -76,21 +76,21 @@ You can subclass `SellingPartnerApiAuth` to add custom logic, for example, cachi
 The protected `accessTokenExpiration` getter provides the current token's expiration date, which is useful for setting TTLs in your cache.
 
 ```typescript
-import { SellingPartnerApiAuth } from "@sp-api-sdk/auth";
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 
-import { storeToken, getToken } from "./token-store";
+import {storeToken, getToken} from './token-store'
 
 class StoredSellingPartnerApiAuth extends SellingPartnerApiAuth {
   async getAccessToken() {
-    let token = await getToken();
+    let token = await getToken()
     if (token) {
-      return token;
+      return token
     }
 
-    token = await super.getAccessToken();
-    await storeToken(token, { ttl: this.accessTokenExpiration });
+    token = await super.getAccessToken()
+    await storeToken(token, {ttl: this.accessTokenExpiration})
 
-    return token;
+    return token
   }
 }
 ```
@@ -100,13 +100,13 @@ class StoredSellingPartnerApiAuth extends SellingPartnerApiAuth {
 Authentication errors are thrown as `SellingPartnerApiAuthError` instances, which extend `AxiosError`.
 
 ```javascript
-import { SellingPartnerApiAuth, SellingPartnerApiAuthError } from "@sp-api-sdk/auth";
+import {SellingPartnerApiAuth, SellingPartnerApiAuthError} from '@sp-api-sdk/auth'
 
 try {
-  const accessToken = await auth.getAccessToken();
+  const accessToken = await auth.getAccessToken()
 } catch (error) {
   if (error instanceof SellingPartnerApiAuthError) {
-    console.error(error.message); // e.g. "access-token error: Response code 401"
+    console.error(error.message) // e.g. "access-token error: Response code 401"
   }
 }
 ```
@@ -117,7 +117,7 @@ MIT
 
 ## Miscellaneous
 
-```
+```text
     ╚⊙ ⊙╝
   ╚═(███)═╝
  ╚═(███)═╝

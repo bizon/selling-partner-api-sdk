@@ -5,36 +5,31 @@ import {Configuration, DataKioskApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/dataKiosk/2023-11-15/queries$'),
+    urlRegex: /^\/dataKiosk\/2023-11-15\/queries$/v,
     rate: 0.0222,
     burst: 10,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/dataKiosk/2023-11-15/queries$'),
+    urlRegex: /^\/dataKiosk\/2023-11-15\/queries$/v,
     rate: 0.0167,
     burst: 15,
   },
   {
     method: 'delete',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/dataKiosk/2023-11-15/queries/[^/]*$'),
+    urlRegex: /^\/dataKiosk\/2023-11-15\/queries\/[^\/]*$/v,
     rate: 0.0222,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/dataKiosk/2023-11-15/queries/[^/]*$'),
+    urlRegex: /^\/dataKiosk\/2023-11-15\/queries\/[^\/]*$/v,
     rate: 2,
     burst: 15,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/dataKiosk/2023-11-15/documents/[^/]*$'),
+    urlRegex: /^\/dataKiosk\/2023-11-15\/documents\/[^\/]*$/v,
     rate: 0.0167,
     burst: 15,
   },

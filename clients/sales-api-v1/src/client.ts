@@ -5,8 +5,7 @@ import {Configuration, SalesApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/sales/v1/orderMetrics$'),
+    urlRegex: /^\/sales\/v1\/orderMetrics$/v,
     rate: 0.5,
     burst: 15,
   },

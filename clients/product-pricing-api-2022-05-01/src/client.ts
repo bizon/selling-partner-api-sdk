@@ -5,15 +5,13 @@ import {Configuration, ProductPricingApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/batches/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice$'),
+    urlRegex: /^\/batches\/products\/pricing\/2022-05-01\/offer\/featuredOfferExpectedPrice$/v,
     rate: 0.033,
     burst: 1,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/batches/products/pricing/2022-05-01/items/competitiveSummary$'),
+    urlRegex: /^\/batches\/products\/pricing\/2022-05-01\/items\/competitiveSummary$/v,
     rate: 0.033,
     burst: 1,
   },

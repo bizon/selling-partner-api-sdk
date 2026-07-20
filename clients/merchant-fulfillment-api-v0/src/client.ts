@@ -5,36 +5,31 @@ import {Configuration, MerchantFulfillmentApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/mfn/v0/eligibleShippingServices$'),
+    urlRegex: /^\/mfn\/v0\/eligibleShippingServices$/v,
     rate: 6,
     burst: 12,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/mfn/v0/shipments/[^/]*$'),
+    urlRegex: /^\/mfn\/v0\/shipments\/[^\/]*$/v,
     rate: 1,
     burst: 1,
   },
   {
     method: 'delete',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/mfn/v0/shipments/[^/]*$'),
+    urlRegex: /^\/mfn\/v0\/shipments\/[^\/]*$/v,
     rate: 1,
     burst: 1,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/mfn/v0/shipments$'),
+    urlRegex: /^\/mfn\/v0\/shipments$/v,
     rate: 2,
     burst: 2,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/mfn/v0/additionalSellerInputs$'),
+    urlRegex: /^\/mfn\/v0\/additionalSellerInputs$/v,
     rate: 1,
     burst: 1,
   },

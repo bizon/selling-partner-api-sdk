@@ -4,7 +4,12 @@ import xoBizon from 'eslint-config-xo-bizon'
 export default [
   ...xoBizon,
   {
-    ignores: ['clients/*/src/api-model/**', '**/tsdown.config.ts'],
+    ignores: [
+      'clients/*/src/api-model/**',
+      'packages/schemas/src/**',
+      '**/CHANGELOG.md',
+      '**/tsdown.config.ts',
+    ],
   },
   {
     settings: {
@@ -12,9 +17,34 @@ export default [
     },
   },
   {
+    files: ['**/*.{js,ts}'],
     rules: {
       'import-x/extensions': 'off',
       'n/prefer-global/url': 'off',
+      'jsdoc/require-param': ['error', {checkDestructured: false}],
+      'jsdoc/check-param-names': ['error', {checkDestructured: false}],
+      '@typescript-eslint/strict-boolean-expressions': [
+        'error',
+        {
+          allowNullableBoolean: true,
+          allowNullableObject: true,
+          allowNullableString: true,
+          allowNumber: false,
+          allowString: false,
+        },
+      ],
+      'unicorn/name-replacements': [
+        'error',
+        {
+          replacements: {
+            fn: false,
+            i: false,
+            props: false,
+            application: false,
+            configuration: false,
+          },
+        },
+      ],
     },
   },
 ]

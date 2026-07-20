@@ -5,43 +5,37 @@ import {Configuration, ProductPricingApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/products/pricing/v0/price$'),
+    urlRegex: /^\/products\/pricing\/v0\/price$/v,
     rate: 0.5,
     burst: 1,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/products/pricing/v0/competitivePrice$'),
+    urlRegex: /^\/products\/pricing\/v0\/competitivePrice$/v,
     rate: 0.5,
     burst: 1,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/products/pricing/v0/listings/[^/]*/offers$'),
+    urlRegex: /^\/products\/pricing\/v0\/listings\/[^\/]*\/offers$/v,
     rate: 1,
     burst: 2,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/products/pricing/v0/items/[^/]*/offers$'),
+    urlRegex: /^\/products\/pricing\/v0\/items\/[^\/]*\/offers$/v,
     rate: 0.5,
     burst: 1,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/batches/products/pricing/v0/itemOffers$'),
+    urlRegex: /^\/batches\/products\/pricing\/v0\/itemOffers$/v,
     rate: 0.1,
     burst: 1,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/batches/products/pricing/v0/listingOffers$'),
+    urlRegex: /^\/batches\/products\/pricing\/v0\/listingOffers$/v,
     rate: 0.5,
     burst: 1,
   },

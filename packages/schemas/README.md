@@ -30,18 +30,18 @@ Each schema is exported as a `const` object (usable at runtime for validation) a
 ### JSON schema (runtime)
 
 ```javascript
-import { Reports } from "@sp-api-sdk/schemas";
+import {Reports} from '@sp-api-sdk/schemas'
 
 // Use the JSON schema for validation
-console.log(Reports.vendorInventoryReport);
+console.log(Reports.vendorInventoryReport)
 ```
 
 ### TypeScript type
 
 ```typescript
-import { Reports } from "@sp-api-sdk/schemas";
+import {Reports} from '@sp-api-sdk/schemas'
 
-const report = (await getVendorInventoryReportData()) as Reports.VendorInventoryReport;
+const report = (await getVendorInventoryReportData()) as Reports.VendorInventoryReport
 ```
 
 ## Available Schemas
@@ -108,7 +108,7 @@ MIT
 
 ## Miscellaneous
 
-```
+```text
     ╚⊙ ⊙╝
   ╚═(███)═╝
  ╚═(███)═╝

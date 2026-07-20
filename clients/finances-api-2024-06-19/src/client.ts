@@ -5,8 +5,7 @@ import {Configuration, FinancesApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/finances/2024-06-19/transactions$'),
+    urlRegex: /^\/finances\/2024-06-19\/transactions$/v,
     rate: 0.5,
     burst: 10,
   },

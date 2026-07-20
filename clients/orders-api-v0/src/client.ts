@@ -5,71 +5,61 @@ import {Configuration, OrdersApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/orders/v0/orders$'),
+    urlRegex: /^\/orders\/v0\/orders$/v,
     rate: 0.0167,
     burst: 20,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/orders/v0/orders/[^/]*$'),
+    urlRegex: /^\/orders\/v0\/orders\/[^\/]*$/v,
     rate: 0.5,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/orders/v0/orders/[^/]*/buyerInfo$'),
+    urlRegex: /^\/orders\/v0\/orders\/[^\/]*\/buyerInfo$/v,
     rate: 0.5,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/orders/v0/orders/[^/]*/address$'),
+    urlRegex: /^\/orders\/v0\/orders\/[^\/]*\/address$/v,
     rate: 0.5,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/orders/v0/orders/[^/]*/orderItems$'),
+    urlRegex: /^\/orders\/v0\/orders\/[^\/]*\/orderItems$/v,
     rate: 0.5,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/orders/v0/orders/[^/]*/orderItems/buyerInfo$'),
+    urlRegex: /^\/orders\/v0\/orders\/[^\/]*\/orderItems\/buyerInfo$/v,
     rate: 0.5,
     burst: 30,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/orders/v0/orders/[^/]*/shipment$'),
+    urlRegex: /^\/orders\/v0\/orders\/[^\/]*\/shipment$/v,
     rate: 5,
     burst: 15,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/orders/v0/orders/[^/]*/regulatedInfo$'),
+    urlRegex: /^\/orders\/v0\/orders\/[^\/]*\/regulatedInfo$/v,
     rate: 0.5,
     burst: 30,
   },
   {
     method: 'patch',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/orders/v0/orders/[^/]*/regulatedInfo$'),
+    urlRegex: /^\/orders\/v0\/orders\/[^\/]*\/regulatedInfo$/v,
     rate: 0.5,
     burst: 30,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/orders/v0/orders/[^/]*/shipmentConfirmation$'),
+    urlRegex: /^\/orders\/v0\/orders\/[^\/]*\/shipmentConfirmation$/v,
     rate: 2,
     burst: 10,
   },

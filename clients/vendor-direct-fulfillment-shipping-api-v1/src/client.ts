@@ -5,64 +5,55 @@ import {Configuration, VendorDirectFulfillmentShippingApi} from './api-model/ind
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shippingLabels$'),
+    urlRegex: /^\/vendor\/directFulfillment\/shipping\/v1\/shippingLabels$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shippingLabels$'),
+    urlRegex: /^\/vendor\/directFulfillment\/shipping\/v1\/shippingLabels$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shippingLabels/[^/]*$'),
+    urlRegex: /^\/vendor\/directFulfillment\/shipping\/v1\/shippingLabels\/[^\/]*$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shipmentConfirmations$'),
+    urlRegex: /^\/vendor\/directFulfillment\/shipping\/v1\/shipmentConfirmations$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/shipmentStatusUpdates$'),
+    urlRegex: /^\/vendor\/directFulfillment\/shipping\/v1\/shipmentStatusUpdates$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/customerInvoices$'),
+    urlRegex: /^\/vendor\/directFulfillment\/shipping\/v1\/customerInvoices$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/customerInvoices/[^/]*$'),
+    urlRegex: /^\/vendor\/directFulfillment\/shipping\/v1\/customerInvoices\/[^\/]*$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/packingSlips$'),
+    urlRegex: /^\/vendor\/directFulfillment\/shipping\/v1\/packingSlips$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/directFulfillment/shipping/v1/packingSlips/[^/]*$'),
+    urlRegex: /^\/vendor\/directFulfillment\/shipping\/v1\/packingSlips\/[^\/]*$/v,
     rate: 10,
     burst: 10,
   },

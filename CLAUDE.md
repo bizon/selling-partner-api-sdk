@@ -11,7 +11,7 @@ Most code in `clients/` and `packages/schemas/src/` is **auto-generated** — do
 ## Checks (run after every change)
 
 ```bash
-pnpm -r xo       # linter (ESLint-based via XO)
+pnpm xo          # linter (ESLint-based via XO)
 pnpm check:ts    # type checker (tsc --noEmit, via Turbo)
 pnpm test         # tests (Jest with SWC)
 ```
@@ -30,7 +30,7 @@ pnpm test         # tests (Jest with SWC)
 
 ## Project structure
 
-```
+```text
 clients/                    # 63 auto-generated API client packages (DO NOT EDIT)
 packages/
   auth/                     # @sp-api-sdk/auth — LWA OAuth authentication
@@ -46,20 +46,20 @@ codegen/                    # Code generation tooling (private, not published)
 
 ### What is generated vs hand-written
 
-| Path                       | Generated? | Notes                                 |
-| -------------------------- | ---------- | ------------------------------------- |
-| `clients/*/src/api-model/` | Yes        | OpenAPI Generator output — never edit |
-| `clients/*/src/client.ts`  | Yes        | Mustache template output              |
-| `clients/*/src/index.ts`   | Yes        | Mustache template output              |
-| `clients/*/package.json`   | Yes        | Mustache template output              |
-| `clients/*/README.md`      | Yes        | Mustache template output              |
-| `clients/*/tsconfig.json`  | Yes        | Mustache template output              |
-| `clients/*/tsdown.config.ts` | Yes      | Mustache template output              |
-| `packages/schemas/src/`    | Yes        | Generated from Amazon JSON schemas    |
-| `packages/auth/`           | No         | Hand-written                          |
-| `packages/common/`         | No         | Hand-written                          |
-| `codegen/`                 | No         | Hand-written                          |
-| `internal/`                | No         | Hand-written                          |
+| Path                         | Generated? | Notes                                 |
+| ---------------------------- | ---------- | ------------------------------------- |
+| `clients/*/src/api-model/`   | Yes        | OpenAPI Generator output — never edit |
+| `clients/*/src/client.ts`    | Yes        | Mustache template output              |
+| `clients/*/src/index.ts`     | Yes        | Mustache template output              |
+| `clients/*/package.json`     | Yes        | Mustache template output              |
+| `clients/*/README.md`        | Yes        | Mustache template output              |
+| `clients/*/tsconfig.json`    | Yes        | Mustache template output              |
+| `clients/*/tsdown.config.ts` | Yes        | Mustache template output              |
+| `packages/schemas/src/`      | Yes        | Generated from Amazon JSON schemas    |
+| `packages/auth/`             | No         | Hand-written                          |
+| `packages/common/`           | No         | Hand-written                          |
+| `codegen/`                   | No         | Hand-written                          |
+| `internal/`                  | No         | Hand-written                          |
 
 ## Code generation
 
@@ -96,7 +96,7 @@ pnpm codegen schemas      # generate schemas only
 
 ## Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────┐
 │                   User Code                         │
 ├─────────────────────────────────────────────────────┤

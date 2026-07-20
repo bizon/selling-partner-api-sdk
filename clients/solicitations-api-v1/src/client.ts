@@ -5,17 +5,14 @@ import {Configuration, SolicitationsApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/solicitations/v1/orders/[^/]*$'),
+    urlRegex: /^\/solicitations\/v1\/orders\/[^\/]*$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp(
-      '^/solicitations/v1/orders/[^/]*/solicitations/productReviewAndSellerFeedback$',
-    ),
+    urlRegex:
+      /^\/solicitations\/v1\/orders\/[^\/]*\/solicitations\/productReviewAndSellerFeedback$/v,
     rate: 1,
     burst: 5,
   },

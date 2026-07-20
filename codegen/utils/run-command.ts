@@ -1,7 +1,4 @@
 import * as childProcess from 'node:child_process'
-import {promisify} from 'node:util'
-
-const exec = promisify(childProcess.exec)
 
 interface RunCommandOptions {
   quiet?: boolean
@@ -12,5 +9,14 @@ export async function runCommand(command: string, {quiet = false}: RunCommandOpt
     console.info(`Running: ${command}`)
   }
 
-  return exec(command)
+  return new Promise<{stdout: string; stderr: string}>((resolve, reject) => {
+    childProcess.exec(command, (error, stdout, stderr) => {
+      if (error) {
+        reject(error)
+        return
+      }
+
+      resolve({stdout, stderr})
+    })
+  })
 }

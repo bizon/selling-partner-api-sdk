@@ -5,71 +5,61 @@ import {AplusContentApi, Configuration} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/aplus/2020-11-01/contentDocuments$'),
+    urlRegex: /^\/aplus\/2020-11-01\/contentDocuments$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/aplus/2020-11-01/contentDocuments$'),
+    urlRegex: /^\/aplus\/2020-11-01\/contentDocuments$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/aplus/2020-11-01/contentDocuments/[^/]*$'),
+    urlRegex: /^\/aplus\/2020-11-01\/contentDocuments\/[^\/]*$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/aplus/2020-11-01/contentDocuments/[^/]*$'),
+    urlRegex: /^\/aplus\/2020-11-01\/contentDocuments\/[^\/]*$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/aplus/2020-11-01/contentDocuments/[^/]*/asins$'),
+    urlRegex: /^\/aplus\/2020-11-01\/contentDocuments\/[^\/]*\/asins$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/aplus/2020-11-01/contentDocuments/[^/]*/asins$'),
+    urlRegex: /^\/aplus\/2020-11-01\/contentDocuments\/[^\/]*\/asins$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/aplus/2020-11-01/contentAsinValidations$'),
+    urlRegex: /^\/aplus\/2020-11-01\/contentAsinValidations$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/aplus/2020-11-01/contentPublishRecords$'),
+    urlRegex: /^\/aplus\/2020-11-01\/contentPublishRecords$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/aplus/2020-11-01/contentDocuments/[^/]*/approvalSubmissions$'),
+    urlRegex: /^\/aplus\/2020-11-01\/contentDocuments\/[^\/]*\/approvalSubmissions$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/aplus/2020-11-01/contentDocuments/[^/]*/suspendSubmissions$'),
+    urlRegex: /^\/aplus\/2020-11-01\/contentDocuments\/[^\/]*\/suspendSubmissions$/v,
     rate: 10,
     burst: 10,
   },

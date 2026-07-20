@@ -5,120 +5,103 @@ import {AmazonWarehousingAndDistributionApi, Configuration} from './api-model/in
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/awd/2024-05-09/inboundOrders$'),
+    urlRegex: /^\/awd\/2024-05-09\/inboundOrders$/v,
     rate: 1,
     burst: 1,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/awd/2024-05-09/inboundOrders/[^/]*$'),
+    urlRegex: /^\/awd\/2024-05-09\/inboundOrders\/[^\/]*$/v,
     rate: 2,
     burst: 2,
   },
   {
     method: 'put',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/awd/2024-05-09/inboundOrders/[^/]*$'),
+    urlRegex: /^\/awd\/2024-05-09\/inboundOrders\/[^\/]*$/v,
     rate: 1,
     burst: 1,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/awd/2024-05-09/inboundOrders/[^/]*/cancellation$'),
+    urlRegex: /^\/awd\/2024-05-09\/inboundOrders\/[^\/]*\/cancellation$/v,
     rate: 1,
     burst: 1,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/awd/2024-05-09/inboundOrders/[^/]*/confirmation$'),
+    urlRegex: /^\/awd\/2024-05-09\/inboundOrders\/[^\/]*\/confirmation$/v,
     rate: 1,
     burst: 1,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/awd/2024-05-09/inboundShipments/[^/]*$'),
+    urlRegex: /^\/awd\/2024-05-09\/inboundShipments\/[^\/]*$/v,
     rate: 2,
     burst: 2,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/awd/2024-05-09/inboundShipments/[^/]*/labels$'),
+    urlRegex: /^\/awd\/2024-05-09\/inboundShipments\/[^\/]*\/labels$/v,
     rate: 1,
     burst: 2,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/awd/2024-05-09/inboundShipments/[^/]*/labelPageTypes$'),
+    urlRegex: /^\/awd\/2024-05-09\/inboundShipments\/[^\/]*\/labelPageTypes$/v,
     rate: 1,
     burst: 2,
   },
   {
     method: 'put',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/awd/2024-05-09/inboundShipments/[^/]*/transport$'),
+    urlRegex: /^\/awd\/2024-05-09\/inboundShipments\/[^\/]*\/transport$/v,
     rate: 1,
     burst: 1,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/awd/2024-05-09/inboundEligibility$'),
+    urlRegex: /^\/awd\/2024-05-09\/inboundEligibility$/v,
     rate: 1,
     burst: 1,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/awd/2024-05-09/inboundShipments$'),
+    urlRegex: /^\/awd\/2024-05-09\/inboundShipments$/v,
     rate: 1,
     burst: 1,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/awd/2024-05-09/inventory$'),
+    urlRegex: /^\/awd\/2024-05-09\/inventory$/v,
     rate: 2,
     burst: 2,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/awd/2024-05-09/outboundOrders$'),
+    urlRegex: /^\/awd\/2024-05-09\/outboundOrders$/v,
     rate: 1,
     burst: 1,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/awd/2024-05-09/outboundOrders$'),
+    urlRegex: /^\/awd\/2024-05-09\/outboundOrders$/v,
     rate: 1,
     burst: 1,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/awd/2024-05-09/outboundOrders/[^/]*$'),
+    urlRegex: /^\/awd\/2024-05-09\/outboundOrders\/[^\/]*$/v,
     rate: 1,
     burst: 1,
   },
   {
     method: 'put',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/awd/2024-05-09/outboundOrders/[^/]*$'),
+    urlRegex: /^\/awd\/2024-05-09\/outboundOrders\/[^\/]*$/v,
     rate: 1,
     burst: 1,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/awd/2024-05-09/outboundOrders/[^/]*/confirmation$'),
+    urlRegex: /^\/awd\/2024-05-09\/outboundOrders\/[^\/]*\/confirmation$/v,
     rate: 1,
     burst: 1,
   },

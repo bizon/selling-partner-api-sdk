@@ -33,6 +33,15 @@ interface ClientInfo {
   hasDeprecatedOperations: boolean
 }
 
+function buildUrlRegex(path: string) {
+  const source = path
+    .split(/\{[^\{\}]+\}/v)
+    .map((literal) => literal.replaceAll(/[$\(\)*+.\/?\[\\\]^\{\|\}]/gv, String.raw`\$&`))
+    .join(String.raw`[^\/]*`)
+
+  return `/^${source}$/v`
+}
+
 function hasDeprecatedOperations(document: OpenAPIV3.Document): boolean {
   for (const pathItem of Object.values(document.paths ?? {})) {
     if (!pathItem) {
@@ -70,12 +79,12 @@ async function getAxiosVersion() {
 
 const cleaner = remark().use(remarkStrip)
 
-async function cleanMarkdown(input: string, stripNewLines?: boolean) {
+async function cleanMarkdown(input: string, shouldStripNewLines?: boolean) {
   const vfile = await cleaner.process(input)
   let result = vfile.toString()
 
-  if (stripNewLines) {
-    result = result.replaceAll(/[\r\n]+/g, ' ')
+  if (shouldStripNewLines) {
+    result = result.replaceAll(/[\n\r]+/gv, ' ')
   }
 
   return result.trim()
@@ -91,16 +100,16 @@ async function generateClientVersion(modelFilePath: string): Promise<ClientInfo>
 
   // Replace `doc:` markdown URLs to link to the real documentation
   model = model.replaceAll(
-    /\[(?<label>[^\]]+)]\(doc:(?<url>[^)]+)\)/g,
-    '[$1](https://developer-docs.amazon.com/sp-api/docs/$2)',
+    /\[(?<label>[^\[\]]+)\]\(doc:(?<url>[^\(\)]+)\)/gv,
+    '[$<label>](https://developer-docs.amazon.com/sp-api/docs/$<url>)',
   )
 
   const document = JSON.parse(model) as OpenAPIV3.Document
 
   const startedAt = Date.now()
 
-  const apiCategory = modelDirectory.replace(/(-api)?-model$/, '')
-  let cleanModelName = kebabCase(basename(modelName, '.json')).replace(/v-(\d+)/, 'v$1')
+  const apiCategory = modelDirectory.replace(/(?:-api)?-model$/v, '')
+  let cleanModelName = kebabCase(basename(modelName, '.json')).replace(/v-(?=\d)/v, 'v')
 
   if (cleanModelName.endsWith(`-${document.info.version}`)) {
     cleanModelName = cleanModelName.slice(0, -document.info.version.length - 1)
@@ -123,10 +132,10 @@ async function generateClientVersion(modelFilePath: string): Promise<ClientInfo>
     cleanModelName = cleanModelName.slice(apiCategory.length)
   }
 
-  const clientNameBase = [apiCategory, cleanModelName.replace(/(-api)?-model$/, '')]
+  const clientNameBase = [apiCategory, cleanModelName.replace(/(?:-api)?-model$/v, '')]
     .filter(Boolean)
     .join('-')
-    .replaceAll(/--+/g, '-')
+    .replaceAll(/-{2,}/gv, '-')
   const clientApiNameBase = `${clientNameBase}-api`
 
   await applyPatches(document, patchesPath)
@@ -162,11 +171,13 @@ async function generateClientVersion(modelFilePath: string): Promise<ClientInfo>
     {quiet: true},
   )
 
+  const packageDescription = await cleanMarkdown(document.info.description ?? '', true)
+
   await fs.writeFile(
     `${clientDirectoryPath}/package.json`,
     await renderTemplate('codegen/templates/package.json.mustache', {
       packageName,
-      description: JSON.stringify(await cleanMarkdown(document.info.description ?? '', true)),
+      description: JSON.stringify(packageDescription),
       version: (await readPackageVersion(clientDirectoryPath)) ?? '1.0.0',
       apiName: clientApiNameBase.replaceAll('-', ' '),
       dependencies: {
@@ -177,36 +188,36 @@ async function generateClientVersion(modelFilePath: string): Promise<ClientInfo>
 
   const rateLimits = reduce(
     document.paths,
-    (accumulator: RateLimit[], value, key) => {
-      if (!value) {
+    (accumulator: RateLimit[], pathItem, key) => {
+      if (!pathItem) {
         return accumulator
       }
 
-      for (const method of Object.keys(value) as OpenAPIV3.HttpMethods[]) {
-        const {description} = value[method] as OpenAPIV3.PathItemObject
+      for (const method of Object.keys(pathItem) as OpenAPIV3.HttpMethods[]) {
+        const {description} = pathItem[method] as OpenAPIV3.PathItemObject
 
         if (description) {
           const result =
-            /Rate \(requests per second\) \| Burst \|\n(?:\| -{4} )+\|\n(?:\|Default)?\| (?<rate>(?:\d*\.)?\d+) \| (?<burst>(?:\d*\.)?\d+) \|/.exec(
+            /Rate \(requests per second\) \| Burst \|\n(?:\| -{4} )+\|\n(?:\|Default)?\| (?<rate>(?:\d*\.)?\d+) \| (?<burst>(?:\d*\.)?\d+) \|/v.exec(
               description,
             )
 
           if (result?.groups) {
-            const value = {
+            const rateLimit = {
               method,
-              rate: Number.parseFloat(result.groups.rate),
-              burst: Number.parseFloat(result.groups.burst),
-              urlRegex: `new RegExp('^${key.replaceAll(/{.+}/g, '[^/]*')}$')`,
+              rate: Number(result.groups.rate),
+              burst: Number(result.groups.burst),
+              urlRegex: buildUrlRegex(key),
             }
 
-            if (Number.isNaN(value.rate) || Number.isNaN(value.burst)) {
+            if (Number.isNaN(rateLimit.rate) || Number.isNaN(rateLimit.burst)) {
               logger.warn(
                 `Warning: invalid rate limits: ${result.groups.rate} / ${result.groups.burst}`,
                 {packageName},
               )
             }
 
-            accumulator.push(value)
+            accumulator.push(rateLimit)
           } else {
             logger.warn(`Warning: no rate limiting found for ${packageName}`, {
               packageName,
@@ -252,7 +263,7 @@ async function generateClientVersion(modelFilePath: string): Promise<ClientInfo>
       rateLimits,
     }),
   )
-  const deprecated = hasDeprecatedOperations(document)
+  const isDeprecated = hasDeprecatedOperations(document)
 
   await fs.writeFile(
     `${clientDirectoryPath}/README.md`,
@@ -262,7 +273,7 @@ async function generateClientVersion(modelFilePath: string): Promise<ClientInfo>
       description: document.info.description,
       sdkClientDocUrl: `https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_${packageName}.html`,
       grantlessScope: grantlessInfo?.scope,
-      hasDeprecatedOperations: deprecated,
+      hasDeprecatedOperations: isDeprecated,
     }),
   )
 
@@ -289,7 +300,7 @@ async function generateClientVersion(modelFilePath: string): Promise<ClientInfo>
 
   logger.info(`done in ${(Date.now() - startedAt) / 1000}s`, {packageName})
 
-  return {packageName, hasDeprecatedOperations: deprecated}
+  return {packageName, hasDeprecatedOperations: isDeprecated}
 }
 
 const CLIENTS_LIST_START = '<!-- codegen:clients:start -->'
@@ -299,7 +310,7 @@ async function updateRootReadmeClientsList(clients: ClientInfo[]) {
   const readmePath = 'README.md'
   const readme = await fs.readFile(readmePath, 'utf8')
 
-  const sorted = [...clients].sort((a, b) => a.packageName.localeCompare(b.packageName))
+  const sorted = clients.toSorted((a, b) => a.packageName.localeCompare(b.packageName))
   const list = sorted
     .map((client) => {
       const url = `https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/${client.packageName}`
@@ -308,7 +319,10 @@ async function updateRootReadmeClientsList(clients: ClientInfo[]) {
     })
     .join('\n')
 
-  const pattern = new RegExp(`${CLIENTS_LIST_START}[\\s\\S]*?${CLIENTS_LIST_END}`)
+  const pattern = new RegExp(
+    `${RegExp.escape(CLIENTS_LIST_START)}.*?${RegExp.escape(CLIENTS_LIST_END)}`,
+    'sv',
+  )
 
   if (!pattern.test(readme)) {
     throw new Error(
@@ -316,8 +330,11 @@ async function updateRootReadmeClientsList(clients: ClientInfo[]) {
     )
   }
 
-  const replacement = `${CLIENTS_LIST_START}\n${list}\n${CLIENTS_LIST_END}`
-  await fs.writeFile(readmePath, readme.replace(pattern, replacement))
+  const replacement = `${CLIENTS_LIST_START}\n\n${list}\n\n${CLIENTS_LIST_END}`
+  await fs.writeFile(
+    readmePath,
+    readme.replace(pattern, () => replacement),
+  )
 }
 
 export async function generateClients() {

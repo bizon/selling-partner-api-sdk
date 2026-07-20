@@ -5,43 +5,37 @@ import {Configuration, FulfillmentInboundApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/inbound/v0/prepInstructions$'),
+    urlRegex: /^\/fba\/inbound\/v0\/prepInstructions$/v,
     rate: 2,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/inbound/v0/shipments/[^/]*/labels$'),
+    urlRegex: /^\/fba\/inbound\/v0\/shipments\/[^\/]*\/labels$/v,
     rate: 2,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/inbound/v0/shipments/[^/]*/billOfLading$'),
+    urlRegex: /^\/fba\/inbound\/v0\/shipments\/[^\/]*\/billOfLading$/v,
     rate: 2,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/inbound/v0/shipments$'),
+    urlRegex: /^\/fba\/inbound\/v0\/shipments$/v,
     rate: 2,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/inbound/v0/shipments/[^/]*/items$'),
+    urlRegex: /^\/fba\/inbound\/v0\/shipments\/[^\/]*\/items$/v,
     rate: 2,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/inbound/v0/shipmentItems$'),
+    urlRegex: /^\/fba\/inbound\/v0\/shipmentItems$/v,
     rate: 2,
     burst: 30,
   },

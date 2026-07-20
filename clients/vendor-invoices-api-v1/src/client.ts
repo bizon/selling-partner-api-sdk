@@ -5,8 +5,7 @@ import {Configuration, VendorInvoicesApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/payments/v1/invoices$'),
+    urlRegex: /^\/vendor\/payments\/v1\/invoices$/v,
     rate: 10,
     burst: 10,
   },

@@ -9,11 +9,11 @@ import {type AuthorizationScope} from './types/scope.js'
 import {axios} from './utils/axios.js'
 
 /**
- * Configuration parameters for Selling Partner API authentication.
- *
- * Both `clientId` and `clientSecret` fall back to the `LWA_CLIENT_ID` and
- * `LWA_CLIENT_SECRET` environment variables when omitted.
- * `refreshToken` falls back to `LWA_REFRESH_TOKEN`.
+ Configuration parameters for Selling Partner API authentication.
+
+ Both `clientId` and `clientSecret` fall back to the `LWA_CLIENT_ID` and
+ `LWA_CLIENT_SECRET` environment variables when omitted.
+ `refreshToken` falls back to `LWA_REFRESH_TOKEN`.
  */
 export interface SellingPartnerAuthParameters {
   /** LWA client identifier. Defaults to the `LWA_CLIENT_ID` environment variable. */
@@ -27,11 +27,11 @@ export interface SellingPartnerAuthParameters {
 }
 
 /**
- * Handles Login with Amazon (LWA) OAuth token management for the Selling Partner API.
- *
- * Supports both refresh-token and grantless (scope-based) authentication flows.
- * Tokens are cached and automatically refreshed when expired. Concurrent calls
- * to {@link getAccessToken} are deduplicated into a single request.
+ Handles Login with Amazon (LWA) OAuth token management for the Selling Partner API.
+
+ Supports both refresh-token and grantless (scope-based) authentication flows.
+ Tokens are cached and automatically refreshed when expired. Concurrent calls
+ to {@link getAccessToken} are deduplicated into a single request.
  */
 export class SellingPartnerApiAuth {
   private readonly clientId: string
@@ -47,16 +47,18 @@ export class SellingPartnerApiAuth {
     parameters: RequireExactlyOne<SellingPartnerAuthParameters, 'refreshToken' | 'scopes'>,
   ) {
     const clientId = parameters.clientId ?? process.env.LWA_CLIENT_ID
-    const clientSecret = parameters.clientSecret ?? process.env.LWA_CLIENT_SECRET
-    const refreshToken = parameters.refreshToken ?? process.env.LWA_REFRESH_TOKEN
 
     if (!clientId) {
       throw new Error('Missing required `clientId` configuration value')
     }
 
+    const clientSecret = parameters.clientSecret ?? process.env.LWA_CLIENT_SECRET
+
     if (!clientSecret) {
       throw new Error('Missing required `clientSecret` configuration value')
     }
+
+    const refreshToken = parameters.refreshToken ?? process.env.LWA_REFRESH_TOKEN
 
     if (!refreshToken && !parameters.scopes) {
       throw new TypeError('Either `refreshToken` or `scopes` must be specified')
@@ -67,35 +69,6 @@ export class SellingPartnerApiAuth {
 
     this.refreshToken = refreshToken
     this.scopes = parameters.scopes
-  }
-
-  /**
-   * Returns a valid LWA access token, refreshing it if expired.
-   *
-   * Concurrent calls while a refresh is in progress share the same request.
-   *
-   * @returns The access token string.
-   */
-  async getAccessToken() {
-    if (
-      this.#accessToken &&
-      (!this.#accessTokenExpiration || Date.now() < this.#accessTokenExpiration.getTime())
-    ) {
-      return this.#accessToken
-    }
-
-    // Deduplicate concurrent calls: share the same in-flight request
-    if (this.#pendingTokenRequest) {
-      return this.#pendingTokenRequest
-    }
-
-    this.#pendingTokenRequest = this.#refreshAccessToken()
-
-    try {
-      return await this.#pendingTokenRequest
-    } finally {
-      this.#pendingTokenRequest = undefined
-    }
   }
 
   async #refreshAccessToken() {
@@ -134,7 +107,36 @@ export class SellingPartnerApiAuth {
   }
 
   /**
-   * Expiration date of the currently cached access token, or `undefined` if no token has been fetched yet.
+   Returns a valid LWA access token, refreshing it if expired.
+
+   Concurrent calls while a refresh is in progress share the same request.
+
+   @returns The access token string.
+   */
+  async getAccessToken() {
+    if (
+      this.#accessToken &&
+      (!this.#accessTokenExpiration || Date.now() < this.#accessTokenExpiration.getTime())
+    ) {
+      return this.#accessToken
+    }
+
+    // Deduplicate concurrent calls: share the same in-flight request
+    if (this.#pendingTokenRequest) {
+      return this.#pendingTokenRequest
+    }
+
+    this.#pendingTokenRequest = this.#refreshAccessToken()
+
+    try {
+      return await this.#pendingTokenRequest
+    } finally {
+      this.#pendingTokenRequest = undefined
+    }
+  }
+
+  /**
+   Expiration date of the currently cached access token, or `undefined` if no token has been fetched yet.
    */
   protected get accessTokenExpiration() {
     return this.#accessTokenExpiration

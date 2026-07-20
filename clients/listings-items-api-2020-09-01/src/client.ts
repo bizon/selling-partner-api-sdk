@@ -5,22 +5,19 @@ import {Configuration, ListingsItemsApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'delete',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/listings/2020-09-01/items/[^/]*$'),
+    urlRegex: /^\/listings\/2020-09-01\/items\/[^\/]*$/v,
     rate: 5,
     burst: 10,
   },
   {
     method: 'patch',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/listings/2020-09-01/items/[^/]*$'),
+    urlRegex: /^\/listings\/2020-09-01\/items\/[^\/]*$/v,
     rate: 5,
     burst: 10,
   },
   {
     method: 'put',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/listings/2020-09-01/items/[^/]*$'),
+    urlRegex: /^\/listings\/2020-09-01\/items\/[^\/]*$/v,
     rate: 5,
     burst: 10,
   },

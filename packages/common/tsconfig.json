@@ -4,5 +4,5 @@
   "compilerOptions": {
     "outDir": "dist"
   },
-  "include": ["src/**/*.ts", "__tests__/**/*.ts", "jest.config.ts"]
+  "include": ["src/**/*.ts", "tests/**/*.ts", "jest.config.ts"]
 }

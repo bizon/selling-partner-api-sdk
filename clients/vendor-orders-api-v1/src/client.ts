@@ -5,29 +5,25 @@ import {Configuration, VendorOrdersApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/orders/v1/purchaseOrders$'),
+    urlRegex: /^\/vendor\/orders\/v1\/purchaseOrders$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/orders/v1/purchaseOrders/[^/]*$'),
+    urlRegex: /^\/vendor\/orders\/v1\/purchaseOrders\/[^\/]*$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/orders/v1/acknowledgements$'),
+    urlRegex: /^\/vendor\/orders\/v1\/acknowledgements$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/orders/v1/purchaseOrdersStatus$'),
+    urlRegex: /^\/vendor\/orders\/v1\/purchaseOrdersStatus$/v,
     rate: 10,
     burst: 10,
   },

@@ -5,8 +5,7 @@ import {Configuration, VendorTransactionStatusApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/transactions/v1/transactions/[^/]*$'),
+    urlRegex: /^\/vendor\/transactions\/v1\/transactions\/[^\/]*$/v,
     rate: 10,
     burst: 20,
   },

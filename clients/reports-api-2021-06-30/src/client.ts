@@ -5,64 +5,55 @@ import {Configuration, ReportsApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/reports/2021-06-30/reports$'),
+    urlRegex: /^\/reports\/2021-06-30\/reports$/v,
     rate: 0.0222,
     burst: 10,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/reports/2021-06-30/reports$'),
+    urlRegex: /^\/reports\/2021-06-30\/reports$/v,
     rate: 0.0167,
     burst: 15,
   },
   {
     method: 'delete',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/reports/2021-06-30/reports/[^/]*$'),
+    urlRegex: /^\/reports\/2021-06-30\/reports\/[^\/]*$/v,
     rate: 0.0222,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/reports/2021-06-30/reports/[^/]*$'),
+    urlRegex: /^\/reports\/2021-06-30\/reports\/[^\/]*$/v,
     rate: 2,
     burst: 15,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/reports/2021-06-30/schedules$'),
+    urlRegex: /^\/reports\/2021-06-30\/schedules$/v,
     rate: 0.0222,
     burst: 10,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/reports/2021-06-30/schedules$'),
+    urlRegex: /^\/reports\/2021-06-30\/schedules$/v,
     rate: 0.0222,
     burst: 10,
   },
   {
     method: 'delete',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/reports/2021-06-30/schedules/[^/]*$'),
+    urlRegex: /^\/reports\/2021-06-30\/schedules\/[^\/]*$/v,
     rate: 0.0222,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/reports/2021-06-30/schedules/[^/]*$'),
+    urlRegex: /^\/reports\/2021-06-30\/schedules\/[^\/]*$/v,
     rate: 0.0222,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/reports/2021-06-30/documents/[^/]*$'),
+    urlRegex: /^\/reports\/2021-06-30\/documents\/[^\/]*$/v,
     rate: 0.0167,
     burst: 15,
   },

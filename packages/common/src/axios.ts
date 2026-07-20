@@ -67,14 +67,14 @@ export interface ClientConfiguration {
 }
 
 /**
- * Creates a pre-configured Axios instance for a Selling Partner API client.
- *
- * The instance handles authentication, rate-limit retries, error wrapping,
- * and optional request/response logging.
- *
- * @param configuration - Client configuration options.
- * @param rateLimits - Per-endpoint rate limits used for retry delay calculation.
- * @returns An object containing the configured Axios instance and the resolved API endpoint.
+ Creates a pre-configured Axios instance for a Selling Partner API client.
+
+ The instance handles authentication, rate-limit retries, error wrapping,
+ and optional request/response logging.
+
+ @param configuration - Client configuration options.
+ @param rateLimits - Per-endpoint rate limits used for retry delay calculation.
+ @returns An object containing the configured Axios instance and the resolved API endpoint.
  */
 export function createAxiosInstance(
   {
@@ -88,10 +88,11 @@ export function createAxiosInstance(
   }: ClientConfiguration,
   rateLimits: RateLimit[],
 ) {
-  const regionConfiguration = sellingPartnerRegions[region]
-  if (!regionConfiguration) {
+  if (!Object.hasOwn(sellingPartnerRegions, region)) {
     throw new TypeError(`Unknown or unsupported region: ${region}`)
   }
+
+  const regionConfiguration = sellingPartnerRegions[region]
 
   const instance = axios.create({
     headers: {
@@ -107,18 +108,20 @@ export function createAxiosInstance(
       retryDelay(retryCount, error) {
         const url = new URL(error.config!.url!)
         const method = error.config!.method?.toLowerCase()
-        const amznRateLimit = Number.parseFloat(
-          error.response?.headers['x-amzn-ratelimit-limit'] ?? '',
-        )
+        const amznRateLimitHeader: string | undefined =
+          error.response?.headers['x-amzn-ratelimit-limit']
+        const amznRateLimit = amznRateLimitHeader ? Number(amznRateLimitHeader) : NaN
 
         const rateLimit = Number.isNaN(amznRateLimit)
           ? rateLimits.find(
               (rateLimit) =>
-                rateLimit.method.toLowerCase() === method && rateLimit.urlRegex.exec(url.pathname),
+                rateLimit.method.toLowerCase() === method && rateLimit.urlRegex.test(url.pathname),
             )?.rate
           : amznRateLimit
 
-        const delay = rateLimit ? (1 / rateLimit) * 1000 + 1500 : 60 * 1000
+        const requestInterval =
+          rateLimit !== undefined && rateLimit > 0 ? 1000 / rateLimit : undefined
+        const delay = requestInterval === undefined ? 60_000 : requestInterval + 1500
 
         if (rateLimiting.onRetry) {
           rateLimiting.onRetry({delay, rateLimit, retryCount, error})
@@ -147,7 +150,7 @@ export function createAxiosInstance(
     },
   )
 
-  if (logging?.request) {
+  if (logging?.request !== undefined) {
     const requestLoggerOptions = logging.request === true ? undefined : logging.request
 
     if (requestLoggerOptions?.headers) {
@@ -176,7 +179,7 @@ export function createAxiosInstance(
     })
   }
 
-  if (logging?.response) {
+  if (logging?.response !== undefined) {
     const responseLoggerOptions = logging.response === true ? undefined : logging.response
 
     instance.interceptors.response.use((response) =>
@@ -194,7 +197,7 @@ export function createAxiosInstance(
     )
   }
 
-  if (logging?.error) {
+  if (logging?.error !== undefined) {
     const errorLoggerOptions = logging.error === true ? undefined : logging.error
 
     instance.interceptors.response.use(

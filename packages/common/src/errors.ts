@@ -3,10 +3,10 @@ import {URL} from 'node:url'
 import {AxiosError} from 'axios'
 
 /**
- * Error thrown when a Selling Partner API request fails.
- *
- * Wraps the underlying Axios error with a message that includes the API name,
- * version, and HTTP status code (or "No response" for network errors).
+ Error thrown when a Selling Partner API request fails.
+
+ Wraps the underlying Axios error with a message that includes the API name,
+ version, and HTTP status code (or "No response" for network errors).
  */
 export class SellingPartnerApiError<T = unknown, D = any> extends AxiosError<T, D> {
   /** The original error message from the failed HTTP request. */

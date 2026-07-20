@@ -5,22 +5,19 @@ import {Configuration, ProductFeesApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/products/fees/v0/listings/[^/]*/feesEstimate$'),
+    urlRegex: /^\/products\/fees\/v0\/listings\/[^\/]*\/feesEstimate$/v,
     rate: 1,
     burst: 2,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/products/fees/v0/items/[^/]*/feesEstimate$'),
+    urlRegex: /^\/products\/fees\/v0\/items\/[^\/]*\/feesEstimate$/v,
     rate: 1,
     burst: 2,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/products/fees/v0/feesEstimate$'),
+    urlRegex: /^\/products\/fees\/v0\/feesEstimate$/v,
     rate: 0.5,
     burst: 1,
   },

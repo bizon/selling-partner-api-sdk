@@ -16,6 +16,7 @@ export const logger = winston.createLogger({
       info: winston.Logform.TransformableInfo & {
         packageName?: string
         schemaName?: string
+        schemaType?: string
       },
     ) => {
       const moduleName: string = info.packageName ?? info.schemaName ?? ''

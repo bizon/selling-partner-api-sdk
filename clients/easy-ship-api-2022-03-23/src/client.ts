@@ -5,36 +5,31 @@ import {Configuration, EasyShipApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/easyShip/2022-03-23/timeSlot$'),
+    urlRegex: /^\/easyShip\/2022-03-23\/timeSlot$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/easyShip/2022-03-23/package$'),
+    urlRegex: /^\/easyShip\/2022-03-23\/package$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/easyShip/2022-03-23/package$'),
+    urlRegex: /^\/easyShip\/2022-03-23\/package$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'patch',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/easyShip/2022-03-23/package$'),
+    urlRegex: /^\/easyShip\/2022-03-23\/package$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/easyShip/2022-03-23/packages/bulk$'),
+    urlRegex: /^\/easyShip\/2022-03-23\/packages\/bulk$/v,
     rate: 1,
     burst: 5,
   },

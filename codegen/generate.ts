@@ -7,7 +7,7 @@ import {runCommand} from './utils/run-command.js'
 
 type Generator = 'clients' | 'schemas'
 
-const generators = new Set<Generator>((process.argv[2]?.split(',') as Generator[]) ?? [])
+const generators = new Set<Generator>(process.argv[2]?.split(',') as Generator[])
 if (generators.size === 0) {
   generators.add('clients')
   generators.add('schemas')

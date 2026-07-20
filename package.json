@@ -17,7 +17,7 @@
   "devDependencies": {
     "@lerna-lite/cli": "^5.3.0",
     "@lerna-lite/publish": "^5.3.0",
-    "@swc/core": "^1.15.40",
+    "@swc/core": "^1.15.46",
     "@swc/jest": "^0.2.39",
     "@types/node": "^24.12.4",
     "conventional-changelog-conventionalcommits": "^9.3.1",

@@ -14,8 +14,7 @@ updates:
     groups:
       jest:
         patterns:
-          - "@jest/globals"
-          - "@jest/types"
+          - "@jest/*"
           - "@swc/core"
           - "@swc/jest"
           - "jest"

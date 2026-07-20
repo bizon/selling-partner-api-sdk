@@ -27,8 +27,8 @@ importers:
         specifier: ^10.2.1
         version: 10.2.1
       eslint-config-xo-bizon:
-        specifier: ^4.3.0
-        version: 4.3.0
+        specifier: ^4.5.0
+        version: 4.5.0(xo@1.2.3(@types/eslint@8.56.12)(@typescript-eslint/utils@8.52.0(eslint@9.39.2(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3))(supports-color@8.1.1)(typescript@5.9.3))
       jest:
         specifier: ^30.4.2
         version: 30.4.2(@types/node@24.12.4)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.15.46)(@types/node@24.12.4)(typescript@5.9.3))
@@ -3338,9 +3338,11 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-config-xo-bizon@4.3.0:
-    resolution: {integrity: sha512-tavtD8JMM7N2ooLgZGKqtHsZrmHy7pWknFOPNdh22HoakIMz9sE2n21ZoauezpCZt96M5q88q+CGv5jX0qB4GQ==}
+  eslint-config-xo-bizon@4.5.0:
+    resolution: {integrity: sha512-A5pQ4zqgdKXqm0vfccxCg4n6lhFxcMOcvHi9BauA42bp8rGIVbrSevn1IVNWDHb7BgDxmhY1nPqvTR8390KQmg==}
     engines: {node: '>=24'}
+    peerDependencies:
+      xo: '>=4'
 
   eslint-config-xo-react@0.28.0:
     resolution: {integrity: sha512-dKvxB9kxMNLhWKsh6yiptACet+/WwKcN7ID2hIBAmjH6le4tt8um4sJ0/aAH6y+xle9tPrasX1Wnz90muCoz9A==}
@@ -8489,7 +8491,9 @@ snapshots:
     dependencies:
       eslint: 9.39.2(supports-color@8.1.1)
 
-  eslint-config-xo-bizon@4.3.0: {}
+  eslint-config-xo-bizon@4.5.0(xo@1.2.3(@types/eslint@8.56.12)(@typescript-eslint/utils@8.52.0(eslint@9.39.2(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3))(supports-color@8.1.1)(typescript@5.9.3)):
+    dependencies:
+      xo: 1.2.3(@types/eslint@8.56.12)(@typescript-eslint/utils@8.52.0(eslint@9.39.2(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3))(supports-color@8.1.1)(typescript@5.9.3)
 
   eslint-config-xo-react@0.28.0(eslint@9.39.2(supports-color@8.1.1)):
     dependencies:

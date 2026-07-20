@@ -21,7 +21,7 @@
     "@swc/jest": "^0.2.39",
     "@types/node": "^24.12.4",
     "conventional-changelog-conventionalcommits": "^10.2.1",
-    "eslint-config-xo-bizon": "^4.3.0",
+    "eslint-config-xo-bizon": "^4.5.0",
     "jest": "^30.4.2",
     "jest-junit": "^17.0.0",
     "ts-node": "^10.9.2",

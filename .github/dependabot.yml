@@ -23,3 +23,7 @@ updates:
       lerna-lite:
         patterns:
           - "@lerna-lite/*"
+      lint:
+        patterns:
+          - "xo"
+          - "eslint-config-xo-*"

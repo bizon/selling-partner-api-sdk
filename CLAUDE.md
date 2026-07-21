@@ -119,7 +119,9 @@ pnpm codegen schemas      # generate schemas only
 
 - **Tests** (`tests.yml`): lint + type check + Jest on every PR and push to master
 - **Codegen** (`codegen.yml`): runs twice daily, creates PRs on `codegen/update-models` and `codegen/update-schemas` branches
-- **Release** (`release.yml`): manual workflow dispatch — runs `lerna publish` with conventional commits, deploys TypeDoc to `docs` branch
+- **OpenAPI Generator** (`openapi-generator.yml`): runs daily, creates a PR on `codegen/update-generator` when a new generator is released
+- **Release** (`release.yml`): manual workflow dispatch — runs `lerna publish` with conventional commits
+- **Documentation** (`docs.yml`): manual workflow dispatch, or automatically after a successful release — builds TypeDoc and deploys it to the `docs` branch
 - **PR validation** (`pr.yml`): enforces semantic PR titles
 
 ## Documentation
@@ -127,4 +129,4 @@ pnpm codegen schemas      # generate schemas only
 - Keep `README.md` files in sync with the codebase
 - Client READMEs are generated — to change them, edit `codegen/templates/README.md.mustache`
 - Schema README lists are generated — update after schema changes
-- TypeDoc is generated and deployed to the `docs` branch on release
+- TypeDoc is generated and deployed to the `docs` branch by the `Documentation` workflow — after each release, or on manual dispatch

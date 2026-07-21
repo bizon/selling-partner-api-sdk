@@ -12,6 +12,3 @@ clients/**/dist
 packages/**/dist
 
 selling-partner-api-models/
-
-packages/test-sdk
-clients-test/

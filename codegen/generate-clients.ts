@@ -25,7 +25,6 @@ interface RateLimit {
   rate: number
   burst: number
   urlRegex: string
-  last?: boolean
 }
 
 interface ClientInfo {
@@ -230,10 +229,6 @@ async function generateClientVersion(modelFilePath: string): Promise<ClientInfo>
     },
     [],
   )
-
-  if (rateLimits.length > 0) {
-    rateLimits.at(-1)!.last = true
-  }
 
   await fs.writeFile(
     `${clientDirectoryPath}/tsconfig.json`,

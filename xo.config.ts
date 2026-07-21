@@ -5,7 +5,7 @@ export default [
   ...xoBizon,
 
   {
-    ignores: ['clients/*/src/api-model/**', 'packages/schemas/src/**', '**/CHANGELOG.md'],
+    ignores: ['clients/*/src/api-model/**', '**/CHANGELOG.md'],
   },
 
   {
@@ -43,6 +43,15 @@ export default [
           },
         },
       ],
+    },
+  },
+
+  {
+    files: ['packages/schemas/src/**/*.ts'],
+    rules: {
+      'max-lines': 'off',
+      'unicorn/prefer-https': 'off',
+      'unicorn/prefer-math-constants': 'off',
     },
   },
 ] satisfies FlatXoConfig

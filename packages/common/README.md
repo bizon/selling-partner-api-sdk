@@ -45,11 +45,11 @@ import {type ClientConfiguration} from '@sp-api-sdk/common'
 
 Three regions are supported, each with production and sandbox endpoints:
 
-| Region        | Code | AWS Region | Production Endpoint                       |
-| ------------- | ---- | ---------- | ----------------------------------------- |
-| North America | `na` | us-east-1  | `https://sellingpartnerapi-na.amazon.com` |
-| Europe        | `eu` | eu-west-1  | `https://sellingpartnerapi-eu.amazon.com` |
-| Far East      | `fe` | us-west-2  | `https://sellingpartnerapi-fe.amazon.com` |
+| Region        | Code | Production Endpoint                       |
+| ------------- | ---- | ----------------------------------------- |
+| North America | `na` | `https://sellingpartnerapi-na.amazon.com` |
+| Europe        | `eu` | `https://sellingpartnerapi-eu.amazon.com` |
+| Far East      | `fe` | `https://sellingpartnerapi-fe.amazon.com` |
 
 When `sandbox` is set to `true`, the sandbox variant of the endpoint is used (e.g. `https://sandbox.sellingpartnerapi-eu.amazon.com`).
 
@@ -95,10 +95,13 @@ By default, `request` and `response` loggers use `console.info`, and the `error`
 API errors are wrapped in `SellingPartnerApiError`, which extends `AxiosError` and adds context:
 
 ```typescript
+import {getMarketplaceByCode} from '@bizon/amazon-ids'
 import {SellingPartnerApiError} from '@sp-api-sdk/common'
 
+const de = getMarketplaceByCode('de')!
+
 try {
-  await client.searchOrders({marketplaceIds: ['A1PA6795UKMFR9']})
+  await client.searchOrders({marketplaceIds: [de.id]})
 } catch (error) {
   if (error instanceof SellingPartnerApiError) {
     console.error(error.message) // e.g. "orders (2026-01-01) error: Response code 403"

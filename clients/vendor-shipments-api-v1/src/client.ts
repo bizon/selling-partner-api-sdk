@@ -5,29 +5,25 @@ import {Configuration, VendorShipmentsApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/shipping/v1/shipmentConfirmations$'),
+    urlRegex: /^\/vendor\/shipping\/v1\/shipmentConfirmations$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/shipping/v1/shipments$'),
+    urlRegex: /^\/vendor\/shipping\/v1\/shipments$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/shipping/v1/shipments$'),
+    urlRegex: /^\/vendor\/shipping\/v1\/shipments$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/shipping/v1/transportLabels$'),
+    urlRegex: /^\/vendor\/shipping\/v1\/transportLabels$/v,
     rate: 10,
     burst: 10,
   },

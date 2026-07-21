@@ -5,8 +5,7 @@ import {Configuration, VendorDirectFulfillmentInventoryApi} from './api-model/in
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/directFulfillment/inventory/v1/warehouses/[^/]*/items$'),
+    urlRegex: /^\/vendor\/directFulfillment\/inventory\/v1\/warehouses\/[^\/]*\/items$/v,
     rate: 10,
     burst: 10,
   },

@@ -5,7 +5,7 @@ import fjp, {type Operation} from 'fast-json-patch'
 import jsonfile from 'jsonfile'
 import {type OpenAPIV3} from 'openapi-types'
 
-import {instanceOfNodeError} from './error.js'
+import {isNodeError} from './error.js'
 
 interface Patch {
   operations: Operation[]
@@ -17,13 +17,13 @@ async function getPatches(patchPath: string): Promise<Patch[]> {
     const files = await readdir(patchPath)
 
     return await Promise.all(
-      files.sort().map(async (filename) => ({
+      files.toSorted().map(async (filename) => ({
         operations: await jsonfile.readFile(joinPath(patchPath, filename)),
         filename,
       })),
     )
   } catch (error: unknown) {
-    if (instanceOfNodeError(error, Error) && error.code === 'ENOENT') {
+    if (isNodeError(error, Error) && error.code === 'ENOENT') {
       return []
     }
 

@@ -8,15 +8,13 @@ import {
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/delivery/2022-07-01/invoice$'),
+    urlRegex: /^\/delivery\/2022\u{2D}07\u{2D}01\/invoice$/v,
     rate: 1.133,
     burst: 25,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/delivery/2022-07-01/invoice/status$'),
+    urlRegex: /^\/delivery\/2022\u{2D}07\u{2D}01\/invoice\/status$/v,
     rate: 1.133,
     burst: 25,
   },

@@ -5,8 +5,7 @@ import {Configuration, FbaInventoryApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/inventory/v1/summaries$'),
+    urlRegex: /^\/fba\/inventory\/v1\/summaries$/v,
     rate: 2,
     burst: 2,
   },

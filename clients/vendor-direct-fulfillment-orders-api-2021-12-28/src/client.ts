@@ -5,22 +5,20 @@ import {Configuration, VendorDirectFulfillmentOrdersApi} from './api-model/index
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/directFulfillment/orders/2021-12-28/purchaseOrders$'),
+    urlRegex: /^\/vendor\/directFulfillment\/orders\/2021\u{2D}12\u{2D}28\/purchaseOrders$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/directFulfillment/orders/2021-12-28/purchaseOrders/[^/]*$'),
+    urlRegex:
+      /^\/vendor\/directFulfillment\/orders\/2021\u{2D}12\u{2D}28\/purchaseOrders\/[^\/]*$/v,
     rate: 10,
     burst: 10,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/directFulfillment/orders/2021-12-28/acknowledgements$'),
+    urlRegex: /^\/vendor\/directFulfillment\/orders\/2021\u{2D}12\u{2D}28\/acknowledgements$/v,
     rate: 10,
     burst: 10,
   },

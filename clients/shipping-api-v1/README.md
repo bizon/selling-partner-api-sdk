@@ -5,7 +5,7 @@
 
 Provides programmatic access to Amazon Shipping APIs.
 
- **Note:** If you are new to the Amazon Shipping API, refer to the latest version of <a href="https://developer-docs.amazon.com/amazon-shipping/docs/shipping-api-v2-reference">Amazon Shipping API (v2)</a> on the <a href="https://developer-docs.amazon.com/amazon-shipping/">Amazon Shipping Developer Documentation</a> site.
+**Note:** If you are new to the Amazon Shipping API, refer to the latest version of <a href="https://developer-docs.amazon.com/amazon-shipping/docs/shipping-api-v2-reference">Amazon Shipping API (v2)</a> on the <a href="https://developer-docs.amazon.com/amazon-shipping/">Amazon Shipping Developer Documentation</a> site.
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 
@@ -69,10 +69,10 @@ const client = new ShippingApiClient({
   region: 'eu',
   logging: {
     request: {
-      logger: console.debug
+      logger: console.debug,
     },
     response: {
-      logger: console.debug
+      logger: console.debug,
     },
     error: true,
   },
@@ -83,14 +83,13 @@ Specifying `true` will use the default options, specifying an object will allow 
 This uses [axios-logger](https://github.com/hg-pyun/axios-logger) under the hood.  
 By default, if enabled, the `request` and `response` loggers will use `console.info` and the `error` logger will use `console.error`.
 
-
 ## License
 
 MIT
 
 ## Miscellaneous
 
-```
+```text
     ╚⊙ ⊙╝
   ╚═(███)═╝
  ╚═(███)═╝

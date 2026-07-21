@@ -5,71 +5,61 @@ import {Configuration, MessagingApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/messaging/v1/orders/[^/]*$'),
+    urlRegex: /^\/messaging\/v1\/orders\/[^\/]*$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/messaging/v1/orders/[^/]*/messages/confirmCustomizationDetails$'),
+    urlRegex: /^\/messaging\/v1\/orders\/[^\/]*\/messages\/confirmCustomizationDetails$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/messaging/v1/orders/[^/]*/messages/confirmDeliveryDetails$'),
+    urlRegex: /^\/messaging\/v1\/orders\/[^\/]*\/messages\/confirmDeliveryDetails$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/messaging/v1/orders/[^/]*/messages/legalDisclosure$'),
+    urlRegex: /^\/messaging\/v1\/orders\/[^\/]*\/messages\/legalDisclosure$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/messaging/v1/orders/[^/]*/messages/confirmOrderDetails$'),
+    urlRegex: /^\/messaging\/v1\/orders\/[^\/]*\/messages\/confirmOrderDetails$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/messaging/v1/orders/[^/]*/messages/confirmServiceDetails$'),
+    urlRegex: /^\/messaging\/v1\/orders\/[^\/]*\/messages\/confirmServiceDetails$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/messaging/v1/orders/[^/]*/messages/warranty$'),
+    urlRegex: /^\/messaging\/v1\/orders\/[^\/]*\/messages\/warranty$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/messaging/v1/orders/[^/]*/attributes$'),
+    urlRegex: /^\/messaging\/v1\/orders\/[^\/]*\/attributes$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/messaging/v1/orders/[^/]*/messages/digitalAccessKey$'),
+    urlRegex: /^\/messaging\/v1\/orders\/[^\/]*\/messages\/digitalAccessKey$/v,
     rate: 1,
     burst: 5,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/messaging/v1/orders/[^/]*/messages/unexpectedProblem$'),
+    urlRegex: /^\/messaging\/v1\/orders\/[^\/]*\/messages\/unexpectedProblem$/v,
     rate: 1,
     burst: 5,
   },

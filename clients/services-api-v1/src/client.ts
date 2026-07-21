@@ -5,120 +5,103 @@ import {Configuration, ServicesApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/service/v1/serviceJobs/[^/]*$'),
+    urlRegex: /^\/service\/v1\/serviceJobs\/[^\/]*$/v,
     rate: 20,
     burst: 40,
   },
   {
     method: 'put',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/service/v1/serviceJobs/[^/]*/cancellations$'),
+    urlRegex: /^\/service\/v1\/serviceJobs\/[^\/]*\/cancellations$/v,
     rate: 5,
     burst: 20,
   },
   {
     method: 'put',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/service/v1/serviceJobs/[^/]*/completions$'),
+    urlRegex: /^\/service\/v1\/serviceJobs\/[^\/]*\/completions$/v,
     rate: 5,
     burst: 20,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/service/v1/serviceJobs$'),
+    urlRegex: /^\/service\/v1\/serviceJobs$/v,
     rate: 10,
     burst: 40,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/service/v1/serviceJobs/[^/]*/appointments$'),
+    urlRegex: /^\/service\/v1\/serviceJobs\/[^\/]*\/appointments$/v,
     rate: 5,
     burst: 20,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/service/v1/serviceJobs/[^/]*$'),
+    urlRegex: /^\/service\/v1\/serviceJobs\/[^\/]*\/appointments\/[^\/]*$/v,
     rate: 5,
     burst: 20,
   },
   {
     method: 'put',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/service/v1/serviceJobs/[^/]*/resources$'),
+    urlRegex: /^\/service\/v1\/serviceJobs\/[^\/]*\/appointments\/[^\/]*\/resources$/v,
     rate: 1,
     burst: 2,
   },
   {
     method: 'put',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/service/v1/serviceJobs/[^/]*/fulfillment$'),
+    urlRegex: /^\/service\/v1\/serviceJobs\/[^\/]*\/appointments\/[^\/]*\/fulfillment$/v,
     rate: 5,
     burst: 20,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/service/v1/serviceResources/[^/]*/capacity/range$'),
+    urlRegex: /^\/service\/v1\/serviceResources\/[^\/]*\/capacity\/range$/v,
     rate: 5,
     burst: 20,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/service/v1/serviceResources/[^/]*/capacity/fixed$'),
+    urlRegex: /^\/service\/v1\/serviceResources\/[^\/]*\/capacity\/fixed$/v,
     rate: 5,
     burst: 20,
   },
   {
     method: 'put',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/service/v1/serviceResources/[^/]*/schedules$'),
+    urlRegex: /^\/service\/v1\/serviceResources\/[^\/]*\/schedules$/v,
     rate: 5,
     burst: 20,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/service/v1/reservation$'),
+    urlRegex: /^\/service\/v1\/reservation$/v,
     rate: 5,
     burst: 20,
   },
   {
     method: 'put',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/service/v1/reservation/[^/]*$'),
+    urlRegex: /^\/service\/v1\/reservation\/[^\/]*$/v,
     rate: 5,
     burst: 20,
   },
   {
     method: 'delete',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/service/v1/reservation/[^/]*$'),
+    urlRegex: /^\/service\/v1\/reservation\/[^\/]*$/v,
     rate: 5,
     burst: 20,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/service/v1/serviceJobs/[^/]*/appointmentSlots$'),
+    urlRegex: /^\/service\/v1\/serviceJobs\/[^\/]*\/appointmentSlots$/v,
     rate: 5,
     burst: 20,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/service/v1/appointmentSlots$'),
+    urlRegex: /^\/service\/v1\/appointmentSlots$/v,
     rate: 20,
     burst: 40,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/service/v1/documents$'),
+    urlRegex: /^\/service\/v1\/documents$/v,
     rate: 5,
     burst: 20,
   },

@@ -5,36 +5,31 @@ import {Configuration, ListingsItemsApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'delete',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/listings/2021-08-01/items/[^/]*$'),
+    urlRegex: /^\/listings\/2021\u{2D}08\u{2D}01\/items\/[^\/]*\/[^\/]*$/v,
     rate: 5,
     burst: 5,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/listings/2021-08-01/items/[^/]*$'),
+    urlRegex: /^\/listings\/2021\u{2D}08\u{2D}01\/items\/[^\/]*\/[^\/]*$/v,
     rate: 5,
     burst: 10,
   },
   {
     method: 'patch',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/listings/2021-08-01/items/[^/]*$'),
+    urlRegex: /^\/listings\/2021\u{2D}08\u{2D}01\/items\/[^\/]*\/[^\/]*$/v,
     rate: 5,
     burst: 5,
   },
   {
     method: 'put',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/listings/2021-08-01/items/[^/]*$'),
+    urlRegex: /^\/listings\/2021\u{2D}08\u{2D}01\/items\/[^\/]*\/[^\/]*$/v,
     rate: 5,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/listings/2021-08-01/items/[^/]*$'),
+    urlRegex: /^\/listings\/2021\u{2D}08\u{2D}01\/items\/[^\/]*$/v,
     rate: 5,
     burst: 5,
   },

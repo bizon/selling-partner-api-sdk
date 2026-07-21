@@ -28,7 +28,7 @@ This package provides the shared infrastructure used by all API client packages:
 The `ClientConfiguration` interface is used by all API client constructors:
 
 ```typescript
-import { type ClientConfiguration } from "@sp-api-sdk/common";
+import {type ClientConfiguration} from '@sp-api-sdk/common'
 ```
 
 | Option                | Type                    | Required | Description                                     |
@@ -95,16 +95,16 @@ By default, `request` and `response` loggers use `console.info`, and the `error`
 API errors are wrapped in `SellingPartnerApiError`, which extends `AxiosError` and adds context:
 
 ```typescript
-import { SellingPartnerApiError } from "@sp-api-sdk/common";
+import {SellingPartnerApiError} from '@sp-api-sdk/common'
 
 try {
-  await client.searchOrders({ marketplaceIds: ["A1PA6795UKMFR9"] });
+  await client.searchOrders({marketplaceIds: ['A1PA6795UKMFR9']})
 } catch (error) {
   if (error instanceof SellingPartnerApiError) {
-    console.error(error.message); // e.g. "orders (2026-01-01) error: Response code 403"
-    console.error(error.apiName); // e.g. "orders"
-    console.error(error.apiVersion); // e.g. "2026-01-01"
-    console.error(error.innerMessage); // Original axios error message
+    console.error(error.message) // e.g. "orders (2026-01-01) error: Response code 403"
+    console.error(error.apiName) // e.g. "orders"
+    console.error(error.apiVersion) // e.g. "2026-01-01"
+    console.error(error.innerMessage) // Original axios error message
   }
 }
 ```
@@ -115,7 +115,7 @@ MIT
 
 ## Miscellaneous
 
-```
+```text
     ╚⊙ ⊙╝
   ╚═(███)═╝
  ╚═(███)═╝

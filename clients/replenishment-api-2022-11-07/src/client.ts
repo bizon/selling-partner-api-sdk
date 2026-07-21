@@ -5,22 +5,19 @@ import {Configuration, ReplenishmentApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/replenishment/2022-11-07/sellingPartners/metrics/search$'),
+    urlRegex: /^\/replenishment\/2022\u{2D}11\u{2D}07\/sellingPartners\/metrics\/search$/v,
     rate: 1,
     burst: 1,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/replenishment/2022-11-07/offers/metrics/search$'),
+    urlRegex: /^\/replenishment\/2022\u{2D}11\u{2D}07\/offers\/metrics\/search$/v,
     rate: 1,
     burst: 1,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/replenishment/2022-11-07/offers/search$'),
+    urlRegex: /^\/replenishment\/2022\u{2D}11\u{2D}07\/offers\/search$/v,
     rate: 1,
     burst: 1,
   },

@@ -3,6 +3,7 @@
   "extends": "@tsconfig/node24/tsconfig.json",
   "compilerOptions": {
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "types": ["node"]
   }
 }

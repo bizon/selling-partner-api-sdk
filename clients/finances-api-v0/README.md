@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/finances-api-v0)](https://www.npmjs.com/package/@sp-api-sdk/finances-api-v0)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
-The Selling Partner API for Finances provides financial information that is relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range. 
+The Selling Partner API for Finances provides financial information that is relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 
@@ -67,10 +67,10 @@ const client = new FinancesApiClient({
   region: 'eu',
   logging: {
     request: {
-      logger: console.debug
+      logger: console.debug,
     },
     response: {
-      logger: console.debug
+      logger: console.debug,
     },
     error: true,
   },
@@ -81,14 +81,13 @@ Specifying `true` will use the default options, specifying an object will allow 
 This uses [axios-logger](https://github.com/hg-pyun/axios-logger) under the hood.  
 By default, if enabled, the `request` and `response` loggers will use `console.info` and the `error` logger will use `console.error`.
 
-
 ## License
 
 MIT
 
 ## Miscellaneous
 
-```
+```text
     ╚⊙ ⊙╝
   ╚═(███)═╝
  ╚═(███)═╝

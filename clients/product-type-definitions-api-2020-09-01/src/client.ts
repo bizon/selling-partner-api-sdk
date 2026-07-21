@@ -5,15 +5,13 @@ import {Configuration, ProductTypeDefinitionsApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/definitions/2020-09-01/productTypes$'),
+    urlRegex: /^\/definitions\/2020\u{2D}09\u{2D}01\/productTypes$/v,
     rate: 5,
     burst: 10,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/definitions/2020-09-01/productTypes/[^/]*$'),
+    urlRegex: /^\/definitions\/2020\u{2D}09\u{2D}01\/productTypes\/[^\/]*$/v,
     rate: 5,
     burst: 10,
   },

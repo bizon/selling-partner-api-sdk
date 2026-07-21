@@ -5,92 +5,79 @@ import {Configuration, FulfillmentOutboundApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/outbound/2020-07-01/fulfillmentOrders/preview$'),
+    urlRegex: /^\/fba\/outbound\/2020\u{2D}07\u{2D}01\/fulfillmentOrders\/preview$/v,
     rate: 2,
     burst: 30,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/outbound/2020-07-01/deliveryOffers$'),
+    urlRegex: /^\/fba\/outbound\/2020\u{2D}07\u{2D}01\/deliveryOffers$/v,
     rate: 5,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/outbound/2020-07-01/fulfillmentOrders$'),
+    urlRegex: /^\/fba\/outbound\/2020\u{2D}07\u{2D}01\/fulfillmentOrders$/v,
     rate: 2,
     burst: 30,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/outbound/2020-07-01/fulfillmentOrders$'),
+    urlRegex: /^\/fba\/outbound\/2020\u{2D}07\u{2D}01\/fulfillmentOrders$/v,
     rate: 2,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/outbound/2020-07-01/tracking$'),
+    urlRegex: /^\/fba\/outbound\/2020\u{2D}07\u{2D}01\/tracking$/v,
     rate: 2,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/outbound/2020-07-01/returnReasonCodes$'),
+    urlRegex: /^\/fba\/outbound\/2020\u{2D}07\u{2D}01\/returnReasonCodes$/v,
     rate: 2,
     burst: 30,
   },
   {
     method: 'put',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/outbound/2020-07-01/fulfillmentOrders/[^/]*/return$'),
+    urlRegex: /^\/fba\/outbound\/2020\u{2D}07\u{2D}01\/fulfillmentOrders\/[^\/]*\/return$/v,
     rate: 2,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/outbound/2020-07-01/fulfillmentOrders/[^/]*$'),
+    urlRegex: /^\/fba\/outbound\/2020\u{2D}07\u{2D}01\/fulfillmentOrders\/[^\/]*$/v,
     rate: 2,
     burst: 30,
   },
   {
     method: 'put',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/outbound/2020-07-01/fulfillmentOrders/[^/]*$'),
+    urlRegex: /^\/fba\/outbound\/2020\u{2D}07\u{2D}01\/fulfillmentOrders\/[^\/]*$/v,
     rate: 2,
     burst: 30,
   },
   {
     method: 'put',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/outbound/2020-07-01/fulfillmentOrders/[^/]*/cancel$'),
+    urlRegex: /^\/fba\/outbound\/2020\u{2D}07\u{2D}01\/fulfillmentOrders\/[^\/]*\/cancel$/v,
     rate: 2,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/outbound/2020-07-01/features$'),
+    urlRegex: /^\/fba\/outbound\/2020\u{2D}07\u{2D}01\/features$/v,
     rate: 2,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/outbound/2020-07-01/features/inventory/[^/]*$'),
+    urlRegex: /^\/fba\/outbound\/2020\u{2D}07\u{2D}01\/features\/inventory\/[^\/]*$/v,
     rate: 2,
     burst: 30,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/outbound/2020-07-01/features/inventory/[^/]*$'),
+    urlRegex: /^\/fba\/outbound\/2020\u{2D}07\u{2D}01\/features\/inventory\/[^\/]*\/[^\/]*$/v,
     rate: 2,
     burst: 30,
   },

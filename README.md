@@ -50,24 +50,24 @@ npm install @sp-api-sdk/auth @sp-api-sdk/orders-api-2026-01-01
 ### Usage
 
 ```javascript
-import { SellingPartnerApiAuth } from "@sp-api-sdk/auth";
-import { OrdersApiClient } from "@sp-api-sdk/orders-api-2026-01-01";
+import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
+import {OrdersApiClient} from '@sp-api-sdk/orders-api-2026-01-01'
 
 // `clientId` and `clientSecret` default to the `LWA_CLIENT_ID` and
 // `LWA_CLIENT_SECRET` environment variables.
 const auth = new SellingPartnerApiAuth({
   refreshToken: await getRefreshTokenForSeller(sellerId),
-});
+})
 
 const client = new OrdersApiClient({
   auth,
-  region: "eu",
-});
+  region: 'eu',
+})
 
-const { data } = await client.searchOrders({
-  marketplaceIds: ["A1PA6795UKMFR9"],
-  createdAfter: "2026-01-01T00:00:00Z",
-});
+const {data} = await client.searchOrders({
+  marketplaceIds: ['A1PA6795UKMFR9'],
+  createdAfter: '2026-01-01T00:00:00Z',
+})
 ```
 
 ### Configuration
@@ -91,14 +91,14 @@ Enable automatic retry on rate-limited (HTTP 429) requests:
 ```javascript
 const client = new OrdersApiClient({
   auth,
-  region: "eu",
+  region: 'eu',
   rateLimiting: {
     retry: true,
     onRetry: (retryInfo) => {
-      console.log(retryInfo);
+      console.log(retryInfo)
     },
   },
-});
+})
 ```
 
 The retry delay is calculated from the `x-amzn-ratelimit-limit` response header when available, falling back to the documented rate limits for each endpoint.
@@ -110,13 +110,13 @@ Enable request/response/error logging via [axios-logger](https://github.com/hg-p
 ```javascript
 const client = new OrdersApiClient({
   auth,
-  region: "eu",
+  region: 'eu',
   logging: {
     request: true,
     response: true,
     error: true,
   },
-});
+})
 ```
 
 Pass `true` to use default options, or an object to customize the [axios-logger configuration](https://github.com/hg-pyun/axios-logger#options).
@@ -133,6 +133,7 @@ By default, `request` and `response` loggers use `console.info`, and the `error`
 This repository contains an API client for each of the available Selling Partner API version:
 
 <!-- codegen:clients:start -->
+
 - [amazon-warehousing-and-distribution-api-2024-05-09](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/amazon-warehousing-and-distribution-api-2024-05-09)
 - [aplus-content-api-2020-11-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/aplus-content-api-2020-11-01)
 - [application-integrations-api-2024-04-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/application-integrations-api-2024-04-01)
@@ -196,6 +197,7 @@ This repository contains an API client for each of the available Selling Partner
 - [vendor-orders-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-orders-api-v1)
 - [vendor-shipments-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-shipments-api-v1)
 - [vendor-transaction-status-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-transaction-status-api-v1)
+
 <!-- codegen:clients:end -->
 
 The API clients are automatically generated from the Swagger/OpenAPI models from [the official models repository](https://github.com/amzn/selling-partner-api-models).
@@ -209,17 +211,17 @@ It exposes the JSON schemas as well as typescript types.
 For example, if you need the JSON schema for Vendor inventory reports:
 
 ```js
-import { Reports } from "@sp-api-sdk/schemas";
+import {Reports} from '@sp-api-sdk/schemas'
 
-console.log(Reports.vendorInventoryReport);
+console.log(Reports.vendorInventoryReport)
 ```
 
 If you need the typescript type:
 
 ```ts
-import { Reports } from "@sp-api-sdk/schemas";
+import {Reports} from '@sp-api-sdk/schemas'
 
-const report = (await getVendorInventoryReportData()) as Reports.VendorInventoryReport;
+const report = (await getVendorInventoryReportData()) as Reports.VendorInventoryReport
 ```
 
 ## Code generation
@@ -240,7 +242,7 @@ MIT
 
 ## Miscellaneous
 
-```
+```text
     ╚⊙ ⊙╝
   ╚═(███)═╝
  ╚═(███)═╝

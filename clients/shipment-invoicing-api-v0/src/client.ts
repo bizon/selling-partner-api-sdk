@@ -5,22 +5,19 @@ import {Configuration, ShipmentInvoicingApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/outbound/brazil/v0/shipments/[^/]*$'),
+    urlRegex: /^\/fba\/outbound\/brazil\/v0\/shipments\/[^\/]*$/v,
     rate: 1.133,
     burst: 25,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/outbound/brazil/v0/shipments/[^/]*/invoice$'),
+    urlRegex: /^\/fba\/outbound\/brazil\/v0\/shipments\/[^\/]*\/invoice$/v,
     rate: 1.133,
     burst: 25,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/outbound/brazil/v0/shipments/[^/]*/invoice/status$'),
+    urlRegex: /^\/fba\/outbound\/brazil\/v0\/shipments\/[^\/]*\/invoice\/status$/v,
     rate: 1.133,
     burst: 25,
   },

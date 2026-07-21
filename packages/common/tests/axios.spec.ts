@@ -5,6 +5,8 @@ import stripAnsi from 'strip-ansi'
 
 import type * as Auth from '@sp-api-sdk/auth'
 
+import {type OnRetryParameters} from '../src/axios.js'
+
 const {SellingPartnerApiAuthError} = jest.requireActual<typeof Auth>('@sp-api-sdk/auth')
 
 jest.unstable_mockModule('@sp-api-sdk/auth', () => ({
@@ -39,7 +41,7 @@ describe('src/axios', () => {
         .get('/test')
         .reply(200, 'OK')
 
-      const onRetry = jest.fn()
+      const onRetry = jest.fn<(retryInfo: OnRetryParameters) => void>()
       const {axios} = createAxiosInstance(
         {
           auth: new SellingPartnerApiAuth({refreshToken: ''}),
@@ -49,7 +51,7 @@ describe('src/axios', () => {
             onRetry,
           },
         },
-        [{method: 'get', urlRegex: /^\/test$/, rate: 1, burst: 1}],
+        [{method: 'get', urlRegex: /^\/test$/v, rate: 1, burst: 1}],
       )
 
       const response = await axios.get('https://www.example.com/test')
@@ -74,7 +76,7 @@ describe('src/axios', () => {
         .get('/test')
         .reply(200, 'OK')
 
-      const onRetry = jest.fn()
+      const onRetry = jest.fn<(retryInfo: OnRetryParameters) => void>()
       const {axios} = createAxiosInstance(
         {
           auth: new SellingPartnerApiAuth({refreshToken: ''}),
@@ -84,7 +86,7 @@ describe('src/axios', () => {
             onRetry,
           },
         },
-        [{method: 'GET', urlRegex: /^\/test$/, rate: 0.5, burst: 1}],
+        [{method: 'GET', urlRegex: /^\/test$/v, rate: 0.5, burst: 1}],
       )
 
       const response = await axios.get('https://www.example.com/test')
@@ -113,7 +115,7 @@ describe('src/axios', () => {
         .get('/test')
         .reply(200, 'OK')
 
-      const onRetry = jest.fn()
+      const onRetry = jest.fn<(retryInfo: OnRetryParameters) => void>()
       const {axios} = createAxiosInstance(
         {
           auth: new SellingPartnerApiAuth({refreshToken: ''}),
@@ -123,7 +125,7 @@ describe('src/axios', () => {
             onRetry,
           },
         },
-        [{method: 'get', urlRegex: /^\/test$/, rate: 0.5, burst: 1}],
+        [{method: 'get', urlRegex: /^\/test$/v, rate: 0.5, burst: 1}],
       )
 
       const response = await axios.get('https://www.example.com/test')

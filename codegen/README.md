@@ -43,8 +43,8 @@ Each generated client exports a class that extends the OpenAPI-generated API cla
 ```typescript
 export class OrdersApiClient extends OrdersApi {
   constructor(configuration: ClientConfiguration) {
-    const { axios, endpoint } = createAxiosInstance(configuration, clientRateLimits);
-    super(new Configuration(), endpoint, axios);
+    const {axios, endpoint} = createAxiosInstance(configuration, clientRateLimits)
+    super(new Configuration(), endpoint, axios)
   }
 }
 ```
@@ -89,15 +89,15 @@ Example patch file (`codegen/patches/finances-api-model/Finances/0001-fix-type.j
 
 Mustache templates in `codegen/templates/` generate the non-model files for each client:
 
-| Template                   | Output            | Purpose                                 |
-| -------------------------- | ----------------- | --------------------------------------- |
-| `package.json.mustache`    | `package.json`    | Package metadata, scripts, dependencies |
-| `src/client.ts.mustache`   | `src/client.ts`   | Client class with rate limits           |
-| `src/index.ts.mustache`    | `src/index.ts`    | Barrel re-exports                       |
-| `tsconfig.json.mustache`   | `tsconfig.json`   | TypeScript config (typecheck only)      |
-| `tsdown.config.ts.mustache` | `tsdown.config.ts` | Re-export of the shared tsdown config |
-| `typedoc.json.mustache`    | `typedoc.json`    | Documentation config                    |
-| `README.md.mustache`       | `README.md`       | Package documentation                   |
+| Template                    | Output             | Purpose                                 |
+| --------------------------- | ------------------ | --------------------------------------- |
+| `package.json.mustache`     | `package.json`     | Package metadata, scripts, dependencies |
+| `src/client.ts.mustache`    | `src/client.ts`    | Client class with rate limits           |
+| `src/index.ts.mustache`     | `src/index.ts`     | Barrel re-exports                       |
+| `tsconfig.json.mustache`    | `tsconfig.json`    | TypeScript config (typecheck only)      |
+| `tsdown.config.ts.mustache` | `tsdown.config.ts` | Re-export of the shared tsdown config   |
+| `typedoc.json.mustache`     | `typedoc.json`     | Documentation config                    |
+| `README.md.mustache`        | `README.md`        | Package documentation                   |
 
 ## License
 
@@ -105,7 +105,7 @@ MIT
 
 ## Miscellaneous
 
-```
+```text
     ╚⊙ ⊙╝
   ╚═(███)═╝
  ╚═(███)═╝

@@ -5,8 +5,7 @@ import {Configuration, ListingsRestrictionsApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/listings/2021-08-01/restrictions$'),
+    urlRegex: /^\/listings\/2021\u{2D}08\u{2D}01\/restrictions$/v,
     rate: 5,
     burst: 10,
   },

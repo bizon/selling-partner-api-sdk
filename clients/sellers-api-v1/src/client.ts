@@ -5,15 +5,13 @@ import {Configuration, SellersApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/sellers/v1/marketplaceParticipations$'),
+    urlRegex: /^\/sellers\/v1\/marketplaceParticipations$/v,
     rate: 0.016,
     burst: 15,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/sellers/v1/account$'),
+    urlRegex: /^\/sellers\/v1\/account$/v,
     rate: 0.016,
     burst: 15,
   },

@@ -3,10 +3,10 @@ import {AxiosError} from 'axios'
 import type {AccessTokenData, AccessTokenQuery} from './types/access-token.js'
 
 /**
- * Error thrown when an LWA token request fails.
- *
- * Wraps the underlying Axios error with a human-readable message that includes
- * the HTTP status code (or "No response" for network errors).
+ Error thrown when an LWA token request fails.
+
+ Wraps the underlying Axios error with a human-readable message that includes
+ the HTTP status code (or "No response" for network errors).
  */
 export class SellingPartnerApiAuthError extends AxiosError<AccessTokenData, AccessTokenQuery> {
   /** The original error message from the failed HTTP request. */

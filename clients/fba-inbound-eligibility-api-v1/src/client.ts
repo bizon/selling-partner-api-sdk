@@ -5,8 +5,7 @@ import {Configuration, FbaInboundEligibilityApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/fba/inbound/v1/eligibility/itemPreview$'),
+    urlRegex: /^\/fba\/inbound\/v1\/eligibility\/itemPreview$/v,
     rate: 1,
     burst: 1,
   },

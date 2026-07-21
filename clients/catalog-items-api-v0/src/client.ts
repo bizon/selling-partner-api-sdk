@@ -5,8 +5,7 @@ import {CatalogItemsApi, Configuration} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/catalog/v0/categories$'),
+    urlRegex: /^\/catalog\/v0\/categories$/v,
     rate: 1,
     burst: 2,
   },

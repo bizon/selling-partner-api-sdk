@@ -5,8 +5,8 @@ import {Configuration, VendorDirectFulfillmentTransactionsApi} from './api-model
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/vendor/directFulfillment/transactions/2021-12-28/transactions/[^/]*$'),
+    urlRegex:
+      /^\/vendor\/directFulfillment\/transactions\/2021\u{2D}12\u{2D}28\/transactions\/[^\/]*$/v,
     rate: 10,
     burst: 10,
   },

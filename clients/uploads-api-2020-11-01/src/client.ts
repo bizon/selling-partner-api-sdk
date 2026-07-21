@@ -5,8 +5,7 @@ import {Configuration, UploadsApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/uploads/2020-11-01/uploadDestinations/[^/]*$'),
+    urlRegex: /^\/uploads\/2020\u{2D}11\u{2D}01\/uploadDestinations\/[^\/]*$/v,
     rate: 10,
     burst: 10,
   },

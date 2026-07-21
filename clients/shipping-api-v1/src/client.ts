@@ -5,64 +5,55 @@ import {Configuration, ShippingApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/shipping/v1/shipments$'),
+    urlRegex: /^\/shipping\/v1\/shipments$/v,
     rate: 5,
     burst: 15,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/shipping/v1/shipments/[^/]*$'),
+    urlRegex: /^\/shipping\/v1\/shipments\/[^\/]*$/v,
     rate: 5,
     burst: 15,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/shipping/v1/shipments/[^/]*/cancel$'),
+    urlRegex: /^\/shipping\/v1\/shipments\/[^\/]*\/cancel$/v,
     rate: 5,
     burst: 15,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/shipping/v1/shipments/[^/]*/purchaseLabels$'),
+    urlRegex: /^\/shipping\/v1\/shipments\/[^\/]*\/purchaseLabels$/v,
     rate: 5,
     burst: 15,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/shipping/v1/shipments/[^/]*/label$'),
+    urlRegex: /^\/shipping\/v1\/shipments\/[^\/]*\/containers\/[^\/]*\/label$/v,
     rate: 5,
     burst: 15,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/shipping/v1/purchaseShipment$'),
+    urlRegex: /^\/shipping\/v1\/purchaseShipment$/v,
     rate: 5,
     burst: 15,
   },
   {
     method: 'post',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/shipping/v1/rates$'),
+    urlRegex: /^\/shipping\/v1\/rates$/v,
     rate: 5,
     burst: 15,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/shipping/v1/account$'),
+    urlRegex: /^\/shipping\/v1\/account$/v,
     rate: 5,
     burst: 15,
   },
   {
     method: 'get',
-    // eslint-disable-next-line prefer-regex-literals
-    urlRegex: new RegExp('^/shipping/v1/tracking/[^/]*$'),
+    urlRegex: /^\/shipping\/v1\/tracking\/[^\/]*$/v,
     rate: 1,
     burst: 1,
   },

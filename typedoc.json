@@ -1,6 +1,7 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "name": "Selling Partner API SDK for JavaScript",
+  "name": "Amazon Selling Partner API (SP-API) SDK for TypeScript",
+  "hostedBaseUrl": "https://bizon.github.io/selling-partner-api-sdk/",
   "out": "docs",
   "entryPointStrategy": "packages",
   "entryPoints": ["packages/*", "clients/*"]

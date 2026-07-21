@@ -1,23 +1,21 @@
 import xoBizon from 'eslint-config-xo-bizon'
+import {type FlatXoConfig} from 'xo'
 
-/** @type {import('xo').FlatXoConfig} */
 export default [
   ...xoBizon,
+
   {
-    ignores: [
-      'clients/*/src/api-model/**',
-      'packages/schemas/src/**',
-      '**/CHANGELOG.md',
-      '**/tsdown.config.ts',
-    ],
+    ignores: ['clients/*/src/api-model/**', 'packages/schemas/src/**', '**/CHANGELOG.md'],
   },
+
   {
     settings: {
       'import-x/internal-regex': '^@sp-api-sdk/',
     },
   },
+
   {
-    files: ['**/*.{js,ts}'],
+    files: ['**/*.ts'],
     rules: {
       'import-x/extensions': 'off',
       'n/prefer-global/url': 'off',
@@ -47,4 +45,4 @@ export default [
       ],
     },
   },
-]
+] satisfies FlatXoConfig

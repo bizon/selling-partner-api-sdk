@@ -82,7 +82,7 @@ async function generateDirectoryIndex(schemas: SchemaFile[], outputDirectory: st
   await fs.writeFile(`${outputDirectory}/index.ts`, body)
 }
 
-export async function generateDirectorySchemas(schemaDirectory: string, directoryName: string) {
+async function generateDirectorySchemas(schemaDirectory: string, directoryName: string) {
   const schemaFilePaths = await globby('*.json', {
     onlyFiles: true,
     cwd: schemaDirectory,

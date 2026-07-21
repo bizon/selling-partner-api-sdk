@@ -9,6 +9,7 @@
     },
     "version": {
       "conventionalCommits": true,
+      "changelogPreset": "conventionalcommits",
       "createRelease": "github",
       "syncWorkspaceLock": true,
       "message": "chore(release): publish [skip ci]"

@@ -49,9 +49,12 @@ npm install @sp-api-sdk/auth @sp-api-sdk/orders-api-2026-01-01
 
 ### Usage
 
-```javascript
+```typescript
+import {getMarketplaceByCode} from '@bizon/amazon-ids'
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
 import {OrdersApiClient} from '@sp-api-sdk/orders-api-2026-01-01'
+
+const de = getMarketplaceByCode('de')!
 
 // `clientId` and `clientSecret` default to the `LWA_CLIENT_ID` and
 // `LWA_CLIENT_SECRET` environment variables.
@@ -65,10 +68,14 @@ const client = new OrdersApiClient({
 })
 
 const {data} = await client.searchOrders({
-  marketplaceIds: ['A1PA6795UKMFR9'],
+  marketplaceIds: [de.id],
   createdAfter: '2026-01-01T00:00:00Z',
 })
 ```
+
+> Marketplace identifiers are not part of this SDK. The examples resolve them with
+> [`@bizon/amazon-ids`](https://github.com/bizon/amazon-ids) (`npm install @bizon/amazon-ids`), a small
+> package mapping country codes and domains to Amazon marketplaces.
 
 ### Configuration
 

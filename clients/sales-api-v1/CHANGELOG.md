@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.0](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fsales-api-v1%404.0.0...%40sp-api-sdk%2Fsales-api-v1%404.1.0) (2026-07-21)
+
+### Features
+
+* bump lint dependencies, fix issues, require node 20 ([76a34f6](https://github.com/bizon/selling-partner-api-sdk/commit/76a34f6a2fd11ec6e433ac69c92562c1415bae63))
+
 # [4.0.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/sales-api-v1@3.1.16...@sp-api-sdk/sales-api-v1@4.0.0) (2026-05-27)
 
 * chore!: migrate to tsup with modern exports (#1788) ([20f7731](https://github.com/bizon/selling-partner-api-sdk/commit/20f77312a1dda1d6a48efc5d48e6ba56e034bd6e)), closes [#1788](https://github.com/bizon/selling-partner-api-sdk/issues/1788)

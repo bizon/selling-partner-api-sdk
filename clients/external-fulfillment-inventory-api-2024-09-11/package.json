@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/external-fulfillment-inventory-api-2024-09-11",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "You can use the Amazon External Fulfillment Inventory API to manage inventory operations in Amazon's External Fulfillment network, including batch inventory updates and retrievals.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "license": "MIT",
   "type": "module",
   "engines": {

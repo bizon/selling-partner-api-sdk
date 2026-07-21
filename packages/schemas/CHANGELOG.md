@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.0](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fschemas%402.1.0...%40sp-api-sdk%2Fschemas%402.2.0) (2026-07-21)
+
+### Features
+
+* bump lint dependencies, fix issues, require node 20 ([76a34f6](https://github.com/bizon/selling-partner-api-sdk/commit/76a34f6a2fd11ec6e433ac69c92562c1415bae63))
+
 # [2.1.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/schemas@2.0.0...@sp-api-sdk/schemas@2.1.0) (2026-05-28)
 
 ### Features

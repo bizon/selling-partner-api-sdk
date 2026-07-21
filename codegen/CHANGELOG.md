@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.23.0](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fgenerator%400.22.0...%40sp-api-sdk%2Fgenerator%400.23.0) (2026-07-21)
+
+### ⚠ BREAKING CHANGES
+
+* **common:** `sellingPartnerRegions[region].awsRegion` is
+  removed. Consumers reading it must inline the value instead
+  (na: us-east-1, eu: eu-west-1, fe: us-west-2).
+
+### Features
+
+* bump lint dependencies, fix issues, require node 20 ([76a34f6](https://github.com/bizon/selling-partner-api-sdk/commit/76a34f6a2fd11ec6e433ac69c92562c1415bae63))
+* **common:** drop vestigial awsRegion from regions ([#1832](https://github.com/bizon/selling-partner-api-sdk/issues/1832)) ([394c39d](https://github.com/bizon/selling-partner-api-sdk/commit/394c39d8d22de05d31568760d33f42929bff50fc)), references [#997](https://github.com/bizon/selling-partner-api-sdk/issues/997)
+
 # [0.22.0](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/generator@0.21.1...@sp-api-sdk/generator@0.22.0) (2026-05-27)
 
 * chore!: migrate to tsup with modern exports (#1788) ([20f7731](https://github.com/bizon/selling-partner-api-sdk/commit/20f77312a1dda1d6a48efc5d48e6ba56e034bd6e)), closes [#1788](https://github.com/bizon/selling-partner-api-sdk/issues/1788)

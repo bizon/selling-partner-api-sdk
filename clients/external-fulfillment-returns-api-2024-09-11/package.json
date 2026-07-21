@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/external-fulfillment-returns-api-2024-09-11",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "You can use the Amazon External Fulfillment Return Item Processing API to retrieve, track, and process return items through Amazon's External Fulfillment returns management system.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "license": "MIT",
   "type": "module",
   "engines": {

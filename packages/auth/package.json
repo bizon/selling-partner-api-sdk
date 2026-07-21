@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/auth",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "Amazon Selling Partner API authentication package",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,

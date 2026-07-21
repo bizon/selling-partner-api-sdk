@@ -1,7 +1,7 @@
 {
   "name": "@bizon/selling-partner-api-sdk",
   "private": true,
-  "description": "A modularized SDK library for Amazon Selling Partner API (fully typed in TypeScript)",
+  "description": "Modularized, fully-typed TypeScript SDK for the Amazon Selling Partner API (SP-API), with independently versioned clients regenerated daily",
   "repository": "git@github.com:bizon/selling-partner-api-sdk.git",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "license": "MIT",

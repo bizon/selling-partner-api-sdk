@@ -1,7 +1,7 @@
 {
   "name": "@sp-api-sdk/common",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
-  "description": "Selling Parner API common library",
+  "description": "Common library for the Amazon Selling Partner API (SP-API) SDK: Axios factory, regions, rate limiting and errors",
   "version": "4.0.0",
   "license": "MIT",
   "type": "module",
@@ -56,14 +56,19 @@
   "bugs": {
     "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
   },
-  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/packages/auth",
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/packages/common",
   "keywords": [
-    "bizon",
     "amazon",
-    "spa sdk",
-    "sp api",
-    "mws",
+    "amazon-sp-api",
+    "bizon",
+    "esm",
+    "nodejs",
+    "sdk",
     "selling partner api",
-    "marketplace webservice"
+    "selling-partner-api",
+    "sp api",
+    "sp sdk",
+    "sp-api",
+    "typescript"
   ]
 }

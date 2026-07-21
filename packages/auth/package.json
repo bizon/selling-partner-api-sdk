@@ -1,7 +1,7 @@
 {
   "name": "@sp-api-sdk/auth",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
-  "description": "Amazon Selling Partner API authentication package",
+  "description": "Login with Amazon (LWA) authentication for the Amazon Selling Partner API (SP-API)",
   "version": "3.1.0",
   "license": "MIT",
   "type": "module",
@@ -55,13 +55,19 @@
   },
   "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/packages/auth",
   "keywords": [
-    "bizon",
     "amazon",
+    "amazon-sp-api",
     "auth",
-    "spa sdk",
-    "sp api",
-    "mws",
+    "bizon",
+    "esm",
+    "lwa",
+    "nodejs",
+    "sdk",
     "selling partner api",
-    "marketplace webservice"
+    "selling-partner-api",
+    "sp api",
+    "sp sdk",
+    "sp-api",
+    "typescript"
   ]
 }

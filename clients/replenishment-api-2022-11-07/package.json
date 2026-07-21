@@ -54,12 +54,17 @@
   "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/replenishment-api-2022-11-07",
   "keywords": [
     "amazon",
+    "amazon-sp-api",
     "bizon",
-    "marketplace web services",
-    "mws",
+    "esm",
+    "nodejs",
+    "sdk",
     "selling partner api",
+    "selling-partner-api",
     "sp api",
     "sp sdk",
+    "sp-api",
+    "typescript",
     "replenishment api"
   ]
 }

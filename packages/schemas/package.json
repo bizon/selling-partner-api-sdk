@@ -1,7 +1,7 @@
 {
   "name": "@sp-api-sdk/schemas",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
-  "description": "Selling Parner API additional schema types",
+  "description": "JSON schemas and TypeScript types for the Amazon Selling Partner API (SP-API)",
   "version": "2.2.0",
   "license": "MIT",
   "type": "module",
@@ -47,19 +47,25 @@
   "bugs": {
     "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
   },
-  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/packages/notifications",
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/packages/schemas",
   "keywords": [
-    "bizon",
     "amazon",
-    "spa sdk",
-    "sp api",
-    "mws",
-    "selling partner api",
-    "marketplace webservice",
-    "schemas",
+    "amazon-sp-api",
+    "bizon",
     "data kiosk",
+    "esm",
     "feeds",
+    "json-schema",
+    "nodejs",
     "notifications",
-    "reports"
+    "reports",
+    "schemas",
+    "sdk",
+    "selling partner api",
+    "selling-partner-api",
+    "sp api",
+    "sp sdk",
+    "sp-api",
+    "typescript"
   ]
 }

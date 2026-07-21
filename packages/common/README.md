@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/common)](https://www.npmjs.com/package/@sp-api-sdk/common)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
-Amazon Selling Partner API common package
+Common library for the Amazon Selling Partner API (SP-API) SDK: Axios factory, regions, rate limiting and errors
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 

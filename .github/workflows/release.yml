@@ -61,35 +61,5 @@ jobs:
             pnpm lerna publish --skip-bump-only-releases --yes;
           fi
 
-  docs:
-    name: Update and publish documentation
-    needs: release
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v7
-        with:
-          token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
-
-      - uses: pnpm/action-setup@v6
-      - uses: actions/setup-node@v7
-        with:
-          node-version-file: .node-version
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build documentation
-        run: pnpm run docs
-        env:
-          NODE_OPTIONS: --max_old_space_size=6144
-
-      - name: Deploy documentation
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: docs
-          folder: docs
-          token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
-          commit-message: "docs: update documentation"
-          git-config-name: ${{ secrets.BOT_NAME }}
-          git-config-email: ${{ secrets.BOT_EMAIL }}
+# Documentation is built and deployed by the `Documentation` workflow, which
+# runs automatically once this one succeeds (see docs.yml).

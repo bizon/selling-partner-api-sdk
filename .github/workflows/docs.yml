@@ -1,0 +1,51 @@
+name: Documentation
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [Release]
+    types: [completed]
+
+concurrency: docs
+
+# Checkout and deployment both use BOT_GITHUB_TOKEN_PUBLIC.
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    name: Build and publish documentation
+    # Manual runs always go through; release-triggered ones only on success.
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
+          # A release pushes version bumps after it starts, so the event SHA is
+          # already stale: always document the tip of the default branch.
+          ref: ${{ github.event_name == 'workflow_run' && github.event.repository.default_branch || github.ref }}
+
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build documentation
+        run: pnpm run docs
+        env:
+          NODE_OPTIONS: --max_old_space_size=6144
+
+      - name: Deploy documentation
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: docs
+          folder: docs
+          token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
+          commit-message: "docs: update documentation"
+          git-config-name: ${{ secrets.BOT_NAME }}
+          git-config-email: ${{ secrets.BOT_EMAIL }}

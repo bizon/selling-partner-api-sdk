@@ -10,8 +10,10 @@ Modularized, fully-typed TypeScript SDK for the Amazon Selling Partner API (SP-A
 ## CI
 
 [![Codegen](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/codegen.yml/badge.svg)](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/codegen.yml)
+[![OpenAPI Generator](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/openapi-generator.yml/badge.svg)](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/openapi-generator.yml)
 [![Tests](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/tests.yml/badge.svg)](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/tests.yml)
 [![Release](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/release.yml/badge.svg)](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/release.yml)
+[![Documentation](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/docs.yml/badge.svg)](https://github.com/bizon/selling-partner-api-sdk/actions/workflows/docs.yml)
 
 ## Documentation
 

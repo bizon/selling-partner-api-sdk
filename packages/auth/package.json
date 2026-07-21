@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/auth",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "Login with Amazon (LWA) authentication for the Amazon Selling Partner API (SP-API)",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,

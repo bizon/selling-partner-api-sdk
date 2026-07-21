@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/delivery-by-amazon-delivery-shipment-invoice-v2022-07-01-api-2022-07-01",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Delivery Shipment Invoicing helps you programmatically retrieve shipment invoice information in the Brazil marketplace for a selling partner’s orders.",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "license": "MIT",
   "type": "module",
   "engines": {

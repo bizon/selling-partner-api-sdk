@@ -36,7 +36,7 @@ jobs:
       - name: Create or update clients pull request
         uses: peter-evans/create-pull-request@v8
         with:
-          add-paths: clients,pnpm-lock.yaml
+          add-paths: clients,pnpm-lock.yaml,README.md
           branch: codegen/update-models
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
           title: "feat(clients): update models as of ${{ steps.date.outputs.date }}"

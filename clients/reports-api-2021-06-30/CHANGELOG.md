@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.2](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Freports-api-2021-06-30%404.1.1...%40sp-api-sdk%2Freports-api-2021-06-30%404.1.2) (2026-07-30)
+
+**Note:** Version bump only for package @sp-api-sdk/reports-api-2021-06-30
+
 ## [4.1.1](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Freports-api-2021-06-30%404.1.0...%40sp-api-sdk%2Freports-api-2021-06-30%404.1.1) (2026-07-21)
 
 ### Bug Fixes

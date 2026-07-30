@@ -24,19 +24,147 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { ErrorList } from '../models/index.js';
 // @ts-ignore
+import type { ListBalancesResponse } from '../models/index.js';
+// @ts-ignore
 import type { ListTransactionsResponse } from '../models/index.js';
+// @ts-ignore
+import type { SummaryResponse } from '../models/index.js';
 /**
  * FinancesApi - axios parameter creator
  */
 export const FinancesApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
+         * Retrieve a balance. This balance can be a past balances at a specified date, or a current balance. Sub-balances are listed by account type and marketplace.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that apply to the operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {Array<string>} [marketplaceIds] The marketplaces from which to retrieve balances. If omitted, balances from all applicable marketplaces may be returned. To find the marketplace ID for a region, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * @param {string} [balanceType] The type of balance to include in the response. If omitted, all balance types may be included in the response.  **Possible values:** &#x60;AVAILABLE&#x60;, &#x60;RESERVED&#x60;, &#x60;TOTAL&#x60;
+         * @param {string} [accountType] The type of account to include in the response.
+         * @param {string} [asOfDate] The date from which you want to retrieve balances. If provided, the response includes historical balances at the specified date. The value must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date format. If omitted, the point in time balance is provided.
+         * @param {string} [nextToken] A token that you use to retrieve subsequent pages of results. When there are more than 500 results available, the response will include a &#x60;nextToken&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. Repeat this process until the &#x60;nextToken&#x60; value is null to retrieve all results.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listBalances: async (marketplaceIds?: Array<string>, balanceType?: string, accountType?: string, asOfDate?: string, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/finances/2024-06-19/balances`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (marketplaceIds) {
+                localVarQueryParameter['marketplaceIds'] = marketplaceIds.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (balanceType !== undefined) {
+                localVarQueryParameter['balanceType'] = balanceType;
+            }
+
+            if (accountType !== undefined) {
+                localVarQueryParameter['accountType'] = accountType;
+            }
+
+            if (asOfDate !== undefined) {
+                localVarQueryParameter['asOfDate'] = (asOfDate as any instanceof Date) ?
+                    (asOfDate as any).toISOString().substring(0,10) :
+                    asOfDate;
+            }
+
+            if (nextToken !== undefined) {
+                localVarQueryParameter['nextToken'] = nextToken;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieve the financial summary for the specified time period or settlement period.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that apply to the operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {Array<string>} [marketplaceIds] The marketplaces from which to retrieve summaries. If omitted, summaries from all applicable marketplaces may be returned. To find the marketplace ID for a region, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * @param {string} [accountType] The type of account to include in the response.
+         * @param {string} [relatedIdentifierName] The name of the &#x60;relatedIdentifier&#x60;. The only possible value is &#x60;SETTLEMENT_ID&#x60;, the settlement ID associated with the summary.
+         * @param {string} [relatedIdentifierValue] The value of the &#x60;relatedIdentifier&#x60;.
+         * @param {string} [periodStart] The start of the period for which to retrieve summaries. When provided, the response will only include summaries with transactions that occurred on or after the specified date. The value must be formatted in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date format.
+         * @param {string} [periodEnd] The end of the period for which to retrieve summaries. When provided, the response will only include summaries with transactions that occurred on or before the specified date. The value must be formatted in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date format.
+         * @param {string} [nextToken] A token that you use to retrieve subsequent pages of results. When there are more results available, the response will include a &#x60;nextToken&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. Repeat this process until the &#x60;nextToken&#x60; value is null to retrieve all results.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listSummary: async (marketplaceIds?: Array<string>, accountType?: string, relatedIdentifierName?: string, relatedIdentifierValue?: string, periodStart?: string, periodEnd?: string, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/finances/2024-06-19/summary`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (marketplaceIds) {
+                localVarQueryParameter['marketplaceIds'] = marketplaceIds.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (accountType !== undefined) {
+                localVarQueryParameter['accountType'] = accountType;
+            }
+
+            if (relatedIdentifierName !== undefined) {
+                localVarQueryParameter['relatedIdentifierName'] = relatedIdentifierName;
+            }
+
+            if (relatedIdentifierValue !== undefined) {
+                localVarQueryParameter['relatedIdentifierValue'] = relatedIdentifierValue;
+            }
+
+            if (periodStart !== undefined) {
+                localVarQueryParameter['periodStart'] = (periodStart as any instanceof Date) ?
+                    (periodStart as any).toISOString().substring(0,10) :
+                    periodStart;
+            }
+
+            if (periodEnd !== undefined) {
+                localVarQueryParameter['periodEnd'] = (periodEnd as any instanceof Date) ?
+                    (periodEnd as any).toISOString().substring(0,10) :
+                    periodEnd;
+            }
+
+            if (nextToken !== undefined) {
+                localVarQueryParameter['nextToken'] = nextToken;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Returns transactions for the given parameters. Financial events might not include orders from the last 48 hours.  **Usage plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
          * @param {string} [postedAfter] The response includes financial events posted on or after this date. This date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The date-time must be more than two minutes before the time of the request.  This field is required if you do not specify a related identifier.
          * @param {string} [postedBefore] The response includes financial events posted before (but not on) this date. This date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.  The date-time must be later than &#x60;PostedAfter&#x60; and more than two minutes before the request was submitted. If &#x60;PostedAfter&#x60; and &#x60;PostedBefore&#x60; are more than 180 days apart, the response is empty.  **Default:** Two minutes before the time of the request.
-         * @param {string} [marketplaceId] The identifier of the marketplace from which you want to retrieve transactions. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * @param {string} [marketplaceId] The identifier of the marketplace from which you want to retrieve transactions. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for a marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {string} [transactionStatus] The status of the transaction.  **Possible values:**  * &#x60;DEFERRED&#x60;: the transaction is currently deferred. * &#x60;RELEASED&#x60;: the transaction is currently released. * &#x60;DEFERRED_RELEASED&#x60;: the transaction was deferred in the past, but is now released. The status of a deferred transaction is updated to &#x60;DEFERRED_RELEASED&#x60; when the transaction is released.
-         * @param {string} [relatedIdentifierName] The name of the &#x60;relatedIdentifier&#x60;.  **Possible values:**  * &#x60;FINANCIAL_EVENT_GROUP_ID&#x60;: the financial event group ID associated with the transaction.  * &#x60;ORDER_ID&#x60;: the order ID associated with the transaction.    **Note:**   FINANCIAL_EVENT_GROUP_ID and ORDER_ID are the only &#x60;relatedIdentifier&#x60; with filtering capabilities at the moment. While other &#x60;relatedIdentifier&#x60; values will be included in the response when available, they cannot be used for filtering purposes.
+         * @param {string} [relatedIdentifierName] The name of the &#x60;relatedIdentifier&#x60;.  **Possible values:**  * &#x60;FINANCIAL_EVENT_GROUP_ID&#x60;: the financial event group ID associated with the transaction.  * &#x60;ORDER_ID&#x60;: the order ID associated with the transaction.    **Note:**  &#x60;FINANCIAL_EVENT_GROUP_ID&#x60; and &#x60;ORDER_ID&#x60; are the only &#x60;relatedIdentifier&#x60; with filtering capabilities at the moment. While other &#x60;relatedIdentifier&#x60; values will be included in the response when available, they cannot be used for filtering purposes.
          * @param {string} [relatedIdentifierValue] The value of the &#x60;relatedIdentifier&#x60;.
          * @param {string} [nextToken] The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
          * @param {*} [options] Override http request option.
@@ -108,12 +236,46 @@ export const FinancesApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = FinancesApiAxiosParamCreator(configuration)
     return {
         /**
+         * Retrieve a balance. This balance can be a past balances at a specified date, or a current balance. Sub-balances are listed by account type and marketplace.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that apply to the operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {Array<string>} [marketplaceIds] The marketplaces from which to retrieve balances. If omitted, balances from all applicable marketplaces may be returned. To find the marketplace ID for a region, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * @param {string} [balanceType] The type of balance to include in the response. If omitted, all balance types may be included in the response.  **Possible values:** &#x60;AVAILABLE&#x60;, &#x60;RESERVED&#x60;, &#x60;TOTAL&#x60;
+         * @param {string} [accountType] The type of account to include in the response.
+         * @param {string} [asOfDate] The date from which you want to retrieve balances. If provided, the response includes historical balances at the specified date. The value must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date format. If omitted, the point in time balance is provided.
+         * @param {string} [nextToken] A token that you use to retrieve subsequent pages of results. When there are more than 500 results available, the response will include a &#x60;nextToken&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. Repeat this process until the &#x60;nextToken&#x60; value is null to retrieve all results.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listBalances(marketplaceIds?: Array<string>, balanceType?: string, accountType?: string, asOfDate?: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListBalancesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listBalances(marketplaceIds, balanceType, accountType, asOfDate, nextToken, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FinancesApi.listBalances']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Retrieve the financial summary for the specified time period or settlement period.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that apply to the operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {Array<string>} [marketplaceIds] The marketplaces from which to retrieve summaries. If omitted, summaries from all applicable marketplaces may be returned. To find the marketplace ID for a region, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * @param {string} [accountType] The type of account to include in the response.
+         * @param {string} [relatedIdentifierName] The name of the &#x60;relatedIdentifier&#x60;. The only possible value is &#x60;SETTLEMENT_ID&#x60;, the settlement ID associated with the summary.
+         * @param {string} [relatedIdentifierValue] The value of the &#x60;relatedIdentifier&#x60;.
+         * @param {string} [periodStart] The start of the period for which to retrieve summaries. When provided, the response will only include summaries with transactions that occurred on or after the specified date. The value must be formatted in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date format.
+         * @param {string} [periodEnd] The end of the period for which to retrieve summaries. When provided, the response will only include summaries with transactions that occurred on or before the specified date. The value must be formatted in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date format.
+         * @param {string} [nextToken] A token that you use to retrieve subsequent pages of results. When there are more results available, the response will include a &#x60;nextToken&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. Repeat this process until the &#x60;nextToken&#x60; value is null to retrieve all results.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listSummary(marketplaceIds?: Array<string>, accountType?: string, relatedIdentifierName?: string, relatedIdentifierValue?: string, periodStart?: string, periodEnd?: string, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SummaryResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listSummary(marketplaceIds, accountType, relatedIdentifierName, relatedIdentifierValue, periodStart, periodEnd, nextToken, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FinancesApi.listSummary']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Returns transactions for the given parameters. Financial events might not include orders from the last 48 hours.  **Usage plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
          * @param {string} [postedAfter] The response includes financial events posted on or after this date. This date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The date-time must be more than two minutes before the time of the request.  This field is required if you do not specify a related identifier.
          * @param {string} [postedBefore] The response includes financial events posted before (but not on) this date. This date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.  The date-time must be later than &#x60;PostedAfter&#x60; and more than two minutes before the request was submitted. If &#x60;PostedAfter&#x60; and &#x60;PostedBefore&#x60; are more than 180 days apart, the response is empty.  **Default:** Two minutes before the time of the request.
-         * @param {string} [marketplaceId] The identifier of the marketplace from which you want to retrieve transactions. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * @param {string} [marketplaceId] The identifier of the marketplace from which you want to retrieve transactions. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for a marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
          * @param {string} [transactionStatus] The status of the transaction.  **Possible values:**  * &#x60;DEFERRED&#x60;: the transaction is currently deferred. * &#x60;RELEASED&#x60;: the transaction is currently released. * &#x60;DEFERRED_RELEASED&#x60;: the transaction was deferred in the past, but is now released. The status of a deferred transaction is updated to &#x60;DEFERRED_RELEASED&#x60; when the transaction is released.
-         * @param {string} [relatedIdentifierName] The name of the &#x60;relatedIdentifier&#x60;.  **Possible values:**  * &#x60;FINANCIAL_EVENT_GROUP_ID&#x60;: the financial event group ID associated with the transaction.  * &#x60;ORDER_ID&#x60;: the order ID associated with the transaction.    **Note:**   FINANCIAL_EVENT_GROUP_ID and ORDER_ID are the only &#x60;relatedIdentifier&#x60; with filtering capabilities at the moment. While other &#x60;relatedIdentifier&#x60; values will be included in the response when available, they cannot be used for filtering purposes.
+         * @param {string} [relatedIdentifierName] The name of the &#x60;relatedIdentifier&#x60;.  **Possible values:**  * &#x60;FINANCIAL_EVENT_GROUP_ID&#x60;: the financial event group ID associated with the transaction.  * &#x60;ORDER_ID&#x60;: the order ID associated with the transaction.    **Note:**  &#x60;FINANCIAL_EVENT_GROUP_ID&#x60; and &#x60;ORDER_ID&#x60; are the only &#x60;relatedIdentifier&#x60; with filtering capabilities at the moment. While other &#x60;relatedIdentifier&#x60; values will be included in the response when available, they cannot be used for filtering purposes.
          * @param {string} [relatedIdentifierValue] The value of the &#x60;relatedIdentifier&#x60;.
          * @param {string} [nextToken] The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
          * @param {*} [options] Override http request option.
@@ -135,6 +297,24 @@ export const FinancesApiFactory = function (configuration?: Configuration, baseP
     const localVarFp = FinancesApiFp(configuration)
     return {
         /**
+         * Retrieve a balance. This balance can be a past balances at a specified date, or a current balance. Sub-balances are listed by account type and marketplace.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that apply to the operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {FinancesApiListBalancesRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listBalances(requestParameters: FinancesApiListBalancesRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ListBalancesResponse> {
+            return localVarFp.listBalances(requestParameters.marketplaceIds, requestParameters.balanceType, requestParameters.accountType, requestParameters.asOfDate, requestParameters.nextToken, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve the financial summary for the specified time period or settlement period.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that apply to the operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {FinancesApiListSummaryRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listSummary(requestParameters: FinancesApiListSummaryRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<SummaryResponse> {
+            return localVarFp.listSummary(requestParameters.marketplaceIds, requestParameters.accountType, requestParameters.relatedIdentifierName, requestParameters.relatedIdentifierValue, requestParameters.periodStart, requestParameters.periodEnd, requestParameters.nextToken, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Returns transactions for the given parameters. Financial events might not include orders from the last 48 hours.  **Usage plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
          * @param {FinancesApiListTransactionsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
@@ -145,6 +325,76 @@ export const FinancesApiFactory = function (configuration?: Configuration, baseP
         },
     };
 };
+
+/**
+ * Request parameters for listBalances operation in FinancesApi.
+ */
+export interface FinancesApiListBalancesRequest {
+    /**
+     * The marketplaces from which to retrieve balances. If omitted, balances from all applicable marketplaces may be returned. To find the marketplace ID for a region, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     */
+    readonly marketplaceIds?: Array<string>
+
+    /**
+     * The type of balance to include in the response. If omitted, all balance types may be included in the response.  **Possible values:** &#x60;AVAILABLE&#x60;, &#x60;RESERVED&#x60;, &#x60;TOTAL&#x60;
+     */
+    readonly balanceType?: string
+
+    /**
+     * The type of account to include in the response.
+     */
+    readonly accountType?: string
+
+    /**
+     * The date from which you want to retrieve balances. If provided, the response includes historical balances at the specified date. The value must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date format. If omitted, the point in time balance is provided.
+     */
+    readonly asOfDate?: string
+
+    /**
+     * A token that you use to retrieve subsequent pages of results. When there are more than 500 results available, the response will include a &#x60;nextToken&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. Repeat this process until the &#x60;nextToken&#x60; value is null to retrieve all results.
+     */
+    readonly nextToken?: string
+}
+
+/**
+ * Request parameters for listSummary operation in FinancesApi.
+ */
+export interface FinancesApiListSummaryRequest {
+    /**
+     * The marketplaces from which to retrieve summaries. If omitted, summaries from all applicable marketplaces may be returned. To find the marketplace ID for a region, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     */
+    readonly marketplaceIds?: Array<string>
+
+    /**
+     * The type of account to include in the response.
+     */
+    readonly accountType?: string
+
+    /**
+     * The name of the &#x60;relatedIdentifier&#x60;. The only possible value is &#x60;SETTLEMENT_ID&#x60;, the settlement ID associated with the summary.
+     */
+    readonly relatedIdentifierName?: string
+
+    /**
+     * The value of the &#x60;relatedIdentifier&#x60;.
+     */
+    readonly relatedIdentifierValue?: string
+
+    /**
+     * The start of the period for which to retrieve summaries. When provided, the response will only include summaries with transactions that occurred on or after the specified date. The value must be formatted in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date format.
+     */
+    readonly periodStart?: string
+
+    /**
+     * The end of the period for which to retrieve summaries. When provided, the response will only include summaries with transactions that occurred on or before the specified date. The value must be formatted in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date format.
+     */
+    readonly periodEnd?: string
+
+    /**
+     * A token that you use to retrieve subsequent pages of results. When there are more results available, the response will include a &#x60;nextToken&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. Repeat this process until the &#x60;nextToken&#x60; value is null to retrieve all results.
+     */
+    readonly nextToken?: string
+}
 
 /**
  * Request parameters for listTransactions operation in FinancesApi.
@@ -161,7 +411,7 @@ export interface FinancesApiListTransactionsRequest {
     readonly postedBefore?: string
 
     /**
-     * The identifier of the marketplace from which you want to retrieve transactions. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * The identifier of the marketplace from which you want to retrieve transactions. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for a marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      */
     readonly marketplaceId?: string
 
@@ -171,7 +421,7 @@ export interface FinancesApiListTransactionsRequest {
     readonly transactionStatus?: string
 
     /**
-     * The name of the &#x60;relatedIdentifier&#x60;.  **Possible values:**  * &#x60;FINANCIAL_EVENT_GROUP_ID&#x60;: the financial event group ID associated with the transaction.  * &#x60;ORDER_ID&#x60;: the order ID associated with the transaction.    **Note:**   FINANCIAL_EVENT_GROUP_ID and ORDER_ID are the only &#x60;relatedIdentifier&#x60; with filtering capabilities at the moment. While other &#x60;relatedIdentifier&#x60; values will be included in the response when available, they cannot be used for filtering purposes.
+     * The name of the &#x60;relatedIdentifier&#x60;.  **Possible values:**  * &#x60;FINANCIAL_EVENT_GROUP_ID&#x60;: the financial event group ID associated with the transaction.  * &#x60;ORDER_ID&#x60;: the order ID associated with the transaction.    **Note:**  &#x60;FINANCIAL_EVENT_GROUP_ID&#x60; and &#x60;ORDER_ID&#x60; are the only &#x60;relatedIdentifier&#x60; with filtering capabilities at the moment. While other &#x60;relatedIdentifier&#x60; values will be included in the response when available, they cannot be used for filtering purposes.
      */
     readonly relatedIdentifierName?: string
 
@@ -190,6 +440,26 @@ export interface FinancesApiListTransactionsRequest {
  * FinancesApi - object-oriented interface
  */
 export class FinancesApi extends BaseAPI {
+    /**
+     * Retrieve a balance. This balance can be a past balances at a specified date, or a current balance. Sub-balances are listed by account type and marketplace.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that apply to the operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {FinancesApiListBalancesRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listBalances(requestParameters: FinancesApiListBalancesRequest = {}, options?: RawAxiosRequestConfig) {
+        return FinancesApiFp(this.configuration).listBalances(requestParameters.marketplaceIds, requestParameters.balanceType, requestParameters.accountType, requestParameters.asOfDate, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve the financial summary for the specified time period or settlement period.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that apply to the operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {FinancesApiListSummaryRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listSummary(requestParameters: FinancesApiListSummaryRequest = {}, options?: RawAxiosRequestConfig) {
+        return FinancesApiFp(this.configuration).listSummary(requestParameters.marketplaceIds, requestParameters.accountType, requestParameters.relatedIdentifierName, requestParameters.relatedIdentifierValue, requestParameters.periodStart, requestParameters.periodEnd, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * Returns transactions for the given parameters. Financial events might not include orders from the last 48 hours.  **Usage plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
      * @param {FinancesApiListTransactionsRequest} requestParameters Request parameters.

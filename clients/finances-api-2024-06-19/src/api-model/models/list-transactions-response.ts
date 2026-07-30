@@ -18,7 +18,7 @@
 import type { TransactionsPayload } from './transactions-payload.js';
 
 /**
- * The response schema for the `listTransactions` operation.
+ * The response to the `listTransactions` operation.
  */
 export interface ListTransactionsResponse {
     'payload'?: TransactionsPayload;

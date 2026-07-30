@@ -51,7 +51,7 @@ import type { GovtInvoiceDocumentResponse } from '../models/index.js';
 export const InvoicesApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Submits an asynchronous government invoice creation request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Submit an asynchronous request to create a government invoice.
          * @param {GovernmentInvoiceRequest} body Information required to create the government invoice.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -85,7 +85,7 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * Creates an invoice export request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.167 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Creates an invoice export request.
          * @param {ExportInvoicesRequest} body Information required to create the export request.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -119,13 +119,13 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * Returns an invoiceDocument object containing an invoiceDocumentUrl .  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} marketplaceId The invoices returned will match the marketplace that you specify.
-         * @param {string} transactionType Marketplace specific classification of the transaction type that originated the invoice. Check \&#39;transactionType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
-         * @param {string} shipmentId The unique shipment identifier to get an invoice for.
-         * @param {string} invoiceType Marketplace specific classification of the invoice type. Check \&#39;invoiceType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
-         * @param {string} [inboundPlanId] The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
-         * @param {string} [fileFormat] Requested file format. Default is XML
+         * Retrieve the URL of an invoice document.
+         * @param {string} marketplaceId The marketplace of the invoice.
+         * @param {string} transactionType The marketplace-specific classification of the transaction type that originated the invoice. Check &#x60;transactionType&#x60; options using the &#x60;getInvoicesAttributes&#x60; operation.
+         * @param {string} shipmentId The unique shipment identifier for which to get an invoice.
+         * @param {string} invoiceType The marketplace-specific classification of the invoice type. Check &#x60;invoiceType&#x60; options using the &#x60;getInvoicesAttributes&#x60; operation.
+         * @param {string} [inboundPlanId] The unique inbound plan identifier in which the shipment is contained and for which the invoice will be created.
+         * @param {string} [fileFormat] The file format of the invoice. The default is XML.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -183,12 +183,12 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * Returns the status of an invoice generation request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} marketplaceId The invoices status will match the marketplace that you specify.
-         * @param {string} transactionType Marketplace specific classification of the transaction type that originated the invoice. Check \&#39;transactionType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
-         * @param {string} shipmentId The unique shipment identifier to get an invoice for.
-         * @param {string} invoiceType Marketplace specific classification of the invoice type. Check \&#39;invoiceType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
-         * @param {string} [inboundPlanId] The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
+         * Retrieve the status of an invoice generation request.
+         * @param {string} marketplaceId The marketplace of the invoice request.
+         * @param {string} transactionType The marketplace-specific classification of the transaction type that originated the invoice. Check &#x60;transactionType&#x60; options using the &#x60;getInvoicesAttributes&#x60; operation.
+         * @param {string} shipmentId The unique shipment identifier for which to get an invoice.
+         * @param {string} invoiceType The marketplace-specific classification of the invoice type. Check &#x60;invoiceType&#x60; options using the &#x60;getInvoicesAttributes&#x60; operation.
+         * @param {string} [inboundPlanId] The unique inbound plan identifier in which the shipment is contained and for which the invoice will be created.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -245,7 +245,7 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * Returns invoice data for the specified invoice. This operation returns only a subset of the invoices data; refer to the response definition to get all the possible attributes. To get the full invoice, use the `createInvoicesExport` operation to start an export request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns invoice data for the specified invoice. This operation returns only a subset of the invoices data; refer to the response definition to get all the possible attributes. To get the full invoice, use the `createInvoicesExport` operation to start an export request.
          * @param {string} marketplaceId The marketplace from which you want the invoice.
          * @param {string} invoiceId The invoice identifier.
          * @param {*} [options] Override http request option.
@@ -285,7 +285,7 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * Returns invoice details for the invoices that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.1 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns invoice details for the invoices that match the filters that you specify.
          * @param {string} marketplaceId The response includes only the invoices that match the specified marketplace.
          * @param {string} [transactionIdentifierName] The name of the transaction identifier filter. If you provide a value for this field, you must also provide a value for the &#x60;transactionIdentifierId&#x60; field.Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;transactionIdentifierName&#x60; options.
          * @param {number} [pageSize] The maximum number of invoices you want to return in a single call.  Minimum: 1  Maximum: 200
@@ -390,7 +390,7 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * Returns marketplace-dependent schemas and their respective set of possible values.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns marketplace-dependent schemas and their respective set of possible values.
          * @param {string} marketplaceId The marketplace identifier.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -426,7 +426,7 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * Returns the invoice document\'s ID and URL. Use the URL to download the ZIP file, which contains the invoices from the corresponding `createInvoicesExport` request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns the invoice document\'s ID and URL. Use the URL to download the ZIP file, which contains the invoices from the corresponding `createInvoicesExport` request.
          * @param {string} invoicesDocumentId The export document identifier.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -459,7 +459,7 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * Returns invoice export details (including the `exportDocumentId`, if available) for the export that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns invoice export details (including the `exportDocumentId`, if available) for the export that you specify.
          * @param {string} exportId The unique identifier for the export.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -492,7 +492,7 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * Returns invoice exports details for exports that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.1 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns invoice exports details for exports that match the filters that you specify.
          * @param {string} marketplaceId The returned exports match the specified marketplace.
          * @param {string} [dateStart] The earliest export creation date and time for exports that you want to include in the response. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default is 30 days ago.
          * @param {string} [nextToken] The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
@@ -566,7 +566,7 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = InvoicesApiAxiosParamCreator(configuration)
     return {
         /**
-         * Submits an asynchronous government invoice creation request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Submit an asynchronous request to create a government invoice.
          * @param {GovernmentInvoiceRequest} body Information required to create the government invoice.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -578,7 +578,7 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Creates an invoice export request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.167 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Creates an invoice export request.
          * @param {ExportInvoicesRequest} body Information required to create the export request.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -590,13 +590,13 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Returns an invoiceDocument object containing an invoiceDocumentUrl .  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} marketplaceId The invoices returned will match the marketplace that you specify.
-         * @param {string} transactionType Marketplace specific classification of the transaction type that originated the invoice. Check \&#39;transactionType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
-         * @param {string} shipmentId The unique shipment identifier to get an invoice for.
-         * @param {string} invoiceType Marketplace specific classification of the invoice type. Check \&#39;invoiceType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
-         * @param {string} [inboundPlanId] The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
-         * @param {string} [fileFormat] Requested file format. Default is XML
+         * Retrieve the URL of an invoice document.
+         * @param {string} marketplaceId The marketplace of the invoice.
+         * @param {string} transactionType The marketplace-specific classification of the transaction type that originated the invoice. Check &#x60;transactionType&#x60; options using the &#x60;getInvoicesAttributes&#x60; operation.
+         * @param {string} shipmentId The unique shipment identifier for which to get an invoice.
+         * @param {string} invoiceType The marketplace-specific classification of the invoice type. Check &#x60;invoiceType&#x60; options using the &#x60;getInvoicesAttributes&#x60; operation.
+         * @param {string} [inboundPlanId] The unique inbound plan identifier in which the shipment is contained and for which the invoice will be created.
+         * @param {string} [fileFormat] The file format of the invoice. The default is XML.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -607,12 +607,12 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Returns the status of an invoice generation request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-         * @param {string} marketplaceId The invoices status will match the marketplace that you specify.
-         * @param {string} transactionType Marketplace specific classification of the transaction type that originated the invoice. Check \&#39;transactionType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
-         * @param {string} shipmentId The unique shipment identifier to get an invoice for.
-         * @param {string} invoiceType Marketplace specific classification of the invoice type. Check \&#39;invoiceType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
-         * @param {string} [inboundPlanId] The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
+         * Retrieve the status of an invoice generation request.
+         * @param {string} marketplaceId The marketplace of the invoice request.
+         * @param {string} transactionType The marketplace-specific classification of the transaction type that originated the invoice. Check &#x60;transactionType&#x60; options using the &#x60;getInvoicesAttributes&#x60; operation.
+         * @param {string} shipmentId The unique shipment identifier for which to get an invoice.
+         * @param {string} invoiceType The marketplace-specific classification of the invoice type. Check &#x60;invoiceType&#x60; options using the &#x60;getInvoicesAttributes&#x60; operation.
+         * @param {string} [inboundPlanId] The unique inbound plan identifier in which the shipment is contained and for which the invoice will be created.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -623,7 +623,7 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Returns invoice data for the specified invoice. This operation returns only a subset of the invoices data; refer to the response definition to get all the possible attributes. To get the full invoice, use the `createInvoicesExport` operation to start an export request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns invoice data for the specified invoice. This operation returns only a subset of the invoices data; refer to the response definition to get all the possible attributes. To get the full invoice, use the `createInvoicesExport` operation to start an export request.
          * @param {string} marketplaceId The marketplace from which you want the invoice.
          * @param {string} invoiceId The invoice identifier.
          * @param {*} [options] Override http request option.
@@ -636,7 +636,7 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Returns invoice details for the invoices that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.1 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns invoice details for the invoices that match the filters that you specify.
          * @param {string} marketplaceId The response includes only the invoices that match the specified marketplace.
          * @param {string} [transactionIdentifierName] The name of the transaction identifier filter. If you provide a value for this field, you must also provide a value for the &#x60;transactionIdentifierId&#x60; field.Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;transactionIdentifierName&#x60; options.
          * @param {number} [pageSize] The maximum number of invoices you want to return in a single call.  Minimum: 1  Maximum: 200
@@ -661,7 +661,7 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Returns marketplace-dependent schemas and their respective set of possible values.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns marketplace-dependent schemas and their respective set of possible values.
          * @param {string} marketplaceId The marketplace identifier.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -673,7 +673,7 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Returns the invoice document\'s ID and URL. Use the URL to download the ZIP file, which contains the invoices from the corresponding `createInvoicesExport` request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns the invoice document\'s ID and URL. Use the URL to download the ZIP file, which contains the invoices from the corresponding `createInvoicesExport` request.
          * @param {string} invoicesDocumentId The export document identifier.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -685,7 +685,7 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Returns invoice export details (including the `exportDocumentId`, if available) for the export that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns invoice export details (including the `exportDocumentId`, if available) for the export that you specify.
          * @param {string} exportId The unique identifier for the export.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -697,7 +697,7 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Returns invoice exports details for exports that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.1 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns invoice exports details for exports that match the filters that you specify.
          * @param {string} marketplaceId The returned exports match the specified marketplace.
          * @param {string} [dateStart] The earliest export creation date and time for exports that you want to include in the response. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default is 30 days ago.
          * @param {string} [nextToken] The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages.
@@ -723,7 +723,7 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
     const localVarFp = InvoicesApiFp(configuration)
     return {
         /**
-         * Submits an asynchronous government invoice creation request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Submit an asynchronous request to create a government invoice.
          * @param {InvoicesApiCreateGovernmentInvoiceRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -732,7 +732,7 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.createGovernmentInvoice(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
-         * Creates an invoice export request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.167 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Creates an invoice export request.
          * @param {InvoicesApiCreateInvoicesExportRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -741,7 +741,7 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.createInvoicesExport(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
-         * Returns an invoiceDocument object containing an invoiceDocumentUrl .  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Retrieve the URL of an invoice document.
          * @param {InvoicesApiGetGovernmentInvoiceDocumentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -750,7 +750,7 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.getGovernmentInvoiceDocument(requestParameters.marketplaceId, requestParameters.transactionType, requestParameters.shipmentId, requestParameters.invoiceType, requestParameters.inboundPlanId, requestParameters.fileFormat, options).then((request) => request(axios, basePath));
         },
         /**
-         * Returns the status of an invoice generation request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+         * Retrieve the status of an invoice generation request.
          * @param {InvoicesApiGetGovernmentInvoiceStatusRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -759,7 +759,7 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.getGovernmentInvoiceStatus(requestParameters.marketplaceId, requestParameters.transactionType, requestParameters.shipmentId, requestParameters.invoiceType, requestParameters.inboundPlanId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Returns invoice data for the specified invoice. This operation returns only a subset of the invoices data; refer to the response definition to get all the possible attributes. To get the full invoice, use the `createInvoicesExport` operation to start an export request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns invoice data for the specified invoice. This operation returns only a subset of the invoices data; refer to the response definition to get all the possible attributes. To get the full invoice, use the `createInvoicesExport` operation to start an export request.
          * @param {InvoicesApiGetInvoiceRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -768,7 +768,7 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.getInvoice(requestParameters.marketplaceId, requestParameters.invoiceId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Returns invoice details for the invoices that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.1 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns invoice details for the invoices that match the filters that you specify.
          * @param {InvoicesApiGetInvoicesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -777,7 +777,7 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.getInvoices(requestParameters.marketplaceId, requestParameters.transactionIdentifierName, requestParameters.pageSize, requestParameters.dateEnd, requestParameters.transactionType, requestParameters.transactionIdentifierId, requestParameters.dateStart, requestParameters.series, requestParameters.nextToken, requestParameters.sortOrder, requestParameters.invoiceType, requestParameters.statuses, requestParameters.externalInvoiceId, requestParameters.sortBy, options).then((request) => request(axios, basePath));
         },
         /**
-         * Returns marketplace-dependent schemas and their respective set of possible values.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns marketplace-dependent schemas and their respective set of possible values.
          * @param {InvoicesApiGetInvoicesAttributesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -786,7 +786,7 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.getInvoicesAttributes(requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Returns the invoice document\'s ID and URL. Use the URL to download the ZIP file, which contains the invoices from the corresponding `createInvoicesExport` request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns the invoice document\'s ID and URL. Use the URL to download the ZIP file, which contains the invoices from the corresponding `createInvoicesExport` request.
          * @param {InvoicesApiGetInvoicesDocumentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -795,7 +795,7 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.getInvoicesDocument(requestParameters.invoicesDocumentId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Returns invoice export details (including the `exportDocumentId`, if available) for the export that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns invoice export details (including the `exportDocumentId`, if available) for the export that you specify.
          * @param {InvoicesApiGetInvoicesExportRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -804,7 +804,7 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
             return localVarFp.getInvoicesExport(requestParameters.exportId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Returns invoice exports details for exports that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.1 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns invoice exports details for exports that match the filters that you specify.
          * @param {InvoicesApiGetInvoicesExportsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -840,32 +840,32 @@ export interface InvoicesApiCreateInvoicesExportRequest {
  */
 export interface InvoicesApiGetGovernmentInvoiceDocumentRequest {
     /**
-     * The invoices returned will match the marketplace that you specify.
+     * The marketplace of the invoice.
      */
     readonly marketplaceId: string
 
     /**
-     * Marketplace specific classification of the transaction type that originated the invoice. Check \&#39;transactionType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
+     * The marketplace-specific classification of the transaction type that originated the invoice. Check &#x60;transactionType&#x60; options using the &#x60;getInvoicesAttributes&#x60; operation.
      */
     readonly transactionType: string
 
     /**
-     * The unique shipment identifier to get an invoice for.
+     * The unique shipment identifier for which to get an invoice.
      */
     readonly shipmentId: string
 
     /**
-     * Marketplace specific classification of the invoice type. Check \&#39;invoiceType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
+     * The marketplace-specific classification of the invoice type. Check &#x60;invoiceType&#x60; options using the &#x60;getInvoicesAttributes&#x60; operation.
      */
     readonly invoiceType: string
 
     /**
-     * The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
+     * The unique inbound plan identifier in which the shipment is contained and for which the invoice will be created.
      */
     readonly inboundPlanId?: string
 
     /**
-     * Requested file format. Default is XML
+     * The file format of the invoice. The default is XML.
      */
     readonly fileFormat?: string
 }
@@ -875,27 +875,27 @@ export interface InvoicesApiGetGovernmentInvoiceDocumentRequest {
  */
 export interface InvoicesApiGetGovernmentInvoiceStatusRequest {
     /**
-     * The invoices status will match the marketplace that you specify.
+     * The marketplace of the invoice request.
      */
     readonly marketplaceId: string
 
     /**
-     * Marketplace specific classification of the transaction type that originated the invoice. Check \&#39;transactionType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
+     * The marketplace-specific classification of the transaction type that originated the invoice. Check &#x60;transactionType&#x60; options using the &#x60;getInvoicesAttributes&#x60; operation.
      */
     readonly transactionType: string
 
     /**
-     * The unique shipment identifier to get an invoice for.
+     * The unique shipment identifier for which to get an invoice.
      */
     readonly shipmentId: string
 
     /**
-     * Marketplace specific classification of the invoice type. Check \&#39;invoiceType\&#39; options using \&#39;getInvoicesAttributes\&#39; operation.
+     * The marketplace-specific classification of the invoice type. Check &#x60;invoiceType&#x60; options using the &#x60;getInvoicesAttributes&#x60; operation.
      */
     readonly invoiceType: string
 
     /**
-     * The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
+     * The unique inbound plan identifier in which the shipment is contained and for which the invoice will be created.
      */
     readonly inboundPlanId?: string
 }
@@ -1060,7 +1060,7 @@ export interface InvoicesApiGetInvoicesExportsRequest {
  */
 export class InvoicesApi extends BaseAPI {
     /**
-     * Submits an asynchronous government invoice creation request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+     * Submit an asynchronous request to create a government invoice.
      * @param {InvoicesApiCreateGovernmentInvoiceRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1070,7 +1070,7 @@ export class InvoicesApi extends BaseAPI {
     }
 
     /**
-     * Creates an invoice export request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.167 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Creates an invoice export request.
      * @param {InvoicesApiCreateInvoicesExportRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1080,7 +1080,7 @@ export class InvoicesApi extends BaseAPI {
     }
 
     /**
-     * Returns an invoiceDocument object containing an invoiceDocumentUrl .  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+     * Retrieve the URL of an invoice document.
      * @param {InvoicesApiGetGovernmentInvoiceDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1090,7 +1090,7 @@ export class InvoicesApi extends BaseAPI {
     }
 
     /**
-     * Returns the status of an invoice generation request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+     * Retrieve the status of an invoice generation request.
      * @param {InvoicesApiGetGovernmentInvoiceStatusRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1100,7 +1100,7 @@ export class InvoicesApi extends BaseAPI {
     }
 
     /**
-     * Returns invoice data for the specified invoice. This operation returns only a subset of the invoices data; refer to the response definition to get all the possible attributes. To get the full invoice, use the `createInvoicesExport` operation to start an export request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Returns invoice data for the specified invoice. This operation returns only a subset of the invoices data; refer to the response definition to get all the possible attributes. To get the full invoice, use the `createInvoicesExport` operation to start an export request.
      * @param {InvoicesApiGetInvoiceRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1110,7 +1110,7 @@ export class InvoicesApi extends BaseAPI {
     }
 
     /**
-     * Returns invoice details for the invoices that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.1 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Returns invoice details for the invoices that match the filters that you specify.
      * @param {InvoicesApiGetInvoicesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1120,7 +1120,7 @@ export class InvoicesApi extends BaseAPI {
     }
 
     /**
-     * Returns marketplace-dependent schemas and their respective set of possible values.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Returns marketplace-dependent schemas and their respective set of possible values.
      * @param {InvoicesApiGetInvoicesAttributesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1130,7 +1130,7 @@ export class InvoicesApi extends BaseAPI {
     }
 
     /**
-     * Returns the invoice document\'s ID and URL. Use the URL to download the ZIP file, which contains the invoices from the corresponding `createInvoicesExport` request.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Returns the invoice document\'s ID and URL. Use the URL to download the ZIP file, which contains the invoices from the corresponding `createInvoicesExport` request.
      * @param {InvoicesApiGetInvoicesDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1140,7 +1140,7 @@ export class InvoicesApi extends BaseAPI {
     }
 
     /**
-     * Returns invoice export details (including the `exportDocumentId`, if available) for the export that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Returns invoice export details (including the `exportDocumentId`, if available) for the export that you specify.
      * @param {InvoicesApiGetInvoicesExportRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1150,7 +1150,7 @@ export class InvoicesApi extends BaseAPI {
     }
 
     /**
-     * Returns invoice exports details for exports that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.1 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Returns invoice exports details for exports that match the filters that you specify.
      * @param {InvoicesApiGetInvoicesExportsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}

@@ -1,3 +1,4 @@
+export * from './amount-threshold.js';
 export * from './batch-request.js';
 export * from './batch-response.js';
 export * from './competitive-summary-batch-request.js';
@@ -34,6 +35,12 @@ export * from './points.js';
 export * from './postal-code.js';
 export * from './price.js';
 export * from './prime-details.js';
+export * from './promotion.js';
+export * from './promotion-discount.js';
+export * from './promotion-savings.js';
+export * from './purchase-condition.js';
+export * from './purchase-requirements.js';
+export * from './quantity-threshold.js';
 export * from './reference-price.js';
 export * from './sample-location.js';
 export * from './segment.js';

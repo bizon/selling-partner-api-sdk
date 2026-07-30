@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Listings Items
- * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
+ * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you can use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, refer to the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2021-08-01
  * 
@@ -40,39 +40,39 @@ import type { ItemSummaryByMarketplace } from './item-summary-by-marketplace.js'
  */
 export interface Item {
     /**
-     * A selling partner provided identifier for an Amazon listing.
+     * A selling partner-provided identifier for an Amazon listing.
      */
     'sku': string;
     /**
-     * Summary details of a listings item.
+     * Summary details for a listings item.
      */
     'summaries'?: Array<ItemSummaryByMarketplace>;
     /**
-     * A JSON object containing structured listings item attribute data keyed by attribute name.
+     * JSON object containing structured listings item attribute data keyed by attribute name.
      */
     'attributes'?: { [key: string]: any; };
     /**
-     * The issues associated with the listings item.
+     * Issues associated with the listings item.
      */
     'issues'?: Array<Issue>;
     /**
-     * Offer details for the listings item.
+     * The listings item\'s offer details.
      */
     'offers'?: Array<ItemOfferByMarketplace>;
     /**
-     * The fulfillment availability for the listings item.
+     * The listings item\'s fulfillment availability.
      */
     'fulfillmentAvailability'?: Array<FulfillmentAvailability>;
     /**
-     * The vendor procurement information for the listings item.
+     * The listings item\'s vendor procurement information.
      */
     'procurement'?: Array<ItemProcurement>;
     /**
-     * Relationships for a listing item, by marketplace (for example, variations).
+     * Relationships for a listing item, by Amazon store (for example, variations).
      */
     'relationships'?: Array<ItemRelationshipsByMarketplace>;
     /**
-     * Product types for a listing item, by marketplace.
+     * Product types for a listing item, by Amazon store.
      */
     'productTypes'?: Array<ItemProductTypeByMarketplace>;
 }

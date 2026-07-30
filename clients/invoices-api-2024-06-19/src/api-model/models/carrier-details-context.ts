@@ -19,19 +19,19 @@
  */
 export interface CarrierDetailsContext {
     /**
-     * The name of the carrier, as registered in state and federal tax authorities.
+     * The name of the carrier, as registered with state and federal tax authorities.
      */
     'name'?: string;
     /**
-     * The address of the carrier, as registered in state and federal tax authorities.
+     * The address of the carrier, as registered with state and federal tax authorities.
      */
     'address'?: string;
     /**
-     * Type of additional information.
+     * The type of additional information.
      */
     'contextType'?: string;
     /**
-     * Tax Identification number of the carrier.
+     * The tax identification number of the carrier.
      */
     'federalTaxId'?: string;
     /**
@@ -43,7 +43,7 @@ export interface CarrierDetailsContext {
      */
     'regionTaxId'?: string;
     /**
-     * The identifier for the carrier vehicle as printed in its registration plate.
+     * The identifier for the carrier vehicle, as printed on its registration plate.
      */
     'vehicleLicensePlate'?: string;
     /**

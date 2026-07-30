@@ -29,7 +29,7 @@ export interface GovernmentInvoiceStatusResponse {
      */
     'invoiceErrors'?: Array<InvoiceError>;
     /**
-     * Government Invoice ID of a successfully authorized invoice.
+     * The Government Invoice ID of a successfully authorized invoice.
      */
     'invoiceExternalDocumentId'?: string;
     'status'?: GovernmentInvoiceCreationStatus;

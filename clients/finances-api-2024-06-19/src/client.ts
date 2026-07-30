@@ -9,6 +9,18 @@ export const clientRateLimits: RateLimit[] = [
     rate: 0.5,
     burst: 10,
   },
+  {
+    method: 'get',
+    urlRegex: /^\/finances\/2024\u{2D}06\u{2D}19\/balances$/v,
+    rate: 0.5,
+    burst: 30,
+  },
+  {
+    method: 'get',
+    urlRegex: /^\/finances\/2024\u{2D}06\u{2D}19\/summary$/v,
+    rate: 0.5,
+    burst: 30,
+  },
 ]
 
 export class FinancesApiClient extends FinancesApi {

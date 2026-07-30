@@ -15,7 +15,7 @@
 
 
 /**
- * Specifies who will label the items. Options include `AMAZON`, `SELLER` or `NONE`.
+ * Specifies who will label the items. Options include `AMAZON`, `SELLER` or `NONE`. `AMAZON` is not an accepted value in the US marketplace.
  */
 
 export const LabelOwner = {

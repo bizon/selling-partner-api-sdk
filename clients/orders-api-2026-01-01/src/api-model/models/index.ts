@@ -16,6 +16,7 @@ export * from './get-order-response.js';
 export * from './gift-option.js';
 export * from './hour-minute.js';
 export * from './item-cancellation.js';
+export * from './item-cancellation-execution.js';
 export * from './item-cancellation-request.js';
 export * from './item-condition.js';
 export * from './item-customization.js';

@@ -15,6 +15,9 @@
 
 
 export interface ContextAllOf {
+    /**
+     * The type of context.
+     */
     'contextType': string;
 }
 

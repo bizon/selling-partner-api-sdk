@@ -23,11 +23,11 @@ export interface AmazonPayContext {
      */
     'storeName'?: string;
     /**
-     * The transaction\'s order type.
+     * The order type of the transaction.
      */
     'orderType'?: string;
     /**
-     * Channel details of related transaction.
+     * The channel of the transaction. For example: `MFN`.
      */
     'channel'?: string;
 }

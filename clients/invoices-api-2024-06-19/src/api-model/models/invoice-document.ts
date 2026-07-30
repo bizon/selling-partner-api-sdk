@@ -15,11 +15,11 @@
 
 
 /**
- * Object containing the documentId and a S3 pre-signed URL to download the specified document file.
+ * The `documentId` and an S3 pre-signed URL that you can use to download the specified document file.
  */
 export interface InvoiceDocument {
     /**
-     * A pre-signed URL to download the invoice document in its original format. This URL expires after 30 seconds.
+     * A pre-signed URL that you can use to download the invoice document in its original format. This URL expires after 30 seconds.
      */
     'invoiceDocumentUrl'?: string;
 }

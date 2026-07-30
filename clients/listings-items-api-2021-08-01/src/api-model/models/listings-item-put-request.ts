@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Listings Items
- * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
+ * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you can use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, refer to the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2021-08-01
  * 
@@ -19,7 +19,7 @@
  */
 export interface ListingsItemPutRequest {
     /**
-     * The Amazon product type of the listings item.
+     * The listings item\'s Amazon product type.
      */
     'productType': string;
     /**
@@ -27,7 +27,7 @@ export interface ListingsItemPutRequest {
      */
     'requirements'?: ListingsItemPutRequestRequirementsEnum;
     /**
-     * A JSON object containing structured listings item attribute data keyed by attribute name.
+     * JSON object containing structured listings item attribute data keyed by attribute name.
      */
     'attributes': { [key: string]: any; };
 }

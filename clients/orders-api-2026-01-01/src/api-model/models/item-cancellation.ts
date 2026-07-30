@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { ItemCancellationExecution } from './item-cancellation-execution.js';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ItemCancellationRequest } from './item-cancellation-request.js';
 
 /**
@@ -22,5 +25,6 @@ import type { ItemCancellationRequest } from './item-cancellation-request.js';
  */
 export interface ItemCancellation {
     'cancellationRequest'?: ItemCancellationRequest;
+    'cancellationExecution'?: ItemCancellationExecution;
 }
 

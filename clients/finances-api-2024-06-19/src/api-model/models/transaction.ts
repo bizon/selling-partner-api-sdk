@@ -57,7 +57,7 @@ export interface Transaction {
      */
     'transactionStatus'?: string;
     /**
-     * Describes the reasons for the transaction.  **Example:** \'Order Payment\', \'Refund Order\'
+     * Describes the reasons for the transaction.  **Example:** `Order Payment`, `Refund Order`
      */
     'description'?: string;
     /**

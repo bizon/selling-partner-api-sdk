@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Listings Items
- * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
+ * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you can use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, refer to the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2021-08-01
  * 
@@ -18,19 +18,19 @@
 import type { ItemImage } from './item-image.js';
 
 /**
- * Summary details of a listings item for an Amazon marketplace.
+ * Summary details for a listings item for an Amazon store.
  */
 export interface ItemSummaryByMarketplace {
     /**
-     * A marketplace identifier. Identifies the Amazon marketplace for the listings item.
+     * A marketplace identifier. Identifies the listings item\'s Amazon store.
      */
     'marketplaceId': string;
     /**
-     * Amazon Standard Identification Number (ASIN) of the listings item.
+     * The ASIN of the listings item.
      */
     'asin'?: string;
     /**
-     * The Amazon product type of the listings item.
+     * The listings item\'s Amazon product type.
      */
     'productType': string;
     /**
@@ -42,19 +42,19 @@ export interface ItemSummaryByMarketplace {
      */
     'status': Array<ItemSummaryByMarketplaceStatusEnum>;
     /**
-     * The fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item.
+     * Fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item.
      */
     'fnSku'?: string;
     /**
-     * The name or title associated with an Amazon catalog item.
+     * Name, or title, associated with an Amazon catalog item.
      */
     'itemName'?: string;
     /**
-     * The date the listings item was created in ISO 8601 format.
+     * Date the listings item was created, in ISO 8601 format.
      */
     'createdDate': string;
     /**
-     * The date the listings item was last updated in ISO 8601 format.
+     * Date the listings item was last updated, in ISO 8601 format.
      */
     'lastUpdatedDate': string;
     'mainImage'?: ItemImage;

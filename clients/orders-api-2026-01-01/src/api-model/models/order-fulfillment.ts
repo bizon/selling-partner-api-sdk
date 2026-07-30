@@ -35,6 +35,7 @@ export interface OrderFulfillment {
     'fulfillmentServiceLevel'?: string;
     'shipByWindow'?: DateTimeRange;
     'deliverByWindow'?: DateTimeRange;
+    'labelPrintingWindow'?: DateTimeRange;
 }
 
 

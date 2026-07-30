@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Pricing
- * The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer pricing information for Amazon Marketplace products.  For more information, refer to the [Product Pricing v2022-05-01 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).
+ * The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer pricing information for Amazon store products.  For more information, refer to the [Product Pricing v2022-05-01 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2022-05-01
  * 
@@ -30,6 +30,9 @@ import type { Points } from './points.js';
 import type { PrimeDetails } from './prime-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { Promotion } from './promotion.js';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ShippingOption } from './shipping-option.js';
 
 /**
@@ -53,6 +56,10 @@ export interface Offer {
     'shippingOptions'?: Array<ShippingOption>;
     'points'?: Points;
     'primeDetails'?: PrimeDetails;
+    /**
+     * A list of live promotions applicable to this offer.
+     */
+    'promotions'?: Array<Promotion>;
 }
 
 export const OfferSubConditionEnum = {

@@ -15,11 +15,11 @@
 
 
 /**
- * An invoice creation error occurrence.
+ * An invoice creation error occurred.
  */
 export interface InvoiceError {
     /**
-     * A text description of the error.
+     * A description of the error.
      */
     'description'?: string;
     /**

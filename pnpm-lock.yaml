@@ -301,6 +301,19 @@ importers:
         specifier: workspace:*
         version: link:../../internal/typescript-config
 
+  clients/finances-invoices-api-2026-06-25:
+    dependencies:
+      '@sp-api-sdk/common':
+        specifier: workspace:*
+        version: link:../../packages/common
+      axios:
+        specifier: ^1.19.0
+        version: 1.19.0(debug@4.4.3(supports-color@10.2.2))(supports-color@10.2.2)
+    devDependencies:
+      '@sp-api-sdk/typescript-config':
+        specifier: workspace:*
+        version: link:../../internal/typescript-config
+
   clients/finances-transfers-api-2024-06-01:
     dependencies:
       '@sp-api-sdk/common':
@@ -341,6 +354,19 @@ importers:
         version: link:../../internal/typescript-config
 
   clients/fulfillment-outbound-api-2020-07-01:
+    dependencies:
+      '@sp-api-sdk/common':
+        specifier: workspace:*
+        version: link:../../packages/common
+      axios:
+        specifier: ^1.19.0
+        version: 1.19.0(debug@4.4.3(supports-color@10.2.2))(supports-color@10.2.2)
+    devDependencies:
+      '@sp-api-sdk/typescript-config':
+        specifier: workspace:*
+        version: link:../../internal/typescript-config
+
+  clients/fulfillment-outbound-api-2026-07-04:
     dependencies:
       '@sp-api-sdk/common':
         specifier: workspace:*

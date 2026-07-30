@@ -1,0 +1,70 @@
+{
+  "name": "@sp-api-sdk/fulfillment-outbound-api-2026-07-04",
+  "author": "Bertrand Marron <bertrand@bizon.solutions>",
+  "description": "The Selling Partner API for Fulfillment Outbound lets you create applications that help a seller fulfill Multi-Channel Fulfillment orders using their inventory in Amazon's fulfillment network. You can get information on both potential and existing fulfillment orders.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "sideEffects": false,
+  "source": "./src/index.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "xo": "xo --cwd=../.. clients/fulfillment-outbound-api-2026-07-04",
+    "check:ts": "tsc --noEmit",
+    "build": "tsdown"
+  },
+  "dependencies": {
+    "@sp-api-sdk/common": "workspace:*",
+    "axios": "^1.19.0"
+  },
+  "devDependencies": {
+    "@sp-api-sdk/typescript-config": "workspace:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bizon/selling-partner-api-sdk.git",
+    "directory": "clients/fulfillment-outbound-api-2026-07-04"
+  },
+  "bugs": {
+    "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
+  },
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/fulfillment-outbound-api-2026-07-04",
+  "keywords": [
+    "amazon",
+    "amazon-sp-api",
+    "bizon",
+    "esm",
+    "nodejs",
+    "sdk",
+    "selling partner api",
+    "selling-partner-api",
+    "sp api",
+    "sp sdk",
+    "sp-api",
+    "typescript",
+    "fulfillment outbound api"
+  ]
+}

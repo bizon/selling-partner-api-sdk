@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { Incentive } from './incentive.js';
 
 /**
  * Contains information pertaining to a delivery window option.
@@ -26,6 +29,10 @@ export interface DeliveryWindowOption {
      * Identifier of a delivery window option. A delivery window option represent one option for when a shipment is expected to be delivered.
      */
     'deliveryWindowOptionId': string;
+    /**
+     * Discounts for the offered option.
+     */
+    'discounts'?: Array<Incentive>;
     /**
      * The time at which this delivery window option ends. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mmZ`.
      */

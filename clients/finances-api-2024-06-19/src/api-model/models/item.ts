@@ -27,7 +27,7 @@ import type { Currency } from './currency.js';
 import type { ItemRelatedIdentifier } from './item-related-identifier.js';
 
 /**
- * Additional information about the items in a transaction.
+ * Additional information about an item in a transaction.
  */
 export interface Item {
     /**

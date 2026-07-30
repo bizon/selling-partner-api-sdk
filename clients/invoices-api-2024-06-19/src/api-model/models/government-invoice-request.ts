@@ -22,27 +22,27 @@ import type { CarrierDetailsContext } from './carrier-details-context.js';
  */
 export interface GovernmentInvoiceRequest {
     /**
-     * Object that contains additional invoice creation information
+     * Additional information for invoice creation.
      */
     'contexts'?: Array<CarrierDetailsContext>;
     /**
-     * The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
+     * The unique inbound plan identifier in which the shipment is contained and for which the invoice will be created.
      */
     'inboundPlanId'?: string;
     /**
-     * Marketplace specific classification of the invoice type. Check \'invoiceType\' options using \'getInvoicesAttributes\' operation.
+     * The marketplace-specific classification of the invoice type. Check `invoiceType` options using the `getInvoicesAttributes` operation.
      */
     'invoiceType': string;
     /**
-     * The government invoices creation request will match the national authoritative source of the given marketplace.
+     * The marketplace of the national authoritative source that will be on the government invoice creation request.
      */
     'marketplaceId': string;
     /**
-     * The unique shipment identifier to get an invoice for.
+     * The unique shipment identifier for which to get an invoice.
      */
     'shipmentId': string;
     /**
-     * Marketplace specific classification of the transaction type that originated the invoice. Check \'transactionType\' options using \'getInvoicesAttributes\' operation.
+     * The marketplace-specific classification of the transaction type that originated the invoice. Check `transactionType` options using the `getInvoicesAttributes` operation.
      */
     'transactionType': string;
 }

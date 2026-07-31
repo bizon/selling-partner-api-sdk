@@ -4,12 +4,6 @@ import {Configuration, ListingsItemsApi} from './api-model/index.js'
 
 export const clientRateLimits: RateLimit[] = [
   {
-    method: 'put',
-    urlRegex: /^\/listings\/2021\u{2D}08\u{2D}01\/items\/[^\/]*\/[^\/]*\/draft$/v,
-    rate: 5,
-    burst: 10,
-  },
-  {
     method: 'delete',
     urlRegex: /^\/listings\/2021\u{2D}08\u{2D}01\/items\/[^\/]*\/[^\/]*$/v,
     rate: 5,

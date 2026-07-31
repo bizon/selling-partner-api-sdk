@@ -42,6 +42,8 @@ internal/
 codegen/                    # Code generation tooling (private, not published)
   templates/                # Mustache templates for generated clients
   patches/                  # JSON Patch files for fixing invalid OpenAPI specs
+  utils/                    # Codegen helpers (rate limits, patches, git)
+  tests/                    # Jest tests, mirroring utils/
 ```
 
 ### What is generated vs hand-written

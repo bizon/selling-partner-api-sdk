@@ -941,6 +941,12 @@ importers:
         specifier: ^3.19.0
         version: 3.19.0
     devDependencies:
+      '@jest/globals':
+        specifier: ^30.4.1
+        version: 30.4.1(supports-color@10.2.2)
+      '@sp-api-sdk/jest':
+        specifier: workspace:*
+        version: link:../internal/jest
       '@tsconfig/node24':
         specifier: ^24.0.4
         version: 24.0.4

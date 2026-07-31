@@ -5,7 +5,7 @@ import {basename, parse as parsePath} from 'node:path'
 import camelCase from 'camelcase'
 import {globby} from 'globby'
 import jsonfile from 'jsonfile'
-import {kebabCase, reduce} from 'lodash-es'
+import {kebabCase} from 'lodash-es'
 import {OpenAPIV3} from 'openapi-types'
 import pMap from 'p-map'
 import {remark} from 'remark'
@@ -21,6 +21,7 @@ import {
   writeCommitMessage,
   writePullRequestBody,
 } from './utils/pull-request.js'
+import {extractRateLimits} from './utils/rate-limits.js'
 import {replaceReadmeSection} from './utils/readme.js'
 import {renderTemplate} from './utils/render-template.js'
 import {runCommand} from './utils/run-command.js'
@@ -32,13 +33,6 @@ const CLIENTS_PR_BODY_PATH = 'codegen/clients-pr-body.md'
 const CLIENTS_COMMIT_MESSAGE_PATH = 'codegen/clients-commit-message.txt'
 const ROOT_README_PATH = 'README.md'
 
-interface RateLimit {
-  method: string
-  rate: number
-  burst: number
-  urlRegex: string
-}
-
 interface ClientInfo {
   packageName: string
   hasDeprecatedOperations: boolean
@@ -47,15 +41,6 @@ interface ClientInfo {
 interface ClientsDiff {
   added: string[]
   removed: string[]
-}
-
-function buildUrlRegex(path: string) {
-  const source = path
-    .split(/\{[^\{\}]+\}/v)
-    .map((literal) => RegExp.escape(literal))
-    .join(String.raw`[^\/]*`)
-
-  return `/^${source}$/v`
 }
 
 function hasDeprecatedOperations(document: OpenAPIV3.Document): boolean {
@@ -202,50 +187,7 @@ async function generateClientVersion(modelFilePath: string): Promise<ClientInfo>
     }),
   )
 
-  const rateLimits = reduce(
-    document.paths,
-    (accumulator: RateLimit[], pathItem, key) => {
-      if (!pathItem) {
-        return accumulator
-      }
-
-      for (const method of Object.keys(pathItem) as OpenAPIV3.HttpMethods[]) {
-        const {description} = pathItem[method] as OpenAPIV3.PathItemObject
-
-        if (description) {
-          const result =
-            /Rate \(requests per second\) \| Burst \|\n(?:\| -{4} )+\|\n(?:\|Default)?\| (?<rate>(?:\d*\.)?\d+) \| (?<burst>(?:\d*\.)?\d+) \|/v.exec(
-              description,
-            )
-
-          if (result?.groups) {
-            const rateLimit = {
-              method,
-              rate: Number(result.groups.rate),
-              burst: Number(result.groups.burst),
-              urlRegex: buildUrlRegex(key),
-            }
-
-            if (Number.isNaN(rateLimit.rate) || Number.isNaN(rateLimit.burst)) {
-              logger.warn(
-                `Warning: invalid rate limits: ${result.groups.rate} / ${result.groups.burst}`,
-                {packageName},
-              )
-            }
-
-            accumulator.push(rateLimit)
-          } else {
-            logger.warn(`Warning: no rate limiting found for ${packageName}`, {
-              packageName,
-            })
-          }
-        }
-      }
-
-      return accumulator
-    },
-    [],
-  )
+  const rateLimits = extractRateLimits(document, packageName)
 
   await fs.writeFile(
     `${clientDirectoryPath}/tsconfig.json`,

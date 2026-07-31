@@ -46,11 +46,13 @@ const report = (await getVendorInventoryReportData()) as Reports.VendorInventory
 
 ## Available Schemas
 
+<!-- codegen:schemas:start -->
+
 ### Feeds (3 schemas)
 
-- `listingsFeedSchemaV2` / `ListingsFeedSchemaV2`
 - `listingsFeedMessageSchemaV2` / `ListingsFeedMessageSchemaV2`
 - `listingsFeedProcessingReportSchemaV2` / `ListingsFeedProcessingReportSchemaV2`
+- `listingsFeedSchemaV2` / `ListingsFeedSchemaV2`
 
 ### Notifications (22 schemas)
 
@@ -61,8 +63,8 @@ const report = (await getVendorInventoryReportData()) as Reports.VendorInventory
 - `detailPageTrafficEventNotification` / `DetailPageTrafficEventNotification`
 - `fbaInventoryAvailabilityChangeNotification` / `FBAInventoryAvailabilityChangeNotification`
 - `fbaOutboundShipmentStatusNotification` / `FBAOutboundShipmentStatusNotification`
-- `feePromotionNotification` / `FeePromotionNotification`
 - `feedProcessingFinishedNotification` / `FeedProcessingFinishedNotification`
+- `feePromotionNotification` / `FeePromotionNotification`
 - `fulfillmentOrderStatusNotification` / `FulfillmentOrderStatusNotification`
 - `itemInventoryEventChangeNotification` / `ItemInventoryEventChangeNotification`
 - `itemProductTypeChangeNotification` / `ItemProductTypeChangeNotification`
@@ -101,6 +103,8 @@ const report = (await getVendorInventoryReportData()) as Reports.VendorInventory
 - `vendorRealTimeTrafficReport` / `VendorRealTimeTrafficReport`
 - `vendorSalesReport` / `VendorSalesReport`
 - `vendorTrafficReport` / `VendorTrafficReport`
+
+<!-- codegen:schemas:end -->
 
 ## License
 

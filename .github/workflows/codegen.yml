@@ -29,9 +29,15 @@ jobs:
       - name: Regenerate lockfile
         run: pnpm install --lockfile-only
 
-      - name: Get current date
-        id: date
-        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+      - name: Read commit message
+        id: commit
+        run: |
+          {
+            echo "message<<COMMIT_MESSAGE_EOF"
+            cat codegen/clients-commit-message.txt
+            echo "COMMIT_MESSAGE_EOF"
+            echo "subject=$(head -1 codegen/clients-commit-message.txt)"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Create or update clients pull request
         uses: peter-evans/create-pull-request@v8
@@ -39,12 +45,9 @@ jobs:
           add-paths: clients,pnpm-lock.yaml,README.md
           branch: codegen/update-models
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
-          title: "feat(clients): update models as of ${{ steps.date.outputs.date }}"
-          commit-message: "feat(clients): update models as of ${{ steps.date.outputs.date }}"
-          body: |
-            This is an automated pull request that was generated due to changes detected in the [Amazon Selling Partner API models](https://github.com/amzn/selling-partner-api-models).
-
-            The branch associated with this PR will be automatically updated if other changes occur.
+          title: ${{ steps.commit.outputs.subject }}
+          commit-message: ${{ steps.commit.outputs.message }}
+          body-path: codegen/clients-pr-body.md
           delete-branch: true
           reviewers: tusbar
 
@@ -68,9 +71,15 @@ jobs:
       - name: Generate schemas
         run: pnpm codegen schemas
 
-      - name: Get current date
-        id: date
-        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+      - name: Read commit message
+        id: commit
+        run: |
+          {
+            echo "message<<COMMIT_MESSAGE_EOF"
+            cat codegen/schemas-commit-message.txt
+            echo "COMMIT_MESSAGE_EOF"
+            echo "subject=$(head -1 codegen/schemas-commit-message.txt)"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Create or update schemas pull request
         uses: peter-evans/create-pull-request@v8
@@ -78,11 +87,8 @@ jobs:
           add-paths: packages/schemas
           branch: codegen/update-schemas
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
-          title: "feat(schemas): update schemas as of ${{ steps.date.outputs.date }}"
-          commit-message: "feat(schemas): update schemas as of ${{ steps.date.outputs.date }}"
-          body: |
-            This is an automated pull request that was generated due to changes detected in the [Amazon Selling Partner API models](https://github.com/amzn/selling-partner-api-models).
-
-            The branch associated with this PR will be automatically updated if other changes occur.
+          title: ${{ steps.commit.outputs.subject }}
+          commit-message: ${{ steps.commit.outputs.message }}
+          body-path: codegen/schemas-pr-body.md
           delete-branch: true
           reviewers: tusbar

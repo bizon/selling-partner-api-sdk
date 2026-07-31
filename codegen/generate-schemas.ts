@@ -11,14 +11,22 @@ import {getChangedPaths} from './utils/git.js'
 import {logger} from './utils/logger.js'
 import {
   buildSection,
+  buildUpstreamSection,
   formatDate,
   writeCommitMessage,
   writePullRequestBody,
 } from './utils/pull-request.js'
 import {replaceReadmeSection} from './utils/readme.js'
+import {
+  getUpstreamCommits,
+  getUpstreamHead,
+  readUpstreamCommit,
+  writeUpstreamCommit,
+} from './utils/upstream.js'
 
 const SCHEMAS_PR_BODY_PATH = 'codegen/schemas-pr-body.md'
 const SCHEMAS_COMMIT_MESSAGE_PATH = 'codegen/schemas-commit-message.txt'
+const SCHEMAS_UPSTREAM_COMMIT_PATH = 'codegen/schemas-upstream-commit.txt'
 const SCHEMAS_README_PATH = 'packages/schemas/README.md'
 
 interface SchemaFile {
@@ -303,7 +311,14 @@ export async function writeSchemasPullRequest({added, removed}: SchemasDiff) {
     .filter((schemaName) => !reported.has(schemaName))
     .toSorted()
 
+  const upstream = {
+    pathspec: 'schemas',
+    from: await readUpstreamCommit(SCHEMAS_UPSTREAM_COMMIT_PATH),
+    to: await getUpstreamHead(),
+  }
+
   await writePullRequestBody(SCHEMAS_PR_BODY_PATH, [
+    ...buildUpstreamSection(await getUpstreamCommits(upstream), upstream),
     ...buildSection('New schemas', 'These schemas are newly exported:', added),
     ...buildSection(
       'Removed schemas',
@@ -320,4 +335,11 @@ export async function writeSchemasPullRequest({added, removed}: SchemasDiff) {
       ? `Amazon no longer publishes ${removed.join(', ')}, so ${removed.length > 1 ? 'those schemas and their exports were' : 'that schema and its export was'} removed from \`@sp-api-sdk/schemas\`.`
       : undefined,
   )
+
+  // Same as for the clients – recorded only when the generated output moved,
+  // so that an upstream change generating identical schemas does not open a
+  // pull request holding nothing but a commit hash.
+  if (added.length > 0 || removed.length > 0 || changed.length > 0) {
+    await writeUpstreamCommit(SCHEMAS_UPSTREAM_COMMIT_PATH, upstream.to)
+  }
 }

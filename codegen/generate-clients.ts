@@ -17,6 +17,7 @@ import {logger} from './utils/logger.js'
 import {applyPatches} from './utils/patch.js'
 import {
   buildSection,
+  buildUpstreamSection,
   formatDate,
   writeCommitMessage,
   writePullRequestBody,
@@ -26,11 +27,18 @@ import {replaceReadmeSection} from './utils/readme.js'
 import {renderTemplate} from './utils/render-template.js'
 import {runCommand} from './utils/run-command.js'
 import {replaceAllTags} from './utils/tags.js'
+import {
+  getUpstreamCommits,
+  getUpstreamHead,
+  readUpstreamCommit,
+  writeUpstreamCommit,
+} from './utils/upstream.js'
 
 const GRANTLESS_APIS = [{name: 'notifications-api-v1', scope: 'NOTIFICATIONS'}]
 
 const CLIENTS_PR_BODY_PATH = 'codegen/clients-pr-body.md'
 const CLIENTS_COMMIT_MESSAGE_PATH = 'codegen/clients-commit-message.txt'
+const CLIENTS_UPSTREAM_COMMIT_PATH = 'codegen/clients-upstream-commit.txt'
 const ROOT_README_PATH = 'README.md'
 
 interface ClientInfo {
@@ -300,7 +308,14 @@ export async function writeClientsPullRequest({added, removed}: ClientsDiff) {
   const scoped = (packageNames: string[]) =>
     packageNames.map((packageName) => `@sp-api-sdk/${packageName}`)
 
+  const upstream = {
+    pathspec: 'models',
+    from: await readUpstreamCommit(CLIENTS_UPSTREAM_COMMIT_PATH),
+    to: await getUpstreamHead(),
+  }
+
   await writePullRequestBody(CLIENTS_PR_BODY_PATH, [
+    ...buildUpstreamSection(await getUpstreamCommits(upstream), upstream),
     ...buildSection(
       'New clients',
       'These packages do not exist on npm yet – initialize them before the next release:',
@@ -321,6 +336,15 @@ export async function writeClientsPullRequest({added, removed}: ClientsDiff) {
       ? `Amazon no longer publishes a model for ${scoped(removed).join(', ')}, so ${removed.length > 1 ? 'those packages were' : 'that package was'} removed from the SDK.`
       : undefined,
   )
+
+  // Only recorded when the generated output actually moved: bumping it on its
+  // own would open a pull request whose whole diff is a commit hash, for an
+  // upstream change that generates identical clients. Leaving it behind is
+  // harmless – the next run that does change something reports every upstream
+  // commit since the recorded one.
+  if (added.length > 0 || removed.length > 0 || changed.length > 0) {
+    await writeUpstreamCommit(CLIENTS_UPSTREAM_COMMIT_PATH, upstream.to)
+  }
 }
 
 async function updateRootReadmeClientsList(clients: ClientInfo[]) {

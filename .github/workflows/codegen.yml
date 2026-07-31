@@ -42,7 +42,7 @@ jobs:
       - name: Create or update clients pull request
         uses: peter-evans/create-pull-request@v8
         with:
-          add-paths: clients,pnpm-lock.yaml,README.md
+          add-paths: clients,pnpm-lock.yaml,README.md,codegen/clients-upstream-commit.txt
           branch: codegen/update-models
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
           title: ${{ steps.commit.outputs.subject }}
@@ -84,7 +84,7 @@ jobs:
       - name: Create or update schemas pull request
         uses: peter-evans/create-pull-request@v8
         with:
-          add-paths: packages/schemas
+          add-paths: packages/schemas,codegen/schemas-upstream-commit.txt
           branch: codegen/update-schemas
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
           title: ${{ steps.commit.outputs.subject }}

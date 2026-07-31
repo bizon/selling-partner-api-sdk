@@ -81,6 +81,23 @@ Both generators rewrite a list inside a hand-written README, delimited by HTML c
 
 Anything between the markers is replaced on every run; the surrounding prose is left alone. A missing marker fails the run rather than silently leaving a stale list behind.
 
+### Pull request body and commit message
+
+Each generator writes the body and commit message its workflow hands to `create-pull-request`, reporting what the run added, removed and updated:
+
+| Generator | Body                 | Commit message               | Upstream commit               |
+| --------- | -------------------- | ---------------------------- | ----------------------------- |
+| Clients   | `clients-pr-body.md` | `clients-commit-message.txt` | `clients-upstream-commit.txt` |
+| Schemas   | `schemas-pr-body.md` | `schemas-commit-message.txt` | `schemas-upstream-commit.txt` |
+
+The bodies and commit messages are workflow artifacts and gitignored. The upstream commit files are not: they are committed, and hold the commit of [selling-partner-api-models](https://github.com/amzn/selling-partner-api-models) the checked-in output was generated from.
+
+Amazon's models are not vendored here, so the diff of a codegen pull request shows the generated output only. The recorded commit closes that gap – every run lists the upstream commits touching `models` (or `schemas`) since it at the top of the body. Because the file is read from the base branch, an open pull request always lists everything it brings in, however many runs updated it.
+
+Each commit is written as `amzn/selling-partner-api-models@<sha>`, the form GitHub records as a reference to the commit rather than as a plain link to it. Subjects are quoted verbatim, with `#` and `@` escaped so that an upstream subject cannot autolink an unrelated issue of this repository or notify a stranger.
+
+A run only records a new commit when the generated output actually moved; bumping it on its own would open a pull request whose whole diff is a commit hash. If the recorded commit is missing, unknown to the clone or not a commit hash at all – a first run, an upstream force-push, a hand edit – the section is left out and the run carries on.
+
 ## Patches
 
 JSON patches (RFC 6902) can fix invalid or incomplete OpenAPI specs before generation.

@@ -12,13 +12,23 @@ import {remark} from 'remark'
 import remarkStrip from 'strip-markdown'
 import {type PackageJson} from 'type-fest'
 
+import {getChangedPaths} from './utils/git.js'
 import {logger} from './utils/logger.js'
 import {applyPatches} from './utils/patch.js'
+import {
+  buildSection,
+  formatDate,
+  writeCommitMessage,
+  writePullRequestBody,
+} from './utils/pull-request.js'
 import {renderTemplate} from './utils/render-template.js'
 import {runCommand} from './utils/run-command.js'
 import {replaceAllTags} from './utils/tags.js'
 
 const GRANTLESS_APIS = [{name: 'notifications-api-v1', scope: 'NOTIFICATIONS'}]
+
+const CLIENTS_PR_BODY_PATH = 'codegen/clients-pr-body.md'
+const CLIENTS_COMMIT_MESSAGE_PATH = 'codegen/clients-commit-message.txt'
 
 interface RateLimit {
   method: string
@@ -30,6 +40,11 @@ interface RateLimit {
 interface ClientInfo {
   packageName: string
   hasDeprecatedOperations: boolean
+}
+
+interface ClientsDiff {
+  added: string[]
+  removed: string[]
 }
 
 function buildUrlRegex(path: string) {
@@ -298,6 +313,72 @@ async function generateClientVersion(modelFilePath: string): Promise<ClientInfo>
   return {packageName, hasDeprecatedOperations: isDeprecated}
 }
 
+function diffClients(previousPackageNames: string[], clients: ClientInfo[]): ClientsDiff {
+  const previous = new Set(previousPackageNames)
+  const generated = new Set(clients.map((client) => client.packageName))
+
+  return {
+    added: [...generated].filter((packageName) => !previous.has(packageName)).toSorted(),
+    removed: previousPackageNames.filter((packageName) => !generated.has(packageName)).toSorted(),
+  }
+}
+
+// `generateClientVersion` cleans up inside each client, but nothing removes a
+// client whose model disappeared upstream – it would otherwise keep being
+// published, frozen at its last generated content.
+async function pruneStaleClients(packageNames: string[]) {
+  await Promise.all(
+    packageNames.map(async (packageName) => {
+      logger.info('removing stale client', {packageName})
+      await fs.rm(`clients/${packageName}`, {recursive: true})
+    }),
+  )
+}
+
+// Additions and removals both need a manual follow-up on npm – initializing the
+// package, or deprecating it – so they are called out in the pull request body
+// rather than left to be spotted in the diff.
+export async function writeClientsPullRequest({added, removed}: ClientsDiff) {
+  const changedPaths = await getChangedPaths('clients')
+  const reported = new Set([...added, ...removed])
+
+  // `clients/<packageName>/…`, minus the ones already reported as added or removed
+  const changed = [
+    ...new Set(
+      changedPaths
+        .map((path) => path.split('/', 2)[1])
+        .filter((packageName) => packageName !== undefined),
+    ),
+  ]
+    .filter((packageName) => !reported.has(packageName))
+    .toSorted()
+
+  const scoped = (packageNames: string[]) =>
+    packageNames.map((packageName) => `@sp-api-sdk/${packageName}`)
+
+  await writePullRequestBody(CLIENTS_PR_BODY_PATH, [
+    ...buildSection(
+      'New clients',
+      'These packages do not exist on npm yet – initialize them before the next release:',
+      scoped(added),
+    ),
+    ...buildSection(
+      'Removed clients',
+      'Amazon no longer publishes a model for these and they were deleted – deprecate them on npm:',
+      scoped(removed),
+    ),
+    ...buildSection('Updated clients', 'These packages changed:', scoped(changed)),
+  ])
+
+  await writeCommitMessage(
+    CLIENTS_COMMIT_MESSAGE_PATH,
+    `feat(clients): update models as of ${formatDate()}`,
+    removed.length > 0
+      ? `Amazon no longer publishes a model for ${scoped(removed).join(', ')}, so ${removed.length > 1 ? 'those packages were' : 'that package was'} removed from the SDK.`
+      : undefined,
+  )
+}
+
 const CLIENTS_LIST_START = '<!-- codegen:clients:start -->'
 const CLIENTS_LIST_END = '<!-- codegen:clients:end -->'
 
@@ -333,13 +414,23 @@ async function updateRootReadmeClientsList(clients: ClientInfo[]) {
 }
 
 export async function generateClients() {
-  // Pre-download the JAR to avoid race conditions when running in parallel
-  await runCommand('codegen/node_modules/.bin/openapi-generator-cli version')
-
   const modelFilePaths = await globby('*/*.json', {
     onlyFiles: true,
     cwd: 'selling-partner-api-models/models',
   })
+
+  // Guards the pruning below: were upstream to move or rename its models
+  // directory, an empty result would otherwise read as "every model was
+  // removed" and delete every client package in the repository
+  if (modelFilePaths.length === 0) {
+    throw new Error('No models found in selling-partner-api-models/models')
+  }
+
+  // Pre-download the JAR to avoid race conditions when running in parallel
+  await runCommand('codegen/node_modules/.bin/openapi-generator-cli version')
+
+  // Snapshot before generating anything, to report what this run added or removed
+  const previousPackageNames = await globby('*', {onlyDirectories: true, cwd: 'clients'})
 
   const clients = await pMap(
     modelFilePaths,
@@ -349,5 +440,10 @@ export async function generateClients() {
     },
   )
 
+  const diff = diffClients(previousPackageNames, clients)
+
+  await pruneStaleClients(diff.removed)
   await updateRootReadmeClientsList(clients)
+
+  return diff
 }

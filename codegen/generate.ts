@@ -1,8 +1,8 @@
 import fs from 'node:fs/promises'
 import process from 'node:process'
 
-import {generateClients} from './generate-clients.js'
-import {generateSchemas} from './generate-schemas.js'
+import {generateClients, writeClientsPullRequest} from './generate-clients.js'
+import {generateSchemas, writeSchemasPullRequest} from './generate-schemas.js'
 import {runCommand} from './utils/run-command.js'
 
 type Generator = 'clients' | 'schemas'
@@ -16,17 +16,22 @@ if (generators.size === 0) {
 await fs.rm('selling-partner-api-models', {recursive: true, force: true})
 await runCommand('git clone https://github.com/amzn/selling-partner-api-models')
 
+// The pull request body and commit message report what changed against HEAD, so
+// they are written last – after the lint pass has settled the final contents of
+// every file
 if (generators.has('clients')) {
   console.info('Generating clients…')
-  await generateClients()
+  const diff = await generateClients()
   await runCommand('pnpm install --no-frozen-lockfile')
   await runCommand('pnpm --filter "./clients/**" xo --fix')
+  await writeClientsPullRequest(diff)
 }
 
 if (generators.has('schemas')) {
   console.info('Generating schemas…')
-  await generateSchemas()
+  const diff = await generateSchemas()
   await runCommand('pnpm --filter "./packages/schemas" xo --fix')
+  await writeSchemasPullRequest(diff)
 }
 
 await fs.rm('selling-partner-api-models', {recursive: true})

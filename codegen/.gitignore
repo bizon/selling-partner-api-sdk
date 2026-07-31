@@ -1,0 +1,6 @@
+# Pull request bodies and commit messages written by the codegen,
+# consumed by its workflow
+clients-pr-body.md
+schemas-pr-body.md
+clients-commit-message.txt
+schemas-commit-message.txt

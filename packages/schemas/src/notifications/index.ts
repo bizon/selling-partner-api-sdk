@@ -80,14 +80,6 @@ export {
   type ReportProcessingFinishedNotification,
 } from './report-processing-finished-notification.js'
 export {
-  taxInvoiceExportStatusChange,
-  type TaxInvoiceExportStatusChange,
-} from './tax-invoice-export-status-change.js'
-export {
-  taxInvoiceIssuanceStatusNotification,
-  type TaxInvoiceIssuanceStatusNotification,
-} from './tax-invoice-issuance-status-notification.js'
-export {
   transactionUpdateNotification,
   type TransactionUpdateNotification,
 } from './transaction-update-notification.js'

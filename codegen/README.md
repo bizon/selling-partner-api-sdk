@@ -20,6 +20,8 @@ pnpm codegen schemas      # generate schemas only
 
 The command clones Amazon's [selling-partner-api-models](https://github.com/amzn/selling-partner-api-models) repository, generates the code, runs lint auto-fix, then cleans up.
 
+The pure parts of the pipeline are covered by tests in `tests/`, run with `pnpm test` from the repository root or `pnpm --filter @sp-api-sdk/generator test`.
+
 ## How it works
 
 ### Client generation
@@ -30,11 +32,15 @@ The pipeline for each model:
 
 1. **Read & normalize** the OpenAPI spec — fix `doc:` markdown URLs, apply JSON patches, and replace operation tags with a consistent client name
 2. **Run OpenAPI Generator** (`typescript-axios` generator) to produce the raw API model (types, endpoints, configuration)
-3. **Extract rate limits** from operation descriptions using regex, embedding them as a `RateLimit[]` constant in each client
+3. **Extract rate limits** from the usage plan table in each operation description, embedding them as a `RateLimit[]` constant in each client
 4. **Render Mustache templates** for the client wrapper class, `package.json`, tsconfig files, README, and TypeDoc config
 5. **Clean up** generated files, keeping only `api/`, `models/`, and infrastructure files
 
 All models are processed in parallel (one per CPU core) using `p-map`. The OpenAPI Generator JAR is pre-downloaded to prevent race conditions.
+
+#### Missing rate limits
+
+Amazon documents no usage plan at all for a number of operations – those are reported as a per-client count and leave the client without a rate limit for that endpoint. An operation that _does_ carry a usage plan table the extraction cannot read is logged as a warning naming the method and path: either Amazon publishes placeholder values, or the table format changed and the regex needs updating. Watch for those warnings in the codegen workflow – they are the only signal that a rate limit silently disappeared.
 
 #### Client wrapper pattern
 

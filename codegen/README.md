@@ -96,7 +96,7 @@ Amazon's models are not vendored here, so the diff of a codegen pull request sho
 
 Each commit is written as `amzn/selling-partner-api-models@<sha>`, the form GitHub records as a reference to the commit rather than as a plain link to it. Subjects are quoted verbatim, with `#` and `@` escaped so that an upstream subject cannot autolink an unrelated issue of this repository or notify a stranger.
 
-A run only records a new commit when the generated output actually moved; bumping it on its own would open a pull request whose whole diff is a commit hash. If the recorded commit is missing or unknown to the clone – a first run, or an upstream force-push – the section is left out and the run carries on.
+A run only records a new commit when the generated output actually moved; bumping it on its own would open a pull request whose whole diff is a commit hash. If the recorded commit is missing, unknown to the clone or not a commit hash at all – a first run, an upstream force-push, a hand edit – the section is left out and the run carries on.
 
 ## Patches
 

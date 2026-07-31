@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fschemas%402.3.0...%40sp-api-sdk%2Fschemas%403.0.0) (2026-07-31)
+
+### ⚠ BREAKING CHANGES
+
+* **schemas:** Amazon no longer publishes
+  notifications/mfn-order-status-change-notification,
+  notifications/order-status-change-notification,
+  notifications/tax-invoice-export-status-change,
+  notifications/tax-invoice-issuance-status-notification, so those schemas
+  and their exports were removed from `@sp-api-sdk/schemas`.
+
+### Features
+
+* **schemas:** update schemas as of 2026-07-31 ([#1856](https://github.com/bizon/selling-partner-api-sdk/issues/1856))
+
 ## [2.3.0](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fschemas%402.2.1...%40sp-api-sdk%2Fschemas%402.3.0) (2026-07-30)
 
 ### Features

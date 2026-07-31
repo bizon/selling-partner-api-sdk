@@ -13,7 +13,7 @@ export const clientRateLimits: RateLimit[] = [
     method: 'get',
     urlRegex: /^\/finances\/transfers\/2024\u{2D}06\u{2D}01\/payouts$/v,
     rate: 0.5,
-    burst: 30,
+    burst: 10,
   },
   {
     method: 'get',
@@ -25,7 +25,7 @@ export const clientRateLimits: RateLimit[] = [
     method: 'get',
     urlRegex: /^\/finances\/transfers\/2024\u{2D}06\u{2D}01\/payouts\/expected$/v,
     rate: 0.5,
-    burst: 30,
+    burst: 10,
   },
 ]
 

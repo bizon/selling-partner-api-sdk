@@ -15,9 +15,11 @@ import {
   writeCommitMessage,
   writePullRequestBody,
 } from './utils/pull-request.js'
+import {replaceReadmeSection} from './utils/readme.js'
 
 const SCHEMAS_PR_BODY_PATH = 'codegen/schemas-pr-body.md'
 const SCHEMAS_COMMIT_MESSAGE_PATH = 'codegen/schemas-commit-message.txt'
+const SCHEMAS_README_PATH = 'packages/schemas/README.md'
 
 interface SchemaFile {
   schemaName: string
@@ -27,6 +29,7 @@ interface SchemaFile {
 
 interface DirectoryResult {
   directoryName: string
+  schemas: SchemaFile[]
   added: string[]
   removed: string[]
 }
@@ -169,6 +172,7 @@ async function generateDirectorySchemas(
 
   return {
     directoryName,
+    schemas,
     added: [...generatedFileNames]
       .filter((fileName) => !previous.has(fileName))
       .map((fileName) => toSchemaName(directoryName, fileName)),
@@ -199,19 +203,42 @@ async function pruneStaleDirectories(directoryNames: string[], outputDirectory: 
   return removed.flat()
 }
 
+// The namespace each directory is exported under from the package root, e.g.
+// `Reports` in `import {Reports} from '@sp-api-sdk/schemas'`
+function toNamespaceName(directoryName: string) {
+  return camelCase(directoryName, {
+    pascalCase: true,
+    locale: false,
+  })
+}
+
 async function generateIndex(directoryNames: string[], outputDirectory: string) {
   const body = directoryNames
-    .map((directoryName) => {
-      const schemaType = camelCase(directoryName, {
-        pascalCase: true,
-        locale: false,
-      })
-
-      return `export * as ${schemaType} from './${directoryName}/index.js'`
-    })
+    .map(
+      (directoryName) =>
+        `export * as ${toNamespaceName(directoryName)} from './${directoryName}/index.js'`,
+    )
     .join('\n')
 
   await fs.writeFile(`${outputDirectory}/index.ts`, body)
+}
+
+// The schema list in the package README is generated the same way the client
+// list in the root README is – it is far too long to keep in sync by hand.
+async function updateSchemasReadme(directories: DirectoryResult[]) {
+  const sections = directories
+    .toSorted((a, b) => a.directoryName.localeCompare(b.directoryName))
+    .map(({directoryName, schemas}) => {
+      const heading = `### ${toNamespaceName(directoryName)} (${schemas.length} ${schemas.length === 1 ? 'schema' : 'schemas'})`
+      const list = schemas
+        .toSorted((a, b) => a.schemaName.localeCompare(b.schemaName))
+        .map((schema) => `- \`${schema.schemaName}\` / \`${schema.schemaTypeName}\``)
+        .join('\n')
+
+      return `${heading}\n\n${list}`
+    })
+
+  await replaceReadmeSection(SCHEMAS_README_PATH, 'schemas', sections.join('\n\n'))
 }
 
 export async function generateSchemas() {
@@ -244,6 +271,7 @@ export async function generateSchemas() {
     'packages/schemas/src',
   )
   await generateIndex(generatedDirectories, 'packages/schemas/src')
+  await updateSchemasReadme(directories)
 
   return {
     added: directories.flatMap((directory) => directory.added).toSorted(),

@@ -128,5 +128,5 @@ pnpm codegen schemas      # generate schemas only
 
 - Keep `README.md` files in sync with the codebase
 - Client READMEs are generated — to change them, edit `codegen/templates/README.md.mustache`
-- Schema README lists are generated — update after schema changes
+- The client list in `README.md` and the schema list in `packages/schemas/README.md` are rewritten by codegen between their `<!-- codegen:clients:… -->` / `<!-- codegen:schemas:… -->` markers — never edit them by hand, and keep the markers in place
 - TypeDoc is generated and deployed to GitHub Pages by the `Documentation` workflow — after each release, or on manual dispatch

@@ -62,6 +62,18 @@ For each schema:
 1. **Read** the JSON schema and remove the `$schema` field
 2. **Generate** a TypeScript file exporting the schema as a const and a derived type using `json-schema-to-ts`
 3. **Generate** barrel index files for each schema directory and a root index
+4. **Update** the schema list in `packages/schemas/README.md`
+
+### Generated README lists
+
+Both generators rewrite a list inside a hand-written README, delimited by HTML comment markers:
+
+| README                       | Markers                      | Content                                            |
+| ---------------------------- | ---------------------------- | -------------------------------------------------- |
+| `README.md`                  | `<!-- codegen:clients:… -->` | One entry per client package                       |
+| `packages/schemas/README.md` | `<!-- codegen:schemas:… -->` | One section per schema directory, with its exports |
+
+Anything between the markers is replaced on every run; the surrounding prose is left alone. A missing marker fails the run rather than silently leaving a stale list behind.
 
 ## Patches
 

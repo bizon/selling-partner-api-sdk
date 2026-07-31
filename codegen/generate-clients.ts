@@ -21,6 +21,7 @@ import {
   writeCommitMessage,
   writePullRequestBody,
 } from './utils/pull-request.js'
+import {replaceReadmeSection} from './utils/readme.js'
 import {renderTemplate} from './utils/render-template.js'
 import {runCommand} from './utils/run-command.js'
 import {replaceAllTags} from './utils/tags.js'
@@ -29,6 +30,7 @@ const GRANTLESS_APIS = [{name: 'notifications-api-v1', scope: 'NOTIFICATIONS'}]
 
 const CLIENTS_PR_BODY_PATH = 'codegen/clients-pr-body.md'
 const CLIENTS_COMMIT_MESSAGE_PATH = 'codegen/clients-commit-message.txt'
+const ROOT_README_PATH = 'README.md'
 
 interface RateLimit {
   method: string
@@ -379,13 +381,7 @@ export async function writeClientsPullRequest({added, removed}: ClientsDiff) {
   )
 }
 
-const CLIENTS_LIST_START = '<!-- codegen:clients:start -->'
-const CLIENTS_LIST_END = '<!-- codegen:clients:end -->'
-
 async function updateRootReadmeClientsList(clients: ClientInfo[]) {
-  const readmePath = 'README.md'
-  const readme = await fs.readFile(readmePath, 'utf8')
-
   const sorted = clients.toSorted((a, b) => a.packageName.localeCompare(b.packageName))
   const list = sorted
     .map((client) => {
@@ -395,22 +391,7 @@ async function updateRootReadmeClientsList(clients: ClientInfo[]) {
     })
     .join('\n')
 
-  const pattern = new RegExp(
-    `${RegExp.escape(CLIENTS_LIST_START)}.*?${RegExp.escape(CLIENTS_LIST_END)}`,
-    'sv',
-  )
-
-  if (!pattern.test(readme)) {
-    throw new Error(
-      `Could not find clients list markers (${CLIENTS_LIST_START} / ${CLIENTS_LIST_END}) in ${readmePath}`,
-    )
-  }
-
-  const replacement = `${CLIENTS_LIST_START}\n\n${list}\n\n${CLIENTS_LIST_END}`
-  await fs.writeFile(
-    readmePath,
-    readme.replace(pattern, () => replacement),
-  )
+  await replaceReadmeSection(ROOT_README_PATH, 'clients', list)
 }
 
 export async function generateClients() {

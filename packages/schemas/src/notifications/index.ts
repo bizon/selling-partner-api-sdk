@@ -80,6 +80,10 @@ export {
   type ReportProcessingFinishedNotification,
 } from './report-processing-finished-notification.js'
 export {
+  shipmentTrackingMilestoneChangedNotification,
+  type ShipmentTrackingMilestoneChangedNotification,
+} from './shipment-tracking-milestone-changed-notification.js'
+export {
   transactionUpdateNotification,
   type TransactionUpdateNotification,
 } from './transaction-update-notification.js'

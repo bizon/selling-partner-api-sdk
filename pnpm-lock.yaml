@@ -704,6 +704,19 @@ importers:
         specifier: workspace:*
         version: link:../../internal/typescript-config
 
+  clients/tracking-api-2026-01-30:
+    dependencies:
+      '@sp-api-sdk/common':
+        specifier: workspace:*
+        version: link:../../packages/common
+      axios:
+        specifier: ^1.19.0
+        version: 1.19.0(debug@4.4.3(supports-color@10.2.2))(supports-color@10.2.2)
+    devDependencies:
+      '@sp-api-sdk/typescript-config':
+        specifier: workspace:*
+        version: link:../../internal/typescript-config
+
   clients/uploads-api-2020-11-01:
     dependencies:
       '@sp-api-sdk/common':

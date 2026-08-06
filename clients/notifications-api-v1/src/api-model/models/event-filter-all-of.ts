@@ -24,6 +24,7 @@ export interface EventFilterAllOf {
 export const EventFilterAllOfEventFilterTypeEnum = {
     AnyOfferChanged: 'ANY_OFFER_CHANGED',
     OrderChange: 'ORDER_CHANGE',
+    ShipmentTrackingMilestoneChanged: 'SHIPMENT_TRACKING_MILESTONE_CHANGED',
 } as const;
 
 export type EventFilterAllOfEventFilterTypeEnum = typeof EventFilterAllOfEventFilterTypeEnum[keyof typeof EventFilterAllOfEventFilterTypeEnum];

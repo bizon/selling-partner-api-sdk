@@ -42,6 +42,8 @@ import type { GetSubscriptionByIdResponse } from '../models/index.js';
 // @ts-ignore
 import type { GetSubscriptionResponse } from '../models/index.js';
 // @ts-ignore
+import type { GetSubscriptionsResponse } from '../models/index.js';
+// @ts-ignore
 import type { SendTestNotificationRequest } from '../models/index.js';
 // @ts-ignore
 import type { SendTestNotificationResponse } from '../models/index.js';
@@ -330,6 +332,57 @@ export const NotificationsApiAxiosParamCreator = function (configuration?: Confi
             };
         },
         /**
+         * Returns information about subscriptions of the specified notification type. You can use this API to retrieve all subscriptions when multiple subscriptions exist for a notification type (for example, when using filter expressions).  The operation returns all subscriptions for the caller\'s party.  `payloadVersion` is an optional parameter. When you do not provide `payloadVersion`, the operation returns subscriptions across all payload versions.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {Array<string>} notificationTypes A list of notification types to retrieve subscriptions for. Currently limited to a single notification type per request.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
+         * @param {string} [payloadVersion] The version of the payload object to be used in the notification.
+         * @param {number} [pageSize] The maximum number of subscriptions to return per page. Minimum value is 30. Maximum value is 100. Default is 30.
+         * @param {string} [nextToken] A token to retrieve the next page of results. If this field is not empty in a response, pass its value in the next request to retrieve the next page.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getSubscriptions: async (notificationTypes: Array<string>, payloadVersion?: string, pageSize?: number, nextToken?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'notificationTypes' is not null or undefined
+            assertParamExists('getSubscriptions', 'notificationTypes', notificationTypes)
+            const localVarPath = `/notifications/v1/subscriptions`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (notificationTypes) {
+                localVarQueryParameter['notificationTypes'] = notificationTypes.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (payloadVersion !== undefined) {
+                localVarQueryParameter['payloadVersion'] = payloadVersion;
+            }
+
+            if (pageSize !== undefined) {
+                localVarQueryParameter['pageSize'] = pageSize;
+            }
+
+            if (nextToken !== undefined) {
+                localVarQueryParameter['nextToken'] = nextToken;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Sends a mock notification of the specified type to your SQS. The `sendTestNotification` API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
          * @param {string} notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
          * @param {SendTestNotificationRequest} body The request schema for the &#x60;sendTestNotification&#x60; operation.
@@ -476,6 +529,21 @@ export const NotificationsApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Returns information about subscriptions of the specified notification type. You can use this API to retrieve all subscriptions when multiple subscriptions exist for a notification type (for example, when using filter expressions).  The operation returns all subscriptions for the caller\'s party.  `payloadVersion` is an optional parameter. When you do not provide `payloadVersion`, the operation returns subscriptions across all payload versions.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {Array<string>} notificationTypes A list of notification types to retrieve subscriptions for. Currently limited to a single notification type per request.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
+         * @param {string} [payloadVersion] The version of the payload object to be used in the notification.
+         * @param {number} [pageSize] The maximum number of subscriptions to return per page. Minimum value is 30. Maximum value is 100. Default is 30.
+         * @param {string} [nextToken] A token to retrieve the next page of results. If this field is not empty in a response, pass its value in the next request to retrieve the next page.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getSubscriptions(notificationTypes: Array<string>, payloadVersion?: string, pageSize?: number, nextToken?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSubscriptionsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getSubscriptions(notificationTypes, payloadVersion, pageSize, nextToken, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['NotificationsApi.getSubscriptions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Sends a mock notification of the specified type to your SQS. The `sendTestNotification` API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
          * @param {string} notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
          * @param {SendTestNotificationRequest} body The request schema for the &#x60;sendTestNotification&#x60; operation.
@@ -567,6 +635,15 @@ export const NotificationsApiFactory = function (configuration?: Configuration, 
          */
         getSubscriptionById(requestParameters: NotificationsApiGetSubscriptionByIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetSubscriptionByIdResponse> {
             return localVarFp.getSubscriptionById(requestParameters.subscriptionId, requestParameters.notificationType, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Returns information about subscriptions of the specified notification type. You can use this API to retrieve all subscriptions when multiple subscriptions exist for a notification type (for example, when using filter expressions).  The operation returns all subscriptions for the caller\'s party.  `payloadVersion` is an optional parameter. When you do not provide `payloadVersion`, the operation returns subscriptions across all payload versions.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {NotificationsApiGetSubscriptionsRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getSubscriptions(requestParameters: NotificationsApiGetSubscriptionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetSubscriptionsResponse> {
+            return localVarFp.getSubscriptions(requestParameters.notificationTypes, requestParameters.payloadVersion, requestParameters.pageSize, requestParameters.nextToken, options).then((request) => request(axios, basePath));
         },
         /**
          * Sends a mock notification of the specified type to your SQS. The `sendTestNotification` API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
@@ -671,6 +748,31 @@ export interface NotificationsApiGetSubscriptionByIdRequest {
 }
 
 /**
+ * Request parameters for getSubscriptions operation in NotificationsApi.
+ */
+export interface NotificationsApiGetSubscriptionsRequest {
+    /**
+     * A list of notification types to retrieve subscriptions for. Currently limited to a single notification type per request.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
+     */
+    readonly notificationTypes: Array<string>
+
+    /**
+     * The version of the payload object to be used in the notification.
+     */
+    readonly payloadVersion?: string
+
+    /**
+     * The maximum number of subscriptions to return per page. Minimum value is 30. Maximum value is 100. Default is 30.
+     */
+    readonly pageSize?: number
+
+    /**
+     * A token to retrieve the next page of results. If this field is not empty in a response, pass its value in the next request to retrieve the next page.
+     */
+    readonly nextToken?: string
+}
+
+/**
  * Request parameters for sendTestNotification operation in NotificationsApi.
  */
 export interface NotificationsApiSendTestNotificationRequest {
@@ -766,6 +868,16 @@ export class NotificationsApi extends BaseAPI {
      */
     public getSubscriptionById(requestParameters: NotificationsApiGetSubscriptionByIdRequest, options?: RawAxiosRequestConfig) {
         return NotificationsApiFp(this.configuration).getSubscriptionById(requestParameters.subscriptionId, requestParameters.notificationType, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Returns information about subscriptions of the specified notification type. You can use this API to retrieve all subscriptions when multiple subscriptions exist for a notification type (for example, when using filter expressions).  The operation returns all subscriptions for the caller\'s party.  `payloadVersion` is an optional parameter. When you do not provide `payloadVersion`, the operation returns subscriptions across all payload versions.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {NotificationsApiGetSubscriptionsRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public getSubscriptions(requestParameters: NotificationsApiGetSubscriptionsRequest, options?: RawAxiosRequestConfig) {
+        return NotificationsApiFp(this.configuration).getSubscriptions(requestParameters.notificationTypes, requestParameters.payloadVersion, requestParameters.pageSize, requestParameters.nextToken, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

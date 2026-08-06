@@ -193,6 +193,7 @@ This repository contains an API client for each of the available Selling Partner
 - [solicitations-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/solicitations-api-v1)
 - [supply-sources-api-2020-07-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/supply-sources-api-2020-07-01)
 - [tokens-api-2021-03-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/tokens-api-2021-03-01)
+- [tracking-api-2026-01-30](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/tracking-api-2026-01-30)
 - [uploads-api-2020-11-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/uploads-api-2020-11-01)
 - [vehicles-api-2024-11-01](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vehicles-api-2024-11-01)
 - [vendor-direct-fulfillment-inventory-api-v1](https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/vendor-direct-fulfillment-inventory-api-v1)

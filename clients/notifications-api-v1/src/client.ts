@@ -5,6 +5,12 @@ import {Configuration, NotificationsApi} from './api-model/index.js'
 export const clientRateLimits: RateLimit[] = [
   {
     method: 'get',
+    urlRegex: /^\/notifications\/v1\/subscriptions$/v,
+    rate: 1,
+    burst: 5,
+  },
+  {
+    method: 'get',
     urlRegex: /^\/notifications\/v1\/subscriptions\/[^\/]*$/v,
     rate: 1,
     burst: 5,

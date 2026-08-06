@@ -37,10 +37,10 @@ importers:
         version: 17.0.0
       tsdown:
         specifier: ^0.22.14
-        version: 0.22.14(tsx@4.23.1)(typescript@6.0.3)
+        version: 0.22.14(tsx@4.23.5)(typescript@6.0.3)
       tsx:
-        specifier: ^4.23.1
-        version: 4.23.1
+        specifier: ^4.23.5
+        version: 4.23.5
       turbo:
         specifier: ^2.10.7
         version: 2.10.7
@@ -979,7 +979,7 @@ importers:
         version: 24.13.3
       tsdown:
         specifier: ^0.22.14
-        version: 0.22.14(tsx@4.23.1)(typescript@6.0.3)
+        version: 0.22.14(tsx@4.23.5)(typescript@6.0.3)
 
   packages/auth:
     dependencies:
@@ -5727,8 +5727,8 @@ packages:
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
-  tsx@4.23.1:
-    resolution: {integrity: sha512-GQHnkIfxyx1wYCOS/wonik5MVRZU9hi1TEZmzGZSCJB1y9YgoZ8H6itNE/u4suE+yLmOzuE4E5S4TZ/ZX2wcWQ==}
+  tsx@4.23.5:
+    resolution: {integrity: sha512-rw55FUaqOoI7RvlQwLbhO4nSDApnQ4/CykPuiQ/EPvtrX3WA9Ig55jIt9VvbBJbzJuj12ueRu4PMZ2SxPVbihg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -11327,7 +11327,7 @@ snapshots:
       '@swc/core': 1.15.47
     optional: true
 
-  tsdown@0.22.14(tsx@4.23.1)(typescript@6.0.3):
+  tsdown@0.22.14(tsx@4.23.5)(typescript@6.0.3):
     dependencies:
       ansis: 4.3.1
       cac: 7.0.0
@@ -11345,7 +11345,7 @@ snapshots:
       unconfig-core: 7.5.0
       verkit: 0.3.1
     optionalDependencies:
-      tsx: 4.23.1
+      tsx: 4.23.5
       typescript: 6.0.3
     transitivePeerDependencies:
       - '@typescript/native-preview'
@@ -11355,7 +11355,7 @@ snapshots:
 
   tslib@2.8.1: {}
 
-  tsx@4.23.1:
+  tsx@4.23.5:
     dependencies:
       esbuild: 0.28.1
     optionalDependencies:

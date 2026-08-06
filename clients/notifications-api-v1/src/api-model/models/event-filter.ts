@@ -31,11 +31,17 @@ import type { OrderChangeTypeEnum } from './order-change-type-enum.js';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { OrderChangeTypeFilter } from './order-change-type-filter.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { TrackingFilter } from './tracking-filter.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { TrackingIdentifier } from './tracking-identifier.js';
 
 /**
  * @type EventFilter
  * A `notificationType` filter. This object contains all of the available filters and properties that you can use to define a `notificationType` specific filter.
  */
-export type EventFilter = AggregationFilter & EventFilterAllOf & MarketplaceFilter & OrderChangeTypeFilter;
+export type EventFilter = AggregationFilter & EventFilterAllOf & MarketplaceFilter & OrderChangeTypeFilter & TrackingFilter;
 
 

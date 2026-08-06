@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.1](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Forders-api-2026-01-01%402.3.0...%40sp-api-sdk%2Forders-api-2026-01-01%402.3.1) (2026-08-06)
+
+**Note:** Version bump only for package @sp-api-sdk/orders-api-2026-01-01
+
 ## [2.3.0](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Forders-api-2026-01-01%402.2.1...%40sp-api-sdk%2Forders-api-2026-01-01%402.3.0) (2026-07-30)
 
 ### Features

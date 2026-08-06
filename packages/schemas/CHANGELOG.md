@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.0](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fschemas%403.0.0...%40sp-api-sdk%2Fschemas%403.1.0) (2026-08-06)
+
+### Features
+
+* **codegen:** generate the schemas README list ([#1859](https://github.com/bizon/selling-partner-api-sdk/issues/1859)) ([493ba02](https://github.com/bizon/selling-partner-api-sdk/commit/493ba02360b7988bc1542061b5fd65b68ade9cff))
+* **schemas:** update schemas as of 2026-08-06 ([#1866](https://github.com/bizon/selling-partner-api-sdk/issues/1866)) ([370db36](https://github.com/bizon/selling-partner-api-sdk/commit/370db36830e5a1a667372536e02adf4bf6b663a8))
+
 ## [3.0.0](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fschemas%402.3.0...%40sp-api-sdk%2Fschemas%403.0.0) (2026-07-31)
 
 ### ⚠ BREAKING CHANGES

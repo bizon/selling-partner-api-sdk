@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.24.0](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fgenerator%400.23.3...%40sp-api-sdk%2Fgenerator%400.24.0) (2026-08-06)
+
+### Features
+
+* **clients:** update models as of 2026-08-06 ([#1867](https://github.com/bizon/selling-partner-api-sdk/issues/1867)) ([49609a0](https://github.com/bizon/selling-partner-api-sdk/commit/49609a0e73967fde4733fc3974b9238ca384e891))
+* **codegen:** generate the schemas README list ([#1859](https://github.com/bizon/selling-partner-api-sdk/issues/1859)) ([493ba02](https://github.com/bizon/selling-partner-api-sdk/commit/493ba02360b7988bc1542061b5fd65b68ade9cff))
+* **codegen:** list upstream commits in PR bodies ([#1861](https://github.com/bizon/selling-partner-api-sdk/issues/1861)) ([4b84648](https://github.com/bizon/selling-partner-api-sdk/commit/4b8464818da2f64ec09054a47b1a8e81a813554d))
+* **schemas:** update schemas as of 2026-08-06 ([#1866](https://github.com/bizon/selling-partner-api-sdk/issues/1866)) ([370db36](https://github.com/bizon/selling-partner-api-sdk/commit/370db36830e5a1a667372536e02adf4bf6b663a8))
+
+### Bug Fixes
+
+* **codegen:** report unreadable rate limit tables ([#1860](https://github.com/bizon/selling-partner-api-sdk/issues/1860)) ([7d7bd20](https://github.com/bizon/selling-partner-api-sdk/commit/7d7bd20afa1271e129330a04ce8139fdca4138ab))
+
 ## [0.23.3](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fgenerator%400.23.2...%40sp-api-sdk%2Fgenerator%400.23.3) (2026-07-31)
 
 ### Bug Fixes

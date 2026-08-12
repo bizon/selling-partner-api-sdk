@@ -927,8 +927,8 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1
       globby:
-        specifier: ^16.2.2
-        version: 16.2.2
+        specifier: ^16.2.3
+        version: 16.2.3
       jsonfile:
         specifier: ^6.2.1
         version: 6.2.1
@@ -4014,6 +4014,10 @@ packages:
 
   globby@16.2.2:
     resolution: {integrity: sha512-NLvV9ubZ6NDsJaOpKPy3cQeJpKi9DcWiyCiFUpJPA0YihRqiE6RWaLUmgNNPr8MgPpLZjnBjSmou7uZBRJv9wA==}
+    engines: {node: '>=20'}
+
+  globby@16.2.3:
+    resolution: {integrity: sha512-VZX7TV7jmd/pn71vdnLKtgwy1IWqc3KjI9x1/UtPkwoKk5fKrNLY30ltDe3cAM5xruIN7YuuaulFt133jRrKZg==}
     engines: {node: '>=20'}
 
   globrex@0.1.2:
@@ -9195,6 +9199,15 @@ snapshots:
   globals@17.7.0: {}
 
   globby@16.2.2:
+    dependencies:
+      '@sindresorhus/merge-streams': 4.0.0
+      fast-glob: 3.3.3
+      ignore: 7.0.6
+      is-path-inside: 4.0.0
+      slash: 5.1.0
+      unicorn-magic: 0.4.0
+
+  globby@16.2.3:
     dependencies:
       '@sindresorhus/merge-streams': 4.0.0
       fast-glob: 3.3.3

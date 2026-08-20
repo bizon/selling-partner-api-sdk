@@ -5,13 +5,13 @@
 
 The Selling Partner API for Product Type Definitions provides programmatic access to attribute and data requirements for product types in the Amazon catalog. Use this API to return the JSON Schema for a product type that you can then use with other Selling Partner APIs, such as the Selling Partner API for Listings Items, the Selling Partner API for Catalog Items, and the Selling Partner API for Feeds (for JSON-based listing feeds).
 
-For more information, see the [Product Type Definitions API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-type-api-use-case-guide).
+For more information, see the [Product Type Definitions API Use Case Guide](https://developer-docs.amazon/sp-api/docs/product-type-api-use-case-guide).
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 
 ## Documentation
 
-Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
+Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon/sp-api/docs/welcome).
 
 Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_product-type-definitions-api-2020-09-01.html) for this API client.
 
@@ -57,7 +57,7 @@ const client = new ProductTypeDefinitionsApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon.com/sp-api/docs).
+The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon/sp-api/docs/welcome).
 
 ## Logging
 

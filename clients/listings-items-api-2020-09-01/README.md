@@ -5,13 +5,13 @@
 
 The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.
 
-For more information, see the [Listing Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2020-09-01-use-case-guide).
+For more information, see the [Listing Items API Use Case Guide](https://developer-docs.amazon/sp-api/docs/listings-items-api-v2020-09-01-use-case-guide).
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 
 ## Documentation
 
-Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
+Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon/sp-api/docs/welcome).
 
 Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_listings-items-api-2020-09-01.html) for this API client.
 
@@ -57,7 +57,7 @@ const client = new ListingsItemsApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon.com/sp-api/docs).
+The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon/sp-api/docs/welcome).
 
 ## Logging
 

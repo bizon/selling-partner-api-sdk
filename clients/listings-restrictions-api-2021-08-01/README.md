@@ -5,13 +5,13 @@
 
 The Selling Partner API for Listings Restrictions provides programmatic access to restrictions on Amazon catalog listings.
 
-For more information, see the [Listings Restrictions API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-restrictions-api-v2021-08-01-use-case-guide).
+For more information, see the [Listings Restrictions API Use Case Guide](https://developer-docs.amazon/sp-api/docs/listings-restrictions-api-v2021-08-01-use-case-guide).
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 
 ## Documentation
 
-Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
+Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon/sp-api/docs/welcome).
 
 Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_listings-restrictions-api-2021-08-01.html) for this API client.
 
@@ -57,7 +57,7 @@ const client = new ListingsRestrictionsApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon.com/sp-api/docs).
+The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon/sp-api/docs/welcome).
 
 ## Logging
 

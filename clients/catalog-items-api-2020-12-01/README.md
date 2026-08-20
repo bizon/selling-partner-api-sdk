@@ -5,13 +5,13 @@
 
 The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.
 
-For more information, see the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2020-12-01-use-case-guide).
+For more information, see the [Catalog Items API Use Case Guide](https://developer-docs.amazon/sp-api/docs/catalog-items-api-v2020-12-01-use-case-guide).
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 
 ## Documentation
 
-Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
+Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon/sp-api/docs/welcome).
 
 Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_catalog-items-api-2020-12-01.html) for this API client.
 
@@ -57,7 +57,7 @@ const client = new CatalogItemsApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon.com/sp-api/docs).
+The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon/sp-api/docs/welcome).
 
 ## Logging
 

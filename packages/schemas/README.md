@@ -9,9 +9,9 @@ JSON schemas and TypeScript types for the Amazon Selling Partner API (SP-API)
 
 ## Documentation
 
-Learn more about the Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
+Learn more about the Selling Partner API by visiting the [official documentation](https://developer-docs.amazon/sp-api/docs/welcome).
 
-Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp_api_sdk_schemas.html).
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_schemas.html).
 
 ## Installing
 

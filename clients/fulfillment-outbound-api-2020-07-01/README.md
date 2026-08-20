@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/fulfillment-outbound-api-2020-07-01)](https://www.npmjs.com/package/@sp-api-sdk/fulfillment-outbound-api-2020-07-01)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
-> **Note:** Sandbox-only operations, unavailable in production: `submitFulfillmentOrderStatusUpdate`. Refer to the [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) documentation for more information.
+> **Note:** Sandbox-only operations, unavailable in production: `submitFulfillmentOrderStatusUpdate`. Refer to the [Selling Partner API sandbox](https://developer-docs.amazon/sp-api/docs/sp-api-sandbox) documentation for more information.
 
 The Selling Partner API for Fulfillment Outbound lets you create applications that help a seller fulfill Multi-Channel Fulfillment orders using their inventory in Amazon's fulfillment network. You can get information on both potential and existing fulfillment orders.
 
@@ -11,7 +11,7 @@ The Selling Partner API for Fulfillment Outbound lets you create applications th
 
 ## Documentation
 
-Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
+Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon/sp-api/docs/welcome).
 
 Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_fulfillment-outbound-api-2020-07-01.html) for this API client.
 
@@ -57,7 +57,7 @@ const client = new FulfillmentOutboundApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon.com/sp-api/docs).
+The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon/sp-api/docs/welcome).
 
 ## Logging
 

@@ -142,7 +142,7 @@ async function generateClientVersion(modelFilePath: string): Promise<ClientInfo>
   // Replace `doc:` markdown URLs to link to the real documentation
   model = model.replaceAll(
     /\[(?<label>[^\[\]]+)\]\(doc:(?<url>[^\(\)]+)\)/gv,
-    '[$<label>](https://developer-docs.amazon.com/sp-api/docs/$<url>)',
+    '[$<label>](https://developer-docs.amazon/sp-api/docs/$<url>)',
   )
 
   const document = JSON.parse(model) as OpenAPIV3.Document
@@ -387,7 +387,7 @@ async function updateRootReadmeClientsList(clients: ClientInfo[]) {
   const sorted = clients.toSorted((a, b) => a.packageName.localeCompare(b.packageName))
   const list = sorted
     .map((client) => {
-      const url = `https://www.github.com/bizon/selling-partner-api-sdk/tree/master/clients/${client.packageName}`
+      const url = `https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/${client.packageName}`
       const suffix = client.hasDeprecatedOperations ? ' — contains deprecated operations' : ''
       return `- [${client.packageName}](${url})${suffix}`
     })

@@ -51,6 +51,38 @@ interface ClientsDiff {
   removed: string[]
 }
 
+// Amazon marks the operations that only exist in the sandbox, either on the
+// path item – applying to every one of its operations – or on the operation
+// itself. Both placements are in use upstream.
+const SANDBOX_ONLY_EXTENSION = 'x-amzn-api-sandbox-only'
+
+function isSandboxOnly(node: OpenAPIV3.PathItemObject | OpenAPIV3.OperationObject): boolean {
+  return (node as Record<string, unknown>)[SANDBOX_ONLY_EXTENSION] === true
+}
+
+// Operation ids of the operations Amazon serves in the sandbox only. Calling
+// one against a production endpoint fails, and nothing in the generated client
+// tells them apart from the rest, hence the note in the client README.
+function getSandboxOnlyOperations(document: OpenAPIV3.Document): string[] {
+  const operationIds: string[] = []
+
+  for (const pathItem of Object.values(document.paths ?? {})) {
+    if (!pathItem) {
+      continue
+    }
+
+    for (const method of Object.values(OpenAPIV3.HttpMethods)) {
+      const operation = pathItem[method]
+
+      if (operation?.operationId && (isSandboxOnly(pathItem) || isSandboxOnly(operation))) {
+        operationIds.push(operation.operationId)
+      }
+    }
+  }
+
+  return operationIds
+}
+
 function hasDeprecatedOperations(document: OpenAPIV3.Document): boolean {
   for (const pathItem of Object.values(document.paths ?? {})) {
     if (!pathItem) {
@@ -226,6 +258,7 @@ async function generateClientVersion(modelFilePath: string): Promise<ClientInfo>
     }),
   )
   const isDeprecated = hasDeprecatedOperations(document)
+  const sandboxOnlyOperations = getSandboxOnlyOperations(document)
 
   await fs.writeFile(
     `${clientDirectoryPath}/README.md`,
@@ -236,6 +269,9 @@ async function generateClientVersion(modelFilePath: string): Promise<ClientInfo>
       sdkClientDocUrl: `https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_${packageName}.html`,
       grantlessScope: grantlessInfo?.scope,
       hasDeprecatedOperations: isDeprecated,
+      sandboxOnlyOperations: sandboxOnlyOperations
+        .map((operationId) => `\`${operationId}\``)
+        .join(', '),
     }),
   )
 

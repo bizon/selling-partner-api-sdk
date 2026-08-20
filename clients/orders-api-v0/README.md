@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/orders-api-v0)](https://www.npmjs.com/package/@sp-api-sdk/orders-api-v0)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
-> **Note:** This client contains deprecated operations. Refer to the [SP-API Deprecations Schedule](https://developer-docs.amazon.com/sp-api/docs/sp-api-deprecations) for more information.
+> **Note:** This client contains deprecated operations. Refer to the [SP-API Deprecations Schedule](https://developer-docs.amazon/sp-api/docs/sp-api-deprecations) for more information.
 
 Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.
 
@@ -13,7 +13,7 @@ _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from
 
 ## Documentation
 
-Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
+Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon/sp-api/docs/welcome).
 
 Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_orders-api-v0.html) for this API client.
 
@@ -59,7 +59,7 @@ const client = new OrdersApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon.com/sp-api/docs).
+The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon/sp-api/docs/welcome).
 
 ## Logging
 

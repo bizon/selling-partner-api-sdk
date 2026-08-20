@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28)](https://www.npmjs.com/package/@sp-api-sdk/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
-> **Note:** Sandbox-only operations, unavailable in production: `generateOrderScenarios`, `getOrderScenarios`. Refer to the [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) documentation for more information.
+> **Note:** Sandbox-only operations, unavailable in production: `generateOrderScenarios`, `getOrderScenarios`. Refer to the [Selling Partner API sandbox](https://developer-docs.amazon/sp-api/docs/sp-api-sandbox) documentation for more information.
 
 The Selling Partner API for Vendor Direct Fulfillment Sandbox Test Data provides programmatic access to vendor direct fulfillment sandbox test data.
 
@@ -11,7 +11,7 @@ The Selling Partner API for Vendor Direct Fulfillment Sandbox Test Data provides
 
 ## Documentation
 
-Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon.com/sp-api/docs).
+Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon/sp-api/docs/welcome).
 
 Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28.html) for this API client.
 
@@ -57,7 +57,7 @@ const client = new VendorDirectFulfillmentSandboxTestDataApiClient({
 })
 ```
 
-The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon.com/sp-api/docs).
+The rate limits used for each route are specified in the [API documentation](https://developer-docs.amazon/sp-api/docs/welcome).
 
 ## Logging
 

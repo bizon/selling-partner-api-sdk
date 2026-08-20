@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.0](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fnotifications-api-v1%404.3.0...%40sp-api-sdk%2Fnotifications-api-v1%404.4.0) (2026-08-20)
+
+### Features
+
+* **codegen:** note sandbox-only operations ([#1876](https://github.com/bizon/selling-partner-api-sdk/issues/1876)) ([de70622](https://github.com/bizon/selling-partner-api-sdk/commit/de7062241f97649eefcfa58af5597a0d3f3d20e8))
+
 ## [4.3.0](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fnotifications-api-v1%404.2.2...%40sp-api-sdk%2Fnotifications-api-v1%404.3.0) (2026-08-06)
 
 ### Features

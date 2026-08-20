@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.2.4](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fservices-api-v1%405.2.3...%40sp-api-sdk%2Fservices-api-v1%405.2.4) (2026-08-20)
+
+**Note:** Version bump only for package @sp-api-sdk/services-api-v1
+
 ## [5.2.3](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fservices-api-v1%405.2.2...%40sp-api-sdk%2Fservices-api-v1%405.2.3) (2026-08-06)
 
 **Note:** Version bump only for package @sp-api-sdk/services-api-v1

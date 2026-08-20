@@ -5,7 +5,7 @@
 
 The Selling Partner API for Listings Restrictions provides programmatic access to restrictions on Amazon catalog listings.
 
-For more information, see the [Listings Restrictions API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-restrictions-api-v2021-08-01-use-case-guide).
+For more information, see the [Listings Restrictions API Use Case Guide](https://developer-docs.amazon/sp-api/docs/listings-restrictions-api-v2021-08-01-use-case-guide).
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 

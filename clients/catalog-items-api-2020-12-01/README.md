@@ -5,7 +5,7 @@
 
 The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.
 
-For more information, see the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2020-12-01-use-case-guide).
+For more information, see the [Catalog Items API Use Case Guide](https://developer-docs.amazon/sp-api/docs/catalog-items-api-v2020-12-01-use-case-guide).
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 

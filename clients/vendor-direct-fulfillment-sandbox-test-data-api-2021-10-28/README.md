@@ -3,6 +3,8 @@
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28)](https://www.npmjs.com/package/@sp-api-sdk/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
+> **Note:** Sandbox-only operations, unavailable in production: `generateOrderScenarios`, `getOrderScenarios`. Refer to the [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) documentation for more information.
+
 The Selling Partner API for Vendor Direct Fulfillment Sandbox Test Data provides programmatic access to vendor direct fulfillment sandbox test data.
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)

@@ -7,6 +7,10 @@
 > **Note:** This client contains deprecated operations. Refer to the [SP-API Deprecations Schedule](https://developer-docs.amazon.com/sp-api/docs/sp-api-deprecations) for more information.
 
 {{/hasDeprecatedOperations}}
+{{#sandboxOnlyOperations}}
+> **Note:** Sandbox-only operations, unavailable in production: {{.}}. Refer to the [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) documentation for more information.
+
+{{/sandboxOnlyOperations}}
 {{description}}
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)

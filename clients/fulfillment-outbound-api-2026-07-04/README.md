@@ -3,6 +3,8 @@
 [![npm version](https://img.shields.io/npm/v/@sp-api-sdk/fulfillment-outbound-api-2026-07-04)](https://www.npmjs.com/package/@sp-api-sdk/fulfillment-outbound-api-2026-07-04)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
+> **Note:** Sandbox-only operations, unavailable in production: `updateOrderStatus`, `updatePackage`. Refer to the [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) documentation for more information.
+
 The Selling Partner API for Fulfillment Outbound lets you create applications that help a seller fulfill Multi-Channel Fulfillment orders using their inventory in Amazon's fulfillment network. You can get information on both potential and existing fulfillment orders.
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)

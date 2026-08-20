@@ -29,7 +29,7 @@
   "devDependencies": {
     "@jest/globals": "^30.4.1",
     "@sp-api-sdk/jest": "workspace:*",
-    "@tsconfig/node24": "^24.0.4",
+    "@tsconfig/node24": "^24.0.5",
     "@types/jsonfile": "^6.1.4",
     "@types/lodash-es": "^4.17.12",
     "@types/mustache": "^4.2.6",

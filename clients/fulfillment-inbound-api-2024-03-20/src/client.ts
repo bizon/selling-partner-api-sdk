@@ -235,6 +235,12 @@ export const clientRateLimits: RateLimit[] = [
     burst: 2,
   },
   {
+    method: 'get',
+    urlRegex: /^\/inbound\/fba\/2024\u{2D}03\u{2D}20\/items\/compliance$/v,
+    rate: 2,
+    burst: 6,
+  },
+  {
     method: 'put',
     urlRegex: /^\/inbound\/fba\/2024\u{2D}03\u{2D}20\/items\/compliance$/v,
     rate: 2,

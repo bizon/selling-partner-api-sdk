@@ -17,6 +17,7 @@ export const sellerCouponReport = {
       coupons: [
         {
           couponId: 'A2NW32V27GZS2T',
+          promotionsApiMappingId: '7b62d8d9-bfd4-465d-acb5-fa993ee57197',
           merchantId: 'A21MAFL4G6JTR3',
           marketplaceId: 'ATVPDKIKX0DER',
           currencyCode: 'USD',
@@ -118,6 +119,7 @@ export const sellerCouponReport = {
       examples: [
         {
           couponId: 'A2NW32V27GZS2T',
+          promotionsApiMappingId: '7b62d8d9-bfd4-465d-acb5-fa993ee57197',
           merchantId: 'A21MAFL4G6JTR3',
           marketplaceId: 'ATVPDKIKX0DER',
           currencyCode: 'USD',
@@ -166,6 +168,12 @@ export const sellerCouponReport = {
           type: 'string',
           description: 'Unique identifier of the coupon.',
           examples: ['A2NW32V27GZS2T'],
+        },
+        promotionsApiMappingId: {
+          type: 'string',
+          description:
+            'Unique identifier to cross-reference promotions with the Selling Partner Promotions API.',
+          examples: ['7b62d8d9-bfd4-465d-acb5-fa993ee57197'],
         },
         merchantId: {
           type: 'string',

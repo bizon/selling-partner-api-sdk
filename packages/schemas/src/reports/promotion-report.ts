@@ -17,6 +17,7 @@ export const promotionReport = {
       promotions: [
         {
           promotionId: '16913551269',
+          promotionsApiMappingId: '7b62d8d9-bfd4-465d-acb5-fa993ee57197',
           promotionName: 'Save on BrandX Product Name',
           vendorCode: 'ABCDE',
           merchantId: 'A21MAFL4G6JTR3',
@@ -122,6 +123,7 @@ export const promotionReport = {
       examples: [
         {
           promotionId: '16913551269',
+          promotionsApiMappingId: '7b62d8d9-bfd4-465d-acb5-fa993ee57197',
           promotionName: 'Save on BrandX Product Name',
           vendorCode: 'ABCDE',
           merchantId: 'A21MAFL4G6JTR3',
@@ -175,6 +177,12 @@ export const promotionReport = {
           type: 'string',
           description: 'The unique identifier of the promotion.',
           examples: ['16913551269'],
+        },
+        promotionsApiMappingId: {
+          type: 'string',
+          description:
+            'Unique identifier to cross-reference promotions with the Selling Partner Promotions API.',
+          examples: ['7b62d8d9-bfd4-465d-acb5-fa993ee57197'],
         },
         promotionName: {
           type: 'string',

@@ -30,6 +30,7 @@ export const vendorCouponReport = {
           coupons: [
             {
               couponId: 'A2NW32V27GZS2T',
+              promotionsApiMappingId: '7b62d8d9-bfd4-465d-acb5-fa993ee57197',
               name: 'Product $40 Off',
               websiteMessage: 'Save on BrandX Product',
               startDateTime: '2021-11-26T05:59:59Z',
@@ -347,6 +348,7 @@ export const vendorCouponReport = {
       examples: [
         {
           couponId: 'A2NW32V27GZS2T',
+          promotionsApiMappingId: '7b62d8d9-bfd4-465d-acb5-fa993ee57197',
           name: 'Product $40 Off',
           websiteMessage: 'Save on BrandX Product',
           startDateTime: '2021-11-26T05:59:59Z',
@@ -392,6 +394,12 @@ export const vendorCouponReport = {
           type: 'string',
           description: 'Unique identifier of the coupon.',
           examples: ['A2NW32V27GZS2T'],
+        },
+        promotionsApiMappingId: {
+          type: 'string',
+          description:
+            'Unique identifier to cross-reference promotions with the Selling Partner Promotions API.',
+          examples: ['7b62d8d9-bfd4-465d-acb5-fa993ee57197'],
         },
         name: {
           type: 'string',

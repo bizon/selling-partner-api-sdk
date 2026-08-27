@@ -181,6 +181,7 @@ This repository contains an API client for each of the available Selling Partner
 - [product-pricing-api-2022-05-01](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/product-pricing-api-2022-05-01)
 - [product-pricing-api-v0](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/product-pricing-api-v0)
 - [product-type-definitions-api-2020-09-01](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/product-type-definitions-api-2020-09-01)
+- [promotions-api-2025-12-01](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/promotions-api-2025-12-01)
 - [replenishment-api-2022-11-07](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/replenishment-api-2022-11-07)
 - [reports-api-2021-06-30](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/reports-api-2021-06-30)
 - [sales-api-v1](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/sales-api-v1)

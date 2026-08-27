@@ -548,6 +548,19 @@ importers:
         specifier: workspace:*
         version: link:../../internal/typescript-config
 
+  clients/promotions-api-2025-12-01:
+    dependencies:
+      '@sp-api-sdk/common':
+        specifier: workspace:*
+        version: link:../../packages/common
+      axios:
+        specifier: ^1.19.0
+        version: 1.19.0(debug@4.4.3(supports-color@10.2.2))(supports-color@10.2.2)
+    devDependencies:
+      '@sp-api-sdk/typescript-config':
+        specifier: workspace:*
+        version: link:../../internal/typescript-config
+
   clients/replenishment-api-2022-11-07:
     dependencies:
       '@sp-api-sdk/common':

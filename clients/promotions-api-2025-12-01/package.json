@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/promotions-api-2025-12-01",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Promotions enables selling partners to create and manage promotions.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "type": "module",
   "engines": {

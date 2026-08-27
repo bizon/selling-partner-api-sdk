@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.26.0](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fgenerator%400.25.1...%40sp-api-sdk%2Fgenerator%400.26.0) (2026-08-27)
+
+### Features
+
+* **clients:** update models as of 2026-08-27 ([#1887](https://github.com/bizon/selling-partner-api-sdk/issues/1887)) ([247b97a](https://github.com/bizon/selling-partner-api-sdk/commit/247b97ab2f602daea9683aedbff711e06e6454ac))
+* **schemas:** update schemas as of 2026-08-27 ([#1886](https://github.com/bizon/selling-partner-api-sdk/issues/1886)) ([1861844](https://github.com/bizon/selling-partner-api-sdk/commit/186184428c52cdaf833b951f8abe02076caf4f04))
+
 ## [0.25.1](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fgenerator%400.25.0...%40sp-api-sdk%2Fgenerator%400.25.1) (2026-08-24)
 
 ### Bug Fixes

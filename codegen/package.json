@@ -27,7 +27,7 @@
     "winston": "^3.19.0"
   },
   "devDependencies": {
-    "@jest/globals": "^30.4.1",
+    "@jest/globals": "^30.5.0",
     "@sp-api-sdk/jest": "workspace:*",
     "@tsconfig/node24": "^24.0.5",
     "@types/jsonfile": "^6.1.4",

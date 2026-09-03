@@ -39,7 +39,7 @@
     "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {
-    "@jest/globals": "^30.4.1",
+    "@jest/globals": "^30.5.0",
     "@sp-api-sdk/jest": "workspace:*",
     "@sp-api-sdk/typescript-config": "workspace:*",
     "nock": "^14.0.17",

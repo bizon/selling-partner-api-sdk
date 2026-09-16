@@ -12,7 +12,7 @@
     "node": "24.x"
   },
   "dependencies": {
-    "@openapitools/openapi-generator-cli": "^2.40.1",
+    "@openapitools/openapi-generator-cli": "^2.41.0",
     "camelcase": "^9.0.0",
     "chalk": "^6.0.0",
     "fast-json-patch": "^3.1.1",

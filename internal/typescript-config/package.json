@@ -13,7 +13,7 @@
   ],
   "dependencies": {
     "@tsconfig/node24": "^24.0.5",
-    "@types/node": "^24.13.3",
+    "@types/node": "^24.13.4",
     "tsdown": "^0.23.0"
   }
 }

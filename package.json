@@ -22,7 +22,7 @@
     "@types/node": "^24.13.4",
     "conventional-changelog-conventionalcommits": "^10.4.0",
     "eslint-config-xo-bizon": "^4.5.0",
-    "jest": "^30.5.1",
+    "jest": "^30.5.2",
     "jest-junit": "^17.0.0",
     "tsdown": "^0.23.0",
     "tsx": "^4.23.13",

@@ -13,24 +13,14 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import type { CustomAttributeType } from './custom-attribute-type.js';
 
 /**
- * A custom attribute that is loosely typed, modeled through a key-value pair and its data type.
+ * The response object for creating a sandbox shipment.
  */
-export interface CustomAttribute {
+export interface CreateSandboxShipmentResponse {
     /**
-     * The attribute key.
+     * The identifier of the created sandbox shipment.
      */
-    'key'?: string;
-    'type'?: CustomAttributeType;
-    /**
-     * The attribute value.
-     */
-    'value'?: string;
+    'shipmentId'?: string;
 }
-
-
 

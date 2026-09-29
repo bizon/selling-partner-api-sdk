@@ -1,11 +1,11 @@
-# `@sp-api-sdk/external-fulfillment-shipments-api-2024-09-11`
+# `@sp-api-sdk/external-fulfillment-location-api-2026-07-30`
 
-[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/external-fulfillment-shipments-api-2024-09-11)](https://www.npmjs.com/package/@sp-api-sdk/external-fulfillment-shipments-api-2024-09-11)
+[![npm version](https://img.shields.io/npm/v/@sp-api-sdk/external-fulfillment-location-api-2026-07-30)](https://www.npmjs.com/package/@sp-api-sdk/external-fulfillment-location-api-2026-07-30)
 [![XO code style](https://img.shields.io/badge/code_style-xo-cyan)](https://github.com/xojs/xo)
 
-> **Note:** Sandbox-only operations, unavailable in production: `createSandboxShipment`, `updateSandboxShipment`. Refer to the [Selling Partner API sandbox](https://developer-docs.amazon/sp-api/docs/sp-api-sandbox) documentation for more information.
+> **Note:** Sandbox-only operations, unavailable in production: `createSandboxLocation`. Refer to the [Selling Partner API sandbox](https://developer-docs.amazon/sp-api/docs/sp-api-sandbox) documentation for more information.
 
-You can use the External Fulfillment Shipments API to retrieve, manage, and track shipments processed through Amazon's external fulfillment network. Use this API to get shipment details, monitor status changes, and access fulfillment requirements.
+You can use the External Fulfillment Location API to manage locations in the sandbox environment for end-to-end testing. This API is available only in the sandbox environment.
 
 [<img src="https://files.bizon.solutions/images/logo/bizon-horizontal.png" alt="Bizon" width="250"/>](https://www.bizon.solutions?utm_source=github&utm_medium=readme&utm_campaign=selling-partner-api-sdk)
 
@@ -13,19 +13,19 @@ You can use the External Fulfillment Shipments API to retrieve, manage, and trac
 
 Learn more about this Selling Partner API by visiting the [official documentation](https://developer-docs.amazon/sp-api/docs/welcome).
 
-Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_external-fulfillment-shipments-api-2024-09-11.html) for this API client.
+Also, see the [generated documentation](https://bizon.github.io/selling-partner-api-sdk/modules/_sp-api-sdk_external-fulfillment-location-api-2026-07-30.html) for this API client.
 
 ## Installing
 
 ```sh
-npm install @sp-api-sdk/external-fulfillment-shipments-api-2024-09-11
+npm install @sp-api-sdk/external-fulfillment-location-api-2026-07-30
 ```
 
 ## Getting Started
 
 ```javascript
 import {SellingPartnerApiAuth} from '@sp-api-sdk/auth'
-import {ExternalFulfillmentShipmentsApiClient} from '@sp-api-sdk/external-fulfillment-shipments-api-2024-09-11'
+import {ExternalFulfillmentLocationApiClient} from '@sp-api-sdk/external-fulfillment-location-api-2026-07-30'
 
 // `clientId` and `clientSecret` default to the `LWA_CLIENT_ID` and
 // `LWA_CLIENT_SECRET` environment variables.
@@ -33,7 +33,7 @@ const auth = new SellingPartnerApiAuth({
   refreshToken: await getRefreshTokenForSeller(sellerId),
 })
 
-const client = new ExternalFulfillmentShipmentsApiClient({
+const client = new ExternalFulfillmentLocationApiClient({
   auth,
   region: 'eu',
 })
@@ -44,7 +44,7 @@ const client = new ExternalFulfillmentShipmentsApiClient({
 In order to retry rate limited requests (HTTP 429), you can configure the API client as such:
 
 ```javascript
-const client = new ExternalFulfillmentShipmentsApiClient({
+const client = new ExternalFulfillmentLocationApiClient({
   auth,
   region: 'eu',
   rateLimiting: {
@@ -64,7 +64,7 @@ The rate limits used for each route are specified in the [API documentation](htt
 You can enable logging for both SP-API requests and responses by configuring the `logging.request` and `logging.response` properties.
 
 ```javascript
-const client = new ExternalFulfillmentShipmentsApiClient({
+const client = new ExternalFulfillmentLocationApiClient({
   auth,
   region: 'eu',
   logging: {

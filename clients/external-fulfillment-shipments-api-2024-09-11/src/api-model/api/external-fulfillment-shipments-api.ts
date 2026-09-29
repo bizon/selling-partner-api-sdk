@@ -22,6 +22,10 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
+import type { CreateSandboxShipmentRequest } from '../models/index.js';
+// @ts-ignore
+import type { CreateSandboxShipmentResponse } from '../models/index.js';
+// @ts-ignore
 import type { ErrorList } from '../models/index.js';
 // @ts-ignore
 import type { InvoiceResponse } from '../models/index.js';
@@ -43,6 +47,8 @@ import type { ShipmentAcknowledgementRequest } from '../models/index.js';
 import type { ShipmentsResponse } from '../models/index.js';
 // @ts-ignore
 import type { ShippingOptionsResponse } from '../models/index.js';
+// @ts-ignore
+import type { UpdateSandboxShipmentRequest } from '../models/index.js';
 /**
  * ExternalFulfillmentShipmentsApi - axios parameter creator
  */
@@ -62,6 +68,40 @@ export const ExternalFulfillmentShipmentsApiAxiosParamCreator = function (config
             assertParamExists('createPackages', 'body', body)
             const localVarPath = `/externalFulfillment/2024-09-11/shipments/{shipmentId}/packages`
                 .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Creates a sandbox shipment to simulate order creation in the test environment. This operation is available only in the sandbox environment. The shipment is created with the specified configuration including shipping type and order type.
+         * @param {CreateSandboxShipmentRequest} body The request body for creating a sandbox shipment.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createSandboxShipment: async (body: CreateSandboxShipmentRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('createSandboxShipment', 'body', body)
+            const localVarPath = `/externalFulfillment/2024-09-11/shipments`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -437,7 +477,7 @@ export const ExternalFulfillmentShipmentsApiAxiosParamCreator = function (config
          * Updates the status of the packages.
          * @param {string} shipmentId The ID of the shipment to which the package belongs.
          * @param {string} packageId The ID of the package whose status you want to update.
-         * @param {UpdatePackageStatusStatusEnum} [status] **DEPRECATED**. Do not use. Package status is defined in the body parameter.
+         * @param {UpdatePackageStatusStatusEnum} [status] **This field is only used for the Seller Flex program**. For the Self Delivery program, package statuses are defined in the body parameter.
          * @param {PackageDeliveryStatus} [body] The body of the request.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -478,6 +518,44 @@ export const ExternalFulfillmentShipmentsApiAxiosParamCreator = function (config
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * Updates a sandbox shipment on marketplace behalf. Supports status changes, invoice availability, and transport capacity updates.
+         * @param {string} shipmentId The unique identifier of the shipment to update.
+         * @param {UpdateSandboxShipmentRequest} body The request body for updating a sandbox shipment.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateSandboxShipment: async (shipmentId: string, body: UpdateSandboxShipmentRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'shipmentId' is not null or undefined
+            assertParamExists('updateSandboxShipment', 'shipmentId', shipmentId)
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('updateSandboxShipment', 'body', body)
+            const localVarPath = `/externalFulfillment/2024-09-11/shipments/{shipmentId}`
+                .replace('{shipmentId}', encodeURIComponent(String(shipmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -498,6 +576,18 @@ export const ExternalFulfillmentShipmentsApiFp = function(configuration?: Config
             const localVarAxiosArgs = await localVarAxiosParamCreator.createPackages(shipmentId, body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExternalFulfillmentShipmentsApi.createPackages']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Creates a sandbox shipment to simulate order creation in the test environment. This operation is available only in the sandbox environment. The shipment is created with the specified configuration including shipping type and order type.
+         * @param {CreateSandboxShipmentRequest} body The request body for creating a sandbox shipment.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createSandboxShipment(body: CreateSandboxShipmentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateSandboxShipmentResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createSandboxShipment(body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ExternalFulfillmentShipmentsApi.createSandboxShipment']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -615,7 +705,7 @@ export const ExternalFulfillmentShipmentsApiFp = function(configuration?: Config
          * Updates the status of the packages.
          * @param {string} shipmentId The ID of the shipment to which the package belongs.
          * @param {string} packageId The ID of the package whose status you want to update.
-         * @param {UpdatePackageStatusStatusEnum} [status] **DEPRECATED**. Do not use. Package status is defined in the body parameter.
+         * @param {UpdatePackageStatusStatusEnum} [status] **This field is only used for the Seller Flex program**. For the Self Delivery program, package statuses are defined in the body parameter.
          * @param {PackageDeliveryStatus} [body] The body of the request.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -624,6 +714,19 @@ export const ExternalFulfillmentShipmentsApiFp = function(configuration?: Config
             const localVarAxiosArgs = await localVarAxiosParamCreator.updatePackageStatus(shipmentId, packageId, status, body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExternalFulfillmentShipmentsApi.updatePackageStatus']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Updates a sandbox shipment on marketplace behalf. Supports status changes, invoice availability, and transport capacity updates.
+         * @param {string} shipmentId The unique identifier of the shipment to update.
+         * @param {UpdateSandboxShipmentRequest} body The request body for updating a sandbox shipment.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateSandboxShipment(shipmentId: string, body: UpdateSandboxShipmentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateSandboxShipment(shipmentId, body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ExternalFulfillmentShipmentsApi.updateSandboxShipment']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -643,6 +746,15 @@ export const ExternalFulfillmentShipmentsApiFactory = function (configuration?: 
          */
         createPackages(requestParameters: ExternalFulfillmentShipmentsApiCreatePackagesRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.createPackages(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Creates a sandbox shipment to simulate order creation in the test environment. This operation is available only in the sandbox environment. The shipment is created with the specified configuration including shipping type and order type.
+         * @param {ExternalFulfillmentShipmentsApiCreateSandboxShipmentRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createSandboxShipment(requestParameters: ExternalFulfillmentShipmentsApiCreateSandboxShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateSandboxShipmentResponse> {
+            return localVarFp.createSandboxShipment(requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * Get invoices for the shipment you specify.
@@ -725,6 +837,15 @@ export const ExternalFulfillmentShipmentsApiFactory = function (configuration?: 
         updatePackageStatus(requestParameters: ExternalFulfillmentShipmentsApiUpdatePackageStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.updatePackageStatus(requestParameters.shipmentId, requestParameters.packageId, requestParameters.status, requestParameters.body, options).then((request) => request(axios, basePath));
         },
+        /**
+         * Updates a sandbox shipment on marketplace behalf. Supports status changes, invoice availability, and transport capacity updates.
+         * @param {ExternalFulfillmentShipmentsApiUpdateSandboxShipmentRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateSandboxShipment(requestParameters: ExternalFulfillmentShipmentsApiUpdateSandboxShipmentRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+            return localVarFp.updateSandboxShipment(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -741,6 +862,16 @@ export interface ExternalFulfillmentShipmentsApiCreatePackagesRequest {
      * A list of packages in the shipment.
      */
     readonly body: Packages
+}
+
+/**
+ * Request parameters for createSandboxShipment operation in ExternalFulfillmentShipmentsApi.
+ */
+export interface ExternalFulfillmentShipmentsApiCreateSandboxShipmentRequest {
+    /**
+     * The request body for creating a sandbox shipment.
+     */
+    readonly body: CreateSandboxShipmentRequest
 }
 
 /**
@@ -913,7 +1044,7 @@ export interface ExternalFulfillmentShipmentsApiUpdatePackageStatusRequest {
     readonly packageId: string
 
     /**
-     * **DEPRECATED**. Do not use. Package status is defined in the body parameter.
+     * **This field is only used for the Seller Flex program**. For the Self Delivery program, package statuses are defined in the body parameter.
      */
     readonly status?: UpdatePackageStatusStatusEnum
 
@@ -921,6 +1052,21 @@ export interface ExternalFulfillmentShipmentsApiUpdatePackageStatusRequest {
      * The body of the request.
      */
     readonly body?: PackageDeliveryStatus
+}
+
+/**
+ * Request parameters for updateSandboxShipment operation in ExternalFulfillmentShipmentsApi.
+ */
+export interface ExternalFulfillmentShipmentsApiUpdateSandboxShipmentRequest {
+    /**
+     * The unique identifier of the shipment to update.
+     */
+    readonly shipmentId: string
+
+    /**
+     * The request body for updating a sandbox shipment.
+     */
+    readonly body: UpdateSandboxShipmentRequest
 }
 
 /**
@@ -935,6 +1081,16 @@ export class ExternalFulfillmentShipmentsApi extends BaseAPI {
      */
     public createPackages(requestParameters: ExternalFulfillmentShipmentsApiCreatePackagesRequest, options?: RawAxiosRequestConfig) {
         return ExternalFulfillmentShipmentsApiFp(this.configuration).createPackages(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Creates a sandbox shipment to simulate order creation in the test environment. This operation is available only in the sandbox environment. The shipment is created with the specified configuration including shipping type and order type.
+     * @param {ExternalFulfillmentShipmentsApiCreateSandboxShipmentRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createSandboxShipment(requestParameters: ExternalFulfillmentShipmentsApiCreateSandboxShipmentRequest, options?: RawAxiosRequestConfig) {
+        return ExternalFulfillmentShipmentsApiFp(this.configuration).createSandboxShipment(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1025,6 +1181,16 @@ export class ExternalFulfillmentShipmentsApi extends BaseAPI {
      */
     public updatePackageStatus(requestParameters: ExternalFulfillmentShipmentsApiUpdatePackageStatusRequest, options?: RawAxiosRequestConfig) {
         return ExternalFulfillmentShipmentsApiFp(this.configuration).updatePackageStatus(requestParameters.shipmentId, requestParameters.packageId, requestParameters.status, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Updates a sandbox shipment on marketplace behalf. Supports status changes, invoice availability, and transport capacity updates.
+     * @param {ExternalFulfillmentShipmentsApiUpdateSandboxShipmentRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public updateSandboxShipment(requestParameters: ExternalFulfillmentShipmentsApiUpdateSandboxShipmentRequest, options?: RawAxiosRequestConfig) {
+        return ExternalFulfillmentShipmentsApiFp(this.configuration).updateSandboxShipment(requestParameters.shipmentId, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

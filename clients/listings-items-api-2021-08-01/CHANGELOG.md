@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.4](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Flistings-items-api-2021-08-01%406.3.3...%40sp-api-sdk%2Flistings-items-api-2021-08-01%406.3.4) (2026-09-29)
+
+**Note:** Version bump only for package @sp-api-sdk/listings-items-api-2021-08-01
+
 ## [6.3.3](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Flistings-items-api-2021-08-01%406.3.2...%40sp-api-sdk%2Flistings-items-api-2021-08-01%406.3.3) (2026-08-27)
 
 **Note:** Version bump only for package @sp-api-sdk/listings-items-api-2021-08-01

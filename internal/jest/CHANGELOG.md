@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.8](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fjest%401.0.7...%40sp-api-sdk%2Fjest%401.0.8) (2026-09-29)
+
+**Note:** Version bump only for package @sp-api-sdk/jest
+
 ## [1.0.7](https://github.com/bizon/selling-partner-api-sdk/compare/@sp-api-sdk/jest@1.0.6...@sp-api-sdk/jest@1.0.7) (2026-05-27)
 
 **Note:** Version bump only for package @sp-api-sdk/jest

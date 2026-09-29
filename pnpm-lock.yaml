@@ -210,6 +210,19 @@ importers:
         specifier: workspace:*
         version: link:../../internal/typescript-config
 
+  clients/external-fulfillment-location-api-2026-07-30:
+    dependencies:
+      '@sp-api-sdk/common':
+        specifier: workspace:*
+        version: link:../../packages/common
+      axios:
+        specifier: ^1.20.0
+        version: 1.20.0(debug@4.4.3(supports-color@10.2.2))(supports-color@10.2.2)
+    devDependencies:
+      '@sp-api-sdk/typescript-config':
+        specifier: workspace:*
+        version: link:../../internal/typescript-config
+
   clients/external-fulfillment-returns-api-2024-09-11:
     dependencies:
       '@sp-api-sdk/common':

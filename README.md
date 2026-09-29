@@ -155,6 +155,7 @@ This repository contains an API client for each of the available Selling Partner
 - [delivery-by-amazon-delivery-shipment-invoice-v2022-07-01-api-2022-07-01](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/delivery-by-amazon-delivery-shipment-invoice-v2022-07-01-api-2022-07-01)
 - [easy-ship-api-2022-03-23](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/easy-ship-api-2022-03-23)
 - [external-fulfillment-inventory-api-2024-09-11](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/external-fulfillment-inventory-api-2024-09-11)
+- [external-fulfillment-location-api-2026-07-30](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/external-fulfillment-location-api-2026-07-30)
 - [external-fulfillment-returns-api-2024-09-11](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/external-fulfillment-returns-api-2024-09-11)
 - [external-fulfillment-shipments-api-2024-09-11](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/external-fulfillment-shipments-api-2024-09-11)
 - [fba-inbound-eligibility-api-v1](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/fba-inbound-eligibility-api-v1)

@@ -84,6 +84,18 @@ export {
   type ShipmentTrackingMilestoneChangedNotification,
 } from './shipment-tracking-milestone-changed-notification.js'
 export {
+  taxInvoiceExportStatusChange,
+  type TaxInvoiceExportStatusChange,
+} from './tax-invoice-export-status-change.js'
+export {
+  taxInvoiceIssuanceEligibilityStatusChangeNotification,
+  type TaxInvoiceIssuanceEligibilityStatusChangeNotification,
+} from './tax-invoice-issuance-eligibility-status-change-notification.js'
+export {
+  taxInvoiceIssuanceStatusNotification,
+  type TaxInvoiceIssuanceStatusNotification,
+} from './tax-invoice-issuance-status-notification.js'
+export {
   transactionUpdateNotification,
   type TransactionUpdateNotification,
 } from './transaction-update-notification.js'

@@ -54,7 +54,7 @@ const report = (await getVendorInventoryReportData()) as Reports.VendorInventory
 - `listingsFeedProcessingReportSchemaV2` / `ListingsFeedProcessingReportSchemaV2`
 - `listingsFeedSchemaV2` / `ListingsFeedSchemaV2`
 
-### Notifications (23 schemas)
+### Notifications (26 schemas)
 
 - `anyOfferChangedNotification` / `AnyOfferChangedNotification`
 - `b2bAnyOfferChangedNotification` / `B2bAnyOfferChangedNotification`
@@ -78,6 +78,9 @@ const report = (await getVendorInventoryReportData()) as Reports.VendorInventory
 - `productTypeDefinitionsChangeNotification` / `ProductTypeDefinitionsChangeNotification`
 - `reportProcessingFinishedNotification` / `ReportProcessingFinishedNotification`
 - `shipmentTrackingMilestoneChangedNotification` / `ShipmentTrackingMilestoneChangedNotification`
+- `taxInvoiceExportStatusChange` / `TaxInvoiceExportStatusChange`
+- `taxInvoiceIssuanceEligibilityStatusChangeNotification` / `TaxInvoiceIssuanceEligibilityStatusChangeNotification`
+- `taxInvoiceIssuanceStatusNotification` / `TaxInvoiceIssuanceStatusNotification`
 - `transactionUpdateNotification` / `TransactionUpdateNotification`
 
 ### Reports (22 schemas)

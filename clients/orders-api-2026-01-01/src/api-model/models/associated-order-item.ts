@@ -13,9 +13,12 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { Money } from './money.js';
 
 /**
- * An associated order item that a customer has purchased with the product. For example, a tire installation service purchased with tires.
+ * An associated order item that a customer has purchased with the product. For example, a tire installation service purchased with tires, or a warranty protection plan purchased with a product.
  */
 export interface AssociatedOrderItem {
     /**
@@ -27,8 +30,13 @@ export interface AssociatedOrderItem {
      */
     'orderItemId'?: string;
     /**
-     * The type of association between the order items.  **Possible values**: - `VALUE_ADD_SERVICE` (The associated item is a service order)
+     * The type of association between the order items.  **Possible values**: - `VALUE_ADD_SERVICE` (The associated item is a service order) - `WARRANTY` (The associated item is a product covered by a warranty or protection plan)
      */
     'associationType'?: string;
+    /**
+     * The ASIN of the associated order item.
+     */
+    'asin'?: string;
+    'purchasePrice'?: Money;
 }
 

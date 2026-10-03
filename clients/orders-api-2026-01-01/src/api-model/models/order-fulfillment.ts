@@ -19,6 +19,9 @@ import type { DateTimeRange } from './date-time-range.js';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { FulfillmentStatus } from './fulfillment-status.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PromiseCalculationInputs } from './promise-calculation-inputs.js';
 
 /**
  * Information about how the order is being processed, packed, and shipped to the customer.
@@ -36,6 +39,7 @@ export interface OrderFulfillment {
     'shipByWindow'?: DateTimeRange;
     'deliverByWindow'?: DateTimeRange;
     'labelPrintingWindow'?: DateTimeRange;
+    'promiseCalculationInputs'?: PromiseCalculationInputs;
 }
 
 

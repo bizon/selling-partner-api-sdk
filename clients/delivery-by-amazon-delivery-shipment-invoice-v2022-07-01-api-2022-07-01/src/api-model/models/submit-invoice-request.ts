@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Delivery Shipment Invoicing
- * The Selling Partner API for Delivery Shipment Invoicing helps you programmatically retrieve shipment invoice information in the Brazil marketplace for a selling partner’s orders.
+ * The Selling Partner API for Delivery Shipment Invoicing helps you programmatically retrieve shipment invoice information in the Brazil Amazon store for a selling partner’s orders.
  *
  * The version of the OpenAPI document: 2022-07-01
  * 
@@ -29,7 +29,7 @@ export interface SubmitInvoiceRequest {
      */
     'invoiceContent': string;
     /**
-     * An Amazon marketplace identifier.
+     * An Amazon store identifier.
      */
     'marketplaceId': string;
     /**

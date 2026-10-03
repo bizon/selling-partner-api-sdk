@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { AdditionalDetails } from './additional-details.js';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { AllowanceDetails } from './allowance-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -62,6 +65,14 @@ export interface InvoiceItem {
      * HSN Tax code. The HSN number cannot contain alphabets.
      */
     'hsnCode'?: string;
+    /**
+     * Product or service description for the invoiced line item.
+     */
+    'itemDescription'?: string;
+    /**
+     * Line-level additional details provided by the selling party, e.g. tax exemption reason code and text.
+     */
+    'additionalDetails'?: Array<AdditionalDetails>;
     'creditNoteDetails'?: CreditNoteDetails;
     /**
      * Individual tax details per line item.

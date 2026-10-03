@@ -38,13 +38,14 @@ export const TrackingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} [aftn] The Amazon Fulfillment Tracking Number.
          * @param {string} [containerNumber] The container number provided by the Logistics Service Provider.
          * @param {string} [houseBillOfLadingNumber] The House Bill of Lading (HBL) number.
+         * @param {string} [proNumber] The PRO number assigned by the freight carrier
          * @param {string} [carrierTrackingTrackingNumber] The tracking number assigned by the carrier.
          * @param {string} [carrierTrackingCarrierCode] The carrier code associated with the carrier tracking number.
          * @param {string} [acceptLanguage] The preferred natural language and locale of the client, in POSIX locale format. Currently supports &#x60;en-US&#x60; only.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getShipmentTracking: async (id?: string, acsin?: string, aftn?: string, containerNumber?: string, houseBillOfLadingNumber?: string, carrierTrackingTrackingNumber?: string, carrierTrackingCarrierCode?: string, acceptLanguage?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getShipmentTracking: async (id?: string, acsin?: string, aftn?: string, containerNumber?: string, houseBillOfLadingNumber?: string, proNumber?: string, carrierTrackingTrackingNumber?: string, carrierTrackingCarrierCode?: string, acceptLanguage?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/tracking/2026-01-30/shipments/track`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -75,6 +76,10 @@ export const TrackingApiAxiosParamCreator = function (configuration?: Configurat
 
             if (houseBillOfLadingNumber !== undefined) {
                 localVarQueryParameter['houseBillOfLadingNumber'] = houseBillOfLadingNumber;
+            }
+
+            if (proNumber !== undefined) {
+                localVarQueryParameter['proNumber'] = proNumber;
             }
 
             if (carrierTrackingTrackingNumber !== undefined) {
@@ -116,14 +121,15 @@ export const TrackingApiFp = function(configuration?: Configuration) {
          * @param {string} [aftn] The Amazon Fulfillment Tracking Number.
          * @param {string} [containerNumber] The container number provided by the Logistics Service Provider.
          * @param {string} [houseBillOfLadingNumber] The House Bill of Lading (HBL) number.
+         * @param {string} [proNumber] The PRO number assigned by the freight carrier
          * @param {string} [carrierTrackingTrackingNumber] The tracking number assigned by the carrier.
          * @param {string} [carrierTrackingCarrierCode] The carrier code associated with the carrier tracking number.
          * @param {string} [acceptLanguage] The preferred natural language and locale of the client, in POSIX locale format. Currently supports &#x60;en-US&#x60; only.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getShipmentTracking(id?: string, acsin?: string, aftn?: string, containerNumber?: string, houseBillOfLadingNumber?: string, carrierTrackingTrackingNumber?: string, carrierTrackingCarrierCode?: string, acceptLanguage?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentTrackingResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getShipmentTracking(id, acsin, aftn, containerNumber, houseBillOfLadingNumber, carrierTrackingTrackingNumber, carrierTrackingCarrierCode, acceptLanguage, options);
+        async getShipmentTracking(id?: string, acsin?: string, aftn?: string, containerNumber?: string, houseBillOfLadingNumber?: string, proNumber?: string, carrierTrackingTrackingNumber?: string, carrierTrackingCarrierCode?: string, acceptLanguage?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetShipmentTrackingResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getShipmentTracking(id, acsin, aftn, containerNumber, houseBillOfLadingNumber, proNumber, carrierTrackingTrackingNumber, carrierTrackingCarrierCode, acceptLanguage, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TrackingApi.getShipmentTracking']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -145,7 +151,7 @@ export const TrackingApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         getShipmentTracking(requestParameters: TrackingApiGetShipmentTrackingRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<GetShipmentTrackingResponse> {
-            return localVarFp.getShipmentTracking(requestParameters.id, requestParameters.acsin, requestParameters.aftn, requestParameters.containerNumber, requestParameters.houseBillOfLadingNumber, requestParameters.carrierTrackingTrackingNumber, requestParameters.carrierTrackingCarrierCode, requestParameters.acceptLanguage, options).then((request) => request(axios, basePath));
+            return localVarFp.getShipmentTracking(requestParameters.id, requestParameters.acsin, requestParameters.aftn, requestParameters.containerNumber, requestParameters.houseBillOfLadingNumber, requestParameters.proNumber, requestParameters.carrierTrackingTrackingNumber, requestParameters.carrierTrackingCarrierCode, requestParameters.acceptLanguage, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -180,6 +186,11 @@ export interface TrackingApiGetShipmentTrackingRequest {
     readonly houseBillOfLadingNumber?: string
 
     /**
+     * The PRO number assigned by the freight carrier
+     */
+    readonly proNumber?: string
+
+    /**
      * The tracking number assigned by the carrier.
      */
     readonly carrierTrackingTrackingNumber?: string
@@ -207,7 +218,7 @@ export class TrackingApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public getShipmentTracking(requestParameters: TrackingApiGetShipmentTrackingRequest = {}, options?: RawAxiosRequestConfig) {
-        return TrackingApiFp(this.configuration).getShipmentTracking(requestParameters.id, requestParameters.acsin, requestParameters.aftn, requestParameters.containerNumber, requestParameters.houseBillOfLadingNumber, requestParameters.carrierTrackingTrackingNumber, requestParameters.carrierTrackingCarrierCode, requestParameters.acceptLanguage, options).then((request) => request(this.axios, this.basePath));
+        return TrackingApiFp(this.configuration).getShipmentTracking(requestParameters.id, requestParameters.acsin, requestParameters.aftn, requestParameters.containerNumber, requestParameters.houseBillOfLadingNumber, requestParameters.proNumber, requestParameters.carrierTrackingTrackingNumber, requestParameters.carrierTrackingCarrierCode, requestParameters.acceptLanguage, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

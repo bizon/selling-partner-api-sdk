@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Delivery Shipment Invoicing
- * The Selling Partner API for Delivery Shipment Invoicing helps you programmatically retrieve shipment invoice information in the Brazil marketplace for a selling partner’s orders.
+ * The Selling Partner API for Delivery Shipment Invoicing helps you programmatically retrieve shipment invoice information in the Brazil Amazon store for a selling partner’s orders.
  *
  * The version of the OpenAPI document: 2022-07-01
  * 
@@ -33,16 +33,17 @@ import type { SubmitInvoiceResponse } from '../models/index.js';
 export const DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Returns the invoice status for the order or shipment you specify. You must specify either an `orderId` or `shipmentId` as query parameter. If both parameters are supplied, `orderId` takes precedence over `shipmentId`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} marketplaceId The marketplace identifier.
+         * Returns the invoice status for the order or shipment you specify. You must specify either an `orderId`, `shipmentId`, or `invoiceId` as a query parameter. If multiple parameters are supplied, `orderId` takes precedence over `shipmentId`, which takes precedence over `invoiceId`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).
+         * @param {string} marketplaceId The Amazon store identifier.
          * @param {GetInvoiceStatusInvoiceTypeEnum} invoiceType The invoice\&#39;s type.
          * @param {GetInvoiceStatusProgramTypeEnum} programType The Amazon program that seller is currently enrolled.
          * @param {string} [orderId] The order identifier.
          * @param {string} [shipmentId] The shipment identifier.
+         * @param {string} [invoiceId] The invoice access key (NF-e access key for Brazilian invoices). Use this to retrieve the status of a specific invoice.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getInvoiceStatus: async (marketplaceId: string, invoiceType: GetInvoiceStatusInvoiceTypeEnum, programType: GetInvoiceStatusProgramTypeEnum, orderId?: string, shipmentId?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getInvoiceStatus: async (marketplaceId: string, invoiceType: GetInvoiceStatusInvoiceTypeEnum, programType: GetInvoiceStatusProgramTypeEnum, orderId?: string, shipmentId?: string, invoiceId?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getInvoiceStatus', 'marketplaceId', marketplaceId)
             // verify required parameter 'invoiceType' is not null or undefined
@@ -69,6 +70,10 @@ export const DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiAxiosParamCreato
                 localVarQueryParameter['shipmentId'] = shipmentId;
             }
 
+            if (invoiceId !== undefined) {
+                localVarQueryParameter['invoiceId'] = invoiceId;
+            }
+
             if (marketplaceId !== undefined) {
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
@@ -93,8 +98,8 @@ export const DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiAxiosParamCreato
             };
         },
         /**
-         * Submits a shipment invoice for a given order or shipment. You must specify either an `orderId` or `shipmentId` as query parameter. If both parameters are supplied, `orderId` takes precedence over `shipmentId`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {SubmitInvoiceRequest} body The request body that specifies invoice, program and marketplace values.
+         * Submits a shipment invoice for a given order or shipment. You must specify either an `orderId` or `shipmentId` as query parameter. If both parameters are supplied, `orderId` takes precedence over `shipmentId`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).
+         * @param {SubmitInvoiceRequest} body The request body that specifies invoice, program and &#x60;marketplaceId&#x60; values.
          * @param {string} [orderId] The identifier for the order.
          * @param {string} [shipmentId] The identifier for the shipment.
          * @param {*} [options] Override http request option.
@@ -146,24 +151,25 @@ export const DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiFp = function(co
     const localVarAxiosParamCreator = DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiAxiosParamCreator(configuration)
     return {
         /**
-         * Returns the invoice status for the order or shipment you specify. You must specify either an `orderId` or `shipmentId` as query parameter. If both parameters are supplied, `orderId` takes precedence over `shipmentId`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} marketplaceId The marketplace identifier.
+         * Returns the invoice status for the order or shipment you specify. You must specify either an `orderId`, `shipmentId`, or `invoiceId` as a query parameter. If multiple parameters are supplied, `orderId` takes precedence over `shipmentId`, which takes precedence over `invoiceId`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).
+         * @param {string} marketplaceId The Amazon store identifier.
          * @param {GetInvoiceStatusInvoiceTypeEnum} invoiceType The invoice\&#39;s type.
          * @param {GetInvoiceStatusProgramTypeEnum} programType The Amazon program that seller is currently enrolled.
          * @param {string} [orderId] The order identifier.
          * @param {string} [shipmentId] The shipment identifier.
+         * @param {string} [invoiceId] The invoice access key (NF-e access key for Brazilian invoices). Use this to retrieve the status of a specific invoice.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getInvoiceStatus(marketplaceId: string, invoiceType: GetInvoiceStatusInvoiceTypeEnum, programType: GetInvoiceStatusProgramTypeEnum, orderId?: string, shipmentId?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInvoiceStatusResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getInvoiceStatus(marketplaceId, invoiceType, programType, orderId, shipmentId, options);
+        async getInvoiceStatus(marketplaceId: string, invoiceType: GetInvoiceStatusInvoiceTypeEnum, programType: GetInvoiceStatusProgramTypeEnum, orderId?: string, shipmentId?: string, invoiceId?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInvoiceStatusResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getInvoiceStatus(marketplaceId, invoiceType, programType, orderId, shipmentId, invoiceId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeliveryByAmazonDeliveryShipmentInvoiceV20220701Api.getInvoiceStatus']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Submits a shipment invoice for a given order or shipment. You must specify either an `orderId` or `shipmentId` as query parameter. If both parameters are supplied, `orderId` takes precedence over `shipmentId`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {SubmitInvoiceRequest} body The request body that specifies invoice, program and marketplace values.
+         * Submits a shipment invoice for a given order or shipment. You must specify either an `orderId` or `shipmentId` as query parameter. If both parameters are supplied, `orderId` takes precedence over `shipmentId`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).
+         * @param {SubmitInvoiceRequest} body The request body that specifies invoice, program and &#x60;marketplaceId&#x60; values.
          * @param {string} [orderId] The identifier for the order.
          * @param {string} [shipmentId] The identifier for the shipment.
          * @param {*} [options] Override http request option.
@@ -185,16 +191,16 @@ export const DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiFactory = functi
     const localVarFp = DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiFp(configuration)
     return {
         /**
-         * Returns the invoice status for the order or shipment you specify. You must specify either an `orderId` or `shipmentId` as query parameter. If both parameters are supplied, `orderId` takes precedence over `shipmentId`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Returns the invoice status for the order or shipment you specify. You must specify either an `orderId`, `shipmentId`, or `invoiceId` as a query parameter. If multiple parameters are supplied, `orderId` takes precedence over `shipmentId`, which takes precedence over `invoiceId`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).
          * @param {DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiGetInvoiceStatusRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getInvoiceStatus(requestParameters: DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiGetInvoiceStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetInvoiceStatusResponse> {
-            return localVarFp.getInvoiceStatus(requestParameters.marketplaceId, requestParameters.invoiceType, requestParameters.programType, requestParameters.orderId, requestParameters.shipmentId, options).then((request) => request(axios, basePath));
+            return localVarFp.getInvoiceStatus(requestParameters.marketplaceId, requestParameters.invoiceType, requestParameters.programType, requestParameters.orderId, requestParameters.shipmentId, requestParameters.invoiceId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Submits a shipment invoice for a given order or shipment. You must specify either an `orderId` or `shipmentId` as query parameter. If both parameters are supplied, `orderId` takes precedence over `shipmentId`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Submits a shipment invoice for a given order or shipment. You must specify either an `orderId` or `shipmentId` as query parameter. If both parameters are supplied, `orderId` takes precedence over `shipmentId`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).
          * @param {DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiSubmitInvoiceRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -210,7 +216,7 @@ export const DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiFactory = functi
  */
 export interface DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiGetInvoiceStatusRequest {
     /**
-     * The marketplace identifier.
+     * The Amazon store identifier.
      */
     readonly marketplaceId: string
 
@@ -233,6 +239,11 @@ export interface DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiGetInvoiceSt
      * The shipment identifier.
      */
     readonly shipmentId?: string
+
+    /**
+     * The invoice access key (NF-e access key for Brazilian invoices). Use this to retrieve the status of a specific invoice.
+     */
+    readonly invoiceId?: string
 }
 
 /**
@@ -240,7 +251,7 @@ export interface DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiGetInvoiceSt
  */
 export interface DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiSubmitInvoiceRequest {
     /**
-     * The request body that specifies invoice, program and marketplace values.
+     * The request body that specifies invoice, program and &#x60;marketplaceId&#x60; values.
      */
     readonly body: SubmitInvoiceRequest
 
@@ -260,17 +271,17 @@ export interface DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiSubmitInvoic
  */
 export class DeliveryByAmazonDeliveryShipmentInvoiceV20220701Api extends BaseAPI {
     /**
-     * Returns the invoice status for the order or shipment you specify. You must specify either an `orderId` or `shipmentId` as query parameter. If both parameters are supplied, `orderId` takes precedence over `shipmentId`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Returns the invoice status for the order or shipment you specify. You must specify either an `orderId`, `shipmentId`, or `invoiceId` as a query parameter. If multiple parameters are supplied, `orderId` takes precedence over `shipmentId`, which takes precedence over `invoiceId`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).
      * @param {DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiGetInvoiceStatusRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     public getInvoiceStatus(requestParameters: DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiGetInvoiceStatusRequest, options?: RawAxiosRequestConfig) {
-        return DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiFp(this.configuration).getInvoiceStatus(requestParameters.marketplaceId, requestParameters.invoiceType, requestParameters.programType, requestParameters.orderId, requestParameters.shipmentId, options).then((request) => request(this.axios, this.basePath));
+        return DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiFp(this.configuration).getInvoiceStatus(requestParameters.marketplaceId, requestParameters.invoiceType, requestParameters.programType, requestParameters.orderId, requestParameters.shipmentId, requestParameters.invoiceId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * Submits a shipment invoice for a given order or shipment. You must specify either an `orderId` or `shipmentId` as query parameter. If both parameters are supplied, `orderId` takes precedence over `shipmentId`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Submits a shipment invoice for a given order or shipment. You must specify either an `orderId` or `shipmentId` as query parameter. If both parameters are supplied, `orderId` takes precedence over `shipmentId`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1.133 | 25 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).
      * @param {DeliveryByAmazonDeliveryShipmentInvoiceV20220701ApiSubmitInvoiceRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}

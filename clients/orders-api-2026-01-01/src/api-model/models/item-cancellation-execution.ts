@@ -15,15 +15,15 @@
 
 
 /**
- * Details of how the cancellation was executed for a specific order item, including who performed the cancellation and the reason.
+ * Detailed information about how the cancellation was processed for a specific order item.
  */
 export interface ItemCancellationExecution {
     /**
-     * Entity that executed the cancellation for this item.   **Possible values**: `BUYER`, `MERCHANT`, `AMAZON`
+     * The entity that executed the cancellation for this item.   **Possible values**: `BUYER`, `MERCHANT`, `AMAZON`.
      */
     'cancelledBy'?: string;
     /**
-     * Explanation provided for why the cancellation was executed.
+     * The provided explanation for why the cancellation occurred.
      */
     'cancelReason'?: string;
 }

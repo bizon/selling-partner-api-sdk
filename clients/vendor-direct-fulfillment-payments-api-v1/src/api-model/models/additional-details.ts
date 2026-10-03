@@ -35,6 +35,9 @@ export interface AdditionalDetails {
 export const AdditionalDetailsTypeEnum = {
     Sur: 'SUR',
     Ocr: 'OCR',
+    TaxExemptReason: 'TaxExemptReason',
+    LegalTerms: 'LegalTerms',
+    RegulatoryNote: 'RegulatoryNote',
 } as const;
 
 export type AdditionalDetailsTypeEnum = typeof AdditionalDetailsTypeEnum[keyof typeof AdditionalDetailsTypeEnum];

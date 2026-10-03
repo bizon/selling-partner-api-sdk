@@ -62,8 +62,16 @@ export interface Invoice {
     'shipToParty'?: PartyIdentification;
     'shipFromParty'?: PartyIdentification;
     'billToParty'?: PartyIdentification;
+    'billFromParty'?: PartyIdentification;
+    'vatGroupParty'?: PartyIdentification;
+    'taxRepresentativeParty'?: PartyIdentification;
     'paymentTerms'?: PaymentTerms;
     'invoiceTotal': Money;
+    'invoiceBaseAmount'?: Money;
+    /**
+     * Defines a date and time according to ISO8601.
+     */
+    'taxPointDate'?: string;
     /**
      * Total tax amount details for all line items.
      */

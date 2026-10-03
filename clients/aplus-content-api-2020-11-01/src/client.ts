@@ -63,6 +63,24 @@ export const clientRateLimits: RateLimit[] = [
     rate: 10,
     burst: 10,
   },
+  {
+    method: 'post',
+    urlRegex: /^\/aplus\/2020\u{2D}11\u{2D}01\/media$/v,
+    rate: 10,
+    burst: 10,
+  },
+  {
+    method: 'get',
+    urlRegex: /^\/aplus\/2020\u{2D}11\u{2D}01\/media\/[^\/]*$/v,
+    rate: 10,
+    burst: 10,
+  },
+  {
+    method: 'patch',
+    urlRegex: /^\/aplus\/2020\u{2D}11\u{2D}01\/media\/[^\/]*$/v,
+    rate: 10,
+    burst: 10,
+  },
 ]
 
 export class AplusContentApiClient extends AplusContentApi {

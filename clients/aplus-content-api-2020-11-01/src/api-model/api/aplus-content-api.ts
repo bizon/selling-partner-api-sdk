@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for A+ Content Management
- * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
+ * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ Content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
  *
  * The version of the OpenAPI document: 2020-11-01
  * 
@@ -22,9 +22,15 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base.js';
 // @ts-ignore
+import type { CreateMediaRequest } from '../models/index.js';
+// @ts-ignore
+import type { CreateMediaResponse } from '../models/index.js';
+// @ts-ignore
 import type { ErrorList } from '../models/index.js';
 // @ts-ignore
 import type { GetContentDocumentResponse } from '../models/index.js';
+// @ts-ignore
+import type { GetMediaResponse } from '../models/index.js';
 // @ts-ignore
 import type { ListContentDocumentAsinRelationsResponse } from '../models/index.js';
 // @ts-ignore
@@ -44,6 +50,10 @@ import type { SearchContentDocumentsResponse } from '../models/index.js';
 // @ts-ignore
 import type { SearchContentPublishRecordsResponse } from '../models/index.js';
 // @ts-ignore
+import type { UpdateMediaRequest } from '../models/index.js';
+// @ts-ignore
+import type { UpdateMediaResponse } from '../models/index.js';
+// @ts-ignore
 import type { ValidateContentDocumentAsinRelationsResponse } from '../models/index.js';
 /**
  * AplusContentApi - axios parameter creator
@@ -51,8 +61,8 @@ import type { ValidateContentDocumentAsinRelationsResponse } from '../models/ind
 export const AplusContentApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Creates a new A+ Content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * Create a new A+ Content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
          * @param {PostContentDocumentRequest} postContentDocumentRequest The content document request details.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -92,9 +102,43 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Returns an A+ Content document, if available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * Create a media asset record. The `mediaType` field determines the type of asset to create.  This operation is idempotent; if the asset or pairing already exists with identical metadata, this operation returns a `200` response with existing data. Returns `201` when a new asset or pairing is created. Returns `409` if the asset or pairing already exists but the metadata fields differ.  If an `uploadDestinationId` is provided, it is resolved to its `mediaId` before any further processing. A request that references an asset by `uploadDestinationId` and a subsequent request that uses the resulting `mediaId` are treated as referring to the same identity.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {CreateMediaRequest} createMediaRequest The media creation request details.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createMedia: async (createMediaRequest: CreateMediaRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'createMediaRequest' is not null or undefined
+            assertParamExists('createMedia', 'createMediaRequest', createMediaRequest)
+            const localVarPath = `/aplus/2020-11-01/media`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(createMediaRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieve an A+ Content document, if available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
          * @param {Set<GetContentDocumentIncludedDataSetEnum>} includedDataSet The set of A+ Content data types to include in the response.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -139,12 +183,50 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Returns a list of ASINs that are related to the specified A+ Content document, if available. If you don\'t include the `asinSet` parameter, this operation returns all ASINs related to the content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-         * @param {Set<ListContentDocumentAsinRelationsIncludedDataSetEnum>} [includedDataSet] The set of A+ Content data types to include in the response. If you don\&#39;t include this parameter, the operation returns the related ASINs without metadata.
+         * Retrieve media metadata and related media for a given media ID. The response uses the unified Media shape. Related media associations are also included in the response.  When `associatedMediaId` is provided, `relatedMedia` is filtered to the specific pairing. When omitted, all related media are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} mediaId The unique identifier for the media asset.
+         * @param {string} [associatedMediaId] When provided, returns only the specific association. When omitted, returns all associated media.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getMedia: async (mediaId: string, associatedMediaId?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'mediaId' is not null or undefined
+            assertParamExists('getMedia', 'mediaId', mediaId)
+            const localVarPath = `/aplus/2020-11-01/media/{mediaId}`
+                .replace('{mediaId}', encodeURIComponent(String(mediaId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (associatedMediaId !== undefined) {
+                localVarQueryParameter['associatedMediaId'] = associatedMediaId;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieve a list of ASINs related to the specified A+ Content document, if available. If you do not include the `asinSet` parameter, the operation returns all ASINs related to the content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
+         * @param {Set<ListContentDocumentAsinRelationsIncludedDataSetEnum>} [includedDataSet] The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata.
          * @param {Set<string>} [asinSet] The set of ASINs.
-         * @param {string} [pageToken] A token that you use to fetch a specific page when there are multiple pages of results.
+         * @param {string} [pageToken] A page token from the &#x60;nextPageToken&#x60; response element returned by your previous call to this operation. &#x60;nextPageToken&#x60; is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include &#x60;pageToken&#x60; as the only parameter. Specifying &#x60;pageToken&#x60; with any other parameter will cause the request to fail. When no &#x60;nextPageToken&#x60; value is returned there are no more pages to return. A &#x60;pageToken&#x60; value is not usable across different operations.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -194,9 +276,9 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Submits an A+ Content document for review, approval, and publishing.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * Submits an A+ Content document for review, approval, and publishing.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -234,10 +316,10 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Replaces all ASINs related to the specified A+ Content document, if available. This operation can add or remove ASINs, depending on the current set of related ASINs. Removing an ASIN will suspend the content document from that ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-         * @param {PostContentDocumentAsinRelationsRequest} postContentDocumentAsinRelationsRequest The request details for the content document ASIN relations.
+         * Replaces all ASINs related to the specified A+ Content document, if available. This may add or remove ASINs, depending on the current set of related ASINs. Removing an ASIN has the side effect of suspending the content document from that ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
+         * @param {PostContentDocumentAsinRelationsRequest} postContentDocumentAsinRelationsRequest The content document ASIN relations request details.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -279,9 +361,9 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Submits a request to suspend visible A+ Content. This doesn\'t delete the content document or the ASIN relations.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * Submits a request to suspend visible A+ Content. This neither deletes the content document nor the ASIN relations.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -319,9 +401,9 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Returns a list of all A+ Content documents, including metadata, that are assigned to a selling partner. To get the actual contents of the A+ Content documents, call the `getContentDocument` operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-         * @param {string} [pageToken] A token that you use to fetch a specific page when there are multiple pages of results.
+         * Retrieve a list of all A+ Content documents assigned to a selling partner. This operation returns only the metadata of the A+ Content documents. Call the `getContentDocument` operation to get the actual contents of the A+ Content documents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
+         * @param {string} [pageToken] A page token from the &#x60;nextPageToken&#x60; response element returned by your previous call to this operation. &#x60;nextPageToken&#x60; is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include &#x60;pageToken&#x60; as the only parameter. Specifying &#x60;pageToken&#x60; with any other parameter will cause the request to fail. When no &#x60;nextPageToken&#x60; value is returned there are no more pages to return. A &#x60;pageToken&#x60; value is not usable across different operations.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -360,10 +442,10 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Searches for A+ Content publishing records, if available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-         * @param {string} asin The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace.
-         * @param {string} [pageToken] A token that you use to fetch a specific page when there are multiple pages of results.
+         * Searches for A+ Content publishing records, if available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
+         * @param {string} asin The Amazon Standard Identification Number (ASIN).
+         * @param {string} [pageToken] A page token from the &#x60;nextPageToken&#x60; response element returned by your previous call to this operation. &#x60;nextPageToken&#x60; is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include &#x60;pageToken&#x60; as the only parameter. Specifying &#x60;pageToken&#x60; with any other parameter will cause the request to fail. When no &#x60;nextPageToken&#x60; value is returned there are no more pages to return. A &#x60;pageToken&#x60; value is not usable across different operations.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -408,9 +490,9 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Updates an existing A+ Content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * Update an existing A+ Content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
          * @param {PostContentDocumentRequest} postContentDocumentRequest The content document request details.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -453,8 +535,51 @@ export const AplusContentApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Checks if the A+ Content document is valid for use on a set of ASINs.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * Update metadata on an existing media asset. The `mediaId` path parameter identifies the target asset. For video-image pairing title updates, provide `associatedMediaId` as a query parameter. For video-level description updates or standalone image title updates, omit `associatedMediaId`.  Each request updates either title or descriptions, but not both. Descriptions are upserted by locale; only provided locales are modified, and existing locales not in the request are preserved.  The response contains the full unified Media shape. When `associatedMediaId` is provided, `relatedMedia` contains only the specified pairing. When `associatedMediaId` is absent, `relatedMedia` contains all affected pairings.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} mediaId The unique identifier for the media asset to update.
+         * @param {UpdateMediaRequest} updateMediaRequest The media update request details.
+         * @param {string} [associatedMediaId] When provided, identifies the specific video-image pairing for title updates. Required when updating a pairing title.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateMedia: async (mediaId: string, updateMediaRequest: UpdateMediaRequest, associatedMediaId?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'mediaId' is not null or undefined
+            assertParamExists('updateMedia', 'mediaId', mediaId)
+            // verify required parameter 'updateMediaRequest' is not null or undefined
+            assertParamExists('updateMedia', 'updateMediaRequest', updateMediaRequest)
+            const localVarPath = `/aplus/2020-11-01/media/{mediaId}`
+                .replace('{mediaId}', encodeURIComponent(String(mediaId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (associatedMediaId !== undefined) {
+                localVarQueryParameter['associatedMediaId'] = associatedMediaId;
+            }
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(updateMediaRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Checks if the A+ Content document is valid for use on a set of ASINs.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
          * @param {PostContentDocumentRequest} postContentDocumentRequest The content document request details.
          * @param {Set<string>} [asinSet] The set of ASINs.
          * @param {*} [options] Override http request option.
@@ -508,8 +633,8 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = AplusContentApiAxiosParamCreator(configuration)
     return {
         /**
-         * Creates a new A+ Content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * Create a new A+ Content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
          * @param {PostContentDocumentRequest} postContentDocumentRequest The content document request details.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -521,9 +646,21 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Returns an A+ Content document, if available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * Create a media asset record. The `mediaType` field determines the type of asset to create.  This operation is idempotent; if the asset or pairing already exists with identical metadata, this operation returns a `200` response with existing data. Returns `201` when a new asset or pairing is created. Returns `409` if the asset or pairing already exists but the metadata fields differ.  If an `uploadDestinationId` is provided, it is resolved to its `mediaId` before any further processing. A request that references an asset by `uploadDestinationId` and a subsequent request that uses the resulting `mediaId` are treated as referring to the same identity.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {CreateMediaRequest} createMediaRequest The media creation request details.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createMedia(createMediaRequest: CreateMediaRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateMediaResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createMedia(createMediaRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AplusContentApi.createMedia']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Retrieve an A+ Content document, if available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
          * @param {Set<GetContentDocumentIncludedDataSetEnum>} includedDataSet The set of A+ Content data types to include in the response.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -535,12 +672,25 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Returns a list of ASINs that are related to the specified A+ Content document, if available. If you don\'t include the `asinSet` parameter, this operation returns all ASINs related to the content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-         * @param {Set<ListContentDocumentAsinRelationsIncludedDataSetEnum>} [includedDataSet] The set of A+ Content data types to include in the response. If you don\&#39;t include this parameter, the operation returns the related ASINs without metadata.
+         * Retrieve media metadata and related media for a given media ID. The response uses the unified Media shape. Related media associations are also included in the response.  When `associatedMediaId` is provided, `relatedMedia` is filtered to the specific pairing. When omitted, all related media are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} mediaId The unique identifier for the media asset.
+         * @param {string} [associatedMediaId] When provided, returns only the specific association. When omitted, returns all associated media.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getMedia(mediaId: string, associatedMediaId?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMediaResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getMedia(mediaId, associatedMediaId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AplusContentApi.getMedia']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Retrieve a list of ASINs related to the specified A+ Content document, if available. If you do not include the `asinSet` parameter, the operation returns all ASINs related to the content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
+         * @param {Set<ListContentDocumentAsinRelationsIncludedDataSetEnum>} [includedDataSet] The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata.
          * @param {Set<string>} [asinSet] The set of ASINs.
-         * @param {string} [pageToken] A token that you use to fetch a specific page when there are multiple pages of results.
+         * @param {string} [pageToken] A page token from the &#x60;nextPageToken&#x60; response element returned by your previous call to this operation. &#x60;nextPageToken&#x60; is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include &#x60;pageToken&#x60; as the only parameter. Specifying &#x60;pageToken&#x60; with any other parameter will cause the request to fail. When no &#x60;nextPageToken&#x60; value is returned there are no more pages to return. A &#x60;pageToken&#x60; value is not usable across different operations.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -551,9 +701,9 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Submits an A+ Content document for review, approval, and publishing.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * Submits an A+ Content document for review, approval, and publishing.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -564,10 +714,10 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Replaces all ASINs related to the specified A+ Content document, if available. This operation can add or remove ASINs, depending on the current set of related ASINs. Removing an ASIN will suspend the content document from that ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-         * @param {PostContentDocumentAsinRelationsRequest} postContentDocumentAsinRelationsRequest The request details for the content document ASIN relations.
+         * Replaces all ASINs related to the specified A+ Content document, if available. This may add or remove ASINs, depending on the current set of related ASINs. Removing an ASIN has the side effect of suspending the content document from that ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
+         * @param {PostContentDocumentAsinRelationsRequest} postContentDocumentAsinRelationsRequest The content document ASIN relations request details.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -578,9 +728,9 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Submits a request to suspend visible A+ Content. This doesn\'t delete the content document or the ASIN relations.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * Submits a request to suspend visible A+ Content. This neither deletes the content document nor the ASIN relations.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -591,9 +741,9 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Returns a list of all A+ Content documents, including metadata, that are assigned to a selling partner. To get the actual contents of the A+ Content documents, call the `getContentDocument` operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-         * @param {string} [pageToken] A token that you use to fetch a specific page when there are multiple pages of results.
+         * Retrieve a list of all A+ Content documents assigned to a selling partner. This operation returns only the metadata of the A+ Content documents. Call the `getContentDocument` operation to get the actual contents of the A+ Content documents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
+         * @param {string} [pageToken] A page token from the &#x60;nextPageToken&#x60; response element returned by your previous call to this operation. &#x60;nextPageToken&#x60; is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include &#x60;pageToken&#x60; as the only parameter. Specifying &#x60;pageToken&#x60; with any other parameter will cause the request to fail. When no &#x60;nextPageToken&#x60; value is returned there are no more pages to return. A &#x60;pageToken&#x60; value is not usable across different operations.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -604,10 +754,10 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Searches for A+ Content publishing records, if available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-         * @param {string} asin The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace.
-         * @param {string} [pageToken] A token that you use to fetch a specific page when there are multiple pages of results.
+         * Searches for A+ Content publishing records, if available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
+         * @param {string} asin The Amazon Standard Identification Number (ASIN).
+         * @param {string} [pageToken] A page token from the &#x60;nextPageToken&#x60; response element returned by your previous call to this operation. &#x60;nextPageToken&#x60; is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include &#x60;pageToken&#x60; as the only parameter. Specifying &#x60;pageToken&#x60; with any other parameter will cause the request to fail. When no &#x60;nextPageToken&#x60; value is returned there are no more pages to return. A &#x60;pageToken&#x60; value is not usable across different operations.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -618,9 +768,9 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Updates an existing A+ Content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * Update an existing A+ Content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
          * @param {PostContentDocumentRequest} postContentDocumentRequest The content document request details.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -632,8 +782,22 @@ export const AplusContentApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Checks if the A+ Content document is valid for use on a set of ASINs.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-         * @param {string} marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+         * Update metadata on an existing media asset. The `mediaId` path parameter identifies the target asset. For video-image pairing title updates, provide `associatedMediaId` as a query parameter. For video-level description updates or standalone image title updates, omit `associatedMediaId`.  Each request updates either title or descriptions, but not both. Descriptions are upserted by locale; only provided locales are modified, and existing locales not in the request are preserved.  The response contains the full unified Media shape. When `associatedMediaId` is provided, `relatedMedia` contains only the specified pairing. When `associatedMediaId` is absent, `relatedMedia` contains all affected pairings.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} mediaId The unique identifier for the media asset to update.
+         * @param {UpdateMediaRequest} updateMediaRequest The media update request details.
+         * @param {string} [associatedMediaId] When provided, identifies the specific video-image pairing for title updates. Required when updating a pairing title.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateMedia(mediaId: string, updateMediaRequest: UpdateMediaRequest, associatedMediaId?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UpdateMediaResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateMedia(mediaId, updateMediaRequest, associatedMediaId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AplusContentApi.updateMedia']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Checks if the A+ Content document is valid for use on a set of ASINs.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {string} marketplaceId The identifier for the Amazon store where the A+ Content is published.
          * @param {PostContentDocumentRequest} postContentDocumentRequest The content document request details.
          * @param {Set<string>} [asinSet] The set of ASINs.
          * @param {*} [options] Override http request option.
@@ -655,7 +819,7 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
     const localVarFp = AplusContentApiFp(configuration)
     return {
         /**
-         * Creates a new A+ Content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Create a new A+ Content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {AplusContentApiCreateContentDocumentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -664,7 +828,16 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
             return localVarFp.createContentDocument(requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, options).then((request) => request(axios, basePath));
         },
         /**
-         * Returns an A+ Content document, if available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Create a media asset record. The `mediaType` field determines the type of asset to create.  This operation is idempotent; if the asset or pairing already exists with identical metadata, this operation returns a `200` response with existing data. Returns `201` when a new asset or pairing is created. Returns `409` if the asset or pairing already exists but the metadata fields differ.  If an `uploadDestinationId` is provided, it is resolved to its `mediaId` before any further processing. A request that references an asset by `uploadDestinationId` and a subsequent request that uses the resulting `mediaId` are treated as referring to the same identity.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {AplusContentApiCreateMediaRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createMedia(requestParameters: AplusContentApiCreateMediaRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateMediaResponse> {
+            return localVarFp.createMedia(requestParameters.createMediaRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve an A+ Content document, if available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {AplusContentApiGetContentDocumentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -673,7 +846,16 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
             return localVarFp.getContentDocument(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.includedDataSet, options).then((request) => request(axios, basePath));
         },
         /**
-         * Returns a list of ASINs that are related to the specified A+ Content document, if available. If you don\'t include the `asinSet` parameter, this operation returns all ASINs related to the content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Retrieve media metadata and related media for a given media ID. The response uses the unified Media shape. Related media associations are also included in the response.  When `associatedMediaId` is provided, `relatedMedia` is filtered to the specific pairing. When omitted, all related media are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {AplusContentApiGetMediaRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getMedia(requestParameters: AplusContentApiGetMediaRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetMediaResponse> {
+            return localVarFp.getMedia(requestParameters.mediaId, requestParameters.associatedMediaId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve a list of ASINs related to the specified A+ Content document, if available. If you do not include the `asinSet` parameter, the operation returns all ASINs related to the content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {AplusContentApiListContentDocumentAsinRelationsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -682,7 +864,7 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
             return localVarFp.listContentDocumentAsinRelations(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.includedDataSet, requestParameters.asinSet, requestParameters.pageToken, options).then((request) => request(axios, basePath));
         },
         /**
-         * Submits an A+ Content document for review, approval, and publishing.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Submits an A+ Content document for review, approval, and publishing.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {AplusContentApiPostContentDocumentApprovalSubmissionRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -691,7 +873,7 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
             return localVarFp.postContentDocumentApprovalSubmission(requestParameters.contentReferenceKey, requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Replaces all ASINs related to the specified A+ Content document, if available. This operation can add or remove ASINs, depending on the current set of related ASINs. Removing an ASIN will suspend the content document from that ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Replaces all ASINs related to the specified A+ Content document, if available. This may add or remove ASINs, depending on the current set of related ASINs. Removing an ASIN has the side effect of suspending the content document from that ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {AplusContentApiPostContentDocumentAsinRelationsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -700,7 +882,7 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
             return localVarFp.postContentDocumentAsinRelations(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.postContentDocumentAsinRelationsRequest, options).then((request) => request(axios, basePath));
         },
         /**
-         * Submits a request to suspend visible A+ Content. This doesn\'t delete the content document or the ASIN relations.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Submits a request to suspend visible A+ Content. This neither deletes the content document nor the ASIN relations.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {AplusContentApiPostContentDocumentSuspendSubmissionRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -709,7 +891,7 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
             return localVarFp.postContentDocumentSuspendSubmission(requestParameters.contentReferenceKey, requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Returns a list of all A+ Content documents, including metadata, that are assigned to a selling partner. To get the actual contents of the A+ Content documents, call the `getContentDocument` operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Retrieve a list of all A+ Content documents assigned to a selling partner. This operation returns only the metadata of the A+ Content documents. Call the `getContentDocument` operation to get the actual contents of the A+ Content documents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {AplusContentApiSearchContentDocumentsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -718,7 +900,7 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
             return localVarFp.searchContentDocuments(requestParameters.marketplaceId, requestParameters.pageToken, options).then((request) => request(axios, basePath));
         },
         /**
-         * Searches for A+ Content publishing records, if available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Searches for A+ Content publishing records, if available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {AplusContentApiSearchContentPublishRecordsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -727,7 +909,7 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
             return localVarFp.searchContentPublishRecords(requestParameters.marketplaceId, requestParameters.asin, requestParameters.pageToken, options).then((request) => request(axios, basePath));
         },
         /**
-         * Updates an existing A+ Content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Update an existing A+ Content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {AplusContentApiUpdateContentDocumentRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -736,7 +918,16 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
             return localVarFp.updateContentDocument(requestParameters.contentReferenceKey, requestParameters.marketplaceId, requestParameters.postContentDocumentRequest, options).then((request) => request(axios, basePath));
         },
         /**
-         * Checks if the A+ Content document is valid for use on a set of ASINs.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * Update metadata on an existing media asset. The `mediaId` path parameter identifies the target asset. For video-image pairing title updates, provide `associatedMediaId` as a query parameter. For video-level description updates or standalone image title updates, omit `associatedMediaId`.  Each request updates either title or descriptions, but not both. Descriptions are upserted by locale; only provided locales are modified, and existing locales not in the request are preserved.  The response contains the full unified Media shape. When `associatedMediaId` is provided, `relatedMedia` contains only the specified pairing. When `associatedMediaId` is absent, `relatedMedia` contains all affected pairings.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+         * @param {AplusContentApiUpdateMediaRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateMedia(requestParameters: AplusContentApiUpdateMediaRequest, options?: RawAxiosRequestConfig): AxiosPromise<UpdateMediaResponse> {
+            return localVarFp.updateMedia(requestParameters.mediaId, requestParameters.updateMediaRequest, requestParameters.associatedMediaId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Checks if the A+ Content document is valid for use on a set of ASINs.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
          * @param {AplusContentApiValidateContentDocumentAsinRelationsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -752,7 +943,7 @@ export const AplusContentApiFactory = function (configuration?: Configuration, b
  */
 export interface AplusContentApiCreateContentDocumentRequest {
     /**
-     * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * The identifier for the Amazon store where the A+ Content is published.
      */
     readonly marketplaceId: string
 
@@ -763,16 +954,26 @@ export interface AplusContentApiCreateContentDocumentRequest {
 }
 
 /**
+ * Request parameters for createMedia operation in AplusContentApi.
+ */
+export interface AplusContentApiCreateMediaRequest {
+    /**
+     * The media creation request details.
+     */
+    readonly createMediaRequest: CreateMediaRequest
+}
+
+/**
  * Request parameters for getContentDocument operation in AplusContentApi.
  */
 export interface AplusContentApiGetContentDocumentRequest {
     /**
-     * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+     * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
      */
     readonly contentReferenceKey: string
 
     /**
-     * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * The identifier for the Amazon store where the A+ Content is published.
      */
     readonly marketplaceId: string
 
@@ -783,21 +984,36 @@ export interface AplusContentApiGetContentDocumentRequest {
 }
 
 /**
+ * Request parameters for getMedia operation in AplusContentApi.
+ */
+export interface AplusContentApiGetMediaRequest {
+    /**
+     * The unique identifier for the media asset.
+     */
+    readonly mediaId: string
+
+    /**
+     * When provided, returns only the specific association. When omitted, returns all associated media.
+     */
+    readonly associatedMediaId?: string
+}
+
+/**
  * Request parameters for listContentDocumentAsinRelations operation in AplusContentApi.
  */
 export interface AplusContentApiListContentDocumentAsinRelationsRequest {
     /**
-     * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+     * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
      */
     readonly contentReferenceKey: string
 
     /**
-     * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * The identifier for the Amazon store where the A+ Content is published.
      */
     readonly marketplaceId: string
 
     /**
-     * The set of A+ Content data types to include in the response. If you don\&#39;t include this parameter, the operation returns the related ASINs without metadata.
+     * The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata.
      */
     readonly includedDataSet?: Set<ListContentDocumentAsinRelationsIncludedDataSetEnum>
 
@@ -807,7 +1023,7 @@ export interface AplusContentApiListContentDocumentAsinRelationsRequest {
     readonly asinSet?: Set<string>
 
     /**
-     * A token that you use to fetch a specific page when there are multiple pages of results.
+     * A page token from the &#x60;nextPageToken&#x60; response element returned by your previous call to this operation. &#x60;nextPageToken&#x60; is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include &#x60;pageToken&#x60; as the only parameter. Specifying &#x60;pageToken&#x60; with any other parameter will cause the request to fail. When no &#x60;nextPageToken&#x60; value is returned there are no more pages to return. A &#x60;pageToken&#x60; value is not usable across different operations.
      */
     readonly pageToken?: string
 }
@@ -817,12 +1033,12 @@ export interface AplusContentApiListContentDocumentAsinRelationsRequest {
  */
 export interface AplusContentApiPostContentDocumentApprovalSubmissionRequest {
     /**
-     * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
+     * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
      */
     readonly contentReferenceKey: string
 
     /**
-     * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * The identifier for the Amazon store where the A+ Content is published.
      */
     readonly marketplaceId: string
 }
@@ -832,17 +1048,17 @@ export interface AplusContentApiPostContentDocumentApprovalSubmissionRequest {
  */
 export interface AplusContentApiPostContentDocumentAsinRelationsRequest {
     /**
-     * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
+     * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
      */
     readonly contentReferenceKey: string
 
     /**
-     * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * The identifier for the Amazon store where the A+ Content is published.
      */
     readonly marketplaceId: string
 
     /**
-     * The request details for the content document ASIN relations.
+     * The content document ASIN relations request details.
      */
     readonly postContentDocumentAsinRelationsRequest: PostContentDocumentAsinRelationsRequest
 }
@@ -852,12 +1068,12 @@ export interface AplusContentApiPostContentDocumentAsinRelationsRequest {
  */
 export interface AplusContentApiPostContentDocumentSuspendSubmissionRequest {
     /**
-     * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
+     * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
      */
     readonly contentReferenceKey: string
 
     /**
-     * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * The identifier for the Amazon store where the A+ Content is published.
      */
     readonly marketplaceId: string
 }
@@ -867,12 +1083,12 @@ export interface AplusContentApiPostContentDocumentSuspendSubmissionRequest {
  */
 export interface AplusContentApiSearchContentDocumentsRequest {
     /**
-     * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * The identifier for the Amazon store where the A+ Content is published.
      */
     readonly marketplaceId: string
 
     /**
-     * A token that you use to fetch a specific page when there are multiple pages of results.
+     * A page token from the &#x60;nextPageToken&#x60; response element returned by your previous call to this operation. &#x60;nextPageToken&#x60; is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include &#x60;pageToken&#x60; as the only parameter. Specifying &#x60;pageToken&#x60; with any other parameter will cause the request to fail. When no &#x60;nextPageToken&#x60; value is returned there are no more pages to return. A &#x60;pageToken&#x60; value is not usable across different operations.
      */
     readonly pageToken?: string
 }
@@ -882,17 +1098,17 @@ export interface AplusContentApiSearchContentDocumentsRequest {
  */
 export interface AplusContentApiSearchContentPublishRecordsRequest {
     /**
-     * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * The identifier for the Amazon store where the A+ Content is published.
      */
     readonly marketplaceId: string
 
     /**
-     * The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace.
+     * The Amazon Standard Identification Number (ASIN).
      */
     readonly asin: string
 
     /**
-     * A token that you use to fetch a specific page when there are multiple pages of results.
+     * A page token from the &#x60;nextPageToken&#x60; response element returned by your previous call to this operation. &#x60;nextPageToken&#x60; is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include &#x60;pageToken&#x60; as the only parameter. Specifying &#x60;pageToken&#x60; with any other parameter will cause the request to fail. When no &#x60;nextPageToken&#x60; value is returned there are no more pages to return. A &#x60;pageToken&#x60; value is not usable across different operations.
      */
     readonly pageToken?: string
 }
@@ -902,12 +1118,12 @@ export interface AplusContentApiSearchContentPublishRecordsRequest {
  */
 export interface AplusContentApiUpdateContentDocumentRequest {
     /**
-     * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+     * The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
      */
     readonly contentReferenceKey: string
 
     /**
-     * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * The identifier for the Amazon store where the A+ Content is published.
      */
     readonly marketplaceId: string
 
@@ -918,11 +1134,31 @@ export interface AplusContentApiUpdateContentDocumentRequest {
 }
 
 /**
+ * Request parameters for updateMedia operation in AplusContentApi.
+ */
+export interface AplusContentApiUpdateMediaRequest {
+    /**
+     * The unique identifier for the media asset to update.
+     */
+    readonly mediaId: string
+
+    /**
+     * The media update request details.
+     */
+    readonly updateMediaRequest: UpdateMediaRequest
+
+    /**
+     * When provided, identifies the specific video-image pairing for title updates. Required when updating a pairing title.
+     */
+    readonly associatedMediaId?: string
+}
+
+/**
  * Request parameters for validateContentDocumentAsinRelations operation in AplusContentApi.
  */
 export interface AplusContentApiValidateContentDocumentAsinRelationsRequest {
     /**
-     * The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * The identifier for the Amazon store where the A+ Content is published.
      */
     readonly marketplaceId: string
 
@@ -942,7 +1178,7 @@ export interface AplusContentApiValidateContentDocumentAsinRelationsRequest {
  */
 export class AplusContentApi extends BaseAPI {
     /**
-     * Creates a new A+ Content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Create a new A+ Content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {AplusContentApiCreateContentDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -952,7 +1188,17 @@ export class AplusContentApi extends BaseAPI {
     }
 
     /**
-     * Returns an A+ Content document, if available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Create a media asset record. The `mediaType` field determines the type of asset to create.  This operation is idempotent; if the asset or pairing already exists with identical metadata, this operation returns a `200` response with existing data. Returns `201` when a new asset or pairing is created. Returns `409` if the asset or pairing already exists but the metadata fields differ.  If an `uploadDestinationId` is provided, it is resolved to its `mediaId` before any further processing. A request that references an asset by `uploadDestinationId` and a subsequent request that uses the resulting `mediaId` are treated as referring to the same identity.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {AplusContentApiCreateMediaRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createMedia(requestParameters: AplusContentApiCreateMediaRequest, options?: RawAxiosRequestConfig) {
+        return AplusContentApiFp(this.configuration).createMedia(requestParameters.createMediaRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve an A+ Content document, if available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {AplusContentApiGetContentDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -962,7 +1208,17 @@ export class AplusContentApi extends BaseAPI {
     }
 
     /**
-     * Returns a list of ASINs that are related to the specified A+ Content document, if available. If you don\'t include the `asinSet` parameter, this operation returns all ASINs related to the content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Retrieve media metadata and related media for a given media ID. The response uses the unified Media shape. Related media associations are also included in the response.  When `associatedMediaId` is provided, `relatedMedia` is filtered to the specific pairing. When omitted, all related media are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {AplusContentApiGetMediaRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public getMedia(requestParameters: AplusContentApiGetMediaRequest, options?: RawAxiosRequestConfig) {
+        return AplusContentApiFp(this.configuration).getMedia(requestParameters.mediaId, requestParameters.associatedMediaId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve a list of ASINs related to the specified A+ Content document, if available. If you do not include the `asinSet` parameter, the operation returns all ASINs related to the content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {AplusContentApiListContentDocumentAsinRelationsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -972,7 +1228,7 @@ export class AplusContentApi extends BaseAPI {
     }
 
     /**
-     * Submits an A+ Content document for review, approval, and publishing.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Submits an A+ Content document for review, approval, and publishing.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {AplusContentApiPostContentDocumentApprovalSubmissionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -982,7 +1238,7 @@ export class AplusContentApi extends BaseAPI {
     }
 
     /**
-     * Replaces all ASINs related to the specified A+ Content document, if available. This operation can add or remove ASINs, depending on the current set of related ASINs. Removing an ASIN will suspend the content document from that ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Replaces all ASINs related to the specified A+ Content document, if available. This may add or remove ASINs, depending on the current set of related ASINs. Removing an ASIN has the side effect of suspending the content document from that ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {AplusContentApiPostContentDocumentAsinRelationsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -992,7 +1248,7 @@ export class AplusContentApi extends BaseAPI {
     }
 
     /**
-     * Submits a request to suspend visible A+ Content. This doesn\'t delete the content document or the ASIN relations.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Submits a request to suspend visible A+ Content. This neither deletes the content document nor the ASIN relations.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {AplusContentApiPostContentDocumentSuspendSubmissionRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1002,7 +1258,7 @@ export class AplusContentApi extends BaseAPI {
     }
 
     /**
-     * Returns a list of all A+ Content documents, including metadata, that are assigned to a selling partner. To get the actual contents of the A+ Content documents, call the `getContentDocument` operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Retrieve a list of all A+ Content documents assigned to a selling partner. This operation returns only the metadata of the A+ Content documents. Call the `getContentDocument` operation to get the actual contents of the A+ Content documents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {AplusContentApiSearchContentDocumentsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1012,7 +1268,7 @@ export class AplusContentApi extends BaseAPI {
     }
 
     /**
-     * Searches for A+ Content publishing records, if available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Searches for A+ Content publishing records, if available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {AplusContentApiSearchContentPublishRecordsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1022,7 +1278,7 @@ export class AplusContentApi extends BaseAPI {
     }
 
     /**
-     * Updates an existing A+ Content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Update an existing A+ Content document.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {AplusContentApiUpdateContentDocumentRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1032,7 +1288,17 @@ export class AplusContentApi extends BaseAPI {
     }
 
     /**
-     * Checks if the A+ Content document is valid for use on a set of ASINs.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * Update metadata on an existing media asset. The `mediaId` path parameter identifies the target asset. For video-image pairing title updates, provide `associatedMediaId` as a query parameter. For video-level description updates or standalone image title updates, omit `associatedMediaId`.  Each request updates either title or descriptions, but not both. Descriptions are upserted by locale; only provided locales are modified, and existing locales not in the request are preserved.  The response contains the full unified Media shape. When `associatedMediaId` is provided, `relatedMedia` contains only the specified pairing. When `associatedMediaId` is absent, `relatedMedia` contains all affected pairings.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+     * @param {AplusContentApiUpdateMediaRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public updateMedia(requestParameters: AplusContentApiUpdateMediaRequest, options?: RawAxiosRequestConfig) {
+        return AplusContentApiFp(this.configuration).updateMedia(requestParameters.mediaId, requestParameters.updateMediaRequest, requestParameters.associatedMediaId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Checks if the A+ Content document is valid for use on a set of ASINs.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
      * @param {AplusContentApiValidateContentDocumentAsinRelationsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}

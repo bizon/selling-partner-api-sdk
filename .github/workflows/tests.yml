@@ -13,13 +13,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
-      - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v7
         with:
           node-version-file: .node-version
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - uses: pnpm/setup@v3
+        with:
+          node-version-file: false
 
       - name: Run linter
         run: pnpm xo
@@ -30,13 +29,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
-      - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v7
         with:
           node-version-file: .node-version
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - uses: pnpm/setup@v3
+        with:
+          node-version-file: false
 
       - name: Run typescript checks
         run: pnpm check:ts
@@ -47,13 +45,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
-      - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v7
         with:
           node-version-file: .node-version
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - uses: pnpm/setup@v3
+        with:
+          node-version-file: false
 
       - name: Run tests
         run: pnpm test -- --ci --reporters=default --reporters=github-actions --reporters=jest-junit

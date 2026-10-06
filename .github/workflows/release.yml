@@ -30,13 +30,12 @@ jobs:
           token: ${{ secrets.BOT_GITHUB_TOKEN_PUBLIC }}
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v7
         with:
           node-version-file: .node-version
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - uses: pnpm/setup@v3
+        with:
+          node-version-file: false
 
       - name: Build TS output
         run: pnpm build

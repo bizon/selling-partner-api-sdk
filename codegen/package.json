@@ -14,7 +14,7 @@
   "dependencies": {
     "@openapitools/openapi-generator-cli": "^2.41.0",
     "camelcase": "^9.0.0",
-    "chalk": "^6.0.0",
+    "chalk": "^6.0.1",
     "fast-json-patch": "^3.1.1",
     "globby": "^16.2.4",
     "jsonfile": "^6.2.1",

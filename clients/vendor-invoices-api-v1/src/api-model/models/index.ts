@@ -1,4 +1,5 @@
 export * from './additional-details.js';
+export * from './additional-party-identification.js';
 export * from './address.js';
 export * from './allowance-details.js';
 export * from './charge-details.js';

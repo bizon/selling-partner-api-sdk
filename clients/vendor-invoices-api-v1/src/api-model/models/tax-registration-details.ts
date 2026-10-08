@@ -31,6 +31,7 @@ export interface TaxRegistrationDetails {
 export const TaxRegistrationDetailsTaxRegistrationTypeEnum = {
     Vat: 'VAT',
     Gst: 'GST',
+    LocalTaxNumber: 'LocalTaxNumber',
 } as const;
 
 export type TaxRegistrationDetailsTaxRegistrationTypeEnum = typeof TaxRegistrationDetailsTaxRegistrationTypeEnum[keyof typeof TaxRegistrationDetailsTaxRegistrationTypeEnum];

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for A+ Content Management
- * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
+ * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ Content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
  *
  * The version of the OpenAPI document: 2020-11-01
  * 
@@ -18,20 +18,20 @@
 import type { DecoratorType } from './decorator-type.js';
 
 /**
- * A decorator that is applied to a content string value in order to create rich text.
+ * A decorator applied to a content string value in order to create rich text.
  */
 export interface Decorator {
     'type'?: DecoratorType;
     /**
-     * The starting value of this decorator within the content string. Use zero (`0`) for the first value.
+     * The starting character of this decorator within the content string. Use zero for the first character.
      */
     'offset'?: number;
     /**
-     * The number of content characters to alter with this decorator. Decorators, such as line breaks, can have zero length and fit between characters.
+     * The number of content characters to alter with this decorator. Decorators such as line breaks can have zero length and fit between characters.
      */
     'length'?: number;
     /**
-     * The relative intensity or variation of this decorator. Decorators, such as bullet-points, can have multiple indentation depths.
+     * The relative intensity or variation of this decorator. Decorators such as bullet-points, for example, can have multiple indentation depths.
      */
     'depth'?: number;
 }

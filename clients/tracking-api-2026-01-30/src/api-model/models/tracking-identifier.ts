@@ -42,5 +42,9 @@ export interface TrackingIdentifier {
      * The House Bill of Lading (HBL) number.
      */
     'houseBillOfLadingNumber'?: string;
+    /**
+     * The PRO number assigned by the freight carrier
+     */
+    'proNumber'?: string;
 }
 

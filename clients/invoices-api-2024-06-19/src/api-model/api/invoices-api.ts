@@ -248,10 +248,11 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
          * Returns invoice data for the specified invoice. This operation returns only a subset of the invoices data; refer to the response definition to get all the possible attributes. To get the full invoice, use the `createInvoicesExport` operation to start an export request.
          * @param {string} marketplaceId The marketplace from which you want the invoice.
          * @param {string} invoiceId The invoice identifier.
+         * @param {string} [warehouseCode] The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getInvoice: async (marketplaceId: string, invoiceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getInvoice: async (marketplaceId: string, invoiceId: string, warehouseCode?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getInvoice', 'marketplaceId', marketplaceId)
             // verify required parameter 'invoiceId' is not null or undefined
@@ -271,6 +272,10 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
 
             if (marketplaceId !== undefined) {
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
+            }
+
+            if (warehouseCode !== undefined) {
+                localVarQueryParameter['warehouseCode'] = warehouseCode;
             }
 
             localVarHeaderParameter['Accept'] = 'application/json';
@@ -300,10 +305,11 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
          * @param {Array<string>} [statuses] A list of statuses that you can use to filter invoices. Use the &#x60;getInvoicesAttributes&#x60; operation to check invoice status options.  Min count: 1
          * @param {string} [externalInvoiceId] Return invoices that match this external ID. This is typically the Government Invoice ID.
          * @param {GetInvoicesSortByEnum} [sortBy] The attribute by which you want to sort the invoices in the response.
+         * @param {string} [warehouseCode] The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getInvoices: async (marketplaceId: string, transactionIdentifierName?: string, pageSize?: number, dateEnd?: string, transactionType?: string, transactionIdentifierId?: string, dateStart?: string, series?: string, nextToken?: string, sortOrder?: GetInvoicesSortOrderEnum, invoiceType?: string, statuses?: Array<string>, externalInvoiceId?: string, sortBy?: GetInvoicesSortByEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getInvoices: async (marketplaceId: string, transactionIdentifierName?: string, pageSize?: number, dateEnd?: string, transactionType?: string, transactionIdentifierId?: string, dateStart?: string, series?: string, nextToken?: string, sortOrder?: GetInvoicesSortOrderEnum, invoiceType?: string, statuses?: Array<string>, externalInvoiceId?: string, sortBy?: GetInvoicesSortByEnum, warehouseCode?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getInvoices', 'marketplaceId', marketplaceId)
             const localVarPath = `/tax/invoices/2024-06-19/invoices`;
@@ -378,6 +384,10 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
                 localVarQueryParameter['sortBy'] = sortBy;
             }
 
+            if (warehouseCode !== undefined) {
+                localVarQueryParameter['warehouseCode'] = warehouseCode;
+            }
+
             localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -392,10 +402,11 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * Returns marketplace-dependent schemas and their respective set of possible values.
          * @param {string} marketplaceId The marketplace identifier.
+         * @param {string} [warehouseCode] The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getInvoicesAttributes: async (marketplaceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getInvoicesAttributes: async (marketplaceId: string, warehouseCode?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getInvoicesAttributes', 'marketplaceId', marketplaceId)
             const localVarPath = `/tax/invoices/2024-06-19/attributes`;
@@ -414,6 +425,10 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
                 localVarQueryParameter['marketplaceId'] = marketplaceId;
             }
 
+            if (warehouseCode !== undefined) {
+                localVarQueryParameter['warehouseCode'] = warehouseCode;
+            }
+
             localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -428,10 +443,11 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * Returns the invoice document\'s ID and URL. Use the URL to download the ZIP file, which contains the invoices from the corresponding `createInvoicesExport` request.
          * @param {string} invoicesDocumentId The export document identifier.
+         * @param {string} [warehouseCode] The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getInvoicesDocument: async (invoicesDocumentId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getInvoicesDocument: async (invoicesDocumentId: string, warehouseCode?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'invoicesDocumentId' is not null or undefined
             assertParamExists('getInvoicesDocument', 'invoicesDocumentId', invoicesDocumentId)
             const localVarPath = `/tax/invoices/2024-06-19/documents/{invoicesDocumentId}`
@@ -447,6 +463,10 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
+            if (warehouseCode !== undefined) {
+                localVarQueryParameter['warehouseCode'] = warehouseCode;
+            }
+
             localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -461,10 +481,11 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * Returns invoice export details (including the `exportDocumentId`, if available) for the export that you specify.
          * @param {string} exportId The unique identifier for the export.
+         * @param {string} [warehouseCode] The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getInvoicesExport: async (exportId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getInvoicesExport: async (exportId: string, warehouseCode?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'exportId' is not null or undefined
             assertParamExists('getInvoicesExport', 'exportId', exportId)
             const localVarPath = `/tax/invoices/2024-06-19/exports/{exportId}`
@@ -479,6 +500,10 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (warehouseCode !== undefined) {
+                localVarQueryParameter['warehouseCode'] = warehouseCode;
+            }
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
@@ -499,10 +524,11 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
          * @param {number} [pageSize] The maximum number of invoices to return in a single call.  Minimum: 1  Maximum: 100
          * @param {string} [dateEnd] The latest export creation date and time for exports that you want to include in the response. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default value is the time of the request.
          * @param {GetInvoicesExportsStatusEnum} [status] Return exports matching the status specified. 
+         * @param {string} [warehouseCode] The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getInvoicesExports: async (marketplaceId: string, dateStart?: string, nextToken?: string, pageSize?: number, dateEnd?: string, status?: GetInvoicesExportsStatusEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getInvoicesExports: async (marketplaceId: string, dateStart?: string, nextToken?: string, pageSize?: number, dateEnd?: string, status?: GetInvoicesExportsStatusEnum, warehouseCode?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'marketplaceId' is not null or undefined
             assertParamExists('getInvoicesExports', 'marketplaceId', marketplaceId)
             const localVarPath = `/tax/invoices/2024-06-19/exports`;
@@ -543,6 +569,10 @@ export const InvoicesApiAxiosParamCreator = function (configuration?: Configurat
 
             if (status !== undefined) {
                 localVarQueryParameter['status'] = status;
+            }
+
+            if (warehouseCode !== undefined) {
+                localVarQueryParameter['warehouseCode'] = warehouseCode;
             }
 
             localVarHeaderParameter['Accept'] = 'application/json';
@@ -626,11 +656,12 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
          * Returns invoice data for the specified invoice. This operation returns only a subset of the invoices data; refer to the response definition to get all the possible attributes. To get the full invoice, use the `createInvoicesExport` operation to start an export request.
          * @param {string} marketplaceId The marketplace from which you want the invoice.
          * @param {string} invoiceId The invoice identifier.
+         * @param {string} [warehouseCode] The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getInvoice(marketplaceId: string, invoiceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInvoiceResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getInvoice(marketplaceId, invoiceId, options);
+        async getInvoice(marketplaceId: string, invoiceId: string, warehouseCode?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInvoiceResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getInvoice(marketplaceId, invoiceId, warehouseCode, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['InvoicesApi.getInvoice']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -651,11 +682,12 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
          * @param {Array<string>} [statuses] A list of statuses that you can use to filter invoices. Use the &#x60;getInvoicesAttributes&#x60; operation to check invoice status options.  Min count: 1
          * @param {string} [externalInvoiceId] Return invoices that match this external ID. This is typically the Government Invoice ID.
          * @param {GetInvoicesSortByEnum} [sortBy] The attribute by which you want to sort the invoices in the response.
+         * @param {string} [warehouseCode] The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getInvoices(marketplaceId: string, transactionIdentifierName?: string, pageSize?: number, dateEnd?: string, transactionType?: string, transactionIdentifierId?: string, dateStart?: string, series?: string, nextToken?: string, sortOrder?: GetInvoicesSortOrderEnum, invoiceType?: string, statuses?: Array<string>, externalInvoiceId?: string, sortBy?: GetInvoicesSortByEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInvoicesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getInvoices(marketplaceId, transactionIdentifierName, pageSize, dateEnd, transactionType, transactionIdentifierId, dateStart, series, nextToken, sortOrder, invoiceType, statuses, externalInvoiceId, sortBy, options);
+        async getInvoices(marketplaceId: string, transactionIdentifierName?: string, pageSize?: number, dateEnd?: string, transactionType?: string, transactionIdentifierId?: string, dateStart?: string, series?: string, nextToken?: string, sortOrder?: GetInvoicesSortOrderEnum, invoiceType?: string, statuses?: Array<string>, externalInvoiceId?: string, sortBy?: GetInvoicesSortByEnum, warehouseCode?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInvoicesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getInvoices(marketplaceId, transactionIdentifierName, pageSize, dateEnd, transactionType, transactionIdentifierId, dateStart, series, nextToken, sortOrder, invoiceType, statuses, externalInvoiceId, sortBy, warehouseCode, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['InvoicesApi.getInvoices']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -663,11 +695,12 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
         /**
          * Returns marketplace-dependent schemas and their respective set of possible values.
          * @param {string} marketplaceId The marketplace identifier.
+         * @param {string} [warehouseCode] The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getInvoicesAttributes(marketplaceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInvoicesAttributesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getInvoicesAttributes(marketplaceId, options);
+        async getInvoicesAttributes(marketplaceId: string, warehouseCode?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInvoicesAttributesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getInvoicesAttributes(marketplaceId, warehouseCode, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['InvoicesApi.getInvoicesAttributes']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -675,11 +708,12 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
         /**
          * Returns the invoice document\'s ID and URL. Use the URL to download the ZIP file, which contains the invoices from the corresponding `createInvoicesExport` request.
          * @param {string} invoicesDocumentId The export document identifier.
+         * @param {string} [warehouseCode] The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getInvoicesDocument(invoicesDocumentId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInvoicesDocumentResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getInvoicesDocument(invoicesDocumentId, options);
+        async getInvoicesDocument(invoicesDocumentId: string, warehouseCode?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInvoicesDocumentResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getInvoicesDocument(invoicesDocumentId, warehouseCode, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['InvoicesApi.getInvoicesDocument']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -687,11 +721,12 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
         /**
          * Returns invoice export details (including the `exportDocumentId`, if available) for the export that you specify.
          * @param {string} exportId The unique identifier for the export.
+         * @param {string} [warehouseCode] The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getInvoicesExport(exportId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInvoicesExportResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getInvoicesExport(exportId, options);
+        async getInvoicesExport(exportId: string, warehouseCode?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInvoicesExportResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getInvoicesExport(exportId, warehouseCode, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['InvoicesApi.getInvoicesExport']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -704,11 +739,12 @@ export const InvoicesApiFp = function(configuration?: Configuration) {
          * @param {number} [pageSize] The maximum number of invoices to return in a single call.  Minimum: 1  Maximum: 100
          * @param {string} [dateEnd] The latest export creation date and time for exports that you want to include in the response. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default value is the time of the request.
          * @param {GetInvoicesExportsStatusEnum} [status] Return exports matching the status specified. 
+         * @param {string} [warehouseCode] The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getInvoicesExports(marketplaceId: string, dateStart?: string, nextToken?: string, pageSize?: number, dateEnd?: string, status?: GetInvoicesExportsStatusEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInvoicesExportsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getInvoicesExports(marketplaceId, dateStart, nextToken, pageSize, dateEnd, status, options);
+        async getInvoicesExports(marketplaceId: string, dateStart?: string, nextToken?: string, pageSize?: number, dateEnd?: string, status?: GetInvoicesExportsStatusEnum, warehouseCode?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetInvoicesExportsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getInvoicesExports(marketplaceId, dateStart, nextToken, pageSize, dateEnd, status, warehouseCode, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['InvoicesApi.getInvoicesExports']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -765,7 +801,7 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         getInvoice(requestParameters: InvoicesApiGetInvoiceRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetInvoiceResponse> {
-            return localVarFp.getInvoice(requestParameters.marketplaceId, requestParameters.invoiceId, options).then((request) => request(axios, basePath));
+            return localVarFp.getInvoice(requestParameters.marketplaceId, requestParameters.invoiceId, requestParameters.warehouseCode, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns invoice details for the invoices that match the filters that you specify.
@@ -774,7 +810,7 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         getInvoices(requestParameters: InvoicesApiGetInvoicesRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetInvoicesResponse> {
-            return localVarFp.getInvoices(requestParameters.marketplaceId, requestParameters.transactionIdentifierName, requestParameters.pageSize, requestParameters.dateEnd, requestParameters.transactionType, requestParameters.transactionIdentifierId, requestParameters.dateStart, requestParameters.series, requestParameters.nextToken, requestParameters.sortOrder, requestParameters.invoiceType, requestParameters.statuses, requestParameters.externalInvoiceId, requestParameters.sortBy, options).then((request) => request(axios, basePath));
+            return localVarFp.getInvoices(requestParameters.marketplaceId, requestParameters.transactionIdentifierName, requestParameters.pageSize, requestParameters.dateEnd, requestParameters.transactionType, requestParameters.transactionIdentifierId, requestParameters.dateStart, requestParameters.series, requestParameters.nextToken, requestParameters.sortOrder, requestParameters.invoiceType, requestParameters.statuses, requestParameters.externalInvoiceId, requestParameters.sortBy, requestParameters.warehouseCode, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns marketplace-dependent schemas and their respective set of possible values.
@@ -783,7 +819,7 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         getInvoicesAttributes(requestParameters: InvoicesApiGetInvoicesAttributesRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetInvoicesAttributesResponse> {
-            return localVarFp.getInvoicesAttributes(requestParameters.marketplaceId, options).then((request) => request(axios, basePath));
+            return localVarFp.getInvoicesAttributes(requestParameters.marketplaceId, requestParameters.warehouseCode, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns the invoice document\'s ID and URL. Use the URL to download the ZIP file, which contains the invoices from the corresponding `createInvoicesExport` request.
@@ -792,7 +828,7 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         getInvoicesDocument(requestParameters: InvoicesApiGetInvoicesDocumentRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetInvoicesDocumentResponse> {
-            return localVarFp.getInvoicesDocument(requestParameters.invoicesDocumentId, options).then((request) => request(axios, basePath));
+            return localVarFp.getInvoicesDocument(requestParameters.invoicesDocumentId, requestParameters.warehouseCode, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns invoice export details (including the `exportDocumentId`, if available) for the export that you specify.
@@ -801,7 +837,7 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         getInvoicesExport(requestParameters: InvoicesApiGetInvoicesExportRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetInvoicesExportResponse> {
-            return localVarFp.getInvoicesExport(requestParameters.exportId, options).then((request) => request(axios, basePath));
+            return localVarFp.getInvoicesExport(requestParameters.exportId, requestParameters.warehouseCode, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns invoice exports details for exports that match the filters that you specify.
@@ -810,7 +846,7 @@ export const InvoicesApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         getInvoicesExports(requestParameters: InvoicesApiGetInvoicesExportsRequest, options?: RawAxiosRequestConfig): AxiosPromise<GetInvoicesExportsResponse> {
-            return localVarFp.getInvoicesExports(requestParameters.marketplaceId, requestParameters.dateStart, requestParameters.nextToken, requestParameters.pageSize, requestParameters.dateEnd, requestParameters.status, options).then((request) => request(axios, basePath));
+            return localVarFp.getInvoicesExports(requestParameters.marketplaceId, requestParameters.dateStart, requestParameters.nextToken, requestParameters.pageSize, requestParameters.dateEnd, requestParameters.status, requestParameters.warehouseCode, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -913,6 +949,11 @@ export interface InvoicesApiGetInvoiceRequest {
      * The invoice identifier.
      */
     readonly invoiceId: string
+
+    /**
+     * The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
+     */
+    readonly warehouseCode?: string
 }
 
 /**
@@ -988,6 +1029,11 @@ export interface InvoicesApiGetInvoicesRequest {
      * The attribute by which you want to sort the invoices in the response.
      */
     readonly sortBy?: GetInvoicesSortByEnum
+
+    /**
+     * The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
+     */
+    readonly warehouseCode?: string
 }
 
 /**
@@ -998,6 +1044,11 @@ export interface InvoicesApiGetInvoicesAttributesRequest {
      * The marketplace identifier.
      */
     readonly marketplaceId: string
+
+    /**
+     * The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
+     */
+    readonly warehouseCode?: string
 }
 
 /**
@@ -1008,6 +1059,11 @@ export interface InvoicesApiGetInvoicesDocumentRequest {
      * The export document identifier.
      */
     readonly invoicesDocumentId: string
+
+    /**
+     * The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
+     */
+    readonly warehouseCode?: string
 }
 
 /**
@@ -1018,6 +1074,11 @@ export interface InvoicesApiGetInvoicesExportRequest {
      * The unique identifier for the export.
      */
     readonly exportId: string
+
+    /**
+     * The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
+     */
+    readonly warehouseCode?: string
 }
 
 /**
@@ -1053,6 +1114,11 @@ export interface InvoicesApiGetInvoicesExportsRequest {
      * Return exports matching the status specified. 
      */
     readonly status?: GetInvoicesExportsStatusEnum
+
+    /**
+     * The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
+     */
+    readonly warehouseCode?: string
 }
 
 /**
@@ -1106,7 +1172,7 @@ export class InvoicesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public getInvoice(requestParameters: InvoicesApiGetInvoiceRequest, options?: RawAxiosRequestConfig) {
-        return InvoicesApiFp(this.configuration).getInvoice(requestParameters.marketplaceId, requestParameters.invoiceId, options).then((request) => request(this.axios, this.basePath));
+        return InvoicesApiFp(this.configuration).getInvoice(requestParameters.marketplaceId, requestParameters.invoiceId, requestParameters.warehouseCode, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1116,7 +1182,7 @@ export class InvoicesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public getInvoices(requestParameters: InvoicesApiGetInvoicesRequest, options?: RawAxiosRequestConfig) {
-        return InvoicesApiFp(this.configuration).getInvoices(requestParameters.marketplaceId, requestParameters.transactionIdentifierName, requestParameters.pageSize, requestParameters.dateEnd, requestParameters.transactionType, requestParameters.transactionIdentifierId, requestParameters.dateStart, requestParameters.series, requestParameters.nextToken, requestParameters.sortOrder, requestParameters.invoiceType, requestParameters.statuses, requestParameters.externalInvoiceId, requestParameters.sortBy, options).then((request) => request(this.axios, this.basePath));
+        return InvoicesApiFp(this.configuration).getInvoices(requestParameters.marketplaceId, requestParameters.transactionIdentifierName, requestParameters.pageSize, requestParameters.dateEnd, requestParameters.transactionType, requestParameters.transactionIdentifierId, requestParameters.dateStart, requestParameters.series, requestParameters.nextToken, requestParameters.sortOrder, requestParameters.invoiceType, requestParameters.statuses, requestParameters.externalInvoiceId, requestParameters.sortBy, requestParameters.warehouseCode, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1126,7 +1192,7 @@ export class InvoicesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public getInvoicesAttributes(requestParameters: InvoicesApiGetInvoicesAttributesRequest, options?: RawAxiosRequestConfig) {
-        return InvoicesApiFp(this.configuration).getInvoicesAttributes(requestParameters.marketplaceId, options).then((request) => request(this.axios, this.basePath));
+        return InvoicesApiFp(this.configuration).getInvoicesAttributes(requestParameters.marketplaceId, requestParameters.warehouseCode, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1136,7 +1202,7 @@ export class InvoicesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public getInvoicesDocument(requestParameters: InvoicesApiGetInvoicesDocumentRequest, options?: RawAxiosRequestConfig) {
-        return InvoicesApiFp(this.configuration).getInvoicesDocument(requestParameters.invoicesDocumentId, options).then((request) => request(this.axios, this.basePath));
+        return InvoicesApiFp(this.configuration).getInvoicesDocument(requestParameters.invoicesDocumentId, requestParameters.warehouseCode, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1146,7 +1212,7 @@ export class InvoicesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public getInvoicesExport(requestParameters: InvoicesApiGetInvoicesExportRequest, options?: RawAxiosRequestConfig) {
-        return InvoicesApiFp(this.configuration).getInvoicesExport(requestParameters.exportId, options).then((request) => request(this.axios, this.basePath));
+        return InvoicesApiFp(this.configuration).getInvoicesExport(requestParameters.exportId, requestParameters.warehouseCode, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1156,7 +1222,7 @@ export class InvoicesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public getInvoicesExports(requestParameters: InvoicesApiGetInvoicesExportsRequest, options?: RawAxiosRequestConfig) {
-        return InvoicesApiFp(this.configuration).getInvoicesExports(requestParameters.marketplaceId, requestParameters.dateStart, requestParameters.nextToken, requestParameters.pageSize, requestParameters.dateEnd, requestParameters.status, options).then((request) => request(this.axios, this.basePath));
+        return InvoicesApiFp(this.configuration).getInvoicesExports(requestParameters.marketplaceId, requestParameters.dateStart, requestParameters.nextToken, requestParameters.pageSize, requestParameters.dateEnd, requestParameters.status, requestParameters.warehouseCode, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

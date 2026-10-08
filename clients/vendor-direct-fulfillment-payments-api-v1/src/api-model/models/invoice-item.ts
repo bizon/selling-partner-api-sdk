@@ -15,6 +15,12 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { AdditionalDetails } from './additional-details.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { AllowanceDetails } from './allowance-details.js';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ChargeDetails } from './charge-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -42,6 +48,10 @@ export interface InvoiceItem {
      * The vendor selected product identification of the item.
      */
     'vendorProductIdentifier'?: string;
+    /**
+     * Product or service description for the invoiced line item.
+     */
+    'itemDescription'?: string;
     'invoicedQuantity': ItemQuantity;
     'netCost': Money;
     /**
@@ -61,8 +71,16 @@ export interface InvoiceItem {
      */
     'taxDetails'?: Array<TaxDetail>;
     /**
+     * Line-level additional details provided by the selling party, e.g. tax exemption reason code and text.
+     */
+    'additionalDetails'?: Array<AdditionalDetails>;
+    /**
      * Individual charge details per line item.
      */
     'chargeDetails'?: Array<ChargeDetails>;
+    /**
+     * Individual allowance details per line item.
+     */
+    'allowanceDetails'?: Array<AllowanceDetails>;
 }
 

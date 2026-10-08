@@ -18,6 +18,9 @@
 import type { AdditionalDetails } from './additional-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { AllowanceDetails } from './allowance-details.js';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ChargeDetails } from './charge-details.js';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -45,12 +48,24 @@ export interface InvoiceDetail {
      */
     'invoiceDate': string;
     /**
+     * The date on which the tax becomes chargeable, if different from the invoice date. When absent, the invoice date applies.
+     */
+    'taxPointDate'?: string;
+    /**
+     * Date of delivery of the goods or completion of the service.
+     */
+    'deliveryDate'?: string;
+    /**
      * An additional unique reference number used for regulatory or other purposes.
      */
     'referenceNumber'?: string;
     'remitToParty': PartyIdentification;
     'shipFromParty': PartyIdentification;
     'billToParty'?: PartyIdentification;
+    'billFromParty'?: PartyIdentification;
+    'vatGroupParty'?: PartyIdentification;
+    'taxRepresentativeParty'?: PartyIdentification;
+    'shipToParty'?: PartyIdentification;
     /**
      * Ship-to country code.
      */
@@ -60,6 +75,11 @@ export interface InvoiceDetail {
      */
     'paymentTermsCode'?: string;
     'invoiceTotal': Money;
+    'invoiceBaseAmount'?: Money;
+    /**
+     * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. <br>**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
+     */
+    'exchangeRate'?: string;
     /**
      * Individual tax details per line item.
      */
@@ -72,6 +92,10 @@ export interface InvoiceDetail {
      * Total charge amount details for all line items.
      */
     'chargeDetails'?: Array<ChargeDetails>;
+    /**
+     * Total allowance amount details for all line items.
+     */
+    'allowanceDetails'?: Array<AllowanceDetails>;
     /**
      * Provides the details of the items in this invoice.
      */

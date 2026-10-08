@@ -58,6 +58,10 @@ export interface ExportInvoicesRequest {
      * The marketplace-specific classification of the transaction type for which the invoice was created. Use the `getInvoicesAttributes` operation to check `transactionType` options
      */
     'transactionType'?: string;
+    /**
+     * The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
+     */
+    'warehouseCode'?: string;
 }
 
 

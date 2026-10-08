@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for Delivery Shipment Invoicing
- * The Selling Partner API for Delivery Shipment Invoicing helps you programmatically retrieve shipment invoice information in the Brazil marketplace for a selling partner’s orders.
+ * The Selling Partner API for Delivery Shipment Invoicing helps you programmatically retrieve shipment invoice information in the Brazil Amazon store for a selling partner’s orders.
  *
  * The version of the OpenAPI document: 2022-07-01
  * 
@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { InvoiceStatus } from './invoice-status.js';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ShipmentInvoiceStatus } from './shipment-invoice-status.js';
@@ -31,10 +34,26 @@ export interface GetInvoiceStatusResponse {
     'amazonShipmentId'?: string;
     'invoiceStatus'?: ShipmentInvoiceStatus;
     /**
+     * The invoicing status of the order, considering the aggregated results of all invoices sent.
+     */
+    'orderInvoicingStatus'?: GetInvoiceStatusResponseOrderInvoicingStatusEnum;
+    /**
+     * List of individual invoice statuses for the order.
+     */
+    'invoices'?: Array<InvoiceStatus>;
+    /**
      * A list of error responses returned when a request is unsuccessful.
      */
     'errors'?: Array<Error>;
 }
 
+export const GetInvoiceStatusResponseOrderInvoicingStatusEnum = {
+    Processing: 'Processing',
+    Accepted: 'Accepted',
+    PartiallyAccepted: 'PartiallyAccepted',
+    Rejected: 'Rejected',
+} as const;
+
+export type GetInvoiceStatusResponseOrderInvoicingStatusEnum = typeof GetInvoiceStatusResponseOrderInvoicingStatusEnum[keyof typeof GetInvoiceStatusResponseOrderInvoicingStatusEnum];
 
 

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for A+ Content Management
- * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
+ * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ Content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
  *
  * The version of the OpenAPI document: 2020-11-01
  * 
@@ -15,7 +15,79 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { BrandStoryAboutModule } from './brand-story-about-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { BrandStoryFourAsinModule } from './brand-story-four-asin-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { BrandStoryImageWithLogoModule } from './brand-story-image-with-logo-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { BrandStoryMediaAssetModule } from './brand-story-media-asset-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { BrandStoryQuestionsModule } from './brand-story-questions-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ContentModuleType } from './content-module-type.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumComparisonCarouselModule } from './premium-comparison-carousel-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumComparisonScrollerModule } from './premium-comparison-scroller-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumDualImageTextModule } from './premium-dual-image-text-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumFaqModule } from './premium-faq-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumFourColumnImagesModule } from './premium-four-column-images-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumFullBackgroundImageModule } from './premium-full-background-image-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumFullBackgroundTextModule } from './premium-full-background-text-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumHeroVideoModule } from './premium-hero-video-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumHotspotImageModule } from './premium-hotspot-image-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumHotspotImageTextModule } from './premium-hotspot-image-text-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumImageCarouselModule } from './premium-image-carousel-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumImageTextModule } from './premium-image-text-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumNavigationCarouselModule } from './premium-navigation-carousel-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumRegimenCarouselModule } from './premium-regimen-carousel-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumTechSpecsModule } from './premium-tech-specs-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumTextModule } from './premium-text-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumThreeColumnComparisonModule } from './premium-three-column-comparison-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumVideoImageCarouselModule } from './premium-video-image-carousel-module.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PremiumVideoTextModule } from './premium-video-text-module.js';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { StandardCompanyLogoModule } from './standard-company-logo-module.js';
@@ -63,7 +135,7 @@ import type { StandardTextModule } from './standard-text-module.js';
 import type { StandardThreeImageTextModule } from './standard-three-image-text-module.js';
 
 /**
- * An A+ Content module. An A+ Content document is composed of content modules. The `contentModuleType` property selects which content module types to use.
+ * An A+ Content module. An A+ Content document is composed of content modules. The contentModuleType property selects which content module types to use.
  */
 export interface ContentModule {
     'contentModuleType': ContentModuleType;
@@ -82,6 +154,30 @@ export interface ContentModule {
     'standardTechSpecs'?: StandardTechSpecsModule;
     'standardText'?: StandardTextModule;
     'standardThreeImageText'?: StandardThreeImageTextModule;
+    'premiumImageText'?: PremiumImageTextModule;
+    'premiumText'?: PremiumTextModule;
+    'premiumFullBackgroundText'?: PremiumFullBackgroundTextModule;
+    'premiumFullBackgroundImage'?: PremiumFullBackgroundImageModule;
+    'premiumFourColumnImages'?: PremiumFourColumnImagesModule;
+    'premiumDualImageText'?: PremiumDualImageTextModule;
+    'premiumImageCarousel'?: PremiumImageCarouselModule;
+    'premiumNavigationCarousel'?: PremiumNavigationCarouselModule;
+    'premiumRegimenCarousel'?: PremiumRegimenCarouselModule;
+    'premiumThreeColumnComparison'?: PremiumThreeColumnComparisonModule;
+    'premiumComparisonCarousel'?: PremiumComparisonCarouselModule;
+    'premiumComparisonScroller'?: PremiumComparisonScrollerModule;
+    'premiumHotspotImage'?: PremiumHotspotImageModule;
+    'premiumHotspotImageText'?: PremiumHotspotImageTextModule;
+    'premiumFaq'?: PremiumFaqModule;
+    'premiumTechSpecs'?: PremiumTechSpecsModule;
+    'premiumVideoText'?: PremiumVideoTextModule;
+    'premiumHeroVideo'?: PremiumHeroVideoModule;
+    'premiumVideoImageCarousel'?: PremiumVideoImageCarouselModule;
+    'brandStoryImageWithLogo'?: BrandStoryImageWithLogoModule;
+    'brandStoryFourAsin'?: BrandStoryFourAsinModule;
+    'brandStoryMediaAsset'?: BrandStoryMediaAssetModule;
+    'brandStoryAbout'?: BrandStoryAboutModule;
+    'brandStoryQuestions'?: BrandStoryQuestionsModule;
 }
 
 

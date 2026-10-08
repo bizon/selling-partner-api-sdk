@@ -36,6 +36,9 @@ export const AdditionalDetailsTypeEnum = {
     Sur: 'SUR',
     Ocr: 'OCR',
     CartonCount: 'CartonCount',
+    TaxExemptReason: 'TaxExemptReason',
+    LegalTerms: 'LegalTerms',
+    RegulatoryNote: 'RegulatoryNote',
 } as const;
 
 export type AdditionalDetailsTypeEnum = typeof AdditionalDetailsTypeEnum[keyof typeof AdditionalDetailsTypeEnum];

@@ -55,7 +55,7 @@ export interface OrderItem {
     'quantityOrdered': number;
     'measurement'?: Measurement;
     /**
-     * A list of order items associated with this item. For example, a value-add service purchased with the product.
+     * A list of order items associated with this item. For example, a value-add service purchased with the product, or a product covered by a warranty protection plan.
      */
     'associatedOrderItems'?: Array<AssociatedOrderItem>;
     /**

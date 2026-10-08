@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Selling Partner API for A+ Content Management
- * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
+ * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ Content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
  *
  * The version of the OpenAPI document: 2020-11-01
  * 
@@ -34,6 +34,30 @@ export const ContentModuleType = {
     StandardTechSpecs: 'STANDARD_TECH_SPECS',
     StandardText: 'STANDARD_TEXT',
     StandardThreeImageText: 'STANDARD_THREE_IMAGE_TEXT',
+    PremiumImageText: 'PREMIUM_IMAGE_TEXT',
+    PremiumText: 'PREMIUM_TEXT',
+    PremiumFullBackgroundText: 'PREMIUM_FULL_BACKGROUND_TEXT',
+    PremiumFullBackgroundImage: 'PREMIUM_FULL_BACKGROUND_IMAGE',
+    PremiumFourColumnImages: 'PREMIUM_FOUR_COLUMN_IMAGES',
+    PremiumDualImageText: 'PREMIUM_DUAL_IMAGE_TEXT',
+    PremiumImageCarousel: 'PREMIUM_IMAGE_CAROUSEL',
+    PremiumNavigationCarousel: 'PREMIUM_NAVIGATION_CAROUSEL',
+    PremiumRegimenCarousel: 'PREMIUM_REGIMEN_CAROUSEL',
+    PremiumThreeColumnComparison: 'PREMIUM_THREE_COLUMN_COMPARISON',
+    PremiumComparisonCarousel: 'PREMIUM_COMPARISON_CAROUSEL',
+    PremiumComparisonScroller: 'PREMIUM_COMPARISON_SCROLLER',
+    PremiumHotspotImage: 'PREMIUM_HOTSPOT_IMAGE',
+    PremiumHotspotImageText: 'PREMIUM_HOTSPOT_IMAGE_TEXT',
+    PremiumFaq: 'PREMIUM_FAQ',
+    PremiumTechSpecs: 'PREMIUM_TECH_SPECS',
+    PremiumVideoText: 'PREMIUM_VIDEO_TEXT',
+    PremiumHeroVideo: 'PREMIUM_HERO_VIDEO',
+    PremiumVideoImageCarousel: 'PREMIUM_VIDEO_IMAGE_CAROUSEL',
+    BrandStoryImageWithLogo: 'BRAND_STORY_IMAGE_WITH_LOGO',
+    BrandStoryFourAsin: 'BRAND_STORY_FOUR_ASIN',
+    BrandStoryMediaAsset: 'BRAND_STORY_MEDIA_ASSET',
+    BrandStoryAbout: 'BRAND_STORY_ABOUT',
+    BrandStoryQuestions: 'BRAND_STORY_QUESTIONS',
 } as const;
 
 export type ContentModuleType = typeof ContentModuleType[keyof typeof ContentModuleType];

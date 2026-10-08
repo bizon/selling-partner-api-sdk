@@ -29,7 +29,7 @@
     "turbo": "^2.11.7",
     "typedoc": "^0.28.20",
     "typescript": "^6.0.3",
-    "xo": "^4.0.0"
+    "xo": "^5.0.1"
   },
   "packageManager": "pnpm@12.9.1+sha512.06b055fff5cd20dc12781de173ced3310ce0951bf2ec620211a16045d5444d5c93a663210764ef29a653a610459ba0368f0e74f84d80c54723cf95aae7bc0d6d"
 }

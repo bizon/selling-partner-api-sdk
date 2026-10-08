@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.3.5](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Ffinances-api-2024-06-19%404.3.4...%40sp-api-sdk%2Ffinances-api-2024-06-19%404.3.5) (2026-10-08)
+
+**Note:** Version bump only for package @sp-api-sdk/finances-api-2024-06-19
+
 ## [4.3.4](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Ffinances-api-2024-06-19%404.3.3...%40sp-api-sdk%2Ffinances-api-2024-06-19%404.3.4) (2026-09-29)
 
 **Note:** Version bump only for package @sp-api-sdk/finances-api-2024-06-19

@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.7](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fseller-wallet-api-2024-03-01%402.1.6...%40sp-api-sdk%2Fseller-wallet-api-2024-03-01%402.1.7) (2026-10-08)
+
+**Note:** Version bump only for package @sp-api-sdk/seller-wallet-api-2024-03-01
+
 ## [2.1.6](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fseller-wallet-api-2024-03-01%402.1.5...%40sp-api-sdk%2Fseller-wallet-api-2024-03-01%402.1.6) (2026-09-29)
 
 **Note:** Version bump only for package @sp-api-sdk/seller-wallet-api-2024-03-01

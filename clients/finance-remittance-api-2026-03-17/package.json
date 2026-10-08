@@ -2,7 +2,7 @@
   "name": "@sp-api-sdk/finance-remittance-api-2026-03-17",
   "author": "Bertrand Marron <bertrand@bizon.solutions>",
   "description": "The Selling Partner API for Finance Remittance provides programmatic access to selling partner payment remittance data, including remittance summaries and detailed line items.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "type": "module",
   "engines": {

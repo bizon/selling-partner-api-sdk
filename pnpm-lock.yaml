@@ -1223,8 +1223,8 @@ importers:
         specifier: workspace:*
         version: link:../../internal/typescript-config
       nock:
-        specifier: ^14.0.17
-        version: 14.0.17
+        specifier: ^15.0.1
+        version: 15.0.1(supports-color@10.2.2)
       type-fest:
         specifier: ^5.10.0
         version: 5.10.0
@@ -1257,8 +1257,8 @@ importers:
         specifier: workspace:*
         version: link:../../internal/typescript-config
       nock:
-        specifier: ^14.0.17
-        version: 14.0.17
+        specifier: ^15.0.1
+        version: 15.0.1(supports-color@10.2.2)
       strip-ansi:
         specifier: ^7.2.0
         version: 7.2.0
@@ -2019,9 +2019,9 @@ packages:
     resolution: {integrity: sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA==}
     engines: {node: '>=8'}
 
-  '@mswjs/interceptors@0.41.9':
-    resolution: {integrity: sha512-VVPPgHyQ6ShqnrmDWuxjmUIsO9gWyOZFmuOfLd9LfBGQJwZfy0gvv9pbHSJuoFNIYC7ZDX9aoFwowjcdSC4E8w==}
-    engines: {node: '>=18'}
+  '@mswjs/interceptors@0.44.0':
+    resolution: {integrity: sha512-IYHevRStF4ijM20GI9c9Ndhw483NSAjCydQhUr4/zIB0BNLsTVw3vFAxTo6TlvX4QnV60wEHttUa9539TTAq+A==}
+    engines: {node: '>=22'}
 
   '@napi-rs/wasm-runtime@1.2.4':
     resolution: {integrity: sha512-AJxoUD2/15ESHbvpcyjU274nsAPLuOtPHCk0vKJM5pj//Fg/B1FXNWjPnXTT9PymCYYiHo4zPj0ZomXBKhoy7g==}
@@ -2198,14 +2198,8 @@ packages:
   '@octokit/types@16.0.0':
     resolution: {integrity: sha512-sKq+9r1Mm4efXW1FCk7hFSeJo4QKreL/tTbR0rz/qx/r1Oa2VV83LTA/H/MuCOX7uCIJmQVRKBcbmWoySjAnSg==}
 
-  '@open-draft/deferred-promise@2.2.0':
-    resolution: {integrity: sha512-CecwLWx3rhxVQF6V4bAgPS5t+So2sTbPgAzafKkVizyi7tlwpcFpdFqq+wqF2OwNBmqFuu6tOyouTuxgpMfzmA==}
-
-  '@open-draft/logger@0.3.0':
-    resolution: {integrity: sha512-X2g45fzhxH238HKO4xbSr7+wBS8Fvw6ixhTDuvLd5mqh6bJJCFAPwU9mPDxbcrRtfxv4u5IHCEH77BmxvXmmxQ==}
-
-  '@open-draft/until@2.1.0':
-    resolution: {integrity: sha512-U69T3ItWHvLwGg5eJ0n3I62nWuE6ilHlmz7zM0npLBRvPRd7e6NYmg54vvRtP5mZG7kZqZCFVdsTWo7BPtBujg==}
+  '@open-draft/until@3.0.1':
+    resolution: {integrity: sha512-s7/9ELP4aP9YZtW7RJaa0Xf3RISaRH9+EFN18FtykJYRHGNrl8f9ymvoNXzjhrjmftFvkQudtuDU9RYhk0xs3A==}
 
   '@openapitools/openapi-generator-cli@2.41.0':
     resolution: {integrity: sha512-T/cDW4XeO2MJJCgR+Teuc2z3jIuxlIlboFxFPMDvo9m/6hpIagtGGI+Z+ucMuaPVAVIM13FdVr+Zizwq4xUHJA==}
@@ -4611,9 +4605,6 @@ packages:
   json-stringify-nice@1.1.4:
     resolution: {integrity: sha512-5Z5RFW63yxReJ7vANgW6eZFGWaQvnPE3WNmZoOJrSkGju2etKA2L5rrOa1sm877TVTFt57A80BH1bArcmlLfPw==}
 
-  json-stringify-safe@5.0.1:
-    resolution: {integrity: sha512-ZClg6AaYvamvYEE82d3Iyd3vSSIjQ+odgjaTzRuO3s7toCdFKczob2i0zCh7JE8kWn17yvAWhUVxvqGwUalsRA==}
-
   json-with-bigint@3.5.8:
     resolution: {integrity: sha512-eq/4KP6K34kwa7TcFdtvnftvHCD9KvHOGGICWwMFc4dOOKF5t4iYqnfLK8otCRCRv06FXOzGGyqE8h8ElMvvdw==}
 
@@ -5069,9 +5060,9 @@ packages:
     resolution: {integrity: sha512-eonl3sLUha+S1GzTPxychyhnUzKyeQkZ7jLjKrBagJgPla13F+uQ71HgpFefyHgqrjEbCPkDArxYsjY8/+gLKA==}
     engines: {node: '>= 0.4.0'}
 
-  nock@14.0.17:
-    resolution: {integrity: sha512-EjRr1weMa4ALQX35AgZTEnP+weJJjlW1KGDiNM2IQC2069YDHas4f4B4UUYR+TTLyKWxJvOz2wObDKQs/LNreA==}
-    engines: {node: '>=18.20.0 <20 || >=20.12.1'}
+  nock@15.0.1:
+    resolution: {integrity: sha512-Mjx5Xl4t9vP13eUZPWqwwpjjXNjvhUTo1qTdryVM3+7t6Z2w6WHZ9GVZk/zQ8Ym1vbmloWaglye3cloyHAJ8FA==}
+    engines: {node: '>=20.12.1'}
 
   node-addon-api@7.1.1:
     resolution: {integrity: sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==}
@@ -5364,10 +5355,6 @@ packages:
   promise-call-limit@3.0.2:
     resolution: {integrity: sha512-mRPQO2T1QQVw11E7+UdCJu7S61eJVWknzml9sC1heAdj1jxl0fWMBypIt9ZOcLFf8FkG995ZD7RnVk7HH72fZw==}
 
-  propagate@2.0.1:
-    resolution: {integrity: sha512-vGrhOavPSTz4QVNuBNdcNXePNdNMaO1xj9yBeH1ScQPjk/rhg9sSlCXPhMkFuaNNW/syTvYqsnbIJxMBfRbbag==}
-    engines: {node: '>= 8'}
-
   protocols@2.0.2:
     resolution: {integrity: sha512-hHVTzba3wboROl0/aWRRG9dMytgH6ow//STBZh43l/wQgmMhYhOFi0EHWAPtoCz9IAUymsyP0TSBHkhgMEGNnQ==}
 
@@ -5484,6 +5471,9 @@ packages:
   resolve@1.22.8:
     resolution: {integrity: sha512-oKWePCxqpd6FlLvGV1VU0x7bkPmmCNolxzjMf4NczoDnQcIWrAF+cPtZn5i6n+RfD2d9i0tzpKnG6Yk168yIyw==}
     hasBin: true
+
+  rettime@0.11.12:
+    resolution: {integrity: sha512-5ExtR1ppiDBQkVoPw5NAqdbfH4Iq2VOmQKHMtUoaFxA9bo2krzFYBtyq6K40xxbYp+2w/YOr6D+1ToF6tTN53A==}
 
   reusify@1.1.0:
     resolution: {integrity: sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==}
@@ -5645,9 +5635,6 @@ packages:
   stack-utils@2.0.6:
     resolution: {integrity: sha512-XlkWvfIm6RmsWtNJx+uqtKLS8eqFbxUg0ZzLXqY0caEy9l7hruX8IpiDnjsLavoBgqCCR71TqWO8MaXYheJ3RQ==}
     engines: {node: '>=10'}
-
-  strict-event-emitter@0.5.1:
-    resolution: {integrity: sha512-vMgjE/GGEPEFnhFub6pa4FmJBRBVOLpIII2hvCZ8Kzb7K0hlHo7mQv6xYrBvCL2LtAIBwFUK8wvuJgTVSQ5MFQ==}
 
   string-length@4.0.2:
     resolution: {integrity: sha512-+l6rNN5fYHNhZZy41RXsYptCjA2Igmq4EG7kZAYFQI1E1VTXarr6ZPXBg6eq7Y6eK4FEhY6AJlyuFIb/v/S0VQ==}
@@ -7115,14 +7102,16 @@ snapshots:
 
   '@lukeed/csprng@1.1.0': {}
 
-  '@mswjs/interceptors@0.41.9':
+  '@mswjs/interceptors@0.44.0(supports-color@10.2.2)':
     dependencies:
-      '@open-draft/deferred-promise': 2.2.0
-      '@open-draft/logger': 0.3.0
-      '@open-draft/until': 2.1.0
+      '@open-draft/until': 3.0.1
+      '@types/debug': 4.1.13
+      debug: 4.4.3(supports-color@10.2.2)
       is-node-process: 1.2.0
       outvariant: 1.4.3
-      strict-event-emitter: 0.5.1
+      rettime: 0.11.12
+    transitivePeerDependencies:
+      - supports-color
 
   '@napi-rs/wasm-runtime@1.2.4(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)':
     dependencies:
@@ -7363,14 +7352,7 @@ snapshots:
     dependencies:
       '@octokit/openapi-types': 27.0.0
 
-  '@open-draft/deferred-promise@2.2.0': {}
-
-  '@open-draft/logger@0.3.0':
-    dependencies:
-      is-node-process: 1.2.0
-      outvariant: 1.4.3
-
-  '@open-draft/until@2.1.0': {}
+  '@open-draft/until@3.0.1': {}
 
   '@openapitools/openapi-generator-cli@2.41.0(debug@4.4.3(supports-color@10.2.2))(supports-color@10.2.2)':
     dependencies:
@@ -9840,8 +9822,6 @@ snapshots:
 
   json-stringify-nice@1.1.4: {}
 
-  json-stringify-safe@5.0.1: {}
-
   json-with-bigint@3.5.8: {}
 
   json5@2.2.3: {}
@@ -10583,11 +10563,11 @@ snapshots:
 
   netmask@2.1.1: {}
 
-  nock@14.0.17:
+  nock@15.0.1(supports-color@10.2.2):
     dependencies:
-      '@mswjs/interceptors': 0.41.9
-      json-stringify-safe: 5.0.1
-      propagate: 2.0.1
+      '@mswjs/interceptors': 0.44.0(supports-color@10.2.2)
+    transitivePeerDependencies:
+      - supports-color
 
   node-addon-api@7.1.1: {}
 
@@ -10901,8 +10881,6 @@ snapshots:
 
   promise-call-limit@3.0.2: {}
 
-  propagate@2.0.1: {}
-
   protocols@2.0.2: {}
 
   proxy-agent-negotiate@1.1.0: {}
@@ -11020,6 +10998,8 @@ snapshots:
       is-core-module: 2.15.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
+
+  rettime@0.11.12: {}
 
   reusify@1.1.0: {}
 
@@ -11179,8 +11159,6 @@ snapshots:
   stack-utils@2.0.6:
     dependencies:
       escape-string-regexp: 2.0.0
-
-  strict-event-emitter@0.5.1: {}
 
   string-length@4.0.2:
     dependencies:

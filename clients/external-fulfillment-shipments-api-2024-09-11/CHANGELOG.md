@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.0](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fexternal-fulfillment-shipments-api-2024-09-11%402.2.1...%40sp-api-sdk%2Fexternal-fulfillment-shipments-api-2024-09-11%402.3.0) (2026-10-14)
+
+### Features
+
+* **clients:** update models as of 2026-10-14 ([#1916](https://github.com/bizon/selling-partner-api-sdk/issues/1916)) ([d65c06b](https://github.com/bizon/selling-partner-api-sdk/commit/d65c06b175cd6fb9ec03485f7de8842d5140e8bd))
+
 ## [2.2.1](https://github.com/bizon/selling-partner-api-sdk/compare/%40sp-api-sdk%2Fexternal-fulfillment-shipments-api-2024-09-11%402.2.0...%40sp-api-sdk%2Fexternal-fulfillment-shipments-api-2024-09-11%402.2.1) (2026-10-08)
 
 **Note:** Version bump only for package @sp-api-sdk/external-fulfillment-shipments-api-2024-09-11

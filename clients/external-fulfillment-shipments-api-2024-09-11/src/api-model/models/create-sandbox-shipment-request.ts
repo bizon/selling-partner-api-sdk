@@ -55,8 +55,8 @@ export const CreateSandboxShipmentRequestMarketplaceChannelEnum = {
 
 export type CreateSandboxShipmentRequestMarketplaceChannelEnum = typeof CreateSandboxShipmentRequestMarketplaceChannelEnum[keyof typeof CreateSandboxShipmentRequestMarketplaceChannelEnum];
 export const CreateSandboxShipmentRequestShippingTypeEnum = {
-    Self: 'SELF',
-    Marketplace: 'MARKETPLACE',
+    Self: 'Self',
+    Marketplace: 'Marketplace',
     ThirdPartyCarrier: 'THIRD_PARTY_CARRIER',
 } as const;
 

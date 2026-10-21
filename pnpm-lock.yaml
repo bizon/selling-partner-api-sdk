@@ -1223,8 +1223,8 @@ importers:
         specifier: workspace:*
         version: link:../../internal/typescript-config
       nock:
-        specifier: ^15.0.1
-        version: 15.0.1(supports-color@10.2.2)
+        specifier: ^15.0.2
+        version: 15.0.2(supports-color@10.2.2)
       type-fest:
         specifier: ^5.10.0
         version: 5.10.0
@@ -1257,8 +1257,8 @@ importers:
         specifier: workspace:*
         version: link:../../internal/typescript-config
       nock:
-        specifier: ^15.0.1
-        version: 15.0.1(supports-color@10.2.2)
+        specifier: ^15.0.2
+        version: 15.0.2(supports-color@10.2.2)
       strip-ansi:
         specifier: ^7.2.0
         version: 7.2.0
@@ -5060,8 +5060,8 @@ packages:
     resolution: {integrity: sha512-eonl3sLUha+S1GzTPxychyhnUzKyeQkZ7jLjKrBagJgPla13F+uQ71HgpFefyHgqrjEbCPkDArxYsjY8/+gLKA==}
     engines: {node: '>= 0.4.0'}
 
-  nock@15.0.1:
-    resolution: {integrity: sha512-Mjx5Xl4t9vP13eUZPWqwwpjjXNjvhUTo1qTdryVM3+7t6Z2w6WHZ9GVZk/zQ8Ym1vbmloWaglye3cloyHAJ8FA==}
+  nock@15.0.2:
+    resolution: {integrity: sha512-kz2EsEGshxe/zw0iMMoJFqdDp3ZBju5tgLA03CepBi9R0NHckyF/UgfmoyEYt2DNFZoe8tpx1V9M187qt43WJg==}
     engines: {node: '>=20.12.1'}
 
   node-addon-api@7.1.1:
@@ -10563,7 +10563,7 @@ snapshots:
 
   netmask@2.1.1: {}
 
-  nock@15.0.1(supports-color@10.2.2):
+  nock@15.0.2(supports-color@10.2.2):
     dependencies:
       '@mswjs/interceptors': 0.44.0(supports-color@10.2.2)
     transitivePeerDependencies:

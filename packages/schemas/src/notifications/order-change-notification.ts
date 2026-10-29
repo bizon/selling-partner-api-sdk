@@ -240,10 +240,15 @@ export const orderChangeNotification = {
             OrderChangeType: {
               $id: '#/properties/Payload/properties/OrderChangeNotification/properties/OrderChangeType',
               type: 'string',
-              enum: ['BuyerRequestedChange', 'DeliveryTipChange', 'OrderStatusChange'],
+              enum: [
+                'BuyerRequestedChange',
+                'DeliveryTipChange',
+                'OrderStatusChange',
+                'PreFulfillmentStatusChange',
+              ],
               title: 'The OrderChangeType schema',
               description:
-                'Change type of this notification. The possible values include BuyerRequestedChange, DeliveryTipChange, OrderStatusChange.',
+                'Change type of this notification. The possible values include BuyerRequestedChange, DeliveryTipChange, OrderStatusChange, PreFulfillmentStatusChange.',
               examples: ['BuyerRequestedChange'],
             },
             OrderChangeTrigger: {
@@ -347,6 +352,14 @@ export const orderChangeNotification = {
                   title: 'The OrderStatus schema',
                   description: 'The current order status.',
                   examples: ['Unshipped'],
+                },
+                PreFulfillmentStatus: {
+                  $id: '#/properties/Payload/properties/OrderChangeNotification/properties/Summary/properties/PreFulfillmentStatus',
+                  type: 'string',
+                  title: 'The PreFulfillmentStatus schema',
+                  description:
+                    "The seller action status for the order's reservation (for example `AWAITING_SELLER_ACTION`, `ACKNOWLEDGED`, or `REJECTED`). Present only on `PreFulfillmentStatusChange` notifications; absent for all other `OrderChangeType` values.",
+                  examples: ['AWAITING_SELLER_ACTION'],
                 },
                 PurchaseDate: {
                   $id: '#/properties/Payload/properties/OrderChangeNotification/properties/Summary/properties/PurchaseDate',

@@ -60,5 +60,6 @@ export * from './status.js';
 export * from './tax.js';
 export * from './tax-registration-info.js';
 export * from './time-window.js';
+export * from './tracking-details.js';
 export * from './update-sandbox-shipment-request.js';
 export * from './weight.js';

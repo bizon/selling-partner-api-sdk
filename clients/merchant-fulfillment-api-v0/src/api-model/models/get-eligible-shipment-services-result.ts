@@ -35,7 +35,7 @@ export interface GetEligibleShipmentServicesResult {
      */
     'ShippingServiceList': Array<ShippingService>;
     /**
-     * List of services that are for some reason unavailable for this request
+     * List of services that are for some reason unavailable for this request.
      */
     'RejectedShippingServiceList'?: Array<RejectedShippingService>;
     /**

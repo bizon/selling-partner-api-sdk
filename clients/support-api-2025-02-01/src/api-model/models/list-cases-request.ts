@@ -13,23 +13,11 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import type { CaseFilters } from './case-filters.js';
 
 /**
  * The request body for the listCases operation.
  */
 export interface ListCasesRequest {
-    /**
-     * The marketplace identifier used for authorization only. This field does not impact the returned collection. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     */
-    'marketplaceId'?: string;
-    'caseFilters'?: CaseFilters;
-    /**
-     * The field to sort cases by. Defaults to CREATION_DATE when absent.
-     */
-    'sortField'?: ListCasesRequestSortFieldEnum;
     /**
      * The sort direction. Defaults to DESC when absent.
      */
@@ -44,17 +32,6 @@ export interface ListCasesRequest {
     'nextToken'?: string;
 }
 
-export const ListCasesRequestSortFieldEnum = {
-    CaseId: 'CASE_ID',
-    Status: 'STATUS',
-    Subject: 'SUBJECT',
-    PrimaryEmail: 'PRIMARY_EMAIL',
-    CreationDate: 'CREATION_DATE',
-    LastOutboundDate: 'LAST_OUTBOUND_DATE',
-    ResolutionDate: 'RESOLUTION_DATE',
-} as const;
-
-export type ListCasesRequestSortFieldEnum = typeof ListCasesRequestSortFieldEnum[keyof typeof ListCasesRequestSortFieldEnum];
 export const ListCasesRequestSortOrderEnum = {
     Asc: 'ASC',
     Desc: 'DESC',

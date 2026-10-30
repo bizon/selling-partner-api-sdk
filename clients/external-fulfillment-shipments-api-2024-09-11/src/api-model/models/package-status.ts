@@ -19,10 +19,6 @@
  */
 
 export const PackageStatus = {
-    Created: 'CREATED',
-    PickupSlotRetrieved: 'PICKUP_SLOT_RETRIEVED',
-    InvoiceGenerated: 'INVOICE_GENERATED',
-    ShiplabelGenerated: 'SHIPLABEL_GENERATED',
     Shipped: 'SHIPPED',
     Delivered: 'DELIVERED',
 } as const;

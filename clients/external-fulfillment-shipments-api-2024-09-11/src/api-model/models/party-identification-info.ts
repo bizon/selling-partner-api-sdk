@@ -21,7 +21,7 @@ import type { Address } from './address.js';
 import type { TaxRegistrationInfo } from './tax-registration-info.js';
 
 /**
- * Party identification details for the shipment, applicable to direct fulfillment shipments.
+ * Party identification details for the shipment, applicable only to direct fulfillment shipments.
  */
 export interface PartyIdentificationInfo {
     /**

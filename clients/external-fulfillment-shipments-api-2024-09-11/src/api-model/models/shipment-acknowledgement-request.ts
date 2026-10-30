@@ -26,7 +26,7 @@ export interface ShipmentAcknowledgementRequest {
      */
     'referenceId'?: string;
     /**
-     * Details about the line items from the shipment that are being confirmed or rejected by the seller.
+     * Details about the line items from the shipment that are being rejected by the seller.
      */
     'lineItems': Array<LineItemWithReason>;
 }

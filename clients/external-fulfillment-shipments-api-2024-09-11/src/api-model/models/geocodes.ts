@@ -19,16 +19,16 @@
  */
 export interface Geocodes {
     /**
-     * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
+     * A decimal number.
      */
-    'latitude': string;
+    'latitude': number;
     /**
-     * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
+     * A decimal number.
      */
-    'longitude': string;
+    'longitude': number;
     /**
-     * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
+     * A decimal number.
      */
-    'elevation'?: string;
+    'elevation'?: number;
 }
 

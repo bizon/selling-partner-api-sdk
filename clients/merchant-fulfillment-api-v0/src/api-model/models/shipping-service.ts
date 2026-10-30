@@ -40,7 +40,7 @@ import type { ShippingServiceOptions } from './shipping-service-options.js';
  */
 export interface ShippingService {
     /**
-     * A plain text representation of a carrier\'s shipping service. For example, \"UPS Ground\" or \"FedEx Standard Overnight\". 
+     * The carrier\'s shipping service name, such as \"UPS Ground\" or \"FedEx Standard Overnight\".
      */
     'ShippingServiceName': string;
     /**
@@ -84,7 +84,7 @@ export interface ShippingService {
      */
     'AvailableFormatOptionsForLabel'?: Array<LabelFormatOption>;
     /**
-     * When true, additional seller inputs are required.
+     * When `true`, additional seller inputs are required.
      */
     'RequiresAdditionalSellerInputs': boolean;
     'Benefits'?: Benefits;

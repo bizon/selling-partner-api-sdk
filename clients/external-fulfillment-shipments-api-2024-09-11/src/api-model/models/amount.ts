@@ -19,9 +19,9 @@
  */
 export interface Amount {
     /**
-     * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
+     * A decimal number.
      */
-    'value': string;
+    'value': number;
     /**
      * Three digit currency code in ISO 4217 format.
      */

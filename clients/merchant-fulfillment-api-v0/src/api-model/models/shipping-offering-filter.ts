@@ -25,11 +25,11 @@ import type { DeliveryExperienceOption } from './delivery-experience-option.js';
  */
 export interface ShippingOfferingFilter {
     /**
-     * When true, include a packing slip with the label.
+     * When `true`, include a packing slip with the label.
      */
     'IncludePackingSlipWithLabel'?: boolean;
     /**
-     * When true, include complex shipping options.
+     * When `true`, include complex shipping options.
      */
     'IncludeComplexShippingOptions'?: boolean;
     'CarrierWillPickUp'?: CarrierWillPickUpOption;

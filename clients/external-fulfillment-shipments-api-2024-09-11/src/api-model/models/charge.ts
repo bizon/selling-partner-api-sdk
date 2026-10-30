@@ -38,11 +38,11 @@ export interface Charge {
 }
 
 export const ChargeChargeTypeEnum = {
-    Product: 'PRODUCT',
-    Shipping: 'SHIPPING',
-    GiftWrap: 'GIFT_WRAP',
-    Total: 'TOTAL',
-    Other: 'OTHER',
+    Product: 'product',
+    Shipping: 'shipping',
+    GiftWrap: 'gift_wrap',
+    Total: 'total',
+    Other: 'other',
 } as const;
 
 export type ChargeChargeTypeEnum = typeof ChargeChargeTypeEnum[keyof typeof ChargeChargeTypeEnum];

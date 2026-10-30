@@ -21,6 +21,9 @@ import type { PackageDimensions } from './package-dimensions.js';
 import type { PackageLineItem } from './package-line-item.js';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { TrackingDetails } from './tracking-details.js';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { Weight } from './weight.js';
 
 /**
@@ -28,7 +31,7 @@ import type { Weight } from './weight.js';
  */
 export interface Package {
     /**
-     * An ID that uniquely identifies a package within a shipment.
+     * The ID of the package whose information you want to update.
      */
     'id': string;
     'dimensions': PackageDimensions;
@@ -49,6 +52,7 @@ export interface Package {
      * Whether the package requires standard handling or extra care.
      */
     'packageHandlingRequirements'?: PackagePackageHandlingRequirementsEnum;
+    'trackingDetails'?: TrackingDetails;
 }
 
 export const PackageStatusEnum = {

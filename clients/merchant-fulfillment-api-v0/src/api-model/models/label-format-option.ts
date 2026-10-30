@@ -22,7 +22,7 @@ import type { LabelFormat } from './label-format.js';
  */
 export interface LabelFormatOption {
     /**
-     * When true, include a packing slip with the label.
+     * When `true`, include a packing slip with the label.
      */
     'IncludePackingSlipWithLabel'?: boolean;
     'LabelFormat'?: LabelFormat;

@@ -22,9 +22,10 @@ import type { RequirementLevel } from './requirement-level.js';
  */
 export interface ComplianceAttributes {
     'hazmatLabelsRequirement': RequirementLevel;
+    'hazmatLabelRequirement'?: RequirementLevel;
     'serialNumberRequirement': RequirementLevel;
-    'countryOfOriginRequirement': RequirementLevel;
-    'itemValueRequirement': RequirementLevel;
+    'countryOfOriginRequirement'?: RequirementLevel;
+    'itemValueRequirement'?: RequirementLevel;
 }
 
 

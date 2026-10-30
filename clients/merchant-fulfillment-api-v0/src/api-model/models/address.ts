@@ -47,7 +47,7 @@ export interface Address {
      */
     'City': string;
     /**
-     * The state or province code. This is a required field in Canada, US, and UK marketplaces, and for shipments that originate in China.
+     * The state or province code. This is a required field in Amazon Canada, US, and UK stores, and for shipments that originate in China.
      */
     'StateOrProvinceCode'?: string;
     /**

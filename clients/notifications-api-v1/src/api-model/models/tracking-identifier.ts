@@ -41,6 +41,10 @@ export interface TrackingIdentifier {
      * House Bill of Lading number.
      */
     'houseBillOfLadingNumber'?: string;
+    /**
+     * The PRO number assigned by the freight carrier
+     */
+    'proNumber'?: string;
     'carrierTracking'?: TrackingIdentifierCarrierTracking;
 }
 

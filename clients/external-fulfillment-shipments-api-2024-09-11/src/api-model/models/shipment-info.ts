@@ -43,9 +43,9 @@ export interface ShipmentInfo {
      */
     'orderStatesEligibleForRejection'?: Array<string>;
     /**
-     * The timestamp of when the order was placed, in UTC
+     * The epoch timestamp (in milliseconds) of when the order was placed, in UTC.
      */
-    'orderPlacedTimestamp'?: string;
+    'orderPlacedTimestamp'?: number;
     /**
      * The source of the order operation.
      */

@@ -57,10 +57,6 @@ export interface Case {
      * The time when the case was resolved. In [ISO 8601](https://developer-docs.amazon/sp-api/docs/iso-8601) format.
      */
     'resolvedDate'?: string;
-    /**
-     * The timestamp of the last outbound contact on the case. The date must be in <a href=\'https://developer-docs.amazon.com/sp-api/docs/iso-8601\'>ISO 8601</a> format.
-     */
-    'lastOutboundDate'?: string;
 }
 
 export const CaseStatusEnum = {

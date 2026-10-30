@@ -19,9 +19,9 @@
  */
 export interface Dimension {
     /**
-     * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
+     * A decimal number.
      */
-    'value': string;
+    'value': number;
     /**
      * The unit of measurement of the dimension.
      */

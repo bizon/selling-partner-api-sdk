@@ -18,7 +18,7 @@
 import type { ExcludedBenefit } from './excluded-benefit.js';
 
 /**
- * Benefits that are included and excluded for each shipping offer. Benefits represents services provided by Amazon (for example, `CLAIMS_PROTECTED`) when sellers purchase shipping through Amazon. Benefit details are made available for any shipment placed on or after January 1st 2024 00:00 UTC.
+ * Benefits that are included and excluded for each shipping offer. Benefits represent services provided by Amazon (for example, `CLAIMS_PROTECTED`) when sellers purchase shipping through Amazon. Benefit details are available for any shipment placed on or after January 1, 2024, 00:00 UTC.
  */
 export interface Benefits {
     /**

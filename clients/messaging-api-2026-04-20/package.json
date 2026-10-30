@@ -1,0 +1,70 @@
+{
+  "name": "@sp-api-sdk/messaging-api-2026-04-20",
+  "author": "Bertrand Marron <bertrand@bizon.solutions>",
+  "description": "The Selling Partner API for Messaging Automations allows sellers to programmatically manage automated buyer-seller messaging configurations. An automation configuration defines rules for automatically responding to buyer messages (for example, auto-responses to common questions about shipping, returns, or product details). A seller can create multiple automation configurations, and each configuration can apply to one or more Amazon stores. Each store-specific entry within a configuration contains the response content and the automation trigger conditions. The marketplaceIds query parameter is required on all operations for store-scoped authorization.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "sideEffects": false,
+  "source": "./src/index.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "xo": "xo --cwd=../.. clients/messaging-api-2026-04-20",
+    "check:ts": "tsc --noEmit",
+    "build": "tsdown"
+  },
+  "dependencies": {
+    "@sp-api-sdk/common": "workspace:*",
+    "axios": "^1.20.0"
+  },
+  "devDependencies": {
+    "@sp-api-sdk/typescript-config": "workspace:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bizon/selling-partner-api-sdk.git",
+    "directory": "clients/messaging-api-2026-04-20"
+  },
+  "bugs": {
+    "url": "https://github.com/bizon/selling-partner-api-sdk/issues"
+  },
+  "homepage": "https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/messaging-api-2026-04-20",
+  "keywords": [
+    "amazon",
+    "amazon-sp-api",
+    "bizon",
+    "esm",
+    "nodejs",
+    "sdk",
+    "selling partner api",
+    "selling-partner-api",
+    "sp api",
+    "sp sdk",
+    "sp-api",
+    "typescript",
+    "messaging api"
+  ]
+}

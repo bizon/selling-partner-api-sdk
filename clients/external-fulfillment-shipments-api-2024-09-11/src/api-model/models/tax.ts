@@ -26,9 +26,9 @@ export interface Tax {
      */
     'type'?: TaxTypeEnum;
     /**
-     * A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
+     * A decimal number.
      */
-    'rate'?: string;
+    'rate'?: number;
     'charge': ChargeBreakup;
 }
 

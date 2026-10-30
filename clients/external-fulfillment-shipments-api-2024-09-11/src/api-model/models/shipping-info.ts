@@ -31,6 +31,10 @@ export interface ShippingInfo {
     /**
      * A date and time in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
      */
+    'expectedShippingDateTime'?: string;
+    /**
+     * A date and time in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
+     */
     'expectedShippingDateTimeInUTC': string;
     'shipToAddress'?: Address;
     /**

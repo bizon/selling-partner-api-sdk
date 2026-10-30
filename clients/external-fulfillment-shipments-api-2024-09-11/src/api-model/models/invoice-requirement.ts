@@ -15,7 +15,7 @@
 
 
 /**
- * Whether the invoice document is required to be attached to the shipment and its corresponding status.
+ * Whether the invoice document is required to be attached to the shipment and its corresponding status. Applicable only for Brazil marketplace.
  */
 export interface InvoiceRequirement {
     /**

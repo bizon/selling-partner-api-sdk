@@ -162,7 +162,7 @@ export const ExternalFulfillmentShipmentsApiAxiosParamCreator = function (config
         /**
          * Generate and retrieve all shipping labels for one or more packages in the shipment you specify.
          * @param {string} shipmentId The ID of the shipment whose shipping labels you want to generate and retrieve.
-         * @param {GenerateShipLabelsOperationEnum} operation Specify whether you want to generate or regenerate a label.
+         * @param {GenerateShipLabelsOperationEnum} operation Specify whether you want to generate or regenerate a label. For retrieving existing labels, set this value to &#x60;GENERATE&#x60;
          * @param {string} [shippingOptionId] The ID of the shipping option whose shipping labels you want.
          * @param {ShipLabelsInput} [body] Shipping details for when shipping is not done by the marketplace channel.
          * @param {*} [options] Override http request option.
@@ -605,7 +605,7 @@ export const ExternalFulfillmentShipmentsApiFp = function(configuration?: Config
         /**
          * Generate and retrieve all shipping labels for one or more packages in the shipment you specify.
          * @param {string} shipmentId The ID of the shipment whose shipping labels you want to generate and retrieve.
-         * @param {GenerateShipLabelsOperationEnum} operation Specify whether you want to generate or regenerate a label.
+         * @param {GenerateShipLabelsOperationEnum} operation Specify whether you want to generate or regenerate a label. For retrieving existing labels, set this value to &#x60;GENERATE&#x60;
          * @param {string} [shippingOptionId] The ID of the shipping option whose shipping labels you want.
          * @param {ShipLabelsInput} [body] Shipping details for when shipping is not done by the marketplace channel.
          * @param {*} [options] Override http request option.
@@ -894,7 +894,7 @@ export interface ExternalFulfillmentShipmentsApiGenerateShipLabelsRequest {
     readonly shipmentId: string
 
     /**
-     * Specify whether you want to generate or regenerate a label.
+     * Specify whether you want to generate or regenerate a label. For retrieving existing labels, set this value to &#x60;GENERATE&#x60;
      */
     readonly operation: GenerateShipLabelsOperationEnum
 

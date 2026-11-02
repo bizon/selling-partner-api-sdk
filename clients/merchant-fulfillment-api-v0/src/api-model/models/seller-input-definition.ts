@@ -28,7 +28,7 @@ import type { InputTargetType } from './input-target-type.js';
  */
 export interface SellerInputDefinition {
     /**
-     * When true, the additional input field is required.
+     * When `true`, the additional input field is required.
      */
     'IsRequired': boolean;
     /**

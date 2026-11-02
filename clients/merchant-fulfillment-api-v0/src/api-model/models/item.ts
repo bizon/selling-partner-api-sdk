@@ -53,7 +53,7 @@ export interface Item {
     'ItemLevelSellerInputsList'?: Array<AdditionalSellerInputs>;
     'LiquidVolume'?: LiquidVolume;
     /**
-     * When true, the item qualifies as hazardous materials (hazmat). Defaults to false.
+     * When `true`, the item qualifies as hazardous materials (hazmat). Defaults to `false`.
      */
     'IsHazmat'?: boolean;
     'DangerousGoodsDetails'?: DangerousGoodsDetails;

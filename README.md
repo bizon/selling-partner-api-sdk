@@ -143,6 +143,8 @@ This repository contains an API client for each of the available Selling Partner
 
 <!-- codegen:clients:start -->
 
+- [action-items-api-2026-06-01](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/action-items-api-2026-06-01)
+- [action-plans-api-2026-06-01](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/action-plans-api-2026-06-01)
 - [amazon-warehousing-and-distribution-api-2024-05-09](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/amazon-warehousing-and-distribution-api-2024-05-09)
 - [aplus-content-api-2020-11-01](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/aplus-content-api-2020-11-01)
 - [application-integrations-api-2024-04-01](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/application-integrations-api-2024-04-01)
@@ -175,6 +177,7 @@ This repository contains an API client for each of the available Selling Partner
 - [listings-items-api-2021-08-01](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/listings-items-api-2021-08-01)
 - [listings-restrictions-api-2021-08-01](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/listings-restrictions-api-2021-08-01)
 - [merchant-fulfillment-api-v0](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/merchant-fulfillment-api-v0)
+- [messaging-api-2026-04-20](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/messaging-api-2026-04-20)
 - [messaging-api-v1](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/messaging-api-v1)
 - [notifications-api-v1](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/notifications-api-v1)
 - [orders-api-2026-01-01](https://github.com/bizon/selling-partner-api-sdk/tree/master/clients/orders-api-2026-01-01)

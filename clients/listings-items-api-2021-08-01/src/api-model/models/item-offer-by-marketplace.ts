@@ -22,6 +22,12 @@ import type { Money } from './money.js';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { Points } from './points.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { QuantityDiscountPlan } from './quantity-discount-plan.js';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { ReplenishmentDiscount } from './replenishment-discount.js';
 
 /**
  * Offer details for a listings item for the specified Amazon store.
@@ -38,6 +44,8 @@ export interface ItemOfferByMarketplace {
     'price': Money;
     'points'?: Points;
     'audience'?: Audience;
+    'replenishmentDiscount'?: ReplenishmentDiscount;
+    'quantityDiscountPlan'?: QuantityDiscountPlan;
 }
 
 export const ItemOfferByMarketplaceOfferTypeEnum = {

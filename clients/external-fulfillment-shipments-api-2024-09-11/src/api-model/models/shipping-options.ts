@@ -33,7 +33,7 @@ export interface ShippingOptions {
      */
     'shipBy': ShippingOptionsShipByEnum;
     /**
-     * The carrier name for the offering.
+     * The carrier name for the offering. Applicable only for Self Ship program
      */
     'carrierName'?: string;
     'pickupWindow'?: TimeWindow;

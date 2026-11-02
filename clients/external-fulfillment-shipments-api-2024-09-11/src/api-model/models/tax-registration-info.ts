@@ -18,7 +18,7 @@
 import type { Address } from './address.js';
 
 /**
- * Tax registration details of the entity. Applicable to direct fulfillment shipments.
+ * Tax registration details of the entity. Applicable only to direct fulfillment shipments.
  */
 export interface TaxRegistrationInfo {
     /**

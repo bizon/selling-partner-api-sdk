@@ -19,7 +19,7 @@
  */
 export interface LabelFormatOptionRequest {
     /**
-     * When true, include a packing slip with the label.
+     * When `true`, include a packing slip with the label.
      */
     'IncludePackingSlipWithLabel'?: boolean;
 }

@@ -33,7 +33,7 @@ export interface ShippingServiceOptions {
     'DeliveryExperience': DeliveryExperienceType;
     'DeclaredValue'?: CurrencyAmount;
     /**
-     * When true, the carrier will pick up the package. Note: Scheduled carrier pickup is available only using Dynamex (US), DPD (UK), and Royal Mail (UK).
+     * When `true`, the carrier picks up the package. Note: Scheduled carrier pickup is available only using Dynamex (US), DPD (UK), and Royal Mail (UK).
      */
     'CarrierWillPickUp': boolean;
     'CarrierWillPickUpOption'?: CarrierWillPickUpOption;

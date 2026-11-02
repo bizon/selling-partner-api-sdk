@@ -19,7 +19,7 @@
  */
 export interface ModelError {
     /**
-     * An error code that identifies the type of error that occurred.
+     * An error code that identifies the type of error.
      */
     'code': string;
     /**

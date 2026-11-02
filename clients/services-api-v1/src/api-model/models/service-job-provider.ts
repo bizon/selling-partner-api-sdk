@@ -22,5 +22,9 @@ export interface ServiceJobProvider {
      * The identifier of the service job provider.
      */
     'serviceJobProviderId'?: string;
+    /**
+     * The reference ID for the service job assigned to the provider.
+     */
+    'providerServiceJobReferenceId'?: string;
 }
 

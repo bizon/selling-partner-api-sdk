@@ -32,6 +32,6 @@ export interface RecommendedPackage {
     /**
      * A list of line items to be contained in a recommended package. This attribute is only for orders that come with specific recommendations for line-item distribution.
      */
-    'lineItems': Array<RecommendedPackageLineItem>;
+    'lineItems'?: Array<RecommendedPackageLineItem>;
 }
 

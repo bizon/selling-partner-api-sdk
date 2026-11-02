@@ -27,7 +27,7 @@ export interface PackageDeliveryStatus {
     'status'?: PackageStatus;
     'subStatus'?: PackageSubStatus;
     /**
-     * The reason for the sub-status.
+     * The reason for the sub-status. Refer [table](https://developer-docs.amazon/sp-api/docs/process-shipment#step-6-update-the-package-status) for possible values.
      */
     'reason'?: string;
 }

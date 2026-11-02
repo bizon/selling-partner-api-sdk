@@ -57,7 +57,7 @@ export interface Shipment {
     'shipmentInfo': ShipmentInfo;
     'invoiceInfo'?: InvoiceInfo;
     /**
-     * All involved party identification and metadata for the vendor, buyer, and seller. Applicable for direct-fulfillment sellers.
+     * All involved party identification and metadata for vendor, buyer, seller. Applicable only for direct-fulfillment sellers.
      */
     'partyInfoList'?: Array<PartyIdentificationInfo>;
     'shipmentRequirements': ShipmentRequirements;

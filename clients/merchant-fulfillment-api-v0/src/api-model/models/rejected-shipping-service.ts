@@ -15,7 +15,7 @@
 
 
 /**
- * Information about a rejected shipping service
+ * Information about a rejected shipping service.
  */
 export interface RejectedShippingService {
     /**
@@ -31,11 +31,11 @@ export interface RejectedShippingService {
      */
     'ShippingServiceId': string;
     /**
-     * A reason code meant to be consumed programatically. For example, `CARRIER_CANNOT_SHIP_TO_POBOX`.
+     * A reason code meant to be consumed programmatically. For example, `CARRIER_CANNOT_SHIP_TO_POBOX`.
      */
     'RejectionReasonCode': string;
     /**
-     * A localized human readable description of the rejected reason.
+     * A localized, human-readable description of the rejected reason.
      */
     'RejectionReasonMessage'?: string;
 }

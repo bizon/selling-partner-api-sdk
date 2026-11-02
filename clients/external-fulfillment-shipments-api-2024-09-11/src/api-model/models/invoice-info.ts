@@ -21,10 +21,10 @@ export interface InvoiceInfo {
     /**
      * The unique ID of the invoice that corresponds to the shipment.
      */
-    'invoiceId': string;
+    'invoiceId'?: string;
     /**
      * A date and time in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
      */
-    'creationDateTime': string;
+    'creationDateTime'?: string;
 }
 

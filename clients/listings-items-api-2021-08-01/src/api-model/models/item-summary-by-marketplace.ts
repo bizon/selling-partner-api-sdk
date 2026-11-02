@@ -22,7 +22,7 @@ import type { ItemImage } from './item-image.js';
  */
 export interface ItemSummaryByMarketplace {
     /**
-     * A marketplace identifier. Identifies the listings item\'s Amazon store.
+     * An Amazon store identifier. Identifies the listings item\'s Amazon store.
      */
     'marketplaceId': string;
     /**

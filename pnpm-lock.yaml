@@ -1262,8 +1262,8 @@ importers:
         specifier: workspace:*
         version: link:../../internal/typescript-config
       nock:
-        specifier: ^15.0.1
-        version: 15.0.1(supports-color@10.2.2)
+        specifier: ^15.0.5
+        version: 15.0.5(supports-color@10.2.2)
       type-fest:
         specifier: ^5.10.0
         version: 5.10.0
@@ -1296,8 +1296,8 @@ importers:
         specifier: workspace:*
         version: link:../../internal/typescript-config
       nock:
-        specifier: ^15.0.1
-        version: 15.0.1(supports-color@10.2.2)
+        specifier: ^15.0.5
+        version: 15.0.5(supports-color@10.2.2)
       strip-ansi:
         specifier: ^7.2.0
         version: 7.2.0
@@ -5099,9 +5099,9 @@ packages:
     resolution: {integrity: sha512-eonl3sLUha+S1GzTPxychyhnUzKyeQkZ7jLjKrBagJgPla13F+uQ71HgpFefyHgqrjEbCPkDArxYsjY8/+gLKA==}
     engines: {node: '>= 0.4.0'}
 
-  nock@15.0.1:
-    resolution: {integrity: sha512-Mjx5Xl4t9vP13eUZPWqwwpjjXNjvhUTo1qTdryVM3+7t6Z2w6WHZ9GVZk/zQ8Ym1vbmloWaglye3cloyHAJ8FA==}
-    engines: {node: '>=20.12.1'}
+  nock@15.0.5:
+    resolution: {integrity: sha512-nVeuZGS2we1PyvqbW082Qj0EB4bd//6pZk/zOPDlaTPU72qcWrqfHg3kx9JcBcH1fJxwJHjmsfuQ4mss42su4w==}
+    engines: {node: '>=22.20.0'}
 
   node-addon-api@7.1.1:
     resolution: {integrity: sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==}
@@ -10602,7 +10602,7 @@ snapshots:
 
   netmask@2.1.1: {}
 
-  nock@15.0.1(supports-color@10.2.2):
+  nock@15.0.5(supports-color@10.2.2):
     dependencies:
       '@mswjs/interceptors': 0.44.0(supports-color@10.2.2)
     transitivePeerDependencies:

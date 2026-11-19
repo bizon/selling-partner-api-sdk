@@ -26,6 +26,7 @@ export interface BusinessContext {
 
 export const BusinessContextStoreNameEnum = {
     AmazonHaul: 'AMAZON_HAUL',
+    AmazonFbaFromOrigin: 'AMAZON_FBA_FROM_ORIGIN',
 } as const;
 
 export type BusinessContextStoreNameEnum = typeof BusinessContextStoreNameEnum[keyof typeof BusinessContextStoreNameEnum];
